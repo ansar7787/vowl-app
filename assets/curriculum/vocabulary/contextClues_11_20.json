@@ -6,20 +6,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L11_Q1",
-            "sentence": "Our new neighbor is so [TARGET] that she brings cookies to everyone on the street.",
-            "hint": "This word describes someone warm and welcoming toward others.",
+            "sentence": "Our new neighbor is [TARGET], which means she is warm and welcoming to everyone she meets.",
+            "hint": "This word describes someone who is easy to get along with and kind to others.",
             "options": [
-                "Cold",
+                "Welcoming",
+                "Distant",
                 "Hostile",
-                "Kind",
                 "Unfriendly"
             ],
-            "explanation": "Bringing cookies to everyone on the street shows warmth toward others, so [TARGET] means KIND.",
-            "correctAnswer": "Kind",
-            "clueType": "synonym",
+            "explanation": "The sentence defines [TARGET] as being 'warm and welcoming to everyone,' so [TARGET] means WELCOMING.",
+            "correctAnswer": "Welcoming",
+            "clueType": "definition",
             "evidenceWords": [
-                "neighbor",
-                "brings"
+                "which means",
+                "warm and welcoming"
             ]
         },
         {
@@ -27,20 +27,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L11_Q2",
-            "sentence": "My little sister is [TARGET]; once she decides something, no one can change her mind.",
-            "hint": "This word describes someone who refuses to change their mind.",
+            "sentence": "My little sister is [TARGET] and stubborn, refusing to change her mind no matter what anyone says.",
+            "hint": "This word describes someone who insists on doing things their own way.",
             "options": [
-                "Flexible",
-                "Stubborn",
                 "Agreeable",
+                "Stubborn",
+                "Flexible",
                 "Obedient"
             ],
-            "explanation": "No one being able to change her mind once it's made up shows she refuses to budge, so [TARGET] means STUBBORN.",
+            "explanation": "The word 'and' links [TARGET] to 'stubborn,' and refusing to change her mind confirms it, so [TARGET] means STUBBORN.",
             "correctAnswer": "Stubborn",
-            "clueType": "antonym",
+            "clueType": "synonym",
             "evidenceWords": [
-                "little",
-                "sister"
+                "and stubborn",
+                "refusing to change"
             ]
         },
         {
@@ -48,20 +48,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L11_Q3",
-            "sentence": "The birthday clown had a [TARGET] smile that made all the children laugh.",
-            "hint": "This word describes a bright, positive mood.",
+            "sentence": "The camp counselor was so [TARGET] that she sang songs on the bus, told jokes at every meal, and smiled through the pouring rain.",
+            "hint": "This word describes someone in a bright, upbeat mood.",
             "options": [
                 "Gloomy",
-                "Miserable",
-                "Sad",
-                "Happy"
+                "Grumpy",
+                "Happy",
+                "Miserable"
             ],
-            "explanation": "A smile that makes children laugh shows a bright, positive mood, so [TARGET] means HAPPY.",
+            "explanation": "Singing songs, telling jokes, and smiling through rain are all examples of a happy, upbeat attitude, so [TARGET] means HAPPY.",
             "correctAnswer": "Happy",
-            "clueType": "definition",
+            "clueType": "example",
             "evidenceWords": [
-                "birthday",
-                "clown"
+                "sang songs",
+                "told jokes",
+                "smiled through"
             ]
         },
         {
@@ -69,20 +70,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L12_Q1",
-            "sentence": "The [TARGET] five-year-old asked her teacher a hundred questions about the solar system.",
-            "hint": "This word describes someone who loves asking questions to learn more.",
+            "sentence": "Most of the tour group listened quietly, but the [TARGET] boy kept raising his hand to ask question after question.",
+            "hint": "This word describes someone eager to learn by asking lots of questions.",
             "options": [
-                "Uninterested",
-                "Curious",
                 "Indifferent",
-                "Apathetic"
+                "Uninterested",
+                "Bored",
+                "Curious"
             ],
-            "explanation": "Asking a hundred questions about the solar system shows a strong desire to learn, so [TARGET] means CURIOUS.",
+            "explanation": "The word 'but' contrasts [TARGET] with the group that 'listened quietly,' so it must mean the opposite of quiet disinterest, which is CURIOUS.",
             "correctAnswer": "Curious",
-            "clueType": "example",
+            "clueType": "antonym",
             "evidenceWords": [
-                "five-year-old",
-                "asked"
+                "but",
+                "listened quietly",
+                "question after question"
             ]
         },
         {
@@ -90,20 +92,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L12_Q2",
-            "sentence": "The [TARGET] boy hid behind his mother whenever a stranger said hello.",
-            "hint": "This word describes someone who feels uneasy around new people.",
+            "sentence": "The new puppy was so [TARGET] that it hid under the couch at loud noises, avoided strangers, and trembled during its first walk.",
+            "hint": "This word describes someone or something easily scared or lacking confidence.",
             "options": [
-                "Outgoing",
-                "Confident",
+                "Shy",
                 "Bold",
-                "Shy"
+                "Fearless",
+                "Confident"
             ],
-            "explanation": "Hiding behind his mother around strangers shows he feels uneasy with new people, so [TARGET] means SHY.",
+            "explanation": "Hiding at loud noises, avoiding strangers, and trembling are all examples of fearful, timid behavior, so [TARGET] means SHY.",
             "correctAnswer": "Shy",
-            "clueType": "inference",
+            "clueType": "example",
             "evidenceWords": [
-                "behind",
-                "mother"
+                "hid under the couch",
+                "avoided strangers",
+                "trembled"
             ]
         },
         {
@@ -111,20 +114,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L12_Q3",
-            "sentence": "After the long illness, his arms felt too [TARGET] to lift even a light bag.",
-            "hint": "This word describes a body that has lost most of its strength.",
+            "sentence": "After weeks in the hospital bed, his legs felt [TARGET], meaning they were so weak he could barely stand without help.",
+            "hint": "This word describes a body that has lost its strength.",
             "options": [
                 "Sturdy",
-                "Robust",
                 "Weak",
-                "Powerful"
+                "Powerful",
+                "Strong"
             ],
-            "explanation": "Being unable to lift even a light bag shows a loss of strength, so [TARGET] means WEAK.",
+            "explanation": "The sentence defines [TARGET] as being 'so weak he could barely stand,' so [TARGET] means WEAK.",
             "correctAnswer": "Weak",
-            "clueType": "synonym",
+            "clueType": "definition",
             "evidenceWords": [
-                "After",
-                "illness"
+                "meaning",
+                "so weak"
             ]
         },
         {
@@ -132,20 +135,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L13_Q1",
-            "sentence": "She was [TARGET] to her parents for driving four hours to see her graduate.",
-            "hint": "This word describes the warm feeling you have when someone does something kind for you.",
+            "sentence": "She was [TARGET] and thankful for every meal the volunteers brought during her recovery.",
+            "hint": "This word describes the feeling of wanting to say thank you.",
             "options": [
-                "Resentful",
                 "Ungrateful",
-                "Unappreciative",
-                "Thankful"
+                "Resentful",
+                "Thankful",
+                "Indifferent"
             ],
-            "explanation": "Appreciating parents who drove four hours shows a warm feeling of appreciation, so [TARGET] means THANKFUL.",
+            "explanation": "The word 'and' links [TARGET] to 'thankful,' so [TARGET] means THANKFUL.",
             "correctAnswer": "Thankful",
-            "clueType": "antonym",
+            "clueType": "synonym",
             "evidenceWords": [
-                "parents",
-                "driving"
+                "and thankful",
+                "volunteers"
             ]
         },
         {
@@ -153,20 +156,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L13_Q2",
-            "sentence": "He felt [TARGET] when his friend got the new phone he had wanted for months.",
-            "hint": "This word describes wanting what someone else has.",
+            "sentence": "Watching his classmate open a brand-new bike, Marcus felt [TARGET], which means he wished he could have something just as nice.",
+            "hint": "This word describes the feeling of wanting what someone else has.",
             "options": [
                 "Content",
-                "Indifferent",
                 "Satisfied",
+                "Generous",
                 "Jealous"
             ],
-            "explanation": "Wanting the phone his friend got shows a desire for what someone else has, so [TARGET] means JEALOUS.",
+            "explanation": "The sentence defines [TARGET] as wishing 'he could have something just as nice,' so [TARGET] means JEALOUS.",
             "correctAnswer": "Jealous",
             "clueType": "definition",
             "evidenceWords": [
-                "friend",
-                "phone"
+                "which means",
+                "wished he could have"
             ]
         },
         {
@@ -174,20 +177,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L13_Q3",
-            "sentence": "She felt [TARGET] when she tripped in front of the whole class.",
-            "hint": "This word describes the hot, uncomfortable feeling after an awkward moment.",
+            "sentence": "He felt so [TARGET] after tripping on stage that his face turned bright red and he wished the floor would swallow him whole.",
+            "hint": "This word describes the uncomfortable feeling after doing something awkward in front of others.",
             "options": [
-                "Comfortable",
-                "Proud",
                 "Ashamed",
-                "Confident"
+                "Proud",
+                "Confident",
+                "Relaxed"
             ],
-            "explanation": "Tripping in front of the whole class would cause an awkward, uncomfortable feeling, so [TARGET] means ASHAMED.",
+            "explanation": "A red face and wishing to disappear after tripping on stage are examples of feeling uncomfortable in front of others, so [TARGET] means ASHAMED.",
             "correctAnswer": "Ashamed",
             "clueType": "example",
             "evidenceWords": [
-                "tripped",
-                "front"
+                "face turned bright red",
+                "wished the floor would swallow"
             ]
         },
         {
@@ -195,20 +198,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L14_Q1",
-            "sentence": "After the doctor explained the test results were normal, she felt completely [TARGET].",
-            "hint": "This word describes the calm feeling after worry has been removed.",
+            "sentence": "After the pilot calmly explained that the turbulence was completely normal, the nervous passengers stopped gripping their armrests and sat back, feeling [TARGET].",
+            "hint": "This word describes the calm feeling that comes after someone eases your worry.",
             "options": [
-                "Relieved",
-                "Alarmed",
-                "Troubled",
-                "Worried"
+                "Terrified",
+                "Comforted",
+                "Panicked",
+                "Alarmed"
             ],
-            "explanation": "Learning the test results were normal would remove worry, so [TARGET] means RELIEVED.",
-            "correctAnswer": "Relieved",
+            "explanation": "Passengers relaxing and letting go of their armrests after the pilot's calm explanation shows their worry was eased, even without a direct clue word, so [TARGET] means COMFORTED.",
+            "correctAnswer": "Comforted",
             "clueType": "inference",
             "evidenceWords": [
-                "After",
-                "doctor"
+                "calmly explained",
+                "stopped gripping",
+                "sat back"
             ]
         },
         {
@@ -216,20 +220,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L14_Q2",
-            "sentence": "The students looked [TARGET] when the teacher introduced a math symbol they had never seen.",
-            "hint": "This word describes the feeling of not understanding something new.",
+            "sentence": "Staring at the strange symbols on the ancient map, the archaeologist was [TARGET] and confused about what they could mean.",
+            "hint": "This word describes the feeling of not understanding something at all.",
             "options": [
-                "Confused",
-                "Clear",
                 "Certain",
-                "Informed"
+                "Informed",
+                "Confused",
+                "Assured"
             ],
-            "explanation": "Seeing a symbol they had never seen would leave students not understanding it, so [TARGET] means CONFUSED.",
+            "explanation": "The word 'and' links [TARGET] to 'confused,' so [TARGET] means CONFUSED.",
             "correctAnswer": "Confused",
             "clueType": "synonym",
             "evidenceWords": [
-                "students",
-                "looked"
+                "and confused",
+                "strange symbols"
             ]
         },
         {
@@ -237,20 +241,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L14_Q3",
-            "sentence": "Tourists should stay [TARGET] of strangers offering free tours near the train station.",
-            "hint": "This word describes being on guard about a possible problem.",
+            "sentence": "Unlike the trusting golden retriever, the rescued stray dog stayed [TARGET] of every stranger who approached the shelter fence.",
+            "hint": "This word describes being slow to trust something new or unfamiliar.",
             "options": [
-                "Reckless",
-                "Careless",
                 "Trusting",
+                "Relaxed",
+                "Comfortable",
                 "Cautious"
             ],
-            "explanation": "Being told to watch out for strangers offering free tours shows being on guard, so [TARGET] means CAUTIOUS.",
+            "explanation": "The word 'unlike' contrasts [TARGET] with the 'trusting' retriever, so it must mean the opposite, which is CAUTIOUS.",
             "correctAnswer": "Cautious",
             "clueType": "antonym",
             "evidenceWords": [
-                "Tourists",
-                "should"
+                "Unlike",
+                "trusting",
+                "stray dog"
             ]
         },
         {
@@ -258,20 +263,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L15_Q1",
-            "sentence": "The [TARGET] student found a faster way to solve the equation than anyone else in class.",
-            "hint": "This word describes someone quick to find good solutions.",
+            "sentence": "The fox in the story was [TARGET], meaning it could think of smart solutions to escape every trap the farmer set.",
+            "hint": "This word describes someone quick-thinking and good at solving problems.",
             "options": [
                 "Smart",
-                "Dim-witted",
+                "Foolish",
                 "Slow",
-                "Foolish"
+                "Careless"
             ],
-            "explanation": "Finding a faster solution than anyone else shows quick thinking, so [TARGET] means SMART.",
+            "explanation": "The sentence defines [TARGET] as able to 'think of smart solutions,' so [TARGET] means SMART.",
             "correctAnswer": "Smart",
             "clueType": "definition",
             "evidenceWords": [
-                "student",
-                "found"
+                "meaning",
+                "smart solutions"
             ]
         },
         {
@@ -279,20 +284,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L15_Q2",
-            "sentence": "It was [TARGET] of him to wear flip-flops on a hike up a rocky mountain.",
-            "hint": "This word describes a decision that lacks good sense.",
+            "sentence": "It was [TARGET] of him to leave his bike unlocked outside the busy train station, walk away for an hour, and act surprised when it was gone.",
+            "hint": "This word describes a decision that shows poor judgment.",
             "options": [
-                "Silly",
-                "Wise",
-                "Practical",
-                "Sensible"
+                "Sensible",
+                "Unwise",
+                "Careful",
+                "Thoughtful"
             ],
-            "explanation": "Wearing flip-flops on a rocky mountain hike is not a sensible choice, so [TARGET] means SILLY.",
-            "correctAnswer": "Silly",
+            "explanation": "Leaving a bike unlocked in a busy area and being surprised it disappeared are examples of poor judgment, so [TARGET] means UNWISE.",
+            "correctAnswer": "Unwise",
             "clueType": "example",
             "evidenceWords": [
-                "flip-flops",
-                "rocky"
+                "unlocked",
+                "walk away for an hour",
+                "surprised"
             ]
         },
         {
@@ -300,20 +306,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L15_Q3",
-            "sentence": "It was [TARGET] that the streetlights all turned off at exactly the same second.",
-            "hint": "This word describes something unusual that makes you pause.",
+            "sentence": "The old house at the end of the street had shutters that creaked without wind, lights that flickered on their own, and a cat that seemed to watch every visitor from the attic window — the neighbors all agreed something about it was [TARGET].",
+            "hint": "This word describes something odd and hard to explain.",
             "options": [
-                "Typical",
+                "Ordinary",
                 "Normal",
                 "Strange",
-                "Usual"
+                "Typical"
             ],
-            "explanation": "Streetlights turning off at exactly the same second is unusual and surprising, so [TARGET] means STRANGE.",
+            "explanation": "Creaking shutters, flickering lights, and a watchful cat all point to something unusual, even without a direct clue word, so [TARGET] means STRANGE.",
             "correctAnswer": "Strange",
             "clueType": "inference",
             "evidenceWords": [
-                "streetlights",
-                "turned"
+                "creaked without wind",
+                "flickered on their own",
+                "seemed to watch"
             ]
         },
         {
@@ -321,20 +328,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L16_Q1",
-            "sentence": "Early in the morning, the lake was [TARGET], with not a single ripple on the water.",
-            "hint": "This word describes a quiet, still scene with nothing disturbing it.",
+            "sentence": "The lake at sunrise was [TARGET] and calm, without a single ripple disturbing the still water.",
+            "hint": "This word describes a place that feels quiet and free of disturbance.",
             "options": [
-                "Turbulent",
                 "Chaotic",
-                "Calm",
-                "Hectic"
+                "Stormy",
+                "Turbulent",
+                "Calm"
             ],
-            "explanation": "Not a single ripple on the water describes a still, undisturbed scene, so [TARGET] means CALM.",
+            "explanation": "The word 'and' links [TARGET] to 'calm,' and the still water confirms it, so [TARGET] means CALM.",
             "correctAnswer": "Calm",
             "clueType": "synonym",
             "evidenceWords": [
-                "Early",
-                "morning"
+                "and calm",
+                "still water"
             ]
         },
         {
@@ -342,20 +349,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L16_Q2",
-            "sentence": "The manager was [TARGET] all afternoon with back-to-back meetings.",
-            "hint": "This word describes having no free time available.",
+            "sentence": "Unlike the empty seats at the back of the theater, every seat near the stage was [TARGET] before the curtain even rose.",
+            "hint": "This word describes a space that has someone or something in it.",
             "options": [
-                "Busy",
+                "Full",
+                "Vacant",
                 "Available",
-                "Idle",
-                "Free"
+                "Empty"
             ],
-            "explanation": "Having back-to-back meetings all afternoon means there is no free time, so [TARGET] means BUSY.",
-            "correctAnswer": "Busy",
+            "explanation": "The word 'unlike' contrasts [TARGET] with the 'empty seats,' so it must mean the opposite, which is FULL.",
+            "correctAnswer": "Full",
             "clueType": "antonym",
             "evidenceWords": [
-                "manager",
-                "afternoon"
+                "Unlike",
+                "empty seats"
             ]
         },
         {
@@ -363,20 +370,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L16_Q3",
-            "sentence": "The new apartment felt [TARGET], with enough room for a large dining table and a sofa.",
-            "hint": "This word describes a space with plenty of room to move around.",
+            "sentence": "Their new apartment was [TARGET], which means it had plenty of open room to fit a large dining table, a couch, and still have space to spare.",
+            "hint": "This word describes a room or place with a lot of open space.",
             "options": [
-                "Tiny",
-                "Narrow",
                 "Cramped",
-                "Roomy"
+                "Roomy",
+                "Tiny",
+                "Narrow"
             ],
-            "explanation": "Having enough room for a large table and a sofa shows plenty of space, so [TARGET] means ROOMY.",
+            "explanation": "The sentence defines [TARGET] as having 'plenty of open room,' so [TARGET] means ROOMY.",
             "correctAnswer": "Roomy",
             "clueType": "definition",
             "evidenceWords": [
-                "apartment",
-                "enough"
+                "which means",
+                "plenty of open room"
             ]
         },
         {
@@ -384,20 +391,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L17_Q1",
-            "sentence": "The bus had to slow down to fit through the [TARGET] mountain road.",
-            "hint": "This word describes a space that leaves little room on either side.",
+            "sentence": "The jeans were so [TARGET] that she couldn't bend her knees, struggled to sit down, and had to hold her breath just to zip them up.",
+            "hint": "This word describes clothing that fits too closely to the body.",
             "options": [
-                "Narrow",
-                "Wide",
-                "Broad",
-                "Spacious"
+                "Loose",
+                "Baggy",
+                "Snug",
+                "Roomy"
             ],
-            "explanation": "Needing to slow down to fit through the road shows little room on either side, so [TARGET] means NARROW.",
-            "correctAnswer": "Narrow",
+            "explanation": "Being unable to bend her knees, struggling to sit, and holding her breath to zip up are all examples of clothing that fits too closely, so [TARGET] means SNUG.",
+            "correctAnswer": "Snug",
             "clueType": "example",
             "evidenceWords": [
-                "through",
-                "mountain"
+                "couldn't bend her knees",
+                "hold her breath"
             ]
         },
         {
@@ -405,20 +412,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L17_Q2",
-            "sentence": "The children came home from the playground with [TARGET] hands and muddy shoes.",
+            "sentence": "After crawling through the mud pit and rolling down the hill twice, the boys' clothes were streaked with brown, their hands were black, and their shoes squelched with every step — Mom took one look and declared their clothes [TARGET].",
             "hint": "This word describes something covered in dirt or grime.",
             "options": [
-                "Pristine",
-                "Immaculate",
-                "Dirty",
-                "Spotless"
+                "Spotless",
+                "Clean",
+                "Fresh",
+                "Dirty"
             ],
-            "explanation": "Coming home with muddy shoes and dirt on their hands shows being covered in grime, so [TARGET] means DIRTY.",
+            "explanation": "Mud-streaked clothes, black hands, and squelching shoes all suggest something covered in grime, even without a direct clue word, so [TARGET] means DIRTY.",
             "correctAnswer": "Dirty",
             "clueType": "inference",
             "evidenceWords": [
-                "children",
-                "playground"
+                "streaked with brown",
+                "black",
+                "squelched"
             ]
         },
         {
@@ -426,20 +434,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L17_Q3",
-            "sentence": "Everyone on the team relies on Maria because she is always [TARGET] with deadlines.",
+            "sentence": "My best friend is [TARGET] and reliable, always showing up exactly when she says she will.",
             "hint": "This word describes someone you can always count on.",
             "options": [
-                "Trustworthy",
-                "Erratic",
-                "Inconsistent",
-                "Unreliable"
+                "Reliable",
+                "Unpredictable",
+                "Flaky",
+                "Forgetful"
             ],
-            "explanation": "Always meeting deadlines is why the team can count on Maria, so [TARGET] means TRUSTWORTHY.",
-            "correctAnswer": "Trustworthy",
+            "explanation": "The word 'and' links [TARGET] to 'reliable,' and always showing up on time confirms it, so [TARGET] means RELIABLE.",
+            "correctAnswer": "Reliable",
             "clueType": "synonym",
             "evidenceWords": [
-                "Everyone",
-                "relies"
+                "and reliable",
+                "always showing up"
             ]
         },
         {
@@ -447,20 +455,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L18_Q1",
-            "sentence": "On vacation, we spent [TARGET] days at the beach with nothing planned at all.",
-            "hint": "This word describes having no worries weighing on you.",
+            "sentence": "Unlike his stressed-out coworkers who checked their phones constantly, Jake strolled through the park looking completely [TARGET], with nothing on his mind but the sunshine.",
+            "hint": "This word describes feeling at ease and free of worry.",
             "options": [
-                "Stressed",
+                "Anxious",
                 "Relaxed",
-                "Tense",
-                "Anxious"
+                "Stressed",
+                "Worried"
             ],
-            "explanation": "Spending days at the beach with nothing planned describes having no worries, so [TARGET] means RELAXED.",
+            "explanation": "The word 'unlike' contrasts [TARGET] with 'stressed-out' coworkers, so it must mean the opposite, which is RELAXED.",
             "correctAnswer": "Relaxed",
             "clueType": "antonym",
             "evidenceWords": [
-                "vacation",
-                "spent"
+                "Unlike",
+                "stressed-out",
+                "nothing on his mind"
             ]
         },
         {
@@ -468,20 +477,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L18_Q2",
-            "sentence": "The [TARGET] young pianist won first place at the regional competition.",
-            "hint": "This word describes someone with a natural ability that has been well developed.",
+            "sentence": "The young violinist was [TARGET], meaning she had a natural gift for music that let her master pieces other students spent years learning.",
+            "hint": "This word describes someone with a natural gift or skill.",
             "options": [
                 "Untrained",
-                "Skilled",
-                "Amateur",
+                "Clumsy",
+                "Gifted",
                 "Inexperienced"
             ],
-            "explanation": "Winning first place at a competition shows a well-developed ability, so [TARGET] means SKILLED.",
-            "correctAnswer": "Skilled",
+            "explanation": "The sentence defines [TARGET] as having 'a natural gift for music,' so [TARGET] means GIFTED.",
+            "correctAnswer": "Gifted",
             "clueType": "definition",
             "evidenceWords": [
-                "young",
-                "pianist"
+                "meaning",
+                "natural gift"
             ]
         },
         {
@@ -489,20 +498,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L18_Q3",
-            "sentence": "Working three shifts in a row at the hospital was incredibly [TARGET].",
-            "hint": "This word describes a task that requires a lot of effort and energy.",
+            "sentence": "Our new coach was [TARGET]: he expected us at practice an hour early, ran us through drills until our legs shook, and never accepted an excuse for missing a session.",
+            "hint": "This word describes someone who expects a great deal of effort from others.",
             "options": [
-                "Effortless",
-                "Easy",
-                "Tiring",
-                "Relaxing"
+                "Easygoing",
+                "Lenient",
+                "Relaxed",
+                "Exacting"
             ],
-            "explanation": "Working three shifts in a row requires a lot of effort and energy, so [TARGET] means TIRING.",
-            "correctAnswer": "Tiring",
+            "explanation": "Expecting early arrivals, exhausting drills, and no excuses are all examples of expecting a great deal from others, so [TARGET] means EXACTING.",
+            "correctAnswer": "Exacting",
             "clueType": "example",
             "evidenceWords": [
-                "Working",
-                "three"
+                "an hour early",
+                "legs shook",
+                "never accepted an excuse"
             ]
         },
         {
@@ -510,20 +520,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L19_Q1",
-            "sentence": "The store had surprisingly [TARGET] winter coats, all under twenty dollars.",
-            "hint": "This word describes a price that most people can easily pay.",
+            "sentence": "The apartment cost half what her coworkers paid nearby, so after her first paycheck she still had plenty left over for groceries and savings — it was surprisingly [TARGET] for the neighborhood.",
+            "hint": "This word describes something priced within reach of most budgets.",
             "options": [
-                "Cheap",
+                "Inexpensive",
                 "Costly",
-                "Expensive",
-                "Pricey"
+                "Overpriced",
+                "Extravagant"
             ],
-            "explanation": "Coats priced under twenty dollars are easy for most people to pay, so [TARGET] means CHEAP.",
-            "correctAnswer": "Cheap",
+            "explanation": "Paying half of what others pay and still having money left for groceries and savings suggests the price was easy to manage, even without a direct clue word, so [TARGET] means INEXPENSIVE.",
+            "correctAnswer": "Inexpensive",
             "clueType": "inference",
             "evidenceWords": [
-                "store",
-                "surprisingly"
+                "cost half",
+                "plenty left over",
+                "savings"
             ]
         },
         {
@@ -531,20 +542,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L19_Q2",
-            "sentence": "Grandma was [TARGET] when all her grandchildren came to visit for the holiday.",
-            "hint": "This word describes a strong feeling of happiness about something nice happening.",
+            "sentence": "Grandma was [TARGET] and thrilled when she opened the box and saw tickets to see her favorite singer.",
+            "hint": "This word describes a burst of joy and happiness.",
             "options": [
                 "Disappointed",
-                "Pleased",
+                "Thrilled",
                 "Upset",
                 "Annoyed"
             ],
-            "explanation": "All her grandchildren visiting for the holiday would make Grandma very happy, so [TARGET] means PLEASED.",
-            "correctAnswer": "Pleased",
+            "explanation": "The word 'and' links [TARGET] to 'thrilled,' so [TARGET] means THRILLED.",
+            "correctAnswer": "Thrilled",
             "clueType": "synonym",
             "evidenceWords": [
-                "Grandma",
-                "grandchildren"
+                "and thrilled",
+                "favorite singer"
             ]
         },
         {
@@ -552,20 +563,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L19_Q3",
-            "sentence": "The week before the trip was [TARGET], with packing, paperwork, and last-minute errands.",
-            "hint": "This word describes a period full of rushing and confusion.",
+            "sentence": "Unlike the quiet, slow-paced weekends at the lake house, weekday mornings in their house were [TARGET], with everyone rushing to pack lunches, find shoes, and catch the bus at the same time.",
+            "hint": "This word describes a period full of rushed, frantic activity.",
             "options": [
                 "Calm",
-                "Orderly",
                 "Relaxed",
-                "Chaotic"
+                "Chaotic",
+                "Leisurely"
             ],
-            "explanation": "Packing, paperwork, and last-minute errands all at once describe rushing and confusion, so [TARGET] means CHAOTIC.",
+            "explanation": "The word 'unlike' contrasts [TARGET] with the 'quiet, slow-paced' weekends, so it must mean the opposite, which is CHAOTIC.",
             "correctAnswer": "Chaotic",
             "clueType": "antonym",
             "evidenceWords": [
-                "before",
-                "packing"
+                "Unlike",
+                "slow-paced",
+                "rushing"
             ]
         },
         {
@@ -573,20 +585,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L20_Q1",
-            "sentence": "The office finally replaced its [TARGET] computers, which still ran software from the 1990s.",
-            "hint": "This word describes something no longer up to date.",
+            "sentence": "The computer lab's software was [TARGET], which means it was so old-fashioned that it no longer worked with any modern programs.",
+            "hint": "This word describes something that is no longer up to date.",
             "options": [
-                "Modern",
+                "Cutting-edge",
                 "Advanced",
-                "Old-fashioned",
-                "Cutting-edge"
+                "Current",
+                "Obsolete"
             ],
-            "explanation": "Computers still running software from the 1990s are clearly behind the times, so [TARGET] means OLD-FASHIONED.",
-            "correctAnswer": "Old-fashioned",
+            "explanation": "The sentence defines [TARGET] as 'so old-fashioned' it can't run modern programs, so [TARGET] means OBSOLETE.",
+            "correctAnswer": "Obsolete",
             "clueType": "definition",
             "evidenceWords": [
-                "office",
-                "finally"
+                "which means",
+                "old-fashioned"
             ]
         },
         {
@@ -594,20 +606,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L20_Q2",
-            "sentence": "Wearing boots instead of sandals was a [TARGET] choice for the muddy hiking trail.",
-            "hint": "This word describes a choice based on what actually works well.",
+            "sentence": "Instead of buying the flashy sports car, she chose the small hatchback that got great gas mileage, had room for groceries, and rarely needed repairs — a [TARGET] choice for her daily commute.",
+            "hint": "This word describes something chosen for its usefulness rather than its looks.",
             "options": [
-                "Foolish",
                 "Sensible",
-                "Impractical",
-                "Unreasonable"
+                "Flashy",
+                "Extravagant",
+                "Impractical"
             ],
-            "explanation": "Choosing boots for a muddy trail is a choice based on what works well, so [TARGET] means SENSIBLE.",
+            "explanation": "Choosing good gas mileage, cargo room, and reliability over flashiness shows a focus on usefulness, even without a direct clue word, so [TARGET] means SENSIBLE.",
             "correctAnswer": "Sensible",
-            "clueType": "example",
+            "clueType": "inference",
             "evidenceWords": [
-                "Wearing",
-                "boots"
+                "great gas mileage",
+                "room for groceries",
+                "rarely needed repairs"
             ]
         },
         {
@@ -615,20 +628,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L20_Q3",
-            "sentence": "This old washing machine is surprisingly [TARGET]; it has never broken down in ten years.",
-            "hint": "This word describes something that works the same way every single time.",
+            "sentence": "Unlike the bus that showed up whenever it felt like it, the new train service was [TARGET], arriving within thirty seconds of its scheduled time every single day.",
+            "hint": "This word describes something you can consistently count on.",
             "options": [
+                "Unpredictable",
                 "Dependable",
-                "Faulty",
-                "Shaky",
-                "Unpredictable"
+                "Erratic",
+                "Inconsistent"
             ],
-            "explanation": "Never breaking down in ten years shows it works the same way every time, so [TARGET] means DEPENDABLE.",
+            "explanation": "The word 'unlike' contrasts [TARGET] with a bus that 'showed up whenever it felt like it,' so it must mean the opposite, which is DEPENDABLE.",
             "correctAnswer": "Dependable",
-            "clueType": "inference",
+            "clueType": "antonym",
             "evidenceWords": [
-                "washing",
-                "machine"
+                "Unlike",
+                "whenever it felt like it",
+                "thirty seconds"
             ]
         }
     ],

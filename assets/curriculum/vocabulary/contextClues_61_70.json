@@ -6,20 +6,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L61_Q1",
-            "sentence": "Even when no one was watching, the accountant reported the error immediately - a clear sign of his [TARGET].",
-            "hint": "This word names doing the right thing even when it would be easy not to.",
+            "sentence": "Even though returning the wallet with all the cash inside meant missing his bus, Malik acted with [TARGET] and honesty, choosing to do the right thing anyway.",
+            "hint": "This word describes strong moral principles, especially when they're hard to keep.",
             "options": [
                 "Honesty",
+                "Deception",
                 "Dishonesty",
-                "Deceit",
                 "Corruption"
             ],
-            "explanation": "Reporting the error immediately with no one watching shows doing the right thing even when it would be easy not to, so [TARGET] means HONESTY.",
+            "explanation": "The word 'and' links [TARGET] to 'honesty,' and returning the wallet despite missing his bus confirms it, so [TARGET] means HONESTY.",
             "correctAnswer": "Honesty",
             "clueType": "synonym",
             "evidenceWords": [
-                "watching",
-                "accountant"
+                "and honesty",
+                "missing his bus"
             ]
         },
         {
@@ -27,20 +27,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L61_Q2",
-            "sentence": "Ever since getting sick on a boat, he's had a strong [TARGET] to seafood.",
-            "hint": "This word names a strong feeling of wanting to avoid something.",
+            "sentence": "Unlike her brother, who devoured every spoonful of the seafood stew, Priya had a strong [TARGET] to it, gagging at just the smell.",
+            "hint": "This word describes a strong wish to avoid something.",
             "options": [
-                "Affection",
+                "Love",
+                "Dislike",
                 "Fondness",
-                "Attraction",
-                "Dislike"
+                "Craving"
             ],
-            "explanation": "Wanting to avoid seafood after getting sick shows a strong feeling against it, so [TARGET] means DISLIKE.",
+            "explanation": "The word 'unlike' contrasts [TARGET] with a brother who 'devoured every spoonful,' so it must mean the opposite, which is DISLIKE.",
             "correctAnswer": "Dislike",
             "clueType": "antonym",
             "evidenceWords": [
-                "since",
-                "getting"
+                "Unlike",
+                "devoured every spoonful",
+                "gagging at just the smell"
             ]
         },
         {
@@ -48,20 +49,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L61_Q3",
-            "sentence": "The young intern showed great [TARGET] toward the senior engineer's decades of experience.",
-            "hint": "This word describes yielding to someone else's greater experience or authority.",
+            "sentence": "The young lawyer spoke with [TARGET] toward the retired judge, which means she showed deep respect for his experience by letting him speak first at every meeting.",
+            "hint": "This word describes deferring to someone's authority or experience.",
             "options": [
-                "Contempt",
-                "Defiance",
                 "Disrespect",
-                "Respect"
+                "Rudeness",
+                "Respect",
+                "Contempt"
             ],
-            "explanation": "Showing high regard for decades of experience is showing respect, so [TARGET] means RESPECT.",
+            "explanation": "The sentence defines [TARGET] as showing 'deep respect for his experience,' so [TARGET] means RESPECT.",
             "correctAnswer": "Respect",
             "clueType": "definition",
             "evidenceWords": [
-                "young",
-                "intern"
+                "which means",
+                "deep respect"
             ]
         },
         {
@@ -69,20 +70,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L62_Q1",
-            "sentence": "After being scammed twice, she became [TARGET] of any 'amazing deal' online.",
-            "hint": "This word describes assuming the worst about people's motives.",
+            "sentence": "After years in politics, the reporter had grown [TARGET]: she assumed every promise was a lie, doubted every politician's motives, and rolled her eyes at any talk of change.",
+            "hint": "This word describes distrusting people's motives, expecting the worst of them.",
             "options": [
-                "Idealistic",
                 "Trusting",
+                "Hopeful",
                 "Optimistic",
                 "Distrustful"
             ],
-            "explanation": "Distrusting any 'amazing deal' after being scammed shows assuming the worst, so [TARGET] means DISTRUSTFUL.",
+            "explanation": "Assuming every promise is a lie, doubting motives, and rolling her eyes at hope are all examples of distrusting people's intentions, so [TARGET] means DISTRUSTFUL.",
             "correctAnswer": "Distrustful",
             "clueType": "example",
             "evidenceWords": [
-                "After",
-                "being"
+                "assumed every promise was a lie",
+                "doubted every politician's motives",
+                "rolled her eyes"
             ]
         },
         {
@@ -90,20 +92,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L62_Q2",
-            "sentence": "She felt [TARGET] about the job offer, excited about the salary but worried about moving cities.",
-            "hint": "This word describes having two opposite feelings at the same time.",
+            "sentence": "One minute she was packing her bags for the new city, the next she was unpacking them, and by the third time she called to ask her mom whether she was making a mistake — she felt completely [TARGET] about the move.",
+            "hint": "This word describes having mixed or conflicting feelings about something.",
             "options": [
+                "Torn",
                 "Certain",
-                "Decisive",
-                "Resolved",
-                "Undecided"
+                "Decided",
+                "Confident"
             ],
-            "explanation": "Feeling excited and worried at the same time about one decision shows having opposite feelings, so [TARGET] means UNDECIDED.",
-            "correctAnswer": "Undecided",
+            "explanation": "Packing then unpacking, and repeatedly questioning the decision, show conflicting feelings, even without a direct clue word, so [TARGET] means TORN.",
+            "correctAnswer": "Torn",
             "clueType": "inference",
             "evidenceWords": [
-                "about",
-                "offer"
+                "packing her bags",
+                "unpacking them",
+                "to ask her mom whether she was making a mistake"
             ]
         },
         {
@@ -111,20 +114,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L62_Q3",
-            "sentence": "The accountant made an [TARGET] error, billing the client one million dollars instead of one thousand.",
-            "hint": "This word describes a mistake so bad it shocks people.",
+            "sentence": "The referee's missed call was [TARGET] and outrageous, so obvious that even fans of the winning team booed the decision.",
+            "hint": "This word describes something shockingly bad or wrong, impossible to overlook.",
             "options": [
-                "Negligible",
                 "Minor",
                 "Outrageous",
-                "Trivial"
+                "Trivial",
+                "Unnoticeable"
             ],
-            "explanation": "Billing one million instead of one thousand is a mistake shocking enough to stand out, so [TARGET] means OUTRAGEOUS.",
+            "explanation": "The word 'and' links [TARGET] to 'outrageous,' and fans of the winning team booing confirms it, so [TARGET] means OUTRAGEOUS.",
             "correctAnswer": "Outrageous",
             "clueType": "synonym",
             "evidenceWords": [
-                "accountant",
-                "error"
+                "and outrageous",
+                "even fans of the winning team booed"
             ]
         },
         {
@@ -132,20 +135,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L63_Q1",
-            "sentence": "It was [TARGET] that she found her lost ring just minutes before throwing out the trash.",
-            "hint": "This word describes a happy accident, not planned at all.",
+            "sentence": "Unlike the carefully planned business merger that took two years of negotiations, meeting her future business partner at a random coffee shop was entirely [TARGET].",
+            "hint": "This word describes something happening by lucky chance, not planning.",
             "options": [
-                "Disastrous",
-                "Lucky",
-                "Unfortunate",
-                "Unlucky"
+                "Planned",
+                "Deliberate",
+                "Accidental",
+                "Calculated"
             ],
-            "explanation": "Finding a lost ring right before throwing out the trash is a happy, unplanned accident, so [TARGET] means LUCKY.",
-            "correctAnswer": "Lucky",
+            "explanation": "The word 'unlike' contrasts [TARGET] with a merger that 'took two years of negotiations,' so it must mean the opposite, which is ACCIDENTAL.",
+            "correctAnswer": "Accidental",
             "clueType": "antonym",
             "evidenceWords": [
-                "found",
-                "minutes"
+                "Unlike",
+                "two years of negotiations",
+                "random coffee shop"
             ]
         },
         {
@@ -153,20 +157,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L63_Q2",
-            "sentence": "After years in customer service, he seemed [TARGET] to even the rudest complaints.",
-            "hint": "This word describes not being bothered by something that would bother most people.",
+            "sentence": "The new raincoat was [TARGET], which means water could not soak through it no matter how hard the storm poured.",
+            "hint": "This word describes something that cannot be affected or penetrated by something else.",
             "options": [
-                "Unaffected",
-                "Sensitive",
-                "Susceptible",
-                "Vulnerable"
+                "Absorbent",
+                "Soaked",
+                "Permeable",
+                "Impenetrable"
             ],
-            "explanation": "Not being bothered by even the rudest complaints shows being unaffected, so [TARGET] means UNAFFECTED.",
-            "correctAnswer": "Unaffected",
+            "explanation": "The sentence defines [TARGET] as something 'water could not soak through,' so [TARGET] means IMPENETRABLE.",
+            "correctAnswer": "Impenetrable",
             "clueType": "definition",
             "evidenceWords": [
-                "After",
-                "years"
+                "which means",
+                "could not soak through"
             ]
         },
         {
@@ -174,20 +178,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L63_Q3",
-            "sentence": "The board made a [TARGET] decision to wait one more quarter before expanding overseas.",
-            "hint": "This word describes a careful, well-reasoned choice.",
+            "sentence": "The principal's decision was [TARGET]: she consulted teachers, reviewed the school's policies, weighed both sides fairly, and only then announced her final ruling.",
+            "hint": "This word describes showing good judgment and careful thought before deciding.",
             "options": [
-                "Foolish",
-                "Reckless",
-                "Sensible",
-                "Rash"
+                "Well-reasoned",
+                "Careless",
+                "Impulsive",
+                "Hasty"
             ],
-            "explanation": "Waiting one more quarter before a big move shows a careful, well-reasoned choice, so [TARGET] means SENSIBLE.",
-            "correctAnswer": "Sensible",
+            "explanation": "Consulting teachers, reviewing policies, and weighing both sides before deciding are all examples of careful, wise judgment, so [TARGET] means WELL-REASONED.",
+            "correctAnswer": "Well-reasoned",
             "clueType": "example",
             "evidenceWords": [
-                "board",
-                "decision"
+                "consulted teachers",
+                "reviewed the school's policies",
+                "weighed both sides fairly"
             ]
         },
         {
@@ -195,20 +200,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L64_Q1",
-            "sentence": "Despite the fever, the patient remained [TARGET] and answered every question correctly.",
-            "hint": "This word describes thinking clearly even under difficult conditions.",
+            "sentence": "Despite the late hour and the complexity of the topic, the professor explained the theory so clearly that every single question in the room was answered before it was even fully asked — her explanation was remarkably [TARGET].",
+            "hint": "This word describes something expressed in a way that's easy to understand.",
             "options": [
-                "Clear-minded",
-                "Disoriented",
-                "Delirious",
-                "Confused"
+                "Confusing",
+                "Clear",
+                "Muddled",
+                "Baffling"
             ],
-            "explanation": "Answering every question correctly despite a fever shows thinking clearly, so [TARGET] means CLEAR-MINDED.",
-            "correctAnswer": "Clear-minded",
+            "explanation": "A complex topic explained so clearly that questions were answered before being asked shows a very clear explanation, even without a direct clue word, so [TARGET] means CLEAR.",
+            "correctAnswer": "Clear",
             "clueType": "inference",
             "evidenceWords": [
-                "Despite",
-                "fever"
+                "explained the theory so clearly",
+                "answered before it was even fully asked"
             ]
         },
         {
@@ -216,20 +221,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L64_Q2",
-            "sentence": "He stayed surprisingly [TARGET] about missing his flight, simply shrugging and booking another.",
-            "hint": "This word describes acting unbothered, almost too relaxed.",
+            "sentence": "As sirens wailed and everyone else scrambled for the exits, Theo stayed [TARGET] and unbothered, calmly finishing his sandwich.",
+            "hint": "This word describes appearing calm and unconcerned, even when something urgent is happening.",
             "options": [
-                "Casual",
-                "Worried",
-                "Anxious",
-                "Frantic"
+                "Frantic",
+                "Panicked",
+                "Unbothered",
+                "Alarmed"
             ],
-            "explanation": "Simply shrugging and booking another flight shows acting unbothered, so [TARGET] means CASUAL.",
-            "correctAnswer": "Casual",
+            "explanation": "The word 'and' links [TARGET] to 'unbothered,' and calmly finishing his sandwich confirms it, so [TARGET] means UNBOTHERED.",
+            "correctAnswer": "Unbothered",
             "clueType": "synonym",
             "evidenceWords": [
-                "stayed",
-                "surprisingly"
+                "and unbothered",
+                "calmly finishing his sandwich"
             ]
         },
         {
@@ -237,20 +242,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L64_Q3",
-            "sentence": "Doctors warned that the [TARGET] effects of the habit might not appear for years.",
-            "hint": "This word describes harm that spreads slowly and is hard to notice at first.",
+            "sentence": "Unlike the harmless rumor that faded within a day, the false story about the company's finances was [TARGET], quietly destroying investor trust for months before anyone noticed the damage.",
+            "hint": "This word describes something damaging in a slow, hard-to-notice way.",
             "options": [
+                "Harmless",
                 "Beneficial",
-                "Destructive",
-                "Helpful",
-                "Harmless"
+                "Safe",
+                "Harmful"
             ],
-            "explanation": "Effects that don't appear for years but still cause harm describe slow, hidden damage, so [TARGET] means DESTRUCTIVE.",
-            "correctAnswer": "Destructive",
+            "explanation": "The word 'unlike' contrasts [TARGET] with a rumor that was 'harmless,' so it must mean the opposite, which is HARMFUL.",
+            "correctAnswer": "Harmful",
             "clueType": "antonym",
             "evidenceWords": [
-                "Doctors",
-                "warned"
+                "Unlike",
+                "harmless rumor",
+                "destroying investor trust for months"
             ]
         },
         {
@@ -258,20 +264,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L65_Q1",
-            "sentence": "His [TARGET] plan to build a rocket in his garage impressed his friends but worried his bank manager.",
-            "hint": "This word describes an idealistic plan that ignores practical limits.",
+            "sentence": "His plan to end world hunger single-handedly by next Tuesday was [TARGET], which means it was wildly idealistic and impossible to actually achieve.",
+            "hint": "This word describes an idea that is wildly idealistic and impractical.",
             "options": [
-                "Practical",
                 "Unrealistic",
+                "Practical",
                 "Realistic",
-                "Sensible"
+                "Achievable"
             ],
-            "explanation": "Impressing friends while worrying a bank manager shows an idealistic plan ignoring practical limits, so [TARGET] means UNREALISTIC.",
+            "explanation": "The sentence defines [TARGET] as 'wildly idealistic and impossible to actually achieve,' so [TARGET] means UNREALISTIC.",
             "correctAnswer": "Unrealistic",
             "clueType": "definition",
             "evidenceWords": [
-                "build",
-                "rocket"
+                "which means",
+                "wildly idealistic",
+                "impossible to actually achieve"
             ]
         },
         {
@@ -279,20 +286,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L65_Q2",
-            "sentence": "Despite three rejections, she remained [TARGET] in her decision to start the business.",
-            "hint": "This word describes someone who won't be shaken from their decision, no matter the setbacks.",
+            "sentence": "Despite three rejections and a broken leg mid-training, the climber remained [TARGET]: she kept applying for permits, kept training on crutches, and reached the summit the following spring.",
+            "hint": "This word describes staying firm and not giving up despite obstacles.",
             "options": [
+                "Wavering",
+                "Determined",
                 "Uncertain",
-                "Firm",
-                "Hesitant",
-                "Wavering"
+                "Hesitant"
             ],
-            "explanation": "Staying committed after three rejections shows being firmly committed, so [TARGET] means FIRM.",
-            "correctAnswer": "Firm",
+            "explanation": "Continuing to apply, training on crutches, and reaching the summit despite setbacks are all examples of firm determination, so [TARGET] means DETERMINED.",
+            "correctAnswer": "Determined",
             "clueType": "example",
             "evidenceWords": [
-                "Despite",
-                "three"
+                "kept applying for permits",
+                "kept training on crutches",
+                "reached the summit"
             ]
         },
         {
@@ -300,20 +308,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L65_Q3",
-            "sentence": "The soldier remained [TARGET] during the painful treatment, not showing a single wince.",
-            "hint": "This word describes hiding pain or emotion without complaint.",
+            "sentence": "Even as the doctor delivered difficult news, he sat perfectly still, his face showing no change, and simply nodded once before calmly asking his next question — his composure was almost [TARGET].",
+            "hint": "This word describes enduring hardship without showing emotion.",
             "options": [
-                "Dramatic",
+                "Emotional",
+                "Distraught",
                 "Unemotional",
-                "Expressive",
-                "Emotional"
+                "Hysterical"
             ],
-            "explanation": "Not showing a single wince during painful treatment shows hiding emotion without complaint, so [TARGET] means UNEMOTIONAL.",
+            "explanation": "Sitting still, showing no change in expression, and calmly responding to hard news all show a lack of visible emotion, even without a direct clue word, so [TARGET] means UNEMOTIONAL.",
             "correctAnswer": "Unemotional",
             "clueType": "inference",
             "evidenceWords": [
-                "soldier",
-                "remained"
+                "sat perfectly still",
+                "face showing no change",
+                "calmly asking his next question"
             ]
         },
         {
@@ -321,20 +330,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L66_Q1",
-            "sentence": "The company's [TARGET] connection to the supplier broke down after just one late shipment.",
-            "hint": "This word describes a relationship or argument that is easily broken.",
+            "sentence": "The connection between the two companies was [TARGET] and weak, based on nothing more than a single email exchanged five years earlier.",
+            "hint": "This word describes something flimsy and barely holding together.",
             "options": [
                 "Solid",
-                "Weak",
+                "Strong",
                 "Firm",
-                "Strong"
+                "Weak"
             ],
-            "explanation": "Breaking down after just one late shipment shows a connection that was easily broken, so [TARGET] means WEAK.",
+            "explanation": "The word 'and' links [TARGET] to 'weak,' and a single five-year-old email confirms it, so [TARGET] means WEAK.",
             "correctAnswer": "Weak",
             "clueType": "synonym",
             "evidenceWords": [
-                "company's",
-                "connection"
+                "and weak",
+                "a single email exchanged five years earlier"
             ]
         },
         {
@@ -342,20 +351,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L66_Q2",
-            "sentence": "The company reported [TARGET] growth, doubling its users in a single month.",
+            "sentence": "Unlike the routine seasonal flooding the town usually saw, this year's storm brought water levels that were [TARGET], rising higher than any record on the books.",
             "hint": "This word describes something that has never happened before.",
             "options": [
+                "Unheard-of",
                 "Routine",
                 "Typical",
-                "Unheard-of",
-                "Common"
+                "Usual"
             ],
-            "explanation": "Doubling users in a single month had never happened before, so [TARGET] means UNHEARD-OF.",
+            "explanation": "The word 'unlike' contrasts [TARGET] with 'routine seasonal flooding,' so it must mean the opposite, which is UNHEARD-OF.",
             "correctAnswer": "Unheard-of",
             "clueType": "antonym",
             "evidenceWords": [
-                "company",
-                "reported"
+                "Unlike",
+                "routine seasonal flooding",
+                "higher than any record on the books"
             ]
         },
         {
@@ -363,20 +373,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L66_Q3",
-            "sentence": "The [TARGET] host kept the audience laughing and energized throughout the entire show.",
-            "hint": "This word describes someone full of energy and spirit.",
+            "sentence": "Everyone at the reunion remembered Aunt Rosa as [TARGET], which means she was full of energy and enthusiasm, always the first one dancing and the last one to leave.",
+            "hint": "This word describes being spirited and full of energy.",
             "options": [
-                "Lifeless",
+                "Dull",
                 "Lively",
-                "Subdued",
-                "Dull"
+                "Lifeless",
+                "Withdrawn"
             ],
-            "explanation": "Keeping an audience laughing and energized throughout the show shows being full of energy, so [TARGET] means LIVELY.",
+            "explanation": "The sentence defines [TARGET] as being 'full of energy and enthusiasm,' so [TARGET] means LIVELY.",
             "correctAnswer": "Lively",
             "clueType": "definition",
             "evidenceWords": [
-                "audience",
-                "laughing"
+                "which means",
+                "full of energy and enthusiasm"
             ]
         },
         {
@@ -384,20 +394,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L67_Q1",
-            "sentence": "Looking at old photos, Grandpa got a [TARGET] look on his face, remembering his childhood farm.",
-            "hint": "This word describes a gentle sadness when remembering the past.",
+            "sentence": "Flipping through the old photo album, Grandpa was [TARGET]: he traced the edges of each faded picture slowly, sighed at the ones from his childhood home, and smiled sadly at the empty chair where his brother used to sit.",
+            "hint": "This word describes a gentle, sad longing for something from the past.",
             "options": [
-                "Detached",
+                "Indifferent",
+                "Unmoved",
                 "Nostalgic",
-                "Aloof",
-                "Unconcerned"
+                "Cheerful"
             ],
-            "explanation": "Remembering a childhood farm while looking at old photos shows gentle sadness about the past, so [TARGET] means NOSTALGIC.",
+            "explanation": "Tracing old photos slowly, sighing at childhood memories, and smiling sadly at an empty chair are all examples of a gentle longing for the past, so [TARGET] means NOSTALGIC.",
             "correctAnswer": "Nostalgic",
             "clueType": "example",
             "evidenceWords": [
-                "Looking",
-                "photos"
+                "traced the edges of each faded picture",
+                "sighed at the ones from his childhood",
+                "smiled sadly"
             ]
         },
         {
@@ -405,20 +416,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L67_Q2",
-            "sentence": "The [TARGET] volunteer spent every weekend organizing the charity's fundraising events.",
-            "hint": "This word describes intense enthusiasm for a cause.",
+            "sentence": "She knocked on two hundred doors before lunch, stayed up until midnight designing flyers, and spent her entire weekend convincing neighbors to vote for the new park — few volunteers were as [TARGET] as she was.",
+            "hint": "This word describes having intense enthusiasm for a cause.",
             "options": [
+                "Indifferent",
                 "Apathetic",
-                "Passionate",
-                "Lukewarm",
-                "Indifferent"
+                "Half-hearted",
+                "Passionate"
             ],
-            "explanation": "Spending every weekend organizing events shows intense enthusiasm for the cause, so [TARGET] means PASSIONATE.",
+            "explanation": "Knocking on two hundred doors, working until midnight, and giving up a whole weekend all show intense enthusiasm for the cause, even without a direct clue word, so [TARGET] means PASSIONATE.",
             "correctAnswer": "Passionate",
             "clueType": "inference",
             "evidenceWords": [
-                "volunteer",
-                "spent"
+                "two hundred doors before lunch",
+                "until midnight designing flyers",
+                "entire weekend"
             ]
         },
         {
@@ -426,20 +438,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L67_Q3",
-            "sentence": "The teacher sent the student to the principal for [TARGET] remarks made during class.",
-            "hint": "This word describes rude behavior shown toward an authority figure.",
+            "sentence": "The new intern was [TARGET] and disrespectful, rolling his eyes whenever the manager gave instructions and talking back during the meeting.",
+            "hint": "This word describes being rude toward authority.",
             "options": [
-                "Courteous",
-                "Respectful",
+                "Disrespectful",
                 "Polite",
-                "Disrespectful"
+                "Courteous",
+                "Respectful"
             ],
-            "explanation": "Being sent to the principal for remarks made in class shows rude behavior toward authority, so [TARGET] means DISRESPECTFUL.",
+            "explanation": "The word 'and' links [TARGET] to 'disrespectful,' and rolling his eyes and talking back confirm it, so [TARGET] means DISRESPECTFUL.",
             "correctAnswer": "Disrespectful",
             "clueType": "synonym",
             "evidenceWords": [
-                "teacher",
-                "student"
+                "and disrespectful",
+                "rolling his eyes",
+                "talking back"
             ]
         },
         {
@@ -447,20 +460,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L68_Q1",
-            "sentence": "The [TARGET] surface of the mountain lake reflected the sky like a mirror.",
-            "hint": "This word describes a scene so still and peaceful that nothing seems to disturb it.",
+            "sentence": "Unlike the crashing waves at the surf beach nearby, the water in the cove was [TARGET], smooth as glass and barely rippling in the breeze.",
+            "hint": "This word describes something peaceful and undisturbed.",
             "options": [
-                "Agitated",
-                "Calm",
                 "Turbulent",
+                "Calm",
+                "Choppy",
                 "Stormy"
             ],
-            "explanation": "Reflecting the sky like a mirror shows a calm, undisturbed scene, so [TARGET] means CALM.",
+            "explanation": "The word 'unlike' contrasts [TARGET] with 'crashing waves,' so it must mean the opposite, which is CALM.",
             "correctAnswer": "Calm",
             "clueType": "antonym",
             "evidenceWords": [
-                "surface",
-                "mountain"
+                "Unlike",
+                "crashing waves",
+                "smooth as glass"
             ]
         },
         {
@@ -468,20 +482,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L68_Q2",
-            "sentence": "The printer's [TARGET] habit of jamming on the last page drove the whole office crazy.",
-            "hint": "This word describes something that causes ongoing irritation.",
+            "sentence": "The printer's habit of jamming right before every deadline was [TARGET], which means it was deeply annoying and frustrating to deal with over and over.",
+            "hint": "This word describes something that causes ongoing annoyance or frustration.",
             "options": [
-                "Delightful",
-                "Pleasing",
+                "Pleasant",
+                "Satisfying",
                 "Annoying",
-                "Satisfying"
+                "Delightful"
             ],
-            "explanation": "Driving the whole office crazy with a jamming habit shows ongoing irritation, so [TARGET] means ANNOYING.",
+            "explanation": "The sentence defines [TARGET] as 'deeply annoying and frustrating,' so [TARGET] means ANNOYING.",
             "correctAnswer": "Annoying",
             "clueType": "definition",
             "evidenceWords": [
-                "printer's",
-                "habit"
+                "which means",
+                "deeply annoying and frustrating"
             ]
         },
         {
@@ -489,20 +503,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L68_Q3",
-            "sentence": "The [TARGET] barking from the neighbor's dog kept the whole street awake.",
-            "hint": "This word describes something that never stops, going on and on.",
+            "sentence": "The dog's barking was [TARGET]: it started at dawn, continued through breakfast, kept going all afternoon, and hadn't stopped once by the time the neighbors called to complain.",
+            "hint": "This word describes something that continues without ever stopping.",
             "options": [
-                "Constant",
+                "Occasional",
                 "Intermittent",
-                "Sporadic",
-                "Occasional"
+                "Rare",
+                "Nonstop"
             ],
-            "explanation": "Keeping the whole street awake shows the barking never stopped, so [TARGET] means CONSTANT.",
-            "correctAnswer": "Constant",
+            "explanation": "Barking from dawn through the whole day without a single pause is an example of something continuing nonstop, so [TARGET] means NONSTOP.",
+            "correctAnswer": "Nonstop",
             "clueType": "example",
             "evidenceWords": [
-                "barking",
-                "neighbor's"
+                "started at dawn",
+                "continued through breakfast",
+                "hadn't stopped once"
             ]
         },
         {
@@ -510,20 +525,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L69_Q1",
-            "sentence": "After the merger, many employees found themselves in an [TARGET] position, unsure if their jobs were safe.",
-            "hint": "This word describes a situation that could collapse at any moment.",
+            "sentence": "The old ladder wobbled with every step, one rung had already cracked, and the ground beneath it had started to soften from the rain — climbing it felt [TARGET].",
+            "hint": "This word describes a situation that is shaky and could easily go wrong.",
             "options": [
+                "Unstable",
                 "Secure",
                 "Stable",
-                "Steady",
-                "Unstable"
+                "Solid"
             ],
-            "explanation": "Being unsure if their jobs were safe shows a situation that could collapse at any moment, so [TARGET] means UNSTABLE.",
+            "explanation": "A wobbling ladder, a cracked rung, and softening ground all point to an unstable, risky situation, even without a direct clue word, so [TARGET] means UNSTABLE.",
             "correctAnswer": "Unstable",
             "clueType": "inference",
             "evidenceWords": [
-                "After",
-                "merger"
+                "wobbled with every step",
+                "one rung had already cracked",
+                "ground beneath it had started to soften"
             ]
         },
         {
@@ -531,20 +547,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L69_Q2",
-            "sentence": "Teenagers often have an [TARGET] appetite, finishing huge meals and still wanting snacks.",
-            "hint": "This word describes a desire that can never fully be satisfied.",
+            "sentence": "The toddler had an [TARGET] and unquenchable curiosity, asking 'why' about literally everything she saw for the entire car ride home.",
+            "hint": "This word describes a desire so strong it can never be fully satisfied.",
             "options": [
-                "Content",
-                "Unsatisfiable",
-                "Fulfilled",
-                "Satisfied"
+                "Limited",
+                "Unquenchable",
+                "Satisfied",
+                "Modest"
             ],
-            "explanation": "Finishing huge meals and still wanting snacks shows a desire that can never be satisfied, so [TARGET] means UNSATISFIABLE.",
-            "correctAnswer": "Unsatisfiable",
+            "explanation": "The word 'and' links [TARGET] to 'unquenchable,' and asking 'why' about everything the whole ride confirms it, so [TARGET] means UNQUENCHABLE.",
+            "correctAnswer": "Unquenchable",
             "clueType": "synonym",
             "evidenceWords": [
-                "Teenagers",
-                "often"
+                "and unquenchable",
+                "the entire car ride home"
             ]
         },
         {
@@ -552,20 +568,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L69_Q3",
-            "sentence": "The chef's [TARGET] moods meant the kitchen staff never knew if he'd be calm or shouting.",
-            "hint": "This word describes moods that change suddenly and without warning.",
+            "sentence": "Unlike his steady, even-tempered sister, Dev was [TARGET], laughing loudly one minute and snapping in anger the next, with no warning in between.",
+            "hint": "This word describes moods that change suddenly and unpredictably.",
             "options": [
-                "Unpredictable",
+                "Steady",
                 "Consistent",
-                "Predictable",
-                "Balanced"
+                "Unpredictable",
+                "Even-tempered"
             ],
-            "explanation": "Never knowing if he'd be calm or shouting shows moods that change suddenly, so [TARGET] means UNPREDICTABLE.",
+            "explanation": "The word 'unlike' contrasts [TARGET] with a sister who is 'steady, even-tempered,' so it must mean the opposite, which is UNPREDICTABLE.",
             "correctAnswer": "Unpredictable",
             "clueType": "antonym",
             "evidenceWords": [
-                "chef's",
-                "moods"
+                "Unlike",
+                "steady, even-tempered",
+                "no warning in between"
             ]
         },
         {
@@ -573,20 +590,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L70_Q1",
-            "sentence": "The athlete's [TARGET] spirit kept her training even after two knee surgeries.",
-            "hint": "This word describes a spirit that simply cannot be defeated.",
+            "sentence": "Her spirit was [TARGET], which means nothing — not the injury, not the losses, not the years of setbacks — could ever fully defeat her determination.",
+            "hint": "This word describes a spirit or will that cannot be defeated or broken.",
             "options": [
-                "Submissive",
-                "Unstoppable",
-                "Yielding",
-                "Defeated"
+                "Fragile",
+                "Breakable",
+                "Weak",
+                "Unbeatable"
             ],
-            "explanation": "Continuing to train after two surgeries shows a spirit that cannot be defeated, so [TARGET] means UNSTOPPABLE.",
-            "correctAnswer": "Unstoppable",
+            "explanation": "The sentence defines [TARGET] as something 'nothing... could ever fully defeat,' so [TARGET] means UNBEATABLE.",
+            "correctAnswer": "Unbeatable",
             "clueType": "definition",
             "evidenceWords": [
-                "athlete's",
-                "spirit"
+                "which means",
+                "could ever fully defeat"
             ]
         },
         {
@@ -594,20 +611,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L70_Q2",
-            "sentence": "His [TARGET] tone, explaining basic math to the senior engineer, annoyed everyone in the room.",
-            "hint": "This word describes talking down to someone as if they're less capable.",
+            "sentence": "The senior developer was [TARGET] toward the new hire: he explained basic terms in an exaggerated slow voice, smirked at her questions, and said 'good try' after she fixed the bug correctly.",
+            "hint": "This word describes speaking to someone as if they were less intelligent than you.",
             "options": [
-                "Respectful",
-                "Humble",
                 "Patronizing",
-                "Gracious"
+                "Respectful",
+                "Supportive",
+                "Encouraging"
             ],
-            "explanation": "Explaining basic math to a senior engineer treats them as less capable, so [TARGET] means PATRONIZING.",
+            "explanation": "Speaking in an exaggerated slow voice, smirking at questions, and saying 'good try' after a correct fix are all examples of talking down to someone, so [TARGET] means PATRONIZING.",
             "correctAnswer": "Patronizing",
             "clueType": "example",
             "evidenceWords": [
-                "explaining",
-                "basic"
+                "exaggerated slow voice",
+                "smirked at her questions",
+                "good try"
             ]
         },
         {
@@ -615,20 +633,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L70_Q3",
-            "sentence": "The doctor reassured her that the small skin spot was completely [TARGET].",
-            "hint": "This word describes something that seems concerning but causes no real harm.",
+            "sentence": "The small brown spider sat motionless in the corner of the garden, no venom, no bite, completely unable to harm even the tiniest insect nearby — as [TARGET] as spiders come.",
+            "hint": "This word describes something that poses no real danger.",
             "options": [
-                "Harmless",
-                "Toxic",
                 "Dangerous",
-                "Harmful"
+                "Harmless",
+                "Venomous",
+                "Deadly"
             ],
-            "explanation": "Reassuring her there was nothing to worry about shows it causes no real harm, so [TARGET] means HARMLESS.",
+            "explanation": "No venom, no bite, and being unable to harm anything all show something harmless, even without a direct clue word, so [TARGET] means HARMLESS.",
             "correctAnswer": "Harmless",
             "clueType": "inference",
             "evidenceWords": [
-                "doctor",
-                "reassured"
+                "no venom, no bite",
+                "unable to harm even the tiniest insect"
             ]
         }
     ],

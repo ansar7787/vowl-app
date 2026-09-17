@@ -6,20 +6,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L141_Q1",
-            "sentence": "The soldier was disciplined for [TARGET] after he refused a direct order from his commanding officer.",
-            "hint": "From Latin in- + subordinare, 'not placing under order' - refusing to follow those in charge.",
+            "sentence": "The soldier was court-martialed for [TARGET], or defiance, after refusing three direct orders from his commanding officer.",
+            "hint": "This word describes refusing to obey someone in authority.",
             "options": [
-                "Cooperation",
+                "Defiance",
                 "Obedience",
-                "Disobedience",
-                "Compliance"
+                "Compliance",
+                "Submission"
             ],
-            "explanation": "Refusing a direct order from a commanding officer shows refusing to follow those in charge, so [TARGET] means DISOBEDIENCE.",
-            "correctAnswer": "Disobedience",
+            "explanation": "The word 'or' signals that [TARGET] means the same as 'defiance,' so [TARGET] means DEFIANCE.",
+            "correctAnswer": "Defiance",
             "clueType": "synonym",
             "evidenceWords": [
-                "soldier",
-                "disciplined"
+                "or defiance",
+                "refusing three direct orders"
             ]
         },
         {
@@ -27,20 +27,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L141_Q2",
-            "sentence": "His [TARGET] act of selling trade secrets to a rival cost him his career and his closest friendships.",
-            "hint": "From Latin per-, 'through,' and fides, 'faith' - breaking faith completely.",
+            "sentence": "Unlike his loyal business partner who had stood by him through every setback, the [TARGET] investor secretly sold his shares to a rival the moment the company hit trouble.",
+            "hint": "This word describes being deliberately deceitful and disloyal, betraying trust.",
             "options": [
-                "Treacherous",
                 "Loyal",
+                "Treacherous",
                 "Faithful",
                 "Trustworthy"
             ],
-            "explanation": "Selling trade secrets and losing friendships shows breaking trust completely, so [TARGET] means TREACHEROUS.",
+            "explanation": "The word 'unlike' contrasts [TARGET] with a partner who 'stood by him through every setback,' so it must mean the opposite, which is TREACHEROUS.",
             "correctAnswer": "Treacherous",
             "clueType": "antonym",
             "evidenceWords": [
-                "selling",
-                "trade"
+                "Unlike",
+                "stood by him through every setback",
+                "secretly sold his shares to a rival"
             ]
         },
         {
@@ -48,20 +49,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L141_Q3",
-            "sentence": "Art critics praised the statue's classical [TARGET], comparing it to ancient Greek sculpture.",
-            "hint": "From Latin pulcher, 'handsome, fair' - a formal word for physical loveliness.",
+            "sentence": "The painting was famous for capturing the model's [TARGET], which means her striking physical beauty was rendered so vividly that visitors traveled for hours just to see it.",
+            "hint": "This word describes striking physical attractiveness.",
             "options": [
-                "Homeliness",
-                "Beauty",
                 "Ugliness",
-                "Plainness"
+                "Plainness",
+                "Beauty",
+                "Homeliness"
             ],
-            "explanation": "Comparing a statue's form to ancient Greek sculpture praises its physical beauty, so [TARGET] means BEAUTY.",
+            "explanation": "The sentence defines [TARGET] as 'striking physical beauty,' so [TARGET] means BEAUTY.",
             "correctAnswer": "Beauty",
             "clueType": "definition",
             "evidenceWords": [
-                "critics",
-                "praised"
+                "which means",
+                "striking physical beauty"
             ]
         },
         {
@@ -69,20 +70,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L142_Q1",
-            "sentence": "The entire village gathered for the elder's [TARGET], following traditions passed down for generations.",
-            "hint": "From Latin obsequium, 'compliance' - a ceremony honoring the dead.",
+            "sentence": "The village held a full [TARGET] for the fallen chief: bells tolled through the night, mourners walked in a slow procession, and the elders recited prayers over his grave until dawn.",
+            "hint": "This word describes a funeral ceremony or rite.",
             "options": [
-                "Wedding",
-                "Graduation",
-                "Funeral",
-                "Birthday"
+                "Wedding celebration",
+                "Birthday party",
+                "Victory parade",
+                "Funeral rite"
             ],
-            "explanation": "A gathering following generations of tradition to honor an elder describes a funeral ceremony, so [TARGET] means FUNERAL.",
-            "correctAnswer": "Funeral",
+            "explanation": "Tolling bells, a slow procession, and prayers recited over a grave are all examples of a funeral ceremony, so [TARGET] means FUNERAL RITE.",
+            "correctAnswer": "Funeral rite",
             "clueType": "example",
             "evidenceWords": [
-                "entire",
-                "village"
+                "bells tolled through the night",
+                "mourners walked in a slow procession",
+                "recited prayers over his grave"
             ]
         },
         {
@@ -90,20 +92,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L142_Q2",
-            "sentence": "Unlike most textbooks, this one explained quantum physics in [TARGET] language a teenager could follow.",
-            "hint": "From Latin perspicere, 'to see through clearly' - expressed with total clarity.",
+            "sentence": "Even the students who usually struggled with the topic followed her explanation on the first try, and no one in the room raised a single question when she finished — her lecture was remarkably [TARGET].",
+            "hint": "This word describes something expressed with such clarity that it's easy to understand.",
             "options": [
-                "Murky",
-                "Lucid",
-                "Baffling",
-                "Confusing"
+                "Clear",
+                "Confusing",
+                "Muddled",
+                "Unclear"
             ],
-            "explanation": "Explaining quantum physics so a teenager could follow it shows expressing something with total clarity, so [TARGET] means LUCID.",
-            "correctAnswer": "Lucid",
+            "explanation": "Students who usually struggle understanding on the first try, with no questions afterward, shows a very clear explanation, even without a direct clue word, so [TARGET] means CLEAR.",
+            "correctAnswer": "Clear",
             "clueType": "inference",
             "evidenceWords": [
-                "Unlike",
-                "textbooks"
+                "followed her explanation on the first try",
+                "no one in the room raised a single question"
             ]
         },
         {
@@ -111,20 +113,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L142_Q3",
-            "sentence": "His [TARGET] spending on luxury cars left him bankrupt within three years of his promotion.",
-            "hint": "From Latin profligare, 'to ruin' - spending without any restraint.",
+            "sentence": "The heir was [TARGET] and wasteful, burning through his entire inheritance on yachts and parties within just two years.",
+            "hint": "This word describes being recklessly extravagant with money.",
             "options": [
-                "Thrifty",
-                "Economical",
                 "Frugal",
-                "Wasteful"
+                "Wasteful",
+                "Thrifty",
+                "Careful"
             ],
-            "explanation": "Going bankrupt within three years from luxury car spending shows spending without restraint, so [TARGET] means WASTEFUL.",
+            "explanation": "The word 'and' links [TARGET] to 'wasteful,' and burning through an entire inheritance in two years confirms it, so [TARGET] means WASTEFUL.",
             "correctAnswer": "Wasteful",
             "clueType": "synonym",
             "evidenceWords": [
-                "spending",
-                "luxury"
+                "and wasteful",
+                "burning through his entire inheritance"
             ]
         },
         {
@@ -132,20 +134,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L143_Q1",
-            "sentence": "The volcano had been [TARGET] for two hundred years before the sudden eruption.",
-            "hint": "From Latin quiescere, 'to rest' - at rest, showing no activity.",
+            "sentence": "Unlike the violently erupting volcano across the strait, the one near the village had been [TARGET] for over two hundred years, with no recorded activity at all.",
+            "hint": "This word describes being inactive, showing no activity.",
             "options": [
-                "Inactive",
-                "Bustling",
+                "Erupting",
                 "Active",
-                "Lively"
+                "Dormant",
+                "Violent"
             ],
-            "explanation": "Two hundred years passing before a sudden eruption shows a long period at rest, so [TARGET] means INACTIVE.",
-            "correctAnswer": "Inactive",
+            "explanation": "The word 'unlike' contrasts [TARGET] with a 'violently erupting volcano,' so it must mean the opposite, which is DORMANT.",
+            "correctAnswer": "Dormant",
             "clueType": "antonym",
             "evidenceWords": [
-                "volcano",
-                "hundred"
+                "Unlike",
+                "violently erupting volcano",
+                "no recorded activity at all"
             ]
         },
         {
@@ -153,20 +156,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L143_Q2",
-            "sentence": "The shop specializes in [TARGET]ing old typewriters to working order before reselling them.",
-            "hint": "From re- + condition - to bring something back to a usable state.",
+            "sentence": "The mechanic offered to [TARGET] the old engine, which means to restore it to good working order rather than replacing it with a brand-new one.",
+            "hint": "This word means to fix up something old to good working condition.",
             "options": [
-                "Damage",
+                "Destroy",
                 "Discard",
-                "Refurbish",
-                "Neglect"
+                "Scrap",
+                "Restore"
             ],
-            "explanation": "Bringing old typewriters back to working order before reselling describes restoring to good condition, so [TARGET] means REFURBISH.",
-            "correctAnswer": "Refurbish",
+            "explanation": "The sentence defines [TARGET] as meaning 'to restore it to good working order,' so [TARGET] means RESTORE.",
+            "correctAnswer": "Restore",
             "clueType": "definition",
             "evidenceWords": [
-                "specializes",
-                "TARGETing"
+                "which means",
+                "restore it to good working order"
             ]
         },
         {
@@ -174,20 +177,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L143_Q3",
-            "sentence": "The novel's charming [TARGET] cheats at cards in nearly every chapter without a hint of guilt.",
-            "hint": "From Latin reprobare, 'to disapprove' - someone morally condemned, yet often oddly likable.",
+            "sentence": "The old man at the tavern was a known [TARGET]: he'd cheated at cards for decades, abandoned every job he'd ever held, and openly bragged about swindling his own family.",
+            "hint": "This word describes a person with no morals or principles, often prone to bad behavior.",
             "options": [
-                "Hero",
-                "Paragon",
                 "Scoundrel",
-                "Saint"
+                "Saint",
+                "Role model",
+                "Pillar of the community"
             ],
-            "explanation": "Cheating at cards in nearly every chapter without guilt describes a shameless character, so [TARGET] means SCOUNDREL.",
+            "explanation": "Cheating at cards, abandoning jobs, and bragging about swindling family are all examples of a person with no morals, so [TARGET] means SCOUNDREL.",
             "correctAnswer": "Scoundrel",
             "clueType": "example",
             "evidenceWords": [
-                "novel's",
-                "charming"
+                "cheated at cards for decades",
+                "abandoned every job he'd ever held",
+                "openly bragged about swindling his own family"
             ]
         },
         {
@@ -195,20 +199,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L144_Q1",
-            "sentence": "The actor delivered a five-minute [TARGET], speaking his character's private thoughts alone on stage.",
-            "hint": "From Latin solus, 'alone,' and loqui, 'to speak' - speaking one's thoughts aloud, alone.",
+            "sentence": "Alone on the darkened stage, the actor stared out at the empty seats and spoke his character's private doubts aloud for nearly five minutes, with no other actor there to respond — a famous [TARGET] from the play.",
+            "hint": "This word describes a speech a character delivers alone on stage, revealing their private thoughts.",
             "options": [
-                "Monologue",
-                "Discussion",
-                "Debate",
-                "Dialogue"
+                "Group dialogue",
+                "Solo speech",
+                "Conversation",
+                "Duet"
             ],
-            "explanation": "Speaking private thoughts alone on stage describes a solo speech, so [TARGET] means MONOLOGUE.",
-            "correctAnswer": "Monologue",
+            "explanation": "Being alone on stage and speaking private thoughts aloud with no one else to respond shows a solo speech, even without a direct clue word, so [TARGET] means SOLO SPEECH.",
+            "correctAnswer": "Solo speech",
             "clueType": "inference",
             "evidenceWords": [
-                "actor",
-                "delivered"
+                "Alone on the darkened stage",
+                "spoke his character's private doubts aloud",
+                "no other actor there to respond"
             ]
         },
         {
@@ -216,20 +221,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L144_Q2",
-            "sentence": "Their [TARGET] marriage was full of dramatic fights followed by equally dramatic reconciliations.",
-            "hint": "From Latin tempestas, 'storm' - full of turbulent emotion.",
+            "sentence": "Their relationship was [TARGET] and stormy, full of passionate reunions followed almost immediately by explosive arguments.",
+            "hint": "This word describes something turbulent and full of intense emotion.",
             "options": [
-                "Stormy",
-                "Tranquil",
                 "Peaceful",
-                "Calm"
+                "Calm",
+                "Stormy",
+                "Serene"
             ],
-            "explanation": "Dramatic fights followed by dramatic reconciliations describe turbulent emotion, so [TARGET] means STORMY.",
+            "explanation": "The word 'and' links [TARGET] to 'stormy,' and passionate reunions followed by explosive arguments confirm it, so [TARGET] means STORMY.",
             "correctAnswer": "Stormy",
             "clueType": "synonym",
             "evidenceWords": [
-                "Their",
-                "marriage"
+                "and stormy",
+                "explosive arguments"
             ]
         },
         {
@@ -237,20 +242,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L144_Q3",
-            "sentence": "The [TARGET] mountain road had so many switchbacks that some passengers felt carsick.",
-            "hint": "From Latin tortus, 'twisted' - full of bends and turns.",
+            "sentence": "Unlike the straight, well-marked trail on the mountain's north side, the path up the south face was [TARGET], twisting back on itself so many times that hikers often got lost.",
+            "hint": "This word describes something full of twists and turns, complicated to follow.",
             "options": [
                 "Straight",
-                "Linear",
                 "Direct",
-                "Twisting"
+                "Well-marked",
+                "Winding"
             ],
-            "explanation": "So many switchbacks that passengers felt carsick describes a road full of bends, so [TARGET] means TWISTING.",
-            "correctAnswer": "Twisting",
+            "explanation": "The word 'unlike' contrasts [TARGET] with a 'straight, well-marked trail,' so it must mean the opposite, which is WINDING.",
+            "correctAnswer": "Winding",
             "clueType": "antonym",
             "evidenceWords": [
-                "mountain",
-                "switchbacks"
+                "Unlike",
+                "straight, well-marked trail",
+                "twisting back on itself so many times"
             ]
         },
         {
@@ -258,20 +264,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L145_Q1",
-            "sentence": "In the fairy tale, the pumpkin would [TARGET] into a golden carriage exactly at midnight.",
-            "hint": "A playful, old word for changing into a strange or surprising new form.",
+            "sentence": "In the fairy tale, the wizard could [TARGET] a pumpkin into a golden carriage, which means he could transform it completely into something strange and entirely different.",
+            "hint": "This word means to transform something into a completely different, often bizarre, form.",
             "options": [
-                "Persist",
-                "Remain",
-                "Maintain",
-                "Metamorphose"
+                "Transform completely",
+                "Leave unchanged",
+                "Preserve exactly",
+                "Keep the same"
             ],
-            "explanation": "A pumpkin becoming a golden carriage at midnight shows a dramatic transformation, so [TARGET] means METAMORPHOSE.",
-            "correctAnswer": "Metamorphose",
+            "explanation": "The sentence defines [TARGET] as being able to 'transform it completely into something strange and entirely different,' so [TARGET] means TRANSFORM COMPLETELY.",
+            "correctAnswer": "Transform completely",
             "clueType": "definition",
             "evidenceWords": [
-                "fairy",
-                "pumpkin"
+                "which means",
+                "transform it completely into something strange"
             ]
         },
         {
@@ -279,20 +285,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L145_Q2",
-            "sentence": "The car salesman's [TARGET] compliments about her 'excellent taste' made her trust him even less.",
-            "hint": "From Latin unctus, 'anointed with oil' - smooth and slippery in a false way.",
+            "sentence": "The salesman was [TARGET]: he complimented her shoes, her haircut, and her taste in cars within the first thirty seconds, all while his smile never once looked genuine.",
+            "hint": "This word describes excessive, insincere flattery meant to win someone over.",
             "options": [
-                "Smarmy",
-                "Genuine",
-                "Sincere",
-                "Blunt"
+                "Genuinely kind",
+                "Oily and insincere",
+                "Honestly complimentary",
+                "Sincere"
             ],
-            "explanation": "Compliments that made her trust him less show a false, slippery kind of flattery, so [TARGET] means SMARMY.",
-            "correctAnswer": "Smarmy",
+            "explanation": "Complimenting her shoes, haircut, and car all within thirty seconds, with a smile that never looked genuine, is an example of insincere flattery, so [TARGET] means OILY AND INSINCERE.",
+            "correctAnswer": "Oily and insincere",
             "clueType": "example",
             "evidenceWords": [
-                "salesman's",
-                "compliments"
+                "complimented her shoes, her haircut, and her taste in cars",
+                "smile never once looked genuine"
             ]
         },
         {
@@ -300,20 +306,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L145_Q3",
-            "sentence": "The tabloid tried to [TARGET] the actress with false stories about her personal life.",
-            "hint": "From Latin vilis, 'cheap, worthless' - to make someone seem worthless through harsh, unfair words.",
+            "sentence": "After the scandal broke, the newspaper ran daily stories calling him a criminal and a fraud, using the worst photo they could find and quoting only his angriest critics, determined to [TARGET] him in the public eye.",
+            "hint": "This word means to speak or write about someone in a way that harshly damages their reputation.",
             "options": [
                 "Praise",
                 "Honor",
                 "Defame",
                 "Celebrate"
             ],
-            "explanation": "Spreading false stories about someone's personal life shows making them seem worthless through unfair words, so [TARGET] means DEFAME.",
+            "explanation": "Daily stories calling him a criminal, using the worst photo, and quoting only angry critics all show an effort to damage his reputation, even without a direct clue word, so [TARGET] means DEFAME.",
             "correctAnswer": "Defame",
             "clueType": "inference",
             "evidenceWords": [
-                "tabloid",
-                "tried"
+                "calling him a criminal and a fraud",
+                "using the worst photo they could find",
+                "quoting only his angriest critics"
             ]
         },
         {
@@ -321,20 +328,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L146_Q1",
-            "sentence": "The critic's [TARGET] review accused the director of 'wasting two hours of everyone's life.'",
-            "hint": "From Latin vituperare, 'to blame' - filled with bitter, abusive criticism.",
+            "sentence": "His email to the company was [TARGET] and abusive, hurling insults at every employee who had ever helped him.",
+            "hint": "This word describes language that is bitterly harsh and full of verbal abuse.",
             "options": [
-                "Flattering",
-                "Caustic",
+                "Gentle",
+                "Kind",
                 "Complimentary",
-                "Approving"
+                "Abusive"
             ],
-            "explanation": "Accusing a director of wasting everyone's time shows bitter, harsh criticism, so [TARGET] means CAUSTIC.",
-            "correctAnswer": "Caustic",
+            "explanation": "The word 'and' links [TARGET] to 'abusive,' and hurling insults at employees confirms it, so [TARGET] means ABUSIVE.",
+            "correctAnswer": "Abusive",
             "clueType": "synonym",
             "evidenceWords": [
-                "critic's",
-                "review"
+                "and abusive",
+                "hurling insults at every employee"
             ]
         },
         {
@@ -342,20 +349,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L146_Q2",
-            "sentence": "The factory's [TARGET] disregard for safety regulations led to three serious accidents in one month.",
-            "hint": "From Old English wan-, 'lacking,' and togen, 'trained' - undisciplined, without restraint.",
+            "sentence": "Unlike the careful, deliberate renovation next door, the demolition crew's [TARGET] destruction of the historic building left rubble scattered across three blocks with no plan or purpose.",
+            "hint": "This word describes careless behavior done with no regard for consequences.",
             "options": [
-                "Measured",
+                "Reckless",
                 "Careful",
-                "Restrained",
-                "Reckless"
+                "Deliberate",
+                "Planned"
             ],
-            "explanation": "Three serious accidents in one month show a complete lack of restraint regarding safety, so [TARGET] means RECKLESS.",
+            "explanation": "The word 'unlike' contrasts [TARGET] with a 'careful, deliberate renovation,' so it must mean the opposite, which is RECKLESS.",
             "correctAnswer": "Reckless",
             "clueType": "antonym",
             "evidenceWords": [
-                "factory's",
-                "disregard"
+                "Unlike",
+                "careful, deliberate renovation",
+                "no plan or purpose"
             ]
         },
         {
@@ -363,20 +371,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L146_Q3",
-            "sentence": "As a true [TARGET], she had collected recipes, songs, and folktales from over forty countries.",
-            "hint": "From Greek xenos, 'foreigner,' and philos, 'loving' - drawn to what is unfamiliar.",
+            "sentence": "As a lifelong [TARGET], which means someone drawn to unfamiliar cultures and customs, she had lived in eleven different countries and learned six languages just for fun.",
+            "hint": "This word describes a person who loves and is drawn to foreign people, places, or cultures.",
             "options": [
-                "Nationalist",
-                "Isolationist",
-                "Globe-trotter",
-                "Xenophobe"
+                "Someone who fears strangers",
+                "Lover of foreign cultures",
+                "Someone who avoids other cultures",
+                "A person suspicious of outsiders"
             ],
-            "explanation": "Collecting recipes, songs, and folktales from forty countries shows being drawn to what is unfamiliar, so [TARGET] means GLOBE-TROTTER.",
-            "correctAnswer": "Globe-trotter",
+            "explanation": "The sentence defines [TARGET] as 'someone drawn to unfamiliar cultures and customs,' so [TARGET] means LOVER OF FOREIGN CULTURES.",
+            "correctAnswer": "Lover of foreign cultures",
             "clueType": "definition",
             "evidenceWords": [
-                "collected",
-                "recipes"
+                "which means",
+                "drawn to unfamiliar cultures and customs"
             ]
         },
         {
@@ -384,20 +392,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L147_Q1",
-            "sentence": "After paying off the loan, she finally felt free of the financial [TARGET] she had carried for a decade.",
-            "hint": "Originally a wooden bar joining oxen for pulling - a heavy weight to bear.",
+            "sentence": "The two farmers decided to [TARGET] their oxen together: they connected the animals with a wooden crossbar, strapped the harness tight, and had them pull the heavy plow as a single team.",
+            "hint": "This word means to join two things or beings together, often for shared work.",
             "options": [
-                "Liberation",
-                "Burden",
-                "Freedom",
-                "Relief"
+                "Separate",
+                "Unhitch",
+                "Join together",
+                "Disconnect"
             ],
-            "explanation": "Finally feeling free after a decade of debt shows it had been a heavy weight to bear, so [TARGET] means BURDEN.",
-            "correctAnswer": "Burden",
+            "explanation": "Connecting the oxen with a crossbar, strapping a harness, and having them pull together are all examples of joining animals together, so [TARGET] means JOIN TOGETHER.",
+            "correctAnswer": "Join together",
             "clueType": "example",
             "evidenceWords": [
-                "After",
-                "paying"
+                "connected the animals with a wooden crossbar",
+                "strapped the harness tight",
+                "pull the heavy plow as a single team"
             ]
         },
         {
@@ -405,20 +414,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L147_Q2",
-            "sentence": "Once a bustling factory town, the population began to [TARGET] after the plant closed its doors.",
-            "hint": "From Old English dwinan, 'to waste away' - to gradually become smaller or fewer.",
+            "sentence": "The population of the small fishing town had been eight thousand in the 1980s, dropped to five thousand by the 2000s, and now stood at barely a thousand residents — steadily continuing to [TARGET] each decade.",
+            "hint": "This word means to gradually decrease in size or amount.",
             "options": [
                 "Grow",
                 "Expand",
-                "Decrease",
-                "Multiply"
+                "Increase",
+                "Shrink"
             ],
-            "explanation": "The population shrinking after the plant closed shows gradually becoming smaller, so [TARGET] means DECREASE.",
-            "correctAnswer": "Decrease",
+            "explanation": "Dropping from eight thousand to five thousand to barely a thousand over decades shows a gradual decrease, even without a direct clue word, so [TARGET] means SHRINK.",
+            "correctAnswer": "Shrink",
             "clueType": "inference",
             "evidenceWords": [
-                "bustling",
-                "factory"
+                "eight thousand in the 1980s",
+                "dropped to five thousand by the 2000s",
+                "barely a thousand residents"
             ]
         },
         {
@@ -426,20 +436,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L147_Q3",
-            "sentence": "The CEO chose to [TARGET] his bonus this year so it could go toward employee raises instead.",
-            "hint": "From Latin ab- + negare, 'to deny' - to give up a right or claim.",
+            "sentence": "The monk chose to [TARGET], or renounce, all personal possessions, giving away everything he owned before entering the monastery.",
+            "hint": "This word means to deny yourself something or give something up voluntarily.",
             "options": [
                 "Renounce",
-                "Accept",
                 "Claim",
-                "Embrace"
+                "Acquire",
+                "Hoard"
             ],
-            "explanation": "Giving up a bonus so it could go to employee raises shows giving up a claim, so [TARGET] means RENOUNCE.",
+            "explanation": "The word 'or' signals that [TARGET] means the same as 'renounce,' so [TARGET] means RENOUNCE.",
             "correctAnswer": "Renounce",
             "clueType": "synonym",
             "evidenceWords": [
-                "chose",
-                "bonus"
+                "or renounce",
+                "giving away everything he owned"
             ]
         },
         {
@@ -447,20 +457,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L148_Q1",
-            "sentence": "The publisher chose to [TARGET] the classic novel, removing any line that might offend modern readers.",
-            "hint": "Named after Thomas Bowdler, who published a 'cleaned up' edition of Shakespeare.",
+            "sentence": "Unlike the original uncut novel with its raw, unfiltered language, the school edition had been [TARGET], with every curse word and violent scene quietly removed.",
+            "hint": "This word means to remove offensive or crude material from a piece of writing.",
             "options": [
-                "Restore",
-                "Censor",
-                "Publish",
-                "Uncensored"
+                "Left unedited",
+                "Sanitized",
+                "Preserved exactly",
+                "Kept intact"
             ],
-            "explanation": "Removing lines that might offend modern readers describes editing out content seen as improper, so [TARGET] means CENSOR.",
-            "correctAnswer": "Censor",
+            "explanation": "The word 'unlike' contrasts [TARGET] with the 'original uncut novel with its raw, unfiltered language,' so it must mean the opposite, which is SANITIZED.",
+            "correctAnswer": "Sanitized",
             "clueType": "antonym",
             "evidenceWords": [
-                "publisher",
-                "chose"
+                "Unlike",
+                "original uncut novel with its raw, unfiltered language",
+                "every curse word and violent scene quietly removed"
             ]
         },
         {
@@ -468,20 +479,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L148_Q2",
-            "sentence": "Investigators uncovered years of financial [TARGET] hidden behind the company's polished annual reports.",
-            "hint": "From French chicaner, 'to quibble' - deceptive scheming, often in business or politics.",
+            "sentence": "The judge ruled that the contract was void due to [TARGET], which means it had been obtained through deliberate trickery and deceptive tactics.",
+            "hint": "This word describes deception, especially to achieve an unfair advantage.",
             "options": [
                 "Honesty",
+                "Fairness",
                 "Trickery",
-                "Integrity",
                 "Transparency"
             ],
-            "explanation": "Years of deception hidden behind polished reports show deceptive scheming, so [TARGET] means TRICKERY.",
+            "explanation": "The sentence defines [TARGET] as 'deliberate trickery and deceptive tactics,' so [TARGET] means TRICKERY.",
             "correctAnswer": "Trickery",
             "clueType": "definition",
             "evidenceWords": [
-                "Investigators",
-                "uncovered"
+                "which means",
+                "deliberate trickery and deceptive tactics"
             ]
         },
         {
@@ -489,20 +500,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L148_Q3",
-            "sentence": "Fax machines fell into [TARGET] once email became the standard way to send documents.",
-            "hint": "From Latin desuescere, 'to grow unaccustomed to' - falling out of use over time.",
+            "sentence": "The old law against tying up horses on Main Street had fallen into [TARGET]: no one had been arrested under it in eighty years, most residents didn't know it existed, and the city had stopped bothering to enforce it decades ago.",
+            "hint": "This word describes a state of being no longer used or practiced, especially of a law or custom.",
             "options": [
-                "Adoption",
-                "Disuse",
-                "Usage",
-                "Popularity"
+                "Constant enforcement",
+                "Active use",
+                "Renewed popularity",
+                "Disuse"
             ],
-            "explanation": "Fax machines being replaced once email became standard shows falling out of use, so [TARGET] means DISUSE.",
+            "explanation": "No arrests in eighty years, residents unaware it exists, and the city no longer enforcing it are all examples of something falling out of use, so [TARGET] means DISUSE.",
             "correctAnswer": "Disuse",
             "clueType": "example",
             "evidenceWords": [
-                "machines",
-                "email"
+                "no one had been arrested under it in eighty years",
+                "most residents didn't know it existed",
+                "stopped bothering to enforce it decades ago"
             ]
         },
         {
@@ -510,20 +522,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L149_Q1",
-            "sentence": "Critics described the once-revolutionary political party as [TARGET], clinging to ideas decades past their relevance.",
-            "hint": "From Latin effetus, 'exhausted by giving birth' - having lost original force or vitality.",
+            "sentence": "The once-mighty empire could no longer field a proper army, its treasury was empty, and its leaders spent their days arguing over ceremonial titles instead of governing — a shadow of its former strength, now utterly [TARGET].",
+            "hint": "This word describes something that has become weak and lacking in vigor, especially after decline.",
             "options": [
-                "Fresh",
-                "Robust",
+                "Feeble",
+                "Powerful",
                 "Vigorous",
-                "Spent"
+                "Robust"
             ],
-            "explanation": "Clinging to ideas decades past their relevance shows having lost original force, so [TARGET] means SPENT.",
-            "correctAnswer": "Spent",
+            "explanation": "An empty treasury, no proper army, and leaders arguing over titles instead of governing all show a loss of strength and vigor, even without a direct clue word, so [TARGET] means FEEBLE.",
+            "correctAnswer": "Feeble",
             "clueType": "inference",
             "evidenceWords": [
-                "Critics",
-                "described"
+                "could no longer field a proper army",
+                "treasury was empty",
+                "arguing over ceremonial titles instead of governing"
             ]
         },
         {
@@ -531,20 +544,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L149_Q2",
-            "sentence": "His [TARGET] suggestion to fix the budget crisis by 'printing more money' was quickly dismissed.",
-            "hint": "From Latin fatuus, 'silly' - describes an idea that's silly but said with total confidence.",
+            "sentence": "His comment that the drought would end 'if everyone just wished harder for rain' was [TARGET] and foolish, ignoring every basic fact about weather.",
+            "hint": "This word describes something silly, showing a complete lack of good sense.",
             "options": [
+                "Wise",
                 "Foolish",
-                "Astute",
                 "Sensible",
-                "Wise"
+                "Insightful"
             ],
-            "explanation": "A suggestion quickly dismissed for being so unrealistic shows being self-satisfied and unaware, so [TARGET] means FOOLISH.",
+            "explanation": "The word 'and' links [TARGET] to 'foolish,' and ignoring every basic fact about weather confirms it, so [TARGET] means FOOLISH.",
             "correctAnswer": "Foolish",
             "clueType": "synonym",
             "evidenceWords": [
-                "suggestion",
-                "budget"
+                "and foolish",
+                "ignoring every basic fact about weather"
             ]
         },
         {
@@ -552,20 +565,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L149_Q3",
-            "sentence": "No one dared [TARGET] the founder's decision, even when the numbers clearly disagreed.",
-            "hint": "From Old English gegn-, 'against,' and sayen, 'to say' - to speak against a claim.",
+            "sentence": "Unlike her assistant, who agreed with every decision she made without question, the new board member would [TARGET] almost every proposal, pointing out flaws no one else had considered.",
+            "hint": "This word means to deny, dispute, or speak against something.",
             "options": [
-                "Confirm",
+                "Agree with",
                 "Support",
-                "Agree",
-                "Contradict"
+                "Contradict",
+                "Endorse"
             ],
-            "explanation": "No one daring to speak against the decision, even with disagreeing numbers, shows refusing to contradict, so [TARGET] means CONTRADICT.",
+            "explanation": "The word 'unlike' contrasts [TARGET] with an assistant who 'agreed with every decision... without question,' so it must mean the opposite, which is CONTRADICT.",
             "correctAnswer": "Contradict",
             "clueType": "antonym",
             "evidenceWords": [
-                "dared",
-                "founder's"
+                "Unlike",
+                "agreed with every decision she made without question",
+                "pointing out flaws no one else had considered"
             ]
         },
         {
@@ -573,20 +587,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L150_Q1",
-            "sentence": "The coach's twenty-minute [TARGET] after the loss left the players exhausted and demoralized.",
-            "hint": "From Old Italian aringo, 'public square' - a long, forceful public speech of criticism.",
+            "sentence": "The coach's post-game [TARGET] lasted twenty minutes, which means it was a long, aggressive lecture that left the whole team standing silently in the locker room.",
+            "hint": "This word describes a long, forceful, and often aggressive speech or lecture.",
             "options": [
-                "Rant",
-                "Whisper",
-                "Compliment",
-                "Suggestion"
+                "Gentle chat",
+                "Quiet compliment",
+                "Brief thank-you",
+                "Aggressive lecture"
             ],
-            "explanation": "A twenty-minute lecture leaving players exhausted shows a long, forceful scolding speech, so [TARGET] means RANT.",
-            "correctAnswer": "Rant",
+            "explanation": "The sentence defines [TARGET] as 'a long, aggressive lecture,' so [TARGET] means AGGRESSIVE LECTURE.",
+            "correctAnswer": "Aggressive lecture",
             "clueType": "definition",
             "evidenceWords": [
-                "coach's",
-                "twenty-minute"
+                "which means",
+                "a long, aggressive lecture"
             ]
         },
         {
@@ -594,20 +608,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L150_Q2",
-            "sentence": "The [TARGET] artist sold his paintings for whatever spare coins passersby would offer.",
-            "hint": "From Latin in- + pecunia, 'money' - lacking money.",
+            "sentence": "The [TARGET] artist survived on ramen noodles for months, sold his furniture to make rent, and often walked three miles rather than pay for the bus.",
+            "hint": "This word describes having very little money.",
             "options": [
-                "Prosperous",
                 "Poor",
-                "Affluent",
-                "Wealthy"
+                "Wealthy",
+                "Rich",
+                "Affluent"
             ],
-            "explanation": "Selling paintings for whatever spare coins were offered shows lacking money, so [TARGET] means POOR.",
+            "explanation": "Surviving on ramen, selling furniture for rent, and walking instead of paying for the bus are all examples of having very little money, so [TARGET] means POOR.",
             "correctAnswer": "Poor",
             "clueType": "example",
             "evidenceWords": [
-                "artist",
-                "paintings"
+                "survived on ramen noodles for months",
+                "sold his furniture to make rent",
+                "walked three miles rather than pay for the bus"
             ]
         },
         {
@@ -615,20 +630,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L150_Q3",
-            "sentence": "The [TARGET] tune from the street musician's violin made even tired commuters smile.",
-            "hint": "From Latin jucundus, 'pleasant' - cheerful and full of good spirits.",
+            "sentence": "At the reunion, he told jokes all evening, laughed easily at everyone else's stories too, and kept the whole table smiling from the moment he arrived — his [TARGET] mood was contagious.",
+            "hint": "This word describes being cheerful and lighthearted.",
             "options": [
-                "Somber",
-                "Glum",
-                "Morose",
-                "Merry"
+                "Gloomy",
+                "Merry",
+                "Sullen",
+                "Somber"
             ],
-            "explanation": "A tune that made even tired commuters smile shows being cheerful and full of good spirits, so [TARGET] means MERRY.",
+            "explanation": "Telling jokes all evening, laughing easily, and keeping the table smiling all show a cheerful, lighthearted mood, even without a direct clue word, so [TARGET] means MERRY.",
             "correctAnswer": "Merry",
             "clueType": "inference",
             "evidenceWords": [
-                "street",
-                "musician's"
+                "told jokes all evening",
+                "laughed easily at everyone else's stories",
+                "kept the whole table smiling"
             ]
         }
     ],

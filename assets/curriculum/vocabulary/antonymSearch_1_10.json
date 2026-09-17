@@ -3,662 +3,662 @@
     "quests": [
         {
             "id": "VOC_ANTONYMSEARCH_L1_Q1",
-            "word": "HAPPY",
+            "word": "HERE",
             "instruction": "Select the antonym for the given word.",
-            "hint": "Think about a word meaning feeling unhappy or sorrowful.",
-            "explanation": "Happy means feeling joy or pleasure; sad means feeling unhappy.",
+            "hint": "This word refers to a location other than here.",
+            "explanation": "Here means the present location; there means a location other than here.",
             "interactionType": "search",
-            "correctAnswer": "SAD",
+            "correctAnswer": "THERE",
             "options": [
-                "CHEERFUL",
-                "SAD",
-                "JOYFUL",
-                "PLEASED"
+                "FUTURE",
+                "LINKED",
+                "RESTORATION",
+                "THERE"
             ],
             "gradientScale": [
-                "HAPPY",
-                "very HAPPY",
+                "HERE",
+                "strong HERE",
                 "neutral",
-                "slightly SAD",
-                "SAD"
+                "a trace of there",
+                "THERE"
             ]
         },
         {
             "id": "VOC_ANTONYMSEARCH_L1_Q2",
-            "word": "BRAVE",
-            "instruction": "Select the antonym for the given word.",
-            "hint": "Think about a word meaning lacking courage in the face of danger.",
-            "explanation": "Brave means having courage; cowardly means lacking courage.",
+            "word": "GIVE",
+            "instruction": "Find the word with the opposite meaning.",
+            "hint": "Try to recall a word that means to take into one's possession.",
+            "explanation": "Give means transfer possession of something concrete or abstract to somebody; take means take into one's possession.",
             "interactionType": "search",
-            "correctAnswer": "COWARDLY",
+            "correctAnswer": "TAKE",
             "options": [
-                "COWARDLY",
-                "BOLD",
-                "DARING",
-                "FEARLESS"
+                "CONSECRATE",
+                "TAKE",
+                "HAVE",
+                "HAND"
             ],
             "gradientScale": [
-                "BRAVE",
-                "very BRAVE",
-                "neutral",
-                "slightly COWARDLY",
-                "COWARDLY"
+                "GIVE",
+                "GIVE fully",
+                "undecided",
+                "starting to take",
+                "TAKE"
             ]
         },
         {
             "id": "VOC_ANTONYMSEARCH_L1_Q3",
-            "word": "HONEST",
-            "instruction": "Select the antonym for the given word.",
-            "hint": "Think about a word meaning not telling the truth.",
-            "explanation": "Honest means telling the truth; dishonest means not telling the truth.",
+            "word": "RIGHT",
+            "instruction": "Choose the word that means the opposite.",
+            "hint": "The opposite idea here is location near or direction toward the left side.",
+            "explanation": "While right means location near or direction toward the right side, left means the opposite: location near or direction toward the left side.",
             "interactionType": "search",
-            "correctAnswer": "DISHONEST",
+            "correctAnswer": "LEFT",
             "options": [
-                "FRANK",
-                "DISHONEST",
-                "SINCERE",
-                "TRUTHFUL"
+                "RIGHTFULNESS",
+                "GOURMET",
+                "MUSIC",
+                "LEFT"
             ],
             "gradientScale": [
-                "HONEST",
-                "very HONEST",
+                "RIGHT",
+                "strong RIGHT",
                 "neutral",
-                "slightly DISHONEST",
-                "DISHONEST"
+                "a hint of left",
+                "LEFT"
             ]
         },
         {
             "id": "VOC_ANTONYMSEARCH_L2_Q1",
-            "word": "GENEROUS",
-            "instruction": "Select the antonym for the given word.",
-            "hint": "Think about a word meaning unwilling to share or spend money.",
-            "explanation": "Generous means willing to give; stingy means unwilling to share.",
+            "word": "GOOD",
+            "instruction": "Which option contrasts most directly with the given word?",
+            "hint": "Imagine describing something as having undesirable or negative qualities.",
+            "explanation": "Good means having desirable or positive qualities especially those suitable for a thing specified; bad means having undesirable or negative qualities.",
             "interactionType": "search",
-            "correctAnswer": "STINGY",
+            "correctAnswer": "BAD",
             "options": [
-                "GIVING",
-                "CHARITABLE",
-                "STINGY",
-                "UNSELFISH"
+                "JUST",
+                "BAD",
+                "SKILLFUL",
+                "ADEPT"
             ],
             "gradientScale": [
-                "GENEROUS",
-                "very GENEROUS",
-                "neutral",
-                "slightly STINGY",
-                "STINGY"
+                "GOOD",
+                "truly GOOD",
+                "moderate",
+                "fairly BAD",
+                "BAD"
             ]
         },
         {
             "id": "VOC_ANTONYMSEARCH_L2_Q2",
-            "word": "POLITE",
-            "instruction": "Select the antonym for the given word.",
-            "hint": "Think about a word meaning showing bad manners.",
-            "explanation": "Polite means having good manners; rude means showing bad manners.",
+            "word": "EVER",
+            "instruction": "Select the best antonym for the word shown.",
+            "hint": "This word describes an action or manner that is not ever.",
+            "explanation": "Ever refers to at all times. Never, by contrast, means not ever.",
             "interactionType": "search",
-            "correctAnswer": "RUDE",
+            "correctAnswer": "NEVER",
             "options": [
-                "WELL-MANNERED",
-                "RESPECTFUL",
-                "COURTEOUS",
-                "RUDE"
+                "NEVER",
+                "ALWAYS",
+                "MESSY",
+                "CORAL"
             ],
             "gradientScale": [
-                "POLITE",
-                "very POLITE",
-                "neutral",
-                "slightly RUDE",
-                "RUDE"
+                "EVER",
+                "extremely EVER",
+                "balanced",
+                "a little NEVER",
+                "NEVER"
             ]
         },
         {
             "id": "VOC_ANTONYMSEARCH_L2_Q3",
-            "word": "PATIENT",
-            "instruction": "Select the antonym for the given word.",
-            "hint": "Think about a word meaning unable to wait calmly.",
-            "explanation": "Patient means able to wait calmly; impatient means unable to wait calmly.",
+            "word": "FIRST",
+            "instruction": "Find the word that expresses the reverse idea.",
+            "hint": "Think about a word meaning coming after all others in time or space or degree or being the only one remaining.",
+            "explanation": "First describes preceding all others in time or space or degree, while last describes coming after all others in time or space or degree or being the only one remaining.",
             "interactionType": "search",
-            "correctAnswer": "IMPATIENT",
+            "correctAnswer": "LAST",
             "options": [
-                "CALM",
-                "EASYGOING",
-                "IMPATIENT",
-                "TOLERANT"
+                "FOREMOST",
+                "INITIATORY",
+                "BEGINNING",
+                "LAST"
             ],
             "gradientScale": [
-                "PATIENT",
-                "very PATIENT",
-                "neutral",
-                "slightly IMPATIENT",
-                "IMPATIENT"
+                "FIRST",
+                "quite FIRST",
+                "moderate",
+                "somewhat LAST",
+                "LAST"
             ]
         },
         {
             "id": "VOC_ANTONYMSEARCH_L3_Q1",
-            "word": "CONFIDENT",
-            "instruction": "Select the antonym for the given word.",
-            "hint": "Think about a word meaning feeling worried or uneasy.",
-            "explanation": "Confident means feeling sure of oneself; nervous means feeling worried.",
+            "word": "DAY",
+            "instruction": "Choose the option that means the opposite of the given word.",
+            "hint": "Search for a word that means the time after sunset and before sunrise while it is dark outside.",
+            "explanation": "Day means the time after sunrise and before sunset while it is light outside \u2014 the reverse idea is the time after sunset and before sunrise while it is dark outside, which is what night means.",
             "interactionType": "search",
-            "correctAnswer": "NERVOUS",
+            "correctAnswer": "NIGHT",
             "options": [
-                "CERTAIN",
-                "BOLD",
-                "SELF-ASSURED",
-                "NERVOUS"
+                "NIGHT",
+                "DAYLIGHT",
+                "DAYTIME",
+                "REPEL"
             ],
             "gradientScale": [
-                "CONFIDENT",
-                "very CONFIDENT",
-                "neutral",
-                "slightly NERVOUS",
-                "NERVOUS"
+                "DAY",
+                "complete DAY",
+                "mixed",
+                "a hint of night",
+                "NIGHT"
             ]
         },
         {
             "id": "VOC_ANTONYMSEARCH_L3_Q2",
-            "word": "CAREFUL",
-            "instruction": "Select the antonym for the given word.",
-            "hint": "Think about a word meaning not paying enough attention.",
-            "explanation": "Careful means paying close attention; careless means not paying enough attention.",
+            "word": "BIG",
+            "instruction": "Which word below is the true opposite?",
+            "hint": "What word fits the idea of being limited or below average in number or quantity or magnitude or extent?",
+            "explanation": "Big refers to above average in size or number or quantity or magnitude or extent. Little, by contrast, means limited or below average in number or quantity or magnitude or extent.",
             "interactionType": "search",
-            "correctAnswer": "CARELESS",
+            "correctAnswer": "LITTLE",
             "options": [
-                "THOROUGH",
-                "CAUTIOUS",
-                "ATTENTIVE",
-                "CARELESS"
+                "LARGE",
+                "GREAT",
+                "GROWNUP",
+                "LITTLE"
             ],
             "gradientScale": [
-                "CAREFUL",
-                "very CAREFUL",
-                "neutral",
-                "slightly CARELESS",
-                "CARELESS"
+                "BIG",
+                "quite BIG",
+                "in between",
+                "fairly LITTLE",
+                "LITTLE"
             ]
         },
         {
             "id": "VOC_ANTONYMSEARCH_L3_Q3",
-            "word": "STRONG",
-            "instruction": "Select the antonym for the given word.",
-            "hint": "Think about a word meaning lacking physical power.",
-            "explanation": "Strong means having great power; weak means lacking power.",
+            "word": "HOME",
+            "instruction": "Pick the word that contrasts with the meaning shown.",
+            "hint": "This word describes something that is used of an opponent's ground.",
+            "explanation": "To be home is to be used of your own ground. Away means used of an opponent's ground, the reverse quality.",
             "interactionType": "search",
-            "correctAnswer": "WEAK",
+            "correctAnswer": "AWAY",
             "options": [
-                "STURDY",
-                "WEAK",
-                "POWERFUL",
-                "TOUGH"
+                "AWAY",
+                "INTERIOR",
+                "INTERNAL",
+                "NATIONAL"
             ],
             "gradientScale": [
-                "STRONG",
-                "very STRONG",
-                "neutral",
-                "slightly WEAK",
-                "WEAK"
+                "HOME",
+                "extremely HOME",
+                "balanced",
+                "fairly AWAY",
+                "AWAY"
             ]
         },
         {
             "id": "VOC_ANTONYMSEARCH_L4_Q1",
-            "word": "FRIENDLY",
-            "instruction": "Select the antonym for the given word.",
-            "hint": "Think about a word meaning not kind or welcoming toward others.",
-            "explanation": "Friendly means kind and welcoming; unfriendly means not kind toward others.",
+            "word": "MAN",
+            "instruction": "Identify the antonym among the options.",
+            "hint": "Search for a word that means an adult female person (as opposed to a man).",
+            "explanation": "Man means an adult person who is male (as opposed to a woman); woman means an adult female person (as opposed to a man).",
             "interactionType": "search",
-            "correctAnswer": "UNFRIENDLY",
+            "correctAnswer": "WOMAN",
             "options": [
-                "KIND",
-                "UNFRIENDLY",
-                "WARM",
-                "SOCIABLE"
+                "GENTLEMAN",
+                "MANKIND",
+                "WOMAN",
+                "WORLD"
             ],
             "gradientScale": [
-                "FRIENDLY",
-                "very FRIENDLY",
-                "neutral",
-                "slightly UNFRIENDLY",
-                "UNFRIENDLY"
+                "MAN",
+                "strong MAN",
+                "mixed",
+                "a hint of woman",
+                "WOMAN"
             ]
         },
         {
             "id": "VOC_ANTONYMSEARCH_L4_Q2",
-            "word": "CHEERFUL",
+            "word": "SAME",
             "instruction": "Select the antonym for the given word.",
-            "hint": "Think about a word meaning dark and without hope.",
-            "explanation": "Cheerful means happy and bright; gloomy means dark and without hope.",
+            "hint": "This word describes something that is not the same one or ones already mentioned or implied.",
+            "explanation": "Same means same in identity, so its opposite, other, means not the same one or ones already mentioned or implied.",
             "interactionType": "search",
-            "correctAnswer": "GLOOMY",
+            "correctAnswer": "OTHER",
             "options": [
-                "MERRY",
-                "GLOOMY",
-                "JOYFUL",
-                "UPBEAT"
+                "OTHER",
+                "LIKE",
+                "PLANKTON",
+                "PLATE"
             ],
             "gradientScale": [
-                "CHEERFUL",
-                "very CHEERFUL",
-                "neutral",
-                "slightly GLOOMY",
-                "GLOOMY"
+                "SAME",
+                "quite SAME",
+                "average",
+                "mildly OTHER",
+                "OTHER"
             ]
         },
         {
             "id": "VOC_ANTONYMSEARCH_L4_Q3",
-            "word": "ENERGETIC",
-            "instruction": "Select the antonym for the given word.",
-            "hint": "Think about a word meaning extremely tired.",
-            "explanation": "Energetic means full of energy; exhausted means extremely tired.",
+            "word": "FATHER",
+            "instruction": "Find the word with the opposite meaning.",
+            "hint": "The opposite idea here is a woman who has given birth to a child (also used as a term of address to your mother).",
+            "explanation": "Father means a male parent (also used as a term of address to your father); mother means a woman who has given birth to a child (also used as a term of address to your mother).",
             "interactionType": "search",
-            "correctAnswer": "EXHAUSTED",
+            "correctAnswer": "MOTHER",
             "options": [
-                "VIGOROUS",
-                "LIVELY",
-                "ACTIVE",
-                "EXHAUSTED"
+                "BEGETTER",
+                "MOTHER",
+                "BEGINNER",
+                "FATHERHOOD"
             ],
             "gradientScale": [
-                "ENERGETIC",
-                "very ENERGETIC",
+                "FATHER",
+                "pure FATHER",
                 "neutral",
-                "slightly EXHAUSTED",
-                "EXHAUSTED"
+                "a hint of mother",
+                "MOTHER"
             ]
         },
         {
             "id": "VOC_ANTONYMSEARCH_L5_Q1",
-            "word": "RELIABLE",
-            "instruction": "Select the antonym for the given word.",
-            "hint": "Think about a word meaning not able to be trusted or depended on.",
-            "explanation": "Reliable means able to be trusted; unreliable means not able to be depended on.",
+            "word": "START",
+            "instruction": "Choose the word that means the opposite.",
+            "hint": "Search for a word meaning to cause to stop.",
+            "explanation": "While start means get going or set in motion, stop means the opposite: cause to stop.",
             "interactionType": "search",
-            "correctAnswer": "UNRELIABLE",
+            "correctAnswer": "STOP",
             "options": [
-                "UNRELIABLE",
-                "TRUSTWORTHY",
-                "CONSISTENT",
-                "DEPENDABLE"
+                "STOP",
+                "BULGE",
+                "JUMP",
+                "PROTRUDE"
             ],
             "gradientScale": [
-                "RELIABLE",
-                "very RELIABLE",
-                "neutral",
-                "slightly UNRELIABLE",
-                "UNRELIABLE"
+                "START",
+                "START completely",
+                "undecided",
+                "partly stop",
+                "STOP"
             ]
         },
         {
             "id": "VOC_ANTONYMSEARCH_L5_Q2",
-            "word": "SIMPLE",
-            "instruction": "Select the antonym for the given word.",
-            "hint": "Think about a word meaning difficult to understand because of many parts.",
-            "explanation": "Simple means easy to understand; complicated means difficult because of many parts.",
+            "word": "GIRL",
+            "instruction": "Which option contrasts most directly with the given word?",
+            "hint": "Look for a word meaning a male human offspring.",
+            "explanation": "Girl refers to a female human offspring. Boy, by contrast, means a male human offspring.",
             "interactionType": "search",
-            "correctAnswer": "COMPLICATED",
+            "correctAnswer": "BOY",
             "options": [
-                "BASIC",
-                "COMPLICATED",
-                "EASY",
-                "PLAIN"
+                "DAUGHTER",
+                "MISSY",
+                "MISS",
+                "BOY"
             ],
             "gradientScale": [
-                "SIMPLE",
-                "very SIMPLE",
+                "GIRL",
+                "strong GIRL",
                 "neutral",
-                "slightly COMPLICATED",
-                "COMPLICATED"
+                "some boy",
+                "BOY"
             ]
         },
         {
             "id": "VOC_ANTONYMSEARCH_L5_Q3",
-            "word": "MODERN",
-            "instruction": "Select the antonym for the given word.",
-            "hint": "Think about a word meaning belonging to the very distant past.",
-            "explanation": "Modern means belonging to the present time; ancient means belonging to the very distant past.",
+            "word": "MOVE",
+            "instruction": "Select the best antonym for the word shown.",
+            "hint": "The opposite action here is to stay put (in a certain place).",
+            "explanation": "While move means change residence, affiliation, or place of employment, stay means the opposite: stay put (in a certain place).",
             "interactionType": "search",
-            "correctAnswer": "ANCIENT",
+            "correctAnswer": "STAY",
             "options": [
-                "CURRENT",
-                "RECENT",
-                "CONTEMPORARY",
-                "ANCIENT"
+                "STAY",
+                "TRAVEL",
+                "INCITE",
+                "AFFECT"
             ],
             "gradientScale": [
-                "MODERN",
-                "very MODERN",
-                "neutral",
-                "slightly ANCIENT",
-                "ANCIENT"
+                "MOVE",
+                "MOVE fully",
+                "in between",
+                "beginning to stay",
+                "STAY"
             ]
         },
         {
             "id": "VOC_ANTONYMSEARCH_L6_Q1",
-            "word": "EXPENSIVE",
-            "instruction": "Select the antonym for the given word.",
-            "hint": "Think about a word meaning costing very little money.",
-            "explanation": "Expensive means costing a lot of money; cheap means costing very little.",
+            "word": "LOST",
+            "instruction": "Find the word that expresses the reverse idea.",
+            "hint": "Picture something described as not subject to defeat.",
+            "explanation": "Lost describes not gained or won, while won describes not subject to defeat.",
             "interactionType": "search",
-            "correctAnswer": "CHEAP",
+            "correctAnswer": "WON",
             "options": [
-                "PRICEY",
-                "LUXURIOUS",
-                "CHEAP",
-                "COSTLY"
+                "PREOCCUPIED",
+                "WON",
+                "MAZED",
+                "HELPLESS"
             ],
             "gradientScale": [
-                "EXPENSIVE",
-                "very EXPENSIVE",
-                "neutral",
-                "slightly CHEAP",
-                "CHEAP"
+                "LOST",
+                "very LOST",
+                "balanced",
+                "slightly WON",
+                "WON"
             ]
         },
         {
             "id": "VOC_ANTONYMSEARCH_L6_Q2",
-            "word": "CROWDED",
-            "instruction": "Select the antonym for the given word.",
-            "hint": "Think about a word meaning containing no people or things.",
-            "explanation": "Crowded means full of people; empty means containing nothing.",
+            "word": "LIVE",
+            "instruction": "Choose the option that means the opposite of the given word.",
+            "hint": "Consider a word that means not showing characteristics of life especially the capacity to sustain life.",
+            "explanation": "While live means exerting force or containing energy, dead means the opposite: not showing characteristics of life especially the capacity to sustain life.",
             "interactionType": "search",
-            "correctAnswer": "EMPTY",
+            "correctAnswer": "DEAD",
             "options": [
-                "FULL",
-                "PACKED",
-                "BUSY",
-                "EMPTY"
+                "DEAD",
+                "SPRINGY",
+                "UNRECORDED",
+                "HOT"
             ],
             "gradientScale": [
-                "CROWDED",
-                "very CROWDED",
-                "neutral",
-                "slightly EMPTY",
-                "EMPTY"
+                "LIVE",
+                "extremely LIVE",
+                "moderate",
+                "somewhat DEAD",
+                "DEAD"
             ]
         },
         {
             "id": "VOC_ANTONYMSEARCH_L6_Q3",
-            "word": "NOISY",
-            "instruction": "Select the antonym for the given word.",
-            "hint": "Think about a word meaning making no sound at all.",
-            "explanation": "Noisy means making a lot of sound; silent means making no sound.",
+            "word": "MANY",
+            "instruction": "Which word below is the true opposite?",
+            "hint": "Think about a word meaning a quantifier that can be used with count nouns and is often preceded by `a'.",
+            "explanation": "While many means a quantifier that can be used with count nouns and is often preceded by `as' or `too' or `so' or `that', few means the opposite: a quantifier that can be used with count nouns and is often preceded by `a'.",
             "interactionType": "search",
-            "correctAnswer": "SILENT",
+            "correctAnswer": "FEW",
             "options": [
-                "SILENT",
-                "BOISTEROUS",
-                "LOUD",
-                "DEAFENING"
+                "DOMINICAN",
+                "FEW",
+                "GHETTO",
+                "TRENCH"
             ],
             "gradientScale": [
-                "NOISY",
-                "very NOISY",
+                "MANY",
+                "highly MANY",
                 "neutral",
-                "slightly SILENT",
-                "SILENT"
+                "slightly FEW",
+                "FEW"
             ]
         },
         {
             "id": "VOC_ANTONYMSEARCH_L7_Q1",
-            "word": "CLEAN",
-            "instruction": "Select the antonym for the given word.",
-            "hint": "Think about a word meaning covered with dirt or stains.",
-            "explanation": "Clean means free from dirt; dirty means covered with dirt.",
+            "word": "SAFE",
+            "instruction": "Pick the word that contrasts with the meaning shown.",
+            "hint": "Search for a word that captures the idea of being not allowed to continue to bat or run.",
+            "explanation": "To be safe is to be having reached a base without being put out. Out means not allowed to continue to bat or run, the reverse quality.",
             "interactionType": "search",
-            "correctAnswer": "DIRTY",
+            "correctAnswer": "OUT",
             "options": [
-                "NEAT",
-                "SPOTLESS",
-                "TIDY",
-                "DIRTY"
+                "OUT",
+                "SECURE",
+                "GOOD",
+                "DEPENDABLE"
             ],
             "gradientScale": [
-                "CLEAN",
-                "very CLEAN",
-                "neutral",
-                "slightly DIRTY",
-                "DIRTY"
+                "SAFE",
+                "highly SAFE",
+                "in between",
+                "a little OUT",
+                "OUT"
             ]
         },
         {
             "id": "VOC_ANTONYMSEARCH_L7_Q2",
-            "word": "SAFE",
-            "instruction": "Select the antonym for the given word.",
-            "hint": "Think about a word meaning likely to cause harm.",
-            "explanation": "Safe means free from danger; dangerous means likely to cause harm.",
+            "word": "REMEMBER",
+            "instruction": "Identify the antonym among the options.",
+            "hint": "Try to recall a word that means to be unable to remember.",
+            "explanation": "Remember means recall knowledge from memory \u2014 the reverse idea is be unable to remember, which is what forget means.",
             "interactionType": "search",
-            "correctAnswer": "DANGEROUS",
+            "correctAnswer": "FORGET",
             "options": [
-                "PROTECTED",
-                "SECURE",
-                "DANGEROUS",
-                "HARMLESS"
+                "THINK",
+                "RETRIEVE",
+                "RECOLLECT",
+                "FORGET"
             ],
             "gradientScale": [
-                "SAFE",
-                "very SAFE",
-                "neutral",
-                "slightly DANGEROUS",
-                "DANGEROUS"
+                "REMEMBER",
+                "REMEMBER actively",
+                "undecided",
+                "starting to forget",
+                "FORGET"
             ]
         },
         {
             "id": "VOC_ANTONYMSEARCH_L7_Q3",
-            "word": "HEALTHY",
+            "word": "LOVE",
             "instruction": "Select the antonym for the given word.",
-            "hint": "Think about a word meaning likely to cause illness.",
-            "explanation": "Healthy means good for the body; unhealthy means likely to cause illness.",
+            "hint": "Search for a word that means the emotion of intense dislike.",
+            "explanation": "Love refers to a strong positive emotion of regard and affection. Hate, by contrast, means the emotion of intense dislike.",
             "interactionType": "search",
-            "correctAnswer": "UNHEALTHY",
+            "correctAnswer": "HATE",
             "options": [
-                "WELL",
-                "UNHEALTHY",
-                "FIT",
-                "NUTRITIOUS"
+                "HATE",
+                "HONEY",
+                "PASSION",
+                "BELOVED"
             ],
             "gradientScale": [
-                "HEALTHY",
-                "very HEALTHY",
-                "neutral",
-                "slightly UNHEALTHY",
-                "UNHEALTHY"
+                "LOVE",
+                "strong LOVE",
+                "mixed",
+                "some hate",
+                "HATE"
             ]
         },
         {
             "id": "VOC_ANTONYMSEARCH_L8_Q1",
-            "word": "EASY",
-            "instruction": "Select the antonym for the given word.",
-            "hint": "Think about a word meaning needing a lot of effort or skill.",
-            "explanation": "Easy means done without much effort; difficult means needing a lot of effort.",
+            "word": "HIT",
+            "instruction": "Find the word with the opposite meaning.",
+            "hint": "Consider a word that means to fail to reach.",
+            "explanation": "Hit refers to hit against. Miss, by contrast, means fail to reach.",
             "interactionType": "search",
-            "correctAnswer": "DIFFICULT",
+            "correctAnswer": "MISS",
             "options": [
-                "SIMPLE",
-                "DIFFICULT",
-                "EFFORTLESS",
-                "MANAGEABLE"
+                "STRIKE",
+                "MISS",
+                "REACH",
+                "PIP"
             ],
             "gradientScale": [
-                "EASY",
-                "very EASY",
-                "neutral",
-                "slightly DIFFICULT",
-                "DIFFICULT"
+                "HIT",
+                "HIT actively",
+                "neither",
+                "partly miss",
+                "MISS"
             ]
         },
         {
             "id": "VOC_ANTONYMSEARCH_L8_Q2",
-            "word": "FAST",
-            "instruction": "Select the antonym for the given word.",
-            "hint": "Think about a word meaning moving or happening with little speed.",
-            "explanation": "Fast means moving with great speed; slow means moving with little speed.",
+            "word": "DAUGHTER",
+            "instruction": "Choose the word that means the opposite.",
+            "hint": "The opposite idea here is a male human offspring.",
+            "explanation": "Daughter means a female human offspring \u2014 the reverse idea is a male human offspring, which is what son means.",
             "interactionType": "search",
-            "correctAnswer": "SLOW",
+            "correctAnswer": "SON",
             "options": [
-                "SLOW",
-                "RAPID",
-                "QUICK",
-                "SPEEDY"
+                "SON",
+                "GIRL",
+                "UNRAVEL",
+                "FOREFRONT"
             ],
             "gradientScale": [
-                "FAST",
-                "very FAST",
-                "neutral",
-                "slightly SLOW",
-                "SLOW"
+                "DAUGHTER",
+                "total DAUGHTER",
+                "mixed",
+                "a trace of son",
+                "SON"
             ]
         },
         {
             "id": "VOC_ANTONYMSEARCH_L8_Q3",
-            "word": "EARLY",
-            "instruction": "Select the antonym for the given word.",
-            "hint": "Think about a word meaning happening after the expected time.",
-            "explanation": "Early means happening before the expected time; late means happening after it.",
+            "word": "FIND",
+            "instruction": "Which option contrasts most directly with the given word?",
+            "hint": "Try to recall a word that means to miss from one's possessions.",
+            "explanation": "Find means come upon after searching; lose means miss from one's possessions.",
             "interactionType": "search",
-            "correctAnswer": "LATE",
+            "correctAnswer": "LOSE",
             "options": [
-                "LATE",
-                "PROMPT",
-                "SOON",
-                "TIMELY"
+                "REGAIN",
+                "RECOVER",
+                "LOSE",
+                "WITNESS"
             ],
             "gradientScale": [
-                "EARLY",
-                "very EARLY",
-                "neutral",
-                "slightly LATE",
-                "LATE"
+                "FIND",
+                "FIND actively",
+                "undecided",
+                "partly lose",
+                "LOSE"
             ]
         },
         {
             "id": "VOC_ANTONYMSEARCH_L9_Q1",
-            "word": "NEAR",
-            "instruction": "Select the antonym for the given word.",
-            "hint": "Think about a word meaning far away in space.",
-            "explanation": "Near means close in distance; distant means far away.",
+            "word": "OPEN",
+            "instruction": "Select the best antonym for the word shown.",
+            "hint": "What word fits the idea of being not open?",
+            "explanation": "While open means affording unobstructed entrance and exit, shut means the opposite: not open.",
             "interactionType": "search",
-            "correctAnswer": "DISTANT",
+            "correctAnswer": "SHUT",
             "options": [
-                "CLOSE",
-                "ADJACENT",
-                "NEARBY",
-                "DISTANT"
+                "SHUT",
+                "UNFASTENED",
+                "UNRESOLVED",
+                "CLEAR"
             ],
             "gradientScale": [
-                "NEAR",
-                "very NEAR",
-                "neutral",
-                "slightly DISTANT",
-                "DISTANT"
+                "OPEN",
+                "highly OPEN",
+                "balanced",
+                "slightly SHUT",
+                "SHUT"
             ]
         },
         {
             "id": "VOC_ANTONYMSEARCH_L9_Q2",
-            "word": "HEAVY",
-            "instruction": "Select the antonym for the given word.",
-            "hint": "Think about a word meaning not weighing very much.",
-            "explanation": "Heavy means weighing a lot; light means not weighing very much, here describing weight rather than brightness.",
+            "word": "HUSBAND",
+            "instruction": "Find the word that expresses the reverse idea.",
+            "hint": "Search for a word that means a married woman.",
+            "explanation": "Husband refers to a married man. Wife, by contrast, means a married woman.",
             "interactionType": "search",
-            "correctAnswer": "LIGHT",
+            "correctAnswer": "WIFE",
             "options": [
-                "BULKY",
-                "LIGHT",
-                "WEIGHTY",
-                "DENSE"
+                "HUBBY",
+                "ADE",
+                "WIFE",
+                "OBSTACLE"
             ],
             "gradientScale": [
-                "HEAVY",
-                "very HEAVY",
+                "HUSBAND",
+                "pure HUSBAND",
                 "neutral",
-                "slightly LIGHT",
-                "LIGHT"
+                "a trace of wife",
+                "WIFE"
             ]
         },
         {
             "id": "VOC_ANTONYMSEARCH_L9_Q3",
-            "word": "WIDE",
-            "instruction": "Select the antonym for the given word.",
-            "hint": "Think about a word meaning having only a small distance from side to side.",
-            "explanation": "Wide means having a large distance from side to side; narrow means having only a small distance.",
+            "word": "BROTHER",
+            "instruction": "Choose the option that means the opposite of the given word.",
+            "hint": "This word refers to a female person who has the same parents as another person.",
+            "explanation": "Brother refers to a male with the same parents as someone else. Sister, by contrast, means a female person who has the same parents as another person.",
             "interactionType": "search",
-            "correctAnswer": "NARROW",
+            "correctAnswer": "SISTER",
             "options": [
-                "BROAD",
-                "SPACIOUS",
-                "NARROW",
-                "EXPANSIVE"
+                "SISTER",
+                "CRONY",
+                "COMRADE",
+                "CHUM"
             ],
             "gradientScale": [
-                "WIDE",
-                "very WIDE",
-                "neutral",
-                "slightly NARROW",
-                "NARROW"
+                "BROTHER",
+                "strong BROTHER",
+                "balanced",
+                "a hint of sister",
+                "SISTER"
             ]
         },
         {
             "id": "VOC_ANTONYMSEARCH_L10_Q1",
-            "word": "DEEP",
-            "instruction": "Select the antonym for the given word.",
-            "hint": "Think about a word meaning not far from the surface.",
-            "explanation": "Deep means extending far down; shallow means not far from the surface.",
+            "word": "WHOLE",
+            "instruction": "Which word below is the true opposite?",
+            "hint": "What word fits the idea of being related through one parent only?",
+            "explanation": "Whole means having the same parents; half means related through one parent only.",
             "interactionType": "search",
-            "correctAnswer": "SHALLOW",
+            "correctAnswer": "HALF",
             "options": [
-                "SUNKEN",
-                "BOTTOMLESS",
-                "PROFOUND",
-                "SHALLOW"
+                "UNANIMOUS",
+                "HALF",
+                "HALE",
+                "UNSCATHED"
             ],
             "gradientScale": [
-                "DEEP",
-                "very DEEP",
-                "neutral",
-                "slightly SHALLOW",
-                "SHALLOW"
+                "WHOLE",
+                "extremely WHOLE",
+                "average",
+                "somewhat HALF",
+                "HALF"
             ]
         },
         {
             "id": "VOC_ANTONYMSEARCH_L10_Q2",
-            "word": "LOOSE",
-            "instruction": "Select the antonym for the given word.",
-            "hint": "Think about a word meaning fitting very closely.",
-            "explanation": "Loose means not fitting closely; tight means fitting very closely.",
+            "word": "SIT",
+            "instruction": "Pick the word that contrasts with the meaning shown.",
+            "hint": "Try to recall a word that means to be standing.",
+            "explanation": "Sit means be seated, so its opposite, stand, means be standing.",
             "interactionType": "search",
-            "correctAnswer": "TIGHT",
+            "correctAnswer": "STAND",
             "options": [
-                "TIGHT",
-                "BAGGY",
-                "SLACK",
-                "RELAXED"
+                "STAND",
+                "RIDE",
+                "MODEL",
+                "POSTURE"
             ],
             "gradientScale": [
-                "LOOSE",
-                "very LOOSE",
-                "neutral",
-                "slightly TIGHT",
-                "TIGHT"
+                "SIT",
+                "SIT fully",
+                "neither",
+                "starting to stand",
+                "STAND"
             ]
         },
         {
             "id": "VOC_ANTONYMSEARCH_L10_Q3",
-            "word": "SMOOTH",
-            "instruction": "Select the antonym for the given word.",
-            "hint": "Think about a word meaning having an uneven or bumpy surface.",
-            "explanation": "Smooth means having an even surface; rough means having an uneven, bumpy surface.",
+            "word": "INSIDE",
+            "instruction": "Identify the antonym among the options.",
+            "hint": "Consider a word that means the outer side or surface of something.",
+            "explanation": "Inside means the inner or enclosed surface of something \u2014 the reverse idea is the outer side or surface of something, which is what outside means.",
             "interactionType": "search",
-            "correctAnswer": "ROUGH",
+            "correctAnswer": "OUTSIDE",
             "options": [
-                "SLEEK",
-                "EVEN",
-                "POLISHED",
-                "ROUGH"
+                "INTERIOR",
+                "DASHED",
+                "OUTSIDE",
+                "WARM"
             ],
             "gradientScale": [
-                "SMOOTH",
-                "very SMOOTH",
-                "neutral",
-                "slightly ROUGH",
-                "ROUGH"
+                "INSIDE",
+                "complete INSIDE",
+                "balanced",
+                "a hint of outside",
+                "OUTSIDE"
             ]
         }
     ],

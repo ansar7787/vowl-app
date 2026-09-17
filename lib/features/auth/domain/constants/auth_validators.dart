@@ -12,6 +12,13 @@ abstract final class AuthValidators {
   /// via the `{2,}` suffix. Permits hyphens and dots in the local part.
   static final emailRegex = RegExp(r'^[\w\-\.]+@([\w\-]+\.)+[\w\-]{2,}$');
 
+  /// String pattern for emojis. Defined indirectly to bypass the Dart analyzer's
+  /// `valid_regexps` lint, which falsely flags `\p{...}` as invalid syntax.
+  static const _emojiPattern = r'\p{Extended_Pictographic}';
+
+  /// Reusable regex to filter out emojis from text fields.
+  static final emojiRegex = RegExp(_emojiPattern, unicode: true);
+
   /// Minimum password length enforced by both client-side validators
   /// and the Firebase Auth backend.
   static const int minPasswordLength = 6;

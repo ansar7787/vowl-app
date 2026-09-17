@@ -6,721 +6,781 @@
         {
             "id": "VOC_TOPICVOCAB_L171_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These describe whether something follows an established pattern. Sort into Anomaly or Precedent.",
             "topicBuckets": [
-                "Precedent",
-                "Anomaly"
+                "Anomaly",
+                "Precedent"
             ],
-            "hint": "Here's a tip: A precedent follows an established pattern from before, while an anomaly is a strange exception that breaks the pattern!",
-            "explanation": "Think of 'Precedent' as an established pattern used as a guide (established-pattern, prior-example), and 'Anomaly' as an unusual exception to the pattern (irregularity, deviation)!",
+            "hint": "Think about a result that fits expectations, and one that doesn't.",
+            "explanation": "'Established practice', 'the norm', and 'standard case' all describe something following a known pattern. 'Outlier' and 'exception' both describe something falling outside it.",
             "options": [
-                "Established-pattern",
-                "Irregularity",
-                "Prior-example",
-                "Deviation",
-                "Benchmark-case"
+                "Established practice",
+                "Outlier",
+                "The norm",
+                "Exception",
+                "Standard case"
             ],
-            "correctAnswer": "Precedent:Established-pattern, Anomaly:Irregularity, Precedent:Prior-example, Anomaly:Deviation, Precedent:Benchmark-case",
+            "correctAnswer": "Precedent:Established practice, Anomaly:Outlier, Precedent:The norm, Anomaly:Exception, Precedent:Standard case",
             "relatedWords": [
-                "aspect of Precedent:Established-pattern, Anomaly:Irregularity, Precedent:Prior-example, Anomaly:Deviation, Precedent:Benchmark-case",
-                "concept of Precedent:Established-pattern, Anomaly:Irregularity, Precedent:Prior-example, Anomaly:Deviation, Precedent:Benchmark-case",
-                "related to Precedent:Established-pattern, Anomaly:Irregularity, Precedent:Prior-example, Anomaly:Deviation, Precedent:Benchmark-case"
+                "Established practice: a way of doing things already accepted",
+                "Outlier: a result far outside the usual range",
+                "The norm: the usual or expected state",
+                "Exception: a case not following the general rule",
+                "Standard case: a typical example following the pattern"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L171_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "In law, one of these binds future decisions. Sort into Precedent or Anomaly.",
             "topicBuckets": [
                 "Precedent",
                 "Anomaly"
             ],
-            "hint": "Here's a tip: A precedent follows an established pattern from before, while an anomaly is a strange exception that breaks the pattern!",
-            "explanation": "Think of 'Precedent' as an established pattern used as a guide (established-pattern, prior-example), and 'Anomaly' as an unusual exception to the pattern (irregularity, deviation)!",
+            "hint": "Courts are expected to follow earlier decisions unless there's reason not to.",
+            "explanation": "'Binding authority' describes an earlier ruling courts must follow, alongside 'customary' and 'in keeping with'. 'Aberration' and 'deviation' both describe departures from a pattern, with an aberration suggesting a one-off that shouldn't be treated as a guide.",
             "options": [
-                "Reference-point",
-                "Outlier",
-                "Past-ruling",
+                "Binding authority",
                 "Aberration",
-                "Customary-practice"
+                "Customary",
+                "Deviation",
+                "In keeping with"
             ],
-            "correctAnswer": "Precedent:Reference-point, Anomaly:Outlier, Precedent:Past-ruling, Anomaly:Aberration, Precedent:Customary-practice",
+            "correctAnswer": "Precedent:Binding authority, Anomaly:Aberration, Precedent:Customary, Anomaly:Deviation, Precedent:In keeping with",
             "relatedWords": [
-                "aspect of Precedent:Reference-point, Anomaly:Outlier, Precedent:Past-ruling, Anomaly:Aberration, Precedent:Customary-practice",
-                "concept of Precedent:Reference-point, Anomaly:Outlier, Precedent:Past-ruling, Anomaly:Aberration, Precedent:Customary-practice",
-                "related to Precedent:Reference-point, Anomaly:Outlier, Precedent:Past-ruling, Anomaly:Aberration, Precedent:Customary-practice"
+                "Binding authority: an earlier ruling that must be followed",
+                "Aberration: a one-off departure from the normal",
+                "Customary: following long-established practice",
+                "Deviation: a departure from the expected pattern",
+                "In keeping with: consistent with what came before"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L171_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Picture a data report flagging an unusual result. Sort into Anomaly or Precedent.",
             "topicBuckets": [
-                "Precedent",
-                "Anomaly"
+                "Anomaly",
+                "Precedent"
             ],
-            "hint": "Here's a tip: A precedent follows an established pattern from before, while an anomaly is a strange exception that breaks the pattern!",
-            "explanation": "Think of 'Precedent' as an established pattern used as a guide (established-pattern, prior-example), and 'Anomaly' as an unusual exception to the pattern (irregularity, deviation)!",
+            "hint": "Two of these mark something worth investigating rather than trusting.",
+            "explanation": "'Consistent with prior results' and 'set the standard' both describe findings that fit or define a pattern, and 'replicated' confirms it. 'Statistically improbable' and 'flagged for review' both mark results as unusual enough to investigate rather than trust immediately.",
             "options": [
-                "Standard-practice",
-                "Odd-exception",
-                "Historical-basis",
-                "Statistical-quirk",
-                "Guiding-example"
+                "Consistent with prior results",
+                "Statistically improbable",
+                "Flagged for review",
+                "Replicated",
+                "Set the standard"
             ],
-            "correctAnswer": "Precedent:Standard-practice, Anomaly:Odd-exception, Precedent:Historical-basis, Anomaly:Statistical-quirk, Precedent:Guiding-example",
+            "correctAnswer": "Precedent:Consistent with prior results, Anomaly:Statistically improbable, Anomaly:Flagged for review, Precedent:Replicated, Precedent:Set the standard",
             "relatedWords": [
-                "aspect of Precedent:Standard-practice, Anomaly:Odd-exception, Precedent:Historical-basis, Anomaly:Statistical-quirk, Precedent:Guiding-example",
-                "concept of Precedent:Standard-practice, Anomaly:Odd-exception, Precedent:Historical-basis, Anomaly:Statistical-quirk, Precedent:Guiding-example",
-                "related to Precedent:Standard-practice, Anomaly:Odd-exception, Precedent:Historical-basis, Anomaly:Statistical-quirk, Precedent:Guiding-example"
+                "Consistent with prior results: matching what earlier work found",
+                "Statistically improbable: unlikely to occur by chance",
+                "Flagged for review: marked as needing investigation",
+                "Replicated: confirmed by repeating the study",
+                "Set the standard: established the benchmark others follow"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L172_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These describe people joining or leaving an organisation. Sort into Resign or Recruit.",
             "topicBuckets": [
-                "Recruit",
-                "Resign"
+                "Resign",
+                "Recruit"
             ],
-            "hint": "Here's a tip: To recruit is to hire someone new for a job, while to resign is to officially leave that job!",
-            "explanation": "Think of 'Recruit' as hiring someone new (hire, enlist), and 'Resign' as officially leaving a job (quit, step-down)!",
+            "hint": "Think about the direction someone is moving through the door.",
+            "explanation": "'Hire', 'onboard', and 'job offer' all describe bringing someone in. 'Hand in notice' and 'step down' both describe leaving by choice.",
             "options": [
+                "Step down",
+                "Onboard",
+                "Hand in notice",
                 "Hire",
-                "Quit",
-                "Enlist",
-                "Step-down",
-                "Onboard"
+                "Job offer"
             ],
-            "correctAnswer": "Recruit:Hire, Resign:Quit, Recruit:Enlist, Resign:Step-down, Recruit:Onboard",
+            "correctAnswer": "Resign:Step down, Recruit:Onboard, Resign:Hand in notice, Recruit:Hire, Recruit:Job offer",
             "relatedWords": [
-                "aspect of Recruit:Hire, Resign:Quit, Recruit:Enlist, Resign:Step-down, Recruit:Onboard",
-                "concept of Recruit:Hire, Resign:Quit, Recruit:Enlist, Resign:Step-down, Recruit:Onboard",
-                "related to Recruit:Hire, Resign:Quit, Recruit:Enlist, Resign:Step-down, Recruit:Onboard"
+                "Step down: to leave a position voluntarily",
+                "Onboard: to bring a new employee into an organisation",
+                "Hand in notice: to formally announce leaving a job",
+                "Hire: to take someone on as an employee",
+                "Job offer: a formal proposal of employment"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L172_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "One resign word describes leaving at the end of a working life. Sort into Recruit or Resign.",
             "topicBuckets": [
                 "Recruit",
                 "Resign"
             ],
-            "hint": "Here's a tip: To recruit is to hire someone new for a job, while to resign is to officially leave that job!",
-            "explanation": "Think of 'Recruit' as hiring someone new (hire, enlist), and 'Resign' as officially leaving a job (quit, step-down)!",
+            "hint": "Not every departure is a resignation.",
+            "explanation": "'Headhunt', 'shortlist', and 'appointment' all belong to bringing someone in, with headhunting meaning approaching someone already employed elsewhere. 'Retire' describes leaving at the end of a working life, and 'notice period' names the time worked between resigning and leaving.",
             "options": [
-                "Sign-on",
-                "Hand-in-notice",
-                "Bring-aboard",
-                "Depart-the-role",
-                "Headhunt"
+                "Appointment",
+                "Headhunt",
+                "Shortlist",
+                "Notice period",
+                "Retire"
             ],
-            "correctAnswer": "Recruit:Sign-on, Resign:Hand-in-notice, Recruit:Bring-aboard, Resign:Depart-the-role, Recruit:Headhunt",
+            "correctAnswer": "Recruit:Appointment, Recruit:Headhunt, Recruit:Shortlist, Resign:Notice period, Resign:Retire",
             "relatedWords": [
-                "aspect of Recruit:Sign-on, Resign:Hand-in-notice, Recruit:Bring-aboard, Resign:Depart-the-role, Recruit:Headhunt",
-                "concept of Recruit:Sign-on, Resign:Hand-in-notice, Recruit:Bring-aboard, Resign:Depart-the-role, Recruit:Headhunt",
-                "related to Recruit:Sign-on, Resign:Hand-in-notice, Recruit:Bring-aboard, Resign:Depart-the-role, Recruit:Headhunt"
+                "Appointment: the act of formally giving someone a post",
+                "Headhunt: to approach someone already employed elsewhere",
+                "Shortlist: a reduced list of preferred candidates",
+                "Notice period: time worked between resigning and leaving",
+                "Retire: to leave work at the end of a career"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L172_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Picture an HR announcement covering both arrivals and departures. Sort into Resign or Recruit.",
             "topicBuckets": [
-                "Recruit",
-                "Resign"
+                "Resign",
+                "Recruit"
             ],
-            "hint": "Here's a tip: To recruit is to hire someone new for a job, while to resign is to officially leave that job!",
-            "explanation": "Think of 'Recruit' as hiring someone new (hire, enlist), and 'Resign' as officially leaving a job (quit, step-down)!",
+            "hint": "Two of these describe someone choosing to go.",
+            "explanation": "'Talent pipeline' and 'filled the vacancy' both describe bringing people in, and 'probation period' covers a new hire's first months. 'Exit interview' and 'moving on to a new role' both describe voluntary departure \u2014 note that resigning is a choice, unlike the layoffs covered earlier in the curriculum.",
             "options": [
-                "Take-on-staff",
-                "Vacate-the-post",
-                "Engage-a-candidate",
-                "Tender-resignation",
-                "Add-to-team"
+                "Moving on to a new role",
+                "Talent pipeline",
+                "Filled the vacancy",
+                "Exit interview",
+                "Probation period"
             ],
-            "correctAnswer": "Recruit:Take-on-staff, Resign:Vacate-the-post, Recruit:Engage-a-candidate, Resign:Tender-resignation, Recruit:Add-to-team",
+            "correctAnswer": "Resign:Moving on to a new role, Recruit:Talent pipeline, Recruit:Filled the vacancy, Resign:Exit interview, Recruit:Probation period",
             "relatedWords": [
-                "aspect of Recruit:Take-on-staff, Resign:Vacate-the-post, Recruit:Engage-a-candidate, Resign:Tender-resignation, Recruit:Add-to-team",
-                "concept of Recruit:Take-on-staff, Resign:Vacate-the-post, Recruit:Engage-a-candidate, Resign:Tender-resignation, Recruit:Add-to-team",
-                "related to Recruit:Take-on-staff, Resign:Vacate-the-post, Recruit:Engage-a-candidate, Resign:Tender-resignation, Recruit:Add-to-team"
+                "Moving on to a new role: leaving for a different job",
+                "Talent pipeline: a pool of potential future employees",
+                "Filled the vacancy: appointed someone to an open position",
+                "Exit interview: a meeting held when an employee leaves",
+                "Probation period: a new employee's initial trial period"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L173_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These describe expectations before a contest. Sort into Favorite or Underdog.",
             "topicBuckets": [
-                "Underdog",
-                "Favorite"
+                "Favorite",
+                "Underdog"
             ],
-            "hint": "Here's a tip: An underdog is expected to lose but might surprise everyone, while a favorite is expected to win easily!",
-            "explanation": "Think of 'Underdog' as a competitor expected to lose (long-shot, unlikely-winner), and 'Favorite' as a competitor expected to win (frontrunner, top-pick)!",
+            "hint": "Think about who the bookmakers expect to win.",
+            "explanation": "'Long shot', 'unfancied', and 'outsider' all describe a competitor expected to lose. 'Frontrunner' and 'odds-on' both describe the expected winner.",
             "options": [
-                "Long-shot",
+                "Long shot",
                 "Frontrunner",
-                "Unlikely-winner",
-                "Top-pick",
-                "Dark-horse"
+                "Unfancied",
+                "Odds-on",
+                "Outsider"
             ],
-            "correctAnswer": "Underdog:Long-shot, Favorite:Frontrunner, Underdog:Unlikely-winner, Favorite:Top-pick, Underdog:Dark-horse",
+            "correctAnswer": "Underdog:Long shot, Favorite:Frontrunner, Underdog:Unfancied, Favorite:Odds-on, Underdog:Outsider",
             "relatedWords": [
-                "aspect of Underdog:Long-shot, Favorite:Frontrunner, Underdog:Unlikely-winner, Favorite:Top-pick, Underdog:Dark-horse",
-                "concept of Underdog:Long-shot, Favorite:Frontrunner, Underdog:Unlikely-winner, Favorite:Top-pick, Underdog:Dark-horse",
-                "related to Underdog:Long-shot, Favorite:Frontrunner, Underdog:Unlikely-winner, Favorite:Top-pick, Underdog:Dark-horse"
+                "Long shot: a competitor with little chance of winning",
+                "Frontrunner: the competitor expected to win",
+                "Unfancied: not expected to do well",
+                "Odds-on: strongly expected to win",
+                "Outsider: a competitor not among the expected winners"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L173_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "One favourite word describes being expected to win so heavily that losing is a scandal. Sort into Underdog or Favorite.",
             "topicBuckets": [
                 "Underdog",
                 "Favorite"
             ],
-            "hint": "Here's a tip: An underdog is expected to lose but might surprise everyone, while a favorite is expected to win easily!",
-            "explanation": "Think of 'Underdog' as a competitor expected to lose (long-shot, unlikely-winner), and 'Favorite' as a competitor expected to win (frontrunner, top-pick)!",
+            "hint": "Expectation cuts both ways \u2014 it can become pressure.",
+            "explanation": "'Written off', 'against the odds', and 'plucky' all describe competitors defying low expectations, with plucky admiring their determination. 'Overwhelming favourite' describes being expected to win so heavily that losing becomes a scandal, and 'title holder' names the current champion carrying that pressure.",
             "options": [
-                "Outsider",
-                "Odds-on-winner",
-                "Lesser-known-contender",
-                "Expected-champion",
-                "Surprise-contender"
+                "Against the odds",
+                "Plucky",
+                "Written off",
+                "Title holder",
+                "Overwhelming favourite"
             ],
-            "correctAnswer": "Underdog:Outsider, Favorite:Odds-on-winner, Underdog:Lesser-known-contender, Favorite:Expected-champion, Underdog:Surprise-contender",
+            "correctAnswer": "Underdog:Against the odds, Underdog:Plucky, Underdog:Written off, Favorite:Title holder, Favorite:Overwhelming favourite",
             "relatedWords": [
-                "aspect of Underdog:Outsider, Favorite:Odds-on-winner, Underdog:Lesser-known-contender, Favorite:Expected-champion, Underdog:Surprise-contender",
-                "concept of Underdog:Outsider, Favorite:Odds-on-winner, Underdog:Lesser-known-contender, Favorite:Expected-champion, Underdog:Surprise-contender",
-                "related to Underdog:Outsider, Favorite:Odds-on-winner, Underdog:Lesser-known-contender, Favorite:Expected-champion, Underdog:Surprise-contender"
+                "Against the odds: succeeding despite low expectations",
+                "Plucky: showing determination despite disadvantage",
+                "Written off: dismissed as having no chance",
+                "Title holder: the current champion",
+                "Overwhelming favourite: expected to win by a wide margin"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L173_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Picture a match report on a surprising result. Sort into Underdog or Favorite.",
             "topicBuckets": [
                 "Underdog",
                 "Favorite"
             ],
-            "hint": "Here's a tip: An underdog is expected to lose but might surprise everyone, while a favorite is expected to win easily!",
-            "explanation": "Think of 'Underdog' as a competitor expected to lose (long-shot, unlikely-winner), and 'Favorite' as a competitor expected to win (frontrunner, top-pick)!",
+            "hint": "Two of these describe the shock when expectation is overturned.",
+            "explanation": "'Giant-killing' and 'nobody gave them a chance' both describe a weaker side overturning expectation, which is what makes the result newsworthy. 'Expected to cruise', 'shock defeat', and 'on paper the stronger side' all frame the losing favourite, whose loss is surprising precisely because it was not predicted.",
             "options": [
-                "Overlooked-competitor",
-                "Top-seed",
-                "Against-the-odds-player",
-                "Clear-favorite",
-                "Unranked-hopeful"
+                "Giant-killing",
+                "Expected to cruise",
+                "Nobody gave them a chance",
+                "Shock defeat",
+                "On paper the stronger side"
             ],
-            "correctAnswer": "Underdog:Overlooked-competitor, Favorite:Top-seed, Underdog:Against-the-odds-player, Favorite:Clear-favorite, Underdog:Unranked-hopeful",
+            "correctAnswer": "Underdog:Giant-killing, Favorite:Expected to cruise, Underdog:Nobody gave them a chance, Favorite:Shock defeat, Favorite:On paper the stronger side",
             "relatedWords": [
-                "aspect of Underdog:Overlooked-competitor, Favorite:Top-seed, Underdog:Against-the-odds-player, Favorite:Clear-favorite, Underdog:Unranked-hopeful",
-                "concept of Underdog:Overlooked-competitor, Favorite:Top-seed, Underdog:Against-the-odds-player, Favorite:Clear-favorite, Underdog:Unranked-hopeful",
-                "related to Underdog:Overlooked-competitor, Favorite:Top-seed, Underdog:Against-the-odds-player, Favorite:Clear-favorite, Underdog:Unranked-hopeful"
+                "Giant-killing: a weaker side defeating a much stronger one",
+                "Expected to cruise: anticipated to win easily",
+                "Nobody gave them a chance: widely dismissed beforehand",
+                "Shock defeat: an unexpected loss by a strong side",
+                "On paper the stronger side: appearing stronger by the statistics"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L174_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These contrast handwritten tradition with digital tools. Sort into Manuscript or Interface.",
             "topicBuckets": [
                 "Manuscript",
                 "Interface"
             ],
-            "hint": "Here's a tip: A manuscript is a handwritten document, often very old, while an interface is the screen you use to control a digital device!",
-            "explanation": "Think of 'Manuscript' as a handwritten or old written document (handwritten-text, ancient-document), and 'Interface' as the digital screen used to interact with technology (touchscreen, control-panel)!",
+            "hint": "Think about a medieval scribe's desk and a modern screen.",
+            "explanation": "'Handwritten', 'parchment', and 'quill' all belong to producing text by hand. 'Touchscreen' and 'user interface' both belong to interacting with a digital system.",
             "options": [
-                "Handwritten-text",
+                "User interface",
                 "Touchscreen",
-                "Ancient-document",
-                "Control-panel",
-                "Scroll-of-text"
+                "Quill",
+                "Handwritten",
+                "Parchment"
             ],
-            "correctAnswer": "Manuscript:Handwritten-text, Interface:Touchscreen, Manuscript:Ancient-document, Interface:Control-panel, Manuscript:Scroll-of-text",
+            "correctAnswer": "Interface:User interface, Interface:Touchscreen, Manuscript:Quill, Manuscript:Handwritten, Manuscript:Parchment",
             "relatedWords": [
-                "aspect of Manuscript:Handwritten-text, Interface:Touchscreen, Manuscript:Ancient-document, Interface:Control-panel, Manuscript:Scroll-of-text",
-                "concept of Manuscript:Handwritten-text, Interface:Touchscreen, Manuscript:Ancient-document, Interface:Control-panel, Manuscript:Scroll-of-text",
-                "related to Manuscript:Handwritten-text, Interface:Touchscreen, Manuscript:Ancient-document, Interface:Control-panel, Manuscript:Scroll-of-text"
+                "User interface: the point where a person interacts with a system",
+                "Touchscreen: a screen operated by touch",
+                "Quill: a pen made from a feather",
+                "Handwritten: written by hand rather than printed",
+                "Parchment: animal skin prepared as a writing surface"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L174_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "One interface word describes how easily a system can be used. Sort into Manuscript or Interface.",
             "topicBuckets": [
                 "Manuscript",
                 "Interface"
             ],
-            "hint": "Here's a tip: A manuscript is a handwritten document, often very old, while an interface is the screen you use to control a digital device!",
-            "explanation": "Think of 'Manuscript' as a handwritten or old written document (handwritten-text, ancient-document), and 'Interface' as the digital screen used to interact with technology (touchscreen, control-panel)!",
+            "hint": "Design vocabulary describes the experience of using something.",
+            "explanation": "'Illuminated', 'folio', and 'scribe' all belong to manuscript production, with illumination meaning decorative painting on a page. 'Usability' describes how easily a system can be used, and 'navigation menu' names the structure that guides a user through it.",
             "options": [
-                "Original-text-copy",
-                "User-dashboard",
-                "Penned-document",
-                "App-screen",
-                "Historical-text"
+                "Usability",
+                "Illuminated",
+                "Scribe",
+                "Navigation menu",
+                "Folio"
             ],
-            "correctAnswer": "Manuscript:Original-text-copy, Interface:User-dashboard, Manuscript:Penned-document, Interface:App-screen, Manuscript:Historical-text",
+            "correctAnswer": "Interface:Usability, Manuscript:Illuminated, Manuscript:Scribe, Interface:Navigation menu, Manuscript:Folio",
             "relatedWords": [
-                "aspect of Manuscript:Original-text-copy, Interface:User-dashboard, Manuscript:Penned-document, Interface:App-screen, Manuscript:Historical-text",
-                "concept of Manuscript:Original-text-copy, Interface:User-dashboard, Manuscript:Penned-document, Interface:App-screen, Manuscript:Historical-text",
-                "related to Manuscript:Original-text-copy, Interface:User-dashboard, Manuscript:Penned-document, Interface:App-screen, Manuscript:Historical-text"
+                "Usability: how easily something can be used",
+                "Illuminated: decorated with painted designs, describing a manuscript",
+                "Scribe: a person who copies documents by hand",
+                "Navigation menu: the structure guiding a user through a system",
+                "Folio: a leaf or page of a manuscript"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L174_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Picture a museum exhibit comparing old and new ways of recording knowledge. Sort into Manuscript or Interface.",
             "topicBuckets": [
                 "Manuscript",
                 "Interface"
             ],
-            "hint": "Here's a tip: A manuscript is a handwritten document, often very old, while an interface is the screen you use to control a digital device!",
-            "explanation": "Think of 'Manuscript' as a handwritten or old written document (handwritten-text, ancient-document), and 'Interface' as the digital screen used to interact with technology (touchscreen, control-panel)!",
+            "hint": "Two of these describe how modern systems present information.",
+            "explanation": "'Copied by hand' and 'marginalia' both belong to manuscript culture, marginalia being notes readers wrote in the margins. 'Responsive design' and 'dashboard' both belong to digital systems, and 'clickable' describes how users act on them.",
             "options": [
-                "Old-parchment-writing",
-                "Digital-display",
-                "Hand-copied-book",
-                "Software-front-end",
-                "Calligraphed-page"
+                "Clickable",
+                "Marginalia",
+                "Copied by hand",
+                "Responsive design",
+                "Dashboard"
             ],
-            "correctAnswer": "Manuscript:Old-parchment-writing, Interface:Digital-display, Manuscript:Hand-copied-book, Interface:Software-front-end, Manuscript:Calligraphed-page",
+            "correctAnswer": "Interface:Clickable, Manuscript:Marginalia, Manuscript:Copied by hand, Interface:Responsive design, Interface:Dashboard",
             "relatedWords": [
-                "aspect of Manuscript:Old-parchment-writing, Interface:Digital-display, Manuscript:Hand-copied-book, Interface:Software-front-end, Manuscript:Calligraphed-page",
-                "concept of Manuscript:Old-parchment-writing, Interface:Digital-display, Manuscript:Hand-copied-book, Interface:Software-front-end, Manuscript:Calligraphed-page",
-                "related to Manuscript:Old-parchment-writing, Interface:Digital-display, Manuscript:Hand-copied-book, Interface:Software-front-end, Manuscript:Calligraphed-page"
+                "Clickable: able to be selected by clicking",
+                "Marginalia: notes written in the margins of a text",
+                "Copied by hand: reproduced manually rather than printed",
+                "Responsive design: design adapting to different screen sizes",
+                "Dashboard: a screen presenting key information at a glance"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L175_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These are economics terms. Sort into Monopoly or Competition.",
             "topicBuckets": [
                 "Monopoly",
                 "Competition"
             ],
-            "hint": "Here's a tip: A monopoly means one company controls the whole market, while competition means many companies compete for customers!",
-            "explanation": "Think of 'Monopoly' as total control of a market by one company (sole-provider, market-domination), and 'Competition' as multiple companies competing for business (rivalry, open-market)!",
+            "hint": "Think about a market with one seller, and one with many.",
+            "explanation": "'Sole supplier', 'market dominance', and 'no alternatives' all describe a market controlled by one seller. 'Rival firms' and 'price war' both describe markets where sellers compete.",
             "options": [
-                "Sole-provider",
-                "Rivalry",
-                "Market-domination",
-                "Open-market",
-                "Single-supplier"
+                "Sole supplier",
+                "No alternatives",
+                "Market dominance",
+                "Rival firms",
+                "Price war"
             ],
-            "correctAnswer": "Monopoly:Sole-provider, Competition:Rivalry, Monopoly:Market-domination, Competition:Open-market, Monopoly:Single-supplier",
+            "correctAnswer": "Monopoly:Sole supplier, Monopoly:No alternatives, Monopoly:Market dominance, Competition:Rival firms, Competition:Price war",
             "relatedWords": [
-                "aspect of Monopoly:Sole-provider, Competition:Rivalry, Monopoly:Market-domination, Competition:Open-market, Monopoly:Single-supplier",
-                "concept of Monopoly:Sole-provider, Competition:Rivalry, Monopoly:Market-domination, Competition:Open-market, Monopoly:Single-supplier",
-                "related to Monopoly:Sole-provider, Competition:Rivalry, Monopoly:Market-domination, Competition:Open-market, Monopoly:Single-supplier"
+                "Sole supplier: the only provider of a good or service",
+                "No alternatives: leaving buyers no other option",
+                "Market dominance: controlling most of a market",
+                "Rival firms: competing companies in the same market",
+                "Price war: competitors repeatedly undercutting each other"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L175_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "One monopoly term describes obstacles stopping new firms from entering a market. Sort into Monopoly or Competition.",
             "topicBuckets": [
                 "Monopoly",
                 "Competition"
             ],
-            "hint": "Here's a tip: A monopoly means one company controls the whole market, while competition means many companies compete for customers!",
-            "explanation": "Think of 'Monopoly' as total control of a market by one company (sole-provider, market-domination), and 'Competition' as multiple companies competing for business (rivalry, open-market)!",
+            "hint": "Whether new sellers can enter is what keeps a market competitive.",
+            "explanation": "'Barriers to entry' describes obstacles stopping new firms entering, alongside 'price-setting power' and 'cornered the market'. 'Consumer choice' and 'open market' both describe conditions where buyers have real alternatives.",
             "options": [
-                "Exclusive-control",
-                "Multiple-sellers",
-                "Market-lock",
-                "Free-market-rivalry",
-                "Only-option"
+                "Cornered the market",
+                "Consumer choice",
+                "Price-setting power",
+                "Barriers to entry",
+                "Open market"
             ],
-            "correctAnswer": "Monopoly:Exclusive-control, Competition:Multiple-sellers, Monopoly:Market-lock, Competition:Free-market-rivalry, Monopoly:Only-option",
+            "correctAnswer": "Monopoly:Cornered the market, Competition:Consumer choice, Monopoly:Price-setting power, Monopoly:Barriers to entry, Competition:Open market",
             "relatedWords": [
-                "aspect of Monopoly:Exclusive-control, Competition:Multiple-sellers, Monopoly:Market-lock, Competition:Free-market-rivalry, Monopoly:Only-option",
-                "concept of Monopoly:Exclusive-control, Competition:Multiple-sellers, Monopoly:Market-lock, Competition:Free-market-rivalry, Monopoly:Only-option",
-                "related to Monopoly:Exclusive-control, Competition:Multiple-sellers, Monopoly:Market-lock, Competition:Free-market-rivalry, Monopoly:Only-option"
+                "Cornered the market: gained control of nearly all supply",
+                "Consumer choice: the range of options available to buyers",
+                "Price-setting power: the ability to set prices without pressure",
+                "Barriers to entry: obstacles preventing new firms from competing",
+                "Open market: a market new sellers can freely enter"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L175_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Picture a regulator reviewing a proposed merger. Sort into Monopoly or Competition.",
             "topicBuckets": [
                 "Monopoly",
                 "Competition"
             ],
-            "hint": "Here's a tip: A monopoly means one company controls the whole market, while competition means many companies compete for customers!",
-            "explanation": "Think of 'Monopoly' as total control of a market by one company (sole-provider, market-domination), and 'Competition' as multiple companies competing for business (rivalry, open-market)!",
+            "hint": "Two of these describe what regulators try to protect.",
+            "explanation": "'Antitrust concerns' and 'reduced consumer choice' both describe what regulators fear a merger could create, since concentration weakens the market. 'Level playing field' and 'multiple providers' both describe healthy competition, and 'undercut on price' describes rivals competing actively.",
             "options": [
-                "Unchallenged-supplier",
-                "Head-to-head-market",
-                "Total-market-share",
-                "Contested-market",
-                "No-alternative-provider"
+                "Antitrust concerns",
+                "Level playing field",
+                "Reduced consumer choice",
+                "Multiple providers",
+                "Undercut on price"
             ],
-            "correctAnswer": "Monopoly:Unchallenged-supplier, Competition:Head-to-head-market, Monopoly:Total-market-share, Competition:Contested-market, Monopoly:No-alternative-provider",
+            "correctAnswer": "Monopoly:Antitrust concerns, Competition:Level playing field, Monopoly:Reduced consumer choice, Competition:Multiple providers, Competition:Undercut on price",
             "relatedWords": [
-                "aspect of Monopoly:Unchallenged-supplier, Competition:Head-to-head-market, Monopoly:Total-market-share, Competition:Contested-market, Monopoly:No-alternative-provider",
-                "concept of Monopoly:Unchallenged-supplier, Competition:Head-to-head-market, Monopoly:Total-market-share, Competition:Contested-market, Monopoly:No-alternative-provider",
-                "related to Monopoly:Unchallenged-supplier, Competition:Head-to-head-market, Monopoly:Total-market-share, Competition:Contested-market, Monopoly:No-alternative-provider"
+                "Antitrust concerns: worries that a deal reduces market competition",
+                "Level playing field: conditions giving all competitors a fair chance",
+                "Reduced consumer choice: fewer options available to buyers",
+                "Multiple providers: several sellers offering the same service",
+                "Undercut on price: charge less than a competitor"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L176_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These contrast a hand skill with a computational one. Sort into Calligraphy or Algorithm.",
             "topicBuckets": [
                 "Calligraphy",
                 "Algorithm"
             ],
-            "hint": "Here's a tip: Calligraphy is the art of beautiful handwriting, while an algorithm is a set of steps a computer follows to solve a problem!",
-            "explanation": "Think of 'Calligraphy' as the art of decorative handwriting (ornate-handwriting, penmanship), and 'Algorithm' as a computer's set of logical steps (computer-procedure, code-logic)!",
+            "hint": "Think about a skill practised with a brush, and one written in code.",
+            "explanation": "'Brushstroke', 'penmanship', and 'ink flow' all belong to the art of beautiful writing. 'Step-by-step procedure' and 'computation' both belong to instructions a machine follows.",
             "options": [
-                "Ornate-handwriting",
-                "Computer-procedure",
+                "Ink flow",
+                "Brushstroke",
                 "Penmanship",
-                "Code-logic",
-                "Decorative-script"
+                "Computation",
+                "Step-by-step procedure"
             ],
-            "correctAnswer": "Calligraphy:Ornate-handwriting, Algorithm:Computer-procedure, Calligraphy:Penmanship, Algorithm:Code-logic, Calligraphy:Decorative-script",
+            "correctAnswer": "Calligraphy:Ink flow, Calligraphy:Brushstroke, Calligraphy:Penmanship, Algorithm:Computation, Algorithm:Step-by-step procedure",
             "relatedWords": [
-                "aspect of Calligraphy:Ornate-handwriting, Algorithm:Computer-procedure, Calligraphy:Penmanship, Algorithm:Code-logic, Calligraphy:Decorative-script",
-                "concept of Calligraphy:Ornate-handwriting, Algorithm:Computer-procedure, Calligraphy:Penmanship, Algorithm:Code-logic, Calligraphy:Decorative-script",
-                "related to Calligraphy:Ornate-handwriting, Algorithm:Computer-procedure, Calligraphy:Penmanship, Algorithm:Code-logic, Calligraphy:Decorative-script"
+                "Ink flow: the movement of ink onto a surface",
+                "Brushstroke: a single movement of a brush or pen",
+                "Penmanship: skill in handwriting",
+                "Computation: calculation carried out by a machine",
+                "Step-by-step procedure: an ordered set of instructions"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L176_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "One algorithm word describes how many steps a process needs. Sort into Calligraphy or Algorithm.",
             "topicBuckets": [
                 "Calligraphy",
                 "Algorithm"
             ],
-            "hint": "Here's a tip: Calligraphy is the art of beautiful handwriting, while an algorithm is a set of steps a computer follows to solve a problem!",
-            "explanation": "Think of 'Calligraphy' as the art of decorative handwriting (ornate-handwriting, penmanship), and 'Algorithm' as a computer's set of logical steps (computer-procedure, code-logic)!",
+            "hint": "Computer science measures efficiency precisely.",
+            "explanation": "'Flourish', 'nib', and 'stroke order' all belong to handwriting as an art, stroke order mattering greatly in East Asian calligraphy. 'Efficiency' describes how many steps a process needs, and 'input and output' names what goes in and comes out.",
             "options": [
-                "Brush-lettering",
-                "Step-by-step-formula",
-                "Artistic-script",
-                "Programmed-sequence",
-                "Hand-lettering-art"
+                "Nib",
+                "Input and output",
+                "Flourish",
+                "Efficiency",
+                "Stroke order"
             ],
-            "correctAnswer": "Calligraphy:Brush-lettering, Algorithm:Step-by-step-formula, Calligraphy:Artistic-script, Algorithm:Programmed-sequence, Calligraphy:Hand-lettering-art",
+            "correctAnswer": "Calligraphy:Nib, Algorithm:Input and output, Calligraphy:Flourish, Algorithm:Efficiency, Calligraphy:Stroke order",
             "relatedWords": [
-                "aspect of Calligraphy:Brush-lettering, Algorithm:Step-by-step-formula, Calligraphy:Artistic-script, Algorithm:Programmed-sequence, Calligraphy:Hand-lettering-art",
-                "concept of Calligraphy:Brush-lettering, Algorithm:Step-by-step-formula, Calligraphy:Artistic-script, Algorithm:Programmed-sequence, Calligraphy:Hand-lettering-art",
-                "related to Calligraphy:Brush-lettering, Algorithm:Step-by-step-formula, Calligraphy:Artistic-script, Algorithm:Programmed-sequence, Calligraphy:Hand-lettering-art"
+                "Nib: the writing point of a pen",
+                "Input and output: what a process receives and produces",
+                "Flourish: a decorative sweep in handwriting",
+                "Efficiency: how few steps a process requires",
+                "Stroke order: the sequence in which strokes are written"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L176_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Picture an article on craft skills in a digital age. Sort into Calligraphy or Algorithm.",
             "topicBuckets": [
                 "Calligraphy",
                 "Algorithm"
             ],
-            "hint": "Here's a tip: Calligraphy is the art of beautiful handwriting, while an algorithm is a set of steps a computer follows to solve a problem!",
-            "explanation": "Think of 'Calligraphy' as the art of decorative handwriting (ornate-handwriting, penmanship), and 'Algorithm' as a computer's set of logical steps (computer-procedure, code-logic)!",
+            "hint": "Two of these describe work done by machines rather than hands.",
+            "explanation": "'Years of practice' and 'the hand's steadiness' both describe skill built physically over time, and 'hand-lettered' names the result. 'Automated sorting' and 'recommendation engine' both describe processes machines execute, where the skill sits in designing the instructions rather than performing them.",
             "options": [
-                "Flourished-writing",
-                "Software-logic-chain",
-                "Elegant-script",
-                "Computational-rule-set",
-                "Inked-artistry"
+                "Automated sorting",
+                "The hand's steadiness",
+                "Years of practice",
+                "Recommendation engine",
+                "Hand-lettered"
             ],
-            "correctAnswer": "Calligraphy:Flourished-writing, Algorithm:Software-logic-chain, Calligraphy:Elegant-script, Algorithm:Computational-rule-set, Calligraphy:Inked-artistry",
+            "correctAnswer": "Algorithm:Automated sorting, Calligraphy:The hand's steadiness, Calligraphy:Years of practice, Algorithm:Recommendation engine, Calligraphy:Hand-lettered",
             "relatedWords": [
-                "aspect of Calligraphy:Flourished-writing, Algorithm:Software-logic-chain, Calligraphy:Elegant-script, Algorithm:Computational-rule-set, Calligraphy:Inked-artistry",
-                "concept of Calligraphy:Flourished-writing, Algorithm:Software-logic-chain, Calligraphy:Elegant-script, Algorithm:Computational-rule-set, Calligraphy:Inked-artistry",
-                "related to Calligraphy:Flourished-writing, Algorithm:Software-logic-chain, Calligraphy:Elegant-script, Algorithm:Computational-rule-set, Calligraphy:Inked-artistry"
+                "Automated sorting: ordering data without human involvement",
+                "The hand's steadiness: physical control needed for fine work",
+                "Years of practice: skill developed through long repetition",
+                "Recommendation engine: a system suggesting content to users",
+                "Hand-lettered: written by hand rather than typeset"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L177_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These describe how goods are produced. Sort into Artisanal or Automated.",
             "topicBuckets": [
                 "Artisanal",
                 "Automated"
             ],
-            "hint": "Here's a tip: Artisanal goods are made carefully by hand, while automated goods are made by machines with little human help!",
-            "explanation": "Think of 'Artisanal' as goods made carefully by hand (handcrafted, hand-made), and 'Automated' as goods made by machines (machine-made, robot-produced)!",
+            "hint": "Think about a small workshop and a factory line.",
+            "explanation": "'Handmade', 'small batch', and 'craftsmanship' all describe goods made by skilled hands in small numbers. 'Mass-produced' and 'assembly line' both describe machine production at scale.",
             "options": [
-                "Handcrafted",
-                "Machine-made",
-                "Hand-made",
-                "Robot-produced",
-                "Hand-finished"
+                "Mass-produced",
+                "Small batch",
+                "Assembly line",
+                "Craftsmanship",
+                "Handmade"
             ],
-            "correctAnswer": "Artisanal:Handcrafted, Automated:Machine-made, Artisanal:Hand-made, Automated:Robot-produced, Artisanal:Hand-finished",
+            "correctAnswer": "Automated:Mass-produced, Artisanal:Small batch, Automated:Assembly line, Artisanal:Craftsmanship, Artisanal:Handmade",
             "relatedWords": [
-                "aspect of Artisanal:Handcrafted, Automated:Machine-made, Artisanal:Hand-made, Automated:Robot-produced, Artisanal:Hand-finished",
-                "concept of Artisanal:Handcrafted, Automated:Machine-made, Artisanal:Hand-made, Automated:Robot-produced, Artisanal:Hand-finished",
-                "related to Artisanal:Handcrafted, Automated:Machine-made, Artisanal:Hand-made, Automated:Robot-produced, Artisanal:Hand-finished"
+                "Mass-produced: manufactured in large quantities",
+                "Small batch: produced in limited quantities",
+                "Assembly line: a production system where items move between stations",
+                "Craftsmanship: skill in making things by hand",
+                "Handmade: made by hand rather than machine"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L177_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "One automated word describes producing identical units every time. Sort into Artisanal or Automated.",
             "topicBuckets": [
                 "Artisanal",
                 "Automated"
             ],
-            "hint": "Here's a tip: Artisanal goods are made carefully by hand, while automated goods are made by machines with little human help!",
-            "explanation": "Think of 'Artisanal' as goods made carefully by hand (handcrafted, hand-made), and 'Automated' as goods made by machines (machine-made, robot-produced)!",
+            "hint": "Consistency is machine production's main advantage.",
+            "explanation": "'Bespoke', 'made to order', and 'each one unique' all describe individual production. 'Standardised' describes producing identical units every time, and 'machine-tooled' describes parts shaped by machinery to exact specification.",
             "options": [
-                "Small-batch",
-                "Factory-produced",
-                "Crafted-by-hand",
-                "Assembly-line-made",
-                "Bespoke-made"
+                "Made to order",
+                "Bespoke",
+                "Each one unique",
+                "Standardised",
+                "Machine-tooled"
             ],
-            "correctAnswer": "Artisanal:Small-batch, Automated:Factory-produced, Artisanal:Crafted-by-hand, Automated:Assembly-line-made, Artisanal:Bespoke-made",
+            "correctAnswer": "Artisanal:Made to order, Artisanal:Bespoke, Artisanal:Each one unique, Automated:Standardised, Automated:Machine-tooled",
             "relatedWords": [
-                "aspect of Artisanal:Small-batch, Automated:Factory-produced, Artisanal:Crafted-by-hand, Automated:Assembly-line-made, Artisanal:Bespoke-made",
-                "concept of Artisanal:Small-batch, Automated:Factory-produced, Artisanal:Crafted-by-hand, Automated:Assembly-line-made, Artisanal:Bespoke-made",
-                "related to Artisanal:Small-batch, Automated:Factory-produced, Artisanal:Crafted-by-hand, Automated:Assembly-line-made, Artisanal:Bespoke-made"
+                "Made to order: produced only once ordered",
+                "Bespoke: made specifically for one customer",
+                "Each one unique: no two items exactly alike",
+                "Standardised: made identical to a fixed specification",
+                "Machine-tooled: shaped precisely by machinery"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L177_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Picture marketing copy for two competing products. Sort into Artisanal or Automated.",
             "topicBuckets": [
                 "Artisanal",
                 "Automated"
             ],
-            "hint": "Here's a tip: Artisanal goods are made carefully by hand, while automated goods are made by machines with little human help!",
-            "explanation": "Think of 'Artisanal' as goods made carefully by hand (handcrafted, hand-made), and 'Automated' as goods made by machines (machine-made, robot-produced)!",
+            "hint": "Two of these are selling scale and reliability rather than character.",
+            "explanation": "'Slow-crafted' and 'the maker's mark' both sell individuality and human involvement, which is what artisanal branding trades on. 'High-throughput', 'consistent every time', and 'scaled production' all sell reliability and volume instead \u2014 neither set is better, they simply promise different things.",
             "options": [
-                "Handworked",
-                "Robot-assembled",
-                "Studio-crafted",
-                "Self-operating-production",
-                "Traditionally-made"
+                "High-throughput",
+                "Scaled production",
+                "Slow-crafted",
+                "The maker's mark",
+                "Consistent every time"
             ],
-            "correctAnswer": "Artisanal:Handworked, Automated:Robot-assembled, Artisanal:Studio-crafted, Automated:Self-operating-production, Artisanal:Traditionally-made",
+            "correctAnswer": "Automated:High-throughput, Automated:Scaled production, Artisanal:Slow-crafted, Artisanal:The maker's mark, Automated:Consistent every time",
             "relatedWords": [
-                "aspect of Artisanal:Handworked, Automated:Robot-assembled, Artisanal:Studio-crafted, Automated:Self-operating-production, Artisanal:Traditionally-made",
-                "concept of Artisanal:Handworked, Automated:Robot-assembled, Artisanal:Studio-crafted, Automated:Self-operating-production, Artisanal:Traditionally-made",
-                "related to Artisanal:Handworked, Automated:Robot-assembled, Artisanal:Studio-crafted, Automated:Self-operating-production, Artisanal:Traditionally-made"
+                "High-throughput: able to produce large volumes quickly",
+                "Scaled production: manufacturing expanded to large volume",
+                "Slow-crafted: made carefully over time rather than quickly",
+                "The maker's mark: a sign identifying the individual craftsperson",
+                "Consistent every time: identical in quality across every unit"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L178_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These describe how instruments produce sound. Sort into Acoustic or Electric.",
             "topicBuckets": [
                 "Acoustic",
                 "Electric"
             ],
-            "hint": "Here's a tip: An acoustic instrument makes sound naturally, without electricity, while an electric instrument needs power to be amplified!",
-            "explanation": "Think of 'Acoustic' as instruments that produce sound naturally (unplugged, non-electric), and 'Electric' as instruments that need power to amplify sound (amplified, plugged-in)!",
+            "hint": "Think about whether an instrument needs to be plugged in.",
+            "explanation": "'Unplugged', 'hollow body', and 'natural resonance' all describe instruments producing sound without amplification. 'Amplifier' and 'pickup' both belong to instruments that need electrical amplification.",
             "options": [
                 "Unplugged",
-                "Amplified",
-                "Non-electric",
-                "Plugged-in",
-                "Natural-sound"
+                "Amplifier",
+                "Hollow body",
+                "Pickup",
+                "Natural resonance"
             ],
-            "correctAnswer": "Acoustic:Unplugged, Electric:Amplified, Acoustic:Non-electric, Electric:Plugged-in, Acoustic:Natural-sound",
+            "correctAnswer": "Acoustic:Unplugged, Electric:Amplifier, Acoustic:Hollow body, Electric:Pickup, Acoustic:Natural resonance",
             "relatedWords": [
-                "aspect of Acoustic:Unplugged, Electric:Amplified, Acoustic:Non-electric, Electric:Plugged-in, Acoustic:Natural-sound",
-                "concept of Acoustic:Unplugged, Electric:Amplified, Acoustic:Non-electric, Electric:Plugged-in, Acoustic:Natural-sound",
-                "related to Acoustic:Unplugged, Electric:Amplified, Acoustic:Non-electric, Electric:Plugged-in, Acoustic:Natural-sound"
+                "Unplugged: played without electrical amplification",
+                "Amplifier: a device that increases sound volume electrically",
+                "Hollow body: an instrument body that resonates naturally",
+                "Pickup: a device converting string vibration into a signal",
+                "Natural resonance: sound produced by an instrument's own body"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L178_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "One electric word describes deliberately altering a sound signal. Sort into Electric or Acoustic.",
             "topicBuckets": [
-                "Acoustic",
-                "Electric"
+                "Electric",
+                "Acoustic"
             ],
-            "hint": "Here's a tip: An acoustic instrument makes sound naturally, without electricity, while an electric instrument needs power to be amplified!",
-            "explanation": "Think of 'Acoustic' as instruments that produce sound naturally (unplugged, non-electric), and 'Electric' as instruments that need power to amplify sound (amplified, plugged-in)!",
+            "hint": "Electric instruments allow the sound itself to be reshaped.",
+            "explanation": "'Wooden soundboard', 'played bare', and 'room acoustics' all concern sound shaped by physical materials and space. 'Distortion' describes deliberately altering a sound signal, and 'effects pedal' names the device musicians use to do it.",
             "options": [
-                "Wooden-bodied",
-                "Powered-by-electricity",
-                "Hollow-body",
-                "Amp-dependent",
-                "Battery-free"
+                "Wooden soundboard",
+                "Distortion",
+                "Played bare",
+                "Effects pedal",
+                "Room acoustics"
             ],
-            "correctAnswer": "Acoustic:Wooden-bodied, Electric:Powered-by-electricity, Acoustic:Hollow-body, Electric:Amp-dependent, Acoustic:Battery-free",
+            "correctAnswer": "Acoustic:Wooden soundboard, Electric:Distortion, Acoustic:Played bare, Electric:Effects pedal, Acoustic:Room acoustics",
             "relatedWords": [
-                "aspect of Acoustic:Wooden-bodied, Electric:Powered-by-electricity, Acoustic:Hollow-body, Electric:Amp-dependent, Acoustic:Battery-free",
-                "concept of Acoustic:Wooden-bodied, Electric:Powered-by-electricity, Acoustic:Hollow-body, Electric:Amp-dependent, Acoustic:Battery-free",
-                "related to Acoustic:Wooden-bodied, Electric:Powered-by-electricity, Acoustic:Hollow-body, Electric:Amp-dependent, Acoustic:Battery-free"
+                "Wooden soundboard: the wooden panel that amplifies an instrument's sound",
+                "Distortion: deliberate alteration of a sound signal",
+                "Played bare: performed without amplification or effects",
+                "Effects pedal: a device altering an instrument's sound",
+                "Room acoustics: how a space shapes sound naturally"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L178_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Picture a review of two sets by the same musician. Sort into Acoustic or Electric.",
             "topicBuckets": [
                 "Acoustic",
                 "Electric"
             ],
-            "hint": "Here's a tip: An acoustic instrument makes sound naturally, without electricity, while an electric instrument needs power to be amplified!",
-            "explanation": "Think of 'Acoustic' as instruments that produce sound naturally (unplugged, non-electric), and 'Electric' as instruments that need power to amplify sound (amplified, plugged-in)!",
+            "hint": "Two of these describe a performance built around volume and amplification.",
+            "explanation": "'Stripped-back set' and 'intimate venue' both suit unamplified performance, where quiet allows detail to carry. 'Stadium sound', 'plugged in', and 'wall of amplifiers' all describe amplified performance built around volume.",
             "options": [
-                "Unamplified",
-                "Circuit-powered",
-                "Traditional-strings",
-                "Pickup-equipped",
-                "No-power-needed"
+                "Stripped-back set",
+                "Intimate venue",
+                "Plugged in",
+                "Stadium sound",
+                "Wall of amplifiers"
             ],
-            "correctAnswer": "Acoustic:Unamplified, Electric:Circuit-powered, Acoustic:Traditional-strings, Electric:Pickup-equipped, Acoustic:No-power-needed",
+            "correctAnswer": "Acoustic:Stripped-back set, Acoustic:Intimate venue, Electric:Plugged in, Electric:Stadium sound, Electric:Wall of amplifiers",
             "relatedWords": [
-                "aspect of Acoustic:Unamplified, Electric:Circuit-powered, Acoustic:Traditional-strings, Electric:Pickup-equipped, Acoustic:No-power-needed",
-                "concept of Acoustic:Unamplified, Electric:Circuit-powered, Acoustic:Traditional-strings, Electric:Pickup-equipped, Acoustic:No-power-needed",
-                "related to Acoustic:Unamplified, Electric:Circuit-powered, Acoustic:Traditional-strings, Electric:Pickup-equipped, Acoustic:No-power-needed"
+                "Stripped-back set: a performance reduced to its essentials",
+                "Intimate venue: a small space suited to quiet performance",
+                "Plugged in: connected to electrical amplification",
+                "Stadium sound: sound designed to fill a very large venue",
+                "Wall of amplifiers: a large bank of amplification equipment"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L179_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These describe two water extremes. Sort into Drought or Flood.",
             "topicBuckets": [
                 "Drought",
                 "Flood"
             ],
-            "hint": "Here's a tip: A drought is a long period with almost no rain, while a flood is when too much water suddenly covers the land!",
-            "explanation": "Think of 'Drought' as an extended period of little to no rainfall (dry-spell, water-shortage), and 'Flood' as an overflow of water covering normally dry land (deluge, overflow-of-water)!",
+            "hint": "Think about too little water and too much.",
+            "explanation": "'Water shortage', 'dried-up riverbed', and 'crop failure' all describe the effects of too little rain. 'Burst banks' and 'submerged' both describe the effects of too much.",
             "options": [
-                "Dry-spell",
-                "Deluge",
-                "Water-shortage",
-                "Overflow-of-water",
-                "Rainless-period"
+                "Dried-up riverbed",
+                "Water shortage",
+                "Submerged",
+                "Crop failure",
+                "Burst banks"
             ],
-            "correctAnswer": "Drought:Dry-spell, Flood:Deluge, Drought:Water-shortage, Flood:Overflow-of-water, Drought:Rainless-period",
+            "correctAnswer": "Drought:Dried-up riverbed, Drought:Water shortage, Flood:Submerged, Drought:Crop failure, Flood:Burst banks",
             "relatedWords": [
-                "aspect of Drought:Dry-spell, Flood:Deluge, Drought:Water-shortage, Flood:Overflow-of-water, Drought:Rainless-period",
-                "concept of Drought:Dry-spell, Flood:Deluge, Drought:Water-shortage, Flood:Overflow-of-water, Drought:Rainless-period",
-                "related to Drought:Dry-spell, Flood:Deluge, Drought:Water-shortage, Flood:Overflow-of-water, Drought:Rainless-period"
+                "Dried-up riverbed: a watercourse left without water",
+                "Water shortage: insufficient water supply",
+                "Submerged: covered completely by water",
+                "Crop failure: the loss of a harvest, often from lack of water",
+                "Burst banks: a river overflowing its edges"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L179_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "One flood word describes rain arriving too fast for ground to absorb it. Sort into Flood or Drought.",
             "topicBuckets": [
-                "Drought",
-                "Flood"
+                "Flood",
+                "Drought"
             ],
-            "hint": "Here's a tip: A drought is a long period with almost no rain, while a flood is when too much water suddenly covers the land!",
-            "explanation": "Think of 'Drought' as an extended period of little to no rainfall (dry-spell, water-shortage), and 'Flood' as an overflow of water covering normally dry land (deluge, overflow-of-water)!",
+            "hint": "How fast water arrives matters as much as how much.",
+            "explanation": "'Water rationing', 'parched earth', and 'reservoir levels falling' all describe scarcity and the measures it forces. 'Flash flooding' describes rain arriving too fast for ground to absorb, and 'inundated' describes land overwhelmed by water.",
             "options": [
-                "Parched-land",
-                "Rising-floodwater",
-                "Crop-failure-cause",
-                "Submerged-streets",
-                "Water-crisis"
+                "Reservoir levels falling",
+                "Inundated",
+                "Flash flooding",
+                "Water rationing",
+                "Parched earth"
             ],
-            "correctAnswer": "Drought:Parched-land, Flood:Rising-floodwater, Drought:Crop-failure-cause, Flood:Submerged-streets, Drought:Water-crisis",
+            "correctAnswer": "Drought:Reservoir levels falling, Flood:Inundated, Flood:Flash flooding, Drought:Water rationing, Drought:Parched earth",
             "relatedWords": [
-                "aspect of Drought:Parched-land, Flood:Rising-floodwater, Drought:Crop-failure-cause, Flood:Submerged-streets, Drought:Water-crisis",
-                "concept of Drought:Parched-land, Flood:Rising-floodwater, Drought:Crop-failure-cause, Flood:Submerged-streets, Drought:Water-crisis",
-                "related to Drought:Parched-land, Flood:Rising-floodwater, Drought:Crop-failure-cause, Flood:Submerged-streets, Drought:Water-crisis"
+                "Reservoir levels falling: stored water supplies decreasing",
+                "Inundated: overwhelmed and covered by water",
+                "Flash flooding: sudden flooding from rapid heavy rain",
+                "Water rationing: limiting water use during shortage",
+                "Parched earth: ground dried and cracked from lack of water"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L179_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Picture a climate report covering both risks in one region. Sort into Drought or Flood.",
             "topicBuckets": [
                 "Drought",
                 "Flood"
             ],
-            "hint": "Here's a tip: A drought is a long period with almost no rain, while a flood is when too much water suddenly covers the land!",
-            "explanation": "Think of 'Drought' as an extended period of little to no rainfall (dry-spell, water-shortage), and 'Flood' as an overflow of water covering normally dry land (deluge, overflow-of-water)!",
+            "hint": "Two of these describe defences built against rising water.",
+            "explanation": "'Hosepipe ban' and 'desalination' both respond to scarcity, desalination producing fresh water from seawater. 'Flood defences' and 'sandbags' both protect against rising water, and 'evacuation' describes moving people out of its path.",
             "options": [
-                "Barren-dry-season",
-                "Overflowing-river",
-                "Cracked-earth",
-                "Inundation",
-                "Reservoir-depletion"
+                "Sandbags",
+                "Desalination",
+                "Hosepipe ban",
+                "Evacuation",
+                "Flood defences"
             ],
-            "correctAnswer": "Drought:Barren-dry-season, Flood:Overflowing-river, Drought:Cracked-earth, Flood:Inundation, Drought:Reservoir-depletion",
+            "correctAnswer": "Flood:Sandbags, Drought:Desalination, Drought:Hosepipe ban, Flood:Evacuation, Flood:Flood defences",
             "relatedWords": [
-                "aspect of Drought:Barren-dry-season, Flood:Overflowing-river, Drought:Cracked-earth, Flood:Inundation, Drought:Reservoir-depletion",
-                "concept of Drought:Barren-dry-season, Flood:Overflowing-river, Drought:Cracked-earth, Flood:Inundation, Drought:Reservoir-depletion",
-                "related to Drought:Barren-dry-season, Flood:Overflowing-river, Drought:Cracked-earth, Flood:Inundation, Drought:Reservoir-depletion"
+                "Sandbags: bags of sand used to block floodwater",
+                "Desalination: removing salt from seawater to make it drinkable",
+                "Hosepipe ban: a restriction on non-essential water use",
+                "Evacuation: moving people away from danger",
+                "Flood defences: structures built to hold back rising water"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L180_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These describe how film and book series are ordered. Sort into Prequel or Sequel.",
             "topicBuckets": [
-                "Sequel",
-                "Prequel"
+                "Prequel",
+                "Sequel"
             ],
-            "hint": "Here's a tip: A sequel continues the story after the original, while a prequel tells the story that happened before it!",
-            "explanation": "Think of 'Sequel' as a story continuing after the original (follow-up-story, part-two), and 'Prequel' as a story set before the original (backstory-film, origin-story)!",
+            "hint": "Think about whether a story continues forward or reaches back.",
+            "explanation": "'Continues the story', 'part two', and 'what happened next' all describe moving a story forward. 'Origin story' and 'set before the original' both describe reaching back to earlier events.",
             "options": [
-                "Follow-up-story",
-                "Origin-story",
-                "Part-two",
-                "Backstory-film",
-                "Continuation"
+                "Continues the story",
+                "Part two",
+                "Origin story",
+                "What happened next",
+                "Set before the original"
             ],
-            "correctAnswer": "Sequel:Follow-up-story, Prequel:Origin-story, Sequel:Part-two, Prequel:Backstory-film, Sequel:Continuation",
+            "correctAnswer": "Sequel:Continues the story, Sequel:Part two, Prequel:Origin story, Sequel:What happened next, Prequel:Set before the original",
             "relatedWords": [
-                "aspect of Sequel:Follow-up-story, Prequel:Origin-story, Sequel:Part-two, Prequel:Backstory-film, Sequel:Continuation",
-                "concept of Sequel:Follow-up-story, Prequel:Origin-story, Sequel:Part-two, Prequel:Backstory-film, Sequel:Continuation",
-                "related to Sequel:Follow-up-story, Prequel:Origin-story, Sequel:Part-two, Prequel:Backstory-film, Sequel:Continuation"
+                "Continues the story: carries a narrative forward from where it ended",
+                "Part two: the second instalment of a series",
+                "Origin story: an account of how something began",
+                "What happened next: events following the original story",
+                "Set before the original: taking place earlier than the first story"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L180_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "One prequel word describes showing events the audience already knows the outcome of. Sort into Sequel or Prequel.",
             "topicBuckets": [
                 "Sequel",
                 "Prequel"
             ],
-            "hint": "Here's a tip: A sequel continues the story after the original, while a prequel tells the story that happened before it!",
-            "explanation": "Think of 'Sequel' as a story continuing after the original (follow-up-story, part-two), and 'Prequel' as a story set before the original (backstory-film, origin-story)!",
+            "hint": "Prequels face a built-in storytelling problem.",
+            "explanation": "'Follow-up', 'the next chapter', and 'picks up years later' all continue a story forward. 'Backstory' describes events before the original, and 'the audience already knows the ending' names the problem prequels face \u2014 tension is harder when the outcome is known.",
             "options": [
-                "Next-chapter",
-                "Earlier-timeline-story",
-                "Later-installment",
-                "Before-the-beginning-tale",
-                "Second-part"
+                "The next chapter",
+                "The audience already knows the ending",
+                "Picks up years later",
+                "Follow-up",
+                "Backstory"
             ],
-            "correctAnswer": "Sequel:Next-chapter, Prequel:Earlier-timeline-story, Sequel:Later-installment, Prequel:Before-the-beginning-tale, Sequel:Second-part",
+            "correctAnswer": "Sequel:The next chapter, Prequel:The audience already knows the ending, Sequel:Picks up years later, Sequel:Follow-up, Prequel:Backstory",
             "relatedWords": [
-                "aspect of Sequel:Next-chapter, Prequel:Earlier-timeline-story, Sequel:Later-installment, Prequel:Before-the-beginning-tale, Sequel:Second-part",
-                "concept of Sequel:Next-chapter, Prequel:Earlier-timeline-story, Sequel:Later-installment, Prequel:Before-the-beginning-tale, Sequel:Second-part",
-                "related to Sequel:Next-chapter, Prequel:Earlier-timeline-story, Sequel:Later-installment, Prequel:Before-the-beginning-tale, Sequel:Second-part"
+                "The next chapter: the following part of a narrative",
+                "The audience already knows the ending: a prequel's built-in storytelling challenge",
+                "Picks up years later: resuming a story after a time gap",
+                "Follow-up: a further instalment continuing a story",
+                "Backstory: events that happened before the main story"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L180_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Picture a studio announcing two new films in one franchise. Sort into Prequel or Sequel.",
             "topicBuckets": [
-                "Sequel",
-                "Prequel"
+                "Prequel",
+                "Sequel"
             ],
-            "hint": "Here's a tip: A sequel continues the story after the original, while a prequel tells the story that happened before it!",
-            "explanation": "Think of 'Sequel' as a story continuing after the original (follow-up-story, part-two), and 'Prequel' as a story set before the original (backstory-film, origin-story)!",
+            "hint": "Two of these reach backwards in a franchise's timeline.",
+            "explanation": "'Returning cast' and 'the story continues' both signal forward movement, and 'set a decade after' places it plainly. 'Younger version of the character' and 'how it all began' both signal a story reaching backwards, which is why prequels often recast roles with younger actors.",
             "options": [
-                "Franchise-continuation",
-                "How-it-all-began-story",
-                "Story-after",
-                "Set-before-original",
-                "Follow-on-film"
+                "The story continues",
+                "How it all began",
+                "Set a decade after",
+                "Returning cast",
+                "Younger version of the character"
             ],
-            "correctAnswer": "Sequel:Franchise-continuation, Prequel:How-it-all-began-story, Sequel:Story-after, Prequel:Set-before-original, Sequel:Follow-on-film",
+            "correctAnswer": "Sequel:The story continues, Prequel:How it all began, Sequel:Set a decade after, Sequel:Returning cast, Prequel:Younger version of the character",
             "relatedWords": [
-                "aspect of Sequel:Franchise-continuation, Prequel:How-it-all-began-story, Sequel:Story-after, Prequel:Set-before-original, Sequel:Follow-on-film",
-                "concept of Sequel:Franchise-continuation, Prequel:How-it-all-began-story, Sequel:Story-after, Prequel:Set-before-original, Sequel:Follow-on-film",
-                "related to Sequel:Franchise-continuation, Prequel:How-it-all-began-story, Sequel:Story-after, Prequel:Set-before-original, Sequel:Follow-on-film"
+                "The story continues: the narrative carries on",
+                "How it all began: an account of a story's origins",
+                "Set a decade after: taking place ten years later",
+                "Returning cast: the same actors coming back for another film",
+                "Younger version of the character: a character portrayed at an earlier age"
             ]
         }
     ]

@@ -3,633 +3,603 @@
     "quests": [
         {
             "id": "VOC_COLLOCATIONS_L151_Q1",
-            "word": "EXPLICIT",
-            "hint": "CLEARLY AND DIRECTLY GIVING PERMISSION, WITH NO ROOM FOR MISUNDERSTANDING",
-            "explanation": "EXPLICIT CONSENT describes permission given clearly and directly. EXPLICIT is the opposite of implicit, which means understood without being stated.",
+            "word": "REPLICATE",
+            "hint": "REDOING A SCIENTIFIC STUDY TO CHECK WHETHER THE SAME RESULTS HAPPEN AGAIN",
+            "explanation": "REPLICATE AN EXPERIMENT is the precise scientific term for redoing a study to verify its results. REPEAT, REDO, and RERUN are more generic and less standard in formal scientific writing.",
+            "instruction": "Find the word that naturally completes the pair.",
+            "interactionType": "choice",
+            "correctAnswer": "EXPERIMENT",
+            "options": [
+                "REPEAT",
+                "REDO",
+                "RERUN",
+                "EXPERIMENT"
+            ],
+            "wrongCollocations": [
+                "replicate a repeat of the trial",
+                "replicate a redo of the study"
+            ],
+            "contextSentence": "Other labs were unable to replicate the ___ under the same conditions."
+        },
+        {
+            "id": "VOC_COLLOCATIONS_L151_Q2",
+            "word": "PEER",
+            "hint": "HAVING OTHER EXPERTS IN THE SAME FIELD CHECK YOUR WORK BEFORE IT'S PUBLISHED",
+            "explanation": "PEER REVIEW is a fixed academic compound term for expert evaluation before publication. EXAMINE, CRITIQUE, and ASSESS don't form this specific fixed term, even though they describe similar evaluative actions.",
+            "instruction": "Choose the word that completes this fixed academic term.",
+            "interactionType": "choice",
+            "correctAnswer": "REVIEW",
+            "options": [
+                "EXAMINE",
+                "CRITIQUE",
+                "REVIEW",
+                "ASSESS"
+            ],
+            "wrongCollocations": [
+                "peer examine before publication",
+                "peer assess the manuscript"
+            ],
+            "contextSentence": "The paper went through rigorous peer ___ before it was accepted by the journal."
+        },
+        {
+            "id": "VOC_COLLOCATIONS_L151_Q3",
+            "word": "STATISTICALLY",
+            "hint": "A RESULT UNLIKELY TO HAVE HAPPENED BY CHANCE ALONE, ACCORDING TO FORMAL MATHEMATICAL TESTING",
+            "explanation": "STATISTICALLY SIGNIFICANT is a fixed technical term in research for a result unlikely to be due to chance. NOTABLE, IMPORTANT, and MEANINGFUL are related in everyday meaning, but they don't form this exact fixed scientific term.",
+            "instruction": "Select the word that completes this fixed scientific term.",
+            "interactionType": "choice",
+            "correctAnswer": "SIGNIFICANT",
+            "options": [
+                "NOTABLE",
+                "IMPORTANT",
+                "MEANINGFUL",
+                "SIGNIFICANT"
+            ],
+            "wrongCollocations": [
+                "statistically notable results by chance",
+                "statistically meaningful pattern rarely tested"
+            ],
+            "contextSentence": "The results were ___ significant, with a p-value well below the accepted threshold."
+        },
+        {
+            "id": "VOC_COLLOCATIONS_L152_Q1",
+            "word": "ECONOMY",
+            "hint": "GROWING VERY QUICKLY AND SUCCESSFULLY, NOT STRUGGLING OR SLOWING DOWN",
+            "explanation": "BOOMING ECONOMY describes one growing rapidly and successfully. STRUGGLING, FALTERING, and STAGNANT describe the opposite \u2014 an economy that is weak or not growing.",
+            "instruction": "Find the word that naturally completes the pair.",
+            "interactionType": "choice",
+            "correctAnswer": "BOOMING",
+            "options": [
+                "STRUGGLING",
+                "FALTERING",
+                "STAGNANT",
+                "BOOMING"
+            ],
+            "wrongCollocations": [
+                "struggling economy growing rapidly",
+                "stagnant economy expanding fast"
+            ],
+            "contextSentence": "Foreign investors were drawn to the country's ___ economy."
+        },
+        {
+            "id": "VOC_COLLOCATIONS_L152_Q2",
+            "word": "MARKET",
+            "hint": "PRICES CHANGING RAPIDLY AND UNPREDICTABLY, NOT STAYING STEADY OR CALM",
+            "explanation": "VOLATILE MARKET describes one where prices change rapidly and unpredictably. STABLE, STEADY, and CALM describe the opposite \u2014 a market with little fluctuation.",
+            "instruction": "Choose the word that completes this pair.",
+            "interactionType": "choice",
+            "correctAnswer": "VOLATILE",
+            "options": [
+                "VOLATILE",
+                "STABLE",
+                "STEADY",
+                "CALM"
+            ],
+            "wrongCollocations": [
+                "stable market swinging wildly",
+                "calm market crashing overnight"
+            ],
+            "contextSentence": "Investors grew nervous as the ___ market swung wildly throughout the week."
+        },
+        {
+            "id": "VOC_COLLOCATIONS_L152_Q3",
+            "word": "INFLATION",
+            "hint": "PRICES RISING QUICKLY AND STEEPLY, NOT FALLING OR STAYING FLAT",
+            "explanation": "SOARING INFLATION describes prices rising quickly and steeply. DECLINING, DROPPING, and FALLING describe the opposite \u2014 inflation that is decreasing rather than increasing.",
+            "instruction": "Select the word that completes this pair.",
+            "interactionType": "choice",
+            "correctAnswer": "SOARING",
+            "options": [
+                "DECLINING",
+                "DROPPING",
+                "FALLING",
+                "SOARING"
+            ],
+            "wrongCollocations": [
+                "declining inflation eating into savings",
+                "falling inflation forcing wage negotiations"
+            ],
+            "contextSentence": "___ inflation has forced many families to cut back on essentials."
+        },
+        {
+            "id": "VOC_COLLOCATIONS_L153_Q1",
+            "word": "TROUBLESHOOT",
+            "hint": "SYSTEMATICALLY WORKING OUT WHAT'S CAUSING A TECHNICAL PROBLEM SO IT CAN BE FIXED",
+            "explanation": "TROUBLESHOOT AN ISSUE means to systematically diagnose a technical problem. SOLUTION, ANSWER, and FIX are outcomes you look for, not something you troubleshoot \u2014 you troubleshoot the problem itself, not its resolution.",
+            "instruction": "Find the word that naturally completes the pair.",
+            "interactionType": "choice",
+            "correctAnswer": "ISSUE",
+            "options": [
+                "SOLUTION",
+                "ANSWER",
+                "ISSUE",
+                "FIX"
+            ],
+            "wrongCollocations": [
+                "troubleshoot the solution before finding it",
+                "troubleshoot the fix instead of the cause"
+            ],
+            "contextSentence": "Our support team is standing by to help troubleshoot the ___."
+        },
+        {
+            "id": "VOC_COLLOCATIONS_L153_Q2",
+            "word": "RESTART",
+            "hint": "TURNING A MALFUNCTIONING PIECE OF ELECTRONIC EQUIPMENT OFF AND BACK ON AGAIN",
+            "explanation": "RESTART THE DEVICE is the standard tech-support instruction. SOLUTION, PROBLEM, and SETTING don't fit this specific action \u2014 you restart a physical or digital device, not an abstract concept like a solution.",
+            "instruction": "Choose the word that completes this pair.",
+            "interactionType": "choice",
+            "correctAnswer": "DEVICE",
+            "options": [
+                "SOLUTION",
+                "DEVICE",
+                "PROBLEM",
+                "SETTING"
+            ],
+            "wrongCollocations": [
+                "restart the solution first",
+                "restart the setting to fix it"
+            ],
+            "contextSentence": "If the app still won't load, try restarting your ___."
+        },
+        {
+            "id": "VOC_COLLOCATIONS_L153_Q3",
+            "word": "CLEAR",
+            "hint": "REMOVING TEMPORARY SAVED DATA IN A WEB BROWSER THAT CAN CAUSE LOADING PROBLEMS",
+            "explanation": "CLEAR THE CACHE fits because the context specifically mentions browser settings. MEMORY, STORAGE, and DATA are broader technical terms that don't specifically refer to a browser's temporary saved files the way CACHE does.",
+            "instruction": "Read the context, then choose the word that fits.",
+            "interactionType": "choice",
+            "correctAnswer": "CACHE",
+            "options": [
+                "CACHE",
+                "MEMORY",
+                "STORAGE",
+                "DATA"
+            ],
+            "wrongCollocations": [
+                "clear the memory in browser settings",
+                "clear the storage from your browser"
+            ],
+            "contextSentence": "If the app keeps crashing, try clearing the ___ in your browser settings."
+        },
+        {
+            "id": "VOC_COLLOCATIONS_L154_Q1",
+            "word": "GO",
+            "hint": "SPREADING RAPIDLY ONLINE UNTIL MILLIONS OF PEOPLE HAVE SEEN IT",
+            "explanation": "GO VIRAL is the fixed idiom for content spreading rapidly online. POPULAR, FAMOUS, and TRENDING relate to similar ideas, but only VIRAL completes this specific fixed expression with GO.",
+            "instruction": "Find the word that naturally completes the pair.",
+            "interactionType": "choice",
+            "correctAnswer": "VIRAL",
+            "options": [
+                "POPULAR",
+                "VIRAL",
+                "FAMOUS",
+                "TRENDING"
+            ],
+            "wrongCollocations": [
+                "go popular overnight online",
+                "go famous across every platform"
+            ],
+            "contextSentence": "The video went ___ within hours of being posted."
+        },
+        {
+            "id": "VOC_COLLOCATIONS_L154_Q2",
+            "word": "RECEIVE",
+            "hint": "GETTING AN ANGRY, NEGATIVE REACTION FROM A LARGE GROUP OF PEOPLE ONLINE",
+            "explanation": "RECEIVE BACKLASH fits because the context specifically describes angry fans reacting negatively. REACTION, RESPONSE, and FEEDBACK are too neutral and don't capture the specifically negative tone the sentence describes.",
+            "instruction": "Read the context, then choose the word that fits.",
+            "interactionType": "choice",
+            "correctAnswer": "BACKLASH",
+            "options": [
+                "REACTION",
+                "RESPONSE",
+                "FEEDBACK",
+                "BACKLASH"
+            ],
+            "wrongCollocations": [
+                "receive a reaction of pure anger",
+                "receive positive feedback from angry fans"
+            ],
+            "contextSentence": "The celebrity's comment received immediate ___ from thousands of angry fans online."
+        },
+        {
+            "id": "VOC_COLLOCATIONS_L154_Q3",
+            "word": "DELETE",
+            "hint": "REMOVING A PIECE OF CONTENT FROM YOUR SOCIAL MEDIA PROFILE AFTER IT CAUSES CONTROVERSY",
+            "explanation": "DELETE THE POST fits because the context specifically mentions removing content from her page after criticism. MESSAGE, COMMENT, and STATUS are related types of social media content, but POST is the standard general term for something shared on a page.",
+            "instruction": "Read the context, then choose the word that fits.",
+            "interactionType": "choice",
+            "correctAnswer": "POST",
+            "options": [
+                "MESSAGE",
+                "POST",
+                "COMMENT",
+                "STATUS"
+            ],
+            "wrongCollocations": [
+                "delete the message from her private inbox",
+                "delete the comment she wrote elsewhere"
+            ],
+            "contextSentence": "After receiving so much criticism, she quickly deleted the controversial ___ from her page."
+        },
+        {
+            "id": "VOC_COLLOCATIONS_L155_Q1",
+            "word": "BREACH",
+            "hint": "FAILING TO DO WHAT YOU LEGALLY AGREED TO DO IN A SIGNED BUSINESS AGREEMENT",
+            "explanation": "BREACH OF CONTRACT means failing to fulfill the terms of a legal agreement. Unlike BREACH SECURITY, which involves bypassing digital protections, this specific legal phrase involves broken promises in a signed agreement.",
+            "instruction": "Find the word that naturally completes the pair.",
+            "interactionType": "choice",
+            "correctAnswer": "CONTRACT",
+            "options": [
+                "AGREEMENT PAPER",
+                "PROMISE NOTE",
+                "DEAL SHEET",
+                "CONTRACT"
+            ],
+            "wrongCollocations": [
+                "breach a promise note formally in court",
+                "breach a deal sheet legally"
+            ],
+            "contextSentence": "The supplier was sued for breach of ___ after failing to deliver the goods on time."
+        },
+        {
+            "id": "VOC_COLLOCATIONS_L155_Q2",
+            "word": "NULL AND",
+            "hint": "COMPLETELY WITHOUT LEGAL FORCE, AS IF IT HAD NEVER EXISTED",
+            "explanation": "NULL AND VOID is a completely fixed legal idiom meaning without legal force. EMPTY, BLANK, and INVALID are related in meaning but can never substitute in this specific unchangeable legal phrase.",
+            "instruction": "Choose the word that completes this fixed legal phrase.",
+            "interactionType": "choice",
+            "correctAnswer": "VOID",
+            "options": [
+                "VOID",
+                "EMPTY",
+                "BLANK",
+                "INVALID"
+            ],
+            "wrongCollocations": [
+                "null and empty from the start",
+                "null and invalid by law"
+            ],
+            "contextSentence": "The judge ruled that the contract was null and ___ due to the fraud involved."
+        },
+        {
+            "id": "VOC_COLLOCATIONS_L155_Q3",
+            "word": "WAIVE",
+            "hint": "GIVING UP A LEGAL PROTECTION YOU'RE OFFICIALLY ENTITLED TO, USUALLY IN WRITING",
+            "explanation": "WAIVE YOUR RIGHTS is the standard fixed legal phrase for giving up a legal protection. PRIVILEGES, BENEFITS, and ENTITLEMENTS are related terms, but RIGHTS is the word that consistently pairs with WAIVE in legal contexts.",
+            "instruction": "Select the word that completes this pair.",
+            "interactionType": "choice",
+            "correctAnswer": "RIGHTS",
+            "options": [
+                "PRIVILEGES",
+                "RIGHTS",
+                "BENEFITS",
+                "ENTITLEMENTS"
+            ],
+            "wrongCollocations": [
+                "waive your privileges in court",
+                "waive your benefits before signing"
+            ],
+            "contextSentence": "By signing the form, you agree to waive your ___ to a trial."
+        },
+        {
+            "id": "VOC_COLLOCATIONS_L156_Q1",
+            "word": "INFORMED",
+            "hint": "AGREEING TO A MEDICAL PROCEDURE ONLY AFTER FULLY UNDERSTANDING ITS RISKS AND BENEFITS",
+            "explanation": "INFORMED CONSENT is the fixed medical-ethics term for agreement given after full understanding. AGREEMENT, APPROVAL, and PERMISSION are related terms, but CONSENT is the specific word used in this exact medical and legal context.",
             "instruction": "Find the word that naturally completes the pair.",
             "interactionType": "choice",
             "correctAnswer": "CONSENT",
             "options": [
-                "QUESTIONNAIRE",
+                "AGREEMENT",
                 "CONSENT",
-                "PETITION",
-                "REFERENDUM"
+                "APPROVAL",
+                "PERMISSION"
             ],
             "wrongCollocations": [
-                "make CONSENT",
-                "do CONSENT",
-                "have CONSENT"
+                "informed agreement before surgery",
+                "informed permission from the patient"
             ],
-            "contextSentence": "He decided to __ CONSENT tomorrow."
-        },
-        {
-            "id": "VOC_COLLOCATIONS_L151_Q2",
-            "word": "OUTSPOKEN",
-            "hint": "SOMEONE WHO SHARES THEIR NEGATIVE OPINION OPENLY, WITHOUT HOLDING BACK",
-            "explanation": "OUTSPOKEN CRITIC describes someone who shares negative opinions openly and directly. OUTSPOKEN is also used with outspoken supporter and outspoken activist.",
-            "instruction": "Find the word that naturally completes the pair.",
-            "interactionType": "choice",
-            "correctAnswer": "CRITIC",
-            "options": [
-                "TEACHER",
-                "CUSTOMER",
-                "VISITOR",
-                "CRITIC"
-            ],
-            "wrongCollocations": [
-                "make CRITIC",
-                "do CRITIC",
-                "have CRITIC"
-            ],
-            "contextSentence": "He decided to __ CRITIC tomorrow."
-        },
-        {
-            "id": "VOC_COLLOCATIONS_L151_Q3",
-            "word": "VOCAL",
-            "hint": "SOMEONE WHO SPEAKS OUT LOUDLY AND OFTEN AGAINST SOMETHING THEY DISAGREE WITH",
-            "explanation": "VOCAL OPPONENT describes someone who speaks out loudly against something. VOCAL is also used with vocal supporter and vocal critic.",
-            "instruction": "Find the word that naturally completes the pair.",
-            "interactionType": "choice",
-            "correctAnswer": "OPPONENT",
-            "options": [
-                "STRANGER",
-                "CUSTOMER",
-                "OPPONENT",
-                "TEACHER"
-            ],
-            "wrongCollocations": [
-                "make OPPONENT",
-                "do OPPONENT",
-                "have OPPONENT"
-            ],
-            "contextSentence": "He decided to __ OPPONENT tomorrow."
-        },
-        {
-            "id": "VOC_COLLOCATIONS_L152_Q1",
-            "word": "SCATHING",
-            "hint": "FEEDBACK SO HARSHLY CRITICAL THAT IT FEELS LIKE AN ATTACK",
-            "explanation": "SCATHING REVIEW describes feedback so harshly critical it feels like an attack. SCATHING is also used with scathing comment and scathing report.",
-            "instruction": "Find the word that naturally completes the pair.",
-            "interactionType": "choice",
-            "correctAnswer": "REVIEW",
-            "options": [
-                "BALLOT",
-                "CENSUS",
-                "PROPOSAL",
-                "REVIEW"
-            ],
-            "wrongCollocations": [
-                "make REVIEW",
-                "do REVIEW",
-                "have REVIEW"
-            ],
-            "contextSentence": "He decided to __ REVIEW tomorrow."
-        },
-        {
-            "id": "VOC_COLLOCATIONS_L152_Q2",
-            "word": "DAMNING",
-            "hint": "A STRONG ACCUSATION THAT PROVIDES OVERWHELMING PROOF OF GUILT",
-            "explanation": "DAMNING INDICTMENT describes an accusation backed by overwhelming proof of guilt. DAMNING is also used with damning evidence and damning report.",
-            "instruction": "Find the word that naturally completes the pair.",
-            "interactionType": "choice",
-            "correctAnswer": "INDICTMENT",
-            "options": [
-                "INDICTMENT",
-                "PRECEDENT",
-                "GUIDELINE",
-                "STATUTE"
-            ],
-            "wrongCollocations": [
-                "make INDICTMENT",
-                "do INDICTMENT",
-                "have INDICTMENT"
-            ],
-            "contextSentence": "He decided to __ INDICTMENT tomorrow."
-        },
-        {
-            "id": "VOC_COLLOCATIONS_L152_Q3",
-            "word": "WITHERING",
-            "hint": "FEEDBACK SO HARSH THAT IT FEELS LIKE IT COULD CRUSH YOUR CONFIDENCE",
-            "explanation": "WITHERING CRITICISM describes feedback so harsh it feels crushing. WITHERING is also used with withering look and withering remark.",
-            "instruction": "Find the word that naturally completes the pair.",
-            "interactionType": "choice",
-            "correctAnswer": "CRITICISM",
-            "options": [
-                "CLAUSE",
-                "AMENDMENT",
-                "CRITICISM",
-                "PROVISION"
-            ],
-            "wrongCollocations": [
-                "make CRITICISM",
-                "do CRITICISM",
-                "have CRITICISM"
-            ],
-            "contextSentence": "He decided to __ CRITICISM tomorrow."
-        },
-        {
-            "id": "VOC_COLLOCATIONS_L153_Q1",
-            "word": "BLISTERING",
-            "hint": "CRITICISM SO INTENSE AND AGGRESSIVE THAT IT FEELS OVERWHELMING",
-            "explanation": "BLISTERING ATTACK describes criticism so intense it feels overwhelming. BLISTERING is also used with blistering pace and blistering heat.",
-            "instruction": "Find the word that naturally completes the pair.",
-            "interactionType": "choice",
-            "correctAnswer": "ATTACK",
-            "options": [
-                "STIPULATION",
-                "ANNEX",
-                "APPENDIX",
-                "ATTACK"
-            ],
-            "wrongCollocations": [
-                "make ATTACK",
-                "do ATTACK",
-                "have ATTACK"
-            ],
-            "contextSentence": "He decided to __ ATTACK tomorrow."
-        },
-        {
-            "id": "VOC_COLLOCATIONS_L153_Q2",
-            "word": "RUTHLESS",
-            "hint": "A DRIVE TO SUCCEED SO STRONG THAT IT IGNORES OTHER PEOPLE'S FEELINGS",
-            "explanation": "RUTHLESS AMBITION describes a drive to succeed that disregards others. RUTHLESS is also used with ruthless efficiency and ruthless competitor.",
-            "instruction": "Find the word that naturally completes the pair.",
-            "interactionType": "choice",
-            "correctAnswer": "AMBITION",
-            "options": [
-                "FOOTNOTE",
-                "CITATION",
-                "PROPOSAL",
-                "AMBITION"
-            ],
-            "wrongCollocations": [
-                "make AMBITION",
-                "do AMBITION",
-                "have AMBITION"
-            ],
-            "contextSentence": "He decided to __ AMBITION tomorrow."
-        },
-        {
-            "id": "VOC_COLLOCATIONS_L153_Q3",
-            "word": "CUTTHROAT",
-            "hint": "RIVALRY SO INTENSE AND AGGRESSIVE THAT PEOPLE WILL DO ALMOST ANYTHING TO WIN",
-            "explanation": "CUTTHROAT COMPETITION describes rivalry so intense that people will do almost anything to win. CUTTHROAT is also used with cutthroat business and cutthroat industry.",
-            "instruction": "Find the word that naturally completes the pair.",
-            "interactionType": "choice",
-            "correctAnswer": "COMPETITION",
-            "options": [
-                "VOUCHER",
-                "WARRANTY",
-                "GUIDELINE",
-                "COMPETITION"
-            ],
-            "wrongCollocations": [
-                "make COMPETITION",
-                "do COMPETITION",
-                "have COMPETITION"
-            ],
-            "contextSentence": "He decided to __ COMPETITION tomorrow."
-        },
-        {
-            "id": "VOC_COLLOCATIONS_L154_Q1",
-            "word": "FIERCE",
-            "hint": "COMPETITION BETWEEN TWO SIDES THAT IS INTENSE AND PASSIONATE",
-            "explanation": "FIERCE RIVALRY describes intense, passionate competition between two sides. FIERCE is also used with fierce loyalty and fierce determination.",
-            "instruction": "Find the word that naturally completes the pair.",
-            "interactionType": "choice",
-            "correctAnswer": "RIVALRY",
-            "options": [
-                "LICENSE",
-                "RIVALRY",
-                "PERMIT",
-                "CERTIFICATE"
-            ],
-            "wrongCollocations": [
-                "make RIVALRY",
-                "do RIVALRY",
-                "have RIVALRY"
-            ],
-            "contextSentence": "He decided to __ RIVALRY tomorrow."
-        },
-        {
-            "id": "VOC_COLLOCATIONS_L154_Q2",
-            "word": "BITTER",
-            "hint": "COMPETITION SO INTENSE THAT IT CREATES REAL RESENTMENT BETWEEN THE SIDES",
-            "explanation": "BITTER RIVALRY describes competition intense enough to create lasting resentment. BITTER is also used with bitter defeat and bitter cold.",
-            "instruction": "Find the word that naturally completes the pair.",
-            "interactionType": "choice",
-            "correctAnswer": "RIVALRY",
-            "options": [
-                "DIPLOMA",
-                "TRANSCRIPT",
-                "PROPOSAL",
-                "RIVALRY"
-            ],
-            "wrongCollocations": [
-                "make RIVALRY",
-                "do RIVALRY",
-                "have RIVALRY"
-            ],
-            "contextSentence": "He decided to __ RIVALRY tomorrow."
-        },
-        {
-            "id": "VOC_COLLOCATIONS_L154_Q3",
-            "word": "INTENSE",
-            "hint": "EXAMINING SOMETHING SO CLOSELY AND CAREFULLY THAT NOTHING IS MISSED",
-            "explanation": "INTENSE SCRUTINY describes examining something with extremely close attention. INTENSE is also used with intense pressure and intense focus.",
-            "instruction": "Find the word that naturally completes the pair.",
-            "interactionType": "choice",
-            "correctAnswer": "SCRUTINY",
-            "options": [
-                "GUIDELINE",
-                "PROPOSAL",
-                "PROCEDURE",
-                "SCRUTINY"
-            ],
-            "wrongCollocations": [
-                "make SCRUTINY",
-                "do SCRUTINY",
-                "have SCRUTINY"
-            ],
-            "contextSentence": "He decided to __ SCRUTINY tomorrow."
-        },
-        {
-            "id": "VOC_COLLOCATIONS_L155_Q1",
-            "word": "CLOSE",
-            "hint": "PAYING VERY CAREFUL, DETAILED ATTENTION TO SOMETHING TO CHECK IT IS CORRECT",
-            "explanation": "CLOSE SCRUTINY describes careful, detailed attention meant to check accuracy. CLOSE is also used with close friend and close call.",
-            "instruction": "Find the word that naturally completes the pair.",
-            "interactionType": "choice",
-            "correctAnswer": "SCRUTINY",
-            "options": [
-                "SCRUTINY",
-                "INITIATIVE",
-                "DIRECTIVE",
-                "GUIDELINE"
-            ],
-            "wrongCollocations": [
-                "make SCRUTINY",
-                "do SCRUTINY",
-                "have SCRUTINY"
-            ],
-            "contextSentence": "He decided to __ SCRUTINY tomorrow."
-        },
-        {
-            "id": "VOC_COLLOCATIONS_L155_Q2",
-            "word": "PUBLIC",
-            "hint": "BEING CLOSELY EXAMINED AND JUDGED BY THE GENERAL PUBLIC, NOT JUST EXPERTS",
-            "explanation": "PUBLIC SCRUTINY describes close examination by the general public. PUBLIC is the opposite of private.",
-            "instruction": "Find the word that naturally completes the pair.",
-            "interactionType": "choice",
-            "correctAnswer": "SCRUTINY",
-            "options": [
-                "ASSESSMENT",
-                "SCRUTINY",
-                "PROJECTION",
-                "FRAMEWORK"
-            ],
-            "wrongCollocations": [
-                "make SCRUTINY",
-                "do SCRUTINY",
-                "have SCRUTINY"
-            ],
-            "contextSentence": "He decided to __ SCRUTINY tomorrow."
-        },
-        {
-            "id": "VOC_COLLOCATIONS_L155_Q3",
-            "word": "HEIGHTENED",
-            "hint": "PROTECTION THAT HAS BEEN INCREASED BECAUSE OF A SPECIFIC THREAT OR RISK",
-            "explanation": "HEIGHTENED SECURITY describes protection increased because of a specific threat. HEIGHTENED is also used with heightened awareness and heightened tension.",
-            "instruction": "Find the word that naturally completes the pair.",
-            "interactionType": "choice",
-            "correctAnswer": "SECURITY",
-            "options": [
-                "PROTOCOL",
-                "PROPOSAL",
-                "SECURITY",
-                "PATTERN"
-            ],
-            "wrongCollocations": [
-                "make SECURITY",
-                "do SECURITY",
-                "have SECURITY"
-            ],
-            "contextSentence": "He decided to __ SECURITY tomorrow."
-        },
-        {
-            "id": "VOC_COLLOCATIONS_L156_Q1",
-            "word": "STRINGENT",
-            "hint": "A RULE ENFORCED VERY STRICTLY, WITH LITTLE TOLERANCE FOR EXCEPTIONS",
-            "explanation": "STRINGENT REGULATION describes a rule enforced strictly, with little tolerance for exceptions. STRINGENT is also used with stringent requirement and stringent test.",
-            "instruction": "Find the word that naturally completes the pair.",
-            "interactionType": "choice",
-            "correctAnswer": "REGULATION",
-            "options": [
-                "ROUTINE",
-                "STRATEGY",
-                "REGULATION",
-                "AGENDA"
-            ],
-            "wrongCollocations": [
-                "make REGULATION",
-                "do REGULATION",
-                "have REGULATION"
-            ],
-            "contextSentence": "He decided to __ REGULATION tomorrow."
+            "contextSentence": "Doctors are legally required to obtain ___ consent before any major procedure."
         },
         {
             "id": "VOC_COLLOCATIONS_L156_Q2",
-            "word": "LAX",
-            "hint": "MONITORING THAT IS TOO RELAXED, LETTING PROBLEMS SLIP THROUGH UNNOTICED",
-            "explanation": "LAX OVERSIGHT describes monitoring that is too relaxed, letting problems slip through. LAX is also used with lax security and lax discipline.",
-            "instruction": "Find the word that naturally completes the pair.",
+            "word": "PRESCRIBE",
+            "hint": "GIVING A PATIENT A SPECIFIC DRUG TO TAKE, RATHER THAN A BROADER PLAN OF CARE",
+            "explanation": "PRESCRIBE MEDICATION fits because the context specifically describes managing a condition with a drug. TREATMENT and THERAPY can refer to broader approaches beyond just medication, while REMEDY is more informal and less standard in clinical language.",
+            "instruction": "Read the context, then choose the word that fits.",
             "interactionType": "choice",
-            "correctAnswer": "OVERSIGHT",
+            "correctAnswer": "MEDICATION",
             "options": [
-                "MEMO",
-                "OVERSIGHT",
-                "BULLETIN",
-                "CIRCULAR"
+                "TREATMENT",
+                "MEDICATION",
+                "THERAPY",
+                "REMEDY"
             ],
             "wrongCollocations": [
-                "make OVERSIGHT",
-                "do OVERSIGHT",
-                "have OVERSIGHT"
+                "prescribe a broad remedy casually",
+                "prescribe an informal therapy plan"
             ],
-            "contextSentence": "He decided to __ OVERSIGHT tomorrow."
+            "contextSentence": "The doctor decided to prescribe a new ___ to help manage her blood pressure."
         },
         {
             "id": "VOC_COLLOCATIONS_L156_Q3",
-            "word": "INADEQUATE",
-            "hint": "NOT ENOUGH WATCHFUL GUIDANCE OVER PEOPLE OR A SITUATION",
-            "explanation": "INADEQUATE SUPERVISION describes insufficient watchful guidance. INADEQUATE is also used with inadequate funding and inadequate response.",
-            "instruction": "Find the word that naturally completes the pair.",
+            "word": "BEDSIDE",
+            "hint": "THE WAY A DOCTOR SPEAKS TO AND TREATS PATIENTS, ESPECIALLY HOW WARM OR COLD IT FEELS",
+            "explanation": "BEDSIDE MANNER is a fixed idiom for how a doctor interacts with patients. ATTITUDE, BEHAVIOR, and CONDUCT are related terms, but MANNER is the specific word used in this fixed medical expression.",
+            "instruction": "Choose the word that completes this fixed medical idiom.",
             "interactionType": "choice",
-            "correctAnswer": "SUPERVISION",
+            "correctAnswer": "MANNER",
             "options": [
-                "DOSSIER",
-                "GUIDELINE",
-                "PROPOSAL",
-                "SUPERVISION"
+                "ATTITUDE",
+                "BEHAVIOR",
+                "MANNER",
+                "CONDUCT"
             ],
             "wrongCollocations": [
-                "make SUPERVISION",
-                "do SUPERVISION",
-                "have SUPERVISION"
+                "bedside attitude with every patient",
+                "bedside conduct praised by nurses"
             ],
-            "contextSentence": "He decided to __ SUPERVISION tomorrow."
+            "contextSentence": "Patients often say the new doctor has an excellent bedside ___."
         },
         {
             "id": "VOC_COLLOCATIONS_L157_Q1",
-            "word": "FLAGRANT",
-            "hint": "BREAKING A RULE SO OBVIOUSLY THAT THERE IS NO WAY TO DENY IT",
-            "explanation": "FLAGRANT VIOLATION describes breaking a rule so obviously that denial is impossible. FLAGRANT is also used with flagrant foul and flagrant abuse.",
+            "word": "PEER-REVIEWED",
+            "hint": "A PUBLICATION WHERE OTHER EXPERTS EVALUATE THE RESEARCH BEFORE IT'S PRINTED, UNLIKE ORDINARY NEWS OUTLETS",
+            "explanation": "PEER-REVIEWED JOURNAL is the standard term for an academic publication evaluated by experts. MAGAZINE, NEWSPAPER, and BLOG are non-academic publication types that don't undergo this specific formal review process.",
             "instruction": "Find the word that naturally completes the pair.",
             "interactionType": "choice",
-            "correctAnswer": "VIOLATION",
+            "correctAnswer": "JOURNAL",
             "options": [
-                "VIOLATION",
-                "LEDGER",
-                "INVENTORY",
-                "CATALOG"
+                "MAGAZINE",
+                "NEWSPAPER",
+                "JOURNAL",
+                "BLOG"
             ],
             "wrongCollocations": [
-                "make VIOLATION",
-                "do VIOLATION",
-                "have VIOLATION"
+                "peer-reviewed magazine on newsstands",
+                "peer-reviewed blog post online"
             ],
-            "contextSentence": "He decided to __ VIOLATION tomorrow."
+            "contextSentence": "The study was published in a respected peer-reviewed ___."
         },
         {
             "id": "VOC_COLLOCATIONS_L157_Q2",
-            "word": "BLATANT",
-            "hint": "OBVIOUSLY AND OPENLY IGNORING RULES OR OTHER PEOPLE'S FEELINGS",
-            "explanation": "BLATANT DISREGARD describes obviously and openly ignoring rules or feelings. BLATANT is also used with blatant lie and blatant disrespect.",
-            "instruction": "Find the word that naturally completes the pair.",
+            "word": "RETRACT",
+            "hint": "FORMALLY WITHDRAWING A PUBLISHED PIECE OF ACADEMIC WORK AFTER DISCOVERING A SERIOUS PROBLEM WITH IT",
+            "explanation": "RETRACT A PAPER means to formally withdraw published academic research. Just as with RETRACT A STATEMENT, this describes formally taking something back after it's already been made public.",
+            "instruction": "Choose the word that completes this pair.",
             "interactionType": "choice",
-            "correctAnswer": "DISREGARD",
+            "correctAnswer": "PAPER",
             "options": [
-                "ARCHIVE",
-                "DATABASE",
-                "DISREGARD",
-                "SPREADSHEET"
+                "MEMO COPY",
+                "PAPER",
+                "REPORT DOCUMENT",
+                "BULLETIN SHEET"
             ],
             "wrongCollocations": [
-                "make DISREGARD",
-                "do DISREGARD",
-                "have DISREGARD"
+                "retract a memo sent to colleagues",
+                "retract a bulletin from the office"
             ],
-            "contextSentence": "He decided to __ DISREGARD tomorrow."
+            "contextSentence": "The journal was forced to retract the ___ after evidence of data manipulation emerged."
         },
         {
             "id": "VOC_COLLOCATIONS_L157_Q3",
-            "word": "WILLFUL",
-            "hint": "FAILING TO TAKE PROPER CARE ON PURPOSE, NOT BY ACCIDENT",
-            "explanation": "WILLFUL NEGLIGENCE describes carelessness that happens on purpose, not by accident. WILLFUL is a legal term also used with willful ignorance.",
-            "instruction": "Find the word that naturally completes the pair.",
+            "word": "IMPACT",
+            "hint": "A NUMBER USED TO MEASURE HOW OFTEN A JOURNAL'S ARTICLES ARE CITED BY OTHER RESEARCHERS",
+            "explanation": "IMPACT FACTOR is a fixed technical term in academic publishing for a journal's citation influence. INFLUENCE, EFFECT, and CONSEQUENCE are related to the everyday meaning of 'impact,' but they don't form this exact fixed bibliometric term.",
+            "instruction": "Select the word that completes this fixed academic term.",
             "interactionType": "choice",
-            "correctAnswer": "NEGLIGENCE",
+            "correctAnswer": "FACTOR",
             "options": [
-                "TIMELINE",
-                "PROPOSAL",
-                "CHECKLIST",
-                "NEGLIGENCE"
+                "INFLUENCE",
+                "EFFECT",
+                "CONSEQUENCE",
+                "FACTOR"
             ],
             "wrongCollocations": [
-                "make NEGLIGENCE",
-                "do NEGLIGENCE",
-                "have NEGLIGENCE"
+                "impact influence measured by citations",
+                "impact effect used by researchers"
             ],
-            "contextSentence": "He decided to __ NEGLIGENCE tomorrow."
+            "contextSentence": "Researchers often aim to publish in journals with a high impact ___."
         },
         {
             "id": "VOC_COLLOCATIONS_L158_Q1",
-            "word": "GROSS",
-            "hint": "BEHAVIOR AT WORK SO SERIOUSLY WRONG THAT IT CAN LEAD TO IMMEDIATE DISMISSAL",
-            "explanation": "GROSS MISCONDUCT describes workplace behavior so seriously wrong it can lead to immediate dismissal. GROSS here means severe, not dirty.",
-            "instruction": "Find the word that naturally completes the pair.",
+            "word": "ISSUE",
+            "hint": "AN OFFICIAL COMMAND TELLING RESIDENTS TO LEAVE AN AREA BECAUSE OF DANGER",
+            "explanation": "ISSUE AN EVACUATION ORDER fits because the context specifically mentions residents near a flood zone and the fixed compound 'evacuation order.' WARNING, ALERT, and NOTICE can also be issued, but EVACUATION specifically matches the compound noun structure used here.",
+            "instruction": "Read the context, then choose the word that fits.",
             "interactionType": "choice",
-            "correctAnswer": "MISCONDUCT",
+            "correctAnswer": "EVACUATION",
             "options": [
-                "TEMPLATE",
-                "GUIDELINE",
-                "MISCONDUCT",
-                "MANUAL"
+                "WARNING",
+                "EVACUATION",
+                "ALERT",
+                "NOTICE"
             ],
             "wrongCollocations": [
-                "make MISCONDUCT",
-                "do MISCONDUCT",
-                "have MISCONDUCT"
+                "issue a warning order for residents",
+                "issue an alert order near the flood zone"
             ],
-            "contextSentence": "He decided to __ MISCONDUCT tomorrow."
+            "contextSentence": "Authorities issued a mandatory ___ order for residents living near the flood zone."
         },
         {
             "id": "VOC_COLLOCATIONS_L158_Q2",
-            "word": "EGREGIOUS",
-            "hint": "A MISTAKE SO OBVIOUS AND SERIOUS THAT IT IS SHOCKING",
-            "explanation": "EGREGIOUS ERROR describes a mistake so serious and obvious it is shocking. EGREGIOUS is also used with egregious violation and egregious behavior.",
-            "instruction": "Find the word that naturally completes the pair.",
+            "word": "DECLARE",
+            "hint": "OFFICIALLY ANNOUNCING THAT A REGION IS UNDER SPECIAL CRISIS POWERS DUE TO A DISASTER",
+            "explanation": "DECLARE A STATE OF EMERGENCY is the standard fixed legal and political phrase for this announcement. CRISIS, DISASTER, and CATASTROPHE describe similar severe situations, but EMERGENCY is the specific word used in this exact official formula.",
+            "instruction": "Choose the word that completes this fixed official phrase.",
             "interactionType": "choice",
-            "correctAnswer": "ERROR",
+            "correctAnswer": "EMERGENCY",
             "options": [
-                "HANDBOOK",
-                "ERROR",
-                "BROCHURE",
-                "PAMPHLET"
+                "CRISIS",
+                "DISASTER",
+                "CATASTROPHE",
+                "EMERGENCY"
             ],
             "wrongCollocations": [
-                "make ERROR",
-                "do ERROR",
-                "have ERROR"
+                "declare a state of crisis officially",
+                "declare a state of disaster formally"
             ],
-            "contextSentence": "He decided to __ ERROR tomorrow."
+            "contextSentence": "The governor declared a state of ___ as the hurricane approached the coast."
         },
         {
             "id": "VOC_COLLOCATIONS_L158_Q3",
-            "word": "CATASTROPHIC",
-            "hint": "A BREAKDOWN SO SEVERE THAT IT CAUSES WIDESPREAD, LASTING DISASTER",
-            "explanation": "CATASTROPHIC FAILURE describes a breakdown severe enough to cause widespread disaster. CATASTROPHIC is also used with catastrophic loss and catastrophic damage.",
-            "instruction": "Find the word that naturally completes the pair.",
+            "word": "SEEK",
+            "hint": "GOING TO A SPECIFIC, PHYSICAL PLACE FOR PROTECTION FROM DANGEROUS WEATHER",
+            "explanation": "SEEK SHELTER fits because the context specifically mentions a physical location, a basement. REFUGE, SAFETY, and PROTECTION are more abstract concepts that don't specifically describe going to a concrete physical place the way SHELTER does.",
+            "instruction": "Read the context, then choose the word that fits.",
             "interactionType": "choice",
-            "correctAnswer": "FAILURE",
+            "correctAnswer": "SHELTER",
             "options": [
-                "FLYER",
-                "INVOICE",
-                "RECEIPT",
-                "FAILURE"
+                "REFUGE",
+                "SHELTER",
+                "SAFETY",
+                "PROTECTION"
             ],
             "wrongCollocations": [
-                "make FAILURE",
-                "do FAILURE",
-                "have FAILURE"
+                "seek refuge in an abstract sense",
+                "seek protection without a specific place"
             ],
-            "contextSentence": "He decided to __ FAILURE tomorrow."
+            "contextSentence": "As the tornado approached, residents were told to immediately seek ___ in their basements."
         },
         {
             "id": "VOC_COLLOCATIONS_L159_Q1",
-            "word": "DEVASTATING",
-            "hint": "AN EVENT SO DAMAGING THAT IT LEAVES SOMEONE FEELING COMPLETELY OVERWHELMED",
-            "explanation": "DEVASTATING BLOW describes an event so damaging it leaves someone overwhelmed. DEVASTATING is also used with devastating news and devastating loss.",
+            "word": "CARBON",
+            "hint": "THE TOTAL AMOUNT OF GREENHOUSE GASES CAUSED BY ONE PERSON, COMPANY, OR ACTIVITY",
+            "explanation": "CARBON FOOTPRINT is a fixed environmental compound term measuring emissions caused by an activity. TRACE, MARK, and IMPRINT relate to the everyday meaning of 'footprint,' but don't form this exact fixed environmental term.",
             "instruction": "Find the word that naturally completes the pair.",
             "interactionType": "choice",
-            "correctAnswer": "BLOW",
+            "correctAnswer": "FOOTPRINT",
             "options": [
-                "VOUCHER",
-                "BLOW",
-                "WARRANTY",
-                "LICENSE"
+                "FOOTPRINT",
+                "TRACE",
+                "MARK",
+                "IMPRINT"
             ],
             "wrongCollocations": [
-                "make BLOW",
-                "do BLOW",
-                "have BLOW"
+                "carbon trace measured yearly",
+                "carbon imprint reduced by recycling"
             ],
-            "contextSentence": "He decided to __ BLOW tomorrow."
+            "contextSentence": "Switching to public transport can significantly reduce your carbon ___."
         },
         {
             "id": "VOC_COLLOCATIONS_L159_Q2",
-            "word": "IRREPARABLE",
-            "hint": "HARM SO SEVERE THAT IT CAN NEVER BE COMPLETELY FIXED OR REPAIRED",
-            "explanation": "IRREPARABLE DAMAGE describes harm so severe it can never be fully repaired. IRREPARABLE is also used with irreparable harm and irreparable loss.",
-            "instruction": "Find the word that naturally completes the pair.",
+            "word": "RENEWABLE",
+            "hint": "POWER THAT COMES FROM SOURCES LIKE THE SUN OR WIND, WHICH DON'T RUN OUT",
+            "explanation": "RENEWABLE ENERGY is the standard fixed compound term for power from sources that naturally replenish. POWER, ELECTRICITY, and FUEL relate to similar ideas, but ENERGY is overwhelmingly the standard word used in this exact environmental term.",
+            "instruction": "Choose the word that completes this fixed environmental term.",
             "interactionType": "choice",
-            "correctAnswer": "DAMAGE",
+            "correctAnswer": "ENERGY",
             "options": [
-                "PERMIT",
-                "DAMAGE",
-                "CERTIFICATE",
-                "PROPOSAL"
+                "POWER",
+                "ENERGY",
+                "ELECTRICITY",
+                "FUEL"
             ],
             "wrongCollocations": [
-                "make DAMAGE",
-                "do DAMAGE",
-                "have DAMAGE"
+                "renewable power from wind turbines",
+                "renewable electricity from solar panels"
             ],
-            "contextSentence": "He decided to __ DAMAGE tomorrow."
+            "contextSentence": "The country plans to generate 80 percent of its electricity from ___ energy by 2040."
         },
         {
             "id": "VOC_COLLOCATIONS_L159_Q3",
-            "word": "IRREVERSIBLE",
-            "hint": "A DROP SO SEVERE THAT THINGS CAN NEVER RETURN TO HOW THEY WERE BEFORE",
-            "explanation": "IRREVERSIBLE DECLINE describes a drop so severe that recovery is impossible. IRREVERSIBLE is also used with irreversible change and irreversible harm.",
-            "instruction": "Find the word that naturally completes the pair.",
+            "word": "GREENHOUSE",
+            "hint": "SUBSTANCES IN THE AIR THAT TRAP HEAT AND CONTRIBUTE TO GLOBAL WARMING",
+            "explanation": "GREENHOUSE GASES is a fixed scientific term for heat-trapping atmospheric gases. FUMES, SMOKE, and VAPOR relate to similar visible emissions, but they don't form this exact fixed scientific term used in climate science.",
+            "instruction": "Select the word that completes this fixed scientific term.",
             "interactionType": "choice",
-            "correctAnswer": "DECLINE",
+            "correctAnswer": "GASES",
             "options": [
-                "DECLINE",
-                "DIPLOMA",
-                "TRANSCRIPT",
-                "GUIDELINE"
+                "FUMES",
+                "GASES",
+                "SMOKE",
+                "VAPOR"
             ],
             "wrongCollocations": [
-                "make DECLINE",
-                "do DECLINE",
-                "have DECLINE"
+                "greenhouse fumes trapping heat",
+                "greenhouse smoke causing warming"
             ],
-            "contextSentence": "He decided to __ DECLINE tomorrow."
+            "contextSentence": "Reducing greenhouse ___ emissions is essential to slowing climate change."
         },
         {
             "id": "VOC_COLLOCATIONS_L160_Q1",
-            "word": "INEVITABLE",
-            "hint": "A BREAKDOWN THAT IS CERTAIN TO HAPPEN AND CANNOT BE AVOIDED",
-            "explanation": "INEVITABLE COLLAPSE describes a breakdown certain to happen no matter what. INEVITABLE is also used with inevitable outcome and inevitable change.",
+            "word": "ISSUE",
+            "hint": "OFFICIALLY RELEASING A FORMAL MESSAGE TO THE PUBLIC OR PRESS",
+            "explanation": "ISSUE A STATEMENT means to officially release a formal message, similar in meaning to RELEASE A STATEMENT but slightly more common in official and legal contexts. It works here just as ISSUE does with a warning or a license.",
             "instruction": "Find the word that naturally completes the pair.",
             "interactionType": "choice",
-            "correctAnswer": "COLLAPSE",
+            "correctAnswer": "STATEMENT",
             "options": [
-                "RESUME",
-                "PORTFOLIO",
-                "COLLAPSE",
-                "BLUEPRINT"
+                "MEMO COPY",
+                "BULLETIN SHEET",
+                "CIRCULAR NOTE",
+                "STATEMENT"
             ],
             "wrongCollocations": [
-                "make COLLAPSE",
-                "do COLLAPSE",
-                "have COLLAPSE"
+                "issue a memo internally only",
+                "issue a circular note privately"
             ],
-            "contextSentence": "He decided to __ COLLAPSE tomorrow."
+            "contextSentence": "The airline issued a ___ apologizing for the technical delay."
         },
         {
             "id": "VOC_COLLOCATIONS_L160_Q2",
-            "word": "IMPENDING",
-            "hint": "A SERIOUS PROBLEM THAT IS ABOUT TO HAPPEN VERY SOON",
-            "explanation": "IMPENDING CRISIS describes a serious problem that is about to happen. IMPENDING is also used with impending doom and impending deadline.",
-            "instruction": "Find the word that naturally completes the pair.",
+            "word": "BRACE",
+            "hint": "PREPARING YOURSELF PHYSICALLY AND MENTALLY FOR A SUDDEN, FORCEFUL COLLISION OR SHOCK",
+            "explanation": "BRACE FOR IMPACT is a fixed idiom, especially familiar from aviation and emergency contexts, meaning to prepare for a sudden collision. PREPARE, READY, and EXPECT are related in meaning, but none of them completes this specific fixed emergency phrase.",
+            "instruction": "Choose the word that completes this fixed emergency idiom.",
             "interactionType": "choice",
-            "correctAnswer": "CRISIS",
+            "correctAnswer": "IMPACT",
             "options": [
-                "DIAGRAM",
-                "SPECTRUM",
-                "CRISIS",
-                "REGISTRY"
+                "PREPARE",
+                "READY",
+                "EXPECT",
+                "IMPACT"
             ],
             "wrongCollocations": [
-                "make CRISIS",
-                "do CRISIS",
-                "have CRISIS"
+                "brace for prepare during landing",
+                "brace for ready before the crash"
             ],
-            "contextSentence": "He decided to __ CRISIS tomorrow."
+            "contextSentence": "The pilot instructed passengers to brace for ___ moments before the emergency landing."
         },
         {
             "id": "VOC_COLLOCATIONS_L160_Q3",
-            "word": "LOOMING",
-            "hint": "A DANGER THAT FEELS CLOSE AND UNAVOIDABLE, HANGING OVER YOU",
-            "explanation": "LOOMING THREAT describes a danger that feels close and unavoidable. LOOMING is also used with looming deadline and looming shadow.",
-            "instruction": "Find the word that naturally completes the pair.",
+            "word": "WEATHER",
+            "hint": "ENDURING A DIFFICULT PERIOD AND COMING OUT THE OTHER SIDE, RATHER THAN A LITERAL WEATHER EVENT",
+            "explanation": "WEATHER THE STORM is a fixed idiom meaning to endure a difficult period. HURRICANE, TORNADO, and BLIZZARD are literal weather events that don't complete this specific figurative expression about resilience.",
+            "instruction": "Select the word that completes this fixed idiom.",
             "interactionType": "choice",
-            "correctAnswer": "THREAT",
+            "correctAnswer": "STORM",
             "options": [
-                "SURVEY",
-                "RESUME",
-                "QUESTIONNAIRE",
-                "THREAT"
+                "HURRICANE",
+                "STORM",
+                "TORNADO",
+                "BLIZZARD"
             ],
             "wrongCollocations": [
-                "make THREAT",
-                "do THREAT",
-                "have THREAT"
+                "weather the hurricane of layoffs literally",
+                "weather the blizzard of bad press literally"
             ],
-            "contextSentence": "He decided to __ THREAT tomorrow."
+            "contextSentence": "Despite the scandal, the company managed to weather the ___ and rebuild its reputation."
         }
     ],
     "gameType": "collocations",

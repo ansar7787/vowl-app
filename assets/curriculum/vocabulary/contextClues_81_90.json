@@ -6,20 +6,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L81_Q1",
-            "sentence": "The [TARGET] assistant agreed with every single word his boss said, no matter how absurd.",
-            "hint": "From Latin obsequi, 'to comply with' - describes obeying to an excessive, fawning degree.",
+            "sentence": "The new employee was [TARGET] and fawning around the CEO, laughing at every joke and agreeing with everything he said, even when he contradicted himself.",
+            "hint": "This word describes being excessively eager to please someone, especially someone in power.",
             "options": [
+                "Fawning",
                 "Defiant",
-                "Servile",
-                "Assertive",
-                "Arrogant"
+                "Indifferent",
+                "Blunt"
             ],
-            "explanation": "Agreeing with every absurd statement without question shows excessive, fawning obedience, so [TARGET] means SERVILE.",
-            "correctAnswer": "Servile",
+            "explanation": "The word 'and' links [TARGET] to 'fawning,' and laughing at every joke and agreeing with everything confirm it, so [TARGET] means FAWNING.",
+            "correctAnswer": "Fawning",
             "clueType": "synonym",
             "evidenceWords": [
-                "assistant",
-                "agreed"
+                "and fawning",
+                "agreeing with everything he said"
             ]
         },
         {
@@ -27,20 +27,22 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L81_Q2",
-            "sentence": "The two drivers became [TARGET] after the fender-bender, shouting at each other in the street.",
-            "hint": "From Latin bellum, 'war' - describes being eager to fight or argue.",
+            "sentence": "Unlike the calm negotiator who stayed composed through every round of talks, the union representative grew [TARGET], slamming his fist on the table and shouting threats.",
+            "hint": "This word describes being aggressive and eager to fight or argue.",
             "options": [
-                "Peaceful",
-                "Amicable",
+                "Calm",
                 "Hostile",
-                "Friendly"
+                "Composed",
+                "Peaceful"
             ],
-            "explanation": "Shouting at each other after a fender-bender shows being eager to fight, so [TARGET] means HOSTILE.",
+            "explanation": "The word 'unlike' contrasts [TARGET] with a negotiator who 'stayed composed,' so it must mean the opposite, which is HOSTILE.",
             "correctAnswer": "Hostile",
             "clueType": "antonym",
             "evidenceWords": [
-                "drivers",
-                "became"
+                "Unlike",
+                "stayed composed",
+                "slamming his fist",
+                "shouting threats"
             ]
         },
         {
@@ -48,20 +50,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L81_Q3",
-            "sentence": "The inspiring speech helped [TARGET] a sense of hope across the entire stadium.",
-            "hint": "Originally meant lighting a fire - now also used for sparking a feeling.",
+            "sentence": "The old photograph seemed to [TARGET] a memory in her, which means it sparked and brought to life a feeling she thought she had forgotten.",
+            "hint": "This word means to ignite or start something, like a feeling or a fire.",
             "options": [
-                "Smother",
-                "Dampen",
                 "Extinguish",
-                "Ignite"
+                "Erase",
+                "Spark",
+                "Smother"
             ],
-            "explanation": "A speech sparking hope across a stadium is like lighting a fire of feeling, so [TARGET] means IGNITE.",
-            "correctAnswer": "Ignite",
+            "explanation": "The sentence defines [TARGET] as meaning it 'sparked and brought to life' a feeling, so [TARGET] means SPARK.",
+            "correctAnswer": "Spark",
             "clueType": "definition",
             "evidenceWords": [
-                "inspiring",
-                "speech"
+                "which means",
+                "sparked and brought to life"
             ]
         },
         {
@@ -69,20 +71,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L82_Q1",
-            "sentence": "The doctor prescribed medication to [TARGET] the symptoms, though there was no actual cure.",
-            "hint": "From Latin pallium, 'cloak' - to cover over pain rather than cure it.",
+            "sentence": "The medication couldn't cure the condition, but it did [TARGET] it: the pain dulled to a manageable ache, the swelling went down slightly, and she could finally sleep through the night.",
+            "hint": "This word means to make a difficult condition feel less severe without curing it.",
             "options": [
-                "Worsen",
-                "Ease",
-                "Aggravate",
-                "Intensify"
+                "Cure",
+                "Eliminate",
+                "Fix completely",
+                "Ease"
             ],
-            "explanation": "Treating symptoms without a cure means covering the pain rather than curing it, so [TARGET] means EASE.",
+            "explanation": "Pain dulling, swelling going down, and sleeping through the night are all examples of a condition feeling less severe, so [TARGET] means EASE.",
             "correctAnswer": "Ease",
             "clueType": "example",
             "evidenceWords": [
-                "doctor",
-                "prescribed"
+                "pain dulled to a manageable ache",
+                "swelling went down slightly",
+                "sleep through the night"
             ]
         },
         {
@@ -90,20 +93,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L82_Q2",
-            "sentence": "The athlete's [TARGET] attitude during the press conference led to a heavy fine.",
-            "hint": "From Latin truculentus, 'fierce' - describes being quick to fight or argue.",
+            "sentence": "The customer slammed the receipt on the counter, called the cashier incompetent, and threatened to write a scathing review before storming toward the manager's office — his tone was undeniably [TARGET].",
+            "hint": "This word describes being fiercely combative and eager to argue or fight.",
             "options": [
-                "Docile",
-                "Tame",
+                "Aggressive",
                 "Gentle",
-                "Aggressive"
+                "Mild",
+                "Calm"
             ],
-            "explanation": "Behavior serious enough to earn a heavy fine suggests being quick to fight, so [TARGET] means AGGRESSIVE.",
+            "explanation": "Slamming the receipt, insulting the cashier, and threatening a review all show fierce aggression, even without a direct clue word, so [TARGET] means AGGRESSIVE.",
             "correctAnswer": "Aggressive",
             "clueType": "inference",
             "evidenceWords": [
-                "athlete's",
-                "attitude"
+                "slammed the receipt",
+                "called the cashier incompetent",
+                "threatened to write a scathing review"
             ]
         },
         {
@@ -111,20 +115,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L82_Q3",
-            "sentence": "The negotiator remained [TARGET], refusing to budge on even the smallest points.",
-            "hint": "From Latin durus, 'hard' - describes a mind too hard to soften.",
+            "sentence": "Despite hours of pleading from his family, the old man remained [TARGET] and stubborn, refusing to move out of the house he'd lived in for sixty years.",
+            "hint": "This word describes being unwilling to change your mind, no matter what.",
             "options": [
+                "Flexible",
                 "Stubborn",
-                "Accommodating",
-                "Yielding",
-                "Flexible"
+                "Agreeable",
+                "Yielding"
             ],
-            "explanation": "Refusing to budge on even small points shows a mind too hard to change, so [TARGET] means STUBBORN.",
+            "explanation": "The word 'and' links [TARGET] to 'stubborn,' and refusing to move despite hours of pleading confirms it, so [TARGET] means STUBBORN.",
             "correctAnswer": "Stubborn",
             "clueType": "synonym",
             "evidenceWords": [
-                "negotiator",
-                "remained"
+                "and stubborn",
+                "refusing to move"
             ]
         },
         {
@@ -132,20 +136,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L83_Q1",
-            "sentence": "The interns completed their tasks with [TARGET], eager to impress their supervisors.",
-            "hint": "From Latin alacer, 'lively' - describes brisk, cheerful readiness.",
+            "sentence": "Unlike the reluctant sigh her older brother gave every time he was asked to help, Nina agreed to babysit with [TARGET], grabbing her coat before her mother had even finished the question.",
+            "hint": "This word describes a cheerful readiness to do something.",
             "options": [
-                "Lethargy",
-                "Apathy",
+                "Reluctance",
+                "Hesitation",
                 "Eagerness",
-                "Reluctance"
+                "Unwillingness"
             ],
-            "explanation": "Completing tasks while eager to impress shows brisk, cheerful readiness, so [TARGET] means EAGERNESS.",
+            "explanation": "The word 'unlike' contrasts [TARGET] with a 'reluctant sigh,' so it must mean the opposite, which is EAGERNESS.",
             "correctAnswer": "Eagerness",
             "clueType": "antonym",
             "evidenceWords": [
-                "interns",
-                "completed"
+                "Unlike",
+                "reluctant sigh",
+                "grabbing her coat before her mother had even finished"
             ]
         },
         {
@@ -153,20 +158,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L83_Q2",
-            "sentence": "The elder's [TARGET] advice helped the young leader navigate the crisis.",
-            "hint": "From Latin sagax, 'keen-scented' - like a hunting dog that senses things others miss.",
+            "sentence": "The old fisherman was known as [TARGET] throughout the village, which means people considered him unusually wise, able to predict storms and fish patterns that fooled everyone else.",
+            "hint": "This word describes having sound judgment and deep wisdom.",
             "options": [
                 "Foolish",
+                "Clueless",
                 "Naive",
-                "Ignorant",
                 "Wise"
             ],
-            "explanation": "Advice that helped navigate a crisis shows good judgment that senses what others miss, so [TARGET] means WISE.",
+            "explanation": "The sentence defines [TARGET] as being 'unusually wise,' so [TARGET] means WISE.",
             "correctAnswer": "Wise",
             "clueType": "definition",
             "evidenceWords": [
-                "elder's",
-                "advice"
+                "which means",
+                "unusually wise"
             ]
         },
         {
@@ -174,20 +179,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L83_Q3",
-            "sentence": "The general's [TARGET] reply to the surrender demand was simply, 'No.'",
-            "hint": "Named after Laconia, home of the Spartans, who were famous for saying little.",
+            "sentence": "Asked how the trip went, Sam was [TARGET]: he simply said 'Fine,' shrugged, and went back to scrolling his phone without another word.",
+            "hint": "This word describes using very few words to say something.",
             "options": [
-                "Rambling",
-                "Concise",
-                "Verbose",
-                "Wordy"
+                "Brief",
+                "Talkative",
+                "Long-winded",
+                "Rambling"
             ],
-            "explanation": "Replying with just one word, 'No,' to a major demand shows extreme brevity, so [TARGET] means CONCISE.",
-            "correctAnswer": "Concise",
+            "explanation": "Saying just 'Fine,' shrugging, and offering no other words are all examples of using very few words, so [TARGET] means BRIEF.",
+            "correctAnswer": "Brief",
             "clueType": "example",
             "evidenceWords": [
-                "general's",
-                "reply"
+                "simply said 'Fine,'",
+                "shrugged",
+                "without another word"
             ]
         },
         {
@@ -195,20 +201,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L84_Q1",
-            "sentence": "The restoration of the ancient mural required [TARGET] attention to detail.",
-            "hint": "From Latin fastidium, 'distaste' - originally meant being hard to please.",
+            "sentence": "Before hanging each shirt, he checked that the buttons all faced the same direction, ironed out every wrinkle twice, and arranged the hangers exactly two inches apart — everyone agreed he was almost [TARGET] about his closet.",
+            "hint": "This word describes being extremely careful and demanding about small details.",
             "options": [
                 "Sloppy",
-                "Untidy",
                 "Meticulous",
-                "Careless"
+                "Careless",
+                "Messy"
             ],
-            "explanation": "Restoring an ancient mural with great attention to detail shows extreme carefulness, so [TARGET] means METICULOUS.",
+            "explanation": "Checking button direction, double-ironing, and spacing hangers exactly all show extreme attention to small details, even without a direct clue word, so [TARGET] means METICULOUS.",
             "correctAnswer": "Meticulous",
             "clueType": "inference",
             "evidenceWords": [
-                "restoration",
-                "ancient"
+                "buttons all faced the same direction",
+                "ironed out every wrinkle twice",
+                "exactly two inches apart"
             ]
         },
         {
@@ -216,20 +223,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L84_Q2",
-            "sentence": "His [TARGET] reaction to losing the board game, complete with gasps and groans, made everyone laugh.",
-            "hint": "From Latin histrio, 'actor' - describes behaving as if performing on a stage.",
+            "sentence": "His reaction to the minor scratch on his car was [TARGET] and overly dramatic, complete with gasping, clutching his chest, and declaring it 'the worst day of his life.'",
+            "hint": "This word describes exaggerated, theatrical behavior meant to draw attention.",
             "options": [
-                "Subdued",
                 "Understated",
-                "Reserved",
-                "Overdramatic"
+                "Calm",
+                "Overly dramatic",
+                "Reserved"
             ],
-            "explanation": "Gasping and groaning over a board game shows acting as if performing on a stage, so [TARGET] means OVERDRAMATIC.",
-            "correctAnswer": "Overdramatic",
+            "explanation": "The word 'and' links [TARGET] to 'overly dramatic,' and gasping and clutching his chest over a scratch confirm it, so [TARGET] means OVERLY DRAMATIC.",
+            "correctAnswer": "Overly dramatic",
             "clueType": "synonym",
             "evidenceWords": [
-                "reaction",
-                "losing"
+                "and overly dramatic",
+                "gasping, clutching his chest"
             ]
         },
         {
@@ -237,20 +244,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L84_Q3",
-            "sentence": "As a [TARGET], the chef rejected every classic rule of fine dining and served dessert first.",
-            "hint": "From Greek eikon, 'image,' and klastes, 'breaker' - literally an 'image-smasher' of tradition.",
+            "sentence": "Unlike the other architects who kept designing the same boxy glass towers everyone expected, she was an [TARGET], tearing up the rulebook to build spiral structures no one had dared try before.",
+            "hint": "This word describes a person who challenges traditional beliefs or ways of doing things.",
             "options": [
                 "Traditionalist",
-                "Follower",
                 "Conformist",
-                "Rebel"
+                "Follower",
+                "Rule-breaker"
             ],
-            "explanation": "Rejecting every classic rule and serving dessert first shows breaking with tradition, so [TARGET] means REBEL.",
-            "correctAnswer": "Rebel",
+            "explanation": "The word 'unlike' contrasts [TARGET] with architects who kept 'designing the same boxy glass towers everyone expected,' so it must mean the opposite, which is RULE-BREAKER.",
+            "correctAnswer": "Rule-breaker",
             "clueType": "antonym",
             "evidenceWords": [
-                "rejected",
-                "every"
+                "Unlike",
+                "the same boxy glass towers everyone expected",
+                "tearing up the rulebook"
             ]
         },
         {
@@ -258,20 +266,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L85_Q1",
-            "sentence": "The villain's [TARGET] plan involved draining the entire city's water supply for ransom.",
-            "hint": "From Latin nefas, 'crime' - describes something deeply, morally wrong.",
+            "sentence": "The villain's [TARGET] plan involved poisoning the town's water supply, which means it was wickedly evil and intended to cause great harm.",
+            "hint": "This word describes something deeply wicked and morally wrong.",
             "options": [
-                "Virtuous",
-                "Honorable",
-                "Wicked",
-                "Noble"
+                "Evil",
+                "Kind",
+                "Noble",
+                "Virtuous"
             ],
-            "explanation": "Draining a city's water for ransom is a deeply immoral plan, so [TARGET] means WICKED.",
-            "correctAnswer": "Wicked",
+            "explanation": "The sentence defines [TARGET] as 'wickedly evil and intended to cause great harm,' so [TARGET] means EVIL.",
+            "correctAnswer": "Evil",
             "clueType": "definition",
             "evidenceWords": [
-                "villain's",
-                "involved"
+                "which means",
+                "wickedly evil"
             ]
         },
         {
@@ -279,20 +287,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L85_Q2",
-            "sentence": "Normally [TARGET] in class, he surprised everyone by raising his hand to debate the topic.",
-            "hint": "From Latin tacere, 'to be silent' - describes someone who holds back from speaking.",
+            "sentence": "At the family dinner, Grandpa was [TARGET] about his time in the war: he changed the subject twice, answered questions with a single sentence, and never once brought it up himself.",
+            "hint": "This word describes being reluctant to talk about something, staying quiet on purpose.",
             "options": [
-                "Outspoken",
-                "Talkative",
+                "Chatty",
                 "Reserved",
-                "Chatty"
+                "Open",
+                "Talkative"
             ],
-            "explanation": "Surprising everyone by raising his hand suggests he usually holds back from speaking, so [TARGET] means RESERVED.",
+            "explanation": "Changing the subject, giving single-sentence answers, and never bringing it up himself are all examples of being reluctant to talk about something, so [TARGET] means RESERVED.",
             "correctAnswer": "Reserved",
             "clueType": "example",
             "evidenceWords": [
-                "Normally",
-                "class"
+                "changed the subject twice",
+                "answered questions with a single sentence",
+                "never once brought it up himself"
             ]
         },
         {
@@ -300,20 +309,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L85_Q3",
-            "sentence": "The fans were [TARGET] after their team won the championship in overtime.",
-            "hint": "From Latin bullire, 'to boil' - describes excitement that bubbles over.",
+            "sentence": "The moment she saw her acceptance letter, she screamed, jumped onto the couch, called five people in a row, and danced around the living room for a full ten minutes, utterly [TARGET] with joy.",
+            "hint": "This word describes overflowing with excitement and enthusiasm.",
             "options": [
-                "Subdued",
-                "Melancholy",
-                "Exuberant",
-                "Gloomy"
+                "Gloomy",
+                "Indifferent",
+                "Overjoyed",
+                "Unmoved"
             ],
-            "explanation": "Winning a championship in overtime would make fans' excitement bubble over, so [TARGET] means EXUBERANT.",
-            "correctAnswer": "Exuberant",
+            "explanation": "Screaming, jumping on the couch, and dancing for ten minutes all show overflowing excitement, even without a direct clue word, so [TARGET] means OVERJOYED.",
+            "correctAnswer": "Overjoyed",
             "clueType": "inference",
             "evidenceWords": [
-                "after",
-                "their"
+                "screamed",
+                "jumped onto the couch",
+                "danced around the living room"
             ]
         },
         {
@@ -321,20 +331,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L86_Q1",
-            "sentence": "The [TARGET] landlord lowered the rent for the family after the father lost his job.",
-            "hint": "From Latin bene, 'good,' and velle, 'to wish' - wishing good things for others.",
+            "sentence": "The retired teacher was [TARGET] and kind, quietly paying off the lunch debts of dozens of students without ever telling anyone.",
+            "hint": "This word describes having a genuine desire to do good for others.",
             "options": [
                 "Cruel",
-                "Malicious",
-                "Kindhearted",
-                "Spiteful"
+                "Selfish",
+                "Heartless",
+                "Kind"
             ],
-            "explanation": "Lowering rent for a struggling family shows wishing good things for others, so [TARGET] means KINDHEARTED.",
-            "correctAnswer": "Kindhearted",
+            "explanation": "The word 'and' links [TARGET] to 'kind,' and quietly paying off students' lunch debts confirms it, so [TARGET] means KIND.",
+            "correctAnswer": "Kind",
             "clueType": "synonym",
             "evidenceWords": [
-                "landlord",
-                "lowered"
+                "and kind",
+                "paying off the lunch debts"
             ]
         },
         {
@@ -342,20 +352,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L86_Q2",
-            "sentence": "The medication's [TARGET] reaction, a severe rash, forced the doctor to stop the treatment.",
-            "hint": "From Latin adversus, 'turned against' - describes conditions working against you.",
+            "sentence": "Unlike the favorable weather forecast the farmers had hoped for, the [TARGET] conditions that week brought hail, drought, and an early frost that destroyed half the crop.",
+            "hint": "This word describes conditions that work against you.",
             "options": [
                 "Unfavorable",
-                "Helpful",
                 "Favorable",
-                "Beneficial"
+                "Ideal",
+                "Perfect"
             ],
-            "explanation": "A severe rash forcing treatment to stop shows a reaction working against the patient, so [TARGET] means UNFAVORABLE.",
+            "explanation": "The word 'unlike' contrasts [TARGET] with the 'favorable weather forecast' farmers hoped for, so it must mean the opposite, which is UNFAVORABLE.",
             "correctAnswer": "Unfavorable",
             "clueType": "antonym",
             "evidenceWords": [
-                "medication's",
-                "reaction"
+                "Unlike",
+                "favorable weather forecast",
+                "destroyed half the crop"
             ]
         },
         {
@@ -363,20 +374,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L86_Q3",
-            "sentence": "Her [TARGET] business sense let her spot the failing company before anyone else noticed.",
-            "hint": "From Latin astus, 'craft' - describes sharp, practical cleverness.",
+            "sentence": "The detective was [TARGET], which means she noticed small, sharp details that everyone else at the crime scene had completely overlooked.",
+            "hint": "This word describes having a sharp mind and good judgment, especially about people or situations.",
             "options": [
-                "Gullible",
+                "Oblivious",
+                "Sharp-minded",
                 "Clueless",
-                "Shrewd",
-                "Naive"
+                "Dull"
             ],
-            "explanation": "Spotting a failing company before anyone else shows sharp, practical cleverness, so [TARGET] means SHREWD.",
-            "correctAnswer": "Shrewd",
+            "explanation": "The sentence defines [TARGET] as noticing 'small, sharp details... everyone else... overlooked,' so [TARGET] means SHARP-MINDED.",
+            "correctAnswer": "Sharp-minded",
             "clueType": "definition",
             "evidenceWords": [
-                "business",
-                "sense"
+                "which means",
+                "small, sharp details",
+                "completely overlooked"
             ]
         },
         {
@@ -384,20 +396,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L87_Q1",
-            "sentence": "After months of striking, the company finally had to [TARGET] to the workers' demands.",
-            "hint": "From Latin caput, 'head' - to give in completely, bowing the head.",
+            "sentence": "After three weeks of protests, boycotts, and a public petition with fifty thousand signatures, the company finally [TARGET]: it reversed the policy and issued a public apology.",
+            "hint": "This word means to stop resisting and yield to demands.",
             "options": [
-                "Resist",
-                "Fight",
-                "Persevere",
-                "Surrender"
+                "Resist further",
+                "Hold firm",
+                "Give in",
+                "Refuse"
             ],
-            "explanation": "Giving in to demands after months of striking shows giving in completely, so [TARGET] means SURRENDER.",
-            "correctAnswer": "Surrender",
+            "explanation": "Reversing the policy and apologizing after weeks of pressure is an example of giving in to demands, so [TARGET] means GIVE IN.",
+            "correctAnswer": "Give in",
             "clueType": "example",
             "evidenceWords": [
-                "After",
-                "months"
+                "reversed the policy",
+                "issued a public apology"
             ]
         },
         {
@@ -405,20 +417,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L87_Q2",
-            "sentence": "After failing the bar exam twice, he felt [TARGET] about ever becoming a lawyer.",
-            "hint": "From Latin despondere, 'to give up' - describes deep discouragement.",
+            "sentence": "After losing the championship game in the final second, the team sat silently in the locker room, staring at the floor, no one saying a word for almost twenty minutes — the mood was deeply [TARGET].",
+            "hint": "This word describes feeling hopeless and deeply discouraged.",
             "options": [
+                "Thrilled",
+                "Elated",
                 "Hopeful",
-                "Hopeless",
-                "Optimistic",
-                "Cheerful"
+                "Dejected"
             ],
-            "explanation": "Doubting he'd ever become a lawyer after two failures shows deep discouragement, so [TARGET] means HOPELESS.",
-            "correctAnswer": "Hopeless",
+            "explanation": "Sitting silently, staring at the floor, and not speaking for twenty minutes all show deep discouragement, even without a direct clue word, so [TARGET] means DEJECTED.",
+            "correctAnswer": "Dejected",
             "clueType": "inference",
             "evidenceWords": [
-                "After",
-                "failing"
+                "sat silently in the locker room",
+                "staring at the floor",
+                "no one saying a word for almost twenty minutes"
             ]
         },
         {
@@ -426,20 +439,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L87_Q3",
-            "sentence": "She handled the medical emergency with remarkable [TARGET], calmly directing everyone to safety.",
-            "hint": "From Latin aequus, 'even,' and animus, 'mind' - an even, steady mind under pressure.",
+            "sentence": "Even in the middle of the chaos, the pilot handled the engine failure with [TARGET] and calmness, walking passengers through the emergency landing step by step.",
+            "hint": "This word describes a state of steady composure, especially under pressure.",
             "options": [
+                "Calmness",
                 "Panic",
-                "Agitation",
-                "Composure",
-                "Distress"
+                "Hysteria",
+                "Terror"
             ],
-            "explanation": "Calmly directing everyone during an emergency shows a steady mind under pressure, so [TARGET] means COMPOSURE.",
-            "correctAnswer": "Composure",
+            "explanation": "The word 'and' links [TARGET] to 'calmness,' and walking passengers through the landing step by step confirms it, so [TARGET] means CALMNESS.",
+            "correctAnswer": "Calmness",
             "clueType": "synonym",
             "evidenceWords": [
-                "handled",
-                "medical"
+                "and calmness",
+                "step by step"
             ]
         },
         {
@@ -447,20 +460,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L88_Q1",
-            "sentence": "The [TARGET] fans camped outside the stadium for three days before the concert.",
-            "hint": "From Latin fervere, 'to boil' - describes burning enthusiasm.",
+            "sentence": "Unlike the lukewarm applause the earlier speaker received, the crowd's response to her closing argument was [TARGET], with people standing, cheering, and chanting her name.",
+            "hint": "This word describes having intense, burning enthusiasm.",
             "options": [
-                "Apathetic",
                 "Lukewarm",
+                "Passionate",
                 "Indifferent",
-                "Passionate"
+                "Half-hearted"
             ],
-            "explanation": "Camping outside for three days before a concert shows burning enthusiasm, so [TARGET] means PASSIONATE.",
+            "explanation": "The word 'unlike' contrasts [TARGET] with 'lukewarm applause,' so it must mean the opposite, which is PASSIONATE.",
             "correctAnswer": "Passionate",
             "clueType": "antonym",
             "evidenceWords": [
-                "camped",
-                "outside"
+                "Unlike",
+                "lukewarm applause",
+                "standing, cheering, and chanting"
             ]
         },
         {
@@ -468,20 +482,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L88_Q2",
-            "sentence": "The professor's [TARGET] lecture used ten-syllable words where simple ones would have worked fine.",
-            "hint": "From Latin grandis, 'grand,' and loqui, 'to speak' - speaking grandly to impress.",
+            "sentence": "The politician's [TARGET] speech was full of fancy words and dramatic flourishes, which means it was pompously overblown, saying little of real substance despite sounding impressive.",
+            "hint": "This word describes speech that is overly elaborate and self-important.",
             "options": [
-                "Modest",
-                "Plain-spoken",
+                "Simple",
+                "Plain",
                 "Pompous",
                 "Humble"
             ],
-            "explanation": "Using complicated words where simple ones would work shows speaking grandly to impress, so [TARGET] means POMPOUS.",
+            "explanation": "The sentence defines [TARGET] as 'pompously overblown, saying little of real substance,' so [TARGET] means POMPOUS.",
             "correctAnswer": "Pompous",
             "clueType": "definition",
             "evidenceWords": [
-                "professor's",
-                "lecture"
+                "which means",
+                "pompously overblown",
+                "little of real substance"
             ]
         },
         {
@@ -489,20 +504,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L88_Q3",
-            "sentence": "Her [TARGET] opposition to the merger never softened, even after the board approved it.",
-            "hint": "From Latin placare, 'to calm' - describes a stance that cannot be calmed or changed.",
+            "sentence": "The prosecutor was [TARGET]: no apology softened her, no evidence of remorse changed her approach, and she pursued the maximum sentence with the exact same intensity from day one to the verdict.",
+            "hint": "This word describes being impossible to satisfy, calm, or change once determined.",
             "options": [
-                "Lenient",
                 "Merciful",
                 "Forgiving",
-                "Unyielding"
+                "Lenient",
+                "Unrelenting"
             ],
-            "explanation": "Opposition that never softened even after approval shows a stance that cannot be changed, so [TARGET] means UNYIELDING.",
-            "correctAnswer": "Unyielding",
+            "explanation": "No apology or remorse changing her approach, and pursuing the maximum sentence with unchanging intensity, are all examples of being impossible to soften, so [TARGET] means UNRELENTING.",
+            "correctAnswer": "Unrelenting",
             "clueType": "example",
             "evidenceWords": [
-                "opposition",
-                "merger"
+                "no apology softened her",
+                "no evidence of remorse changed her approach",
+                "exact same intensity from day one"
             ]
         },
         {
@@ -510,20 +526,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L89_Q1",
-            "sentence": "The [TARGET] graduates threw their caps high into the air as the band played.",
-            "hint": "From Latin jubilare, 'to shout for joy' - describes overflowing joy.",
+            "sentence": "When the final whistle blew, fans poured onto the field, strangers hugged each other, and the whole stadium erupted into singing that lasted long after the players had left — the entire city felt [TARGET].",
+            "hint": "This word describes feeling triumphant and full of joyful celebration.",
             "options": [
-                "Sorrowful",
-                "Despondent",
                 "Elated",
-                "Dejected"
+                "Devastated",
+                "Gloomy",
+                "Somber"
             ],
-            "explanation": "Throwing caps high in the air as the band played shows overflowing joy, so [TARGET] means ELATED.",
+            "explanation": "Pouring onto the field, hugging strangers, and singing for a long time after a win all show triumphant joy, even without a direct clue word, so [TARGET] means ELATED.",
             "correctAnswer": "Elated",
             "clueType": "inference",
             "evidenceWords": [
-                "graduates",
-                "threw"
+                "poured onto the field",
+                "strangers hugged each other",
+                "erupted into singing"
             ]
         },
         {
@@ -531,20 +548,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L89_Q2",
-            "sentence": "They spent [TARGET] afternoons on the hammock, too relaxed to even reach for a book.",
-            "hint": "From Latin languere, 'to be weak' - describes slow, dreamy inactivity.",
+            "sentence": "The cat stretched out in the warm afternoon sun, [TARGET] and sluggish, barely lifting its head when the doorbell rang.",
+            "hint": "This word describes a slow, relaxed lack of energy or urgency.",
             "options": [
-                "Brisk",
-                "Vigorous",
+                "Energetic",
                 "Sluggish",
-                "Energetic"
+                "Alert",
+                "Lively"
             ],
-            "explanation": "Being too relaxed to even reach for a book shows slow, dreamy inactivity, so [TARGET] means SLUGGISH.",
+            "explanation": "The word 'and' links [TARGET] to 'sluggish,' and barely lifting its head at the doorbell confirms it, so [TARGET] means SLUGGISH.",
             "correctAnswer": "Sluggish",
             "clueType": "synonym",
             "evidenceWords": [
-                "spent",
-                "afternoons"
+                "and sluggish",
+                "barely lifting its head"
             ]
         },
         {
@@ -552,20 +569,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L89_Q3",
-            "sentence": "The novel's [TARGET] stepmother secretly poisoned the family garden out of jealousy.",
-            "hint": "From Latin male, 'badly,' and velle, 'to wish' - wishing ill on others.",
+            "sentence": "Unlike the kindly old shopkeeper who slipped extra candy into every child's bag, the character in the story had a [TARGET] streak, secretly plotting to ruin the town's harvest festival.",
+            "hint": "This word describes having a desire to cause harm or evil to others.",
             "options": [
-                "Kind",
-                "Benevolent",
-                "Malicious",
-                "Charitable"
+                "Kindly",
+                "Generous",
+                "Wicked",
+                "Gentle"
             ],
-            "explanation": "Secretly poisoning a garden out of jealousy shows wishing harm on others, so [TARGET] means MALICIOUS.",
-            "correctAnswer": "Malicious",
+            "explanation": "The word 'unlike' contrasts [TARGET] with a 'kindly old shopkeeper,' so it must mean the opposite, which is WICKED.",
+            "correctAnswer": "Wicked",
             "clueType": "antonym",
             "evidenceWords": [
-                "novel's",
-                "stepmother"
+                "Unlike",
+                "kindly old shopkeeper",
+                "secretly plotting to ruin"
             ]
         },
         {
@@ -573,20 +591,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L90_Q1",
-            "sentence": "The hikers turned back when [TARGET] black clouds rolled in over the peak.",
-            "hint": "From Latin omen - a sign that something bad is about to happen.",
+            "sentence": "The dark clouds gathering over the harbor felt [TARGET], which means they seemed to be a warning sign that something bad was about to happen.",
+            "hint": "This word describes something that seems to signal danger or misfortune ahead.",
             "options": [
-                "Promising",
-                "Comforting",
                 "Reassuring",
+                "Comforting",
+                "Harmless",
                 "Threatening"
             ],
-            "explanation": "Turning back because of dark clouds shows a sign that something bad was coming, so [TARGET] means THREATENING.",
+            "explanation": "The sentence defines [TARGET] as seeming like 'a warning sign that something bad was about to happen,' so [TARGET] means THREATENING.",
             "correctAnswer": "Threatening",
             "clueType": "definition",
             "evidenceWords": [
-                "hikers",
-                "turned"
+                "which means",
+                "warning sign that something bad was about to happen"
             ]
         },
         {
@@ -594,20 +612,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L90_Q2",
-            "sentence": "The airline offered free upgrades to [TARGET] the passengers after the long delay.",
-            "hint": "From Latin placare, 'to calm' - soothing someone's anger.",
+            "sentence": "To [TARGET] the angry customers waiting in line, the store manager handed out free coffee, apologized personally to each person, and promised a 20% discount on their next visit.",
+            "hint": "This word means to make someone less angry by doing something to please them.",
             "options": [
+                "Calm down",
                 "Provoke",
-                "Anger",
-                "Appease",
-                "Antagonize"
+                "Anger further",
+                "Ignore"
             ],
-            "explanation": "Offering free upgrades after a long delay shows trying to soothe anger, so [TARGET] means APPEASE.",
-            "correctAnswer": "Appease",
+            "explanation": "Handing out free coffee, apologizing personally, and offering a discount are all examples of actions meant to calm angry people, so [TARGET] means CALM DOWN.",
+            "correctAnswer": "Calm down",
             "clueType": "example",
             "evidenceWords": [
-                "airline",
-                "offered"
+                "handed out free coffee",
+                "apologized personally",
+                "promised a 20% discount"
             ]
         },
         {
@@ -615,20 +634,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L90_Q3",
-            "sentence": "Years after the divorce, there was still visible [TARGET] between the two former spouses.",
-            "hint": "From Latin rancere, 'to be rotten' - describes a deep, lasting resentment.",
+            "sentence": "Years after the business partnership fell apart, he still refused to shake his old partner's hand, crossed the street to avoid him, and brought up the betrayal at every family gathering — the [TARGET] between them had never faded.",
+            "hint": "This word describes deep, long-lasting resentment.",
             "options": [
-                "Affection",
-                "Warmth",
+                "Friendship",
                 "Bitterness",
-                "Goodwill"
+                "Warmth",
+                "Affection"
             ],
-            "explanation": "Visible tension years after a divorce shows a deep, lasting resentment, so [TARGET] means BITTERNESS.",
+            "explanation": "Refusing to shake hands, avoiding him, and bringing up the betrayal years later all show deep, lasting resentment, even without a direct clue word, so [TARGET] means BITTERNESS.",
             "correctAnswer": "Bitterness",
             "clueType": "inference",
             "evidenceWords": [
-                "Years",
-                "after"
+                "refused to shake his old partner's hand",
+                "crossed the street to avoid him",
+                "brought up the betrayal at every family gathering"
             ]
         }
     ],

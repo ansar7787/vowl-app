@@ -6,721 +6,781 @@
         {
             "id": "VOC_TOPICVOCAB_L41_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Hobby or Work.",
             "topicBuckets": [
-                "Work",
-                "Hobby"
+                "Hobby",
+                "Work"
             ],
-            "hint": "Here's a tip: Work is a job you do for money, while a hobby is an activity you do for fun!",
-            "explanation": "Think of 'Work' as paid job-related activities (office, salary), and 'Hobby' as fun leisure activities done in free time (painting, fishing)!",
+            "hint": "Think about what you do to earn money versus what you do purely for enjoyment.",
+            "explanation": "Job, career, and occupation all describe paid employment, with career suggesting a long-term path rather than a single job. Pastime and 'leisure activity' both describe something done for fun in free time, not for income.",
             "options": [
-                "Office",
-                "Painting",
-                "Salary",
-                "Fishing",
-                "Meeting"
+                "Job",
+                "Pastime",
+                "Occupation",
+                "Leisure activity",
+                "Career"
             ],
-            "correctAnswer": "Work:Office, Hobby:Painting, Work:Salary, Hobby:Fishing, Work:Meeting",
+            "correctAnswer": "Work:Job, Hobby:Pastime, Work:Occupation, Hobby:Leisure activity, Work:Career",
             "relatedWords": [
-                "aspect of Work:Office, Hobby:Painting, Work:Salary, Hobby:Fishing, Work:Meeting",
-                "concept of Work:Office, Hobby:Painting, Work:Salary, Hobby:Fishing, Work:Meeting",
-                "related to Work:Office, Hobby:Painting, Work:Salary, Hobby:Fishing, Work:Meeting"
+                "Job: a role someone does to earn money",
+                "Pastime: an activity done for enjoyment in spare time",
+                "Occupation: a person's paid job or profession",
+                "Leisure activity: something done for enjoyment during free time",
+                "Career: a long-term path of paid work"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L41_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Think about how someone makes a living versus how they unwind after hours. Sort into Work or Hobby.",
             "topicBuckets": [
                 "Work",
                 "Hobby"
             ],
-            "hint": "Here's a tip: Work is a job you do for money, while a hobby is an activity you do for fun!",
-            "explanation": "Think of 'Work' as paid job-related activities (office, salary), and 'Hobby' as fun leisure activities done in free time (painting, fishing)!",
+            "hint": "One work word suggests a job someone feels genuinely called to do.",
+            "explanation": "Vocation, livelihood, and trade all describe how someone earns money, with vocation specifically suggesting work someone feels called to do. Diversion and recreation both describe hobbies, activities meant to relax or entertain, away from work.",
             "options": [
-                "Career",
-                "Gardening",
-                "Deadline",
-                "Knitting",
-                "Colleague"
+                "Recreation",
+                "Vocation",
+                "Trade",
+                "Diversion",
+                "Livelihood"
             ],
-            "correctAnswer": "Work:Career, Hobby:Gardening, Work:Deadline, Hobby:Knitting, Work:Colleague",
+            "correctAnswer": "Hobby:Recreation, Work:Vocation, Work:Trade, Hobby:Diversion, Work:Livelihood",
             "relatedWords": [
-                "aspect of Work:Career, Hobby:Gardening, Work:Deadline, Hobby:Knitting, Work:Colleague",
-                "concept of Work:Career, Hobby:Gardening, Work:Deadline, Hobby:Knitting, Work:Colleague",
-                "related to Work:Career, Hobby:Gardening, Work:Deadline, Hobby:Knitting, Work:Colleague"
+                "Recreation: activity done for enjoyment when not working",
+                "Vocation: a job someone feels strongly suited or called to do",
+                "Trade: a skilled job, especially manual or craft work",
+                "Diversion: an activity that provides entertainment or relaxation",
+                "Livelihood: a means of earning money to live"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L41_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Think about how you'd describe your job on a resume versus what you do on weekends purely because you love it. Sort into Work or Hobby.",
             "topicBuckets": [
                 "Work",
                 "Hobby"
             ],
-            "hint": "Here's a tip: Work is a job you do for money, while a hobby is an activity you do for fun!",
-            "explanation": "Think of 'Work' as paid job-related activities (office, salary), and 'Hobby' as fun leisure activities done in free time (painting, fishing)!",
+            "hint": "One work phrase refers to a standard workday schedule.",
+            "explanation": "Employment, workload, and 'nine-to-five' all describe formal paid work, with 'nine-to-five' specifically referring to a standard workday schedule. A 'side project' and a 'passion project' both describe something pursued in free time out of genuine interest, not for a paycheck.",
             "options": [
-                "Photography",
-                "Paycheck",
-                "Collecting",
-                "Shift",
-                "Pastime"
+                "Employment",
+                "Workload",
+                "Nine-to-five",
+                "Side project",
+                "Passion project"
             ],
-            "correctAnswer": "Hobby:Photography, Work:Paycheck, Hobby:Collecting, Work:Shift, Hobby:Pastime",
+            "correctAnswer": "Work:Employment, Work:Workload, Work:Nine-to-five, Hobby:Side project, Hobby:Passion project",
             "relatedWords": [
-                "aspect of Hobby:Photography, Work:Paycheck, Hobby:Collecting, Work:Shift, Hobby:Pastime",
-                "concept of Hobby:Photography, Work:Paycheck, Hobby:Collecting, Work:Shift, Hobby:Pastime",
-                "related to Hobby:Photography, Work:Paycheck, Hobby:Collecting, Work:Shift, Hobby:Pastime"
+                "Employment: the state of having paid work",
+                "Workload: the amount of work someone has to do",
+                "Nine-to-five: a standard workday schedule",
+                "Side project: something worked on for interest, outside of a main job",
+                "Passion project: something pursued out of genuine personal interest"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L42_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Student or Teacher.",
             "topicBuckets": [
-                "Teacher",
-                "Student"
+                "Student",
+                "Teacher"
             ],
-            "hint": "Here's a tip: A teacher explains lessons, while a student listens and learns them!",
-            "explanation": "Think of 'Teacher' as the person who instructs (instructor, professor), and 'Student' as the person who learns (pupil, learner)!",
+            "hint": "Think about who's standing at the front of the room, and who's sitting and listening.",
+            "explanation": "Instructor, educator, and professor are all words for someone who teaches, with professor specifically used at a university level. Pupil and learner both describe someone being taught, with pupil being a slightly more traditional or formal word.",
             "options": [
+                "Educator",
                 "Instructor",
-                "Pupil",
-                "Professor",
                 "Learner",
-                "Educator"
+                "Professor",
+                "Pupil"
             ],
-            "correctAnswer": "Teacher:Instructor, Student:Pupil, Teacher:Professor, Student:Learner, Teacher:Educator",
+            "correctAnswer": "Teacher:Educator, Teacher:Instructor, Student:Learner, Teacher:Professor, Student:Pupil",
             "relatedWords": [
-                "aspect of Teacher:Instructor, Student:Pupil, Teacher:Professor, Student:Learner, Teacher:Educator",
-                "concept of Teacher:Instructor, Student:Pupil, Teacher:Professor, Student:Learner, Teacher:Educator",
-                "related to Teacher:Instructor, Student:Pupil, Teacher:Professor, Student:Learner, Teacher:Educator"
+                "Educator: a person who teaches, especially professionally",
+                "Instructor: someone who teaches a skill or subject",
+                "Learner: a person who is learning something",
+                "Professor: a senior teacher at a university",
+                "Pupil: a student, especially a younger one"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L42_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Think about someone who trains another person in a skill or trade. Sort into Student or Teacher.",
             "topicBuckets": [
-                "Teacher",
-                "Student"
+                "Student",
+                "Teacher"
             ],
-            "hint": "Here's a tip: A teacher explains lessons, while a student listens and learns them!",
-            "explanation": "Think of 'Teacher' as the person who instructs (instructor, professor), and 'Student' as the person who learns (pupil, learner)!",
+            "hint": "One teacher word specifically means giving formal talks, often at a university.",
+            "explanation": "Mentor, tutor, and lecturer all describe someone who guides or teaches others, with a lecturer specifically giving formal talks, often at a university. Apprentice and trainee both describe someone learning a skill, often while working under supervision.",
             "options": [
-                "Tutor",
-                "Classmate",
-                "Mentor",
+                "Apprentice",
+                "Lecturer",
                 "Trainee",
-                "Enrollee"
+                "Tutor",
+                "Mentor"
             ],
-            "correctAnswer": "Teacher:Tutor, Student:Classmate, Teacher:Mentor, Student:Trainee, Student:Enrollee",
+            "correctAnswer": "Student:Apprentice, Teacher:Lecturer, Student:Trainee, Teacher:Tutor, Teacher:Mentor",
             "relatedWords": [
-                "aspect of Teacher:Tutor, Student:Classmate, Teacher:Mentor, Student:Trainee, Student:Enrollee",
-                "concept of Teacher:Tutor, Student:Classmate, Teacher:Mentor, Student:Trainee, Student:Enrollee",
-                "related to Teacher:Tutor, Student:Classmate, Teacher:Mentor, Student:Trainee, Student:Enrollee"
+                "Apprentice: someone learning a trade under a skilled worker",
+                "Lecturer: someone who gives formal talks, especially at a university",
+                "Trainee: a person being trained for a job",
+                "Tutor: a private teacher, often teaching one person or a small group",
+                "Mentor: an experienced person who guides someone less experienced"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L42_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Think about the people employed to teach at a university versus the people enrolled to learn there. Sort into Teacher or Student.",
             "topicBuckets": [
                 "Teacher",
                 "Student"
             ],
-            "hint": "Here's a tip: A teacher explains lessons, while a student listens and learns them!",
-            "explanation": "Think of 'Teacher' as the person who instructs (instructor, professor), and 'Student' as the person who learns (pupil, learner)!",
+            "hint": "One teacher term specifically means a permanent academic position.",
+            "explanation": "Faculty, 'academic staff', and a 'tenured professor' all describe people employed to teach, with tenure specifically meaning a permanent academic position. An undergraduate and an enrollee both describe someone registered to study, with undergraduate specifically referring to a student working toward a first degree.",
             "options": [
-                "Lecturer",
-                "Apprentice",
-                "Coach",
-                "Freshman",
-                "Grader"
+                "Faculty",
+                "Tenured professor",
+                "Enrollee",
+                "Academic staff",
+                "Undergraduate"
             ],
-            "correctAnswer": "Teacher:Lecturer, Student:Apprentice, Teacher:Coach, Student:Freshman, Teacher:Grader",
+            "correctAnswer": "Teacher:Faculty, Teacher:Tenured professor, Student:Enrollee, Teacher:Academic staff, Student:Undergraduate",
             "relatedWords": [
-                "aspect of Teacher:Lecturer, Student:Apprentice, Teacher:Coach, Student:Freshman, Teacher:Grader",
-                "concept of Teacher:Lecturer, Student:Apprentice, Teacher:Coach, Student:Freshman, Teacher:Grader",
-                "related to Teacher:Lecturer, Student:Apprentice, Teacher:Coach, Student:Freshman, Teacher:Grader"
+                "Faculty: the teaching staff of a school or university",
+                "Tenured professor: a professor holding a permanent academic position",
+                "Enrollee: someone registered to take a course",
+                "Academic staff: people employed to teach or research at a school or university",
+                "Undergraduate: a student working toward a first university degree"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L43_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Doctor or Patient.",
             "topicBuckets": [
                 "Doctor",
                 "Patient"
             ],
-            "hint": "Here's a tip: A doctor treats illness, while a patient is the person being treated!",
-            "explanation": "Think of 'Doctor' as the medical professional (physician, surgeon), and 'Patient' as the person receiving care (sufferer, sick person)!",
+            "hint": "Think about who is providing medical care, and who is receiving it.",
+            "explanation": "Physician, surgeon, and specialist are all types of doctors, with a specialist focusing on one particular area of medicine. An outpatient is a patient who doesn't stay overnight in a hospital, and a 'case' is a medical term for a particular patient's health situation.",
             "options": [
-                "Physician",
-                "Sufferer",
                 "Surgeon",
-                "Sick-person",
+                "Outpatient",
+                "Physician",
+                "Case",
                 "Specialist"
             ],
-            "correctAnswer": "Doctor:Physician, Patient:Sufferer, Doctor:Surgeon, Patient:Sick-person, Doctor:Specialist",
+            "correctAnswer": "Doctor:Surgeon, Patient:Outpatient, Doctor:Physician, Patient:Case, Doctor:Specialist",
             "relatedWords": [
-                "aspect of Doctor:Physician, Patient:Sufferer, Doctor:Surgeon, Patient:Sick-person, Doctor:Specialist",
-                "concept of Doctor:Physician, Patient:Sufferer, Doctor:Surgeon, Patient:Sick-person, Doctor:Specialist",
-                "related to Doctor:Physician, Patient:Sufferer, Doctor:Surgeon, Patient:Sick-person, Doctor:Specialist"
+                "Surgeon: a doctor who performs operations",
+                "Outpatient: a patient treated without staying overnight in hospital",
+                "Physician: a medical doctor",
+                "Case: a medical term for a particular patient's situation",
+                "Specialist: a doctor focused on one area of medicine"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L43_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Think about a senior specialist in a hospital, and someone confined to bed while recovering. Sort into Doctor or Patient.",
             "topicBuckets": [
                 "Doctor",
                 "Patient"
             ],
-            "hint": "Here's a tip: A doctor treats illness, while a patient is the person being treated!",
-            "explanation": "Think of 'Doctor' as the medical professional (physician, surgeon), and 'Patient' as the person receiving care (sufferer, sick person)!",
+            "hint": "One doctor word specifically refers to a senior specialist, especially in British hospitals.",
+            "explanation": "Practitioner, consultant, and 'attending physician' are all terms for a doctor, with consultant specifically referring to a senior specialist, especially in British hospitals. A convalescent is someone recovering from illness, and bedridden describes someone unable to leave their bed due to illness.",
             "options": [
+                "Bedridden",
+                "Convalescent",
+                "Attending physician",
                 "Practitioner",
-                "Outpatient",
-                "Clinician",
-                "Casualty",
                 "Consultant"
             ],
-            "correctAnswer": "Doctor:Practitioner, Patient:Outpatient, Doctor:Clinician, Patient:Casualty, Doctor:Consultant",
+            "correctAnswer": "Patient:Bedridden, Patient:Convalescent, Doctor:Attending physician, Doctor:Practitioner, Doctor:Consultant",
             "relatedWords": [
-                "aspect of Doctor:Practitioner, Patient:Outpatient, Doctor:Clinician, Patient:Casualty, Doctor:Consultant",
-                "concept of Doctor:Practitioner, Patient:Outpatient, Doctor:Clinician, Patient:Casualty, Doctor:Consultant",
-                "related to Doctor:Practitioner, Patient:Outpatient, Doctor:Clinician, Patient:Casualty, Doctor:Consultant"
+                "Bedridden: unable to leave bed due to illness or injury",
+                "Convalescent: a person recovering from illness",
+                "Attending physician: the doctor primarily responsible for a patient's care",
+                "Practitioner: a person practicing medicine",
+                "Consultant: a senior specialist doctor, especially in the UK"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L43_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These are the kinds of phrases you'd read on a hospital discharge form. Sort into Doctor or Patient.",
             "topicBuckets": [
                 "Doctor",
                 "Patient"
             ],
-            "hint": "Here's a tip: A doctor treats illness, while a patient is the person being treated!",
-            "explanation": "Think of 'Doctor' as the medical professional (physician, surgeon), and 'Patient' as the person receiving care (sufferer, sick person)!",
+            "hint": "Think about who sent a patient for further care, and who is being sent home.",
+            "explanation": "A 'primary care physician', 'health care provider', and 'referring doctor' are all formal terms for a doctor, used especially on medical paperwork. A 'follow-up patient' has already been seen and is returning for continued care, and a 'discharge-ready patient' is well enough to leave the hospital.",
             "options": [
-                "GP",
-                "Convalescent",
-                "Pediatrician",
-                "Inpatient",
-                "Examiner"
+                "Follow-up patient",
+                "Referring doctor",
+                "Discharge-ready patient",
+                "Health care provider",
+                "Primary care physician"
             ],
-            "correctAnswer": "Doctor:GP, Patient:Convalescent, Doctor:Pediatrician, Patient:Inpatient, Doctor:Examiner",
+            "correctAnswer": "Patient:Follow-up patient, Doctor:Referring doctor, Patient:Discharge-ready patient, Doctor:Health care provider, Doctor:Primary care physician",
             "relatedWords": [
-                "aspect of Doctor:GP, Patient:Convalescent, Doctor:Pediatrician, Patient:Inpatient, Doctor:Examiner",
-                "concept of Doctor:GP, Patient:Convalescent, Doctor:Pediatrician, Patient:Inpatient, Doctor:Examiner",
-                "related to Doctor:GP, Patient:Convalescent, Doctor:Pediatrician, Patient:Inpatient, Doctor:Examiner"
+                "Follow-up patient: a patient returning for continued care",
+                "Referring doctor: the doctor who sends a patient to a specialist",
+                "Discharge-ready patient: a patient well enough to leave the hospital",
+                "Health care provider: a formal term for someone who provides medical care",
+                "Primary care physician: a patient's main, regular doctor"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L44_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Customer or Shopkeeper.",
             "topicBuckets": [
                 "Customer",
                 "Shopkeeper"
             ],
-            "hint": "Here's a tip: A customer comes to buy things, while a shopkeeper runs the store and sells them!",
-            "explanation": "Think of 'Customer' as the buyer in a shop (client, shopper), and 'Shopkeeper' as the person running the store (merchant, retailer)!",
+            "hint": "Think about who owns the store, and who walks in to buy something.",
+            "explanation": "Shopper, patron, and client are all words for someone buying goods or services, with patron and client sounding slightly more formal. Proprietor and storekeeper both describe the person who owns and runs a shop.",
             "options": [
-                "Client",
-                "Merchant",
                 "Shopper",
-                "Retailer",
-                "Buyer"
+                "Patron",
+                "Client",
+                "Storekeeper",
+                "Proprietor"
             ],
-            "correctAnswer": "Customer:Client, Shopkeeper:Merchant, Customer:Shopper, Shopkeeper:Retailer, Customer:Buyer",
+            "correctAnswer": "Customer:Shopper, Customer:Patron, Customer:Client, Shopkeeper:Storekeeper, Shopkeeper:Proprietor",
             "relatedWords": [
-                "aspect of Customer:Client, Shopkeeper:Merchant, Customer:Shopper, Shopkeeper:Retailer, Customer:Buyer",
-                "concept of Customer:Client, Shopkeeper:Merchant, Customer:Shopper, Shopkeeper:Retailer, Customer:Buyer",
-                "related to Customer:Client, Shopkeeper:Merchant, Customer:Shopper, Shopkeeper:Retailer, Customer:Buyer"
+                "Shopper: a person who is buying or looking at goods",
+                "Patron: a customer of a shop or business, especially a regular one",
+                "Client: a person who uses the services of a business",
+                "Storekeeper: a person who owns or runs a shop",
+                "Proprietor: the owner of a business, especially a shop"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L44_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Think about someone who comes back to the same shop every week, and the staff who greet them. Sort into Customer or Shopkeeper.",
             "topicBuckets": [
                 "Customer",
                 "Shopkeeper"
             ],
-            "hint": "Here's a tip: A customer comes to buy things, while a shopkeeper runs the store and sells them!",
-            "explanation": "Think of 'Customer' as the buyer in a shop (client, shopper), and 'Shopkeeper' as the person running the store (merchant, retailer)!",
+            "hint": "Two customer words describe someone who visits often, and one describes someone just browsing.",
+            "explanation": "A 'regular' and a 'loyal patron' both describe a customer who returns often, and a 'window shopper' looks at goods without necessarily buying. A cashier and a 'retail assistant' are both staff roles working in a shop, helping customers and handling sales.",
             "options": [
-                "Patron",
+                "Window shopper",
+                "Loyal patron",
                 "Cashier",
-                "Consumer",
-                "Storekeeper",
-                "Browser"
+                "Regular",
+                "Retail assistant"
             ],
-            "correctAnswer": "Customer:Patron, Shopkeeper:Cashier, Customer:Consumer, Shopkeeper:Storekeeper, Customer:Browser",
+            "correctAnswer": "Customer:Window shopper, Customer:Loyal patron, Shopkeeper:Cashier, Customer:Regular, Shopkeeper:Retail assistant",
             "relatedWords": [
-                "aspect of Customer:Patron, Shopkeeper:Cashier, Customer:Consumer, Shopkeeper:Storekeeper, Customer:Browser",
-                "concept of Customer:Patron, Shopkeeper:Cashier, Customer:Consumer, Shopkeeper:Storekeeper, Customer:Browser",
-                "related to Customer:Patron, Shopkeeper:Cashier, Customer:Consumer, Shopkeeper:Storekeeper, Customer:Browser"
+                "Window shopper: someone who looks at goods without necessarily buying",
+                "Loyal patron: a customer who consistently returns to the same business",
+                "Cashier: a shop employee who handles payments",
+                "Regular: a customer who visits often",
+                "Retail assistant: a shop employee who helps customers"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L44_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These are business terms. Think about the people a shop is trying to attract, versus the person running it. Sort into Customer or Shopkeeper.",
             "topicBuckets": [
                 "Customer",
                 "Shopkeeper"
             ],
-            "hint": "Here's a tip: A customer comes to buy things, while a shopkeeper runs the store and sells them!",
-            "explanation": "Think of 'Customer' as the buyer in a shop (client, shopper), and 'Shopkeeper' as the person running the store (merchant, retailer)!",
+            "hint": "One shopkeeper term specifically means someone who runs a shop without being part of a large chain.",
+            "explanation": "A 'consumer base', 'target audience', and 'foot traffic' are all business terms describing customers collectively, either as a group being marketed to or as people physically visiting a store. A 'small business owner' and an 'independent retailer' both describe someone who owns and runs their own shop, without being part of a large chain.",
             "options": [
-                "Vendor",
-                "Visitor",
-                "Trader",
-                "Regular",
-                "Proprietor"
+                "Small business owner",
+                "Consumer base",
+                "Foot traffic",
+                "Independent retailer",
+                "Target audience"
             ],
-            "correctAnswer": "Shopkeeper:Vendor, Customer:Visitor, Shopkeeper:Trader, Customer:Regular, Shopkeeper:Proprietor",
+            "correctAnswer": "Shopkeeper:Small business owner, Customer:Consumer base, Customer:Foot traffic, Shopkeeper:Independent retailer, Customer:Target audience",
             "relatedWords": [
-                "aspect of Shopkeeper:Vendor, Customer:Visitor, Shopkeeper:Trader, Customer:Regular, Shopkeeper:Proprietor",
-                "concept of Shopkeeper:Vendor, Customer:Visitor, Shopkeeper:Trader, Customer:Regular, Shopkeeper:Proprietor",
-                "related to Shopkeeper:Vendor, Customer:Visitor, Shopkeeper:Trader, Customer:Regular, Shopkeeper:Proprietor"
+                "Small business owner: a person who owns and runs their own small business",
+                "Consumer base: the group of customers a business serves",
+                "Foot traffic: the number of people physically visiting a store",
+                "Independent retailer: a shop owner not part of a large chain",
+                "Target audience: the specific group a business aims to attract"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L45_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Beach or Mountain.",
             "topicBuckets": [
-                "Mountain",
-                "Beach"
+                "Beach",
+                "Mountain"
             ],
-            "hint": "Here's a tip: A mountain is a tall rocky peak, while a beach is sand beside the sea!",
-            "explanation": "Think of 'Mountain' as high rocky landscapes (peak, summit), and 'Beach' as sandy coastal landscapes (shore, seaside)!",
+            "hint": "Think about climbing to the top of one, and walking along the edge of the other.",
+            "explanation": "Summit, peak, and slope all describe parts of a mountain, from its highest point to its angled sides. Shoreline and coastline both describe where land meets the sea, the defining feature of a beach.",
             "options": [
-                "Peak",
-                "Shore",
                 "Summit",
-                "Seaside",
-                "Cliff"
+                "Shoreline",
+                "Peak",
+                "Slope",
+                "Coastline"
             ],
-            "correctAnswer": "Mountain:Peak, Beach:Shore, Mountain:Summit, Beach:Seaside, Mountain:Cliff",
+            "correctAnswer": "Mountain:Summit, Beach:Shoreline, Mountain:Peak, Mountain:Slope, Beach:Coastline",
             "relatedWords": [
-                "aspect of Mountain:Peak, Beach:Shore, Mountain:Summit, Beach:Seaside, Mountain:Cliff",
-                "concept of Mountain:Peak, Beach:Shore, Mountain:Summit, Beach:Seaside, Mountain:Cliff",
-                "related to Mountain:Peak, Beach:Shore, Mountain:Summit, Beach:Seaside, Mountain:Cliff"
+                "Summit: the highest point of a mountain",
+                "Shoreline: the line where land meets a body of water",
+                "Peak: the pointed top of a mountain",
+                "Slope: a surface with one side higher than the other",
+                "Coastline: the outline of a coast, where land meets the sea"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L45_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Think about where hikers start their climb, and where small sea creatures gather in shallow water. Sort into Beach or Mountain.",
             "topicBuckets": [
-                "Mountain",
-                "Beach"
+                "Beach",
+                "Mountain"
             ],
-            "hint": "Here's a tip: A mountain is a tall rocky peak, while a beach is sand beside the sea!",
-            "explanation": "Think of 'Mountain' as high rocky landscapes (peak, summit), and 'Beach' as sandy coastal landscapes (shore, seaside)!",
+            "hint": "One mountain word describes a temporary camp used before a big climb.",
+            "explanation": "A trailhead, base camp, and ridge are all specific to mountain terrain \u2014 a base camp is a temporary camp used before a big climb, and a ridge is a long, narrow, raised strip of land. A tide pool and a sandbar are both features found on or near a beach, shaped by the movement of tides.",
             "options": [
+                "Sandbar",
+                "Tide pool",
                 "Ridge",
-                "Sand",
-                "Slope",
-                "Tide",
-                "Boulder"
+                "Base camp",
+                "Trailhead"
             ],
-            "correctAnswer": "Mountain:Ridge, Beach:Sand, Mountain:Slope, Beach:Tide, Mountain:Boulder",
+            "correctAnswer": "Beach:Sandbar, Beach:Tide pool, Mountain:Ridge, Mountain:Base camp, Mountain:Trailhead",
             "relatedWords": [
-                "aspect of Mountain:Ridge, Beach:Sand, Mountain:Slope, Beach:Tide, Mountain:Boulder",
-                "concept of Mountain:Ridge, Beach:Sand, Mountain:Slope, Beach:Tide, Mountain:Boulder",
-                "related to Mountain:Ridge, Beach:Sand, Mountain:Slope, Beach:Tide, Mountain:Boulder"
+                "Sandbar: a ridge of sand built up by water currents",
+                "Tide pool: a shallow pool of seawater left behind at low tide",
+                "Ridge: a long, narrow, raised strip of land",
+                "Base camp: a temporary camp used as a starting point for climbing",
+                "Trailhead: the starting point of a hiking trail"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L45_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Think about a travel brochure \u2014 which words describe a ski resort, and which describe a seaside resort? Sort into Mountain or Beach.",
             "topicBuckets": [
                 "Mountain",
                 "Beach"
             ],
-            "hint": "Here's a tip: A mountain is a tall rocky peak, while a beach is sand beside the sea!",
-            "explanation": "Think of 'Mountain' as high rocky landscapes (peak, summit), and 'Beach' as sandy coastal landscapes (shore, seaside)!",
+            "hint": "Think about cold, high places versus warm, sunny ones.",
+            "explanation": "Alpine, snowcapped, and mountaineering all describe high, often cold mountain environments and the sport of climbing them. Tropical and 'sun-soaked' both describe the warm, sunny conditions typical of a beach vacation.",
             "options": [
-                "Glacier",
-                "Shell",
-                "Avalanche",
-                "Wave",
-                "Coastline"
+                "Mountaineering",
+                "Tropical",
+                "Alpine",
+                "Sun-soaked",
+                "Snowcapped"
             ],
-            "correctAnswer": "Mountain:Glacier, Beach:Shell, Mountain:Avalanche, Beach:Wave, Beach:Coastline",
+            "correctAnswer": "Mountain:Mountaineering, Beach:Tropical, Mountain:Alpine, Beach:Sun-soaked, Mountain:Snowcapped",
             "relatedWords": [
-                "aspect of Mountain:Glacier, Beach:Shell, Mountain:Avalanche, Beach:Wave, Beach:Coastline",
-                "concept of Mountain:Glacier, Beach:Shell, Mountain:Avalanche, Beach:Wave, Beach:Coastline",
-                "related to Mountain:Glacier, Beach:Shell, Mountain:Avalanche, Beach:Wave, Beach:Coastline"
+                "Mountaineering: the sport of climbing mountains",
+                "Tropical: relating to warm, sunny regions near the equator",
+                "Alpine: relating to high mountains",
+                "Sun-soaked: filled with or exposed to a lot of sunshine",
+                "Snowcapped: having a covering of snow on top"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L46_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Forest or Desert.",
             "topicBuckets": [
                 "Forest",
                 "Desert"
             ],
-            "hint": "Here's a tip: A forest is full of trees and rain, while a desert is dry sand with very little water!",
-            "explanation": "Think of 'Forest' as dense, leafy landscapes (woodland, jungle), and 'Desert' as dry, sandy landscapes (dune, oasis)!",
+            "hint": "Think about dense trees overhead, and sand shaped by the wind.",
+            "explanation": "Woodland, canopy, and undergrowth all describe parts of a forest, from the ground-level plants to the covering of leaves overhead. A dune and an oasis are both features of a desert, with an oasis being a rare spot of water and plant life.",
             "options": [
-                "Woodland",
                 "Dune",
-                "Jungle",
+                "Undergrowth",
+                "Woodland",
                 "Oasis",
                 "Canopy"
             ],
-            "correctAnswer": "Forest:Woodland, Desert:Dune, Forest:Jungle, Desert:Oasis, Forest:Canopy",
+            "correctAnswer": "Desert:Dune, Forest:Undergrowth, Forest:Woodland, Desert:Oasis, Forest:Canopy",
             "relatedWords": [
-                "aspect of Forest:Woodland, Desert:Dune, Forest:Jungle, Desert:Oasis, Forest:Canopy",
-                "concept of Forest:Woodland, Desert:Dune, Forest:Jungle, Desert:Oasis, Forest:Canopy",
-                "related to Forest:Woodland, Desert:Dune, Forest:Jungle, Desert:Oasis, Forest:Canopy"
+                "Dune: a mound or ridge of sand built up by wind",
+                "Undergrowth: dense plants and shrubs growing beneath trees",
+                "Woodland: land covered mostly with trees",
+                "Oasis: a fertile spot with water in an otherwise dry desert",
+                "Canopy: the covering layer formed by treetops in a forest"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L46_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Think about a dense cluster of trees, and a dry, barren stretch of land. Sort into Desert or Forest.",
             "topicBuckets": [
-                "Forest",
-                "Desert"
+                "Desert",
+                "Forest"
             ],
-            "hint": "Here's a tip: A forest is full of trees and rain, while a desert is dry sand with very little water!",
-            "explanation": "Think of 'Forest' as dense, leafy landscapes (woodland, jungle), and 'Desert' as dry, sandy landscapes (dune, oasis)!",
+            "hint": "One forest word describes a dense mass of bushes or small trees.",
+            "explanation": "A rainforest, a thicket, and a grove are all types or parts of a forest, with a thicket being a dense mass of bushes or small trees. Badlands describes a dry, eroded, difficult-to-farm landscape often found in desert regions, similarly harsh and inhospitable.",
             "options": [
-                "Thicket",
-                "Cactus",
+                "Badlands",
                 "Grove",
-                "Sandstorm",
-                "Undergrowth"
+                "Barren plain",
+                "Rainforest",
+                "Thicket"
             ],
-            "correctAnswer": "Forest:Thicket, Desert:Cactus, Forest:Grove, Desert:Sandstorm, Forest:Undergrowth",
+            "correctAnswer": "Desert:Badlands, Forest:Grove, Desert:Barren plain, Forest:Rainforest, Forest:Thicket",
             "relatedWords": [
-                "aspect of Forest:Thicket, Desert:Cactus, Forest:Grove, Desert:Sandstorm, Forest:Undergrowth",
-                "concept of Forest:Thicket, Desert:Cactus, Forest:Grove, Desert:Sandstorm, Forest:Undergrowth",
-                "related to Forest:Thicket, Desert:Cactus, Forest:Grove, Desert:Sandstorm, Forest:Undergrowth"
+                "Badlands: dry, eroded land, difficult to farm",
+                "Grove: a small group of trees",
+                "Barren plain: a flat area of land unable to support much plant life",
+                "Rainforest: a dense forest found in areas of high rainfall",
+                "Thicket: a dense group of bushes or small trees"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L46_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These are environmental terms. Think about a process happening to a forest, and a process turning land into desert. Sort into Forest or Desert.",
             "topicBuckets": [
                 "Forest",
                 "Desert"
             ],
-            "hint": "Here's a tip: A forest is full of trees and rain, while a desert is dry sand with very little water!",
-            "explanation": "Think of 'Forest' as dense, leafy landscapes (woodland, jungle), and 'Desert' as dry, sandy landscapes (dune, oasis)!",
+            "hint": "Two forest words describe losing or replanting trees; one desert word describes land drying out over time.",
+            "explanation": "Deforestation, reforestation, and 'biodiversity hotspot' are all terms connected to forests \u2014 the loss of trees, the planting of new ones, and a description of an unusually rich ecosystem. Drought and desertification are both connected to deserts, with desertification specifically describing land gradually turning into desert due to climate change or poor land use.",
             "options": [
-                "Timberland",
-                "Mirage",
-                "Rainforest",
+                "Reforestation",
+                "Desertification",
+                "Deforestation",
                 "Drought",
-                "Wilderness"
+                "Biodiversity hotspot"
             ],
-            "correctAnswer": "Forest:Timberland, Desert:Mirage, Forest:Rainforest, Desert:Drought, Forest:Wilderness",
+            "correctAnswer": "Forest:Reforestation, Desert:Desertification, Forest:Deforestation, Desert:Drought, Forest:Biodiversity hotspot",
             "relatedWords": [
-                "aspect of Forest:Timberland, Desert:Mirage, Forest:Rainforest, Desert:Drought, Forest:Wilderness",
-                "concept of Forest:Timberland, Desert:Mirage, Forest:Rainforest, Desert:Drought, Forest:Wilderness",
-                "related to Forest:Timberland, Desert:Mirage, Forest:Rainforest, Desert:Drought, Forest:Wilderness"
+                "Reforestation: the planting of new trees in a cleared area",
+                "Desertification: the process of fertile land becoming desert",
+                "Deforestation: the clearing or loss of forests",
+                "Drought: a long period of unusually low rainfall",
+                "Biodiversity hotspot: a region with an unusually rich variety of species"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L47_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Village or City.",
             "topicBuckets": [
-                "City",
-                "Village"
+                "Village",
+                "City"
             ],
-            "hint": "Here's a tip: A city is large and crowded with tall buildings, while a village is small and quiet!",
-            "explanation": "Think of 'City' as large, busy urban places (skyscraper, traffic), and 'Village' as small, quiet rural places (farmland, cottage)!",
+            "hint": "Think about towering buildings and busy streets, versus open fields and quiet lanes.",
+            "explanation": "Urban, skyscraper, and downtown all describe features of a city \u2014 dense buildings and busy central areas. Rural and countryside both describe village life, open land away from a city's density.",
             "options": [
                 "Skyscraper",
-                "Farmland",
-                "Traffic",
-                "Cottage",
-                "Downtown"
+                "Countryside",
+                "Downtown",
+                "Rural",
+                "Urban"
             ],
-            "correctAnswer": "City:Skyscraper, Village:Farmland, City:Traffic, Village:Cottage, City:Downtown",
+            "correctAnswer": "City:Skyscraper, Village:Countryside, City:Downtown, Village:Rural, City:Urban",
             "relatedWords": [
-                "aspect of City:Skyscraper, Village:Farmland, City:Traffic, Village:Cottage, City:Downtown",
-                "concept of City:Skyscraper, Village:Farmland, City:Traffic, Village:Cottage, City:Downtown",
-                "related to City:Skyscraper, Village:Farmland, City:Traffic, Village:Cottage, City:Downtown"
+                "Skyscraper: a very tall building",
+                "Countryside: land outside cities and towns, typically farmland",
+                "Downtown: the central, busy part of a city",
+                "Rural: relating to the countryside, away from cities",
+                "Urban: relating to a city or densely populated area"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L47_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Think about traffic jams and residential neighborhoods just outside downtown, versus a handful of houses surrounded by fields. Sort into City or Village.",
             "topicBuckets": [
                 "City",
                 "Village"
             ],
-            "hint": "Here's a tip: A city is large and crowded with tall buildings, while a village is small and quiet!",
-            "explanation": "Think of 'City' as large, busy urban places (skyscraper, traffic), and 'Village' as small, quiet rural places (farmland, cottage)!",
+            "hint": "One village word describes an even smaller settlement than a village itself.",
+            "explanation": "A suburb, congestion, and a commute are all associated with city life \u2014 nearby neighborhoods, traffic, and the daily journey to work. A hamlet is an even smaller settlement than a village, and farmland describes the open agricultural land typical of village surroundings.",
             "options": [
-                "Subway",
+                "Commute",
+                "Farmland",
+                "Suburb",
                 "Hamlet",
-                "Skyline",
-                "Countryside",
-                "Metropolis"
+                "Congestion"
             ],
-            "correctAnswer": "City:Subway, Village:Hamlet, City:Skyline, Village:Countryside, City:Metropolis",
+            "correctAnswer": "City:Commute, Village:Farmland, City:Suburb, Village:Hamlet, City:Congestion",
             "relatedWords": [
-                "aspect of City:Subway, Village:Hamlet, City:Skyline, Village:Countryside, City:Metropolis",
-                "concept of City:Subway, Village:Hamlet, City:Skyline, Village:Countryside, City:Metropolis",
-                "related to City:Subway, Village:Hamlet, City:Skyline, Village:Countryside, City:Metropolis"
+                "Commute: the journey between home and work",
+                "Farmland: land used for farming",
+                "Suburb: a residential area on the outskirts of a city",
+                "Hamlet: a very small settlement, smaller than a village",
+                "Congestion: traffic that is heavily crowded or blocked"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L47_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Think about the pace of life and how well people know their neighbors. Sort into Village or City.",
             "topicBuckets": [
-                "City",
-                "Village"
+                "Village",
+                "City"
             ],
-            "hint": "Here's a tip: A city is large and crowded with tall buildings, while a village is small and quiet!",
-            "explanation": "Think of 'City' as large, busy urban places (skyscraper, traffic), and 'Village' as small, quiet rural places (farmland, cottage)!",
+            "hint": "One city word figuratively describes feeling unknown among so many people.",
+            "explanation": "Cosmopolitan, fast-paced, and anonymous all describe city life \u2014 diverse, busy, and sometimes impersonal because of how many people live there. 'Close-knit community' and slow-paced both describe village life, where people tend to know each other well and life moves more gently.",
             "options": [
-                "Apartment",
-                "Pasture",
-                "Crowd",
-                "Barn",
-                "Suburb"
+                "Fast-paced",
+                "Cosmopolitan",
+                "Close-knit community",
+                "Slow-paced",
+                "Anonymous"
             ],
-            "correctAnswer": "City:Apartment, Village:Pasture, City:Crowd, Village:Barn, City:Suburb",
+            "correctAnswer": "City:Fast-paced, City:Cosmopolitan, Village:Close-knit community, Village:Slow-paced, City:Anonymous",
             "relatedWords": [
-                "aspect of City:Apartment, Village:Pasture, City:Crowd, Village:Barn, City:Suburb",
-                "concept of City:Apartment, Village:Pasture, City:Crowd, Village:Barn, City:Suburb",
-                "related to City:Apartment, Village:Pasture, City:Crowd, Village:Barn, City:Suburb"
+                "Fast-paced: moving or happening quickly",
+                "Cosmopolitan: containing a diverse mix of people and cultures",
+                "Close-knit community: a group of people who know each other well and support one another",
+                "Slow-paced: moving or happening gently, without rush",
+                "Anonymous: not known or recognized by others"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L48_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Autumn or Spring.",
             "topicBuckets": [
-                "Spring",
-                "Autumn"
+                "Autumn",
+                "Spring"
             ],
-            "hint": "Here's a tip: Spring brings new flowers after winter, while autumn brings falling leaves before winter!",
-            "explanation": "Think of 'Spring' as the season of new growth (blossom, bud), and 'Autumn' as the season of falling leaves (harvest, foliage)!",
+            "hint": "Think about flowers opening for the first time, and crops being gathered before winter.",
+            "explanation": "Blossom, bloom, and sprout all describe new plant growth typical of spring. Harvest and foliage both relate to autumn, the season of gathering crops and watching leaves change color.",
             "options": [
-                "Blossom",
-                "Harvest",
-                "Bud",
+                "Bloom",
                 "Foliage",
-                "Bloom"
+                "Harvest",
+                "Blossom",
+                "Sprout"
             ],
-            "correctAnswer": "Spring:Blossom, Autumn:Harvest, Spring:Bud, Autumn:Foliage, Spring:Bloom",
+            "correctAnswer": "Spring:Bloom, Autumn:Foliage, Autumn:Harvest, Spring:Blossom, Spring:Sprout",
             "relatedWords": [
-                "aspect of Spring:Blossom, Autumn:Harvest, Spring:Bud, Autumn:Foliage, Spring:Bloom",
-                "concept of Spring:Blossom, Autumn:Harvest, Spring:Bud, Autumn:Foliage, Spring:Bloom",
-                "related to Spring:Blossom, Autumn:Harvest, Spring:Bud, Autumn:Foliage, Spring:Bloom"
+                "Bloom: to produce flowers, or a flower itself",
+                "Foliage: the leaves of plants, especially in mass",
+                "Harvest: the gathering of crops when they are ripe",
+                "Blossom: a flower, especially on a fruit tree",
+                "Sprout: to begin to grow, especially a new plant shoot"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L48_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Think about nature waking up after winter, and nature slowing down before winter. Sort into Spring or Autumn.",
             "topicBuckets": [
                 "Spring",
                 "Autumn"
             ],
-            "hint": "Here's a tip: Spring brings new flowers after winter, while autumn brings falling leaves before winter!",
-            "explanation": "Think of 'Spring' as the season of new growth (blossom, bud), and 'Autumn' as the season of falling leaves (harvest, foliage)!",
+            "hint": "Two of these describe a plant's biological process, and two describe a figurative slowing down.",
+            "explanation": "Germination, renewal, and awakening all describe the sense of new life starting in spring, from a seed sprouting to nature figuratively 'waking up'. Decay and decline both describe autumn's fading, natural processes as plants die back before winter.",
             "options": [
-                "Sprout",
-                "Acorn",
-                "Daffodil",
-                "Pumpkin",
-                "Thaw"
+                "Germination",
+                "Awakening",
+                "Decay",
+                "Decline",
+                "Renewal"
             ],
-            "correctAnswer": "Spring:Sprout, Autumn:Acorn, Spring:Daffodil, Autumn:Pumpkin, Spring:Thaw",
+            "correctAnswer": "Spring:Germination, Spring:Awakening, Autumn:Decay, Autumn:Decline, Spring:Renewal",
             "relatedWords": [
-                "aspect of Spring:Sprout, Autumn:Acorn, Spring:Daffodil, Autumn:Pumpkin, Spring:Thaw",
-                "concept of Spring:Sprout, Autumn:Acorn, Spring:Daffodil, Autumn:Pumpkin, Spring:Thaw",
-                "related to Spring:Sprout, Autumn:Acorn, Spring:Daffodil, Autumn:Pumpkin, Spring:Thaw"
+                "Germination: the process of a seed beginning to grow",
+                "Awakening: the beginning of new activity or life",
+                "Decay: the gradual decline or rotting of something",
+                "Decline: a gradual decrease or fading",
+                "Renewal: the process of something starting again, freshly"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L48_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These are figurative expressions. Sort into Spring or Autumn.",
             "topicBuckets": [
                 "Spring",
                 "Autumn"
             ],
-            "hint": "Here's a tip: Spring brings new flowers after winter, while autumn brings falling leaves before winter!",
-            "explanation": "Think of 'Spring' as the season of new growth (blossom, bud), and 'Autumn' as the season of falling leaves (harvest, foliage)!",
+            "hint": "Think about new beginnings and later stages of life.",
+            "explanation": "'Springtime romance' and a 'fresh start' both use spring figuratively, for new beginnings and new love. 'Autumn years' and 'golden years' both use autumn figuratively for later life, and an 'Indian summer' is a real weather term for an unusually warm spell of weather in autumn.",
             "options": [
-                "Renewal",
-                "Falling-leaves",
-                "Tulip",
-                "Maple",
-                "Sapling"
+                "Autumn years",
+                "Fresh start",
+                "Golden years",
+                "Springtime romance",
+                "Indian summer"
             ],
-            "correctAnswer": "Spring:Renewal, Autumn:Falling-leaves, Spring:Tulip, Autumn:Maple, Spring:Sapling",
+            "correctAnswer": "Autumn:Autumn years, Spring:Fresh start, Autumn:Golden years, Spring:Springtime romance, Autumn:Indian summer",
             "relatedWords": [
-                "aspect of Spring:Renewal, Autumn:Falling-leaves, Spring:Tulip, Autumn:Maple, Spring:Sapling",
-                "concept of Spring:Renewal, Autumn:Falling-leaves, Spring:Tulip, Autumn:Maple, Spring:Sapling",
-                "related to Spring:Renewal, Autumn:Falling-leaves, Spring:Tulip, Autumn:Maple, Spring:Sapling"
+                "Autumn years: a figurative phrase for the later stage of life",
+                "Fresh start: a new beginning",
+                "Golden years: a figurative phrase for the later, often comfortable stage of life",
+                "Springtime romance: a figurative phrase for new, blossoming love",
+                "Indian summer: an unusually warm spell of weather in autumn"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L49_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Push or Pull.",
             "topicBuckets": [
                 "Push",
                 "Pull"
             ],
-            "hint": "Here's a tip: You push something away from you, while you pull something toward you!",
-            "explanation": "Think of 'Push' as moving something away by applying force (shove, press), and 'Pull' as moving something toward you (drag, tow)!",
+            "hint": "Think about forcing something away from you, versus bringing it toward you.",
+            "explanation": "Shove, press, and nudge all describe pushing, ranging from a hard shove to a gentle nudge. Tug and drag both describe pulling, with drag suggesting something heavy being pulled along a surface.",
             "options": [
                 "Shove",
-                "Drag",
                 "Press",
-                "Tow",
-                "Thrust"
+                "Drag",
+                "Tug",
+                "Nudge"
             ],
-            "correctAnswer": "Push:Shove, Pull:Drag, Push:Press, Pull:Tow, Push:Thrust",
+            "correctAnswer": "Push:Shove, Push:Press, Pull:Drag, Pull:Tug, Push:Nudge",
             "relatedWords": [
-                "aspect of Push:Shove, Pull:Drag, Push:Press, Pull:Tow, Push:Thrust",
-                "concept of Push:Shove, Pull:Drag, Push:Press, Pull:Tow, Push:Thrust",
-                "related to Push:Shove, Pull:Drag, Push:Press, Pull:Tow, Push:Thrust"
+                "Shove: to push roughly",
+                "Press: to push firmly against something",
+                "Drag: to pull something heavy along a surface",
+                "Tug: to pull suddenly or sharply",
+                "Nudge: to push gently, especially with the elbow"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L49_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Think about a sudden, forceful pull versus hauling something heavy along. Sort into Push or Pull.",
             "topicBuckets": [
                 "Push",
                 "Pull"
             ],
-            "hint": "Here's a tip: You push something away from you, while you pull something toward you!",
-            "explanation": "Think of 'Push' as moving something away by applying force (shove, press), and 'Pull' as moving something toward you (drag, tow)!",
+            "hint": "One push word suggests movement driven forward with force.",
+            "explanation": "Thrust, propel, and elbow all describe forceful pushing, with propel suggesting movement is driven forward with force. Yank and haul both describe pulling, with yank suggesting a sudden, sharp pull, unlike the steady effort of hauling.",
             "options": [
-                "Nudge",
+                "Haul",
+                "Thrust",
+                "Propel",
                 "Yank",
-                "Force",
-                "Tug",
-                "Heave"
+                "Elbow"
             ],
-            "correctAnswer": "Push:Nudge, Pull:Yank, Push:Force, Pull:Tug, Push:Heave",
+            "correctAnswer": "Pull:Haul, Push:Thrust, Push:Propel, Pull:Yank, Push:Elbow",
             "relatedWords": [
-                "aspect of Push:Nudge, Pull:Yank, Push:Force, Pull:Tug, Push:Heave",
-                "concept of Push:Nudge, Pull:Yank, Push:Force, Pull:Tug, Push:Heave",
-                "related to Push:Nudge, Pull:Yank, Push:Force, Pull:Tug, Push:Heave"
+                "Haul: to pull something heavy with steady effort",
+                "Thrust: to push suddenly and with force",
+                "Propel: to drive something forward with force",
+                "Yank: to pull suddenly and sharply",
+                "Elbow: to shove someone aside with the upper arm"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L49_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Think about forcing someone to do something, versus tempting them toward it. Sort into Pull or Push.",
             "topicBuckets": [
-                "Push",
-                "Pull"
+                "Pull",
+                "Push"
             ],
-            "hint": "Here's a tip: You push something away from you, while you pull something toward you!",
-            "explanation": "Think of 'Push' as moving something away by applying force (shove, press), and 'Pull' as moving something toward you (drag, tow)!",
+            "hint": "Think figuratively \u2014 about persuasion, not physical force.",
+            "explanation": "Impose, coerce, and compel all use 'push' figuratively, describing force used to make someone act. Attract and entice both use 'pull' figuratively, describing something drawing a person in through appeal rather than force.",
             "options": [
-                "Hoist",
-                "Propel",
-                "Haul",
-                "Wrench",
-                "Squeeze"
+                "Entice",
+                "Compel",
+                "Coerce",
+                "Impose",
+                "Attract"
             ],
-            "correctAnswer": "Pull:Hoist, Push:Propel, Pull:Haul, Pull:Wrench, Push:Squeeze",
+            "correctAnswer": "Pull:Entice, Push:Compel, Push:Coerce, Push:Impose, Pull:Attract",
             "relatedWords": [
-                "aspect of Pull:Hoist, Push:Propel, Pull:Haul, Pull:Wrench, Push:Squeeze",
-                "concept of Pull:Hoist, Push:Propel, Pull:Haul, Pull:Wrench, Push:Squeeze",
-                "related to Pull:Hoist, Push:Propel, Pull:Haul, Pull:Wrench, Push:Squeeze"
+                "Entice: to attract someone by offering something appealing",
+                "Compel: to force someone to act a certain way",
+                "Coerce: to force someone to do something through pressure or threats",
+                "Impose: to force something on someone",
+                "Attract: to draw someone in through appeal"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L50_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Answer or Ask.",
             "topicBuckets": [
-                "Ask",
-                "Answer"
+                "Answer",
+                "Ask"
             ],
-            "hint": "Here's a tip: You ask when you want to know something, while you answer when you reply with information!",
-            "explanation": "Think of 'Ask' as requesting information (question, inquire), and 'Answer' as giving information back (reply, respond)!",
+            "hint": "Think about wanting information versus giving it.",
+            "explanation": "Inquire, question, and request all describe seeking information or something from someone else. Respond and reply both describe giving information back, though reply is often used more for written or spoken exchanges specifically.",
             "options": [
-                "Question",
-                "Reply",
-                "Inquire",
+                "Request",
                 "Respond",
-                "Request"
+                "Inquire",
+                "Question",
+                "Reply"
             ],
-            "correctAnswer": "Ask:Question, Answer:Reply, Ask:Inquire, Answer:Respond, Ask:Request",
+            "correctAnswer": "Ask:Request, Answer:Respond, Ask:Inquire, Ask:Question, Answer:Reply",
             "relatedWords": [
-                "aspect of Ask:Question, Answer:Reply, Ask:Inquire, Answer:Respond, Ask:Request",
-                "concept of Ask:Question, Answer:Reply, Ask:Inquire, Answer:Respond, Ask:Request",
-                "related to Ask:Question, Answer:Reply, Ask:Inquire, Answer:Respond, Ask:Request"
+                "Request: to formally or politely ask for something",
+                "Respond: to give an answer or reaction",
+                "Inquire: to ask for information",
+                "Question: to ask something, or a thing asked",
+                "Reply: to answer, especially in speech or writing"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L50_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Think about a sharp comeback versus a deep investigation. Sort into Ask or Answer.",
             "topicBuckets": [
                 "Ask",
                 "Answer"
             ],
-            "hint": "Here's a tip: You ask when you want to know something, while you answer when you reply with information!",
-            "explanation": "Think of 'Ask' as requesting information (question, inquire), and 'Answer' as giving information back (reply, respond)!",
+            "hint": "One asking word suggests intense, formal questioning, like a police investigation.",
+            "explanation": "Interrogate, probe, and query all describe asking, though interrogate suggests intense, formal questioning, like in a police investigation. Retort and clarify both describe answering, with retort specifically suggesting a quick, often sharp reply.",
             "options": [
-                "Wonder",
-                "Explain",
-                "Query",
                 "Clarify",
-                "Quiz"
+                "Query",
+                "Interrogate",
+                "Retort",
+                "Probe"
             ],
-            "correctAnswer": "Ask:Wonder, Answer:Explain, Ask:Query, Answer:Clarify, Ask:Quiz",
+            "correctAnswer": "Answer:Clarify, Ask:Query, Ask:Interrogate, Answer:Retort, Ask:Probe",
             "relatedWords": [
-                "aspect of Ask:Wonder, Answer:Explain, Ask:Query, Answer:Clarify, Ask:Quiz",
-                "concept of Ask:Wonder, Answer:Explain, Ask:Query, Answer:Clarify, Ask:Quiz",
-                "related to Ask:Wonder, Answer:Explain, Ask:Query, Answer:Clarify, Ask:Quiz"
+                "Clarify: to make something clearer in response to a question",
+                "Query: to ask a question, especially to clear up doubt",
+                "Interrogate: to question intensely, often formally",
+                "Retort: to reply quickly and sharply",
+                "Probe: to ask questions in order to investigate something"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L50_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Think about a formal request for feedback, and directly responding to counter an argument. Sort into Ask or Answer.",
             "topicBuckets": [
                 "Ask",
                 "Answer"
             ],
-            "hint": "Here's a tip: You ask when you want to know something, while you answer when you reply with information!",
-            "explanation": "Think of 'Ask' as requesting information (question, inquire), and 'Answer' as giving information back (reply, respond)!",
+            "hint": "One answering word specifically means to prove an argument wrong.",
+            "explanation": "Solicit, consult, and petition all describe formally asking for something, whether it's feedback, advice, or an official request. Rebut and address both describe answering, with rebut specifically meaning to answer by proving an argument wrong.",
             "options": [
-                "Solution",
-                "Interrogate",
-                "Resolve",
-                "Probe",
-                "Confirm"
+                "Petition",
+                "Address",
+                "Rebut",
+                "Solicit",
+                "Consult"
             ],
-            "correctAnswer": "Answer:Solution, Ask:Interrogate, Answer:Resolve, Ask:Probe, Answer:Confirm",
+            "correctAnswer": "Ask:Petition, Answer:Address, Answer:Rebut, Ask:Solicit, Ask:Consult",
             "relatedWords": [
-                "aspect of Answer:Solution, Ask:Interrogate, Answer:Resolve, Ask:Probe, Answer:Confirm",
-                "concept of Answer:Solution, Ask:Interrogate, Answer:Resolve, Ask:Probe, Answer:Confirm",
-                "related to Answer:Solution, Ask:Interrogate, Answer:Resolve, Ask:Probe, Answer:Confirm"
+                "Petition: to make a formal request, often in writing",
+                "Address: to respond directly to a point or issue",
+                "Rebut: to answer an argument by proving it wrong",
+                "Solicit: to formally ask for something, like feedback or support",
+                "Consult: to ask someone for advice or information"
             ]
         }
     ]

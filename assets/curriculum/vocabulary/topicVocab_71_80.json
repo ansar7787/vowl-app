@@ -6,721 +6,781 @@
         {
             "id": "VOC_TOPICVOCAB_L71_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Discount or Full Price.",
             "topicBuckets": [
                 "Discount",
                 "Full Price"
             ],
-            "hint": "Here's a tip: A discount means you pay less than usual, while full price means you pay the normal amount!",
-            "explanation": "Think of 'Discount' as reduced prices (sale, markdown), and 'Full Price' as the regular, unreduced price (retail, sticker price)!",
+            "hint": "Think about a red sale tag versus the price printed on the box.",
+            "explanation": "Markdown, clearance, and reduced all describe a price that's been lowered from its original amount. 'Sticker price' and 'list price' both describe the original, undiscounted price a seller first sets.",
             "options": [
-                "Sale",
-                "Retail",
                 "Markdown",
-                "Sticker-price",
-                "Bargain-price"
+                "Sticker price",
+                "Clearance",
+                "List price",
+                "Reduced"
             ],
-            "correctAnswer": "Discount:Sale, Full Price:Retail, Discount:Markdown, Full Price:Sticker-price, Discount:Bargain-price",
+            "correctAnswer": "Discount:Markdown, Full Price:Sticker price, Discount:Clearance, Full Price:List price, Discount:Reduced",
             "relatedWords": [
-                "aspect of Discount:Sale, Full Price:Retail, Discount:Markdown, Full Price:Sticker-price, Discount:Bargain-price",
-                "concept of Discount:Sale, Full Price:Retail, Discount:Markdown, Full Price:Sticker-price, Discount:Bargain-price",
-                "related to Discount:Sale, Full Price:Retail, Discount:Markdown, Full Price:Sticker-price, Discount:Bargain-price"
+                "Markdown: a reduction in the original price",
+                "Sticker price: the price originally listed on an item",
+                "Clearance: a sale to clear out remaining stock at reduced prices",
+                "List price: the standard price set by a seller",
+                "Reduced: lowered in price"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L71_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Think about a code you type at checkout to save money, versus the price a manufacturer officially recommends. Sort into Full Price or Discount.",
             "topicBuckets": [
-                "Discount",
-                "Full Price"
+                "Full Price",
+                "Discount"
             ],
-            "hint": "Here's a tip: A discount means you pay less than usual, while full price means you pay the normal amount!",
-            "explanation": "Think of 'Discount' as reduced prices (sale, markdown), and 'Full Price' as the regular, unreduced price (retail, sticker price)!",
+            "hint": "One full-price term is an abbreviation for a manufacturer's suggested price.",
+            "explanation": "A coupon, a promo code, and 'slashed' (informally, a dramatically lowered price) all describe ways a price gets reduced. Retail price and MSRP both describe the standard price before any discount, with MSRP specifically being the price a manufacturer suggests.",
             "options": [
-                "Clearance",
-                "Standard-rate",
-                "Reduced",
-                "Listed-price",
-                "Promo"
+                "Coupon",
+                "Retail price",
+                "Promo code",
+                "MSRP",
+                "Slashed"
             ],
-            "correctAnswer": "Discount:Clearance, Full Price:Standard-rate, Discount:Reduced, Full Price:Listed-price, Discount:Promo",
+            "correctAnswer": "Discount:Coupon, Full Price:Retail price, Discount:Promo code, Full Price:MSRP, Discount:Slashed",
             "relatedWords": [
-                "aspect of Discount:Clearance, Full Price:Standard-rate, Discount:Reduced, Full Price:Listed-price, Discount:Promo",
-                "concept of Discount:Clearance, Full Price:Standard-rate, Discount:Reduced, Full Price:Listed-price, Discount:Promo",
-                "related to Discount:Clearance, Full Price:Standard-rate, Discount:Reduced, Full Price:Listed-price, Discount:Promo"
+                "Coupon: a voucher giving a discount on a purchase",
+                "Retail price: the standard price at which goods are sold",
+                "Promo code: a code entered at checkout to receive a discount",
+                "MSRP: the price a manufacturer suggests a product be sold for",
+                "Slashed: dramatically reduced in price"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L71_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "One phrase describes the shock of seeing an undiscounted price, and one is a hotel industry term for the standard rate. Sort into Discount or Full Price.",
             "topicBuckets": [
                 "Discount",
                 "Full Price"
             ],
-            "hint": "Here's a tip: A discount means you pay less than usual, while full price means you pay the normal amount!",
-            "explanation": "Think of 'Discount' as reduced prices (sale, markdown), and 'Full Price' as the regular, unreduced price (retail, sticker price)!",
+            "hint": "Think about a short-term sale event, and a bin of marked-down items.",
+            "explanation": "A 'rock-bottom price', a 'flash sale', and a 'bargain bin' all describe steep discounts, whether from a short-term sale or a bin of marked-down items. A 'rack rate' is a hotel industry term for the standard, undiscounted rate, and 'sticker shock' describes the surprise of seeing a high, full price.",
             "options": [
-                "Coupon-price",
-                "Regular-price",
-                "Slashed",
-                "MSRP",
-                "Special-offer"
+                "Rock-bottom price",
+                "Rack rate",
+                "Sticker shock",
+                "Bargain bin",
+                "Flash sale"
             ],
-            "correctAnswer": "Discount:Coupon-price, Full Price:Regular-price, Discount:Slashed, Full Price:MSRP, Discount:Special-offer",
+            "correctAnswer": "Discount:Rock-bottom price, Full Price:Rack rate, Full Price:Sticker shock, Discount:Bargain bin, Discount:Flash sale",
             "relatedWords": [
-                "aspect of Discount:Coupon-price, Full Price:Regular-price, Discount:Slashed, Full Price:MSRP, Discount:Special-offer",
-                "concept of Discount:Coupon-price, Full Price:Regular-price, Discount:Slashed, Full Price:MSRP, Discount:Special-offer",
-                "related to Discount:Coupon-price, Full Price:Regular-price, Discount:Slashed, Full Price:MSRP, Discount:Special-offer"
+                "Rock-bottom price: the lowest possible price",
+                "Rack rate: a hotel industry term for the standard, undiscounted rate",
+                "Sticker shock: surprise at how high a price is",
+                "Bargain bin: a collection of heavily discounted items",
+                "Flash sale: a very short-term sale offering steep discounts"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L72_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Visa or Passport.",
             "topicBuckets": [
-                "Passport",
-                "Visa"
+                "Visa",
+                "Passport"
             ],
-            "hint": "Here's a tip: A passport proves your nationality for international travel, while a visa is permission to enter a specific country!",
-            "explanation": "Think of 'Passport' as the travel document that proves identity and citizenship (booklet, ID), and 'Visa' as the permit allowing entry to a country (stamp, entry-permit)!",
+            "hint": "Think about the booklet that proves who you are, and the permission that lets you enter another country.",
+            "explanation": "A 'travel document', 'identification booklet', and 'citizenship proof' all describe what a passport fundamentally is \u2014 official proof of identity and nationality. An 'entry permit' and 'authorization stamp' both describe a visa, official permission to enter a country.",
             "options": [
-                "Booklet",
-                "Entry-permit",
-                "ID",
-                "Stamp",
-                "Citizenship-proof"
+                "Authorization stamp",
+                "Identification booklet",
+                "Entry permit",
+                "Travel document",
+                "Citizenship proof"
             ],
-            "correctAnswer": "Passport:Booklet, Visa:Entry-permit, Passport:ID, Visa:Stamp, Passport:Citizenship-proof",
+            "correctAnswer": "Visa:Authorization stamp, Passport:Identification booklet, Visa:Entry permit, Passport:Travel document, Passport:Citizenship proof",
             "relatedWords": [
-                "aspect of Passport:Booklet, Visa:Entry-permit, Passport:ID, Visa:Stamp, Passport:Citizenship-proof",
-                "concept of Passport:Booklet, Visa:Entry-permit, Passport:ID, Visa:Stamp, Passport:Citizenship-proof",
-                "related to Passport:Booklet, Visa:Entry-permit, Passport:ID, Visa:Stamp, Passport:Citizenship-proof"
+                "Authorization stamp: a stamp granting official permission",
+                "Identification booklet: a booklet proving a person's identity",
+                "Entry permit: official permission to enter a country",
+                "Travel document: an official document allowing international travel",
+                "Citizenship proof: documentation proving nationality"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L72_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Think about the different types of official permission for different reasons for visiting, versus features of the booklet itself. Sort into Passport or Visa.",
             "topicBuckets": [
                 "Passport",
                 "Visa"
             ],
-            "hint": "Here's a tip: A passport proves your nationality for international travel, while a visa is permission to enter a specific country!",
-            "explanation": "Think of 'Passport' as the travel document that proves identity and citizenship (booklet, ID), and 'Visa' as the permit allowing entry to a country (stamp, entry-permit)!",
+            "hint": "Two visa words describe permission granted for a specific purpose.",
+            "explanation": "Biometric data, expiration date, and renewal are all features or processes connected to a passport itself. A 'tourist visa' and a 'work visa' are both specific types of visa, granting permission to enter a country for a particular purpose.",
             "options": [
-                "Nationality-document",
-                "Authorization",
-                "Travel-document",
-                "Sticker",
-                "Photo-page"
+                "Renewal",
+                "Biometric data",
+                "Expiration date",
+                "Work visa",
+                "Tourist visa"
             ],
-            "correctAnswer": "Passport:Nationality-document, Visa:Authorization, Passport:Travel-document, Visa:Sticker, Passport:Photo-page",
+            "correctAnswer": "Passport:Renewal, Passport:Biometric data, Passport:Expiration date, Visa:Work visa, Visa:Tourist visa",
             "relatedWords": [
-                "aspect of Passport:Nationality-document, Visa:Authorization, Passport:Travel-document, Visa:Sticker, Passport:Photo-page",
-                "concept of Passport:Nationality-document, Visa:Authorization, Passport:Travel-document, Visa:Sticker, Passport:Photo-page",
-                "related to Passport:Nationality-document, Visa:Authorization, Passport:Travel-document, Visa:Sticker, Passport:Photo-page"
+                "Renewal: the process of extending a document's validity",
+                "Biometric data: physical identification data, like fingerprints, stored digitally",
+                "Expiration date: the date after which a document is no longer valid",
+                "Work visa: permission to enter a country to work",
+                "Tourist visa: permission to enter a country for tourism"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L72_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Think about the checkpoint you pass through with your booklet, and the paperwork process behind getting permission to enter. Sort into Visa or Passport.",
             "topicBuckets": [
-                "Passport",
-                "Visa"
+                "Visa",
+                "Passport"
             ],
-            "hint": "Here's a tip: A passport proves your nationality for international travel, while a visa is permission to enter a specific country!",
-            "explanation": "Think of 'Passport' as the travel document that proves identity and citizenship (booklet, ID), and 'Visa' as the permit allowing entry to a country (stamp, entry-permit)!",
+            "hint": "One visa term describes an employer backing an application; one visa term describes entering without needing a formal visa.",
+            "explanation": "A 'diplomatic passport', 'passport control', and a 'passport stamp' are all specifically connected to the passport itself and its use at a border. A 'visa waiver' and 'visa sponsorship' both relate to the process of gaining permission to enter a country, sometimes without a formal visa, sometimes backed by an employer.",
             "options": [
-                "Border-control-document",
-                "Tourist-permit",
-                "Renewal",
-                "Work-permit",
-                "Validity-page"
+                "Visa sponsorship",
+                "Diplomatic passport",
+                "Passport control",
+                "Visa waiver",
+                "Passport stamp"
             ],
-            "correctAnswer": "Passport:Border-control-document, Visa:Tourist-permit, Passport:Renewal, Visa:Work-permit, Passport:Validity-page",
+            "correctAnswer": "Visa:Visa sponsorship, Passport:Diplomatic passport, Passport:Passport control, Visa:Visa waiver, Passport:Passport stamp",
             "relatedWords": [
-                "aspect of Passport:Border-control-document, Visa:Tourist-permit, Passport:Renewal, Visa:Work-permit, Passport:Validity-page",
-                "concept of Passport:Border-control-document, Visa:Tourist-permit, Passport:Renewal, Visa:Work-permit, Passport:Validity-page",
-                "related to Passport:Border-control-document, Visa:Tourist-permit, Passport:Renewal, Visa:Work-permit, Passport:Validity-page"
+                "Visa sponsorship: when an employer supports a visa application",
+                "Diplomatic passport: a special passport issued to government officials",
+                "Passport control: the checkpoint where passports are checked at a border",
+                "Visa waiver: a program allowing entry without a formal visa",
+                "Passport stamp: a stamp placed in a passport marking entry or exit"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L73_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Departure or Arrival.",
             "topicBuckets": [
                 "Departure",
                 "Arrival"
             ],
-            "hint": "Here's a tip: Departure is when you leave on a trip, while arrival is when you reach your destination!",
-            "explanation": "Think of 'Departure' as leaving on a journey (takeoff, boarding), and 'Arrival' as reaching the destination (landing, touchdown)!",
+            "hint": "Think about the plane leaving the ground, and the plane reaching its destination.",
+            "explanation": "Takeoff, boarding, and 'gate check' all happen before or as a flight leaves. Landing and touchdown both describe a plane reaching the ground at its destination.",
             "options": [
                 "Takeoff",
                 "Landing",
                 "Boarding",
                 "Touchdown",
-                "Send-off"
+                "Gate check"
             ],
-            "correctAnswer": "Departure:Takeoff, Arrival:Landing, Departure:Boarding, Arrival:Touchdown, Departure:Send-off",
+            "correctAnswer": "Departure:Takeoff, Arrival:Landing, Departure:Boarding, Arrival:Touchdown, Departure:Gate check",
             "relatedWords": [
-                "aspect of Departure:Takeoff, Arrival:Landing, Departure:Boarding, Arrival:Touchdown, Departure:Send-off",
-                "concept of Departure:Takeoff, Arrival:Landing, Departure:Boarding, Arrival:Touchdown, Departure:Send-off",
-                "related to Departure:Takeoff, Arrival:Landing, Departure:Boarding, Arrival:Touchdown, Departure:Send-off"
+                "Takeoff: the moment a plane leaves the ground",
+                "Landing: the moment a plane reaches the ground",
+                "Boarding: the process of getting on a plane",
+                "Touchdown: the moment a plane's wheels touch the ground",
+                "Gate check: checking in luggage or a boarding pass at the gate"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L73_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Think about what happens before you board a plane, versus what happens once you've landed. Sort into Arrival or Departure.",
             "topicBuckets": [
-                "Departure",
-                "Arrival"
+                "Arrival",
+                "Departure"
             ],
-            "hint": "Here's a tip: Departure is when you leave on a trip, while arrival is when you reach your destination!",
-            "explanation": "Think of 'Departure' as leaving on a journey (takeoff, boarding), and 'Arrival' as reaching the destination (landing, touchdown)!",
+            "hint": "One arrival word describes the process of entering a new country's border control.",
+            "explanation": "Check-in, security screening, and a farewell all happen before departure, as you prepare to leave. Baggage claim and customs both happen after arrival, once you've reached your destination.",
             "options": [
+                "Security screening",
+                "Farewell",
                 "Check-in",
-                "Disembark",
-                "Gate-closing",
-                "Welcome",
-                "Lift-off"
+                "Customs",
+                "Baggage claim"
             ],
-            "correctAnswer": "Departure:Check-in, Arrival:Disembark, Departure:Gate-closing, Arrival:Welcome, Departure:Lift-off",
+            "correctAnswer": "Departure:Security screening, Departure:Farewell, Departure:Check-in, Arrival:Customs, Arrival:Baggage claim",
             "relatedWords": [
-                "aspect of Departure:Check-in, Arrival:Disembark, Departure:Gate-closing, Arrival:Welcome, Departure:Lift-off",
-                "concept of Departure:Check-in, Arrival:Disembark, Departure:Gate-closing, Arrival:Welcome, Departure:Lift-off",
-                "related to Departure:Check-in, Arrival:Disembark, Departure:Gate-closing, Arrival:Welcome, Departure:Lift-off"
+                "Security screening: the process of checking passengers before boarding",
+                "Farewell: a parting goodbye before leaving",
+                "Check-in: the process of registering for a flight before departure",
+                "Customs: the checkpoint where goods are inspected upon entering a country",
+                "Baggage claim: the area where passengers collect luggage after arrival"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L73_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Think about the announcement urging you to hurry to the gate, and the area where you meet loved ones after landing. Sort into Departure or Arrival.",
             "topicBuckets": [
                 "Departure",
                 "Arrival"
             ],
-            "hint": "Here's a tip: Departure is when you leave on a trip, while arrival is when you reach your destination!",
-            "explanation": "Think of 'Departure' as leaving on a journey (takeoff, boarding), and 'Arrival' as reaching the destination (landing, touchdown)!",
+            "hint": "Think about the urgency of catching a flight versus being welcomed after one.",
+            "explanation": "'Final boarding call', 'delayed departure', and 'last call' are all phrases connected to leaving, especially the urgency of getting to the gate in time. A 'welcome reception' and an 'arrivals hall' are both connected to reaching a destination, where you're greeted or where you collect your things.",
             "options": [
-                "Farewell",
-                "Greeting",
-                "Outbound",
-                "Inbound",
-                "Final-call"
+                "Final boarding call",
+                "Welcome reception",
+                "Delayed departure",
+                "Arrivals hall",
+                "Last call"
             ],
-            "correctAnswer": "Departure:Farewell, Arrival:Greeting, Departure:Outbound, Arrival:Inbound, Departure:Final-call",
+            "correctAnswer": "Departure:Final boarding call, Arrival:Welcome reception, Departure:Delayed departure, Arrival:Arrivals hall, Departure:Last call",
             "relatedWords": [
-                "aspect of Departure:Farewell, Arrival:Greeting, Departure:Outbound, Arrival:Inbound, Departure:Final-call",
-                "concept of Departure:Farewell, Arrival:Greeting, Departure:Outbound, Arrival:Inbound, Departure:Final-call",
-                "related to Departure:Farewell, Arrival:Greeting, Departure:Outbound, Arrival:Inbound, Departure:Final-call"
+                "Final boarding call: the last announcement urging passengers to board",
+                "Welcome reception: a gathering to greet someone upon arrival",
+                "Delayed departure: a flight leaving later than scheduled",
+                "Arrivals hall: the area of an airport where arriving passengers exit",
+                "Last call: a final warning that time is almost up"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L74_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Diagnosis or Symptom.",
             "topicBuckets": [
-                "Symptom",
-                "Diagnosis"
+                "Diagnosis",
+                "Symptom"
             ],
-            "hint": "Here's a tip: A symptom is a sign that something is wrong, while a diagnosis is the doctor's explanation of what it is!",
-            "explanation": "Think of 'Symptom' as a sign of illness noticed by the patient (fever, cough), and 'Diagnosis' as the doctor's identification of the illness (assessment, finding)!",
+            "hint": "Think about what a patient notices and reports, versus what a doctor determines is causing it.",
+            "explanation": "Fever, rash, and fatigue are all symptoms, physical signs a patient experiences. A 'medical assessment' and an 'identified condition' both describe a diagnosis, the doctor's conclusion about what's causing those symptoms.",
             "options": [
+                "Identified condition",
+                "Medical assessment",
+                "Fatigue",
                 "Fever",
-                "Assessment",
-                "Cough",
-                "Finding",
                 "Rash"
             ],
-            "correctAnswer": "Symptom:Fever, Diagnosis:Assessment, Symptom:Cough, Diagnosis:Finding, Symptom:Rash",
+            "correctAnswer": "Diagnosis:Identified condition, Diagnosis:Medical assessment, Symptom:Fatigue, Symptom:Fever, Symptom:Rash",
             "relatedWords": [
-                "aspect of Symptom:Fever, Diagnosis:Assessment, Symptom:Cough, Diagnosis:Finding, Symptom:Rash",
-                "concept of Symptom:Fever, Diagnosis:Assessment, Symptom:Cough, Diagnosis:Finding, Symptom:Rash",
-                "related to Symptom:Fever, Diagnosis:Assessment, Symptom:Cough, Diagnosis:Finding, Symptom:Rash"
+                "Identified condition: a health condition determined by a doctor",
+                "Medical assessment: a doctor's evaluation of a patient's condition",
+                "Fatigue: extreme tiredness",
+                "Fever: a higher than normal body temperature",
+                "Rash: a patch of irritated or red skin"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L74_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Think about what the body experiences, versus the medical conclusion reached after tests. Sort into Symptom or Diagnosis.",
             "topicBuckets": [
                 "Symptom",
                 "Diagnosis"
             ],
-            "hint": "Here's a tip: A symptom is a sign that something is wrong, while a diagnosis is the doctor's explanation of what it is!",
-            "explanation": "Think of 'Symptom' as a sign of illness noticed by the patient (fever, cough), and 'Diagnosis' as the doctor's identification of the illness (assessment, finding)!",
+            "hint": "Two diagnosis words describe the result of medical investigation.",
+            "explanation": "Nausea, inflammation, and chronic pain are all symptoms, things a patient physically experiences. A 'clinical finding' and a 'confirmed illness' both describe a diagnosis, the result of medical investigation.",
             "options": [
-                "Pain",
-                "Conclusion",
-                "Fatigue",
-                "Identification",
-                "Nausea"
+                "Clinical finding",
+                "Nausea",
+                "Chronic pain",
+                "Confirmed illness",
+                "Inflammation"
             ],
-            "correctAnswer": "Symptom:Pain, Diagnosis:Conclusion, Symptom:Fatigue, Diagnosis:Identification, Symptom:Nausea",
+            "correctAnswer": "Diagnosis:Clinical finding, Symptom:Nausea, Symptom:Chronic pain, Diagnosis:Confirmed illness, Symptom:Inflammation",
             "relatedWords": [
-                "aspect of Symptom:Pain, Diagnosis:Conclusion, Symptom:Fatigue, Diagnosis:Identification, Symptom:Nausea",
-                "concept of Symptom:Pain, Diagnosis:Conclusion, Symptom:Fatigue, Diagnosis:Identification, Symptom:Nausea",
-                "related to Symptom:Pain, Diagnosis:Conclusion, Symptom:Fatigue, Diagnosis:Identification, Symptom:Nausea"
+                "Clinical finding: a result discovered through medical examination",
+                "Nausea: a feeling of sickness with an urge to vomit",
+                "Chronic pain: pain that persists over a long period",
+                "Confirmed illness: a health condition verified through medical testing",
+                "Inflammation: redness and swelling caused by the body's response to injury or illness"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L74_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These are the kinds of phrases you'd find in a doctor's notes. Sort into Diagnosis or Symptom.",
             "topicBuckets": [
-                "Symptom",
-                "Diagnosis"
+                "Diagnosis",
+                "Symptom"
             ],
-            "hint": "Here's a tip: A symptom is a sign that something is wrong, while a diagnosis is the doctor's explanation of what it is!",
-            "explanation": "Think of 'Symptom' as a sign of illness noticed by the patient (fever, cough), and 'Diagnosis' as the doctor's identification of the illness (assessment, finding)!",
+            "hint": "One diagnosis term refers to a list of possibilities, and one refers to the final, confirmed answer.",
+            "explanation": "'Presenting complaint', 'warning sign', and 'telltale sign' all describe symptoms, what a patient reports or what a doctor notices first. 'Differential diagnosis' and 'definitive diagnosis' both describe the diagnostic process, with differential referring to a list of possibilities and definitive referring to the final, confirmed answer.",
             "options": [
-                "Swelling",
-                "Test-result",
-                "Dizziness",
-                "Verdict",
-                "Clinical-finding"
+                "Telltale sign",
+                "Warning sign",
+                "Presenting complaint",
+                "Differential diagnosis",
+                "Definitive diagnosis"
             ],
-            "correctAnswer": "Symptom:Swelling, Diagnosis:Test-result, Symptom:Dizziness, Diagnosis:Verdict, Diagnosis:Clinical-finding",
+            "correctAnswer": "Symptom:Telltale sign, Symptom:Warning sign, Symptom:Presenting complaint, Diagnosis:Differential diagnosis, Diagnosis:Definitive diagnosis",
             "relatedWords": [
-                "aspect of Symptom:Swelling, Diagnosis:Test-result, Symptom:Dizziness, Diagnosis:Verdict, Diagnosis:Clinical-finding",
-                "concept of Symptom:Swelling, Diagnosis:Test-result, Symptom:Dizziness, Diagnosis:Verdict, Diagnosis:Clinical-finding",
-                "related to Symptom:Swelling, Diagnosis:Test-result, Symptom:Dizziness, Diagnosis:Verdict, Diagnosis:Clinical-finding"
+                "Telltale sign: a small clue that reveals what's really happening",
+                "Warning sign: an early indication that something may be wrong",
+                "Presenting complaint: the main problem a patient reports to a doctor",
+                "Differential diagnosis: a list of possible conditions considered before confirming one",
+                "Definitive diagnosis: the final, confirmed medical conclusion"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L75_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Vaccine or Virus.",
             "topicBuckets": [
                 "Vaccine",
                 "Virus"
             ],
-            "hint": "Here's a tip: A vaccine protects you from disease, while a virus is the germ that causes the disease!",
-            "explanation": "Think of 'Vaccine' as substances that build immunity (shot, immunization), and 'Virus' as the pathogen causing illness (infection, pathogen)!",
+            "hint": "Think about what protects the body, and what makes it sick.",
+            "explanation": "Immunization, inoculation, and a booster shot are all related to vaccines, ways of protecting the body against disease. Pathogen and infection both relate to viruses, the cause and result of the body being invaded by disease-causing organisms.",
             "options": [
-                "Shot",
-                "Pathogen",
                 "Immunization",
-                "Infection",
-                "Booster"
+                "Booster shot",
+                "Inoculation",
+                "Pathogen",
+                "Infection"
             ],
-            "correctAnswer": "Vaccine:Shot, Virus:Pathogen, Vaccine:Immunization, Virus:Infection, Vaccine:Booster",
+            "correctAnswer": "Vaccine:Immunization, Vaccine:Booster shot, Vaccine:Inoculation, Virus:Pathogen, Virus:Infection",
             "relatedWords": [
-                "aspect of Vaccine:Shot, Virus:Pathogen, Vaccine:Immunization, Virus:Infection, Vaccine:Booster",
-                "concept of Vaccine:Shot, Virus:Pathogen, Vaccine:Immunization, Virus:Infection, Vaccine:Booster",
-                "related to Vaccine:Shot, Virus:Pathogen, Vaccine:Immunization, Virus:Infection, Vaccine:Booster"
+                "Immunization: the process of becoming protected against a disease",
+                "Booster shot: an additional dose of a vaccine to maintain protection",
+                "Inoculation: introducing a vaccine into the body to build immunity",
+                "Pathogen: an organism that causes disease",
+                "Infection: invasion of the body by a disease-causing organism"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L75_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Think about a virus constantly changing, versus a coordinated public health effort to protect a population. Sort into Virus or Vaccine.",
             "topicBuckets": [
-                "Vaccine",
-                "Virus"
+                "Virus",
+                "Vaccine"
             ],
-            "hint": "Here's a tip: A vaccine protects you from disease, while a virus is the germ that causes the disease!",
-            "explanation": "Think of 'Vaccine' as substances that build immunity (shot, immunization), and 'Virus' as the pathogen causing illness (infection, pathogen)!",
+            "hint": "One vaccine term describes a type made from a weakened form of a virus.",
+            "explanation": "Herd immunity, a vaccination campaign, and 'live attenuated' (a type of vaccine made from a weakened virus) are all connected to vaccines and vaccination efforts. Mutation and outbreak both relate to viruses, describing how they change and spread.",
             "options": [
-                "Inoculation",
-                "Contagion",
-                "Dose",
-                "Germ",
-                "Antibody-trigger"
+                "Live attenuated",
+                "Mutation",
+                "Vaccination campaign",
+                "Herd immunity",
+                "Outbreak"
             ],
-            "correctAnswer": "Vaccine:Inoculation, Virus:Contagion, Vaccine:Dose, Virus:Germ, Vaccine:Antibody-trigger",
+            "correctAnswer": "Vaccine:Live attenuated, Virus:Mutation, Vaccine:Vaccination campaign, Vaccine:Herd immunity, Virus:Outbreak",
             "relatedWords": [
-                "aspect of Vaccine:Inoculation, Virus:Contagion, Vaccine:Dose, Virus:Germ, Vaccine:Antibody-trigger",
-                "concept of Vaccine:Inoculation, Virus:Contagion, Vaccine:Dose, Virus:Germ, Vaccine:Antibody-trigger",
-                "related to Vaccine:Inoculation, Virus:Contagion, Vaccine:Dose, Virus:Germ, Vaccine:Antibody-trigger"
+                "Live attenuated: a vaccine made from a weakened form of a virus",
+                "Mutation: a change in a virus's genetic material",
+                "Vaccination campaign: an organized effort to vaccinate a population",
+                "Herd immunity: protection of a population when enough people are immune",
+                "Outbreak: a sudden spread of a disease within a population"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L75_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These are terms you'd read in a public health news report. Sort into Virus or Vaccine.",
             "topicBuckets": [
-                "Vaccine",
-                "Virus"
+                "Virus",
+                "Vaccine"
             ],
-            "hint": "Here's a tip: A vaccine protects you from disease, while a virus is the germ that causes the disease!",
-            "explanation": "Think of 'Vaccine' as substances that build immunity (shot, immunization), and 'Virus' as the pathogen causing illness (infection, pathogen)!",
+            "hint": "Think about hesitation around getting a shot, and how easily a disease spreads.",
+            "explanation": "'Vaccine hesitancy', 'vaccine efficacy', and 'vaccine rollout' are all terms connected to the vaccination process and public response to it. 'Viral load' and contagious both relate to viruses, describing how much virus is present and how easily it spreads.",
             "options": [
-                "Jab",
-                "Outbreak-cause",
-                "Immunity-builder",
-                "Microbe",
-                "Prevention-shot"
+                "Vaccine hesitancy",
+                "Viral load",
+                "Vaccine efficacy",
+                "Contagious",
+                "Vaccine rollout"
             ],
-            "correctAnswer": "Vaccine:Jab, Virus:Outbreak-cause, Vaccine:Immunity-builder, Virus:Microbe, Vaccine:Prevention-shot",
+            "correctAnswer": "Vaccine:Vaccine hesitancy, Virus:Viral load, Vaccine:Vaccine efficacy, Virus:Contagious, Vaccine:Vaccine rollout",
             "relatedWords": [
-                "aspect of Vaccine:Jab, Virus:Outbreak-cause, Vaccine:Immunity-builder, Virus:Microbe, Vaccine:Prevention-shot",
-                "concept of Vaccine:Jab, Virus:Outbreak-cause, Vaccine:Immunity-builder, Virus:Microbe, Vaccine:Prevention-shot",
-                "related to Vaccine:Jab, Virus:Outbreak-cause, Vaccine:Immunity-builder, Virus:Microbe, Vaccine:Prevention-shot"
+                "Vaccine hesitancy: reluctance or refusal to be vaccinated",
+                "Viral load: the amount of virus present in the body",
+                "Vaccine efficacy: how well a vaccine works at preventing disease",
+                "Contagious: able to spread easily from person to person",
+                "Vaccine rollout: the process of distributing and administering a vaccine"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L76_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Appetizer or Dessert.",
             "topicBuckets": [
                 "Appetizer",
                 "Dessert"
             ],
-            "hint": "Here's a tip: An appetizer is served before the main meal, while dessert is served after, usually something sweet!",
-            "explanation": "Think of 'Appetizer' as small starter dishes (starter, hors d'oeuvre), and 'Dessert' as sweet dishes served after the meal (cake, pudding)!",
+            "hint": "Think about what you'd order to begin a meal, and what you'd order to finish it.",
+            "explanation": "Starter, soup, and a 'small plate' are all common appetizers, light dishes served before the main course. Cake and pie both describe common desserts, sweet dishes served at the end of a meal.",
             "options": [
+                "Small plate",
                 "Starter",
-                "Cake",
-                "Hors-doeuvre",
-                "Pudding",
-                "Soup"
+                "Soup",
+                "Pie",
+                "Cake"
             ],
-            "correctAnswer": "Appetizer:Starter, Dessert:Cake, Appetizer:Hors-doeuvre, Dessert:Pudding, Appetizer:Soup",
+            "correctAnswer": "Appetizer:Small plate, Appetizer:Starter, Appetizer:Soup, Dessert:Pie, Dessert:Cake",
             "relatedWords": [
-                "aspect of Appetizer:Starter, Dessert:Cake, Appetizer:Hors-doeuvre, Dessert:Pudding, Appetizer:Soup",
-                "concept of Appetizer:Starter, Dessert:Cake, Appetizer:Hors-doeuvre, Dessert:Pudding, Appetizer:Soup",
-                "related to Appetizer:Starter, Dessert:Cake, Appetizer:Hors-doeuvre, Dessert:Pudding, Appetizer:Soup"
+                "Small plate: a small dish meant to be shared or eaten as a starter",
+                "Starter: a small dish served before the main course",
+                "Soup: a liquid dish, often served as a starter",
+                "Pie: a baked dish with a pastry crust, often sweet",
+                "Cake: a sweet baked dessert"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L76_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Think about a fancy small bite served before dinner starts, versus a rich Italian coffee-flavored treat. Sort into Appetizer or Dessert.",
             "topicBuckets": [
                 "Appetizer",
                 "Dessert"
             ],
-            "hint": "Here's a tip: An appetizer is served before the main meal, while dessert is served after, usually something sweet!",
-            "explanation": "Think of 'Appetizer' as small starter dishes (starter, hors d'oeuvre), and 'Dessert' as sweet dishes served after the meal (cake, pudding)!",
+            "hint": "One appetizer word specifically describes a tiny, elegant bite served before the meal officially begins.",
+            "explanation": "An amuse-bouche, a canap\u00e9, and bruschetta are all small appetizers, meant to start a meal with a light bite. Sorbet and tiramisu both describe desserts, with sorbet being a light, icy option and tiramisu a rich, layered one.",
             "options": [
-                "Canape",
-                "Ice-cream",
-                "Salad",
-                "Pie",
+                "Canap\u00e9",
+                "Tiramisu",
+                "Amuse-bouche",
+                "Sorbet",
                 "Bruschetta"
             ],
-            "correctAnswer": "Appetizer:Canape, Dessert:Ice-cream, Appetizer:Salad, Dessert:Pie, Appetizer:Bruschetta",
+            "correctAnswer": "Appetizer:Canap\u00e9, Dessert:Tiramisu, Appetizer:Amuse-bouche, Dessert:Sorbet, Appetizer:Bruschetta",
             "relatedWords": [
-                "aspect of Appetizer:Canape, Dessert:Ice-cream, Appetizer:Salad, Dessert:Pie, Appetizer:Bruschetta",
-                "concept of Appetizer:Canape, Dessert:Ice-cream, Appetizer:Salad, Dessert:Pie, Appetizer:Bruschetta",
-                "related to Appetizer:Canape, Dessert:Ice-cream, Appetizer:Salad, Dessert:Pie, Appetizer:Bruschetta"
+                "Canap\u00e9: a small appetizer served on a piece of bread or cracker",
+                "Tiramisu: a rich Italian dessert with coffee and mascarpone",
+                "Amuse-bouche: a small, complimentary bite served before a meal",
+                "Sorbet: a light, icy dessert made from fruit",
+                "Bruschetta: a small appetizer of toasted bread with toppings"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L76_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Think about how a fine dining menu might poetically describe the beginning and end of a meal. Sort into Appetizer or Dessert.",
             "topicBuckets": [
                 "Appetizer",
                 "Dessert"
             ],
-            "hint": "Here's a tip: An appetizer is served before the main meal, while dessert is served after, usually something sweet!",
-            "explanation": "Think of 'Appetizer' as small starter dishes (starter, hors d'oeuvre), and 'Dessert' as sweet dishes served after the meal (cake, pudding)!",
+            "hint": "These are figurative menu phrases, not literal dish names.",
+            "explanation": "'First course', 'palate opener', and 'prelude to the meal' are all ways a menu might describe an appetizer, emphasizing its role as the meal's beginning. 'Sweet finale' and 'decadent finish' both describe dessert, emphasizing its role as a rich, satisfying ending.",
             "options": [
-                "Dip",
-                "Tart",
-                "Spring-roll",
-                "Sundae",
-                "Tapas"
+                "Sweet finale",
+                "Palate opener",
+                "First course",
+                "Decadent finish",
+                "Prelude to the meal"
             ],
-            "correctAnswer": "Appetizer:Dip, Dessert:Tart, Appetizer:Spring-roll, Dessert:Sundae, Appetizer:Tapas",
+            "correctAnswer": "Dessert:Sweet finale, Appetizer:Palate opener, Appetizer:First course, Dessert:Decadent finish, Appetizer:Prelude to the meal",
             "relatedWords": [
-                "aspect of Appetizer:Dip, Dessert:Tart, Appetizer:Spring-roll, Dessert:Sundae, Appetizer:Tapas",
-                "concept of Appetizer:Dip, Dessert:Tart, Appetizer:Spring-roll, Dessert:Sundae, Appetizer:Tapas",
-                "related to Appetizer:Dip, Dessert:Tart, Appetizer:Spring-roll, Dessert:Sundae, Appetizer:Tapas"
+                "Sweet finale: a figurative phrase for a dessert ending a meal",
+                "Palate opener: a dish meant to prepare the taste buds for the meal",
+                "First course: the opening dish of a meal",
+                "Decadent finish: a rich, indulgent ending to a meal",
+                "Prelude to the meal: a figurative phrase for the dish that begins a meal"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L77_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Carnivore or Vegetarian.",
             "topicBuckets": [
-                "Vegetarian",
-                "Carnivore"
+                "Carnivore",
+                "Vegetarian"
             ],
-            "hint": "Here's a tip: A vegetarian eats only plants, while a carnivore eats meat!",
-            "explanation": "Think of 'Vegetarian' as plant-based eating (herbivore, plant-eater), and 'Carnivore' as meat-eating (predator, meat-eater)!",
+            "hint": "Think about a diet built entirely around plants, versus one that includes meat.",
+            "explanation": "Plant-based, herbivore, and meatless all describe a vegetarian diet or lifestyle, built around plants rather than animal products. Meat-eater and predator both describe a diet or nature built around consuming meat, with predator more commonly describing animals that hunt.",
             "options": [
+                "Meat-eater",
                 "Herbivore",
                 "Predator",
-                "Plant-eater",
-                "Meat-eater",
-                "Vegan"
+                "Meatless",
+                "Plant-based"
             ],
-            "correctAnswer": "Vegetarian:Herbivore, Carnivore:Predator, Vegetarian:Plant-eater, Carnivore:Meat-eater, Vegetarian:Vegan",
+            "correctAnswer": "Carnivore:Meat-eater, Vegetarian:Herbivore, Carnivore:Predator, Vegetarian:Meatless, Vegetarian:Plant-based",
             "relatedWords": [
-                "aspect of Vegetarian:Herbivore, Carnivore:Predator, Vegetarian:Plant-eater, Carnivore:Meat-eater, Vegetarian:Vegan",
-                "concept of Vegetarian:Herbivore, Carnivore:Predator, Vegetarian:Plant-eater, Carnivore:Meat-eater, Vegetarian:Vegan",
-                "related to Vegetarian:Herbivore, Carnivore:Predator, Vegetarian:Plant-eater, Carnivore:Meat-eater, Vegetarian:Vegan"
+                "Meat-eater: a person or animal that eats meat",
+                "Herbivore: an animal that eats only plants",
+                "Predator: an animal that hunts others for food",
+                "Meatless: without meat",
+                "Plant-based: made up of or focused on plants"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L77_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Think about a stricter version of a plant-based diet, versus behavior built around hunting flesh. Sort into Vegetarian or Carnivore.",
             "topicBuckets": [
                 "Vegetarian",
                 "Carnivore"
             ],
-            "hint": "Here's a tip: A vegetarian eats only plants, while a carnivore eats meat!",
-            "explanation": "Think of 'Vegetarian' as plant-based eating (herbivore, plant-eater), and 'Carnivore' as meat-eating (predator, meat-eater)!",
+            "hint": "One vegetarian word describes the strictest form of a plant-based diet.",
+            "explanation": "Vegan, 'plant-eater', and dairy-free all describe diets built around avoiding meat and often other animal products, with vegan being the strictest form. 'Flesh-eating' and predatory both describe carnivorous behavior, consuming meat, often through hunting.",
             "options": [
-                "Tofu-lover",
-                "Lion",
-                "Salad-eater",
-                "Wolf",
-                "Plant-based"
+                "Plant-eater",
+                "Vegan",
+                "Dairy-free",
+                "Flesh-eating",
+                "Predatory"
             ],
-            "correctAnswer": "Vegetarian:Tofu-lover, Carnivore:Lion, Vegetarian:Salad-eater, Carnivore:Wolf, Vegetarian:Plant-based",
+            "correctAnswer": "Vegetarian:Plant-eater, Vegetarian:Vegan, Vegetarian:Dairy-free, Carnivore:Flesh-eating, Carnivore:Predatory",
             "relatedWords": [
-                "aspect of Vegetarian:Tofu-lover, Carnivore:Lion, Vegetarian:Salad-eater, Carnivore:Wolf, Vegetarian:Plant-based",
-                "concept of Vegetarian:Tofu-lover, Carnivore:Lion, Vegetarian:Salad-eater, Carnivore:Wolf, Vegetarian:Plant-based",
-                "related to Vegetarian:Tofu-lover, Carnivore:Lion, Vegetarian:Salad-eater, Carnivore:Wolf, Vegetarian:Plant-based"
+                "Plant-eater: an animal or person that eats only plants",
+                "Vegan: avoiding all animal products, including dairy and eggs",
+                "Dairy-free: without dairy products",
+                "Flesh-eating: consuming meat",
+                "Predatory: behaving like a hunter, living by catching prey"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L77_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These are nutrition and ecology terms. Think about where something sits in a food chain, or what it eats to get protein. Sort into Vegetarian or Carnivore.",
             "topicBuckets": [
                 "Vegetarian",
                 "Carnivore"
             ],
-            "hint": "Here's a tip: A vegetarian eats only plants, while a carnivore eats meat!",
-            "explanation": "Think of 'Vegetarian' as plant-based eating (herbivore, plant-eater), and 'Carnivore' as meat-eating (predator, meat-eater)!",
+            "hint": "Two carnivore words describe an animal's position at the top of a food chain.",
+            "explanation": "'Legume-based', 'protein alternative', and cruelty-free all describe vegetarian eating, focused on plant sources of nutrition and ethical considerations. 'Apex predator' and 'food chain top' both describe carnivorous animals at the top of their ecosystem, relying on hunting other animals for food.",
             "options": [
-                "Legume-eater",
-                "Tiger",
-                "Greens-only",
-                "Shark",
-                "Meatless"
+                "Apex predator",
+                "Cruelty-free",
+                "Legume-based",
+                "Protein alternative",
+                "Food chain top"
             ],
-            "correctAnswer": "Vegetarian:Legume-eater, Carnivore:Tiger, Vegetarian:Greens-only, Carnivore:Shark, Vegetarian:Meatless",
+            "correctAnswer": "Carnivore:Apex predator, Vegetarian:Cruelty-free, Vegetarian:Legume-based, Vegetarian:Protein alternative, Carnivore:Food chain top",
             "relatedWords": [
-                "aspect of Vegetarian:Legume-eater, Carnivore:Tiger, Vegetarian:Greens-only, Carnivore:Shark, Vegetarian:Meatless",
-                "concept of Vegetarian:Legume-eater, Carnivore:Tiger, Vegetarian:Greens-only, Carnivore:Shark, Vegetarian:Meatless",
-                "related to Vegetarian:Legume-eater, Carnivore:Tiger, Vegetarian:Greens-only, Carnivore:Shark, Vegetarian:Meatless"
+                "Apex predator: an animal at the top of the food chain, with no natural predators",
+                "Cruelty-free: produced without harming animals",
+                "Legume-based: relying on beans, lentils, and similar plants for protein",
+                "Protein alternative: a non-meat source of protein",
+                "Food chain top: the highest position in a food chain, usually a predator"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L78_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Expense or Salary.",
             "topicBuckets": [
-                "Salary",
-                "Expense"
+                "Expense",
+                "Salary"
             ],
-            "hint": "Here's a tip: A salary is money you earn from your job, while an expense is money you spend!",
-            "explanation": "Think of 'Salary' as income earned from working (wage, paycheck), and 'Expense' as money spent on costs (bill, expenditure)!",
+            "hint": "Think about the money coming into your bank account, versus the money going out.",
+            "explanation": "Paycheck, wage, and earnings all describe money received for work. Bill and cost both describe money owed or spent, an expense leaving your account.",
             "options": [
-                "Wage",
-                "Bill",
                 "Paycheck",
-                "Expenditure",
+                "Bill",
+                "Wage",
+                "Cost",
                 "Earnings"
             ],
-            "correctAnswer": "Salary:Wage, Expense:Bill, Salary:Paycheck, Expense:Expenditure, Salary:Earnings",
+            "correctAnswer": "Salary:Paycheck, Expense:Bill, Salary:Wage, Expense:Cost, Salary:Earnings",
             "relatedWords": [
-                "aspect of Salary:Wage, Expense:Bill, Salary:Paycheck, Expense:Expenditure, Salary:Earnings",
-                "concept of Salary:Wage, Expense:Bill, Salary:Paycheck, Expense:Expenditure, Salary:Earnings",
-                "related to Salary:Wage, Expense:Bill, Salary:Paycheck, Expense:Expenditure, Salary:Earnings"
+                "Paycheck: a payment made to an employee",
+                "Bill: a statement of money owed",
+                "Wage: payment for work, often calculated hourly",
+                "Cost: the amount of money required to buy or do something",
+                "Earnings: money gained through work"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L78_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Think about the formal terms for what you're paid, versus what a business regularly spends to operate. Sort into Salary or Expense.",
             "topicBuckets": [
                 "Salary",
                 "Expense"
             ],
-            "hint": "Here's a tip: A salary is money you earn from your job, while an expense is money you spend!",
-            "explanation": "Think of 'Salary' as income earned from working (wage, paycheck), and 'Expense' as money spent on costs (bill, expenditure)!",
+            "hint": "One expense word specifically refers to the ongoing costs of running a business, like rent.",
+            "explanation": "Compensation, income, and remuneration are all formal terms for money earned through work. Overhead and outlay both describe expenses, with overhead specifically referring to the ongoing costs of running a business, like rent.",
             "options": [
+                "Compensation",
+                "Overhead",
                 "Income",
-                "Cost",
-                "Pay",
                 "Outlay",
-                "Compensation"
+                "Remuneration"
             ],
-            "correctAnswer": "Salary:Income, Expense:Cost, Salary:Pay, Expense:Outlay, Salary:Compensation",
+            "correctAnswer": "Salary:Compensation, Expense:Overhead, Salary:Income, Expense:Outlay, Salary:Remuneration",
             "relatedWords": [
-                "aspect of Salary:Income, Expense:Cost, Salary:Pay, Expense:Outlay, Salary:Compensation",
-                "concept of Salary:Income, Expense:Cost, Salary:Pay, Expense:Outlay, Salary:Compensation",
-                "related to Salary:Income, Expense:Cost, Salary:Pay, Expense:Outlay, Salary:Compensation"
+                "Compensation: payment given for work or a service",
+                "Overhead: the ongoing costs of running a business",
+                "Income: money received, especially regularly, for work",
+                "Outlay: an amount of money spent on something",
+                "Remuneration: a formal term for payment for work"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L78_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Think about the difference between what you earn before and after deductions, and spending that isn't strictly necessary. Sort into Salary or Expense.",
             "topicBuckets": [
                 "Salary",
                 "Expense"
             ],
-            "hint": "Here's a tip: A salary is money you earn from your job, while an expense is money you spend!",
-            "explanation": "Think of 'Salary' as income earned from working (wage, paycheck), and 'Expense' as money spent on costs (bill, expenditure)!",
+            "hint": "One expense word specifically refers to non-essential purchases.",
+            "explanation": "'Gross pay', 'take-home pay', and 'annual income' are all terms describing salary, though gross and take-home pay differ based on deductions like tax. 'Recurring cost' and 'discretionary spending' both describe expenses, with discretionary spending specifically referring to non-essential purchases.",
             "options": [
-                "Stipend",
-                "Overhead",
-                "Bonus",
-                "Spending",
-                "Take-home-pay"
+                "Gross pay",
+                "Take-home pay",
+                "Discretionary spending",
+                "Recurring cost",
+                "Annual income"
             ],
-            "correctAnswer": "Salary:Stipend, Expense:Overhead, Salary:Bonus, Expense:Spending, Salary:Take-home-pay",
+            "correctAnswer": "Salary:Gross pay, Salary:Take-home pay, Expense:Discretionary spending, Expense:Recurring cost, Salary:Annual income",
             "relatedWords": [
-                "aspect of Salary:Stipend, Expense:Overhead, Salary:Bonus, Expense:Spending, Salary:Take-home-pay",
-                "concept of Salary:Stipend, Expense:Overhead, Salary:Bonus, Expense:Spending, Salary:Take-home-pay",
-                "related to Salary:Stipend, Expense:Overhead, Salary:Bonus, Expense:Spending, Salary:Take-home-pay"
+                "Gross pay: total pay earned before deductions",
+                "Take-home pay: the amount of pay received after deductions",
+                "Discretionary spending: spending on non-essential items",
+                "Recurring cost: an expense that repeats regularly",
+                "Annual income: the total amount earned in a year"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L79_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Layoff or Promotion.",
             "topicBuckets": [
-                "Promotion",
-                "Layoff"
+                "Layoff",
+                "Promotion"
             ],
-            "hint": "Here's a tip: A promotion means moving up to a better job, while a layoff means losing your job!",
-            "explanation": "Think of 'Promotion' as career advancement (raise, upgrade), and 'Layoff' as job loss (dismissal, downsizing)!",
+            "hint": "Think about moving up in a company, and losing your job through no fault of your own.",
+            "explanation": "Advancement, a raise, and 'career growth' all describe positive movement forward in a job. Termination and a 'job cut' both describe losing a job, often due to company decisions rather than individual performance.",
             "options": [
                 "Raise",
-                "Dismissal",
-                "Upgrade",
-                "Downsizing",
-                "Advancement"
+                "Advancement",
+                "Job cut",
+                "Career growth",
+                "Termination"
             ],
-            "correctAnswer": "Promotion:Raise, Layoff:Dismissal, Promotion:Upgrade, Layoff:Downsizing, Promotion:Advancement",
+            "correctAnswer": "Promotion:Raise, Promotion:Advancement, Layoff:Job cut, Promotion:Career growth, Layoff:Termination",
             "relatedWords": [
-                "aspect of Promotion:Raise, Layoff:Dismissal, Promotion:Upgrade, Layoff:Downsizing, Promotion:Advancement",
-                "concept of Promotion:Raise, Layoff:Dismissal, Promotion:Upgrade, Layoff:Downsizing, Promotion:Advancement",
-                "related to Promotion:Raise, Layoff:Dismissal, Promotion:Upgrade, Layoff:Downsizing, Promotion:Advancement"
+                "Raise: an increase in pay",
+                "Advancement: progress to a higher position",
+                "Job cut: the elimination of a position, usually by a company",
+                "Career growth: progress and development in one's career",
+                "Termination: the ending of someone's employment"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L79_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "One layoff word is a common British term for being let go when a role is no longer needed. Sort into Layoff or Promotion.",
             "topicBuckets": [
-                "Promotion",
-                "Layoff"
+                "Layoff",
+                "Promotion"
             ],
-            "hint": "Here's a tip: A promotion means moving up to a better job, while a layoff means losing your job!",
-            "explanation": "Think of 'Promotion' as career advancement (raise, upgrade), and 'Layoff' as job loss (dismissal, downsizing)!",
+            "hint": "Think about moving up a company, versus a company reducing its workforce.",
+            "explanation": "An 'upward move', a 'title change', and 'step up' all describe being promoted, gaining a higher position. Downsizing and redundancy both describe layoffs, with redundancy being the common British English term for a job being eliminated.",
             "options": [
-                "Title-change",
-                "Termination",
-                "Step-up",
+                "Step up",
                 "Redundancy",
-                "Recognition"
+                "Downsizing",
+                "Upward move",
+                "Title change"
             ],
-            "correctAnswer": "Promotion:Title-change, Layoff:Termination, Promotion:Step-up, Layoff:Redundancy, Promotion:Recognition",
+            "correctAnswer": "Promotion:Step up, Layoff:Redundancy, Layoff:Downsizing, Promotion:Upward move, Promotion:Title change",
             "relatedWords": [
-                "aspect of Promotion:Title-change, Layoff:Termination, Promotion:Step-up, Layoff:Redundancy, Promotion:Recognition",
-                "concept of Promotion:Title-change, Layoff:Termination, Promotion:Step-up, Layoff:Redundancy, Promotion:Recognition",
-                "related to Promotion:Title-change, Layoff:Termination, Promotion:Step-up, Layoff:Redundancy, Promotion:Recognition"
+                "Step up: to take on a higher or more responsible role",
+                "Redundancy: the British English term for a job being eliminated",
+                "Downsizing: reducing the size of a workforce",
+                "Upward move: a move to a higher position",
+                "Title change: a change in job title, often part of a promotion"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L79_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Two layoff words are corporate euphemisms \u2014 softer language for job losses. Sort into Layoff or Promotion.",
             "topicBuckets": [
-                "Promotion",
-                "Layoff"
+                "Layoff",
+                "Promotion"
             ],
-            "hint": "Here's a tip: A promotion means moving up to a better job, while a layoff means losing your job!",
-            "explanation": "Think of 'Promotion' as career advancement (raise, upgrade), and 'Layoff' as job loss (dismissal, downsizing)!",
+            "hint": "Think about softened corporate language versus figurative phrases for career success.",
+            "explanation": "'Fast-tracked', the 'career ladder', and the 'corner office' all describe advancement, with the corner office being a figurative idiom for reaching a senior position. Restructuring and 'workforce reduction' are both corporate euphemisms for layoffs, softer language for job losses.",
             "options": [
-                "Career-growth",
-                "Job-cut",
-                "Bonus-role",
-                "Pink-slip",
-                "Higher-rank"
+                "Workforce reduction",
+                "Career ladder",
+                "Fast-tracked",
+                "Corner office",
+                "Restructuring"
             ],
-            "correctAnswer": "Promotion:Career-growth, Layoff:Job-cut, Promotion:Bonus-role, Layoff:Pink-slip, Promotion:Higher-rank",
+            "correctAnswer": "Layoff:Workforce reduction, Promotion:Career ladder, Promotion:Fast-tracked, Promotion:Corner office, Layoff:Restructuring",
             "relatedWords": [
-                "aspect of Promotion:Career-growth, Layoff:Job-cut, Promotion:Bonus-role, Layoff:Pink-slip, Promotion:Higher-rank",
-                "concept of Promotion:Career-growth, Layoff:Job-cut, Promotion:Bonus-role, Layoff:Pink-slip, Promotion:Higher-rank",
-                "related to Promotion:Career-growth, Layoff:Job-cut, Promotion:Bonus-role, Layoff:Pink-slip, Promotion:Higher-rank"
+                "Workforce reduction: a corporate term for reducing the number of employees",
+                "Career ladder: a figurative term for the path of advancement in a career",
+                "Fast-tracked: promoted or advanced more quickly than usual",
+                "Corner office: a figurative term for a senior executive position",
+                "Restructuring: a corporate euphemism for reorganizing, often involving layoffs"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L80_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Holiday or Deadline.",
             "topicBuckets": [
-                "Deadline",
-                "Holiday"
+                "Holiday",
+                "Deadline"
             ],
-            "hint": "Here's a tip: A deadline is the date work must be finished, while a holiday is a day off from work!",
-            "explanation": "Think of 'Deadline' as the due date for completing work (cutoff, due-date), and 'Holiday' as time off from work (vacation, day-off)!",
+            "hint": "Think about the date a project must be finished, and the day you get to rest.",
+            "explanation": "Due date, cutoff, and 'submission date' all describe a deadline, the final point by which something must be done. Vacation and 'day off' both describe a holiday, time away from work or school.",
             "options": [
+                "Due date",
                 "Cutoff",
                 "Vacation",
-                "Due-date",
-                "Day-off",
-                "Time-limit"
+                "Submission date",
+                "Day off"
             ],
-            "correctAnswer": "Deadline:Cutoff, Holiday:Vacation, Deadline:Due-date, Holiday:Day-off, Deadline:Time-limit",
+            "correctAnswer": "Deadline:Due date, Deadline:Cutoff, Holiday:Vacation, Deadline:Submission date, Holiday:Day off",
             "relatedWords": [
-                "aspect of Deadline:Cutoff, Holiday:Vacation, Deadline:Due-date, Holiday:Day-off, Deadline:Time-limit",
-                "concept of Deadline:Cutoff, Holiday:Vacation, Deadline:Due-date, Holiday:Day-off, Deadline:Time-limit",
-                "related to Deadline:Cutoff, Holiday:Vacation, Deadline:Due-date, Holiday:Day-off, Deadline:Time-limit"
+                "Due date: the date by which something must be completed",
+                "Cutoff: the final point after which something is no longer accepted",
+                "Vacation: a period of time spent away from work or school, for rest",
+                "Submission date: the date by which work must be turned in",
+                "Day off: a day when someone doesn't have to work"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L80_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Think about the pressure of running out of time, versus an extra day off tacked onto the weekend. Sort into Holiday or Deadline.",
             "topicBuckets": [
-                "Deadline",
-                "Holiday"
+                "Holiday",
+                "Deadline"
             ],
-            "hint": "Here's a tip: A deadline is the date work must be finished, while a holiday is a day off from work!",
-            "explanation": "Think of 'Deadline' as the due date for completing work (cutoff, due-date), and 'Holiday' as time off from work (vacation, day-off)!",
+            "hint": "Two deadline words describe the flexibility or pressure around a due date.",
+            "explanation": "'Time crunch', an extension, and 'last-minute rush' are all connected to deadlines, describing the pressure or flexibility around a due date. A 'long weekend' and a 'public holiday' both describe time off work, whether from an official holiday or an extra day added to the weekend.",
             "options": [
-                "Submission-date",
-                "Break",
-                "Final-date",
-                "Leave",
-                "Target-date"
+                "Extension",
+                "Public holiday",
+                "Last-minute rush",
+                "Time crunch",
+                "Long weekend"
             ],
-            "correctAnswer": "Deadline:Submission-date, Holiday:Break, Deadline:Final-date, Holiday:Leave, Deadline:Target-date",
+            "correctAnswer": "Deadline:Extension, Holiday:Public holiday, Deadline:Last-minute rush, Deadline:Time crunch, Holiday:Long weekend",
             "relatedWords": [
-                "aspect of Deadline:Submission-date, Holiday:Break, Deadline:Final-date, Holiday:Leave, Deadline:Target-date",
-                "concept of Deadline:Submission-date, Holiday:Break, Deadline:Final-date, Holiday:Leave, Deadline:Target-date",
-                "related to Deadline:Submission-date, Holiday:Break, Deadline:Final-date, Holiday:Leave, Deadline:Target-date"
+                "Extension: additional time granted beyond the original deadline",
+                "Public holiday: an official day off recognized nationwide",
+                "Last-minute rush: a hurried effort to finish just before a deadline",
+                "Time crunch: a period of pressure caused by limited time",
+                "Long weekend: a weekend extended by an extra day off"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L80_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Think about school terms and British public holidays, versus deadlines that can or can't be moved. Sort into Holiday or Deadline.",
             "topicBuckets": [
-                "Deadline",
-                "Holiday"
+                "Holiday",
+                "Deadline"
             ],
-            "hint": "Here's a tip: A deadline is the date work must be finished, while a holiday is a day off from work!",
-            "explanation": "Think of 'Deadline' as the due date for completing work (cutoff, due-date), and 'Holiday' as time off from work (vacation, day-off)!",
+            "hint": "One deadline word describes one that absolutely cannot be moved.",
+            "explanation": "A 'hard deadline', a 'rolling deadline', and a 'grace period' are all terms describing how strict or flexible a deadline is. A 'term break' and a 'bank holiday' both describe time off, with bank holiday being the British English term for a public holiday.",
             "options": [
-                "Closing-date",
-                "Festival",
-                "Expiry",
-                "Rest-day",
-                "Time-up"
+                "Rolling deadline",
+                "Bank holiday",
+                "Grace period",
+                "Hard deadline",
+                "Term break"
             ],
-            "correctAnswer": "Deadline:Closing-date, Holiday:Festival, Deadline:Expiry, Holiday:Rest-day, Deadline:Time-up",
+            "correctAnswer": "Deadline:Rolling deadline, Holiday:Bank holiday, Deadline:Grace period, Deadline:Hard deadline, Holiday:Term break",
             "relatedWords": [
-                "aspect of Deadline:Closing-date, Holiday:Festival, Deadline:Expiry, Holiday:Rest-day, Deadline:Time-up",
-                "concept of Deadline:Closing-date, Holiday:Festival, Deadline:Expiry, Holiday:Rest-day, Deadline:Time-up",
-                "related to Deadline:Closing-date, Holiday:Festival, Deadline:Expiry, Holiday:Rest-day, Deadline:Time-up"
+                "Rolling deadline: a deadline with flexible, ongoing timing",
+                "Bank holiday: the British English term for a public holiday",
+                "Grace period: a short extra period allowed after a deadline",
+                "Hard deadline: a deadline that cannot be extended or moved",
+                "Term break: a school holiday between academic terms"
             ]
         }
     ]

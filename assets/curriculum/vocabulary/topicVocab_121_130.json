@@ -6,721 +6,781 @@
         {
             "id": "VOC_TOPICVOCAB_L121_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These are neutral, factual terms used in records and biographies. Sort into Birth or Death.",
             "topicBuckets": [
                 "Birth",
                 "Death"
             ],
-            "hint": "Here's a tip: Birth is the beginning of life, while death is the end of life!",
-            "explanation": "Think of 'Birth' as the start of life (delivery, arrival-of-a-baby), and 'Death' as the end of life (passing, demise)!",
+            "hint": "Think about the two dates printed on any official life record.",
+            "explanation": "'Newborn', 'delivery', and 'date of birth' all mark a life beginning, and appear on birth certificates worldwide. 'Passing' and 'date of death' both mark a life ending, with 'passing' being the gentler term usually preferred in everyday speech.",
             "options": [
+                "Newborn",
+                "Date of birth",
+                "Date of death",
                 "Delivery",
-                "Passing",
-                "Arrival-of-a-baby",
-                "Demise",
-                "Nativity"
+                "Passing"
             ],
-            "correctAnswer": "Birth:Delivery, Death:Passing, Birth:Arrival-of-a-baby, Death:Demise, Birth:Nativity",
+            "correctAnswer": "Birth:Newborn, Birth:Date of birth, Death:Date of death, Birth:Delivery, Death:Passing",
             "relatedWords": [
-                "aspect of Birth:Delivery, Death:Passing, Birth:Arrival-of-a-baby, Death:Demise, Birth:Nativity",
-                "concept of Birth:Delivery, Death:Passing, Birth:Arrival-of-a-baby, Death:Demise, Birth:Nativity",
-                "related to Birth:Delivery, Death:Passing, Birth:Arrival-of-a-baby, Death:Demise, Birth:Nativity"
+                "Newborn: a very recently born baby",
+                "Date of birth: the recorded day a person was born",
+                "Date of death: the recorded day a person died",
+                "Delivery: the act of giving birth",
+                "Passing: a gentle term for someone's death"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L121_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "One word names the writing that summarises a person's life after they die. Sort into Birth or Death.",
             "topicBuckets": [
                 "Birth",
                 "Death"
             ],
-            "hint": "Here's a tip: Birth is the beginning of life, while death is the end of life!",
-            "explanation": "Think of 'Birth' as the start of life (delivery, arrival-of-a-baby), and 'Death' as the end of life (passing, demise)!",
+            "hint": "Think about the documents that bracket a life.",
+            "explanation": "'Maternity' and 'labour' both concern the process of giving birth, and 'christening' is a ceremony welcoming a newborn in some traditions. An 'obituary' is the published notice summarising someone's life after death, and a 'funeral' is the ceremony marking it.",
             "options": [
-                "Childbirth",
-                "Mortality",
-                "Beginning-of-life",
-                "End-of-life",
-                "Newborn-arrival"
+                "Maternity",
+                "Obituary",
+                "Labour",
+                "Christening",
+                "Funeral"
             ],
-            "correctAnswer": "Birth:Childbirth, Death:Mortality, Birth:Beginning-of-life, Death:End-of-life, Birth:Newborn-arrival",
+            "correctAnswer": "Birth:Maternity, Death:Obituary, Birth:Labour, Birth:Christening, Death:Funeral",
             "relatedWords": [
-                "aspect of Birth:Childbirth, Death:Mortality, Birth:Beginning-of-life, Death:End-of-life, Birth:Newborn-arrival",
-                "concept of Birth:Childbirth, Death:Mortality, Birth:Beginning-of-life, Death:End-of-life, Birth:Newborn-arrival",
-                "related to Birth:Childbirth, Death:Mortality, Birth:Beginning-of-life, Death:End-of-life, Birth:Newborn-arrival"
+                "Maternity: relating to pregnancy and childbirth",
+                "Obituary: a published notice of someone's death and life",
+                "Labour: the process of giving birth",
+                "Christening: a ceremony naming and welcoming a baby",
+                "Funeral: a ceremony held after someone dies"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L121_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These appear in writing about populations rather than individuals. Sort into Death or Birth.",
             "topicBuckets": [
-                "Birth",
-                "Death"
+                "Death",
+                "Birth"
             ],
-            "hint": "Here's a tip: Birth is the beginning of life, while death is the end of life!",
-            "explanation": "Think of 'Birth' as the start of life (delivery, arrival-of-a-baby), and 'Death' as the end of life (passing, demise)!",
+            "hint": "Demographers track both ends of life as rates across a whole population.",
+            "explanation": "'Birth rate' and 'natality' both measure how many people are born in a population, with natality being the technical term. 'Mortality' and 'life expectancy' both concern death across a population \u2014 mortality measuring deaths, life expectancy estimating how long people live. 'Fertility rate' measures births per woman.",
             "options": [
-                "Labor",
-                "Decease",
-                "Genesis-of-life",
-                "Expiration",
-                "First-breath"
+                "Fertility rate",
+                "Natality",
+                "Life expectancy",
+                "Mortality",
+                "Birth rate"
             ],
-            "correctAnswer": "Birth:Labor, Death:Decease, Birth:Genesis-of-life, Death:Expiration, Birth:First-breath",
+            "correctAnswer": "Birth:Fertility rate, Birth:Natality, Death:Life expectancy, Death:Mortality, Birth:Birth rate",
             "relatedWords": [
-                "aspect of Birth:Labor, Death:Decease, Birth:Genesis-of-life, Death:Expiration, Birth:First-breath",
-                "concept of Birth:Labor, Death:Decease, Birth:Genesis-of-life, Death:Expiration, Birth:First-breath",
-                "related to Birth:Labor, Death:Decease, Birth:Genesis-of-life, Death:Expiration, Birth:First-breath"
+                "Fertility rate: the average number of children born per woman",
+                "Natality: the technical term for birth rate",
+                "Life expectancy: the average length of life expected",
+                "Mortality: the rate of deaths in a population",
+                "Birth rate: the number of births per population"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L122_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Old Age or Infancy.",
             "topicBuckets": [
-                "Infancy",
-                "Old Age"
+                "Old Age",
+                "Infancy"
             ],
-            "hint": "Here's a tip: Infancy is the very start of life, when you are a baby, while old age comes near the end of life, after many years!",
-            "explanation": "Think of 'Infancy' as the earliest stage of life (babyhood, earliest-years), and 'Old Age' as the final stage of life (elderly-years, senior-years)!",
+            "hint": "Think about the first year of life and the last stage of it.",
+            "explanation": "'Baby', 'cradle', and 'first steps' all belong to the earliest months of life. 'Retirement' and 'grey hair' both mark later life, with retirement being a social milestone rather than a biological one.",
             "options": [
-                "Babyhood",
-                "Elderly-years",
-                "Earliest-years",
-                "Senior-years",
-                "Toddlerhood"
+                "Baby",
+                "Cradle",
+                "Grey hair",
+                "First steps",
+                "Retirement"
             ],
-            "correctAnswer": "Infancy:Babyhood, Old Age:Elderly-years, Infancy:Earliest-years, Old Age:Senior-years, Infancy:Toddlerhood",
+            "correctAnswer": "Infancy:Baby, Infancy:Cradle, Old Age:Grey hair, Infancy:First steps, Old Age:Retirement",
             "relatedWords": [
-                "aspect of Infancy:Babyhood, Old Age:Elderly-years, Infancy:Earliest-years, Old Age:Senior-years, Infancy:Toddlerhood",
-                "concept of Infancy:Babyhood, Old Age:Elderly-years, Infancy:Earliest-years, Old Age:Senior-years, Infancy:Toddlerhood",
-                "related to Infancy:Babyhood, Old Age:Elderly-years, Infancy:Earliest-years, Old Age:Senior-years, Infancy:Toddlerhood"
+                "Baby: a very young child",
+                "Cradle: a small bed for an infant",
+                "Grey hair: hair losing pigment with age",
+                "First steps: a baby's first attempts at walking",
+                "Retirement: leaving working life, usually in later years"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L122_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "One old-age word is the formal medical term for care of older people. Sort into Infancy or Old Age.",
             "topicBuckets": [
                 "Infancy",
                 "Old Age"
             ],
-            "hint": "Here's a tip: Infancy is the very start of life, when you are a baby, while old age comes near the end of life, after many years!",
-            "explanation": "Think of 'Infancy' as the earliest stage of life (babyhood, earliest-years), and 'Old Age' as the final stage of life (elderly-years, senior-years)!",
+            "hint": "Medicine has separate specialisms for each end of life.",
+            "explanation": "'Paediatric' and 'nursing' both concern the care of the very young, and 'teething' is a milestone of early infancy. 'Geriatric' is the formal medical term for care of older people, and 'elderly' is the general descriptive word.",
             "options": [
-                "Newborn-stage",
-                "Retirement-years",
-                "Crib-years",
-                "Twilight-years",
-                "Cradle-age"
+                "Teething",
+                "Geriatric",
+                "Paediatric",
+                "Elderly",
+                "Nursing"
             ],
-            "correctAnswer": "Infancy:Newborn-stage, Old Age:Retirement-years, Infancy:Crib-years, Old Age:Twilight-years, Infancy:Cradle-age",
+            "correctAnswer": "Infancy:Teething, Old Age:Geriatric, Infancy:Paediatric, Old Age:Elderly, Infancy:Nursing",
             "relatedWords": [
-                "aspect of Infancy:Newborn-stage, Old Age:Retirement-years, Infancy:Crib-years, Old Age:Twilight-years, Infancy:Cradle-age",
-                "concept of Infancy:Newborn-stage, Old Age:Retirement-years, Infancy:Crib-years, Old Age:Twilight-years, Infancy:Cradle-age",
-                "related to Infancy:Newborn-stage, Old Age:Retirement-years, Infancy:Crib-years, Old Age:Twilight-years, Infancy:Cradle-age"
+                "Teething: the stage when a baby's teeth emerge",
+                "Geriatric: relating to the medical care of older people",
+                "Paediatric: relating to the medical care of children",
+                "Elderly: in the later years of life",
+                "Nursing: feeding and caring for an infant"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L122_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These describe how each stage of life is talked about respectfully. Sort into Infancy or Old Age.",
             "topicBuckets": [
                 "Infancy",
                 "Old Age"
             ],
-            "hint": "Here's a tip: Infancy is the very start of life, when you are a baby, while old age comes near the end of life, after many years!",
-            "explanation": "Think of 'Infancy' as the earliest stage of life (babyhood, earliest-years), and 'Old Age' as the final stage of life (elderly-years, senior-years)!",
+            "hint": "Two of these are respectful ways of describing later life.",
+            "explanation": "'In the cradle' and 'barely walking' both describe the earliest stage of life, and 'wholly dependent' describes an infant's reliance on carers. 'Golden years' and 'senior citizen' are both respectful ways of describing later life, preferred over blunter alternatives.",
             "options": [
-                "Diaper-stage",
-                "Golden-years",
-                "Suckling-period",
-                "Geriatric-stage",
-                "First-year-of-life"
+                "Wholly dependent",
+                "In the cradle",
+                "Senior citizen",
+                "Golden years",
+                "Barely walking"
             ],
-            "correctAnswer": "Infancy:Diaper-stage, Old Age:Golden-years, Infancy:Suckling-period, Old Age:Geriatric-stage, Infancy:First-year-of-life",
+            "correctAnswer": "Infancy:Wholly dependent, Infancy:In the cradle, Old Age:Senior citizen, Old Age:Golden years, Infancy:Barely walking",
             "relatedWords": [
-                "aspect of Infancy:Diaper-stage, Old Age:Golden-years, Infancy:Suckling-period, Old Age:Geriatric-stage, Infancy:First-year-of-life",
-                "concept of Infancy:Diaper-stage, Old Age:Golden-years, Infancy:Suckling-period, Old Age:Geriatric-stage, Infancy:First-year-of-life",
-                "related to Infancy:Diaper-stage, Old Age:Golden-years, Infancy:Suckling-period, Old Age:Geriatric-stage, Infancy:First-year-of-life"
+                "Wholly dependent: completely reliant on others for care",
+                "In the cradle: at the very earliest stage of life",
+                "Senior citizen: a respectful term for an older person",
+                "Golden years: a respectful phrase for later life",
+                "Barely walking: only just beginning to walk"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L123_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Toddler or Teenager.",
             "topicBuckets": [
                 "Toddler",
                 "Teenager"
             ],
-            "hint": "Here's a tip: A toddler is a young child just learning to walk, while a teenager is between 13 and 19 years old!",
-            "explanation": "Think of 'Toddler' as a very young child learning to walk (small-child, preschooler), and 'Teenager' as someone aged thirteen to nineteen (adolescent, youth)!",
+            "hint": "Think about a two-year-old and a fifteen-year-old.",
+            "explanation": "'Nappy', 'tantrum', and 'nursery' all belong to the toddler years. 'Puberty' and 'high school' both belong to adolescence, marking physical and educational stages.",
             "options": [
-                "Small-child",
-                "Adolescent",
-                "Preschooler",
-                "Youth",
-                "Tot"
+                "Nappy",
+                "High school",
+                "Nursery",
+                "Tantrum",
+                "Puberty"
             ],
-            "correctAnswer": "Toddler:Small-child, Teenager:Adolescent, Toddler:Preschooler, Teenager:Youth, Toddler:Tot",
+            "correctAnswer": "Toddler:Nappy, Teenager:High school, Toddler:Nursery, Toddler:Tantrum, Teenager:Puberty",
             "relatedWords": [
-                "aspect of Toddler:Small-child, Teenager:Adolescent, Toddler:Preschooler, Teenager:Youth, Toddler:Tot",
-                "concept of Toddler:Small-child, Teenager:Adolescent, Toddler:Preschooler, Teenager:Youth, Toddler:Tot",
-                "related to Toddler:Small-child, Teenager:Adolescent, Toddler:Preschooler, Teenager:Youth, Toddler:Tot"
+                "Nappy: an absorbent garment worn by babies and toddlers",
+                "High school: secondary education, typically for teenagers",
+                "Nursery: a place caring for very young children",
+                "Tantrum: an outburst of frustration in a young child",
+                "Puberty: the stage of physical development into adulthood"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L123_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "One teenager word describes wanting to make your own decisions. Sort into Teenager or Toddler.",
             "topicBuckets": [
-                "Toddler",
-                "Teenager"
+                "Teenager",
+                "Toddler"
             ],
-            "hint": "Here's a tip: A toddler is a young child just learning to walk, while a teenager is between 13 and 19 years old!",
-            "explanation": "Think of 'Toddler' as a very young child learning to walk (small-child, preschooler), and 'Teenager' as someone aged thirteen to nineteen (adolescent, youth)!",
+            "hint": "Both stages push for independence, but in very different ways.",
+            "explanation": "'Learning to speak' and 'supervised play' both describe toddler development, and 'toddling' names the unsteady walk the stage is named after. 'Independence' and 'peer pressure' both shape adolescence, where influence shifts from parents toward friends.",
             "options": [
-                "Little-one",
-                "Teen",
-                "Kindergartener",
-                "Highschooler",
-                "Toddling-child"
+                "Independence",
+                "Toddling",
+                "Supervised play",
+                "Learning to speak",
+                "Peer pressure"
             ],
-            "correctAnswer": "Toddler:Little-one, Teenager:Teen, Toddler:Kindergartener, Teenager:Highschooler, Toddler:Toddling-child",
+            "correctAnswer": "Teenager:Independence, Toddler:Toddling, Toddler:Supervised play, Toddler:Learning to speak, Teenager:Peer pressure",
             "relatedWords": [
-                "aspect of Toddler:Little-one, Teenager:Teen, Toddler:Kindergartener, Teenager:Highschooler, Toddler:Toddling-child",
-                "concept of Toddler:Little-one, Teenager:Teen, Toddler:Kindergartener, Teenager:Highschooler, Toddler:Toddling-child",
-                "related to Toddler:Little-one, Teenager:Teen, Toddler:Kindergartener, Teenager:Highschooler, Toddler:Toddling-child"
+                "Independence: the desire to make one's own decisions",
+                "Toddling: walking with short, unsteady steps",
+                "Supervised play: play watched over by an adult",
+                "Learning to speak: acquiring first words and phrases",
+                "Peer pressure: influence from friends of the same age"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L123_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Picture a parenting article covering both stages. Sort into Toddler or Teenager.",
             "topicBuckets": [
                 "Toddler",
                 "Teenager"
             ],
-            "hint": "Here's a tip: A toddler is a young child just learning to walk, while a teenager is between 13 and 19 years old!",
-            "explanation": "Think of 'Toddler' as a very young child learning to walk (small-child, preschooler), and 'Teenager' as someone aged thirteen to nineteen (adolescent, youth)!",
+            "hint": "One phrase names the difficult stage around age two.",
+            "explanation": "'The terrible twos' names the famously difficult stage around age two, alongside 'potty training' and 'naptime'. 'Curfew' and 'part-time job' both belong to adolescence, where parents negotiate freedoms rather than manage routines.",
             "options": [
-                "Pre-K-age",
-                "Pre-college-youth",
-                "Crawler-turned-walker",
-                "Pubescent",
-                "Nursery-age"
+                "The terrible twos",
+                "Curfew",
+                "Part-time job",
+                "Potty training",
+                "Naptime"
             ],
-            "correctAnswer": "Toddler:Pre-K-age, Teenager:Pre-college-youth, Toddler:Crawler-turned-walker, Teenager:Pubescent, Toddler:Nursery-age",
+            "correctAnswer": "Toddler:The terrible twos, Teenager:Curfew, Teenager:Part-time job, Toddler:Potty training, Toddler:Naptime",
             "relatedWords": [
-                "aspect of Toddler:Pre-K-age, Teenager:Pre-college-youth, Toddler:Crawler-turned-walker, Teenager:Pubescent, Toddler:Nursery-age",
-                "concept of Toddler:Pre-K-age, Teenager:Pre-college-youth, Toddler:Crawler-turned-walker, Teenager:Pubescent, Toddler:Nursery-age",
-                "related to Toddler:Pre-K-age, Teenager:Pre-college-youth, Toddler:Crawler-turned-walker, Teenager:Pubescent, Toddler:Nursery-age"
+                "The terrible twos: the challenging stage around age two",
+                "Curfew: a set time by which someone must be home",
+                "Part-time job: limited paid work, common among teenagers",
+                "Potty training: teaching a child to use a toilet",
+                "Naptime: a scheduled daytime sleep"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L124_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Parent or Offspring, using neutral biological terms.",
             "topicBuckets": [
                 "Parent",
                 "Offspring"
             ],
-            "hint": "Here's a tip: A parent raises children, while offspring are the children that parent has!",
-            "explanation": "Think of 'Parent' as a mother or father (guardian, caregiver), and 'Offspring' as the children of a parent (descendant, progeny)!",
+            "hint": "Think about which generation produces, and which is produced.",
+            "explanation": "'Mother', 'father', and 'guardian' all name the caring generation, with guardian covering non-biological carers. 'Child' and 'descendant' both name those who come after, with descendant covering later generations too.",
             "options": [
-                "Guardian",
                 "Descendant",
-                "Caregiver",
-                "Progeny",
-                "Caretaker"
+                "Father",
+                "Guardian",
+                "Child",
+                "Mother"
             ],
-            "correctAnswer": "Parent:Guardian, Offspring:Descendant, Parent:Caregiver, Offspring:Progeny, Parent:Caretaker",
+            "correctAnswer": "Offspring:Descendant, Parent:Father, Parent:Guardian, Offspring:Child, Parent:Mother",
             "relatedWords": [
-                "aspect of Parent:Guardian, Offspring:Descendant, Parent:Caregiver, Offspring:Progeny, Parent:Caretaker",
-                "concept of Parent:Guardian, Offspring:Descendant, Parent:Caregiver, Offspring:Progeny, Parent:Caretaker",
-                "related to Parent:Guardian, Offspring:Descendant, Parent:Caregiver, Offspring:Progeny, Parent:Caretaker"
+                "Descendant: a person descended from another",
+                "Father: a male parent",
+                "Guardian: someone legally responsible for a child",
+                "Child: a son or daughter",
+                "Mother: a female parent"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L124_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These are biology terms used for animals as well as people. Sort into Parent or Offspring.",
             "topicBuckets": [
                 "Parent",
                 "Offspring"
             ],
-            "hint": "Here's a tip: A parent raises children, while offspring are the children that parent has!",
-            "explanation": "Think of 'Parent' as a mother or father (guardian, caregiver), and 'Offspring' as the children of a parent (descendant, progeny)!",
+            "hint": "Biologists use the same framework across species.",
+            "explanation": "'Progenitor' and 'sire' both name a producing generation, with sire used mainly for male animals in breeding. 'Progeny', 'litter', and 'hatchling' all name what is produced, with a litter being multiple young born together.",
             "options": [
-                "Mom-or-dad",
-                "Heir",
-                "Provider",
-                "Successor",
-                "Nurturer"
+                "Progeny",
+                "Sire",
+                "Progenitor",
+                "Litter",
+                "Hatchling"
             ],
-            "correctAnswer": "Parent:Mom-or-dad, Offspring:Heir, Parent:Provider, Offspring:Successor, Parent:Nurturer",
+            "correctAnswer": "Offspring:Progeny, Parent:Sire, Parent:Progenitor, Offspring:Litter, Offspring:Hatchling",
             "relatedWords": [
-                "aspect of Parent:Mom-or-dad, Offspring:Heir, Parent:Provider, Offspring:Successor, Parent:Nurturer",
-                "concept of Parent:Mom-or-dad, Offspring:Heir, Parent:Provider, Offspring:Successor, Parent:Nurturer",
-                "related to Parent:Mom-or-dad, Offspring:Heir, Parent:Provider, Offspring:Successor, Parent:Nurturer"
+                "Progeny: the young produced by a parent",
+                "Sire: a male parent, especially in animal breeding",
+                "Progenitor: an ancestor from whom others descend",
+                "Litter: several young born at one time",
+                "Hatchling: a young animal newly emerged from an egg"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L124_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These appear in writing about inheritance and family lines. Sort into Parent or Offspring.",
             "topicBuckets": [
                 "Parent",
                 "Offspring"
             ],
-            "hint": "Here's a tip: A parent raises children, while offspring are the children that parent has!",
-            "explanation": "Think of 'Parent' as a mother or father (guardian, caregiver), and 'Offspring' as the children of a parent (descendant, progeny)!",
+            "hint": "One phrase names those who come after in a family line.",
+            "explanation": "'Ancestral line' and 'passes down' both describe the older generation's role in transmitting traits or property, and 'maternal side' identifies one branch of it. 'Heir' and 'next generation' both name those who come after and receive what is passed on.",
             "options": [
-                "Begetter",
-                "Young-one",
-                "Custodian",
-                "Next-generation",
-                "Procreator"
+                "Next generation",
+                "Maternal side",
+                "Passes down",
+                "Heir",
+                "Ancestral line"
             ],
-            "correctAnswer": "Parent:Begetter, Offspring:Young-one, Parent:Custodian, Offspring:Next-generation, Parent:Procreator",
+            "correctAnswer": "Offspring:Next generation, Parent:Maternal side, Parent:Passes down, Offspring:Heir, Parent:Ancestral line",
             "relatedWords": [
-                "aspect of Parent:Begetter, Offspring:Young-one, Parent:Custodian, Offspring:Next-generation, Parent:Procreator",
-                "concept of Parent:Begetter, Offspring:Young-one, Parent:Custodian, Offspring:Next-generation, Parent:Procreator",
-                "related to Parent:Begetter, Offspring:Young-one, Parent:Custodian, Offspring:Next-generation, Parent:Procreator"
+                "Next generation: those who come after",
+                "Maternal side: the mother's branch of a family",
+                "Passes down: transmits to a later generation",
+                "Heir: a person who inherits from another",
+                "Ancestral line: the sequence of generations someone descends from"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L125_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Friend or Foe.",
             "topicBuckets": [
                 "Friend",
                 "Foe"
             ],
-            "hint": "Here's a tip: A friend supports and likes you, while a foe opposes and works against you!",
-            "explanation": "Think of 'Friend' as someone who supports you (ally, companion), and 'Foe' as someone who opposes you (enemy, adversary)!",
+            "hint": "Think about who stands beside you, and who stands against you.",
+            "explanation": "A companion, a confidant, and an ally all stand with you, with a confidant being someone you trust with private matters. An enemy and an antagonist both stand against you, with antagonist often used for a story's opposing figure.",
             "options": [
-                "Ally",
                 "Enemy",
-                "Companion",
-                "Adversary",
-                "Buddy"
+                "Antagonist",
+                "Ally",
+                "Confidant",
+                "Companion"
             ],
-            "correctAnswer": "Friend:Ally, Foe:Enemy, Friend:Companion, Foe:Adversary, Friend:Buddy",
+            "correctAnswer": "Foe:Enemy, Foe:Antagonist, Friend:Ally, Friend:Confidant, Friend:Companion",
             "relatedWords": [
-                "aspect of Friend:Ally, Foe:Enemy, Friend:Companion, Foe:Adversary, Friend:Buddy",
-                "concept of Friend:Ally, Foe:Enemy, Friend:Companion, Foe:Adversary, Friend:Buddy",
-                "related to Friend:Ally, Foe:Enemy, Friend:Companion, Foe:Adversary, Friend:Buddy"
+                "Enemy: someone actively opposed to you",
+                "Antagonist: an opposing figure, especially in a story",
+                "Ally: someone who supports your side",
+                "Confidant: someone trusted with private matters",
+                "Companion: someone who accompanies and supports you"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L125_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "One word describes someone who pretends friendship while working against you. Sort into Foe or Friend.",
             "topicBuckets": [
-                "Friend",
-                "Foe"
+                "Foe",
+                "Friend"
             ],
-            "hint": "Here's a tip: A friend supports and likes you, while a foe opposes and works against you!",
-            "explanation": "Think of 'Friend' as someone who supports you (ally, companion), and 'Foe' as someone who opposes you (enemy, adversary)!",
+            "hint": "Not every foe announces themselves.",
+            "explanation": "'Well-wisher' and 'loyal supporter' both describe genuine goodwill, and 'kindred spirit' describes someone who shares your outlook. A 'traitor' works against you from within, and a 'nemesis' is a long-standing opponent who keeps reappearing.",
             "options": [
-                "Confidant",
-                "Opponent",
-                "Supporter",
-                "Antagonist",
-                "Pal"
+                "Nemesis",
+                "Traitor",
+                "Kindred spirit",
+                "Loyal supporter",
+                "Well-wisher"
             ],
-            "correctAnswer": "Friend:Confidant, Foe:Opponent, Friend:Supporter, Foe:Antagonist, Friend:Pal",
+            "correctAnswer": "Foe:Nemesis, Foe:Traitor, Friend:Kindred spirit, Friend:Loyal supporter, Friend:Well-wisher",
             "relatedWords": [
-                "aspect of Friend:Confidant, Foe:Opponent, Friend:Supporter, Foe:Antagonist, Friend:Pal",
-                "concept of Friend:Confidant, Foe:Opponent, Friend:Supporter, Foe:Antagonist, Friend:Pal",
-                "related to Friend:Confidant, Foe:Opponent, Friend:Supporter, Foe:Antagonist, Friend:Pal"
+                "Nemesis: a persistent, long-standing opponent",
+                "Traitor: someone who betrays those who trusted them",
+                "Kindred spirit: someone who shares your outlook",
+                "Loyal supporter: someone who consistently backs you",
+                "Well-wisher: someone who hopes for your success"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L125_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Picture a story where alliances shift. Sort into Friend or Foe.",
             "topicBuckets": [
                 "Friend",
                 "Foe"
             ],
-            "hint": "Here's a tip: A friend supports and likes you, while a foe opposes and works against you!",
-            "explanation": "Think of 'Friend' as someone who supports you (ally, companion), and 'Foe' as someone who opposes you (enemy, adversary)!",
+            "hint": "Two of these describe opposition that is open rather than hidden.",
+            "explanation": "'Has your back' and 'stood by them' both describe proven loyalty under pressure. 'Sworn enemy' and 'out to get them' both describe declared, open hostility, and 'fair-weather friend' names someone who supports you only while it's easy \u2014 closer to a foe than a friend when it counts.",
             "options": [
-                "Comrade",
-                "Nemesis",
-                "Well-wisher",
-                "Rival-figure",
-                "Trusted-companion"
+                "Fair-weather friend",
+                "Sworn enemy",
+                "Out to get them",
+                "Stood by them",
+                "Has your back"
             ],
-            "correctAnswer": "Friend:Comrade, Foe:Nemesis, Friend:Well-wisher, Foe:Rival-figure, Friend:Trusted-companion",
+            "correctAnswer": "Foe:Fair-weather friend, Foe:Sworn enemy, Foe:Out to get them, Friend:Stood by them, Friend:Has your back",
             "relatedWords": [
-                "aspect of Friend:Comrade, Foe:Nemesis, Friend:Well-wisher, Foe:Rival-figure, Friend:Trusted-companion",
-                "concept of Friend:Comrade, Foe:Nemesis, Friend:Well-wisher, Foe:Rival-figure, Friend:Trusted-companion",
-                "related to Friend:Comrade, Foe:Nemesis, Friend:Well-wisher, Foe:Rival-figure, Friend:Trusted-companion"
+                "Fair-weather friend: someone loyal only while things are easy",
+                "Sworn enemy: a declared, committed opponent",
+                "Out to get them: actively seeking to harm someone",
+                "Stood by them: remained loyal during difficulty",
+                "Has your back: reliably supports and protects you"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L126_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Guest or Host.",
             "topicBuckets": [
-                "Host",
-                "Guest"
+                "Guest",
+                "Host"
             ],
-            "hint": "Here's a tip: A host welcomes people into their home or event, while a guest is the person who has been invited!",
-            "explanation": "Think of 'Host' as the person who welcomes and entertains others (welcomer, entertainer), and 'Guest' as the person who has been invited somewhere (visitor, invitee)!",
+            "hint": "Think about who owns the home, and who was invited into it.",
+            "explanation": "A homeowner, 'welcomes', and 'sets the table' all describe the person receiving others. A visitor and an 'invitee' are both those arriving, with invitee emphasising they were formally asked.",
             "options": [
-                "Welcomer",
-                "Visitor",
-                "Entertainer",
                 "Invitee",
-                "Homeowner-in-charge"
+                "Welcomes",
+                "Sets the table",
+                "Visitor",
+                "Homeowner"
             ],
-            "correctAnswer": "Host:Welcomer, Guest:Visitor, Host:Entertainer, Guest:Invitee, Host:Homeowner-in-charge",
+            "correctAnswer": "Guest:Invitee, Host:Welcomes, Host:Sets the table, Guest:Visitor, Host:Homeowner",
             "relatedWords": [
-                "aspect of Host:Welcomer, Guest:Visitor, Host:Entertainer, Guest:Invitee, Host:Homeowner-in-charge",
-                "concept of Host:Welcomer, Guest:Visitor, Host:Entertainer, Guest:Invitee, Host:Homeowner-in-charge",
-                "related to Host:Welcomer, Guest:Visitor, Host:Entertainer, Guest:Invitee, Host:Homeowner-in-charge"
+                "Invitee: a person who has been invited",
+                "Welcomes: greets arriving people warmly",
+                "Sets the table: prepares a table for a meal",
+                "Visitor: someone who comes to see another",
+                "Homeowner: the person who owns the home"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L126_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "One guest word describes bringing something for the host. Sort into Host or Guest.",
             "topicBuckets": [
                 "Host",
                 "Guest"
             ],
-            "hint": "Here's a tip: A host welcomes people into their home or event, while a guest is the person who has been invited!",
-            "explanation": "Think of 'Host' as the person who welcomes and entertains others (welcomer, entertainer), and 'Guest' as the person who has been invited somewhere (visitor, invitee)!",
+            "hint": "Hospitality runs in both directions.",
+            "explanation": "'Hospitality', 'caters', and 'opens their home' all describe the host's role in providing for others. 'Brings a gift' and 'RSVP' both describe a guest's part \u2014 responding to an invitation and arriving with something in hand.",
             "options": [
-                "Presenter",
-                "Attendee",
-                "Organizer",
-                "Newcomer",
-                "Emcee"
+                "Hospitality",
+                "RSVP",
+                "Brings a gift",
+                "Opens their home",
+                "Caters"
             ],
-            "correctAnswer": "Host:Presenter, Guest:Attendee, Host:Organizer, Guest:Newcomer, Host:Emcee",
+            "correctAnswer": "Host:Hospitality, Guest:RSVP, Guest:Brings a gift, Host:Opens their home, Host:Caters",
             "relatedWords": [
-                "aspect of Host:Presenter, Guest:Attendee, Host:Organizer, Guest:Newcomer, Host:Emcee",
-                "concept of Host:Presenter, Guest:Attendee, Host:Organizer, Guest:Newcomer, Host:Emcee",
-                "related to Host:Presenter, Guest:Attendee, Host:Organizer, Guest:Newcomer, Host:Emcee"
+                "Hospitality: the friendly reception of guests",
+                "RSVP: responds to an invitation",
+                "Brings a gift: arrives with a present for the host",
+                "Opens their home: makes their home available to others",
+                "Caters: provides food for an event"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L126_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Picture a dinner party being described afterwards. Sort into Host or Guest.",
             "topicBuckets": [
                 "Host",
                 "Guest"
             ],
-            "hint": "Here's a tip: A host welcomes people into their home or event, while a guest is the person who has been invited!",
-            "explanation": "Think of 'Host' as the person who welcomes and entertains others (welcomer, entertainer), and 'Guest' as the person who has been invited somewhere (visitor, invitee)!",
+            "hint": "One phrase describes a guest who stays far longer than expected.",
+            "explanation": "'Gracious host' and 'saw everyone out' both describe someone managing an occasion attentively from start to finish. 'Guest of honour' names the person the event centres on, and 'overstayed their welcome' describes a guest remaining far longer than expected.",
             "options": [
-                "Party-thrower",
-                "Invited-visitor",
-                "Master-of-ceremonies",
-                "Out-of-town-visitor",
-                "Reception-giver"
+                "Overstayed their welcome",
+                "Gracious host",
+                "Saw everyone out",
+                "House rules",
+                "Guest of honour"
             ],
-            "correctAnswer": "Host:Party-thrower, Guest:Invited-visitor, Host:Master-of-ceremonies, Guest:Out-of-town-visitor, Host:Reception-giver",
+            "correctAnswer": "Guest:Overstayed their welcome, Host:Gracious host, Host:Saw everyone out, Host:House rules, Guest:Guest of honour",
             "relatedWords": [
-                "aspect of Host:Party-thrower, Guest:Invited-visitor, Host:Master-of-ceremonies, Guest:Out-of-town-visitor, Host:Reception-giver",
-                "concept of Host:Party-thrower, Guest:Invited-visitor, Host:Master-of-ceremonies, Guest:Out-of-town-visitor, Host:Reception-giver",
-                "related to Host:Party-thrower, Guest:Invited-visitor, Host:Master-of-ceremonies, Guest:Out-of-town-visitor, Host:Reception-giver"
+                "Overstayed their welcome: remained longer than was wanted",
+                "Gracious host: someone who receives guests warmly and attentively",
+                "Saw everyone out: accompanied departing guests to the door",
+                "House rules: the expectations set by whoever owns the home",
+                "Guest of honour: the main person an event celebrates"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L127_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Leader or Follower.",
             "topicBuckets": [
                 "Leader",
                 "Follower"
             ],
-            "hint": "Here's a tip: A leader guides and makes decisions for the group, while a follower goes along with what the leader decides!",
-            "explanation": "Think of 'Leader' as someone who guides others (head, captain), and 'Follower' as someone who follows another's direction (supporter, subordinate)!",
+            "hint": "Think about who sets the direction, and who moves with it.",
+            "explanation": "A captain, a 'director', and 'sets the direction' all describe leading. A 'team member' and 'takes direction' both describe following, which effective organisations value as much as leading.",
             "options": [
-                "Head",
-                "Supporter",
                 "Captain",
-                "Subordinate",
-                "Chief"
+                "Sets the direction",
+                "Team member",
+                "Takes direction",
+                "Director"
             ],
-            "correctAnswer": "Leader:Head, Follower:Supporter, Leader:Captain, Follower:Subordinate, Leader:Chief",
+            "correctAnswer": "Leader:Captain, Leader:Sets the direction, Follower:Team member, Follower:Takes direction, Leader:Director",
             "relatedWords": [
-                "aspect of Leader:Head, Follower:Supporter, Leader:Captain, Follower:Subordinate, Leader:Chief",
-                "concept of Leader:Head, Follower:Supporter, Leader:Captain, Follower:Subordinate, Leader:Chief",
-                "related to Leader:Head, Follower:Supporter, Leader:Captain, Follower:Subordinate, Leader:Chief"
+                "Captain: the person in charge of a team",
+                "Sets the direction: determines where a group is going",
+                "Team member: someone working under a team's direction",
+                "Takes direction: accepts and acts on instruction",
+                "Director: a person who guides and oversees work"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L127_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "One follower word describes supporting a leader closely without seeking the spotlight. Sort into Leader or Follower.",
             "topicBuckets": [
                 "Leader",
                 "Follower"
             ],
-            "hint": "Here's a tip: A leader guides and makes decisions for the group, while a follower goes along with what the leader decides!",
-            "explanation": "Think of 'Leader' as someone who guides others (head, captain), and 'Follower' as someone who follows another's direction (supporter, subordinate)!",
+            "hint": "Following well is a skill, not a lack of one.",
+            "explanation": "'Delegates', 'spearheads', and 'commands' all describe active leadership, with spearheading meaning driving an initiative forward. A 'deputy' supports a leader closely without seeking the spotlight, and 'rank and file' names the ordinary members of an organisation.",
             "options": [
-                "Commander",
-                "Disciple",
-                "Director",
-                "Adherent",
-                "Pioneer"
+                "Commands",
+                "Rank and file",
+                "Delegates",
+                "Spearheads",
+                "Deputy"
             ],
-            "correctAnswer": "Leader:Commander, Follower:Disciple, Leader:Director, Follower:Adherent, Leader:Pioneer",
+            "correctAnswer": "Leader:Commands, Follower:Rank and file, Leader:Delegates, Leader:Spearheads, Follower:Deputy",
             "relatedWords": [
-                "aspect of Leader:Commander, Follower:Disciple, Leader:Director, Follower:Adherent, Leader:Pioneer",
-                "concept of Leader:Commander, Follower:Disciple, Leader:Director, Follower:Adherent, Leader:Pioneer",
-                "related to Leader:Commander, Follower:Disciple, Leader:Director, Follower:Adherent, Leader:Pioneer"
+                "Commands: gives authoritative orders",
+                "Rank and file: the ordinary members of an organisation",
+                "Delegates: assigns tasks to others",
+                "Spearheads: drives an initiative forward",
+                "Deputy: a second-in-command who supports a leader"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L127_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Picture a project retrospective describing how a team worked. Sort into Follower or Leader.",
             "topicBuckets": [
-                "Leader",
-                "Follower"
+                "Follower",
+                "Leader"
             ],
-            "hint": "Here's a tip: A leader guides and makes decisions for the group, while a follower goes along with what the leader decides!",
-            "explanation": "Think of 'Leader' as someone who guides others (head, captain), and 'Follower' as someone who follows another's direction (supporter, subordinate)!",
+            "hint": "Two of these describe contributing without needing to be in charge.",
+            "explanation": "'Took the reins', 'set the vision', and 'held accountable' all describe leadership responsibility, since leaders answer for outcomes. 'Rallied behind them' and 'played their part' both describe supporting a shared effort without needing to be in charge.",
             "options": [
-                "Figurehead",
-                "Devotee",
-                "Helmsman",
-                "Loyalist",
-                "Trailblazer"
+                "Took the reins",
+                "Held accountable",
+                "Set the vision",
+                "Played their part",
+                "Rallied behind them"
             ],
-            "correctAnswer": "Leader:Figurehead, Follower:Devotee, Leader:Helmsman, Follower:Loyalist, Leader:Trailblazer",
+            "correctAnswer": "Leader:Took the reins, Leader:Held accountable, Leader:Set the vision, Follower:Played their part, Follower:Rallied behind them",
             "relatedWords": [
-                "aspect of Leader:Figurehead, Follower:Devotee, Leader:Helmsman, Follower:Loyalist, Leader:Trailblazer",
-                "concept of Leader:Figurehead, Follower:Devotee, Leader:Helmsman, Follower:Loyalist, Leader:Trailblazer",
-                "related to Leader:Figurehead, Follower:Devotee, Leader:Helmsman, Follower:Loyalist, Leader:Trailblazer"
+                "Took the reins: assumed control of a situation",
+                "Held accountable: made answerable for outcomes",
+                "Set the vision: defined the long-term goal",
+                "Played their part: contributed their share of the work",
+                "Rallied behind them: gathered in support of a leader"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L128_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Mentor or Apprentice.",
             "topicBuckets": [
                 "Mentor",
                 "Apprentice"
             ],
-            "hint": "Here's a tip: A mentor teaches and guides someone with experience, while an apprentice learns a skill by working under that guidance!",
-            "explanation": "Think of 'Mentor' as an experienced guide or advisor (coach, advisor), and 'Apprentice' as someone learning under a mentor (trainee, learner-on-the-job)!",
+            "hint": "Think about who transfers the skill, and who receives it.",
+            "explanation": "A 'master craftsman', 'coaches', and 'shares expertise' all describe the experienced side of the relationship. A 'learner' and 'observes closely' both describe the developing side.",
             "options": [
-                "Coach",
-                "Trainee",
-                "Advisor",
-                "Learner-on-the-job",
-                "Guide"
+                "Observes closely",
+                "Shares expertise",
+                "Coaches",
+                "Master craftsman",
+                "Learner"
             ],
-            "correctAnswer": "Mentor:Coach, Apprentice:Trainee, Mentor:Advisor, Apprentice:Learner-on-the-job, Mentor:Guide",
+            "correctAnswer": "Apprentice:Observes closely, Mentor:Shares expertise, Mentor:Coaches, Mentor:Master craftsman, Apprentice:Learner",
             "relatedWords": [
-                "aspect of Mentor:Coach, Apprentice:Trainee, Mentor:Advisor, Apprentice:Learner-on-the-job, Mentor:Guide",
-                "concept of Mentor:Coach, Apprentice:Trainee, Mentor:Advisor, Apprentice:Learner-on-the-job, Mentor:Guide",
-                "related to Mentor:Coach, Apprentice:Trainee, Mentor:Advisor, Apprentice:Learner-on-the-job, Mentor:Guide"
+                "Observes closely: watches carefully in order to learn",
+                "Shares expertise: passes on specialist knowledge",
+                "Coaches: guides someone's development",
+                "Master craftsman: a highly skilled expert in a trade",
+                "Learner: someone acquiring a skill"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L128_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "One apprentice word names a formal training period in a trade. Sort into Mentor or Apprentice.",
             "topicBuckets": [
                 "Mentor",
                 "Apprentice"
             ],
-            "hint": "Here's a tip: A mentor teaches and guides someone with experience, while an apprentice learns a skill by working under that guidance!",
-            "explanation": "Think of 'Mentor' as an experienced guide or advisor (coach, advisor), and 'Apprentice' as someone learning under a mentor (trainee, learner-on-the-job)!",
+            "hint": "Skilled trades still use centuries-old training structures.",
+            "explanation": "'Guides', 'sponsors', and 'offers feedback' all describe mentoring actions. An 'apprenticeship' is the formal training period in a trade, and 'under instruction' describes someone still working under supervision.",
             "options": [
-                "Tutor",
-                "Protege",
-                "Counselor",
-                "Understudy",
-                "Sage-figure"
+                "Apprenticeship",
+                "Offers feedback",
+                "Guides",
+                "Under instruction",
+                "Sponsors"
             ],
-            "correctAnswer": "Mentor:Tutor, Apprentice:Protege, Mentor:Counselor, Apprentice:Understudy, Mentor:Sage-figure",
+            "correctAnswer": "Apprentice:Apprenticeship, Mentor:Offers feedback, Mentor:Guides, Apprentice:Under instruction, Mentor:Sponsors",
             "relatedWords": [
-                "aspect of Mentor:Tutor, Apprentice:Protege, Mentor:Counselor, Apprentice:Understudy, Mentor:Sage-figure",
-                "concept of Mentor:Tutor, Apprentice:Protege, Mentor:Counselor, Apprentice:Understudy, Mentor:Sage-figure",
-                "related to Mentor:Tutor, Apprentice:Protege, Mentor:Counselor, Apprentice:Understudy, Mentor:Sage-figure"
+                "Apprenticeship: a formal period of training in a trade",
+                "Offers feedback: gives comment to help someone improve",
+                "Guides: directs someone's learning",
+                "Under instruction: still working under supervision",
+                "Sponsors: formally supports someone's advancement"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L128_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Picture a workshop where a skill is being handed on. Sort into Mentor or Apprentice.",
             "topicBuckets": [
                 "Mentor",
                 "Apprentice"
             ],
-            "hint": "Here's a tip: A mentor teaches and guides someone with experience, while an apprentice learns a skill by working under that guidance!",
-            "explanation": "Think of 'Mentor' as an experienced guide or advisor (coach, advisor), and 'Apprentice' as someone learning under a mentor (trainee, learner-on-the-job)!",
+            "hint": "One phrase describes learning a trade by doing it alongside an expert.",
+            "explanation": "'Shows them the ropes' and 'passes on the craft' both describe transferring skill, and 'takes them under their wing' describes committing to someone's development. 'Learning on the job' and 'still finding their feet' both describe the apprentice's position \u2014 competent enough to work, not yet fully independent.",
             "options": [
-                "Wise-teacher",
-                "Trade-learner",
-                "Role-model",
-                "Junior-worker",
-                "Senior-advisor"
+                "Shows them the ropes",
+                "Still finding their feet",
+                "Takes them under their wing",
+                "Learning on the job",
+                "Passes on the craft"
             ],
-            "correctAnswer": "Mentor:Wise-teacher, Apprentice:Trade-learner, Mentor:Role-model, Apprentice:Junior-worker, Mentor:Senior-advisor",
+            "correctAnswer": "Mentor:Shows them the ropes, Apprentice:Still finding their feet, Mentor:Takes them under their wing, Apprentice:Learning on the job, Mentor:Passes on the craft",
             "relatedWords": [
-                "aspect of Mentor:Wise-teacher, Apprentice:Trade-learner, Mentor:Role-model, Apprentice:Junior-worker, Mentor:Senior-advisor",
-                "concept of Mentor:Wise-teacher, Apprentice:Trade-learner, Mentor:Role-model, Apprentice:Junior-worker, Mentor:Senior-advisor",
-                "related to Mentor:Wise-teacher, Apprentice:Trade-learner, Mentor:Role-model, Apprentice:Junior-worker, Mentor:Senior-advisor"
+                "Shows them the ropes: teaches someone how things are done",
+                "Still finding their feet: becoming comfortable in a new role",
+                "Takes them under their wing: commits to guiding someone's development",
+                "Learning on the job: acquiring skill while working",
+                "Passes on the craft: transfers a skilled trade to a successor"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L129_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These describe how a talk or performance is prepared. Sort into Scripted or Improvised.",
             "topicBuckets": [
-                "Improvised",
-                "Scripted"
+                "Scripted",
+                "Improvised"
             ],
-            "hint": "Here's a tip: An improvised performance is made up on the spot, while a scripted performance follows a written text!",
-            "explanation": "Think of 'Improvised' as something created spontaneously without a script (unscripted, off-the-cuff), and 'Scripted' as something following a prepared, written plan (rehearsed, pre-written)!",
+            "hint": "Think about a comedian riffing versus an actor reciting lines.",
+            "explanation": "'Off the cuff', 'spontaneous', and 'ad-libbed' all describe speaking without preparation, invented in the moment. 'Rehearsed' and 'word-for-word' both describe delivery prepared in advance and repeated as written.",
             "options": [
-                "Unscripted",
+                "Word-for-word",
+                "Ad-libbed",
+                "Spontaneous",
                 "Rehearsed",
-                "Off-the-cuff",
-                "Pre-written",
-                "Spontaneous"
+                "Off the cuff"
             ],
-            "correctAnswer": "Improvised:Unscripted, Scripted:Rehearsed, Improvised:Off-the-cuff, Scripted:Pre-written, Improvised:Spontaneous",
+            "correctAnswer": "Scripted:Word-for-word, Improvised:Ad-libbed, Improvised:Spontaneous, Scripted:Rehearsed, Improvised:Off the cuff",
             "relatedWords": [
-                "aspect of Improvised:Unscripted, Scripted:Rehearsed, Improvised:Off-the-cuff, Scripted:Pre-written, Improvised:Spontaneous",
-                "concept of Improvised:Unscripted, Scripted:Rehearsed, Improvised:Off-the-cuff, Scripted:Pre-written, Improvised:Spontaneous",
-                "related to Improvised:Unscripted, Scripted:Rehearsed, Improvised:Off-the-cuff, Scripted:Pre-written, Improvised:Spontaneous"
+                "Word-for-word: delivered exactly as written",
+                "Ad-libbed: invented during a performance",
+                "Spontaneous: arising naturally in the moment",
+                "Rehearsed: practised in advance",
+                "Off the cuff: said without preparation"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L129_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "One scripted word names the written text a speaker reads from. Sort into Improvised or Scripted.",
             "topicBuckets": [
                 "Improvised",
                 "Scripted"
             ],
-            "hint": "Here's a tip: An improvised performance is made up on the spot, while a scripted performance follows a written text!",
-            "explanation": "Think of 'Improvised' as something created spontaneously without a script (unscripted, off-the-cuff), and 'Scripted' as something following a prepared, written plan (rehearsed, pre-written)!",
+            "hint": "Think about what a speaker has in front of them.",
+            "explanation": "'Winged it', 'unprepared', and 'made it up on the spot' all describe proceeding without a plan. A 'teleprompter' displays prepared text for a speaker to read, and 'prepared remarks' names the written statement itself.",
             "options": [
-                "Ad-libbed",
-                "Planned-out",
-                "Unplanned",
-                "Word-for-word",
-                "On-the-spot"
+                "Prepared remarks",
+                "Teleprompter",
+                "Winged it",
+                "Made it up on the spot",
+                "Unprepared"
             ],
-            "correctAnswer": "Improvised:Ad-libbed, Scripted:Planned-out, Improvised:Unplanned, Scripted:Word-for-word, Improvised:On-the-spot",
+            "correctAnswer": "Scripted:Prepared remarks, Scripted:Teleprompter, Improvised:Winged it, Improvised:Made it up on the spot, Improvised:Unprepared",
             "relatedWords": [
-                "aspect of Improvised:Ad-libbed, Scripted:Planned-out, Improvised:Unplanned, Scripted:Word-for-word, Improvised:On-the-spot",
-                "concept of Improvised:Ad-libbed, Scripted:Planned-out, Improvised:Unplanned, Scripted:Word-for-word, Improvised:On-the-spot",
-                "related to Improvised:Ad-libbed, Scripted:Planned-out, Improvised:Unplanned, Scripted:Word-for-word, Improvised:On-the-spot"
+                "Prepared remarks: a statement written in advance",
+                "Teleprompter: a device displaying text for a speaker to read",
+                "Winged it: proceeded without preparation",
+                "Made it up on the spot: invented something in the moment",
+                "Unprepared: without advance planning"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L129_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Picture a meeting where one person presents and another answers unexpected questions. Sort into Improvised or Scripted.",
             "topicBuckets": [
                 "Improvised",
                 "Scripted"
             ],
-            "hint": "Here's a tip: An improvised performance is made up on the spot, while a scripted performance follows a written text!",
-            "explanation": "Think of 'Improvised' as something created spontaneously without a script (unscripted, off-the-cuff), and 'Scripted' as something following a prepared, written plan (rehearsed, pre-written)!",
+            "hint": "Two of these describe communication that can't be planned in advance.",
+            "explanation": "'Thinking on their feet' and 'unscripted Q&A' both describe responding to the unexpected, which no amount of preparation fully covers. 'Slide deck', 'talking points', and 'stuck to the script' all describe prepared material a speaker works from.",
             "options": [
-                "Made-up-on-stage",
-                "Written-in-advance",
-                "Freestyle",
-                "Line-by-line",
-                "Unrehearsed"
+                "Thinking on their feet",
+                "Stuck to the script",
+                "Talking points",
+                "Slide deck",
+                "Unscripted Q&A"
             ],
-            "correctAnswer": "Improvised:Made-up-on-stage, Scripted:Written-in-advance, Improvised:Freestyle, Scripted:Line-by-line, Improvised:Unrehearsed",
+            "correctAnswer": "Improvised:Thinking on their feet, Scripted:Stuck to the script, Scripted:Talking points, Scripted:Slide deck, Improvised:Unscripted Q&A",
             "relatedWords": [
-                "aspect of Improvised:Made-up-on-stage, Scripted:Written-in-advance, Improvised:Freestyle, Scripted:Line-by-line, Improvised:Unrehearsed",
-                "concept of Improvised:Made-up-on-stage, Scripted:Written-in-advance, Improvised:Freestyle, Scripted:Line-by-line, Improvised:Unrehearsed",
-                "related to Improvised:Made-up-on-stage, Scripted:Written-in-advance, Improvised:Freestyle, Scripted:Line-by-line, Improvised:Unrehearsed"
+                "Thinking on their feet: responding quickly without preparation",
+                "Stuck to the script: delivered only what was planned",
+                "Talking points: key prepared arguments to cover",
+                "Slide deck: a prepared set of presentation slides",
+                "Unscripted Q&A: an unplanned question-and-answer session"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L130_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Rookie or Veteran.",
             "topicBuckets": [
-                "Veteran",
-                "Rookie"
+                "Rookie",
+                "Veteran"
             ],
-            "hint": "Here's a tip: A veteran has been doing a job for many years, while a rookie has just started!",
-            "explanation": "Think of 'Veteran' as someone with years of experience (old-hand, seasoned-pro), and 'Rookie' as someone new to a role (newbie, first-year-player)!",
+            "hint": "Think about a first season versus a twentieth.",
+            "explanation": "'Old hand', 'long-serving', and 'battle-tested' all describe long experience, with battle-tested suggesting experience proven under pressure. 'First-timer' and 'debutant' both describe someone at the very start.",
             "options": [
-                "Old-hand",
-                "Newbie",
-                "Seasoned-pro",
-                "First-year-player",
-                "Long-timer"
+                "Old hand",
+                "First-timer",
+                "Debutant",
+                "Battle-tested",
+                "Long-serving"
             ],
-            "correctAnswer": "Veteran:Old-hand, Rookie:Newbie, Veteran:Seasoned-pro, Rookie:First-year-player, Veteran:Long-timer",
+            "correctAnswer": "Veteran:Old hand, Rookie:First-timer, Rookie:Debutant, Veteran:Battle-tested, Veteran:Long-serving",
             "relatedWords": [
-                "aspect of Veteran:Old-hand, Rookie:Newbie, Veteran:Seasoned-pro, Rookie:First-year-player, Veteran:Long-timer",
-                "concept of Veteran:Old-hand, Rookie:Newbie, Veteran:Seasoned-pro, Rookie:First-year-player, Veteran:Long-timer",
-                "related to Veteran:Old-hand, Rookie:Newbie, Veteran:Seasoned-pro, Rookie:First-year-player, Veteran:Long-timer"
+                "Old hand: someone with long experience at something",
+                "First-timer: someone doing something for the first time",
+                "Debutant: someone making a first appearance",
+                "Battle-tested: proven through difficult experience",
+                "Long-serving: having worked somewhere for many years"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L130_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "One rookie word describes a player in their very first professional season. Sort into Veteran or Rookie.",
             "topicBuckets": [
                 "Veteran",
                 "Rookie"
             ],
-            "hint": "Here's a tip: A veteran has been doing a job for many years, while a rookie has just started!",
-            "explanation": "Think of 'Veteran' as someone with years of experience (old-hand, seasoned-pro), and 'Rookie' as someone new to a role (newbie, first-year-player)!",
+            "hint": "Sport has precise words for career stages.",
+            "explanation": "'Seasoned pro', 'been around the block', and 'elder statesman' all describe long-standing experience, the last suggesting respected seniority. 'Rookie season' names a first professional year, and 'raw talent' describes ability not yet shaped by experience.",
             "options": [
-                "Experienced-hand",
-                "Fresh-face",
-                "Battle-tested",
-                "Inexperienced-hire",
-                "Career-professional"
+                "Rookie season",
+                "Seasoned pro",
+                "Been around the block",
+                "Raw talent",
+                "Elder statesman"
             ],
-            "correctAnswer": "Veteran:Experienced-hand, Rookie:Fresh-face, Veteran:Battle-tested, Rookie:Inexperienced-hire, Veteran:Career-professional",
+            "correctAnswer": "Rookie:Rookie season, Veteran:Seasoned pro, Veteran:Been around the block, Rookie:Raw talent, Veteran:Elder statesman",
             "relatedWords": [
-                "aspect of Veteran:Experienced-hand, Rookie:Fresh-face, Veteran:Battle-tested, Rookie:Inexperienced-hire, Veteran:Career-professional",
-                "concept of Veteran:Experienced-hand, Rookie:Fresh-face, Veteran:Battle-tested, Rookie:Inexperienced-hire, Veteran:Career-professional",
-                "related to Veteran:Experienced-hand, Rookie:Fresh-face, Veteran:Battle-tested, Rookie:Inexperienced-hire, Veteran:Career-professional"
+                "Rookie season: a first professional season",
+                "Seasoned pro: a highly experienced professional",
+                "Been around the block: experienced through having seen a lot",
+                "Raw talent: natural ability not yet developed",
+                "Elder statesman: a respected senior figure"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L130_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Picture a workplace welcoming a new hire onto an experienced team. Sort into Veteran or Rookie.",
             "topicBuckets": [
                 "Veteran",
                 "Rookie"
             ],
-            "hint": "Here's a tip: A veteran has been doing a job for many years, while a rookie has just started!",
-            "explanation": "Think of 'Veteran' as someone with years of experience (old-hand, seasoned-pro), and 'Rookie' as someone new to a role (newbie, first-year-player)!",
+            "hint": "Two of these describe someone still settling in.",
+            "explanation": "'Knows every trick' and 'institutional memory' both describe accumulated knowledge that only long service provides. 'Fresh out of training', 'onboarding', and 'yet to prove themselves' all describe a newcomer's position \u2014 capable, but not yet tested in the role.",
             "options": [
-                "Tenured-worker",
-                "Debutant",
-                "Years-of-service",
-                "New-recruit",
-                "Decorated-pro"
+                "Yet to prove themselves",
+                "Knows every trick",
+                "Institutional memory",
+                "Onboarding",
+                "Fresh out of training"
             ],
-            "correctAnswer": "Veteran:Tenured-worker, Rookie:Debutant, Veteran:Years-of-service, Rookie:New-recruit, Veteran:Decorated-pro",
+            "correctAnswer": "Rookie:Yet to prove themselves, Veteran:Knows every trick, Veteran:Institutional memory, Rookie:Onboarding, Rookie:Fresh out of training",
             "relatedWords": [
-                "aspect of Veteran:Tenured-worker, Rookie:Debutant, Veteran:Years-of-service, Rookie:New-recruit, Veteran:Decorated-pro",
-                "concept of Veteran:Tenured-worker, Rookie:Debutant, Veteran:Years-of-service, Rookie:New-recruit, Veteran:Decorated-pro",
-                "related to Veteran:Tenured-worker, Rookie:Debutant, Veteran:Years-of-service, Rookie:New-recruit, Veteran:Decorated-pro"
+                "Yet to prove themselves: not yet demonstrated their ability",
+                "Knows every trick: familiar with all the practical shortcuts",
+                "Institutional memory: knowledge of an organisation's history held by long-serving staff",
+                "Onboarding: the process of settling a new employee in",
+                "Fresh out of training: newly qualified"
             ]
         }
     ]

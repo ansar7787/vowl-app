@@ -6,20 +6,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L71_Q1",
-            "sentence": "The artist's [TARGET] painting sparked heated debate at the gallery opening.",
-            "hint": "This word describes something designed to stir strong reactions.",
+            "sentence": "The artist's new exhibit was [TARGET] and controversial, deliberately designed to spark heated arguments among visitors.",
+            "hint": "This word describes something intended to stir up strong reactions or debate.",
             "options": [
                 "Controversial",
-                "Tame",
-                "Uncontroversial",
-                "Bland"
+                "Boring",
+                "Unremarkable",
+                "Forgettable"
             ],
-            "explanation": "Sparking heated debate at the opening shows stirring strong reactions, so [TARGET] means CONTROVERSIAL.",
+            "explanation": "The word 'and' links [TARGET] to 'controversial,' and being designed to spark arguments confirms it, so [TARGET] means CONTROVERSIAL.",
             "correctAnswer": "Controversial",
             "clueType": "synonym",
             "evidenceWords": [
-                "artist's",
-                "painting"
+                "and controversial",
+                "spark heated arguments"
             ]
         },
         {
@@ -27,20 +27,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L71_Q2",
-            "sentence": "The famous actress traveled [TARGET], wearing sunglasses and a plain baseball cap.",
-            "hint": "This word describes hiding your identity in public.",
+            "sentence": "Unlike her usual red-carpet appearances surrounded by photographers, the actress traveled [TARGET], wearing sunglasses and a plain hoodie so no one would recognize her.",
+            "hint": "This word describes disguising your identity so people don't recognize you.",
             "options": [
+                "Recognized",
                 "Disguised",
-                "Identified",
-                "Exposed",
-                "Recognizable"
+                "Publicized",
+                "Announced"
             ],
-            "explanation": "Wearing sunglasses and a plain cap to hide her identity describes traveling disguised, so [TARGET] means DISGUISED.",
+            "explanation": "The word 'unlike' contrasts [TARGET] with red-carpet appearances 'surrounded by photographers,' so it must mean the opposite, which is DISGUISED.",
             "correctAnswer": "Disguised",
             "clueType": "antonym",
             "evidenceWords": [
-                "famous",
-                "actress"
+                "Unlike",
+                "surrounded by photographers",
+                "so no one would recognize her"
             ]
         },
         {
@@ -48,20 +49,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L71_Q3",
-            "sentence": "The manager paid extra to [TARGET] the shipment so it would arrive before the holiday.",
-            "hint": "This word describes making a process happen faster.",
+            "sentence": "The manager asked the shipping team to [TARGET] the order, which means to speed up the process so the package would arrive a full week earlier than usual.",
+            "hint": "This word means to make something happen faster.",
             "options": [
-                "Postpone",
                 "Delay",
-                "Decelerate",
-                "Accelerate"
+                "Postpone",
+                "Speed up",
+                "Slow down"
             ],
-            "explanation": "Paying extra so a shipment arrives before the holiday shows making a process happen faster, so [TARGET] means ACCELERATE.",
-            "correctAnswer": "Accelerate",
+            "explanation": "The sentence defines [TARGET] as meaning 'to speed up the process,' so [TARGET] means SPEED UP.",
+            "correctAnswer": "Speed up",
             "clueType": "definition",
             "evidenceWords": [
-                "manager",
-                "extra"
+                "which means",
+                "speed up the process"
             ]
         },
         {
@@ -69,20 +70,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L72_Q1",
-            "sentence": "The instructions for setting up the router were so [TARGET] that he gave up and called support.",
-            "hint": "This word describes something twisted and hard to follow.",
+            "sentence": "The instructions for assembling the shelf were [TARGET]: step four referenced step nine before it was explained, two diagrams contradicted each other, and one sentence ran for an entire paragraph.",
+            "hint": "This word describes something needlessly complicated and hard to follow.",
             "options": [
                 "Clear",
                 "Simple",
                 "Straightforward",
-                "Complicated"
+                "Confusing"
             ],
-            "explanation": "Giving up and calling support shows instructions too twisted to follow, so [TARGET] means COMPLICATED.",
-            "correctAnswer": "Complicated",
+            "explanation": "Referencing steps out of order, contradicting diagrams, and an endless sentence are all examples of something needlessly complicated, so [TARGET] means CONFUSING.",
+            "correctAnswer": "Confusing",
             "clueType": "example",
             "evidenceWords": [
-                "instructions",
-                "setting"
+                "referenced step nine before it was explained",
+                "two diagrams contradicted each other",
+                "ran for an entire paragraph"
             ]
         },
         {
@@ -90,20 +92,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L72_Q2",
-            "sentence": "The new software helped [TARGET] the entire ordering process into just three clicks.",
-            "hint": "This word describes making a process more efficient by removing extra steps.",
+            "sentence": "The new manager cut the approval process from five signatures down to one, combined three separate forms into a single page, and removed two unnecessary meetings from the workflow — her goal was to [TARGET] the entire department.",
+            "hint": "This word means to make a process simpler and more efficient.",
             "options": [
+                "Simplify",
                 "Complicate",
-                "Clutter",
-                "Tangle",
-                "Simplify"
+                "Overcomplicate",
+                "Slow down"
             ],
-            "explanation": "Reducing the process to just three clicks shows removing extra steps to be more efficient, so [TARGET] means SIMPLIFY.",
+            "explanation": "Cutting signatures, combining forms, and removing meetings are all ways of making a process simpler, even without a direct clue word, so [TARGET] means SIMPLIFY.",
             "correctAnswer": "Simplify",
             "clueType": "inference",
             "evidenceWords": [
-                "software",
-                "helped"
+                "cut the approval process",
+                "combined three separate forms",
+                "removed two unnecessary meetings"
             ]
         },
         {
@@ -111,20 +114,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L72_Q3",
-            "sentence": "It took the team three days to [TARGET] the meaning behind the strange error code.",
-            "hint": "This word describes working out the meaning of something confusing.",
+            "sentence": "It took the historian nearly a year to [TARGET], or decode, the faded handwriting on the three-hundred-year-old letter.",
+            "hint": "This word means to figure out the meaning of something that is hard to read or understand.",
             "options": [
+                "Ignore",
                 "Decode",
-                "Obscure",
-                "Conceal",
-                "Encrypt"
+                "Discard",
+                "Destroy"
             ],
-            "explanation": "Taking three days to work out a strange error code shows figuring out something confusing, so [TARGET] means DECODE.",
+            "explanation": "The word 'or' signals that [TARGET] means the same as 'decode,' so [TARGET] means DECODE.",
             "correctAnswer": "Decode",
             "clueType": "synonym",
             "evidenceWords": [
-                "three",
-                "meaning"
+                "or decode",
+                "faded handwriting"
             ]
         },
         {
@@ -132,20 +135,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L73_Q1",
-            "sentence": "The translation app helped [TARGET] communication between the lost tourists and the local shopkeeper.",
-            "hint": "This word describes helping a process happen more smoothly.",
+            "sentence": "Unlike the outdated software that made every task twice as hard, the new app was designed to [TARGET] the whole process, guiding users step by step to a finished report in minutes.",
+            "hint": "This word means to make an action or process easier.",
             "options": [
-                "Ease",
-                "Complicate",
+                "Hinder",
                 "Obstruct",
-                "Hinder"
+                "Ease",
+                "Complicate"
             ],
-            "explanation": "Helping tourists and a shopkeeper communicate more smoothly is making something easier, so [TARGET] means EASE.",
+            "explanation": "The word 'unlike' contrasts [TARGET] with old software that 'made every task twice as hard,' so it must mean the opposite, which is EASE.",
             "correctAnswer": "Ease",
             "clueType": "antonym",
             "evidenceWords": [
-                "translation",
-                "helped"
+                "Unlike",
+                "made every task twice as hard",
+                "guiding users step by step"
             ]
         },
         {
@@ -153,20 +157,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L73_Q2",
-            "sentence": "A warm compress can [TARGET] the pain of a stiff neck within minutes.",
-            "hint": "This word describes making a painful problem less severe.",
+            "sentence": "The new bridge was built to [TARGET] the traffic congestion downtown, which means to reduce and ease the backups that had frustrated drivers for years.",
+            "hint": "This word means to make a problem less severe.",
             "options": [
                 "Worsen",
-                "Aggravate",
-                "Relieve",
-                "Intensify"
+                "Intensify",
+                "Increase",
+                "Reduce"
             ],
-            "explanation": "Reducing neck pain within minutes shows making the problem less severe, so [TARGET] means RELIEVE.",
-            "correctAnswer": "Relieve",
+            "explanation": "The sentence defines [TARGET] as meaning 'to reduce and ease the backups,' so [TARGET] means REDUCE.",
+            "correctAnswer": "Reduce",
             "clueType": "definition",
             "evidenceWords": [
-                "compress",
-                "stiff"
+                "which means",
+                "reduce and ease"
             ]
         },
         {
@@ -174,20 +178,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L73_Q3",
-            "sentence": "Scratching the mosquito bite will only [TARGET] the itching and swelling.",
-            "hint": "This word describes making a bad situation even worse.",
+            "sentence": "Skipping physical therapy after the injury seemed to [TARGET] the problem: the stiffness got worse, the swelling returned, and recovery took twice as long as the doctor expected.",
+            "hint": "This word means to make an existing problem worse.",
             "options": [
                 "Worsen",
-                "Soothe",
-                "Improve",
-                "Relieve"
+                "Cure",
+                "Fix",
+                "Improve"
             ],
-            "explanation": "Making itching and swelling worse by scratching shows making a problem worse, so [TARGET] means WORSEN.",
+            "explanation": "Worsening stiffness, returning swelling, and a longer recovery are all examples of a problem getting worse, so [TARGET] means WORSEN.",
             "correctAnswer": "Worsen",
             "clueType": "example",
             "evidenceWords": [
-                "Scratching",
-                "mosquito"
+                "stiffness got worse",
+                "swelling returned",
+                "recovery took twice as long"
             ]
         },
         {
@@ -195,20 +200,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L74_Q1",
-            "sentence": "The bank advised her to [TARGET] her three credit card debts into one monthly payment.",
-            "hint": "This word describes joining several things into one.",
+            "sentence": "The company closed its twelve regional offices and moved every employee into one central headquarters, merging all the old teams into three unified departments — a plan meant to [TARGET] operations across the whole business.",
+            "hint": "This word means to bring separate things together into a single, organized whole.",
             "options": [
+                "Scatter",
                 "Combine",
                 "Divide",
-                "Separate",
-                "Scatter"
+                "Separate"
             ],
-            "explanation": "Joining three debts into one payment shows combining several things into one, so [TARGET] means COMBINE.",
+            "explanation": "Closing twelve offices, moving into one headquarters, and merging teams into three departments are all signs of combining things into a unified whole, even without a direct clue word, so [TARGET] means COMBINE.",
             "correctAnswer": "Combine",
             "clueType": "inference",
             "evidenceWords": [
-                "advised",
-                "three"
+                "closed its twelve regional offices",
+                "moved every employee into one central headquarters",
+                "merging all the old teams"
             ]
         },
         {
@@ -216,20 +222,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L74_Q2",
-            "sentence": "A good parent knows how to [TARGET] chores among the kids instead of doing everything alone.",
-            "hint": "This word describes giving part of a job to someone else.",
+            "sentence": "A good manager knows how to [TARGET], or hand off, smaller tasks to the team instead of trying to do everything alone.",
+            "hint": "This word means to give a task or responsibility to someone else.",
             "options": [
                 "Hoard",
-                "Retain",
-                "Assign",
-                "Withhold"
+                "Keep",
+                "Hand off",
+                "Retain"
             ],
-            "explanation": "Not doing everything alone means giving tasks to others, so [TARGET] means ASSIGN.",
-            "correctAnswer": "Assign",
+            "explanation": "The word 'or' signals that [TARGET] means the same as 'hand off,' so [TARGET] means HAND OFF.",
+            "correctAnswer": "Hand off",
             "clueType": "synonym",
             "evidenceWords": [
-                "parent",
-                "knows"
+                "or hand off",
+                "instead of trying to do everything alone"
             ]
         },
         {
@@ -237,20 +243,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L74_Q3",
-            "sentence": "The two classes decided to [TARGET] on a single mural for the school hallway.",
-            "hint": "This word describes joining efforts with others toward a shared goal.",
+            "sentence": "Unlike the previous project, where each department worked in total isolation and refused to share information, the two teams finally began to [TARGET], meeting weekly to combine their research.",
+            "hint": "This word means to work together with others toward a shared goal.",
             "options": [
                 "Compete",
-                "Cooperate",
-                "Oppose",
-                "Clash"
+                "Isolate",
+                "Withdraw",
+                "Cooperate"
             ],
-            "explanation": "Two classes creating a single mural together shows joining efforts toward a shared goal, so [TARGET] means COOPERATE.",
+            "explanation": "The word 'unlike' contrasts [TARGET] with departments that 'worked in total isolation,' so it must mean the opposite, which is COOPERATE.",
             "correctAnswer": "Cooperate",
             "clueType": "antonym",
             "evidenceWords": [
-                "classes",
-                "decided"
+                "Unlike",
+                "worked in total isolation",
+                "meeting weekly to combine their research"
             ]
         },
         {
@@ -258,20 +265,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L75_Q1",
-            "sentence": "The store manager ordered extra inventory to [TARGET] the holiday rush.",
-            "hint": "This word describes preparing because you believe something will happen.",
+            "sentence": "Good chess players [TARGET] their opponent's next three moves, which means they think ahead and predict what will happen before it actually does.",
+            "hint": "This word means to expect something before it happens.",
             "options": [
-                "Overlook",
-                "Expect",
-                "Dismiss",
-                "Ignore"
+                "Predict",
+                "Ignore",
+                "Forget",
+                "Overlook"
             ],
-            "explanation": "Ordering extra inventory because of a believed rush shows expecting it ahead of time, so [TARGET] means EXPECT.",
-            "correctAnswer": "Expect",
+            "explanation": "The sentence defines [TARGET] as meaning to 'think ahead and predict what will happen,' so [TARGET] means PREDICT.",
+            "correctAnswer": "Predict",
             "clueType": "definition",
             "evidenceWords": [
-                "store",
-                "manager"
+                "which means",
+                "think ahead and predict"
             ]
         },
         {
@@ -279,20 +286,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L75_Q2",
-            "sentence": "After years of silence, the two brothers finally met to [TARGET] their old argument.",
-            "hint": "This word describes settling a disagreement between people.",
+            "sentence": "After two years of not speaking, the brothers finally [TARGET]: they met for coffee, apologized for old arguments, and started calling each other every Sunday again.",
+            "hint": "This word means to restore a friendly relationship after a conflict.",
             "options": [
-                "Inflame",
-                "Escalate",
-                "Resolve",
-                "Worsen"
+                "Feud",
+                "Make up",
+                "Argue",
+                "Separate further"
             ],
-            "explanation": "Meeting to settle an old argument shows resolving a disagreement, so [TARGET] means RESOLVE.",
-            "correctAnswer": "Resolve",
+            "explanation": "Meeting for coffee, apologizing, and calling each other weekly after two years apart are all examples of restoring a broken relationship, so [TARGET] means MAKE UP.",
+            "correctAnswer": "Make up",
             "clueType": "example",
             "evidenceWords": [
-                "After",
-                "years"
+                "met for coffee",
+                "apologized for old arguments",
+                "calling each other every Sunday again"
             ]
         },
         {
@@ -300,20 +308,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L75_Q3",
-            "sentence": "The city built new drains to [TARGET] flooding during heavy rains.",
-            "hint": "This word describes lessening the severity of a problem.",
+            "sentence": "The city planted trees along the riverbank, built a taller levee, and installed new drainage pipes before the rainy season arrived, hoping to [TARGET] the flood damage that hit every spring.",
+            "hint": "This word means to ease the severity of something harmful.",
             "options": [
-                "Amplify",
+                "Worsen",
                 "Increase",
-                "Intensify",
-                "Reduce"
+                "Lessen",
+                "Amplify"
             ],
-            "explanation": "Building drains to lessen flooding shows reducing the severity of a problem, so [TARGET] means REDUCE.",
-            "correctAnswer": "Reduce",
+            "explanation": "Planting trees, building a taller levee, and adding drainage pipes are all steps taken to reduce future harm, even without a direct clue word, so [TARGET] means LESSEN.",
+            "correctAnswer": "Lessen",
             "clueType": "inference",
             "evidenceWords": [
-                "built",
-                "drains"
+                "planted trees along the riverbank",
+                "built a taller levee",
+                "installed new drainage pipes"
             ]
         },
         {
@@ -321,20 +330,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L76_Q1",
-            "sentence": "He tends to [TARGET] on essays until the night before they're due.",
-            "hint": "This word describes putting off something you should be doing.",
+            "sentence": "Instead of starting the essay, Maya decided to [TARGET], or put it off, by reorganizing her desk, scrolling her phone, and taking a three-hour nap.",
+            "hint": "This word means to delay doing something that needs to get done.",
             "options": [
-                "Hurry",
-                "Rush",
-                "Hasten",
-                "Delay"
+                "Finish early",
+                "Complete promptly",
+                "Start immediately",
+                "Put off"
             ],
-            "explanation": "Waiting until the night before something is due shows putting it off, so [TARGET] means DELAY.",
-            "correctAnswer": "Delay",
+            "explanation": "The word 'or' signals that [TARGET] means the same as 'put it off,' so [TARGET] means PUT OFF.",
+            "correctAnswer": "Put off",
             "clueType": "synonym",
             "evidenceWords": [
-                "tends",
-                "essays"
+                "or put it off",
+                "reorganizing her desk"
             ]
         },
         {
@@ -342,20 +351,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L76_Q2",
-            "sentence": "The smell of fresh bread began to [TARGET] every room in the small bakery.",
-            "hint": "This word describes spreading into every part of a space.",
+            "sentence": "Unlike the sealed vault where no outside air could enter, the smell of fresh bread began to [TARGET] every room of the house, reaching even the upstairs bedrooms.",
+            "hint": "This word means to seep into and fill every part of something.",
             "options": [
-                "Bypass",
-                "Exit",
-                "Escape",
-                "Pervade"
+                "Spread through",
+                "Stay contained",
+                "Remain sealed",
+                "Stay trapped"
             ],
-            "explanation": "Filling every room in the bakery shows spreading into every part of a space, so [TARGET] means PERVADE.",
-            "correctAnswer": "Pervade",
+            "explanation": "The word 'unlike' contrasts [TARGET] with a vault where 'no outside air could enter,' so it must mean the opposite, which is SPREAD THROUGH.",
+            "correctAnswer": "Spread through",
             "clueType": "antonym",
             "evidenceWords": [
-                "smell",
-                "fresh"
+                "Unlike",
+                "no outside air could enter",
+                "reaching even the upstairs bedrooms"
             ]
         },
         {
@@ -363,20 +373,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L76_Q3",
-            "sentence": "The mother had to [TARGET] before the argument between her two sons turned into a fight.",
-            "hint": "This word describes getting involved to stop something from happening.",
+            "sentence": "When the argument between the two coworkers turned heated, their supervisor decided to [TARGET], which means to step in and stop the conflict before it got worse.",
+            "hint": "This word means to insert yourself into a situation to change its outcome.",
             "options": [
-                "Intercede",
-                "Retreat",
-                "Withdraw",
-                "Avoid"
+                "Ignore it",
+                "Step in",
+                "Walk away",
+                "Stay out of it"
             ],
-            "explanation": "Getting involved before a fight starts shows stepping in to stop something, so [TARGET] means INTERCEDE.",
-            "correctAnswer": "Intercede",
+            "explanation": "The sentence defines [TARGET] as meaning 'to step in and stop the conflict,' so [TARGET] means STEP IN.",
+            "correctAnswer": "Step in",
             "clueType": "definition",
             "evidenceWords": [
-                "mother",
-                "before"
+                "which means",
+                "step in and stop the conflict"
             ]
         },
         {
@@ -384,20 +394,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L77_Q1",
-            "sentence": "The chef managed to [TARGET] rare imported truffles for the restaurant's tasting menu.",
-            "hint": "This word describes getting something, often with effort.",
+            "sentence": "To [TARGET] the rare book for the library's collection, the archivist emailed three private collectors, attended two estate sales, and finally bid on it at an online auction.",
+            "hint": "This word means to acquire something, often through some effort.",
             "options": [
+                "Lose",
                 "Discard",
-                "Surrender",
                 "Obtain",
-                "Relinquish"
+                "Ignore"
             ],
-            "explanation": "Managing to get rare imported truffles shows getting something with effort, so [TARGET] means OBTAIN.",
+            "explanation": "Emailing collectors, attending estate sales, and bidding at an auction are all examples of effort put into getting something, so [TARGET] means OBTAIN.",
             "correctAnswer": "Obtain",
             "clueType": "example",
             "evidenceWords": [
-                "managed",
-                "imported"
+                "emailed three private collectors",
+                "attended two estate sales",
+                "bid on it at an online auction"
             ]
         },
         {
@@ -405,20 +416,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L77_Q2",
-            "sentence": "The company used social media to [TARGET] news of the product recall quickly.",
-            "hint": "This word describes distributing information to as many people as possible, quickly.",
+            "sentence": "The research team posted the findings on their website, sent a summary to every major news outlet, and presented the results at three international conferences within a month, working hard to [TARGET] the discovery as widely as possible.",
+            "hint": "This word means to circulate information to a wide audience.",
             "options": [
+                "Hide",
                 "Withhold",
-                "Conceal",
                 "Suppress",
                 "Spread"
             ],
-            "explanation": "Using social media to share news quickly shows spreading information widely, so [TARGET] means SPREAD.",
+            "explanation": "Posting online, sending to news outlets, and presenting at conferences are all ways of spreading information widely, even without a direct clue word, so [TARGET] means SPREAD.",
             "correctAnswer": "Spread",
             "clueType": "inference",
             "evidenceWords": [
-                "company",
-                "social"
+                "posted the findings on their website",
+                "sent a summary to every major news outlet",
+                "three international conferences"
             ]
         },
         {
@@ -426,20 +438,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L77_Q3",
-            "sentence": "Some users tried to [TARGET] the new login rules using an old version of the app.",
-            "hint": "This word describes finding a way around a rule or obstacle.",
+            "sentence": "Rather than paying the expensive toll, drivers found a way to [TARGET], or get around, the fee by taking the longer back roads.",
+            "hint": "This word means to find a way to avoid a rule or obstacle.",
             "options": [
-                "Confront",
-                "Comply",
-                "Obey",
-                "Bypass"
+                "Get around",
+                "Follow directly",
+                "Comply with",
+                "Accept"
             ],
-            "explanation": "Using an old version to avoid the new rules shows finding a way around an obstacle, so [TARGET] means BYPASS.",
-            "correctAnswer": "Bypass",
+            "explanation": "The word 'or' signals that [TARGET] means the same as 'get around,' so [TARGET] means GET AROUND.",
+            "correctAnswer": "Get around",
             "clueType": "synonym",
             "evidenceWords": [
-                "users",
-                "tried"
+                "or get around",
+                "the longer back roads"
             ]
         },
         {
@@ -447,20 +459,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L78_Q1",
-            "sentence": "The scientist needed more data to [TARGET] her theory before publishing the paper.",
-            "hint": "This word describes backing up a claim with solid evidence.",
+            "sentence": "Unlike the rumor that spread with zero real evidence behind it, the journalist's claim was carefully [TARGET] with three independent witnesses and a signed document.",
+            "hint": "This word means to provide evidence that supports a claim.",
             "options": [
-                "Disprove",
-                "Refute",
-                "Prove",
-                "Contradict"
+                "Undermined",
+                "Backed up",
+                "Disproven",
+                "Contradicted"
             ],
-            "explanation": "Needing more data before publishing shows backing a claim with evidence, so [TARGET] means PROVE.",
-            "correctAnswer": "Prove",
+            "explanation": "The word 'unlike' contrasts [TARGET] with a rumor that had 'zero real evidence,' so it must mean the opposite, which is BACKED UP.",
+            "correctAnswer": "Backed up",
             "clueType": "antonym",
             "evidenceWords": [
-                "scientist",
-                "needed"
+                "Unlike",
+                "zero real evidence",
+                "three independent witnesses"
             ]
         },
         {
@@ -468,20 +481,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L78_Q2",
-            "sentence": "Critics said the old textbook would only [TARGET] outdated stereotypes, so it was completely rewritten.",
-            "hint": "This word describes causing something to keep going.",
+            "sentence": "Repeating the old myth without checking the facts would only [TARGET] it, which means to keep it going and cause it to continue being believed for years to come.",
+            "hint": "This word means to keep something going, often without questioning it.",
             "options": [
                 "End",
-                "Continue",
                 "Stop",
-                "Halt"
+                "Continue",
+                "Correct"
             ],
-            "explanation": "Critics feared the old textbook would keep outdated stereotypes going, so [TARGET] means CONTINUE.",
+            "explanation": "The sentence defines [TARGET] as meaning 'to keep it going... continue being believed,' so [TARGET] means CONTINUE.",
             "correctAnswer": "Continue",
             "clueType": "definition",
             "evidenceWords": [
-                "Critics",
-                "textbook"
+                "which means",
+                "keep it going",
+                "continue being believed"
             ]
         },
         {
@@ -489,20 +503,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L78_Q3",
-            "sentence": "The new curriculum will [TARGET] art, music, and coding alongside math and reading.",
-            "hint": "This word describes covering a wide range of things within one whole.",
+            "sentence": "The new training program was designed to [TARGET] everything a new hire might need: safety procedures, customer service scripts, software tutorials, and even a tour of the building.",
+            "hint": "This word means to cover a wide range of things.",
             "options": [
-                "Include",
-                "Exempt",
                 "Exclude",
-                "Omit"
+                "Omit",
+                "Skip",
+                "Include"
             ],
-            "explanation": "Adding art, music, and coding alongside math and reading shows covering a wide range, so [TARGET] means INCLUDE.",
+            "explanation": "Covering safety procedures, scripts, tutorials, and a building tour are all examples of including a wide range of topics, so [TARGET] means INCLUDE.",
             "correctAnswer": "Include",
             "clueType": "example",
             "evidenceWords": [
-                "curriculum",
-                "music"
+                "safety procedures",
+                "customer service scripts",
+                "software tutorials"
             ]
         },
         {
@@ -510,20 +525,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L79_Q1",
-            "sentence": "A single missed payment can [TARGET] a sharp drop in someone's credit score.",
-            "hint": "This word describes causing something to happen suddenly.",
+            "sentence": "The sudden announcement of layoffs sent stock prices tumbling within minutes, triggered an emergency board meeting that night, and caused three executives to resign by the end of the week — the news had clearly [TARGET] a crisis.",
+            "hint": "This word means to cause something, especially something sudden, to happen quickly.",
             "options": [
-                "Delay",
-                "Trigger",
-                "Prevent",
-                "Postpone"
+                "Triggered",
+                "Prevented",
+                "Delayed",
+                "Avoided"
             ],
-            "explanation": "One missed payment causing a sharp drop shows causing something to happen suddenly, so [TARGET] means TRIGGER.",
-            "correctAnswer": "Trigger",
+            "explanation": "Tumbling stock prices, an emergency meeting, and executive resignations all happening quickly after one announcement show a sudden cause-and-effect, even without a direct clue word, so [TARGET] means TRIGGERED.",
+            "correctAnswer": "Triggered",
             "clueType": "inference",
             "evidenceWords": [
-                "single",
-                "missed"
+                "sent stock prices tumbling within minutes",
+                "triggered an emergency board meeting",
+                "three executives to resign"
             ]
         },
         {
@@ -531,20 +547,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L79_Q2",
-            "sentence": "The coach's halftime speech managed to [TARGET] the tired team into a comeback win.",
-            "hint": "This word describes suddenly inspiring people into action.",
+            "sentence": "The coach's halftime speech seemed to [TARGET], or energize, the whole team, who came out for the second half playing harder than they had all season.",
+            "hint": "This word means to inspire people into sudden, energetic action.",
             "options": [
-                "Dishearten",
-                "Motivate",
                 "Discourage",
-                "Demoralize"
+                "Energize",
+                "Exhaust",
+                "Weaken"
             ],
-            "explanation": "A speech leading to a comeback win shows suddenly inspiring people into action, so [TARGET] means MOTIVATE.",
-            "correctAnswer": "Motivate",
+            "explanation": "The word 'or' signals that [TARGET] means the same as 'energize,' so [TARGET] means ENERGIZE.",
+            "correctAnswer": "Energize",
             "clueType": "synonym",
             "evidenceWords": [
-                "coach's",
-                "halftime"
+                "or energize",
+                "playing harder than they had all season"
             ]
         },
         {
@@ -552,20 +568,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L79_Q3",
-            "sentence": "Young guitarists often try to [TARGET] the style of their favorite rock star.",
-            "hint": "This word describes trying to be like someone you admire.",
+            "sentence": "Unlike the players who mocked the veteran's old-fashioned training routine, the rookie chose to [TARGET] it exactly, copying every stretch, every drill, and every early-morning practice.",
+            "hint": "This word means to try to be like someone you admire by mirroring their behavior.",
             "options": [
-                "Avoid",
+                "Mock",
                 "Ignore",
                 "Copy",
                 "Reject"
             ],
-            "explanation": "Trying to play like a favorite rock star shows trying to be like someone admired, so [TARGET] means COPY.",
+            "explanation": "The word 'unlike' contrasts [TARGET] with players who 'mocked' the routine, so it must mean the opposite, which is COPY.",
             "correctAnswer": "Copy",
             "clueType": "antonym",
             "evidenceWords": [
-                "Young",
-                "guitarists"
+                "Unlike",
+                "mocked the veteran's old-fashioned training routine",
+                "copying every stretch"
             ]
         },
         {
@@ -573,20 +590,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L80_Q1",
-            "sentence": "A line of painted stones [TARGET]s the border between the two campsites.",
-            "hint": "This word describes setting a clear boundary between two areas.",
+            "sentence": "The surveyors used stakes and bright orange tape to [TARGET] the property line, which means to mark the exact boundary so no one would build on the wrong side.",
+            "hint": "This word means to clearly mark the boundary or limits of something.",
             "options": [
-                "Combine",
+                "Erase",
+                "Hide",
                 "Blend",
-                "Outline",
-                "Merge"
+                "Mark the boundary of"
             ],
-            "explanation": "Painted stones forming a clear line between campsites shows setting a clear boundary, so [TARGET] means OUTLINE.",
-            "correctAnswer": "Outline",
+            "explanation": "The sentence defines [TARGET] as meaning 'to mark the exact boundary,' so [TARGET] means MARK THE BOUNDARY OF.",
+            "correctAnswer": "Mark the boundary of",
             "clueType": "definition",
             "evidenceWords": [
-                "painted",
-                "stones"
+                "which means",
+                "mark the exact boundary"
             ]
         },
         {
@@ -594,20 +611,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L80_Q2",
-            "sentence": "The teacher's open-ended question managed to [TARGET] thoughtful answers from even the quietest students.",
-            "hint": "This word describes drawing a response out of someone.",
+            "sentence": "The teacher's open-ended question managed to [TARGET] a real reaction from the class: hands shot up immediately, a debate broke out between two rows, and even the quiet kid in the back spoke up.",
+            "hint": "This word means to bring out a response or reaction from someone.",
             "options": [
-                "Conceal",
+                "Draw out",
                 "Suppress",
-                "Evoke",
-                "Hide"
+                "Silence",
+                "Block"
             ],
-            "explanation": "Getting thoughtful answers from quiet students shows drawing a response out of them, so [TARGET] means EVOKE.",
-            "correctAnswer": "Evoke",
+            "explanation": "Hands shooting up, a debate breaking out, and the quiet kid speaking are all examples of drawing out a reaction, so [TARGET] means DRAW OUT.",
+            "correctAnswer": "Draw out",
             "clueType": "example",
             "evidenceWords": [
-                "teacher's",
-                "open-ended"
+                "hands shot up immediately",
+                "a debate broke out",
+                "even the quiet kid in the back spoke up"
             ]
         },
         {
@@ -615,20 +633,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L80_Q3",
-            "sentence": "She offered her little brother an extra cookie to [TARGET] him after he started crying.",
-            "hint": "This word describes satisfying someone's demands to stop their anger or protest.",
+            "sentence": "The airline offered the furious passenger a full refund, a free upgrade on her next flight, and a handwritten apology from the manager, and within minutes she was smiling and thanking the staff — the gestures had clearly [TARGET] her anger.",
+            "hint": "This word means to calm someone down, often by giving them what they want.",
             "options": [
-                "Anger",
-                "Calm",
-                "Provoke",
-                "Enrage"
+                "Provoked",
+                "Calmed",
+                "Angered",
+                "Enraged"
             ],
-            "explanation": "Offering a cookie to stop the crying shows calming someone by giving in, so [TARGET] means CALM.",
-            "correctAnswer": "Calm",
+            "explanation": "A refund, an upgrade, and an apology turning fury into smiles and thanks show anger being calmed, even without a direct clue word, so [TARGET] means CALMED.",
+            "correctAnswer": "Calmed",
             "clueType": "inference",
             "evidenceWords": [
-                "offered",
-                "little"
+                "a full refund",
+                "free upgrade",
+                "smiling and thanking the staff"
             ]
         }
     ],

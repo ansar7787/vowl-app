@@ -6,20 +6,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L181_Q1",
-            "sentence": "Despite three clear explanations, he remained [TARGET] about why the plan wouldn't work.",
-            "hint": "From Latin obtusus, 'blunted, dull' - slow to understand something obvious.",
+            "sentence": "Despite being told three times in plain language, he remained [TARGET] and slow to understand, still asking the same confused question a fourth time.",
+            "hint": "This word describes being dull-witted about something obvious.",
             "options": [
+                "Slow to understand",
+                "Quick-witted",
                 "Sharp",
-                "Dense",
-                "Perceptive",
-                "Insightful"
+                "Perceptive"
             ],
-            "explanation": "Not getting it after three clear explanations shows being slow to understand something obvious, so [TARGET] means DENSE.",
-            "correctAnswer": "Dense",
+            "explanation": "The word 'and' links [TARGET] to 'slow to understand,' and asking the same question a fourth time confirms it, so [TARGET] means SLOW TO UNDERSTAND.",
+            "correctAnswer": "Slow to understand",
             "clueType": "synonym",
             "evidenceWords": [
-                "Despite",
-                "three"
+                "and slow to understand",
+                "asking the same confused question a fourth time"
             ]
         },
         {
@@ -27,20 +27,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L181_Q2",
-            "sentence": "The professor's [TARGET] lecture wove together philosophy, physics, and ancient poetry with ease.",
-            "hint": "From Latin erudire, 'to instruct, polish' - showing deep, wide-ranging learning.",
+            "sentence": "Unlike the uneducated crowd he usually spoke to, the professor found the visiting scholar refreshingly [TARGET], able to discuss ancient Greek philosophy and modern physics with equal depth.",
+            "hint": "This word describes having deep, scholarly knowledge across many subjects.",
             "options": [
-                "Scholarly",
-                "Ignorant",
                 "Uneducated",
-                "Simplistic"
+                "Learned",
+                "Ignorant",
+                "Uninformed"
             ],
-            "explanation": "Weaving together philosophy, physics, and poetry with ease shows deep, wide-ranging learning, so [TARGET] means SCHOLARLY.",
-            "correctAnswer": "Scholarly",
+            "explanation": "The word 'unlike' contrasts [TARGET] with an 'uneducated crowd,' so it must mean the opposite, which is LEARNED.",
+            "correctAnswer": "Learned",
             "clueType": "antonym",
             "evidenceWords": [
-                "professor's",
-                "lecture"
+                "Unlike",
+                "uneducated crowd",
+                "ancient Greek philosophy and modern physics with equal depth"
             ]
         },
         {
@@ -48,20 +49,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L181_Q3",
-            "sentence": "The forum was dedicated entirely to [TARGET] topics like medieval coin-collecting and forgotten board games.",
-            "hint": "From Greek esoterikos, 'inner, further within' - known and understood by only a small group.",
+            "sentence": "The topic of his thesis was [TARGET], which means it was understood by only a small handful of specialists in a very narrow academic field.",
+            "hint": "This word describes something understood only by a small, specialized group.",
             "options": [
+                "Widely known",
                 "Popular",
-                "Mainstream",
                 "Obscure",
-                "Common"
+                "Mainstream"
             ],
-            "explanation": "A forum about medieval coins and forgotten games shows topics known by only a small group, so [TARGET] means OBSCURE.",
+            "explanation": "The sentence defines [TARGET] as 'understood by only a small handful of specialists,' so [TARGET] means OBSCURE.",
             "correctAnswer": "Obscure",
             "clueType": "definition",
             "evidenceWords": [
-                "forum",
-                "dedicated"
+                "which means",
+                "understood by only a small handful of specialists"
             ]
         },
         {
@@ -69,20 +70,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L182_Q1",
-            "sentence": "Reviewers criticized the film for being too [TARGET], stopping the plot every ten minutes to deliver a moral lesson.",
-            "hint": "From Greek didaskein, 'to teach' - intended to instruct, often too heavily.",
+            "sentence": "The children's book was [TARGET]: every single page ended with an explicit moral lesson, the narrator directly told readers what to think, and each chapter closed with a quiz about the 'right' behavior.",
+            "hint": "This word describes something intended to teach or instruct, often heavy-handedly.",
             "options": [
-                "Entertaining",
-                "Preachy",
+                "Purely entertaining",
+                "Free of lessons",
                 "Neutral",
-                "Subtle"
+                "Instructional"
             ],
-            "explanation": "Stopping the plot to deliver a moral lesson every ten minutes shows being intended to instruct too heavily, so [TARGET] means PREACHY.",
-            "correctAnswer": "Preachy",
+            "explanation": "Ending every page with a moral lesson, telling readers what to think, and quizzing them on behavior are all examples of heavy-handed teaching, so [TARGET] means INSTRUCTIONAL.",
+            "correctAnswer": "Instructional",
             "clueType": "example",
             "evidenceWords": [
-                "Reviewers",
-                "criticized"
+                "every single page ended with an explicit moral lesson",
+                "narrator directly told readers what to think",
+                "chapter closed with a quiz"
             ]
         },
         {
@@ -90,20 +92,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L182_Q2",
-            "sentence": "One [TARGET] question from the intern exposed the flaw the whole team had missed for months.",
-            "hint": "From Latin incidere, 'to cut into' - sharp and direct in getting to the heart of a matter.",
+            "sentence": "In one short question during the interview, she exposed the exact contradiction in the CEO's earlier statement that no other journalist in the room had managed to catch — a truly [TARGET] line of questioning.",
+            "hint": "This word describes analysis or questioning that cuts straight to the point.",
             "options": [
+                "Sharp",
                 "Vague",
-                "Confusing",
-                "Penetrating",
-                "Pointless"
+                "Muddled",
+                "Unfocused"
             ],
-            "explanation": "One question exposing a flaw the team missed for months shows getting sharply to the heart of a matter, so [TARGET] means PENETRATING.",
-            "correctAnswer": "Penetrating",
+            "explanation": "Exposing a contradiction in one short question that no other journalist caught shows sharp, precise questioning, even without a direct clue word, so [TARGET] means SHARP.",
+            "correctAnswer": "Sharp",
             "clueType": "inference",
             "evidenceWords": [
-                "question",
-                "intern"
+                "In one short question",
+                "exposed the exact contradiction",
+                "no other journalist in the room had managed to catch"
             ]
         },
         {
@@ -111,20 +114,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L182_Q3",
-            "sentence": "The child was [TARGET] for days after learning the family would have to give the puppy away.",
-            "hint": "From Latin dis- + consolari, 'unable to be consoled' - so sad that nothing can offer comfort.",
+            "sentence": "After losing the family photo album in the fire, she was [TARGET] and inconsolable, unable to be comforted by anything her friends said.",
+            "hint": "This word describes being so sad that nothing can comfort you.",
             "options": [
-                "Thrilled",
-                "Indifferent",
-                "Heartbroken",
-                "Content"
+                "Cheerful",
+                "Inconsolable",
+                "Content",
+                "Untroubled"
             ],
-            "explanation": "Being upset for days after losing the puppy shows being so sad that nothing offers comfort, so [TARGET] means HEARTBROKEN.",
-            "correctAnswer": "Heartbroken",
+            "explanation": "The word 'and' links [TARGET] to 'inconsolable,' and being unable to be comforted confirms it, so [TARGET] means INCONSOLABLE.",
+            "correctAnswer": "Inconsolable",
             "clueType": "synonym",
             "evidenceWords": [
-                "child",
-                "after"
+                "and inconsolable",
+                "unable to be comforted"
             ]
         },
         {
@@ -132,20 +135,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L183_Q1",
-            "sentence": "She became [TARGET] describing the concert, insisting it was the greatest night of her life.",
-            "hint": "From Greek rhapsoidia, a stitched-together song of praise - wildly enthusiastic and full of delight.",
+            "sentence": "Unlike the lukewarm, indifferent review the last album received, critics went [TARGET] over her new record, calling it a masterpiece and gushing about every single track.",
+            "hint": "This word describes an extravagant, over-the-top expression of enthusiasm or praise.",
             "options": [
-                "Bored",
-                "Unimpressed",
+                "Lukewarm",
+                "Indifferent",
                 "Ecstatic",
-                "Disappointed"
+                "Unenthusiastic"
             ],
-            "explanation": "Insisting it was the greatest night of her life shows being wildly enthusiastic and full of delight, so [TARGET] means ECSTATIC.",
+            "explanation": "The word 'unlike' contrasts [TARGET] with a 'lukewarm, indifferent review,' so it must mean the opposite, which is ECSTATIC.",
             "correctAnswer": "Ecstatic",
             "clueType": "antonym",
             "evidenceWords": [
-                "became",
-                "describing"
+                "Unlike",
+                "lukewarm, indifferent review",
+                "gushing about every single track"
             ]
         },
         {
@@ -153,20 +157,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L183_Q2",
-            "sentence": "The professor's [TARGET] writing style buried a simple idea under three paragraphs of unnecessary jargon.",
-            "hint": "From Latin turgere, 'to swell' - language swollen with needless complexity.",
+            "sentence": "The legal document was [TARGET], which means it was so overly complex and pompously wordy that even the lawyers struggled to explain what it actually meant.",
+            "hint": "This word describes writing that is overly complicated and pompous, hard to follow.",
             "options": [
-                "Plain",
                 "Simple",
+                "Concise",
                 "Clear",
-                "Bombastic"
+                "Overblown"
             ],
-            "explanation": "Burying a simple idea under unnecessary jargon describes language swollen with needless complexity, so [TARGET] means BOMBASTIC.",
-            "correctAnswer": "Bombastic",
+            "explanation": "The sentence defines [TARGET] as 'so overly complex and pompously wordy,' so [TARGET] means OVERBLOWN.",
+            "correctAnswer": "Overblown",
             "clueType": "definition",
             "evidenceWords": [
-                "professor's",
-                "writing"
+                "which means",
+                "overly complex and pompously wordy"
             ]
         },
         {
@@ -174,20 +178,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L183_Q3",
-            "sentence": "The host was almost too [TARGET] with her thanks, hugging every guest twice at the door.",
-            "hint": "From Latin effundere, 'to pour out' - expressing feelings in an unrestrained, overflowing way.",
+            "sentence": "Her thank-you note was [TARGET]: she used four exclamation points in a single sentence, called the gift 'the most incredible thing that has ever happened to me,' and thanked them six separate times.",
+            "hint": "This word describes expressing gratitude or emotion in an unrestrained, over-the-top way.",
             "options": [
-                "Reserved",
                 "Gushing",
-                "Cold",
-                "Distant"
+                "Restrained",
+                "Understated",
+                "Reserved"
             ],
-            "explanation": "Hugging every guest twice while thanking them shows expressing feelings in an overflowing way, so [TARGET] means GUSHING.",
+            "explanation": "Four exclamation points, calling the gift 'the most incredible thing,' and thanking them six times are all examples of unrestrained, gushing emotion, so [TARGET] means GUSHING.",
             "correctAnswer": "Gushing",
             "clueType": "example",
             "evidenceWords": [
-                "almost",
-                "thanks"
+                "four exclamation points in a single sentence",
+                "most incredible thing that has ever happened",
+                "thanked them six separate times"
             ]
         },
         {
@@ -195,20 +200,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L184_Q1",
-            "sentence": "The disease was especially [TARGET], spreading through the body for years before the first symptom appeared.",
-            "hint": "From Latin insidiae, 'ambush' - working in a hidden way that makes it more dangerous.",
+            "sentence": "No one noticed the small cracks appearing in the bridge's support beams at first, but over five years, each tiny fracture had quietly spread until the entire structure was on the verge of collapse — an [TARGET] kind of damage.",
+            "hint": "This word describes something harmful that spreads gradually and subtly, without being noticed at first.",
             "options": [
-                "Obvious",
-                "Sneaky",
-                "Harmless",
-                "Visible"
+                "Sudden and obvious",
+                "Gradual and harmful",
+                "Immediately visible",
+                "Instant and dramatic"
             ],
-            "explanation": "Spreading for years before any symptom appears shows working in a hidden, dangerous way, so [TARGET] means SNEAKY.",
-            "correctAnswer": "Sneaky",
+            "explanation": "Small cracks that went unnoticed and quietly spread over five years until near collapse show gradual, hidden harm, even without a direct clue word, so [TARGET] means GRADUAL AND HARMFUL.",
+            "correctAnswer": "Gradual and harmful",
             "clueType": "inference",
             "evidenceWords": [
-                "disease",
-                "especially"
+                "No one noticed the small cracks",
+                "over five years",
+                "quietly spread until the entire structure was on the verge of collapse"
             ]
         },
         {
@@ -216,20 +222,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L184_Q2",
-            "sentence": "The show's villain was purely [TARGET], manipulating every other character to secure his own rise to power.",
-            "hint": "Named after Niccolo Machiavelli, the political writer - cunning and willing to use any means to gain power.",
+            "sentence": "His [TARGET] and scheming plan to take over the company involved secretly turning three board members against each other while pretending to support all of them.",
+            "hint": "This word describes cunning and manipulative behavior, especially in pursuit of power.",
             "options": [
                 "Honest",
-                "Loyal",
+                "Straightforward",
                 "Scheming",
-                "Naive"
+                "Transparent"
             ],
-            "explanation": "Manipulating every other character to gain power shows being cunning and willing to use any means, so [TARGET] means SCHEMING.",
+            "explanation": "The word 'and' links [TARGET] to 'scheming,' and secretly turning board members against each other confirms it, so [TARGET] means SCHEMING.",
             "correctAnswer": "Scheming",
             "clueType": "synonym",
             "evidenceWords": [
-                "show's",
-                "villain"
+                "and scheming plan",
+                "secretly turning three board members against each other"
             ]
         },
         {
@@ -237,20 +243,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L184_Q3",
-            "sentence": "His [TARGET] business partner had been secretly selling company secrets to a competitor for months.",
-            "hint": "From Latin duplex, 'twofold' - saying one thing while secretly doing another.",
+            "sentence": "Unlike her transparent business partner who kept the same story no matter who he talked to, the accountant was [TARGET], telling investors one thing and the board something completely different.",
+            "hint": "This word describes being deceitful, saying different things to different people.",
             "options": [
-                "Deceitful",
-                "Loyal",
-                "Trustworthy",
-                "Faithful"
+                "Transparent",
+                "Consistent",
+                "Honest",
+                "Two-faced"
             ],
-            "explanation": "Secretly selling company secrets while pretending to be a loyal partner shows saying one thing while doing another, so [TARGET] means DECEITFUL.",
-            "correctAnswer": "Deceitful",
+            "explanation": "The word 'unlike' contrasts [TARGET] with a partner who 'kept the same story no matter who he talked to,' so it must mean the opposite, which is TWO-FACED.",
+            "correctAnswer": "Two-faced",
             "clueType": "antonym",
             "evidenceWords": [
-                "business",
-                "partner"
+                "Unlike",
+                "kept the same story no matter who he talked to",
+                "telling investors one thing and the board something completely different"
             ]
         },
         {
@@ -258,20 +265,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L185_Q1",
-            "sentence": "The [TARGET] landlord raised the rent every year, even as the building fell further into disrepair.",
-            "hint": "From Latin avarus, rooted in the word for craving - an intense, excessive desire for wealth.",
+            "sentence": "The old miser was [TARGET], which means he had an intense, greedy hunger for wealth that made him hoard every coin instead of ever spending or sharing it.",
+            "hint": "This word describes an intense, grasping desire for wealth.",
             "options": [
-                "Generous",
                 "Greedy",
+                "Generous",
                 "Charitable",
-                "Selfless"
+                "Giving"
             ],
-            "explanation": "Raising rent yearly on a building falling apart shows an excessive desire for wealth, so [TARGET] means GREEDY.",
+            "explanation": "The sentence defines [TARGET] as having 'an intense, greedy hunger for wealth,' so [TARGET] means GREEDY.",
             "correctAnswer": "Greedy",
             "clueType": "definition",
             "evidenceWords": [
-                "landlord",
-                "raised"
+                "which means",
+                "intense, greedy hunger for wealth"
             ]
         },
         {
@@ -279,20 +286,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L185_Q2",
-            "sentence": "The report took an [TARGET] amount of time to finish, mostly because of three unnecessary rewrites.",
-            "hint": "From Latin inordinatus, 'out of order' - far more than what is reasonable or necessary.",
+            "sentence": "He spent an [TARGET] amount of time on the decision: three weeks of research, forty different spreadsheets, and eleven phone calls just to choose which brand of stapler to buy.",
+            "hint": "This word describes an amount far beyond what is reasonable or necessary.",
             "options": [
                 "Reasonable",
-                "Minimal",
                 "Excessive",
-                "Adequate"
+                "Appropriate",
+                "Minimal"
             ],
-            "explanation": "Three unnecessary rewrites causing delay shows far more time than reasonable, so [TARGET] means EXCESSIVE.",
+            "explanation": "Three weeks of research, forty spreadsheets, and eleven phone calls just to buy a stapler are all examples of an excessive amount of time, so [TARGET] means EXCESSIVE.",
             "correctAnswer": "Excessive",
             "clueType": "example",
             "evidenceWords": [
-                "report",
-                "amount"
+                "three weeks of research",
+                "forty different spreadsheets",
+                "eleven phone calls just to choose which brand of stapler"
             ]
         },
         {
@@ -300,20 +308,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L185_Q3",
-            "sentence": "The workers went on strike after being offered a [TARGET] raise of just three cents an hour.",
-            "hint": "Describes an amount so small it feels almost insulting.",
+            "sentence": "After a full year of overtime and weekend shifts, his year-end bonus turned out to be just twelve dollars, barely enough to buy a single meal — a [TARGET] reward for so much effort.",
+            "hint": "This word describes an amount so small it feels insultingly inadequate.",
             "options": [
                 "Generous",
                 "Substantial",
                 "Meager",
                 "Ample"
             ],
-            "explanation": "A raise of just three cents an hour shows an amount so small it feels insulting, so [TARGET] means MEAGER.",
+            "explanation": "A twelve-dollar bonus after a full year of overtime, barely enough for one meal, shows an insultingly small amount, even without a direct clue word, so [TARGET] means MEAGER.",
             "correctAnswer": "Meager",
             "clueType": "inference",
             "evidenceWords": [
-                "workers",
-                "strike"
+                "full year of overtime and weekend shifts",
+                "just twelve dollars",
+                "barely enough to buy a single meal"
             ]
         },
         {
@@ -321,20 +330,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L186_Q1",
-            "sentence": "She took [TARGET] notes during the lecture, filling four notebooks by the end of the semester.",
-            "hint": "From Latin copia, 'abundance' - existing in large amounts.",
+            "sentence": "She took [TARGET] and abundant notes during the lecture, filling four entire notebooks by the end of the semester.",
+            "hint": "This word describes something plentiful, existing in large quantities.",
             "options": [
                 "Scarce",
+                "Sparse",
                 "Minimal",
-                "Plentiful",
-                "Sparse"
+                "Abundant"
             ],
-            "explanation": "Filling four notebooks with notes shows a large amount of something, so [TARGET] means PLENTIFUL.",
-            "correctAnswer": "Plentiful",
+            "explanation": "The word 'and' links [TARGET] to 'abundant,' and filling four notebooks confirms it, so [TARGET] means ABUNDANT.",
+            "correctAnswer": "Abundant",
             "clueType": "synonym",
             "evidenceWords": [
-                "notes",
-                "during"
+                "and abundant notes",
+                "filling four entire notebooks"
             ]
         },
         {
@@ -342,20 +351,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L186_Q2",
-            "sentence": "Traffic on the bridge was a [TARGET] problem, appearing in the news almost every single year.",
-            "hint": "From Latin per- + annus, 'through the year' - happening again and again over a long time.",
+            "sentence": "Unlike the trendy diet that faded from popularity within a single year, the debate over the best way to lose weight has been a [TARGET] topic, returning again and again every single decade.",
+            "hint": "This word describes something that recurs or endures continuously over a long time.",
             "options": [
                 "Recurring",
-                "Rare",
-                "One-time",
-                "Unique"
+                "Temporary",
+                "Short-lived",
+                "Fading"
             ],
-            "explanation": "Appearing in the news almost every year shows happening again and again over time, so [TARGET] means RECURRING.",
+            "explanation": "The word 'unlike' contrasts [TARGET] with a diet that 'faded from popularity within a single year,' so it must mean the opposite, which is RECURRING.",
             "correctAnswer": "Recurring",
             "clueType": "antonym",
             "evidenceWords": [
-                "Traffic",
-                "bridge"
+                "Unlike",
+                "faded from popularity within a single year",
+                "returning again and again every single decade"
             ]
         },
         {
@@ -363,20 +373,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L186_Q3",
-            "sentence": "Her [TARGET] complaints about the noise could be heard through three closed doors.",
-            "hint": "From Latin stridere, 'to creak, grate' - loud, sharp, and difficult to ignore.",
+            "sentence": "Her [TARGET] complaints echoed through the entire office, which means her voice was loud, harsh, and grating enough that people two floors away could hear every word.",
+            "hint": "This word describes a loud, harsh tone, especially in a way that grates on the ears.",
             "options": [
-                "Gentle",
-                "Soft",
-                "Harsh",
+                "Soft and gentle",
+                "Harsh and loud",
+                "Quiet",
                 "Soothing"
             ],
-            "explanation": "Complaints heard through three closed doors shows being loud, sharp, and hard to ignore, so [TARGET] means HARSH.",
-            "correctAnswer": "Harsh",
+            "explanation": "The sentence defines [TARGET] as a voice 'loud, harsh, and grating,' so [TARGET] means HARSH AND LOUD.",
+            "correctAnswer": "Harsh and loud",
             "clueType": "definition",
             "evidenceWords": [
-                "complaints",
-                "about"
+                "which means",
+                "loud, harsh, and grating"
             ]
         },
         {
@@ -384,20 +394,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L187_Q1",
-            "sentence": "The [TARGET] toddler refused every meal, every nap, and every outfit choice that entire afternoon.",
-            "hint": "From Latin frangere, 'to break' - quick to fuss, break rules, or cause friction.",
+            "sentence": "The toddlers in the waiting room were [TARGET]: one screamed every time his mother set him down, another kicked the chair repeatedly, and a third refused to stop crying no matter what anyone tried.",
+            "hint": "This word describes being irritable and difficult to control, especially of children.",
             "options": [
+                "Well-behaved",
+                "Calm",
                 "Unruly",
-                "Satisfied",
-                "Cooperative",
-                "Agreeable"
+                "Obedient"
             ],
-            "explanation": "Refusing every meal, nap, and outfit choice that afternoon shows being quick to fuss and resist, so [TARGET] means UNRULY.",
+            "explanation": "Screaming when set down, kicking chairs, and crying no matter what are all examples of being irritable and hard to control, so [TARGET] means UNRULY.",
             "correctAnswer": "Unruly",
             "clueType": "example",
             "evidenceWords": [
-                "toddler",
-                "refused"
+                "screamed every time his mother set him down",
+                "kicked the chair repeatedly",
+                "refused to stop crying"
             ]
         },
         {
@@ -405,20 +416,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L187_Q2",
-            "sentence": "The rescued dog was so [TARGET] that the vet could count every rib.",
-            "hint": "From Latin macies, 'leanness' - dangerously thin, especially from hunger or illness.",
+            "sentence": "When the rescue team found the stray dog, every rib was visible through its dull, patchy coat, its hip bones jutted out sharply, and it could barely stand long enough to reach the food bowl — dangerously [TARGET] from weeks without proper food.",
+            "hint": "This word describes being abnormally thin and weak, usually from a lack of food.",
             "options": [
-                "Plump",
+                "Well-fed",
                 "Healthy",
-                "Gaunt",
-                "Chubby"
+                "Robust",
+                "Extremely underweight"
             ],
-            "explanation": "Being thin enough to count every rib shows being dangerously thin, so [TARGET] means GAUNT.",
-            "correctAnswer": "Gaunt",
+            "explanation": "Visible ribs, jutting hip bones, and barely able to stand all show extreme thinness from lack of food, even without a direct clue word, so [TARGET] means EXTREMELY UNDERWEIGHT.",
+            "correctAnswer": "Extremely underweight",
             "clueType": "inference",
             "evidenceWords": [
-                "rescued",
-                "could"
+                "every rib was visible",
+                "hip bones jutted out sharply",
+                "could barely stand long enough to reach the food bowl"
             ]
         },
         {
@@ -426,20 +438,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L187_Q3",
-            "sentence": "During her [TARGET] weeks after the surgery, she was only allowed short walks around the block.",
-            "hint": "From Latin convalescere, 'to grow strong again' - gradually regaining health after illness.",
+            "sentence": "During her [TARGET] and recovering weeks after the surgery, she rested often, took short walks each day, and slowly regained her strength.",
+            "hint": "This word describes the period of gradually regaining health after an illness or medical procedure.",
             "options": [
                 "Recovering",
                 "Declining",
                 "Worsening",
-                "Collapsing"
+                "Deteriorating"
             ],
-            "explanation": "Being allowed only short walks after surgery shows gradually regaining health, so [TARGET] means RECOVERING.",
+            "explanation": "The word 'and' links [TARGET] to 'recovering,' and resting, walking, and regaining strength confirm it, so [TARGET] means RECOVERING.",
             "correctAnswer": "Recovering",
             "clueType": "synonym",
             "evidenceWords": [
-                "During",
-                "weeks"
+                "and recovering weeks",
+                "slowly regained her strength"
             ]
         },
         {
@@ -447,20 +459,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L188_Q1",
-            "sentence": "The wronged sorcerer in the legend muttered an ancient [TARGET] over the kingdom that built his prison.",
-            "hint": "From Latin imprecari, 'to invoke (evil)' - a spoken wish for misfortune upon someone.",
+            "sentence": "Unlike the warm blessing the priest offered at the wedding, the old woman in the folk tale muttered an [TARGET] over the cursed well, wishing misfortune on anyone who drank from it.",
+            "hint": "This word describes spoken words calling down harm on someone.",
             "options": [
-                "Compliment",
-                "Wish",
+                "Blessing",
                 "Curse",
-                "Blessing"
+                "Prayer for good fortune",
+                "Kind wish"
             ],
-            "explanation": "Muttering words over a kingdom that imprisoned him describes a spoken wish for misfortune, so [TARGET] means CURSE.",
+            "explanation": "The word 'unlike' contrasts [TARGET] with a 'warm blessing,' so it must mean the opposite, which is CURSE.",
             "correctAnswer": "Curse",
             "clueType": "antonym",
             "evidenceWords": [
-                "wronged",
-                "sorcerer"
+                "Unlike",
+                "warm blessing",
+                "wishing misfortune on anyone who drank from it"
             ]
         },
         {
@@ -468,20 +481,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L188_Q2",
-            "sentence": "The two companies held a [TARGET] meeting in a hotel basement to discuss the merger before any announcement.",
-            "hint": "From Latin clam, meaning 'hidden from view' - done away from public knowledge.",
+            "sentence": "The two companies held a [TARGET] meeting in a private room with no cameras, which means it was a secret gathering deliberately hidden from the public and even from most employees.",
+            "hint": "This word describes something done covertly, not meant to be discovered.",
             "options": [
                 "Public",
                 "Open",
                 "Secret",
                 "Announced"
             ],
-            "explanation": "Meeting in a hotel basement before any announcement shows being done in hiding, so [TARGET] means SECRET.",
+            "explanation": "The sentence defines [TARGET] as 'a secret gathering deliberately hidden from the public,' so [TARGET] means SECRET.",
             "correctAnswer": "Secret",
             "clueType": "definition",
             "evidenceWords": [
-                "companies",
-                "meeting"
+                "which means",
+                "secret gathering deliberately hidden from the public"
             ]
         },
         {
@@ -489,20 +502,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L188_Q3",
-            "sentence": "After years of arguments, she became [TARGET] from her brother and hadn't spoken to him since.",
-            "hint": "From Latin extraneus, 'foreign, outside' - no longer close to someone, especially in a family.",
+            "sentence": "The two brothers had been [TARGET] for over a decade: they hadn't spoken since the argument at their father's funeral, skipped each other's weddings, and only heard news of each other through their mother.",
+            "hint": "This word describes being emotionally distant or no longer in close contact, especially with family.",
             "options": [
                 "Close",
-                "Connected",
-                "Alienated",
-                "Bonded"
+                "Inseparable",
+                "Devoted",
+                "Alienated"
             ],
-            "explanation": "Not speaking to her brother after years of arguments shows no longer being close to family, so [TARGET] means ALIENATED.",
+            "explanation": "Not speaking for a decade, skipping each other's weddings, and only hearing news through their mother are all examples of being distant from family, so [TARGET] means ALIENATED.",
             "correctAnswer": "Alienated",
             "clueType": "example",
             "evidenceWords": [
-                "After",
-                "years"
+                "hadn't spoken since the argument",
+                "skipped each other's weddings",
+                "only heard news of each other through their mother"
             ]
         },
         {
@@ -510,20 +524,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L189_Q1",
-            "sentence": "He arrived at the interview looking [TARGET], his tie crooked and his shirt only half tucked in.",
-            "hint": "From Old French deschevele, literally 'with disordered hair' - untidy in dress or appearance.",
+            "sentence": "He arrived at the interview with his shirt untucked on one side, his tie loosely hanging around his neck, and his hair sticking up in three different directions after running to catch the bus — completely [TARGET].",
+            "hint": "This word describes appearing messy and disordered, especially in dress or hair.",
             "options": [
-                "Polished",
+                "Untidy",
                 "Neat",
-                "Messy",
-                "Tidy"
+                "Polished",
+                "Well-groomed"
             ],
-            "explanation": "Arriving with a crooked tie and untucked shirt shows being untidy in appearance, so [TARGET] means MESSY.",
-            "correctAnswer": "Messy",
+            "explanation": "An untucked shirt, a loose tie, and hair sticking up in different directions all show untidy appearance, even without a direct clue word, so [TARGET] means UNTIDY.",
+            "correctAnswer": "Untidy",
             "clueType": "inference",
             "evidenceWords": [
-                "arrived",
-                "interview"
+                "shirt untucked on one side",
+                "tie loosely hanging around his neck",
+                "hair sticking up in three different directions"
             ]
         },
         {
@@ -531,20 +546,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L189_Q2",
-            "sentence": "Her [TARGET] decision to donate a kidney to a total stranger made the local news.",
-            "hint": "Coined from Latin alter, 'other' - acting out of genuine concern for others, not personal gain.",
+            "sentence": "Her decision to donate a kidney to a complete stranger was [TARGET] and selfless, done with no expectation of anything in return.",
+            "hint": "This word describes acting out of genuine concern for others rather than self-interest.",
             "options": [
-                "Selfish",
+                "Self-serving",
                 "Selfless",
                 "Greedy",
-                "Self-serving"
+                "Self-interested"
             ],
-            "explanation": "Donating a kidney to a stranger shows acting out of concern for others, not personal gain, so [TARGET] means SELFLESS.",
+            "explanation": "The word 'and' links [TARGET] to 'selfless,' and expecting nothing in return confirms it, so [TARGET] means SELFLESS.",
             "correctAnswer": "Selfless",
             "clueType": "synonym",
             "evidenceWords": [
-                "decision",
-                "donate"
+                "and selfless",
+                "no expectation of anything in return"
             ]
         },
         {
@@ -552,20 +567,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L189_Q3",
-            "sentence": "Even after being offered a bribe worth a year's salary, the inspector remained [TARGET].",
-            "hint": "From Latin in- + corruptus, 'not broken or spoiled' - impossible to bribe or morally corrupt.",
+            "sentence": "Unlike the previous inspector who accepted bribes from every restaurant owner in town, the new inspector was [TARGET], refusing every envelope of cash and shutting down violations without exception.",
+            "hint": "This word describes being impossible to bribe or corrupt.",
             "options": [
-                "Corrupt",
-                "Upright",
-                "Crooked",
+                "Corruptible",
+                "Easily bribed",
+                "Unbribable",
                 "Dishonest"
             ],
-            "explanation": "Refusing a bribe worth a year's salary shows being impossible to morally corrupt, so [TARGET] means UPRIGHT.",
-            "correctAnswer": "Upright",
+            "explanation": "The word 'unlike' contrasts [TARGET] with an inspector who 'accepted bribes,' so it must mean the opposite, which is UNBRIBABLE.",
+            "correctAnswer": "Unbribable",
             "clueType": "antonym",
             "evidenceWords": [
-                "after",
-                "being"
+                "Unlike",
+                "accepted bribes from every restaurant owner in town",
+                "refusing every envelope of cash"
             ]
         },
         {
@@ -573,20 +589,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L190_Q1",
-            "sentence": "The [TARGET] boxer picked fights with reporters just as readily as with opponents in the ring.",
-            "hint": "From Latin pugnare, 'to fight' - eager to argue or fight at the smallest provocation.",
+            "sentence": "The boxer's [TARGET] attitude outside the ring, which means his eagerness to argue and fight over even the smallest disagreement, eventually got him banned from three different gyms.",
+            "hint": "This word describes being eager and ready to argue or fight.",
             "options": [
                 "Peaceful",
-                "Combative",
-                "Friendly",
-                "Agreeable"
+                "Passive",
+                "Conflict-averse",
+                "Combative"
             ],
-            "explanation": "Picking fights with reporters as easily as opponents shows being eager to fight at the smallest provocation, so [TARGET] means COMBATIVE.",
+            "explanation": "The sentence defines [TARGET] as an 'eagerness to argue and fight over even the smallest disagreement,' so [TARGET] means COMBATIVE.",
             "correctAnswer": "Combative",
             "clueType": "definition",
             "evidenceWords": [
-                "boxer",
-                "picked"
+                "which means",
+                "eagerness to argue and fight over even the smallest disagreement"
             ]
         },
         {
@@ -594,20 +610,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L190_Q2",
-            "sentence": "The editor's [TARGET] notes focused on comma placement instead of the story's obvious plot holes.",
-            "hint": "Describes someone overly concerned with minor rules and technical details.",
+            "sentence": "He was [TARGET] about grammar: he corrected his friend's use of 'less' instead of 'fewer' mid-conversation, refused to let a text message with a comma splice go unmentioned, and once argued for ten minutes about the proper use of 'whom.'",
+            "hint": "This word describes being excessively focused on minor details or technical correctness, often in an annoying way.",
             "options": [
-                "Nitpicky",
-                "Relaxed",
-                "Big-picture",
-                "Easygoing"
+                "Overly precise",
+                "Relaxed about rules",
+                "Easygoing",
+                "Casual"
             ],
-            "explanation": "Focusing on commas instead of obvious plot holes shows being overly concerned with minor details, so [TARGET] means NITPICKY.",
-            "correctAnswer": "Nitpicky",
+            "explanation": "Correcting 'less' versus 'fewer' mid-conversation, mentioning a comma splice in a text, and arguing about 'whom' are all examples of excessive focus on minor details, so [TARGET] means OVERLY PRECISE.",
+            "correctAnswer": "Overly precise",
             "clueType": "example",
             "evidenceWords": [
-                "editor's",
-                "notes"
+                "corrected his friend's use of 'less' instead of 'fewer'",
+                "comma splice go unmentioned",
+                "argued for ten minutes about the proper use of"
             ]
         },
         {
@@ -615,20 +632,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L190_Q3",
-            "sentence": "The [TARGET] student asked the substitute teacher for money to buy pizza during the exam.",
-            "hint": "From Latin impudens, 'not ashamed' - boldly disrespectful without any embarrassment.",
+            "sentence": "The student rolled his eyes at the teacher's instructions, muttered a sarcastic comment loud enough for the whole class to hear, and then put his feet up on the desk without asking permission — a remarkably [TARGET] display.",
+            "hint": "This word describes being boldly disrespectful, showing no regard for authority or manners.",
             "options": [
-                "Polite",
                 "Respectful",
-                "Shameless",
-                "Humble"
+                "Insolent",
+                "Courteous",
+                "Deferential"
             ],
-            "explanation": "Asking a substitute for pizza money during an exam shows being boldly disrespectful without embarrassment, so [TARGET] means SHAMELESS.",
-            "correctAnswer": "Shameless",
+            "explanation": "Rolling his eyes, muttering sarcastically loud enough for the class, and putting his feet up without permission all show bold disrespect, even without a direct clue word, so [TARGET] means INSOLENT.",
+            "correctAnswer": "Insolent",
             "clueType": "inference",
             "evidenceWords": [
-                "student",
-                "asked"
+                "rolled his eyes at the teacher's instructions",
+                "muttered a sarcastic comment loud enough for the whole class to hear",
+                "put his feet up on the desk without asking permission"
             ]
         }
     ],

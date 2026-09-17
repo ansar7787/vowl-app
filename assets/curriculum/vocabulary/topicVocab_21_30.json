@@ -6,721 +6,781 @@
         {
             "id": "VOC_TOPICVOCAB_L21_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Home or School, based on where you'd find it.",
             "topicBuckets": [
-                "School",
-                "Home"
+                "Home",
+                "School"
             ],
-            "hint": "Here's a tip: School is where you go to learn, while home is where you live and rest!",
-            "explanation": "Think of 'School' as places and things related to learning (classroom, teacher), and 'Home' as places and things related to living (bedroom, family)!",
+            "hint": "Think about which rooms or things you'd find at school, and which you'd find where you live.",
+            "explanation": "Classroom, locker, and cafeteria are all specific to a school building, places for lessons, storage, and meals. Bedroom and kitchen are rooms found in a home, where you sleep and cook.",
             "options": [
                 "Classroom",
-                "Bedroom",
-                "Teacher",
-                "Sofa",
-                "Homework"
+                "Cafeteria",
+                "Kitchen",
+                "Locker",
+                "Bedroom"
             ],
-            "correctAnswer": "School:Classroom, Home:Bedroom, School:Teacher, Home:Sofa, School:Homework",
+            "correctAnswer": "School:Classroom, School:Cafeteria, Home:Kitchen, School:Locker, Home:Bedroom",
             "relatedWords": [
-                "aspect of School:Classroom, Home:Bedroom, School:Teacher, Home:Sofa, School:Homework",
-                "concept of School:Classroom, Home:Bedroom, School:Teacher, Home:Sofa, School:Homework",
-                "related to School:Classroom, Home:Bedroom, School:Teacher, Home:Sofa, School:Homework"
+                "Classroom: a room where lessons take place",
+                "Cafeteria: a room where meals are served, especially at school or work",
+                "Kitchen: a room used for cooking",
+                "Locker: a small compartment for storing belongings",
+                "Bedroom: a room used for sleeping"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L21_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Think about who you'd interact with during the school day versus after you get home. Sort into School or Home.",
             "topicBuckets": [
                 "School",
                 "Home"
             ],
-            "hint": "Here's a tip: School is where you go to learn, while home is where you live and rest!",
-            "explanation": "Think of 'School' as places and things related to learning (classroom, teacher), and 'Home' as places and things related to living (bedroom, family)!",
+            "hint": "Think about people tied to a school building specifically, versus people tied to a family.",
+            "explanation": "Principal, classmate, and janitor are all roles specific to a school environment. Sibling and parent are family roles you'd typically be with at home, though of course families can visit a school too.",
             "options": [
-                "Playground",
-                "Kitchen",
-                "Locker",
-                "Garden",
-                "Textbook"
+                "Principal",
+                "Sibling",
+                "Classmate",
+                "Janitor",
+                "Parent"
             ],
-            "correctAnswer": "School:Playground, Home:Kitchen, School:Locker, Home:Garden, School:Textbook",
+            "correctAnswer": "School:Principal, Home:Sibling, School:Classmate, School:Janitor, Home:Parent",
             "relatedWords": [
-                "aspect of School:Playground, Home:Kitchen, School:Locker, Home:Garden, School:Textbook",
-                "concept of School:Playground, Home:Kitchen, School:Locker, Home:Garden, School:Textbook",
-                "related to School:Playground, Home:Kitchen, School:Locker, Home:Garden, School:Textbook"
+                "Principal: the person in charge of a school",
+                "Sibling: a brother or sister",
+                "Classmate: a student in the same class as you",
+                "Janitor: a person who cleans and maintains a building",
+                "Parent: a mother or father"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L21_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Think about a rule your parents set versus an event during the school day. Sort into School or Home.",
             "topicBuckets": [
                 "School",
                 "Home"
             ],
-            "hint": "Here's a tip: School is where you go to learn, while home is where you live and rest!",
-            "explanation": "Think of 'School' as places and things related to learning (classroom, teacher), and 'Home' as places and things related to living (bedroom, family)!",
+            "hint": "Two of these are set by family, and two happen on a school schedule.",
+            "explanation": "Curfew, chores, and bedtime are all routines tied to home life, set by family. Recess and assembly are scheduled breaks or gatherings that happen specifically during the school day.",
             "options": [
-                "Exam",
-                "Family",
-                "Principal",
-                "Pet",
-                "Backpack"
+                "Bedtime",
+                "Chores",
+                "Assembly",
+                "Recess",
+                "Curfew"
             ],
-            "correctAnswer": "School:Exam, Home:Family, School:Principal, Home:Pet, School:Backpack",
+            "correctAnswer": "Home:Bedtime, Home:Chores, School:Assembly, School:Recess, Home:Curfew",
             "relatedWords": [
-                "aspect of School:Exam, Home:Family, School:Principal, Home:Pet, School:Backpack",
-                "concept of School:Exam, Home:Family, School:Principal, Home:Pet, School:Backpack",
-                "related to School:Exam, Home:Family, School:Principal, Home:Pet, School:Backpack"
+                "Bedtime: the time someone usually goes to sleep",
+                "Chores: small regular tasks done around the house",
+                "Assembly: a gathering of a whole school for an announcement or event",
+                "Recess: a scheduled break during the school day",
+                "Curfew: a time by which someone must be home"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L22_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Buy or Sell, based on which side of a transaction it describes.",
             "topicBuckets": [
                 "Buy",
                 "Sell"
             ],
-            "hint": "Here's a tip: You buy something by paying for it, while a shop sells things to earn money!",
-            "explanation": "Think of 'Buy' as giving money to get something (purchase, pay for), and 'Sell' as giving something to get money (offer, trade for cash)!",
+            "hint": "Think about which side of a transaction is handing over money, and which side is handing over goods.",
+            "explanation": "Purchase, acquire, and order are all things a buyer does, obtaining something in exchange for money. Vendor and retailer are both terms for the seller, though retailer specifically often refers to a business that sells directly to customers.",
             "options": [
                 "Purchase",
-                "Trade",
                 "Acquire",
-                "Vend",
-                "Order"
+                "Retailer",
+                "Order",
+                "Vendor"
             ],
-            "correctAnswer": "Buy:Purchase, Sell:Trade, Buy:Acquire, Sell:Vend, Buy:Order",
+            "correctAnswer": "Buy:Purchase, Buy:Acquire, Sell:Retailer, Buy:Order, Sell:Vendor",
             "relatedWords": [
-                "aspect of Buy:Purchase, Sell:Trade, Buy:Acquire, Sell:Vend, Buy:Order",
-                "concept of Buy:Purchase, Sell:Trade, Buy:Acquire, Sell:Vend, Buy:Order",
-                "related to Buy:Purchase, Sell:Trade, Buy:Acquire, Sell:Vend, Buy:Order"
+                "Purchase: to obtain something by paying for it",
+                "Acquire: to come to own or possess something",
+                "Retailer: a business that sells goods directly to customers",
+                "Order: to request that something be provided, usually for payment",
+                "Vendor: a person or business that sells something"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L22_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Think about who is trying to attract customers, and who is trying to get a good price. Sort into Sell or Buy.",
             "topicBuckets": [
-                "Buy",
-                "Sell"
+                "Sell",
+                "Buy"
             ],
-            "hint": "Here's a tip: You buy something by paying for it, while a shop sells things to earn money!",
-            "explanation": "Think of 'Buy' as giving money to get something (purchase, pay for), and 'Sell' as giving something to get money (offer, trade for cash)!",
+            "hint": "Think about looking around a store versus offering something to the highest bidder.",
+            "explanation": "Browse, bid, and haggle are all things a buyer does \u2014 looking around, offering a price, or negotiating one down. Auction and advertise are both things a seller does, either offering goods to the highest bidder or promoting them to attract buyers.",
             "options": [
-                "Shop",
-                "Market",
-                "Customer",
-                "Vendor",
-                "Spend"
+                "Haggle",
+                "Auction",
+                "Browse",
+                "Advertise",
+                "Bid"
             ],
-            "correctAnswer": "Buy:Shop, Sell:Market, Buy:Customer, Sell:Vendor, Buy:Spend",
+            "correctAnswer": "Buy:Haggle, Sell:Auction, Buy:Browse, Sell:Advertise, Buy:Bid",
             "relatedWords": [
-                "aspect of Buy:Shop, Sell:Market, Buy:Customer, Sell:Vendor, Buy:Spend",
-                "concept of Buy:Shop, Sell:Market, Buy:Customer, Sell:Vendor, Buy:Spend",
-                "related to Buy:Shop, Sell:Market, Buy:Customer, Sell:Vendor, Buy:Spend"
+                "Haggle: to negotiate a lower price",
+                "Auction: to sell something to whoever offers the highest price",
+                "Browse: to look through goods without necessarily buying yet",
+                "Advertise: to promote something to attract buyers",
+                "Bid: to offer a price for something"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L22_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These are economics terms. Think about which side of the market each one represents, then sort into Buy or Sell.",
             "topicBuckets": [
                 "Buy",
                 "Sell"
             ],
-            "hint": "Here's a tip: You buy something by paying for it, while a shop sells things to earn money!",
-            "explanation": "Think of 'Buy' as giving money to get something (purchase, pay for), and 'Sell' as giving something to get money (offer, trade for cash)!",
+            "hint": "One seller word specifically means selling large quantities to other businesses, not individual customers.",
+            "explanation": "Consumer and demand both describe the buying side of an economy \u2014 people wanting goods. Merchant, supply, and wholesaler are all on the selling side, with a wholesaler specifically selling large quantities to other businesses rather than individual customers.",
             "options": [
-                "Checkout",
-                "Auction",
-                "Bargain",
-                "Offer",
-                "Pay"
+                "Wholesaler",
+                "Consumer",
+                "Supply",
+                "Merchant",
+                "Demand"
             ],
-            "correctAnswer": "Buy:Checkout, Sell:Auction, Buy:Bargain, Sell:Offer, Buy:Pay",
+            "correctAnswer": "Sell:Wholesaler, Buy:Consumer, Sell:Supply, Sell:Merchant, Buy:Demand",
             "relatedWords": [
-                "aspect of Buy:Checkout, Sell:Auction, Buy:Bargain, Sell:Offer, Buy:Pay",
-                "concept of Buy:Checkout, Sell:Auction, Buy:Bargain, Sell:Offer, Buy:Pay",
-                "related to Buy:Checkout, Sell:Auction, Buy:Bargain, Sell:Offer, Buy:Pay"
+                "Wholesaler: a seller who sells large quantities to other businesses",
+                "Consumer: a person who buys goods or services",
+                "Supply: the amount of something available to sell",
+                "Merchant: a person or business that sells goods",
+                "Demand: the desire of buyers to purchase something"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L23_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Expensive or Cheap.",
             "topicBuckets": [
-                "Cheap",
-                "Expensive"
+                "Expensive",
+                "Cheap"
             ],
-            "hint": "Here's a tip: Cheap things cost very little, while expensive things cost a lot of money!",
-            "explanation": "Think of 'Cheap' as low-priced items (bargain, affordable), and 'Expensive' as high-priced items (costly, luxury)!",
+            "hint": "Think about which words describe something easy on your wallet, versus something that stretches it.",
+            "explanation": "Affordable, budget-friendly, and inexpensive all describe something that doesn't cost much, though 'budget-friendly' is often used specifically in marketing. Costly and pricey both mean expensive, with costly sometimes implying a cost beyond just money, like a costly mistake.",
             "options": [
                 "Affordable",
-                "Costly",
-                "Bargain",
-                "Luxury",
-                "Inexpensive"
+                "Pricey",
+                "Inexpensive",
+                "Budget-friendly",
+                "Costly"
             ],
-            "correctAnswer": "Cheap:Affordable, Expensive:Costly, Cheap:Bargain, Expensive:Luxury, Cheap:Inexpensive",
+            "correctAnswer": "Cheap:Affordable, Expensive:Pricey, Cheap:Inexpensive, Cheap:Budget-friendly, Expensive:Costly",
             "relatedWords": [
-                "aspect of Cheap:Affordable, Expensive:Costly, Cheap:Bargain, Expensive:Luxury, Cheap:Inexpensive",
-                "concept of Cheap:Affordable, Expensive:Costly, Cheap:Bargain, Expensive:Luxury, Cheap:Inexpensive",
-                "related to Cheap:Affordable, Expensive:Costly, Cheap:Bargain, Expensive:Luxury, Cheap:Inexpensive"
+                "Affordable: priced within what most people can pay",
+                "Pricey: informally, quite expensive",
+                "Inexpensive: not costing much money",
+                "Budget-friendly: priced to suit a limited budget",
+                "Costly: expensive, sometimes in a way beyond just money"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L23_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Two of these expensive words suggest indulgence, not just a high price. Sort into Cheap or Expensive.",
             "topicBuckets": [
                 "Cheap",
                 "Expensive"
             ],
-            "hint": "Here's a tip: Cheap things cost very little, while expensive things cost a lot of money!",
-            "explanation": "Think of 'Cheap' as low-priced items (bargain, affordable), and 'Expensive' as high-priced items (costly, luxury)!",
+            "hint": "Think about a price reduced from its original amount, versus spending far beyond what's reasonable.",
+            "explanation": "Discounted and marked-down both describe something reduced from its original price. Economical describes something that offers good value for the money. Luxurious and extravagant both suggest expensive indulgence, with extravagant implying spending beyond what's reasonable.",
             "options": [
+                "Luxurious",
+                "Marked-down",
+                "Economical",
                 "Discounted",
-                "Pricey",
-                "Budget",
-                "Premium",
-                "Economical"
+                "Extravagant"
             ],
-            "correctAnswer": "Cheap:Discounted, Expensive:Pricey, Cheap:Budget, Expensive:Premium, Cheap:Economical",
+            "correctAnswer": "Expensive:Luxurious, Cheap:Marked-down, Cheap:Economical, Cheap:Discounted, Expensive:Extravagant",
             "relatedWords": [
-                "aspect of Cheap:Discounted, Expensive:Pricey, Cheap:Budget, Expensive:Premium, Cheap:Economical",
-                "concept of Cheap:Discounted, Expensive:Pricey, Cheap:Budget, Expensive:Premium, Cheap:Economical",
-                "related to Cheap:Discounted, Expensive:Pricey, Cheap:Budget, Expensive:Premium, Cheap:Economical"
+                "Luxurious: expensive and highly comfortable or elegant",
+                "Marked-down: reduced in price from the original",
+                "Economical: giving good value for a reasonable price",
+                "Discounted: sold at a reduced price",
+                "Extravagant: spending far more than is reasonable"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L23_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Think about a price tag that makes you gasp, versus one that feels fair. Sort into Cheap or Expensive.",
             "topicBuckets": [
                 "Cheap",
                 "Expensive"
             ],
-            "hint": "Here's a tip: Cheap things cost very little, while expensive things cost a lot of money!",
-            "explanation": "Think of 'Cheap' as low-priced items (bargain, affordable), and 'Expensive' as high-priced items (costly, luxury)!",
+            "hint": "Three of these describe a price that feels unreasonably high.",
+            "explanation": "Steep, overpriced, and exorbitant all describe a price that feels unreasonably high, with exorbitant being the strongest of the three. Reasonable and cost-effective both describe a price that feels fair or gives good value, often used in a business or review context.",
             "options": [
-                "Overpriced",
+                "Steep",
                 "Reasonable",
-                "Lavish",
-                "Modest",
+                "Cost-effective",
+                "Overpriced",
                 "Exorbitant"
             ],
-            "correctAnswer": "Expensive:Overpriced, Cheap:Reasonable, Expensive:Lavish, Cheap:Modest, Expensive:Exorbitant",
+            "correctAnswer": "Expensive:Steep, Cheap:Reasonable, Cheap:Cost-effective, Expensive:Overpriced, Expensive:Exorbitant",
             "relatedWords": [
-                "aspect of Expensive:Overpriced, Cheap:Reasonable, Expensive:Lavish, Cheap:Modest, Expensive:Exorbitant",
-                "concept of Expensive:Overpriced, Cheap:Reasonable, Expensive:Lavish, Cheap:Modest, Expensive:Exorbitant",
-                "related to Expensive:Overpriced, Cheap:Reasonable, Expensive:Lavish, Cheap:Modest, Expensive:Exorbitant"
+                "Steep: unreasonably high, describing a price",
+                "Reasonable: fair, not too high or too low",
+                "Cost-effective: giving good results for the money spent",
+                "Overpriced: priced higher than something is worth",
+                "Exorbitant: far higher than what is reasonable or usual"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L24_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Breakfast or Dinner, based on which meal it's typically part of.",
             "topicBuckets": [
                 "Breakfast",
                 "Dinner"
             ],
-            "hint": "Here's a tip: Breakfast is your first meal in the morning, while dinner is your main meal in the evening!",
-            "explanation": "Think of 'Breakfast' as morning-meal foods (cereal, toast), and 'Dinner' as evening-meal foods (roast, supper dishes)!",
+            "hint": "Think about what's typically on the table first thing in the morning versus in the evening.",
+            "explanation": "Cereal, toast, and pancakes are all common breakfast foods, usually quick to prepare. Roast and stew are both hearty dishes typically served as dinner, taking longer to cook.",
             "options": [
-                "Cereal",
-                "Roast",
+                "Stew",
                 "Toast",
-                "Casserole",
-                "Pancakes"
+                "Pancakes",
+                "Roast",
+                "Cereal"
             ],
-            "correctAnswer": "Breakfast:Cereal, Dinner:Roast, Breakfast:Toast, Dinner:Casserole, Breakfast:Pancakes",
+            "correctAnswer": "Dinner:Stew, Breakfast:Toast, Breakfast:Pancakes, Dinner:Roast, Breakfast:Cereal",
             "relatedWords": [
-                "aspect of Breakfast:Cereal, Dinner:Roast, Breakfast:Toast, Dinner:Casserole, Breakfast:Pancakes",
-                "concept of Breakfast:Cereal, Dinner:Roast, Breakfast:Toast, Dinner:Casserole, Breakfast:Pancakes",
-                "related to Breakfast:Cereal, Dinner:Roast, Breakfast:Toast, Dinner:Casserole, Breakfast:Pancakes"
+                "Stew: a dish of meat and vegetables cooked slowly in liquid",
+                "Toast: sliced bread browned by heat",
+                "Pancakes: flat cakes cooked on a griddle",
+                "Roast: meat or vegetables cooked slowly in an oven",
+                "Cereal: a breakfast food made from grain, often eaten with milk"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L24_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Think about which foods you'd cook quickly before work versus slow-cook for the evening. Sort into Dinner or Breakfast.",
             "topicBuckets": [
-                "Breakfast",
-                "Dinner"
+                "Dinner",
+                "Breakfast"
             ],
-            "hint": "Here's a tip: Breakfast is your first meal in the morning, while dinner is your main meal in the evening!",
-            "explanation": "Think of 'Breakfast' as morning-meal foods (cereal, toast), and 'Dinner' as evening-meal foods (roast, supper dishes)!",
+            "hint": "Two dinner dishes here need much longer cooking time than any breakfast food.",
+            "explanation": "Omelet, porridge, and a bagel are all quick or simple foods associated with the start of the day. A casserole and pot roast are both dishes that take longer to prepare, more typical of an evening meal.",
             "options": [
-                "Omelet",
-                "Stew",
+                "Casserole",
                 "Porridge",
-                "Steak",
-                "Bacon"
+                "Omelet",
+                "Pot roast",
+                "Bagel"
             ],
-            "correctAnswer": "Breakfast:Omelet, Dinner:Stew, Breakfast:Porridge, Dinner:Steak, Breakfast:Bacon",
+            "correctAnswer": "Dinner:Casserole, Breakfast:Porridge, Breakfast:Omelet, Dinner:Pot roast, Breakfast:Bagel",
             "relatedWords": [
-                "aspect of Breakfast:Omelet, Dinner:Stew, Breakfast:Porridge, Dinner:Steak, Breakfast:Bacon",
-                "concept of Breakfast:Omelet, Dinner:Stew, Breakfast:Porridge, Dinner:Steak, Breakfast:Bacon",
-                "related to Breakfast:Omelet, Dinner:Stew, Breakfast:Porridge, Dinner:Steak, Breakfast:Bacon"
+                "Casserole: a dish baked slowly in a deep dish",
+                "Porridge: a soft food made by boiling oats in milk or water",
+                "Omelet: a dish of beaten eggs cooked in a pan",
+                "Pot roast: meat cooked slowly in a covered pot",
+                "Bagel: a dense, ring-shaped bread roll"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L24_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Think about a hotel menu \u2014 some phrases describe a simple morning spread, others an elaborate evening event. Sort into Breakfast or Dinner.",
             "topicBuckets": [
                 "Breakfast",
                 "Dinner"
             ],
-            "hint": "Here's a tip: Breakfast is your first meal in the morning, while dinner is your main meal in the evening!",
-            "explanation": "Think of 'Breakfast' as morning-meal foods (cereal, toast), and 'Dinner' as evening-meal foods (roast, supper dishes)!",
+            "hint": "One dinner phrase specifically means a discounted meal served earlier than usual.",
+            "explanation": "A 'continental breakfast' and a 'full English' are both set breakfast styles, though a full English is a much larger, cooked meal. A 'three-course meal', an 'early bird special' (a discounted dinner served earlier than usual), and a 'formal banquet' are all associated with dinner, especially at a restaurant or event.",
             "options": [
-                "Waffles",
-                "Supper",
-                "Yogurt",
-                "Entree",
-                "Granola"
+                "Full English",
+                "Formal banquet",
+                "Early bird special",
+                "Three-course meal",
+                "Continental breakfast"
             ],
-            "correctAnswer": "Breakfast:Waffles, Dinner:Supper, Breakfast:Yogurt, Dinner:Entree, Breakfast:Granola",
+            "correctAnswer": "Breakfast:Full English, Dinner:Formal banquet, Dinner:Early bird special, Dinner:Three-course meal, Breakfast:Continental breakfast",
             "relatedWords": [
-                "aspect of Breakfast:Waffles, Dinner:Supper, Breakfast:Yogurt, Dinner:Entree, Breakfast:Granola",
-                "concept of Breakfast:Waffles, Dinner:Supper, Breakfast:Yogurt, Dinner:Entree, Breakfast:Granola",
-                "related to Breakfast:Waffles, Dinner:Supper, Breakfast:Yogurt, Dinner:Entree, Breakfast:Granola"
+                "Full English: a large, cooked traditional British breakfast",
+                "Formal banquet: an elaborate, ceremonial evening meal",
+                "Early bird special: a discounted meal served earlier than the usual dinner time",
+                "Three-course meal: a meal served in three separate parts",
+                "Continental breakfast: a light breakfast of bread, pastries, and coffee"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L25_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Walk or Run, based on the manner of movement.",
             "topicBuckets": [
                 "Walk",
                 "Run"
             ],
-            "hint": "Here's a tip: Walking is slow, one foot after the other, while running is fast, with both feet leaving the ground!",
-            "explanation": "Think of 'Walk' as slow, steady movement on foot (stroll, pace), and 'Run' as fast movement on foot (sprint, dash)!",
+            "hint": "Think about your speed and effort \u2014 a relaxed pace, or an all-out burst.",
+            "explanation": "Stroll and amble both describe a slow, relaxed walk, while pace describes walking steadily, often back and forth. Sprint and dash both describe running at full speed, though a sprint is usually a set short distance.",
             "options": [
-                "Stroll",
                 "Sprint",
-                "Pace",
                 "Dash",
-                "Saunter"
+                "Pace",
+                "Amble",
+                "Stroll"
             ],
-            "correctAnswer": "Walk:Stroll, Run:Sprint, Walk:Pace, Run:Dash, Walk:Saunter",
+            "correctAnswer": "Run:Sprint, Run:Dash, Walk:Pace, Walk:Amble, Walk:Stroll",
             "relatedWords": [
-                "aspect of Walk:Stroll, Run:Sprint, Walk:Pace, Run:Dash, Walk:Saunter",
-                "concept of Walk:Stroll, Run:Sprint, Walk:Pace, Run:Dash, Walk:Saunter",
-                "related to Walk:Stroll, Run:Sprint, Walk:Pace, Run:Dash, Walk:Saunter"
+                "Sprint: to run at full speed over a short distance",
+                "Dash: to run suddenly and quickly",
+                "Pace: to walk steadily, often back and forth",
+                "Amble: to walk at a slow, easy pace",
+                "Stroll: to walk in a slow, relaxed way"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L25_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Think about a long, unhurried outdoor walk versus a competitive, timed run. Sort into Walk or Run.",
             "topicBuckets": [
                 "Walk",
                 "Run"
             ],
-            "hint": "Here's a tip: Walking is slow, one foot after the other, while running is fast, with both feet leaving the ground!",
-            "explanation": "Think of 'Walk' as slow, steady movement on foot (stroll, pace), and 'Run' as fast movement on foot (sprint, dash)!",
+            "hint": "One run word describes a very long-distance race specifically.",
+            "explanation": "Jog, marathon, and race are all related to running, with a marathon being a very long-distance race specifically. Wander describes walking without a clear direction, while a hike is a long walk, often on trails, done at a walking pace rather than a run.",
             "options": [
                 "Hike",
-                "Jog",
                 "Wander",
                 "Race",
-                "Amble"
+                "Marathon",
+                "Jog"
             ],
-            "correctAnswer": "Walk:Hike, Run:Jog, Walk:Wander, Run:Race, Walk:Amble",
+            "correctAnswer": "Walk:Hike, Walk:Wander, Run:Race, Run:Marathon, Run:Jog",
             "relatedWords": [
-                "aspect of Walk:Hike, Run:Jog, Walk:Wander, Run:Race, Walk:Amble",
-                "concept of Walk:Hike, Run:Jog, Walk:Wander, Run:Race, Walk:Amble",
-                "related to Walk:Hike, Run:Jog, Walk:Wander, Run:Race, Walk:Amble"
+                "Hike: a long walk, often on trails or in nature",
+                "Wander: to walk without a clear direction or purpose",
+                "Race: a competition to see who is fastest",
+                "Marathon: a long-distance running race",
+                "Jog: to run at a slow, steady pace, often for exercise"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L25_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These are vivid, specific ways to describe movement. Sort into Walk or Run.",
             "topicBuckets": [
                 "Walk",
                 "Run"
             ],
-            "hint": "Here's a tip: Walking is slow, one foot after the other, while running is fast, with both feet leaving the ground!",
-            "explanation": "Think of 'Walk' as slow, steady movement on foot (stroll, pace), and 'Run' as fast movement on foot (sprint, dash)!",
+            "hint": "Think about the mood or urgency behind each word \u2014 confident, effortful, sudden, or winding.",
+            "explanation": "Saunter, trudge, and meander are all specific ways of walking \u2014 sauntering is relaxed and confident, trudging is slow and effortful, and meandering follows a winding, unplanned path. Bolt and scurry both describe running suddenly, with scurry suggesting small, quick steps, like a scared animal.",
             "options": [
-                "Trot",
-                "Stride",
-                "Bolt",
                 "Meander",
-                "Gallop"
+                "Bolt",
+                "Scurry",
+                "Trudge",
+                "Saunter"
             ],
-            "correctAnswer": "Run:Trot, Walk:Stride, Run:Bolt, Walk:Meander, Run:Gallop",
+            "correctAnswer": "Walk:Meander, Run:Bolt, Run:Scurry, Walk:Trudge, Walk:Saunter",
             "relatedWords": [
-                "aspect of Run:Trot, Walk:Stride, Run:Bolt, Walk:Meander, Run:Gallop",
-                "concept of Run:Trot, Walk:Stride, Run:Bolt, Walk:Meander, Run:Gallop",
-                "related to Run:Trot, Walk:Stride, Run:Bolt, Walk:Meander, Run:Gallop"
+                "Meander: to walk along a winding, unplanned path",
+                "Bolt: to run away suddenly",
+                "Scurry: to run with short, quick steps",
+                "Trudge: to walk slowly and heavily, with effort",
+                "Saunter: to walk in a slow, relaxed, confident way"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L26_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Winter or Summer.",
             "topicBuckets": [
-                "Summer",
-                "Winter"
+                "Winter",
+                "Summer"
             ],
-            "hint": "Here's a tip: Summer is the hottest season, while winter is the coldest season!",
-            "explanation": "Think of 'Summer' as the warm season (sunshine, swimming), and 'Winter' as the cold season (snow, frost)!",
+            "hint": "Think about what you'd pack for a trip in each season.",
+            "explanation": "Heatwave, sunscreen, and a swimsuit are all associated with hot summer weather and protecting yourself from the sun. A blizzard and a snowstorm are both extreme winter weather events involving heavy snow and wind.",
             "options": [
-                "Sunshine",
-                "Snow",
-                "Swimming",
-                "Frost",
+                "Snowstorm",
+                "Sunscreen",
+                "Swimsuit",
+                "Blizzard",
                 "Heatwave"
             ],
-            "correctAnswer": "Summer:Sunshine, Winter:Snow, Summer:Swimming, Winter:Frost, Summer:Heatwave",
+            "correctAnswer": "Winter:Snowstorm, Summer:Sunscreen, Summer:Swimsuit, Winter:Blizzard, Summer:Heatwave",
             "relatedWords": [
-                "aspect of Summer:Sunshine, Winter:Snow, Summer:Swimming, Winter:Frost, Summer:Heatwave",
-                "concept of Summer:Sunshine, Winter:Snow, Summer:Swimming, Winter:Frost, Summer:Heatwave",
-                "related to Summer:Sunshine, Winter:Snow, Summer:Swimming, Winter:Frost, Summer:Heatwave"
+                "Snowstorm: a storm with heavy snowfall",
+                "Sunscreen: lotion that protects skin from the sun",
+                "Swimsuit: clothing worn for swimming",
+                "Blizzard: a severe snowstorm with strong winds",
+                "Heatwave: a long period of unusually hot weather"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L26_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Think about outdoor activities and the risks that come with extreme temperatures. Sort into Summer or Winter.",
             "topicBuckets": [
                 "Summer",
                 "Winter"
             ],
-            "hint": "Here's a tip: Summer is the hottest season, while winter is the coldest season!",
-            "explanation": "Think of 'Summer' as the warm season (sunshine, swimming), and 'Winter' as the cold season (snow, frost)!",
+            "hint": "Think about which words relate to casual outdoor food, and which relate to freezing conditions.",
+            "explanation": "A barbecue and a picnic are both casual outdoor summer activities centered on food. An icicle, frostbite, and sledding are all connected to freezing winter conditions \u2014 an icicle forms from dripping water freezing, and frostbite is a serious risk of extreme cold.",
             "options": [
-                "Beach",
-                "Skiing",
-                "Sunburn",
-                "Sleet",
-                "Vacation"
+                "Icicle",
+                "Picnic",
+                "Barbecue",
+                "Sledding",
+                "Frostbite"
             ],
-            "correctAnswer": "Summer:Beach, Winter:Skiing, Summer:Sunburn, Winter:Sleet, Summer:Vacation",
+            "correctAnswer": "Winter:Icicle, Summer:Picnic, Summer:Barbecue, Winter:Sledding, Winter:Frostbite",
             "relatedWords": [
-                "aspect of Summer:Beach, Winter:Skiing, Summer:Sunburn, Winter:Sleet, Summer:Vacation",
-                "concept of Summer:Beach, Winter:Skiing, Summer:Sunburn, Winter:Sleet, Summer:Vacation",
-                "related to Summer:Beach, Winter:Skiing, Summer:Sunburn, Winter:Sleet, Summer:Vacation"
+                "Icicle: a hanging spike of ice formed by dripping water freezing",
+                "Picnic: an outdoor meal, often eaten sitting on the ground",
+                "Barbecue: a meal cooked outdoors over an open flame",
+                "Sledding: riding down a snowy slope on a sled",
+                "Frostbite: injury to skin caused by extreme cold"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L26_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "One winter word describes an animal's long sleep, and one summer word describes a lack of rain. Sort into Winter or Summer.",
             "topicBuckets": [
-                "Summer",
-                "Winter"
+                "Winter",
+                "Summer"
             ],
-            "hint": "Here's a tip: Summer is the hottest season, while winter is the coldest season!",
-            "explanation": "Think of 'Summer' as the warm season (sunshine, swimming), and 'Winter' as the cold season (snow, frost)!",
+            "hint": "Think beyond weather to the effects it has on people, animals, and land.",
+            "explanation": "A 'scorcher' is an informal word for an extremely hot day, humidity describes the heavy, sticky air common in summer, and a drought is a long period without rain, often linked to summer heat. A thaw is the process of ice and snow melting, marking winter's transition, and hibernation is the deep sleep some animals use to survive winter.",
             "options": [
-                "Icicle",
-                "Picnic",
-                "Blizzard",
-                "Sandals",
-                "Sweater"
+                "Hibernation",
+                "Scorcher",
+                "Humidity",
+                "Drought",
+                "Thaw"
             ],
-            "correctAnswer": "Winter:Icicle, Summer:Picnic, Winter:Blizzard, Summer:Sandals, Winter:Sweater",
+            "correctAnswer": "Winter:Hibernation, Summer:Scorcher, Summer:Humidity, Summer:Drought, Winter:Thaw",
             "relatedWords": [
-                "aspect of Winter:Icicle, Summer:Picnic, Winter:Blizzard, Summer:Sandals, Winter:Sweater",
-                "concept of Winter:Icicle, Summer:Picnic, Winter:Blizzard, Summer:Sandals, Winter:Sweater",
-                "related to Winter:Icicle, Summer:Picnic, Winter:Blizzard, Summer:Sandals, Winter:Sweater"
+                "Hibernation: a deep sleep some animals use to survive winter",
+                "Scorcher: an informal word for an extremely hot day",
+                "Humidity: the amount of moisture in the air",
+                "Drought: a long period of unusually low rainfall",
+                "Thaw: the process of ice or snow melting"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L27_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Friendly or Hostile, based on the behavior it describes.",
             "topicBuckets": [
                 "Friendly",
                 "Hostile"
             ],
-            "hint": "Here's a tip: A friendly person welcomes you warmly, while a hostile person acts like an enemy!",
-            "explanation": "Think of 'Friendly' as warm, welcoming behavior (kind, approachable), and 'Hostile' as unfriendly, aggressive behavior (antagonistic, threatening)!",
+            "hint": "Think about how someone greets you \u2014 with a smile, or with crossed arms.",
+            "explanation": "Welcoming, warm, and approachable all describe someone easy to talk to and open toward others. Aggressive and confrontational both describe hostile behavior, though confrontational specifically suggests someone who seeks out conflict directly.",
             "options": [
-                "Warm",
-                "Antagonistic",
                 "Welcoming",
+                "Approachable",
                 "Aggressive",
-                "Sociable"
+                "Confrontational",
+                "Warm"
             ],
-            "correctAnswer": "Friendly:Warm, Hostile:Antagonistic, Friendly:Welcoming, Hostile:Aggressive, Friendly:Sociable",
+            "correctAnswer": "Friendly:Welcoming, Friendly:Approachable, Hostile:Aggressive, Hostile:Confrontational, Friendly:Warm",
             "relatedWords": [
-                "aspect of Friendly:Warm, Hostile:Antagonistic, Friendly:Welcoming, Hostile:Aggressive, Friendly:Sociable",
-                "concept of Friendly:Warm, Hostile:Antagonistic, Friendly:Welcoming, Hostile:Aggressive, Friendly:Sociable",
-                "related to Friendly:Warm, Hostile:Antagonistic, Friendly:Welcoming, Hostile:Aggressive, Friendly:Sociable"
+                "Welcoming: making others feel comfortable and accepted",
+                "Approachable: easy to talk to",
+                "Aggressive: ready to attack or confront",
+                "Confrontational: tending to seek out conflict directly",
+                "Warm: kind and friendly in manner"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L27_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These are a notch more formal \u2014 think about how you'd describe someone in a business setting. Sort into Friendly or Hostile.",
             "topicBuckets": [
                 "Friendly",
                 "Hostile"
             ],
-            "hint": "Here's a tip: A friendly person welcomes you warmly, while a hostile person acts like an enemy!",
-            "explanation": "Think of 'Friendly' as warm, welcoming behavior (kind, approachable), and 'Hostile' as unfriendly, aggressive behavior (antagonistic, threatening)!",
+            "hint": "Think about someone ready to argue over small things versus someone graciously easy to work with.",
+            "explanation": "Cordial, sociable, and gracious all describe a polished, positive way of relating to others, often used in formal contexts. Antagonistic and combative both describe hostility, with combative suggesting someone ready to argue or fight over small things.",
             "options": [
-                "Approachable",
-                "Threatening",
-                "Amiable",
-                "Confrontational",
-                "Cordial"
+                "Gracious",
+                "Combative",
+                "Cordial",
+                "Sociable",
+                "Antagonistic"
             ],
-            "correctAnswer": "Friendly:Approachable, Hostile:Threatening, Friendly:Amiable, Hostile:Confrontational, Friendly:Cordial",
+            "correctAnswer": "Friendly:Gracious, Hostile:Combative, Friendly:Cordial, Friendly:Sociable, Hostile:Antagonistic",
             "relatedWords": [
-                "aspect of Friendly:Approachable, Hostile:Threatening, Friendly:Amiable, Hostile:Confrontational, Friendly:Cordial",
-                "concept of Friendly:Approachable, Hostile:Threatening, Friendly:Amiable, Hostile:Confrontational, Friendly:Cordial",
-                "related to Friendly:Approachable, Hostile:Threatening, Friendly:Amiable, Hostile:Confrontational, Friendly:Cordial"
+                "Gracious: polite and pleasant, especially to others",
+                "Combative: ready to argue or fight",
+                "Cordial: warm and friendly, especially in a formal setting",
+                "Sociable: enjoying the company of others",
+                "Antagonistic: showing active dislike or opposition"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L27_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Think about a business negotiation \u2014 is the other side working with you, or against you? Sort into Hostile or Friendly.",
             "topicBuckets": [
-                "Friendly",
-                "Hostile"
+                "Hostile",
+                "Friendly"
             ],
-            "hint": "Here's a tip: A friendly person welcomes you warmly, while a hostile person acts like an enemy!",
-            "explanation": "Think of 'Friendly' as warm, welcoming behavior (kind, approachable), and 'Hostile' as unfriendly, aggressive behavior (antagonistic, threatening)!",
+            "hint": "One hostile word describes a relationship built around opposition, like two sides in a legal case.",
+            "explanation": "Hospitable, genial, and cooperative all describe a willingness to work well with others, from welcoming guests to collaborating on a task. Adversarial describes a relationship built around opposition, like two sides in a legal case, and menacing describes behavior that feels threatening.",
             "options": [
                 "Hospitable",
-                "Combative",
+                "Cooperative",
                 "Genial",
-                "Belligerent",
-                "Kindly"
+                "Menacing",
+                "Adversarial"
             ],
-            "correctAnswer": "Friendly:Hospitable, Hostile:Combative, Friendly:Genial, Hostile:Belligerent, Friendly:Kindly",
+            "correctAnswer": "Friendly:Hospitable, Friendly:Cooperative, Friendly:Genial, Hostile:Menacing, Hostile:Adversarial",
             "relatedWords": [
-                "aspect of Friendly:Hospitable, Hostile:Combative, Friendly:Genial, Hostile:Belligerent, Friendly:Kindly",
-                "concept of Friendly:Hospitable, Hostile:Combative, Friendly:Genial, Hostile:Belligerent, Friendly:Kindly",
-                "related to Friendly:Hospitable, Hostile:Combative, Friendly:Genial, Hostile:Belligerent, Friendly:Kindly"
+                "Hospitable: friendly and welcoming to guests",
+                "Cooperative: willing to work together with others",
+                "Genial: friendly and cheerful",
+                "Menacing: suggesting a threat, frightening",
+                "Adversarial: involving opposition or conflict between two sides"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L28_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under False or True, based on whether it matches reality.",
             "topicBuckets": [
-                "True",
-                "False"
+                "False",
+                "True"
             ],
-            "hint": "Here's a tip: A true statement matches the facts, while a false statement does not!",
-            "explanation": "Think of 'True' as statements that match reality (accurate, correct), and 'False' as statements that do not match reality (incorrect, fake)!",
+            "hint": "Think about a statement that matches reality, versus one that was made up.",
+            "explanation": "Accurate, correct, and factual all describe a statement that matches reality closely. Fake and fabricated both describe something false, with fabricated specifically suggesting it was deliberately invented, not just mistaken.",
             "options": [
-                "Accurate",
-                "Incorrect",
+                "Fabricated",
+                "Factual",
                 "Correct",
-                "Fake",
-                "Genuine"
+                "Accurate",
+                "Fake"
             ],
-            "correctAnswer": "True:Accurate, False:Incorrect, True:Correct, False:Fake, True:Genuine",
+            "correctAnswer": "False:Fabricated, True:Factual, True:Correct, True:Accurate, False:Fake",
             "relatedWords": [
-                "aspect of True:Accurate, False:Incorrect, True:Correct, False:Fake, True:Genuine",
-                "concept of True:Accurate, False:Incorrect, True:Correct, False:Fake, True:Genuine",
-                "related to True:Accurate, False:Incorrect, True:Correct, False:Fake, True:Genuine"
+                "Fabricated: deliberately invented and untrue",
+                "Factual: based on facts",
+                "Correct: free from error, matching the facts",
+                "Accurate: correct in every detail",
+                "Fake: not genuine, made to look real"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L28_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Two of these false words don't mean something is a complete lie \u2014 think about half-truths designed to trick you. Sort into True or False.",
             "topicBuckets": [
                 "True",
                 "False"
             ],
-            "hint": "Here's a tip: A true statement matches the facts, while a false statement does not!",
-            "explanation": "Think of 'True' as statements that match reality (accurate, correct), and 'False' as statements that do not match reality (incorrect, fake)!",
+            "hint": "Think about the difference between something confirmed real, and something built to create a false impression.",
+            "explanation": "Genuine, verified, and legitimate all describe something confirmed to be real or authentic. Misleading and deceptive both describe something designed to create a false impression, even if it isn't a complete lie \u2014 the difference from 'fake' is the intent to trick someone.",
             "options": [
-                "Factual",
-                "Mistaken",
-                "Valid",
-                "Untrue",
-                "Authentic"
+                "Misleading",
+                "Legitimate",
+                "Genuine",
+                "Deceptive",
+                "Verified"
             ],
-            "correctAnswer": "True:Factual, False:Mistaken, True:Valid, False:Untrue, True:Authentic",
+            "correctAnswer": "False:Misleading, True:Legitimate, True:Genuine, False:Deceptive, True:Verified",
             "relatedWords": [
-                "aspect of True:Factual, False:Mistaken, True:Valid, False:Untrue, True:Authentic",
-                "concept of True:Factual, False:Mistaken, True:Valid, False:Untrue, True:Authentic",
-                "related to True:Factual, False:Mistaken, True:Valid, False:Untrue, True:Authentic"
+                "Misleading: giving a false impression, even without an outright lie",
+                "Legitimate: genuine and able to be defended as valid",
+                "Genuine: authentic, truly what it claims to be",
+                "Deceptive: designed to trick someone into believing something false",
+                "Verified: confirmed to be true or accurate"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L28_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Think about how a fact-checker would label a claim after investigating it. Sort into True or False.",
             "topicBuckets": [
                 "True",
                 "False"
             ],
-            "hint": "Here's a tip: A true statement matches the facts, while a false statement does not!",
-            "explanation": "Think of 'True' as statements that match reality (accurate, correct), and 'False' as statements that do not match reality (incorrect, fake)!",
+            "hint": "Think about a claim proven wrong after investigation, versus one backed by solid evidence.",
+            "explanation": "Substantiated and credible both describe a claim backed by solid evidence. Debunked describes a claim that's been proven false after investigation, a hoax is something false created deliberately to trick people, and baseless describes a claim with no supporting evidence at all.",
             "options": [
-                "Verified",
-                "Inaccurate",
-                "Real",
-                "Bogus",
-                "Confirmed"
+                "Debunked",
+                "Credible",
+                "Baseless",
+                "Substantiated",
+                "Hoax"
             ],
-            "correctAnswer": "True:Verified, False:Inaccurate, True:Real, False:Bogus, True:Confirmed",
+            "correctAnswer": "False:Debunked, True:Credible, False:Baseless, True:Substantiated, False:Hoax",
             "relatedWords": [
-                "aspect of True:Verified, False:Inaccurate, True:Real, False:Bogus, True:Confirmed",
-                "concept of True:Verified, False:Inaccurate, True:Real, False:Bogus, True:Confirmed",
-                "related to True:Verified, False:Inaccurate, True:Real, False:Bogus, True:Confirmed"
+                "Debunked: shown to be false after investigation",
+                "Credible: believable, backed by good evidence",
+                "Baseless: having no evidence to support it",
+                "Substantiated: supported with solid evidence",
+                "Hoax: something false created deliberately to trick people"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L29_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Risky or Safe.",
             "topicBuckets": [
-                "Safe",
-                "Risky"
+                "Risky",
+                "Safe"
             ],
-            "hint": "Here's a tip: A safe choice protects you from harm, while a risky choice might lead to danger!",
-            "explanation": "Think of 'Safe' as things that protect from harm (secure, low-danger), and 'Risky' as things that could cause harm (dangerous, hazardous)!",
+            "hint": "Think about a decision you'd feel comfortable making, versus one that could go badly wrong.",
+            "explanation": "Secure, protected, and reliable all describe something you can trust to be safe. Dangerous and hazardous both describe risk, with hazardous often used specifically for physical dangers, like hazardous materials.",
             "options": [
-                "Secure",
-                "Dangerous",
-                "Protected",
                 "Hazardous",
-                "Cautious"
+                "Reliable",
+                "Protected",
+                "Dangerous",
+                "Secure"
             ],
-            "correctAnswer": "Safe:Secure, Risky:Dangerous, Safe:Protected, Risky:Hazardous, Safe:Cautious",
+            "correctAnswer": "Risky:Hazardous, Safe:Reliable, Safe:Protected, Risky:Dangerous, Safe:Secure",
             "relatedWords": [
-                "aspect of Safe:Secure, Risky:Dangerous, Safe:Protected, Risky:Hazardous, Safe:Cautious",
-                "concept of Safe:Secure, Risky:Dangerous, Safe:Protected, Risky:Hazardous, Safe:Cautious",
-                "related to Safe:Secure, Risky:Dangerous, Safe:Protected, Risky:Hazardous, Safe:Cautious"
+                "Hazardous: risky, especially involving physical danger",
+                "Reliable: able to be trusted to work safely and well",
+                "Protected: kept safe from harm",
+                "Dangerous: likely to cause harm",
+                "Secure: free from danger or risk"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L29_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Think about a decision described as a 'sure thing' versus one on shaky ground. Sort into Safe or Risky.",
             "topicBuckets": [
                 "Safe",
                 "Risky"
             ],
-            "hint": "Here's a tip: A safe choice protects you from harm, while a risky choice might lead to danger!",
-            "explanation": "Think of 'Safe' as things that protect from harm (secure, low-danger), and 'Risky' as things that could cause harm (dangerous, hazardous)!",
+            "hint": "One safe word describes a careful approach rather than a guaranteed outcome.",
+            "explanation": "Cautious describes a careful approach that reduces risk, sound describes a decision that's solid and well-reasoned, and guaranteed means an outcome is certain. Precarious and perilous both describe a risky, unstable situation, with perilous being the stronger, more dramatic of the two.",
             "options": [
-                "Sheltered",
                 "Perilous",
-                "Reliable",
-                "Unsafe",
-                "Guarded"
+                "Precarious",
+                "Cautious",
+                "Guaranteed",
+                "Sound"
             ],
-            "correctAnswer": "Safe:Sheltered, Risky:Perilous, Safe:Reliable, Risky:Unsafe, Safe:Guarded",
+            "correctAnswer": "Risky:Perilous, Risky:Precarious, Safe:Cautious, Safe:Guaranteed, Safe:Sound",
             "relatedWords": [
-                "aspect of Safe:Sheltered, Risky:Perilous, Safe:Reliable, Risky:Unsafe, Safe:Guarded",
-                "concept of Safe:Sheltered, Risky:Perilous, Safe:Reliable, Risky:Unsafe, Safe:Guarded",
-                "related to Safe:Sheltered, Risky:Perilous, Safe:Reliable, Risky:Unsafe, Safe:Guarded"
+                "Perilous: full of serious danger",
+                "Precarious: not securely held, likely to fail or fall",
+                "Cautious: careful to avoid risk or danger",
+                "Guaranteed: certain to happen or be true",
+                "Sound: solid and well-reasoned, reliable"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L29_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Think about how a financial advisor might describe an investment. Sort into Risky or Safe.",
             "topicBuckets": [
-                "Safe",
-                "Risky"
+                "Risky",
+                "Safe"
             ],
-            "hint": "Here's a tip: A safe choice protects you from harm, while a risky choice might lead to danger!",
-            "explanation": "Think of 'Safe' as things that protect from harm (secure, low-danger), and 'Risky' as things that could cause harm (dangerous, hazardous)!",
+            "hint": "One risky word means a decision made without solid evidence it will pay off.",
+            "explanation": "Insured, low-risk, and stable all describe something protected from major loss or sudden change, often used for investments. Volatile and speculative both describe risk in a financial sense, with speculative meaning a decision made without solid evidence it will pay off.",
             "options": [
+                "Insured",
                 "Stable",
-                "Reckless",
-                "Sound",
-                "Treacherous",
-                "Sturdy"
+                "Speculative",
+                "Volatile",
+                "Low-risk"
             ],
-            "correctAnswer": "Safe:Stable, Risky:Reckless, Safe:Sound, Risky:Treacherous, Safe:Sturdy",
+            "correctAnswer": "Safe:Insured, Safe:Stable, Risky:Speculative, Risky:Volatile, Safe:Low-risk",
             "relatedWords": [
-                "aspect of Safe:Stable, Risky:Reckless, Safe:Sound, Risky:Treacherous, Safe:Sturdy",
-                "concept of Safe:Stable, Risky:Reckless, Safe:Sound, Risky:Treacherous, Safe:Sturdy",
-                "related to Safe:Stable, Risky:Reckless, Safe:Sound, Risky:Treacherous, Safe:Sturdy"
+                "Insured: protected against loss by an insurance policy",
+                "Stable: not likely to change suddenly",
+                "Speculative: based on guessing an outcome rather than solid evidence",
+                "Volatile: likely to change suddenly and unpredictably",
+                "Low-risk: having little chance of loss or failure"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L30_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Near or Far, based on distance.",
             "topicBuckets": [
                 "Near",
                 "Far"
             ],
-            "hint": "Here's a tip: Something near is close to you, while something far is a long way away!",
-            "explanation": "Think of 'Near' as short distance (close, nearby), and 'Far' as long distance (distant, remote)!",
+            "hint": "Think about something within walking distance, versus something you'd need a long journey to reach.",
+            "explanation": "Nearby, close, and adjacent all describe something at a short distance, with adjacent specifically meaning right next to something. Remote and distant both describe something far away, with remote often implying it's also hard to reach.",
             "options": [
-                "Close",
-                "Distant",
                 "Nearby",
                 "Remote",
-                "Adjacent"
+                "Distant",
+                "Adjacent",
+                "Close"
             ],
-            "correctAnswer": "Near:Close, Far:Distant, Near:Nearby, Far:Remote, Near:Adjacent",
+            "correctAnswer": "Near:Nearby, Far:Remote, Far:Distant, Near:Adjacent, Near:Close",
             "relatedWords": [
-                "aspect of Near:Close, Far:Distant, Near:Nearby, Far:Remote, Near:Adjacent",
-                "concept of Near:Close, Far:Distant, Near:Nearby, Far:Remote, Near:Adjacent",
-                "related to Near:Close, Far:Distant, Near:Nearby, Far:Remote, Near:Adjacent"
+                "Nearby: not far away, close by",
+                "Remote: so far away that reaching it is difficult",
+                "Distant: a long way off in space or time",
+                "Adjacent: next to or adjoining something",
+                "Close: near in distance"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L30_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Think about a town described on a map \u2014 is it right next door, or on the edge of everything? Sort into Far or Near.",
             "topicBuckets": [
-                "Near",
-                "Far"
+                "Far",
+                "Near"
             ],
-            "hint": "Here's a tip: Something near is close to you, while something far is a long way away!",
-            "explanation": "Think of 'Near' as short distance (close, nearby), and 'Far' as long distance (distant, remote)!",
+            "hint": "One far word specifically describes areas at the edge of a region, away from the center.",
+            "explanation": "Neighboring, local, and 'within reach' all describe something close by, easy to access. Faraway and outlying both describe distance, with outlying specifically describing areas at the edge of a region, away from the center.",
             "options": [
-                "Local",
                 "Faraway",
-                "Handy",
+                "Neighboring",
+                "Local",
                 "Outlying",
-                "Neighboring"
+                "Within reach"
             ],
-            "correctAnswer": "Near:Local, Far:Faraway, Near:Handy, Far:Outlying, Near:Neighboring",
+            "correctAnswer": "Far:Faraway, Near:Neighboring, Near:Local, Far:Outlying, Near:Within reach",
             "relatedWords": [
-                "aspect of Near:Local, Far:Faraway, Near:Handy, Far:Outlying, Near:Neighboring",
-                "concept of Near:Local, Far:Faraway, Near:Handy, Far:Outlying, Near:Neighboring",
-                "related to Near:Local, Far:Faraway, Near:Handy, Far:Outlying, Near:Neighboring"
+                "Faraway: distant, far off",
+                "Neighboring: located close by, next to",
+                "Local: belonging to a nearby, particular area",
+                "Outlying: far from the main area or center",
+                "Within reach: close enough to be accessed easily"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L30_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Two of these describe a relationship, not just physical distance. Sort into Near or Far.",
             "topicBuckets": [
                 "Near",
                 "Far"
             ],
-            "hint": "Here's a tip: Something near is close to you, while something far is a long way away!",
-            "explanation": "Think of 'Near' as short distance (close, nearby), and 'Far' as long distance (distant, remote)!",
+            "hint": "Think figuratively \u2014 about a family relationship as well as an actual location.",
+            "explanation": "'In the vicinity' and 'close-knit' both describe closeness, with close-knit used figuratively for a tightly connected group of people. 'Long-distance', 'estranged', and 'far-flung' all describe distance, with estranged used figuratively for a relationship that's become distant or broken, and far-flung describing places spread widely apart.",
             "options": [
-                "Walking-distance",
-                "Overseas",
-                "Within-reach",
-                "Abroad",
-                "Surrounding"
+                "Far-flung",
+                "Long-distance",
+                "Estranged",
+                "Close-knit",
+                "In the vicinity"
             ],
-            "correctAnswer": "Near:Walking-distance, Far:Overseas, Near:Within-reach, Far:Abroad, Near:Surrounding",
+            "correctAnswer": "Far:Far-flung, Far:Long-distance, Far:Estranged, Near:Close-knit, Near:In the vicinity",
             "relatedWords": [
-                "aspect of Near:Walking-distance, Far:Overseas, Near:Within-reach, Far:Abroad, Near:Surrounding",
-                "concept of Near:Walking-distance, Far:Overseas, Near:Within-reach, Far:Abroad, Near:Surrounding",
-                "related to Near:Walking-distance, Far:Overseas, Near:Within-reach, Far:Abroad, Near:Surrounding"
+                "Far-flung: spread over a great distance",
+                "Long-distance: covering or involving a great distance",
+                "Estranged: no longer close, often describing a broken relationship",
+                "Close-knit: tightly and closely connected, describing a group",
+                "In the vicinity: near or close to a place"
             ]
         }
     ]

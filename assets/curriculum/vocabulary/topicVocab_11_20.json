@@ -6,721 +6,781 @@
         {
             "id": "VOC_TOPICVOCAB_L11_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Animal or Plant, based on what kind of living thing it is.",
             "topicBuckets": [
                 "Animal",
                 "Plant"
             ],
-            "hint": "Here's a tip: Animals move and eat food, while plants stay rooted and make their own food from sunlight!",
-            "explanation": "Think of 'Animal' as living creatures that move (dogs, birds), and 'Plant' as living things rooted in soil (trees, flowers)!",
+            "hint": "Think about whether it can move on its own and needs to eat, or whether it makes its own food from sunlight.",
+            "explanation": "Dog, tiger, and salmon are all animals that must find and eat food to survive. Fern and cactus are plants that make their own energy through photosynthesis, though they're adapted to very different environments \u2014 a shady forest versus a dry desert.",
             "options": [
+                "Dog",
+                "Salmon",
+                "Cactus",
                 "Tiger",
-                "Oak",
-                "Rose",
-                "Eagle",
-                "Cactus"
+                "Fern"
             ],
-            "correctAnswer": "Animal:Tiger, Plant:Oak, Plant:Rose, Animal:Eagle, Plant:Cactus",
+            "correctAnswer": "Animal:Dog, Animal:Salmon, Plant:Cactus, Animal:Tiger, Plant:Fern",
             "relatedWords": [
-                "aspect of Animal:Tiger, Plant:Oak, Plant:Rose, Animal:Eagle, Plant:Cactus",
-                "concept of Animal:Tiger, Plant:Oak, Plant:Rose, Animal:Eagle, Plant:Cactus",
-                "related to Animal:Tiger, Plant:Oak, Plant:Rose, Animal:Eagle, Plant:Cactus"
+                "Dog: a common domesticated animal",
+                "Salmon: a fish that swims upstream to breed",
+                "Cactus: a plant adapted to store water in dry climates",
+                "Tiger: a large wild cat",
+                "Fern: a leafy plant that reproduces using spores, not flowers"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L11_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These are smaller and easier to overlook. Sort them into Animal or Plant.",
             "topicBuckets": [
                 "Animal",
                 "Plant"
             ],
-            "hint": "Here's a tip: Animals move and eat food, while plants stay rooted and make their own food from sunlight!",
-            "explanation": "Think of 'Animal' as living creatures that move (dogs, birds), and 'Plant' as living things rooted in soil (trees, flowers)!",
+            "hint": "Think about which ones you'd find crawling on the ground versus growing along a wall.",
+            "explanation": "Butterfly, spider, and beetle are all animals \u2014 insects and arachnids that move independently, even though they're much smaller than a dog or tiger. Moss and vine are plants that grow along surfaces rather than standing upright like a tree.",
             "options": [
-                "Fern",
-                "Dolphin",
-                "Sunflower",
-                "Wolf",
-                "Bamboo"
+                "Butterfly",
+                "Moss",
+                "Spider",
+                "Beetle",
+                "Vine"
             ],
-            "correctAnswer": "Plant:Fern, Animal:Dolphin, Plant:Sunflower, Animal:Wolf, Plant:Bamboo",
+            "correctAnswer": "Animal:Butterfly, Plant:Moss, Animal:Spider, Animal:Beetle, Plant:Vine",
             "relatedWords": [
-                "aspect of Plant:Fern, Animal:Dolphin, Plant:Sunflower, Animal:Wolf, Plant:Bamboo",
-                "concept of Plant:Fern, Animal:Dolphin, Plant:Sunflower, Animal:Wolf, Plant:Bamboo",
-                "related to Plant:Fern, Animal:Dolphin, Plant:Sunflower, Animal:Wolf, Plant:Bamboo"
+                "Butterfly: a flying insect known for colorful wings",
+                "Moss: a small green plant that grows in damp, shaded places",
+                "Spider: a small eight-legged animal that spins webs",
+                "Beetle: an insect with a hard protective outer wing",
+                "Vine: a plant with a long stem that climbs or trails"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L11_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These are terms you'd hear in a nature documentary, not the animals or plants themselves. Sort into Plant or Animal.",
             "topicBuckets": [
-                "Animal",
-                "Plant"
+                "Plant",
+                "Animal"
             ],
-            "hint": "Here's a tip: Animals move and eat food, while plants stay rooted and make their own food from sunlight!",
-            "explanation": "Think of 'Animal' as living creatures that move (dogs, birds), and 'Plant' as living things rooted in soil (trees, flowers)!",
+            "hint": "Think about a role an animal plays, versus the size or age of a plant.",
+            "explanation": "Predator, herbivore, and livestock all describe categories or roles animals play \u2014 hunting, eating plants, or being farmed. Shrub and sapling are terms for plants at a particular size or stage: a shrub is a low, bushy plant, and a sapling is a young tree.",
             "options": [
-                "Lizard",
-                "Tulip",
-                "Rabbit",
-                "Moss",
-                "Elephant"
+                "Livestock",
+                "Herbivore",
+                "Sapling",
+                "Shrub",
+                "Predator"
             ],
-            "correctAnswer": "Animal:Lizard, Plant:Tulip, Animal:Rabbit, Plant:Moss, Animal:Elephant",
+            "correctAnswer": "Animal:Livestock, Animal:Herbivore, Plant:Sapling, Plant:Shrub, Animal:Predator",
             "relatedWords": [
-                "aspect of Animal:Lizard, Plant:Tulip, Animal:Rabbit, Plant:Moss, Animal:Elephant",
-                "concept of Animal:Lizard, Plant:Tulip, Animal:Rabbit, Plant:Moss, Animal:Elephant",
-                "related to Animal:Lizard, Plant:Tulip, Animal:Rabbit, Plant:Moss, Animal:Elephant"
+                "Livestock: animals raised on a farm",
+                "Herbivore: an animal that eats only plants",
+                "Sapling: a young tree",
+                "Shrub: a low, bushy plant, smaller than a tree",
+                "Predator: an animal that hunts others for food"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L12_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Vegetable or Fruit.",
             "topicBuckets": [
-                "Fruit",
-                "Vegetable"
+                "Vegetable",
+                "Fruit"
             ],
-            "hint": "Here's a tip: Fruit grows from a flower and is often sweet, while vegetables are other edible plant parts, often savory!",
-            "explanation": "Think of 'Fruit' as the sweet part of a plant containing seeds (apple, mango), and 'Vegetable' as edible roots, stems, or leaves (carrot, spinach)!",
+            "hint": "Think about what you'd put in a fruit salad versus a stir-fry.",
+            "explanation": "Apple, banana, and grape are all fruits \u2014 they grow from the flower of a plant and usually taste sweet. Carrot and broccoli are vegetables, other edible parts of a plant like roots or stems, usually savory.",
             "options": [
+                "Apple",
                 "Banana",
-                "Carrot",
-                "Mango",
-                "Potato",
-                "Grape"
+                "Broccoli",
+                "Grape",
+                "Carrot"
             ],
-            "correctAnswer": "Fruit:Banana, Vegetable:Carrot, Fruit:Mango, Vegetable:Potato, Fruit:Grape",
+            "correctAnswer": "Fruit:Apple, Fruit:Banana, Vegetable:Broccoli, Fruit:Grape, Vegetable:Carrot",
             "relatedWords": [
-                "aspect of Fruit:Banana, Vegetable:Carrot, Fruit:Mango, Vegetable:Potato, Fruit:Grape",
-                "concept of Fruit:Banana, Vegetable:Carrot, Fruit:Mango, Vegetable:Potato, Fruit:Grape",
-                "related to Fruit:Banana, Vegetable:Carrot, Fruit:Mango, Vegetable:Potato, Fruit:Grape"
+                "Apple: a round, crisp fruit that grows on trees",
+                "Banana: a long, sweet, yellow-skinned fruit",
+                "Broccoli: a green vegetable with tightly clustered buds",
+                "Grape: a small, round fruit that grows in bunches",
+                "Carrot: an orange root vegetable"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L12_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Notice the ones with tropical origins versus the leafy greens. Sort into Vegetable or Fruit.",
             "topicBuckets": [
-                "Fruit",
-                "Vegetable"
+                "Vegetable",
+                "Fruit"
             ],
-            "hint": "Here's a tip: Fruit grows from a flower and is often sweet, while vegetables are other edible plant parts, often savory!",
-            "explanation": "Think of 'Fruit' as the sweet part of a plant containing seeds (apple, mango), and 'Vegetable' as edible roots, stems, or leaves (carrot, spinach)!",
+            "hint": "Think about which ones would show up in a smoothie versus a salad.",
+            "explanation": "Mango, pineapple, and kiwi are tropical fruits, often sold ready-to-eat or in fruit salads. Spinach and zucchini are vegetables commonly cooked into savory dishes rather than eaten as a sweet snack.",
             "options": [
+                "Kiwi",
                 "Spinach",
-                "Apple",
-                "Onion",
-                "Pineapple",
-                "Broccoli"
+                "Mango",
+                "Zucchini",
+                "Pineapple"
             ],
-            "correctAnswer": "Vegetable:Spinach, Fruit:Apple, Vegetable:Onion, Fruit:Pineapple, Vegetable:Broccoli",
+            "correctAnswer": "Fruit:Kiwi, Vegetable:Spinach, Fruit:Mango, Vegetable:Zucchini, Fruit:Pineapple",
             "relatedWords": [
-                "aspect of Vegetable:Spinach, Fruit:Apple, Vegetable:Onion, Fruit:Pineapple, Vegetable:Broccoli",
-                "concept of Vegetable:Spinach, Fruit:Apple, Vegetable:Onion, Fruit:Pineapple, Vegetable:Broccoli",
-                "related to Vegetable:Spinach, Fruit:Apple, Vegetable:Onion, Fruit:Pineapple, Vegetable:Broccoli"
+                "Kiwi: a small fruit with fuzzy skin and green flesh",
+                "Spinach: a leafy green vegetable",
+                "Mango: a sweet tropical fruit with orange flesh",
+                "Zucchini: a long green summer vegetable",
+                "Pineapple: a tropical fruit with a spiky skin"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L12_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Picture a farmer's market stall and read the labels above each pile. Sort into Vegetable or Fruit.",
             "topicBuckets": [
-                "Fruit",
-                "Vegetable"
+                "Vegetable",
+                "Fruit"
             ],
-            "hint": "Here's a tip: Fruit grows from a flower and is often sweet, while vegetables are other edible plant parts, often savory!",
-            "explanation": "Think of 'Fruit' as the sweet part of a plant containing seeds (apple, mango), and 'Vegetable' as edible roots, stems, or leaves (carrot, spinach)!",
+            "hint": "Two of these vegetables have unusual shapes that sometimes get mistaken for something more exotic.",
+            "explanation": "Watermelon, pomegranate, and apricot are all fruits, though they vary hugely in size and how they're eaten. Cauliflower and eggplant are vegetables often mistaken for something more exotic because of their unusual shapes and colors.",
             "options": [
-                "Cucumber",
-                "Peach",
-                "Cabbage",
-                "Cherry",
-                "Pumpkin"
+                "Apricot",
+                "Watermelon",
+                "Eggplant",
+                "Cauliflower",
+                "Pomegranate"
             ],
-            "correctAnswer": "Vegetable:Cucumber, Fruit:Peach, Vegetable:Cabbage, Fruit:Cherry, Vegetable:Pumpkin",
+            "correctAnswer": "Fruit:Apricot, Fruit:Watermelon, Vegetable:Eggplant, Vegetable:Cauliflower, Fruit:Pomegranate",
             "relatedWords": [
-                "aspect of Vegetable:Cucumber, Fruit:Peach, Vegetable:Cabbage, Fruit:Cherry, Vegetable:Pumpkin",
-                "concept of Vegetable:Cucumber, Fruit:Peach, Vegetable:Cabbage, Fruit:Cherry, Vegetable:Pumpkin",
-                "related to Vegetable:Cucumber, Fruit:Peach, Vegetable:Cabbage, Fruit:Cherry, Vegetable:Pumpkin"
+                "Apricot: a small, orange stone fruit",
+                "Watermelon: a large, juicy fruit with a hard green rind",
+                "Eggplant: a purple-skinned vegetable, also called aubergine",
+                "Cauliflower: a vegetable with a compact white head",
+                "Pomegranate: a fruit filled with many small, juicy seeds"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L13_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These are informal, affectionate ways children address a parent. Sort into Father or Mother.",
             "topicBuckets": [
-                "Mother",
-                "Father"
+                "Father",
+                "Mother"
             ],
-            "hint": "Here's a tip: A mother is the female parent, while a father is the male parent. Sort by which parent!",
-            "explanation": "Think of 'Mother' as words linked to the female parent (mom, maternal), and 'Father' as words linked to the male parent (dad, paternal)!",
+            "hint": "Sort by which parent each name is used for.",
+            "explanation": "Mum, Mommy, and Ma are all informal names for a mother, varying mostly by region and family habit \u2014 'Mum' is common in British English, 'Mommy' in American English. Dad and Daddy are the equivalent informal names for a father.",
             "options": [
-                "Mom",
-                "Dad",
-                "Maternal",
-                "Paternal",
-                "Mum"
+                "Mum",
+                "Daddy",
+                "Ma",
+                "Mommy",
+                "Dad"
             ],
-            "correctAnswer": "Mother:Mom, Father:Dad, Mother:Maternal, Father:Paternal, Mother:Mum",
+            "correctAnswer": "Mother:Mum, Father:Daddy, Mother:Ma, Mother:Mommy, Father:Dad",
             "relatedWords": [
-                "aspect of Mother:Mom, Father:Dad, Mother:Maternal, Father:Paternal, Mother:Mum",
-                "concept of Mother:Mom, Father:Dad, Mother:Maternal, Father:Paternal, Mother:Mum",
-                "related to Mother:Mom, Father:Dad, Mother:Maternal, Father:Paternal, Mother:Mum"
+                "Mum: an informal, mainly British name for a mother",
+                "Daddy: an affectionate informal name for a father",
+                "Ma: a short, informal name for a mother",
+                "Mommy: an informal, mainly American name for a mother",
+                "Dad: an informal name for a father"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L13_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These are more formal words you'd find in a document or family history. Sort into Mother or Father.",
             "topicBuckets": [
                 "Mother",
                 "Father"
             ],
-            "hint": "Here's a tip: A mother is the female parent, while a father is the male parent. Sort by which parent!",
-            "explanation": "Think of 'Mother' as words linked to the female parent (mom, maternal), and 'Father' as words linked to the male parent (dad, paternal)!",
+            "hint": "Think about which side of the family, or which family role, each word describes.",
+            "explanation": "Maternal and matriarch both relate to the mother's side or a mother figure who leads a family, while motherhood refers to the experience of being a mother. Paternal and patriarch are the father-side equivalents \u2014 paternal describes anything related to fatherhood, and patriarch describes a senior male family leader.",
             "options": [
-                "Papa",
-                "Mama",
-                "Daddy",
-                "Mommy",
-                "Pop"
+                "Paternal",
+                "Motherhood",
+                "Matriarch",
+                "Maternal",
+                "Patriarch"
             ],
-            "correctAnswer": "Father:Papa, Mother:Mama, Father:Daddy, Mother:Mommy, Father:Pop",
+            "correctAnswer": "Father:Paternal, Mother:Motherhood, Mother:Matriarch, Mother:Maternal, Father:Patriarch",
             "relatedWords": [
-                "aspect of Father:Papa, Mother:Mama, Father:Daddy, Mother:Mommy, Father:Pop",
-                "concept of Father:Papa, Mother:Mama, Father:Daddy, Mother:Mommy, Father:Pop",
-                "related to Father:Papa, Mother:Mama, Father:Daddy, Mother:Mommy, Father:Pop"
+                "Paternal: relating to a father or the father's side of a family",
+                "Motherhood: the state or experience of being a mother",
+                "Matriarch: a senior female leader of a family or group",
+                "Maternal: relating to a mother or the mother's side of a family",
+                "Patriarch: a senior male leader of a family or group"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L13_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Some of these are fixed expressions used far beyond an actual family. Sort into Father or Mother.",
             "topicBuckets": [
-                "Mother",
-                "Father"
+                "Father",
+                "Mother"
             ],
-            "hint": "Here's a tip: A mother is the female parent, while a father is the male parent. Sort by which parent!",
-            "explanation": "Think of 'Mother' as words linked to the female parent (mom, maternal), and 'Father' as words linked to the male parent (dad, paternal)!",
+            "hint": "Think about a country, a language, or a historic figure, not a literal parent.",
+            "explanation": "'Motherland' and 'mother tongue' both use 'mother' figuratively, for a home country and a first language. 'Godmother' is a family-adjacent role, someone who takes special responsibility for a child. 'Fatherland' is the equivalent figurative word for a home country, and a 'founding father' is a person, usually male, credited with establishing something important, like a nation.",
             "options": [
-                "Grandmother",
-                "Grandfather",
-                "Aunt",
-                "Uncle",
-                "Stepmother"
+                "Motherland",
+                "Fatherland",
+                "Founding father",
+                "Mother tongue",
+                "Godmother"
             ],
-            "correctAnswer": "Mother:Grandmother, Father:Grandfather, Mother:Aunt, Father:Uncle, Mother:Stepmother",
+            "correctAnswer": "Mother:Motherland, Father:Fatherland, Father:Founding father, Mother:Mother tongue, Mother:Godmother",
             "relatedWords": [
-                "aspect of Mother:Grandmother, Father:Grandfather, Mother:Aunt, Father:Uncle, Mother:Stepmother",
-                "concept of Mother:Grandmother, Father:Grandfather, Mother:Aunt, Father:Uncle, Mother:Stepmother",
-                "related to Mother:Grandmother, Father:Grandfather, Mother:Aunt, Father:Uncle, Mother:Stepmother"
+                "Motherland: one's native country, framed as maternal and nurturing",
+                "Fatherland: one's native country, framed as paternal and ancestral",
+                "Founding father: a person credited with establishing something important, like a nation",
+                "Mother tongue: a person's first, native language",
+                "Godmother: a woman who takes special responsibility for a child's upbringing"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L14_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each activity under Outdoor or Indoor.",
             "topicBuckets": [
-                "Indoor",
-                "Outdoor"
+                "Outdoor",
+                "Indoor"
             ],
-            "hint": "Here's a tip: Indoor activities happen inside a building, while outdoor activities happen in the open air!",
-            "explanation": "Think of 'Indoor' as things found inside buildings (a sofa, a ceiling), and 'Outdoor' as things found in the open air (a garden, a sidewalk)!",
+            "hint": "Think about whether you'd need a roof over your head.",
+            "explanation": "Chess, bowling, and board games are usually played indoors, often needing tables or specific equipment kept inside. Surfing and hiking depend entirely on natural, outdoor settings \u2014 the ocean and trails.",
             "options": [
-                "Sofa",
-                "Garden",
-                "Ceiling",
-                "Sidewalk",
-                "Carpet"
+                "Hiking",
+                "Bowling",
+                "Board games",
+                "Surfing",
+                "Chess"
             ],
-            "correctAnswer": "Indoor:Sofa, Outdoor:Garden, Indoor:Ceiling, Outdoor:Sidewalk, Indoor:Carpet",
+            "correctAnswer": "Outdoor:Hiking, Indoor:Bowling, Indoor:Board games, Outdoor:Surfing, Indoor:Chess",
             "relatedWords": [
-                "aspect of Indoor:Sofa, Outdoor:Garden, Indoor:Ceiling, Outdoor:Sidewalk, Indoor:Carpet",
-                "concept of Indoor:Sofa, Outdoor:Garden, Indoor:Ceiling, Outdoor:Sidewalk, Indoor:Carpet",
-                "related to Indoor:Sofa, Outdoor:Garden, Indoor:Ceiling, Outdoor:Sidewalk, Indoor:Carpet"
+                "Hiking: walking long distances, usually on trails",
+                "Bowling: a game of rolling a ball to knock down pins",
+                "Board games: games played on a table using a board and pieces",
+                "Surfing: riding waves on a board in the ocean",
+                "Chess: a strategy game played on a checkered board"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L14_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "A couple of these could happen in either setting. Sort into Outdoor or Indoor based on where they're most commonly done.",
             "topicBuckets": [
-                "Indoor",
-                "Outdoor"
+                "Outdoor",
+                "Indoor"
             ],
-            "hint": "Here's a tip: Indoor activities happen inside a building, while outdoor activities happen in the open air!",
-            "explanation": "Think of 'Indoor' as things found inside buildings (a sofa, a ceiling), and 'Outdoor' as things found in the open air (a garden, a sidewalk)!",
+            "hint": "Think about which ones are built around calm and focus, and which are built around being outside for hours.",
+            "explanation": "Yoga, knitting, and painting are most often done indoors, in a studio or at home, valued for calm and focus. Camping and fishing are built around being outside for an extended time, close to nature.",
             "options": [
-                "Backyard",
-                "Hallway",
-                "Playground",
-                "Kitchen",
-                "Park"
+                "Camping",
+                "Knitting",
+                "Yoga",
+                "Fishing",
+                "Painting"
             ],
-            "correctAnswer": "Outdoor:Backyard, Indoor:Hallway, Outdoor:Playground, Indoor:Kitchen, Outdoor:Park",
+            "correctAnswer": "Outdoor:Camping, Indoor:Knitting, Indoor:Yoga, Outdoor:Fishing, Indoor:Painting",
             "relatedWords": [
-                "aspect of Outdoor:Backyard, Indoor:Hallway, Outdoor:Playground, Indoor:Kitchen, Outdoor:Park",
-                "concept of Outdoor:Backyard, Indoor:Hallway, Outdoor:Playground, Indoor:Kitchen, Outdoor:Park",
-                "related to Outdoor:Backyard, Indoor:Hallway, Outdoor:Playground, Indoor:Kitchen, Outdoor:Park"
+                "Camping: sleeping outdoors, often in a tent",
+                "Knitting: making fabric by looping yarn with needles",
+                "Yoga: a practice of physical postures and breathing",
+                "Fishing: catching fish, usually with a rod or net",
+                "Painting: creating pictures using paint"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L14_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These are places connected to sport, not the sports themselves. Sort into Outdoor or Indoor.",
             "topicBuckets": [
-                "Indoor",
-                "Outdoor"
+                "Outdoor",
+                "Indoor"
             ],
-            "hint": "Here's a tip: Indoor activities happen inside a building, while outdoor activities happen in the open air!",
-            "explanation": "Think of 'Indoor' as things found inside buildings (a sofa, a ceiling), and 'Outdoor' as things found in the open air (a garden, a sidewalk)!",
+            "hint": "Picture walking up to each one \u2014 is it a building, or a spot in nature?",
+            "explanation": "A gymnasium, locker room, and sports hall are all built structures used for indoor training and changing. A trailhead marks the start of a path into nature, and a campsite is a designated outdoor spot for camping overnight.",
             "options": [
-                "Bedroom",
-                "Trail",
-                "Patio",
-                "Basement",
-                "Field"
+                "Campsite",
+                "Sports hall",
+                "Locker room",
+                "Trailhead",
+                "Gymnasium"
             ],
-            "correctAnswer": "Indoor:Bedroom, Outdoor:Trail, Outdoor:Patio, Indoor:Basement, Outdoor:Field",
+            "correctAnswer": "Outdoor:Campsite, Indoor:Sports hall, Indoor:Locker room, Outdoor:Trailhead, Indoor:Gymnasium",
             "relatedWords": [
-                "aspect of Indoor:Bedroom, Outdoor:Trail, Outdoor:Patio, Indoor:Basement, Outdoor:Field",
-                "concept of Indoor:Bedroom, Outdoor:Trail, Outdoor:Patio, Indoor:Basement, Outdoor:Field",
-                "related to Indoor:Bedroom, Outdoor:Trail, Outdoor:Patio, Indoor:Basement, Outdoor:Field"
+                "Campsite: a designated outdoor spot for camping",
+                "Sports hall: a large indoor space used for sports",
+                "Locker room: a room with lockers for changing clothes",
+                "Trailhead: the starting point of a hiking trail",
+                "Gymnasium: a building equipped for indoor sports and exercise"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L15_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Evening or Morning.",
             "topicBuckets": [
-                "Morning",
-                "Evening"
+                "Evening",
+                "Morning"
             ],
-            "hint": "Here's a tip: Morning is right after you wake up, while evening is when the day is ending. Sort by time of day!",
-            "explanation": "Think of 'Morning' as the early part of the day (sunrise, breakfast), and 'Evening' as the later part of the day (sunset, dinner)!",
+            "hint": "Think about the first and last parts of a typical day.",
+            "explanation": "Breakfast, sunrise, and an alarm clock are all associated with starting the day. Dinner and sunset both mark the day winding down, usually the final meal and the final light.",
             "options": [
-                "Sunrise",
-                "Sunset",
-                "Breakfast",
                 "Dinner",
-                "Dawn"
+                "Sunset",
+                "Alarm clock",
+                "Sunrise",
+                "Breakfast"
             ],
-            "correctAnswer": "Morning:Sunrise, Evening:Sunset, Morning:Breakfast, Evening:Dinner, Morning:Dawn",
+            "correctAnswer": "Evening:Dinner, Evening:Sunset, Morning:Alarm clock, Morning:Sunrise, Morning:Breakfast",
             "relatedWords": [
-                "aspect of Morning:Sunrise, Evening:Sunset, Morning:Breakfast, Evening:Dinner, Morning:Dawn",
-                "concept of Morning:Sunrise, Evening:Sunset, Morning:Breakfast, Evening:Dinner, Morning:Dawn",
-                "related to Morning:Sunrise, Evening:Sunset, Morning:Breakfast, Evening:Dinner, Morning:Dawn"
+                "Dinner: the main meal, usually eaten in the evening",
+                "Sunset: the moment the sun disappears from the sky",
+                "Alarm clock: a device that wakes someone at a set time",
+                "Sunrise: the moment the sun appears in the sky",
+                "Breakfast: the first meal of the day"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L15_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "One evening word is a drink, and one morning word is a bird's sound. Sort into Evening or Morning.",
             "topicBuckets": [
-                "Morning",
-                "Evening"
+                "Evening",
+                "Morning"
             ],
-            "hint": "Here's a tip: Morning is right after you wake up, while evening is when the day is ending. Sort by time of day!",
-            "explanation": "Think of 'Morning' as the early part of the day (sunrise, breakfast), and 'Evening' as the later part of the day (sunset, dinner)!",
+            "hint": "Think beyond food \u2014 a sound, a drink, a phone call.",
+            "explanation": "A wake-up call, cereal, and a rooster's crow are all linked to starting the day. A nightcap is an informal term for a drink taken before bed, and candlelight is often associated with a relaxed evening meal or atmosphere.",
             "options": [
-                "Dusk",
-                "Daybreak",
-                "Twilight",
-                "Wake-up",
-                "Bedtime"
+                "Candlelight",
+                "Nightcap",
+                "Rooster crow",
+                "Cereal",
+                "Wake-up call"
             ],
-            "correctAnswer": "Evening:Dusk, Morning:Daybreak, Evening:Twilight, Morning:Wake-up, Evening:Bedtime",
+            "correctAnswer": "Evening:Candlelight, Evening:Nightcap, Morning:Rooster crow, Morning:Cereal, Morning:Wake-up call",
             "relatedWords": [
-                "aspect of Evening:Dusk, Morning:Daybreak, Evening:Twilight, Morning:Wake-up, Evening:Bedtime",
-                "concept of Evening:Dusk, Morning:Daybreak, Evening:Twilight, Morning:Wake-up, Evening:Bedtime",
-                "related to Evening:Dusk, Morning:Daybreak, Evening:Twilight, Morning:Wake-up, Evening:Bedtime"
+                "Candlelight: light from a candle, often linked to a relaxed evening",
+                "Nightcap: an informal term for a drink taken before bed",
+                "Rooster crow: the loud call a rooster makes at dawn",
+                "Cereal: a common breakfast food made from grain",
+                "Wake-up call: a call or signal that wakes someone up"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L15_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These are fixed phrases people actually use. Sort into Evening or Morning based on when each would happen.",
             "topicBuckets": [
-                "Morning",
-                "Evening"
+                "Evening",
+                "Morning"
             ],
-            "hint": "Here's a tip: Morning is right after you wake up, while evening is when the day is ending. Sort by time of day!",
-            "explanation": "Think of 'Morning' as the early part of the day (sunrise, breakfast), and 'Evening' as the later part of the day (sunset, dinner)!",
+            "hint": "Think about a broadcast, a meeting, or formal clothing.",
+            "explanation": "An early riser wakes up very early, and a 'dawn patrol' is an informal phrase for an early morning activity, like surfing before work. A 'morning briefing' is a short meeting to start the day. An evening gown is formal wear for a nighttime event, and the 'evening news' is a broadcast timed for when most people are home after work.",
             "options": [
-                "Brunch",
-                "Supper",
-                "Early",
-                "Late",
-                "Rooster"
+                "Morning briefing",
+                "Evening gown",
+                "Evening news",
+                "Dawn patrol",
+                "Early riser"
             ],
-            "correctAnswer": "Morning:Brunch, Evening:Supper, Morning:Early, Evening:Late, Morning:Rooster",
+            "correctAnswer": "Morning:Morning briefing, Evening:Evening gown, Evening:Evening news, Morning:Dawn patrol, Morning:Early riser",
             "relatedWords": [
-                "aspect of Morning:Brunch, Evening:Supper, Morning:Early, Evening:Late, Morning:Rooster",
-                "concept of Morning:Brunch, Evening:Supper, Morning:Early, Evening:Late, Morning:Rooster",
-                "related to Morning:Brunch, Evening:Supper, Morning:Early, Evening:Late, Morning:Rooster"
+                "Morning briefing: a short meeting held to start the day",
+                "Evening gown: formal, floor-length clothing worn to nighttime events",
+                "Evening news: a news broadcast shown in the evening",
+                "Dawn patrol: an informal phrase for an early morning activity",
+                "Early riser: someone who habitually wakes up very early"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L16_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Clean or Dirty.",
             "topicBuckets": [
                 "Clean",
                 "Dirty"
             ],
-            "hint": "Here's a tip: Clean things have no dirt on them, while dirty things are covered in mess. Sort by cleanliness!",
-            "explanation": "Think of 'Clean' as things free of dirt (washed, spotless), and 'Dirty' as things covered in mess (muddy, stained)!",
+            "hint": "Picture a floor right after mopping versus one that hasn't been swept in weeks.",
+            "explanation": "Spotless and sparkling both describe something clean to an impressive degree, while tidy simply means organized and free of mess. Filthy and grimy both describe dirt, but grimy suggests a sticky, greasy layer of dirt built up over time.",
             "options": [
-                "Spotless",
-                "Muddy",
-                "Washed",
-                "Stained",
-                "Polished"
+                "Grimy",
+                "Tidy",
+                "Sparkling",
+                "Filthy",
+                "Spotless"
             ],
-            "correctAnswer": "Clean:Spotless, Dirty:Muddy, Clean:Washed, Dirty:Stained, Clean:Polished",
+            "correctAnswer": "Dirty:Grimy, Clean:Tidy, Clean:Sparkling, Dirty:Filthy, Clean:Spotless",
             "relatedWords": [
-                "aspect of Clean:Spotless, Dirty:Muddy, Clean:Washed, Dirty:Stained, Clean:Polished",
-                "concept of Clean:Spotless, Dirty:Muddy, Clean:Washed, Dirty:Stained, Clean:Polished",
-                "related to Clean:Spotless, Dirty:Muddy, Clean:Washed, Dirty:Stained, Clean:Polished"
+                "Grimy: covered in a sticky, greasy layer of dirt",
+                "Tidy: neatly arranged and free of mess",
+                "Sparkling: very clean and shiny",
+                "Filthy: extremely dirty",
+                "Spotless: completely clean, without a single mark"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L16_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Two of these clean words are more formal \u2014 you'd read them on a cleaning product or hotel review. Sort into Dirty or Clean.",
             "topicBuckets": [
-                "Clean",
-                "Dirty"
+                "Dirty",
+                "Clean"
             ],
-            "hint": "Here's a tip: Clean things have no dirt on them, while dirty things are covered in mess. Sort by cleanliness!",
-            "explanation": "Think of 'Clean' as things free of dirt (washed, spotless), and 'Dirty' as things covered in mess (muddy, stained)!",
+            "hint": "Think about which word specifically means free from germs, not just visible dirt.",
+            "explanation": "Pristine and immaculate both describe something in perfect, untouched condition, often used for hotel rooms or new items. Hygienic specifically means free from germs, not just visible dirt. Grubby and soiled both describe visible dirt, though soiled is often used for fabric or clothing specifically.",
             "options": [
-                "Tidy",
-                "Grimy",
-                "Sanitary",
-                "Filthy",
-                "Sparkling"
+                "Pristine",
+                "Soiled",
+                "Grubby",
+                "Immaculate",
+                "Hygienic"
             ],
-            "correctAnswer": "Clean:Tidy, Dirty:Grimy, Clean:Sanitary, Dirty:Filthy, Clean:Sparkling",
+            "correctAnswer": "Clean:Pristine, Dirty:Soiled, Dirty:Grubby, Clean:Immaculate, Clean:Hygienic",
             "relatedWords": [
-                "aspect of Clean:Tidy, Dirty:Grimy, Clean:Sanitary, Dirty:Filthy, Clean:Sparkling",
-                "concept of Clean:Tidy, Dirty:Grimy, Clean:Sanitary, Dirty:Filthy, Clean:Sparkling",
-                "related to Clean:Tidy, Dirty:Grimy, Clean:Sanitary, Dirty:Filthy, Clean:Sparkling"
+                "Pristine: in perfect, untouched condition",
+                "Soiled: made dirty, especially fabric or clothing",
+                "Grubby: dirty, especially with grime",
+                "Immaculate: perfectly clean, without any flaw",
+                "Hygienic: clean and free from germs"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L16_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Think about a kitchen inspection report \u2014 which words would a health inspector use? Sort into Clean or Dirty.",
             "topicBuckets": [
                 "Clean",
                 "Dirty"
             ],
-            "hint": "Here's a tip: Clean things have no dirt on them, while dirty things are covered in mess. Sort by cleanliness!",
-            "explanation": "Think of 'Clean' as things free of dirt (washed, spotless), and 'Dirty' as things covered in mess (muddy, stained)!",
+            "hint": "Three of these describe dirtiness serious enough to be a health risk.",
+            "explanation": "'Squeaky clean' and polished both describe a strong, almost showy level of cleanliness. Unhygienic, contaminated, and unsanitary all describe dirtiness serious enough to be a health risk, stronger and more clinical than simply 'dirty'.",
             "options": [
-                "Hygienic",
-                "Greasy",
-                "Fresh",
-                "Dusty",
-                "Soiled"
+                "Polished",
+                "Unhygienic",
+                "Contaminated",
+                "Unsanitary",
+                "Squeaky clean"
             ],
-            "correctAnswer": "Clean:Hygienic, Dirty:Greasy, Clean:Fresh, Dirty:Dusty, Dirty:Soiled",
+            "correctAnswer": "Clean:Polished, Dirty:Unhygienic, Dirty:Contaminated, Dirty:Unsanitary, Clean:Squeaky clean",
             "relatedWords": [
-                "aspect of Clean:Hygienic, Dirty:Greasy, Clean:Fresh, Dirty:Dusty, Dirty:Soiled",
-                "concept of Clean:Hygienic, Dirty:Greasy, Clean:Fresh, Dirty:Dusty, Dirty:Soiled",
-                "related to Clean:Hygienic, Dirty:Greasy, Clean:Fresh, Dirty:Dusty, Dirty:Soiled"
+                "Polished: made smooth and shiny by cleaning or rubbing",
+                "Unhygienic: not clean enough to prevent disease",
+                "Contaminated: made impure or unsafe by dirt or germs",
+                "Unsanitary: dirty enough to be a health risk",
+                "Squeaky clean: extremely clean"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L17_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Open or Closed.",
             "topicBuckets": [
                 "Open",
                 "Closed"
             ],
-            "hint": "Here's a tip: An open door lets you walk through, while a closed door blocks your way. Sort by state!",
-            "explanation": "Think of 'Open' as things that allow entry or access (unlocked, ajar), and 'Closed' as things that block entry (locked, shut)!",
+            "hint": "Think about whether you could walk straight in or need a key.",
+            "explanation": "Unlocked and accessible both mean you can get in freely, while ajar specifically describes a door that's only partly open. Shut and sealed both mean closed, but sealed suggests it's closed tightly enough to keep things in or out completely.",
             "options": [
                 "Unlocked",
-                "Locked",
-                "Ajar",
+                "Accessible",
+                "Sealed",
                 "Shut",
-                "Accessible"
+                "Ajar"
             ],
-            "correctAnswer": "Open:Unlocked, Closed:Locked, Open:Ajar, Closed:Shut, Open:Accessible",
+            "correctAnswer": "Open:Unlocked, Open:Accessible, Closed:Sealed, Closed:Shut, Open:Ajar",
             "relatedWords": [
-                "aspect of Open:Unlocked, Closed:Locked, Open:Ajar, Closed:Shut, Open:Accessible",
-                "concept of Open:Unlocked, Closed:Locked, Open:Ajar, Closed:Shut, Open:Accessible",
-                "related to Open:Unlocked, Closed:Locked, Open:Ajar, Closed:Shut, Open:Accessible"
+                "Unlocked: not locked, able to be opened",
+                "Accessible: able to be entered or reached",
+                "Sealed: closed so tightly nothing can pass in or out",
+                "Shut: moved into a closed position",
+                "Ajar: slightly open"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L17_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Picture a sign in a shop window, or a message on a broken vending machine. Sort into Closed or Open.",
             "topicBuckets": [
-                "Open",
-                "Closed"
+                "Closed",
+                "Open"
             ],
-            "hint": "Here's a tip: An open door lets you walk through, while a closed door blocks your way. Sort by state!",
-            "explanation": "Think of 'Open' as things that allow entry or access (unlocked, ajar), and 'Closed' as things that block entry (locked, shut)!",
+            "hint": "Think about a business during its hours, versus one that's temporarily unavailable.",
+            "explanation": "Operating, available, and running all describe something currently working and usable, like a store during business hours. 'Out of service' and suspended both describe something temporarily unavailable, though suspended is often used for accounts or activities rather than machines.",
             "options": [
+                "Running",
+                "Suspended",
+                "Operating",
                 "Available",
-                "Sealed",
-                "Unrestricted",
-                "Barred",
-                "Welcoming"
+                "Out of service"
             ],
-            "correctAnswer": "Open:Available, Closed:Sealed, Open:Unrestricted, Closed:Barred, Open:Welcoming",
+            "correctAnswer": "Open:Running, Closed:Suspended, Open:Operating, Open:Available, Closed:Out of service",
             "relatedWords": [
-                "aspect of Open:Available, Closed:Sealed, Open:Unrestricted, Closed:Barred, Open:Welcoming",
-                "concept of Open:Available, Closed:Sealed, Open:Unrestricted, Closed:Barred, Open:Welcoming",
-                "related to Open:Available, Closed:Sealed, Open:Unrestricted, Closed:Barred, Open:Welcoming"
+                "Running: actively functioning, said of a machine or system",
+                "Suspended: temporarily stopped or made unavailable",
+                "Operating: open for business and serving people",
+                "Available: able to be used or obtained",
+                "Out of service: not currently working or usable"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L17_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "One phrase here means information is being kept secret, not that a door is shut. Sort into Open or Closed.",
             "topicBuckets": [
                 "Open",
                 "Closed"
             ],
-            "hint": "Here's a tip: An open door lets you walk through, while a closed door blocks your way. Sort by state!",
-            "explanation": "Think of 'Open' as things that allow entry or access (unlocked, ajar), and 'Closed' as things that block entry (locked, shut)!",
+            "hint": "Think about a new business celebration, and a business that will never reopen.",
+            "explanation": "A 'grand opening' celebrates a new business starting, an 'open-door policy' means people are welcome to approach freely, and 'wide open' emphasizes how fully open something is. 'Permanently closed' means a business has shut for good, and 'under wraps' is a figurative phrase meaning information is being kept hidden.",
             "options": [
-                "Vacant",
-                "Blocked",
-                "Exposed",
-                "Bolted",
-                "Visible"
+                "Grand opening",
+                "Wide open",
+                "Open-door policy",
+                "Under wraps",
+                "Permanently closed"
             ],
-            "correctAnswer": "Open:Vacant, Closed:Blocked, Open:Exposed, Closed:Bolted, Open:Visible",
+            "correctAnswer": "Open:Grand opening, Open:Wide open, Open:Open-door policy, Closed:Under wraps, Closed:Permanently closed",
             "relatedWords": [
-                "aspect of Open:Vacant, Closed:Blocked, Open:Exposed, Closed:Bolted, Open:Visible",
-                "concept of Open:Vacant, Closed:Blocked, Open:Exposed, Closed:Bolted, Open:Visible",
-                "related to Open:Vacant, Closed:Blocked, Open:Exposed, Closed:Bolted, Open:Visible"
+                "Grand opening: a celebration marking a new business's launch",
+                "Wide open: opened as far as it will go",
+                "Open-door policy: a practice of welcoming people to approach freely",
+                "Under wraps: kept secret or hidden",
+                "Permanently closed: shut for good, not expected to reopen"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L18_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Empty or Full.",
             "topicBuckets": [
                 "Empty",
                 "Full"
             ],
-            "hint": "Here's a tip: An empty cup has nothing in it, while a full cup is filled to the top. Sort by how much is inside!",
-            "explanation": "Think of 'Empty' as containers with nothing inside (a bare shelf, an unfilled glass), and 'Full' as containers filled completely (a packed bag, a brimming cup)!",
+            "hint": "Picture a suitcase before and after packing for a trip.",
+            "explanation": "Vacant and bare both describe emptiness, though bare often means stripped of decoration or contents, like a bare room. Packed, loaded, and crammed all describe fullness, with crammed suggesting things are squeezed in tightly, maybe too tightly.",
             "options": [
                 "Bare",
-                "Packed",
+                "Crammed",
+                "Loaded",
                 "Vacant",
-                "Brimming",
-                "Hollow"
+                "Packed"
             ],
-            "correctAnswer": "Empty:Bare, Full:Packed, Empty:Vacant, Full:Brimming, Empty:Hollow",
+            "correctAnswer": "Empty:Bare, Full:Crammed, Full:Loaded, Empty:Vacant, Full:Packed",
             "relatedWords": [
-                "aspect of Empty:Bare, Full:Packed, Empty:Vacant, Full:Brimming, Empty:Hollow",
-                "concept of Empty:Bare, Full:Packed, Empty:Vacant, Full:Brimming, Empty:Hollow",
-                "related to Empty:Bare, Full:Packed, Empty:Vacant, Full:Brimming, Empty:Hollow"
+                "Bare: empty, stripped of contents or decoration",
+                "Crammed: squeezed in tightly, often too tightly",
+                "Loaded: filled with a large amount of something",
+                "Vacant: empty, not occupied",
+                "Packed: filled tightly with people or things"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L18_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These describe emptiness or fullness at an extreme. Sort into Full or Empty.",
             "topicBuckets": [
-                "Empty",
-                "Full"
+                "Full",
+                "Empty"
             ],
-            "hint": "Here's a tip: An empty cup has nothing in it, while a full cup is filled to the top. Sort by how much is inside!",
-            "explanation": "Think of 'Empty' as containers with nothing inside (a bare shelf, an unfilled glass), and 'Full' as containers filled completely (a packed bag, a brimming cup)!",
+            "hint": "Think about a place with nobody in it, or a cup about to spill.",
+            "explanation": "Deserted and desolate both describe a place emptied of people, though desolate adds a bleak, lonely feeling. Barren usually describes land unable to produce anything, like barren soil. Brimming and overflowing both describe fullness at its limit, with overflowing meaning it's spilled past that limit.",
             "options": [
-                "Unfilled",
-                "Stuffed",
-                "Drained",
-                "Crammed",
-                "Deserted"
+                "Brimming",
+                "Desolate",
+                "Deserted",
+                "Overflowing",
+                "Barren"
             ],
-            "correctAnswer": "Empty:Unfilled, Full:Stuffed, Empty:Drained, Full:Crammed, Empty:Deserted",
+            "correctAnswer": "Full:Brimming, Empty:Desolate, Empty:Deserted, Full:Overflowing, Empty:Barren",
             "relatedWords": [
-                "aspect of Empty:Unfilled, Full:Stuffed, Empty:Drained, Full:Crammed, Empty:Deserted",
-                "concept of Empty:Unfilled, Full:Stuffed, Empty:Drained, Full:Crammed, Empty:Deserted",
-                "related to Empty:Unfilled, Full:Stuffed, Empty:Drained, Full:Crammed, Empty:Deserted"
+                "Brimming: full to the very edge",
+                "Desolate: empty and bleak, lacking any comfort",
+                "Deserted: empty of people, abandoned",
+                "Overflowing: so full it spills over",
+                "Barren: empty, unable to produce anything, like infertile land"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L18_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "One empty word describes a promise with no real meaning behind it. Sort into Full or Empty.",
             "topicBuckets": [
-                "Empty",
-                "Full"
+                "Full",
+                "Empty"
             ],
-            "hint": "Here's a tip: An empty cup has nothing in it, while a full cup is filled to the top. Sort by how much is inside!",
-            "explanation": "Think of 'Empty' as containers with nothing inside (a bare shelf, an unfilled glass), and 'Full' as containers filled completely (a packed bag, a brimming cup)!",
+            "hint": "Think figuratively as well as literally.",
+            "explanation": "A 'hollow' promise is empty of real meaning, an extension beyond literal emptiness. Depleted describes something that's been emptied out over time, like depleted resources, and blank describes an empty surface, like a blank page. Bursting and well-stocked both describe fullness, with bursting suggesting it's almost overflowing.",
             "options": [
-                "Loaded",
+                "Hollow",
+                "Well-stocked",
                 "Blank",
-                "Saturated",
-                "Void",
-                "Overflowing"
+                "Bursting",
+                "Depleted"
             ],
-            "correctAnswer": "Full:Loaded, Empty:Blank, Full:Saturated, Empty:Void, Full:Overflowing",
+            "correctAnswer": "Empty:Hollow, Full:Well-stocked, Empty:Blank, Full:Bursting, Empty:Depleted",
             "relatedWords": [
-                "aspect of Full:Loaded, Empty:Blank, Full:Saturated, Empty:Void, Full:Overflowing",
-                "concept of Full:Loaded, Empty:Blank, Full:Saturated, Empty:Void, Full:Overflowing",
-                "related to Full:Loaded, Empty:Blank, Full:Saturated, Empty:Void, Full:Overflowing"
+                "Hollow: empty inside, or lacking real meaning",
+                "Well-stocked: filled with a good supply of something",
+                "Blank: empty, with nothing written or shown on it",
+                "Bursting: extremely full, almost overflowing",
+                "Depleted: emptied out over time, reduced in amount"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L19_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Strong or Weak.",
             "topicBuckets": [
                 "Strong",
                 "Weak"
             ],
-            "hint": "Here's a tip: A strong person can lift heavy things, while a weak person tires easily. Sort by physical power!",
-            "explanation": "Think of 'Strong' as great physical power (muscular, powerful), and 'Weak' as little physical power (feeble, frail)!",
+            "hint": "Think about someone who can lift heavy boxes, versus someone who can barely stand.",
+            "explanation": "Powerful, sturdy, and tough all describe strength, though sturdy specifically suggests something well-built and durable, like sturdy furniture. Feeble and frail both describe weakness, usually linked to age or illness in a person.",
             "options": [
-                "Muscular",
-                "Feeble",
-                "Powerful",
                 "Frail",
-                "Sturdy"
+                "Tough",
+                "Sturdy",
+                "Feeble",
+                "Powerful"
             ],
-            "correctAnswer": "Strong:Muscular, Weak:Feeble, Strong:Powerful, Weak:Frail, Strong:Sturdy",
+            "correctAnswer": "Weak:Frail, Strong:Tough, Strong:Sturdy, Weak:Feeble, Strong:Powerful",
             "relatedWords": [
-                "aspect of Strong:Muscular, Weak:Feeble, Strong:Powerful, Weak:Frail, Strong:Sturdy",
-                "concept of Strong:Muscular, Weak:Feeble, Strong:Powerful, Weak:Frail, Strong:Sturdy",
-                "related to Strong:Muscular, Weak:Feeble, Strong:Powerful, Weak:Frail, Strong:Sturdy"
+                "Frail: physically weak, often due to age or illness",
+                "Tough: strong and able to withstand strain",
+                "Sturdy: strongly and solidly built",
+                "Feeble: very weak, lacking energy or strength",
+                "Powerful: having great strength or force"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L19_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These are often used for materials and objects, not just people. Sort into Weak or Strong.",
             "topicBuckets": [
-                "Strong",
-                "Weak"
+                "Weak",
+                "Strong"
             ],
-            "hint": "Here's a tip: A strong person can lift heavy things, while a weak person tires easily. Sort by physical power!",
-            "explanation": "Think of 'Strong' as great physical power (muscular, powerful), and 'Weak' as little physical power (feeble, frail)!",
+            "hint": "Think about which word means something can recover after being damaged.",
+            "explanation": "Robust, resilient, and durable all describe something built to last, with resilient specifically meaning it can recover from damage or stress. Fragile and flimsy both describe weakness in an object, though flimsy suggests it was poorly made to begin with, not just delicate.",
             "options": [
-                "Mighty",
+                "Flimsy",
                 "Fragile",
                 "Robust",
-                "Delicate",
-                "Tough"
+                "Durable",
+                "Resilient"
             ],
-            "correctAnswer": "Strong:Mighty, Weak:Fragile, Strong:Robust, Weak:Delicate, Strong:Tough",
+            "correctAnswer": "Weak:Flimsy, Weak:Fragile, Strong:Robust, Strong:Durable, Strong:Resilient",
             "relatedWords": [
-                "aspect of Strong:Mighty, Weak:Fragile, Strong:Robust, Weak:Delicate, Strong:Tough",
-                "concept of Strong:Mighty, Weak:Fragile, Strong:Robust, Weak:Delicate, Strong:Tough",
-                "related to Strong:Mighty, Weak:Fragile, Strong:Robust, Weak:Delicate, Strong:Tough"
+                "Flimsy: weak and poorly made",
+                "Fragile: easily broken or damaged",
+                "Robust: strong and sturdy in construction",
+                "Durable: able to withstand wear over a long time",
+                "Resilient: able to recover quickly from damage or difficulty"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L19_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Think about a strong cup of coffee and a weak argument in a debate. Sort into Strong or Weak.",
             "topicBuckets": [
                 "Strong",
                 "Weak"
             ],
-            "hint": "Here's a tip: A strong person can lift heavy things, while a weak person tires easily. Sort by physical power!",
-            "explanation": "Think of 'Strong' as great physical power (muscular, powerful), and 'Weak' as little physical power (feeble, frail)!",
+            "hint": "The same words can describe very different things \u2014 a drink, an argument, or a hand.",
+            "explanation": "Potent and concentrated both describe strength in a substance, like coffee or medicine. Compelling describes an argument strong enough to be convincing. Watered-down describes something weakened by dilution, and shaky describes something unstable, like a shaky argument or a shaky hand.",
             "options": [
-                "Brawny",
-                "Faint",
-                "Vigorous",
-                "Flimsy",
-                "Hardy"
+                "Potent",
+                "Concentrated",
+                "Shaky",
+                "Watered-down",
+                "Compelling"
             ],
-            "correctAnswer": "Strong:Brawny, Weak:Faint, Strong:Vigorous, Weak:Flimsy, Strong:Hardy",
+            "correctAnswer": "Strong:Potent, Strong:Concentrated, Weak:Shaky, Weak:Watered-down, Strong:Compelling",
             "relatedWords": [
-                "aspect of Strong:Brawny, Weak:Faint, Strong:Vigorous, Weak:Flimsy, Strong:Hardy",
-                "concept of Strong:Brawny, Weak:Faint, Strong:Vigorous, Weak:Flimsy, Strong:Hardy",
-                "related to Strong:Brawny, Weak:Faint, Strong:Vigorous, Weak:Flimsy, Strong:Hardy"
+                "Potent: having great strength or effect",
+                "Concentrated: made stronger by removing excess liquid or effort",
+                "Shaky: unstable or unreliable",
+                "Watered-down: weakened, often by dilution",
+                "Compelling: strong enough to be convincing"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L20_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Adult or Child.",
             "topicBuckets": [
-                "Child",
-                "Adult"
+                "Adult",
+                "Child"
             ],
-            "hint": "Here's a tip: A child is young and still growing, while an adult is fully grown. Sort by stage of life!",
-            "explanation": "Think of 'Child' as a young person (kid, toddler), and 'Adult' as a fully grown person (grown-up, mature)!",
+            "hint": "Think about age \u2014 someone still growing up, or someone fully grown.",
+            "explanation": "Toddler, kid, and youngster are all informal or specific words for a young person, with toddler specifically meaning a very young child just learning to walk. Grown-up and mature both describe someone who has reached adulthood, though mature can also describe behavior, not just age.",
             "options": [
-                "Kid",
-                "Grown-up",
                 "Toddler",
+                "Grown-up",
                 "Mature",
-                "Youngster"
+                "Youngster",
+                "Kid"
             ],
-            "correctAnswer": "Child:Kid, Adult:Grown-up, Child:Toddler, Adult:Mature, Child:Youngster",
+            "correctAnswer": "Child:Toddler, Adult:Grown-up, Adult:Mature, Child:Youngster, Child:Kid",
             "relatedWords": [
-                "aspect of Child:Kid, Adult:Grown-up, Child:Toddler, Adult:Mature, Child:Youngster",
-                "concept of Child:Kid, Adult:Grown-up, Child:Toddler, Adult:Mature, Child:Youngster",
-                "related to Child:Kid, Adult:Grown-up, Child:Toddler, Adult:Mature, Child:Youngster"
+                "Toddler: a very young child just learning to walk",
+                "Grown-up: an informal word for an adult",
+                "Mature: fully developed, either in age or behavior",
+                "Youngster: an informal word for someone noticeably younger than the speaker",
+                "Kid: a casual everyday word for a child"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L20_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Two of these child words are legal terms you'd see on a form, not everyday conversation. Sort into Adult or Child.",
             "topicBuckets": [
-                "Child",
-                "Adult"
+                "Adult",
+                "Child"
             ],
-            "hint": "Here's a tip: A child is young and still growing, while an adult is fully grown. Sort by stage of life!",
-            "explanation": "Think of 'Child' as a young person (kid, toddler), and 'Adult' as a fully grown person (grown-up, mature)!",
+            "hint": "Think about which words are too formal for casual conversation.",
+            "explanation": "Juvenile and minor are both formal, often legal, terms for someone under adult age, and underage specifically means too young to legally do something, like drink or vote. Adulthood is the state of being an adult, and grown describes someone who has fully developed.",
             "options": [
-                "Infant",
-                "Elder",
+                "Adulthood",
                 "Juvenile",
-                "Senior",
-                "Minor"
+                "Minor",
+                "Grown",
+                "Underage"
             ],
-            "correctAnswer": "Child:Infant, Adult:Elder, Child:Juvenile, Adult:Senior, Child:Minor",
+            "correctAnswer": "Adult:Adulthood, Child:Juvenile, Child:Minor, Adult:Grown, Child:Underage",
             "relatedWords": [
-                "aspect of Child:Infant, Adult:Elder, Child:Juvenile, Adult:Senior, Child:Minor",
-                "concept of Child:Infant, Adult:Elder, Child:Juvenile, Adult:Senior, Child:Minor",
-                "related to Child:Infant, Adult:Elder, Child:Juvenile, Adult:Senior, Child:Minor"
+                "Adulthood: the state of being an adult",
+                "Juvenile: a formal or legal term for a young person",
+                "Minor: a legal term for someone under the age of adulthood",
+                "Grown: fully developed, an adult",
+                "Underage: too young to legally do something"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L20_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These describe qualities or places linked to each stage of life, not people themselves. Sort into Adult or Child.",
             "topicBuckets": [
-                "Child",
-                "Adult"
+                "Adult",
+                "Child"
             ],
-            "hint": "Here's a tip: A child is young and still growing, while an adult is fully grown. Sort by stage of life!",
-            "explanation": "Think of 'Child' as a young person (kid, toddler), and 'Adult' as a fully grown person (grown-up, mature)!",
+            "hint": "Think about a time period, a quality, and a place \u2014 not a person.",
+            "explanation": "Childhood, innocence, and a playground are all associated with being young \u2014 a time period, a quality, and a place. Maturity and responsibility are qualities associated with adulthood, often expected to develop as someone grows older.",
             "options": [
-                "Teen",
-                "Parent",
-                "Boy",
-                "Worker",
-                "Girl"
+                "Playground",
+                "Childhood",
+                "Innocence",
+                "Responsibility",
+                "Maturity"
             ],
-            "correctAnswer": "Child:Teen, Adult:Parent, Child:Boy, Adult:Worker, Child:Girl",
+            "correctAnswer": "Child:Playground, Child:Childhood, Child:Innocence, Adult:Responsibility, Adult:Maturity",
             "relatedWords": [
-                "aspect of Child:Teen, Adult:Parent, Child:Boy, Adult:Worker, Child:Girl",
-                "concept of Child:Teen, Adult:Parent, Child:Boy, Adult:Worker, Child:Girl",
-                "related to Child:Teen, Adult:Parent, Child:Boy, Adult:Worker, Child:Girl"
+                "Playground: an outdoor area with equipment for children to play on",
+                "Childhood: the period of a person's life as a child",
+                "Innocence: the quality of being pure or inexperienced",
+                "Responsibility: the state of being accountable for something",
+                "Maturity: the quality of being fully developed or sensible"
             ]
         }
     ]

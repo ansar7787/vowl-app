@@ -6,721 +6,781 @@
         {
             "id": "VOC_TOPICVOCAB_L31_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Sweet or Sour, based on taste.",
             "topicBuckets": [
                 "Sweet",
                 "Sour"
             ],
-            "hint": "Here's a tip: Sweet tastes like sugar, while sour tastes like a lemon!",
-            "explanation": "Think of 'Sweet' as sugary flavors (candy, honey), and 'Sour' as tart, acidic flavors (lemon, vinegar)!",
+            "hint": "Think about biting into a candy versus biting into a lemon.",
+            "explanation": "Sugary, honeyed, and syrupy all describe an intense, often sticky sweetness. Tart and tangy both describe sourness, though tangy suggests a sharp, zesty sourness often mixed with a pleasant flavor, like citrus.",
             "options": [
                 "Sugary",
                 "Tart",
-                "Honeyed",
+                "Syrupy",
                 "Tangy",
-                "Candied"
+                "Honeyed"
             ],
-            "correctAnswer": "Sweet:Sugary, Sour:Tart, Sweet:Honeyed, Sour:Tangy, Sweet:Candied",
+            "correctAnswer": "Sweet:Sugary, Sour:Tart, Sweet:Syrupy, Sour:Tangy, Sweet:Honeyed",
             "relatedWords": [
-                "aspect of Sweet:Sugary, Sour:Tart, Sweet:Honeyed, Sour:Tangy, Sweet:Candied",
-                "concept of Sweet:Sugary, Sour:Tart, Sweet:Honeyed, Sour:Tangy, Sweet:Candied",
-                "related to Sweet:Sugary, Sour:Tart, Sweet:Honeyed, Sour:Tangy, Sweet:Candied"
+                "Sugary: tasting strongly of sugar",
+                "Tart: having a sharp, sour taste",
+                "Syrupy: thick and very sweet, like syrup",
+                "Tangy: having a sharp, zesty flavor",
+                "Honeyed: sweet like honey"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L31_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "One sweet word actually carries a negative tone. Sort into Sweet or Sour.",
             "topicBuckets": [
                 "Sweet",
                 "Sour"
             ],
-            "hint": "Here's a tip: Sweet tastes like sugar, while sour tastes like a lemon!",
-            "explanation": "Think of 'Sweet' as sugary flavors (candy, honey), and 'Sour' as tart, acidic flavors (lemon, vinegar)!",
+            "hint": "Think about too much of a good thing becoming unpleasant.",
+            "explanation": "Luscious describes a rich, delicious sweetness, while 'sickly sweet' describes sweetness so intense it becomes unpleasant. Acidic and vinegary both describe a sharp sourness, like citrus or vinegar, and zesty describes a lively, sour-citrus flavor, often used positively.",
             "options": [
-                "Syrupy",
-                "Citrusy",
-                "Caramel",
-                "Vinegary",
-                "Fruity"
+                "Sickly sweet",
+                "Acidic",
+                "Zesty",
+                "Luscious",
+                "Vinegary"
             ],
-            "correctAnswer": "Sweet:Syrupy, Sour:Citrusy, Sweet:Caramel, Sour:Vinegary, Sweet:Fruity",
+            "correctAnswer": "Sweet:Sickly sweet, Sour:Acidic, Sour:Zesty, Sweet:Luscious, Sour:Vinegary",
             "relatedWords": [
-                "aspect of Sweet:Syrupy, Sour:Citrusy, Sweet:Caramel, Sour:Vinegary, Sweet:Fruity",
-                "concept of Sweet:Syrupy, Sour:Citrusy, Sweet:Caramel, Sour:Vinegary, Sweet:Fruity",
-                "related to Sweet:Syrupy, Sour:Citrusy, Sweet:Caramel, Sour:Vinegary, Sweet:Fruity"
+                "Sickly sweet: unpleasantly, excessively sweet",
+                "Acidic: having a sharp, sour taste",
+                "Zesty: having a lively, sour-citrus flavor",
+                "Luscious: richly sweet and delicious",
+                "Vinegary: tasting sharply sour, like vinegar"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L31_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Two of these words are used by food critics for a very specific, sometimes overwhelming flavor. Sort into Sweet or Sour.",
             "topicBuckets": [
                 "Sweet",
                 "Sour"
             ],
-            "hint": "Here's a tip: Sweet tastes like sugar, while sour tastes like a lemon!",
-            "explanation": "Think of 'Sweet' as sugary flavors (candy, honey), and 'Sour' as tart, acidic flavors (lemon, vinegar)!",
+            "hint": "Think about a dessert so sweet it feels artificial, and a fruit so sharp it dries out your mouth.",
+            "explanation": "Saccharine and cloying both describe an overwhelming, almost artificial sweetness, sometimes also used to describe overly sentimental writing or speech. Decadent describes a rich, indulgent sweetness. Piquant describes a pleasantly sharp, tangy flavor, and astringent describes a sharp, dry, sour sensation, like an unripe fruit.",
             "options": [
-                "Lemony",
-                "Sweetened",
-                "Pickled",
-                "Nectar",
-                "Acidic"
+                "Saccharine",
+                "Cloying",
+                "Decadent",
+                "Piquant",
+                "Astringent"
             ],
-            "correctAnswer": "Sour:Lemony, Sweet:Sweetened, Sour:Pickled, Sweet:Nectar, Sour:Acidic",
+            "correctAnswer": "Sweet:Saccharine, Sweet:Cloying, Sweet:Decadent, Sour:Piquant, Sour:Astringent",
             "relatedWords": [
-                "aspect of Sour:Lemony, Sweet:Sweetened, Sour:Pickled, Sweet:Nectar, Sour:Acidic",
-                "concept of Sour:Lemony, Sweet:Sweetened, Sour:Pickled, Sweet:Nectar, Sour:Acidic",
-                "related to Sour:Lemony, Sweet:Sweetened, Sour:Pickled, Sweet:Nectar, Sour:Acidic"
+                "Saccharine: excessively, artificially sweet",
+                "Cloying: sickeningly sweet, overwhelming",
+                "Decadent: richly, indulgently sweet",
+                "Piquant: pleasantly sharp or tangy in taste",
+                "Astringent: sharp and dry-tasting, causing puckering"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L32_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Sharp or Round, based on shape.",
             "topicBuckets": [
-                "Round",
-                "Sharp"
+                "Sharp",
+                "Round"
             ],
-            "hint": "Here's a tip: A round shape has smooth curves, while a sharp shape has points and edges!",
-            "explanation": "Think of 'Round' as curved shapes (circle, sphere), and 'Sharp' as pointed shapes (blade, spike)!",
+            "hint": "Think about the edge of a coin versus the edge of a knife.",
+            "explanation": "Circular, curved, and spherical all describe smooth, rounded shapes without edges. Pointed and jagged both describe sharpness, though jagged suggests a rough, uneven edge rather than a single clean point.",
             "options": [
-                "Circle",
-                "Spike",
-                "Sphere",
-                "Blade",
-                "Curved"
+                "Curved",
+                "Circular",
+                "Jagged",
+                "Spherical",
+                "Pointed"
             ],
-            "correctAnswer": "Round:Circle, Sharp:Spike, Round:Sphere, Sharp:Blade, Round:Curved",
+            "correctAnswer": "Round:Curved, Round:Circular, Sharp:Jagged, Round:Spherical, Sharp:Pointed",
             "relatedWords": [
-                "aspect of Round:Circle, Sharp:Spike, Round:Sphere, Sharp:Blade, Round:Curved",
-                "concept of Round:Circle, Sharp:Spike, Round:Sphere, Sharp:Blade, Round:Curved",
-                "related to Round:Circle, Sharp:Spike, Round:Sphere, Sharp:Blade, Round:Curved"
+                "Curved: having a smooth, bending line",
+                "Circular: having the shape of a circle",
+                "Jagged: having a rough, uneven, sharp edge",
+                "Spherical: having the shape of a ball",
+                "Pointed: having a sharp end"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L32_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Think about the blade of a bread knife versus the shape of an egg. Sort into Round or Sharp.",
             "topicBuckets": [
                 "Round",
                 "Sharp"
             ],
-            "hint": "Here's a tip: A round shape has smooth curves, while a sharp shape has points and edges!",
-            "explanation": "Think of 'Round' as curved shapes (circle, sphere), and 'Sharp' as pointed shapes (blade, spike)!",
+            "hint": "One sharp word specifically describes a saw-like edge with small points.",
+            "explanation": "Oval and rounded both describe smooth, curved shapes. Angular, serrated, and spiky all describe sharp features, with serrated specifically describing a saw-like edge with small points, like a bread knife.",
             "options": [
-                "Ball",
-                "Needle",
                 "Oval",
-                "Pointed",
-                "Disk"
+                "Spiky",
+                "Rounded",
+                "Serrated",
+                "Angular"
             ],
-            "correctAnswer": "Round:Ball, Sharp:Needle, Round:Oval, Sharp:Pointed, Round:Disk",
+            "correctAnswer": "Round:Oval, Sharp:Spiky, Round:Rounded, Sharp:Serrated, Sharp:Angular",
             "relatedWords": [
-                "aspect of Round:Ball, Sharp:Needle, Round:Oval, Sharp:Pointed, Round:Disk",
-                "concept of Round:Ball, Sharp:Needle, Round:Oval, Sharp:Pointed, Round:Disk",
-                "related to Round:Ball, Sharp:Needle, Round:Oval, Sharp:Pointed, Round:Disk"
+                "Oval: having a smooth, egg-like shape",
+                "Spiky: covered with sharp points",
+                "Rounded: smooth and curved, without sharp edges",
+                "Serrated: having a jagged, saw-like edge",
+                "Angular: having sharp corners or angles"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L32_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Think about the shape of a race car versus a cactus. Sort into Sharp or Round.",
             "topicBuckets": [
-                "Round",
-                "Sharp"
+                "Sharp",
+                "Round"
             ],
-            "hint": "Here's a tip: A round shape has smooth curves, while a sharp shape has points and edges!",
-            "explanation": "Think of 'Round' as curved shapes (circle, sphere), and 'Sharp' as pointed shapes (blade, spike)!",
+            "hint": "One round word specifically means round and swollen, like an onion.",
+            "explanation": "Streamlined, contoured, and bulbous all describe smooth, rounded forms \u2014 a streamlined shape reduces resistance, while bulbous means round and swollen, like an onion. Blade-like and prickly both describe sharp features, with prickly specifically suggesting many small sharp points, like a cactus.",
             "options": [
-                "Globe",
-                "Jagged",
-                "Ring",
-                "Edge",
-                "Pointy"
+                "Streamlined",
+                "Bulbous",
+                "Prickly",
+                "Contoured",
+                "Blade-like"
             ],
-            "correctAnswer": "Round:Globe, Sharp:Jagged, Round:Ring, Sharp:Edge, Sharp:Pointy",
+            "correctAnswer": "Round:Streamlined, Round:Bulbous, Sharp:Prickly, Round:Contoured, Sharp:Blade-like",
             "relatedWords": [
-                "aspect of Round:Globe, Sharp:Jagged, Round:Ring, Sharp:Edge, Sharp:Pointy",
-                "concept of Round:Globe, Sharp:Jagged, Round:Ring, Sharp:Edge, Sharp:Pointy",
-                "related to Round:Globe, Sharp:Jagged, Round:Ring, Sharp:Edge, Sharp:Pointy"
+                "Streamlined: shaped smoothly to reduce resistance",
+                "Bulbous: round and swollen in shape",
+                "Prickly: covered with many small sharp points",
+                "Contoured: shaped with smooth, following curves",
+                "Blade-like: thin and sharp, like a blade"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L33_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Light or Heavy, based on weight.",
             "topicBuckets": [
                 "Light",
                 "Heavy"
             ],
-            "hint": "Here's a tip: A light object is easy to lift, while a heavy object is hard to lift!",
-            "explanation": "Think of 'Light' as low weight (feather, paper), and 'Heavy' as high weight (rock, anvil)!",
+            "hint": "Think about carrying a pillow versus carrying a bag of bricks.",
+            "explanation": "Featherlight, weightless, and airy all describe something that feels like it has almost no weight. Hefty and bulky both describe heaviness, though bulky specifically suggests large and awkward to carry, not just heavy.",
             "options": [
-                "Feather",
-                "Boulder",
-                "Airy",
-                "Weighty",
-                "Paper"
+                "Weightless",
+                "Hefty",
+                "Featherlight",
+                "Bulky",
+                "Airy"
             ],
-            "correctAnswer": "Light:Feather, Heavy:Boulder, Light:Airy, Heavy:Weighty, Light:Paper",
+            "correctAnswer": "Light:Weightless, Heavy:Hefty, Light:Featherlight, Heavy:Bulky, Light:Airy",
             "relatedWords": [
-                "aspect of Light:Feather, Heavy:Boulder, Light:Airy, Heavy:Weighty, Light:Paper",
-                "concept of Light:Feather, Heavy:Boulder, Light:Airy, Heavy:Weighty, Light:Paper",
-                "related to Light:Feather, Heavy:Boulder, Light:Airy, Heavy:Weighty, Light:Paper"
+                "Weightless: having no perceptible weight",
+                "Hefty: heavy and substantial",
+                "Featherlight: extremely light in weight",
+                "Bulky: large and heavy, awkward to carry",
+                "Airy: light and delicate, filled with air"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L33_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Think about a material that sinks versus one that floats easily. Sort into Light or Heavy.",
             "topicBuckets": [
                 "Light",
                 "Heavy"
             ],
-            "hint": "Here's a tip: A light object is easy to lift, while a heavy object is hard to lift!",
-            "explanation": "Think of 'Light' as low weight (feather, paper), and 'Heavy' as high weight (rock, anvil)!",
+            "hint": "One heavy word specifically means heavy and awkward to handle.",
+            "explanation": "Buoyant describes something light enough to float, and wispy describes something thin and light, like a wisp of smoke. Dense, ponderous, and cumbersome all describe heaviness, with cumbersome specifically meaning heavy and awkward to handle.",
             "options": [
-                "Weightless",
-                "Hefty",
-                "Fluffy",
-                "Bulky",
-                "Buoyant"
+                "Wispy",
+                "Buoyant",
+                "Cumbersome",
+                "Dense",
+                "Ponderous"
             ],
-            "correctAnswer": "Light:Weightless, Heavy:Hefty, Light:Fluffy, Heavy:Bulky, Light:Buoyant",
+            "correctAnswer": "Light:Wispy, Light:Buoyant, Heavy:Cumbersome, Heavy:Dense, Heavy:Ponderous",
             "relatedWords": [
-                "aspect of Light:Weightless, Heavy:Hefty, Light:Fluffy, Heavy:Bulky, Light:Buoyant",
-                "concept of Light:Weightless, Heavy:Hefty, Light:Fluffy, Heavy:Bulky, Light:Buoyant",
-                "related to Light:Weightless, Heavy:Hefty, Light:Fluffy, Heavy:Bulky, Light:Buoyant"
+                "Wispy: thin, light, and delicate",
+                "Buoyant: able to float, light enough to stay on the surface",
+                "Cumbersome: heavy and awkward to carry or handle",
+                "Dense: having a lot of mass packed closely together",
+                "Ponderous: heavy and slow-moving"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L33_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Think about the tone of a conversation, or the seriousness of a decision, not just physical weight. Sort into Light or Heavy.",
             "topicBuckets": [
                 "Light",
                 "Heavy"
             ],
-            "hint": "Here's a tip: A light object is easy to lift, while a heavy object is hard to lift!",
-            "explanation": "Think of 'Light' as low weight (feather, paper), and 'Heavy' as high weight (rock, anvil)!",
+            "hint": "These use 'light' and 'heavy' figuratively, not literally.",
+            "explanation": "Trivial, breezy, and lighthearted all use 'light' figuratively, for something unimportant or casual in tone. Weighty and burdensome both use 'heavy' figuratively, for something serious or difficult to carry, like a weighty decision or a burdensome responsibility.",
             "options": [
-                "Anvil",
-                "Balloon",
-                "Massive",
-                "Featherweight",
-                "Dense"
+                "Weighty",
+                "Lighthearted",
+                "Burdensome",
+                "Breezy",
+                "Trivial"
             ],
-            "correctAnswer": "Heavy:Anvil, Light:Balloon, Heavy:Massive, Light:Featherweight, Heavy:Dense",
+            "correctAnswer": "Heavy:Weighty, Light:Lighthearted, Heavy:Burdensome, Light:Breezy, Light:Trivial",
             "relatedWords": [
-                "aspect of Heavy:Anvil, Light:Balloon, Heavy:Massive, Light:Featherweight, Heavy:Dense",
-                "concept of Heavy:Anvil, Light:Balloon, Heavy:Massive, Light:Featherweight, Heavy:Dense",
-                "related to Heavy:Anvil, Light:Balloon, Heavy:Massive, Light:Featherweight, Heavy:Dense"
+                "Weighty: serious and important",
+                "Lighthearted: cheerful and not serious",
+                "Burdensome: difficult to carry or deal with, figuratively",
+                "Breezy: casual and relaxed in tone",
+                "Trivial: of little importance"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L34_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Complex or Simple.",
             "topicBuckets": [
-                "Simple",
-                "Complex"
+                "Complex",
+                "Simple"
             ],
-            "hint": "Here's a tip: A simple task is easy to do, while a complex task has many confusing parts!",
-            "explanation": "Think of 'Simple' as easy, uncomplicated things (basic, plain), and 'Complex' as things with many connected parts (intricate, complicated)!",
+            "hint": "Think about instructions you could follow without a second thought, versus ones that need a diagram.",
+            "explanation": "Straightforward, basic, and uncomplicated all describe something easy to understand or do. Intricate and elaborate both describe complexity, with intricate suggesting many small, carefully connected details.",
             "options": [
+                "Straightforward",
                 "Basic",
-                "Intricate",
-                "Plain",
-                "Complicated",
-                "Easy"
+                "Uncomplicated",
+                "Elaborate",
+                "Intricate"
             ],
-            "correctAnswer": "Simple:Basic, Complex:Intricate, Simple:Plain, Complex:Complicated, Simple:Easy",
+            "correctAnswer": "Simple:Straightforward, Simple:Basic, Simple:Uncomplicated, Complex:Elaborate, Complex:Intricate",
             "relatedWords": [
-                "aspect of Simple:Basic, Complex:Intricate, Simple:Plain, Complex:Complicated, Simple:Easy",
-                "concept of Simple:Basic, Complex:Intricate, Simple:Plain, Complex:Complicated, Simple:Easy",
-                "related to Simple:Basic, Complex:Intricate, Simple:Plain, Complex:Complicated, Simple:Easy"
+                "Straightforward: easy to understand or do, uncomplicated",
+                "Basic: simple, forming an essential foundation",
+                "Uncomplicated: simple, without unnecessary difficulty",
+                "Elaborate: complex and detailed",
+                "Intricate: having many small, carefully connected parts"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L34_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Think about a knot that's easy to undo versus one with many threads pulling in different directions. Sort into Simple or Complex.",
             "topicBuckets": [
                 "Simple",
                 "Complex"
             ],
-            "hint": "Here's a tip: A simple task is easy to do, while a complex task has many confusing parts!",
-            "explanation": "Think of 'Simple' as easy, uncomplicated things (basic, plain), and 'Complex' as things with many connected parts (intricate, complicated)!",
+            "hint": "One complex word specifically means something has many different parts or angles to consider.",
+            "explanation": "Effortless, plain, and manageable all describe a task that doesn't take much work. Multifaceted and tangled both describe complexity, with multifaceted specifically meaning something has many different parts or angles to consider.",
             "options": [
-                "Straightforward",
-                "Elaborate",
-                "Clear",
-                "Tangled",
-                "Uncomplicated"
+                "Plain",
+                "Manageable",
+                "Multifaceted",
+                "Effortless",
+                "Tangled"
             ],
-            "correctAnswer": "Simple:Straightforward, Complex:Elaborate, Simple:Clear, Complex:Tangled, Simple:Uncomplicated",
+            "correctAnswer": "Simple:Plain, Simple:Manageable, Complex:Multifaceted, Simple:Effortless, Complex:Tangled",
             "relatedWords": [
-                "aspect of Simple:Straightforward, Complex:Elaborate, Simple:Clear, Complex:Tangled, Simple:Uncomplicated",
-                "concept of Simple:Straightforward, Complex:Elaborate, Simple:Clear, Complex:Tangled, Simple:Uncomplicated",
-                "related to Simple:Straightforward, Complex:Elaborate, Simple:Clear, Complex:Tangled, Simple:Uncomplicated"
+                "Plain: simple, without extra decoration or difficulty",
+                "Manageable: able to be handled without too much difficulty",
+                "Multifaceted: having many different parts or aspects",
+                "Effortless: requiring very little effort",
+                "Tangled: confusingly complicated, twisted together"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L34_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Two complex words compare a system to a maze or an old empire's bureaucracy. Sort into Simple or Complex.",
             "topicBuckets": [
                 "Simple",
                 "Complex"
             ],
-            "hint": "Here's a tip: A simple task is easy to do, while a complex task has many confusing parts!",
-            "explanation": "Think of 'Simple' as easy, uncomplicated things (basic, plain), and 'Complex' as things with many connected parts (intricate, complicated)!",
+            "hint": "Think about frustration with a confusing system, not just detail.",
+            "explanation": "Rudimentary, bare-bones, and minimalist all describe something reduced to its simplest, most basic form. Labyrinthine and Byzantine both describe frustrating complexity, comparing a system to a maze or to the notoriously complicated bureaucracy of the Byzantine Empire.",
             "options": [
-                "Effortless",
-                "Convoluted",
-                "Minimal",
-                "Multifaceted",
-                "Plain-spoken"
+                "Labyrinthine",
+                "Rudimentary",
+                "Minimalist",
+                "Byzantine",
+                "Bare-bones"
             ],
-            "correctAnswer": "Simple:Effortless, Complex:Convoluted, Simple:Minimal, Complex:Multifaceted, Simple:Plain-spoken",
+            "correctAnswer": "Complex:Labyrinthine, Simple:Rudimentary, Simple:Minimalist, Complex:Byzantine, Simple:Bare-bones",
             "relatedWords": [
-                "aspect of Simple:Effortless, Complex:Convoluted, Simple:Minimal, Complex:Multifaceted, Simple:Plain-spoken",
-                "concept of Simple:Effortless, Complex:Convoluted, Simple:Minimal, Complex:Multifaceted, Simple:Plain-spoken",
-                "related to Simple:Effortless, Complex:Convoluted, Simple:Minimal, Complex:Multifaceted, Simple:Plain-spoken"
+                "Labyrinthine: extremely complex and maze-like",
+                "Rudimentary: basic and undeveloped",
+                "Minimalist: using the fewest and simplest elements possible",
+                "Byzantine: excessively complicated, like an old bureaucracy",
+                "Bare-bones: reduced to only the essential parts"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L35_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Public or Private.",
             "topicBuckets": [
                 "Public",
                 "Private"
             ],
-            "hint": "Here's a tip: Public spaces are open to everyone, while private spaces belong to just one person or group!",
-            "explanation": "Think of 'Public' as things open to everyone (park, library), and 'Private' as things restricted to specific people (diary, bedroom)!",
+            "hint": "Think about a park bench everyone can use versus a diary only you can read.",
+            "explanation": "Communal, shared, and 'open to all' all describe something available to everyone, not owned by one person. Confidential and personal both describe privacy, with confidential specifically implying information meant to be kept secret from most people.",
             "options": [
-                "Park",
-                "Diary",
-                "Library",
-                "Bedroom",
-                "Plaza"
+                "Communal",
+                "Confidential",
+                "Shared",
+                "Open to all",
+                "Personal"
             ],
-            "correctAnswer": "Public:Park, Private:Diary, Public:Library, Private:Bedroom, Public:Plaza",
+            "correctAnswer": "Public:Communal, Private:Confidential, Public:Shared, Public:Open to all, Private:Personal",
             "relatedWords": [
-                "aspect of Public:Park, Private:Diary, Public:Library, Private:Bedroom, Public:Plaza",
-                "concept of Public:Park, Private:Diary, Public:Library, Private:Bedroom, Public:Plaza",
-                "related to Public:Park, Private:Diary, Public:Library, Private:Bedroom, Public:Plaza"
+                "Communal: shared by a group of people",
+                "Confidential: meant to be kept secret",
+                "Shared: used or owned by more than one person",
+                "Open to all: available for anyone to use or attend",
+                "Personal: belonging to or affecting one particular person"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L35_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Two of these private words are the kind you'd read in a government or legal document. Sort into Public or Private.",
             "topicBuckets": [
                 "Public",
                 "Private"
             ],
-            "hint": "Here's a tip: Public spaces are open to everyone, while private spaces belong to just one person or group!",
-            "explanation": "Think of 'Public' as things open to everyone (park, library), and 'Private' as things restricted to specific people (diary, bedroom)!",
+            "hint": "Think about information officially kept secret versus something connected to community life.",
+            "explanation": "Accessible and civic both describe something open and connected to the general public, like civic duties or a civic center. Classified, restricted, and undisclosed all describe information deliberately kept private, with classified specifically referring to officially secret government information.",
             "options": [
-                "Community",
-                "Personal",
-                "Communal",
-                "Confidential",
-                "Shared"
+                "Civic",
+                "Accessible",
+                "Undisclosed",
+                "Restricted",
+                "Classified"
             ],
-            "correctAnswer": "Public:Community, Private:Personal, Public:Communal, Private:Confidential, Public:Shared",
+            "correctAnswer": "Public:Civic, Public:Accessible, Private:Undisclosed, Private:Restricted, Private:Classified",
             "relatedWords": [
-                "aspect of Public:Community, Private:Personal, Public:Communal, Private:Confidential, Public:Shared",
-                "concept of Public:Community, Private:Personal, Public:Communal, Private:Confidential, Public:Shared",
-                "related to Public:Community, Private:Personal, Public:Communal, Private:Confidential, Public:Shared"
+                "Civic: relating to a city or its citizens",
+                "Accessible: able to be reached or used by anyone",
+                "Undisclosed: not made known or revealed",
+                "Restricted: limited to certain people, not open to everyone",
+                "Classified: officially kept secret, especially by a government"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L35_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Think about a post everyone can see, versus a file locked behind a password. Sort into Public or Private.",
             "topicBuckets": [
                 "Public",
                 "Private"
             ],
-            "hint": "Here's a tip: Public spaces are open to everyone, while private spaces belong to just one person or group!",
-            "explanation": "Think of 'Public' as things open to everyone (park, library), and 'Private' as things restricted to specific people (diary, bedroom)!",
+            "hint": "Think about how far information has spread, versus how tightly it's secured.",
+            "explanation": "Broadcasted, viral, and publicized all describe information that's reached a wide public audience. Encrypted and password-protected both describe information deliberately kept private and secured against outside access.",
             "options": [
-                "Open-access",
-                "Exclusive",
-                "Government",
-                "Secret",
-                "Civic"
+                "Publicized",
+                "Encrypted",
+                "Broadcasted",
+                "Password-protected",
+                "Viral"
             ],
-            "correctAnswer": "Public:Open-access, Private:Exclusive, Public:Government, Private:Secret, Public:Civic",
+            "correctAnswer": "Public:Publicized, Private:Encrypted, Public:Broadcasted, Private:Password-protected, Public:Viral",
             "relatedWords": [
-                "aspect of Public:Open-access, Private:Exclusive, Public:Government, Private:Secret, Public:Civic",
-                "concept of Public:Open-access, Private:Exclusive, Public:Government, Private:Secret, Public:Civic",
-                "related to Public:Open-access, Private:Exclusive, Public:Government, Private:Secret, Public:Civic"
+                "Publicized: made widely known to the public",
+                "Encrypted: converted into a secure code to keep it private",
+                "Broadcasted: sent out widely, especially by radio, TV, or online",
+                "Password-protected: secured so only someone with a password can access it",
+                "Viral: spread rapidly and widely, especially online"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L36_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Early or Late.",
             "topicBuckets": [
                 "Early",
                 "Late"
             ],
-            "hint": "Here's a tip: Early means before the expected time, while late means after the expected time!",
-            "explanation": "Think of 'Early' as arriving before a set time (ahead of schedule, prompt), and 'Late' as arriving after a set time (overdue, delayed)!",
+            "hint": "Think about arriving before the appointed time, versus after it.",
+            "explanation": "Premature, advance, and 'ahead of schedule' all describe something happening before the expected time. Overdue and delayed both describe lateness, with overdue specifically implying something is now past its expected deadline, like an overdue library book.",
             "options": [
-                "Prompt",
                 "Overdue",
-                "Ahead",
+                "Ahead of schedule",
+                "Premature",
                 "Delayed",
-                "Punctual"
+                "Advance"
             ],
-            "correctAnswer": "Early:Prompt, Late:Overdue, Early:Ahead, Late:Delayed, Early:Punctual",
+            "correctAnswer": "Late:Overdue, Early:Ahead of schedule, Early:Premature, Late:Delayed, Early:Advance",
             "relatedWords": [
-                "aspect of Early:Prompt, Late:Overdue, Early:Ahead, Late:Delayed, Early:Punctual",
-                "concept of Early:Prompt, Late:Overdue, Early:Ahead, Late:Delayed, Early:Punctual",
-                "related to Early:Prompt, Late:Overdue, Early:Ahead, Late:Delayed, Early:Punctual"
+                "Overdue: past the time when something was expected or due",
+                "Ahead of schedule: happening earlier than the planned time",
+                "Premature: happening before the expected or right time",
+                "Delayed: made to happen later than planned",
+                "Advance: done or happening ahead of time"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L36_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Think about a birthday card that arrives after the big day, versus a plan made ahead of a problem. Sort into Early or Late.",
             "topicBuckets": [
                 "Early",
                 "Late"
             ],
-            "hint": "Here's a tip: Early means before the expected time, while late means after the expected time!",
-            "explanation": "Think of 'Early' as arriving before a set time (ahead of schedule, prompt), and 'Late' as arriving after a set time (overdue, delayed)!",
+            "hint": "Two words describe acting before something happens, to prepare for it.",
+            "explanation": "Preemptive and anticipatory both describe acting early, before something happens, in order to prepare for it. Belated, tardy, and 'behind schedule' all describe lateness, with belated specifically used for something like a greeting or gift that arrives after the expected time.",
             "options": [
-                "Premature",
-                "Tardy",
-                "Advance",
-                "Behind",
-                "Beforehand"
+                "Preemptive",
+                "Anticipatory",
+                "Behind schedule",
+                "Belated",
+                "Tardy"
             ],
-            "correctAnswer": "Early:Premature, Late:Tardy, Early:Advance, Late:Behind, Early:Beforehand",
+            "correctAnswer": "Early:Preemptive, Early:Anticipatory, Late:Behind schedule, Late:Belated, Late:Tardy",
             "relatedWords": [
-                "aspect of Early:Premature, Late:Tardy, Early:Advance, Late:Behind, Early:Beforehand",
-                "concept of Early:Premature, Late:Tardy, Early:Advance, Late:Behind, Early:Beforehand",
-                "related to Early:Premature, Late:Tardy, Early:Advance, Late:Behind, Early:Beforehand"
+                "Preemptive: done in advance to prevent something",
+                "Anticipatory: done in expectation of something happening",
+                "Behind schedule: later than the planned timing",
+                "Belated: coming later than expected or than it should have",
+                "Tardy: late, especially in arriving"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L36_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These are idioms and informal phrases. Sort into Early or Late.",
             "topicBuckets": [
                 "Early",
                 "Late"
             ],
-            "hint": "Here's a tip: Early means before the expected time, while late means after the expected time!",
-            "explanation": "Think of 'Early' as arriving before a set time (ahead of schedule, prompt), and 'Late' as arriving after a set time (overdue, delayed)!",
+            "hint": "Think about starting before everyone else, or missing your chance entirely.",
+            "explanation": "To 'jump the gun' means to start too soon, before the proper time, and to 'get a head start' means to begin earlier than others for an advantage. To procrastinate means to delay doing something, often leading to lateness; being 'fashionably late' is a joking phrase for arriving late on purpose; and missing the deadline means failing to finish by the required time.",
             "options": [
-                "Timely",
-                "Belated",
-                "Rushed",
-                "Lagging",
-                "Sooner"
+                "Fashionably late",
+                "Get a head start",
+                "Jump the gun",
+                "Procrastinate",
+                "Miss the deadline"
             ],
-            "correctAnswer": "Early:Timely, Late:Belated, Early:Rushed, Late:Lagging, Early:Sooner",
+            "correctAnswer": "Late:Fashionably late, Early:Get a head start, Early:Jump the gun, Late:Procrastinate, Late:Miss the deadline",
             "relatedWords": [
-                "aspect of Early:Timely, Late:Belated, Early:Rushed, Late:Lagging, Early:Sooner",
-                "concept of Early:Timely, Late:Belated, Early:Rushed, Late:Lagging, Early:Sooner",
-                "related to Early:Timely, Late:Belated, Early:Rushed, Late:Lagging, Early:Sooner"
+                "Fashionably late: a joking phrase for arriving late on purpose",
+                "Get a head start: to begin earlier than others for an advantage",
+                "Jump the gun: to start something too soon",
+                "Procrastinate: to delay doing something",
+                "Miss the deadline: to fail to finish by the required time"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L37_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Cowardly or Brave.",
             "topicBuckets": [
-                "Brave",
-                "Cowardly"
+                "Cowardly",
+                "Brave"
             ],
-            "hint": "Here's a tip: A brave person faces danger, while a cowardly person runs from it!",
-            "explanation": "Think of 'Brave' as facing danger with courage (fearless, bold), and 'Cowardly' as avoiding danger out of fear (timid, fearful)!",
+            "hint": "Think about someone who runs toward danger versus someone who runs away from a challenge.",
+            "explanation": "Courageous, fearless, and bold all describe someone willing to face danger or difficulty. Timid and spineless both describe a lack of courage, though spineless is a stronger, more critical word, suggesting a total lack of backbone.",
             "options": [
                 "Fearless",
-                "Timid",
+                "Spineless",
                 "Bold",
-                "Frightened",
-                "Heroic"
+                "Timid",
+                "Courageous"
             ],
-            "correctAnswer": "Brave:Fearless, Cowardly:Timid, Brave:Bold, Cowardly:Frightened, Brave:Heroic",
+            "correctAnswer": "Brave:Fearless, Cowardly:Spineless, Brave:Bold, Cowardly:Timid, Brave:Courageous",
             "relatedWords": [
-                "aspect of Brave:Fearless, Cowardly:Timid, Brave:Bold, Cowardly:Frightened, Brave:Heroic",
-                "concept of Brave:Fearless, Cowardly:Timid, Brave:Bold, Cowardly:Frightened, Brave:Heroic",
-                "related to Brave:Fearless, Cowardly:Timid, Brave:Bold, Cowardly:Frightened, Brave:Heroic"
+                "Fearless: seeming not to feel fear at all",
+                "Spineless: completely lacking courage or determination",
+                "Bold: confident and willing to take risks",
+                "Timid: lacking courage, easily frightened",
+                "Courageous: choosing to act despite feeling fear"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L37_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "One of these cowardly words is a colorful, informal insult. Sort into Cowardly or Brave.",
             "topicBuckets": [
-                "Brave",
-                "Cowardly"
+                "Cowardly",
+                "Brave"
             ],
-            "hint": "Here's a tip: A brave person faces danger, while a cowardly person runs from it!",
-            "explanation": "Think of 'Brave' as facing danger with courage (fearless, bold), and 'Cowardly' as avoiding danger out of fear (timid, fearful)!",
+            "hint": "Think about old cartoons or casual slang.",
+            "explanation": "Valiant, daring, and gutsy all describe brave behavior, with gutsy being an informal, admiring word for boldness. Faint-hearted and 'yellow-bellied' both describe cowardice, with 'yellow-bellied' being an old-fashioned, informal insult.",
             "options": [
-                "Courageous",
-                "Spineless",
-                "Daring",
-                "Cringing",
-                "Valiant"
+                "Gutsy",
+                "Yellow-bellied",
+                "Valiant",
+                "Faint-hearted",
+                "Daring"
             ],
-            "correctAnswer": "Brave:Courageous, Cowardly:Spineless, Brave:Daring, Cowardly:Cringing, Brave:Valiant",
+            "correctAnswer": "Brave:Gutsy, Cowardly:Yellow-bellied, Brave:Valiant, Cowardly:Faint-hearted, Brave:Daring",
             "relatedWords": [
-                "aspect of Brave:Courageous, Cowardly:Spineless, Brave:Daring, Cowardly:Cringing, Brave:Valiant",
-                "concept of Brave:Courageous, Cowardly:Spineless, Brave:Daring, Cowardly:Cringing, Brave:Valiant",
-                "related to Brave:Courageous, Cowardly:Spineless, Brave:Daring, Cowardly:Cringing, Brave:Valiant"
+                "Gutsy: showing courage and determination",
+                "Yellow-bellied: an informal, old-fashioned word for cowardly",
+                "Valiant: showing great courage",
+                "Faint-hearted: lacking courage or confidence",
+                "Daring: willing to take risks, adventurous"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L37_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Two of these words are formal or literary. Sort into Cowardly or Brave.",
             "topicBuckets": [
-                "Brave",
-                "Cowardly"
+                "Cowardly",
+                "Brave"
             ],
-            "hint": "Here's a tip: A brave person faces danger, while a cowardly person runs from it!",
-            "explanation": "Think of 'Brave' as facing danger with courage (fearless, bold), and 'Cowardly' as avoiding danger out of fear (timid, fearful)!",
+            "hint": "You'd meet these in a novel more than in casual speech.",
+            "explanation": "Intrepid, audacious, and heroic all describe impressive bravery, with audacious specifically suggesting boldness that takes real nerve, even recklessness. Craven and pusillanimous both describe cowardice in strong, formal language, with pusillanimous being a rare, literary word for someone showing a shameful lack of courage.",
             "options": [
-                "Gallant",
-                "Skittish",
-                "Gutsy",
-                "Yellow",
-                "Intrepid"
+                "Audacious",
+                "Intrepid",
+                "Craven",
+                "Pusillanimous",
+                "Heroic"
             ],
-            "correctAnswer": "Brave:Gallant, Cowardly:Skittish, Brave:Gutsy, Cowardly:Yellow, Brave:Intrepid",
+            "correctAnswer": "Brave:Audacious, Brave:Intrepid, Cowardly:Craven, Cowardly:Pusillanimous, Brave:Heroic",
             "relatedWords": [
-                "aspect of Brave:Gallant, Cowardly:Skittish, Brave:Gutsy, Cowardly:Yellow, Brave:Intrepid",
-                "concept of Brave:Gallant, Cowardly:Skittish, Brave:Gutsy, Cowardly:Yellow, Brave:Intrepid",
-                "related to Brave:Gallant, Cowardly:Skittish, Brave:Gutsy, Cowardly:Yellow, Brave:Intrepid"
+                "Audacious: boldly daring, even reckless",
+                "Intrepid: fearless and adventurous",
+                "Craven: shamefully lacking courage",
+                "Pusillanimous: showing a shameful lack of courage",
+                "Heroic: showing great bravery, worthy of admiration"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L38_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Poor or Rich.",
             "topicBuckets": [
-                "Rich",
-                "Poor"
+                "Poor",
+                "Rich"
             ],
-            "hint": "Here's a tip: A rich person has lots of money, while a poor person has very little!",
-            "explanation": "Think of 'Rich' as having great wealth (wealthy, affluent), and 'Poor' as having little money (needy, impoverished)!",
+            "hint": "Think about someone with more money than they need, versus someone struggling to meet basic needs.",
+            "explanation": "Wealthy, affluent, and prosperous all describe having a great deal of money or success. Impoverished and destitute both describe poverty, with destitute describing an extreme lack of even basic necessities.",
             "options": [
-                "Wealthy",
-                "Needy",
                 "Affluent",
+                "Destitute",
                 "Impoverished",
+                "Wealthy",
                 "Prosperous"
             ],
-            "correctAnswer": "Rich:Wealthy, Poor:Needy, Rich:Affluent, Poor:Impoverished, Rich:Prosperous",
+            "correctAnswer": "Rich:Affluent, Poor:Destitute, Poor:Impoverished, Rich:Wealthy, Rich:Prosperous",
             "relatedWords": [
-                "aspect of Rich:Wealthy, Poor:Needy, Rich:Affluent, Poor:Impoverished, Rich:Prosperous",
-                "concept of Rich:Wealthy, Poor:Needy, Rich:Affluent, Poor:Impoverished, Rich:Prosperous",
-                "related to Rich:Wealthy, Poor:Needy, Rich:Affluent, Poor:Impoverished, Rich:Prosperous"
+                "Affluent: wealthy in a visible, comfortable way",
+                "Destitute: lacking even basic necessities",
+                "Impoverished: made poor, lacking money or resources",
+                "Wealthy: possessing substantial money and assets",
+                "Prosperous: successful, especially financially"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L38_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Think about the words a news report might use to describe someone's financial situation respectfully. Sort into Rich or Poor.",
             "topicBuckets": [
                 "Rich",
                 "Poor"
             ],
-            "hint": "Here's a tip: A rich person has lots of money, while a poor person has very little!",
-            "explanation": "Think of 'Rich' as having great wealth (wealthy, affluent), and 'Poor' as having little money (needy, impoverished)!",
+            "hint": "Think about having enough money to live without worry, versus having ongoing financial difficulty.",
+            "explanation": "Well-off, comfortable, and privileged all describe having enough money to live without financial worry, with privileged also suggesting advantages beyond just money. Underprivileged and struggling both describe financial hardship, in more neutral, respectful language than harsher words.",
             "options": [
                 "Well-off",
-                "Broke",
-                "Loaded",
-                "Penniless",
-                "Opulent"
+                "Privileged",
+                "Underprivileged",
+                "Struggling",
+                "Comfortable"
             ],
-            "correctAnswer": "Rich:Well-off, Poor:Broke, Rich:Loaded, Poor:Penniless, Rich:Opulent",
+            "correctAnswer": "Rich:Well-off, Rich:Privileged, Poor:Underprivileged, Poor:Struggling, Rich:Comfortable",
             "relatedWords": [
-                "aspect of Rich:Well-off, Poor:Broke, Rich:Loaded, Poor:Penniless, Rich:Opulent",
-                "concept of Rich:Well-off, Poor:Broke, Rich:Loaded, Poor:Penniless, Rich:Opulent",
-                "related to Rich:Well-off, Poor:Broke, Rich:Loaded, Poor:Penniless, Rich:Opulent"
+                "Well-off: clearly better off financially than most",
+                "Privileged: having special advantages, often financial",
+                "Underprivileged: lacking the advantages that others have, often financial",
+                "Struggling: having ongoing difficulty, especially financial",
+                "Comfortable: having enough that money is not a worry"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L38_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These are terms you'd read in an economics report, describing a situation rather than a person directly. Sort into Rich or Poor.",
             "topicBuckets": [
                 "Rich",
                 "Poor"
             ],
-            "hint": "Here's a tip: A rich person has lots of money, while a poor person has very little!",
-            "explanation": "Think of 'Rich' as having great wealth (wealthy, affluent), and 'Poor' as having little money (needy, impoverished)!",
+            "hint": "Think about the income level used to define poverty, and money left over after basic needs are met.",
+            "explanation": "Affluence and 'disposable income' both describe having money beyond basic needs, an economic condition rather than a personal trait. The 'poverty line' marks the income level below which someone is considered poor, subsistence describes living at the bare minimum needed to survive, and economic hardship describes ongoing financial struggle.",
             "options": [
-                "Privileged",
-                "Destitute",
-                "Comfortable",
-                "Struggling",
-                "Lavish"
+                "Poverty line",
+                "Disposable income",
+                "Economic hardship",
+                "Affluence",
+                "Subsistence"
             ],
-            "correctAnswer": "Rich:Privileged, Poor:Destitute, Rich:Comfortable, Poor:Struggling, Rich:Lavish",
+            "correctAnswer": "Poor:Poverty line, Rich:Disposable income, Poor:Economic hardship, Rich:Affluence, Poor:Subsistence",
             "relatedWords": [
-                "aspect of Rich:Privileged, Poor:Destitute, Rich:Comfortable, Poor:Struggling, Rich:Lavish",
-                "concept of Rich:Privileged, Poor:Destitute, Rich:Comfortable, Poor:Struggling, Rich:Lavish",
-                "related to Rich:Privileged, Poor:Destitute, Rich:Comfortable, Poor:Struggling, Rich:Lavish"
+                "Poverty line: the income level below which someone is considered poor",
+                "Disposable income: money left over after essential expenses are paid",
+                "Economic hardship: ongoing financial difficulty",
+                "Affluence: the state of having a great deal of money",
+                "Subsistence: the minimum standard of living needed to survive"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L39_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Wild or Tame.",
             "topicBuckets": [
                 "Wild",
                 "Tame"
             ],
-            "hint": "Here's a tip: A wild animal lives free in nature, while a tame animal is trained to live with people!",
-            "explanation": "Think of 'Wild' as animals living free and untrained (feral, untamed), and 'Tame' as animals trained to be calm around people (domesticated, gentle)!",
+            "hint": "Think about an animal that's never known a home versus a family pet.",
+            "explanation": "Untamed, feral, and savage all describe animals living without human control, with feral specifically describing a domesticated species that's returned to a wild state. Domesticated and docile both describe tameness, with docile suggesting a calm, easy-to-handle nature.",
             "options": [
-                "Feral",
-                "Domesticated",
                 "Untamed",
-                "Gentle",
+                "Feral",
+                "Docile",
+                "Domesticated",
                 "Savage"
             ],
-            "correctAnswer": "Wild:Feral, Tame:Domesticated, Wild:Untamed, Tame:Gentle, Wild:Savage",
+            "correctAnswer": "Wild:Untamed, Wild:Feral, Tame:Docile, Tame:Domesticated, Wild:Savage",
             "relatedWords": [
-                "aspect of Wild:Feral, Tame:Domesticated, Wild:Untamed, Tame:Gentle, Wild:Savage",
-                "concept of Wild:Feral, Tame:Domesticated, Wild:Untamed, Tame:Gentle, Wild:Savage",
-                "related to Wild:Feral, Tame:Domesticated, Wild:Untamed, Tame:Gentle, Wild:Savage"
+                "Untamed: not tamed or controlled, wild",
+                "Feral: wild, especially having escaped from domestication",
+                "Docile: calm and easy to control",
+                "Domesticated: trained to live with or work for humans",
+                "Savage: fierce and wild"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L39_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Think about a dog that follows commands versus one that won't listen at all. Sort into Wild or Tame.",
             "topicBuckets": [
                 "Wild",
                 "Tame"
             ],
-            "hint": "Here's a tip: A wild animal lives free in nature, while a tame animal is trained to live with people!",
-            "explanation": "Think of 'Wild' as animals living free and untrained (feral, untamed), and 'Tame' as animals trained to be calm around people (domesticated, gentle)!",
+            "hint": "One wild word specifically suggests fierce aggression.",
+            "explanation": "Ferocious, unruly, and untrained all describe wild, uncontrolled behavior, with ferocious specifically suggesting fierce aggression. Obedient and gentle both describe tameness, with obedient specifically meaning trained to follow commands.",
             "options": [
+                "Gentle",
                 "Ferocious",
+                "Unruly",
                 "Obedient",
-                "Untrained",
-                "Docile",
-                "Fierce"
+                "Untrained"
             ],
-            "correctAnswer": "Wild:Ferocious, Tame:Obedient, Wild:Untrained, Tame:Docile, Wild:Fierce",
+            "correctAnswer": "Tame:Gentle, Wild:Ferocious, Wild:Unruly, Tame:Obedient, Wild:Untrained",
             "relatedWords": [
-                "aspect of Wild:Ferocious, Tame:Obedient, Wild:Untrained, Tame:Docile, Wild:Fierce",
-                "concept of Wild:Ferocious, Tame:Obedient, Wild:Untrained, Tame:Docile, Wild:Fierce",
-                "related to Wild:Ferocious, Tame:Obedient, Wild:Untrained, Tame:Docile, Wild:Fierce"
+                "Gentle: mild and calm in manner",
+                "Ferocious: fiercely aggressive",
+                "Unruly: disorderly and hard to control",
+                "Obedient: willing to follow commands",
+                "Untrained: not trained to behave in a particular way"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L39_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These describe a person's behavior, not an animal's. Sort into Tame or Wild.",
             "topicBuckets": [
-                "Wild",
-                "Tame"
+                "Tame",
+                "Wild"
             ],
-            "hint": "Here's a tip: A wild animal lives free in nature, while a tame animal is trained to live with people!",
-            "explanation": "Think of 'Wild' as animals living free and untrained (feral, untamed), and 'Tame' as animals trained to be calm around people (domesticated, gentle)!",
+            "hint": "Think about a teenager breaking curfew versus one who follows every rule.",
+            "explanation": "Rebellious, reckless, and unpredictable all use 'wild' figuratively, to describe a person's uncontrolled or defiant behavior. Well-behaved and restrained both use 'tame' figuratively, describing someone who acts calmly and within expected limits.",
             "options": [
-                "Roaming",
-                "Trained",
-                "Free-ranging",
-                "Calm",
-                "Unruly"
+                "Restrained",
+                "Unpredictable",
+                "Reckless",
+                "Rebellious",
+                "Well-behaved"
             ],
-            "correctAnswer": "Wild:Roaming, Tame:Trained, Wild:Free-ranging, Tame:Calm, Wild:Unruly",
+            "correctAnswer": "Tame:Restrained, Wild:Unpredictable, Wild:Reckless, Wild:Rebellious, Tame:Well-behaved",
             "relatedWords": [
-                "aspect of Wild:Roaming, Tame:Trained, Wild:Free-ranging, Tame:Calm, Wild:Unruly",
-                "concept of Wild:Roaming, Tame:Trained, Wild:Free-ranging, Tame:Calm, Wild:Unruly",
-                "related to Wild:Roaming, Tame:Trained, Wild:Free-ranging, Tame:Calm, Wild:Unruly"
+                "Restrained: controlled, not acting on impulse",
+                "Unpredictable: impossible to predict, changeable",
+                "Reckless: acting without thinking of consequences",
+                "Rebellious: resisting authority or control",
+                "Well-behaved: behaving properly and calmly"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L40_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Thick or Thin.",
             "topicBuckets": [
                 "Thick",
                 "Thin"
             ],
-            "hint": "Here's a tip: A thick book has many pages, while a thin book has only a few!",
-            "explanation": "Think of 'Thick' as great width or density (chunky, dense), and 'Thin' as little width (slim, narrow)!",
+            "hint": "Think about a slice of bread cut generously versus cut paper-thin.",
+            "explanation": "Chunky, substantial, and wide all describe noticeable thickness, whether in food or material. Slender and fine both describe thinness, with fine often describing something delicately thin, like fine thread or fine hair.",
             "options": [
+                "Wide",
+                "Slender",
                 "Chunky",
-                "Slim",
-                "Dense",
-                "Narrow",
-                "Bulky"
+                "Substantial",
+                "Fine"
             ],
-            "correctAnswer": "Thick:Chunky, Thin:Slim, Thick:Dense, Thin:Narrow, Thick:Bulky",
+            "correctAnswer": "Thick:Wide, Thin:Slender, Thick:Chunky, Thick:Substantial, Thin:Fine",
             "relatedWords": [
-                "aspect of Thick:Chunky, Thin:Slim, Thick:Dense, Thin:Narrow, Thick:Bulky",
-                "concept of Thick:Chunky, Thin:Slim, Thick:Dense, Thin:Narrow, Thick:Bulky",
-                "related to Thick:Chunky, Thin:Slim, Thick:Dense, Thin:Narrow, Thick:Bulky"
+                "Wide: having a large distance across",
+                "Slender: thin, especially in a graceful way",
+                "Chunky: thick and solid in shape",
+                "Substantial: large in size or amount",
+                "Fine: very thin, especially in texture"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L40_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Think about a stew with lots of substance versus a delicate, see-through fabric. Sort into Thin or Thick.",
             "topicBuckets": [
-                "Thick",
-                "Thin"
+                "Thin",
+                "Thick"
             ],
-            "hint": "Here's a tip: A thick book has many pages, while a thin book has only a few!",
-            "explanation": "Think of 'Thick' as great width or density (chunky, dense), and 'Thin' as little width (slim, narrow)!",
+            "hint": "One thick word describes a short, strong build, and one thin word describes near-transparent fabric.",
+            "explanation": "Meaty, solid, and stout all describe thickness or substantial build, with stout specifically describing something short and thick, or a strong, heavy-set build. Skinny and sheer both describe thinness, with sheer specifically describing fabric so thin it's almost see-through.",
             "options": [
-                "Thick-set",
-                "Slender",
-                "Wide",
+                "Sheer",
+                "Stout",
+                "Meaty",
                 "Skinny",
                 "Solid"
             ],
-            "correctAnswer": "Thick:Thick-set, Thin:Slender, Thick:Wide, Thin:Skinny, Thick:Solid",
+            "correctAnswer": "Thin:Sheer, Thick:Stout, Thick:Meaty, Thin:Skinny, Thick:Solid",
             "relatedWords": [
-                "aspect of Thick:Thick-set, Thin:Slender, Thick:Wide, Thin:Skinny, Thick:Solid",
-                "concept of Thick:Thick-set, Thin:Slender, Thick:Wide, Thin:Skinny, Thick:Solid",
-                "related to Thick:Thick-set, Thin:Slender, Thick:Wide, Thin:Skinny, Thick:Solid"
+                "Sheer: so thin it's almost transparent",
+                "Stout: short and thick, or strongly built",
+                "Meaty: having a lot of substance, thick",
+                "Skinny: very thin, especially describing a person",
+                "Solid: firm and substantial in thickness"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L40_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Two of these describe someone's personality, and three describe how a liquid flows. Sort into Thick or Thin.",
             "topicBuckets": [
                 "Thick",
                 "Thin"
             ],
-            "hint": "Here's a tip: A thick book has many pages, while a thin book has only a few!",
-            "explanation": "Think of 'Thick' as great width or density (chunky, dense), and 'Thin' as little width (slim, narrow)!",
+            "hint": "Think about honey moving slowly, and someone easily hurt by criticism.",
+            "explanation": "'Thick-skinned' describes someone who isn't easily offended, and viscous describes a liquid thick enough to flow slowly, like honey. 'Thin-skinned' describes someone who's easily hurt by criticism, watery describes a liquid weakened until it's runny, and diluted describes a liquid that's had water or another substance added to weaken it.",
             "options": [
-                "Sturdy",
-                "Lean",
-                "Heavy-duty",
-                "Wispy",
-                "Fat"
+                "Diluted",
+                "Viscous",
+                "Thick-skinned",
+                "Thin-skinned",
+                "Watery"
             ],
-            "correctAnswer": "Thick:Sturdy, Thin:Lean, Thick:Heavy-duty, Thin:Wispy, Thick:Fat",
+            "correctAnswer": "Thin:Diluted, Thick:Viscous, Thick:Thick-skinned, Thin:Thin-skinned, Thin:Watery",
             "relatedWords": [
-                "aspect of Thick:Sturdy, Thin:Lean, Thick:Heavy-duty, Thin:Wispy, Thick:Fat",
-                "concept of Thick:Sturdy, Thin:Lean, Thick:Heavy-duty, Thin:Wispy, Thick:Fat",
-                "related to Thick:Sturdy, Thin:Lean, Thick:Heavy-duty, Thin:Wispy, Thick:Fat"
+                "Diluted: weakened by adding water or another liquid",
+                "Viscous: thick and slow-flowing",
+                "Thick-skinned: not easily hurt or offended by criticism",
+                "Thin-skinned: easily hurt or offended by criticism",
+                "Watery: thin and weak, like diluted liquid"
             ]
         }
     ]

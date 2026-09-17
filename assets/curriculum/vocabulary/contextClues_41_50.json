@@ -6,20 +6,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L41_Q1",
-            "sentence": "Instead of debating theories, the new manager took a [TARGET] approach and just fixed the schedule.",
-            "hint": "This word describes focusing on what actually works rather than ideas.",
+            "sentence": "Instead of chasing her dream of becoming a movie star, Rosa was [TARGET] and practical, choosing a stable nursing career that paid the bills.",
+            "hint": "This word describes making decisions based on what's realistic rather than what's ideal.",
             "options": [
-                "Impractical",
-                "Idealistic",
                 "Practical",
-                "Theoretical"
+                "Idealistic",
+                "Unrealistic",
+                "Fanciful"
             ],
-            "explanation": "Fixing the schedule instead of debating theories shows focusing on what actually works, so [TARGET] means PRACTICAL.",
+            "explanation": "The word 'and' links [TARGET] to 'practical,' and choosing a stable career over a dream confirms it, so [TARGET] means PRACTICAL.",
             "correctAnswer": "Practical",
             "clueType": "synonym",
             "evidenceWords": [
-                "Instead",
-                "debating"
+                "and practical",
+                "stable nursing career"
             ]
         },
         {
@@ -27,20 +27,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L41_Q2",
-            "sentence": "The judge remained completely [TARGET], giving both sides of the case equal time to speak.",
+            "sentence": "Unlike the biased commentator who favored the home team all game, the referee stayed [TARGET], calling fouls the same way no matter which team committed them.",
             "hint": "This word describes not favoring one side over another.",
             "options": [
                 "Biased",
-                "Fair",
+                "Neutral",
                 "One-sided",
-                "Prejudiced"
+                "Favoring"
             ],
-            "explanation": "Giving both sides equal time to speak shows not favoring one side over another, so [TARGET] means FAIR.",
-            "correctAnswer": "Fair",
+            "explanation": "The word 'unlike' contrasts [TARGET] with a commentator who 'favored the home team,' so it must mean the opposite, which is NEUTRAL.",
+            "correctAnswer": "Neutral",
             "clueType": "antonym",
             "evidenceWords": [
-                "judge",
-                "remained"
+                "Unlike",
+                "favored the home team",
+                "no matter which team"
             ]
         },
         {
@@ -48,20 +49,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L41_Q3",
-            "sentence": "The skater attempted a [TARGET] jump that no one had landed in competition before.",
-            "hint": "This word describes boldness that takes real courage.",
+            "sentence": "Jumping off the cliff into the narrow pool below without checking the depth first was [TARGET], which means it was daring to the point of being reckless.",
+            "hint": "This word describes being boldly fearless, often riskier than is wise.",
             "options": [
-                "Cowardly",
                 "Timid",
-                "Hesitant",
-                "Daring"
+                "Cautious",
+                "Daring",
+                "Hesitant"
             ],
-            "explanation": "Attempting a jump no one had landed before takes real courage, so [TARGET] means DARING.",
+            "explanation": "The sentence defines [TARGET] as 'daring to the point of being reckless,' so [TARGET] means DARING.",
             "correctAnswer": "Daring",
             "clueType": "definition",
             "evidenceWords": [
-                "skater",
-                "attempted"
+                "which means",
+                "daring to the point"
             ]
         },
         {
@@ -69,20 +70,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L42_Q1",
-            "sentence": "Her bright pink coat made her [TARGET] in the crowd of gray and black jackets.",
-            "hint": "This word describes standing out so much that people can't help but see it.",
+            "sentence": "The bright orange sports car was [TARGET]: it stood out in every parking lot, drew stares at red lights, and was impossible to miss even from three blocks away.",
+            "hint": "This word describes something that easily catches attention.",
             "options": [
-                "Invisible",
-                "Noticeable",
                 "Hidden",
-                "Unnoticeable"
+                "Invisible",
+                "Unnoticeable",
+                "Noticeable"
             ],
-            "explanation": "Standing out among gray and black jackets shows being easy to see, so [TARGET] means NOTICEABLE.",
+            "explanation": "Standing out in parking lots, drawing stares, and being visible from blocks away are all examples of something easy to notice, so [TARGET] means NOTICEABLE.",
             "correctAnswer": "Noticeable",
             "clueType": "example",
             "evidenceWords": [
-                "bright",
-                "crowd"
+                "stood out",
+                "drew stares",
+                "impossible to miss"
             ]
         },
         {
@@ -90,20 +92,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L42_Q2",
-            "sentence": "With the company losing money every month, layoffs became [TARGET].",
-            "hint": "This word describes something certain to happen no matter what.",
+            "sentence": "With the dam already cracked, the water rising each hour, and no repair crew scheduled for days, the engineers stopped asking whether the flood would happen and started asking when — the disaster had become [TARGET].",
+            "hint": "This word describes something certain to happen and impossible to avoid.",
             "options": [
-                "Optional",
+                "Unavoidable",
                 "Preventable",
                 "Avoidable",
-                "Unavoidable"
+                "Unlikely"
             ],
-            "explanation": "Losing money every month makes layoffs certain to happen, so [TARGET] means UNAVOIDABLE.",
+            "explanation": "A cracked dam, rising water, and no repair crew all point to an outcome that can't be stopped, even without a direct clue word, so [TARGET] means UNAVOIDABLE.",
             "correctAnswer": "Unavoidable",
             "clueType": "inference",
             "evidenceWords": [
-                "company",
-                "losing"
+                "already cracked",
+                "rising each hour",
+                "no repair crew"
             ]
         },
         {
@@ -111,20 +114,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L42_Q3",
-            "sentence": "The exam question was so [TARGET] that students interpreted it three different ways.",
-            "hint": "This word describes a meaning that could go more than one way.",
+            "sentence": "The instructions were [TARGET] and unclear, leaving half the class unsure whether the essay was due Monday or Wednesday.",
+            "hint": "This word describes something open to more than one interpretation.",
             "options": [
-                "Definite",
+                "Precise",
                 "Unclear",
-                "Obvious",
-                "Clear"
+                "Clear",
+                "Exact"
             ],
-            "explanation": "Students interpreting it three different ways shows the meaning could go more than one way, so [TARGET] means UNCLEAR.",
+            "explanation": "The word 'and' links [TARGET] to 'unclear,' and the class's confusion about the due date confirms it, so [TARGET] means UNCLEAR.",
             "correctAnswer": "Unclear",
             "clueType": "synonym",
             "evidenceWords": [
-                "question",
-                "students"
+                "and unclear",
+                "unsure whether"
             ]
         },
         {
@@ -132,20 +135,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L43_Q1",
-            "sentence": "After the merger, two of the manager positions became [TARGET] and were eliminated.",
-            "hint": "This word describes something no longer needed because it repeats another's job.",
+            "sentence": "Unlike the streamlined report that said everything once, his email was [TARGET], repeating the same point in three separate paragraphs.",
+            "hint": "This word describes something unnecessarily repeated.",
             "options": [
-                "Unnecessary",
-                "Essential",
-                "Crucial",
-                "Required"
+                "Concise",
+                "Streamlined",
+                "Repetitive",
+                "Efficient"
             ],
-            "explanation": "Two manager positions being eliminated after a merger shows they were no longer needed, so [TARGET] means UNNECESSARY.",
-            "correctAnswer": "Unnecessary",
+            "explanation": "The word 'unlike' contrasts [TARGET] with a report that 'said everything once,' so it must mean the opposite, which is REPETITIVE.",
+            "correctAnswer": "Repetitive",
             "clueType": "antonym",
             "evidenceWords": [
-                "After",
-                "merger"
+                "Unlike",
+                "said everything once",
+                "three separate paragraphs"
             ]
         },
         {
@@ -153,20 +157,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L43_Q2",
-            "sentence": "The engineers confirmed the bridge design was [TARGET] within the city's budget.",
-            "hint": "This word describes something that can realistically be done.",
+            "sentence": "Building the new library wing by next spring was [TARGET], meaning it could realistically be completed with the budget and workers already available.",
+            "hint": "This word describes something that is realistically possible to do.",
             "options": [
-                "Achievable",
-                "Unrealistic",
                 "Impossible",
-                "Unworkable"
+                "Unworkable",
+                "Unrealistic",
+                "Doable"
             ],
-            "explanation": "Confirming the design fit within the budget shows it could realistically be done, so [TARGET] means ACHIEVABLE.",
-            "correctAnswer": "Achievable",
+            "explanation": "The sentence defines [TARGET] as something that 'could realistically be completed,' so [TARGET] means DOABLE.",
+            "correctAnswer": "Doable",
             "clueType": "definition",
             "evidenceWords": [
-                "engineers",
-                "confirmed"
+                "meaning",
+                "could realistically be completed"
             ]
         },
         {
@@ -174,20 +178,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L43_Q3",
-            "sentence": "His excuse for being late, that the bus broke down, sounded [TARGET] given the recent bus problems.",
-            "hint": "This word describes a story that could reasonably be true.",
+            "sentence": "Her excuse was [TARGET]: the train really had been delayed that morning, three other coworkers confirmed the same holdup, and the timing matched the news report exactly.",
+            "hint": "This word describes something reasonable enough to seem true.",
             "options": [
+                "Believable",
                 "Absurd",
                 "Far-fetched",
-                "Unbelievable",
-                "Believable"
+                "Unbelievable"
             ],
-            "explanation": "An excuse fitting recent bus problems sounds like it could reasonably be true, so [TARGET] means BELIEVABLE.",
+            "explanation": "A real train delay, other coworkers confirming it, and matching news reports are all examples of a believable excuse, so [TARGET] means BELIEVABLE.",
             "correctAnswer": "Believable",
             "clueType": "example",
             "evidenceWords": [
-                "excuse",
-                "being"
+                "train really had been delayed",
+                "three other coworkers confirmed",
+                "matched the news report"
             ]
         },
         {
@@ -195,20 +200,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L44_Q1",
-            "sentence": "There was a [TARGET] hint of cinnamon in the coffee that most people wouldn't notice.",
-            "hint": "This word describes something so slight it's easy to miss.",
+            "sentence": "You had to look closely to notice it: a faint shift in her tone, a pause half a second too long, a smile that didn't quite reach her eyes — the change was [TARGET].",
+            "hint": "This word describes something so small it's easy to miss.",
             "options": [
-                "Faint",
-                "Glaring",
+                "Obvious",
+                "Slight",
                 "Blatant",
-                "Obvious"
+                "Glaring"
             ],
-            "explanation": "A hint most people wouldn't notice describes something so slight it's easy to miss, so [TARGET] means FAINT.",
-            "correctAnswer": "Faint",
+            "explanation": "A faint tone shift, a barely-too-long pause, and an almost-right smile are all examples of something easy to miss, even without a direct clue word, so [TARGET] means SLIGHT.",
+            "correctAnswer": "Slight",
             "clueType": "inference",
             "evidenceWords": [
-                "There",
-                "cinnamon"
+                "faint shift",
+                "half a second too long",
+                "didn't quite reach"
             ]
         },
         {
@@ -216,20 +222,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L44_Q2",
-            "sentence": "Filing the same forms for eight hours straight became [TARGET] very quickly.",
-            "hint": "This word describes a task that drags on and feels repetitive.",
+            "sentence": "Filing three years of paper receipts by hand was [TARGET] and tiresome, the kind of task that made the clock seem to move backward.",
+            "hint": "This word describes a task that is boring because it drags on and on.",
             "options": [
-                "Exciting",
                 "Thrilling",
-                "Engaging",
-                "Monotonous"
+                "Exciting",
+                "Tiresome",
+                "Fun"
             ],
-            "explanation": "Filing the same forms for eight hours straight describes a repetitive, dragging task, so [TARGET] means MONOTONOUS.",
-            "correctAnswer": "Monotonous",
+            "explanation": "The word 'and' links [TARGET] to 'tiresome,' and the clock seeming to move backward confirms it, so [TARGET] means TIRESOME.",
+            "correctAnswer": "Tiresome",
             "clueType": "synonym",
             "evidenceWords": [
-                "Filing",
-                "forms"
+                "and tiresome",
+                "clock seem to move backward"
             ]
         },
         {
@@ -237,20 +243,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L44_Q3",
-            "sentence": "Employees complained that the new dress code seemed [TARGET], with no clear reason behind the rules.",
-            "hint": "This word describes a decision made without a clear, fair reason.",
+            "sentence": "Unlike the coach's careful lineup based on each player's stats, the substitute picked teams [TARGET], simply pointing at random kids without any real reason.",
+            "hint": "This word describes a decision made without a clear reason or system.",
             "options": [
-                "Justified",
+                "Deliberate",
+                "Calculated",
                 "Reasoned",
-                "Random",
-                "Logical"
+                "Random"
             ],
-            "explanation": "A dress code with no clear reason behind the rules shows it was decided without fair reasoning, so [TARGET] means RANDOM.",
+            "explanation": "The word 'unlike' contrasts [TARGET] with a lineup 'based on each player's stats,' so it must mean the opposite, which is RANDOM.",
             "correctAnswer": "Random",
             "clueType": "antonym",
             "evidenceWords": [
-                "Employees",
-                "complained"
+                "Unlike",
+                "based on each player's stats",
+                "without any real reason"
             ]
         },
         {
@@ -258,20 +265,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L45_Q1",
-            "sentence": "The new history textbook covers several [TARGET] topics that historians still argue about today.",
-            "hint": "This word describes a topic that causes strong disagreement.",
+            "sentence": "The new school schedule was [TARGET], which means it sparked heated disagreement between parents who loved it and parents who wanted it reversed immediately.",
+            "hint": "This word describes something that causes strong disagreement between people.",
             "options": [
-                "Uncontested",
-                "Debatable",
-                "Settled",
-                "Agreed-upon"
+                "Divisive",
+                "Unanimous",
+                "Agreed-upon",
+                "Uncontested"
             ],
-            "explanation": "Topics historians still argue about today cause strong disagreement, so [TARGET] means DEBATABLE.",
-            "correctAnswer": "Debatable",
+            "explanation": "The sentence defines [TARGET] as sparking 'heated disagreement' between groups, so [TARGET] means DIVISIVE.",
+            "correctAnswer": "Divisive",
             "clueType": "definition",
             "evidenceWords": [
-                "history",
-                "textbook"
+                "which means",
+                "sparked heated disagreement"
             ]
         },
         {
@@ -279,20 +286,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L45_Q2",
-            "sentence": "After studying the outline, she wrote a [TARGET] essay where every paragraph connected to the next.",
-            "hint": "This word describes ideas that flow together clearly.",
+            "sentence": "Her essay was [TARGET]: each paragraph flowed logically into the next, every example supported the main point, and the conclusion tied every thread together clearly.",
+            "hint": "This word describes ideas that fit together and make sense as a whole.",
             "options": [
-                "Rambling",
                 "Disjointed",
                 "Logical",
-                "Confusing"
+                "Confusing",
+                "Scattered"
             ],
-            "explanation": "An essay where every paragraph connected to the next flows together clearly, so [TARGET] means LOGICAL.",
+            "explanation": "Flowing paragraphs, supporting examples, and a conclusion that ties threads together are all examples of ideas that make sense as a whole, so [TARGET] means LOGICAL.",
             "correctAnswer": "Logical",
             "clueType": "example",
             "evidenceWords": [
-                "After",
-                "studying"
+                "flowed logically",
+                "supported the main point",
+                "tied every thread together"
             ]
         },
         {
@@ -300,20 +308,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L45_Q3",
-            "sentence": "The professor's [TARGET] explanation took twenty minutes to say what could have been said in two.",
+            "sentence": "Asked for a one-sentence summary, he instead spent twenty minutes explaining his childhood, three unrelated tangents, and a detailed history of the topic before finally answering the question — everyone agreed he was far too [TARGET].",
             "hint": "This word describes using far more words than necessary.",
             "options": [
-                "Concise",
                 "Brief",
+                "Concise",
                 "Wordy",
                 "Succinct"
             ],
-            "explanation": "Taking twenty minutes to say what could have been said in two shows using far more words than necessary, so [TARGET] means WORDY.",
+            "explanation": "Spending twenty minutes and going on tangents instead of giving a one-sentence answer shows using far more words than needed, even without a direct clue word, so [TARGET] means WORDY.",
             "correctAnswer": "Wordy",
             "clueType": "inference",
             "evidenceWords": [
-                "professor's",
-                "explanation"
+                "twenty minutes",
+                "three unrelated tangents",
+                "before finally answering"
             ]
         },
         {
@@ -321,20 +330,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L46_Q1",
-            "sentence": "Her [TARGET] email summarized the entire project update in just three sentences.",
-            "hint": "This word describes saying a lot using very few words.",
+            "sentence": "Her summary was [TARGET] and brief, covering the entire quarterly report in exactly three sentences.",
+            "hint": "This word describes communicating clearly using few words.",
             "options": [
-                "Wordy",
                 "Lengthy",
+                "Wordy",
                 "Rambling",
                 "Brief"
             ],
-            "explanation": "Summarizing an entire project update in three sentences shows saying a lot in few words, so [TARGET] means BRIEF.",
+            "explanation": "The word 'and' links [TARGET] to 'brief,' and covering a full report in three sentences confirms it, so [TARGET] means BRIEF.",
             "correctAnswer": "Brief",
             "clueType": "synonym",
             "evidenceWords": [
-                "email",
-                "summarized"
+                "and brief",
+                "exactly three sentences"
             ]
         },
         {
@@ -342,20 +351,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L46_Q2",
-            "sentence": "After reviewing three proposals, the board decided only one plan was financially [TARGET].",
-            "hint": "This word describes something capable of actually succeeding.",
+            "sentence": "Unlike the plan that would have bankrupted the company within a year, the new proposal was [TARGET], projected to break even within six months.",
+            "hint": "This word describes something capable of working or succeeding.",
             "options": [
-                "Impractical",
+                "Workable",
                 "Unworkable",
-                "Unfeasible",
-                "Workable"
+                "Doomed",
+                "Impossible"
             ],
-            "explanation": "Choosing only one plan as financially sound shows it was capable of succeeding, so [TARGET] means WORKABLE.",
+            "explanation": "The word 'unlike' contrasts [TARGET] with a plan that 'would have bankrupted the company,' so it must mean the opposite, which is WORKABLE.",
             "correctAnswer": "Workable",
             "clueType": "antonym",
             "evidenceWords": [
-                "After",
-                "reviewing"
+                "Unlike",
+                "bankrupted the company",
+                "break even"
             ]
         },
         {
@@ -363,20 +373,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L46_Q3",
-            "sentence": "The lawyer asked only [TARGET] questions, sticking closely to the facts of the case.",
-            "hint": "This word describes information that directly relates to the matter at hand.",
+            "sentence": "During the meeting, she only asked [TARGET] questions, which means every question she raised was directly related to the topic being discussed.",
+            "hint": "This word describes something directly tied to the matter at hand.",
             "options": [
-                "Relevant",
                 "Unrelated",
+                "Relevant",
                 "Irrelevant",
                 "Off-topic"
             ],
-            "explanation": "Sticking closely to the facts of the case shows the questions directly related to the matter, so [TARGET] means RELEVANT.",
+            "explanation": "The sentence defines [TARGET] questions as ones 'directly related to the topic,' so [TARGET] means RELEVANT.",
             "correctAnswer": "Relevant",
             "clueType": "definition",
             "evidenceWords": [
-                "lawyer",
-                "asked"
+                "which means",
+                "directly related to the topic"
             ]
         },
         {
@@ -384,20 +394,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L47_Q1",
-            "sentence": "Floppy disks became [TARGET] once USB drives became cheap and widely available.",
-            "hint": "This word describes technology that has been replaced by something newer.",
+            "sentence": "The fax machine in the office was [TARGET]: nobody had used it in five years, replacement parts were no longer manufactured, and most employees didn't even know how to turn it on.",
+            "hint": "This word describes something no longer used because something better replaced it.",
             "options": [
-                "Current",
-                "Outdated",
+                "Cutting-edge",
                 "Modern",
-                "Cutting-edge"
+                "Outmoded",
+                "Current"
             ],
-            "explanation": "Floppy disks being replaced once USB drives became common shows they were replaced by something newer, so [TARGET] means OUTDATED.",
-            "correctAnswer": "Outdated",
+            "explanation": "Not being used in five years, unavailable parts, and employees not knowing how to operate it are all examples of something no longer in use, so [TARGET] means OUTMODED.",
+            "correctAnswer": "Outmoded",
             "clueType": "example",
             "evidenceWords": [
-                "Floppy",
-                "disks"
+                "nobody had used it in five years",
+                "parts were no longer manufactured",
+                "didn't even know how to turn it on"
             ]
         },
         {
@@ -405,20 +416,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L47_Q2",
-            "sentence": "The auditor was hired to [TARGET] every transaction from the past year.",
-            "hint": "This word describes examining something closely, checking for even small errors.",
+            "sentence": "Before signing the contract, the lawyer decided to [TARGET] every clause: she read each line twice, checked every number against the original agreement, and circled anything that seemed even slightly off.",
+            "hint": "This word means to examine something very closely and carefully.",
             "options": [
-                "Inspect",
+                "Skim quickly",
                 "Ignore",
-                "Overlook",
-                "Skim"
+                "Glance at",
+                "Examine closely"
             ],
-            "explanation": "Reviewing every transaction from the past year shows inspecting in great detail, so [TARGET] means INSPECT.",
-            "correctAnswer": "Inspect",
+            "explanation": "Reading lines twice, checking numbers, and circling anything unusual are all signs of examining something closely, even without a direct clue word, so [TARGET] means EXAMINE CLOSELY.",
+            "correctAnswer": "Examine closely",
             "clueType": "inference",
             "evidenceWords": [
-                "auditor",
-                "hired"
+                "read each line twice",
+                "checked every number",
+                "circled anything"
             ]
         },
         {
@@ -426,20 +438,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L47_Q3",
-            "sentence": "The salesman's claim that the watch was 'genuine gold' for ten dollars seemed [TARGET].",
-            "hint": "This word describes something that raises real doubt.",
+            "sentence": "The salesman's claim that the pills could make you younger overnight sounded [TARGET] and doubtful to anyone with basic science knowledge.",
+            "hint": "This word describes something that raises doubt about whether it's true.",
             "options": [
-                "Trustworthy",
+                "Doubtful",
                 "Certain",
-                "Questionable",
-                "Reliable"
+                "Trustworthy",
+                "Believable"
             ],
-            "explanation": "A genuine gold watch for ten dollars would raise real doubt, so [TARGET] means QUESTIONABLE.",
-            "correctAnswer": "Questionable",
+            "explanation": "The word 'and' links [TARGET] to 'doubtful,' so [TARGET] means DOUBTFUL.",
+            "correctAnswer": "Doubtful",
             "clueType": "synonym",
             "evidenceWords": [
-                "salesman's",
-                "claim"
+                "and doubtful",
+                "basic science knowledge"
             ]
         },
         {
@@ -447,20 +459,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L48_Q1",
-            "sentence": "After two years of lessons, she became quite [TARGET] at playing the violin.",
-            "hint": "This word describes having gained real skill through practice.",
+            "sentence": "Unlike her first attempts at the piano, where she fumbled through scales, two years of practice made her [TARGET], playing full sonatas without a single mistake.",
+            "hint": "This word describes having a high level of skill through practice or training.",
             "options": [
-                "Skillful",
+                "Clumsy",
+                "Skilled",
                 "Inept",
-                "Incompetent",
                 "Unskilled"
             ],
-            "explanation": "Becoming skilled after two years of lessons shows gaining real skill through practice, so [TARGET] means SKILLFUL.",
-            "correctAnswer": "Skillful",
+            "explanation": "The word 'unlike' contrasts [TARGET] with her early attempts where she 'fumbled through scales,' so it must mean the opposite, which is SKILLED.",
+            "correctAnswer": "Skilled",
             "clueType": "antonym",
             "evidenceWords": [
-                "After",
-                "years"
+                "Unlike",
+                "fumbled through scales",
+                "without a single mistake"
             ]
         },
         {
@@ -468,20 +481,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L48_Q2",
-            "sentence": "Doctors agree that smoking is [TARGET] to nearly every organ in the body.",
-            "hint": "This word describes causing real damage over time.",
+            "sentence": "Skipping sleep every night before finals was [TARGET], which means it caused real harm to both his grades and his health.",
+            "hint": "This word describes something that causes harm or damage.",
             "options": [
-                "Beneficial",
                 "Helpful",
+                "Beneficial",
                 "Harmful",
-                "Advantageous"
+                "Useful"
             ],
-            "explanation": "Affecting nearly every organ in the body shows causing real damage, so [TARGET] means HARMFUL.",
+            "explanation": "The sentence defines [TARGET] as causing 'real harm... to both his grades and his health,' so [TARGET] means HARMFUL.",
             "correctAnswer": "Harmful",
             "clueType": "definition",
             "evidenceWords": [
-                "Doctors",
-                "agree"
+                "which means",
+                "caused real harm"
             ]
         },
         {
@@ -489,20 +502,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L48_Q3",
-            "sentence": "Regular exercise is [TARGET] for both your heart and your mood.",
-            "hint": "This word describes producing a good effect.",
+            "sentence": "The new recycling program was [TARGET]: it cut the school's trash costs in half, gave students hands-on lessons about sustainability, and earned the district a state award.",
+            "hint": "This word describes something that produces good or helpful results.",
             "options": [
                 "Harmful",
-                "Helpful",
                 "Damaging",
-                "Detrimental"
+                "Costly",
+                "Advantageous"
             ],
-            "explanation": "Helping both the heart and mood shows producing a good effect, so [TARGET] means HELPFUL.",
-            "correctAnswer": "Helpful",
+            "explanation": "Cutting costs, teaching students, and earning an award are all examples of positive, helpful outcomes, so [TARGET] means ADVANTAGEOUS.",
+            "correctAnswer": "Advantageous",
             "clueType": "example",
             "evidenceWords": [
-                "Regular",
-                "exercise"
+                "cut the school's trash costs in half",
+                "hands-on lessons",
+                "earned the district a state award"
             ]
         },
         {
@@ -510,20 +524,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L49_Q1",
-            "sentence": "Even after failing the test twice, she chose to [TARGET] and study even harder.",
-            "hint": "This word describes continuing despite repeated failure.",
+            "sentence": "Even after failing the licensing exam three times, missing out on two job offers because of it, and running low on savings, she chose to [TARGET], studying every night instead of giving up.",
+            "hint": "This word means to keep trying despite difficulty or repeated failure.",
             "options": [
-                "Surrender",
-                "Persist",
-                "Relent",
-                "Quit"
+                "Keep going",
+                "Give up",
+                "Quit",
+                "Surrender"
             ],
-            "explanation": "Studying even harder after failing twice shows continuing despite failure, so [TARGET] means PERSIST.",
-            "correctAnswer": "Persist",
+            "explanation": "Failing three times, losing job offers, and still studying every night are all signs of continuing despite difficulty, even without a direct clue word, so [TARGET] means KEEP GOING.",
+            "correctAnswer": "Keep going",
             "clueType": "inference",
             "evidenceWords": [
-                "after",
-                "failing"
+                "failing the licensing exam three times",
+                "running low on savings",
+                "instead of giving up"
             ]
         },
         {
@@ -531,20 +546,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L49_Q2",
-            "sentence": "She admitted the glittery phone case was a [TARGET] purchase she didn't really need.",
-            "hint": "This word describes something unimportant, bought just for fun.",
+            "sentence": "Buying a fourth pair of the exact same sneakers felt [TARGET] and wasteful to her roommate, who was trying to save for rent.",
+            "hint": "This word describes spending time or money on something unnecessary or unimportant.",
             "options": [
-                "Significant",
-                "Serious",
-                "Important",
-                "Trivial"
+                "Necessary",
+                "Wasteful",
+                "Essential",
+                "Practical"
             ],
-            "explanation": "Admitting she didn't really need the phone case shows it was unimportant, so [TARGET] means TRIVIAL.",
-            "correctAnswer": "Trivial",
+            "explanation": "The word 'and' links [TARGET] to 'wasteful,' and buying a fourth identical pair confirms it, so [TARGET] means WASTEFUL.",
+            "correctAnswer": "Wasteful",
             "clueType": "synonym",
             "evidenceWords": [
-                "admitted",
-                "glittery"
+                "and wasteful",
+                "fourth pair of the exact same"
             ]
         },
         {
@@ -552,20 +567,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L49_Q3",
-            "sentence": "A reliable internet connection has become [TARGET] for almost every modern job.",
-            "hint": "This word describes something so necessary you cannot do without it.",
+            "sentence": "Unlike the decorative lamp that no one would miss if it broke, the office's only printer was [TARGET]; without it, nothing could get done.",
+            "hint": "This word describes something so necessary that you cannot do without it.",
             "options": [
-                "Essential",
-                "Unnecessary",
                 "Optional",
+                "Unnecessary",
+                "Essential",
                 "Dispensable"
             ],
-            "explanation": "Being necessary for almost every modern job shows you cannot do without it, so [TARGET] means ESSENTIAL.",
+            "explanation": "The word 'unlike' contrasts [TARGET] with a lamp 'no one would miss,' so it must mean the opposite, which is ESSENTIAL.",
             "correctAnswer": "Essential",
             "clueType": "antonym",
             "evidenceWords": [
-                "reliable",
-                "internet"
+                "Unlike",
+                "no one would miss",
+                "nothing could get done"
             ]
         },
         {
@@ -573,20 +589,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L50_Q1",
-            "sentence": "The budget cuts mainly affected [TARGET] departments, not the core production team.",
-            "hint": "This word describes something at the edge, not the center, of importance.",
+            "sentence": "The budget cuts were [TARGET] to the main issue, which means they were only a minor, side concern compared to the school's real problem: outdated textbooks.",
+            "hint": "This word describes something on the edge of the main topic, not central to it.",
             "options": [
-                "Minor",
                 "Central",
-                "Main",
-                "Primary"
+                "Core",
+                "Primary",
+                "Minor"
             ],
-            "explanation": "Affecting departments that aren't the core team shows they are at the edge of importance, so [TARGET] means MINOR.",
+            "explanation": "The sentence defines [TARGET] as 'only a minor, side concern' compared to the real problem, so [TARGET] means MINOR.",
             "correctAnswer": "Minor",
             "clueType": "definition",
             "evidenceWords": [
-                "budget",
-                "mainly"
+                "which means",
+                "only a minor, side concern"
             ]
         },
         {
@@ -594,20 +610,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L50_Q2",
-            "sentence": "The [TARGET] author published twelve novels in just ten years.",
+            "sentence": "The author was [TARGET]: she published four novels in a single year, wrote a weekly newspaper column, and still found time to finish a cookbook.",
             "hint": "This word describes producing a large amount of work.",
             "options": [
+                "Productive",
+                "Idle",
                 "Unproductive",
-                "Sparse",
-                "Scarce",
-                "Productive"
+                "Sluggish"
             ],
-            "explanation": "Publishing twelve novels in ten years shows producing a large amount of work, so [TARGET] means PRODUCTIVE.",
+            "explanation": "Publishing four novels, writing a weekly column, and finishing a cookbook in one year are all examples of producing a huge amount of work, so [TARGET] means PRODUCTIVE.",
             "correctAnswer": "Productive",
             "clueType": "example",
             "evidenceWords": [
-                "author",
-                "published"
+                "published four novels",
+                "weekly newspaper column",
+                "finish a cookbook"
             ]
         },
         {
@@ -615,20 +632,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L50_Q3",
-            "sentence": "The wedding cake had a [TARGET] design of lace patterns made entirely from sugar.",
-            "hint": "This word describes something made of many small, detailed parts.",
+            "sentence": "The watchmaker held the tiny mechanism under a magnifying glass, counting over two hundred interlocking gears, each one smaller than a grain of rice, all fitted together with no room for error — a marvel of [TARGET] design.",
+            "hint": "This word describes something made of many small, detailed parts fitted together.",
             "options": [
                 "Simple",
-                "Plain",
+                "Elaborate",
                 "Basic",
-                "Complex"
+                "Plain"
             ],
-            "explanation": "Lace patterns made entirely from sugar describe many small, detailed parts, so [TARGET] means COMPLEX.",
-            "correctAnswer": "Complex",
+            "explanation": "Over two hundred interlocking gears smaller than a grain of rice, fitted with no room for error, show many small parts working together, even without a direct clue word, so [TARGET] means ELABORATE.",
+            "correctAnswer": "Elaborate",
             "clueType": "inference",
             "evidenceWords": [
-                "wedding",
-                "design"
+                "two hundred interlocking gears",
+                "smaller than a grain of rice",
+                "no room for error"
             ]
         }
     ],

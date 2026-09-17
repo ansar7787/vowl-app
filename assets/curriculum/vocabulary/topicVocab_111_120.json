@@ -6,721 +6,781 @@
         {
             "id": "VOC_TOPICVOCAB_L111_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Here 'Light' means illumination, not weight. Sort each word under Shadow or Light.",
             "topicBuckets": [
-                "Light",
-                "Shadow"
+                "Shadow",
+                "Light"
             ],
-            "hint": "Here's a tip: Light shines and illuminates a space, while a shadow is the dark shape blocking that light!",
-            "explanation": "Think of 'Light' as brightness and illumination (glow, beam), and 'Shadow' as the dark area blocking light (silhouette, shade)!",
+            "hint": "Think about what a lamp produces, and what it leaves behind an object.",
+            "explanation": "Glow, beam, and radiance all describe light being produced or travelling, with radiance suggesting light spreading outward from a source. A silhouette and 'shade' both describe areas where light is blocked \u2014 note this sense of 'light' concerns brightness, not the weight sense you met earlier.",
             "options": [
                 "Glow",
-                "Silhouette",
-                "Beam",
+                "Radiance",
                 "Shade",
-                "Radiance"
+                "Beam",
+                "Silhouette"
             ],
-            "correctAnswer": "Light:Glow, Shadow:Silhouette, Light:Beam, Shadow:Shade, Light:Radiance",
+            "correctAnswer": "Light:Glow, Light:Radiance, Shadow:Shade, Light:Beam, Shadow:Silhouette",
             "relatedWords": [
-                "aspect of Light:Glow, Shadow:Silhouette, Light:Beam, Shadow:Shade, Light:Radiance",
-                "concept of Light:Glow, Shadow:Silhouette, Light:Beam, Shadow:Shade, Light:Radiance",
-                "related to Light:Glow, Shadow:Silhouette, Light:Beam, Shadow:Shade, Light:Radiance"
+                "Glow: a steady light given off by something",
+                "Radiance: light spreading outward from a source",
+                "Shade: an area sheltered from direct light",
+                "Beam: a directed ray of light",
+                "Silhouette: a dark outline seen against brightness"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L111_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "One shadow word describes the partial shadow at the edge of a darker one. Sort into Shadow or Light.",
             "topicBuckets": [
-                "Light",
-                "Shadow"
+                "Shadow",
+                "Light"
             ],
-            "hint": "Here's a tip: Light shines and illuminates a space, while a shadow is the dark shape blocking that light!",
-            "explanation": "Think of 'Light' as brightness and illumination (glow, beam), and 'Shadow' as the dark area blocking light (silhouette, shade)!",
+            "hint": "Shadows have edges that are softer than their centres.",
+            "explanation": "Illumination and 'glare' both describe strong light, with glare being light bright enough to be uncomfortable. 'Penumbra' names the softer partial shadow at a shadow's edge, 'gloom' describes near-darkness, and 'dappled' describes light broken into patches by something above.",
             "options": [
-                "Gleam",
-                "Darkness",
-                "Shimmer",
-                "Dusk-shape",
-                "Brightness"
+                "Illumination",
+                "Penumbra",
+                "Glare",
+                "Dappled",
+                "Gloom"
             ],
-            "correctAnswer": "Light:Gleam, Shadow:Darkness, Light:Shimmer, Shadow:Dusk-shape, Light:Brightness",
+            "correctAnswer": "Light:Illumination, Shadow:Penumbra, Light:Glare, Light:Dappled, Shadow:Gloom",
             "relatedWords": [
-                "aspect of Light:Gleam, Shadow:Darkness, Light:Shimmer, Shadow:Dusk-shape, Light:Brightness",
-                "concept of Light:Gleam, Shadow:Darkness, Light:Shimmer, Shadow:Dusk-shape, Light:Brightness",
-                "related to Light:Gleam, Shadow:Darkness, Light:Shimmer, Shadow:Dusk-shape, Light:Brightness"
+                "Illumination: light that makes something visible",
+                "Penumbra: the softer partial shadow at a shadow's edge",
+                "Glare: uncomfortably strong light",
+                "Dappled: marked with patches of light and shade",
+                "Gloom: partial darkness"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L111_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Picture a photographer describing a portrait. Sort into Light or Shadow.",
             "topicBuckets": [
                 "Light",
                 "Shadow"
             ],
-            "hint": "Here's a tip: Light shines and illuminates a space, while a shadow is the dark shape blocking that light!",
-            "explanation": "Think of 'Light' as brightness and illumination (glow, beam), and 'Shadow' as the dark area blocking light (silhouette, shade)!",
+            "hint": "Two of these describe deliberately darkened areas of an image.",
+            "explanation": "'Backlit', 'highlight', and 'luminous' all describe where light falls in an image, with a highlight being its brightest point. 'Cast a shadow' and 'in shadow' both describe deliberately darkened areas, which photographers use to give an image depth.",
             "options": [
-                "Luminance",
-                "Umbra",
-                "Flicker",
-                "Murk",
-                "Sparkle"
+                "Luminous",
+                "Highlight",
+                "In shadow",
+                "Cast a shadow",
+                "Backlit"
             ],
-            "correctAnswer": "Light:Luminance, Shadow:Umbra, Light:Flicker, Shadow:Murk, Light:Sparkle",
+            "correctAnswer": "Light:Luminous, Light:Highlight, Shadow:In shadow, Shadow:Cast a shadow, Light:Backlit",
             "relatedWords": [
-                "aspect of Light:Luminance, Shadow:Umbra, Light:Flicker, Shadow:Murk, Light:Sparkle",
-                "concept of Light:Luminance, Shadow:Umbra, Light:Flicker, Shadow:Murk, Light:Sparkle",
-                "related to Light:Luminance, Shadow:Umbra, Light:Flicker, Shadow:Murk, Light:Sparkle"
+                "Luminous: giving off or reflecting bright light",
+                "Highlight: the brightest area of an image",
+                "In shadow: in an area where light is blocked",
+                "Cast a shadow: block light so a dark shape forms",
+                "Backlit: lit from behind"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L112_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Sun or Moon.",
             "topicBuckets": [
                 "Sun",
                 "Moon"
             ],
-            "hint": "Here's a tip: The sun lights up the day, while the moon glows softly at night!",
-            "explanation": "Think of 'Sun' as the star that lights our days (solar, daystar), and 'Moon' as Earth's satellite seen at night (lunar, nightlight)!",
+            "hint": "Think about which one produces its own light, and which reflects it.",
+            "explanation": "Solar, sunbeam, and 'daylight hours' all relate to the sun, our nearest star. Lunar and 'crescent' both relate to the moon, with crescent naming its thin curved phase.",
             "options": [
                 "Solar",
-                "Lunar",
-                "Daystar",
+                "Sunbeam",
                 "Crescent",
-                "Sunbeam"
+                "Daylight hours",
+                "Lunar"
             ],
-            "correctAnswer": "Sun:Solar, Moon:Lunar, Sun:Daystar, Moon:Crescent, Sun:Sunbeam",
+            "correctAnswer": "Sun:Solar, Sun:Sunbeam, Moon:Crescent, Sun:Daylight hours, Moon:Lunar",
             "relatedWords": [
-                "aspect of Sun:Solar, Moon:Lunar, Sun:Daystar, Moon:Crescent, Sun:Sunbeam",
-                "concept of Sun:Solar, Moon:Lunar, Sun:Daystar, Moon:Crescent, Sun:Sunbeam",
-                "related to Sun:Solar, Moon:Lunar, Sun:Daystar, Moon:Crescent, Sun:Sunbeam"
+                "Solar: relating to the sun",
+                "Sunbeam: a ray of sunlight",
+                "Crescent: the thin curved phase of the moon",
+                "Daylight hours: the hours when the sun is up",
+                "Lunar: relating to the moon"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L112_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "One moon word names the moon at its brightest and roundest. Sort into Moon or Sun.",
             "topicBuckets": [
-                "Sun",
-                "Moon"
+                "Moon",
+                "Sun"
             ],
-            "hint": "Here's a tip: The sun lights up the day, while the moon glows softly at night!",
-            "explanation": "Think of 'Sun' as the star that lights our days (solar, daystar), and 'Moon' as Earth's satellite seen at night (lunar, nightlight)!",
+            "hint": "Both bodies have cycles \u2014 one daily, one monthly.",
+            "explanation": "A 'solar flare' and 'sunspot' are both features of the sun's surface activity, and 'scorching rays' describes its heat reaching us. 'Full moon' names the moon at its roundest, and 'waning' describes it shrinking through its monthly cycle.",
             "options": [
-                "Sunlight",
-                "Moonbeam",
-                "Solstice",
+                "Scorching rays",
+                "Full moon",
+                "Solar flare",
                 "Waning",
-                "Corona"
+                "Sunspot"
             ],
-            "correctAnswer": "Sun:Sunlight, Moon:Moonbeam, Sun:Solstice, Moon:Waning, Sun:Corona",
+            "correctAnswer": "Sun:Scorching rays, Moon:Full moon, Sun:Solar flare, Moon:Waning, Sun:Sunspot",
             "relatedWords": [
-                "aspect of Sun:Sunlight, Moon:Moonbeam, Sun:Solstice, Moon:Waning, Sun:Corona",
-                "concept of Sun:Sunlight, Moon:Moonbeam, Sun:Solstice, Moon:Waning, Sun:Corona",
-                "related to Sun:Sunlight, Moon:Moonbeam, Sun:Solstice, Moon:Waning, Sun:Corona"
+                "Scorching rays: intensely hot sunlight",
+                "Full moon: the phase when the moon appears fully round",
+                "Solar flare: a sudden burst of energy from the sun",
+                "Waning: gradually decreasing in visible size",
+                "Sunspot: a darker, cooler patch on the sun's surface"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L112_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These appear in writing about how the sky shapes life on Earth. Sort into Moon or Sun.",
             "topicBuckets": [
-                "Sun",
-                "Moon"
+                "Moon",
+                "Sun"
             ],
-            "hint": "Here's a tip: The sun lights up the day, while the moon glows softly at night!",
-            "explanation": "Think of 'Sun' as the star that lights our days (solar, daystar), and 'Moon' as Earth's satellite seen at night (lunar, nightlight)!",
+            "hint": "One of these governs the sea rather than the sky.",
+            "explanation": "'Photosynthesis' and 'sundial' both depend on the sun, as does 'equinox', which marks the sun's position relative to the equator. 'Tides' are driven mainly by the moon's gravitational pull, and 'moonlit' describes a scene lit by reflected moonlight.",
             "options": [
-                "Sundial",
+                "Equinox",
+                "Photosynthesis",
                 "Moonlit",
-                "Heliocentric",
-                "Tide-causing-orb",
-                "Photosphere"
+                "Tides",
+                "Sundial"
             ],
-            "correctAnswer": "Sun:Sundial, Moon:Moonlit, Sun:Heliocentric, Moon:Tide-causing-orb, Sun:Photosphere",
+            "correctAnswer": "Sun:Equinox, Sun:Photosynthesis, Moon:Moonlit, Moon:Tides, Sun:Sundial",
             "relatedWords": [
-                "aspect of Sun:Sundial, Moon:Moonlit, Sun:Heliocentric, Moon:Tide-causing-orb, Sun:Photosphere",
-                "concept of Sun:Sundial, Moon:Moonlit, Sun:Heliocentric, Moon:Tide-causing-orb, Sun:Photosphere",
-                "related to Sun:Sundial, Moon:Moonlit, Sun:Heliocentric, Moon:Tide-causing-orb, Sun:Photosphere"
+                "Equinox: when day and night are of equal length",
+                "Photosynthesis: the process plants use to turn sunlight into energy",
+                "Moonlit: lit by the moon",
+                "Tides: the rise and fall of the sea, driven mainly by the moon",
+                "Sundial: a device telling time by the sun's shadow"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L113_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Star or Void.",
             "topicBuckets": [
                 "Star",
                 "Void"
             ],
-            "hint": "Here's a tip: A star is a bright glowing point in space, while the void is the vast empty darkness around it!",
-            "explanation": "Think of 'Star' as a bright celestial body (constellation, sun-like-body), and 'Void' as empty, dark space (emptiness, vacuum)!",
+            "hint": "Think about the points of light in the night sky, and the darkness between them.",
+            "explanation": "A constellation, 'stellar', and 'galaxy' all concern stars and the structures they form. 'Emptiness' and 'vacuum' both describe space without matter, which is most of what lies between stars.",
             "options": [
                 "Constellation",
-                "Emptiness",
-                "Sun-like-body",
                 "Vacuum",
-                "Celestial-light"
+                "Galaxy",
+                "Stellar",
+                "Emptiness"
             ],
-            "correctAnswer": "Star:Constellation, Void:Emptiness, Star:Sun-like-body, Void:Vacuum, Star:Celestial-light",
+            "correctAnswer": "Star:Constellation, Void:Vacuum, Star:Galaxy, Star:Stellar, Void:Emptiness",
             "relatedWords": [
-                "aspect of Star:Constellation, Void:Emptiness, Star:Sun-like-body, Void:Vacuum, Star:Celestial-light",
-                "concept of Star:Constellation, Void:Emptiness, Star:Sun-like-body, Void:Vacuum, Star:Celestial-light",
-                "related to Star:Constellation, Void:Emptiness, Star:Sun-like-body, Void:Vacuum, Star:Celestial-light"
+                "Constellation: a recognised pattern of stars",
+                "Vacuum: a space containing no matter",
+                "Galaxy: a vast system of stars held together by gravity",
+                "Stellar: relating to stars",
+                "Emptiness: the state of containing nothing"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L113_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "One star word names a star's explosive death. Sort into Void or Star.",
             "topicBuckets": [
-                "Star",
-                "Void"
+                "Void",
+                "Star"
             ],
-            "hint": "Here's a tip: A star is a bright glowing point in space, while the void is the vast empty darkness around it!",
-            "explanation": "Think of 'Star' as a bright celestial body (constellation, sun-like-body), and 'Void' as empty, dark space (emptiness, vacuum)!",
+            "hint": "Stars have life cycles, and space has vast gaps between them.",
+            "explanation": "A supernova is a star's explosive death, a 'nebula' is a cloud of gas where stars form, and 'burning core' describes the fusion powering a star. 'Interstellar space' and 'nothingness' both describe the vast emptiness between stars.",
             "options": [
+                "Interstellar space",
+                "Burning core",
+                "Nebula",
                 "Supernova",
-                "Nothingness",
-                "Galaxy-point",
-                "Blank-space",
-                "Stellar-body"
+                "Nothingness"
             ],
-            "correctAnswer": "Star:Supernova, Void:Nothingness, Star:Galaxy-point, Void:Blank-space, Star:Stellar-body",
+            "correctAnswer": "Void:Interstellar space, Star:Burning core, Star:Nebula, Star:Supernova, Void:Nothingness",
             "relatedWords": [
-                "aspect of Star:Supernova, Void:Nothingness, Star:Galaxy-point, Void:Blank-space, Star:Stellar-body",
-                "concept of Star:Supernova, Void:Nothingness, Star:Galaxy-point, Void:Blank-space, Star:Stellar-body",
-                "related to Star:Supernova, Void:Nothingness, Star:Galaxy-point, Void:Blank-space, Star:Stellar-body"
+                "Interstellar space: the vast space between stars",
+                "Burning core: the fusion-powered centre of a star",
+                "Nebula: a cloud of gas and dust where stars form",
+                "Supernova: the explosive death of a star",
+                "Nothingness: complete absence of anything"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L113_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Picture a documentary narrating a journey through deep space. Sort into Void or Star.",
             "topicBuckets": [
-                "Star",
-                "Void"
+                "Void",
+                "Star"
             ],
-            "hint": "Here's a tip: A star is a bright glowing point in space, while the void is the vast empty darkness around it!",
-            "explanation": "Think of 'Star' as a bright celestial body (constellation, sun-like-body), and 'Void' as empty, dark space (emptiness, vacuum)!",
+            "hint": "Two of these describe how astronomers talk about absence rather than objects.",
+            "explanation": "'Points of light', 'twinkling', and 'luminosity' all describe how stars appear and how brightly they burn. 'Dark expanse' and 'cosmic silence' both describe absence, which is how documentaries often convey the scale of empty space.",
             "options": [
-                "Twinkling-light",
-                "Abyss-of-space",
-                "Cosmic-orb",
-                "Hollow-darkness",
-                "Pulsar"
+                "Points of light",
+                "Dark expanse",
+                "Cosmic silence",
+                "Twinkling",
+                "Luminosity"
             ],
-            "correctAnswer": "Star:Twinkling-light, Void:Abyss-of-space, Star:Cosmic-orb, Void:Hollow-darkness, Star:Pulsar",
+            "correctAnswer": "Star:Points of light, Void:Dark expanse, Void:Cosmic silence, Star:Twinkling, Star:Luminosity",
             "relatedWords": [
-                "aspect of Star:Twinkling-light, Void:Abyss-of-space, Star:Cosmic-orb, Void:Hollow-darkness, Star:Pulsar",
-                "concept of Star:Twinkling-light, Void:Abyss-of-space, Star:Cosmic-orb, Void:Hollow-darkness, Star:Pulsar",
-                "related to Star:Twinkling-light, Void:Abyss-of-space, Star:Cosmic-orb, Void:Hollow-darkness, Star:Pulsar"
+                "Points of light: the appearance of distant stars",
+                "Dark expanse: a vast area without light or matter",
+                "Cosmic silence: the soundlessness of empty space",
+                "Twinkling: appearing to flicker, as stars do",
+                "Luminosity: the amount of light a star gives off"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L114_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Core or Surface.",
             "topicBuckets": [
                 "Core",
                 "Surface"
             ],
-            "hint": "Here's a tip: The core is the deep center of something, while the surface is the outer layer you can touch!",
-            "explanation": "Think of 'Core' as the central, innermost part (center, nucleus), and 'Surface' as the outer layer (exterior, outermost-layer)!",
+            "hint": "Think about the deepest centre of something, and its outermost layer.",
+            "explanation": "The centre, 'nucleus', and 'innermost' all describe what lies deepest inside. The exterior and 'outer layer' both describe what's on the outside, where something meets the world.",
             "options": [
-                "Center",
-                "Exterior",
+                "Outer layer",
                 "Nucleus",
-                "Outermost-layer",
-                "Heart"
+                "Innermost",
+                "Exterior",
+                "Centre"
             ],
-            "correctAnswer": "Core:Center, Surface:Exterior, Core:Nucleus, Surface:Outermost-layer, Core:Heart",
+            "correctAnswer": "Surface:Outer layer, Core:Nucleus, Core:Innermost, Surface:Exterior, Core:Centre",
             "relatedWords": [
-                "aspect of Core:Center, Surface:Exterior, Core:Nucleus, Surface:Outermost-layer, Core:Heart",
-                "concept of Core:Center, Surface:Exterior, Core:Nucleus, Surface:Outermost-layer, Core:Heart",
-                "related to Core:Center, Surface:Exterior, Core:Nucleus, Surface:Outermost-layer, Core:Heart"
+                "Outer layer: the outermost covering",
+                "Nucleus: the central part around which others gather",
+                "Innermost: furthest inside",
+                "Exterior: the outside of something",
+                "Centre: the middle point of something"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L114_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "One surface word describes the outermost layer of a planet. Sort into Core or Surface.",
             "topicBuckets": [
                 "Core",
                 "Surface"
             ],
-            "hint": "Here's a tip: The core is the deep center of something, while the surface is the outer layer you can touch!",
-            "explanation": "Think of 'Core' as the central, innermost part (center, nucleus), and 'Surface' as the outer layer (exterior, outermost-layer)!",
+            "hint": "Planets are built in layers, from crust to core.",
+            "explanation": "'Molten centre', 'deep interior', and 'heart of it' all describe what lies far below. 'Crust' names a planet's outermost solid layer, and 'topsoil' names the surface layer of ground where plants grow.",
             "options": [
-                "Innermost-part",
                 "Crust",
-                "Midpoint",
-                "Skin",
-                "Kernel"
+                "Deep interior",
+                "Molten centre",
+                "Topsoil",
+                "Heart of it"
             ],
-            "correctAnswer": "Core:Innermost-part, Surface:Crust, Core:Midpoint, Surface:Skin, Core:Kernel",
+            "correctAnswer": "Surface:Crust, Core:Deep interior, Core:Molten centre, Surface:Topsoil, Core:Heart of it",
             "relatedWords": [
-                "aspect of Core:Innermost-part, Surface:Crust, Core:Midpoint, Surface:Skin, Core:Kernel",
-                "concept of Core:Innermost-part, Surface:Crust, Core:Midpoint, Surface:Skin, Core:Kernel",
-                "related to Core:Innermost-part, Surface:Crust, Core:Midpoint, Surface:Skin, Core:Kernel"
+                "Crust: the outermost solid layer of a planet",
+                "Deep interior: the region far below the surface",
+                "Molten centre: a liquid-hot central region",
+                "Topsoil: the upper layer of soil",
+                "Heart of it: the most central, essential part"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L114_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These use 'core' and 'surface' figuratively, about problems and people. Sort into Surface or Core.",
             "topicBuckets": [
-                "Core",
-                "Surface"
+                "Surface",
+                "Core"
             ],
-            "hint": "Here's a tip: The core is the deep center of something, while the surface is the outer layer you can touch!",
-            "explanation": "Think of 'Core' as the central, innermost part (center, nucleus), and 'Surface' as the outer layer (exterior, outermost-layer)!",
+            "hint": "One phrase describes a fix that doesn't address the real problem.",
+            "explanation": "'Root cause' and 'fundamental issue' both name the real source of a problem, and 'core values' names someone's deepest principles. 'Superficial' and 'surface-level fix' both describe engaging only with appearances \u2014 a repair that leaves the real problem untouched.",
             "options": [
-                "Pit",
-                "Veneer",
-                "Inner-layer",
-                "Topcoat",
-                "Hub"
+                "Surface-level fix",
+                "Core values",
+                "Fundamental issue",
+                "Superficial",
+                "Root cause"
             ],
-            "correctAnswer": "Core:Pit, Surface:Veneer, Core:Inner-layer, Surface:Topcoat, Core:Hub",
+            "correctAnswer": "Surface:Surface-level fix, Core:Core values, Core:Fundamental issue, Surface:Superficial, Core:Root cause",
             "relatedWords": [
-                "aspect of Core:Pit, Surface:Veneer, Core:Inner-layer, Surface:Topcoat, Core:Hub",
-                "concept of Core:Pit, Surface:Veneer, Core:Inner-layer, Surface:Topcoat, Core:Hub",
-                "related to Core:Pit, Surface:Veneer, Core:Inner-layer, Surface:Topcoat, Core:Hub"
+                "Surface-level fix: a repair that doesn't address the real cause",
+                "Core values: a person's deepest guiding principles",
+                "Fundamental issue: the basic, essential problem",
+                "Superficial: concerned only with appearances",
+                "Root cause: the underlying source of a problem"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L115_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Seed or Shell.",
             "topicBuckets": [
-                "Shell",
-                "Seed"
+                "Seed",
+                "Shell"
             ],
-            "hint": "Here's a tip: A shell is the hard outer covering protecting something, while a seed is what grows into a new plant!",
-            "explanation": "Think of 'Shell' as a hard protective outer covering (husk, casing), and 'Seed' as the part of a plant that grows into a new one (kernel, sprout-source)!",
+            "hint": "Think about the hard outside that protects, and the living part it protects.",
+            "explanation": "A husk, a 'protective casing', and a 'rind' all describe outer coverings. A kernel and a 'germ' are both the inner living part, with the germ being the portion that actually sprouts.",
             "options": [
-                "Husk",
                 "Kernel",
-                "Casing",
-                "Sprout-source",
-                "Carapace"
+                "Germ",
+                "Rind",
+                "Protective casing",
+                "Husk"
             ],
-            "correctAnswer": "Shell:Husk, Seed:Kernel, Shell:Casing, Seed:Sprout-source, Shell:Carapace",
+            "correctAnswer": "Seed:Kernel, Seed:Germ, Shell:Rind, Shell:Protective casing, Shell:Husk",
             "relatedWords": [
-                "aspect of Shell:Husk, Seed:Kernel, Shell:Casing, Seed:Sprout-source, Shell:Carapace",
-                "concept of Shell:Husk, Seed:Kernel, Shell:Casing, Seed:Sprout-source, Shell:Carapace",
-                "related to Shell:Husk, Seed:Kernel, Shell:Casing, Seed:Sprout-source, Shell:Carapace"
+                "Kernel: the softer inner part of a nut or seed",
+                "Germ: the part of a seed that grows into a plant",
+                "Rind: the tough outer skin of a fruit",
+                "Protective casing: a hard covering that shields what's inside",
+                "Husk: the dry outer covering of a seed or fruit"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L115_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "One seed word names the moment it begins to grow. Sort into Shell or Seed.",
             "topicBuckets": [
                 "Shell",
                 "Seed"
             ],
-            "hint": "Here's a tip: A shell is the hard outer covering protecting something, while a seed is what grows into a new plant!",
-            "explanation": "Think of 'Shell' as a hard protective outer covering (husk, casing), and 'Seed' as the part of a plant that grows into a new one (kernel, sprout-source)!",
+            "hint": "Think about protection versus potential.",
+            "explanation": "'Outer coat' and 'cracked open' both concern the shell, the second describing what must happen for growth to begin. 'Sprouting', 'embryo', and 'germinating' all describe the seed's living potential becoming active.",
             "options": [
-                "Exoskeleton",
-                "Pip",
-                "Crust-cover",
-                "Grain",
-                "Armor"
+                "Embryo",
+                "Sprouting",
+                "Germinating",
+                "Cracked open",
+                "Outer coat"
             ],
-            "correctAnswer": "Shell:Exoskeleton, Seed:Pip, Shell:Crust-cover, Seed:Grain, Shell:Armor",
+            "correctAnswer": "Seed:Embryo, Seed:Sprouting, Seed:Germinating, Shell:Cracked open, Shell:Outer coat",
             "relatedWords": [
-                "aspect of Shell:Exoskeleton, Seed:Pip, Shell:Crust-cover, Seed:Grain, Shell:Armor",
-                "concept of Shell:Exoskeleton, Seed:Pip, Shell:Crust-cover, Seed:Grain, Shell:Armor",
-                "related to Shell:Exoskeleton, Seed:Pip, Shell:Crust-cover, Seed:Grain, Shell:Armor"
+                "Embryo: the undeveloped plant inside a seed",
+                "Sprouting: beginning to grow shoots",
+                "Germinating: starting to grow from a seed",
+                "Cracked open: broken so the inside is exposed",
+                "Outer coat: the protective outer layer of a seed"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L115_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These use shell and seed figuratively, about people and ideas. Sort into Shell or Seed.",
             "topicBuckets": [
                 "Shell",
                 "Seed"
             ],
-            "hint": "Here's a tip: A shell is the hard outer covering protecting something, while a seed is what grows into a new plant!",
-            "explanation": "Think of 'Shell' as a hard protective outer covering (husk, casing), and 'Seed' as the part of a plant that grows into a new one (kernel, sprout-source)!",
+            "hint": "One phrase describes an idea at its earliest stage.",
+            "explanation": "'Hard exterior' and 'comes out of their shell' both use the shell figuratively for emotional guardedness, the second describing someone becoming more open. 'Seed of an idea' and 'planted the seed' both describe beginnings, and 'takes root' describes an idea starting to hold.",
             "options": [
-                "Pod-covering",
-                "Embryo-of-plant",
-                "Outer-coat",
-                "Germ",
-                "Rind"
+                "Takes root",
+                "Seed of an idea",
+                "Planted the seed",
+                "Comes out of their shell",
+                "Hard exterior"
             ],
-            "correctAnswer": "Shell:Pod-covering, Seed:Embryo-of-plant, Shell:Outer-coat, Seed:Germ, Shell:Rind",
+            "correctAnswer": "Seed:Takes root, Seed:Seed of an idea, Seed:Planted the seed, Shell:Comes out of their shell, Shell:Hard exterior",
             "relatedWords": [
-                "aspect of Shell:Pod-covering, Seed:Embryo-of-plant, Shell:Outer-coat, Seed:Germ, Shell:Rind",
-                "concept of Shell:Pod-covering, Seed:Embryo-of-plant, Shell:Outer-coat, Seed:Germ, Shell:Rind",
-                "related to Shell:Pod-covering, Seed:Embryo-of-plant, Shell:Outer-coat, Seed:Germ, Shell:Rind"
+                "Takes root: becomes established and starts to grow",
+                "Seed of an idea: the earliest form of an idea",
+                "Planted the seed: introduced an idea that later grew",
+                "Comes out of their shell: becomes more socially open",
+                "Hard exterior: an emotionally guarded outward manner"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L116_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Wilt or Bloom.",
             "topicBuckets": [
-                "Bloom",
-                "Wilt"
+                "Wilt",
+                "Bloom"
             ],
-            "hint": "Here's a tip: A flower blooms when it opens and flourishes, while it wilts when it droops and dies!",
-            "explanation": "Think of 'Bloom' as flowers opening and flourishing (blossom, flourish), and 'Wilt' as flowers drooping and fading (droop, shrivel)!",
+            "hint": "Think about a plant at its healthiest, and the same plant a week without water.",
+            "explanation": "Flourish, blossom, and 'flower' all describe healthy growth, with flourish suggesting thriving strongly. Droop and shrivel both describe decline, with shrivel meaning drying and shrinking.",
             "options": [
-                "Blossom",
-                "Droop",
-                "Flourish",
                 "Shrivel",
-                "Flower"
+                "Blossom",
+                "Flower",
+                "Droop",
+                "Flourish"
             ],
-            "correctAnswer": "Bloom:Blossom, Wilt:Droop, Bloom:Flourish, Wilt:Shrivel, Bloom:Flower",
+            "correctAnswer": "Wilt:Shrivel, Bloom:Blossom, Bloom:Flower, Wilt:Droop, Bloom:Flourish",
             "relatedWords": [
-                "aspect of Bloom:Blossom, Wilt:Droop, Bloom:Flourish, Wilt:Shrivel, Bloom:Flower",
-                "concept of Bloom:Blossom, Wilt:Droop, Bloom:Flourish, Wilt:Shrivel, Bloom:Flower",
-                "related to Bloom:Blossom, Wilt:Droop, Bloom:Flourish, Wilt:Shrivel, Bloom:Flower"
+                "Shrivel: to dry up and shrink",
+                "Blossom: to produce flowers",
+                "Flower: to produce blooms",
+                "Droop: to hang down limply",
+                "Flourish: to grow strongly and healthily"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L116_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "One wilt word describes a plant losing the internal water pressure that keeps it upright. Sort into Wilt or Bloom.",
             "topicBuckets": [
-                "Bloom",
-                "Wilt"
+                "Wilt",
+                "Bloom"
             ],
-            "hint": "Here's a tip: A flower blooms when it opens and flourishes, while it wilts when it droops and dies!",
-            "explanation": "Think of 'Bloom' as flowers opening and flourishing (blossom, flourish), and 'Wilt' as flowers drooping and fading (droop, shrivel)!",
+            "hint": "Plants stand up because water pressure holds them there.",
+            "explanation": "'In full bloom', 'lush', and 'budding' all describe plants growing well, with budding marking growth just beginning. 'Limp' describes a plant that's lost the water pressure holding it upright, and 'withering' describes it drying out and fading.",
             "options": [
-                "Open-up",
-                "Sag",
-                "Thrive",
-                "Fade",
-                "Burst-open"
+                "In full bloom",
+                "Withering",
+                "Limp",
+                "Budding",
+                "Lush"
             ],
-            "correctAnswer": "Bloom:Open-up, Wilt:Sag, Bloom:Thrive, Wilt:Fade, Bloom:Burst-open",
+            "correctAnswer": "Bloom:In full bloom, Wilt:Withering, Wilt:Limp, Bloom:Budding, Bloom:Lush",
             "relatedWords": [
-                "aspect of Bloom:Open-up, Wilt:Sag, Bloom:Thrive, Wilt:Fade, Bloom:Burst-open",
-                "concept of Bloom:Open-up, Wilt:Sag, Bloom:Thrive, Wilt:Fade, Bloom:Burst-open",
-                "related to Bloom:Open-up, Wilt:Sag, Bloom:Thrive, Wilt:Fade, Bloom:Burst-open"
+                "In full bloom: at the peak of flowering",
+                "Withering: drying out and fading",
+                "Limp: hanging without firmness",
+                "Budding: just beginning to grow",
+                "Lush: growing thickly and healthily"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L116_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These describe people and projects, not plants. Sort into Wilt or Bloom.",
             "topicBuckets": [
-                "Bloom",
-                "Wilt"
+                "Wilt",
+                "Bloom"
             ],
-            "hint": "Here's a tip: A flower blooms when it opens and flourishes, while it wilts when it droops and dies!",
-            "explanation": "Think of 'Bloom' as flowers opening and flourishing (blossom, flourish), and 'Wilt' as flowers drooping and fading (droop, shrivel)!",
+            "hint": "Two of these describe energy draining away under pressure.",
+            "explanation": "'Thriving' and 'coming into their own' both describe people growing into their strengths, and 'blossoming talent' describes ability becoming visible. 'Fading fast' and 'wilting under pressure' both describe energy or confidence draining away when conditions turn difficult.",
             "options": [
-                "Petal-spread",
-                "Wither",
-                "Flourishing",
-                "Limp",
-                "Vibrant-growth"
+                "Wilting under pressure",
+                "Thriving",
+                "Coming into their own",
+                "Blossoming talent",
+                "Fading fast"
             ],
-            "correctAnswer": "Bloom:Petal-spread, Wilt:Wither, Bloom:Flourishing, Wilt:Limp, Bloom:Vibrant-growth",
+            "correctAnswer": "Wilt:Wilting under pressure, Bloom:Thriving, Bloom:Coming into their own, Bloom:Blossoming talent, Wilt:Fading fast",
             "relatedWords": [
-                "aspect of Bloom:Petal-spread, Wilt:Wither, Bloom:Flourishing, Wilt:Limp, Bloom:Vibrant-growth",
-                "concept of Bloom:Petal-spread, Wilt:Wither, Bloom:Flourishing, Wilt:Limp, Bloom:Vibrant-growth",
-                "related to Bloom:Petal-spread, Wilt:Wither, Bloom:Flourishing, Wilt:Limp, Bloom:Vibrant-growth"
+                "Wilting under pressure: losing composure under strain",
+                "Thriving: growing and doing very well",
+                "Coming into their own: growing into one's full ability",
+                "Blossoming talent: ability becoming clearly visible",
+                "Fading fast: rapidly losing strength or energy"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L117_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Fall or Rise, thinking about numbers on a chart.",
             "topicBuckets": [
-                "Rise",
-                "Fall"
+                "Fall",
+                "Rise"
             ],
-            "hint": "Here's a tip: To rise is to go upward, like prices going up, while to fall is to go downward, like prices dropping!",
-            "explanation": "Think of 'Rise' as upward movement (increase, ascent), and 'Fall' as downward movement (decline, drop)!",
+            "hint": "Think about a line on a graph moving up or down.",
+            "explanation": "Increase, climb, and 'uptick' all describe numbers going up, with uptick naming a small upward movement. Decline and 'dip' both describe downward movement, with a dip suggesting a temporary drop.",
             "options": [
                 "Increase",
+                "Uptick",
                 "Decline",
-                "Ascent",
-                "Drop",
+                "Dip",
                 "Climb"
             ],
-            "correctAnswer": "Rise:Increase, Fall:Decline, Rise:Ascent, Fall:Drop, Rise:Climb",
+            "correctAnswer": "Rise:Increase, Rise:Uptick, Fall:Decline, Fall:Dip, Rise:Climb",
             "relatedWords": [
-                "aspect of Rise:Increase, Fall:Decline, Rise:Ascent, Fall:Drop, Rise:Climb",
-                "concept of Rise:Increase, Fall:Decline, Rise:Ascent, Fall:Drop, Rise:Climb",
-                "related to Rise:Increase, Fall:Decline, Rise:Ascent, Fall:Drop, Rise:Climb"
+                "Increase: to become greater in amount",
+                "Uptick: a small increase",
+                "Decline: to decrease gradually",
+                "Dip: a temporary drop",
+                "Climb: to move steadily upward"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L117_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These describe speed as well as direction. Sort into Fall or Rise.",
             "topicBuckets": [
-                "Rise",
-                "Fall"
+                "Fall",
+                "Rise"
             ],
-            "hint": "Here's a tip: To rise is to go upward, like prices going up, while to fall is to go downward, like prices dropping!",
-            "explanation": "Think of 'Rise' as upward movement (increase, ascent), and 'Fall' as downward movement (decline, drop)!",
+            "hint": "Two of these describe dramatic, sudden movement.",
+            "explanation": "Surge and soar both describe rapid upward movement, stronger than a steady climb. Plummet and plunge both describe steep, rapid falls. 'Rally' describes a recovery upward after a fall, common in market reporting.",
             "options": [
-                "Surge",
+                "Rally",
                 "Plunge",
-                "Upturn",
-                "Slump",
-                "Escalation"
+                "Surge",
+                "Soar",
+                "Plummet"
             ],
-            "correctAnswer": "Rise:Surge, Fall:Plunge, Rise:Upturn, Fall:Slump, Rise:Escalation",
+            "correctAnswer": "Rise:Rally, Fall:Plunge, Rise:Surge, Rise:Soar, Fall:Plummet",
             "relatedWords": [
-                "aspect of Rise:Surge, Fall:Plunge, Rise:Upturn, Fall:Slump, Rise:Escalation",
-                "concept of Rise:Surge, Fall:Plunge, Rise:Upturn, Fall:Slump, Rise:Escalation",
-                "related to Rise:Surge, Fall:Plunge, Rise:Upturn, Fall:Slump, Rise:Escalation"
+                "Rally: to recover upward after a decline",
+                "Plunge: to drop suddenly and steeply",
+                "Surge: a sudden strong increase",
+                "Soar: to rise quickly and high",
+                "Plummet: to fall steeply and rapidly"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L117_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Picture a financial report summarising a difficult quarter. Sort into Fall or Rise.",
             "topicBuckets": [
-                "Rise",
-                "Fall"
+                "Fall",
+                "Rise"
             ],
-            "hint": "Here's a tip: To rise is to go upward, like prices going up, while to fall is to go downward, like prices dropping!",
-            "explanation": "Think of 'Rise' as upward movement (increase, ascent), and 'Fall' as downward movement (decline, drop)!",
+            "hint": "One phrase describes the lowest point before things improve.",
+            "explanation": "'All-time high' and 'upward trend' both describe sustained growth, and 'gains' names the increase itself. 'Downturn' describes a period of decline, and 'bottomed out' describes reaching the lowest point before recovery begins.",
             "options": [
-                "Uptick",
-                "Collapse",
-                "Boost",
-                "Tumble",
-                "Spike"
+                "All-time high",
+                "Gains",
+                "Upward trend",
+                "Bottomed out",
+                "Downturn"
             ],
-            "correctAnswer": "Rise:Uptick, Fall:Collapse, Rise:Boost, Fall:Tumble, Rise:Spike",
+            "correctAnswer": "Rise:All-time high, Rise:Gains, Rise:Upward trend, Fall:Bottomed out, Fall:Downturn",
             "relatedWords": [
-                "aspect of Rise:Uptick, Fall:Collapse, Rise:Boost, Fall:Tumble, Rise:Spike",
-                "concept of Rise:Uptick, Fall:Collapse, Rise:Boost, Fall:Tumble, Rise:Spike",
-                "related to Rise:Uptick, Fall:Collapse, Rise:Boost, Fall:Tumble, Rise:Spike"
+                "All-time high: the highest level ever recorded",
+                "Gains: increases in value or amount",
+                "Upward trend: a sustained pattern of increase",
+                "Bottomed out: reached the lowest point before recovering",
+                "Downturn: a period of decline in activity"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L118_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Victory or Defeat.",
             "topicBuckets": [
                 "Victory",
                 "Defeat"
             ],
-            "hint": "Here's a tip: Victory is when you win a contest, while defeat is when you lose it!",
-            "explanation": "Think of 'Victory' as winning a contest (triumph, win), and 'Defeat' as losing a contest (loss, downfall)!",
+            "hint": "Think about which team lifts the trophy.",
+            "explanation": "Triumph, 'win', and 'championship' all describe success in competition, with triumph suggesting a notable or hard-won victory. A loss and 'elimination' both describe defeat, with elimination meaning being knocked out of a competition entirely.",
             "options": [
-                "Triumph",
-                "Loss",
+                "Elimination",
+                "Championship",
                 "Win",
-                "Downfall",
-                "Conquest"
+                "Triumph",
+                "Loss"
             ],
-            "correctAnswer": "Victory:Triumph, Defeat:Loss, Victory:Win, Defeat:Downfall, Victory:Conquest",
+            "correctAnswer": "Defeat:Elimination, Victory:Championship, Victory:Win, Victory:Triumph, Defeat:Loss",
             "relatedWords": [
-                "aspect of Victory:Triumph, Defeat:Loss, Victory:Win, Defeat:Downfall, Victory:Conquest",
-                "concept of Victory:Triumph, Defeat:Loss, Victory:Win, Defeat:Downfall, Victory:Conquest",
-                "related to Victory:Triumph, Defeat:Loss, Victory:Win, Defeat:Downfall, Victory:Conquest"
+                "Elimination: being knocked out of a competition",
+                "Championship: the title won by a competition's winner",
+                "Win: a success in a contest",
+                "Triumph: a notable, often hard-won victory",
+                "Loss: a failure to win"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L118_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "One defeat word describes losing by a very wide margin. Sort into Defeat or Victory.",
             "topicBuckets": [
-                "Victory",
-                "Defeat"
+                "Defeat",
+                "Victory"
             ],
-            "hint": "Here's a tip: Victory is when you win a contest, while defeat is when you lose it!",
-            "explanation": "Think of 'Victory' as winning a contest (triumph, win), and 'Defeat' as losing a contest (loss, downfall)!",
+            "hint": "Margins matter: these words tell you how close the result was.",
+            "explanation": "A 'landslide' and 'clean sweep' both describe winning decisively, and 'prevailed' means came out on top. A 'thrashing' describes losing by a very wide margin, and 'knocked out' describes being removed from a contest.",
             "options": [
-                "Success",
-                "Setback",
-                "Achievement",
-                "Failure",
-                "Glory"
+                "Thrashing",
+                "Prevailed",
+                "Landslide",
+                "Knocked out",
+                "Clean sweep"
             ],
-            "correctAnswer": "Victory:Success, Defeat:Setback, Victory:Achievement, Defeat:Failure, Victory:Glory",
+            "correctAnswer": "Defeat:Thrashing, Victory:Prevailed, Victory:Landslide, Defeat:Knocked out, Victory:Clean sweep",
             "relatedWords": [
-                "aspect of Victory:Success, Defeat:Setback, Victory:Achievement, Defeat:Failure, Victory:Glory",
-                "concept of Victory:Success, Defeat:Setback, Victory:Achievement, Defeat:Failure, Victory:Glory",
-                "related to Victory:Success, Defeat:Setback, Victory:Achievement, Defeat:Failure, Victory:Glory"
+                "Thrashing: a heavy, one-sided defeat",
+                "Prevailed: came out successful in the end",
+                "Landslide: an overwhelming margin of victory",
+                "Knocked out: removed from a competition after losing",
+                "Clean sweep: winning every part of a contest"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L118_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Picture a sports report on a match decided in the final seconds. Sort into Victory or Defeat.",
             "topicBuckets": [
                 "Victory",
                 "Defeat"
             ],
-            "hint": "Here's a tip: Victory is when you win a contest, while defeat is when you lose it!",
-            "explanation": "Think of 'Victory' as winning a contest (triumph, win), and 'Defeat' as losing a contest (loss, downfall)!",
+            "hint": "One phrase describes a win so costly it hardly feels like one.",
+            "explanation": "'Narrow win' and 'came from behind' both describe hard-fought success, while a 'Pyrrhic victory' is won at such cost it hardly feels like winning. 'Heartbreaking loss' and 'conceded' both describe defeat, with conceding meaning accepting the loss.",
             "options": [
-                "Championship-win",
-                "Surrender",
-                "Trophy-moment",
-                "Rout",
-                "Conquering"
+                "Narrow win",
+                "Conceded",
+                "Pyrrhic victory",
+                "Heartbreaking loss",
+                "Came from behind"
             ],
-            "correctAnswer": "Victory:Championship-win, Defeat:Surrender, Victory:Trophy-moment, Defeat:Rout, Victory:Conquering",
+            "correctAnswer": "Victory:Narrow win, Defeat:Conceded, Victory:Pyrrhic victory, Defeat:Heartbreaking loss, Victory:Came from behind",
             "relatedWords": [
-                "aspect of Victory:Championship-win, Defeat:Surrender, Victory:Trophy-moment, Defeat:Rout, Victory:Conquering",
-                "concept of Victory:Championship-win, Defeat:Surrender, Victory:Trophy-moment, Defeat:Rout, Victory:Conquering",
-                "related to Victory:Championship-win, Defeat:Surrender, Victory:Trophy-moment, Defeat:Rout, Victory:Conquering"
+                "Narrow win: a victory by a very small margin",
+                "Conceded: accepted defeat",
+                "Pyrrhic victory: a win achieved at such cost it feels like a loss",
+                "Heartbreaking loss: a defeat that is emotionally painful",
+                "Came from behind: won after trailing"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L119_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Surplus or Deficit.",
             "topicBuckets": [
                 "Surplus",
                 "Deficit"
             ],
-            "hint": "Here's a tip: A surplus is more than you need, while a deficit is less than you need!",
-            "explanation": "Think of 'Surplus' as an excess amount (excess, extra), and 'Deficit' as a shortage (shortfall, gap)!",
+            "hint": "Think about having more than you need, versus not having enough.",
+            "explanation": "Excess, 'leftover', and 'abundance' all describe having more than required. A shortage and 'shortfall' both describe falling short, with shortfall naming the exact gap between what's needed and what's there.",
             "options": [
-                "Excess",
                 "Shortfall",
-                "Extra",
-                "Gap",
-                "Overflow"
+                "Abundance",
+                "Leftover",
+                "Shortage",
+                "Excess"
             ],
-            "correctAnswer": "Surplus:Excess, Deficit:Shortfall, Surplus:Extra, Deficit:Gap, Surplus:Overflow",
+            "correctAnswer": "Deficit:Shortfall, Surplus:Abundance, Surplus:Leftover, Deficit:Shortage, Surplus:Excess",
             "relatedWords": [
-                "aspect of Surplus:Excess, Deficit:Shortfall, Surplus:Extra, Deficit:Gap, Surplus:Overflow",
-                "concept of Surplus:Excess, Deficit:Shortfall, Surplus:Extra, Deficit:Gap, Surplus:Overflow",
-                "related to Surplus:Excess, Deficit:Shortfall, Surplus:Extra, Deficit:Gap, Surplus:Overflow"
+                "Shortfall: the gap between what's needed and what's available",
+                "Abundance: a very large, plentiful quantity",
+                "Leftover: what remains after use",
+                "Shortage: a lack of something needed",
+                "Excess: an amount beyond what is needed"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L119_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "One deficit word names money owed rather than money missing. Sort into Deficit or Surplus.",
             "topicBuckets": [
-                "Surplus",
-                "Deficit"
+                "Deficit",
+                "Surplus"
             ],
-            "hint": "Here's a tip: A surplus is more than you need, while a deficit is less than you need!",
-            "explanation": "Think of 'Surplus' as an excess amount (excess, extra), and 'Deficit' as a shortage (shortfall, gap)!",
+            "hint": "In finance, being short and being in debt aren't the same thing.",
+            "explanation": "'In the black', 'reserves', and 'profit' all describe financial health, with reserves being funds set aside. 'In the red' describes spending more than is earned, and 'debt' names money owed to others \u2014 a shortfall you must repay, not simply a gap.",
             "options": [
-                "Abundance",
-                "Shortage",
-                "Leftover",
-                "Insufficiency",
-                "Reserve"
+                "Debt",
+                "In the red",
+                "In the black",
+                "Profit",
+                "Reserves"
             ],
-            "correctAnswer": "Surplus:Abundance, Deficit:Shortage, Surplus:Leftover, Deficit:Insufficiency, Surplus:Reserve",
+            "correctAnswer": "Deficit:Debt, Deficit:In the red, Surplus:In the black, Surplus:Profit, Surplus:Reserves",
             "relatedWords": [
-                "aspect of Surplus:Abundance, Deficit:Shortage, Surplus:Leftover, Deficit:Insufficiency, Surplus:Reserve",
-                "concept of Surplus:Abundance, Deficit:Shortage, Surplus:Leftover, Deficit:Insufficiency, Surplus:Reserve",
-                "related to Surplus:Abundance, Deficit:Shortage, Surplus:Leftover, Deficit:Insufficiency, Surplus:Reserve"
+                "Debt: money owed to others",
+                "In the red: spending more than is earned",
+                "In the black: operating with money remaining",
+                "Profit: financial gain after costs",
+                "Reserves: funds set aside for future use"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L119_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Picture a government budget report. Sort into Surplus or Deficit.",
             "topicBuckets": [
                 "Surplus",
                 "Deficit"
             ],
-            "hint": "Here's a tip: A surplus is more than you need, while a deficit is less than you need!",
-            "explanation": "Think of 'Surplus' as an excess amount (excess, extra), and 'Deficit' as a shortage (shortfall, gap)!",
+            "hint": "Two of these describe measures taken when money runs short.",
+            "explanation": "'Budget surplus' and 'overproduction' both describe having more than needed, and 'stockpiled' describes storing that excess. 'Austerity' names spending cuts made when funds run short, and 'borrowing requirement' names how much must be borrowed to close a gap.",
             "options": [
-                "Stockpile",
-                "Deficiency",
-                "Excess-stock",
-                "Underfunding",
-                "Spare-capacity"
+                "Budget surplus",
+                "Stockpiled",
+                "Borrowing requirement",
+                "Austerity",
+                "Overproduction"
             ],
-            "correctAnswer": "Surplus:Stockpile, Deficit:Deficiency, Surplus:Excess-stock, Deficit:Underfunding, Surplus:Spare-capacity",
+            "correctAnswer": "Surplus:Budget surplus, Surplus:Stockpiled, Deficit:Borrowing requirement, Deficit:Austerity, Surplus:Overproduction",
             "relatedWords": [
-                "aspect of Surplus:Stockpile, Deficit:Deficiency, Surplus:Excess-stock, Deficit:Underfunding, Surplus:Spare-capacity",
-                "concept of Surplus:Stockpile, Deficit:Deficiency, Surplus:Excess-stock, Deficit:Underfunding, Surplus:Spare-capacity",
-                "related to Surplus:Stockpile, Deficit:Deficiency, Surplus:Excess-stock, Deficit:Underfunding, Surplus:Spare-capacity"
+                "Budget surplus: income exceeding spending",
+                "Stockpiled: stored up for later use",
+                "Borrowing requirement: the amount that must be borrowed to cover a gap",
+                "Austerity: spending cuts made when funds are short",
+                "Overproduction: producing more than is needed"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L120_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Growth or Decay.",
             "topicBuckets": [
                 "Growth",
                 "Decay"
             ],
-            "hint": "Here's a tip: Growth means getting bigger or stronger over time, while decay means breaking down or rotting over time!",
-            "explanation": "Think of 'Growth' as increasing in size or strength (development, expansion), and 'Decay' as breaking down over time (rot, decline)!",
+            "hint": "Think about something building up over time, versus breaking down.",
+            "explanation": "Development, expansion, and 'maturation' all describe things building up or progressing. Deterioration and rot both describe breaking down, with rot specifically describing organic decomposition.",
             "options": [
                 "Development",
+                "Deterioration",
                 "Rot",
-                "Expansion",
-                "Decline",
-                "Maturation"
+                "Maturation",
+                "Expansion"
             ],
-            "correctAnswer": "Growth:Development, Decay:Rot, Growth:Expansion, Decay:Decline, Growth:Maturation",
+            "correctAnswer": "Growth:Development, Decay:Deterioration, Decay:Rot, Growth:Maturation, Growth:Expansion",
             "relatedWords": [
-                "aspect of Growth:Development, Decay:Rot, Growth:Expansion, Decay:Decline, Growth:Maturation",
-                "concept of Growth:Development, Decay:Rot, Growth:Expansion, Decay:Decline, Growth:Maturation",
-                "related to Growth:Development, Decay:Rot, Growth:Expansion, Decay:Decline, Growth:Maturation"
+                "Development: the process of growing or advancing",
+                "Deterioration: a gradual worsening in condition",
+                "Rot: the decomposition of organic matter",
+                "Maturation: the process of becoming fully developed",
+                "Expansion: an increase in size or scope"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L120_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "One decay word describes gradual wearing away by weather or use. Sort into Growth or Decay.",
             "topicBuckets": [
                 "Growth",
                 "Decay"
             ],
-            "hint": "Here's a tip: Growth means getting bigger or stronger over time, while decay means breaking down or rotting over time!",
-            "explanation": "Think of 'Growth' as increasing in size or strength (development, expansion), and 'Decay' as breaking down over time (rot, decline)!",
+            "hint": "Decay isn't always biological \u2014 some things simply wear down.",
+            "explanation": "Proliferation and 'flourishing' both describe rapid, healthy increase, and 'regeneration' describes something growing back. Erosion describes gradual wearing away by weather or use, and 'decomposition' describes organic matter breaking down completely.",
             "options": [
-                "Progress",
-                "Deterioration",
+                "Erosion",
+                "Proliferation",
                 "Flourishing",
                 "Decomposition",
-                "Advancement"
+                "Regeneration"
             ],
-            "correctAnswer": "Growth:Progress, Decay:Deterioration, Growth:Flourishing, Decay:Decomposition, Growth:Advancement",
+            "correctAnswer": "Decay:Erosion, Growth:Proliferation, Growth:Flourishing, Decay:Decomposition, Growth:Regeneration",
             "relatedWords": [
-                "aspect of Growth:Progress, Decay:Deterioration, Growth:Flourishing, Decay:Decomposition, Growth:Advancement",
-                "concept of Growth:Progress, Decay:Deterioration, Growth:Flourishing, Decay:Decomposition, Growth:Advancement",
-                "related to Growth:Progress, Decay:Deterioration, Growth:Flourishing, Decay:Decomposition, Growth:Advancement"
+                "Erosion: gradual wearing away by weather or use",
+                "Proliferation: rapid increase in number",
+                "Flourishing: growing vigorously and healthily",
+                "Decomposition: the breaking down of organic matter",
+                "Regeneration: the process of growing back or renewing"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L120_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These describe economies and ecosystems in a news report. Sort into Growth or Decay.",
             "topicBuckets": [
                 "Growth",
                 "Decay"
             ],
-            "hint": "Here's a tip: Growth means getting bigger or stronger over time, while decay means breaking down or rotting over time!",
-            "explanation": "Think of 'Growth' as increasing in size or strength (development, expansion), and 'Decay' as breaking down over time (rot, decline)!",
+            "hint": "Two of these describe systems that are running down rather than building up.",
+            "explanation": "'Thriving ecosystem', 'boom', and 'sustained expansion' all describe systems building up over time. 'Decline' names a system running down, and 'degradation' describes the quality of an environment or structure worsening.",
             "options": [
-                "Enlargement",
-                "Spoilage",
-                "Cultivation",
-                "Erosion",
-                "Proliferation"
+                "Sustained expansion",
+                "Thriving ecosystem",
+                "Boom",
+                "Degradation",
+                "Decline"
             ],
-            "correctAnswer": "Growth:Enlargement, Decay:Spoilage, Growth:Cultivation, Decay:Erosion, Growth:Proliferation",
+            "correctAnswer": "Growth:Sustained expansion, Growth:Thriving ecosystem, Growth:Boom, Decay:Degradation, Decay:Decline",
             "relatedWords": [
-                "aspect of Growth:Enlargement, Decay:Spoilage, Growth:Cultivation, Decay:Erosion, Growth:Proliferation",
-                "concept of Growth:Enlargement, Decay:Spoilage, Growth:Cultivation, Decay:Erosion, Growth:Proliferation",
-                "related to Growth:Enlargement, Decay:Spoilage, Growth:Cultivation, Decay:Erosion, Growth:Proliferation"
+                "Sustained expansion: growth continuing over a long period",
+                "Thriving ecosystem: a natural system that is healthy and growing",
+                "Boom: a period of rapid growth",
+                "Degradation: a worsening in quality or condition",
+                "Decline: a gradual reduction or worsening"
             ]
         }
     ]

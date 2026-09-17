@@ -6,20 +6,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L111_Q1",
-            "sentence": "Reviewers criticized the action film for its [TARGET] violence that added nothing to the story.",
-            "hint": "From Latin gratuitus, 'free, without cause' - added without real reason.",
+            "sentence": "The movie's [TARGET] and unnecessary violence added nothing to the plot, showing three separate ten-minute fight scenes that served no purpose.",
+            "hint": "This word describes something done without good reason, often more than what's needed.",
             "options": [
-                "Essential",
-                "Needed",
                 "Unnecessary",
+                "Essential",
+                "Necessary",
                 "Required"
             ],
-            "explanation": "Violence that added nothing to the story was added without real reason, so [TARGET] means UNNECESSARY.",
+            "explanation": "The word 'and' links [TARGET] to 'unnecessary,' and three purposeless fight scenes confirm it, so [TARGET] means UNNECESSARY.",
             "correctAnswer": "Unnecessary",
             "clueType": "synonym",
             "evidenceWords": [
-                "Reviewers",
-                "criticized"
+                "and unnecessary",
+                "served no purpose"
             ]
         },
         {
@@ -27,20 +27,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L111_Q2",
-            "sentence": "The romance novel relied on [TARGET] phrases like 'her heart skipped a beat.'",
-            "hint": "From hackney horses, once rented out so often they became worn and common.",
+            "sentence": "Unlike the fresh, original plot twist in the first act, the ending relied on a [TARGET] trope: the hero waking up to reveal it was all just a dream.",
+            "hint": "This word describes an idea so worn out it has become boring and predictable.",
             "options": [
-                "Novel",
-                "Original",
                 "Fresh",
-                "Overused"
+                "Overused",
+                "Original",
+                "Novel"
             ],
-            "explanation": "Relying on familiar phrases readers have seen many times shows being worn out from overuse, so [TARGET] means OVERUSED.",
+            "explanation": "The word 'unlike' contrasts [TARGET] with the 'fresh, original plot twist,' so it must mean the opposite, which is OVERUSED.",
             "correctAnswer": "Overused",
             "clueType": "antonym",
             "evidenceWords": [
-                "romance",
-                "novel"
+                "Unlike",
+                "fresh, original plot twist",
+                "all just a dream"
             ]
         },
         {
@@ -48,20 +49,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L111_Q3",
-            "sentence": "There was an [TARGET] understanding that whoever arrived first would unlock the office.",
-            "hint": "From Latin implicare, 'to fold in' - understood without being said directly.",
+            "sentence": "There was an [TARGET] agreement between the roommates, which means it was never actually spoken aloud but understood by both of them without needing to be said.",
+            "hint": "This word describes something understood without being directly stated.",
             "options": [
-                "Direct",
                 "Explicit",
                 "Stated",
-                "Unstated"
+                "Unspoken",
+                "Announced"
             ],
-            "explanation": "An understanding that no one stated directly is understood without being said, so [TARGET] means UNSTATED.",
-            "correctAnswer": "Unstated",
+            "explanation": "The sentence defines [TARGET] as 'never actually spoken aloud but understood,' so [TARGET] means UNSPOKEN.",
+            "correctAnswer": "Unspoken",
             "clueType": "definition",
             "evidenceWords": [
-                "There",
-                "understanding"
+                "which means",
+                "never actually spoken aloud but understood"
             ]
         },
         {
@@ -69,20 +70,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L112_Q1",
-            "sentence": "Some researchers argue that a sense of fairness may be [TARGET] in young children.",
-            "hint": "From Latin innatus, 'born within' - present from birth.",
+            "sentence": "From the moment she could walk, she balanced on the porch railing, cartwheeled across the yard, and did handstands without any lessons at all — a clearly [TARGET] sense of balance.",
+            "hint": "This word describes a quality someone is born with, not learned.",
             "options": [
-                "Inborn",
-                "Taught",
+                "Learned",
+                "Trained",
                 "Acquired",
-                "Learned"
+                "Natural"
             ],
-            "explanation": "A sense present in young children without being taught suggests it is present from birth, so [TARGET] means INBORN.",
-            "correctAnswer": "Inborn",
+            "explanation": "Balancing on a railing, cartwheeling, and doing handstands without any lessons are all examples of an ability present from birth, so [TARGET] means NATURAL.",
+            "correctAnswer": "Natural",
             "clueType": "example",
             "evidenceWords": [
-                "researchers",
-                "argue"
+                "without any lessons at all",
+                "From the moment she could walk"
             ]
         },
         {
@@ -90,20 +91,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L112_Q2",
-            "sentence": "The test revealed a [TARGET] infection that hadn't shown any symptoms yet.",
-            "hint": "From Latin latere, 'to lie concealed' - present, but not yet showing itself.",
+            "sentence": "No one at the small-town talent show had ever seen him sing before, but the moment he opened his mouth, the whole room fell silent, stunned by a voice that seemed to come from nowhere — a [TARGET] talent finally revealed.",
+            "hint": "This word describes something present but not yet developed or revealed.",
             "options": [
-                "Obvious",
-                "Apparent",
                 "Hidden",
-                "Visible"
+                "Obvious",
+                "Visible",
+                "Apparent"
             ],
-            "explanation": "An infection with no symptoms yet is present but not visible, so [TARGET] means HIDDEN.",
+            "explanation": "A voice no one had ever seen or heard before, suddenly revealed, shows a talent that was present but hidden, even without a direct clue word, so [TARGET] means HIDDEN.",
             "correctAnswer": "Hidden",
             "clueType": "inference",
             "evidenceWords": [
-                "revealed",
-                "infection"
+                "No one",
+                "had ever seen him sing before",
+                "stunned by a voice that seemed to come from nowhere"
             ]
         },
         {
@@ -111,20 +113,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L112_Q3",
-            "sentence": "After the exciting vacation, returning to [TARGET] chores like laundry felt strange.",
-            "hint": "From Latin mundus, 'world' - of the everyday world, nothing special.",
+            "sentence": "Washing dishes and folding laundry felt [TARGET] and ordinary, the same routine she'd repeated every single day for years.",
+            "hint": "This word describes something unexciting, part of everyday routine.",
             "options": [
                 "Extraordinary",
                 "Ordinary",
-                "Exotic",
+                "Thrilling",
                 "Remarkable"
             ],
-            "explanation": "Chores like laundry compared to an exciting vacation are nothing special, so [TARGET] means ORDINARY.",
+            "explanation": "The word 'and' links [TARGET] to 'ordinary,' and repeating the same routine every day confirms it, so [TARGET] means ORDINARY.",
             "correctAnswer": "Ordinary",
             "clueType": "synonym",
             "evidenceWords": [
-                "After",
-                "exciting"
+                "and ordinary",
+                "every single day for years"
             ]
         },
         {
@@ -132,20 +134,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L113_Q1",
-            "sentence": "The [TARGET] reason for the meeting was budget planning, though everyone suspected layoffs were coming.",
-            "hint": "From Latin ostendere, 'to show' - the reason shown on the surface.",
+            "sentence": "Unlike his true motive of wanting to skip the meeting, his [TARGET] reason for staying home was a headache, which he mentioned to the whole office.",
+            "hint": "This word describes something that appears true on the surface, but may not actually be so.",
             "options": [
                 "Hidden",
-                "Secret",
-                "Apparent",
-                "Concealed"
+                "True",
+                "Stated",
+                "Real"
             ],
-            "explanation": "A reason given on the surface, while people suspect another reason underneath, shows the stated, surface reason, so [TARGET] means APPARENT.",
-            "correctAnswer": "Apparent",
+            "explanation": "The word 'unlike' contrasts [TARGET] with his 'true motive,' so it must mean the opposite of the real reason, which is STATED.",
+            "correctAnswer": "Stated",
             "clueType": "antonym",
             "evidenceWords": [
-                "reason",
-                "meeting"
+                "Unlike",
+                "true motive",
+                "mentioned to the whole office"
             ]
         },
         {
@@ -153,20 +156,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L113_Q2",
-            "sentence": "The cashier gave a [TARGET] 'have a nice day' without even looking up from her phone.",
-            "hint": "From Latin perfunctus, 'performed' - done as a routine, without real effort.",
+            "sentence": "The security guard's [TARGET] check of the bags was over in two seconds, which means it was done quickly and carelessly, more out of habit than actual attention.",
+            "hint": "This word describes doing something quickly with minimal effort or care.",
             "options": [
+                "Thorough",
                 "Careful",
-                "Enthusiastic",
-                "Halfhearted",
-                "Thorough"
+                "Attentive",
+                "Careless"
             ],
-            "explanation": "Saying 'have a nice day' without looking up shows minimal real effort, so [TARGET] means HALFHEARTED.",
-            "correctAnswer": "Halfhearted",
+            "explanation": "The sentence defines [TARGET] as being 'done quickly and carelessly... out of habit,' so [TARGET] means CARELESS.",
+            "correctAnswer": "Careless",
             "clueType": "definition",
             "evidenceWords": [
-                "cashier",
-                "'have"
+                "which means",
+                "quickly and carelessly",
+                "out of habit"
             ]
         },
         {
@@ -174,20 +178,19 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L113_Q3",
-            "sentence": "She typed a quick [TARGET] into the search bar to check the store's opening hours.",
-            "hint": "From Latin quaerere, 'to ask, seek' - a request for information.",
+            "sentence": "Her [TARGET] to customer support was simple: 'Why was I charged twice for the same order?'",
+            "hint": "This word describes an inquiry made to get information or clear up confusion.",
             "options": [
+                "Question",
                 "Answer",
                 "Statement",
-                "Question",
-                "Declaration"
+                "Complaint form"
             ],
-            "explanation": "Typing something into a search bar to find information is asking a question, so [TARGET] means QUESTION.",
+            "explanation": "Asking 'Why was I charged twice' is an example of a question seeking information, so [TARGET] means QUESTION.",
             "correctAnswer": "Question",
             "clueType": "example",
             "evidenceWords": [
-                "typed",
-                "quick"
+                "Why was I charged twice"
             ]
         },
         {
@@ -195,20 +198,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L114_Q1",
-            "sentence": "After the six-hour hike, the whole group was [TARGET] and ate three plates each at dinner.",
-            "hint": "From Old French ravineux, 'rapacious' - related to a wolf's ravenous appetite.",
+            "sentence": "After hiking twelve miles with nothing but a granola bar since breakfast, the group practically inhaled the entire pizza the moment it arrived at the table, [TARGET] after the long trail.",
+            "hint": "This word describes being extremely, almost uncontrollably hungry.",
             "options": [
-                "Starving",
-                "Satisfied",
                 "Full",
+                "Famished",
+                "Satisfied",
                 "Stuffed"
             ],
-            "explanation": "Eating three plates each after a six-hour hike shows extreme hunger, so [TARGET] means STARVING.",
-            "correctAnswer": "Starving",
+            "explanation": "Hiking twelve miles on almost no food and inhaling an entire pizza the second it arrives shows extreme hunger, even without a direct clue word, so [TARGET] means FAMISHED.",
+            "correctAnswer": "Famished",
             "clueType": "inference",
             "evidenceWords": [
-                "After",
-                "six-hour"
+                "twelve miles",
+                "nothing but a granola bar",
+                "practically inhaled the entire pizza"
             ]
         },
         {
@@ -216,20 +220,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L114_Q2",
-            "sentence": "The professor asked students to identify the most [TARGET] point in the long article.",
-            "hint": "From Latin salire, 'to leap' - the point that leaps out at you.",
+            "sentence": "The lawyer focused only on the [TARGET] and most important facts of the case, ignoring every minor detail that didn't matter to the verdict.",
+            "hint": "This word describes the most noticeable or important point of something.",
             "options": [
+                "Least important",
                 "Trivial",
-                "Noticeable",
-                "Minor",
-                "Negligible"
+                "Most important",
+                "Irrelevant"
             ],
-            "explanation": "Being asked to find the most important point that stands out shows it leaps out at you, so [TARGET] means NOTICEABLE.",
-            "correctAnswer": "Noticeable",
+            "explanation": "The word 'and' links [TARGET] to 'most important,' and ignoring minor details confirms it, so [TARGET] means MOST IMPORTANT.",
+            "correctAnswer": "Most important",
             "clueType": "synonym",
             "evidenceWords": [
-                "professor",
-                "asked"
+                "and most important facts",
+                "ignoring every minor detail"
             ]
         },
         {
@@ -237,20 +241,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L114_Q3",
-            "sentence": "The professor's [TARGET] story about his college years had nothing to do with the lecture topic.",
-            "hint": "From Latin tangere, 'to touch' - touching the topic only briefly before veering away.",
+            "sentence": "Unlike the central argument that directly addressed the budget crisis, his comment about the office coffee machine was completely [TARGET], barely connected to the discussion at hand.",
+            "hint": "This word describes something only loosely related to the main topic.",
             "options": [
-                "Focused",
                 "Central",
                 "Relevant",
+                "Directly related",
                 "Off-topic"
             ],
-            "explanation": "A story with nothing to do with the lecture topic veers away from the main subject, so [TARGET] means OFF-TOPIC.",
+            "explanation": "The word 'unlike' contrasts [TARGET] with the 'central argument,' so it must mean the opposite, which is OFF-TOPIC.",
             "correctAnswer": "Off-topic",
             "clueType": "antonym",
             "evidenceWords": [
-                "professor's",
-                "story"
+                "Unlike",
+                "central argument",
+                "barely connected to the discussion"
             ]
         },
         {
@@ -258,20 +263,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L115_Q1",
-            "sentence": "Constant interruptions during her presentation began to [TARGET] her confidence.",
-            "hint": "Literally to dig (mine) beneath something to make it collapse.",
+            "sentence": "Spreading rumors about her coworker's abilities began to [TARGET] his reputation, which means it slowly weakened and damaged the trust others had in him.",
+            "hint": "This word means to gradually erode or damage something, often secretly.",
             "options": [
-                "Reinforce",
                 "Weaken",
+                "Strengthen",
                 "Support",
-                "Strengthen"
+                "Boost"
             ],
-            "explanation": "Constant interruptions slowly damaging her confidence describes digging beneath it to make it collapse, so [TARGET] means WEAKEN.",
+            "explanation": "The sentence defines [TARGET] as 'slowly weakened and damaged the trust,' so [TARGET] means WEAKEN.",
             "correctAnswer": "Weaken",
             "clueType": "definition",
             "evidenceWords": [
-                "Constant",
-                "interruptions"
+                "which means",
+                "slowly weakened and damaged"
             ]
         },
         {
@@ -279,20 +284,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L115_Q2",
-            "sentence": "New security footage finally [TARGET]d the employee who had been wrongly accused of theft.",
-            "hint": "From Latin vindicare, 'to avenge, set free' - proving innocence.",
+            "sentence": "New DNA evidence finally helped to [TARGET] him: the case was reopened, the original conviction was overturned, and he walked out of prison a free man after twenty years.",
+            "hint": "This word means to prove someone innocent or right after doubt.",
             "options": [
                 "Convict",
-                "Accuse",
-                "Exonerate",
-                "Implicate"
+                "Clear",
+                "Blame",
+                "Condemn"
             ],
-            "explanation": "Footage proving an employee's innocence after a wrongful accusation shows clearing them of blame, so [TARGET] means EXONERATE.",
-            "correctAnswer": "Exonerate",
+            "explanation": "Reopening the case, overturning the conviction, and walking free are all examples of being cleared of blame, so [TARGET] means CLEAR.",
+            "correctAnswer": "Clear",
             "clueType": "example",
             "evidenceWords": [
-                "security",
-                "footage"
+                "case was reopened",
+                "original conviction was overturned",
+                "walked out of prison a free man"
             ]
         },
         {
@@ -300,20 +306,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L115_Q3",
-            "sentence": "Interest in the once-popular app began to [TARGET] once a newer competitor launched.",
-            "hint": "From Old English wanian, 'to lessen' - as the moon wanes after the full moon.",
+            "sentence": "The moon grew thinner each night, shrinking from a full bright circle to a slim curve, and would keep shrinking until nothing was left but darkness — slowly beginning to [TARGET].",
+            "hint": "This word means to gradually decrease in size, strength, or intensity.",
             "options": [
-                "Increase",
-                "Decline",
-                "Surge",
-                "Grow"
+                "Grow",
+                "Expand",
+                "Shrink",
+                "Increase"
             ],
-            "explanation": "Interest dropping after a newer app launched shows decline, so [TARGET] means DECLINE.",
-            "correctAnswer": "Decline",
+            "explanation": "The moon growing thinner each night and shrinking toward darkness shows a gradual decrease, even without a direct clue word, so [TARGET] means SHRINK.",
+            "correctAnswer": "Shrink",
             "clueType": "inference",
             "evidenceWords": [
-                "Interest",
-                "once-popular"
+                "grew thinner each night",
+                "shrinking from a full bright circle to a slim curve"
             ]
         },
         {
@@ -321,20 +327,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L116_Q1",
-            "sentence": "Living abroad, she began to [TARGET] for her mother's home-cooked meals.",
-            "hint": "From Old English giernan, 'to desire' - a deep, aching wish for something.",
+            "sentence": "Living in the crowded city, she would [TARGET], or long, for the quiet mountain cabin where she grew up.",
+            "hint": "This word means to have a deep, persistent desire for something.",
             "options": [
-                "Pine",
-                "Despise",
+                "Dislike",
                 "Reject",
-                "Dread"
+                "Avoid",
+                "Long"
             ],
-            "explanation": "Missing home-cooked meals while living abroad shows a deep, aching wish for them, so [TARGET] means PINE.",
-            "correctAnswer": "Pine",
+            "explanation": "The word 'or' signals that [TARGET] means the same as 'long,' so [TARGET] means LONG.",
+            "correctAnswer": "Long",
             "clueType": "synonym",
             "evidenceWords": [
-                "Living",
-                "abroad"
+                "or long",
+                "quiet mountain cabin where she grew up"
             ]
         },
         {
@@ -342,20 +348,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L116_Q2",
-            "sentence": "As a true [TARGET] of Italian wine, she could name the region just from a single sip.",
-            "hint": "From French connaitre, 'to know' - someone with deep, refined knowledge of a subject.",
+            "sentence": "Unlike casual diners who just wanted something filling, the [TARGET] at the table could describe the exact region a wine came from just by smelling it.",
+            "hint": "This word describes someone with deep knowledge and refined taste in a particular subject, often food, art, or wine.",
             "options": [
-                "Beginner",
                 "Expert",
-                "Amateur",
-                "Novice"
+                "Novice",
+                "Beginner",
+                "Amateur"
             ],
-            "explanation": "Naming the region from a single sip shows deep, refined knowledge of a subject, so [TARGET] means EXPERT.",
+            "explanation": "The word 'unlike' contrasts [TARGET] with 'casual diners' who just wanted food, so it must mean the opposite, which is EXPERT.",
             "correctAnswer": "Expert",
             "clueType": "antonym",
             "evidenceWords": [
-                "Italian",
-                "could"
+                "Unlike",
+                "casual diners who just wanted something filling",
+                "describe the exact region a wine came from"
             ]
         },
         {
@@ -363,20 +370,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L116_Q3",
-            "sentence": "The harsh correction in front of the whole class seemed to [TARGET] the young student.",
-            "hint": "From Old French esbahir, 'to be amazed' - to make someone feel small.",
+            "sentence": "The teacher's public correction seemed to [TARGET] the student, which means it made him feel embarrassed and self-conscious in front of the whole class.",
+            "hint": "This word means to make someone feel self-conscious or ashamed.",
             "options": [
-                "Embarrass",
                 "Encourage",
-                "Comfort",
-                "Reassure"
+                "Embarrass",
+                "Praise",
+                "Honor"
             ],
-            "explanation": "A harsh correction in front of the whole class would make a student feel small, so [TARGET] means EMBARRASS.",
+            "explanation": "The sentence defines [TARGET] as making him 'feel embarrassed and self-conscious,' so [TARGET] means EMBARRASS.",
             "correctAnswer": "Embarrass",
             "clueType": "definition",
             "evidenceWords": [
-                "harsh",
-                "correction"
+                "which means",
+                "feel embarrassed and self-conscious"
             ]
         },
         {
@@ -384,20 +391,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L117_Q1",
-            "sentence": "The university decided to [TARGET] an honorary degree on the retiring professor.",
-            "hint": "From be- + stow, 'to place' - to formally give something as an honor.",
+            "sentence": "The university chose to [TARGET] its highest honor on the retiring professor: an honorary degree, a portrait in the main hall, and a scholarship fund named after her.",
+            "hint": "This word means to formally grant something, often as an honor.",
             "options": [
-                "Deny",
-                "Refuse",
                 "Withhold",
-                "Grant"
+                "Deny",
+                "Give",
+                "Refuse"
             ],
-            "explanation": "Formally giving a degree as an honor describes granting it, so [TARGET] means GRANT.",
-            "correctAnswer": "Grant",
+            "explanation": "An honorary degree, a portrait, and a scholarship fund named after her are all examples of formally giving an honor, so [TARGET] means GIVE.",
+            "correctAnswer": "Give",
             "clueType": "example",
             "evidenceWords": [
-                "university",
-                "decided"
+                "honorary degree",
+                "portrait in the main hall",
+                "scholarship fund named after her"
             ]
         },
         {
@@ -405,20 +413,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L117_Q2",
-            "sentence": "Without enough evidence, the scientists could only offer a [TARGET] about the fossil's age.",
-            "hint": "From Latin conjicere, 'to throw together' - an idea pieced together without full proof.",
+            "sentence": "No one actually knew why the ancient city had been abandoned, but historians offered a dozen different theories, each one a guess pieced together from broken pottery and half-erased inscriptions — pure [TARGET], not proven fact.",
+            "hint": "This word describes an educated guess formed without complete evidence.",
             "options": [
+                "Proof",
                 "Fact",
-                "Guess",
                 "Certainty",
-                "Proof"
+                "Speculation"
             ],
-            "explanation": "Offering an idea without enough evidence is offering a guess, so [TARGET] means GUESS.",
-            "correctAnswer": "Guess",
+            "explanation": "A dozen different theories pieced together from broken pottery and unclear inscriptions, without anyone actually knowing, shows guessing rather than proven fact, even without a direct clue word, so [TARGET] means SPECULATION.",
+            "correctAnswer": "Speculation",
             "clueType": "inference",
             "evidenceWords": [
-                "Without",
-                "enough"
+                "No one actually knew why",
+                "a dozen different theories",
+                "a guess pieced together"
             ]
         },
         {
@@ -426,20 +435,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L117_Q3",
-            "sentence": "The older kids would [TARGET] his old sneakers every day at recess.",
-            "hint": "From Latin deridere, 'to laugh at' - to make fun of someone harshly.",
+            "sentence": "The critics would [TARGET], or mock, the young painter's early work, calling it childish and amateurish in every review.",
+            "hint": "This word means to make fun of someone or something in a scornful way.",
             "options": [
                 "Mock",
-                "Admire",
                 "Praise",
-                "Compliment"
+                "Admire",
+                "Celebrate"
             ],
-            "explanation": "Making fun of someone's sneakers every day at recess shows mocking them, so [TARGET] means MOCK.",
+            "explanation": "The word 'or' signals that [TARGET] means the same as 'mock,' so [TARGET] means MOCK.",
             "correctAnswer": "Mock",
             "clueType": "synonym",
             "evidenceWords": [
-                "older",
-                "would"
+                "or mock",
+                "childish and amateurish"
             ]
         },
         {
@@ -447,20 +456,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L118_Q1",
-            "sentence": "Every time he tells the fishing story, he seems to [TARGET] the size of the fish a little more.",
-            "hint": "From Old French embellir, 'to make beautiful' - to add extra, often unneeded, detail.",
+            "sentence": "Unlike the plain, bare-bones police report that listed only the facts, the witness's retelling of the chase seemed to [TARGET] it with dramatic details, adding a car explosion that never actually happened.",
+            "hint": "This word means to add extra, often overblown, details to make something more interesting.",
             "options": [
                 "Simplify",
-                "Minimize",
-                "Understate",
-                "Exaggerate"
+                "Exaggerate",
+                "Strip down",
+                "Understate"
             ],
-            "explanation": "The fish getting bigger every time the story is told shows adding extra, exaggerated detail, so [TARGET] means EXAGGERATE.",
+            "explanation": "The word 'unlike' contrasts [TARGET] with a report that 'listed only the facts,' so it must mean the opposite, which is EXAGGERATE.",
             "correctAnswer": "Exaggerate",
             "clueType": "antonym",
             "evidenceWords": [
-                "Every",
-                "tells"
+                "Unlike",
+                "listed only the facts",
+                "car explosion that never actually happened"
             ]
         },
         {
@@ -468,20 +478,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L118_Q2",
-            "sentence": "Even the engineers struggled to [TARGET] why the system kept crashing at midnight.",
-            "hint": "Originally a unit for measuring ocean depth - to get to the bottom of something.",
+            "sentence": "She couldn't [TARGET] how anyone could betray a close friend like that, which means she was completely unable to understand or make sense of such an action.",
+            "hint": "This word means to fully grasp something complex or hard to make sense of.",
             "options": [
-                "Disregard",
+                "Ignore",
+                "Ridicule",
                 "Understand",
-                "Dismiss",
-                "Ignore"
+                "Dismiss"
             ],
-            "explanation": "Struggling to figure out why the system kept crashing shows trying to get to the bottom of it, so [TARGET] means UNDERSTAND.",
+            "explanation": "The sentence defines [TARGET] as being 'unable to understand or make sense of' the action, so [TARGET] means UNDERSTAND.",
             "correctAnswer": "Understand",
             "clueType": "definition",
             "evidenceWords": [
-                "engineers",
-                "struggled"
+                "which means",
+                "unable to understand or make sense"
             ]
         },
         {
@@ -489,20 +499,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L118_Q3",
-            "sentence": "From the old letters, historians were able to [TARGET] new details about daily life in the 1800s.",
-            "hint": "From Old French glener, originally about collecting the leftover grain missed after a harvest.",
+            "sentence": "From three old letters, a faded photograph, and a single entry in a ship's logbook, the historian managed to [TARGET] enough details to reconstruct the sailor's entire final voyage.",
+            "hint": "This word means to collect information gradually, bit by bit from limited sources.",
             "options": [
-                "Waste",
-                "Gather",
-                "Scatter",
-                "Discard"
+                "Discard",
+                "Ignore",
+                "Lose",
+                "Gather"
             ],
-            "explanation": "Pulling new details out of old letters shows gathering information bit by bit, so [TARGET] means GATHER.",
+            "explanation": "Three old letters, a faded photograph, and one logbook entry are all limited sources from which small pieces of information were gathered, so [TARGET] means GATHER.",
             "correctAnswer": "Gather",
             "clueType": "example",
             "evidenceWords": [
-                "letters",
-                "historians"
+                "three old letters",
+                "faded photograph",
+                "single entry in a ship's logbook"
             ]
         },
         {
@@ -510,20 +521,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L119_Q1",
-            "sentence": "The delivery drone began to [TARGET] above the porch, waiting for the door to open.",
-            "hint": "From an old word meaning to remain suspended in one spot.",
+            "sentence": "The drone stayed at the exact same spot in the air, neither rising nor falling, its rotors humming steadily as it held perfectly still above the field, continuing to [TARGET] there for several minutes.",
+            "hint": "This word means to remain suspended in one place in the air.",
             "options": [
-                "Float",
-                "Crash",
-                "Plummet",
-                "Sink"
+                "Float in place",
+                "Crash down",
+                "Fly away",
+                "Land"
             ],
-            "explanation": "Remaining suspended above the porch while waiting describes floating in place, so [TARGET] means FLOAT.",
-            "correctAnswer": "Float",
+            "explanation": "Staying at the exact same spot, neither rising nor falling, and holding perfectly still all show remaining suspended in the air, even without a direct clue word, so [TARGET] means FLOAT IN PLACE.",
+            "correctAnswer": "Float in place",
             "clueType": "inference",
             "evidenceWords": [
-                "delivery",
-                "drone"
+                "stayed at the exact same spot",
+                "neither rising nor falling",
+                "held perfectly still"
             ]
         },
         {
@@ -531,20 +543,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L119_Q2",
-            "sentence": "Witnesses said the younger brother seemed to [TARGET] the argument by repeating the insult.",
-            "hint": "From Latin instigare, 'to goad' - to stir something up on purpose.",
+            "sentence": "Investigators believed one angry email was enough to [TARGET], or trigger, the chain of events that led to the factory strike.",
+            "hint": "This word means to bring about or start an action, often something disruptive.",
             "options": [
-                "Calm",
-                "Provoke",
-                "Discourage",
-                "Prevent"
+                "Prevent",
+                "Trigger",
+                "Stop",
+                "Halt"
             ],
-            "explanation": "Repeating an insult to stir up an argument shows provoking it on purpose, so [TARGET] means PROVOKE.",
-            "correctAnswer": "Provoke",
+            "explanation": "The word 'or' signals that [TARGET] means the same as 'trigger,' so [TARGET] means TRIGGER.",
+            "correctAnswer": "Trigger",
             "clueType": "synonym",
             "evidenceWords": [
-                "Witnesses",
-                "younger"
+                "or trigger",
+                "chain of events"
             ]
         },
         {
@@ -552,20 +564,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L119_Q3",
-            "sentence": "Missing one more deadline could [TARGET] the entire contract with the client.",
-            "hint": "From Old French jeu parti, 'a divided game' - putting something at real risk.",
+            "sentence": "Unlike the careful safety checks that protected the whole crew, skipping the pre-flight inspection would [TARGET] everyone on board.",
+            "hint": "This word means to put something, often safety or success, at serious risk.",
             "options": [
                 "Protect",
-                "Safeguard",
                 "Secure",
-                "Endanger"
+                "Endanger",
+                "Safeguard"
             ],
-            "explanation": "Putting an entire contract at risk over one missed deadline shows endangering it, so [TARGET] means ENDANGER.",
+            "explanation": "The word 'unlike' contrasts [TARGET] with 'careful safety checks that protected the whole crew,' so it must mean the opposite, which is ENDANGER.",
             "correctAnswer": "Endanger",
             "clueType": "antonym",
             "evidenceWords": [
-                "Missing",
-                "deadline"
+                "Unlike",
+                "careful safety checks that protected the whole crew",
+                "skipping the pre-flight inspection"
             ]
         },
         {
@@ -573,20 +586,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L120_Q1",
-            "sentence": "Her [TARGET] eye for detail let her spot the typo everyone else had missed.",
-            "hint": "From Old English cene, 'bold' - describes a mind that notices what others miss.",
+            "sentence": "She had a [TARGET] eye for detail, which means she noticed the smallest inconsistencies that everyone else in the room had completely missed.",
+            "hint": "This word describes having an especially perceptive eye for noticing details.",
             "options": [
                 "Dull",
-                "Blunt",
-                "Mild",
+                "Careless",
+                "Oblivious",
                 "Sharp"
             ],
-            "explanation": "Spotting a typo everyone else missed shows a quick, perceptive eye, so [TARGET] means SHARP.",
+            "explanation": "The sentence defines [TARGET] as noticing 'the smallest inconsistencies... everyone else... missed,' so [TARGET] means SHARP.",
             "correctAnswer": "Sharp",
             "clueType": "definition",
             "evidenceWords": [
-                "detail",
-                "everyone"
+                "which means",
+                "smallest inconsistencies",
+                "completely missed"
             ]
         },
         {
@@ -594,20 +608,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L120_Q2",
-            "sentence": "As a child, she would [TARGET] anything green on her plate, especially broccoli.",
-            "hint": "From Old English lathian, 'to hate' - a very strong dislike.",
+            "sentence": "She would [TARGET] Mondays: she'd hit snooze six times, drag herself out of bed with a groan, and spend the entire commute dreading the day ahead.",
+            "hint": "This word means to feel intense dislike or hatred for something.",
             "options": [
+                "Despise",
+                "Adore",
                 "Cherish",
-                "Detest",
-                "Treasure",
-                "Adore"
+                "Love"
             ],
-            "explanation": "Strongly disliking anything green, especially broccoli, shows a very strong dislike, so [TARGET] means DETEST.",
-            "correctAnswer": "Detest",
+            "explanation": "Hitting snooze six times, groaning out of bed, and dreading the whole commute are all examples of intense dislike, so [TARGET] means DESPISE.",
+            "correctAnswer": "Despise",
             "clueType": "example",
             "evidenceWords": [
-                "child",
-                "would"
+                "hit snooze six times",
+                "drag herself out of bed with a groan",
+                "dreading the day ahead"
             ]
         },
         {
@@ -615,20 +630,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L120_Q3",
-            "sentence": "Her thoughtful, well-researched essay clearly [TARGET]d the top grade in the class.",
-            "hint": "From Latin meritum, 'that which is earned' - to have earned something through effort.",
+            "sentence": "She earned the scholarship not through connections or luck, but by scoring highest on every exam, publishing two research papers before graduation, and volunteering more hours than any other applicant — she won it entirely on her own [TARGET].",
+            "hint": "This word describes deserving reward or praise because of one's own qualities or achievements.",
             "options": [
-                "Squander",
-                "Lose",
-                "Forfeit",
-                "Deserve"
+                "Luck",
+                "Deserved qualities",
+                "Connections",
+                "Chance"
             ],
-            "explanation": "A thoughtful, well-researched essay earning the top grade shows it deserved that result, so [TARGET] means DESERVE.",
-            "correctAnswer": "Deserve",
+            "explanation": "Scoring highest, publishing research, and volunteering the most all show earning something through one's own achievements, even without a direct clue word, so [TARGET] means DESERVED QUALITIES.",
+            "correctAnswer": "Deserved qualities",
             "clueType": "inference",
             "evidenceWords": [
-                "thoughtful",
-                "well-researched"
+                "not through connections or luck",
+                "scoring highest on every exam",
+                "publishing two research papers"
             ]
         }
     ],

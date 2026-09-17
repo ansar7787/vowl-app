@@ -6,721 +6,781 @@
         {
             "id": "VOC_TOPICVOCAB_L81_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Neat or Messy.",
             "topicBuckets": [
                 "Neat",
                 "Messy"
             ],
-            "hint": "Here's a tip: A neat room is tidy and organized, while a messy room is cluttered and disorganized!",
-            "explanation": "Think of 'Neat' as tidy, organized spaces (orderly, spotless), and 'Messy' as cluttered, disorganized spaces (untidy, chaotic)!",
+            "hint": "Think about a desk where everything has its place, versus one buried under papers.",
+            "explanation": "Orderly, organized, and tidy all describe things arranged properly and easy to navigate. Cluttered and disheveled both describe disorder, with disheveled specifically describing untidy appearance, especially hair or clothing.",
             "options": [
                 "Orderly",
-                "Untidy",
                 "Tidy",
-                "Cluttered",
-                "Organized"
+                "Disheveled",
+                "Organized",
+                "Cluttered"
             ],
-            "correctAnswer": "Neat:Orderly, Messy:Untidy, Neat:Tidy, Messy:Cluttered, Neat:Organized",
+            "correctAnswer": "Neat:Orderly, Neat:Tidy, Messy:Disheveled, Neat:Organized, Messy:Cluttered",
             "relatedWords": [
-                "aspect of Neat:Orderly, Messy:Untidy, Neat:Tidy, Messy:Cluttered, Neat:Organized",
-                "concept of Neat:Orderly, Messy:Untidy, Neat:Tidy, Messy:Cluttered, Neat:Organized",
-                "related to Neat:Orderly, Messy:Untidy, Neat:Tidy, Messy:Cluttered, Neat:Organized"
+                "Orderly: neatly and methodically arranged",
+                "Tidy: neat and free of mess",
+                "Disheveled: untidy in appearance, especially hair or clothes",
+                "Organized: arranged in a systematic way",
+                "Cluttered: filled with too many scattered things"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L81_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "One neat word suggests such extreme care it can sound obsessive. Sort into Neat or Messy.",
             "topicBuckets": [
                 "Neat",
                 "Messy"
             ],
-            "hint": "Here's a tip: A neat room is tidy and organized, while a messy room is cluttered and disorganized!",
-            "explanation": "Think of 'Neat' as tidy, organized spaces (orderly, spotless), and 'Messy' as cluttered, disorganized spaces (untidy, chaotic)!",
+            "hint": "Notice the tone: which word praises attention to detail, and which hints at going too far?",
+            "explanation": "Meticulous and fastidious both describe extreme attention to detail, though fastidious can sound critical, hinting someone is fussy. Immaculate is straightforwardly positive. Chaotic and haphazard describe disorder, with haphazard suggesting a lack of any plan rather than active mess.",
             "options": [
-                "Spotless",
+                "Meticulous",
                 "Chaotic",
-                "Systematic",
-                "Disheveled",
-                "Sorted"
+                "Fastidious",
+                "Immaculate",
+                "Haphazard"
             ],
-            "correctAnswer": "Neat:Spotless, Messy:Chaotic, Neat:Systematic, Messy:Disheveled, Neat:Sorted",
+            "correctAnswer": "Neat:Meticulous, Messy:Chaotic, Neat:Fastidious, Neat:Immaculate, Messy:Haphazard",
             "relatedWords": [
-                "aspect of Neat:Spotless, Messy:Chaotic, Neat:Systematic, Messy:Disheveled, Neat:Sorted",
-                "concept of Neat:Spotless, Messy:Chaotic, Neat:Systematic, Messy:Disheveled, Neat:Sorted",
-                "related to Neat:Spotless, Messy:Chaotic, Neat:Systematic, Messy:Disheveled, Neat:Sorted"
+                "Meticulous: showing great attention to detail",
+                "Chaotic: completely disordered and confused",
+                "Fastidious: very attentive to detail, sometimes excessively so",
+                "Immaculate: perfectly clean and tidy",
+                "Haphazard: done without plan or order"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L81_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Picture a shared workspace being described in a team review. Sort into Neat or Messy.",
             "topicBuckets": [
                 "Neat",
                 "Messy"
             ],
-            "hint": "Here's a tip: A neat room is tidy and organized, while a messy room is cluttered and disorganized!",
-            "explanation": "Think of 'Neat' as tidy, organized spaces (orderly, spotless), and 'Messy' as cluttered, disorganized spaces (untidy, chaotic)!",
+            "hint": "Two of these describe a space so disordered it slows people down.",
+            "explanation": "Streamlined and 'well-kept' both describe spaces designed or maintained for efficiency. Ramshackle describes something poorly built and falling apart, strewn describes items scattered carelessly across a surface, and 'in disarray' describes a state of confused disorder.",
             "options": [
-                "Streamlined",
-                "Jumbled",
-                "Trim",
-                "Disorderly",
-                "Precise"
+                "In disarray",
+                "Well-kept",
+                "Strewn",
+                "Ramshackle",
+                "Streamlined"
             ],
-            "correctAnswer": "Neat:Streamlined, Messy:Jumbled, Neat:Trim, Messy:Disorderly, Neat:Precise",
+            "correctAnswer": "Messy:In disarray, Neat:Well-kept, Messy:Strewn, Messy:Ramshackle, Neat:Streamlined",
             "relatedWords": [
-                "aspect of Neat:Streamlined, Messy:Jumbled, Neat:Trim, Messy:Disorderly, Neat:Precise",
-                "concept of Neat:Streamlined, Messy:Jumbled, Neat:Trim, Messy:Disorderly, Neat:Precise",
-                "related to Neat:Streamlined, Messy:Jumbled, Neat:Trim, Messy:Disorderly, Neat:Precise"
+                "In disarray: in a state of confused disorder",
+                "Well-kept: maintained carefully over time",
+                "Strewn: scattered carelessly over an area",
+                "Ramshackle: poorly maintained and close to falling apart",
+                "Streamlined: arranged efficiently, without excess"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L82_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Bold or Shy.",
             "topicBuckets": [
                 "Bold",
                 "Shy"
             ],
-            "hint": "Here's a tip: A bold person speaks up confidently, while a shy person feels nervous around others!",
-            "explanation": "Think of 'Bold' as confident, outgoing behavior (daring, assertive), and 'Shy' as nervous, withdrawn behavior (timid, reserved)!",
+            "hint": "Think about who speaks first in a room of strangers, and who waits to be spoken to.",
+            "explanation": "Outgoing, confident, and assertive all describe someone comfortable putting themselves forward, though assertive specifically means standing up for what you want. Reserved and bashful both describe holding back, with bashful suggesting a self-conscious shyness.",
             "options": [
-                "Daring",
-                "Timid",
+                "Outgoing",
+                "Confident",
+                "Bashful",
                 "Assertive",
-                "Reserved",
-                "Confident"
+                "Reserved"
             ],
-            "correctAnswer": "Bold:Daring, Shy:Timid, Bold:Assertive, Shy:Reserved, Bold:Confident",
+            "correctAnswer": "Bold:Outgoing, Bold:Confident, Shy:Bashful, Bold:Assertive, Shy:Reserved",
             "relatedWords": [
-                "aspect of Bold:Daring, Shy:Timid, Bold:Assertive, Shy:Reserved, Bold:Confident",
-                "concept of Bold:Daring, Shy:Timid, Bold:Assertive, Shy:Reserved, Bold:Confident",
-                "related to Bold:Daring, Shy:Timid, Bold:Assertive, Shy:Reserved, Bold:Confident"
+                "Outgoing: friendly and socially confident",
+                "Confident: sure of oneself",
+                "Bashful: shy and easily embarrassed",
+                "Assertive: expressing needs and views firmly",
+                "Reserved: keeping thoughts and feelings private"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L82_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "One bold word is a compliment, and one is a criticism for pushing too far. Sort into Bold or Shy.",
             "topicBuckets": [
                 "Bold",
                 "Shy"
             ],
-            "hint": "Here's a tip: A bold person speaks up confidently, while a shy person feels nervous around others!",
-            "explanation": "Think of 'Bold' as confident, outgoing behavior (daring, assertive), and 'Shy' as nervous, withdrawn behavior (timid, reserved)!",
+            "hint": "Watch the connotation \u2014 boldness can tip over into rudeness.",
+            "explanation": "Self-assured is admiring, while brazen criticises boldness that ignores normal limits of politeness. Forthright means direct and honest. Timid and retiring both describe shyness, with retiring suggesting a quiet preference for staying out of attention.",
             "options": [
-                "Outgoing",
-                "Bashful",
-                "Audacious",
-                "Withdrawn",
-                "Fearless"
+                "Forthright",
+                "Timid",
+                "Self-assured",
+                "Retiring",
+                "Brazen"
             ],
-            "correctAnswer": "Bold:Outgoing, Shy:Bashful, Bold:Audacious, Shy:Withdrawn, Bold:Fearless",
+            "correctAnswer": "Bold:Forthright, Shy:Timid, Bold:Self-assured, Shy:Retiring, Bold:Brazen",
             "relatedWords": [
-                "aspect of Bold:Outgoing, Shy:Bashful, Bold:Audacious, Shy:Withdrawn, Bold:Fearless",
-                "concept of Bold:Outgoing, Shy:Bashful, Bold:Audacious, Shy:Withdrawn, Bold:Fearless",
-                "related to Bold:Outgoing, Shy:Bashful, Bold:Audacious, Shy:Withdrawn, Bold:Fearless"
+                "Forthright: direct and honest in manner",
+                "Timid: lacking confidence, easily frightened",
+                "Self-assured: calmly confident in oneself",
+                "Retiring: preferring to avoid attention",
+                "Brazen: boldly disregarding normal politeness"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L82_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Picture how a manager might describe two employees in a performance review. Sort into Bold or Shy.",
             "topicBuckets": [
                 "Bold",
                 "Shy"
             ],
-            "hint": "Here's a tip: A bold person speaks up confidently, while a shy person feels nervous around others!",
-            "explanation": "Think of 'Bold' as confident, outgoing behavior (daring, assertive), and 'Shy' as nervous, withdrawn behavior (timid, reserved)!",
+            "hint": "Think about who takes charge without being asked, and who avoids the spotlight.",
+            "explanation": "'Takes initiative' and 'commanding presence' both describe professional confidence, while audacious suggests daring that takes real nerve. Soft-spoken describes a quiet manner without judging it, and 'reticent' describes someone reluctant to share their views.",
             "options": [
-                "Self-assured",
-                "Introverted",
-                "Forward",
-                "Hesitant",
-                "Brazen"
+                "Audacious",
+                "Takes initiative",
+                "Reticent",
+                "Soft-spoken",
+                "Commanding presence"
             ],
-            "correctAnswer": "Bold:Self-assured, Shy:Introverted, Bold:Forward, Shy:Hesitant, Bold:Brazen",
+            "correctAnswer": "Bold:Audacious, Bold:Takes initiative, Shy:Reticent, Shy:Soft-spoken, Bold:Commanding presence",
             "relatedWords": [
-                "aspect of Bold:Self-assured, Shy:Introverted, Bold:Forward, Shy:Hesitant, Bold:Brazen",
-                "concept of Bold:Self-assured, Shy:Introverted, Bold:Forward, Shy:Hesitant, Bold:Brazen",
-                "related to Bold:Self-assured, Shy:Introverted, Bold:Forward, Shy:Hesitant, Bold:Brazen"
+                "Audacious: boldly daring",
+                "Takes initiative: acts without needing to be told",
+                "Reticent: reluctant to speak or share opinions",
+                "Soft-spoken: speaking quietly and gently",
+                "Commanding presence: naturally drawing attention and respect"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L83_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Proud or Humble.",
             "topicBuckets": [
                 "Proud",
                 "Humble"
             ],
-            "hint": "Here's a tip: A proud person feels great about their achievements, while a humble person stays modest about them!",
-            "explanation": "Think of 'Proud' as feeling satisfaction in achievement (confident, dignified), and 'Humble' as modest, unassuming behavior (modest, down-to-earth)!",
+            "hint": "Think about how someone reacts when they're praised.",
+            "explanation": "Boastful and arrogant both describe pride expressed outwardly, with arrogant carrying a stronger sense of looking down on others. Dignified describes pride held with quiet self-respect. Modest and unassuming both describe downplaying one's own importance.",
             "options": [
+                "Boastful",
+                "Unassuming",
                 "Dignified",
-                "Modest",
-                "Confident",
-                "Down-to-earth",
-                "Self-respecting"
+                "Arrogant",
+                "Modest"
             ],
-            "correctAnswer": "Proud:Dignified, Humble:Modest, Proud:Confident, Humble:Down-to-earth, Proud:Self-respecting",
+            "correctAnswer": "Proud:Boastful, Humble:Unassuming, Proud:Dignified, Proud:Arrogant, Humble:Modest",
             "relatedWords": [
-                "aspect of Proud:Dignified, Humble:Modest, Proud:Confident, Humble:Down-to-earth, Proud:Self-respecting",
-                "concept of Proud:Dignified, Humble:Modest, Proud:Confident, Humble:Down-to-earth, Proud:Self-respecting",
-                "related to Proud:Dignified, Humble:Modest, Proud:Confident, Humble:Down-to-earth, Proud:Self-respecting"
+                "Boastful: talking with excessive pride about oneself",
+                "Unassuming: not seeking attention or praise",
+                "Dignified: showing calm self-respect",
+                "Arrogant: having an exaggerated sense of one's own importance",
+                "Modest: not boastful about abilities or achievements"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L83_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Two of these describe pride so strong it becomes a flaw. Sort into Humble or Proud.",
             "topicBuckets": [
-                "Proud",
-                "Humble"
+                "Humble",
+                "Proud"
             ],
-            "hint": "Here's a tip: A proud person feels great about their achievements, while a humble person stays modest about them!",
-            "explanation": "Think of 'Proud' as feeling satisfaction in achievement (confident, dignified), and 'Humble' as modest, unassuming behavior (modest, down-to-earth)!",
+            "hint": "Think about where confidence stops and contempt for others begins.",
+            "explanation": "Conceited and haughty both describe excessive pride, with haughty specifically suggesting cold superiority toward others. Self-effacing and 'down-to-earth' both describe humility, with self-effacing meaning actively avoiding credit, while down-to-earth simply means practical and unpretentious.",
             "options": [
-                "Accomplished",
-                "Unassuming",
-                "Honored",
-                "Unpretentious",
-                "Triumphant"
+                "Self-effacing",
+                "Vain",
+                "Haughty",
+                "Conceited",
+                "Down-to-earth"
             ],
-            "correctAnswer": "Proud:Accomplished, Humble:Unassuming, Proud:Honored, Humble:Unpretentious, Proud:Triumphant",
+            "correctAnswer": "Humble:Self-effacing, Proud:Vain, Proud:Haughty, Proud:Conceited, Humble:Down-to-earth",
             "relatedWords": [
-                "aspect of Proud:Accomplished, Humble:Unassuming, Proud:Honored, Humble:Unpretentious, Proud:Triumphant",
-                "concept of Proud:Accomplished, Humble:Unassuming, Proud:Honored, Humble:Unpretentious, Proud:Triumphant",
-                "related to Proud:Accomplished, Humble:Unassuming, Proud:Honored, Humble:Unpretentious, Proud:Triumphant"
+                "Self-effacing: avoiding attention or credit for oneself",
+                "Vain: excessively proud of one's appearance or abilities",
+                "Haughty: coldly superior toward others",
+                "Conceited: excessively proud of oneself",
+                "Down-to-earth: practical and without pretension"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L83_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Imagine an interview where someone is asked about a major achievement. Sort into Proud or Humble.",
             "topicBuckets": [
                 "Proud",
                 "Humble"
             ],
-            "hint": "Here's a tip: A proud person feels great about their achievements, while a humble person stays modest about them!",
-            "explanation": "Think of 'Proud' as feeling satisfaction in achievement (confident, dignified), and 'Humble' as modest, unassuming behavior (modest, down-to-earth)!",
+            "hint": "Notice who claims the credit and who passes it on.",
+            "explanation": "'Takes all the credit' and grandiose both describe pride that centres attention on oneself, while 'stands tall' describes earned, justified pride. 'Credits the team' and 'plays it down' both describe humility in practice \u2014 redirecting recognition or minimising one's own role.",
             "options": [
-                "Boastful",
-                "Meek",
-                "Satisfied",
-                "Modest-minded",
-                "Gratified"
+                "Takes all the credit",
+                "Credits the team",
+                "Plays it down",
+                "Grandiose",
+                "Stands tall"
             ],
-            "correctAnswer": "Proud:Boastful, Humble:Meek, Proud:Satisfied, Humble:Modest-minded, Proud:Gratified",
+            "correctAnswer": "Proud:Takes all the credit, Humble:Credits the team, Humble:Plays it down, Proud:Grandiose, Proud:Stands tall",
             "relatedWords": [
-                "aspect of Proud:Boastful, Humble:Meek, Proud:Satisfied, Humble:Modest-minded, Proud:Gratified",
-                "concept of Proud:Boastful, Humble:Meek, Proud:Satisfied, Humble:Modest-minded, Proud:Gratified",
-                "related to Proud:Boastful, Humble:Meek, Proud:Satisfied, Humble:Modest-minded, Proud:Gratified"
+                "Takes all the credit: claims sole recognition for shared work",
+                "Credits the team: gives recognition to others",
+                "Plays it down: makes an achievement seem less significant",
+                "Grandiose: impressively exaggerated in self-importance",
+                "Stands tall: shows justified, earned pride"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L84_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Giving or Greedy.",
             "topicBuckets": [
-                "Greedy",
-                "Giving"
+                "Giving",
+                "Greedy"
             ],
-            "hint": "Here's a tip: A greedy person wants more than they need, while a giving person shares freely with others!",
-            "explanation": "Think of 'Greedy' as excessive desire to keep things (selfish, grasping), and 'Giving' as generous sharing with others (charitable, generous)!",
+            "hint": "Think about someone dividing a shared resource.",
+            "explanation": "Selfish and stingy both describe an unwillingness to share, though stingy specifically concerns money. Generous and charitable both describe willingly giving, with charitable often implying giving to those in need. Hoarding describes keeping far more than one needs.",
             "options": [
-                "Selfish",
                 "Charitable",
-                "Grasping",
+                "Stingy",
+                "Hoarding",
                 "Generous",
-                "Hoarding"
+                "Selfish"
             ],
-            "correctAnswer": "Greedy:Selfish, Giving:Charitable, Greedy:Grasping, Giving:Generous, Greedy:Hoarding",
+            "correctAnswer": "Giving:Charitable, Greedy:Stingy, Greedy:Hoarding, Giving:Generous, Greedy:Selfish",
             "relatedWords": [
-                "aspect of Greedy:Selfish, Giving:Charitable, Greedy:Grasping, Giving:Generous, Greedy:Hoarding",
-                "concept of Greedy:Selfish, Giving:Charitable, Greedy:Grasping, Giving:Generous, Greedy:Hoarding",
-                "related to Greedy:Selfish, Giving:Charitable, Greedy:Grasping, Giving:Generous, Greedy:Hoarding"
+                "Charitable: giving help, often to those in need",
+                "Stingy: unwilling to spend or share money",
+                "Hoarding: keeping far more than one needs",
+                "Generous: willing to give freely",
+                "Selfish: concerned mainly with one's own needs"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L84_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "One giving word describes generosity so warm it makes guests feel at home. Sort into Greedy or Giving.",
             "topicBuckets": [
                 "Greedy",
                 "Giving"
             ],
-            "hint": "Here's a tip: A greedy person wants more than they need, while a giving person shares freely with others!",
-            "explanation": "Think of 'Greedy' as excessive desire to keep things (selfish, grasping), and 'Giving' as generous sharing with others (charitable, generous)!",
+            "hint": "Think about hosting someone versus grasping at more.",
+            "explanation": "Avaricious and grasping both describe an intense hunger for more, especially wealth, with grasping suggesting an unpleasant eagerness. Openhanded, magnanimous, and 'big-hearted' all describe generosity, with magnanimous specifically meaning generous even toward rivals.",
             "options": [
-                "Possessive",
-                "Benevolent",
-                "Insatiable",
-                "Selfless",
-                "Stingy"
+                "Openhanded",
+                "Grasping",
+                "Avaricious",
+                "Magnanimous",
+                "Big-hearted"
             ],
-            "correctAnswer": "Greedy:Possessive, Giving:Benevolent, Greedy:Insatiable, Giving:Selfless, Greedy:Stingy",
+            "correctAnswer": "Giving:Openhanded, Greedy:Grasping, Greedy:Avaricious, Giving:Magnanimous, Giving:Big-hearted",
             "relatedWords": [
-                "aspect of Greedy:Possessive, Giving:Benevolent, Greedy:Insatiable, Giving:Selfless, Greedy:Stingy",
-                "concept of Greedy:Possessive, Giving:Benevolent, Greedy:Insatiable, Giving:Selfless, Greedy:Stingy",
-                "related to Greedy:Possessive, Giving:Benevolent, Greedy:Insatiable, Giving:Selfless, Greedy:Stingy"
+                "Openhanded: freely generous",
+                "Grasping: unpleasantly eager to get more",
+                "Avaricious: having an extreme desire for wealth",
+                "Magnanimous: generous, especially toward rivals",
+                "Big-hearted: kind and generous in spirit"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L84_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Picture how a news article might describe two very different business owners. Sort into Giving or Greedy.",
             "topicBuckets": [
-                "Greedy",
-                "Giving"
+                "Giving",
+                "Greedy"
             ],
-            "hint": "Here's a tip: A greedy person wants more than they need, while a giving person shares freely with others!",
-            "explanation": "Think of 'Greedy' as excessive desire to keep things (selfish, grasping), and 'Giving' as generous sharing with others (charitable, generous)!",
+            "hint": "One giving word describes large-scale organised generosity.",
+            "explanation": "Exploitative and 'profiteering' both describe taking unfair advantage for gain, with profiteering specifically meaning making excessive profit from a crisis. Philanthropic and 'gives back' describe deliberate generosity, with philanthropy meaning organised giving on a large scale. 'Self-serving' describes acting purely in one's own interest.",
             "options": [
-                "Materialistic",
+                "Gives back",
+                "Self-serving",
+                "Profiteering",
                 "Philanthropic",
-                "Covetous",
-                "Open-handed",
-                "Acquisitive"
+                "Exploitative"
             ],
-            "correctAnswer": "Greedy:Materialistic, Giving:Philanthropic, Greedy:Covetous, Giving:Open-handed, Greedy:Acquisitive",
+            "correctAnswer": "Giving:Gives back, Greedy:Self-serving, Greedy:Profiteering, Giving:Philanthropic, Greedy:Exploitative",
             "relatedWords": [
-                "aspect of Greedy:Materialistic, Giving:Philanthropic, Greedy:Covetous, Giving:Open-handed, Greedy:Acquisitive",
-                "concept of Greedy:Materialistic, Giving:Philanthropic, Greedy:Covetous, Giving:Open-handed, Greedy:Acquisitive",
-                "related to Greedy:Materialistic, Giving:Philanthropic, Greedy:Covetous, Giving:Open-handed, Greedy:Acquisitive"
+                "Gives back: returns benefit to a community",
+                "Self-serving: acting only in one's own interest",
+                "Profiteering: making excessive profit, often during a crisis",
+                "Philanthropic: giving generously on an organised scale",
+                "Exploitative: taking unfair advantage of others"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L85_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Cunning or Naive.",
             "topicBuckets": [
                 "Cunning",
                 "Naive"
             ],
-            "hint": "Here's a tip: A cunning person tricks others cleverly, while a naive person trusts too easily and gets fooled!",
-            "explanation": "Think of 'Cunning' as clever, deceptive behavior (sly, scheming), and 'Naive' as innocent, easily-fooled behavior (gullible, inexperienced)!",
+            "hint": "Think about who sees the trick coming, and who walks right into it.",
+            "explanation": "Crafty and sly both describe cleverness used to gain an advantage, often with a hint of dishonesty. Shrewd is more neutral, praising sharp practical judgement. Gullible and trusting both describe being easily deceived, though trusting is far kinder in tone.",
             "options": [
-                "Sly",
                 "Gullible",
-                "Scheming",
-                "Inexperienced",
+                "Trusting",
+                "Shrewd",
+                "Sly",
                 "Crafty"
             ],
-            "correctAnswer": "Cunning:Sly, Naive:Gullible, Cunning:Scheming, Naive:Inexperienced, Cunning:Crafty",
+            "correctAnswer": "Naive:Gullible, Naive:Trusting, Cunning:Shrewd, Cunning:Sly, Cunning:Crafty",
             "relatedWords": [
-                "aspect of Cunning:Sly, Naive:Gullible, Cunning:Scheming, Naive:Inexperienced, Cunning:Crafty",
-                "concept of Cunning:Sly, Naive:Gullible, Cunning:Scheming, Naive:Inexperienced, Cunning:Crafty",
-                "related to Cunning:Sly, Naive:Gullible, Cunning:Scheming, Naive:Inexperienced, Cunning:Crafty"
+                "Gullible: easily tricked or deceived",
+                "Trusting: readily believing others",
+                "Shrewd: having sharp practical judgement",
+                "Sly: clever in a secretive way",
+                "Crafty: clever at achieving aims, often deceptively"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L85_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "One naive word simply means inexperienced, without insulting the person. Sort into Naive or Cunning.",
             "topicBuckets": [
-                "Cunning",
-                "Naive"
+                "Naive",
+                "Cunning"
             ],
-            "hint": "Here's a tip: A cunning person tricks others cleverly, while a naive person trusts too easily and gets fooled!",
-            "explanation": "Think of 'Cunning' as clever, deceptive behavior (sly, scheming), and 'Naive' as innocent, easily-fooled behavior (gullible, inexperienced)!",
+            "hint": "Separate genuine insults from neutral descriptions of inexperience.",
+            "explanation": "Calculating and scheming both describe planning carefully for personal advantage, with scheming implying secret plotting. Wily suggests clever trickery. Green and 'wet behind the ears' both describe inexperience, with green being neutral and the idiom being lightly teasing.",
             "options": [
+                "Wet behind the ears",
+                "Green",
                 "Wily",
-                "Innocent",
-                "Devious",
-                "Unsuspecting",
+                "Scheming",
                 "Calculating"
             ],
-            "correctAnswer": "Cunning:Wily, Naive:Innocent, Cunning:Devious, Naive:Unsuspecting, Cunning:Calculating",
+            "correctAnswer": "Naive:Wet behind the ears, Naive:Green, Cunning:Wily, Cunning:Scheming, Cunning:Calculating",
             "relatedWords": [
-                "aspect of Cunning:Wily, Naive:Innocent, Cunning:Devious, Naive:Unsuspecting, Cunning:Calculating",
-                "concept of Cunning:Wily, Naive:Innocent, Cunning:Devious, Naive:Unsuspecting, Cunning:Calculating",
-                "related to Cunning:Wily, Naive:Innocent, Cunning:Devious, Naive:Unsuspecting, Cunning:Calculating"
+                "Wet behind the ears: so new as to be visibly inexperienced",
+                "Green: new to something and untested",
+                "Wily: skilled at clever trickery",
+                "Scheming: secretly plotting for gain",
+                "Calculating: planning carefully for personal advantage"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L85_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Imagine two negotiators sitting across a table. Sort into Naive or Cunning.",
             "topicBuckets": [
-                "Cunning",
-                "Naive"
+                "Naive",
+                "Cunning"
             ],
-            "hint": "Here's a tip: A cunning person tricks others cleverly, while a naive person trusts too easily and gets fooled!",
-            "explanation": "Think of 'Cunning' as clever, deceptive behavior (sly, scheming), and 'Naive' as innocent, easily-fooled behavior (gullible, inexperienced)!",
+            "hint": "Think about who reads the room, and who takes every claim at face value.",
+            "explanation": "Astute and 'reads between the lines' both describe perceptive skill in spotting what isn't said outright, while 'plays the long game' describes patient strategy. Credulous means believing things too readily, and 'takes things at face value' describes accepting claims without questioning them.",
             "options": [
-                "Manipulative",
-                "Trusting",
-                "Foxy",
-                "Unworldly",
-                "Shrewd"
+                "Plays the long game",
+                "Credulous",
+                "Takes things at face value",
+                "Reads between the lines",
+                "Astute"
             ],
-            "correctAnswer": "Cunning:Manipulative, Naive:Trusting, Cunning:Foxy, Naive:Unworldly, Cunning:Shrewd",
+            "correctAnswer": "Cunning:Plays the long game, Naive:Credulous, Naive:Takes things at face value, Cunning:Reads between the lines, Cunning:Astute",
             "relatedWords": [
-                "aspect of Cunning:Manipulative, Naive:Trusting, Cunning:Foxy, Naive:Unworldly, Cunning:Shrewd",
-                "concept of Cunning:Manipulative, Naive:Trusting, Cunning:Foxy, Naive:Unworldly, Cunning:Shrewd",
-                "related to Cunning:Manipulative, Naive:Trusting, Cunning:Foxy, Naive:Unworldly, Cunning:Shrewd"
+                "Plays the long game: acts strategically for future gain",
+                "Credulous: too ready to believe things",
+                "Takes things at face value: accepts claims without questioning",
+                "Reads between the lines: understands what is implied but unsaid",
+                "Astute: perceptive and quick to see advantage"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L86_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Wise or Foolish.",
             "topicBuckets": [
                 "Wise",
                 "Foolish"
             ],
-            "hint": "Here's a tip: A wise person makes thoughtful decisions, while a foolish person acts without thinking!",
-            "explanation": "Think of 'Wise' as good judgment from experience (sensible, sage), and 'Foolish' as poor judgment (silly, reckless)!",
+            "hint": "Think about a decision that holds up years later, versus one regretted by morning.",
+            "explanation": "Sensible, prudent, and judicious all describe sound judgement, with prudent emphasising caution about the future. Reckless and rash both describe acting without thinking, though rash stresses speed while reckless stresses ignoring danger.",
             "options": [
-                "Sensible",
-                "Silly",
-                "Sage",
+                "Rash",
+                "Prudent",
+                "Judicious",
                 "Reckless",
-                "Insightful"
+                "Sensible"
             ],
-            "correctAnswer": "Wise:Sensible, Foolish:Silly, Wise:Sage, Foolish:Reckless, Wise:Insightful",
+            "correctAnswer": "Foolish:Rash, Wise:Prudent, Wise:Judicious, Foolish:Reckless, Wise:Sensible",
             "relatedWords": [
-                "aspect of Wise:Sensible, Foolish:Silly, Wise:Sage, Foolish:Reckless, Wise:Insightful",
-                "concept of Wise:Sensible, Foolish:Silly, Wise:Sage, Foolish:Reckless, Wise:Insightful",
-                "related to Wise:Sensible, Foolish:Silly, Wise:Sage, Foolish:Reckless, Wise:Insightful"
+                "Rash: acting too quickly without thought",
+                "Prudent: careful about future consequences",
+                "Judicious: showing careful, balanced judgement",
+                "Reckless: acting without regard for danger",
+                "Sensible: showing good practical judgement"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L86_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "One wise word describes knowledge gained through long experience rather than study. Sort into Foolish or Wise.",
             "topicBuckets": [
-                "Wise",
-                "Foolish"
+                "Foolish",
+                "Wise"
             ],
-            "hint": "Here's a tip: A wise person makes thoughtful decisions, while a foolish person acts without thinking!",
-            "explanation": "Think of 'Wise' as good judgment from experience (sensible, sage), and 'Foolish' as poor judgment (silly, reckless)!",
+            "hint": "Think about wisdom earned over decades versus facts learned from a book.",
+            "explanation": "Sagacious and 'worldly-wise' both describe deep understanding, with worldly-wise specifically meaning knowledge gained from life experience. Discerning means able to judge quality well. Impulsive and misguided both describe poor judgement, with misguided suggesting good intentions applied wrongly.",
             "options": [
-                "Prudent",
-                "Senseless",
-                "Knowledgeable",
-                "Absurd",
-                "Judicious"
+                "Sagacious",
+                "Misguided",
+                "Impulsive",
+                "Discerning",
+                "Worldly-wise"
             ],
-            "correctAnswer": "Wise:Prudent, Foolish:Senseless, Wise:Knowledgeable, Foolish:Absurd, Wise:Judicious",
+            "correctAnswer": "Wise:Sagacious, Foolish:Misguided, Foolish:Impulsive, Wise:Discerning, Wise:Worldly-wise",
             "relatedWords": [
-                "aspect of Wise:Prudent, Foolish:Senseless, Wise:Knowledgeable, Foolish:Absurd, Wise:Judicious",
-                "concept of Wise:Prudent, Foolish:Senseless, Wise:Knowledgeable, Foolish:Absurd, Wise:Judicious",
-                "related to Wise:Prudent, Foolish:Senseless, Wise:Knowledgeable, Foolish:Absurd, Wise:Judicious"
+                "Sagacious: having keen, deep judgement",
+                "Misguided: well-intentioned but mistaken",
+                "Impulsive: acting suddenly without planning",
+                "Discerning: able to judge quality well",
+                "Worldly-wise: knowledgeable from life experience"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L86_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Picture a financial adviser reviewing two clients' decisions. Sort into Wise or Foolish.",
             "topicBuckets": [
                 "Wise",
                 "Foolish"
             ],
-            "hint": "Here's a tip: A wise person makes thoughtful decisions, while a foolish person acts without thinking!",
-            "explanation": "Think of 'Wise' as good judgment from experience (sensible, sage), and 'Foolish' as poor judgment (silly, reckless)!",
+            "hint": "One foolish phrase describes a choice that ignores obvious warning signs.",
+            "explanation": "'Well-considered' and 'measured' both describe decisions made after weighing options, and 'foresight' names the ability to anticipate consequences. 'Short-sighted' describes focusing on immediate gain while ignoring the future, and 'ill-advised' marks a decision as unwise even if it seemed reasonable.",
             "options": [
-                "Thoughtful",
-                "Careless",
-                "Shrewd",
-                "Naive-acting",
-                "Sound-minded"
+                "Ill-advised",
+                "Well-considered",
+                "Measured",
+                "Foresight",
+                "Short-sighted"
             ],
-            "correctAnswer": "Wise:Thoughtful, Foolish:Careless, Wise:Shrewd, Foolish:Naive-acting, Wise:Sound-minded",
+            "correctAnswer": "Foolish:Ill-advised, Wise:Well-considered, Wise:Measured, Wise:Foresight, Foolish:Short-sighted",
             "relatedWords": [
-                "aspect of Wise:Thoughtful, Foolish:Careless, Wise:Shrewd, Foolish:Naive-acting, Wise:Sound-minded",
-                "concept of Wise:Thoughtful, Foolish:Careless, Wise:Shrewd, Foolish:Naive-acting, Wise:Sound-minded",
-                "related to Wise:Thoughtful, Foolish:Careless, Wise:Shrewd, Foolish:Naive-acting, Wise:Sound-minded"
+                "Ill-advised: unwise, likely to cause problems",
+                "Well-considered: decided after careful thought",
+                "Measured: careful and controlled in judgement",
+                "Foresight: the ability to anticipate what will happen",
+                "Short-sighted: focused on the present, ignoring future consequences"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L87_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Rude or Polite.",
             "topicBuckets": [
-                "Polite",
-                "Rude"
+                "Rude",
+                "Polite"
             ],
-            "hint": "Here's a tip: A polite person says please and thank you, while a rude person ignores manners!",
-            "explanation": "Think of 'Polite' as respectful, courteous behavior (well-mannered, courteous), and 'Rude' as disrespectful behavior (impolite, discourteous)!",
+            "hint": "Think about how someone treats a waiter on a busy night.",
+            "explanation": "Courteous, respectful, and considerate all describe treating others with care, with considerate specifically meaning thinking about others' feelings. Impolite and disrespectful both describe rudeness, with disrespectful implying a failure to honour someone's standing.",
             "options": [
                 "Courteous",
+                "Considerate",
                 "Impolite",
-                "Well-mannered",
-                "Discourteous",
+                "Disrespectful",
                 "Respectful"
             ],
-            "correctAnswer": "Polite:Courteous, Rude:Impolite, Polite:Well-mannered, Rude:Discourteous, Polite:Respectful",
+            "correctAnswer": "Polite:Courteous, Polite:Considerate, Rude:Impolite, Rude:Disrespectful, Polite:Respectful",
             "relatedWords": [
-                "aspect of Polite:Courteous, Rude:Impolite, Polite:Well-mannered, Rude:Discourteous, Polite:Respectful",
-                "concept of Polite:Courteous, Rude:Impolite, Polite:Well-mannered, Rude:Discourteous, Polite:Respectful",
-                "related to Polite:Courteous, Rude:Impolite, Polite:Well-mannered, Rude:Discourteous, Polite:Respectful"
+                "Courteous: polite and well-mannered",
+                "Considerate: thoughtful about others' feelings",
+                "Impolite: not showing good manners",
+                "Disrespectful: showing a lack of regard for others",
+                "Respectful: showing regard for others"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L87_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Two of these describe rudeness that is abrupt rather than hostile. Sort into Polite or Rude.",
             "topicBuckets": [
                 "Polite",
                 "Rude"
             ],
-            "hint": "Here's a tip: A polite person says please and thank you, while a rude person ignores manners!",
-            "explanation": "Think of 'Polite' as respectful, courteous behavior (well-mannered, courteous), and 'Rude' as disrespectful behavior (impolite, discourteous)!",
+            "hint": "Being short with someone isn't the same as insulting them.",
+            "explanation": "Gracious and tactful both describe smooth, careful politeness, with tactful specifically meaning handling delicate matters without causing offence. Curt and blunt describe abruptness rather than hostility \u2014 blunt can even be a virtue in the right setting. Obnoxious describes actively unpleasant behaviour.",
             "options": [
+                "Obnoxious",
+                "Blunt",
                 "Gracious",
-                "Insolent",
-                "Considerate",
-                "Disrespectful",
-                "Civil"
+                "Tactful",
+                "Curt"
             ],
-            "correctAnswer": "Polite:Gracious, Rude:Insolent, Polite:Considerate, Rude:Disrespectful, Polite:Civil",
+            "correctAnswer": "Rude:Obnoxious, Rude:Blunt, Polite:Gracious, Polite:Tactful, Rude:Curt",
             "relatedWords": [
-                "aspect of Polite:Gracious, Rude:Insolent, Polite:Considerate, Rude:Disrespectful, Polite:Civil",
-                "concept of Polite:Gracious, Rude:Insolent, Polite:Considerate, Rude:Disrespectful, Polite:Civil",
-                "related to Polite:Gracious, Rude:Insolent, Polite:Considerate, Rude:Disrespectful, Polite:Civil"
+                "Obnoxious: extremely unpleasant to be around",
+                "Blunt: direct to the point of seeming rude",
+                "Gracious: kind and courteous in manner",
+                "Tactful: handling delicate matters without causing offence",
+                "Curt: noticeably short and abrupt in speech"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L87_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Picture the difference between a formal email and a message fired off in anger. Sort into Polite or Rude.",
             "topicBuckets": [
                 "Polite",
                 "Rude"
             ],
-            "hint": "Here's a tip: A polite person says please and thank you, while a rude person ignores manners!",
-            "explanation": "Think of 'Polite' as respectful, courteous behavior (well-mannered, courteous), and 'Rude' as disrespectful behavior (impolite, discourteous)!",
+            "hint": "Register matters here: think about what belongs in professional writing.",
+            "explanation": "'Cordially' and 'with all due respect' both signal formal politeness in professional writing, and deferential describes showing respect for someone's authority. Dismissive describes treating someone's view as unworthy of attention, and condescending describes talking down to someone as if they were less capable.",
             "options": [
-                "Diplomatic",
-                "Impertinent",
-                "Tactful",
-                "Crude",
-                "Refined"
+                "Cordially",
+                "Deferential",
+                "With all due respect",
+                "Condescending",
+                "Dismissive"
             ],
-            "correctAnswer": "Polite:Diplomatic, Rude:Impertinent, Polite:Tactful, Rude:Crude, Polite:Refined",
+            "correctAnswer": "Polite:Cordially, Polite:Deferential, Polite:With all due respect, Rude:Condescending, Rude:Dismissive",
             "relatedWords": [
-                "aspect of Polite:Diplomatic, Rude:Impertinent, Polite:Tactful, Rude:Crude, Polite:Refined",
-                "concept of Polite:Diplomatic, Rude:Impertinent, Polite:Tactful, Rude:Crude, Polite:Refined",
-                "related to Polite:Diplomatic, Rude:Impertinent, Polite:Tactful, Rude:Crude, Polite:Refined"
+                "Cordially: in a warm, formally polite way",
+                "Deferential: showing respect for someone's authority",
+                "With all due respect: a formal phrase softening disagreement",
+                "Condescending: talking down to someone",
+                "Dismissive: treating something as unworthy of attention"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L88_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Kind or Cruel.",
             "topicBuckets": [
                 "Kind",
                 "Cruel"
             ],
-            "hint": "Here's a tip: A kind person treats others gently, while a cruel person causes pain on purpose!",
-            "explanation": "Think of 'Kind' as caring, gentle behavior (compassionate, caring), and 'Cruel' as harsh, harmful behavior (heartless, brutal)!",
+            "hint": "Think about how someone treats a person who can't do anything for them.",
+            "explanation": "Compassionate and caring both describe concern for others' wellbeing, with compassionate specifically implying a wish to relieve suffering. Kindhearted describes a gentle nature. Heartless and malicious both describe cruelty, with malicious meaning deliberately intending harm.",
             "options": [
-                "Compassionate",
-                "Heartless",
+                "Malicious",
+                "Kindhearted",
                 "Caring",
-                "Brutal",
-                "Tender-hearted"
+                "Compassionate",
+                "Heartless"
             ],
-            "correctAnswer": "Kind:Compassionate, Cruel:Heartless, Kind:Caring, Cruel:Brutal, Kind:Tender-hearted",
+            "correctAnswer": "Cruel:Malicious, Kind:Kindhearted, Kind:Caring, Kind:Compassionate, Cruel:Heartless",
             "relatedWords": [
-                "aspect of Kind:Compassionate, Cruel:Heartless, Kind:Caring, Cruel:Brutal, Kind:Tender-hearted",
-                "concept of Kind:Compassionate, Cruel:Heartless, Kind:Caring, Cruel:Brutal, Kind:Tender-hearted",
-                "related to Kind:Compassionate, Cruel:Heartless, Kind:Caring, Cruel:Brutal, Kind:Tender-hearted"
+                "Malicious: intending to cause harm",
+                "Kindhearted: naturally gentle and kind",
+                "Caring: showing concern for others",
+                "Compassionate: wanting to relieve others' suffering",
+                "Heartless: showing no feeling for others"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L88_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "One cruel word describes indifference rather than active harm. Sort into Cruel or Kind.",
             "topicBuckets": [
-                "Kind",
-                "Cruel"
+                "Cruel",
+                "Kind"
             ],
-            "hint": "Here's a tip: A kind person treats others gently, while a cruel person causes pain on purpose!",
-            "explanation": "Think of 'Kind' as caring, gentle behavior (compassionate, caring), and 'Cruel' as harsh, harmful behavior (heartless, brutal)!",
+            "hint": "Not caring at all can be its own kind of cruelty.",
+            "explanation": "Benevolent and humane both describe kindness, with humane specifically meaning treating people or animals without unnecessary suffering. Sympathetic means sharing another's feelings. Callous describes cruel indifference rather than active harm, and vindictive describes cruelty driven by a desire for revenge.",
             "options": [
-                "Considerate",
-                "Merciless",
+                "Callous",
+                "Sympathetic",
                 "Benevolent",
-                "Vicious",
-                "Warm-hearted"
+                "Vindictive",
+                "Humane"
             ],
-            "correctAnswer": "Kind:Considerate, Cruel:Merciless, Kind:Benevolent, Cruel:Vicious, Kind:Warm-hearted",
+            "correctAnswer": "Cruel:Callous, Kind:Sympathetic, Kind:Benevolent, Cruel:Vindictive, Kind:Humane",
             "relatedWords": [
-                "aspect of Kind:Considerate, Cruel:Merciless, Kind:Benevolent, Cruel:Vicious, Kind:Warm-hearted",
-                "concept of Kind:Considerate, Cruel:Merciless, Kind:Benevolent, Cruel:Vicious, Kind:Warm-hearted",
-                "related to Kind:Considerate, Cruel:Merciless, Kind:Benevolent, Cruel:Vicious, Kind:Warm-hearted"
+                "Callous: cruelly indifferent to others' suffering",
+                "Sympathetic: sharing and understanding others' feelings",
+                "Benevolent: well-meaning and kindly",
+                "Vindictive: seeking revenge",
+                "Humane: treating others without unnecessary suffering"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L88_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Picture how a report might describe the treatment of people in someone's care. Sort into Kind or Cruel.",
             "topicBuckets": [
                 "Kind",
                 "Cruel"
             ],
-            "hint": "Here's a tip: A kind person treats others gently, while a cruel person causes pain on purpose!",
-            "explanation": "Think of 'Kind' as caring, gentle behavior (compassionate, caring), and 'Cruel' as harsh, harmful behavior (heartless, brutal)!",
+            "hint": "Two of these are formal words used in official findings about mistreatment.",
+            "explanation": "'Nurturing' and 'supportive' both describe care that helps someone grow, and 'goes out of their way' describes kindness beyond what's required. Neglectful and abusive are formal terms used in official reports, with neglectful meaning failing to provide needed care, and abusive meaning actively harmful treatment.",
             "options": [
-                "Gentle-natured",
-                "Sadistic",
-                "Sympathetic",
-                "Ruthless",
-                "Good-hearted"
+                "Nurturing",
+                "Abusive",
+                "Goes out of their way",
+                "Neglectful",
+                "Supportive"
             ],
-            "correctAnswer": "Kind:Gentle-natured, Cruel:Sadistic, Kind:Sympathetic, Cruel:Ruthless, Kind:Good-hearted",
+            "correctAnswer": "Kind:Nurturing, Cruel:Abusive, Kind:Goes out of their way, Cruel:Neglectful, Kind:Supportive",
             "relatedWords": [
-                "aspect of Kind:Gentle-natured, Cruel:Sadistic, Kind:Sympathetic, Cruel:Ruthless, Kind:Good-hearted",
-                "concept of Kind:Gentle-natured, Cruel:Sadistic, Kind:Sympathetic, Cruel:Ruthless, Kind:Good-hearted",
-                "related to Kind:Gentle-natured, Cruel:Sadistic, Kind:Sympathetic, Cruel:Ruthless, Kind:Good-hearted"
+                "Nurturing: caring for someone in a way that helps them grow",
+                "Abusive: treating someone harmfully",
+                "Goes out of their way: makes extra effort to help",
+                "Neglectful: failing to provide necessary care",
+                "Supportive: providing encouragement and help"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L89_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Gentle or Harsh.",
             "topicBuckets": [
                 "Gentle",
                 "Harsh"
             ],
-            "hint": "Here's a tip: A gentle touch is soft and careful, while a harsh touch is rough and severe!",
-            "explanation": "Think of 'Gentle' as soft, mild treatment (tender, mild), and 'Harsh' as rough, severe treatment (stern, abrasive)!",
+            "hint": "Think about the tone someone uses when correcting a mistake.",
+            "explanation": "Mild, soothing, and tender all describe gentleness, with soothing specifically meaning calming someone. Severe and stern both describe harshness, though stern concerns manner and expression, while severe often describes the intensity of a judgement or punishment.",
             "options": [
-                "Tender",
                 "Stern",
-                "Mild",
-                "Abrasive",
-                "Soft-spoken"
+                "Tender",
+                "Soothing",
+                "Severe",
+                "Mild"
             ],
-            "correctAnswer": "Gentle:Tender, Harsh:Stern, Gentle:Mild, Harsh:Abrasive, Gentle:Soft-spoken",
+            "correctAnswer": "Harsh:Stern, Gentle:Tender, Gentle:Soothing, Harsh:Severe, Gentle:Mild",
             "relatedWords": [
-                "aspect of Gentle:Tender, Harsh:Stern, Gentle:Mild, Harsh:Abrasive, Gentle:Soft-spoken",
-                "concept of Gentle:Tender, Harsh:Stern, Gentle:Mild, Harsh:Abrasive, Gentle:Soft-spoken",
-                "related to Gentle:Tender, Harsh:Stern, Gentle:Mild, Harsh:Abrasive, Gentle:Soft-spoken"
+                "Stern: serious and strict in manner",
+                "Tender: showing gentleness and care",
+                "Soothing: having a calming effect",
+                "Severe: extremely strict or intense",
+                "Mild: not strong or severe"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L89_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "One harsh word describes criticism that cuts deliberately. Sort into Harsh or Gentle.",
             "topicBuckets": [
-                "Gentle",
-                "Harsh"
+                "Harsh",
+                "Gentle"
             ],
-            "hint": "Here's a tip: A gentle touch is soft and careful, while a harsh touch is rough and severe!",
-            "explanation": "Think of 'Gentle' as soft, mild treatment (tender, mild), and 'Harsh' as rough, severe treatment (stern, abrasive)!",
+            "hint": "Think about feedback that stings on purpose versus feedback that lands softly.",
+            "explanation": "Delicate and 'light-handed' both describe a careful, restrained approach, and lenient describes being less strict than expected. Scathing describes criticism designed to wound, and brutal describes harshness that spares no feelings at all.",
             "options": [
-                "Soothing",
-                "Severe",
-                "Light-handed",
                 "Brutal",
-                "Calm"
+                "Scathing",
+                "Delicate",
+                "Lenient",
+                "Light-handed"
             ],
-            "correctAnswer": "Gentle:Soothing, Harsh:Severe, Gentle:Light-handed, Harsh:Brutal, Gentle:Calm",
+            "correctAnswer": "Harsh:Brutal, Harsh:Scathing, Gentle:Delicate, Gentle:Lenient, Gentle:Light-handed",
             "relatedWords": [
-                "aspect of Gentle:Soothing, Harsh:Severe, Gentle:Light-handed, Harsh:Brutal, Gentle:Calm",
-                "concept of Gentle:Soothing, Harsh:Severe, Gentle:Light-handed, Harsh:Brutal, Gentle:Calm",
-                "related to Gentle:Soothing, Harsh:Severe, Gentle:Light-handed, Harsh:Brutal, Gentle:Calm"
+                "Brutal: harsh and sparing no feelings",
+                "Scathing: severely and woundingly critical",
+                "Delicate: requiring careful, gentle handling",
+                "Lenient: more merciful than expected",
+                "Light-handed: using a soft, restrained approach"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L89_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Imagine a manager choosing how to deliver difficult feedback. Sort into Harsh or Gentle.",
             "topicBuckets": [
-                "Gentle",
-                "Harsh"
+                "Harsh",
+                "Gentle"
             ],
-            "hint": "Here's a tip: A gentle touch is soft and careful, while a harsh touch is rough and severe!",
-            "explanation": "Think of 'Gentle' as soft, mild treatment (tender, mild), and 'Harsh' as rough, severe treatment (stern, abrasive)!",
+            "hint": "Two of these describe softening bad news; two describe delivering it without cushioning.",
+            "explanation": "'Softens the blow' and 'constructive' both describe feedback framed to help rather than wound, and 'diplomatic' describes handling a sensitive matter carefully. 'Blistering' describes an intensely angry criticism, and 'no punches pulled' describes saying something with no softening at all.",
             "options": [
-                "Caring-touch",
-                "Rough-spoken",
-                "Easygoing",
-                "Cutting",
-                "Mellow"
+                "Softens the blow",
+                "Diplomatic",
+                "No punches pulled",
+                "Blistering",
+                "Constructive"
             ],
-            "correctAnswer": "Gentle:Caring-touch, Harsh:Rough-spoken, Gentle:Easygoing, Harsh:Cutting, Gentle:Mellow",
+            "correctAnswer": "Gentle:Softens the blow, Gentle:Diplomatic, Harsh:No punches pulled, Harsh:Blistering, Gentle:Constructive",
             "relatedWords": [
-                "aspect of Gentle:Caring-touch, Harsh:Rough-spoken, Gentle:Easygoing, Harsh:Cutting, Gentle:Mellow",
-                "concept of Gentle:Caring-touch, Harsh:Rough-spoken, Gentle:Easygoing, Harsh:Cutting, Gentle:Mellow",
-                "related to Gentle:Caring-touch, Harsh:Rough-spoken, Gentle:Easygoing, Harsh:Cutting, Gentle:Mellow"
+                "Softens the blow: makes bad news easier to receive",
+                "Diplomatic: handling sensitive matters tactfully",
+                "No punches pulled: said directly, without softening",
+                "Blistering: intensely angry and critical",
+                "Constructive: critical in a way meant to help"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L90_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Brave or Fearful, focusing on how someone feels facing a challenge.",
             "topicBuckets": [
                 "Brave",
                 "Fearful"
             ],
-            "hint": "Here's a tip: A brave person walks into danger calmly, while a fearful person panics and pulls back!",
-            "explanation": "Think of 'Brave' as calm courage in danger (composed-under-pressure, valiant), and 'Fearful' as panic and anxiety (terrified, anxious)!",
+            "hint": "This level is about the feeling of fear itself, not whether someone is a coward.",
+            "explanation": "Unflinching and steadfast both describe holding firm under pressure, and 'undaunted' means not discouraged by difficulty. Anxious and apprehensive both describe worry about what's coming, with apprehensive specifically meaning uneasy about a future event.",
             "options": [
-                "Valiant",
-                "Terrified",
-                "Composed",
+                "Unflinching",
                 "Anxious",
-                "Plucky"
+                "Apprehensive",
+                "Undaunted",
+                "Steadfast"
             ],
-            "correctAnswer": "Brave:Valiant, Fearful:Terrified, Brave:Composed, Fearful:Anxious, Brave:Plucky",
+            "correctAnswer": "Brave:Unflinching, Fearful:Anxious, Fearful:Apprehensive, Brave:Undaunted, Brave:Steadfast",
             "relatedWords": [
-                "aspect of Brave:Valiant, Fearful:Terrified, Brave:Composed, Fearful:Anxious, Brave:Plucky",
-                "concept of Brave:Valiant, Fearful:Terrified, Brave:Composed, Fearful:Anxious, Brave:Plucky",
-                "related to Brave:Valiant, Fearful:Terrified, Brave:Composed, Fearful:Anxious, Brave:Plucky"
+                "Unflinching: not showing fear under pressure",
+                "Anxious: feeling worried or uneasy",
+                "Apprehensive: uneasy about something that may happen",
+                "Undaunted: not discouraged by difficulty",
+                "Steadfast: firmly holding position despite difficulty"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L90_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Rank these by intensity before sorting into Brave or Fearful.",
             "topicBuckets": [
                 "Brave",
                 "Fearful"
             ],
-            "hint": "Here's a tip: A brave person walks into danger calmly, while a fearful person panics and pulls back!",
-            "explanation": "Think of 'Brave' as calm courage in danger (composed-under-pressure, valiant), and 'Fearful' as panic and anxiety (terrified, anxious)!",
+            "hint": "Two of these describe fear at its most overwhelming.",
+            "explanation": "Resolute and 'nerves of steel' both describe determination that fear cannot shake. Petrified and terrified both describe extreme fear, with petrified suggesting fear so intense it freezes you in place. Jittery describes milder, restless nervousness.",
             "options": [
-                "Stout-hearted",
-                "Panicked",
+                "Petrified",
                 "Resolute",
-                "Nervous",
-                "Game"
+                "Nerves of steel",
+                "Terrified",
+                "Jittery"
             ],
-            "correctAnswer": "Brave:Stout-hearted, Fearful:Panicked, Brave:Resolute, Fearful:Nervous, Brave:Game",
+            "correctAnswer": "Fearful:Petrified, Brave:Resolute, Brave:Nerves of steel, Fearful:Terrified, Fearful:Jittery",
             "relatedWords": [
-                "aspect of Brave:Stout-hearted, Fearful:Panicked, Brave:Resolute, Fearful:Nervous, Brave:Game",
-                "concept of Brave:Stout-hearted, Fearful:Panicked, Brave:Resolute, Fearful:Nervous, Brave:Game",
-                "related to Brave:Stout-hearted, Fearful:Panicked, Brave:Resolute, Fearful:Nervous, Brave:Game"
+                "Petrified: so frightened as to be unable to move",
+                "Resolute: firmly determined",
+                "Nerves of steel: able to stay calm under extreme pressure",
+                "Terrified: extremely frightened",
+                "Jittery: nervous and restless"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L90_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Picture someone about to speak in front of a large audience. Sort into Brave or Fearful.",
             "topicBuckets": [
                 "Brave",
                 "Fearful"
             ],
-            "hint": "Here's a tip: A brave person walks into danger calmly, while a fearful person panics and pulls back!",
-            "explanation": "Think of 'Brave' as calm courage in danger (composed-under-pressure, valiant), and 'Fearful' as panic and anxiety (terrified, anxious)!",
+            "hint": "One brave phrase describes acting despite being afraid, not instead of it.",
+            "explanation": "'Faces it head-on' and 'holds their nerve' both describe acting despite fear rather than without it, which is what courage usually means in practice. 'Cold feet' describes losing nerve just before acting, 'dread' describes deep fear of something approaching, and 'shrinks back' describes physically retreating from a challenge.",
             "options": [
-                "Unflinching",
-                "Apprehensive",
-                "Dauntless",
-                "Jumpy",
-                "Steely"
+                "Shrinks back",
+                "Faces it head-on",
+                "Holds their nerve",
+                "Dread",
+                "Cold feet"
             ],
-            "correctAnswer": "Brave:Unflinching, Fearful:Apprehensive, Brave:Dauntless, Fearful:Jumpy, Brave:Steely",
+            "correctAnswer": "Fearful:Shrinks back, Brave:Faces it head-on, Brave:Holds their nerve, Fearful:Dread, Fearful:Cold feet",
             "relatedWords": [
-                "aspect of Brave:Unflinching, Fearful:Apprehensive, Brave:Dauntless, Fearful:Jumpy, Brave:Steely",
-                "concept of Brave:Unflinching, Fearful:Apprehensive, Brave:Dauntless, Fearful:Jumpy, Brave:Steely",
-                "related to Brave:Unflinching, Fearful:Apprehensive, Brave:Dauntless, Fearful:Jumpy, Brave:Steely"
+                "Shrinks back: retreats from a challenge",
+                "Faces it head-on: confronts a difficulty directly",
+                "Holds their nerve: stays composed under pressure",
+                "Dread: deep fear about something approaching",
+                "Cold feet: a loss of nerve just before acting"
             ]
         }
     ]

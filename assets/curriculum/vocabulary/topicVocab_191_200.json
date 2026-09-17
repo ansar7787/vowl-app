@@ -6,721 +6,781 @@
         {
             "id": "VOC_TOPICVOCAB_L191_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These describe two kinds of place. Sort into Metropolis or Hinterland.",
             "topicBuckets": [
                 "Metropolis",
                 "Hinterland"
             ],
-            "hint": "Here's a tip: A metropolis is a massive, densely-populated city, while the hinterland is the remote rural area far from any city!",
-            "explanation": "Think of 'Metropolis' as a huge, densely-populated city (sprawling-city, urban-center), and 'Hinterland' as a remote rural area away from cities (remote-countryside, far-flung-region)!",
+            "hint": "Think about a dense city centre, and the quiet country far behind it.",
+            "explanation": "'Skyscrapers', 'rush hour', and 'business district' all belong to a large dense city. 'Remote countryside' and 'sparsely populated' both describe the land lying beyond and behind a city's reach.",
             "options": [
-                "Sprawling-city",
-                "Remote-countryside",
-                "Urban-center",
-                "Far-flung-region",
-                "Densely-built-city"
+                "Rush hour",
+                "Skyscrapers",
+                "Business district",
+                "Sparsely populated",
+                "Remote countryside"
             ],
-            "correctAnswer": "Metropolis:Sprawling-city, Hinterland:Remote-countryside, Metropolis:Urban-center, Hinterland:Far-flung-region, Metropolis:Densely-built-city",
+            "correctAnswer": "Metropolis:Rush hour, Metropolis:Skyscrapers, Metropolis:Business district, Hinterland:Sparsely populated, Hinterland:Remote countryside",
             "relatedWords": [
-                "aspect of Metropolis:Sprawling-city, Hinterland:Remote-countryside, Metropolis:Urban-center, Hinterland:Far-flung-region, Metropolis:Densely-built-city",
-                "concept of Metropolis:Sprawling-city, Hinterland:Remote-countryside, Metropolis:Urban-center, Hinterland:Far-flung-region, Metropolis:Densely-built-city",
-                "related to Metropolis:Sprawling-city, Hinterland:Remote-countryside, Metropolis:Urban-center, Hinterland:Far-flung-region, Metropolis:Densely-built-city"
+                "Rush hour: the peak period of city commuting",
+                "Skyscrapers: very tall buildings typical of large cities",
+                "Business district: the commercial centre of a city",
+                "Sparsely populated: having very few inhabitants",
+                "Remote countryside: rural land far from urban centres"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L191_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "'Hinterland' is a formal word for the land behind a city or port. Sort into Metropolis or Hinterland.",
             "topicBuckets": [
                 "Metropolis",
                 "Hinterland"
             ],
-            "hint": "Here's a tip: A metropolis is a massive, densely-populated city, while the hinterland is the remote rural area far from any city!",
-            "explanation": "Think of 'Metropolis' as a huge, densely-populated city (sprawling-city, urban-center), and 'Hinterland' as a remote rural area away from cities (remote-countryside, far-flung-region)!",
+            "hint": "One of these words carries a formal, geographical register.",
+            "explanation": "'Urban sprawl', 'high-density', and 'cosmopolitan' all describe a major city, cosmopolitan meaning shaped by many cultures. 'Backcountry' and 'outlying region' both describe the surrounding area a city draws on \u2014 'hinterland' itself is the formal geographical term for exactly this.",
             "options": [
-                "Megacity",
+                "High-density",
+                "Outlying region",
                 "Backcountry",
-                "Urban-sprawl",
-                "Outlying-territory",
-                "Cosmopolitan-hub"
+                "Urban sprawl",
+                "Cosmopolitan"
             ],
-            "correctAnswer": "Metropolis:Megacity, Hinterland:Backcountry, Metropolis:Urban-sprawl, Hinterland:Outlying-territory, Metropolis:Cosmopolitan-hub",
+            "correctAnswer": "Metropolis:High-density, Hinterland:Outlying region, Hinterland:Backcountry, Metropolis:Urban sprawl, Metropolis:Cosmopolitan",
             "relatedWords": [
-                "aspect of Metropolis:Megacity, Hinterland:Backcountry, Metropolis:Urban-sprawl, Hinterland:Outlying-territory, Metropolis:Cosmopolitan-hub",
-                "concept of Metropolis:Megacity, Hinterland:Backcountry, Metropolis:Urban-sprawl, Hinterland:Outlying-territory, Metropolis:Cosmopolitan-hub",
-                "related to Metropolis:Megacity, Hinterland:Backcountry, Metropolis:Urban-sprawl, Hinterland:Outlying-territory, Metropolis:Cosmopolitan-hub"
+                "High-density: having many people in a small area",
+                "Outlying region: an area far from the centre",
+                "Backcountry: remote, undeveloped rural land",
+                "Urban sprawl: the spreading outward of a city",
+                "Cosmopolitan: shaped by many different cultures"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L191_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Picture a planning report on a region's economy. Sort into Metropolis or Hinterland.",
             "topicBuckets": [
                 "Metropolis",
                 "Hinterland"
             ],
-            "hint": "Here's a tip: A metropolis is a massive, densely-populated city, while the hinterland is the remote rural area far from any city!",
-            "explanation": "Think of 'Metropolis' as a huge, densely-populated city (sprawling-city, urban-center), and 'Hinterland' as a remote rural area away from cities (remote-countryside, far-flung-region)!",
+            "hint": "Two of these describe areas that supply a city rather than contain it.",
+            "explanation": "'Financial hub' and 'transport interchange' both describe a city's concentrating function, and 'draws workers in' names the pull it exerts. 'Agricultural belt' and 'supplies the centre' both describe the surrounding region's role \u2014 feeding and serving the city rather than competing with it.",
             "options": [
-                "Bustling-capital",
-                "Remote-frontier",
-                "Concrete-jungle",
-                "Sparsely-populated-tract",
-                "Skyscraper-city"
+                "Financial hub",
+                "Agricultural belt",
+                "Supplies the centre",
+                "Draws workers in",
+                "Transport interchange"
             ],
-            "correctAnswer": "Metropolis:Bustling-capital, Hinterland:Remote-frontier, Metropolis:Concrete-jungle, Hinterland:Sparsely-populated-tract, Metropolis:Skyscraper-city",
+            "correctAnswer": "Metropolis:Financial hub, Hinterland:Agricultural belt, Hinterland:Supplies the centre, Metropolis:Draws workers in, Metropolis:Transport interchange",
             "relatedWords": [
-                "aspect of Metropolis:Bustling-capital, Hinterland:Remote-frontier, Metropolis:Concrete-jungle, Hinterland:Sparsely-populated-tract, Metropolis:Skyscraper-city",
-                "concept of Metropolis:Bustling-capital, Hinterland:Remote-frontier, Metropolis:Concrete-jungle, Hinterland:Sparsely-populated-tract, Metropolis:Skyscraper-city",
-                "related to Metropolis:Bustling-capital, Hinterland:Remote-frontier, Metropolis:Concrete-jungle, Hinterland:Sparsely-populated-tract, Metropolis:Skyscraper-city"
+                "Financial hub: a centre of banking and commerce",
+                "Agricultural belt: a region given over to farming",
+                "Supplies the centre: provides goods to an urban core",
+                "Draws workers in: attracts labour from surrounding areas",
+                "Transport interchange: a point where transport routes meet"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L192_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These describe the state of a material. Sort into Crystalline or Molten.",
             "topicBuckets": [
-                "Molten",
-                "Crystalline"
+                "Crystalline",
+                "Molten"
             ],
-            "hint": "Here's a tip: A molten substance is liquid from intense heat, while a crystalline substance has a hard, geometric, ordered structure!",
-            "explanation": "Think of 'Molten' as a substance liquefied by heat (liquefied-by-heat, glowing-liquid-rock), and 'Crystalline' as a substance with an ordered geometric structure (geometrically-ordered, crystal-structured)!",
+            "hint": "Think about a substance flowing as liquid, versus locked into a regular structure.",
+            "explanation": "'Liquefied', 'flowing hot metal', and 'poured' all describe material heated until it flows. 'Ordered lattice' and 'faceted' both describe material whose atoms are locked into a regular repeating structure.",
             "options": [
-                "Liquefied-by-heat",
-                "Geometrically-ordered",
-                "Glowing-liquid-rock",
-                "Crystal-structured",
-                "Heat-softened"
+                "Flowing hot metal",
+                "Poured",
+                "Faceted",
+                "Ordered lattice",
+                "Liquefied"
             ],
-            "correctAnswer": "Molten:Liquefied-by-heat, Crystalline:Geometrically-ordered, Molten:Glowing-liquid-rock, Crystalline:Crystal-structured, Molten:Heat-softened",
+            "correctAnswer": "Molten:Flowing hot metal, Molten:Poured, Crystalline:Faceted, Crystalline:Ordered lattice, Molten:Liquefied",
             "relatedWords": [
-                "aspect of Molten:Liquefied-by-heat, Crystalline:Geometrically-ordered, Molten:Glowing-liquid-rock, Crystalline:Crystal-structured, Molten:Heat-softened",
-                "concept of Molten:Liquefied-by-heat, Crystalline:Geometrically-ordered, Molten:Glowing-liquid-rock, Crystalline:Crystal-structured, Molten:Heat-softened",
-                "related to Molten:Liquefied-by-heat, Crystalline:Geometrically-ordered, Molten:Glowing-liquid-rock, Crystalline:Crystal-structured, Molten:Heat-softened"
+                "Flowing hot metal: metal heated until it runs as liquid",
+                "Poured: made to flow into a mould",
+                "Faceted: having flat cut surfaces, as a crystal does",
+                "Ordered lattice: a regular repeating arrangement of atoms",
+                "Liquefied: made liquid, usually by heat"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L192_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "One crystalline word describes atoms arranged in a repeating pattern. Sort into Crystalline or Molten.",
             "topicBuckets": [
-                "Molten",
-                "Crystalline"
+                "Crystalline",
+                "Molten"
             ],
-            "hint": "Here's a tip: A molten substance is liquid from intense heat, while a crystalline substance has a hard, geometric, ordered structure!",
-            "explanation": "Think of 'Molten' as a substance liquefied by heat (liquefied-by-heat, glowing-liquid-rock), and 'Crystalline' as a substance with an ordered geometric structure (geometrically-ordered, crystal-structured)!",
+            "hint": "Structure is what separates these two states.",
+            "explanation": "'Smelted', 'above melting point', and 'viscous' all describe material in a heated flowing state, viscous meaning thick and slow to flow. 'Lattice structure' names atoms arranged in a repeating pattern, and 'quartz' is a common example of such a solid.",
             "options": [
-                "Liquid-hot-metal",
-                "Lattice-structured",
-                "Fluid-from-heat",
-                "Faceted-and-ordered",
-                "Red-hot-liquid"
+                "Smelted",
+                "Quartz",
+                "Lattice structure",
+                "Viscous",
+                "Above melting point"
             ],
-            "correctAnswer": "Molten:Liquid-hot-metal, Crystalline:Lattice-structured, Molten:Fluid-from-heat, Crystalline:Faceted-and-ordered, Molten:Red-hot-liquid",
+            "correctAnswer": "Molten:Smelted, Crystalline:Quartz, Crystalline:Lattice structure, Molten:Viscous, Molten:Above melting point",
             "relatedWords": [
-                "aspect of Molten:Liquid-hot-metal, Crystalline:Lattice-structured, Molten:Fluid-from-heat, Crystalline:Faceted-and-ordered, Molten:Red-hot-liquid",
-                "concept of Molten:Liquid-hot-metal, Crystalline:Lattice-structured, Molten:Fluid-from-heat, Crystalline:Faceted-and-ordered, Molten:Red-hot-liquid",
-                "related to Molten:Liquid-hot-metal, Crystalline:Lattice-structured, Molten:Fluid-from-heat, Crystalline:Faceted-and-ordered, Molten:Red-hot-liquid"
+                "Smelted: heated to extract metal from ore",
+                "Quartz: a common crystalline mineral",
+                "Lattice structure: a regular repeating atomic arrangement",
+                "Viscous: thick and slow-flowing",
+                "Above melting point: hotter than the temperature at which it liquefies"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L192_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Picture a materials science summary. Sort into Molten or Crystalline.",
             "topicBuckets": [
                 "Molten",
                 "Crystalline"
             ],
-            "hint": "Here's a tip: A molten substance is liquid from intense heat, while a crystalline substance has a hard, geometric, ordered structure!",
-            "explanation": "Think of 'Molten' as a substance liquefied by heat (liquefied-by-heat, glowing-liquid-rock), and 'Crystalline' as a substance with an ordered geometric structure (geometrically-ordered, crystal-structured)!",
+            "hint": "Two of these describe a solid with highly regular internal structure.",
+            "explanation": "'Cast into a mould' and 'cooling slowly' both describe working with material in a liquid state, though slow cooling is precisely what allows crystals to form. 'Sharp cleavage planes', 'geometric form', and 'solidified into order' all describe the structured solid that results.",
             "options": [
-                "Glowing-magma-like",
-                "Symmetrically-structured",
-                "Heat-liquefied-rock",
-                "Gem-like-structure",
-                "Flowing-lava-state"
+                "Geometric form",
+                "Sharp cleavage planes",
+                "Solidified into order",
+                "Cast into a mould",
+                "Cooling slowly"
             ],
-            "correctAnswer": "Molten:Glowing-magma-like, Crystalline:Symmetrically-structured, Molten:Heat-liquefied-rock, Crystalline:Gem-like-structure, Molten:Flowing-lava-state",
+            "correctAnswer": "Crystalline:Geometric form, Crystalline:Sharp cleavage planes, Crystalline:Solidified into order, Molten:Cast into a mould, Molten:Cooling slowly",
             "relatedWords": [
-                "aspect of Molten:Glowing-magma-like, Crystalline:Symmetrically-structured, Molten:Heat-liquefied-rock, Crystalline:Gem-like-structure, Molten:Flowing-lava-state",
-                "concept of Molten:Glowing-magma-like, Crystalline:Symmetrically-structured, Molten:Heat-liquefied-rock, Crystalline:Gem-like-structure, Molten:Flowing-lava-state",
-                "related to Molten:Glowing-magma-like, Crystalline:Symmetrically-structured, Molten:Heat-liquefied-rock, Crystalline:Gem-like-structure, Molten:Flowing-lava-state"
+                "Geometric form: a regular mathematical shape",
+                "Sharp cleavage planes: flat surfaces along which a crystal splits",
+                "Solidified into order: hardened into a structured arrangement",
+                "Cast into a mould: shaped by pouring liquid material into a form",
+                "Cooling slowly: losing heat gradually"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L193_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These describe two reasons people eat. Sort into Indulgence or Nourishment, without judging either.",
             "topicBuckets": [
                 "Indulgence",
                 "Nourishment"
             ],
-            "hint": "Here's a tip: An indulgence is a treat you enjoy but don't need, while nourishment is food that genuinely feeds and sustains your body!",
-            "explanation": "Think of 'Indulgence' as a pleasurable but non-essential treat (treat, decadent-pleasure), and 'Nourishment' as food that sustains the body (sustenance, healthful-feeding)!",
+            "hint": "Think about food eaten purely for pleasure, and food eaten to sustain the body.",
+            "explanation": "'Treat', 'eaten for pleasure', and 'a bit of luxury' all describe food chosen for enjoyment, which is a normal part of eating. 'Nutrients' and 'sustains the body' both describe food's role in keeping the body functioning.",
             "options": [
+                "Sustains the body",
+                "Eaten for pleasure",
+                "A bit of luxury",
                 "Treat",
-                "Sustenance",
-                "Decadent-pleasure",
-                "Healthful-feeding",
-                "Guilty-pleasure"
+                "Nutrients"
             ],
-            "correctAnswer": "Indulgence:Treat, Nourishment:Sustenance, Indulgence:Decadent-pleasure, Nourishment:Healthful-feeding, Indulgence:Guilty-pleasure",
+            "correctAnswer": "Nourishment:Sustains the body, Indulgence:Eaten for pleasure, Indulgence:A bit of luxury, Indulgence:Treat, Nourishment:Nutrients",
             "relatedWords": [
-                "aspect of Indulgence:Treat, Nourishment:Sustenance, Indulgence:Decadent-pleasure, Nourishment:Healthful-feeding, Indulgence:Guilty-pleasure",
-                "concept of Indulgence:Treat, Nourishment:Sustenance, Indulgence:Decadent-pleasure, Nourishment:Healthful-feeding, Indulgence:Guilty-pleasure",
-                "related to Indulgence:Treat, Nourishment:Sustenance, Indulgence:Decadent-pleasure, Nourishment:Healthful-feeding, Indulgence:Guilty-pleasure"
+                "Sustains the body: provides what the body needs to keep going",
+                "Eaten for pleasure: chosen for enjoyment rather than need",
+                "A bit of luxury: a small pleasure beyond necessity",
+                "Treat: something enjoyable eaten occasionally",
+                "Nutrients: substances the body needs to function"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L193_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Most food does both jobs at once. Sort into Indulgence or Nourishment.",
             "topicBuckets": [
                 "Indulgence",
                 "Nourishment"
             ],
-            "hint": "Here's a tip: An indulgence is a treat you enjoy but don't need, while nourishment is food that genuinely feeds and sustains your body!",
-            "explanation": "Think of 'Indulgence' as a pleasurable but non-essential treat (treat, decadent-pleasure), and 'Nourishment' as food that sustains the body (sustenance, healthful-feeding)!",
+            "hint": "Neither category is better than the other \u2014 they describe different purposes.",
+            "explanation": "'Decadent', 'rich', and 'a special occasion dish' all emphasise enjoyment and richness. 'Wholesome' and 'nutrient-dense' both emphasise what a food provides the body \u2014 and plenty of foods, from a good stew to fresh bread, sit comfortably in both.",
             "options": [
-                "Splurge",
-                "Vital-nutrients",
-                "Self-reward",
-                "Body-fueling-food",
-                "Extravagant-treat"
+                "Nutrient-dense",
+                "Rich",
+                "Decadent",
+                "A special occasion dish",
+                "Wholesome"
             ],
-            "correctAnswer": "Indulgence:Splurge, Nourishment:Vital-nutrients, Indulgence:Self-reward, Nourishment:Body-fueling-food, Indulgence:Extravagant-treat",
+            "correctAnswer": "Nourishment:Nutrient-dense, Indulgence:Rich, Indulgence:Decadent, Indulgence:A special occasion dish, Nourishment:Wholesome",
             "relatedWords": [
-                "aspect of Indulgence:Splurge, Nourishment:Vital-nutrients, Indulgence:Self-reward, Nourishment:Body-fueling-food, Indulgence:Extravagant-treat",
-                "concept of Indulgence:Splurge, Nourishment:Vital-nutrients, Indulgence:Self-reward, Nourishment:Body-fueling-food, Indulgence:Extravagant-treat",
-                "related to Indulgence:Splurge, Nourishment:Vital-nutrients, Indulgence:Self-reward, Nourishment:Body-fueling-food, Indulgence:Extravagant-treat"
+                "Nutrient-dense: containing many nutrients relative to its size",
+                "Rich: full of fat, sugar or flavour",
+                "Decadent: luxuriously rich and pleasurable",
+                "A special occasion dish: food prepared for celebrations",
+                "Wholesome: good for health and wellbeing"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L193_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Picture a cookbook introduction describing its recipes. Sort into Indulgence or Nourishment.",
             "topicBuckets": [
                 "Indulgence",
                 "Nourishment"
             ],
-            "hint": "Here's a tip: An indulgence is a treat you enjoy but don't need, while nourishment is food that genuinely feeds and sustains your body!",
-            "explanation": "Think of 'Indulgence' as a pleasurable but non-essential treat (treat, decadent-pleasure), and 'Nourishment' as food that sustains the body (sustenance, healthful-feeding)!",
+            "hint": "Two of these describe food written about mainly for how it feeds you.",
+            "explanation": "'Pure comfort food' and 'worth every bite' both describe food written about for enjoyment. 'Balanced meal', 'fuels the day', and 'everyday staple' all describe food written about for what it provides \u2014 the two framings suit different occasions rather than ranking foods against each other.",
             "options": [
-                "Luxurious-snack",
-                "Nutritive-sustenance",
-                "Pampering-bite",
-                "Wholesome-fuel",
-                "Rich-dessert"
+                "Pure comfort food",
+                "Worth every bite",
+                "Balanced meal",
+                "Fuels the day",
+                "Everyday staple"
             ],
-            "correctAnswer": "Indulgence:Luxurious-snack, Nourishment:Nutritive-sustenance, Indulgence:Pampering-bite, Nourishment:Wholesome-fuel, Indulgence:Rich-dessert",
+            "correctAnswer": "Indulgence:Pure comfort food, Indulgence:Worth every bite, Nourishment:Balanced meal, Nourishment:Fuels the day, Nourishment:Everyday staple",
             "relatedWords": [
-                "aspect of Indulgence:Luxurious-snack, Nourishment:Nutritive-sustenance, Indulgence:Pampering-bite, Nourishment:Wholesome-fuel, Indulgence:Rich-dessert",
-                "concept of Indulgence:Luxurious-snack, Nourishment:Nutritive-sustenance, Indulgence:Pampering-bite, Nourishment:Wholesome-fuel, Indulgence:Rich-dessert",
-                "related to Indulgence:Luxurious-snack, Nourishment:Nutritive-sustenance, Indulgence:Pampering-bite, Nourishment:Wholesome-fuel, Indulgence:Rich-dessert"
+                "Pure comfort food: food eaten for the comfort it brings",
+                "Worth every bite: thoroughly enjoyable to eat",
+                "Balanced meal: a meal containing a good range of nutrients",
+                "Fuels the day: provides energy for daily activity",
+                "Everyday staple: a basic food eaten regularly"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L194_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These describe the two ends of daylight. Sort into Dawn or Dusk.",
             "topicBuckets": [
                 "Dawn",
                 "Dusk"
             ],
-            "hint": "Here's a tip: Dawn is the precise moment light first appears at sunrise, while dusk is the precise moment light fades at sunset!",
-            "explanation": "Think of 'Dawn' as the exact moment of first light at sunrise (daybreak, first-light), and 'Dusk' as the exact moment light fades at sunset (twilight, gloaming)!",
+            "hint": "Think about the sun arriving, and the sun leaving.",
+            "explanation": "'Sunrise', 'first light', and 'daybreak' all describe the beginning of daylight. 'Sunset' and 'nightfall' both describe daylight ending.",
             "options": [
-                "Daybreak",
-                "Twilight",
-                "First-light",
-                "Gloaming",
-                "Crack-of-dawn"
+                "Nightfall",
+                "Sunset",
+                "First light",
+                "Sunrise",
+                "Daybreak"
             ],
-            "correctAnswer": "Dawn:Daybreak, Dusk:Twilight, Dawn:First-light, Dusk:Gloaming, Dawn:Crack-of-dawn",
+            "correctAnswer": "Dusk:Nightfall, Dusk:Sunset, Dawn:First light, Dawn:Sunrise, Dawn:Daybreak",
             "relatedWords": [
-                "aspect of Dawn:Daybreak, Dusk:Twilight, Dawn:First-light, Dusk:Gloaming, Dawn:Crack-of-dawn",
-                "concept of Dawn:Daybreak, Dusk:Twilight, Dawn:First-light, Dusk:Gloaming, Dawn:Crack-of-dawn",
-                "related to Dawn:Daybreak, Dusk:Twilight, Dawn:First-light, Dusk:Gloaming, Dawn:Crack-of-dawn"
+                "Nightfall: the onset of darkness",
+                "Sunset: the sun dropping below the horizon",
+                "First light: the earliest light of morning",
+                "Sunrise: the sun appearing above the horizon",
+                "Daybreak: the moment daylight begins"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L194_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "One dusk word names the soft light after the sun has set. Sort into Dawn or Dusk.",
             "topicBuckets": [
                 "Dawn",
                 "Dusk"
             ],
-            "hint": "Here's a tip: Dawn is the precise moment light first appears at sunrise, while dusk is the precise moment light fades at sunset!",
-            "explanation": "Think of 'Dawn' as the exact moment of first light at sunrise (daybreak, first-light), and 'Dusk' as the exact moment light fades at sunset (twilight, gloaming)!",
+            "hint": "Photographers prize both of these for their light.",
+            "explanation": "'At the crack of dawn', 'the rooster's call', and 'early rays' all belong to morning. 'Twilight' names the soft light after the sun has set, and 'the golden hour' describes the warm light just before it \u2014 both prized by photographers.",
             "options": [
-                "Sunup",
-                "Sundown",
-                "Morning-glow",
-                "Evening-glow",
-                "Daylights-first-gleam"
+                "Twilight",
+                "Early rays",
+                "The golden hour",
+                "At the crack of dawn",
+                "The rooster's call"
             ],
-            "correctAnswer": "Dawn:Sunup, Dusk:Sundown, Dawn:Morning-glow, Dusk:Evening-glow, Dawn:Daylights-first-gleam",
+            "correctAnswer": "Dusk:Twilight, Dawn:Early rays, Dusk:The golden hour, Dawn:At the crack of dawn, Dawn:The rooster's call",
             "relatedWords": [
-                "aspect of Dawn:Sunup, Dusk:Sundown, Dawn:Morning-glow, Dusk:Evening-glow, Dawn:Daylights-first-gleam",
-                "concept of Dawn:Sunup, Dusk:Sundown, Dawn:Morning-glow, Dusk:Evening-glow, Dawn:Daylights-first-gleam",
-                "related to Dawn:Sunup, Dusk:Sundown, Dawn:Morning-glow, Dusk:Evening-glow, Dawn:Daylights-first-gleam"
+                "Twilight: the soft light after sunset",
+                "Early rays: the first sunlight of the day",
+                "The golden hour: the warm light shortly before sunset",
+                "At the crack of dawn: very early in the morning",
+                "The rooster's call: a traditional sign of morning"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L194_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Both words are used figuratively about beginnings and endings. Sort into Dawn or Dusk.",
             "topicBuckets": [
                 "Dawn",
                 "Dusk"
             ],
-            "hint": "Here's a tip: Dawn is the precise moment light first appears at sunrise, while dusk is the precise moment light fades at sunset!",
-            "explanation": "Think of 'Dawn' as the exact moment of first light at sunrise (daybreak, first-light), and 'Dusk' as the exact moment light fades at sunset (twilight, gloaming)!",
+            "hint": "Think about how writers describe the start and close of an era.",
+            "explanation": "'The dawn of an era' and 'a new dawn' both use morning to mean a beginning, and 'it dawned on them' means a realisation arriving. 'The twilight of their career' and 'in the twilight years' both use fading light to mean something drawing to a close.",
             "options": [
-                "Aurora-of-day",
-                "Dimming-light",
-                "Cockcrow",
-                "Fading-daylight",
-                "Eastern-glow"
+                "The twilight of their career",
+                "A new dawn",
+                "The dawn of an era",
+                "In the twilight years",
+                "It dawned on them"
             ],
-            "correctAnswer": "Dawn:Aurora-of-day, Dusk:Dimming-light, Dawn:Cockcrow, Dusk:Fading-daylight, Dawn:Eastern-glow",
+            "correctAnswer": "Dusk:The twilight of their career, Dawn:A new dawn, Dawn:The dawn of an era, Dusk:In the twilight years, Dawn:It dawned on them",
             "relatedWords": [
-                "aspect of Dawn:Aurora-of-day, Dusk:Dimming-light, Dawn:Cockcrow, Dusk:Fading-daylight, Dawn:Eastern-glow",
-                "concept of Dawn:Aurora-of-day, Dusk:Dimming-light, Dawn:Cockcrow, Dusk:Fading-daylight, Dawn:Eastern-glow",
-                "related to Dawn:Aurora-of-day, Dusk:Dimming-light, Dawn:Cockcrow, Dusk:Fading-daylight, Dawn:Eastern-glow"
+                "The twilight of their career: the final stage of a working life",
+                "A new dawn: a fresh start after difficulty",
+                "The dawn of an era: the beginning of a new period",
+                "In the twilight years: in the late stage of life",
+                "It dawned on them: the moment they realised something"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L195_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Back at Level 54 you sorted Young and Senior. These are their formal counterparts. Sort into Juvenile or Geriatric.",
             "topicBuckets": [
                 "Juvenile",
                 "Geriatric"
             ],
-            "hint": "Here's a tip: Juvenile describes anything related to young people, while geriatric describes anything related to elderly care and aging!",
-            "explanation": "Think of 'Juvenile' as things relating to young people (youthful, adolescent-related), and 'Geriatric' as things relating to elderly care (elderly-care-related, old-age-medicine)!",
+            "hint": "Same idea as the earlier level \u2014 but these words belong in official documents.",
+            "explanation": "'Youth court', 'under-18', and 'minor' are all formal terms for the young, used in legal and official settings where 'young' would be too vague. 'Aged care' and 'elderly patient' are the matching formal terms at the other end of life.",
             "options": [
-                "Youthful",
-                "Elderly-care-related",
-                "Adolescent-related",
-                "Old-age-medicine",
-                "Underage"
+                "Youth court",
+                "Elderly patient",
+                "Aged care",
+                "Minor",
+                "Under-18"
             ],
-            "correctAnswer": "Juvenile:Youthful, Geriatric:Elderly-care-related, Juvenile:Adolescent-related, Geriatric:Old-age-medicine, Juvenile:Underage",
+            "correctAnswer": "Juvenile:Youth court, Geriatric:Elderly patient, Geriatric:Aged care, Juvenile:Minor, Juvenile:Under-18",
             "relatedWords": [
-                "aspect of Juvenile:Youthful, Geriatric:Elderly-care-related, Juvenile:Adolescent-related, Geriatric:Old-age-medicine, Juvenile:Underage",
-                "concept of Juvenile:Youthful, Geriatric:Elderly-care-related, Juvenile:Adolescent-related, Geriatric:Old-age-medicine, Juvenile:Underage",
-                "related to Juvenile:Youthful, Geriatric:Elderly-care-related, Juvenile:Adolescent-related, Geriatric:Old-age-medicine, Juvenile:Underage"
+                "Youth court: a court dealing with defendants under 18",
+                "Elderly patient: an older person receiving medical care",
+                "Aged care: professional care provided to older people",
+                "Minor: the legal term for a person below adult age",
+                "Under-18: a bracket used on forms to mark those below adult age"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L195_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Register matters here: these are clinical words, not everyday ones. Sort into Juvenile or Geriatric.",
             "topicBuckets": [
                 "Juvenile",
                 "Geriatric"
             ],
-            "hint": "Here's a tip: Juvenile describes anything related to young people, while geriatric describes anything related to elderly care and aging!",
-            "explanation": "Think of 'Juvenile' as things relating to young people (youthful, adolescent-related), and 'Geriatric' as things relating to elderly care (elderly-care-related, old-age-medicine)!",
+            "hint": "You'd meet these on a medical form, not in conversation.",
+            "explanation": "'Juvenile onset', 'adolescent', and 'paediatric ward' are all clinical terms for the young. 'Geriatric medicine' and 'age-related decline' are the clinical terms for later life \u2014 note that 'geriatric' is neutral in medicine but can sound insulting in casual speech, which is why register matters so much with these pairs.",
             "options": [
-                "Pertaining-to-minors",
-                "Pertaining-to-the-aged",
-                "Youth-related",
-                "Senior-care-related",
-                "Adolescent-stage"
+                "Age-related decline",
+                "Adolescent",
+                "Paediatric ward",
+                "Geriatric medicine",
+                "Juvenile onset"
             ],
-            "correctAnswer": "Juvenile:Pertaining-to-minors, Geriatric:Pertaining-to-the-aged, Juvenile:Youth-related, Geriatric:Senior-care-related, Juvenile:Adolescent-stage",
+            "correctAnswer": "Geriatric:Age-related decline, Juvenile:Adolescent, Juvenile:Paediatric ward, Geriatric:Geriatric medicine, Juvenile:Juvenile onset",
             "relatedWords": [
-                "aspect of Juvenile:Pertaining-to-minors, Geriatric:Pertaining-to-the-aged, Juvenile:Youth-related, Geriatric:Senior-care-related, Juvenile:Adolescent-stage",
-                "concept of Juvenile:Pertaining-to-minors, Geriatric:Pertaining-to-the-aged, Juvenile:Youth-related, Geriatric:Senior-care-related, Juvenile:Adolescent-stage",
-                "related to Juvenile:Pertaining-to-minors, Geriatric:Pertaining-to-the-aged, Juvenile:Youth-related, Geriatric:Senior-care-related, Juvenile:Adolescent-stage"
+                "Age-related decline: reduction in function associated with ageing",
+                "Adolescent: in the stage between child and adult",
+                "Paediatric ward: a hospital ward for children",
+                "Geriatric medicine: the medical care of older people",
+                "Juvenile onset: beginning in childhood or adolescence"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L195_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Choosing the right register is the skill here. Sort into Geriatric or Juvenile.",
             "topicBuckets": [
-                "Juvenile",
-                "Geriatric"
+                "Geriatric",
+                "Juvenile"
             ],
-            "hint": "Here's a tip: Juvenile describes anything related to young people, while geriatric describes anything related to elderly care and aging!",
-            "explanation": "Think of 'Juvenile' as things relating to young people (youthful, adolescent-related), and 'Geriatric' as things relating to elderly care (elderly-care-related, old-age-medicine)!",
+            "hint": "Two of these would be rude in conversation but correct on a form.",
+            "explanation": "'Juvenile behaviour' criticises an adult for acting childishly, showing how a neutral term becomes a judgement, alongside 'in their formative years' and 'legally a child'. 'Frail' and 'advanced in years' both describe later life, the second being the gentler phrasing you'd choose when speaking to someone rather than about them.",
             "options": [
-                "Childlike-in-nature",
-                "Aging-related-field",
-                "Teen-related",
-                "Late-life-medical-field",
-                "Young-offender-related"
+                "Advanced in years",
+                "Legally a child",
+                "In their formative years",
+                "Frail",
+                "Juvenile behaviour"
             ],
-            "correctAnswer": "Juvenile:Childlike-in-nature, Geriatric:Aging-related-field, Juvenile:Teen-related, Geriatric:Late-life-medical-field, Juvenile:Young-offender-related",
+            "correctAnswer": "Geriatric:Advanced in years, Juvenile:Legally a child, Juvenile:In their formative years, Geriatric:Frail, Juvenile:Juvenile behaviour",
             "relatedWords": [
-                "aspect of Juvenile:Childlike-in-nature, Geriatric:Aging-related-field, Juvenile:Teen-related, Geriatric:Late-life-medical-field, Juvenile:Young-offender-related",
-                "concept of Juvenile:Childlike-in-nature, Geriatric:Aging-related-field, Juvenile:Teen-related, Geriatric:Late-life-medical-field, Juvenile:Young-offender-related",
-                "related to Juvenile:Childlike-in-nature, Geriatric:Aging-related-field, Juvenile:Teen-related, Geriatric:Late-life-medical-field, Juvenile:Young-offender-related"
+                "Advanced in years: a gentle phrase for being old",
+                "Legally a child: below the age of legal adulthood",
+                "In their formative years: at the stage where character develops",
+                "Frail: physically weak, often through age",
+                "Juvenile behaviour: childish conduct in someone old enough to know better"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L196_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These describe curved surfaces. Sort into Convex or Concave.",
             "topicBuckets": [
                 "Convex",
                 "Concave"
             ],
-            "hint": "Here's a tip: A convex surface curves outward, like the outside of a ball, while a concave surface curves inward, like the inside of a bowl!",
-            "explanation": "Think of 'Convex' as a surface curving outward (outward-curving, bulging-surface), and 'Concave' as a surface curving inward (inward-curving, hollowed-surface)!",
+            "hint": "Think about a surface bulging outward, and one curving inward.",
+            "explanation": "'Bulges outward', 'domed', and 'curves toward you' all describe a surface pushing out. 'Hollowed inward' and 'bowl-shaped' both describe a surface curving away, forming a dip.",
             "options": [
-                "Outward-curving",
-                "Inward-curving",
-                "Bulging-surface",
-                "Hollowed-surface",
-                "Dome-shaped"
+                "Hollowed inward",
+                "Domed",
+                "Bulges outward",
+                "Curves toward you",
+                "Bowl-shaped"
             ],
-            "correctAnswer": "Convex:Outward-curving, Concave:Inward-curving, Convex:Bulging-surface, Concave:Hollowed-surface, Convex:Dome-shaped",
+            "correctAnswer": "Concave:Hollowed inward, Convex:Domed, Convex:Bulges outward, Convex:Curves toward you, Concave:Bowl-shaped",
             "relatedWords": [
-                "aspect of Convex:Outward-curving, Concave:Inward-curving, Convex:Bulging-surface, Concave:Hollowed-surface, Convex:Dome-shaped",
-                "concept of Convex:Outward-curving, Concave:Inward-curving, Convex:Bulging-surface, Concave:Hollowed-surface, Convex:Dome-shaped",
-                "related to Convex:Outward-curving, Concave:Inward-curving, Convex:Bulging-surface, Concave:Hollowed-surface, Convex:Dome-shaped"
+                "Hollowed inward: curving in to form a dip",
+                "Domed: shaped like a rounded roof",
+                "Bulges outward: curving out from the centre",
+                "Curves toward you: bending outward toward the viewer",
+                "Bowl-shaped: curved inward like a bowl"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L196_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These are optics terms. Sort into Convex or Concave.",
             "topicBuckets": [
                 "Convex",
                 "Concave"
             ],
-            "hint": "Here's a tip: A convex surface curves outward, like the outside of a ball, while a concave surface curves inward, like the inside of a bowl!",
-            "explanation": "Think of 'Convex' as a surface curving outward (outward-curving, bulging-surface), and 'Concave' as a surface curving inward (inward-curving, hollowed-surface)!",
+            "hint": "Lens shape determines whether light gathers or spreads.",
+            "explanation": "'Converging lens', 'magnifying glass', and 'focuses light to a point' all describe a lens that gathers light inward. 'Diverging lens' and 'spreads light outward' both describe a lens that scatters light \u2014 the opposite optical effect.",
             "options": [
-                "Protruding-curve",
-                "Sunken-curve",
-                "Rounded-outward",
-                "Bowl-shaped",
-                "Bulged-form"
+                "Converging lens",
+                "Magnifying glass",
+                "Diverging lens",
+                "Spreads light outward",
+                "Focuses light to a point"
             ],
-            "correctAnswer": "Convex:Protruding-curve, Concave:Sunken-curve, Convex:Rounded-outward, Concave:Bowl-shaped, Convex:Bulged-form",
+            "correctAnswer": "Convex:Converging lens, Convex:Magnifying glass, Concave:Diverging lens, Concave:Spreads light outward, Convex:Focuses light to a point",
             "relatedWords": [
-                "aspect of Convex:Protruding-curve, Concave:Sunken-curve, Convex:Rounded-outward, Concave:Bowl-shaped, Convex:Bulged-form",
-                "concept of Convex:Protruding-curve, Concave:Sunken-curve, Convex:Rounded-outward, Concave:Bowl-shaped, Convex:Bulged-form",
-                "related to Convex:Protruding-curve, Concave:Sunken-curve, Convex:Rounded-outward, Concave:Bowl-shaped, Convex:Bulged-form"
+                "Converging lens: a lens that brings light rays together",
+                "Magnifying glass: a convex lens that enlarges an image",
+                "Diverging lens: a lens that spreads light rays apart",
+                "Spreads light outward: scatters light rays apart",
+                "Focuses light to a point: concentrates light at a single point"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L196_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Picture describing everyday objects precisely. Sort into Convex or Concave.",
             "topicBuckets": [
                 "Convex",
                 "Concave"
             ],
-            "hint": "Here's a tip: A convex surface curves outward, like the outside of a ball, while a concave surface curves inward, like the inside of a bowl!",
-            "explanation": "Think of 'Convex' as a surface curving outward (outward-curving, bulging-surface), and 'Concave' as a surface curving inward (inward-curving, hollowed-surface)!",
+            "hint": "Two of these describe surfaces you could pour water into.",
+            "explanation": "'The outside of a ball' and 'a car's wing mirror' both curve outward, wing mirrors being convex to widen the field of view. 'The inside of a spoon', 'a satellite dish', and 'a crater' all curve inward \u2014 surfaces that gather rather than spread.",
             "options": [
-                "Outward-bowed-lens",
-                "Inward-bowed-lens",
-                "Camber",
-                "Recessed",
-                "Swelling-curve"
+                "A satellite dish",
+                "A car's wing mirror",
+                "The outside of a ball",
+                "The inside of a spoon",
+                "A crater"
             ],
-            "correctAnswer": "Convex:Outward-bowed-lens, Concave:Inward-bowed-lens, Convex:Camber, Concave:Recessed, Convex:Swelling-curve",
+            "correctAnswer": "Concave:A satellite dish, Convex:A car's wing mirror, Convex:The outside of a ball, Concave:The inside of a spoon, Concave:A crater",
             "relatedWords": [
-                "aspect of Convex:Outward-bowed-lens, Concave:Inward-bowed-lens, Convex:Camber, Concave:Recessed, Convex:Swelling-curve",
-                "concept of Convex:Outward-bowed-lens, Concave:Inward-bowed-lens, Convex:Camber, Concave:Recessed, Convex:Swelling-curve",
-                "related to Convex:Outward-bowed-lens, Concave:Inward-bowed-lens, Convex:Camber, Concave:Recessed, Convex:Swelling-curve"
+                "A satellite dish: a dish-shaped surface gathering signals",
+                "A car's wing mirror: a curved mirror widening the view",
+                "The outside of a ball: a surface curving outward in all directions",
+                "The inside of a spoon: a shallow inward curve",
+                "A crater: a bowl-shaped hollow in a surface"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L197_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These are food categories. Sort into Citrus or Confection.",
             "topicBuckets": [
                 "Citrus",
                 "Confection"
             ],
-            "hint": "Here's a tip: Citrus refers to tart, juicy fruits like lemons and oranges, while a confection is a sweet, often elaborate, sugary treat!",
-            "explanation": "Think of 'Citrus' as tart, juicy fruits in the lemon/orange family (lemon-family-fruit, tangy-fruit), and 'Confection' as elaborate sugary treats (sugary-treat, sweet-creation)!",
+            "hint": "Think about a fruit that grows on a tree, and something made in a kitchen.",
+            "explanation": "'Lemon', 'grapefruit', and 'lime zest' all belong to the citrus family, sharp-flavoured fruits. 'Fudge' and 'praline' are both confections \u2014 sweets made by combining sugar with other ingredients.",
             "options": [
-                "Lemon-family-fruit",
-                "Sugary-treat",
-                "Tangy-fruit",
-                "Sweet-creation",
-                "Citric-fruit"
+                "Grapefruit",
+                "Lime zest",
+                "Lemon",
+                "Fudge",
+                "Praline"
             ],
-            "correctAnswer": "Citrus:Lemon-family-fruit, Confection:Sugary-treat, Citrus:Tangy-fruit, Confection:Sweet-creation, Citrus:Citric-fruit",
+            "correctAnswer": "Citrus:Grapefruit, Citrus:Lime zest, Citrus:Lemon, Confection:Fudge, Confection:Praline",
             "relatedWords": [
-                "aspect of Citrus:Lemon-family-fruit, Confection:Sugary-treat, Citrus:Tangy-fruit, Confection:Sweet-creation, Citrus:Citric-fruit",
-                "concept of Citrus:Lemon-family-fruit, Confection:Sugary-treat, Citrus:Tangy-fruit, Confection:Sweet-creation, Citrus:Citric-fruit",
-                "related to Citrus:Lemon-family-fruit, Confection:Sugary-treat, Citrus:Tangy-fruit, Confection:Sweet-creation, Citrus:Citric-fruit"
+                "Grapefruit: a large, slightly bitter citrus fruit",
+                "Lime zest: the flavoured outer peel of a lime",
+                "Lemon: a sharp yellow citrus fruit",
+                "Fudge: a soft sweet made from sugar and butter",
+                "Praline: a sweet made from nuts and caramelised sugar"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L197_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These are words you'd meet on a menu or in a recipe. Sort into Confection or Citrus.",
             "topicBuckets": [
-                "Citrus",
-                "Confection"
+                "Confection",
+                "Citrus"
             ],
-            "hint": "Here's a tip: Citrus refers to tart, juicy fruits like lemons and oranges, while a confection is a sweet, often elaborate, sugary treat!",
-            "explanation": "Think of 'Citrus' as tart, juicy fruits in the lemon/orange family (lemon-family-fruit, tangy-fruit), and 'Confection' as elaborate sugary treats (sugary-treat, sweet-creation)!",
+            "hint": "One set describes flavour, the other describes construction.",
+            "explanation": "'Tangy', 'zesty', and 'sharp acidity' all describe the bright sour flavour citrus contributes to a dish. 'Ganache' and 'caramelised' both describe confectionery technique \u2014 how sugar and fat are worked into something new.",
             "options": [
-                "Orange-family-produce",
-                "Elaborate-dessert",
-                "Zesty-fruit",
-                "Candy-craft",
-                "Grapefruit-relative"
+                "Zesty",
+                "Sharp acidity",
+                "Tangy",
+                "Ganache",
+                "Caramelised"
             ],
-            "correctAnswer": "Citrus:Orange-family-produce, Confection:Elaborate-dessert, Citrus:Zesty-fruit, Confection:Candy-craft, Citrus:Grapefruit-relative",
+            "correctAnswer": "Citrus:Zesty, Citrus:Sharp acidity, Citrus:Tangy, Confection:Ganache, Confection:Caramelised",
             "relatedWords": [
-                "aspect of Citrus:Orange-family-produce, Confection:Elaborate-dessert, Citrus:Zesty-fruit, Confection:Candy-craft, Citrus:Grapefruit-relative",
-                "concept of Citrus:Orange-family-produce, Confection:Elaborate-dessert, Citrus:Zesty-fruit, Confection:Candy-craft, Citrus:Grapefruit-relative",
-                "related to Citrus:Orange-family-produce, Confection:Elaborate-dessert, Citrus:Zesty-fruit, Confection:Candy-craft, Citrus:Grapefruit-relative"
+                "Zesty: bright and sharply flavoured",
+                "Sharp acidity: a strong sour quality in flavour",
+                "Tangy: having a sharp, pleasantly sour taste",
+                "Ganache: a mixture of chocolate and cream",
+                "Caramelised: cooked until sugar browns and sweetens"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L197_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Picture a dessert menu describing two courses. Sort into Citrus or Confection.",
             "topicBuckets": [
                 "Citrus",
                 "Confection"
             ],
-            "hint": "Here's a tip: Citrus refers to tart, juicy fruits like lemons and oranges, while a confection is a sweet, often elaborate, sugary treat!",
-            "explanation": "Think of 'Citrus' as tart, juicy fruits in the lemon/orange family (lemon-family-fruit, tangy-fruit), and 'Confection' as elaborate sugary treats (sugary-treat, sweet-creation)!",
+            "hint": "Two of these cut through richness rather than adding to it.",
+            "explanation": "'A squeeze of orange' and 'cuts through the richness' both describe citrus doing its classic job on a menu \u2014 sharpening and balancing heavy flavours. 'Nougat', 'sugar work', and 'petits fours' all name confectionery, where sugar is the main structure rather than a counterpoint.",
             "options": [
-                "Tart-peel-fruit",
-                "Pastry-chefs-creation",
-                "Acidic-fruit",
-                "Sugar-crafted-sweet",
-                "Lime-relative"
+                "Nougat",
+                "Petits fours",
+                "A squeeze of orange",
+                "Sugar work",
+                "Cuts through the richness"
             ],
-            "correctAnswer": "Citrus:Tart-peel-fruit, Confection:Pastry-chefs-creation, Citrus:Acidic-fruit, Confection:Sugar-crafted-sweet, Citrus:Lime-relative",
+            "correctAnswer": "Confection:Nougat, Confection:Petits fours, Citrus:A squeeze of orange, Confection:Sugar work, Citrus:Cuts through the richness",
             "relatedWords": [
-                "aspect of Citrus:Tart-peel-fruit, Confection:Pastry-chefs-creation, Citrus:Acidic-fruit, Confection:Sugar-crafted-sweet, Citrus:Lime-relative",
-                "concept of Citrus:Tart-peel-fruit, Confection:Pastry-chefs-creation, Citrus:Acidic-fruit, Confection:Sugar-crafted-sweet, Citrus:Lime-relative",
-                "related to Citrus:Tart-peel-fruit, Confection:Pastry-chefs-creation, Citrus:Acidic-fruit, Confection:Sugar-crafted-sweet, Citrus:Lime-relative"
+                "Nougat: a chewy sweet of sugar, nuts and egg white",
+                "Petits fours: small decorative sweets served after a meal",
+                "A squeeze of orange: citrus juice added to brighten a dish",
+                "Sugar work: the craft of shaping heated sugar",
+                "Cuts through the richness: balances a heavy flavour with sharpness"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L198_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These describe how much moisture something holds. Sort into Saturated or Arid.",
             "topicBuckets": [
-                "Arid",
-                "Saturated"
+                "Saturated",
+                "Arid"
             ],
-            "hint": "Here's a tip: An arid region has almost no water at all, while a saturated material is completely soaked and can hold no more water!",
-            "explanation": "Think of 'Arid' as extremely dry conditions with little water (extremely-dry, parched-completely), and 'Saturated' as being completely soaked with no room for more (fully-soaked, waterlogged)!",
+            "hint": "Think about ground that cannot hold water, and ground that cannot hold any more.",
+            "explanation": "'Bone-dry', 'desert climate', and 'low rainfall' all describe extremely dry conditions. 'Waterlogged' and 'soaked through' both describe something holding as much water as it possibly can.",
             "options": [
-                "Extremely-dry",
-                "Fully-soaked",
-                "Parched-completely",
                 "Waterlogged",
-                "Drought-stricken"
+                "Desert climate",
+                "Bone-dry",
+                "Low rainfall",
+                "Soaked through"
             ],
-            "correctAnswer": "Arid:Extremely-dry, Saturated:Fully-soaked, Arid:Parched-completely, Saturated:Waterlogged, Arid:Drought-stricken",
+            "correctAnswer": "Saturated:Waterlogged, Arid:Desert climate, Arid:Bone-dry, Arid:Low rainfall, Saturated:Soaked through",
             "relatedWords": [
-                "aspect of Arid:Extremely-dry, Saturated:Fully-soaked, Arid:Parched-completely, Saturated:Waterlogged, Arid:Drought-stricken",
-                "concept of Arid:Extremely-dry, Saturated:Fully-soaked, Arid:Parched-completely, Saturated:Waterlogged, Arid:Drought-stricken",
-                "related to Arid:Extremely-dry, Saturated:Fully-soaked, Arid:Parched-completely, Saturated:Waterlogged, Arid:Drought-stricken"
+                "Waterlogged: so wet that no more water can drain in",
+                "Desert climate: a climate with very little rainfall",
+                "Bone-dry: completely without moisture",
+                "Low rainfall: receiving very little rain",
+                "Soaked through: thoroughly wet"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L198_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "One saturated term describes ground unable to absorb any more water. Sort into Arid or Saturated.",
             "topicBuckets": [
                 "Arid",
                 "Saturated"
             ],
-            "hint": "Here's a tip: An arid region has almost no water at all, while a saturated material is completely soaked and can hold no more water!",
-            "explanation": "Think of 'Arid' as extremely dry conditions with little water (extremely-dry, parched-completely), and 'Saturated' as being completely soaked with no room for more (fully-soaked, waterlogged)!",
+            "hint": "'Saturated' has a precise meaning: holding the maximum possible.",
+            "explanation": "'Parched', 'semi-arid', and 'moisture-starved' all describe dryness of varying degrees. 'At full absorption' describes ground unable to take any more water, and 'humidity at maximum' describes air in the same condition \u2014 saturation means the limit has been reached.",
             "options": [
-                "Bone-dry",
-                "Drenched-fully",
+                "Semi-arid",
+                "Humidity at maximum",
                 "Moisture-starved",
-                "Brimful-of-water",
-                "Sun-baked"
+                "Parched",
+                "At full absorption"
             ],
-            "correctAnswer": "Arid:Bone-dry, Saturated:Drenched-fully, Arid:Moisture-starved, Saturated:Brimful-of-water, Arid:Sun-baked",
+            "correctAnswer": "Arid:Semi-arid, Saturated:Humidity at maximum, Arid:Moisture-starved, Arid:Parched, Saturated:At full absorption",
             "relatedWords": [
-                "aspect of Arid:Bone-dry, Saturated:Drenched-fully, Arid:Moisture-starved, Saturated:Brimful-of-water, Arid:Sun-baked",
-                "concept of Arid:Bone-dry, Saturated:Drenched-fully, Arid:Moisture-starved, Saturated:Brimful-of-water, Arid:Sun-baked",
-                "related to Arid:Bone-dry, Saturated:Drenched-fully, Arid:Moisture-starved, Saturated:Brimful-of-water, Arid:Sun-baked"
+                "Semi-arid: fairly dry, between arid and temperate",
+                "Humidity at maximum: air holding all the moisture it can",
+                "Moisture-starved: deprived of necessary water",
+                "Parched: extremely dry from lack of water",
+                "At full absorption: unable to take in any more liquid"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L198_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Both words are used figuratively in business and writing. Sort into Arid or Saturated.",
             "topicBuckets": [
                 "Arid",
                 "Saturated"
             ],
-            "hint": "Here's a tip: An arid region has almost no water at all, while a saturated material is completely soaked and can hold no more water!",
-            "explanation": "Think of 'Arid' as extremely dry conditions with little water (extremely-dry, parched-completely), and 'Saturated' as being completely soaked with no room for more (fully-soaked, waterlogged)!",
+            "hint": "One phrase describes a market with no room left for new entrants.",
+            "explanation": "'A saturated market' describes one with no room left for new entrants, and 'saturated with detail' describes writing crammed past the point of usefulness. 'An arid stretch of prose', 'a dry spell', and 'creatively barren' all describe emptiness where something should be \u2014 the same contrast, applied to work rather than land.",
             "options": [
-                "Desiccated",
-                "Soaked-through",
-                "Rainfall-deprived",
-                "Absorbed-to-capacity",
-                "Cracked-and-dry"
+                "An arid stretch of prose",
+                "Saturated with detail",
+                "A saturated market",
+                "A dry spell",
+                "Creatively barren"
             ],
-            "correctAnswer": "Arid:Desiccated, Saturated:Soaked-through, Arid:Rainfall-deprived, Saturated:Absorbed-to-capacity, Arid:Cracked-and-dry",
+            "correctAnswer": "Arid:An arid stretch of prose, Saturated:Saturated with detail, Saturated:A saturated market, Arid:A dry spell, Arid:Creatively barren",
             "relatedWords": [
-                "aspect of Arid:Desiccated, Saturated:Soaked-through, Arid:Rainfall-deprived, Saturated:Absorbed-to-capacity, Arid:Cracked-and-dry",
-                "concept of Arid:Desiccated, Saturated:Soaked-through, Arid:Rainfall-deprived, Saturated:Absorbed-to-capacity, Arid:Cracked-and-dry",
-                "related to Arid:Desiccated, Saturated:Soaked-through, Arid:Rainfall-deprived, Saturated:Absorbed-to-capacity, Arid:Cracked-and-dry"
+                "An arid stretch of prose: writing that is dull and lifeless",
+                "Saturated with detail: packed with more detail than is useful",
+                "A saturated market: a market with no room for new entrants",
+                "A dry spell: a period without success or output",
+                "Creatively barren: producing no new ideas"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L199_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These are formal words describing manner. Sort into Amiable or Belligerent.",
             "topicBuckets": [
                 "Amiable",
                 "Belligerent"
             ],
-            "hint": "Here's a tip: An amiable person is pleasant and easy to get along with, while a belligerent person is hostile and eager to fight or argue!",
-            "explanation": "Think of 'Amiable' as pleasant, easy-to-like behavior (good-natured, agreeable), and 'Belligerent' as hostile, combative behavior (aggressive, quarrelsome)!",
+            "hint": "Think about someone easy to deal with, and someone looking for a fight.",
+            "explanation": "'Good-natured', 'affable', and 'cordial' all describe a pleasant, easy manner, cordial being the more formal of them. 'Hostile' and 'combative' both describe a manner geared toward conflict.",
             "options": [
+                "Combative",
+                "Hostile",
                 "Good-natured",
-                "Aggressive",
-                "Agreeable",
-                "Quarrelsome",
-                "Affable"
+                "Affable",
+                "Cordial"
             ],
-            "correctAnswer": "Amiable:Good-natured, Belligerent:Aggressive, Amiable:Agreeable, Belligerent:Quarrelsome, Amiable:Affable",
+            "correctAnswer": "Belligerent:Combative, Belligerent:Hostile, Amiable:Good-natured, Amiable:Affable, Amiable:Cordial",
             "relatedWords": [
-                "aspect of Amiable:Good-natured, Belligerent:Aggressive, Amiable:Agreeable, Belligerent:Quarrelsome, Amiable:Affable",
-                "concept of Amiable:Good-natured, Belligerent:Aggressive, Amiable:Agreeable, Belligerent:Quarrelsome, Amiable:Affable",
-                "related to Amiable:Good-natured, Belligerent:Aggressive, Amiable:Agreeable, Belligerent:Quarrelsome, Amiable:Affable"
+                "Combative: ready and eager to fight",
+                "Hostile: unfriendly and opposed",
+                "Good-natured: pleasant and easy-going",
+                "Affable: friendly and easy to talk to",
+                "Cordial: warm and politely friendly"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L199_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "One belligerent word describes seeking out arguments. Sort into Belligerent or Amiable.",
             "topicBuckets": [
-                "Amiable",
-                "Belligerent"
+                "Belligerent",
+                "Amiable"
             ],
-            "hint": "Here's a tip: An amiable person is pleasant and easy to get along with, while a belligerent person is hostile and eager to fight or argue!",
-            "explanation": "Think of 'Amiable' as pleasant, easy-to-like behavior (good-natured, agreeable), and 'Belligerent' as hostile, combative behavior (aggressive, quarrelsome)!",
+            "hint": "These words appear in diplomatic and professional writing.",
+            "explanation": "'Genial', 'obliging', and 'conciliatory' all describe an approach that reduces friction, conciliatory specifically meaning acting to settle a dispute. 'Pugnacious' describes seeking out arguments, and 'antagonistic' describes actively provoking opposition.",
             "options": [
-                "Easygoing",
-                "Hostile",
+                "Pugnacious",
                 "Genial",
-                "Combative",
-                "Warm-natured"
+                "Antagonistic",
+                "Obliging",
+                "Conciliatory"
             ],
-            "correctAnswer": "Amiable:Easygoing, Belligerent:Hostile, Amiable:Genial, Belligerent:Combative, Amiable:Warm-natured",
+            "correctAnswer": "Belligerent:Pugnacious, Amiable:Genial, Belligerent:Antagonistic, Amiable:Obliging, Amiable:Conciliatory",
             "relatedWords": [
-                "aspect of Amiable:Easygoing, Belligerent:Hostile, Amiable:Genial, Belligerent:Combative, Amiable:Warm-natured",
-                "concept of Amiable:Easygoing, Belligerent:Hostile, Amiable:Genial, Belligerent:Combative, Amiable:Warm-natured",
-                "related to Amiable:Easygoing, Belligerent:Hostile, Amiable:Genial, Belligerent:Combative, Amiable:Warm-natured"
+                "Pugnacious: eager to argue or fight",
+                "Genial: cheerful and kindly in manner",
+                "Antagonistic: actively provoking opposition",
+                "Obliging: willing to help and accommodate",
+                "Conciliatory: intended to settle a dispute"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L199_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Picture a report describing how two negotiating parties behaved. Sort into Belligerent or Amiable.",
             "topicBuckets": [
-                "Amiable",
-                "Belligerent"
+                "Belligerent",
+                "Amiable"
             ],
-            "hint": "Here's a tip: An amiable person is pleasant and easy to get along with, while a belligerent person is hostile and eager to fight or argue!",
-            "explanation": "Think of 'Amiable' as pleasant, easy-to-like behavior (good-natured, agreeable), and 'Belligerent' as hostile, combative behavior (aggressive, quarrelsome)!",
+            "hint": "Two of these describe a party that made agreement harder.",
+            "explanation": "'Talks held in good faith' and 'a constructive tone' both describe negotiation conducted cooperatively, and 'sought common ground' names the behaviour behind it. 'Refused to engage' and 'issued threats' both describe belligerent conduct, which makes agreement harder regardless of the underlying positions.",
             "options": [
-                "Pleasant-mannered",
-                "Pugnacious",
-                "Cordial-natured",
-                "Confrontational",
-                "Sociable-tempered"
+                "A constructive tone",
+                "Sought common ground",
+                "Talks held in good faith",
+                "Refused to engage",
+                "Issued threats"
             ],
-            "correctAnswer": "Amiable:Pleasant-mannered, Belligerent:Pugnacious, Amiable:Cordial-natured, Belligerent:Confrontational, Amiable:Sociable-tempered",
+            "correctAnswer": "Amiable:A constructive tone, Amiable:Sought common ground, Amiable:Talks held in good faith, Belligerent:Refused to engage, Belligerent:Issued threats",
             "relatedWords": [
-                "aspect of Amiable:Pleasant-mannered, Belligerent:Pugnacious, Amiable:Cordial-natured, Belligerent:Confrontational, Amiable:Sociable-tempered",
-                "concept of Amiable:Pleasant-mannered, Belligerent:Pugnacious, Amiable:Cordial-natured, Belligerent:Confrontational, Amiable:Sociable-tempered",
-                "related to Amiable:Pleasant-mannered, Belligerent:Pugnacious, Amiable:Cordial-natured, Belligerent:Confrontational, Amiable:Sociable-tempered"
+                "A constructive tone: a manner aimed at making progress",
+                "Sought common ground: looked for areas of agreement",
+                "Talks held in good faith: negotiations conducted honestly and sincerely",
+                "Refused to engage: declined to participate constructively",
+                "Issued threats: made hostile warnings"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L200_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "The final level. These describe how complex something is. Sort into Elementary or Convoluted.",
             "topicBuckets": [
                 "Elementary",
                 "Convoluted"
             ],
-            "hint": "Here's a tip: An elementary explanation is simple and basic, while a convoluted explanation is twisted and needlessly complicated!",
-            "explanation": "Think of 'Elementary' as simple, basic ideas (rudimentary, foundational-level), and 'Convoluted' as needlessly complicated, tangled ideas (overly-complex, tortuously-intricate)!",
+            "hint": "Think about an explanation a beginner follows easily, and one that loses them.",
+            "explanation": "'Straightforward', 'basic principle', and 'self-explanatory' all describe something simple enough to grasp immediately. 'Tangled' and 'hard to follow' both describe something complicated enough to obscure its own meaning.",
             "options": [
-                "Rudimentary",
-                "Overly-complex",
-                "Foundational-level",
-                "Tortuously-intricate",
-                "Basic-level"
+                "Straightforward",
+                "Basic principle",
+                "Tangled",
+                "Self-explanatory",
+                "Hard to follow"
             ],
-            "correctAnswer": "Elementary:Rudimentary, Convoluted:Overly-complex, Elementary:Foundational-level, Convoluted:Tortuously-intricate, Elementary:Basic-level",
+            "correctAnswer": "Elementary:Straightforward, Elementary:Basic principle, Convoluted:Tangled, Elementary:Self-explanatory, Convoluted:Hard to follow",
             "relatedWords": [
-                "aspect of Elementary:Rudimentary, Convoluted:Overly-complex, Elementary:Foundational-level, Convoluted:Tortuously-intricate, Elementary:Basic-level",
-                "concept of Elementary:Rudimentary, Convoluted:Overly-complex, Elementary:Foundational-level, Convoluted:Tortuously-intricate, Elementary:Basic-level",
-                "related to Elementary:Rudimentary, Convoluted:Overly-complex, Elementary:Foundational-level, Convoluted:Tortuously-intricate, Elementary:Basic-level"
+                "Straightforward: simple and easy to understand",
+                "Basic principle: a foundational, simple rule",
+                "Tangled: twisted together and hard to separate",
+                "Self-explanatory: needing no further explanation",
+                "Hard to follow: difficult to understand in sequence"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L200_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Register test: two of these are formal words, and one is a criticism disguised as description. Sort into Elementary or Convoluted.",
             "topicBuckets": [
                 "Elementary",
                 "Convoluted"
             ],
-            "hint": "Here's a tip: An elementary explanation is simple and basic, while a convoluted explanation is twisted and needlessly complicated!",
-            "explanation": "Think of 'Elementary' as simple, basic ideas (rudimentary, foundational-level), and 'Convoluted' as needlessly complicated, tangled ideas (overly-complex, tortuously-intricate)!",
+            "hint": "Watch the connotation \u2014 calling something 'elementary' isn't always a compliment either.",
+            "explanation": "'Rudimentary' and 'pared back' both describe simplicity formally, though 'rudimentary' can imply something is underdeveloped rather than elegantly simple. 'Byzantine' and 'labyrinthine' are both formal words for excessive complexity, and 'needlessly complex' states that criticism plainly.",
             "options": [
-                "Introductory",
-                "Tangled-and-complex",
-                "Simplistic",
-                "Needlessly-complicated",
-                "Bare-bones"
+                "Pared back",
+                "Byzantine",
+                "Labyrinthine",
+                "Rudimentary",
+                "Needlessly complex"
             ],
-            "correctAnswer": "Elementary:Introductory, Convoluted:Tangled-and-complex, Elementary:Simplistic, Convoluted:Needlessly-complicated, Elementary:Bare-bones",
+            "correctAnswer": "Elementary:Pared back, Convoluted:Byzantine, Convoluted:Labyrinthine, Elementary:Rudimentary, Convoluted:Needlessly complex",
             "relatedWords": [
-                "aspect of Elementary:Introductory, Convoluted:Tangled-and-complex, Elementary:Simplistic, Convoluted:Needlessly-complicated, Elementary:Bare-bones",
-                "concept of Elementary:Introductory, Convoluted:Tangled-and-complex, Elementary:Simplistic, Convoluted:Needlessly-complicated, Elementary:Bare-bones",
-                "related to Elementary:Introductory, Convoluted:Tangled-and-complex, Elementary:Simplistic, Convoluted:Needlessly-complicated, Elementary:Bare-bones"
+                "Pared back: reduced to essentials",
+                "Byzantine: excessively complicated in structure",
+                "Labyrinthine: as complicated as a maze",
+                "Rudimentary: basic, sometimes to the point of being undeveloped",
+                "Needlessly complex: more complicated than it has to be"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L200_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "The last question of the curriculum: transfer everything. Sort these figurative uses into Elementary or Convoluted.",
             "topicBuckets": [
                 "Elementary",
                 "Convoluted"
             ],
-            "hint": "Here's a tip: An elementary explanation is simple and basic, while a convoluted explanation is twisted and needlessly complicated!",
-            "explanation": "Think of 'Elementary' as simple, basic ideas (rudimentary, foundational-level), and 'Convoluted' as needlessly complicated, tangled ideas (overly-complex, tortuously-intricate)!",
+            "hint": "Simple isn't the same as easy, and complex isn't the same as clever.",
+            "explanation": "'Boils down to one idea' and 'elegantly simple' both praise clarity achieved through effort \u2014 reaching simplicity is usually harder than leaving something complicated. 'Ties itself in knots', 'a maze of exceptions', and 'buried under caveats' all describe complexity that obscures meaning rather than adding to it, which is the difference this whole curriculum has been training you to hear.",
             "options": [
-                "Plain-and-simple",
-                "Labyrinthine-in-structure",
-                "Beginner-level",
-                "Knotted-and-confusing",
-                "Uncomplicated-at-core"
+                "Buried under caveats",
+                "Ties itself in knots",
+                "Elegantly simple",
+                "A maze of exceptions",
+                "Boils down to one idea"
             ],
-            "correctAnswer": "Elementary:Plain-and-simple, Convoluted:Labyrinthine-in-structure, Elementary:Beginner-level, Convoluted:Knotted-and-confusing, Elementary:Uncomplicated-at-core",
+            "correctAnswer": "Convoluted:Buried under caveats, Convoluted:Ties itself in knots, Elementary:Elegantly simple, Convoluted:A maze of exceptions, Elementary:Boils down to one idea",
             "relatedWords": [
-                "aspect of Elementary:Plain-and-simple, Convoluted:Labyrinthine-in-structure, Elementary:Beginner-level, Convoluted:Knotted-and-confusing, Elementary:Uncomplicated-at-core",
-                "concept of Elementary:Plain-and-simple, Convoluted:Labyrinthine-in-structure, Elementary:Beginner-level, Convoluted:Knotted-and-confusing, Elementary:Uncomplicated-at-core",
-                "related to Elementary:Plain-and-simple, Convoluted:Labyrinthine-in-structure, Elementary:Beginner-level, Convoluted:Knotted-and-confusing, Elementary:Uncomplicated-at-core"
+                "Buried under caveats: obscured by too many qualifications",
+                "Ties itself in knots: becomes confused through over-complication",
+                "Elegantly simple: simple in a way that shows skill",
+                "A maze of exceptions: so many exceptions the rule is lost",
+                "Boils down to one idea: reduces to a single clear point"
             ]
         }
     ]

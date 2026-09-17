@@ -6,721 +6,781 @@
         {
             "id": "VOC_TOPICVOCAB_L51_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Top or Bottom.",
             "topicBuckets": [
                 "Top",
                 "Bottom"
             ],
-            "hint": "Here's a tip: The top is the highest part, while the bottom is the lowest part!",
-            "explanation": "Think of 'Top' as the highest part of something (summit, peak), and 'Bottom' as the lowest part (base, floor)!",
+            "hint": "Think about the very highest point of something, and the part it rests on.",
+            "explanation": "Apex, crown, and pinnacle all describe the highest point of something, with pinnacle often used figuratively for someone's greatest achievement. Base and foundation both describe the lowest part, the part something rests or is built on.",
             "options": [
-                "Summit",
+                "Apex",
                 "Base",
-                "Peak",
-                "Floor",
-                "Crown"
+                "Crown",
+                "Foundation",
+                "Pinnacle"
             ],
-            "correctAnswer": "Top:Summit, Bottom:Base, Top:Peak, Bottom:Floor, Top:Crown",
+            "correctAnswer": "Top:Apex, Bottom:Base, Top:Crown, Bottom:Foundation, Top:Pinnacle",
             "relatedWords": [
-                "aspect of Top:Summit, Bottom:Base, Top:Peak, Bottom:Floor, Top:Crown",
-                "concept of Top:Summit, Bottom:Base, Top:Peak, Bottom:Floor, Top:Crown",
-                "related to Top:Summit, Bottom:Base, Top:Peak, Bottom:Floor, Top:Crown"
+                "Apex: the highest point of something",
+                "Base: the lowest part of something, on which it stands",
+                "Crown: the top part of something, especially a head or hill",
+                "Foundation: the lowest supporting part of a structure",
+                "Pinnacle: the highest point, often used figuratively for achievement"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L51_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Think about the roof of a building versus the ground floor. Sort into Bottom or Top.",
             "topicBuckets": [
-                "Top",
-                "Bottom"
+                "Bottom",
+                "Top"
             ],
-            "hint": "Here's a tip: The top is the highest part, while the bottom is the lowest part!",
-            "explanation": "Think of 'Top' as the highest part of something (summit, peak), and 'Bottom' as the lowest part (base, floor)!",
+            "hint": "One top word is often used figuratively for the highest point of success.",
+            "explanation": "Tip, zenith, and rooftop all describe the top of something, with zenith often used figuratively for the highest point of success. Underside and floor both describe the bottom, with underside specifically meaning the hidden lower surface of an object.",
             "options": [
-                "Apex",
-                "Foundation",
                 "Tip",
                 "Underside",
-                "Ceiling"
+                "Zenith",
+                "Floor",
+                "Rooftop"
             ],
-            "correctAnswer": "Top:Apex, Bottom:Foundation, Top:Tip, Bottom:Underside, Top:Ceiling",
+            "correctAnswer": "Top:Tip, Bottom:Underside, Top:Zenith, Bottom:Floor, Top:Rooftop",
             "relatedWords": [
-                "aspect of Top:Apex, Bottom:Foundation, Top:Tip, Bottom:Underside, Top:Ceiling",
-                "concept of Top:Apex, Bottom:Foundation, Top:Tip, Bottom:Underside, Top:Ceiling",
-                "related to Top:Apex, Bottom:Foundation, Top:Tip, Bottom:Underside, Top:Ceiling"
+                "Tip: the pointed top end of something",
+                "Underside: the lower or hidden surface of something",
+                "Zenith: the highest point, especially of success",
+                "Floor: the lowest surface of a room or structure",
+                "Rooftop: the outer top surface of a building"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L51_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These are idioms about rank and status, not literal height. Sort into Top or Bottom.",
             "topicBuckets": [
                 "Top",
                 "Bottom"
             ],
-            "hint": "Here's a tip: The top is the highest part, while the bottom is the lowest part!",
-            "explanation": "Think of 'Top' as the highest part of something (summit, peak), and 'Bottom' as the lowest part (base, floor)!",
+            "hint": "Think about who's expected to win, and who's considered the very best.",
+            "explanation": "'Top-tier' and 'elite' both describe the highest rank or quality, used figuratively for people or things considered the best. 'Rock bottom' and 'bottom-of-the-barrel' both describe the lowest possible point, and an underdog is someone or something expected to lose, seen as starting from a disadvantaged position.",
             "options": [
-                "Roof",
-                "Ground",
-                "Lid",
-                "Sole",
-                "Highest-point"
+                "Elite",
+                "Underdog",
+                "Top-tier",
+                "Bottom-of-the-barrel",
+                "Rock bottom"
             ],
-            "correctAnswer": "Top:Roof, Bottom:Ground, Top:Lid, Bottom:Sole, Top:Highest-point",
+            "correctAnswer": "Top:Elite, Bottom:Underdog, Top:Top-tier, Bottom:Bottom-of-the-barrel, Bottom:Rock bottom",
             "relatedWords": [
-                "aspect of Top:Roof, Bottom:Ground, Top:Lid, Bottom:Sole, Top:Highest-point",
-                "concept of Top:Roof, Bottom:Ground, Top:Lid, Bottom:Sole, Top:Highest-point",
-                "related to Top:Roof, Bottom:Ground, Top:Lid, Bottom:Sole, Top:Highest-point"
+                "Elite: the best or most skilled group",
+                "Underdog: a competitor expected to lose",
+                "Top-tier: of the highest rank or quality",
+                "Bottom-of-the-barrel: of the lowest possible quality",
+                "Rock bottom: the lowest possible point"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L52_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Right or Left, based on direction.",
             "topicBuckets": [
-                "Left",
-                "Right"
+                "Right",
+                "Left"
             ],
-            "hint": "Left and right are opposite sides of your body. Most people write with their right hand.",
-            "explanation": "Think of 'Left' as the left-hand side (port, west on a standard map), and 'Right' as the right-hand side (starboard, east on a standard map)!",
+            "hint": "Think about nautical terms sailors use for the sides of a ship.",
+            "explanation": "Port and leftward both describe the left side or direction, with port specifically being the nautical term for a ship's left side. Starboard and rightward both describe the right side or direction, with starboard being the nautical equivalent for the right.",
             "options": [
-                "Port",
+                "Rightward",
+                "Leftward",
                 "Starboard",
-                "Left-hand",
-                "Right-hand",
-                "Southpaw"
+                "Port",
+                "Left-hand"
             ],
-            "correctAnswer": "Left:Port, Right:Starboard, Left:Left-hand, Right:Right-hand, Left:Southpaw",
+            "correctAnswer": "Right:Rightward, Left:Leftward, Right:Starboard, Left:Port, Left:Left-hand",
             "relatedWords": [
-                "aspect of Left:Port, Right:Starboard, Left:Left-hand, Right:Right-hand, Left:Southpaw",
-                "concept of Left:Port, Right:Starboard, Left:Left-hand, Right:Right-hand, Left:Southpaw",
-                "related to Left:Port, Right:Starboard, Left:Left-hand, Right:Right-hand, Left:Southpaw"
+                "Rightward: toward the right",
+                "Leftward: toward the left",
+                "Starboard: the nautical term for the right side of a ship",
+                "Port: the nautical term for the left side of a ship",
+                "Left-hand: positioned on the left side"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L52_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Two of these are political terms, and one is a boxing term for someone who leads with an unusual hand. Sort into Left or Right.",
             "topicBuckets": [
                 "Left",
                 "Right"
             ],
-            "hint": "Left and right are opposite sides of your body. Most people write with their right hand.",
-            "explanation": "Think of 'Left' as the left-hand side (port, west on a standard map), and 'Right' as the right-hand side (starboard, east on a standard map)!",
+            "hint": "Think about political leanings, and traffic rules about who goes first.",
+            "explanation": "'Left-wing' and 'southpaw' both use 'left' in specific contexts \u2014 one for progressive politics, the other for a left-handed boxer or athlete. 'Right-wing' and 'right of way' both use 'right' in specific contexts \u2014 conservative politics, and the traffic rule about who gets to go first.",
             "options": [
-                "Left-handed",
-                "Right-handed",
-                "Left-footed",
-                "Right-footed",
-                "Leftward"
+                "Left turn",
+                "Left-wing",
+                "Southpaw",
+                "Right of way",
+                "Right-wing"
             ],
-            "correctAnswer": "Left:Left-handed, Right:Right-handed, Left:Left-footed, Right:Right-footed, Left:Leftward",
+            "correctAnswer": "Left:Left turn, Left:Left-wing, Left:Southpaw, Right:Right of way, Right:Right-wing",
             "relatedWords": [
-                "aspect of Left:Left-handed, Right:Right-handed, Left:Left-footed, Right:Right-footed, Left:Leftward",
-                "concept of Left:Left-handed, Right:Right-handed, Left:Left-footed, Right:Right-footed, Left:Leftward",
-                "related to Left:Left-handed, Right:Right-handed, Left:Left-footed, Right:Right-footed, Left:Leftward"
+                "Left turn: a turn made toward the left",
+                "Left-wing: associated with progressive or socialist politics",
+                "Southpaw: a left-handed person, especially a boxer",
+                "Right of way: the legal right to proceed first in traffic",
+                "Right-wing: associated with conservative politics"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L52_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These are common idioms. Think about clumsiness, trust, surprise, and being correct. Sort into Left or Right.",
             "topicBuckets": [
                 "Left",
                 "Right"
             ],
-            "hint": "Left and right are opposite sides of your body. Most people write with their right hand.",
-            "explanation": "Think of 'Left' as the left-hand side (port, west on a standard map), and 'Right' as the right-hand side (starboard, east on a standard map)!",
+            "hint": "Think about a bad dancer, an unexpected event, a trusted assistant, and being completely correct.",
+            "explanation": "'Two left feet' describes clumsiness, especially at dancing, and 'out of left field' describes something completely unexpected. A 'right-hand man' is a trusted, essential assistant, 'dead right' means completely correct, and to 'turn right' is a literal direction using the same word.",
             "options": [
-                "Left-side",
-                "Right-side",
-                "Left-turn",
-                "Right-turn",
-                "Rightward"
+                "Dead right",
+                "Two left feet",
+                "Out of left field",
+                "Right-hand man",
+                "Turn right"
             ],
-            "correctAnswer": "Left:Left-side, Right:Right-side, Left:Left-turn, Right:Right-turn, Right:Rightward",
+            "correctAnswer": "Right:Dead right, Left:Two left feet, Left:Out of left field, Right:Right-hand man, Right:Turn right",
             "relatedWords": [
-                "aspect of Left:Left-side, Right:Right-side, Left:Left-turn, Right:Right-turn, Right:Rightward",
-                "concept of Left:Left-side, Right:Right-side, Left:Left-turn, Right:Right-turn, Right:Rightward",
-                "related to Left:Left-side, Right:Right-side, Left:Left-turn, Right:Right-turn, Right:Rightward"
+                "Dead right: completely correct",
+                "Two left feet: an idiom for being a clumsy dancer",
+                "Out of left field: completely unexpected",
+                "Right-hand man: a trusted, essential assistant",
+                "Turn right: to change direction toward the right"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L53_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Last or First.",
             "topicBuckets": [
-                "First",
-                "Last"
+                "Last",
+                "First"
             ],
-            "hint": "Here's a tip: First means at the very beginning of a list or race, while last means at the very end!",
-            "explanation": "Think of 'First' as being at the start (initial, leading), and 'Last' as being at the end (final, closing)!",
+            "hint": "Think about the beginning of something, and its very end.",
+            "explanation": "Initial, opening, and foremost all describe the first part or position of something, with foremost often used figuratively for the most important. Final and concluding both describe the last part, the point where something ends.",
             "options": [
                 "Initial",
                 "Final",
-                "Leading",
-                "Closing",
-                "Opening"
+                "Opening",
+                "Concluding",
+                "Foremost"
             ],
-            "correctAnswer": "First:Initial, Last:Final, First:Leading, Last:Closing, First:Opening",
+            "correctAnswer": "First:Initial, Last:Final, First:Opening, Last:Concluding, First:Foremost",
             "relatedWords": [
-                "aspect of First:Initial, Last:Final, First:Leading, Last:Closing, First:Opening",
-                "concept of First:Initial, Last:Final, First:Leading, Last:Closing, First:Opening",
-                "related to First:Initial, Last:Final, First:Leading, Last:Closing, First:Opening"
+                "Initial: occurring at the beginning",
+                "Final: coming at the end, last",
+                "Opening: the first part of something",
+                "Concluding: forming the ending part",
+                "Foremost: the first in position or importance"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L53_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Think about a movie's opening night versus a show's closing performance. Sort into Last or First.",
             "topicBuckets": [
-                "First",
-                "Last"
+                "Last",
+                "First"
             ],
-            "hint": "Here's a tip: First means at the very beginning of a list or race, while last means at the very end!",
-            "explanation": "Think of 'First' as being at the start (initial, leading), and 'Last' as being at the end (final, closing)!",
+            "hint": "Three of these describe something happening for the very first time.",
+            "explanation": "Debut, premiere, and inaugural all describe something happening for the very first time, especially a public event. Finale and farewell both describe an ending, with finale specifically referring to the last part of a performance.",
             "options": [
-                "Beginning",
-                "Ending",
-                "Primary",
-                "Concluding",
-                "Foremost"
+                "Premiere",
+                "Inaugural",
+                "Debut",
+                "Farewell",
+                "Finale"
             ],
-            "correctAnswer": "First:Beginning, Last:Ending, First:Primary, Last:Concluding, First:Foremost",
+            "correctAnswer": "First:Premiere, First:Inaugural, First:Debut, Last:Farewell, Last:Finale",
             "relatedWords": [
-                "aspect of First:Beginning, Last:Ending, First:Primary, Last:Concluding, First:Foremost",
-                "concept of First:Beginning, Last:Ending, First:Primary, Last:Concluding, First:Foremost",
-                "related to First:Beginning, Last:Ending, First:Primary, Last:Concluding, First:Foremost"
+                "Premiere: the first public showing of something",
+                "Inaugural: marking the first of a series, especially a beginning",
+                "Debut: a first public appearance or performance",
+                "Farewell: an act of parting or leaving, often marking an end",
+                "Finale: the last part of a performance or event"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L53_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These are racing and competition terms. Think about who's ahead, and who's falling behind. Sort into First or Last.",
             "topicBuckets": [
                 "First",
                 "Last"
             ],
-            "hint": "Here's a tip: First means at the very beginning of a list or race, while last means at the very end!",
-            "explanation": "Think of 'First' as being at the start (initial, leading), and 'Last' as being at the end (final, closing)!",
+            "hint": "One first-place term specifically refers to the best starting position in motor racing.",
+            "explanation": "Frontrunner, pole position, and leading all describe being first or ahead in a race or competition, with pole position specifically referring to the best starting position in motor racing. Trailing and 'bringing up the rear' both describe being last, with 'bringing up the rear' being an idiom for the last person in a line or group.",
             "options": [
-                "Earliest",
-                "Latest",
-                "Premiere",
-                "Finale",
-                "Debut"
+                "Frontrunner",
+                "Trailing",
+                "Pole position",
+                "Bringing up the rear",
+                "Leading"
             ],
-            "correctAnswer": "First:Earliest, Last:Latest, First:Premiere, Last:Finale, First:Debut",
+            "correctAnswer": "First:Frontrunner, Last:Trailing, First:Pole position, Last:Bringing up the rear, First:Leading",
             "relatedWords": [
-                "aspect of First:Earliest, Last:Latest, First:Premiere, Last:Finale, First:Debut",
-                "concept of First:Earliest, Last:Latest, First:Premiere, Last:Finale, First:Debut",
-                "related to First:Earliest, Last:Latest, First:Premiere, Last:Finale, First:Debut"
+                "Frontrunner: the competitor most likely to win, currently ahead",
+                "Trailing: behind in a race or competition",
+                "Pole position: the best starting position in a race",
+                "Bringing up the rear: being last in a line or group",
+                "Leading: currently ahead or in first position"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L54_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Young or Senior, based on experience level in a workplace.",
             "topicBuckets": [
                 "Young",
                 "Senior"
             ],
-            "hint": "Here's a tip: A young employee has recently started working, while a senior employee has many years of experience!",
-            "explanation": "Think of 'Young' as early-career or younger people (junior, new hire), and 'Senior' as experienced, older people (veteran, elder)!",
+            "hint": "Think about someone just starting their first job, and someone who's been doing it for decades.",
+            "explanation": "Junior, entry-level, and newcomer all describe someone new to a workplace or role. Experienced and seasoned both describe someone senior, with seasoned specifically suggesting skill built up over a long time.",
             "options": [
-                "Junior",
-                "Veteran",
+                "Seasoned",
+                "Experienced",
                 "Newcomer",
-                "Elder",
-                "Rookie"
+                "Junior",
+                "Entry-level"
             ],
-            "correctAnswer": "Young:Junior, Senior:Veteran, Young:Newcomer, Senior:Elder, Young:Rookie",
+            "correctAnswer": "Senior:Seasoned, Senior:Experienced, Young:Newcomer, Young:Junior, Young:Entry-level",
             "relatedWords": [
-                "aspect of Young:Junior, Senior:Veteran, Young:Newcomer, Senior:Elder, Young:Rookie",
-                "concept of Young:Junior, Senior:Veteran, Young:Newcomer, Senior:Elder, Young:Rookie",
-                "related to Young:Junior, Senior:Veteran, Young:Newcomer, Senior:Elder, Young:Rookie"
+                "Seasoned: experienced, especially through long practice",
+                "Experienced: having gained knowledge or skill through practice",
+                "Newcomer: a person new to a role or place",
+                "Junior: having a low rank or little experience",
+                "Entry-level: suitable for someone with no experience"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L54_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Think about someone still learning the ropes versus someone widely respected for their long career. Sort into Young or Senior.",
             "topicBuckets": [
                 "Young",
                 "Senior"
             ],
-            "hint": "Here's a tip: A young employee has recently started working, while a senior employee has many years of experience!",
-            "explanation": "Think of 'Young' as early-career or younger people (junior, new hire), and 'Senior' as experienced, older people (veteran, elder)!",
+            "hint": "One young word is an informal term for a newcomer who still has much to learn.",
+            "explanation": "Fresh-faced, up-and-coming, and green all describe someone young or inexperienced, with green being an informal word for a newcomer who still has much to learn. Elder and distinguished both describe someone senior, with distinguished suggesting respect earned through a long, successful career.",
             "options": [
-                "Trainee",
-                "Experienced",
-                "Fresh",
-                "Seasoned",
-                "Apprentice"
+                "Elder",
+                "Fresh-faced",
+                "Green",
+                "Distinguished",
+                "Up-and-coming"
             ],
-            "correctAnswer": "Young:Trainee, Senior:Experienced, Young:Fresh, Senior:Seasoned, Young:Apprentice",
+            "correctAnswer": "Senior:Elder, Young:Fresh-faced, Young:Green, Senior:Distinguished, Young:Up-and-coming",
             "relatedWords": [
-                "aspect of Young:Trainee, Senior:Experienced, Young:Fresh, Senior:Seasoned, Young:Apprentice",
-                "concept of Young:Trainee, Senior:Experienced, Young:Fresh, Senior:Seasoned, Young:Apprentice",
-                "related to Young:Trainee, Senior:Experienced, Young:Fresh, Senior:Seasoned, Young:Apprentice"
+                "Elder: an older, often respected person",
+                "Fresh-faced: young and inexperienced-looking",
+                "Green: informally, inexperienced",
+                "Distinguished: respected because of achievements",
+                "Up-and-coming: showing promise and likely to succeed"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L54_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "One senior word is a formal title given to someone respected even after they've retired. Sort into Young or Senior.",
             "topicBuckets": [
                 "Young",
                 "Senior"
             ],
-            "hint": "Here's a tip: A young employee has recently started working, while a senior employee has many years of experience!",
-            "explanation": "Think of 'Young' as early-career or younger people (junior, new hire), and 'Senior' as experienced, older people (veteran, elder)!",
+            "hint": "Think about someone being mentored versus a title of honor, and a group of long-established members.",
+            "explanation": "A prot\u00e9g\u00e9, a novice, and someone fledgling are all still early in their development, learning under others' guidance. Emeritus is a formal title given to a retired professional as a mark of respect, and the 'old guard' refers to the long-established, senior members of a group or organization.",
             "options": [
-                "Intern",
-                "Tenured",
-                "Beginner",
-                "Established",
-                "Entry-level"
+                "Fledgling",
+                "Novice",
+                "Prot\u00e9g\u00e9",
+                "Emeritus",
+                "Old guard"
             ],
-            "correctAnswer": "Young:Intern, Senior:Tenured, Young:Beginner, Senior:Established, Young:Entry-level",
+            "correctAnswer": "Young:Fledgling, Young:Novice, Young:Prot\u00e9g\u00e9, Senior:Emeritus, Senior:Old guard",
             "relatedWords": [
-                "aspect of Young:Intern, Senior:Tenured, Young:Beginner, Senior:Established, Young:Entry-level",
-                "concept of Young:Intern, Senior:Tenured, Young:Beginner, Senior:Established, Young:Entry-level",
-                "related to Young:Intern, Senior:Tenured, Young:Beginner, Senior:Established, Young:Entry-level"
+                "Fledgling: new and inexperienced",
+                "Novice: a person new to a skill or activity",
+                "Prot\u00e9g\u00e9: a person guided and supported by someone more experienced",
+                "Emeritus: a formal title of honor given to a retired professional",
+                "Old guard: the long-established, senior members of a group"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L55_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Fresh or Stale.",
             "topicBuckets": [
                 "Fresh",
                 "Stale"
             ],
-            "hint": "Here's a tip: Fresh food was made recently and tastes great, while stale food has been sitting too long!",
-            "explanation": "Think of 'Fresh' as recently made food (crisp, just-baked), and 'Stale' as old food that has lost its quality (dry, moldy)!",
+            "hint": "Think about a vegetable just harvested versus one that's been forgotten in the fridge.",
+            "explanation": "Crisp, ripe, and 'just-picked' all describe food at its best, recently harvested or prepared. Moldy and rotten both describe food that's gone bad, though moldy specifically refers to fungal growth.",
             "options": [
                 "Crisp",
+                "Just-picked",
+                "Ripe",
                 "Moldy",
-                "Just-baked",
-                "Dry",
-                "Newly-picked"
+                "Rotten"
             ],
-            "correctAnswer": "Fresh:Crisp, Stale:Moldy, Fresh:Just-baked, Stale:Dry, Fresh:Newly-picked",
+            "correctAnswer": "Fresh:Crisp, Fresh:Just-picked, Fresh:Ripe, Stale:Moldy, Stale:Rotten",
             "relatedWords": [
-                "aspect of Fresh:Crisp, Stale:Moldy, Fresh:Just-baked, Stale:Dry, Fresh:Newly-picked",
-                "concept of Fresh:Crisp, Stale:Moldy, Fresh:Just-baked, Stale:Dry, Fresh:Newly-picked",
-                "related to Fresh:Crisp, Stale:Moldy, Fresh:Just-baked, Stale:Dry, Fresh:Newly-picked"
+                "Crisp: fresh and firm, especially fruit or vegetables",
+                "Just-picked: recently harvested",
+                "Ripe: fully developed and ready to eat",
+                "Moldy: covered in mold, a sign of spoilage",
+                "Rotten: decayed and spoiled"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L55_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Think about a salad that's lost its crunch and color, versus one that still looks vivid. Sort into Fresh or Stale.",
             "topicBuckets": [
                 "Fresh",
                 "Stale"
             ],
-            "hint": "Here's a tip: Fresh food was made recently and tastes great, while stale food has been sitting too long!",
-            "explanation": "Think of 'Fresh' as recently made food (crisp, just-baked), and 'Stale' as old food that has lost its quality (dry, moldy)!",
+            "hint": "One stale word specifically describes produce that's lost its firmness.",
+            "explanation": "Crunchy, zesty, and vibrant all describe food that's fresh and appealing, whether through texture, flavor, or appearance. Wilted and expired both describe food past its best, with wilted specifically describing produce that's lost its firmness.",
             "options": [
-                "Ripe",
-                "Rotten",
-                "Wholesome",
-                "Spoiled",
-                "Garden-fresh"
+                "Vibrant",
+                "Crunchy",
+                "Expired",
+                "Wilted",
+                "Zesty"
             ],
-            "correctAnswer": "Fresh:Ripe, Stale:Rotten, Fresh:Wholesome, Stale:Spoiled, Fresh:Garden-fresh",
+            "correctAnswer": "Fresh:Vibrant, Fresh:Crunchy, Stale:Expired, Stale:Wilted, Fresh:Zesty",
             "relatedWords": [
-                "aspect of Fresh:Ripe, Stale:Rotten, Fresh:Wholesome, Stale:Spoiled, Fresh:Garden-fresh",
-                "concept of Fresh:Ripe, Stale:Rotten, Fresh:Wholesome, Stale:Spoiled, Fresh:Garden-fresh",
-                "related to Fresh:Ripe, Stale:Rotten, Fresh:Wholesome, Stale:Spoiled, Fresh:Garden-fresh"
+                "Vibrant: bright and full of life in appearance",
+                "Crunchy: fresh and crisp in texture",
+                "Expired: past the date it should be used by",
+                "Wilted: having lost freshness and firmness, drooping",
+                "Zesty: having a lively, fresh flavor"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L55_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Think about restaurant menu language, and the warning signs on food stored too long. Sort into Stale or Fresh.",
             "topicBuckets": [
-                "Fresh",
-                "Stale"
+                "Stale",
+                "Fresh"
             ],
-            "hint": "Here's a tip: Fresh food was made recently and tastes great, while stale food has been sitting too long!",
-            "explanation": "Think of 'Fresh' as recently made food (crisp, just-baked), and 'Stale' as old food that has lost its quality (dry, moldy)!",
+            "hint": "Two fresh phrases are marketing language a restaurant would use to promise quality.",
+            "explanation": "'Farm-to-table', 'locally sourced', and 'peak freshness' are all marketing phrases restaurants use to promise fresh food. 'Past its prime' and 'freezer-burnt' both describe food that's no longer fresh, with freezer-burnt specifically describing damage from being frozen too long.",
             "options": [
-                "Hard",
-                "Musty",
-                "Expired",
-                "Crunchy",
-                "Just-made"
+                "Farm-to-table",
+                "Past its prime",
+                "Locally sourced",
+                "Freezer-burnt",
+                "Peak freshness"
             ],
-            "correctAnswer": "Stale:Hard, Stale:Musty, Stale:Expired, Fresh:Crunchy, Fresh:Just-made",
+            "correctAnswer": "Fresh:Farm-to-table, Stale:Past its prime, Fresh:Locally sourced, Stale:Freezer-burnt, Fresh:Peak freshness",
             "relatedWords": [
-                "aspect of Stale:Hard, Stale:Musty, Stale:Expired, Fresh:Crunchy, Fresh:Just-made",
-                "concept of Stale:Hard, Stale:Musty, Stale:Expired, Fresh:Crunchy, Fresh:Just-made",
-                "related to Stale:Hard, Stale:Musty, Stale:Expired, Fresh:Crunchy, Fresh:Just-made"
+                "Farm-to-table: describing food sourced directly from local farms",
+                "Past its prime: no longer at its best quality",
+                "Locally sourced: obtained from nearby producers",
+                "Freezer-burnt: damaged in quality from being frozen too long",
+                "Peak freshness: at the very best point of freshness"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L56_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Legal or Illegal.",
             "topicBuckets": [
                 "Legal",
                 "Illegal"
             ],
-            "hint": "Here's a tip: A legal action follows the law, while an illegal action breaks it!",
-            "explanation": "Think of 'Legal' as actions allowed by law (lawful, permitted), and 'Illegal' as actions forbidden by law (unlawful, prohibited)!",
+            "hint": "Think about what the law allows, and what it forbids.",
+            "explanation": "Lawful, permitted, and authorized all describe something allowed under the law or by official approval. Prohibited and banned both describe something forbidden, often by a specific law or rule.",
             "options": [
+                "Authorized",
                 "Lawful",
-                "Unlawful",
                 "Permitted",
-                "Prohibited",
-                "Authorized"
+                "Banned",
+                "Prohibited"
             ],
-            "correctAnswer": "Legal:Lawful, Illegal:Unlawful, Legal:Permitted, Illegal:Prohibited, Legal:Authorized",
+            "correctAnswer": "Legal:Authorized, Legal:Lawful, Legal:Permitted, Illegal:Banned, Illegal:Prohibited",
             "relatedWords": [
-                "aspect of Legal:Lawful, Illegal:Unlawful, Legal:Permitted, Illegal:Prohibited, Legal:Authorized",
-                "concept of Legal:Lawful, Illegal:Unlawful, Legal:Permitted, Illegal:Prohibited, Legal:Authorized",
-                "related to Legal:Lawful, Illegal:Unlawful, Legal:Permitted, Illegal:Prohibited, Legal:Authorized"
+                "Authorized: officially approved to happen",
+                "Lawful: permitted specifically by law",
+                "Permitted: formally allowed by a rule or authority",
+                "Banned: officially forbidden",
+                "Prohibited: forbidden, especially by law or rule"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L56_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Think about an activity that requires official permission, versus one forbidden entirely. Sort into Legal or Illegal.",
             "topicBuckets": [
                 "Legal",
                 "Illegal"
             ],
-            "hint": "Here's a tip: A legal action follows the law, while an illegal action breaks it!",
-            "explanation": "Think of 'Legal' as actions allowed by law (lawful, permitted), and 'Illegal' as actions forbidden by law (unlawful, prohibited)!",
+            "hint": "One illegal word suggests something was once allowed but has since been banned.",
+            "explanation": "Licensed, regulated, and sanctioned all describe something legal because it's been officially approved or controlled. Unlawful and outlawed both describe illegality, with outlawed specifically suggesting something was once allowed but has since been banned.",
             "options": [
+                "Regulated",
+                "Outlawed",
                 "Licensed",
-                "Banned",
-                "Sanctioned",
-                "Forbidden",
-                "Approved"
+                "Unlawful",
+                "Sanctioned"
             ],
-            "correctAnswer": "Legal:Licensed, Illegal:Banned, Legal:Sanctioned, Illegal:Forbidden, Legal:Approved",
+            "correctAnswer": "Legal:Regulated, Illegal:Outlawed, Legal:Licensed, Illegal:Unlawful, Legal:Sanctioned",
             "relatedWords": [
-                "aspect of Legal:Licensed, Illegal:Banned, Legal:Sanctioned, Illegal:Forbidden, Legal:Approved",
-                "concept of Legal:Licensed, Illegal:Banned, Legal:Sanctioned, Illegal:Forbidden, Legal:Approved",
-                "related to Legal:Licensed, Illegal:Banned, Legal:Sanctioned, Illegal:Forbidden, Legal:Approved"
+                "Regulated: controlled by official rules",
+                "Outlawed: made illegal, especially something previously allowed",
+                "Licensed: officially permitted through a license",
+                "Unlawful: against the law",
+                "Sanctioned: officially approved or permitted"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L56_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "One legal idiom describes something done honestly and openly. Sort into Legal or Illegal.",
             "topicBuckets": [
                 "Legal",
                 "Illegal"
             ],
-            "hint": "Here's a tip: A legal action follows the law, while an illegal action breaks it!",
-            "explanation": "Think of 'Legal' as actions allowed by law (lawful, permitted), and 'Illegal' as actions forbidden by law (unlawful, prohibited)!",
+            "hint": "Think about goods that are illegal to possess, and a process of making something no longer illegal.",
+            "explanation": "Decriminalized, compliant, and 'above board' all describe legality, with decriminalized specifically describing something that used to be illegal but no longer is. Contraband and unauthorized both describe illegality, with contraband specifically referring to goods that are illegal to possess or trade.",
             "options": [
-                "Valid",
-                "Criminal",
+                "Contraband",
                 "Compliant",
-                "Outlawed",
-                "Permissible"
+                "Decriminalized",
+                "Unauthorized",
+                "Above board"
             ],
-            "correctAnswer": "Legal:Valid, Illegal:Criminal, Legal:Compliant, Illegal:Outlawed, Legal:Permissible",
+            "correctAnswer": "Illegal:Contraband, Legal:Compliant, Legal:Decriminalized, Illegal:Unauthorized, Legal:Above board",
             "relatedWords": [
-                "aspect of Legal:Valid, Illegal:Criminal, Legal:Compliant, Illegal:Outlawed, Legal:Permissible",
-                "concept of Legal:Valid, Illegal:Criminal, Legal:Compliant, Illegal:Outlawed, Legal:Permissible",
-                "related to Legal:Valid, Illegal:Criminal, Legal:Compliant, Illegal:Outlawed, Legal:Permissible"
+                "Contraband: goods illegal to possess or trade",
+                "Compliant: following rules or laws",
+                "Decriminalized: made no longer illegal",
+                "Unauthorized: not officially permitted",
+                "Above board: honest and open, without concealment"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L57_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Liquid or Solid.",
             "topicBuckets": [
-                "Solid",
-                "Liquid"
+                "Liquid",
+                "Solid"
             ],
-            "hint": "Here's a tip: A solid keeps its shape, like ice, while a liquid flows and takes the shape of its container, like water!",
-            "explanation": "Think of 'Solid' as matter with a fixed shape (block, rock), and 'Liquid' as matter that flows (water, juice)!",
+            "hint": "Think about ice you can hold, and water that pours from a cup.",
+            "explanation": "Rigid, firm, and frozen all describe matter that holds its shape, the defining property of a solid. Fluid and flowing both describe liquid, matter that takes the shape of its container and moves easily.",
             "options": [
-                "Block",
-                "Juice",
-                "Rock",
-                "Water",
-                "Brick"
+                "Fluid",
+                "Firm",
+                "Flowing",
+                "Frozen",
+                "Rigid"
             ],
-            "correctAnswer": "Solid:Block, Liquid:Juice, Solid:Rock, Liquid:Water, Solid:Brick",
+            "correctAnswer": "Liquid:Fluid, Solid:Firm, Liquid:Flowing, Solid:Frozen, Solid:Rigid",
             "relatedWords": [
-                "aspect of Solid:Block, Liquid:Juice, Solid:Rock, Liquid:Water, Solid:Brick",
-                "concept of Solid:Block, Liquid:Juice, Solid:Rock, Liquid:Water, Solid:Brick",
-                "related to Solid:Block, Liquid:Juice, Solid:Rock, Liquid:Water, Solid:Brick"
+                "Fluid: able to flow easily, like a liquid",
+                "Firm: solid and not easily changed in shape",
+                "Flowing: moving smoothly and continuously, like a liquid",
+                "Frozen: turned solid by extreme cold",
+                "Rigid: stiff, not able to bend or change shape"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L57_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Think about jelly that's set firm in the fridge, versus a sauce that's too thin. Sort into Solid or Liquid.",
             "topicBuckets": [
                 "Solid",
                 "Liquid"
             ],
-            "hint": "Here's a tip: A solid keeps its shape, like ice, while a liquid flows and takes the shape of its container, like water!",
-            "explanation": "Think of 'Solid' as matter with a fixed shape (block, rock), and 'Liquid' as matter that flows (water, juice)!",
+            "hint": "One solid word specifically describes something that has hardened into shape, like jelly or concrete.",
+            "explanation": "Compact, unyielding, and 'set' all describe solidity, with 'set' specifically describing something that has hardened into shape, like jelly or concrete. Runny and watery both describe liquid that's thin and flows easily, sometimes with a negative connotation, like a runny sauce.",
             "options": [
-                "Ice",
-                "Oil",
-                "Stone",
-                "Syrup",
-                "Metal"
+                "Unyielding",
+                "Compact",
+                "Set",
+                "Runny",
+                "Watery"
             ],
-            "correctAnswer": "Solid:Ice, Liquid:Oil, Solid:Stone, Liquid:Syrup, Solid:Metal",
+            "correctAnswer": "Solid:Unyielding, Solid:Compact, Solid:Set, Liquid:Runny, Liquid:Watery",
             "relatedWords": [
-                "aspect of Solid:Ice, Liquid:Oil, Solid:Stone, Liquid:Syrup, Solid:Metal",
-                "concept of Solid:Ice, Liquid:Oil, Solid:Stone, Liquid:Syrup, Solid:Metal",
-                "related to Solid:Ice, Liquid:Oil, Solid:Stone, Liquid:Syrup, Solid:Metal"
+                "Unyielding: not bending or changing shape",
+                "Compact: closely and firmly packed together",
+                "Set: hardened into a fixed shape",
+                "Runny: thin and flowing easily, like a liquid",
+                "Watery: thin and diluted, like weak liquid"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L57_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Think about metal you could bend without breaking, and honey moving slowly from a jar. Sort into Solid or Liquid.",
             "topicBuckets": [
                 "Solid",
                 "Liquid"
             ],
-            "hint": "Here's a tip: A solid keeps its shape, like ice, while a liquid flows and takes the shape of its container, like water!",
-            "explanation": "Think of 'Solid' as matter with a fixed shape (block, rock), and 'Liquid' as matter that flows (water, juice)!",
+            "hint": "One solid word describes a liquid that has thickened into solid form.",
+            "explanation": "Malleable, brittle, and congealed all describe solids, though malleable and brittle describe opposite qualities \u2014 one can be shaped, the other breaks easily. Congealed describes a liquid that has thickened into a solid form. Viscous and trickle both describe liquid, with viscous describing a liquid thick enough to flow slowly, and trickle describing a small, slow flow.",
             "options": [
-                "Wood",
-                "Milk",
-                "Crystal",
-                "Broth",
-                "Plank"
+                "Viscous",
+                "Congealed",
+                "Malleable",
+                "Brittle",
+                "Trickle"
             ],
-            "correctAnswer": "Solid:Wood, Liquid:Milk, Solid:Crystal, Liquid:Broth, Solid:Plank",
+            "correctAnswer": "Liquid:Viscous, Solid:Congealed, Solid:Malleable, Solid:Brittle, Liquid:Trickle",
             "relatedWords": [
-                "aspect of Solid:Wood, Liquid:Milk, Solid:Crystal, Liquid:Broth, Solid:Plank",
-                "concept of Solid:Wood, Liquid:Milk, Solid:Crystal, Liquid:Broth, Solid:Plank",
-                "related to Solid:Wood, Liquid:Milk, Solid:Crystal, Liquid:Broth, Solid:Plank"
+                "Viscous: thick and slow-flowing",
+                "Congealed: thickened from liquid into a solid form",
+                "Malleable: able to be shaped or bent without breaking",
+                "Brittle: hard but easily broken",
+                "Trickle: a small, slow flow of liquid"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L58_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Metal or Wood.",
             "topicBuckets": [
                 "Metal",
                 "Wood"
             ],
-            "hint": "Here's a tip: Metal is shiny and comes from ore, like a spoon, while wood comes from trees, like a chair!",
-            "explanation": "Think of 'Metal' as materials made from minerals (steel, iron), and 'Wood' as materials made from trees (oak, plank)!",
+            "hint": "Think about what a hammer is made of, and what a table might be made of.",
+            "explanation": "Steel, iron, and aluminum are all common metals, each with different properties like strength or lightness. Oak and pine are both types of wood, with oak being notably harder and heavier than pine.",
             "options": [
                 "Steel",
                 "Oak",
                 "Iron",
-                "Plank",
+                "Pine",
                 "Aluminum"
             ],
-            "correctAnswer": "Metal:Steel, Wood:Oak, Metal:Iron, Wood:Plank, Metal:Aluminum",
+            "correctAnswer": "Metal:Steel, Wood:Oak, Metal:Iron, Wood:Pine, Metal:Aluminum",
             "relatedWords": [
-                "aspect of Metal:Steel, Wood:Oak, Metal:Iron, Wood:Plank, Metal:Aluminum",
-                "concept of Metal:Steel, Wood:Oak, Metal:Iron, Wood:Plank, Metal:Aluminum",
-                "related to Metal:Steel, Wood:Oak, Metal:Iron, Wood:Plank, Metal:Aluminum"
+                "Steel: a strong metal made mainly of iron and carbon",
+                "Oak: a strong, heavy hardwood tree and its timber",
+                "Iron: a strong, heavy metal",
+                "Pine: a softwood tree and its lightweight timber",
+                "Aluminum: a lightweight, silvery metal"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L58_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Think about a mixture of different metals, versus a manufactured sheet made from layers of wood. Sort into Wood or Metal.",
             "topicBuckets": [
-                "Metal",
-                "Wood"
+                "Wood",
+                "Metal"
             ],
-            "hint": "Here's a tip: Metal is shiny and comes from ore, like a spoon, while wood comes from trees, like a chair!",
-            "explanation": "Think of 'Metal' as materials made from minerals (steel, iron), and 'Wood' as materials made from trees (oak, plank)!",
+            "hint": "One metal word specifically means a mixture of two or more metals.",
+            "explanation": "Alloy, bronze, and copper are all related to metal, with alloy specifically meaning a mixture of two or more metals. Plywood and mahogany both relate to wood, with plywood being a manufactured material made of thin wood layers glued together.",
             "options": [
-                "Copper",
-                "Timber",
+                "Alloy",
+                "Plywood",
                 "Bronze",
-                "Log",
-                "Tin"
+                "Mahogany",
+                "Copper"
             ],
-            "correctAnswer": "Metal:Copper, Wood:Timber, Metal:Bronze, Wood:Log, Metal:Tin",
+            "correctAnswer": "Metal:Alloy, Wood:Plywood, Metal:Bronze, Wood:Mahogany, Metal:Copper",
             "relatedWords": [
-                "aspect of Metal:Copper, Wood:Timber, Metal:Bronze, Wood:Log, Metal:Tin",
-                "concept of Metal:Copper, Wood:Timber, Metal:Bronze, Wood:Log, Metal:Tin",
-                "related to Metal:Copper, Wood:Timber, Metal:Bronze, Wood:Log, Metal:Tin"
+                "Alloy: a mixture of two or more metals",
+                "Plywood: a manufactured material made of thin layers of wood glued together",
+                "Bronze: a metal made by mixing copper and tin",
+                "Mahogany: a strong, reddish-brown hardwood",
+                "Copper: a reddish-brown metal known for conducting electricity well"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L58_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Think about the specific processes and problems that apply to metal versus wood. Sort into Metal or Wood.",
             "topicBuckets": [
                 "Metal",
                 "Wood"
             ],
-            "hint": "Here's a tip: Metal is shiny and comes from ore, like a spoon, while wood comes from trees, like a chair!",
-            "explanation": "Think of 'Metal' as materials made from minerals (steel, iron), and 'Wood' as materials made from trees (oak, plank)!",
+            "hint": "Think about shaping with heat versus shaping with a blade, and rust versus insects.",
+            "explanation": "Forged, rustproof, and welded all describe processes or properties specific to metal \u2014 shaping it with heat, protecting it from rust, and joining pieces together. Carved and termite-resistant both relate to wood, describing how it's shaped and a property some types need to resist insect damage.",
             "options": [
-                "Silver",
-                "Plywood",
-                "Steel-beam",
-                "Pine",
-                "Brass"
+                "Forged",
+                "Rustproof",
+                "Termite-resistant",
+                "Carved",
+                "Welded"
             ],
-            "correctAnswer": "Metal:Silver, Wood:Plywood, Metal:Steel-beam, Wood:Pine, Metal:Brass",
+            "correctAnswer": "Metal:Forged, Metal:Rustproof, Wood:Termite-resistant, Wood:Carved, Metal:Welded",
             "relatedWords": [
-                "aspect of Metal:Silver, Wood:Plywood, Metal:Steel-beam, Wood:Pine, Metal:Brass",
-                "concept of Metal:Silver, Wood:Plywood, Metal:Steel-beam, Wood:Pine, Metal:Brass",
-                "related to Metal:Silver, Wood:Plywood, Metal:Steel-beam, Wood:Pine, Metal:Brass"
+                "Forged: shaped by heating and hammering metal",
+                "Rustproof: resistant to rust",
+                "Termite-resistant: resistant to damage from termites",
+                "Carved: shaped by cutting, especially wood or stone",
+                "Welded: joined together by heating and fusing metal"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L59_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Analog or Digital.",
             "topicBuckets": [
-                "Digital",
-                "Analog"
+                "Analog",
+                "Digital"
             ],
-            "hint": "Here's a tip: A digital clock shows numbers, while an analog clock has hands that move around a dial!",
-            "explanation": "Think of 'Digital' as electronic, numeric technology (binary, app), and 'Analog' as traditional, mechanical technology (dial, gauge)!",
+            "hint": "Think about information stored as 0s and 1s, versus a needle reading grooves on a record.",
+            "explanation": "Binary, pixelated, and coded all describe digital technology, information represented and processed as discrete data. Mechanical and vinyl both describe analog technology, using continuous physical movement or grooves to represent information, like a vinyl record.",
             "options": [
+                "Pixelated",
                 "Binary",
-                "Dial",
-                "App",
-                "Gauge",
-                "Software"
+                "Vinyl",
+                "Coded",
+                "Mechanical"
             ],
-            "correctAnswer": "Digital:Binary, Analog:Dial, Digital:App, Analog:Gauge, Digital:Software",
+            "correctAnswer": "Digital:Pixelated, Digital:Binary, Analog:Vinyl, Digital:Coded, Analog:Mechanical",
             "relatedWords": [
-                "aspect of Digital:Binary, Analog:Dial, Digital:App, Analog:Gauge, Digital:Software",
-                "concept of Digital:Binary, Analog:Dial, Digital:App, Analog:Gauge, Digital:Software",
-                "related to Digital:Binary, Analog:Dial, Digital:App, Analog:Gauge, Digital:Software"
+                "Pixelated: made up of visible digital pixels",
+                "Binary: using a system of only two values, 0 and 1",
+                "Vinyl: a type of record storing sound in physical grooves",
+                "Coded: represented as digital data",
+                "Mechanical: operated by physical parts and movement"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L59_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Think about photography using rolls of film versus photos stored in the cloud. Sort into Analog or Digital.",
             "topicBuckets": [
-                "Digital",
-                "Analog"
+                "Analog",
+                "Digital"
             ],
-            "hint": "Here's a tip: A digital clock shows numbers, while an analog clock has hands that move around a dial!",
-            "explanation": "Think of 'Digital' as electronic, numeric technology (binary, app), and 'Analog' as traditional, mechanical technology (dial, gauge)!",
+            "hint": "Think about physical media that stores information versus data delivered over a network.",
+            "explanation": "Streaming, cloud-based, and compressed all describe how digital data is delivered or stored today, relying on data processing rather than physical media. Film-based and tape-based both describe analog technology, storing information physically on film or magnetic tape.",
             "options": [
-                "Pixel",
-                "Needle",
-                "Code",
-                "Vinyl",
-                "Screen"
+                "Compressed",
+                "Tape-based",
+                "Film-based",
+                "Streaming",
+                "Cloud-based"
             ],
-            "correctAnswer": "Digital:Pixel, Analog:Needle, Digital:Code, Analog:Vinyl, Digital:Screen",
+            "correctAnswer": "Digital:Compressed, Analog:Tape-based, Analog:Film-based, Digital:Streaming, Digital:Cloud-based",
             "relatedWords": [
-                "aspect of Digital:Pixel, Analog:Needle, Digital:Code, Analog:Vinyl, Digital:Screen",
-                "concept of Digital:Pixel, Analog:Needle, Digital:Code, Analog:Vinyl, Digital:Screen",
-                "related to Digital:Pixel, Analog:Needle, Digital:Code, Analog:Vinyl, Digital:Screen"
+                "Compressed: reduced in digital file size",
+                "Tape-based: using magnetic tape to store information",
+                "Film-based: using physical photographic film",
+                "Streaming: delivering data continuously over a network",
+                "Cloud-based: stored and accessed over the internet"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L59_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These describe the feeling or reputation of a technology, not just how it works. Sort into Digital or Analog.",
             "topicBuckets": [
                 "Digital",
                 "Analog"
             ],
-            "hint": "Here's a tip: A digital clock shows numbers, while an analog clock has hands that move around a dial!",
-            "explanation": "Think of 'Digital' as electronic, numeric technology (binary, app), and 'Analog' as traditional, mechanical technology (dial, gauge)!",
+            "hint": "Think about the newest possible technology versus something nostalgic and tactile.",
+            "explanation": "Cutting-edge and high-tech both describe the newest digital technology available. Retro, old-school, and vintage all describe analog technology's appeal today, valued for its nostalgic, tactile feel even though newer digital options exist.",
             "options": [
-                "File",
-                "Mechanical",
-                "Data",
-                "Hands",
-                "Online"
+                "High-tech",
+                "Old-school",
+                "Retro",
+                "Vintage",
+                "Cutting-edge"
             ],
-            "correctAnswer": "Digital:File, Analog:Mechanical, Digital:Data, Analog:Hands, Digital:Online",
+            "correctAnswer": "Digital:High-tech, Analog:Old-school, Analog:Retro, Analog:Vintage, Digital:Cutting-edge",
             "relatedWords": [
-                "aspect of Digital:File, Analog:Mechanical, Digital:Data, Analog:Hands, Digital:Online",
-                "concept of Digital:File, Analog:Mechanical, Digital:Data, Analog:Hands, Digital:Online",
-                "related to Digital:File, Analog:Mechanical, Digital:Data, Analog:Hands, Digital:Online"
+                "High-tech: using highly advanced technology",
+                "Old-school: favoring traditional, established methods",
+                "Retro: imitating a style from the past, nostalgic",
+                "Vintage: from the past, valued for its age or style",
+                "Cutting-edge: using the most advanced technology available"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L60_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Static or Dynamic.",
             "topicBuckets": [
                 "Static",
                 "Dynamic"
             ],
-            "hint": "Here's a tip: A static object stays still, while a dynamic object keeps changing or moving!",
-            "explanation": "Think of 'Static' as things that stay the same (fixed, motionless), and 'Dynamic' as things that change or move (active, evolving)!",
+            "hint": "Think about something staying exactly the same, versus something constantly changing.",
+            "explanation": "Unchanging, fixed, and stationary all describe something static, staying the same or in one place. Evolving and shifting both describe dynamic change, something actively developing or moving.",
             "options": [
+                "Unchanging",
                 "Fixed",
-                "Active",
-                "Motionless",
                 "Evolving",
-                "Stationary"
+                "Stationary",
+                "Shifting"
             ],
-            "correctAnswer": "Static:Fixed, Dynamic:Active, Static:Motionless, Dynamic:Evolving, Static:Stationary",
+            "correctAnswer": "Static:Unchanging, Static:Fixed, Dynamic:Evolving, Static:Stationary, Dynamic:Shifting",
             "relatedWords": [
-                "aspect of Static:Fixed, Dynamic:Active, Static:Motionless, Dynamic:Evolving, Static:Stationary",
-                "concept of Static:Fixed, Dynamic:Active, Static:Motionless, Dynamic:Evolving, Static:Stationary",
-                "related to Static:Fixed, Dynamic:Active, Static:Motionless, Dynamic:Evolving, Static:Stationary"
+                "Unchanging: staying the same over time",
+                "Fixed: set firmly, not changing",
+                "Evolving: developing gradually over time",
+                "Stationary: staying in one place, not in motion",
+                "Shifting: moving or changing position gradually"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L60_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "One static word carries a negative sense of something that's stopped making progress. Sort into Dynamic or Static.",
             "topicBuckets": [
-                "Static",
-                "Dynamic"
+                "Dynamic",
+                "Static"
             ],
-            "hint": "Here's a tip: A static object stays still, while a dynamic object keeps changing or moving!",
-            "explanation": "Think of 'Static' as things that stay the same (fixed, motionless), and 'Dynamic' as things that change or move (active, evolving)!",
+            "hint": "Think about water that's gone bad from not moving, versus something that adjusts to new conditions.",
+            "explanation": "Stagnant, immobile, and inert all describe a lack of movement or progress, with stagnant specifically suggesting something has gone bad from not changing, like stagnant water. Fluid and adaptive both describe dynamic change, with fluid meaning something can shift and adjust easily, and adaptive meaning something adjusts in response to new conditions.",
             "options": [
-                "Unchanging",
-                "Energetic",
-                "Still",
-                "Lively",
-                "Constant"
+                "Immobile",
+                "Adaptive",
+                "Inert",
+                "Stagnant",
+                "Fluid"
             ],
-            "correctAnswer": "Static:Unchanging, Dynamic:Energetic, Static:Still, Dynamic:Lively, Static:Constant",
+            "correctAnswer": "Static:Immobile, Dynamic:Adaptive, Static:Inert, Static:Stagnant, Dynamic:Fluid",
             "relatedWords": [
-                "aspect of Static:Unchanging, Dynamic:Energetic, Static:Still, Dynamic:Lively, Static:Constant",
-                "concept of Static:Unchanging, Dynamic:Energetic, Static:Still, Dynamic:Lively, Static:Constant",
-                "related to Static:Unchanging, Dynamic:Energetic, Static:Still, Dynamic:Lively, Static:Constant"
+                "Immobile: unable to move",
+                "Adaptive: able to adjust to new conditions",
+                "Inert: without the ability to move or act",
+                "Stagnant: not moving or developing, often in a negative way",
+                "Fluid: able to change and adjust easily"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L60_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These describe organizations and systems. Think about resistance to change versus embracing it. Sort into Dynamic or Static.",
             "topicBuckets": [
-                "Static",
-                "Dynamic"
+                "Dynamic",
+                "Static"
             ],
-            "hint": "Here's a tip: A static object stays still, while a dynamic object keeps changing or moving!",
-            "explanation": "Think of 'Static' as things that stay the same (fixed, motionless), and 'Dynamic' as things that change or move (active, evolving)!",
+            "hint": "One dynamic word is a business term specifically for an organization that adapts quickly.",
+            "explanation": "The 'status quo', a 'rigid structure', and something entrenched all describe static systems resistant to change. Agile and 'ever-changing' both describe dynamic systems, with agile specifically being a business term for an organization that adapts quickly.",
             "options": [
-                "Idle",
-                "Adaptive",
-                "Frozen",
-                "Vibrant",
-                "Flexible"
+                "Rigid structure",
+                "Ever-changing",
+                "Entrenched",
+                "Status quo",
+                "Agile"
             ],
-            "correctAnswer": "Static:Idle, Dynamic:Adaptive, Static:Frozen, Dynamic:Vibrant, Dynamic:Flexible",
+            "correctAnswer": "Static:Rigid structure, Dynamic:Ever-changing, Static:Entrenched, Static:Status quo, Dynamic:Agile",
             "relatedWords": [
-                "aspect of Static:Idle, Dynamic:Adaptive, Static:Frozen, Dynamic:Vibrant, Dynamic:Flexible",
-                "concept of Static:Idle, Dynamic:Adaptive, Static:Frozen, Dynamic:Vibrant, Dynamic:Flexible",
-                "related to Static:Idle, Dynamic:Adaptive, Static:Frozen, Dynamic:Vibrant, Dynamic:Flexible"
+                "Rigid structure: a firmly fixed, inflexible system",
+                "Ever-changing: constantly changing",
+                "Entrenched: firmly established and resistant to change",
+                "Status quo: the existing, unchanging state of affairs",
+                "Agile: able to adapt and move quickly, especially in business"
             ]
         }
     ]

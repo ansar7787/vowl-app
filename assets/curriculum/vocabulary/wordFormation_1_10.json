@@ -3,16 +3,16 @@
     "quests": [
         {
             "id": "VOC_WORDFORMATION_L1_Q1",
-            "hint": "Adjective meaning giving support or making things easier. My neighbor was very ____ when I was moving furniture.",
-            "explanation": "HELP + -FUL = HELPFUL. The suffix -FUL means 'full of' or 'having the quality of', turning the noun HELP into an adjective.",
+            "hint": "Adjective meaning 'full of help, supportive'. My neighbor was very ____ when I was moving furniture.",
+            "explanation": "HELP + -FUL = HELPFUL. The suffix -FUL means 'full of' and turns the noun HELP into an adjective describing someone who gives support.",
             "interactionType": "choice",
             "correctAnswer": "HELPFUL",
             "rootWord": "HELP",
             "options": [
                 "-FUL",
+                "-ISH",
                 "-ORY",
-                "-IST",
-                "-MENT"
+                "-IST"
             ],
             "familyTree": [
                 "HELP",
@@ -24,43 +24,43 @@
         },
         {
             "id": "VOC_WORDFORMATION_L1_Q2",
-            "hint": "Adjective describing something that causes physical or emotional hurt. Stepping on broken glass was extremely ____.",
-            "explanation": "PAIN + -FUL = PAINFUL. The suffix -FUL means 'full of', changing the noun PAIN into an adjective describing something that causes suffering.",
+            "hint": "Adjective meaning 'without care, reckless'. He crossed the busy street without looking both ways, which was very ____.",
+            "explanation": "CARE + -LESS = CARELESS. The suffix -LESS means 'without', so CARELESS describes someone acting without enough care or attention.",
             "interactionType": "choice",
-            "correctAnswer": "PAINFUL",
-            "rootWord": "PAIN",
+            "correctAnswer": "CARELESS",
+            "rootWord": "CARE",
             "options": [
                 "-FUL",
+                "-ISH",
                 "-MENT",
-                "-ION",
-                "-IST"
+                "-LESS"
             ],
             "familyTree": [
-                "PAIN",
-                "PAINFUL",
-                "PAINLESS",
-                "PAINKILLER"
+                "CARE",
+                "CAREFUL",
+                "CARELESS",
+                "CARETAKER"
             ],
             "instruction": "Choose the correct answer."
         },
         {
             "id": "VOC_WORDFORMATION_L1_Q3",
-            "hint": "Adjective describing someone who feels positive that good things will happen. After the interview, she felt ____ about getting the job.",
-            "explanation": "HOPE + -FUL = HOPEFUL. The suffix -FUL turns the noun HOPE into an adjective meaning 'full of hope'.",
+            "hint": "Adjective describing a tool or idea that helps you do something. A good dictionary is ____ when you're learning a new language.",
+            "explanation": "USE + -FUL = USEFUL. The suffix -FUL turns the noun USE into an adjective meaning 'having a practical use' or 'helpful'.",
             "interactionType": "choice",
-            "correctAnswer": "HOPEFUL",
-            "rootWord": "HOPE",
+            "correctAnswer": "USEFUL",
+            "rootWord": "USE",
             "options": [
-                "-ISH",
                 "-FUL",
-                "-MENT",
-                "-ARY"
+                "-LESS",
+                "-ABLE",
+                "-ORY"
             ],
             "familyTree": [
-                "HOPE",
-                "HOPEFUL",
-                "HOPELESS",
-                "HOPEFULLY"
+                "USE",
+                "USEFUL",
+                "USELESS",
+                "USER"
             ],
             "instruction": "Choose the correct answer."
         },
@@ -87,43 +87,43 @@
         },
         {
             "id": "VOC_WORDFORMATION_L2_Q2",
-            "hint": "Noun for a person who grows crops or raises animals for a living. The ____ woke up before sunrise to feed the cows.",
-            "explanation": "FARM + -ER = FARMER. The suffix -ER creates a noun meaning 'a person who does the action of the verb', here someone who farms.",
+            "hint": "Noun for a person who performs in films or plays. The young ____ won an award for her first movie role.",
+            "explanation": "ACT + -OR = ACTOR. Some verbs form their agent noun with -OR instead of -ER; ACTOR names the person who performs the action of acting.",
             "interactionType": "choice",
-            "correctAnswer": "FARMER",
-            "rootWord": "FARM",
+            "correctAnswer": "ACTOR",
+            "rootWord": "ACT",
             "options": [
-                "-IST",
                 "-ER",
-                "-OR",
-                "-ARY"
+                "-IST",
+                "-ARY",
+                "-OR"
             ],
             "familyTree": [
-                "FARM",
-                "FARMER",
-                "FARMING",
-                "FARMHOUSE"
+                "ACT",
+                "ACTOR",
+                "ACTION",
+                "ACTIVE"
             ],
             "instruction": "Choose the correct answer."
         },
         {
             "id": "VOC_WORDFORMATION_L2_Q3",
-            "hint": "Noun for a person who paints pictures or walls as a job. The ____ spent three days covering the walls in fresh white paint.",
-            "explanation": "PAINT + -ER = PAINTER. The suffix -ER changes the verb PAINT into a noun naming the person who performs the action.",
+            "hint": "Noun for a person who dances, especially as a profession. The ____ practiced the same routine for six hours before the show.",
+            "explanation": "DANCE + -ER = DANCER. Notice the silent E in DANCE is dropped before the vowel suffix -ER: DANCE + ER = DANCER, not 'danceer'.",
             "interactionType": "choice",
-            "correctAnswer": "PAINTER",
-            "rootWord": "PAINT",
+            "correctAnswer": "DANCER",
+            "rootWord": "DANCE",
             "options": [
-                "-ARY",
-                "-ER",
                 "-IST",
-                "-ION"
+                "-ER",
+                "-OR",
+                "-ANT"
             ],
             "familyTree": [
-                "PAINT",
-                "PAINTER",
-                "PAINTING",
-                "REPAINT"
+                "DANCE",
+                "DANCER",
+                "DANCING",
+                "DANCEABLE"
             ],
             "instruction": "Choose the correct answer."
         },
@@ -156,9 +156,9 @@
             "correctAnswer": "HOMELESS",
             "rootWord": "HOME",
             "options": [
+                "-LESS",
                 "-IC",
                 "-ORY",
-                "-LESS",
                 "-ANT"
             ],
             "familyTree": [
@@ -171,22 +171,22 @@
         },
         {
             "id": "VOC_WORDFORMATION_L3_Q3",
-            "hint": "Adjective describing something with no color, or dull and boring. The gas is odorless and completely ____, which makes it hard to detect.",
-            "explanation": "COLOR + -LESS = COLORLESS. The suffix -LESS means 'without', turning the noun COLOR into an adjective meaning 'without color'.",
+            "hint": "Adjective meaning 'not able to cause damage or injury'. The spider looked frightening, but it was actually completely ____.",
+            "explanation": "HARM + -LESS = HARMLESS. Adding -LESS to the noun HARM produces an adjective meaning 'causing no harm'.",
             "interactionType": "choice",
-            "correctAnswer": "COLORLESS",
-            "rootWord": "COLOR",
+            "correctAnswer": "HARMLESS",
+            "rootWord": "HARM",
             "options": [
-                "-ORY",
                 "-LESS",
-                "-ENT",
+                "-FUL",
+                "-IVE",
                 "-ARY"
             ],
             "familyTree": [
-                "COLOR",
-                "COLORFUL",
-                "COLORLESS",
-                "COLORIST"
+                "HARM",
+                "HARMFUL",
+                "HARMLESS",
+                "HARMONY"
             ],
             "instruction": "Choose the correct answer."
         },
@@ -198,240 +198,135 @@
             "correctAnswer": "KINDNESS",
             "rootWord": "KIND",
             "options": [
+                "-ITY",
                 "-MENT",
                 "-NESS",
-                "-ORY",
-                "-ANCE"
+                "-SHIP"
             ],
             "familyTree": [
                 "KIND",
-                "KINDNESS",
                 "KINDLY",
+                "KINDNESS",
                 "UNKIND"
             ],
             "instruction": "Choose the correct answer."
         },
         {
             "id": "VOC_WORDFORMATION_L4_Q2",
-            "hint": "Noun for the feeling of unhappiness or sorrow. A deep ____ filled the room after they heard the news.",
-            "explanation": "SAD + -NESS = SADNESS. The suffix -NESS turns the adjective SAD into a noun naming the state of feeling sad.",
+            "hint": "Noun for the state of feeling joyful and content. Winning the championship filled the whole team with ____.",
+            "explanation": "HAPPY + -NESS = HAPPINESS. Before adding -NESS, the final Y changes to I: HAPPY becomes HAPPI, then + NESS = HAPPINESS.",
             "interactionType": "choice",
-            "correctAnswer": "SADNESS",
-            "rootWord": "SAD",
+            "correctAnswer": "HAPPINESS",
+            "rootWord": "HAPPY",
             "options": [
                 "-NESS",
-                "-IST",
-                "-MENT",
-                "-ORY"
+                "-ITY",
+                "-ISM",
+                "-HOOD"
             ],
             "familyTree": [
-                "SAD",
-                "SADNESS",
-                "SADLY",
-                "SADDEN"
+                "HAPPY",
+                "HAPPILY",
+                "HAPPINESS",
+                "UNHAPPY"
             ],
             "instruction": "Choose the correct answer."
         },
         {
             "id": "VOC_WORDFORMATION_L4_Q3",
-            "hint": "Noun for the state of having no light. The power went out, and the whole street was covered in ____.",
-            "explanation": "DARK + -NESS = DARKNESS. The suffix -NESS turns the adjective DARK into a noun describing the state of being dark.",
+            "hint": "Noun for the absence of light. The power went out, and the whole street was covered in ____.",
+            "explanation": "DARK + -NESS = DARKNESS. The suffix -NESS changes the adjective DARK into a noun naming that quality or condition.",
             "interactionType": "choice",
             "correctAnswer": "DARKNESS",
             "rootWord": "DARK",
             "options": [
-                "-ORY",
-                "-MENT",
-                "-IST",
-                "-NESS"
+                "-ITY",
+                "-NESS",
+                "-ANCE",
+                "-SHIP"
             ],
             "familyTree": [
                 "DARK",
-                "DARKNESS",
                 "DARKEN",
+                "DARKNESS",
                 "DARKLY"
             ],
             "instruction": "Choose the correct answer."
         },
         {
             "id": "VOC_WORDFORMATION_L5_Q1",
-            "hint": "Adverb describing an action done at a low speed. The old car moved ____ up the steep hill.",
-            "explanation": "SLOW + -LY = SLOWLY. The suffix -LY turns the adjective SLOW into an adverb describing how an action is done.",
+            "hint": "Adverb describing how fast an action happens. She finished the crossword puzzle ____, in under five minutes.",
+            "explanation": "QUICK + -LY = QUICKLY. The suffix -LY turns the adjective QUICK into an adverb describing how an action is done.",
             "interactionType": "choice",
-            "correctAnswer": "SLOWLY",
-            "rootWord": "SLOW",
+            "correctAnswer": "QUICKLY",
+            "rootWord": "QUICK",
             "options": [
-                "-Y",
+                "-NESS",
                 "-LY",
-                "-MENT",
-                "-FUL"
+                "-FUL",
+                "-ISH"
             ],
             "familyTree": [
-                "SLOW",
-                "SLOWLY",
-                "SLOWNESS",
-                "SLOWER"
+                "QUICK",
+                "QUICKLY",
+                "QUICKEN",
+                "QUICKNESS"
             ],
             "instruction": "Choose the correct answer."
         },
         {
             "id": "VOC_WORDFORMATION_L5_Q2",
-            "hint": "Adverb describing an action done at high speed. She ____ grabbed her umbrella before the rain started.",
-            "explanation": "QUICK + -LY = QUICKLY. The suffix -LY changes the adjective QUICK into an adverb describing the manner of an action.",
+            "hint": "Adverb describing an action done without hurrying. The old man crossed the road ____, leaning on his cane.",
+            "explanation": "SLOW + -LY = SLOWLY. Adding -LY to the adjective SLOW creates an adverb that describes the manner of an action.",
             "interactionType": "choice",
-            "correctAnswer": "QUICKLY",
-            "rootWord": "QUICK",
+            "correctAnswer": "SLOWLY",
+            "rootWord": "SLOW",
             "options": [
-                "-FUL",
-                "-MENT",
                 "-LY",
-                "-ORY"
+                "-NESS",
+                "-ISH",
+                "-WARD"
             ],
             "familyTree": [
-                "QUICK",
-                "QUICKLY",
-                "QUICKNESS",
-                "QUICKEN"
+                "SLOW",
+                "SLOWLY",
+                "SLOWNESS",
+                "SLOWDOWN"
             ],
             "instruction": "Choose the correct answer."
         },
         {
             "id": "VOC_WORDFORMATION_L5_Q3",
-            "hint": "Adverb describing an action done without noise. He ____ closed the door so he wouldn't wake the baby.",
-            "explanation": "QUIET + -LY = QUIETLY. The suffix -LY turns the adjective QUIET into an adverb describing how something is done.",
+            "hint": "Adverb describing an action done with joy. The children played in the snow ____ all afternoon.",
+            "explanation": "HAPPY + -LY = HAPPILY. Just like with HAPPINESS in an earlier level, the final Y changes to I before -LY is added: HAPPY to HAPPI, then + LY = HAPPILY.",
             "interactionType": "choice",
-            "correctAnswer": "QUIETLY",
-            "rootWord": "QUIET",
+            "correctAnswer": "HAPPILY",
+            "rootWord": "HAPPY",
             "options": [
-                "-ORY",
-                "-MENT",
+                "-NESS",
                 "-FUL",
+                "-SOME",
                 "-LY"
             ],
             "familyTree": [
-                "QUIET",
-                "QUIETLY",
-                "QUIETNESS",
-                "QUIETEN"
+                "HAPPY",
+                "HAPPILY",
+                "HAPPINESS",
+                "UNHAPPY"
             ],
             "instruction": "Choose the correct answer."
         },
         {
             "id": "VOC_WORDFORMATION_L6_Q1",
-            "hint": "Adjective describing text that is clear and easy to read. His handwriting is finally ____ after months of practice.",
-            "explanation": "READ + -ABLE = READABLE. The suffix -ABLE means 'able to be', turning the verb READ into an adjective meaning 'able to be read'.",
-            "interactionType": "choice",
-            "correctAnswer": "READABLE",
-            "rootWord": "READ",
-            "options": [
-                "-ABLE",
-                "-MENT",
-                "-ORY",
-                "-ANT"
-            ],
-            "familyTree": [
-                "READ",
-                "READER",
-                "READING",
-                "READABLE"
-            ],
-            "instruction": "Choose the correct answer."
-        },
-        {
-            "id": "VOC_WORDFORMATION_L6_Q2",
-            "hint": "Adjective describing an object that can easily be broken. Please handle the box carefully; the dishes inside are ____.",
-            "explanation": "BREAK + -ABLE = BREAKABLE. The suffix -ABLE means 'able to be', turning the verb BREAK into an adjective meaning 'able to be broken'.",
-            "interactionType": "choice",
-            "correctAnswer": "BREAKABLE",
-            "rootWord": "BREAK",
-            "options": [
-                "-ABLE",
-                "-ANT",
-                "-ORY",
-                "-MENT"
-            ],
-            "familyTree": [
-                "BREAK",
-                "BREAKABLE",
-                "BREAKAGE",
-                "UNBREAKABLE"
-            ],
-            "instruction": "Choose the correct answer."
-        },
-        {
-            "id": "VOC_WORDFORMATION_L6_Q3",
-            "hint": "Adjective describing something that gives pleasure or fun. The trip to the beach was extremely ____.",
-            "explanation": "ENJOY + -ABLE = ENJOYABLE. The suffix -ABLE means 'able to be', turning the verb ENJOY into an adjective meaning 'able to be enjoyed'.",
-            "interactionType": "choice",
-            "correctAnswer": "ENJOYABLE",
-            "rootWord": "ENJOY",
-            "options": [
-                "-ABLE",
-                "-ANT",
-                "-IST",
-                "-ORY"
-            ],
-            "familyTree": [
-                "ENJOY",
-                "ENJOYABLE",
-                "ENJOYMENT",
-                "ENJOYABLY"
-            ],
-            "instruction": "Choose the correct answer."
-        },
-        {
-            "id": "VOC_WORDFORMATION_L7_Q1",
-            "hint": "Adjective meaning not right or not equal in treatment. It felt ____ that he got the promotion instead of her.",
-            "explanation": "UN- + FAIR = UNFAIR. The prefix UN- means 'not', reversing the meaning of the adjective FAIR.",
-            "interactionType": "choice",
-            "correctAnswer": "UNFAIR",
-            "rootWord": "FAIR",
-            "options": [
-                "NON-",
-                "IN-",
-                "DIS-",
-                "UN-"
-            ],
-            "familyTree": [
-                "FAIR",
-                "UNFAIR",
-                "FAIRLY",
-                "FAIRNESS"
-            ],
-            "instruction": "Choose the correct answer."
-        },
-        {
-            "id": "VOC_WORDFORMATION_L7_Q2",
-            "hint": "Verb meaning to open something that was locked. She used her key to ____ the front door.",
-            "explanation": "UN- + LOCK = UNLOCK. The prefix UN- means 'to reverse an action', turning LOCK into its opposite action.",
-            "interactionType": "choice",
-            "correctAnswer": "UNLOCK",
-            "rootWord": "LOCK",
-            "options": [
-                "UN-",
-                "DIS-",
-                "MIS-",
-                "NON-"
-            ],
-            "familyTree": [
-                "LOCK",
-                "UNLOCK",
-                "LOCKED",
-                "LOCKSMITH"
-            ],
-            "instruction": "Choose the correct answer."
-        },
-        {
-            "id": "VOC_WORDFORMATION_L7_Q3",
-            "hint": "Adjective meaning not happy or feeling sad. He looked ____ after losing the game.",
+            "hint": "Adjective meaning 'not happy, sad'. He was ____ about the delayed flight and missing his brother's birthday.",
             "explanation": "UN- + HAPPY = UNHAPPY. The prefix UN- means 'not', reversing the meaning of the adjective HAPPY.",
             "interactionType": "choice",
             "correctAnswer": "UNHAPPY",
             "rootWord": "HAPPY",
             "options": [
                 "UN-",
-                "IN-",
                 "DIS-",
+                "MIS-",
                 "NON-"
             ],
             "familyTree": [
@@ -443,164 +338,269 @@
             "instruction": "Choose the correct answer."
         },
         {
-            "id": "VOC_WORDFORMATION_L8_Q1",
-            "hint": "Noun for a structure with walls and a roof, like a house or office. The new office ____ has twenty floors.",
-            "explanation": "BUILD + -ING = BUILDING. The suffix -ING can turn the verb BUILD into a noun naming the structure that results from building.",
+            "id": "VOC_WORDFORMATION_L6_Q2",
+            "hint": "Adjective meaning 'not fair, unjust'. The referee's decision seemed ____ because it favored one team.",
+            "explanation": "UN- + FAIR = UNFAIR. The prefix UN- attaches to the adjective FAIR to create its opposite meaning.",
             "interactionType": "choice",
-            "correctAnswer": "BUILDING",
-            "rootWord": "BUILD",
+            "correctAnswer": "UNFAIR",
+            "rootWord": "FAIR",
             "options": [
-                "-ING",
-                "-ORY",
+                "DIS-",
+                "IN-",
+                "NON-",
+                "UN-"
+            ],
+            "familyTree": [
+                "FAIR",
+                "UNFAIR",
+                "FAIRLY",
+                "FAIRNESS"
+            ],
+            "instruction": "Choose the correct answer."
+        },
+        {
+            "id": "VOC_WORDFORMATION_L6_Q3",
+            "hint": "Adjective meaning 'not kind, unpleasant to others'. It was ____ of him to laugh at her mistake in front of everyone.",
+            "explanation": "UN- + KIND = UNKIND. Like UNHAPPY and UNFAIR, this word uses UN- to reverse the meaning of a common adjective, this time the KIND from an earlier level's KINDNESS.",
+            "interactionType": "choice",
+            "correctAnswer": "UNKIND",
+            "rootWord": "KIND",
+            "options": [
+                "UN-",
+                "DIS-",
+                "MIS-",
+                "IN-"
+            ],
+            "familyTree": [
+                "KIND",
+                "UNKIND",
+                "KINDLY",
+                "KINDNESS"
+            ],
+            "instruction": "Choose the correct answer."
+        },
+        {
+            "id": "VOC_WORDFORMATION_L7_Q1",
+            "hint": "Noun for the pleasure you feel while doing something you like. Reading before bed is a source of great ____ for me.",
+            "explanation": "ENJOY + -MENT = ENJOYMENT. The suffix -MENT turns the verb ENJOY into a noun naming the result or feeling of that action.",
+            "interactionType": "choice",
+            "correctAnswer": "ENJOYMENT",
+            "rootWord": "ENJOY",
+            "options": [
+                "-MENT",
+                "-TION",
                 "-ANCE",
+                "-ITY"
+            ],
+            "familyTree": [
+                "ENJOY",
+                "ENJOYABLE",
+                "ENJOYMENT",
+                "ENJOYING"
+            ],
+            "instruction": "Choose the correct answer."
+        },
+        {
+            "id": "VOC_WORDFORMATION_L7_Q2",
+            "hint": "Noun for a decision that two or more people accept together. After a long meeting, the two companies finally reached an ____.",
+            "explanation": "AGREE + -MENT = AGREEMENT. Adding -MENT to the verb AGREE creates a noun for the arrangement or understanding reached.",
+            "interactionType": "choice",
+            "correctAnswer": "AGREEMENT",
+            "rootWord": "AGREE",
+            "options": [
+                "-TION",
+                "-ANCE",
+                "-MENT",
+                "-ISM"
+            ],
+            "familyTree": [
+                "AGREE",
+                "AGREEMENT",
+                "AGREEABLE",
+                "DISAGREE"
+            ],
+            "instruction": "Choose the correct answer."
+        },
+        {
+            "id": "VOC_WORDFORMATION_L7_Q3",
+            "hint": "Noun for the act or process of moving. A sudden ____ in the bushes made the campers jump.",
+            "explanation": "MOVE + -MENT = MOVEMENT. The suffix -MENT changes the verb MOVE into a noun describing an act of motion.",
+            "interactionType": "choice",
+            "correctAnswer": "MOVEMENT",
+            "rootWord": "MOVE",
+            "options": [
+                "-TION",
+                "-ANCE",
+                "-ERY",
                 "-MENT"
             ],
             "familyTree": [
-                "BUILD",
-                "BUILDING",
-                "BUILDER",
-                "REBUILD"
+                "MOVE",
+                "MOVEMENT",
+                "MOVABLE",
+                "REMOVE"
+            ],
+            "instruction": "Choose the correct answer."
+        },
+        {
+            "id": "VOC_WORDFORMATION_L8_Q1",
+            "hint": "Adjective describing something that is pleasant and worth experiencing. The trip to the mountains was a truly ____ experience.",
+            "explanation": "ENJOY + -ABLE = ENJOYABLE. The suffix -ABLE means 'capable of' or 'giving', turning ENJOY into an adjective describing something that brings enjoyment. Compare this to ENJOYMENT, the noun form you met earlier.",
+            "interactionType": "choice",
+            "correctAnswer": "ENJOYABLE",
+            "rootWord": "ENJOY",
+            "options": [
+                "-MENT",
+                "-ABLE",
+                "-IVE",
+                "-ANT"
+            ],
+            "familyTree": [
+                "ENJOY",
+                "ENJOYABLE",
+                "ENJOYMENT",
+                "ENJOYING"
             ],
             "instruction": "Choose the correct answer."
         },
         {
             "id": "VOC_WORDFORMATION_L8_Q2",
-            "hint": "Noun for a gathering of people to discuss something. We have a team ____ every Monday morning.",
-            "explanation": "MEET + -ING = MEETING. The suffix -ING turns the verb MEET into a noun naming the event where people meet.",
+            "hint": "Adjective describing clothing that can be cleaned in a washing machine. Check the label to make sure the jacket is ____ before you buy it.",
+            "explanation": "WASH + -ABLE = WASHABLE. The suffix -ABLE means 'able to be', so WASHABLE describes something that can safely be washed.",
             "interactionType": "choice",
-            "correctAnswer": "MEETING",
-            "rootWord": "MEET",
+            "correctAnswer": "WASHABLE",
+            "rootWord": "WASH",
             "options": [
-                "-URE",
-                "-MENT",
-                "-ANCE",
-                "-ING"
+                "-IBLE",
+                "-ABLE",
+                "-IVE",
+                "-MENT"
             ],
             "familyTree": [
-                "MEET",
-                "MEETING",
-                "MET",
-                "UNMET"
+                "WASH",
+                "WASHABLE",
+                "WASHER",
+                "WASHING"
             ],
             "instruction": "Choose the correct answer."
         },
         {
             "id": "VOC_WORDFORMATION_L8_Q3",
-            "hint": "The act of using your voice to make music. Her ____ filled the whole concert hall.",
-            "explanation": "SING + -ING = SINGING. The suffix -ING turns the verb SING into a noun (or present participle) naming the activity itself.",
+            "hint": "Adjective describing an object that can shatter easily. Please mark the box 'fragile' because the vase inside is ____.",
+            "explanation": "BREAK + -ABLE = BREAKABLE. Adding -ABLE to the verb BREAK forms an adjective meaning 'able to be broken'.",
             "interactionType": "choice",
-            "correctAnswer": "SINGING",
-            "rootWord": "SING",
+            "correctAnswer": "BREAKABLE",
+            "rootWord": "BREAK",
             "options": [
-                "-ING",
-                "-ANCE",
-                "-ORY",
-                "-MENT"
+                "-IBLE",
+                "-FUL",
+                "-ABLE",
+                "-IVE"
             ],
             "familyTree": [
-                "SING",
-                "SINGER",
-                "SINGING",
-                "SINGABLE"
+                "BREAK",
+                "BREAKABLE",
+                "BREAKAGE",
+                "UNBREAKABLE"
             ],
             "instruction": "Choose the correct answer."
         },
         {
             "id": "VOC_WORDFORMATION_L9_Q1",
-            "hint": "Adjective describing weather with a lot of rain. Bring an umbrella; it's supposed to be a ____ afternoon.",
-            "explanation": "RAIN + -Y = RAINY. The suffix -Y means 'full of' or 'characterized by', turning the noun RAIN into an adjective.",
+            "hint": "Verb meaning to build something again after it was damaged. After the earthquake, the town worked together to ____ the school.",
+            "explanation": "RE- + BUILD = REBUILD. The prefix RE- means 'again', so REBUILD means to build something a second time.",
             "interactionType": "choice",
-            "correctAnswer": "RAINY",
-            "rootWord": "RAIN",
+            "correctAnswer": "REBUILD",
+            "rootWord": "BUILD",
             "options": [
-                "-ARY",
-                "-FUL",
-                "-ISH",
-                "-Y"
+                "UN-",
+                "RE-",
+                "DIS-",
+                "MIS-"
             ],
             "familyTree": [
-                "RAIN",
-                "RAINY",
-                "RAINFALL",
-                "RAINCOAT"
+                "BUILD",
+                "REBUILD",
+                "BUILDER",
+                "BUILDING"
             ],
             "instruction": "Choose the correct answer."
         },
         {
             "id": "VOC_WORDFORMATION_L9_Q2",
-            "hint": "Adjective describing weather with strong moving air. It was so ____ that my hat blew right off my head.",
-            "explanation": "WIND + -Y = WINDY. The suffix -Y means 'full of', turning the noun WIND into an adjective describing the weather.",
+            "hint": "Verb meaning to have a different opinion from someone else. The two scientists ____ about what caused the results.",
+            "explanation": "DIS- + AGREE = DISAGREE. The prefix DIS- reverses the meaning of a verb; here it turns AGREE (met in an earlier level's AGREEMENT) into its opposite.",
             "interactionType": "choice",
-            "correctAnswer": "WINDY",
-            "rootWord": "WIND",
+            "correctAnswer": "DISAGREE",
+            "rootWord": "AGREE",
             "options": [
-                "-ARY",
-                "-Y",
-                "-ABLE",
-                "-FUL"
+                "UN-",
+                "MIS-",
+                "NON-",
+                "DIS-"
             ],
             "familyTree": [
-                "WIND",
-                "WINDY",
-                "WINDMILL",
-                "WINDSHIELD"
+                "AGREE",
+                "AGREEMENT",
+                "DISAGREE",
+                "DISAGREEMENT"
             ],
             "instruction": "Choose the correct answer."
         },
         {
             "id": "VOC_WORDFORMATION_L9_Q3",
-            "hint": "Adjective describing a sky covered with clouds. The forecast says it will be ____ all weekend, with no sunshine.",
-            "explanation": "CLOUD + -Y = CLOUDY. The suffix -Y means 'full of' or 'covered with', turning the noun CLOUD into an adjective.",
+            "hint": "Verb meaning to play a recording again. Could you ____ that video clip? I missed what she said.",
+            "explanation": "RE- + PLAY = REPLAY. The prefix RE- means 'again', so REPLAY means to play something a second time.",
             "interactionType": "choice",
-            "correctAnswer": "CLOUDY",
-            "rootWord": "CLOUD",
+            "correctAnswer": "REPLAY",
+            "rootWord": "PLAY",
             "options": [
-                "-ARY",
-                "-FUL",
-                "-Y",
-                "-ISH"
+                "UN-",
+                "RE-",
+                "DIS-",
+                "OVER-"
             ],
             "familyTree": [
-                "CLOUD",
-                "CLOUDY",
-                "CLOUDLESS",
-                "CLOUDBURST"
+                "PLAY",
+                "REPLAY",
+                "PLAYER",
+                "PLAYBACK"
             ],
             "instruction": "Choose the correct answer."
         },
         {
             "id": "VOC_WORDFORMATION_L10_Q1",
-            "hint": "Adjective describing something or someone with great strength or influence. The company's CEO is one of the most ____ people in the industry.",
-            "explanation": "POWER + -FUL = POWERFUL. The suffix -FUL means 'full of', turning the noun POWER into an adjective meaning 'full of power'.",
+            "hint": "Adjective meaning 'feeling or showing gratitude'. She was deeply ____ when her neighbors helped her rebuild the fence.",
+            "explanation": "THANK + -FUL = THANKFUL. This reuses the -FUL pattern from your very first level, now with a new root and a gratitude context instead of a physical-help context.",
             "interactionType": "choice",
-            "correctAnswer": "POWERFUL",
-            "rootWord": "POWER",
+            "correctAnswer": "THANKFUL",
+            "rootWord": "THANK",
             "options": [
-                "-FUL",
-                "-IBLE",
-                "-ENT",
-                "-IC"
+                "-LESS",
+                "-ISH",
+                "-ORY",
+                "-FUL"
             ],
             "familyTree": [
-                "POWER",
-                "POWERFUL",
-                "POWERLESS",
-                "EMPOWER"
+                "THANK",
+                "THANKFUL",
+                "THANKLESS",
+                "THANKS"
             ],
             "instruction": "Choose the correct answer."
         },
         {
             "id": "VOC_WORDFORMATION_L10_Q2",
-            "hint": "Adjective describing someone with no strength or control over a situation. Without her phone, she felt completely ____ to reach for help.",
-            "explanation": "POWER + -LESS = POWERLESS. The suffix -LESS means 'without', turning the noun POWER into an adjective meaning 'without power'.",
+            "hint": "Adjective meaning 'unable to control a situation'. Watching the flood rise, the villagers felt completely ____ to stop it.",
+            "explanation": "POWER + -LESS = POWERLESS. This reuses the -LESS pattern from earlier levels, this time describing a lack of control or strength rather than a lack of fear or a home.",
             "interactionType": "choice",
             "correctAnswer": "POWERLESS",
             "rootWord": "POWER",
             "options": [
-                "-ATIC",
+                "-FUL",
+                "-IVE",
                 "-LESS",
-                "-WORTHY",
-                "-IAL"
+                "-ARY"
             ],
             "familyTree": [
                 "POWER",
@@ -612,22 +612,22 @@
         },
         {
             "id": "VOC_WORDFORMATION_L10_Q3",
-            "hint": "Adjective describing something that cannot cause damage or injury. Don't worry about the spider; it's completely ____.",
-            "explanation": "HARM + -LESS = HARMLESS. The suffix -LESS means 'without', turning the noun HARM into an adjective meaning 'without harm'.",
+            "hint": "Noun naming a quality where a person lacks strength or skill. He admitted that lifting heavy boxes was his one real ____.",
+            "explanation": "WEAK + -NESS = WEAKNESS. This reuses the -NESS pattern from earlier levels to turn the adjective WEAK into a noun naming that quality.",
             "interactionType": "choice",
-            "correctAnswer": "HARMLESS",
-            "rootWord": "HARM",
+            "correctAnswer": "WEAKNESS",
+            "rootWord": "WEAK",
             "options": [
-                "-LESS",
-                "-ANT",
-                "-ABLE",
-                "-ORY"
+                "-ITY",
+                "-ANCE",
+                "-SHIP",
+                "-NESS"
             ],
             "familyTree": [
-                "HARM",
-                "HARMFUL",
-                "HARMLESS",
-                "UNHARMED"
+                "WEAK",
+                "WEAKEN",
+                "WEAKNESS",
+                "WEAKLY"
             ],
             "instruction": "Choose the correct answer."
         }

@@ -6,20 +6,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L161_Q1",
-            "sentence": "After the trauma, the patient's [TARGET] worried doctors, who hadn't heard her speak in weeks.",
-            "hint": "From Latin ob- + mutescere, 'to become silent' - a deliberate, persistent silence.",
+            "sentence": "After the accusation, he fell into [TARGET], or complete silence, refusing to answer a single question from the reporters for the rest of the day.",
+            "hint": "This word describes a deliberate refusal to speak at all.",
             "options": [
-                "Chatter",
-                "Loquacity",
-                "Volubility",
-                "Muteness"
+                "Complete silence",
+                "Constant chatter",
+                "Loud protest",
+                "Endless explanation"
             ],
-            "explanation": "Not speaking for weeks worried doctors, showing a persistent silence, so [TARGET] means MUTENESS.",
-            "correctAnswer": "Muteness",
+            "explanation": "The word 'or' signals that [TARGET] means the same as 'complete silence,' so [TARGET] means COMPLETE SILENCE.",
+            "correctAnswer": "Complete silence",
             "clueType": "synonym",
             "evidenceWords": [
-                "After",
-                "trauma"
+                "or complete silence",
+                "refusing to answer a single question"
             ]
         },
         {
@@ -27,20 +27,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L161_Q2",
-            "sentence": "The lawyer's [TARGET] summarized every key point before the jury left to deliberate.",
-            "hint": "From Latin per- + orare, 'to speak' - the final, summarizing part of a speech.",
+            "sentence": "Unlike the rambling, unfocused opening of his speech, the [TARGET] was sharp and rousing, summarizing his argument in three memorable lines that brought the crowd to its feet.",
+            "hint": "This word describes the closing part of a speech, meant to leave a strong final impression.",
             "options": [
-                "Digression",
-                "Introduction",
-                "Conclusion",
-                "Interruption"
+                "Rambling opening",
+                "Closing summary",
+                "Unfocused introduction",
+                "Confusing preamble"
             ],
-            "explanation": "Summarizing every key point right before the jury left describes the final part of a speech, so [TARGET] means CONCLUSION.",
-            "correctAnswer": "Conclusion",
+            "explanation": "The word 'unlike' contrasts [TARGET] with the 'rambling, unfocused opening,' so it must mean the opposite, the strong ending, which is CLOSING SUMMARY.",
+            "correctAnswer": "Closing summary",
             "clueType": "antonym",
             "evidenceWords": [
-                "lawyer's",
-                "summarized"
+                "Unlike",
+                "rambling, unfocused opening",
+                "brought the crowd to its feet"
             ]
         },
         {
@@ -48,20 +49,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L161_Q3",
-            "sentence": "The blacksmith pulled the [TARGET] metal from the forge, its surface almost white with heat.",
-            "hint": "From Latin incandescere, 'to become white-hot' - shining brightly from intense heat.",
+            "sentence": "The filament inside the old bulb was [TARGET], which means it glowed with intense white-hot light produced by being heated until it burned brightly.",
+            "hint": "This word describes glowing brightly with intense heat.",
             "options": [
-                "Glowing",
-                "Frozen",
-                "Cold",
-                "Dull"
+                "Cold and dark",
+                "Dim",
+                "Glowing with heat",
+                "Flickering weakly"
             ],
-            "explanation": "Metal so hot it's almost white shows shining brightly from intense heat, so [TARGET] means GLOWING.",
-            "correctAnswer": "Glowing",
+            "explanation": "The sentence defines [TARGET] as glowing 'with intense white-hot light produced by being heated,' so [TARGET] means GLOWING WITH HEAT.",
+            "correctAnswer": "Glowing with heat",
             "clueType": "definition",
             "evidenceWords": [
-                "blacksmith",
-                "pulled"
+                "which means",
+                "glowed with intense white-hot light"
             ]
         },
         {
@@ -69,20 +70,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L162_Q1",
-            "sentence": "The photo exhibit focused on [TARGET] objects: toothbrushes, bus tickets, and grocery receipts.",
-            "hint": "From Latin quotidie, 'daily' - happening or used every single day.",
+            "sentence": "Brushing her teeth, making coffee, and checking the weather before leaving the house were all [TARGET] parts of her morning, repeated in the exact same order every single day.",
+            "hint": "This word describes something happening every day, ordinary and routine.",
             "options": [
-                "Extraordinary",
-                "Exceptional",
                 "Rare",
+                "Extraordinary",
+                "Occasional",
                 "Everyday"
             ],
-            "explanation": "Toothbrushes, bus tickets, and grocery receipts are objects used every single day, so [TARGET] means EVERYDAY.",
+            "explanation": "Brushing teeth, making coffee, and checking the weather, repeated the same way every day, are all examples of an everyday routine, so [TARGET] means EVERYDAY.",
             "correctAnswer": "Everyday",
             "clueType": "example",
             "evidenceWords": [
-                "photo",
-                "exhibit"
+                "Brushing her teeth, making coffee",
+                "checking the weather",
+                "every single day"
             ]
         },
         {
@@ -90,20 +92,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L162_Q2",
-            "sentence": "The program was designed to reduce [TARGET] among former inmates by offering job training.",
-            "hint": "From Latin recidere, 'to fall back' - falling back into a previous pattern.",
+            "sentence": "The program tracked former inmates for five years and found that those who completed job training were arrested again far less often than those who received no support after release — proof that job training could reduce [TARGET].",
+            "hint": "This word describes the tendency of someone who has committed a crime to commit another crime again.",
             "options": [
-                "Rehabilitation",
-                "Reform",
-                "Relapse",
-                "Recovery"
+                "Repeat offending",
+                "First-time rehabilitation",
+                "Permanent reform",
+                "Lifelong honesty"
             ],
-            "explanation": "A program designed to stop people from falling back into crime addresses relapse into old behavior, so [TARGET] means RELAPSE.",
-            "correctAnswer": "Relapse",
+            "explanation": "Tracking former inmates and finding that job training led to fewer repeat arrests shows a measure of returning to crime, even without a direct clue word, so [TARGET] means REPEAT OFFENDING.",
+            "correctAnswer": "Repeat offending",
             "clueType": "inference",
             "evidenceWords": [
-                "program",
-                "designed"
+                "tracked former inmates for five years",
+                "arrested again far less often",
+                "received no support after release"
             ]
         },
         {
@@ -111,20 +114,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L162_Q3",
-            "sentence": "The tabloid's [TARGET] headline promised gossip the celebrity's lawyers quickly denied.",
-            "hint": "From Latin salire, 'to leap' - lustfully suggestive or scandalous.",
+            "sentence": "The tabloid ran a [TARGET] and scandalous headline about the celebrity's divorce, promising 'shocking details' that turned out to be mostly rumor.",
+            "hint": "This word describes gossip or content focused on lurid details, meant to shock.",
             "options": [
-                "Innocent",
-                "Lurid",
-                "Wholesome",
-                "Tasteful"
+                "Respectable",
+                "Scandalous",
+                "Dignified",
+                "Restrained"
             ],
-            "explanation": "A headline promising gossip that lawyers quickly denied suggests scandalous content, so [TARGET] means LURID.",
-            "correctAnswer": "Lurid",
+            "explanation": "The word 'and' links [TARGET] to 'scandalous,' and promising 'shocking details' confirms it, so [TARGET] means SCANDALOUS.",
+            "correctAnswer": "Scandalous",
             "clueType": "synonym",
             "evidenceWords": [
-                "tabloid's",
-                "headline"
+                "and scandalous headline",
+                "shocking details"
             ]
         },
         {
@@ -132,20 +135,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L163_Q1",
-            "sentence": "The [TARGET] new manager rolled his eyes whenever a junior staffer asked a question.",
-            "hint": "From Latin supercilium, 'eyebrow' - raising an eyebrow in scorn.",
+            "sentence": "Unlike the warm, down-to-earth chef who happily answered every question from the interns, the visiting celebrity chef was [TARGET], barely glancing at the kitchen staff and sighing whenever anyone asked a question.",
+            "hint": "This word describes behaving as though you believe you're better than everyone else.",
             "options": [
-                "Humble",
-                "Modest",
+                "Warm",
                 "Down-to-earth",
-                "Haughty"
+                "Arrogant",
+                "Humble"
             ],
-            "explanation": "Rolling his eyes at junior staffers' questions shows looking down on them with scorn, so [TARGET] means HAUGHTY.",
-            "correctAnswer": "Haughty",
+            "explanation": "The word 'unlike' contrasts [TARGET] with a chef who was 'warm, down-to-earth,' so it must mean the opposite, which is ARROGANT.",
+            "correctAnswer": "Arrogant",
             "clueType": "antonym",
             "evidenceWords": [
-                "manager",
-                "rolled"
+                "Unlike",
+                "warm, down-to-earth chef",
+                "barely glancing at the kitchen staff"
             ]
         },
         {
@@ -153,20 +157,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L163_Q2",
-            "sentence": "The court documents detailed the executive's financial [TARGET], including years of falsified records.",
-            "hint": "From Latin turpis, 'shameful' - a deep moral corruption in someone's character.",
+            "sentence": "The court records described a pattern of moral [TARGET], which means deeply wicked and depraved behavior that violated basic standards of decency.",
+            "hint": "This word describes deep wickedness or moral corruption.",
             "options": [
-                "Depravity",
-                "Integrity",
                 "Virtue",
-                "Decency"
+                "Integrity",
+                "Honor",
+                "Depravity"
             ],
-            "explanation": "Years of falsified records detailed in court describe depraved, wicked conduct, so [TARGET] means DEPRAVITY.",
+            "explanation": "The sentence defines [TARGET] as 'deeply wicked and depraved behavior,' so [TARGET] means DEPRAVITY.",
             "correctAnswer": "Depravity",
             "clueType": "definition",
             "evidenceWords": [
-                "court",
-                "documents"
+                "which means",
+                "deeply wicked and depraved behavior"
             ]
         },
         {
@@ -174,20 +178,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L163_Q3",
-            "sentence": "GPS technology depends on calculating a device's exact [TARGET] at any given moment.",
-            "hint": "From Latin ubi, 'where' - the simple fact of having a location.",
+            "sentence": "The philosopher's lecture on [TARGET] focused entirely on questions like: where exactly is a thought located, and can something truly be said to exist in one place and nowhere else?",
+            "hint": "This word describes the state or quality of being located in a definite place.",
             "options": [
-                "Placelessness",
-                "Whereabouts",
+                "Definite location",
+                "Complete absence",
                 "Nonexistence",
-                "Timelessness"
+                "Total placelessness"
             ],
-            "explanation": "Calculating a device's exact location at any moment describes the state of being in a place, so [TARGET] means WHEREABOUTS.",
-            "correctAnswer": "Whereabouts",
+            "explanation": "Questions about where exactly a thought is located and whether something exists in one place are all examples of exploring definite location, so [TARGET] means DEFINITE LOCATION.",
+            "correctAnswer": "Definite location",
             "clueType": "example",
             "evidenceWords": [
-                "technology",
-                "depends"
+                "where exactly is a thought located",
+                "exist in one place and nowhere else"
             ]
         },
         {
@@ -195,20 +199,22 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L164_Q1",
-            "sentence": "The athlete's [TARGET] victory speech mentioned his own greatness eleven separate times.",
-            "hint": "From vain + glory - empty pride that exaggerates one's own worth.",
+            "sentence": "He hung a life-sized portrait of himself in the lobby, insisted every email from the company include his full title, and interrupted three meetings just to remind everyone of the award he'd won a decade earlier — a truly [TARGET] boss.",
+            "hint": "This word describes someone excessively proud, always bragging about their own achievements.",
             "options": [
-                "Self-effacing",
                 "Modest",
+                "Boastful",
                 "Humble",
-                "Boastful"
+                "Self-effacing"
             ],
-            "explanation": "Mentioning his own greatness eleven times in one speech shows empty, exaggerated pride, so [TARGET] means BOASTFUL.",
+            "explanation": "Hanging a self-portrait, demanding his title in every email, and bragging about an old award all show excessive pride and boasting, even without a direct clue word, so [TARGET] means BOASTFUL.",
             "correctAnswer": "Boastful",
             "clueType": "inference",
             "evidenceWords": [
-                "athlete's",
-                "victory"
+                "life-sized portrait of himself",
+                "insisted every email",
+                "include his full title",
+                "interrupted three meetings just to remind everyone"
             ]
         },
         {
@@ -216,20 +222,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L164_Q2",
-            "sentence": "The [TARGET] old farmer's hands told the story of sixty years working in the sun.",
-            "hint": "From Old English wisnian, 'to wither' - shrunken and wrinkled from age.",
+            "sentence": "The [TARGET] and shriveled old apple had been sitting on the counter for weeks, its skin wrinkled and sunken.",
+            "hint": "This word describes something wrinkled and shrunken, often from age.",
             "options": [
+                "Plump",
+                "Fresh",
                 "Shriveled",
-                "Fresh-faced",
-                "Youthful",
-                "Smooth-skinned"
+                "Smooth"
             ],
-            "explanation": "Hands telling the story of sixty years in the sun describe being shrunken and wrinkled, so [TARGET] means SHRIVELED.",
+            "explanation": "The word 'and' links [TARGET] to 'shriveled,' and the wrinkled, sunken skin confirms it, so [TARGET] means SHRIVELED.",
             "correctAnswer": "Shriveled",
             "clueType": "synonym",
             "evidenceWords": [
-                "farmer's",
-                "hands"
+                "and shriveled old apple",
+                "wrinkled and sunken"
             ]
         },
         {
@@ -237,20 +243,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L164_Q3",
-            "sentence": "The poet's wild [TARGET] echoed across the canyon, startling a flock of birds.",
-            "hint": "An old, imitative word for a raw, untrained shout.",
+            "sentence": "Unlike the polite, measured applause at the classical concert, the crowd at the wrestling match let out a wild [TARGET], a rough burst of shouting and hollering that shook the arena.",
+            "hint": "This word describes a loud, harsh, unrefined cry or shout.",
             "options": [
-                "Murmur",
-                "Bellow",
-                "Whisper",
-                "Hum"
+                "Polite applause",
+                "Measured clapping",
+                "Quiet murmur",
+                "Harsh shout"
             ],
-            "explanation": "A wild cry echoing across a canyon and startling birds describes a harsh loud cry, so [TARGET] means BELLOW.",
-            "correctAnswer": "Bellow",
+            "explanation": "The word 'unlike' contrasts [TARGET] with 'polite, measured applause,' so it must mean the opposite, which is HARSH SHOUT.",
+            "correctAnswer": "Harsh shout",
             "clueType": "antonym",
             "evidenceWords": [
-                "poet's",
-                "echoed"
+                "Unlike",
+                "polite, measured applause",
+                "rough burst of shouting and hollering"
             ]
         },
         {
@@ -258,20 +265,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L165_Q1",
-            "sentence": "The painting celebrated a [TARGET] figure, a style of beauty common in classical art.",
-            "hint": "From Yiddish zaftik, 'juicy' - describes a full, rounded figure viewed positively.",
+            "sentence": "The vintage fashion magazine celebrated [TARGET] models, which means it featured women with a full, rounded figure that the editors considered especially striking and beautiful.",
+            "hint": "This word describes having a full, rounded figure, often used in an admiring way.",
             "options": [
-                "Gaunt",
-                "Skinny",
-                "Plump",
-                "Skeletal"
+                "Full-figured",
+                "Extremely thin",
+                "Frail",
+                "Gaunt"
             ],
-            "explanation": "Celebrating a full figure common in classical art describes a positively viewed roundness, so [TARGET] means PLUMP.",
-            "correctAnswer": "Plump",
+            "explanation": "The sentence defines [TARGET] as having 'a full, rounded figure... considered especially striking and beautiful,' so [TARGET] means FULL-FIGURED.",
+            "correctAnswer": "Full-figured",
             "clueType": "definition",
             "evidenceWords": [
-                "painting",
-                "celebrated"
+                "which means",
+                "full, rounded figure"
             ]
         },
         {
@@ -279,20 +286,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L165_Q2",
-            "sentence": "His [TARGET] diet of plain rice and vegetables surprised guests used to his old extravagant meals.",
-            "hint": "From Latin abs- + temetum, 'strong drink' - holding back from indulging in food or drink.",
+            "sentence": "During his training, the boxer was [TARGET]: he skipped dessert at every meal, limited himself to one small glass of water with dinner, and avoided all alcohol for six months straight.",
+            "hint": "This word describes practicing great self-restraint, especially with food and drink.",
             "options": [
                 "Indulgent",
+                "Moderate",
                 "Excessive",
-                "Gluttonous",
-                "Moderate"
+                "Gluttonous"
             ],
-            "explanation": "Switching to plain rice and vegetables from extravagant meals shows moderate, restrained consumption, so [TARGET] means MODERATE.",
+            "explanation": "Skipping dessert, limiting drinks, and avoiding alcohol for six months are all examples of great self-restraint, so [TARGET] means MODERATE.",
             "correctAnswer": "Moderate",
             "clueType": "example",
             "evidenceWords": [
-                "plain",
-                "vegetables"
+                "skipped dessert at every meal",
+                "limited himself to one small glass of water",
+                "avoided all alcohol for six months"
             ]
         },
         {
@@ -300,20 +308,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L165_Q3",
-            "sentence": "The candidate's [TARGET] promises to 'transform the universe' made even his supporters laugh.",
-            "hint": "From bombast, originally cotton padding - speech padded with grand, empty words.",
+            "sentence": "His five-minute answer to a simple yes-or-no question was filled with phrases like 'unprecedented paradigm' and 'monumental synergy,' yet somehow never actually answered the question at all — a classic example of [TARGET] speech.",
+            "hint": "This word describes speech that sounds impressive but is actually empty and self-important.",
             "options": [
+                "Plain",
+                "Simple",
                 "Pompous",
-                "Plain-spoken",
-                "Humble",
-                "Understated"
+                "Direct"
             ],
-            "explanation": "Promising to 'transform the universe' and making supporters laugh shows speech padded with grand, empty words, so [TARGET] means POMPOUS.",
+            "explanation": "Using grand-sounding phrases for five minutes without actually answering a simple question shows empty, pompous language, even without a direct clue word, so [TARGET] means POMPOUS.",
             "correctAnswer": "Pompous",
             "clueType": "inference",
             "evidenceWords": [
-                "candidate's",
-                "promises"
+                "five-minute answer to a simple yes-or-no question",
+                "unprecedented paradigm",
+                "never actually answered the question"
             ]
         },
         {
@@ -321,20 +330,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L166_Q1",
-            "sentence": "As an [TARGET] freshman, he believed he knew more about the world than his professors did.",
-            "hint": "From Old English calu, 'bald' - originally described unfledged, featherless birds.",
+            "sentence": "The [TARGET] and inexperienced intern didn't yet know that you're supposed to CC your manager on client emails.",
+            "hint": "This word describes someone young and lacking experience or maturity.",
             "options": [
-                "Mature",
-                "Experienced",
                 "Seasoned",
-                "Immature"
+                "Veteran",
+                "Experienced",
+                "Inexperienced"
             ],
-            "explanation": "Believing he knew more than his professors as a freshman shows youthful inexperience, so [TARGET] means IMMATURE.",
-            "correctAnswer": "Immature",
+            "explanation": "The word 'and' links [TARGET] to 'inexperienced,' and not knowing basic office etiquette confirms it, so [TARGET] means INEXPERIENCED.",
+            "correctAnswer": "Inexperienced",
             "clueType": "synonym",
             "evidenceWords": [
-                "freshman",
-                "believed"
+                "and inexperienced intern",
+                "didn't yet know"
             ]
         },
         {
@@ -342,20 +351,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L166_Q2",
-            "sentence": "Historians warned that the [TARGET] used fear and simple slogans instead of real policy.",
-            "hint": "From Greek demos, 'people,' and agogos, 'leading' - leading the people through emotion, not reason.",
+            "sentence": "Unlike the thoughtful senator who explained his policy with data and careful reasoning, the [TARGET] whipped up the crowd with fear, blame, and slogans that had no basis in fact.",
+            "hint": "This word describes a leader who gains power by appealing to people's fears and prejudices rather than reason.",
             "options": [
-                "Representative",
-                "Statesman",
-                "Agitator",
-                "Leader"
+                "Fear-mongering leader",
+                "Thoughtful reasoner",
+                "Careful policymaker",
+                "Data-driven leader"
             ],
-            "explanation": "Using fear and slogans instead of real policy shows leading through emotion rather than reason, so [TARGET] means AGITATOR.",
-            "correctAnswer": "Agitator",
+            "explanation": "The word 'unlike' contrasts [TARGET] with a senator who used 'data and careful reasoning,' so it must mean the opposite, which is FEAR-MONGERING LEADER.",
+            "correctAnswer": "Fear-mongering leader",
             "clueType": "antonym",
             "evidenceWords": [
-                "Historians",
-                "warned"
+                "Unlike",
+                "data and careful reasoning",
+                "whipped up the crowd with fear, blame, and slogans"
             ]
         },
         {
@@ -363,20 +373,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L166_Q3",
-            "sentence": "By the third snow day in a row, the children sank into a deep [TARGET], staring blankly at the wall.",
-            "hint": "From French ennui - a weary, listless flatness where nothing seems worth doing.",
+            "sentence": "By the third week of vacation with nothing planned, she was overcome with [TARGET], which means a deep boredom and restlessness that made even her favorite hobbies feel pointless.",
+            "hint": "This word describes a feeling of restless listlessness from having nothing engaging to do.",
             "options": [
                 "Excitement",
-                "Curiosity",
-                "Energy",
-                "Boredom"
+                "Boredom",
+                "Thrill",
+                "Enthusiasm"
             ],
-            "explanation": "Staring blankly at the wall by the third snow day describes a weary lack of interest, so [TARGET] means BOREDOM.",
+            "explanation": "The sentence defines [TARGET] as 'a deep boredom and restlessness,' so [TARGET] means BOREDOM.",
             "correctAnswer": "Boredom",
             "clueType": "definition",
             "evidenceWords": [
-                "third",
-                "children"
+                "which means",
+                "deep boredom and restlessness"
             ]
         },
         {
@@ -384,20 +394,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L167_Q1",
-            "sentence": "An [TARGET] broke out in the parking lot after two drivers both claimed the same space.",
-            "hint": "From Italian fracassare, 'to smash' - a loud, chaotic disturbance.",
+            "sentence": "The [TARGET] outside the bar drew a crowd: two men shouting and shoving each other, a table knocked over, and a bystander's phone recording it all within seconds.",
+            "hint": "This word describes a noisy disturbance or brawl.",
             "options": [
-                "Meeting",
-                "Discussion",
-                "Gathering",
-                "Uproar"
+                "Peaceful gathering",
+                "Quiet conversation",
+                "Noisy brawl",
+                "Calm meeting"
             ],
-            "explanation": "Two drivers fighting over a parking space describes a loud, chaotic disturbance, so [TARGET] means UPROAR.",
-            "correctAnswer": "Uproar",
+            "explanation": "Shouting, shoving, and a knocked-over table are all examples of a noisy disturbance, so [TARGET] means NOISY BRAWL.",
+            "correctAnswer": "Noisy brawl",
             "clueType": "example",
             "evidenceWords": [
-                "broke",
-                "parking"
+                "two men shouting and shoving each other",
+                "a table knocked over",
+                "recording it all within seconds"
             ]
         },
         {
@@ -405,20 +416,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L167_Q2",
-            "sentence": "Every morning, the lambs would [TARGET] across the spring meadow, kicking up their heels with joy.",
-            "hint": "From Italian gambata, 'a leg movement' - frisky, joyful jumping about.",
+            "sentence": "The lambs kicked up their heels, chased each other in circles, and leapt over the low stone wall again and again just for the joy of it, [TARGET]ing across the spring meadow.",
+            "hint": "This word means to run or jump around playfully.",
             "options": [
-                "Frolic",
                 "Trudge",
-                "Freeze",
-                "Crawl"
+                "Collapse",
+                "Sit still",
+                "Frolic"
             ],
-            "explanation": "Kicking up their heels with joy every morning across the meadow describes frisky, joyful jumping about, so [TARGET] means FROLIC.",
+            "explanation": "Kicking up heels, chasing in circles, and leaping over a wall just for joy all show playful running and jumping, even without a direct clue word, so [TARGET] means FROLIC.",
             "correctAnswer": "Frolic",
             "clueType": "inference",
             "evidenceWords": [
-                "Every",
-                "morning"
+                "kicked up their heels",
+                "chased each other in circles",
+                "leapt over the low stone wall again and again"
             ]
         },
         {
@@ -426,20 +438,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L167_Q3",
-            "sentence": "She often looks back on those [TARGET] summers at her grandparents' lake house.",
-            "hint": "From a Greek myth about a bird said to calm the seas while nesting.",
+            "sentence": "She often thought back to those [TARGET] and peaceful summers at her grandmother's lake house, before life got complicated.",
+            "hint": "This word describes a period remembered as idyllically happy and calm.",
             "options": [
-                "Turbulent",
+                "Peaceful",
                 "Chaotic",
-                "Idyllic",
+                "Turbulent",
                 "Stressful"
             ],
-            "explanation": "Looking back fondly on calm summers at a lake house describes peaceful, happy times, so [TARGET] means IDYLLIC.",
-            "correctAnswer": "Idyllic",
+            "explanation": "The word 'and' links [TARGET] to 'peaceful,' and remembering those summers fondly confirms it, so [TARGET] means PEACEFUL.",
+            "correctAnswer": "Peaceful",
             "clueType": "synonym",
             "evidenceWords": [
-                "often",
-                "looks"
+                "and peaceful summers",
+                "before life got complicated"
             ]
         },
         {
@@ -447,20 +459,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L168_Q1",
-            "sentence": "The project finally moved forward once it received the city council's official [TARGET].",
-            "hint": "From Latin imprimatur, 'let it be printed' - once required to publish a book.",
+            "sentence": "Unlike the self-published pamphlet that anyone could print without review, the textbook carried the official [TARGET] of the education board, meaning it had been formally approved for classroom use.",
+            "hint": "This word describes an official sanction or approval, especially for publication.",
             "options": [
-                "Rejection",
-                "Condemnation",
-                "Ban",
-                "Sanction"
+                "Complete rejection",
+                "Official approval",
+                "Total disapproval",
+                "Formal ban"
             ],
-            "explanation": "A project moving forward once the council approved it describes receiving official approval, so [TARGET] means SANCTION.",
-            "correctAnswer": "Sanction",
+            "explanation": "The word 'unlike' contrasts [TARGET] with a pamphlet 'anyone could print without review,' so it must mean the opposite, which is OFFICIAL APPROVAL.",
+            "correctAnswer": "Official approval",
             "clueType": "antonym",
             "evidenceWords": [
-                "project",
-                "finally"
+                "Unlike",
+                "anyone could print without review",
+                "formally approved for classroom use"
             ]
         },
         {
@@ -468,20 +481,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L168_Q2",
-            "sentence": "His [TARGET] about modern technology lasted the entire forty-minute car ride.",
-            "hint": "Named after the biblical prophet Jeremiah, known for mournful warnings.",
+            "sentence": "His email to the whole department was a [TARGET], which means it was a long, mournful list of complaints about everything that had gone wrong that quarter.",
+            "hint": "This word describes a long, sorrowful complaint or list of grievances.",
             "options": [
-                "Celebration",
-                "Congratulation",
-                "Compliment",
-                "Lament"
+                "Brief compliment",
+                "Short thank-you",
+                "Lengthy complaint",
+                "Quick update"
             ],
-            "explanation": "Complaining about technology for an entire forty-minute ride describes a long complaint, so [TARGET] means LAMENT.",
-            "correctAnswer": "Lament",
+            "explanation": "The sentence defines [TARGET] as 'a long, mournful list of complaints,' so [TARGET] means LENGTHY COMPLAINT.",
+            "correctAnswer": "Lengthy complaint",
             "clueType": "definition",
             "evidenceWords": [
-                "about",
-                "modern"
+                "which means",
+                "long, mournful list of complaints"
             ]
         },
         {
@@ -489,20 +502,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L168_Q3",
-            "sentence": "They both believe it was [TARGET] that brought them to the same small village on the same day.",
-            "hint": "From Arabic qisma, 'portion, lot' - a fate that feels meant to be.",
+            "sentence": "They met because her flight was delayed, he missed his connecting train because of it, and they both ended up at the same coffee shop at the exact same gate — pure [TARGET], they always said.",
+            "hint": "This word describes destiny, especially when events seem meant to happen.",
             "options": [
-                "Accident",
-                "Chance",
-                "Destiny",
-                "Coincidence"
+                "Deliberate planning",
+                "Careful scheduling",
+                "Coincidental math",
+                "Fate"
             ],
-            "explanation": "Believing two people were meant to arrive in the same village on the same day describes fate, so [TARGET] means DESTINY.",
-            "correctAnswer": "Destiny",
+            "explanation": "A delayed flight, a missed train, and both ending up at the same coffee shop by chance are all examples of events that seemed destined, so [TARGET] means FATE.",
+            "correctAnswer": "Fate",
             "clueType": "example",
             "evidenceWords": [
-                "believe",
-                "brought"
+                "flight was delayed",
+                "missed his connecting train",
+                "ended up at the same coffee shop at the exact same gate"
             ]
         },
         {
@@ -510,20 +524,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L169_Q1",
-            "sentence": "There's a strange [TARGET] in the ancient manuscript where an entire page seems to be missing.",
-            "hint": "From Latin lacuna, 'a pool or hollow' - a missing piece where something should be.",
+            "sentence": "The ancient manuscript told the story clearly up through chapter nine, then jumped straight to chapter twelve with no explanation, leaving scholars to guess what had happened to the missing pages in between — a frustrating [TARGET] in the text.",
+            "hint": "This word describes a missing piece, especially in a text or body of knowledge.",
             "options": [
-                "Continuity",
-                "Completeness",
-                "Wholeness",
-                "Gap"
+                "Gap",
+                "Complete record",
+                "Full text",
+                "Unbroken sequence"
             ],
-            "explanation": "An entire page seeming to be missing describes a missing piece in the record, so [TARGET] means GAP.",
+            "explanation": "Jumping from chapter nine to chapter twelve with missing pages in between shows a gap in the text, even without a direct clue word, so [TARGET] means GAP.",
             "correctAnswer": "Gap",
             "clueType": "inference",
             "evidenceWords": [
-                "There's",
-                "strange"
+                "jumped straight to chapter twelve with no explanation",
+                "missing pages in between"
             ]
         },
         {
@@ -531,20 +545,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L169_Q2",
-            "sentence": "The investigation revealed his [TARGET] resume, which listed three degrees he never earned.",
-            "hint": "From Latin mendax, 'lying' - given to telling lies.",
+            "sentence": "His account of the accident was [TARGET] and untruthful, contradicted by the security footage that showed the exact opposite of what he claimed.",
+            "hint": "This word describes being deliberately dishonest.",
             "options": [
-                "Sincere",
-                "Dishonest",
                 "Honest",
+                "Untruthful",
+                "Accurate",
                 "Truthful"
             ],
-            "explanation": "A resume listing three degrees never earned shows a pattern of lying, so [TARGET] means DISHONEST.",
-            "correctAnswer": "Dishonest",
+            "explanation": "The word 'and' links [TARGET] to 'untruthful,' and the security footage contradicting his story confirms it, so [TARGET] means UNTRUTHFUL.",
+            "correctAnswer": "Untruthful",
             "clueType": "synonym",
             "evidenceWords": [
-                "investigation",
-                "revealed"
+                "and untruthful",
+                "contradicted by the security footage"
             ]
         },
         {
@@ -552,20 +566,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L169_Q3",
-            "sentence": "He stood [TARGET] in the kitchen, staring at the recipe that called for an ingredient he'd never heard of.",
-            "hint": "From Latin non plus, 'no more' - at a loss for what to do next.",
+            "sentence": "Unlike her calm, prepared coworker who had an answer ready for every question, she was [TARGET] by the unexpected question, standing frozen and unsure what to say for a full ten seconds.",
+            "hint": "This word describes being so surprised or confused that you don't know how to react.",
             "options": [
                 "Composed",
-                "Confident",
+                "Prepared",
                 "Bewildered",
-                "Prepared"
+                "Unfazed"
             ],
-            "explanation": "Staring at an unfamiliar ingredient and not knowing what to do shows being at a loss, so [TARGET] means BEWILDERED.",
+            "explanation": "The word 'unlike' contrasts [TARGET] with a coworker who 'had an answer ready for every question,' so it must mean the opposite, which is BEWILDERED.",
             "correctAnswer": "Bewildered",
             "clueType": "antonym",
             "evidenceWords": [
-                "stood",
-                "kitchen"
+                "Unlike",
+                "had an answer ready for every question",
+                "standing frozen and unsure what to say"
             ]
         },
         {
@@ -573,20 +588,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L170_Q1",
-            "sentence": "The children made a small [TARGET] toward their great-grandmother before each greeting, just as tradition required.",
-            "hint": "From Old French obeissance, 'obedience' - a respectful bow or gesture.",
+            "sentence": "The courtiers bowed in [TARGET] before the queen, which means they performed a formal gesture showing deep respect and submission to her authority.",
+            "hint": "This word describes a gesture of deep respect or submission, such as a bow.",
             "options": [
-                "Disrespect",
-                "Contempt",
-                "Homage",
-                "Defiance"
+                "Open rebellion",
+                "Casual wave",
+                "Disrespectful gesture",
+                "Respectful bow"
             ],
-            "explanation": "A traditional gesture made before each greeting describes a respectful bow, so [TARGET] means HOMAGE.",
-            "correctAnswer": "Homage",
+            "explanation": "The sentence defines [TARGET] as 'a formal gesture showing deep respect and submission,' so [TARGET] means RESPECTFUL BOW.",
+            "correctAnswer": "Respectful bow",
             "clueType": "definition",
             "evidenceWords": [
-                "children",
-                "small"
+                "which means",
+                "formal gesture showing deep respect and submission"
             ]
         },
         {
@@ -594,20 +609,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L170_Q2",
-            "sentence": "His [TARGET] across three continents took nearly two years to complete.",
-            "hint": "From Latin peregrinari, 'to travel abroad' - a long wandering trip.",
+            "sentence": "His years-long [TARGET] took him from the mountains of Peru, to the deserts of Morocco, to the fjords of Norway, and finally to a small fishing village in Japan where he decided to settle.",
+            "hint": "This word describes an extended period of wandering from place to place.",
             "options": [
-                "Jaunt",
-                "Stroll",
-                "Odyssey",
-                "Errand"
+                "Long journey",
+                "Single short trip",
+                "One quick errand",
+                "Brief commute"
             ],
-            "explanation": "A trip across three continents taking nearly two years describes a long wandering journey, so [TARGET] means ODYSSEY.",
-            "correctAnswer": "Odyssey",
+            "explanation": "Traveling from Peru to Morocco to Norway to Japan over years is an example of a long journey through many places, so [TARGET] means LONG JOURNEY.",
+            "correctAnswer": "Long journey",
             "clueType": "example",
             "evidenceWords": [
-                "across",
-                "three"
+                "mountains of Peru",
+                "deserts of Morocco",
+                "fjords of Norway"
             ]
         },
         {
@@ -615,20 +631,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L170_Q3",
-            "sentence": "Archaeologists found an ancient stone [TARGET] once used to grind wheat into flour by hand.",
-            "hint": "From Old English cweorn - one of humanity's oldest food-preparation tools.",
+            "sentence": "In the museum display, visitors could see two flat circular stones stacked together with a wooden handle, once turned by hand for hours to crush wheat into flour for a family's daily bread — an ancient [TARGET] used long before electric mills.",
+            "hint": "This word describes a simple hand-operated stone tool used for grinding grain.",
             "options": [
-                "Conveyor",
-                "Grindstone",
-                "Oven",
-                "Machine"
+                "Modern tractor",
+                "Hand mill",
+                "Electric oven",
+                "Metal plow"
             ],
-            "explanation": "A stone tool used to grind wheat into flour by hand describes an ancient hand mill, so [TARGET] means GRINDSTONE.",
-            "correctAnswer": "Grindstone",
+            "explanation": "Two circular stones turned by hand to crush wheat into flour describe a simple hand-operated grinding tool, even without a direct clue word, so [TARGET] means HAND MILL.",
+            "correctAnswer": "Hand mill",
             "clueType": "inference",
             "evidenceWords": [
-                "Archaeologists",
-                "found"
+                "two flat circular stones stacked together",
+                "turned by hand for hours",
+                "crush wheat into flour"
             ]
         }
     ],

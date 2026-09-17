@@ -6,20 +6,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L51_Q1",
-            "sentence": "After years of research, the professor became well [TARGET] in ancient Roman history.",
-            "hint": "This word describes having deep familiarity with a subject.",
+            "sentence": "After decades of restoring vintage cars, Hank was [TARGET] and knowledgeable, able to identify an engine's year just by the sound.",
+            "hint": "This word describes having deep knowledge or skill in a particular subject.",
             "options": [
-                "Ignorant",
                 "Knowledgeable",
-                "Uninformed",
-                "Unfamiliar"
+                "Clueless",
+                "Inexperienced",
+                "Uninformed"
             ],
-            "explanation": "Years of research leading to deep understanding of Roman history shows deep familiarity, so [TARGET] means KNOWLEDGEABLE.",
+            "explanation": "The word 'and' links [TARGET] to 'knowledgeable,' and identifying an engine by sound confirms it, so [TARGET] means KNOWLEDGEABLE.",
             "correctAnswer": "Knowledgeable",
             "clueType": "synonym",
             "evidenceWords": [
-                "After",
-                "years"
+                "and knowledgeable",
+                "identify an engine's year"
             ]
         },
         {
@@ -27,20 +27,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L51_Q2",
-            "sentence": "Her [TARGET] performance earned her 'Employee of the Year' two years in a row.",
-            "hint": "This word describes work so good it sets the standard for others.",
+            "sentence": "Unlike the players who skipped drills and argued with the coach, Maya's conduct on the team was [TARGET], earning her the captain's badge.",
+            "hint": "This word describes behavior so good it serves as a model for others.",
             "options": [
+                "Disruptive",
                 "Outstanding",
-                "Mediocre",
-                "Inadequate",
-                "Poor"
+                "Unruly",
+                "Disorderly"
             ],
-            "explanation": "Earning Employee of the Year two years in a row shows setting the standard for others, so [TARGET] means OUTSTANDING.",
+            "explanation": "The word 'unlike' contrasts [TARGET] with players who 'skipped drills and argued,' so it must mean the opposite, which is OUTSTANDING.",
             "correctAnswer": "Outstanding",
             "clueType": "antonym",
             "evidenceWords": [
-                "performance",
-                "earned"
+                "Unlike",
+                "skipped drills",
+                "earning her the captain's badge"
             ]
         },
         {
@@ -48,20 +49,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L51_Q3",
-            "sentence": "He has managed his [TARGET] back pain with physical therapy for over five years.",
-            "hint": "This word describes a condition that continues for a long time.",
+            "sentence": "The city's traffic jam on Fifth Avenue was [TARGET], which means it had been happening every single rush hour for over ten years with no end in sight.",
+            "hint": "This word describes something that persists for a very long time without stopping.",
             "options": [
                 "Temporary",
-                "Brief",
-                "Long-lasting",
-                "Short-term"
+                "Occasional",
+                "Persistent",
+                "Brief"
             ],
-            "explanation": "Managing the pain for over five years shows a condition that continues for a long time, so [TARGET] means LONG-LASTING.",
-            "correctAnswer": "Long-lasting",
+            "explanation": "The sentence defines [TARGET] as happening 'every single rush hour for over ten years,' so [TARGET] means PERSISTENT.",
+            "correctAnswer": "Persistent",
             "clueType": "definition",
             "evidenceWords": [
-                "managed",
-                "physical"
+                "which means",
+                "every single rush hour",
+                "over ten years"
             ]
         },
         {
@@ -69,20 +71,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L52_Q1",
-            "sentence": "He went to the emergency room with [TARGET] pain in his lower abdomen.",
-            "hint": "This word describes a condition that comes on sharply and strongly.",
+            "sentence": "The shortage of nurses at the hospital was [TARGET]: three wards had to close overnight, patients waited six hours in the lobby, and staff were pulling triple shifts just to keep up.",
+            "hint": "This word describes a problem that has suddenly become very serious.",
             "options": [
-                "Slight",
+                "Mild",
                 "Minor",
-                "Severe",
-                "Mild"
+                "Manageable",
+                "Severe"
             ],
-            "explanation": "Pain serious enough for an emergency room visit shows a sharp, strong condition, so [TARGET] means SEVERE.",
+            "explanation": "Wards closing, six-hour waits, and triple shifts are all examples of a suddenly severe shortage, so [TARGET] means SEVERE.",
             "correctAnswer": "Severe",
             "clueType": "example",
             "evidenceWords": [
-                "emergency",
-                "lower"
+                "three wards had to close",
+                "waited six hours",
+                "triple shifts"
             ]
         },
         {
@@ -90,20 +93,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L52_Q2",
-            "sentence": "Tourists often pay [TARGET] prices for souvenirs near famous landmarks.",
-            "hint": "This word describes a price or claim that is artificially too high.",
+            "sentence": "His resume claimed he had 'led a team of fifty' at his last job, though former coworkers later revealed it had actually been a group of three interns he barely supervised — the description was clearly [TARGET].",
+            "hint": "This word describes something puffed up beyond its true size or importance.",
             "options": [
                 "Exaggerated",
-                "Understated",
                 "Accurate",
-                "Modest"
+                "Modest",
+                "Understated"
             ],
-            "explanation": "Paying more than a fair price near landmarks shows prices that are artificially too high, so [TARGET] means EXAGGERATED.",
+            "explanation": "Claiming to lead fifty when it was really three interns shows an exaggerated version of the truth, even without a direct clue word, so [TARGET] means EXAGGERATED.",
             "correctAnswer": "Exaggerated",
             "clueType": "inference",
             "evidenceWords": [
-                "Tourists",
-                "often"
+                "led a team of fifty",
+                "actually been a group of three",
+                "barely supervised"
             ]
         },
         {
@@ -111,20 +115,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L52_Q3",
-            "sentence": "The documentary made such a [TARGET] argument that the audience changed their minds by the end.",
-            "hint": "This word describes an argument so strong it's hard to ignore.",
+            "sentence": "The documentary was [TARGET] and gripping, keeping the entire audience silent and leaning forward for the whole two hours.",
+            "hint": "This word describes something that grabs and holds your attention completely.",
             "options": [
-                "Weak",
-                "Feeble",
-                "Convincing",
-                "Unpersuasive"
+                "Dull",
+                "Gripping",
+                "Boring",
+                "Forgettable"
             ],
-            "explanation": "Changing the audience's minds by the end shows an argument too strong to ignore, so [TARGET] means CONVINCING.",
-            "correctAnswer": "Convincing",
+            "explanation": "The word 'and' links [TARGET] to 'gripping,' and the silent, leaning-forward audience confirms it, so [TARGET] means GRIPPING.",
+            "correctAnswer": "Gripping",
             "clueType": "synonym",
             "evidenceWords": [
-                "documentary",
-                "argument"
+                "and gripping",
+                "leaning forward"
             ]
         },
         {
@@ -132,20 +136,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L53_Q1",
-            "sentence": "The dancers performed a [TARGET] routine with costume changes every two minutes.",
-            "hint": "This word describes something with many carefully planned parts.",
+            "sentence": "Unlike her sister's simple backyard gathering with folding chairs and store-bought cake, Wendy's wedding was [TARGET], with a live orchestra, ice sculptures, and a five-course dinner.",
+            "hint": "This word describes something planned with great detail and complexity.",
             "options": [
-                "Plain",
                 "Simple",
-                "Basic",
-                "Detailed"
+                "Plain",
+                "Extravagant",
+                "Modest"
             ],
-            "explanation": "Costume changes every two minutes show a routine with many carefully planned parts, so [TARGET] means DETAILED.",
-            "correctAnswer": "Detailed",
+            "explanation": "The word 'unlike' contrasts [TARGET] with a 'simple' backyard gathering, so it must mean the opposite, which is EXTRAVAGANT.",
+            "correctAnswer": "Extravagant",
             "clueType": "antonym",
             "evidenceWords": [
-                "dancers",
-                "performed"
+                "Unlike",
+                "simple backyard gathering",
+                "ice sculptures"
             ]
         },
         {
@@ -153,20 +158,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L53_Q2",
-            "sentence": "The babysitter was [TARGET], leaving the toddler alone near the pool for several minutes.",
-            "hint": "This word describes failing to give proper attention or care.",
+            "sentence": "The landlord was found [TARGET], which means he had failed to fix the broken stair railing for months despite three written warnings from tenants.",
+            "hint": "This word describes failing to take proper care of a responsibility.",
             "options": [
-                "Responsible",
                 "Attentive",
+                "Responsible",
                 "Diligent",
                 "Careless"
             ],
-            "explanation": "Leaving a toddler alone near a pool shows failing to give proper care, so [TARGET] means CARELESS.",
+            "explanation": "The sentence defines [TARGET] as failing 'to fix the broken stair railing... despite three written warnings,' so [TARGET] means CARELESS.",
             "correctAnswer": "Careless",
             "clueType": "definition",
             "evidenceWords": [
-                "babysitter",
-                "leaving"
+                "which means",
+                "failed to fix",
+                "three written warnings"
             ]
         },
         {
@@ -174,20 +180,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L53_Q3",
-            "sentence": "Losing her grandmother had a [TARGET] effect on how she viewed her own life.",
-            "hint": "This word describes an effect that is felt very strongly, touching someone at their core.",
+            "sentence": "The speech had a [TARGET] effect on the graduates: several changed their career plans that same week, one started volunteering the next month, and many still quote a line from it years later.",
+            "hint": "This word describes something that leaves a lasting, powerful impact.",
             "options": [
+                "Deep",
                 "Shallow",
-                "Trivial",
-                "Superficial",
-                "Deep"
+                "Minor",
+                "Forgettable"
             ],
-            "explanation": "An effect that changed how she viewed her whole life is felt very deeply, so [TARGET] means DEEP.",
+            "explanation": "Changing career plans, starting volunteering, and quoting the speech years later are all examples of a deep, lasting impact, so [TARGET] means DEEP.",
             "correctAnswer": "Deep",
             "clueType": "example",
             "evidenceWords": [
-                "Losing",
-                "grandmother"
+                "changed their career plans",
+                "started volunteering",
+                "still quote a line"
             ]
         },
         {
@@ -195,20 +202,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L54_Q1",
-            "sentence": "His apology felt [TARGET], more about avoiding trouble than genuinely caring.",
-            "hint": "This word describes something that only seems to go deep, but doesn't.",
+            "sentence": "The movie review only mentioned the actors' outfits and the color of the poster, without saying a single word about the plot, the acting, or the message of the film — readers called it [TARGET].",
+            "hint": "This word describes dealing only with the surface of something, not its deeper substance.",
             "options": [
+                "Thorough",
                 "Shallow",
-                "Profound",
-                "Deep",
-                "Thorough"
+                "In-depth",
+                "Detailed"
             ],
-            "explanation": "Caring more about avoiding trouble than genuine feeling shows it didn't go deep, so [TARGET] means SHALLOW.",
+            "explanation": "Focusing only on outfits and poster color while ignoring plot, acting, and message shows a lack of depth, even without a direct clue word, so [TARGET] means SHALLOW.",
             "correctAnswer": "Shallow",
             "clueType": "inference",
             "evidenceWords": [
-                "apology",
-                "about"
+                "only mentioned the actors' outfits",
+                "without saying a single word"
             ]
         },
         {
@@ -216,20 +223,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L54_Q2",
-            "sentence": "Instead of waiting for complaints, the [TARGET] team fixed the website bug before customers noticed.",
-            "hint": "This word describes acting before a problem occurs, not after.",
+            "sentence": "Rather than waiting for a fire to happen, the new manager was [TARGET] and forward-thinking, installing extra smoke detectors and running drills before anyone asked.",
+            "hint": "This word describes taking action to prevent problems before they happen.",
             "options": [
-                "Careless",
-                "Forward-thinking",
+                "Reactive",
                 "Passive",
-                "Reactive"
+                "Forward-thinking",
+                "Careless"
             ],
-            "explanation": "Fixing a bug before customers noticed shows acting before a problem occurs, so [TARGET] means FORWARD-THINKING.",
+            "explanation": "The word 'and' links [TARGET] to 'forward-thinking,' and installing detectors before anyone asked confirms it, so [TARGET] means FORWARD-THINKING.",
             "correctAnswer": "Forward-thinking",
             "clueType": "synonym",
             "evidenceWords": [
-                "Instead",
-                "waiting"
+                "and forward-thinking",
+                "before anyone asked"
             ]
         },
         {
@@ -237,20 +244,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L54_Q3",
-            "sentence": "Sales had been [TARGET] for two years until the new marketing campaign launched.",
-            "hint": "This word describes something stuck in place, not moving forward.",
+            "sentence": "Unlike the fast-flowing river nearby, the pond behind the old mill was [TARGET], its still green surface untouched by any current for years.",
+            "hint": "This word describes water, or growth, that isn't moving or progressing.",
             "options": [
-                "Thriving",
-                "Unchanging",
-                "Booming",
-                "Growing"
+                "Flowing",
+                "Moving",
+                "Rushing",
+                "Still"
             ],
-            "explanation": "Sales staying the same for two years shows being stuck in place, so [TARGET] means UNCHANGING.",
-            "correctAnswer": "Unchanging",
+            "explanation": "The word 'unlike' contrasts [TARGET] with the 'fast-flowing river,' so it must mean the opposite, which is STILL.",
+            "correctAnswer": "Still",
             "clueType": "antonym",
             "evidenceWords": [
-                "Sales",
-                "years"
+                "Unlike",
+                "fast-flowing river",
+                "untouched by any current"
             ]
         },
         {
@@ -258,20 +266,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L55_Q1",
-            "sentence": "The new laptop case is [TARGET] enough to survive being dropped from a desk.",
-            "hint": "This word describes something built to withstand a lot of stress.",
+            "sentence": "The old bridge's steel frame was [TARGET], which means it was built strong enough to withstand decades of heavy trucks and harsh winters without weakening.",
+            "hint": "This word describes something built strong and able to withstand stress.",
             "options": [
-                "Fragile",
                 "Sturdy",
-                "Weak",
-                "Flimsy"
+                "Fragile",
+                "Flimsy",
+                "Weak"
             ],
-            "explanation": "Surviving being dropped from a desk shows being built to withstand stress, so [TARGET] means STURDY.",
+            "explanation": "The sentence defines [TARGET] as 'strong enough to withstand decades' of heavy use, so [TARGET] means STURDY.",
             "correctAnswer": "Sturdy",
             "clueType": "definition",
             "evidenceWords": [
-                "laptop",
-                "enough"
+                "which means",
+                "strong enough to withstand",
+                "without weakening"
             ]
         },
         {
@@ -279,20 +288,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L55_Q2",
-            "sentence": "Attending the extra tutoring session is completely [TARGET]; no one will be penalized for skipping it.",
-            "hint": "This word describes something done by choice, not by force.",
+            "sentence": "Signing up for the weekend cleanup crew was [TARGET]: no one was required to attend, there was no penalty for skipping it, and about a third of the neighborhood chose to show up anyway.",
+            "hint": "This word describes something done by choice, not because it's required.",
             "options": [
-                "Required",
+                "Mandatory",
                 "Optional",
                 "Compulsory",
-                "Mandatory"
+                "Required"
             ],
-            "explanation": "No one being penalized for skipping it shows it's done by choice, so [TARGET] means OPTIONAL.",
+            "explanation": "No requirement to attend and no penalty for skipping are examples of something done by free choice, so [TARGET] means OPTIONAL.",
             "correctAnswer": "Optional",
             "clueType": "example",
             "evidenceWords": [
-                "Attending",
-                "extra"
+                "no one was required",
+                "no penalty for skipping",
+                "chose to show up"
             ]
         },
         {
@@ -300,20 +310,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L55_Q3",
-            "sentence": "Wearing a hard hat on the construction site is [TARGET] for all visitors.",
-            "hint": "This word describes something you must do, with no choice.",
+            "sentence": "Every employee received a memo stating that anyone without the new safety certificate by Friday would be immediately removed from the schedule, no exceptions — the training was clearly [TARGET].",
+            "hint": "This word describes something required, with no option to skip it.",
             "options": [
                 "Optional",
                 "Voluntary",
-                "Elective",
-                "Required"
+                "Compulsory",
+                "Elective"
             ],
-            "explanation": "Visitors having no choice about wearing a hard hat shows it must be done, so [TARGET] means REQUIRED.",
-            "correctAnswer": "Required",
+            "explanation": "Being removed from the schedule for not completing it, with no exceptions, shows the training was required, even without a direct clue word, so [TARGET] means COMPULSORY.",
+            "correctAnswer": "Compulsory",
             "clueType": "inference",
             "evidenceWords": [
-                "Wearing",
-                "construction"
+                "removed from the schedule",
+                "no exceptions"
             ]
         },
         {
@@ -321,20 +331,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L56_Q1",
-            "sentence": "Most guests at the hostel were [TARGET] travelers staying for just a night or two.",
+            "sentence": "The bright colors of the sunset were [TARGET] and fleeting, fading to gray within just a few minutes.",
             "hint": "This word describes something that lasts only a short time.",
             "options": [
                 "Permanent",
                 "Lasting",
-                "Enduring",
-                "Temporary"
+                "Everlasting",
+                "Fleeting"
             ],
-            "explanation": "Staying for just a night or two shows lasting only a short time, so [TARGET] means TEMPORARY.",
-            "correctAnswer": "Temporary",
+            "explanation": "The word 'and' links [TARGET] to 'fleeting,' and fading within minutes confirms it, so [TARGET] means FLEETING.",
+            "correctAnswer": "Fleeting",
             "clueType": "synonym",
             "evidenceWords": [
-                "guests",
-                "hostel"
+                "and fleeting",
+                "within just a few minutes"
             ]
         },
         {
@@ -342,20 +352,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L56_Q2",
-            "sentence": "Their friendship proved [TARGET], surviving decades of living in different countries.",
-            "hint": "This word describes something that continues for a very long time.",
+            "sentence": "Unlike the trendy slang that disappears within a season, the friendship the two girls built in kindergarten stayed [TARGET], lasting through college and beyond.",
+            "hint": "This word describes something that lasts for a very long time.",
             "options": [
-                "Short-lived",
-                "Temporary",
+                "Lasting",
                 "Fleeting",
-                "Lasting"
+                "Temporary",
+                "Short-lived"
             ],
-            "explanation": "Surviving decades apart shows continuing for a very long time, so [TARGET] means LASTING.",
+            "explanation": "The word 'unlike' contrasts [TARGET] with slang that 'disappears within a season,' so it must mean the opposite, which is LASTING.",
             "correctAnswer": "Lasting",
             "clueType": "antonym",
             "evidenceWords": [
-                "Their",
-                "friendship"
+                "Unlike",
+                "disappears within a season",
+                "through college and beyond"
             ]
         },
         {
@@ -363,20 +374,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L56_Q3",
-            "sentence": "The trainer recommended thirty minutes of [TARGET] exercise five times a week.",
-            "hint": "This word describes activity done with great physical force and energy.",
+            "sentence": "The protest march was [TARGET], which means it was carried out with intense energy, loud chanting, and marchers who refused to slow down even in the heat.",
+            "hint": "This word describes done with great energy and force.",
             "options": [
-                "Listless",
-                "Weak",
-                "Feeble",
-                "Energetic"
+                "Lazy",
+                "Energetic",
+                "Sluggish",
+                "Halfhearted"
             ],
-            "explanation": "Exercise recommended for fitness involves great physical force, so [TARGET] means ENERGETIC.",
+            "explanation": "The sentence defines [TARGET] as done 'with intense energy' and marchers who 'refused to slow down,' so [TARGET] means ENERGETIC.",
             "correctAnswer": "Energetic",
             "clueType": "definition",
             "evidenceWords": [
-                "trainer",
-                "recommended"
+                "which means",
+                "intense energy",
+                "refused to slow down"
             ]
         },
         {
@@ -384,20 +396,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L57_Q1",
-            "sentence": "After the big lunch, he felt too [TARGET] to go back to work.",
-            "hint": "This word describes feeling slow and without energy.",
+            "sentence": "After the enormous holiday meal, everyone in the living room was [TARGET]: eyelids drooping, limbs sprawled across the couch, no one willing to even reach for the remote.",
+            "hint": "This word describes feeling drained and lacking energy.",
             "options": [
                 "Energetic",
                 "Lively",
                 "Sluggish",
-                "Spirited"
+                "Peppy"
             ],
-            "explanation": "Feeling unable to go back to work after a big lunch shows feeling slow without energy, so [TARGET] means SLUGGISH.",
+            "explanation": "Drooping eyelids, sprawled limbs, and not reaching for the remote are all examples of feeling sluggish, so [TARGET] means SLUGGISH.",
             "correctAnswer": "Sluggish",
             "clueType": "example",
             "evidenceWords": [
-                "After",
-                "lunch"
+                "eyelids drooping",
+                "limbs sprawled",
+                "no one willing to even reach"
             ]
         },
         {
@@ -405,20 +418,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L57_Q2",
-            "sentence": "A swim in the cold ocean felt [TARGET] after the long, hot drive.",
-            "hint": "This word describes something that fills you with new energy.",
+            "sentence": "After the plunge into the icy lake, her skin tingled, her mind felt suddenly sharp and awake, and she practically sprinted back up the trail with new energy — the cold water was oddly [TARGET].",
+            "hint": "This word describes something that makes you feel fresh, energized, and alive.",
             "options": [
+                "Draining",
                 "Exhausting",
                 "Tiring",
-                "Refreshing",
-                "Draining"
+                "Refreshing"
             ],
-            "explanation": "Feeling renewed after a long, hot drive shows being filled with new energy, so [TARGET] means REFRESHING.",
+            "explanation": "Tingling skin, a sharp mind, and sprinting with new energy after cold water all show a refreshing, energizing effect, even without a direct clue word, so [TARGET] means REFRESHING.",
             "correctAnswer": "Refreshing",
             "clueType": "inference",
             "evidenceWords": [
-                "ocean",
-                "after"
+                "skin tingled",
+                "suddenly sharp and awake",
+                "sprinted back up the trail"
             ]
         },
         {
@@ -426,20 +440,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L57_Q3",
-            "sentence": "This summer, the garden produced a [TARGET] harvest of tomatoes and peppers.",
-            "hint": "This word describes having a very large supply of something.",
+            "sentence": "After weeks of rain, the garden was [TARGET] and plentiful with tomatoes, more than the family could possibly eat before they spoiled.",
+            "hint": "This word describes existing in large amounts.",
             "options": [
                 "Plentiful",
-                "Sparse",
+                "Scarce",
                 "Limited",
-                "Scarce"
+                "Sparse"
             ],
-            "explanation": "Producing a large harvest of tomatoes and peppers shows a very large supply, so [TARGET] means PLENTIFUL.",
+            "explanation": "The word 'and' links [TARGET] to 'plentiful,' and having more tomatoes than the family could eat confirms it, so [TARGET] means PLENTIFUL.",
             "correctAnswer": "Plentiful",
             "clueType": "synonym",
             "evidenceWords": [
-                "summer",
-                "garden"
+                "and plentiful",
+                "more than the family could possibly eat"
             ]
         },
         {
@@ -447,20 +461,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L58_Q1",
-            "sentence": "During the storm warning, bottled water became [TARGET] in every store in town.",
-            "hint": "This word describes something hard to find because supply is low.",
+            "sentence": "Unlike the shelves overflowing with canned goods before the storm warning, bottled water was [TARGET] within hours, with stores completely sold out by noon.",
+            "hint": "This word describes something that is hard to find because there isn't much of it.",
             "options": [
+                "Plentiful",
+                "Rare",
                 "Abundant",
-                "Ample",
-                "Limited",
-                "Plentiful"
+                "Overflowing"
             ],
-            "explanation": "Water being hard to find in every store shows the supply was low, so [TARGET] means LIMITED.",
-            "correctAnswer": "Limited",
+            "explanation": "The word 'unlike' contrasts [TARGET] with shelves 'overflowing with canned goods,' so it must mean the opposite, which is RARE.",
+            "correctAnswer": "Rare",
             "clueType": "antonym",
             "evidenceWords": [
-                "During",
-                "storm"
+                "Unlike",
+                "overflowing with canned goods",
+                "completely sold out by noon"
             ]
         },
         {
@@ -468,20 +483,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L58_Q2",
-            "sentence": "The gymnast's [TARGET] routine earned a perfect score from every judge.",
-            "hint": "This word describes something with absolutely no mistakes.",
+            "sentence": "The gymnast's routine was [TARGET], which means she completed every single move without a single wobble, slip, or mistake.",
+            "hint": "This word describes something done with no errors at all.",
             "options": [
-                "Defective",
-                "Flawed",
+                "Sloppy",
+                "Shaky",
                 "Perfect",
-                "Imperfect"
+                "Error-filled"
             ],
-            "explanation": "Earning a perfect score from every judge shows absolutely no mistakes, so [TARGET] means PERFECT.",
+            "explanation": "The sentence defines [TARGET] as completing the routine 'without a single wobble, slip, or mistake,' so [TARGET] means PERFECT.",
             "correctAnswer": "Perfect",
             "clueType": "definition",
             "evidenceWords": [
-                "gymnast's",
-                "routine"
+                "which means",
+                "without a single wobble, slip, or mistake"
             ]
         },
         {
@@ -489,20 +504,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L58_Q3",
-            "sentence": "The store replaced the [TARGET] charger after it stopped working on the second day.",
-            "hint": "This word describes a product that doesn't work the way it should.",
+            "sentence": "The batch of toasters was [TARGET]: half of them wouldn't turn on at all, several caught fire during testing, and the company had to recall every single unit.",
+            "hint": "This word describes something with a flaw that keeps it from working properly.",
             "options": [
-                "Faulty",
-                "Sound",
-                "Flawless",
-                "Perfect"
+                "Reliable",
+                "Functional",
+                "Dependable",
+                "Faulty"
             ],
-            "explanation": "Stopping working on the second day shows the product didn't work as it should, so [TARGET] means FAULTY.",
+            "explanation": "Toasters not turning on, catching fire, and being recalled are all examples of a serious flaw, so [TARGET] means FAULTY.",
             "correctAnswer": "Faulty",
             "clueType": "example",
             "evidenceWords": [
-                "store",
-                "replaced"
+                "wouldn't turn on at all",
+                "caught fire during testing",
+                "recall every single unit"
             ]
         },
         {
@@ -510,20 +526,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L59_Q1",
-            "sentence": "The hiking trail led to an [TARGET] lake with crystal-clear, untouched water.",
-            "hint": "This word describes something kept in perfectly clean, original condition.",
+            "sentence": "No footprints marked the sand, no litter dotted the shoreline, and the water was so clear you could see straight to the bottom, twenty feet down — the beach was completely [TARGET].",
+            "hint": "This word describes something left in a perfectly clean, undisturbed condition.",
             "options": [
-                "Soiled",
-                "Filthy",
-                "Grimy",
-                "Immaculate"
+                "Untouched",
+                "Polluted",
+                "Trashed",
+                "Ruined"
             ],
-            "explanation": "Crystal-clear, untouched water describes something in perfectly clean, original condition, so [TARGET] means IMMACULATE.",
-            "correctAnswer": "Immaculate",
+            "explanation": "No footprints, no litter, and crystal-clear water all show an untouched, perfectly clean condition, even without a direct clue word, so [TARGET] means UNTOUCHED.",
+            "correctAnswer": "Untouched",
             "clueType": "inference",
             "evidenceWords": [
-                "hiking",
-                "trail"
+                "No footprints",
+                "no litter",
+                "so clear you could see straight to the bottom"
             ]
         },
         {
@@ -531,20 +548,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L59_Q2",
-            "sentence": "The desert's [TARGET] climate made the rescue mission far more dangerous.",
-            "hint": "This word describes an environment that is difficult to survive in.",
+            "sentence": "The frozen tundra was [TARGET] and unwelcoming, with temperatures so brutal that almost nothing could survive there for long.",
+            "hint": "This word describes an environment that is harsh and difficult to live in.",
             "options": [
-                "Hospitable",
-                "Harsh",
                 "Welcoming",
-                "Friendly"
+                "Unwelcoming",
+                "Comfortable",
+                "Cozy"
             ],
-            "explanation": "Making a rescue mission more dangerous shows a difficult environment to survive in, so [TARGET] means HARSH.",
-            "correctAnswer": "Harsh",
+            "explanation": "The word 'and' links [TARGET] to 'unwelcoming,' and the brutal temperatures confirm it, so [TARGET] means UNWELCOMING.",
+            "correctAnswer": "Unwelcoming",
             "clueType": "synonym",
             "evidenceWords": [
-                "desert's",
-                "climate"
+                "and unwelcoming",
+                "almost nothing could survive"
             ]
         },
         {
@@ -552,20 +569,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L59_Q3",
-            "sentence": "A short walk outside can [TARGET] your energy in the middle of a long workday.",
-            "hint": "This word describes bringing fresh energy back to something.",
+            "sentence": "Unlike the previous city council, who let downtown's empty storefronts sit boarded up for a decade, the new mayor moved to [TARGET] the neighborhood, funding new shops, fresh murals, and repaved sidewalks.",
+            "hint": "This word means to bring new energy and life back into something.",
             "options": [
-                "Exhaust",
-                "Deplete",
-                "Drain",
-                "Renew"
+                "Neglect",
+                "Abandon",
+                "Renew",
+                "Ignore"
             ],
-            "explanation": "Bringing back energy in the middle of a workday shows giving fresh energy, so [TARGET] means RENEW.",
+            "explanation": "The word 'unlike' contrasts [TARGET] with letting storefronts 'sit boarded up for a decade,' so it must mean the opposite, which is RENEW.",
             "correctAnswer": "Renew",
             "clueType": "antonym",
             "evidenceWords": [
-                "short",
-                "outside"
+                "Unlike",
+                "sit boarded up for a decade",
+                "funding new shops"
             ]
         },
         {
@@ -573,20 +591,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L60_Q1",
-            "sentence": "Stepping off the long flight, she felt [TARGET] and unsure which exit led to baggage claim.",
-            "hint": "This word describes losing your sense of direction or surroundings.",
+            "sentence": "Stepping off the spinning ride, Leo felt [TARGET], which means he briefly lost track of which direction he was facing and had to grab the railing to steady himself.",
+            "hint": "This word describes feeling mixed up about your surroundings or direction.",
             "options": [
-                "Clear-headed",
-                "Oriented",
+                "Grounded",
+                "Steady",
                 "Focused",
                 "Confused"
             ],
-            "explanation": "Being unsure which exit led to baggage claim shows losing one's sense of direction, so [TARGET] means CONFUSED.",
+            "explanation": "The sentence defines [TARGET] as losing 'track of which direction he was facing,' so [TARGET] means CONFUSED.",
             "correctAnswer": "Confused",
             "clueType": "definition",
             "evidenceWords": [
-                "Stepping",
-                "flight"
+                "which means",
+                "lost track of which direction"
             ]
         },
         {
@@ -594,20 +612,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L60_Q2",
-            "sentence": "The library made its entire catalog [TARGET] online, so students could search from home.",
-            "hint": "This word describes something easy to get to or use.",
+            "sentence": "The new library building was [TARGET]: every entrance had a ramp, the elevators reached all four floors, and the restrooms were wide enough for any wheelchair.",
+            "hint": "This word describes something easy for everyone to use or reach.",
             "options": [
+                "Easy to use",
+                "Restrictive",
                 "Inaccessible",
-                "Unreachable",
-                "Restricted",
-                "Reachable"
+                "Limiting"
             ],
-            "explanation": "Letting students search from home shows the catalog was easy to use, so [TARGET] means REACHABLE.",
-            "correctAnswer": "Reachable",
+            "explanation": "Ramps at every entrance, elevators to all floors, and wide restrooms are all examples of a space designed for everyone to use, so [TARGET] means EASY TO USE.",
+            "correctAnswer": "Easy to use",
             "clueType": "example",
             "evidenceWords": [
-                "library",
-                "entire"
+                "every entrance had a ramp",
+                "elevators reached all four floors",
+                "wide enough for any wheelchair"
             ]
         },
         {
@@ -615,20 +634,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L60_Q3",
-            "sentence": "Milk and fresh fish are [TARGET] foods that must be kept cold and used quickly.",
-            "hint": "This word describes food that spoils within a short time.",
+            "sentence": "The delivery driver rushed the box of strawberries straight to the fridge, knowing that even one afternoon left in the hot truck would turn them to mush, since they were so [TARGET].",
+            "hint": "This word describes food that spoils quickly if not stored properly.",
             "options": [
-                "Nonperishable",
                 "Long-lasting",
-                "Durable",
-                "Short-lived"
+                "Quick to spoil",
+                "Shelf-stable",
+                "Preserved"
             ],
-            "explanation": "Needing to be kept cold and used quickly shows the food spoils within a short time, so [TARGET] means SHORT-LIVED.",
-            "correctAnswer": "Short-lived",
+            "explanation": "Rushing strawberries to the fridge to avoid them turning to mush in an afternoon shows food that spoils fast, even without a direct clue word, so [TARGET] means QUICK TO SPOIL.",
+            "correctAnswer": "Quick to spoil",
             "clueType": "inference",
             "evidenceWords": [
-                "fresh",
-                "foods"
+                "rushed the box of strawberries",
+                "one afternoon left in the hot truck",
+                "turn them to mush"
             ]
         }
     ],

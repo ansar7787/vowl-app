@@ -1,517 +1,517 @@
 {
-    "levels": "1-10",
-    "quests": [
-        {
-            "word": "THEIR",
-            "interactionType": "choice",
-            "question": "_____ house is the one with the blue door.",
-            "instruction": "Select the correct word to complete the sentence.",
-            "hint": "DEFINITION: Belonging to them (shows possession).",
-            "id": "VOC_CONTEXTUAL_L1_Q1",
-            "options": [
-                "THEIR'S",
-                "THEY'RE",
-                "THEIR",
-                "THERE"
-            ],
-            "explanation": "'Their' shows ownership - the house belongs to them. 'There' points to a place, and 'they're' means 'they are', so neither fits here.",
-            "correctAnswer": "THEIR",
-            "registerLevel": 9
-        },
-        {
-            "word": "THERE",
-            "interactionType": "choice",
-            "question": "Put the bag down right _____, next to the door.",
-            "instruction": "Select the correct word to complete the sentence.",
-            "hint": "DEFINITION: In or at that place.",
-            "id": "VOC_CONTEXTUAL_L1_Q2",
-            "options": [
-                "THERE",
-                "WHERE",
-                "THEIR",
-                "THEY'RE"
-            ],
-            "explanation": "'There' points to a specific place. 'Their' shows ownership and 'they're' means 'they are', so neither makes sense pointing to a spot.",
-            "correctAnswer": "THERE",
-            "registerLevel": 10
-        },
-        {
-            "word": "YOU'RE",
-            "interactionType": "choice",
-            "question": "_____ going to love this restaurant.",
-            "instruction": "Select the correct word to complete the sentence.",
-            "hint": "DEFINITION: A contraction of 'you are'.",
-            "id": "VOC_CONTEXTUAL_L1_Q3",
-            "options": [
-                "YORE",
-                "YOU'RE",
-                "YOUR'E",
-                "YOUR"
-            ],
-            "explanation": "'You're' is short for 'you are', which fits before 'going'. 'Your' shows possession, so it can't replace 'you are' here.",
-            "correctAnswer": "YOU'RE",
-            "registerLevel": 4
-        },
-        {
-            "word": "YOUR",
-            "interactionType": "choice",
-            "question": "Please write _____ name at the top of the page.",
-            "instruction": "Select the correct word to complete the sentence.",
-            "hint": "DEFINITION: Belonging to you.",
-            "id": "VOC_CONTEXTUAL_L2_Q1",
-            "options": [
-                "YORE",
-                "YOUER",
-                "YOU'RE",
-                "YOUR"
-            ],
-            "explanation": "'Your' shows that the name belongs to you. 'You're' means 'you are', which doesn't fit before a noun like 'name'.",
-            "correctAnswer": "YOUR",
-            "registerLevel": 3
-        },
-        {
-            "word": "IT'S",
-            "interactionType": "choice",
-            "question": "_____ raining again outside.",
-            "instruction": "Select the correct word to complete the sentence.",
-            "hint": "DEFINITION: A contraction of 'it is' or 'it has'.",
-            "id": "VOC_CONTEXTUAL_L2_Q2",
-            "options": [
-                "ITS'",
-                "ITTS",
-                "IT'S",
-                "ITS"
-            ],
-            "explanation": "'It's' is short for 'it is', which fits before 'raining'. 'Its' shows possession and can't stand for 'it is'.",
-            "correctAnswer": "IT'S",
-            "registerLevel": 10
-        },
-        {
-            "word": "ITS",
-            "interactionType": "choice",
-            "question": "The robot moved _____ arm slowly to pick up the cup.",
-            "instruction": "Select the correct word to complete the sentence.",
-            "hint": "DEFINITION: Belonging to it.",
-            "id": "VOC_CONTEXTUAL_L2_Q3",
-            "options": [
-                "IT'S'",
-                "ITS",
-                "ITSELF",
-                "IT'S"
-            ],
-            "explanation": "'Its' shows that the arm belongs to the robot. 'It's' means 'it is', which doesn't fit before the noun 'arm'.",
-            "correctAnswer": "ITS",
-            "registerLevel": 1
-        },
-        {
-            "word": "TOO",
-            "interactionType": "choice",
-            "question": "This soup is _____ hot to eat right now.",
-            "instruction": "Select the correct word to complete the sentence.",
-            "hint": "DEFINITION: To an excessive degree; also.",
-            "id": "VOC_CONTEXTUAL_L3_Q1",
-            "options": [
-                "TOOO",
-                "TWO",
-                "TO",
-                "TOO"
-            ],
-            "explanation": "'Too' means 'excessively' here, describing how hot the soup is. 'To' is a preposition and 'two' is the number 2, so neither fits.",
-            "correctAnswer": "TOO",
-            "registerLevel": 9
-        },
-        {
-            "word": "TWO",
-            "interactionType": "choice",
-            "question": "She bought _____ tickets for the movie.",
-            "instruction": "Select the correct word to complete the sentence.",
-            "hint": "DEFINITION: The number 2.",
-            "id": "VOC_CONTEXTUAL_L3_Q2",
-            "options": [
-                "TO",
-                "TWO",
-                "TOO",
-                "TUE"
-            ],
-            "explanation": "'Two' is the number of tickets bought. 'Too' means 'also' or 'excessively', and 'to' is a preposition, so neither names a quantity.",
-            "correctAnswer": "TWO",
-            "registerLevel": 4
-        },
-        {
-            "word": "THAN",
-            "interactionType": "choice",
-            "question": "This bag is heavier _____ that one.",
-            "instruction": "Select the correct word to complete the sentence.",
-            "hint": "DEFINITION: Used to compare two things.",
-            "id": "VOC_CONTEXTUAL_L3_Q3",
-            "options": [
-                "THEN",
-                "WHEN",
-                "THANNE",
-                "THAN"
-            ],
-            "explanation": "'Than' is used to compare two things' weight. 'Then' refers to time or sequence, so it can't be used for comparisons.",
-            "correctAnswer": "THAN",
-            "registerLevel": 1
-        },
-        {
-            "word": "THEN",
-            "interactionType": "choice",
-            "question": "First we ate dinner, and _____ we watched a movie.",
-            "instruction": "Select the correct word to complete the sentence.",
-            "hint": "DEFINITION: At that time; next in sequence.",
-            "id": "VOC_CONTEXTUAL_L4_Q1",
-            "options": [
-                "THENCE",
-                "THEN",
-                "THAN",
-                "WHEN"
-            ],
-            "explanation": "'Then' shows what happened next, in sequence. 'Than' is only used to compare two things, so it doesn't fit here.",
-            "correctAnswer": "THEN",
-            "registerLevel": 7
-        },
-        {
-            "word": "WHOSE",
-            "interactionType": "choice",
-            "question": "_____ pencil case is this on the desk?",
-            "instruction": "Select the correct word to complete the sentence.",
-            "hint": "DEFINITION: Belonging to whom.",
-            "id": "VOC_CONTEXTUAL_L4_Q2",
-            "options": [
-                "WHOM",
-                "WHOOSE",
-                "WHOSE",
-                "WHO'S"
-            ],
-            "explanation": "'Whose' asks who the pencil case belongs to. 'Who's' means 'who is', which doesn't make sense before a noun like 'pencil case'.",
-            "correctAnswer": "WHOSE",
-            "registerLevel": 6
-        },
-        {
-            "word": "WHO'S",
-            "interactionType": "choice",
-            "question": "_____ coming to the party tonight?",
-            "instruction": "Select the correct word to complete the sentence.",
-            "hint": "DEFINITION: A contraction of 'who is' or 'who has'.",
-            "id": "VOC_CONTEXTUAL_L4_Q3",
-            "options": [
-                "WHO'S",
-                "WHOZE",
-                "WHOM",
-                "WHOSE"
-            ],
-            "explanation": "'Who's' is short for 'who is', asking which people are coming. 'Whose' asks about ownership, not who is doing something.",
-            "correctAnswer": "WHO'S",
-            "registerLevel": 4
-        },
-        {
-            "word": "HEAR",
-            "interactionType": "choice",
-            "question": "Can you _____ the music from the next room?",
-            "instruction": "Select the correct word to complete the sentence.",
-            "hint": "DEFINITION: To notice sound with your ears.",
-            "id": "VOC_CONTEXTUAL_L5_Q1",
-            "options": [
-                "HEAR",
-                "HEER",
-                "HERE",
-                "HERD"
-            ],
-            "explanation": "'Hear' means to notice sound, which fits with 'music'. 'Here' refers to a place, so it can't describe perceiving sound.",
-            "correctAnswer": "HEAR",
-            "registerLevel": 3
-        },
-        {
-            "word": "HERE",
-            "interactionType": "choice",
-            "question": "We finally arrived _____ after a long flight.",
-            "instruction": "Select the correct word to complete the sentence.",
-            "hint": "DEFINITION: In or at this place.",
-            "id": "VOC_CONTEXTUAL_L5_Q2",
-            "options": [
-                "HIER",
-                "HERE",
-                "HEER",
-                "HEAR"
-            ],
-            "explanation": "'Here' refers to the place they arrived at. 'Hear' means to notice sound, which doesn't fit describing a location.",
-            "correctAnswer": "HERE",
-            "registerLevel": 10
-        },
-        {
-            "word": "KNOW",
-            "interactionType": "choice",
-            "question": "Do you _____ the answer to this question?",
-            "instruction": "Select the correct word to complete the sentence.",
-            "hint": "DEFINITION: To have information or understanding about something.",
-            "id": "VOC_CONTEXTUAL_L5_Q3",
-            "options": [
-                "NO",
-                "KNOWE",
-                "KNOW",
-                "NOH"
-            ],
-            "explanation": "'Know' means to have information, which fits with 'the answer'. 'No' is used to refuse or deny something, not to express knowledge.",
-            "correctAnswer": "KNOW",
-            "registerLevel": 10
-        },
-        {
-            "word": "WRITE",
-            "interactionType": "choice",
-            "question": "Please _____ your full name on the form.",
-            "instruction": "Select the correct word to complete the sentence.",
-            "hint": "DEFINITION: To put words on paper using a pen or keyboard.",
-            "id": "VOC_CONTEXTUAL_L6_Q1",
-            "options": [
-                "WRITE",
-                "RIGHT",
-                "RITE",
-                "WRIGHT"
-            ],
-            "explanation": "'Write' means to put words down, which fits with 'your full name'. 'Right' means correct or a direction, not the act of writing.",
-            "correctAnswer": "WRITE",
-            "registerLevel": 4
-        },
-        {
-            "word": "RIGHT",
-            "interactionType": "choice",
-            "question": "Turn _____ at the next traffic light.",
-            "instruction": "Select the correct word to complete the sentence.",
-            "hint": "DEFINITION: Correct; also, the opposite of left.",
-            "id": "VOC_CONTEXTUAL_L6_Q2",
-            "options": [
-                "WRIGHT",
-                "RIGHT",
-                "RITE",
-                "WRITE"
-            ],
-            "explanation": "'Right' gives the direction to turn. 'Write' means to put words on paper, which makes no sense as a direction.",
-            "correctAnswer": "RIGHT",
-            "registerLevel": 7
-        },
-        {
-            "word": "BUY",
-            "interactionType": "choice",
-            "question": "I need to _____ some milk on the way home.",
-            "instruction": "Select the correct word to complete the sentence.",
-            "hint": "DEFINITION: To purchase something with money.",
-            "id": "VOC_CONTEXTUAL_L6_Q3",
-            "options": [
-                "BYE",
-                "BUY",
-                "BY",
-                "BIE"
-            ],
-            "explanation": "'Buy' means to purchase, fitting with 'milk'. 'By' shows nearness or means, and 'bye' is a farewell, so neither fits a purchase.",
-            "correctAnswer": "BUY",
-            "registerLevel": 9
-        },
-        {
-            "word": "NEW",
-            "interactionType": "choice",
-            "question": "She just bought a _____ pair of shoes.",
-            "instruction": "Select the correct word to complete the sentence.",
-            "hint": "DEFINITION: Recently made, bought, or created.",
-            "id": "VOC_CONTEXTUAL_L7_Q1",
-            "options": [
-                "NEW",
-                "NU",
-                "GNU",
-                "KNEW"
-            ],
-            "explanation": "'New' describes shoes that were recently bought. 'Knew' is the past tense of 'know', which can't describe an object.",
-            "correctAnswer": "NEW",
-            "registerLevel": 2
-        },
-        {
-            "word": "WEAR",
-            "interactionType": "choice",
-            "question": "What will you _____ to the wedding?",
-            "instruction": "Select the correct word to complete the sentence.",
-            "hint": "DEFINITION: To have clothing on your body.",
-            "id": "VOC_CONTEXTUAL_L7_Q2",
-            "options": [
-                "WHERE",
-                "WEIR",
-                "WERE",
-                "WEAR"
-            ],
-            "explanation": "'Wear' means to have clothes on, which fits the question about the wedding outfit. 'Where' asks about location, not clothing.",
-            "correctAnswer": "WEAR",
-            "registerLevel": 10
-        },
-        {
-            "word": "MEAT",
-            "interactionType": "choice",
-            "question": "The butcher sells fresh _____ every morning.",
-            "instruction": "Select the correct word to complete the sentence.",
-            "hint": "DEFINITION: The flesh of an animal eaten as food.",
-            "id": "VOC_CONTEXTUAL_L7_Q3",
-            "options": [
-                "MEET",
-                "MEATE",
-                "MEAT",
-                "MEAT'S"
-            ],
-            "explanation": "'Meat' refers to the food sold by a butcher. 'Meet' means to come together with someone, which doesn't fit a food item.",
-            "correctAnswer": "MEAT",
-            "registerLevel": 5
-        },
-        {
-            "word": "PEACE",
-            "interactionType": "choice",
-            "question": "After the long argument, the house finally felt calm and full of _____.",
-            "instruction": "Select the correct word to complete the sentence.",
-            "hint": "DEFINITION: A state of calm with no conflict.",
-            "id": "VOC_CONTEXTUAL_L8_Q1",
-            "options": [
-                "PIECE",
-                "PEACE",
-                "PEICE",
-                "PEAS"
-            ],
-            "explanation": "'Peace' describes the calm, conflict-free feeling in the house. 'Piece' means a part of something, which doesn't fit a feeling.",
-            "correctAnswer": "PEACE",
-            "registerLevel": 8
-        },
-        {
-            "word": "BRAKE",
-            "interactionType": "choice",
-            "question": "She had to slam the _____ to avoid the dog in the road.",
-            "instruction": "Select the correct word to complete the sentence.",
-            "hint": "DEFINITION: A device used to slow or stop a vehicle.",
-            "id": "VOC_CONTEXTUAL_L8_Q2",
-            "options": [
-                "BRAKES'",
-                "BRAKE",
-                "BRAEK",
-                "BREAK"
-            ],
-            "explanation": "'Brake' is the part of a car used to stop. 'Break' means to shatter or a pause, which doesn't name a car part.",
-            "correctAnswer": "BRAKE",
-            "registerLevel": 7
-        },
-        {
-            "word": "PLAIN",
-            "interactionType": "choice",
-            "question": "He prefers _____ toast with no butter or jam.",
-            "instruction": "Select the correct word to complete the sentence.",
-            "hint": "DEFINITION: Simple, without decoration or extra flavor.",
-            "id": "VOC_CONTEXTUAL_L8_Q3",
-            "options": [
-                "PLAYN",
-                "PLAIN",
-                "PLANE",
-                "PLAINE"
-            ],
-            "explanation": "'Plain' describes toast with nothing added. 'Plane' refers to an aircraft or flat surface, which makes no sense describing toast.",
-            "correctAnswer": "PLAIN",
-            "registerLevel": 2
-        },
-        {
-            "word": "MALE",
-            "interactionType": "choice",
-            "question": "The clinic asked if the patient was _____ or female.",
-            "instruction": "Select the correct word to complete the sentence.",
-            "hint": "DEFINITION: Of the sex that does not bear young; a man or boy.",
-            "id": "VOC_CONTEXTUAL_L9_Q1",
-            "options": [
-                "MAEL",
-                "MAIL",
-                "MAILE",
-                "MALE"
-            ],
-            "explanation": "'Male' identifies the patient's sex. 'Mail' refers to letters and packages, which has nothing to do with a person's sex.",
-            "correctAnswer": "MALE",
-            "registerLevel": 4
-        },
-        {
-            "word": "PEAR",
-            "interactionType": "choice",
-            "question": "She sliced a ripe _____ to add to the salad.",
-            "instruction": "Select the correct word to complete the sentence.",
-            "hint": "DEFINITION: A sweet, round fruit with a narrow top.",
-            "id": "VOC_CONTEXTUAL_L9_Q2",
-            "options": [
-                "PARE",
-                "PEAR",
-                "PAIR",
-                "PEER"
-            ],
-            "explanation": "'Pear' is the fruit being sliced for the salad. 'Pair' means a set of two, which doesn't name a fruit.",
-            "correctAnswer": "PEAR",
-            "registerLevel": 9
-        },
-        {
-            "word": "SAIL",
-            "interactionType": "choice",
-            "question": "They plan to _____ across the bay this weekend.",
-            "instruction": "Select the correct word to complete the sentence.",
-            "hint": "DEFINITION: To travel on water using a boat.",
-            "id": "VOC_CONTEXTUAL_L9_Q3",
-            "options": [
-                "SAIL",
-                "SEIL",
-                "SAILE",
-                "SALE"
-            ],
-            "explanation": "'Sail' means to travel by boat, fitting the trip across the bay. 'Sale' refers to selling goods at a lower price.",
-            "correctAnswer": "SAIL",
-            "registerLevel": 5
-        },
-        {
-            "word": "THROUGH",
-            "interactionType": "choice",
-            "question": "The train passed _____ three tunnels on its way to the coast.",
-            "instruction": "Select the correct word to complete the sentence.",
-            "hint": "DEFINITION: Moving in one side and out the other of something.",
-            "id": "VOC_CONTEXTUAL_L10_Q1",
-            "options": [
-                "THRU",
-                "THROUGH",
-                "THREW",
-                "THROUGHE"
-            ],
-            "explanation": "'Through' describes the train moving in and out of the tunnels. 'Threw' is the past tense of 'throw', which doesn't fit a train's movement.",
-            "correctAnswer": "THROUGH",
-            "registerLevel": 1
-        },
-        {
-            "word": "WEAK",
-            "interactionType": "choice",
-            "question": "After the flu, his legs still felt _____ and shaky.",
-            "instruction": "Select the correct word to complete the sentence.",
-            "hint": "DEFINITION: Lacking physical strength.",
-            "id": "VOC_CONTEXTUAL_L10_Q2",
-            "options": [
-                "WEAK",
-                "WEEK'S",
-                "WEEK",
-                "WEEKE"
-            ],
-            "explanation": "'Weak' describes legs lacking strength after being sick. 'Week' refers to a period of seven days, not a physical state.",
-            "correctAnswer": "WEAK",
-            "registerLevel": 2
-        },
-        {
-            "word": "WOULD",
-            "interactionType": "choice",
-            "question": "_____ you mind closing the window, please?",
-            "instruction": "Select the correct word to complete the sentence.",
-            "hint": "DEFINITION: Used to politely ask or describe a hypothetical action.",
-            "id": "VOC_CONTEXTUAL_L10_Q3",
-            "options": [
-                "WOOD",
-                "WOULDE",
-                "WOOD'S",
-                "WOULD"
-            ],
-            "explanation": "'Would' is used to make a polite request. 'Wood' is the material from trees, which can't be used to ask a question.",
-            "correctAnswer": "WOULD",
-            "registerLevel": 4
-        }
-    ],
-    "gameType": "contextualUsage",
-    "batchIndex": 1
+  "levels": "1-10",
+  "quests": [
+    {
+      "word": "BORROW",
+      "interactionType": "choice",
+      "question": "Could I _____ your pen? I'll give it back after class.",
+      "instruction": "Select the word that best completes the sentence.",
+      "hint": "Think about whether the speaker wants to receive something temporarily or hand something over.",
+      "id": "VOC_CONTEXTUAL_L1_Q1",
+      "options": [
+        "LEND",
+        "RENT",
+        "BORROW",
+        "LOAN"
+      ],
+      "explanation": "Borrow means to take something temporarily, intending to return it \u2014 here the speaker wants to receive the pen. Lend would mean giving it away, and rent implies paying money for temporary use.",
+      "correctAnswer": "BORROW",
+      "registerLevel": 1
+    },
+    {
+      "word": "LEND",
+      "interactionType": "choice",
+      "question": "My sister offered to _____ me some money until payday, so I wouldn't have to touch my savings.",
+      "instruction": "Select the word that best completes the sentence.",
+      "hint": "Ask yourself who is doing the giving here \u2014 the sister, not the speaker.",
+      "id": "VOC_CONTEXTUAL_L1_Q2",
+      "options": [
+        "BORROW",
+        "LEND",
+        "OWE",
+        "GIVE"
+      ],
+      "explanation": "Lend means to give something temporarily, expecting it back. The sister is the one offering money, so she is lending it. Borrow would describe the speaker's side of the same transaction, not the sister's.",
+      "correctAnswer": "LEND",
+      "registerLevel": 1
+    },
+    {
+      "word": "BORROW",
+      "interactionType": "choice",
+      "question": "The library allows students to _____ up to five books at a time, but everything must be returned within three weeks.",
+      "instruction": "Select the word that best completes the sentence.",
+      "hint": "Consider whose action this is \u2014 the students receiving books, or the library giving them out.",
+      "id": "VOC_CONTEXTUAL_L1_Q3",
+      "options": [
+        "LEND",
+        "RENT",
+        "BORROW",
+        "KEEP"
+      ],
+      "explanation": "From the students' point of view, taking books temporarily is borrowing. Lend would describe the library's side of the arrangement, and rent implies a payment that isn't mentioned here.",
+      "correctAnswer": "BORROW",
+      "registerLevel": 1
+    },
+    {
+      "word": "TAKE",
+      "interactionType": "choice",
+      "question": "Don't forget to _____ your umbrella when you leave the house \u2014 it's supposed to rain later.",
+      "instruction": "Select the word that best completes the sentence.",
+      "hint": "Picture the direction of movement: away from here, toward somewhere else.",
+      "id": "VOC_CONTEXTUAL_L2_Q1",
+      "options": [
+        "BRING",
+        "CARRY",
+        "FETCH",
+        "TAKE"
+      ],
+      "explanation": "Take describes moving something away from the current location. Since the person is leaving the house, take fits. Bring would only work if the speaker were describing movement toward themselves.",
+      "correctAnswer": "TAKE",
+      "registerLevel": 1
+    },
+    {
+      "word": "BRING",
+      "interactionType": "choice",
+      "question": "Could you _____ some snacks when you come over tonight?",
+      "instruction": "Select the word that best completes the sentence.",
+      "hint": "The listener is moving toward the speaker's location \u2014 which verb matches that direction?",
+      "id": "VOC_CONTEXTUAL_L2_Q2",
+      "options": [
+        "TAKE",
+        "BRING",
+        "DELIVER",
+        "SEND"
+      ],
+      "explanation": "Bring is used when something moves toward the speaker's location. Since the guest is coming to the speaker's place, bring fits. Take would describe movement away from the speaker instead.",
+      "correctAnswer": "BRING",
+      "registerLevel": 1
+    },
+    {
+      "word": "TAKE",
+      "interactionType": "choice",
+      "question": "Maria is heading to the airport now; she'll _____ her passport with her so she doesn't leave it behind.",
+      "instruction": "Select the word that best completes the sentence.",
+      "hint": "Again, think about which direction Maria is moving relative to where she started.",
+      "id": "VOC_CONTEXTUAL_L2_Q3",
+      "options": [
+        "BRING",
+        "CARRY",
+        "HOLD",
+        "TAKE"
+      ],
+      "explanation": "Take fits because Maria is moving away from home toward the airport with the passport. Carry only describes physically holding something, without indicating direction, so it's less precise here.",
+      "correctAnswer": "TAKE",
+      "registerLevel": 1
+    },
+    {
+      "word": "EXCEPT",
+      "interactionType": "choice",
+      "question": "Everyone finished the marathon _____ two runners who had to drop out due to injury.",
+      "instruction": "Select the word that best completes the sentence.",
+      "hint": "This word introduces the people who are left out of the group, not included in it.",
+      "id": "VOC_CONTEXTUAL_L3_Q1",
+      "options": [
+        "ACCEPT",
+        "ASIDE",
+        "EXCEPT",
+        "BESIDES"
+      ],
+      "explanation": "Except excludes something from a statement \u2014 here, it excludes the two injured runners from 'everyone finished.' Besides would mean 'in addition to,' which would reverse the meaning entirely.",
+      "correctAnswer": "EXCEPT",
+      "registerLevel": 1
+    },
+    {
+      "word": "ACCEPT",
+      "interactionType": "choice",
+      "question": "After much thought, she decided to _____ the job offer, even though the salary was lower than she'd hoped.",
+      "instruction": "Select the word that best completes the sentence.",
+      "hint": "Think about the natural verb that pairs with 'offer' when someone says yes to it.",
+      "id": "VOC_CONTEXTUAL_L3_Q2",
+      "options": [
+        "EXCEPT",
+        "AGREE",
+        "ACCEPT",
+        "APPROVE"
+      ],
+      "explanation": "Accept an offer is the standard collocation for agreeing to receive something that's been proposed. Approve suggests an authority signing off on something, which doesn't fit a personal job decision.",
+      "correctAnswer": "ACCEPT",
+      "registerLevel": 1
+    },
+    {
+      "word": "EXCEPT",
+      "interactionType": "choice",
+      "question": "The new dress code applies to all employees, _____ those who work exclusively from home.",
+      "instruction": "Select the word that best completes the sentence.",
+      "hint": "Look for the word that carves an exception out of a general rule.",
+      "id": "VOC_CONTEXTUAL_L3_Q3",
+      "options": [
+        "ACCEPT",
+        "UNLESS",
+        "BESIDES",
+        "EXCEPT"
+      ],
+      "explanation": "Except signals an exclusion from the general rule about all employees. Unless introduces a condition ('the rule applies unless something happens'), which doesn't fit smoothly after a noun phrase like 'those who work from home.'",
+      "correctAnswer": "EXCEPT",
+      "registerLevel": 1
+    },
+    {
+      "word": "ADVICE",
+      "interactionType": "choice",
+      "question": "She only had one piece of _____ for the new interns: always double-check your work.",
+      "instruction": "Select the word that best completes the sentence.",
+      "hint": "This noun is countable only as 'a piece of' \u2014 think about which word fits that exact phrase.",
+      "id": "VOC_CONTEXTUAL_L4_Q1",
+      "options": [
+        "ADVICE",
+        "ADVISE",
+        "GUIDANCE",
+        "INSTRUCTION"
+      ],
+      "explanation": "'A piece of advice' is a fixed, natural collocation in English. Guidance and instruction don't typically follow 'a piece of,' and advise is a verb, not a noun, so it can't fill a noun slot here.",
+      "correctAnswer": "ADVICE",
+      "registerLevel": 1
+    },
+    {
+      "word": "ADVISE",
+      "interactionType": "choice",
+      "question": "The consultant will _____ the company on how to reduce costs next quarter.",
+      "instruction": "Select the word that best completes the sentence.",
+      "hint": "This word needs to be a verb that can take 'the company' as its direct object.",
+      "id": "VOC_CONTEXTUAL_L4_Q2",
+      "options": [
+        "ADVISE",
+        "ADVICE",
+        "RECOMMEND",
+        "CONSULT"
+      ],
+      "explanation": "Advise is the verb form, used as 'advise someone on something.' Recommend doesn't naturally take 'on' this way, and consult would usually need 'with' or 'for,' so it doesn't fit the sentence structure.",
+      "correctAnswer": "ADVISE",
+      "registerLevel": 1
+    },
+    {
+      "word": "ADVICE",
+      "interactionType": "choice",
+      "question": "Financial _____ can be expensive, but a good advisor often saves clients more money than they spend on fees.",
+      "instruction": "Select the word that best completes the sentence.",
+      "hint": "The sentence already mentions 'a good advisor' later, so this blank needs a different, related noun.",
+      "id": "VOC_CONTEXTUAL_L4_Q3",
+      "options": [
+        "ADVISE",
+        "ADVICE",
+        "CONSULTATION",
+        "ADVISOR"
+      ],
+      "explanation": "Advice is the noun for guidance given, which fits as the subject of the sentence. Advisor is the person who gives it, and consultation refers to the meeting itself, not the guidance provided.",
+      "correctAnswer": "ADVICE",
+      "registerLevel": 1
+    },
+    {
+      "word": "AFFECT",
+      "interactionType": "choice",
+      "question": "The new policy will _____ how employees request vacation time starting next month.",
+      "instruction": "Select the word that best completes the sentence.",
+      "hint": "You need a verb meaning 'to influence' or 'to change' something.",
+      "id": "VOC_CONTEXTUAL_L5_Q1",
+      "options": [
+        "AFFECT",
+        "EFFECT",
+        "IMPACT",
+        "INVOLVE"
+      ],
+      "explanation": "Affect is the verb meaning to influence or bring about a change. Effect is normally a noun (the result of a change), so it can't function as the main verb here. Impact could work as a verb too, but affect is the more natural choice for describing gradual influence on a process.",
+      "correctAnswer": "AFFECT",
+      "registerLevel": 1
+    },
+    {
+      "word": "EFFECT",
+      "interactionType": "choice",
+      "question": "Scientists are still studying the long-term _____ of the drug on memory and concentration.",
+      "instruction": "Select the word that best completes the sentence.",
+      "hint": "This blank follows 'the long-term,' which signals a noun is needed here.",
+      "id": "VOC_CONTEXTUAL_L5_Q2",
+      "options": [
+        "AFFECT",
+        "IMPACT",
+        "EFFECT",
+        "INFLUENCE"
+      ],
+      "explanation": "Effect is the noun for a result or outcome, fitting after 'the long-term.' Affect is almost always a verb, so it can't be the object of study here. Impact and influence are close synonyms, but effect is the standard word paired with 'of a drug on something.'",
+      "correctAnswer": "EFFECT",
+      "registerLevel": 1
+    },
+    {
+      "word": "EFFECT",
+      "interactionType": "choice",
+      "question": "Despite the CEO's confident speech, it had little _____ on investor confidence, and the stock price kept falling.",
+      "instruction": "Select the word that best completes the sentence.",
+      "hint": "Look for the noun that pairs naturally with 'little' and 'on.'",
+      "id": "VOC_CONTEXTUAL_L5_Q3",
+      "options": [
+        "EFFECT",
+        "AFFECT",
+        "IMPACT",
+        "BEARING"
+      ],
+      "explanation": "Effect is the noun meaning result or influence, and 'have an effect on' is the standard phrase. Bearing can mean relevance in formal English ('have bearing on'), but it's a less natural fit than effect in this everyday context.",
+      "correctAnswer": "EFFECT",
+      "registerLevel": 1
+    },
+    {
+      "word": "DISCOVER",
+      "interactionType": "choice",
+      "question": "Alexander Fleming didn't _____ penicillin on purpose \u2014 he noticed it by accident while studying bacteria.",
+      "instruction": "Select the word that best completes the sentence.",
+      "hint": "This word describes finding something that already existed in nature, not creating it from scratch.",
+      "id": "VOC_CONTEXTUAL_L6_Q1",
+      "options": [
+        "DISCOVER",
+        "INVENT",
+        "CREATE",
+        "DEVELOP"
+      ],
+      "explanation": "Discover means to find something that already exists but wasn't previously known. Penicillin was a naturally occurring mold, so Fleming discovered it rather than inventing it, which would mean designing something new.",
+      "correctAnswer": "DISCOVER",
+      "registerLevel": 1
+    },
+    {
+      "word": "INVENTED",
+      "interactionType": "choice",
+      "question": "Engineers at the company _____ a new type of battery that charges twice as fast as any previous model.",
+      "instruction": "Select the word that best completes the sentence.",
+      "hint": "This word describes creating something new that didn't exist before.",
+      "id": "VOC_CONTEXTUAL_L6_Q2",
+      "options": [
+        "DISCOVERED",
+        "FOUND",
+        "INVENTED",
+        "IDENTIFIED"
+      ],
+      "explanation": "Invent means to create something new through design, which fits engineers building new battery technology. Discover would suggest the battery already existed somewhere and was simply found.",
+      "correctAnswer": "INVENTED",
+      "registerLevel": 1
+    },
+    {
+      "word": "DISCOVERED",
+      "interactionType": "choice",
+      "question": "Marine biologists recently _____ a species of fish living near hydrothermal vents that had never been recorded before.",
+      "instruction": "Select the word that best completes the sentence.",
+      "hint": "The fish already existed in nature \u2014 the scientists are the ones learning about it.",
+      "id": "VOC_CONTEXTUAL_L6_Q3",
+      "options": [
+        "INVENTED",
+        "DISCOVERED",
+        "DEVELOPED",
+        "DESIGNED"
+      ],
+      "explanation": "Discover fits because the fish already existed; the biologists simply became the first to find and record it. Invent would incorrectly suggest the scientists created the species themselves.",
+      "correctAnswer": "DISCOVERED",
+      "registerLevel": 1
+    },
+    {
+      "word": "JOB",
+      "interactionType": "choice",
+      "question": "She just started a new _____ as a graphic designer at a small startup.",
+      "instruction": "Select the word that best completes the sentence.",
+      "hint": "This word refers to one specific position someone holds, and it takes the article 'a.'",
+      "id": "VOC_CONTEXTUAL_L7_Q1",
+      "options": [
+        "WORK",
+        "JOB",
+        "CAREER",
+        "OCCUPATION"
+      ],
+      "explanation": "Job refers to a specific position at a specific company, matching 'a new job as a designer.' Career refers to a person's whole professional path over time, which is too broad for a single new position.",
+      "correctAnswer": "JOB",
+      "registerLevel": 1
+    },
+    {
+      "word": "WORK",
+      "interactionType": "choice",
+      "question": "I have a lot of _____ to do before I can relax this weekend \u2014 laundry, cleaning, grading papers.",
+      "instruction": "Select the word that best completes the sentence.",
+      "hint": "This word covers tasks and effort in general, not one countable position.",
+      "id": "VOC_CONTEXTUAL_L7_Q2",
+      "options": [
+        "JOB",
+        "JOBS",
+        "WORK",
+        "CHORES"
+      ],
+      "explanation": "Work is uncountable here, covering all the different tasks ahead. Chores would only cover household tasks like laundry and cleaning, but it doesn't naturally include grading papers, so it's too narrow for this list.",
+      "correctAnswer": "WORK",
+      "registerLevel": 1
+    },
+    {
+      "word": "WORK",
+      "interactionType": "choice",
+      "question": "Raising three children while working full-time is exhausting _____, but she wouldn't change it for anything.",
+      "instruction": "Select the word that best completes the sentence.",
+      "hint": "Notice there's no article like 'a' before the blank \u2014 that's a clue about which word fits grammatically and in meaning.",
+      "id": "VOC_CONTEXTUAL_L7_Q3",
+      "options": [
+        "JOB",
+        "TASK",
+        "WORK",
+        "CAREER"
+      ],
+      "explanation": "Work fits as an uncountable noun describing ongoing effort and responsibility. Job and task are countable nouns that would need an article like 'a' before them, and neither captures the broad, continuous nature of raising children.",
+      "correctAnswer": "WORK",
+      "registerLevel": 1
+    },
+    {
+      "word": "REMIND",
+      "interactionType": "choice",
+      "question": "Can you _____ me to call the dentist tomorrow? I always forget.",
+      "instruction": "Select the word that best completes the sentence.",
+      "hint": "Someone else is being asked to help another person's memory here \u2014 who is prompting whom?",
+      "id": "VOC_CONTEXTUAL_L8_Q1",
+      "options": [
+        "REMEMBER",
+        "REMIND",
+        "RECALL",
+        "MENTION"
+      ],
+      "explanation": "Remind means to help someone else remember something, which fits 'remind me.' Remember describes a person recalling something on their own, so it can't take 'me' as an object this way.",
+      "correctAnswer": "REMIND",
+      "registerLevel": 1
+    },
+    {
+      "word": "REMEMBER",
+      "interactionType": "choice",
+      "question": "I can still _____ the smell of my grandmother's kitchen, even though she passed away years ago.",
+      "instruction": "Select the word that best completes the sentence.",
+      "hint": "This is about a personal memory surfacing on its own, not someone prompting the speaker.",
+      "id": "VOC_CONTEXTUAL_L8_Q2",
+      "options": [
+        "REMIND",
+        "REMEMBER",
+        "RECALL",
+        "RECOGNIZE"
+      ],
+      "explanation": "Remember fits the warm, personal act of recalling a memory unprompted. Recall means almost the same thing but sounds more formal or clinical, less natural for a nostalgic memory like this one.",
+      "correctAnswer": "REMEMBER",
+      "registerLevel": 1
+    },
+    {
+      "word": "REMINDS",
+      "interactionType": "choice",
+      "question": "This song always _____ me of the summer we spent traveling through Europe.",
+      "instruction": "Select the word that best completes the sentence.",
+      "hint": "Look at the fixed pattern: 'something _____ someone of something.'",
+      "id": "VOC_CONTEXTUAL_L8_Q3",
+      "options": [
+        "REMEMBERS",
+        "RECALLS",
+        "REFERS",
+        "REMINDS"
+      ],
+      "explanation": "Remind someone of something is a fixed structure meaning to trigger a memory in another person. Remember doesn't work this way \u2014 a song can't 'remember' a person, since remembering is something only people do.",
+      "correctAnswer": "REMINDS",
+      "registerLevel": 1
+    },
+    {
+      "word": "LONELY",
+      "interactionType": "choice",
+      "question": "After the kids moved out, the house felt strangely quiet, and she often felt _____ in the evenings.",
+      "instruction": "Select the word that best completes the sentence.",
+      "hint": "This word describes an emotional state, not just the physical fact of being by oneself.",
+      "id": "VOC_CONTEXTUAL_L9_Q1",
+      "options": [
+        "ALONE",
+        "LONELY",
+        "ISOLATED",
+        "SOLITARY"
+      ],
+      "explanation": "Lonely describes the sad, empty feeling of missing company. Alone simply states the physical fact of being by yourself, without implying any emotion, so it doesn't capture the sadness described here.",
+      "correctAnswer": "LONELY",
+      "registerLevel": 1
+    },
+    {
+      "word": "ALONE",
+      "interactionType": "choice",
+      "question": "He actually enjoys being _____ on weekends \u2014 it gives him time to read and recharge.",
+      "instruction": "Select the word that best completes the sentence.",
+      "hint": "The sentence says he enjoys this state, which rules out a word carrying negative emotion.",
+      "id": "VOC_CONTEXTUAL_L9_Q2",
+      "options": [
+        "ALONE",
+        "LONELY",
+        "ISOLATED",
+        "ABANDONED"
+      ],
+      "explanation": "Alone simply describes being by oneself, which can be neutral or even positive, matching 'enjoys.' Lonely carries a negative, sad connotation that would contradict the idea of someone enjoying the experience.",
+      "correctAnswer": "ALONE",
+      "registerLevel": 1
+    },
+    {
+      "word": "LONELY",
+      "interactionType": "choice",
+      "question": "Even surrounded by hundreds of people at the party, she felt completely _____, like no one really knew her.",
+      "instruction": "Select the word that best completes the sentence.",
+      "hint": "She's physically surrounded by people, so the answer must describe an emotional state, not a physical one.",
+      "id": "VOC_CONTEXTUAL_L9_Q3",
+      "options": [
+        "ALONE",
+        "SOLITARY",
+        "SEPARATE",
+        "LONELY"
+      ],
+      "explanation": "Lonely is the right choice because it describes an emotional disconnect that can happen even in a crowd. Alone would be contradictory here, since she is literally surrounded by hundreds of people, not by herself.",
+      "correctAnswer": "LONELY",
+      "registerLevel": 1
+    },
+    {
+      "word": "SAW",
+      "interactionType": "choice",
+      "question": "I _____ a strange bird in the garden this morning, but it flew away before I could get a photo.",
+      "instruction": "Select the word that best completes the sentence.",
+      "hint": "This describes a brief, unintentional moment of visual perception, not focused attention.",
+      "id": "VOC_CONTEXTUAL_L10_Q1",
+      "options": [
+        "LOOKED",
+        "WATCHED",
+        "NOTICED",
+        "SAW"
+      ],
+      "explanation": "See (saw) describes the simple, often unplanned act of perceiving something with your eyes. Watch implies sustained, deliberate attention, which doesn't fit a bird that appeared and vanished quickly.",
+      "correctAnswer": "SAW",
+      "registerLevel": 1
+    },
+    {
+      "word": "LOOK",
+      "interactionType": "choice",
+      "question": "Stop what you're doing and _____ at this \u2014 you won't believe what just happened!",
+      "instruction": "Select the word that best completes the sentence.",
+      "hint": "The speaker is directing someone's attention toward a specific thing right now.",
+      "id": "VOC_CONTEXTUAL_L10_Q2",
+      "options": [
+        "LOOK",
+        "SEE",
+        "WATCH",
+        "NOTICE"
+      ],
+      "explanation": "Look at is used to direct someone's attention deliberately to something specific, matching the command 'stop and look.' See describes passive perception and isn't normally used as a command with 'at' this way.",
+      "correctAnswer": "LOOK",
+      "registerLevel": 1
+    },
+    {
+      "word": "WATCH",
+      "interactionType": "choice",
+      "question": "We stayed up late to _____ the entire season of the show in one night.",
+      "instruction": "Select the word that best completes the sentence.",
+      "hint": "Think about the sustained attention needed to follow a show over several episodes.",
+      "id": "VOC_CONTEXTUAL_L10_Q3",
+      "options": [
+        "SEE",
+        "LOOK",
+        "VIEW",
+        "WATCH"
+      ],
+      "explanation": "Watch fits because it describes sustained attention to something in motion, like a TV show over time. View is a close synonym but sounds too formal for casually describing a late-night binge with friends.",
+      "correctAnswer": "WATCH",
+      "registerLevel": 1
+    }
+  ],
+  "gameType": "contextualUsage",
+  "batchIndex": 1
 }

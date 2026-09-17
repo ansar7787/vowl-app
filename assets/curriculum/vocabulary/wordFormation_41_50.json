@@ -3,8 +3,323 @@
     "quests": [
         {
             "id": "VOC_WORDFORMATION_L41_Q1",
-            "hint": "Noun for the ability to form new ideas or pictures in your mind. Children often have a wild ____ when they play.",
-            "explanation": "IMAGINE + -ATION = IMAGINATION. The suffix -ATION turns the verb IMAGINE into a noun naming that mental ability.",
+            "hint": "Noun for a choice made after thinking it over. The committee announced its ____ about the new office location this morning.",
+            "explanation": "DECIDE + -SION = DECISION. The verb DECIDE loses its final E and the D changes to S before -SION, giving DECISION, the noun for a choice that has been made.",
+            "interactionType": "choice",
+            "correctAnswer": "DECISION",
+            "rootWord": "DECIDE",
+            "options": [
+                "-SION",
+                "-MENT",
+                "-ANCE",
+                "-ITY"
+            ],
+            "familyTree": [
+                "DECIDE",
+                "DECISION",
+                "DECISIVE",
+                "UNDECIDED"
+            ],
+            "instruction": "Choose the correct answer."
+        },
+        {
+            "id": "VOC_WORDFORMATION_L41_Q2",
+            "hint": "Adjective describing someone who makes choices quickly and confidently. A good emergency room doctor has to be ____ under pressure.",
+            "explanation": "DECIDE + -SIVE = DECISIVE. Built from the same root as DECISION, -SIVE forms an adjective describing the quality of making firm choices.",
+            "interactionType": "choice",
+            "correctAnswer": "DECISIVE",
+            "rootWord": "DECIDE",
+            "options": [
+                "-FUL",
+                "-ABLE",
+                "-SIVE",
+                "-OUS"
+            ],
+            "familyTree": [
+                "DECIDE",
+                "DECISION",
+                "DECISIVE",
+                "INDECISIVE"
+            ],
+            "instruction": "Choose the correct answer."
+        },
+        {
+            "id": "VOC_WORDFORMATION_L41_Q3",
+            "hint": "Adverb describing an action done with firm confidence. The captain responded ____ when the storm suddenly changed direction.",
+            "explanation": "DECISIVE + -LY = DECISIVELY. Adding -LY to the adjective DECISIVE creates the adverb form, describing how an action was carried out.",
+            "interactionType": "choice",
+            "correctAnswer": "DECISIVELY",
+            "rootWord": "DECISIVE",
+            "options": [
+                "-NESS",
+                "-FUL",
+                "-LY",
+                "-ISH"
+            ],
+            "familyTree": [
+                "DECIDE",
+                "DECISIVE",
+                "DECISIVELY",
+                "DECISION"
+            ],
+            "instruction": "Choose the correct answer."
+        },
+        {
+            "id": "VOC_WORDFORMATION_L42_Q1",
+            "hint": "Noun for a statement that makes something clear. The teacher gave a simple ____ of how photosynthesis works.",
+            "explanation": "EXPLAIN + -ATION = EXPLANATION. Notice the spelling shift: EXPLAIN loses its I before -ATION is added, giving EXPLANATION rather than 'explainaton'.",
+            "interactionType": "choice",
+            "correctAnswer": "EXPLANATION",
+            "rootWord": "EXPLAIN",
+            "options": [
+                "-ATION",
+                "-MENT",
+                "-ANCE",
+                "-ITY"
+            ],
+            "familyTree": [
+                "EXPLAIN",
+                "EXPLANATION",
+                "EXPLANATORY",
+                "EXPLAINABLE"
+            ],
+            "instruction": "Choose the correct answer."
+        },
+        {
+            "id": "VOC_WORDFORMATION_L42_Q2",
+            "hint": "Adjective describing a note added to make something clearer. The manual includes ____ diagrams next to each step.",
+            "explanation": "EXPLANATION + -ORY = EXPLANATORY. Adding -ORY to the noun EXPLANATION forms an adjective describing something written or made to explain something else.",
+            "interactionType": "choice",
+            "correctAnswer": "EXPLANATORY",
+            "rootWord": "EXPLANATION",
+            "options": [
+                "-IVE",
+                "-ABLE",
+                "-FUL",
+                "-ORY"
+            ],
+            "familyTree": [
+                "EXPLAIN",
+                "EXPLANATION",
+                "EXPLANATORY",
+                "SELF-EXPLANATORY"
+            ],
+            "instruction": "Choose the correct answer."
+        },
+        {
+            "id": "VOC_WORDFORMATION_L42_Q3",
+            "hint": "Adjective describing something that can be made clear with reasons. Luckily, the sudden noise turned out to be perfectly ____.",
+            "explanation": "EXPLAIN + -ABLE = EXPLAINABLE. The suffix -ABLE returns to the base verb EXPLAIN to form an adjective meaning 'capable of being explained'.",
+            "interactionType": "choice",
+            "correctAnswer": "EXPLAINABLE",
+            "rootWord": "EXPLAIN",
+            "options": [
+                "-ORY",
+                "-IVE",
+                "-ABLE",
+                "-FUL"
+            ],
+            "familyTree": [
+                "EXPLAIN",
+                "EXPLAINABLE",
+                "EXPLANATION",
+                "UNEXPLAINABLE"
+            ],
+            "instruction": "Choose the correct answer."
+        },
+        {
+            "id": "VOC_WORDFORMATION_L43_Q1",
+            "hint": "Noun for the process of making goods in a factory. Car ____ slowed down during the shortage of parts.",
+            "explanation": "PRODUCE + -TION = PRODUCTION. The verb PRODUCE changes its final -CE to -CT before the suffix: PRODUCE becomes PRODUCT, then + ION = PRODUCTION.",
+            "interactionType": "choice",
+            "correctAnswer": "PRODUCTION",
+            "rootWord": "PRODUCE",
+            "options": [
+                "-MENT",
+                "-ANCE",
+                "-TION",
+                "-ERY"
+            ],
+            "familyTree": [
+                "PRODUCE",
+                "PRODUCT",
+                "PRODUCTION",
+                "PRODUCTIVE"
+            ],
+            "instruction": "Choose the correct answer."
+        },
+        {
+            "id": "VOC_WORDFORMATION_L43_Q2",
+            "hint": "Adjective describing someone who gets a lot of work done efficiently. Working with fewer interruptions made her far more ____ this week.",
+            "explanation": "PRODUCE + -TIVE = PRODUCTIVE. Built on the same PRODUCT- base as PRODUCTION, -TIVE forms an adjective describing the ability to produce a lot.",
+            "interactionType": "choice",
+            "correctAnswer": "PRODUCTIVE",
+            "rootWord": "PRODUCE",
+            "options": [
+                "-ABLE",
+                "-TIVE",
+                "-ORY",
+                "-FUL"
+            ],
+            "familyTree": [
+                "PRODUCE",
+                "PRODUCT",
+                "PRODUCTIVE",
+                "PRODUCTION"
+            ],
+            "instruction": "Choose the correct answer."
+        },
+        {
+            "id": "VOC_WORDFORMATION_L43_Q3",
+            "hint": "Noun for the level of output achieved by a worker or team. The new schedule boosted the factory's overall ____ by ten percent.",
+            "explanation": "PRODUCTIVE + -ITY = PRODUCTIVITY. Adding -ITY to the adjective PRODUCTIVE forms a noun measuring how much is produced.",
+            "interactionType": "choice",
+            "correctAnswer": "PRODUCTIVITY",
+            "rootWord": "PRODUCTIVE",
+            "options": [
+                "-NESS",
+                "-MENT",
+                "-ITY",
+                "-SHIP"
+            ],
+            "familyTree": [
+                "PRODUCE",
+                "PRODUCTIVE",
+                "PRODUCTIVITY",
+                "PRODUCTION"
+            ],
+            "instruction": "Choose the correct answer."
+        },
+        {
+            "id": "VOC_WORDFORMATION_L44_Q1",
+            "hint": "Noun for achieving a goal you were aiming for. Landing that first client felt like a huge ____ for the small business.",
+            "explanation": "SUCCEED + -ESS = SUCCESS. Removing the -EED ending from SUCCEED and adding -ESS gives the correct spelling: SUCCEED becomes SUCC, then + ESS = SUCCESS.",
+            "interactionType": "choice",
+            "correctAnswer": "SUCCESS",
+            "rootWord": "SUCCEED",
+            "options": [
+                "-MENT",
+                "-ANCE",
+                "-ITY",
+                "-ESS"
+            ],
+            "familyTree": [
+                "SUCCEED",
+                "SUCCESS",
+                "SUCCESSFUL",
+                "UNSUCCESSFUL"
+            ],
+            "instruction": "Choose the correct answer."
+        },
+        {
+            "id": "VOC_WORDFORMATION_L44_Q2",
+            "hint": "Adjective describing something that achieved what it aimed to do. The fundraiser was so ____ that they doubled their goal.",
+            "explanation": "SUCCESS + -FUL = SUCCESSFUL. Adding -FUL to the noun SUCCESS forms an adjective meaning 'having achieved success'.",
+            "interactionType": "choice",
+            "correctAnswer": "SUCCESSFUL",
+            "rootWord": "SUCCESS",
+            "options": [
+                "-OUS",
+                "-IVE",
+                "-FUL",
+                "-ABLE"
+            ],
+            "familyTree": [
+                "SUCCEED",
+                "SUCCESS",
+                "SUCCESSFUL",
+                "SUCCESSFULLY"
+            ],
+            "instruction": "Choose the correct answer."
+        },
+        {
+            "id": "VOC_WORDFORMATION_L44_Q3",
+            "hint": "Adverb describing an action that achieved its goal. The team ____ launched the app after months of testing.",
+            "explanation": "SUCCESSFUL + -LY = SUCCESSFULLY. This adds -LY to the adjective SUCCESSFUL to describe how an action turned out.",
+            "interactionType": "choice",
+            "correctAnswer": "SUCCESSFULLY",
+            "rootWord": "SUCCESSFUL",
+            "options": [
+                "-NESS",
+                "-ISH",
+                "-WARD",
+                "-LY"
+            ],
+            "familyTree": [
+                "SUCCEED",
+                "SUCCESSFUL",
+                "SUCCESSFULLY",
+                "SUCCESS"
+            ],
+            "instruction": "Choose the correct answer."
+        },
+        {
+            "id": "VOC_WORDFORMATION_L45_Q1",
+            "hint": "Noun for a range of different types of something. The market offers a wide ____ of fresh fruit every morning.",
+            "explanation": "VARY + -ETY = VARIETY. The final Y of VARY changes to I before -ETY: VARY becomes VARI, then + ETY = VARIETY.",
+            "interactionType": "choice",
+            "correctAnswer": "VARIETY",
+            "rootWord": "VARY",
+            "options": [
+                "-NESS",
+                "-MENT",
+                "-ANCE",
+                "-ETY"
+            ],
+            "familyTree": [
+                "VARY",
+                "VARIETY",
+                "VARIOUS",
+                "VARIABLE"
+            ],
+            "instruction": "Choose the correct answer."
+        },
+        {
+            "id": "VOC_WORDFORMATION_L45_Q2",
+            "hint": "Adjective describing several different kinds of the same thing. The bakery sells ____ flavors of bread every day.",
+            "explanation": "VARY + -OUS = VARIOUS. Like VARIETY, VARIOUS is built from VARY with the Y changed to I before the suffix is added.",
+            "interactionType": "choice",
+            "correctAnswer": "VARIOUS",
+            "rootWord": "VARY",
+            "options": [
+                "-OUS",
+                "-FUL",
+                "-IVE",
+                "-ABLE"
+            ],
+            "familyTree": [
+                "VARY",
+                "VARIOUS",
+                "VARIETY",
+                "VARIABLE"
+            ],
+            "instruction": "Choose the correct answer."
+        },
+        {
+            "id": "VOC_WORDFORMATION_L45_Q3",
+            "hint": "Adverb describing something done or described in different ways. The results have been ____ interpreted by different scientists.",
+            "explanation": "VARIOUS + -LY = VARIOUSLY. Adding -LY to the adjective VARIOUS forms an adverb describing action carried out in differing ways.",
+            "interactionType": "choice",
+            "correctAnswer": "VARIOUSLY",
+            "rootWord": "VARIOUS",
+            "options": [
+                "-NESS",
+                "-ISH",
+                "-WARD",
+                "-LY"
+            ],
+            "familyTree": [
+                "VARY",
+                "VARIOUS",
+                "VARIOUSLY",
+                "VARIETY"
+            ],
+            "instruction": "Choose the correct answer."
+        },
+        {
+            "id": "VOC_WORDFORMATION_L46_Q1",
+            "hint": "Noun for the mental ability to form new ideas or pictures in your mind. It took real ____ to design a costume from old newspapers.",
+            "explanation": "IMAGINE + -ATION = IMAGINATION. The silent E of IMAGINE drops before -ATION: IMAGINE becomes IMAGIN, then + ATION = IMAGINATION.",
             "interactionType": "choice",
             "correctAnswer": "IMAGINATION",
             "rootWord": "IMAGINE",
@@ -17,23 +332,65 @@
             "familyTree": [
                 "IMAGINE",
                 "IMAGINATION",
+                "IMAGINATIVE",
+                "IMAGINARY"
+            ],
+            "instruction": "Choose the correct answer."
+        },
+        {
+            "id": "VOC_WORDFORMATION_L46_Q2",
+            "hint": "Adjective describing a story full of fresh, original ideas. The children loved her ____ tales about talking animals.",
+            "explanation": "IMAGINE + -ATIVE = IMAGINATIVE. Like IMAGINATION, this drops the silent E before the suffix; -ATIVE forms an adjective praising original, creative thinking.",
+            "interactionType": "choice",
+            "correctAnswer": "IMAGINATIVE",
+            "rootWord": "IMAGINE",
+            "options": [
+                "-ARY",
+                "-ABLE",
+                "-ATIVE",
+                "-ORY"
+            ],
+            "familyTree": [
+                "IMAGINE",
+                "IMAGINATIVE",
+                "IMAGINATION",
+                "IMAGINARY"
+            ],
+            "instruction": "Choose the correct answer."
+        },
+        {
+            "id": "VOC_WORDFORMATION_L46_Q3",
+            "hint": "Adjective describing something that exists only in someone's mind, not in reality. As a child, he had an ____ friend named Pip.",
+            "explanation": "IMAGINE + -ARY = IMAGINARY. Unlike IMAGINATIVE, which praises creativity, IMAGINARY means something is not real at all - the same root can branch into two quite different meanings.",
+            "interactionType": "choice",
+            "correctAnswer": "IMAGINARY",
+            "rootWord": "IMAGINE",
+            "options": [
+                "-ATIVE",
+                "-ABLE",
+                "-ORY",
+                "-ARY"
+            ],
+            "familyTree": [
+                "IMAGINE",
                 "IMAGINARY",
+                "IMAGINATION",
                 "IMAGINATIVE"
             ],
             "instruction": "Choose the correct answer."
         },
         {
-            "id": "VOC_WORDFORMATION_L41_Q2",
-            "hint": "Noun for facts or details about something. The website provides useful ____ about local hiking trails.",
-            "explanation": "INFORM + -ATION = INFORMATION. The suffix -ATION turns the verb INFORM into a noun naming the facts given.",
+            "id": "VOC_WORDFORMATION_L47_Q1",
+            "hint": "Noun for facts or details that someone learns or is given. The brochure has helpful ____ about visa requirements.",
+            "explanation": "INFORM + -ATION = INFORMATION. The suffix -ATION turns the verb INFORM into a noun naming the facts communicated.",
             "interactionType": "choice",
             "correctAnswer": "INFORMATION",
             "rootWord": "INFORM",
             "options": [
-                "-ANCE",
-                "-ITY",
                 "-MENT",
-                "-ATION"
+                "-ANCE",
+                "-ATION",
+                "-ITY"
             ],
             "familyTree": [
                 "INFORM",
@@ -44,590 +401,233 @@
             "instruction": "Choose the correct answer."
         },
         {
-            "id": "VOC_WORDFORMATION_L41_Q3",
-            "hint": "Noun for a feeling of respect and approval for someone. She looked at her mentor with real ____.",
-            "explanation": "ADMIRE + -ATION = ADMIRATION. The suffix -ATION turns the verb ADMIRE into a noun naming that feeling of respect.",
-            "interactionType": "choice",
-            "correctAnswer": "ADMIRATION",
-            "rootWord": "ADMIRE",
-            "options": [
-                "-ATION",
-                "-MENT",
-                "-ITY",
-                "-ANCE"
-            ],
-            "familyTree": [
-                "ADMIRE",
-                "ADMIRATION",
-                "ADMIRABLE",
-                "ADMIRER"
-            ],
-            "instruction": "Choose the correct answer."
-        },
-        {
-            "id": "VOC_WORDFORMATION_L42_Q1",
-            "hint": "Noun for a feeling of trust in your own abilities. Winning that award boosted his ____ enormously.",
-            "explanation": "CONFIDE + -ENCE = CONFIDENCE. The suffix -ENCE turns the verb CONFIDE into a noun naming the feeling of self-trust.",
-            "interactionType": "choice",
-            "correctAnswer": "CONFIDENCE",
-            "rootWord": "CONFIDE",
-            "options": [
-                "-ANCE",
-                "-ENCE",
-                "-MENT",
-                "-ITY"
-            ],
-            "familyTree": [
-                "CONFIDE",
-                "CONFIDENCE",
-                "CONFIDENT",
-                "CONFIDENTLY"
-            ],
-            "instruction": "Choose the correct answer."
-        },
-        {
-            "id": "VOC_WORDFORMATION_L42_Q2",
-            "hint": "Noun for the act of being present at an event. School ____ has improved this semester.",
-            "explanation": "ATTEND + -ANCE = ATTENDANCE. The suffix -ANCE turns the verb ATTEND into a noun naming the act of being present.",
-            "interactionType": "choice",
-            "correctAnswer": "ATTENDANCE",
-            "rootWord": "ATTEND",
-            "options": [
-                "-MENT",
-                "-ANCE",
-                "-ENCE",
-                "-ITY"
-            ],
-            "familyTree": [
-                "ATTEND",
-                "ATTENDANCE",
-                "ATTENDANT",
-                "ATTENDEE"
-            ],
-            "instruction": "Choose the correct answer."
-        },
-        {
-            "id": "VOC_WORDFORMATION_L42_Q3",
-            "hint": "Noun for how well someone does a task, or a live show. The band's ____ at the festival was unforgettable.",
-            "explanation": "PERFORM + -ANCE = PERFORMANCE. The suffix -ANCE turns the verb PERFORM into a noun naming the act or result of performing.",
-            "interactionType": "choice",
-            "correctAnswer": "PERFORMANCE",
-            "rootWord": "PERFORM",
-            "options": [
-                "-ITY",
-                "-ENCE",
-                "-MENT",
-                "-ANCE"
-            ],
-            "familyTree": [
-                "PERFORM",
-                "PERFORMANCE",
-                "PERFORMER",
-                "PERFORMED"
-            ],
-            "instruction": "Choose the correct answer."
-        },
-        {
-            "id": "VOC_WORDFORMATION_L43_Q1",
-            "hint": "Noun for something a person does for enjoyment or exercise. Hiking is our family's favorite weekend ____.",
-            "explanation": "ACTIVE + -ITY = ACTIVITY. The suffix -ITY turns the adjective ACTIVE into a noun naming a specific action or pursuit.",
-            "interactionType": "choice",
-            "correctAnswer": "ACTIVITY",
-            "rootWord": "ACTIVE",
-            "options": [
-                "-ISM",
-                "-ITY",
-                "-ORY",
-                "-MENT"
-            ],
-            "familyTree": [
-                "ACTIVE",
-                "ACTIVITY",
-                "ACTIVATE",
-                "ACTIVELY"
-            ],
-            "instruction": "Choose the correct answer."
-        },
-        {
-            "id": "VOC_WORDFORMATION_L43_Q2",
-            "hint": "Noun for the way things actually are, as opposed to how they are imagined. Winning the lottery seemed like a dream until it became ____.",
-            "explanation": "REAL + -ITY = REALITY. The suffix -ITY turns the adjective REAL into a noun naming the actual state of things.",
-            "interactionType": "choice",
-            "correctAnswer": "REALITY",
-            "rootWord": "REAL",
-            "options": [
-                "-IC",
-                "-ITY",
-                "-ORY",
-                "-MENT"
-            ],
-            "familyTree": [
-                "REAL",
-                "REALITY",
-                "REALIZE",
-                "REALLY"
-            ],
-            "instruction": "Choose the correct answer."
-        },
-        {
-            "id": "VOC_WORDFORMATION_L43_Q3",
-            "hint": "Noun for a rule or action that is required by custom or law but has little real importance. Signing the guest book was just a ____.",
-            "explanation": "FORMAL + -ITY = FORMALITY. The suffix -ITY turns the adjective FORMAL into a noun naming that formal procedure.",
-            "interactionType": "choice",
-            "correctAnswer": "FORMALITY",
-            "rootWord": "FORMAL",
-            "options": [
-                "-ITY",
-                "-MENT",
-                "-OUS",
-                "-ORY"
-            ],
-            "familyTree": [
-                "FORMAL",
-                "FORMALITY",
-                "FORMALLY",
-                "INFORMAL"
-            ],
-            "instruction": "Choose the correct answer."
-        },
-        {
-            "id": "VOC_WORDFORMATION_L44_Q1",
-            "hint": "Adjective describing something fashionable and attractive. She walked in wearing a ____ leather jacket.",
-            "explanation": "STYLE + -ISH = STYLISH. The suffix -ISH means 'having the quality of', turning the noun STYLE into an adjective.",
-            "interactionType": "choice",
-            "correctAnswer": "STYLISH",
-            "rootWord": "STYLE",
-            "options": [
-                "-ISH",
-                "-HOOD",
-                "-FUL",
-                "-LESS"
-            ],
-            "familyTree": [
-                "STYLE",
-                "STYLISH",
-                "STYLIST",
-                "STYLIZED"
-            ],
-            "instruction": "Choose the correct answer."
-        },
-        {
-            "id": "VOC_WORDFORMATION_L44_Q2",
-            "hint": "Adjective describing an action that lacks good sense. It would be ____ to leave the front door unlocked overnight.",
-            "explanation": "FOOL + -ISH = FOOLISH. The suffix -ISH means 'having the quality of', turning the noun FOOL into an adjective.",
-            "interactionType": "choice",
-            "correctAnswer": "FOOLISH",
-            "rootWord": "FOOL",
-            "options": [
-                "-ISH",
-                "-HOOD",
-                "-FUL",
-                "-LESS"
-            ],
-            "familyTree": [
-                "FOOL",
-                "FOOLISH",
-                "FOOLISHLY",
-                "FOOLPROOF"
-            ],
-            "instruction": "Choose the correct answer."
-        },
-        {
-            "id": "VOC_WORDFORMATION_L44_Q3",
-            "hint": "Adjective describing someone who cares only about their own needs. It felt ____ to take the last slice without asking.",
-            "explanation": "SELF + -ISH = SELFISH. The suffix -ISH means 'having the quality of', turning the noun SELF into an adjective.",
-            "interactionType": "choice",
-            "correctAnswer": "SELFISH",
-            "rootWord": "SELF",
-            "options": [
-                "-ISH",
-                "-FUL",
-                "-ARY",
-                "-IC"
-            ],
-            "familyTree": [
-                "SELF",
-                "SELFISH",
-                "SELFISHLY",
-                "SELFLESS"
-            ],
-            "instruction": "Choose the correct answer."
-        },
-        {
-            "id": "VOC_WORDFORMATION_L45_Q1",
-            "hint": "Adjective describing someone considered safe to lend money to. Banks check your credit score to see if you're ____.",
-            "explanation": "CREDIT + -WORTHY = CREDITWORTHY. The suffix -WORTHY means 'deserving of', turning the noun CREDIT into an adjective.",
-            "interactionType": "choice",
-            "correctAnswer": "CREDITWORTHY",
-            "rootWord": "CREDIT",
-            "options": [
-                "-ISH",
-                "-FUL",
-                "-WORTHY",
-                "-IVE"
-            ],
-            "familyTree": [
-                "CREDIT",
-                "CREDITWORTHY",
-                "CREDITABLE",
-                "CREDITOR"
-            ],
-            "instruction": "Choose the correct answer."
-        },
-        {
-            "id": "VOC_WORDFORMATION_L45_Q2",
-            "hint": "Adjective describing an action or achievement that deserves approval. Her volunteer work is truly ____.",
-            "explanation": "PRAISE + -WORTHY = PRAISEWORTHY. The suffix -WORTHY means 'deserving of', turning the noun PRAISE into an adjective.",
-            "interactionType": "choice",
-            "correctAnswer": "PRAISEWORTHY",
-            "rootWord": "PRAISE",
-            "options": [
-                "-FUL",
-                "-ICAL",
-                "-WORTHY",
-                "-IVE"
-            ],
-            "familyTree": [
-                "PRAISE",
-                "PRAISEWORTHY",
-                "PRAISED",
-                "PRAISING"
-            ],
-            "instruction": "Choose the correct answer."
-        },
-        {
-            "id": "VOC_WORDFORMATION_L45_Q3",
-            "hint": "Adjective describing something important enough to be noticed or remembered. The report contained several ____ findings.",
-            "explanation": "NOTE + -WORTHY = NOTEWORTHY. The suffix -WORTHY means 'deserving of', turning the noun NOTE into an adjective meaning 'worth noting'.",
-            "interactionType": "choice",
-            "correctAnswer": "NOTEWORTHY",
-            "rootWord": "NOTE",
-            "options": [
-                "-IVE",
-                "-WORTHY",
-                "-FUL",
-                "-ORY"
-            ],
-            "familyTree": [
-                "NOTE",
-                "NOTEWORTHY",
-                "NOTABLE",
-                "NOTED"
-            ],
-            "instruction": "Choose the correct answer."
-        },
-        {
-            "id": "VOC_WORDFORMATION_L46_Q1",
-            "hint": "Verb meaning to understand something incorrectly. Please don't ____ me; I meant no offense.",
-            "explanation": "MIS- + UNDERSTAND = MISUNDERSTAND. The prefix MIS- means 'wrongly', changing UNDERSTAND to mean understanding something incorrectly.",
-            "interactionType": "choice",
-            "correctAnswer": "MISUNDERSTAND",
-            "rootWord": "UNDERSTAND",
-            "options": [
-                "DIS-",
-                "NON-",
-                "MIS-",
-                "UN-"
-            ],
-            "familyTree": [
-                "UNDERSTAND",
-                "MISUNDERSTAND",
-                "UNDERSTANDING",
-                "MISUNDERSTANDING"
-            ],
-            "instruction": "Choose the correct answer."
-        },
-        {
-            "id": "VOC_WORDFORMATION_L46_Q2",
-            "hint": "Verb meaning to give someone a false idea or impression. The advertisement seemed designed to ____ customers about the price.",
-            "explanation": "MIS- + LEAD = MISLEAD. The prefix MIS- means 'wrongly', changing LEAD to mean guiding someone in the wrong direction.",
-            "interactionType": "choice",
-            "correctAnswer": "MISLEAD",
-            "rootWord": "LEAD",
-            "options": [
-                "DIS-",
-                "UN-",
-                "MIS-",
-                "OVER-"
-            ],
-            "familyTree": [
-                "LEAD",
-                "MISLEAD",
-                "LEADER",
-                "LEADERSHIP"
-            ],
-            "instruction": "Choose the correct answer."
-        },
-        {
-            "id": "VOC_WORDFORMATION_L46_Q3",
-            "hint": "Verb meaning to put something somewhere and then forget where it is. I always seem to ____ my keys right before I need them.",
-            "explanation": "MIS- + PLACE = MISPLACE. The prefix MIS- means 'wrongly', changing PLACE to mean putting something in the wrong spot.",
-            "interactionType": "choice",
-            "correctAnswer": "MISPLACE",
-            "rootWord": "PLACE",
-            "options": [
-                "UN-",
-                "OVER-",
-                "NON-",
-                "MIS-"
-            ],
-            "familyTree": [
-                "PLACE",
-                "MISPLACE",
-                "PLACEMENT",
-                "REPLACE"
-            ],
-            "instruction": "Choose the correct answer."
-        },
-        {
-            "id": "VOC_WORDFORMATION_L47_Q1",
-            "hint": "Adjective or noun describing someone with original and creative ideas about the future. The company's founder was a true ____.",
-            "explanation": "VISION + -ARY = VISIONARY. The suffix -ARY means 'relating to' or 'characterized by', turning the noun VISION into an adjective or noun.",
-            "interactionType": "choice",
-            "correctAnswer": "VISIONARY",
-            "rootWord": "VISION",
-            "options": [
-                "-ARY",
-                "-ATIC",
-                "-IVE",
-                "-IOUS"
-            ],
-            "familyTree": [
-                "VISION",
-                "VISIONARY",
-                "VISUAL",
-                "ENVISION"
-            ],
-            "instruction": "Choose the correct answer."
-        },
-        {
             "id": "VOC_WORDFORMATION_L47_Q2",
-            "hint": "Adjective describing someone or something extremely famous and admired. The band gave a ____ performance that night.",
-            "explanation": "LEGEND + -ARY = LEGENDARY. The suffix -ARY means 'relating to' or 'having the qualities of', turning the noun LEGEND into an adjective.",
+            "hint": "Adjective describing something that teaches you useful facts. The museum's new exhibit is both fun and ____.",
+            "explanation": "INFORM + -ATIVE = INFORMATIVE. Built on the same base as INFORMATION, -ATIVE forms an adjective describing something that gives useful facts.",
             "interactionType": "choice",
-            "correctAnswer": "LEGENDARY",
-            "rootWord": "LEGEND",
+            "correctAnswer": "INFORMATIVE",
+            "rootWord": "INFORM",
             "options": [
-                "-FUL",
-                "-OUS",
                 "-ARY",
-                "-IC"
+                "-ABLE",
+                "-ATIVE",
+                "-ORY"
             ],
             "familyTree": [
-                "LEGEND",
-                "LEGENDARY",
-                "LEGENDS",
-                "LEGENDIZE"
+                "INFORM",
+                "INFORMATIVE",
+                "INFORMATION",
+                "INFORMED"
             ],
             "instruction": "Choose the correct answer."
         },
         {
             "id": "VOC_WORDFORMATION_L47_Q3",
-            "hint": "Adjective describing something usual or traditional. It's ____ to remove your shoes before entering a home in many cultures.",
-            "explanation": "CUSTOM + -ARY = CUSTOMARY. The suffix -ARY means 'relating to', turning the noun CUSTOM into an adjective meaning 'in keeping with tradition'.",
+            "hint": "Noun for a person who secretly gives information to the police or another authority. The detective relied on an anonymous ____ inside the company.",
+            "explanation": "INFORM + -ANT = INFORMANT. The suffix -ANT names a person who performs the action, here someone who informs authorities.",
             "interactionType": "choice",
-            "correctAnswer": "CUSTOMARY",
-            "rootWord": "CUSTOM",
+            "correctAnswer": "INFORMANT",
+            "rootWord": "INFORM",
             "options": [
-                "-OUS",
-                "-FUL",
-                "-ARY",
-                "-IC"
+                "-ER",
+                "-IST",
+                "-OR",
+                "-ANT"
             ],
             "familyTree": [
-                "CUSTOM",
-                "CUSTOMARY",
-                "CUSTOMS",
-                "CUSTOMIZE"
+                "INFORM",
+                "INFORMANT",
+                "INFORMATION",
+                "INFORMER"
             ],
             "instruction": "Choose the correct answer."
         },
         {
             "id": "VOC_WORDFORMATION_L48_Q1",
-            "hint": "Adjective describing someone who notices details quickly. The detective was known for being remarkably ____.",
-            "explanation": "OBSERVE + -ANT = OBSERVANT. The suffix -ANT means 'tending to', turning the verb OBSERVE into an adjective.",
+            "hint": "Noun for the exchange of information between people. A breakdown in ____ caused the two teams to miss the deadline.",
+            "explanation": "COMMUNICATE + -ION = COMMUNICATION. The final E of COMMUNICATE drops before -ION: COMMUNICATE becomes COMMUNICAT, then + ION = COMMUNICATION.",
             "interactionType": "choice",
-            "correctAnswer": "OBSERVANT",
-            "rootWord": "OBSERVE",
+            "correctAnswer": "COMMUNICATION",
+            "rootWord": "COMMUNICATE",
             "options": [
-                "-FUL",
-                "-IVE",
-                "-ANT",
-                "-IBLE"
+                "-MENT",
+                "-ANCE",
+                "-ERY",
+                "-ION"
             ],
             "familyTree": [
-                "OBSERVE",
-                "OBSERVANT",
-                "OBSERVATION",
-                "OBSERVER"
+                "COMMUNICATE",
+                "COMMUNICATION",
+                "COMMUNICATIVE",
+                "COMMUNICATOR"
             ],
             "instruction": "Choose the correct answer."
         },
         {
             "id": "VOC_WORDFORMATION_L48_Q2",
-            "hint": "Adjective describing something enjoyable or agreeable. We had a ____ afternoon walking along the river.",
-            "explanation": "PLEASE + -ANT = PLEASANT. The suffix -ANT means 'tending to', turning the verb PLEASE into an adjective meaning 'agreeable'.",
+            "hint": "Adjective describing someone who shares thoughts and feelings openly. A good manager should be honest and ____.",
+            "explanation": "COMMUNICATE + -IVE = COMMUNICATIVE. Dropping the silent E before -IVE gives an adjective describing someone who communicates easily and openly.",
             "interactionType": "choice",
-            "correctAnswer": "PLEASANT",
-            "rootWord": "PLEASE",
+            "correctAnswer": "COMMUNICATIVE",
+            "rootWord": "COMMUNICATE",
             "options": [
                 "-ABLE",
+                "-ORY",
                 "-IVE",
-                "-ANT",
-                "-FUL"
+                "-ANT"
             ],
             "familyTree": [
-                "PLEASE",
-                "PLEASANT",
-                "PLEASURE",
-                "UNPLEASANT"
+                "COMMUNICATE",
+                "COMMUNICATIVE",
+                "COMMUNICATION",
+                "COMMUNICATOR"
             ],
             "instruction": "Choose the correct answer."
         },
         {
             "id": "VOC_WORDFORMATION_L48_Q3",
-            "hint": "Adjective describing something that opposes or is not affected by something else. This jacket is water-____, so it should keep you dry.",
-            "explanation": "RESIST + -ANT = RESISTANT. The suffix -ANT means 'tending to', turning the verb RESIST into an adjective.",
+            "hint": "Noun for a person whose role is to send out messages or information. The company hired a skilled ____ to manage press releases.",
+            "explanation": "COMMUNICATE + -OR = COMMUNICATOR. Dropping the silent E before -OR names the person who performs the act of communicating.",
             "interactionType": "choice",
-            "correctAnswer": "RESISTANT",
-            "rootWord": "RESIST",
+            "correctAnswer": "COMMUNICATOR",
+            "rootWord": "COMMUNICATE",
             "options": [
-                "-ANT",
-                "-ORY",
-                "-ISH",
-                "-FUL"
+                "-ER",
+                "-OR",
+                "-IST",
+                "-ANT"
             ],
             "familyTree": [
-                "RESIST",
-                "RESISTANT",
-                "RESISTANCE",
-                "RESISTIBLE"
+                "COMMUNICATE",
+                "COMMUNICATOR",
+                "COMMUNICATION",
+                "COMMUNICATIVE"
             ],
             "instruction": "Choose the correct answer."
         },
         {
             "id": "VOC_WORDFORMATION_L49_Q1",
-            "hint": "Verb meaning to arrange things into groups based on shared features. Scientists ____ animals by their physical characteristics.",
-            "explanation": "CLASS + -IFY = CLASSIFY. The suffix -IFY means 'to make' or 'to sort into', turning the noun CLASS into a verb.",
+            "hint": "Noun for the process of teaching and learning. She's saving money to continue her ____ after high school.",
+            "explanation": "EDUCATE + -ION = EDUCATION. The silent E of EDUCATE drops before -ION: EDUCATE becomes EDUCAT, then + ION = EDUCATION.",
             "interactionType": "choice",
-            "correctAnswer": "CLASSIFY",
-            "rootWord": "CLASS",
+            "correctAnswer": "EDUCATION",
+            "rootWord": "EDUCATE",
             "options": [
-                "-EN",
-                "-IZE",
-                "-IFY",
-                "-ATE"
+                "-MENT",
+                "-ION",
+                "-ANCE",
+                "-ERY"
             ],
             "familyTree": [
-                "CLASS",
-                "CLASSIFY",
-                "CLASSIFICATION",
-                "CLASSIC"
+                "EDUCATE",
+                "EDUCATION",
+                "EDUCATIONAL",
+                "EDUCATOR"
             ],
             "instruction": "Choose the correct answer."
         },
         {
             "id": "VOC_WORDFORMATION_L49_Q2",
-            "hint": "Verb meaning to become or make something stronger or more extreme. The rain began to ____ as the storm moved closer.",
-            "explanation": "INTENSE + -IFY = INTENSIFY. The suffix -IFY means 'to make', turning the adjective INTENSE into a verb.",
+            "hint": "Adjective describing something designed to teach or inform. The zoo added several ____ signs near the animal enclosures.",
+            "explanation": "EDUCATION + -AL = EDUCATIONAL. Adding -AL to the noun EDUCATION forms an adjective describing something related to learning.",
             "interactionType": "choice",
-            "correctAnswer": "INTENSIFY",
-            "rootWord": "INTENSE",
+            "correctAnswer": "EDUCATIONAL",
+            "rootWord": "EDUCATION",
             "options": [
-                "-ATE",
-                "-IFY",
-                "-IZE",
-                "-EN"
+                "-IC",
+                "-OUS",
+                "-IVE",
+                "-AL"
             ],
             "familyTree": [
-                "INTENSE",
-                "INTENSIFY",
-                "INTENSITY",
-                "INTENSELY"
+                "EDUCATE",
+                "EDUCATION",
+                "EDUCATIONAL",
+                "EDUCATOR"
             ],
             "instruction": "Choose the correct answer."
         },
         {
             "id": "VOC_WORDFORMATION_L49_Q3",
-            "hint": "Verb meaning to give good reasons for a decision or action. It's hard to ____ spending so much on a single pair of shoes.",
-            "explanation": "JUST + -IFY = JUSTIFY. The suffix -IFY means 'to make', turning the adjective JUST into a verb meaning 'to show something is fair or reasonable'.",
+            "hint": "Noun for a person whose profession is teaching. As an ____, she believes every student learns differently.",
+            "explanation": "EDUCATE + -OR = EDUCATOR. Dropping the silent E before -OR names the person who carries out the act of educating.",
             "interactionType": "choice",
-            "correctAnswer": "JUSTIFY",
-            "rootWord": "JUST",
+            "correctAnswer": "EDUCATOR",
+            "rootWord": "EDUCATE",
             "options": [
-                "-EN",
-                "-IFY",
-                "-ATE",
-                "-IZE"
+                "-OR",
+                "-ER",
+                "-IST",
+                "-ANT"
             ],
             "familyTree": [
-                "JUST",
-                "JUSTIFY",
-                "JUSTICE",
-                "JUSTIFIABLE"
+                "EDUCATE",
+                "EDUCATOR",
+                "EDUCATION",
+                "EDUCATIONAL"
             ],
             "instruction": "Choose the correct answer."
         },
         {
             "id": "VOC_WORDFORMATION_L50_Q1",
-            "hint": "Verb meaning to learn something so well that you can recall it exactly. Actors have to ____ their lines before rehearsal.",
-            "explanation": "MEMORY + -IZE = MEMORIZE. The suffix -IZE means 'to make' or 'to commit to', turning the noun MEMORY into a verb.",
+            "hint": "Noun for the act of taking part in an activity. Her ____ in the debate club boosted her public speaking skills.",
+            "explanation": "PARTICIPATE + -ION = PARTICIPATION. The final E of PARTICIPATE drops before -ION, following the same pattern you practiced with EDUCATION and COMMUNICATION.",
             "interactionType": "choice",
-            "correctAnswer": "MEMORIZE",
-            "rootWord": "MEMORY",
+            "correctAnswer": "PARTICIPATION",
+            "rootWord": "PARTICIPATE",
             "options": [
-                "-ATE",
-                "-IZE",
-                "-EN",
-                "-IFY"
+                "-MENT",
+                "-ION",
+                "-ANCE",
+                "-ERY"
             ],
             "familyTree": [
-                "MEMORY",
-                "MEMORIZE",
-                "MEMORABLE",
-                "MEMORIAL"
+                "PARTICIPATE",
+                "PARTICIPATION",
+                "PARTICIPANT",
+                "PARTICIPATORY"
             ],
             "instruction": "Choose the correct answer."
         },
         {
             "id": "VOC_WORDFORMATION_L50_Q2",
-            "hint": "Verb meaning to give a brief statement of the main points. Please ____ the report in three sentences.",
-            "explanation": "SUMMARY + -IZE = SUMMARIZE. The suffix -IZE means 'to make into', turning the noun SUMMARY into a verb.",
+            "hint": "Noun for a person who takes part in an activity or event. Every ____ received a certificate at the end of the workshop.",
+            "explanation": "PARTICIPATE + -ANT = PARTICIPANT. Dropping the silent E before -ANT names the person who takes part, similar to how INFORM became INFORMANT earlier.",
             "interactionType": "choice",
-            "correctAnswer": "SUMMARIZE",
-            "rootWord": "SUMMARY",
+            "correctAnswer": "PARTICIPANT",
+            "rootWord": "PARTICIPATE",
             "options": [
-                "-ATE",
-                "-IFY",
-                "-EN",
-                "-IZE"
+                "-ANT",
+                "-ER",
+                "-IST",
+                "-OR"
             ],
             "familyTree": [
-                "SUMMARY",
-                "SUMMARIZE",
-                "SUMMARIZED",
-                "SUMMARIES"
+                "PARTICIPATE",
+                "PARTICIPANT",
+                "PARTICIPATION",
+                "PARTICIPATORY"
             ],
             "instruction": "Choose the correct answer."
         },
         {
             "id": "VOC_WORDFORMATION_L50_Q3",
-            "hint": "Verb meaning to update something to make it suit current needs or fashions. The city plans to ____ its outdated subway system.",
-            "explanation": "MODERN + -IZE = MODERNIZE. The suffix -IZE means 'to make', turning the adjective MODERN into a verb.",
+            "hint": "Adjective describing an activity that encourages people to get involved. The museum's new exhibit uses a ____ approach with hands-on stations.",
+            "explanation": "PARTICIPATE + -ORY = PARTICIPATORY. Adding -ORY to the base PARTICIPATE forms an adjective describing something designed to involve people directly.",
             "interactionType": "choice",
-            "correctAnswer": "MODERNIZE",
-            "rootWord": "MODERN",
+            "correctAnswer": "PARTICIPATORY",
+            "rootWord": "PARTICIPATE",
             "options": [
-                "-ATE",
-                "-EN",
-                "-IZE",
-                "-IFY"
+                "-ORY",
+                "-IVE",
+                "-ABLE",
+                "-ANT"
             ],
             "familyTree": [
-                "MODERN",
-                "MODERNIZE",
-                "MODERNITY",
-                "MODERNLY"
+                "PARTICIPATE",
+                "PARTICIPATORY",
+                "PARTICIPATION",
+                "PARTICIPANT"
             ],
             "instruction": "Choose the correct answer."
         }

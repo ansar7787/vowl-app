@@ -2,514 +2,514 @@
     "levels": "61-70",
     "quests": [
         {
-            "word": "THINK ON YOUR FEET",
-            "instruction": "Select the correct idiom for the given meaning.",
+            "word": "A WALK IN THE PARK",
+            "instruction": "Which idiom best captures this: \"The coding test was so simple for her that she finished it in ten minutes, barely thinking.\"",
             "interactionType": "choice",
-            "topicEmoji": "🧠🦶",
+            "topicEmoji": "🚶🌳",
             "id": "VOC_IDIOMS_L61_Q1",
-            "hint": "DEFINITION: Adapt quickly and decide things rapidly.",
+            "hint": "Like 'piece of cake,' this means something is easy — but it emphasizes how pleasant and effortless it felt, not just how little effort it took.",
             "options": [
-                "ON THE BACK BURNER",
-                "NIP IT IN THE BUD",
-                "THINK ON YOUR FEET",
+                "BITE THE BULLET",
+                "A WALK IN THE PARK",
+                "HANG BY A THREAD",
+                "PIECE OF CAKE"
+            ],
+            "explanation": "'A walk in the park' means something is very easy, often with a hint that it was also pleasant or stress-free. \"For an experienced hiker, that trail is a walk in the park.\"",
+            "correctAnswer": "A WALK IN THE PARK",
+            "origin": "A literal comparison to a relaxed, leisurely stroll — effortless compared to more strenuous activity."
+        },
+        {
+            "word": "PIECE OF CAKE",
+            "instruction": "Which idiom fits: \"The math problem took him three seconds; it was nothing at all, hardly worth mentioning.\"",
+            "interactionType": "choice",
+            "topicEmoji": "🍰🚶",
+            "id": "VOC_IDIOMS_L61_Q2",
+            "hint": "Both mean 'easy,' but one idiom focuses purely on how little effort or skill was needed, without implying anything about how pleasant it was.",
+            "options": [
+                "PIECE OF CAKE",
+                "A WALK IN THE PARK",
+                "HANG BY A THREAD",
+                "CHILD'S PLAY"
+            ],
+            "explanation": "'Piece of cake' fits best here since the sentence is only about how little effort the task took, not about it being enjoyable. Both idioms mean 'easy,' but 'a walk in the park' more often implies a pleasant experience too. \"That interview was a piece of cake.\"",
+            "correctAnswer": "PIECE OF CAKE",
+            "origin": "See the earlier note on 'piece of cake.' This question checks the learner's ability to tell apart two idioms with nearly the same core meaning."
+        },
+        {
+            "word": "CHILD'S PLAY",
+            "instruction": "Choose the idiom that matches the meaning.",
+            "interactionType": "choice",
+            "topicEmoji": "🧸😌",
+            "id": "VOC_IDIOMS_L61_Q3",
+            "hint": "DEFINITION: Something extremely easy, often said dismissively about a task others find hard.",
+            "options": [
+                "A WALK IN THE PARK",
+                "HANG BY A THREAD",
+                "CHILD'S PLAY",
+                "PIECE OF CAKE"
+            ],
+            "explanation": "'Child's play' means something is so easy it could be done by a child. \"Compared to the final exam, the quiz was child's play.\"",
+            "correctAnswer": "CHILD'S PLAY",
+            "origin": "A literal comparison to the simplicity of games children play, in figurative use since at least the 1600s."
+        },
+        {
+            "word": "GRIN AND BEAR IT",
+            "instruction": "Which idiom fits: \"The flight was delayed six hours with no compensation offered, so she just accepted it and waited it out without complaining.\"",
+            "interactionType": "choice",
+            "topicEmoji": "😬🐻",
+            "id": "VOC_IDIOMS_L62_Q1",
+            "hint": "This idiom is about enduring an ongoing, unpleasant situation with patience, not about making a bold decision.",
+            "options": [
+                "TAKE THE PLUNGE",
+                "HANG BY A THREAD",
+                "BITE THE BULLET",
+                "GRIN AND BEAR IT"
+            ],
+            "explanation": "'Grin and bear it' means to endure something unpleasant patiently, without complaining. \"There's no fixing the noisy construction next door — we just have to grin and bear it.\"",
+            "correctAnswer": "GRIN AND BEAR IT",
+            "origin": "A straightforward pairing of a forced smile ('grin') with quiet endurance ('bear it'), recorded in English since the 1800s."
+        },
+        {
+            "word": "BITE THE BULLET",
+            "instruction": "Which idiom fits: \"He hated calling to cancel the contract, but he finally forced himself to make the call and get it over with.\"",
+            "interactionType": "choice",
+            "topicEmoji": "🦷🔫",
+            "id": "VOC_IDIOMS_L62_Q2",
+            "hint": "One idiom is about a single decisive act of enduring something difficult right now; the other is about patiently tolerating something ongoing.",
+            "options": [
+                "BITE THE BULLET",
+                "HANG BY A THREAD",
+                "TAKE THE PLUNGE",
+                "GRIN AND BEAR IT"
+            ],
+            "explanation": "'Bite the bullet' fits a single decisive act of forcing yourself through something unpleasant, while 'grin and bear it' fits patiently enduring an ongoing situation. \"I'll just bite the bullet and make the call now.\"",
+            "correctAnswer": "BITE THE BULLET",
+            "origin": "See the earlier note on 'bite the bullet.' This question distinguishes a one-time decisive act from long-term patient endurance."
+        },
+        {
+            "word": "TOUGH IT OUT",
+            "instruction": "Choose the idiom that matches this situation: \"Even though the hike was much harder than expected and everyone was exhausted, the group kept pushing through to the summit.\"",
+            "interactionType": "choice",
+            "topicEmoji": "🥾💪",
+            "id": "VOC_IDIOMS_L62_Q3",
+            "hint": "DEFINITION: Persist through a difficult situation with determination, rather than quitting.",
+            "options": [
+                "BITE THE BULLET",
+                "HANG BY A THREAD",
+                "TOUGH IT OUT",
+                "GRIN AND BEAR IT"
+            ],
+            "explanation": "'Tough it out' means to endure a hard situation through sheer determination. \"The team had no substitutes left, so they had to tough it out for the final ten minutes.\"",
+            "correctAnswer": "TOUGH IT OUT",
+            "origin": "A plain, transparent use of 'tough' as an adjective turned into an action — being tough through something difficult."
+        },
+        {
+            "word": "HAVE SECOND THOUGHTS",
+            "instruction": "Which idiom fits: \"She'd already signed the lease, but lying awake that night, she started wondering if moving to a new city was really the right call.\"",
+            "interactionType": "choice",
+            "topicEmoji": "🤔🔁",
+            "id": "VOC_IDIOMS_L63_Q1",
+            "hint": "This is about reconsidering a decision after the fact, which is different from feeling sudden nervousness right before acting.",
+            "options": [
+                "GET COLD FEET",
+                "TAKE THE PLUNGE",
+                "GRIN AND BEAR IT",
+                "HAVE SECOND THOUGHTS"
+            ],
+            "explanation": "'Have second thoughts' means to begin doubting a decision you've already made. \"I'm having second thoughts about the color we picked for the kitchen.\"",
+            "correctAnswer": "HAVE SECOND THOUGHTS",
+            "origin": "A transparent phrase: your 'first thought' was the original decision, and a 'second thought' reconsiders it."
+        },
+        {
+            "word": "GET COLD FEET",
+            "instruction": "Which idiom fits: \"Standing at the edge of the diving platform, he suddenly panicked and couldn't make himself jump.\"",
+            "interactionType": "choice",
+            "topicEmoji": "🥶🦶",
+            "id": "VOC_IDIOMS_L63_Q2",
+            "hint": "One idiom is about sudden nervousness right at the moment of acting; the other is about doubting a decision over time.",
+            "options": [
+                "BITE THE BULLET",
+                "GET COLD FEET",
+                "HAVE SECOND THOUGHTS",
+                "TOUGH IT OUT"
+            ],
+            "explanation": "'Get cold feet' fits sudden, in-the-moment nervousness right before doing something, while 'have second thoughts' fits doubts that build up over time. \"He got cold feet right before walking on stage.\"",
+            "correctAnswer": "GET COLD FEET",
+            "origin": "See the earlier note on 'get cold feet.' This question distinguishes momentary panic from gradual reconsideration."
+        },
+        {
+            "word": "BACK OUT",
+            "instruction": "Choose the idiom that matches the meaning.",
+            "interactionType": "choice",
+            "topicEmoji": "🚪↩️",
+            "id": "VOC_IDIOMS_L63_Q3",
+            "hint": "DEFINITION: Withdraw from a plan or agreement you had previously committed to.",
+            "options": [
+                "BACK OUT",
+                "TOUGH IT OUT",
+                "HAVE SECOND THOUGHTS",
                 "GET COLD FEET"
             ],
-            "explanation": "'THINK ON YOUR FEET' means: Adapt quickly and decide things rapidly. For example: \"A good reporter has to think on their feet during a live interview.\"",
-            "correctAnswer": "THINK ON YOUR FEET",
-            "origin": "Historically, the phrase \"THINK ON YOUR FEET\" originated from everyday cultural practices, eventually becoming a popular figurative expression in modern English."
+            "explanation": "'Back out' means to withdraw from a commitment. \"He backed out of the trip at the last minute.\"",
+            "correctAnswer": "BACK OUT",
+            "origin": "A literal image of physically retreating backward out of a space or situation, applied figuratively to commitments."
         },
         {
-            "word": "THIS DAY AND AGE",
-            "instruction": "Select the correct idiom for the given meaning.",
+            "word": "LIVE HAND TO MOUTH",
+            "instruction": "Which idiom fits: \"With no savings and barely enough for rent and food each week, the family had no financial cushion at all.\"",
             "interactionType": "choice",
-            "topicEmoji": "📅🌍",
-            "id": "VOC_IDIOMS_L61_Q2",
-            "hint": "DEFINITION: The present time, especially when noting modern conditions.",
-            "options": [
-                "NO PAIN NO GAIN",
-                "THIS DAY AND AGE",
-                "HANG BY A THREAD",
-                "A DROP IN THE BUCKET"
-            ],
-            "explanation": "'THIS DAY AND AGE' means: The present time, especially when noting modern conditions. For example: \"In this day and age, almost everyone has a smartphone.\"",
-            "correctAnswer": "THIS DAY AND AGE",
-            "origin": "Historically, the phrase \"THIS DAY AND AGE\" originated from everyday cultural practices, eventually becoming a popular figurative expression in modern English."
-        },
-        {
-            "word": "TIME IS OF THE ESSENCE",
-            "instruction": "Select the correct idiom for the given meaning.",
-            "interactionType": "choice",
-            "topicEmoji": "⏰💎",
-            "id": "VOC_IDIOMS_L61_Q3",
-            "hint": "DEFINITION: Speed is very important; act quickly.",
-            "options": [
-                "TIME IS OF THE ESSENCE",
-                "WITH A FINE-TOOTH COMB",
-                "RUN CIRCLES AROUND SOMEONE",
-                "BIDE YOUR TIME"
-            ],
-            "explanation": "'TIME IS OF THE ESSENCE' means: Speed is very important; act quickly. For example: \"Submit the application soon - time is of the essence.\"",
-            "correctAnswer": "TIME IS OF THE ESSENCE",
-            "origin": "Historically, the phrase \"TIME IS OF THE ESSENCE\" originated from everyday cultural practices, eventually becoming a popular figurative expression in modern English."
-        },
-        {
-            "word": "TURN THE OTHER CHEEK",
-            "instruction": "Select the correct idiom for the given meaning.",
-            "interactionType": "choice",
-            "topicEmoji": "🙂🔄",
-            "id": "VOC_IDIOMS_L62_Q1",
-            "hint": "DEFINITION: Ignore an insult or bad treatment rather than retaliate.",
-            "options": [
-                "THROW IN THE TOWEL",
-                "MAKE UP YOUR MIND",
-                "TURN THE OTHER CHEEK",
-                "STAB SOMEONE IN THE BACK"
-            ],
-            "explanation": "'TURN THE OTHER CHEEK' means: Ignore an insult or bad treatment rather than retaliate. For example: \"He decided to turn the other cheek instead of arguing back.\"",
-            "correctAnswer": "TURN THE OTHER CHEEK",
-            "origin": "Historically, the phrase \"TURN THE OTHER CHEEK\" originated from everyday cultural practices, eventually becoming a popular figurative expression in modern English."
-        },
-        {
-            "word": "UP TO SPEED",
-            "instruction": "Select the correct idiom for the given meaning.",
-            "interactionType": "choice",
-            "topicEmoji": "⚡📈",
-            "id": "VOC_IDIOMS_L62_Q2",
-            "hint": "DEFINITION: Fully informed or trained on something.",
-            "options": [
-                "GIVE IT YOUR ALL",
-                "CATCH YOUR BREATH",
-                "UP IN THE AIR",
-                "UP TO SPEED"
-            ],
-            "explanation": "'UP TO SPEED' means: Fully informed or trained on something. For example: \"The new hire needs a few days to get up to speed on our systems.\"",
-            "correctAnswer": "UP TO SPEED",
-            "origin": "Historically, the phrase \"UP TO SPEED\" originated from everyday cultural practices, eventually becoming a popular figurative expression in modern English."
-        },
-        {
-            "word": "WALK A MILE IN SOMEONE'S SHOES",
-            "instruction": "Select the correct idiom for the given meaning.",
-            "interactionType": "choice",
-            "topicEmoji": "👟🚶",
-            "id": "VOC_IDIOMS_L62_Q3",
-            "hint": "DEFINITION: Try to understand someone else's experience.",
-            "options": [
-                "WALK A MILE IN SOMEONE'S SHOES",
-                "THE PROOF IS IN THE PUDDING",
-                "BIG SHOES TO FILL",
-                "PLAY FAST AND LOOSE WITH"
-            ],
-            "explanation": "'WALK A MILE IN SOMEONE'S SHOES' means: Try to understand someone else's experience. For example: \"Before judging him, walk a mile in his shoes.\"",
-            "correctAnswer": "WALK A MILE IN SOMEONE'S SHOES",
-            "origin": "Historically, the phrase \"WALK A MILE IN SOMEONE'S SHOES\" originated from everyday cultural practices, eventually becoming a popular figurative expression in modern English."
-        },
-        {
-            "word": "WEAR YOUR HEART ON YOUR SLEEVE",
-            "instruction": "Select the correct idiom for the given meaning.",
-            "interactionType": "choice",
-            "topicEmoji": "❤️👕",
-            "id": "VOC_IDIOMS_L63_Q1",
-            "hint": "DEFINITION: Show your emotions openly.",
-            "options": [
-                "WEAR YOUR HEART ON YOUR SLEEVE",
-                "RISE FROM THE ASHES",
-                "POUR YOUR HEART OUT",
-                "LOOK BEFORE YOU LEAP"
-            ],
-            "explanation": "'WEAR YOUR HEART ON YOUR SLEEVE' means: Show your emotions openly. For example: \"She always wears her heart on her sleeve, so you know exactly how she feels.\"",
-            "correctAnswer": "WEAR YOUR HEART ON YOUR SLEEVE",
-            "origin": "Historically, the phrase \"WEAR YOUR HEART ON YOUR SLEEVE\" originated from everyday cultural practices, eventually becoming a popular figurative expression in modern English."
-        },
-        {
-            "word": "ZERO IN ON",
-            "instruction": "Select the correct idiom for the given meaning.",
-            "interactionType": "choice",
-            "topicEmoji": "🎯🔍",
-            "id": "VOC_IDIOMS_L63_Q2",
-            "hint": "DEFINITION: Focus precisely on a particular target or detail.",
-            "options": [
-                "RIDE THE WAVE",
-                "LAY DOWN THE LAW",
-                "ZERO IN ON",
-                "NOT SET IN STONE"
-            ],
-            "explanation": "'ZERO IN ON' means: Focus precisely on a particular target or detail. For example: \"The engineers zeroed in on the bug after hours of testing the code.\"",
-            "correctAnswer": "ZERO IN ON",
-            "origin": "Historically, the phrase \"ZERO IN ON\" originated from everyday cultural practices, eventually becoming a popular figurative expression in modern English."
-        },
-        {
-            "word": "COUNT YOUR BLESSINGS",
-            "instruction": "Select the correct idiom for the given meaning.",
-            "interactionType": "choice",
-            "topicEmoji": "🙏✅",
-            "id": "VOC_IDIOMS_L63_Q3",
-            "hint": "DEFINITION: Be grateful for what you have.",
-            "options": [
-                "COUNT YOUR BLESSINGS",
-                "JUMP TO CONCLUSIONS",
-                "CHASE YOUR TAIL",
-                "BEAT THE CLOCK"
-            ],
-            "explanation": "'COUNT YOUR BLESSINGS' means: Be grateful for what you have. For example: \"Whenever I feel stressed about work, my grandmother reminds me to count my blessings.\"",
-            "correctAnswer": "COUNT YOUR BLESSINGS",
-            "origin": "Historically, the phrase \"COUNT YOUR BLESSINGS\" originated from everyday cultural practices, eventually becoming a popular figurative expression in modern English."
-        },
-        {
-            "word": "CROSS THE LINE",
-            "instruction": "Select the correct idiom for the given meaning.",
-            "interactionType": "choice",
-            "topicEmoji": "🚧🚫",
+            "topicEmoji": "👐👄",
             "id": "VOC_IDIOMS_L64_Q1",
-            "hint": "DEFINITION: Behave in a way that is unacceptable or goes too far.",
+            "hint": "This describes severe, constant financial struggle — stronger than simply having just enough.",
             "options": [
-                "TOE THE LINE",
-                "DRAW THE LINE",
-                "CROSS THE LINE",
-                "FACE THE MUSIC"
+                "MAKE ENDS MEET",
+                "LIVE HAND TO MOUTH",
+                "TIGHTEN YOUR BELT",
+                "BACK OUT"
             ],
-            "explanation": "'CROSS THE LINE' means: Behave in a way that is unacceptable or goes too far. For example: \"His joke crossed the line and upset several coworkers.\"",
-            "correctAnswer": "CROSS THE LINE",
-            "origin": "Historically, the phrase \"CROSS THE LINE\" originated from everyday cultural practices, eventually becoming a popular figurative expression in modern English."
+            "explanation": "'Live hand to mouth' means to live in a state of severe poverty, with barely enough to survive day to day. \"After losing his job, he was living hand to mouth for months.\"",
+            "correctAnswer": "LIVE HAND TO MOUTH",
+            "origin": "A literal image of food going directly from hand to mouth with nothing stored for later — an image of having no reserves at all."
         },
         {
-            "word": "CUT TO THE CHASE",
-            "instruction": "Select the correct idiom for the given meaning.",
+            "word": "MAKE ENDS MEET",
+            "instruction": "Which idiom fits: \"They manage okay on two modest salaries, though there's rarely much left over after the bills are paid.\"",
             "interactionType": "choice",
-            "topicEmoji": "✂️🏃",
+            "topicEmoji": "💵🔗",
             "id": "VOC_IDIOMS_L64_Q2",
-            "hint": "DEFINITION: Get to the point quickly.",
+            "hint": "One idiom describes genuine, severe poverty with no reserves at all; the other simply means having just enough to cover expenses.",
             "options": [
-                "TURN OVER A NEW LEAF",
-                "CUT TO THE CHASE",
-                "PICK UP THE PIECES",
-                "CHASE YOUR TAIL"
+                "TIGHTEN YOUR BELT",
+                "LIVE HAND TO MOUTH",
+                "MAKE ENDS MEET",
+                "BACK OUT"
             ],
-            "explanation": "'CUT TO THE CHASE' means: Get to the point quickly. For example: \"Let's cut to the chase - are you taking the job or not?\"",
-            "correctAnswer": "CUT TO THE CHASE",
-            "origin": "Historically, the phrase \"CUT TO THE CHASE\" originated from everyday cultural practices, eventually becoming a popular figurative expression in modern English."
+            "explanation": "'Make ends meet' fits managing to cover expenses, even if tightly, while 'live hand to mouth' describes more severe, constant financial struggle. \"They make ends meet, but there's no room for extras.\"",
+            "correctAnswer": "MAKE ENDS MEET",
+            "origin": "See the earlier note on 'make ends meet.' This question distinguishes it from the more extreme idiom 'live hand to mouth.'"
         },
         {
-            "word": "DOWN THE DRAIN",
-            "instruction": "Select the correct idiom for the given meaning.",
+            "word": "LIVING BEYOND YOUR MEANS",
+            "instruction": "Choose the idiom that matches the meaning.",
             "interactionType": "choice",
-            "topicEmoji": "💸🚿",
+            "topicEmoji": "💳📉",
             "id": "VOC_IDIOMS_L64_Q3",
-            "hint": "DEFINITION: Wasted; lost completely.",
+            "hint": "DEFINITION: Spending more money than you actually earn, usually through debt.",
             "options": [
-                "TWIST SOMEONE'S ARM",
-                "ZERO IN ON",
-                "AGAINST THE CLOCK",
-                "DOWN THE DRAIN"
+                "LIVE HAND TO MOUTH",
+                "TIGHTEN YOUR BELT",
+                "MAKE ENDS MEET",
+                "LIVING BEYOND YOUR MEANS"
             ],
-            "explanation": "'DOWN THE DRAIN' means: Wasted; lost completely. For example: \"All that money went down the drain when the deal fell through.\"",
-            "correctAnswer": "DOWN THE DRAIN",
-            "origin": "Historically, the phrase \"DOWN THE DRAIN\" originated from everyday cultural practices, eventually becoming a popular figurative expression in modern English."
+            "explanation": "'Living beyond your means' means spending more than your income allows. \"Between the new car and the vacations, they were clearly living beyond their means.\"",
+            "correctAnswer": "LIVING BEYOND YOUR MEANS",
+            "origin": "A plain, transparent phrase using 'means' in its older sense of financial resources or income."
         },
         {
-            "word": "EASY COME EASY GO",
-            "instruction": "Select the correct idiom for the given meaning.",
+            "word": "SPILL THE BEANS",
+            "instruction": "Which idiom fits: \"At dinner, she couldn't help herself and told everyone about the surprise party, completely forgetting it was supposed to be a secret.\"",
             "interactionType": "choice",
-            "topicEmoji": "💸🌬️",
+            "topicEmoji": "🫘🤫",
             "id": "VOC_IDIOMS_L65_Q1",
-            "hint": "DEFINITION: Things gained quickly are often lost quickly too.",
+            "hint": "Both idioms in this pair mean revealing a secret, but one more often implies the reveal was a careless slip rather than deliberate gossip.",
             "options": [
-                "HAVE A WORD WITH SOMEONE",
-                "EASY DOES IT",
-                "COME RAIN OR SHINE",
-                "EASY COME EASY GO"
+                "BURY THE HATCHET",
+                "SPILL THE BEANS",
+                "CLEAR THE AIR",
+                "LET THE CAT OUT OF THE BAG"
             ],
-            "explanation": "'EASY COME EASY GO' means: Things gained quickly are often lost quickly too. For example: \"He spent his lottery winnings in a month - easy come, easy go.\"",
-            "correctAnswer": "EASY COME EASY GO",
-            "origin": "Historically, the phrase \"EASY COME EASY GO\" originated from everyday cultural practices, eventually becoming a popular figurative expression in modern English."
+            "explanation": "'Spill the beans' can describe either an intentional or accidental reveal of a secret, often through excited talking. \"She spilled the beans about the engagement before they announced it.\"",
+            "correctAnswer": "SPILL THE BEANS",
+            "origin": "See the earlier note on 'spill the beans.' Its origin is disputed — an old theory links it to Greek voting, but it isn't well supported by evidence."
         },
         {
-            "word": "GET YOUR ACT TOGETHER",
-            "instruction": "Select the correct idiom for the given meaning.",
+            "word": "LET THE CAT OUT OF THE BAG",
+            "instruction": "Which idiom more specifically fits a secret getting out purely by accident, almost as a slip of the tongue?",
             "interactionType": "choice",
-            "topicEmoji": "🎭🧷",
+            "topicEmoji": "🐱👜",
             "id": "VOC_IDIOMS_L65_Q2",
-            "hint": "DEFINITION: Organize yourself and behave responsibly.",
+            "hint": "Think about which idiom's traditional image (an animal escaping unexpectedly from a bag) suggests something happening unintentionally.",
             "options": [
-                "GET THE HANG OF IT",
-                "DRIVE A HARD BARGAIN",
-                "RISE TO THE OCCASION",
-                "GET YOUR ACT TOGETHER"
+                "LET THE CAT OUT OF THE BAG",
+                "CLEAR THE AIR",
+                "SPILL THE BEANS",
+                "BURY THE HATCHET"
             ],
-            "explanation": "'GET YOUR ACT TOGETHER' means: Organize yourself and behave responsibly. For example: \"If you want to pass this class, you need to get your act together.\"",
-            "correctAnswer": "GET YOUR ACT TOGETHER",
-            "origin": "Historically, the phrase \"GET YOUR ACT TOGETHER\" originated from everyday cultural practices, eventually becoming a popular figurative expression in modern English."
+            "explanation": "'Let the cat out of the bag' leans slightly more toward an accidental, unintentional reveal, while 'spill the beans' can go either way and often implies eager talking. \"Oops — I think I just let the cat out of the bag about the surprise.\"",
+            "correctAnswer": "LET THE CAT OUT OF THE BAG",
+            "origin": "See the earlier note on 'let the cat out of the bag,' possibly linked to old market scams involving substituted animals, though the precise history is debated."
         },
         {
-            "word": "GIVE THE GREEN LIGHT",
-            "instruction": "Select the correct idiom for the given meaning.",
+            "word": "BLOW SOMEONE'S COVER",
+            "instruction": "Choose the idiom that matches the meaning.",
             "interactionType": "choice",
-            "topicEmoji": "🚦✅",
+            "topicEmoji": "🕵️💥",
             "id": "VOC_IDIOMS_L65_Q3",
-            "hint": "DEFINITION: Give permission for something to proceed.",
+            "hint": "DEFINITION: Accidentally reveal someone's true identity or secret plan.",
             "options": [
-                "GIVE THE GREEN LIGHT",
-                "GREEN WITH ENVY",
-                "HAVE AN AXE TO GRIND",
-                "SKELETONS IN THE CLOSET"
+                "LET THE CAT OUT OF THE BAG",
+                "SPILL THE BEANS",
+                "CLEAR THE AIR",
+                "BLOW SOMEONE'S COVER"
             ],
-            "explanation": "'GIVE THE GREEN LIGHT' means: Give permission for something to proceed. For example: \"The board finally gave the green light for the new project.\"",
-            "correctAnswer": "GIVE THE GREEN LIGHT",
-            "origin": "Historically, the phrase \"GIVE THE GREEN LIGHT\" originated from everyday cultural practices, eventually becoming a popular figurative expression in modern English."
+            "explanation": "'Blow someone's cover' means to expose their disguised identity or hidden role. \"The photo on social media blew his cover as an anonymous reviewer.\"",
+            "correctAnswer": "BLOW SOMEONE'S COVER",
+            "origin": "From spy and espionage terminology, where a 'cover' is a false identity, and 'blowing' it means exposing the truth."
         },
         {
-            "word": "HEAD OVER HEELS",
-            "instruction": "Select the correct idiom for the given meaning.",
+            "word": "GIVE SOMEONE THE COLD SHOULDER",
+            "instruction": "Which idiom fits: \"Ever since the disagreement, she's been curt and distant with him, barely making eye contact.\"",
             "interactionType": "choice",
-            "topicEmoji": "🤸💘",
+            "topicEmoji": "🥶🙅",
             "id": "VOC_IDIOMS_L66_Q1",
-            "hint": "DEFINITION: Completely and deeply in love.",
-            "options": [
-                "BRING TO THE TABLE",
-                "BLOOD IS THICKER THAN WATER",
-                "HEAD OVER HEELS",
-                "SMOOTH SAILING"
-            ],
-            "explanation": "'HEAD OVER HEELS' means: Completely and deeply in love. For example: \"They fell head over heels for each other on their first date.\"",
-            "correctAnswer": "HEAD OVER HEELS",
-            "origin": "Historically, the phrase \"HEAD OVER HEELS\" originated from everyday cultural practices, eventually becoming a popular figurative expression in modern English."
-        },
-        {
-            "word": "KEEP YOUR EYE ON THE BALL",
-            "instruction": "Select the correct idiom for the given meaning.",
-            "interactionType": "choice",
-            "topicEmoji": "👁️⚽",
-            "id": "VOC_IDIOMS_L66_Q2",
-            "hint": "DEFINITION: Stay focused on the most important matter.",
-            "options": [
-                "KEEP YOUR EYE ON THE BALL",
-                "THE EARLY BIRD CATCHES THE WORM",
-                "KEEP IT UP",
-                "ON THE BALL"
-            ],
-            "explanation": "'KEEP YOUR EYE ON THE BALL' means: Stay focused on the most important matter. For example: \"Despite the distractions, she kept her eye on the ball and finished the project.\"",
-            "correctAnswer": "KEEP YOUR EYE ON THE BALL",
-            "origin": "Historically, the phrase \"KEEP YOUR EYE ON THE BALL\" originated from everyday cultural practices, eventually becoming a popular figurative expression in modern English."
-        },
-        {
-            "word": "KICK BACK",
-            "instruction": "Select the correct idiom for the given meaning.",
-            "interactionType": "choice",
-            "topicEmoji": "🦵🪑",
-            "id": "VOC_IDIOMS_L66_Q3",
-            "hint": "DEFINITION: Relax.",
-            "options": [
-                "STAB SOMEONE IN THE BACK",
-                "FREEZE SOMEONE OUT",
-                "BUY TIME",
-                "KICK BACK"
-            ],
-            "explanation": "'KICK BACK' means: Relax. For example: \"After a long week, all I want to do is kick back and watch a movie.\"",
-            "correctAnswer": "KICK BACK",
-            "origin": "Historically, the phrase \"KICK BACK\" originated from everyday cultural practices, eventually becoming a popular figurative expression in modern English."
-        },
-        {
-            "word": "KILL TWO BIRDS WITH ONE STONE",
-            "instruction": "Select the correct idiom for the given meaning.",
-            "interactionType": "choice",
-            "topicEmoji": "🐦🪨",
-            "id": "VOC_IDIOMS_L67_Q1",
-            "hint": "DEFINITION: Achieve two goals with a single action.",
-            "options": [
-                "DON'T COUNT YOUR CHICKENS BEFORE THEY HATCH",
-                "KILL TIME",
-                "KILL TWO BIRDS WITH ONE STONE",
-                "GIVE SOMEONE A RUN FOR THEIR MONEY"
-            ],
-            "explanation": "'KILL TWO BIRDS WITH ONE STONE' means: Achieve two goals with a single action. For example: \"I walked to the shop and picked up my mail - killing two birds with one stone.\"",
-            "correctAnswer": "KILL TWO BIRDS WITH ONE STONE",
-            "origin": "Historically, the phrase \"KILL TWO BIRDS WITH ONE STONE\" originated from everyday cultural practices, eventually becoming a popular figurative expression in modern English."
-        },
-        {
-            "word": "TAKE THE CAKE",
-            "instruction": "Select the correct idiom for the given meaning.",
-            "interactionType": "choice",
-            "topicEmoji": "🎂🏆",
-            "id": "VOC_IDIOMS_L67_Q2",
-            "hint": "DEFINITION: Be the most extreme or surprising example of something, especially something annoying.",
-            "options": [
-                "TAKE THINGS IN STRIDE",
-                "TAKE A RAIN CHECK",
-                "OVERSTEP YOUR BOUNDARIES",
-                "TAKE THE CAKE"
-            ],
-            "explanation": "'TAKE THE CAKE' means: Be the most extreme or surprising example of something, especially something annoying. For example: \"Of all the excuses for missing the flight, that one really takes the cake.\"",
-            "correctAnswer": "TAKE THE CAKE",
-            "origin": "Historically, the phrase \"TAKE THE CAKE\" originated from everyday cultural practices, eventually becoming a popular figurative expression in modern English."
-        },
-        {
-            "word": "BEAT THE CLOCK",
-            "instruction": "Select the correct idiom for the given meaning.",
-            "interactionType": "choice",
-            "topicEmoji": "⏰🏃",
-            "id": "VOC_IDIOMS_L67_Q3",
-            "hint": "DEFINITION: Finish something before a deadline or time limit.",
-            "options": [
-                "HAVE SECOND THOUGHTS",
-                "BEAT YOUR OWN DRUM",
-                "AT THE HELM",
-                "BEAT THE CLOCK"
-            ],
-            "explanation": "'BEAT THE CLOCK' means: Finish something before a deadline or time limit. For example: \"The team worked fast to beat the clock and finish the project on time.\"",
-            "correctAnswer": "BEAT THE CLOCK",
-            "origin": "Historically, the phrase \"BEAT THE CLOCK\" originated from everyday cultural practices, eventually becoming a popular figurative expression in modern English."
-        },
-        {
-            "word": "BY WORD OF MOUTH",
-            "instruction": "Select the correct idiom for the given meaning.",
-            "interactionType": "choice",
-            "topicEmoji": "🗣️👂",
-            "id": "VOC_IDIOMS_L68_Q1",
-            "hint": "DEFINITION: Through informal spoken communication between people.",
-            "options": [
-                "JUMP AT THE CHANCE",
-                "HAVE A GREEN THUMB",
-                "OUT OF THIN AIR",
-                "BY WORD OF MOUTH"
-            ],
-            "explanation": "'BY WORD OF MOUTH' means: Through informal spoken communication between people. For example: \"The small restaurant became popular by word of mouth.\"",
-            "correctAnswer": "BY WORD OF MOUTH",
-            "origin": "Historically, the phrase \"BY WORD OF MOUTH\" originated from everyday cultural practices, eventually becoming a popular figurative expression in modern English."
-        },
-        {
-            "word": "LET YOUR GUARD DOWN",
-            "instruction": "Select the correct idiom for the given meaning.",
-            "interactionType": "choice",
-            "topicEmoji": "🛡️⬇️",
-            "id": "VOC_IDIOMS_L68_Q2",
-            "hint": "DEFINITION: Stop being cautious or defensive.",
-            "options": [
-                "LET YOUR GUARD DOWN",
-                "DANCE TO SOMEONE'S TUNE",
-                "THINK ON YOUR FEET",
-                "SEE EYE TO EYE"
-            ],
-            "explanation": "'LET YOUR GUARD DOWN' means: Stop being cautious or defensive. For example: \"He let his guard down and shared his true feelings with a close friend.\"",
-            "correctAnswer": "LET YOUR GUARD DOWN",
-            "origin": "Historically, the phrase \"LET YOUR GUARD DOWN\" originated from everyday cultural practices, eventually becoming a popular figurative expression in modern English."
-        },
-        {
-            "word": "MAKE A MOUNTAIN OUT OF A MOLEHILL",
-            "instruction": "Select the correct idiom for the given meaning.",
-            "interactionType": "choice",
-            "topicEmoji": "⛰️🐀",
-            "id": "VOC_IDIOMS_L68_Q3",
-            "hint": "DEFINITION: Make a small problem seem much bigger than it is.",
-            "options": [
-                "MAKE A SPLASH",
-                "A FRIEND IN NEED IS A FRIEND INDEED",
-                "KEEP YOUR CARDS CLOSE TO YOUR CHEST",
-                "MAKE A MOUNTAIN OUT OF A MOLEHILL"
-            ],
-            "explanation": "'MAKE A MOUNTAIN OUT OF A MOLEHILL' means: Make a small problem seem much bigger than it is. For example: \"It's just a small typo - don't make a mountain out of a molehill.\"",
-            "correctAnswer": "MAKE A MOUNTAIN OUT OF A MOLEHILL",
-            "origin": "Historically, the phrase \"MAKE A MOUNTAIN OUT OF A MOLEHILL\" originated from everyday cultural practices, eventually becoming a popular figurative expression in modern English."
-        },
-        {
-            "word": "MISS THE BOAT",
-            "instruction": "Select the correct idiom for the given meaning.",
-            "interactionType": "choice",
-            "topicEmoji": "🚢❌",
-            "id": "VOC_IDIOMS_L69_Q1",
-            "hint": "DEFINITION: Miss an opportunity.",
+            "hint": "This idiom describes a milder, more passive form of ignoring someone compared to a more complete, deliberate refusal to interact.",
             "options": [
                 "CLEAR THE AIR",
-                "GET A HANDLE ON SOMETHING",
-                "PULL SOMEONE'S LEG",
-                "MISS THE BOAT"
+                "THE SILENT TREATMENT",
+                "GIVE SOMEONE THE COLD SHOULDER",
+                "BURY THE HATCHET"
             ],
-            "explanation": "'MISS THE BOAT' means: Miss an opportunity. For example: \"If you don't apply this week, you'll miss the boat on that scholarship.\"",
-            "correctAnswer": "MISS THE BOAT",
-            "origin": "Historically, the phrase \"MISS THE BOAT\" originated from everyday cultural practices, eventually becoming a popular figurative expression in modern English."
+            "explanation": "'Give someone the cold shoulder' means to act distant and unfriendly toward someone, without full silence. \"He's been giving me the cold shoulder since I forgot his birthday.\"",
+            "correctAnswer": "GIVE SOMEONE THE COLD SHOULDER",
+            "origin": "See the earlier note on 'the cold shoulder' — possibly from an old custom of serving unwelcome guests a cold cut of meat."
         },
         {
-            "word": "NOT SET IN STONE",
-            "instruction": "Select the correct idiom for the given meaning.",
+            "word": "THE SILENT TREATMENT",
+            "instruction": "Which idiom fits: \"After the fight, she refused to say a single word to him for three full days.\"",
             "interactionType": "choice",
-            "topicEmoji": "🪨❌",
-            "id": "VOC_IDIOMS_L69_Q2",
-            "hint": "DEFINITION: Not fixed or final; can still change.",
+            "topicEmoji": "🤐😐",
+            "id": "VOC_IDIOMS_L66_Q2",
+            "hint": "One idiom involves complete, total silence as a form of punishment; the other is milder — just acting distant and unfriendly, not full silence.",
             "options": [
-                "IT'S A SMALL WORLD",
-                "LET YOUR GUARD DOWN",
-                "BETTER SAFE THAN SORRY",
-                "NOT SET IN STONE"
+                "BURY THE HATCHET",
+                "GIVE SOMEONE THE COLD SHOULDER",
+                "CLEAR THE AIR",
+                "THE SILENT TREATMENT"
             ],
-            "explanation": "'NOT SET IN STONE' means: Not fixed or final; can still change. For example: \"These plans aren't set in stone, so feel free to suggest changes.\"",
-            "correctAnswer": "NOT SET IN STONE",
-            "origin": "Historically, the phrase \"NOT SET IN STONE\" originated from everyday cultural practices, eventually becoming a popular figurative expression in modern English."
+            "explanation": "'The silent treatment' fits complete, deliberate silence used to punish someone, which is more extreme than the milder distance of 'the cold shoulder.' \"He gave her the silent treatment for a week after the argument.\"",
+            "correctAnswer": "THE SILENT TREATMENT",
+            "origin": "A transparent, modern phrase describing total silence used as a deliberate social punishment."
         },
         {
-            "word": "OUT OF THIN AIR",
-            "instruction": "Select the correct idiom for the given meaning.",
+            "word": "FREEZE SOMEONE OUT",
+            "instruction": "Choose the idiom that matches the meaning.",
             "interactionType": "choice",
-            "topicEmoji": "💨❓",
-            "id": "VOC_IDIOMS_L69_Q3",
-            "hint": "DEFINITION: From nowhere; without an obvious source.",
+            "topicEmoji": "🧊🚫",
+            "id": "VOC_IDIOMS_L66_Q3",
+            "hint": "DEFINITION: Deliberately exclude someone from a group or conversation.",
             "options": [
-                "CUT CORNERS",
-                "DIG YOUR OWN GRAVE",
-                "OUT OF THIN AIR",
-                "KEEP YOUR FINGERS CROSSED"
+                "FREEZE SOMEONE OUT",
+                "THE SILENT TREATMENT",
+                "CLEAR THE AIR",
+                "GIVE SOMEONE THE COLD SHOULDER"
             ],
-            "explanation": "'OUT OF THIN AIR' means: From nowhere; without an obvious source. For example: \"He pulled that statistic out of thin air.\"",
-            "correctAnswer": "OUT OF THIN AIR",
-            "origin": "Historically, the phrase \"OUT OF THIN AIR\" originated from everyday cultural practices, eventually becoming a popular figurative expression in modern English."
+            "explanation": "'Freeze someone out' means to deliberately exclude them from a group or activity. \"After the disagreement, the rest of the team froze him out of planning decisions.\"",
+            "correctAnswer": "FREEZE SOMEONE OUT",
+            "origin": "Related to 'cold shoulder' and 'ice out' — all part of a temperature-based family of idioms for social exclusion."
         },
         {
-            "word": "PASS WITH FLYING COLORS",
-            "instruction": "Select the correct idiom for the given meaning.",
+            "word": "ON THE SAME PAGE",
+            "instruction": "Which idiom fits: \"Before launching, the whole team confirmed they all understood the plan and the timeline the same way.\"",
             "interactionType": "choice",
-            "topicEmoji": "✅🌈",
-            "id": "VOC_IDIOMS_L70_Q1",
-            "hint": "DEFINITION: Succeed easily and impressively.",
+            "topicEmoji": "📄🤝",
+            "id": "VOC_IDIOMS_L67_Q1",
+            "hint": "This idiom is about shared understanding of facts or plans, which is a slightly different focus from sharing the same opinion or values.",
             "options": [
-                "LEAD SOMEONE ON",
-                "THE GLOVES ARE OFF",
-                "PASS WITH FLYING COLORS",
-                "BACK TO SQUARE ONE"
+                "STAND YOUR GROUND",
+                "ON THE SAME PAGE",
+                "SEE EYE TO EYE",
+                "BURY THE HATCHET"
             ],
-            "explanation": "'PASS WITH FLYING COLORS' means: Succeed easily and impressively. For example: \"She passed her final exams with flying colors.\"",
-            "correctAnswer": "PASS WITH FLYING COLORS",
-            "origin": "Historically, the phrase \"PASS WITH FLYING COLORS\" originated from everyday cultural practices, eventually becoming a popular figurative expression in modern English."
+            "explanation": "'On the same page' means everyone shares the same understanding of a situation or plan. \"Let's confirm we're all on the same page before the client call.\"",
+            "correctAnswer": "ON THE SAME PAGE",
+            "origin": "See the earlier note on 'on the same page' — a straightforward metaphor from reading the same section of a document together."
         },
         {
-            "word": "POUR YOUR HEART OUT",
-            "instruction": "Select the correct idiom for the given meaning.",
+            "word": "SEE EYE TO EYE",
+            "instruction": "Which idiom fits: \"The two co-founders have completely different values about how fast to grow the business, and they rarely agree on strategy.\"",
             "interactionType": "choice",
-            "topicEmoji": "❤️🌊",
-            "id": "VOC_IDIOMS_L70_Q2",
-            "hint": "DEFINITION: Express your deepest feelings.",
+            "topicEmoji": "👀🤝",
+            "id": "VOC_IDIOMS_L67_Q2",
+            "hint": "One idiom is about sharing opinions or values, which is the focus here since it's about ongoing disagreement rather than a shared factual plan.",
             "options": [
-                "POUR YOUR HEART OUT",
-                "KNOW THE ROPES",
+                "STAND YOUR GROUND",
+                "ON THE SAME PAGE",
+                "SEE EYE TO EYE",
+                "BURY THE HATCHET"
+            ],
+            "explanation": "The sentence describes an ongoing disagreement in opinions and values, which fits 'see eye to eye' (usually used in the negative here) better than 'on the same page,' which is more about shared factual understanding. \"They just don't see eye to eye on company culture.\"",
+            "correctAnswer": "SEE EYE TO EYE",
+            "origin": "See the earlier note on 'see eye to eye.' This question distinguishes shared opinion from shared factual understanding."
+        },
+        {
+            "word": "MEET IN THE MIDDLE",
+            "instruction": "Choose the idiom that matches the meaning.",
+            "interactionType": "choice",
+            "topicEmoji": "🤝➗",
+            "id": "VOC_IDIOMS_L67_Q3",
+            "hint": "DEFINITION: Reach a compromise where both sides give up part of what they originally wanted.",
+            "options": [
+                "SEE EYE TO EYE",
+                "MEET IN THE MIDDLE",
+                "ON THE SAME PAGE",
+                "STAND YOUR GROUND"
+            ],
+            "explanation": "'Meet in the middle' means to compromise, with each side moving partway toward the other's position. \"They couldn't agree on the price, so they met in the middle.\"",
+            "correctAnswer": "MEET IN THE MIDDLE",
+            "origin": "A literal spatial image of two people walking toward each other and meeting halfway."
+        },
+        {
+            "word": "BREAK THE ICE",
+            "instruction": "Which idiom fits: \"At the start of the workshop, the facilitator had everyone share an embarrassing childhood story to loosen up the room.\"",
+            "interactionType": "choice",
+            "topicEmoji": "🧊😊",
+            "id": "VOC_IDIOMS_L68_Q1",
+            "hint": "This is specifically about easing initial, first-meeting awkwardness — not about resolving an existing conflict.",
+            "options": [
+                "BURY THE HATCHET",
                 "LET BYGONES BE BYGONES",
-                "WRAP YOUR HEAD AROUND"
+                "BREAK THE ICE",
+                "CLEAR THE AIR"
             ],
-            "explanation": "'POUR YOUR HEART OUT' means: Express your deepest feelings. For example: \"She poured her heart out to her best friend about the breakup.\"",
-            "correctAnswer": "POUR YOUR HEART OUT",
-            "origin": "Historically, the phrase \"POUR YOUR HEART OUT\" originated from everyday cultural practices, eventually becoming a popular figurative expression in modern English."
+            "explanation": "'Break the ice' means to ease tension in an early, unfamiliar social situation. \"The team-building game really broke the ice on the first day.\"",
+            "correctAnswer": "BREAK THE ICE",
+            "origin": "See the earlier note on 'break the ice' — from ships called icebreakers that cut a path through frozen water."
         },
         {
-            "word": "PULL YOUR WEIGHT",
-            "instruction": "Select the correct idiom for the given meaning.",
+            "word": "CLEAR THE AIR",
+            "instruction": "Which idiom fits: \"The roommates finally sat down and talked honestly about the tension that had been building for weeks over chores.\"",
             "interactionType": "choice",
-            "topicEmoji": "🏋️➗",
-            "id": "VOC_IDIOMS_L70_Q3",
-            "hint": "DEFINITION: Do your fair share of the work.",
+            "topicEmoji": "💨🗯️",
+            "id": "VOC_IDIOMS_L68_Q2",
+            "hint": "One idiom is about easing first-meeting awkwardness between strangers; the other is about resolving existing, built-up tension between people who already know each other.",
             "options": [
-                "PULL OUT ALL THE STOPS",
-                "PULL YOUR WEIGHT",
-                "OUT OF THE BLUE",
-                "ON THE HOUSE"
+                "BURY THE HATCHET",
+                "BREAK THE ICE",
+                "LET BYGONES BE BYGONES",
+                "CLEAR THE AIR"
             ],
-            "explanation": "'PULL YOUR WEIGHT' means: Do your fair share of the work. For example: \"Everyone on the team needs to pull their weight to finish on time.\"",
-            "correctAnswer": "PULL YOUR WEIGHT",
-            "origin": "Historically, the phrase \"PULL YOUR WEIGHT\" originated from everyday cultural practices, eventually becoming a popular figurative expression in modern English."
+            "explanation": "'Clear the air' fits resolving existing tension through honest conversation, while 'break the ice' fits easing awkwardness when people are just meeting. \"We finally cleared the air about the chore schedule.\"",
+            "correctAnswer": "CLEAR THE AIR",
+            "origin": "See the earlier note on 'clear the air.' This question distinguishes it from the similar-sounding first-meeting idiom 'break the ice.'"
+        },
+        {
+            "word": "WARM UP TO SOMEONE",
+            "instruction": "Choose the idiom that matches the meaning.",
+            "interactionType": "choice",
+            "topicEmoji": "🌡️🙂",
+            "id": "VOC_IDIOMS_L68_Q3",
+            "hint": "DEFINITION: Gradually start to like or feel comfortable with someone, over time.",
+            "options": [
+                "WARM UP TO SOMEONE",
+                "CLEAR THE AIR",
+                "BURY THE HATCHET",
+                "BREAK THE ICE"
+            ],
+            "explanation": "'Warm up to someone' means to gradually develop positive feelings toward them. \"The dog was shy at first but slowly warmed up to the new neighbor.\"",
+            "correctAnswer": "WARM UP TO SOMEONE",
+            "origin": "A literal temperature metaphor, part of the same family as 'break the ice' and 'the cold shoulder,' using warmth for friendliness."
+        },
+        {
+            "word": "JUMP TO CONCLUSIONS",
+            "instruction": "Which idiom fits: \"She saw two coworkers whispering and immediately assumed they were talking about her, without any real evidence.\"",
+            "interactionType": "choice",
+            "topicEmoji": "🏃🔚",
+            "id": "VOC_IDIOMS_L69_Q1",
+            "hint": "This is about forming a judgment too quickly, without considering other explanations.",
+            "options": [
+                "BARK UP THE WRONG TREE",
+                "JUMP TO CONCLUSIONS",
+                "GO OUT ON A LIMB",
+                "READ BETWEEN THE LINES"
+            ],
+            "explanation": "'Jump to conclusions' means to form a judgment before having enough information. \"Don't jump to conclusions — maybe they were planning your birthday.\"",
+            "correctAnswer": "JUMP TO CONCLUSIONS",
+            "origin": "See the earlier note on 'jump to conclusions' — a visual metaphor for skipping the reasoning process entirely."
+        },
+        {
+            "word": "BARK UP THE WRONG TREE",
+            "instruction": "Which idiom fits: \"He was convinced the new intern had leaked the report, but it turned out to be someone from a completely different department.\"",
+            "interactionType": "choice",
+            "topicEmoji": "🐕🌳",
+            "id": "VOC_IDIOMS_L69_Q2",
+            "hint": "One idiom is specifically about accusing or suspecting the wrong person or cause; the other is more general, about deciding too fast without enough information.",
+            "options": [
+                "READ BETWEEN THE LINES",
+                "JUMP TO CONCLUSIONS",
+                "BARK UP THE WRONG TREE",
+                "GO OUT ON A LIMB"
+            ],
+            "explanation": "'Bark up the wrong tree' fits a specific mistaken accusation about who or what caused something, while 'jump to conclusions' is the broader idiom for deciding too quickly in general. \"If you think I broke it, you're barking up the wrong tree.\"",
+            "correctAnswer": "BARK UP THE WRONG TREE",
+            "origin": "See the earlier note on 'bark up the wrong tree' — from hunting dogs barking at the wrong tree after losing track of their prey."
+        },
+        {
+            "word": "BE QUICK TO JUDGE",
+            "instruction": "Choose the idiom that matches the meaning.",
+            "interactionType": "choice",
+            "topicEmoji": "⚖️⚡",
+            "id": "VOC_IDIOMS_L69_Q3",
+            "hint": "DEFINITION: Form negative opinions of people or situations too hastily.",
+            "options": [
+                "JUMP TO CONCLUSIONS",
+                "READ BETWEEN THE LINES",
+                "BARK UP THE WRONG TREE",
+                "BE QUICK TO JUDGE"
+            ],
+            "explanation": "'Be quick to judge' means to criticize or form opinions about someone too fast, often unfairly. \"Try not to be so quick to judge — you don't know her whole situation.\"",
+            "correctAnswer": "BE QUICK TO JUDGE",
+            "origin": "A plain, transparent phrase describing hasty moral evaluation, distinct from the more specific 'jump to conclusions,' which covers any hasty judgment, not just critical ones."
+        },
+        {
+            "word": "TAKE SOMETHING PERSONALLY",
+            "instruction": "Which idiom fits: \"The feedback on her report was about the formatting, but she reacted as if it were a criticism of her intelligence.\"",
+            "interactionType": "choice",
+            "topicEmoji": "💔🎯",
+            "id": "VOC_IDIOMS_L70_Q1",
+            "hint": "This is about misreading a neutral or general comment as a direct attack on yourself.",
+            "options": [
+                "TAKE SOMETHING PERSONALLY",
+                "RUB SOMEONE THE WRONG WAY",
+                "READ BETWEEN THE LINES",
+                "GET UNDER SOMEONE'S SKIN"
+            ],
+            "explanation": "'Take something personally' means to interpret a general or neutral comment as a direct insult. \"He didn't mean it as an attack — try not to take it personally.\"",
+            "correctAnswer": "TAKE SOMETHING PERSONALLY",
+            "origin": "A transparent phrase treating criticism as either general ('impersonal') or specifically aimed at you ('personal')."
+        },
+        {
+            "word": "RUB SOMEONE THE WRONG WAY",
+            "instruction": "Which idiom fits: \"Something about his overly formal tone just irritates her, even though she can't explain exactly why.\"",
+            "interactionType": "choice",
+            "topicEmoji": "🐈💢",
+            "id": "VOC_IDIOMS_L70_Q2",
+            "hint": "One idiom is about someone unintentionally causing irritation in another person; the other is about how a person reacts to something said to them.",
+            "options": [
+                "GET UNDER SOMEONE'S SKIN",
+                "TAKE SOMETHING PERSONALLY",
+                "RUB SOMEONE THE WRONG WAY",
+                "READ BETWEEN THE LINES"
+            ],
+            "explanation": "'Rub someone the wrong way' fits an unintentional source of irritation, while 'take something personally' is about misreading a comment as a personal attack. \"His tone rubs a lot of clients the wrong way.\"",
+            "correctAnswer": "RUB SOMEONE THE WRONG WAY",
+            "origin": "See the earlier note on 'rub someone the wrong way' — from stroking fur against its natural direction."
+        },
+        {
+            "word": "HAVE A CHIP ON YOUR SHOULDER",
+            "instruction": "Choose the idiom that matches the meaning.",
+            "interactionType": "choice",
+            "topicEmoji": "🪵😤",
+            "id": "VOC_IDIOMS_L70_Q3",
+            "hint": "DEFINITION: Carry ongoing resentment or defensiveness, often from a past grievance, that colors how you react to things.",
+            "options": [
+                "HAVE A CHIP ON YOUR SHOULDER",
+                "GET UNDER SOMEONE'S SKIN",
+                "TAKE SOMETHING PERSONALLY",
+                "RUB SOMEONE THE WRONG WAY"
+            ],
+            "explanation": "'Have a chip on your shoulder' means to carry constant resentment or a defensive attitude, often stemming from a past slight. \"Ever since he was passed over for the promotion, he's had a chip on his shoulder.\"",
+            "correctAnswer": "HAVE A CHIP ON YOUR SHOULDER",
+            "origin": "Believed to come from a 19th-century American custom where a person would balance a wood chip on their shoulder, daring anyone to knock it off and start a fight."
         }
     ],
     "gameType": "idioms",

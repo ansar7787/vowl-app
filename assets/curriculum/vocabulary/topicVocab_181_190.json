@@ -6,721 +6,781 @@
         {
             "id": "VOC_TOPICVOCAB_L181_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These are energy terms. Sort into Nonrenewable or Renewable.",
             "topicBuckets": [
-                "Renewable",
-                "Nonrenewable"
+                "Nonrenewable",
+                "Renewable"
             ],
-            "hint": "Here's a tip: A renewable resource can be replaced naturally over time, while a nonrenewable resource is used up and cannot be replaced!",
-            "explanation": "Think of 'Renewable' as resources that naturally replenish over time (replenishable, sustainable-source), and 'Nonrenewable' as resources that exist in a fixed, exhaustible supply (finite-resource, depletable)!",
+            "hint": "Think about which sources run out, and which keep replenishing.",
+            "explanation": "'Solar', 'wind power', and 'hydroelectric' all draw on sources that replenish naturally. 'Coal' and 'crude oil' both come from finite deposits that cannot be replaced once used.",
             "options": [
-                "Replenishable",
-                "Finite-resource",
-                "Sustainable-source",
-                "Depletable",
-                "Self-restoring"
+                "Solar",
+                "Coal",
+                "Wind power",
+                "Crude oil",
+                "Hydroelectric"
             ],
-            "correctAnswer": "Renewable:Replenishable, Nonrenewable:Finite-resource, Renewable:Sustainable-source, Nonrenewable:Depletable, Renewable:Self-restoring",
+            "correctAnswer": "Renewable:Solar, Nonrenewable:Coal, Renewable:Wind power, Nonrenewable:Crude oil, Renewable:Hydroelectric",
             "relatedWords": [
-                "aspect of Renewable:Replenishable, Nonrenewable:Finite-resource, Renewable:Sustainable-source, Nonrenewable:Depletable, Renewable:Self-restoring",
-                "concept of Renewable:Replenishable, Nonrenewable:Finite-resource, Renewable:Sustainable-source, Nonrenewable:Depletable, Renewable:Self-restoring",
-                "related to Renewable:Replenishable, Nonrenewable:Finite-resource, Renewable:Sustainable-source, Nonrenewable:Depletable, Renewable:Self-restoring"
+                "Solar: energy captured from sunlight",
+                "Coal: a fossil fuel formed over millions of years",
+                "Wind power: energy generated from moving air",
+                "Crude oil: unrefined petroleum, a finite fossil fuel",
+                "Hydroelectric: electricity generated from flowing water"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L181_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "One nonrenewable word names fuels formed from ancient organic matter. Sort into Renewable or Nonrenewable.",
             "topicBuckets": [
                 "Renewable",
                 "Nonrenewable"
             ],
-            "hint": "Here's a tip: A renewable resource can be replaced naturally over time, while a nonrenewable resource is used up and cannot be replaced!",
-            "explanation": "Think of 'Renewable' as resources that naturally replenish over time (replenishable, sustainable-source), and 'Nonrenewable' as resources that exist in a fixed, exhaustible supply (finite-resource, depletable)!",
+            "hint": "The defining question is whether the source replenishes on a human timescale.",
+            "explanation": "'Geothermal', 'biomass', and 'tidal' all draw on continuously available sources. 'Fossil fuels' names those formed from ancient organic matter over millions of years, and 'finite reserves' names the stocks that deplete as they're used.",
             "options": [
-                "Naturally-replaced",
-                "Limited-supply",
-                "Endlessly-available",
-                "Non-replenishing",
-                "Solar-based"
+                "Geothermal",
+                "Fossil fuels",
+                "Biomass",
+                "Finite reserves",
+                "Tidal"
             ],
-            "correctAnswer": "Renewable:Naturally-replaced, Nonrenewable:Limited-supply, Renewable:Endlessly-available, Nonrenewable:Non-replenishing, Renewable:Solar-based",
+            "correctAnswer": "Renewable:Geothermal, Nonrenewable:Fossil fuels, Renewable:Biomass, Nonrenewable:Finite reserves, Renewable:Tidal",
             "relatedWords": [
-                "aspect of Renewable:Naturally-replaced, Nonrenewable:Limited-supply, Renewable:Endlessly-available, Nonrenewable:Non-replenishing, Renewable:Solar-based",
-                "concept of Renewable:Naturally-replaced, Nonrenewable:Limited-supply, Renewable:Endlessly-available, Nonrenewable:Non-replenishing, Renewable:Solar-based",
-                "related to Renewable:Naturally-replaced, Nonrenewable:Limited-supply, Renewable:Endlessly-available, Nonrenewable:Non-replenishing, Renewable:Solar-based"
+                "Geothermal: energy drawn from heat beneath the earth",
+                "Fossil fuels: fuels formed from ancient organic matter",
+                "Biomass: fuel produced from living or recent organic material",
+                "Finite reserves: limited stocks that deplete with use",
+                "Tidal: energy generated from the movement of tides"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L181_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Picture an energy policy briefing. Sort into Nonrenewable or Renewable.",
             "topicBuckets": [
-                "Renewable",
-                "Nonrenewable"
+                "Nonrenewable",
+                "Renewable"
             ],
-            "hint": "Here's a tip: A renewable resource can be replaced naturally over time, while a nonrenewable resource is used up and cannot be replaced!",
-            "explanation": "Think of 'Renewable' as resources that naturally replenish over time (replenishable, sustainable-source), and 'Nonrenewable' as resources that exist in a fixed, exhaustible supply (finite-resource, depletable)!",
+            "hint": "Two of these describe sources a country eventually has to replace.",
+            "explanation": "'Carbon-neutral', 'endlessly replenished', and 'clean energy transition' all describe the shift toward sustainable sources. 'Depleting supply' and 'extraction site' both belong to finite resources, which is why policy treats replacing them as a matter of time rather than choice.",
             "options": [
-                "Wind-powered",
-                "Fossil-based",
-                "Ever-flowing-source",
-                "Extractable-and-limited",
-                "Regenerative"
+                "Carbon-neutral",
+                "Depleting supply",
+                "Extraction site",
+                "Clean energy transition",
+                "Endlessly replenished"
             ],
-            "correctAnswer": "Renewable:Wind-powered, Nonrenewable:Fossil-based, Renewable:Ever-flowing-source, Nonrenewable:Extractable-and-limited, Renewable:Regenerative",
+            "correctAnswer": "Renewable:Carbon-neutral, Nonrenewable:Depleting supply, Nonrenewable:Extraction site, Renewable:Clean energy transition, Renewable:Endlessly replenished",
             "relatedWords": [
-                "aspect of Renewable:Wind-powered, Nonrenewable:Fossil-based, Renewable:Ever-flowing-source, Nonrenewable:Extractable-and-limited, Renewable:Regenerative",
-                "concept of Renewable:Wind-powered, Nonrenewable:Fossil-based, Renewable:Ever-flowing-source, Nonrenewable:Extractable-and-limited, Renewable:Regenerative",
-                "related to Renewable:Wind-powered, Nonrenewable:Fossil-based, Renewable:Ever-flowing-source, Nonrenewable:Extractable-and-limited, Renewable:Regenerative"
+                "Carbon-neutral: releasing no net carbon into the atmosphere",
+                "Depleting supply: a stock being steadily used up",
+                "Extraction site: a place where fuel is mined or drilled",
+                "Clean energy transition: the shift toward low-emission energy sources",
+                "Endlessly replenished: naturally restored as fast as it is used"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L182_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These describe where people draw their energy from. Sort into Extrovert or Introvert.",
             "topicBuckets": [
-                "Introvert",
-                "Extrovert"
+                "Extrovert",
+                "Introvert"
             ],
-            "hint": "Here's a tip: An introvert gains energy from quiet, alone time, while an extrovert gains energy from being around other people!",
-            "explanation": "Think of 'Introvert' as someone energized by solitude and quiet (inward-focused, reserved-by-nature), and 'Extrovert' as someone energized by socializing (outward-focused, socially-driven)!",
+            "hint": "The question isn't shyness \u2014 it's what leaves someone feeling recharged.",
+            "explanation": "'Recharges alone', 'prefers small groups', and 'inward-focused' all describe drawing energy from solitude. 'Energised by crowds' and 'thinks out loud' both describe drawing energy from interaction \u2014 note this is about energy, not confidence.",
             "options": [
-                "Inward-focused",
-                "Outward-focused",
-                "Reserved-by-nature",
-                "Socially-driven",
-                "Solitude-seeker"
+                "Thinks out loud",
+                "Prefers small groups",
+                "Energised by crowds",
+                "Recharges alone",
+                "Inward-focused"
             ],
-            "correctAnswer": "Introvert:Inward-focused, Extrovert:Outward-focused, Introvert:Reserved-by-nature, Extrovert:Socially-driven, Introvert:Solitude-seeker",
+            "correctAnswer": "Extrovert:Thinks out loud, Introvert:Prefers small groups, Extrovert:Energised by crowds, Introvert:Recharges alone, Introvert:Inward-focused",
             "relatedWords": [
-                "aspect of Introvert:Inward-focused, Extrovert:Outward-focused, Introvert:Reserved-by-nature, Extrovert:Socially-driven, Introvert:Solitude-seeker",
-                "concept of Introvert:Inward-focused, Extrovert:Outward-focused, Introvert:Reserved-by-nature, Extrovert:Socially-driven, Introvert:Solitude-seeker",
-                "related to Introvert:Inward-focused, Extrovert:Outward-focused, Introvert:Reserved-by-nature, Extrovert:Socially-driven, Introvert:Solitude-seeker"
+                "Thinks out loud: processes ideas by speaking them",
+                "Prefers small groups: more comfortable in small gatherings",
+                "Energised by crowds: gains energy from being among people",
+                "Recharges alone: restores energy through solitude",
+                "Inward-focused: oriented toward inner thought"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L182_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Neither of these means shy or loud. Sort into Introvert or Extrovert.",
             "topicBuckets": [
                 "Introvert",
                 "Extrovert"
             ],
-            "hint": "Here's a tip: An introvert gains energy from quiet, alone time, while an extrovert gains energy from being around other people!",
-            "explanation": "Think of 'Introvert' as someone energized by solitude and quiet (inward-focused, reserved-by-nature), and 'Extrovert' as someone energized by socializing (outward-focused, socially-driven)!",
+            "hint": "Watch out for the common mix-up with shyness and confidence.",
+            "explanation": "'Reflective', 'processes internally', and 'values deep conversation' all describe introversion, which is not the same as shyness \u2014 an introvert can be confident. 'Gregarious' and 'socially expansive' both describe extroversion, which isn't the same as being loud.",
             "options": [
-                "Quiet-thinker",
-                "People-energized",
-                "Homebody",
-                "Life-of-the-party",
-                "Low-key-personality"
+                "Values deep conversation",
+                "Reflective",
+                "Processes internally",
+                "Socially expansive",
+                "Gregarious"
             ],
-            "correctAnswer": "Introvert:Quiet-thinker, Extrovert:People-energized, Introvert:Homebody, Extrovert:Life-of-the-party, Introvert:Low-key-personality",
+            "correctAnswer": "Introvert:Values deep conversation, Introvert:Reflective, Introvert:Processes internally, Extrovert:Socially expansive, Extrovert:Gregarious",
             "relatedWords": [
-                "aspect of Introvert:Quiet-thinker, Extrovert:People-energized, Introvert:Homebody, Extrovert:Life-of-the-party, Introvert:Low-key-personality",
-                "concept of Introvert:Quiet-thinker, Extrovert:People-energized, Introvert:Homebody, Extrovert:Life-of-the-party, Introvert:Low-key-personality",
-                "related to Introvert:Quiet-thinker, Extrovert:People-energized, Introvert:Homebody, Extrovert:Life-of-the-party, Introvert:Low-key-personality"
+                "Values deep conversation: preferring meaningful one-to-one talk",
+                "Reflective: given to careful inner thought",
+                "Processes internally: works through thoughts privately",
+                "Socially expansive: outgoing across wide social settings",
+                "Gregarious: enjoying the company of others"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L182_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Picture a team discussing how members work best. Sort into Introvert or Extrovert.",
             "topicBuckets": [
                 "Introvert",
                 "Extrovert"
             ],
-            "hint": "Here's a tip: An introvert gains energy from quiet, alone time, while an extrovert gains energy from being around other people!",
-            "explanation": "Think of 'Introvert' as someone energized by solitude and quiet (inward-focused, reserved-by-nature), and 'Extrovert' as someone energized by socializing (outward-focused, socially-driven)!",
+            "hint": "Two of these describe working styles suited to collaboration in the moment.",
+            "explanation": "'Needs quiet to focus' and 'prepares before speaking' both describe working styles suited to solitary concentration. 'Brainstorms aloud' and 'draws energy from the room' describe styles suited to live collaboration, and 'first to volunteer' reflects comfort with immediate participation.",
             "options": [
-                "Prefers-small-groups",
-                "Thrives-in-crowds",
-                "Energized-by-alone-time",
-                "Outgoing-by-nature",
-                "Internally-focused"
+                "Draws energy from the room",
+                "Needs quiet to focus",
+                "Prepares before speaking",
+                "Brainstorms aloud",
+                "First to volunteer"
             ],
-            "correctAnswer": "Introvert:Prefers-small-groups, Extrovert:Thrives-in-crowds, Introvert:Energized-by-alone-time, Extrovert:Outgoing-by-nature, Introvert:Internally-focused",
+            "correctAnswer": "Extrovert:Draws energy from the room, Introvert:Needs quiet to focus, Introvert:Prepares before speaking, Extrovert:Brainstorms aloud, Extrovert:First to volunteer",
             "relatedWords": [
-                "aspect of Introvert:Prefers-small-groups, Extrovert:Thrives-in-crowds, Introvert:Energized-by-alone-time, Extrovert:Outgoing-by-nature, Introvert:Internally-focused",
-                "concept of Introvert:Prefers-small-groups, Extrovert:Thrives-in-crowds, Introvert:Energized-by-alone-time, Extrovert:Outgoing-by-nature, Introvert:Internally-focused",
-                "related to Introvert:Prefers-small-groups, Extrovert:Thrives-in-crowds, Introvert:Energized-by-alone-time, Extrovert:Outgoing-by-nature, Introvert:Internally-focused"
+                "Draws energy from the room: is energised by group atmosphere",
+                "Needs quiet to focus: works best in a calm environment",
+                "Prepares before speaking: thinks through points before sharing them",
+                "Brainstorms aloud: generates ideas through open discussion",
+                "First to volunteer: readily steps forward in a group"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L183_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These describe ways of living. Sort into Nomadic or Settled.",
             "topicBuckets": [
                 "Nomadic",
                 "Settled"
             ],
-            "hint": "Here's a tip: A nomadic lifestyle means moving from place to place with no fixed home, while a settled lifestyle means living permanently in one place!",
-            "explanation": "Think of 'Nomadic' as a lifestyle of moving from place to place (wandering, roaming-lifestyle), and 'Settled' as a lifestyle of staying permanently in one place (rooted, fixed-residence)!",
+            "hint": "Think about moving with the seasons, versus staying in one place.",
+            "explanation": "'Migratory', 'moves with the herd', and 'temporary camp' all describe regular movement. 'Permanent address' and 'put down roots' both describe staying in one place.",
             "options": [
-                "Wandering",
-                "Rooted",
-                "Roaming-lifestyle",
-                "Fixed-residence",
-                "Migratory"
+                "Migratory",
+                "Permanent address",
+                "Moves with the herd",
+                "Put down roots",
+                "Temporary camp"
             ],
-            "correctAnswer": "Nomadic:Wandering, Settled:Rooted, Nomadic:Roaming-lifestyle, Settled:Fixed-residence, Nomadic:Migratory",
+            "correctAnswer": "Nomadic:Migratory, Settled:Permanent address, Nomadic:Moves with the herd, Settled:Put down roots, Nomadic:Temporary camp",
             "relatedWords": [
-                "aspect of Nomadic:Wandering, Settled:Rooted, Nomadic:Roaming-lifestyle, Settled:Fixed-residence, Nomadic:Migratory",
-                "concept of Nomadic:Wandering, Settled:Rooted, Nomadic:Roaming-lifestyle, Settled:Fixed-residence, Nomadic:Migratory",
-                "related to Nomadic:Wandering, Settled:Rooted, Nomadic:Roaming-lifestyle, Settled:Fixed-residence, Nomadic:Migratory"
+                "Migratory: regularly moving from place to place",
+                "Permanent address: a fixed place of residence",
+                "Moves with the herd: travelling alongside grazing animals",
+                "Put down roots: established a lasting home somewhere",
+                "Temporary camp: a short-term dwelling place"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L183_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "One settled word describes farming the same land year after year. Sort into Nomadic or Settled.",
             "topicBuckets": [
                 "Nomadic",
                 "Settled"
             ],
-            "hint": "Here's a tip: A nomadic lifestyle means moving from place to place with no fixed home, while a settled lifestyle means living permanently in one place!",
-            "explanation": "Think of 'Nomadic' as a lifestyle of moving from place to place (wandering, roaming-lifestyle), and 'Settled' as a lifestyle of staying permanently in one place (rooted, fixed-residence)!",
+            "hint": "Settlement and agriculture developed together.",
+            "explanation": "'Itinerant', 'transient', and 'no fixed abode' all describe life without a permanent base, with 'no fixed abode' being the formal administrative phrase. 'Sedentary agriculture' describes farming the same land year after year, and 'homestead' names an established family property.",
             "options": [
+                "Transient",
+                "No fixed abode",
                 "Itinerant",
-                "Permanently-based",
-                "Ever-moving",
-                "Long-term-resident",
-                "Tent-dwelling"
+                "Homestead",
+                "Sedentary agriculture"
             ],
-            "correctAnswer": "Nomadic:Itinerant, Settled:Permanently-based, Nomadic:Ever-moving, Settled:Long-term-resident, Nomadic:Tent-dwelling",
+            "correctAnswer": "Nomadic:Transient, Nomadic:No fixed abode, Nomadic:Itinerant, Settled:Homestead, Settled:Sedentary agriculture",
             "relatedWords": [
-                "aspect of Nomadic:Itinerant, Settled:Permanently-based, Nomadic:Ever-moving, Settled:Long-term-resident, Nomadic:Tent-dwelling",
-                "concept of Nomadic:Itinerant, Settled:Permanently-based, Nomadic:Ever-moving, Settled:Long-term-resident, Nomadic:Tent-dwelling",
-                "related to Nomadic:Itinerant, Settled:Permanently-based, Nomadic:Ever-moving, Settled:Long-term-resident, Nomadic:Tent-dwelling"
+                "Transient: staying only briefly in one place",
+                "No fixed abode: without a permanent address",
+                "Itinerant: travelling from place to place for work",
+                "Homestead: an established family home and land",
+                "Sedentary agriculture: farming the same land continuously"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L183_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These describe modern lifestyle choices. Sort into Nomadic or Settled.",
             "topicBuckets": [
                 "Nomadic",
                 "Settled"
             ],
-            "hint": "Here's a tip: A nomadic lifestyle means moving from place to place with no fixed home, while a settled lifestyle means living permanently in one place!",
-            "explanation": "Think of 'Nomadic' as a lifestyle of moving from place to place (wandering, roaming-lifestyle), and 'Settled' as a lifestyle of staying permanently in one place (rooted, fixed-residence)!",
+            "hint": "Two of these describe building a life around one location.",
+            "explanation": "'Digital nomad' and 'lives out of a suitcase' both describe modern mobility, work now making constant movement possible. 'Mortgage', 'community ties', and 'stayed put' all describe building a life anchored to one location.",
             "options": [
-                "No-fixed-address",
-                "Established-homestead",
-                "Following-the-herds",
-                "Anchored-to-one-place",
-                "Transient-lifestyle"
+                "Digital nomad",
+                "Mortgage",
+                "Lives out of a suitcase",
+                "Community ties",
+                "Stayed put"
             ],
-            "correctAnswer": "Nomadic:No-fixed-address, Settled:Established-homestead, Nomadic:Following-the-herds, Settled:Anchored-to-one-place, Nomadic:Transient-lifestyle",
+            "correctAnswer": "Nomadic:Digital nomad, Settled:Mortgage, Nomadic:Lives out of a suitcase, Settled:Community ties, Settled:Stayed put",
             "relatedWords": [
-                "aspect of Nomadic:No-fixed-address, Settled:Established-homestead, Nomadic:Following-the-herds, Settled:Anchored-to-one-place, Nomadic:Transient-lifestyle",
-                "concept of Nomadic:No-fixed-address, Settled:Established-homestead, Nomadic:Following-the-herds, Settled:Anchored-to-one-place, Nomadic:Transient-lifestyle",
-                "related to Nomadic:No-fixed-address, Settled:Established-homestead, Nomadic:Following-the-herds, Settled:Anchored-to-one-place, Nomadic:Transient-lifestyle"
+                "Digital nomad: someone working remotely while travelling",
+                "Mortgage: a long-term loan tying someone to a property",
+                "Lives out of a suitcase: travelling constantly without a base",
+                "Community ties: lasting connections to a local area",
+                "Stayed put: remained in the same place"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L184_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These describe how people respond to a claim. Sort into Believer or Skeptic.",
             "topicBuckets": [
-                "Skeptic",
-                "Believer"
+                "Believer",
+                "Skeptic"
             ],
-            "hint": "Here's a tip: A skeptic questions claims and needs strong evidence, while a believer accepts claims readily, often based on faith or trust!",
-            "explanation": "Think of 'Skeptic' as someone who doubts and questions claims (doubter, evidence-demander), and 'Believer' as someone who readily accepts claims (true-believer, faith-holder)!",
+            "hint": "Think about who asks for proof, and who accepts readily.",
+            "explanation": "'Demands evidence', 'questions the source', and 'withholds judgement' all describe testing a claim before accepting it. 'Takes it on faith' and 'accepts readily' both describe accepting without that testing.",
             "options": [
-                "Doubter",
-                "True-believer",
-                "Evidence-demander",
-                "Faith-holder",
-                "Questioner"
+                "Accepts readily",
+                "Takes it on faith",
+                "Withholds judgement",
+                "Demands evidence",
+                "Questions the source"
             ],
-            "correctAnswer": "Skeptic:Doubter, Believer:True-believer, Skeptic:Evidence-demander, Believer:Faith-holder, Skeptic:Questioner",
+            "correctAnswer": "Believer:Accepts readily, Believer:Takes it on faith, Skeptic:Withholds judgement, Skeptic:Demands evidence, Skeptic:Questions the source",
             "relatedWords": [
-                "aspect of Skeptic:Doubter, Believer:True-believer, Skeptic:Evidence-demander, Believer:Faith-holder, Skeptic:Questioner",
-                "concept of Skeptic:Doubter, Believer:True-believer, Skeptic:Evidence-demander, Believer:Faith-holder, Skeptic:Questioner",
-                "related to Skeptic:Doubter, Believer:True-believer, Skeptic:Evidence-demander, Believer:Faith-holder, Skeptic:Questioner"
+                "Accepts readily: agrees without much hesitation",
+                "Takes it on faith: accepts without requiring proof",
+                "Withholds judgement: delays deciding until more is known",
+                "Demands evidence: requires proof before accepting a claim",
+                "Questions the source: checks where information came from"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L184_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Healthy skepticism isn't the same as refusing to believe anything. Sort into Skeptic or Believer.",
             "topicBuckets": [
                 "Skeptic",
                 "Believer"
             ],
-            "hint": "Here's a tip: A skeptic questions claims and needs strong evidence, while a believer accepts claims readily, often based on faith or trust!",
-            "explanation": "Think of 'Skeptic' as someone who doubts and questions claims (doubter, evidence-demander), and 'Believer' as someone who readily accepts claims (true-believer, faith-holder)!",
+            "hint": "One of these words describes rejecting evidence rather than examining it.",
+            "explanation": "'Critical thinker' and 'fact-checks' both describe testing claims properly, which is what healthy skepticism means. 'Cynical' goes further, rejecting things regardless of evidence \u2014 a difference worth noticing. 'Convinced' and 'trusts the account' both describe having accepted a claim.",
             "options": [
-                "Cynic",
-                "Devotee",
-                "Non-believer",
-                "Trusting-soul",
-                "Critical-thinker"
+                "Convinced",
+                "Critical thinker",
+                "Cynical",
+                "Trusts the account",
+                "Fact-checks"
             ],
-            "correctAnswer": "Skeptic:Cynic, Believer:Devotee, Skeptic:Non-believer, Believer:Trusting-soul, Skeptic:Critical-thinker",
+            "correctAnswer": "Believer:Convinced, Skeptic:Critical thinker, Skeptic:Cynical, Believer:Trusts the account, Skeptic:Fact-checks",
             "relatedWords": [
-                "aspect of Skeptic:Cynic, Believer:Devotee, Skeptic:Non-believer, Believer:Trusting-soul, Skeptic:Critical-thinker",
-                "concept of Skeptic:Cynic, Believer:Devotee, Skeptic:Non-believer, Believer:Trusting-soul, Skeptic:Critical-thinker",
-                "related to Skeptic:Cynic, Believer:Devotee, Skeptic:Non-believer, Believer:Trusting-soul, Skeptic:Critical-thinker"
+                "Convinced: persuaded that something is true",
+                "Critical thinker: someone who evaluates claims carefully",
+                "Cynical: distrustful regardless of evidence",
+                "Trusts the account: accepts a report as reliable",
+                "Fact-checks: verifies claims against evidence"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L184_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Picture readers reacting to a surprising news story. Sort into Skeptic or Believer.",
             "topicBuckets": [
                 "Skeptic",
                 "Believer"
             ],
-            "hint": "Here's a tip: A skeptic questions claims and needs strong evidence, while a believer accepts claims readily, often based on faith or trust!",
-            "explanation": "Think of 'Skeptic' as someone who doubts and questions claims (doubter, evidence-demander), and 'Believer' as someone who readily accepts claims (true-believer, faith-holder)!",
+            "hint": "Two of these describe sharing a story before checking it.",
+            "explanation": "'Waits for corroboration' and 'checks other outlets' both describe verifying before accepting, and 'raised an eyebrow' signals initial doubt. 'Shared it immediately' and 'never doubted it' both describe accepting a story without checking \u2014 the habit that lets misinformation spread fastest.",
             "options": [
-                "Unconvinced-mind",
-                "Faithful-follower",
-                "Proof-seeker",
-                "Wholehearted-adherent",
-                "Doubting-observer"
+                "Raised an eyebrow",
+                "Checks other outlets",
+                "Waits for corroboration",
+                "Shared it immediately",
+                "Never doubted it"
             ],
-            "correctAnswer": "Skeptic:Unconvinced-mind, Believer:Faithful-follower, Skeptic:Proof-seeker, Believer:Wholehearted-adherent, Skeptic:Doubting-observer",
+            "correctAnswer": "Skeptic:Raised an eyebrow, Skeptic:Checks other outlets, Skeptic:Waits for corroboration, Believer:Shared it immediately, Believer:Never doubted it",
             "relatedWords": [
-                "aspect of Skeptic:Unconvinced-mind, Believer:Faithful-follower, Skeptic:Proof-seeker, Believer:Wholehearted-adherent, Skeptic:Doubting-observer",
-                "concept of Skeptic:Unconvinced-mind, Believer:Faithful-follower, Skeptic:Proof-seeker, Believer:Wholehearted-adherent, Skeptic:Doubting-observer",
-                "related to Skeptic:Unconvinced-mind, Believer:Faithful-follower, Skeptic:Proof-seeker, Believer:Wholehearted-adherent, Skeptic:Doubting-observer"
+                "Raised an eyebrow: showed initial doubt",
+                "Checks other outlets: compares reporting across sources",
+                "Waits for corroboration: holds off until other sources confirm",
+                "Shared it immediately: passed it on without verifying",
+                "Never doubted it: accepted without any hesitation"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L185_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These are physics terms. Sort into Velocity or Inertia.",
             "topicBuckets": [
                 "Velocity",
                 "Inertia"
             ],
-            "hint": "Here's a tip: Velocity is the speed and direction of a moving object, while inertia is its resistance to changing motion!",
-            "explanation": "Think of 'Velocity' as speed in a given direction (speed-with-direction, rate-of-motion), and 'Inertia' as resistance to a change in motion (resistance-to-change, momentum-resistance)!",
+            "hint": "Think about motion itself, versus resistance to changing motion.",
+            "explanation": "'Speed in a direction', 'acceleration', and 'rate of travel' all concern motion and how it changes. 'Resistance to change' and 'stays at rest' both concern an object's tendency to keep doing what it's already doing.",
             "options": [
-                "Speed-with-direction",
-                "Resistance-to-change",
-                "Rate-of-motion",
-                "Momentum-resistance",
-                "Directional-speed"
+                "Speed in a direction",
+                "Rate of travel",
+                "Acceleration",
+                "Resistance to change",
+                "Stays at rest"
             ],
-            "correctAnswer": "Velocity:Speed-with-direction, Inertia:Resistance-to-change, Velocity:Rate-of-motion, Inertia:Momentum-resistance, Velocity:Directional-speed",
+            "correctAnswer": "Velocity:Speed in a direction, Velocity:Rate of travel, Velocity:Acceleration, Inertia:Resistance to change, Inertia:Stays at rest",
             "relatedWords": [
-                "aspect of Velocity:Speed-with-direction, Inertia:Resistance-to-change, Velocity:Rate-of-motion, Inertia:Momentum-resistance, Velocity:Directional-speed",
-                "concept of Velocity:Speed-with-direction, Inertia:Resistance-to-change, Velocity:Rate-of-motion, Inertia:Momentum-resistance, Velocity:Directional-speed",
-                "related to Velocity:Speed-with-direction, Inertia:Resistance-to-change, Velocity:Rate-of-motion, Inertia:Momentum-resistance, Velocity:Directional-speed"
+                "Speed in a direction: how fast something moves and where",
+                "Rate of travel: how quickly distance is covered",
+                "Acceleration: the rate at which velocity changes",
+                "Resistance to change: the tendency to resist a change in motion",
+                "Stays at rest: remains motionless unless acted upon"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L185_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "One inertia term describes how much resistance an object has. Sort into Inertia or Velocity.",
             "topicBuckets": [
-                "Velocity",
-                "Inertia"
+                "Inertia",
+                "Velocity"
             ],
-            "hint": "Here's a tip: Velocity is the speed and direction of a moving object, while inertia is its resistance to changing motion!",
-            "explanation": "Think of 'Velocity' as speed in a given direction (speed-with-direction, rate-of-motion), and 'Inertia' as resistance to a change in motion (resistance-to-change, momentum-resistance)!",
+            "hint": "Heavier objects resist changes in motion more strongly.",
+            "explanation": "'Momentum', 'in motion', and 'gathering speed' all describe active movement. 'Mass' determines how strongly an object resists changes in motion, and 'immovable' describes that resistance at its extreme.",
             "options": [
-                "Motion-vector",
-                "Tendency-to-stay-still",
-                "Travel-rate",
-                "Resistance-to-motion-change",
-                "Pace-and-direction"
+                "Gathering speed",
+                "Mass",
+                "In motion",
+                "Momentum",
+                "Immovable"
             ],
-            "correctAnswer": "Velocity:Motion-vector, Inertia:Tendency-to-stay-still, Velocity:Travel-rate, Inertia:Resistance-to-motion-change, Velocity:Pace-and-direction",
+            "correctAnswer": "Velocity:Gathering speed, Inertia:Mass, Velocity:In motion, Velocity:Momentum, Inertia:Immovable",
             "relatedWords": [
-                "aspect of Velocity:Motion-vector, Inertia:Tendency-to-stay-still, Velocity:Travel-rate, Inertia:Resistance-to-motion-change, Velocity:Pace-and-direction",
-                "concept of Velocity:Motion-vector, Inertia:Tendency-to-stay-still, Velocity:Travel-rate, Inertia:Resistance-to-motion-change, Velocity:Pace-and-direction",
-                "related to Velocity:Motion-vector, Inertia:Tendency-to-stay-still, Velocity:Travel-rate, Inertia:Resistance-to-motion-change, Velocity:Pace-and-direction"
+                "Gathering speed: steadily increasing in velocity",
+                "Mass: the property determining resistance to acceleration",
+                "In motion: currently moving",
+                "Momentum: the quantity of motion an object has",
+                "Immovable: impossible to set into motion"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L185_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These describe organisations figuratively. Sort into Inertia or Velocity.",
             "topicBuckets": [
-                "Velocity",
-                "Inertia"
+                "Inertia",
+                "Velocity"
             ],
-            "hint": "Here's a tip: Velocity is the speed and direction of a moving object, while inertia is its resistance to changing motion!",
-            "explanation": "Think of 'Velocity' as speed in a given direction (speed-with-direction, rate-of-motion), and 'Inertia' as resistance to a change in motion (resistance-to-change, momentum-resistance)!",
+            "hint": "Two of these describe an organisation that won't change.",
+            "explanation": "'Moving fast', 'gaining traction', and 'rapid progress' all describe organisations advancing quickly. 'Stuck in its ways' and 'institutional inertia' both describe resistance to change, borrowing the physics term for an organisation that keeps doing what it has always done.",
             "options": [
-                "Displacement-rate",
-                "Sluggishness-to-move",
-                "Swiftness-with-path",
-                "Newtons-first-law-property",
-                "Object-stillness-tendency"
+                "Moving fast",
+                "Stuck in its ways",
+                "Gaining traction",
+                "Institutional inertia",
+                "Rapid progress"
             ],
-            "correctAnswer": "Velocity:Displacement-rate, Inertia:Sluggishness-to-move, Velocity:Swiftness-with-path, Inertia:Newtons-first-law-property, Inertia:Object-stillness-tendency",
+            "correctAnswer": "Velocity:Moving fast, Inertia:Stuck in its ways, Velocity:Gaining traction, Inertia:Institutional inertia, Velocity:Rapid progress",
             "relatedWords": [
-                "aspect of Velocity:Displacement-rate, Inertia:Sluggishness-to-move, Velocity:Swiftness-with-path, Inertia:Newtons-first-law-property, Inertia:Object-stillness-tendency",
-                "concept of Velocity:Displacement-rate, Inertia:Sluggishness-to-move, Velocity:Swiftness-with-path, Inertia:Newtons-first-law-property, Inertia:Object-stillness-tendency",
-                "related to Velocity:Displacement-rate, Inertia:Sluggishness-to-move, Velocity:Swiftness-with-path, Inertia:Newtons-first-law-property, Inertia:Object-stillness-tendency"
+                "Moving fast: advancing quickly",
+                "Stuck in its ways: unwilling to change established habits",
+                "Gaining traction: beginning to make real progress",
+                "Institutional inertia: an organisation's resistance to change",
+                "Rapid progress: swift forward development"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L186_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These are scientific terms for two temperature extremes. Sort into Cryogenics or Combustion.",
             "topicBuckets": [
-                "Combustion",
-                "Cryogenics"
+                "Cryogenics",
+                "Combustion"
             ],
-            "hint": "Here's a tip: Combustion is the rapid burning that produces heat and fire, while cryogenics is the science of extremely low temperatures!",
-            "explanation": "Think of 'Combustion' as rapid burning producing heat (burning-reaction, ignition-process), and 'Cryogenics' as the science of extreme cold (deep-freezing-science, sub-zero-science)!",
+            "hint": "Think about burning, versus cooling to extremes.",
+            "explanation": "'Burning', 'ignition', and 'oxidation' all describe fuel reacting with oxygen to release heat. 'Deep freezing' and 'liquid nitrogen' both belong to the science of extremely low temperatures.",
             "options": [
-                "Burning-reaction",
-                "Deep-freezing-science",
-                "Ignition-process",
-                "Sub-zero-science",
-                "Fire-reaction"
+                "Oxidation",
+                "Burning",
+                "Ignition",
+                "Liquid nitrogen",
+                "Deep freezing"
             ],
-            "correctAnswer": "Combustion:Burning-reaction, Cryogenics:Deep-freezing-science, Combustion:Ignition-process, Cryogenics:Sub-zero-science, Combustion:Fire-reaction",
+            "correctAnswer": "Combustion:Oxidation, Combustion:Burning, Combustion:Ignition, Cryogenics:Liquid nitrogen, Cryogenics:Deep freezing",
             "relatedWords": [
-                "aspect of Combustion:Burning-reaction, Cryogenics:Deep-freezing-science, Combustion:Ignition-process, Cryogenics:Sub-zero-science, Combustion:Fire-reaction",
-                "concept of Combustion:Burning-reaction, Cryogenics:Deep-freezing-science, Combustion:Ignition-process, Cryogenics:Sub-zero-science, Combustion:Fire-reaction",
-                "related to Combustion:Burning-reaction, Cryogenics:Deep-freezing-science, Combustion:Ignition-process, Cryogenics:Sub-zero-science, Combustion:Fire-reaction"
+                "Oxidation: a chemical reaction with oxygen",
+                "Burning: reacting with oxygen to release heat and light",
+                "Ignition: the starting of burning",
+                "Liquid nitrogen: nitrogen cooled until it becomes liquid",
+                "Deep freezing: cooling to extremely low temperatures"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L186_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "One cryogenics term describes preserving biological material at very low temperatures. Sort into Cryogenics or Combustion.",
             "topicBuckets": [
-                "Combustion",
-                "Cryogenics"
+                "Cryogenics",
+                "Combustion"
             ],
-            "hint": "Here's a tip: Combustion is the rapid burning that produces heat and fire, while cryogenics is the science of extremely low temperatures!",
-            "explanation": "Think of 'Combustion' as rapid burning producing heat (burning-reaction, ignition-process), and 'Cryogenics' as the science of extreme cold (deep-freezing-science, sub-zero-science)!",
+            "hint": "Both fields have precise technical vocabulary.",
+            "explanation": "'Fuel source', 'exhaust', and 'flashpoint' all belong to burning, a flashpoint being the temperature at which a substance ignites. 'Cryopreservation' describes preserving biological material at very low temperatures, and 'sub-zero' names the general range.",
             "options": [
-                "Oxidation-with-flame",
-                "Extreme-cold-study",
-                "Explosive-reaction",
-                "Cryo-preservation-field",
-                "Heat-producing-reaction"
+                "Exhaust",
+                "Sub-zero",
+                "Fuel source",
+                "Cryopreservation",
+                "Flashpoint"
             ],
-            "correctAnswer": "Combustion:Oxidation-with-flame, Cryogenics:Extreme-cold-study, Combustion:Explosive-reaction, Cryogenics:Cryo-preservation-field, Combustion:Heat-producing-reaction",
+            "correctAnswer": "Combustion:Exhaust, Cryogenics:Sub-zero, Combustion:Fuel source, Cryogenics:Cryopreservation, Combustion:Flashpoint",
             "relatedWords": [
-                "aspect of Combustion:Oxidation-with-flame, Cryogenics:Extreme-cold-study, Combustion:Explosive-reaction, Cryogenics:Cryo-preservation-field, Combustion:Heat-producing-reaction",
-                "concept of Combustion:Oxidation-with-flame, Cryogenics:Extreme-cold-study, Combustion:Explosive-reaction, Cryogenics:Cryo-preservation-field, Combustion:Heat-producing-reaction",
-                "related to Combustion:Oxidation-with-flame, Cryogenics:Extreme-cold-study, Combustion:Explosive-reaction, Cryogenics:Cryo-preservation-field, Combustion:Heat-producing-reaction"
+                "Exhaust: gases released after burning",
+                "Sub-zero: below the freezing point",
+                "Fuel source: the material that burns to release energy",
+                "Cryopreservation: preserving material at very low temperatures",
+                "Flashpoint: the temperature at which a substance ignites"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L186_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Picture a science article covering both technologies. Sort into Combustion or Cryogenics.",
             "topicBuckets": [
                 "Combustion",
                 "Cryogenics"
             ],
-            "hint": "Here's a tip: Combustion is the rapid burning that produces heat and fire, while cryogenics is the science of extremely low temperatures!",
-            "explanation": "Think of 'Combustion' as rapid burning producing heat (burning-reaction, ignition-process), and 'Cryogenics' as the science of extreme cold (deep-freezing-science, sub-zero-science)!",
+            "hint": "Two of these describe applications of extreme cold.",
+            "explanation": "'Internal combustion engine' and 'releases carbon dioxide' both describe burning-based technology and its emissions. 'Cryogenic storage' and 'supercooled' describe applications of extreme cold, and 'absolute zero' names the theoretical lowest possible temperature.",
             "options": [
-                "Engine-burning-process",
-                "Frozen-state-science",
-                "Fuel-ignition",
-                "Ultra-low-temperature-field",
-                "Rapid-oxidation"
+                "Cryogenic storage",
+                "Releases carbon dioxide",
+                "Internal combustion engine",
+                "Supercooled",
+                "Absolute zero"
             ],
-            "correctAnswer": "Combustion:Engine-burning-process, Cryogenics:Frozen-state-science, Combustion:Fuel-ignition, Cryogenics:Ultra-low-temperature-field, Combustion:Rapid-oxidation",
+            "correctAnswer": "Cryogenics:Cryogenic storage, Combustion:Releases carbon dioxide, Combustion:Internal combustion engine, Cryogenics:Supercooled, Cryogenics:Absolute zero",
             "relatedWords": [
-                "aspect of Combustion:Engine-burning-process, Cryogenics:Frozen-state-science, Combustion:Fuel-ignition, Cryogenics:Ultra-low-temperature-field, Combustion:Rapid-oxidation",
-                "concept of Combustion:Engine-burning-process, Cryogenics:Frozen-state-science, Combustion:Fuel-ignition, Cryogenics:Ultra-low-temperature-field, Combustion:Rapid-oxidation",
-                "related to Combustion:Engine-burning-process, Cryogenics:Frozen-state-science, Combustion:Fuel-ignition, Cryogenics:Ultra-low-temperature-field, Combustion:Rapid-oxidation"
+                "Cryogenic storage: keeping material at extremely low temperatures",
+                "Releases carbon dioxide: emits CO2 as a product of burning",
+                "Internal combustion engine: an engine powered by burning fuel inside it",
+                "Supercooled: cooled below freezing without solidifying",
+                "Absolute zero: the theoretical lowest possible temperature"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L187_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These describe how materials respond to force. Sort into Malleable or Brittle.",
             "topicBuckets": [
                 "Malleable",
                 "Brittle"
             ],
-            "hint": "Here's a tip: A malleable material bends and reshapes without breaking, while a brittle material snaps and shatters easily!",
-            "explanation": "Think of 'Malleable' as materials that bend and reshape easily (bendable, shapeable), and 'Brittle' as materials that break easily (fragile, shatter-prone)!",
+            "hint": "Think about whether something bends or snaps under pressure.",
+            "explanation": "'Bends without breaking', 'pliable', and 'can be hammered flat' all describe materials that reshape under force. 'Shatters' and 'cracks under stress' both describe materials that break instead of bending.",
             "options": [
-                "Bendable",
-                "Fragile",
-                "Shapeable",
-                "Shatter-prone",
-                "Pliable"
+                "Shatters",
+                "Pliable",
+                "Cracks under stress",
+                "Can be hammered flat",
+                "Bends without breaking"
             ],
-            "correctAnswer": "Malleable:Bendable, Brittle:Fragile, Malleable:Shapeable, Brittle:Shatter-prone, Malleable:Pliable",
+            "correctAnswer": "Brittle:Shatters, Malleable:Pliable, Brittle:Cracks under stress, Malleable:Can be hammered flat, Malleable:Bends without breaking",
             "relatedWords": [
-                "aspect of Malleable:Bendable, Brittle:Fragile, Malleable:Shapeable, Brittle:Shatter-prone, Malleable:Pliable",
-                "concept of Malleable:Bendable, Brittle:Fragile, Malleable:Shapeable, Brittle:Shatter-prone, Malleable:Pliable",
-                "related to Malleable:Bendable, Brittle:Fragile, Malleable:Shapeable, Brittle:Shatter-prone, Malleable:Pliable"
+                "Shatters: breaks suddenly into pieces",
+                "Pliable: easily bent or shaped",
+                "Cracks under stress: fractures when force is applied",
+                "Can be hammered flat: able to be shaped by hammering",
+                "Bends without breaking: reshapes under force without fracturing"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L187_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "One brittle word describes breaking suddenly rather than deforming first. Sort into Malleable or Brittle.",
             "topicBuckets": [
                 "Malleable",
                 "Brittle"
             ],
-            "hint": "Here's a tip: A malleable material bends and reshapes without breaking, while a brittle material snaps and shatters easily!",
-            "explanation": "Think of 'Malleable' as materials that bend and reshape easily (bendable, shapeable), and 'Brittle' as materials that break easily (fragile, shatter-prone)!",
+            "hint": "Engineers care a great deal about which way a material fails.",
+            "explanation": "'Ductile', 'workable', and 'reshapes easily' all describe materials that deform before failing, giving warning. 'Fractures' describes breaking suddenly without deforming first, and 'glass-like' names that behaviour by example.",
             "options": [
-                "Mouldable",
-                "Crumbly",
-                "Flexible-metal",
-                "Easily-cracked",
-                "Workable-by-hand"
+                "Workable",
+                "Ductile",
+                "Reshapes easily",
+                "Fractures",
+                "Glass-like"
             ],
-            "correctAnswer": "Malleable:Mouldable, Brittle:Crumbly, Malleable:Flexible-metal, Brittle:Easily-cracked, Malleable:Workable-by-hand",
+            "correctAnswer": "Malleable:Workable, Malleable:Ductile, Malleable:Reshapes easily, Brittle:Fractures, Brittle:Glass-like",
             "relatedWords": [
-                "aspect of Malleable:Mouldable, Brittle:Crumbly, Malleable:Flexible-metal, Brittle:Easily-cracked, Malleable:Workable-by-hand",
-                "concept of Malleable:Mouldable, Brittle:Crumbly, Malleable:Flexible-metal, Brittle:Easily-cracked, Malleable:Workable-by-hand",
-                "related to Malleable:Mouldable, Brittle:Crumbly, Malleable:Flexible-metal, Brittle:Easily-cracked, Malleable:Workable-by-hand"
+                "Workable: easy to shape and form",
+                "Ductile: able to be drawn out without breaking",
+                "Reshapes easily: takes a new form without damage",
+                "Fractures: breaks suddenly without bending first",
+                "Glass-like: breaking cleanly and suddenly, like glass"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L187_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These describe people and systems figuratively. Sort into Malleable or Brittle.",
             "topicBuckets": [
                 "Malleable",
                 "Brittle"
             ],
-            "hint": "Here's a tip: A malleable material bends and reshapes without breaking, while a brittle material snaps and shatters easily!",
-            "explanation": "Think of 'Malleable' as materials that bend and reshape easily (bendable, shapeable), and 'Brittle' as materials that break easily (fragile, shatter-prone)!",
+            "hint": "Two of these describe something that fails suddenly under pressure.",
+            "explanation": "'Adaptable', 'open to persuasion', and 'flexible thinking' all describe people or systems that adjust rather than break. 'Snaps under pressure' and 'a brittle temperament' both describe failing suddenly when strained, which is what makes 'brittle' a criticism when applied to people.",
             "options": [
-                "Ductile",
-                "Snap-prone",
-                "Hammer-shapeable",
-                "Splintering",
-                "Soft-formable"
+                "Snaps under pressure",
+                "Flexible thinking",
+                "Adaptable",
+                "Open to persuasion",
+                "A brittle temperament"
             ],
-            "correctAnswer": "Malleable:Ductile, Brittle:Snap-prone, Malleable:Hammer-shapeable, Brittle:Splintering, Malleable:Soft-formable",
+            "correctAnswer": "Brittle:Snaps under pressure, Malleable:Flexible thinking, Malleable:Adaptable, Malleable:Open to persuasion, Brittle:A brittle temperament",
             "relatedWords": [
-                "aspect of Malleable:Ductile, Brittle:Snap-prone, Malleable:Hammer-shapeable, Brittle:Splintering, Malleable:Soft-formable",
-                "concept of Malleable:Ductile, Brittle:Snap-prone, Malleable:Hammer-shapeable, Brittle:Splintering, Malleable:Soft-formable",
-                "related to Malleable:Ductile, Brittle:Snap-prone, Malleable:Hammer-shapeable, Brittle:Splintering, Malleable:Soft-formable"
+                "Snaps under pressure: fails suddenly when strained",
+                "Flexible thinking: able to consider ideas in new ways",
+                "Adaptable: able to adjust to new conditions",
+                "Open to persuasion: willing to change one's view",
+                "A brittle temperament: a disposition that breaks under stress"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L188_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These describe clarity and light. Sort into Luminous or Murky.",
             "topicBuckets": [
                 "Luminous",
                 "Murky"
             ],
-            "hint": "Here's a tip: A luminous object glows and gives off light, while a murky liquid is cloudy and hard to see through!",
-            "explanation": "Think of 'Luminous' as glowing, light-emitting things (glowing, radiant), and 'Murky' as cloudy, unclear things (cloudy-water, hard-to-see-through)!",
+            "hint": "Think about clear bright water, and water you can't see through.",
+            "explanation": "'Glowing', 'brilliant', and 'crystal clear' all describe brightness and clarity. 'Clouded' and 'turbid' both describe water or air too thick with particles to see through.",
             "options": [
                 "Glowing",
-                "Cloudy-water",
-                "Radiant",
-                "Hard-to-see-through",
-                "Luminescent"
+                "Clouded",
+                "Brilliant",
+                "Turbid",
+                "Crystal clear"
             ],
-            "correctAnswer": "Luminous:Glowing, Murky:Cloudy-water, Luminous:Radiant, Murky:Hard-to-see-through, Luminous:Luminescent",
+            "correctAnswer": "Luminous:Glowing, Murky:Clouded, Luminous:Brilliant, Murky:Turbid, Luminous:Crystal clear",
             "relatedWords": [
-                "aspect of Luminous:Glowing, Murky:Cloudy-water, Luminous:Radiant, Murky:Hard-to-see-through, Luminous:Luminescent",
-                "concept of Luminous:Glowing, Murky:Cloudy-water, Luminous:Radiant, Murky:Hard-to-see-through, Luminous:Luminescent",
-                "related to Luminous:Glowing, Murky:Cloudy-water, Luminous:Radiant, Murky:Hard-to-see-through, Luminous:Luminescent"
+                "Glowing: giving off steady light",
+                "Clouded: made unclear by suspended particles",
+                "Brilliant: extremely bright",
+                "Turbid: thick and cloudy with sediment",
+                "Crystal clear: perfectly transparent"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L188_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "One luminous word describes something that glows in the dark after absorbing light. Sort into Luminous or Murky.",
             "topicBuckets": [
                 "Luminous",
                 "Murky"
             ],
-            "hint": "Here's a tip: A luminous object glows and gives off light, while a murky liquid is cloudy and hard to see through!",
-            "explanation": "Think of 'Luminous' as glowing, light-emitting things (glowing, radiant), and 'Murky' as cloudy, unclear things (cloudy-water, hard-to-see-through)!",
+            "hint": "Some materials store light and release it slowly.",
+            "explanation": "'Phosphorescent' describes material that glows after absorbing light, alongside 'radiant' and 'incandescent'. 'Gloomy' and 'obscured' both describe an absence of clear light or visibility.",
             "options": [
                 "Phosphorescent",
-                "Muddy-looking",
-                "Light-emitting",
+                "Gloomy",
+                "Radiant",
                 "Obscured",
-                "Glowing-bright"
+                "Incandescent"
             ],
-            "correctAnswer": "Luminous:Phosphorescent, Murky:Muddy-looking, Luminous:Light-emitting, Murky:Obscured, Luminous:Glowing-bright",
+            "correctAnswer": "Luminous:Phosphorescent, Murky:Gloomy, Luminous:Radiant, Murky:Obscured, Luminous:Incandescent",
             "relatedWords": [
-                "aspect of Luminous:Phosphorescent, Murky:Muddy-looking, Luminous:Light-emitting, Murky:Obscured, Luminous:Glowing-bright",
-                "concept of Luminous:Phosphorescent, Murky:Muddy-looking, Luminous:Light-emitting, Murky:Obscured, Luminous:Glowing-bright",
-                "related to Luminous:Phosphorescent, Murky:Muddy-looking, Luminous:Light-emitting, Murky:Obscured, Luminous:Glowing-bright"
+                "Phosphorescent: glowing after absorbing light",
+                "Gloomy: dim and depressingly dark",
+                "Radiant: sending out light strongly",
+                "Obscured: hidden or made hard to see",
+                "Incandescent: glowing with intense heat and light"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L188_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These use both words figuratively about situations. Sort into Luminous or Murky.",
             "topicBuckets": [
                 "Luminous",
                 "Murky"
             ],
-            "hint": "Here's a tip: A luminous object glows and gives off light, while a murky liquid is cloudy and hard to see through!",
-            "explanation": "Think of 'Luminous' as glowing, light-emitting things (glowing, radiant), and 'Murky' as cloudy, unclear things (cloudy-water, hard-to-see-through)!",
+            "hint": "'Murky' is often used about ethics, not visibility.",
+            "explanation": "'A luminous performance' and 'crystal-clear explanation' both praise clarity and brilliance figuratively. 'Murky ethics', 'a murky situation', and 'shady dealings' all describe matters that are unclear or ethically questionable \u2014 'murky' most often criticises honesty rather than visibility.",
             "options": [
-                "Incandescent",
-                "Dim-and-unclear",
-                "Shining-from-within",
-                "Turbid",
-                "Brilliant-glow"
+                "A luminous performance",
+                "Crystal-clear explanation",
+                "A murky situation",
+                "Murky ethics",
+                "Shady dealings"
             ],
-            "correctAnswer": "Luminous:Incandescent, Murky:Dim-and-unclear, Luminous:Shining-from-within, Murky:Turbid, Luminous:Brilliant-glow",
+            "correctAnswer": "Luminous:A luminous performance, Luminous:Crystal-clear explanation, Murky:A murky situation, Murky:Murky ethics, Murky:Shady dealings",
             "relatedWords": [
-                "aspect of Luminous:Incandescent, Murky:Dim-and-unclear, Luminous:Shining-from-within, Murky:Turbid, Luminous:Brilliant-glow",
-                "concept of Luminous:Incandescent, Murky:Dim-and-unclear, Luminous:Shining-from-within, Murky:Turbid, Luminous:Brilliant-glow",
-                "related to Luminous:Incandescent, Murky:Dim-and-unclear, Luminous:Shining-from-within, Murky:Turbid, Luminous:Brilliant-glow"
+                "A luminous performance: a brilliant, memorable performance",
+                "Crystal-clear explanation: an explanation leaving no confusion",
+                "A murky situation: circumstances that are unclear or suspicious",
+                "Murky ethics: moral standards that are unclear or questionable",
+                "Shady dealings: business conducted dishonestly"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L189_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "One word belongs to space, the other to the ground. Sort into Bedrock or Orbit.",
             "topicBuckets": [
-                "Orbit",
-                "Bedrock"
+                "Bedrock",
+                "Orbit"
             ],
-            "hint": "Here's a tip: An orbit is the curved path a planet takes around a star, while bedrock is the solid rock layer deep beneath the soil!",
-            "explanation": "Think of 'Orbit' as the curved path of one body around another (revolution-path, circling-path), and 'Bedrock' as the solid rock layer beneath soil (foundation-rock, solid-base-layer)!",
+            "hint": "Think about circling above, versus the solid layer far below.",
+            "explanation": "'Circles a planet', 'satellite path', and 'gravitational pull' all describe movement around a body in space. 'Solid rock layer' and 'foundation stone' both describe the firm base beneath the surface.",
             "options": [
-                "Revolution-path",
-                "Foundation-rock",
-                "Circling-path",
-                "Solid-base-layer",
-                "Elliptical-path"
+                "Satellite path",
+                "Circles a planet",
+                "Foundation stone",
+                "Gravitational pull",
+                "Solid rock layer"
             ],
-            "correctAnswer": "Orbit:Revolution-path, Bedrock:Foundation-rock, Orbit:Circling-path, Bedrock:Solid-base-layer, Orbit:Elliptical-path",
+            "correctAnswer": "Orbit:Satellite path, Orbit:Circles a planet, Bedrock:Foundation stone, Orbit:Gravitational pull, Bedrock:Solid rock layer",
             "relatedWords": [
-                "aspect of Orbit:Revolution-path, Bedrock:Foundation-rock, Orbit:Circling-path, Bedrock:Solid-base-layer, Orbit:Elliptical-path",
-                "concept of Orbit:Revolution-path, Bedrock:Foundation-rock, Orbit:Circling-path, Bedrock:Solid-base-layer, Orbit:Elliptical-path",
-                "related to Orbit:Revolution-path, Bedrock:Foundation-rock, Orbit:Circling-path, Bedrock:Solid-base-layer, Orbit:Elliptical-path"
+                "Satellite path: the route a satellite follows",
+                "Circles a planet: travels repeatedly around a planet",
+                "Foundation stone: the base on which a structure rests",
+                "Gravitational pull: the force holding an object in orbit",
+                "Solid rock layer: the firm rock beneath loose soil"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L189_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "One orbit word describes the closest point of an orbital path. Sort into Orbit or Bedrock.",
             "topicBuckets": [
                 "Orbit",
                 "Bedrock"
             ],
-            "hint": "Here's a tip: An orbit is the curved path a planet takes around a star, while bedrock is the solid rock layer deep beneath the soil!",
-            "explanation": "Think of 'Orbit' as the curved path of one body around another (revolution-path, circling-path), and 'Bedrock' as the solid rock layer beneath soil (foundation-rock, solid-base-layer)!",
+            "hint": "Both fields have technical vocabulary for position and depth.",
+            "explanation": "'Trajectory', 'orbital period', and 'perigee' all describe orbital paths, a perigee being the closest point to the body being orbited. 'Substrate' and 'load-bearing' both concern what lies beneath and supports weight.",
             "options": [
-                "Satellite-track",
-                "Underlying-rock-layer",
-                "Celestial-loop",
-                "Deep-rock-foundation",
-                "Gravitational-path"
+                "Perigee",
+                "Load-bearing",
+                "Substrate",
+                "Trajectory",
+                "Orbital period"
             ],
-            "correctAnswer": "Orbit:Satellite-track, Bedrock:Underlying-rock-layer, Orbit:Celestial-loop, Bedrock:Deep-rock-foundation, Orbit:Gravitational-path",
+            "correctAnswer": "Orbit:Perigee, Bedrock:Load-bearing, Bedrock:Substrate, Orbit:Trajectory, Orbit:Orbital period",
             "relatedWords": [
-                "aspect of Orbit:Satellite-track, Bedrock:Underlying-rock-layer, Orbit:Celestial-loop, Bedrock:Deep-rock-foundation, Orbit:Gravitational-path",
-                "concept of Orbit:Satellite-track, Bedrock:Underlying-rock-layer, Orbit:Celestial-loop, Bedrock:Deep-rock-foundation, Orbit:Gravitational-path",
-                "related to Orbit:Satellite-track, Bedrock:Underlying-rock-layer, Orbit:Celestial-loop, Bedrock:Deep-rock-foundation, Orbit:Gravitational-path"
+                "Perigee: the closest point of an orbit",
+                "Load-bearing: supporting the weight above it",
+                "Substrate: the underlying layer beneath a surface",
+                "Trajectory: the path an object follows through space",
+                "Orbital period: the time taken to complete one orbit"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L189_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These use both words figuratively about people and institutions. Sort into Orbit or Bedrock.",
             "topicBuckets": [
                 "Orbit",
                 "Bedrock"
             ],
-            "hint": "Here's a tip: An orbit is the curved path a planet takes around a star, while bedrock is the solid rock layer deep beneath the soil!",
-            "explanation": "Think of 'Orbit' as the curved path of one body around another (revolution-path, circling-path), and 'Bedrock' as the solid rock layer beneath soil (foundation-rock, solid-base-layer)!",
+            "hint": "Two of these describe something everything else is built on.",
+            "explanation": "'In their orbit' and 'drifting around the edges' both describe being near something influential without being central to it. 'The bedrock of the family' and 'founding principle' both describe something everything else rests on, and 'unshakeable base' names that quality directly.",
             "options": [
-                "Planetary-circuit",
-                "Solid-substrate",
-                "Looping-trajectory",
-                "Geological-base",
-                "Annual-revolution"
+                "Founding principle",
+                "Drifting around the edges",
+                "In their orbit",
+                "Unshakeable base",
+                "The bedrock of the family"
             ],
-            "correctAnswer": "Orbit:Planetary-circuit, Bedrock:Solid-substrate, Orbit:Looping-trajectory, Bedrock:Geological-base, Orbit:Annual-revolution",
+            "correctAnswer": "Bedrock:Founding principle, Orbit:Drifting around the edges, Orbit:In their orbit, Bedrock:Unshakeable base, Bedrock:The bedrock of the family",
             "relatedWords": [
-                "aspect of Orbit:Planetary-circuit, Bedrock:Solid-substrate, Orbit:Looping-trajectory, Bedrock:Geological-base, Orbit:Annual-revolution",
-                "concept of Orbit:Planetary-circuit, Bedrock:Solid-substrate, Orbit:Looping-trajectory, Bedrock:Geological-base, Orbit:Annual-revolution",
-                "related to Orbit:Planetary-circuit, Bedrock:Solid-substrate, Orbit:Looping-trajectory, Bedrock:Geological-base, Orbit:Annual-revolution"
+                "Founding principle: the core idea something is built on",
+                "Drifting around the edges: remaining on the margins of a group",
+                "In their orbit: within someone's sphere of influence",
+                "Unshakeable base: a foundation that cannot be disturbed",
+                "The bedrock of the family: the person everything else depends on"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L190_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These contrast an early tradition with the scientific method. Sort into Empiricism or Alchemy.",
             "topicBuckets": [
-                "Alchemy",
-                "Empiricism"
+                "Empiricism",
+                "Alchemy"
             ],
-            "hint": "Here's a tip: Alchemy was an ancient, mystical attempt to transform matter, while empiricism is the modern approach of testing ideas with observation and experiment!",
-            "explanation": "Think of 'Alchemy' as the ancient, mystical pre-science practice (proto-science, mystical-chemistry), and 'Empiricism' as the scientific approach based on observation and testing (observation-based-method, experimental-approach)!",
+            "hint": "Think about secret formulas versus published, testable results.",
+            "explanation": "'Secret formula', 'transmutation', and 'mystical symbols' all belong to the alchemical tradition, which guarded its methods. 'Controlled experiment' and 'observed data' both belong to the empirical method, which depends on results others can check.",
             "options": [
-                "Proto-science",
-                "Observation-based-method",
-                "Mystical-chemistry",
-                "Experimental-approach",
-                "Medieval-transmutation-craft"
+                "Secret formula",
+                "Transmutation",
+                "Controlled experiment",
+                "Mystical symbols",
+                "Observed data"
             ],
-            "correctAnswer": "Alchemy:Proto-science, Empiricism:Observation-based-method, Alchemy:Mystical-chemistry, Empiricism:Experimental-approach, Alchemy:Medieval-transmutation-craft",
+            "correctAnswer": "Alchemy:Secret formula, Alchemy:Transmutation, Empiricism:Controlled experiment, Alchemy:Mystical symbols, Empiricism:Observed data",
             "relatedWords": [
-                "aspect of Alchemy:Proto-science, Empiricism:Observation-based-method, Alchemy:Mystical-chemistry, Empiricism:Experimental-approach, Alchemy:Medieval-transmutation-craft",
-                "concept of Alchemy:Proto-science, Empiricism:Observation-based-method, Alchemy:Mystical-chemistry, Empiricism:Experimental-approach, Alchemy:Medieval-transmutation-craft",
-                "related to Alchemy:Proto-science, Empiricism:Observation-based-method, Alchemy:Mystical-chemistry, Empiricism:Experimental-approach, Alchemy:Medieval-transmutation-craft"
+                "Secret formula: a method deliberately kept hidden",
+                "Transmutation: the supposed changing of one metal into another",
+                "Controlled experiment: a test with variables carefully managed",
+                "Mystical symbols: symbols with supposed hidden meaning",
+                "Observed data: information gathered through direct observation"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L190_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "One empirical term means repeating a study to confirm it. Sort into Alchemy or Empiricism.",
             "topicBuckets": [
                 "Alchemy",
                 "Empiricism"
             ],
-            "hint": "Here's a tip: Alchemy was an ancient, mystical attempt to transform matter, while empiricism is the modern approach of testing ideas with observation and experiment!",
-            "explanation": "Think of 'Alchemy' as the ancient, mystical pre-science practice (proto-science, mystical-chemistry), and 'Empiricism' as the scientific approach based on observation and testing (observation-based-method, experimental-approach)!",
+            "hint": "What separates the two is whether findings can be checked.",
+            "explanation": "'Philosopher's stone', 'elixir', and 'guarded knowledge' all belong to alchemy, which sought transformation through hidden means. 'Replication' means repeating a study to confirm it, and 'peer review' names the checking process \u2014 both make findings testable by others.",
             "options": [
-                "Ancient-elixir-craft",
-                "Evidence-based-reasoning",
-                "Pseudo-scientific-tradition",
-                "Testable-hypothesis-method",
-                "Philosopher-stone-pursuit"
+                "Elixir",
+                "Peer review",
+                "Guarded knowledge",
+                "Philosopher's stone",
+                "Replication"
             ],
-            "correctAnswer": "Alchemy:Ancient-elixir-craft, Empiricism:Evidence-based-reasoning, Alchemy:Pseudo-scientific-tradition, Empiricism:Testable-hypothesis-method, Alchemy:Philosopher-stone-pursuit",
+            "correctAnswer": "Alchemy:Elixir, Empiricism:Peer review, Alchemy:Guarded knowledge, Alchemy:Philosopher's stone, Empiricism:Replication",
             "relatedWords": [
-                "aspect of Alchemy:Ancient-elixir-craft, Empiricism:Evidence-based-reasoning, Alchemy:Pseudo-scientific-tradition, Empiricism:Testable-hypothesis-method, Alchemy:Philosopher-stone-pursuit",
-                "concept of Alchemy:Ancient-elixir-craft, Empiricism:Evidence-based-reasoning, Alchemy:Pseudo-scientific-tradition, Empiricism:Testable-hypothesis-method, Alchemy:Philosopher-stone-pursuit",
-                "related to Alchemy:Ancient-elixir-craft, Empiricism:Evidence-based-reasoning, Alchemy:Pseudo-scientific-tradition, Empiricism:Testable-hypothesis-method, Alchemy:Philosopher-stone-pursuit"
+                "Elixir: a supposed potion with transforming powers",
+                "Peer review: evaluation of research by other experts",
+                "Guarded knowledge: information deliberately kept from others",
+                "Philosopher's stone: a legendary substance said to transform metals",
+                "Replication: repeating a study to confirm its findings"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L190_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These are used figuratively today. Sort into Alchemy or Empiricism.",
             "topicBuckets": [
                 "Alchemy",
                 "Empiricism"
             ],
-            "hint": "Here's a tip: Alchemy was an ancient, mystical attempt to transform matter, while empiricism is the modern approach of testing ideas with observation and experiment!",
-            "explanation": "Think of 'Alchemy' as the ancient, mystical pre-science practice (proto-science, mystical-chemistry), and 'Empiricism' as the scientific approach based on observation and testing (observation-based-method, experimental-approach)!",
+            "hint": "'Alchemy' now often means something wonderful but unexplained.",
+            "explanation": "'A kind of alchemy' and 'mysterious transformation' both describe results that seem wonderful but unexplained, which is how the word survives today. 'Evidence-based', 'measurable outcome', and 'tested against data' all describe conclusions grounded in what can be checked.",
             "options": [
-                "Mystic-transformation-art",
-                "Data-driven-inquiry",
-                "Pre-modern-chemistry",
-                "Trial-and-observation-method",
-                "Occult-practice"
+                "Mysterious transformation",
+                "Measurable outcome",
+                "Tested against data",
+                "A kind of alchemy",
+                "Evidence-based"
             ],
-            "correctAnswer": "Alchemy:Mystic-transformation-art, Empiricism:Data-driven-inquiry, Alchemy:Pre-modern-chemistry, Empiricism:Trial-and-observation-method, Alchemy:Occult-practice",
+            "correctAnswer": "Alchemy:Mysterious transformation, Empiricism:Measurable outcome, Empiricism:Tested against data, Alchemy:A kind of alchemy, Empiricism:Evidence-based",
             "relatedWords": [
-                "aspect of Alchemy:Mystic-transformation-art, Empiricism:Data-driven-inquiry, Alchemy:Pre-modern-chemistry, Empiricism:Trial-and-observation-method, Alchemy:Occult-practice",
-                "concept of Alchemy:Mystic-transformation-art, Empiricism:Data-driven-inquiry, Alchemy:Pre-modern-chemistry, Empiricism:Trial-and-observation-method, Alchemy:Occult-practice",
-                "related to Alchemy:Mystic-transformation-art, Empiricism:Data-driven-inquiry, Alchemy:Pre-modern-chemistry, Empiricism:Trial-and-observation-method, Alchemy:Occult-practice"
+                "Mysterious transformation: a change that cannot be explained",
+                "Measurable outcome: a result that can be quantified",
+                "Tested against data: checked against gathered evidence",
+                "A kind of alchemy: a wonderful result that resists explanation",
+                "Evidence-based: grounded in verifiable evidence"
             ]
         }
     ]

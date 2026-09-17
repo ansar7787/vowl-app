@@ -6,20 +6,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L101_Q1",
-            "sentence": "The [TARGET] passenger flagged down the flight attendant five times about the cabin temperature.",
-            "hint": "From Latin queri, 'to complain' - related to 'quarrel.'",
+            "sentence": "The passenger in seat 14C was [TARGET] and complaining nonstop, griping about the temperature, the snack options, and the volume of the announcements.",
+            "hint": "This word describes someone who complains a lot, often in a whiny way.",
             "options": [
-                "Satisfied",
-                "Agreeable",
+                "Complaining",
                 "Content",
-                "Complaining"
+                "Satisfied",
+                "Cheerful"
             ],
-            "explanation": "Flagging down the flight attendant five times about the temperature shows constant complaining, so [TARGET] means COMPLAINING.",
+            "explanation": "The word 'and' links [TARGET] to 'complaining,' and griping about the temperature, snacks, and announcements confirms it, so [TARGET] means COMPLAINING.",
             "correctAnswer": "Complaining",
             "clueType": "synonym",
             "evidenceWords": [
-                "passenger",
-                "flagged"
+                "and complaining nonstop",
+                "griping about the temperature"
             ]
         },
         {
@@ -27,20 +27,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L101_Q2",
-            "sentence": "After winning the lawsuit, the company was [TARGET] enough to cover the smaller firm's legal fees too.",
-            "hint": "From Latin magnus, 'great,' and animus, 'spirit' - having a great, forgiving spirit.",
+            "sentence": "Unlike the losing coach who blamed the referees for every call, the winning coach was [TARGET], praising his opponents' effort and refusing to take all the credit.",
+            "hint": "This word describes being big-hearted and forgiving, especially toward a rival.",
             "options": [
+                "Petty",
                 "Generous",
-                "Spiteful",
-                "Vindictive",
-                "Petty"
+                "Bitter",
+                "Spiteful"
             ],
-            "explanation": "Covering the opponent's legal fees after winning shows a great, forgiving spirit, so [TARGET] means GENEROUS.",
+            "explanation": "The word 'unlike' contrasts [TARGET] with a coach who 'blamed the referees,' so it must mean the opposite, which is GENEROUS.",
             "correctAnswer": "Generous",
             "clueType": "antonym",
             "evidenceWords": [
-                "After",
-                "winning"
+                "Unlike",
+                "blamed the referees for every call",
+                "praising his opponents' effort"
             ]
         },
         {
@@ -48,20 +49,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L101_Q3",
-            "sentence": "The sudden spike in server traffic at 3 a.m. was a strange [TARGET] that engineers couldn't explain.",
-            "hint": "From Latin aberrare, 'to wander away' - a wandering off from the usual.",
+            "sentence": "The sudden snowfall in July was called an [TARGET] by meteorologists, which means it was a rare departure from the normal weather pattern that almost never happens.",
+            "hint": "This word describes something that deviates from what is normal or expected.",
             "options": [
-                "Pattern",
-                "Standard",
+                "Routine",
                 "Norm",
-                "Anomaly"
+                "Anomaly",
+                "Pattern"
             ],
-            "explanation": "A spike engineers couldn't explain is a wandering off from the usual pattern, so [TARGET] means ANOMALY.",
+            "explanation": "The sentence defines [TARGET] as 'a rare departure from the normal weather pattern,' so [TARGET] means ANOMALY.",
             "correctAnswer": "Anomaly",
             "clueType": "definition",
             "evidenceWords": [
-                "sudden",
-                "spike"
+                "which means",
+                "rare departure from the normal weather pattern"
             ]
         },
         {
@@ -69,20 +70,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L102_Q1",
-            "sentence": "The [TARGET] tourist missed his train, lost his wallet, and got caught in the rain - all before noon.",
-            "hint": "From Old Norse happ, 'luck' - without (-less) any luck at all.",
+            "sentence": "The [TARGET] intern spilled coffee on the CEO's laptop his first day, locked himself out of the building his second day, and accidentally sent a company-wide email meant for one friend on his third.",
+            "hint": "This word describes someone who seems to have unusually bad luck.",
             "options": [
                 "Fortunate",
-                "Blessed",
                 "Lucky",
+                "Skillful",
                 "Unlucky"
             ],
-            "explanation": "Missing a train, losing a wallet, and getting caught in rain all before noon shows a string of bad luck, so [TARGET] means UNLUCKY.",
+            "explanation": "Spilling coffee on the CEO's laptop, getting locked out, and sending an embarrassing email are all examples of bad luck, so [TARGET] means UNLUCKY.",
             "correctAnswer": "Unlucky",
             "clueType": "example",
             "evidenceWords": [
-                "tourist",
-                "missed"
+                "spilled coffee on the CEO's laptop",
+                "locked himself out of the building",
+                "company-wide email meant for one friend"
             ]
         },
         {
@@ -90,20 +92,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L102_Q2",
-            "sentence": "The chronic illness began to [TARGET] her once she stopped responding to the medication.",
-            "hint": "From Latin debilis, 'weak' - to cause weakness.",
+            "sentence": "The prolonged illness left him unable to climb a single flight of stairs without resting, unable to lift a grocery bag, and too tired to finish a short walk around the block — it had begun to [TARGET] him completely.",
+            "hint": "This word means to severely drain someone's strength or ability.",
             "options": [
+                "Weaken",
                 "Strengthen",
-                "Invigorate",
                 "Energize",
-                "Weaken"
+                "Empower"
             ],
-            "explanation": "No longer responding to medication and growing worse shows being made weaker, so [TARGET] means WEAKEN.",
+            "explanation": "Being unable to climb stairs, lift a bag, or finish a short walk are all signs of severe weakening, even without a direct clue word, so [TARGET] means WEAKEN.",
             "correctAnswer": "Weaken",
             "clueType": "inference",
             "evidenceWords": [
-                "chronic",
-                "illness"
+                "unable to climb a single flight of stairs",
+                "unable to lift a grocery bag",
+                "too tired to finish a short walk"
             ]
         },
         {
@@ -111,20 +114,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L102_Q3",
-            "sentence": "The watchmaker's [TARGET] process involved assembling over two hundred tiny parts by hand.",
-            "hint": "Literally 'taking pains' - putting real effort and care into every step.",
+            "sentence": "Restoring the antique clock was [TARGET] and meticulous work, requiring the craftsman to clean each of the four hundred tiny gears by hand.",
+            "hint": "This word describes work done with extreme, careful effort over a long time.",
             "options": [
-                "Thorough",
-                "Hasty",
+                "Careless",
+                "Meticulous",
                 "Sloppy",
-                "Careless"
+                "Rushed"
             ],
-            "explanation": "Assembling two hundred tiny parts by hand requires real effort and care at every step, so [TARGET] means THOROUGH.",
-            "correctAnswer": "Thorough",
+            "explanation": "The word 'and' links [TARGET] to 'meticulous,' and cleaning four hundred gears by hand confirms it, so [TARGET] means METICULOUS.",
+            "correctAnswer": "Meticulous",
             "clueType": "synonym",
             "evidenceWords": [
-                "watchmaker's",
-                "process"
+                "and meticulous work",
+                "four hundred tiny gears by hand"
             ]
         },
         {
@@ -132,20 +135,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L103_Q1",
-            "sentence": "The relentless desert heat began to [TARGET] even the most experienced hikers by midday.",
-            "hint": "From Latin enervare, 'to remove the sinew' - to drain of strength.",
+            "sentence": "Unlike the morning workout that left her feeling invigorated and ready to take on the day, the humid afternoon heat seemed to [TARGET] her completely, leaving her too drained to even lift her arms.",
+            "hint": "This word means to drain someone of energy and strength.",
             "options": [
-                "Strengthen",
-                "Invigorate",
                 "Energize",
-                "Weaken"
+                "Invigorate",
+                "Exhaust",
+                "Refresh"
             ],
-            "explanation": "Heat draining the strength of even experienced hikers by midday shows draining strength, so [TARGET] means WEAKEN.",
-            "correctAnswer": "Weaken",
+            "explanation": "The word 'unlike' contrasts [TARGET] with a workout that left her 'invigorated,' so it must mean the opposite, which is EXHAUST.",
+            "correctAnswer": "Exhaust",
             "clueType": "antonym",
             "evidenceWords": [
-                "relentless",
-                "desert"
+                "Unlike",
+                "invigorated and ready",
+                "too drained to even lift her arms"
             ]
         },
         {
@@ -153,20 +157,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L103_Q2",
-            "sentence": "A burger and fries is the [TARGET] American diner meal.",
-            "hint": "From Latin quinta essentia, the 'fifth essence' once believed to be the purest form of a thing.",
+            "sentence": "The small diner with its checkered floor, neon sign, and milkshakes was [TARGET] American, which means it was a perfect, defining example of that classic style.",
+            "hint": "This word describes the most perfect, typical example of a quality or category.",
             "options": [
-                "Classic",
-                "Uncharacteristic",
+                "Atypical",
+                "Unrepresentative",
                 "Unusual",
-                "Atypical"
+                "Perfect example"
             ],
-            "explanation": "A burger and fries representing the purest example of a diner meal shows being the most typical example, so [TARGET] means CLASSIC.",
-            "correctAnswer": "Classic",
+            "explanation": "The sentence defines [TARGET] as being 'a perfect, defining example' of the style, so [TARGET] means PERFECT EXAMPLE.",
+            "correctAnswer": "Perfect example",
             "clueType": "definition",
             "evidenceWords": [
-                "burger",
-                "fries"
+                "which means",
+                "a perfect, defining example"
             ]
         },
         {
@@ -174,20 +178,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L103_Q3",
-            "sentence": "The historical film included an [TARGET] when a character checked a digital watch in a scene set in 1850.",
-            "hint": "From Greek ana, 'against,' and chronos, 'time' - something out of place in time.",
+            "sentence": "The movie was full of [TARGET]s: a Roman soldier wearing a wristwatch, a medieval castle with visible electrical wires, and a knight who mentioned checking his phone.",
+            "hint": "This word describes something placed in the wrong time period, out of place historically.",
             "options": [
-                "Precision",
-                "Accuracy",
-                "Correctness",
-                "Inconsistency"
+                "Time-period mistake",
+                "Historical accuracy",
+                "Correct detail",
+                "Period-appropriate item"
             ],
-            "explanation": "A digital watch appearing in a scene set in 1850 is clearly out of place for the time period, so [TARGET] means INCONSISTENCY.",
-            "correctAnswer": "Inconsistency",
+            "explanation": "A wristwatch on a Roman soldier, visible wires in a medieval castle, and a knight mentioning a phone are all examples of things from the wrong era, so [TARGET] means TIME-PERIOD MISTAKE.",
+            "correctAnswer": "Time-period mistake",
             "clueType": "example",
             "evidenceWords": [
-                "historical",
-                "included"
+                "Roman soldier wearing a wristwatch",
+                "medieval castle with visible electrical wires",
+                "knight who mentioned checking his phone"
             ]
         },
         {
@@ -195,20 +200,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L104_Q1",
-            "sentence": "The renovation next door created a [TARGET] of drills, hammers, and shouting that lasted all week.",
-            "hint": "From Greek kakos, 'bad,' and phone, 'sound' - literally 'bad sound.'",
+            "sentence": "Car horns blared, a jackhammer pounded the pavement, sirens wailed in the distance, and a street musician's off-key trumpet cut through it all at the exact same moment — the whole intersection was a [TARGET].",
+            "hint": "This word describes a harsh, jarring mixture of loud, unpleasant sounds.",
             "options": [
-                "Melody",
-                "Silence",
-                "Harmony",
-                "Din"
+                "Peaceful silence",
+                "Harsh noise",
+                "Sweet melody",
+                "Gentle hum"
             ],
-            "explanation": "Drills, hammers, and shouting all at once create a harsh mix of sound, so [TARGET] means DIN.",
-            "correctAnswer": "Din",
+            "explanation": "Blaring horns, a pounding jackhammer, wailing sirens, and an off-key trumpet all at once show a harsh mix of sound, even without a direct clue word, so [TARGET] means HARSH NOISE.",
+            "correctAnswer": "Harsh noise",
             "clueType": "inference",
             "evidenceWords": [
-                "renovation",
-                "created"
+                "horns blared",
+                "jackhammer pounded the pavement",
+                "sirens wailed"
             ]
         },
         {
@@ -216,20 +222,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L104_Q2",
-            "sentence": "Mountain weather can be [TARGET], turning from sunshine to snow within an hour.",
-            "hint": "From Italian capriccio, 'a sudden start' - changing direction as suddenly as a goat's playful leap.",
+            "sentence": "The weather in the mountains was [TARGET] and unpredictable, shifting from sunshine to hail and back to sunshine within twenty minutes.",
+            "hint": "This word describes something that changes suddenly and without an obvious reason.",
             "options": [
-                "Unpredictable",
-                "Steady",
                 "Consistent",
-                "Predictable"
+                "Reliable",
+                "Unpredictable",
+                "Steady"
             ],
-            "explanation": "Turning from sunshine to snow within an hour shows sudden, unpredictable change, so [TARGET] means UNPREDICTABLE.",
+            "explanation": "The word 'and' links [TARGET] to 'unpredictable,' and shifting from sunshine to hail and back in twenty minutes confirms it, so [TARGET] means UNPREDICTABLE.",
             "correctAnswer": "Unpredictable",
             "clueType": "synonym",
             "evidenceWords": [
-                "Mountain",
-                "weather"
+                "and unpredictable",
+                "within twenty minutes"
             ]
         },
         {
@@ -237,20 +243,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L104_Q3",
-            "sentence": "Researchers found a [TARGET] link between the chemical and long-term lung damage.",
-            "hint": "From Greek deleterios, 'destructive' - related to 'delete.'",
+            "sentence": "Unlike the beneficial effects of regular exercise on the heart, years of sitting at a desk without moving had a [TARGET] effect on his overall health.",
+            "hint": "This word describes something that causes harm, especially gradually.",
             "options": [
-                "Harmful",
                 "Helpful",
-                "Wholesome",
-                "Beneficial"
+                "Positive",
+                "Beneficial",
+                "Harmful"
             ],
-            "explanation": "A link to long-term lung damage shows a destructive effect, so [TARGET] means HARMFUL.",
+            "explanation": "The word 'unlike' contrasts [TARGET] with the 'beneficial effects of regular exercise,' so it must mean the opposite, which is HARMFUL.",
             "correctAnswer": "Harmful",
             "clueType": "antonym",
             "evidenceWords": [
-                "Researchers",
-                "found"
+                "Unlike",
+                "beneficial effects of regular exercise",
+                "years of sitting at a desk"
             ]
         },
         {
@@ -258,20 +265,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L105_Q1",
-            "sentence": "He was being [TARGET] when he said he'd sell the dog - he loves that dog more than anyone.",
-            "hint": "From Latin facetus, 'witty' - not meant to be taken seriously.",
+            "sentence": "When he suggested painting the office walls neon pink, he was being [TARGET], which means he was joking around rather than making a serious suggestion.",
+            "hint": "This word describes saying something as a joke rather than seriously.",
             "options": [
-                "Sincere",
                 "Joking",
-                "Earnest",
-                "Serious"
+                "Serious",
+                "Sincere",
+                "Earnest"
             ],
-            "explanation": "Loving the dog more than anyone shows the comment wasn't meant seriously, so [TARGET] means JOKING.",
+            "explanation": "The sentence defines [TARGET] as 'joking around rather than making a serious suggestion,' so [TARGET] means JOKING.",
             "correctAnswer": "Joking",
             "clueType": "definition",
             "evidenceWords": [
-                "being",
-                "loves"
+                "which means",
+                "joking around rather than making a serious suggestion"
             ]
         },
         {
@@ -279,20 +286,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L105_Q2",
-            "sentence": "The [TARGET] taxi driver talked nonstop about local history for the entire forty-minute ride.",
-            "hint": "From Latin garrire, 'to chatter' - related to the sound of chattering birds.",
+            "sentence": "The taxi driver was [TARGET]: he talked nonstop about his childhood, his opinions on every world leader, three unrelated conspiracy theories, and his cousin's wedding, all before they'd left the airport parking lot.",
+            "hint": "This word describes someone who talks excessively, especially about trivial things.",
             "options": [
-                "Taciturn",
                 "Silent",
+                "Excessively talkative",
                 "Reserved",
-                "Talkative"
+                "Tight-lipped"
             ],
-            "explanation": "Talking nonstop for forty minutes shows constant chattering, so [TARGET] means TALKATIVE.",
-            "correctAnswer": "Talkative",
+            "explanation": "Talking nonstop about childhood, opinions, conspiracy theories, and a wedding all before leaving the parking lot is an example of excessive talking, so [TARGET] means EXCESSIVELY TALKATIVE.",
+            "correctAnswer": "Excessively talkative",
             "clueType": "example",
             "evidenceWords": [
-                "driver",
-                "talked"
+                "talked nonstop about his childhood",
+                "three unrelated conspiracy theories",
+                "before they'd left the airport parking lot"
             ]
         },
         {
@@ -300,20 +308,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L105_Q3",
-            "sentence": "In an [TARGET] move, he quit his job the same day he got the idea to travel the world.",
-            "hint": "From Latin impetus, 'a rushing attack' - acting with sudden force, no planning.",
+            "sentence": "Without checking the weather, packing a map, or telling anyone where he was going, he jumped in the car the moment the idea crossed his mind and started driving toward the mountains — a truly [TARGET] decision.",
+            "hint": "This word describes acting suddenly and without thinking through the consequences.",
             "options": [
-                "Impulsive",
+                "Cautious",
                 "Calculated",
-                "Deliberate",
-                "Cautious"
+                "Impulsive",
+                "Deliberate"
             ],
-            "explanation": "Quitting the same day an idea struck shows acting suddenly with no planning, so [TARGET] means IMPULSIVE.",
+            "explanation": "Not checking weather, not packing a map, and driving off the moment the idea crossed his mind all show acting without thinking, even without a direct clue word, so [TARGET] means IMPULSIVE.",
             "correctAnswer": "Impulsive",
             "clueType": "inference",
             "evidenceWords": [
-                "travel",
-                "world"
+                "Without checking the weather",
+                "packing a map",
+                "the moment the idea crossed his mind"
             ]
         },
         {
@@ -321,20 +330,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L106_Q1",
-            "sentence": "Grandpa's [TARGET] laugh filled the whole dining room every Thanksgiving.",
-            "hint": "Named after the Roman god Jupiter (Jove), thought to bring good cheer.",
+            "sentence": "The old innkeeper was [TARGET] and good-humored, always ready with a joke and a warm laugh for every guest who walked through the door.",
+            "hint": "This word describes being cheerful and full of good humor.",
             "options": [
-                "Somber",
-                "Gloomy",
-                "Cheerful",
-                "Melancholy"
+                "Grumpy",
+                "Sour",
+                "Miserable",
+                "Good-humored"
             ],
-            "explanation": "A laugh that filled the whole room every Thanksgiving shows a bright, cheerful nature, so [TARGET] means CHEERFUL.",
-            "correctAnswer": "Cheerful",
+            "explanation": "The word 'and' links [TARGET] to 'good-humored,' and always having a joke and laugh confirms it, so [TARGET] means GOOD-HUMORED.",
+            "correctAnswer": "Good-humored",
             "clueType": "synonym",
             "evidenceWords": [
-                "Grandpa's",
-                "laugh"
+                "and good-humored",
+                "joke and a warm laugh"
             ]
         },
         {
@@ -342,20 +351,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L106_Q2",
-            "sentence": "The exhibit [TARGET]ed photos of the city in 1920 right next to photos of the same streets today.",
-            "hint": "From Latin juxta, 'next to,' and ponere, 'to place' - placing side by side.",
+            "sentence": "Unlike the previous exhibit, which kept every era in a separate room, the new gallery chose to [TARGET] ancient pottery right next to modern sculptures to highlight their surprising similarities.",
+            "hint": "This word means to place two things side by side, especially to show contrast or comparison.",
             "options": [
-                "Contrast",
-                "Unify",
-                "Blend",
-                "Merge"
+                "Place side by side",
+                "Keep separate",
+                "Isolate",
+                "Hide apart"
             ],
-            "explanation": "Placing old and new photos of the same streets side by side highlights their differences, so [TARGET] means CONTRAST.",
-            "correctAnswer": "Contrast",
+            "explanation": "The word 'unlike' contrasts [TARGET] with keeping 'every era in a separate room,' so it must mean the opposite, which is PLACE SIDE BY SIDE.",
+            "correctAnswer": "Place side by side",
             "clueType": "antonym",
             "evidenceWords": [
-                "exhibit",
-                "TARGETed"
+                "Unlike",
+                "every era in a separate room",
+                "ancient pottery right next to modern sculptures"
             ]
         },
         {
@@ -363,20 +373,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L106_Q3",
-            "sentence": "The [TARGET] toddler narrated everything she saw on the entire walk to the park.",
-            "hint": "From Latin loqui, 'to speak' - describes a love of talking.",
+            "sentence": "Aunt Carol was [TARGET] at every family gathering, which means she talked constantly and rarely paused long enough for anyone else to get a word in.",
+            "hint": "This word describes someone who talks a great deal, often nonstop.",
             "options": [
-                "Quiet",
-                "Reticent",
-                "Talkative",
-                "Mute"
+                "Silent",
+                "Very talkative",
+                "Withdrawn",
+                "Shy"
             ],
-            "explanation": "Narrating everything seen on an entire walk shows a love of talking, so [TARGET] means TALKATIVE.",
-            "correctAnswer": "Talkative",
+            "explanation": "The sentence defines [TARGET] as talking 'constantly' with no pause for others, so [TARGET] means VERY TALKATIVE.",
+            "correctAnswer": "Very talkative",
             "clueType": "definition",
             "evidenceWords": [
-                "toddler",
-                "narrated"
+                "which means",
+                "talked constantly",
+                "rarely paused long enough"
             ]
         },
         {
@@ -384,20 +395,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L107_Q1",
-            "sentence": "The manager's [TARGET] instructions left the whole team unsure what the actual goal was.",
-            "hint": "From Latin nebula, 'mist' - as unclear as fog.",
+            "sentence": "The company's new mission statement was [TARGET]: it mentioned 'synergy' and 'innovation' but never said what the company actually made or who its customers were.",
+            "hint": "This word describes something unclear, lacking definite form.",
             "options": [
-                "Definite",
-                "Vague",
                 "Precise",
-                "Clear"
+                "Clear",
+                "Vague",
+                "Specific"
             ],
-            "explanation": "Instructions that left the team unsure of the goal are unclear like fog, so [TARGET] means VAGUE.",
+            "explanation": "Mentioning buzzwords without explaining what the company makes or who its customers are is an example of something vague, so [TARGET] means VAGUE.",
             "correctAnswer": "Vague",
             "clueType": "example",
             "evidenceWords": [
-                "manager's",
-                "instructions"
+                "mentioned 'synergy' and 'innovation'",
+                "never said what the company actually made"
             ]
         },
         {
@@ -405,20 +416,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L107_Q2",
-            "sentence": "He was so [TARGET] that he reused the same wrapping paper for five years of birthday gifts.",
-            "hint": "From Latin parcere, 'to spare' - sparing money to an extreme degree.",
+            "sentence": "Even though his bank account held millions, he still reused tea bags three times, drove a car with over 300,000 miles on it, and argued with the grocery store over a ten-cent price difference — famously [TARGET] despite his wealth.",
+            "hint": "This word describes being extremely unwilling to spend money, even when you can afford to.",
             "options": [
                 "Generous",
-                "Stingy",
+                "Lavish",
                 "Extravagant",
-                "Lavish"
+                "Stingy"
             ],
-            "explanation": "Reusing the same wrapping paper for five years shows sparing money to an extreme degree, so [TARGET] means STINGY.",
+            "explanation": "Reusing tea bags, driving a 300,000-mile car, and arguing over ten cents despite having millions all show extreme reluctance to spend, even without a direct clue word, so [TARGET] means STINGY.",
             "correctAnswer": "Stingy",
             "clueType": "inference",
             "evidenceWords": [
-                "reused",
-                "wrapping"
+                "reused tea bags three times",
+                "300,000 miles",
+                "argued with the grocery store over a ten-cent price difference"
             ]
         },
         {
@@ -426,20 +438,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L107_Q3",
-            "sentence": "The [TARGET] student refused to follow the new seating chart, no matter how the teacher explained it.",
-            "hint": "From Latin recalcitrare, 'to kick back' - like a mule kicking against being led.",
+            "sentence": "The [TARGET] and defiant mule refused to move another step no matter how much the farmer tugged or pleaded.",
+            "hint": "This word describes stubbornly resisting authority or control.",
             "options": [
-                "Uncooperative",
-                "Compliant",
-                "Agreeable",
-                "Obedient"
+                "Defiant",
+                "Obedient",
+                "Cooperative",
+                "Compliant"
             ],
-            "explanation": "Refusing to follow the chart no matter the explanation shows resisting like a mule kicking back, so [TARGET] means UNCOOPERATIVE.",
-            "correctAnswer": "Uncooperative",
+            "explanation": "The word 'and' links [TARGET] to 'defiant,' and refusing to move despite tugging and pleading confirms it, so [TARGET] means DEFIANT.",
+            "correctAnswer": "Defiant",
             "clueType": "synonym",
             "evidenceWords": [
-                "student",
-                "refused"
+                "and defiant",
+                "refused to move another step"
             ]
         },
         {
@@ -447,20 +459,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L108_Q1",
-            "sentence": "The new hire was seen as a [TARGET], agreeing loudly with every idea the boss suggested.",
-            "hint": "From Greek sykophantes - originally an informer, later someone who flatters for gain.",
+            "sentence": "Unlike the honest advisor who told the king unpleasant truths even when it risked his position, the courtier was a [TARGET], flattering the king's every decision no matter how foolish.",
+            "hint": "This word describes a person who flatters powerful people to gain favor.",
             "options": [
-                "Skeptic",
-                "Opponent",
-                "Critic",
-                "Flatterer"
+                "Honest advisor",
+                "Flatterer",
+                "Truth-teller",
+                "Critic"
             ],
-            "explanation": "Agreeing loudly with every idea the boss suggests describes someone who flatters for gain, so [TARGET] means FLATTERER.",
+            "explanation": "The word 'unlike' contrasts [TARGET] with an 'honest advisor,' so it must mean the opposite, which is FLATTERER.",
             "correctAnswer": "Flatterer",
             "clueType": "antonym",
             "evidenceWords": [
-                "agreeing",
-                "loudly"
+                "Unlike",
+                "honest advisor",
+                "flattering the king's every decision"
             ]
         },
         {
@@ -468,20 +481,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L108_Q2",
-            "sentence": "Wireless earbuds have become [TARGET] on city streets, buses, and trains.",
-            "hint": "From Latin ubique - describes something so common it seems to surround you no matter where you look.",
+            "sentence": "Smartphones have become [TARGET] in modern life, which means they are found absolutely everywhere, from classrooms to grocery stores to hospital waiting rooms.",
+            "hint": "This word describes something that seems to be present everywhere at once.",
             "options": [
-                "Uncommon",
-                "Scarce",
                 "Rare",
-                "Everywhere"
+                "Scarce",
+                "Omnipresent",
+                "Uncommon"
             ],
-            "explanation": "Being seen on streets, buses, and trains shows being present in every direction, so [TARGET] means EVERYWHERE.",
-            "correctAnswer": "Everywhere",
+            "explanation": "The sentence defines [TARGET] as being 'found absolutely everywhere,' so [TARGET] means OMNIPRESENT.",
+            "correctAnswer": "Omnipresent",
             "clueType": "definition",
             "evidenceWords": [
-                "Wireless",
-                "earbuds"
+                "which means",
+                "found absolutely everywhere"
             ]
         },
         {
@@ -489,20 +502,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L108_Q3",
-            "sentence": "Critics called the sequel [TARGET], recycling the exact same jokes as the first movie.",
-            "hint": "Originally meant 'belonging to a feudal lord's lands,' later 'common to everyone.'",
+            "sentence": "The greeting card's message was [TARGET]: 'Have a nice day,' 'Wishing you well,' and 'Take care' — phrases so generic they could apply to literally anyone.",
+            "hint": "This word describes something unoriginal and boring from overuse.",
             "options": [
+                "Original",
+                "Fresh",
                 "Inventive",
-                "Innovative",
-                "Unoriginal",
-                "Original"
+                "Cliched"
             ],
-            "explanation": "Recycling the exact same jokes as the first movie shows nothing new or original, so [TARGET] means UNORIGINAL.",
-            "correctAnswer": "Unoriginal",
+            "explanation": "Generic phrases that 'could apply to literally anyone' are examples of unoriginal, overused language, so [TARGET] means CLICHED.",
+            "correctAnswer": "Cliched",
             "clueType": "example",
             "evidenceWords": [
-                "Critics",
-                "called"
+                "Have a nice day",
+                "Wishing you well",
+                "could apply to literally anyone"
             ]
         },
         {
@@ -510,20 +524,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L109_Q1",
-            "sentence": "My coworker is always [TARGET] to switching shifts whenever someone needs a favor.",
-            "hint": "From Latin amenare, 'to lead' - easy to lead or persuade.",
+            "sentence": "When the team suggested moving the deadline up by a week, the manager nodded right away, adjusted the calendar on the spot, and said the new schedule actually worked better for her too — clearly [TARGET] to the change.",
+            "hint": "This word describes being willing to agree with a suggestion.",
             "options": [
-                "Agreeable",
-                "Stubborn",
-                "Defiant",
-                "Resistant"
+                "Open",
+                "Resistant",
+                "Opposed",
+                "Unwilling"
             ],
-            "explanation": "Always willing to switch shifts as a favor shows being easy to persuade, so [TARGET] means AGREEABLE.",
-            "correctAnswer": "Agreeable",
+            "explanation": "Nodding right away, adjusting the calendar immediately, and agreeing the change worked better all show openness to the suggestion, even without a direct clue word, so [TARGET] means OPEN.",
+            "correctAnswer": "Open",
             "clueType": "inference",
             "evidenceWords": [
-                "coworker",
-                "always"
+                "nodded right away",
+                "adjusted the calendar on the spot",
+                "new schedule actually worked better"
             ]
         },
         {
@@ -531,19 +546,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L109_Q2",
-            "sentence": "She gave a [TARGET] look when the GPS told her to turn into what was clearly a lake.",
-            "hint": "From be- + 'muse,' originally meaning lost in thought.",
+            "sentence": "He stared at the strange contraption with a [TARGET] and puzzled expression, unable to figure out what it was even supposed to do.",
+            "hint": "This word describes a state of mild confusion, often with a slightly furrowed brow.",
             "options": [
+                "Certain",
                 "Puzzled",
-                "Enlightened",
-                "Informed",
-                "Certain"
+                "Confident",
+                "Clear-headed"
             ],
-            "explanation": "Reacting to a GPS direction into a lake shows confusion at something that makes no sense, so [TARGET] means PUZZLED.",
+            "explanation": "The word 'and' links [TARGET] to 'puzzled,' and being unable to figure out what the contraption did confirms it, so [TARGET] means PUZZLED.",
             "correctAnswer": "Puzzled",
             "clueType": "synonym",
             "evidenceWords": [
-                "clearly"
+                "and puzzled expression",
+                "unable to figure out what it was"
             ]
         },
         {
@@ -551,20 +567,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L109_Q3",
-            "sentence": "Roadwork forced drivers onto an [TARGET] detour that added forty-five minutes to the trip.",
-            "hint": "From Latin circuitus, 'going around' - a roundabout path.",
+            "sentence": "Unlike the direct highway route that would have taken twenty minutes, the GPS sent them on a [TARGET] path through six small towns, adding an extra hour to the trip.",
+            "hint": "This word describes a route that winds around rather than going direct.",
             "options": [
                 "Direct",
-                "Indirect",
-                "Shortest",
-                "Straight"
+                "Straight",
+                "Roundabout",
+                "Shortest"
             ],
-            "explanation": "A detour adding forty-five minutes shows taking a roundabout path, so [TARGET] means INDIRECT.",
-            "correctAnswer": "Indirect",
+            "explanation": "The word 'unlike' contrasts [TARGET] with the 'direct highway route,' so it must mean the opposite, which is ROUNDABOUT.",
+            "correctAnswer": "Roundabout",
             "clueType": "antonym",
             "evidenceWords": [
-                "Roadwork",
-                "forced"
+                "Unlike",
+                "direct highway route",
+                "adding an extra hour"
             ]
         },
         {
@@ -572,20 +589,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L110_Q1",
-            "sentence": "The surgeon's [TARGET] fingers tied the tiny knot in under three seconds.",
-            "hint": "From Latin dexter, 'right (hand)' - skilled, especially with the hands.",
+            "sentence": "The surgeon's [TARGET] hands moved with incredible skill, which means her fingers could perform delicate, precise movements that most people's hands simply couldn't manage.",
+            "hint": "This word describes being nimble and precise, especially with the hands.",
             "options": [
-                "Adroit",
-                "Fumbling",
                 "Clumsy",
-                "Awkward"
+                "Fumbling",
+                "Awkward",
+                "Skillful"
             ],
-            "explanation": "Tying a tiny knot in under three seconds shows great skill with the hands, so [TARGET] means ADROIT.",
-            "correctAnswer": "Adroit",
+            "explanation": "The sentence defines [TARGET] as fingers performing 'delicate, precise movements that most people's hands simply couldn't manage,' so [TARGET] means SKILLFUL.",
+            "correctAnswer": "Skillful",
             "clueType": "definition",
             "evidenceWords": [
-                "surgeon's",
-                "fingers"
+                "which means",
+                "delicate, precise movements"
             ]
         },
         {
@@ -593,20 +610,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L110_Q2",
-            "sentence": "The essay lost points for including [TARGET] details that had nothing to do with the main argument.",
-            "hint": "From Latin extraneus, 'external' - coming from outside the main topic.",
+            "sentence": "The editor cut every [TARGET] detail from the report: the weather on the day of the meeting, the color of the conference room walls, and a tangent about the author's lunch.",
+            "hint": "This word describes something unnecessary, off the main point.",
             "options": [
                 "Irrelevant",
+                "Essential",
                 "Necessary",
-                "Relevant",
-                "Essential"
+                "Relevant"
             ],
-            "explanation": "Details that had nothing to do with the main argument come from outside the real topic, so [TARGET] means IRRELEVANT.",
+            "explanation": "The weather, wall color, and a lunch tangent are all examples of unnecessary details cut from a report, so [TARGET] means IRRELEVANT.",
             "correctAnswer": "Irrelevant",
             "clueType": "example",
             "evidenceWords": [
-                "essay",
-                "points"
+                "weather on the day of the meeting",
+                "color of the conference room walls",
+                "tangent about the author's lunch"
             ]
         },
         {
@@ -614,20 +632,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L110_Q3",
-            "sentence": "The debate coach pointed out the [TARGET] reasoning in the student's argument about climate change.",
-            "hint": "From Latin fallere, 'to deceive' - built on a deceptive error in logic.",
+            "sentence": "The argument claimed that because ice cream sales and drowning deaths both rise in summer, ice cream must somehow cause drowning, ignoring the obvious fact that both simply increase with hot weather — a clearly [TARGET] piece of reasoning.",
+            "hint": "This word describes an argument based on a mistaken or misleading premise.",
             "options": [
-                "Accurate",
                 "Sound",
-                "Misleading",
-                "Valid"
+                "Flawed",
+                "Valid",
+                "Logical"
             ],
-            "explanation": "Reasoning a coach flags as flawed contains a deceptive logical error, so [TARGET] means MISLEADING.",
-            "correctAnswer": "Misleading",
+            "explanation": "Confusing two things that rise together with one causing the other, while ignoring the real explanation, shows flawed reasoning, even without a direct clue word, so [TARGET] means FLAWED.",
+            "correctAnswer": "Flawed",
             "clueType": "inference",
             "evidenceWords": [
-                "debate",
-                "coach"
+                "ice cream sales and drowning deaths both rise in summer",
+                "ignoring the obvious fact"
             ]
         }
     ],

@@ -6,721 +6,781 @@
         {
             "id": "VOC_TOPICVOCAB_L91_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Itinerary or Detour.",
             "topicBuckets": [
                 "Itinerary",
                 "Detour"
             ],
-            "hint": "Here's a tip: An itinerary is the planned route for a trip, while a detour is an unplanned change away from that route!",
-            "explanation": "Think of 'Itinerary' as the planned travel schedule (route, plan), and 'Detour' as an unplanned diversion (deviation, bypass)!",
+            "hint": "Think about the plan you printed before the trip, versus what happened when a road was closed.",
+            "explanation": "Schedule, route, and 'booking confirmation' all belong to a planned journey, fixed in advance. A diversion and a 'wrong turn' both describe leaving that plan, with diversion being the formal term used on road signs.",
             "options": [
-                "Route",
-                "Deviation",
-                "Plan",
-                "Bypass",
-                "Schedule"
+                "Schedule",
+                "Diversion",
+                "Booking confirmation",
+                "Wrong turn",
+                "Route"
             ],
-            "correctAnswer": "Itinerary:Route, Detour:Deviation, Itinerary:Plan, Detour:Bypass, Itinerary:Schedule",
+            "correctAnswer": "Itinerary:Schedule, Detour:Diversion, Itinerary:Booking confirmation, Detour:Wrong turn, Itinerary:Route",
             "relatedWords": [
-                "aspect of Itinerary:Route, Detour:Deviation, Itinerary:Plan, Detour:Bypass, Itinerary:Schedule",
-                "concept of Itinerary:Route, Detour:Deviation, Itinerary:Plan, Detour:Bypass, Itinerary:Schedule",
-                "related to Itinerary:Route, Detour:Deviation, Itinerary:Plan, Detour:Bypass, Itinerary:Schedule"
+                "Schedule: a plan of times and events",
+                "Diversion: an official alternative route around a closure",
+                "Booking confirmation: proof that a reservation is secured",
+                "Wrong turn: an unintended departure from the route",
+                "Route: the path planned for a journey"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L91_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "One detour word describes a delay that turns out to be worth it. Sort into Detour or Itinerary.",
             "topicBuckets": [
-                "Itinerary",
-                "Detour"
+                "Detour",
+                "Itinerary"
             ],
-            "hint": "Here's a tip: An itinerary is the planned route for a trip, while a detour is an unplanned change away from that route!",
-            "explanation": "Think of 'Itinerary' as the planned travel schedule (route, plan), and 'Detour' as an unplanned diversion (deviation, bypass)!",
+            "hint": "Not every departure from the plan is a problem.",
+            "explanation": "An agenda and a 'fixed departure' both belong to a set plan, while 'on schedule' confirms the plan is holding. A 'scenic route' is a deliberate detour chosen for the view rather than speed, and a setback is an unwanted delay pushing the trip off course.",
             "options": [
+                "Setback",
                 "Agenda",
-                "Diversion",
-                "Roadmap",
-                "Alternate-path",
-                "Timeline"
+                "On schedule",
+                "Scenic route",
+                "Fixed departure"
             ],
-            "correctAnswer": "Itinerary:Agenda, Detour:Diversion, Itinerary:Roadmap, Detour:Alternate-path, Itinerary:Timeline",
+            "correctAnswer": "Detour:Setback, Itinerary:Agenda, Itinerary:On schedule, Detour:Scenic route, Itinerary:Fixed departure",
             "relatedWords": [
-                "aspect of Itinerary:Agenda, Detour:Diversion, Itinerary:Roadmap, Detour:Alternate-path, Itinerary:Timeline",
-                "concept of Itinerary:Agenda, Detour:Diversion, Itinerary:Roadmap, Detour:Alternate-path, Itinerary:Timeline",
-                "related to Itinerary:Agenda, Detour:Diversion, Itinerary:Roadmap, Detour:Alternate-path, Itinerary:Timeline"
+                "Setback: a delay that pushes plans backward",
+                "Agenda: a planned list of things to be done",
+                "On schedule: running according to the plan",
+                "Scenic route: a longer path chosen for its views",
+                "Fixed departure: a departure time that cannot be changed"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L91_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Picture a traveller explaining why they arrived a day late. Sort into Itinerary or Detour.",
             "topicBuckets": [
                 "Itinerary",
                 "Detour"
             ],
-            "hint": "Here's a tip: An itinerary is the planned route for a trip, while a detour is an unplanned change away from that route!",
-            "explanation": "Think of 'Itinerary' as the planned travel schedule (route, plan), and 'Detour' as an unplanned diversion (deviation, bypass)!",
+            "hint": "Two of these describe rerouting after something went wrong.",
+            "explanation": "A 'planned stopover' and 'itinerary in hand' both belong to an organised trip, with a stopover being a deliberate break built into the route. 'Rerouted', 'off the beaten path', and 'unplanned stop' all describe departures from the plan, though 'off the beaten path' often carries a positive, adventurous sense.",
             "options": [
-                "Travel-plan",
-                "Reroute",
-                "Stopover-list",
-                "Workaround",
-                "Booked-path"
+                "Planned stopover",
+                "Itinerary in hand",
+                "Unplanned stop",
+                "Rerouted",
+                "Off the beaten path"
             ],
-            "correctAnswer": "Itinerary:Travel-plan, Detour:Reroute, Itinerary:Stopover-list, Detour:Workaround, Itinerary:Booked-path",
+            "correctAnswer": "Itinerary:Planned stopover, Itinerary:Itinerary in hand, Detour:Unplanned stop, Detour:Rerouted, Detour:Off the beaten path",
             "relatedWords": [
-                "aspect of Itinerary:Travel-plan, Detour:Reroute, Itinerary:Stopover-list, Detour:Workaround, Itinerary:Booked-path",
-                "concept of Itinerary:Travel-plan, Detour:Reroute, Itinerary:Stopover-list, Detour:Workaround, Itinerary:Booked-path",
-                "related to Itinerary:Travel-plan, Detour:Reroute, Itinerary:Stopover-list, Detour:Workaround, Itinerary:Booked-path"
+                "Planned stopover: a deliberate break built into a journey",
+                "Itinerary in hand: having the full trip plan ready",
+                "Unplanned stop: a halt that was not part of the plan",
+                "Rerouted: sent along a different path than planned",
+                "Off the beaten path: away from common, well-travelled routes"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L92_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Essential or Souvenir, thinking about packing a bag.",
             "topicBuckets": [
-                "Souvenir",
-                "Essential"
+                "Essential",
+                "Souvenir"
             ],
-            "hint": "Here's a tip: A souvenir is a keepsake you buy to remember a trip, while an essential is something you must pack!",
-            "explanation": "Think of 'Souvenir' as a memory keepsake bought while traveling (memento, keepsake), and 'Essential' as a necessary item for the trip (must-have, necessity)!",
+            "hint": "Ask which items you'd be stuck without, and which you bought to remember the trip.",
+            "explanation": "A keepsake, a postcard, and a fridge magnet are all bought to remember a place, not to use. A passport and medication are essentials \u2014 items a trip genuinely cannot proceed without.",
             "options": [
-                "Memento",
-                "Necessity",
+                "Postcard",
                 "Keepsake",
-                "Must-have",
-                "Trinket"
+                "Medication",
+                "Fridge magnet",
+                "Passport"
             ],
-            "correctAnswer": "Souvenir:Memento, Essential:Necessity, Souvenir:Keepsake, Essential:Must-have, Souvenir:Trinket",
+            "correctAnswer": "Souvenir:Postcard, Souvenir:Keepsake, Essential:Medication, Souvenir:Fridge magnet, Essential:Passport",
             "relatedWords": [
-                "aspect of Souvenir:Memento, Essential:Necessity, Souvenir:Keepsake, Essential:Must-have, Souvenir:Trinket",
-                "concept of Souvenir:Memento, Essential:Necessity, Souvenir:Keepsake, Essential:Must-have, Souvenir:Trinket",
-                "related to Souvenir:Memento, Essential:Necessity, Souvenir:Keepsake, Essential:Must-have, Souvenir:Trinket"
+                "Postcard: a card sent or kept as a memento of a place",
+                "Keepsake: an item kept to remember someone or somewhere",
+                "Medication: medicine a traveller needs to take regularly",
+                "Fridge magnet: a small decorative memento of a place",
+                "Passport: the document required for international travel"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L92_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "One of these is bought as a gift, and one is what you carry your money in. Sort into Souvenir or Essential.",
             "topicBuckets": [
                 "Souvenir",
                 "Essential"
             ],
-            "hint": "Here's a tip: A souvenir is a keepsake you buy to remember a trip, while an essential is something you must pack!",
-            "explanation": "Think of 'Souvenir' as a memory keepsake bought while traveling (memento, keepsake), and 'Essential' as a necessary item for the trip (must-have, necessity)!",
+            "hint": "Think about what customs might tax, versus what you'd replace immediately if lost.",
+            "explanation": "A trinket and a memento are both small items valued for the memory attached to them, and 'duty-free purchase' names something bought abroad largely as a treat. A charger and 'travel insurance' are practical necessities, useless as mementos but hard to travel without.",
             "options": [
-                "Postcard",
-                "Passport-copy",
-                "Magnet",
-                "Medication",
-                "Snow-globe"
+                "Charger",
+                "Duty-free purchase",
+                "Travel insurance",
+                "Memento",
+                "Trinket"
             ],
-            "correctAnswer": "Souvenir:Postcard, Essential:Passport-copy, Souvenir:Magnet, Essential:Medication, Souvenir:Snow-globe",
+            "correctAnswer": "Essential:Charger, Souvenir:Duty-free purchase, Essential:Travel insurance, Souvenir:Memento, Souvenir:Trinket",
             "relatedWords": [
-                "aspect of Souvenir:Postcard, Essential:Passport-copy, Souvenir:Magnet, Essential:Medication, Souvenir:Snow-globe",
-                "concept of Souvenir:Postcard, Essential:Passport-copy, Souvenir:Magnet, Essential:Medication, Souvenir:Snow-globe",
-                "related to Souvenir:Postcard, Essential:Passport-copy, Souvenir:Magnet, Essential:Medication, Souvenir:Snow-globe"
+                "Charger: a device for recharging electronics",
+                "Duty-free purchase: goods bought abroad without local tax",
+                "Travel insurance: coverage protecting a traveller against losses",
+                "Memento: an object kept as a reminder",
+                "Trinket: a small, inexpensive decorative item"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L92_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Picture someone repacking an overweight suitcase at the airport. Sort into Souvenir or Essential.",
             "topicBuckets": [
                 "Souvenir",
                 "Essential"
             ],
-            "hint": "Here's a tip: A souvenir is a keepsake you buy to remember a trip, while an essential is something you must pack!",
-            "explanation": "Think of 'Souvenir' as a memory keepsake bought while traveling (memento, keepsake), and 'Essential' as a necessary item for the trip (must-have, necessity)!",
+            "hint": "Two of these describe things you'd abandon first to save weight.",
+            "explanation": "'Knick-knack' and 'gift shop find' both describe non-essential purchases, the first items to go when weight matters. 'Carry-on necessity', 'boarding pass', and 'spare cash' are all things a traveller keeps close, since losing any of them creates a real problem.",
             "options": [
-                "Local-craft",
-                "Charger",
-                "Memorabilia",
-                "First-aid-kit",
-                "Keychain"
+                "Knick-knack",
+                "Spare cash",
+                "Boarding pass",
+                "Gift shop find",
+                "Carry-on necessity"
             ],
-            "correctAnswer": "Souvenir:Local-craft, Essential:Charger, Souvenir:Memorabilia, Essential:First-aid-kit, Souvenir:Keychain",
+            "correctAnswer": "Souvenir:Knick-knack, Essential:Spare cash, Essential:Boarding pass, Souvenir:Gift shop find, Essential:Carry-on necessity",
             "relatedWords": [
-                "aspect of Souvenir:Local-craft, Essential:Charger, Souvenir:Memorabilia, Essential:First-aid-kit, Souvenir:Keychain",
-                "concept of Souvenir:Local-craft, Essential:Charger, Souvenir:Memorabilia, Essential:First-aid-kit, Souvenir:Keychain",
-                "related to Souvenir:Local-craft, Essential:Charger, Souvenir:Memorabilia, Essential:First-aid-kit, Souvenir:Keychain"
+                "Knick-knack: a small ornamental object of little practical use",
+                "Spare cash: extra money kept for emergencies",
+                "Boarding pass: the document permitting entry to a flight",
+                "Gift shop find: a memento bought at a tourist shop",
+                "Carry-on necessity: an item kept in hand luggage because it's needed"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L93_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Allergy or Tolerance.",
             "topicBuckets": [
                 "Allergy",
                 "Tolerance"
             ],
-            "hint": "Here's a tip: An allergy makes your body react badly to something, while tolerance means your body can handle it fine!",
-            "explanation": "Think of 'Allergy' as a harmful immune reaction (sensitivity, reaction), and 'Tolerance' as the body's ability to handle something without harm (resistance, immunity)!",
+            "hint": "Think about a body reacting badly to a food, versus handling it without trouble.",
+            "explanation": "An allergen is the substance that triggers a reaction, while a reaction and 'hypersensitivity' describe the body responding against it. 'Well-tolerated' and 'no adverse effect' both describe a body handling something without difficulty.",
             "options": [
-                "Sensitivity",
-                "Resistance",
                 "Reaction",
-                "Immunity",
-                "Intolerance"
+                "Well-tolerated",
+                "Allergen",
+                "No adverse effect",
+                "Hypersensitivity"
             ],
-            "correctAnswer": "Allergy:Sensitivity, Tolerance:Resistance, Allergy:Reaction, Tolerance:Immunity, Allergy:Intolerance",
+            "correctAnswer": "Allergy:Reaction, Tolerance:Well-tolerated, Allergy:Allergen, Tolerance:No adverse effect, Allergy:Hypersensitivity",
             "relatedWords": [
-                "aspect of Allergy:Sensitivity, Tolerance:Resistance, Allergy:Reaction, Tolerance:Immunity, Allergy:Intolerance",
-                "concept of Allergy:Sensitivity, Tolerance:Resistance, Allergy:Reaction, Tolerance:Immunity, Allergy:Intolerance",
-                "related to Allergy:Sensitivity, Tolerance:Resistance, Allergy:Reaction, Tolerance:Immunity, Allergy:Intolerance"
+                "Reaction: the body's response against a substance",
+                "Well-tolerated: handled by the body without problems",
+                "Allergen: a substance that triggers an allergic reaction",
+                "No adverse effect: causing no harmful response",
+                "Hypersensitivity: an unusually strong reaction to a substance"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L93_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Picture the note a restaurant gets about a guest's dietary needs. Sort into Tolerance or Allergy.",
             "topicBuckets": [
-                "Allergy",
-                "Tolerance"
+                "Tolerance",
+                "Allergy"
             ],
-            "hint": "Here's a tip: An allergy makes your body react badly to something, while tolerance means your body can handle it fine!",
-            "explanation": "Think of 'Allergy' as a harmful immune reaction (sensitivity, reaction), and 'Tolerance' as the body's ability to handle something without harm (resistance, immunity)!",
+            "hint": "One tolerance phrase means a food is safe for everyone at the table.",
+            "explanation": "'Intolerance', 'trigger food', and 'severe reaction' all mark foods that must be avoided, with intolerance describing digestive difficulty rather than an immune response. 'Safe for all guests' and 'unrestricted diet' both confirm no avoidance is needed.",
             "options": [
-                "Hypersensitivity",
-                "Adaptation",
-                "Hives",
-                "Endurance",
-                "Rash-trigger"
+                "Unrestricted diet",
+                "Safe for all guests",
+                "Severe reaction",
+                "Intolerance",
+                "Trigger food"
             ],
-            "correctAnswer": "Allergy:Hypersensitivity, Tolerance:Adaptation, Allergy:Hives, Tolerance:Endurance, Allergy:Rash-trigger",
+            "correctAnswer": "Tolerance:Unrestricted diet, Tolerance:Safe for all guests, Allergy:Severe reaction, Allergy:Intolerance, Allergy:Trigger food",
             "relatedWords": [
-                "aspect of Allergy:Hypersensitivity, Tolerance:Adaptation, Allergy:Hives, Tolerance:Endurance, Allergy:Rash-trigger",
-                "concept of Allergy:Hypersensitivity, Tolerance:Adaptation, Allergy:Hives, Tolerance:Endurance, Allergy:Rash-trigger",
-                "related to Allergy:Hypersensitivity, Tolerance:Adaptation, Allergy:Hives, Tolerance:Endurance, Allergy:Rash-trigger"
+                "Unrestricted diet: a diet with no foods that must be avoided",
+                "Safe for all guests: containing nothing that needs to be avoided",
+                "Severe reaction: a strong, potentially dangerous response",
+                "Intolerance: difficulty digesting a particular food",
+                "Trigger food: a food that causes a bad reaction"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L93_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These are terms from a medical label or allergy report. Sort into Allergy or Tolerance.",
             "topicBuckets": [
                 "Allergy",
                 "Tolerance"
             ],
-            "hint": "Here's a tip: An allergy makes your body react badly to something, while tolerance means your body can handle it fine!",
-            "explanation": "Think of 'Allergy' as a harmful immune reaction (sensitivity, reaction), and 'Tolerance' as the body's ability to handle something without harm (resistance, immunity)!",
+            "hint": "One tolerance term describes gradually building the body's ability to handle something.",
+            "explanation": "'Cross-contamination' and 'anaphylaxis' both describe serious allergy risks, with anaphylaxis being a severe, rapid reaction requiring emergency care. 'Desensitisation' describes gradually building the body's ability to handle a substance, and 'cleared for consumption' and 'no known sensitivity' both confirm something is safe.",
             "options": [
+                "Desensitisation",
+                "No known sensitivity",
+                "Cleared for consumption",
                 "Anaphylaxis",
-                "Acquired-immunity",
-                "Trigger",
-                "Withstanding",
-                "Flare-up"
+                "Cross-contamination"
             ],
-            "correctAnswer": "Allergy:Anaphylaxis, Tolerance:Acquired-immunity, Allergy:Trigger, Tolerance:Withstanding, Allergy:Flare-up",
+            "correctAnswer": "Tolerance:Desensitisation, Tolerance:No known sensitivity, Tolerance:Cleared for consumption, Allergy:Anaphylaxis, Allergy:Cross-contamination",
             "relatedWords": [
-                "aspect of Allergy:Anaphylaxis, Tolerance:Acquired-immunity, Allergy:Trigger, Tolerance:Withstanding, Allergy:Flare-up",
-                "concept of Allergy:Anaphylaxis, Tolerance:Acquired-immunity, Allergy:Trigger, Tolerance:Withstanding, Allergy:Flare-up",
-                "related to Allergy:Anaphylaxis, Tolerance:Acquired-immunity, Allergy:Trigger, Tolerance:Withstanding, Allergy:Flare-up"
+                "Desensitisation: gradually reducing the body's reaction to a substance",
+                "No known sensitivity: showing no recorded reaction to a substance",
+                "Cleared for consumption: confirmed safe to eat",
+                "Anaphylaxis: a severe, rapid allergic reaction needing emergency care",
+                "Cross-contamination: unintended transfer of an allergen between foods"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L94_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Therapy or Relapse.",
             "topicBuckets": [
                 "Therapy",
                 "Relapse"
             ],
-            "hint": "Here's a tip: Therapy helps a patient recover, while a relapse means the illness or problem returns!",
-            "explanation": "Think of 'Therapy' as treatment that helps recovery (counseling, rehabilitation), and 'Relapse' as the return of illness after improvement (setback, recurrence)!",
+            "hint": "Think about the steps that move recovery forward, and the moment it moves backward.",
+            "explanation": "Treatment, counselling, and rehabilitation all describe structured support that helps recovery progress. A setback and a 'return of symptoms' both describe recovery moving backward, which clinicians treat as a normal, manageable part of many recovery paths rather than a failure.",
             "options": [
-                "Counseling",
-                "Setback",
+                "Treatment",
+                "Counselling",
                 "Rehabilitation",
-                "Recurrence",
-                "Treatment"
+                "Return of symptoms",
+                "Setback"
             ],
-            "correctAnswer": "Therapy:Counseling, Relapse:Setback, Therapy:Rehabilitation, Relapse:Recurrence, Therapy:Treatment",
+            "correctAnswer": "Therapy:Treatment, Therapy:Counselling, Therapy:Rehabilitation, Relapse:Return of symptoms, Relapse:Setback",
             "relatedWords": [
-                "aspect of Therapy:Counseling, Relapse:Setback, Therapy:Rehabilitation, Relapse:Recurrence, Therapy:Treatment",
-                "concept of Therapy:Counseling, Relapse:Setback, Therapy:Rehabilitation, Relapse:Recurrence, Therapy:Treatment",
-                "related to Therapy:Counseling, Relapse:Setback, Therapy:Rehabilitation, Relapse:Recurrence, Therapy:Treatment"
+                "Treatment: medical or psychological care given to improve health",
+                "Counselling: professional guidance through talking",
+                "Rehabilitation: a structured programme to restore health or function",
+                "Return of symptoms: the reappearance of a condition's signs",
+                "Setback: a reversal of progress during recovery"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L94_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "One therapy word names a planned schedule of care. Sort into Relapse or Therapy.",
             "topicBuckets": [
-                "Therapy",
-                "Relapse"
+                "Relapse",
+                "Therapy"
             ],
-            "hint": "Here's a tip: Therapy helps a patient recover, while a relapse means the illness or problem returns!",
-            "explanation": "Think of 'Therapy' as treatment that helps recovery (counseling, rehabilitation), and 'Relapse' as the return of illness after improvement (setback, recurrence)!",
+            "hint": "Think about what a care plan includes, versus what it's designed to prevent.",
+            "explanation": "A 'treatment plan', a session, and 'follow-up care' are all parts of organised, ongoing support. A 'flare-up' and 'backslide' both describe a return of difficulty, with a flare-up usually describing a condition becoming active again after a quiet period.",
             "options": [
-                "Healing-session",
-                "Backslide",
-                "Recovery-plan",
-                "Flare-back",
-                "Intervention"
+                "Session",
+                "Follow-up care",
+                "Flare-up",
+                "Treatment plan",
+                "Backslide"
             ],
-            "correctAnswer": "Therapy:Healing-session, Relapse:Backslide, Therapy:Recovery-plan, Relapse:Flare-back, Therapy:Intervention",
+            "correctAnswer": "Therapy:Session, Therapy:Follow-up care, Relapse:Flare-up, Therapy:Treatment plan, Relapse:Backslide",
             "relatedWords": [
-                "aspect of Therapy:Healing-session, Relapse:Backslide, Therapy:Recovery-plan, Relapse:Flare-back, Therapy:Intervention",
-                "concept of Therapy:Healing-session, Relapse:Backslide, Therapy:Recovery-plan, Relapse:Flare-back, Therapy:Intervention",
-                "related to Therapy:Healing-session, Relapse:Backslide, Therapy:Recovery-plan, Relapse:Flare-back, Therapy:Intervention"
+                "Session: one appointment within a course of care",
+                "Follow-up care: continued care after initial treatment",
+                "Flare-up: a condition becoming active again after a quiet period",
+                "Treatment plan: the overall schedule those appointments follow",
+                "Backslide: a return to an earlier, worse state"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L94_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These are phrases from a recovery-support article. Sort into Therapy or Relapse.",
             "topicBuckets": [
                 "Therapy",
                 "Relapse"
             ],
-            "hint": "Here's a tip: Therapy helps a patient recover, while a relapse means the illness or problem returns!",
-            "explanation": "Think of 'Therapy' as treatment that helps recovery (counseling, rehabilitation), and 'Relapse' as the return of illness after improvement (setback, recurrence)!",
+            "hint": "One relapse phrase describes the warning signs that come before a setback.",
+            "explanation": "'Coping strategies', a 'support network', and 'maintenance therapy' all describe resources that help sustain recovery over time. 'Warning signs' describes the early indicators that often precede a setback, and 'recurrence' is the clinical term for a condition returning.",
             "options": [
-                "Physiotherapy",
-                "Regression",
-                "Support-group",
-                "Reoccurrence",
-                "Progress-session"
+                "Warning signs",
+                "Coping strategies",
+                "Maintenance therapy",
+                "Recurrence",
+                "Support network"
             ],
-            "correctAnswer": "Therapy:Physiotherapy, Relapse:Regression, Therapy:Support-group, Relapse:Reoccurrence, Therapy:Progress-session",
+            "correctAnswer": "Relapse:Warning signs, Therapy:Coping strategies, Therapy:Maintenance therapy, Relapse:Recurrence, Therapy:Support network",
             "relatedWords": [
-                "aspect of Therapy:Physiotherapy, Relapse:Regression, Therapy:Support-group, Relapse:Reoccurrence, Therapy:Progress-session",
-                "concept of Therapy:Physiotherapy, Relapse:Regression, Therapy:Support-group, Relapse:Reoccurrence, Therapy:Progress-session",
-                "related to Therapy:Physiotherapy, Relapse:Regression, Therapy:Support-group, Relapse:Reoccurrence, Therapy:Progress-session"
+                "Warning signs: early indicators that a setback may be coming",
+                "Coping strategies: practical methods for managing difficulty",
+                "Maintenance therapy: ongoing treatment that sustains progress",
+                "Recurrence: the clinical term for a condition returning",
+                "Support network: the people who provide ongoing help"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L95_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Internship or Career.",
             "topicBuckets": [
                 "Internship",
                 "Career"
             ],
-            "hint": "Here's a tip: An internship is a short, often unpaid learning role, while a career is your long-term professional path!",
-            "explanation": "Think of 'Internship' as a temporary, entry-level training role (placement, traineeship), and 'Career' as a long-term professional path (profession, vocation)!",
+            "hint": "Think about a short placement to learn, versus decades of professional work.",
+            "explanation": "A placement, a trainee, and 'work experience' all describe short-term roles arranged mainly for learning. A 'permanent position' and 'professional path' both describe long-term working life, where the focus shifts from learning to building.",
             "options": [
                 "Placement",
-                "Profession",
-                "Traineeship",
-                "Vocation",
-                "Apprenticeship"
+                "Permanent position",
+                "Trainee",
+                "Work experience",
+                "Professional path"
             ],
-            "correctAnswer": "Internship:Placement, Career:Profession, Internship:Traineeship, Career:Vocation, Internship:Apprenticeship",
+            "correctAnswer": "Internship:Placement, Career:Permanent position, Internship:Trainee, Internship:Work experience, Career:Professional path",
             "relatedWords": [
-                "aspect of Internship:Placement, Career:Profession, Internship:Traineeship, Career:Vocation, Internship:Apprenticeship",
-                "concept of Internship:Placement, Career:Profession, Internship:Traineeship, Career:Vocation, Internship:Apprenticeship",
-                "related to Internship:Placement, Career:Profession, Internship:Traineeship, Career:Vocation, Internship:Apprenticeship"
+                "Placement: a temporary position arranged for learning",
+                "Permanent position: an ongoing, long-term job",
+                "Trainee: someone being trained in a role",
+                "Work experience: short-term exposure to a workplace",
+                "Professional path: the long-term direction of someone's working life"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L95_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "One internship word describes a role that pays nothing. Sort into Internship or Career.",
             "topicBuckets": [
                 "Internship",
                 "Career"
             ],
-            "hint": "Here's a tip: An internship is a short, often unpaid learning role, while a career is your long-term professional path!",
-            "explanation": "Think of 'Internship' as a temporary, entry-level training role (placement, traineeship), and 'Career' as a long-term professional path (profession, vocation)!",
+            "hint": "Think about what's temporary and exploratory, versus what builds over years.",
+            "explanation": "'Unpaid position', 'summer programme', and 'short-term contract' all describe temporary arrangements common to internships. 'Promotion track' and 'years of service' both belong to an established career, describing advancement and accumulated time in a profession.",
             "options": [
-                "Work-experience",
-                "Lifelong-path",
-                "Probation",
-                "Trajectory",
-                "Entry-level-role"
+                "Years of service",
+                "Promotion track",
+                "Short-term contract",
+                "Summer programme",
+                "Unpaid position"
             ],
-            "correctAnswer": "Internship:Work-experience, Career:Lifelong-path, Internship:Probation, Career:Trajectory, Internship:Entry-level-role",
+            "correctAnswer": "Career:Years of service, Career:Promotion track, Internship:Short-term contract, Internship:Summer programme, Internship:Unpaid position",
             "relatedWords": [
-                "aspect of Internship:Work-experience, Career:Lifelong-path, Internship:Probation, Career:Trajectory, Internship:Entry-level-role",
-                "concept of Internship:Work-experience, Career:Lifelong-path, Internship:Probation, Career:Trajectory, Internship:Entry-level-role",
-                "related to Internship:Work-experience, Career:Lifelong-path, Internship:Probation, Career:Trajectory, Internship:Entry-level-role"
+                "Years of service: the accumulated time spent in a profession",
+                "Promotion track: a recognised path toward higher positions",
+                "Short-term contract: an agreement covering a limited period",
+                "Summer programme: a short placement run over a summer",
+                "Unpaid position: a role that provides experience but no salary"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L95_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Picture what a candidate says in an interview about their past and their plans. Sort into Career or Internship.",
             "topicBuckets": [
-                "Internship",
-                "Career"
+                "Career",
+                "Internship"
             ],
-            "hint": "Here's a tip: An internship is a short, often unpaid learning role, while a career is your long-term professional path!",
-            "explanation": "Think of 'Internship' as a temporary, entry-level training role (placement, traineeship), and 'Career' as a long-term professional path (profession, vocation)!",
+            "hint": "One career phrase names the reputation someone builds over a whole working life.",
+            "explanation": "'Learning the ropes' and 'shadowing a mentor' both describe early-stage learning typical of an internship, and 'entry point' names how someone first enters an industry. 'Professional reputation' and 'long-term trajectory' both describe what accumulates across a full career.",
             "options": [
-                "Temporary-role",
-                "Long-term-path",
-                "Trial-period",
-                "Calling",
-                "Co-op"
+                "Entry point",
+                "Professional reputation",
+                "Learning the ropes",
+                "Long-term trajectory",
+                "Shadowing a mentor"
             ],
-            "correctAnswer": "Internship:Temporary-role, Career:Long-term-path, Internship:Trial-period, Career:Calling, Internship:Co-op",
+            "correctAnswer": "Internship:Entry point, Career:Professional reputation, Internship:Learning the ropes, Career:Long-term trajectory, Internship:Shadowing a mentor",
             "relatedWords": [
-                "aspect of Internship:Temporary-role, Career:Long-term-path, Internship:Trial-period, Career:Calling, Internship:Co-op",
-                "concept of Internship:Temporary-role, Career:Long-term-path, Internship:Trial-period, Career:Calling, Internship:Co-op",
-                "related to Internship:Temporary-role, Career:Long-term-path, Internship:Trial-period, Career:Calling, Internship:Co-op"
+                "Entry point: the way someone first enters an industry",
+                "Professional reputation: how someone is regarded across their working life",
+                "Learning the ropes: becoming familiar with how a job works",
+                "Long-term trajectory: the overall direction a career takes",
+                "Shadowing a mentor: observing an experienced worker to learn"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L96_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Colleague or Rival.",
             "topicBuckets": [
                 "Colleague",
                 "Rival"
             ],
-            "hint": "Here's a tip: A colleague works alongside you on the same team, while a rival competes against you!",
-            "explanation": "Think of 'Colleague' as a co-worker on your team (coworker, teammate), and 'Rival' as a competitor working against you (competitor, opponent)!",
+            "hint": "Think about who shares your goal, and who is competing for the same prize.",
+            "explanation": "A coworker, a teammate, and a collaborator all work alongside you toward a shared aim. A competitor and an opponent both work against you, though opponent is more common in contests and debates than in workplaces.",
             "options": [
-                "Coworker",
                 "Competitor",
-                "Teammate",
+                "Collaborator",
+                "Coworker",
                 "Opponent",
-                "Associate"
+                "Teammate"
             ],
-            "correctAnswer": "Colleague:Coworker, Rival:Competitor, Colleague:Teammate, Rival:Opponent, Colleague:Associate",
+            "correctAnswer": "Rival:Competitor, Colleague:Collaborator, Colleague:Coworker, Rival:Opponent, Colleague:Teammate",
             "relatedWords": [
-                "aspect of Colleague:Coworker, Rival:Competitor, Colleague:Teammate, Rival:Opponent, Colleague:Associate",
-                "concept of Colleague:Coworker, Rival:Competitor, Colleague:Teammate, Rival:Opponent, Colleague:Associate",
-                "related to Colleague:Coworker, Rival:Competitor, Colleague:Teammate, Rival:Opponent, Colleague:Associate"
+                "Competitor: someone seeking the same prize or customers",
+                "Collaborator: someone working jointly on a project",
+                "Coworker: someone who works at the same place",
+                "Opponent: someone on the opposing side of a contest",
+                "Teammate: someone on the same team"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L96_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "One rival word describes competition that stays friendly. Sort into Colleague or Rival.",
             "topicBuckets": [
                 "Colleague",
                 "Rival"
             ],
-            "hint": "Here's a tip: A colleague works alongside you on the same team, while a rival competes against you!",
-            "explanation": "Think of 'Colleague' as a co-worker on your team (coworker, teammate), and 'Rival' as a competitor working against you (competitor, opponent)!",
+            "hint": "Rivalry isn't always hostile \u2014 some of it sharpens both sides.",
+            "explanation": "An ally and a 'trusted partner' both describe people working with you, and 'counterpart' names someone holding the equivalent role in another team or organisation. A 'friendly rival' competes without hostility, while an adversary is a genuine opponent.",
             "options": [
-                "Co-worker",
-                "Contender",
-                "Partner",
+                "Friendly rival",
                 "Adversary",
-                "Peer"
+                "Counterpart",
+                "Ally",
+                "Trusted partner"
             ],
-            "correctAnswer": "Colleague:Co-worker, Rival:Contender, Colleague:Partner, Rival:Adversary, Colleague:Peer",
+            "correctAnswer": "Rival:Friendly rival, Rival:Adversary, Colleague:Counterpart, Colleague:Ally, Colleague:Trusted partner",
             "relatedWords": [
-                "aspect of Colleague:Co-worker, Rival:Contender, Colleague:Partner, Rival:Adversary, Colleague:Peer",
-                "concept of Colleague:Co-worker, Rival:Contender, Colleague:Partner, Rival:Adversary, Colleague:Peer",
-                "related to Colleague:Co-worker, Rival:Contender, Colleague:Partner, Rival:Adversary, Colleague:Peer"
+                "Friendly rival: a competitor without hostility",
+                "Adversary: a genuine opponent",
+                "Counterpart: someone holding an equivalent role elsewhere",
+                "Ally: someone who supports and cooperates with you",
+                "Trusted partner: someone relied on in shared work"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L96_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Picture an office where two people are up for the same promotion. Sort into Colleague or Rival.",
             "topicBuckets": [
                 "Colleague",
                 "Rival"
             ],
-            "hint": "Here's a tip: A colleague works alongside you on the same team, while a rival competes against you!",
-            "explanation": "Think of 'Colleague' as a co-worker on your team (coworker, teammate), and 'Rival' as a competitor working against you (competitor, opponent)!",
+            "hint": "Two of these describe competing for the same limited opportunity.",
+            "explanation": "'Covers for each other' and 'shares credit' both describe cooperative working relationships, and 'sounding board' names someone you test ideas with. 'Vying for the same role' and 'jockeying for position' both describe competing for a limited opportunity, with jockeying suggesting manoeuvring for advantage.",
             "options": [
-                "Workmate",
-                "Challenger",
-                "Cohort",
-                "Antagonist",
-                "Counterpart"
+                "Shares credit",
+                "Jockeying for position",
+                "Covers for each other",
+                "Vying for the same role",
+                "Sounding board"
             ],
-            "correctAnswer": "Colleague:Workmate, Rival:Challenger, Colleague:Cohort, Rival:Antagonist, Colleague:Counterpart",
+            "correctAnswer": "Colleague:Shares credit, Rival:Jockeying for position, Colleague:Covers for each other, Rival:Vying for the same role, Colleague:Sounding board",
             "relatedWords": [
-                "aspect of Colleague:Workmate, Rival:Challenger, Colleague:Cohort, Rival:Antagonist, Colleague:Counterpart",
-                "concept of Colleague:Workmate, Rival:Challenger, Colleague:Cohort, Rival:Antagonist, Colleague:Counterpart",
-                "related to Colleague:Workmate, Rival:Challenger, Colleague:Cohort, Rival:Antagonist, Colleague:Counterpart"
+                "Shares credit: gives recognition to others involved",
+                "Jockeying for position: manoeuvring for advantage over others",
+                "Covers for each other: takes on a colleague's duties when needed",
+                "Vying for the same role: competing for one position",
+                "Sounding board: someone you test ideas with"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L97_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Cousin or Sibling.",
             "topicBuckets": [
-                "Sibling",
-                "Cousin"
+                "Cousin",
+                "Sibling"
             ],
-            "hint": "Here's a tip: A sibling shares the same parents as you, while a cousin is the child of your aunt or uncle!",
-            "explanation": "Think of 'Sibling' as a brother or sister (brother, sister), and 'Cousin' as the child of an aunt or uncle (relative, kin)!",
+            "hint": "Think about who shares your parents, and who shares your grandparents.",
+            "explanation": "A brother, a sister, and 'shared parents' all define siblings \u2014 children of the same parents. A 'first cousin' and 'aunt's child' both describe cousins, who share grandparents rather than parents.",
             "options": [
-                "Brother",
-                "Relative",
                 "Sister",
-                "Kin",
-                "Twin"
+                "Aunt's child",
+                "Shared parents",
+                "First cousin",
+                "Brother"
             ],
-            "correctAnswer": "Sibling:Brother, Cousin:Relative, Sibling:Sister, Cousin:Kin, Sibling:Twin",
+            "correctAnswer": "Sibling:Sister, Cousin:Aunt's child, Sibling:Shared parents, Cousin:First cousin, Sibling:Brother",
             "relatedWords": [
-                "aspect of Sibling:Brother, Cousin:Relative, Sibling:Sister, Cousin:Kin, Sibling:Twin",
-                "concept of Sibling:Brother, Cousin:Relative, Sibling:Sister, Cousin:Kin, Sibling:Twin",
-                "related to Sibling:Brother, Cousin:Relative, Sibling:Sister, Cousin:Kin, Sibling:Twin"
+                "Sister: a female child of the same parents",
+                "Aunt's child: a cousin through a parent's sister",
+                "Shared parents: having the same mother and father",
+                "First cousin: the child of an aunt or uncle",
+                "Brother: a male child of the same parents"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L97_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "One sibling word describes a brother or sister acquired through remarriage. Sort into Sibling or Cousin.",
             "topicBuckets": [
                 "Sibling",
                 "Cousin"
             ],
-            "hint": "Here's a tip: A sibling shares the same parents as you, while a cousin is the child of your aunt or uncle!",
-            "explanation": "Think of 'Sibling' as a brother or sister (brother, sister), and 'Cousin' as the child of an aunt or uncle (relative, kin)!",
+            "hint": "Families expand in more than one way.",
+            "explanation": "A stepbrother, a half-sister, and 'sibling rivalry' all concern brother-and-sister relationships, including those formed through remarriage or a shared single parent. A 'second cousin' and 'extended family' both sit further out on the family tree, beyond the immediate household.",
             "options": [
-                "Half-brother",
-                "Second-cousin",
-                "Half-sister",
-                "Extended-family",
-                "Step-sibling"
+                "Sibling rivalry",
+                "Extended family",
+                "Stepbrother",
+                "Second cousin",
+                "Half-sister"
             ],
-            "correctAnswer": "Sibling:Half-brother, Cousin:Second-cousin, Sibling:Half-sister, Cousin:Extended-family, Sibling:Step-sibling",
+            "correctAnswer": "Sibling:Sibling rivalry, Cousin:Extended family, Sibling:Stepbrother, Cousin:Second cousin, Sibling:Half-sister",
             "relatedWords": [
-                "aspect of Sibling:Half-brother, Cousin:Second-cousin, Sibling:Half-sister, Cousin:Extended-family, Sibling:Step-sibling",
-                "concept of Sibling:Half-brother, Cousin:Second-cousin, Sibling:Half-sister, Cousin:Extended-family, Sibling:Step-sibling",
-                "related to Sibling:Half-brother, Cousin:Second-cousin, Sibling:Half-sister, Cousin:Extended-family, Sibling:Step-sibling"
+                "Sibling rivalry: competition between brothers and sisters",
+                "Extended family: relatives beyond the immediate household",
+                "Stepbrother: a brother through a parent's remarriage",
+                "Second cousin: the child of a parent's first cousin",
+                "Half-sister: a sister sharing one biological parent"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L97_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Picture a large family gathering where people explain how they're related. Sort into Cousin or Sibling.",
             "topicBuckets": [
-                "Sibling",
-                "Cousin"
+                "Cousin",
+                "Sibling"
             ],
-            "hint": "Here's a tip: A sibling shares the same parents as you, while a cousin is the child of your aunt or uncle!",
-            "explanation": "Think of 'Sibling' as a brother or sister (brother, sister), and 'Cousin' as the child of an aunt or uncle (relative, kin)!",
+            "hint": "Two of these describe relatives you'd typically see only at reunions.",
+            "explanation": "'Grew up together', 'only child' (defined by the absence of siblings), and 'next of kin' all concern the immediate family unit. 'Distant relative' and 'family reunion regular' both describe wider kin \u2014 the cousins you may see rarely but still count as family.",
             "options": [
-                "Sis",
-                "Auntys-child",
-                "Bro",
-                "Uncles-child",
-                "Same-parents"
+                "Only child",
+                "Grew up together",
+                "Distant relative",
+                "Family reunion regular",
+                "Next of kin"
             ],
-            "correctAnswer": "Sibling:Sis, Cousin:Auntys-child, Sibling:Bro, Cousin:Uncles-child, Sibling:Same-parents",
+            "correctAnswer": "Sibling:Only child, Sibling:Grew up together, Cousin:Distant relative, Cousin:Family reunion regular, Sibling:Next of kin",
             "relatedWords": [
-                "aspect of Sibling:Sis, Cousin:Auntys-child, Sibling:Bro, Cousin:Uncles-child, Sibling:Same-parents",
-                "concept of Sibling:Sis, Cousin:Auntys-child, Sibling:Bro, Cousin:Uncles-child, Sibling:Same-parents",
-                "related to Sibling:Sis, Cousin:Auntys-child, Sibling:Bro, Cousin:Uncles-child, Sibling:Same-parents"
+                "Only child: someone with no brothers or sisters",
+                "Grew up together: raised in the same household",
+                "Distant relative: a family member of a more remote branch",
+                "Family reunion regular: a relative seen mainly at family gatherings",
+                "Next of kin: a person's closest living relative"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L98_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Heirloom or Novelty.",
             "topicBuckets": [
                 "Heirloom",
                 "Novelty"
             ],
-            "hint": "Here's a tip: An heirloom is a valuable item passed down through generations, while a novelty is something new and fun, but not very valuable!",
-            "explanation": "Think of 'Heirloom' as a treasured item handed down in a family (antique, family-treasure), and 'Novelty' as a new, trendy item with little lasting value (gadget, gimmick)!",
+            "hint": "Think about what gets passed down through generations, versus what's bought for a laugh.",
+            "explanation": "An antique, 'passed down', and 'family treasure' all describe objects valued for history and continuity. A gimmick and a 'gag gift' both describe items valued for momentary amusement rather than lasting worth.",
             "options": [
-                "Antique",
-                "Gadget",
-                "Family-treasure",
+                "Passed down",
+                "Gag gift",
                 "Gimmick",
-                "Keepsake"
+                "Antique",
+                "Family treasure"
             ],
-            "correctAnswer": "Heirloom:Antique, Novelty:Gadget, Heirloom:Family-treasure, Novelty:Gimmick, Heirloom:Keepsake",
+            "correctAnswer": "Heirloom:Passed down, Novelty:Gag gift, Novelty:Gimmick, Heirloom:Antique, Heirloom:Family treasure",
             "relatedWords": [
-                "aspect of Heirloom:Antique, Novelty:Gadget, Heirloom:Family-treasure, Novelty:Gimmick, Heirloom:Keepsake",
-                "concept of Heirloom:Antique, Novelty:Gadget, Heirloom:Family-treasure, Novelty:Gimmick, Heirloom:Keepsake",
-                "related to Heirloom:Antique, Novelty:Gadget, Heirloom:Family-treasure, Novelty:Gimmick, Heirloom:Keepsake"
+                "Passed down: given from one generation to the next",
+                "Gag gift: a joke present",
+                "Gimmick: something designed to amuse or attract attention briefly",
+                "Antique: an old item valued for its age",
+                "Family treasure: a possession valued across a family's history"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L98_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "One novelty word describes something popular for a very short time. Sort into Novelty or Heirloom.",
             "topicBuckets": [
-                "Heirloom",
-                "Novelty"
+                "Novelty",
+                "Heirloom"
             ],
-            "hint": "Here's a tip: An heirloom is a valuable item passed down through generations, while a novelty is something new and fun, but not very valuable!",
-            "explanation": "Think of 'Heirloom' as a treasured item handed down in a family (antique, family-treasure), and 'Novelty' as a new, trendy item with little lasting value (gadget, gimmick)!",
+            "hint": "Think about lasting value versus a passing craze.",
+            "explanation": "'Generational' and 'irreplaceable' both point to value built over time, and 'keepsake quality' describes something made well enough to last. A fad is popular only briefly, and 'disposable' describes something designed to be thrown away.",
             "options": [
-                "Inherited-jewelry",
-                "Trendy-toy",
-                "Generational-gift",
-                "Fad-item",
-                "Vintage-piece"
+                "Generational",
+                "Keepsake quality",
+                "Fad",
+                "Disposable",
+                "Irreplaceable"
             ],
-            "correctAnswer": "Heirloom:Inherited-jewelry, Novelty:Trendy-toy, Heirloom:Generational-gift, Novelty:Fad-item, Heirloom:Vintage-piece",
+            "correctAnswer": "Heirloom:Generational, Heirloom:Keepsake quality, Novelty:Fad, Novelty:Disposable, Heirloom:Irreplaceable",
             "relatedWords": [
-                "aspect of Heirloom:Inherited-jewelry, Novelty:Trendy-toy, Heirloom:Generational-gift, Novelty:Fad-item, Heirloom:Vintage-piece",
-                "concept of Heirloom:Inherited-jewelry, Novelty:Trendy-toy, Heirloom:Generational-gift, Novelty:Fad-item, Heirloom:Vintage-piece",
-                "related to Heirloom:Inherited-jewelry, Novelty:Trendy-toy, Heirloom:Generational-gift, Novelty:Fad-item, Heirloom:Vintage-piece"
+                "Generational: passed across generations",
+                "Keepsake quality: made well enough to be kept long-term",
+                "Fad: something popular only briefly",
+                "Disposable: designed to be used once and discarded",
+                "Irreplaceable: impossible to replace if lost"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L98_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Picture an auction catalogue beside a shop selling tourist trinkets. Sort into Heirloom or Novelty.",
             "topicBuckets": [
                 "Heirloom",
                 "Novelty"
             ],
-            "hint": "Here's a tip: An heirloom is a valuable item passed down through generations, while a novelty is something new and fun, but not very valuable!",
-            "explanation": "Think of 'Heirloom' as a treasured item handed down in a family (antique, family-treasure), and 'Novelty' as a new, trendy item with little lasting value (gadget, gimmick)!",
+            "hint": "Two of these describe items whose value is about attention, not history.",
+            "explanation": "'Provenance' names an object's documented history of ownership, which is what gives an heirloom much of its value, alongside 'restored with care' and 'bequeathed'. 'Mass-produced' and 'conversation piece' both suit novelties \u2014 made in bulk, valued for the reaction they provoke.",
             "options": [
-                "Passed-down-watch",
-                "Quirky-gift",
-                "Ancestral-item",
-                "Throwaway-trinket",
-                "Cherished-relic"
+                "Mass-produced",
+                "Restored with care",
+                "Bequeathed",
+                "Provenance",
+                "Conversation piece"
             ],
-            "correctAnswer": "Heirloom:Passed-down-watch, Novelty:Quirky-gift, Heirloom:Ancestral-item, Novelty:Throwaway-trinket, Heirloom:Cherished-relic",
+            "correctAnswer": "Novelty:Mass-produced, Heirloom:Restored with care, Heirloom:Bequeathed, Heirloom:Provenance, Novelty:Conversation piece",
             "relatedWords": [
-                "aspect of Heirloom:Passed-down-watch, Novelty:Quirky-gift, Heirloom:Ancestral-item, Novelty:Throwaway-trinket, Heirloom:Cherished-relic",
-                "concept of Heirloom:Passed-down-watch, Novelty:Quirky-gift, Heirloom:Ancestral-item, Novelty:Throwaway-trinket, Heirloom:Cherished-relic",
-                "related to Heirloom:Passed-down-watch, Novelty:Quirky-gift, Heirloom:Ancestral-item, Novelty:Throwaway-trinket, Heirloom:Cherished-relic"
+                "Mass-produced: manufactured in large quantities",
+                "Restored with care: carefully repaired to preserve an original",
+                "Bequeathed: left to someone in a will",
+                "Provenance: an object's documented history of ownership",
+                "Conversation piece: an object that prompts comment"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L99_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Recess or Curriculum.",
             "topicBuckets": [
-                "Curriculum",
-                "Recess"
+                "Recess",
+                "Curriculum"
             ],
-            "hint": "Here's a tip: The curriculum is what you study in school, while recess is the break time when you play!",
-            "explanation": "Think of 'Curriculum' as the planned course of study (syllabus, coursework), and 'Recess' as break time at school (playtime, break)!",
+            "hint": "Think about what's taught and tested, versus what happens in the yard between lessons.",
+            "explanation": "A syllabus, a lesson plan, and coursework all belong to formal teaching, defining what is taught and assessed. A playground and 'break time' both belong to the unstructured parts of the school day.",
             "options": [
                 "Syllabus",
-                "Playtime",
-                "Coursework",
-                "Break",
-                "Lesson-plan"
+                "Lesson plan",
+                "Break time",
+                "Playground",
+                "Coursework"
             ],
-            "correctAnswer": "Curriculum:Syllabus, Recess:Playtime, Curriculum:Coursework, Recess:Break, Curriculum:Lesson-plan",
+            "correctAnswer": "Curriculum:Syllabus, Curriculum:Lesson plan, Recess:Break time, Recess:Playground, Curriculum:Coursework",
             "relatedWords": [
-                "aspect of Curriculum:Syllabus, Recess:Playtime, Curriculum:Coursework, Recess:Break, Curriculum:Lesson-plan",
-                "concept of Curriculum:Syllabus, Recess:Playtime, Curriculum:Coursework, Recess:Break, Curriculum:Lesson-plan",
-                "related to Curriculum:Syllabus, Recess:Playtime, Curriculum:Coursework, Recess:Break, Curriculum:Lesson-plan"
+                "Syllabus: an outline of topics covered in a course",
+                "Lesson plan: a teacher's plan for a single lesson",
+                "Break time: a scheduled pause between lessons",
+                "Playground: an outdoor area for children to play",
+                "Coursework: assessed work completed during a course"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L99_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "One curriculum word names the standards a course must meet. Sort into Recess or Curriculum.",
             "topicBuckets": [
-                "Curriculum",
-                "Recess"
+                "Recess",
+                "Curriculum"
             ],
-            "hint": "Here's a tip: The curriculum is what you study in school, while recess is the break time when you play!",
-            "explanation": "Think of 'Curriculum' as the planned course of study (syllabus, coursework), and 'Recess' as break time at school (playtime, break)!",
+            "hint": "Think about official requirements versus unstructured time.",
+            "explanation": "'Learning objectives', 'core subjects', and 'academic standards' all define what a school is required to deliver and how success is measured. 'Free play' and 'lunch break' both describe time deliberately left unstructured, which educators value for social development.",
             "options": [
-                "Subjects",
-                "Free-time",
-                "Study-program",
-                "Playground-time",
-                "Academic-plan"
+                "Lunch break",
+                "Learning objectives",
+                "Core subjects",
+                "Free play",
+                "Academic standards"
             ],
-            "correctAnswer": "Curriculum:Subjects, Recess:Free-time, Curriculum:Study-program, Recess:Playground-time, Curriculum:Academic-plan",
+            "correctAnswer": "Recess:Lunch break, Curriculum:Learning objectives, Curriculum:Core subjects, Recess:Free play, Curriculum:Academic standards",
             "relatedWords": [
-                "aspect of Curriculum:Subjects, Recess:Free-time, Curriculum:Study-program, Recess:Playground-time, Curriculum:Academic-plan",
-                "concept of Curriculum:Subjects, Recess:Free-time, Curriculum:Study-program, Recess:Playground-time, Curriculum:Academic-plan",
-                "related to Curriculum:Subjects, Recess:Free-time, Curriculum:Study-program, Recess:Playground-time, Curriculum:Academic-plan"
+                "Lunch break: the midday pause for eating and rest",
+                "Learning objectives: what students are expected to learn",
+                "Core subjects: the essential subjects every student studies",
+                "Free play: unstructured play time",
+                "Academic standards: the required level of achievement"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L99_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Picture a school timetable printed on a wall. Sort into Recess or Curriculum.",
             "topicBuckets": [
-                "Curriculum",
-                "Recess"
+                "Recess",
+                "Curriculum"
             ],
-            "hint": "Here's a tip: The curriculum is what you study in school, while recess is the break time when you play!",
-            "explanation": "Think of 'Curriculum' as the planned course of study (syllabus, coursework), and 'Recess' as break time at school (playtime, break)!",
+            "hint": "Two of these describe time that isn't assessed at all.",
+            "explanation": "'Module', 'assessment criteria', and 'set text' all belong to formal study, naming units of teaching, how work is graded, and required reading. 'Downtime' and 'yard supervision' both concern the break periods, including the staffing that makes them possible.",
             "options": [
-                "Course-outline",
-                "Lunch-break",
-                "Class-schedule",
-                "Outdoor-play",
-                "Modules"
+                "Yard supervision",
+                "Set text",
+                "Assessment criteria",
+                "Module",
+                "Downtime"
             ],
-            "correctAnswer": "Curriculum:Course-outline, Recess:Lunch-break, Curriculum:Class-schedule, Recess:Outdoor-play, Curriculum:Modules",
+            "correctAnswer": "Recess:Yard supervision, Curriculum:Set text, Curriculum:Assessment criteria, Curriculum:Module, Recess:Downtime",
             "relatedWords": [
-                "aspect of Curriculum:Course-outline, Recess:Lunch-break, Curriculum:Class-schedule, Recess:Outdoor-play, Curriculum:Modules",
-                "concept of Curriculum:Course-outline, Recess:Lunch-break, Curriculum:Class-schedule, Recess:Outdoor-play, Curriculum:Modules",
-                "related to Curriculum:Course-outline, Recess:Lunch-break, Curriculum:Class-schedule, Recess:Outdoor-play, Curriculum:Modules"
+                "Yard supervision: staff monitoring of pupils during breaks",
+                "Set text: a book required for a course",
+                "Assessment criteria: the standards used to grade work",
+                "Module: a self-contained unit of a course",
+                "Downtime: time without scheduled activity"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L100_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Lecture or Discussion.",
             "topicBuckets": [
                 "Lecture",
                 "Discussion"
             ],
-            "hint": "Here's a tip: A lecture is when one person talks and explains, while a discussion is when many people share ideas back and forth!",
-            "explanation": "Think of 'Lecture' as one-directional teaching from speaker to audience (talk, presentation), and 'Discussion' as two-way conversation between participants (debate, dialogue)!",
+            "hint": "Think about one voice addressing a room, versus many voices exchanging ideas.",
+            "explanation": "A monologue, a 'prepared talk', and 'note-taking' all fit a lecture, where information flows mainly in one direction. A debate and 'group dialogue' both involve exchange, where participants respond to each other rather than only listening.",
             "options": [
-                "Talk",
+                "Note-taking",
                 "Debate",
-                "Presentation",
-                "Dialogue",
-                "Speech"
+                "Monologue",
+                "Prepared talk",
+                "Group dialogue"
             ],
-            "correctAnswer": "Lecture:Talk, Discussion:Debate, Lecture:Presentation, Discussion:Dialogue, Lecture:Speech",
+            "correctAnswer": "Lecture:Note-taking, Discussion:Debate, Lecture:Monologue, Lecture:Prepared talk, Discussion:Group dialogue",
             "relatedWords": [
-                "aspect of Lecture:Talk, Discussion:Debate, Lecture:Presentation, Discussion:Dialogue, Lecture:Speech",
-                "concept of Lecture:Talk, Discussion:Debate, Lecture:Presentation, Discussion:Dialogue, Lecture:Speech",
-                "related to Lecture:Talk, Discussion:Debate, Lecture:Presentation, Discussion:Dialogue, Lecture:Speech"
+                "Note-taking: writing down information as it's presented",
+                "Debate: a structured exchange of opposing views",
+                "Monologue: a long speech by one person",
+                "Prepared talk: a presentation planned in advance",
+                "Group dialogue: conversation among several participants"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L100_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "One discussion word names a small group meeting to explore a topic together. Sort into Lecture or Discussion.",
             "topicBuckets": [
                 "Lecture",
                 "Discussion"
             ],
-            "hint": "Here's a tip: A lecture is when one person talks and explains, while a discussion is when many people share ideas back and forth!",
-            "explanation": "Think of 'Lecture' as one-directional teaching from speaker to audience (talk, presentation), and 'Discussion' as two-way conversation between participants (debate, dialogue)!",
+            "hint": "Think about who does the talking in each setting.",
+            "explanation": "An address, a 'keynote', and 'lecture hall' all suit formal one-way presentation, with a keynote being the headline talk at an event. A seminar and a roundtable both involve shared participation, with a roundtable implying no single person leads.",
             "options": [
-                "Seminar-talk",
-                "Conversation",
+                "Roundtable",
+                "Lecture hall",
                 "Address",
-                "Exchange-of-ideas",
-                "Briefing"
+                "Seminar",
+                "Keynote"
             ],
-            "correctAnswer": "Lecture:Seminar-talk, Discussion:Conversation, Lecture:Address, Discussion:Exchange-of-ideas, Lecture:Briefing",
+            "correctAnswer": "Discussion:Roundtable, Lecture:Lecture hall, Lecture:Address, Discussion:Seminar, Lecture:Keynote",
             "relatedWords": [
-                "aspect of Lecture:Seminar-talk, Discussion:Conversation, Lecture:Address, Discussion:Exchange-of-ideas, Lecture:Briefing",
-                "concept of Lecture:Seminar-talk, Discussion:Conversation, Lecture:Address, Discussion:Exchange-of-ideas, Lecture:Briefing",
-                "related to Lecture:Seminar-talk, Discussion:Conversation, Lecture:Address, Discussion:Exchange-of-ideas, Lecture:Briefing"
+                "Roundtable: a discussion where all participants are equal",
+                "Lecture hall: a large room built for presentations",
+                "Address: a formal speech to an audience",
+                "Seminar: a small group meeting to explore a topic",
+                "Keynote: the headline talk at an event"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L100_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Halfway through the curriculum: picture two teaching styles side by side and sort into Lecture or Discussion.",
             "topicBuckets": [
                 "Lecture",
                 "Discussion"
             ],
-            "hint": "Here's a tip: A lecture is when one person talks and explains, while a discussion is when many people share ideas back and forth!",
-            "explanation": "Think of 'Lecture' as one-directional teaching from speaker to audience (talk, presentation), and 'Discussion' as two-way conversation between participants (debate, dialogue)!",
+            "hint": "Two of these describe learning where students shape the direction of the session.",
+            "explanation": "'Passive listening' and 'delivered from the podium' both describe one-way instruction, where the audience receives rather than contributes. 'Peer exchange', 'open floor', and 'Socratic questioning' all describe participatory learning, with the Socratic method using questions to draw reasoning out of students rather than telling them answers.",
             "options": [
-                "Monologue",
-                "Group-talk",
-                "Sermon",
-                "Brainstorm",
-                "One-way-talk"
+                "Socratic questioning",
+                "Open floor",
+                "Peer exchange",
+                "Passive listening",
+                "Delivered from the podium"
             ],
-            "correctAnswer": "Lecture:Monologue, Discussion:Group-talk, Lecture:Sermon, Discussion:Brainstorm, Lecture:One-way-talk",
+            "correctAnswer": "Discussion:Socratic questioning, Discussion:Open floor, Discussion:Peer exchange, Lecture:Passive listening, Lecture:Delivered from the podium",
             "relatedWords": [
-                "aspect of Lecture:Monologue, Discussion:Group-talk, Lecture:Sermon, Discussion:Brainstorm, Lecture:One-way-talk",
-                "concept of Lecture:Monologue, Discussion:Group-talk, Lecture:Sermon, Discussion:Brainstorm, Lecture:One-way-talk",
-                "related to Lecture:Monologue, Discussion:Group-talk, Lecture:Sermon, Discussion:Brainstorm, Lecture:One-way-talk"
+                "Socratic questioning: drawing out reasoning through questions",
+                "Open floor: a session where anyone may speak",
+                "Peer exchange: learning through conversation with equals",
+                "Passive listening: receiving information without responding",
+                "Delivered from the podium: presented formally to an audience"
             ]
         }
     ]

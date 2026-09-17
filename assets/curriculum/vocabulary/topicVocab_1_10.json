@@ -6,781 +6,781 @@
         {
             "id": "VOC_TOPICVOCAB_L1_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Hot or Cold, based on temperature.",
             "topicBuckets": [
                 "Hot",
                 "Cold"
             ],
-            "hint": "Here's a tip: Hot things make you sweat, while cold things make you shiver. Sort by temperature!",
-            "explanation": "Think of 'Hot' as high temperature (fire, summer sun), and 'Cold' as low temperature (ice, winter air)!",
+            "hint": "Think about what happens to your skin near each one \u2014 a burn, or a shiver.",
+            "explanation": "Boiling and steaming both describe heat strong enough to make liquid bubble or produce vapor. Scorching describes intense, dry heat, like sun on skin. Freezing is the exact point water turns to ice, while icy describes a surface covered in it.",
             "options": [
                 "Boiling",
                 "Freezing",
-                "Burning",
+                "Steaming",
                 "Icy",
-                "Frosty"
+                "Scorching"
             ],
-            "correctAnswer": "Hot:Boiling, Cold:Freezing, Hot:Burning, Cold:Icy, Cold:Frosty",
+            "correctAnswer": "Hot:Boiling, Cold:Freezing, Hot:Steaming, Cold:Icy, Hot:Scorching",
             "relatedWords": [
-                "$option: $defi",
-                "$option: $defi",
-                "$option: $defi",
-                "$option: $defi",
-                "$option: $defi"
+                "Boiling: heated until it bubbles rapidly, 100\u00b0C for water",
+                "Freezing: cold enough for water to turn to ice, 0\u00b0C",
+                "Steaming: giving off visible hot vapor",
+                "Icy: covered in ice, or very cold to the touch",
+                "Scorching: extremely hot, especially from the sun"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L1_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These words describe hot and cold in weather or at home. Sort them into Hot or Cold.",
             "topicBuckets": [
                 "Hot",
                 "Cold"
             ],
-            "hint": "Here's a tip: Hot things make you sweat, while cold things make you shiver. Sort by temperature!",
-            "explanation": "Think of 'Hot' as high temperature (fire, summer sun), and 'Cold' as low temperature (ice, winter air)!",
+            "hint": "Notice which ones you'd use for a cozy blanket, and which for a summer afternoon.",
+            "explanation": "Toasty and sweltering both describe heat, but toasty is pleasant warmth, while sweltering is uncomfortable, oppressive heat. Chilly and frosty both describe cold, but frosty suggests visible ice or frost outside.",
             "options": [
-                "Steamy",
+                "Sweltering",
                 "Chilly",
-                "Scorching",
-                "Snowy",
-                "Toasty"
+                "Cool",
+                "Toasty",
+                "Frosty"
             ],
-            "correctAnswer": "Hot:Steamy, Cold:Chilly, Hot:Scorching, Cold:Snowy, Hot:Toasty",
+            "correctAnswer": "Hot:Sweltering, Cold:Chilly, Cold:Cool, Hot:Toasty, Cold:Frosty",
             "relatedWords": [
-                "$option: $defi",
-                "$option: $defi",
-                "$option: $defi",
-                "$option: $defi",
-                "$option: $defi"
+                "Sweltering: unpleasantly hot, often humid",
+                "Chilly: uncomfortably cool, but not freezing",
+                "Cool: mildly cold, often refreshing",
+                "Toasty: pleasantly warm",
+                "Frosty: cold enough for frost to form"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L1_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "A weather reporter is choosing words for a desert afternoon and a polar night. Sort them into Hot or Cold.",
             "topicBuckets": [
                 "Hot",
                 "Cold"
             ],
-            "hint": "Here's a tip: Hot things make you sweat, while cold things make you shiver. Sort by temperature!",
-            "explanation": "Think of 'Hot' as high temperature (fire, summer sun), and 'Cold' as low temperature (ice, winter air)!",
+            "hint": "One cold word describes the effect on your body, not just the temperature itself.",
+            "explanation": "Blazing and sizzling both describe intense, active heat \u2014 sunlight or a hot pan. Simmering is a lower, steady heat, just below boiling. Arctic describes extreme cold from a polar climate, while numbing describes cold strong enough that you lose feeling.",
             "options": [
-                "Warm",
-                "Cool",
-                "Fiery",
-                "Wintry",
-                "Sunny"
+                "Blazing",
+                "Simmering",
+                "Sizzling",
+                "Arctic",
+                "Numbing"
             ],
-            "correctAnswer": "Hot:Warm, Cold:Cool, Hot:Fiery, Cold:Wintry, Hot:Sunny",
+            "correctAnswer": "Hot:Blazing, Hot:Simmering, Hot:Sizzling, Cold:Arctic, Cold:Numbing",
             "relatedWords": [
-                "$option: $defi",
-                "$option: $defi",
-                "$option: $defi",
-                "$option: $defi",
-                "$option: $defi"
+                "Blazing: burning intensely, very hot",
+                "Simmering: cooking gently just below boiling point",
+                "Sizzling: hot enough to make a sharp hissing sound",
+                "Arctic: extremely cold, like the polar regions",
+                "Numbing: so cold it makes you lose feeling"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L2_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Small or Big, based on size.",
             "topicBuckets": [
-                "Big",
-                "Small"
+                "Small",
+                "Big"
             ],
-            "hint": "Here's a tip: Big things take up a lot of space, while small things fit in your hand. Sort by size!",
-            "explanation": "Think of 'Big' as large size (elephant, mountain), and 'Small' as little size (ant, pebble)!",
+            "hint": "Picture an elephant next to an ant.",
+            "explanation": "Huge, giant, and massive all describe great size, but massive also suggests weight or solidity, not just dimension. Mini often describes something deliberately made small, like a mini car, while tiny is simply a very small natural size.",
             "options": [
-                "Huge",
-                "Tiny",
                 "Giant",
+                "Huge",
                 "Mini",
-                "Massive"
+                "Massive",
+                "Tiny"
             ],
-            "correctAnswer": "Big:Huge, Small:Tiny, Big:Giant, Small:Mini, Big:Massive",
+            "correctAnswer": "Big:Giant, Big:Huge, Small:Mini, Big:Massive, Small:Tiny",
             "relatedWords": [
-                "$option: $defi",
-                "$option: $defi",
-                "$option: $defi",
-                "$option: $defi",
-                "$option: $defi"
+                "Giant: much larger than usual",
+                "Huge: very large in size",
+                "Mini: a smaller version, often made that way on purpose",
+                "Massive: large and heavy or solid",
+                "Tiny: extremely small"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L2_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These words describe the size of people, spaces, and vehicles. Sort them into Big or Small.",
             "topicBuckets": [
                 "Big",
                 "Small"
             ],
-            "hint": "Here's a tip: Big things take up a lot of space, while small things fit in your hand. Sort by size!",
-            "explanation": "Think of 'Big' as large size (elephant, mountain), and 'Small' as little size (ant, pebble)!",
+            "hint": "One small word usually describes a person's build, not an object.",
+            "explanation": "Petite usually describes a person's slim, small build. Compact describes something efficiently designed to take up little space, like a car. Vast suggests wide open space, while colossal suggests overwhelming, almost impossible size.",
             "options": [
-                "Enormous",
                 "Petite",
-                "Vast",
+                "Colossal",
                 "Compact",
-                "Colossal"
+                "Vast",
+                "Enormous"
             ],
-            "correctAnswer": "Big:Enormous, Small:Petite, Big:Vast, Small:Compact, Big:Colossal",
+            "correctAnswer": "Small:Petite, Big:Colossal, Small:Compact, Big:Vast, Big:Enormous",
             "relatedWords": [
-                "$option: $defi",
-                "$option: $defi",
-                "$option: $defi",
-                "$option: $defi",
-                "$option: $defi"
+                "Petite: small and slim, usually describing a person",
+                "Colossal: extremely, almost overwhelmingly large",
+                "Compact: small and efficiently arranged",
+                "Vast: covering a huge area or amount",
+                "Enormous: very great in size"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L2_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "One of these words describes an amount rather than a physical size. Sort all five into Big or Small.",
             "topicBuckets": [
                 "Big",
                 "Small"
             ],
-            "hint": "Here's a tip: Big things take up a lot of space, while small things fit in your hand. Sort by size!",
-            "explanation": "Think of 'Big' as large size (elephant, mountain), and 'Small' as little size (ant, pebble)!",
+            "hint": "Think about degree, not just physical size \u2014 one word could describe a thin build or a small amount.",
+            "explanation": "Microscopic means too small to see without a microscope \u2014 an extreme version of small. Slight can describe a small amount or a thin build, a more abstract use of 'small' than the others here. Immense adds a sense of being almost overwhelming, beyond simply large.",
             "options": [
-                "Little",
-                "Large",
                 "Microscopic",
-                "Immense",
-                "Slight"
+                "Slight",
+                "Large",
+                "Little",
+                "Immense"
             ],
-            "correctAnswer": "Small:Little, Big:Large, Small:Microscopic, Big:Immense, Small:Slight",
+            "correctAnswer": "Small:Microscopic, Small:Slight, Big:Large, Small:Little, Big:Immense",
             "relatedWords": [
-                "$option: $defi",
-                "$option: $defi",
-                "$option: $defi",
-                "$option: $defi",
-                "$option: $defi"
+                "Microscopic: too small to see without a microscope",
+                "Slight: small in degree or build",
+                "Large: noticeably above average in size",
+                "Little: small in size or amount",
+                "Immense: extremely large, often overwhelming"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L3_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Fast or Slow, based on speed.",
             "topicBuckets": [
                 "Fast",
                 "Slow"
             ],
-            "hint": "Here's a tip: Fast things finish quickly, while slow things take their time. Sort by speed!",
-            "explanation": "Think of 'Fast' as high speed (cheetah, race car), and 'Slow' as low speed (turtle, traffic jam)!",
+            "hint": "Picture a sprinter bursting off the blocks versus traffic barely moving.",
+            "explanation": "Quick and speedy are everyday words for fast, while rapid often describes processes as much as movement, like rapid growth. Sluggish describes slowness from a lack of energy, while gradual describes slow, steady change over time.",
             "options": [
-                "Quick",
-                "Sluggish",
                 "Rapid",
+                "Sluggish",
+                "Quick",
                 "Gradual",
                 "Speedy"
             ],
-            "correctAnswer": "Fast:Quick, Slow:Sluggish, Fast:Rapid, Slow:Gradual, Fast:Speedy",
+            "correctAnswer": "Fast:Rapid, Slow:Sluggish, Fast:Quick, Slow:Gradual, Fast:Speedy",
             "relatedWords": [
-                "$option: $defi",
-                "$option: $defi",
-                "$option: $defi",
-                "$option: $defi",
-                "$option: $defi"
+                "Rapid: happening very fast, often used for processes",
+                "Sluggish: slow-moving, lacking energy",
+                "Quick: moving or happening fast",
+                "Gradual: happening slowly and steadily over time",
+                "Speedy: fast, often approvingly"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L3_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These words carry a feeling as well as a speed. Sort them into Fast or Slow.",
             "topicBuckets": [
                 "Fast",
                 "Slow"
             ],
-            "hint": "Here's a tip: Fast things finish quickly, while slow things take their time. Sort by speed!",
-            "explanation": "Think of 'Fast' as high speed (cheetah, race car), and 'Slow' as low speed (turtle, traffic jam)!",
+            "hint": "Notice which fast word suggests careless rushing, not just quickness.",
+            "explanation": "Swift suggests smooth, graceful speed, while hasty suggests speed that's careless or rushed. Lazy describes an unwillingness to move quickly, while crawling describes movement so slow it resembles an insect creeping.",
             "options": [
-                "Swift",
-                "Lazy",
-                "Brisk",
                 "Crawling",
-                "Hasty"
+                "Lazy",
+                "Hasty",
+                "Swift",
+                "Brisk"
             ],
-            "correctAnswer": "Fast:Swift, Slow:Lazy, Fast:Brisk, Slow:Crawling, Fast:Hasty",
+            "correctAnswer": "Slow:Crawling, Slow:Lazy, Fast:Hasty, Fast:Swift, Fast:Brisk",
             "relatedWords": [
-                "$option: $defi",
-                "$option: $defi",
-                "$option: $defi",
-                "$option: $defi",
-                "$option: $defi"
+                "Crawling: moving extremely slowly",
+                "Lazy: unwilling to move quickly or work",
+                "Hasty: done too quickly, often carelessly",
+                "Swift: fast and smooth",
+                "Brisk: quick and energetic, especially walking"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L3_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Picture a Sunday stroll versus a car racing down a highway. Sort these strong versions of fast and slow.",
             "topicBuckets": [
                 "Fast",
                 "Slow"
             ],
-            "hint": "Here's a tip: Fast things finish quickly, while slow things take their time. Sort by speed!",
-            "explanation": "Think of 'Fast' as high speed (cheetah, race car), and 'Slow' as low speed (turtle, traffic jam)!",
+            "hint": "Two of the slow words suggest a relaxed choice, while one suggests heavy, effortful movement.",
+            "explanation": "Breakneck and blistering both describe dangerously or impressively fast speed, often for vehicles or sports. Leisurely and unhurried both suggest a relaxed pace chosen on purpose, while plodding describes slow, heavy, effortful movement.",
             "options": [
-                "Leisurely",
-                "Snappy",
+                "Breakneck",
                 "Plodding",
-                "Zippy",
-                "Unhurried"
+                "Blistering",
+                "Unhurried",
+                "Leisurely"
             ],
-            "correctAnswer": "Slow:Leisurely, Fast:Snappy, Slow:Plodding, Fast:Zippy, Slow:Unhurried",
+            "correctAnswer": "Fast:Breakneck, Slow:Plodding, Fast:Blistering, Slow:Unhurried, Slow:Leisurely",
             "relatedWords": [
-                "$option: $defi",
-                "$option: $defi",
-                "$option: $defi",
-                "$option: $defi",
-                "$option: $defi"
+                "Breakneck: dangerously fast",
+                "Plodding: moving slowly and heavily, with effort",
+                "Blistering: impressively or intensely fast",
+                "Unhurried: calm and not rushed",
+                "Leisurely: relaxed and unhurried, by choice"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L4_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Sad or Happy, based on the feeling it describes.",
             "topicBuckets": [
-                "Happy",
-                "Sad"
+                "Sad",
+                "Happy"
             ],
-            "hint": "Here's a tip: Happy people smile, while sad people cry. Sort by feeling!",
-            "explanation": "Think of 'Happy' as joyful feelings (smiling, laughing), and 'Sad' as unhappy feelings (crying, grieving)!",
+            "hint": "Think about someone's face \u2014 smiling, or drooping.",
+            "explanation": "Cheerful and joyful both describe a light, positive mood, while delighted suggests a stronger reaction to good news. Gloomy often matches dull weather, while miserable is a stronger, more uncomfortable form of sadness.",
             "options": [
-                "Joyful",
-                "Gloomy",
                 "Cheerful",
-                "Tearful",
-                "Delighted"
+                "Delighted",
+                "Joyful",
+                "Miserable",
+                "Gloomy"
             ],
-            "correctAnswer": "Happy:Joyful, Sad:Gloomy, Happy:Cheerful, Sad:Tearful, Happy:Delighted",
+            "correctAnswer": "Happy:Cheerful, Happy:Delighted, Happy:Joyful, Sad:Miserable, Sad:Gloomy",
             "relatedWords": [
-                "$option: $defi",
-                "$option: $defi",
-                "$option: $defi",
-                "$option: $defi",
-                "$option: $defi"
+                "Cheerful: noticeably happy and positive",
+                "Delighted: very pleased about something specific",
+                "Joyful: full of happiness",
+                "Miserable: very unhappy or uncomfortable",
+                "Gloomy: sad and without hope, often like dull weather"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L4_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "One of these words describes far deeper pain than the others. Sort them into Happy or Sad.",
             "topicBuckets": [
                 "Happy",
                 "Sad"
             ],
-            "hint": "Here's a tip: Happy people smile, while sad people cry. Sort by feeling!",
-            "explanation": "Think of 'Happy' as joyful feelings (smiling, laughing), and 'Sad' as unhappy feelings (crying, grieving)!",
+            "hint": "Rank these by intensity before you sort \u2014 some are quiet, one is severe.",
+            "explanation": "Content is a quieter kind of happiness \u2014 satisfaction rather than excitement. Heartbroken is far stronger than downcast or glum; it describes intense emotional pain, usually after a loss.",
             "options": [
                 "Content",
-                "Miserable",
-                "Pleased",
-                "Heartbroken",
-                "Glad"
+                "Glum",
+                "Downcast",
+                "Upbeat",
+                "Heartbroken"
             ],
-            "correctAnswer": "Happy:Content, Sad:Miserable, Happy:Pleased, Sad:Heartbroken, Happy:Glad",
+            "correctAnswer": "Happy:Content, Sad:Glum, Sad:Downcast, Happy:Upbeat, Sad:Heartbroken",
             "relatedWords": [
-                "$option: $defi",
-                "$option: $defi",
-                "$option: $defi",
-                "$option: $defi",
-                "$option: $defi"
+                "Content: satisfied and at ease",
+                "Glum: quietly sad or gloomy",
+                "Downcast: sad and discouraged",
+                "Upbeat: positive and optimistic",
+                "Heartbroken: overwhelmed with grief, usually from loss"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L4_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Rank these by intensity in your head before sorting them into Happy or Sad.",
             "topicBuckets": [
                 "Happy",
                 "Sad"
             ],
-            "hint": "Here's a tip: Happy people smile, while sad people cry. Sort by feeling!",
-            "explanation": "Think of 'Happy' as joyful feelings (smiling, laughing), and 'Sad' as unhappy feelings (crying, grieving)!",
+            "hint": "Two words here are extreme versions of happy or sad, not just mild feelings.",
+            "explanation": "Elated and ecstatic both describe intense joy, with ecstatic being the stronger of the two. Satisfied is milder, about meeting expectations. Devastated is an extreme sadness usually linked to shocking news, while somber describes a serious, subdued sadness.",
             "options": [
-                "Sorrowful",
-                "Upbeat",
-                "Downcast",
-                "Merry",
-                "Mournful"
+                "Devastated",
+                "Elated",
+                "Ecstatic",
+                "Somber",
+                "Satisfied"
             ],
-            "correctAnswer": "Sad:Sorrowful, Happy:Upbeat, Sad:Downcast, Happy:Merry, Sad:Mournful",
+            "correctAnswer": "Sad:Devastated, Happy:Elated, Happy:Ecstatic, Sad:Somber, Happy:Satisfied",
             "relatedWords": [
-                "$option: $defi",
-                "$option: $defi",
-                "$option: $defi",
-                "$option: $defi",
-                "$option: $defi"
+                "Devastated: overwhelmed with shock and sadness",
+                "Elated: extremely happy and excited",
+                "Ecstatic: overwhelmed with intense happiness",
+                "Somber: serious and gloomy in mood",
+                "Satisfied: pleased because expectations were met"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L5_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Day or Night, based on when it happens.",
             "topicBuckets": [
                 "Day",
                 "Night"
             ],
-            "hint": "Here's a tip: During the day the sun shines, while at night the moon and stars appear. Sort by time!",
-            "explanation": "Think of 'Day' as the bright hours when the sun is up, and 'Night' as the dark hours after sunset!",
+            "hint": "Think about what the sky looks like at each time.",
+            "explanation": "Daylight and dawn both relate to the sun being up, though dawn marks its first appearance specifically. Noon is the exact middle of the day. Darkness and midnight both relate to night, with midnight marking its exact center.",
             "options": [
-                "Sunshine",
-                "Moonlight",
+                "Daylight",
+                "Darkness",
                 "Noon",
-                "Midnight",
-                "Daylight"
+                "Dawn",
+                "Midnight"
             ],
-            "correctAnswer": "Day:Sunshine, Night:Moonlight, Day:Noon, Night:Midnight, Day:Daylight",
+            "correctAnswer": "Day:Daylight, Night:Darkness, Day:Noon, Day:Dawn, Night:Midnight",
             "relatedWords": [
-                "$option: $defi",
-                "$option: $defi",
-                "$option: $defi",
-                "$option: $defi",
-                "$option: $defi"
+                "Daylight: natural light during the day",
+                "Darkness: the absence of light, typical of night",
+                "Noon: exactly midday, 12 p.m.",
+                "Dawn: the first light of morning",
+                "Midnight: exactly 12 a.m., the middle of the night"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L5_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Some of these words mark the transition between day and night. Sort them into Day or Night.",
             "topicBuckets": [
                 "Day",
                 "Night"
             ],
-            "hint": "Here's a tip: During the day the sun shines, while at night the moon and stars appear. Sort by time!",
-            "explanation": "Think of 'Day' as the bright hours when the sun is up, and 'Night' as the dark hours after sunset!",
+            "hint": "Notice which words describe a moment of change, not the middle of a time period.",
+            "explanation": "Dusk, twilight, and nightfall all describe the transition into night, though dusk is the specific moment just after sunset. 'Broad daylight' is a fixed phrase meaning clearly in the daytime, often used to emphasize something happened openly.",
             "options": [
-                "Dawn",
-                "Dusk",
-                "Morning",
-                "Bedtime",
-                "Sunrise"
+                "Broad daylight",
+                "Sunrise",
+                "Nightfall",
+                "Twilight",
+                "Dusk"
             ],
-            "correctAnswer": "Day:Dawn, Night:Dusk, Day:Morning, Night:Bedtime, Day:Sunrise",
+            "correctAnswer": "Day:Broad daylight, Day:Sunrise, Night:Nightfall, Night:Twilight, Night:Dusk",
             "relatedWords": [
-                "$option: $defi",
-                "$option: $defi",
-                "$option: $defi",
-                "$option: $defi",
-                "$option: $defi"
+                "Broad daylight: clearly during the day, in full light",
+                "Sunrise: the moment the sun appears in the morning",
+                "Nightfall: the point when night begins",
+                "Twilight: the soft light after sunset or before sunrise",
+                "Dusk: the darkening period just after sunset"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L5_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Think about routines and habits linked to each time, not just the sky. Sort into Day or Night.",
             "topicBuckets": [
                 "Day",
                 "Night"
             ],
-            "hint": "Here's a tip: During the day the sun shines, while at night the moon and stars appear. Sort by time!",
-            "explanation": "Think of 'Day' as the bright hours when the sun is up, and 'Night' as the dark hours after sunset!",
+            "hint": "One word is an informal name for overnight work, and one describes animals active after dark.",
+            "explanation": "'Graveyard shift' is an informal term for overnight work, and 'nocturnal' describes animals or people active at night. 'Rush hour' and 'siesta' both relate to daytime routines \u2014 commuting and an afternoon rest.",
             "options": [
-                "Stars",
-                "Sunlight",
-                "Darkness",
-                "Afternoon",
-                "Sunset"
+                "Nocturnal",
+                "Rush hour",
+                "Graveyard shift",
+                "Siesta",
+                "Insomnia"
             ],
-            "correctAnswer": "Night:Stars, Day:Sunlight, Night:Darkness, Day:Afternoon, Night:Sunset",
+            "correctAnswer": "Night:Nocturnal, Day:Rush hour, Night:Graveyard shift, Day:Siesta, Night:Insomnia",
             "relatedWords": [
-                "$option: $defi",
-                "$option: $defi",
-                "$option: $defi",
-                "$option: $defi",
-                "$option: $defi"
+                "Nocturnal: active mainly at night",
+                "Rush hour: the busy time when people commute to or from work",
+                "Graveyard shift: an informal term for an overnight work shift",
+                "Siesta: a short rest taken in the afternoon",
+                "Insomnia: difficulty sleeping at night"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L6_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Up or Down, based on direction.",
             "topicBuckets": [
                 "Up",
                 "Down"
             ],
-            "hint": "Here's a tip: Up points toward the sky, while down points toward the ground. Sort by direction!",
-            "explanation": "Think of 'Up' as upward direction (climbing, rising), and 'Down' as downward direction (falling, sinking)!",
+            "hint": "Picture an elevator \u2014 is it heading to a higher or lower floor?",
+            "explanation": "Ascend and climb both mean to go up, though climb often involves effort, like climbing stairs, while ascend can describe smoother movement, like a plane ascending. Sink suggests going down into something, while descend is a more general word for moving downward.",
             "options": [
-                "Rise",
-                "Fall",
+                "Sink",
                 "Climb",
-                "Drop",
+                "Rise",
+                "Descend",
                 "Ascend"
             ],
-            "correctAnswer": "Up:Rise, Down:Fall, Up:Climb, Down:Drop, Up:Ascend",
+            "correctAnswer": "Down:Sink, Up:Climb, Up:Rise, Down:Descend, Up:Ascend",
             "relatedWords": [
-                "$option: $defi",
-                "$option: $defi",
-                "$option: $defi",
-                "$option: $defi",
-                "$option: $defi"
+                "Sink: to go down, often into water or the ground",
+                "Climb: to go up, usually with effort",
+                "Rise: to move upward from a lower position",
+                "Descend: to move downward",
+                "Ascend: to climb steadily to a higher point"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L6_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These describe fast, dramatic movement. Sort them into Up or Down.",
             "topicBuckets": [
                 "Up",
                 "Down"
             ],
-            "hint": "Here's a tip: Up points toward the sky, while down points toward the ground. Sort by direction!",
-            "explanation": "Think of 'Up' as upward direction (climbing, rising), and 'Down' as downward direction (falling, sinking)!",
+            "hint": "Notice which ones suggest control, and which suggest losing it.",
+            "explanation": "Soar suggests smooth, controlled upward flight, while elevate means to deliberately raise something. Plunge and drop both describe sudden downward movement, but collapse specifically means falling apart or giving way, like a building.",
             "options": [
-                "Upward",
-                "Downward",
-                "Lift",
-                "Sink",
-                "Soar"
+                "Plunge",
+                "Collapse",
+                "Drop",
+                "Soar",
+                "Elevate"
             ],
-            "correctAnswer": "Up:Upward, Down:Downward, Up:Lift, Down:Sink, Up:Soar",
+            "correctAnswer": "Down:Plunge, Down:Collapse, Down:Drop, Up:Soar, Up:Elevate",
             "relatedWords": [
-                "$option: $defi",
-                "$option: $defi",
-                "$option: $defi",
-                "$option: $defi",
-                "$option: $defi"
+                "Plunge: to fall a long way, fast and steeply",
+                "Collapse: to give way and fall in on itself",
+                "Drop: to fall a short distance, often by accident",
+                "Soar: to rise quickly and smoothly, often through the air",
+                "Elevate: to raise something to a higher position"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L6_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These describe direction relative to a fixed point. Sort them into Up or Down.",
             "topicBuckets": [
                 "Up",
                 "Down"
             ],
-            "hint": "Here's a tip: Up points toward the sky, while down points toward the ground. Sort by direction!",
-            "explanation": "Think of 'Up' as upward direction (climbing, rising), and 'Down' as downward direction (falling, sinking)!",
+            "hint": "Think about where your feet or head would be for each word.",
+            "explanation": "Skyward and overhead both describe something above you, though overhead is more about position, like a light overhead, while skyward describes direction of movement. Underfoot means directly below your feet.",
             "options": [
-                "Descend",
-                "Elevate",
-                "Plunge",
-                "Hoist",
-                "Tumble"
+                "Skyward",
+                "Underfoot",
+                "Uphill",
+                "Downhill",
+                "Overhead"
             ],
-            "correctAnswer": "Down:Descend, Up:Elevate, Down:Plunge, Up:Hoist, Down:Tumble",
+            "correctAnswer": "Up:Skyward, Down:Underfoot, Up:Uphill, Down:Downhill, Up:Overhead",
             "relatedWords": [
-                "$option: $defi",
-                "$option: $defi",
-                "$option: $defi",
-                "$option: $defi",
-                "$option: $defi"
+                "Skyward: moving toward the sky",
+                "Underfoot: directly below your feet",
+                "Uphill: in a direction that goes upward, like a slope",
+                "Downhill: in a direction that goes downward, like a slope",
+                "Overhead: directly above, in the air"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L7_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Old or New, based on age.",
             "topicBuckets": [
-                "New",
-                "Old"
+                "Old",
+                "New"
             ],
-            "hint": "Here's a tip: A new phone has just been made, while an old phone has been used for years. Sort by age of objects!",
-            "explanation": "Think of 'New' as recently made things (just bought, unused), and 'Old' as things that have existed a long time (worn, used)!",
+            "hint": "Think about how much time has passed since something was made or happened.",
+            "explanation": "Modern and recent both mean new, but modern often describes a style or era, while recent simply means it happened not long ago. Ancient describes something historically very old, while outdated means something has stopped being useful, even if it isn't literally ancient.",
             "options": [
-                "Brand-new",
+                "Recent",
+                "Outdated",
+                "Fresh",
                 "Ancient",
-                "Modern",
-                "Antique",
-                "Fresh"
+                "Modern"
             ],
-            "correctAnswer": "New:Brand-new, Old:Ancient, New:Modern, Old:Antique, New:Fresh",
+            "correctAnswer": "New:Recent, Old:Outdated, New:Fresh, Old:Ancient, New:Modern",
             "relatedWords": [
-                "$option: $defi",
-                "$option: $defi",
-                "$option: $defi",
-                "$option: $defi",
-                "$option: $defi"
+                "Recent: happening not long ago",
+                "Outdated: no longer useful or fashionable",
+                "Fresh: newly made or arrived",
+                "Ancient: belonging to a time long past",
+                "Modern: relating to the present or a recent era"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L7_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "One of these words is a compliment about age, and one is almost an insult. Sort into New or Old.",
             "topicBuckets": [
                 "New",
                 "Old"
             ],
-            "hint": "Here's a tip: A new phone has just been made, while an old phone has been used for years. Sort by age of objects!",
-            "explanation": "Think of 'New' as recently made things (just bought, unused), and 'Old' as things that have existed a long time (worn, used)!",
+            "hint": "Notice the tone each word carries, not just its age.",
+            "explanation": "Vintage and antique both describe old items, but vintage often has a positive, stylish tone, like vintage clothing, while antique emphasizes historical age and value. Obsolete means something is no longer used because something better replaced it. Innovative describes something new because it introduces fresh ideas.",
             "options": [
-                "Recent",
                 "Vintage",
-                "Latest",
-                "Worn",
-                "Unused"
+                "Obsolete",
+                "Contemporary",
+                "Antique",
+                "Innovative"
             ],
-            "correctAnswer": "New:Recent, Old:Vintage, New:Latest, Old:Worn, New:Unused",
+            "correctAnswer": "Old:Vintage, Old:Obsolete, New:Contemporary, Old:Antique, New:Innovative",
             "relatedWords": [
-                "$option: $defi",
-                "$option: $defi",
-                "$option: $defi",
-                "$option: $defi",
-                "$option: $defi"
+                "Vintage: old in a stylish, valued way",
+                "Obsolete: no longer used because something better exists",
+                "Contemporary: belonging to the present time",
+                "Antique: old and often valuable because of its age",
+                "Innovative: introducing new ideas or methods"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L7_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These words are often used for technology and trends. Sort them into New or Old.",
             "topicBuckets": [
                 "New",
                 "Old"
             ],
-            "hint": "Here's a tip: A new phone has just been made, while an old phone has been used for years. Sort by age of objects!",
-            "explanation": "Think of 'New' as recently made things (just bought, unused), and 'Old' as things that have existed a long time (worn, used)!",
+            "hint": "Think about where you'd actually read these words \u2014 a tech review, or a history book.",
+            "explanation": "'State-of-the-art' and 'cutting-edge' both describe the newest, most advanced technology available. 'Emerging' describes something new that is still developing. Archaic describes language or customs so old they sound strange today, while timeworn describes something old and worn from long use.",
             "options": [
-                "Outdated",
-                "Current",
-                "Aged",
-                "Innovative",
-                "Battered"
+                "Cutting-edge",
+                "State-of-the-art",
+                "Archaic",
+                "Timeworn",
+                "Emerging"
             ],
-            "correctAnswer": "Old:Outdated, New:Current, Old:Aged, New:Innovative, Old:Battered",
+            "correctAnswer": "New:Cutting-edge, New:State-of-the-art, Old:Archaic, Old:Timeworn, New:Emerging",
             "relatedWords": [
-                "$option: $defi",
-                "$option: $defi",
-                "$option: $defi",
-                "$option: $defi",
-                "$option: $defi"
+                "Cutting-edge: the most advanced stage of development",
+                "State-of-the-art: using the most advanced methods or technology available",
+                "Archaic: old-fashioned to the point of sounding strange today",
+                "Timeworn: worn out or faded from long use",
+                "Emerging: newly forming or starting to be noticed"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L8_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under In or Out, based on position.",
             "topicBuckets": [
                 "In",
                 "Out"
             ],
-            "hint": "Here's a tip: In means inside a place, while out means outside it. Sort by position!",
-            "explanation": "Think of 'In' as being inside (a room, a box), and 'Out' as being outside or away (the yard, the street)!",
+            "hint": "Think about walking through a doorway \u2014 which direction are you moving?",
+            "explanation": "Enter and interior both relate to being or going inside, though interior is the inside space itself, while enter is the action of going in. Exit is the direct opposite of enter \u2014 the act of leaving.",
             "options": [
-                "Inside",
+                "Enter",
+                "Exit",
                 "Outside",
-                "Indoors",
-                "Outdoors",
-                "Within"
+                "Inside",
+                "Interior"
             ],
-            "correctAnswer": "In:Inside, Out:Outside, In:Indoors, Out:Outdoors, In:Within",
+            "correctAnswer": "In:Enter, Out:Exit, Out:Outside, In:Inside, In:Interior",
             "relatedWords": [
-                "$option: $defi",
-                "$option: $defi",
-                "$option: $defi",
-                "$option: $defi",
-                "$option: $defi"
+                "Enter: to go into a place",
+                "Exit: to go out of a place",
+                "Outside: not within a place or space",
+                "Inside: within a place or space",
+                "Interior: the inside part of something"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L8_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These describe direction of movement, not just fixed location. Sort into In or Out.",
             "topicBuckets": [
                 "In",
                 "Out"
             ],
-            "hint": "Here's a tip: In means inside a place, while out means outside it. Sort by position!",
-            "explanation": "Think of 'In' as being inside (a room, a box), and 'Out' as being outside or away (the yard, the street)!",
+            "hint": "Two words here are often used for flights and travel \u2014 think about arriving versus leaving.",
+            "explanation": "Inbound describes something arriving or heading toward a place, while outbound describes something leaving. Included means being part of a group, an extension of 'in' beyond physical space.",
             "options": [
-                "Interior",
-                "Exterior",
-                "Enter",
-                "Exit",
-                "Inward"
+                "Indoors",
+                "Included",
+                "Outdoors",
+                "Outbound",
+                "Inbound"
             ],
-            "correctAnswer": "In:Interior, Out:Exterior, In:Enter, Out:Exit, In:Inward",
+            "correctAnswer": "In:Indoors, In:Included, Out:Outdoors, Out:Outbound, In:Inbound",
             "relatedWords": [
-                "$option: $defi",
-                "$option: $defi",
-                "$option: $defi",
-                "$option: $defi",
-                "$option: $defi"
+                "Indoors: inside a building",
+                "Included: made part of a group or total",
+                "Outdoors: outside, in the open air",
+                "Outbound: traveling away from a place",
+                "Inbound: traveling toward a place"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L8_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These words are about social groups, not physical space. Sort into In or Out.",
             "topicBuckets": [
                 "In",
                 "Out"
             ],
-            "hint": "Here's a tip: In means inside a place, while out means outside it. Sort by position!",
-            "explanation": "Think of 'In' as being inside (a room, a box), and 'Out' as being outside or away (the yard, the street)!",
+            "hint": "Think about who's accepted into a group, and who's pushed away from it.",
+            "explanation": "Insider and membership both describe being part of a group with access others don't have. Outcast and excluded both describe being pushed away from a group, though outcast is a stronger, more lasting rejection than excluded.",
             "options": [
-                "Outward",
-                "Inbound",
-                "Outbound",
-                "Inner",
-                "Outer"
+                "Outcast",
+                "Belong",
+                "Membership",
+                "Insider",
+                "Excluded"
             ],
-            "correctAnswer": "Out:Outward, In:Inbound, Out:Outbound, In:Inner, Out:Outer",
+            "correctAnswer": "Out:Outcast, In:Belong, In:Membership, In:Insider, Out:Excluded",
             "relatedWords": [
-                "$option: $defi",
-                "$option: $defi",
-                "$option: $defi",
-                "$option: $defi",
-                "$option: $defi"
+                "Outcast: someone rejected by a social group",
+                "Belong: to be an accepted part of a group",
+                "Membership: official belonging to a group or organization",
+                "Insider: someone with special access or knowledge within a group",
+                "Excluded: kept out of a group or activity"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L9_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Wet or Dry, based on moisture.",
             "topicBuckets": [
                 "Wet",
                 "Dry"
             ],
-            "hint": "Here's a tip: Wet things are covered in water, while dry things have no water on them. Sort by moisture!",
-            "explanation": "Think of 'Wet' as things covered in liquid (rain, a puddle), and 'Dry' as things with no moisture (a desert, a towel)!",
+            "hint": "Think about a sponge \u2014 is it soaked with water or completely dried out?",
+            "explanation": "Damp and moist both describe a small amount of wetness, while soggy describes something so wet it's become soft, like soggy bread. Arid describes a climate with very little rainfall, while parched describes something that badly needs water.",
             "options": [
                 "Damp",
-                "Arid",
                 "Soggy",
                 "Parched",
+                "Arid",
                 "Moist"
             ],
-            "correctAnswer": "Wet:Damp, Dry:Arid, Wet:Soggy, Dry:Parched, Wet:Moist",
+            "correctAnswer": "Wet:Damp, Wet:Soggy, Dry:Parched, Dry:Arid, Wet:Moist",
             "relatedWords": [
-                "$option: $defi",
-                "$option: $defi",
-                "$option: $defi",
-                "$option: $defi",
-                "$option: $defi"
+                "Damp: slightly wet in a way that is usually unwanted",
+                "Soggy: so wet it has become soft",
+                "Parched: dried out and badly needing water",
+                "Arid: very dry, with little or no rainfall",
+                "Moist: slightly wet in a way that is usually desirable"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L9_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "One of these words describes air, not a surface. Sort into Wet or Dry.",
             "topicBuckets": [
                 "Wet",
                 "Dry"
             ],
-            "hint": "Here's a tip: Wet things are covered in water, while dry things have no water on them. Sort by moisture!",
-            "explanation": "Think of 'Wet' as things covered in liquid (rain, a puddle), and 'Dry' as things with no moisture (a desert, a towel)!",
+            "hint": "Think about what 'wet' means for weather versus for an object.",
+            "explanation": "Humid describes air that holds a lot of moisture, even if nothing feels wet to the touch. Drenched and soaked both mean completely wet, stronger than damp. Dusty describes a dry surface covered in fine particles, and crisp describes something pleasantly dry and firm.",
             "options": [
-                "Drenched",
-                "Dusty",
-                "Humid",
                 "Crisp",
+                "Drenched",
+                "Humid",
+                "Dusty",
                 "Soaked"
             ],
-            "correctAnswer": "Wet:Drenched, Dry:Dusty, Wet:Humid, Dry:Crisp, Wet:Soaked",
+            "correctAnswer": "Dry:Crisp, Wet:Drenched, Wet:Humid, Dry:Dusty, Wet:Soaked",
             "relatedWords": [
-                "$option: $defi",
-                "$option: $defi",
-                "$option: $defi",
-                "$option: $defi",
-                "$option: $defi"
+                "Crisp: pleasantly dry and firm",
+                "Drenched: completely soaked with water",
+                "Humid: having a high level of moisture in the air",
+                "Dusty: covered with fine dry particles",
+                "Soaked: thoroughly wet"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L9_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These are more technical versions of wet and dry, often used for soil and the body. Sort into Wet or Dry.",
             "topicBuckets": [
                 "Wet",
                 "Dry"
             ],
-            "hint": "Here's a tip: Wet things are covered in water, while dry things have no water on them. Sort by moisture!",
-            "explanation": "Think of 'Wet' as things covered in liquid (rain, a puddle), and 'Dry' as things with no moisture (a desert, a towel)!",
+            "hint": "Two of these describe ground that's absorbed too much water, and one describes something too dry to bend.",
+            "explanation": "Waterlogged and saturated both describe something, like soil, that has absorbed as much water as it can hold. Dehydrated describes a lack of water, often in the body, while brittle describes something so dry it has become fragile and easily broken.",
             "options": [
-                "Dripping",
-                "Withered",
-                "Splashed",
                 "Brittle",
-                "Rainy"
+                "Sodden",
+                "Saturated",
+                "Waterlogged",
+                "Dehydrated"
             ],
-            "correctAnswer": "Wet:Dripping, Dry:Withered, Wet:Splashed, Dry:Brittle, Wet:Rainy",
+            "correctAnswer": "Dry:Brittle, Wet:Sodden, Wet:Saturated, Wet:Waterlogged, Dry:Dehydrated",
             "relatedWords": [
-                "$option: $defi",
-                "$option: $defi",
-                "$option: $defi",
-                "$option: $defi",
-                "$option: $defi"
+                "Brittle: hard but easily broken, often from dryness",
+                "Sodden: thoroughly soaked, heavy with water",
+                "Saturated: completely soaked or filled with moisture",
+                "Waterlogged: so full of water it can't absorb more",
+                "Dehydrated: lacking necessary water"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L10_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Quiet or Loud, based on volume.",
             "topicBuckets": [
-                "Loud",
-                "Quiet"
+                "Quiet",
+                "Loud"
             ],
-            "hint": "Here's a tip: Loud sounds hurt your ears, while quiet sounds are barely heard. Sort by volume!",
-            "explanation": "Think of 'Loud' as high volume (a shout, a siren), and 'Quiet' as low volume (a whisper, silence)!",
+            "hint": "Imagine a rock concert versus a library.",
+            "explanation": "Booming and deafening both describe intense loudness, with deafening being strong enough to hurt your ears. Hushed describes a quiet that's deliberately kept low, like a hushed conversation, while silent means no sound at all.",
             "options": [
-                "Noisy",
+                "Deafening",
                 "Silent",
+                "Noisy",
                 "Booming",
-                "Hushed",
-                "Deafening"
+                "Hushed"
             ],
-            "correctAnswer": "Loud:Noisy, Quiet:Silent, Loud:Booming, Quiet:Hushed, Loud:Deafening",
+            "correctAnswer": "Loud:Deafening, Quiet:Silent, Loud:Noisy, Loud:Booming, Quiet:Hushed",
             "relatedWords": [
-                "$option: $defi",
-                "$option: $defi",
-                "$option: $defi",
-                "$option: $defi",
-                "$option: $defi"
+                "Deafening: so loud it's almost painful to hear",
+                "Silent: completely without sound",
+                "Noisy: making a lot of sound",
+                "Booming: deep and loud",
+                "Hushed: made quiet on purpose"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L10_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "One of these quiet words describes a sound that's barely there. Sort into Quiet or Loud.",
             "topicBuckets": [
-                "Loud",
-                "Quiet"
+                "Quiet",
+                "Loud"
             ],
-            "hint": "Here's a tip: Loud sounds hurt your ears, while quiet sounds are barely heard. Sort by volume!",
-            "explanation": "Think of 'Loud' as high volume (a shout, a siren), and 'Quiet' as low volume (a whisper, silence)!",
+            "hint": "Notice which loud words describe an unpleasant, hard-to-ignore sound.",
+            "explanation": "Blaring and piercing both describe loud sounds that are unpleasant or hard to ignore, like a blaring alarm. Thunderous suggests a loud rumbling sound, like applause. Muted describes sound deliberately lowered, while faint describes sound so quiet it's hard to hear.",
             "options": [
-                "Roaring",
-                "Muted",
+                "Faint",
+                "Piercing",
                 "Blaring",
-                "Soft",
+                "Muted",
                 "Thunderous"
             ],
-            "correctAnswer": "Loud:Roaring, Quiet:Muted, Loud:Blaring, Quiet:Soft, Loud:Thunderous",
+            "correctAnswer": "Quiet:Faint, Loud:Piercing, Loud:Blaring, Quiet:Muted, Loud:Thunderous",
             "relatedWords": [
-                "$option: $defi",
-                "$option: $defi",
-                "$option: $defi",
-                "$option: $defi",
-                "$option: $defi"
+                "Faint: very quiet, hard to hear",
+                "Piercing: sharp and loud enough to be uncomfortable",
+                "Blaring: loud and harsh, hard to ignore",
+                "Muted: deliberately made quieter",
+                "Thunderous: extremely loud, like thunder"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L10_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "One of these words describes a peaceful feeling more than a specific sound. Sort into Loud or Quiet.",
             "topicBuckets": [
                 "Loud",
                 "Quiet"
             ],
-            "hint": "Here's a tip: Loud sounds hurt your ears, while quiet sounds are barely heard. Sort by volume!",
-            "explanation": "Think of 'Loud' as high volume (a shout, a siren), and 'Quiet' as low volume (a whisper, silence)!",
+            "hint": "Think beyond just volume for one of the quiet words.",
+            "explanation": "Clamor and uproar both describe loud, chaotic noise from a crowd. Whisper and murmur both describe very quiet speech, with murmur often describing a low, continuous sound. Serenity describes a peaceful state or atmosphere, not just quiet sound.",
             "options": [
+                "Serenity",
+                "Murmur",
                 "Whisper",
-                "Shriek",
-                "Calm",
                 "Clamor",
-                "Faint"
+                "Uproar"
             ],
-            "correctAnswer": "Quiet:Whisper, Loud:Shriek, Quiet:Calm, Loud:Clamor, Quiet:Faint",
+            "correctAnswer": "Quiet:Serenity, Quiet:Murmur, Quiet:Whisper, Loud:Clamor, Loud:Uproar",
             "relatedWords": [
-                "$option: $defi",
-                "$option: $defi",
-                "$option: $defi",
-                "$option: $defi",
-                "$option: $defi"
+                "Serenity: a calm, peaceful state",
+                "Murmur: a low, continuous, quiet sound",
+                "Whisper: very quiet speech, using breath rather than the voice",
+                "Clamor: a loud confused noise, often from a crowd",
+                "Uproar: a loud, excited outbreak of noise or protest"
             ]
         }
     ]

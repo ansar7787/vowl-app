@@ -6,20 +6,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L31_Q1",
-            "sentence": "Being [TARGET], she compared prices at three stores before buying the cheapest groceries.",
-            "hint": "This word describes spending money very carefully to avoid waste.",
+            "sentence": "Grandpa was [TARGET] and thrifty, mending old socks instead of buying new ones and reusing jars for years.",
+            "hint": "This word describes someone careful not to waste money.",
             "options": [
                 "Thrifty",
                 "Wasteful",
-                "Lavish",
-                "Extravagant"
+                "Extravagant",
+                "Lavish"
             ],
-            "explanation": "Comparing prices at three stores to find the cheapest option shows careful spending, so [TARGET] means THRIFTY.",
+            "explanation": "The word 'and' links [TARGET] to 'thrifty,' and mending socks instead of buying new ones confirms it, so [TARGET] means THRIFTY.",
             "correctAnswer": "Thrifty",
             "clueType": "synonym",
             "evidenceWords": [
-                "Being",
-                "compared"
+                "and thrifty",
+                "mending old socks"
             ]
         },
         {
@@ -27,20 +27,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L31_Q2",
-            "sentence": "Children are often [TARGET], bouncing back quickly after a hard day at school.",
-            "hint": "This word describes recovering quickly from difficulty.",
+            "sentence": "Unlike the young sapling that snapped in half during the storm, the old oak stayed [TARGET], bending in the wind but springing right back upright.",
+            "hint": "This word describes the ability to recover quickly from hardship.",
             "options": [
+                "Fragile",
                 "Tough",
                 "Brittle",
-                "Delicate",
-                "Fragile"
+                "Delicate"
             ],
-            "explanation": "Bouncing back quickly after a hard day shows recovering fast from difficulty, so [TARGET] means TOUGH.",
+            "explanation": "The word 'unlike' contrasts [TARGET] with the sapling that 'snapped in half,' so it must mean the opposite, which is TOUGH.",
             "correctAnswer": "Tough",
             "clueType": "antonym",
             "evidenceWords": [
-                "Children",
-                "often"
+                "Unlike",
+                "snapped in half",
+                "springing right back"
             ]
         },
         {
@@ -48,20 +49,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L31_Q3",
-            "sentence": "He's so [TARGET] that he believed his friend's joke about winning the lottery.",
-            "hint": "This word describes believing things too easily, without checking first.",
+            "sentence": "His classmates called him [TARGET], which means he believed almost anything anyone told him, even the silliest jokes.",
+            "hint": "This word describes someone who is easily tricked or fooled.",
             "options": [
-                "Credulous",
-                "Suspicious",
                 "Skeptical",
-                "Sharp"
+                "Suspicious",
+                "Easily fooled",
+                "Doubtful"
             ],
-            "explanation": "Believing a joke about winning the lottery shows believing too easily, so [TARGET] means CREDULOUS.",
-            "correctAnswer": "Credulous",
+            "explanation": "The sentence defines [TARGET] as believing 'almost anything anyone told him,' so [TARGET] means EASILY FOOLED.",
+            "correctAnswer": "Easily fooled",
             "clueType": "definition",
             "evidenceWords": [
-                "believed",
-                "friend's"
+                "which means",
+                "believed almost anything"
             ]
         },
         {
@@ -69,20 +70,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L32_Q1",
-            "sentence": "The baker was [TARGET], weighing every ingredient on a scale before mixing the dough.",
-            "hint": "This word describes following a clear, organized process every time.",
+            "sentence": "The scientist was [TARGET]: she labeled every test tube in order, recorded each measurement in the same notebook column, and repeated every step exactly the same way each time.",
+            "hint": "This word describes doing something in a careful, orderly, step-by-step way.",
             "options": [
-                "Disorganized",
+                "Chaotic",
                 "Haphazard",
-                "Systematic",
-                "Chaotic"
+                "Disorganized",
+                "Systematic"
             ],
-            "explanation": "Weighing every ingredient before mixing shows following a clear, organized process, so [TARGET] means SYSTEMATIC.",
+            "explanation": "Labeling tubes in order, recording measurements consistently, and repeating steps exactly are all examples of an orderly process, so [TARGET] means SYSTEMATIC.",
             "correctAnswer": "Systematic",
             "clueType": "example",
             "evidenceWords": [
-                "baker",
-                "weighing"
+                "labeled every test tube in order",
+                "same notebook column",
+                "exactly the same way"
             ]
         },
         {
@@ -90,20 +92,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L32_Q2",
-            "sentence": "The lawyer was [TARGET] about her client's case, never mentioning names outside the office.",
-            "hint": "This word describes being careful not to share sensitive information.",
+            "sentence": "When her coworker confided about the surprise promotion, Elena simply nodded, changed the subject at lunch, and never mentioned it again, even to her closest friend — everyone trusted how [TARGET] she was.",
+            "hint": "This word describes being careful not to reveal private information.",
             "options": [
-                "Public",
-                "Private",
-                "Open",
-                "Loud"
+                "Tight-lipped",
+                "Gossipy",
+                "Talkative",
+                "Loose-lipped"
             ],
-            "explanation": "Never mentioning names outside the office shows being careful with sensitive information, so [TARGET] means PRIVATE.",
-            "correctAnswer": "Private",
+            "explanation": "Staying quiet, changing the subject, and never mentioning the secret again all show care about keeping private information, even without a direct clue word, so [TARGET] means TIGHT-LIPPED.",
+            "correctAnswer": "Tight-lipped",
             "clueType": "inference",
             "evidenceWords": [
-                "lawyer",
-                "about"
+                "nodded",
+                "changed the subject",
+                "never mentioned it again"
             ]
         },
         {
@@ -111,20 +114,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L32_Q3",
-            "sentence": "She stood [TARGET] in front of the menu for ten minutes, unable to choose a dish.",
-            "hint": "This word describes struggling to make up your mind.",
+            "sentence": "At the restaurant, Sam was [TARGET] and wishy-washy, changing his order three times before the waiter finally walked away.",
+            "hint": "This word describes someone who has trouble making up their mind.",
             "options": [
-                "Resolute",
                 "Decisive",
+                "Wishy-washy",
                 "Certain",
-                "Undecided"
+                "Resolute"
             ],
-            "explanation": "Standing for ten minutes unable to choose shows struggling to make up one's mind, so [TARGET] means UNDECIDED.",
-            "correctAnswer": "Undecided",
+            "explanation": "The word 'and' links [TARGET] to 'wishy-washy,' and changing his order three times confirms it, so [TARGET] means WISHY-WASHY.",
+            "correctAnswer": "Wishy-washy",
             "clueType": "synonym",
             "evidenceWords": [
-                "stood",
-                "front"
+                "and wishy-washy",
+                "changing his order three times"
             ]
         },
         {
@@ -132,20 +135,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L33_Q1",
-            "sentence": "The [TARGET] artist painted only at midnight and wore mismatched socks every day.",
-            "hint": "This word describes behavior that is different from what most people do.",
+            "sentence": "Unlike his conventional neighbors who kept identical lawns and matching mailboxes, the artist next door was [TARGET], painting his fence purple and collecting antique typewriters he never used.",
+            "hint": "This word describes someone whose behavior is delightfully unusual compared to others.",
             "options": [
-                "Mainstream",
-                "Unusual",
+                "Conventional",
                 "Ordinary",
-                "Conventional"
+                "Quirky",
+                "Typical"
             ],
-            "explanation": "Painting only at midnight and wearing mismatched socks is very different from common behavior, so [TARGET] means UNUSUAL.",
-            "correctAnswer": "Unusual",
+            "explanation": "The word 'unlike' contrasts [TARGET] with 'conventional' neighbors, so it must mean the opposite, which is QUIRKY.",
+            "correctAnswer": "Quirky",
             "clueType": "antonym",
             "evidenceWords": [
-                "artist",
-                "painted"
+                "Unlike",
+                "conventional neighbors",
+                "purple"
             ]
         },
         {
@@ -153,20 +157,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L33_Q2",
-            "sentence": "They made an [TARGET] plan to meet on Friday, but it still depends on the weather.",
-            "hint": "This word describes a plan that might still change.",
+            "sentence": "Her plans for the trip were [TARGET], meaning they were not yet certain and could easily change depending on the weather.",
+            "hint": "This word describes something not yet fully decided or settled.",
             "options": [
                 "Definite",
-                "Uncertain",
-                "Firm",
-                "Confirmed"
+                "Fixed",
+                "Final",
+                "Uncertain"
             ],
-            "explanation": "A plan that still depends on the weather shows it might still change, so [TARGET] means UNCERTAIN.",
+            "explanation": "The sentence defines [TARGET] as 'not yet certain' and able to 'easily change,' so [TARGET] means UNCERTAIN.",
             "correctAnswer": "Uncertain",
             "clueType": "definition",
             "evidenceWords": [
-                "Friday",
-                "still"
+                "meaning",
+                "not yet certain",
+                "easily change"
             ]
         },
         {
@@ -174,20 +179,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L33_Q3",
-            "sentence": "My sister gave me an [TARGET] opinion about my haircut, even though it wasn't what I wanted to hear.",
-            "hint": "This word describes telling the truth even when it's uncomfortable.",
+            "sentence": "The reviewer was [TARGET]: she admitted the soup was too salty, said the service was slow, and didn't hide that she probably wouldn't return.",
+            "hint": "This word describes being open and honest, even about unflattering things.",
             "options": [
-                "Honest",
-                "Deceitful",
-                "Misleading",
-                "Dishonest"
+                "Frank",
+                "Evasive",
+                "Diplomatic",
+                "Guarded"
             ],
-            "explanation": "Sharing an opinion the listener didn't want to hear shows telling the truth despite discomfort, so [TARGET] means HONEST.",
-            "correctAnswer": "Honest",
+            "explanation": "Admitting the soup was salty, criticizing slow service, and not hiding her true opinion are all examples of honest, open feedback, so [TARGET] means FRANK.",
+            "correctAnswer": "Frank",
             "clueType": "example",
             "evidenceWords": [
-                "sister",
-                "opinion"
+                "admitted the soup was too salty",
+                "didn't hide"
             ]
         },
         {
@@ -195,20 +200,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L34_Q1",
-            "sentence": "It was [TARGET] of her to save part of every paycheck for emergencies.",
-            "hint": "This word describes making sensible decisions about the future.",
+            "sentence": "Instead of spending her whole bonus on a new phone, Mia put half into savings, paid off her credit card balance, and kept a small emergency fund untouched — a [TARGET] way to handle unexpected money.",
+            "hint": "This word describes making careful, sound decisions, especially about money.",
             "options": [
-                "Foolish",
                 "Careless",
                 "Wise",
-                "Reckless"
+                "Reckless",
+                "Wasteful"
             ],
-            "explanation": "Saving part of every paycheck for emergencies shows a sensible decision about the future, so [TARGET] means WISE.",
+            "explanation": "Saving half, paying off debt, and keeping an emergency fund all show careful financial judgment, even without a direct clue word, so [TARGET] means WISE.",
             "correctAnswer": "Wise",
             "clueType": "inference",
             "evidenceWords": [
-                "every",
-                "paycheck"
+                "put half into savings",
+                "paid off her credit card",
+                "emergency fund untouched"
             ]
         },
         {
@@ -216,20 +222,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L34_Q2",
-            "sentence": "The chess champion was an [TARGET] opponent, winning every match without losing a single piece.",
-            "hint": "This word describes someone who inspires respect because of their strength or skill.",
+            "sentence": "The defending champion was [TARGET] and intimidating, having not lost a single match in three years.",
+            "hint": "This word describes an opponent that inspires fear or respect because of their strength.",
             "options": [
-                "Impressive",
-                "Unimpressive",
                 "Weak",
-                "Feeble"
+                "Unskilled",
+                "Intimidating",
+                "Harmless"
             ],
-            "explanation": "Winning every match without losing a single piece inspires respect for skill, so [TARGET] means IMPRESSIVE.",
-            "correctAnswer": "Impressive",
+            "explanation": "The word 'and' links [TARGET] to 'intimidating,' and not losing a match in three years confirms it, so [TARGET] means INTIMIDATING.",
+            "correctAnswer": "Intimidating",
             "clueType": "synonym",
             "evidenceWords": [
-                "chess",
-                "champion"
+                "and intimidating",
+                "not lost a single match"
             ]
         },
         {
@@ -237,20 +243,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L34_Q3",
-            "sentence": "The judge was [TARGET] and gave the first-time offender a warning instead of jail time.",
-            "hint": "This word describes choosing kindness instead of harsh punishment.",
+            "sentence": "Unlike the previous judge, who handed out the maximum sentence every time, this judge was [TARGET], showing leniency to first-time offenders who showed genuine remorse.",
+            "hint": "This word describes showing kindness or forgiveness instead of harsh punishment.",
             "options": [
+                "Harsh",
                 "Ruthless",
-                "Cruel",
-                "Forgiving",
-                "Harsh"
+                "Severe",
+                "Lenient"
             ],
-            "explanation": "Giving a warning instead of jail time shows choosing kindness over harsh punishment, so [TARGET] means FORGIVING.",
-            "correctAnswer": "Forgiving",
+            "explanation": "The word 'unlike' contrasts [TARGET] with a judge who 'handed out the maximum sentence,' so it must mean the opposite, which is LENIENT.",
+            "correctAnswer": "Lenient",
             "clueType": "antonym",
             "evidenceWords": [
-                "judge",
-                "first-time"
+                "Unlike",
+                "maximum sentence",
+                "leniency"
             ]
         },
         {
@@ -258,20 +265,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L35_Q1",
-            "sentence": "The stock's price was [TARGET], jumping up and down by ten percent within a single day.",
-            "hint": "This word describes something likely to change suddenly without warning.",
+            "sentence": "The stock market was [TARGET] that week, meaning prices swung wildly up and down within hours instead of moving steadily.",
+            "hint": "This word describes something that changes suddenly and unpredictably.",
             "options": [
-                "Steady",
-                "Stable",
                 "Unpredictable",
+                "Stable",
+                "Steady",
                 "Consistent"
             ],
-            "explanation": "Jumping up and down by ten percent within a single day shows sudden, unpredictable change, so [TARGET] means UNPREDICTABLE.",
+            "explanation": "The sentence defines [TARGET] as prices that 'swung wildly up and down' instead of moving steadily, so [TARGET] means UNPREDICTABLE.",
             "correctAnswer": "Unpredictable",
             "clueType": "definition",
             "evidenceWords": [
-                "stock's",
-                "price"
+                "meaning",
+                "swung wildly",
+                "instead of moving steadily"
             ]
         },
         {
@@ -279,20 +287,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L35_Q2",
-            "sentence": "Unlike her outgoing sister, Maya was [TARGET] at parties, preferring to listen rather than talk.",
-            "hint": "This word describes someone who doesn't talk much in social situations.",
+            "sentence": "At the party, Nathan was [TARGET]: he stood quietly near the snack table, answered questions with just a few words, and slipped out early without saying goodbye to most people.",
+            "hint": "This word describes someone who holds back from being talkative or outgoing.",
             "options": [
-                "Loud",
+                "Outgoing",
                 "Quiet",
                 "Talkative",
-                "Outspoken"
+                "Chatty"
             ],
-            "explanation": "Preferring to listen rather than talk at parties shows not talking much in social situations, so [TARGET] means QUIET.",
+            "explanation": "Standing quietly, giving short answers, and leaving without much interaction are all examples of a reserved personality, so [TARGET] means QUIET.",
             "correctAnswer": "Quiet",
             "clueType": "example",
             "evidenceWords": [
-                "Unlike",
-                "outgoing"
+                "stood quietly",
+                "just a few words",
+                "slipped out early"
             ]
         },
         {
@@ -300,20 +309,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L35_Q3",
-            "sentence": "The [TARGET] nurse stayed an extra hour just to comfort the frightened patient.",
-            "hint": "This word describes feeling and acting on concern for someone's suffering.",
+            "sentence": "When she saw the shivering stray outside the store, she immediately took off her own coat to wrap around it, bought it food with her lunch money, and stayed until the shelter arrived — a truly [TARGET] response.",
+            "hint": "This word describes feeling deep sympathy and wanting to help someone or something suffering.",
             "options": [
-                "Cruel",
-                "Caring",
                 "Indifferent",
-                "Heartless"
+                "Cold-hearted",
+                "Caring",
+                "Unfeeling"
             ],
-            "explanation": "Staying an extra hour to comfort a frightened patient shows acting on concern for suffering, so [TARGET] means CARING.",
+            "explanation": "Giving up her coat, buying food, and staying to help all show deep concern for the suffering animal, even without a direct clue word, so [TARGET] means CARING.",
             "correctAnswer": "Caring",
             "clueType": "inference",
             "evidenceWords": [
-                "nurse",
-                "stayed"
+                "took off her own coat",
+                "bought it food",
+                "stayed until"
             ]
         },
         {
@@ -321,20 +331,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L36_Q1",
-            "sentence": "The [TARGET] salesperson called the client every week for three months until she finally said yes.",
-            "hint": "This word describes holding on firmly and not giving up.",
+            "sentence": "The startup founder was [TARGET] and persistent, pitching her idea to over a hundred investors before finally getting a yes.",
+            "hint": "This word describes holding on firmly to a goal despite setbacks.",
             "options": [
-                "Persistent",
                 "Quitting",
-                "Yielding",
-                "Submissive"
+                "Giving up",
+                "Defeated",
+                "Persistent"
             ],
-            "explanation": "Calling every week for three months without giving up shows holding on firmly, so [TARGET] means PERSISTENT.",
+            "explanation": "The word 'and' links [TARGET] to 'persistent,' and pitching to over a hundred investors before success confirms it, so [TARGET] means PERSISTENT.",
             "correctAnswer": "Persistent",
             "clueType": "synonym",
             "evidenceWords": [
-                "salesperson",
-                "called"
+                "and persistent",
+                "over a hundred investors"
             ]
         },
         {
@@ -342,41 +352,43 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L36_Q2",
-            "sentence": "Her [TARGET] question made the whole class see the poem in a completely new way.",
-            "hint": "This word describes noticing something others miss.",
+            "sentence": "Unlike the surface-level comments from most reviewers, her critique was [TARGET], pointing out a plot hole no one else had even noticed.",
+            "hint": "This word describes showing a deep, accurate understanding of something.",
             "options": [
                 "Perceptive",
-                "Oblivious",
-                "Clueless",
-                "Unaware"
+                "Shallow",
+                "Superficial",
+                "Vague"
             ],
-            "explanation": "A question that made the whole class see something new shows noticing what others missed, so [TARGET] means PERCEPTIVE.",
+            "explanation": "The word 'unlike' contrasts [TARGET] with 'surface-level comments,' so it must mean the opposite, which is PERCEPTIVE.",
             "correctAnswer": "Perceptive",
             "clueType": "antonym",
             "evidenceWords": [
-                "question",
-                "whole"
+                "Unlike",
+                "surface-level comments",
+                "no one else had even noticed"
             ]
         },
         {
-            "word": "METICULOUSLY",
+            "word": "METICULOUS",
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L36_Q3",
-            "sentence": "She [TARGET] checked every line of code before sending it to her team.",
-            "hint": "This word describes paying very close attention to small details.",
+            "sentence": "The lab technician was [TARGET], which means she checked every measurement three times and never let the smallest detail slip past her.",
+            "hint": "This word describes being extremely careful and exact about details.",
             "options": [
-                "Hastily",
-                "Carelessly",
-                "Sloppily",
-                "Carefully"
+                "Careless",
+                "Precise",
+                "Sloppy",
+                "Messy"
             ],
-            "explanation": "Checking every single line before sending shows paying very close attention to detail, so [TARGET] means CAREFULLY.",
-            "correctAnswer": "Carefully",
+            "explanation": "The sentence defines [TARGET] as checking 'every measurement three times' and catching 'the smallest detail,' so [TARGET] means PRECISE.",
+            "correctAnswer": "Precise",
             "clueType": "definition",
             "evidenceWords": [
-                "checked",
-                "every"
+                "which means",
+                "checked every measurement three times",
+                "smallest detail"
             ]
         },
         {
@@ -384,20 +396,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L37_Q1",
-            "sentence": "Everyone at the reunion described our new cousin-in-law as warm and [TARGET].",
-            "hint": "This word describes someone pleasant and easy to get along with.",
+            "sentence": "Everyone on the block loved the new mail carrier, who was [TARGET]: she waved at every porch, remembered the kids' names, and always had a friendly word for whoever she passed.",
+            "hint": "This word describes someone pleasant and easy to like.",
             "options": [
-                "Friendly",
-                "Unfriendly",
-                "Cold",
-                "Hostile"
+                "Unpleasant",
+                "Hostile",
+                "Likable",
+                "Grouchy"
             ],
-            "explanation": "Being described as warm and easy to get along with shows being pleasant, so [TARGET] means FRIENDLY.",
-            "correctAnswer": "Friendly",
+            "explanation": "Waving at porches, remembering names, and offering friendly words are all examples of a warm, easy-to-like personality, so [TARGET] means LIKABLE.",
+            "correctAnswer": "Likable",
             "clueType": "example",
             "evidenceWords": [
-                "Everyone",
-                "reunion"
+                "waved at every porch",
+                "remembered the kids' names",
+                "friendly word"
             ]
         },
         {
@@ -405,20 +418,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L37_Q2",
-            "sentence": "The new app's [TARGET] design let my grandmother use it without any instructions.",
-            "hint": "This word describes something so well designed it needs no explanation.",
+            "sentence": "Without studying her opponent's strategy beforehand, the young chess player somehow sensed which move was coming three turns in advance and reacted before her opponent even finished thinking — her instincts were simply [TARGET].",
+            "hint": "This word describes understanding something instantly, without needing to reason it out.",
             "options": [
-                "Complicated",
-                "User-friendly",
-                "Confusing",
-                "Baffling"
+                "Learned",
+                "Calculated",
+                "Studied",
+                "Instinctive"
             ],
-            "explanation": "Letting a grandmother use it without any instructions shows it needs no explanation, so [TARGET] means USER-FRIENDLY.",
-            "correctAnswer": "User-friendly",
+            "explanation": "Sensing moves in advance without studying, and reacting instantly, shows understanding that comes naturally rather than through reasoning, so [TARGET] means INSTINCTIVE.",
+            "correctAnswer": "Instinctive",
             "clueType": "inference",
             "evidenceWords": [
-                "app's",
-                "design"
+                "somehow sensed",
+                "three turns in advance",
+                "before her opponent even finished"
             ]
         },
         {
@@ -426,20 +440,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L37_Q3",
-            "sentence": "The [TARGET] dog waited by the door every day until its owner came home from work.",
-            "hint": "This word describes deep, lasting commitment to someone.",
+            "sentence": "The old dog was [TARGET] and loyal, waiting by the front window every single afternoon until his owner came home.",
+            "hint": "This word describes deep, unwavering love or commitment to someone.",
             "options": [
                 "Loyal",
                 "Indifferent",
-                "Disloyal",
-                "Unfaithful"
+                "Distant",
+                "Detached"
             ],
-            "explanation": "Waiting by the door every single day shows deep, lasting commitment, so [TARGET] means LOYAL.",
+            "explanation": "The word 'and' links [TARGET] to 'loyal,' and waiting by the window every afternoon confirms it, so [TARGET] means LOYAL.",
             "correctAnswer": "Loyal",
             "clueType": "synonym",
             "evidenceWords": [
-                "waited",
-                "every"
+                "and loyal",
+                "every single afternoon"
             ]
         },
         {
@@ -447,20 +461,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L38_Q1",
-            "sentence": "The store offered a [TARGET] discount of fifty percent during the holiday sale.",
-            "hint": "This word describes an amount large enough to really matter.",
+            "sentence": "Unlike the tiny snack he'd grabbed that morning, dinner that night was [TARGET], leaving him too full to move from the table.",
+            "hint": "This word describes something sizable, more than a small amount.",
             "options": [
-                "Minor",
-                "Significant",
-                "Trivial",
-                "Negligible"
+                "Meager",
+                "Large",
+                "Skimpy",
+                "Tiny"
             ],
-            "explanation": "A fifty percent discount is large enough to really matter, so [TARGET] means SIGNIFICANT.",
-            "correctAnswer": "Significant",
+            "explanation": "The word 'unlike' contrasts [TARGET] with the 'tiny snack,' so it must mean the opposite, which is LARGE.",
+            "correctAnswer": "Large",
             "clueType": "antonym",
             "evidenceWords": [
-                "store",
-                "offered"
+                "Unlike",
+                "tiny snack",
+                "too full to move"
             ]
         },
         {
@@ -468,20 +483,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L38_Q2",
-            "sentence": "Being [TARGET], she made five new friends within the first hour of the party.",
-            "hint": "This word describes someone who genuinely enjoys being around other people.",
+            "sentence": "Marcus was [TARGET], which means he genuinely loved being around people and felt energized at every party he attended.",
+            "hint": "This word describes someone who thrives around people and enjoys company.",
             "options": [
                 "Withdrawn",
-                "Reclusive",
                 "Antisocial",
-                "Sociable"
+                "Sociable",
+                "Solitary"
             ],
-            "explanation": "Making five new friends within an hour shows genuinely enjoying being around people, so [TARGET] means SOCIABLE.",
+            "explanation": "The sentence defines [TARGET] as loving 'being around people' and feeling 'energized' at parties, so [TARGET] means SOCIABLE.",
             "correctAnswer": "Sociable",
             "clueType": "definition",
             "evidenceWords": [
-                "Being",
-                "friends"
+                "which means",
+                "loved being around people",
+                "energized"
             ]
         },
         {
@@ -489,20 +505,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L38_Q3",
-            "sentence": "The small kitchen was [TARGET] for one cook, though it would be tight with two.",
-            "hint": "This word describes being just enough for what is needed.",
+            "sentence": "The supplies for the camping trip were [TARGET]: enough water for three days, a first-aid kit that covered common injuries, and just enough food to get everyone home.",
+            "hint": "This word describes having just enough to meet a need, without extra to spare.",
             "options": [
+                "Insufficient",
                 "Lacking",
-                "Inadequate",
-                "Sufficient",
-                "Insufficient"
+                "Scarce",
+                "Sufficient"
             ],
-            "explanation": "Being fine for one cook but tight with two shows being just enough for the need, so [TARGET] means SUFFICIENT.",
+            "explanation": "Having enough water, a fitting first-aid kit, and just enough food are all examples of meeting a need exactly, so [TARGET] means SUFFICIENT.",
             "correctAnswer": "Sufficient",
             "clueType": "example",
             "evidenceWords": [
-                "small",
-                "kitchen"
+                "enough water for three days",
+                "first-aid kit",
+                "just enough food"
             ]
         },
         {
@@ -510,20 +527,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L39_Q1",
-            "sentence": "The company's [TARGET] battery design let phones charge fully in just five minutes.",
-            "hint": "This word describes a completely new approach no one has tried before.",
+            "sentence": "No one had ever combined a water bottle with a built-in phone charger before her design, and within a year every major retailer wanted to carry it — proof of how [TARGET] her idea truly was.",
+            "hint": "This word describes introducing fresh, never-tried-before ideas.",
             "options": [
-                "Old-fashioned",
-                "Groundbreaking",
-                "Conventional",
-                "Outdated"
+                "Original",
+                "Outdated",
+                "Unoriginal",
+                "Old-fashioned"
             ],
-            "explanation": "Charging fully in just five minutes is a completely new approach, so [TARGET] means GROUNDBREAKING.",
-            "correctAnswer": "Groundbreaking",
+            "explanation": "Combining two products in a way no one had done before, and stores rushing to carry it, both show a genuinely new and original idea, even without a direct clue word, so [TARGET] means ORIGINAL.",
+            "correctAnswer": "Original",
             "clueType": "inference",
             "evidenceWords": [
-                "company's",
-                "battery"
+                "had ever combined",
+                "before her design",
+                "every major retailer"
             ]
         },
         {
@@ -531,20 +549,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L39_Q2",
-            "sentence": "Selling handmade candles online turned out to be more [TARGET] than she expected.",
-            "hint": "This word describes an activity that earns a good amount of money.",
+            "sentence": "The consulting contract turned out to be [TARGET] and profitable, earning the small firm more in six months than the previous two years combined.",
+            "hint": "This word describes something that generates a lot of money.",
             "options": [
                 "Costly",
-                "Losing",
+                "Profitable",
                 "Unprofitable",
-                "Profitable"
+                "Losing"
             ],
-            "explanation": "Earning more than expected from selling candles shows earning a good amount of money, so [TARGET] means PROFITABLE.",
+            "explanation": "The word 'and' links [TARGET] to 'profitable,' and earning more in six months than two years confirms it, so [TARGET] means PROFITABLE.",
             "correctAnswer": "Profitable",
             "clueType": "synonym",
             "evidenceWords": [
-                "Selling",
-                "handmade"
+                "and profitable",
+                "more in six months"
             ]
         },
         {
@@ -552,20 +570,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L39_Q3",
-            "sentence": "My mother always packed [TARGET] lunches with vegetables, fruit, and whole-grain bread.",
-            "hint": "This word describes food that is genuinely good for your body.",
+            "sentence": "Unlike the violent, cynical shows his older cousin watched, the cartoon Ravi loved was [TARGET], filled with lessons about kindness and sharing.",
+            "hint": "This word describes something good for a person's wellbeing, often morally positive.",
             "options": [
-                "Nutritious",
-                "Junk",
-                "Unhealthy",
-                "Processed"
+                "Violent",
+                "Disturbing",
+                "Family-friendly",
+                "Inappropriate"
             ],
-            "explanation": "Packing vegetables, fruit, and whole-grain bread shows food that is good for the body, so [TARGET] means NUTRITIOUS.",
-            "correctAnswer": "Nutritious",
+            "explanation": "The word 'unlike' contrasts [TARGET] with 'violent, cynical shows,' so it must mean the opposite, which is FAMILY-FRIENDLY.",
+            "correctAnswer": "Family-friendly",
             "clueType": "antonym",
             "evidenceWords": [
-                "mother",
-                "always"
+                "Unlike",
+                "violent, cynical",
+                "kindness and sharing"
             ]
         },
         {
@@ -573,20 +592,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L40_Q1",
-            "sentence": "Without any salt or spices, the soup tasted [TARGET] and watery.",
-            "hint": "This word describes food that has almost no taste.",
+            "sentence": "The soup was [TARGET], which means it had almost no flavor at all, even after she added a pinch of salt.",
+            "hint": "This word describes food that lacks flavor or excitement.",
             "options": [
-                "Zesty",
-                "Flavorless",
                 "Spicy",
-                "Flavorful"
+                "Zesty",
+                "Flavorful",
+                "Flavorless"
             ],
-            "explanation": "Soup with no salt or spices having almost no taste means it is [TARGET], FLAVORLESS.",
+            "explanation": "The sentence defines [TARGET] as having 'almost no flavor at all,' so [TARGET] means FLAVORLESS.",
             "correctAnswer": "Flavorless",
             "clueType": "definition",
             "evidenceWords": [
-                "Without",
-                "spices"
+                "which means",
+                "almost no flavor"
             ]
         },
         {
@@ -594,20 +613,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L40_Q2",
-            "sentence": "Luckily, the ticket was [TARGET], so she got her money back when the trip was canceled.",
-            "hint": "This word describes a purchase that can be given back for money.",
+            "sentence": "The airline ticket was [TARGET]: when her trip got canceled, she filled out one form online and had the full amount back in her account within a week.",
+            "hint": "This word describes money that can be returned if something is canceled.",
             "options": [
                 "Returnable",
-                "Permanent",
-                "Nonreturnable",
-                "Final"
+                "Nonrefundable",
+                "Final",
+                "Locked-in"
             ],
-            "explanation": "Getting her money back when the trip was canceled shows the ticket could be given back, so [TARGET] means RETURNABLE.",
+            "explanation": "Filling out a form and getting the full amount back after cancellation is an example of money that can be returned, so [TARGET] means RETURNABLE.",
             "correctAnswer": "Returnable",
             "clueType": "example",
             "evidenceWords": [
-                "Luckily",
-                "ticket"
+                "filled out one form",
+                "full amount back",
+                "within a week"
             ]
         },
         {
@@ -615,20 +635,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L40_Q3",
-            "sentence": "Before buying the charger, check that it is [TARGET] with your phone model.",
-            "hint": "This word describes two things that work properly together.",
+            "sentence": "She plugged the new headphones into her old laptop, and without installing anything, the sound played instantly and the volume buttons worked exactly as expected — the two devices were clearly [TARGET].",
+            "hint": "This word describes two things that work well together without conflict.",
             "options": [
-                "Suitable",
+                "Mismatched",
+                "Well-matched",
                 "Conflicting",
-                "Incompatible",
-                "Mismatched"
+                "Incompatible"
             ],
-            "explanation": "Needing to check it works with the phone model shows the two things must work together, so [TARGET] means SUITABLE.",
-            "correctAnswer": "Suitable",
+            "explanation": "Sound playing instantly and buttons working without installing anything shows the devices worked well together, even without a direct clue word, so [TARGET] means WELL-MATCHED.",
+            "correctAnswer": "Well-matched",
             "clueType": "inference",
             "evidenceWords": [
-                "Before",
-                "buying"
+                "without installing anything",
+                "played instantly",
+                "worked exactly as expected"
             ]
         }
     ],

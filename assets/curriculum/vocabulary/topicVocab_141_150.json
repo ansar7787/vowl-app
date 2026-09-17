@@ -6,721 +6,781 @@
         {
             "id": "VOC_TOPICVOCAB_L141_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These grade fire by size. Sort into Spark or Inferno.",
             "topicBuckets": [
                 "Spark",
                 "Inferno"
             ],
-            "hint": "Here's a tip: A spark is a tiny flash that can start a fire, while an inferno is a massive, raging fire!",
-            "explanation": "Think of 'Spark' as a tiny flash of fire (flicker, ember), and 'Inferno' as a huge, raging fire (blaze, conflagration)!",
+            "hint": "Think about what starts a fire versus what a fire becomes.",
+            "explanation": "'Ember', 'flicker', and 'a single flame' all describe fire at its smallest. 'Blaze' and 'raging fire' both describe fire at full, dangerous scale.",
             "options": [
-                "Flicker",
-                "Blaze",
                 "Ember",
-                "Conflagration",
-                "Glimmer"
+                "Blaze",
+                "A single flame",
+                "Raging fire",
+                "Flicker"
             ],
-            "correctAnswer": "Spark:Flicker, Inferno:Blaze, Spark:Ember, Inferno:Conflagration, Spark:Glimmer",
+            "correctAnswer": "Spark:Ember, Inferno:Blaze, Spark:A single flame, Inferno:Raging fire, Spark:Flicker",
             "relatedWords": [
-                "aspect of Spark:Flicker, Inferno:Blaze, Spark:Ember, Inferno:Conflagration, Spark:Glimmer",
-                "concept of Spark:Flicker, Inferno:Blaze, Spark:Ember, Inferno:Conflagration, Spark:Glimmer",
-                "related to Spark:Flicker, Inferno:Blaze, Spark:Ember, Inferno:Conflagration, Spark:Glimmer"
+                "Ember: a small glowing piece of burning material",
+                "Blaze: a large, brightly burning fire",
+                "A single flame: one small flame",
+                "Raging fire: a fire burning fiercely out of control",
+                "Flicker: a small, unsteady flame"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L141_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "One inferno word describes a fire that has spread beyond control. Sort into Spark or Inferno.",
             "topicBuckets": [
                 "Spark",
                 "Inferno"
             ],
-            "hint": "Here's a tip: A spark is a tiny flash that can start a fire, while an inferno is a massive, raging fire!",
-            "explanation": "Think of 'Spark' as a tiny flash of fire (flicker, ember), and 'Inferno' as a huge, raging fire (blaze, conflagration)!",
+            "hint": "Firefighters distinguish carefully between what can and can't be contained.",
+            "explanation": "'Smouldering', 'catches light', and 'a glint' all describe fire beginning or barely alive. 'Conflagration' is the formal word for a large destructive fire, and 'engulfed' describes flames completely surrounding something.",
             "options": [
-                "Flash",
-                "Firestorm",
-                "Glint",
-                "Raging-fire",
-                "Tiny-flame"
+                "Engulfed",
+                "Smouldering",
+                "A glint",
+                "Conflagration",
+                "Catches light"
             ],
-            "correctAnswer": "Spark:Flash, Inferno:Firestorm, Spark:Glint, Inferno:Raging-fire, Spark:Tiny-flame",
+            "correctAnswer": "Inferno:Engulfed, Spark:Smouldering, Spark:A glint, Inferno:Conflagration, Spark:Catches light",
             "relatedWords": [
-                "aspect of Spark:Flash, Inferno:Firestorm, Spark:Glint, Inferno:Raging-fire, Spark:Tiny-flame",
-                "concept of Spark:Flash, Inferno:Firestorm, Spark:Glint, Inferno:Raging-fire, Spark:Tiny-flame",
-                "related to Spark:Flash, Inferno:Firestorm, Spark:Glint, Inferno:Raging-fire, Spark:Tiny-flame"
+                "Engulfed: completely surrounded by flames",
+                "Smouldering: burning slowly without flame",
+                "A glint: a brief flash of light",
+                "Conflagration: a large, destructive fire",
+                "Catches light: begins to burn"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L141_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These use fire figuratively about arguments and ideas. Sort into Spark or Inferno.",
             "topicBuckets": [
                 "Spark",
                 "Inferno"
             ],
-            "hint": "Here's a tip: A spark is a tiny flash that can start a fire, while an inferno is a massive, raging fire!",
-            "explanation": "Think of 'Spark' as a tiny flash of fire (flicker, ember), and 'Inferno' as a huge, raging fire (blaze, conflagration)!",
+            "hint": "Two of these describe a conflict that has grown beyond anyone's control.",
+            "explanation": "'Sparked a debate' and 'the germ of an idea' both describe small beginnings, and 'lit the fuse' describes the moment something starts. 'All-out row' and 'blew up completely' both describe conflict that has escalated past control \u2014 the same scale, applied to human situations.",
             "options": [
-                "Igniting-flicker",
-                "Towering-flames",
-                "Sputter",
-                "Wildfire",
-                "Kindling-flash"
+                "Sparked a debate",
+                "The germ of an idea",
+                "Lit the fuse",
+                "All-out row",
+                "Blew up completely"
             ],
-            "correctAnswer": "Spark:Igniting-flicker, Inferno:Towering-flames, Spark:Sputter, Inferno:Wildfire, Spark:Kindling-flash",
+            "correctAnswer": "Spark:Sparked a debate, Spark:The germ of an idea, Spark:Lit the fuse, Inferno:All-out row, Inferno:Blew up completely",
             "relatedWords": [
-                "aspect of Spark:Igniting-flicker, Inferno:Towering-flames, Spark:Sputter, Inferno:Wildfire, Spark:Kindling-flash",
-                "concept of Spark:Igniting-flicker, Inferno:Towering-flames, Spark:Sputter, Inferno:Wildfire, Spark:Kindling-flash",
-                "related to Spark:Igniting-flicker, Inferno:Towering-flames, Spark:Sputter, Inferno:Wildfire, Spark:Kindling-flash"
+                "Sparked a debate: started a discussion",
+                "The germ of an idea: the earliest form of a thought",
+                "Lit the fuse: triggered something that then developed",
+                "All-out row: a full, escalated argument",
+                "Blew up completely: escalated beyond control"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L142_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These describe two temperature extremes. Sort into Lava or Frost.",
             "topicBuckets": [
-                "Frost",
-                "Lava"
+                "Lava",
+                "Frost"
             ],
-            "hint": "Here's a tip: Frost is a thin layer of ice on a cold surface, while lava is molten rock flowing from a volcano!",
-            "explanation": "Think of 'Frost' as a thin icy coating from extreme cold (rime, ice-coating), and 'Lava' as molten rock from a volcano (molten-rock, magma-flow)!",
+            "hint": "Think about the coldest and hottest things in nature.",
+            "explanation": "'Ice crystals', 'permafrost', and 'a hard freeze' all describe extreme cold, with permafrost being ground that stays frozen year-round. 'Molten rock' and 'volcanic flow' both describe extreme heat from beneath the earth.",
             "options": [
-                "Rime",
-                "Magma-flow",
-                "Ice-coating",
-                "Molten-rock",
-                "Hoarfrost"
+                "Permafrost",
+                "Ice crystals",
+                "Volcanic flow",
+                "A hard freeze",
+                "Molten rock"
             ],
-            "correctAnswer": "Frost:Rime, Lava:Magma-flow, Frost:Ice-coating, Lava:Molten-rock, Frost:Hoarfrost",
+            "correctAnswer": "Frost:Permafrost, Frost:Ice crystals, Lava:Volcanic flow, Frost:A hard freeze, Lava:Molten rock",
             "relatedWords": [
-                "aspect of Frost:Rime, Lava:Magma-flow, Frost:Ice-coating, Lava:Molten-rock, Frost:Hoarfrost",
-                "concept of Frost:Rime, Lava:Magma-flow, Frost:Ice-coating, Lava:Molten-rock, Frost:Hoarfrost",
-                "related to Frost:Rime, Lava:Magma-flow, Frost:Ice-coating, Lava:Molten-rock, Frost:Hoarfrost"
+                "Permafrost: ground that remains frozen all year",
+                "Ice crystals: small formations of frozen water",
+                "Volcanic flow: molten rock moving from a volcano",
+                "A hard freeze: a period of severe freezing temperatures",
+                "Molten rock: rock heated until it flows as liquid"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L142_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "One lava word describes molten rock still underground. Sort into Frost or Lava.",
             "topicBuckets": [
                 "Frost",
                 "Lava"
             ],
-            "hint": "Here's a tip: Frost is a thin layer of ice on a cold surface, while lava is molten rock flowing from a volcano!",
-            "explanation": "Think of 'Frost' as a thin icy coating from extreme cold (rime, ice-coating), and 'Lava' as molten rock from a volcano (molten-rock, magma-flow)!",
+            "hint": "Geologists use different words depending on where the molten rock is.",
+            "explanation": "'Glacial', 'frostbitten', and 'a sheet of ice' all describe extreme cold and its effects. 'Magma' is molten rock still underground, becoming lava once it reaches the surface, and 'searing' describes heat intense enough to burn on contact.",
             "options": [
-                "Icy-film",
-                "Volcanic-flow",
-                "Glaze-of-ice",
-                "Fiery-rock-river",
-                "Frozen-coating"
+                "Magma",
+                "A sheet of ice",
+                "Searing",
+                "Frostbitten",
+                "Glacial"
             ],
-            "correctAnswer": "Frost:Icy-film, Lava:Volcanic-flow, Frost:Glaze-of-ice, Lava:Fiery-rock-river, Frost:Frozen-coating",
+            "correctAnswer": "Lava:Magma, Frost:A sheet of ice, Lava:Searing, Frost:Frostbitten, Frost:Glacial",
             "relatedWords": [
-                "aspect of Frost:Icy-film, Lava:Volcanic-flow, Frost:Glaze-of-ice, Lava:Fiery-rock-river, Frost:Frozen-coating",
-                "concept of Frost:Icy-film, Lava:Volcanic-flow, Frost:Glaze-of-ice, Lava:Fiery-rock-river, Frost:Frozen-coating",
-                "related to Frost:Icy-film, Lava:Volcanic-flow, Frost:Glaze-of-ice, Lava:Fiery-rock-river, Frost:Frozen-coating"
+                "Magma: molten rock beneath the earth's surface",
+                "A sheet of ice: a continuous layer of ice",
+                "Searing: hot enough to burn on contact",
+                "Frostbitten: damaged by extreme cold",
+                "Glacial: extremely cold, relating to ice"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L142_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These describe people's manner, using temperature figuratively. Sort into Frost or Lava.",
             "topicBuckets": [
                 "Frost",
                 "Lava"
             ],
-            "hint": "Here's a tip: Frost is a thin layer of ice on a cold surface, while lava is molten rock flowing from a volcano!",
-            "explanation": "Think of 'Frost' as a thin icy coating from extreme cold (rime, ice-coating), and 'Lava' as molten rock from a volcano (molten-rock, magma-flow)!",
+            "hint": "Two of these describe anger, and two describe emotional distance.",
+            "explanation": "'Icy reception' and 'frosty silence' both describe coldness in how someone treats another, which is emotional distance rather than anger. 'Boiling over', 'white-hot rage', and 'erupted' all describe anger breaking out, borrowing the volcano's image of pressure released suddenly.",
             "options": [
-                "Frozen-dew",
-                "Red-hot-rock",
-                "Winter-coating",
-                "Eruption-flow",
-                "Crystalline-ice-layer"
+                "Icy reception",
+                "Erupted",
+                "White-hot rage",
+                "Frosty silence",
+                "Boiling over"
             ],
-            "correctAnswer": "Frost:Frozen-dew, Lava:Red-hot-rock, Frost:Winter-coating, Lava:Eruption-flow, Frost:Crystalline-ice-layer",
+            "correctAnswer": "Frost:Icy reception, Lava:Erupted, Lava:White-hot rage, Frost:Frosty silence, Lava:Boiling over",
             "relatedWords": [
-                "aspect of Frost:Frozen-dew, Lava:Red-hot-rock, Frost:Winter-coating, Lava:Eruption-flow, Frost:Crystalline-ice-layer",
-                "concept of Frost:Frozen-dew, Lava:Red-hot-rock, Frost:Winter-coating, Lava:Eruption-flow, Frost:Crystalline-ice-layer",
-                "related to Frost:Frozen-dew, Lava:Red-hot-rock, Frost:Winter-coating, Lava:Eruption-flow, Frost:Crystalline-ice-layer"
+                "Icy reception: a cold, unwelcoming response",
+                "Erupted: burst out suddenly and violently",
+                "White-hot rage: extremely intense anger",
+                "Frosty silence: silence showing coldness toward someone",
+                "Boiling over: losing control of anger"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L143_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Picture an old attic being cleared out. Sort into Treasure or Dust.",
             "topicBuckets": [
-                "Dust",
-                "Treasure"
+                "Treasure",
+                "Dust"
             ],
-            "hint": "Here's a tip: Dust is worthless tiny particles you wipe away, while treasure is a valuable hoard worth protecting!",
-            "explanation": "Think of 'Dust' as worthless fine particles (grime, fine-debris), and 'Treasure' as valuable riches (riches, precious-hoard)!",
+            "hint": "Think about what gets swept away, and what gets kept.",
+            "explanation": "'Grime', 'cobwebs', and 'debris' all describe what accumulates when a space is neglected. 'Heirloom' and 'valuables' both describe what's worth keeping.",
             "options": [
+                "Cobwebs",
+                "Heirloom",
                 "Grime",
-                "Riches",
-                "Fine-debris",
-                "Precious-hoard",
-                "Powder"
+                "Valuables",
+                "Debris"
             ],
-            "correctAnswer": "Dust:Grime, Treasure:Riches, Dust:Fine-debris, Treasure:Precious-hoard, Dust:Powder",
+            "correctAnswer": "Dust:Cobwebs, Treasure:Heirloom, Dust:Grime, Treasure:Valuables, Dust:Debris",
             "relatedWords": [
-                "aspect of Dust:Grime, Treasure:Riches, Dust:Fine-debris, Treasure:Precious-hoard, Dust:Powder",
-                "concept of Dust:Grime, Treasure:Riches, Dust:Fine-debris, Treasure:Precious-hoard, Dust:Powder",
-                "related to Dust:Grime, Treasure:Riches, Dust:Fine-debris, Treasure:Precious-hoard, Dust:Powder"
+                "Cobwebs: old webs left by spiders",
+                "Heirloom: a valued object passed down a family",
+                "Grime: dirt built up over time",
+                "Valuables: items worth a significant amount",
+                "Debris: scattered fragments and rubbish"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L143_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "One treasure word describes something found unexpectedly among junk. Sort into Treasure or Dust.",
             "topicBuckets": [
-                "Dust",
-                "Treasure"
+                "Treasure",
+                "Dust"
             ],
-            "hint": "Here's a tip: Dust is worthless tiny particles you wipe away, while treasure is a valuable hoard worth protecting!",
-            "explanation": "Think of 'Dust' as worthless fine particles (grime, fine-debris), and 'Treasure' as valuable riches (riches, precious-hoard)!",
+            "hint": "Value isn't always obvious at first glance.",
+            "explanation": "'Worthless', 'discarded', and 'swept aside' all describe things judged to have no value. A 'hidden gem' is something valuable found unexpectedly among junk, and 'prized possession' names something valued highly by its owner.",
             "options": [
-                "Particles",
-                "Jewels",
-                "Soot",
-                "Fortune",
-                "Cobweb-residue"
+                "Prized possession",
+                "Hidden gem",
+                "Swept aside",
+                "Worthless",
+                "Discarded"
             ],
-            "correctAnswer": "Dust:Particles, Treasure:Jewels, Dust:Soot, Treasure:Fortune, Dust:Cobweb-residue",
+            "correctAnswer": "Treasure:Prized possession, Treasure:Hidden gem, Dust:Swept aside, Dust:Worthless, Dust:Discarded",
             "relatedWords": [
-                "aspect of Dust:Particles, Treasure:Jewels, Dust:Soot, Treasure:Fortune, Dust:Cobweb-residue",
-                "concept of Dust:Particles, Treasure:Jewels, Dust:Soot, Treasure:Fortune, Dust:Cobweb-residue",
-                "related to Dust:Particles, Treasure:Jewels, Dust:Soot, Treasure:Fortune, Dust:Cobweb-residue"
+                "Prized possession: an item its owner values highly",
+                "Hidden gem: something valuable found unexpectedly",
+                "Swept aside: cleared away as unimportant",
+                "Worthless: having no value",
+                "Discarded: thrown away as unwanted"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L143_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These are figurative, about ideas and contributions. Sort into Dust or Treasure.",
             "topicBuckets": [
                 "Dust",
                 "Treasure"
             ],
-            "hint": "Here's a tip: Dust is worthless tiny particles you wipe away, while treasure is a valuable hoard worth protecting!",
-            "explanation": "Think of 'Dust' as worthless fine particles (grime, fine-debris), and 'Treasure' as valuable riches (riches, precious-hoard)!",
+            "hint": "Two of these describe contributions people overlook.",
+            "explanation": "'Gathering dust' and 'consigned to the scrapheap' both describe things left unused and forgotten. 'Worth its weight in gold', 'invaluable', and 'a goldmine of information' all describe things whose worth is high \u2014 note that 'invaluable' means too valuable to measure, not lacking value.",
             "options": [
-                "Grit",
-                "Gold-hoard",
-                "Ash-residue",
-                "Bounty",
-                "Settled-particles"
+                "Worth its weight in gold",
+                "A goldmine of information",
+                "Invaluable",
+                "Consigned to the scrapheap",
+                "Gathering dust"
             ],
-            "correctAnswer": "Dust:Grit, Treasure:Gold-hoard, Dust:Ash-residue, Treasure:Bounty, Dust:Settled-particles",
+            "correctAnswer": "Treasure:Worth its weight in gold, Treasure:A goldmine of information, Treasure:Invaluable, Dust:Consigned to the scrapheap, Dust:Gathering dust",
             "relatedWords": [
-                "aspect of Dust:Grit, Treasure:Gold-hoard, Dust:Ash-residue, Treasure:Bounty, Dust:Settled-particles",
-                "concept of Dust:Grit, Treasure:Gold-hoard, Dust:Ash-residue, Treasure:Bounty, Dust:Settled-particles",
-                "related to Dust:Grit, Treasure:Gold-hoard, Dust:Ash-residue, Treasure:Bounty, Dust:Settled-particles"
+                "Worth its weight in gold: extremely valuable",
+                "A goldmine of information: a rich source of useful knowledge",
+                "Invaluable: too valuable to be measured",
+                "Consigned to the scrapheap: abandoned as useless",
+                "Gathering dust: left unused and neglected"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L144_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These describe materials by feel and strength. Sort into Iron or Silk.",
             "topicBuckets": [
                 "Iron",
                 "Silk"
             ],
-            "hint": "Here's a tip: Iron is a hard, heavy metal, while silk is a soft, smooth fabric!",
-            "explanation": "Think of 'Iron' as a hard, strong metal (steel-like-metal, hard-ore), and 'Silk' as a soft, smooth fabric (smooth-fabric, fine-thread)!",
+            "hint": "Think about what you'd make a gate from, and what you'd make a scarf from.",
+            "explanation": "'Unbending', 'heavy-duty', and 'forged' all describe iron's hardness and the way it's worked. 'Soft to the touch' and 'delicate weave' both describe silk's fineness.",
             "options": [
-                "Steel-like-metal",
-                "Smooth-fabric",
-                "Hard-ore",
-                "Fine-thread",
-                "Sturdy-metal"
+                "Unbending",
+                "Heavy-duty",
+                "Forged",
+                "Delicate weave",
+                "Soft to the touch"
             ],
-            "correctAnswer": "Iron:Steel-like-metal, Silk:Smooth-fabric, Iron:Hard-ore, Silk:Fine-thread, Iron:Sturdy-metal",
+            "correctAnswer": "Iron:Unbending, Iron:Heavy-duty, Iron:Forged, Silk:Delicate weave, Silk:Soft to the touch",
             "relatedWords": [
-                "aspect of Iron:Steel-like-metal, Silk:Smooth-fabric, Iron:Hard-ore, Silk:Fine-thread, Iron:Sturdy-metal",
-                "concept of Iron:Steel-like-metal, Silk:Smooth-fabric, Iron:Hard-ore, Silk:Fine-thread, Iron:Sturdy-metal",
-                "related to Iron:Steel-like-metal, Silk:Smooth-fabric, Iron:Hard-ore, Silk:Fine-thread, Iron:Sturdy-metal"
+                "Unbending: rigid, not flexible",
+                "Heavy-duty: built to withstand hard use",
+                "Forged: shaped by heating and hammering",
+                "Delicate weave: a fine, fragile woven structure",
+                "Soft to the touch: smooth and gentle against skin"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L144_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "One silk word describes fabric fine enough to see through. Sort into Iron or Silk.",
             "topicBuckets": [
                 "Iron",
                 "Silk"
             ],
-            "hint": "Here's a tip: Iron is a hard, heavy metal, while silk is a soft, smooth fabric!",
-            "explanation": "Think of 'Iron' as a hard, strong metal (steel-like-metal, hard-ore), and 'Silk' as a soft, smooth fabric (smooth-fabric, fine-thread)!",
+            "hint": "Weight and fineness separate these clearly.",
+            "explanation": "'Cast iron', 'solid weight', and 'clangs' all describe iron's density and sound. 'Gossamer-thin' describes fabric fine enough to see through, and 'flows like water' describes how silk moves.",
             "options": [
-                "Forged-metal",
-                "Delicate-cloth",
-                "Rigid-bar",
-                "Lustrous-weave",
-                "Heavy-alloy"
+                "Solid weight",
+                "Clangs",
+                "Gossamer-thin",
+                "Cast iron",
+                "Flows like water"
             ],
-            "correctAnswer": "Iron:Forged-metal, Silk:Delicate-cloth, Iron:Rigid-bar, Silk:Lustrous-weave, Iron:Heavy-alloy",
+            "correctAnswer": "Iron:Solid weight, Iron:Clangs, Silk:Gossamer-thin, Iron:Cast iron, Silk:Flows like water",
             "relatedWords": [
-                "aspect of Iron:Forged-metal, Silk:Delicate-cloth, Iron:Rigid-bar, Silk:Lustrous-weave, Iron:Heavy-alloy",
-                "concept of Iron:Forged-metal, Silk:Delicate-cloth, Iron:Rigid-bar, Silk:Lustrous-weave, Iron:Heavy-alloy",
-                "related to Iron:Forged-metal, Silk:Delicate-cloth, Iron:Rigid-bar, Silk:Lustrous-weave, Iron:Heavy-alloy"
+                "Solid weight: heavy and dense",
+                "Clangs: makes a loud metallic sound",
+                "Gossamer-thin: extremely fine and light",
+                "Cast iron: iron shaped by pouring into a mould",
+                "Flows like water: moves smoothly and fluidly"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L144_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These describe people's character figuratively. Sort into Iron or Silk.",
             "topicBuckets": [
                 "Iron",
                 "Silk"
             ],
-            "hint": "Here's a tip: Iron is a hard, heavy metal, while silk is a soft, smooth fabric!",
-            "explanation": "Think of 'Iron' as a hard, strong metal (steel-like-metal, hard-ore), and 'Silk' as a soft, smooth fabric (smooth-fabric, fine-thread)!",
+            "hint": "One famous phrase combines both \u2014 decide which quality each part describes.",
+            "explanation": "'Iron will', 'unyielding resolve', and 'a will of steel' all describe firmness of character. 'Smooth as silk' and 'velvet touch' both describe a gentle, persuasive manner \u2014 the phrase 'an iron fist in a velvet glove' combines the two, describing firmness delivered gently.",
             "options": [
-                "Cast-metal",
-                "Sheer-textile",
-                "Unyielding-material",
-                "Soft-sheen-fabric",
-                "Metallic-mass"
+                "Smooth as silk",
+                "Iron will",
+                "A will of steel",
+                "Velvet touch",
+                "Unyielding resolve"
             ],
-            "correctAnswer": "Iron:Cast-metal, Silk:Sheer-textile, Iron:Unyielding-material, Silk:Soft-sheen-fabric, Iron:Metallic-mass",
+            "correctAnswer": "Silk:Smooth as silk, Iron:Iron will, Iron:A will of steel, Silk:Velvet touch, Iron:Unyielding resolve",
             "relatedWords": [
-                "aspect of Iron:Cast-metal, Silk:Sheer-textile, Iron:Unyielding-material, Silk:Soft-sheen-fabric, Iron:Metallic-mass",
-                "concept of Iron:Cast-metal, Silk:Sheer-textile, Iron:Unyielding-material, Silk:Soft-sheen-fabric, Iron:Metallic-mass",
-                "related to Iron:Cast-metal, Silk:Sheer-textile, Iron:Unyielding-material, Silk:Soft-sheen-fabric, Iron:Metallic-mass"
+                "Smooth as silk: effortlessly smooth in manner",
+                "Iron will: extremely strong determination",
+                "A will of steel: unbreakable determination",
+                "Velvet touch: a gentle, tactful approach",
+                "Unyielding resolve: determination that will not bend"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L145_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These contrast the solid with the barely-there. Sort into Boulder or Mist.",
             "topicBuckets": [
                 "Boulder",
                 "Mist"
             ],
-            "hint": "Here's a tip: A boulder is a huge, solid rock, while mist is a light, soft cloud of moisture near the ground!",
-            "explanation": "Think of 'Boulder' as a large, solid rock (massive-rock, stone-mass), and 'Mist' as a light cloud of water droplets (fog, haze)!",
+            "hint": "Think about what you could sit on, and what you could walk straight through.",
+            "explanation": "'Immovable', 'massive rock', and 'solid mass' all describe something heavy and fixed. 'Vapour' and 'haze' both describe something you can see but not hold.",
             "options": [
-                "Massive-rock",
-                "Fog",
-                "Stone-mass",
-                "Haze",
-                "Crag"
+                "Immovable",
+                "Vapour",
+                "Massive rock",
+                "Solid mass",
+                "Haze"
             ],
-            "correctAnswer": "Boulder:Massive-rock, Mist:Fog, Boulder:Stone-mass, Mist:Haze, Boulder:Crag",
+            "correctAnswer": "Boulder:Immovable, Mist:Vapour, Boulder:Massive rock, Boulder:Solid mass, Mist:Haze",
             "relatedWords": [
-                "aspect of Boulder:Massive-rock, Mist:Fog, Boulder:Stone-mass, Mist:Haze, Boulder:Crag",
-                "concept of Boulder:Massive-rock, Mist:Fog, Boulder:Stone-mass, Mist:Haze, Boulder:Crag",
-                "related to Boulder:Massive-rock, Mist:Fog, Boulder:Stone-mass, Mist:Haze, Boulder:Crag"
+                "Immovable: impossible to move",
+                "Vapour: a substance suspended in air as fine droplets",
+                "Massive rock: a very large piece of stone",
+                "Solid mass: a heavy, dense body of material",
+                "Haze: a thin cloud reducing visibility"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L145_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "One mist word describes moisture hanging low over ground in the early morning. Sort into Boulder or Mist.",
             "topicBuckets": [
                 "Boulder",
                 "Mist"
             ],
-            "hint": "Here's a tip: A boulder is a huge, solid rock, while mist is a light, soft cloud of moisture near the ground!",
-            "explanation": "Think of 'Boulder' as a large, solid rock (massive-rock, stone-mass), and 'Mist' as a light cloud of water droplets (fog, haze)!",
+            "hint": "Both appear in landscape writing, at opposite ends of substance.",
+            "explanation": "'Granite', 'weighs a tonne', and 'unshiftable' all emphasise solidity and permanence. 'Ground fog' describes moisture hanging low over ground in the early morning, and 'wisps' describes thin trailing strands of it.",
             "options": [
-                "Rock-formation",
-                "Vapor",
-                "Heavy-stone",
-                "Drizzle-cloud",
-                "Solid-mass"
+                "Wisps",
+                "Ground fog",
+                "Unshiftable",
+                "Weighs a tonne",
+                "Granite"
             ],
-            "correctAnswer": "Boulder:Rock-formation, Mist:Vapor, Boulder:Heavy-stone, Mist:Drizzle-cloud, Boulder:Solid-mass",
+            "correctAnswer": "Mist:Wisps, Mist:Ground fog, Boulder:Unshiftable, Boulder:Weighs a tonne, Boulder:Granite",
             "relatedWords": [
-                "aspect of Boulder:Rock-formation, Mist:Vapor, Boulder:Heavy-stone, Mist:Drizzle-cloud, Boulder:Solid-mass",
-                "concept of Boulder:Rock-formation, Mist:Vapor, Boulder:Heavy-stone, Mist:Drizzle-cloud, Boulder:Solid-mass",
-                "related to Boulder:Rock-formation, Mist:Vapor, Boulder:Heavy-stone, Mist:Drizzle-cloud, Boulder:Solid-mass"
+                "Wisps: thin, trailing strands",
+                "Ground fog: low-lying mist near the ground",
+                "Unshiftable: impossible to move or change",
+                "Weighs a tonne: extremely heavy",
+                "Granite: a very hard, dense rock"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L145_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These describe arguments and memories figuratively. Sort into Mist or Boulder.",
             "topicBuckets": [
-                "Boulder",
-                "Mist"
+                "Mist",
+                "Boulder"
             ],
-            "hint": "Here's a tip: A boulder is a huge, solid rock, while mist is a light, soft cloud of moisture near the ground!",
-            "explanation": "Think of 'Boulder' as a large, solid rock (massive-rock, stone-mass), and 'Mist' as a light cloud of water droplets (fog, haze)!",
+            "hint": "Two of these describe something too vague to pin down.",
+            "explanation": "'Rock-solid case' and 'set in stone' both describe something firm and unchangeable, and 'immovable position' describes refusing to shift in a negotiation. 'Hazy recollection' and 'vague impression' both describe memory too indistinct to rely on.",
             "options": [
-                "Giant-stone",
-                "Light-fog-layer",
-                "Granite-block",
-                "Hazy-veil",
-                "Weathered-rock"
+                "Immovable position",
+                "Hazy recollection",
+                "Rock-solid case",
+                "Vague impression",
+                "Set in stone"
             ],
-            "correctAnswer": "Boulder:Giant-stone, Mist:Light-fog-layer, Boulder:Granite-block, Mist:Hazy-veil, Boulder:Weathered-rock",
+            "correctAnswer": "Boulder:Immovable position, Mist:Hazy recollection, Boulder:Rock-solid case, Mist:Vague impression, Boulder:Set in stone",
             "relatedWords": [
-                "aspect of Boulder:Giant-stone, Mist:Light-fog-layer, Boulder:Granite-block, Mist:Hazy-veil, Boulder:Weathered-rock",
-                "concept of Boulder:Giant-stone, Mist:Light-fog-layer, Boulder:Granite-block, Mist:Hazy-veil, Boulder:Weathered-rock",
-                "related to Boulder:Giant-stone, Mist:Light-fog-layer, Boulder:Granite-block, Mist:Hazy-veil, Boulder:Weathered-rock"
+                "Immovable position: a stance someone refuses to change",
+                "Hazy recollection: an unclear, uncertain memory",
+                "Rock-solid case: an argument that cannot be undermined",
+                "Vague impression: an indistinct sense of something",
+                "Set in stone: fixed and unchangeable"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L146_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These describe reflection and darkness. Sort into Shadow or Mirror.",
             "topicBuckets": [
-                "Mirror",
-                "Shadow"
+                "Shadow",
+                "Mirror"
             ],
-            "hint": "Here's a tip: A mirror shows a true reflection of you, while a shadow is a dark shape with no detail, only outline!",
-            "explanation": "Think of 'Mirror' as a reflective surface showing true images (reflection, looking-glass), and 'Shadow' as a dark outline cast by blocking light (silhouette, dark-shape)!",
+            "hint": "Think about what shows you back to yourself, and what falls behind you.",
+            "explanation": "'Reflection', 'glass surface', and 'mirrored image' all involve light bouncing back. 'Dark outline' and 'cast shape' both involve light being blocked.",
             "options": [
+                "Dark outline",
+                "Mirrored image",
                 "Reflection",
-                "Silhouette",
-                "Looking-glass",
-                "Dark-shape",
-                "Glass-surface"
+                "Cast shape",
+                "Glass surface"
             ],
-            "correctAnswer": "Mirror:Reflection, Shadow:Silhouette, Mirror:Looking-glass, Shadow:Dark-shape, Mirror:Glass-surface",
+            "correctAnswer": "Shadow:Dark outline, Mirror:Mirrored image, Mirror:Reflection, Shadow:Cast shape, Mirror:Glass surface",
             "relatedWords": [
-                "aspect of Mirror:Reflection, Shadow:Silhouette, Mirror:Looking-glass, Shadow:Dark-shape, Mirror:Glass-surface",
-                "concept of Mirror:Reflection, Shadow:Silhouette, Mirror:Looking-glass, Shadow:Dark-shape, Mirror:Glass-surface",
-                "related to Mirror:Reflection, Shadow:Silhouette, Mirror:Looking-glass, Shadow:Dark-shape, Mirror:Glass-surface"
+                "Dark outline: a darkened shape formed by blocked light",
+                "Mirrored image: an image reversed as in a mirror",
+                "Reflection: an image thrown back by a surface",
+                "Cast shape: a shape thrown onto a surface by blocking light",
+                "Glass surface: a smooth reflective surface"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L146_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "One mirror word describes copying someone's behaviour closely. Sort into Mirror or Shadow.",
             "topicBuckets": [
                 "Mirror",
                 "Shadow"
             ],
-            "hint": "Here's a tip: A mirror shows a true reflection of you, while a shadow is a dark shape with no detail, only outline!",
-            "explanation": "Think of 'Mirror' as a reflective surface showing true images (reflection, looking-glass), and 'Shadow' as a dark outline cast by blocking light (silhouette, dark-shape)!",
+            "hint": "Both words describe following someone, in different ways.",
+            "explanation": "'Mirrors their style' describes copying someone's behaviour closely, alongside 'reflects back' and 'a perfect likeness'. 'Follows at a distance' and 'shadows their every move' both describe trailing someone \u2014 note 'shadowing' someone means following them, while 'mirroring' them means imitating them.",
             "options": [
-                "Mirrored-image",
-                "Outline",
-                "Reflective-pane",
-                "Dim-figure",
-                "Polished-surface"
+                "Follows at a distance",
+                "Shadows their every move",
+                "A perfect likeness",
+                "Mirrors their style",
+                "Reflects back"
             ],
-            "correctAnswer": "Mirror:Mirrored-image, Shadow:Outline, Mirror:Reflective-pane, Shadow:Dim-figure, Mirror:Polished-surface",
+            "correctAnswer": "Shadow:Follows at a distance, Shadow:Shadows their every move, Mirror:A perfect likeness, Mirror:Mirrors their style, Mirror:Reflects back",
             "relatedWords": [
-                "aspect of Mirror:Mirrored-image, Shadow:Outline, Mirror:Reflective-pane, Shadow:Dim-figure, Mirror:Polished-surface",
-                "concept of Mirror:Mirrored-image, Shadow:Outline, Mirror:Reflective-pane, Shadow:Dim-figure, Mirror:Polished-surface",
-                "related to Mirror:Mirrored-image, Shadow:Outline, Mirror:Reflective-pane, Shadow:Dim-figure, Mirror:Polished-surface"
+                "Follows at a distance: trails someone without being close",
+                "Shadows their every move: follows someone closely everywhere",
+                "A perfect likeness: an exact resemblance",
+                "Mirrors their style: closely imitates another's manner",
+                "Reflects back: returns an image or idea unchanged"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L146_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These describe people figuratively. Sort into Mirror or Shadow.",
             "topicBuckets": [
                 "Mirror",
                 "Shadow"
             ],
-            "hint": "Here's a tip: A mirror shows a true reflection of you, while a shadow is a dark shape with no detail, only outline!",
-            "explanation": "Think of 'Mirror' as a reflective surface showing true images (reflection, looking-glass), and 'Shadow' as a dark outline cast by blocking light (silhouette, dark-shape)!",
+            "hint": "One phrase describes someone diminished by comparison to their past self.",
+            "explanation": "'Holds a mirror up' and 'sees themselves in them' both describe recognition and honest self-reflection. 'A shadow of their former self' describes someone diminished compared to their past, 'lives in their shadow' describes being overshadowed by someone else, and 'looming over' describes a presence felt as pressure.",
             "options": [
-                "Reflective-glass",
-                "Shaded-form",
-                "True-likeness",
-                "Murky-outline",
-                "Lookback-surface"
+                "Sees themselves in them",
+                "Lives in their shadow",
+                "Holds a mirror up",
+                "A shadow of their former self",
+                "Looming over"
             ],
-            "correctAnswer": "Mirror:Reflective-glass, Shadow:Shaded-form, Mirror:True-likeness, Shadow:Murky-outline, Mirror:Lookback-surface",
+            "correctAnswer": "Mirror:Sees themselves in them, Shadow:Lives in their shadow, Mirror:Holds a mirror up, Shadow:A shadow of their former self, Shadow:Looming over",
             "relatedWords": [
-                "aspect of Mirror:Reflective-glass, Shadow:Shaded-form, Mirror:True-likeness, Shadow:Murky-outline, Mirror:Lookback-surface",
-                "concept of Mirror:Reflective-glass, Shadow:Shaded-form, Mirror:True-likeness, Shadow:Murky-outline, Mirror:Lookback-surface",
-                "related to Mirror:Reflective-glass, Shadow:Shaded-form, Mirror:True-likeness, Shadow:Murky-outline, Mirror:Lookback-surface"
+                "Sees themselves in them: recognises their own qualities in another",
+                "Lives in their shadow: is overshadowed by someone more prominent",
+                "Holds a mirror up: forces honest self-examination",
+                "A shadow of their former self: much diminished from what they were",
+                "Looming over: present in a way that feels like pressure"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L147_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These describe sound in a space. Sort into Echo or Silence.",
             "topicBuckets": [
                 "Echo",
                 "Silence"
             ],
-            "hint": "Here's a tip: An echo is a sound bouncing back and repeating, while silence is the complete absence of sound!",
-            "explanation": "Think of 'Echo' as a repeated sound bouncing back (reverberation, repeated-sound), and 'Silence' as the absence of sound (quietness, stillness-of-sound)!",
+            "hint": "Think about shouting in a canyon, versus a soundproofed room.",
+            "explanation": "'Reverberation', 'bounces back', and 'resounds' all describe sound returning after hitting a surface. 'Hush' and 'not a sound' both describe an absence of sound.",
             "options": [
-                "Reverberation",
-                "Quietness",
-                "Repeated-sound",
-                "Stillness-of-sound",
-                "Resonance"
+                "Bounces back",
+                "Not a sound",
+                "Resounds",
+                "Hush",
+                "Reverberation"
             ],
-            "correctAnswer": "Echo:Reverberation, Silence:Quietness, Echo:Repeated-sound, Silence:Stillness-of-sound, Echo:Resonance",
+            "correctAnswer": "Echo:Bounces back, Silence:Not a sound, Echo:Resounds, Silence:Hush, Echo:Reverberation",
             "relatedWords": [
-                "aspect of Echo:Reverberation, Silence:Quietness, Echo:Repeated-sound, Silence:Stillness-of-sound, Echo:Resonance",
-                "concept of Echo:Reverberation, Silence:Quietness, Echo:Repeated-sound, Silence:Stillness-of-sound, Echo:Resonance",
-                "related to Echo:Reverberation, Silence:Quietness, Echo:Repeated-sound, Silence:Stillness-of-sound, Echo:Resonance"
+                "Bounces back: returns after striking a surface",
+                "Not a sound: complete absence of noise",
+                "Resounds: rings out loudly and repeatedly",
+                "Hush: a sudden quiet",
+                "Reverberation: sound continuing after its source stops"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L147_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "One silence word describes a room built to absorb all sound. Sort into Echo or Silence.",
             "topicBuckets": [
                 "Echo",
                 "Silence"
             ],
-            "hint": "Here's a tip: An echo is a sound bouncing back and repeating, while silence is the complete absence of sound!",
-            "explanation": "Think of 'Echo' as a repeated sound bouncing back (reverberation, repeated-sound), and 'Silence' as the absence of sound (quietness, stillness-of-sound)!",
+            "hint": "Architects design spaces for both effects deliberately.",
+            "explanation": "'Repeats back', 'rings out', and 'cavernous sound' all describe echo, which large empty spaces produce naturally. 'Soundproofed' describes a room built to absorb sound, and 'muffled' describes sound deadened before it can travel.",
             "options": [
-                "Bounce-back-sound",
-                "Hush",
-                "Repeating-call",
-                "Soundlessness",
-                "Acoustic-reflection"
+                "Cavernous sound",
+                "Muffled",
+                "Repeats back",
+                "Soundproofed",
+                "Rings out"
             ],
-            "correctAnswer": "Echo:Bounce-back-sound, Silence:Hush, Echo:Repeating-call, Silence:Soundlessness, Echo:Acoustic-reflection",
+            "correctAnswer": "Echo:Cavernous sound, Silence:Muffled, Echo:Repeats back, Silence:Soundproofed, Echo:Rings out",
             "relatedWords": [
-                "aspect of Echo:Bounce-back-sound, Silence:Hush, Echo:Repeating-call, Silence:Soundlessness, Echo:Acoustic-reflection",
-                "concept of Echo:Bounce-back-sound, Silence:Hush, Echo:Repeating-call, Silence:Soundlessness, Echo:Acoustic-reflection",
-                "related to Echo:Bounce-back-sound, Silence:Hush, Echo:Repeating-call, Silence:Soundlessness, Echo:Acoustic-reflection"
+                "Cavernous sound: the hollow sound of a large empty space",
+                "Muffled: deadened so sound doesn't carry",
+                "Repeats back: returns a sound after a delay",
+                "Soundproofed: built to prevent sound passing through",
+                "Rings out: sounds clearly and loudly"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L147_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These are figurative, about influence and absence of response. Sort into Echo or Silence.",
             "topicBuckets": [
                 "Echo",
                 "Silence"
             ],
-            "hint": "Here's a tip: An echo is a sound bouncing back and repeating, while silence is the complete absence of sound!",
-            "explanation": "Think of 'Echo' as a repeated sound bouncing back (reverberation, repeated-sound), and 'Silence' as the absence of sound (quietness, stillness-of-sound)!",
+            "hint": "Two of these describe getting no response at all.",
+            "explanation": "'Echoes through history' and 'finds an echo in' both describe influence repeating and being recognised later. 'Met with silence', 'radio silence', and 'deafening silence' all describe absence of response, the last naming a silence so pointed it communicates more than words would.",
             "options": [
-                "Returning-sound",
-                "Dead-quiet",
-                "Cave-call",
-                "Noiselessness",
-                "Reflected-voice"
+                "Finds an echo in",
+                "Echoes through history",
+                "Met with silence",
+                "Radio silence",
+                "Deafening silence"
             ],
-            "correctAnswer": "Echo:Returning-sound, Silence:Dead-quiet, Echo:Cave-call, Silence:Noiselessness, Echo:Reflected-voice",
+            "correctAnswer": "Echo:Finds an echo in, Echo:Echoes through history, Silence:Met with silence, Silence:Radio silence, Silence:Deafening silence",
             "relatedWords": [
-                "aspect of Echo:Returning-sound, Silence:Dead-quiet, Echo:Cave-call, Silence:Noiselessness, Echo:Reflected-voice",
-                "concept of Echo:Returning-sound, Silence:Dead-quiet, Echo:Cave-call, Silence:Noiselessness, Echo:Reflected-voice",
-                "related to Echo:Returning-sound, Silence:Dead-quiet, Echo:Cave-call, Silence:Noiselessness, Echo:Reflected-voice"
+                "Finds an echo in: is reflected or repeated in something else",
+                "Echoes through history: continues to influence long afterward",
+                "Met with silence: received no response at all",
+                "Radio silence: a complete absence of communication",
+                "Deafening silence: a silence so pointed it conveys meaning"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L148_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These describe organised sound versus disorganised sound. Sort into Melody or Noise.",
             "topicBuckets": [
                 "Melody",
                 "Noise"
             ],
-            "hint": "Here's a tip: A melody is a pleasant, organized sequence of musical notes, while noise is unpleasant, disorganized sound!",
-            "explanation": "Think of 'Melody' as a pleasant musical tune (tune, musical-line), and 'Noise' as unpleasant, disorganized sound (racket, clamor)!",
+            "hint": "Think about a tune you could hum, and a sound you'd cover your ears for.",
+            "explanation": "'Tune', 'harmony', and 'musical phrase' all describe organised, intentional sound. 'Racket' and 'din' both describe loud disorganised sound.",
             "options": [
-                "Tune",
+                "Harmony",
+                "Din",
                 "Racket",
-                "Musical-line",
-                "Clamor",
-                "Harmonic-line"
+                "Tune",
+                "Musical phrase"
             ],
-            "correctAnswer": "Melody:Tune, Noise:Racket, Melody:Musical-line, Noise:Clamor, Melody:Harmonic-line",
+            "correctAnswer": "Melody:Harmony, Noise:Din, Noise:Racket, Melody:Tune, Melody:Musical phrase",
             "relatedWords": [
-                "aspect of Melody:Tune, Noise:Racket, Melody:Musical-line, Noise:Clamor, Melody:Harmonic-line",
-                "concept of Melody:Tune, Noise:Racket, Melody:Musical-line, Noise:Clamor, Melody:Harmonic-line",
-                "related to Melody:Tune, Noise:Racket, Melody:Musical-line, Noise:Clamor, Melody:Harmonic-line"
+                "Harmony: notes sounding pleasingly together",
+                "Din: continuous loud confused noise",
+                "Racket: a loud unpleasant noise",
+                "Tune: a sequence of notes forming music",
+                "Musical phrase: a short musical passage"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L148_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "One noise word describes unpleasant clashing sound in music. Sort into Melody or Noise.",
             "topicBuckets": [
                 "Melody",
                 "Noise"
             ],
-            "hint": "Here's a tip: A melody is a pleasant, organized sequence of musical notes, while noise is unpleasant, disorganized sound!",
-            "explanation": "Think of 'Melody' as a pleasant musical tune (tune, musical-line), and 'Noise' as unpleasant, disorganized sound (racket, clamor)!",
+            "hint": "Even music can cross into noise when notes clash.",
+            "explanation": "'Lyrical', 'melodious', and 'a singable line' all describe pleasing musical sound. 'Cacophony' describes harsh clashing sound, and 'discordant' describes notes that clash rather than blend \u2014 the technical opposite of harmony.",
             "options": [
-                "Refrain",
-                "Din",
-                "Song-line",
+                "Lyrical",
+                "A singable line",
                 "Cacophony",
-                "Musical-phrase"
+                "Discordant",
+                "Melodious"
             ],
-            "correctAnswer": "Melody:Refrain, Noise:Din, Melody:Song-line, Noise:Cacophony, Melody:Musical-phrase",
+            "correctAnswer": "Melody:Lyrical, Melody:A singable line, Noise:Cacophony, Noise:Discordant, Melody:Melodious",
             "relatedWords": [
-                "aspect of Melody:Refrain, Noise:Din, Melody:Song-line, Noise:Cacophony, Melody:Musical-phrase",
-                "concept of Melody:Refrain, Noise:Din, Melody:Song-line, Noise:Cacophony, Melody:Musical-phrase",
-                "related to Melody:Refrain, Noise:Din, Melody:Song-line, Noise:Cacophony, Melody:Musical-phrase"
+                "Lyrical: expressive and song-like",
+                "A singable line: a melody easy to sing",
+                "Cacophony: a harsh mixture of clashing sounds",
+                "Discordant: clashing rather than blending",
+                "Melodious: pleasant-sounding"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L148_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Picture a reviewer describing two very different concerts. Sort into Melody or Noise.",
             "topicBuckets": [
                 "Melody",
                 "Noise"
             ],
-            "hint": "Here's a tip: A melody is a pleasant, organized sequence of musical notes, while noise is unpleasant, disorganized sound!",
-            "explanation": "Think of 'Melody' as a pleasant musical tune (tune, musical-line), and 'Noise' as unpleasant, disorganized sound (racket, clamor)!",
+            "hint": "One phrase describes information that distracts from what matters.",
+            "explanation": "'Haunting refrain' and 'carried the tune' both praise musical quality, with a refrain being a repeated line that stays with a listener. 'Wall of sound' and 'just noise' both describe overwhelming or meaningless sound, and 'signal versus noise' borrows the contrast to describe useful information against distraction.",
             "options": [
-                "Hummable-tune",
-                "Discordant-sound",
-                "Lyrical-line",
-                "Grating-sound",
-                "Pleasant-tune"
+                "Wall of sound",
+                "Carried the tune",
+                "Signal versus noise",
+                "Haunting refrain",
+                "Just noise"
             ],
-            "correctAnswer": "Melody:Hummable-tune, Noise:Discordant-sound, Melody:Lyrical-line, Noise:Grating-sound, Melody:Pleasant-tune",
+            "correctAnswer": "Noise:Wall of sound, Melody:Carried the tune, Noise:Signal versus noise, Melody:Haunting refrain, Noise:Just noise",
             "relatedWords": [
-                "aspect of Melody:Hummable-tune, Noise:Discordant-sound, Melody:Lyrical-line, Noise:Grating-sound, Melody:Pleasant-tune",
-                "concept of Melody:Hummable-tune, Noise:Discordant-sound, Melody:Lyrical-line, Noise:Grating-sound, Melody:Pleasant-tune",
-                "related to Melody:Hummable-tune, Noise:Discordant-sound, Melody:Lyrical-line, Noise:Grating-sound, Melody:Pleasant-tune"
+                "Wall of sound: an overwhelming mass of sound",
+                "Carried the tune: sang or played the melody accurately",
+                "Signal versus noise: the contrast between useful information and distraction",
+                "Haunting refrain: a repeated line that stays in the memory",
+                "Just noise: sound without meaning or value"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L149_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These describe whether something follows a regular pattern. Sort into Rhythm or Disarray.",
             "topicBuckets": [
                 "Rhythm",
                 "Disarray"
             ],
-            "hint": "Here's a tip: Rhythm is a steady, repeated pattern, like a heartbeat, while disarray is a complete lack of pattern or order!",
-            "explanation": "Think of 'Rhythm' as a steady, repeating pattern (beat, cadence), and 'Disarray' as a state with no order at all (jumble, mess-of-things)!",
+            "hint": "Think about a steady drumbeat versus everything happening at once.",
+            "explanation": "'Steady beat', 'regular pattern', and 'in time' all describe predictable, repeating structure. 'All over the place' and 'out of step' both describe a loss of that structure.",
             "options": [
-                "Beat",
-                "Jumble",
-                "Cadence",
-                "Mess-of-things",
-                "Pulse-pattern"
+                "Steady beat",
+                "Regular pattern",
+                "Out of step",
+                "All over the place",
+                "In time"
             ],
-            "correctAnswer": "Rhythm:Beat, Disarray:Jumble, Rhythm:Cadence, Disarray:Mess-of-things, Rhythm:Pulse-pattern",
+            "correctAnswer": "Rhythm:Steady beat, Rhythm:Regular pattern, Disarray:Out of step, Disarray:All over the place, Rhythm:In time",
             "relatedWords": [
-                "aspect of Rhythm:Beat, Disarray:Jumble, Rhythm:Cadence, Disarray:Mess-of-things, Rhythm:Pulse-pattern",
-                "concept of Rhythm:Beat, Disarray:Jumble, Rhythm:Cadence, Disarray:Mess-of-things, Rhythm:Pulse-pattern",
-                "related to Rhythm:Beat, Disarray:Jumble, Rhythm:Cadence, Disarray:Mess-of-things, Rhythm:Pulse-pattern"
+                "Steady beat: a consistent repeating pulse",
+                "Regular pattern: a structure that repeats predictably",
+                "Out of step: not matching the established pattern",
+                "All over the place: disorganised and inconsistent",
+                "In time: matching the established beat"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L149_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "One rhythm word describes a daily routine that runs smoothly. Sort into Rhythm or Disarray.",
             "topicBuckets": [
                 "Rhythm",
                 "Disarray"
             ],
-            "hint": "Here's a tip: Rhythm is a steady, repeated pattern, like a heartbeat, while disarray is a complete lack of pattern or order!",
-            "explanation": "Think of 'Rhythm' as a steady, repeating pattern (beat, cadence), and 'Disarray' as a state with no order at all (jumble, mess-of-things)!",
+            "hint": "Routine is rhythm applied to daily life.",
+            "explanation": "'Cadence', 'a settled routine', and 'metronomic' all describe reliable regularity, with metronomic meaning as precise as a metronome. 'Erratic' describes unpredictable variation, and 'in a shambles' describes a state of complete disorganisation.",
             "options": [
-                "Tempo",
-                "Disorder",
-                "Groove",
-                "Confusion",
-                "Repeating-pattern"
+                "In a shambles",
+                "Cadence",
+                "A settled routine",
+                "Erratic",
+                "Metronomic"
             ],
-            "correctAnswer": "Rhythm:Tempo, Disarray:Disorder, Rhythm:Groove, Disarray:Confusion, Rhythm:Repeating-pattern",
+            "correctAnswer": "Disarray:In a shambles, Rhythm:Cadence, Rhythm:A settled routine, Disarray:Erratic, Rhythm:Metronomic",
             "relatedWords": [
-                "aspect of Rhythm:Tempo, Disarray:Disorder, Rhythm:Groove, Disarray:Confusion, Rhythm:Repeating-pattern",
-                "concept of Rhythm:Tempo, Disarray:Disorder, Rhythm:Groove, Disarray:Confusion, Rhythm:Repeating-pattern",
-                "related to Rhythm:Tempo, Disarray:Disorder, Rhythm:Groove, Disarray:Confusion, Rhythm:Repeating-pattern"
+                "In a shambles: in a state of complete disorder",
+                "Cadence: the rhythmic flow of a sequence",
+                "A settled routine: a stable, established pattern of activity",
+                "Erratic: irregular and unpredictable",
+                "Metronomic: as precisely regular as a metronome"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L149_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Picture a team describing how their week went. Sort into Rhythm or Disarray.",
             "topicBuckets": [
                 "Rhythm",
                 "Disarray"
             ],
-            "hint": "Here's a tip: Rhythm is a steady, repeated pattern, like a heartbeat, while disarray is a complete lack of pattern or order!",
-            "explanation": "Think of 'Rhythm' as a steady, repeating pattern (beat, cadence), and 'Disarray' as a state with no order at all (jumble, mess-of-things)!",
+            "hint": "Two of these describe a week where nothing went to plan.",
+            "explanation": "'Hit our stride' and 'found a groove' both describe reaching a productive, sustainable pace. 'Lurching from crisis to crisis' and 'no two days alike' both describe an absence of pattern, and 'firefighting' describes reacting to problems instead of following a plan.",
             "options": [
-                "Steady-beat",
-                "Scattered-state",
-                "Drumbeat",
-                "Tangled-mess",
-                "Metronome-pattern"
+                "No two days alike",
+                "Firefighting",
+                "Found a groove",
+                "Hit our stride",
+                "Lurching from crisis to crisis"
             ],
-            "correctAnswer": "Rhythm:Steady-beat, Disarray:Scattered-state, Rhythm:Drumbeat, Disarray:Tangled-mess, Rhythm:Metronome-pattern",
+            "correctAnswer": "Disarray:No two days alike, Disarray:Firefighting, Rhythm:Found a groove, Rhythm:Hit our stride, Disarray:Lurching from crisis to crisis",
             "relatedWords": [
-                "aspect of Rhythm:Steady-beat, Disarray:Scattered-state, Rhythm:Drumbeat, Disarray:Tangled-mess, Rhythm:Metronome-pattern",
-                "concept of Rhythm:Steady-beat, Disarray:Scattered-state, Rhythm:Drumbeat, Disarray:Tangled-mess, Rhythm:Metronome-pattern",
-                "related to Rhythm:Steady-beat, Disarray:Scattered-state, Rhythm:Drumbeat, Disarray:Tangled-mess, Rhythm:Metronome-pattern"
+                "No two days alike: without any consistent pattern",
+                "Firefighting: reacting to urgent problems instead of planning",
+                "Found a groove: settled into a productive rhythm",
+                "Hit our stride: reached a comfortable, effective pace",
+                "Lurching from crisis to crisis: moving unsteadily between emergencies"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L150_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These appear in news reporting on public institutions. Sort into Corruption or Justice.",
             "topicBuckets": [
-                "Justice",
-                "Corruption"
+                "Corruption",
+                "Justice"
             ],
-            "hint": "Here's a tip: Justice means fair treatment under the law, while corruption means abusing power for personal gain!",
-            "explanation": "Think of 'Justice' as fair, lawful treatment (fairness, due-process), and 'Corruption' as dishonest abuse of power (bribery, dishonest-dealing)!",
+            "hint": "Think about a system working as intended, and one being abused.",
+            "explanation": "'Fairness', 'accountability', and 'rule of law' all describe systems working as intended, with accountability meaning those in power answer for their actions. 'Bribery' and 'embezzlement' both describe abuse of position for private gain.",
             "options": [
-                "Fairness",
+                "Rule of law",
                 "Bribery",
-                "Due-process",
-                "Dishonest-dealing",
-                "Equity"
+                "Fairness",
+                "Accountability",
+                "Embezzlement"
             ],
-            "correctAnswer": "Justice:Fairness, Corruption:Bribery, Justice:Due-process, Corruption:Dishonest-dealing, Justice:Equity",
+            "correctAnswer": "Justice:Rule of law, Corruption:Bribery, Justice:Fairness, Justice:Accountability, Corruption:Embezzlement",
             "relatedWords": [
-                "aspect of Justice:Fairness, Corruption:Bribery, Justice:Due-process, Corruption:Dishonest-dealing, Justice:Equity",
-                "concept of Justice:Fairness, Corruption:Bribery, Justice:Due-process, Corruption:Dishonest-dealing, Justice:Equity",
-                "related to Justice:Fairness, Corruption:Bribery, Justice:Due-process, Corruption:Dishonest-dealing, Justice:Equity"
+                "Rule of law: the principle that law applies to everyone equally",
+                "Bribery: offering money to influence a decision",
+                "Fairness: impartial and equal treatment",
+                "Accountability: being answerable for one's actions",
+                "Embezzlement: stealing money placed in one's trust"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L150_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "One corruption word describes favouring relatives in appointments. Sort into Justice or Corruption.",
             "topicBuckets": [
                 "Justice",
                 "Corruption"
             ],
-            "hint": "Here's a tip: Justice means fair treatment under the law, while corruption means abusing power for personal gain!",
-            "explanation": "Think of 'Justice' as fair, lawful treatment (fairness, due-process), and 'Corruption' as dishonest abuse of power (bribery, dishonest-dealing)!",
+            "hint": "Not all corruption involves money changing hands.",
+            "explanation": "'Impartiality', 'due process', and 'transparency' all protect fair decision-making, with due process meaning following proper legal procedure. 'Nepotism' describes favouring relatives in appointments, and 'kickback' describes a secret payment for arranging a deal.",
             "options": [
-                "Lawfulness",
-                "Graft",
+                "Kickback",
+                "Transparency",
                 "Impartiality",
-                "Embezzlement",
-                "Rightful-judgment"
+                "Nepotism",
+                "Due process"
             ],
-            "correctAnswer": "Justice:Lawfulness, Corruption:Graft, Justice:Impartiality, Corruption:Embezzlement, Justice:Rightful-judgment",
+            "correctAnswer": "Corruption:Kickback, Justice:Transparency, Justice:Impartiality, Corruption:Nepotism, Justice:Due process",
             "relatedWords": [
-                "aspect of Justice:Lawfulness, Corruption:Graft, Justice:Impartiality, Corruption:Embezzlement, Justice:Rightful-judgment",
-                "concept of Justice:Lawfulness, Corruption:Graft, Justice:Impartiality, Corruption:Embezzlement, Justice:Rightful-judgment",
-                "related to Justice:Lawfulness, Corruption:Graft, Justice:Impartiality, Corruption:Embezzlement, Justice:Rightful-judgment"
+                "Kickback: a secret payment for arranging a deal",
+                "Transparency: openness that allows scrutiny",
+                "Impartiality: treating all sides without favouritism",
+                "Nepotism: favouring relatives in appointments",
+                "Due process: following proper legal procedure"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L150_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Picture a headline about an investigation into a public body. Sort into Corruption or Justice.",
             "topicBuckets": [
-                "Justice",
-                "Corruption"
+                "Corruption",
+                "Justice"
             ],
-            "hint": "Here's a tip: Justice means fair treatment under the law, while corruption means abusing power for personal gain!",
-            "explanation": "Think of 'Justice' as fair, lawful treatment (fairness, due-process), and 'Corruption' as dishonest abuse of power (bribery, dishonest-dealing)!",
+            "hint": "Two of these describe efforts to hide wrongdoing.",
+            "explanation": "'Brought to account' and 'independent oversight' both describe mechanisms that enforce fairness, and 'whistleblower' names the person who exposes wrongdoing from inside. 'Cover-up' and 'abuse of office' both describe corruption, the first specifically describing concealment of it.",
             "options": [
-                "Even-handedness",
-                "Kickback",
-                "Rule-of-law",
-                "Misuse-of-power",
-                "Lawful-fairness"
+                "Whistleblower",
+                "Abuse of office",
+                "Cover-up",
+                "Brought to account",
+                "Independent oversight"
             ],
-            "correctAnswer": "Justice:Even-handedness, Corruption:Kickback, Justice:Rule-of-law, Corruption:Misuse-of-power, Justice:Lawful-fairness",
+            "correctAnswer": "Justice:Whistleblower, Corruption:Abuse of office, Corruption:Cover-up, Justice:Brought to account, Justice:Independent oversight",
             "relatedWords": [
-                "aspect of Justice:Even-handedness, Corruption:Kickback, Justice:Rule-of-law, Corruption:Misuse-of-power, Justice:Lawful-fairness",
-                "concept of Justice:Even-handedness, Corruption:Kickback, Justice:Rule-of-law, Corruption:Misuse-of-power, Justice:Lawful-fairness",
-                "related to Justice:Even-handedness, Corruption:Kickback, Justice:Rule-of-law, Corruption:Misuse-of-power, Justice:Lawful-fairness"
+                "Whistleblower: someone who exposes wrongdoing from inside",
+                "Abuse of office: misusing a position of public trust",
+                "Cover-up: an effort to conceal wrongdoing",
+                "Brought to account: made to answer for wrongdoing",
+                "Independent oversight: external monitoring to ensure fairness"
             ]
         }
     ]

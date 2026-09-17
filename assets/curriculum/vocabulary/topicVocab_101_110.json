@@ -6,721 +6,781 @@
         {
             "id": "VOC_TOPICVOCAB_L101_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Calm or Tense.",
             "topicBuckets": [
                 "Calm",
                 "Tense"
             ],
-            "hint": "Here's a tip: A calm person feels relaxed and peaceful, while a tense person feels stressed and on edge!",
-            "explanation": "Think of 'Calm' as a relaxed, peaceful state (serene, composed), and 'Tense' as a stressed, anxious state (strained, on-edge)!",
+            "hint": "Think about how your shoulders feel in each state.",
+            "explanation": "Serene, tranquil, and composed all describe calm, though composed specifically means staying steady when you might not feel calm inside. Strained and edgy both describe tension, with edgy suggesting irritability just below the surface.",
             "options": [
                 "Serene",
-                "Strained",
                 "Composed",
-                "On-edge",
-                "Peaceful"
+                "Edgy",
+                "Tranquil",
+                "Strained"
             ],
-            "correctAnswer": "Calm:Serene, Tense:Strained, Calm:Composed, Tense:On-edge, Calm:Peaceful",
+            "correctAnswer": "Calm:Serene, Calm:Composed, Tense:Edgy, Calm:Tranquil, Tense:Strained",
             "relatedWords": [
-                "aspect of Calm:Serene, Tense:Strained, Calm:Composed, Tense:On-edge, Calm:Peaceful",
-                "concept of Calm:Serene, Tense:Strained, Calm:Composed, Tense:On-edge, Calm:Peaceful",
-                "related to Calm:Serene, Tense:Strained, Calm:Composed, Tense:On-edge, Calm:Peaceful"
+                "Serene: peaceful and untroubled",
+                "Composed: staying outwardly steady under pressure",
+                "Edgy: nervous and easily irritated",
+                "Tranquil: quiet and free from disturbance",
+                "Strained: showing the effects of pressure"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L101_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "One calm word describes a steadiness others can feel. Sort into Calm or Tense.",
             "topicBuckets": [
                 "Calm",
                 "Tense"
             ],
-            "hint": "Here's a tip: A calm person feels relaxed and peaceful, while a tense person feels stressed and on edge!",
-            "explanation": "Think of 'Calm' as a relaxed, peaceful state (serene, composed), and 'Tense' as a stressed, anxious state (strained, on-edge)!",
+            "hint": "Think about the atmosphere in a room, not just one person's mood.",
+            "explanation": "Unruffled and 'level-headed' both describe someone who stays clear-thinking under pressure, a steadiness that tends to settle everyone around them. Fraught describes a situation full of tension, and 'on edge' describes waiting anxiously for something to go wrong.",
             "options": [
-                "Relaxed",
-                "Rigid",
-                "Tranquil",
-                "Anxious",
-                "Unruffled"
+                "Unruffled",
+                "Fraught",
+                "Level-headed",
+                "Placid",
+                "On edge"
             ],
-            "correctAnswer": "Calm:Relaxed, Tense:Rigid, Calm:Tranquil, Tense:Anxious, Calm:Unruffled",
+            "correctAnswer": "Calm:Unruffled, Tense:Fraught, Calm:Level-headed, Calm:Placid, Tense:On edge",
             "relatedWords": [
-                "aspect of Calm:Relaxed, Tense:Rigid, Calm:Tranquil, Tense:Anxious, Calm:Unruffled",
-                "concept of Calm:Relaxed, Tense:Rigid, Calm:Tranquil, Tense:Anxious, Calm:Unruffled",
-                "related to Calm:Relaxed, Tense:Rigid, Calm:Tranquil, Tense:Anxious, Calm:Unruffled"
+                "Unruffled: not disturbed by pressure",
+                "Fraught: filled with tension or anxiety",
+                "Level-headed: calm and sensible under pressure",
+                "Placid: calm and not easily upset",
+                "On edge: anxiously anticipating trouble"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L101_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Picture the minutes before exam results are announced. Sort into Calm or Tense.",
             "topicBuckets": [
                 "Calm",
                 "Tense"
             ],
-            "hint": "Here's a tip: A calm person feels relaxed and peaceful, while a tense person feels stressed and on edge!",
-            "explanation": "Think of 'Calm' as a relaxed, peaceful state (serene, composed), and 'Tense' as a stressed, anxious state (strained, on-edge)!",
+            "hint": "Two of these describe a silence that feels heavy rather than peaceful.",
+            "explanation": "'At ease' and 'takes it in stride' both describe handling pressure without strain. A 'knot in the stomach' and a 'charged atmosphere' both describe physical and social tension, and 'white-knuckled' describes gripping something hard from stress \u2014 a silence that feels heavy rather than peaceful.",
             "options": [
-                "Placid",
-                "Jittery",
-                "Steady",
-                "Stressed",
-                "Cool-headed"
+                "White-knuckled",
+                "Takes it in stride",
+                "Charged atmosphere",
+                "Knot in the stomach",
+                "At ease"
             ],
-            "correctAnswer": "Calm:Placid, Tense:Jittery, Calm:Steady, Tense:Stressed, Calm:Cool-headed",
+            "correctAnswer": "Tense:White-knuckled, Calm:Takes it in stride, Tense:Charged atmosphere, Tense:Knot in the stomach, Calm:At ease",
             "relatedWords": [
-                "aspect of Calm:Placid, Tense:Jittery, Calm:Steady, Tense:Stressed, Calm:Cool-headed",
-                "concept of Calm:Placid, Tense:Jittery, Calm:Steady, Tense:Stressed, Calm:Cool-headed",
-                "related to Calm:Placid, Tense:Jittery, Calm:Steady, Tense:Stressed, Calm:Cool-headed"
+                "White-knuckled: gripping tightly from stress",
+                "Takes it in stride: handles difficulty without being upset",
+                "Charged atmosphere: a mood heavy with tension",
+                "Knot in the stomach: a physical feeling of anxiety",
+                "At ease: relaxed and comfortable"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L102_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Bored or Excited.",
             "topicBuckets": [
-                "Excited",
-                "Bored"
+                "Bored",
+                "Excited"
             ],
-            "hint": "Here's a tip: An excited person can't wait for something to happen, while a bored person has nothing interesting to do!",
-            "explanation": "Think of 'Excited' as eager anticipation (thrilled, enthusiastic), and 'Bored' as lack of interest (uninterested, tedious feeling)!",
+            "hint": "Think about how time feels: racing by, or dragging.",
+            "explanation": "Eager, thrilled, and enthusiastic all describe excitement, with eager specifically meaning impatient for something to begin. Listless and uninterested both describe boredom, with listless suggesting a lack of energy as well as interest.",
             "options": [
+                "Eager",
                 "Thrilled",
                 "Uninterested",
                 "Enthusiastic",
-                "Tedious",
-                "Eager"
+                "Listless"
             ],
-            "correctAnswer": "Excited:Thrilled, Bored:Uninterested, Excited:Enthusiastic, Bored:Tedious, Excited:Eager",
+            "correctAnswer": "Excited:Eager, Excited:Thrilled, Bored:Uninterested, Excited:Enthusiastic, Bored:Listless",
             "relatedWords": [
-                "aspect of Excited:Thrilled, Bored:Uninterested, Excited:Enthusiastic, Bored:Tedious, Excited:Eager",
-                "concept of Excited:Thrilled, Bored:Uninterested, Excited:Enthusiastic, Bored:Tedious, Excited:Eager",
-                "related to Excited:Thrilled, Bored:Uninterested, Excited:Enthusiastic, Bored:Tedious, Excited:Eager"
+                "Eager: impatiently keen for something",
+                "Thrilled: filled with excitement and pleasure",
+                "Uninterested: not engaged or curious",
+                "Enthusiastic: showing intense enjoyment and interest",
+                "Listless: lacking energy and interest"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L102_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "One bored word describes doing something so often it's lost all interest. Sort into Excited or Bored.",
             "topicBuckets": [
                 "Excited",
                 "Bored"
             ],
-            "hint": "Here's a tip: An excited person can't wait for something to happen, while a bored person has nothing interesting to do!",
-            "explanation": "Think of 'Excited' as eager anticipation (thrilled, enthusiastic), and 'Bored' as lack of interest (uninterested, tedious feeling)!",
+            "hint": "Think about a task repeated until it means nothing.",
+            "explanation": "Exhilarated and 'buzzing' both describe a high-energy excitement, and 'raring to go' means impatient to start. Jaded describes losing interest through overexposure, and monotonous describes something dull because it never varies.",
             "options": [
-                "Pumped",
-                "Restless",
-                "Animated",
-                "Indifferent",
-                "Energized"
+                "Raring to go",
+                "Jaded",
+                "Exhilarated",
+                "Monotonous",
+                "Buzzing"
             ],
-            "correctAnswer": "Excited:Pumped, Bored:Restless, Excited:Animated, Bored:Indifferent, Excited:Energized",
+            "correctAnswer": "Excited:Raring to go, Bored:Jaded, Excited:Exhilarated, Bored:Monotonous, Excited:Buzzing",
             "relatedWords": [
-                "aspect of Excited:Pumped, Bored:Restless, Excited:Animated, Bored:Indifferent, Excited:Energized",
-                "concept of Excited:Pumped, Bored:Restless, Excited:Animated, Bored:Indifferent, Excited:Energized",
-                "related to Excited:Pumped, Bored:Restless, Excited:Animated, Bored:Indifferent, Excited:Energized"
+                "Raring to go: impatient to begin",
+                "Jaded: tired of something through overexposure",
+                "Exhilarated: feeling very happy and energised",
+                "Monotonous: dull through lack of variety",
+                "Buzzing: full of excited energy"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L102_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Picture a lecture hall in the final ten minutes of a long session. Sort into Excited or Bored.",
             "topicBuckets": [
                 "Excited",
                 "Bored"
             ],
-            "hint": "Here's a tip: An excited person can't wait for something to happen, while a bored person has nothing interesting to do!",
-            "explanation": "Think of 'Excited' as eager anticipation (thrilled, enthusiastic), and 'Bored' as lack of interest (uninterested, tedious feeling)!",
+            "hint": "Two of these describe attention drifting away entirely.",
+            "explanation": "'On the edge of their seat' and 'fully absorbed' both describe complete engagement, and 'can't wait' signals anticipation. 'Clock-watching' and 'glazed over' both describe attention drifting away, with glazed over describing the blank look of someone no longer taking anything in.",
             "options": [
-                "Exhilarated",
-                "Listless",
-                "Hyped",
-                "Monotonous",
-                "Buzzing"
+                "Can't wait",
+                "On the edge of their seat",
+                "Glazed over",
+                "Clock-watching",
+                "Fully absorbed"
             ],
-            "correctAnswer": "Excited:Exhilarated, Bored:Listless, Excited:Hyped, Bored:Monotonous, Excited:Buzzing",
+            "correctAnswer": "Excited:Can't wait, Excited:On the edge of their seat, Bored:Glazed over, Bored:Clock-watching, Excited:Fully absorbed",
             "relatedWords": [
-                "aspect of Excited:Exhilarated, Bored:Listless, Excited:Hyped, Bored:Monotonous, Excited:Buzzing",
-                "concept of Excited:Exhilarated, Bored:Listless, Excited:Hyped, Bored:Monotonous, Excited:Buzzing",
-                "related to Excited:Exhilarated, Bored:Listless, Excited:Hyped, Bored:Monotonous, Excited:Buzzing"
+                "Can't wait: eagerly anticipating something",
+                "On the edge of their seat: completely gripped by something",
+                "Glazed over: showing a blank, unfocused expression",
+                "Clock-watching: repeatedly checking the time out of boredom",
+                "Fully absorbed: entirely focused on something"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L103_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Grief or Joy.",
             "topicBuckets": [
-                "Joy",
-                "Grief"
+                "Grief",
+                "Joy"
             ],
-            "hint": "Here's a tip: Joy is the deep happiness you feel at good news, while grief is the deep sorrow you feel after a loss!",
-            "explanation": "Think of 'Joy' as intense happiness (delight, elation), and 'Grief' as intense sorrow, especially after loss (mourning, sorrow)!",
+            "hint": "Think about the emotions surrounding a celebration and a loss.",
+            "explanation": "Delight, elation, and rejoicing all describe happiness, with rejoicing suggesting happiness expressed openly, often shared. Sorrow and mourning both relate to loss, with mourning specifically describing the process of grieving over time.",
             "options": [
                 "Delight",
                 "Mourning",
+                "Rejoicing",
                 "Elation",
-                "Sorrow",
-                "Bliss"
+                "Sorrow"
             ],
-            "correctAnswer": "Joy:Delight, Grief:Mourning, Joy:Elation, Grief:Sorrow, Joy:Bliss",
+            "correctAnswer": "Joy:Delight, Grief:Mourning, Joy:Rejoicing, Joy:Elation, Grief:Sorrow",
             "relatedWords": [
-                "aspect of Joy:Delight, Grief:Mourning, Joy:Elation, Grief:Sorrow, Joy:Bliss",
-                "concept of Joy:Delight, Grief:Mourning, Joy:Elation, Grief:Sorrow, Joy:Bliss",
-                "related to Joy:Delight, Grief:Mourning, Joy:Elation, Grief:Sorrow, Joy:Bliss"
+                "Delight: great pleasure",
+                "Mourning: the process of grieving a loss",
+                "Rejoicing: expressing happiness openly",
+                "Elation: great happiness and excitement",
+                "Sorrow: deep sadness, often from loss"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L103_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "One grief word names the sadness felt for something now gone. Sort into Grief or Joy.",
             "topicBuckets": [
-                "Joy",
-                "Grief"
+                "Grief",
+                "Joy"
             ],
-            "hint": "Here's a tip: Joy is the deep happiness you feel at good news, while grief is the deep sorrow you feel after a loss!",
-            "explanation": "Think of 'Joy' as intense happiness (delight, elation), and 'Grief' as intense sorrow, especially after loss (mourning, sorrow)!",
+            "hint": "Some feelings are quiet rather than loud.",
+            "explanation": "Bliss and contentment both describe quiet happiness, with contentment being gentler and more settled than bliss. Anguish describes intense emotional pain, heartache describes an ongoing ache of loss, and 'jubilation' describes loud, triumphant joy.",
             "options": [
-                "Jubilation",
-                "Heartache",
-                "Gladness",
                 "Anguish",
-                "Rapture"
+                "Jubilation",
+                "Contentment",
+                "Bliss",
+                "Heartache"
             ],
-            "correctAnswer": "Joy:Jubilation, Grief:Heartache, Joy:Gladness, Grief:Anguish, Joy:Rapture",
+            "correctAnswer": "Grief:Anguish, Joy:Jubilation, Joy:Contentment, Joy:Bliss, Grief:Heartache",
             "relatedWords": [
-                "aspect of Joy:Jubilation, Grief:Heartache, Joy:Gladness, Grief:Anguish, Joy:Rapture",
-                "concept of Joy:Jubilation, Grief:Heartache, Joy:Gladness, Grief:Anguish, Joy:Rapture",
-                "related to Joy:Jubilation, Grief:Heartache, Joy:Gladness, Grief:Anguish, Joy:Rapture"
+                "Anguish: severe emotional pain",
+                "Jubilation: loud, triumphant happiness",
+                "Contentment: quiet, settled satisfaction",
+                "Bliss: perfect happiness",
+                "Heartache: a lasting ache caused by loss"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L103_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These words appear in writing about how people mark important life events. Sort into Joy or Grief.",
             "topicBuckets": [
                 "Joy",
                 "Grief"
             ],
-            "hint": "Here's a tip: Joy is the deep happiness you feel at good news, while grief is the deep sorrow you feel after a loss!",
-            "explanation": "Think of 'Joy' as intense happiness (delight, elation), and 'Grief' as intense sorrow, especially after loss (mourning, sorrow)!",
+            "hint": "Think about the language used at a wedding and at a memorial.",
+            "explanation": "'Celebration' and 'good tidings' both belong to happy occasions, with tidings being a slightly old-fashioned word for news. 'Condolences' is the formal word offered to someone bereaved, 'bereavement' names the state of having lost someone, and 'solace' means comfort given in sadness.",
             "options": [
-                "Euphoria",
+                "Celebration",
+                "Condolences",
                 "Bereavement",
-                "Cheer",
-                "Lament",
-                "Glee"
+                "Good tidings",
+                "Solace"
             ],
-            "correctAnswer": "Joy:Euphoria, Grief:Bereavement, Joy:Cheer, Grief:Lament, Joy:Glee",
+            "correctAnswer": "Joy:Celebration, Grief:Condolences, Grief:Bereavement, Joy:Good tidings, Grief:Solace",
             "relatedWords": [
-                "aspect of Joy:Euphoria, Grief:Bereavement, Joy:Cheer, Grief:Lament, Joy:Glee",
-                "concept of Joy:Euphoria, Grief:Bereavement, Joy:Cheer, Grief:Lament, Joy:Glee",
-                "related to Joy:Euphoria, Grief:Bereavement, Joy:Cheer, Grief:Lament, Joy:Glee"
+                "Celebration: an occasion marking something happy",
+                "Condolences: expressions of sympathy for a loss",
+                "Bereavement: the state of having lost someone close",
+                "Good tidings: welcome news, in slightly old-fashioned usage",
+                "Solace: comfort offered in sadness"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L104_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Laughter or Tears.",
             "topicBuckets": [
                 "Laughter",
                 "Tears"
             ],
-            "hint": "Here's a tip: Laughter is the sound you make when something is funny, while tears are the drops that fall when you cry!",
-            "explanation": "Think of 'Laughter' as the sound and act of amusement (giggling, chuckling), and 'Tears' as crying from sadness or emotion (weeping, sobbing)!",
+            "hint": "Think about the sounds a room makes during a comedy and during a sad film.",
+            "explanation": "A giggle, a chuckle, and a guffaw are all forms of laughter, differing in volume \u2014 a giggle is light, a guffaw is loud and unrestrained. Sobbing and weeping both describe crying, with sobbing involving audible catching of breath.",
             "options": [
-                "Giggling",
                 "Weeping",
-                "Chuckling",
+                "Chuckle",
+                "Guffaw",
                 "Sobbing",
-                "Chortling"
+                "Giggle"
             ],
-            "correctAnswer": "Laughter:Giggling, Tears:Weeping, Laughter:Chuckling, Tears:Sobbing, Laughter:Chortling",
+            "correctAnswer": "Tears:Weeping, Laughter:Chuckle, Laughter:Guffaw, Tears:Sobbing, Laughter:Giggle",
             "relatedWords": [
-                "aspect of Laughter:Giggling, Tears:Weeping, Laughter:Chuckling, Tears:Sobbing, Laughter:Chortling",
-                "concept of Laughter:Giggling, Tears:Weeping, Laughter:Chuckling, Tears:Sobbing, Laughter:Chortling",
-                "related to Laughter:Giggling, Tears:Weeping, Laughter:Chuckling, Tears:Sobbing, Laughter:Chortling"
+                "Weeping: crying, often quietly",
+                "Chuckle: a quiet, low laugh",
+                "Guffaw: a loud, unrestrained laugh",
+                "Sobbing: crying with audible catches of breath",
+                "Giggle: a light, high laugh"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L104_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "One tears word describes crying quietly enough that others might not notice. Sort into Laughter or Tears.",
             "topicBuckets": [
                 "Laughter",
                 "Tears"
             ],
-            "hint": "Here's a tip: Laughter is the sound you make when something is funny, while tears are the drops that fall when you cry!",
-            "explanation": "Think of 'Laughter' as the sound and act of amusement (giggling, chuckling), and 'Tears' as crying from sadness or emotion (weeping, sobbing)!",
+            "hint": "Volume separates these as much as emotion does.",
+            "explanation": "Cackle and 'howling with laughter' both describe loud amusement, and 'snicker' describes a suppressed, often unkind laugh. Whimper describes a small, weak sound of distress, and 'misty-eyed' describes eyes filling without full crying.",
             "options": [
-                "Cackling",
-                "Sniffling",
-                "Guffawing",
-                "Crying",
-                "Snickering"
+                "Whimper",
+                "Snicker",
+                "Cackle",
+                "Misty-eyed",
+                "Howling with laughter"
             ],
-            "correctAnswer": "Laughter:Cackling, Tears:Sniffling, Laughter:Guffawing, Tears:Crying, Laughter:Snickering",
+            "correctAnswer": "Tears:Whimper, Laughter:Snicker, Laughter:Cackle, Tears:Misty-eyed, Laughter:Howling with laughter",
             "relatedWords": [
-                "aspect of Laughter:Cackling, Tears:Sniffling, Laughter:Guffawing, Tears:Crying, Laughter:Snickering",
-                "concept of Laughter:Cackling, Tears:Sniffling, Laughter:Guffawing, Tears:Crying, Laughter:Snickering",
-                "related to Laughter:Cackling, Tears:Sniffling, Laughter:Guffawing, Tears:Crying, Laughter:Snickering"
+                "Whimper: a small, weak sound of distress",
+                "Snicker: a suppressed, often unkind laugh",
+                "Cackle: a harsh, loud laugh",
+                "Misty-eyed: with eyes filling with tears",
+                "Howling with laughter: laughing loudly and helplessly"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L104_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Picture an audience leaving a film that made them feel everything. Sort into Laughter or Tears.",
             "topicBuckets": [
                 "Laughter",
                 "Tears"
             ],
-            "hint": "Here's a tip: Laughter is the sound you make when something is funny, while tears are the drops that fall when you cry!",
-            "explanation": "Think of 'Laughter' as the sound and act of amusement (giggling, chuckling), and 'Tears' as crying from sadness or emotion (weeping, sobbing)!",
+            "hint": "One phrase belongs to both feelings at once \u2014 decide which one it fits best here.",
+            "explanation": "'In stitches' and 'side-splitting' both describe helpless laughter, and 'comic relief' names humour placed deliberately to break tension. 'Tearjerker' describes something designed to make audiences cry, and 'welling up' describes tears beginning to form.",
             "options": [
-                "Hooting",
-                "Wailing",
-                "Tittering",
-                "Whimpering",
-                "Braying"
+                "Welling up",
+                "Comic relief",
+                "Side-splitting",
+                "Tearjerker",
+                "In stitches"
             ],
-            "correctAnswer": "Laughter:Hooting, Tears:Wailing, Laughter:Tittering, Tears:Whimpering, Laughter:Braying",
+            "correctAnswer": "Tears:Welling up, Laughter:Comic relief, Laughter:Side-splitting, Tears:Tearjerker, Laughter:In stitches",
             "relatedWords": [
-                "aspect of Laughter:Hooting, Tears:Wailing, Laughter:Tittering, Tears:Whimpering, Laughter:Braying",
-                "concept of Laughter:Hooting, Tears:Wailing, Laughter:Tittering, Tears:Whimpering, Laughter:Braying",
-                "related to Laughter:Hooting, Tears:Wailing, Laughter:Tittering, Tears:Whimpering, Laughter:Braying"
+                "Welling up: beginning to fill with tears",
+                "Comic relief: humour used to break tension",
+                "Side-splitting: extremely funny",
+                "Tearjerker: something designed to make people cry",
+                "In stitches: laughing uncontrollably"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L105_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Harmony or Discord.",
             "topicBuckets": [
                 "Harmony",
                 "Discord"
             ],
-            "hint": "Here's a tip: Harmony is when things work together smoothly, while discord is when there is conflict and disagreement!",
-            "explanation": "Think of 'Harmony' as peaceful agreement (concord, unity), and 'Discord' as conflict and disagreement (friction, strife)!",
+            "hint": "Think about a team that works smoothly, and one that argues constantly.",
+            "explanation": "Unity, accord, and cohesion all describe things working together well, with cohesion specifically meaning a group holding firmly together. Friction and conflict both describe clashing, with friction suggesting ongoing low-level tension rather than open dispute.",
             "options": [
-                "Concord",
                 "Friction",
-                "Unity",
-                "Strife",
-                "Accord"
+                "Conflict",
+                "Cohesion",
+                "Accord",
+                "Unity"
             ],
-            "correctAnswer": "Harmony:Concord, Discord:Friction, Harmony:Unity, Discord:Strife, Harmony:Accord",
+            "correctAnswer": "Discord:Friction, Discord:Conflict, Harmony:Cohesion, Harmony:Accord, Harmony:Unity",
             "relatedWords": [
-                "aspect of Harmony:Concord, Discord:Friction, Harmony:Unity, Discord:Strife, Harmony:Accord",
-                "concept of Harmony:Concord, Discord:Friction, Harmony:Unity, Discord:Strife, Harmony:Accord",
-                "related to Harmony:Concord, Discord:Friction, Harmony:Unity, Discord:Strife, Harmony:Accord"
+                "Friction: ongoing low-level tension between people",
+                "Conflict: serious disagreement or clash",
+                "Cohesion: the quality of holding firmly together",
+                "Accord: agreement between parties",
+                "Unity: the state of being joined as a whole"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L105_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "One discord word describes a disagreement that splits a group in two. Sort into Discord or Harmony.",
             "topicBuckets": [
-                "Harmony",
-                "Discord"
+                "Discord",
+                "Harmony"
             ],
-            "hint": "Here's a tip: Harmony is when things work together smoothly, while discord is when there is conflict and disagreement!",
-            "explanation": "Think of 'Harmony' as peaceful agreement (concord, unity), and 'Discord' as conflict and disagreement (friction, strife)!",
+            "hint": "Think about what pulls a group together, and what tears it apart.",
+            "explanation": "Consensus and 'common ground' both describe shared agreement that holds a group together, and 'in sync' describes working smoothly in step. Division describes a group splitting into opposing parts, and strife describes bitter, ongoing conflict.",
             "options": [
-                "Agreement",
-                "Conflict",
-                "Cohesion",
-                "Clash",
-                "Cooperation"
+                "Strife",
+                "Division",
+                "In sync",
+                "Common ground",
+                "Consensus"
             ],
-            "correctAnswer": "Harmony:Agreement, Discord:Conflict, Harmony:Cohesion, Discord:Clash, Harmony:Cooperation",
+            "correctAnswer": "Discord:Strife, Discord:Division, Harmony:In sync, Harmony:Common ground, Harmony:Consensus",
             "relatedWords": [
-                "aspect of Harmony:Agreement, Discord:Conflict, Harmony:Cohesion, Discord:Clash, Harmony:Cooperation",
-                "concept of Harmony:Agreement, Discord:Conflict, Harmony:Cohesion, Discord:Clash, Harmony:Cooperation",
-                "related to Harmony:Agreement, Discord:Conflict, Harmony:Cohesion, Discord:Clash, Harmony:Cooperation"
+                "Strife: bitter, ongoing conflict",
+                "Division: a split into opposing groups",
+                "In sync: working smoothly together",
+                "Common ground: shared interests or beliefs",
+                "Consensus: general agreement among a group"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L105_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Picture a team meeting that could go either way. Sort into Harmony or Discord.",
             "topicBuckets": [
                 "Harmony",
                 "Discord"
             ],
-            "hint": "Here's a tip: Harmony is when things work together smoothly, while discord is when there is conflict and disagreement!",
-            "explanation": "Think of 'Harmony' as peaceful agreement (concord, unity), and 'Discord' as conflict and disagreement (friction, strife)!",
+            "hint": "Two of these describe disagreement conducted openly rather than quietly.",
+            "explanation": "'Pulling together' and 'meeting of minds' both describe genuine alignment, and 'rapport' names an easy mutual understanding. 'At loggerheads' describes two sides stuck in open disagreement, and 'clashing' describes views colliding directly.",
             "options": [
-                "Synchrony",
-                "Dissonance",
                 "Rapport",
-                "Quarrel",
-                "Balance"
+                "At loggerheads",
+                "Clashing",
+                "Meeting of minds",
+                "Pulling together"
             ],
-            "correctAnswer": "Harmony:Synchrony, Discord:Dissonance, Harmony:Rapport, Discord:Quarrel, Harmony:Balance",
+            "correctAnswer": "Harmony:Rapport, Discord:At loggerheads, Discord:Clashing, Harmony:Meeting of minds, Harmony:Pulling together",
             "relatedWords": [
-                "aspect of Harmony:Synchrony, Discord:Dissonance, Harmony:Rapport, Discord:Quarrel, Harmony:Balance",
-                "concept of Harmony:Synchrony, Discord:Dissonance, Harmony:Rapport, Discord:Quarrel, Harmony:Balance",
-                "related to Harmony:Synchrony, Discord:Dissonance, Harmony:Rapport, Discord:Quarrel, Harmony:Balance"
+                "Rapport: an easy mutual understanding",
+                "At loggerheads: in open, stuck disagreement",
+                "Clashing: coming into direct conflict",
+                "Meeting of minds: a moment of genuine mutual agreement",
+                "Pulling together: cooperating toward a shared goal"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L106_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Order or Chaos.",
             "topicBuckets": [
                 "Order",
                 "Chaos"
             ],
-            "hint": "Here's a tip: Order means everything is organized and follows a system, while chaos means everything is in confusion!",
-            "explanation": "Think of 'Order' as organized, structured systems (structure, sequence), and 'Chaos' as disorganized confusion (turmoil, disorder)!",
+            "hint": "Think about a filing system versus a room after a party.",
+            "explanation": "Structure, system, and discipline all describe organised arrangement, with discipline referring to the control that maintains it. Turmoil and disorder both describe a breakdown of that arrangement, with turmoil suggesting agitated confusion.",
             "options": [
-                "Structure",
-                "Turmoil",
-                "Sequence",
                 "Disorder",
-                "System"
+                "System",
+                "Discipline",
+                "Turmoil",
+                "Structure"
             ],
-            "correctAnswer": "Order:Structure, Chaos:Turmoil, Order:Sequence, Chaos:Disorder, Order:System",
+            "correctAnswer": "Chaos:Disorder, Order:System, Order:Discipline, Chaos:Turmoil, Order:Structure",
             "relatedWords": [
-                "aspect of Order:Structure, Chaos:Turmoil, Order:Sequence, Chaos:Disorder, Order:System",
-                "concept of Order:Structure, Chaos:Turmoil, Order:Sequence, Chaos:Disorder, Order:System",
-                "related to Order:Structure, Chaos:Turmoil, Order:Sequence, Chaos:Disorder, Order:System"
+                "Disorder: a lack of organisation",
+                "System: an organised method or set of procedures",
+                "Discipline: controlled, orderly behaviour",
+                "Turmoil: a state of great agitated confusion",
+                "Structure: an organised arrangement of parts"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L106_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "One chaos word describes disorder so severe that normal rules stop working. Sort into Order or Chaos.",
             "topicBuckets": [
                 "Order",
                 "Chaos"
             ],
-            "hint": "Here's a tip: Order means everything is organized and follows a system, while chaos means everything is in confusion!",
-            "explanation": "Think of 'Order' as organized, structured systems (structure, sequence), and 'Chaos' as disorganized confusion (turmoil, disorder)!",
+            "hint": "Think about degrees: untidy, confused, or completely broken down.",
+            "explanation": "Regulation and 'methodical' both describe controlled, rule-governed processes, and 'stability' names a system holding steady. Pandemonium describes wild, noisy confusion, and anarchy describes disorder so complete that normal rules stop functioning.",
             "options": [
-                "Arrangement",
-                "Mayhem",
-                "Method",
+                "Regulation",
+                "Anarchy",
                 "Pandemonium",
-                "Organization"
+                "Stability",
+                "Methodical"
             ],
-            "correctAnswer": "Order:Arrangement, Chaos:Mayhem, Order:Method, Chaos:Pandemonium, Order:Organization",
+            "correctAnswer": "Order:Regulation, Chaos:Anarchy, Chaos:Pandemonium, Order:Stability, Order:Methodical",
             "relatedWords": [
-                "aspect of Order:Arrangement, Chaos:Mayhem, Order:Method, Chaos:Pandemonium, Order:Organization",
-                "concept of Order:Arrangement, Chaos:Mayhem, Order:Method, Chaos:Pandemonium, Order:Organization",
-                "related to Order:Arrangement, Chaos:Mayhem, Order:Method, Chaos:Pandemonium, Order:Organization"
+                "Regulation: control through established rules",
+                "Anarchy: the absence of functioning rules or authority",
+                "Pandemonium: wild, noisy confusion",
+                "Stability: the state of holding steady",
+                "Methodical: done in an orderly, systematic way"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L106_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Picture a warehouse during an unexpected rush. Sort into Chaos or Order.",
             "topicBuckets": [
-                "Order",
-                "Chaos"
+                "Chaos",
+                "Order"
             ],
-            "hint": "Here's a tip: Order means everything is organized and follows a system, while chaos means everything is in confusion!",
-            "explanation": "Think of 'Order' as organized, structured systems (structure, sequence), and 'Chaos' as disorganized confusion (turmoil, disorder)!",
+            "hint": "Two of these describe a workplace that has stopped functioning properly.",
+            "explanation": "'Running like clockwork' and 'everything in its place' both describe smooth operation, and 'protocol' names the agreed procedure that keeps it that way. 'Scrambling' describes people reacting frantically without a plan, and 'a free-for-all' describes a situation where order has collapsed entirely.",
             "options": [
-                "Pattern",
-                "Anarchy-state",
-                "Discipline",
-                "Bedlam",
-                "Regularity"
+                "A free-for-all",
+                "Running like clockwork",
+                "Everything in its place",
+                "Protocol",
+                "Scrambling"
             ],
-            "correctAnswer": "Order:Pattern, Chaos:Anarchy-state, Order:Discipline, Chaos:Bedlam, Order:Regularity",
+            "correctAnswer": "Chaos:A free-for-all, Order:Running like clockwork, Order:Everything in its place, Order:Protocol, Chaos:Scrambling",
             "relatedWords": [
-                "aspect of Order:Pattern, Chaos:Anarchy-state, Order:Discipline, Chaos:Bedlam, Order:Regularity",
-                "concept of Order:Pattern, Chaos:Anarchy-state, Order:Discipline, Chaos:Bedlam, Order:Regularity",
-                "related to Order:Pattern, Chaos:Anarchy-state, Order:Discipline, Chaos:Bedlam, Order:Regularity"
+                "A free-for-all: a situation without rules or control",
+                "Running like clockwork: operating smoothly and predictably",
+                "Everything in its place: fully organised",
+                "Protocol: an agreed official procedure",
+                "Scrambling: reacting frantically without a plan"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L107_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Fiction or Truth.",
             "topicBuckets": [
-                "Truth",
-                "Fiction"
+                "Fiction",
+                "Truth"
             ],
-            "hint": "Here's a tip: Truth is what really happened, while fiction is a made-up story!",
-            "explanation": "Think of 'Truth' as real, factual statements (fact, reality), and 'Fiction' as invented, imaginary stories (tale, invention)!",
+            "hint": "Think about which shelf a book belongs on in a library.",
+            "explanation": "Nonfiction, documentary, and biography all present real events and people. A novel and a fable are both invented, with a fable being a short story written to teach a lesson.",
             "options": [
-                "Fact",
-                "Tale",
-                "Reality",
-                "Invention",
-                "Honesty"
+                "Nonfiction",
+                "Biography",
+                "Novel",
+                "Fable",
+                "Documentary"
             ],
-            "correctAnswer": "Truth:Fact, Fiction:Tale, Truth:Reality, Fiction:Invention, Truth:Honesty",
+            "correctAnswer": "Truth:Nonfiction, Truth:Biography, Fiction:Novel, Fiction:Fable, Truth:Documentary",
             "relatedWords": [
-                "aspect of Truth:Fact, Fiction:Tale, Truth:Reality, Fiction:Invention, Truth:Honesty",
-                "concept of Truth:Fact, Fiction:Tale, Truth:Reality, Fiction:Invention, Truth:Honesty",
-                "related to Truth:Fact, Fiction:Tale, Truth:Reality, Fiction:Invention, Truth:Honesty"
+                "Nonfiction: writing based on real facts and events",
+                "Biography: an account of a real person's life",
+                "Novel: a long invented story",
+                "Fable: a short invented story teaching a lesson",
+                "Documentary: a film presenting real events"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L107_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "One fiction word describes a story built around invented characters in a real historical setting. Sort into Fiction or Truth.",
             "topicBuckets": [
-                "Truth",
-                "Fiction"
+                "Fiction",
+                "Truth"
             ],
-            "hint": "Here's a tip: Truth is what really happened, while fiction is a made-up story!",
-            "explanation": "Think of 'Truth' as real, factual statements (fact, reality), and 'Fiction' as invented, imaginary stories (tale, invention)!",
+            "hint": "Some fiction borrows heavily from reality without becoming factual.",
+            "explanation": "'Eyewitness account' and 'verified record' both describe documented reality, and 'case study' examines a real situation in detail. 'Historical fiction' places invented characters in a real setting, and 'myth' describes a traditional invented story, often explaining origins.",
             "options": [
-                "Actuality",
-                "Fable",
-                "Veracity",
-                "Fantasy",
-                "Certainty"
+                "Case study",
+                "Myth",
+                "Eyewitness account",
+                "Verified record",
+                "Historical fiction"
             ],
-            "correctAnswer": "Truth:Actuality, Fiction:Fable, Truth:Veracity, Fiction:Fantasy, Truth:Certainty",
+            "correctAnswer": "Truth:Case study, Fiction:Myth, Truth:Eyewitness account, Truth:Verified record, Fiction:Historical fiction",
             "relatedWords": [
-                "aspect of Truth:Actuality, Fiction:Fable, Truth:Veracity, Fiction:Fantasy, Truth:Certainty",
-                "concept of Truth:Actuality, Fiction:Fable, Truth:Veracity, Fiction:Fantasy, Truth:Certainty",
-                "related to Truth:Actuality, Fiction:Fable, Truth:Veracity, Fiction:Fantasy, Truth:Certainty"
+                "Case study: a detailed examination of a real situation",
+                "Myth: a traditional story, often explaining origins",
+                "Eyewitness account: a report from someone who saw an event",
+                "Verified record: documentation confirmed as accurate",
+                "Historical fiction: invented stories set in real historical periods"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L107_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Picture a publisher deciding how to label a manuscript. Sort into Truth or Fiction.",
             "topicBuckets": [
                 "Truth",
                 "Fiction"
             ],
-            "hint": "Here's a tip: Truth is what really happened, while fiction is a made-up story!",
-            "explanation": "Think of 'Truth' as real, factual statements (fact, reality), and 'Fiction' as invented, imaginary stories (tale, invention)!",
+            "hint": "One label warns readers that real events have been reshaped for storytelling.",
+            "explanation": "'Factual reporting' and 'primary source' both describe material a researcher could rely on. 'Based on a true story' signals that real events have been reshaped for storytelling, 'allegory' describes a story whose real meaning sits beneath the surface, and 'fabricated' means invented and presented falsely.",
             "options": [
-                "Authenticity",
-                "Make-believe",
-                "Genuine-fact",
-                "Novel",
-                "Sincerity"
+                "Factual reporting",
+                "Fabricated",
+                "Primary source",
+                "Allegory",
+                "Based on a true story"
             ],
-            "correctAnswer": "Truth:Authenticity, Fiction:Make-believe, Truth:Genuine-fact, Fiction:Novel, Truth:Sincerity",
+            "correctAnswer": "Truth:Factual reporting, Fiction:Fabricated, Truth:Primary source, Fiction:Allegory, Fiction:Based on a true story",
             "relatedWords": [
-                "aspect of Truth:Authenticity, Fiction:Make-believe, Truth:Genuine-fact, Fiction:Novel, Truth:Sincerity",
-                "concept of Truth:Authenticity, Fiction:Make-believe, Truth:Genuine-fact, Fiction:Novel, Truth:Sincerity",
-                "related to Truth:Authenticity, Fiction:Make-believe, Truth:Genuine-fact, Fiction:Novel, Truth:Sincerity"
+                "Factual reporting: reporting based strictly on verified facts",
+                "Fabricated: invented and presented as real",
+                "Primary source: an original, firsthand record",
+                "Allegory: a story with a hidden symbolic meaning",
+                "Based on a true story: reshaped from real events for storytelling"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L108_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Amateur or Professional.",
             "topicBuckets": [
                 "Amateur",
                 "Professional"
             ],
-            "hint": "Here's a tip: An amateur does something for fun without pay, while a professional does it as a skilled, paid career!",
-            "explanation": "Think of 'Amateur' as someone who does an activity for enjoyment rather than payment (hobbyist, non-expert), and 'Professional' as someone skilled who is paid for their work (expert, career-practitioner)!",
+            "hint": "Think about who does something for love, and who does it for a living.",
+            "explanation": "A hobbyist, a beginner, and 'self-taught' all describe people pursuing something outside paid work. 'Certified' and 'licensed practitioner' both describe formally qualified professionals.",
             "options": [
+                "Licensed practitioner",
+                "Self-taught",
+                "Beginner",
                 "Hobbyist",
-                "Expert",
-                "Non-expert",
-                "Specialist",
-                "Recreational"
+                "Certified"
             ],
-            "correctAnswer": "Amateur:Hobbyist, Professional:Expert, Amateur:Non-expert, Professional:Specialist, Amateur:Recreational",
+            "correctAnswer": "Professional:Licensed practitioner, Amateur:Self-taught, Amateur:Beginner, Amateur:Hobbyist, Professional:Certified",
             "relatedWords": [
-                "aspect of Amateur:Hobbyist, Professional:Expert, Amateur:Non-expert, Professional:Specialist, Amateur:Recreational",
-                "concept of Amateur:Hobbyist, Professional:Expert, Amateur:Non-expert, Professional:Specialist, Amateur:Recreational",
-                "related to Amateur:Hobbyist, Professional:Expert, Amateur:Non-expert, Professional:Specialist, Amateur:Recreational"
+                "Licensed practitioner: someone legally authorised to practise",
+                "Self-taught: having learned without formal training",
+                "Beginner: someone new to an activity",
+                "Hobbyist: someone who does something for enjoyment",
+                "Certified: officially qualified"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L108_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Careful: 'amateurish' judges quality, while 'amateur' only describes status. Sort into Professional or Amateur.",
             "topicBuckets": [
-                "Amateur",
-                "Professional"
+                "Professional",
+                "Amateur"
             ],
-            "hint": "Here's a tip: An amateur does something for fun without pay, while a professional does it as a skilled, paid career!",
-            "explanation": "Think of 'Amateur' as someone who does an activity for enjoyment rather than payment (hobbyist, non-expert), and 'Professional' as someone skilled who is paid for their work (expert, career-practitioner)!",
+            "hint": "One word here is a criticism, not a neutral description.",
+            "explanation": "'Amateurish' criticises poor quality, unlike 'amateur', which simply means unpaid \u2014 a distinction worth holding onto, since many amateurs are highly skilled. 'Unpaid' and 'for the love of it' describe status without judgement. 'Seasoned expert' and 'accredited' both describe established professional standing.",
             "options": [
-                "Weekend-player",
-                "Paid-expert",
-                "Enthusiast",
-                "Career-athlete",
-                "Unpaid-player"
+                "Seasoned expert",
+                "For the love of it",
+                "Amateurish",
+                "Accredited",
+                "Unpaid"
             ],
-            "correctAnswer": "Amateur:Weekend-player, Professional:Paid-expert, Amateur:Enthusiast, Professional:Career-athlete, Amateur:Unpaid-player",
+            "correctAnswer": "Professional:Seasoned expert, Amateur:For the love of it, Amateur:Amateurish, Professional:Accredited, Amateur:Unpaid",
             "relatedWords": [
-                "aspect of Amateur:Weekend-player, Professional:Paid-expert, Amateur:Enthusiast, Professional:Career-athlete, Amateur:Unpaid-player",
-                "concept of Amateur:Weekend-player, Professional:Paid-expert, Amateur:Enthusiast, Professional:Career-athlete, Amateur:Unpaid-player",
-                "related to Amateur:Weekend-player, Professional:Paid-expert, Amateur:Enthusiast, Professional:Career-athlete, Amateur:Unpaid-player"
+                "Seasoned expert: someone highly experienced in a field",
+                "For the love of it: done out of enjoyment rather than payment",
+                "Amateurish: done to a poor standard",
+                "Accredited: officially recognised as meeting a standard",
+                "Unpaid: not receiving payment"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L108_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Picture a review comparing two performances of the same piece. Sort into Amateur or Professional.",
             "topicBuckets": [
                 "Amateur",
                 "Professional"
             ],
-            "hint": "Here's a tip: An amateur does something for fun without pay, while a professional does it as a skilled, paid career!",
-            "explanation": "Think of 'Amateur' as someone who does an activity for enjoyment rather than payment (hobbyist, non-expert), and 'Professional' as someone skilled who is paid for their work (expert, career-practitioner)!",
+            "hint": "Two of these describe work that meets a paying audience's expectations.",
+            "explanation": "'Community production' and 'rough around the edges' both suit amateur work, valued for enthusiasm rather than polish. 'Polished delivery', 'industry standard', and 'commands a fee' all describe professional work, where payment reflects a reliable level of quality.",
             "options": [
-                "Novice-hobbyist",
-                "Trained-specialist",
-                "Casual-player",
-                "Full-time-expert",
-                "Qualified-practitioner"
+                "Community production",
+                "Industry standard",
+                "Commands a fee",
+                "Polished delivery",
+                "Rough around the edges"
             ],
-            "correctAnswer": "Amateur:Novice-hobbyist, Professional:Trained-specialist, Amateur:Casual-player, Professional:Full-time-expert, Professional:Qualified-practitioner",
+            "correctAnswer": "Amateur:Community production, Professional:Industry standard, Professional:Commands a fee, Professional:Polished delivery, Amateur:Rough around the edges",
             "relatedWords": [
-                "aspect of Amateur:Novice-hobbyist, Professional:Trained-specialist, Amateur:Casual-player, Professional:Full-time-expert, Professional:Qualified-practitioner",
-                "concept of Amateur:Novice-hobbyist, Professional:Trained-specialist, Amateur:Casual-player, Professional:Full-time-expert, Professional:Qualified-practitioner",
-                "related to Amateur:Novice-hobbyist, Professional:Trained-specialist, Amateur:Casual-player, Professional:Full-time-expert, Professional:Qualified-practitioner"
+                "Community production: a performance staged by local volunteers",
+                "Industry standard: meeting the level expected professionally",
+                "Commands a fee: able to charge for the work",
+                "Polished delivery: a refined, well-rehearsed performance",
+                "Rough around the edges: unpolished but sincere"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L109_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Reality or Dream.",
             "topicBuckets": [
                 "Reality",
                 "Dream"
             ],
-            "hint": "Here's a tip: Reality is what is actually happening, while a dream is what you imagine while asleep or daydreaming!",
-            "explanation": "Think of 'Reality' as what actually exists (actuality, the present), and 'Dream' as imagined scenarios in sleep or imagination (vision, fantasy)!",
+            "hint": "Think about what you can touch, and what happens only in the mind.",
+            "explanation": "Concrete, tangible, and 'actual' all describe what genuinely exists and can be verified. A vision and a fantasy both exist only in the mind, with fantasy suggesting something imagined because it's desired.",
             "options": [
-                "Actuality",
-                "Vision",
-                "Present-moment",
                 "Fantasy",
-                "Existence"
+                "Actual",
+                "Tangible",
+                "Vision",
+                "Concrete"
             ],
-            "correctAnswer": "Reality:Actuality, Dream:Vision, Reality:Present-moment, Dream:Fantasy, Reality:Existence",
+            "correctAnswer": "Dream:Fantasy, Reality:Actual, Reality:Tangible, Dream:Vision, Reality:Concrete",
             "relatedWords": [
-                "aspect of Reality:Actuality, Dream:Vision, Reality:Present-moment, Dream:Fantasy, Reality:Existence",
-                "concept of Reality:Actuality, Dream:Vision, Reality:Present-moment, Dream:Fantasy, Reality:Existence",
-                "related to Reality:Actuality, Dream:Vision, Reality:Present-moment, Dream:Fantasy, Reality:Existence"
+                "Fantasy: an imagined situation, often a desired one",
+                "Actual: existing in fact",
+                "Tangible: able to be touched or clearly perceived",
+                "Vision: something seen in the imagination",
+                "Concrete: real and specific, not abstract"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L109_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "One dream word describes an idea too perfect to be practical. Sort into Reality or Dream.",
             "topicBuckets": [
                 "Reality",
                 "Dream"
             ],
-            "hint": "Here's a tip: Reality is what is actually happening, while a dream is what you imagine while asleep or daydreaming!",
-            "explanation": "Think of 'Reality' as what actually exists (actuality, the present), and 'Dream' as imagined scenarios in sleep or imagination (vision, fantasy)!",
+            "hint": "Think about what a plan needs to survive contact with the real world.",
+            "explanation": "'Down-to-earth', 'verifiable', and 'practical' all describe things grounded in what's achievable. 'Utopian' describes an idea too perfect to be practical, and 'daydream' describes pleasant imagining detached from present circumstances.",
             "options": [
-                "Real-world",
                 "Daydream",
-                "Genuine-state",
-                "Illusion",
-                "True-situation"
+                "Utopian",
+                "Down-to-earth",
+                "Practical",
+                "Verifiable"
             ],
-            "correctAnswer": "Reality:Real-world, Dream:Daydream, Reality:Genuine-state, Dream:Illusion, Reality:True-situation",
+            "correctAnswer": "Dream:Daydream, Dream:Utopian, Reality:Down-to-earth, Reality:Practical, Reality:Verifiable",
             "relatedWords": [
-                "aspect of Reality:Real-world, Dream:Daydream, Reality:Genuine-state, Dream:Illusion, Reality:True-situation",
-                "concept of Reality:Real-world, Dream:Daydream, Reality:Genuine-state, Dream:Illusion, Reality:True-situation",
-                "related to Reality:Real-world, Dream:Daydream, Reality:Genuine-state, Dream:Illusion, Reality:True-situation"
+                "Daydream: pleasant imagining while awake",
+                "Utopian: idealistic to the point of being impractical",
+                "Down-to-earth: sensible and realistic",
+                "Practical: workable in real conditions",
+                "Verifiable: able to be checked and confirmed"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L109_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Picture an investor listening to two very different pitches. Sort into Reality or Dream.",
             "topicBuckets": [
                 "Reality",
                 "Dream"
             ],
-            "hint": "Here's a tip: Reality is what is actually happening, while a dream is what you imagine while asleep or daydreaming!",
-            "explanation": "Think of 'Reality' as what actually exists (actuality, the present), and 'Dream' as imagined scenarios in sleep or imagination (vision, fantasy)!",
+            "hint": "Two of these suggest hopes unlikely to survive scrutiny.",
+            "explanation": "'Hard evidence' and 'proven track record' both give an investor something solid to assess, and 'bottom line' names the financial reality. 'Pie in the sky' describes hopes with no realistic basis, and 'wishful thinking' describes believing something because you want it to be true.",
             "options": [
-                "Tangible-fact",
-                "Nightmare",
-                "Concrete-truth",
-                "Reverie",
-                "What-is-happening"
+                "Hard evidence",
+                "Bottom line",
+                "Wishful thinking",
+                "Pie in the sky",
+                "Proven track record"
             ],
-            "correctAnswer": "Reality:Tangible-fact, Dream:Nightmare, Reality:Concrete-truth, Dream:Reverie, Reality:What-is-happening",
+            "correctAnswer": "Reality:Hard evidence, Reality:Bottom line, Dream:Wishful thinking, Dream:Pie in the sky, Reality:Proven track record",
             "relatedWords": [
-                "aspect of Reality:Tangible-fact, Dream:Nightmare, Reality:Concrete-truth, Dream:Reverie, Reality:What-is-happening",
-                "concept of Reality:Tangible-fact, Dream:Nightmare, Reality:Concrete-truth, Dream:Reverie, Reality:What-is-happening",
-                "related to Reality:Tangible-fact, Dream:Nightmare, Reality:Concrete-truth, Dream:Reverie, Reality:What-is-happening"
+                "Hard evidence: solid, verifiable proof",
+                "Bottom line: the essential financial reality",
+                "Wishful thinking: believing something because it is desired",
+                "Pie in the sky: a hope with no realistic basis",
+                "Proven track record: a documented history of results"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L110_Q1",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "Sort each word under Matter or Energy.",
             "topicBuckets": [
-                "Energy",
-                "Matter"
+                "Matter",
+                "Energy"
             ],
-            "hint": "Here's a tip: Energy is the ability to do work, like light or heat, while matter is anything that has mass and takes up space!",
-            "explanation": "Think of 'Energy' as the capacity to do work (power, force), and 'Matter' as physical substance with mass (substance, material)!",
+            "hint": "Think about what has weight and takes up space, and what makes things move or change.",
+            "explanation": "Heat, light, and electricity are all forms of energy \u2014 they act on things but have no mass of their own. A solid and a particle are both matter, physical substance occupying space.",
             "options": [
-                "Power",
-                "Substance",
-                "Force",
-                "Material",
-                "Heat"
+                "Heat",
+                "Solid",
+                "Particle",
+                "Electricity",
+                "Light"
             ],
-            "correctAnswer": "Energy:Power, Matter:Substance, Energy:Force, Matter:Material, Energy:Heat",
+            "correctAnswer": "Energy:Heat, Matter:Solid, Matter:Particle, Energy:Electricity, Energy:Light",
             "relatedWords": [
-                "aspect of Energy:Power, Matter:Substance, Energy:Force, Matter:Material, Energy:Heat",
-                "concept of Energy:Power, Matter:Substance, Energy:Force, Matter:Material, Energy:Heat",
-                "related to Energy:Power, Matter:Substance, Energy:Force, Matter:Material, Energy:Heat"
+                "Heat: energy transferred because of temperature difference",
+                "Solid: matter that holds a fixed shape",
+                "Particle: a tiny piece of physical substance",
+                "Electricity: energy carried by moving electric charge",
+                "Light: energy travelling as visible radiation"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L110_Q2",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "One matter word names the measure of how much substance something contains. Sort into Energy or Matter.",
             "topicBuckets": [
                 "Energy",
                 "Matter"
             ],
-            "hint": "Here's a tip: Energy is the ability to do work, like light or heat, while matter is anything that has mass and takes up space!",
-            "explanation": "Think of 'Energy' as the capacity to do work (power, force), and 'Matter' as physical substance with mass (substance, material)!",
+            "hint": "Weight and mass aren't quite the same thing \u2014 one measures substance itself.",
+            "explanation": "Radiation and 'kinetic' both describe energy, with kinetic energy being the energy of motion. Mass measures how much substance something contains, atoms are its building blocks, and 'molecule' names atoms bonded together.",
             "options": [
-                "Kinetic-power",
                 "Mass",
-                "Electricity",
-                "Particle",
-                "Radiance"
+                "Radiation",
+                "Kinetic",
+                "Atom",
+                "Molecule"
             ],
-            "correctAnswer": "Energy:Kinetic-power, Matter:Mass, Energy:Electricity, Matter:Particle, Energy:Radiance",
+            "correctAnswer": "Matter:Mass, Energy:Radiation, Energy:Kinetic, Matter:Atom, Matter:Molecule",
             "relatedWords": [
-                "aspect of Energy:Kinetic-power, Matter:Mass, Energy:Electricity, Matter:Particle, Energy:Radiance",
-                "concept of Energy:Kinetic-power, Matter:Mass, Energy:Electricity, Matter:Particle, Energy:Radiance",
-                "related to Energy:Kinetic-power, Matter:Mass, Energy:Electricity, Matter:Particle, Energy:Radiance"
+                "Mass: a measure of how much substance an object contains",
+                "Radiation: energy emitted as waves or particles",
+                "Kinetic: relating to motion and its energy",
+                "Atom: the basic building block of matter",
+                "Molecule: two or more atoms bonded together"
             ]
         },
         {
             "id": "VOC_TOPICVOCAB_L110_Q3",
             "interactionType": "choice",
-            "instruction": "Sort the words into their correct categories.",
+            "instruction": "These appear in a school science summary. Sort into Energy or Matter.",
             "topicBuckets": [
                 "Energy",
                 "Matter"
             ],
-            "hint": "Here's a tip: Energy is the ability to do work, like light or heat, while matter is anything that has mass and takes up space!",
-            "explanation": "Think of 'Energy' as the capacity to do work (power, force), and 'Matter' as physical substance with mass (substance, material)!",
+            "hint": "Two of these describe what things are made of, rather than what makes them act.",
+            "explanation": "'Power output' and 'stored potential' both describe energy, with potential energy being energy held ready to be released. 'Physical substance' and 'occupies space' both define matter, and 'density' measures how tightly matter is packed.",
             "options": [
-                "Momentum",
-                "Molecule",
-                "Voltage",
-                "Solid-object",
-                "Radiation"
+                "Density",
+                "Power output",
+                "Stored potential",
+                "Occupies space",
+                "Physical substance"
             ],
-            "correctAnswer": "Energy:Momentum, Matter:Molecule, Energy:Voltage, Matter:Solid-object, Energy:Radiation",
+            "correctAnswer": "Matter:Density, Energy:Power output, Energy:Stored potential, Matter:Occupies space, Matter:Physical substance",
             "relatedWords": [
-                "aspect of Energy:Momentum, Matter:Molecule, Energy:Voltage, Matter:Solid-object, Energy:Radiation",
-                "concept of Energy:Momentum, Matter:Molecule, Energy:Voltage, Matter:Solid-object, Energy:Radiation",
-                "related to Energy:Momentum, Matter:Molecule, Energy:Voltage, Matter:Solid-object, Energy:Radiation"
+                "Density: how tightly matter is packed into a space",
+                "Power output: the rate at which energy is delivered",
+                "Stored potential: energy held ready to be released",
+                "Occupies space: takes up physical volume",
+                "Physical substance: material that physically exists"
             ]
         }
     ]

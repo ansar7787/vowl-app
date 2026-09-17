@@ -3,53 +3,347 @@
     "quests": [
         {
             "id": "VOC_WORDFORMATION_L181_Q1",
-            "hint": "Adjective describing someone gradually recovering health after illness. She spent two ____ weeks at her sister's cottage by the lake.",
-            "explanation": "CONVALESCE + -ENT = CONVALESCENT. The suffix -ENT means 'tending to' or 'in the process of', turning the verb CONVALESCE into an adjective.",
+            "hint": "Noun for the way someone understands or interprets something through their senses or mind. Public ____ of the new policy has been mostly negative.",
+            "explanation": "PERCEIVE + -PTION = PERCEPTION. The verb PERCEIVE changes its ending before this suffix: PERCEIVE becomes PERCEP, then + TION = PERCEPTION, following the same pattern you'll now see repeat across several related roots.",
             "interactionType": "choice",
-            "correctAnswer": "CONVALESCENT",
-            "rootWord": "CONVALESCE",
+            "correctAnswer": "PERCEPTION",
+            "rootWord": "PERCEIVE",
             "options": [
-                "-ANT",
-                "-ENT",
-                "-IVE",
-                "-ORY"
+                "-MENT",
+                "-ANCE",
+                "-PTION",
+                "-ABLE"
             ],
             "familyTree": [
-                "CONVALESCE",
-                "CONVALESCENT",
-                "CONVALESCENCE",
-                "CONVALESCING"
+                "PERCEIVE",
+                "PERCEPTION",
+                "PERCEPTIVE",
+                "MISPERCEIVE"
             ],
             "instruction": "Choose the correct answer."
         },
         {
             "id": "VOC_WORDFORMATION_L181_Q2",
-            "hint": "Adjective describing a liquid that produces bubbles, or a personality that is lively and enthusiastic. Her ____ energy lit up every room she entered.",
-            "explanation": "EFFERVESCE + -ENT = EFFERVESCENT. The suffix -ENT means 'tending to', turning the verb EFFERVESCE into an adjective.",
+            "hint": "Adjective describing someone who notices things others might miss. Her ____ comment showed she'd read between the lines of the report.",
+            "explanation": "PERCEIVE + -PTIVE = PERCEPTIVE. Following the same spelling shift as PERCEPTION, -PTIVE here forms an adjective describing sharp insight or awareness.",
             "interactionType": "choice",
-            "correctAnswer": "EFFERVESCENT",
-            "rootWord": "EFFERVESCE",
+            "correctAnswer": "PERCEPTIVE",
+            "rootWord": "PERCEIVE",
             "options": [
-                "-IVE",
-                "-ENT",
+                "-ABLE",
+                "-PTIVE",
                 "-ORY",
-                "-ANT"
+                "-FUL"
             ],
             "familyTree": [
-                "EFFERVESCE",
-                "EFFERVESCENT",
-                "EFFERVESCENCE",
-                "EFFERVESCING"
+                "PERCEIVE",
+                "PERCEPTIVE",
+                "PERCEPTION",
+                "MISPERCEIVE"
             ],
             "instruction": "Choose the correct answer."
         },
         {
             "id": "VOC_WORDFORMATION_L181_Q3",
-            "hint": "Adjective describing someone who accepts something without protest, often passively. His ____ silence was mistaken for agreement.",
-            "explanation": "ACQUIESCE + -ENT = ACQUIESCENT. The suffix -ENT means 'tending to', turning the verb ACQUIESCE into an adjective describing passive acceptance.",
+            "hint": "Verb meaning to understand something incorrectly. Fans ____ the singer's silence as anger, when she was actually just exhausted.",
+            "explanation": "MIS- + PERCEIVE = MISPERCEIVE. This reviews the MIS- prefix, combining it with PERCEIVE to mean 'to understand wrongly'.",
             "interactionType": "choice",
-            "correctAnswer": "ACQUIESCENT",
-            "rootWord": "ACQUIESCE",
+            "correctAnswer": "MISPERCEIVE",
+            "rootWord": "PERCEIVE",
+            "options": [
+                "MIS-",
+                "UN-",
+                "DIS-",
+                "RE-"
+            ],
+            "familyTree": [
+                "PERCEIVE",
+                "MISPERCEIVE",
+                "PERCEPTION",
+                "PERCEPTIVE"
+            ],
+            "instruction": "Choose the correct answer."
+        },
+        {
+            "id": "VOC_WORDFORMATION_L182_Q1",
+            "hint": "Noun for an idea or the moment something begins to exist. The charity grew from a simple ____ into a national organization.",
+            "explanation": "CONCEIVE + -PTION = CONCEPTION. This follows the same -CEIVE to -CEPTION pattern as PERCEPTION: CONCEIVE becomes CONCEP, then + TION = CONCEPTION.",
+            "interactionType": "choice",
+            "correctAnswer": "CONCEPTION",
+            "rootWord": "CONCEIVE",
+            "options": [
+                "-MENT",
+                "-ANCE",
+                "-ABLE",
+                "-PTION"
+            ],
+            "familyTree": [
+                "CONCEIVE",
+                "CONCEPTION",
+                "CONCEPTUAL",
+                "CONCEIVABLE"
+            ],
+            "instruction": "Choose the correct answer."
+        },
+        {
+            "id": "VOC_WORDFORMATION_L182_Q2",
+            "hint": "Adjective describing something related to ideas rather than practical details. The building's ____ design impressed the judges before construction even began.",
+            "explanation": "CONCEPTION + -UAL = CONCEPTUAL. Built on the same base as CONCEPTION, -UAL here forms an adjective describing something rooted in ideas or planning.",
+            "interactionType": "choice",
+            "correctAnswer": "CONCEPTUAL",
+            "rootWord": "CONCEPTION",
+            "options": [
+                "-IVE",
+                "-UAL",
+                "-ARY",
+                "-IC"
+            ],
+            "familyTree": [
+                "CONCEIVE",
+                "CONCEPTUAL",
+                "CONCEPTION",
+                "CONCEIVABLE"
+            ],
+            "instruction": "Choose the correct answer."
+        },
+        {
+            "id": "VOC_WORDFORMATION_L182_Q3",
+            "hint": "Adjective describing something that can be imagined or believed as possible. There's no ____ way to finish the project by tomorrow.",
+            "explanation": "CONCEIVE + -ABLE = CONCEIVABLE. Unlike CONCEPTUAL, which relates to ideas and design, CONCEIVABLE simply means 'able to be imagined as possible'.",
+            "interactionType": "choice",
+            "correctAnswer": "CONCEIVABLE",
+            "rootWord": "CONCEIVE",
+            "options": [
+                "-IBLE",
+                "-IVE",
+                "-ORY",
+                "-ABLE"
+            ],
+            "familyTree": [
+                "CONCEIVE",
+                "CONCEIVABLE",
+                "CONCEPTION",
+                "CONCEPTUAL"
+            ],
+            "instruction": "Choose the correct answer."
+        },
+        {
+            "id": "VOC_WORDFORMATION_L183_Q1",
+            "hint": "Noun for a welcome event, or the way something is received by people. The band's new album got a warm ____ from critics.",
+            "explanation": "RECEIVE + -PTION = RECEPTION. Just like PERCEPTION and CONCEPTION, RECEIVE follows the -CEIVE to -CEPTION pattern: RECEIVE becomes RECEP, then + TION = RECEPTION.",
+            "interactionType": "choice",
+            "correctAnswer": "RECEPTION",
+            "rootWord": "RECEIVE",
+            "options": [
+                "-MENT",
+                "-PTION",
+                "-ANCE",
+                "-ABLE"
+            ],
+            "familyTree": [
+                "RECEIVE",
+                "RECEPTION",
+                "RECEPTIVE",
+                "RECEIPT"
+            ],
+            "instruction": "Choose the correct answer."
+        },
+        {
+            "id": "VOC_WORDFORMATION_L183_Q2",
+            "hint": "Adjective describing someone willing to consider new ideas. The manager was ____ to feedback about the new schedule.",
+            "explanation": "RECEIVE + -PTIVE = RECEPTIVE. Following the same spelling pattern as RECEPTION, -PTIVE here forms an adjective describing openness to new ideas.",
+            "interactionType": "choice",
+            "correctAnswer": "RECEPTIVE",
+            "rootWord": "RECEIVE",
+            "options": [
+                "-ABLE",
+                "-PTIVE",
+                "-ORY",
+                "-FUL"
+            ],
+            "familyTree": [
+                "RECEIVE",
+                "RECEPTIVE",
+                "RECEPTION",
+                "RECEIPT"
+            ],
+            "instruction": "Choose the correct answer."
+        },
+        {
+            "id": "VOC_WORDFORMATION_L183_Q3",
+            "hint": "Noun for a printed slip proving that a payment was made. Keep your ____ in case you need to return the item.",
+            "explanation": "RECEIVE + -T = RECEIPT. This word is a true spelling exception: unlike RECEPTION and RECEPTIVE, RECEIPT keeps a silent P and drops the usual -CEPTION pattern entirely - it's worth memorizing on its own.",
+            "interactionType": "choice",
+            "correctAnswer": "RECEIPT",
+            "rootWord": "RECEIVE",
+            "options": [
+                "-T",
+                "-PTION",
+                "-MENT",
+                "-AL"
+            ],
+            "familyTree": [
+                "RECEIVE",
+                "RECEIPT",
+                "RECEPTION",
+                "RECEPTIVE"
+            ],
+            "instruction": "Choose the correct answer."
+        },
+        {
+            "id": "VOC_WORDFORMATION_L184_Q1",
+            "hint": "Noun for an explanation of the meaning of something, such as a text or event. Different critics offered very different ____ of the ending.",
+            "explanation": "INTERPRET + -ATION = INTERPRETATION. Adding -ATION to the verb INTERPRET forms a noun naming the explanation given for something's meaning.",
+            "interactionType": "choice",
+            "correctAnswer": "INTERPRETATION",
+            "rootWord": "INTERPRET",
+            "options": [
+                "-MENT",
+                "-ATION",
+                "-ANCE",
+                "-ERY"
+            ],
+            "familyTree": [
+                "INTERPRET",
+                "INTERPRETATION",
+                "INTERPRETIVE",
+                "MISINTERPRET"
+            ],
+            "instruction": "Choose the correct answer."
+        },
+        {
+            "id": "VOC_WORDFORMATION_L184_Q2",
+            "hint": "Adjective describing something meant to explain the meaning of something else. The museum added ____ signs next to each painting.",
+            "explanation": "INTERPRET + -IVE = INTERPRETIVE. Built on the same base as INTERPRETATION, -IVE here forms an adjective describing something that offers explanation.",
+            "interactionType": "choice",
+            "correctAnswer": "INTERPRETIVE",
+            "rootWord": "INTERPRET",
+            "options": [
+                "-ABLE",
+                "-ORY",
+                "-IVE",
+                "-ANT"
+            ],
+            "familyTree": [
+                "INTERPRET",
+                "INTERPRETIVE",
+                "INTERPRETATION",
+                "MISINTERPRET"
+            ],
+            "instruction": "Choose the correct answer."
+        },
+        {
+            "id": "VOC_WORDFORMATION_L184_Q3",
+            "hint": "Verb meaning to understand something incorrectly. He ____ her silence as agreement, but she was just thinking it over.",
+            "explanation": "MIS- + INTERPRET = MISINTERPRET. This reviews the MIS- prefix once more, combining with INTERPRET to mean 'to explain or understand wrongly'.",
+            "interactionType": "choice",
+            "correctAnswer": "MISINTERPRET",
+            "rootWord": "INTERPRET",
+            "options": [
+                "UN-",
+                "DIS-",
+                "RE-",
+                "MIS-"
+            ],
+            "familyTree": [
+                "INTERPRET",
+                "MISINTERPRET",
+                "INTERPRETATION",
+                "INTERPRETIVE"
+            ],
+            "instruction": "Choose the correct answer."
+        },
+        {
+            "id": "VOC_WORDFORMATION_L185_Q1",
+            "hint": "Noun for a confident statement presented as fact. The company's ____ that the product was safe turned out to be false.",
+            "explanation": "ASSERT + -ION = ASSERTION. Adding -ION to the verb ASSERT forms a noun naming the confident claim itself.",
+            "interactionType": "choice",
+            "correctAnswer": "ASSERTION",
+            "rootWord": "ASSERT",
+            "options": [
+                "-ION",
+                "-MENT",
+                "-ANCE",
+                "-ERY"
+            ],
+            "familyTree": [
+                "ASSERT",
+                "ASSERTION",
+                "ASSERTIVE",
+                "ASSERTIVELY"
+            ],
+            "instruction": "Choose the correct answer."
+        },
+        {
+            "id": "VOC_WORDFORMATION_L185_Q2",
+            "hint": "Adjective describing someone who confidently states their needs and opinions. Being more ____ at work helped her get the raise she deserved.",
+            "explanation": "ASSERT + -IVE = ASSERTIVE. Adding -IVE to ASSERT forms an adjective describing confident, direct communication.",
+            "interactionType": "choice",
+            "correctAnswer": "ASSERTIVE",
+            "rootWord": "ASSERT",
+            "options": [
+                "-ABLE",
+                "-ORY",
+                "-IVE",
+                "-ANT"
+            ],
+            "familyTree": [
+                "ASSERT",
+                "ASSERTIVE",
+                "ASSERTION",
+                "ASSERTIVELY"
+            ],
+            "instruction": "Choose the correct answer."
+        },
+        {
+            "id": "VOC_WORDFORMATION_L185_Q3",
+            "hint": "Adverb describing an action carried out with confidence and directness. She ____ told her landlord about the broken heater.",
+            "explanation": "ASSERTIVE + -LY = ASSERTIVELY. Adding -LY to the adjective ASSERTIVE completes the family from ASSERT and ASSERTION.",
+            "interactionType": "choice",
+            "correctAnswer": "ASSERTIVELY",
+            "rootWord": "ASSERTIVE",
+            "options": [
+                "-LY",
+                "-NESS",
+                "-ISH",
+                "-WARD"
+            ],
+            "familyTree": [
+                "ASSERT",
+                "ASSERTIVELY",
+                "ASSERTIVE",
+                "ASSERTION"
+            ],
+            "instruction": "Choose the correct answer."
+        },
+        {
+            "id": "VOC_WORDFORMATION_L186_Q1",
+            "hint": "Noun for the basic laws that establish how a country or organization is governed. The court ruled that the new law violated the ____.",
+            "explanation": "CONSTITUTE + -ION = CONSTITUTION. Dropping the silent E of CONSTITUTE before -ION forms a noun naming either the founding laws of a country or the way something is composed.",
+            "interactionType": "choice",
+            "correctAnswer": "CONSTITUTION",
+            "rootWord": "CONSTITUTE",
+            "options": [
+                "-ION",
+                "-MENT",
+                "-ANCE",
+                "-ERY"
+            ],
+            "familyTree": [
+                "CONSTITUTE",
+                "CONSTITUTION",
+                "CONSTITUENT",
+                "UNCONSTITUTIONAL"
+            ],
+            "instruction": "Choose the correct answer."
+        },
+        {
+            "id": "VOC_WORDFORMATION_L186_Q2",
+            "hint": "Noun for a voter represented by an elected official, or a basic part of a whole. The senator held a town hall to hear from her ____.",
+            "explanation": "CONSTITUTE + -ENT = CONSTITUENT. This word has two related senses built on the same root: a component part of something, or specifically a voter in a representative's district.",
+            "interactionType": "choice",
+            "correctAnswer": "CONSTITUENT",
+            "rootWord": "CONSTITUTE",
             "options": [
                 "-ANT",
                 "-IVE",
@@ -57,577 +351,283 @@
                 "-ENT"
             ],
             "familyTree": [
-                "ACQUIESCE",
-                "ACQUIESCENT",
-                "ACQUIESCENCE",
-                "ACQUIESCED"
-            ],
-            "instruction": "Choose the correct answer."
-        },
-        {
-            "id": "VOC_WORDFORMATION_L182_Q1",
-            "hint": "Noun for a proposed explanation made on limited evidence, to be tested further. The researchers designed an experiment to test their ____.",
-            "explanation": "HYPOTHESIZE + -IS = HYPOTHESIS. The suffix -IS turns the verb HYPOTHESIZE into a noun naming that proposed explanation.",
-            "interactionType": "choice",
-            "correctAnswer": "HYPOTHESIS",
-            "rootWord": "HYPOTHESIZE",
-            "options": [
-                "-ATION",
-                "-IS",
-                "-ITY",
-                "-ISM"
-            ],
-            "familyTree": [
-                "HYPOTHESIZE",
-                "HYPOTHESIS",
-                "HYPOTHETICAL",
-                "HYPOTHESIZED"
-            ],
-            "instruction": "Choose the correct answer."
-        },
-        {
-            "id": "VOC_WORDFORMATION_L182_Q2",
-            "hint": "Noun for the combination of separate elements to form a coherent whole. The essay offers a compelling ____ of two opposing theories.",
-            "explanation": "SYNTHESIZE + -IS = SYNTHESIS. The suffix -IS turns the verb SYNTHESIZE into a noun naming that combined whole.",
-            "interactionType": "choice",
-            "correctAnswer": "SYNTHESIS",
-            "rootWord": "SYNTHESIZE",
-            "options": [
-                "-IS",
-                "-ATION",
-                "-ITY",
-                "-ISM"
-            ],
-            "familyTree": [
-                "SYNTHESIZE",
-                "SYNTHESIS",
-                "SYNTHETIC",
-                "SYNTHESIZED"
-            ],
-            "instruction": "Choose the correct answer."
-        },
-        {
-            "id": "VOC_WORDFORMATION_L182_Q3",
-            "hint": "Noun for a detailed examination of the elements or structure of something. Her ____ of the data revealed a pattern no one had noticed before.",
-            "explanation": "ANALYZE + -SIS = ANALYSIS. The suffix -SIS turns the verb ANALYZE into a noun naming that detailed examination.",
-            "interactionType": "choice",
-            "correctAnswer": "ANALYSIS",
-            "rootWord": "ANALYZE",
-            "options": [
-                "-ATION",
-                "-MENT",
-                "-ISM",
-                "-SIS"
-            ],
-            "familyTree": [
-                "ANALYZE",
-                "ANALYSIS",
-                "ANALYTICAL",
-                "ANALYST"
-            ],
-            "instruction": "Choose the correct answer."
-        },
-        {
-            "id": "VOC_WORDFORMATION_L183_Q1",
-            "hint": "Adjective or noun relating to Japan, its people, or its language. The restaurant specializes in traditional ____ cuisine.",
-            "explanation": "JAPAN + -ESE = JAPANESE. The suffix -ESE means 'relating to a nation or its language', turning the proper noun JAPAN into an adjective or noun.",
-            "interactionType": "choice",
-            "correctAnswer": "JAPANESE",
-            "rootWord": "JAPAN",
-            "options": [
-                "-IC",
-                "-ESE",
-                "-IAN",
-                "-ISH"
-            ],
-            "familyTree": [
-                "JAPAN",
-                "JAPANESE",
-                "JAPANOLOGY",
-                "JAPANOPHILE"
-            ],
-            "instruction": "Choose the correct answer."
-        },
-        {
-            "id": "VOC_WORDFORMATION_L183_Q2",
-            "hint": "Adjective or noun relating to Vietnam, its people, or its language. She grew up speaking ____ at home and English at school.",
-            "explanation": "VIETNAM + -ESE = VIETNAMESE. The suffix -ESE means 'relating to a nation or its language', turning the proper noun VIETNAM into an adjective or noun.",
-            "interactionType": "choice",
-            "correctAnswer": "VIETNAMESE",
-            "rootWord": "VIETNAM",
-            "options": [
-                "-ISH",
-                "-ESE",
-                "-IAN",
-                "-IC"
-            ],
-            "familyTree": [
-                "VIETNAM",
-                "VIETNAMESE",
-                "INDOCHINA",
-                "HANOI"
-            ],
-            "instruction": "Choose the correct answer."
-        },
-        {
-            "id": "VOC_WORDFORMATION_L183_Q3",
-            "hint": "Noun for the complex, technical language used by lawyers, often hard for ordinary people to understand. The contract was so full of ____ that she hired a lawyer just to explain it.",
-            "explanation": "LEGAL + -ESE = LEGALESE. The suffix -ESE can also mean 'the characteristic jargon of', turning the adjective LEGAL into a noun naming that specialized language.",
-            "interactionType": "choice",
-            "correctAnswer": "LEGALESE",
-            "rootWord": "LEGAL",
-            "options": [
-                "-ARY",
-                "-ESE",
-                "-ORY",
-                "-ISH"
-            ],
-            "familyTree": [
-                "LEGAL",
-                "LEGALESE",
-                "LEGALLY",
-                "LEGALITY"
-            ],
-            "instruction": "Choose the correct answer."
-        },
-        {
-            "id": "VOC_WORDFORMATION_L184_Q1",
-            "hint": "Adjective describing something without limits or end. Mathematicians grapple with the strange properties of ____ sets.",
-            "explanation": "IN- + FINITE = INFINITE. The prefix IN- means 'not', reversing the meaning of FINITE.",
-            "interactionType": "choice",
-            "correctAnswer": "INFINITE",
-            "rootWord": "FINITE",
-            "options": [
-                "DIS-",
-                "UN-",
-                "IN-",
-                "A-"
-            ],
-            "familyTree": [
-                "FINITE",
-                "INFINITE",
-                "INFINITY",
-                "FINITELY"
-            ],
-            "instruction": "Choose the correct answer."
-        },
-        {
-            "id": "VOC_WORDFORMATION_L184_Q2",
-            "hint": "Adjective describing something that cannot be touched or precisely defined, like a feeling or quality. Company culture is an ____ asset, but it drives real business outcomes.",
-            "explanation": "IN- + TANGIBLE = INTANGIBLE. The prefix IN- means 'not', reversing the meaning of TANGIBLE.",
-            "interactionType": "choice",
-            "correctAnswer": "INTANGIBLE",
-            "rootWord": "TANGIBLE",
-            "options": [
-                "NON-",
-                "A-",
-                "UN-",
-                "IN-"
-            ],
-            "familyTree": [
-                "TANGIBLE",
-                "INTANGIBLE",
-                "TANGIBILITY",
-                "TANGIBLY"
-            ],
-            "instruction": "Choose the correct answer."
-        },
-        {
-            "id": "VOC_WORDFORMATION_L184_Q3",
-            "hint": "Adjective describing something that can easily catch fire. Warning labels mark the barrels as highly ____.",
-            "explanation": "IN- + FLAMMABLE = INFLAMMABLE. Confusingly, the prefix IN- here acts as an intensifier rather than a negative, so INFLAMMABLE means the same as FLAMMABLE: capable of burning.",
-            "interactionType": "choice",
-            "correctAnswer": "INFLAMMABLE",
-            "rootWord": "FLAMMABLE",
-            "options": [
-                "A-",
-                "IN-",
-                "UN-",
-                "DIS-"
-            ],
-            "familyTree": [
-                "FLAMMABLE",
-                "INFLAMMABLE",
-                "FLAMMABILITY",
-                "NONFLAMMABLE"
-            ],
-            "instruction": "Choose the correct answer."
-        },
-        {
-            "id": "VOC_WORDFORMATION_L185_Q1",
-            "hint": "Verb meaning to exist or occur before something else in time. The ruins ____ the arrival of the first European explorers by centuries.",
-            "explanation": "PRE- + DATE = PREDATE. The prefix PRE- means 'before', changing DATE to mean coming earlier in time.",
-            "interactionType": "choice",
-            "correctAnswer": "PREDATE",
-            "rootWord": "DATE",
-            "options": [
-                "RETRO-",
-                "SUB-",
-                "CO-",
-                "PRE-"
-            ],
-            "familyTree": [
-                "DATE",
-                "PREDATE",
-                "DATED",
-                "UPDATE"
-            ],
-            "instruction": "Choose the correct answer."
-        },
-        {
-            "id": "VOC_WORDFORMATION_L185_Q2",
-            "hint": "Noun for something required beforehand as a necessary condition. Organic chemistry is a ____ for admission to the pharmacy program.",
-            "explanation": "PRE- + REQUISITE = PREREQUISITE. The prefix PRE- means 'before', changing REQUISITE to describe a requirement that must be met first.",
-            "interactionType": "choice",
-            "correctAnswer": "PREREQUISITE",
-            "rootWord": "REQUISITE",
-            "options": [
-                "ANTE-",
-                "POST-",
-                "RETRO-",
-                "PRE-"
-            ],
-            "familyTree": [
-                "REQUISITE",
-                "PREREQUISITE",
-                "REQUISITION",
-                "REQUIRED"
-            ],
-            "instruction": "Choose the correct answer."
-        },
-        {
-            "id": "VOC_WORDFORMATION_L185_Q3",
-            "hint": "Adjective describing someone inclined toward a particular condition or behavior beforehand. Genetics may leave some people ____ to certain illnesses.",
-            "explanation": "PRE- + DISPOSED = PREDISPOSED. The prefix PRE- means 'before' or 'in advance', changing DISPOSED to describe an inclination that exists ahead of time.",
-            "interactionType": "choice",
-            "correctAnswer": "PREDISPOSED",
-            "rootWord": "DISPOSED",
-            "options": [
-                "POST-",
-                "PRE-",
-                "ANTE-",
-                "CO-"
-            ],
-            "familyTree": [
-                "DISPOSED",
-                "PREDISPOSED",
-                "PREDISPOSITION",
-                "DISPOSITION"
-            ],
-            "instruction": "Choose the correct answer."
-        },
-        {
-            "id": "VOC_WORDFORMATION_L186_Q1",
-            "hint": "Adjective describing someone who thinks primarily about themselves, unable to see other perspectives. His ____ worldview made collaboration nearly impossible.",
-            "explanation": "EGO + -CENTRIC = EGOCENTRIC. The suffix -CENTRIC means 'centered on', turning the noun EGO into an adjective describing self-focused thinking.",
-            "interactionType": "choice",
-            "correctAnswer": "EGOCENTRIC",
-            "rootWord": "EGO",
-            "options": [
-                "-PHOBIC",
-                "-TROPIC",
-                "-MANIC",
-                "-CENTRIC"
-            ],
-            "familyTree": [
-                "EGO",
-                "EGOCENTRIC",
-                "EGOTISM",
-                "EGOTISTICAL"
-            ],
-            "instruction": "Choose the correct answer."
-        },
-        {
-            "id": "VOC_WORDFORMATION_L186_Q2",
-            "hint": "Adjective describing a business approach that prioritizes the needs of customers above all else. The startup built its entire strategy around a ____ philosophy.",
-            "explanation": "CUSTOMER + -CENTRIC = CUSTOMER-CENTRIC. The suffix -CENTRIC means 'centered on', turning the noun CUSTOMER into an adjective describing that customer-focused approach.",
-            "interactionType": "choice",
-            "correctAnswer": "CUSTOMER-CENTRIC",
-            "rootWord": "CUSTOMER",
-            "options": [
-                "-PHOBIC",
-                "-ISTIC",
-                "-CENTRIC",
-                "-MANIA"
-            ],
-            "familyTree": [
-                "CUSTOMER",
-                "CUSTOMER-CENTRIC",
-                "CUSTOMERS",
-                "CUSTOMIZE"
+                "CONSTITUTE",
+                "CONSTITUENT",
+                "CONSTITUTION",
+                "UNCONSTITUTIONAL"
             ],
             "instruction": "Choose the correct answer."
         },
         {
             "id": "VOC_WORDFORMATION_L186_Q3",
-            "hint": "Adjective describing the tendency to judge other cultures by the standards of one's own. The textbook was criticized for its ____ portrayal of world history.",
-            "explanation": "ETHNO- + -CENTRIC = ETHNOCENTRIC. The combining form ETHNO- relates to ethnic groups, and the suffix -CENTRIC means 'centered on', together describing that culturally biased viewpoint.",
+            "hint": "Adjective describing a law or action that violates a country's basic legal framework. The judge declared the travel ban ____.",
+            "explanation": "UN- + CONSTITUTIONAL = UNCONSTITUTIONAL. This reviews the UN- prefix, here reversing CONSTITUTIONAL to describe something that breaks the founding laws of a country.",
             "interactionType": "choice",
-            "correctAnswer": "ETHNOCENTRIC",
-            "rootWord": "ETHNO",
+            "correctAnswer": "UNCONSTITUTIONAL",
+            "rootWord": "CONSTITUTIONAL",
             "options": [
-                "-CENTRIC",
-                "-TROPIC",
-                "-MANIC",
-                "-ISTIC"
+                "DIS-",
+                "IN-",
+                "NON-",
+                "UN-"
             ],
             "familyTree": [
-                "ETHNOCENTRIC",
-                "ETHNOGRAPHY",
-                "ETHNICITY",
-                "ETHNIC"
+                "CONSTITUTE",
+                "UNCONSTITUTIONAL",
+                "CONSTITUTION",
+                "CONSTITUENT"
             ],
             "instruction": "Choose the correct answer."
         },
         {
             "id": "VOC_WORDFORMATION_L187_Q1",
-            "hint": "Adjective or noun describing something with a human-like form, especially a robot. The film's ____ robot could mimic human facial expressions perfectly.",
-            "explanation": "HUMAN + -OID = HUMANOID. The suffix -OID means 'resembling', turning the noun HUMAN into an adjective or noun.",
+            "hint": "Noun for the act of crediting something to a particular cause or source. The journalist double-checked the ____ of every quote before publishing.",
+            "explanation": "ATTRIBUTE + -ION = ATTRIBUTION. Adding -ION to the verb ATTRIBUTE forms a noun naming the act of assigning something to its source.",
             "interactionType": "choice",
-            "correctAnswer": "HUMANOID",
-            "rootWord": "HUMAN",
+            "correctAnswer": "ATTRIBUTION",
+            "rootWord": "ATTRIBUTE",
             "options": [
-                "-IC",
-                "-OID",
-                "-ISH",
-                "-ESQUE"
+                "-MENT",
+                "-ION",
+                "-ANCE",
+                "-ERY"
             ],
             "familyTree": [
-                "HUMAN",
-                "HUMANOID",
-                "HUMANITY",
-                "HUMANE"
+                "ATTRIBUTE",
+                "ATTRIBUTION",
+                "ATTRIBUTABLE",
+                "MISATTRIBUTE"
             ],
             "instruction": "Choose the correct answer."
         },
         {
             "id": "VOC_WORDFORMATION_L187_Q2",
-            "hint": "Noun for a small rocky body orbiting the sun, smaller than a planet. Scientists tracked the ____ as it passed within a million miles of Earth.",
-            "explanation": "ASTER + -OID = ASTEROID. The root ASTER means 'star', and the suffix -OID means 'resembling', together naming that star-like rocky object.",
+            "hint": "Adjective describing something that can be traced back to a specific cause. The delays were largely ____ to the shortage of parts.",
+            "explanation": "ATTRIBUTE + -ABLE = ATTRIBUTABLE. Adding -ABLE to ATTRIBUTE forms an adjective describing something that can be linked to a cause.",
             "interactionType": "choice",
-            "correctAnswer": "ASTEROID",
-            "rootWord": "ASTER",
+            "correctAnswer": "ATTRIBUTABLE",
+            "rootWord": "ATTRIBUTE",
             "options": [
-                "-AL",
-                "-IC",
-                "-ISH",
-                "-OID"
+                "-IBLE",
+                "-IVE",
+                "-ABLE",
+                "-ORY"
             ],
             "familyTree": [
-                "ASTER",
-                "ASTEROID",
-                "ASTERISK",
-                "ASTRAL"
+                "ATTRIBUTE",
+                "ATTRIBUTABLE",
+                "ATTRIBUTION",
+                "MISATTRIBUTE"
             ],
             "instruction": "Choose the correct answer."
         },
         {
             "id": "VOC_WORDFORMATION_L187_Q3",
-            "hint": "Noun for a small, often trivial piece of information, sometimes of questionable accuracy. The trivia app is full of quirky ____s about animal behavior.",
-            "explanation": "FACT + -OID = FACTOID. The suffix -OID means 'resembling', turning the noun FACT into a noun naming something fact-like but often unverified.",
+            "hint": "Verb meaning to wrongly credit something to the wrong person or cause. Many people ____ the quote to Einstein, but he never said it.",
+            "explanation": "MIS- + ATTRIBUTE = MISATTRIBUTE. This reviews the MIS- prefix, combining with ATTRIBUTE to mean 'to credit to the wrong source'.",
             "interactionType": "choice",
-            "correctAnswer": "FACTOID",
-            "rootWord": "FACT",
+            "correctAnswer": "MISATTRIBUTE",
+            "rootWord": "ATTRIBUTE",
             "options": [
-                "-URE",
-                "-OID",
-                "-IC",
-                "-ISH"
+                "MIS-",
+                "UN-",
+                "DIS-",
+                "RE-"
             ],
             "familyTree": [
-                "FACT",
-                "FACTOID",
-                "FACTUAL",
-                "FACTS"
+                "ATTRIBUTE",
+                "MISATTRIBUTE",
+                "ATTRIBUTION",
+                "ATTRIBUTABLE"
             ],
             "instruction": "Choose the correct answer."
         },
         {
             "id": "VOC_WORDFORMATION_L188_Q1",
-            "hint": "Noun for a person trained to give emergency medical treatment, often as part of an ambulance crew. The ____ stabilized the patient before the ambulance reached the hospital.",
-            "explanation": "PARA- + MEDIC = PARAMEDIC. The prefix PARA- means 'alongside' or 'auxiliary to', changing MEDIC to describe emergency medical support outside a hospital.",
+            "hint": "Noun for a statement that directly conflicts with another statement. The witness's story was full of ____ when compared to her first report.",
+            "explanation": "CONTRADICT + -ION = CONTRADICTION. Adding -ION to the verb CONTRADICT forms a noun naming a statement that clashes with another.",
             "interactionType": "choice",
-            "correctAnswer": "PARAMEDIC",
-            "rootWord": "MEDIC",
+            "correctAnswer": "CONTRADICTION",
+            "rootWord": "CONTRADICT",
             "options": [
-                "ANTI-",
-                "SUB-",
-                "SEMI-",
-                "PARA-"
+                "-MENT",
+                "-ANCE",
+                "-ION",
+                "-ERY"
             ],
             "familyTree": [
-                "MEDIC",
-                "PARAMEDIC",
-                "MEDICAL",
-                "MEDICATE"
+                "CONTRADICT",
+                "CONTRADICTION",
+                "CONTRADICTORY",
+                "SELF-CONTRADICTORY"
             ],
             "instruction": "Choose the correct answer."
         },
         {
             "id": "VOC_WORDFORMATION_L188_Q2",
-            "hint": "Adjective describing a group organized like a military force but not officially part of a country's armed forces. The rebels formed a ____ unit to defend the border villages.",
-            "explanation": "PARA- + MILITARY = PARAMILITARY. The prefix PARA- means 'alongside' or 'similar to', changing MILITARY to describe a force operating outside the official armed services.",
+            "hint": "Adjective describing two statements or facts that don't fit together logically. The two witnesses gave ____ accounts of what happened.",
+            "explanation": "CONTRADICT + -ORY = CONTRADICTORY. Adding -ORY to CONTRADICT forms an adjective describing ideas or statements that clash with each other.",
             "interactionType": "choice",
-            "correctAnswer": "PARAMILITARY",
-            "rootWord": "MILITARY",
+            "correctAnswer": "CONTRADICTORY",
+            "rootWord": "CONTRADICT",
             "options": [
-                "CO-",
-                "PARA-",
-                "SUB-",
-                "SEMI-"
+                "-ORY",
+                "-IVE",
+                "-ABLE",
+                "-ANT"
             ],
             "familyTree": [
-                "MILITARY",
-                "PARAMILITARY",
-                "MILITARIZE",
-                "MILITANT"
+                "CONTRADICT",
+                "CONTRADICTORY",
+                "CONTRADICTION",
+                "SELF-CONTRADICTORY"
             ],
             "instruction": "Choose the correct answer."
         },
         {
             "id": "VOC_WORDFORMATION_L188_Q3",
-            "hint": "Noun for data that describes other data, such as a file's creation date or author. Investigators used the photo's ____ to determine exactly when it was taken.",
-            "explanation": "META- + DATA = METADATA. The prefix META- means 'about' or 'beyond', changing DATA to describe information about other information.",
+            "hint": "Adjective describing an argument whose own parts don't agree with each other. Critics called the policy ____, since it promised both lower taxes and more spending.",
+            "explanation": "SELF- + CONTRADICTORY = SELF-CONTRADICTORY. This reviews the SELF- combining form from an earlier level, here describing something that contradicts itself.",
             "interactionType": "choice",
-            "correctAnswer": "METADATA",
-            "rootWord": "DATA",
+            "correctAnswer": "SELF-CONTRADICTORY",
+            "rootWord": "CONTRADICTORY",
             "options": [
-                "META-",
-                "MULTI-",
-                "SUB-",
-                "PARA-"
+                "NON-",
+                "UN-",
+                "PRE-",
+                "SELF-"
             ],
             "familyTree": [
-                "DATA",
-                "METADATA",
-                "DATABASE",
-                "DATUM"
+                "CONTRADICT",
+                "SELF-CONTRADICTORY",
+                "CONTRADICTION",
+                "CONTRADICTORY"
             ],
             "instruction": "Choose the correct answer."
         },
         {
             "id": "VOC_WORDFORMATION_L189_Q1",
-            "hint": "Noun for the science of soil management and crop production. Her degree in ____ prepared her to advise farmers on sustainable practices.",
-            "explanation": "AGRO- + -NOMY = AGRONOMY. The combining form AGRO- means 'field' or 'agriculture', and the suffix -NOMY means 'the science or management of', together naming that agricultural science.",
+            "hint": "Noun for a statement about what will happen in the future. Almost none of the expert ____ about the election came true.",
+            "explanation": "PREDICT + -ION = PREDICTION. Adding -ION to the verb PREDICT forms a noun naming the forecast itself, following the same -DICT family pattern as CONTRADICTION.",
             "interactionType": "choice",
-            "correctAnswer": "AGRONOMY",
-            "rootWord": "AGRO",
+            "correctAnswer": "PREDICTION",
+            "rootWord": "PREDICT",
             "options": [
-                "-PHONY",
-                "-GRAPHY",
-                "-METRY",
-                "-NOMY"
+                "-MENT",
+                "-ANCE",
+                "-ERY",
+                "-ION"
             ],
             "familyTree": [
-                "AGRONOMY",
-                "AGRONOMIST",
-                "AGRICULTURE",
-                "AGRARIAN"
+                "PREDICT",
+                "PREDICTION",
+                "PREDICTABLE",
+                "UNPREDICTABLE"
             ],
             "instruction": "Choose the correct answer."
         },
         {
             "id": "VOC_WORDFORMATION_L189_Q2",
-            "hint": "Noun for the scientific study of celestial objects and phenomena. She's dreamed of studying ____ since she first saw Saturn's rings through a telescope.",
-            "explanation": "ASTRO- + -NOMY = ASTRONOMY. The combining form ASTRO- means 'star', and the suffix -NOMY means 'the science of', together naming that study of the cosmos.",
+            "hint": "Adjective describing something that can be known in advance. The ending of the movie was disappointingly ____.",
+            "explanation": "PREDICT + -ABLE = PREDICTABLE. Adding -ABLE to PREDICT forms an adjective describing something that follows an expected pattern.",
             "interactionType": "choice",
-            "correctAnswer": "ASTRONOMY",
-            "rootWord": "ASTRO",
+            "correctAnswer": "PREDICTABLE",
+            "rootWord": "PREDICT",
             "options": [
-                "-TROPY",
-                "-NOMY",
-                "-PHONY",
-                "-GENY"
+                "-IBLE",
+                "-ABLE",
+                "-IVE",
+                "-ORY"
             ],
             "familyTree": [
-                "ASTRONOMY",
-                "ASTRONOMER",
-                "ASTRONAUT",
-                "ASTROLOGY"
+                "PREDICT",
+                "PREDICTABLE",
+                "PREDICTION",
+                "UNPREDICTABLE"
             ],
             "instruction": "Choose the correct answer."
         },
         {
             "id": "VOC_WORDFORMATION_L189_Q3",
-            "hint": "Noun for the art and science of good eating, or the culinary practices of a particular region. The city has become a destination for lovers of molecular ____.",
-            "explanation": "GASTRO- + -NOMY = GASTRONOMY. The combining form GASTRO- relates to the stomach or food, and the suffix -NOMY means 'the art or science of', together naming that culinary discipline.",
+            "hint": "Adjective describing something impossible to know in advance. Mountain weather can be dangerously ____.",
+            "explanation": "UN- + PREDICTABLE = UNPREDICTABLE. This reviews the UN- prefix, reversing PREDICTABLE to describe something that can't be foreseen, closing this family.",
             "interactionType": "choice",
-            "correctAnswer": "GASTRONOMY",
-            "rootWord": "GASTRO",
+            "correctAnswer": "UNPREDICTABLE",
+            "rootWord": "PREDICTABLE",
             "options": [
-                "-METRY",
-                "-NOMY",
-                "-LOGY",
-                "-GRAPHY"
+                "DIS-",
+                "IN-",
+                "UN-",
+                "NON-"
             ],
             "familyTree": [
-                "GASTRONOMY",
-                "GASTRONOMIC",
-                "GASTRIC",
-                "GASTROENTEROLOGY"
+                "PREDICT",
+                "UNPREDICTABLE",
+                "PREDICTABLE",
+                "PREDICTION"
             ],
             "instruction": "Choose the correct answer."
         },
         {
             "id": "VOC_WORDFORMATION_L190_Q1",
-            "hint": "Adjective describing something intended to provoke a reaction, whether thoughtful, sexual, or angry. The artist's ____ installation sparked heated debate online.",
-            "explanation": "PROVOKE + -CATIVE = PROVOCATIVE. The suffix -CATIVE means 'tending to', turning the verb PROVOKE into an adjective.",
+            "hint": "Noun for a strong commitment of time and energy to a cause or purpose. Her years of ____ to the clinic finally earned her a national award.",
+            "explanation": "DEDICATE + -ION = DEDICATION. Dropping the silent E of DEDICATE before -ION forms a noun naming that strong commitment.",
             "interactionType": "choice",
-            "correctAnswer": "PROVOCATIVE",
-            "rootWord": "PROVOKE",
+            "correctAnswer": "DEDICATION",
+            "rootWord": "DEDICATE",
             "options": [
-                "-ORY",
-                "-ANT",
-                "-CATIVE",
-                "-IBLE"
+                "-MENT",
+                "-ION",
+                "-ANCE",
+                "-ERY"
             ],
             "familyTree": [
-                "PROVOKE",
-                "PROVOCATIVE",
-                "PROVOCATION",
-                "PROVOKED"
+                "DEDICATE",
+                "DEDICATION",
+                "DEDICATED",
+                "COMMITMENT"
             ],
             "instruction": "Choose the correct answer."
         },
         {
             "id": "VOC_WORDFORMATION_L190_Q2",
-            "hint": "Adjective describing something that brings strong images or feelings to mind. The song's ____ lyrics transported her back to her childhood summers.",
-            "explanation": "EVOKE + -CATIVE = EVOCATIVE. The suffix -CATIVE means 'tending to', turning the verb EVOKE into an adjective.",
+            "hint": "Adjective describing someone who devotes a lot of time and effort to something. Every player on the team is completely ____ to winning the title.",
+            "explanation": "DEDICATE + -D = DEDICATED. Adding -D to DEDICATE forms an adjective describing strong personal commitment, built on the same root as DEDICATION.",
             "interactionType": "choice",
-            "correctAnswer": "EVOCATIVE",
-            "rootWord": "EVOKE",
+            "correctAnswer": "DEDICATED",
+            "rootWord": "DEDICATE",
             "options": [
-                "-ORY",
-                "-IBLE",
-                "-CATIVE",
-                "-ANT"
+                "-D",
+                "-ING",
+                "-ABLE",
+                "-IVE"
             ],
             "familyTree": [
-                "EVOKE",
-                "EVOCATIVE",
-                "EVOCATION",
-                "EVOKED"
+                "DEDICATE",
+                "DEDICATED",
+                "DEDICATION",
+                "COMMITMENT"
             ],
             "instruction": "Choose the correct answer."
         },
         {
             "id": "VOC_WORDFORMATION_L190_Q3",
-            "hint": "Noun for the act of calling upon something, such as a higher power, tradition, or legal principle, for support. The ceremony opened with a solemn ____ to the ancestors.",
-            "explanation": "INVOKE + -CATION = INVOCATION. The suffix -CATION turns the verb INVOKE into a noun naming that formal appeal or summoning.",
+            "hint": "Noun for a promise or strong dedication to a plan, relationship, or cause. Buying a house is a big financial ____.",
+            "explanation": "COMMIT + -MENT = COMMITMENT. Adding -MENT to the verb COMMIT forms a noun naming a serious promise or dedication, closing out this final stretch of the course.",
             "interactionType": "choice",
-            "correctAnswer": "INVOCATION",
-            "rootWord": "INVOKE",
+            "correctAnswer": "COMMITMENT",
+            "rootWord": "COMMIT",
             "options": [
-                "-ITY",
                 "-MENT",
-                "-CATION",
-                "-ANCE"
+                "-ANCE",
+                "-ITY",
+                "-ERY"
             ],
             "familyTree": [
-                "INVOKE",
-                "INVOCATION",
-                "INVOKED",
-                "INVOKING"
+                "COMMIT",
+                "COMMITMENT",
+                "DEDICATE",
+                "DEDICATION"
             ],
             "instruction": "Choose the correct answer."
         }

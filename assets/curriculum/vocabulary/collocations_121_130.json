@@ -3,633 +3,603 @@
     "quests": [
         {
             "id": "VOC_COLLOCATIONS_L121_Q1",
-            "word": "VESTED",
-            "hint": "A PERSONAL REASON TO WANT A CERTAIN OUTCOME, OFTEN FINANCIAL",
-            "explanation": "VESTED INTEREST describes a personal stake in an outcome, often financial. VESTED is a formal, legal-sounding word often used in business and politics.",
-            "instruction": "Find the word that naturally completes the pair.",
+            "word": "ARGUMENT",
+            "hint": "PERSUASIVE ENOUGH TO WIN PEOPLE OVER EMOTIONALLY, EVEN WITHOUT HARD PROOF",
+            "explanation": "COMPELLING ARGUMENT fits here because the context describes persuasiveness despite a lack of data. VALID, SOUND, and LOGICAL all specifically require correct reasoning or evidence, which contradicts the 'lacked statistics' detail in the sentence.",
+            "instruction": "Read the context carefully, then choose the word that fits.",
             "interactionType": "choice",
-            "correctAnswer": "INTEREST",
+            "correctAnswer": "COMPELLING",
             "options": [
-                "SPREADSHEET",
-                "TIMELINE",
-                "INTEREST",
-                "CHECKLIST"
+                "COMPELLING",
+                "VALID",
+                "SOUND",
+                "LOGICAL"
             ],
             "wrongCollocations": [
-                "make INTEREST",
-                "do INTEREST",
-                "have INTEREST"
+                "valid argument without any proof",
+                "logical argument based on feelings"
             ],
-            "contextSentence": "He decided to __ INTEREST tomorrow."
+            "contextSentence": "Even though her argument lacked hard statistics, it was surprisingly ___; the audience found themselves nodding along."
         },
         {
             "id": "VOC_COLLOCATIONS_L121_Q2",
-            "word": "IMMINENT",
-            "hint": "A THREAT THAT COULD HAPPEN AT ANY MOMENT, VERY SOON",
-            "explanation": "IMMINENT DANGER describes a threat that could happen at any moment. IMMINENT is also used with imminent arrival and imminent release.",
-            "instruction": "Find the word that naturally completes the pair.",
+            "word": "ARGUMENT",
+            "hint": "BUILT WITHOUT ANY LOGICAL GAPS OR CONTRADICTIONS, REGARDLESS OF HOW EMOTIONALLY MOVING IT IS",
+            "explanation": "SOUND ARGUMENT fits here because the context specifically praises the absence of logical gaps. COMPELLING, PERSUASIVE, and CONVINCING describe emotional impact, not the structural soundness of the reasoning itself.",
+            "instruction": "Read the context carefully, then choose the word that fits.",
             "interactionType": "choice",
-            "correctAnswer": "DANGER",
+            "correctAnswer": "SOUND",
             "options": [
-                "TEMPLATE",
-                "MANUAL",
-                "HANDBOOK",
-                "DANGER"
+                "SOUND",
+                "COMPELLING",
+                "PERSUASIVE",
+                "CONVINCING"
             ],
             "wrongCollocations": [
-                "make DANGER",
-                "do DANGER",
-                "have DANGER"
+                "compelling argument despite gaps in logic",
+                "persuasive argument with contradictions"
             ],
-            "contextSentence": "He decided to __ DANGER tomorrow."
+            "contextSentence": "Reviewers praised the paper for building a ___ argument, free of any logical gaps or contradictions."
         },
         {
             "id": "VOC_COLLOCATIONS_L121_Q3",
-            "word": "UNDERLYING",
-            "hint": "AN IDEA PEOPLE BELIEVE WITHOUT QUESTIONING IT, EVEN THOUGH IT SHAPES EVERYTHING ELSE",
-            "explanation": "UNDERLYING ASSUMPTION describes an unquestioned belief that shapes decisions. UNDERLYING is also used with underlying cause and underlying issue.",
+            "word": "ARGUMENT",
+            "hint": "LACKING ENOUGH SUPPORT OR EVIDENCE TO BE CONVINCING, NOT PHYSICALLY FRAGILE",
+            "explanation": "WEAK ARGUMENT is correct because WEAK has an abstract sense meaning 'unconvincing.' FRAGILE, DELICATE, and BRITTLE describe physical breakability and can't apply to something abstract like reasoning.",
             "instruction": "Find the word that naturally completes the pair.",
             "interactionType": "choice",
-            "correctAnswer": "ASSUMPTION",
+            "correctAnswer": "WEAK",
             "options": [
-                "BROCHURE",
-                "ASSUMPTION",
-                "PAMPHLET",
-                "FLYER"
+                "WEAK",
+                "FRAGILE",
+                "DELICATE",
+                "BRITTLE"
             ],
             "wrongCollocations": [
-                "make ASSUMPTION",
-                "do ASSUMPTION",
-                "have ASSUMPTION"
+                "fragile argument that shatters",
+                "brittle argument that snaps"
             ],
-            "contextSentence": "He decided to __ ASSUMPTION tomorrow."
+            "contextSentence": "The lawyer quickly dismantled what turned out to be a surprisingly ___ argument."
         },
         {
             "id": "VOC_COLLOCATIONS_L122_Q1",
-            "word": "COMPELLING",
-            "hint": "PROOF SO CONVINCING THAT IT IS HARD TO ARGUE AGAINST IT",
-            "explanation": "COMPELLING EVIDENCE describes proof so convincing it is hard to argue against. COMPELLING is also used with compelling argument and compelling story.",
-            "instruction": "Find the word that naturally completes the pair.",
+            "word": "COMMITMENT",
+            "hint": "DEDICATION THAT RUNS EMOTIONALLY PROFOUND AND HAS LASTED A LONG TIME, NOT JUST FIRM OR UNCHANGING",
+            "explanation": "DEEP COMMITMENT emphasizes emotional dedication built up over time. STRONG, SOLID, and TOUGH describe resilience or firmness, but DEEP specifically captures the emotional depth suggested by years of consistent effort.",
+            "instruction": "Read the context carefully, then choose the word that fits.",
             "interactionType": "choice",
-            "correctAnswer": "EVIDENCE",
+            "correctAnswer": "DEEP",
             "options": [
-                "INVOICE",
-                "RECEIPT",
-                "EVIDENCE",
-                "VOUCHER"
+                "STRONG",
+                "DEEP",
+                "SOLID",
+                "TOUGH"
             ],
             "wrongCollocations": [
-                "make EVIDENCE",
-                "do EVIDENCE",
-                "have EVIDENCE"
+                "solid commitment measured in years",
+                "tough commitment to a cause"
             ],
-            "contextSentence": "He decided to __ EVIDENCE tomorrow."
+            "contextSentence": "Her decision to volunteer every weekend for a decade reflected a ___ commitment to the cause."
         },
         {
             "id": "VOC_COLLOCATIONS_L122_Q2",
-            "word": "INHERENT",
-            "hint": "A DANGER THAT IS NATURALLY PART OF SOMETHING, NOT ADDED FROM OUTSIDE",
-            "explanation": "INHERENT RISK describes a danger built into something by nature, not added from outside. INHERENT is also used with inherent flaw and inherent value.",
-            "instruction": "Find the word that naturally completes the pair.",
+            "word": "EXAMINE",
+            "hint": "LOOKING AT EVERY SMALL DETAIL WITH EXTREME CARE, THE OPPOSITE OF A QUICK OR CARELESS LOOK",
+            "explanation": "EXAMINE METICULOUSLY means to look at every detail with extreme care. ROUGHLY, CARELESSLY, and HASTILY describe the opposite approach \u2014 a quick, inattentive glance rather than careful scrutiny.",
+            "instruction": "Choose the word that fits this careful approach.",
             "interactionType": "choice",
-            "correctAnswer": "RISK",
+            "correctAnswer": "METICULOUSLY",
             "options": [
-                "WARRANTY",
-                "LICENSE",
-                "PERMIT",
-                "RISK"
+                "ROUGHLY",
+                "CARELESSLY",
+                "METICULOUSLY",
+                "HASTILY"
             ],
             "wrongCollocations": [
-                "make RISK",
-                "do RISK",
-                "have RISK"
+                "roughly examine the evidence briefly",
+                "hastily examine the documents"
             ],
-            "contextSentence": "He decided to __ RISK tomorrow."
+            "contextSentence": "Forensic investigators meticulously ___ examined every inch of the crime scene."
         },
         {
             "id": "VOC_COLLOCATIONS_L122_Q3",
-            "word": "PROFOUND",
-            "hint": "AN EFFECT SO DEEP AND MEANINGFUL THAT IT CHANGES THINGS SIGNIFICANTLY",
-            "explanation": "PROFOUND IMPACT describes an effect that is deep and meaningful. PROFOUND is also used with profound sadness and profound respect.",
-            "instruction": "Find the word that naturally completes the pair.",
+            "word": "NEGOTIATIONS",
+            "hint": "TALKS THAT DRAG ON FOR A LONG TIME WITHOUT QUICKLY REACHING A CONCLUSION",
+            "explanation": "PROTRACTED NEGOTIATIONS means talks that continue for an unusually long time. SHORT, BRIEF, and QUICK describe the opposite \u2014 negotiations that end rapidly, which contradicts the sense of a long, drawn-out process.",
+            "instruction": "Select the word that completes this pair.",
             "interactionType": "choice",
-            "correctAnswer": "IMPACT",
+            "correctAnswer": "PROTRACTED",
             "options": [
-                "IMPACT",
-                "CERTIFICATE",
-                "DIPLOMA",
-                "TRANSCRIPT"
+                "SHORT",
+                "PROTRACTED",
+                "BRIEF",
+                "QUICK"
             ],
             "wrongCollocations": [
-                "make IMPACT",
-                "do IMPACT",
-                "have IMPACT"
+                "short negotiations lasting minutes",
+                "quick negotiations over lunch"
             ],
-            "contextSentence": "He decided to __ IMPACT tomorrow."
+            "contextSentence": "After months of protracted ___, the two sides finally signed the treaty."
         },
         {
             "id": "VOC_COLLOCATIONS_L123_Q1",
-            "word": "SIGNIFICANT",
-            "hint": "AN IMPORTANT ACHIEVEMENT OR EVENT THAT MARKS REAL PROGRESS",
-            "explanation": "SIGNIFICANT MILESTONE describes an important achievement that marks real progress. SIGNIFICANT is also used with significant increase and significant change.",
+            "word": "REPUTATION",
+            "hint": "A STANDING SO EXCELLENT THAT IT STANDS OUT AMONG PEERS, NOT MEDIOCRE OR DAMAGED",
+            "explanation": "STELLAR REPUTATION describes an outstanding, excellent standing. POOR, BAD, and TERRIBLE describe the opposite \u2014 a damaged or negative reputation, which contradicts the positive sense intended here.",
             "instruction": "Find the word that naturally completes the pair.",
             "interactionType": "choice",
-            "correctAnswer": "MILESTONE",
+            "correctAnswer": "STELLAR",
             "options": [
-                "MILESTONE",
-                "RESUME",
-                "PORTFOLIO",
-                "BLUEPRINT"
+                "POOR",
+                "STELLAR",
+                "BAD",
+                "TERRIBLE"
             ],
             "wrongCollocations": [
-                "make MILESTONE",
-                "do MILESTONE",
-                "have MILESTONE"
+                "poor reputation among clients",
+                "terrible reputation in the industry"
             ],
-            "contextSentence": "He decided to __ MILESTONE tomorrow."
+            "contextSentence": "The surgeon has built a ___ reputation over twenty years of successful operations."
         },
         {
             "id": "VOC_COLLOCATIONS_L123_Q2",
-            "word": "SUBSTANTIAL",
-            "hint": "A LARGE AMOUNT OF MONEY PUT INTO SOMETHING, MORE THAN A SMALL AMOUNT",
-            "explanation": "SUBSTANTIAL INVESTMENT describes a large amount of money committed to something. SUBSTANTIAL is also used with substantial evidence and substantial change.",
-            "instruction": "Find the word that naturally completes the pair.",
+            "word": "CRITICISM",
+            "hint": "FEEDBACK THAT IS HARSH AND CUTTING, NOT SOFT OR GENTLE",
+            "explanation": "SCATHING CRITICISM describes harsh, cutting feedback. MILD, GENTLE, and SOFT describe the opposite \u2014 feedback delivered kindly and without sharpness, which contradicts the sense of harshness intended here.",
+            "instruction": "Choose the word that completes this pair.",
             "interactionType": "choice",
-            "correctAnswer": "INVESTMENT",
+            "correctAnswer": "SCATHING",
             "options": [
-                "DIAGRAM",
-                "SPECTRUM",
-                "REGISTRY",
-                "INVESTMENT"
+                "MILD",
+                "GENTLE",
+                "SCATHING",
+                "SOFT"
             ],
             "wrongCollocations": [
-                "make INVESTMENT",
-                "do INVESTMENT",
-                "have INVESTMENT"
+                "mild criticism delivered kindly",
+                "gentle criticism over coffee"
             ],
-            "contextSentence": "He decided to __ INVESTMENT tomorrow."
+            "contextSentence": "The film received ___ criticism from nearly every major reviewer."
         },
         {
             "id": "VOC_COLLOCATIONS_L123_Q3",
-            "word": "MARGINAL",
-            "hint": "AN ADVANTAGE SO SMALL THAT IT BARELY MAKES A DIFFERENCE",
-            "explanation": "MARGINAL BENEFIT describes an advantage so small it barely matters. MARGINAL is also used with marginal improvement and marginal cost.",
-            "instruction": "Find the word that naturally completes the pair.",
+            "word": "PRAISE",
+            "hint": "APPROVAL GIVEN GENEROUSLY AND IN LARGE AMOUNTS, NOT SPARINGLY OR RELUCTANTLY",
+            "explanation": "LAVISH PRAISE describes generous, abundant approval. SPARSE, LIMITED, and MINIMAL describe the opposite \u2014 praise given rarely or reluctantly, which contradicts the sense of generosity intended here.",
+            "instruction": "Select the word that completes this pair.",
             "interactionType": "choice",
-            "correctAnswer": "BENEFIT",
+            "correctAnswer": "LAVISH",
             "options": [
-                "BENEFIT",
-                "SURVEY",
-                "QUESTIONNAIRE",
-                "PETITION"
+                "SPARSE",
+                "LAVISH",
+                "LIMITED",
+                "MINIMAL"
             ],
             "wrongCollocations": [
-                "make BENEFIT",
-                "do BENEFIT",
-                "have BENEFIT"
+                "sparse praise from the critics",
+                "minimal praise despite the effort"
             ],
-            "contextSentence": "He decided to __ BENEFIT tomorrow."
+            "contextSentence": "The young chef received ___ praise from every food critic in the city."
         },
         {
             "id": "VOC_COLLOCATIONS_L124_Q1",
-            "word": "NEGLIGIBLE",
-            "hint": "A RESULT SO SMALL THAT IT IS NOT REALLY WORTH CONSIDERING",
-            "explanation": "NEGLIGIBLE EFFECT describes a result so small it is not worth considering. NEGLIGIBLE is also used with negligible risk and negligible cost.",
+            "word": "FINDINGS",
+            "hint": "RESULTS FROM EARLY IN A STUDY, NOT YET THE FINAL OR COMPLETE PICTURE",
+            "explanation": "PRELIMINARY FINDINGS describes early, initial results, not yet final. FINAL, CONCLUSIVE, and DEFINITIVE describe the opposite \u2014 completed results that won't change, which contradicts the sense of an ongoing study.",
             "instruction": "Find the word that naturally completes the pair.",
             "interactionType": "choice",
-            "correctAnswer": "EFFECT",
+            "correctAnswer": "PRELIMINARY",
             "options": [
-                "REFERENDUM",
-                "BALLOT",
-                "EFFECT",
-                "CENSUS"
+                "FINAL",
+                "CONCLUSIVE",
+                "DEFINITIVE",
+                "PRELIMINARY"
             ],
             "wrongCollocations": [
-                "make EFFECT",
-                "do EFFECT",
-                "have EFFECT"
+                "final findings before more data",
+                "conclusive findings early in the study"
             ],
-            "contextSentence": "He decided to __ EFFECT tomorrow."
+            "contextSentence": "The ___ findings suggest a link, though more research is needed to confirm it."
         },
         {
             "id": "VOC_COLLOCATIONS_L124_Q2",
-            "word": "CONSIDERABLE",
-            "hint": "REAL, NOTICEABLE MOVEMENT FORWARD TOWARD A GOAL",
-            "explanation": "CONSIDERABLE PROGRESS describes real, noticeable movement toward a goal. CONSIDERABLE is also used with considerable effort and considerable expense.",
-            "instruction": "Find the word that naturally completes the pair.",
+            "word": "HYPOTHESIS",
+            "hint": "AN IDEA THAT SEEMS REASONABLE AND WORTH TESTING, NOT ABSURD OR IMPOSSIBLE",
+            "explanation": "PLAUSIBLE HYPOTHESIS describes an idea that seems reasonable enough to test. IMPOSSIBLE, UNLIKELY, and ABSURD describe the opposite \u2014 an idea too far-fetched to take seriously, which contradicts the sense of a hypothesis worth investigating.",
+            "instruction": "Choose the word that completes this pair.",
             "interactionType": "choice",
-            "correctAnswer": "PROGRESS",
+            "correctAnswer": "PLAUSIBLE",
             "options": [
-                "PRECEDENT",
-                "PROGRESS",
-                "STATUTE",
-                "CLAUSE"
+                "PLAUSIBLE",
+                "IMPOSSIBLE",
+                "UNLIKELY",
+                "ABSURD"
             ],
             "wrongCollocations": [
-                "make PROGRESS",
-                "do PROGRESS",
-                "have PROGRESS"
+                "impossible hypothesis worth testing",
+                "absurd hypothesis worth pursuing"
             ],
-            "contextSentence": "He decided to __ PROGRESS tomorrow."
+            "contextSentence": "Researchers proposed a ___ hypothesis to explain the unexpected results."
         },
         {
             "id": "VOC_COLLOCATIONS_L124_Q3",
-            "word": "REMARKABLE",
-            "hint": "GETTING BETTER FROM ILLNESS OR HARDSHIP IN A WAY THAT SURPRISES EVERYONE",
-            "explanation": "REMARKABLE RECOVERY describes healing in a way that genuinely surprises people. REMARKABLE is also used with remarkable talent and remarkable achievement.",
-            "instruction": "Find the word that naturally completes the pair.",
+            "word": "METHODOLOGY",
+            "hint": "A RESEARCH APPROACH THAT IS CAREFUL AND PRECISE, NOT SLOPPY OR CARELESS",
+            "explanation": "RIGOROUS METHODOLOGY describes a careful, precise research approach. SLOPPY, CARELESS, and LAX describe the opposite \u2014 an approach lacking discipline, which contradicts the sense of scientific precision intended here.",
+            "instruction": "Select the word that completes this pair.",
             "interactionType": "choice",
-            "correctAnswer": "RECOVERY",
+            "correctAnswer": "RIGOROUS",
             "options": [
-                "AMENDMENT",
-                "RECOVERY",
-                "PROVISION",
-                "STIPULATION"
+                "RIGOROUS",
+                "SLOPPY",
+                "CARELESS",
+                "LAX"
             ],
             "wrongCollocations": [
-                "make RECOVERY",
-                "do RECOVERY",
-                "have RECOVERY"
+                "sloppy methodology in the study",
+                "lax methodology used by amateurs"
             ],
-            "contextSentence": "He decided to __ RECOVERY tomorrow."
+            "contextSentence": "The journal only accepts papers that demonstrate a genuinely ___ methodology."
         },
         {
             "id": "VOC_COLLOCATIONS_L125_Q1",
-            "word": "STRIKING",
-            "hint": "LOOKING SO SIMILAR TO SOMETHING ELSE THAT IT IS IMMEDIATELY NOTICEABLE",
-            "explanation": "STRIKING RESEMBLANCE describes a similarity so strong it is immediately noticeable. STRIKING is also used with striking beauty and striking difference.",
+            "word": "PRESENTATION",
+            "hint": "REFINED AND PROFESSIONAL, WITHOUT ANY ROUGH OR UNFINISHED EDGES",
+            "explanation": "POLISHED PRESENTATION describes one that is refined and professional. SLOPPY, MESSY, and ROUGH describe the opposite \u2014 an unfinished, careless presentation, which contradicts the sense of professionalism intended here.",
             "instruction": "Find the word that naturally completes the pair.",
             "interactionType": "choice",
-            "correctAnswer": "RESEMBLANCE",
+            "correctAnswer": "POLISHED",
             "options": [
-                "RESEMBLANCE",
-                "ANNEX",
-                "APPENDIX",
-                "FOOTNOTE"
+                "SLOPPY",
+                "MESSY",
+                "POLISHED",
+                "ROUGH"
             ],
             "wrongCollocations": [
-                "make RESEMBLANCE",
-                "do RESEMBLANCE",
-                "have RESEMBLANCE"
+                "sloppy presentation to investors",
+                "rough presentation at the conference"
             ],
-            "contextSentence": "He decided to __ RESEMBLANCE tomorrow."
+            "contextSentence": "Months of rehearsal paid off in a remarkably ___ presentation."
         },
         {
             "id": "VOC_COLLOCATIONS_L125_Q2",
-            "word": "GLARING",
-            "hint": "SOMETHING IMPORTANT THAT WAS LEFT OUT, SO OBVIOUS IT IS HARD TO MISS",
-            "explanation": "GLARING OMISSION describes something important left out that is impossible to miss. GLARING is also used with glaring error and glaring problem.",
-            "instruction": "Find the word that naturally completes the pair.",
+            "word": "DELIVERY",
+            "hint": "SPEAKING WITHOUT VISIBLE NERVES OR HESITATION, IN COMPLETE CONTROL OF THE ROOM",
+            "explanation": "CONFIDENT DELIVERY describes speaking without visible nerves. NERVOUS, HESITANT, and SHAKY describe the opposite \u2014 visible anxiety while speaking, which contradicts the sense of composure intended here.",
+            "instruction": "Choose the word that completes this pair.",
             "interactionType": "choice",
-            "correctAnswer": "OMISSION",
+            "correctAnswer": "CONFIDENT",
             "options": [
-                "CITATION",
-                "CATALOG",
-                "ARCHIVE",
-                "OMISSION"
+                "NERVOUS",
+                "HESITANT",
+                "CONFIDENT",
+                "SHAKY"
             ],
             "wrongCollocations": [
-                "make OMISSION",
-                "do OMISSION",
-                "have OMISSION"
+                "nervous delivery in front of the board",
+                "shaky delivery during the keynote"
             ],
-            "contextSentence": "He decided to __ OMISSION tomorrow."
+            "contextSentence": "Despite the packed auditorium, she gave a calm and ___ delivery."
         },
         {
             "id": "VOC_COLLOCATIONS_L125_Q3",
-            "word": "STARK",
-            "hint": "A DIFFERENCE SO EXTREME THAT TWO THINGS SEEM ALMOST OPPOSITE",
-            "explanation": "STARK CONTRAST describes an extreme, obvious difference between two things. STARK is also used with stark reality and stark difference.",
-            "instruction": "Find the word that naturally completes the pair.",
+            "word": "SESSION",
+            "hint": "FULL OF ENERGY, WITH LOTS OF ENGAGED BACK-AND-FORTH, NOT SLOW OR UNINTERESTED",
+            "explanation": "LIVELY SESSION describes one full of energetic engagement. DULL, BORING, and FLAT describe the opposite \u2014 a session with little energy or engagement, which contradicts the sense of an active exchange intended here.",
+            "instruction": "Select the word that completes this pair.",
             "interactionType": "choice",
-            "correctAnswer": "CONTRAST",
+            "correctAnswer": "LIVELY",
             "options": [
-                "DATABASE",
-                "SPREADSHEET",
-                "CONTRAST",
-                "PROPOSAL"
+                "LIVELY",
+                "DULL",
+                "BORING",
+                "FLAT"
             ],
             "wrongCollocations": [
-                "make CONTRAST",
-                "do CONTRAST",
-                "have CONTRAST"
+                "dull session with few questions",
+                "flat session that ended early"
             ],
-            "contextSentence": "He decided to __ CONTRAST tomorrow."
+            "contextSentence": "The Q&A turned into a surprisingly ___ session, with questions from every corner of the room."
         },
         {
             "id": "VOC_COLLOCATIONS_L126_Q1",
-            "word": "SHARP",
-            "hint": "A SUDDEN AND SIGNIFICANT DROP, NOT A SLOW OR GRADUAL ONE",
-            "explanation": "SHARP DECLINE describes a sudden, significant drop. SHARP is also used with sharp turn and sharp pain.",
+            "word": "REPORT",
+            "hint": "COVERING EVERY RELEVANT ASPECT OF A TOPIC, NOT JUST PART OF IT",
+            "explanation": "COMPREHENSIVE REPORT describes one that covers every relevant aspect thoroughly. PARTIAL, INCOMPLETE, and LIMITED describe the opposite \u2014 a report missing important details, which contradicts the sense of thoroughness intended here.",
             "instruction": "Find the word that naturally completes the pair.",
             "interactionType": "choice",
-            "correctAnswer": "DECLINE",
+            "correctAnswer": "COMPREHENSIVE",
             "options": [
-                "GUIDELINE",
-                "DECLINE",
-                "PROCEDURE",
-                "INITIATIVE"
+                "PARTIAL",
+                "COMPREHENSIVE",
+                "INCOMPLETE",
+                "LIMITED"
             ],
             "wrongCollocations": [
-                "make DECLINE",
-                "do DECLINE",
-                "have DECLINE"
+                "partial report missing key data",
+                "limited report covering one section"
             ],
-            "contextSentence": "He decided to __ DECLINE tomorrow."
+            "contextSentence": "The consultants delivered a ___ report covering every department in the company."
         },
         {
             "id": "VOC_COLLOCATIONS_L126_Q2",
-            "word": "STEEP",
-            "hint": "A SUDDEN AND SIGNIFICANT RISE, NOT A SLOW OR GRADUAL ONE",
-            "explanation": "STEEP INCREASE describes a sudden, significant rise. STEEP is also used with steep price and steep learning curve.",
-            "instruction": "Find the word that naturally completes the pair.",
+            "word": "SUMMARY",
+            "hint": "SHORT AND TO THE POINT, WITHOUT UNNECESSARY DETAIL OR REPETITION",
+            "explanation": "CONCISE SUMMARY describes one that is short and to the point. LENGTHY, WORDY, and RAMBLING describe the opposite \u2014 an unnecessarily long or unfocused summary, which contradicts the sense of brevity intended here.",
+            "instruction": "Choose the word that completes this pair.",
             "interactionType": "choice",
-            "correctAnswer": "INCREASE",
+            "correctAnswer": "CONCISE",
             "options": [
-                "DIRECTIVE",
-                "ASSESSMENT",
-                "INCREASE",
-                "PROJECTION"
+                "LENGTHY",
+                "WORDY",
+                "CONCISE",
+                "RAMBLING"
             ],
             "wrongCollocations": [
-                "make INCREASE",
-                "do INCREASE",
-                "have INCREASE"
+                "lengthy summary that repeats itself",
+                "rambling summary with no structure"
             ],
-            "contextSentence": "He decided to __ INCREASE tomorrow."
+            "contextSentence": "Her editor asked her to write a more ___ summary of the entire report."
         },
         {
             "id": "VOC_COLLOCATIONS_L126_Q3",
-            "word": "MARKED",
-            "hint": "A CHANGE FOR THE BETTER THAT IS CLEAR AND EASY TO NOTICE",
-            "explanation": "MARKED IMPROVEMENT describes a change for the better that is clear and noticeable. MARKED is also used with marked difference and marked contrast.",
-            "instruction": "Find the word that naturally completes the pair.",
+            "word": "RECOMMENDATION",
+            "hint": "BASED ON SOLID REASONING THAT HOLDS UP TO SCRUTINY, NOT FLAWED OR QUESTIONABLE",
+            "explanation": "SOUND RECOMMENDATION describes one based on solid, well-reasoned thinking. FLAWED, QUESTIONABLE, and DUBIOUS describe the opposite \u2014 advice based on poor reasoning, which contradicts the sense of reliability intended here.",
+            "instruction": "Select the word that completes this pair.",
             "interactionType": "choice",
-            "correctAnswer": "IMPROVEMENT",
+            "correctAnswer": "SOUND",
             "options": [
-                "FRAMEWORK",
-                "PROTOCOL",
-                "PATTERN",
-                "IMPROVEMENT"
+                "FLAWED",
+                "QUESTIONABLE",
+                "SOUND",
+                "DUBIOUS"
             ],
             "wrongCollocations": [
-                "make IMPROVEMENT",
-                "do IMPROVEMENT",
-                "have IMPROVEMENT"
+                "flawed recommendation from an amateur",
+                "dubious recommendation with no evidence"
             ],
-            "contextSentence": "He decided to __ IMPROVEMENT tomorrow."
+            "contextSentence": "The panel's ___ recommendation was ultimately adopted by the entire board."
         },
         {
             "id": "VOC_COLLOCATIONS_L127_Q1",
-            "word": "NOTABLE",
-            "hint": "A CASE THAT CLEARLY DOES NOT FOLLOW THE USUAL PATTERN, WORTH POINTING OUT",
-            "explanation": "NOTABLE EXCEPTION describes a case that clearly breaks the usual pattern. NOTABLE is also used with notable achievement and notable figure.",
+            "word": "REBUTTAL",
+            "hint": "A RESPONSE THAT COMES QUICKLY, WITHOUT ANY DELAY OR HESITATION",
+            "explanation": "SWIFT REBUTTAL describes a response that comes without delay. SLOW, DELAYED, and SLUGGISH describe the opposite \u2014 a response that takes a long time to arrive, which contradicts the sense of speed intended here.",
             "instruction": "Find the word that naturally completes the pair.",
             "interactionType": "choice",
-            "correctAnswer": "EXCEPTION",
+            "correctAnswer": "SWIFT",
             "options": [
-                "EXCEPTION",
-                "ROUTINE",
-                "STRATEGY",
-                "AGENDA"
+                "SWIFT",
+                "SLOW",
+                "DELAYED",
+                "SLUGGISH"
             ],
             "wrongCollocations": [
-                "make EXCEPTION",
-                "do EXCEPTION",
-                "have EXCEPTION"
+                "slow rebuttal days later",
+                "delayed rebuttal after the debate ended"
             ],
-            "contextSentence": "He decided to __ EXCEPTION tomorrow."
+            "contextSentence": "The senator issued a ___ rebuttal within minutes of the accusation."
         },
         {
             "id": "VOC_COLLOCATIONS_L127_Q2",
-            "word": "DISTINCT",
-            "hint": "A BENEFIT THAT IS CLEARLY NOTICEABLE AND EASY TO IDENTIFY",
-            "explanation": "DISTINCT ADVANTAGE describes a benefit that is clearly noticeable. DISTINCT is also used with distinct possibility and distinct difference.",
-            "instruction": "Find the word that naturally completes the pair.",
+            "word": "RESPONSE",
+            "hint": "CAREFULLY CONTROLLED AND THOUGHTFUL, NOT IMPULSIVE OR RECKLESS",
+            "explanation": "MEASURED RESPONSE describes one that is carefully controlled and thoughtful. RASH, IMPULSIVE, and RECKLESS describe the opposite \u2014 a hasty, poorly considered reaction, which contradicts the sense of composure intended here.",
+            "instruction": "Choose the word that completes this pair.",
             "interactionType": "choice",
-            "correctAnswer": "ADVANTAGE",
+            "correctAnswer": "MEASURED",
             "options": [
-                "ADVANTAGE",
-                "MEMO",
-                "BULLETIN",
-                "CIRCULAR"
+                "RASH",
+                "IMPULSIVE",
+                "RECKLESS",
+                "MEASURED"
             ],
             "wrongCollocations": [
-                "make ADVANTAGE",
-                "do ADVANTAGE",
-                "have ADVANTAGE"
+                "rash response without thinking it through",
+                "impulsive response during the crisis"
             ],
-            "contextSentence": "He decided to __ ADVANTAGE tomorrow."
+            "contextSentence": "Rather than reacting angrily, she gave a calm and ___ response."
         },
         {
             "id": "VOC_COLLOCATIONS_L127_Q3",
-            "word": "CLEAR",
-            "hint": "GENERAL AGREEMENT AMONG A GROUP THAT IS OBVIOUS AND UNDENIABLE",
-            "explanation": "CLEAR CONSENSUS describes obvious, undeniable agreement among a group. CLEAR is also used with clear evidence and clear explanation.",
-            "instruction": "Find the word that naturally completes the pair.",
+            "word": "TONE",
+            "hint": "AIMED AT EASING TENSION AND FINDING COMMON GROUND, NOT ESCALATING CONFLICT",
+            "explanation": "CONCILIATORY TONE describes language aimed at easing tension and finding peace. AGGRESSIVE, HOSTILE, and COMBATIVE describe the opposite \u2014 language meant to provoke conflict, which contradicts the sense of peacemaking intended here.",
+            "instruction": "Select the word that completes this pair.",
             "interactionType": "choice",
-            "correctAnswer": "CONSENSUS",
+            "correctAnswer": "CONCILIATORY",
             "options": [
-                "CONSENSUS",
-                "DOSSIER",
-                "LEDGER",
-                "INVENTORY"
+                "CONCILIATORY",
+                "AGGRESSIVE",
+                "HOSTILE",
+                "COMBATIVE"
             ],
             "wrongCollocations": [
-                "make CONSENSUS",
-                "do CONSENSUS",
-                "have CONSENSUS"
+                "aggressive tone during the ceasefire talks",
+                "hostile tone at the peace summit"
             ],
-            "contextSentence": "He decided to __ CONSENSUS tomorrow."
+            "contextSentence": "Both leaders adopted a surprisingly ___ tone during the ceasefire talks."
         },
         {
             "id": "VOC_COLLOCATIONS_L128_Q1",
-            "word": "BROAD",
-            "hint": "AGREEMENT SHARED BY A WIDE RANGE OF DIFFERENT PEOPLE OR GROUPS",
-            "explanation": "BROAD AGREEMENT describes agreement shared by a wide range of people. BROAD is also used with broad support and broad range.",
+            "word": "ALLEGATIONS",
+            "hint": "CLAIMS THAT HAVEN'T YET BEEN BACKED UP WITH ANY REAL PROOF",
+            "explanation": "UNSUBSTANTIATED ALLEGATIONS describes claims without supporting proof. PROVEN, CONFIRMED, and VERIFIED describe the opposite \u2014 claims already backed by solid evidence, which contradicts the sense of unproven accusations intended here.",
             "instruction": "Find the word that naturally completes the pair.",
             "interactionType": "choice",
-            "correctAnswer": "AGREEMENT",
+            "correctAnswer": "UNSUBSTANTIATED",
             "options": [
-                "CATALOG",
-                "AGREEMENT",
-                "ARCHIVE",
-                "DATABASE"
+                "PROVEN",
+                "CONFIRMED",
+                "UNSUBSTANTIATED",
+                "VERIFIED"
             ],
             "wrongCollocations": [
-                "make AGREEMENT",
-                "do AGREEMENT",
-                "have AGREEMENT"
+                "proven allegations with clear evidence",
+                "confirmed allegations after the trial"
             ],
-            "contextSentence": "He decided to __ AGREEMENT tomorrow."
+            "contextSentence": "The newspaper was criticized for publishing ___ allegations without any supporting evidence."
         },
         {
             "id": "VOC_COLLOCATIONS_L128_Q2",
-            "word": "GROWING",
-            "hint": "A FEELING OF DISCOMFORT OR WORRY THAT KEEPS INCREASING",
-            "explanation": "GROWING UNEASE describes a feeling of discomfort that keeps increasing. GROWING is also used with growing concern and growing demand.",
-            "instruction": "Find the word that naturally completes the pair.",
+            "word": "CRACKDOWN",
+            "hint": "A FAR-REACHING EFFORT THAT AFFECTS MANY PEOPLE OR AREAS AT ONCE, NOT A SMALL, ISOLATED ACTION",
+            "explanation": "SWEEPING CRACKDOWN describes an extensive, far-reaching effort. LIMITED, MINOR, and SMALL describe the opposite \u2014 a narrow, isolated action, which contradicts the sense of scale intended here.",
+            "instruction": "Choose the word that completes this pair.",
             "interactionType": "choice",
-            "correctAnswer": "UNEASE",
+            "correctAnswer": "SWEEPING",
             "options": [
-                "SPREADSHEET",
-                "TIMELINE",
-                "CHECKLIST",
-                "UNEASE"
+                "SWEEPING",
+                "LIMITED",
+                "MINOR",
+                "SMALL"
             ],
             "wrongCollocations": [
-                "make UNEASE",
-                "do UNEASE",
-                "have UNEASE"
+                "limited crackdown on one street",
+                "minor crackdown affecting few people"
             ],
-            "contextSentence": "He decided to __ UNEASE tomorrow."
+            "contextSentence": "Authorities launched a ___ crackdown on illegal street vendors across the city."
         },
         {
             "id": "VOC_COLLOCATIONS_L128_Q3",
-            "word": "WIDESPREAD",
-            "hint": "BACKING FOR SOMETHING THAT COMES FROM MANY DIFFERENT PLACES AT ONCE",
-            "explanation": "WIDESPREAD SUPPORT describes backing that comes from many different places. WIDESPREAD is also used with widespread panic and widespread damage.",
-            "instruction": "Find the word that naturally completes the pair.",
+            "word": "BACKLASH",
+            "hint": "AN INTENSE, ANGRY REACTION FROM THE PUBLIC, NOT A CALM OR MUTED RESPONSE",
+            "explanation": "FIERCE BACKLASH describes an intense, angry public reaction. MILD, GENTLE, and WEAK describe the opposite \u2014 a subdued or barely noticeable response, which contradicts the sense of intensity intended here.",
+            "instruction": "Select the word that completes this pair.",
             "interactionType": "choice",
-            "correctAnswer": "SUPPORT",
+            "correctAnswer": "FIERCE",
             "options": [
-                "TEMPLATE",
-                "SUPPORT",
-                "MANUAL",
-                "HANDBOOK"
+                "FIERCE",
+                "MILD",
+                "GENTLE",
+                "WEAK"
             ],
             "wrongCollocations": [
-                "make SUPPORT",
-                "do SUPPORT",
-                "have SUPPORT"
+                "mild backlash from a few users",
+                "weak backlash that faded quickly"
             ],
-            "contextSentence": "He decided to __ SUPPORT tomorrow."
+            "contextSentence": "The announcement triggered a ___ backlash on social media within hours."
         },
         {
             "id": "VOC_COLLOCATIONS_L129_Q1",
-            "word": "OVERWHELMING",
-            "hint": "ALMOST EVERYONE IN A GROUP, LEAVING ONLY A TINY MINORITY",
-            "explanation": "OVERWHELMING MAJORITY describes almost everyone in a group. OVERWHELMING is also used with overwhelming evidence and overwhelming support.",
+            "word": "CRITIQUE",
+            "hint": "SOPHISTICATED AND ATTENTIVE TO SUBTLE DETAIL, NOT OVERSIMPLIFIED OR BLUNT",
+            "explanation": "NUANCED CRITIQUE describes a sophisticated, detailed evaluation. SIMPLISTIC, CRUDE, and BLUNT describe the opposite \u2014 an oversimplified evaluation lacking subtlety, which contradicts the sense of depth intended here.",
             "instruction": "Find the word that naturally completes the pair.",
             "interactionType": "choice",
-            "correctAnswer": "MAJORITY",
+            "correctAnswer": "NUANCED",
             "options": [
-                "BROCHURE",
-                "PAMPHLET",
-                "FLYER",
-                "MAJORITY"
+                "SIMPLISTIC",
+                "CRUDE",
+                "NUANCED",
+                "BLUNT"
             ],
             "wrongCollocations": [
-                "make MAJORITY",
-                "do MAJORITY",
-                "have MAJORITY"
+                "simplistic critique missing detail",
+                "crude critique of a complex issue"
             ],
-            "contextSentence": "He decided to __ MAJORITY tomorrow."
+            "contextSentence": "The reviewer offered a ___ critique that acknowledged both strengths and weaknesses."
         },
         {
             "id": "VOC_COLLOCATIONS_L129_Q2",
-            "word": "SLIM",
-            "hint": "WINNING BY JUST A SMALL AMOUNT, NOT BY A LOT",
-            "explanation": "SLIM MARGIN describes winning by a small amount. SLIM is also used with slim chance and slim majority.",
-            "instruction": "Find the word that naturally completes the pair.",
+            "word": "FRAMEWORK",
+            "hint": "LOGICALLY CONSISTENT AND WELL-STRUCTURED, NOT SCATTERED OR CONTRADICTORY",
+            "explanation": "COHERENT FRAMEWORK describes one that is logically consistent and well-organized. DISJOINTED, FRAGMENTED, and INCONSISTENT describe the opposite \u2014 a framework that doesn't hold together logically, which contradicts the sense of structure intended here.",
+            "instruction": "Choose the word that completes this pair.",
             "interactionType": "choice",
-            "correctAnswer": "MARGIN",
+            "correctAnswer": "COHERENT",
             "options": [
-                "INVOICE",
-                "RECEIPT",
-                "MARGIN",
-                "VOUCHER"
+                "DISJOINTED",
+                "FRAGMENTED",
+                "COHERENT",
+                "INCONSISTENT"
             ],
             "wrongCollocations": [
-                "make MARGIN",
-                "do MARGIN",
-                "have MARGIN"
+                "disjointed framework with no clear structure",
+                "fragmented framework across chapters"
             ],
-            "contextSentence": "He decided to __ MARGIN tomorrow."
+            "contextSentence": "The thesis presents a genuinely ___ framework for understanding the crisis."
         },
         {
             "id": "VOC_COLLOCATIONS_L129_Q3",
-            "word": "RAZOR-THIN",
-            "hint": "WINNING BY AN EXTREMELY SMALL AMOUNT, EVEN CLOSER THAN A SLIM MARGIN",
-            "explanation": "RAZOR-THIN MARGIN describes an extremely small difference, closer than a slim margin. RAZOR-THIN emphasizes just how close the result was.",
-            "instruction": "Find the word that naturally completes the pair.",
+            "word": "EVIDENCE",
+            "hint": "BASED ON A FEW PERSONAL STORIES RATHER THAN A LARGE, STRUCTURED STUDY",
+            "explanation": "ANECDOTAL EVIDENCE fits here because the context specifically describes a few personal stories, not systematic data. STATISTICAL, EMPIRICAL, and QUANTITATIVE all imply structured, large-scale data collection, which contradicts the 'few personal stories' detail in the sentence.",
+            "instruction": "Read the context carefully, then choose the word that fits.",
             "interactionType": "choice",
-            "correctAnswer": "MARGIN",
+            "correctAnswer": "ANECDOTAL",
             "options": [
-                "WARRANTY",
-                "LICENSE",
-                "MARGIN",
-                "PERMIT"
+                "STATISTICAL",
+                "EMPIRICAL",
+                "ANECDOTAL",
+                "QUANTITATIVE"
             ],
             "wrongCollocations": [
-                "make MARGIN",
-                "do MARGIN",
-                "have MARGIN"
+                "statistical evidence from a few stories",
+                "quantitative evidence with no numbers"
             ],
-            "contextSentence": "He decided to __ MARGIN tomorrow."
+            "contextSentence": "Critics argued that the claim relied only on ___ evidence \u2014 a handful of personal stories rather than any large-scale study."
         },
         {
             "id": "VOC_COLLOCATIONS_L130_Q1",
-            "word": "DECISIVE",
-            "hint": "A WIN SO CLEAR THAT THERE IS NO DOUBT ABOUT WHO WON",
-            "explanation": "DECISIVE VICTORY describes a win so clear there is no doubt about the outcome. DECISIVE is also used with decisive action and decisive moment.",
+            "word": "CONSENSUS",
+            "hint": "AGREEMENT SHARED BY A WIDE RANGE OF PEOPLE, NOT JUST A SMALL, RESTRICTED GROUP",
+            "explanation": "BROAD CONSENSUS describes agreement shared widely across a group. NARROW, LIMITED, and RESTRICTED describe the opposite \u2014 agreement among only a small subset, which contradicts the sense of widespread agreement intended here.",
             "instruction": "Find the word that naturally completes the pair.",
             "interactionType": "choice",
-            "correctAnswer": "VICTORY",
+            "correctAnswer": "BROAD",
             "options": [
-                "CERTIFICATE",
-                "VICTORY",
-                "DIPLOMA",
-                "TRANSCRIPT"
+                "BROAD",
+                "NARROW",
+                "LIMITED",
+                "RESTRICTED"
             ],
             "wrongCollocations": [
-                "make VICTORY",
-                "do VICTORY",
-                "have VICTORY"
+                "narrow consensus among a few experts",
+                "restricted consensus within one department"
             ],
-            "contextSentence": "He decided to __ VICTORY tomorrow."
+            "contextSentence": "Scientists have reached a ___ consensus on the causes of the phenomenon."
         },
         {
             "id": "VOC_COLLOCATIONS_L130_Q2",
-            "word": "LANDSLIDE",
-            "hint": "WINNING BY AN ENORMOUS MARGIN, ESPECIALLY IN AN ELECTION",
-            "explanation": "LANDSLIDE VICTORY describes winning by an enormous margin, especially in an election. The word comes from the image of an overwhelming landslide.",
-            "instruction": "Find the word that naturally completes the pair.",
+            "word": "DISCOURSE",
+            "hint": "CONVERSATION AND DEBATE HAPPENING OUT IN SOCIETY, NOT PRIVATELY BETWEEN A FEW PEOPLE",
+            "explanation": "PUBLIC DISCOURSE is the standard fixed term for society-wide conversation and debate. PRIVATE, PERSONAL, and INTERNAL describe conversations confined to a small group, which don't form this specific fixed academic and political term.",
+            "instruction": "Choose the word that completes this fixed term.",
             "interactionType": "choice",
-            "correctAnswer": "VICTORY",
+            "correctAnswer": "PUBLIC",
             "options": [
-                "RESUME",
-                "PORTFOLIO",
-                "VICTORY",
-                "BLUEPRINT"
+                "PRIVATE",
+                "PERSONAL",
+                "PUBLIC",
+                "INTERNAL"
             ],
             "wrongCollocations": [
-                "make VICTORY",
-                "do VICTORY",
-                "have VICTORY"
+                "private discourse among reporters and journalists",
+                "internal discourse within one office"
             ],
-            "contextSentence": "He decided to __ VICTORY tomorrow."
+            "contextSentence": "The scandal reignited ___ discourse about accountability in politics."
         },
         {
             "id": "VOC_COLLOCATIONS_L130_Q3",
-            "word": "BITTER",
-            "hint": "A LOSS THAT FEELS ESPECIALLY PAINFUL AND HARD TO ACCEPT",
-            "explanation": "BITTER DEFEAT describes a loss that feels especially painful. BITTER is also used with bitter cold and bitter rivalry.",
-            "instruction": "Find the word that naturally completes the pair.",
+            "word": "PARADIGM",
+            "hint": "A COMPLETE CHANGE IN THE BASIC WAY A WHOLE FIELD THINKS ABOUT SOMETHING",
+            "explanation": "PARADIGM SHIFT is a completely fixed academic idiom for a fundamental change in thinking. CHANGE, SWITCH, and TRANSITION are near-synonyms of SHIFT, but none of them can substitute in this specific fixed expression.",
+            "instruction": "Select the word that correctly completes this fixed term.",
             "interactionType": "choice",
-            "correctAnswer": "DEFEAT",
+            "correctAnswer": "SHIFT",
             "options": [
-                "DIAGRAM",
-                "SPECTRUM",
-                "REGISTRY",
-                "DEFEAT"
+                "CHANGE",
+                "SWITCH",
+                "TRANSITION",
+                "SHIFT"
             ],
             "wrongCollocations": [
-                "make DEFEAT",
-                "do DEFEAT",
-                "have DEFEAT"
+                "paradigm change in the field",
+                "paradigm switch in thinking"
             ],
-            "contextSentence": "He decided to __ DEFEAT tomorrow."
+            "contextSentence": "The discovery caused a genuine paradigm ___ in how scientists understood the disease."
         }
     ],
     "gameType": "collocations",

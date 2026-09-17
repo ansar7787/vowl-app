@@ -6,20 +6,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L91_Q1",
-            "sentence": "Despite the setbacks, she remained [TARGET] that the product launch would still succeed.",
-            "hint": "From Latin sanguis, 'blood' - once believed a hopeful temperament came from blood balance.",
+            "sentence": "Despite the missed flight and lost luggage, she stayed [TARGET] and optimistic, certain the trip would still turn out great.",
+            "hint": "This word describes staying hopeful and cheerfully confident, even when things go wrong.",
             "options": [
-                "Gloomy",
-                "Despairing",
+                "Optimistic",
                 "Pessimistic",
-                "Optimistic"
+                "Hopeless",
+                "Gloomy"
             ],
-            "explanation": "Staying hopeful about success despite setbacks shows a positive outlook, so [TARGET] means OPTIMISTIC.",
+            "explanation": "The word 'and' links [TARGET] to 'optimistic,' and staying certain the trip would turn out great confirms it, so [TARGET] means OPTIMISTIC.",
             "correctAnswer": "Optimistic",
             "clueType": "synonym",
             "evidenceWords": [
-                "Despite",
-                "setbacks"
+                "and optimistic",
+                "certain the trip would still turn out great"
             ]
         },
         {
@@ -27,20 +27,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L91_Q2",
-            "sentence": "My grandfather was [TARGET] at dinner, answering questions with only a nod or a single word.",
-            "hint": "From Latin tacitus, 'silent' - describes a habit of saying very little.",
+            "sentence": "Unlike his chatty younger brother who narrated every thought out loud, Owen was [TARGET], going entire car rides without saying a single word.",
+            "hint": "This word describes someone who rarely speaks, often seeming reserved by nature.",
             "options": [
                 "Talkative",
+                "Quiet",
                 "Chatty",
-                "Loquacious",
-                "Quiet"
+                "Outgoing"
             ],
-            "explanation": "Answering with only a nod or one word shows a habit of saying very little, so [TARGET] means QUIET.",
+            "explanation": "The word 'unlike' contrasts [TARGET] with a 'chatty' brother, so it must mean the opposite, which is QUIET.",
             "correctAnswer": "Quiet",
             "clueType": "antonym",
             "evidenceWords": [
-                "grandfather",
-                "dinner"
+                "Unlike",
+                "chatty younger brother",
+                "entire car rides without saying a single word"
             ]
         },
         {
@@ -48,20 +49,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L91_Q3",
-            "sentence": "The startup promised [TARGET] access to its software, with no limits on users or data.",
-            "hint": "From the word fetter, a chain on the ankles - describes being free of restraint.",
+            "sentence": "After the contract restrictions expired, the artist finally had [TARGET] creative control, which means she could make any decision about her music without anyone else's approval.",
+            "hint": "This word describes being completely free from restrictions or limits.",
             "options": [
-                "Restrained",
+                "Limited",
+                "Restricted",
                 "Unrestricted",
-                "Confined",
-                "Limited"
+                "Controlled"
             ],
-            "explanation": "Promising no limits on users or data shows being free of restraint, so [TARGET] means UNRESTRICTED.",
+            "explanation": "The sentence defines [TARGET] as being able to decide 'without anyone else's approval,' so [TARGET] means UNRESTRICTED.",
             "correctAnswer": "Unrestricted",
             "clueType": "definition",
             "evidenceWords": [
-                "startup",
-                "promised"
+                "which means",
+                "without anyone else's approval"
             ]
         },
         {
@@ -69,20 +70,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L92_Q1",
-            "sentence": "The [TARGET] professor had taught at the university for over forty years.",
-            "hint": "From Latin venerari, 'to revere' - describes someone honored for age and wisdom.",
+            "sentence": "The [TARGET] professor had taught at the university for fifty years, mentored three generations of scientists, and had a research building named in her honor.",
+            "hint": "This word describes someone deeply respected because of their age, wisdom, or long service.",
             "options": [
-                "Respected",
-                "Disgraced",
-                "Disreputable",
-                "Discredited"
+                "Disrespected",
+                "Ignored",
+                "Unknown",
+                "Highly respected"
             ],
-            "explanation": "Teaching at a university for over forty years earns deep respect, so [TARGET] means RESPECTED.",
-            "correctAnswer": "Respected",
+            "explanation": "Fifty years of teaching, mentoring generations, and having a building named after her are all examples of deep, earned respect, so [TARGET] means HIGHLY RESPECTED.",
+            "correctAnswer": "Highly respected",
             "clueType": "example",
             "evidenceWords": [
-                "professor",
-                "taught"
+                "taught at the university for fifty years",
+                "mentored three generations",
+                "building named in her honor"
             ]
         },
         {
@@ -90,20 +92,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L92_Q2",
-            "sentence": "The children's book had a [TARGET] illustration of a teapot wearing tiny rain boots.",
-            "hint": "From the old word whimsy, an idea that's fanciful and full of light imagination.",
+            "sentence": "The garden had a teapot-shaped birdhouse, a bridge painted like a rainbow, and stepping stones shaped like giant mushrooms — every corner of it felt [TARGET].",
+            "hint": "This word describes something fanciful and a little unpredictable.",
             "options": [
-                "Solemn",
-                "Serious",
                 "Playful",
-                "Grave"
+                "Serious",
+                "Formal",
+                "Somber"
             ],
-            "explanation": "A teapot wearing tiny rain boots is a fanciful, playful image, so [TARGET] means PLAYFUL.",
+            "explanation": "A teapot birdhouse, a rainbow bridge, and mushroom stepping stones all show a playful, fanciful design, even without a direct clue word, so [TARGET] means PLAYFUL.",
             "correctAnswer": "Playful",
             "clueType": "inference",
             "evidenceWords": [
-                "children's",
-                "illustration"
+                "teapot-shaped birdhouse",
+                "painted like a rainbow",
+                "shaped like giant mushrooms"
             ]
         },
         {
@@ -111,20 +114,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L92_Q3",
-            "sentence": "This small plot of land can [TARGET] over two hundred pounds of tomatoes each summer.",
-            "hint": "This word describes the amount a farm or crop gives back.",
+            "sentence": "After weeks of debate, the committee finally agreed to [TARGET], or give way, and approved the new policy the students had been requesting.",
+            "hint": "This word means to give in or surrender to pressure or demand.",
             "options": [
-                "Withhold",
+                "Resist",
+                "Give way",
                 "Refuse",
-                "Produce",
-                "Deny"
+                "Hold out"
             ],
-            "explanation": "Giving back two hundred pounds of tomatoes each summer shows what a farm produces, so [TARGET] means PRODUCE.",
-            "correctAnswer": "Produce",
+            "explanation": "The word 'or' signals that [TARGET] means the same as 'give way,' so [TARGET] means GIVE WAY.",
+            "correctAnswer": "Give way",
             "clueType": "synonym",
             "evidenceWords": [
-                "small",
-                "hundred"
+                "or give way",
+                "approved the new policy"
             ]
         },
         {
@@ -132,20 +135,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L93_Q1",
-            "sentence": "The company reached its [TARGET] in the 1990s before competition from overseas began.",
-            "hint": "Originally an astronomy term for the point directly overhead.",
+            "sentence": "Unlike the low point of her career when no one returned her calls, winning the award marked the absolute [TARGET] of her success.",
+            "hint": "This word describes the highest point something reaches.",
             "options": [
-                "Peak",
-                "Nadir",
+                "Low point",
                 "Bottom",
-                "Trough"
+                "Peak",
+                "Decline"
             ],
-            "explanation": "Being at its best point before competition began describes the highest point reached, so [TARGET] means PEAK.",
+            "explanation": "The word 'unlike' contrasts [TARGET] with the 'low point of her career,' so it must mean the opposite, which is PEAK.",
             "correctAnswer": "Peak",
             "clueType": "antonym",
             "evidenceWords": [
-                "company",
-                "reached"
+                "Unlike",
+                "low point of her career",
+                "absolute"
             ]
         },
         {
@@ -153,20 +157,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L93_Q2",
-            "sentence": "By the third day of medication, her fever finally began to [TARGET].",
-            "hint": "From Old French abatre, 'to beat down' - describes something growing weaker.",
+            "sentence": "By late afternoon, the storm began to [TARGET], which means the wind and rain gradually grew weaker until the sky finally cleared.",
+            "hint": "This word means to become less intense or gradually die down.",
             "options": [
-                "Escalate",
-                "Increase",
                 "Intensify",
-                "Subside"
+                "Strengthen",
+                "Worsen",
+                "Weaken"
             ],
-            "explanation": "A fever finally weakening by the third day shows the symptom subsiding, so [TARGET] means SUBSIDE.",
-            "correctAnswer": "Subside",
+            "explanation": "The sentence defines [TARGET] as the wind and rain 'gradually grew weaker,' so [TARGET] means WEAKEN.",
+            "correctAnswer": "Weaken",
             "clueType": "definition",
             "evidenceWords": [
-                "third",
-                "medication"
+                "which means",
+                "gradually grew weaker"
             ]
         },
         {
@@ -174,20 +178,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L93_Q3",
-            "sentence": "The strong holiday sales helped [TARGET] the small shop's finances for the rest of the year.",
-            "hint": "From an old word for a long supporting pillow - to give extra support.",
+            "sentence": "To [TARGET] her application, she added three glowing recommendation letters, a portfolio of her best work, and a detailed list of volunteer hours.",
+            "hint": "This word means to make something stronger by adding support to it.",
             "options": [
-                "Weaken",
                 "Strengthen",
+                "Weaken",
                 "Undermine",
-                "Diminish"
+                "Damage"
             ],
-            "explanation": "Strong sales supporting finances for the rest of the year shows giving extra support, so [TARGET] means STRENGTHEN.",
+            "explanation": "Adding recommendation letters, a portfolio, and volunteer hours are all examples of making an application stronger, so [TARGET] means STRENGTHEN.",
             "correctAnswer": "Strengthen",
             "clueType": "example",
             "evidenceWords": [
-                "strong",
-                "holiday"
+                "three glowing recommendation letters",
+                "portfolio of her best work",
+                "detailed list of volunteer hours"
             ]
         },
         {
@@ -195,20 +200,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L94_Q1",
-            "sentence": "After seeing the receipt, he had to [TARGET] that his wife was right about the price.",
-            "hint": "From Latin concedere, 'to yield' - giving up your position once the facts are undeniable.",
+            "sentence": "After reviewing the data three more times and finding no error in her opponent's numbers, the senator stopped repeating her original claim during the debate and finally agreed to [TARGET] the point.",
+            "hint": "This word means to acknowledge something is true, especially reluctantly.",
             "options": [
-                "Dispute",
                 "Deny",
                 "Admit",
-                "Contest"
+                "Reject",
+                "Dispute"
             ],
-            "explanation": "Accepting his wife was right after seeing proof shows admitting something is true, so [TARGET] means ADMIT.",
+            "explanation": "Reviewing data repeatedly, finding no error, and stopping her original claim all show reluctantly admitting a point, even without a direct clue word, so [TARGET] means ADMIT.",
             "correctAnswer": "Admit",
             "clueType": "inference",
             "evidenceWords": [
-                "After",
-                "seeing"
+                "reviewing the data three more times",
+                "finding no error",
+                "stopped repeating her original claim"
             ]
         },
         {
@@ -216,20 +222,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L94_Q2",
-            "sentence": "The thousand-page textbook looked [TARGET] sitting on the freshman's desk on day one.",
-            "hint": "From Latin domitare, 'to tame' - describes something that makes you feel small.",
+            "sentence": "The mountain of paperwork on her first day looked [TARGET] and intimidating, stacked nearly as high as her desk lamp.",
+            "hint": "This word describes something that seems so hard or overwhelming it discourages you before you start.",
             "options": [
-                "Encouraging",
-                "Comforting",
+                "Easy",
+                "Manageable",
                 "Intimidating",
-                "Reassuring"
+                "Simple"
             ],
-            "explanation": "A thousand-page textbook on day one would make a freshman feel small, so [TARGET] means INTIMIDATING.",
+            "explanation": "The word 'and' links [TARGET] to 'intimidating,' and the paperwork being stacked as high as a desk lamp confirms it, so [TARGET] means INTIMIDATING.",
             "correctAnswer": "Intimidating",
             "clueType": "synonym",
             "evidenceWords": [
-                "thousand-page",
-                "textbook"
+                "and intimidating",
+                "stacked nearly as high as her desk lamp"
             ]
         },
         {
@@ -237,20 +243,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L94_Q3",
-            "sentence": "Her [TARGET] speech at the conference earned a standing ovation from the entire audience.",
-            "hint": "From Latin eloqui, 'to speak out' - describes fluent, persuasive speech.",
+            "sentence": "Unlike the mumbled, stumbling remarks from the previous speaker, her toast was [TARGET], flowing smoothly from one heartfelt line to the next without a single pause.",
+            "hint": "This word describes speaking or writing in a fluent, persuasive, and graceful way.",
             "options": [
-                "Inarticulate",
-                "Mumbling",
-                "Tongue-tied",
-                "Articulate"
+                "Mumbled",
+                "Stumbling",
+                "Awkward",
+                "Well-spoken"
             ],
-            "explanation": "A speech earning a standing ovation from the whole audience shows fluent, persuasive speech, so [TARGET] means ARTICULATE.",
-            "correctAnswer": "Articulate",
+            "explanation": "The word 'unlike' contrasts [TARGET] with 'mumbled, stumbling remarks,' so it must mean the opposite, which is WELL-SPOKEN.",
+            "correctAnswer": "Well-spoken",
             "clueType": "antonym",
             "evidenceWords": [
-                "speech",
-                "conference"
+                "Unlike",
+                "mumbled, stumbling remarks",
+                "flowing smoothly"
             ]
         },
         {
@@ -258,20 +265,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L95_Q1",
-            "sentence": "With no proper tools available, the campers used pure [TARGET] to fix the broken tent with sticks and rope.",
-            "hint": "From Latin ingenium, 'natural talent' - clever, original problem-solving.",
+            "sentence": "The team's [TARGET] saved the mission, which means their clever, original problem-solving turned a broken part into a working repair using only tape and a spoon.",
+            "hint": "This word describes inventive skill in solving problems.",
             "options": [
-                "Creativity",
+                "Cleverness",
                 "Carelessness",
                 "Laziness",
-                "Confusion"
+                "Incompetence"
             ],
-            "explanation": "Fixing a tent with only sticks and rope shows clever, original problem-solving, so [TARGET] means CREATIVITY.",
-            "correctAnswer": "Creativity",
+            "explanation": "The sentence defines [TARGET] as 'clever, original problem-solving,' so [TARGET] means CLEVERNESS.",
+            "correctAnswer": "Cleverness",
             "clueType": "definition",
             "evidenceWords": [
-                "proper",
-                "tools"
+                "which means",
+                "clever, original problem-solving"
             ]
         },
         {
@@ -279,20 +286,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L95_Q2",
-            "sentence": "The union filed a formal [TARGET] about the factory's unsafe working conditions.",
-            "hint": "From Latin gravis, 'heavy' - a heavy, formal objection.",
+            "sentence": "The workers filed a formal [TARGET]: unpaid overtime hours, a broken air conditioning system ignored for months, and a manager who canceled breaks without warning.",
+            "hint": "This word describes a formal objection about unfair treatment.",
             "options": [
-                "Praise",
-                "Complaint",
                 "Compliment",
+                "Complaint",
+                "Praise",
                 "Approval"
             ],
-            "explanation": "Filing a formal objection about unsafe conditions shows a formal complaint, so [TARGET] means COMPLAINT.",
+            "explanation": "Unpaid hours, ignored repairs, and canceled breaks are all examples of unfair treatment listed in a formal complaint, so [TARGET] means COMPLAINT.",
             "correctAnswer": "Complaint",
             "clueType": "example",
             "evidenceWords": [
-                "union",
-                "filed"
+                "unpaid overtime hours",
+                "broken air conditioning system ignored for months",
+                "canceled breaks without warning"
             ]
         },
         {
@@ -300,20 +308,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L95_Q3",
-            "sentence": "The broken elevator became a real [TARGET] for deliveries to the top-floor office.",
-            "hint": "From Old English hindrian, 'to hold back' - something that gets in the way.",
+            "sentence": "Every time she tried to leave for work, the dog blocked the door, her keys had vanished again, and the car wouldn't start on the first try — each one another [TARGET] to a smooth morning.",
+            "hint": "This word describes something that gets in the way and slows progress.",
             "options": [
-                "Support",
+                "Advantage",
+                "Help",
                 "Obstacle",
-                "Aid",
-                "Assistance"
+                "Boost"
             ],
-            "explanation": "A broken elevator getting in the way of deliveries shows something blocking progress, so [TARGET] means OBSTACLE.",
+            "explanation": "A dog blocking the door, missing keys, and a car that won't start are all things getting in the way, even without a direct clue word, so [TARGET] means OBSTACLE.",
             "correctAnswer": "Obstacle",
             "clueType": "inference",
             "evidenceWords": [
-                "broken",
-                "elevator"
+                "dog blocked the door",
+                "keys had vanished again",
+                "car wouldn't start on the first try"
             ]
         },
         {
@@ -321,20 +330,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L96_Q1",
-            "sentence": "With the storm [TARGET], the airport canceled all outgoing flights.",
-            "hint": "From Latin imminere, 'to overhang' - describes something about to happen very soon.",
+            "sentence": "With dark clouds rolling in fast and the wind picking up, the storm felt [TARGET] and close at hand, likely to hit within the hour.",
+            "hint": "This word describes something about to happen very soon.",
             "options": [
-                "Far-off",
                 "Distant",
-                "Remote",
-                "Approaching"
+                "Far off",
+                "Unlikely",
+                "Close at hand"
             ],
-            "explanation": "Canceling flights because of a storm shows something about to happen very soon, so [TARGET] means APPROACHING.",
-            "correctAnswer": "Approaching",
+            "explanation": "The word 'and' links [TARGET] to 'close at hand,' and the storm likely hitting within the hour confirms it, so [TARGET] means CLOSE AT HAND.",
+            "correctAnswer": "Close at hand",
             "clueType": "synonym",
             "evidenceWords": [
-                "storm",
-                "airport"
+                "and close at hand",
+                "likely to hit within the hour"
             ]
         },
         {
@@ -342,20 +351,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L96_Q2",
-            "sentence": "The whole village gathered to [TARGET] the loss of the beloved old schoolteacher.",
-            "hint": "From Latin lamentari, 'to wail' - expressing deep sorrow.",
+            "sentence": "Unlike her sister, who celebrated the move to a new city with excitement, Rosa would [TARGET] leaving her childhood home, crying every time she packed another box.",
+            "hint": "This word means to express sadness or grief about something.",
             "options": [
-                "Celebrate",
                 "Mourn",
-                "Cheer",
-                "Rejoice"
+                "Celebrate",
+                "Rejoice",
+                "Cheer"
             ],
-            "explanation": "Gathering after a loss to express deep sorrow shows mourning, so [TARGET] means MOURN.",
+            "explanation": "The word 'unlike' contrasts [TARGET] with a sister who 'celebrated... with excitement,' so it must mean the opposite, which is MOURN.",
             "correctAnswer": "Mourn",
             "clueType": "antonym",
             "evidenceWords": [
-                "whole",
-                "village"
+                "Unlike",
+                "celebrated the move",
+                "crying every time she packed another box"
             ]
         },
         {
@@ -363,20 +373,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L96_Q3",
-            "sentence": "The pirate became [TARGET] for sinking twelve ships without ever being caught.",
-            "hint": "From Latin notus, 'known' - famous, but for the wrong reasons.",
+            "sentence": "The alley was [TARGET] for pickpockets, which means it was widely known, in a bad way, as a place where theft happened constantly.",
+            "hint": "This word describes being famous for something bad or negative.",
             "options": [
-                "Respected",
-                "Esteemed",
-                "Admired",
-                "Infamous"
+                "Unknown",
+                "Infamous",
+                "Obscure",
+                "Unnoticed"
             ],
-            "explanation": "Being known for sinking twelve ships shows fame for the wrong reasons, so [TARGET] means INFAMOUS.",
+            "explanation": "The sentence defines [TARGET] as 'widely known, in a bad way,' so [TARGET] means INFAMOUS.",
             "correctAnswer": "Infamous",
             "clueType": "definition",
             "evidenceWords": [
-                "pirate",
-                "became"
+                "which means",
+                "widely known, in a bad way"
             ]
         },
         {
@@ -384,20 +394,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L97_Q1",
-            "sentence": "The hotel lobby was [TARGET], with marble floors and a gold-trimmed ceiling.",
-            "hint": "From Latin opulentus, 'wealthy' - describes lavish, expensive surroundings.",
+            "sentence": "The hotel lobby was [TARGET]: gold chandeliers hung from a painted ceiling, marble floors gleamed under every light, and a fountain trickled beside a grand staircase.",
+            "hint": "This word describes something showing great wealth through rich detail.",
             "options": [
-                "Austere",
                 "Plain",
+                "Modest",
                 "Luxurious",
-                "Modest"
+                "Bare"
             ],
-            "explanation": "Marble floors and a gold-trimmed ceiling describe lavish, expensive surroundings, so [TARGET] means LUXURIOUS.",
+            "explanation": "Gold chandeliers, marble floors, and a grand fountain are all examples of rich, luxurious detail, so [TARGET] means LUXURIOUS.",
             "correctAnswer": "Luxurious",
             "clueType": "example",
             "evidenceWords": [
-                "hotel",
-                "lobby"
+                "gold chandeliers hung from a painted ceiling",
+                "marble floors gleamed",
+                "fountain trickled beside a grand staircase"
             ]
         },
         {
@@ -405,20 +416,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L97_Q2",
-            "sentence": "The headmaster reminded students to behave with [TARGET] during the formal dinner.",
-            "hint": "From Latin proprius, 'one's own' - proper, fitting behavior.",
+            "sentence": "At the formal dinner, she waited for the host to sit first, used the correct fork for each course, and kept her voice low enough not to disturb the other tables — her sense of [TARGET] impressed everyone.",
+            "hint": "This word describes following correct or socially accepted behavior.",
             "options": [
                 "Rudeness",
-                "Impropriety",
-                "Decency",
-                "Vulgarity"
+                "Carelessness",
+                "Disregard for etiquette",
+                "Proper manners"
             ],
-            "explanation": "Reminding students to behave properly at a formal dinner shows expecting proper behavior, so [TARGET] means DECENCY.",
-            "correctAnswer": "Decency",
+            "explanation": "Waiting for the host, using the right fork, and keeping her voice low all show following accepted social behavior, even without a direct clue word, so [TARGET] means PROPER MANNERS.",
+            "correctAnswer": "Proper manners",
             "clueType": "inference",
             "evidenceWords": [
-                "headmaster",
-                "reminded"
+                "waited for the host to sit first",
+                "used the correct fork for each course",
+                "kept her voice low"
             ]
         },
         {
@@ -426,20 +438,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L97_Q3",
-            "sentence": "The CEO held an emergency meeting to [TARGET] the rumors of mass layoffs.",
-            "hint": "From Old English cwellan, 'to kill' - to put a stop to something forcefully.",
+            "sentence": "The captain's calm voice over the intercom helped [TARGET], or suppress, the passengers' rising panic during the turbulence.",
+            "hint": "This word means to put an end to something, like fear or unrest, often forcefully or firmly.",
             "options": [
-                "Incite",
-                "Agitate",
+                "Suppress",
                 "Provoke",
-                "Suppress"
+                "Ignite",
+                "Stir up"
             ],
-            "explanation": "Holding an emergency meeting to stop rumors shows putting a stop to something, so [TARGET] means SUPPRESS.",
+            "explanation": "The word 'or' signals that [TARGET] means the same as 'suppress,' so [TARGET] means SUPPRESS.",
             "correctAnswer": "Suppress",
             "clueType": "synonym",
             "evidenceWords": [
-                "emergency",
-                "meeting"
+                "or suppress",
+                "rising panic"
             ]
         },
         {
@@ -447,20 +459,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L98_Q1",
-            "sentence": "The flu was [TARGET] across the school, with half the students absent by Friday.",
-            "hint": "From an old word for an animal rearing up unchecked - spreading out of control.",
+            "sentence": "Unlike the tightly controlled inflation of previous years, prices that spring rose [TARGET], with grocery costs doubling in just a few uncontrolled months.",
+            "hint": "This word describes spreading out of control, with nothing holding it back.",
             "options": [
-                "Widespread",
-                "Rare",
+                "Controlled",
+                "Unchecked",
                 "Contained",
-                "Scarce"
+                "Restrained"
             ],
-            "explanation": "Half the students absent by Friday shows the illness spreading out of control, so [TARGET] means WIDESPREAD.",
-            "correctAnswer": "Widespread",
+            "explanation": "The word 'unlike' contrasts [TARGET] with 'tightly controlled inflation,' so it must mean the opposite, which is UNCHECKED.",
+            "correctAnswer": "Unchecked",
             "clueType": "antonym",
             "evidenceWords": [
-                "across",
-                "school"
+                "Unlike",
+                "tightly controlled inflation",
+                "doubling in just a few uncontrolled months"
             ]
         },
         {
@@ -468,20 +481,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L98_Q2",
-            "sentence": "After the drought, the farmers had only an [TARGET] harvest to sell at the market.",
-            "hint": "From Old Norse skamt, 'short' - barely enough, falling short.",
+            "sentence": "With only [TARGET] evidence, which means barely enough proof to even file the case, the lawyer decided to wait before going to trial.",
+            "hint": "This word describes an amount that is barely enough, or not quite enough.",
             "options": [
-                "Ample",
                 "Abundant",
-                "Insufficient",
-                "Plentiful"
+                "Plentiful",
+                "Barely sufficient",
+                "Ample"
             ],
-            "explanation": "A harvest after a drought that falls short shows barely enough supply, so [TARGET] means INSUFFICIENT.",
-            "correctAnswer": "Insufficient",
+            "explanation": "The sentence defines [TARGET] as 'barely enough proof,' so [TARGET] means BARELY SUFFICIENT.",
+            "correctAnswer": "Barely sufficient",
             "clueType": "definition",
             "evidenceWords": [
-                "After",
-                "drought"
+                "which means",
+                "barely enough proof"
             ]
         },
         {
@@ -489,20 +502,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L98_Q3",
-            "sentence": "The security update was designed to [TARGET] hackers trying to access user data.",
-            "hint": "From Old Norse thvert, 'across' - to stand across someone's path.",
+            "sentence": "The security team managed to [TARGET] the break-in: they spotted the intruder on camera, locked every exit remotely, and had police waiting when he tried to leave.",
+            "hint": "This word means to stop someone from achieving what they planned.",
             "options": [
+                "Allow",
                 "Enable",
-                "Support",
                 "Assist",
-                "Block"
+                "Prevent"
             ],
-            "explanation": "Stopping hackers from accessing data shows standing in their path, so [TARGET] means BLOCK.",
-            "correctAnswer": "Block",
+            "explanation": "Spotting the intruder, locking exits, and having police waiting are all examples of stopping a plan from succeeding, so [TARGET] means PREVENT.",
+            "correctAnswer": "Prevent",
             "clueType": "example",
             "evidenceWords": [
-                "security",
-                "update"
+                "spotted the intruder on camera",
+                "locked every exit remotely",
+                "police waiting when he tried to leave"
             ]
         },
         {
@@ -510,20 +524,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L99_Q1",
-            "sentence": "A [TARGET] customer left a one-star review after waiting two hours for a refund.",
-            "hint": "From gruntle, an old word for grumbling - describes simmering annoyance.",
+            "sentence": "After being passed over for the promotion a third time, he stopped volunteering for extra projects, skipped the team lunch, and left work exactly at five every day without a word to anyone — clearly [TARGET] about being overlooked.",
+            "hint": "This word describes feeling annoyed, especially about unfair treatment.",
             "options": [
-                "Satisfied",
                 "Dissatisfied",
-                "Pleased",
-                "Content"
+                "Thrilled",
+                "Content",
+                "Satisfied"
             ],
-            "explanation": "Leaving a one-star review after a two-hour wait shows simmering annoyance, so [TARGET] means DISSATISFIED.",
+            "explanation": "Stopping extra effort, skipping lunch, and leaving without a word after being passed over all show dissatisfaction, even without a direct clue word, so [TARGET] means DISSATISFIED.",
             "correctAnswer": "Dissatisfied",
             "clueType": "inference",
             "evidenceWords": [
-                "customer",
-                "one-star"
+                "stopped volunteering for extra projects",
+                "skipped the team lunch",
+                "left work exactly at five"
             ]
         },
         {
@@ -531,20 +546,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L99_Q2",
-            "sentence": "The teacher used a slice of pizza to [TARGET] how fractions work.",
-            "hint": "From Latin exemplum, 'example' - to show through a clear example.",
+            "sentence": "Her final project seemed to [TARGET], or illustrate, everything the course had taught, combining every technique into one polished piece.",
+            "hint": "This word means to serve as a clear example of something.",
             "options": [
                 "Contradict",
-                "Confuse",
                 "Illustrate",
-                "Obscure"
+                "Disprove",
+                "Ignore"
             ],
-            "explanation": "Using a pizza slice to show how fractions work is showing a clear example, so [TARGET] means ILLUSTRATE.",
+            "explanation": "The word 'or' signals that [TARGET] means the same as 'illustrate,' so [TARGET] means ILLUSTRATE.",
             "correctAnswer": "Illustrate",
             "clueType": "synonym",
             "evidenceWords": [
-                "teacher",
-                "slice"
+                "or illustrate",
+                "combining every technique"
             ]
         },
         {
@@ -552,20 +567,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L99_Q3",
-            "sentence": "Many breakfast cereals are [TARGET]ed with extra iron and vitamins.",
-            "hint": "From Latin fortis, 'strong' - to make something stronger by adding to it.",
+            "sentence": "Unlike the crumbling wooden fence that a strong gust could knock down, the new steel gate was built to [TARGET] the property, able to withstand a direct hit from a car.",
+            "hint": "This word means to make something stronger and more able to withstand attack or damage.",
             "options": [
                 "Weaken",
+                "Crumble",
                 "Strengthen",
-                "Undermine",
-                "Erode"
+                "Collapse"
             ],
-            "explanation": "Adding extra iron and vitamins to cereal makes it stronger nutritionally, so [TARGET] means STRENGTHEN.",
+            "explanation": "The word 'unlike' contrasts [TARGET] with a fence 'a strong gust could knock down,' so it must mean the opposite, which is STRENGTHEN.",
             "correctAnswer": "Strengthen",
             "clueType": "antonym",
             "evidenceWords": [
-                "breakfast",
-                "cereals"
+                "Unlike",
+                "a strong gust could knock down",
+                "withstand a direct hit"
             ]
         },
         {
@@ -573,20 +589,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L100_Q1",
-            "sentence": "At the street market, tourists are expected to [TARGET] over the price of souvenirs.",
-            "hint": "From an old Scandinavian word meaning 'to hack' - back-and-forth negotiating.",
+            "sentence": "At the flea market, she loved to [TARGET] over prices, which means she would go back and forth with sellers, offering lower amounts until they agreed on a number both sides liked.",
+            "hint": "This word means to go back and forth over a price until both sides agree.",
             "options": [
-                "Concede",
-                "Accept",
                 "Overpay",
-                "Bargain"
+                "Accept immediately",
+                "Pay full price",
+                "Negotiate"
             ],
-            "explanation": "Being expected to negotiate the price at a market describes bargaining, so [TARGET] means BARGAIN.",
-            "correctAnswer": "Bargain",
+            "explanation": "The sentence defines [TARGET] as going 'back and forth with sellers... until they agreed,' so [TARGET] means NEGOTIATE.",
+            "correctAnswer": "Negotiate",
             "clueType": "definition",
             "evidenceWords": [
-                "street",
-                "market"
+                "which means",
+                "back and forth with sellers",
+                "until they agreed on a number"
             ]
         },
         {
@@ -594,20 +611,21 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L100_Q2",
-            "sentence": "The IT team had to [TARGET] the entire network after the office moved to a new floor.",
-            "hint": "From Latin configurare, 'to shape together' - to set up again in a new way.",
+            "sentence": "To fit the new equipment, the engineers had to [TARGET] the entire assembly line: they moved three machines to new spots, rerouted the conveyor belt, and rewired the control panel from scratch.",
+            "hint": "This word means to set something up in a completely new way.",
             "options": [
-                "Fix",
-                "Preserve",
                 "Rearrange",
-                "Maintain"
+                "Leave unchanged",
+                "Preserve exactly",
+                "Keep the same"
             ],
-            "explanation": "Setting up the network again after a move to a new floor describes rearranging it, so [TARGET] means REARRANGE.",
+            "explanation": "Moving machines, rerouting the belt, and rewiring the panel are all examples of setting something up in a new way, so [TARGET] means REARRANGE.",
             "correctAnswer": "Rearrange",
             "clueType": "example",
             "evidenceWords": [
-                "entire",
-                "network"
+                "moved three machines to new spots",
+                "rerouted the conveyor belt",
+                "rewired the control panel from scratch"
             ]
         },
         {
@@ -615,20 +633,20 @@
             "interactionType": "choice",
             "instruction": "Analyze the sentence to deduce the hidden word.",
             "id": "VOC_CONTEXTCLUES_L100_Q3",
-            "sentence": "The neighbor's new fence began to [TARGET] onto our side of the property line.",
-            "hint": "From Old French encrochier, 'to hook' - to slowly take more than your share.",
+            "sentence": "Every year, the neighbor's hedge crept a little further over the property line, until one spring it had swallowed nearly three feet of what used to be her flower bed — it had clearly begun to [TARGET] on her yard.",
+            "hint": "This word means to gradually creep into someone else's space or rights.",
             "options": [
-                "Yield",
-                "Intrude",
                 "Retreat",
-                "Withdraw"
+                "Intrude",
+                "Withdraw",
+                "Shrink"
             ],
-            "explanation": "A fence built onto someone else's property shows taking more than one's share, so [TARGET] means INTRUDE.",
+            "explanation": "The hedge creeping over the property line each year and swallowing three feet of the flower bed shows a gradual intrusion, even without a direct clue word, so [TARGET] means INTRUDE.",
             "correctAnswer": "Intrude",
             "clueType": "inference",
             "evidenceWords": [
-                "neighbor's",
-                "fence"
+                "crept a little further over the property line",
+                "swallowed nearly three feet"
             ]
         }
     ],

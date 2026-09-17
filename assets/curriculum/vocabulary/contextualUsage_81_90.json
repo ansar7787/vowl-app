@@ -1,517 +1,517 @@
 {
-    "levels": "81-90",
-    "quests": [
-        {
-            "word": "INFER",
-            "interactionType": "choice",
-            "question": "From her silence, we could only _____ that she disagreed.",
-            "instruction": "Select the correct word to complete the sentence.",
-            "hint": "DEFINITION: To work out a conclusion from evidence (done by the listener/reader).",
-            "id": "VOC_CONTEXTUAL_L81_Q1",
-            "options": [
-                "DEFER",
-                "INFER",
-                "IMPLY",
-                "REFER"
-            ],
-            "explanation": "'Infer' describes the listener drawing a conclusion from her silence. 'Imply' describes the speaker hinting at something, which is the opposite role - the speaker's action, not the listener's.",
-            "correctAnswer": "INFER",
-            "registerLevel": 2
-        },
-        {
-            "word": "IMPLY",
-            "interactionType": "choice",
-            "question": "His tone seemed to _____ that he wasn't happy with the report.",
-            "instruction": "Select the correct word to complete the sentence.",
-            "hint": "DEFINITION: To hint at something without saying it directly (done by the speaker).",
-            "id": "VOC_CONTEXTUAL_L81_Q2",
-            "options": [
-                "DEFER",
-                "INFER",
-                "IMPLY",
-                "REFER"
-            ],
-            "explanation": "'Imply' describes the speaker hinting through tone. 'Infer' describes the listener's act of drawing a conclusion, which is the opposite role in this exchange.",
-            "correctAnswer": "IMPLY",
-            "registerLevel": 1
-        },
-        {
-            "word": "DEFER",
-            "interactionType": "choice",
-            "question": "The board decided to _____ the decision until next month's meeting.",
-            "instruction": "Select the correct word to complete the sentence.",
-            "hint": "DEFINITION: To postpone or delay an action or decision.",
-            "id": "VOC_CONTEXTUAL_L81_Q3",
-            "options": [
-                "REFER",
-                "DEFFER",
-                "INFER",
-                "DEFER"
-            ],
-            "explanation": "'Defer' means to postpone the decision. 'Infer' means to draw a conclusion from evidence, which doesn't describe delaying an action.",
-            "correctAnswer": "DEFER",
-            "registerLevel": 8
-        },
-        {
-            "word": "REFER",
-            "interactionType": "choice",
-            "question": "The doctor decided to _____ her to a specialist.",
-            "instruction": "Select the correct word to complete the sentence.",
-            "hint": "DEFINITION: To direct someone to another source for information or help.",
-            "id": "VOC_CONTEXTUAL_L82_Q1",
-            "options": [
-                "INFER",
-                "REFER",
-                "DEFER",
-                "REFERR"
-            ],
-            "explanation": "'Refer' means to direct her to a specialist. 'Defer' means to postpone something, which doesn't describe directing someone elsewhere.",
-            "correctAnswer": "REFER",
-            "registerLevel": 1
-        },
-        {
-            "word": "PRESCRIBE",
-            "interactionType": "choice",
-            "question": "The doctor will likely _____ antibiotics for the infection.",
-            "instruction": "Select the correct word to complete the sentence.",
-            "hint": "DEFINITION: To recommend or authorize a treatment.",
-            "id": "VOC_CONTEXTUAL_L82_Q2",
-            "options": [
-                "PRESCRYBE",
-                "PROSCRIBE",
-                "PRESCRIBED'S",
-                "PRESCRIBE"
-            ],
-            "explanation": "'Prescribe' means to authorize a medical treatment. 'Proscribe' means to forbid something, which is nearly the opposite meaning.",
-            "correctAnswer": "PRESCRIBE",
-            "registerLevel": 10
-        },
-        {
-            "word": "PROSCRIBE",
-            "interactionType": "choice",
-            "question": "The new regulations _____ the use of plastic packaging entirely.",
-            "instruction": "Select the correct word to complete the sentence.",
-            "hint": "DEFINITION: To forbid or prohibit something.",
-            "id": "VOC_CONTEXTUAL_L82_Q3",
-            "options": [
-                "PROSCRIBE",
-                "PROSCRIBEE",
-                "PROSCRYBE",
-                "PRESCRIBE"
-            ],
-            "explanation": "'Proscribe' means to forbid the use of plastic. 'Prescribe' means to recommend or authorize, which is nearly the opposite meaning.",
-            "correctAnswer": "PROSCRIBE",
-            "registerLevel": 4
-        },
-        {
-            "word": "PROVIDENT",
-            "interactionType": "choice",
-            "question": "It was _____ of her to save money each month before the layoffs happened.",
-            "instruction": "Select the correct word to complete the sentence.",
-            "hint": "DEFINITION: Showing wise foresight for future needs.",
-            "id": "VOC_CONTEXTUAL_L83_Q1",
-            "options": [
-                "PROVIDENTT",
-                "PROVIDDENT",
-                "PROVIDENT",
-                "PROVIDENTIAL"
-            ],
-            "explanation": "'Provident' describes her wise foresight in saving early. 'Providential' means happening by a fortunate stroke of luck or fate, which describes an event, not a personal habit.",
-            "correctAnswer": "PROVIDENT",
-            "registerLevel": 5
-        },
-        {
-            "word": "PERQUISITE",
-            "interactionType": "choice",
-            "question": "A company car was one of the nice _____s of the new job.",
-            "instruction": "Select the correct word to complete the sentence.",
-            "hint": "DEFINITION: An extra benefit given in addition to regular pay.",
-            "id": "VOC_CONTEXTUAL_L83_Q2",
-            "options": [
-                "PERQUISITTE",
-                "PERQUISIT",
-                "PREREQUISITE",
-                "PERQUISITE"
-            ],
-            "explanation": "'Perquisite' (perk) names the extra benefit of the company car. 'Prerequisite' means a requirement needed beforehand, which describes a condition, not a bonus.",
-            "correctAnswer": "PERQUISITE",
-            "registerLevel": 9
-        },
-        {
-            "word": "PREREQUISITE",
-            "interactionType": "choice",
-            "question": "Calculus is a _____ for the advanced physics course.",
-            "instruction": "Select the correct word to complete the sentence.",
-            "hint": "DEFINITION: Something required beforehand as a condition.",
-            "id": "VOC_CONTEXTUAL_L83_Q3",
-            "options": [
-                "PRERIQUISITE",
-                "PREREQUISITE",
-                "PERQUISITE",
-                "PREREQUISITTE"
-            ],
-            "explanation": "'Prerequisite' names the required course needed first. 'Perquisite' names an extra job benefit, which doesn't describe an academic requirement.",
-            "correctAnswer": "PREREQUISITE",
-            "registerLevel": 5
-        },
-        {
-            "word": "EXALTED",
-            "interactionType": "choice",
-            "question": "He held an _____ position within the royal court.",
-            "instruction": "Select the correct word to complete the sentence.",
-            "hint": "DEFINITION: Holding a high rank or status.",
-            "id": "VOC_CONTEXTUAL_L84_Q1",
-            "options": [
-                "EXAULTED",
-                "EXALTID",
-                "EXALTED",
-                "EXULTED"
-            ],
-            "explanation": "'Exalted' describes his high rank at court. 'Exulted' means felt triumphant joy, which describes an emotion, not a position of status.",
-            "correctAnswer": "EXALTED",
-            "registerLevel": 7
-        },
-        {
-            "word": "DISTINCT",
-            "interactionType": "choice",
-            "question": "The two theories are completely _____ from one another.",
-            "instruction": "Select the correct word to complete the sentence.",
-            "hint": "DEFINITION: Clearly separate or different.",
-            "id": "VOC_CONTEXTUAL_L84_Q2",
-            "options": [
-                "DISTINKT",
-                "DISTINCTIVE",
-                "DESTINCT",
-                "DISTINCT"
-            ],
-            "explanation": "'Distinct' describes the theories being clearly separate. 'Distinctive' means having a unique, recognizable quality, which describes a feature, not a relationship of difference.",
-            "correctAnswer": "DISTINCT",
-            "registerLevel": 10
-        },
-        {
-            "word": "DISTINCTIVE",
-            "interactionType": "choice",
-            "question": "This cheese has a _____ smell that's hard to forget.",
-            "instruction": "Select the correct word to complete the sentence.",
-            "hint": "DEFINITION: Having a unique quality that makes something easily recognizable.",
-            "id": "VOC_CONTEXTUAL_L84_Q3",
-            "options": [
-                "DISTINCT",
-                "DISTINCTIVVE",
-                "DISTINKTIVE",
-                "DISTINCTIVE"
-            ],
-            "explanation": "'Distinctive' describes the cheese's unique, memorable smell. 'Distinct' means clearly separate from something else, which doesn't capture the idea of a recognizable trait.",
-            "correctAnswer": "DISTINCTIVE",
-            "registerLevel": 2
-        },
-        {
-            "word": "OFFICIOUS",
-            "interactionType": "choice",
-            "question": "The new intern was a bit _____, giving orders no one asked for.",
-            "instruction": "Select the correct word to complete the sentence.",
-            "hint": "DEFINITION: Annoyingly eager to tell people what to do.",
-            "id": "VOC_CONTEXTUAL_L85_Q1",
-            "options": [
-                "OFFICIAL",
-                "OFFICIOUSS",
-                "OFFICIOUS",
-                "OFISHOUS"
-            ],
-            "explanation": "'Officious' describes someone overstepping by giving unwanted orders. 'Official' means relating to authority or government, which doesn't describe annoying behavior.",
-            "correctAnswer": "OFFICIOUS",
-            "registerLevel": 3
-        },
-        {
-            "word": "OFFICIAL",
-            "interactionType": "choice",
-            "question": "The company released an _____ statement about the merger.",
-            "instruction": "Select the correct word to complete the sentence.",
-            "hint": "DEFINITION: Authorized by a person or organization in power.",
-            "id": "VOC_CONTEXTUAL_L85_Q2",
-            "options": [
-                "OFICIAL",
-                "OFFICIOUS",
-                "OFFICIAL",
-                "OFFICIALL"
-            ],
-            "explanation": "'Official' describes a statement authorized by the company. 'Officious' describes someone being annoyingly bossy, which doesn't describe an authorized document.",
-            "correctAnswer": "OFFICIAL",
-            "registerLevel": 9
-        },
-        {
-            "word": "FORTUITOUS",
-            "interactionType": "choice",
-            "question": "It was a _____ coincidence that they ended up on the same flight.",
-            "instruction": "Select the correct word to complete the sentence.",
-            "hint": "DEFINITION: Happening by pure, unplanned chance.",
-            "id": "VOC_CONTEXTUAL_L85_Q3",
-            "options": [
-                "FORTUITUS",
-                "FORTUITOUSS",
-                "FORTUITOUS",
-                "FORTUNATE"
-            ],
-            "explanation": "'Fortuitous' emphasizes the accidental, unplanned nature of the meeting. 'Fortunate' simply means lucky, without necessarily emphasizing that it happened entirely by accident.",
-            "correctAnswer": "FORTUITOUS",
-            "registerLevel": 10
-        },
-        {
-            "word": "FORTUNATE",
-            "interactionType": "choice",
-            "question": "We feel so _____ to have such supportive grandparents.",
-            "instruction": "Select the correct word to complete the sentence.",
-            "hint": "DEFINITION: Having good luck; favored by fortune.",
-            "id": "VOC_CONTEXTUAL_L86_Q1",
-            "options": [
-                "FORTUNATT",
-                "FORTUITOUS",
-                "FORTUNATE",
-                "FORTUNAITE"
-            ],
-            "explanation": "'Fortunate' describes feeling lucky to have good grandparents. 'Fortuitous' emphasizes random chance specifically, which is a narrower meaning than general good luck.",
-            "correctAnswer": "FORTUNATE",
-            "registerLevel": 10
-        },
-        {
-            "word": "VORACIOUS",
-            "interactionType": "choice",
-            "question": "The teenager had a _____ appetite after football practice.",
-            "instruction": "Select the correct word to complete the sentence.",
-            "hint": "DEFINITION: Having a huge appetite; extremely eager.",
-            "id": "VOC_CONTEXTUAL_L86_Q2",
-            "options": [
-                "VORACIOUS",
-                "VORACIOUSS",
-                "VERACIOUS",
-                "VORASHUS"
-            ],
-            "explanation": "'Voracious' describes an enormous appetite for food. 'Veracious' means truthful, which has nothing to do with hunger.",
-            "correctAnswer": "VORACIOUS",
-            "registerLevel": 10
-        },
-        {
-            "word": "VERACIOUS",
-            "interactionType": "choice",
-            "question": "The journalist was known for being entirely _____ in her reporting.",
-            "instruction": "Select the correct word to complete the sentence.",
-            "hint": "DEFINITION: Habitually truthful and accurate.",
-            "id": "VOC_CONTEXTUAL_L86_Q3",
-            "options": [
-                "VERAYSHUS",
-                "VERACIOUSS",
-                "VERACIOUS",
-                "VORACIOUS"
-            ],
-            "explanation": "'Veracious' describes the journalist's truthful reporting. 'Voracious' means having a huge appetite, which doesn't describe honesty.",
-            "correctAnswer": "VERACIOUS",
-            "registerLevel": 10
-        },
-        {
-            "word": "CAPITAL",
-            "interactionType": "choice",
-            "question": "Paris is the _____ city of France.",
-            "instruction": "Select the correct word to complete the sentence.",
-            "hint": "DEFINITION: The city where a country's government is based.",
-            "id": "VOC_CONTEXTUAL_L87_Q1",
-            "options": [
-                "CAPITOL",
-                "CAPATAL",
-                "CAPITALL",
-                "CAPITAL"
-            ],
-            "explanation": "'Capital' names the seat of national government. 'Capitol' specifically refers to the building where a legislature meets, not the city itself.",
-            "correctAnswer": "CAPITAL",
-            "registerLevel": 9
-        },
-        {
-            "word": "CAPITOL",
-            "interactionType": "choice",
-            "question": "Protesters gathered outside the state _____ building.",
-            "instruction": "Select the correct word to complete the sentence.",
-            "hint": "DEFINITION: The building where a legislature meets.",
-            "id": "VOC_CONTEXTUAL_L87_Q2",
-            "options": [
-                "CAPATOL",
-                "CAPITOL",
-                "CAPITAL",
-                "CAPITOLL"
-            ],
-            "explanation": "'Capitol' names the specific government building. 'Capital' refers to the city itself or financial assets, not a single building.",
-            "correctAnswer": "CAPITOL",
-            "registerLevel": 5
-        },
-        {
-            "word": "CONTEMPTUOUS",
-            "interactionType": "choice",
-            "question": "He gave a _____ sneer at the cheap gift.",
-            "instruction": "Select the correct word to complete the sentence.",
-            "hint": "DEFINITION: Showing scorn or disrespect toward someone or something.",
-            "id": "VOC_CONTEXTUAL_L87_Q3",
-            "options": [
-                "CONTEMPTIBLE",
-                "CONTEMPTUOUSS",
-                "CONTEMPTUOUS",
-                "CONTEMTUOUS"
-            ],
-            "explanation": "'Contemptuous' describes his scornful reaction. 'Contemptible' describes something deserving scorn, which describes the gift's quality, not his facial expression.",
-            "correctAnswer": "CONTEMPTUOUS",
-            "registerLevel": 7
-        },
-        {
-            "word": "CONTEMPTIBLE",
-            "interactionType": "choice",
-            "question": "Lying to your own team is a truly _____ thing to do.",
-            "instruction": "Select the correct word to complete the sentence.",
-            "hint": "DEFINITION: Deserving scorn or disrespect.",
-            "id": "VOC_CONTEXTUAL_L88_Q1",
-            "options": [
-                "CONTEMPTABLE",
-                "CONTEMPTIBEL",
-                "CONTEMPTUOUS",
-                "CONTEMPTIBLE"
-            ],
-            "explanation": "'Contemptible' describes behavior that deserves scorn. 'Contemptuous' describes the act of showing scorn toward something, which is the reaction itself, not the deserving quality.",
-            "correctAnswer": "CONTEMPTIBLE",
-            "registerLevel": 4
-        },
-        {
-            "word": "DEPRECATING",
-            "interactionType": "choice",
-            "question": "He has a self-_____ sense of humor that audiences love.",
-            "instruction": "Select the correct word to complete the sentence.",
-            "hint": "DEFINITION: Modestly putting oneself down, often for humor.",
-            "id": "VOC_CONTEXTUAL_L88_Q2",
-            "options": [
-                "DEPRECATTING",
-                "DEPRECIATING",
-                "DEPRECATING",
-                "DEPRECAITING"
-            ],
-            "explanation": "'Deprecating' describes humor that downplays oneself. 'Depreciating' refers to losing monetary value, which doesn't describe a style of humor.",
-            "correctAnswer": "DEPRECATING",
-            "registerLevel": 2
-        },
-        {
-            "word": "TORTUOUS",
-            "interactionType": "choice",
-            "question": "The _____ mountain road had over forty sharp turns.",
-            "instruction": "Select the correct word to complete the sentence.",
-            "hint": "DEFINITION: Full of twists and turns.",
-            "id": "VOC_CONTEXTUAL_L88_Q3",
-            "options": [
-                "TORTUOUSS",
-                "TORCHUOUS",
-                "TORTUROUS",
-                "TORTUOUS"
-            ],
-            "explanation": "'Tortuous' describes the winding road. 'Torturous' means causing pain or suffering, which describes an experience, not the literal shape of a road.",
-            "correctAnswer": "TORTUOUS",
-            "registerLevel": 6
-        },
-        {
-            "word": "TORTUROUS",
-            "interactionType": "choice",
-            "question": "The five-hour meeting was a _____ ordeal for everyone present.",
-            "instruction": "Select the correct word to complete the sentence.",
-            "hint": "DEFINITION: Extremely painful or unpleasant, like torture.",
-            "id": "VOC_CONTEXTUAL_L89_Q1",
-            "options": [
-                "TORTUROUSS",
-                "TORTUOUS",
-                "TORTUROUS",
-                "TORTCHEROUS"
-            ],
-            "explanation": "'Torturous' describes the painfully unpleasant meeting. 'Tortuous' describes something winding or twisted, like a road, which doesn't describe a miserable experience.",
-            "correctAnswer": "TORTUROUS",
-            "registerLevel": 1
-        },
-        {
-            "word": "PERSPECTIVE",
-            "interactionType": "choice",
-            "question": "Traveling abroad gave her a whole new _____ on her own culture.",
-            "instruction": "Select the correct word to complete the sentence.",
-            "hint": "DEFINITION: A particular way of viewing or thinking about something.",
-            "id": "VOC_CONTEXTUAL_L89_Q2",
-            "options": [
-                "PERSPECTIV",
-                "PERSPECTTIVE",
-                "PERSPECTIVE",
-                "PROSPECTIVE"
-            ],
-            "explanation": "'Perspective' names her new viewpoint after traveling. 'Prospective' means likely to happen in the future, which doesn't describe a way of thinking.",
-            "correctAnswer": "PERSPECTIVE",
-            "registerLevel": 2
-        },
-        {
-            "word": "PROSPECTIVE",
-            "interactionType": "choice",
-            "question": "The company invited several _____ employees for interviews.",
-            "instruction": "Select the correct word to complete the sentence.",
-            "hint": "DEFINITION: Likely to happen or become something in the future.",
-            "id": "VOC_CONTEXTUAL_L89_Q3",
-            "options": [
-                "PERSPECTIVE",
-                "PROSPECTTIVE",
-                "PROSPECTIVE",
-                "PROSPEKTIVE"
-            ],
-            "explanation": "'Prospective' describes employees who may be hired in the future. 'Perspective' names a viewpoint, which doesn't describe a future possibility.",
-            "correctAnswer": "PROSPECTIVE",
-            "registerLevel": 3
-        },
-        {
-            "word": "CONTINENCE",
-            "interactionType": "choice",
-            "question": "After the surgery, the doctor monitored his bladder _____ closely.",
-            "instruction": "Select the correct word to complete the sentence.",
-            "hint": "DEFINITION: The ability to control bodily functions.",
-            "id": "VOC_CONTEXTUAL_L90_Q1",
-            "options": [
-                "CONTINENCY",
-                "CONTINENTS",
-                "CONTINANCE",
-                "CONTINENCE"
-            ],
-            "explanation": "'Continence' refers to bodily control, fitting the medical context. The other spellings either misspell the word or confuse it with 'continents', meaning landmasses.",
-            "correctAnswer": "CONTINENCE",
-            "registerLevel": 1
-        },
-        {
-            "word": "COUNTENANCE",
-            "interactionType": "choice",
-            "question": "Her grandmother kept a calm _____ even during the chaos.",
-            "instruction": "Select the correct word to complete the sentence.",
-            "hint": "DEFINITION: A person's facial expression or composure.",
-            "id": "VOC_CONTEXTUAL_L90_Q2",
-            "options": [
-                "CONTINENCE",
-                "COUNTENENCE",
-                "COUNTENANCE",
-                "COUNTANANCE"
-            ],
-            "explanation": "'Countenance' describes her calm facial expression. 'Continence' refers to bodily control, an entirely unrelated medical term.",
-            "correctAnswer": "COUNTENANCE",
-            "registerLevel": 10
-        },
-        {
-            "word": "BAITED",
-            "interactionType": "choice",
-            "question": "He _____ the fishing hook with a fresh worm.",
-            "instruction": "Select the correct word to complete the sentence.",
-            "hint": "DEFINITION: Put food on a hook or trap to attract an animal (past tense of 'bait').",
-            "id": "VOC_CONTEXTUAL_L90_Q3",
-            "options": [
-                "BATED",
-                "BAYTED",
-                "BAITED",
-                "BAITTED"
-            ],
-            "explanation": "'Baited' describes putting bait on the hook. 'Bated' means held back in suspense, as in 'bated breath', which doesn't describe preparing fishing gear.",
-            "correctAnswer": "BAITED",
-            "registerLevel": 7
-        }
-    ],
-    "gameType": "contextualUsage",
-    "batchIndex": 9
+  "levels": "81-90",
+  "quests": [
+    {
+      "word": "SHOW",
+      "interactionType": "choice",
+      "question": "Can you _____ me how to use this software? I've never tried it before.",
+      "instruction": "Select the word that best completes the sentence.",
+      "hint": "This is the everyday, casual word for helping someone see how something works, in person.",
+      "id": "VOC_CONTEXTUAL_L81_Q1",
+      "options": [
+        "DEMONSTRATE",
+        "ILLUSTRATE",
+        "EXPLAIN",
+        "SHOW"
+      ],
+      "explanation": "Show is the natural, casual word for helping someone learn hands-on, in person. Demonstrate means something similar but sounds more formal, more suited to a training session than a quick favor between colleagues.",
+      "correctAnswer": "SHOW",
+      "registerLevel": 5
+    },
+    {
+      "word": "DEMONSTRATE",
+      "interactionType": "choice",
+      "question": "The study's results clearly _____ a strong link between sleep and memory retention.",
+      "instruction": "Select the word that best completes the sentence.",
+      "hint": "This word fits the formal register of academic writing, implying rigorous, convincing evidence.",
+      "id": "VOC_CONTEXTUAL_L81_Q2",
+      "options": [
+        "DEMONSTRATE",
+        "SHOW",
+        "ILLUSTRATE",
+        "EXPLAIN"
+      ],
+      "explanation": "Demonstrate fits formal academic writing, implying the evidence is thorough and convincing. Show works too in casual contexts, but demonstrate is the more standard, elevated choice for describing what research findings establish.",
+      "correctAnswer": "DEMONSTRATE",
+      "registerLevel": 5
+    },
+    {
+      "word": "ILLUSTRATE",
+      "interactionType": "choice",
+      "question": "The professor used a simple diagram to _____ how the process works step by step.",
+      "instruction": "Select the word that best completes the sentence.",
+      "hint": "This word fits using a specific example or visual to clarify an abstract idea.",
+      "id": "VOC_CONTEXTUAL_L81_Q3",
+      "options": [
+        "DEMONSTRATE",
+        "SHOW",
+        "ILLUSTRATE",
+        "EXPLAIN"
+      ],
+      "explanation": "Illustrate fits using a specific example or visual, like a diagram, to clarify something abstract. Demonstrate would suggest proving something is true through evidence, a different rhetorical goal than simply clarifying a process visually.",
+      "correctAnswer": "ILLUSTRATE",
+      "registerLevel": 5
+    },
+    {
+      "word": "INDICATES",
+      "interactionType": "choice",
+      "question": "The data _____ that customer satisfaction has improved slightly over the past year.",
+      "instruction": "Select the word that best completes the sentence.",
+      "hint": "This word fits pointing toward a conclusion with moderate, standard analytical confidence.",
+      "id": "VOC_CONTEXTUAL_L82_Q1",
+      "options": [
+        "SUGGESTS",
+        "INDICATES",
+        "REVEALS",
+        "SHOWS"
+      ],
+      "explanation": "Indicate is the standard analytical verb for data pointing toward a conclusion with reasonable confidence. Reveal would suggest uncovering something previously hidden, which is stronger than what a slight, expected improvement implies.",
+      "correctAnswer": "INDICATES",
+      "registerLevel": 5
+    },
+    {
+      "word": "SUGGEST",
+      "interactionType": "choice",
+      "question": "The results _____ a possible connection between diet and mood, but more research is needed to confirm it.",
+      "instruction": "Select the word that best completes the sentence.",
+      "hint": "This word fits a cautious, tentative conclusion, matching the hedge that follows.",
+      "id": "VOC_CONTEXTUAL_L82_Q2",
+      "options": [
+        "INDICATE",
+        "REVEAL",
+        "SHOW",
+        "SUGGEST"
+      ],
+      "explanation": "Suggest fits a cautious, tentative conclusion, matching 'possible connection' and 'more research is needed.' Indicate would sound slightly more confident, a bit too strong for a result the researchers themselves say isn't yet confirmed.",
+      "correctAnswer": "SUGGEST",
+      "registerLevel": 5
+    },
+    {
+      "word": "REVEALED",
+      "interactionType": "choice",
+      "question": "The investigation _____ a pattern of financial mismanagement that had gone unnoticed for years.",
+      "instruction": "Select the word that best completes the sentence.",
+      "hint": "This word implies uncovering something previously hidden or unknown, stronger than a routine finding.",
+      "id": "VOC_CONTEXTUAL_L82_Q3",
+      "options": [
+        "INDICATED",
+        "SUGGESTED",
+        "REVEALED",
+        "SHOWED"
+      ],
+      "explanation": "Reveal implies uncovering something previously hidden, matching 'gone unnoticed for years.' Indicate or suggest would sound far too mild for a dramatic investigative discovery of long-hidden financial wrongdoing.",
+      "correctAnswer": "REVEALED",
+      "registerLevel": 5
+    },
+    {
+      "word": "IMPORTANT",
+      "interactionType": "choice",
+      "question": "Getting enough sleep is _____ for maintaining good health.",
+      "instruction": "Select the word that best completes the sentence.",
+      "hint": "This is the general, everyday word for something that matters a great deal.",
+      "id": "VOC_CONTEXTUAL_L83_Q1",
+      "options": [
+        "IMPORTANT",
+        "SIGNIFICANT",
+        "NOTABLE",
+        "CRUCIAL"
+      ],
+      "explanation": "Important is the general, everyday word for something that matters, fitting common health advice. Significant carries a more technical, often statistical connotation in research writing, which isn't the register of this everyday sentence.",
+      "correctAnswer": "IMPORTANT",
+      "registerLevel": 5
+    },
+    {
+      "word": "SIGNIFICANT",
+      "interactionType": "choice",
+      "question": "The study found a _____ difference in test scores between the two teaching methods, with a p-value well below 0.05.",
+      "instruction": "Select the word that best completes the sentence.",
+      "hint": "This word has a precise technical meaning in research, tied to statistical measurement.",
+      "id": "VOC_CONTEXTUAL_L83_Q2",
+      "options": [
+        "IMPORTANT",
+        "NOTABLE",
+        "CRUCIAL",
+        "SIGNIFICANT"
+      ],
+      "explanation": "Significant has a precise statistical meaning tied to a p-value, matching the technical detail given. Important is the everyday word for mattering, but it lacks that specific, measurable, statistical sense that this research context requires.",
+      "correctAnswer": "SIGNIFICANT",
+      "registerLevel": 5
+    },
+    {
+      "word": "NOTABLE",
+      "interactionType": "choice",
+      "question": "One _____ exception to the trend was the company's performance in the Asian market, which grew despite the global downturn.",
+      "instruction": "Select the word that best completes the sentence.",
+      "hint": "This word describes something worth remarking on specifically because it stands out from the pattern.",
+      "id": "VOC_CONTEXTUAL_L83_Q3",
+      "options": [
+        "IMPORTANT",
+        "NOTABLE",
+        "SIGNIFICANT",
+        "CRUCIAL"
+      ],
+      "explanation": "Notable fits something worth remarking on because it stands out, matching 'exception to the trend.' Important would just mean it mattered, missing that specific sense of standing out as unusual against the overall pattern.",
+      "correctAnswer": "NOTABLE",
+      "registerLevel": 5
+    },
+    {
+      "word": "ASSUME",
+      "interactionType": "choice",
+      "question": "I _____ you've already read the report, so I won't go over the basics again.",
+      "instruction": "Select the word that best completes the sentence.",
+      "hint": "This is the general, default word for taking something as true without needing justification.",
+      "id": "VOC_CONTEXTUAL_L84_Q1",
+      "options": [
+        "PRESUME",
+        "SUPPOSE",
+        "GUESS",
+        "ASSUME"
+      ],
+      "explanation": "Assume is the general, default word for taking something as true without needing specific justification. Presume implies a slightly more reasoned inference based on evidence, which isn't quite the casual default assumption being made here.",
+      "correctAnswer": "ASSUME",
+      "registerLevel": 5
+    },
+    {
+      "word": "PRESUME",
+      "interactionType": "choice",
+      "question": "Given her background as a chemist, we can safely _____ she understood the technical language in the contract.",
+      "instruction": "Select the word that best completes the sentence.",
+      "hint": "This word implies a reasonable inference drawn from specific evidence already mentioned.",
+      "id": "VOC_CONTEXTUAL_L84_Q2",
+      "options": [
+        "ASSUME",
+        "SUPPOSE",
+        "GUESS",
+        "PRESUME"
+      ],
+      "explanation": "Presume implies a reasoned inference based on evidence, matching 'given her background as a chemist.' Assume would sound more like a neutral default, missing that sense of the belief being justified by a specific fact.",
+      "correctAnswer": "PRESUME",
+      "registerLevel": 5
+    },
+    {
+      "word": "SUPPOSE",
+      "interactionType": "choice",
+      "question": "I _____ he's running late again, since he's not answering his phone.",
+      "instruction": "Select the word that best completes the sentence.",
+      "hint": "This word fits a soft, tentative, everyday guess in casual spoken conversation.",
+      "id": "VOC_CONTEXTUAL_L84_Q3",
+      "options": [
+        "ASSUME",
+        "PRESUME",
+        "SUPPOSE",
+        "GUESS"
+      ],
+      "explanation": "Suppose fits a soft, tentative guess in casual speech, matching the uncertain tone before 'since he's not answering.' Presume would sound too formal and confident for this offhand, everyday remark about a late friend.",
+      "correctAnswer": "SUPPOSE",
+      "registerLevel": 5
+    },
+    {
+      "word": "ASSESS",
+      "interactionType": "choice",
+      "question": "Teachers use various tests to _____ how well students understand the material.",
+      "instruction": "Select the word that best completes the sentence.",
+      "hint": "This is the standard educational term for measuring someone's understanding or ability.",
+      "id": "VOC_CONTEXTUAL_L85_Q1",
+      "options": [
+        "EVALUATE",
+        "ASSESS",
+        "APPRAISE",
+        "JUDGE"
+      ],
+      "explanation": "Assess is the standard term in education for measuring understanding through tests. Appraise specifically means determining the monetary value of something, which makes no sense applied to a student's grasp of material.",
+      "correctAnswer": "ASSESS",
+      "registerLevel": 5
+    },
+    {
+      "word": "EVALUATE",
+      "interactionType": "choice",
+      "question": "The committee will _____ each proposal based on cost, feasibility, and environmental impact.",
+      "instruction": "Select the word that best completes the sentence.",
+      "hint": "This word fits weighing multiple criteria together to reach an overall comparative decision.",
+      "id": "VOC_CONTEXTUAL_L85_Q2",
+      "options": [
+        "EVALUATE",
+        "ASSESS",
+        "APPRAISE",
+        "JUDGE"
+      ],
+      "explanation": "Evaluate fits weighing multiple criteria together, matching 'cost, feasibility, and environmental impact.' Assess can work too, but evaluate is the more standard word for comparative decision-making across several competing proposals.",
+      "correctAnswer": "EVALUATE",
+      "registerLevel": 5
+    },
+    {
+      "word": "APPRAISE",
+      "interactionType": "choice",
+      "question": "A professional was hired to _____ the value of the antique furniture before the estate sale.",
+      "instruction": "Select the word that best completes the sentence.",
+      "hint": "This word specifically means determining the monetary worth of something.",
+      "id": "VOC_CONTEXTUAL_L85_Q3",
+      "options": [
+        "EVALUATE",
+        "ASSESS",
+        "JUDGE",
+        "APPRAISE"
+      ],
+      "explanation": "Appraise specifically means determining monetary value, matching 'the value of the antique furniture.' Evaluate is broader and could apply to many kinds of judgment, missing that precise financial-valuation sense that appraise carries.",
+      "correctAnswer": "APPRAISE",
+      "registerLevel": 5
+    },
+    {
+      "word": "EVIDENCE",
+      "interactionType": "choice",
+      "question": "There's strong _____ to suggest that the new medication reduces symptoms significantly.",
+      "instruction": "Select the word that best completes the sentence.",
+      "hint": "This word implies information that supports a claim, without necessarily settling it with total certainty.",
+      "id": "VOC_CONTEXTUAL_L86_Q1",
+      "options": [
+        "EVIDENCE",
+        "PROOF",
+        "DATA",
+        "RESEARCH"
+      ],
+      "explanation": "Evidence implies information supporting a claim without claiming total certainty, matching the hedge 'to suggest.' Proof implies a much higher, more conclusive standard of confirmation, which doesn't fit a claim still being suggested.",
+      "correctAnswer": "EVIDENCE",
+      "registerLevel": 5
+    },
+    {
+      "word": "PROOF",
+      "interactionType": "choice",
+      "question": "Scientists still don't have definitive _____ that the treatment works in humans, only in animal trials.",
+      "instruction": "Select the word that best completes the sentence.",
+      "hint": "This word implies a conclusive, settled standard of confirmation, matching 'definitive.'",
+      "id": "VOC_CONTEXTUAL_L86_Q2",
+      "options": [
+        "PROOF",
+        "EVIDENCE",
+        "DATA",
+        "RESEARCH"
+      ],
+      "explanation": "Proof implies a conclusive, settled standard of confirmation, matching 'definitive' and contrasting with mere animal trials. Evidence would only imply partial support, which undersells the complete certainty that 'definitive' specifically calls for.",
+      "correctAnswer": "PROOF",
+      "registerLevel": 5
+    },
+    {
+      "word": "DATA",
+      "interactionType": "choice",
+      "question": "The research team collected _____ from over ten thousand participants across five countries.",
+      "instruction": "Select the word that best completes the sentence.",
+      "hint": "This word refers to the raw factual information or measurements gathered, not conclusions drawn from them.",
+      "id": "VOC_CONTEXTUAL_L86_Q3",
+      "options": [
+        "EVIDENCE",
+        "DATA",
+        "PROOF",
+        "RESEARCH"
+      ],
+      "explanation": "Data refers to raw factual information gathered from participants, matching 'collected... from over ten thousand.' Evidence would describe information used to support a claim, a slightly different, more interpretive concept than raw collected numbers.",
+      "correctAnswer": "DATA",
+      "registerLevel": 5
+    },
+    {
+      "word": "HYPOTHESIS",
+      "interactionType": "choice",
+      "question": "Before running the experiment, she wrote down her _____ about what would happen to the plants without sunlight.",
+      "instruction": "Select the word that best completes the sentence.",
+      "hint": "This word describes a specific, testable prediction made before an experiment, a standard scientific-method term.",
+      "id": "VOC_CONTEXTUAL_L87_Q1",
+      "options": [
+        "THEORY",
+        "PRINCIPLE",
+        "HYPOTHESIS",
+        "PREDICTION"
+      ],
+      "explanation": "Hypothesis is the standard scientific-method term for a testable prediction made before an experiment. Theory would suggest a broad, well-established framework, which doesn't fit a fresh, untested idea written down before testing even begins.",
+      "correctAnswer": "HYPOTHESIS",
+      "registerLevel": 5
+    },
+    {
+      "word": "THEORIES",
+      "interactionType": "choice",
+      "question": "Evolution by natural selection is one of the most well-supported _____ in all of biology.",
+      "instruction": "Select the word that best completes the sentence.",
+      "hint": "This word describes a broad, well-substantiated explanatory framework backed by extensive evidence.",
+      "id": "VOC_CONTEXTUAL_L87_Q2",
+      "options": [
+        "THEORIES",
+        "HYPOTHESES",
+        "PRINCIPLES",
+        "PREDICTIONS"
+      ],
+      "explanation": "Theory describes a broad, well-substantiated explanatory framework, matching 'well-supported' and the huge body of evidence behind evolution. Hypothesis would suggest a single untested prediction, far too tentative a word for something this thoroughly confirmed.",
+      "correctAnswer": "THEORIES",
+      "registerLevel": 5
+    },
+    {
+      "word": "PRINCIPLE",
+      "interactionType": "choice",
+      "question": "The company operates on the basic _____ that customer satisfaction leads to long-term loyalty.",
+      "instruction": "Select the word that best completes the sentence.",
+      "hint": "This word describes a fundamental guiding belief underlying decisions, not something tested experimentally.",
+      "id": "VOC_CONTEXTUAL_L87_Q3",
+      "options": [
+        "PRINCIPLE",
+        "THEORY",
+        "HYPOTHESIS",
+        "PREDICTION"
+      ],
+      "explanation": "Principle describes a fundamental guiding belief underlying business decisions, matching 'operates on the basic.' Hypothesis would suggest something tested through experiments, which doesn't fit a company's general operating philosophy.",
+      "correctAnswer": "PRINCIPLE",
+      "registerLevel": 5
+    },
+    {
+      "word": "CONSEQUENCES",
+      "interactionType": "choice",
+      "question": "Missing the deadline could have serious _____ for the entire team's bonus this quarter.",
+      "instruction": "Select the word that best completes the sentence.",
+      "hint": "This word implies significant, often negative repercussions that follow from an action.",
+      "id": "VOC_CONTEXTUAL_L88_Q1",
+      "options": [
+        "RESULTS",
+        "CONSEQUENCES",
+        "OUTCOMES",
+        "EFFECTS"
+      ],
+      "explanation": "Consequence implies negative repercussions following an action, matching 'serious' and the threat to the team's bonus. Result is a more neutral word for whatever comes out of a process, without that same sense of penalty.",
+      "correctAnswer": "CONSEQUENCES",
+      "registerLevel": 5
+    },
+    {
+      "word": "RESULTS",
+      "interactionType": "choice",
+      "question": "The experiment's _____ confirmed what the researchers had predicted all along.",
+      "instruction": "Select the word that best completes the sentence.",
+      "hint": "This is the neutral, standard scientific-reporting term for what a specific test produced.",
+      "id": "VOC_CONTEXTUAL_L88_Q2",
+      "options": [
+        "CONSEQUENCES",
+        "RESULTS",
+        "OUTCOMES",
+        "EFFECTS"
+      ],
+      "explanation": "Result is the standard, neutral term for what a specific experiment produced, fitting scientific reporting. Consequence would imply a repercussion or penalty, which doesn't fit a neutral confirmation of a research prediction.",
+      "correctAnswer": "RESULTS",
+      "registerLevel": 5
+    },
+    {
+      "word": "OUTCOME",
+      "interactionType": "choice",
+      "question": "Regardless of the _____ of tomorrow's vote, the two parties have agreed to work together afterward.",
+      "instruction": "Select the word that best completes the sentence.",
+      "hint": "This word describes the final overall resolution of an uncertain situation with multiple possible paths.",
+      "id": "VOC_CONTEXTUAL_L88_Q3",
+      "options": [
+        "CONSEQUENCE",
+        "RESULT",
+        "OUTCOME",
+        "EFFECT"
+      ],
+      "explanation": "Outcome describes the final resolution of an uncertain situation, like an election with multiple possible paths. Result would work too, but outcome better captures the sense of one path finally being settled among several possibilities.",
+      "correctAnswer": "OUTCOME",
+      "registerLevel": 5
+    },
+    {
+      "word": "APPROACH",
+      "interactionType": "choice",
+      "question": "She took a very hands-on _____ to teaching, letting students learn by doing rather than just listening.",
+      "instruction": "Select the word that best completes the sentence.",
+      "hint": "This word describes a general manner or attitude toward doing something, broader than one specific procedure.",
+      "id": "VOC_CONTEXTUAL_L89_Q1",
+      "options": [
+        "APPROACH",
+        "METHOD",
+        "STRATEGY",
+        "TECHNIQUE"
+      ],
+      "explanation": "Approach describes a general manner or attitude toward teaching, matching 'hands-on.' Method would suggest a specific, formalized set of steps, which is narrower than the broad teaching philosophy being described here.",
+      "correctAnswer": "APPROACH",
+      "registerLevel": 5
+    },
+    {
+      "word": "METHOD",
+      "interactionType": "choice",
+      "question": "The lab followed a strict _____ to ensure the experiment could be replicated exactly by other researchers.",
+      "instruction": "Select the word that best completes the sentence.",
+      "hint": "This word implies a specific, precise, replicable procedure, standard in scientific contexts.",
+      "id": "VOC_CONTEXTUAL_L89_Q2",
+      "options": [
+        "APPROACH",
+        "STRATEGY",
+        "TECHNIQUE",
+        "METHOD"
+      ],
+      "explanation": "Method implies a specific, replicable procedure, matching 'exactly' and 'replicated.' Approach would suggest a general attitude, which is too vague for the precise, step-by-step process needed in scientific research.",
+      "correctAnswer": "METHOD",
+      "registerLevel": 5
+    },
+    {
+      "word": "STRATEGY",
+      "interactionType": "choice",
+      "question": "The company's marketing _____ focused on social media influencers rather than traditional advertising.",
+      "instruction": "Select the word that best completes the sentence.",
+      "hint": "This word implies a deliberate, long-term plan designed to achieve a specific competitive goal.",
+      "id": "VOC_CONTEXTUAL_L89_Q3",
+      "options": [
+        "APPROACH",
+        "METHOD",
+        "STRATEGY",
+        "TECHNIQUE"
+      ],
+      "explanation": "Strategy implies a deliberate, long-term competitive plan, fitting a company's overall marketing direction. Method would suggest a specific set of steps, missing that broader, goal-oriented planning sense that strategy carries in business.",
+      "correctAnswer": "STRATEGY",
+      "registerLevel": 5
+    },
+    {
+      "word": "FACTORS",
+      "interactionType": "choice",
+      "question": "Several _____ contributed to the company's decline, including poor management and increased competition.",
+      "instruction": "Select the word that best completes the sentence.",
+      "hint": "This word describes multiple contributing elements, without claiming any single one is the definitive reason.",
+      "id": "VOC_CONTEXTUAL_L90_Q1",
+      "options": [
+        "CAUSES",
+        "FACTORS",
+        "VARIABLES",
+        "REASONS"
+      ],
+      "explanation": "Factor fits multiple contributing elements working together, matching 'several' and the list that follows. Cause would suggest a single, direct, definitive reason, which contradicts the sentence describing multiple contributing elements at once.",
+      "correctAnswer": "FACTORS",
+      "registerLevel": 5
+    },
+    {
+      "word": "CAUSE",
+      "interactionType": "choice",
+      "question": "Investigators determined that faulty wiring was the primary _____ of the fire.",
+      "instruction": "Select the word that best completes the sentence.",
+      "hint": "This word implies a direct, specific reason that produced an effect, a stronger claim than a general contributing element.",
+      "id": "VOC_CONTEXTUAL_L90_Q2",
+      "options": [
+        "FACTOR",
+        "CAUSE",
+        "VARIABLE",
+        "REASON"
+      ],
+      "explanation": "Cause implies a direct, specific reason that produced an effect, matching 'primary' and the investigators' definitive finding. Factor would suggest one of several contributing elements, a weaker claim than pinpointing the exact cause of the fire.",
+      "correctAnswer": "CAUSE",
+      "registerLevel": 5
+    },
+    {
+      "word": "VARIABLES",
+      "interactionType": "choice",
+      "question": "The researchers controlled for age and income as _____ that might otherwise skew the results.",
+      "instruction": "Select the word that best completes the sentence.",
+      "hint": "This formal, technical term describes a measurable element that can change and affect an experiment's outcome.",
+      "id": "VOC_CONTEXTUAL_L90_Q3",
+      "options": [
+        "FACTORS",
+        "CAUSES",
+        "VARIABLES",
+        "REASONS"
+      ],
+      "explanation": "Variable is the formal, technical term for a measurable element that can change and affect results, standard in scientific research design. Factor is more general and doesn't carry that same precise, measurable, statistical meaning.",
+      "correctAnswer": "VARIABLES",
+      "registerLevel": 5
+    }
+  ],
+  "gameType": "contextualUsage",
+  "batchIndex": 9
 }
