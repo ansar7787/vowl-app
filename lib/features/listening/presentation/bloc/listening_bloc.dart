@@ -1,3 +1,5 @@
+import 'package:dartz/dartz.dart';
+import 'package:vowl/core/error/failures.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../domain/entities/listening_quest.dart';
@@ -287,10 +289,7 @@ class ListeningBloc extends Bloc<ListeningEvent, ListeningState> {
   /// Emits [ListeningGameComplete] immediately for snappy UI, then persists
   /// rewards in the background with up to [_kMaxSaveRetries] retries using
   /// exponential back-off so transient network errors don't silently lose XP.
-  void _completeLevel(
-    ListeningLoaded s,
-    Emitter<ListeningState> emit,
-  ) {
+  void _completeLevel(ListeningLoaded s, Emitter<ListeningState> emit) {
     soundService.playLevelComplete();
 
     analytics.onLevelComplete(
@@ -318,12 +317,14 @@ class ListeningBloc extends Bloc<ListeningEvent, ListeningState> {
             categoryId: _currentGameType!,
             isCorrect: true,
           ),
-        ).catchError((e, stack) {  
+        ).catchError((e, stack) {
           debugPrint('[ListeningBloc] Stats save failed: $e\n$stack');
-         return const Right<Failure, void>(null);  });
-        awardBadge(_kListeningBadge).catchError((e, stack) {  
+          return const Right<Failure, void>(null);
+        });
+        awardBadge(_kListeningBadge).catchError((e, stack) {
           debugPrint('[ListeningBloc] Badge failed: $e\n$stack');
-         return const Right<Failure, void>(null);  });
+          return const Right<Failure, void>(null);
+        });
       });
     }
   }

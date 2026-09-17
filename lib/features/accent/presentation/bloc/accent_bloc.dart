@@ -1,7 +1,7 @@
-import 'package:vowl/core/errors/failures.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vowl/core/usecases/usecase.dart';
+import 'package:vowl/core/error/failures.dart';
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/features/accent/domain/entities/accent_quest.dart';
@@ -292,12 +292,21 @@ class AccentBloc extends Bloc<AccentEvent, AccentState> {
                   categoryId: _currentGameType!,
                   isCorrect: true,
                 ),
-              ).catchError((e, stack) { errorReporter?.call(e, stack); return const Right<Failure, void>(null); });
-              awardBadge(
-                AccentGameConstants.accentMasterBadge,
-              ).catchError((e, stack) { errorReporter?.call(e, stack); return const Right<Failure, void>(null); });
+              ).catchError((e, stack) {
+                errorReporter?.call(e, stack);
+                return const Right<Failure, void>(null);
+              });
+              awardBadge(AccentGameConstants.accentMasterBadge).catchError((
+                e,
+                stack,
+              ) {
+                errorReporter?.call(e, stack);
+                return const Right<Failure, void>(null);
+              });
             })
-            .catchError((e, stack) { errorReporter?.call(e, stack); return const Right<Failure, void>(null); });
+            .catchError((e, stack) {
+              errorReporter?.call(e, stack);
+            });
       }
     } else {
       // Wrong answer on the final quest — stay for retry.

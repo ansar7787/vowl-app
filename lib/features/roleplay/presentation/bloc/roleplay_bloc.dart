@@ -1,5 +1,5 @@
-import 'package:vowl/core/errors/failures.dart';
 import 'package:dartz/dartz.dart';
+import 'package:vowl/core/error/failures.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vowl/features/roleplay/presentation/constants/roleplay_constants.dart';
@@ -298,9 +298,11 @@ class RoleplayBloc extends Bloc<RoleplayEvent, RoleplayState> {
               isCorrect: true,
             ),
           ).catchError((_) => const Right<Failure, void>(null));
-          awardBadge(kRoleplayBadgeId).catchError((_) => const Right<Failure, void>(null));
+          awardBadge(
+            kRoleplayBadgeId,
+          ).catchError((_) => const Right<Failure, void>(null));
         })
-        .catchError((_) => const Right<Failure, void>(null));
+        .catchError((_) => null);
   }
 
   // ── ─────────────────────────────────────────────────────────────────────

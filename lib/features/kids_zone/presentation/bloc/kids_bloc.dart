@@ -1,4 +1,4 @@
-import 'package:vowl/core/errors/failures.dart';
+import 'package:vowl/core/error/failures.dart';
 import 'package:dartz/dartz.dart';
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -414,7 +414,7 @@ class KidsBloc extends Bloc<KidsEvent, KidsState> {
                 starsEarned: s.livesRemaining > 0 ? s.livesRemaining : 1,
               ),
             );
-          } catch (_) => const Right<Failure, void>(null)
+          } catch (_) {}
 
           // 2. UI feedback — emitted after persistence.
           // 1. UI feedback — emitted immediately to prevent double-taps.
@@ -430,7 +430,7 @@ class KidsBloc extends Bloc<KidsEvent, KidsState> {
           if (newSticker != null) {
             try {
               await awardKidsSticker(newSticker);
-            } catch (_) => const Right<Failure, void>(null)
+            } catch (_) {}
           }
           // 2. Primary & Secondary persistence — Fire-and-forget.
           updateUserRewards(
@@ -444,10 +444,12 @@ class KidsBloc extends Bloc<KidsEvent, KidsState> {
               )
               .then((_) {
                 if (newSticker != null) {
-                  awardKidsSticker(newSticker).catchError((_) => const Right<Failure, void>(null));
+                  awardKidsSticker(
+                    newSticker,
+                  ).catchError((_) => const Right<Failure, void>(null));
                 }
               })
-              .catchError((_) => const Right<Failure, void>(null));
+              .catchError((_) => null);
         } else {
           // Wrong answer on the very last quest
           emit(

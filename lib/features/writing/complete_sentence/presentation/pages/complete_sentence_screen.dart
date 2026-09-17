@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
@@ -36,7 +36,7 @@ class CompleteSentenceScreen extends StatefulWidget {
 class _CompleteSentenceScreenState extends State<CompleteSentenceScreen> {
   final _hapticService = di.sl<HapticService>();
 
-  // PERF FIX: theme cached Ã¢â‚¬â€ not recomputed on every build().
+  // PERF FIX: theme cached â€” not recomputed on every build().
   late dynamic _theme;
 
   final ValueNotifier<String?> _selectedProjectile = ValueNotifier(null);
@@ -135,7 +135,7 @@ class _CompleteSentenceScreenState extends State<CompleteSentenceScreen> {
           (curr is WritingLoaded && !curr.answerStatus.isAnswered),
       listener: (context, state) {
         if (state is WritingLoaded && !state.answerStatus.isAnswered) {
-          // New question loaded or retry triggered Ã¢â‚¬â€ clear the selected option.
+          // New question loaded or retry triggered â€” clear the selected option.
           _selectedProjectile.value = null;
           _showAnagram.value = false;
         }
@@ -188,7 +188,7 @@ class _CompleteSentenceScreenState extends State<CompleteSentenceScreen> {
           onContinue: () =>
               context.read<WritingBloc>().add(const NextQuestion()),
           // FIX: WritingHintUsed is dispatched inside WritingGameHeader.
-          // Passing it here caused a double dispatch â€” now a no-op.
+          // Passing it here caused a double dispatch — now a no-op.
           onHint: () {},
           child: ListenableBuilder(
             listenable: Listenable.merge([
@@ -219,7 +219,7 @@ class _CompleteSentenceScreenState extends State<CompleteSentenceScreen> {
                         showAnagram: _showAnagram.value,
                         onAnagramSuccess: _onAnagramSuccess,
                         onAnagramFailed: _onAnagramFailed,
-                        // FIX: screen owns correctAnswer â€” widgets only report selected.
+                        // FIX: screen owns correctAnswer — widgets only report selected.
                         onFire: (selected) => _onFire(
                           selected,
                           quest.correctAnswer ?? '',

@@ -1,4 +1,4 @@
-import 'package:vowl/core/errors/failures.dart';
+import 'package:vowl/core/error/failures.dart';
 import 'package:flutter/foundation.dart';
 
 import 'package:vowl/core/utils/sound_service.dart';

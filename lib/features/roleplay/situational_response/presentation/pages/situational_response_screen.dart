@@ -1,4 +1,4 @@
-﻿import 'package:vowl/core/utils/instruction_helper.dart';
+import 'package:vowl/core/utils/instruction_helper.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';

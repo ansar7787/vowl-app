@@ -1,3 +1,5 @@
+import 'package:dartz/dartz.dart';
+import 'package:vowl/core/error/failures.dart';
 import 'dart:async';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vowl/core/usecases/usecase.dart';
@@ -267,10 +269,7 @@ class SpeakingBloc extends Bloc<SpeakingEvent, SpeakingState> {
   /// [updateUserRewards] already atomically updates `completedLevels` and
   /// `unlockedLevels` inside [_computeRewardUpdates], so a separate
   /// [updateUnlockedLevel] call is intentionally omitted.
-  void _handleLevelComplete(
-    SpeakingLoaded s,
-    Emitter<SpeakingState> emit,
-  ) {
+  void _handleLevelComplete(SpeakingLoaded s, Emitter<SpeakingState> emit) {
     unawaited(soundService.playLevelComplete());
 
     // : Derive xp/coins from quest metadata (q.xpReward ?? _kDefaultXp)
@@ -289,43 +288,50 @@ class SpeakingBloc extends Bloc<SpeakingEvent, SpeakingState> {
 
     // 2. Primary & Secondary persistence — Fire-and-forget.
     updateUserRewards(
-      UpdateUserRewardsParams(
-        gameType: s.gameType.name,
-        level: s.level,
-        xpIncrease: xp,
-        coinIncrease: coins,
-        starsEarned: s.livesRemaining,
-      ),
-    ).then((_) {
-      updateCategoryStats(
-        UpdateCategoryStatsParams(
-          categoryId: s.gameType.name,
-          isCorrect: true,
-        ),
-      ).catchError((_, __) {  
-        _logger.error(
-          'Secondary persistence (stats) failed',
-          error: e,
-          stackTrace: st,
-          tag: 'SpeakingBloc',
-        );
-       return const Right<Failure, void>(null);  });
-      awardBadge(_kSpeakingMasterBadge).catchError((_, __) {  
-        _logger.error(
-          'Secondary persistence (badge) failed',
-          error: e,
-          stackTrace: st,
-          tag: 'SpeakingBloc',
-        );
-       return const Right<Failure, void>(null);  });
-    }).catchError((_, __) {  
-      _logger.error(
-        'Primary persistence failed after level complete',
-        error: e,
-        stackTrace: st,
-        tag: 'SpeakingBloc',
-      );
-     return const Right<Failure, void>(null);  });
+          UpdateUserRewardsParams(
+            gameType: s.gameType.name,
+            level: s.level,
+            xpIncrease: xp,
+            coinIncrease: coins,
+            starsEarned: s.livesRemaining,
+          ),
+        )
+        .then((_) {
+          updateCategoryStats(
+            UpdateCategoryStatsParams(
+              categoryId: s.gameType.name,
+              isCorrect: true,
+            ),
+          ).catchError((Object e, StackTrace st) {
+            _logger.error(
+              'Secondary persistence (stats) failed',
+              error: e,
+              stackTrace: st,
+              tag: 'SpeakingBloc',
+            );
+            return const Right<Failure, void>(null);
+          });
+          awardBadge(_kSpeakingMasterBadge).catchError((
+            Object e,
+            StackTrace st,
+          ) {
+            _logger.error(
+              'Secondary persistence (badge) failed',
+              error: e,
+              stackTrace: st,
+              tag: 'SpeakingBloc',
+            );
+            return const Right<Failure, void>(null);
+          });
+        })
+        .catchError((Object e, StackTrace st) {
+          _logger.error(
+            'Primary persistence failed after level complete',
+            error: e,
+            stackTrace: st,
+            tag: 'SpeakingBloc',
+          );
+        });
   }
 
   // ---------------------------------------------------------------------------
