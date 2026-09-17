@@ -191,23 +191,14 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
                                 Positioned(
                                   top: machineTop,
                                   child: RepaintBoundary(
-                                    child: isCompact
-                                        ? SizedBox(
-                                            height: 75.h,
-                                            child: FittedBox(
-                                              fit: BoxFit.scaleDown,
-                                              child: TopicMachineHead(
-                                                primaryColor:
-                                                    theme.primaryColor,
-                                                emoji:
-                                                    quest?.topicEmoji ?? "📦",
-                                              ),
-                                            ),
-                                          )
-                                        : TopicMachineHead(
-                                            primaryColor: theme.primaryColor,
-                                            emoji: quest?.topicEmoji ?? "📦",
-                                          ),
+                                    child: _CompactFit(
+                                      isCompact: isCompact,
+                                      height: 75.h,
+                                      child: TopicMachineHead(
+                                        primaryColor: theme.primaryColor,
+                                        emoji: quest?.topicEmoji ?? "📦",
+                                      ),
+                                    ),
                                   ),
                                 ),
 
@@ -234,44 +225,24 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
                                         }
                                       },
                                       child: RepaintBoundary(
-                                        child: isCompact
-                                            ? SizedBox(
-                                                width: 110.w,
-                                                height: 140.h,
-                                                child: FittedBox(
-                                                  fit: BoxFit.scaleDown,
-                                                  child: TopicContainmentBin(
-                                                    index: 0,
-                                                    label: buckets[0],
-                                                    color: theme.primaryColor,
-                                                    isDark: isDark,
-                                                    words:
-                                                        _controller
-                                                            .wordsInBins[0] ??
-                                                        [],
-                                                    isHinted: _controller
-                                                        .isHintTarget(
-                                                          currentWord,
-                                                          buckets[0],
-                                                        ),
-                                                  ),
-                                                ),
-                                              )
-                                            : TopicContainmentBin(
-                                                index: 0,
-                                                label: buckets[0],
-                                                color: theme.primaryColor,
-                                                isDark: isDark,
-                                                words:
-                                                    _controller
-                                                        .wordsInBins[0] ??
-                                                    [],
-                                                isHinted: _controller
-                                                    .isHintTarget(
-                                                      currentWord,
-                                                      buckets[0],
-                                                    ),
-                                              ),
+                                        child: _CompactFit(
+                                          isCompact: isCompact,
+                                          width: 110.w,
+                                          height: 140.h,
+                                          child: TopicContainmentBin(
+                                            index: 0,
+                                            label: buckets[0],
+                                            color: theme.primaryColor,
+                                            isDark: isDark,
+                                            words:
+                                                _controller.wordsInBins[0] ??
+                                                [],
+                                            isHinted: _controller.isHintTarget(
+                                              currentWord,
+                                              buckets[0],
+                                            ),
+                                          ),
+                                        ),
                                       ),
                                     ),
                                   ),
@@ -298,44 +269,25 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
                                           }
                                         },
                                         child: RepaintBoundary(
-                                          child: isCompact
-                                              ? SizedBox(
-                                                  width: 110.w,
-                                                  height: 140.h,
-                                                  child: FittedBox(
-                                                    fit: BoxFit.scaleDown,
-                                                    child: TopicContainmentBin(
-                                                      index: 1,
-                                                      label: buckets[1],
-                                                      color: theme.primaryColor,
-                                                      isDark: isDark,
-                                                      words:
-                                                          _controller
-                                                              .wordsInBins[1] ??
-                                                          [],
-                                                      isHinted: _controller
-                                                          .isHintTarget(
-                                                            currentWord,
-                                                            buckets[1],
-                                                          ),
-                                                    ),
+                                          child: _CompactFit(
+                                            isCompact: isCompact,
+                                            width: 110.w,
+                                            height: 140.h,
+                                            child: TopicContainmentBin(
+                                              index: 1,
+                                              label: buckets[1],
+                                              color: theme.primaryColor,
+                                              isDark: isDark,
+                                              words:
+                                                  _controller.wordsInBins[1] ??
+                                                  [],
+                                              isHinted: _controller
+                                                  .isHintTarget(
+                                                    currentWord,
+                                                    buckets[1],
                                                   ),
-                                                )
-                                              : TopicContainmentBin(
-                                                  index: 1,
-                                                  label: buckets[1],
-                                                  color: theme.primaryColor,
-                                                  isDark: isDark,
-                                                  words:
-                                                      _controller
-                                                          .wordsInBins[1] ??
-                                                      [],
-                                                  isHinted: _controller
-                                                      .isHintTarget(
-                                                        currentWord,
-                                                        buckets[1],
-                                                      ),
-                                                ),
+                                            ),
+                                          ),
                                         ),
                                       ),
                                     ),
@@ -346,52 +298,45 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
                                     _controller.flickedWord == null)
                                   Positioned(
                                     bottom: wordBottom,
-                                    child: isCompact
-                                        ? SizedBox(
+                                    child: Builder(
+                                      builder: (context) {
+                                        final word = TopicDraggableWord(
+                                          word: currentWord,
+                                          primaryColor: theme.primaryColor,
+                                          isDark: isDark,
+                                          onFlick: (v, offset) =>
+                                              _controller.handleFlick(
+                                                v,
+                                                offset,
+                                                currentWord,
+                                                buckets,
+                                              ),
+                                        );
+                                        if (isCompact) {
+                                          return SizedBox(
                                             width: 110.w,
                                             height: 55.h,
                                             child: FittedBox(
                                               fit: BoxFit.scaleDown,
-                                              child: TopicDraggableWord(
-                                                word: currentWord,
-                                                primaryColor:
-                                                    theme.primaryColor,
-                                                isDark: isDark,
-                                                onFlick: (v, offset) =>
-                                                    _controller.handleFlick(
-                                                      v,
-                                                      offset,
-                                                      currentWord,
-                                                      buckets,
-                                                    ),
-                                              ),
+                                              child: word,
                                             ),
-                                          )
-                                        : TopicDraggableWord(
-                                                word: currentWord,
-                                                primaryColor:
-                                                    theme.primaryColor,
-                                                isDark: isDark,
-                                                onFlick: (v, offset) =>
-                                                    _controller.handleFlick(
-                                                      v,
-                                                      offset,
-                                                      currentWord,
-                                                      buckets,
-                                                    ),
-                                              )
-                                              .animate(
-                                                key: ValueKey(
-                                                  "word_${_controller.currentWordIndex}",
-                                                ),
-                                              )
-                                              .move(
-                                                begin: const Offset(0, -100),
-                                                end: Offset.zero,
-                                                duration: 500.ms,
-                                                curve: Curves.bounceOut,
-                                              )
-                                              .fadeIn(),
+                                          );
+                                        }
+                                        return word
+                                            .animate(
+                                              key: ValueKey(
+                                                "word_${_controller.currentWordIndex}",
+                                              ),
+                                            )
+                                            .move(
+                                              begin: const Offset(0, -100),
+                                              end: Offset.zero,
+                                              duration: 500.ms,
+                                              curve: Curves.bounceOut,
+                                            )
+                                            .fadeIn();
+                                      },
+                                    ),
                                   ),
                                 if (!_controller.isAnswered &&
                                     !_controller.isFirstStagePassed &&
@@ -557,6 +502,35 @@ class _TopicInstructionBanner extends StatelessWidget {
           ),
         ),
       ).animate().fadeIn(duration: 600.ms).slideY(begin: -0.2, end: 0),
+    );
+  }
+}
+
+// ─── Compact layout wrapper ───────────────────────────────────────────────────
+
+/// Wraps [child] in a constrained [FittedBox] when [isCompact] is true,
+/// eliminating the repeated `isCompact ? SizedBox(FittedBox(child)) : child`
+/// ternary pattern.
+class _CompactFit extends StatelessWidget {
+  final bool isCompact;
+  final double? width;
+  final double? height;
+  final Widget child;
+
+  const _CompactFit({
+    required this.isCompact,
+    this.width,
+    this.height,
+    required this.child,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    if (!isCompact) return child;
+    return SizedBox(
+      width: width,
+      height: height,
+      child: FittedBox(fit: BoxFit.scaleDown, child: child),
     );
   }
 }

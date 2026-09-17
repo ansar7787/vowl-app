@@ -48,6 +48,13 @@ class VocabularyBaseLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+
+    // Compute theme ONCE — shared by header, feedback, and mascot builders.
+    final theme = VocabLevelTheme.from(
+      LevelThemeHelper.getTheme(gameType.name, isDark: isDark, level: level),
+    );
+
     final config = GameScaffoldConfig(
       gameType: gameType,
       level: level,
@@ -71,14 +78,6 @@ class VocabularyBaseLayout extends StatelessWidget {
       onRestoreLife: () =>
           context.read<VocabularyBloc>().add(const RestoreLife()),
       headerBuilder: (context, state, progress, lives) {
-        final isDark = Theme.of(context).brightness == Brightness.dark;
-        final theme = VocabLevelTheme.from(
-          LevelThemeHelper.getTheme(
-            gameType.name,
-            isDark: isDark,
-            level: level,
-          ),
-        );
         return VocabularyHeader(
           state: state,
           level: level,
@@ -92,7 +91,7 @@ class VocabularyBaseLayout extends StatelessWidget {
             context,
             onQuit: () => Navigator.of(context).pop(),
           ),
-          onBriefingShow: () {}, // Handled by GameBaseLayout internally now
+          onBriefingShow: () {}, // Handled by GameBaseLayout internally
           onHint: onHint,
           customHintText: customHintText,
         );
@@ -107,14 +106,6 @@ class VocabularyBaseLayout extends StatelessWidget {
       },
       feedbackBuilder: (context, state) {
         if (state is! VocabularyLoaded) return const SizedBox.shrink();
-        final isDark = Theme.of(context).brightness == Brightness.dark;
-        final theme = VocabLevelTheme.from(
-          LevelThemeHelper.getTheme(
-            gameType.name,
-            isDark: isDark,
-            level: level,
-          ),
-        );
 
         final quest = state.currentQuest;
         String? explanation = quest.explanation;

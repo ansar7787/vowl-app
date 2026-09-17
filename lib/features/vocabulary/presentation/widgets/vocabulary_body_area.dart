@@ -7,6 +7,11 @@ class VocabularyBodyArea extends StatelessWidget {
   final bool useScrolling;
   final bool disablePadding;
 
+  /// Reserved bottom space for the feedback card overlay.
+  /// Measured from the tallest GameFeedbackCard variant
+  /// (correct answer box + explanation + mind map + continue button).
+  static final double _feedbackReservedHeight = 220.h;
+
   const VocabularyBodyArea({
     super.key,
     required this.child,
@@ -24,7 +29,7 @@ class VocabularyBodyArea extends StatelessWidget {
       // Reserve space for the feedback card when answered; otherwise add
       // the keyboard inset so the content is never obscured.
       bottom:
-          (isAnswered ? 200.h : 40.h) +
+          (isAnswered ? _feedbackReservedHeight : 40.h) +
           MediaQuery.of(context).viewInsets.bottom,
     );
   }

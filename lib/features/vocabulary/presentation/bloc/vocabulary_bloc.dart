@@ -34,6 +34,10 @@ class VocabularyBloc extends Bloc<VocabularyEvent, VocabularyState> {
   final UpdateUserCoins updateUserCoins;
   final UpdateUserRewards updateUserRewards;
   final UpdateCategoryStats updateCategoryStats;
+  /// Injected for API parity with other game blocs. Level unlock is handled
+  /// inside [updateUserRewards] server-side; calling it here would cause
+  /// duplicate writes. Intentionally unused.
+  // ignore: unused_field
   final UpdateUnlockedLevel updateUnlockedLevel;
   final AwardBadge awardBadge;
   final SoundService soundService;
@@ -256,27 +260,33 @@ class VocabularyBloc extends Bloc<VocabularyEvent, VocabularyState> {
       ),
     );
 
-    // 2. Primary & Secondary persistence — Fire-and-forget.
+    // 2. Persistence — parallel fire-and-forget.
+    //    All three calls run independently so a single failure cannot
+    //    block the others. Errors are logged but never crash the game.
     if (_currentGameType != null && _currentLevel != null) {
       final gameType = _currentGameType!;
       final level = _currentLevel!;
 
-      updateUserRewards(
-        UpdateUserRewardsParams(
-          gameType: gameType,
-          level: level,
-          xpIncrease: xp,
-          coinIncrease: coins,
-          starsEarned: s.livesRemaining,
-        ),
-      ).catchError(_swallow).then((_) {
-        updateCategoryStats(
-          UpdateCategoryStatsParams(categoryId: gameType, isCorrect: true),
-        ).catchError(_swallow);
-        awardBadge(
-          VocabularyRewardConstants.masteryBadgeId,
-        ).catchError(_swallow);
-      });
+      Future.wait(
+        [
+          updateUserRewards(
+            UpdateUserRewardsParams(
+              gameType: gameType,
+              level: level,
+              xpIncrease: xp,
+              coinIncrease: coins,
+              starsEarned: s.livesRemaining,
+            ),
+          ).catchError(_swallow),
+          updateCategoryStats(
+            UpdateCategoryStatsParams(categoryId: gameType, isCorrect: true),
+          ).catchError(_swallow),
+          awardBadge(
+            VocabularyRewardConstants.masteryBadgeId,
+          ).catchError(_swallow),
+        ],
+        eagerError: false,
+      );
     }
   }
 
@@ -302,11 +312,10 @@ class VocabularyBloc extends Bloc<VocabularyEvent, VocabularyState> {
       emit(const VocabularyInitial());
       return;
     }
-    final matched = GameSubtype.values.cast<GameSubtype?>().firstWhere(
-      (e) => e?.name == _currentGameType,
-      orElse: () => null,
-    );
-    if (matched != null) {
+    // O(1) lookup via pre-computed name map instead of O(n) linear scan.
+    final matched = GameSubtype.fromString(_currentGameType);
+    // fromString returns a fallback — verify it actually matched.
+    if (matched.name == _currentGameType) {
       add(FetchVocabularyQuests(gameType: matched, level: _currentLevel!));
     } else {
       emit(const VocabularyInitial());
@@ -322,10 +331,16 @@ class VocabularyBloc extends Bloc<VocabularyEvent, VocabularyState> {
     if (state is! VocabularyLoaded) return;
     final s = state as VocabularyLoaded;
     if (s.hintUsed) return;
-    (await useHint(NoParams())).fold((_) => const Right<Failure, void>(null), (_) {
-      emit(s.copyWith(hintUsed: true));
-      hapticService.selection();
-    });
+    (await useHint(NoParams())).fold(
+      (_) {
+        // Hint economy rejected the request (e.g. 0 hints remaining).
+        hapticService.error();
+      },
+      (_) {
+        emit(s.copyWith(hintUsed: true));
+        hapticService.selection();
+      },
+    );
   }
 
   // ── Restore life — O(1) ───────────────────────────────────────────────────

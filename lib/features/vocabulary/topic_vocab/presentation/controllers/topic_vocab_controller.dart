@@ -17,7 +17,7 @@ class TopicVocabController extends ChangeNotifier {
 
   List<String> shuffledOptions = [];
   final List<Map<String, String>> userChoices = [];
-  final Map<int, List<String>> wordsInBins = {0: [], 1: []};
+  Map<int, List<String>> wordsInBins = {};
   final Map<String, String> _expectedAnswers = {};
 
   String? flickedWord;
@@ -48,8 +48,11 @@ class TopicVocabController extends ChangeNotifier {
     currentWordIndex = 0;
     isHintActive = false;
     userChoices.clear();
-    wordsInBins.forEach((_, list) => list.clear());
     _expectedAnswers.clear();
+
+    // Dynamically initialize bins based on actual bucket count.
+    final bucketCount = quest?.topicBuckets?.length ?? 2;
+    wordsInBins = {for (int i = 0; i < bucketCount; i++) i: <String>[]};
 
     if (quest?.correctAnswer != null) {
       final pairs = quest!.correctAnswer!.split(',');

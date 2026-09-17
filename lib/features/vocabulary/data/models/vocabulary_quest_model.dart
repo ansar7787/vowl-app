@@ -187,6 +187,7 @@ class VocabularyQuestModel extends VocabularyQuest {
 
   Map<String, dynamic> toMap() {
     return {
+      'type': type?.name,
       'instruction': instruction,
       'difficulty': difficulty,
       'subtype': subtype?.name,

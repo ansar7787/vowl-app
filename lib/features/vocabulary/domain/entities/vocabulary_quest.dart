@@ -88,4 +88,38 @@ class VocabularyQuest extends GameQuest {
   String? get targetWord => word;
   String? get example => contextSentence ?? explanation;
   String? get meaning => definition;
+
+  @override
+  List<Object?> get props => [
+    ...super.props,
+    word,
+    definition,
+    synonym,
+    antonym,
+    contextSentence,
+    prompt,
+    passage,
+    synonyms,
+    antonyms,
+    usageExample,
+    nuanceDifference,
+    gradientScale,
+    clueType,
+    evidenceWords,
+    literalVsFigurative,
+    origin,
+    academicField,
+    collocations,
+    relatedWords,
+    familyTree,
+    meaningBreakdown,
+    wrongCollocations,
+    registerLevel,
+    rootWord,
+    prefix,
+    suffix,
+    topicBuckets,
+    topicEmoji,
+    topicFact,
+  ];
 }

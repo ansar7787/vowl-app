@@ -29,6 +29,7 @@ class VocabularyPeekingMascot extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     final mascotId =
         context.read<AuthBloc>().state.user?.vowlMascot ?? 'vowl_prime';
 
@@ -67,7 +68,7 @@ class VocabularyPeekingMascot extends StatelessWidget {
                     ),
                     constraints: BoxConstraints(maxWidth: 200.w),
                     decoration: BoxDecoration(
-                      color: Colors.white,
+                      color: isDark ? Colors.grey.shade900 : Colors.white,
                       borderRadius: BorderRadius.circular(12.r),
                       boxShadow: [
                         BoxShadow(
@@ -84,7 +85,7 @@ class VocabularyPeekingMascot extends StatelessWidget {
                         fontFamily: 'Outfit',
                         fontSize: 11.sp,
                         fontWeight: FontWeight.bold,
-                        color: Colors.indigo,
+                        color: isDark ? Colors.indigo.shade200 : Colors.indigo,
                       ),
                     ),
                   )

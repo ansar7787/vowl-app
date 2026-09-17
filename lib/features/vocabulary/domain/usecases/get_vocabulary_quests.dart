@@ -31,16 +31,6 @@ class GetVocabularyQuests
   Future<Either<Failure, List<VocabularyQuest>>> call(
     GetVocabularyQuestsParams params,
   ) async {
-    try {
-      final quests = await repository.getVocabularyQuests(
-        params.gameType,
-        params.level,
-      );
-      return Right(quests);
-    } catch (e) {
-      // In a more robust implementation, the Repository would catch exceptions and return Failures.
-      // We catch it here to satisfy the UseCase contract.
-      return Left(ServerFailure(e.toString()));
-    }
+    return repository.getVocabularyQuests(params.gameType, params.level);
   }
 }
