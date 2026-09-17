@@ -58,7 +58,9 @@ class LoginEmailInput extends StatelessWidget {
             inputFormatters: [
               FilteringTextInputFormatter.deny(RegExp(r'\s')),
               // ignore: valid_regexps
-              FilteringTextInputFormatter.deny(RegExp(r'\p{Extended_Pictographic}', unicode: true)),
+              FilteringTextInputFormatter.deny(
+                RegExp(r'\p{Extended_Pictographic}', unicode: true),
+              ),
             ],
             autofillHints: const [AutofillHints.email],
             style: TextStyle(color: contrastColor),
@@ -135,7 +137,9 @@ class LoginPasswordInput extends StatelessWidget {
             inputFormatters: [
               FilteringTextInputFormatter.deny(RegExp(r'\s')),
               // ignore: valid_regexps
-              FilteringTextInputFormatter.deny(RegExp(r'\p{Extended_Pictographic}', unicode: true)),
+              FilteringTextInputFormatter.deny(
+                RegExp(r'\p{Extended_Pictographic}', unicode: true),
+              ),
             ],
             autofillHints: const [AutofillHints.password],
             style: TextStyle(color: contrastColor),
