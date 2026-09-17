@@ -65,7 +65,7 @@ class ForgotPasswordEmailInput extends StatelessWidget {
         keyboardType: TextInputType.emailAddress,
         inputFormatters: [
           FilteringTextInputFormatter.deny(RegExp(r'\s')),
-          FilteringTextInputFormatter.allow(RegExp(r'[\x21-\x7E]')),
+          FilteringTextInputFormatter.deny(RegExp(r'\p{Extended_Pictographic}', unicode: true)),
         ],
         autofillHints: const [AutofillHints.email],
         style: TextStyle(color: contrastColor),

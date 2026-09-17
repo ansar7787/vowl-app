@@ -54,7 +54,7 @@ class SignUpNameInput extends StatelessWidget {
             textInputAction: TextInputAction.next,
             keyboardType: TextInputType.name,
             inputFormatters: [
-              FilteringTextInputFormatter.allow(RegExp(r"[a-zA-Z\s\-\']")),
+              FilteringTextInputFormatter.allow(RegExp(r"[\p{L}\s\-\']", unicode: true)),
             ],
             autofillHints: const [AutofillHints.name],
             style: TextStyle(color: contrastColor),
@@ -121,7 +121,7 @@ class SignUpEmailInput extends StatelessWidget {
             keyboardType: TextInputType.emailAddress,
             inputFormatters: [
               FilteringTextInputFormatter.deny(RegExp(r'\s')),
-              FilteringTextInputFormatter.allow(RegExp(r'[\x21-\x7E]')),
+              FilteringTextInputFormatter.deny(RegExp(r'\p{Extended_Pictographic}', unicode: true)),
             ],
             autofillHints: const [AutofillHints.email],
             style: TextStyle(color: contrastColor),
@@ -197,7 +197,7 @@ class SignUpPasswordInput extends StatelessWidget {
                 keyboardType: TextInputType.visiblePassword,
                 inputFormatters: [
                   FilteringTextInputFormatter.deny(RegExp(r'\s')),
-                  FilteringTextInputFormatter.allow(RegExp(r'[\x21-\x7E]')),
+                  FilteringTextInputFormatter.deny(RegExp(r'\p{Extended_Pictographic}', unicode: true)),
                 ],
                 autofillHints: const [AutofillHints.newPassword],
                 style: TextStyle(color: contrastColor),
