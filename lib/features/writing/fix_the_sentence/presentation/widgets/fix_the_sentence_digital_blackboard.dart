@@ -11,6 +11,7 @@ class FixTheSentenceDigitalBlackboard extends StatelessWidget {
   final bool isWiped;
   final List<Offset> erasePoints;
   final Function(Offset) onErase;
+  final VoidCallback onTap;
   final Color color;
   final bool isDark;
 
@@ -22,17 +23,29 @@ class FixTheSentenceDigitalBlackboard extends StatelessWidget {
     required this.isWiped,
     required this.erasePoints,
     required this.onErase,
+    required this.onTap,
     required this.color,
     required this.isDark,
   });
 
   @override
   Widget build(BuildContext context) {
-    final parts = fullText.split(targetWord);
-    final String prefix = parts.isNotEmpty ? parts[0] : "";
-    final String suffix = parts.length > 1
-        ? parts.sublist(1).join(targetWord)
-        : "";
+    final String escapedTarget = RegExp.escape(targetWord);
+    final RegExp wordRegExp =
+        RegExp(r'\b' + escapedTarget + r'\b', caseSensitive: false);
+    final Match? match = wordRegExp.firstMatch(fullText);
+
+    String prefix = "";
+    String suffix = "";
+
+    if (match != null) {
+      prefix = fullText.substring(0, match.start);
+      suffix = fullText.substring(match.end);
+    } else {
+      final parts = fullText.split(targetWord);
+      prefix = parts.isNotEmpty ? parts[0] : "";
+      suffix = parts.length > 1 ? parts.sublist(1).join(targetWord) : "";
+    }
 
     return Container(
       width: double.infinity,
@@ -115,6 +128,7 @@ class FixTheSentenceDigitalBlackboard extends StatelessWidget {
                               border: Border.all(color: color, width: 2),
                             ),
                             child: GestureDetector(
+                              onTap: onTap,
                               onPanUpdate: (details) =>
                                   onErase(details.localPosition),
                               child: Stack(

@@ -38,7 +38,7 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen> {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
 
-  final ValueNotifier<List<Offset>> _erasePoints = ValueNotifier([]);
+  final _ErasePointsNotifier _erasePoints = _ErasePointsNotifier();
   final ValueNotifier<bool> _isWiped = ValueNotifier(false);
   final ValueNotifier<String?> _selectedOption = ValueNotifier(null);
   final ValueNotifier<String?> _pendingSelectedOption = ValueNotifier(null);
@@ -73,8 +73,10 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen> {
   }
 
   void _onErase(Offset localPosition, bool isAnswered) {
-    if (isAnswered || _isWiped.value) return;
-    _erasePoints.value = List.from(_erasePoints.value)..add(localPosition);
+    if (isAnswered || _isWiped.value) {
+      return;
+    }
+    _erasePoints.add(localPosition);
     _erasedAmount.value++;
     if (_erasedAmount.value % 6 == 0) _hapticService.selection();
 
@@ -86,7 +88,9 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen> {
   }
 
   void _submitFinalAnswer(bool nailedTyping, WritingQuest quest) {
-    if (_pendingSelectedOption.value == null) return;
+    if (_pendingSelectedOption.value == null) {
+      return;
+    }
 
     if (!nailedTyping) {
       _hapticService.error();
@@ -106,7 +110,14 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen> {
     if (isAnsCorrect) {
       final fullText = quest.passage ?? "";
       final targetWord = quest.missingWord ?? "";
-      final correctedText = fullText.replaceFirst(targetWord, selected);
+      final String escapedTarget = RegExp.escape(targetWord);
+      final RegExp wordRegExp = RegExp(
+        r'\b' + escapedTarget + r'\b',
+        caseSensitive: false,
+      );
+      final correctedText = fullText.contains(wordRegExp)
+          ? fullText.replaceFirst(wordRegExp, selected)
+          : fullText.replaceFirst(targetWord, selected);
       _ttsService.speak(correctedText);
     }
   }
@@ -132,14 +143,25 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen> {
       listenWhen: (prev, curr) =>
           (curr is WritingGameComplete && prev is! WritingGameComplete) ||
           (curr is WritingGameOver && prev is! WritingGameOver) ||
+          (curr is WritingLoaded && prev is! WritingLoaded) ||
+          (curr is WritingLoaded &&
+              prev is WritingLoaded &&
+              curr.currentQuest != prev.currentQuest) ||
           (curr is WritingLoaded && !curr.answerStatus.isAnswered),
       listener: (context, state) {
-        if (state is WritingLoaded && !state.answerStatus.isAnswered) {
-          _isWiped.value = false;
-          _selectedOption.value = null;
-          _pendingSelectedOption.value = null;
-          _erasePoints.value = [];
-          _erasedAmount.value = 0;
+        if (state is WritingLoaded) {
+          if (state.currentQuest != _lastQuest) {
+            _lastQuest = state.currentQuest;
+            _shuffledOptions.value = List.from(_lastQuest!.options ?? [])
+              ..shuffle();
+          }
+          if (!state.answerStatus.isAnswered) {
+            _isWiped.value = false;
+            _selectedOption.value = null;
+            _pendingSelectedOption.value = null;
+            _erasePoints.clear();
+            _erasedAmount.value = 0;
+          }
         }
         if (state is WritingGameComplete) {
           _showConfetti.value = true;
@@ -151,16 +173,9 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen> {
             enableDoubleUp: true,
           );
         }
-
-
       },
       builder: (context, state) {
         final isLoaded = state is WritingLoaded;
-        if (isLoaded && state.currentQuest != _lastQuest) {
-          _lastQuest = state.currentQuest;
-          _shuffledOptions.value = List.from(_lastQuest!.options ?? [])
-            ..shuffle();
-        }
         final WritingQuest? quest = isLoaded ? state.currentQuest : _lastQuest;
         final bool isAnswered = isLoaded && state.answerStatus.isAnswered;
         final bool? isCorrect = isLoaded
@@ -269,9 +284,17 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen> {
                                           _selectedOption.value ??
                                           _pendingSelectedOption.value,
                                       isWiped: _isWiped.value,
-                                      erasePoints: _erasePoints.value,
+                                      erasePoints: _erasePoints.points,
                                       onErase: (pos) =>
                                           _onErase(pos, isAnswered),
+                                      onTap: () {
+                                        if (isAnswered || _isWiped.value) {
+                                          return;
+                                        }
+                                        _hapticService.success();
+                                        _soundService.playHint();
+                                        _isWiped.value = true;
+                                      },
                                       color: theme.primaryColor,
                                       isDark: isDark,
                                     ),
@@ -347,3 +370,16 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen> {
   }
 }
 
+class _ErasePointsNotifier extends ChangeNotifier {
+  final List<Offset> points = [];
+
+  void add(Offset offset) {
+    points.add(offset);
+    notifyListeners();
+  }
+
+  void clear() {
+    points.clear();
+    notifyListeners();
+  }
+}
