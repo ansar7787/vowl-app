@@ -56,8 +56,6 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>with T
     _selectedOptionText.dispose();
     _scrollController.dispose();
     disposeGrammarGame();
-    disposeGrammarGame();
-    disposeGrammarGame();
     super.dispose();
   }
 

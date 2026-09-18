@@ -60,8 +60,6 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen> with Writin
         _shuffledOptions.dispose();
     _pendingScaleSubmit.dispose();
     disposeWritingGame();
-    disposeWritingGame();
-    disposeWritingGame();
     super.dispose();
   }
 

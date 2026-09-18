@@ -87,9 +87,6 @@ class _AudioFillBlanksScreenState extends State<AudioFillBlanksScreen>
     _revealProgress.dispose();
     _scrollController.dispose();
     disposeListeningGame();
-    disposeListeningGame();
-    disposeListeningGame();
-    disposeListeningGame();
     super.dispose();
   }
 

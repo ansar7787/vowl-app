@@ -88,8 +88,6 @@ class _CompleteSentenceScreenState extends State<CompleteSentenceScreen> with Wr
     _selectedProjectile.dispose();
         _showAnagram.dispose();
     disposeWritingGame();
-    disposeWritingGame();
-    disposeWritingGame();
     super.dispose();
   }
 

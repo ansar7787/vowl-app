@@ -48,8 +48,6 @@ class _ClozeTestScreenState extends State<ClozeTestScreen> with ReadingGameScree
     _pendingDockedOption.dispose();
                 _scrollController.dispose();
     disposeReadingGame();
-    disposeReadingGame();
-    disposeReadingGame();
     super.dispose();
   }
 

@@ -56,8 +56,6 @@ class _EmotionRecognitionScreenState extends State<EmotionRecognitionScreen> wit
     _coreOffset.dispose();
     _scrollController.dispose();
     disposeListeningGame();
-    disposeListeningGame();
-    disposeListeningGame();
     super.dispose();
   }
 

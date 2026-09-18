@@ -84,8 +84,6 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>with TickerProvi
     _rotation.dispose();
                     _scrollController.dispose();
     disposeRoleplayGame();
-    disposeRoleplayGame();
-    disposeRoleplayGame();
     super.dispose();
   }
 

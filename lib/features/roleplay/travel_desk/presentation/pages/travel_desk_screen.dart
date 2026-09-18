@@ -86,8 +86,6 @@ class _TravelDeskScreenState extends State<TravelDeskScreen>with TickerProviderS
                     _hoveredIndex.dispose();
     _scrollController.dispose();
     disposeRoleplayGame();
-    disposeRoleplayGame();
-    disposeRoleplayGame();
     super.dispose();
   }
 

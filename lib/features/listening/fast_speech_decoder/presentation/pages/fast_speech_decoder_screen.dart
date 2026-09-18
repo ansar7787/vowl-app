@@ -60,8 +60,6 @@ class _FastSpeechDecoderScreenState extends State<FastSpeechDecoderScreen> with 
     _dialRotation.dispose();
     _scrollController.dispose();
     disposeListeningGame();
-    disposeListeningGame();
-    disposeListeningGame();
     super.dispose();
   }
 

@@ -91,8 +91,6 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>with Sin
     _activeHotspot.dispose();
                 _scrollController.dispose();
     disposeSpeakingGame();
-    disposeSpeakingGame();
-    disposeSpeakingGame();
     super.dispose();
   }
 

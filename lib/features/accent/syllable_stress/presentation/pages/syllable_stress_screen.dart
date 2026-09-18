@@ -46,8 +46,6 @@ class _SyllableStressScreenState extends State<SyllableStressScreen> with Accent
   void dispose() {
     _scrollController.dispose();
                 _selectedIndex.dispose();
-        disposeAccentGame();
-    disposeAccentGame();
     disposeAccentGame();
     super.dispose();
   }

@@ -50,8 +50,6 @@ class _IdiomsScreenState extends State<IdiomsScreen> with VocabularyGameScreenMi
                     _selectedOption.dispose();
     _scrollController.dispose();
     disposeVocabularyGame();
-    disposeVocabularyGame();
-    disposeVocabularyGame();
     super.dispose();
   }
 

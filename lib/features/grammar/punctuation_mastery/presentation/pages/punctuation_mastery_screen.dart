@@ -60,8 +60,6 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen> wit
     _assembledSentence.dispose();
     _scrollController.dispose();
     disposeGrammarGame();
-    disposeGrammarGame();
-    disposeGrammarGame();
     super.dispose();
   }
 

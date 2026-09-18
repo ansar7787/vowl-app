@@ -73,8 +73,6 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> with EliteMasteryGa
                 _wrongIndices.dispose();
     _scrollController.dispose();
     disposeEliteMasteryGame();
-    disposeEliteMasteryGame();
-    disposeEliteMasteryGame();
     super.dispose();
   }
 

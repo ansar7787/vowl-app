@@ -53,8 +53,6 @@ class _ReadingInferenceScreenState extends State<ReadingInferenceScreen> with Re
     _evidenceFound.dispose();
     _scrollController.dispose();
     disposeReadingGame();
-    disposeReadingGame();
-    disposeReadingGame();
     super.dispose();
   }
 

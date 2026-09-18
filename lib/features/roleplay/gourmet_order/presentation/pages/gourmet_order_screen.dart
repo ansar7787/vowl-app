@@ -84,8 +84,6 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>with TickerProvi
     _selectedItems.dispose();
                     _scrollController.dispose();
     disposeRoleplayGame();
-    disposeRoleplayGame();
-    disposeRoleplayGame();
     super.dispose();
   }
 

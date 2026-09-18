@@ -75,8 +75,6 @@ class _SpeakOppositeScreenState extends State<SpeakOppositeScreen> with Speaking
     _ttsFinished.dispose();
     _ttsTimer?.cancel();
     disposeSpeakingGame();
-    disposeSpeakingGame();
-    disposeSpeakingGame();
     super.dispose();
   }
 

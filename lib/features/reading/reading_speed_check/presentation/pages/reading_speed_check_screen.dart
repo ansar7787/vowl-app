@@ -59,8 +59,6 @@ class _ReadingSpeedCheckScreenState extends State<ReadingSpeedCheckScreen> with 
                 _isRevealed.dispose();
     _scrollController.dispose();
     disposeReadingGame();
-    disposeReadingGame();
-    disposeReadingGame();
     super.dispose();
   }
 

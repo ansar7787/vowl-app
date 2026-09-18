@@ -52,8 +52,6 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen> with ReadingG
     _showEvidenceStep.dispose();
     _scrollController.dispose();
     disposeReadingGame();
-    disposeReadingGame();
-    disposeReadingGame();
     super.dispose();
   }
 

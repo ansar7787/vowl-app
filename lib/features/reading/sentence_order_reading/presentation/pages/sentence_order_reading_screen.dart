@@ -49,8 +49,6 @@ class _SentenceOrderReadingScreenState
     _currentOrder.dispose();
                 _scrollController.dispose();
     disposeReadingGame();
-    disposeReadingGame();
-    disposeReadingGame();
     super.dispose();
   }
 

@@ -44,8 +44,6 @@ class _ReadingConclusionScreenState extends State<ReadingConclusionScreen> with 
   void dispose() {
                 _scrollController.dispose();
     disposeReadingGame();
-    disposeReadingGame();
-    disposeReadingGame();
     super.dispose();
   }
 

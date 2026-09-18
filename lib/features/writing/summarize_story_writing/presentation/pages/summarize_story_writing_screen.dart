@@ -61,8 +61,6 @@ class _SummarizeStoryWritingScreenState
     _slots.dispose();
         _pendingSubmit.dispose();
     disposeWritingGame();
-    disposeWritingGame();
-    disposeWritingGame();
     super.dispose();
   }
 

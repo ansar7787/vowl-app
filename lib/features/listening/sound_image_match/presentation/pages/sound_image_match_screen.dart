@@ -73,9 +73,6 @@ class _SoundImageMatchScreenState extends State<SoundImageMatchScreen>
     _pendingSelectedIndex.dispose();
     _scrollController.dispose();
     disposeListeningGame();
-    disposeListeningGame();
-    disposeListeningGame();
-    disposeListeningGame();
     super.dispose();
   }
 

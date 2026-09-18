@@ -68,8 +68,6 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen> with WritingGameS
     _inkLevel.dispose();
     _wordCount.dispose();
     disposeWritingGame();
-    disposeWritingGame();
-    disposeWritingGame();
     super.dispose();
   }
 

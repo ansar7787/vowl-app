@@ -79,8 +79,6 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> with VocabularyGame
     _scrollController.dispose();
     _controller.dispose();
     disposeVocabularyGame();
-    disposeVocabularyGame();
-    disposeVocabularyGame();
     super.dispose();
   }
 

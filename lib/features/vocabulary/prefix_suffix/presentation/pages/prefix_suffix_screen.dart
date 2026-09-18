@@ -105,8 +105,6 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen> with Vocabulary
     _scrollController.dispose();
     _controller.dispose();
     disposeVocabularyGame();
-    disposeVocabularyGame();
-    disposeVocabularyGame();
     super.dispose();
   }
 

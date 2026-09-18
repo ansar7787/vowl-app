@@ -48,8 +48,6 @@ class _ParagraphSummaryScreenState extends State<ParagraphSummaryScreen> with Re
     _isDistilled.dispose();
                 _scrollController.dispose();
     disposeReadingGame();
-    disposeReadingGame();
-    disposeReadingGame();
     super.dispose();
   }
 

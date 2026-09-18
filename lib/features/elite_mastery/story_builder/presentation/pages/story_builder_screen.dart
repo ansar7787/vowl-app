@@ -74,8 +74,6 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> with EliteMaste
         _currentOrder.dispose();
                 _scrollController.dispose();
     disposeEliteMasteryGame();
-    disposeEliteMasteryGame();
-    disposeEliteMasteryGame();
     super.dispose();
   }
 

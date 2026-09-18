@@ -56,8 +56,6 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen> with WritingG
     _shuffledOptions.dispose();
         _pendingSubmit.dispose();
     disposeWritingGame();
-    disposeWritingGame();
-    disposeWritingGame();
     super.dispose();
   }
 

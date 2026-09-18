@@ -51,8 +51,6 @@ class _DirectIndirectSpeechScreenState
     _selectedReflection.dispose();
                     _scrollController.dispose();
     disposeGrammarGame();
-    disposeGrammarGame();
-    disposeGrammarGame();
     super.dispose();
   }
 

@@ -80,8 +80,6 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>with TickerProvide
     _selectedIndices.dispose();
                     _scrollController.dispose();
     disposeRoleplayGame();
-    disposeRoleplayGame();
-    disposeRoleplayGame();
     super.dispose();
   }
 

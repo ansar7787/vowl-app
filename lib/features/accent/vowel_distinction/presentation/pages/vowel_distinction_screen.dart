@@ -75,8 +75,6 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen> with Ac
     _scrollController.dispose();
                 _sliderValue.dispose();
     _selectedIndex.dispose();
-        disposeAccentGame();
-    disposeAccentGame();
     disposeAccentGame();
     super.dispose();
   }

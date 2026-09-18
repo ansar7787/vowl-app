@@ -64,8 +64,6 @@ class _WritingEmailScreenState extends State<WritingEmailScreen> with WritingGam
     _shuffledOptions.dispose();
         _showSpeakToConfirm.dispose();
     disposeWritingGame();
-    disposeWritingGame();
-    disposeWritingGame();
     super.dispose();
   }
 

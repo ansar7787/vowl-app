@@ -98,8 +98,6 @@ class _PitchModulationScreenState extends State<PitchModulationScreen> with Acce
     _scrollController.dispose();
     _state.dispose();
     disposeAccentGame();
-    disposeAccentGame();
-    disposeAccentGame();
     super.dispose();
   }
 

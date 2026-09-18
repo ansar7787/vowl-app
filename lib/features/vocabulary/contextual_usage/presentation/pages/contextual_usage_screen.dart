@@ -50,8 +50,6 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> with Voca
                     _selectedOption.dispose();
     _scrollController.dispose();
     disposeVocabularyGame();
-    disposeVocabularyGame();
-    disposeVocabularyGame();
     super.dispose();
   }
 

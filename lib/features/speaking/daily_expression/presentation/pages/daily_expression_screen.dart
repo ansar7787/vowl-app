@@ -99,8 +99,6 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>with Singl
                 _timeVal.dispose();
     _scrollController.dispose();
     disposeSpeakingGame();
-    disposeSpeakingGame();
-    disposeSpeakingGame();
     super.dispose();
   }
 

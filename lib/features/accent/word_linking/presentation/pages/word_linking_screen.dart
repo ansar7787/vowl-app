@@ -44,8 +44,6 @@ class _WordLinkingScreenState extends State<WordLinkingScreen> with AccentGameSc
   void dispose() {
     _scrollController.dispose();
                 _selectedNodeIndex.dispose();
-        disposeAccentGame();
-    disposeAccentGame();
     disposeAccentGame();
     super.dispose();
   }

@@ -77,8 +77,6 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> with Vocabulary
                     _selectedOption.dispose();
     _scrollController.dispose();
     disposeVocabularyGame();
-    disposeVocabularyGame();
-    disposeVocabularyGame();
     super.dispose();
   }
 

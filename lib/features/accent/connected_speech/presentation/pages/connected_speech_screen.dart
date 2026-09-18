@@ -76,8 +76,6 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> with Acce
                 _selectedIndex.dispose();
         _resetTimer?.cancel();
     disposeAccentGame();
-    disposeAccentGame();
-    disposeAccentGame();
     super.dispose();
   }
 

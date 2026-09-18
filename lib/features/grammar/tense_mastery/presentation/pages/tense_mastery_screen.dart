@@ -52,8 +52,6 @@ class _TenseMasteryScreenState extends State<TenseMasteryScreen> with GrammarGam
     _pendingSubmit.dispose();
     _scrollController.dispose();
     disposeGrammarGame();
-    disposeGrammarGame();
-    disposeGrammarGame();
     super.dispose();
   }
 

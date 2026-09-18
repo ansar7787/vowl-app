@@ -92,8 +92,6 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen>with T
     _selectedIndex.dispose();
         _scrollController.dispose();
     disposeRoleplayGame();
-    disposeRoleplayGame();
-    disposeRoleplayGame();
     super.dispose();
   }
 

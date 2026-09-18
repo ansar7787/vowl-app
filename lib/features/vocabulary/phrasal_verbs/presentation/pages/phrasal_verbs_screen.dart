@@ -76,8 +76,6 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>with SingleTicke
     _scrollController.dispose();
     _vaultController.dispose();
     disposeVocabularyGame();
-    disposeVocabularyGame();
-    disposeVocabularyGame();
     super.dispose();
   }
 

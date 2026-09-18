@@ -45,8 +45,6 @@ class _ElevatorPitchScreenState extends State<ElevatorPitchScreen> with Roleplay
   void dispose() {
                 _scrollController.dispose();
     disposeRoleplayGame();
-    disposeRoleplayGame();
-    disposeRoleplayGame();
     super.dispose();
   }
 

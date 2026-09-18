@@ -47,8 +47,6 @@ class _GuessTitleScreenState extends State<GuessTitleScreen> with ReadingGameScr
                 _showTypeToConfirm.dispose();
     _scrollController.dispose();
     disposeReadingGame();
-    disposeReadingGame();
-    disposeReadingGame();
     super.dispose();
   }
 

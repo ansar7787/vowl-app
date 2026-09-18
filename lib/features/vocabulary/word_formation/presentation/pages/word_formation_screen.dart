@@ -107,8 +107,6 @@ class _WordFormationScreenState extends State<WordFormationScreen> with Vocabula
     _scrollController.dispose();
     _controller.dispose();
     disposeVocabularyGame();
-    disposeVocabularyGame();
-    disposeVocabularyGame();
     super.dispose();
   }
 

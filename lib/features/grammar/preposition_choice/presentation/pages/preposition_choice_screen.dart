@@ -51,8 +51,6 @@ class _PrepositionChoiceScreenState extends State<PrepositionChoiceScreen> with 
                 _pendingJigsaw.dispose();
     _scrollController.dispose();
     disposeGrammarGame();
-    disposeGrammarGame();
-    disposeGrammarGame();
     super.dispose();
   }
 

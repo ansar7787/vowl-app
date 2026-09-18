@@ -56,8 +56,6 @@ class _FindWordMeaningScreenState extends State<FindWordMeaningScreen> with Read
         _showSentenceBuilder.dispose();
     _pendingSelectedIndex.dispose();
     disposeReadingGame();
-    disposeReadingGame();
-    disposeReadingGame();
     super.dispose();
   }
 

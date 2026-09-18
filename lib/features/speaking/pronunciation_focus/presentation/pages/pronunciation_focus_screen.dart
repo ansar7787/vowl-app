@@ -94,8 +94,6 @@ class _PronunciationFocusScreenState extends State<PronunciationFocusScreen>with
     _ttsFinished.dispose();
     _ttsTimer?.cancel();
     disposeSpeakingGame();
-    disposeSpeakingGame();
-    disposeSpeakingGame();
     super.dispose();
   }
 

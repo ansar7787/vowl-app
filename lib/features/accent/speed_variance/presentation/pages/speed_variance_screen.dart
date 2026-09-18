@@ -76,8 +76,6 @@ class _SpeedVarianceScreenState extends State<SpeedVarianceScreen> with AccentGa
     _selectedIndex.dispose();
         _isNaturalSpeed.dispose();
     disposeAccentGame();
-    disposeAccentGame();
-    disposeAccentGame();
     super.dispose();
   }
 

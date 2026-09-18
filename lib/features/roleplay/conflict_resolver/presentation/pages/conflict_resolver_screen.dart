@@ -86,8 +86,6 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen>with Tic
     _rotation.dispose();
                     _scrollController.dispose();
     disposeRoleplayGame();
-    disposeRoleplayGame();
-    disposeRoleplayGame();
     super.dispose();
   }
 

@@ -56,8 +56,6 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen>with
     _pulseController.dispose();
     _scrollController.dispose();
     disposeListeningGame();
-    disposeListeningGame();
-    disposeListeningGame();
     super.dispose();
   }
 

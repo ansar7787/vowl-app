@@ -54,8 +54,6 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen> with ReadingGam
                 _pendingSubmission.dispose();
     _scrollController.dispose();
     disposeReadingGame();
-    disposeReadingGame();
-    disposeReadingGame();
     super.dispose();
   }
 

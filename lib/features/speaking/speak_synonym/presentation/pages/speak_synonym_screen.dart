@@ -80,8 +80,6 @@ class _SpeakSynonymScreenState extends State<SpeakSynonymScreen>with SingleTicke
     _ttsFinished.dispose();
     _ttsTimer?.cancel();
     disposeSpeakingGame();
-    disposeSpeakingGame();
-    disposeSpeakingGame();
     super.dispose();
   }
 

@@ -98,8 +98,6 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> with AccentGame
   void dispose() {
     _scrollController.dispose();
                 _selectedDroneIndex.dispose();
-        disposeAccentGame();
-    disposeAccentGame();
     disposeAccentGame();
     super.dispose();
   }

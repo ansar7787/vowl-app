@@ -73,8 +73,6 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen> wit
                 _selectedIndex.dispose();
         _currentSpeed.dispose();
     disposeAccentGame();
-    disposeAccentGame();
-    disposeAccentGame();
     super.dispose();
   }
 

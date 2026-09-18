@@ -56,8 +56,6 @@ class _TrueFalseReadingScreenState extends State<TrueFalseReadingScreen> with Re
                 _pendingAnswer.dispose();
     _scrollController.dispose();
     disposeReadingGame();
-    disposeReadingGame();
-    disposeReadingGame();
     super.dispose();
   }
 

@@ -89,8 +89,6 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen> with 
     _wordCount.dispose();
     _isSubmitting.dispose();
     disposeWritingGame();
-    disposeWritingGame();
-    disposeWritingGame();
     super.dispose();
   }
 

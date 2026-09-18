@@ -55,8 +55,6 @@ class _DetailSpotlightScreenState extends State<DetailSpotlightScreen> with List
     _spotlightPos.dispose();
     _scrollController.dispose();
     disposeListeningGame();
-    disposeListeningGame();
-    disposeListeningGame();
     super.dispose();
   }
 

@@ -47,8 +47,6 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen> with GrammarGameScree
     _isPassive.dispose();
                     _scrollController.dispose();
     disposeGrammarGame();
-    disposeGrammarGame();
-    disposeGrammarGame();
     super.dispose();
   }
 

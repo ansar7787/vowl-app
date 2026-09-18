@@ -69,8 +69,6 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> with Elit
     _matchedIndices.dispose();
     _scrollController.dispose();
     disposeEliteMasteryGame();
-    disposeEliteMasteryGame();
-    disposeEliteMasteryGame();
     super.dispose();
   }
 

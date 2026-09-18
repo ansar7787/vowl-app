@@ -73,8 +73,6 @@ class _SubjectVerbAgreementScreenState extends State<SubjectVerbAgreementScreen>
                 _pendingTypeSubmit.dispose();
     _scrollController.dispose();
     disposeGrammarGame();
-    disposeGrammarGame();
-    disposeGrammarGame();
     super.dispose();
   }
 

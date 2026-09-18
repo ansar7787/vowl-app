@@ -87,8 +87,6 @@ class _JobInterviewScreenState extends State<JobInterviewScreen>with TickerProvi
     _mercuryLevel.dispose();
         _scrollController.dispose();
     disposeRoleplayGame();
-    disposeRoleplayGame();
-    disposeRoleplayGame();
     super.dispose();
   }
 

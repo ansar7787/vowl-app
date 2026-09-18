@@ -59,8 +59,6 @@ class _SentenceCorrectionScreenState extends State<SentenceCorrectionScreen> wit
     _optionSelectionCorrect.dispose();
             _scrollController.dispose();
     disposeGrammarGame();
-    disposeGrammarGame();
-    disposeGrammarGame();
     super.dispose();
   }
 

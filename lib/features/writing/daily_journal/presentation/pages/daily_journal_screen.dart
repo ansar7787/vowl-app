@@ -85,8 +85,6 @@ class _DailyJournalScreenState extends State<DailyJournalScreen> with WritingGam
     _journalProgress.dispose();
     _isSubmitting.dispose();
     disposeWritingGame();
-    disposeWritingGame();
-    disposeWritingGame();
     super.dispose();
   }
 

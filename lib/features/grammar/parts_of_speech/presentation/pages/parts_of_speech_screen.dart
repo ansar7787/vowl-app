@@ -48,8 +48,6 @@ class _PartsOfSpeechScreenState extends State<PartsOfSpeechScreen> with GrammarG
     _isWordSelected.dispose();
     _scrollController.dispose();
     disposeGrammarGame();
-    disposeGrammarGame();
-    disposeGrammarGame();
     super.dispose();
   }
 

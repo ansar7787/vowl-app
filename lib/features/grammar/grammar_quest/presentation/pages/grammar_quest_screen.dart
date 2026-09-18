@@ -42,8 +42,6 @@ class _GrammarQuestScreenState extends State<GrammarQuestScreen> with GrammarGam
                 _pendingTypeSubmit.dispose();
     _scrollController.dispose();
     disposeGrammarGame();
-    disposeGrammarGame();
-    disposeGrammarGame();
     super.dispose();
   }
 

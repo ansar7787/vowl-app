@@ -46,8 +46,6 @@ class _ConditionalsScreenState extends State<ConditionalsScreen> with GrammarGam
     _targetIndex.dispose();
                     _scrollController.dispose();
     disposeGrammarGame();
-    disposeGrammarGame();
-    disposeGrammarGame();
     super.dispose();
   }
 

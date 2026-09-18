@@ -76,8 +76,6 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> with Vocabula
     _scrollController.dispose();
     _disposeShardNotifiers();
     disposeVocabularyGame();
-    disposeVocabularyGame();
-    disposeVocabularyGame();
     super.dispose();
   }
 

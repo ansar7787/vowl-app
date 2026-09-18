@@ -48,8 +48,6 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen>with SingleTicke
                 _pendingJigsaw.dispose();
     _scrollController.dispose();
     disposeGrammarGame();
-    disposeGrammarGame();
-    disposeGrammarGame();
     super.dispose();
   }
 

@@ -52,8 +52,6 @@ class _RelativeClausesScreenState extends State<RelativeClausesScreen>with Singl
     _scrollController.dispose();
     _particleController.dispose();
     disposeGrammarGame();
-    disposeGrammarGame();
-    disposeGrammarGame();
     super.dispose();
   }
 

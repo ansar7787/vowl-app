@@ -72,8 +72,6 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>with TickerPro
     }
     _activeShardIndex.dispose();
     _scrollController.dispose();
-                    disposeVocabularyGame();
-    disposeVocabularyGame();
     disposeVocabularyGame();
     super.dispose();
   }

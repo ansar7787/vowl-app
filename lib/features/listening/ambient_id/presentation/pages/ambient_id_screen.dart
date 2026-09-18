@@ -80,9 +80,6 @@ class _AmbientIdScreenState extends State<AmbientIdScreen>
     _selectedIndex.dispose();
     _scrollController.dispose();
     disposeListeningGame();
-    disposeListeningGame();
-    disposeListeningGame();
-    disposeListeningGame();
     super.dispose();
   }
 

@@ -52,8 +52,6 @@ class _PronounResolutionScreenState extends State<PronounResolutionScreen> with 
                 _pendingJigsaw.dispose();
     _scrollController.dispose();
     disposeGrammarGame();
-    disposeGrammarGame();
-    disposeGrammarGame();
     super.dispose();
   }
 

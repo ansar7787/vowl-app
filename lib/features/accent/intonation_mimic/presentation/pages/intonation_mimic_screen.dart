@@ -80,8 +80,6 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>with Ticke
                 _selectedIndex.dispose();
         _sliderValue.dispose();
     disposeAccentGame();
-    disposeAccentGame();
-    disposeAccentGame();
     super.dispose();
   }
 

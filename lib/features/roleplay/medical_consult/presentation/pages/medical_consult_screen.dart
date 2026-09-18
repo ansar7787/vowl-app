@@ -94,8 +94,6 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen>with TickerP
     _scannedGlitches.dispose();
     _scrollController.dispose();
     disposeRoleplayGame();
-    disposeRoleplayGame();
-    disposeRoleplayGame();
     super.dispose();
   }
 

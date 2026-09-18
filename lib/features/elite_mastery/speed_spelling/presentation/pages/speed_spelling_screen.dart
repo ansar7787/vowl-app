@@ -77,7 +77,6 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen> with EliteMas
     _tapHistory.dispose();
     _scrollController.dispose();
     disposeEliteMasteryGame();
-    disposeEliteMasteryGame();
     super.dispose();
   }
 

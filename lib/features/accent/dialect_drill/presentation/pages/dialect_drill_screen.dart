@@ -48,8 +48,6 @@ class _DialectDrillScreenState extends State<DialectDrillScreen> with AccentGame
   @override
   void dispose() {
     _scrollController.dispose();
-                    disposeAccentGame();
-    disposeAccentGame();
     disposeAccentGame();
     super.dispose();
   }

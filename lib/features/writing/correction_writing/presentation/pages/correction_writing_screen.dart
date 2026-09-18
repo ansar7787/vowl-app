@@ -77,8 +77,6 @@ class _CorrectionWritingScreenState extends State<CorrectionWritingScreen> with 
     _selectedCorrection.dispose();
         _showEvidence.dispose();
     disposeWritingGame();
-    disposeWritingGame();
-    disposeWritingGame();
     super.dispose();
   }
 

@@ -49,8 +49,6 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen> with Gram
                 _pendingJigsaw.dispose();
     _scrollController.dispose();
     disposeGrammarGame();
-    disposeGrammarGame();
-    disposeGrammarGame();
     super.dispose();
   }
 

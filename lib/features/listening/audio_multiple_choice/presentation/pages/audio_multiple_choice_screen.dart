@@ -74,9 +74,6 @@ class _AudioMultipleChoiceScreenState extends State<AudioMultipleChoiceScreen>
     _rotation.dispose();
     _scrollController.dispose();
     disposeListeningGame();
-    disposeListeningGame();
-    disposeListeningGame();
-    disposeListeningGame();
     super.dispose();
   }
 

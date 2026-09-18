@@ -119,8 +119,6 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen>with Tic
     _isWordPlaced.dispose();
                 _scrollController.dispose();
     disposeSpeakingGame();
-    disposeSpeakingGame();
-    disposeSpeakingGame();
     super.dispose();
   }
 

@@ -98,8 +98,6 @@ class _SentenceBuilderScreenState extends State<SentenceBuilderScreen> with Writ
     _assembledPieces.dispose();
         _showTypeToConfirm.dispose();
     disposeWritingGame();
-    disposeWritingGame();
-    disposeWritingGame();
     super.dispose();
   }
 

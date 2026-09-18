@@ -64,8 +64,6 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen> with Writin
         _erasedAmount.dispose();
     _shuffledOptions.dispose();
     disposeWritingGame();
-    disposeWritingGame();
-    disposeWritingGame();
     super.dispose();
   }
 

@@ -57,8 +57,6 @@ class _AudioTrueFalseScreenState extends State<AudioTrueFalseScreen>with SingleT
                 _selectedVerdict.dispose();
     _scrollController.dispose();
     disposeListeningGame();
-    disposeListeningGame();
-    disposeListeningGame();
     super.dispose();
   }
 

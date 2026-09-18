@@ -47,8 +47,6 @@ class _ArticleInsertionScreenState extends State<ArticleInsertionScreen> with Gr
                 _pendingJigsaw.dispose();
     _scrollController.dispose();
     disposeGrammarGame();
-    disposeGrammarGame();
-    disposeGrammarGame();
     super.dispose();
   }
 

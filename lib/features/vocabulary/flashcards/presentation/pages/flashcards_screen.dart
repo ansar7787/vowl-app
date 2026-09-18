@@ -70,8 +70,6 @@ class _FlashcardsScreenState extends State<FlashcardsScreen> with VocabularyGame
   void dispose() {
     _controller.dispose();
     disposeVocabularyGame();
-    disposeVocabularyGame();
-    disposeVocabularyGame();
     super.dispose();
   }
 

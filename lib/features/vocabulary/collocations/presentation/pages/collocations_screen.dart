@@ -72,8 +72,6 @@ class _CollocationsScreenState extends State<CollocationsScreen>with TickerProvi
     _selectedOption.dispose();
     _scrollController.dispose();
     disposeVocabularyGame();
-    disposeVocabularyGame();
-    disposeVocabularyGame();
     super.dispose();
   }
 

@@ -90,8 +90,6 @@ class _SkimmingScanningScreenState extends State<SkimmingScanningScreen> with Re
   void dispose() {
     _scrollController.dispose();
     _mainScrollController.dispose();
-                disposeReadingGame();
-    disposeReadingGame();
     disposeReadingGame();
     super.dispose();
   }

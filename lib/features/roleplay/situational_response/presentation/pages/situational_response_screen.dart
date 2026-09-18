@@ -106,8 +106,6 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen>wi
     _shuffledCorrectIndex.dispose();
     _scrollController.dispose();
     disposeRoleplayGame();
-    disposeRoleplayGame();
-    disposeRoleplayGame();
     super.dispose();
   }
 

@@ -52,8 +52,6 @@ class _ModifierPlacementScreenState extends State<ModifierPlacementScreen> with 
     _assembledSentence.dispose();
     _scrollController.dispose();
     disposeGrammarGame();
-    disposeGrammarGame();
-    disposeGrammarGame();
     super.dispose();
   }
 

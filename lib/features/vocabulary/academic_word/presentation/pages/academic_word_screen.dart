@@ -67,8 +67,6 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> with Vocabulary
     _activeShardIndex.dispose();
     _scrollController.dispose();
     disposeVocabularyGame();
-    disposeVocabularyGame();
-    disposeVocabularyGame();
     super.dispose();
   }
 

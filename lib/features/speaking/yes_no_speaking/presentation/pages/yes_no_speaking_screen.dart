@@ -78,8 +78,6 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen> with Speaking
     _isSnapped.dispose();
                 _scrollController.dispose();
     disposeSpeakingGame();
-    disposeSpeakingGame();
-    disposeSpeakingGame();
     super.dispose();
   }
 

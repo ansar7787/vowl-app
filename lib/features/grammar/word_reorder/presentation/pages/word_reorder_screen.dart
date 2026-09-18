@@ -48,8 +48,6 @@ class _WordReorderScreenState extends State<WordReorderScreen> with GrammarGameS
                 _pendingTypeSubmit.dispose();
     _scrollController.dispose();
     disposeGrammarGame();
-    disposeGrammarGame();
-    disposeGrammarGame();
     super.dispose();
   }
 

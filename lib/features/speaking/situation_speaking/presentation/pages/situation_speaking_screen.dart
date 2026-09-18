@@ -73,8 +73,6 @@ class _SituationSpeakingScreenState extends State<SituationSpeakingScreen> with 
     _isBriefingComplete.dispose();
                 _scrollController.dispose();
     disposeSpeakingGame();
-    disposeSpeakingGame();
-    disposeSpeakingGame();
     super.dispose();
   }
 

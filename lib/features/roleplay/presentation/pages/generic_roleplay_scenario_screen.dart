@@ -93,8 +93,6 @@ class _GenericRoleplayScenarioScreenState
         _attempts.dispose();
     _chatMessages.dispose();
     disposeRoleplayGame();
-    disposeRoleplayGame();
-    disposeRoleplayGame();
     super.dispose();
   }
 
