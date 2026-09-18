@@ -8,10 +8,8 @@ import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
-import 'package:vowl/core/utils/haptic_service.dart';
-import 'package:vowl/core/utils/sound_service.dart';
-import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/elite_mastery/presentation/bloc/elite_mastery_bloc.dart';
+import 'package:vowl/features/elite_mastery/presentation/mixins/elite_mastery_game_screen_mixin.dart';
 import 'package:vowl/features/elite_mastery/presentation/layout/elite_base_layout.dart';
 import 'package:vowl/features/elite_mastery/presentation/widgets/elite_hint_card.dart';
 import '../widgets/story_builder_narrative_tile.dart';
@@ -30,20 +28,21 @@ class StoryBuilderScreen extends StatefulWidget {
   State<StoryBuilderScreen> createState() => _StoryBuilderScreenState();
 }
 
-class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
-  final _hapticService = di.sl<HapticService>();
-  final _soundService = di.sl<SoundService>();
-  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
-  final ScrollController _scrollController = ScrollController();
+class _StoryBuilderScreenState extends State<StoryBuilderScreen> with EliteMasteryGameScreenMixin {
+  @override
+  GameSubtype get gameType => widget.gameType;
+
+  @override
+  int get level => widget.level;
+
+  @override
+  String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
+
+        final ScrollController _scrollController = ScrollController();
 
   final ValueNotifier<List<int>> _currentOrder = ValueNotifier([]);
-  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
-  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
-  final ValueNotifier<bool> _isFirstStagePassed = ValueNotifier(false);
-  VisualConfig? _visualConfig;
-  String? _lastQuestId;
-  int _lastLives = 3;
-
+        VisualConfig? _visualConfig;
+  
   // Below this available height, use tighter spacing. See the identical
   // constant in accent_shadowing_screen.dart / idiom_match_screen.dart /
   // speed_spelling_screen.dart — worth consolidating into one shared
@@ -53,19 +52,30 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
   @override
   void initState() {
     super.initState();
-    context.read<EliteMasteryBloc>().add(
-      FetchEliteMasteryQuests(gameType: widget.gameType, level: widget.level),
-    );
+    isAnsweredNotifier.addListener(() {
+      if (isAnsweredNotifier.value && mounted && _scrollController.hasClients) {
+        Future.delayed(const Duration(milliseconds: 100), () {
+          if (mounted && _scrollController.hasClients) {
+            _scrollController.animateTo(
+              _scrollController.position.maxScrollExtent,
+              duration: const Duration(milliseconds: 300),
+              curve: Curves.easeOut,
+            );
+          }
+        });
+      }
+    });
+
+    initEliteMasteryGame();
   }
 
   @override
   void dispose() {
-    _showConfetti.dispose();
-    _currentOrder.dispose();
-    _isAnswered.dispose();
-    _isCorrect.dispose();
-    _isFirstStagePassed.dispose();
-    _scrollController.dispose();
+        _currentOrder.dispose();
+                _scrollController.dispose();
+    disposeEliteMasteryGame();
+    disposeEliteMasteryGame();
+    disposeEliteMasteryGame();
     super.dispose();
   }
 
@@ -82,39 +92,18 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
   }
 
   void _onReorder(int oldIndex, int newIndex) {
-    if (_isAnswered.value) return;
-    _isCorrect.value = null; // Clear feedback borders on move
+    if (isAnsweredNotifier.value) return;
+    isCorrectNotifier.value = null; // Clear feedback borders on move
     if (newIndex > oldIndex) newIndex -= 1;
     final newOrder = List<int>.from(_currentOrder.value);
     final item = newOrder.removeAt(oldIndex);
     newOrder.insert(newIndex, item);
     _currentOrder.value = newOrder;
-    _hapticService.selection();
+    hapticService.selection();
   }
+
 
-  void _shuffleSentences(List<String> sentences, List<int>? correctOrder) {
-    // FIX: previously just `if (sentences.isEmpty) return;` — leaving
-    // whatever tiles the *previous* quest had shuffled still on screen,
-    // mismatched against the new quest's (empty) sentences and correctOrder.
-    // Clearing instead makes this fail safely (an empty list) rather than
-    // fail confusingly with stale content.
-    if (sentences.isEmpty) {
-      _currentOrder.value = [];
-      return;
-    }
-
-    List<int> shuffled = List.generate(sentences.length, (i) => i);
-    // Shuffle until it's NOT the correct order
-    int safetyCounter = 0;
-    do {
-      shuffled.shuffle();
-      safetyCounter++;
-    } while (_isCorrectSequence(shuffled, correctOrder) && safetyCounter < 10);
-
-    _currentOrder.value = shuffled;
-  }
-
-  bool _isCorrectSequence(List<int> current, List<int>? correctIndices) {
+  bool isCorrectNotifierSequence(List<int> current, List<int>? correctIndices) {
     if (correctIndices == null || current.length != correctIndices.length) {
       return false;
     }
@@ -126,40 +115,40 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
 
   void _submitOrder(List<int>? correctOrder) {
     if (correctOrder == null ||
-        _isAnswered.value ||
-        _isFirstStagePassed.value) {
+        isAnsweredNotifier.value ||
+        isFirstStagePassedNotifier.value) {
       return;
     }
 
-    bool isCorrect = _isCorrectSequence(_currentOrder.value, correctOrder);
+    bool isCorrect = isCorrectNotifierSequence(_currentOrder.value, correctOrder);
 
     if (isCorrect) {
-      _hapticService.success();
-      _isFirstStagePassed.value = true;
+      hapticService.success();
+      isFirstStagePassedNotifier.value = true;
       _scrollToBottom();
     } else {
-      _hapticService.error();
-      _soundService.playWrong();
+      hapticService.error();
+      soundService.playWrong();
 
-      _isCorrect.value = false;
-      _isAnswered.value = true;
+      isCorrectNotifier.value = false;
+      isAnsweredNotifier.value = true;
       context.read<EliteMasteryBloc>().add(SubmitEliteAnswer(false));
     }
   }
 
   void _submitVerbalEvaluation(bool nailedIt) {
-    if (_isAnswered.value) return;
+    if (isAnsweredNotifier.value) return;
 
-    _isAnswered.value = true;
-    _isCorrect.value = nailedIt;
+    isAnsweredNotifier.value = true;
+    isCorrectNotifier.value = nailedIt;
 
     if (nailedIt) {
-      _hapticService.success();
-      _soundService.playCorrect();
+      hapticService.success();
+      soundService.playCorrect();
       context.read<EliteMasteryBloc>().add(SubmitEliteAnswer(true));
     } else {
-      _hapticService.error();
-      _soundService.playWrong();
+      hapticService.error();
+      soundService.playWrong();
       context.read<EliteMasteryBloc>().add(SubmitEliteAnswer(false));
     }
   }
@@ -176,83 +165,37 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
     );
 
     return BlocConsumer<EliteMasteryBloc, EliteMasteryState>(
-      listener: (context, state) {
-        if (state is EliteMasteryGameComplete) {
-          _showConfetti.value = true;
-          GameDialogHelper.showCompletion(
-            context,
-            xp: state.xpEarned,
-            coins: state.coinsEarned,
-            title: context.tr(
-              'games.story_master_title',
-              fallback: 'Story Master',
-            ),
-            enableDoubleUp: true,
-          );
-        } else if (state is EliteMasteryLoaded) {
-          final quest = state.currentQuest;
-          final livesChanged = (state.livesRemaining > _lastLives);
-
-          // FIX: these mutations used to happen directly on the fields,
-          // outside any setState, relying entirely on `_shuffleSentences`'s
-          // own internal setState (called right after) to flush the
-          // rebuild. Wrapping explicitly removes that implicit dependency.
-          if (_lastQuestId != quest.id || livesChanged) {
-            _lastQuestId = quest.id;
-            _isAnswered.value = false;
-            _isCorrect.value = null;
-            _isFirstStagePassed.value = false;
-            _visualConfig = quest.visualConfig;
-            _shuffleSentences(quest.sentences ?? [], quest.correctOrder);
-          } else if (!state.answerStatus.isAnswered) {
-            _isAnswered.value = false;
-            _isCorrect.value = null;
-            _shuffleSentences(quest.sentences ?? [], quest.correctOrder);
-          }
-          _lastLives = state.livesRemaining;
-          if (state.isHintVisible) {
-            _hapticService.selection();
-          }
-          if (state.answerStatus == AnswerStatus.correct) {
-            _isAnswered.value = true;
-            _isCorrect.value = true;
-          } else if (state.answerStatus == AnswerStatus.incorrect) {
-            _isCorrect.value = false;
-            if (state.isFinalFailure || state.livesRemaining <= 0) {
-              _isAnswered.value = true;
-            }
-          }
-        }
-      },
+      listenWhen: eliteMasteryListenWhen,
+      listener: onEliteMasteryStateChanged,
       builder: (context, state) {
         return ListenableBuilder(
           listenable: Listenable.merge([
-            _isAnswered,
-            _isCorrect,
-            _showConfetti,
+            isAnsweredNotifier,
+            isCorrectNotifier,
+            showConfettiNotifier,
             _currentOrder,
-            _isFirstStagePassed,
+            isFirstStagePassedNotifier,
           ]),
           builder: (context, _) {
             return EliteBaseLayout(
               gameType: widget.gameType,
               level: widget.level,
               isAnswered:
-                  _isAnswered.value &&
-                  (_isCorrect.value != null || !_isFirstStagePassed.value),
+                  isAnsweredNotifier.value &&
+                  (isCorrectNotifier.value != null || !isFirstStagePassedNotifier.value),
               state: state,
-              isCorrect: _isCorrect.value,
+              isCorrect: isCorrectNotifier.value,
               isFinalFailure: (state is EliteMasteryLoaded)
                   ? (state.isFinalFailure || state.livesRemaining <= 0)
                   : false,
-              showConfetti: _showConfetti.value,
+              showConfetti: showConfettiNotifier.value,
               useScrolling: false,
               disablePadding: true,
               visualConfig: _visualConfig,
               onContinue: () {
-                _isAnswered.value = false;
-                _isCorrect.value = null;
-                _isFirstStagePassed.value = false;
+                isAnsweredNotifier.value = false;
+                isCorrectNotifier.value = null;
+                isFirstStagePassedNotifier.value = false;
                 _currentOrder.value = [];
                 context.read<EliteMasteryBloc>().add(NextEliteQuestion());
               },
@@ -332,7 +275,7 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
           radius: Radius.circular(8.r),
           thickness: 4.w,
           child: CustomScrollView(
-            physics: (!_isFirstStagePassed.value)
+            physics: (!isFirstStagePassedNotifier.value)
                 ? const NeverScrollableScrollPhysics()
                 : const BouncingScrollPhysics(),
             slivers: [
@@ -421,7 +364,7 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
               ),
               SliverPadding(
                 padding: EdgeInsets.symmetric(horizontal: 16.w),
-                sliver: _isFirstStagePassed.value && !_isAnswered.value
+                sliver: isFirstStagePassedNotifier.value && !isAnsweredNotifier.value
                     ? SliverList(
                         delegate: SliverChildBuilderDelegate(
                           (context, index) => Padding(
@@ -438,10 +381,10 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
                               isDark: isDark,
                               theme: theme,
                               isAnswered:
-                                  _isAnswered.value &&
-                                  (_isCorrect.value != null ||
-                                      !_isFirstStagePassed.value),
-                              isCorrect: _isCorrect.value,
+                                  isAnsweredNotifier.value &&
+                                  (isCorrectNotifier.value != null ||
+                                      !isFirstStagePassedNotifier.value),
+                              isCorrect: isCorrectNotifier.value,
                             ),
                           ),
                           childCount: _currentOrder.value.length,
@@ -462,10 +405,10 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
                             isDark: isDark,
                             theme: theme,
                             isAnswered:
-                                _isAnswered.value &&
-                                (_isCorrect.value != null ||
-                                    !_isFirstStagePassed.value),
-                            isCorrect: _isCorrect.value,
+                                isAnsweredNotifier.value &&
+                                (isCorrectNotifier.value != null ||
+                                    !isFirstStagePassedNotifier.value),
+                            isCorrect: isCorrectNotifier.value,
                           ),
                         ),
                         itemCount: _currentOrder.value.length,
@@ -490,7 +433,7 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
                       child: Column(
                         children: [
                           SizedBox(height: isCompact ? 16.h : 30.h),
-                          if (!_isAnswered.value)
+                          if (!isAnsweredNotifier.value)
                             Semantics(
                                   button: true,
                                   label: context.tr(
@@ -561,7 +504,7 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
 
                           SizedBox(
                             height:
-                                _isAnswered.value || _isFirstStagePassed.value
+                                isAnsweredNotifier.value || isFirstStagePassedNotifier.value
                                 ? 160.h
                                 : 60.h,
                           ),
@@ -571,7 +514,7 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
                   },
                 ),
               ),
-              if (_isFirstStagePassed.value && !_isAnswered.value)
+              if (isFirstStagePassedNotifier.value && !isAnsweredNotifier.value)
                 SliverToBoxAdapter(
                   child: Column(
                     children: [
@@ -599,3 +542,4 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
     );
   }
 }
+

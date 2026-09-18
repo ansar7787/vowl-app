@@ -4,10 +4,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
-import 'package:vowl/core/utils/haptic_service.dart';
-import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/vocabulary/presentation/bloc/vocabulary_bloc.dart';
+import 'package:vowl/features/vocabulary/presentation/mixins/vocabulary_game_screen_mixin.dart';
 import 'package:vowl/features/vocabulary/presentation/layout/vocabulary_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
@@ -33,7 +31,6 @@ class AcademicWordScreen extends StatefulWidget {
     required this.level,
     this.gameType = GameSubtype.academicWord,
   });
-
   @override
   State<AcademicWordScreen> createState() => _AcademicWordScreenState();
 }
@@ -42,37 +39,36 @@ class AcademicWordScreen extends StatefulWidget {
 // State
 // ─────────────────────────────────────────────────────────────────────────────
 
-class _AcademicWordScreenState extends State<AcademicWordScreen> {
-  final HapticService _hapticService = di.sl<HapticService>();
-  final SoundService _soundService = di.sl<SoundService>();
+class _AcademicWordScreenState extends State<AcademicWordScreen> with VocabularyGameScreenMixin {
+  @override
+  GameSubtype get gameType => widget.gameType;
+  @override
+  int get level => widget.level;
+  @override
+  String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
-  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
-  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
-  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
-  final ValueNotifier<bool> _isDragPassed = ValueNotifier(false);
+        final ValueNotifier<bool> _isDragPassed = ValueNotifier(false);
   final ValueNotifier<String?> _misspelledWord = ValueNotifier(null);
   final ValueNotifier<bool> _isSlotSelected = ValueNotifier(false);
 
   final ScrollController _scrollController = ScrollController();
 
-  int _lastProcessedIndex = -1;
-  VocabularyQuest? _lastQuest;
+    VocabularyQuest? _lastQuest;
 
   final ValueNotifier<Offset> _dragOffset = ValueNotifier(Offset.zero);
   final ValueNotifier<int?> _activeShardIndex = ValueNotifier(null);
   BoxConstraints? _dragConstraints;
-
   @override
   void dispose() {
-    _isAnswered.dispose();
-    _isCorrect.dispose();
-    _showConfetti.dispose();
-    _isDragPassed.dispose();
+                _isDragPassed.dispose();
     _misspelledWord.dispose();
     _isSlotSelected.dispose();
     _dragOffset.dispose();
     _activeShardIndex.dispose();
     _scrollController.dispose();
+    disposeVocabularyGame();
+    disposeVocabularyGame();
+    disposeVocabularyGame();
     super.dispose();
   }
 
@@ -81,16 +77,26 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> {
   // Use dynamic so this works regardless of the actual return type of
   // LevelThemeHelper.getTheme() in your codebase.
   late dynamic _cachedTheme;
-
   @override
   void initState() {
     super.initState();
-    _cachedTheme = LevelThemeHelper.getTheme('vocabulary', level: widget.level);
-    context.read<VocabularyBloc>().add(
-      FetchVocabularyQuests(gameType: widget.gameType, level: widget.level),
-    );
-  }
+    isAnsweredNotifier.addListener(() {
+      if (isAnsweredNotifier.value && mounted && _scrollController.hasClients) {
+        Future.delayed(const Duration(milliseconds: 100), () {
+          if (mounted && _scrollController.hasClients) {
+            _scrollController.animateTo(
+              _scrollController.position.maxScrollExtent,
+              duration: const Duration(milliseconds: 300),
+              curve: Curves.easeOut,
+            );
+          }
+        });
+      }
+    });
 
+    _cachedTheme = LevelThemeHelper.getTheme('vocabulary', level: widget.level);
+    initVocabularyGame();
+  }
   @override
   void didUpdateWidget(covariant AcademicWordScreen oldWidget) {
     super.didUpdateWidget(oldWidget);
@@ -103,7 +109,6 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> {
   }
 
   // ── Build ──────────────────────────────────────────────────────────────────
-
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<VocabularyBloc, VocabularyState>(
@@ -116,8 +121,8 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> {
 
   void _onStateChange(BuildContext context, VocabularyState state) {
     if (state is VocabularyLoaded) {
-      final isNewQuestion = state.currentIndex != _lastProcessedIndex;
-      final isRetry = _isAnswered.value && !state.answerStatus.isAnswered;
+      final isNewQuestion = state.currentIndex != lastProcessedIndex;
+      final isRetry = isAnsweredNotifier.value && !state.answerStatus.isAnswered;
 
       if (isNewQuestion || isRetry) {
         if (_scrollController.hasClients) {
@@ -128,26 +133,26 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> {
           );
         }
         _lastQuest = state.currentQuest;
-        _lastProcessedIndex = state.currentIndex;
+        lastProcessedIndex = state.currentIndex;
         _dragOffset.value = Offset.zero;
         _activeShardIndex.value = null;
 
-        _isAnswered.value = false;
-        _isCorrect.value = null;
+        isAnsweredNotifier.value = false;
+        isCorrectNotifier.value = null;
         _isDragPassed.value = false;
         _misspelledWord.value = null;
         _isSlotSelected.value = false;
         return;
       }
 
-      if (state.answerStatus.isAnswered && !_isAnswered.value) {
-        _isAnswered.value = true;
-        _isCorrect.value = state.answerStatus.asBoolOrNull;
+      if (state.answerStatus.isAnswered && !isAnsweredNotifier.value) {
+        isAnsweredNotifier.value = true;
+        isCorrectNotifier.value = state.answerStatus.asBoolOrNull;
       }
     }
 
     if (state is VocabularyGameComplete) {
-      _showConfetti.value = true;
+      showConfettiNotifier.value = true;
       if (!mounted) return;
       GameDialogHelper.showCompletion(
         context,
@@ -156,7 +161,7 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> {
         enableDoubleUp: true,
       );
       Future.delayed(const Duration(seconds: 3), () {
-        if (mounted) _showConfetti.value = false;
+        if (mounted) showConfettiNotifier.value = false;
       });
       return;
     }
@@ -169,9 +174,9 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> {
 
     return ListenableBuilder(
       listenable: Listenable.merge([
-        _isAnswered,
-        _isCorrect,
-        _showConfetti,
+        isAnsweredNotifier,
+        isCorrectNotifier,
+        showConfettiNotifier,
         _isDragPassed,
         _misspelledWord,
         _isSlotSelected,
@@ -182,17 +187,17 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> {
         return VocabularyBaseLayout(
           gameType: widget.gameType,
           level: widget.level,
-          isAnswered: _isAnswered.value,
-          isCorrect: _isCorrect.value,
-          showConfetti: _showConfetti.value,
+          isAnswered: isAnsweredNotifier.value,
+          isCorrect: isCorrectNotifier.value,
+          showConfetti: showConfettiNotifier.value,
           hasStage2: true,
           onContinue: () {
             final currentState = context.read<VocabularyBloc>().state;
             if (currentState is VocabularyLoaded &&
                 !currentState.isFinalFailure &&
-                _isCorrect.value == false) {
-              _isAnswered.value = false;
-              _isCorrect.value = null;
+                isCorrectNotifier.value == false) {
+              isAnsweredNotifier.value = false;
+              isCorrectNotifier.value = null;
               _isDragPassed.value = false;
               _misspelledWord.value = null;
               if (_scrollController.hasClients) {
@@ -248,8 +253,8 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> {
                                           ignoring: _isDragPassed.value,
                                           child: _AcademicWordGameBody(
                                             quest: quest,
-                                            isAnswered: _isAnswered.value,
-                                            isCorrect: _isCorrect.value,
+                                            isAnswered: isAnsweredNotifier.value,
+                                            isCorrect: isCorrectNotifier.value,
                                             isFirstStagePassed:
                                                 _isDragPassed.value,
                                             misspelledWord:
@@ -257,7 +262,7 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> {
                                             isSlotSelected:
                                                 _isSlotSelected.value,
                                             onSlotTap: () {
-                                              _hapticService.light();
+                                              hapticService.light();
                                               _isSlotSelected.value =
                                                   !_isSlotSelected.value;
                                             },
@@ -309,7 +314,7 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> {
                                                     ),
                                               ),
                                             if (_isDragPassed.value &&
-                                                !_isAnswered.value)
+                                                !isAnsweredNotifier.value)
                                               Column(
                                                 children: [
                                                   SizedBox(height: 24.h),
@@ -359,14 +364,14 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> {
   // ── Drag logic ────────────────────────────────────────────────────────────
 
   void _onShardDragStart(int index, BoxConstraints constraints) {
-    if (_isAnswered.value) return;
+    if (isAnsweredNotifier.value) return;
     _dragConstraints = constraints;
     _activeShardIndex.value = index;
-    _hapticService.light();
+    hapticService.light();
   }
 
   void _onShardDragUpdate(int index, DragUpdateDetails details) {
-    if (_isAnswered.value || _activeShardIndex.value != index) return;
+    if (isAnsweredNotifier.value || _activeShardIndex.value != index) return;
     if (_dragConstraints == null) return;
 
     final c = _dragConstraints!;
@@ -385,17 +390,17 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> {
       newOffset.dy.clamp(minY, maxY),
     );
 
-    if (_isNearSlot()) _hapticService.selection();
+    if (_isNearSlot()) hapticService.selection();
   }
 
   void _onShardDragEnd(int index, VocabularyQuest quest) {
-    if (_isAnswered.value || _activeShardIndex.value != index) return;
+    if (isAnsweredNotifier.value || _activeShardIndex.value != index) return;
     if (_isNearSlot()) {
       _attemptThrust(index, quest);
     } else {
       _dragOffset.value = Offset.zero;
       _activeShardIndex.value = null;
-      _hapticService.light();
+      hapticService.light();
     }
   }
 
@@ -411,7 +416,7 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> {
     final correct = quest.correctAnswer?.trim().toLowerCase() ?? '';
 
     if (selected == correct) {
-      _hapticService.selection();
+      hapticService.selection();
       _isSlotSelected.value = false;
       _isDragPassed.value = true;
       _activeShardIndex.value = null;
@@ -426,11 +431,11 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> {
         }
       });
     } else {
-      _hapticService.error();
-      _soundService.playWrong();
+      hapticService.error();
+      soundService.playWrong();
       _isSlotSelected.value = false;
-      _isAnswered.value = true;
-      _isCorrect.value = false;
+      isAnsweredNotifier.value = true;
+      isCorrectNotifier.value = false;
       _activeShardIndex.value = null;
       _dragOffset.value = Offset.zero;
       _misspelledWord.value = options[index];
@@ -439,21 +444,21 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> {
   }
 
   void _submitFinalAnswer(bool nailedIt, {String? wrongWord}) {
-    if (_isAnswered.value) return;
+    if (isAnsweredNotifier.value) return;
 
-    _isAnswered.value = true;
-    _isCorrect.value = nailedIt;
+    isAnsweredNotifier.value = true;
+    isCorrectNotifier.value = nailedIt;
     if (wrongWord != null && wrongWord.isNotEmpty) {
       _misspelledWord.value = wrongWord;
     }
 
     if (nailedIt) {
-      _hapticService.success();
-      _soundService.playCorrect();
+      hapticService.success();
+      soundService.playCorrect();
       context.read<VocabularyBloc>().add(SubmitAnswer(true));
     } else {
-      _hapticService.error();
-      _soundService.playWrong();
+      hapticService.error();
+      soundService.playWrong();
       context.read<VocabularyBloc>().add(SubmitAnswer(false));
     }
   }
@@ -574,7 +579,6 @@ class _AcademicWordGameBody extends StatelessWidget {
     required this.onDragEnd,
     required this.getInitialPosition,
   });
-
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
@@ -720,3 +724,8 @@ class _AcademicWordGameBody extends StatelessWidget {
     });
   }
 }
+
+
+
+
+

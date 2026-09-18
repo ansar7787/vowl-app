@@ -11,9 +11,8 @@ import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/speaking/presentation/bloc/speaking_bloc.dart';
+import 'package:vowl/features/speaking/presentation/mixins/speaking_game_screen_mixin.dart';
 import 'package:vowl/features/speaking/presentation/layout/speaking_base_layout.dart';
-import 'package:vowl/core/utils/locale_service.dart';
-import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/game_mechanics/speaking/speak_to_confirm_overlay.dart';
 import 'package:vowl/core/services/error_journal_collector.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
@@ -38,19 +37,20 @@ class SceneDescriptionScreen extends StatefulWidget {
   State<SceneDescriptionScreen> createState() => _SceneDescriptionScreenState();
 }
 
-class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
-    with SingleTickerProviderStateMixin {
-  final _hapticService = di.sl<HapticService>();
-  final _soundService = di.sl<SoundService>();
+class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>with SingleTickerProviderStateMixin, SpeakingGameScreenMixin {
+  @override
+  GameSubtype get gameType => widget.gameType;
 
+  @override
+  int get level => widget.level;
+
+  @override
+  String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
+
+    
   final ValueNotifier<Set<int>> _inspectedHotspots = ValueNotifier({});
   final ValueNotifier<int> _activeHotspot = ValueNotifier(-1);
-  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
-  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
-  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
-  int _lastProcessedIndex = -1;
-  int? _lastLives;
-
+          
   late AnimationController _radarController;
 
   List<String> _hotspotLabels = [];
@@ -62,9 +62,21 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
   @override
   void initState() {
     super.initState();
-    context.read<SpeakingBloc>().add(
-      FetchSpeakingQuests(gameType: widget.gameType, level: widget.level),
-    );
+    isAnsweredNotifier.addListener(() {
+      if (isAnsweredNotifier.value && mounted && _scrollController.hasClients) {
+        Future.delayed(const Duration(milliseconds: 100), () {
+          if (mounted && _scrollController.hasClients) {
+            _scrollController.animateTo(
+              _scrollController.position.maxScrollExtent,
+              duration: const Duration(milliseconds: 300),
+              curve: Curves.easeOut,
+            );
+          }
+        });
+      }
+    });
+
+    initSpeakingGame();
 
     _radarController = AnimationController(
       vsync: this,
@@ -77,10 +89,10 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
     _radarController.dispose();
     _inspectedHotspots.dispose();
     _activeHotspot.dispose();
-    _isAnswered.dispose();
-    _isCorrect.dispose();
-    _showConfetti.dispose();
-    _scrollController.dispose();
+                _scrollController.dispose();
+    disposeSpeakingGame();
+    disposeSpeakingGame();
+    disposeSpeakingGame();
     super.dispose();
   }
 
@@ -95,42 +107,36 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
       }
     });
   }
-
-  void _triggerAutoPlay(SpeakingQuest quest) {
-    if (quest.sceneText != null) {
-      final parts = quest.sceneText!.split('|');
-      _soundService.playTts(parts[0]);
-    }
-  }
+
 
   void _onHotspotTap(int index) {
-    if (_isAnswered.value || _inspectedHotspots.value.contains(index)) return;
-    _hapticService.selection();
+    if (isAnsweredNotifier.value || _inspectedHotspots.value.contains(index)) return;
+    hapticService.selection();
     if (!di.sl<AudioRecordingService>().isRecording) {
-      _soundService.playTts(_hotspotLabels[index]);
+      soundService.playTts(_hotspotLabels[index]);
     }
     _activeHotspot.value = index;
     _scrollToBottom();
   }
 
   void _submitVerbalEvaluation(bool nailedIt) {
-    if (_isAnswered.value || _activeHotspot.value == -1) return;
+    if (isAnsweredNotifier.value || _activeHotspot.value == -1) return;
 
     if (nailedIt) {
-      _hapticService.success();
-      _soundService.playCorrect();
+      hapticService.success();
+      soundService.playCorrect();
       _inspectedHotspots.value = Set.from(_inspectedHotspots.value)
         ..add(_activeHotspot.value);
       _activeHotspot.value = -1;
 
       if (_inspectedHotspots.value.length >= _hotspotLabels.length) {
-        _isAnswered.value = true;
-        _isCorrect.value = true;
+        isAnsweredNotifier.value = true;
+        isCorrectNotifier.value = true;
         context.read<SpeakingBloc>().add(const SubmitAnswer(true));
       }
     } else {
-      _hapticService.error();
-      _soundService.playWrong();
+      hapticService.error();
+      soundService.playWrong();
 
       final authState = context.read<AuthBloc>().state;
       if (authState.status == AuthStatus.authenticated &&
@@ -145,8 +151,8 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
         );
       }
 
-      _isAnswered.value = true;
-      _isCorrect.value = false;
+      isAnsweredNotifier.value = true;
+      isCorrectNotifier.value = false;
       context.read<SpeakingBloc>().add(const SubmitAnswer(false));
     }
   }
@@ -184,40 +190,8 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
     final mediaQuery = MediaQuery.of(context);
 
     return BlocConsumer<SpeakingBloc, SpeakingState>(
-      listener: (context, state) {
-        if (state is SpeakingLoaded) {
-          final livesChanged = (state.livesRemaining > (_lastLives ?? 3));
-          if (state.currentIndex != _lastProcessedIndex ||
-              livesChanged ||
-              (!state.answerStatus.isAnswered && _isAnswered.value)) {
-            _lastProcessedIndex = state.currentIndex;
-            _isAnswered.value = false;
-            _isCorrect.value = null;
-            _inspectedHotspots.value = {};
-            _activeHotspot.value = -1;
-            Future.delayed(const Duration(milliseconds: 300), () {
-              if (mounted) _triggerAutoPlay(state.currentQuest);
-            });
-          } else if (state.answerStatus == AnswerStatus.incorrect) {
-            _isCorrect.value = false;
-            _isAnswered.value = true; // Always show feedback card on incorrect
-          }
-          _lastLives = state.livesRemaining;
-        }
-        if (state is SpeakingGameComplete) {
-          _showConfetti.value = true;
-          GameDialogHelper.showCompletion(
-            context,
-            xp: state.xpEarned,
-            coins: state.coinsEarned,
-            title: context.tr(
-              'speaking_games.visual_masterpiece',
-              fallback: 'VISUAL MASTERPIECE!',
-            ),
-            enableDoubleUp: true,
-          );
-        }
-      },
+      listenWhen: speakingListenWhen,
+      listener: onSpeakingStateChanged,
       builder: (context, state) {
         final quest = (state is SpeakingLoaded) ? state.currentQuest : null;
 
@@ -231,9 +205,9 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
           ),
           child: ListenableBuilder(
             listenable: Listenable.merge([
-              _isAnswered,
-              _isCorrect,
-              _showConfetti,
+              isAnsweredNotifier,
+              isCorrectNotifier,
+              showConfettiNotifier,
               _activeHotspot,
               _inspectedHotspots,
             ]),
@@ -241,7 +215,7 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
               return SpeakingBaseLayout(
                 gameType: widget.gameType,
                 level: widget.level,
-                isAnswered: _isAnswered.value,
+                isAnswered: isAnsweredNotifier.value,
                 disablePadding: true,
                 onContinue: () =>
                     context.read<SpeakingBloc>().add(const NextQuestion()),
@@ -364,7 +338,7 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
                                 ),
                               ),
                             ),
-                            if (!_isAnswered.value &&
+                            if (!isAnsweredNotifier.value &&
                                 _activeHotspot.value != -1)
                               SliverToBoxAdapter(
                                 child: SpeakToConfirmOverlay(
@@ -393,8 +367,8 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
                                       _submitVerbalEvaluation(false),
                                 ),
                               ),
-                            if (_isAnswered.value &&
-                                _isCorrect.value == true &&
+                            if (isAnsweredNotifier.value &&
+                                isCorrectNotifier.value == true &&
                                 quest.sampleAnswer != null)
                               SliverPadding(
                                 padding: EdgeInsets.symmetric(

@@ -6,12 +6,9 @@ import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/features/grammar/domain/entities/grammar_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/utils/locale_service.dart';
-import 'package:vowl/core/utils/haptic_service.dart';
-import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/grammar/presentation/bloc/grammar_bloc.dart';
+import 'package:vowl/features/grammar/presentation/mixins/grammar_game_screen_mixin.dart';
 import 'package:vowl/features/grammar/presentation/layout/grammar_base_layout.dart';
-import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/features/grammar/article_insertion/presentation/widgets/article_insertion_instruction.dart';
 import 'package:vowl/features/grammar/article_insertion/presentation/widgets/article_floating_orb.dart';
@@ -30,54 +27,68 @@ class ArticleInsertionScreen extends StatefulWidget {
   State<ArticleInsertionScreen> createState() => _ArticleInsertionScreenState();
 }
 
-class _ArticleInsertionScreenState extends State<ArticleInsertionScreen> {
-  final _hapticService = di.sl<HapticService>();
-  final _soundService = di.sl<SoundService>();
-  final ValueNotifier<String?> _selectedArticle = ValueNotifier(null);
-  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
-  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
-  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
-  int _lastProcessedIndex = -1;
-  int? _lastLives;
-  final ValueNotifier<bool> _pendingJigsaw = ValueNotifier(false);
+class _ArticleInsertionScreenState extends State<ArticleInsertionScreen> with GrammarGameScreenMixin {
+  @override
+  GameSubtype get gameType => widget.gameType;
+
+  @override
+  int get level => widget.level;
+
+  @override
+  String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
+
+      final ValueNotifier<String?> _selectedArticle = ValueNotifier(null);
+            final ValueNotifier<bool> _pendingJigsaw = ValueNotifier(false);
   final ScrollController _scrollController = ScrollController();
 
   @override
   void dispose() {
     _selectedArticle.dispose();
-    _isAnswered.dispose();
-    _isCorrect.dispose();
-    _showConfetti.dispose();
-    _pendingJigsaw.dispose();
+                _pendingJigsaw.dispose();
     _scrollController.dispose();
+    disposeGrammarGame();
+    disposeGrammarGame();
+    disposeGrammarGame();
     super.dispose();
   }
 
   @override
   void initState() {
     super.initState();
-    context.read<GrammarBloc>().add(
-      FetchGrammarQuests(gameType: widget.gameType, level: widget.level),
-    );
+    isAnsweredNotifier.addListener(() {
+      if (isAnsweredNotifier.value && mounted && _scrollController.hasClients) {
+        Future.delayed(const Duration(milliseconds: 100), () {
+          if (mounted && _scrollController.hasClients) {
+            _scrollController.animateTo(
+              _scrollController.position.maxScrollExtent,
+              duration: const Duration(milliseconds: 300),
+              curve: Curves.easeOut,
+            );
+          }
+        });
+      }
+    });
+
+    initGrammarGame();
   }
 
   void _onPop(String article, String correctAnswer) {
-    if (_isAnswered.value || _pendingJigsaw.value) return;
+    if (isAnsweredNotifier.value || _pendingJigsaw.value) return;
 
-    _hapticService.selection();
+    hapticService.selection();
     bool isCorrect = article.toLowerCase() == correctAnswer.toLowerCase();
 
     if (isCorrect) {
-      _hapticService.success();
-      _soundService.playCorrect();
+      hapticService.success();
+      soundService.playCorrect();
       _selectedArticle.value = article;
       _pendingJigsaw.value = true;
       _scrollToBottom();
     } else {
-      _hapticService.error();
-      _soundService.playWrong();
-      _isAnswered.value = true;
-      _isCorrect.value = false;
+      hapticService.error();
+      soundService.playWrong();
+      isAnsweredNotifier.value = true;
+      isCorrectNotifier.value = false;
       _selectedArticle.value = article;
       context.read<GrammarBloc>().add(const SubmitAnswer(false));
     }
@@ -97,16 +108,16 @@ class _ArticleInsertionScreenState extends State<ArticleInsertionScreen> {
 
   void _submitFinalAnswer(bool correct) {
     _pendingJigsaw.value = false;
-    _isAnswered.value = true;
-    _isCorrect.value = correct;
+    isAnsweredNotifier.value = true;
+    isCorrectNotifier.value = correct;
 
     if (correct) {
-      _hapticService.success();
-      _soundService.playCorrect();
+      hapticService.success();
+      soundService.playCorrect();
       context.read<GrammarBloc>().add(const SubmitAnswer(true));
     } else {
-      _hapticService.error();
-      _soundService.playWrong();
+      hapticService.error();
+      soundService.playWrong();
       context.read<GrammarBloc>().add(const SubmitAnswer(false));
     }
   }
@@ -172,36 +183,8 @@ class _ArticleInsertionScreenState extends State<ArticleInsertionScreen> {
     final theme = LevelThemeHelper.getTheme('grammar', level: widget.level);
 
     return BlocConsumer<GrammarBloc, GrammarState>(
-      listener: (context, state) {
-        if (state is GrammarLoaded) {
-          final isNewQuestion = state.currentIndex != _lastProcessedIndex;
-          final isRetry = _isAnswered.value && !state.answerStatus.isAnswered;
-          final livesRestored =
-              _lastLives != null && state.livesRemaining > _lastLives!;
-
-          if (isNewQuestion || isRetry || livesRestored) {
-            _lastProcessedIndex = state.currentIndex;
-            _isAnswered.value = false;
-            _isCorrect.value = null;
-            _selectedArticle.value = null;
-            _pendingJigsaw.value = false;
-          } else if (state.answerStatus.isAnswered && !_isAnswered.value) {
-            _isAnswered.value = true;
-            _isCorrect.value = state.answerStatus.asBoolOrNull;
-          }
-          _lastLives = state.livesRemaining;
-        }
-        if (state is GrammarGameComplete) {
-          _showConfetti.value = true;
-          GameDialogHelper.showCompletion(
-            context,
-            xp: state.xpEarned,
-            coins: state.coinsEarned,
-            title: 'ARTICLE ACE!',
-            enableDoubleUp: true,
-          );
-        }
-      },
+      listenWhen: grammarListenWhen,
+      listener: onGrammarStateChanged,
       builder: (context, state) {
         final quest = (state is GrammarLoaded)
             ? state.currentQuest as GrammarQuest?
@@ -211,10 +194,10 @@ class _ArticleInsertionScreenState extends State<ArticleInsertionScreen> {
 
         return ListenableBuilder(
           listenable: Listenable.merge([
-            _isAnswered,
-            _isCorrect,
+            isAnsweredNotifier,
+            isCorrectNotifier,
             _selectedArticle,
-            _showConfetti,
+            showConfettiNotifier,
             _pendingJigsaw,
           ]),
           builder: (context, _) {
@@ -246,10 +229,10 @@ class _ArticleInsertionScreenState extends State<ArticleInsertionScreen> {
               disablePadding: true,
               gameType: widget.gameType,
               level: widget.level,
-              isAnswered: _isAnswered.value,
-              isCorrect: _isCorrect.value,
+              isAnswered: isAnsweredNotifier.value,
+              isCorrect: isCorrectNotifier.value,
               isFinalFailure: state is GrammarLoaded && state.isFinalFailure,
-              showConfetti: _showConfetti.value,
+              showConfetti: showConfettiNotifier.value,
               useScrolling: false, // CustomScrollView handles it internally
               onContinue: () =>
                   context.read<GrammarBloc>().add(const NextQuestion()),
@@ -507,7 +490,7 @@ class _ArticleInsertionScreenState extends State<ArticleInsertionScreen> {
                                                                   isDark:
                                                                       isDark,
                                                                   isAnswered:
-                                                                      _isAnswered
+                                                                      isAnsweredNotifier
                                                                           .value ||
                                                                       _pendingJigsaw
                                                                           .value,
@@ -554,7 +537,7 @@ class _ArticleInsertionScreenState extends State<ArticleInsertionScreen> {
                                                                   isDark:
                                                                       isDark,
                                                                   isAnswered:
-                                                                      _isAnswered
+                                                                      isAnsweredNotifier
                                                                           .value ||
                                                                       _pendingJigsaw
                                                                           .value,
@@ -611,7 +594,7 @@ class _ArticleInsertionScreenState extends State<ArticleInsertionScreen> {
                                                                     isDark:
                                                                         isDark,
                                                                     isAnswered:
-                                                                        _isAnswered
+                                                                        isAnsweredNotifier
                                                                             .value ||
                                                                         _pendingJigsaw
                                                                             .value,
@@ -658,7 +641,7 @@ class _ArticleInsertionScreenState extends State<ArticleInsertionScreen> {
                                                                     isDark:
                                                                         isDark,
                                                                     isAnswered:
-                                                                        _isAnswered
+                                                                        isAnsweredNotifier
                                                                             .value ||
                                                                         _pendingJigsaw
                                                                             .value,
@@ -697,7 +680,7 @@ class _ArticleInsertionScreenState extends State<ArticleInsertionScreen> {
                                     ),
                                   ),
                                   if (_pendingJigsaw.value &&
-                                      !_isAnswered.value &&
+                                      !isAnsweredNotifier.value &&
                                       cleanTargetSentence.isNotEmpty)
                                     SliverToBoxAdapter(
                                       child: TypeToConfirmOverlay(

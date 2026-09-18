@@ -6,16 +6,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
-import 'package:vowl/core/utils/haptic_service.dart';
-import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/roleplay/presentation/bloc/roleplay_bloc.dart';
+import 'package:vowl/features/roleplay/presentation/mixins/roleplay_game_screen_mixin.dart';
 import 'package:vowl/features/roleplay/presentation/bloc/roleplay_event.dart';
 import 'package:vowl/features/roleplay/presentation/bloc/roleplay_state.dart';
 import 'package:vowl/features/roleplay/presentation/layout/roleplay_base_layout.dart';
-import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
-import 'package:vowl/features/roleplay/domain/entities/roleplay_quest.dart';
 import 'package:vowl/features/roleplay/gourmet_order/presentation/widgets/gourmet_order_instruction.dart';
 import 'package:vowl/features/roleplay/gourmet_order/presentation/widgets/gourmet_order_banquet_header.dart';
 import 'package:vowl/features/roleplay/gourmet_order/presentation/widgets/gourmet_order_table_setting.dart';
@@ -35,25 +31,40 @@ class GourmetOrderScreen extends StatefulWidget {
   State<GourmetOrderScreen> createState() => _GourmetOrderScreenState();
 }
 
-class _GourmetOrderScreenState extends State<GourmetOrderScreen>
-    with TickerProviderStateMixin {
-  final _hapticService = di.sl<HapticService>();
-  final _soundService = di.sl<SoundService>();
+class _GourmetOrderScreenState extends State<GourmetOrderScreen>with TickerProviderStateMixin, RoleplayGameScreenMixin {
+  @override
+  GameSubtype get gameType => widget.gameType;
 
+  @override
+  int get level => widget.level;
+
+  @override
+  String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
+
+    
   late AnimationController _steamController;
   late AnimationController _pulseController;
 
-  int _lastProcessedIndex = -1;
-  final ValueNotifier<List<String>> _selectedItems = ValueNotifier([]);
+    final ValueNotifier<List<String>> _selectedItems = ValueNotifier([]);
   final ScrollController _scrollController = ScrollController();
-  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
-  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
-  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
-  final ValueNotifier<bool> _isFirstStagePassed = ValueNotifier(false);
-
+        
   @override
   void initState() {
     super.initState();
+    isAnsweredNotifier.addListener(() {
+      if (isAnsweredNotifier.value && mounted && _scrollController.hasClients) {
+        Future.delayed(const Duration(milliseconds: 100), () {
+          if (mounted && _scrollController.hasClients) {
+            _scrollController.animateTo(
+              _scrollController.position.maxScrollExtent,
+              duration: const Duration(milliseconds: 300),
+              curve: Curves.easeOut,
+            );
+          }
+        });
+      }
+    });
+
     _steamController = AnimationController(
       vsync: this,
       duration: const Duration(milliseconds: 2200),
@@ -63,9 +74,7 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
       duration: const Duration(seconds: 2),
     )..repeat(reverse: true);
 
-    context.read<RoleplayBloc>().add(
-      FetchRoleplayQuests(gameType: widget.gameType, level: widget.level),
-    );
+    initRoleplayGame();
   }
 
   @override
@@ -73,27 +82,18 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
     _steamController.dispose();
     _pulseController.dispose();
     _selectedItems.dispose();
-    _isAnswered.dispose();
-    _isCorrect.dispose();
-    _showConfetti.dispose();
-    _isFirstStagePassed.dispose();
-    _scrollController.dispose();
+                    _scrollController.dispose();
+    disposeRoleplayGame();
+    disposeRoleplayGame();
+    disposeRoleplayGame();
     super.dispose();
   }
-
-  void _triggerAutoPlay(RoleplayQuest quest) {
-    _soundService.playTts(InstructionHelper.getInstruction(quest));
-    if (quest.prompt != null) {
-      Future.delayed(const Duration(milliseconds: 1200), () {
-        if (mounted) _soundService.playTts(quest.prompt!);
-      });
-    }
-  }
+
 
   void _onItemTapped(String item) {
-    if (_isAnswered.value || _isFirstStagePassed.value) return;
-    _hapticService.selection();
-    _soundService.playHint(); // Play synth note
+    if (isAnsweredNotifier.value || isFirstStagePassedNotifier.value) return;
+    hapticService.selection();
+    soundService.playHint(); // Play synth note
     final current = List<String>.from(_selectedItems.value);
     if (current.contains(item)) {
       current.remove(item);
@@ -104,14 +104,14 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
   }
 
   void _clearItems() {
-    if (_isAnswered.value || _isFirstStagePassed.value) return;
-    _hapticService.selection();
+    if (isAnsweredNotifier.value || isFirstStagePassedNotifier.value) return;
+    hapticService.selection();
     _selectedItems.value = [];
   }
 
   void _submitAnswer(String correctAnswer) {
-    if (_isAnswered.value ||
-        _isFirstStagePassed.value ||
+    if (isAnsweredNotifier.value ||
+        isFirstStagePassedNotifier.value ||
         _selectedItems.value.isEmpty) {
       return;
     }
@@ -129,31 +129,31 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
         targets.every((t) => current.contains(t));
 
     if (isCorrect) {
-      _hapticService.selection();
-      _isFirstStagePassed.value = true;
+      hapticService.selection();
+      isFirstStagePassedNotifier.value = true;
       // Wait for Phase 2
     } else {
-      _hapticService.error();
-      _soundService.playWrong();
-      _isAnswered.value = true;
-      _isCorrect.value = false;
+      hapticService.error();
+      soundService.playWrong();
+      isAnsweredNotifier.value = true;
+      isCorrectNotifier.value = false;
       context.read<RoleplayBloc>().add(SubmitAnswer(false));
     }
   }
 
   void _submitVerbalEvaluation(bool nailedIt) {
-    if (_isAnswered.value) return;
+    if (isAnsweredNotifier.value) return;
 
-    _isAnswered.value = true;
-    _isCorrect.value = nailedIt;
+    isAnsweredNotifier.value = true;
+    isCorrectNotifier.value = nailedIt;
 
     if (nailedIt) {
-      _hapticService.success();
-      _soundService.playCorrect();
+      hapticService.success();
+      soundService.playCorrect();
       context.read<RoleplayBloc>().add(SubmitAnswer(true));
     } else {
-      _hapticService.error();
-      _soundService.playWrong();
+      hapticService.error();
+      soundService.playWrong();
       context.read<RoleplayBloc>().add(SubmitAnswer(false));
     }
   }
@@ -164,30 +164,8 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
     final theme = LevelThemeHelper.getTheme('roleplay', level: widget.level);
 
     return BlocConsumer<RoleplayBloc, RoleplayState>(
-      listener: (context, state) {
-        if (state is RoleplayLoaded) {
-          if (state.currentIndex != _lastProcessedIndex) {
-            _lastProcessedIndex = state.currentIndex;
-            _isAnswered.value = false;
-            _isCorrect.value = null;
-            _selectedItems.value = [];
-            _isFirstStagePassed.value = false;
-            Future.delayed(const Duration(milliseconds: 300), () {
-              if (mounted) _triggerAutoPlay(state.currentQuest);
-            });
-          }
-        }
-        if (state is RoleplayGameComplete) {
-          _showConfetti.value = true;
-          GameDialogHelper.showCompletion(
-            context,
-            xp: state.xpEarned,
-            coins: state.coinsEarned,
-            title: 'CULINARY EXPERT!',
-            enableDoubleUp: true,
-          );
-        }
-      },
+      listenWhen: roleplayListenWhen,
+      listener: onRoleplayStateChanged,
       builder: (context, state) {
         final quest = (state is RoleplayLoaded) ? state.currentQuest : null;
         final options = quest?.options ?? [];
@@ -195,21 +173,21 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
 
         return ListenableBuilder(
           listenable: Listenable.merge([
-            _isAnswered,
-            _isCorrect,
-            _showConfetti,
+            isAnsweredNotifier,
+            isCorrectNotifier,
+            showConfettiNotifier,
             _selectedItems,
-            _isFirstStagePassed,
+            isFirstStagePassedNotifier,
           ]),
           builder: (context, _) {
             return RoleplayBaseLayout(
               gameType: widget.gameType,
               level: widget.level,
               isAnswered:
-                  _isAnswered.value &&
-                  (_isCorrect.value != null || !_isFirstStagePassed.value),
-              isCorrect: _isCorrect.value,
-              showConfetti: _showConfetti.value,
+                  isAnsweredNotifier.value &&
+                  (isCorrectNotifier.value != null || !isFirstStagePassedNotifier.value),
+              isCorrect: isCorrectNotifier.value,
+              showConfetti: showConfettiNotifier.value,
               onContinue: () =>
                   context.read<RoleplayBloc>().add(NextQuestion()),
               onHint: () =>
@@ -279,13 +257,13 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
                                                       color: theme.primaryColor,
                                                       isDark: isDark,
                                                       isAnswered:
-                                                          _isAnswered.value &&
-                                                          (_isCorrect.value !=
+                                                          isAnsweredNotifier.value &&
+                                                          (isCorrectNotifier.value !=
                                                                   null ||
-                                                              !_isFirstStagePassed
+                                                              !isFirstStagePassedNotifier
                                                                   .value),
                                                       isCorrect:
-                                                          _isCorrect.value,
+                                                          isCorrectNotifier.value,
                                                       selectedItems:
                                                           _selectedItems.value,
                                                       steamAnimation:
@@ -293,7 +271,7 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
                                                       onItemTapped:
                                                           _onItemTapped,
                                                       onHapticFeedback:
-                                                          _hapticService
+                                                          hapticService
                                                               .selection,
                                                     ),
                                                     SizedBox(
@@ -309,21 +287,21 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
                                                       color: theme.primaryColor,
                                                       isDark: isDark,
                                                       isAnswered:
-                                                          _isAnswered.value &&
-                                                          (_isCorrect.value !=
+                                                          isAnsweredNotifier.value &&
+                                                          (isCorrectNotifier.value !=
                                                                   null ||
-                                                              !_isFirstStagePassed
+                                                              !isFirstStagePassedNotifier
                                                                   .value),
                                                       isCorrect:
-                                                          _isCorrect.value,
+                                                          isCorrectNotifier.value,
                                                       selectedItems:
                                                           _selectedItems.value,
                                                       onItemTapped:
                                                           _onItemTapped,
                                                       onDragStarted: () {
-                                                        _hapticService
+                                                        hapticService
                                                             .selection();
-                                                        _soundService
+                                                        soundService
                                                             .playHint(); // Play synth note
                                                       },
                                                     ),
@@ -334,7 +312,7 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
                                                     ),
 
                                                     // Trigger Action Buttons
-                                                    if (!_isAnswered.value &&
+                                                    if (!isAnsweredNotifier.value &&
                                                         _selectedItems
                                                             .value
                                                             .isNotEmpty)
@@ -527,8 +505,8 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
                                   SliverToBoxAdapter(
                                     child: SizedBox(
                                       height:
-                                          (_isFirstStagePassed.value &&
-                                              !_isAnswered.value)
+                                          (isFirstStagePassedNotifier.value &&
+                                              !isAnsweredNotifier.value)
                                           ? 380.h
                                           : 60.h,
                                     ),
@@ -536,7 +514,7 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
                                 ],
                               ),
                             ),
-                            if (_isFirstStagePassed.value && !_isAnswered.value)
+                            if (isFirstStagePassedNotifier.value && !isAnsweredNotifier.value)
                               SpeakToConfirmOverlay(
                                 expectedText:
                                     quest.correctAnswer ??

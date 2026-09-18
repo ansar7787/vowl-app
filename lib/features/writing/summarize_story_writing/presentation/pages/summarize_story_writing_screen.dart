@@ -5,13 +5,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
-import 'package:vowl/core/utils/haptic_service.dart';
-import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/writing/presentation/bloc/writing_bloc.dart';
+import 'package:vowl/features/writing/presentation/mixins/writing_game_screen_mixin.dart';
 import 'package:vowl/features/writing/presentation/bloc/writing_event.dart';
 import 'package:vowl/features/writing/presentation/bloc/writing_state.dart';
 import 'package:vowl/features/writing/presentation/layout/writing_base_layout.dart';
-import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 
 import 'package:vowl/features/writing/domain/entities/writing_quest.dart';
@@ -39,13 +37,20 @@ class SummarizeStoryWritingScreen extends StatefulWidget {
 }
 
 class _SummarizeStoryWritingScreenState
-    extends State<SummarizeStoryWritingScreen> {
-  final _hapticService = di.sl<HapticService>();
+    extends State<SummarizeStoryWritingScreen> with WritingGameScreenMixin {
+  @override
+  GameSubtype get gameType => widget.gameType;
 
+  @override
+  int get level => widget.level;
+
+  @override
+  String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
+
+  
   final ValueNotifier<List<DescribeFrameSlot>> _slots = ValueNotifier([]);
 
-  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
-  WritingQuest? _lastQuest;
+    WritingQuest? _lastQuest;
   final ValueNotifier<bool> _pendingSubmit = ValueNotifier(false);
 
   late final ScrollController _scrollController;
@@ -54,23 +59,37 @@ class _SummarizeStoryWritingScreenState
   void dispose() {
     _scrollController.dispose();
     _slots.dispose();
-    _showConfetti.dispose();
-    _pendingSubmit.dispose();
+        _pendingSubmit.dispose();
+    disposeWritingGame();
+    disposeWritingGame();
+    disposeWritingGame();
     super.dispose();
   }
 
   @override
   void initState() {
     super.initState();
+    isAnsweredNotifier.addListener(() {
+      if (isAnsweredNotifier.value && mounted && _scrollController.hasClients) {
+        Future.delayed(const Duration(milliseconds: 100), () {
+          if (mounted && _scrollController.hasClients) {
+            _scrollController.animateTo(
+              _scrollController.position.maxScrollExtent,
+              duration: const Duration(milliseconds: 300),
+              curve: Curves.easeOut,
+            );
+          }
+        });
+      }
+    });
+
     _scrollController = ScrollController();
-    context.read<WritingBloc>().add(
-      FetchWritingQuests(gameType: widget.gameType, level: widget.level),
-    );
+    initWritingGame();
   }
 
   void _onDropFrame(int slotIdx, String sentence, bool isAnswered) {
     if (isAnswered) return;
-    _hapticService.success();
+    hapticService.success();
     final newSlots = List<DescribeFrameSlot>.from(_slots.value);
     newSlots[slotIdx].sentence = sentence;
     _slots.value = newSlots;
@@ -81,7 +100,7 @@ class _SummarizeStoryWritingScreenState
 
     final firstEmptyIdx = _slots.value.indexWhere((s) => s.sentence == null);
     if (firstEmptyIdx != -1) {
-      _hapticService.success();
+      hapticService.success();
       final newSlots = List<DescribeFrameSlot>.from(_slots.value);
       newSlots[firstEmptyIdx].sentence = sentence;
       _slots.value = newSlots;
@@ -90,7 +109,7 @@ class _SummarizeStoryWritingScreenState
 
   void _removeFrame(int slotIdx, bool isAnswered) {
     if (isAnswered) return;
-    _hapticService.selection();
+    hapticService.selection();
     final newSlots = List<DescribeFrameSlot>.from(_slots.value);
     newSlots[slotIdx].sentence = null;
     _slots.value = newSlots;
@@ -109,7 +128,7 @@ class _SummarizeStoryWritingScreenState
     if (state is! WritingLoaded) return;
 
     if (!nailedTyping) {
-      _hapticService.error();
+      hapticService.error();
       context.read<WritingBloc>().add(const SubmitAnswer(false));
       return;
     }
@@ -137,7 +156,7 @@ class _SummarizeStoryWritingScreenState
 
   void _onTimerExpired() {
     if (_pendingSubmit.value) return;
-    _hapticService.error();
+    hapticService.error();
     context.read<WritingBloc>().add(const SubmitAnswer(false));
   }
 
@@ -163,28 +182,7 @@ class _SummarizeStoryWritingScreenState
           (curr is WritingGameComplete && prev is! WritingGameComplete) ||
           (curr is WritingGameOver && prev is! WritingGameOver) ||
           (curr is WritingLoaded && !curr.answerStatus.isAnswered),
-      listener: (context, state) {
-        if (state is WritingLoaded && !state.answerStatus.isAnswered) {
-          _pendingSubmit.value = false;
-          final newSlots = List<DescribeFrameSlot>.from(_slots.value);
-          for (var slot in newSlots) {
-            slot.sentence = null;
-          }
-          _slots.value = newSlots;
-        }
-        if (state is WritingGameComplete) {
-          _showConfetti.value = true;
-          GameDialogHelper.showCompletion(
-            context,
-            xp: state.xpEarned,
-            coins: state.coinsEarned,
-            title: 'DIGEST MASTER!',
-            enableDoubleUp: true,
-          );
-        }
-
-
-      },
+      listener: onWritingStateChanged,
       builder: (context, state) {
         final isLoaded = state is WritingLoaded;
         if (isLoaded) {
@@ -215,7 +213,7 @@ class _SummarizeStoryWritingScreenState
           level: widget.level,
           isAnswered: isAnswered,
           isCorrect: isCorrect,
-          showConfetti: _showConfetti.value,
+          showConfetti: showConfettiNotifier.value,
           useScrolling: false,
           disablePadding: true,
           onContinue: () =>
@@ -224,7 +222,7 @@ class _SummarizeStoryWritingScreenState
               context.read<WritingBloc>().add(const WritingHintUsed()),
           child: ListenableBuilder(
             listenable: Listenable.merge([
-              _showConfetti,
+              showConfettiNotifier,
               _slots,
               _pendingSubmit,
             ]),

@@ -5,12 +5,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/features/grammar/domain/entities/grammar_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
-import 'package:vowl/core/utils/haptic_service.dart';
-import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/grammar/presentation/bloc/grammar_bloc.dart';
+import 'package:vowl/features/grammar/presentation/mixins/grammar_game_screen_mixin.dart';
 import 'package:vowl/features/grammar/presentation/layout/grammar_base_layout.dart';
-import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/features/grammar/punctuation_mastery/presentation/widgets/punctuation_mastery_instruction.dart';
@@ -32,10 +29,17 @@ class PunctuationMasteryScreen extends StatefulWidget {
       _PunctuationMasteryScreenState();
 }
 
-class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen> {
-  final _hapticService = di.sl<HapticService>();
-  final _soundService = di.sl<SoundService>();
+class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen> with GrammarGameScreenMixin {
+  @override
+  GameSubtype get gameType => widget.gameType;
 
+  @override
+  int get level => widget.level;
+
+  @override
+  String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
+
+    
   // 2N slots (prefix and suffix per word) to ensure proper typographical wrapping
   final ValueNotifier<Map<int, List<String>>> _prefixStickers = ValueNotifier(
     {},
@@ -44,12 +48,7 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen> {
     {},
   );
 
-  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
-  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
-  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
-  int _lastProcessedIndex = -1;
-  int? _lastLives;
-  final ValueNotifier<bool> _pendingTyping = ValueNotifier(false);
+            final ValueNotifier<bool> _pendingTyping = ValueNotifier(false);
   final ValueNotifier<String?> _assembledSentence = ValueNotifier(null);
   final ScrollController _scrollController = ScrollController();
 
@@ -57,21 +56,33 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen> {
   void dispose() {
     _prefixStickers.dispose();
     _suffixStickers.dispose();
-    _isAnswered.dispose();
-    _isCorrect.dispose();
-    _showConfetti.dispose();
-    _pendingTyping.dispose();
+                _pendingTyping.dispose();
     _assembledSentence.dispose();
     _scrollController.dispose();
+    disposeGrammarGame();
+    disposeGrammarGame();
+    disposeGrammarGame();
     super.dispose();
   }
 
   @override
   void initState() {
     super.initState();
-    context.read<GrammarBloc>().add(
-      FetchGrammarQuests(gameType: widget.gameType, level: widget.level),
-    );
+    isAnsweredNotifier.addListener(() {
+      if (isAnsweredNotifier.value && mounted && _scrollController.hasClients) {
+        Future.delayed(const Duration(milliseconds: 100), () {
+          if (mounted && _scrollController.hasClients) {
+            _scrollController.animateTo(
+              _scrollController.position.maxScrollExtent,
+              duration: const Duration(milliseconds: 300),
+              curve: Curves.easeOut,
+            );
+          }
+        });
+      }
+    });
+
+    initGrammarGame();
   }
 
   List<String> _getRequiredMarks(GameQuest? quest) {
@@ -93,16 +104,16 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen> {
   }
 
   void _onStick(int index, String mark, bool isPrefix) {
-    if (_isAnswered.value || _pendingTyping.value) return;
-    _hapticService.selection();
+    if (isAnsweredNotifier.value || _pendingTyping.value) return;
+    hapticService.selection();
     final notifier = isPrefix ? _prefixStickers : _suffixStickers;
     final currentList = notifier.value[index] ?? [];
     notifier.value = Map.from(notifier.value)..[index] = [...currentList, mark];
   }
 
   void _onRemoveStick(int index, bool isPrefix) {
-    if (_isAnswered.value || _pendingTyping.value) return;
-    _hapticService.selection();
+    if (isAnsweredNotifier.value || _pendingTyping.value) return;
+    hapticService.selection();
     final notifier = isPrefix ? _prefixStickers : _suffixStickers;
     final currentList = List<String>.from(notifier.value[index] ?? []);
     if (currentList.isNotEmpty) {
@@ -127,7 +138,7 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen> {
   }
 
   void _submitAnswer(GameQuest quest) {
-    if (_isAnswered.value || _pendingTyping.value) return;
+    if (isAnsweredNotifier.value || _pendingTyping.value) return;
 
     final words = (quest.sentence ?? "").split(" ");
     final StringBuffer resultBuffer = StringBuffer();
@@ -164,8 +175,8 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen> {
     final displayResult = displayResultBuffer.toString();
 
     if (isCorrect) {
-      _hapticService.success();
-      _soundService.playCorrect();
+      hapticService.success();
+      soundService.playCorrect();
       _assembledSentence.value = displayResult;
       _pendingTyping.value = true;
 
@@ -180,10 +191,10 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen> {
         }
       });
     } else {
-      _hapticService.error();
-      _soundService.playWrong();
-      _isAnswered.value = true;
-      _isCorrect.value = false;
+      hapticService.error();
+      soundService.playWrong();
+      isAnsweredNotifier.value = true;
+      isCorrectNotifier.value = false;
       _assembledSentence.value = displayResult;
       context.read<GrammarBloc>().add(const SubmitAnswer(false));
     }
@@ -191,16 +202,16 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen> {
 
   void _submitFinalAnswer(bool correct) {
     _pendingTyping.value = false;
-    _isAnswered.value = true;
-    _isCorrect.value = correct;
+    isAnsweredNotifier.value = true;
+    isCorrectNotifier.value = correct;
 
     if (correct) {
-      _hapticService.success();
-      _soundService.playCorrect();
+      hapticService.success();
+      soundService.playCorrect();
       context.read<GrammarBloc>().add(const SubmitAnswer(true));
     } else {
-      _hapticService.error();
-      _soundService.playWrong();
+      hapticService.error();
+      soundService.playWrong();
       context.read<GrammarBloc>().add(const SubmitAnswer(false));
     }
   }
@@ -211,37 +222,8 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen> {
     final theme = LevelThemeHelper.getTheme('grammar', level: widget.level);
 
     return BlocConsumer<GrammarBloc, GrammarState>(
-      listener: (context, state) {
-        if (state is GrammarLoaded) {
-          final isNewQuestion = state.currentIndex != _lastProcessedIndex;
-          final isRetry = _isAnswered.value && !state.answerStatus.isAnswered;
-          final livesRestored =
-              _lastLives != null && state.livesRemaining > _lastLives!;
-
-          if (isNewQuestion || isRetry || livesRestored) {
-            _lastProcessedIndex = state.currentIndex;
-            _isAnswered.value = false;
-            _isCorrect.value = null;
-            _pendingTyping.value = false;
-            _prefixStickers.value = {};
-            _suffixStickers.value = {};
-          } else if (state.answerStatus.isAnswered && !_isAnswered.value) {
-            _isAnswered.value = true;
-            _isCorrect.value = state.answerStatus.asBoolOrNull;
-          }
-          _lastLives = state.livesRemaining;
-        }
-        if (state is GrammarGameComplete) {
-          _showConfetti.value = true;
-          GameDialogHelper.showCompletion(
-            context,
-            xp: state.xpEarned,
-            coins: state.coinsEarned,
-            title: 'PUNCTUATION PRO!',
-            enableDoubleUp: true,
-          );
-        }
-      },
+      listenWhen: grammarListenWhen,
+      listener: onGrammarStateChanged,
       builder: (context, state) {
         final quest = (state is GrammarLoaded)
             ? state.currentQuest as GrammarQuest?
@@ -263,9 +245,9 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen> {
 
         return ListenableBuilder(
           listenable: Listenable.merge([
-            _isAnswered,
-            _isCorrect,
-            _showConfetti,
+            isAnsweredNotifier,
+            isCorrectNotifier,
+            showConfettiNotifier,
             _prefixStickers,
             _suffixStickers,
             _pendingTyping,
@@ -276,10 +258,10 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen> {
               disablePadding: true,
               gameType: widget.gameType,
               level: widget.level,
-              isAnswered: _isAnswered.value,
-              isCorrect: _isCorrect.value,
+              isAnswered: isAnsweredNotifier.value,
+              isCorrect: isCorrectNotifier.value,
               isFinalFailure: state is GrammarLoaded && state.isFinalFailure,
-              showConfetti: _showConfetti.value,
+              showConfetti: showConfettiNotifier.value,
               useScrolling: false,
               onContinue: () =>
                   context.read<GrammarBloc>().add(const NextQuestion()),
@@ -478,7 +460,7 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen> {
                                                       ),
 
                                                   // Result
-                                                  if (_isAnswered.value) ...[
+                                                  if (isAnsweredNotifier.value) ...[
                                                     SizedBox(
                                                       height: isCompact
                                                           ? 12.h
@@ -499,7 +481,7 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen> {
                                                   ),
 
                                                   // Sticker Sheet
-                                                  if (!_isAnswered.value &&
+                                                  if (!isAnsweredNotifier.value &&
                                                       !_pendingTyping.value)
                                                     PunctuationStickerSheet(
                                                       marks: marks,
@@ -510,7 +492,7 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen> {
                                                   const Spacer(),
 
                                                   // Submit Button
-                                                  if (!_isAnswered.value &&
+                                                  if (!isAnsweredNotifier.value &&
                                                       !_pendingTyping.value)
                                                     Padding(
                                                       padding:
@@ -602,7 +584,7 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen> {
                                     ),
                                   ),
                                   if (_pendingTyping.value &&
-                                      !_isAnswered.value &&
+                                      !isAnsweredNotifier.value &&
                                       cleanTargetSentence.isNotEmpty)
                                     SliverToBoxAdapter(
                                       child: TypeToConfirmOverlay(
@@ -789,7 +771,7 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen> {
     bool isDark,
     bool isCompact,
   ) {
-    final bool correct = _isCorrect.value == true;
+    final bool correct = isCorrectNotifier.value == true;
     final displayColor = correct ? Colors.greenAccent : Colors.redAccent;
 
     return Padding(

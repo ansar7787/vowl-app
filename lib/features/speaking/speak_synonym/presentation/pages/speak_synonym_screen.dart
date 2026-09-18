@@ -6,13 +6,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/features/speaking/domain/entities/speaking_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
-import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/speaking/presentation/bloc/speaking_bloc.dart';
+import 'package:vowl/features/speaking/presentation/mixins/speaking_game_screen_mixin.dart';
 import 'package:vowl/features/speaking/presentation/layout/speaking_base_layout.dart';
-import 'package:vowl/core/utils/locale_service.dart';
-import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/game_mechanics/speaking/speak_to_confirm_overlay.dart';
 import 'package:vowl/core/services/error_journal_collector.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
@@ -35,18 +32,19 @@ class SpeakSynonymScreen extends StatefulWidget {
   State<SpeakSynonymScreen> createState() => _SpeakSynonymScreenState();
 }
 
-class _SpeakSynonymScreenState extends State<SpeakSynonymScreen>
-    with SingleTickerProviderStateMixin {
-  final _hapticService = di.sl<HapticService>();
-  final _soundService = di.sl<SoundService>();
+class _SpeakSynonymScreenState extends State<SpeakSynonymScreen>with SingleTickerProviderStateMixin, SpeakingGameScreenMixin {
+  @override
+  GameSubtype get gameType => widget.gameType;
 
+  @override
+  int get level => widget.level;
+
+  @override
+  String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
+
+    
   final ValueNotifier<double> _bloomProgress = ValueNotifier(0.0);
-  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
-  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
-  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
-  int _lastProcessedIndex = -1;
-  int? _lastLives;
-
+          
   final ValueNotifier<bool> _ttsFinished = ValueNotifier(false);
   Timer? _ttsTimer;
 
@@ -58,56 +56,51 @@ class _SpeakSynonymScreenState extends State<SpeakSynonymScreen>
   @override
   void initState() {
     super.initState();
-    context.read<SpeakingBloc>().add(
-      FetchSpeakingQuests(gameType: widget.gameType, level: widget.level),
-    );
+    isAnsweredNotifier.addListener(() {
+      if (isAnsweredNotifier.value && mounted && _scrollController.hasClients) {
+        Future.delayed(const Duration(milliseconds: 100), () {
+          if (mounted && _scrollController.hasClients) {
+            _scrollController.animateTo(
+              _scrollController.position.maxScrollExtent,
+              duration: const Duration(milliseconds: 300),
+              curve: Curves.easeOut,
+            );
+          }
+        });
+      }
+    });
+
+    initSpeakingGame();
   }
 
   @override
   void dispose() {
     _bloomProgress.dispose();
-    _isAnswered.dispose();
-    _isCorrect.dispose();
-    _showConfetti.dispose();
-    _scrollController.dispose();
+                _scrollController.dispose();
     _ttsFinished.dispose();
     _ttsTimer?.cancel();
+    disposeSpeakingGame();
+    disposeSpeakingGame();
+    disposeSpeakingGame();
     super.dispose();
   }
-
-  void _scrollToBottom() {
-    Future.delayed(const Duration(milliseconds: 100), () {
-      if (mounted && _scrollController.hasClients) {
-        _scrollController.animateTo(
-          _scrollController.position.maxScrollExtent,
-          duration: const Duration(milliseconds: 300),
-          curve: Curves.easeOut,
-        );
-      }
-    });
-  }
-
-  void _triggerAutoPlay(GameQuest quest) {
-    if (quest.textToSpeak != null) {
-      final String cleanSentence = quest.textToSpeak!.replaceAll('*', '');
-      _soundService.playTts(cleanSentence);
-    }
-  }
+
+
 
   void _submitVerbalEvaluation(bool nailedIt) {
-    if (_isAnswered.value) return;
+    if (isAnsweredNotifier.value) return;
 
-    _isAnswered.value = true;
-    _isCorrect.value = nailedIt;
+    isAnsweredNotifier.value = true;
+    isCorrectNotifier.value = nailedIt;
     _bloomProgress.value = nailedIt ? 1.0 : 0.0;
 
     if (nailedIt) {
-      _hapticService.success();
-      _soundService.playCorrect();
+      hapticService.success();
+      soundService.playCorrect();
       context.read<SpeakingBloc>().add(const SubmitAnswer(true));
     } else {
-      _hapticService.error();
-      _soundService.playWrong();
+      hapticService.error();
+      soundService.playWrong();
 
       final authState = context.read<AuthBloc>().state;
       if (authState.status == AuthStatus.authenticated &&
@@ -140,47 +133,8 @@ class _SpeakSynonymScreenState extends State<SpeakSynonymScreen>
     final mediaQuery = MediaQuery.of(context);
 
     return BlocConsumer<SpeakingBloc, SpeakingState>(
-      listener: (context, state) {
-        if (state is SpeakingLoaded) {
-          final livesChanged = (state.livesRemaining > (_lastLives ?? 3));
-          if (state.currentIndex != _lastProcessedIndex ||
-              livesChanged ||
-              (!state.answerStatus.isAnswered && _isAnswered.value)) {
-            _lastProcessedIndex = state.currentIndex;
-            _isAnswered.value = false;
-            _isCorrect.value = null;
-            _bloomProgress.value = 0.0;
-            _ttsFinished.value = false;
-            _ttsTimer?.cancel();
-            Future.delayed(const Duration(milliseconds: 300), () {
-              if (mounted) _triggerAutoPlay(state.currentQuest);
-            });
-            _ttsTimer = Timer(const Duration(seconds: 3), () {
-              if (mounted) {
-                _ttsFinished.value = true;
-                _scrollToBottom();
-              }
-            });
-          } else if (state.answerStatus == AnswerStatus.incorrect) {
-            _isCorrect.value = false;
-            _isAnswered.value = true; // Always show feedback card on incorrect
-          }
-          _lastLives = state.livesRemaining;
-        }
-        if (state is SpeakingGameComplete) {
-          _showConfetti.value = true;
-          GameDialogHelper.showCompletion(
-            context,
-            xp: state.xpEarned,
-            coins: state.coinsEarned,
-            title: context.tr(
-              'speaking_games.lexical_pivot',
-              fallback: 'LEXICAL PIVOT COMPLETE!',
-            ),
-            enableDoubleUp: true,
-          );
-        }
-      },
+      listenWhen: speakingListenWhen,
+      listener: onSpeakingStateChanged,
       builder: (context, state) {
         final quest = (state is SpeakingLoaded) ? state.currentQuest : null;
         final hintUsed = (state is SpeakingLoaded) ? state.hintUsed : false;
@@ -199,9 +153,9 @@ class _SpeakSynonymScreenState extends State<SpeakSynonymScreen>
           ),
           child: ListenableBuilder(
             listenable: Listenable.merge([
-              _isAnswered,
-              _isCorrect,
-              _showConfetti,
+              isAnsweredNotifier,
+              isCorrectNotifier,
+              showConfettiNotifier,
               _bloomProgress,
               _ttsFinished,
             ]),
@@ -209,9 +163,9 @@ class _SpeakSynonymScreenState extends State<SpeakSynonymScreen>
               return SpeakingBaseLayout(
                 gameType: widget.gameType,
                 level: widget.level,
-                isAnswered: _isAnswered.value,
-                isCorrect: _isCorrect.value,
-                showConfetti: _showConfetti.value,
+                isAnswered: isAnsweredNotifier.value,
+                isCorrect: isCorrectNotifier.value,
+                showConfetti: showConfettiNotifier.value,
                 disablePadding: true,
                 onContinue: () =>
                     context.read<SpeakingBloc>().add(const NextQuestion()),
@@ -255,7 +209,7 @@ class _SpeakSynonymScreenState extends State<SpeakSynonymScreen>
                                             .isRecording) {
                                           return;
                                         }
-                                        _soundService.playTts(
+                                        soundService.playTts(
                                           (quest.textToSpeak ?? "").replaceAll(
                                             '*',
                                             '',
@@ -311,7 +265,7 @@ class _SpeakSynonymScreenState extends State<SpeakSynonymScreen>
                                 ),
                               ),
                             ),
-                            if (!_isAnswered.value)
+                            if (!isAnsweredNotifier.value)
                               SliverPadding(
                                 padding: EdgeInsets.only(bottom: 120.h),
                                 sliver: SliverToBoxAdapter(

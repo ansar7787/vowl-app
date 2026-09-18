@@ -5,13 +5,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
-import 'package:vowl/core/utils/haptic_service.dart';
-import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/reading/presentation/bloc/reading_bloc.dart';
+import 'package:vowl/features/reading/presentation/mixins/reading_game_screen_mixin.dart';
 import 'package:vowl/features/reading/presentation/layout/reading_base_layout.dart';
-import 'package:vowl/core/utils/locale_service.dart';
-import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/features/reading/domain/entities/reading_quest.dart';
 import 'package:vowl/features/reading/read_and_match/presentation/widgets/read_and_match_instruction.dart';
 import 'package:vowl/features/reading/read_and_match/presentation/widgets/read_and_match_terminal.dart';
@@ -32,32 +28,34 @@ class ReadAndMatchScreen extends StatefulWidget {
   State<ReadAndMatchScreen> createState() => _ReadAndMatchScreenState();
 }
 
-class _ReadAndMatchScreenState extends State<ReadAndMatchScreen> {
-  final _hapticService = di.sl<HapticService>();
-  final _soundService = di.sl<SoundService>();
+class _ReadAndMatchScreenState extends State<ReadAndMatchScreen> with ReadingGameScreenMixin {
+  @override
+  GameSubtype get gameType => widget.gameType;
 
+  @override
+  int get level => widget.level;
+
+  @override
+  String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
+
+    
   final GlobalKey _canvasKey = GlobalKey();
   final Map<String, GlobalKey> _terminalKeys = {};
 
   final ValueNotifier<String?> _activeKey = ValueNotifier(null);
   final ValueNotifier<Map<String, String>> _matches = ValueNotifier({});
-  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
-  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
-  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
-  int _lastProcessedIndex = -1;
-  int? _lastLives;
-  final ValueNotifier<bool> _pendingSubmission = ValueNotifier(false);
+            final ValueNotifier<bool> _pendingSubmission = ValueNotifier(false);
   final ScrollController _scrollController = ScrollController();
 
   @override
   void dispose() {
     _activeKey.dispose();
     _matches.dispose();
-    _isAnswered.dispose();
-    _isCorrect.dispose();
-    _showConfetti.dispose();
-    _pendingSubmission.dispose();
+                _pendingSubmission.dispose();
     _scrollController.dispose();
+    disposeReadingGame();
+    disposeReadingGame();
+    disposeReadingGame();
     super.dispose();
   }
 
@@ -75,9 +73,21 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen> {
   @override
   void initState() {
     super.initState();
-    context.read<ReadingBloc>().add(
-      FetchReadingQuests(gameType: widget.gameType, level: widget.level),
-    );
+    isAnsweredNotifier.addListener(() {
+      if (isAnsweredNotifier.value && mounted && _scrollController.hasClients) {
+        Future.delayed(const Duration(milliseconds: 100), () {
+          if (mounted && _scrollController.hasClients) {
+            _scrollController.animateTo(
+              _scrollController.position.maxScrollExtent,
+              duration: const Duration(milliseconds: 300),
+              curve: Curves.easeOut,
+            );
+          }
+        });
+      }
+    });
+
+    initReadingGame();
   }
 
   GlobalKey _getKeyFor(String text) {
@@ -98,8 +108,8 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen> {
   }
 
   void _onKeyTap(String key) {
-    if (_isAnswered.value) return;
-    _hapticService.selection();
+    if (isAnsweredNotifier.value) return;
+    hapticService.selection();
     final Map<String, String> currentMatches = Map.from(_matches.value);
     if (currentMatches.containsKey(key)) {
       currentMatches.remove(key);
@@ -109,9 +119,9 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen> {
   }
 
   void _onValueTap(String value, List<Map<String, String>> pairs) {
-    if (_isAnswered.value || _activeKey.value == null) return;
+    if (isAnsweredNotifier.value || _activeKey.value == null) return;
 
-    _hapticService.success();
+    hapticService.success();
     final Map<String, String> currentMatches = Map.from(_matches.value);
     currentMatches.removeWhere((k, v) => v == value);
     currentMatches[_activeKey.value!] = value;
@@ -130,16 +140,16 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen> {
     _pendingSubmission.value = false;
 
     if (!nailedSpeaking) {
-      _hapticService.error();
-      _soundService.playWrong();
-      _isAnswered.value = true;
-      _isCorrect.value = false;
+      hapticService.error();
+      soundService.playWrong();
+      isAnsweredNotifier.value = true;
+      isCorrectNotifier.value = false;
       context.read<ReadingBloc>().add(const SubmitAnswer(false));
       Future.delayed(const Duration(milliseconds: 1500), () {
         if (mounted) {
           _matches.value = {};
-          _isAnswered.value = false;
-          _isCorrect.value = null;
+          isAnsweredNotifier.value = false;
+          isCorrectNotifier.value = null;
         }
       });
       return;
@@ -158,23 +168,23 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen> {
     }
 
     if (isCorrect) {
-      _hapticService.success();
-      _soundService.playCorrect();
-      _isAnswered.value = true;
-      _isCorrect.value = true;
+      hapticService.success();
+      soundService.playCorrect();
+      isAnsweredNotifier.value = true;
+      isCorrectNotifier.value = true;
       context.read<ReadingBloc>().add(const ReadingSpeakConfirmed(5));
       context.read<ReadingBloc>().add(const SubmitAnswer(true));
     } else {
-      _hapticService.error();
-      _soundService.playWrong();
-      _isAnswered.value = true;
-      _isCorrect.value = false;
+      hapticService.error();
+      soundService.playWrong();
+      isAnsweredNotifier.value = true;
+      isCorrectNotifier.value = false;
       context.read<ReadingBloc>().add(const SubmitAnswer(false));
       Future.delayed(const Duration(milliseconds: 1500), () {
         if (mounted) {
           _matches.value = {};
-          _isAnswered.value = false;
-          _isCorrect.value = null;
+          isAnsweredNotifier.value = false;
+          isCorrectNotifier.value = null;
         }
       });
     }
@@ -186,40 +196,8 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen> {
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
     return BlocConsumer<ReadingBloc, ReadingState>(
-      listener: (context, state) {
-        if (state is ReadingLoaded) {
-          final isNewQuestion = state.currentIndex != _lastProcessedIndex;
-          final isRetry = _isAnswered.value && !state.answerStatus.isAnswered;
-          final livesChanged =
-              _lastLives != null && state.livesRemaining > _lastLives!;
-
-          if (isNewQuestion || isRetry || livesChanged) {
-            _lastProcessedIndex = state.currentIndex;
-            _isAnswered.value = false;
-            _isCorrect.value = null;
-            _matches.value = {};
-            _activeKey.value = null;
-            _pendingSubmission.value = false;
-          } else if (state.answerStatus.isAnswered && !_isAnswered.value) {
-            _isAnswered.value = true;
-            _isCorrect.value = state.answerStatus.asBoolOrNull;
-          }
-          _lastLives = state.livesRemaining;
-        }
-        if (state is ReadingGameComplete) {
-          _showConfetti.value = true;
-          GameDialogHelper.showCompletion(
-            context,
-            xp: state.xpEarned,
-            coins: state.coinsEarned,
-            title: context.tr(
-              'reading_games.relationship_master',
-              fallback: 'RELATIONSHIP MASTER!',
-            ),
-            enableDoubleUp: true,
-          );
-        }
-      },
+      listenWhen: readingListenWhen,
+      listener: onReadingStateChanged,
       builder: (context, state) {
         final ReadingQuest? quest = (state is ReadingLoaded)
             ? state.currentQuest as ReadingQuest?
@@ -252,9 +230,9 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen> {
 
         return ListenableBuilder(
           listenable: Listenable.merge([
-            _isAnswered,
-            _isCorrect,
-            _showConfetti,
+            isAnsweredNotifier,
+            isCorrectNotifier,
+            showConfettiNotifier,
             _matches,
             _activeKey,
             _pendingSubmission,
@@ -263,9 +241,9 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen> {
             return ReadingBaseLayout(
               gameType: widget.gameType,
               level: widget.level,
-              isAnswered: _isAnswered.value,
-              isCorrect: _isCorrect.value,
-              showConfetti: _showConfetti.value,
+              isAnswered: isAnsweredNotifier.value,
+              isCorrect: isCorrectNotifier.value,
+              showConfetti: showConfettiNotifier.value,
               onContinue: () =>
                   context.read<ReadingBloc>().add(const NextQuestion()),
               onHint: () =>
@@ -412,7 +390,7 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen> {
                                     child: SizedBox(
                                       height:
                                           (_pendingSubmission.value &&
-                                              !_isAnswered.value)
+                                              !isAnsweredNotifier.value)
                                           ? 380.h
                                           : 60.h,
                                     ),
@@ -422,7 +400,7 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen> {
                             );
                           },
                         ),
-                        if (_pendingSubmission.value && !_isAnswered.value)
+                        if (_pendingSubmission.value && !isAnsweredNotifier.value)
                           SpeakToConfirmOverlay(
                             expectedText:
                                 quest.textToSpeak ??
@@ -434,14 +412,14 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen> {
                             allowSkip: true,
                             isPositioned: true,
                           ),
-                        if (_isAnswered.value)
+                        if (isAnsweredNotifier.value)
                           Positioned(
                             bottom: 50.h,
                             left: 20.w,
                             right: 20.w,
                             child: ReadAndMatchResult(
                               quest: quest,
-                              isCorrect: _isCorrect.value == true,
+                              isCorrect: isCorrectNotifier.value == true,
                               isDark: isDark,
                             ),
                           ),

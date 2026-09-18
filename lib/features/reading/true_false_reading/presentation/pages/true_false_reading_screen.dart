@@ -5,13 +5,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
-import 'package:vowl/core/utils/haptic_service.dart';
-import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/reading/presentation/bloc/reading_bloc.dart';
+import 'package:vowl/features/reading/presentation/mixins/reading_game_screen_mixin.dart';
 import 'package:vowl/features/reading/presentation/layout/reading_base_layout.dart';
-import 'package:vowl/core/utils/locale_service.dart';
-import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/features/reading/domain/entities/reading_quest.dart';
 import 'package:vowl/features/reading/true_false_reading/presentation/widgets/true_false_reading_instruction.dart';
 import 'package:vowl/features/reading/true_false_reading/presentation/widgets/true_false_reading_passage.dart';
@@ -34,19 +30,21 @@ class TrueFalseReadingScreen extends StatefulWidget {
   State<TrueFalseReadingScreen> createState() => _TrueFalseReadingScreenState();
 }
 
-class _TrueFalseReadingScreenState extends State<TrueFalseReadingScreen> {
-  final _hapticService = di.sl<HapticService>();
-  final _soundService = di.sl<SoundService>();
+class _TrueFalseReadingScreenState extends State<TrueFalseReadingScreen> with ReadingGameScreenMixin {
+  @override
+  GameSubtype get gameType => widget.gameType;
 
+  @override
+  int get level => widget.level;
+
+  @override
+  String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
+
+    
   final ValueNotifier<double> _coinX = ValueNotifier(0.0);
   final ValueNotifier<double> _coinY = ValueNotifier(0.0);
   final ValueNotifier<double> _coinRotation = ValueNotifier(0.0);
-  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
-  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
-  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
-  int _lastProcessedIndex = -1;
-  int? _lastLives;
-
+          
   final ValueNotifier<bool?> _pendingAnswer = ValueNotifier(null);
   final ScrollController _scrollController = ScrollController();
 
@@ -55,28 +53,40 @@ class _TrueFalseReadingScreenState extends State<TrueFalseReadingScreen> {
     _coinX.dispose();
     _coinY.dispose();
     _coinRotation.dispose();
-    _isAnswered.dispose();
-    _isCorrect.dispose();
-    _showConfetti.dispose();
-    _pendingAnswer.dispose();
+                _pendingAnswer.dispose();
     _scrollController.dispose();
+    disposeReadingGame();
+    disposeReadingGame();
+    disposeReadingGame();
     super.dispose();
   }
 
   @override
   void initState() {
     super.initState();
-    context.read<ReadingBloc>().add(
-      FetchReadingQuests(gameType: widget.gameType, level: widget.level),
-    );
+    isAnsweredNotifier.addListener(() {
+      if (isAnsweredNotifier.value && mounted && _scrollController.hasClients) {
+        Future.delayed(const Duration(milliseconds: 100), () {
+          if (mounted && _scrollController.hasClients) {
+            _scrollController.animateTo(
+              _scrollController.position.maxScrollExtent,
+              duration: const Duration(milliseconds: 300),
+              curve: Curves.easeOut,
+            );
+          }
+        });
+      }
+    });
+
+    initReadingGame();
   }
 
   void _onFlick(Offset delta) {
-    if (_isAnswered.value || _pendingAnswer.value != null) return;
+    if (isAnsweredNotifier.value || _pendingAnswer.value != null) return;
     _coinX.value += delta.dx;
     _coinY.value += delta.dy;
     _coinRotation.value += (delta.dx + delta.dy) / 100;
-    _hapticService.selection();
+    hapticService.selection();
 
     if (_coinX.value.abs() > 100.w) {
       final bool pending = _coinX.value > 0;
@@ -110,10 +120,10 @@ class _TrueFalseReadingScreenState extends State<TrueFalseReadingScreen> {
     if (_pendingAnswer.value == null) return;
 
     if (!nailedEvidence || failedCoin) {
-      _hapticService.error();
-      _soundService.playWrong();
-      _isAnswered.value = true;
-      _isCorrect.value = false;
+      hapticService.error();
+      soundService.playWrong();
+      isAnsweredNotifier.value = true;
+      isCorrectNotifier.value = false;
       _coinX.value = _pendingAnswer.value! ? 120.w : -120.w;
       _coinY.value = 0.0;
       ErrorJournalCollector.record(
@@ -132,13 +142,13 @@ class _TrueFalseReadingScreenState extends State<TrueFalseReadingScreen> {
       return;
     }
 
-    _isAnswered.value = true;
-    _isCorrect.value = true;
+    isAnsweredNotifier.value = true;
+    isCorrectNotifier.value = true;
     _coinX.value = _pendingAnswer.value! ? 120.w : -120.w;
     _coinY.value = 0.0;
 
-    _hapticService.success();
-    _soundService.playCorrect();
+    hapticService.success();
+    soundService.playCorrect();
     // Award bonus coins for finding evidence
     context.read<ReadingBloc>().add(const ReadingSpeakConfirmed(5));
     context.read<ReadingBloc>().add(const SubmitAnswer(true));
@@ -150,41 +160,8 @@ class _TrueFalseReadingScreenState extends State<TrueFalseReadingScreen> {
     final theme = LevelThemeHelper.getTheme('reading', level: widget.level);
 
     return BlocConsumer<ReadingBloc, ReadingState>(
-      listener: (context, state) {
-        if (state is ReadingLoaded) {
-          final isNewQuestion = state.currentIndex != _lastProcessedIndex;
-          final isRetry = _isAnswered.value && !state.answerStatus.isAnswered;
-          final livesChanged =
-              _lastLives != null && state.livesRemaining > _lastLives!;
-
-          if (isNewQuestion || isRetry || livesChanged) {
-            _lastProcessedIndex = state.currentIndex;
-            _isAnswered.value = false;
-            _isCorrect.value = null;
-            _pendingAnswer.value = null;
-            _coinX.value = 0.0;
-            _coinY.value = 0.0;
-            _coinRotation.value = 0.0;
-          } else if (state.answerStatus.isAnswered && !_isAnswered.value) {
-            _isAnswered.value = true;
-            _isCorrect.value = state.answerStatus.asBoolOrNull;
-          }
-          _lastLives = state.livesRemaining;
-        }
-        if (state is ReadingGameComplete) {
-          _showConfetti.value = true;
-          GameDialogHelper.showCompletion(
-            context,
-            xp: state.xpEarned,
-            coins: state.coinsEarned,
-            title: context.tr(
-              'reading_games.fact_checker',
-              fallback: 'FACT CHECKER!',
-            ),
-            enableDoubleUp: true,
-          );
-        }
-      },
+      listenWhen: readingListenWhen,
+      listener: onReadingStateChanged,
       builder: (context, state) {
         final ReadingQuest? quest = (state is ReadingLoaded)
             ? state.currentQuest as ReadingQuest?
@@ -192,9 +169,9 @@ class _TrueFalseReadingScreenState extends State<TrueFalseReadingScreen> {
 
         return ListenableBuilder(
           listenable: Listenable.merge([
-            _isAnswered,
-            _isCorrect,
-            _showConfetti,
+            isAnsweredNotifier,
+            isCorrectNotifier,
+            showConfettiNotifier,
             _pendingAnswer,
             _coinX,
             _coinY,
@@ -204,9 +181,9 @@ class _TrueFalseReadingScreenState extends State<TrueFalseReadingScreen> {
             return ReadingBaseLayout(
               gameType: widget.gameType,
               level: widget.level,
-              isAnswered: _isAnswered.value,
-              isCorrect: _isCorrect.value,
-              showConfetti: _showConfetti.value,
+              isAnswered: isAnsweredNotifier.value,
+              isCorrect: isCorrectNotifier.value,
+              showConfetti: showConfettiNotifier.value,
               onContinue: () =>
                   context.read<ReadingBloc>().add(const NextQuestion()),
               onHint: () =>
@@ -270,18 +247,18 @@ class _TrueFalseReadingScreenState extends State<TrueFalseReadingScreen> {
                                         isDark: isDark,
                                         themeColor: theme.primaryColor,
                                       ),
-                                      if (_isAnswered.value) ...[
+                                      if (isAnsweredNotifier.value) ...[
                                         SizedBox(height: 30.h),
                                         TrueFalseReadingResult(
                                           quest: quest,
-                                          isCorrect: _isCorrect.value == true,
+                                          isCorrect: isCorrectNotifier.value == true,
                                           isDark: isDark,
                                         ),
                                       ],
                                       SizedBox(
                                         height:
                                             (_pendingAnswer.value != null &&
-                                                !_isAnswered.value)
+                                                !isAnsweredNotifier.value)
                                             ? 380.h
                                             : 60.h,
                                       ),
@@ -292,7 +269,7 @@ class _TrueFalseReadingScreenState extends State<TrueFalseReadingScreen> {
                             ],
                           ),
                         ),
-                        if (_pendingAnswer.value != null && !_isAnswered.value)
+                        if (_pendingAnswer.value != null && !isAnsweredNotifier.value)
                           EvidenceHighlightWrapper(
                             passage: quest.passage ?? "",
                             evidenceWords:

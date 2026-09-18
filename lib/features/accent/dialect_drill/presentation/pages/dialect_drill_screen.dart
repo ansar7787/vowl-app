@@ -4,13 +4,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
-import 'package:vowl/core/utils/haptic_service.dart';
-import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/accent/domain/entities/accent_quest.dart';
 import 'package:vowl/features/accent/presentation/bloc/accent_bloc.dart';
+import 'package:vowl/features/accent/presentation/mixins/accent_game_screen_mixin.dart';
 import 'package:vowl/features/accent/presentation/layout/accent_base_layout.dart';
-import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/features/accent/dialect_drill/presentation/widgets/dialect_feedback_panel.dart';
 import 'package:vowl/features/accent/dialect_drill/presentation/widgets/dialect_drill_instruction.dart';
 import 'package:vowl/features/accent/dialect_drill/presentation/widgets/dialect_drill_hologram_console.dart';
@@ -30,18 +27,19 @@ class DialectDrillScreen extends StatefulWidget {
   State<DialectDrillScreen> createState() => _DialectDrillScreenState();
 }
 
-class _DialectDrillScreenState extends State<DialectDrillScreen> {
-  final _hapticService = di.sl<HapticService>();
-  final _soundService = di.sl<SoundService>();
+class _DialectDrillScreenState extends State<DialectDrillScreen> with AccentGameScreenMixin {
+  @override
+  GameSubtype get gameType => widget.gameType;
 
-  int _lastProcessedIndex = -1;
-  int? _lastLives;
-  AccentQuest? _lastQuest;
-  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
-  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
-  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
-  final ValueNotifier<bool> _isFirstStagePassed = ValueNotifier(false);
+  @override
+  int get level => widget.level;
 
+  @override
+  String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
+
+    
+      AccentQuest? _lastQuest;
+        
   List<String>? _shuffledOptions;
   int? _shuffledCorrectIndex;
 
@@ -50,10 +48,9 @@ class _DialectDrillScreenState extends State<DialectDrillScreen> {
   @override
   void dispose() {
     _scrollController.dispose();
-    _isAnswered.dispose();
-    _isCorrect.dispose();
-    _showConfetti.dispose();
-    _isFirstStagePassed.dispose();
+                    disposeAccentGame();
+    disposeAccentGame();
+    disposeAccentGame();
     super.dispose();
   }
 
@@ -72,10 +69,22 @@ class _DialectDrillScreenState extends State<DialectDrillScreen> {
   @override
   void initState() {
     super.initState();
+    isAnsweredNotifier.addListener(() {
+      if (isAnsweredNotifier.value && mounted && _scrollController.hasClients) {
+        Future.delayed(const Duration(milliseconds: 100), () {
+          if (mounted && _scrollController.hasClients) {
+            _scrollController.animateTo(
+              _scrollController.position.maxScrollExtent,
+              duration: const Duration(milliseconds: 300),
+              curve: Curves.easeOut,
+            );
+          }
+        });
+      }
+    });
+
     _scrollController = ScrollController();
-    context.read<AccentBloc>().add(
-      FetchAccentQuests(gameType: widget.gameType, level: widget.level),
-    );
+    initAccentGame();
   }
 
   void _shuffleOptions(AccentQuest? quest) {
@@ -96,43 +105,43 @@ class _DialectDrillScreenState extends State<DialectDrillScreen> {
     final String targetLocale = instruction.contains('british')
         ? "en-GB"
         : "en-US";
-    _soundService.playTts(quest.word ?? "", locale: targetLocale);
+    soundService.playTts(quest.word ?? "", locale: targetLocale);
   }
 
   void _submitAnswer(int index, int correct, double maxWidth) {
-    if (_isAnswered.value || _isFirstStagePassed.value) return;
+    if (isAnsweredNotifier.value || isFirstStagePassedNotifier.value) return;
     bool isCorrect = index == correct;
 
     if (isCorrect) {
-      _hapticService.success();
-      _soundService.playCorrect();
-      _isFirstStagePassed.value = true;
+      hapticService.success();
+      soundService.playCorrect();
+      isFirstStagePassedNotifier.value = true;
       _scrollToBottom();
       // Wait for Phase 2
     } else {
-      _hapticService.error();
-      _soundService.playWrong();
-      _isAnswered.value = true;
-      _isCorrect.value = false;
+      hapticService.error();
+      soundService.playWrong();
+      isAnsweredNotifier.value = true;
+      isCorrectNotifier.value = false;
       _scrollToBottom();
       context.read<AccentBloc>().add(SubmitAnswer(false));
     }
   }
 
   void _submitVerbalEvaluation(bool nailedIt) {
-    if (_isAnswered.value) return;
+    if (isAnsweredNotifier.value) return;
 
-    _isAnswered.value = true;
-    _isCorrect.value = nailedIt;
+    isAnsweredNotifier.value = true;
+    isCorrectNotifier.value = nailedIt;
 
     if (nailedIt) {
-      _hapticService.success();
-      _soundService.playCorrect();
+      hapticService.success();
+      soundService.playCorrect();
       context.read<AccentBloc>().add(const AccentSpeakConfirmed(5));
       context.read<AccentBloc>().add(SubmitAnswer(true));
     } else {
-      _hapticService.error();
-      _soundService.playWrong();
+      hapticService.error();
+      soundService.playWrong();
       context.read<AccentBloc>().add(SubmitAnswer(false));
     }
   }
@@ -143,36 +152,8 @@ class _DialectDrillScreenState extends State<DialectDrillScreen> {
     final theme = LevelThemeHelper.getTheme('accent', level: widget.level);
 
     return BlocConsumer<AccentBloc, AccentState>(
-      listener: (context, state) {
-        if (state is AccentLoaded) {
-          final livesChanged =
-              _lastLives != null && (state.livesRemaining > _lastLives!);
-          if (state.currentIndex != _lastProcessedIndex ||
-              livesChanged ||
-              (!state.answerStatus.isAnswered && _isAnswered.value)) {
-            _lastProcessedIndex = state.currentIndex;
-            _isAnswered.value = false;
-            _isCorrect.value = null;
-            _isFirstStagePassed.value = false;
-            _shuffleOptions(state.currentQuest as AccentQuest?);
-            Future.delayed(const Duration(milliseconds: 350), () {
-              if (mounted) _triggerAutoPlay(state.currentQuest);
-            });
-          }
-          _lastLives = state.livesRemaining;
-          _lastQuest = state.currentQuest;
-        }
-        if (state is AccentGameComplete) {
-          _showConfetti.value = true;
-          GameDialogHelper.showCompletion(
-            context,
-            xp: state.xpEarned,
-            coins: state.coinsEarned,
-            title: 'DIALECT EXPERT!',
-            enableDoubleUp: true,
-          );
-        }
-      },
+      listenWhen: accentListenWhen,
+      listener: onAccentStateChanged,
       builder: (context, state) {
         final AccentQuest? originalQuest = (state is AccentLoaded)
             ? state.currentQuest as AccentQuest?
@@ -180,7 +161,7 @@ class _DialectDrillScreenState extends State<DialectDrillScreen> {
 
         if (originalQuest != null &&
             _shuffledOptions == null &&
-            !_isAnswered.value) {
+            !isAnsweredNotifier.value) {
           _shuffleOptions(originalQuest);
         }
 
@@ -210,18 +191,18 @@ class _DialectDrillScreenState extends State<DialectDrillScreen> {
           ),
           child: ListenableBuilder(
             listenable: Listenable.merge([
-              _isAnswered,
-              _isCorrect,
-              _showConfetti,
-              _isFirstStagePassed,
+              isAnsweredNotifier,
+              isCorrectNotifier,
+              showConfettiNotifier,
+              isFirstStagePassedNotifier,
             ]),
             builder: (context, _) {
               return AccentBaseLayout(
                 gameType: widget.gameType,
                 level: widget.level,
-                isAnswered: _isAnswered.value,
-                isCorrect: _isCorrect.value,
-                showConfetti: _showConfetti.value,
+                isAnswered: isAnsweredNotifier.value,
+                isCorrect: isCorrectNotifier.value,
+                showConfetti: showConfettiNotifier.value,
                 onContinue: () =>
                     context.read<AccentBloc>().add(NextQuestion()),
                 onHint: () => context.read<AccentBloc>().add(AccentHintUsed()),
@@ -240,8 +221,8 @@ class _DialectDrillScreenState extends State<DialectDrillScreen> {
                             child: CustomScrollView(
                               controller: _scrollController,
                               physics:
-                                  (!_isFirstStagePassed.value &&
-                                      !_isAnswered.value)
+                                  (!isFirstStagePassedNotifier.value &&
+                                      !isAnsweredNotifier.value)
                                   ? const NeverScrollableScrollPhysics()
                                   : const BouncingScrollPhysics(),
                               slivers: [
@@ -258,7 +239,7 @@ class _DialectDrillScreenState extends State<DialectDrillScreen> {
                                             vertical: 24.h,
                                           ),
                                           child: IgnorePointer(
-                                            ignoring: _isFirstStagePassed.value,
+                                            ignoring: isFirstStagePassedNotifier.value,
                                             child: Column(
                                               mainAxisAlignment:
                                                   MainAxisAlignment.start,
@@ -269,7 +250,7 @@ class _DialectDrillScreenState extends State<DialectDrillScreen> {
                                                   children: [
                                                     DialectDrillInstruction(
                                                       instruction:
-                                                          _isFirstStagePassed
+                                                          isFirstStagePassedNotifier
                                                               .value
                                                           ? "Great job! Now record yourself saying the word."
                                                           : instructionText,
@@ -293,14 +274,14 @@ class _DialectDrillScreenState extends State<DialectDrillScreen> {
                                                       color: theme.primaryColor,
                                                       isDark: isDark,
                                                       isAnswered:
-                                                          _isAnswered.value ||
-                                                          _isFirstStagePassed
+                                                          isAnsweredNotifier.value ||
+                                                          isFirstStagePassedNotifier
                                                               .value,
                                                       isCorrect:
-                                                          _isFirstStagePassed
+                                                          isFirstStagePassedNotifier
                                                               .value
                                                           ? true
-                                                          : _isCorrect.value,
+                                                          : isCorrectNotifier.value,
                                                       onPlayTargetAudio: () =>
                                                           _triggerAutoPlay(
                                                             quest,
@@ -320,8 +301,8 @@ class _DialectDrillScreenState extends State<DialectDrillScreen> {
                                           ),
                                           curve: Curves.easeOut,
                                           child:
-                                              (_isAnswered.value ||
-                                                  _isFirstStagePassed.value)
+                                              (isAnsweredNotifier.value ||
+                                                  isFirstStagePassedNotifier.value)
                                               ? Padding(
                                                   padding: EdgeInsets.symmetric(
                                                     horizontal: 16.w,
@@ -333,10 +314,10 @@ class _DialectDrillScreenState extends State<DialectDrillScreen> {
                                                       Builder(
                                                         builder: (context) {
                                                           final bool isSuccess =
-                                                              _isCorrect
+                                                              isCorrectNotifier
                                                                       .value ==
                                                                   true ||
-                                                              _isFirstStagePassed
+                                                              isFirstStagePassedNotifier
                                                                   .value;
                                                           final bool
                                                           isFinalFailure =
@@ -350,9 +331,9 @@ class _DialectDrillScreenState extends State<DialectDrillScreen> {
                                                               isFinalFailure;
                                                           return DialectFeedbackPanel(
                                                             isCorrect:
-                                                                _isCorrect
+                                                                isCorrectNotifier
                                                                     .value ??
-                                                                _isFirstStagePassed
+                                                                isFirstStagePassedNotifier
                                                                     .value,
                                                             word:
                                                                 quest.word ??
@@ -383,7 +364,7 @@ class _DialectDrillScreenState extends State<DialectDrillScreen> {
                                                             isMidnight: false,
                                                             onPlayAudio:
                                                                 (text, locale) {
-                                                                  _soundService
+                                                                  soundService
                                                                       .playTts(
                                                                         text,
                                                                         locale:
@@ -395,9 +376,9 @@ class _DialectDrillScreenState extends State<DialectDrillScreen> {
                                                       ),
                                                       SizedBox(
                                                         height:
-                                                            (_isFirstStagePassed
+                                                            (isFirstStagePassedNotifier
                                                                     .value &&
-                                                                !_isAnswered
+                                                                !isAnsweredNotifier
                                                                     .value)
                                                             ? 40.h
                                                             : 160.h,
@@ -408,9 +389,9 @@ class _DialectDrillScreenState extends State<DialectDrillScreen> {
                                               : SizedBox(
                                                   width: double.infinity,
                                                   height:
-                                                      (_isFirstStagePassed
+                                                      (isFirstStagePassedNotifier
                                                               .value &&
-                                                          !_isAnswered.value)
+                                                          !isAnsweredNotifier.value)
                                                       ? 40.h
                                                       : 160.h,
                                                 ),
@@ -420,13 +401,13 @@ class _DialectDrillScreenState extends State<DialectDrillScreen> {
                                   ),
                                 ),
 
-                                if (_isFirstStagePassed.value &&
-                                    !_isAnswered.value)
+                                if (isFirstStagePassedNotifier.value &&
+                                    !isAnsweredNotifier.value)
                                   SliverToBoxAdapter(
                                     child: Column(
                                       children: [
-                                        if (_isFirstStagePassed.value &&
-                                            !_isAnswered.value)
+                                        if (isFirstStagePassedNotifier.value &&
+                                            !isAnsweredNotifier.value)
                                           ShadowPlaybackCompare(
                                             expectedText: quest.word ?? "",
                                             primaryColor: theme.primaryColor,

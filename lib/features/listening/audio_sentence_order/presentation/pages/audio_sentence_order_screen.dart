@@ -48,6 +48,20 @@ class _AudioSentenceOrderScreenState extends State<AudioSentenceOrderScreen>
   @override
   void initState() {
     super.initState();
+    isAnsweredNotifier.addListener(() {
+      if (isAnsweredNotifier.value && mounted && _scrollController.hasClients) {
+        Future.delayed(const Duration(milliseconds: 100), () {
+          if (mounted && _scrollController.hasClients) {
+            _scrollController.animateTo(
+              _scrollController.position.maxScrollExtent,
+              duration: const Duration(milliseconds: 300),
+              curve: Curves.easeOut,
+            );
+          }
+        });
+      }
+    });
+
     timerKey = GlobalKey<SpeedChallengeTimerState>();
     initListeningGame();
   }
@@ -56,6 +70,9 @@ class _AudioSentenceOrderScreenState extends State<AudioSentenceOrderScreen>
   void dispose() {
     disposeListeningGame();
     _scrollController.dispose();
+    disposeListeningGame();
+    disposeListeningGame();
+    disposeListeningGame();
     super.dispose();
   }
 

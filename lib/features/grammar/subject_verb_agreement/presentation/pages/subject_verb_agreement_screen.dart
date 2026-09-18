@@ -4,12 +4,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
-import 'package:vowl/core/utils/haptic_service.dart';
-import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/grammar/presentation/bloc/grammar_bloc.dart';
+import 'package:vowl/features/grammar/presentation/mixins/grammar_game_screen_mixin.dart';
 import 'package:vowl/features/grammar/presentation/layout/grammar_base_layout.dart';
-import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/game_mechanics/typing/type_to_confirm_overlay.dart';
 import 'package:flutter/physics.dart';
@@ -28,17 +25,18 @@ class SubjectVerbAgreementScreen extends StatefulWidget {
       _SubjectVerbAgreementScreenState();
 }
 
-class _SubjectVerbAgreementScreenState extends State<SubjectVerbAgreementScreen>
-    with SingleTickerProviderStateMixin {
-  final _hapticService = di.sl<HapticService>();
-  final _soundService = di.sl<SoundService>();
-  final ValueNotifier<Offset> _ringOffset = ValueNotifier(Offset.zero);
-  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
-  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
-  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
-  int _lastProcessedIndex = -1;
-  int? _lastLives;
-  final ValueNotifier<bool> _pendingTypeSubmit = ValueNotifier(false);
+class _SubjectVerbAgreementScreenState extends State<SubjectVerbAgreementScreen>with SingleTickerProviderStateMixin, GrammarGameScreenMixin {
+  @override
+  GameSubtype get gameType => widget.gameType;
+
+  @override
+  int get level => widget.level;
+
+  @override
+  String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
+
+      final ValueNotifier<Offset> _ringOffset = ValueNotifier(Offset.zero);
+            final ValueNotifier<bool> _pendingTypeSubmit = ValueNotifier(false);
   final ScrollController _scrollController = ScrollController();
   late final AnimationController _springController;
   int _currentCorrectIndex = 0;
@@ -46,9 +44,21 @@ class _SubjectVerbAgreementScreenState extends State<SubjectVerbAgreementScreen>
   @override
   void initState() {
     super.initState();
-    context.read<GrammarBloc>().add(
-      FetchGrammarQuests(gameType: widget.gameType, level: widget.level),
-    );
+    isAnsweredNotifier.addListener(() {
+      if (isAnsweredNotifier.value && mounted && _scrollController.hasClients) {
+        Future.delayed(const Duration(milliseconds: 100), () {
+          if (mounted && _scrollController.hasClients) {
+            _scrollController.animateTo(
+              _scrollController.position.maxScrollExtent,
+              duration: const Duration(milliseconds: 300),
+              curve: Curves.easeOut,
+            );
+          }
+        });
+      }
+    });
+
+    initGrammarGame();
     _springController = AnimationController(vsync: this);
     _springController.addListener(() {
       _ringOffset.value = Offset(_springController.value, 0);
@@ -60,16 +70,16 @@ class _SubjectVerbAgreementScreenState extends State<SubjectVerbAgreementScreen>
   void dispose() {
     _springController.dispose();
     _ringOffset.dispose();
-    _isAnswered.dispose();
-    _isCorrect.dispose();
-    _showConfetti.dispose();
-    _pendingTypeSubmit.dispose();
+                _pendingTypeSubmit.dispose();
     _scrollController.dispose();
+    disposeGrammarGame();
+    disposeGrammarGame();
+    disposeGrammarGame();
     super.dispose();
   }
 
   void _onConnect(int targetIndex, int correctIndex) {
-    if (_isAnswered.value || _pendingTypeSubmit.value) return;
+    if (isAnsweredNotifier.value || _pendingTypeSubmit.value) return;
 
     bool isCorrect = targetIndex == correctIndex;
 
@@ -84,8 +94,8 @@ class _SubjectVerbAgreementScreenState extends State<SubjectVerbAgreementScreen>
     _ringOffset.value = Offset(snapTarget, 0.0);
 
     if (isCorrect) {
-      _hapticService.success();
-      _soundService.playCorrect();
+      hapticService.success();
+      soundService.playCorrect();
       _pendingTypeSubmit.value = true;
 
       Future.delayed(const Duration(milliseconds: 100), () {
@@ -99,26 +109,26 @@ class _SubjectVerbAgreementScreenState extends State<SubjectVerbAgreementScreen>
         }
       });
     } else {
-      _hapticService.error();
-      _soundService.playWrong();
-      _isAnswered.value = true;
-      _isCorrect.value = false;
+      hapticService.error();
+      soundService.playWrong();
+      isAnsweredNotifier.value = true;
+      isCorrectNotifier.value = false;
       context.read<GrammarBloc>().add(const SubmitAnswer(false));
     }
   }
 
   void _submitFinalAnswer(bool correct) {
     _pendingTypeSubmit.value = false;
-    _isAnswered.value = true;
-    _isCorrect.value = correct;
+    isAnsweredNotifier.value = true;
+    isCorrectNotifier.value = correct;
 
     if (correct) {
-      _hapticService.success();
-      _soundService.playCorrect();
+      hapticService.success();
+      soundService.playCorrect();
       context.read<GrammarBloc>().add(const SubmitAnswer(true));
     } else {
-      _hapticService.error();
-      _soundService.playWrong();
+      hapticService.error();
+      soundService.playWrong();
       context.read<GrammarBloc>().add(const SubmitAnswer(false));
     }
   }
@@ -129,36 +139,8 @@ class _SubjectVerbAgreementScreenState extends State<SubjectVerbAgreementScreen>
     final theme = LevelThemeHelper.getTheme('grammar', level: widget.level);
 
     return BlocConsumer<GrammarBloc, GrammarState>(
-      listener: (context, state) {
-        if (state is GrammarLoaded) {
-          final isNewQuestion = state.currentIndex != _lastProcessedIndex;
-          final isRetry = _isAnswered.value && !state.answerStatus.isAnswered;
-          final livesRestored =
-              _lastLives != null && state.livesRemaining > _lastLives!;
-
-          if (isNewQuestion || isRetry || livesRestored) {
-            _lastProcessedIndex = state.currentIndex;
-            _isAnswered.value = false;
-            _isCorrect.value = null;
-            _pendingTypeSubmit.value = false;
-            _ringOffset.value = Offset.zero;
-          } else if (state.answerStatus.isAnswered && !_isAnswered.value) {
-            _isAnswered.value = true;
-            _isCorrect.value = state.answerStatus.asBoolOrNull;
-          }
-          _lastLives = state.livesRemaining;
-        }
-        if (state is GrammarGameComplete) {
-          _showConfetti.value = true;
-          GameDialogHelper.showCompletion(
-            context,
-            xp: state.xpEarned,
-            coins: state.coinsEarned,
-            title: 'AGREEMENT MASTER!',
-            enableDoubleUp: true,
-          );
-        }
-      },
+      listenWhen: grammarListenWhen,
+      listener: onGrammarStateChanged,
       builder: (context, state) {
         final quest = (state is GrammarLoaded) ? state.currentQuest : null;
         if (quest != null) {
@@ -183,9 +165,9 @@ class _SubjectVerbAgreementScreenState extends State<SubjectVerbAgreementScreen>
 
         return ListenableBuilder(
           listenable: Listenable.merge([
-            _isAnswered,
-            _isCorrect,
-            _showConfetti,
+            isAnsweredNotifier,
+            isCorrectNotifier,
+            showConfettiNotifier,
             _pendingTypeSubmit,
           ]),
           builder: (context, _) {
@@ -193,10 +175,10 @@ class _SubjectVerbAgreementScreenState extends State<SubjectVerbAgreementScreen>
               disablePadding: true,
               gameType: widget.gameType,
               level: widget.level,
-              isAnswered: _isAnswered.value,
-              isCorrect: _isCorrect.value,
+              isAnswered: isAnsweredNotifier.value,
+              isCorrect: isCorrectNotifier.value,
               isFinalFailure: state is GrammarLoaded && state.isFinalFailure,
-              showConfetti: _showConfetti.value,
+              showConfetti: showConfettiNotifier.value,
               useScrolling:
                   false, // Stack needs finite space to anchor to bottom
               onContinue: () =>
@@ -291,7 +273,7 @@ class _SubjectVerbAgreementScreenState extends State<SubjectVerbAgreementScreen>
                                                       child: Text(
                                                         ((_pendingTypeSubmit
                                                                         .value ||
-                                                                    _isCorrect
+                                                                    isCorrectNotifier
                                                                             .value ==
                                                                         true) &&
                                                                 quest.correctAnswer !=
@@ -407,7 +389,7 @@ class _SubjectVerbAgreementScreenState extends State<SubjectVerbAgreementScreen>
                                                           // The Quantum Core (Harmony Slider)
                                                           GestureDetector(
                                                             onPanUpdate:
-                                                                _isAnswered
+                                                                isAnsweredNotifier
                                                                         .value ||
                                                                     _pendingTypeSubmit
                                                                         .value
@@ -442,7 +424,7 @@ class _SubjectVerbAgreementScreenState extends State<SubjectVerbAgreementScreen>
                                                                     );
                                                                   },
                                                             onPanEnd:
-                                                                _isAnswered
+                                                                isAnsweredNotifier
                                                                         .value ||
                                                                     _pendingTypeSubmit
                                                                         .value
@@ -516,7 +498,7 @@ class _SubjectVerbAgreementScreenState extends State<SubjectVerbAgreementScreen>
                                     ),
                                   ),
                                   if (_pendingTypeSubmit.value &&
-                                      !_isAnswered.value &&
+                                      !isAnsweredNotifier.value &&
                                       cleanTargetSentence.isNotEmpty)
                                     SliverToBoxAdapter(
                                       child: TypeToConfirmOverlay(
@@ -579,11 +561,11 @@ class _SubjectVerbAgreementScreenState extends State<SubjectVerbAgreementScreen>
     bool isCompact,
   ) {
     final isCorrect =
-        (_isAnswered.value || _pendingTypeSubmit.value) &&
-        _isCorrect.value != false &&
+        (isAnsweredNotifier.value || _pendingTypeSubmit.value) &&
+        isCorrectNotifier.value != false &&
         index == correctIndex;
     final isWrong =
-        _isAnswered.value && _isCorrect.value == false && index != correctIndex;
+        isAnsweredNotifier.value && isCorrectNotifier.value == false && index != correctIndex;
     final terminalSize = isCompact ? 80.r : 110.r;
 
     return Align(
@@ -629,8 +611,8 @@ class _SubjectVerbAgreementScreenState extends State<SubjectVerbAgreementScreen>
   }
 
   Widget _buildQuantumCore(Color primaryColor, bool isCompact) {
-    final Color coreColor = (_isAnswered.value || _pendingTypeSubmit.value)
-        ? (_isCorrect.value != false ? Colors.greenAccent : Colors.redAccent)
+    final Color coreColor = (isAnsweredNotifier.value || _pendingTypeSubmit.value)
+        ? (isCorrectNotifier.value != false ? Colors.greenAccent : Colors.redAccent)
         : primaryColor;
     final coreSize = isCompact ? 50.r : 70.r;
     final innerSize = isCompact ? 14.r : 20.r;

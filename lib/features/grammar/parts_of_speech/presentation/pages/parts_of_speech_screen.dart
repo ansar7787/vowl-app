@@ -4,10 +4,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
-import 'package:vowl/core/utils/haptic_service.dart';
-import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/grammar/presentation/bloc/grammar_bloc.dart';
+import 'package:vowl/features/grammar/presentation/mixins/grammar_game_screen_mixin.dart';
 import 'package:vowl/features/grammar/presentation/layout/grammar_base_layout.dart';
 import 'package:vowl/features/grammar/domain/entities/grammar_quest.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
@@ -26,83 +24,88 @@ class PartsOfSpeechScreen extends StatefulWidget {
     required this.level,
     this.gameType = GameSubtype.partsOfSpeech,
   });
-
   @override
   State<PartsOfSpeechScreen> createState() => _PartsOfSpeechScreenState();
 }
 
-class _PartsOfSpeechScreenState extends State<PartsOfSpeechScreen> {
-  late final HapticService _hapticService;
-  late final SoundService _soundService;
+class _PartsOfSpeechScreenState extends State<PartsOfSpeechScreen> with GrammarGameScreenMixin {
+  @override
+  GameSubtype get gameType => widget.gameType;
+  @override
+  int get level => widget.level;
+  @override
+  String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
   final ValueNotifier<Offset> _dragOffset = ValueNotifier(Offset.zero);
-  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
-  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
-  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
-  int _lastProcessedIndex = -1;
-  int? _lastLives;
-
+          
   final ValueNotifier<bool> _isWordSelected = ValueNotifier(false);
   final ValueNotifier<bool> _isSubmitting = ValueNotifier(false);
   final ScrollController _scrollController = ScrollController();
-
   @override
   void dispose() {
     _dragOffset.dispose();
-    _isAnswered.dispose();
-    _isCorrect.dispose();
-    _showConfetti.dispose();
-    _isSubmitting.dispose();
+                _isSubmitting.dispose();
     _isWordSelected.dispose();
     _scrollController.dispose();
+    disposeGrammarGame();
+    disposeGrammarGame();
+    disposeGrammarGame();
     super.dispose();
   }
 
   static const List<String> _fallbackOptions = ['Noun', 'Verb', 'Adj', 'Adv'];
-
   @override
   void initState() {
     super.initState();
-    _hapticService = di.sl<HapticService>();
-    _soundService = di.sl<SoundService>();
-    context.read<GrammarBloc>().add(
-      FetchGrammarQuests(gameType: widget.gameType, level: widget.level),
-    );
+    isAnsweredNotifier.addListener(() {
+      if (isAnsweredNotifier.value && mounted && _scrollController.hasClients) {
+        Future.delayed(const Duration(milliseconds: 100), () {
+          if (mounted && _scrollController.hasClients) {
+            _scrollController.animateTo(
+              _scrollController.position.maxScrollExtent,
+              duration: const Duration(milliseconds: 300),
+              curve: Curves.easeOut,
+            );
+          }
+        });
+      }
+    });
+    initGrammarGame();
   }
 
   void _onFlick(int targetIndex, int correctIndex) {
-    if (_isAnswered.value || _isSubmitting.value) return;
+    if (isAnsweredNotifier.value || _isSubmitting.value) return;
     _isSubmitting.value = true;
 
     final isCorrect = targetIndex == correctIndex;
     if (isCorrect) {
       _submitFinalAnswer(true);
     } else {
-      _hapticService.error();
-      _soundService.playWrong();
-      _isAnswered.value = true;
-      _isCorrect.value = false;
+      hapticService.error();
+      soundService.playWrong();
+      isAnsweredNotifier.value = true;
+      isCorrectNotifier.value = false;
       context.read<GrammarBloc>().add(const SubmitAnswer(false));
     }
   }
 
   void _submitFinalAnswer(bool correct) {
-    _isAnswered.value = true;
-    _isCorrect.value = correct;
+    isAnsweredNotifier.value = true;
+    isCorrectNotifier.value = correct;
 
     if (correct) {
-      _hapticService.success();
-      _soundService.playCorrect();
+      hapticService.success();
+      soundService.playCorrect();
       context.read<GrammarBloc>().add(const SubmitAnswer(true));
     } else {
-      _hapticService.error();
-      _soundService.playWrong();
+      hapticService.error();
+      soundService.playWrong();
       context.read<GrammarBloc>().add(const SubmitAnswer(false));
     }
   }
 
   void _checkCollision(int correctIndex, {required bool isCompact}) {
-    if (_isAnswered.value) return;
+    if (isAnsweredNotifier.value) return;
 
     final distance = _dragOffset.value.distance;
     final threshold = isCompact ? 60.r : 100.r;
@@ -119,7 +122,6 @@ class _PartsOfSpeechScreenState extends State<PartsOfSpeechScreen> {
     };
     _onFlick(targetIndex, correctIndex);
   }
-
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
@@ -135,9 +137,9 @@ class _PartsOfSpeechScreenState extends State<PartsOfSpeechScreen> {
 
         return ListenableBuilder(
           listenable: Listenable.merge([
-            _isAnswered,
-            _isCorrect,
-            _showConfetti,
+            isAnsweredNotifier,
+            isCorrectNotifier,
+            showConfettiNotifier,
             _dragOffset,
             _isSubmitting,
             _isWordSelected,
@@ -146,10 +148,10 @@ class _PartsOfSpeechScreenState extends State<PartsOfSpeechScreen> {
             return GrammarBaseLayout(
               gameType: widget.gameType,
               level: widget.level,
-              isAnswered: _isAnswered.value,
-              isCorrect: _isCorrect.value,
+              isAnswered: isAnsweredNotifier.value,
+              isCorrect: isCorrectNotifier.value,
               isFinalFailure: state is GrammarLoaded && state.isFinalFailure,
-              showConfetti: _showConfetti.value,
+              showConfetti: showConfettiNotifier.value,
               useScrolling: false, // Stack layout constraint
               onContinue: () =>
                   context.read<GrammarBloc>().add(const NextQuestion()),
@@ -192,13 +194,13 @@ class _PartsOfSpeechScreenState extends State<PartsOfSpeechScreen> {
                                                 maxHeight:
                                                     constraints.maxHeight,
                                                 dragOffset: _dragOffset.value,
-                                                isAnswered: _isAnswered.value,
+                                                isAnswered: isAnsweredNotifier.value,
                                                 isWordSelected:
                                                     _isWordSelected.value,
                                                 onWordTap: () {
                                                   _isWordSelected.value =
                                                       !_isWordSelected.value;
-                                                  _hapticService.selection();
+                                                  hapticService.selection();
                                                 },
                                                 onVortexTap: (index) {
                                                   if (!_isWordSelected.value) {
@@ -211,7 +213,7 @@ class _PartsOfSpeechScreenState extends State<PartsOfSpeechScreen> {
                                                   );
                                                 },
                                                 onPanUpdate: (details) {
-                                                  if (_isAnswered.value) return;
+                                                  if (isAnsweredNotifier.value) return;
                                                   _dragOffset.value +=
                                                       details.delta;
                                                   _checkCollision(
@@ -221,7 +223,7 @@ class _PartsOfSpeechScreenState extends State<PartsOfSpeechScreen> {
                                                   );
                                                 },
                                                 onPanEnd: (_) {
-                                                  if (_isAnswered.value) return;
+                                                  if (isAnsweredNotifier.value) return;
                                                   _dragOffset.value =
                                                       Offset.zero;
                                                 },
@@ -251,27 +253,27 @@ class _PartsOfSpeechScreenState extends State<PartsOfSpeechScreen> {
 
   void _onStateChange(BuildContext context, GrammarState state) {
     if (state is GrammarLoaded) {
-      final isNewQuestion = state.currentIndex != _lastProcessedIndex;
-      final isRetry = _isAnswered.value && !state.answerStatus.isAnswered;
+      final isNewQuestion = state.currentIndex != lastProcessedIndex;
+      final isRetry = isAnsweredNotifier.value && !state.answerStatus.isAnswered;
       final livesRestored =
-          _lastLives != null && state.livesRemaining > _lastLives!;
+          lastLives != null && state.livesRemaining > lastLives!;
 
       if (isNewQuestion || isRetry || livesRestored) {
-        _lastProcessedIndex = state.currentIndex;
-        _isAnswered.value = false;
-        _isCorrect.value = null;
+        lastProcessedIndex = state.currentIndex;
+        isAnsweredNotifier.value = false;
+        isCorrectNotifier.value = null;
         _dragOffset.value = Offset.zero;
         _isSubmitting.value = false;
         _isWordSelected.value = false;
-      } else if (state.answerStatus.isAnswered && !_isAnswered.value) {
-        _isAnswered.value = true;
-        _isCorrect.value = state.answerStatus.asBoolOrNull;
+      } else if (state.answerStatus.isAnswered && !isAnsweredNotifier.value) {
+        isAnsweredNotifier.value = true;
+        isCorrectNotifier.value = state.answerStatus.asBoolOrNull;
       }
-      _lastLives = state.livesRemaining;
+      lastLives = state.livesRemaining;
     }
 
     if (state is GrammarGameComplete) {
-      _showConfetti.value = true;
+      showConfettiNotifier.value = true;
       GameDialogHelper.showCompletion(
         context,
         xp: state.xpEarned,
@@ -342,7 +344,6 @@ class _PosQuestLayout extends StatelessWidget {
       bottom: (unit * 2.5).clamp(10.0, 30.0),
     );
   }
-
   @override
   Widget build(BuildContext context) {
     final gaps = _computeGaps();
@@ -409,3 +410,7 @@ class _PosQuestLayout extends StatelessWidget {
     );
   }
 }
+
+
+
+

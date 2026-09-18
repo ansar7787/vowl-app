@@ -5,12 +5,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/features/grammar/domain/entities/grammar_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
-import 'package:vowl/core/utils/haptic_service.dart';
-import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/grammar/presentation/bloc/grammar_bloc.dart';
+import 'package:vowl/features/grammar/presentation/mixins/grammar_game_screen_mixin.dart';
 import 'package:vowl/features/grammar/presentation/layout/grammar_base_layout.dart';
-import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/grammar/modals_selection/presentation/widgets/modals_selection_instruction.dart';
@@ -31,46 +28,60 @@ class ModalsSelectionScreen extends StatefulWidget {
   State<ModalsSelectionScreen> createState() => _ModalsSelectionScreenState();
 }
 
-class _ModalsSelectionScreenState extends State<ModalsSelectionScreen> {
-  final _hapticService = di.sl<HapticService>();
-  final _soundService = di.sl<SoundService>();
+class _ModalsSelectionScreenState extends State<ModalsSelectionScreen> with GrammarGameScreenMixin {
+  @override
+  GameSubtype get gameType => widget.gameType;
 
+  @override
+  int get level => widget.level;
+
+  @override
+  String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
+
+    
   final ValueNotifier<int> _selectedIndex = ValueNotifier(0);
-  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
-  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
-  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
-  int _lastProcessedIndex = -1;
-  int? _lastLives;
-  final ValueNotifier<bool> _pendingJigsaw = ValueNotifier(false);
+            final ValueNotifier<bool> _pendingJigsaw = ValueNotifier(false);
   final ScrollController _scrollController = ScrollController();
 
   @override
   void dispose() {
     _selectedIndex.dispose();
-    _isAnswered.dispose();
-    _isCorrect.dispose();
-    _showConfetti.dispose();
-    _pendingJigsaw.dispose();
+                _pendingJigsaw.dispose();
     _scrollController.dispose();
+    disposeGrammarGame();
+    disposeGrammarGame();
+    disposeGrammarGame();
     super.dispose();
   }
 
   @override
   void initState() {
     super.initState();
-    context.read<GrammarBloc>().add(
-      FetchGrammarQuests(gameType: widget.gameType, level: widget.level),
-    );
+    isAnsweredNotifier.addListener(() {
+      if (isAnsweredNotifier.value && mounted && _scrollController.hasClients) {
+        Future.delayed(const Duration(milliseconds: 100), () {
+          if (mounted && _scrollController.hasClients) {
+            _scrollController.animateTo(
+              _scrollController.position.maxScrollExtent,
+              duration: const Duration(milliseconds: 300),
+              curve: Curves.easeOut,
+            );
+          }
+        });
+      }
+    });
+
+    initGrammarGame();
   }
 
   void _submitAnswer(int correctIndex) {
-    if (_isAnswered.value || _pendingJigsaw.value) return;
+    if (isAnsweredNotifier.value || _pendingJigsaw.value) return;
 
     bool isCorrect = _selectedIndex.value == correctIndex;
 
     if (isCorrect) {
-      _hapticService.success();
-      _soundService.playCorrect();
+      hapticService.success();
+      soundService.playCorrect();
       _pendingJigsaw.value = true;
 
       // Auto-scroll to show the second stage (TypeToConfirm Jigsaw) at the bottom
@@ -85,26 +96,26 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen> {
         }
       });
     } else {
-      _hapticService.error();
-      _soundService.playWrong();
-      _isAnswered.value = true;
-      _isCorrect.value = false;
+      hapticService.error();
+      soundService.playWrong();
+      isAnsweredNotifier.value = true;
+      isCorrectNotifier.value = false;
       context.read<GrammarBloc>().add(const SubmitAnswer(false));
     }
   }
 
   void _submitFinalAnswer(bool correct) {
     _pendingJigsaw.value = false;
-    _isAnswered.value = true;
-    _isCorrect.value = correct;
+    isAnsweredNotifier.value = true;
+    isCorrectNotifier.value = correct;
 
     if (correct) {
-      _hapticService.success();
-      _soundService.playCorrect();
+      hapticService.success();
+      soundService.playCorrect();
       context.read<GrammarBloc>().add(const SubmitAnswer(true));
     } else {
-      _hapticService.error();
-      _soundService.playWrong();
+      hapticService.error();
+      soundService.playWrong();
       context.read<GrammarBloc>().add(const SubmitAnswer(false));
     }
   }
@@ -287,7 +298,7 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen> {
   }
 
   Widget _buildResult(GameQuest quest, Color primaryColor, bool isDark) {
-    final bool correct = _isCorrect.value == true;
+    final bool correct = isCorrectNotifier.value == true;
     final displayColor = correct ? Colors.greenAccent : Colors.redAccent;
 
     return Padding(
@@ -348,35 +359,8 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen> {
     final theme = LevelThemeHelper.getTheme('grammar', level: widget.level);
 
     return BlocConsumer<GrammarBloc, GrammarState>(
-      listener: (context, state) {
-        if (state is GrammarLoaded) {
-          final isNewQuestion = state.currentIndex != _lastProcessedIndex;
-          final isRetry = _isAnswered.value && !state.answerStatus.isAnswered;
-          final livesRestored =
-              _lastLives != null && state.livesRemaining > _lastLives!;
-
-          if (isNewQuestion || isRetry || livesRestored) {
-            _lastProcessedIndex = state.currentIndex;
-            _isAnswered.value = false;
-            _isCorrect.value = null;
-            _pendingJigsaw.value = false;
-          } else if (state.answerStatus.isAnswered && !_isAnswered.value) {
-            _isAnswered.value = true;
-            _isCorrect.value = state.answerStatus.asBoolOrNull;
-          }
-          _lastLives = state.livesRemaining;
-        }
-        if (state is GrammarGameComplete) {
-          _showConfetti.value = true;
-          GameDialogHelper.showCompletion(
-            context,
-            xp: state.xpEarned,
-            coins: state.coinsEarned,
-            title: 'MODAL MASTER!',
-            enableDoubleUp: true,
-          );
-        }
-      },
+      listenWhen: grammarListenWhen,
+      listener: onGrammarStateChanged,
       builder: (context, state) {
         final quest = (state is GrammarLoaded)
             ? state.currentQuest as GrammarQuest?
@@ -385,19 +369,19 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen> {
 
         return ListenableBuilder(
           listenable: Listenable.merge([
-            _isAnswered,
-            _isCorrect,
-            _showConfetti,
+            isAnsweredNotifier,
+            isCorrectNotifier,
+            showConfettiNotifier,
           ]),
           builder: (context, _) {
             return GrammarBaseLayout(
               disablePadding: true,
               gameType: widget.gameType,
               level: widget.level,
-              isAnswered: _isAnswered.value,
-              isCorrect: _isCorrect.value,
+              isAnswered: isAnsweredNotifier.value,
+              isCorrect: isCorrectNotifier.value,
               isFinalFailure: state is GrammarLoaded && state.isFinalFailure,
-              showConfetti: _showConfetti.value,
+              showConfetti: showConfettiNotifier.value,
               useScrolling: false, // Using our own CustomScrollView
               onContinue: () =>
                   context.read<GrammarBloc>().add(const NextQuestion()),
@@ -442,9 +426,9 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen> {
                                     ),
 
                                     ListenableBuilder(
-                                      listenable: _isAnswered,
+                                      listenable: isAnsweredNotifier,
                                       builder: (context, _) {
-                                        if (_isAnswered.value) {
+                                        if (isAnsweredNotifier.value) {
                                           return Column(
                                             children: [
                                               SizedBox(height: 24.h),
@@ -465,7 +449,7 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen> {
                                     Center(
                                       child: ModalsRotaryDial(
                                         options: options,
-                                        isAnsweredNotifier: _isAnswered,
+                                        isAnsweredNotifier: isAnsweredNotifier,
                                         pendingJigsawNotifier: _pendingJigsaw,
                                         selectedIndexNotifier: _selectedIndex,
                                         correctAnswerIndex:
@@ -479,11 +463,11 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen> {
 
                                     ListenableBuilder(
                                       listenable: Listenable.merge([
-                                        _isAnswered,
+                                        isAnsweredNotifier,
                                         _pendingJigsaw,
                                       ]),
                                       builder: (context, _) {
-                                        if (!_isAnswered.value &&
+                                        if (!isAnsweredNotifier.value &&
                                             !_pendingJigsaw.value) {
                                           return _buildSubmitButton(
                                             quest,
@@ -499,11 +483,11 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen> {
                               ListenableBuilder(
                                 listenable: Listenable.merge([
                                   _pendingJigsaw,
-                                  _isAnswered,
+                                  isAnsweredNotifier,
                                 ]),
                                 builder: (context, _) {
                                   if (_pendingJigsaw.value &&
-                                      !_isAnswered.value) {
+                                      !isAnsweredNotifier.value) {
                                     final sentence =
                                         quest.sentence ?? quest.question ?? "";
                                     String fullSentence = sentence;

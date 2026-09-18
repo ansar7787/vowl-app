@@ -4,12 +4,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
-import 'package:vowl/core/utils/haptic_service.dart';
-import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/grammar/presentation/bloc/grammar_bloc.dart';
+import 'package:vowl/features/grammar/presentation/mixins/grammar_game_screen_mixin.dart';
 import 'package:vowl/features/grammar/presentation/layout/grammar_base_layout.dart';
-import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/features/grammar/grammar_quest/presentation/widgets/grammar_quest_instruction.dart';
 import 'package:vowl/core/presentation/game_mechanics/typing/type_to_confirm_overlay.dart';
 import 'package:vowl/features/grammar/grammar_quest/presentation/widgets/grammar_quest_compass.dart';
@@ -27,40 +24,54 @@ class GrammarQuestScreen extends StatefulWidget {
   State<GrammarQuestScreen> createState() => _GrammarQuestScreenState();
 }
 
-class _GrammarQuestScreenState extends State<GrammarQuestScreen> {
-  final _hapticService = di.sl<HapticService>();
-  final _soundService = di.sl<SoundService>();
-  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
-  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
-  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
-  final ValueNotifier<bool> _pendingTypeSubmit = ValueNotifier(false);
+class _GrammarQuestScreenState extends State<GrammarQuestScreen> with GrammarGameScreenMixin {
+  @override
+  GameSubtype get gameType => widget.gameType;
+
+  @override
+  int get level => widget.level;
+
+  @override
+  String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
+
+            final ValueNotifier<bool> _pendingTypeSubmit = ValueNotifier(false);
   final ScrollController _scrollController = ScrollController();
 
   @override
   void dispose() {
-    _isAnswered.dispose();
-    _isCorrect.dispose();
-    _showConfetti.dispose();
-    _pendingTypeSubmit.dispose();
+                _pendingTypeSubmit.dispose();
     _scrollController.dispose();
+    disposeGrammarGame();
+    disposeGrammarGame();
+    disposeGrammarGame();
     super.dispose();
   }
 
-  int _lastProcessedIndex = -1;
-  int? _lastLives;
-  @override
+      @override
   void initState() {
     super.initState();
-    context.read<GrammarBloc>().add(
-      FetchGrammarQuests(gameType: widget.gameType, level: widget.level),
-    );
+    isAnsweredNotifier.addListener(() {
+      if (isAnsweredNotifier.value && mounted && _scrollController.hasClients) {
+        Future.delayed(const Duration(milliseconds: 100), () {
+          if (mounted && _scrollController.hasClients) {
+            _scrollController.animateTo(
+              _scrollController.position.maxScrollExtent,
+              duration: const Duration(milliseconds: 300),
+              curve: Curves.easeOut,
+            );
+          }
+        });
+      }
+    });
+
+    initGrammarGame();
   }
 
   void _submitInitialAnswer(bool correct) {
-    if (_isAnswered.value) return;
+    if (isAnsweredNotifier.value) return;
     if (correct) {
-      _hapticService.success();
-      _soundService.playCorrect();
+      hapticService.success();
+      soundService.playCorrect();
       _pendingTypeSubmit.value = true;
       WidgetsBinding.instance.addPostFrameCallback((_) {
         if (_scrollController.hasClients) {
@@ -72,10 +83,10 @@ class _GrammarQuestScreenState extends State<GrammarQuestScreen> {
         }
       });
     } else {
-      _hapticService.error();
-      _soundService.playWrong();
-      _isAnswered.value = true;
-      _isCorrect.value = false;
+      hapticService.error();
+      soundService.playWrong();
+      isAnsweredNotifier.value = true;
+      isCorrectNotifier.value = false;
       context.read<GrammarBloc>().add(const SubmitAnswer(false));
     }
   }
@@ -83,16 +94,16 @@ class _GrammarQuestScreenState extends State<GrammarQuestScreen> {
   void _submitFinalAnswer(bool correct) {
     _pendingTypeSubmit.value = false;
     if (correct) {
-      _hapticService.success();
-      _soundService.playCorrect();
-      _isAnswered.value = true;
-      _isCorrect.value = true;
+      hapticService.success();
+      soundService.playCorrect();
+      isAnsweredNotifier.value = true;
+      isCorrectNotifier.value = true;
       context.read<GrammarBloc>().add(const SubmitAnswer(true));
     } else {
-      _hapticService.error();
-      _soundService.playWrong();
-      _isAnswered.value = true;
-      _isCorrect.value = false;
+      hapticService.error();
+      soundService.playWrong();
+      isAnsweredNotifier.value = true;
+      isCorrectNotifier.value = false;
       context.read<GrammarBloc>().add(const SubmitAnswer(false));
     }
   }
@@ -101,34 +112,8 @@ class _GrammarQuestScreenState extends State<GrammarQuestScreen> {
   Widget build(BuildContext context) {
     final theme = LevelThemeHelper.getTheme('grammar', level: widget.level);
     return BlocConsumer<GrammarBloc, GrammarState>(
-      listener: (context, state) {
-        if (state is GrammarLoaded) {
-          final isNewQuestion = state.currentIndex != _lastProcessedIndex;
-          final isRetry = _isAnswered.value && !state.answerStatus.isAnswered;
-          final livesRestored =
-              _lastLives != null && state.livesRemaining > _lastLives!;
-          if (isNewQuestion || isRetry || livesRestored) {
-            _lastProcessedIndex = state.currentIndex;
-            _isAnswered.value = false;
-            _isCorrect.value = null;
-            _pendingTypeSubmit.value = false;
-          } else if (state.answerStatus.isAnswered && !_isAnswered.value) {
-            _isAnswered.value = true;
-            _isCorrect.value = state.answerStatus.asBoolOrNull;
-          }
-          _lastLives = state.livesRemaining;
-        }
-        if (state is GrammarGameComplete) {
-          _showConfetti.value = true;
-          GameDialogHelper.showCompletion(
-            context,
-            xp: state.xpEarned,
-            coins: state.coinsEarned,
-            title: 'SENTINEL!',
-            enableDoubleUp: true,
-          );
-        }
-      },
+      listenWhen: grammarListenWhen,
+      listener: onGrammarStateChanged,
       builder: (context, state) {
         final quest = (state is GrammarLoaded) ? state.currentQuest : null;
         String targetText = "";
@@ -146,19 +131,19 @@ class _GrammarQuestScreenState extends State<GrammarQuestScreen> {
         }
         return ListenableBuilder(
           listenable: Listenable.merge([
-            _isAnswered,
-            _isCorrect,
-            _showConfetti,
+            isAnsweredNotifier,
+            isCorrectNotifier,
+            showConfettiNotifier,
             _pendingTypeSubmit,
           ]),
           builder: (context, _) {
             return GrammarBaseLayout(
               gameType: widget.gameType,
               level: widget.level,
-              isAnswered: _isAnswered.value,
-              isCorrect: _isCorrect.value,
+              isAnswered: isAnsweredNotifier.value,
+              isCorrect: isCorrectNotifier.value,
               isFinalFailure: state is GrammarLoaded && state.isFinalFailure,
-              showConfetti: _showConfetti.value,
+              showConfetti: showConfettiNotifier.value,
               useScrolling:
                   false, // Stack needs finite space to anchor to bottom
               disablePadding: true,
@@ -280,7 +265,7 @@ class _GrammarQuestScreenState extends State<GrammarQuestScreen> {
                                           ),
                                           child: GrammarQuestSentence(
                                             text:
-                                                (_isAnswered.value ||
+                                                (isAnsweredNotifier.value ||
                                                     _pendingTypeSubmit.value)
                                                 ? fullSentence
                                                 : quest.question!,
@@ -311,9 +296,9 @@ class _GrammarQuestScreenState extends State<GrammarQuestScreen> {
                                             Theme.of(context).brightness ==
                                             Brightness.dark,
                                         isAnswered:
-                                            _isAnswered.value ||
+                                            isAnsweredNotifier.value ||
                                             _pendingTypeSubmit.value,
-                                        isCorrect: _isCorrect.value,
+                                        isCorrect: isCorrectNotifier.value,
                                         onQuadrantSelect: (index) {
                                           bool isCorrect =
                                               index == quest.correctAnswerIndex;
@@ -325,7 +310,7 @@ class _GrammarQuestScreenState extends State<GrammarQuestScreen> {
                                 ),
                               ),
                               if (_pendingTypeSubmit.value &&
-                                  !_isAnswered.value &&
+                                  !isAnsweredNotifier.value &&
                                   targetText.isNotEmpty)
                                 SliverToBoxAdapter(
                                   child: Padding(
@@ -346,7 +331,7 @@ class _GrammarQuestScreenState extends State<GrammarQuestScreen> {
                                 child: SizedBox(
                                   height:
                                       (_pendingTypeSubmit.value &&
-                                          !_isAnswered.value &&
+                                          !isAnsweredNotifier.value &&
                                           targetText.isNotEmpty)
                                       ? MediaQuery.of(
                                               context,

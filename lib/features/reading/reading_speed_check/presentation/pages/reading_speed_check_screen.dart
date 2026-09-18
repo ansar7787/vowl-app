@@ -6,12 +6,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
-import 'package:vowl/core/utils/haptic_service.dart';
-import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/reading/presentation/bloc/reading_bloc.dart';
+import 'package:vowl/features/reading/presentation/mixins/reading_game_screen_mixin.dart';
 import 'package:vowl/features/reading/presentation/layout/reading_base_layout.dart';
-import 'package:vowl/core/utils/locale_service.dart';
-import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/features/reading/domain/entities/reading_quest.dart';
 import 'package:vowl/features/reading/reading_speed_check/presentation/widgets/reading_speed_instruction.dart';
@@ -35,19 +32,22 @@ class ReadingSpeedCheckScreen extends StatefulWidget {
       _ReadingSpeedCheckScreenState();
 }
 
-class _ReadingSpeedCheckScreenState extends State<ReadingSpeedCheckScreen> {
-  final _hapticService = di.sl<HapticService>();
+class _ReadingSpeedCheckScreenState extends State<ReadingSpeedCheckScreen> with ReadingGameScreenMixin {
+  @override
+  GameSubtype get gameType => widget.gameType;
 
+  @override
+  int get level => widget.level;
+
+  @override
+  String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
+
+  
   final ValueNotifier<double> _pulseScale = ValueNotifier(1.0);
   final ValueNotifier<double> _clarityRadius = ValueNotifier(0.0);
   final ValueNotifier<int> _timerValue = ValueNotifier(12);
   final ValueNotifier<int> _timeLimit = ValueNotifier(12);
-  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
-  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
-  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
-  int _lastProcessedIndex = -1;
-  int? _lastLives;
-  final ValueNotifier<bool> _isRevealed = ValueNotifier(false);
+            final ValueNotifier<bool> _isRevealed = ValueNotifier(false);
   final ScrollController _scrollController = ScrollController();
 
   @override
@@ -56,11 +56,11 @@ class _ReadingSpeedCheckScreenState extends State<ReadingSpeedCheckScreen> {
     _clarityRadius.dispose();
     _timerValue.dispose();
     _timeLimit.dispose();
-    _isAnswered.dispose();
-    _isCorrect.dispose();
-    _showConfetti.dispose();
-    _isRevealed.dispose();
+                _isRevealed.dispose();
     _scrollController.dispose();
+    disposeReadingGame();
+    disposeReadingGame();
+    disposeReadingGame();
     super.dispose();
   }
 
@@ -69,16 +69,28 @@ class _ReadingSpeedCheckScreenState extends State<ReadingSpeedCheckScreen> {
   @override
   void initState() {
     super.initState();
-    context.read<ReadingBloc>().add(
-      FetchReadingQuests(gameType: widget.gameType, level: widget.level),
-    );
+    isAnsweredNotifier.addListener(() {
+      if (isAnsweredNotifier.value && mounted && _scrollController.hasClients) {
+        Future.delayed(const Duration(milliseconds: 100), () {
+          if (mounted && _scrollController.hasClients) {
+            _scrollController.animateTo(
+              _scrollController.position.maxScrollExtent,
+              duration: const Duration(milliseconds: 300),
+              curve: Curves.easeOut,
+            );
+          }
+        });
+      }
+    });
+
+    initReadingGame();
   }
 
   void _onPulseTap() {
-    if (_isAnswered.value || _isRevealed.value) return;
+    if (isAnsweredNotifier.value || _isRevealed.value) return;
     _pulseScale.value = 1.4;
     _clarityRadius.value = 1.0;
-    _hapticService.selection();
+    hapticService.selection();
 
     Future.delayed(150.milliseconds, () {
       if (mounted) {
@@ -86,7 +98,7 @@ class _ReadingSpeedCheckScreenState extends State<ReadingSpeedCheckScreen> {
       }
     });
     Future.delayed(2.seconds, () {
-      if (mounted && !_isAnswered.value && !_isRevealed.value) {
+      if (mounted && !isAnsweredNotifier.value && !_isRevealed.value) {
         _clarityRadius.value = 0.0;
       }
     });
@@ -104,10 +116,10 @@ class _ReadingSpeedCheckScreenState extends State<ReadingSpeedCheckScreen> {
   }
 
   void _submitSelfEvalAnswer(bool isCorrect, ReadingQuest quest) {
-    if (_isAnswered.value || !_isRevealed.value) return;
+    if (isAnsweredNotifier.value || !_isRevealed.value) return;
 
-    _isAnswered.value = true;
-    _isCorrect.value = isCorrect;
+    isAnsweredNotifier.value = true;
+    isCorrectNotifier.value = isCorrect;
 
     if (isCorrect) {
       context.read<ReadingBloc>().add(const SubmitAnswer(true));
@@ -122,44 +134,8 @@ class _ReadingSpeedCheckScreenState extends State<ReadingSpeedCheckScreen> {
     final theme = LevelThemeHelper.getTheme('reading', level: widget.level);
 
     return BlocConsumer<ReadingBloc, ReadingState>(
-      listener: (context, state) {
-        if (state is ReadingLoaded) {
-          final isNewQuestion = state.currentIndex != _lastProcessedIndex;
-          final isRetry = _isAnswered.value && !state.answerStatus.isAnswered;
-          final livesChanged =
-              _lastLives != null && state.livesRemaining > _lastLives!;
-
-          if (isNewQuestion || isRetry || livesChanged) {
-            _lastProcessedIndex = state.currentIndex;
-            _isAnswered.value = false;
-            _isCorrect.value = null;
-            _isRevealed.value = false;
-            _clarityRadius.value = 0.0;
-            _timeLimit.value = state.currentQuest.timeLimit ?? 12;
-            _timerValue.value = _timeLimit.value;
-            WidgetsBinding.instance.addPostFrameCallback((_) {
-              _timerKey.currentState?.start();
-            });
-          } else if (state.answerStatus.isAnswered && !_isAnswered.value) {
-            _isAnswered.value = true;
-            _isCorrect.value = state.answerStatus.asBoolOrNull;
-          }
-          _lastLives = state.livesRemaining;
-        }
-        if (state is ReadingGameComplete) {
-          _showConfetti.value = true;
-          GameDialogHelper.showCompletion(
-            context,
-            xp: state.xpEarned,
-            coins: state.coinsEarned,
-            title: context.tr(
-              'reading_games.speed_demon',
-              fallback: 'SPEED DEMON!',
-            ),
-            enableDoubleUp: true,
-          );
-        }
-      },
+      listenWhen: readingListenWhen,
+      listener: onReadingStateChanged,
       builder: (context, state) {
         final ReadingQuest? quest = (state is ReadingLoaded)
             ? state.currentQuest as ReadingQuest?
@@ -167,9 +143,9 @@ class _ReadingSpeedCheckScreenState extends State<ReadingSpeedCheckScreen> {
 
         return ListenableBuilder(
           listenable: Listenable.merge([
-            _isAnswered,
-            _isCorrect,
-            _showConfetti,
+            isAnsweredNotifier,
+            isCorrectNotifier,
+            showConfettiNotifier,
             _isRevealed,
             _pulseScale,
             _clarityRadius,
@@ -180,9 +156,9 @@ class _ReadingSpeedCheckScreenState extends State<ReadingSpeedCheckScreen> {
             return ReadingBaseLayout(
               gameType: widget.gameType,
               level: widget.level,
-              isAnswered: _isAnswered.value,
-              isCorrect: _isCorrect.value,
-              showConfetti: _showConfetti.value,
+              isAnswered: isAnsweredNotifier.value,
+              isCorrect: isCorrectNotifier.value,
+              showConfetti: showConfettiNotifier.value,
               onContinue: () => context.read<ReadingBloc>().add(NextQuestion()),
               onHint: () => context.read<ReadingBloc>().add(ReadingHintUsed()),
               child: quest == null
@@ -268,11 +244,11 @@ class _ReadingSpeedCheckScreenState extends State<ReadingSpeedCheckScreen> {
                                           ),
                                     ),
                                   ],
-                                  if (_isAnswered.value) ...[
+                                  if (isAnsweredNotifier.value) ...[
                                     SizedBox(height: 30.h),
                                     ReadingSpeedResult(
                                       quest: quest,
-                                      isCorrect: _isCorrect.value == true,
+                                      isCorrect: isCorrectNotifier.value == true,
                                       isDark: isDark,
                                     ),
                                   ],

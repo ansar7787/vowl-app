@@ -6,15 +6,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
-import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/writing/presentation/bloc/writing_bloc.dart';
+import 'package:vowl/features/writing/presentation/mixins/writing_game_screen_mixin.dart';
 import 'package:vowl/features/writing/presentation/bloc/writing_event.dart';
 import 'package:vowl/features/writing/presentation/bloc/writing_state.dart';
 import 'package:vowl/core/utils/tts_service.dart';
 import 'package:vowl/features/writing/presentation/layout/writing_base_layout.dart';
-import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/features/writing/domain/entities/writing_quest.dart';
 import 'package:vowl/features/writing/fix_the_sentence/presentation/widgets/fix_the_sentence_instruction.dart';
 import 'package:vowl/features/writing/fix_the_sentence/presentation/widgets/fix_the_sentence_digital_blackboard.dart';
@@ -34,16 +32,22 @@ class FixTheSentenceScreen extends StatefulWidget {
   State<FixTheSentenceScreen> createState() => _FixTheSentenceScreenState();
 }
 
-class _FixTheSentenceScreenState extends State<FixTheSentenceScreen> {
-  final _hapticService = di.sl<HapticService>();
-  final _soundService = di.sl<SoundService>();
+class _FixTheSentenceScreenState extends State<FixTheSentenceScreen> with WritingGameScreenMixin {
+  @override
+  GameSubtype get gameType => widget.gameType;
 
+  @override
+  int get level => widget.level;
+
+  @override
+  String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
+
+    
   final _ErasePointsNotifier _erasePoints = _ErasePointsNotifier();
   final ValueNotifier<bool> _isWiped = ValueNotifier(false);
   final ValueNotifier<String?> _selectedOption = ValueNotifier(null);
   final ValueNotifier<String?> _pendingSelectedOption = ValueNotifier(null);
-  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
-  final ValueNotifier<int> _erasedAmount = ValueNotifier(0);
+    final ValueNotifier<int> _erasedAmount = ValueNotifier(0);
   WritingQuest? _lastQuest;
   final ValueNotifier<List<String>?> _shuffledOptions = ValueNotifier(null);
   final _ttsService = di.sl<TtsService>();
@@ -57,19 +61,33 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen> {
     _isWiped.dispose();
     _selectedOption.dispose();
     _pendingSelectedOption.dispose();
-    _showConfetti.dispose();
-    _erasedAmount.dispose();
+        _erasedAmount.dispose();
     _shuffledOptions.dispose();
+    disposeWritingGame();
+    disposeWritingGame();
+    disposeWritingGame();
     super.dispose();
   }
 
   @override
   void initState() {
     super.initState();
+    isAnsweredNotifier.addListener(() {
+      if (isAnsweredNotifier.value && mounted && _scrollController.hasClients) {
+        Future.delayed(const Duration(milliseconds: 100), () {
+          if (mounted && _scrollController.hasClients) {
+            _scrollController.animateTo(
+              _scrollController.position.maxScrollExtent,
+              duration: const Duration(milliseconds: 300),
+              curve: Curves.easeOut,
+            );
+          }
+        });
+      }
+    });
+
     _scrollController = ScrollController();
-    context.read<WritingBloc>().add(
-      FetchWritingQuests(gameType: widget.gameType, level: widget.level),
-    );
+    initWritingGame();
   }
 
   void _onErase(Offset localPosition, bool isAnswered) {
@@ -78,11 +96,11 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen> {
     }
     _erasePoints.add(localPosition);
     _erasedAmount.value++;
-    if (_erasedAmount.value % 6 == 0) _hapticService.selection();
+    if (_erasedAmount.value % 6 == 0) hapticService.selection();
 
     if (_erasedAmount.value > 35) {
-      _hapticService.success();
-      _soundService.playHint();
+      hapticService.success();
+      soundService.playHint();
       _isWiped.value = true;
     }
   }
@@ -93,8 +111,8 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen> {
     }
 
     if (!nailedTyping) {
-      _hapticService.error();
-      _soundService.playWrong();
+      hapticService.error();
+      soundService.playWrong();
       _selectedOption.value = _pendingSelectedOption.value;
       context.read<WritingBloc>().add(const SubmitAnswer(false));
       return;
@@ -148,32 +166,7 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen> {
               prev is WritingLoaded &&
               curr.currentQuest != prev.currentQuest) ||
           (curr is WritingLoaded && !curr.answerStatus.isAnswered),
-      listener: (context, state) {
-        if (state is WritingLoaded) {
-          if (state.currentQuest != _lastQuest) {
-            _lastQuest = state.currentQuest;
-            _shuffledOptions.value = List.from(_lastQuest!.options ?? [])
-              ..shuffle();
-          }
-          if (!state.answerStatus.isAnswered) {
-            _isWiped.value = false;
-            _selectedOption.value = null;
-            _pendingSelectedOption.value = null;
-            _erasePoints.clear();
-            _erasedAmount.value = 0;
-          }
-        }
-        if (state is WritingGameComplete) {
-          _showConfetti.value = true;
-          GameDialogHelper.showCompletion(
-            context,
-            xp: state.xpEarned,
-            coins: state.coinsEarned,
-            title: 'SYNTAX SURGEON!',
-            enableDoubleUp: true,
-          );
-        }
-      },
+      listener: onWritingStateChanged,
       builder: (context, state) {
         final isLoaded = state is WritingLoaded;
         final WritingQuest? quest = isLoaded ? state.currentQuest : _lastQuest;
@@ -188,7 +181,7 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen> {
           level: widget.level,
           isAnswered: isAnswered,
           isCorrect: isCorrect,
-          showConfetti: _showConfetti.value,
+          showConfetti: showConfettiNotifier.value,
           useScrolling: false,
           onContinue: () =>
               context.read<WritingBloc>().add(const NextQuestion()),
@@ -196,7 +189,7 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen> {
               context.read<WritingBloc>().add(const WritingHintUsed()),
           child: ListenableBuilder(
             listenable: Listenable.merge([
-              _showConfetti,
+              showConfettiNotifier,
               _isWiped,
               _selectedOption,
               _pendingSelectedOption,
@@ -291,8 +284,8 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen> {
                                         if (isAnswered || _isWiped.value) {
                                           return;
                                         }
-                                        _hapticService.success();
-                                        _soundService.playHint();
+                                        hapticService.success();
+                                        soundService.playHint();
                                         _isWiped.value = true;
                                       },
                                       color: theme.primaryColor,

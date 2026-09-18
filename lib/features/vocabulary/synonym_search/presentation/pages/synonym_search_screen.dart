@@ -7,12 +7,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
-import 'package:vowl/core/utils/haptic_service.dart';
-import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/vocabulary/presentation/bloc/vocabulary_bloc.dart';
+import 'package:vowl/features/vocabulary/presentation/mixins/vocabulary_game_screen_mixin.dart';
 import 'package:vowl/features/vocabulary/presentation/layout/vocabulary_base_layout.dart';
-import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_instruction_header.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_painters.dart';
@@ -34,23 +31,24 @@ class SynonymSearchScreen extends StatefulWidget {
   State<SynonymSearchScreen> createState() => _SynonymSearchScreenState();
 }
 
-class _SynonymSearchScreenState extends State<SynonymSearchScreen>
-    with TickerProviderStateMixin {
-  final _hapticService = di.sl<HapticService>();
-  final _soundService = di.sl<SoundService>();
-  final _scrollController = ScrollController();
+class _SynonymSearchScreenState extends State<SynonymSearchScreen>with TickerProviderStateMixin, VocabularyGameScreenMixin {
+  @override
+  GameSubtype get gameType => widget.gameType;
 
-  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
-  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
-  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
-  final ValueNotifier<bool> _isFirstStagePassed = ValueNotifier(false);
-  int _lastProcessedIndex = -1;
-  VocabularyQuest? _lastQuest;
+  @override
+  int get level => widget.level;
+
+  @override
+  String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
+
+      final _scrollController = ScrollController();
+
+            VocabularyQuest? _lastQuest;
 
   // Warp Interaction State
-  List<ValueNotifier<Offset>> _shardOffsets = [];
-  List<ValueNotifier<bool>> _isWarping = [];
-  List<ValueNotifier<List<Offset>>> _shardTrails = [];
+  final List<ValueNotifier<Offset>> _shardOffsets = [];
+  final List<ValueNotifier<bool>> _isWarping = [];
+  final List<ValueNotifier<List<Offset>>> _shardTrails = [];
   final ValueNotifier<int?> _activeShardIndex = ValueNotifier(null);
   BoxConstraints? _lastConstraints;
   bool _insideHapticZone = false;
@@ -58,9 +56,7 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
   @override
   void initState() {
     super.initState();
-    context.read<VocabularyBloc>().add(
-      FetchVocabularyQuests(gameType: widget.gameType, level: widget.level),
-    );
+    initVocabularyGame();
   }
 
   @override
@@ -76,39 +72,22 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
     }
     _activeShardIndex.dispose();
     _scrollController.dispose();
-    _isAnswered.dispose();
-    _isCorrect.dispose();
-    _showConfetti.dispose();
-    _isFirstStagePassed.dispose();
+                    disposeVocabularyGame();
+    disposeVocabularyGame();
+    disposeVocabularyGame();
     super.dispose();
   }
-
-  void _initShards(int count) {
-    for (var n in _shardOffsets) {
-      n.dispose();
-    }
-    for (var n in _isWarping) {
-      n.dispose();
-    }
-    for (var n in _shardTrails) {
-      n.dispose();
-    }
-    _shardOffsets = List.generate(count, (_) => ValueNotifier(Offset.zero));
-    _isWarping = List.generate(count, (_) => ValueNotifier(false));
-    _shardTrails = List.generate(count, (_) => ValueNotifier([]));
-    _activeShardIndex.value = null;
-    _insideHapticZone = false;
-  }
+
 
   void _onShardDragStart(int index, DragStartDetails details) {
-    if (_isAnswered.value || _isWarping[index].value) return;
+    if (isAnsweredNotifier.value || _isWarping[index].value) return;
     _activeShardIndex.value = index;
     _shardTrails[index].value = [];
-    _hapticService.light();
+    hapticService.light();
   }
 
   void _onShardDragUpdate(int index, DragUpdateDetails details) {
-    if (_isAnswered.value || _activeShardIndex.value != index) return;
+    if (isAnsweredNotifier.value || _activeShardIndex.value != index) return;
     if (_lastConstraints == null) return;
 
     final currentOffset = _shardOffsets[index].value + details.delta;
@@ -132,7 +111,7 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
     if (distance < 120.r && distance > 100.r) {
       if (!_insideHapticZone) {
         _insideHapticZone = true;
-        _hapticService.selection();
+        hapticService.selection();
       }
     } else {
       _insideHapticZone = false;
@@ -140,7 +119,7 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
   }
 
   void _onShardDragEnd(int index, VocabularyQuest quest) {
-    if (_isAnswered.value || _activeShardIndex.value != index) return;
+    if (isAnsweredNotifier.value || _activeShardIndex.value != index) return;
     if (_lastConstraints == null) return;
 
     final isCompact = _lastConstraints!.maxHeight < 580;
@@ -163,19 +142,19 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
       _shardOffsets[index].value = Offset.zero;
       _shardTrails[index].value = [];
       _activeShardIndex.value = null;
-      _hapticService.light();
+      hapticService.light();
     }
   }
 
   void _onShardTapped(int index) {
-    if (_isAnswered.value || _isWarping[index].value) return;
+    if (isAnsweredNotifier.value || _isWarping[index].value) return;
     _activeShardIndex.value = index;
-    _hapticService.light();
+    hapticService.light();
   }
 
   void _onWarpGateTapped(VocabularyQuest quest) {
     if (_activeShardIndex.value == null ||
-        _isAnswered.value ||
+        isAnsweredNotifier.value ||
         _lastConstraints == null) {
       return;
     }
@@ -194,15 +173,15 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
     final isCorrect = text.trim().toLowerCase() == correct;
 
     if (isCorrect) {
-      _hapticService.selection(); // Subtle feedback for Phase 1
-      _isFirstStagePassed.value = true;
+      hapticService.selection(); // Subtle feedback for Phase 1
+      isFirstStagePassedNotifier.value = true;
       _scrollToBottom();
       // Wait for Phase 2
     } else {
-      _hapticService.error();
-      _soundService.playWrong();
-      _isAnswered.value = true;
-      _isCorrect.value = false;
+      hapticService.error();
+      soundService.playWrong();
+      isAnsweredNotifier.value = true;
+      isCorrectNotifier.value = false;
       context.read<VocabularyBloc>().add(SubmitAnswer(false));
     }
   }
@@ -222,18 +201,18 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
   }
 
   void _submitVerbalEvaluation(bool nailedIt) {
-    if (_isAnswered.value) return;
+    if (isAnsweredNotifier.value) return;
 
-    _isAnswered.value = true;
-    _isCorrect.value = nailedIt;
+    isAnsweredNotifier.value = true;
+    isCorrectNotifier.value = nailedIt;
 
     if (nailedIt) {
-      _hapticService.success();
-      _soundService.playCorrect();
+      hapticService.success();
+      soundService.playCorrect();
       context.read<VocabularyBloc>().add(SubmitAnswer(true));
     } else {
-      _hapticService.error();
-      _soundService.playWrong();
+      hapticService.error();
+      soundService.playWrong();
       context.read<VocabularyBloc>().add(SubmitAnswer(false));
     }
   }
@@ -280,41 +259,8 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
     return BlocConsumer<VocabularyBloc, VocabularyState>(
-      listener: (context, state) {
-        if (state is VocabularyLoaded) {
-          final isNewQuestion = state.currentIndex != _lastProcessedIndex;
-          final isRetry = !state.answerStatus.isAnswered && _isAnswered.value;
-
-          if (isNewQuestion || isRetry) {
-            if (_scrollController.hasClients) {
-              _scrollController.animateTo(
-                0,
-                duration: const Duration(milliseconds: 300),
-                curve: Curves.easeOutBack,
-              );
-            }
-            _lastQuest = state.currentQuest;
-            _lastProcessedIndex = state.currentIndex;
-            _isAnswered.value = false;
-            _isCorrect.value = null;
-            _isFirstStagePassed.value = false;
-            _initShards(state.currentQuest.options?.length ?? 0);
-          } else if (state.answerStatus.isAnswered && !_isAnswered.value) {
-            _isAnswered.value = true;
-            _isCorrect.value = state.answerStatus.asBoolOrNull;
-          }
-        }
-        if (state is VocabularyGameComplete) {
-          _showConfetti.value = true;
-          GameDialogHelper.showCompletion(
-            context,
-            xp: state.xpEarned,
-            coins: state.coinsEarned,
-            title: 'WORD WARP COMPLETE!',
-            enableDoubleUp: true,
-          );
-        }
-      },
+      listenWhen: vocabularyListenWhen,
+      listener: onVocabularyStateChanged,
       builder: (context, state) {
         final theme = LevelThemeHelper.getTheme(
           'vocabulary',
@@ -327,23 +273,23 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
 
         return ListenableBuilder(
           listenable: Listenable.merge([
-            _isAnswered,
-            _isCorrect,
-            _showConfetti,
-            _isFirstStagePassed,
+            isAnsweredNotifier,
+            isCorrectNotifier,
+            showConfettiNotifier,
+            isFirstStagePassedNotifier,
           ]),
           builder: (context, _) {
             return VocabularyBaseLayout(
               gameType: widget.gameType,
               level: widget.level,
               isAnswered:
-                  _isAnswered.value &&
-                  (_isCorrect.value != null || !_isFirstStagePassed.value),
-              isCorrect: _isCorrect.value,
+                  isAnsweredNotifier.value &&
+                  (isCorrectNotifier.value != null || !isFirstStagePassedNotifier.value),
+              isCorrect: isCorrectNotifier.value,
               isFinalFailure: (state is VocabularyLoaded)
                   ? state.isFinalFailure
                   : false,
-              showConfetti: _showConfetti.value,
+              showConfetti: showConfettiNotifier.value,
               hasStage2: true,
               onContinue: () =>
                   context.read<VocabularyBloc>().add(NextQuestion()),
@@ -364,7 +310,7 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
                         -0.2;
 
                     Future.delayed(1.seconds, () {
-                      if (mounted && !_isAnswered.value) {
+                      if (mounted && !isAnsweredNotifier.value) {
                         _shardOffsets[i].value = Offset.zero;
                       }
                     });
@@ -416,7 +362,7 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
                                     child: Column(
                                       children: [
                                         IgnorePointer(
-                                          ignoring: _isFirstStagePassed.value,
+                                          ignoring: isFirstStagePassedNotifier.value,
                                           child: SizedBox(
                                             width: safeWidth,
                                             height: safeHeight,
@@ -595,7 +541,7 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
                                             ),
                                           ),
                                         ),
-                                        if (_isFirstStagePassed.value)
+                                        if (isFirstStagePassedNotifier.value)
                                           Column(
                                             children: [
                                               SizedBox(height: 10.h),
@@ -614,16 +560,16 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
                                           ),
                                         SizedBox(
                                           height:
-                                              (_isFirstStagePassed.value &&
-                                                  !_isAnswered.value)
+                                              (isFirstStagePassedNotifier.value &&
+                                                  !isAnsweredNotifier.value)
                                               ? 24.h
                                               : 60.h,
                                         ),
                                       ],
                                     ),
                                   ),
-                                  if (_isFirstStagePassed.value &&
-                                      !_isAnswered.value)
+                                  if (isFirstStagePassedNotifier.value &&
+                                      !isAnsweredNotifier.value)
                                     SliverToBoxAdapter(
                                       child: Align(
                                         alignment: Alignment.bottomCenter,

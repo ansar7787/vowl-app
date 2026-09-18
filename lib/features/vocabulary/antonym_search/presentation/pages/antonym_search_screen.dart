@@ -4,12 +4,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
-import 'package:vowl/core/utils/haptic_service.dart';
-import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/vocabulary/presentation/bloc/vocabulary_bloc.dart';
+import 'package:vowl/features/vocabulary/presentation/mixins/vocabulary_game_screen_mixin.dart';
 import 'package:vowl/features/vocabulary/presentation/layout/vocabulary_base_layout.dart';
-import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
 import 'package:vowl/features/vocabulary/antonym_search/presentation/widgets/antonym_painters.dart';
 import 'package:vowl/features/vocabulary/antonym_search/presentation/widgets/antonym_nebula_core.dart';
@@ -29,17 +26,20 @@ class AntonymSearchScreen extends StatefulWidget {
   State<AntonymSearchScreen> createState() => _AntonymSearchScreenState();
 }
 
-class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
-  final _hapticService = di.sl<HapticService>();
-  final _soundService = di.sl<SoundService>();
+class _AntonymSearchScreenState extends State<AntonymSearchScreen> with VocabularyGameScreenMixin {
+  @override
+  GameSubtype get gameType => widget.gameType;
 
-  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
-  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
-  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
-  final ValueNotifier<bool> _isDragPassed = ValueNotifier(false);
+  @override
+  int get level => widget.level;
 
-  int _lastProcessedIndex = -1;
-  VocabularyQuest? _lastQuest;
+  @override
+  String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
+
+    
+        final ValueNotifier<bool> _isDragPassed = ValueNotifier(false);
+
+    VocabularyQuest? _lastQuest;
   bool _isAnimatingTap = false;
   int? _hapticZoneIndex;
 
@@ -52,20 +52,32 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
   @override
   void initState() {
     super.initState();
-    context.read<VocabularyBloc>().add(
-      FetchVocabularyQuests(gameType: widget.gameType, level: widget.level),
-    );
+    isAnsweredNotifier.addListener(() {
+      if (isAnsweredNotifier.value && mounted && _scrollController.hasClients) {
+        Future.delayed(const Duration(milliseconds: 100), () {
+          if (mounted && _scrollController.hasClients) {
+            _scrollController.animateTo(
+              _scrollController.position.maxScrollExtent,
+              duration: const Duration(milliseconds: 300),
+              curve: Curves.easeOut,
+            );
+          }
+        });
+      }
+    });
+
+    initVocabularyGame();
   }
 
   @override
   void dispose() {
-    _isAnswered.dispose();
-    _isCorrect.dispose();
-    _showConfetti.dispose();
-    _isDragPassed.dispose();
+                _isDragPassed.dispose();
     _activeShardIndex.dispose();
     _scrollController.dispose();
     _disposeShardNotifiers();
+    disposeVocabularyGame();
+    disposeVocabularyGame();
+    disposeVocabularyGame();
     super.dispose();
   }
 
@@ -79,26 +91,7 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
     _shardOffsets.clear();
     _isFused.clear();
   }
-
-  void _resetQuestState(VocabularyQuest? quest, int index) {
-    _lastQuest = quest;
-    _lastProcessedIndex = index;
-    _isAnswered.value = false;
-    _isCorrect.value = null;
-    _isDragPassed.value = false;
-
-    _disposeShardNotifiers();
-
-    int optionsCount = quest?.options?.length ?? 0;
-    for (int i = 0; i < optionsCount; i++) {
-      _shardOffsets[i] = ValueNotifier(Offset.zero);
-      _isFused[i] = ValueNotifier(false);
-    }
-
-    _activeShardIndex.value = null;
-    _isAnimatingTap = false;
-    _hapticZoneIndex = null;
-  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -106,29 +99,8 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
     final targetColor = const Color(0xFF00E5FF);
 
     return BlocConsumer<VocabularyBloc, VocabularyState>(
-      listener: (context, state) {
-        if (state is VocabularyLoaded) {
-          final isNewQuestion = state.currentIndex != _lastProcessedIndex;
-          final isRetry = _isAnswered.value && !state.answerStatus.isAnswered;
-
-          if (isNewQuestion || isRetry) {
-            _resetQuestState(state.currentQuest, state.currentIndex);
-          } else if (state.answerStatus.isAnswered && !_isAnswered.value) {
-            _isAnswered.value = true;
-            _isCorrect.value = state.answerStatus.asBoolOrNull;
-          }
-        }
-        if (state is VocabularyGameComplete) {
-          _showConfetti.value = true;
-          GameDialogHelper.showCompletion(
-            context,
-            xp: state.xpEarned,
-            coins: state.coinsEarned,
-            title: 'POLARITY MASTER!',
-            enableDoubleUp: true,
-          );
-        }
-      },
+      listenWhen: vocabularyListenWhen,
+      listener: onVocabularyStateChanged,
       builder: (context, state) {
         final theme = LevelThemeHelper.getTheme(
           'vocabulary',
@@ -141,21 +113,21 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
 
         return ListenableBuilder(
           listenable: Listenable.merge([
-            _isAnswered,
-            _isCorrect,
-            _showConfetti,
+            isAnsweredNotifier,
+            isCorrectNotifier,
+            showConfettiNotifier,
             _isDragPassed,
           ]),
           builder: (context, _) {
             return VocabularyBaseLayout(
               gameType: widget.gameType,
               level: widget.level,
-              isAnswered: _isAnswered.value,
-              isCorrect: _isCorrect.value,
+              isAnswered: isAnsweredNotifier.value,
+              isCorrect: isCorrectNotifier.value,
               isFinalFailure: state is VocabularyLoaded
                   ? state.isFinalFailure
                   : false,
-              showConfetti: _showConfetti.value,
+              showConfetti: showConfettiNotifier.value,
               hasStage2: true,
               onContinue: () =>
                   context.read<VocabularyBloc>().add(const NextQuestion()),
@@ -324,7 +296,7 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
                                       ),
                                     ),
                                   ),
-                                  if (_isDragPassed.value && !_isAnswered.value)
+                                  if (_isDragPassed.value && !isAnsweredNotifier.value)
                                     SliverToBoxAdapter(
                                       child: Column(
                                         children: [
@@ -452,14 +424,14 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
   }
 
   void _onShardStart(int index) {
-    if (_isAnswered.value ||
+    if (isAnsweredNotifier.value ||
         _isDragPassed.value ||
         _isAnimatingTap ||
         _isFused[index]?.value == true) {
       return;
     }
     _activeShardIndex.value = index;
-    _hapticService.light();
+    hapticService.light();
   }
 
   void _onShardUpdate(int index, DragUpdateDetails details) {
@@ -475,7 +447,7 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
 
       final inZone = currentY > triggerTop && currentY < triggerBottom;
       if (inZone && _hapticZoneIndex != index) {
-        _hapticService.selection();
+        hapticService.selection();
         _hapticZoneIndex = index;
       } else if (!inZone && _hapticZoneIndex == index) {
         _hapticZoneIndex = null;
@@ -500,24 +472,24 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
         _shardOffsets[index]!.value = Offset.zero;
       }
       _activeShardIndex.value = null;
-      _hapticService.light();
+      hapticService.light();
     }
   }
 
   void _onShardTapped(int index) {
-    if (_isAnswered.value ||
+    if (isAnsweredNotifier.value ||
         _isDragPassed.value ||
         _isAnimatingTap ||
         _isFused[index]?.value == true) {
       return;
     }
     _activeShardIndex.value = index;
-    _hapticService.light();
+    hapticService.light();
   }
 
   void _onCoreTapped() {
     if (_activeShardIndex.value == null ||
-        _isAnswered.value ||
+        isAnsweredNotifier.value ||
         _isDragPassed.value ||
         _isAnimatingTap ||
         _lastConstraints == null) {
@@ -556,7 +528,7 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
   }
 
   void _onSuccess(int index) {
-    _hapticService.selection();
+    hapticService.selection();
     if (_isFused[index] != null) {
       _isFused[index]!.value = true;
     }
@@ -575,31 +547,31 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
   }
 
   void _submitVerbalEvaluation(bool nailedIt) {
-    if (_isAnswered.value) return;
+    if (isAnsweredNotifier.value) return;
 
-    _isAnswered.value = true;
-    _isCorrect.value = nailedIt;
+    isAnsweredNotifier.value = true;
+    isCorrectNotifier.value = nailedIt;
 
     if (nailedIt) {
-      _hapticService.success();
-      _soundService.playCorrect();
+      hapticService.success();
+      soundService.playCorrect();
       context.read<VocabularyBloc>().add(SubmitAnswer(true));
     } else {
-      _hapticService.error();
-      _soundService.playWrong();
+      hapticService.error();
+      soundService.playWrong();
       context.read<VocabularyBloc>().add(SubmitAnswer(false));
     }
   }
 
   void _onFailure(int index) {
-    _hapticService.error();
-    _soundService.playWrong();
+    hapticService.error();
+    soundService.playWrong();
 
     if (_shardOffsets[index] != null) {
       _shardOffsets[index]!.value = Offset.zero;
     }
-    _isAnswered.value = true;
-    _isCorrect.value = false;
+    isAnsweredNotifier.value = true;
+    isCorrectNotifier.value = false;
     _activeShardIndex.value = null;
 
     context.read<VocabularyBloc>().add(SubmitAnswer(false));

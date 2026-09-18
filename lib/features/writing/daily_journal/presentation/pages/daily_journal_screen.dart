@@ -4,13 +4,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
-import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
-import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/features/writing/presentation/bloc/writing_bloc.dart';
+import 'package:vowl/features/writing/presentation/mixins/writing_game_screen_mixin.dart';
 import 'package:vowl/features/writing/presentation/bloc/writing_event.dart';
 import 'package:vowl/features/writing/presentation/bloc/writing_state.dart';
 import 'package:vowl/features/writing/presentation/layout/writing_base_layout.dart';
@@ -36,13 +34,19 @@ class DailyJournalScreen extends StatefulWidget {
   State<DailyJournalScreen> createState() => _DailyJournalScreenState();
 }
 
-class _DailyJournalScreenState extends State<DailyJournalScreen> {
-  final _hapticService = di.sl<HapticService>();
-  final _soundService = di.sl<SoundService>();
-  final _controller = TextEditingController();
+class _DailyJournalScreenState extends State<DailyJournalScreen> with WritingGameScreenMixin {
+  @override
+  GameSubtype get gameType => widget.gameType;
 
-  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
-  final ValueNotifier<bool> _showSpeakToConfirm = ValueNotifier(false);
+  @override
+  int get level => widget.level;
+
+  @override
+  String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
+
+      final _controller = TextEditingController();
+
+    final ValueNotifier<bool> _showSpeakToConfirm = ValueNotifier(false);
   final ValueNotifier<int> _wordCount = ValueNotifier(0);
   final ValueNotifier<double> _journalProgress = ValueNotifier(0.0);
   WritingQuest? _lastQuest;
@@ -53,10 +57,22 @@ class _DailyJournalScreenState extends State<DailyJournalScreen> {
   @override
   void initState() {
     super.initState();
+    isAnsweredNotifier.addListener(() {
+      if (isAnsweredNotifier.value && mounted && _scrollController.hasClients) {
+        Future.delayed(const Duration(milliseconds: 100), () {
+          if (mounted && _scrollController.hasClients) {
+            _scrollController.animateTo(
+              _scrollController.position.maxScrollExtent,
+              duration: const Duration(milliseconds: 300),
+              curve: Curves.easeOut,
+            );
+          }
+        });
+      }
+    });
+
     _scrollController = ScrollController();
-    context.read<WritingBloc>().add(
-      FetchWritingQuests(gameType: widget.gameType, level: widget.level),
-    );
+    initWritingGame();
     _controller.addListener(_onTextChanged);
   }
 
@@ -64,11 +80,13 @@ class _DailyJournalScreenState extends State<DailyJournalScreen> {
   void dispose() {
     _scrollController.dispose();
     _controller.dispose();
-    _showConfetti.dispose();
-    _showSpeakToConfirm.dispose();
+        _showSpeakToConfirm.dispose();
     _wordCount.dispose();
     _journalProgress.dispose();
     _isSubmitting.dispose();
+    disposeWritingGame();
+    disposeWritingGame();
+    disposeWritingGame();
     super.dispose();
   }
 
@@ -96,7 +114,7 @@ class _DailyJournalScreenState extends State<DailyJournalScreen> {
         message: "Please start your journal entry with a capital letter.",
         type: CustomSnackBarType.warning,
       );
-      _hapticService.selection();
+      hapticService.selection();
       _isSubmitting.value = false;
       return;
     }
@@ -109,7 +127,7 @@ class _DailyJournalScreenState extends State<DailyJournalScreen> {
             "Please end your entry with a full stop, exclamation mark, or question mark.",
         type: CustomSnackBarType.warning,
       );
-      _hapticService.selection();
+      hapticService.selection();
       _isSubmitting.value = false;
       return;
     }
@@ -130,7 +148,7 @@ class _DailyJournalScreenState extends State<DailyJournalScreen> {
             "Keep writing! A valid journal entry requires at least 10 words.",
         type: CustomSnackBarType.info,
       );
-      _hapticService.selection();
+      hapticService.selection();
       _isSubmitting.value = false;
       return;
     }
@@ -141,7 +159,7 @@ class _DailyJournalScreenState extends State<DailyJournalScreen> {
         message: "Use at least 2 reflection terms to complete your entry!",
         type: CustomSnackBarType.warning,
       );
-      _hapticService.selection();
+      hapticService.selection();
       _isSubmitting.value = false;
       return;
     }
@@ -164,15 +182,15 @@ class _DailyJournalScreenState extends State<DailyJournalScreen> {
             "Your answer must be written in English. Please write a natural sentence!",
         type: CustomSnackBarType.warning,
       );
-      _hapticService.warning();
+      hapticService.warning();
       _isSubmitting.value = false;
       return;
     }
 
-    _hapticService.success();
-    _soundService.playCorrect();
+    hapticService.success();
+    soundService.playCorrect();
 
-    _soundService.playCorrect();
+    soundService.playCorrect();
 
     _showSpeakToConfirm.value = true;
     _isSubmitting.value = false;
@@ -193,24 +211,7 @@ class _DailyJournalScreenState extends State<DailyJournalScreen> {
           (curr is WritingGameComplete && prev is! WritingGameComplete) ||
           (curr is WritingGameOver && prev is! WritingGameOver) ||
           (curr is WritingLoaded && !curr.answerStatus.isAnswered),
-      listener: (context, state) {
-        if (state is WritingLoaded && !state.answerStatus.isAnswered) {
-          _controller.clear();
-          _wordCount.value = 0;
-          _journalProgress.value = 0.0;
-          _showSpeakToConfirm.value = false;
-        }
-        if (state is WritingGameComplete) {
-          _showConfetti.value = true;
-          GameDialogHelper.showCompletion(
-            context,
-            xp: state.xpEarned,
-            coins: state.coinsEarned,
-            title: 'REFLECTIVE MASTER!',
-            enableDoubleUp: true,
-          );
-        }
-      },
+      listener: onWritingStateChanged,
       builder: (context, state) {
         final isLoaded = state is WritingLoaded;
         final WritingQuest? quest = isLoaded
@@ -237,14 +238,14 @@ class _DailyJournalScreenState extends State<DailyJournalScreen> {
           isAnswered: isAnswered,
           isCorrect: isCorrect,
           isFinalFailure: isFinalFailure,
-          showConfetti: _showConfetti.value,
+          showConfetti: showConfettiNotifier.value,
           useScrolling: false,
           disablePadding: true,
           onContinue: () => context.read<WritingBloc>().add(NextQuestion()),
           onHint: () => context.read<WritingBloc>().add(WritingHintUsed()),
           child: ListenableBuilder(
             listenable: Listenable.merge([
-              _showConfetti,
+              showConfettiNotifier,
               _showSpeakToConfirm,
               _wordCount,
               _journalProgress,

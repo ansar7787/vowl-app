@@ -6,16 +6,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
-import 'package:vowl/core/utils/haptic_service.dart';
-import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/roleplay/presentation/bloc/roleplay_bloc.dart';
+import 'package:vowl/features/roleplay/presentation/mixins/roleplay_game_screen_mixin.dart';
 import 'package:vowl/features/roleplay/presentation/bloc/roleplay_event.dart';
 import 'package:vowl/features/roleplay/presentation/bloc/roleplay_state.dart';
 import 'package:vowl/features/roleplay/presentation/layout/roleplay_base_layout.dart';
-import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
-import 'package:vowl/features/roleplay/domain/entities/roleplay_quest.dart';
 import 'package:vowl/features/roleplay/medical_consult/presentation/widgets/medical_consult_instruction.dart';
 import 'package:vowl/features/roleplay/medical_consult/presentation/widgets/medical_consult_patient_record.dart';
 import 'package:vowl/features/roleplay/medical_consult/presentation/widgets/medical_consult_scan_bay.dart';
@@ -36,22 +32,23 @@ class MedicalConsultScreen extends StatefulWidget {
   State<MedicalConsultScreen> createState() => _MedicalConsultScreenState();
 }
 
-class _MedicalConsultScreenState extends State<MedicalConsultScreen>
-    with TickerProviderStateMixin {
-  final _hapticService = di.sl<HapticService>();
-  final _soundService = di.sl<SoundService>();
+class _MedicalConsultScreenState extends State<MedicalConsultScreen>with TickerProviderStateMixin, RoleplayGameScreenMixin {
+  @override
+  GameSubtype get gameType => widget.gameType;
 
+  @override
+  int get level => widget.level;
+
+  @override
+  String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
+
+    
   late AnimationController _sweepController;
   late AnimationController _pulseController;
 
-  int _lastProcessedIndex = -1;
-  final ValueNotifier<List<String>> _diagnosedSymptoms = ValueNotifier([]);
+    final ValueNotifier<List<String>> _diagnosedSymptoms = ValueNotifier([]);
   final ScrollController _scrollController = ScrollController();
-  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
-  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
-  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
-  final ValueNotifier<bool> _isFirstStagePassed = ValueNotifier(false);
-
+        
   // Drag coordinate for physical scanning lens
   final ValueNotifier<Offset> _scanOffset = ValueNotifier(Offset.zero);
 
@@ -61,6 +58,20 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen>
   @override
   void initState() {
     super.initState();
+    isAnsweredNotifier.addListener(() {
+      if (isAnsweredNotifier.value && mounted && _scrollController.hasClients) {
+        Future.delayed(const Duration(milliseconds: 100), () {
+          if (mounted && _scrollController.hasClients) {
+            _scrollController.animateTo(
+              _scrollController.position.maxScrollExtent,
+              duration: const Duration(milliseconds: 300),
+              curve: Curves.easeOut,
+            );
+          }
+        });
+      }
+    });
+
     _sweepController = AnimationController(
       vsync: this,
       duration: const Duration(seconds: 3),
@@ -71,9 +82,7 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen>
       duration: const Duration(seconds: 2),
     )..repeat(reverse: true);
 
-    context.read<RoleplayBloc>().add(
-      FetchRoleplayQuests(gameType: widget.gameType, level: widget.level),
-    );
+    initRoleplayGame();
   }
 
   @override
@@ -81,24 +90,15 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen>
     _sweepController.dispose();
     _pulseController.dispose();
     _diagnosedSymptoms.dispose();
-    _isAnswered.dispose();
-    _isCorrect.dispose();
-    _showConfetti.dispose();
-    _isFirstStagePassed.dispose();
-    _scanOffset.dispose();
+                    _scanOffset.dispose();
     _scannedGlitches.dispose();
     _scrollController.dispose();
+    disposeRoleplayGame();
+    disposeRoleplayGame();
+    disposeRoleplayGame();
     super.dispose();
   }
-
-  void _triggerAutoPlay(RoleplayQuest quest) {
-    _soundService.playTts(InstructionHelper.getInstruction(quest));
-    if (quest.prompt != null) {
-      Future.delayed(const Duration(milliseconds: 1200), () {
-        if (mounted) _soundService.playTts(quest.prompt!);
-      });
-    }
-  }
+
 
   Offset _getAnatomicalOffset(String text) {
     final lower = text.toLowerCase();
@@ -135,7 +135,7 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen>
     DragUpdateDetails details,
     List<String> availableSymptoms,
   ) {
-    if (_isAnswered.value || _isFirstStagePassed.value) return;
+    if (isAnsweredNotifier.value || isFirstStagePassedNotifier.value) return;
 
     _scanOffset.value += details.delta;
 
@@ -147,8 +147,8 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen>
       // 36r relative proximity locking boundary
       if (distance < 36.r) {
         if (!_scannedGlitches.value.contains(s)) {
-          _hapticService.selection();
-          _soundService.playHint(); // Play biometric heartbeat scan pulse
+          hapticService.selection();
+          soundService.playHint(); // Play biometric heartbeat scan pulse
           final glitches = List<String>.from(_scannedGlitches.value);
           glitches.add(s);
           _scannedGlitches.value = glitches;
@@ -158,15 +158,15 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen>
   }
 
   void _onSymptomTapped(String symptom) {
-    if (_isAnswered.value || _isFirstStagePassed.value) return;
+    if (isAnsweredNotifier.value || isFirstStagePassedNotifier.value) return;
 
     // Check if item is scanned before selection
     if (!_scannedGlitches.value.contains(symptom)) {
-      _hapticService.error();
+      hapticService.error();
       return;
     }
 
-    _hapticService.selection();
+    hapticService.selection();
     final current = List<String>.from(_diagnosedSymptoms.value);
     if (current.contains(symptom)) {
       current.remove(symptom);
@@ -177,16 +177,16 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen>
   }
 
   void _clearDiagnosis() {
-    if (_isAnswered.value || _isFirstStagePassed.value) return;
-    _hapticService.selection();
+    if (isAnsweredNotifier.value || isFirstStagePassedNotifier.value) return;
+    hapticService.selection();
     _diagnosedSymptoms.value = [];
     _scannedGlitches.value = [];
     _scanOffset.value = Offset.zero;
   }
 
   void _submitDiagnosis(String correctAnswer) {
-    if (_isAnswered.value ||
-        _isFirstStagePassed.value ||
+    if (isAnsweredNotifier.value ||
+        isFirstStagePassedNotifier.value ||
         _diagnosedSymptoms.value.isEmpty) {
       return;
     }
@@ -204,31 +204,31 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen>
         targets.every((t) => current.contains(t));
 
     if (isCorrect) {
-      _hapticService.selection();
-      _isFirstStagePassed.value = true;
+      hapticService.selection();
+      isFirstStagePassedNotifier.value = true;
       // Wait for Phase 2
     } else {
-      _hapticService.error();
-      _soundService.playWrong();
-      _isAnswered.value = true;
-      _isCorrect.value = false;
+      hapticService.error();
+      soundService.playWrong();
+      isAnsweredNotifier.value = true;
+      isCorrectNotifier.value = false;
       context.read<RoleplayBloc>().add(SubmitAnswer(false));
     }
   }
 
   void _submitVerbalEvaluation(bool nailedIt) {
-    if (_isAnswered.value) return;
+    if (isAnsweredNotifier.value) return;
 
-    _isAnswered.value = true;
-    _isCorrect.value = nailedIt;
+    isAnsweredNotifier.value = true;
+    isCorrectNotifier.value = nailedIt;
 
     if (nailedIt) {
-      _hapticService.success();
-      _soundService.playCorrect();
+      hapticService.success();
+      soundService.playCorrect();
       context.read<RoleplayBloc>().add(SubmitAnswer(true));
     } else {
-      _hapticService.error();
-      _soundService.playWrong();
+      hapticService.error();
+      soundService.playWrong();
       context.read<RoleplayBloc>().add(SubmitAnswer(false));
     }
   }
@@ -239,55 +239,31 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen>
     final theme = LevelThemeHelper.getTheme('roleplay', level: widget.level);
 
     return BlocConsumer<RoleplayBloc, RoleplayState>(
-      listener: (context, state) {
-        if (state is RoleplayLoaded) {
-          if (state.currentIndex != _lastProcessedIndex) {
-            _lastProcessedIndex = state.currentIndex;
-            _isAnswered.value = false;
-            _isCorrect.value = null;
-            _diagnosedSymptoms.value = [];
-            _scannedGlitches.value = [];
-            _scanOffset.value = Offset.zero;
-            _isFirstStagePassed.value = false;
-            Future.delayed(const Duration(milliseconds: 300), () {
-              if (mounted) _triggerAutoPlay(state.currentQuest);
-            });
-          }
-        }
-        if (state is RoleplayGameComplete) {
-          _showConfetti.value = true;
-          GameDialogHelper.showCompletion(
-            context,
-            xp: state.xpEarned,
-            coins: state.coinsEarned,
-            title: 'CHIEF SURGEON!',
-            enableDoubleUp: true,
-          );
-        }
-      },
+      listenWhen: roleplayListenWhen,
+      listener: onRoleplayStateChanged,
       builder: (context, state) {
         final quest = (state is RoleplayLoaded) ? state.currentQuest : null;
         final symptoms = quest?.symptoms ?? [];
 
         return ListenableBuilder(
           listenable: Listenable.merge([
-            _isAnswered,
-            _isCorrect,
-            _showConfetti,
+            isAnsweredNotifier,
+            isCorrectNotifier,
+            showConfettiNotifier,
             _diagnosedSymptoms,
             _scannedGlitches,
             _scanOffset,
-            _isFirstStagePassed,
+            isFirstStagePassedNotifier,
           ]),
           builder: (context, _) {
             return RoleplayBaseLayout(
               gameType: widget.gameType,
               level: widget.level,
               isAnswered:
-                  _isAnswered.value &&
-                  (_isCorrect.value != null || !_isFirstStagePassed.value),
-              isCorrect: _isCorrect.value,
-              showConfetti: _showConfetti.value,
+                  isAnsweredNotifier.value &&
+                  (isCorrectNotifier.value != null || !isFirstStagePassedNotifier.value),
+              isCorrect: isCorrectNotifier.value,
+              showConfetti: showConfettiNotifier.value,
               onContinue: () =>
                   context.read<RoleplayBloc>().add(NextQuestion()),
               onHint: () =>
@@ -385,13 +361,13 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen>
                                                           _diagnosedSymptoms
                                                               .value,
                                                       isAnswered:
-                                                          _isAnswered.value &&
-                                                          (_isCorrect.value !=
+                                                          isAnsweredNotifier.value &&
+                                                          (isCorrectNotifier.value !=
                                                                   null ||
-                                                              !_isFirstStagePassed
+                                                              !isFirstStagePassedNotifier
                                                                   .value),
                                                       isCorrect:
-                                                          _isCorrect.value,
+                                                          isCorrectNotifier.value,
                                                       onSymptomTapped:
                                                           _onSymptomTapped,
                                                     ),
@@ -402,7 +378,7 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen>
                                                     ),
 
                                                     // Submit controls
-                                                    if (!_isAnswered.value &&
+                                                    if (!isAnsweredNotifier.value &&
                                                         _diagnosedSymptoms
                                                             .value
                                                             .isNotEmpty)
@@ -579,7 +555,7 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen>
                                                       ),
 
                                                     // Explanations cards post-selection
-                                                    if (_isAnswered.value) ...[
+                                                    if (isAnsweredNotifier.value) ...[
                                                       SizedBox(
                                                         height: isCompact
                                                             ? 12.h
@@ -609,8 +585,8 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen>
                                   SliverToBoxAdapter(
                                     child: SizedBox(
                                       height:
-                                          (_isFirstStagePassed.value &&
-                                              !_isAnswered.value)
+                                          (isFirstStagePassedNotifier.value &&
+                                              !isAnsweredNotifier.value)
                                           ? 380.h
                                           : 60.h,
                                     ),
@@ -618,7 +594,7 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen>
                                 ],
                               ),
                             ),
-                            if (_isFirstStagePassed.value && !_isAnswered.value)
+                            if (isFirstStagePassedNotifier.value && !isAnsweredNotifier.value)
                               SpeakToConfirmOverlay(
                                 expectedText:
                                     quest.correctAnswer ??

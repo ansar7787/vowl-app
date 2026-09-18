@@ -4,12 +4,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
-import 'package:vowl/core/utils/haptic_service.dart';
-import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/grammar/presentation/bloc/grammar_bloc.dart';
+import 'package:vowl/features/grammar/presentation/mixins/grammar_game_screen_mixin.dart';
 import 'package:vowl/features/grammar/presentation/layout/grammar_base_layout.dart';
-import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/grammar/tense_mastery/presentation/widgets/tense_mastery_instruction.dart';
@@ -29,32 +26,34 @@ class TenseMasteryScreen extends StatefulWidget {
   State<TenseMasteryScreen> createState() => _TenseMasteryScreenState();
 }
 
-class _TenseMasteryScreenState extends State<TenseMasteryScreen> {
-  final _hapticService = di.sl<HapticService>();
-  final _soundService = di.sl<SoundService>();
+class _TenseMasteryScreenState extends State<TenseMasteryScreen> with GrammarGameScreenMixin {
+  @override
+  GameSubtype get gameType => widget.gameType;
 
+  @override
+  int get level => widget.level;
+
+  @override
+  String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
+
+    
   final ValueNotifier<double> _sliderValue = ValueNotifier(
     0.5,
   ); // Default to Present
-  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
-  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
-  final bool _isFinalFailure = false;
-  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
-  int _lastProcessedIndex = -1;
-  int? _lastLives;
-  final ValueNotifier<bool> _isDragging = ValueNotifier(false);
+      final bool _isFinalFailure = false;
+        final ValueNotifier<bool> _isDragging = ValueNotifier(false);
   final ValueNotifier<bool> _pendingSubmit = ValueNotifier(false);
   final ScrollController _scrollController = ScrollController();
 
   @override
   void dispose() {
     _sliderValue.dispose();
-    _isAnswered.dispose();
-    _isCorrect.dispose();
-    _showConfetti.dispose();
-    _isDragging.dispose();
+                _isDragging.dispose();
     _pendingSubmit.dispose();
     _scrollController.dispose();
+    disposeGrammarGame();
+    disposeGrammarGame();
+    disposeGrammarGame();
     super.dispose();
   }
 
@@ -79,15 +78,27 @@ class _TenseMasteryScreenState extends State<TenseMasteryScreen> {
   @override
   void initState() {
     super.initState();
+    isAnsweredNotifier.addListener(() {
+      if (isAnsweredNotifier.value && mounted && _scrollController.hasClients) {
+        Future.delayed(const Duration(milliseconds: 100), () {
+          if (mounted && _scrollController.hasClients) {
+            _scrollController.animateTo(
+              _scrollController.position.maxScrollExtent,
+              duration: const Duration(milliseconds: 300),
+              curve: Curves.easeOut,
+            );
+          }
+        });
+      }
+    });
+
     _pendingSubmit.addListener(_onStagePassedScroll);
 
-    context.read<GrammarBloc>().add(
-      FetchGrammarQuests(gameType: widget.gameType, level: widget.level),
-    );
+    initGrammarGame();
   }
 
   void _onFreezeTimeline() {
-    if (_isAnswered.value) return;
+    if (isAnsweredNotifier.value) return;
 
     final state = context.read<GrammarBloc>().state;
     if (state is GrammarLoaded) {
@@ -99,16 +110,16 @@ class _TenseMasteryScreenState extends State<TenseMasteryScreen> {
               quest.correctAnswer?.toLowerCase());
 
       if (!isTenseCorrect) {
-        _hapticService.error();
-        _soundService.playWrong();
-        _isAnswered.value = true;
-        _isCorrect.value = false;
+        hapticService.error();
+        soundService.playWrong();
+        isAnsweredNotifier.value = true;
+        isCorrectNotifier.value = false;
         context.read<GrammarBloc>().add(const SubmitAnswer(false));
         return;
       }
     }
 
-    _hapticService.heavy();
+    hapticService.heavy();
     _pendingSubmit.value = true;
   }
 
@@ -116,10 +127,10 @@ class _TenseMasteryScreenState extends State<TenseMasteryScreen> {
     _pendingSubmit.value = false;
 
     if (!nailedTyping) {
-      _hapticService.error();
-      _soundService.playWrong();
-      _isAnswered.value = true;
-      _isCorrect.value = false;
+      hapticService.error();
+      soundService.playWrong();
+      isAnsweredNotifier.value = true;
+      isCorrectNotifier.value = false;
       context.read<GrammarBloc>().add(const SubmitAnswer(false));
       return;
     }
@@ -131,16 +142,16 @@ class _TenseMasteryScreenState extends State<TenseMasteryScreen> {
             quest.correctAnswer?.toLowerCase());
 
     if (isCorrect) {
-      _hapticService.success();
-      _soundService.playCorrect();
-      _isAnswered.value = true;
-      _isCorrect.value = true;
+      hapticService.success();
+      soundService.playCorrect();
+      isAnsweredNotifier.value = true;
+      isCorrectNotifier.value = true;
       context.read<GrammarBloc>().add(const SubmitAnswer(true));
     } else {
-      _hapticService.error();
-      _soundService.playWrong();
-      _isAnswered.value = true;
-      _isCorrect.value = false;
+      hapticService.error();
+      soundService.playWrong();
+      isAnsweredNotifier.value = true;
+      isCorrectNotifier.value = false;
       context.read<GrammarBloc>().add(const SubmitAnswer(false));
     }
   }
@@ -151,43 +162,16 @@ class _TenseMasteryScreenState extends State<TenseMasteryScreen> {
     final theme = LevelThemeHelper.getTheme('grammar', level: widget.level);
 
     return BlocConsumer<GrammarBloc, GrammarState>(
-      listener: (context, state) {
-        if (state is GrammarLoaded) {
-          final isNewQuestion = state.currentIndex != _lastProcessedIndex;
-          final isRetry = _isAnswered.value && !state.answerStatus.isAnswered;
-          final livesRestored =
-              _lastLives != null && state.livesRemaining > _lastLives!;
-
-          if (isNewQuestion || isRetry || livesRestored) {
-            _lastProcessedIndex = state.currentIndex;
-            _isAnswered.value = false;
-            _isCorrect.value = null;
-            _pendingSubmit.value = false;
-          } else if (state.answerStatus.isAnswered && !_isAnswered.value) {
-            _isAnswered.value = true;
-            _isCorrect.value = state.answerStatus.asBoolOrNull;
-          }
-          _lastLives = state.livesRemaining;
-        }
-        if (state is GrammarGameComplete) {
-          _showConfetti.value = true;
-          GameDialogHelper.showCompletion(
-            context,
-            xp: state.xpEarned,
-            coins: state.coinsEarned,
-            title: 'TIMELINE RESTORED!',
-            enableDoubleUp: true,
-          );
-        }
-      },
+      listenWhen: grammarListenWhen,
+      listener: onGrammarStateChanged,
       builder: (context, state) {
         final quest = (state is GrammarLoaded) ? state.currentQuest : null;
 
         return ListenableBuilder(
           listenable: Listenable.merge([
-            _isAnswered,
-            _isCorrect,
-            _showConfetti,
+            isAnsweredNotifier,
+            isCorrectNotifier,
+            showConfettiNotifier,
             _pendingSubmit,
           ]),
           builder: (context, _) {
@@ -195,10 +179,10 @@ class _TenseMasteryScreenState extends State<TenseMasteryScreen> {
               disablePadding: true,
               gameType: widget.gameType,
               level: widget.level,
-              isAnswered: _isAnswered.value,
-              isCorrect: _isCorrect.value,
+              isAnswered: isAnsweredNotifier.value,
+              isCorrect: isCorrectNotifier.value,
               isFinalFailure: _isFinalFailure,
-              showConfetti: _showConfetti.value,
+              showConfetti: showConfettiNotifier.value,
               useScrolling: false,
               onContinue: () =>
                   context.read<GrammarBloc>().add(const NextQuestion()),
@@ -348,7 +332,7 @@ class _TenseMasteryScreenState extends State<TenseMasteryScreen> {
                                                       currentTense:
                                                           _currentTense,
                                                       isAnswered:
-                                                          _isAnswered.value ||
+                                                          isAnsweredNotifier.value ||
                                                           _pendingSubmit.value,
                                                       isDragging:
                                                           _isDragging.value,
@@ -356,10 +340,10 @@ class _TenseMasteryScreenState extends State<TenseMasteryScreen> {
                                                       primaryColor:
                                                           theme.primaryColor,
                                                       onHapticFeedback:
-                                                          _hapticService
+                                                          hapticService
                                                               .selection,
                                                       onHeavyHapticFeedback:
-                                                          _hapticService.heavy,
+                                                          hapticService.heavy,
                                                       onSliderChanged:
                                                           (value) =>
                                                               _sliderValue
@@ -378,7 +362,7 @@ class _TenseMasteryScreenState extends State<TenseMasteryScreen> {
                                             Column(
                                               mainAxisSize: MainAxisSize.min,
                                               children: [
-                                                if (!_isAnswered.value &&
+                                                if (!isAnsweredNotifier.value &&
                                                     !_pendingSubmit.value)
                                                   ScaleButton(
                                                         onTap:
@@ -486,7 +470,7 @@ class _TenseMasteryScreenState extends State<TenseMasteryScreen> {
                                     ),
                                   ),
                                   if (_pendingSubmit.value &&
-                                      !_isAnswered.value)
+                                      !isAnsweredNotifier.value)
                                     SliverToBoxAdapter(
                                       child: TypeToConfirmOverlay(
                                         expectedText: quest.sentence ?? '',

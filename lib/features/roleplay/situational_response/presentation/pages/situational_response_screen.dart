@@ -6,14 +6,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
-import 'package:vowl/core/utils/haptic_service.dart';
-import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/roleplay/presentation/bloc/roleplay_bloc.dart';
+import 'package:vowl/features/roleplay/presentation/mixins/roleplay_game_screen_mixin.dart';
 import 'package:vowl/features/roleplay/presentation/bloc/roleplay_event.dart';
 import 'package:vowl/features/roleplay/presentation/bloc/roleplay_state.dart';
 import 'package:vowl/features/roleplay/presentation/layout/roleplay_base_layout.dart';
-import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/features/roleplay/domain/entities/roleplay_quest.dart';
 import 'package:vowl/features/roleplay/situational_response/presentation/widgets/situational_response_instruction.dart';
 import 'package:vowl/features/roleplay/situational_response/presentation/widgets/situational_response_scene_display.dart';
@@ -36,22 +33,23 @@ class SituationalResponseScreen extends StatefulWidget {
       _SituationalResponseScreenState();
 }
 
-class _SituationalResponseScreenState extends State<SituationalResponseScreen>
-    with TickerProviderStateMixin {
-  final _hapticService = di.sl<HapticService>();
-  final _soundService = di.sl<SoundService>();
+class _SituationalResponseScreenState extends State<SituationalResponseScreen>with TickerProviderStateMixin, RoleplayGameScreenMixin {
+  @override
+  GameSubtype get gameType => widget.gameType;
 
+  @override
+  int get level => widget.level;
+
+  @override
+  String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
+
+    
   late AnimationController _timerController;
   late AnimationController _pulseController;
 
-  int _lastProcessedIndex = -1;
-  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
-  final ScrollController _scrollController = ScrollController();
-  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
-  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
-  final ValueNotifier<int?> _selectedOrbIndex = ValueNotifier(null);
-  final ValueNotifier<bool> _isFirstStagePassed = ValueNotifier(false);
-
+      final ScrollController _scrollController = ScrollController();
+      final ValueNotifier<int?> _selectedOrbIndex = ValueNotifier(null);
+  
   // Shuffled state
   final ValueNotifier<List<String>> _shuffledOptions = ValueNotifier([]);
   final ValueNotifier<int> _shuffledCorrectIndex = ValueNotifier(-1);
@@ -62,6 +60,20 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen>
   @override
   void initState() {
     super.initState();
+    isAnsweredNotifier.addListener(() {
+      if (isAnsweredNotifier.value && mounted && _scrollController.hasClients) {
+        Future.delayed(const Duration(milliseconds: 100), () {
+          if (mounted && _scrollController.hasClients) {
+            _scrollController.animateTo(
+              _scrollController.position.maxScrollExtent,
+              duration: const Duration(milliseconds: 300),
+              curve: Curves.easeOut,
+            );
+          }
+        });
+      }
+    });
+
     _timerController = AnimationController(
       vsync: this,
       duration: const Duration(seconds: 12),
@@ -82,32 +94,29 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen>
       }
     });
 
-    context.read<RoleplayBloc>().add(
-      FetchRoleplayQuests(gameType: widget.gameType, level: widget.level),
-    );
+    initRoleplayGame();
   }
 
   @override
   void dispose() {
     _timerController.dispose();
     _pulseController.dispose();
-    _isAnswered.dispose();
-    _isCorrect.dispose();
-    _showConfetti.dispose();
-    _selectedOrbIndex.dispose();
-    _isFirstStagePassed.dispose();
-    _shuffledOptions.dispose();
+                _selectedOrbIndex.dispose();
+        _shuffledOptions.dispose();
     _shuffledCorrectIndex.dispose();
     _scrollController.dispose();
+    disposeRoleplayGame();
+    disposeRoleplayGame();
+    disposeRoleplayGame();
     super.dispose();
   }
 
   void _triggerAutoPlay(RoleplayQuest quest) {
-    _soundService.playTts(quest.scene ?? "");
+    soundService.playTts(quest.scene ?? "");
   }
 
   void _checkTickWarnings() {
-    if (_isAnswered.value || _isFirstStagePassed.value) return;
+    if (isAnsweredNotifier.value || isFirstStagePassedNotifier.value) return;
 
     // Warn when time is running out (less than 4 seconds remaining)
     final double elapsedRatio = _timerController.value;
@@ -117,66 +126,62 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen>
         remainingSec > 0 &&
         remainingSec != _lastTickSecond) {
       _lastTickSecond = remainingSec;
-      _hapticService.selection();
-      _soundService.playHint(); // Play warning beep
+      hapticService.selection();
+      soundService.playHint(); // Play warning beep
     }
   }
-
-  void _startTimer() {
-    _timerController.forward(from: 0.0);
-    _lastTickSecond = -1;
-  }
+
 
   void _stopTimer() {
     _timerController.stop();
   }
 
   void _triggerTimeoutFailure() {
-    if (_isAnswered.value || _isFirstStagePassed.value) return;
+    if (isAnsweredNotifier.value || isFirstStagePassedNotifier.value) return;
     _stopTimer();
-    _hapticService.error();
-    _soundService.playWrong();
+    hapticService.error();
+    soundService.playWrong();
 
-    _isAnswered.value = true;
-    _isCorrect.value = false;
+    isAnsweredNotifier.value = true;
+    isCorrectNotifier.value = false;
     _selectedOrbIndex.value = null;
 
     context.read<RoleplayBloc>().add(SubmitAnswer(false));
   }
 
   void _onOrbTap(int index, int correctIndex) {
-    if (_isAnswered.value || _isFirstStagePassed.value) return;
+    if (isAnsweredNotifier.value || isFirstStagePassedNotifier.value) return;
     _stopTimer();
 
     final isCorrect = index == correctIndex;
     _selectedOrbIndex.value = index;
 
     if (isCorrect) {
-      _hapticService.selection();
-      _isFirstStagePassed.value = true;
+      hapticService.selection();
+      isFirstStagePassedNotifier.value = true;
       // Wait for Phase 2
     } else {
-      _hapticService.error();
-      _soundService.playWrong();
-      _isAnswered.value = true;
-      _isCorrect.value = false;
+      hapticService.error();
+      soundService.playWrong();
+      isAnsweredNotifier.value = true;
+      isCorrectNotifier.value = false;
       context.read<RoleplayBloc>().add(SubmitAnswer(false));
     }
   }
 
   void _submitVerbalEvaluation(bool nailedIt) {
-    if (_isAnswered.value) return;
+    if (isAnsweredNotifier.value) return;
 
-    _isAnswered.value = true;
-    _isCorrect.value = nailedIt;
+    isAnsweredNotifier.value = true;
+    isCorrectNotifier.value = nailedIt;
 
     if (nailedIt) {
-      _hapticService.success();
-      _soundService.playCorrect();
+      hapticService.success();
+      soundService.playCorrect();
       context.read<RoleplayBloc>().add(SubmitAnswer(true));
     } else {
-      _hapticService.error();
-      _soundService.playWrong();
+      hapticService.error();
+      soundService.playWrong();
       context.read<RoleplayBloc>().add(SubmitAnswer(false));
     }
   }
@@ -187,52 +192,18 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen>
     final theme = LevelThemeHelper.getTheme('roleplay', level: widget.level);
 
     return BlocConsumer<RoleplayBloc, RoleplayState>(
-      listener: (context, state) {
-        if (state is RoleplayLoaded) {
-          if (state.currentIndex != _lastProcessedIndex) {
-            _lastProcessedIndex = state.currentIndex;
-            _isAnswered.value = false;
-            _isCorrect.value = null;
-            _selectedOrbIndex.value = null;
-            _isFirstStagePassed.value = false;
-
-            if (state.currentQuest.options != null) {
-              final options = List<String>.from(state.currentQuest.options!);
-              final correctOption =
-                  options[state.currentQuest.correctAnswerIndex ?? 0];
-              options.shuffle();
-              _shuffledOptions.value = options;
-              _shuffledCorrectIndex.value = options.indexOf(correctOption);
-            }
-            _startTimer();
-            // Auto play dialogue context
-            Future.delayed(const Duration(milliseconds: 300), () {
-              if (mounted) _triggerAutoPlay(state.currentQuest);
-            });
-          }
-        }
-        if (state is RoleplayGameComplete) {
-          _stopTimer();
-          _showConfetti.value = true;
-          GameDialogHelper.showCompletion(
-            context,
-            xp: state.xpEarned,
-            coins: state.coinsEarned,
-            title: 'SOCIAL GENIUS!',
-            enableDoubleUp: true,
-          );
-}
-      },
+      listenWhen: roleplayListenWhen,
+      listener: onRoleplayStateChanged,
       builder: (context, state) {
         final quest = (state is RoleplayLoaded) ? state.currentQuest : null;
 
         return ListenableBuilder(
           listenable: Listenable.merge([
-            _isAnswered,
-            _isCorrect,
-            _showConfetti,
+            isAnsweredNotifier,
+            isCorrectNotifier,
+            showConfettiNotifier,
             _selectedOrbIndex,
-            _isFirstStagePassed,
+            isFirstStagePassedNotifier,
             _shuffledOptions,
             _shuffledCorrectIndex,
           ]),
@@ -241,10 +212,10 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen>
               gameType: widget.gameType,
               level: widget.level,
               isAnswered:
-                  _isAnswered.value &&
-                  (_isCorrect.value != null || !_isFirstStagePassed.value),
-              isCorrect: _isCorrect.value,
-              showConfetti: _showConfetti.value,
+                  isAnsweredNotifier.value &&
+                  (isCorrectNotifier.value != null || !isFirstStagePassedNotifier.value),
+              isCorrect: isCorrectNotifier.value,
+              showConfetti: showConfettiNotifier.value,
               onContinue: () =>
                   context.read<RoleplayBloc>().add(NextQuestion()),
               onHint: () =>
@@ -336,12 +307,12 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen>
                                                               _pulseController
                                                                   .value,
                                                           isAnswered:
-                                                              _isAnswered
+                                                              isAnsweredNotifier
                                                                   .value ||
-                                                              _isFirstStagePassed
+                                                              isFirstStagePassedNotifier
                                                                   .value,
                                                           isCorrect:
-                                                              _isCorrect.value,
+                                                              isCorrectNotifier.value,
                                                           selectedOrbIndex:
                                                               _selectedOrbIndex
                                                                   .value,
@@ -364,11 +335,11 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen>
                                                             quest: quest,
                                                             isDark: isDark,
                                                             isCorrect:
-                                                                _isCorrect
+                                                                isCorrectNotifier
                                                                     .value,
                                                           ),
                                                       crossFadeState:
-                                                          _isAnswered.value
+                                                          isAnsweredNotifier.value
                                                           ? CrossFadeState
                                                                 .showSecond
                                                           : CrossFadeState
@@ -377,7 +348,7 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen>
                                                         milliseconds: 450,
                                                       ),
                                                     ),
-                                                    if (_isAnswered.value) ...[
+                                                    if (isAnsweredNotifier.value) ...[
                                                       SizedBox(
                                                         height: isCompact
                                                             ? 12.h
@@ -407,8 +378,8 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen>
                                   SliverToBoxAdapter(
                                     child: SizedBox(
                                       height:
-                                          (_isFirstStagePassed.value &&
-                                              !_isAnswered.value)
+                                          (isFirstStagePassedNotifier.value &&
+                                              !isAnsweredNotifier.value)
                                           ? 380.h
                                           : 60.h,
                                     ),
@@ -416,8 +387,8 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen>
                                 ],
                               ),
                             ),
-                            if (_isFirstStagePassed.value &&
-                                !_isAnswered.value &&
+                            if (isFirstStagePassedNotifier.value &&
+                                !isAnsweredNotifier.value &&
                                 _selectedOrbIndex.value != null)
                               SpeakToConfirmOverlay(
                                 expectedText: _shuffledOptions

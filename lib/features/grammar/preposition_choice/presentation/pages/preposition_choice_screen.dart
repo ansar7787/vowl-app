@@ -4,12 +4,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
-import 'package:vowl/core/utils/haptic_service.dart';
-import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/grammar/presentation/bloc/grammar_bloc.dart';
+import 'package:vowl/features/grammar/presentation/mixins/grammar_game_screen_mixin.dart';
 import 'package:vowl/features/grammar/presentation/layout/grammar_base_layout.dart';
-import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/features/grammar/domain/entities/grammar_quest.dart';
 import 'package:vowl/features/grammar/preposition_choice/presentation/widgets/preposition_choice_instruction.dart';
@@ -31,50 +28,64 @@ class PrepositionChoiceScreen extends StatefulWidget {
       _PrepositionChoiceScreenState();
 }
 
-class _PrepositionChoiceScreenState extends State<PrepositionChoiceScreen> {
-  final _hapticService = di.sl<HapticService>();
-  final _soundService = di.sl<SoundService>();
+class _PrepositionChoiceScreenState extends State<PrepositionChoiceScreen> with GrammarGameScreenMixin {
+  @override
+  GameSubtype get gameType => widget.gameType;
 
+  @override
+  int get level => widget.level;
+
+  @override
+  String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
+
+    
   final ValueNotifier<List<Offset>> _points = ValueNotifier([]);
   final ValueNotifier<int> _targetNode = ValueNotifier(-1);
-  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
-  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
-  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
-  int _lastProcessedIndex = -1;
-  int? _lastLives;
-  final ValueNotifier<bool> _pendingJigsaw = ValueNotifier(false);
+            final ValueNotifier<bool> _pendingJigsaw = ValueNotifier(false);
   final ScrollController _scrollController = ScrollController();
 
   @override
   void dispose() {
     _points.dispose();
     _targetNode.dispose();
-    _isAnswered.dispose();
-    _isCorrect.dispose();
-    _showConfetti.dispose();
-    _pendingJigsaw.dispose();
+                _pendingJigsaw.dispose();
     _scrollController.dispose();
+    disposeGrammarGame();
+    disposeGrammarGame();
+    disposeGrammarGame();
     super.dispose();
   }
 
   @override
   void initState() {
     super.initState();
-    context.read<GrammarBloc>().add(
-      FetchGrammarQuests(gameType: widget.gameType, level: widget.level),
-    );
+    isAnsweredNotifier.addListener(() {
+      if (isAnsweredNotifier.value && mounted && _scrollController.hasClients) {
+        Future.delayed(const Duration(milliseconds: 100), () {
+          if (mounted && _scrollController.hasClients) {
+            _scrollController.animateTo(
+              _scrollController.position.maxScrollExtent,
+              duration: const Duration(milliseconds: 300),
+              curve: Curves.easeOut,
+            );
+          }
+        });
+      }
+    });
+
+    initGrammarGame();
   }
 
   void _onPathEnd(int nodeIndex, int correctIndex) {
-    if (_isAnswered.value || _pendingJigsaw.value) return;
+    if (isAnsweredNotifier.value || _pendingJigsaw.value) return;
 
     bool isCorrect = nodeIndex == correctIndex;
 
     if (isCorrect) {
-      _hapticService.success();
-      _soundService.playCorrect();
+      hapticService.success();
+      soundService.playCorrect();
       _targetNode.value = nodeIndex;
-      _isCorrect.value = true;
+      isCorrectNotifier.value = true;
       _pendingJigsaw.value = true;
 
       Future.delayed(const Duration(milliseconds: 150), () {
@@ -87,10 +98,10 @@ class _PrepositionChoiceScreenState extends State<PrepositionChoiceScreen> {
         }
       });
     } else {
-      _hapticService.error();
-      _soundService.playWrong();
-      _isAnswered.value = true;
-      _isCorrect.value = false;
+      hapticService.error();
+      soundService.playWrong();
+      isAnsweredNotifier.value = true;
+      isCorrectNotifier.value = false;
       _targetNode.value = nodeIndex;
       context.read<GrammarBloc>().add(const SubmitAnswer(false));
 
@@ -108,16 +119,16 @@ class _PrepositionChoiceScreenState extends State<PrepositionChoiceScreen> {
 
   void _submitFinalAnswer(bool correct) {
     _pendingJigsaw.value = false;
-    _isAnswered.value = true;
-    _isCorrect.value = correct;
+    isAnsweredNotifier.value = true;
+    isCorrectNotifier.value = correct;
 
     if (correct) {
-      _hapticService.success();
-      _soundService.playCorrect();
+      hapticService.success();
+      soundService.playCorrect();
       context.read<GrammarBloc>().add(const SubmitAnswer(true));
     } else {
-      _hapticService.error();
-      _soundService.playWrong();
+      hapticService.error();
+      soundService.playWrong();
       context.read<GrammarBloc>().add(const SubmitAnswer(false));
     }
 
@@ -192,45 +203,8 @@ class _PrepositionChoiceScreenState extends State<PrepositionChoiceScreen> {
     final theme = LevelThemeHelper.getTheme('grammar', level: widget.level);
 
     return BlocConsumer<GrammarBloc, GrammarState>(
-      listener: (context, state) {
-        if (state is GrammarLoaded) {
-          final isNewQuestion = state.currentIndex != _lastProcessedIndex;
-          final isRetry = _isAnswered.value && !state.answerStatus.isAnswered;
-          final livesRestored =
-              _lastLives != null && state.livesRemaining > _lastLives!;
-
-          if (isNewQuestion || isRetry || livesRestored) {
-            _lastProcessedIndex = state.currentIndex;
-            _isAnswered.value = false;
-            _isCorrect.value = null;
-            _targetNode.value = -1;
-            _pendingJigsaw.value = false;
-            _points.value = [];
-
-            if (_scrollController.hasClients && _scrollController.offset > 0) {
-              WidgetsBinding.instance.addPostFrameCallback((_) {
-                if (_scrollController.hasClients) {
-                  _scrollController.jumpTo(0);
-                }
-              });
-            }
-          } else if (state.answerStatus.isAnswered && !_isAnswered.value) {
-            _isAnswered.value = true;
-            _isCorrect.value = state.answerStatus.asBoolOrNull;
-          }
-          _lastLives = state.livesRemaining;
-        }
-        if (state is GrammarGameComplete) {
-          _showConfetti.value = true;
-          GameDialogHelper.showCompletion(
-            context,
-            xp: state.xpEarned,
-            coins: state.coinsEarned,
-            title: 'SPATIAL PRO!',
-            enableDoubleUp: true,
-          );
-        }
-      },
+      listenWhen: grammarListenWhen,
+      listener: onGrammarStateChanged,
       builder: (context, state) {
         final GrammarQuest? quest = (state is GrammarLoaded)
             ? state.currentQuest as GrammarQuest?
@@ -239,9 +213,9 @@ class _PrepositionChoiceScreenState extends State<PrepositionChoiceScreen> {
 
         return ListenableBuilder(
           listenable: Listenable.merge([
-            _isAnswered,
-            _isCorrect,
-            _showConfetti,
+            isAnsweredNotifier,
+            isCorrectNotifier,
+            showConfettiNotifier,
             _targetNode,
             _pendingJigsaw,
             _points,
@@ -266,10 +240,10 @@ class _PrepositionChoiceScreenState extends State<PrepositionChoiceScreen> {
               disablePadding: true,
               gameType: widget.gameType,
               level: widget.level,
-              isAnswered: _isAnswered.value,
-              isCorrect: _isCorrect.value,
+              isAnswered: isAnsweredNotifier.value,
+              isCorrect: isCorrectNotifier.value,
               isFinalFailure: state is GrammarLoaded && state.isFinalFailure,
-              showConfetti: _showConfetti.value,
+              showConfetti: showConfettiNotifier.value,
               useScrolling:
                   false, // Stack needs finite space to anchor to bottom
               onContinue: () =>
@@ -416,7 +390,7 @@ class _PrepositionChoiceScreenState extends State<PrepositionChoiceScreen> {
                                                       quest.sentenceWithBlank ??
                                                           quest.question ??
                                                           "____ sentence.",
-                                                      (_isAnswered.value ||
+                                                      (isAnsweredNotifier.value ||
                                                                   _pendingJigsaw
                                                                       .value) &&
                                                               _targetNode
@@ -438,7 +412,7 @@ class _PrepositionChoiceScreenState extends State<PrepositionChoiceScreen> {
                                             .slideY(begin: 0.2, end: 0),
 
                                         // Result Feedback
-                                        if (_isAnswered.value) ...[
+                                        if (isAnsweredNotifier.value) ...[
                                           SizedBox(
                                             height: isCompact ? 16.h : 24.h,
                                           ),
@@ -468,7 +442,7 @@ class _PrepositionChoiceScreenState extends State<PrepositionChoiceScreen> {
                                   ),
 
                                   if (_pendingJigsaw.value &&
-                                      !_isAnswered.value &&
+                                      !isAnsweredNotifier.value &&
                                       cleanTargetSentence.isNotEmpty)
                                     SliverToBoxAdapter(
                                       child: Padding(
@@ -526,7 +500,7 @@ class _PrepositionChoiceScreenState extends State<PrepositionChoiceScreen> {
       builder: (context) {
         return GestureDetector(
           onPanUpdate: (details) {
-            if (_isAnswered.value || _pendingJigsaw.value) return;
+            if (isAnsweredNotifier.value || _pendingJigsaw.value) return;
 
             final RenderBox box = context.findRenderObject() as RenderBox;
             final size = box.size;
@@ -548,7 +522,7 @@ class _PrepositionChoiceScreenState extends State<PrepositionChoiceScreen> {
           },
           onPanEnd: (_) => _points.value = [],
           onTapUp: (details) {
-            if (_isAnswered.value || _pendingJigsaw.value) return;
+            if (isAnsweredNotifier.value || _pendingJigsaw.value) return;
 
             final RenderBox box = context.findRenderObject() as RenderBox;
             final size = box.size;
@@ -572,8 +546,8 @@ class _PrepositionChoiceScreenState extends State<PrepositionChoiceScreen> {
               points: _points.value,
               options: options,
               primaryColor: primaryColor,
-              isAnswered: _isAnswered.value || _pendingJigsaw.value,
-              isCorrect: _isCorrect.value ?? false,
+              isAnswered: isAnsweredNotifier.value || _pendingJigsaw.value,
+              isCorrect: isCorrectNotifier.value ?? false,
               targetNode: _targetNode.value,
               isDark: isDark,
               isCompact: isCompact,
@@ -590,7 +564,7 @@ class _PrepositionChoiceScreenState extends State<PrepositionChoiceScreen> {
     bool isDark,
     bool isCompact,
   ) {
-    final bool correct = _isCorrect.value == true;
+    final bool correct = isCorrectNotifier.value == true;
     final displayColor = correct ? Colors.greenAccent : Colors.redAccent;
 
     return Padding(

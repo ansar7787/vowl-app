@@ -5,12 +5,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
-import 'package:vowl/core/utils/haptic_service.dart';
-import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/reading/presentation/bloc/reading_bloc.dart';
+import 'package:vowl/features/reading/presentation/mixins/reading_game_screen_mixin.dart';
 import 'package:vowl/features/reading/presentation/layout/reading_base_layout.dart';
-import 'package:vowl/core/utils/locale_service.dart';
-import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/features/reading/domain/entities/reading_quest.dart';
 import 'package:vowl/features/reading/reading_inference/presentation/widgets/reading_inference_instruction.dart';
 import 'package:vowl/features/reading/reading_inference/presentation/widgets/reading_inference_foggy_mirror.dart';
@@ -31,15 +28,20 @@ class ReadingInferenceScreen extends StatefulWidget {
   State<ReadingInferenceScreen> createState() => _ReadingInferenceScreenState();
 }
 
-class _ReadingInferenceScreenState extends State<ReadingInferenceScreen> {
-  final _hapticService = di.sl<HapticService>();
+class _ReadingInferenceScreenState extends State<ReadingInferenceScreen> with ReadingGameScreenMixin {
+  @override
+  GameSubtype get gameType => widget.gameType;
 
+  @override
+  int get level => widget.level;
+
+  @override
+  String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
+
+  
   final ValueNotifier<List<Offset>> _rubPoints = ValueNotifier([]);
   final ValueNotifier<double> _clarity = ValueNotifier(0.0);
-  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
-  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
-  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
-  final ValueNotifier<bool> _showEvidence = ValueNotifier(false);
+        final ValueNotifier<bool> _showEvidence = ValueNotifier(false);
   final ValueNotifier<bool> _evidenceFound = ValueNotifier(false);
   final ScrollController _scrollController = ScrollController();
 
@@ -47,38 +49,48 @@ class _ReadingInferenceScreenState extends State<ReadingInferenceScreen> {
   void dispose() {
     _rubPoints.dispose();
     _clarity.dispose();
-    _isAnswered.dispose();
-    _isCorrect.dispose();
-    _showConfetti.dispose();
-    _showEvidence.dispose();
+                _showEvidence.dispose();
     _evidenceFound.dispose();
     _scrollController.dispose();
+    disposeReadingGame();
+    disposeReadingGame();
+    disposeReadingGame();
     super.dispose();
   }
 
-  int _lastProcessedIndex = -1;
-  int? _lastLives;
-
+    
   @override
   void initState() {
     super.initState();
-    context.read<ReadingBloc>().add(
-      FetchReadingQuests(gameType: widget.gameType, level: widget.level),
-    );
+    isAnsweredNotifier.addListener(() {
+      if (isAnsweredNotifier.value && mounted && _scrollController.hasClients) {
+        Future.delayed(const Duration(milliseconds: 100), () {
+          if (mounted && _scrollController.hasClients) {
+            _scrollController.animateTo(
+              _scrollController.position.maxScrollExtent,
+              duration: const Duration(milliseconds: 300),
+              curve: Curves.easeOut,
+            );
+          }
+        });
+      }
+    });
+
+    initReadingGame();
   }
 
   void _onRub(Offset point) {
-    if (_isAnswered.value) return;
+    if (isAnsweredNotifier.value) return;
     _rubPoints.value = List.from(_rubPoints.value)..add(point);
     _clarity.value = (_rubPoints.value.length / 100).clamp(0.0, 1.0);
     if (_rubPoints.value.length % 5 == 0) {
-      _hapticService.selection();
+      hapticService.selection();
     }
   }
 
   void _submitSelfEvalAnswer(bool isCorrect, ReadingQuest quest) {
-    _isAnswered.value = true;
-    _isCorrect.value = isCorrect;
+    isAnsweredNotifier.value = true;
+    isCorrectNotifier.value = isCorrect;
 
     if (isCorrect) {
       if (quest.clueWords != null && quest.clueWords!.isNotEmpty) {
@@ -92,7 +104,7 @@ class _ReadingInferenceScreenState extends State<ReadingInferenceScreen> {
   }
 
   void _onEvidenceFound() {
-    _hapticService.success();
+    hapticService.success();
     _showEvidence.value = false;
     _evidenceFound.value = true;
     context.read<ReadingBloc>().add(const SubmitAnswer(true));
@@ -104,41 +116,8 @@ class _ReadingInferenceScreenState extends State<ReadingInferenceScreen> {
     final theme = LevelThemeHelper.getTheme('reading', level: widget.level);
 
     return BlocConsumer<ReadingBloc, ReadingState>(
-      listener: (context, state) {
-        if (state is ReadingLoaded) {
-          final isNewQuestion = state.currentIndex != _lastProcessedIndex;
-          final isRetry = _isAnswered.value && !state.answerStatus.isAnswered;
-          final livesChanged =
-              _lastLives != null && state.livesRemaining > _lastLives!;
-
-          if (isNewQuestion || isRetry || livesChanged) {
-            _lastProcessedIndex = state.currentIndex;
-            _isAnswered.value = false;
-            _isCorrect.value = null;
-            _rubPoints.value = [];
-            _clarity.value = 0.0;
-            _showEvidence.value = false;
-            _evidenceFound.value = false;
-          } else if (state.answerStatus.isAnswered && !_isAnswered.value) {
-            _isAnswered.value = true;
-            _isCorrect.value = state.answerStatus.asBoolOrNull;
-          }
-          _lastLives = state.livesRemaining;
-        }
-        if (state is ReadingGameComplete) {
-          _showConfetti.value = true;
-          GameDialogHelper.showCompletion(
-            context,
-            xp: state.xpEarned,
-            coins: state.coinsEarned,
-            title: context.tr(
-              'reading_games.hidden_layer_synced',
-              fallback: 'HIDDEN LAYER SYNCED!',
-            ),
-            enableDoubleUp: true,
-          );
-        }
-      },
+      listenWhen: readingListenWhen,
+      listener: onReadingStateChanged,
       builder: (context, state) {
         final ReadingQuest? quest = (state is ReadingLoaded)
             ? state.currentQuest as ReadingQuest?
@@ -146,9 +125,9 @@ class _ReadingInferenceScreenState extends State<ReadingInferenceScreen> {
 
         return ListenableBuilder(
           listenable: Listenable.merge([
-            _isAnswered,
-            _isCorrect,
-            _showConfetti,
+            isAnsweredNotifier,
+            isCorrectNotifier,
+            showConfettiNotifier,
             _rubPoints,
             _clarity,
             _showEvidence,
@@ -158,9 +137,9 @@ class _ReadingInferenceScreenState extends State<ReadingInferenceScreen> {
             return ReadingBaseLayout(
               gameType: widget.gameType,
               level: widget.level,
-              isAnswered: _isAnswered.value,
-              isCorrect: _isCorrect.value,
-              showConfetti: _showConfetti.value,
+              isAnswered: isAnsweredNotifier.value,
+              isCorrect: isCorrectNotifier.value,
+              showConfetti: showConfettiNotifier.value,
               onContinue: () =>
                   context.read<ReadingBloc>().add(const NextQuestion()),
               onHint: () =>
@@ -198,7 +177,7 @@ class _ReadingInferenceScreenState extends State<ReadingInferenceScreen> {
                                         color: theme.primaryColor,
                                         isDark: isDark,
                                         isAnswered:
-                                            _isAnswered.value ||
+                                            isAnsweredNotifier.value ||
                                             _showEvidence.value,
                                         rubPoints: _rubPoints.value,
                                         clarity: _clarity.value,
@@ -243,7 +222,7 @@ class _ReadingInferenceScreenState extends State<ReadingInferenceScreen> {
                                           child: AbsorbPointer(
                                             absorbing:
                                                 _clarity.value < 0.3 ||
-                                                _isAnswered.value,
+                                                isAnsweredNotifier.value,
                                             child: ReadingSelfEvaluationCard(
                                               correctAnswer:
                                                   quest.correctAnswer ?? "",
@@ -258,13 +237,13 @@ class _ReadingInferenceScreenState extends State<ReadingInferenceScreen> {
                                           ),
                                         ),
 
-                                      if (_isAnswered.value &&
+                                      if (isAnsweredNotifier.value &&
                                           (!_showEvidence.value ||
                                               _evidenceFound.value)) ...[
                                         SizedBox(height: 30.h),
                                         ReadingInferenceResult(
                                           quest: quest,
-                                          isCorrect: _isCorrect.value == true,
+                                          isCorrect: isCorrectNotifier.value == true,
                                           isDark: isDark,
                                         ),
                                       ],

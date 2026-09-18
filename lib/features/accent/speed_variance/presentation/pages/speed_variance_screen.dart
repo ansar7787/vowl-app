@@ -1,16 +1,11 @@
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
-import 'package:vowl/core/utils/haptic_service.dart';
-import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/accent/presentation/bloc/accent_bloc.dart';
+import 'package:vowl/features/accent/presentation/mixins/accent_game_screen_mixin.dart';
 import 'package:vowl/features/accent/presentation/layout/accent_base_layout.dart';
-import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
-import 'package:vowl/features/accent/domain/entities/accent_quest.dart';
 import 'package:vowl/features/accent/speed_variance/presentation/widgets/speed_variance_instruction.dart';
 import 'package:vowl/features/accent/speed_variance/presentation/widgets/speed_variance_prompt_card.dart';
 import 'package:vowl/features/accent/speed_variance/presentation/widgets/speed_variance_pulse_speaker.dart';
@@ -33,21 +28,22 @@ class SpeedVarianceScreen extends StatefulWidget {
   State<SpeedVarianceScreen> createState() => _SpeedVarianceScreenState();
 }
 
-class _SpeedVarianceScreenState extends State<SpeedVarianceScreen> {
-  final ScrollController _scrollController = ScrollController();
-  final _hapticService = di.sl<HapticService>();
-  final _soundService = di.sl<SoundService>();
+class _SpeedVarianceScreenState extends State<SpeedVarianceScreen> with AccentGameScreenMixin {
+  @override
+  GameSubtype get gameType => widget.gameType;
 
-  int _lastProcessedIndex = -1;
-  int? _lastLives;
-  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
-  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
-  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
-  final ValueNotifier<double> _dialRotation = ValueNotifier(0.0);
+  @override
+  int get level => widget.level;
+
+  @override
+  String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
+
+  final ScrollController _scrollController = ScrollController();
+    
+            final ValueNotifier<double> _dialRotation = ValueNotifier(0.0);
   final ValueNotifier<bool> _isDragging = ValueNotifier(false);
   final ValueNotifier<int?> _selectedIndex = ValueNotifier(null);
-  final ValueNotifier<bool> _isFirstStagePassed = ValueNotifier(false);
-
+  
   final ValueNotifier<bool> _isNaturalSpeed = ValueNotifier(true);
   final GlobalKey<SpeedChallengeTimerState> _timerKey =
       GlobalKey<SpeedChallengeTimerState>();
@@ -55,22 +51,33 @@ class _SpeedVarianceScreenState extends State<SpeedVarianceScreen> {
   @override
   void initState() {
     super.initState();
-    context.read<AccentBloc>().add(
-      FetchAccentQuests(gameType: widget.gameType, level: widget.level),
-    );
+    isAnsweredNotifier.addListener(() {
+      if (isAnsweredNotifier.value && mounted && _scrollController.hasClients) {
+        Future.delayed(const Duration(milliseconds: 100), () {
+          if (mounted && _scrollController.hasClients) {
+            _scrollController.animateTo(
+              _scrollController.position.maxScrollExtent,
+              duration: const Duration(milliseconds: 300),
+              curve: Curves.easeOut,
+            );
+          }
+        });
+      }
+    });
+
+    initAccentGame();
   }
 
   @override
   void dispose() {
     _scrollController.dispose();
-    _isAnswered.dispose();
-    _isCorrect.dispose();
-    _showConfetti.dispose();
-    _dialRotation.dispose();
+                _dialRotation.dispose();
     _isDragging.dispose();
     _selectedIndex.dispose();
-    _isFirstStagePassed.dispose();
-    _isNaturalSpeed.dispose();
+        _isNaturalSpeed.dispose();
+    disposeAccentGame();
+    disposeAccentGame();
+    disposeAccentGame();
     super.dispose();
   }
 
@@ -87,14 +94,14 @@ class _SpeedVarianceScreenState extends State<SpeedVarianceScreen> {
   }
 
   void _playTts(String text, {double? speed}) {
-    _hapticService.selection();
-    _soundService.playTts(text, speed: speed ?? 0.4);
+    hapticService.selection();
+    soundService.playTts(text, speed: speed ?? 0.4);
   }
 
   double _lastHapticRotation = 0.0;
 
   void _onDialRotate(DragUpdateDetails details, int correct) {
-    if (_isAnswered.value || _isFirstStagePassed.value) return;
+    if (isAnsweredNotifier.value || isFirstStagePassedNotifier.value) return;
 
     final double dx = details.delta.dx;
     final double dy = details.delta.dy;
@@ -112,7 +119,7 @@ class _SpeedVarianceScreenState extends State<SpeedVarianceScreen> {
     _dialRotation.value = (_dialRotation.value + totalRot).clamp(-1.0, 1.0);
 
     if ((_dialRotation.value - _lastHapticRotation).abs() > 0.15) {
-      _hapticService.selection();
+      hapticService.selection();
       _lastHapticRotation = _dialRotation.value;
     }
 
@@ -125,17 +132,17 @@ class _SpeedVarianceScreenState extends State<SpeedVarianceScreen> {
   }
 
   void _onDialRelease() {
-    if (_isAnswered.value || _isFirstStagePassed.value || !_isDragging.value) {
+    if (isAnsweredNotifier.value || isFirstStagePassedNotifier.value || !_isDragging.value) {
       return;
     }
     _isDragging.value = false;
-    if (!_isAnswered.value) {
+    if (!isAnsweredNotifier.value) {
       _dialRotation.value = 0.0;
     }
   }
 
   void _submitChoice(int index, int correct) {
-    if (_isAnswered.value || _isFirstStagePassed.value) return;
+    if (isAnsweredNotifier.value || isFirstStagePassedNotifier.value) return;
     _selectedIndex.value = index;
     _dialRotation.value = index == 0 ? -0.8 : 0.8;
     _isDragging.value = false;
@@ -143,16 +150,16 @@ class _SpeedVarianceScreenState extends State<SpeedVarianceScreen> {
     bool isCorrect = index == correct;
 
     if (isCorrect) {
-      _hapticService.success();
-      _soundService.playCorrect();
-      _isFirstStagePassed.value = true;
+      hapticService.success();
+      soundService.playCorrect();
+      isFirstStagePassedNotifier.value = true;
       _scrollToBottom();
       // Wait for Phase 2
     } else {
-      _hapticService.error();
-      _soundService.playWrong();
-      _isAnswered.value = true;
-      _isCorrect.value = false;
+      hapticService.error();
+      soundService.playWrong();
+      isAnsweredNotifier.value = true;
+      isCorrectNotifier.value = false;
       _timerKey.currentState?.stop();
       _scrollToBottom();
       context.read<AccentBloc>().add(const SubmitAnswer(false));
@@ -160,29 +167,29 @@ class _SpeedVarianceScreenState extends State<SpeedVarianceScreen> {
   }
 
   void _handleTimeExpired() {
-    if (_isAnswered.value || _isFirstStagePassed.value) return;
-    _isAnswered.value = true;
-    _isCorrect.value = false;
-    _soundService.playWrong();
+    if (isAnsweredNotifier.value || isFirstStagePassedNotifier.value) return;
+    isAnsweredNotifier.value = true;
+    isCorrectNotifier.value = false;
+    soundService.playWrong();
     _scrollToBottom();
     context.read<AccentBloc>().add(const SubmitAnswer(false));
   }
 
   void _submitVerbalEvaluation(bool nailedIt) {
-    if (_isAnswered.value) return;
+    if (isAnsweredNotifier.value) return;
 
-    _isAnswered.value = true;
-    _isCorrect.value = nailedIt;
+    isAnsweredNotifier.value = true;
+    isCorrectNotifier.value = nailedIt;
 
     if (nailedIt) {
-      _hapticService.success();
-      _soundService.playCorrect();
+      hapticService.success();
+      soundService.playCorrect();
       _scrollToBottom();
       context.read<AccentBloc>().add(const AccentSpeakConfirmed(5));
       context.read<AccentBloc>().add(const SubmitAnswer(true));
     } else {
-      _hapticService.error();
-      _soundService.playWrong();
+      hapticService.error();
+      soundService.playWrong();
       _scrollToBottom();
       context.read<AccentBloc>().add(const SubmitAnswer(false));
     }
@@ -194,46 +201,8 @@ class _SpeedVarianceScreenState extends State<SpeedVarianceScreen> {
     final theme = LevelThemeHelper.getTheme('accent', level: widget.level);
 
     return BlocConsumer<AccentBloc, AccentState>(
-      listener: (context, state) {
-        if (state is AccentLoaded) {
-          final currentLives = state.livesRemaining;
-          final livesRestored =
-              _lastLives != null && currentLives > _lastLives!;
-          if (state.currentIndex != _lastProcessedIndex ||
-              livesRestored ||
-              (!state.answerStatus.isAnswered && _isAnswered.value)) {
-            _lastProcessedIndex = state.currentIndex;
-            _isAnswered.value = false;
-            _isCorrect.value = null;
-            _dialRotation.value = 0.0;
-            _selectedIndex.value = null;
-            _isDragging.value = false;
-            _isFirstStagePassed.value = false;
-            _isNaturalSpeed.value = true;
-            if (!_isAnswered.value) _timerKey.currentState?.start();
-            // Proactively auto-play sound on question load
-            final quest = state.currentQuest as AccentQuest?;
-            if (quest != null && quest.textToSpeak != null) {
-              Future.delayed(500.milliseconds, () {
-                if (mounted) {
-                  _playTts(quest.textToSpeak!, speed: quest.targetSpeed);
-                }
-              });
-            }
-          }
-          _lastLives = state.livesRemaining;
-        }
-        if (state is AccentGameComplete) {
-          _showConfetti.value = true;
-          GameDialogHelper.showCompletion(
-            context,
-            xp: state.xpEarned,
-            coins: state.coinsEarned,
-            title: 'TEMPO ACE!',
-            enableDoubleUp: true,
-          );
-        }
-      },
+      listenWhen: accentListenWhen,
+      listener: onAccentStateChanged,
       builder: (context, state) {
         if (state is! AccentLoaded) {
           return AccentBaseLayout(
@@ -258,19 +227,19 @@ class _SpeedVarianceScreenState extends State<SpeedVarianceScreen> {
           child: AccentBaseLayout(
             gameType: widget.gameType,
             level: widget.level,
-            isAnswered: _isAnswered.value,
-            isCorrect: _isCorrect.value,
-            showConfetti: _showConfetti.value,
+            isAnswered: isAnsweredNotifier.value,
+            isCorrect: isCorrectNotifier.value,
+            showConfetti: showConfettiNotifier.value,
             onContinue: () =>
                 context.read<AccentBloc>().add(const NextQuestion()),
             onHint: () =>
                 context.read<AccentBloc>().add(const AccentHintUsed()),
             useScrolling: false,
             child: ValueListenableBuilder<bool>(
-              valueListenable: _isFirstStagePassed,
+              valueListenable: isFirstStagePassedNotifier,
               builder: (context, isFirstStagePassed, _) {
                 return ValueListenableBuilder<bool>(
-                  valueListenable: _isAnswered,
+                  valueListenable: isAnsweredNotifier,
                   builder: (context, isAnswered, _) {
                     return LayoutBuilder(
                       builder: (context, constraints) {

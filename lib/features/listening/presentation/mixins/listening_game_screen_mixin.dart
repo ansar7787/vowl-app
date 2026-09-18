@@ -58,6 +58,7 @@ mixin ListeningGameScreenMixin<T extends StatefulWidget> on State<T> {
   final ValueNotifier<bool> isAnsweredNotifier = ValueNotifier(false);
   final ValueNotifier<bool?> isCorrectNotifier = ValueNotifier(null);
   final ValueNotifier<bool> showConfettiNotifier = ValueNotifier(false);
+  final ValueNotifier<bool> isFirstStagePassedNotifier = ValueNotifier(false);
 
   // ── Change-tracking ────────────────────────────────────────────────────
 
@@ -82,11 +83,22 @@ mixin ListeningGameScreenMixin<T extends StatefulWidget> on State<T> {
     isAnsweredNotifier.dispose();
     isCorrectNotifier.dispose();
     showConfettiNotifier.dispose();
+    isFirstStagePassedNotifier.dispose();
   }
 
-  // ── BlocConsumer listener (shared across all screens) ──────────────────
+  // ── Core Bloc Listener Logic ──────────────────────────────────────────
 
-  /// Use this as the `listener` of your `BlocConsumer<ListeningBloc, ListeningState>`.
+  bool listeningListenWhen(ListeningState prev, ListeningState curr) {
+    if (prev is ListeningLoaded && curr is ListeningLoaded) {
+      return prev.currentIndex != curr.currentIndex ||
+          prev.livesRemaining != curr.livesRemaining ||
+          prev.answerStatus != curr.answerStatus ||
+          prev.quests != curr.quests;
+    }
+    return true;
+  }
+
+  /// The unified state listener for the `BlocConsumer`.
   void onListeningStateChanged(BuildContext context, ListeningState state) {
     if (state is ListeningLoaded) {
       final isNewQuestion = state.currentIndex != lastProcessedIndex;

@@ -6,13 +6,11 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
-import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/speaking/presentation/bloc/speaking_bloc.dart';
+import 'package:vowl/features/speaking/presentation/mixins/speaking_game_screen_mixin.dart';
 import 'package:vowl/features/speaking/presentation/layout/speaking_base_layout.dart';
 import 'package:vowl/core/utils/locale_service.dart';
-import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/game_mechanics/speaking/shadow_playback_compare.dart';
 import 'package:vowl/core/services/error_journal_collector.dart';
@@ -37,18 +35,19 @@ class DailyExpressionScreen extends StatefulWidget {
   State<DailyExpressionScreen> createState() => _DailyExpressionScreenState();
 }
 
-class _DailyExpressionScreenState extends State<DailyExpressionScreen>
-    with SingleTickerProviderStateMixin {
-  final _hapticService = di.sl<HapticService>();
-  final _soundService = di.sl<SoundService>();
+class _DailyExpressionScreenState extends State<DailyExpressionScreen>with SingleTickerProviderStateMixin, SpeakingGameScreenMixin {
+  @override
+  GameSubtype get gameType => widget.gameType;
 
+  @override
+  int get level => widget.level;
+
+  @override
+  String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
+
+    
   final ValueNotifier<double> _scratchProgress = ValueNotifier(0.0);
-  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
-  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
-  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
-  int _lastProcessedIndex = -1;
-  int? _lastLives;
-
+          
   late AnimationController _glowController;
   final ValueNotifier<double> _timeVal = ValueNotifier(0.0);
   String _targetExpression = "";
@@ -58,10 +57,22 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>
   @override
   void initState() {
     super.initState();
+    isAnsweredNotifier.addListener(() {
+      if (isAnsweredNotifier.value && mounted && _scrollController.hasClients) {
+        Future.delayed(const Duration(milliseconds: 100), () {
+          if (mounted && _scrollController.hasClients) {
+            _scrollController.animateTo(
+              _scrollController.position.maxScrollExtent,
+              duration: const Duration(milliseconds: 300),
+              curve: Curves.easeOut,
+            );
+          }
+        });
+      }
+    });
+
     _loadAccessibilitySettings();
-    context.read<SpeakingBloc>().add(
-      FetchSpeakingQuests(gameType: widget.gameType, level: widget.level),
-    );
+    initSpeakingGame();
 
     _glowController =
         AnimationController(vsync: this, duration: const Duration(seconds: 5))
@@ -85,11 +96,11 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>
   void dispose() {
     _glowController.dispose();
     _scratchProgress.dispose();
-    _isAnswered.dispose();
-    _isCorrect.dispose();
-    _showConfetti.dispose();
-    _timeVal.dispose();
+                _timeVal.dispose();
     _scrollController.dispose();
+    disposeSpeakingGame();
+    disposeSpeakingGame();
+    disposeSpeakingGame();
     super.dispose();
   }
 
@@ -110,25 +121,25 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>
     _scratchProgress.value += delta;
     if (_scratchProgress.value >= 0.85) {
       _scratchProgress.value = 1.0;
-      _hapticService.selection();
-      _soundService.playTts(_targetExpression);
+      hapticService.selection();
+      soundService.playTts(_targetExpression);
       _scrollToBottom();
     }
   }
 
   void _submitVerbalEvaluation(bool nailedIt) {
-    if (_isAnswered.value || _scratchProgress.value < 1.0) return;
+    if (isAnsweredNotifier.value || _scratchProgress.value < 1.0) return;
 
-    _isAnswered.value = true;
-    _isCorrect.value = nailedIt;
+    isAnsweredNotifier.value = true;
+    isCorrectNotifier.value = nailedIt;
 
     if (nailedIt) {
-      _hapticService.success();
-      _soundService.playCorrect();
+      hapticService.success();
+      soundService.playCorrect();
       context.read<SpeakingBloc>().add(const SubmitAnswer(true));
     } else {
-      _hapticService.error();
-      _soundService.playWrong();
+      hapticService.error();
+      soundService.playWrong();
 
       final authState = context.read<AuthBloc>().state;
       if (authState.status == AuthStatus.authenticated &&
@@ -154,37 +165,8 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>
     final mediaQuery = MediaQuery.of(context);
 
     return BlocConsumer<SpeakingBloc, SpeakingState>(
-      listener: (context, state) {
-        if (state is SpeakingLoaded) {
-          final livesChanged = (state.livesRemaining > (_lastLives ?? 3));
-          if (state.currentIndex != _lastProcessedIndex ||
-              livesChanged ||
-              (!state.answerStatus.isAnswered && _isAnswered.value)) {
-            _lastProcessedIndex = state.currentIndex;
-            _isAnswered.value = false;
-            _isCorrect.value = null;
-            _scratchProgress.value = 0.0;
-            // Removed Future.delayed auto-play to preserve scratch card mystery
-          } else if (state.answerStatus == AnswerStatus.incorrect) {
-            _isCorrect.value = false;
-            _isAnswered.value = true; // Always show feedback card on incorrect
-          }
-          _lastLives = state.livesRemaining;
-        }
-        if (state is SpeakingGameComplete) {
-          _showConfetti.value = true;
-          GameDialogHelper.showCompletion(
-            context,
-            xp: state.xpEarned,
-            coins: state.coinsEarned,
-            title: context.tr(
-              'speaking_games.expression_mastered',
-              fallback: 'EXPRESSION MASTERED!',
-            ),
-            enableDoubleUp: true,
-          );
-        }
-      },
+      listenWhen: speakingListenWhen,
+      listener: onSpeakingStateChanged,
       builder: (context, state) {
         final quest = (state is SpeakingLoaded) ? state.currentQuest : null;
         final hintUsed = (state is SpeakingLoaded) && state.hintUsed;
@@ -199,16 +181,16 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>
           ),
           child: ListenableBuilder(
             listenable: Listenable.merge([
-              _isAnswered,
-              _isCorrect,
-              _showConfetti,
+              isAnsweredNotifier,
+              isCorrectNotifier,
+              showConfettiNotifier,
             ]),
             builder: (context, _) {
               return SpeakingBaseLayout(
                 gameType: widget.gameType,
                 level: widget.level,
-                isAnswered: _isAnswered.value,
-                isCorrect: _isCorrect.value,
+                isAnswered: isAnsweredNotifier.value,
+                isCorrect: isCorrectNotifier.value,
                 disablePadding: true,
                 onContinue: () =>
                     context.read<SpeakingBloc>().add(const NextQuestion()),
@@ -311,7 +293,7 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>
                                                 .isRecording) {
                                               return;
                                             }
-                                            _soundService.playTts(
+                                            soundService.playTts(
                                               quest.expression ?? "",
                                             );
                                           },
@@ -337,7 +319,7 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>
                             ValueListenableBuilder<double>(
                               valueListenable: _scratchProgress,
                               builder: (context, scratchProgress, _) {
-                                if (!_isAnswered.value &&
+                                if (!isAnsweredNotifier.value &&
                                     scratchProgress >= 1.0) {
                                   return SliverToBoxAdapter(
                                     child: ShadowPlaybackCompare(

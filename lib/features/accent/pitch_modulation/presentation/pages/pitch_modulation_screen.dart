@@ -2,15 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
-import 'package:vowl/core/utils/haptic_service.dart';
-import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/accent/presentation/bloc/accent_bloc.dart';
+import 'package:vowl/features/accent/presentation/mixins/accent_game_screen_mixin.dart';
 import 'package:vowl/features/accent/presentation/layout/accent_base_layout.dart';
-import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/features/accent/domain/entities/accent_quest.dart';
 import 'package:vowl/features/accent/pitch_modulation/presentation/widgets/pitch_modulation_instruction.dart';
 import 'package:vowl/features/accent/pitch_modulation/presentation/widgets/pitch_modulation_prompt_card.dart';
@@ -79,14 +75,19 @@ class PitchModulationScreen extends StatefulWidget {
   State<PitchModulationScreen> createState() => _PitchModulationScreenState();
 }
 
-class _PitchModulationScreenState extends State<PitchModulationScreen> {
-  final ScrollController _scrollController = ScrollController();
-  final _hapticService = di.sl<HapticService>();
-  final _soundService = di.sl<SoundService>();
+class _PitchModulationScreenState extends State<PitchModulationScreen> with AccentGameScreenMixin {
+  @override
+  GameSubtype get gameType => widget.gameType;
 
-  int _lastProcessedIndex = -1;
-  int _lastLives = 3;
-  AccentQuest? _lastQuest;
+  @override
+  int get level => widget.level;
+
+  @override
+  String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
+
+  final ScrollController _scrollController = ScrollController();
+    
+      AccentQuest? _lastQuest;
 
   final ValueNotifier<PitchModulationState> _state = ValueNotifier(
     const PitchModulationState(),
@@ -96,15 +97,30 @@ class _PitchModulationScreenState extends State<PitchModulationScreen> {
   void dispose() {
     _scrollController.dispose();
     _state.dispose();
+    disposeAccentGame();
+    disposeAccentGame();
+    disposeAccentGame();
     super.dispose();
   }
 
   @override
   void initState() {
     super.initState();
-    context.read<AccentBloc>().add(
-      FetchAccentQuests(gameType: widget.gameType, level: widget.level),
-    );
+    isAnsweredNotifier.addListener(() {
+      if (isAnsweredNotifier.value && mounted && _scrollController.hasClients) {
+        Future.delayed(const Duration(milliseconds: 100), () {
+          if (mounted && _scrollController.hasClients) {
+            _scrollController.animateTo(
+              _scrollController.position.maxScrollExtent,
+              duration: const Duration(milliseconds: 300),
+              curve: Curves.easeOut,
+            );
+          }
+        });
+      }
+    });
+
+    initAccentGame();
   }
 
   void _scrollToBottom() {
@@ -120,8 +136,8 @@ class _PitchModulationScreenState extends State<PitchModulationScreen> {
   }
 
   void _playTts(String text) {
-    _hapticService.selection();
-    _soundService.playTts(text);
+    hapticService.selection();
+    soundService.playTts(text);
   }
 
   void _onDialRotate(DragUpdateDetails details, int correct) {
@@ -163,8 +179,8 @@ class _PitchModulationScreenState extends State<PitchModulationScreen> {
     bool isCorrect = index == correct;
 
     if (isCorrect) {
-      _hapticService.success();
-      _soundService.playCorrect();
+      hapticService.success();
+      soundService.playCorrect();
       _state.value = state.copyWith(
         selectedIndex: index,
         dialRotation: index == 0 ? -0.8 : 0.8,
@@ -174,8 +190,8 @@ class _PitchModulationScreenState extends State<PitchModulationScreen> {
       _scrollToBottom();
       // Wait for Phase 2
     } else {
-      _hapticService.error();
-      _soundService.playWrong();
+      hapticService.error();
+      soundService.playWrong();
       _state.value = state.copyWith(
         selectedIndex: index,
         dialRotation: index == 0 ? -0.8 : 0.8,
@@ -194,13 +210,13 @@ class _PitchModulationScreenState extends State<PitchModulationScreen> {
     _state.value = state.copyWith(isAnswered: true, isCorrect: nailedIt);
 
     if (nailedIt) {
-      _hapticService.success();
-      _soundService.playCorrect();
+      hapticService.success();
+      soundService.playCorrect();
       context.read<AccentBloc>().add(const AccentSpeakConfirmed(5));
       context.read<AccentBloc>().add(SubmitAnswer(true));
     } else {
-      _hapticService.error();
-      _soundService.playWrong();
+      hapticService.error();
+      soundService.playWrong();
       context.read<AccentBloc>().add(SubmitAnswer(false));
     }
   }
@@ -211,41 +227,8 @@ class _PitchModulationScreenState extends State<PitchModulationScreen> {
     final theme = LevelThemeHelper.getTheme('accent', level: widget.level);
 
     return BlocConsumer<AccentBloc, AccentState>(
-      listener: (context, state) {
-        if (state is AccentLoaded) {
-          final livesChanged = (state.livesRemaining > _lastLives);
-          if (state.currentIndex != _lastProcessedIndex ||
-              livesChanged ||
-              (!state.answerStatus.isAnswered && _state.value.isAnswered)) {
-            _lastProcessedIndex = state.currentIndex;
-            _state.value = const PitchModulationState(); // Reset state entirely
-
-            // Proactively auto-play sound on question load
-            final quest = state.currentQuest as AccentQuest?;
-            if (quest != null) {
-              _lastQuest = quest;
-            }
-            if (quest != null && quest.textToSpeak != null) {
-              Future.delayed(500.milliseconds, () {
-                if (mounted) {
-                  _soundService.playTts(quest.textToSpeak!);
-                }
-              });
-            }
-          }
-          _lastLives = state.livesRemaining;
-        }
-        if (state is AccentGameComplete) {
-          _state.value = _state.value.copyWith(showConfetti: true);
-          GameDialogHelper.showCompletion(
-            context,
-            xp: state.xpEarned,
-            coins: state.coinsEarned,
-            title: 'TONAL EXPERT!',
-            enableDoubleUp: true,
-          );
-        }
-      },
+      listenWhen: accentListenWhen,
+      listener: onAccentStateChanged,
       builder: (context, state) {
         final AccentQuest? quest = (state is AccentLoaded)
             ? state.currentQuest as AccentQuest?
@@ -461,7 +444,7 @@ class _PitchModulationScreenState extends State<PitchModulationScreen> {
                                                           spokenMeaningsCount:
                                                               1,
                                                         );
-                                                    _soundService.playCorrect();
+                                                    soundService.playCorrect();
                                                   } else {
                                                     context.read<AccentBloc>().add(
                                                       const AccentSpeakConfirmed(

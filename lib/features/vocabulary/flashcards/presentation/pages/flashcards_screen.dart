@@ -11,6 +11,7 @@ import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
 import 'package:vowl/features/vocabulary/flashcards/presentation/widgets/flashcard_game_body.dart';
 import 'package:vowl/features/vocabulary/presentation/bloc/vocabulary_bloc.dart';
+import 'package:vowl/features/vocabulary/presentation/mixins/vocabulary_game_screen_mixin.dart';
 import 'package:vowl/features/vocabulary/presentation/layout/vocabulary_base_layout.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 
@@ -30,12 +31,20 @@ class FlashcardsScreen extends StatefulWidget {
   State<FlashcardsScreen> createState() => _FlashcardsScreenState();
 }
 
-class _FlashcardsScreenState extends State<FlashcardsScreen> {
+class _FlashcardsScreenState extends State<FlashcardsScreen> with VocabularyGameScreenMixin {
+  @override
+  GameSubtype get gameType => widget.gameType;
+
+  @override
+  int get level => widget.level;
+
+  @override
+  String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
+
   late final FlashcardController _controller;
   late ThemeResult _theme;
 
-  int _lastProcessedIndex = -1;
-  VocabularyQuest? _lastQuest;
+    VocabularyQuest? _lastQuest;
 
   @override
   void initState() {
@@ -47,9 +56,7 @@ class _FlashcardsScreenState extends State<FlashcardsScreen> {
         context.read<VocabularyBloc>().add(SubmitAnswer(mastered));
       },
     );
-    context.read<VocabularyBloc>().add(
-      FetchVocabularyQuests(gameType: widget.gameType, level: widget.level),
-    );
+    initVocabularyGame();
   }
 
   @override
@@ -62,6 +69,9 @@ class _FlashcardsScreenState extends State<FlashcardsScreen> {
   @override
   void dispose() {
     _controller.dispose();
+    disposeVocabularyGame();
+    disposeVocabularyGame();
+    disposeVocabularyGame();
     super.dispose();
   }
 
@@ -140,11 +150,11 @@ class _FlashcardsScreenState extends State<FlashcardsScreen> {
 
   void _onBlocState(BuildContext context, VocabularyState state) {
     if (state is VocabularyLoaded) {
-      final isNew = state.currentIndex != _lastProcessedIndex;
+      final isNew = state.currentIndex != lastProcessedIndex;
       final isRetry = !state.answerStatus.isAnswered && _controller.isAnswered;
       if (isNew || isRetry) {
         _lastQuest = state.currentQuestOrNull ?? _lastQuest;
-        _lastProcessedIndex = state.currentIndex;
+        lastProcessedIndex = state.currentIndex;
         _controller.reset(isRetry);
       }
     } else if (state is VocabularyGameComplete) {

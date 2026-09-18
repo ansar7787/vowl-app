@@ -4,12 +4,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
-import 'package:vowl/core/utils/haptic_service.dart';
-import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/grammar/presentation/bloc/grammar_bloc.dart';
+import 'package:vowl/features/grammar/presentation/mixins/grammar_game_screen_mixin.dart';
 import 'package:vowl/features/grammar/presentation/layout/grammar_base_layout.dart';
-import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/features/grammar/clause_connector/presentation/widgets/clause_connector_instruction.dart';
 import 'package:vowl/core/presentation/game_mechanics/typing/type_to_confirm_overlay.dart';
@@ -27,46 +24,60 @@ class ClauseConnectorScreen extends StatefulWidget {
   State<ClauseConnectorScreen> createState() => _ClauseConnectorScreenState();
 }
 
-class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
-  final _hapticService = di.sl<HapticService>();
-  final _soundService = di.sl<SoundService>();
+class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> with GrammarGameScreenMixin {
+  @override
+  GameSubtype get gameType => widget.gameType;
 
+  @override
+  int get level => widget.level;
+
+  @override
+  String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
+
+    
   final ValueNotifier<String?> _draggingConnector = ValueNotifier(null);
-  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
-  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
-  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
-  int _lastProcessedIndex = -1;
-  int? _lastLives;
-  final ValueNotifier<bool> _pendingTypeSubmit = ValueNotifier(false);
+            final ValueNotifier<bool> _pendingTypeSubmit = ValueNotifier(false);
   final ScrollController _scrollController = ScrollController();
 
   @override
   void dispose() {
     _draggingConnector.dispose();
-    _isAnswered.dispose();
-    _isCorrect.dispose();
-    _showConfetti.dispose();
-    _pendingTypeSubmit.dispose();
+                _pendingTypeSubmit.dispose();
     _scrollController.dispose();
+    disposeGrammarGame();
+    disposeGrammarGame();
+    disposeGrammarGame();
     super.dispose();
   }
 
   @override
   void initState() {
     super.initState();
-    context.read<GrammarBloc>().add(
-      FetchGrammarQuests(gameType: widget.gameType, level: widget.level),
-    );
+    isAnsweredNotifier.addListener(() {
+      if (isAnsweredNotifier.value && mounted && _scrollController.hasClients) {
+        Future.delayed(const Duration(milliseconds: 100), () {
+          if (mounted && _scrollController.hasClients) {
+            _scrollController.animateTo(
+              _scrollController.position.maxScrollExtent,
+              duration: const Duration(milliseconds: 300),
+              curve: Curves.easeOut,
+            );
+          }
+        });
+      }
+    });
+
+    initGrammarGame();
   }
 
   void _onSnap(String connector, int correctIndex, List<String> options) {
-    if (_isAnswered.value || _pendingTypeSubmit.value) return;
+    if (isAnsweredNotifier.value || _pendingTypeSubmit.value) return;
 
     bool isCorrect = connector == options[correctIndex];
 
     if (isCorrect) {
-      _hapticService.heavy();
-      _soundService.playCorrect();
+      hapticService.heavy();
+      soundService.playCorrect();
       _draggingConnector.value = connector;
       _pendingTypeSubmit.value = true;
       Future.delayed(const Duration(milliseconds: 100), () {
@@ -79,10 +90,10 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
         }
       });
     } else {
-      _hapticService.error();
-      _soundService.playWrong();
-      _isAnswered.value = true;
-      _isCorrect.value = false;
+      hapticService.error();
+      soundService.playWrong();
+      isAnsweredNotifier.value = true;
+      isCorrectNotifier.value = false;
       _draggingConnector.value = connector;
       context.read<GrammarBloc>().add(const SubmitAnswer(false));
     }
@@ -90,16 +101,16 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
 
   void _submitFinalAnswer(bool correct) {
     _pendingTypeSubmit.value = false;
-    _isAnswered.value = true;
-    _isCorrect.value = correct;
+    isAnsweredNotifier.value = true;
+    isCorrectNotifier.value = correct;
 
     if (correct) {
-      _hapticService.success();
-      _soundService.playCorrect();
+      hapticService.success();
+      soundService.playCorrect();
       context.read<GrammarBloc>().add(const SubmitAnswer(true));
     } else {
-      _hapticService.error();
-      _soundService.playWrong();
+      hapticService.error();
+      soundService.playWrong();
       context.read<GrammarBloc>().add(const SubmitAnswer(false));
     }
   }
@@ -110,36 +121,8 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
     final theme = LevelThemeHelper.getTheme('grammar', level: widget.level);
 
     return BlocConsumer<GrammarBloc, GrammarState>(
-      listener: (context, state) {
-        if (state is GrammarLoaded) {
-          final isNewQuestion = state.currentIndex != _lastProcessedIndex;
-          final isRetry = _isAnswered.value && !state.answerStatus.isAnswered;
-          final livesRestored =
-              _lastLives != null && state.livesRemaining > _lastLives!;
-
-          if (isNewQuestion || isRetry || livesRestored) {
-            _lastProcessedIndex = state.currentIndex;
-            _isAnswered.value = false;
-            _isCorrect.value = null;
-            _pendingTypeSubmit.value = false;
-            _draggingConnector.value = null;
-          } else if (state.answerStatus.isAnswered && !_isAnswered.value) {
-            _isAnswered.value = true;
-            _isCorrect.value = state.answerStatus.asBoolOrNull;
-          }
-          _lastLives = state.livesRemaining;
-        }
-        if (state is GrammarGameComplete) {
-          _showConfetti.value = true;
-          GameDialogHelper.showCompletion(
-            context,
-            xp: state.xpEarned,
-            coins: state.coinsEarned,
-            title: 'BRIDGE BUILDER!',
-            enableDoubleUp: true,
-          );
-        }
-      },
+      listenWhen: grammarListenWhen,
+      listener: onGrammarStateChanged,
       builder: (context, state) {
         final quest = (state is GrammarLoaded) ? state.currentQuest : null;
         final parts = (quest?.question ?? "Clause A ____ Clause B").split(
@@ -175,9 +158,9 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
 
         return ListenableBuilder(
           listenable: Listenable.merge([
-            _isAnswered,
-            _isCorrect,
-            _showConfetti,
+            isAnsweredNotifier,
+            isCorrectNotifier,
+            showConfettiNotifier,
             _pendingTypeSubmit,
             _draggingConnector,
           ]),
@@ -186,10 +169,10 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
               disablePadding: true,
               gameType: widget.gameType,
               level: widget.level,
-              isAnswered: _isAnswered.value,
-              isCorrect: _isCorrect.value,
+              isAnswered: isAnsweredNotifier.value,
+              isCorrect: isCorrectNotifier.value,
               isFinalFailure: state is GrammarLoaded && state.isFinalFailure,
-              showConfetti: _showConfetti.value,
+              showConfetti: showConfettiNotifier.value,
               useScrolling: false, // Stack layout
               onContinue: () =>
                   context.read<GrammarBloc>().add(const NextQuestion()),
@@ -281,7 +264,7 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
                                             constraints.maxHeight < 580,
                                           ).animate().fadeIn(delay: 300.ms),
                                           SizedBox(height: 48.h),
-                                          if (!_isAnswered.value &&
+                                          if (!isAnsweredNotifier.value &&
                                               !_pendingTypeSubmit.value)
                                             _buildConnectorPalette(
                                               options,
@@ -295,7 +278,7 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
                                     ),
                                   ),
                                   if (_pendingTypeSubmit.value &&
-                                      !_isAnswered.value &&
+                                      !isAnsweredNotifier.value &&
                                       cleanTargetSentence.isNotEmpty)
                                     SliverToBoxAdapter(
                                       child: TypeToConfirmOverlay(
@@ -348,13 +331,13 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
   ) {
     return DragTarget<String>(
       onWillAcceptWithDetails: (details) =>
-          !_isAnswered.value && !_pendingTypeSubmit.value,
+          !isAnsweredNotifier.value && !_pendingTypeSubmit.value,
       onAcceptWithDetails: (details) =>
           _onSnap(details.data, quest?.correctAnswerIndex ?? 0, options),
       builder: (context, candidateData, rejectedData) {
         final isHighlight = candidateData.isNotEmpty;
-        final portColor = (_isAnswered.value || _pendingTypeSubmit.value)
-            ? (_isCorrect.value != false
+        final portColor = (isAnsweredNotifier.value || _pendingTypeSubmit.value)
+            ? (isCorrectNotifier.value != false
                   ? Colors.greenAccent
                   : Colors.redAccent)
             : (isHighlight
@@ -370,12 +353,12 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
             border: Border.all(
               color: portColor.withValues(alpha: 0.4),
               width: 2,
-              style: (_isAnswered.value || _pendingTypeSubmit.value)
+              style: (isAnsweredNotifier.value || _pendingTypeSubmit.value)
                   ? BorderStyle.none
                   : BorderStyle.solid,
             ),
             boxShadow: [
-              if (isHighlight || _isAnswered.value || _pendingTypeSubmit.value)
+              if (isHighlight || isAnsweredNotifier.value || _pendingTypeSubmit.value)
                 BoxShadow(
                   color: portColor.withValues(alpha: 0.2),
                   blurRadius: 20,
@@ -384,13 +367,13 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
             ],
           ),
           child: Center(
-            child: (_isAnswered.value || _pendingTypeSubmit.value)
+            child: (isAnsweredNotifier.value || _pendingTypeSubmit.value)
                 ? _buildConnector(
                     _draggingConnector.value ?? "---",
                     primaryColor,
                     isDark,
                     isCompact,
-                    isCorrect: _isCorrect.value != false,
+                    isCorrect: isCorrectNotifier.value != false,
                   ).animate().scale(duration: 400.ms, curve: Curves.elasticOut)
                 : Column(
                     mainAxisAlignment: MainAxisAlignment.center,

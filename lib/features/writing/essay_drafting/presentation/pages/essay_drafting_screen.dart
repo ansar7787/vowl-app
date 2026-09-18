@@ -4,13 +4,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
-import 'package:vowl/core/utils/haptic_service.dart';
-import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/writing/presentation/bloc/writing_bloc.dart';
+import 'package:vowl/features/writing/presentation/mixins/writing_game_screen_mixin.dart';
 import 'package:vowl/features/writing/presentation/bloc/writing_event.dart';
 import 'package:vowl/features/writing/presentation/bloc/writing_state.dart';
 import 'package:vowl/features/writing/presentation/layout/writing_base_layout.dart';
-import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/writing/domain/entities/writing_quest.dart';
 import 'package:vowl/features/writing/essay_drafting/presentation/widgets/essay_drafting_instruction.dart';
@@ -32,15 +30,22 @@ class EssayDraftingScreen extends StatefulWidget {
   State<EssayDraftingScreen> createState() => _EssayDraftingScreenState();
 }
 
-class _EssayDraftingScreenState extends State<EssayDraftingScreen> {
-  final _hapticService = di.sl<HapticService>();
+class _EssayDraftingScreenState extends State<EssayDraftingScreen> with WritingGameScreenMixin {
+  @override
+  GameSubtype get gameType => widget.gameType;
 
+  @override
+  int get level => widget.level;
+
+  @override
+  String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
+
+  
   final ValueNotifier<Map<String, String?>> _blueprintSlots = ValueNotifier({});
   WritingQuest? _lastQuest;
   final ValueNotifier<List<String>> _shuffledOptions = ValueNotifier([]);
 
-  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
-  final ValueNotifier<bool> _pendingSubmit = ValueNotifier(false);
+    final ValueNotifier<bool> _pendingSubmit = ValueNotifier(false);
 
   late final ScrollController _scrollController;
 
@@ -49,24 +54,38 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen> {
     _scrollController.dispose();
     _blueprintSlots.dispose();
     _shuffledOptions.dispose();
-    _showConfetti.dispose();
-    _pendingSubmit.dispose();
+        _pendingSubmit.dispose();
+    disposeWritingGame();
+    disposeWritingGame();
+    disposeWritingGame();
     super.dispose();
   }
 
   @override
   void initState() {
     super.initState();
+    isAnsweredNotifier.addListener(() {
+      if (isAnsweredNotifier.value && mounted && _scrollController.hasClients) {
+        Future.delayed(const Duration(milliseconds: 100), () {
+          if (mounted && _scrollController.hasClients) {
+            _scrollController.animateTo(
+              _scrollController.position.maxScrollExtent,
+              duration: const Duration(milliseconds: 300),
+              curve: Curves.easeOut,
+            );
+          }
+        });
+      }
+    });
+
     _scrollController = ScrollController();
-    context.read<WritingBloc>().add(
-      FetchWritingQuests(gameType: widget.gameType, level: widget.level),
-    );
+    initWritingGame();
   }
 
   void _onSlot(String slotKey, String data, bool isAnswered) {
     if (isAnswered) return;
 
-    _hapticService.success();
+    hapticService.success();
     final newSlots = Map<String, String?>.from(_blueprintSlots.value);
     newSlots.forEach((key, val) {
       if (val == data) {
@@ -79,7 +98,7 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen> {
 
   void _clearSlot(String slotKey, bool isAnswered) {
     if (isAnswered || _blueprintSlots.value[slotKey] == null) return;
-    _hapticService.selection();
+    hapticService.selection();
     final newSlots = Map<String, String?>.from(_blueprintSlots.value);
     newSlots[slotKey] = null;
     _blueprintSlots.value = newSlots;
@@ -98,7 +117,7 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen> {
     if (state is! WritingLoaded) return;
 
     if (!nailedTyping) {
-      _hapticService.error();
+      hapticService.error();
       context.read<WritingBloc>().add(const SubmitAnswer(false));
       return;
     }
@@ -150,29 +169,7 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen> {
       listenWhen: (prev, curr) =>
           (curr is WritingGameComplete && prev is! WritingGameComplete) ||
           (curr is WritingLoaded && !curr.answerStatus.isAnswered),
-      listener: (context, state) {
-        if (state is WritingLoaded && !state.answerStatus.isAnswered) {
-          final newSlots = <String, String?>{};
-          final quest = state.currentQuest;
-          for (var point in (quest.requiredPoints ?? [])) {
-            newSlots[point] = null;
-          }
-          _blueprintSlots.value = newSlots;
-          _pendingSubmit.value = false;
-          _shuffledOptions.value = List<String>.from(quest.options ?? [])
-            ..shuffle();
-        }
-        if (state is WritingGameComplete) {
-          _showConfetti.value = true;
-          GameDialogHelper.showCompletion(
-            context,
-            xp: state.xpEarned,
-            coins: state.coinsEarned,
-            title: 'ESSAY ARCHITECT!',
-            enableDoubleUp: true,
-          );
-        }
-      },
+      listener: onWritingStateChanged,
       builder: (context, state) {
         final isLoaded = state is WritingLoaded;
         final WritingQuest? quest = isLoaded
@@ -199,7 +196,7 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen> {
           isAnswered: isAnswered,
           isCorrect: isCorrect,
           isFinalFailure: isFinalFailure,
-          showConfetti: _showConfetti.value,
+          showConfetti: showConfettiNotifier.value,
           useScrolling: false,
           disablePadding: true,
           onContinue: () =>
@@ -208,7 +205,7 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen> {
               context.read<WritingBloc>().add(const WritingHintUsed()),
           child: ListenableBuilder(
             listenable: Listenable.merge([
-              _showConfetti,
+              showConfettiNotifier,
               _blueprintSlots,
               _shuffledOptions,
               _pendingSubmit,

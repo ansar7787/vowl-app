@@ -3,13 +3,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
-import 'package:vowl/core/utils/haptic_service.dart';
-import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/writing/presentation/bloc/writing_bloc.dart';
+import 'package:vowl/features/writing/presentation/mixins/writing_game_screen_mixin.dart';
 import 'package:vowl/features/writing/presentation/bloc/writing_event.dart';
 import 'package:vowl/features/writing/presentation/bloc/writing_state.dart';
 import 'package:vowl/features/writing/presentation/layout/writing_base_layout.dart';
-import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:vowl/features/writing/complete_sentence/presentation/widgets/complete_sentence_instruction.dart';
@@ -33,15 +31,22 @@ class CompleteSentenceScreen extends StatefulWidget {
   State<CompleteSentenceScreen> createState() => _CompleteSentenceScreenState();
 }
 
-class _CompleteSentenceScreenState extends State<CompleteSentenceScreen> {
-  final _hapticService = di.sl<HapticService>();
+class _CompleteSentenceScreenState extends State<CompleteSentenceScreen> with WritingGameScreenMixin {
+  @override
+  GameSubtype get gameType => widget.gameType;
 
+  @override
+  int get level => widget.level;
+
+  @override
+  String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
+
+  
   // PERF FIX: theme cached â€” not recomputed on every build().
   late dynamic _theme;
 
   final ValueNotifier<String?> _selectedProjectile = ValueNotifier(null);
-  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
-  final ValueNotifier<bool> _showAnagram = ValueNotifier(false);
+    final ValueNotifier<bool> _showAnagram = ValueNotifier(false);
 
   late final ScrollController _scrollController;
 
@@ -50,11 +55,23 @@ class _CompleteSentenceScreenState extends State<CompleteSentenceScreen> {
   @override
   void initState() {
     super.initState();
+    isAnsweredNotifier.addListener(() {
+      if (isAnsweredNotifier.value && mounted && _scrollController.hasClients) {
+        Future.delayed(const Duration(milliseconds: 100), () {
+          if (mounted && _scrollController.hasClients) {
+            _scrollController.animateTo(
+              _scrollController.position.maxScrollExtent,
+              duration: const Duration(milliseconds: 300),
+              curve: Curves.easeOut,
+            );
+          }
+        });
+      }
+    });
+
     _scrollController = ScrollController();
     _theme = LevelThemeHelper.getTheme('writing', level: widget.level);
-    context.read<WritingBloc>().add(
-      FetchWritingQuests(gameType: widget.gameType, level: widget.level),
-    );
+    initWritingGame();
   }
 
   @override
@@ -69,8 +86,10 @@ class _CompleteSentenceScreenState extends State<CompleteSentenceScreen> {
   void dispose() {
     _scrollController.dispose();
     _selectedProjectile.dispose();
-    _showConfetti.dispose();
-    _showAnagram.dispose();
+        _showAnagram.dispose();
+    disposeWritingGame();
+    disposeWritingGame();
+    disposeWritingGame();
     super.dispose();
   }
 
@@ -101,11 +120,11 @@ class _CompleteSentenceScreenState extends State<CompleteSentenceScreen> {
 
     // We let the BLoC handle all state now! No local timers hiding the continue button!
     if (isCorrect) {
-      _hapticService.success();
+      hapticService.success();
       _showAnagram.value = true;
       _scrollToBottom();
     } else {
-      _hapticService.error();
+      hapticService.error();
       context.read<WritingBloc>().add(const SubmitAnswer(false));
     }
   }
@@ -133,33 +152,7 @@ class _CompleteSentenceScreenState extends State<CompleteSentenceScreen> {
           (curr is WritingGameComplete && prev is! WritingGameComplete) ||
           (curr is WritingGameOver && prev is! WritingGameOver) ||
           (curr is WritingLoaded && !curr.answerStatus.isAnswered),
-      listener: (context, state) {
-        if (state is WritingLoaded && !state.answerStatus.isAnswered) {
-          // New question loaded or retry triggered â€” clear the selected option.
-          _selectedProjectile.value = null;
-          _showAnagram.value = false;
-        }
-        if (state is WritingGameComplete) {
-          _showConfetti.value = true;
-          GameDialogHelper.showCompletion(
-            context,
-            xp: state.xpEarned,
-            coins: state.coinsEarned,
-            title: 'COMPLETION MASTER!',
-            enableDoubleUp: true,
-          );
-        }
-
-      },
-      // PERF FIX: only rebuild when quest changes, not on hint/wrong-count updates.
-      buildWhen: (prev, curr) =>
-          prev.runtimeType != curr.runtimeType ||
-          (prev is WritingLoaded &&
-              curr is WritingLoaded &&
-              prev.currentIndex != curr.currentIndex) ||
-          (prev is WritingLoaded &&
-              curr is WritingLoaded &&
-              prev.answerStatus != curr.answerStatus),
+      listener: onWritingStateChanged,
       builder: (context, state) {
         final isLoaded = state is WritingLoaded;
         if (isLoaded) {
@@ -182,7 +175,7 @@ class _CompleteSentenceScreenState extends State<CompleteSentenceScreen> {
           isAnswered: isAnswered,
           isCorrect: isCorrect,
           isFinalFailure: isFinalFailure,
-          showConfetti: _showConfetti.value,
+          showConfetti: showConfettiNotifier.value,
           useScrolling: false,
           disablePadding: true,
           onContinue: () =>
@@ -192,7 +185,7 @@ class _CompleteSentenceScreenState extends State<CompleteSentenceScreen> {
           onHint: () {},
           child: ListenableBuilder(
             listenable: Listenable.merge([
-              _showConfetti,
+              showConfettiNotifier,
               _selectedProjectile,
               _showAnagram,
             ]),

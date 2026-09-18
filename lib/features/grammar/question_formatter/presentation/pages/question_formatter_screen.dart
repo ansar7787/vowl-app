@@ -5,12 +5,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/features/grammar/domain/entities/grammar_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
-import 'package:vowl/core/utils/haptic_service.dart';
-import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/grammar/presentation/bloc/grammar_bloc.dart';
+import 'package:vowl/features/grammar/presentation/mixins/grammar_game_screen_mixin.dart';
 import 'package:vowl/features/grammar/presentation/layout/grammar_base_layout.dart';
-import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/grammar/question_formatter/presentation/widgets/question_formatter_instruction.dart';
@@ -32,19 +29,20 @@ class QuestionFormatterScreen extends StatefulWidget {
       _QuestionFormatterScreenState();
 }
 
-class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>
-    with TickerProviderStateMixin {
-  final _hapticService = di.sl<HapticService>();
-  final _soundService = di.sl<SoundService>();
+class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>with TickerProviderStateMixin, GrammarGameScreenMixin {
+  @override
+  GameSubtype get gameType => widget.gameType;
 
+  @override
+  int get level => widget.level;
+
+  @override
+  String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
+
+    
   final ValueNotifier<double> _crankRotation = ValueNotifier(0.0);
   final ValueNotifier<bool> _isCrankComplete = ValueNotifier(false);
-  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
-  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
-  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
-  int _lastProcessedIndex = -1;
-  int? _lastLives;
-  final ValueNotifier<bool> _pendingJigsaw = ValueNotifier(false);
+            final ValueNotifier<bool> _pendingJigsaw = ValueNotifier(false);
   final ValueNotifier<String?> _selectedOptionText = ValueNotifier(null);
   final ScrollController _scrollController = ScrollController();
 
@@ -54,23 +52,35 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>
     _pendingJigsaw.removeListener(_onStateChangeAutoScroll);
     _crankRotation.dispose();
     _isCrankComplete.dispose();
-    _isAnswered.dispose();
-    _isCorrect.dispose();
-    _showConfetti.dispose();
-    _pendingJigsaw.dispose();
+                _pendingJigsaw.dispose();
     _selectedOptionText.dispose();
     _scrollController.dispose();
+    disposeGrammarGame();
+    disposeGrammarGame();
+    disposeGrammarGame();
     super.dispose();
   }
 
   @override
   void initState() {
     super.initState();
+    isAnsweredNotifier.addListener(() {
+      if (isAnsweredNotifier.value && mounted && _scrollController.hasClients) {
+        Future.delayed(const Duration(milliseconds: 100), () {
+          if (mounted && _scrollController.hasClients) {
+            _scrollController.animateTo(
+              _scrollController.position.maxScrollExtent,
+              duration: const Duration(milliseconds: 300),
+              curve: Curves.easeOut,
+            );
+          }
+        });
+      }
+    });
+
     _isCrankComplete.addListener(_onStateChangeAutoScroll);
     _pendingJigsaw.addListener(_onStateChangeAutoScroll);
-    context.read<GrammarBloc>().add(
-      FetchGrammarQuests(gameType: widget.gameType, level: widget.level),
-    );
+    initGrammarGame();
   }
 
   void _onStateChangeAutoScroll() {
@@ -88,10 +98,10 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>
   }
 
   void _autoSpin() {
-    if (_isAnswered.value || _isCrankComplete.value || _pendingJigsaw.value) {
+    if (isAnsweredNotifier.value || _isCrankComplete.value || _pendingJigsaw.value) {
       return;
     }
-    _hapticService.success();
+    hapticService.success();
     final controller = AnimationController(
       vsync: this,
       duration: const Duration(milliseconds: 1000),
@@ -114,12 +124,12 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>
   }
 
   void _onCrankUpdate(double delta) {
-    if (_isAnswered.value || _pendingJigsaw.value || _isCrankComplete.value) {
+    if (isAnsweredNotifier.value || _pendingJigsaw.value || _isCrankComplete.value) {
       return;
     }
     _crankRotation.value += delta.abs() * 0.02;
     if ((_crankRotation.value * 57.29).abs().toInt() % 10 == 0) {
-      _hapticService.selection();
+      hapticService.selection();
     }
     if (_crankRotation.value.abs() >= 6.28) {
       _isCrankComplete.value = true;
@@ -127,19 +137,19 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>
   }
 
   void _onOptionSelect(int index, int correctIndex, String optionText) {
-    if (_isAnswered.value || _pendingJigsaw.value) return;
+    if (isAnsweredNotifier.value || _pendingJigsaw.value) return;
     bool isCorrect = index == correctIndex;
 
     if (isCorrect) {
-      _hapticService.success();
-      _soundService.playCorrect();
+      hapticService.success();
+      soundService.playCorrect();
       _selectedOptionText.value = optionText;
       _pendingJigsaw.value = true;
     } else {
-      _hapticService.error();
-      _soundService.playWrong();
-      _isAnswered.value = true;
-      _isCorrect.value = false;
+      hapticService.error();
+      soundService.playWrong();
+      isAnsweredNotifier.value = true;
+      isCorrectNotifier.value = false;
       _crankRotation.value = 0.0;
       _selectedOptionText.value = optionText;
       context.read<GrammarBloc>().add(const SubmitAnswer(false));
@@ -148,16 +158,16 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>
 
   void _submitFinalAnswer(bool correct) {
     _pendingJigsaw.value = false;
-    _isAnswered.value = true;
-    _isCorrect.value = correct;
+    isAnsweredNotifier.value = true;
+    isCorrectNotifier.value = correct;
 
     if (correct) {
-      _hapticService.success();
-      _soundService.playCorrect();
+      hapticService.success();
+      soundService.playCorrect();
       context.read<GrammarBloc>().add(const SubmitAnswer(true));
     } else {
-      _hapticService.error();
-      _soundService.playWrong();
+      hapticService.error();
+      soundService.playWrong();
       context.read<GrammarBloc>().add(const SubmitAnswer(false));
     }
   }
@@ -168,38 +178,8 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>
     final theme = LevelThemeHelper.getTheme('grammar', level: widget.level);
 
     return BlocConsumer<GrammarBloc, GrammarState>(
-      listener: (context, state) {
-        if (state is GrammarLoaded) {
-          final isNewQuestion = state.currentIndex != _lastProcessedIndex;
-          final isRetry = _isAnswered.value && !state.answerStatus.isAnswered;
-          final livesRestored =
-              _lastLives != null && state.livesRemaining > _lastLives!;
-
-          if (isNewQuestion || isRetry || livesRestored) {
-            _lastProcessedIndex = state.currentIndex;
-            _isAnswered.value = false;
-            _isCorrect.value = null;
-            _crankRotation.value = 0.0;
-            _isCrankComplete.value = false;
-            _pendingJigsaw.value = false;
-            _selectedOptionText.value = null;
-          } else if (state.answerStatus.isAnswered && !_isAnswered.value) {
-            _isAnswered.value = true;
-            _isCorrect.value = state.answerStatus.asBoolOrNull;
-          }
-          _lastLives = state.livesRemaining;
-        }
-        if (state is GrammarGameComplete) {
-          _showConfetti.value = true;
-          GameDialogHelper.showCompletion(
-            context,
-            xp: state.xpEarned,
-            coins: state.coinsEarned,
-            title: 'QUESTION MASTER!',
-            enableDoubleUp: true,
-          );
-        }
-      },
+      listenWhen: grammarListenWhen,
+      listener: onGrammarStateChanged,
       builder: (context, state) {
         final quest = (state is GrammarLoaded)
             ? state.currentQuest as GrammarQuest?
@@ -222,9 +202,9 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>
 
         return ListenableBuilder(
           listenable: Listenable.merge([
-            _isAnswered,
-            _isCorrect,
-            _showConfetti,
+            isAnsweredNotifier,
+            isCorrectNotifier,
+            showConfettiNotifier,
             _isCrankComplete,
             _pendingJigsaw,
             _selectedOptionText,
@@ -234,10 +214,10 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>
               disablePadding: true,
               gameType: widget.gameType,
               level: widget.level,
-              isAnswered: _isAnswered.value,
-              isCorrect: _isCorrect.value,
+              isAnswered: isAnsweredNotifier.value,
+              isCorrect: isCorrectNotifier.value,
               isFinalFailure: state is GrammarLoaded && state.isFinalFailure,
-              showConfetti: _showConfetti.value,
+              showConfetti: showConfettiNotifier.value,
               useScrolling: false, // Stack layout required for Jigsaw Overlay
               onContinue: () =>
                   context.read<GrammarBloc>().add(const NextQuestion()),
@@ -463,7 +443,7 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>
                                               // Game Mechanic Area
                                               Column(
                                                 children: [
-                                                  if (!_isAnswered.value &&
+                                                  if (!isAnsweredNotifier.value &&
                                                       !_pendingJigsaw.value &&
                                                       !_isCrankComplete.value)
                                                     ValueListenableBuilder<
@@ -481,7 +461,7 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>
                                                               crankRotation:
                                                                   rotation,
                                                               isAnswered:
-                                                                  _isAnswered
+                                                                  isAnsweredNotifier
                                                                       .value ||
                                                                   _pendingJigsaw
                                                                       .value,
@@ -495,7 +475,7 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>
                                                             );
                                                           },
                                                     )
-                                                  else if (!_isAnswered.value &&
+                                                  else if (!isAnsweredNotifier.value &&
                                                       !_pendingJigsaw.value)
                                                     _buildQuestionOptions(
                                                       options,
@@ -505,9 +485,9 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>
                                                       isDark,
                                                       isCompact,
                                                     )
-                                                  else if (_isAnswered.value)
+                                                  else if (isAnsweredNotifier.value)
                                                     _buildResult(
-                                                      _isCorrect.value == true
+                                                      isCorrectNotifier.value == true
                                                           ? cleanTargetSentence
                                                           : (_selectedOptionText
                                                                     .value ??
@@ -529,7 +509,7 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>
                                     ),
                                   ),
                                   if (_pendingJigsaw.value &&
-                                      !_isAnswered.value &&
+                                      !isAnsweredNotifier.value &&
                                       cleanTargetSentence.isNotEmpty)
                                     SliverToBoxAdapter(
                                       child: TypeToConfirmOverlay(
@@ -627,7 +607,7 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>
     bool isDark,
     bool isCompact,
   ) {
-    final bool correct = _isCorrect.value == true;
+    final bool correct = isCorrectNotifier.value == true;
     final displayColor = correct ? Colors.greenAccent : Colors.redAccent;
 
     return Padding(

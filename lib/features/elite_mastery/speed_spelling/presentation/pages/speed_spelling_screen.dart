@@ -7,14 +7,12 @@ import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
-import 'package:vowl/core/utils/haptic_service.dart';
-import 'package:vowl/core/utils/sound_service.dart';
-import 'package:vowl/core/utils/injection_container.dart' as di;
 import '../../../presentation/bloc/elite_mastery_bloc.dart';
 import '../../../presentation/layout/elite_base_layout.dart';
 import '../../../presentation/widgets/elite_hint_card.dart';
 import '../widgets/speed_spelling_input_field.dart';
 import '../widgets/speed_spelling_character_deck.dart';
+import 'package:vowl/features/elite_mastery/presentation/mixins/elite_mastery_game_screen_mixin.dart';
 
 class SpeedSpellingScreen extends StatefulWidget {
   final int level;
@@ -29,18 +27,21 @@ class SpeedSpellingScreen extends StatefulWidget {
   State<SpeedSpellingScreen> createState() => _SpeedSpellingScreenState();
 }
 
-class _SpeedSpellingScreenState extends State<SpeedSpellingScreen> {
-  final _hapticService = di.sl<HapticService>();
-  final _soundService = di.sl<SoundService>();
-  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
-  final ScrollController _scrollController = ScrollController();
+class _SpeedSpellingScreenState extends State<SpeedSpellingScreen> with EliteMasteryGameScreenMixin {
+  @override
+  GameSubtype get gameType => widget.gameType;
+
+  @override
+  int get level => widget.level;
+
+  @override
+  String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
+
+        final ScrollController _scrollController = ScrollController();
   final ValueNotifier<String> _currentInput = ValueNotifier("");
   final ValueNotifier<List<String>> _shuffledChars = ValueNotifier([]);
-  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
-  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
-  final ValueNotifier<int> _attempts = ValueNotifier(0);
+      final ValueNotifier<int> _attempts = ValueNotifier(0);
   final ValueNotifier<List<int>> _tapHistory = ValueNotifier([]);
-  String? _lastQuestId;
 
   // Below this available height, use tighter spacing. See the identical
   // constant in accent_shadowing_screen.dart / idiom_match_screen.dart /
@@ -51,26 +52,37 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen> {
   @override
   void initState() {
     super.initState();
-    context.read<EliteMasteryBloc>().add(
-      FetchEliteMasteryQuests(gameType: widget.gameType, level: widget.level),
-    );
+    isAnsweredNotifier.addListener(() {
+      if (isAnsweredNotifier.value && mounted && _scrollController.hasClients) {
+        Future.delayed(const Duration(milliseconds: 100), () {
+          if (mounted && _scrollController.hasClients) {
+            _scrollController.animateTo(
+              _scrollController.position.maxScrollExtent,
+              duration: const Duration(milliseconds: 300),
+              curve: Curves.easeOut,
+            );
+          }
+        });
+      }
+    });
+
+    initEliteMasteryGame();
   }
 
   @override
   void dispose() {
-    _showConfetti.dispose();
-    _currentInput.dispose();
+        _currentInput.dispose();
     _shuffledChars.dispose();
-    _isAnswered.dispose();
-    _isCorrect.dispose();
-    _attempts.dispose();
+            _attempts.dispose();
     _tapHistory.dispose();
     _scrollController.dispose();
+    disposeEliteMasteryGame();
+    disposeEliteMasteryGame();
     super.dispose();
   }
 
   void _onCharTap(String char, int index) {
-    if (_isAnswered.value || _shuffledChars.value[index] == "") return;
+    if (isAnsweredNotifier.value || _shuffledChars.value[index] == "") return;
 
     _currentInput.value += char;
 
@@ -82,11 +94,11 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen> {
     newHistory.add(index);
     _tapHistory.value = newHistory;
 
-    _hapticService.light();
+    hapticService.light();
   }
 
   void _onBackspace() {
-    if (_isAnswered.value || _tapHistory.value.isEmpty) return;
+    if (isAnsweredNotifier.value || _tapHistory.value.isEmpty) return;
 
     final newHistory = List<int>.from(_tapHistory.value);
     final lastIndex = newHistory.removeLast();
@@ -101,11 +113,11 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen> {
       _currentInput.value.length - 1,
     );
 
-    _hapticService.selection();
+    hapticService.selection();
   }
 
   void _onClear() {
-    if (_isAnswered.value) return;
+    if (isAnsweredNotifier.value) return;
     final state = context.read<EliteMasteryBloc>().state;
     if (state is EliteMasteryLoaded) {
       _currentInput.value = "";
@@ -113,11 +125,11 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen> {
       _shuffledChars.value = (state.currentQuest.word ?? '').split('')
         ..shuffle();
     }
-    _hapticService.selection();
+    hapticService.selection();
   }
 
   void _submit(String correctWord) {
-    if (_isAnswered.value) return;
+    if (isAnsweredNotifier.value) return;
     if (_currentInput.value.length != correctWord.length) return;
     final isCorrect =
         _currentInput.value.toLowerCase() == correctWord.toLowerCase();
@@ -125,17 +137,17 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen> {
     _attempts.value++;
 
     if (isCorrect) {
-      _hapticService.success();
-      _soundService.playCorrect();
-      _isAnswered.value = true;
-      _isCorrect.value = true;
+      hapticService.success();
+      soundService.playCorrect();
+      isAnsweredNotifier.value = true;
+      isCorrectNotifier.value = true;
       context.read<EliteMasteryBloc>().add(SubmitEliteAnswer(true));
     } else {
-      _hapticService.error();
-      _soundService.playWrong();
+      hapticService.error();
+      soundService.playWrong();
 
-      _isCorrect.value = false;
-      _isAnswered.value = true;
+      isCorrectNotifier.value = false;
+      isAnsweredNotifier.value = true;
       context.read<EliteMasteryBloc>().add(SubmitEliteAnswer(false));
     }
   }
@@ -152,71 +164,14 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen> {
     );
 
     return BlocConsumer<EliteMasteryBloc, EliteMasteryState>(
-      listener: (context, state) {
-        if (state is EliteMasteryGameComplete) {
-          _showConfetti.value = true;
-          GameDialogHelper.showCompletion(
-            context,
-            xp: state.xpEarned,
-            coins: state.coinsEarned,
-            title: context.tr(
-              'games.spelling_legend_title',
-              fallback: 'Spelling Legend',
-            ),
-            enableDoubleUp: true,
-          );
-        } else if (state is EliteMasteryLoaded) {
-          final quest = state.currentQuest;
-          if (_lastQuestId != quest.id) {
-            _lastQuestId = quest.id;
-            _isAnswered.value = false;
-            _isCorrect.value = null;
-            _attempts.value = 0;
-            _currentInput.value = "";
-            _tapHistory.value = [];
-            _shuffledChars.value = (quest.word ?? '').split('')..shuffle();
-          } else if (!state.answerStatus.isAnswered) {
-            _isAnswered.value = false;
-            _isCorrect.value = null;
-            _currentInput.value = "";
-            _tapHistory.value = [];
-            _shuffledChars.value = (quest.word ?? '').split('')..shuffle();
-          }
-          if (state.answerStatus == AnswerStatus.incorrect) {
-            _isCorrect.value = false;
-            if (state.isFinalFailure || state.livesRemaining <= 0) {
-              _isAnswered.value = true;
-            }
-          }
-          if (state.isHintVisible) {
-            _hapticService.selection();
-          }
-
-          if (state.isLetterRevealed &&
-              _currentInput.value.isEmpty &&
-              state.currentQuest.word != null) {
-            final word = state.currentQuest.word!;
-            final revealCount = word.length > 4 ? 2 : 1;
-            WidgetsBinding.instance.addPostFrameCallback((_) {
-              if (mounted && _currentInput.value.isEmpty) {
-                for (int i = 0; i < revealCount; i++) {
-                  final targetChar = word[i];
-                  final idx = _shuffledChars.value.indexOf(targetChar);
-                  if (idx != -1) {
-                    _onCharTap(targetChar, idx);
-                  }
-                }
-              }
-            });
-          }
-        }
-      },
+      listenWhen: eliteMasteryListenWhen,
+      listener: onEliteMasteryStateChanged,
       builder: (context, state) {
         return ListenableBuilder(
           listenable: Listenable.merge([
-            _isAnswered,
-            _isCorrect,
-            _showConfetti,
+            isAnsweredNotifier,
+            isCorrectNotifier,
+            showConfettiNotifier,
             _currentInput,
             _shuffledChars,
             _attempts,
@@ -226,17 +181,17 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen> {
             return EliteBaseLayout(
               gameType: widget.gameType,
               level: widget.level,
-              isAnswered: _isAnswered.value,
+              isAnswered: isAnsweredNotifier.value,
               state: state,
-              isCorrect: _isCorrect.value,
+              isCorrect: isCorrectNotifier.value,
               isFinalFailure:
                   state.livesRemaining <= 0 ||
                   (state is EliteMasteryLoaded && state.isFinalFailure),
-              showConfetti: _showConfetti.value,
+              showConfetti: showConfettiNotifier.value,
               useScrolling: false,
               onContinue: () {
-                _isAnswered.value = false;
-                _isCorrect.value = null;
+                isAnsweredNotifier.value = false;
+                isCorrectNotifier.value = null;
                 _currentInput.value = "";
                 _tapHistory.value = [];
                 _shuffledChars.value = [];
@@ -441,7 +396,7 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen> {
                                   ),
                                   SizedBox(height: 12.h),
                                 ],
-                                if (!_isAnswered.value)
+                                if (!isAnsweredNotifier.value)
                                   TweenAnimationBuilder<double>(
                                     key: ValueKey(quest.id),
                                     tween: Tween(begin: 30.0, end: 0.0),
@@ -501,8 +456,8 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen> {
                                   ),
                                 SpeedSpellingInputField(
                                   currentInput: _currentInput.value,
-                                  isAnswered: _isAnswered.value,
-                                  isCorrect: _isCorrect.value,
+                                  isAnswered: isAnsweredNotifier.value,
+                                  isCorrect: isCorrectNotifier.value,
                                   attempts: _attempts.value,
                                   isDark: isDark,
                                   primaryColor: theme.primaryColor,
@@ -526,7 +481,7 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen> {
                                       _onCharTap(char, index),
                                 ),
                                 SizedBox(height: isCompact ? 16.h : 32.h),
-                                if (!_isAnswered.value) ...[
+                                if (!isAnsweredNotifier.value) ...[
                                   Builder(
                                     builder: (context) {
                                       final canSubmit =
@@ -628,3 +583,4 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen> {
     );
   }
 }
+

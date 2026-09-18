@@ -5,13 +5,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
-import 'package:vowl/core/utils/haptic_service.dart';
-import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/writing/presentation/bloc/writing_bloc.dart';
+import 'package:vowl/features/writing/presentation/mixins/writing_game_screen_mixin.dart';
 import 'package:vowl/features/writing/presentation/bloc/writing_event.dart';
 import 'package:vowl/features/writing/presentation/bloc/writing_state.dart';
 import 'package:vowl/features/writing/presentation/layout/writing_base_layout.dart';
-import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/features/writing/domain/entities/writing_quest.dart';
@@ -35,9 +33,17 @@ class WritingEmailScreen extends StatefulWidget {
   State<WritingEmailScreen> createState() => _WritingEmailScreenState();
 }
 
-class _WritingEmailScreenState extends State<WritingEmailScreen> {
-  final _hapticService = di.sl<HapticService>();
+class _WritingEmailScreenState extends State<WritingEmailScreen> with WritingGameScreenMixin {
+  @override
+  GameSubtype get gameType => widget.gameType;
 
+  @override
+  int get level => widget.level;
+
+  @override
+  String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
+
+  
   final ValueNotifier<Map<String, String?>> _slots = ValueNotifier({
     'SUBJECT': null,
     'SALUTATION': null,
@@ -46,8 +52,7 @@ class _WritingEmailScreenState extends State<WritingEmailScreen> {
   });
 
   final ValueNotifier<List<String>> _shuffledOptions = ValueNotifier([]);
-  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
-  final ValueNotifier<bool> _showSpeakToConfirm = ValueNotifier(false);
+    final ValueNotifier<bool> _showSpeakToConfirm = ValueNotifier(false);
   WritingQuest? _lastQuest;
 
   late final ScrollController _scrollController;
@@ -57,24 +62,38 @@ class _WritingEmailScreenState extends State<WritingEmailScreen> {
     _scrollController.dispose();
     _slots.dispose();
     _shuffledOptions.dispose();
-    _showConfetti.dispose();
-    _showSpeakToConfirm.dispose();
+        _showSpeakToConfirm.dispose();
+    disposeWritingGame();
+    disposeWritingGame();
+    disposeWritingGame();
     super.dispose();
   }
 
   @override
   void initState() {
     super.initState();
+    isAnsweredNotifier.addListener(() {
+      if (isAnsweredNotifier.value && mounted && _scrollController.hasClients) {
+        Future.delayed(const Duration(milliseconds: 100), () {
+          if (mounted && _scrollController.hasClients) {
+            _scrollController.animateTo(
+              _scrollController.position.maxScrollExtent,
+              duration: const Duration(milliseconds: 300),
+              curve: Curves.easeOut,
+            );
+          }
+        });
+      }
+    });
+
     _scrollController = ScrollController();
-    context.read<WritingBloc>().add(
-      FetchWritingQuests(gameType: widget.gameType, level: widget.level),
-    );
+    initWritingGame();
   }
 
   void _onSlot(String slotKey, String data, bool isAnswered) {
     if (isAnswered) return;
 
-    _hapticService.success();
+    hapticService.success();
     final newSlots = Map<String, String?>.from(_slots.value);
     newSlots.forEach((key, val) {
       if (val == data) {
@@ -97,7 +116,7 @@ class _WritingEmailScreenState extends State<WritingEmailScreen> {
     }
 
     if (targetSlot != null) {
-      _hapticService.success();
+      hapticService.success();
       final newSlots = Map<String, String?>.from(_slots.value);
       newSlots.forEach((key, val) {
         if (val == data) {
@@ -107,13 +126,13 @@ class _WritingEmailScreenState extends State<WritingEmailScreen> {
       newSlots[targetSlot] = data;
       _slots.value = newSlots;
     } else {
-      _hapticService.error();
+      hapticService.error();
     }
   }
 
   void _clearSlot(String slotKey, bool isAnswered) {
     if (isAnswered || _slots.value[slotKey] == null) return;
-    _hapticService.selection();
+    hapticService.selection();
     final newSlots = Map<String, String?>.from(_slots.value);
     newSlots[slotKey] = null;
     _slots.value = newSlots;
@@ -145,10 +164,10 @@ class _WritingEmailScreenState extends State<WritingEmailScreen> {
         isSignOffCorrect;
 
     if (isCorrect) {
-      _hapticService.success();
+      hapticService.success();
       _showSpeakToConfirm.value = true;
     } else {
-      _hapticService.error();
+      hapticService.error();
       context.read<WritingBloc>().add(const SubmitAnswer(false));
     }
   }
@@ -168,27 +187,7 @@ class _WritingEmailScreenState extends State<WritingEmailScreen> {
           (curr is WritingGameComplete && prev is! WritingGameComplete) ||
           (curr is WritingGameOver && prev is! WritingGameOver) ||
           (curr is WritingLoaded && !curr.answerStatus.isAnswered),
-      listener: (context, state) {
-        if (state is WritingLoaded && !state.answerStatus.isAnswered) {
-          final newSlots = Map<String, String?>.from(_slots.value);
-          newSlots.updateAll((k, v) => null);
-          _slots.value = newSlots;
-          _showSpeakToConfirm.value = false;
-          final quest = state.currentQuest;
-          _shuffledOptions.value = List<String>.from(quest.options ?? [])
-            ..shuffle();
-        }
-        if (state is WritingGameComplete) {
-          _showConfetti.value = true;
-          GameDialogHelper.showCompletion(
-            context,
-            xp: state.xpEarned,
-            coins: state.coinsEarned,
-            title: 'CORRESPONDENCE ACE!',
-            enableDoubleUp: true,
-          );
-        }
-      },
+      listener: onWritingStateChanged,
       builder: (context, state) {
         final isLoaded = state is WritingLoaded;
         if (isLoaded && state.currentQuest != _lastQuest) {
@@ -214,7 +213,7 @@ class _WritingEmailScreenState extends State<WritingEmailScreen> {
           isAnswered: isAnswered,
           isCorrect: isCorrect,
           isFinalFailure: isFinalFailure,
-          showConfetti: _showConfetti.value,
+          showConfetti: showConfettiNotifier.value,
           useScrolling: false,
           disablePadding: true,
           onContinue: () => context.read<WritingBloc>().add(NextQuestion()),
@@ -225,7 +224,7 @@ class _WritingEmailScreenState extends State<WritingEmailScreen> {
               ? GameShimmerLoading(primaryColor: theme.primaryColor)
               : ListenableBuilder(
                   listenable: Listenable.merge([
-                    _showConfetti,
+                    showConfettiNotifier,
                     _slots,
                     _shuffledOptions,
                     _showSpeakToConfirm,

@@ -4,13 +4,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
-import 'package:vowl/core/utils/haptic_service.dart';
-import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/writing/presentation/bloc/writing_bloc.dart';
+import 'package:vowl/features/writing/presentation/mixins/writing_game_screen_mixin.dart';
 import 'package:vowl/features/writing/presentation/bloc/writing_event.dart';
 import 'package:vowl/features/writing/presentation/bloc/writing_state.dart';
 import 'package:vowl/features/writing/presentation/layout/writing_base_layout.dart';
-import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/writing/domain/entities/writing_quest.dart';
 import 'package:vowl/features/writing/opinion_writing/presentation/widgets/opinion_writing_instruction.dart';
@@ -32,15 +30,22 @@ class OpinionWritingScreen extends StatefulWidget {
   State<OpinionWritingScreen> createState() => _OpinionWritingScreenState();
 }
 
-class _OpinionWritingScreenState extends State<OpinionWritingScreen> {
-  final _hapticService = di.sl<HapticService>();
+class _OpinionWritingScreenState extends State<OpinionWritingScreen> with WritingGameScreenMixin {
+  @override
+  GameSubtype get gameType => widget.gameType;
 
+  @override
+  int get level => widget.level;
+
+  @override
+  String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
+
+  
   final ValueNotifier<List<String>> _leftPanArgs = ValueNotifier([]);
   final ValueNotifier<List<String>> _rightPanArgs = ValueNotifier([]);
 
   final ValueNotifier<double> _scaleRotation = ValueNotifier(0.0);
-  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
-  WritingQuest? _lastQuest;
+    WritingQuest? _lastQuest;
   final ValueNotifier<List<String>> _shuffledOptions = ValueNotifier([]);
   final ValueNotifier<bool> _pendingScaleSubmit = ValueNotifier(false);
 
@@ -52,25 +57,39 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen> {
     _leftPanArgs.dispose();
     _rightPanArgs.dispose();
     _scaleRotation.dispose();
-    _showConfetti.dispose();
-    _shuffledOptions.dispose();
+        _shuffledOptions.dispose();
     _pendingScaleSubmit.dispose();
+    disposeWritingGame();
+    disposeWritingGame();
+    disposeWritingGame();
     super.dispose();
   }
 
   @override
   void initState() {
     super.initState();
+    isAnsweredNotifier.addListener(() {
+      if (isAnsweredNotifier.value && mounted && _scrollController.hasClients) {
+        Future.delayed(const Duration(milliseconds: 100), () {
+          if (mounted && _scrollController.hasClients) {
+            _scrollController.animateTo(
+              _scrollController.position.maxScrollExtent,
+              duration: const Duration(milliseconds: 300),
+              curve: Curves.easeOut,
+            );
+          }
+        });
+      }
+    });
+
     _scrollController = ScrollController();
-    context.read<WritingBloc>().add(
-      FetchWritingQuests(gameType: widget.gameType, level: widget.level),
-    );
+    initWritingGame();
   }
 
   void _onDropArg(String arg, bool isLeft, bool isAnswered) {
     if (isAnswered) return;
 
-    _hapticService.success();
+    hapticService.success();
     final newLeft = List<String>.from(_leftPanArgs.value)..remove(arg);
     final newRight = List<String>.from(_rightPanArgs.value)..remove(arg);
 
@@ -89,7 +108,7 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen> {
 
   void _removeArg(String arg, bool isLeft, bool isAnswered) {
     if (isAnswered) return;
-    _hapticService.selection();
+    hapticService.selection();
     final newLeft = List<String>.from(_leftPanArgs.value);
     final newRight = List<String>.from(_rightPanArgs.value);
 
@@ -118,7 +137,7 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen> {
     if (state is! WritingLoaded) return;
 
     if (!nailedTyping) {
-      _hapticService.error();
+      hapticService.error();
       context.read<WritingBloc>().add(const SubmitAnswer(false));
       return;
     }
@@ -154,26 +173,7 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen> {
           (curr is WritingGameComplete && prev is! WritingGameComplete) ||
           (curr is WritingGameOver && prev is! WritingGameOver) ||
           (curr is WritingLoaded && !curr.answerStatus.isAnswered),
-      listener: (context, state) {
-        if (state is WritingLoaded && !state.answerStatus.isAnswered) {
-          _leftPanArgs.value = [];
-          _rightPanArgs.value = [];
-          _scaleRotation.value = 0.0;
-          _pendingScaleSubmit.value = false;
-          _shuffledOptions.value = List.from(state.currentQuest.options ?? [])
-            ..shuffle();
-        }
-        if (state is WritingGameComplete) {
-          _showConfetti.value = true;
-          GameDialogHelper.showCompletion(
-            context,
-            xp: state.xpEarned,
-            coins: state.coinsEarned,
-            title: 'LOGIC MASTER!',
-            enableDoubleUp: true,
-          );
-        }
-      },
+      listener: onWritingStateChanged,
       builder: (context, state) {
         final isLoaded = state is WritingLoaded;
         if (isLoaded) {
@@ -195,7 +195,7 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen> {
           isAnswered: isAnswered,
           isCorrect: isCorrect,
           isFinalFailure: isFinalFailure,
-          showConfetti: _showConfetti.value,
+          showConfetti: showConfettiNotifier.value,
           useScrolling: false,
           disablePadding: true,
           onContinue: () =>
@@ -204,7 +204,7 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen> {
               context.read<WritingBloc>().add(const WritingHintUsed()),
           child: ListenableBuilder(
             listenable: Listenable.merge([
-              _showConfetti,
+              showConfettiNotifier,
               _leftPanArgs,
               _rightPanArgs,
               _scaleRotation,

@@ -6,13 +6,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
-import 'package:vowl/core/utils/haptic_service.dart';
-import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/reading/presentation/bloc/reading_bloc.dart';
+import 'package:vowl/features/reading/presentation/mixins/reading_game_screen_mixin.dart';
 import 'package:vowl/features/reading/presentation/layout/reading_base_layout.dart';
-import 'package:vowl/core/utils/locale_service.dart';
-import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/features/reading/domain/entities/reading_quest.dart';
 import 'package:vowl/features/reading/skimming_scanning/presentation/widgets/skimming_scanning_target_badge.dart';
 import 'package:vowl/features/reading/skimming_scanning/presentation/widgets/skimming_scanning_terminal.dart';
@@ -32,34 +28,34 @@ class SkimmingScanningScreen extends StatefulWidget {
   State<SkimmingScanningScreen> createState() => _SkimmingScanningScreenState();
 }
 
-class _SkimmingScanningScreenState extends State<SkimmingScanningScreen> {
-  final _hapticService = di.sl<HapticService>();
-  final _soundService = di.sl<SoundService>();
+class _SkimmingScanningScreenState extends State<SkimmingScanningScreen> with ReadingGameScreenMixin {
+  @override
+  GameSubtype get gameType => widget.gameType;
 
+  @override
+  int get level => widget.level;
+
+  @override
+  String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
+
+    
   late ScrollController _scrollController;
   late ScrollController _mainScrollController;
   final GlobalKey<SpeedChallengeTimerState> _timerKey =
       GlobalKey<SpeedChallengeTimerState>();
-  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
-  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
-  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
-  int _lastProcessedIndex = -1;
-  int? _lastLives;
-
+          
   @override
   void initState() {
     super.initState();
     _scrollController = ScrollController();
     _mainScrollController = ScrollController();
-    context.read<ReadingBloc>().add(
-      FetchReadingQuests(gameType: widget.gameType, level: widget.level),
-    );
+    initReadingGame();
     _startAutoScroll();
   }
 
   void _startAutoScroll() {
     Future.delayed(const Duration(milliseconds: 1500), () {
-      if (!mounted || _isAnswered.value) return;
+      if (!mounted || isAnsweredNotifier.value) return;
       if (_scrollController.hasClients) {
         _scrollController.animateTo(
           _scrollController.position.maxScrollExtent,
@@ -71,21 +67,21 @@ class _SkimmingScanningScreenState extends State<SkimmingScanningScreen> {
   }
 
   void _submitCorrectAnswer() {
-    if (_isAnswered.value) return;
-    _hapticService.success();
-    _soundService.playCorrect();
-    _isAnswered.value = true;
-    _isCorrect.value = true;
+    if (isAnsweredNotifier.value) return;
+    hapticService.success();
+    soundService.playCorrect();
+    isAnsweredNotifier.value = true;
+    isCorrectNotifier.value = true;
     _timerKey.currentState?.stop();
     context.read<ReadingBloc>().add(SubmitAnswer(true));
   }
 
   void _submitIncorrectAnswer() {
-    if (_isAnswered.value) return;
-    _hapticService.error();
-    _soundService.playWrong();
-    _isAnswered.value = true;
-    _isCorrect.value = false;
+    if (isAnsweredNotifier.value) return;
+    hapticService.error();
+    soundService.playWrong();
+    isAnsweredNotifier.value = true;
+    isCorrectNotifier.value = false;
     _timerKey.currentState?.stop();
     context.read<ReadingBloc>().add(SubmitAnswer(false));
   }
@@ -94,9 +90,9 @@ class _SkimmingScanningScreenState extends State<SkimmingScanningScreen> {
   void dispose() {
     _scrollController.dispose();
     _mainScrollController.dispose();
-    _isAnswered.dispose();
-    _isCorrect.dispose();
-    _showConfetti.dispose();
+                disposeReadingGame();
+    disposeReadingGame();
+    disposeReadingGame();
     super.dispose();
   }
 
@@ -106,42 +102,8 @@ class _SkimmingScanningScreenState extends State<SkimmingScanningScreen> {
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
     return BlocConsumer<ReadingBloc, ReadingState>(
-      listener: (context, state) {
-        if (state is ReadingLoaded) {
-          final isNewQuestion = state.currentIndex != _lastProcessedIndex;
-          final isRetry = _isAnswered.value && !state.answerStatus.isAnswered;
-          final livesChanged =
-              _lastLives != null && state.livesRemaining > _lastLives!;
-
-          if (isNewQuestion || isRetry || livesChanged) {
-            _lastProcessedIndex = state.currentIndex;
-            _isAnswered.value = false;
-            _isCorrect.value = null;
-            if (_scrollController.hasClients) {
-              _scrollController.jumpTo(0);
-            }
-            _timerKey.currentState?.start();
-            _startAutoScroll();
-          } else if (state.answerStatus.isAnswered && !_isAnswered.value) {
-            _isAnswered.value = true;
-            _isCorrect.value = state.answerStatus.asBoolOrNull;
-          }
-          _lastLives = state.livesRemaining;
-        }
-        if (state is ReadingGameComplete) {
-          _showConfetti.value = true;
-          GameDialogHelper.showCompletion(
-            context,
-            xp: state.xpEarned,
-            coins: state.coinsEarned,
-            title: context.tr(
-              'reading_games.scanning_ace',
-              fallback: 'SCANNING ACE!',
-            ),
-            enableDoubleUp: true,
-          );
-        }
-      },
+      listenWhen: readingListenWhen,
+      listener: onReadingStateChanged,
       builder: (context, state) {
         final ReadingQuest? quest = (state is ReadingLoaded)
             ? state.currentQuest as ReadingQuest?
@@ -149,17 +111,17 @@ class _SkimmingScanningScreenState extends State<SkimmingScanningScreen> {
 
         return ListenableBuilder(
           listenable: Listenable.merge([
-            _isAnswered,
-            _isCorrect,
-            _showConfetti,
+            isAnsweredNotifier,
+            isCorrectNotifier,
+            showConfettiNotifier,
           ]),
           builder: (context, _) {
             return ReadingBaseLayout(
               gameType: widget.gameType,
               level: widget.level,
-              isAnswered: _isAnswered.value,
-              isCorrect: _isCorrect.value,
-              showConfetti: _showConfetti.value,
+              isAnswered: isAnsweredNotifier.value,
+              isCorrect: isCorrectNotifier.value,
+              showConfetti: showConfettiNotifier.value,
               onContinue: () => context.read<ReadingBloc>().add(NextQuestion()),
               onHint: () => context.read<ReadingBloc>().add(ReadingHintUsed()),
               child: quest == null
@@ -188,7 +150,7 @@ class _SkimmingScanningScreenState extends State<SkimmingScanningScreen> {
                                   ),
                                   SizedBox(height: 16.h),
 
-                                  if (!_isAnswered.value)
+                                  if (!isAnsweredNotifier.value)
                                     SpeedChallengeTimer(
                                       key: _timerKey,
                                       durationSeconds: 30,
@@ -208,7 +170,7 @@ class _SkimmingScanningScreenState extends State<SkimmingScanningScreen> {
                                       correct: quest.correctAnswer ?? "",
                                       color: theme.primaryColor,
                                       scrollController: _scrollController,
-                                      isAnswered: _isAnswered.value,
+                                      isAnswered: isAnsweredNotifier.value,
                                       onTapWord: (clean) {
                                         if (clean.toLowerCase() ==
                                             (quest.correctAnswer ?? "")
@@ -222,7 +184,7 @@ class _SkimmingScanningScreenState extends State<SkimmingScanningScreen> {
                                   ),
                                   SizedBox(height: 20.h),
                                   Text(
-                                    _isAnswered.value
+                                    isAnsweredNotifier.value
                                         ? "TARGET ACQUIRED!"
                                         : (InstructionHelper.getInstruction(
                                             quest,
@@ -230,7 +192,7 @@ class _SkimmingScanningScreenState extends State<SkimmingScanningScreen> {
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
                                       fontFamily: 'Outfit',
-                                      color: _isAnswered.value
+                                      color: isAnsweredNotifier.value
                                           ? Colors.greenAccent
                                           : theme.primaryColor,
                                       fontSize: 12.sp,
@@ -247,11 +209,11 @@ class _SkimmingScanningScreenState extends State<SkimmingScanningScreen> {
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.end,
                                 children: [
-                                  if (_isAnswered.value) ...[
+                                  if (isAnsweredNotifier.value) ...[
                                     SizedBox(height: 24.h),
                                     SkimmingScanningResult(
                                       quest: quest,
-                                      isCorrect: _isCorrect.value == true,
+                                      isCorrect: isCorrectNotifier.value == true,
                                       isDark: isDark,
                                     ),
                                   ],

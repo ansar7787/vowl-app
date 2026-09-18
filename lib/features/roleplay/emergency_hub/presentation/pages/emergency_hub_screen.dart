@@ -6,16 +6,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
-import 'package:vowl/core/utils/haptic_service.dart';
-import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/roleplay/presentation/bloc/roleplay_bloc.dart';
+import 'package:vowl/features/roleplay/presentation/mixins/roleplay_game_screen_mixin.dart';
 import 'package:vowl/features/roleplay/presentation/bloc/roleplay_event.dart';
 import 'package:vowl/features/roleplay/presentation/bloc/roleplay_state.dart';
 import 'package:vowl/features/roleplay/presentation/layout/roleplay_base_layout.dart';
-import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
-import 'package:vowl/features/roleplay/domain/entities/roleplay_quest.dart';
 import 'package:vowl/features/roleplay/emergency_hub/presentation/widgets/emergency_hub_instruction.dart';
 import 'package:vowl/features/roleplay/emergency_hub/presentation/widgets/emergency_hub_telex_card.dart';
 import 'package:vowl/features/roleplay/emergency_hub/presentation/widgets/emergency_hub_terminal_input.dart';
@@ -35,27 +31,42 @@ class EmergencyHubScreen extends StatefulWidget {
   State<EmergencyHubScreen> createState() => _EmergencyHubScreenState();
 }
 
-class _EmergencyHubScreenState extends State<EmergencyHubScreen>
-    with TickerProviderStateMixin {
-  final _hapticService = di.sl<HapticService>();
-  final _soundService = di.sl<SoundService>();
+class _EmergencyHubScreenState extends State<EmergencyHubScreen>with TickerProviderStateMixin, RoleplayGameScreenMixin {
+  @override
+  GameSubtype get gameType => widget.gameType;
 
+  @override
+  int get level => widget.level;
+
+  @override
+  String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
+
+    
   late AnimationController _pulseController;
   late TextEditingController _codeController;
 
-  int _lastProcessedIndex = -1;
-  final ValueNotifier<double> _rotation = ValueNotifier(
+    final ValueNotifier<double> _rotation = ValueNotifier(
     0.0,
   ); // Valve rotation progress (0.0 to 1.0)
   final ScrollController _scrollController = ScrollController();
-  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
-  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
-  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
-  final ValueNotifier<bool> _isFirstStagePassed = ValueNotifier(false);
-
+        
   @override
   void initState() {
     super.initState();
+    isAnsweredNotifier.addListener(() {
+      if (isAnsweredNotifier.value && mounted && _scrollController.hasClients) {
+        Future.delayed(const Duration(milliseconds: 100), () {
+          if (mounted && _scrollController.hasClients) {
+            _scrollController.animateTo(
+              _scrollController.position.maxScrollExtent,
+              duration: const Duration(milliseconds: 300),
+              curve: Curves.easeOut,
+            );
+          }
+        });
+      }
+    });
+
     _pulseController = AnimationController(
       vsync: this,
       duration: const Duration(seconds: 2),
@@ -63,9 +74,7 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>
 
     _codeController = TextEditingController();
 
-    context.read<RoleplayBloc>().add(
-      FetchRoleplayQuests(gameType: widget.gameType, level: widget.level),
-    );
+    initRoleplayGame();
   }
 
   @override
@@ -73,26 +82,17 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>
     _pulseController.dispose();
     _codeController.dispose();
     _rotation.dispose();
-    _isAnswered.dispose();
-    _isCorrect.dispose();
-    _showConfetti.dispose();
-    _isFirstStagePassed.dispose();
-    _scrollController.dispose();
+                    _scrollController.dispose();
+    disposeRoleplayGame();
+    disposeRoleplayGame();
+    disposeRoleplayGame();
     super.dispose();
   }
-
-  void _triggerAutoPlay(RoleplayQuest quest) {
-    _soundService.playTts(InstructionHelper.getInstruction(quest));
-    if (quest.dispatcherQuestion != null) {
-      Future.delayed(const Duration(milliseconds: 1400), () {
-        if (mounted) _soundService.playTts(quest.dispatcherQuestion!);
-      });
-    }
-  }
+
 
   // Trigonometry-based circular dial update
   void _onValveDragged(DragUpdateDetails details, Offset localCenter) {
-    if (_isAnswered.value || _isFirstStagePassed.value) return;
+    if (isAnsweredNotifier.value || isFirstStagePassedNotifier.value) return;
 
     final Offset touchPos = details.localPosition;
     final double dx = touchPos.dx - localCenter.dx;
@@ -105,12 +105,12 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>
     double progress = (angle + math.pi / 2) / (2 * math.pi);
     if (progress > 1.0) progress -= 1.0;
 
-    _hapticService.selection();
+    hapticService.selection();
     _rotation.value = progress.clamp(0.0, 1.0);
   }
 
   void _submitCode(String input, String correctAnswer) {
-    if (_isAnswered.value || _isFirstStagePassed.value) return;
+    if (isAnsweredNotifier.value || isFirstStagePassedNotifier.value) return;
 
     final String cleanInput = input.trim().replaceAll(' ', '').toLowerCase();
     final String cleanCorrect = correctAnswer
@@ -125,31 +125,31 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>
     final bool isCorrect = codeMatches && valveAligned;
 
     if (isCorrect) {
-      _hapticService.selection();
-      _isFirstStagePassed.value = true;
+      hapticService.selection();
+      isFirstStagePassedNotifier.value = true;
       // Wait for Phase 2
     } else {
-      _hapticService.error();
-      _soundService.playWrong();
-      _isAnswered.value = true;
-      _isCorrect.value = false;
+      hapticService.error();
+      soundService.playWrong();
+      isAnsweredNotifier.value = true;
+      isCorrectNotifier.value = false;
       context.read<RoleplayBloc>().add(SubmitAnswer(false));
     }
   }
 
   void _submitVerbalEvaluation(bool nailedIt) {
-    if (_isAnswered.value) return;
+    if (isAnsweredNotifier.value) return;
 
-    _isAnswered.value = true;
-    _isCorrect.value = nailedIt;
+    isAnsweredNotifier.value = true;
+    isCorrectNotifier.value = nailedIt;
 
     if (nailedIt) {
-      _hapticService.success();
-      _soundService.playCorrect();
+      hapticService.success();
+      soundService.playCorrect();
       context.read<RoleplayBloc>().add(SubmitAnswer(true));
     } else {
-      _hapticService.error();
-      _soundService.playWrong();
+      hapticService.error();
+      soundService.playWrong();
       context.read<RoleplayBloc>().add(SubmitAnswer(false));
     }
   }
@@ -159,41 +159,18 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
     return BlocConsumer<RoleplayBloc, RoleplayState>(
-      listener: (context, state) {
-        if (state is RoleplayLoaded) {
-          if (state.currentIndex != _lastProcessedIndex) {
-            _lastProcessedIndex = state.currentIndex;
-            _isAnswered.value = false;
-            _isCorrect.value = null;
-            _rotation.value = 0.0;
-            _codeController.clear();
-            _isFirstStagePassed.value = false;
-            Future.delayed(const Duration(milliseconds: 300), () {
-              if (mounted) _triggerAutoPlay(state.currentQuest);
-            });
-          }
-        }
-        if (state is RoleplayGameComplete) {
-          _showConfetti.value = true;
-          GameDialogHelper.showCompletion(
-            context,
-            xp: state.xpEarned,
-            coins: state.coinsEarned,
-            title: 'HERO DISPATCHER!',
-            enableDoubleUp: true,
-          );
-        }
-      },
+      listenWhen: roleplayListenWhen,
+      listener: onRoleplayStateChanged,
       builder: (context, state) {
         final quest = (state is RoleplayLoaded) ? state.currentQuest : null;
 
         return ListenableBuilder(
           listenable: Listenable.merge([
-            _isAnswered,
-            _isCorrect,
-            _showConfetti,
+            isAnsweredNotifier,
+            isCorrectNotifier,
+            showConfettiNotifier,
             _rotation,
-            _isFirstStagePassed,
+            isFirstStagePassedNotifier,
             _codeController,
           ]),
           builder: (context, _) {
@@ -201,10 +178,10 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>
               gameType: widget.gameType,
               level: widget.level,
               isAnswered:
-                  _isAnswered.value &&
-                  (_isCorrect.value != null || !_isFirstStagePassed.value),
-              isCorrect: _isCorrect.value,
-              showConfetti: _showConfetti.value,
+                  isAnsweredNotifier.value &&
+                  (isCorrectNotifier.value != null || !isFirstStagePassedNotifier.value),
+              isCorrect: isCorrectNotifier.value,
+              showConfetti: showConfettiNotifier.value,
               onContinue: () =>
                   context.read<RoleplayBloc>().add(NextQuestion()),
               onHint: () =>
@@ -312,7 +289,7 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>
                                                     ),
 
                                                     // Dispatch lock confirm trigger button
-                                                    if (!_isAnswered.value &&
+                                                    if (!isAnsweredNotifier.value &&
                                                         _codeController
                                                             .text
                                                             .isNotEmpty)
@@ -420,8 +397,8 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>
                                   SliverToBoxAdapter(
                                     child: SizedBox(
                                       height:
-                                          (_isFirstStagePassed.value &&
-                                              !_isAnswered.value)
+                                          (isFirstStagePassedNotifier.value &&
+                                              !isAnsweredNotifier.value)
                                           ? 380.h
                                           : 60.h,
                                     ),
@@ -429,7 +406,7 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>
                                 ],
                               ),
                             ),
-                            if (_isFirstStagePassed.value && !_isAnswered.value)
+                            if (isFirstStagePassedNotifier.value && !isAnsweredNotifier.value)
                               SpeakToConfirmOverlay(
                                 expectedText:
                                     quest.correctAnswer ?? _codeController.text,

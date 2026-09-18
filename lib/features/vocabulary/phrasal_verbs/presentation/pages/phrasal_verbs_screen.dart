@@ -8,12 +8,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
-import 'package:vowl/core/utils/haptic_service.dart';
-import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/vocabulary/presentation/bloc/vocabulary_bloc.dart';
+import 'package:vowl/features/vocabulary/presentation/mixins/vocabulary_game_screen_mixin.dart';
 import 'package:vowl/features/vocabulary/presentation/layout/vocabulary_base_layout.dart';
-import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
 import 'package:vowl/features/vocabulary/phrasal_verbs/presentation/widgets/phrasal_verbs_painters.dart';
 import 'package:vowl/features/vocabulary/phrasal_verbs/presentation/widgets/phrasal_verbs_lcd.dart';
@@ -35,46 +32,58 @@ class PhrasalVerbsScreen extends StatefulWidget {
   State<PhrasalVerbsScreen> createState() => _PhrasalVerbsScreenState();
 }
 
-class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
-    with SingleTickerProviderStateMixin {
-  final _hapticService = di.sl<HapticService>();
-  final _soundService = di.sl<SoundService>();
+class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>with SingleTickerProviderStateMixin, VocabularyGameScreenMixin {
+  @override
+  GameSubtype get gameType => widget.gameType;
 
-  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
-  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
-  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
-  final ValueNotifier<bool> _isFirstStagePassed = ValueNotifier(false);
-  final ValueNotifier<String?> _selectedOption = ValueNotifier(null);
+  @override
+  int get level => widget.level;
+
+  @override
+  String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
+
+    
+          final ValueNotifier<String?> _selectedOption = ValueNotifier(null);
   final ScrollController _scrollController = ScrollController();
-  int _lastProcessedIndex = -1;
-  VocabularyQuest? _lastQuest;
+    VocabularyQuest? _lastQuest;
 
   late AnimationController _vaultController;
 
   @override
   void initState() {
     super.initState();
+    isAnsweredNotifier.addListener(() {
+      if (isAnsweredNotifier.value && mounted && _scrollController.hasClients) {
+        Future.delayed(const Duration(milliseconds: 100), () {
+          if (mounted && _scrollController.hasClients) {
+            _scrollController.animateTo(
+              _scrollController.position.maxScrollExtent,
+              duration: const Duration(milliseconds: 300),
+              curve: Curves.easeOut,
+            );
+          }
+        });
+      }
+    });
+
     _vaultController = AnimationController(vsync: this, duration: 1.seconds);
-    context.read<VocabularyBloc>().add(
-      FetchVocabularyQuests(gameType: widget.gameType, level: widget.level),
-    );
+    initVocabularyGame();
   }
 
   @override
   void dispose() {
-    _isAnswered.dispose();
-    _isCorrect.dispose();
-    _showConfetti.dispose();
-    _isFirstStagePassed.dispose();
-    _selectedOption.dispose();
+                    _selectedOption.dispose();
     _scrollController.dispose();
     _vaultController.dispose();
+    disposeVocabularyGame();
+    disposeVocabularyGame();
+    disposeVocabularyGame();
     super.dispose();
   }
 
   void _submitChoice(String selected, String correct) async {
-    if (_isAnswered.value ||
-        _isFirstStagePassed.value ||
+    if (isAnsweredNotifier.value ||
+        isFirstStagePassedNotifier.value ||
         _selectedOption.value != null) {
       return;
     }
@@ -84,9 +93,9 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
         selected.trim().toLowerCase() == correct.trim().toLowerCase();
 
     if (isCorrect) {
-      _hapticService.selection();
+      hapticService.selection();
       _vaultController.forward(from: 0);
-      _isFirstStagePassed.value = true;
+      isFirstStagePassedNotifier.value = true;
 
       Future.delayed(const Duration(milliseconds: 1000), () {
         if (mounted && _scrollController.hasClients) {
@@ -98,10 +107,10 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
         }
       });
     } else {
-      _hapticService.error();
-      _soundService.playWrong();
-      _isAnswered.value = true;
-      _isCorrect.value = false;
+      hapticService.error();
+      soundService.playWrong();
+      isAnsweredNotifier.value = true;
+      isCorrectNotifier.value = false;
       context.read<VocabularyBloc>().add(SubmitAnswer(false));
     }
   }
@@ -133,18 +142,18 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
   }
 
   void _submitFinalAnswer(bool nailedIt) {
-    if (_isAnswered.value) return;
+    if (isAnsweredNotifier.value) return;
 
-    _isAnswered.value = true;
-    _isCorrect.value = nailedIt;
+    isAnsweredNotifier.value = true;
+    isCorrectNotifier.value = nailedIt;
 
     if (nailedIt) {
-      _hapticService.success();
-      _soundService.playCorrect();
+      hapticService.success();
+      soundService.playCorrect();
       context.read<VocabularyBloc>().add(SubmitAnswer(true));
     } else {
-      _hapticService.error();
-      _soundService.playWrong();
+      hapticService.error();
+      soundService.playWrong();
       context.read<VocabularyBloc>().add(SubmitAnswer(false));
     }
   }
@@ -154,42 +163,8 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
     return BlocConsumer<VocabularyBloc, VocabularyState>(
-      listener: (context, state) {
-        if (state is VocabularyLoaded) {
-          final isNewQuestion = state.currentIndex != _lastProcessedIndex;
-          final isRetry = _isAnswered.value && !state.answerStatus.isAnswered;
-
-          if (isNewQuestion || isRetry) {
-            if (_scrollController.hasClients) {
-              _scrollController.animateTo(
-                0,
-                duration: const Duration(milliseconds: 300),
-                curve: Curves.easeOutBack,
-              );
-            }
-            _lastQuest = state.currentQuest;
-            _lastProcessedIndex = state.currentIndex;
-            _isAnswered.value = false;
-            _isCorrect.value = null;
-            _selectedOption.value = null;
-            _isFirstStagePassed.value = false;
-            _vaultController.reset();
-          } else if (state.answerStatus.isAnswered && !_isAnswered.value) {
-            _isAnswered.value = true;
-            _isCorrect.value = state.answerStatus.asBoolOrNull;
-          }
-        }
-        if (state is VocabularyGameComplete) {
-          _showConfetti.value = true;
-          GameDialogHelper.showCompletion(
-            context,
-            xp: state.xpEarned,
-            coins: state.coinsEarned,
-            title: 'VAULT CRACKED!',
-            enableDoubleUp: true,
-          );
-        }
-      },
+      listenWhen: vocabularyListenWhen,
+      listener: onVocabularyStateChanged,
       builder: (context, state) {
         final theme = LevelThemeHelper.getTheme(
           'vocabulary',
@@ -205,10 +180,10 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
 
         return ListenableBuilder(
           listenable: Listenable.merge([
-            _isAnswered,
-            _isCorrect,
-            _showConfetti,
-            _isFirstStagePassed,
+            isAnsweredNotifier,
+            isCorrectNotifier,
+            showConfettiNotifier,
+            isFirstStagePassedNotifier,
             _selectedOption,
           ]),
           builder: (context, _) {
@@ -216,19 +191,19 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
               gameType: widget.gameType,
               level: widget.level,
               isAnswered:
-                  _isAnswered.value &&
-                  (_isCorrect.value != null || !_isFirstStagePassed.value),
-              isCorrect: _isCorrect.value,
-              showConfetti: _showConfetti.value,
+                  isAnsweredNotifier.value &&
+                  (isCorrectNotifier.value != null || !isFirstStagePassedNotifier.value),
+              isCorrect: isCorrectNotifier.value,
+              showConfetti: showConfettiNotifier.value,
               hasStage2: true,
               onContinue: () {
                 final currentState = context.read<VocabularyBloc>().state;
                 if (currentState is VocabularyLoaded &&
                     !currentState.isFinalFailure &&
-                    _isCorrect.value == false) {
-                  _isAnswered.value = false;
-                  _isCorrect.value = null;
-                  _isFirstStagePassed.value = false;
+                    isCorrectNotifier.value == false) {
+                  isAnsweredNotifier.value = false;
+                  isCorrectNotifier.value = null;
+                  isFirstStagePassedNotifier.value = false;
                   _selectedOption.value = null;
                   _vaultController.reset();
                   if (_scrollController.hasClients) {
@@ -255,9 +230,9 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
                       isDark: isDark,
                       scrollController: _scrollController,
                       vaultController: _vaultController,
-                      isFirstStagePassed: _isFirstStagePassed.value,
-                      isAnswered: _isAnswered.value,
-                      isCorrect: _isCorrect.value,
+                      isFirstStagePassed: isFirstStagePassedNotifier.value,
+                      isAnswered: isAnsweredNotifier.value,
+                      isCorrect: isCorrectNotifier.value,
                       selectedOption: _selectedOption.value,
                       isFinalFailure: isFinalFailure,
                       hintUsed: state is VocabularyLoaded

@@ -6,8 +6,8 @@ import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/vocabulary/presentation/bloc/vocabulary_bloc.dart';
+import 'package:vowl/features/vocabulary/presentation/mixins/vocabulary_game_screen_mixin.dart';
 import 'package:vowl/features/vocabulary/presentation/layout/vocabulary_base_layout.dart';
-import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/utils/instruction_helper.dart';
@@ -33,15 +33,37 @@ class TopicVocabScreen extends StatefulWidget {
   State<TopicVocabScreen> createState() => _TopicVocabScreenState();
 }
 
-class _TopicVocabScreenState extends State<TopicVocabScreen> {
+class _TopicVocabScreenState extends State<TopicVocabScreen> with VocabularyGameScreenMixin {
+  @override
+  GameSubtype get gameType => widget.gameType;
+
+  @override
+  int get level => widget.level;
+
+  @override
+  String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
+
   late final TopicVocabController _controller;
   VocabularyQuest? _lastQuest;
-  int? _lastProcessedIndex = -1;
   final ScrollController _scrollController = ScrollController();
 
   @override
   void initState() {
     super.initState();
+    isAnsweredNotifier.addListener(() {
+      if (isAnsweredNotifier.value && mounted && _scrollController.hasClients) {
+        Future.delayed(const Duration(milliseconds: 100), () {
+          if (mounted && _scrollController.hasClients) {
+            _scrollController.animateTo(
+              _scrollController.position.maxScrollExtent,
+              duration: const Duration(milliseconds: 300),
+              curve: Curves.easeOut,
+            );
+          }
+        });
+      }
+    });
+
     _controller = TopicVocabController(
       hapticService: di.sl<HapticService>(),
       soundService: di.sl<SoundService>(),
@@ -49,15 +71,16 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
         context.read<VocabularyBloc>().add(SubmitAnswer(nailedIt));
       },
     );
-    context.read<VocabularyBloc>().add(
-      FetchVocabularyQuests(gameType: widget.gameType, level: widget.level),
-    );
+    initVocabularyGame();
   }
 
   @override
   void dispose() {
     _scrollController.dispose();
     _controller.dispose();
+    disposeVocabularyGame();
+    disposeVocabularyGame();
+    disposeVocabularyGame();
     super.dispose();
   }
 
@@ -66,30 +89,8 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
     return BlocConsumer<VocabularyBloc, VocabularyState>(
-      listener: (context, state) {
-        if (state is VocabularyLoaded) {
-          final isNewQuestion = state.currentIndex != _lastProcessedIndex;
-          final isRetry =
-              !state.answerStatus.isAnswered && _controller.isAnswered;
-
-          if (isNewQuestion || isRetry) {
-            _lastQuest = state.currentQuest;
-            _lastProcessedIndex = state.currentIndex;
-            _controller.reset(state.currentQuest);
-          }
-        }
-        if (state is VocabularyGameComplete) {
-          _controller.completeGame();
-          if (!context.mounted) return;
-          GameDialogHelper.showCompletion(
-            context,
-            xp: state.xpEarned,
-            coins: state.coinsEarned,
-            title: 'WORD SORTER!',
-            enableDoubleUp: true,
-          );
-        }
-      },
+      listenWhen: vocabularyListenWhen,
+      listener: onVocabularyStateChanged,
       builder: (context, state) {
         final theme = LevelThemeHelper.getTheme(
           'vocabulary',

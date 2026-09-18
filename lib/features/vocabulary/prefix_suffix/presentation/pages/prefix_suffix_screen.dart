@@ -10,9 +10,9 @@ import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/tts_service.dart';
 import 'package:vowl/features/vocabulary/presentation/bloc/vocabulary_bloc.dart';
+import 'package:vowl/features/vocabulary/presentation/mixins/vocabulary_game_screen_mixin.dart';
 import 'package:vowl/features/vocabulary/prefix_suffix/presentation/controllers/prefix_suffix_controller.dart';
 import 'package:vowl/features/vocabulary/presentation/layout/vocabulary_base_layout.dart';
-import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/features/vocabulary/prefix_suffix/presentation/widgets/prefix_suffix_mission_control.dart';
 import 'package:vowl/features/vocabulary/prefix_suffix/presentation/widgets/prefix_suffix_synthesizer.dart';
 import 'package:vowl/core/presentation/game_mechanics/typing/type_to_confirm_overlay.dart';
@@ -30,7 +30,16 @@ class PrefixSuffixScreen extends StatefulWidget {
   State<PrefixSuffixScreen> createState() => _PrefixSuffixScreenState();
 }
 
-class _PrefixSuffixScreenState extends State<PrefixSuffixScreen> {
+class _PrefixSuffixScreenState extends State<PrefixSuffixScreen> with VocabularyGameScreenMixin {
+  @override
+  GameSubtype get gameType => widget.gameType;
+
+  @override
+  int get level => widget.level;
+
+  @override
+  String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
+
   late final PrefixSuffixController _controller;
   final ScrollController _scrollController = ScrollController();
   bool _hasScrolledToStage2 = false;
@@ -60,6 +69,20 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen> {
   @override
   void initState() {
     super.initState();
+    isAnsweredNotifier.addListener(() {
+      if (isAnsweredNotifier.value && mounted && _scrollController.hasClients) {
+        Future.delayed(const Duration(milliseconds: 100), () {
+          if (mounted && _scrollController.hasClients) {
+            _scrollController.animateTo(
+              _scrollController.position.maxScrollExtent,
+              duration: const Duration(milliseconds: 300),
+              curve: Curves.easeOut,
+            );
+          }
+        });
+      }
+    });
+
     _controller = PrefixSuffixController(
       hapticService: di.sl<HapticService>(),
       soundService: di.sl<SoundService>(),
@@ -73,9 +96,7 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen> {
 
     _controller.addListener(_onControllerUpdate);
 
-    context.read<VocabularyBloc>().add(
-      FetchVocabularyQuests(gameType: widget.gameType, level: widget.level),
-    );
+    initVocabularyGame();
   }
 
   @override
@@ -83,6 +104,9 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen> {
     _controller.removeListener(_onControllerUpdate);
     _scrollController.dispose();
     _controller.dispose();
+    disposeVocabularyGame();
+    disposeVocabularyGame();
+    disposeVocabularyGame();
     super.dispose();
   }
 
@@ -91,30 +115,8 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen> {
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
     return BlocConsumer<VocabularyBloc, VocabularyState>(
-      listener: (context, state) {
-        if (state is VocabularyLoaded) {
-          final isNewQuestion =
-              state.currentIndex != _controller.lastProcessedIndex;
-          final isRetry =
-              !state.answerStatus.isAnswered && _controller.isAnswered;
-
-          if (isNewQuestion || isRetry) {
-            _controller.reset(state.currentQuest, state.currentIndex);
-          } else if (state.answerStatus.isAnswered && !_controller.isAnswered) {
-            _controller.setAnswered(state.answerStatus.asBoolOrNull ?? false);
-          }
-        }
-        if (state is VocabularyGameComplete) {
-          _controller.completeGame();
-          GameDialogHelper.showCompletion(
-            context,
-            xp: state.xpEarned,
-            coins: state.coinsEarned,
-            title: 'LEXICAL MASTER!',
-            enableDoubleUp: true,
-          );
-        }
-      },
+      listenWhen: vocabularyListenWhen,
+      listener: onVocabularyStateChanged,
       builder: (context, state) {
         final theme = LevelThemeHelper.getTheme(
           'vocabulary',

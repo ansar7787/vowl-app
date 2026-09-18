@@ -6,12 +6,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
-import 'package:vowl/core/utils/haptic_service.dart';
-import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/vocabulary/presentation/bloc/vocabulary_bloc.dart';
+import 'package:vowl/features/vocabulary/presentation/mixins/vocabulary_game_screen_mixin.dart';
 import 'package:vowl/features/vocabulary/presentation/layout/vocabulary_base_layout.dart';
-import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
 import 'package:vowl/features/vocabulary/contextual_usage/presentation/widgets/contextual_usage_painters.dart';
 import 'package:vowl/features/vocabulary/contextual_usage/presentation/widgets/contextual_usage_card.dart';
@@ -32,44 +29,57 @@ class ContextualUsageScreen extends StatefulWidget {
   State<ContextualUsageScreen> createState() => _ContextualUsageScreenState();
 }
 
-class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
-  final _hapticService = di.sl<HapticService>();
-  final _soundService = di.sl<SoundService>();
+class _ContextualUsageScreenState extends State<ContextualUsageScreen> with VocabularyGameScreenMixin {
+  @override
+  GameSubtype get gameType => widget.gameType;
 
-  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
-  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
-  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
-  final ValueNotifier<bool> _isFirstStagePassed = ValueNotifier(false);
-  final ValueNotifier<String?> _selectedOption = ValueNotifier(null);
+  @override
+  int get level => widget.level;
+
+  @override
+  String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
+
+    
+          final ValueNotifier<String?> _selectedOption = ValueNotifier(null);
   final ScrollController _scrollController = ScrollController();
 
-  int _lastProcessedIndex = -1;
-  VocabularyQuest? _lastQuest;
+    VocabularyQuest? _lastQuest;
 
   @override
   void dispose() {
-    _isAnswered.dispose();
-    _isCorrect.dispose();
-    _showConfetti.dispose();
-    _isFirstStagePassed.dispose();
-    _selectedOption.dispose();
+                    _selectedOption.dispose();
     _scrollController.dispose();
+    disposeVocabularyGame();
+    disposeVocabularyGame();
+    disposeVocabularyGame();
     super.dispose();
   }
 
   @override
   void initState() {
     super.initState();
-    context.read<VocabularyBloc>().add(
-      FetchVocabularyQuests(gameType: widget.gameType, level: widget.level),
-    );
+    isAnsweredNotifier.addListener(() {
+      if (isAnsweredNotifier.value && mounted && _scrollController.hasClients) {
+        Future.delayed(const Duration(milliseconds: 100), () {
+          if (mounted && _scrollController.hasClients) {
+            _scrollController.animateTo(
+              _scrollController.position.maxScrollExtent,
+              duration: const Duration(milliseconds: 300),
+              curve: Curves.easeOut,
+            );
+          }
+        });
+      }
+    });
+
+    initVocabularyGame();
   }
 
   void _submitAnswer(String selected, String correct) {
-    if (_isAnswered.value || _isFirstStagePassed.value) return;
+    if (isAnsweredNotifier.value || isFirstStagePassedNotifier.value) return;
 
     _selectedOption.value = selected;
-    _isAnswered.value = true;
+    isAnsweredNotifier.value = true;
 
     bool isCorrect =
         selected.trim().toLowerCase() == correct.trim().toLowerCase();
@@ -77,8 +87,8 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
     Future.delayed(600.ms, () {
       if (!mounted) return;
       if (isCorrect) {
-        _hapticService.success();
-        _isFirstStagePassed.value = true;
+        hapticService.success();
+        isFirstStagePassedNotifier.value = true;
         Future.delayed(const Duration(milliseconds: 300), () {
           if (mounted && _scrollController.hasClients) {
             _scrollController.animateTo(
@@ -89,30 +99,30 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
           }
         });
       } else {
-        _hapticService.error();
-        _soundService.playWrong();
-        _isCorrect.value = false;
+        hapticService.error();
+        soundService.playWrong();
+        isCorrectNotifier.value = false;
         context.read<VocabularyBloc>().add(SubmitAnswer(false));
       }
     });
   }
 
   void _submitFinalAnswer(bool nailedIt, {String? wrongWord}) {
-    if (_isAnswered.value && _isCorrect.value != null) return;
+    if (isAnsweredNotifier.value && isCorrectNotifier.value != null) return;
 
-    _isAnswered.value = true;
-    _isCorrect.value = nailedIt;
+    isAnsweredNotifier.value = true;
+    isCorrectNotifier.value = nailedIt;
     if (wrongWord != null && wrongWord.isNotEmpty) {
       _selectedOption.value = wrongWord;
     }
 
     if (nailedIt) {
-      _hapticService.success();
-      _soundService.playCorrect();
+      hapticService.success();
+      soundService.playCorrect();
       context.read<VocabularyBloc>().add(SubmitAnswer(true));
     } else {
-      _hapticService.error();
-      _soundService.playWrong();
+      hapticService.error();
+      soundService.playWrong();
       context.read<VocabularyBloc>().add(SubmitAnswer(false));
     }
   }
@@ -120,41 +130,8 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<VocabularyBloc, VocabularyState>(
-      listener: (context, state) {
-        if (state is VocabularyLoaded) {
-          final isNewQuestion = state.currentIndex != _lastProcessedIndex;
-          final isRetry = _isAnswered.value && !state.answerStatus.isAnswered;
-
-          if (isNewQuestion || isRetry) {
-            if (_scrollController.hasClients) {
-              _scrollController.animateTo(
-                0,
-                duration: const Duration(milliseconds: 300),
-                curve: Curves.easeOutBack,
-              );
-            }
-            _lastQuest = state.currentQuest;
-            _lastProcessedIndex = state.currentIndex;
-            _isAnswered.value = false;
-            _isCorrect.value = null;
-            _selectedOption.value = null;
-            _isFirstStagePassed.value = false;
-          } else if (state.answerStatus.isAnswered && !_isAnswered.value) {
-            _isAnswered.value = true;
-            _isCorrect.value = state.answerStatus.asBoolOrNull;
-          }
-        }
-        if (state is VocabularyGameComplete) {
-          _showConfetti.value = true;
-          GameDialogHelper.showCompletion(
-            context,
-            xp: state.xpEarned,
-            coins: state.coinsEarned,
-            title: 'USAGE EXPERT!',
-            enableDoubleUp: true,
-          );
-        }
-      },
+      listenWhen: vocabularyListenWhen,
+      listener: onVocabularyStateChanged,
       builder: (context, state) {
         final theme = LevelThemeHelper.getTheme(
           'vocabulary',
@@ -168,10 +145,10 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
 
         return ListenableBuilder(
           listenable: Listenable.merge([
-            _isAnswered,
-            _isCorrect,
-            _showConfetti,
-            _isFirstStagePassed,
+            isAnsweredNotifier,
+            isCorrectNotifier,
+            showConfettiNotifier,
+            isFirstStagePassedNotifier,
             _selectedOption,
           ]),
           builder: (context, _) {
@@ -179,19 +156,19 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
               gameType: widget.gameType,
               level: widget.level,
               isAnswered:
-                  _isAnswered.value &&
-                  (_isCorrect.value != null || !_isFirstStagePassed.value),
-              isCorrect: _isCorrect.value,
-              showConfetti: _showConfetti.value,
+                  isAnsweredNotifier.value &&
+                  (isCorrectNotifier.value != null || !isFirstStagePassedNotifier.value),
+              isCorrect: isCorrectNotifier.value,
+              showConfetti: showConfettiNotifier.value,
               hasStage2: true,
               onContinue: () {
                 final currentState = context.read<VocabularyBloc>().state;
                 if (currentState is VocabularyLoaded &&
                     !currentState.isFinalFailure &&
-                    _isCorrect.value == false) {
-                  _isAnswered.value = false;
-                  _isCorrect.value = null;
-                  _isFirstStagePassed.value = false;
+                    isCorrectNotifier.value == false) {
+                  isAnsweredNotifier.value = false;
+                  isCorrectNotifier.value = null;
+                  isFirstStagePassedNotifier.value = false;
                   _selectedOption.value = null;
                   if (_scrollController.hasClients) {
                     _scrollController.animateTo(
@@ -229,13 +206,13 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
                               thickness: 4.w,
                               child: CustomScrollView(
                                 controller: _scrollController,
-                                physics: (!_isFirstStagePassed.value)
+                                physics: (!isFirstStagePassedNotifier.value)
                                     ? const NeverScrollableScrollPhysics()
                                     : const BouncingScrollPhysics(),
                                 slivers: [
                                   SliverToBoxAdapter(
                                     child: IgnorePointer(
-                                      ignoring: _isFirstStagePassed.value,
+                                      ignoring: isFirstStagePassedNotifier.value,
                                       child: ConstrainedBox(
                                         constraints: BoxConstraints(
                                           minHeight: trueMaxHeight,
@@ -277,7 +254,7 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
                                                         : null,
                                                   ),
                                                 ),
-                                                if (_isFirstStagePassed.value)
+                                                if (isFirstStagePassedNotifier.value)
                                                   Padding(
                                                     padding:
                                                         EdgeInsets.symmetric(
@@ -312,8 +289,8 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
                                                   ),
                                                 SizedBox(
                                                   height:
-                                                      (_isAnswered.value ||
-                                                          _isFirstStagePassed
+                                                      (isAnsweredNotifier.value ||
+                                                          isFirstStagePassedNotifier
                                                               .value)
                                                       ? 10.h
                                                       : 60.h,
@@ -325,9 +302,9 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
                                       ),
                                     ),
                                   ),
-                                  if (_isFirstStagePassed.value &&
-                                      (!_isAnswered.value ||
-                                          _isCorrect.value == null))
+                                  if (isFirstStagePassedNotifier.value &&
+                                      (!isAnsweredNotifier.value ||
+                                          isCorrectNotifier.value == null))
                                     SliverToBoxAdapter(
                                       child: Column(
                                         children: [
@@ -436,8 +413,8 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
                       question: quest.prompt ?? "",
                       color: color,
                       isDark: isDark,
-                      isAnswered: _isAnswered.value,
-                      isCorrect: _isCorrect.value ?? currentOptionCorrect,
+                      isAnswered: isAnsweredNotifier.value,
+                      isCorrect: isCorrectNotifier.value ?? currentOptionCorrect,
                       selectedOption: _selectedOption.value,
                     ),
                   ),
@@ -449,8 +426,8 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
                   question: quest.prompt ?? "",
                   color: color,
                   isDark: isDark,
-                  isAnswered: _isAnswered.value,
-                  isCorrect: _isCorrect.value ?? currentOptionCorrect,
+                  isAnswered: isAnsweredNotifier.value,
+                  isCorrect: isCorrectNotifier.value ?? currentOptionCorrect,
                   selectedOption: _selectedOption.value,
                 ),
               ),

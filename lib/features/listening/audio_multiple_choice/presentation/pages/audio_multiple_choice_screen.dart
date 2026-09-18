@@ -39,8 +39,7 @@ class _AudioMultipleChoiceScreenState extends State<AudioMultipleChoiceScreen>
     fallback: 'SONIC RADAR!',
   );
 
-  final ValueNotifier<bool> _isFirstStagePassed = ValueNotifier(false);
-  final ValueNotifier<int?> _selectedIndex = ValueNotifier(null);
+    final ValueNotifier<int?> _selectedIndex = ValueNotifier(null);
   final ValueNotifier<double> _rotation = ValueNotifier(0.0);
   final ScrollController _scrollController = ScrollController();
 
@@ -51,23 +50,39 @@ class _AudioMultipleChoiceScreenState extends State<AudioMultipleChoiceScreen>
   @override
   void initState() {
     super.initState();
+    isAnsweredNotifier.addListener(() {
+      if (isAnsweredNotifier.value && mounted && _scrollController.hasClients) {
+        Future.delayed(const Duration(milliseconds: 100), () {
+          if (mounted && _scrollController.hasClients) {
+            _scrollController.animateTo(
+              _scrollController.position.maxScrollExtent,
+              duration: const Duration(milliseconds: 300),
+              curve: Curves.easeOut,
+            );
+          }
+        });
+      }
+    });
+
     timerKey = GlobalKey<SpeedChallengeTimerState>();
     initListeningGame();
   }
 
   @override
   void dispose() {
-    _isFirstStagePassed.dispose();
-    _selectedIndex.dispose();
+        _selectedIndex.dispose();
     _rotation.dispose();
     _scrollController.dispose();
+    disposeListeningGame();
+    disposeListeningGame();
+    disposeListeningGame();
     disposeListeningGame();
     super.dispose();
   }
 
   @override
   void onQuestionReset() {
-    _isFirstStagePassed.value = false;
+    isFirstStagePassedNotifier.value = false;
     _selectedIndex.value = null;
     _rotation.value = 0.0;
   }
@@ -141,7 +156,7 @@ class _AudioMultipleChoiceScreenState extends State<AudioMultipleChoiceScreen>
             isAnsweredNotifier,
             isCorrectNotifier,
             showConfettiNotifier,
-            _isFirstStagePassed,
+            isFirstStagePassedNotifier,
           ]),
           builder: (context, _) {
             final correctWord =

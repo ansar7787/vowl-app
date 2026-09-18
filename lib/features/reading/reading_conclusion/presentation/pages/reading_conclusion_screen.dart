@@ -5,12 +5,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
-import 'package:vowl/core/utils/haptic_service.dart';
-import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/reading/presentation/bloc/reading_bloc.dart';
+import 'package:vowl/features/reading/presentation/mixins/reading_game_screen_mixin.dart';
 import 'package:vowl/features/reading/presentation/layout/reading_base_layout.dart';
-import 'package:vowl/core/utils/locale_service.dart';
-import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/features/reading/domain/entities/reading_quest.dart';
 import 'package:vowl/features/reading/reading_conclusion/presentation/widgets/reading_conclusion_instruction.dart';
 import 'package:vowl/features/reading/reading_conclusion/presentation/widgets/reading_conclusion_passage.dart';
@@ -31,42 +28,57 @@ class ReadingConclusionScreen extends StatefulWidget {
       _ReadingConclusionScreenState();
 }
 
-class _ReadingConclusionScreenState extends State<ReadingConclusionScreen> {
-  final _hapticService = di.sl<HapticService>();
-  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
-  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
-  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
-  final ScrollController _scrollController = ScrollController();
+class _ReadingConclusionScreenState extends State<ReadingConclusionScreen> with ReadingGameScreenMixin {
+  @override
+  GameSubtype get gameType => widget.gameType;
+
+  @override
+  int get level => widget.level;
+
+  @override
+  String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
+
+          final ScrollController _scrollController = ScrollController();
 
   @override
   void dispose() {
-    _isAnswered.dispose();
-    _isCorrect.dispose();
-    _showConfetti.dispose();
-    _scrollController.dispose();
+                _scrollController.dispose();
+    disposeReadingGame();
+    disposeReadingGame();
+    disposeReadingGame();
     super.dispose();
   }
 
-  int _lastProcessedIndex = -1;
-  int? _lastLives;
-
+    
   @override
   void initState() {
     super.initState();
-    context.read<ReadingBloc>().add(
-      FetchReadingQuests(gameType: widget.gameType, level: widget.level),
-    );
+    isAnsweredNotifier.addListener(() {
+      if (isAnsweredNotifier.value && mounted && _scrollController.hasClients) {
+        Future.delayed(const Duration(milliseconds: 100), () {
+          if (mounted && _scrollController.hasClients) {
+            _scrollController.animateTo(
+              _scrollController.position.maxScrollExtent,
+              duration: const Duration(milliseconds: 300),
+              curve: Curves.easeOut,
+            );
+          }
+        });
+      }
+    });
+
+    initReadingGame();
   }
 
   void _submitFinalAnswer(bool isCorrect, ReadingQuest quest) {
-    _isAnswered.value = true;
-    _isCorrect.value = isCorrect;
+    isAnsweredNotifier.value = true;
+    isCorrectNotifier.value = isCorrect;
 
     if (isCorrect) {
-      _hapticService.success();
+      hapticService.success();
       context.read<ReadingBloc>().add(const SubmitAnswer(true));
     } else {
-      _hapticService.error();
+      hapticService.error();
       context.read<ReadingBloc>().add(const SubmitAnswer(false));
     }
   }
@@ -77,37 +89,8 @@ class _ReadingConclusionScreenState extends State<ReadingConclusionScreen> {
     final theme = LevelThemeHelper.getTheme('reading', level: widget.level);
 
     return BlocConsumer<ReadingBloc, ReadingState>(
-      listener: (context, state) {
-        if (state is ReadingLoaded) {
-          final isNewQuestion = state.currentIndex != _lastProcessedIndex;
-          final isRetry = _isAnswered.value && !state.answerStatus.isAnswered;
-          final livesChanged =
-              _lastLives != null && state.livesRemaining > _lastLives!;
-
-          if (isNewQuestion || isRetry || livesChanged) {
-            _lastProcessedIndex = state.currentIndex;
-            _isAnswered.value = false;
-            _isCorrect.value = null;
-          } else if (state.answerStatus.isAnswered && !_isAnswered.value) {
-            _isAnswered.value = true;
-            _isCorrect.value = state.answerStatus.asBoolOrNull;
-          }
-          _lastLives = state.livesRemaining;
-        }
-        if (state is ReadingGameComplete) {
-          _showConfetti.value = true;
-          GameDialogHelper.showCompletion(
-            context,
-            xp: state.xpEarned,
-            coins: state.coinsEarned,
-            title: context.tr(
-              'reading_games.final_verdict_delivered',
-              fallback: 'FINAL VERDICT DELIVERED!',
-            ),
-            enableDoubleUp: true,
-          );
-        }
-      },
+      listenWhen: readingListenWhen,
+      listener: onReadingStateChanged,
       builder: (context, state) {
         final ReadingQuest? quest = (state is ReadingLoaded)
             ? state.currentQuest as ReadingQuest?
@@ -115,17 +98,17 @@ class _ReadingConclusionScreenState extends State<ReadingConclusionScreen> {
 
         return ListenableBuilder(
           listenable: Listenable.merge([
-            _isAnswered,
-            _isCorrect,
-            _showConfetti,
+            isAnsweredNotifier,
+            isCorrectNotifier,
+            showConfettiNotifier,
           ]),
           builder: (context, _) {
             return ReadingBaseLayout(
               gameType: widget.gameType,
               level: widget.level,
-              isAnswered: _isAnswered.value,
-              isCorrect: _isCorrect.value,
-              showConfetti: _showConfetti.value,
+              isAnswered: isAnsweredNotifier.value,
+              isCorrect: isCorrectNotifier.value,
+              showConfetti: showConfettiNotifier.value,
               onContinue: () =>
                   context.read<ReadingBloc>().add(const NextQuestion()),
               onHint: () =>
@@ -189,16 +172,16 @@ class _ReadingConclusionScreenState extends State<ReadingConclusionScreen> {
                                   child: Column(
                                     mainAxisAlignment: MainAxisAlignment.end,
                                     children: [
-                                      if (_isAnswered.value) ...[
+                                      if (isAnsweredNotifier.value) ...[
                                         SizedBox(height: 30.h),
                                         ReadingConclusionResult(
                                           quest: quest,
-                                          isCorrect: _isCorrect.value == true,
+                                          isCorrect: isCorrectNotifier.value == true,
                                           isDark: isDark,
                                         ),
                                       ],
                                       SizedBox(
-                                        height: (!_isAnswered.value)
+                                        height: (!isAnsweredNotifier.value)
                                             ? 380.h
                                             : 60.h,
                                       ),
@@ -209,7 +192,7 @@ class _ReadingConclusionScreenState extends State<ReadingConclusionScreen> {
                             ],
                           ),
                         ),
-                        if (!_isAnswered.value)
+                        if (!isAnsweredNotifier.value)
                           TypeToConfirmOverlay(
                             expectedText: quest.correctAnswer ?? "",
                             primaryColor: theme.primaryColor,

@@ -5,14 +5,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
-import 'package:vowl/core/utils/haptic_service.dart';
-import 'package:vowl/core/utils/tts_service.dart';
-import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/writing/presentation/bloc/writing_bloc.dart';
+import 'package:vowl/features/writing/presentation/mixins/writing_game_screen_mixin.dart';
 import 'package:vowl/features/writing/presentation/bloc/writing_event.dart';
 import 'package:vowl/features/writing/presentation/bloc/writing_state.dart';
 import 'package:vowl/features/writing/presentation/layout/writing_base_layout.dart';
-import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/features/writing/sentence_builder/presentation/widgets/sentence_builder_instruction.dart';
@@ -35,9 +32,15 @@ class SentenceBuilderScreen extends StatefulWidget {
   State<SentenceBuilderScreen> createState() => _SentenceBuilderScreenState();
 }
 
-class _SentenceBuilderScreenState extends State<SentenceBuilderScreen> {
-  final _hapticService = di.sl<HapticService>();
-  final _ttsService = di.sl<TtsService>();
+class _SentenceBuilderScreenState extends State<SentenceBuilderScreen> with WritingGameScreenMixin {
+  @override
+  GameSubtype get gameType => widget.gameType;
+
+  @override
+  int get level => widget.level;
+
+  @override
+  String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
   // PERF FIX: cached so getTheme() isn't called on every build().
   late dynamic _theme;
@@ -46,8 +49,7 @@ class _SentenceBuilderScreenState extends State<SentenceBuilderScreen> {
 
   final _textController = TextEditingController();
   final ValueNotifier<List<String>> _assembledPieces = ValueNotifier([]);
-  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
-  final ValueNotifier<bool> _showTypeToConfirm = ValueNotifier(false);
+    final ValueNotifier<bool> _showTypeToConfirm = ValueNotifier(false);
   late final ScrollController _scrollController;
 
   // FIX: full whitespace normalization to prevent false mismatches.
@@ -62,11 +64,23 @@ class _SentenceBuilderScreenState extends State<SentenceBuilderScreen> {
   @override
   void initState() {
     super.initState();
+    isAnsweredNotifier.addListener(() {
+      if (isAnsweredNotifier.value && mounted && _scrollController.hasClients) {
+        Future.delayed(const Duration(milliseconds: 100), () {
+          if (mounted && _scrollController.hasClients) {
+            _scrollController.animateTo(
+              _scrollController.position.maxScrollExtent,
+              duration: const Duration(milliseconds: 300),
+              curve: Curves.easeOut,
+            );
+          }
+        });
+      }
+    });
+
     _scrollController = ScrollController();
     _theme = LevelThemeHelper.getTheme('writing', level: widget.level);
-    context.read<WritingBloc>().add(
-      FetchWritingQuests(gameType: widget.gameType, level: widget.level),
-    );
+    initWritingGame();
   }
 
   @override
@@ -82,20 +96,22 @@ class _SentenceBuilderScreenState extends State<SentenceBuilderScreen> {
     _scrollController.dispose();
     _textController.dispose();
     _assembledPieces.dispose();
-    _showConfetti.dispose();
-    _showTypeToConfirm.dispose();
+        _showTypeToConfirm.dispose();
+    disposeWritingGame();
+    disposeWritingGame();
+    disposeWritingGame();
     super.dispose();
   }
 
   void _onSnap(String piece, bool isAnswered) {
     if (isAnswered) return;
-    _hapticService.success();
+    hapticService.success();
     _assembledPieces.value = List.from(_assembledPieces.value)..add(piece);
   }
 
   void _onRemovePiece(int index, bool isAnswered) {
     if (isAnswered) return;
-    _hapticService.selection();
+    hapticService.selection();
     _assembledPieces.value = List.from(_assembledPieces.value)..removeAt(index);
   }
 
@@ -127,7 +143,7 @@ class _SentenceBuilderScreenState extends State<SentenceBuilderScreen> {
           message: "Please start your sentence with a capital letter.",
           type: CustomSnackBarType.warning,
         );
-        _hapticService.selection();
+        hapticService.selection();
         return;
       }
 
@@ -139,7 +155,7 @@ class _SentenceBuilderScreenState extends State<SentenceBuilderScreen> {
               "Please end your sentence with proper punctuation (., !, or ?).",
           type: CustomSnackBarType.warning,
         );
-        _hapticService.selection();
+        hapticService.selection();
         return;
       }
     }
@@ -152,7 +168,7 @@ class _SentenceBuilderScreenState extends State<SentenceBuilderScreen> {
     final isCorrect = built == expected;
 
     if (isCorrect) {
-      _hapticService.success();
+      hapticService.success();
       if (isHardMode) {
         // They already typed it manually, no need to type to confirm.
         context.read<WritingBloc>().add(const SubmitAnswer(true));
@@ -161,7 +177,7 @@ class _SentenceBuilderScreenState extends State<SentenceBuilderScreen> {
         _scrollToBottom();
       }
     } else {
-      _hapticService.error();
+      hapticService.error();
       context.read<WritingBloc>().add(const SubmitAnswer(false));
     }
   }
@@ -183,44 +199,7 @@ class _SentenceBuilderScreenState extends State<SentenceBuilderScreen> {
           (prev is WritingLoaded &&
               curr is WritingLoaded &&
               prev.answerStatus != curr.answerStatus),
-      listener: (context, state) {
-        if (state is WritingLoaded && !state.answerStatus.isAnswered) {
-          // New question loaded or retry triggered â€” clear the selected option.
-          _assembledPieces.value = [];
-          _textController.clear();
-          _showTypeToConfirm.value = false;
-        }
-
-        if (state is WritingLoaded &&
-            state.answerStatus == AnswerStatus.correct) {
-          _ttsService.speak(state.currentQuest.correctAnswer ?? '');
-        }
-
-        if (state is WritingGameComplete) {
-          _showConfetti.value = true;
-          GameDialogHelper.showCompletion(
-            context,
-            xp: state.xpEarned,
-            coins: state.coinsEarned,
-            title: 'SYNTAX ARCHITECT!',
-            enableDoubleUp: true,
-          );
-        }
-
-        if (state is WritingGameOver) {
-          // Handled globally by the base layout.
-        }
-      },
-      // PERF FIX: only rebuild when the quest itself changes, not on every
-      // hintUsed / wrongCount update (those are handled inside WritingBaseLayout).
-      buildWhen: (prev, curr) =>
-          prev.runtimeType != curr.runtimeType ||
-          (prev is WritingLoaded &&
-              curr is WritingLoaded &&
-              prev.currentIndex != curr.currentIndex) ||
-          (prev is WritingLoaded &&
-              curr is WritingLoaded &&
-              prev.answerStatus != curr.answerStatus),
+      listener: onWritingStateChanged,
       builder: (context, state) {
         final isLoaded = state is WritingLoaded;
         if (isLoaded) {
@@ -242,7 +221,7 @@ class _SentenceBuilderScreenState extends State<SentenceBuilderScreen> {
           isAnswered: isAnswered,
           isCorrect: isCorrect,
           isFinalFailure: isFinalFailure,
-          showConfetti: _showConfetti.value,
+          showConfetti: showConfettiNotifier.value,
           useScrolling: false,
           disablePadding: true,
           onContinue: () =>
@@ -250,7 +229,7 @@ class _SentenceBuilderScreenState extends State<SentenceBuilderScreen> {
           onHint: () {},
           child: ListenableBuilder(
             listenable: Listenable.merge([
-              _showConfetti,
+              showConfettiNotifier,
               _showTypeToConfirm,
               _assembledPieces,
             ]),
@@ -515,3 +494,7 @@ class _SubmitButton extends StatelessWidget {
     );
   }
 }
+
+
+
+

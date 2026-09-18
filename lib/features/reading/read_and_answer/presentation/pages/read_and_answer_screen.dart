@@ -5,10 +5,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
-import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/features/reading/presentation/bloc/reading_bloc.dart';
+import 'package:vowl/features/reading/presentation/mixins/reading_game_screen_mixin.dart';
 import 'package:vowl/features/reading/presentation/layout/reading_base_layout.dart';
-import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/reading/domain/entities/reading_quest.dart';
 import 'package:vowl/features/reading/read_and_answer/presentation/widgets/read_and_answer_instruction.dart';
 import 'package:vowl/features/reading/read_and_answer/presentation/widgets/read_and_answer_anchor_point.dart';
@@ -17,9 +16,6 @@ import 'package:vowl/features/reading/read_and_answer/presentation/widgets/read_
 import 'package:vowl/features/reading/read_and_answer/presentation/widgets/read_and_answer_result.dart';
 import 'package:vowl/core/presentation/game_mechanics/reading/evidence_highlight_wrapper.dart';
 import 'package:vowl/core/services/error_journal_collector.dart';
-import 'package:vowl/core/utils/haptic_service.dart';
-import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:vowl/core/utils/sound_service.dart';
 
 class ReadAndAnswerScreen extends StatefulWidget {
   final int level;
@@ -35,30 +31,50 @@ class ReadAndAnswerScreen extends StatefulWidget {
   State<ReadAndAnswerScreen> createState() => _ReadAndAnswerScreenState();
 }
 
-class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen> {
-  final _hapticService = di.sl<HapticService>();
-  final _soundService = di.sl<SoundService>();
+class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen> with ReadingGameScreenMixin {
+  @override
+  GameSubtype get gameType => widget.gameType;
 
-  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
-  final ValueNotifier<int?> _pendingSelectedIndex = ValueNotifier(null);
+  @override
+  int get level => widget.level;
+
+  @override
+  String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
+
+    
+    final ValueNotifier<int?> _pendingSelectedIndex = ValueNotifier(null);
   final ValueNotifier<bool> _showEvidenceStep = ValueNotifier(false);
   final ScrollController _scrollController = ScrollController();
 
   @override
   void dispose() {
-    _showConfetti.dispose();
-    _pendingSelectedIndex.dispose();
+        _pendingSelectedIndex.dispose();
     _showEvidenceStep.dispose();
     _scrollController.dispose();
+    disposeReadingGame();
+    disposeReadingGame();
+    disposeReadingGame();
     super.dispose();
   }
 
   @override
   void initState() {
     super.initState();
-    context.read<ReadingBloc>().add(
-      FetchReadingQuests(gameType: widget.gameType, level: widget.level),
-    );
+    isAnsweredNotifier.addListener(() {
+      if (isAnsweredNotifier.value && mounted && _scrollController.hasClients) {
+        Future.delayed(const Duration(milliseconds: 100), () {
+          if (mounted && _scrollController.hasClients) {
+            _scrollController.animateTo(
+              _scrollController.position.maxScrollExtent,
+              duration: const Duration(milliseconds: 300),
+              curve: Curves.easeOut,
+            );
+          }
+        });
+      }
+    });
+
+    initReadingGame();
   }
 
   void _onOptionTap(int index, bool isCorrect, ReadingQuest quest) {
@@ -67,7 +83,7 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen> {
     _pendingSelectedIndex.value = index;
 
     if (isCorrect) {
-      _hapticService.selection();
+      hapticService.selection();
 
       // Prevent Soft-Lock: If there is no valid evidence string to highlight,
       // skip the highlight step entirely and submit the correct answer.
@@ -85,12 +101,12 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen> {
 
   void _submitFinalAnswer(bool isCorrect, ReadingQuest quest) {
     if (isCorrect) {
-      _hapticService.success();
-      _soundService.playCorrect();
+      hapticService.success();
+      soundService.playCorrect();
       context.read<ReadingBloc>().add(const SubmitAnswer(true));
     } else {
-      _hapticService.error();
-      _soundService.playWrong();
+      hapticService.error();
+      soundService.playWrong();
 
       final String userAnswer =
           (quest.options != null &&
@@ -124,26 +140,7 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen> {
           (curr is ReadingGameComplete && prev is! ReadingGameComplete) ||
           (curr is ReadingGameOver && prev is! ReadingGameOver) ||
           (curr is ReadingLoaded && !curr.answerStatus.isAnswered),
-      listener: (context, state) {
-        if (state is ReadingLoaded && !state.answerStatus.isAnswered) {
-          _pendingSelectedIndex.value = null;
-          _showEvidenceStep.value = false;
-          _showConfetti.value = false;
-        }
-        if (state is ReadingGameComplete) {
-          _showConfetti.value = true;
-          GameDialogHelper.showCompletion(
-            context,
-            xp: state.xpEarned,
-            coins: state.coinsEarned,
-            title: context.tr(
-              'reading_games.zen_reader',
-              fallback: 'ZEN READER!',
-            ),
-            enableDoubleUp: true,
-          );
-        }
-      },
+      listener: onReadingStateChanged,
       builder: (context, state) {
         final isLoaded = state is ReadingLoaded;
         final ReadingQuest? quest = isLoaded ? state.currentQuest : null;
@@ -170,7 +167,7 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen> {
 
         return ListenableBuilder(
           listenable: Listenable.merge([
-            _showConfetti,
+            showConfettiNotifier,
             _pendingSelectedIndex,
             _showEvidenceStep,
           ]),
@@ -180,7 +177,7 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen> {
               level: widget.level,
               isAnswered: isAnswered,
               isCorrect: isCorrect,
-              showConfetti: _showConfetti.value,
+              showConfetti: showConfettiNotifier.value,
               useScrolling: false,
               disablePadding: true,
               onContinue: () =>

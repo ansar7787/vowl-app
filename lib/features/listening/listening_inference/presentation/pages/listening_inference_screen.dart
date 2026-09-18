@@ -5,14 +5,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
-import 'package:vowl/core/utils/haptic_service.dart';
-import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/listening/presentation/bloc/listening_bloc.dart';
+import 'package:vowl/features/listening/presentation/mixins/listening_game_screen_mixin.dart';
 import 'package:vowl/features/listening/presentation/bloc/listening_event.dart';
 import 'package:vowl/features/listening/presentation/bloc/listening_state.dart';
 import 'package:vowl/features/listening/presentation/layout/listening_base_layout.dart';
-import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/features/listening/listening_inference/presentation/widgets/listening_inference_instruction.dart';
 import 'package:vowl/features/listening/listening_inference/presentation/widgets/listening_inference_radar_core.dart';
 import 'package:vowl/features/listening/listening_inference/presentation/widgets/listening_inference_grid.dart';
@@ -35,48 +32,61 @@ class ListeningInferenceScreen extends StatefulWidget {
       _ListeningInferenceScreenState();
 }
 
-class _ListeningInferenceScreenState extends State<ListeningInferenceScreen>
-    with SingleTickerProviderStateMixin {
-  final _hapticService = di.sl<HapticService>();
-  final _soundService = di.sl<SoundService>();
+class _ListeningInferenceScreenState extends State<ListeningInferenceScreen>with SingleTickerProviderStateMixin, ListeningGameScreenMixin {
+  @override
+  GameSubtype get gameType => widget.gameType;
 
+  @override
+  int get level => widget.level;
+
+  @override
+  String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
+
+    
   final GlobalKey<SpeedChallengeTimerState> _timerKey =
       GlobalKey<SpeedChallengeTimerState>();
 
   late AnimationController _pulseController;
-  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
-  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
-  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
-  int _lastProcessedIndex = -1;
-  int? _lastLives;
-  final ValueNotifier<int?> _selectedIndex = ValueNotifier(null);
+            final ValueNotifier<int?> _selectedIndex = ValueNotifier(null);
   final ScrollController _scrollController = ScrollController();
 
   @override
   void dispose() {
-    _isAnswered.dispose();
-    _isCorrect.dispose();
-    _showConfetti.dispose();
-    _selectedIndex.dispose();
+                _selectedIndex.dispose();
     _pulseController.dispose();
     _scrollController.dispose();
+    disposeListeningGame();
+    disposeListeningGame();
+    disposeListeningGame();
     super.dispose();
   }
 
   @override
   void initState() {
     super.initState();
+    isAnsweredNotifier.addListener(() {
+      if (isAnsweredNotifier.value && mounted && _scrollController.hasClients) {
+        Future.delayed(const Duration(milliseconds: 100), () {
+          if (mounted && _scrollController.hasClients) {
+            _scrollController.animateTo(
+              _scrollController.position.maxScrollExtent,
+              duration: const Duration(milliseconds: 300),
+              curve: Curves.easeOut,
+            );
+          }
+        });
+      }
+    });
+
     _pulseController = AnimationController(
       vsync: this,
       duration: const Duration(seconds: 2),
     )..repeat();
-    context.read<ListeningBloc>().add(
-      FetchListeningQuests(gameType: widget.gameType, level: widget.level),
-    );
+    initListeningGame();
   }
 
   void _submitFinalAnswer(int index, int correct, dynamic quest) {
-    if (_isAnswered.value) return;
+    if (isAnsweredNotifier.value) return;
     _timerKey.currentState?.stop();
     _pulseController.stop();
 
@@ -84,14 +94,14 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen>
     bool isCorrect = index == correct;
 
     if (isCorrect) {
-      _hapticService.success();
-      _soundService.playCorrect();
-      _isAnswered.value = true;
-      _isCorrect.value = true;
+      hapticService.success();
+      soundService.playCorrect();
+      isAnsweredNotifier.value = true;
+      isCorrectNotifier.value = true;
       context.read<ListeningBloc>().add(SubmitAnswer(true));
     } else {
-      _hapticService.error();
-      _soundService.playWrong();
+      hapticService.error();
+      soundService.playWrong();
 
       final authState = context.read<AuthBloc>().state;
       if (authState.status == AuthStatus.authenticated &&
@@ -111,19 +121,19 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen>
         );
       }
 
-      _isAnswered.value = true;
-      _isCorrect.value = false;
+      isAnsweredNotifier.value = true;
+      isCorrectNotifier.value = false;
       context.read<ListeningBloc>().add(SubmitAnswer(false));
     }
   }
 
   void _submitWrongAnswer(dynamic quest) {
-    if (_isAnswered.value) return;
+    if (isAnsweredNotifier.value) return;
     _timerKey.currentState?.stop();
     _pulseController.stop();
 
-    _hapticService.error();
-    _soundService.playWrong();
+    hapticService.error();
+    soundService.playWrong();
 
     final authState = context.read<AuthBloc>().state;
     if (authState.status == AuthStatus.authenticated &&
@@ -137,8 +147,8 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen>
         level: widget.level,
       );
     }
-    _isAnswered.value = true;
-    _isCorrect.value = false;
+    isAnsweredNotifier.value = true;
+    isCorrectNotifier.value = false;
     context.read<ListeningBloc>().add(SubmitAnswer(false));
   }
 
@@ -225,55 +235,25 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen>
     final theme = LevelThemeHelper.getTheme('listening', level: widget.level);
 
     return BlocConsumer<ListeningBloc, ListeningState>(
-      listener: (context, state) {
-        if (state is ListeningLoaded) {
-          final isNewQuestion = state.currentIndex != _lastProcessedIndex;
-          final isRetry = _isAnswered.value && !state.answerStatus.isAnswered;
-          final livesChanged =
-              _lastLives != null && state.livesRemaining > _lastLives!;
-
-          if (isNewQuestion || isRetry || livesChanged) {
-            _lastProcessedIndex = state.currentIndex;
-            _isAnswered.value = false;
-            _timerKey.currentState?.start();
-            _isCorrect.value = null;
-            _selectedIndex.value = null;
-            _pulseController.repeat();
-          } else if (state.answerStatus.isAnswered && !_isAnswered.value) {
-            _isAnswered.value = true;
-            _isCorrect.value = state.answerStatus.asBoolOrNull;
-            _pulseController.stop();
-          }
-          _lastLives = state.livesRemaining;
-        }
-        if (state is ListeningGameComplete) {
-          _showConfetti.value = true;
-          GameDialogHelper.showCompletion(
-            context,
-            xp: state.xpEarned,
-            coins: state.coinsEarned,
-            title: 'INFERENCE MASTER!',
-            enableDoubleUp: true,
-          );
-        }
-      },
+      listenWhen: listeningListenWhen,
+      listener: onListeningStateChanged,
       builder: (context, state) {
         final quest = (state is ListeningLoaded) ? state.currentQuest : null;
 
         return ListenableBuilder(
           listenable: Listenable.merge([
-            _isAnswered,
-            _isCorrect,
-            _showConfetti,
+            isAnsweredNotifier,
+            isCorrectNotifier,
+            showConfettiNotifier,
             _selectedIndex,
           ]),
           builder: (context, _) {
             return ListeningBaseLayout(
               gameType: widget.gameType,
               level: widget.level,
-              isAnswered: _isAnswered.value,
-              isCorrect: _isCorrect.value,
-              showConfetti: _showConfetti.value,
+              isAnswered: isAnsweredNotifier.value,
+              isCorrect: isCorrectNotifier.value,
+              showConfetti: showConfettiNotifier.value,
               useScrolling: false,
               disablePadding: true,
               onContinue: () =>
@@ -323,20 +303,20 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen>
                                       SizedBox(height: 24.h),
                                       ListeningInferenceRadarCore(
                                         onTap: () {
-                                          _soundService.playTts(
+                                          soundService.playTts(
                                             quest.textToSpeak ?? "",
                                           );
-                                          _hapticService.selection();
+                                          hapticService.selection();
                                         },
                                         pulseController: _pulseController,
                                         color: theme.primaryColor,
                                         emoji: quest.emoji,
-                                        isCorrectState: _isCorrect.value,
+                                        isCorrectState: isCorrectNotifier.value,
                                       ),
                                       SizedBox(height: 16.h),
                                       GestureDetector(
                                         onTap: () {
-                                          _hapticService.selection();
+                                          hapticService.selection();
                                           _showTranscriptBottomSheet(
                                             context,
                                             quest.textToSpeak ?? '',
@@ -414,8 +394,8 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen>
                                         correctAnswerIndex:
                                             quest.correctAnswerIndex ?? 0,
                                         color: theme.primaryColor,
-                                        isAnswered: _isAnswered.value,
-                                        isCorrectState: _isCorrect.value,
+                                        isAnswered: isAnsweredNotifier.value,
+                                        isCorrectState: isCorrectNotifier.value,
                                         selectedIndex: _selectedIndex.value,
                                         onSubmitAnswer: (index) {
                                           _submitFinalAnswer(
@@ -425,7 +405,7 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen>
                                           );
                                         },
                                       ),
-                                      if (_isAnswered.value &&
+                                      if (isAnsweredNotifier.value &&
                                           quest.explanation != null)
                                         AnimatedSize(
                                           duration: const Duration(

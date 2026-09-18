@@ -5,15 +5,11 @@ import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
-import 'package:vowl/features/speaking/domain/entities/speaking_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
-import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/speaking/presentation/bloc/speaking_bloc.dart';
+import 'package:vowl/features/speaking/presentation/mixins/speaking_game_screen_mixin.dart';
 import 'package:vowl/features/speaking/presentation/layout/speaking_base_layout.dart';
-import 'package:vowl/core/utils/locale_service.dart';
-import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/game_mechanics/speaking/speak_to_confirm_overlay.dart';
 import 'package:vowl/core/services/error_journal_collector.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
@@ -37,56 +33,65 @@ class SituationSpeakingScreen extends StatefulWidget {
       _SituationSpeakingScreenState();
 }
 
-class _SituationSpeakingScreenState extends State<SituationSpeakingScreen> {
-  final _hapticService = di.sl<HapticService>();
-  final _soundService = di.sl<SoundService>();
+class _SituationSpeakingScreenState extends State<SituationSpeakingScreen> with SpeakingGameScreenMixin {
+  @override
+  GameSubtype get gameType => widget.gameType;
 
+  @override
+  int get level => widget.level;
+
+  @override
+  String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
+
+    
   final ValueNotifier<bool> _isBriefingComplete = ValueNotifier(false);
-  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
-  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
-  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
-  int _lastProcessedIndex = -1;
-  int? _lastLives;
-
+          
   final ScrollController _scrollController = ScrollController();
 
   @override
   void initState() {
     super.initState();
-    context.read<SpeakingBloc>().add(
-      FetchSpeakingQuests(gameType: widget.gameType, level: widget.level),
-    );
+    isAnsweredNotifier.addListener(() {
+      if (isAnsweredNotifier.value && mounted && _scrollController.hasClients) {
+        Future.delayed(const Duration(milliseconds: 100), () {
+          if (mounted && _scrollController.hasClients) {
+            _scrollController.animateTo(
+              _scrollController.position.maxScrollExtent,
+              duration: const Duration(milliseconds: 300),
+              curve: Curves.easeOut,
+            );
+          }
+        });
+      }
+    });
+
+    initSpeakingGame();
   }
 
   @override
   void dispose() {
     _isBriefingComplete.dispose();
-    _isAnswered.dispose();
-    _isCorrect.dispose();
-    _showConfetti.dispose();
-    _scrollController.dispose();
+                _scrollController.dispose();
+    disposeSpeakingGame();
+    disposeSpeakingGame();
+    disposeSpeakingGame();
     super.dispose();
   }
-
-  void _triggerAutoPlay(SpeakingQuest quest) {
-    if (quest.situationText != null) {
-      _soundService.playTts(quest.situationText!);
-    }
-  }
+
 
   void _submitVerbalEvaluation(bool nailedIt, String textToSpeak) {
-    if (_isAnswered.value) return;
+    if (isAnsweredNotifier.value) return;
 
-    _isAnswered.value = true;
-    _isCorrect.value = nailedIt;
+    isAnsweredNotifier.value = true;
+    isCorrectNotifier.value = nailedIt;
 
     if (nailedIt) {
-      _hapticService.success();
-      _soundService.playCorrect();
+      hapticService.success();
+      soundService.playCorrect();
       context.read<SpeakingBloc>().add(const SubmitAnswer(true));
     } else {
-      _hapticService.error();
-      _soundService.playWrong();
+      hapticService.error();
+      soundService.playWrong();
 
       final authState = context.read<AuthBloc>().state;
       if (authState.status == AuthStatus.authenticated &&
@@ -118,7 +123,7 @@ class _SituationSpeakingScreenState extends State<SituationSpeakingScreen> {
   }
 
   void _onBriefingComplete() {
-    if (_isAnswered.value || _isBriefingComplete.value) return;
+    if (isAnsweredNotifier.value || _isBriefingComplete.value) return;
     _isBriefingComplete.value = true;
     _scrollToBottom();
   }
@@ -130,44 +135,8 @@ class _SituationSpeakingScreenState extends State<SituationSpeakingScreen> {
     final mediaQuery = MediaQuery.of(context);
 
     return BlocConsumer<SpeakingBloc, SpeakingState>(
-      listener: (context, state) {
-        if (state is SpeakingLoaded) {
-          final livesRestored = (state.livesRemaining > (_lastLives ?? 3));
-          if (state.currentIndex != _lastProcessedIndex ||
-              livesRestored ||
-              (!state.answerStatus.isAnswered && _isAnswered.value)) {
-            final isNewQuestion = state.currentIndex != _lastProcessedIndex;
-
-            _lastProcessedIndex = state.currentIndex;
-            _isAnswered.value = false;
-            _isCorrect.value = null;
-
-            if (isNewQuestion || livesRestored) {
-              _isBriefingComplete.value = false;
-              Future.delayed(const Duration(milliseconds: 300), () {
-                if (mounted) _triggerAutoPlay(state.currentQuest);
-              });
-            }
-          } else if (state.answerStatus == AnswerStatus.incorrect) {
-            _isCorrect.value = false;
-            _isAnswered.value = true; // Always show feedback card on incorrect
-          }
-          _lastLives = state.livesRemaining;
-        }
-        if (state is SpeakingGameComplete) {
-          _showConfetti.value = true;
-          GameDialogHelper.showCompletion(
-            context,
-            xp: state.xpEarned,
-            coins: state.coinsEarned,
-            title: context.tr(
-              'speaking_games.situational_expert',
-              fallback: 'SITUATIONAL EXPERT!',
-            ),
-            enableDoubleUp: true,
-          );
-        }
-      },
+      listenWhen: speakingListenWhen,
+      listener: onSpeakingStateChanged,
       builder: (context, state) {
         final quest = (state is SpeakingLoaded) ? state.currentQuest : null;
         final hintUsed = (state is SpeakingLoaded) ? state.hintUsed : false;
@@ -178,18 +147,18 @@ class _SituationSpeakingScreenState extends State<SituationSpeakingScreen> {
           ),
           child: ListenableBuilder(
             listenable: Listenable.merge([
-              _isAnswered,
-              _isCorrect,
-              _showConfetti,
+              isAnsweredNotifier,
+              isCorrectNotifier,
+              showConfettiNotifier,
               _isBriefingComplete,
             ]),
             builder: (context, _) {
               return SpeakingBaseLayout(
                 gameType: widget.gameType,
                 level: widget.level,
-                isAnswered: _isAnswered.value,
-                isCorrect: _isCorrect.value,
-                showConfetti: _showConfetti.value,
+                isAnswered: isAnsweredNotifier.value,
+                isCorrect: isCorrectNotifier.value,
+                showConfetti: showConfettiNotifier.value,
                 disablePadding: true,
                 onContinue: () =>
                     context.read<SpeakingBloc>().add(const NextQuestion()),
@@ -229,7 +198,7 @@ class _SituationSpeakingScreenState extends State<SituationSpeakingScreen> {
                                       quest: quest,
                                       primaryColor: theme.primaryColor,
                                       isDark: isDark,
-                                      isAnswered: _isAnswered.value,
+                                      isAnswered: isAnsweredNotifier.value,
                                       hintUsed: hintUsed,
                                       onBriefingComplete: _onBriefingComplete,
                                       onPlayTts: () {
@@ -238,7 +207,7 @@ class _SituationSpeakingScreenState extends State<SituationSpeakingScreen> {
                                             .isRecording) {
                                           return;
                                         }
-                                        _soundService.playTts(
+                                        soundService.playTts(
                                           quest.situationText ?? "",
                                         );
                                       },
@@ -247,7 +216,7 @@ class _SituationSpeakingScreenState extends State<SituationSpeakingScreen> {
                                 ),
                               ),
                             ),
-                            if (!_isAnswered.value && _isBriefingComplete.value)
+                            if (!isAnsweredNotifier.value && _isBriefingComplete.value)
                               SliverToBoxAdapter(
                                 child: SpeakToConfirmOverlay(
                                   expectedText:

@@ -4,12 +4,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
-import 'package:vowl/core/utils/haptic_service.dart';
-import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/grammar/presentation/bloc/grammar_bloc.dart';
+import 'package:vowl/features/grammar/presentation/mixins/grammar_game_screen_mixin.dart';
 import 'package:vowl/features/grammar/presentation/layout/grammar_base_layout.dart';
-import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/features/grammar/word_reorder/presentation/widgets/word_reorder_instruction.dart';
 import 'package:vowl/features/grammar/word_reorder/presentation/widgets/word_reorder_floating_tile.dart';
 import 'package:vowl/features/grammar/word_reorder/presentation/widgets/word_reorder_assembly_card.dart';
@@ -29,50 +26,64 @@ class WordReorderScreen extends StatefulWidget {
   State<WordReorderScreen> createState() => _WordReorderScreenState();
 }
 
-class _WordReorderScreenState extends State<WordReorderScreen> {
-  final _hapticService = di.sl<HapticService>();
-  final _soundService = di.sl<SoundService>();
-  final ValueNotifier<List<int>> _availableIndices = ValueNotifier([]);
+class _WordReorderScreenState extends State<WordReorderScreen> with GrammarGameScreenMixin {
+  @override
+  GameSubtype get gameType => widget.gameType;
+
+  @override
+  int get level => widget.level;
+
+  @override
+  String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
+
+      final ValueNotifier<List<int>> _availableIndices = ValueNotifier([]);
   final ValueNotifier<List<int>> _assembledIndices = ValueNotifier([]);
-  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
-  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
-  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
-  final ValueNotifier<bool> _pendingTypeSubmit = ValueNotifier(false);
+        final ValueNotifier<bool> _pendingTypeSubmit = ValueNotifier(false);
   final ScrollController _scrollController = ScrollController();
 
   @override
   void dispose() {
     _availableIndices.dispose();
     _assembledIndices.dispose();
-    _isAnswered.dispose();
-    _isCorrect.dispose();
-    _showConfetti.dispose();
-    _pendingTypeSubmit.dispose();
+                _pendingTypeSubmit.dispose();
     _scrollController.dispose();
+    disposeGrammarGame();
+    disposeGrammarGame();
+    disposeGrammarGame();
     super.dispose();
   }
 
-  int _lastProcessedIndex = -1;
-  int? _lastLives;
-
+    
   @override
   void initState() {
     super.initState();
-    context.read<GrammarBloc>().add(
-      FetchGrammarQuests(gameType: widget.gameType, level: widget.level),
-    );
+    isAnsweredNotifier.addListener(() {
+      if (isAnsweredNotifier.value && mounted && _scrollController.hasClients) {
+        Future.delayed(const Duration(milliseconds: 100), () {
+          if (mounted && _scrollController.hasClients) {
+            _scrollController.animateTo(
+              _scrollController.position.maxScrollExtent,
+              duration: const Duration(milliseconds: 300),
+              curve: Curves.easeOut,
+            );
+          }
+        });
+      }
+    });
+
+    initGrammarGame();
   }
 
   void _onWordTap(int index) {
-    if (_isAnswered.value || _pendingTypeSubmit.value) return;
-    _hapticService.selection();
+    if (isAnsweredNotifier.value || _pendingTypeSubmit.value) return;
+    hapticService.selection();
     _assembledIndices.value = List.from(_assembledIndices.value)..add(index);
     _availableIndices.value = List.from(_availableIndices.value)..remove(index);
   }
 
   void _onWordRemove(int index) {
-    if (_isAnswered.value || _pendingTypeSubmit.value) return;
-    _hapticService.selection();
+    if (isAnsweredNotifier.value || _pendingTypeSubmit.value) return;
+    hapticService.selection();
     _assembledIndices.value = List.from(_assembledIndices.value)..remove(index);
     _availableIndices.value = List.from(_availableIndices.value)
       ..add(index)
@@ -93,8 +104,8 @@ class _WordReorderScreenState extends State<WordReorderScreen> {
     }
 
     if (correct) {
-      _hapticService.success();
-      _soundService.playCorrect();
+      hapticService.success();
+      soundService.playCorrect();
       _pendingTypeSubmit.value = true;
       Future.delayed(const Duration(milliseconds: 100), () {
         if (_scrollController.hasClients) {
@@ -106,10 +117,10 @@ class _WordReorderScreenState extends State<WordReorderScreen> {
         }
       });
     } else {
-      _hapticService.error();
-      _soundService.playWrong();
-      _isAnswered.value = true;
-      _isCorrect.value = false;
+      hapticService.error();
+      soundService.playWrong();
+      isAnsweredNotifier.value = true;
+      isCorrectNotifier.value = false;
       context.read<GrammarBloc>().add(const SubmitAnswer(false));
     }
   }
@@ -118,16 +129,16 @@ class _WordReorderScreenState extends State<WordReorderScreen> {
     _pendingTypeSubmit.value = false;
 
     if (correct) {
-      _hapticService.success();
-      _soundService.playCorrect();
-      _isAnswered.value = true;
-      _isCorrect.value = true;
+      hapticService.success();
+      soundService.playCorrect();
+      isAnsweredNotifier.value = true;
+      isCorrectNotifier.value = true;
       context.read<GrammarBloc>().add(const SubmitAnswer(true));
     } else {
-      _hapticService.error();
-      _soundService.playWrong();
-      _isAnswered.value = true;
-      _isCorrect.value = false;
+      hapticService.error();
+      soundService.playWrong();
+      isAnsweredNotifier.value = true;
+      isCorrectNotifier.value = false;
       context.read<GrammarBloc>().add(const SubmitAnswer(false));
     }
   }
@@ -156,46 +167,8 @@ class _WordReorderScreenState extends State<WordReorderScreen> {
     final theme = LevelThemeHelper.getTheme('grammar', level: widget.level);
 
     return BlocConsumer<GrammarBloc, GrammarState>(
-      listener: (context, state) {
-        if (state is GrammarLoaded) {
-          final isNewQuestion = state.currentIndex != _lastProcessedIndex;
-          final isRetry = _isAnswered.value && !state.answerStatus.isAnswered;
-          final livesRestored =
-              _lastLives != null && state.livesRemaining > _lastLives!;
-
-          if (isNewQuestion || isRetry || livesRestored) {
-            _lastProcessedIndex = state.currentIndex;
-            _isAnswered.value = false;
-            _isCorrect.value = null;
-            _pendingTypeSubmit.value = false;
-
-            _assembledIndices.value = [];
-            final quest = state.currentQuest;
-            if (quest.shuffledWords != null) {
-              _availableIndices.value = List.generate(
-                quest.shuffledWords!.length,
-                (i) => i,
-              );
-            } else {
-              _availableIndices.value = [];
-            }
-          } else if (state.answerStatus.isAnswered && !_isAnswered.value) {
-            _isAnswered.value = true;
-            _isCorrect.value = state.answerStatus.asBoolOrNull;
-          }
-          _lastLives = state.livesRemaining;
-        }
-        if (state is GrammarGameComplete) {
-          _showConfetti.value = true;
-          GameDialogHelper.showCompletion(
-            context,
-            xp: state.xpEarned,
-            coins: state.coinsEarned,
-            title: 'SYNTAX SHARPSHOOTER!',
-            enableDoubleUp: true,
-          );
-        }
-      },
+      listenWhen: grammarListenWhen,
+      listener: onGrammarStateChanged,
       builder: (context, state) {
         final quest = (state is GrammarLoaded) ? state.currentQuest : null;
         final hintUsed = (state is GrammarLoaded) ? state.hintUsed : false;
@@ -208,19 +181,19 @@ class _WordReorderScreenState extends State<WordReorderScreen> {
 
         return ListenableBuilder(
           listenable: Listenable.merge([
-            _isAnswered,
-            _isCorrect,
-            _showConfetti,
+            isAnsweredNotifier,
+            isCorrectNotifier,
+            showConfettiNotifier,
             _pendingTypeSubmit,
           ]),
           builder: (context, _) {
             return GrammarBaseLayout(
               gameType: widget.gameType,
               level: widget.level,
-              isAnswered: _isAnswered.value,
-              isCorrect: _isCorrect.value,
+              isAnswered: isAnsweredNotifier.value,
+              isCorrect: isCorrectNotifier.value,
               isFinalFailure: state is GrammarLoaded && state.isFinalFailure,
-              showConfetti: _showConfetti.value,
+              showConfetti: showConfettiNotifier.value,
               onContinue: () =>
                   context.read<GrammarBloc>().add(const NextQuestion()),
               onHint: () =>
@@ -322,7 +295,7 @@ class _WordReorderScreenState extends State<WordReorderScreen> {
                                               primaryColor: theme.primaryColor,
                                               isDark: isDark,
                                               isAnswered:
-                                                  _isAnswered.value ||
+                                                  isAnsweredNotifier.value ||
                                                   _pendingTypeSubmit.value,
                                               onWordRemove: _onWordRemove,
                                             ),
@@ -349,7 +322,7 @@ class _WordReorderScreenState extends State<WordReorderScreen> {
                                                   .toList(),
                                             ),
                                             SizedBox(height: 32.h),
-                                            if (!_isAnswered.value &&
+                                            if (!isAnsweredNotifier.value &&
                                                 !_pendingTypeSubmit.value)
                                               WordReorderCheckButton(
                                                 hasWords:
@@ -368,7 +341,7 @@ class _WordReorderScreenState extends State<WordReorderScreen> {
                                         ),
                                       ),
                                       if (_pendingTypeSubmit.value &&
-                                          !_isAnswered.value)
+                                          !isAnsweredNotifier.value)
                                         SliverToBoxAdapter(
                                           child: Padding(
                                             padding: EdgeInsets.only(
@@ -400,7 +373,7 @@ class _WordReorderScreenState extends State<WordReorderScreen> {
                                                 context,
                                               ).bottom +
                                               ((_pendingTypeSubmit.value &&
-                                                      !_isAnswered.value)
+                                                      !isAnsweredNotifier.value)
                                                   ? 16.h
                                                   : 60.h),
                                         ),

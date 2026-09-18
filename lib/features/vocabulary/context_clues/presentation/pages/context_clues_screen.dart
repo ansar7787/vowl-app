@@ -7,12 +7,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
-import 'package:vowl/core/utils/haptic_service.dart';
-import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/vocabulary/presentation/bloc/vocabulary_bloc.dart';
+import 'package:vowl/features/vocabulary/presentation/mixins/vocabulary_game_screen_mixin.dart';
 import 'package:vowl/features/vocabulary/presentation/layout/vocabulary_base_layout.dart';
-import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
 
 import 'package:vowl/core/presentation/game_mechanics/reading/evidence_highlight_wrapper.dart';
@@ -37,38 +34,51 @@ class ContextCluesScreen extends StatefulWidget {
   State<ContextCluesScreen> createState() => _ContextCluesScreenState();
 }
 
-class _ContextCluesScreenState extends State<ContextCluesScreen> {
-  final _hapticService = di.sl<HapticService>();
-  final _soundService = di.sl<SoundService>();
+class _ContextCluesScreenState extends State<ContextCluesScreen> with VocabularyGameScreenMixin {
+  @override
+  GameSubtype get gameType => widget.gameType;
 
+  @override
+  int get level => widget.level;
+
+  @override
+  String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
+
+    
   final ValueNotifier<Offset> _lensPosition = ValueNotifier(Offset.zero);
-  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
-  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
-  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
-  final ValueNotifier<bool> _isFirstStagePassed = ValueNotifier(false);
-  final ValueNotifier<String?> _selectedOption = ValueNotifier(null);
+          final ValueNotifier<String?> _selectedOption = ValueNotifier(null);
   final ScrollController _scrollController = ScrollController();
 
-  int _lastProcessedIndex = -1;
-  VocabularyQuest? _lastQuest;
+    VocabularyQuest? _lastQuest;
 
   @override
   void initState() {
     super.initState();
-    context.read<VocabularyBloc>().add(
-      FetchVocabularyQuests(gameType: widget.gameType, level: widget.level),
-    );
+    isAnsweredNotifier.addListener(() {
+      if (isAnsweredNotifier.value && mounted && _scrollController.hasClients) {
+        Future.delayed(const Duration(milliseconds: 100), () {
+          if (mounted && _scrollController.hasClients) {
+            _scrollController.animateTo(
+              _scrollController.position.maxScrollExtent,
+              duration: const Duration(milliseconds: 300),
+              curve: Curves.easeOut,
+            );
+          }
+        });
+      }
+    });
+
+    initVocabularyGame();
   }
 
   @override
   void dispose() {
     _lensPosition.dispose();
-    _isAnswered.dispose();
-    _isCorrect.dispose();
-    _showConfetti.dispose();
-    _isFirstStagePassed.dispose();
-    _selectedOption.dispose();
+                    _selectedOption.dispose();
     _scrollController.dispose();
+    disposeVocabularyGame();
+    disposeVocabularyGame();
+    disposeVocabularyGame();
     super.dispose();
   }
 
@@ -89,7 +99,7 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> {
     BoxConstraints constraints,
     double lensSize,
   ) {
-    if (_isAnswered.value) return;
+    if (isAnsweredNotifier.value) return;
 
     final double halfWidth = constraints.maxWidth / 2;
     final double halfHeight = constraints.maxHeight / 2;
@@ -112,12 +122,12 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> {
 
     // Simulate finding a clue
     if (_lensPosition.value.distance % 40 < 5) {
-      _hapticService.selection();
+      hapticService.selection();
     }
   }
 
   void _submitAnswer(String selected, String correct) {
-    if (_isAnswered.value || _isFirstStagePassed.value) return;
+    if (isAnsweredNotifier.value || isFirstStagePassedNotifier.value) return;
 
     _selectedOption.value = selected;
 
@@ -125,34 +135,34 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> {
         selected.trim().toLowerCase() == correct.trim().toLowerCase();
 
     if (isCorrect) {
-      _hapticService.selection(); // Subtle feedback for Phase 1
-      _isFirstStagePassed.value = true;
+      hapticService.selection(); // Subtle feedback for Phase 1
+      isFirstStagePassedNotifier.value = true;
       _scrollToBottom();
     } else {
-      _hapticService.error();
-      _soundService.playWrong();
-      _isAnswered.value = true;
-      _isCorrect.value = false;
+      hapticService.error();
+      soundService.playWrong();
+      isAnsweredNotifier.value = true;
+      isCorrectNotifier.value = false;
       context.read<VocabularyBloc>().add(SubmitAnswer(false));
     }
   }
 
   void _submitFinalAnswer(bool nailedIt, [String? misspelledWord]) {
-    if (_isAnswered.value) return;
+    if (isAnsweredNotifier.value) return;
 
-    _isAnswered.value = true;
-    _isCorrect.value = nailedIt;
+    isAnsweredNotifier.value = true;
+    isCorrectNotifier.value = nailedIt;
     if (misspelledWord != null) {
       _selectedOption.value = misspelledWord;
     }
 
     if (nailedIt) {
-      _hapticService.success();
-      _soundService.playCorrect();
+      hapticService.success();
+      soundService.playCorrect();
       context.read<VocabularyBloc>().add(SubmitAnswer(true));
     } else {
-      _hapticService.error();
-      _soundService.playWrong();
+      hapticService.error();
+      soundService.playWrong();
       context.read<VocabularyBloc>().add(SubmitAnswer(false));
     }
   }
@@ -160,35 +170,8 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> {
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<VocabularyBloc, VocabularyState>(
-      listener: (context, state) {
-        if (state is VocabularyLoaded) {
-          final isNewQuestion = state.currentIndex != _lastProcessedIndex;
-          final isRetry = _isAnswered.value && !state.answerStatus.isAnswered;
-
-          if (isNewQuestion || isRetry) {
-            _lastQuest = state.currentQuest;
-            _lastProcessedIndex = state.currentIndex;
-            _isAnswered.value = false;
-            _isCorrect.value = null;
-            _selectedOption.value = null;
-            _isFirstStagePassed.value = false;
-            _lensPosition.value = Offset.zero;
-          } else if (state.answerStatus.isAnswered && !_isAnswered.value) {
-            _isAnswered.value = true;
-            _isCorrect.value = state.answerStatus.asBoolOrNull;
-          }
-        }
-        if (state is VocabularyGameComplete) {
-          _showConfetti.value = true;
-          GameDialogHelper.showCompletion(
-            context,
-            xp: state.xpEarned,
-            coins: state.coinsEarned,
-            title: 'FORENSIC ANALYSIS COMPLETE!',
-            enableDoubleUp: true,
-          );
-        }
-      },
+      listenWhen: vocabularyListenWhen,
+      listener: onVocabularyStateChanged,
       builder: (context, state) {
         final theme = LevelThemeHelper.getTheme(
           'vocabulary',
@@ -201,19 +184,19 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> {
 
         return ListenableBuilder(
           listenable: Listenable.merge([
-            _isAnswered,
-            _isCorrect,
-            _showConfetti,
-            _isFirstStagePassed,
+            isAnsweredNotifier,
+            isCorrectNotifier,
+            showConfettiNotifier,
+            isFirstStagePassedNotifier,
             _selectedOption,
           ]),
           builder: (context, _) {
-            final bool isBaseAnswered = _isAnswered.value;
+            final bool isBaseAnswered = isAnsweredNotifier.value;
             final bool sceneIsAnswered =
-                _isAnswered.value || _isFirstStagePassed.value;
-            final bool? sceneIsCorrect = _isFirstStagePassed.value
+                isAnsweredNotifier.value || isFirstStagePassedNotifier.value;
+            final bool? sceneIsCorrect = isFirstStagePassedNotifier.value
                 ? true
-                : _isCorrect.value;
+                : isCorrectNotifier.value;
             final bool isFinalFailure = (state is VocabularyLoaded)
                 ? state.isFinalFailure
                 : false;
@@ -222,16 +205,16 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> {
               gameType: widget.gameType,
               level: widget.level,
               isAnswered: isBaseAnswered,
-              isCorrect: _isCorrect.value,
-              showConfetti: _showConfetti.value,
+              isCorrect: isCorrectNotifier.value,
+              showConfetti: showConfettiNotifier.value,
               hasStage2: true,
               onContinue: () {
                 final currentState = context.read<VocabularyBloc>().state;
                 if (currentState is VocabularyLoaded &&
                     !currentState.isFinalFailure &&
-                    _isCorrect.value == false) {
-                  _isAnswered.value = false;
-                  _isCorrect.value = null;
+                    isCorrectNotifier.value == false) {
+                  isAnsweredNotifier.value = false;
+                  isCorrectNotifier.value = null;
                   _selectedOption.value = null;
                 } else {
                   context.read<VocabularyBloc>().add(NextQuestion());
@@ -252,7 +235,7 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> {
                           thickness: 4.w,
                           child: CustomScrollView(
                             controller: _scrollController,
-                            physics: (!_isFirstStagePassed.value)
+                            physics: (!isFirstStagePassedNotifier.value)
                                 ? const NeverScrollableScrollPhysics()
                                 : const BouncingScrollPhysics(),
                             slivers: [
@@ -260,7 +243,7 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> {
                                 child: Column(
                                   children: [
                                     IgnorePointer(
-                                      ignoring: _isFirstStagePassed.value,
+                                      ignoring: isFirstStagePassedNotifier.value,
                                       child: SizedBox(
                                         height: constraints.maxHeight,
                                         child: _buildForensicScene(
@@ -272,8 +255,8 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> {
                                         ),
                                       ),
                                     ),
-                                    if (_isFirstStagePassed.value &&
-                                        !_isAnswered.value)
+                                    if (isFirstStagePassedNotifier.value &&
+                                        !isAnsweredNotifier.value)
                                       EvidenceHighlightWrapper(
                                         passage:
                                             quest.sentence?.replaceAll(
@@ -347,14 +330,14 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> {
                       fit: BoxFit.scaleDown,
                       child: ContextCluesCaseHeader(
                         level: widget.level,
-                        questIndex: _lastProcessedIndex,
+                        questIndex: lastProcessedIndex,
                         color: color,
                       ),
                     ),
                   )
                 : ContextCluesCaseHeader(
                     level: widget.level,
-                    questIndex: _lastProcessedIndex,
+                    questIndex: lastProcessedIndex,
                     color: color,
                   ),
             SizedBox(height: 4.h),

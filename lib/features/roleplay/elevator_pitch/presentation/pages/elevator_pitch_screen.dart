@@ -6,16 +6,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
-import 'package:vowl/core/utils/haptic_service.dart';
-import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/roleplay/presentation/bloc/roleplay_bloc.dart';
+import 'package:vowl/features/roleplay/presentation/mixins/roleplay_game_screen_mixin.dart';
 import 'package:vowl/features/roleplay/presentation/bloc/roleplay_event.dart';
 import 'package:vowl/features/roleplay/presentation/bloc/roleplay_state.dart';
 import 'package:vowl/features/roleplay/presentation/layout/roleplay_base_layout.dart';
-import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/game_mechanics/speaking/speak_to_confirm_overlay.dart';
-import 'package:vowl/features/roleplay/domain/entities/roleplay_quest.dart';
 import 'package:vowl/features/roleplay/elevator_pitch/presentation/widgets/elevator_pitch_instruction.dart';
 import 'package:vowl/features/roleplay/elevator_pitch/presentation/widgets/elevator_pitch_prompt_card.dart';
 
@@ -32,55 +28,62 @@ class ElevatorPitchScreen extends StatefulWidget {
   State<ElevatorPitchScreen> createState() => _ElevatorPitchScreenState();
 }
 
-class _ElevatorPitchScreenState extends State<ElevatorPitchScreen> {
-  final _hapticService = di.sl<HapticService>();
-  final _soundService = di.sl<SoundService>();
-
-  int _lastProcessedIndex = -1;
-  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
-  final ScrollController _scrollController = ScrollController();
-  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
-  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
+class _ElevatorPitchScreenState extends State<ElevatorPitchScreen> with RoleplayGameScreenMixin {
+  @override
+  GameSubtype get gameType => widget.gameType;
 
   @override
+  int get level => widget.level;
+
+  @override
+  String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
+
+    
+      final ScrollController _scrollController = ScrollController();
+    
+  @override
   void dispose() {
-    _isAnswered.dispose();
-    _isCorrect.dispose();
-    _showConfetti.dispose();
-    _scrollController.dispose();
+                _scrollController.dispose();
+    disposeRoleplayGame();
+    disposeRoleplayGame();
+    disposeRoleplayGame();
     super.dispose();
   }
 
   @override
   void initState() {
     super.initState();
-    context.read<RoleplayBloc>().add(
-      FetchRoleplayQuests(gameType: widget.gameType, level: widget.level),
-    );
-  }
+    isAnsweredNotifier.addListener(() {
+      if (isAnsweredNotifier.value && mounted && _scrollController.hasClients) {
+        Future.delayed(const Duration(milliseconds: 100), () {
+          if (mounted && _scrollController.hasClients) {
+            _scrollController.animateTo(
+              _scrollController.position.maxScrollExtent,
+              duration: const Duration(milliseconds: 300),
+              curve: Curves.easeOut,
+            );
+          }
+        });
+      }
+    });
 
-  void _triggerAutoPlay(RoleplayQuest quest) {
-    _soundService.playTts(InstructionHelper.getInstruction(quest));
-    if (quest.prompt != null) {
-      Future.delayed(const Duration(milliseconds: 1400), () {
-        if (mounted) _soundService.playTts(quest.prompt!);
-      });
-    }
+    initRoleplayGame();
   }
+
 
   void _submitVerbalEvaluation(bool nailedIt) {
-    if (_isAnswered.value) return;
+    if (isAnsweredNotifier.value) return;
 
-    _isAnswered.value = true;
-    _isCorrect.value = nailedIt;
+    isAnsweredNotifier.value = true;
+    isCorrectNotifier.value = nailedIt;
 
     if (nailedIt) {
-      _hapticService.success();
-      _soundService.playCorrect();
+      hapticService.success();
+      soundService.playCorrect();
       context.read<RoleplayBloc>().add(SubmitAnswer(true));
     } else {
-      _hapticService.error();
-      _soundService.playWrong();
+      hapticService.error();
+      soundService.playWrong();
       context.read<RoleplayBloc>().add(SubmitAnswer(false));
     }
   }
@@ -91,48 +94,24 @@ class _ElevatorPitchScreenState extends State<ElevatorPitchScreen> {
     final theme = LevelThemeHelper.getTheme('roleplay', level: widget.level);
 
     return BlocConsumer<RoleplayBloc, RoleplayState>(
-      listener: (context, state) {
-        if (state is RoleplayLoaded) {
-          if (state.currentIndex != _lastProcessedIndex ||
-              (!state.answerStatus.isAnswered && _isAnswered.value)) {
-            _lastProcessedIndex = state.currentIndex;
-            _isAnswered.value = false;
-            _isCorrect.value = null;
-            Future.delayed(const Duration(milliseconds: 300), () {
-              if (mounted) _triggerAutoPlay(state.currentQuest);
-            });
-          } else if (state.answerStatus == AnswerStatus.incorrect) {
-            _isCorrect.value = false;
-            _isAnswered.value = true; // Always show feedback card on incorrect
-          }
-        }
-        if (state is RoleplayGameComplete) {
-          _showConfetti.value = true;
-          GameDialogHelper.showCompletion(
-            context,
-            xp: state.xpEarned,
-            coins: state.coinsEarned,
-            title: 'CHIEF BRAND PITCHER!',
-            enableDoubleUp: true,
-          );
-        }
-      },
+      listenWhen: roleplayListenWhen,
+      listener: onRoleplayStateChanged,
       builder: (context, state) {
         final quest = (state is RoleplayLoaded) ? state.currentQuest : null;
 
         return ListenableBuilder(
           listenable: Listenable.merge([
-            _isAnswered,
-            _isCorrect,
-            _showConfetti,
+            isAnsweredNotifier,
+            isCorrectNotifier,
+            showConfettiNotifier,
           ]),
           builder: (context, _) {
             return RoleplayBaseLayout(
               gameType: widget.gameType,
               level: widget.level,
-              isAnswered: _isAnswered.value,
-              isCorrect: _isCorrect.value,
-              showConfetti: _showConfetti.value,
+              isAnswered: isAnsweredNotifier.value,
+              isCorrect: isCorrectNotifier.value,
+              showConfetti: showConfettiNotifier.value,
               onContinue: () =>
                   context.read<RoleplayBloc>().add(NextQuestion()),
               onHint: () =>
@@ -209,7 +188,7 @@ class _ElevatorPitchScreenState extends State<ElevatorPitchScreen> {
                                   ),
                                   SliverToBoxAdapter(
                                     child: SizedBox(
-                                      height: (!_isAnswered.value)
+                                      height: (!isAnsweredNotifier.value)
                                           ? 380.h
                                           : 60.h,
                                     ),
@@ -217,7 +196,7 @@ class _ElevatorPitchScreenState extends State<ElevatorPitchScreen> {
                                 ],
                               ),
                             ),
-                            if (!_isAnswered.value)
+                            if (!isAnsweredNotifier.value)
                               SpeakToConfirmOverlay(
                                 expectedText:
                                     quest.correctAnswer ??

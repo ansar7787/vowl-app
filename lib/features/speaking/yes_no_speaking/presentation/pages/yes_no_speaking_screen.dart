@@ -5,15 +5,11 @@ import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
-import 'package:vowl/features/speaking/domain/entities/speaking_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
-import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/speaking/presentation/bloc/speaking_bloc.dart';
+import 'package:vowl/features/speaking/presentation/mixins/speaking_game_screen_mixin.dart';
 import 'package:vowl/features/speaking/presentation/layout/speaking_base_layout.dart';
-import 'package:vowl/core/utils/locale_service.dart';
-import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/game_mechanics/speaking/shadow_playback_compare.dart';
 import 'package:vowl/core/services/error_journal_collector.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
@@ -37,28 +33,42 @@ class YesNoSpeakingScreen extends StatefulWidget {
   State<YesNoSpeakingScreen> createState() => _YesNoSpeakingScreenState();
 }
 
-class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen> {
-  final _hapticService = di.sl<HapticService>();
-  final _soundService = di.sl<SoundService>();
+class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen> with SpeakingGameScreenMixin {
+  @override
+  GameSubtype get gameType => widget.gameType;
 
-  int _lastProcessedIndex = -1;
-  int? _lastLives;
+  @override
+  int get level => widget.level;
 
+  @override
+  String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
+
+    
+    
   final ValueNotifier<double> _tiltValue = ValueNotifier(0.0);
   final ValueNotifier<bool> _isSnapped = ValueNotifier(false);
 
-  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
-  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
-  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
-  Timer? _autoplayTimer;
+        Timer? _autoplayTimer;
   final ScrollController _scrollController = ScrollController();
 
   @override
   void initState() {
     super.initState();
-    context.read<SpeakingBloc>().add(
-      FetchSpeakingQuests(gameType: widget.gameType, level: widget.level),
-    );
+    isAnsweredNotifier.addListener(() {
+      if (isAnsweredNotifier.value && mounted && _scrollController.hasClients) {
+        Future.delayed(const Duration(milliseconds: 100), () {
+          if (mounted && _scrollController.hasClients) {
+            _scrollController.animateTo(
+              _scrollController.position.maxScrollExtent,
+              duration: const Duration(milliseconds: 300),
+              curve: Curves.easeOut,
+            );
+          }
+        });
+      }
+    });
+
+    initSpeakingGame();
   }
 
   @override
@@ -66,18 +76,13 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen> {
     _autoplayTimer?.cancel();
     _tiltValue.dispose();
     _isSnapped.dispose();
-    _isAnswered.dispose();
-    _isCorrect.dispose();
-    _showConfetti.dispose();
-    _scrollController.dispose();
+                _scrollController.dispose();
+    disposeSpeakingGame();
+    disposeSpeakingGame();
+    disposeSpeakingGame();
     super.dispose();
   }
-
-  void _triggerAutoPlay(SpeakingQuest quest) {
-    if (quest.prompt != null) {
-      _soundService.playTts(quest.prompt!);
-    }
-  }
+
 
   void _scrollToBottom() {
     Future.delayed(const Duration(milliseconds: 100), () {
@@ -92,7 +97,7 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen> {
   }
 
   void _onTiltDragged(DragUpdateDetails details, double trackWidth) {
-    if (_isAnswered.value || _isSnapped.value) return;
+    if (isAnsweredNotifier.value || _isSnapped.value) return;
 
     final state = context.read<SpeakingBloc>().state;
     if (state is! SpeakingLoaded) return;
@@ -104,7 +109,7 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen> {
         rawPrompt.trim().toLowerCase() == rawSample.trim().toLowerCase();
 
     final double deltaNormalized = details.delta.dx / (trackWidth / 2);
-    _hapticService.selection();
+    hapticService.selection();
 
     _tiltValue.value = (_tiltValue.value + deltaNormalized).clamp(-1.0, 1.0);
 
@@ -117,10 +122,10 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen> {
       final bool binaryIsCorrect = chosenMatch == doTheyMatch;
 
       if (!binaryIsCorrect) {
-        _isAnswered.value = true;
-        _isCorrect.value = false;
-        _hapticService.error();
-        _soundService.playWrong();
+        isAnsweredNotifier.value = true;
+        isCorrectNotifier.value = false;
+        hapticService.error();
+        soundService.playWrong();
 
         final authState = context.read<AuthBloc>().state;
         if (authState.status == AuthStatus.authenticated &&
@@ -138,25 +143,25 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen> {
         context.read<SpeakingBloc>().add(const SubmitAnswer(false));
       } else {
         // Correctly answered the Phase 1 interaction. Proceed to Phase 2 (Speaking).
-        _soundService.playClick();
-        _hapticService.selection();
+        soundService.playClick();
+        hapticService.selection();
       }
     }
   }
 
   void _submitVerbalEvaluation(bool nailedIt, String expectedText) {
-    if (_isAnswered.value || !_isSnapped.value) return;
+    if (isAnsweredNotifier.value || !_isSnapped.value) return;
 
-    _isAnswered.value = true;
-    _isCorrect.value = nailedIt;
+    isAnsweredNotifier.value = true;
+    isCorrectNotifier.value = nailedIt;
 
     if (nailedIt) {
-      _hapticService.success();
-      _soundService.playCorrect();
+      hapticService.success();
+      soundService.playCorrect();
       context.read<SpeakingBloc>().add(const SubmitAnswer(true));
     } else {
-      _hapticService.error();
-      _soundService.playWrong();
+      hapticService.error();
+      soundService.playWrong();
 
       final authState = context.read<AuthBloc>().state;
       if (authState.status == AuthStatus.authenticated &&
@@ -182,41 +187,8 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen> {
     final mediaQuery = MediaQuery.of(context);
 
     return BlocConsumer<SpeakingBloc, SpeakingState>(
-      listener: (context, state) {
-        if (state is SpeakingLoaded) {
-          final livesChanged = (state.livesRemaining > (_lastLives ?? 3));
-          if (state.currentIndex != _lastProcessedIndex ||
-              livesChanged ||
-              (!state.answerStatus.isAnswered && _isAnswered.value)) {
-            _lastProcessedIndex = state.currentIndex;
-            _isAnswered.value = false;
-            _isCorrect.value = null;
-            _isSnapped.value = false;
-            _tiltValue.value = 0.0;
-            _autoplayTimer?.cancel();
-            _autoplayTimer = Timer(const Duration(milliseconds: 300), () {
-              if (mounted) _triggerAutoPlay(state.currentQuest);
-            });
-          } else if (state.answerStatus == AnswerStatus.incorrect) {
-            _isCorrect.value = false;
-            _isAnswered.value = true; // Always show feedback card on incorrect
-          }
-          _lastLives = state.livesRemaining;
-        }
-        if (state is SpeakingGameComplete) {
-          _showConfetti.value = true;
-          GameDialogHelper.showCompletion(
-            context,
-            xp: state.xpEarned,
-            coins: state.coinsEarned,
-            title: context.tr(
-              'speaking_games.binary_responder',
-              fallback: 'BINARY RESPONDER!',
-            ),
-            enableDoubleUp: true,
-          );
-        }
-      },
+      listenWhen: speakingListenWhen,
+      listener: onSpeakingStateChanged,
       builder: (context, state) {
         final quest = (state is SpeakingLoaded) ? state.currentQuest : null;
 
@@ -226,18 +198,18 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen> {
           ),
           child: ListenableBuilder(
             listenable: Listenable.merge([
-              _isAnswered,
-              _isCorrect,
-              _showConfetti,
+              isAnsweredNotifier,
+              isCorrectNotifier,
+              showConfettiNotifier,
               _isSnapped,
             ]),
             builder: (context, _) {
               return SpeakingBaseLayout(
                 gameType: widget.gameType,
                 level: widget.level,
-                isAnswered: _isAnswered.value,
-                isCorrect: _isCorrect.value,
-                showConfetti: _showConfetti.value,
+                isAnswered: isAnsweredNotifier.value,
+                isCorrect: isCorrectNotifier.value,
+                showConfetti: showConfettiNotifier.value,
                 disablePadding: true,
                 onContinue: () =>
                     context.read<SpeakingBloc>().add(const NextQuestion()),
@@ -286,7 +258,7 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen> {
                                               .isRecording) {
                                             return;
                                           }
-                                          _soundService.playTts(
+                                          soundService.playTts(
                                             quest.prompt ?? "",
                                           );
                                         },
@@ -314,7 +286,7 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen> {
                                 ),
                               ),
                             ),
-                            if (_isSnapped.value && !_isAnswered.value)
+                            if (_isSnapped.value && !isAnsweredNotifier.value)
                               SliverToBoxAdapter(
                                 child: ShadowPlaybackCompare(
                                   key: ValueKey(quest.id),

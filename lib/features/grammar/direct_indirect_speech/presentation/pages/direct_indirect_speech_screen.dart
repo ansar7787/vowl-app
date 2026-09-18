@@ -4,12 +4,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
-import 'package:vowl/core/utils/haptic_service.dart';
-import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/grammar/presentation/bloc/grammar_bloc.dart';
+import 'package:vowl/features/grammar/presentation/mixins/grammar_game_screen_mixin.dart';
 import 'package:vowl/features/grammar/presentation/layout/grammar_base_layout.dart';
-import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -33,27 +30,29 @@ class DirectIndirectSpeechScreen extends StatefulWidget {
 }
 
 class _DirectIndirectSpeechScreenState
-    extends State<DirectIndirectSpeechScreen> {
-  final _hapticService = di.sl<HapticService>();
-  final _soundService = di.sl<SoundService>();
+    extends State<DirectIndirectSpeechScreen> with GrammarGameScreenMixin {
+  @override
+  GameSubtype get gameType => widget.gameType;
 
+  @override
+  int get level => widget.level;
+
+  @override
+  String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
+
+    
   final ValueNotifier<double> _rotation = ValueNotifier(0.0);
   final ValueNotifier<int> _selectedReflection = ValueNotifier(-1);
-  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
-  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
-  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
-  final ValueNotifier<bool> _isFirstStagePassed = ValueNotifier(false);
-  final ScrollController _scrollController = ScrollController();
+          final ScrollController _scrollController = ScrollController();
 
   @override
   void dispose() {
     _rotation.dispose();
     _selectedReflection.dispose();
-    _isAnswered.dispose();
-    _isCorrect.dispose();
-    _showConfetti.dispose();
-    _isFirstStagePassed.dispose();
-    _scrollController.dispose();
+                    _scrollController.dispose();
+    disposeGrammarGame();
+    disposeGrammarGame();
+    disposeGrammarGame();
     super.dispose();
   }
 
@@ -69,9 +68,7 @@ class _DirectIndirectSpeechScreenState
     });
   }
 
-  int _lastProcessedIndex = -1;
-  int? _lastLives;
-
+    
   void _onStagePassedScroll() {
     Future.delayed(const Duration(milliseconds: 100), () {
       if (mounted && _scrollController.hasClients) {
@@ -87,46 +84,58 @@ class _DirectIndirectSpeechScreenState
   @override
   void initState() {
     super.initState();
-    _isFirstStagePassed.addListener(_onStagePassedScroll);
+    isAnsweredNotifier.addListener(() {
+      if (isAnsweredNotifier.value && mounted && _scrollController.hasClients) {
+        Future.delayed(const Duration(milliseconds: 100), () {
+          if (mounted && _scrollController.hasClients) {
+            _scrollController.animateTo(
+              _scrollController.position.maxScrollExtent,
+              duration: const Duration(milliseconds: 300),
+              curve: Curves.easeOut,
+            );
+          }
+        });
+      }
+    });
 
-    context.read<GrammarBloc>().add(
-      FetchGrammarQuests(gameType: widget.gameType, level: widget.level),
-    );
+    isFirstStagePassedNotifier.addListener(_onStagePassedScroll);
+
+    initGrammarGame();
   }
 
   void _onReflectionSelect(int index, int correctIndex) {
-    if (_isAnswered.value || _isFirstStagePassed.value) return;
+    if (isAnsweredNotifier.value || isFirstStagePassedNotifier.value) return;
     _selectedReflection.value = index;
 
     bool isCorrect = index == correctIndex;
 
     if (isCorrect) {
-      _hapticService.success();
-      _soundService.playCorrect();
-      _isFirstStagePassed.value = true;
+      hapticService.success();
+      soundService.playCorrect();
+      isFirstStagePassedNotifier.value = true;
       _scrollToBottom();
       _rotation.value = 3.14;
     } else {
-      _hapticService.error();
-      _soundService.playWrong();
-      _isAnswered.value = true;
-      _isCorrect.value = false;
+      hapticService.error();
+      soundService.playWrong();
+      isAnsweredNotifier.value = true;
+      isCorrectNotifier.value = false;
       _rotation.value = 3.14;
       context.read<GrammarBloc>().add(SubmitAnswer(false));
     }
   }
 
   void _submitVerbalEvaluation(bool nailedIt) {
-    if (_isAnswered.value) return;
-    _isAnswered.value = true;
-    _isCorrect.value = nailedIt;
+    if (isAnsweredNotifier.value) return;
+    isAnsweredNotifier.value = true;
+    isCorrectNotifier.value = nailedIt;
     if (nailedIt) {
-      _hapticService.success();
-      _soundService.playCorrect();
+      hapticService.success();
+      soundService.playCorrect();
       context.read<GrammarBloc>().add(SubmitAnswer(true));
     } else {
-      _hapticService.error();
-      _soundService.playWrong();
+      hapticService.error();
+      soundService.playWrong();
       context.read<GrammarBloc>().add(SubmitAnswer(false));
     }
   }
@@ -137,37 +146,8 @@ class _DirectIndirectSpeechScreenState
     final theme = LevelThemeHelper.getTheme('grammar', level: widget.level);
 
     return BlocConsumer<GrammarBloc, GrammarState>(
-      listener: (context, state) {
-        if (state is GrammarLoaded) {
-          final isNewQuestion = state.currentIndex != _lastProcessedIndex;
-          final isRetry = _isAnswered.value && !state.answerStatus.isAnswered;
-          final livesRestored =
-              _lastLives != null && state.livesRemaining > _lastLives!;
-
-          if (isNewQuestion || isRetry || livesRestored) {
-            _lastProcessedIndex = state.currentIndex;
-            _isAnswered.value = false;
-            _isCorrect.value = null;
-            _isFirstStagePassed.value = false;
-            _selectedReflection.value = -1;
-            _rotation.value = 0.0;
-          } else if (state.answerStatus.isAnswered && !_isAnswered.value) {
-            _isAnswered.value = true;
-            _isCorrect.value = state.answerStatus.asBoolOrNull;
-          }
-          _lastLives = state.livesRemaining;
-        }
-        if (state is GrammarGameComplete) {
-          _showConfetti.value = true;
-          GameDialogHelper.showCompletion(
-            context,
-            xp: state.xpEarned,
-            coins: state.coinsEarned,
-            title: 'SHADOW MASTER!',
-            enableDoubleUp: true,
-          );
-        }
-      },
+      listenWhen: grammarListenWhen,
+      listener: onGrammarStateChanged,
       builder: (context, state) {
         final GrammarQuest? quest = (state is GrammarLoaded)
             ? state.currentQuest as GrammarQuest?
@@ -199,10 +179,10 @@ class _DirectIndirectSpeechScreenState
 
         return ListenableBuilder(
           listenable: Listenable.merge([
-            _isAnswered,
-            _isCorrect,
-            _showConfetti,
-            _isFirstStagePassed,
+            isAnsweredNotifier,
+            isCorrectNotifier,
+            showConfettiNotifier,
+            isFirstStagePassedNotifier,
             _selectedReflection,
             _rotation,
           ]),
@@ -212,11 +192,11 @@ class _DirectIndirectSpeechScreenState
               gameType: widget.gameType,
               level: widget.level,
               isAnswered:
-                  _isAnswered.value &&
-                  (_isCorrect.value != null || !_isFirstStagePassed.value),
-              isCorrect: _isCorrect.value,
+                  isAnsweredNotifier.value &&
+                  (isCorrectNotifier.value != null || !isFirstStagePassedNotifier.value),
+              isCorrect: isCorrectNotifier.value,
               isFinalFailure: state is GrammarLoaded && state.isFinalFailure,
-              showConfetti: _showConfetti.value,
+              showConfetti: showConfettiNotifier.value,
               useScrolling: false,
               onContinue: () => context.read<GrammarBloc>().add(NextQuestion()),
               onHint: () => context.read<GrammarBloc>().add(GrammarHintUsed()),
@@ -273,7 +253,7 @@ class _DirectIndirectSpeechScreenState
                                       rotation: _rotation.value,
                                       directText: displayDirect,
                                       indirectText: displayIndirect,
-                                      isCorrect: _isCorrect.value,
+                                      isCorrect: isCorrectNotifier.value,
                                       isDark: isDark,
                                       primaryColor: theme.primaryColor,
                                       isCompact: isCompact,
@@ -301,14 +281,14 @@ class _DirectIndirectSpeechScreenState
                               SliverToBoxAdapter(
                                 child: SizedBox(
                                   height:
-                                      (_isFirstStagePassed.value &&
-                                          !_isAnswered.value)
+                                      (isFirstStagePassedNotifier.value &&
+                                          !isAnsweredNotifier.value)
                                       ? 32.h
                                       : 60.h,
                                 ),
                               ),
-                              if (_isFirstStagePassed.value &&
-                                  !_isAnswered.value)
+                              if (isFirstStagePassedNotifier.value &&
+                                  !isAnsweredNotifier.value)
                                 SliverToBoxAdapter(
                                   child: TypeToConfirmOverlay(
                                     expectedText:
@@ -450,9 +430,9 @@ class _DirectIndirectSpeechScreenState
   ) {
     final isSelected = _selectedReflection.value == index;
     final isCorrect =
-        (_isAnswered.value || _isFirstStagePassed.value) &&
+        (isAnsweredNotifier.value || isFirstStagePassedNotifier.value) &&
         index == correctIndex;
-    final isWrong = _isAnswered.value && isSelected && index != correctIndex;
+    final isWrong = isAnsweredNotifier.value && isSelected && index != correctIndex;
 
     final displayColor = isCorrect
         ? Colors.greenAccent

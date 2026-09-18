@@ -5,15 +5,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
-import 'package:vowl/core/utils/haptic_service.dart';
-import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:vowl/core/utils/sound_service.dart';
 import '../../../presentation/bloc/elite_mastery_bloc.dart';
 import '../../../presentation/layout/elite_base_layout.dart';
 import '../../../presentation/widgets/elite_hint_card.dart';
 import '../widgets/accent_shadowing_target_panel.dart';
 import 'package:vowl/features/accent/presentation/widgets/accent_self_evaluation_panel.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/features/elite_mastery/presentation/mixins/elite_mastery_game_screen_mixin.dart';
 
 class AccentShadowingScreen extends StatefulWidget {
   final int level;
@@ -28,44 +26,59 @@ class AccentShadowingScreen extends StatefulWidget {
   State<AccentShadowingScreen> createState() => _AccentShadowingScreenState();
 }
 
-class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
-  final _hapticService = di.sl<HapticService>();
-  final _soundService = di.sl<SoundService>();
+class _AccentShadowingScreenState extends State<AccentShadowingScreen> with EliteMasteryGameScreenMixin {
+  @override
+  GameSubtype get gameType => widget.gameType;
 
-  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
-  final ScrollController _scrollController = ScrollController();
-  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
-  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
-  final ValueNotifier<int> _attempts = ValueNotifier(0);
+  @override
+  int get level => widget.level;
+
+  @override
+  String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
+
+    
+    final ScrollController _scrollController = ScrollController();
+      final ValueNotifier<int> _attempts = ValueNotifier(0);
   final ValueNotifier<Set<int>> _matchedIndices = ValueNotifier({});
-  String? _lastQuestId;
 
   static const double _kCompactHeightBreakpoint = 580;
 
   @override
   void initState() {
     super.initState();
-    context.read<EliteMasteryBloc>().add(
-      FetchEliteMasteryQuests(gameType: widget.gameType, level: widget.level),
-    );
+    isAnsweredNotifier.addListener(() {
+      if (isAnsweredNotifier.value && mounted && _scrollController.hasClients) {
+        Future.delayed(const Duration(milliseconds: 100), () {
+          if (mounted && _scrollController.hasClients) {
+            _scrollController.animateTo(
+              _scrollController.position.maxScrollExtent,
+              duration: const Duration(milliseconds: 300),
+              curve: Curves.easeOut,
+            );
+          }
+        });
+      }
+    });
+
+    initEliteMasteryGame();
   }
 
   @override
   void dispose() {
-    _showConfetti.dispose();
-    _isAnswered.dispose();
-    _isCorrect.dispose();
-    _attempts.dispose();
+                _attempts.dispose();
     _matchedIndices.dispose();
     _scrollController.dispose();
+    disposeEliteMasteryGame();
+    disposeEliteMasteryGame();
+    disposeEliteMasteryGame();
     super.dispose();
   }
 
   void _submitVerbalEvaluation(bool nailedIt) {
-    if (_isAnswered.value) return;
+    if (isAnsweredNotifier.value) return;
 
-    _isAnswered.value = true;
-    _isCorrect.value = nailedIt;
+    isAnsweredNotifier.value = true;
+    isCorrectNotifier.value = nailedIt;
     if (nailedIt) {
       _matchedIndices.value = Set.from(
         Iterable.generate(100),
@@ -73,13 +86,13 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
     }
 
     if (nailedIt) {
-      _hapticService.success();
-      _soundService.playCorrect();
+      hapticService.success();
+      soundService.playCorrect();
       context.read<EliteMasteryBloc>().add(const EliteSpeakConfirmed(5));
       context.read<EliteMasteryBloc>().add(SubmitEliteAnswer(true));
     } else {
-      _hapticService.error();
-      _soundService.playWrong();
+      hapticService.error();
+      soundService.playWrong();
       context.read<EliteMasteryBloc>().add(SubmitEliteAnswer(false));
     }
   }
@@ -96,40 +109,14 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
     );
 
     return BlocConsumer<EliteMasteryBloc, EliteMasteryState>(
-      listener: (context, state) {
-        if (state is EliteMasteryGameComplete) {
-          _showConfetti.value = true;
-          GameDialogHelper.showCompletion(
-            context,
-            xp: state.xpEarned,
-            coins: state.coinsEarned,
-            title: context.tr(
-              'games.accent_legend_title',
-              fallback: 'Accent Legend',
-            ),
-            enableDoubleUp: true,
-          );
-        } else if (state is EliteMasteryLoaded) {
-          final quest = state.currentQuest;
-          if (_lastQuestId != quest.id ||
-              (!state.answerStatus.isAnswered && _isAnswered.value)) {
-            _lastQuestId = quest.id;
-            _isAnswered.value = false;
-            _isCorrect.value = null;
-            _attempts.value = 0;
-            _matchedIndices.value = {};
-          } else if (state.answerStatus == AnswerStatus.incorrect) {
-            _isCorrect.value = false;
-            _isAnswered.value = true; // Always show feedback card on incorrect
-          }
-        }
-      },
+      listenWhen: eliteMasteryListenWhen,
+      listener: onEliteMasteryStateChanged,
       builder: (context, state) {
         return ListenableBuilder(
           listenable: Listenable.merge([
-            _isAnswered,
-            _isCorrect,
-            _showConfetti,
+            isAnsweredNotifier,
+            isCorrectNotifier,
+            showConfettiNotifier,
             _attempts,
             _matchedIndices,
           ]),
@@ -137,19 +124,19 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
             return EliteBaseLayout(
               gameType: widget.gameType,
               level: widget.level,
-              isAnswered: _isAnswered.value,
+              isAnswered: isAnsweredNotifier.value,
               state: state,
-              isCorrect: _isCorrect.value,
+              isCorrect: isCorrectNotifier.value,
               isFinalFailure:
                   (state is EliteMasteryLoaded && state.isFinalFailure) ||
                   (state is EliteMasteryLoaded
                       ? state.livesRemaining <= 0
                       : false),
-              showConfetti: _showConfetti.value,
+              showConfetti: showConfettiNotifier.value,
               useScrolling: false,
               onContinue: () {
-                _isAnswered.value = false;
-                _isCorrect.value = null;
+                isAnsweredNotifier.value = false;
+                isCorrectNotifier.value = null;
                 _attempts.value = 0;
                 _matchedIndices.value = {};
                 context.read<EliteMasteryBloc>().add(NextEliteQuestion());
@@ -257,11 +244,11 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
                                   matchedIndices: _matchedIndices.value,
                                   isDark: isDark,
                                   primaryColor: theme.primaryColor,
-                                  isAnswered: _isAnswered.value,
-                                  isCorrect: _isCorrect.value,
+                                  isAnswered: isAnsweredNotifier.value,
+                                  isCorrect: isCorrectNotifier.value,
                                   attempts: _attempts.value,
                                   onListenTap: () =>
-                                      _soundService.playTts(targetText ?? ""),
+                                      soundService.playTts(targetText ?? ""),
                                 ),
 
                                 if (state.isHintVisible) ...[
@@ -275,7 +262,7 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
                                 ],
                                 SizedBox(height: isCompact ? 16.h : 30.h),
 
-                                if (!_isAnswered.value)
+                                if (!isAnsweredNotifier.value)
                                   AccentSelfEvaluationPanel(
                                     textToSpeak:
                                         "", // Removed duplicate text, it's already shown in the target panel
@@ -300,3 +287,4 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
     );
   }
 }
+

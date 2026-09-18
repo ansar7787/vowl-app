@@ -5,14 +5,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
-import 'package:vowl/core/utils/haptic_service.dart';
-import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/roleplay/presentation/bloc/roleplay_bloc.dart';
+import 'package:vowl/features/roleplay/presentation/mixins/roleplay_game_screen_mixin.dart';
 import 'package:vowl/features/roleplay/presentation/bloc/roleplay_event.dart';
 import 'package:vowl/features/roleplay/presentation/bloc/roleplay_state.dart';
 import 'package:vowl/features/roleplay/presentation/layout/roleplay_base_layout.dart';
-import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/features/roleplay/domain/entities/roleplay_quest.dart';
 import 'package:vowl/features/roleplay/branching_dialogue/presentation/widgets/branching_dialogue_instruction.dart';
 import 'package:vowl/features/roleplay/branching_dialogue/presentation/widgets/branching_dialogue_persona_console.dart';
@@ -34,28 +31,43 @@ class BranchingDialogueScreen extends StatefulWidget {
       _BranchingDialogueScreenState();
 }
 
-class _BranchingDialogueScreenState extends State<BranchingDialogueScreen>
-    with TickerProviderStateMixin {
-  final _hapticService = di.sl<HapticService>();
-  final _soundService = di.sl<SoundService>();
+class _BranchingDialogueScreenState extends State<BranchingDialogueScreen>with TickerProviderStateMixin, RoleplayGameScreenMixin {
+  @override
+  GameSubtype get gameType => widget.gameType;
 
+  @override
+  int get level => widget.level;
+
+  @override
+  String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
+
+    
   late AnimationController _springController;
 
-  int _lastProcessedIndex = -1;
-  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
-  final ScrollController _scrollController = ScrollController();
-  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
-  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
-
+      final ScrollController _scrollController = ScrollController();
+    
   // Drag and drop mechanics relative points
   final ValueNotifier<Offset> _probeOffset = ValueNotifier(Offset.zero);
   final ValueNotifier<int?> _hoveredIndex = ValueNotifier(null);
   final ValueNotifier<int?> _selectedIndex = ValueNotifier(null);
-  final ValueNotifier<bool> _isFirstStagePassed = ValueNotifier(false);
-
+  
   @override
   void initState() {
     super.initState();
+    isAnsweredNotifier.addListener(() {
+      if (isAnsweredNotifier.value && mounted && _scrollController.hasClients) {
+        Future.delayed(const Duration(milliseconds: 100), () {
+          if (mounted && _scrollController.hasClients) {
+            _scrollController.animateTo(
+              _scrollController.position.maxScrollExtent,
+              duration: const Duration(milliseconds: 300),
+              curve: Curves.easeOut,
+            );
+          }
+        });
+      }
+    });
+
     _springController = AnimationController(
       vsync: this,
       duration: const Duration(milliseconds: 300),
@@ -69,31 +81,28 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen>
       )!;
     });
 
-    context.read<RoleplayBloc>().add(
-      FetchRoleplayQuests(gameType: widget.gameType, level: widget.level),
-    );
+    initRoleplayGame();
   }
 
   @override
   void dispose() {
     _springController.dispose();
-    _isAnswered.dispose();
-    _isCorrect.dispose();
-    _showConfetti.dispose();
-    _probeOffset.dispose();
+                _probeOffset.dispose();
     _hoveredIndex.dispose();
     _selectedIndex.dispose();
-    _isFirstStagePassed.dispose();
-    _scrollController.dispose();
+        _scrollController.dispose();
+    disposeRoleplayGame();
+    disposeRoleplayGame();
+    disposeRoleplayGame();
     super.dispose();
   }
 
   void _triggerAutoPlay(RoleplayQuest quest) {
-    _soundService.playTts(quest.scene ?? "");
+    soundService.playTts(quest.scene ?? "");
   }
 
   void _onProbeDragStart(DragStartDetails details) {
-    if (_isAnswered.value || _isFirstStagePassed.value) return;
+    if (isAnsweredNotifier.value || isFirstStagePassedNotifier.value) return;
     _springController.stop();
   }
 
@@ -102,7 +111,7 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen>
     Offset launchCenter,
     List<Offset> terminalCenters,
   ) {
-    if (_isAnswered.value || _isFirstStagePassed.value) return;
+    if (isAnsweredNotifier.value || isFirstStagePassedNotifier.value) return;
 
     Offset newOffset = _probeOffset.value + details.delta;
     final double distance = newOffset.distance;
@@ -129,56 +138,56 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen>
     if (activeHoverIndex != _hoveredIndex.value) {
       _hoveredIndex.value = activeHoverIndex;
       if (activeHoverIndex != null) {
-        _hapticService.selection();
-        _soundService.playHint(); // Play Lock-on alert bleep
+        hapticService.selection();
+        soundService.playHint(); // Play Lock-on alert bleep
       }
     }
   }
 
   void _onProbeDragEnd(int correctIndex) {
-    if (_isAnswered.value || _isFirstStagePassed.value) return;
+    if (isAnsweredNotifier.value || isFirstStagePassedNotifier.value) return;
 
     if (_hoveredIndex.value != null) {
       _submitChoice(_hoveredIndex.value!, correctIndex);
     } else {
       _springController.forward(from: 0.0);
-      _hapticService.selection();
+      hapticService.selection();
     }
   }
 
   void _submitChoice(int index, int correct) {
-    if (_isAnswered.value || _isFirstStagePassed.value) return;
+    if (isAnsweredNotifier.value || isFirstStagePassedNotifier.value) return;
 
     final isCorrect = index == correct;
     _selectedIndex.value = index;
     _hoveredIndex.value = null;
 
     if (isCorrect) {
-      _hapticService.selection();
-      _isFirstStagePassed.value = true;
+      hapticService.selection();
+      isFirstStagePassedNotifier.value = true;
       // Wait for Phase 2
     } else {
-      _hapticService.error();
-      _soundService.playWrong();
-      _isAnswered.value = true;
-      _isCorrect.value = false;
+      hapticService.error();
+      soundService.playWrong();
+      isAnsweredNotifier.value = true;
+      isCorrectNotifier.value = false;
       context.read<RoleplayBloc>().add(SubmitAnswer(false));
     }
   }
 
   void _submitVerbalEvaluation(bool nailedIt) {
-    if (_isAnswered.value) return;
+    if (isAnsweredNotifier.value) return;
 
-    _isAnswered.value = true;
-    _isCorrect.value = nailedIt;
+    isAnsweredNotifier.value = true;
+    isCorrectNotifier.value = nailedIt;
 
     if (nailedIt) {
-      _hapticService.success();
-      _soundService.playCorrect();
+      hapticService.success();
+      soundService.playCorrect();
       context.read<RoleplayBloc>().add(SubmitAnswer(true));
     } else {
-      _hapticService.error();
-      _soundService.playWrong();
+      hapticService.error();
+      soundService.playWrong();
       context.read<RoleplayBloc>().add(SubmitAnswer(false));
     }
   }
@@ -189,56 +198,31 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen>
     final theme = LevelThemeHelper.getTheme('roleplay', level: widget.level);
 
     return BlocConsumer<RoleplayBloc, RoleplayState>(
-      listener: (context, state) {
-        if (state is RoleplayLoaded) {
-          if (state.currentIndex != _lastProcessedIndex ||
-              (!state.answerStatus.isAnswered && _isAnswered.value)) {
-            _lastProcessedIndex = state.currentIndex;
-            _isAnswered.value = false;
-            _isCorrect.value = null;
-            _probeOffset.value = Offset.zero;
-            _hoveredIndex.value = null;
-            _selectedIndex.value = null;
-            _isFirstStagePassed.value = false;
-            Future.delayed(const Duration(milliseconds: 300), () {
-              if (mounted) _triggerAutoPlay(state.currentQuest);
-            });
-          }
-        }
-        if (state is RoleplayGameComplete) {
-          _showConfetti.value = true;
-          GameDialogHelper.showCompletion(
-            context,
-            xp: state.xpEarned,
-            coins: state.coinsEarned,
-            title: 'DIALOGUE DIRECTOR!',
-            enableDoubleUp: true,
-          );
-        }
-      },
+      listenWhen: roleplayListenWhen,
+      listener: onRoleplayStateChanged,
       builder: (context, state) {
         final quest = (state is RoleplayLoaded) ? state.currentQuest : null;
         final options = quest?.options ?? [];
 
         return ListenableBuilder(
           listenable: Listenable.merge([
-            _isAnswered,
-            _isCorrect,
-            _showConfetti,
+            isAnsweredNotifier,
+            isCorrectNotifier,
+            showConfettiNotifier,
             _probeOffset,
             _hoveredIndex,
             _selectedIndex,
-            _isFirstStagePassed,
+            isFirstStagePassedNotifier,
           ]),
           builder: (context, _) {
             return RoleplayBaseLayout(
               gameType: widget.gameType,
               level: widget.level,
               isAnswered:
-                  _isAnswered.value &&
-                  (_isCorrect.value != null || !_isFirstStagePassed.value),
-              isCorrect: _isCorrect.value,
-              showConfetti: _showConfetti.value,
+                  isAnsweredNotifier.value &&
+                  (isCorrectNotifier.value != null || !isFirstStagePassedNotifier.value),
+              isCorrect: isCorrectNotifier.value,
+              showConfetti: showConfettiNotifier.value,
               onContinue: () =>
                   context.read<RoleplayBloc>().add(NextQuestion()),
               onHint: () =>
@@ -291,7 +275,7 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen>
                                                           ? 10.h
                                                           : 16.h,
                                                     ),
-                                                    if (_isAnswered.value &&
+                                                    if (isAnsweredNotifier.value &&
                                                         _selectedIndex.value !=
                                                             null &&
                                                         quest.consequenceScores !=
@@ -346,8 +330,8 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen>
                                                       selectedIndex:
                                                           _selectedIndex.value,
                                                       isAnswered:
-                                                          _isAnswered.value ||
-                                                          _isFirstStagePassed
+                                                          isAnsweredNotifier.value ||
+                                                          isFirstStagePassedNotifier
                                                               .value,
                                                       onProbeDragStart:
                                                           _onProbeDragStart,
@@ -379,8 +363,8 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen>
                                   SliverToBoxAdapter(
                                     child: SizedBox(
                                       height:
-                                          (_isFirstStagePassed.value &&
-                                              !_isAnswered.value)
+                                          (isFirstStagePassedNotifier.value &&
+                                              !isAnsweredNotifier.value)
                                           ? 380.h
                                           : 60.h,
                                     ),
@@ -388,8 +372,8 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen>
                                 ],
                               ),
                             ),
-                            if (_isFirstStagePassed.value &&
-                                !_isAnswered.value &&
+                            if (isFirstStagePassedNotifier.value &&
+                                !isAnsweredNotifier.value &&
                                 _selectedIndex.value != null)
                               SpeakToConfirmOverlay(
                                 expectedText: options[_selectedIndex.value!],

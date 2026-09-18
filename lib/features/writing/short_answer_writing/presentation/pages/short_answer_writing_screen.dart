@@ -5,14 +5,13 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
-import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
-import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/utils/gibberish_detector_service.dart';
 import 'package:vowl/core/utils/ml_services/language_id_service.dart';
 import 'package:vowl/features/writing/presentation/bloc/writing_bloc.dart';
+import 'package:vowl/features/writing/presentation/mixins/writing_game_screen_mixin.dart';
 import 'package:vowl/features/writing/presentation/bloc/writing_event.dart';
 import 'package:vowl/features/writing/presentation/bloc/writing_state.dart';
 import 'package:vowl/features/writing/presentation/layout/writing_base_layout.dart';
@@ -36,13 +35,20 @@ class ShortAnswerScreen extends StatefulWidget {
   State<ShortAnswerScreen> createState() => _ShortAnswerScreenState();
 }
 
-class _ShortAnswerScreenState extends State<ShortAnswerScreen> {
-  final _hapticService = di.sl<HapticService>();
-  final _answerController = TextEditingController();
+class _ShortAnswerScreenState extends State<ShortAnswerScreen> with WritingGameScreenMixin {
+  @override
+  GameSubtype get gameType => widget.gameType;
+
+  @override
+  int get level => widget.level;
+
+  @override
+  String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
+
+    final _answerController = TextEditingController();
   final _scrollController = ScrollController();
 
-  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
-  final ValueNotifier<bool> _showContextSentence = ValueNotifier(false);
+    final ValueNotifier<bool> _showContextSentence = ValueNotifier(false);
   final ValueNotifier<double> _inkLevel = ValueNotifier(0.0);
   final ValueNotifier<int> _wordCount = ValueNotifier(0);
   WritingQuest? _lastQuest;
@@ -50,9 +56,7 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen> {
   @override
   void initState() {
     super.initState();
-    context.read<WritingBloc>().add(
-      FetchWritingQuests(gameType: widget.gameType, level: widget.level),
-    );
+    initWritingGame();
     _answerController.addListener(_onTextChanged);
   }
 
@@ -60,10 +64,12 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen> {
   void dispose() {
     _answerController.dispose();
     _scrollController.dispose();
-    _showConfetti.dispose();
-    _showContextSentence.dispose();
+        _showContextSentence.dispose();
     _inkLevel.dispose();
     _wordCount.dispose();
+    disposeWritingGame();
+    disposeWritingGame();
+    disposeWritingGame();
     super.dispose();
   }
 
@@ -87,7 +93,7 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen> {
         message: "Please start your answer with a capital letter.",
         type: CustomSnackBarType.warning,
       );
-      _hapticService.selection();
+      hapticService.selection();
       return;
     }
 
@@ -98,7 +104,7 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen> {
         message: "Please end your answer with proper punctuation (., !, or ?).",
         type: CustomSnackBarType.warning,
       );
-      _hapticService.selection();
+      hapticService.selection();
       return;
     }
 
@@ -119,7 +125,7 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen> {
         message: "Keep writing! A valid answer requires at least 10 words.",
         type: CustomSnackBarType.info,
       );
-      _hapticService.selection();
+      hapticService.selection();
       return;
     }
 
@@ -138,7 +144,7 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen> {
             "Your answer must be written in English. Please write a natural sentence!",
         type: CustomSnackBarType.warning,
       );
-      _hapticService.selection();
+      hapticService.selection();
       return;
     }
 
@@ -152,11 +158,11 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen> {
         message: "Use at least 2 key terms to complete your answer!",
         type: CustomSnackBarType.warning,
       );
-      _hapticService.selection();
+      hapticService.selection();
       return;
     }
 
-    _hapticService.success();
+    hapticService.success();
     _showContextSentence.value = true;
   }
 
@@ -174,31 +180,7 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen> {
       listenWhen: (prev, curr) =>
           (curr is WritingGameComplete && prev is! WritingGameComplete) ||
           (curr is WritingLoaded && !curr.answerStatus.isAnswered),
-      listener: (context, state) {
-        if (state is WritingLoaded && !state.answerStatus.isAnswered) {
-          if (_scrollController.hasClients) {
-            _scrollController.animateTo(
-              0,
-              duration: const Duration(milliseconds: 300),
-              curve: Curves.easeOutBack,
-            );
-          }
-          _answerController.clear();
-          _inkLevel.value = 0.0;
-          _wordCount.value = 0;
-          _showContextSentence.value = false;
-        }
-        if (state is WritingGameComplete) {
-          _showConfetti.value = true;
-          GameDialogHelper.showCompletion(
-            context,
-            xp: state.xpEarned,
-            coins: state.coinsEarned,
-            title: 'CREATIVE AUTHOR!',
-            enableDoubleUp: true,
-          );
-        }
-      },
+      listener: onWritingStateChanged,
       builder: (context, state) {
         final isLoaded = state is WritingLoaded;
         if (isLoaded && state.currentQuest != _lastQuest) {
@@ -221,14 +203,14 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen> {
           isAnswered: isAnswered,
           isCorrect: isCorrect,
           isFinalFailure: isFinalFailure,
-          showConfetti: _showConfetti.value,
+          showConfetti: showConfettiNotifier.value,
           useScrolling: false,
           disablePadding: true,
           onContinue: () => context.read<WritingBloc>().add(NextQuestion()),
           onHint: () => context.read<WritingBloc>().add(WritingHintUsed()),
           child: ListenableBuilder(
             listenable: Listenable.merge([
-              _showConfetti,
+              showConfettiNotifier,
               _showContextSentence,
               _inkLevel,
               _wordCount,

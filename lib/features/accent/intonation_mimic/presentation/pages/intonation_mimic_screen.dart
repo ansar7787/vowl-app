@@ -3,15 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
-import 'package:vowl/core/utils/haptic_service.dart';
-import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/accent/presentation/bloc/accent_bloc.dart';
+import 'package:vowl/features/accent/presentation/mixins/accent_game_screen_mixin.dart';
 import 'package:vowl/features/accent/presentation/layout/accent_base_layout.dart';
-import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/features/accent/domain/entities/accent_quest.dart';
 import 'package:vowl/features/accent/intonation_mimic/presentation/widgets/intonation_mimic_instruction.dart';
 import 'package:vowl/features/accent/intonation_mimic/presentation/widgets/intonation_mimic_prompt_card.dart';
@@ -33,21 +29,21 @@ class IntonationMimicScreen extends StatefulWidget {
   State<IntonationMimicScreen> createState() => _IntonationMimicScreenState();
 }
 
-class _IntonationMimicScreenState extends State<IntonationMimicScreen>
-    with TickerProviderStateMixin {
-  final _hapticService = di.sl<HapticService>();
-  final _soundService = di.sl<SoundService>();
+class _IntonationMimicScreenState extends State<IntonationMimicScreen>with TickerProviderStateMixin, AccentGameScreenMixin {
+  @override
+  GameSubtype get gameType => widget.gameType;
 
-  int _lastProcessedIndex = -1;
-  int? _lastLives;
-  AccentQuest? _lastQuest;
-  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
-  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
-  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
-  final ValueNotifier<double> _sliderValue = ValueNotifier(0.5);
+  @override
+  int get level => widget.level;
+
+  @override
+  String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
+
+    
+      AccentQuest? _lastQuest;
+        final ValueNotifier<double> _sliderValue = ValueNotifier(0.5);
   final ValueNotifier<int?> _selectedIndex = ValueNotifier(null);
-  final ValueNotifier<bool> _isFirstStagePassed = ValueNotifier(false);
-
+  
   final ValueNotifier<double> _cartPosition = ValueNotifier(0.0);
   final ValueNotifier<bool> _isRiding = ValueNotifier(false);
   Timer? _rideTimer;
@@ -57,10 +53,22 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
   @override
   void initState() {
     super.initState();
+    isAnsweredNotifier.addListener(() {
+      if (isAnsweredNotifier.value && mounted && _scrollController.hasClients) {
+        Future.delayed(const Duration(milliseconds: 100), () {
+          if (mounted && _scrollController.hasClients) {
+            _scrollController.animateTo(
+              _scrollController.position.maxScrollExtent,
+              duration: const Duration(milliseconds: 300),
+              curve: Curves.easeOut,
+            );
+          }
+        });
+      }
+    });
+
     _scrollController = ScrollController();
-    context.read<AccentBloc>().add(
-      FetchAccentQuests(gameType: widget.gameType, level: widget.level),
-    );
+    initAccentGame();
   }
 
   @override
@@ -69,12 +77,11 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
     _rideTimer?.cancel();
     _cartPosition.dispose();
     _isRiding.dispose();
-    _isAnswered.dispose();
-    _isCorrect.dispose();
-    _showConfetti.dispose();
-    _selectedIndex.dispose();
-    _isFirstStagePassed.dispose();
-    _sliderValue.dispose();
+                _selectedIndex.dispose();
+        _sliderValue.dispose();
+    disposeAccentGame();
+    disposeAccentGame();
+    disposeAccentGame();
     super.dispose();
   }
 
@@ -91,8 +98,8 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
   }
 
   void _playTts(String text) {
-    _hapticService.selection();
-    _soundService.playTts(text);
+    hapticService.selection();
+    soundService.playTts(text);
     _triggerRideEffect();
   }
 
@@ -126,7 +133,7 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
     int topIndex,
     int bottomIndex,
   ) {
-    if (_isAnswered.value || _isFirstStagePassed.value) return;
+    if (isAnsweredNotifier.value || isFirstStagePassedNotifier.value) return;
     _sliderValue.value = value;
 
     // Auto-lock when reaching ends
@@ -138,41 +145,41 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
   }
 
   void _submitChoice(int index, int correct, int topIndex, int bottomIndex) {
-    if (_isAnswered.value || _isFirstStagePassed.value) return;
+    if (isAnsweredNotifier.value || isFirstStagePassedNotifier.value) return;
     _selectedIndex.value = index;
     _sliderValue.value = index == topIndex ? 1.0 : 0.0;
 
     bool isCorrect = index == correct;
 
     if (isCorrect) {
-      _hapticService.success();
-      _soundService.playCorrect();
-      _isFirstStagePassed.value = true;
+      hapticService.success();
+      soundService.playCorrect();
+      isFirstStagePassedNotifier.value = true;
       _scrollToBottom();
       // Wait for Phase 2
     } else {
-      _hapticService.error();
-      _soundService.playWrong();
-      _isAnswered.value = true;
-      _isCorrect.value = false;
+      hapticService.error();
+      soundService.playWrong();
+      isAnsweredNotifier.value = true;
+      isCorrectNotifier.value = false;
       context.read<AccentBloc>().add(SubmitAnswer(false));
     }
   }
 
   void _submitVerbalEvaluation(bool nailedIt) {
-    if (_isAnswered.value) return;
+    if (isAnsweredNotifier.value) return;
 
-    _isAnswered.value = true;
-    _isCorrect.value = nailedIt;
+    isAnsweredNotifier.value = true;
+    isCorrectNotifier.value = nailedIt;
 
     if (nailedIt) {
-      _hapticService.success();
-      _soundService.playCorrect();
+      hapticService.success();
+      soundService.playCorrect();
       context.read<AccentBloc>().add(const AccentSpeakConfirmed(5));
       context.read<AccentBloc>().add(SubmitAnswer(true));
     } else {
-      _hapticService.error();
-      _soundService.playWrong();
+      hapticService.error();
+      soundService.playWrong();
       context.read<AccentBloc>().add(SubmitAnswer(false));
     }
   }
@@ -183,47 +190,8 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
     final theme = LevelThemeHelper.getTheme('accent', level: widget.level);
 
     return BlocConsumer<AccentBloc, AccentState>(
-      listener: (context, state) {
-        if (state is AccentLoaded) {
-          _lastQuest = state.currentQuest;
-          final currentLives = state.livesRemaining;
-          final livesChanged = _lastLives != null && currentLives > _lastLives!;
-
-          if (state.currentIndex != _lastProcessedIndex ||
-              livesChanged ||
-              (!state.answerStatus.isAnswered && _isAnswered.value)) {
-            _lastProcessedIndex = state.currentIndex;
-            _isAnswered.value = false;
-            _isCorrect.value = null;
-            _sliderValue.value = 0.5;
-            _selectedIndex.value = null;
-            _isFirstStagePassed.value = false;
-            _cartPosition.value = 0.0;
-            _isRiding.value = false;
-            // Proactively auto-play sound and trigger ride effect on load
-            final quest = state.currentQuest;
-            if (quest.textToSpeak != null) {
-              Future.delayed(500.milliseconds, () {
-                if (mounted) {
-                  _soundService.playTts(quest.textToSpeak!);
-                  _triggerRideEffect();
-                }
-              });
-            }
-          }
-          _lastLives = currentLives;
-        }
-        if (state is AccentGameComplete) {
-          _showConfetti.value = true;
-          GameDialogHelper.showCompletion(
-            context,
-            xp: state.xpEarned,
-            coins: state.coinsEarned,
-            title: 'CONTOUR MASTER!',
-            enableDoubleUp: true,
-          );
-        }
-      },
+      listenWhen: accentListenWhen,
+      listener: onAccentStateChanged,
       builder: (context, state) {
         final AccentQuest? quest = (state is AccentLoaded)
             ? state.currentQuest
@@ -256,19 +224,19 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
           ),
           child: ListenableBuilder(
             listenable: Listenable.merge([
-              _isAnswered,
-              _isCorrect,
-              _showConfetti,
+              isAnsweredNotifier,
+              isCorrectNotifier,
+              showConfettiNotifier,
               _selectedIndex,
-              _isFirstStagePassed,
+              isFirstStagePassedNotifier,
             ]),
             builder: (context, _) {
               return AccentBaseLayout(
                 gameType: widget.gameType,
                 level: widget.level,
-                isAnswered: _isAnswered.value,
-                isCorrect: _isCorrect.value,
-                showConfetti: _showConfetti.value,
+                isAnswered: isAnsweredNotifier.value,
+                isCorrect: isCorrectNotifier.value,
+                showConfetti: showConfettiNotifier.value,
                 onContinue: () =>
                     context.read<AccentBloc>().add(NextQuestion()),
                 onHint: () => context.read<AccentBloc>().add(AccentHintUsed()),
@@ -315,14 +283,14 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
                             child: CustomScrollView(
                               controller: _scrollController,
                               physics:
-                                  (!_isFirstStagePassed.value &&
+                                  (!isFirstStagePassedNotifier.value &&
                                       remainingHeight > 50)
                                   ? const NeverScrollableScrollPhysics()
                                   : const BouncingScrollPhysics(),
                               slivers: [
                                 SliverToBoxAdapter(
                                   child: IgnorePointer(
-                                    ignoring: _isFirstStagePassed.value,
+                                    ignoring: isFirstStagePassedNotifier.value,
                                     child: ConstrainedBox(
                                       constraints: BoxConstraints(
                                         minHeight: constraints.maxHeight,
@@ -345,7 +313,7 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
                                                     IntonationMimicInstruction(
                                                       color: theme.primaryColor,
                                                       instruction:
-                                                          _isFirstStagePassed
+                                                          isFirstStagePassedNotifier
                                                               .value
                                                           ? "Great job! Now record yourself saying the word."
                                                           : quest.instruction,
@@ -392,8 +360,8 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
                                                           ),
                                                     SizedBox(height: gapPrompt),
 
-                                                    if (_isAnswered.value ||
-                                                        _isFirstStagePassed
+                                                    if (isAnsweredNotifier.value ||
+                                                        isFirstStagePassedNotifier
                                                             .value) ...[
                                                       ValueListenableBuilder<
                                                         bool
@@ -465,9 +433,9 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
                                                               .primaryColor,
                                                           isDark: isDark,
                                                           isAnswered:
-                                                              _isAnswered
+                                                              isAnsweredNotifier
                                                                   .value ||
-                                                              _isFirstStagePassed
+                                                              isFirstStagePassedNotifier
                                                                   .value,
                                                           selectedIndex:
                                                               _selectedIndex
@@ -506,8 +474,8 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
 
                                           SizedBox(
                                             height:
-                                                (_isFirstStagePassed.value &&
-                                                    !_isAnswered.value)
+                                                (isFirstStagePassedNotifier.value &&
+                                                    !isAnsweredNotifier.value)
                                                 ? 40.h
                                                 : 160.h,
                                           ),
@@ -517,13 +485,13 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
                                   ),
                                 ),
 
-                                if (_isFirstStagePassed.value &&
-                                    !_isAnswered.value)
+                                if (isFirstStagePassedNotifier.value &&
+                                    !isAnsweredNotifier.value)
                                   SliverToBoxAdapter(
                                     child: Column(
                                       children: [
-                                        if (_isFirstStagePassed.value &&
-                                            !_isAnswered.value)
+                                        if (isFirstStagePassedNotifier.value &&
+                                            !isAnsweredNotifier.value)
                                           SpeakToConfirmOverlay(
                                             expectedText: quest.word ?? "",
                                             displayText:

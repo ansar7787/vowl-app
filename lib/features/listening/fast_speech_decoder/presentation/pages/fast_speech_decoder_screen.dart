@@ -5,14 +5,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
-import 'package:vowl/core/utils/haptic_service.dart';
-import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/listening/presentation/bloc/listening_bloc.dart';
+import 'package:vowl/features/listening/presentation/mixins/listening_game_screen_mixin.dart';
 import 'package:vowl/features/listening/presentation/bloc/listening_event.dart';
 import 'package:vowl/features/listening/presentation/bloc/listening_state.dart';
 import 'package:vowl/features/listening/presentation/layout/listening_base_layout.dart';
-import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/features/listening/fast_speech_decoder/presentation/widgets/fast_speech_decoder_instruction.dart';
 import 'package:vowl/features/listening/fast_speech_decoder/presentation/widgets/fast_speech_decoder_gauges.dart';
 import 'package:vowl/features/listening/fast_speech_decoder/presentation/widgets/fast_speech_decoder_core.dart';
@@ -35,73 +32,87 @@ class FastSpeechDecoderScreen extends StatefulWidget {
       _FastSpeechDecoderScreenState();
 }
 
-class _FastSpeechDecoderScreenState extends State<FastSpeechDecoderScreen> {
-  final _hapticService = di.sl<HapticService>();
-  final _soundService = di.sl<SoundService>();
+class _FastSpeechDecoderScreenState extends State<FastSpeechDecoderScreen> with ListeningGameScreenMixin {
+  @override
+  GameSubtype get gameType => widget.gameType;
 
+  @override
+  int get level => widget.level;
+
+  @override
+  String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
+
+    
   final GlobalKey<SpeedChallengeTimerState> _timerKey =
       GlobalKey<SpeedChallengeTimerState>();
 
   final ValueNotifier<double> _dialRotation = ValueNotifier(
     0.33,
   ); // 0.0 to 1.0 mapping to 0.5x - 2.0x
-  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
-  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
-  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
-  int _lastProcessedIndex = -1;
-  int? _lastLives;
-  final ValueNotifier<int?> _selectedIndex = ValueNotifier(null);
+            final ValueNotifier<int?> _selectedIndex = ValueNotifier(null);
   final ValueNotifier<int?> _pendingSelectedIndex = ValueNotifier(null);
   final ScrollController _scrollController = ScrollController();
 
   @override
   void dispose() {
-    _isAnswered.dispose();
-    _isCorrect.dispose();
-    _showConfetti.dispose();
-    _selectedIndex.dispose();
+                _selectedIndex.dispose();
     _pendingSelectedIndex.dispose();
     _dialRotation.dispose();
     _scrollController.dispose();
+    disposeListeningGame();
+    disposeListeningGame();
+    disposeListeningGame();
     super.dispose();
   }
 
   @override
   void initState() {
     super.initState();
-    context.read<ListeningBloc>().add(
-      FetchListeningQuests(gameType: widget.gameType, level: widget.level),
-    );
+    isAnsweredNotifier.addListener(() {
+      if (isAnsweredNotifier.value && mounted && _scrollController.hasClients) {
+        Future.delayed(const Duration(milliseconds: 100), () {
+          if (mounted && _scrollController.hasClients) {
+            _scrollController.animateTo(
+              _scrollController.position.maxScrollExtent,
+              duration: const Duration(milliseconds: 300),
+              curve: Curves.easeOut,
+            );
+          }
+        });
+      }
+    });
+
+    initListeningGame();
   }
 
   void _onRotate(double delta) {
-    if (_isAnswered.value) return;
+    if (isAnsweredNotifier.value) return;
     double oldVal = _dialRotation.value;
     _dialRotation.value = (_dialRotation.value + delta / 300).clamp(0.0, 1.0);
 
     // Haptic tick for every 0.1x change
     if ((oldVal * 10).floor() != (_dialRotation.value * 10).floor()) {
-      _hapticService.light();
+      hapticService.light();
     }
   }
 
   void _submitFinalAnswer(GameQuest quest) {
-    if (_isAnswered.value || _pendingSelectedIndex.value == null) return;
+    if (isAnsweredNotifier.value || _pendingSelectedIndex.value == null) return;
     _timerKey.currentState?.stop();
 
     final correct = quest.correctAnswerIndex ?? 0;
     bool isCorrect = _pendingSelectedIndex.value == correct;
 
     if (isCorrect) {
-      _hapticService.success();
-      _soundService.playCorrect();
-      _isAnswered.value = true;
-      _isCorrect.value = true;
+      hapticService.success();
+      soundService.playCorrect();
+      isAnsweredNotifier.value = true;
+      isCorrectNotifier.value = true;
       _selectedIndex.value = _pendingSelectedIndex.value;
       context.read<ListeningBloc>().add(SubmitAnswer(true));
     } else {
-      _hapticService.error();
-      _soundService.playWrong();
+      hapticService.error();
+      soundService.playWrong();
 
       final authState = context.read<AuthBloc>().state;
       if (authState.status == AuthStatus.authenticated &&
@@ -116,19 +127,19 @@ class _FastSpeechDecoderScreenState extends State<FastSpeechDecoderScreen> {
         );
       }
 
-      _isAnswered.value = true;
-      _isCorrect.value = false;
+      isAnsweredNotifier.value = true;
+      isCorrectNotifier.value = false;
       _selectedIndex.value = _pendingSelectedIndex.value;
       context.read<ListeningBloc>().add(SubmitAnswer(false));
     }
   }
 
   void _submitWrongAnswer(dynamic quest) {
-    if (_isAnswered.value) return;
+    if (isAnsweredNotifier.value) return;
     _timerKey.currentState?.stop();
 
-    _hapticService.error();
-    _soundService.playWrong();
+    hapticService.error();
+    soundService.playWrong();
 
     final authState = context.read<AuthBloc>().state;
     if (authState.status == AuthStatus.authenticated &&
@@ -142,8 +153,8 @@ class _FastSpeechDecoderScreenState extends State<FastSpeechDecoderScreen> {
         level: widget.level,
       );
     }
-    _isAnswered.value = true;
-    _isCorrect.value = false;
+    isAnsweredNotifier.value = true;
+    isCorrectNotifier.value = false;
     context.read<ListeningBloc>().add(SubmitAnswer(false));
   }
 
@@ -152,46 +163,16 @@ class _FastSpeechDecoderScreenState extends State<FastSpeechDecoderScreen> {
     final theme = LevelThemeHelper.getTheme('listening', level: widget.level);
 
     return BlocConsumer<ListeningBloc, ListeningState>(
-      listener: (context, state) {
-        if (state is ListeningLoaded) {
-          final isNewQuestion = state.currentIndex != _lastProcessedIndex;
-          final isRetry = _isAnswered.value && !state.answerStatus.isAnswered;
-          final livesChanged =
-              _lastLives != null && state.livesRemaining > _lastLives!;
-
-          if (isNewQuestion || isRetry || livesChanged) {
-            _lastProcessedIndex = state.currentIndex;
-            _isAnswered.value = false;
-            _timerKey.currentState?.start();
-            _isCorrect.value = null;
-            _selectedIndex.value = null;
-            _pendingSelectedIndex.value = null;
-            _dialRotation.value = 0.33;
-          } else if (state.answerStatus.isAnswered && !_isAnswered.value) {
-            _isAnswered.value = true;
-            _isCorrect.value = state.answerStatus.asBoolOrNull;
-          }
-          _lastLives = state.livesRemaining;
-        }
-        if (state is ListeningGameComplete) {
-          _showConfetti.value = true;
-          GameDialogHelper.showCompletion(
-            context,
-            xp: state.xpEarned,
-            coins: state.coinsEarned,
-            title: 'NUANCE DECODER!',
-            enableDoubleUp: true,
-          );
-        }
-      },
+      listenWhen: listeningListenWhen,
+      listener: onListeningStateChanged,
       builder: (context, state) {
         final quest = (state is ListeningLoaded) ? state.currentQuest : null;
 
         return ListenableBuilder(
           listenable: Listenable.merge([
-            _isAnswered,
-            _isCorrect,
-            _showConfetti,
+            isAnsweredNotifier,
+            isCorrectNotifier,
+            showConfettiNotifier,
             _selectedIndex,
             _pendingSelectedIndex,
           ]),
@@ -199,9 +180,9 @@ class _FastSpeechDecoderScreenState extends State<FastSpeechDecoderScreen> {
             return ListeningBaseLayout(
               gameType: widget.gameType,
               level: widget.level,
-              isAnswered: _isAnswered.value,
-              isCorrect: _isCorrect.value,
-              showConfetti: _showConfetti.value,
+              isAnswered: isAnsweredNotifier.value,
+              isCorrect: isCorrectNotifier.value,
+              showConfetti: showConfettiNotifier.value,
               useScrolling: false,
               disablePadding: true,
               onContinue: () =>
@@ -268,15 +249,15 @@ class _FastSpeechDecoderScreenState extends State<FastSpeechDecoderScreen> {
                                                 rotation: rotation,
                                                 onRotate: _onRotate,
                                                 onTapTts: () {
-                                                  _soundService.playTts(
+                                                  soundService.playTts(
                                                     quest.textToSpeak ?? "",
                                                     speed: speed,
                                                   );
-                                                  _hapticService.selection();
+                                                  hapticService.selection();
                                                 },
                                                 emoji: quest.emoji,
                                                 isCorrectState:
-                                                    _isCorrect.value,
+                                                    isCorrectNotifier.value,
                                               ),
                                             ],
                                           );
@@ -301,11 +282,11 @@ class _FastSpeechDecoderScreenState extends State<FastSpeechDecoderScreen> {
                                         correctAnswerIndex:
                                             quest.correctAnswerIndex ?? 0,
                                         color: theme.primaryColor,
-                                        isAnswered: _isAnswered.value,
-                                        isCorrectState: _isCorrect.value,
+                                        isAnswered: isAnsweredNotifier.value,
+                                        isCorrectState: isCorrectNotifier.value,
                                         selectedIndex: _selectedIndex.value,
                                         onSubmitAnswer: (index) {
-                                          if (_isAnswered.value ||
+                                          if (isAnsweredNotifier.value ||
                                               _pendingSelectedIndex.value !=
                                                   null) {
                                             return;
@@ -315,7 +296,7 @@ class _FastSpeechDecoderScreenState extends State<FastSpeechDecoderScreen> {
                                         },
                                       ),
                                       SizedBox(
-                                        height: _isAnswered.value
+                                        height: isAnsweredNotifier.value
                                             ? 200.h
                                             : 60.h,
                                       ),

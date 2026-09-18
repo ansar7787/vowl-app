@@ -4,14 +4,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
-import 'package:vowl/core/utils/haptic_service.dart';
-import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/writing/presentation/bloc/writing_bloc.dart';
+import 'package:vowl/features/writing/presentation/mixins/writing_game_screen_mixin.dart';
 import 'package:vowl/features/writing/presentation/bloc/writing_event.dart';
 import 'package:vowl/features/writing/presentation/bloc/writing_state.dart';
 import 'package:vowl/features/writing/presentation/layout/writing_base_layout.dart';
-import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/features/writing/domain/entities/writing_quest.dart';
@@ -35,39 +32,59 @@ class CorrectionWritingScreen extends StatefulWidget {
       _CorrectionWritingScreenState();
 }
 
-class _CorrectionWritingScreenState extends State<CorrectionWritingScreen> {
-  final _hapticService = di.sl<HapticService>();
-  final _soundService = di.sl<SoundService>();
+class _CorrectionWritingScreenState extends State<CorrectionWritingScreen> with WritingGameScreenMixin {
+  @override
+  GameSubtype get gameType => widget.gameType;
 
+  @override
+  int get level => widget.level;
+
+  @override
+  String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
+
+    
   final ValueNotifier<String?> _selectedCorrection = ValueNotifier(null);
   WritingQuest? _lastQuest;
 
-  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
-  final ValueNotifier<bool> _showEvidence = ValueNotifier(false);
+    final ValueNotifier<bool> _showEvidence = ValueNotifier(false);
 
   late final ScrollController _scrollController;
 
   @override
   void initState() {
     super.initState();
+    isAnsweredNotifier.addListener(() {
+      if (isAnsweredNotifier.value && mounted && _scrollController.hasClients) {
+        Future.delayed(const Duration(milliseconds: 100), () {
+          if (mounted && _scrollController.hasClients) {
+            _scrollController.animateTo(
+              _scrollController.position.maxScrollExtent,
+              duration: const Duration(milliseconds: 300),
+              curve: Curves.easeOut,
+            );
+          }
+        });
+      }
+    });
+
     _scrollController = ScrollController();
-    context.read<WritingBloc>().add(
-      FetchWritingQuests(gameType: widget.gameType, level: widget.level),
-    );
+    initWritingGame();
   }
 
   @override
   void dispose() {
     _scrollController.dispose();
     _selectedCorrection.dispose();
-    _showConfetti.dispose();
-    _showEvidence.dispose();
+        _showEvidence.dispose();
+    disposeWritingGame();
+    disposeWritingGame();
+    disposeWritingGame();
     super.dispose();
   }
 
   void _onSelectCorrection(String choice, bool isAnswered) {
     if (isAnswered) return;
-    _hapticService.selection();
+    hapticService.selection();
     _selectedCorrection.value = choice;
   }
 
@@ -100,7 +117,7 @@ class _CorrectionWritingScreenState extends State<CorrectionWritingScreen> {
           message: "Please start your sentence with a capital letter.",
           type: CustomSnackBarType.warning,
         );
-        _hapticService.selection();
+        hapticService.selection();
         return;
       }
 
@@ -112,7 +129,7 @@ class _CorrectionWritingScreenState extends State<CorrectionWritingScreen> {
               "Please end your sentence with proper punctuation (., !, or ?).",
           type: CustomSnackBarType.warning,
         );
-        _hapticService.selection();
+        hapticService.selection();
         return;
       }
 
@@ -127,8 +144,8 @@ class _CorrectionWritingScreenState extends State<CorrectionWritingScreen> {
     }
 
     if (correct) {
-      _hapticService.success();
-      _soundService.playCorrect();
+      hapticService.success();
+      soundService.playCorrect();
       if ((quest.options?.isNotEmpty ?? false) &&
           _selectedCorrection.value != null) {
         _showEvidence.value = true;
@@ -136,8 +153,8 @@ class _CorrectionWritingScreenState extends State<CorrectionWritingScreen> {
         context.read<WritingBloc>().add(SubmitAnswer(correct));
       }
     } else {
-      _hapticService.error();
-      _soundService.playWrong();
+      hapticService.error();
+      soundService.playWrong();
       context.read<WritingBloc>().add(SubmitAnswer(correct));
     }
   }
@@ -152,24 +169,7 @@ class _CorrectionWritingScreenState extends State<CorrectionWritingScreen> {
           (curr is WritingGameComplete && prev is! WritingGameComplete) ||
           (curr is WritingGameOver && prev is! WritingGameOver) ||
           (curr is WritingLoaded && !curr.answerStatus.isAnswered),
-      listener: (context, state) {
-        if (state is WritingLoaded && !state.answerStatus.isAnswered) {
-          _selectedCorrection.value = null;
-          _showEvidence.value = false;
-        }
-        if (state is WritingGameComplete) {
-          _showConfetti.value = true;
-          GameDialogHelper.showCompletion(
-            context,
-            xp: state.xpEarned,
-            coins: state.coinsEarned,
-            title: 'SYNTAX AUDITOR!',
-            enableDoubleUp: true,
-          );
-        }
-
-
-      },
+      listener: onWritingStateChanged,
       builder: (context, state) {
         final isLoaded = state is WritingLoaded;
         final WritingQuest? quest = isLoaded
@@ -193,14 +193,14 @@ class _CorrectionWritingScreenState extends State<CorrectionWritingScreen> {
           level: widget.level,
           isAnswered: isAnswered,
           isCorrect: isCorrect,
-          showConfetti: _showConfetti.value,
+          showConfetti: showConfettiNotifier.value,
           useScrolling: false,
           disablePadding: true,
           onContinue: () => context.read<WritingBloc>().add(NextQuestion()),
           onHint: () => context.read<WritingBloc>().add(WritingHintUsed()),
           child: ListenableBuilder(
             listenable: Listenable.merge([
-              _showConfetti,
+              showConfettiNotifier,
               _selectedCorrection,
               _showEvidence,
             ]),
