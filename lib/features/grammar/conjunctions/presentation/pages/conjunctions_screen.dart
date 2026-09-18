@@ -124,6 +124,17 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen>with SingleTicke
   }
 
   @override
+
+  void onQuestionReset() {
+
+    _placedBrick.value = null;
+
+    _pendingJigsaw.value = false;
+
+  }
+
+  @override
+
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('grammar', level: widget.level);

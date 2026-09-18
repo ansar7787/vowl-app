@@ -215,6 +215,21 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen> wit
   }
 
   @override
+
+  void onQuestionReset() {
+
+    _prefixStickers.value = {};
+
+    _suffixStickers.value = {};
+
+    _pendingTyping.value = false;
+
+    _assembledSentence.value = null;
+
+  }
+
+  @override
+
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('grammar', level: widget.level);

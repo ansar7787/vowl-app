@@ -105,6 +105,17 @@ class _ParagraphSummaryScreenState extends State<ParagraphSummaryScreen> with Re
   }
 
   @override
+
+  void onQuestionReset() {
+
+    _pinchWidth.value = 1.0;
+
+    _isDistilled.value = false;
+
+  }
+
+  @override
+
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('reading', level: widget.level);

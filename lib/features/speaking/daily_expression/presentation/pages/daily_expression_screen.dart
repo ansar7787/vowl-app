@@ -157,6 +157,17 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>with Singl
   }
 
   @override
+
+  void onQuestionReset() {
+
+    _scratchProgress.value = 0.0;
+
+    _timeVal.value = 0.0;
+
+  }
+
+  @override
+
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('speaking', level: widget.level);

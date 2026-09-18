@@ -189,6 +189,19 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen> with ReadingGam
   }
 
   @override
+
+  void onQuestionReset() {
+
+    _activeKey.value = null;
+
+    _matches.value = {};
+
+    _pendingSubmission.value = false;
+
+  }
+
+  @override
+
   Widget build(BuildContext context) {
     final theme = LevelThemeHelper.getTheme('reading', level: widget.level);
     final isDark = Theme.of(context).brightness == Brightness.dark;

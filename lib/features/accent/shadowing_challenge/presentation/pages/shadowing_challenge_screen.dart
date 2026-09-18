@@ -134,6 +134,17 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen> wit
   }
 
   @override
+
+  void onQuestionReset() {
+
+    _selectedIndex.value = null;
+
+    _currentSpeed.value = 1.0;
+
+  }
+
+  @override
+
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('accent', level: widget.level);

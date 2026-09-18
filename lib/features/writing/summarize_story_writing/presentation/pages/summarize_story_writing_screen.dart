@@ -171,6 +171,17 @@ class _SummarizeStoryWritingScreenState
   }
 
   @override
+
+  void onQuestionReset() {
+
+    _slots.value = [];
+
+    _pendingSubmit.value = false;
+
+  }
+
+  @override
+
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('writing', level: widget.level);

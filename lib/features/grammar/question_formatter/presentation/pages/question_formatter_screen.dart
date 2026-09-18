@@ -171,6 +171,21 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>with T
   }
 
   @override
+
+  void onQuestionReset() {
+
+    _crankRotation.value = 0.0;
+
+    _isCrankComplete.value = false;
+
+    _pendingJigsaw.value = false;
+
+    _selectedOptionText.value = null;
+
+  }
+
+  @override
+
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('grammar', level: widget.level);

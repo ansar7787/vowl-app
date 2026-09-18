@@ -128,6 +128,19 @@ class _RelativeClausesScreenState extends State<RelativeClausesScreen>with Singl
   }
 
   @override
+
+  void onQuestionReset() {
+
+    _hookPoint.value = null;
+
+    _targetFish.value = -1;
+
+    _pendingJigsaw.value = false;
+
+  }
+
+  @override
+
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('grammar', level: widget.level);

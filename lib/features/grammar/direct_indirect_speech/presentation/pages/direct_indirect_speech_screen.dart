@@ -139,6 +139,17 @@ class _DirectIndirectSpeechScreenState
   }
 
   @override
+
+  void onQuestionReset() {
+
+    _rotation.value = 0.0;
+
+    _selectedReflection.value = -1;
+
+  }
+
+  @override
+
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('grammar', level: widget.level);

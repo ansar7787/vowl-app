@@ -177,6 +177,21 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> with 
   }
 
   @override
+
+  void onQuestionReset() {
+
+    _sliderValue.value = 0.5;
+
+    _selectedIndex.value = null;
+
+    _previewProgress.value = 0.0;
+
+    _isPreviewing.value = false;
+
+  }
+
+  @override
+
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('accent', level: widget.level);

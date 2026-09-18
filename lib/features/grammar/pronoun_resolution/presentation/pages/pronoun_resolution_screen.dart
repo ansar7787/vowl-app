@@ -127,6 +127,19 @@ class _PronounResolutionScreenState extends State<PronounResolutionScreen> with 
   }
 
   @override
+
+  void onQuestionReset() {
+
+    _rotation.value = 0.0;
+
+    _targetIndex.value = -1;
+
+    _pendingJigsaw.value = false;
+
+  }
+
+  @override
+
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('grammar', level: widget.level);

@@ -200,6 +200,23 @@ class _DailyJournalScreenState extends State<DailyJournalScreen> with WritingGam
   }
 
   @override
+
+  void onQuestionReset() {
+
+    _showSpeakToConfirm.value = false;
+
+    _wordCount.value = 0;
+
+    _journalProgress.value = 0.0;
+
+    _isSubmitting.value = false;
+
+    _controller.clear();
+
+  }
+
+  @override
+
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('writing', level: widget.level);

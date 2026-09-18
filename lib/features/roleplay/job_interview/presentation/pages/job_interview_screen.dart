@@ -135,6 +135,21 @@ class _JobInterviewScreenState extends State<JobInterviewScreen>with TickerProvi
   }
 
   @override
+
+  void onQuestionReset() {
+
+    _selectedIndex.value = null;
+
+    _shuffledOptions.value = [];
+
+    _shuffledCorrectIndex.value = -1;
+
+    _mercuryLevel.value = 0.5;
+
+  }
+
+  @override
+
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('roleplay', level: widget.level);

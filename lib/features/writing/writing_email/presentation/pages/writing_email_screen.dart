@@ -176,6 +176,19 @@ class _WritingEmailScreenState extends State<WritingEmailScreen> with WritingGam
   }
 
   @override
+
+  void onQuestionReset() {
+
+    _slots.value = { 'SUBJECT': null, 'SALUTATION': null, 'BODY': null, 'SIGN-OFF': null };
+
+    _shuffledOptions.value = [];
+
+    _showSpeakToConfirm.value = false;
+
+  }
+
+  @override
+
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('writing', level: widget.level);

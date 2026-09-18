@@ -148,6 +148,17 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen> with Ac
   }
 
   @override
+
+  void onQuestionReset() {
+
+    _sliderValue.value = 0.5;
+
+    _selectedIndex.value = null;
+
+  }
+
+  @override
+
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('accent', level: widget.level);

@@ -232,6 +232,19 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen>with TickerP
   }
 
   @override
+
+  void onQuestionReset() {
+
+    _diagnosedSymptoms.value = [];
+
+    _scanOffset.value = Offset.zero;
+
+    _scannedGlitches.value = [];
+
+  }
+
+  @override
+
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('roleplay', level: widget.level);

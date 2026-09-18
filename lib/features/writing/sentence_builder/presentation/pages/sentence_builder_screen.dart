@@ -186,6 +186,19 @@ class _SentenceBuilderScreenState extends State<SentenceBuilderScreen> with Writ
   }
 
   @override
+
+  void onQuestionReset() {
+
+    _assembledPieces.value = [];
+
+    _showTypeToConfirm.value = false;
+
+    _textController.clear();
+
+  }
+
+  @override
+
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
 

@@ -121,6 +121,12 @@ class _PartsOfSpeechScreenState extends State<PartsOfSpeechScreen> with GrammarG
     _onFlick(targetIndex, correctIndex);
   }
   @override
+  void onQuestionReset() {
+    _dragOffset.value = Offset.zero;
+    _isWordSelected.value = false;
+    _isSubmitting.value = false;
+  }
+  @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('grammar', level: widget.level);

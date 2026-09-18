@@ -166,6 +166,17 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> with Vocabulary
   }
 
   @override
+
+  void onQuestionReset() {
+
+    _lensPosition.value = Offset.zero;
+
+    _selectedOption.value = null;
+
+  }
+
+  @override
+
   Widget build(BuildContext context) {
     return BlocConsumer<VocabularyBloc, VocabularyState>(
       listenWhen: vocabularyListenWhen,

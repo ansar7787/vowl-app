@@ -174,6 +174,21 @@ class _GenericRoleplayScenarioScreenState
   // â”€â”€ Build â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
   @override
+
+  void onQuestionReset() {
+
+    _selectedIndex.value = null;
+
+    _isProcessing.value = false;
+
+    _attempts.value = 0;
+
+    _chatMessages.value = [];
+
+  }
+
+  @override
+
   Widget build(BuildContext context) {
     // context.select rebuilds only when the mascot ID field changes â€”
     // not on every auth state emission.

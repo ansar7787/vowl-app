@@ -152,6 +152,15 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> with EliteMaste
   }
 
   @override
+
+  void onQuestionReset() {
+
+    _currentOrder.value = [];
+
+  }
+
+  @override
+
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final isMidnight = context.watch<ThemeCubit>().state.isMidnight;

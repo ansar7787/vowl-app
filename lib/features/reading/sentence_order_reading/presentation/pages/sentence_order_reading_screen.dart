@@ -110,6 +110,15 @@ class _SentenceOrderReadingScreenState
   }
 
   @override
+
+  void onQuestionReset() {
+
+    _currentOrder.value = [];
+
+  }
+
+  @override
+
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('reading', level: widget.level);

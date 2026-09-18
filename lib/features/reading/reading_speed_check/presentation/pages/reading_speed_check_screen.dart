@@ -127,6 +127,23 @@ class _ReadingSpeedCheckScreenState extends State<ReadingSpeedCheckScreen> with 
   }
 
   @override
+
+  void onQuestionReset() {
+
+    _pulseScale.value = 1.0;
+
+    _clarityRadius.value = 0.0;
+
+    _timerValue.value = 12;
+
+    _timeLimit.value = 12;
+
+    _isRevealed.value = false;
+
+  }
+
+  @override
+
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('reading', level: widget.level);

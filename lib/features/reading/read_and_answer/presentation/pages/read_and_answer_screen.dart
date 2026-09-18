@@ -126,6 +126,17 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen> with ReadingG
   }
 
   @override
+
+  void onQuestionReset() {
+
+    _pendingSelectedIndex.value = null;
+
+    _showEvidenceStep.value = false;
+
+  }
+
+  @override
+
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme(

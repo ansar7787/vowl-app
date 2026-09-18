@@ -160,6 +160,19 @@ class _DetailSpotlightScreenState extends State<DetailSpotlightScreen> with List
   }
 
   @override
+
+  void onQuestionReset() {
+
+    _selectedIndex.value = null;
+
+    _pendingSelectedIndex.value = null;
+
+    _spotlightPos.value = const Offset(0, 0);
+
+  }
+
+  @override
+
   Widget build(BuildContext context) {
     final theme = LevelThemeHelper.getTheme('listening', level: widget.level);
 

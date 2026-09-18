@@ -130,6 +130,17 @@ class _TravelDeskScreenState extends State<TravelDeskScreen>with TickerProviderS
   }
 
   @override
+
+  void onQuestionReset() {
+
+    _selectedIndex.value = null;
+
+    _hoveredIndex.value = null;
+
+  }
+
+  @override
+
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('roleplay', level: widget.level);

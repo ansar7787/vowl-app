@@ -144,6 +144,19 @@ class _WordReorderScreenState extends State<WordReorderScreen> with GrammarGameS
   double _lastKeyboardHeight = 0;
 
   @override
+
+  void onQuestionReset() {
+
+    _availableIndices.value = [];
+
+    _assembledIndices.value = [];
+
+    _pendingTypeSubmit.value = false;
+
+  }
+
+  @override
+
   Widget build(BuildContext context) {
     final keyboardHeight = MediaQuery.viewInsetsOf(context).bottom;
     if (keyboardHeight != _lastKeyboardHeight) {

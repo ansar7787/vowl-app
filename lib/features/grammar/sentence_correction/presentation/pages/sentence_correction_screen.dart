@@ -223,6 +223,21 @@ class _SentenceCorrectionScreenState extends State<SentenceCorrectionScreen> wit
   }
 
   @override
+
+  void onQuestionReset() {
+
+    _selectedWordIndex.value = null;
+
+    _selectedOption.value = null;
+
+    _wordSelectionCorrect.value = null;
+
+    _optionSelectionCorrect.value = null;
+
+  }
+
+  @override
+
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('grammar', level: widget.level);

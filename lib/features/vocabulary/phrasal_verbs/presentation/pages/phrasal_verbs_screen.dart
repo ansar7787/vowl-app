@@ -157,6 +157,15 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>with SingleTicke
   }
 
   @override
+
+  void onQuestionReset() {
+
+    _selectedOption.value = null;
+
+  }
+
+  @override
+
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
 

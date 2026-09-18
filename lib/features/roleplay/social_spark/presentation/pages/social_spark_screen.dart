@@ -156,6 +156,15 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>with TickerProvide
   }
 
   @override
+
+  void onQuestionReset() {
+
+    _selectedIndices.value = [];
+
+  }
+
+  @override
+
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('roleplay', level: widget.level);

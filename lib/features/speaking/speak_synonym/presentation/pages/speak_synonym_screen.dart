@@ -125,6 +125,17 @@ class _SpeakSynonymScreenState extends State<SpeakSynonymScreen>with SingleTicke
   }
 
   @override
+
+  void onQuestionReset() {
+
+    _bloomProgress.value = 0.0;
+
+    _ttsFinished.value = false;
+
+  }
+
+  @override
+
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('speaking', level: widget.level);

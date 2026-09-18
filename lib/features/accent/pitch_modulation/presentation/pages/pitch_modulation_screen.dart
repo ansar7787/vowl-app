@@ -220,6 +220,15 @@ class _PitchModulationScreenState extends State<PitchModulationScreen> with Acce
   }
 
   @override
+
+  void onQuestionReset() {
+
+    _state.value = const PitchModulationState();
+
+  }
+
+  @override
+
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('accent', level: widget.level);

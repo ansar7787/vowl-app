@@ -131,6 +131,15 @@ class _ConditionalsScreenState extends State<ConditionalsScreen> with GrammarGam
   }
 
   @override
+
+  void onQuestionReset() {
+
+    _targetIndex.value = -1;
+
+  }
+
+  @override
+
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('grammar', level: widget.level);

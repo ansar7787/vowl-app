@@ -167,6 +167,19 @@ class _EmotionRecognitionScreenState extends State<EmotionRecognitionScreen> wit
   }
 
   @override
+
+  void onQuestionReset() {
+
+    _coreOffset.value = Offset.zero;
+
+    _selectedIndex.value = null;
+
+    _pendingSelectedIndex.value = null;
+
+  }
+
+  @override
+
   Widget build(BuildContext context) {
     final theme = LevelThemeHelper.getTheme('listening', level: widget.level);
 

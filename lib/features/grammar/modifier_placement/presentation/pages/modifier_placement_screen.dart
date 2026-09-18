@@ -143,6 +143,19 @@ class _ModifierPlacementScreenState extends State<ModifierPlacementScreen> with 
   }
 
   @override
+
+  void onQuestionReset() {
+
+    _targetIndex.value = -1;
+
+    _pendingJigsaw.value = false;
+
+    _assembledSentence.value = null;
+
+  }
+
+  @override
+
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('grammar', level: widget.level);

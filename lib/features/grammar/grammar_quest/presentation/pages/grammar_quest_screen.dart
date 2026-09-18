@@ -107,6 +107,15 @@ class _GrammarQuestScreenState extends State<GrammarQuestScreen> with GrammarGam
   }
 
   @override
+
+  void onQuestionReset() {
+
+    _pendingTypeSubmit.value = false;
+
+  }
+
+  @override
+
   Widget build(BuildContext context) {
     final theme = LevelThemeHelper.getTheme('grammar', level: widget.level);
     return BlocConsumer<GrammarBloc, GrammarState>(

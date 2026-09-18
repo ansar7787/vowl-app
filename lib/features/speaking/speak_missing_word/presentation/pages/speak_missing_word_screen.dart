@@ -201,6 +201,21 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen>with Tic
   }
 
   @override
+
+  void onQuestionReset() {
+
+    _dynamicOptions.value = [];
+
+    _selectedWord.value = null;
+
+    _isListening.value = false;
+
+    _isWordPlaced.value = false;
+
+  }
+
+  @override
+
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('speaking', level: widget.level);

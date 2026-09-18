@@ -153,6 +153,21 @@ class _TrueFalseReadingScreenState extends State<TrueFalseReadingScreen> with Re
   }
 
   @override
+
+  void onQuestionReset() {
+
+    _coinX.value = 0.0;
+
+    _coinY.value = 0.0;
+
+    _coinRotation.value = 0.0;
+
+    _pendingAnswer.value = null;
+
+  }
+
+  @override
+
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('reading', level: widget.level);

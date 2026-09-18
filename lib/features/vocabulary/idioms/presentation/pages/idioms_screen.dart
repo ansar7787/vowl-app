@@ -125,6 +125,15 @@ class _IdiomsScreenState extends State<IdiomsScreen> with VocabularyGameScreenMi
   }
 
   @override
+
+  void onQuestionReset() {
+
+    _selectedOption.value = null;
+
+  }
+
+  @override
+
   Widget build(BuildContext context) {
     return BlocConsumer<VocabularyBloc, VocabularyState>(
       listenWhen: vocabularyListenWhen,

@@ -114,6 +114,17 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> with Gram
   }
 
   @override
+
+  void onQuestionReset() {
+
+    _draggingConnector.value = null;
+
+    _pendingTypeSubmit.value = false;
+
+  }
+
+  @override
+
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('grammar', level: widget.level);

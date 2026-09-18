@@ -157,6 +157,19 @@ class _FastSpeechDecoderScreenState extends State<FastSpeechDecoderScreen> with 
   }
 
   @override
+
+  void onQuestionReset() {
+
+    _dialRotation.value = 0.33;
+
+    _selectedIndex.value = null;
+
+    _pendingSelectedIndex.value = null;
+
+  }
+
+  @override
+
   Widget build(BuildContext context) {
     final theme = LevelThemeHelper.getTheme('listening', level: widget.level);
 

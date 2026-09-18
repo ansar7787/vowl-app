@@ -142,6 +142,17 @@ class _CompleteSentenceScreenState extends State<CompleteSentenceScreen> with Wr
   // ---------------------------------------------------------------------------
 
   @override
+
+  void onQuestionReset() {
+
+    _selectedProjectile.value = null;
+
+    _showAnagram.value = false;
+
+  }
+
+  @override
+
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
 

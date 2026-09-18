@@ -141,6 +141,21 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> with EliteMasteryGa
   }
 
   @override
+
+  void onQuestionReset() {
+
+    _shuffledOptions.value = [];
+
+    _originalIndices.value = [];
+
+    _selectedIndex.value = null;
+
+    _wrongIndices.value = [];
+
+  }
+
+  @override
+
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final isMidnight = context.watch<ThemeCubit>().state.isMidnight;

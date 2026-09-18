@@ -108,6 +108,15 @@ class _GuessTitleScreenState extends State<GuessTitleScreen> with ReadingGameScr
   }
 
   @override
+
+  void onQuestionReset() {
+
+    _showTypeToConfirm.value = false;
+
+  }
+
+  @override
+
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('reading', level: widget.level);

@@ -128,6 +128,15 @@ class _WordLinkingScreenState extends State<WordLinkingScreen> with AccentGameSc
   }
 
   @override
+
+  void onQuestionReset() {
+
+    _selectedNodeIndex.value = null;
+
+  }
+
+  @override
+
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('accent', level: widget.level);

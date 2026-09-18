@@ -103,6 +103,17 @@ class _FindWordMeaningScreenState extends State<FindWordMeaningScreen> with Read
   }
 
   @override
+
+  void onQuestionReset() {
+
+    _showSentenceBuilder.value = false;
+
+    _pendingSelectedIndex.value = null;
+
+  }
+
+  @override
+
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('reading', level: widget.level);

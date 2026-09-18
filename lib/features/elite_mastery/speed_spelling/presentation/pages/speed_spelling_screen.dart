@@ -152,6 +152,21 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen> with EliteMas
   }
 
   @override
+
+  void onQuestionReset() {
+
+    _currentInput.value = "";
+
+    _shuffledChars.value = [];
+
+    _attempts.value = 0;
+
+    _tapHistory.value = [];
+
+  }
+
+  @override
+
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final isMidnight = context.watch<ThemeCubit>().state.isMidnight;

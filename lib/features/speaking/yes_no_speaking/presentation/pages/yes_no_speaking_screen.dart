@@ -179,6 +179,17 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen> with Speaking
   }
 
   @override
+
+  void onQuestionReset() {
+
+    _tiltValue.value = 0.0;
+
+    _isSnapped.value = false;
+
+  }
+
+  @override
+
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('speaking', level: widget.level);

@@ -182,6 +182,17 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>with Sin
   }
 
   @override
+
+  void onQuestionReset() {
+
+    _inspectedHotspots.value = {};
+
+    _activeHotspot.value = -1;
+
+  }
+
+  @override
+
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('speaking', level: widget.level);

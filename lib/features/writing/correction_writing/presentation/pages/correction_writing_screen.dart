@@ -158,6 +158,17 @@ class _CorrectionWritingScreenState extends State<CorrectionWritingScreen> with 
   }
 
   @override
+
+  void onQuestionReset() {
+
+    _selectedCorrection.value = null;
+
+    _showEvidence.value = false;
+
+  }
+
+  @override
+
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('writing', level: widget.level);

@@ -292,6 +292,25 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen> with 
   }
 
   @override
+
+  void onQuestionReset() {
+
+    _usedKeywords.value = [];
+
+    _expandedEmojiIndex.value = null;
+
+    _showSpeakToConfirm.value = false;
+
+    _wordCount.value = 0;
+
+    _isSubmitting.value = false;
+
+    _textController.clear();
+
+  }
+
+  @override
+
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('writing', level: widget.level);

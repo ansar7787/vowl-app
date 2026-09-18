@@ -173,6 +173,15 @@ class _AudioTrueFalseScreenState extends State<AudioTrueFalseScreen>with SingleT
   }
 
   @override
+
+  void onQuestionReset() {
+
+    _selectedVerdict.value = null;
+
+  }
+
+  @override
+
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme(

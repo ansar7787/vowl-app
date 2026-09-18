@@ -109,6 +109,21 @@ class _ReadingInferenceScreenState extends State<ReadingInferenceScreen> with Re
   }
 
   @override
+
+  void onQuestionReset() {
+
+    _rubPoints.value = [];
+
+    _clarity.value = 0.0;
+
+    _showEvidence.value = false;
+
+    _evidenceFound.value = false;
+
+  }
+
+  @override
+
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('reading', level: widget.level);

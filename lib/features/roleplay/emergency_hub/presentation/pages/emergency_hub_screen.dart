@@ -153,6 +153,15 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>with TickerProvi
   }
 
   @override
+
+  void onQuestionReset() {
+
+    _rotation.value = 0.0;
+
+  }
+
+  @override
+
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
 

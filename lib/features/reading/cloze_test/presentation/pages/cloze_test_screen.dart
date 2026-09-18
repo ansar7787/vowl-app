@@ -116,6 +116,17 @@ class _ClozeTestScreenState extends State<ClozeTestScreen> with ReadingGameScree
   }
 
   @override
+
+  void onQuestionReset() {
+
+    _dockedOption.value = null;
+
+    _pendingDockedOption.value = null;
+
+  }
+
+  @override
+
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('reading', level: widget.level);

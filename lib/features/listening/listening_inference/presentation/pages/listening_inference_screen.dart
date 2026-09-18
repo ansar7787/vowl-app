@@ -229,6 +229,15 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen>with
   }
 
   @override
+
+  void onQuestionReset() {
+
+    _selectedIndex.value = null;
+
+  }
+
+  @override
+
   Widget build(BuildContext context) {
     final theme = LevelThemeHelper.getTheme('listening', level: widget.level);
 

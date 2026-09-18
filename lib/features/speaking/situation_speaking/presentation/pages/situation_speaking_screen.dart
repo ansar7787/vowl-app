@@ -127,6 +127,15 @@ class _SituationSpeakingScreenState extends State<SituationSpeakingScreen> with 
   }
 
   @override
+
+  void onQuestionReset() {
+
+    _isBriefingComplete.value = false;
+
+  }
+
+  @override
+
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('speaking', level: widget.level);

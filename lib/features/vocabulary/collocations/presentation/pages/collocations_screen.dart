@@ -142,6 +142,17 @@ class _CollocationsScreenState extends State<CollocationsScreen>with TickerProvi
   }
 
   @override
+
+  void onQuestionReset() {
+
+    _isDragPassed.value = false;
+
+    _selectedOption.value = null;
+
+  }
+
+  @override
+
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
 

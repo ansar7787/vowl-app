@@ -151,6 +151,23 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen> with Writin
   }
 
   @override
+
+  void onQuestionReset() {
+
+    _isWiped.value = false;
+
+    _selectedOption.value = null;
+
+    _pendingSelectedOption.value = null;
+
+    _erasedAmount.value = 0;
+
+    _shuffledOptions.value = null;
+
+  }
+
+  @override
+
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('writing', level: widget.level);

@@ -183,6 +183,21 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>with Ticke
   }
 
   @override
+
+  void onQuestionReset() {
+
+    _sliderValue.value = 0.5;
+
+    _selectedIndex.value = null;
+
+    _cartPosition.value = 0.0;
+
+    _isRiding.value = false;
+
+  }
+
+  @override
+
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('accent', level: widget.level);

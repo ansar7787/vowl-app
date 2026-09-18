@@ -185,6 +185,19 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen>wi
   }
 
   @override
+
+  void onQuestionReset() {
+
+    _selectedOrbIndex.value = null;
+
+    _shuffledOptions.value = [];
+
+    _shuffledCorrectIndex.value = -1;
+
+  }
+
+  @override
+
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('roleplay', level: widget.level);

@@ -137,6 +137,23 @@ class _PronunciationFocusScreenState extends State<PronunciationFocusScreen>with
   }
 
   @override
+
+  void onQuestionReset() {
+
+    _heatLevel.value = 0.0;
+
+    _ttsFinished.value = false;
+
+    _timeVal.value = 0.0;
+
+    _showGuide.value = false;
+
+    _isUserRecording.value = false;
+
+  }
+
+  @override
+
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('speaking', level: widget.level);

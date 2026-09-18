@@ -162,6 +162,23 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen> with Writin
   }
 
   @override
+
+  void onQuestionReset() {
+
+    _leftPanArgs.value = [];
+
+    _rightPanArgs.value = [];
+
+    _scaleRotation.value = 0.0;
+
+    _shuffledOptions.value = [];
+
+    _pendingScaleSubmit.value = false;
+
+  }
+
+  @override
+
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('writing', level: widget.level);

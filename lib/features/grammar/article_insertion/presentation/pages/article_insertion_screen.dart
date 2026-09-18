@@ -176,6 +176,17 @@ class _ArticleInsertionScreenState extends State<ArticleInsertionScreen> with Gr
   }
 
   @override
+
+  void onQuestionReset() {
+
+    _selectedArticle.value = null;
+
+    _pendingJigsaw.value = false;
+
+  }
+
+  @override
+
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('grammar', level: widget.level);

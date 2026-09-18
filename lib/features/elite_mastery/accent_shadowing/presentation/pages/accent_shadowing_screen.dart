@@ -96,6 +96,17 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> with Elit
   }
 
   @override
+
+  void onQuestionReset() {
+
+    _attempts.value = 0;
+
+    _matchedIndices.value = {};
+
+  }
+
+  @override
+
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final isMidnight = context.watch<ThemeCubit>().state.isMidnight;

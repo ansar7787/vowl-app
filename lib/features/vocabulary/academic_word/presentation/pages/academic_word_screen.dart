@@ -108,6 +108,14 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> with Vocabulary
 
   // ── Build ──────────────────────────────────────────────────────────────────
   @override
+  void onQuestionReset() {
+    _isDragPassed.value = false;
+    _misspelledWord.value = null;
+    _isSlotSelected.value = false;
+    _dragOffset.value = Offset.zero;
+    _activeShardIndex.value = null;
+  }
+  @override
   Widget build(BuildContext context) {
     return BlocConsumer<VocabularyBloc, VocabularyState>(
       listener: _onStateChange,

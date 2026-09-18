@@ -157,6 +157,15 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>with TickerProvi
   }
 
   @override
+
+  void onQuestionReset() {
+
+    _selectedItems.value = [];
+
+  }
+
+  @override
+
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('roleplay', level: widget.level);

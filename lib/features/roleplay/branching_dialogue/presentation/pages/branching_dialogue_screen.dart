@@ -191,6 +191,19 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen>with T
   }
 
   @override
+
+  void onQuestionReset() {
+
+    _probeOffset.value = Offset.zero;
+
+    _hoveredIndex.value = null;
+
+    _selectedIndex.value = null;
+
+  }
+
+  @override
+
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('roleplay', level: widget.level);

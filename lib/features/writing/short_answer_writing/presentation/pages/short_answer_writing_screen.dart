@@ -170,6 +170,21 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen> with WritingGameS
   }
 
   @override
+
+  void onQuestionReset() {
+
+    _showContextSentence.value = false;
+
+    _inkLevel.value = 0.0;
+
+    _wordCount.value = 0;
+
+    _answerController.clear();
+
+  }
+
+  @override
+
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('writing', level: widget.level);

@@ -150,6 +150,15 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen> with GrammarGameScree
   }
 
   @override
+
+  void onQuestionReset() {
+
+    _isPassive.value = false;
+
+  }
+
+  @override
+
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('grammar', level: widget.level);

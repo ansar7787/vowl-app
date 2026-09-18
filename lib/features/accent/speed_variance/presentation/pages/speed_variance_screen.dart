@@ -194,6 +194,21 @@ class _SpeedVarianceScreenState extends State<SpeedVarianceScreen> with AccentGa
   }
 
   @override
+
+  void onQuestionReset() {
+
+    _dialRotation.value = 0.0;
+
+    _isDragging.value = false;
+
+    _selectedIndex.value = null;
+
+    _isNaturalSpeed.value = true;
+
+  }
+
+  @override
+
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('accent', level: widget.level);

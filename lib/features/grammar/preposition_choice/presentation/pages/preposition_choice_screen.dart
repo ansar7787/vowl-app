@@ -196,6 +196,19 @@ class _PrepositionChoiceScreenState extends State<PrepositionChoiceScreen> with 
   }
 
   @override
+
+  void onQuestionReset() {
+
+    _points.value = [];
+
+    _targetNode.value = -1;
+
+    _pendingJigsaw.value = false;
+
+  }
+
+  @override
+
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('grammar', level: widget.level);

@@ -352,6 +352,17 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen> with Gram
   }
 
   @override
+
+  void onQuestionReset() {
+
+    _selectedIndex.value = 0;
+
+    _pendingJigsaw.value = false;
+
+  }
+
+  @override
+
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('grammar', level: widget.level);

@@ -253,6 +253,15 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>with TickerPro
   double _lastKeyboardHeight = 0;
 
   @override
+
+  void onQuestionReset() {
+
+    _activeShardIndex.value = null;
+
+  }
+
+  @override
+
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
 

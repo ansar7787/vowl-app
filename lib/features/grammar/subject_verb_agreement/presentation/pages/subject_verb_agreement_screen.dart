@@ -132,6 +132,17 @@ class _SubjectVerbAgreementScreenState extends State<SubjectVerbAgreementScreen>
   }
 
   @override
+
+  void onQuestionReset() {
+
+    _ringOffset.value = Offset.zero;
+
+    _pendingTypeSubmit.value = false;
+
+  }
+
+  @override
+
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('grammar', level: widget.level);

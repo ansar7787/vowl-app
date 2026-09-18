@@ -159,6 +159,19 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen> with WritingG
   }
 
   @override
+
+  void onQuestionReset() {
+
+    _blueprintSlots.value = {};
+
+    _shuffledOptions.value = [];
+
+    _pendingSubmit.value = false;
+
+  }
+
+  @override
+
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('writing', level: widget.level);

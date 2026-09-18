@@ -112,6 +112,15 @@ class _SpeakOppositeScreenState extends State<SpeakOppositeScreen> with Speaking
   }
 
   @override
+
+  void onQuestionReset() {
+
+    _ttsFinished.value = false;
+
+  }
+
+  @override
+
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('speaking', level: widget.level);

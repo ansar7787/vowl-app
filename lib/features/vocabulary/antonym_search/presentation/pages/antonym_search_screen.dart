@@ -92,6 +92,23 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> with Vocabula
 
 
   @override
+
+
+  void onQuestionReset() {
+
+
+    _isDragPassed.value = false;
+
+
+    _activeShardIndex.value = null;
+
+
+  }
+
+
+  @override
+
+
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final targetColor = const Color(0xFF00E5FF);

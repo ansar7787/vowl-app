@@ -152,6 +152,15 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen>with Tic
   }
 
   @override
+
+  void onQuestionReset() {
+
+    _rotation.value = 0.0;
+
+  }
+
+  @override
+
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('roleplay', level: widget.level);
