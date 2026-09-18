@@ -7,7 +7,6 @@ import '../../../../core/network/network_info.dart';
 import '../../../../core/utils/sound_service.dart';
 import '../../../../core/utils/haptic_service.dart';
 import '../../../../features/auth/domain/usecases/update_user_rewards.dart';
-import '../../../../features/auth/domain/usecases/update_unlocked_level.dart';
 import '../../../../features/auth/domain/usecases/update_category_stats.dart';
 import '../../../../features/auth/domain/usecases/update_user_coins.dart';
 import '../../../../features/auth/domain/usecases/award_badge.dart';
@@ -34,7 +33,6 @@ class ListeningBloc extends Bloc<ListeningEvent, ListeningState> {
   final GetListeningQuests getQuest;
   final UpdateUserRewards updateUserRewards;
   final UpdateCategoryStats updateCategoryStats;
-  final UpdateUnlockedLevel updateUnlockedLevel;
   final AwardBadge awardBadge;
   final SoundService soundService;
   final HapticService hapticService;
@@ -53,7 +51,6 @@ class ListeningBloc extends Bloc<ListeningEvent, ListeningState> {
     required this.getQuest,
     required this.updateUserRewards,
     required this.updateCategoryStats,
-    required this.updateUnlockedLevel,
     required this.awardBadge,
     required this.soundService,
     required this.hapticService,
@@ -70,6 +67,14 @@ class ListeningBloc extends Bloc<ListeningEvent, ListeningState> {
     on<RestoreLife>(_onRestoreLife);
     on<ListeningSpeakConfirmed>(_onSpeakConfirmed);
     on<RestartLevel>(_onRestartLevel);
+    on<ListeningRewardSaveFailedEvent>((event, emit) {
+      emit(
+        ListeningRewardSaveFailed(
+          xpEarned: event.xpEarned,
+          coinsEarned: event.coinsEarned,
+        ),
+      );
+    });
   }
 
   // ── FetchListeningQuests ──────────────────────────────────────────────────
@@ -292,9 +297,13 @@ class ListeningBloc extends Bloc<ListeningEvent, ListeningState> {
   void _completeLevel(ListeningLoaded s, Emitter<ListeningState> emit) {
     soundService.playLevelComplete();
 
+    // Capture non-null locals to avoid null assertions in async lambdas.
+    final gameType = _currentGameType;
+    final level = _currentLevel;
+
     analytics.onLevelComplete(
-      gameType: _currentGameType ?? '',
-      level: _currentLevel ?? 0,
+      gameType: gameType ?? '',
+      level: level ?? 0,
       xpEarned: _kXpReward,
       coinsEarned: _kCoinReward,
     );
@@ -310,13 +319,10 @@ class ListeningBloc extends Bloc<ListeningEvent, ListeningState> {
     );
 
     // 2. Primary & Secondary persistence — Fire-and-forget.
-    if (_currentGameType != null && _currentLevel != null) {
-      _savePrimaryWithRetry(s.livesRemaining).then((_) {
+    if (gameType != null && level != null) {
+      _savePrimaryWithRetry(gameType, level, s.livesRemaining).then((_) {
         updateCategoryStats(
-          UpdateCategoryStatsParams(
-            categoryId: _currentGameType!,
-            isCorrect: true,
-          ),
+          UpdateCategoryStatsParams(categoryId: gameType, isCorrect: true),
         ).catchError((e, stack) {
           debugPrint('[ListeningBloc] Stats save failed: $e\n$stack');
           return const Right<Failure, void>(null);
@@ -334,13 +340,17 @@ class ListeningBloc extends Bloc<ListeningEvent, ListeningState> {
   /// unlockedLevels inside _computeRewardUpdates, so a separate
   /// updateUnlockedLevel call is intentionally omitted to avoid
   /// Firestore transaction contention on the same document.
-  Future<void> _savePrimaryWithRetry(int starsEarned) async {
+  Future<void> _savePrimaryWithRetry(
+    String gameType,
+    int level,
+    int starsEarned,
+  ) async {
     for (int attempt = 1; attempt <= _kMaxSaveRetries; attempt++) {
       try {
         await updateUserRewards(
           UpdateUserRewardsParams(
-            gameType: _currentGameType!,
-            level: _currentLevel!,
+            gameType: gameType,
+            level: level,
             xpIncrease: _kXpReward,
             coinIncrease: _kCoinReward,
             starsEarned: starsEarned,
@@ -359,5 +369,12 @@ class ListeningBloc extends Bloc<ListeningEvent, ListeningState> {
       }
     }
     debugPrint('[ListeningBloc] All $_kMaxSaveRetries save attempts failed.');
+    // Notify the UI so it can show a non-blocking snackbar.
+    add(
+      const ListeningRewardSaveFailedEvent(
+        xpEarned: _kXpReward,
+        coinsEarned: _kCoinReward,
+      ),
+    );
   }
 }

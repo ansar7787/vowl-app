@@ -4,24 +4,16 @@ import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
-import 'package:vowl/features/listening/domain/entities/listening_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
-import 'package:vowl/core/utils/haptic_service.dart';
-import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/listening/presentation/bloc/listening_bloc.dart';
-import 'package:vowl/features/listening/presentation/bloc/listening_event.dart';
 import 'package:vowl/features/listening/presentation/bloc/listening_state.dart';
 import 'package:vowl/features/listening/presentation/layout/listening_base_layout.dart';
-import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/utils/locale_service.dart';
-
 import 'package:vowl/features/listening/audio_sentence_order/presentation/widgets/audio_sentence_order_instruction.dart';
 import 'package:vowl/features/listening/audio_sentence_order/presentation/widgets/audio_sentence_order_oscilloscope.dart';
 import 'package:vowl/core/presentation/game_mechanics/arranging/dynamic_jigsaw_wrapper.dart';
 import 'package:vowl/core/presentation/game_mechanics/shared/speed_challenge_timer.dart';
-import 'package:vowl/core/services/error_journal_collector.dart';
-import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:vowl/features/listening/presentation/mixins/listening_game_screen_mixin.dart';
 
 class AudioSentenceOrderScreen extends StatefulWidget {
   final int level;
@@ -37,46 +29,34 @@ class AudioSentenceOrderScreen extends StatefulWidget {
       _AudioSentenceOrderScreenState();
 }
 
-class _AudioSentenceOrderScreenState extends State<AudioSentenceOrderScreen> {
-  final _hapticService = di.sl<HapticService>();
-  final _soundService = di.sl<SoundService>();
-
-  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
-  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
-  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
-  final ScrollController _scrollController = ScrollController();
-  final GlobalKey<SpeedChallengeTimerState> _timerKey =
-      GlobalKey<SpeedChallengeTimerState>();
+class _AudioSentenceOrderScreenState extends State<AudioSentenceOrderScreen>
+    with ListeningGameScreenMixin {
+  @override
+  GameSubtype get gameType => widget.gameType;
 
   @override
-  void dispose() {
-    _isAnswered.dispose();
-    _isCorrect.dispose();
-    _showConfetti.dispose();
-    _scrollController.dispose();
-    super.dispose();
-  }
+  int get level => widget.level;
 
-  int _lastProcessedIndex = -1;
-  int? _lastLives;
+  @override
+  String getCompletionTitle(BuildContext context) => context.tr(
+    'listening.games.audio_sentence_order_title',
+    fallback: 'SEQUENCE MASTER!',
+  );
+
+  final ScrollController _scrollController = ScrollController();
 
   @override
   void initState() {
     super.initState();
-    context.read<ListeningBloc>().add(
-      FetchListeningQuests(gameType: widget.gameType, level: widget.level),
-    );
+    timerKey = GlobalKey<SpeedChallengeTimerState>();
+    initListeningGame();
   }
 
-  void _submitAnswer() {
-    if (_isAnswered.value) return;
-    _timerKey.currentState?.stop();
-
-    _hapticService.success();
-    _soundService.playCorrect();
-    _isAnswered.value = true;
-    _isCorrect.value = true;
-    context.read<ListeningBloc>().add(SubmitAnswer(true));
+  @override
+  void dispose() {
+    disposeListeningGame();
+    _scrollController.dispose();
+    super.dispose();
   }
 
   @override
@@ -84,57 +64,29 @@ class _AudioSentenceOrderScreenState extends State<AudioSentenceOrderScreen> {
     final theme = LevelThemeHelper.getTheme('listening', level: widget.level);
 
     return BlocConsumer<ListeningBloc, ListeningState>(
-      listener: (context, state) {
-        if (state is ListeningLoaded) {
-          final isNewQuestion = state.currentIndex != _lastProcessedIndex;
-          final isRetry = _isAnswered.value && !state.answerStatus.isAnswered;
-          final livesChanged =
-              _lastLives != null && state.livesRemaining > _lastLives!;
-
-          if (isNewQuestion || isRetry || livesChanged) {
-            _lastProcessedIndex = state.currentIndex;
-            _isAnswered.value = false;
-            _timerKey.currentState?.start();
-            _isCorrect.value = null;
-          } else if (state.answerStatus.isAnswered && !_isAnswered.value) {
-            _isAnswered.value = true;
-            _isCorrect.value = state.answerStatus.asBoolOrNull;
-          }
-          _lastLives = state.livesRemaining;
-        }
-        if (state is ListeningGameComplete) {
-          _showConfetti.value = true;
-          GameDialogHelper.showCompletion(
-            context,
-            xp: state.xpEarned,
-            coins: state.coinsEarned,
-            title: 'SEQUENCE MASTER!',
-            enableDoubleUp: true,
-          );
-        }
-      },
+      listener: onListeningStateChanged,
+      buildWhen: (previous, current) =>
+          current is ListeningLoaded || current is ListeningGameOver,
       builder: (context, state) {
         final quest = (state is ListeningLoaded) ? state.currentQuest : null;
 
         return ListenableBuilder(
           listenable: Listenable.merge([
-            _isAnswered,
-            _isCorrect,
-            _showConfetti,
+            isAnsweredNotifier,
+            isCorrectNotifier,
+            showConfettiNotifier,
           ]),
           builder: (context, _) {
             return ListeningBaseLayout(
               gameType: widget.gameType,
               level: widget.level,
-              isAnswered: _isAnswered.value,
-              isCorrect: _isCorrect.value,
-              showConfetti: _showConfetti.value,
+              isAnswered: isAnsweredNotifier.value,
+              isCorrect: isCorrectNotifier.value,
+              showConfetti: showConfettiNotifier.value,
               useScrolling: false,
               disablePadding: true,
-              onContinue: () =>
-                  context.read<ListeningBloc>().add(NextQuestion()),
-              onHint: () =>
-                  context.read<ListeningBloc>().add(ListeningHintUsed()),
+              onContinue: dispatchNextQuestion,
+              onHint: dispatchHintUsed,
               child: quest == null
                   ? GameShimmerLoading(primaryColor: theme.primaryColor)
                   : RawScrollbar(
@@ -152,7 +104,7 @@ class _AudioSentenceOrderScreenState extends State<AudioSentenceOrderScreen> {
                               right: 24.w,
                               top: 16.h,
                               bottom:
-                                  (_isAnswered.value ? 200.h : 40.h) +
+                                  (isAnsweredNotifier.value ? 200.h : 40.h) +
                                   MediaQuery.of(context).viewInsets.bottom,
                             ),
                             sliver: SliverToBoxAdapter(
@@ -163,10 +115,11 @@ class _AudioSentenceOrderScreenState extends State<AudioSentenceOrderScreen> {
                                   Padding(
                                     padding: EdgeInsets.only(bottom: 16.h),
                                     child: SpeedChallengeTimer(
-                                      key: _timerKey,
+                                      key: timerKey!,
                                       durationSeconds: 15,
                                       primaryColor: theme.primaryColor,
-                                      onTimeUp: () => _submitWrongAnswer(quest),
+                                      onTimeUp: () =>
+                                          submitWrongAnswer(quest: quest),
                                     ),
                                   ),
                                   AudioSentenceOrderInstruction(
@@ -179,15 +132,15 @@ class _AudioSentenceOrderScreenState extends State<AudioSentenceOrderScreen> {
                                   SizedBox(height: 24.h),
                                   AudioSentenceOrderOscilloscope(
                                     onTap: () {
-                                      _soundService.playTts(
+                                      soundService.playTts(
                                         quest.textToSpeak ?? "",
                                         pauseMarkers: quest.pauseMarkers,
                                       );
-                                      _hapticService.selection();
+                                      hapticService.selection();
                                     },
                                     color: theme.primaryColor,
                                     emoji: quest.emoji,
-                                    isCorrectState: _isCorrect.value,
+                                    isCorrectState: isCorrectNotifier.value,
                                   ),
                                   SizedBox(height: 32.h),
                                   DynamicJigsawWrapper(
@@ -200,9 +153,10 @@ class _AudioSentenceOrderScreenState extends State<AudioSentenceOrderScreen> {
                                     isPositioned: false,
                                     allowSkip:
                                         false, // Disables the bypass feature for this game
-                                    onConfirmed: () => _submitAnswer(),
-                                    onBypassed: () => _submitAnswer(),
-                                    onSkipped: () => _submitWrongAnswer(quest),
+                                    onConfirmed: () => submitCorrectAnswer(),
+                                    onBypassed: () => submitCorrectAnswer(),
+                                    onSkipped: () =>
+                                        submitWrongAnswer(quest: quest),
                                   ),
                                 ],
                               ),
@@ -216,29 +170,5 @@ class _AudioSentenceOrderScreenState extends State<AudioSentenceOrderScreen> {
         );
       },
     );
-  }
-
-  void _submitWrongAnswer(ListeningQuest quest) {
-    if (_isAnswered.value) return;
-    _timerKey.currentState?.stop();
-
-    _hapticService.error();
-    _soundService.playWrong();
-
-    final authState = context.read<AuthBloc>().state;
-    if (authState.status == AuthStatus.authenticated &&
-        authState.user != null) {
-      ErrorJournalCollector.record(
-        userId: authState.user!.id,
-        gameType: widget.gameType.name,
-        question: quest.id,
-        userAnswer: '[Failed / Timeout]',
-        correctAnswer: quest.textToSpeak ?? "",
-        level: widget.level,
-      );
-    }
-    _isAnswered.value = true;
-    _isCorrect.value = false;
-    context.read<ListeningBloc>().add(SubmitAnswer(false));
   }
 }

@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/vowl_mascot.dart';
 import 'package:vowl/core/presentation/utils/mascot_message_helper.dart';
 import 'package:vowl/features/listening/presentation/bloc/listening_state.dart';
+import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 
 /// Animated mascot widget that peeks in from the top-left with a contextual
 /// speech bubble.
@@ -18,6 +19,7 @@ class ListeningPeekingMascot extends StatelessWidget {
   final int lives;
   final bool? isCorrect;
   final bool isAnswered;
+  final ThemeResult theme;
 
   /// Resolved mascot identifier — e.g. `'vowl_prime'`.
   /// Callers are responsible for providing a valid, non-empty string.
@@ -30,6 +32,7 @@ class ListeningPeekingMascot extends StatelessWidget {
     required this.isCorrect,
     required this.isAnswered,
     required this.mascotId,
+    required this.theme,
   });
 
   @override
@@ -58,7 +61,7 @@ class ListeningPeekingMascot extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
-          _SpeechBubble(message: message),
+          _SpeechBubble(message: message, color: theme.primaryColor),
           _MascotSprite(mascotId: mascotId, mascotState: mascotState),
         ],
       ).animate().fadeIn().slideX(begin: 0.1, end: 0),
@@ -72,7 +75,8 @@ class ListeningPeekingMascot extends StatelessWidget {
 
 class _SpeechBubble extends StatelessWidget {
   final String message;
-  const _SpeechBubble({required this.message});
+  final Color color;
+  const _SpeechBubble({required this.message, required this.color});
 
   @override
   Widget build(BuildContext context) {
@@ -94,7 +98,7 @@ class _SpeechBubble extends StatelessWidget {
               fontFamily: 'Outfit',
               fontSize: 11.sp,
               fontWeight: FontWeight.bold,
-              color: Colors.orangeAccent,
+              color: color,
             ),
           ),
         )

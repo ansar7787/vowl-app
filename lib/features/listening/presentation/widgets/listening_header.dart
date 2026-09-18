@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/presentation/widgets/quest_hint_button.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
@@ -19,7 +20,7 @@ class ListeningHeader extends StatelessWidget {
   final int lives;
   final ListeningState state;
   final dynamic quest;
-  final dynamic theme;
+  final ThemeResult theme;
   final bool isDark;
   final bool isAnswered;
   final SoundService soundService;
@@ -89,7 +90,7 @@ class ListeningHeader extends StatelessWidget {
 // ─────────────────────────────────────────────────────────────────────────────
 
 class _InfoButton extends StatelessWidget {
-  final dynamic theme;
+  final ThemeResult theme;
   final VoidCallback onTap;
 
   const _InfoButton({required this.theme, required this.onTap});
@@ -128,7 +129,7 @@ class _InfoButton extends StatelessWidget {
 
 class _HintButton extends StatelessWidget {
   final ListeningState state;
-  final dynamic theme;
+  final ThemeResult theme;
   final dynamic quest;
   final SoundService soundService;
   final int lives;

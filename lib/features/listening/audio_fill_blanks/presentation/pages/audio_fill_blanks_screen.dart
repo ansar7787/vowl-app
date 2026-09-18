@@ -6,26 +6,22 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
-import 'package:vowl/core/utils/haptic_service.dart';
-import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:vowl/core/utils/sound_service.dart';
+import 'package:vowl/features/listening/domain/entities/listening_quest.dart';
 import 'package:vowl/features/listening/presentation/bloc/listening_bloc.dart';
-import 'package:vowl/features/listening/presentation/bloc/listening_event.dart';
 import 'package:vowl/features/listening/presentation/bloc/listening_state.dart';
 import 'package:vowl/features/listening/presentation/layout/listening_base_layout.dart';
-import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
+import 'package:vowl/features/listening/presentation/mixins/listening_game_screen_mixin.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/listening/audio_fill_blanks/presentation/widgets/audio_fill_blanks_instruction.dart';
 import 'package:vowl/features/listening/audio_fill_blanks/presentation/widgets/audio_fill_blanks_jar.dart';
 import 'package:vowl/features/listening/audio_fill_blanks/presentation/widgets/audio_fill_blanks_canvas.dart';
 import 'package:vowl/core/presentation/game_mechanics/shared/speed_challenge_timer.dart';
 import 'package:vowl/core/presentation/game_mechanics/typing/blind_dictation_wrapper.dart';
-import 'package:vowl/core/services/error_journal_collector.dart';
-import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─────────────────────────────────────────────────────────────────────────────
 // Constants
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─────────────────────────────────────────────────────────────────────────────
 
 /// Height threshold below which the compact layout variant is used.
 const double _kCompactHeightThreshold = 580.0;
@@ -48,86 +44,73 @@ class AudioFillBlanksScreen extends StatefulWidget {
   State<AudioFillBlanksScreen> createState() => _AudioFillBlanksScreenState();
 }
 
-class _AudioFillBlanksScreenState extends State<AudioFillBlanksScreen> {
-  final _hapticService = di.sl<HapticService>();
-  final _soundService = di.sl<SoundService>();
-  final _controller = TextEditingController();
+class _AudioFillBlanksScreenState extends State<AudioFillBlanksScreen>
+    with ListeningGameScreenMixin {
+  @override
+  GameSubtype get gameType => widget.gameType;
+  @override
+  int get level => widget.level;
+  @override
+  String getCompletionTitle(BuildContext context) => context.tr(
+    'listening.games.audio_fill_blanks_title',
+    fallback: 'AUDITORY ACE!',
+  );
 
-  // â”€â”€ Local UI state (synced from BLoC listener) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  final _controller = TextEditingController();
   final ValueNotifier<double> _revealProgress = ValueNotifier(0.0);
-  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
-  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
-  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
   final ScrollController _scrollController = ScrollController();
-  final GlobalKey<SpeedChallengeTimerState> _timerKey =
-      GlobalKey<SpeedChallengeTimerState>();
+
+  @override
+  void initState() {
+    super.initState();
+    timerKey = GlobalKey<SpeedChallengeTimerState>();
+    initListeningGame();
+  }
 
   @override
   void dispose() {
     _controller.dispose();
     _revealProgress.dispose();
-    _isAnswered.dispose();
-    _isCorrect.dispose();
-    _showConfetti.dispose();
     _scrollController.dispose();
+    disposeListeningGame();
     super.dispose();
   }
 
-  // â”€â”€ Change-tracking helpers â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-  int _lastProcessedIndex = -1;
-  int? _lastLives;
-
-  // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-
   @override
-  void initState() {
-    super.initState();
-    context.read<ListeningBloc>().add(
-      FetchListeningQuests(gameType: widget.gameType, level: widget.level),
-    );
+  void onQuestionReset() {
+    _revealProgress.value = 0.0;
+    _controller.clear();
   }
-
-  // â”€â”€ Gesture handler â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
   double _lastHapticProgress = 0.0;
 
   void _onSmear(double delta) {
-    if (_isAnswered.value) return;
+    if (isAnsweredNotifier.value) return;
 
     final newProgress = (_revealProgress.value + delta).clamp(0.0, 1.0);
     _revealProgress.value = newProgress;
 
     // Play a haptic tick every 10% of reveal
     if (newProgress - _lastHapticProgress > 0.1) {
-      _hapticService.selection();
+      hapticService.selection();
       _lastHapticProgress = newProgress;
     }
   }
 
-  // â”€â”€ Submit answer â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  // ─────────────────────────────────────────────────────────────────────────────
+  // Submit answer
+  // ─────────────────────────────────────────────────────────────────────────────
 
-  // â”€â”€ TTS playback â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  // ─────────────────────────────────────────────────────────────────────────────
+  // TTS playback
+  // ─────────────────────────────────────────────────────────────────────────────
 
   void _playAudio(String? textToSpeak) {
     final text = textToSpeak?.trim();
     if (text == null || text.isEmpty) return;
-    _soundService.playTts(text);
-    _hapticService.selection();
+    soundService.playTts(text);
+    hapticService.selection();
   }
-
-  // â”€â”€ Reset local state for the next question â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-
-  void _resetForNextQuestion(int newIndex) {
-    _lastProcessedIndex = newIndex;
-    _isAnswered.value = false;
-    _isCorrect.value = null;
-    _revealProgress.value = 0.0;
-    _lastHapticProgress = 0.0;
-    _controller.clear();
-    _timerKey.currentState?.start();
-  }
-
-  // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
   @override
   Widget build(BuildContext context) {
@@ -138,67 +121,39 @@ class _AudioFillBlanksScreenState extends State<AudioFillBlanksScreen> {
     );
 
     return BlocConsumer<ListeningBloc, ListeningState>(
-      listener: (context, state) {
-        if (state is ListeningLoaded) {
-          final isNewQuestion = state.currentIndex != _lastProcessedIndex;
-          final isRetry = _isAnswered.value && !state.answerStatus.isAnswered;
-          // Detect a life-restore (lives increased, e.g. 0 -> 1).
-          final isLifeRestored =
-              _lastLives != null && state.livesRemaining > _lastLives!;
-
-          if (isNewQuestion || isRetry || isLifeRestored) {
-            _resetForNextQuestion(state.currentIndex);
-          } else if (state.answerStatus.isAnswered && !_isAnswered.value) {
-            // Bloc already knows the result; sync local state.
-            _isAnswered.value = true;
-            _isCorrect.value = state.answerStatus.asBoolOrNull;
-          }
-
-          _lastLives = state.livesRemaining;
-        }
-
-        if (state is ListeningGameComplete) {
-          _showConfetti.value = true;
-          GameDialogHelper.showCompletion(
-            context,
-            xp: state.xpEarned,
-            coins: state.coinsEarned,
-            title: 'AUDITORY ACE!',
-            enableDoubleUp: true,
-          );
-        }
-      },
+      listener: onListeningStateChanged,
+      buildWhen: (previous, current) =>
+          current is ListeningLoaded || current is ListeningGameOver,
       builder: (context, state) {
         final quest = state is ListeningLoaded ? state.currentQuest : null;
 
         return ListenableBuilder(
           listenable: Listenable.merge([
-            _isAnswered,
-            _isCorrect,
-            _showConfetti,
+            isAnsweredNotifier,
+            isCorrectNotifier,
+            showConfettiNotifier,
           ]),
           builder: (context, _) {
             return ListeningBaseLayout(
               gameType: widget.gameType,
               level: widget.level,
-              isAnswered: _isAnswered.value,
-              isCorrect: _isCorrect.value,
-              showConfetti: _showConfetti.value,
+              isAnswered: isAnsweredNotifier.value,
+              isCorrect: isCorrectNotifier.value,
+              showConfetti: showConfettiNotifier.value,
               useScrolling: false,
               disablePadding: true,
-              onContinue: () =>
-                  context.read<ListeningBloc>().add(const NextQuestion()),
-              onHint: () => _hapticService.selection(),
+              onContinue: () => dispatchNextQuestion(),
+              onHint: () => hapticService.selection(),
               child: quest == null
                   ? GameShimmerLoading(primaryColor: theme.primaryColor)
                   : _AudioFillBlanksContent(
                       quest: quest,
-                      isAnswered: _isAnswered.value,
-                      isCorrect: _isCorrect.value,
+                      isAnswered: isAnsweredNotifier.value,
+                      isCorrect: isCorrectNotifier.value,
                       revealProgressNotifier: _revealProgress,
                       controller: _controller,
                       scrollController: _scrollController,
-                      timerKey: _timerKey,
+                      timerKey: timerKey!,
                       theme: theme,
                       isDark: isDark,
                       compactThreshold: _kCompactHeightThreshold,
@@ -206,34 +161,19 @@ class _AudioFillBlanksScreenState extends State<AudioFillBlanksScreen> {
                       onSmear: _onSmear,
                       onPlayAudio: () => _playAudio(quest.textToSpeak),
                       onBlindSubmit: (bool correct) {
-                        _timerKey.currentState?.stop();
-                        if (!correct) {
-                          final authState = context.read<AuthBloc>().state;
-                          if (authState.status == AuthStatus.authenticated &&
-                              authState.user != null) {
-                            ErrorJournalCollector.record(
-                              userId: authState.user!.id,
-                              gameType: widget.gameType.name,
-                              question:
-                                  quest.textWithBlanks ??
-                                  quest.textToSpeak ??
-                                  'Audio Fill Blanks',
-                              userAnswer: _controller.text.isNotEmpty
-                                  ? _controller.text
-                                  : '[Failed Dictation]',
-                              correctAnswer:
-                                  quest.correctAnswer ??
-                                  quest.textToSpeak ??
-                                  '',
-                              level: widget.level,
-                            );
-                          }
+                        if (correct) {
+                          submitCorrectAnswer();
+                        } else {
+                          submitWrongAnswer(
+                            quest: quest,
+                            userAnswer: _controller.text.isNotEmpty
+                                ? _controller.text
+                                : context.tr(
+                                    'listening.games.failed_dictation',
+                                    fallback: '[Failed Dictation]',
+                                  ),
+                          );
                         }
-                        _isAnswered.value = true;
-                        _isCorrect.value = correct;
-                        context.read<ListeningBloc>().add(
-                          SubmitAnswer(correct),
-                        );
                       },
                     ),
             );
@@ -253,14 +193,14 @@ class _AudioFillBlanksScreenState extends State<AudioFillBlanksScreen> {
 // =============================================================================
 
 class _AudioFillBlanksContent extends StatelessWidget {
-  final dynamic quest;
+  final ListeningQuest quest;
   final bool isAnswered;
   final bool? isCorrect;
   final ValueNotifier<double> revealProgressNotifier;
   final TextEditingController controller;
   final ScrollController scrollController;
   final GlobalKey<SpeedChallengeTimerState> timerKey;
-  final dynamic theme;
+  final ThemeResult theme;
   final bool isDark;
   final double compactThreshold;
   final int level;
@@ -337,7 +277,7 @@ class _AudioFillBlanksContent extends StatelessWidget {
                           return AudioFillBlanksCanvas(
                             text:
                                 (isCorrect == true && quest.textToSpeak != null)
-                                ? quest.textToSpeak
+                                ? quest.textToSpeak!
                                 : (quest.textWithBlanks ?? ''),
                             revealProgress: (isAnswered && isCorrect == true)
                                 ? 1.0

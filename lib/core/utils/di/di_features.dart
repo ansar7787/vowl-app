@@ -362,7 +362,6 @@ void _initListening(GetIt sl) {
       updateUserCoins: sl<UpdateUserCoins>(),
       updateUserRewards: sl<UpdateUserRewards>(),
       updateCategoryStats: sl<UpdateCategoryStats>(),
-      updateUnlockedLevel: sl<UpdateUnlockedLevel>(),
       awardBadge: sl<AwardBadge>(),
       soundService: sl<SoundService>(),
       hapticService: sl<HapticService>(),

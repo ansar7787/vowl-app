@@ -68,3 +68,16 @@ class ListeningSpeakConfirmed extends ListeningEvent {
   @override
   List<Object?> get props => [bonusCoins];
 }
+
+/// Triggered when the primary background save fails repeatedly.
+/// Handled by the bloc to safely emit [ListeningRewardSaveFailed].
+class ListeningRewardSaveFailedEvent extends ListeningEvent {
+  final int xpEarned;
+  final int coinsEarned;
+  const ListeningRewardSaveFailedEvent({
+    required this.xpEarned,
+    required this.coinsEarned,
+  });
+  @override
+  List<Object?> get props => [xpEarned, coinsEarned];
+}

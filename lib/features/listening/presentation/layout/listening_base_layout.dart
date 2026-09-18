@@ -1,4 +1,3 @@
-import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -14,6 +13,7 @@ import 'package:vowl/features/listening/presentation/bloc/listening_event.dart';
 import 'package:vowl/features/listening/presentation/bloc/listening_state.dart';
 import 'package:vowl/features/listening/presentation/widgets/listening_audio_player.dart';
 import 'package:vowl/features/listening/presentation/widgets/listening_base_layout_config.dart';
+import 'package:vowl/features/listening/domain/entities/listening_quest.dart';
 import 'package:vowl/core/presentation/widgets/game_feedback_card.dart';
 import 'package:vowl/features/listening/presentation/widgets/listening_header.dart';
 import 'package:vowl/features/listening/presentation/widgets/listening_peeking_mascot.dart';
@@ -125,7 +125,6 @@ class _ListeningBaseLayoutState extends State<ListeningBaseLayout>
   final _soundService = di.sl<SoundService>();
 
   late AnimationController _audioController;
-  Timer? _nudgeTimer;
 
   @override
   void initState() {
@@ -143,7 +142,6 @@ class _ListeningBaseLayoutState extends State<ListeningBaseLayout>
 
   @override
   void dispose() {
-    _nudgeTimer?.cancel();
     _audioController.dispose();
     _soundService.stopTts();
     _soundService.stopAudio();
@@ -315,7 +313,10 @@ class _ListeningBaseLayoutState extends State<ListeningBaseLayout>
               isDark: isDark,
               primaryColor: theme.primaryColor,
               explanation: finalExplanation,
-              ruleTitle: 'LISTENING TRANSCRIPT',
+              ruleTitle: context.tr(
+                'listening.games.transcript',
+                fallback: 'LISTENING TRANSCRIPT',
+              ),
               ruleContent: ruleContent,
               customContent: vocabWidget,
             );
@@ -362,10 +363,10 @@ class _ListeningBaseLayoutState extends State<ListeningBaseLayout>
 class _PhoneLayoutContent extends StatelessWidget {
   final ListeningBaseLayout widget;
   final ListeningState state;
-  final dynamic theme;
+  final ThemeResult theme;
   final bool isDark;
   final int lives;
-  final dynamic currentQuest;
+  final ListeningQuest? currentQuest;
   final SoundService soundService;
   final AnimationController audioController;
   final ListeningBaseLayoutConfig effectiveConfig;
@@ -411,7 +412,23 @@ class _PhoneLayoutContent extends StatelessWidget {
                     useScrolling: effectiveConfig.useScrolling,
                     disablePadding: effectiveConfig.disablePadding,
                     isAnswered: widget.isAnswered,
-                    child: widget.child,
+                    child: AnimatedSwitcher(
+                      duration: const Duration(milliseconds: 400),
+                      transitionBuilder: (child, animation) => FadeTransition(
+                        opacity: animation,
+                        child: SlideTransition(
+                          position: Tween<Offset>(
+                            begin: const Offset(0.05, 0),
+                            end: Offset.zero,
+                          ).animate(animation),
+                          child: child,
+                        ),
+                      ),
+                      child: KeyedSubtree(
+                        key: ValueKey(currentQuest?.id ?? 'loading'),
+                        child: widget.child,
+                      ),
+                    ),
                   ),
                 ),
               ),
@@ -425,6 +442,7 @@ class _PhoneLayoutContent extends StatelessWidget {
                     isCorrect: widget.isCorrect,
                     isAnswered: widget.isAnswered,
                     mascotId: resolvedMascotId,
+                    theme: theme,
                   ),
                 ),
               ),
@@ -444,10 +462,10 @@ class _PhoneLayoutContent extends StatelessWidget {
 class _TabletLayoutContent extends StatelessWidget {
   final ListeningBaseLayout widget;
   final ListeningState state;
-  final dynamic theme;
+  final ThemeResult theme;
   final bool isDark;
   final int lives;
-  final dynamic currentQuest;
+  final ListeningQuest? currentQuest;
   final SoundService soundService;
   final AnimationController audioController;
   final ListeningBaseLayoutConfig effectiveConfig;
@@ -498,6 +516,7 @@ class _TabletLayoutContent extends StatelessWidget {
                             isCorrect: widget.isCorrect,
                             isAnswered: widget.isAnswered,
                             mascotId: resolvedMascotId,
+                            theme: theme,
                           ),
                         ),
                       ),
@@ -516,7 +535,23 @@ class _TabletLayoutContent extends StatelessWidget {
                       useScrolling: effectiveConfig.useScrolling,
                       disablePadding: effectiveConfig.disablePadding,
                       isAnswered: widget.isAnswered,
-                      child: widget.child,
+                      child: AnimatedSwitcher(
+                        duration: const Duration(milliseconds: 400),
+                        transitionBuilder: (child, animation) => FadeTransition(
+                          opacity: animation,
+                          child: SlideTransition(
+                            position: Tween<Offset>(
+                              begin: const Offset(0.05, 0),
+                              end: Offset.zero,
+                            ).animate(animation),
+                            child: child,
+                          ),
+                        ),
+                        child: KeyedSubtree(
+                          key: ValueKey(currentQuest?.id ?? 'loading'),
+                          child: widget.child,
+                        ),
+                      ),
                     ),
                   ),
                 ),

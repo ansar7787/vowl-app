@@ -4,11 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
-import 'package:vowl/core/utils/haptic_service.dart';
-import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/listening/presentation/bloc/listening_bloc.dart';
-import 'package:vowl/features/listening/presentation/bloc/listening_event.dart';
 import 'package:vowl/features/listening/presentation/bloc/listening_state.dart';
 import 'package:vowl/features/listening/presentation/layout/listening_base_layout.dart';
 import 'package:vowl/core/utils/locale_service.dart';
@@ -17,8 +13,7 @@ import 'package:vowl/features/listening/ambient_id/presentation/widgets/ambient_
 import 'package:vowl/features/listening/ambient_id/presentation/widgets/ambient_id_sonar_field.dart';
 import 'package:vowl/features/listening/ambient_id/presentation/widgets/ambient_id_emitter_node.dart';
 import 'package:vowl/core/presentation/game_mechanics/shared/speed_challenge_timer.dart';
-import 'package:vowl/core/services/error_journal_collector.dart';
-import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:vowl/features/listening/presentation/mixins/listening_game_screen_mixin.dart';
 
 class AmbientIdScreen extends StatefulWidget {
   final int level;
@@ -34,31 +29,25 @@ class AmbientIdScreen extends StatefulWidget {
 }
 
 class _AmbientIdScreenState extends State<AmbientIdScreen>
-    with SingleTickerProviderStateMixin {
-  final _hapticService = di.sl<HapticService>();
-  final _soundService = di.sl<SoundService>();
+    with SingleTickerProviderStateMixin, ListeningGameScreenMixin {
+  @override
+  GameSubtype get gameType => widget.gameType;
 
-  final GlobalKey<SpeedChallengeTimerState> _timerKey =
-      GlobalKey<SpeedChallengeTimerState>();
+  @override
+  int get level => widget.level;
+
+  @override
+  String getCompletionTitle(BuildContext context) => context.tr(
+    'listening.games.ambient_id_title',
+    fallback: 'CONTEXT ANCHOR!',
+  );
 
   late AnimationController _radarController;
-  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
-  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
-  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
-  int _lastProcessedIndex = -1;
-  int? _lastLives;
   final ValueNotifier<int?> _selectedIndex = ValueNotifier(null);
   final ScrollController _scrollController = ScrollController();
 
-  @override
-  void dispose() {
-    _radarController.dispose();
-    _isAnswered.dispose();
-    _isCorrect.dispose();
-    _showConfetti.dispose();
-    _selectedIndex.dispose();
-    _scrollController.dispose();
-    super.dispose();
+  _AmbientIdScreenState() {
+    timerKey = GlobalKey<SpeedChallengeTimerState>();
   }
 
   @override
@@ -68,69 +57,34 @@ class _AmbientIdScreenState extends State<AmbientIdScreen>
       vsync: this,
       duration: const Duration(seconds: 4),
     )..repeat();
-    context.read<ListeningBloc>().add(
-      FetchListeningQuests(gameType: widget.gameType, level: widget.level),
-    );
+    initListeningGame();
+  }
+
+  @override
+  void dispose() {
+    _radarController.dispose();
+    _selectedIndex.dispose();
+    _scrollController.dispose();
+    disposeListeningGame();
+    super.dispose();
+  }
+
+  @override
+  void onQuestionReset() {
+    _selectedIndex.value = null;
   }
 
   void _submitFinalAnswer(int index, int correct, GameQuest quest) {
-    if (_isAnswered.value) return;
-    _timerKey.currentState?.stop();
+    if (isAnsweredNotifier.value) return;
 
     _selectedIndex.value = index;
     bool isCorrect = index == correct;
 
     if (isCorrect) {
-      _hapticService.success();
-      _soundService.playCorrect();
-      _isAnswered.value = true;
-      _isCorrect.value = true;
-      context.read<ListeningBloc>().add(SubmitAnswer(true));
+      submitCorrectAnswer();
     } else {
-      _hapticService.error();
-      _soundService.playWrong();
-
-      final authState = context.read<AuthBloc>().state;
-      if (authState.status == AuthStatus.authenticated &&
-          authState.user != null) {
-        ErrorJournalCollector.record(
-          userId: authState.user!.id,
-          gameType: widget.gameType.name,
-          question: quest.textToSpeak ?? 'Ambient ID',
-          userAnswer: index.toString(),
-          correctAnswer: correct.toString(),
-          level: widget.level,
-        );
-      }
-
-      _isAnswered.value = true;
-      _isCorrect.value = false;
-      context.read<ListeningBloc>().add(SubmitAnswer(false));
+      submitWrongAnswer(quest: quest, userAnswer: index.toString());
     }
-  }
-
-  void _submitWrongAnswer(dynamic quest) {
-    if (_isAnswered.value) return;
-    _timerKey.currentState?.stop();
-
-    _hapticService.error();
-    _soundService.playWrong();
-
-    final authState = context.read<AuthBloc>().state;
-    if (authState.status == AuthStatus.authenticated &&
-        authState.user != null) {
-      ErrorJournalCollector.record(
-        userId: authState.user!.id,
-        gameType: widget.gameType.name,
-        question: quest.textToSpeak ?? 'Timeout',
-        userAnswer: '[Timeout]',
-        correctAnswer: '',
-        level: widget.level,
-      );
-    }
-    _isAnswered.value = true;
-    _isCorrect.value = false;
-    context.read<ListeningBloc>().add(SubmitAnswer(false));
   }
 
   @override
@@ -138,57 +92,29 @@ class _AmbientIdScreenState extends State<AmbientIdScreen>
     final theme = LevelThemeHelper.getTheme('listening', level: widget.level);
 
     return BlocConsumer<ListeningBloc, ListeningState>(
-      listener: (context, state) {
-        if (state is ListeningLoaded) {
-          final isNewQuestion = state.currentIndex != _lastProcessedIndex;
-          final isRetry = _isAnswered.value && !state.answerStatus.isAnswered;
-          final livesChanged =
-              _lastLives != null && state.livesRemaining > _lastLives!;
-
-          if (isNewQuestion || isRetry || livesChanged) {
-            _lastProcessedIndex = state.currentIndex;
-            _isAnswered.value = false;
-            _timerKey.currentState?.start();
-            _isCorrect.value = null;
-            _selectedIndex.value = null;
-          } else if (state.answerStatus.isAnswered && !_isAnswered.value) {
-            _isAnswered.value = true;
-            _isCorrect.value = state.answerStatus.asBoolOrNull;
-          }
-          _lastLives = state.livesRemaining;
-        }
-        if (state is ListeningGameComplete) {
-          _showConfetti.value = true;
-          GameDialogHelper.showCompletion(
-            context,
-            xp: state.xpEarned,
-            coins: state.coinsEarned,
-            title: 'CONTEXT ANCHOR!',
-            enableDoubleUp: true,
-          );
-        }
-      },
+      listener: onListeningStateChanged,
+      buildWhen: (previous, current) =>
+          current is ListeningLoaded || current is ListeningGameOver,
       builder: (context, state) {
         final quest = (state is ListeningLoaded) ? state.currentQuest : null;
 
         return ListenableBuilder(
           listenable: Listenable.merge([
-            _isAnswered,
-            _isCorrect,
-            _showConfetti,
+            isAnsweredNotifier,
+            isCorrectNotifier,
+            showConfettiNotifier,
             _selectedIndex,
           ]),
           builder: (context, _) {
             return ListeningBaseLayout(
               gameType: widget.gameType,
               level: widget.level,
-              isAnswered: _isAnswered.value,
-              isCorrect: _isCorrect.value,
-              showConfetti: _showConfetti.value,
+              isAnswered: isAnsweredNotifier.value,
+              isCorrect: isCorrectNotifier.value,
+              showConfetti: showConfettiNotifier.value,
               useScrolling: false,
               disablePadding: true,
-              onContinue: () =>
-                  context.read<ListeningBloc>().add(NextQuestion()),
+              onContinue: dispatchNextQuestion,
               onHint: () {
                 if (quest != null &&
                     quest.hint != null &&
@@ -222,11 +148,12 @@ class _AmbientIdScreenState extends State<AmbientIdScreen>
                                       Padding(
                                         padding: EdgeInsets.only(bottom: 16.h),
                                         child: SpeedChallengeTimer(
-                                          key: _timerKey,
+                                          key: timerKey,
                                           durationSeconds: 15,
                                           primaryColor: theme.primaryColor,
-                                          onTimeUp: () =>
-                                              _submitWrongAnswer(quest),
+                                          onTimeUp: () {
+                                            submitWrongAnswer(quest: quest);
+                                          },
                                         ),
                                       ),
                                       AmbientIdInstruction(
@@ -247,8 +174,8 @@ class _AmbientIdScreenState extends State<AmbientIdScreen>
                                             quest.correctAnswerIndex ?? 0,
                                         color: theme.primaryColor,
                                         radarController: _radarController,
-                                        isAnswered: _isAnswered.value,
-                                        isCorrectState: _isCorrect.value,
+                                        isAnswered: isAnsweredNotifier.value,
+                                        isCorrectState: isCorrectNotifier.value,
                                         selectedIndex: _selectedIndex.value,
                                         onSubmitAnswer: (index) {
                                           _submitFinalAnswer(
@@ -274,10 +201,10 @@ class _AmbientIdScreenState extends State<AmbientIdScreen>
                                     children: [
                                       AmbientIdEmitterNode(
                                         onTap: () {
-                                          _soundService.playTts(
+                                          soundService.playTts(
                                             quest.textToSpeak ?? "",
                                           );
-                                          _hapticService.selection();
+                                          hapticService.selection();
                                         },
                                         color: theme.primaryColor,
                                       ),

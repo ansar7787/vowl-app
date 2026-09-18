@@ -56,7 +56,6 @@ void main() {
   late MockUpdateUserCoins mockUpdateUserCoins;
   late MockUpdateUserRewards mockUpdateUserRewards;
   late MockUpdateCategoryStats mockUpdateCategoryStats;
-  late MockUpdateUnlockedLevel mockUpdateUnlockedLevel;
   late MockAwardBadge mockAwardBadge;
   late MockSoundService mockSoundService;
   late MockHapticService mockHapticService;
@@ -76,7 +75,6 @@ void main() {
     mockUpdateUserCoins = MockUpdateUserCoins();
     mockUpdateUserRewards = MockUpdateUserRewards();
     mockUpdateCategoryStats = MockUpdateCategoryStats();
-    mockUpdateUnlockedLevel = MockUpdateUnlockedLevel();
     mockAwardBadge = MockAwardBadge();
     mockSoundService = MockSoundService();
     mockHapticService = MockHapticService();
@@ -88,7 +86,6 @@ void main() {
       updateUserCoins: mockUpdateUserCoins,
       updateUserRewards: mockUpdateUserRewards,
       updateCategoryStats: mockUpdateCategoryStats,
-      updateUnlockedLevel: mockUpdateUnlockedLevel,
       awardBadge: mockAwardBadge,
       soundService: mockSoundService,
       hapticService: mockHapticService,
@@ -173,7 +170,7 @@ void main() {
         return bloc;
       },
       seed: () => tLoadedState.copyWith(wrongCount: 1, livesRemaining: 2),
-      act: (bloc) => bloc.add(SubmitAnswer(false)),
+      act: (bloc) => bloc.add(const SubmitAnswer(false)),
       expect: () => [
         tLoadedState.copyWith(
           livesRemaining: 1,
@@ -182,6 +179,139 @@ void main() {
           isFinalFailure: true,
           quests: [...tQuests, tQuests[0]],
         ),
+      ],
+    );
+  });
+
+  group('NextQuestion', () {
+    final tLoadedState = ListeningLoaded(
+      quests: tQuests,
+      currentIndex: 0,
+      livesRemaining: 3,
+      answerStatus: AnswerStatus.correct,
+    );
+
+    blocTest<ListeningBloc, ListeningState>(
+      'should move to next question if more quests available',
+      build: () => bloc,
+      seed: () => tLoadedState,
+      act: (bloc) => bloc.add(const NextQuestion()),
+      expect: () => [
+        tLoadedState.copyWith(
+          currentIndex: 1,
+          answerStatus: AnswerStatus.unanswered,
+          hintUsed: false,
+          wrongCount: 0,
+          isFinalFailure: false,
+        ),
+      ],
+    );
+
+    blocTest<ListeningBloc, ListeningState>(
+      'should emit GameOver if lives <= 0',
+      build: () {
+        return bloc;
+      },
+      seed: () => tLoadedState.copyWith(livesRemaining: 0),
+      act: (bloc) => bloc.add(const NextQuestion()),
+      expect: () => [const ListeningGameOver(quests: tQuests, currentIndex: 0)],
+    );
+  });
+
+  group('Retry mechanism on completion', () {
+    blocTest<ListeningBloc, ListeningState>(
+      'emits ListeningRewardSaveFailed after retries if save fails',
+      build: () {
+        when(
+          () => mockGetQuest(any()),
+        ).thenAnswer((_) async => const Right(tQuests));
+        when(
+          () => mockUpdateUserRewards(any()),
+        ).thenAnswer((_) async => throw Exception('Save Failed'));
+        when(
+          () => mockSoundService.playLevelComplete(),
+        ).thenAnswer((_) async => {});
+        when(() => mockSoundService.playCorrect()).thenAnswer((_) async => {});
+        when(() => mockHapticService.success()).thenAnswer((_) async => {});
+        return bloc;
+      },
+      act: (bloc) async {
+        bloc.add(
+          const FetchListeningQuests(gameType: tGameType, level: tLevel),
+        );
+        await Future.delayed(const Duration(milliseconds: 50));
+
+        bloc.add(const SubmitAnswer(true));
+        await Future.delayed(const Duration(milliseconds: 10));
+        bloc.add(const NextQuestion());
+
+        await Future.delayed(const Duration(milliseconds: 10));
+        bloc.add(const SubmitAnswer(true));
+        await Future.delayed(const Duration(milliseconds: 10));
+        bloc.add(const NextQuestion());
+
+        await Future.delayed(const Duration(milliseconds: 10));
+        bloc.add(const SubmitAnswer(true));
+        await Future.delayed(const Duration(milliseconds: 10));
+        bloc.add(const NextQuestion());
+      },
+      wait: const Duration(seconds: 8),
+      expect: () => [
+        const ListeningLoading(),
+        const ListeningLoaded(
+          quests: tQuests,
+          currentIndex: 0,
+          livesRemaining: 3,
+        ),
+
+        const ListeningLoaded(
+          quests: tQuests,
+          currentIndex: 0,
+          livesRemaining: 3,
+          answerStatus: AnswerStatus.correct,
+          wrongCount: 0,
+          isFinalFailure: false,
+        ),
+        const ListeningLoaded(
+          quests: tQuests,
+          currentIndex: 1,
+          livesRemaining: 3,
+          answerStatus: AnswerStatus.unanswered,
+          wrongCount: 0,
+          isFinalFailure: false,
+        ),
+
+        const ListeningLoaded(
+          quests: tQuests,
+          currentIndex: 1,
+          livesRemaining: 3,
+          answerStatus: AnswerStatus.correct,
+          wrongCount: 0,
+          isFinalFailure: false,
+        ),
+        const ListeningLoaded(
+          quests: tQuests,
+          currentIndex: 2,
+          livesRemaining: 3,
+          answerStatus: AnswerStatus.unanswered,
+          wrongCount: 0,
+          isFinalFailure: false,
+        ),
+
+        const ListeningLoaded(
+          quests: tQuests,
+          currentIndex: 2,
+          livesRemaining: 3,
+          answerStatus: AnswerStatus.correct,
+          wrongCount: 0,
+          isFinalFailure: false,
+        ),
+        const ListeningGameComplete(
+          xpEarned: 10,
+          coinsEarned: 10,
+          questCount: 3,
+        ),
+        const ListeningRewardSaveFailed(xpEarned: 10, coinsEarned: 10),
       ],
     );
   });

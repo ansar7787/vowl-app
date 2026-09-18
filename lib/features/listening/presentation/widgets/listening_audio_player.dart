@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 
 /// Premium audio-playback row used in the listening game.
 ///
 /// Wrapped in a [RepaintBoundary] so the circular progress animation repaints
 /// only the play-button subtree on every animation tick, not the entire card.
 class ListeningAudioPlayer extends StatelessWidget {
-  final dynamic theme;
+  final ThemeResult theme;
   final bool isDark;
   final String audioUrl;
   final AnimationController audioController;
@@ -98,7 +99,7 @@ class ListeningAudioPlayer extends StatelessWidget {
 // ─────────────────────────────────────────────────────────────────────────────
 
 class _PlayButton extends StatelessWidget {
-  final dynamic theme;
+  final ThemeResult theme;
   final AnimationController audioController;
   final VoidCallback onPlay;
 

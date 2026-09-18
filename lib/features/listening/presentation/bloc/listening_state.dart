@@ -112,7 +112,7 @@ class ListeningLoaded extends ListeningState implements GameLoadedState {
       quests: quests ?? this.quests,
       currentIndex: currentIndex ?? this.currentIndex,
       livesRemaining: livesRemaining ?? this.livesRemaining,
-      answerStatus: answerStatus ?? AnswerStatus.unanswered,
+      answerStatus: answerStatus ?? this.answerStatus,
       hintUsed: hintUsed ?? this.hintUsed,
       wrongCount: wrongCount ?? this.wrongCount,
       isFinalFailure: isFinalFailure ?? this.isFinalFailure,
@@ -168,4 +168,20 @@ class ListeningGameOver extends ListeningState implements GameOverState {
 
   @override
   List<Object?> get props => [quests, currentIndex];
+}
+
+/// Emitted (after [ListeningGameComplete]) when all [_kMaxSaveRetries]
+/// background save attempts have failed. The UI should show a non-blocking
+/// snackbar so the player knows their progress may not have been saved.
+class ListeningRewardSaveFailed extends ListeningState {
+  final int xpEarned;
+  final int coinsEarned;
+
+  const ListeningRewardSaveFailed({
+    required this.xpEarned,
+    required this.coinsEarned,
+  });
+
+  @override
+  List<Object?> get props => [xpEarned, coinsEarned];
 }
