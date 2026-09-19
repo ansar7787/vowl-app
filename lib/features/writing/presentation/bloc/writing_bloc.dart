@@ -298,28 +298,34 @@ class WritingBloc extends Bloc<WritingEvent, WritingState> {
     // 2-3s for animation), this will be finished, and AuthRefreshUser will
     // read the committed data.
     updateUserRewards(
-      UpdateUserRewardsParams(
-        gameType: s.gameType.name,
-        level: s.level,
-        xpIncrease: _rewardXp,
-        coinIncrease: _rewardCoins,
-        starsEarned: s.livesRemaining,
-      ),
-    ).then((rewardRes) {
-      if (rewardRes.isLeft()) {
-        // We log it but do not emit an error state because the UI has already
-        // transitioned to the completion card.
-        final fail = rewardRes.fold((l) => l, (r) => null);
-        print('Background save failed: ${fail?.message}');
-      }
-      
-      updateCategoryStats(
-        UpdateCategoryStatsParams(categoryId: s.gameType.name, isCorrect: true),
-      ).catchError(_swallow);
+          UpdateUserRewardsParams(
+            gameType: s.gameType.name,
+            level: s.level,
+            xpIncrease: _rewardXp,
+            coinIncrease: _rewardCoins,
+            starsEarned: s.livesRemaining,
+          ),
+        )
+        .then((rewardRes) {
+          if (rewardRes.isLeft()) {
+            // We log it but do not emit an error state because the UI has already
+            // transitioned to the completion card.
+            final fail = rewardRes.fold((l) => l, (r) => null);
+            print('Background save failed: ${fail?.message}');
+          }
 
-      awardBadge(_writingBadgeId).catchError(_swallow);
-    }).catchError(_swallow).whenComplete(() {
-      _isCompletingLevel = false;
-    });
+          updateCategoryStats(
+            UpdateCategoryStatsParams(
+              categoryId: s.gameType.name,
+              isCorrect: true,
+            ),
+          ).catchError(_swallow);
+
+          awardBadge(_writingBadgeId).catchError(_swallow);
+        })
+        .catchError(_swallow)
+        .whenComplete(() {
+          _isCompletingLevel = false;
+        });
   }
 }
