@@ -45,7 +45,11 @@ class LevelThemeHelper {
     'elitemastery',
   };
 
-  /// Core Category Base Colors (Mathematically Balanced for Distinction)
+  /// Core Category Base Colors (Audited 2026-09 — balanced for distinction,
+  /// LCD robustness, color-blindness safety, and AA contrast compliance).
+  ///
+  /// See also: [CategoryColors] in `core/theme/category_colors.dart` for the
+  /// full token system (light tints, dark variants, onColor values).
   static Color getCategoryBaseColor(String category) {
     switch (category
         .trim()
@@ -54,28 +58,38 @@ class LevelThemeHelper {
         .replaceAll('_', '')) {
       case 'speaking':
         return const Color(
-          0xFFE65100,
-        ); // Vibrant Orange (Energetic, Vocal, No Error anxiety)
+          0xFFD84315,
+        ); // Burnt Orange — vocal energy, warmth (deepened for AA contrast)
       case 'writing':
         return const Color(
-          0xFF455A64,
-        ); // Graphite / Slate Grey (Represents Pencil Lead)
+          0xFF5E35B1,
+        ); // Deep Violet — creativity, expression, literary imagination
       case 'vocabulary':
-        return const Color(0xFF6A1B9A); // Deep Purple
+        return const Color(0xFF6A1B9A); // Deep Purple — wisdom, knowledge depth
       case 'reading':
-        return const Color(0xFF2E7D32); // Forest Green
+        return const Color(0xFF2E7D32); // Forest Green — growth, comprehension
       case 'accent':
-        return const Color(0xFF0277BD); // Sky/Cerulean Blue
+        return const Color(
+          0xFF00838F,
+        ); // Cyan-Teal — sound clarity, audio precision
       case 'grammar':
-        return const Color(0xFF283593); // Navy/Indigo (Strict Rules)
+        return const Color(
+          0xFF1565C0,
+        ); // True Blue — structure, rules, precision
       case 'listening':
-        return const Color(0xFFC2185B); // Deep Pink/Magenta
+        return const Color(
+          0xFFAD1457,
+        ); // Deep Rose — emotional receptivity, immersion
       case 'roleplay':
-        return const Color(0xFF00695C); // Dark Teal (Theatrical)
+        return const Color(
+          0xFFB71C1C,
+        ); // Theatre Red — drama, performance, action
       case 'elitemastery':
-        return const Color(0xFFF9A825); // Premium Gold
+        return const Color(
+          0xFFF57F17,
+        ); // Deep Amber-Gold — prestige, achievement
       default:
-        return const Color(0xFF283593); // Default to Navy
+        return const Color(0xFF1565C0); // Default to Grammar blue
     }
   }
 

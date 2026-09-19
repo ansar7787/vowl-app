@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/games/maps/components/animated_category_background.dart';
+import 'package:vowl/core/theme/category_colors.dart';
 
 /// A premium, highly-performant animated map background for grammar category levels.
 ///
@@ -13,7 +14,7 @@ class GrammarMapBackground extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CategoryMapBackground(
-      gradientColors: const [Color(0xFF0F172A), Color(0xFF064E3B)],
+      gradientColors: [const Color(0xFF0F172A), CategoryColors.grammarDark],
       decorationBuilder: (context) => Stack(
         children: List.generate(12, (i) {
           return Positioned(
@@ -24,7 +25,7 @@ class GrammarMapBackground extends StatelessWidget {
                 Container(
                       width: 300.w,
                       height: 2.h,
-                      color: const Color(0xFF10B981).withValues(alpha: 0.1),
+                      color: CategoryColors.grammar.withValues(alpha: 0.1),
                     )
                     .animate(onPlay: (c) => c.repeat())
                     .shimmer(duration: (2 + i).seconds, color: Colors.white)

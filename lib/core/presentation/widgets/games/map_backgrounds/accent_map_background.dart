@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/games/maps/components/animated_category_background.dart';
+import 'package:vowl/core/theme/category_colors.dart';
 
 /// A premium, highly-performant animated map background for accent category levels.
 ///
@@ -13,7 +14,7 @@ class AccentMapBackground extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CategoryMapBackground(
-      gradientColors: const [Color(0xFF1E1B4B), Color(0xFF6366F1)],
+      gradientColors: [CategoryColors.accentDark, CategoryColors.accent],
       decorationBuilder: (context) => Stack(
         children: List.generate(4, (i) {
           return Positioned(
@@ -24,7 +25,7 @@ class AccentMapBackground extends StatelessWidget {
                 Icon(
                       Icons.waves_rounded,
                       size: 500.r,
-                      color: const Color(0xFF8B5CF6).withValues(alpha: 0.1),
+                      color: CategoryColors.accent.withValues(alpha: 0.1),
                     )
                     .animate(onPlay: (c) => c.repeat(reverse: true))
                     .moveX(

@@ -12,6 +12,7 @@ import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/core/theme/theme_cubit.dart';
 import 'package:vowl/features/profile/presentation/bloc/trophy_room_cubit.dart';
+import 'package:vowl/core/theme/category_colors.dart';
 
 class TrophyRoomScreen extends StatelessWidget {
   const TrophyRoomScreen({super.key});
@@ -602,24 +603,26 @@ class _TrophyRoomView extends StatelessWidget {
       ]; // Deep Gold Glow
     }
 
+    // Derive gradient pairs from the central CategoryColors source of truth.
+    // The second stop uses the dark variant for a cohesive gradient feel.
     if (badgeId.contains('speaking')) {
-      return [const Color(0xFFF44336), const Color(0xFFD32F2F)]; // Red
+      return [CategoryColors.speaking, CategoryColors.speakingDark];
     } else if (badgeId.contains('writing')) {
-      return [const Color(0xFFFF9800), const Color(0xFFF57C00)]; // Orange
+      return [CategoryColors.writing, CategoryColors.writingDark];
     } else if (badgeId.contains('vocabulary')) {
-      return [const Color(0xFF673AB7), const Color(0xFF512DA8)]; // Purple
+      return [CategoryColors.vocabulary, CategoryColors.vocabularyDark];
     } else if (badgeId.contains('reading')) {
-      return [const Color(0xFF4CAF50), const Color(0xFF388E3C)]; // Green
+      return [CategoryColors.reading, CategoryColors.readingDark];
     } else if (badgeId.contains('accent')) {
-      return [const Color(0xFF00BCD4), const Color(0xFF0097A7)]; // Cyan
+      return [CategoryColors.accent, CategoryColors.accentDark];
     } else if (badgeId.contains('grammar')) {
-      return [const Color(0xFF2196F3), const Color(0xFF1976D2)]; // Blue
+      return [CategoryColors.grammar, CategoryColors.grammarDark];
     } else if (badgeId.contains('listening')) {
-      return [const Color(0xFFE91E63), const Color(0xFFC2185B)]; // Pink
+      return [CategoryColors.listening, CategoryColors.listeningDark];
     } else if (badgeId.contains('roleplay')) {
-      return [const Color(0xFF8BC34A), const Color(0xFF689F38)]; // Lime
+      return [CategoryColors.roleplay, CategoryColors.roleplayDark];
     } else if (badgeId.contains('elitemastery')) {
-      return [const Color(0xFFFFC107), const Color(0xFFFFA000)]; // Amber
+      return [CategoryColors.eliteMastery, CategoryColors.eliteMasteryDark];
     } else if (badgeId.contains('streak')) {
       return [const Color(0xFF0EA5E9), const Color(0xFF0284C7)]; // Sky Blue
     }
