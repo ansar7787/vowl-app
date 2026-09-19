@@ -130,9 +130,7 @@ class _KidsGameEntryCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final color = metadata.color;
-    final displayColor = isDark
-        ? color
-        : HSLColor.fromColor(color).withLightness(0.4).toColor();
+    final displayColor = color;
     final title = metadata.gridTitle; // e.g. "ABC"
     final subtitle = metadata.subtitle; // e.g. "Letters & Phonics"
     final icon = metadata.icon;

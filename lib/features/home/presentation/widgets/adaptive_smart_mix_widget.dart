@@ -105,9 +105,7 @@ class _AdaptiveSmartMixWidgetState extends State<AdaptiveSmartMixWidget> {
       widget.categoryId,
       isDark: isDark,
     );
-    final displayColor = isDark
-        ? theme.primaryColor
-        : HSLColor.fromColor(theme.primaryColor).withLightness(0.4).toColor();
+    final displayColor = theme.primaryColor;
 
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 24.w, vertical: 24.h),
@@ -203,9 +201,7 @@ class _AdaptiveSmartMixWidgetState extends State<AdaptiveSmartMixWidget> {
   ) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme(subtype.name, isDark: isDark);
-    final displayColor = isDark
-        ? theme.primaryColor
-        : HSLColor.fromColor(theme.primaryColor).withLightness(0.4).toColor();
+    final displayColor = theme.primaryColor;
     final contentColor = isDark ? Colors.white : const Color(0xFF0F172A);
 
     return ScaleButton(

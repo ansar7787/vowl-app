@@ -725,9 +725,7 @@ class _ContinueLearningSection extends StatelessWidget {
   Widget _buildGameResumeCard(BuildContext context, _RecentGame game) {
     final missionPercent = ((game.completedCount.clamp(0, 200)) / 200 * 100)
         .toInt();
-    final displayColor = isDark
-        ? game.color
-        : HSLColor.fromColor(game.color).withLightness(0.4).toColor();
+    final displayColor = game.color;
 
     return ScaleButton(
       onTap: () {

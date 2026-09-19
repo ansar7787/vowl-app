@@ -103,9 +103,7 @@ class _CategoryRadarChartState extends State<CategoryRadarChart> {
   Widget build(BuildContext context) {
     if (_blueprint == null) return const SizedBox.shrink();
 
-    final displayColor = widget.isDark
-        ? widget.primaryColor
-        : HSLColor.fromColor(widget.primaryColor).withLightness(0.4).toColor();
+    final displayColor = widget.primaryColor;
 
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 24.w),

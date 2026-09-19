@@ -53,25 +53,29 @@ class LevelThemeHelper {
         .replaceAll(' ', '')
         .replaceAll('_', '')) {
       case 'speaking':
-        return const Color(0xFFF44336); // Pure Red
+        return const Color(
+          0xFFE65100,
+        ); // Vibrant Orange (Energetic, Vocal, No Error anxiety)
       case 'writing':
-        return const Color(0xFFFF9800); // Pure Orange
+        return const Color(
+          0xFF455A64,
+        ); // Graphite / Slate Grey (Represents Pencil Lead)
       case 'vocabulary':
-        return const Color(0xFF673AB7); // Pure Deep Purple (Best Color)
+        return const Color(0xFF6A1B9A); // Deep Purple
       case 'reading':
-        return const Color(0xFF4CAF50); // Pure Green
+        return const Color(0xFF2E7D32); // Forest Green
       case 'accent':
-        return const Color(0xFF00BCD4); // Pure Cyan
+        return const Color(0xFF0277BD); // Sky/Cerulean Blue
       case 'grammar':
-        return const Color(0xFF2196F3); // Pure Blue
+        return const Color(0xFF283593); // Navy/Indigo (Strict Rules)
       case 'listening':
-        return const Color(0xFFE91E63); // Pure Pink
+        return const Color(0xFFC2185B); // Deep Pink/Magenta
       case 'roleplay':
-        return const Color(0xFF8BC34A); // Pure Lime
+        return const Color(0xFF00695C); // Dark Teal (Theatrical)
       case 'elitemastery':
-        return const Color(0xFFFFD700); // Pure Gold
+        return const Color(0xFFF9A825); // Premium Gold
       default:
-        return const Color(0xFF2196F3); // Default to Blue
+        return const Color(0xFF283593); // Default to Navy
     }
   }
 
@@ -270,8 +274,9 @@ class LevelThemeHelper {
     // Level 1 is lighter, Level 100 is deeper/richer
     final HSLColor baseHsl = HSLColor.fromColor(baseColor);
 
-    // Normalize level to a factor between -0.15 and +0.15
-    final double levelFactor = ((level.clamp(1, 100) - 50) / 50.0) * -0.15;
+    // Level 1 starts at base color. Level 100 gets deeper/richer (-0.15).
+    // This ensures new games perfectly match their Category card color!
+    final double levelFactor = ((level.clamp(1, 100) - 1) / 99.0) * -0.15;
 
     final primaryHsl = baseHsl.withLightness(
       (baseHsl.lightness + levelFactor).clamp(0.1, 0.9),

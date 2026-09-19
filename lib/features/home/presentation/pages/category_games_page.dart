@@ -224,9 +224,7 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
     Color contentColor,
   ) {
     final isRtl = Directionality.of(context) == TextDirection.rtl;
-    final displayColor = isDark
-        ? theme.primaryColor
-        : HSLColor.fromColor(theme.primaryColor).withLightness(0.4).toColor();
+    final displayColor = theme.primaryColor;
 
     return ValueListenableBuilder<double>(
       valueListenable: _scrollOffset,
@@ -395,9 +393,7 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
     bool isDark,
   ) {
     final contentColor = isDark ? Colors.white : const Color(0xFF0F172A);
-    final displayColor = isDark
-        ? theme.primaryColor
-        : HSLColor.fromColor(theme.primaryColor).withLightness(0.4).toColor();
+    final displayColor = theme.primaryColor;
 
     // Calculate Progress dynamically
     int clearedLevels = 0;
@@ -678,9 +674,7 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
     final isNew =
         !user.categoryStats.containsKey(subtype.name) && currentLevel == 1;
 
-    final displayColor = isDark
-        ? theme.primaryColor
-        : HSLColor.fromColor(theme.primaryColor).withLightness(0.4).toColor();
+    final displayColor = theme.primaryColor;
     final contentColor = isDark ? Colors.white : const Color(0xFF0F172A);
 
     // Abstract the math out of the widget parameters to ensure raw floats are clean

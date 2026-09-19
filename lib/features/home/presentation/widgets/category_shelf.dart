@@ -137,9 +137,7 @@ class _GameEntryCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final metadata = GameHelper.getGameMetadata(subtype, isDark: isDark);
-    final displayColor = isDark
-        ? metadata.color
-        : HSLColor.fromColor(metadata.color).withLightness(0.4).toColor();
+    final displayColor = metadata.color;
     final category = GameHelper.getCategoryForSubtype(subtype);
 
     return Semantics(

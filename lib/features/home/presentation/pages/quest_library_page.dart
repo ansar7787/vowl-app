@@ -892,9 +892,7 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
     final catColor = LevelThemeHelper.getCategoryBaseColor(
       category == QuestType.eliteMastery ? 'elitemastery' : category.name,
     );
-    final displayCatColor = isDark
-        ? catColor
-        : HSLColor.fromColor(catColor).withLightness(0.4).toColor();
+    final displayCatColor = catColor;
     final progress = _getCategoryProgress(user, category);
     final progressPercent = (progress * 100).toInt();
     final catLabel = context.tr(
@@ -1235,9 +1233,7 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
     final isNew =
         !user.categoryStats.containsKey(subtype.name) && currentLevel == 1;
     final isMastered = completedCount >= 200;
-    final displayColor = isDark
-        ? theme.primaryColor
-        : HSLColor.fromColor(theme.primaryColor).withLightness(0.4).toColor();
+    final displayColor = theme.primaryColor;
     final contentColor = isDark ? Colors.white : const Color(0xFF0F172A);
     final completedPercent = (completedCount / 200 * 100).toInt();
 
