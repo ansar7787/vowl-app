@@ -24,7 +24,7 @@ class _VowlCardPalette {
   // backgrounds, icons, and the badge border, where 3:1 is sufficient.
   // For the eyebrow label and CTA text we use [textSafeIndigo], which
   // clears AA with real margin.
-  static Color indigo = Theme.of(context).colorScheme.primary;
+  static Color indigo = AppColors.indigo500;
   static const Color textSafeIndigo = Color(0xFF4F46E5); // ~6.3:1 on white
   static const Color darkCard = AppColors.slate800;
   static const Color darkSecondaryText = AppColors.slate400;
@@ -636,3 +636,4 @@ class _StreakBadgeState extends State<_StreakBadge>
     );
   }
 }
+

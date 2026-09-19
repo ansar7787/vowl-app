@@ -71,7 +71,7 @@ class GlobalProgressCard extends StatelessWidget {
                         decoration: BoxDecoration(
                           gradient: const LinearGradient(
                             colors: [
-                              Theme.of(context).colorScheme.primary,
+                              AppColors.indigo500,
                               AppColors.violet500,
                             ],
                             begin: Alignment.topLeft,
@@ -357,7 +357,7 @@ class GlobalProgressCard extends StatelessWidget {
                                 decoration: BoxDecoration(
                                   gradient: const LinearGradient(
                                     colors: [
-                                      Theme.of(context).colorScheme.primary,
+                                      AppColors.indigo500,
                                       AppColors.violet500,
                                       Color(0xFFA855F7),
                                     ],
@@ -424,3 +424,4 @@ class GlobalProgressCard extends StatelessWidget {
     return [AppColors.indigo500, AppColors.violet500];
   }
 }
+

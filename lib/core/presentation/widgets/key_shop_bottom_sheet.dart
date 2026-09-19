@@ -356,7 +356,7 @@ class _KeyShopContentState extends State<_KeyShopContent> {
                                 colors: userCoins >= cost
                                     ? [
                                         widget.primaryColor,
-                                        Colors.amber.shade700,
+                                        Colors.amber.withValues(alpha: 0.9),
                                       ]
                                     : const [
                                         AppColors.slate400,
@@ -712,7 +712,7 @@ class _KeyShopContentState extends State<_KeyShopContent> {
                         decoration: BoxDecoration(
                           gradient: const LinearGradient(
                             colors: [
-                              Theme.of(context).colorScheme.primary,
+                              AppColors.indigo500,
                               AppColors.violet500,
                             ],
                             begin: Alignment.topLeft,
@@ -864,3 +864,4 @@ class _KeyShopContentState extends State<_KeyShopContent> {
     );
   }
 }
+

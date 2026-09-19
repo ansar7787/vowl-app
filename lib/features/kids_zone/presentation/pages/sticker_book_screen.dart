@@ -75,7 +75,7 @@ class _StickerBookScreenState extends State<StickerBookScreen>
                   shaderName: 'magic_twinkle',
                   primaryColor: isDark
                       ? const Color(0xFF4C1D95)
-                      : Colors.purple.shade200,
+                      : Colors.purple.withValues(alpha: 0.4),
                   gameType: 'album',
                 ),
               SafeArea(
@@ -166,7 +166,7 @@ class _StickerBookScreenState extends State<StickerBookScreen>
             border: Border.all(
               color: isMidnight
                   ? Colors.white24
-                  : (isDark ? Colors.white12 : Colors.grey.shade200),
+                  : (isDark ? Colors.white12 : Colors.grey.withValues(alpha: 0.4)),
               width: 2,
             ),
           ),
@@ -298,8 +298,8 @@ class _StickerBookScreenState extends State<StickerBookScreen>
                     decoration: BoxDecoration(
                       gradient: LinearGradient(
                         colors: [
-                          Colors.orange.shade400,
-                          Colors.deepOrange.shade400,
+                          Colors.orange.withValues(alpha: 0.7),
+                          Colors.deepOrange.withValues(alpha: 0.7),
                         ],
                         begin: Alignment.topLeft,
                         end: Alignment.bottomRight,
@@ -789,3 +789,4 @@ class _StickerBookScreenState extends State<StickerBookScreen>
     );
   }
 }
+

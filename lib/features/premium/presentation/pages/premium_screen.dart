@@ -398,10 +398,10 @@ class _PremiumScreenState extends State<PremiumScreen> {
                   numberOfParticles: 50,
                   gravity: 0.1,
                   colors: [
-                    Theme.of(context).colorScheme.primary,
+                    AppColors.indigo500,
                     AppColors.violet500,
                     Color(0xFFA855F7),
-                    Theme.of(context).colorScheme.primary,
+                    AppColors.indigo500,
                     AppColors.rose500,
                   ],
                 ),
@@ -605,7 +605,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
                   decoration: BoxDecoration(
                     gradient: const LinearGradient(
                       colors: [
-                        Theme.of(context).colorScheme.primary,
+                        AppColors.indigo500,
                         AppColors.violet500,
                       ],
                       begin: Alignment.topLeft,
@@ -837,3 +837,4 @@ class _PremiumScreenState extends State<PremiumScreen> {
     );
   }
 }
+

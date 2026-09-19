@@ -95,7 +95,7 @@ class LeaderboardRankCard extends StatelessWidget {
                     decoration: BoxDecoration(
                       gradient: const LinearGradient(
                         colors: [
-                          Theme.of(context).colorScheme.primary,
+                          AppColors.indigo500,
                           AppColors.blue500,
                         ],
                       ),
@@ -297,3 +297,4 @@ class LeaderboardRankCard extends StatelessWidget {
     ).animate().fadeIn(duration: 600.ms).slideY(begin: -0.1, end: 0);
   }
 }
+

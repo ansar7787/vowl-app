@@ -140,7 +140,7 @@ class AgeGateScreen extends StatelessWidget {
                       child: ElevatedButton(
                         onPressed: () => Navigator.pop(ctx, true),
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.amber.shade700,
+                          backgroundColor: Colors.amber.withValues(alpha: 0.9),
                           foregroundColor: Colors.white,
                           padding: EdgeInsets.symmetric(vertical: 16.h),
                           elevation: 0,
@@ -323,7 +323,7 @@ class AgeGateScreen extends StatelessWidget {
                                   fontSize: 15.sp,
                                   fontWeight: FontWeight.w500,
                                   color: isDark
-                                      ? Colors.grey.shade400
+                                      ? Colors.grey.withValues(alpha: 0.7)
                                       : Colors.grey.shade600,
                                   height: 1.5,
                                 ),
@@ -483,7 +483,7 @@ class AgeGateScreen extends StatelessWidget {
                                                           ? Colors.white70
                                                           : Colors
                                                                 .grey
-                                                                .shade700,
+                                                                .withValues(alpha: 0.9),
                                                       letterSpacing: 0.3,
                                                     ),
                                                   ),
@@ -551,3 +551,4 @@ class AgeGateScreen extends StatelessWidget {
     );
   }
 }
+

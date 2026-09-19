@@ -201,7 +201,7 @@ class DialectFeedbackPanel extends StatelessWidget {
                   locale: "en-GB",
                   bgColor: const Color(0xFFE94335).withValues(alpha: 0.1),
                   textColor: isDark
-                      ? tokens.gameIncorrect.shade100
+                      ? tokens.gameIncorrect.withValues(alpha: 0.2)
                       : const Color(0xFFE94335),
                   borderColor: const Color(0xFFE94335).withValues(alpha: 0.3),
                 ),
@@ -217,7 +217,7 @@ class DialectFeedbackPanel extends StatelessWidget {
                   locale: "en-US",
                   bgColor: const Color(0xFF4285F4).withValues(alpha: 0.1),
                   textColor: isDark
-                      ? Colors.blueAccent.shade100
+                      ? Colors.blueAccent.withValues(alpha: 0.2)
                       : const Color(0xFF4285F4),
                   borderColor: const Color(0xFF4285F4).withValues(alpha: 0.3),
                 ),
@@ -289,3 +289,4 @@ class DialectFeedbackPanel extends StatelessWidget {
     );
   }
 }
+

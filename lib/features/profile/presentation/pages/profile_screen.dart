@@ -506,7 +506,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
         ],
       ),
       color: Colors.amber,
-      shadowColor: Colors.amber.shade700,
+      shadowColor: Colors.amber.withValues(alpha: 0.9),
       title: context.tr('profile.golden_keys_title', fallback: 'Golden Keys'),
       subtitle: context.tr(
         'profile.golden_keys_subtitle',
@@ -902,7 +902,7 @@ class _EditNameSheetContentState extends State<_EditNameSheetContent> {
                     decoration: BoxDecoration(
                       gradient: const LinearGradient(
                         colors: [
-                          Theme.of(context).colorScheme.primary,
+                          AppColors.indigo500,
                           Color(0xFF4F46E5),
                         ],
                       ),
@@ -951,3 +951,4 @@ class ProfileShimmerLoading extends StatelessWidget {
     );
   }
 }
+

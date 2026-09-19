@@ -762,7 +762,7 @@ class AdventureLevelScreen extends StatelessWidget {
                 decoration: BoxDecoration(
                   gradient: const LinearGradient(
                     colors: [
-                      Theme.of(context).colorScheme.primary,
+                      AppColors.indigo500,
                       Color(0xFF1D4ED8),
                     ],
                   ),
@@ -973,3 +973,4 @@ class AdventureLevelScreen extends StatelessWidget {
     );
   }
 }
+

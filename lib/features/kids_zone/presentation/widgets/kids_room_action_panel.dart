@@ -82,7 +82,7 @@ class KidsRoomActionPanel extends StatelessWidget {
                   context: context,
                   label: "Feed",
                   emoji: "🍎",
-                  color: tokens.gameCorrect.shade700,
+                  color: tokens.gameCorrect.withValues(alpha: 0.9),
                   onTap: onFeed,
                   isDark: isDark,
                 ),
@@ -90,7 +90,7 @@ class KidsRoomActionPanel extends StatelessWidget {
                   context: context,
                   label: "Play",
                   emoji: "🎮",
-                  color: Colors.orangeAccent.shade700,
+                  color: Colors.orangeAccent.withValues(alpha: 0.9),
                   onTap: onPlay,
                   isDark: isDark,
                   badge: gamesPlayedToday < 3
@@ -102,7 +102,7 @@ class KidsRoomActionPanel extends StatelessWidget {
                   context: context,
                   label: "Clean",
                   emoji: "🧹",
-                  color: Colors.tealAccent.shade700,
+                  color: Colors.tealAccent.withValues(alpha: 0.9),
                   onTap: onClean,
                   isDark: isDark,
                 ),
@@ -118,7 +118,7 @@ class KidsRoomActionPanel extends StatelessWidget {
                   context: context,
                   label: "Talk",
                   emoji: "💬",
-                  color: Colors.lightBlueAccent.shade700,
+                  color: Colors.lightBlueAccent.withValues(alpha: 0.9),
                   onTap: onTalk,
                   isDark: isDark,
                 ),
@@ -126,7 +126,7 @@ class KidsRoomActionPanel extends StatelessWidget {
                   context: context,
                   label: "Theme",
                   emoji: "✨",
-                  color: Colors.pinkAccent.shade400,
+                  color: Colors.pinkAccent.withValues(alpha: 0.7),
                   onTap: onThemeTap,
                   isDark: isDark,
                 ),
@@ -246,3 +246,4 @@ class KidsRoomActionPanel extends StatelessWidget {
     );
   }
 }
+

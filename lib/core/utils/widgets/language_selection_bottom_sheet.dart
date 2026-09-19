@@ -688,7 +688,7 @@ class _LanguageSelectionBottomSheetState
               if (isDetecting) ...[
                 SizedBox(height: 16.h),
                 const VowlButtonSpinner(
-                  color: Theme.of(context).colorScheme.primary,
+                  color: AppColors.indigo500,
                 ),
               ],
             ],
@@ -795,3 +795,4 @@ class _LanguageSelectionBottomSheetState
     });
   }
 }
+

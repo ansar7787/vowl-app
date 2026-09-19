@@ -366,7 +366,7 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
                             decoration: BoxDecoration(
                               gradient: const LinearGradient(
                                 colors: [
-                                  Theme.of(context).colorScheme.primary,
+                                  AppColors.indigo500,
                                   AppColors.violet500,
                                 ],
                                 begin: Alignment.topLeft,
@@ -462,7 +462,7 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
                               fontSize: 14.sp,
                               fontWeight: FontWeight.w800,
                               color: isDark
-                                  ? Colors.grey.shade400
+                                  ? Colors.grey.withValues(alpha: 0.7)
                                   : Colors.grey.shade600,
                               letterSpacing: 1.5,
                             ),
@@ -525,7 +525,7 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
         decoration: BoxDecoration(
           gradient: const LinearGradient(
             colors: [
-              Theme.of(context).colorScheme.primary,
+              AppColors.indigo500,
               AppColors.violet500,
             ],
             begin: Alignment.topLeft,
@@ -698,14 +698,14 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
                                     fontWeight: FontWeight.w700,
                                     color: isDark
                                         ? Colors.grey.shade300
-                                        : Colors.grey.shade700,
+                                        : Colors.grey.withValues(alpha: 0.9),
                                   ),
                                 ),
                                 if (pack.keys > 0) ...[
                                   SizedBox(width: 12.w),
                                   Icon(
                                     Icons.key_rounded,
-                                    color: Colors.amber.shade700,
+                                    color: Colors.amber.withValues(alpha: 0.9),
                                     size: 14.r,
                                   ),
                                   SizedBox(width: 4.w),
@@ -717,7 +717,7 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
                                       fontWeight: FontWeight.w700,
                                       color: isDark
                                           ? Colors.grey.shade300
-                                          : Colors.grey.shade700,
+                                          : Colors.grey.withValues(alpha: 0.9),
                                     ),
                                   ),
                                 ],
@@ -810,3 +810,4 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
         .moveY(begin: 20, end: 0, curve: Curves.easeOutBack);
   }
 }
+

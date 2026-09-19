@@ -57,7 +57,7 @@ class AdventureDailyXpChart extends StatelessWidget {
                     fontFamily: 'Outfit',
                     fontSize: 12.sp,
                     fontWeight: FontWeight.w800,
-                    color: Theme.of(context).colorScheme.primary,
+                    color: AppColors.indigo500,
                   ),
                 ),
             ],
@@ -209,7 +209,7 @@ class AdventureDailyXpChart extends StatelessWidget {
                                     ? FontWeight.w900
                                     : FontWeight.w800,
                                 color: isToday
-                                    ? Theme.of(context).colorScheme.primary
+                                    ? AppColors.indigo500
                                     : (isDark
                                           ? Colors.white38
                                           : AppColors.slate500),
@@ -222,7 +222,7 @@ class AdventureDailyXpChart extends StatelessWidget {
                                 width: 4.r,
                                 height: 4.r,
                                 decoration: const BoxDecoration(
-                                  color: Theme.of(context).colorScheme.primary,
+                                  color: AppColors.indigo500,
                                   shape: BoxShape.circle,
                                 ),
                               ),
@@ -237,3 +237,4 @@ class AdventureDailyXpChart extends StatelessWidget {
     );
   }
 }
+

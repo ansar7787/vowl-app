@@ -620,7 +620,7 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
                   Icon(
                     LucideIcons.alertTriangle,
                     color: isDark
-                        ? AppColors.gameIncorrect.shade100
+                        ? AppColors.gameIncorrect.withValues(alpha: 0.2)
                         : AppColors.gameIncorrect,
                     size: 48.r,
                   ),
@@ -1201,3 +1201,4 @@ class _AnimatedScannerTextState extends State<_AnimatedScannerText> {
     );
   }
 }
+

@@ -22,7 +22,7 @@ class PremiumHero extends StatelessWidget {
                 shape: BoxShape.circle,
                 gradient: const LinearGradient(
                   colors: [
-                    Theme.of(context).colorScheme.primary,
+                    AppColors.indigo500,
                     AppColors.violet500,
                   ],
                   begin: Alignment.topLeft,
@@ -70,7 +70,7 @@ class PremiumHero extends StatelessWidget {
         ShaderMask(
               shaderCallback: (bounds) => const LinearGradient(
                 colors: [
-                  Theme.of(context).colorScheme.primary,
+                  AppColors.indigo500,
                   AppColors.violet500,
                 ],
                 begin: Alignment.topLeft,
@@ -118,3 +118,4 @@ class PremiumHero extends StatelessWidget {
     );
   }
 }
+

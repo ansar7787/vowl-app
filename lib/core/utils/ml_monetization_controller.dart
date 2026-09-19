@@ -145,7 +145,7 @@ class _MlFeatureGateDialog extends StatelessWidget {
                 decoration: BoxDecoration(
                   gradient: const LinearGradient(
                     colors: [
-                      Theme.of(context).colorScheme.primary,
+                      AppColors.indigo500,
                       AppColors.violet500,
                     ],
                   ),
@@ -198,7 +198,7 @@ class _MlFeatureGateDialog extends StatelessWidget {
                   decoration: BoxDecoration(
                     gradient: const LinearGradient(
                       colors: [
-                        Theme.of(context).colorScheme.primary,
+                        AppColors.indigo500,
                         AppColors.violet500,
                       ],
                     ),
@@ -287,3 +287,4 @@ class _MlFeatureGateDialog extends StatelessWidget {
     );
   }
 }
+

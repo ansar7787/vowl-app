@@ -39,7 +39,7 @@ class PremiumUpsellContent extends StatelessWidget {
           decoration: BoxDecoration(
             gradient: const LinearGradient(
               colors: [
-                Theme.of(context).colorScheme.primary,
+                AppColors.indigo500,
                 AppColors.violet500,
               ],
               begin: Alignment.topLeft,
@@ -98,7 +98,7 @@ class PremiumUpsellContent extends StatelessWidget {
             decoration: BoxDecoration(
               gradient: const LinearGradient(
                 colors: [
-                  Theme.of(context).colorScheme.primary,
+                  AppColors.indigo500,
                   AppColors.violet500,
                 ],
                 begin: Alignment.topLeft,
@@ -184,3 +184,4 @@ class PremiumUpsellContent extends StatelessWidget {
     );
   }
 }
+

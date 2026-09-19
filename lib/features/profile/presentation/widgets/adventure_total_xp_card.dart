@@ -53,7 +53,7 @@ class AdventureTotalXpCard extends StatelessWidget {
                 ),
                 child: Icon(
                   Icons.auto_fix_high_rounded,
-                  color: Theme.of(context).colorScheme.primary,
+                  color: AppColors.indigo500,
                   size: 32.r,
                 ),
               ),
@@ -71,7 +71,7 @@ class AdventureTotalXpCard extends StatelessWidget {
                         fontFamily: 'Outfit',
                         fontSize: 10.sp,
                         fontWeight: FontWeight.w900,
-                        color: Theme.of(context).colorScheme.primary,
+                        color: AppColors.indigo500,
                         letterSpacing: 2,
                       ),
                     ),
@@ -128,7 +128,7 @@ class AdventureTotalXpCard extends StatelessWidget {
                   fontFamily: 'Outfit',
                   fontSize: 11.sp,
                   fontWeight: FontWeight.w900,
-                  color: Theme.of(context).colorScheme.primary,
+                  color: AppColors.indigo500,
                 ),
               ),
               SizedBox(width: 12.r),
@@ -141,7 +141,7 @@ class AdventureTotalXpCard extends StatelessWidget {
                       context,
                     ).colorScheme.primary.withValues(alpha: 0.1),
                     valueColor: const AlwaysStoppedAnimation<Color>(
-                      Theme.of(context).colorScheme.primary,
+                      AppColors.indigo500,
                     ),
                     minHeight: 8.r,
                   ),
@@ -214,3 +214,4 @@ class AdventureTotalXpCard extends StatelessWidget {
     );
   }
 }
+

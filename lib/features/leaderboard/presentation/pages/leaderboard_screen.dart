@@ -456,7 +456,7 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
                         decoration: BoxDecoration(
                           gradient: const LinearGradient(
                             colors: [
-                              Theme.of(context).colorScheme.primary,
+                              AppColors.indigo500,
                               Color(0xFF3B82F6),
                             ],
                           ),
@@ -807,3 +807,4 @@ class _LeaderboardToggle extends StatelessWidget {
     );
   }
 }
+

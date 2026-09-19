@@ -73,7 +73,7 @@ class KidsRoomDailyCareCard extends StatelessWidget {
                 children: [
                   Icon(
                     Icons.check_circle_outline_rounded,
-                    color: Colors.amber.shade700,
+                    color: Colors.amber.withValues(alpha: 0.9),
                     size: 24.sp,
                   ),
                   SizedBox(width: 8.w),
@@ -83,7 +83,7 @@ class KidsRoomDailyCareCard extends StatelessWidget {
                       fontFamily: 'Outfit',
                       fontSize: 16.sp,
                       fontWeight: FontWeight.w900,
-                      color: Colors.amber.shade700,
+                      color: Colors.amber.withValues(alpha: 0.9),
                       letterSpacing: 1.2,
                     ),
                   ),
@@ -137,7 +137,7 @@ class KidsRoomDailyCareCard extends StatelessWidget {
                                   borderRadius: BorderRadius.circular(20.r),
                                   boxShadow: [
                                     BoxShadow(
-                                      color: Colors.green.shade700,
+                                      color: Colors.green.withValues(alpha: 0.9),
                                       offset: Offset(0, 4.h),
                                     ),
                                   ],
@@ -175,7 +175,7 @@ class KidsRoomDailyCareCard extends StatelessWidget {
       children: [
         Icon(
           isDone ? Icons.check_circle_rounded : Icons.circle_outlined,
-          color: isDone ? AppColors.gameCorrect.shade400 : Colors.grey.shade400,
+          color: isDone ? AppColors.gameCorrect.withValues(alpha: 0.7) : Colors.grey.withValues(alpha: 0.7),
           size: 20.sp,
         ),
         SizedBox(width: 8.w),
@@ -186,11 +186,11 @@ class KidsRoomDailyCareCard extends StatelessWidget {
             fontWeight: isDone ? FontWeight.w800 : FontWeight.w600,
             color: isDone
                 ? (isDark
-                      ? AppColors.gameCorrect.shade100
+                      ? AppColors.gameCorrect.withValues(alpha: 0.2)
                       : Colors.green.shade800)
                 : (isDark ? Colors.white60 : Colors.black54),
             decoration: isDone ? TextDecoration.lineThrough : null,
-            decorationColor: isDone ? AppColors.gameCorrect.shade400 : null,
+            decorationColor: isDone ? AppColors.gameCorrect.withValues(alpha: 0.7) : null,
             decorationThickness: 2,
           ),
         ),
@@ -198,3 +198,4 @@ class KidsRoomDailyCareCard extends StatelessWidget {
     );
   }
 }
+

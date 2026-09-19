@@ -227,7 +227,7 @@ class _AdRewardCardState extends State<AdRewardCard> {
                                     ? null
                                     : const LinearGradient(
                                         colors: [
-                                          Theme.of(context).colorScheme.primary,
+                                          AppColors.indigo500,
                                           Color(0xFF4F46E5),
                                         ],
                                       ),
@@ -320,3 +320,4 @@ class _AdRewardCardState extends State<AdRewardCard> {
     );
   }
 }
+

@@ -223,7 +223,7 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
                     borderRadius: BorderRadius.circular(20.r),
                     gradient: const LinearGradient(
                       colors: [
-                        Theme.of(context).colorScheme.primary,
+                        AppColors.indigo500,
                         AppColors.violet500,
                       ],
                       begin: Alignment.centerLeft,
@@ -989,7 +989,7 @@ class _DailyWordsProgressBar extends StatelessWidget {
                     ? Colors.white.withValues(alpha: 0.1)
                     : const Color(0xFFE2E8F0),
                 valueColor: AlwaysStoppedAnimation<Color>(
-                  Theme.of(context).colorScheme.primary,
+                  AppColors.indigo500,
                 ),
               ),
             ),
@@ -1011,3 +1011,4 @@ class _DailyWordsProgressBar extends StatelessWidget {
     );
   }
 }
+
