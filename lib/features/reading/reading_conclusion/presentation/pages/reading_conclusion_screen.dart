@@ -28,7 +28,8 @@ class ReadingConclusionScreen extends StatefulWidget {
       _ReadingConclusionScreenState();
 }
 
-class _ReadingConclusionScreenState extends State<ReadingConclusionScreen> with ReadingGameScreenMixin {
+class _ReadingConclusionScreenState extends State<ReadingConclusionScreen>
+    with ReadingGameScreenMixin {
   @override
   GameSubtype get gameType => widget.gameType;
 
@@ -38,16 +39,15 @@ class _ReadingConclusionScreenState extends State<ReadingConclusionScreen> with 
   @override
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
-          final ScrollController _scrollController = ScrollController();
+  final ScrollController _scrollController = ScrollController();
 
   @override
   void dispose() {
-                _scrollController.dispose();
+    _scrollController.dispose();
     disposeReadingGame();
     super.dispose();
   }
 
-    
   @override
   void initState() {
     super.initState();
@@ -174,7 +174,8 @@ class _ReadingConclusionScreenState extends State<ReadingConclusionScreen> with 
                                         SizedBox(height: 30.h),
                                         ReadingConclusionResult(
                                           quest: quest,
-                                          isCorrect: isCorrectNotifier.value == true,
+                                          isCorrect:
+                                              isCorrectNotifier.value == true,
                                           isDark: isDark,
                                         ),
                                       ],

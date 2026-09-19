@@ -32,7 +32,8 @@ class SentenceBuilderScreen extends StatefulWidget {
   State<SentenceBuilderScreen> createState() => _SentenceBuilderScreenState();
 }
 
-class _SentenceBuilderScreenState extends State<SentenceBuilderScreen> with WritingGameScreenMixin {
+class _SentenceBuilderScreenState extends State<SentenceBuilderScreen>
+    with WritingGameScreenMixin {
   @override
   GameSubtype get gameType => widget.gameType;
 
@@ -49,7 +50,7 @@ class _SentenceBuilderScreenState extends State<SentenceBuilderScreen> with Writ
 
   final _textController = TextEditingController();
   final ValueNotifier<List<String>> _assembledPieces = ValueNotifier([]);
-    final ValueNotifier<bool> _showTypeToConfirm = ValueNotifier(false);
+  final ValueNotifier<bool> _showTypeToConfirm = ValueNotifier(false);
   late final ScrollController _scrollController;
 
   // FIX: full whitespace normalization to prevent false mismatches.
@@ -96,7 +97,7 @@ class _SentenceBuilderScreenState extends State<SentenceBuilderScreen> with Writ
     _scrollController.dispose();
     _textController.dispose();
     _assembledPieces.dispose();
-        _showTypeToConfirm.dispose();
+    _showTypeToConfirm.dispose();
     disposeWritingGame();
     super.dispose();
   }
@@ -186,19 +187,15 @@ class _SentenceBuilderScreenState extends State<SentenceBuilderScreen> with Writ
   }
 
   @override
-
   void onQuestionReset() {
-
     _assembledPieces.value = [];
 
     _showTypeToConfirm.value = false;
 
     _textController.clear();
-
   }
 
   @override
-
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
@@ -505,7 +502,3 @@ class _SubmitButton extends StatelessWidget {
     );
   }
 }
-
-
-
-

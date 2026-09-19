@@ -39,7 +39,7 @@ class _AudioMultipleChoiceScreenState extends State<AudioMultipleChoiceScreen>
     fallback: 'SONIC RADAR!',
   );
 
-    final ValueNotifier<int?> _selectedIndex = ValueNotifier(null);
+  final ValueNotifier<int?> _selectedIndex = ValueNotifier(null);
   final ValueNotifier<double> _rotation = ValueNotifier(0.0);
   final ScrollController _scrollController = ScrollController();
 
@@ -70,7 +70,7 @@ class _AudioMultipleChoiceScreenState extends State<AudioMultipleChoiceScreen>
 
   @override
   void dispose() {
-        _selectedIndex.dispose();
+    _selectedIndex.dispose();
     _rotation.dispose();
     _scrollController.dispose();
     disposeListeningGame();

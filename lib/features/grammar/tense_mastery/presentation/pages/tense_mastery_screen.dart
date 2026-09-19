@@ -26,7 +26,8 @@ class TenseMasteryScreen extends StatefulWidget {
   State<TenseMasteryScreen> createState() => _TenseMasteryScreenState();
 }
 
-class _TenseMasteryScreenState extends State<TenseMasteryScreen> with GrammarGameScreenMixin {
+class _TenseMasteryScreenState extends State<TenseMasteryScreen>
+    with GrammarGameScreenMixin {
   @override
   GameSubtype get gameType => widget.gameType;
 
@@ -36,19 +37,18 @@ class _TenseMasteryScreenState extends State<TenseMasteryScreen> with GrammarGam
   @override
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
-    
   final ValueNotifier<double> _sliderValue = ValueNotifier(
     0.5,
   ); // Default to Present
-      final bool _isFinalFailure = false;
-        final ValueNotifier<bool> _isDragging = ValueNotifier(false);
+  final bool _isFinalFailure = false;
+  final ValueNotifier<bool> _isDragging = ValueNotifier(false);
   final ValueNotifier<bool> _pendingSubmit = ValueNotifier(false);
   final ScrollController _scrollController = ScrollController();
 
   @override
   void dispose() {
     _sliderValue.dispose();
-                _isDragging.dispose();
+    _isDragging.dispose();
     _pendingSubmit.dispose();
     _scrollController.dispose();
     disposeGrammarGame();
@@ -155,19 +155,15 @@ class _TenseMasteryScreenState extends State<TenseMasteryScreen> with GrammarGam
   }
 
   @override
-
   void onQuestionReset() {
-
     _sliderValue.value = 0.5;
 
     _isDragging.value = false;
 
     _pendingSubmit.value = false;
-
   }
 
   @override
-
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('grammar', level: widget.level);
@@ -343,7 +339,8 @@ class _TenseMasteryScreenState extends State<TenseMasteryScreen> with GrammarGam
                                                       currentTense:
                                                           _currentTense,
                                                       isAnswered:
-                                                          isAnsweredNotifier.value ||
+                                                          isAnsweredNotifier
+                                                              .value ||
                                                           _pendingSubmit.value,
                                                       isDragging:
                                                           _isDragging.value,

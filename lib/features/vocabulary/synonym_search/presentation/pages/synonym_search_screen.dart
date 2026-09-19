@@ -31,7 +31,8 @@ class SynonymSearchScreen extends StatefulWidget {
   State<SynonymSearchScreen> createState() => _SynonymSearchScreenState();
 }
 
-class _SynonymSearchScreenState extends State<SynonymSearchScreen>with TickerProviderStateMixin, VocabularyGameScreenMixin {
+class _SynonymSearchScreenState extends State<SynonymSearchScreen>
+    with TickerProviderStateMixin, VocabularyGameScreenMixin {
   @override
   GameSubtype get gameType => widget.gameType;
 
@@ -41,9 +42,9 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>with TickerPro
   @override
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
-      final _scrollController = ScrollController();
+  final _scrollController = ScrollController();
 
-            VocabularyQuest? _lastQuest;
+  VocabularyQuest? _lastQuest;
 
   // Warp Interaction State
   final List<ValueNotifier<Offset>> _shardOffsets = [];
@@ -75,7 +76,6 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>with TickerPro
     disposeVocabularyGame();
     super.dispose();
   }
-
 
   void _onShardDragStart(int index, DragStartDetails details) {
     if (isAnsweredNotifier.value || _isWarping[index].value) return;
@@ -253,15 +253,11 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>with TickerPro
   double _lastKeyboardHeight = 0;
 
   @override
-
   void onQuestionReset() {
-
     _activeShardIndex.value = null;
-
   }
 
   @override
-
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
@@ -291,7 +287,8 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>with TickerPro
               level: widget.level,
               isAnswered:
                   isAnsweredNotifier.value &&
-                  (isCorrectNotifier.value != null || !isFirstStagePassedNotifier.value),
+                  (isCorrectNotifier.value != null ||
+                      !isFirstStagePassedNotifier.value),
               isCorrect: isCorrectNotifier.value,
               isFinalFailure: (state is VocabularyLoaded)
                   ? state.isFinalFailure
@@ -369,7 +366,8 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>with TickerPro
                                     child: Column(
                                       children: [
                                         IgnorePointer(
-                                          ignoring: isFirstStagePassedNotifier.value,
+                                          ignoring:
+                                              isFirstStagePassedNotifier.value,
                                           child: SizedBox(
                                             width: safeWidth,
                                             height: safeHeight,
@@ -567,7 +565,8 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>with TickerPro
                                           ),
                                         SizedBox(
                                           height:
-                                              (isFirstStagePassedNotifier.value &&
+                                              (isFirstStagePassedNotifier
+                                                      .value &&
                                                   !isAnsweredNotifier.value)
                                               ? 24.h
                                               : 60.h,

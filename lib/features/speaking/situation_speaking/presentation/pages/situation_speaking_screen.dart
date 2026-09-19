@@ -33,7 +33,8 @@ class SituationSpeakingScreen extends StatefulWidget {
       _SituationSpeakingScreenState();
 }
 
-class _SituationSpeakingScreenState extends State<SituationSpeakingScreen> with SpeakingGameScreenMixin {
+class _SituationSpeakingScreenState extends State<SituationSpeakingScreen>
+    with SpeakingGameScreenMixin {
   @override
   GameSubtype get gameType => widget.gameType;
 
@@ -43,9 +44,8 @@ class _SituationSpeakingScreenState extends State<SituationSpeakingScreen> with 
   @override
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
-    
   final ValueNotifier<bool> _isBriefingComplete = ValueNotifier(false);
-          
+
   final ScrollController _scrollController = ScrollController();
 
   @override
@@ -71,11 +71,10 @@ class _SituationSpeakingScreenState extends State<SituationSpeakingScreen> with 
   @override
   void dispose() {
     _isBriefingComplete.dispose();
-                _scrollController.dispose();
+    _scrollController.dispose();
     disposeSpeakingGame();
     super.dispose();
   }
-
 
   void _submitVerbalEvaluation(bool nailedIt, String textToSpeak) {
     if (isAnsweredNotifier.value) return;
@@ -127,15 +126,11 @@ class _SituationSpeakingScreenState extends State<SituationSpeakingScreen> with 
   }
 
   @override
-
   void onQuestionReset() {
-
     _isBriefingComplete.value = false;
-
   }
 
   @override
-
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('speaking', level: widget.level);
@@ -223,7 +218,8 @@ class _SituationSpeakingScreenState extends State<SituationSpeakingScreen> with 
                                 ),
                               ),
                             ),
-                            if (!isAnsweredNotifier.value && _isBriefingComplete.value)
+                            if (!isAnsweredNotifier.value &&
+                                _isBriefingComplete.value)
                               SliverToBoxAdapter(
                                 child: SpeakToConfirmOverlay(
                                   expectedText:

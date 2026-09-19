@@ -234,8 +234,6 @@ class ReadingBloc extends Bloc<ReadingEvent, ReadingState> {
     }
 
     if (s.answerStatus == AnswerStatus.correct) {
-      
-
       // 1. Instant UI feedback
       emit(
         ReadingGameComplete(
@@ -313,7 +311,9 @@ class ReadingBloc extends Bloc<ReadingEvent, ReadingState> {
             isCorrect: true,
           ),
         ).catchError((_) => const Right<Failure, void>(null)).then((_) {
-          awardBadge('reading_master').catchError((_) => const Right<Failure, void>(null));
+          awardBadge(
+            'reading_master',
+          ).catchError((_) => const Right<Failure, void>(null));
         });
       });
     });

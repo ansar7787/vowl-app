@@ -27,7 +27,8 @@ class MinimalPairsScreen extends StatefulWidget {
   State<MinimalPairsScreen> createState() => _MinimalPairsScreenState();
 }
 
-class _MinimalPairsScreenState extends State<MinimalPairsScreen> with AccentGameScreenMixin {
+class _MinimalPairsScreenState extends State<MinimalPairsScreen>
+    with AccentGameScreenMixin {
   @override
   GameSubtype get gameType => widget.gameType;
 
@@ -37,9 +38,8 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> with AccentGame
   @override
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
   AccentQuest? _lastQuest;
-        final ValueNotifier<int?> _selectedDroneIndex = ValueNotifier(null);
+  final ValueNotifier<int?> _selectedDroneIndex = ValueNotifier(null);
 
-  
   String? _shuffledQuestId;
   List<Map<String, String>> _currentOptions = [];
   int _currentCorrectIndex = 0;
@@ -97,7 +97,7 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> with AccentGame
   @override
   void dispose() {
     _scrollController.dispose();
-                _selectedDroneIndex.dispose();
+    _selectedDroneIndex.dispose();
     disposeAccentGame();
     super.dispose();
   }
@@ -158,15 +158,11 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> with AccentGame
   }
 
   @override
-
   void onQuestionReset() {
-
     _selectedDroneIndex.value = null;
-
   }
 
   @override
-
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('accent', level: widget.level);
@@ -252,7 +248,8 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> with AccentGame
                                 slivers: [
                                   SliverToBoxAdapter(
                                     child: IgnorePointer(
-                                      ignoring: isFirstStagePassedNotifier.value,
+                                      ignoring:
+                                          isFirstStagePassedNotifier.value,
                                       child: ConstrainedBox(
                                         constraints: BoxConstraints(
                                           minHeight: constraints.maxHeight,
@@ -540,4 +537,3 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> with AccentGame
     );
   }
 }
-

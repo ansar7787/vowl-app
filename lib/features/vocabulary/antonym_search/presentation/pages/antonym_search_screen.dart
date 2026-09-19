@@ -26,7 +26,8 @@ class AntonymSearchScreen extends StatefulWidget {
   State<AntonymSearchScreen> createState() => _AntonymSearchScreenState();
 }
 
-class _AntonymSearchScreenState extends State<AntonymSearchScreen> with VocabularyGameScreenMixin {
+class _AntonymSearchScreenState extends State<AntonymSearchScreen>
+    with VocabularyGameScreenMixin {
   @override
   GameSubtype get gameType => widget.gameType;
 
@@ -36,10 +37,9 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> with Vocabula
   @override
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
-    
-        final ValueNotifier<bool> _isDragPassed = ValueNotifier(false);
+  final ValueNotifier<bool> _isDragPassed = ValueNotifier(false);
 
-    VocabularyQuest? _lastQuest;
+  VocabularyQuest? _lastQuest;
   bool _isAnimatingTap = false;
   int? _hapticZoneIndex;
 
@@ -71,7 +71,7 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> with Vocabula
 
   @override
   void dispose() {
-                _isDragPassed.dispose();
+    _isDragPassed.dispose();
     _activeShardIndex.dispose();
     _scrollController.dispose();
     _disposeShardNotifiers();
@@ -89,26 +89,15 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> with Vocabula
     _shardOffsets.clear();
     _isFused.clear();
   }
-
 
   @override
-
-
   void onQuestionReset() {
-
-
     _isDragPassed.value = false;
-
 
     _activeShardIndex.value = null;
-
-
   }
-
 
   @override
-
-
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final targetColor = const Color(0xFF00E5FF);
@@ -311,7 +300,8 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> with Vocabula
                                       ),
                                     ),
                                   ),
-                                  if (_isDragPassed.value && !isAnsweredNotifier.value)
+                                  if (_isDragPassed.value &&
+                                      !isAnsweredNotifier.value)
                                     SliverToBoxAdapter(
                                       child: Column(
                                         children: [

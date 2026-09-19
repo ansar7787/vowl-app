@@ -29,7 +29,8 @@ class ModifierPlacementScreen extends StatefulWidget {
       _ModifierPlacementScreenState();
 }
 
-class _ModifierPlacementScreenState extends State<ModifierPlacementScreen> with GrammarGameScreenMixin {
+class _ModifierPlacementScreenState extends State<ModifierPlacementScreen>
+    with GrammarGameScreenMixin {
   @override
   GameSubtype get gameType => widget.gameType;
 
@@ -39,16 +40,15 @@ class _ModifierPlacementScreenState extends State<ModifierPlacementScreen> with 
   @override
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
-    
   final ValueNotifier<int> _targetIndex = ValueNotifier(-1);
-            final ValueNotifier<bool> _pendingJigsaw = ValueNotifier(false);
+  final ValueNotifier<bool> _pendingJigsaw = ValueNotifier(false);
   final ValueNotifier<String?> _assembledSentence = ValueNotifier(null);
   final ScrollController _scrollController = ScrollController();
 
   @override
   void dispose() {
     _targetIndex.dispose();
-                _pendingJigsaw.dispose();
+    _pendingJigsaw.dispose();
     _assembledSentence.dispose();
     _scrollController.dispose();
     disposeGrammarGame();
@@ -80,7 +80,9 @@ class _ModifierPlacementScreenState extends State<ModifierPlacementScreen> with 
     String modifier,
     List<String> baseWords,
   ) {
-    if (isAnsweredNotifier.value || _targetIndex.value == -1 || _pendingJigsaw.value) {
+    if (isAnsweredNotifier.value ||
+        _targetIndex.value == -1 ||
+        _pendingJigsaw.value) {
       return;
     }
 
@@ -143,19 +145,15 @@ class _ModifierPlacementScreenState extends State<ModifierPlacementScreen> with 
   }
 
   @override
-
   void onQuestionReset() {
-
     _targetIndex.value = -1;
 
     _pendingJigsaw.value = false;
 
     _assembledSentence.value = null;
-
   }
 
   @override
-
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('grammar', level: widget.level);
@@ -458,7 +456,8 @@ class _ModifierPlacementScreenState extends State<ModifierPlacementScreen> with 
                                                       ),
 
                                                   // Result Feedback
-                                                  if (isAnsweredNotifier.value) ...[
+                                                  if (isAnsweredNotifier
+                                                      .value) ...[
                                                     SizedBox(
                                                       height: isCompact
                                                           ? 8.h
@@ -481,7 +480,8 @@ class _ModifierPlacementScreenState extends State<ModifierPlacementScreen> with 
                                                         targetIndex:
                                                             _targetIndex.value,
                                                         isAnswered:
-                                                            isAnsweredNotifier.value ||
+                                                            isAnsweredNotifier
+                                                                .value ||
                                                             _pendingJigsaw
                                                                 .value,
                                                         isDark: isDark,
@@ -499,7 +499,8 @@ class _ModifierPlacementScreenState extends State<ModifierPlacementScreen> with 
                                                   ),
 
                                                   // Draggable Magnet
-                                                  if (!isAnsweredNotifier.value &&
+                                                  if (!isAnsweredNotifier
+                                                          .value &&
                                                       !_pendingJigsaw.value &&
                                                       _targetIndex.value == -1)
                                                     Draggable<String>(
@@ -536,7 +537,8 @@ class _ModifierPlacementScreenState extends State<ModifierPlacementScreen> with 
                                                     ),
 
                                                   // Submit Button
-                                                  if (!isAnsweredNotifier.value &&
+                                                  if (!isAnsweredNotifier
+                                                          .value &&
                                                       !_pendingJigsaw.value &&
                                                       _targetIndex.value !=
                                                           -1) ...[

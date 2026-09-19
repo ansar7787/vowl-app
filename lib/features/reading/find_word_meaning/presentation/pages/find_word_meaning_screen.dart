@@ -29,7 +29,8 @@ class FindWordMeaningScreen extends StatefulWidget {
   State<FindWordMeaningScreen> createState() => _FindWordMeaningScreenState();
 }
 
-class _FindWordMeaningScreenState extends State<FindWordMeaningScreen> with ReadingGameScreenMixin {
+class _FindWordMeaningScreenState extends State<FindWordMeaningScreen>
+    with ReadingGameScreenMixin {
   @override
   GameSubtype get gameType => widget.gameType;
 
@@ -39,9 +40,9 @@ class _FindWordMeaningScreenState extends State<FindWordMeaningScreen> with Read
   @override
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
-      final _scrollController = ScrollController();
+  final _scrollController = ScrollController();
 
-    final ValueNotifier<bool> _showSentenceBuilder = ValueNotifier(false);
+  final ValueNotifier<bool> _showSentenceBuilder = ValueNotifier(false);
   final ValueNotifier<int?> _pendingSelectedIndex = ValueNotifier(null);
 
   @override
@@ -53,7 +54,7 @@ class _FindWordMeaningScreenState extends State<FindWordMeaningScreen> with Read
   @override
   void dispose() {
     _scrollController.dispose();
-        _showSentenceBuilder.dispose();
+    _showSentenceBuilder.dispose();
     _pendingSelectedIndex.dispose();
     disposeReadingGame();
     super.dispose();
@@ -103,17 +104,13 @@ class _FindWordMeaningScreenState extends State<FindWordMeaningScreen> with Read
   }
 
   @override
-
   void onQuestionReset() {
-
     _showSentenceBuilder.value = false;
 
     _pendingSelectedIndex.value = null;
-
   }
 
   @override
-
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('reading', level: widget.level);

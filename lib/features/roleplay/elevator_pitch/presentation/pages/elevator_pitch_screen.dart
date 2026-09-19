@@ -28,7 +28,8 @@ class ElevatorPitchScreen extends StatefulWidget {
   State<ElevatorPitchScreen> createState() => _ElevatorPitchScreenState();
 }
 
-class _ElevatorPitchScreenState extends State<ElevatorPitchScreen> with RoleplayGameScreenMixin {
+class _ElevatorPitchScreenState extends State<ElevatorPitchScreen>
+    with RoleplayGameScreenMixin {
   @override
   GameSubtype get gameType => widget.gameType;
 
@@ -38,12 +39,11 @@ class _ElevatorPitchScreenState extends State<ElevatorPitchScreen> with Roleplay
   @override
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
-    
-      final ScrollController _scrollController = ScrollController();
-    
+  final ScrollController _scrollController = ScrollController();
+
   @override
   void dispose() {
-                _scrollController.dispose();
+    _scrollController.dispose();
     disposeRoleplayGame();
     super.dispose();
   }
@@ -67,7 +67,6 @@ class _ElevatorPitchScreenState extends State<ElevatorPitchScreen> with Roleplay
 
     initRoleplayGame();
   }
-
 
   void _submitVerbalEvaluation(bool nailedIt) {
     if (isAnsweredNotifier.value) return;

@@ -28,7 +28,8 @@ class VoiceSwapScreen extends StatefulWidget {
   State<VoiceSwapScreen> createState() => _VoiceSwapScreenState();
 }
 
-class _VoiceSwapScreenState extends State<VoiceSwapScreen> with GrammarGameScreenMixin {
+class _VoiceSwapScreenState extends State<VoiceSwapScreen>
+    with GrammarGameScreenMixin {
   @override
   GameSubtype get gameType => widget.gameType;
 
@@ -38,14 +39,13 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen> with GrammarGameScree
   @override
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
-    
   final ValueNotifier<bool> _isPassive = ValueNotifier(false);
-          final ScrollController _scrollController = ScrollController();
+  final ScrollController _scrollController = ScrollController();
 
   @override
   void dispose() {
     _isPassive.dispose();
-                    _scrollController.dispose();
+    _scrollController.dispose();
     disposeGrammarGame();
     super.dispose();
   }
@@ -62,7 +62,6 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen> with GrammarGameScree
     });
   }
 
-    
   void _onStagePassedScroll() {
     Future.delayed(const Duration(milliseconds: 100), () {
       if (mounted && _scrollController.hasClients) {
@@ -98,7 +97,10 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen> with GrammarGameScree
   }
 
   void _submitAnswer(GameQuest? quest) {
-    if (isAnsweredNotifier.value || isFirstStagePassedNotifier.value || quest == null) return;
+    if (isAnsweredNotifier.value ||
+        isFirstStagePassedNotifier.value ||
+        quest == null)
+      return;
 
     final selectedVoice = _isPassive.value ? "Passive" : "Active";
     bool isCorrect =
@@ -150,15 +152,11 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen> with GrammarGameScree
   }
 
   @override
-
   void onQuestionReset() {
-
     _isPassive.value = false;
-
   }
 
   @override
-
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('grammar', level: widget.level);
@@ -202,7 +200,8 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen> with GrammarGameScree
               level: widget.level,
               isAnswered:
                   isAnsweredNotifier.value &&
-                  (isCorrectNotifier.value != null || !isFirstStagePassedNotifier.value),
+                  (isCorrectNotifier.value != null ||
+                      !isFirstStagePassedNotifier.value),
               isCorrect: isCorrectNotifier.value,
               isFinalFailure: state is GrammarLoaded && state.isFinalFailure,
               showConfetti: showConfettiNotifier.value,
@@ -240,7 +239,8 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen> with GrammarGameScree
                                     SliverFillRemaining(
                                       hasScrollBody: false,
                                       child: IgnorePointer(
-                                        ignoring: isFirstStagePassedNotifier.value,
+                                        ignoring:
+                                            isFirstStagePassedNotifier.value,
                                         child: Builder(
                                           builder: (context) {
                                             final maxHeight = MediaQuery.of(
@@ -343,8 +343,10 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen> with GrammarGameScree
                                                 VoiceSwapToggle(
                                                   isPassive: _isPassive.value,
                                                   isAnswered:
-                                                      isAnsweredNotifier.value &&
-                                                      (isCorrectNotifier.value !=
+                                                      isAnsweredNotifier
+                                                          .value &&
+                                                      (isCorrectNotifier
+                                                                  .value !=
                                                               null ||
                                                           !isFirstStagePassedNotifier
                                                               .value),
@@ -355,7 +357,8 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen> with GrammarGameScree
                                                       _isPassive.value = val,
                                                 ),
 
-                                                if (isAnsweredNotifier.value) ...[
+                                                if (isAnsweredNotifier
+                                                    .value) ...[
                                                   SizedBox(
                                                     height: isCompact
                                                         ? 12.h
@@ -363,7 +366,8 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen> with GrammarGameScree
                                                   ),
                                                   VoiceSwapResult(
                                                     isCorrect:
-                                                        isCorrectNotifier.value ==
+                                                        isCorrectNotifier
+                                                            .value ==
                                                         true,
                                                     quest: quest,
                                                     isDark: isDark,

@@ -30,7 +30,8 @@ class JobInterviewScreen extends StatefulWidget {
   State<JobInterviewScreen> createState() => _JobInterviewScreenState();
 }
 
-class _JobInterviewScreenState extends State<JobInterviewScreen>with TickerProviderStateMixin, RoleplayGameScreenMixin {
+class _JobInterviewScreenState extends State<JobInterviewScreen>
+    with TickerProviderStateMixin, RoleplayGameScreenMixin {
   @override
   GameSubtype get gameType => widget.gameType;
 
@@ -40,19 +41,18 @@ class _JobInterviewScreenState extends State<JobInterviewScreen>with TickerProvi
   @override
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
-    
   late AnimationController _reactorController;
 
-    final ValueNotifier<int?> _selectedIndex = ValueNotifier(null);
+  final ValueNotifier<int?> _selectedIndex = ValueNotifier(null);
   final ScrollController _scrollController = ScrollController();
-      
+
   // Shuffled state
   final ValueNotifier<List<String>> _shuffledOptions = ValueNotifier([]);
   final ValueNotifier<int> _shuffledCorrectIndex = ValueNotifier(-1);
 
   // Track professionalism thermometer score (default start at 0.5)
   final ValueNotifier<double> _mercuryLevel = ValueNotifier(0.5);
-  
+
   @override
   void initState() {
     super.initState();
@@ -82,14 +82,13 @@ class _JobInterviewScreenState extends State<JobInterviewScreen>with TickerProvi
   void dispose() {
     _reactorController.dispose();
     _selectedIndex.dispose();
-                _shuffledOptions.dispose();
+    _shuffledOptions.dispose();
     _shuffledCorrectIndex.dispose();
     _mercuryLevel.dispose();
-        _scrollController.dispose();
+    _scrollController.dispose();
     disposeRoleplayGame();
     super.dispose();
   }
-
 
   void _onOptionSelected(int index, int correctIndex) {
     if (isAnsweredNotifier.value || isFirstStagePassedNotifier.value) return;
@@ -135,9 +134,7 @@ class _JobInterviewScreenState extends State<JobInterviewScreen>with TickerProvi
   }
 
   @override
-
   void onQuestionReset() {
-
     _selectedIndex.value = null;
 
     _shuffledOptions.value = [];
@@ -145,11 +142,9 @@ class _JobInterviewScreenState extends State<JobInterviewScreen>with TickerProvi
     _shuffledCorrectIndex.value = -1;
 
     _mercuryLevel.value = 0.5;
-
   }
 
   @override
-
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('roleplay', level: widget.level);
@@ -177,7 +172,8 @@ class _JobInterviewScreenState extends State<JobInterviewScreen>with TickerProvi
               level: widget.level,
               isAnswered:
                   isAnsweredNotifier.value &&
-                  (isCorrectNotifier.value != null || !isFirstStagePassedNotifier.value),
+                  (isCorrectNotifier.value != null ||
+                      !isFirstStagePassedNotifier.value),
               isCorrect: isCorrectNotifier.value,
               showConfetti: showConfettiNotifier.value,
               onContinue: () =>
@@ -258,7 +254,8 @@ class _JobInterviewScreenState extends State<JobInterviewScreen>with TickerProvi
                                                       color: theme.primaryColor,
                                                       isDark: isDark,
                                                       reaction:
-                                                          isAnsweredNotifier.value &&
+                                                          isAnsweredNotifier
+                                                                  .value &&
                                                               _selectedIndex
                                                                       .value !=
                                                                   null &&
@@ -294,11 +291,13 @@ class _JobInterviewScreenState extends State<JobInterviewScreen>with TickerProvi
                                                       selectedIndex:
                                                           _selectedIndex.value,
                                                       isAnswered:
-                                                          isAnsweredNotifier.value ||
+                                                          isAnsweredNotifier
+                                                              .value ||
                                                           isFirstStagePassedNotifier
                                                               .value,
                                                       isCorrect:
-                                                          isCorrectNotifier.value,
+                                                          isCorrectNotifier
+                                                              .value,
                                                       onOptionSelected:
                                                           _onOptionSelected,
                                                     ),
@@ -323,7 +322,8 @@ class _JobInterviewScreenState extends State<JobInterviewScreen>with TickerProvi
                                                                 .primaryColor,
                                                           ),
                                                       crossFadeState:
-                                                          isAnsweredNotifier.value
+                                                          isAnsweredNotifier
+                                                              .value
                                                           ? CrossFadeState
                                                                 .showSecond
                                                           : CrossFadeState

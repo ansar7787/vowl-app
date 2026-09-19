@@ -37,7 +37,8 @@ class SummarizeStoryWritingScreen extends StatefulWidget {
 }
 
 class _SummarizeStoryWritingScreenState
-    extends State<SummarizeStoryWritingScreen> with WritingGameScreenMixin {
+    extends State<SummarizeStoryWritingScreen>
+    with WritingGameScreenMixin {
   @override
   GameSubtype get gameType => widget.gameType;
 
@@ -47,10 +48,9 @@ class _SummarizeStoryWritingScreenState
   @override
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
-  
   final ValueNotifier<List<DescribeFrameSlot>> _slots = ValueNotifier([]);
 
-    WritingQuest? _lastQuest;
+  WritingQuest? _lastQuest;
   final ValueNotifier<bool> _pendingSubmit = ValueNotifier(false);
 
   late final ScrollController _scrollController;
@@ -59,7 +59,7 @@ class _SummarizeStoryWritingScreenState
   void dispose() {
     _scrollController.dispose();
     _slots.dispose();
-        _pendingSubmit.dispose();
+    _pendingSubmit.dispose();
     disposeWritingGame();
     super.dispose();
   }
@@ -171,17 +171,13 @@ class _SummarizeStoryWritingScreenState
   }
 
   @override
-
   void onQuestionReset() {
-
     _slots.value = [];
 
     _pendingSubmit.value = false;
-
   }
 
   @override
-
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('writing', level: widget.level);
@@ -477,4 +473,3 @@ class _SummarizeStoryWritingScreenState
     );
   }
 }
-

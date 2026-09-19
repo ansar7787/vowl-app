@@ -27,7 +27,8 @@ class RelativeClausesScreen extends StatefulWidget {
   State<RelativeClausesScreen> createState() => _RelativeClausesScreenState();
 }
 
-class _RelativeClausesScreenState extends State<RelativeClausesScreen>with SingleTickerProviderStateMixin, GrammarGameScreenMixin {
+class _RelativeClausesScreenState extends State<RelativeClausesScreen>
+    with SingleTickerProviderStateMixin, GrammarGameScreenMixin {
   @override
   GameSubtype get gameType => widget.gameType;
 
@@ -37,10 +38,9 @@ class _RelativeClausesScreenState extends State<RelativeClausesScreen>with Singl
   @override
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
-    
   final ValueNotifier<Offset?> _hookPoint = ValueNotifier(null);
   final ValueNotifier<int> _targetFish = ValueNotifier(-1);
-            final ValueNotifier<bool> _pendingJigsaw = ValueNotifier(false);
+  final ValueNotifier<bool> _pendingJigsaw = ValueNotifier(false);
   final ScrollController _scrollController = ScrollController();
   late AnimationController _particleController;
 
@@ -48,7 +48,7 @@ class _RelativeClausesScreenState extends State<RelativeClausesScreen>with Singl
   void dispose() {
     _hookPoint.dispose();
     _targetFish.dispose();
-                _pendingJigsaw.dispose();
+    _pendingJigsaw.dispose();
     _scrollController.dispose();
     _particleController.dispose();
     disposeGrammarGame();
@@ -128,19 +128,15 @@ class _RelativeClausesScreenState extends State<RelativeClausesScreen>with Singl
   }
 
   @override
-
   void onQuestionReset() {
-
     _hookPoint.value = null;
 
     _targetFish.value = -1;
 
     _pendingJigsaw.value = false;
-
   }
 
   @override
-
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('grammar', level: widget.level);
@@ -423,7 +419,8 @@ class _RelativeClausesScreenState extends State<RelativeClausesScreen>with Singl
                                                     child: Text(
                                                       quest.question?.replaceFirst(
                                                             RegExp(r'_{2,}'),
-                                                            (isAnsweredNotifier.value ||
+                                                            (isAnsweredNotifier
+                                                                            .value ||
                                                                         _pendingJigsaw
                                                                             .value) &&
                                                                     _targetFish
@@ -453,7 +450,8 @@ class _RelativeClausesScreenState extends State<RelativeClausesScreen>with Singl
                                                 ).animate().fadeIn(duration: 600.ms).slideY(begin: 0.2, end: 0),
 
                                                 // Result
-                                                if (isAnsweredNotifier.value) ...[
+                                                if (isAnsweredNotifier
+                                                    .value) ...[
                                                   SizedBox(
                                                     height: isCompact
                                                         ? 8.h

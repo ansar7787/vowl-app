@@ -32,7 +32,8 @@ class CorrectionWritingScreen extends StatefulWidget {
       _CorrectionWritingScreenState();
 }
 
-class _CorrectionWritingScreenState extends State<CorrectionWritingScreen> with WritingGameScreenMixin {
+class _CorrectionWritingScreenState extends State<CorrectionWritingScreen>
+    with WritingGameScreenMixin {
   @override
   GameSubtype get gameType => widget.gameType;
 
@@ -42,11 +43,10 @@ class _CorrectionWritingScreenState extends State<CorrectionWritingScreen> with 
   @override
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
-    
   final ValueNotifier<String?> _selectedCorrection = ValueNotifier(null);
   WritingQuest? _lastQuest;
 
-    final ValueNotifier<bool> _showEvidence = ValueNotifier(false);
+  final ValueNotifier<bool> _showEvidence = ValueNotifier(false);
 
   late final ScrollController _scrollController;
 
@@ -75,7 +75,7 @@ class _CorrectionWritingScreenState extends State<CorrectionWritingScreen> with 
   void dispose() {
     _scrollController.dispose();
     _selectedCorrection.dispose();
-        _showEvidence.dispose();
+    _showEvidence.dispose();
     disposeWritingGame();
     super.dispose();
   }
@@ -158,17 +158,13 @@ class _CorrectionWritingScreenState extends State<CorrectionWritingScreen> with 
   }
 
   @override
-
   void onQuestionReset() {
-
     _selectedCorrection.value = null;
 
     _showEvidence.value = false;
-
   }
 
   @override
-
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('writing', level: widget.level);
@@ -426,4 +422,3 @@ class _CorrectionWritingScreenState extends State<CorrectionWritingScreen> with 
     );
   }
 }
-

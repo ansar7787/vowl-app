@@ -28,7 +28,8 @@ class PrepositionChoiceScreen extends StatefulWidget {
       _PrepositionChoiceScreenState();
 }
 
-class _PrepositionChoiceScreenState extends State<PrepositionChoiceScreen> with GrammarGameScreenMixin {
+class _PrepositionChoiceScreenState extends State<PrepositionChoiceScreen>
+    with GrammarGameScreenMixin {
   @override
   GameSubtype get gameType => widget.gameType;
 
@@ -38,17 +39,16 @@ class _PrepositionChoiceScreenState extends State<PrepositionChoiceScreen> with 
   @override
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
-    
   final ValueNotifier<List<Offset>> _points = ValueNotifier([]);
   final ValueNotifier<int> _targetNode = ValueNotifier(-1);
-            final ValueNotifier<bool> _pendingJigsaw = ValueNotifier(false);
+  final ValueNotifier<bool> _pendingJigsaw = ValueNotifier(false);
   final ScrollController _scrollController = ScrollController();
 
   @override
   void dispose() {
     _points.dispose();
     _targetNode.dispose();
-                _pendingJigsaw.dispose();
+    _pendingJigsaw.dispose();
     _scrollController.dispose();
     disposeGrammarGame();
     super.dispose();
@@ -196,19 +196,15 @@ class _PrepositionChoiceScreenState extends State<PrepositionChoiceScreen> with 
   }
 
   @override
-
   void onQuestionReset() {
-
     _points.value = [];
 
     _targetNode.value = -1;
 
     _pendingJigsaw.value = false;
-
   }
 
   @override
-
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('grammar', level: widget.level);
@@ -401,7 +397,8 @@ class _PrepositionChoiceScreenState extends State<PrepositionChoiceScreen> with 
                                                       quest.sentenceWithBlank ??
                                                           quest.question ??
                                                           "____ sentence.",
-                                                      (isAnsweredNotifier.value ||
+                                                      (isAnsweredNotifier
+                                                                      .value ||
                                                                   _pendingJigsaw
                                                                       .value) &&
                                                               _targetNode

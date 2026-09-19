@@ -37,7 +37,8 @@ class SceneDescriptionScreen extends StatefulWidget {
   State<SceneDescriptionScreen> createState() => _SceneDescriptionScreenState();
 }
 
-class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>with SingleTickerProviderStateMixin, SpeakingGameScreenMixin {
+class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
+    with SingleTickerProviderStateMixin, SpeakingGameScreenMixin {
   @override
   GameSubtype get gameType => widget.gameType;
 
@@ -47,10 +48,9 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>with Sin
   @override
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
-    
   final ValueNotifier<Set<int>> _inspectedHotspots = ValueNotifier({});
   final ValueNotifier<int> _activeHotspot = ValueNotifier(-1);
-          
+
   late AnimationController _radarController;
 
   List<String> _hotspotLabels = [];
@@ -89,7 +89,7 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>with Sin
     _radarController.dispose();
     _inspectedHotspots.dispose();
     _activeHotspot.dispose();
-                _scrollController.dispose();
+    _scrollController.dispose();
     disposeSpeakingGame();
     super.dispose();
   }
@@ -105,10 +105,10 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>with Sin
       }
     });
   }
-
 
   void _onHotspotTap(int index) {
-    if (isAnsweredNotifier.value || _inspectedHotspots.value.contains(index)) return;
+    if (isAnsweredNotifier.value || _inspectedHotspots.value.contains(index))
+      return;
     hapticService.selection();
     if (!di.sl<AudioRecordingService>().isRecording) {
       soundService.playTts(_hotspotLabels[index]);
@@ -182,17 +182,13 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>with Sin
   }
 
   @override
-
   void onQuestionReset() {
-
     _inspectedHotspots.value = {};
 
     _activeHotspot.value = -1;
-
   }
 
   @override
-
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('speaking', level: widget.level);

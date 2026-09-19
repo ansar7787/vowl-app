@@ -29,7 +29,8 @@ class IdiomsScreen extends StatefulWidget {
   State<IdiomsScreen> createState() => _IdiomsScreenState();
 }
 
-class _IdiomsScreenState extends State<IdiomsScreen> with VocabularyGameScreenMixin {
+class _IdiomsScreenState extends State<IdiomsScreen>
+    with VocabularyGameScreenMixin {
   @override
   GameSubtype get gameType => widget.gameType;
 
@@ -39,15 +40,14 @@ class _IdiomsScreenState extends State<IdiomsScreen> with VocabularyGameScreenMi
   @override
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
-    
-          final ValueNotifier<String?> _selectedOption = ValueNotifier(null);
+  final ValueNotifier<String?> _selectedOption = ValueNotifier(null);
   final ScrollController _scrollController = ScrollController();
 
-    VocabularyQuest? _lastQuest;
+  VocabularyQuest? _lastQuest;
 
   @override
   void dispose() {
-                    _selectedOption.dispose();
+    _selectedOption.dispose();
     _scrollController.dispose();
     disposeVocabularyGame();
     super.dispose();
@@ -125,15 +125,11 @@ class _IdiomsScreenState extends State<IdiomsScreen> with VocabularyGameScreenMi
   }
 
   @override
-
   void onQuestionReset() {
-
     _selectedOption.value = null;
-
   }
 
   @override
-
   Widget build(BuildContext context) {
     return BlocConsumer<VocabularyBloc, VocabularyState>(
       listenWhen: vocabularyListenWhen,
@@ -163,7 +159,8 @@ class _IdiomsScreenState extends State<IdiomsScreen> with VocabularyGameScreenMi
               level: widget.level,
               isAnswered:
                   isAnsweredNotifier.value &&
-                  (isCorrectNotifier.value != null || !isFirstStagePassedNotifier.value),
+                  (isCorrectNotifier.value != null ||
+                      !isFirstStagePassedNotifier.value),
               isCorrect: isCorrectNotifier.value,
               showConfetti: showConfettiNotifier.value,
               hasStage2: true,
@@ -212,7 +209,8 @@ class _IdiomsScreenState extends State<IdiomsScreen> with VocabularyGameScreenMi
                                 slivers: [
                                   SliverToBoxAdapter(
                                     child: IgnorePointer(
-                                      ignoring: isFirstStagePassedNotifier.value,
+                                      ignoring:
+                                          isFirstStagePassedNotifier.value,
                                       child: ConstrainedBox(
                                         constraints: BoxConstraints(
                                           minHeight: constraints.maxHeight,
@@ -283,7 +281,8 @@ class _IdiomsScreenState extends State<IdiomsScreen> with VocabularyGameScreenMi
                                                       ),
                                                     SizedBox(
                                                       height:
-                                                          (isAnsweredNotifier.value ||
+                                                          (isAnsweredNotifier
+                                                                  .value ||
                                                               isFirstStagePassedNotifier
                                                                   .value)
                                                           ? 40.h
@@ -455,7 +454,8 @@ class _IdiomsScreenState extends State<IdiomsScreen> with VocabularyGameScreenMi
                 ),
               ],
 
-              if (isAnsweredNotifier.value && isCorrectNotifier.value == false) ...[
+              if (isAnsweredNotifier.value &&
+                  isCorrectNotifier.value == false) ...[
                 SizedBox(height: 10.h),
                 IdiomsSystemMessage(
                   text: "DECRYPTION FAILED. RE-EVALUATE SEQUENCE.",

@@ -26,7 +26,8 @@ class WordReorderScreen extends StatefulWidget {
   State<WordReorderScreen> createState() => _WordReorderScreenState();
 }
 
-class _WordReorderScreenState extends State<WordReorderScreen> with GrammarGameScreenMixin {
+class _WordReorderScreenState extends State<WordReorderScreen>
+    with GrammarGameScreenMixin {
   @override
   GameSubtype get gameType => widget.gameType;
 
@@ -36,22 +37,21 @@ class _WordReorderScreenState extends State<WordReorderScreen> with GrammarGameS
   @override
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
-      final ValueNotifier<List<int>> _availableIndices = ValueNotifier([]);
+  final ValueNotifier<List<int>> _availableIndices = ValueNotifier([]);
   final ValueNotifier<List<int>> _assembledIndices = ValueNotifier([]);
-        final ValueNotifier<bool> _pendingTypeSubmit = ValueNotifier(false);
+  final ValueNotifier<bool> _pendingTypeSubmit = ValueNotifier(false);
   final ScrollController _scrollController = ScrollController();
 
   @override
   void dispose() {
     _availableIndices.dispose();
     _assembledIndices.dispose();
-                _pendingTypeSubmit.dispose();
+    _pendingTypeSubmit.dispose();
     _scrollController.dispose();
     disposeGrammarGame();
     super.dispose();
   }
 
-    
   @override
   void initState() {
     super.initState();
@@ -144,19 +144,15 @@ class _WordReorderScreenState extends State<WordReorderScreen> with GrammarGameS
   double _lastKeyboardHeight = 0;
 
   @override
-
   void onQuestionReset() {
-
     _availableIndices.value = [];
 
     _assembledIndices.value = [];
 
     _pendingTypeSubmit.value = false;
-
   }
 
   @override
-
   Widget build(BuildContext context) {
     final keyboardHeight = MediaQuery.viewInsetsOf(context).bottom;
     if (keyboardHeight != _lastKeyboardHeight) {

@@ -27,7 +27,8 @@ class SpeedSpellingScreen extends StatefulWidget {
   State<SpeedSpellingScreen> createState() => _SpeedSpellingScreenState();
 }
 
-class _SpeedSpellingScreenState extends State<SpeedSpellingScreen> with EliteMasteryGameScreenMixin {
+class _SpeedSpellingScreenState extends State<SpeedSpellingScreen>
+    with EliteMasteryGameScreenMixin {
   @override
   GameSubtype get gameType => widget.gameType;
 
@@ -37,10 +38,10 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen> with EliteMas
   @override
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
-        final ScrollController _scrollController = ScrollController();
+  final ScrollController _scrollController = ScrollController();
   final ValueNotifier<String> _currentInput = ValueNotifier("");
   final ValueNotifier<List<String>> _shuffledChars = ValueNotifier([]);
-      final ValueNotifier<int> _attempts = ValueNotifier(0);
+  final ValueNotifier<int> _attempts = ValueNotifier(0);
   final ValueNotifier<List<int>> _tapHistory = ValueNotifier([]);
 
   // Below this available height, use tighter spacing. See the identical
@@ -71,9 +72,9 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen> with EliteMas
 
   @override
   void dispose() {
-        _currentInput.dispose();
+    _currentInput.dispose();
     _shuffledChars.dispose();
-            _attempts.dispose();
+    _attempts.dispose();
     _tapHistory.dispose();
     _scrollController.dispose();
     disposeEliteMasteryGame();
@@ -152,9 +153,7 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen> with EliteMas
   }
 
   @override
-
   void onQuestionReset() {
-
     _currentInput.value = "";
 
     _shuffledChars.value = [];
@@ -162,11 +161,9 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen> with EliteMas
     _attempts.value = 0;
 
     _tapHistory.value = [];
-
   }
 
   @override
-
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final isMidnight = context.watch<ThemeCubit>().state.isMidnight;
@@ -597,4 +594,3 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen> with EliteMas
     );
   }
 }
-

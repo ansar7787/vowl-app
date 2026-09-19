@@ -29,7 +29,8 @@ class CollocationsScreen extends StatefulWidget {
   State<CollocationsScreen> createState() => _CollocationsScreenState();
 }
 
-class _CollocationsScreenState extends State<CollocationsScreen>with TickerProviderStateMixin, VocabularyGameScreenMixin {
+class _CollocationsScreenState extends State<CollocationsScreen>
+    with TickerProviderStateMixin, VocabularyGameScreenMixin {
   @override
   GameSubtype get gameType => widget.gameType;
 
@@ -39,12 +40,11 @@ class _CollocationsScreenState extends State<CollocationsScreen>with TickerProvi
   @override
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
-    
-        final ValueNotifier<bool> _isDragPassed = ValueNotifier(false);
+  final ValueNotifier<bool> _isDragPassed = ValueNotifier(false);
   final ValueNotifier<String?> _selectedOption = ValueNotifier(null);
   final ScrollController _scrollController = ScrollController();
 
-    VocabularyQuest? _lastQuest;
+  VocabularyQuest? _lastQuest;
 
   @override
   void initState() {
@@ -68,7 +68,7 @@ class _CollocationsScreenState extends State<CollocationsScreen>with TickerProvi
 
   @override
   void dispose() {
-                _isDragPassed.dispose();
+    _isDragPassed.dispose();
     _selectedOption.dispose();
     _scrollController.dispose();
     disposeVocabularyGame();
@@ -142,17 +142,13 @@ class _CollocationsScreenState extends State<CollocationsScreen>with TickerProvi
   }
 
   @override
-
   void onQuestionReset() {
-
     _isDragPassed.value = false;
 
     _selectedOption.value = null;
-
   }
 
   @override
-
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
 

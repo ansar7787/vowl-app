@@ -204,7 +204,6 @@ class GrammarBloc extends Bloc<GrammarEvent, GrammarState> {
       }
     } else if (currentState.answerStatus.isCorrect) {
       // Level complete: the last question was answered correctly.
-      
 
       emit(
         const GrammarGameComplete(
@@ -232,32 +231,36 @@ class GrammarBloc extends Bloc<GrammarEvent, GrammarState> {
     if (_currentGameType == null || _currentLevel == null) return;
 
     updateUserRewards(
-      UpdateUserRewardsParams(
-        gameType: _currentGameType!.name,
-        level: _currentLevel!,
-        xpIncrease: GrammarConstants.xpPerLevel,
-        coinIncrease: GrammarConstants.coinsPerLevel,
-        starsEarned: starsEarned,
-      ),
-    ).catchError((e, st) {
-      debugPrint('[GrammarBloc] Persistence error: $e\n$st');
-      return const Right<Failure, void>(null);
-    }).then((_) {
-      updateCategoryStats(
-        UpdateCategoryStatsParams(
-          categoryId: _currentGameType!.name,
-          isCorrect: true,
-        ),
-      ).catchError((e, st) {
-        debugPrint('[GrammarBloc] Persistence error: $e\n$st');
-        return const Right<Failure, void>(null);
-      }).then((_) {
-        awardBadge('grammar_master').catchError((e, st) {
+          UpdateUserRewardsParams(
+            gameType: _currentGameType!.name,
+            level: _currentLevel!,
+            xpIncrease: GrammarConstants.xpPerLevel,
+            coinIncrease: GrammarConstants.coinsPerLevel,
+            starsEarned: starsEarned,
+          ),
+        )
+        .catchError((e, st) {
           debugPrint('[GrammarBloc] Persistence error: $e\n$st');
           return const Right<Failure, void>(null);
+        })
+        .then((_) {
+          updateCategoryStats(
+                UpdateCategoryStatsParams(
+                  categoryId: _currentGameType!.name,
+                  isCorrect: true,
+                ),
+              )
+              .catchError((e, st) {
+                debugPrint('[GrammarBloc] Persistence error: $e\n$st');
+                return const Right<Failure, void>(null);
+              })
+              .then((_) {
+                awardBadge('grammar_master').catchError((e, st) {
+                  debugPrint('[GrammarBloc] Persistence error: $e\n$st');
+                  return const Right<Failure, void>(null);
+                });
+              });
         });
-      });
-    });
   }
 
   void _onRetryQuestion(

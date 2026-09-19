@@ -28,7 +28,8 @@ class PartsOfSpeechScreen extends StatefulWidget {
   State<PartsOfSpeechScreen> createState() => _PartsOfSpeechScreenState();
 }
 
-class _PartsOfSpeechScreenState extends State<PartsOfSpeechScreen> with GrammarGameScreenMixin {
+class _PartsOfSpeechScreenState extends State<PartsOfSpeechScreen>
+    with GrammarGameScreenMixin {
   @override
   GameSubtype get gameType => widget.gameType;
   @override
@@ -37,14 +38,14 @@ class _PartsOfSpeechScreenState extends State<PartsOfSpeechScreen> with GrammarG
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
   final ValueNotifier<Offset> _dragOffset = ValueNotifier(Offset.zero);
-          
+
   final ValueNotifier<bool> _isWordSelected = ValueNotifier(false);
   final ValueNotifier<bool> _isSubmitting = ValueNotifier(false);
   final ScrollController _scrollController = ScrollController();
   @override
   void dispose() {
     _dragOffset.dispose();
-                _isSubmitting.dispose();
+    _isSubmitting.dispose();
     _isWordSelected.dispose();
     _scrollController.dispose();
     disposeGrammarGame();
@@ -120,12 +121,14 @@ class _PartsOfSpeechScreenState extends State<PartsOfSpeechScreen> with GrammarG
     };
     _onFlick(targetIndex, correctIndex);
   }
+
   @override
   void onQuestionReset() {
     _dragOffset.value = Offset.zero;
     _isWordSelected.value = false;
     _isSubmitting.value = false;
   }
+
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
@@ -198,7 +201,8 @@ class _PartsOfSpeechScreenState extends State<PartsOfSpeechScreen> with GrammarG
                                                 maxHeight:
                                                     constraints.maxHeight,
                                                 dragOffset: _dragOffset.value,
-                                                isAnswered: isAnsweredNotifier.value,
+                                                isAnswered:
+                                                    isAnsweredNotifier.value,
                                                 isWordSelected:
                                                     _isWordSelected.value,
                                                 onWordTap: () {
@@ -217,7 +221,8 @@ class _PartsOfSpeechScreenState extends State<PartsOfSpeechScreen> with GrammarG
                                                   );
                                                 },
                                                 onPanUpdate: (details) {
-                                                  if (isAnsweredNotifier.value) return;
+                                                  if (isAnsweredNotifier.value)
+                                                    return;
                                                   _dragOffset.value +=
                                                       details.delta;
                                                   _checkCollision(
@@ -227,7 +232,8 @@ class _PartsOfSpeechScreenState extends State<PartsOfSpeechScreen> with GrammarG
                                                   );
                                                 },
                                                 onPanEnd: (_) {
-                                                  if (isAnsweredNotifier.value) return;
+                                                  if (isAnsweredNotifier.value)
+                                                    return;
                                                   _dragOffset.value =
                                                       Offset.zero;
                                                 },
@@ -258,7 +264,8 @@ class _PartsOfSpeechScreenState extends State<PartsOfSpeechScreen> with GrammarG
   void _onStateChange(BuildContext context, GrammarState state) {
     if (state is GrammarLoaded) {
       final isNewQuestion = state.currentIndex != lastProcessedIndex;
-      final isRetry = isAnsweredNotifier.value && !state.answerStatus.isAnswered;
+      final isRetry =
+          isAnsweredNotifier.value && !state.answerStatus.isAnswered;
       final livesRestored =
           lastLives != null && state.livesRemaining > lastLives!;
 
@@ -348,6 +355,7 @@ class _PosQuestLayout extends StatelessWidget {
       bottom: (unit * 2.5).clamp(10.0, 30.0),
     );
   }
+
   @override
   Widget build(BuildContext context) {
     final gaps = _computeGaps();
@@ -414,7 +422,3 @@ class _PosQuestLayout extends StatelessWidget {
     );
   }
 }
-
-
-
-

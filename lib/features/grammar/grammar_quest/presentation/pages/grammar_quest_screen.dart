@@ -24,7 +24,8 @@ class GrammarQuestScreen extends StatefulWidget {
   State<GrammarQuestScreen> createState() => _GrammarQuestScreenState();
 }
 
-class _GrammarQuestScreenState extends State<GrammarQuestScreen> with GrammarGameScreenMixin {
+class _GrammarQuestScreenState extends State<GrammarQuestScreen>
+    with GrammarGameScreenMixin {
   @override
   GameSubtype get gameType => widget.gameType;
 
@@ -34,18 +35,18 @@ class _GrammarQuestScreenState extends State<GrammarQuestScreen> with GrammarGam
   @override
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
-            final ValueNotifier<bool> _pendingTypeSubmit = ValueNotifier(false);
+  final ValueNotifier<bool> _pendingTypeSubmit = ValueNotifier(false);
   final ScrollController _scrollController = ScrollController();
 
   @override
   void dispose() {
-                _pendingTypeSubmit.dispose();
+    _pendingTypeSubmit.dispose();
     _scrollController.dispose();
     disposeGrammarGame();
     super.dispose();
   }
 
-      @override
+  @override
   void initState() {
     super.initState();
     isAnsweredNotifier.addListener(() {
@@ -107,15 +108,11 @@ class _GrammarQuestScreenState extends State<GrammarQuestScreen> with GrammarGam
   }
 
   @override
-
   void onQuestionReset() {
-
     _pendingTypeSubmit.value = false;
-
   }
 
   @override
-
   Widget build(BuildContext context) {
     final theme = LevelThemeHelper.getTheme('grammar', level: widget.level);
     return BlocConsumer<GrammarBloc, GrammarState>(

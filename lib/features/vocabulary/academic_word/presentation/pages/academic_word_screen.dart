@@ -39,7 +39,8 @@ class AcademicWordScreen extends StatefulWidget {
 // State
 // ─────────────────────────────────────────────────────────────────────────────
 
-class _AcademicWordScreenState extends State<AcademicWordScreen> with VocabularyGameScreenMixin {
+class _AcademicWordScreenState extends State<AcademicWordScreen>
+    with VocabularyGameScreenMixin {
   @override
   GameSubtype get gameType => widget.gameType;
   @override
@@ -47,20 +48,20 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> with Vocabulary
   @override
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
-        final ValueNotifier<bool> _isDragPassed = ValueNotifier(false);
+  final ValueNotifier<bool> _isDragPassed = ValueNotifier(false);
   final ValueNotifier<String?> _misspelledWord = ValueNotifier(null);
   final ValueNotifier<bool> _isSlotSelected = ValueNotifier(false);
 
   final ScrollController _scrollController = ScrollController();
 
-    VocabularyQuest? _lastQuest;
+  VocabularyQuest? _lastQuest;
 
   final ValueNotifier<Offset> _dragOffset = ValueNotifier(Offset.zero);
   final ValueNotifier<int?> _activeShardIndex = ValueNotifier(null);
   BoxConstraints? _dragConstraints;
   @override
   void dispose() {
-                _isDragPassed.dispose();
+    _isDragPassed.dispose();
     _misspelledWord.dispose();
     _isSlotSelected.dispose();
     _dragOffset.dispose();
@@ -95,6 +96,7 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> with Vocabulary
     _cachedTheme = LevelThemeHelper.getTheme('vocabulary', level: widget.level);
     initVocabularyGame();
   }
+
   @override
   void didUpdateWidget(covariant AcademicWordScreen oldWidget) {
     super.didUpdateWidget(oldWidget);
@@ -115,6 +117,7 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> with Vocabulary
     _dragOffset.value = Offset.zero;
     _activeShardIndex.value = null;
   }
+
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<VocabularyBloc, VocabularyState>(
@@ -128,7 +131,8 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> with Vocabulary
   void _onStateChange(BuildContext context, VocabularyState state) {
     if (state is VocabularyLoaded) {
       final isNewQuestion = state.currentIndex != lastProcessedIndex;
-      final isRetry = isAnsweredNotifier.value && !state.answerStatus.isAnswered;
+      final isRetry =
+          isAnsweredNotifier.value && !state.answerStatus.isAnswered;
 
       if (isNewQuestion || isRetry) {
         if (_scrollController.hasClients) {
@@ -259,7 +263,8 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> with Vocabulary
                                           ignoring: _isDragPassed.value,
                                           child: _AcademicWordGameBody(
                                             quest: quest,
-                                            isAnswered: isAnsweredNotifier.value,
+                                            isAnswered:
+                                                isAnsweredNotifier.value,
                                             isCorrect: isCorrectNotifier.value,
                                             isFirstStagePassed:
                                                 _isDragPassed.value,
@@ -730,8 +735,3 @@ class _AcademicWordGameBody extends StatelessWidget {
     });
   }
 }
-
-
-
-
-

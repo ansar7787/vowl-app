@@ -31,8 +31,10 @@ class FixTheSentenceDigitalBlackboard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final String escapedTarget = RegExp.escape(targetWord);
-    final RegExp wordRegExp =
-        RegExp(r'\b' + escapedTarget + r'\b', caseSensitive: false);
+    final RegExp wordRegExp = RegExp(
+      r'\b' + escapedTarget + r'\b',
+      caseSensitive: false,
+    );
     final Match? match = wordRegExp.firstMatch(fullText);
 
     String prefix = "";

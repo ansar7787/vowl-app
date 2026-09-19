@@ -27,7 +27,8 @@ class ConjunctionsScreen extends StatefulWidget {
   State<ConjunctionsScreen> createState() => _ConjunctionsScreenState();
 }
 
-class _ConjunctionsScreenState extends State<ConjunctionsScreen>with SingleTickerProviderStateMixin, GrammarGameScreenMixin {
+class _ConjunctionsScreenState extends State<ConjunctionsScreen>
+    with SingleTickerProviderStateMixin, GrammarGameScreenMixin {
   @override
   GameSubtype get gameType => widget.gameType;
 
@@ -37,15 +38,14 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen>with SingleTicke
   @override
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
-    
   final ValueNotifier<String?> _placedBrick = ValueNotifier(null);
-            final ValueNotifier<bool> _pendingJigsaw = ValueNotifier(false);
+  final ValueNotifier<bool> _pendingJigsaw = ValueNotifier(false);
   final ScrollController _scrollController = ScrollController();
 
   @override
   void dispose() {
     _placedBrick.dispose();
-                _pendingJigsaw.dispose();
+    _pendingJigsaw.dispose();
     _scrollController.dispose();
     disposeGrammarGame();
     super.dispose();
@@ -70,7 +70,6 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen>with SingleTicke
 
     initGrammarGame();
   }
-
 
   void _scrollToBottom() {
     Future.delayed(const Duration(milliseconds: 150), () {
@@ -124,17 +123,13 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen>with SingleTicke
   }
 
   @override
-
   void onQuestionReset() {
-
     _placedBrick.value = null;
 
     _pendingJigsaw.value = false;
-
   }
 
   @override
-
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('grammar', level: widget.level);

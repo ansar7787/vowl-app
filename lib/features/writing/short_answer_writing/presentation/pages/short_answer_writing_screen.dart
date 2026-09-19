@@ -35,7 +35,8 @@ class ShortAnswerScreen extends StatefulWidget {
   State<ShortAnswerScreen> createState() => _ShortAnswerScreenState();
 }
 
-class _ShortAnswerScreenState extends State<ShortAnswerScreen> with WritingGameScreenMixin {
+class _ShortAnswerScreenState extends State<ShortAnswerScreen>
+    with WritingGameScreenMixin {
   @override
   GameSubtype get gameType => widget.gameType;
 
@@ -45,10 +46,10 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen> with WritingGameS
   @override
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
-    final _answerController = TextEditingController();
+  final _answerController = TextEditingController();
   final _scrollController = ScrollController();
 
-    final ValueNotifier<bool> _showContextSentence = ValueNotifier(false);
+  final ValueNotifier<bool> _showContextSentence = ValueNotifier(false);
   final ValueNotifier<double> _inkLevel = ValueNotifier(0.0);
   final ValueNotifier<int> _wordCount = ValueNotifier(0);
   WritingQuest? _lastQuest;
@@ -64,7 +65,7 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen> with WritingGameS
   void dispose() {
     _answerController.dispose();
     _scrollController.dispose();
-        _showContextSentence.dispose();
+    _showContextSentence.dispose();
     _inkLevel.dispose();
     _wordCount.dispose();
     disposeWritingGame();
@@ -170,9 +171,7 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen> with WritingGameS
   }
 
   @override
-
   void onQuestionReset() {
-
     _showContextSentence.value = false;
 
     _inkLevel.value = 0.0;
@@ -180,11 +179,9 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen> with WritingGameS
     _wordCount.value = 0;
 
     _answerController.clear();
-
   }
 
   @override
-
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('writing', level: widget.level);
@@ -382,7 +379,12 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen> with WritingGameS
                                         ),
                                       ],
                                       SizedBox(
-                                        height: !isAnswered ? MediaQuery.viewInsetsOf(context).bottom + 40.h : 160.h,
+                                        height: !isAnswered
+                                            ? MediaQuery.viewInsetsOf(
+                                                    context,
+                                                  ).bottom +
+                                                  40.h
+                                            : 160.h,
                                       ),
                                     ],
                                   ),

@@ -31,7 +31,8 @@ class ReadAndAnswerScreen extends StatefulWidget {
   State<ReadAndAnswerScreen> createState() => _ReadAndAnswerScreenState();
 }
 
-class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen> with ReadingGameScreenMixin {
+class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen>
+    with ReadingGameScreenMixin {
   @override
   GameSubtype get gameType => widget.gameType;
 
@@ -41,14 +42,13 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen> with ReadingG
   @override
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
-    
-    final ValueNotifier<int?> _pendingSelectedIndex = ValueNotifier(null);
+  final ValueNotifier<int?> _pendingSelectedIndex = ValueNotifier(null);
   final ValueNotifier<bool> _showEvidenceStep = ValueNotifier(false);
   final ScrollController _scrollController = ScrollController();
 
   @override
   void dispose() {
-        _pendingSelectedIndex.dispose();
+    _pendingSelectedIndex.dispose();
     _showEvidenceStep.dispose();
     _scrollController.dispose();
     disposeReadingGame();
@@ -126,17 +126,13 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen> with ReadingG
   }
 
   @override
-
   void onQuestionReset() {
-
     _pendingSelectedIndex.value = null;
 
     _showEvidenceStep.value = false;
-
   }
 
   @override
-
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme(

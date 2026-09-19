@@ -30,7 +30,8 @@ class DetailSpotlightScreen extends StatefulWidget {
   State<DetailSpotlightScreen> createState() => _DetailSpotlightScreenState();
 }
 
-class _DetailSpotlightScreenState extends State<DetailSpotlightScreen> with ListeningGameScreenMixin {
+class _DetailSpotlightScreenState extends State<DetailSpotlightScreen>
+    with ListeningGameScreenMixin {
   @override
   GameSubtype get gameType => widget.gameType;
 
@@ -40,17 +41,16 @@ class _DetailSpotlightScreenState extends State<DetailSpotlightScreen> with List
   @override
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
-    
   final GlobalKey<SpeedChallengeTimerState> _timerKey =
       GlobalKey<SpeedChallengeTimerState>();
 
-            final ValueNotifier<int?> _selectedIndex = ValueNotifier(null);
+  final ValueNotifier<int?> _selectedIndex = ValueNotifier(null);
   final ValueNotifier<int?> _pendingSelectedIndex = ValueNotifier(null);
   final ScrollController _scrollController = ScrollController();
 
   @override
   void dispose() {
-                _selectedIndex.dispose();
+    _selectedIndex.dispose();
     _pendingSelectedIndex.dispose();
     _spotlightPos.dispose();
     _scrollController.dispose();
@@ -160,19 +160,15 @@ class _DetailSpotlightScreenState extends State<DetailSpotlightScreen> with List
   }
 
   @override
-
   void onQuestionReset() {
-
     _selectedIndex.value = null;
 
     _pendingSelectedIndex.value = null;
 
     _spotlightPos.value = const Offset(0, 0);
-
   }
 
   @override
-
   Widget build(BuildContext context) {
     final theme = LevelThemeHelper.getTheme('listening', level: widget.level);
 
@@ -281,7 +277,8 @@ class _DetailSpotlightScreenState extends State<DetailSpotlightScreen> with List
                                               quest.correctAnswerIndex ?? 0,
                                           color: theme.primaryColor,
                                           isAnswered: isAnsweredNotifier.value,
-                                          isCorrectState: isCorrectNotifier.value,
+                                          isCorrectState:
+                                              isCorrectNotifier.value,
                                           selectedIndex: _selectedIndex.value,
                                           spotlightPos: _spotlightPos,
                                           onSearch: (pos) {

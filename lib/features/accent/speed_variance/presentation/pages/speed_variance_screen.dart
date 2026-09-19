@@ -28,7 +28,8 @@ class SpeedVarianceScreen extends StatefulWidget {
   State<SpeedVarianceScreen> createState() => _SpeedVarianceScreenState();
 }
 
-class _SpeedVarianceScreenState extends State<SpeedVarianceScreen> with AccentGameScreenMixin {
+class _SpeedVarianceScreenState extends State<SpeedVarianceScreen>
+    with AccentGameScreenMixin {
   @override
   GameSubtype get gameType => widget.gameType;
 
@@ -39,11 +40,11 @@ class _SpeedVarianceScreenState extends State<SpeedVarianceScreen> with AccentGa
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
   final ScrollController _scrollController = ScrollController();
-    
-            final ValueNotifier<double> _dialRotation = ValueNotifier(0.0);
+
+  final ValueNotifier<double> _dialRotation = ValueNotifier(0.0);
   final ValueNotifier<bool> _isDragging = ValueNotifier(false);
   final ValueNotifier<int?> _selectedIndex = ValueNotifier(null);
-  
+
   final ValueNotifier<bool> _isNaturalSpeed = ValueNotifier(true);
   final GlobalKey<SpeedChallengeTimerState> _timerKey =
       GlobalKey<SpeedChallengeTimerState>();
@@ -71,10 +72,10 @@ class _SpeedVarianceScreenState extends State<SpeedVarianceScreen> with AccentGa
   @override
   void dispose() {
     _scrollController.dispose();
-                _dialRotation.dispose();
+    _dialRotation.dispose();
     _isDragging.dispose();
     _selectedIndex.dispose();
-        _isNaturalSpeed.dispose();
+    _isNaturalSpeed.dispose();
     disposeAccentGame();
     super.dispose();
   }
@@ -130,7 +131,9 @@ class _SpeedVarianceScreenState extends State<SpeedVarianceScreen> with AccentGa
   }
 
   void _onDialRelease() {
-    if (isAnsweredNotifier.value || isFirstStagePassedNotifier.value || !_isDragging.value) {
+    if (isAnsweredNotifier.value ||
+        isFirstStagePassedNotifier.value ||
+        !_isDragging.value) {
       return;
     }
     _isDragging.value = false;
@@ -194,9 +197,7 @@ class _SpeedVarianceScreenState extends State<SpeedVarianceScreen> with AccentGa
   }
 
   @override
-
   void onQuestionReset() {
-
     _dialRotation.value = 0.0;
 
     _isDragging.value = false;
@@ -204,11 +205,9 @@ class _SpeedVarianceScreenState extends State<SpeedVarianceScreen> with AccentGa
     _selectedIndex.value = null;
 
     _isNaturalSpeed.value = true;
-
   }
 
   @override
-
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('accent', level: widget.level);

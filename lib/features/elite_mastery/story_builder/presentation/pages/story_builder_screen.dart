@@ -28,7 +28,8 @@ class StoryBuilderScreen extends StatefulWidget {
   State<StoryBuilderScreen> createState() => _StoryBuilderScreenState();
 }
 
-class _StoryBuilderScreenState extends State<StoryBuilderScreen> with EliteMasteryGameScreenMixin {
+class _StoryBuilderScreenState extends State<StoryBuilderScreen>
+    with EliteMasteryGameScreenMixin {
   @override
   GameSubtype get gameType => widget.gameType;
 
@@ -38,11 +39,11 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> with EliteMaste
   @override
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
-        final ScrollController _scrollController = ScrollController();
+  final ScrollController _scrollController = ScrollController();
 
   final ValueNotifier<List<int>> _currentOrder = ValueNotifier([]);
-        VisualConfig? _visualConfig;
-  
+  VisualConfig? _visualConfig;
+
   // Below this available height, use tighter spacing. See the identical
   // constant in accent_shadowing_screen.dart / idiom_match_screen.dart /
   // speed_spelling_screen.dart — worth consolidating into one shared
@@ -71,8 +72,8 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> with EliteMaste
 
   @override
   void dispose() {
-        _currentOrder.dispose();
-                _scrollController.dispose();
+    _currentOrder.dispose();
+    _scrollController.dispose();
     disposeEliteMasteryGame();
     super.dispose();
   }
@@ -99,7 +100,6 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> with EliteMaste
     _currentOrder.value = newOrder;
     hapticService.selection();
   }
-
 
   bool isCorrectNotifierSequence(List<int> current, List<int>? correctIndices) {
     if (correctIndices == null || current.length != correctIndices.length) {
@@ -118,7 +118,10 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> with EliteMaste
       return;
     }
 
-    bool isCorrect = isCorrectNotifierSequence(_currentOrder.value, correctOrder);
+    bool isCorrect = isCorrectNotifierSequence(
+      _currentOrder.value,
+      correctOrder,
+    );
 
     if (isCorrect) {
       hapticService.success();
@@ -152,15 +155,11 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> with EliteMaste
   }
 
   @override
-
   void onQuestionReset() {
-
     _currentOrder.value = [];
-
   }
 
   @override
-
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final isMidnight = context.watch<ThemeCubit>().state.isMidnight;
@@ -189,7 +188,8 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> with EliteMaste
               level: widget.level,
               isAnswered:
                   isAnsweredNotifier.value &&
-                  (isCorrectNotifier.value != null || !isFirstStagePassedNotifier.value),
+                  (isCorrectNotifier.value != null ||
+                      !isFirstStagePassedNotifier.value),
               state: state,
               isCorrect: isCorrectNotifier.value,
               isFinalFailure: (state is EliteMasteryLoaded)
@@ -371,7 +371,9 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> with EliteMaste
               ),
               SliverPadding(
                 padding: EdgeInsets.symmetric(horizontal: 16.w),
-                sliver: isFirstStagePassedNotifier.value && !isAnsweredNotifier.value
+                sliver:
+                    isFirstStagePassedNotifier.value &&
+                        !isAnsweredNotifier.value
                     ? SliverList(
                         delegate: SliverChildBuilderDelegate(
                           (context, index) => Padding(
@@ -511,7 +513,8 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> with EliteMaste
 
                           SizedBox(
                             height:
-                                isAnsweredNotifier.value || isFirstStagePassedNotifier.value
+                                isAnsweredNotifier.value ||
+                                    isFirstStagePassedNotifier.value
                                 ? 160.h
                                 : 60.h,
                           ),
@@ -549,4 +552,3 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> with EliteMaste
     );
   }
 }
-

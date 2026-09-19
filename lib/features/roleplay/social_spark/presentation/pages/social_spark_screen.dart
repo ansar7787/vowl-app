@@ -30,7 +30,8 @@ class SocialSparkScreen extends StatefulWidget {
   State<SocialSparkScreen> createState() => _SocialSparkScreenState();
 }
 
-class _SocialSparkScreenState extends State<SocialSparkScreen>with TickerProviderStateMixin, RoleplayGameScreenMixin {
+class _SocialSparkScreenState extends State<SocialSparkScreen>
+    with TickerProviderStateMixin, RoleplayGameScreenMixin {
   @override
   GameSubtype get gameType => widget.gameType;
 
@@ -40,15 +41,12 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>with TickerProvide
   @override
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
-    
   late AnimationController _pulseController;
 
-  
   // Track selected words by their original shuffled index to support duplicate words flawlessly
   final ValueNotifier<List<int>> _selectedIndices = ValueNotifier([]);
   final ScrollController _scrollController = ScrollController();
 
-        
   @override
   void initState() {
     super.initState();
@@ -78,11 +76,10 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>with TickerProvide
   void dispose() {
     _pulseController.dispose();
     _selectedIndices.dispose();
-                    _scrollController.dispose();
+    _scrollController.dispose();
     disposeRoleplayGame();
     super.dispose();
   }
-
 
   void _onStarTap(int index) {
     if (isAnsweredNotifier.value || isFirstStagePassedNotifier.value) return;
@@ -156,15 +153,11 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>with TickerProvide
   }
 
   @override
-
   void onQuestionReset() {
-
     _selectedIndices.value = [];
-
   }
 
   @override
-
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('roleplay', level: widget.level);
@@ -195,7 +188,8 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>with TickerProvide
               level: widget.level,
               isAnswered:
                   isAnsweredNotifier.value &&
-                  (isCorrectNotifier.value != null || !isFirstStagePassedNotifier.value),
+                  (isCorrectNotifier.value != null ||
+                      !isFirstStagePassedNotifier.value),
               isCorrect: isCorrectNotifier.value,
               showConfetti: showConfettiNotifier.value,
               onContinue: () =>
@@ -258,13 +252,16 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>with TickerProvide
                                                       color: theme.primaryColor,
                                                       isDark: isDark,
                                                       isAnswered:
-                                                          isAnsweredNotifier.value &&
-                                                          (isCorrectNotifier.value !=
+                                                          isAnsweredNotifier
+                                                              .value &&
+                                                          (isCorrectNotifier
+                                                                      .value !=
                                                                   null ||
                                                               !isFirstStagePassedNotifier
                                                                   .value),
                                                       isCorrect:
-                                                          isCorrectNotifier.value,
+                                                          isCorrectNotifier
+                                                              .value,
                                                     ),
                                                     SizedBox(
                                                       height: isCompact
@@ -280,13 +277,16 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>with TickerProvide
                                                           _selectedIndices
                                                               .value,
                                                       isAnswered:
-                                                          isAnsweredNotifier.value &&
-                                                          (isCorrectNotifier.value !=
+                                                          isAnsweredNotifier
+                                                              .value &&
+                                                          (isCorrectNotifier
+                                                                      .value !=
                                                                   null ||
                                                               !isFirstStagePassedNotifier
                                                                   .value),
                                                       isCorrect:
-                                                          isCorrectNotifier.value,
+                                                          isCorrectNotifier
+                                                              .value,
                                                       pulseValue:
                                                           _pulseController
                                                               .value,
@@ -299,7 +299,8 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>with TickerProvide
                                                     ),
 
                                                     // Trigger Action Buttons
-                                                    if (!isAnsweredNotifier.value &&
+                                                    if (!isAnsweredNotifier
+                                                            .value &&
                                                         _selectedIndices
                                                             .value
                                                             .isNotEmpty)
@@ -503,7 +504,8 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>with TickerProvide
                                 ],
                               ),
                             ),
-                            if (isFirstStagePassedNotifier.value && !isAnsweredNotifier.value)
+                            if (isFirstStagePassedNotifier.value &&
+                                !isAnsweredNotifier.value)
                               SpeakToConfirmOverlay(
                                 expectedText:
                                     quest.correctAnswer ?? currentText,

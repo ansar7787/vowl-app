@@ -35,7 +35,8 @@ class DescribeSituationScreen extends StatefulWidget {
       _DescribeSituationScreenState();
 }
 
-class _DescribeSituationScreenState extends State<DescribeSituationScreen> with WritingGameScreenMixin {
+class _DescribeSituationScreenState extends State<DescribeSituationScreen>
+    with WritingGameScreenMixin {
   @override
   GameSubtype get gameType => widget.gameType;
 
@@ -45,12 +46,12 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen> with 
   @override
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
-      final _textController = TextEditingController();
+  final _textController = TextEditingController();
 
   final ValueNotifier<List<String>> _usedKeywords = ValueNotifier([]);
   final ValueNotifier<int?> _expandedEmojiIndex = ValueNotifier(null);
 
-    final ValueNotifier<bool> _showSpeakToConfirm = ValueNotifier(false);
+  final ValueNotifier<bool> _showSpeakToConfirm = ValueNotifier(false);
   final ValueNotifier<int> _wordCount = ValueNotifier(0);
   WritingQuest? _lastQuest;
   final ValueNotifier<bool> _isSubmitting = ValueNotifier(false);
@@ -85,7 +86,7 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen> with 
     _textController.dispose();
     _usedKeywords.dispose();
     _expandedEmojiIndex.dispose();
-        _showSpeakToConfirm.dispose();
+    _showSpeakToConfirm.dispose();
     _wordCount.dispose();
     _isSubmitting.dispose();
     disposeWritingGame();
@@ -292,9 +293,7 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen> with 
   }
 
   @override
-
   void onQuestionReset() {
-
     _usedKeywords.value = [];
 
     _expandedEmojiIndex.value = null;
@@ -306,11 +305,9 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen> with 
     _isSubmitting.value = false;
 
     _textController.clear();
-
   }
 
   @override
-
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('writing', level: widget.level);
@@ -530,7 +527,12 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen> with 
                                           ),
                                         ),
                                       SizedBox(
-                                        height: !isAnswered ? MediaQuery.viewInsetsOf(context).bottom + 40.h : 160.h,
+                                        height: !isAnswered
+                                            ? MediaQuery.viewInsetsOf(
+                                                    context,
+                                                  ).bottom +
+                                                  40.h
+                                            : 160.h,
                                       ),
                                     ],
                                   ),

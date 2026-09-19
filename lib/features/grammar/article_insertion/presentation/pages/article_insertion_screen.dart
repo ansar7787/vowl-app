@@ -27,7 +27,8 @@ class ArticleInsertionScreen extends StatefulWidget {
   State<ArticleInsertionScreen> createState() => _ArticleInsertionScreenState();
 }
 
-class _ArticleInsertionScreenState extends State<ArticleInsertionScreen> with GrammarGameScreenMixin {
+class _ArticleInsertionScreenState extends State<ArticleInsertionScreen>
+    with GrammarGameScreenMixin {
   @override
   GameSubtype get gameType => widget.gameType;
 
@@ -37,14 +38,14 @@ class _ArticleInsertionScreenState extends State<ArticleInsertionScreen> with Gr
   @override
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
-      final ValueNotifier<String?> _selectedArticle = ValueNotifier(null);
-            final ValueNotifier<bool> _pendingJigsaw = ValueNotifier(false);
+  final ValueNotifier<String?> _selectedArticle = ValueNotifier(null);
+  final ValueNotifier<bool> _pendingJigsaw = ValueNotifier(false);
   final ScrollController _scrollController = ScrollController();
 
   @override
   void dispose() {
     _selectedArticle.dispose();
-                _pendingJigsaw.dispose();
+    _pendingJigsaw.dispose();
     _scrollController.dispose();
     disposeGrammarGame();
     super.dispose();
@@ -176,17 +177,13 @@ class _ArticleInsertionScreenState extends State<ArticleInsertionScreen> with Gr
   }
 
   @override
-
   void onQuestionReset() {
-
     _selectedArticle.value = null;
 
     _pendingJigsaw.value = false;
-
   }
 
   @override
-
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('grammar', level: widget.level);

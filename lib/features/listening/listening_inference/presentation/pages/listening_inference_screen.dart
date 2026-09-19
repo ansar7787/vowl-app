@@ -32,7 +32,8 @@ class ListeningInferenceScreen extends StatefulWidget {
       _ListeningInferenceScreenState();
 }
 
-class _ListeningInferenceScreenState extends State<ListeningInferenceScreen>with SingleTickerProviderStateMixin, ListeningGameScreenMixin {
+class _ListeningInferenceScreenState extends State<ListeningInferenceScreen>
+    with SingleTickerProviderStateMixin, ListeningGameScreenMixin {
   @override
   GameSubtype get gameType => widget.gameType;
 
@@ -42,17 +43,16 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen>with
   @override
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
-    
   final GlobalKey<SpeedChallengeTimerState> _timerKey =
       GlobalKey<SpeedChallengeTimerState>();
 
   late AnimationController _pulseController;
-            final ValueNotifier<int?> _selectedIndex = ValueNotifier(null);
+  final ValueNotifier<int?> _selectedIndex = ValueNotifier(null);
   final ScrollController _scrollController = ScrollController();
 
   @override
   void dispose() {
-                _selectedIndex.dispose();
+    _selectedIndex.dispose();
     _pulseController.dispose();
     _scrollController.dispose();
     disposeListeningGame();
@@ -229,15 +229,11 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen>with
   }
 
   @override
-
   void onQuestionReset() {
-
     _selectedIndex.value = null;
-
   }
 
   @override
-
   Widget build(BuildContext context) {
     final theme = LevelThemeHelper.getTheme('listening', level: widget.level);
 

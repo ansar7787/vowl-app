@@ -34,7 +34,8 @@ class DailyJournalScreen extends StatefulWidget {
   State<DailyJournalScreen> createState() => _DailyJournalScreenState();
 }
 
-class _DailyJournalScreenState extends State<DailyJournalScreen> with WritingGameScreenMixin {
+class _DailyJournalScreenState extends State<DailyJournalScreen>
+    with WritingGameScreenMixin {
   @override
   GameSubtype get gameType => widget.gameType;
 
@@ -44,9 +45,9 @@ class _DailyJournalScreenState extends State<DailyJournalScreen> with WritingGam
   @override
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
-      final _controller = TextEditingController();
+  final _controller = TextEditingController();
 
-    final ValueNotifier<bool> _showSpeakToConfirm = ValueNotifier(false);
+  final ValueNotifier<bool> _showSpeakToConfirm = ValueNotifier(false);
   final ValueNotifier<int> _wordCount = ValueNotifier(0);
   final ValueNotifier<double> _journalProgress = ValueNotifier(0.0);
   WritingQuest? _lastQuest;
@@ -80,7 +81,7 @@ class _DailyJournalScreenState extends State<DailyJournalScreen> with WritingGam
   void dispose() {
     _scrollController.dispose();
     _controller.dispose();
-        _showSpeakToConfirm.dispose();
+    _showSpeakToConfirm.dispose();
     _wordCount.dispose();
     _journalProgress.dispose();
     _isSubmitting.dispose();
@@ -200,9 +201,7 @@ class _DailyJournalScreenState extends State<DailyJournalScreen> with WritingGam
   }
 
   @override
-
   void onQuestionReset() {
-
     _showSpeakToConfirm.value = false;
 
     _wordCount.value = 0;
@@ -212,11 +211,9 @@ class _DailyJournalScreenState extends State<DailyJournalScreen> with WritingGam
     _isSubmitting.value = false;
 
     _controller.clear();
-
   }
 
   @override
-
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('writing', level: widget.level);
@@ -433,7 +430,12 @@ class _DailyJournalScreenState extends State<DailyJournalScreen> with WritingGam
                                           ),
                                         ),
                                       SizedBox(
-                                        height: !isAnswered ? MediaQuery.viewInsetsOf(context).bottom + 40.h : 160.h,
+                                        height: !isAnswered
+                                            ? MediaQuery.viewInsetsOf(
+                                                    context,
+                                                  ).bottom +
+                                                  40.h
+                                            : 160.h,
                                       ),
                                     ],
                                   ),

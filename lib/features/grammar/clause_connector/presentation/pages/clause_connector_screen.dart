@@ -24,7 +24,8 @@ class ClauseConnectorScreen extends StatefulWidget {
   State<ClauseConnectorScreen> createState() => _ClauseConnectorScreenState();
 }
 
-class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> with GrammarGameScreenMixin {
+class _ClauseConnectorScreenState extends State<ClauseConnectorScreen>
+    with GrammarGameScreenMixin {
   @override
   GameSubtype get gameType => widget.gameType;
 
@@ -34,15 +35,14 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> with Gram
   @override
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
-    
   final ValueNotifier<String?> _draggingConnector = ValueNotifier(null);
-            final ValueNotifier<bool> _pendingTypeSubmit = ValueNotifier(false);
+  final ValueNotifier<bool> _pendingTypeSubmit = ValueNotifier(false);
   final ScrollController _scrollController = ScrollController();
 
   @override
   void dispose() {
     _draggingConnector.dispose();
-                _pendingTypeSubmit.dispose();
+    _pendingTypeSubmit.dispose();
     _scrollController.dispose();
     disposeGrammarGame();
     super.dispose();
@@ -114,17 +114,13 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> with Gram
   }
 
   @override
-
   void onQuestionReset() {
-
     _draggingConnector.value = null;
 
     _pendingTypeSubmit.value = false;
-
   }
 
   @override
-
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('grammar', level: widget.level);
@@ -367,7 +363,9 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> with Gram
                   : BorderStyle.solid,
             ),
             boxShadow: [
-              if (isHighlight || isAnsweredNotifier.value || _pendingTypeSubmit.value)
+              if (isHighlight ||
+                  isAnsweredNotifier.value ||
+                  _pendingTypeSubmit.value)
                 BoxShadow(
                   color: portColor.withValues(alpha: 0.2),
                   blurRadius: 20,

@@ -32,7 +32,8 @@ class FixTheSentenceScreen extends StatefulWidget {
   State<FixTheSentenceScreen> createState() => _FixTheSentenceScreenState();
 }
 
-class _FixTheSentenceScreenState extends State<FixTheSentenceScreen> with WritingGameScreenMixin {
+class _FixTheSentenceScreenState extends State<FixTheSentenceScreen>
+    with WritingGameScreenMixin {
   @override
   GameSubtype get gameType => widget.gameType;
 
@@ -42,12 +43,11 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen> with Writin
   @override
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
-    
   final _ErasePointsNotifier _erasePoints = _ErasePointsNotifier();
   final ValueNotifier<bool> _isWiped = ValueNotifier(false);
   final ValueNotifier<String?> _selectedOption = ValueNotifier(null);
   final ValueNotifier<String?> _pendingSelectedOption = ValueNotifier(null);
-    final ValueNotifier<int> _erasedAmount = ValueNotifier(0);
+  final ValueNotifier<int> _erasedAmount = ValueNotifier(0);
   WritingQuest? _lastQuest;
   final ValueNotifier<List<String>?> _shuffledOptions = ValueNotifier(null);
   final _ttsService = di.sl<TtsService>();
@@ -61,7 +61,7 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen> with Writin
     _isWiped.dispose();
     _selectedOption.dispose();
     _pendingSelectedOption.dispose();
-        _erasedAmount.dispose();
+    _erasedAmount.dispose();
     _shuffledOptions.dispose();
     disposeWritingGame();
     super.dispose();
@@ -151,9 +151,7 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen> with Writin
   }
 
   @override
-
   void onQuestionReset() {
-
     _isWiped.value = false;
 
     _selectedOption.value = null;
@@ -163,11 +161,9 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen> with Writin
     _erasedAmount.value = 0;
 
     _shuffledOptions.value = null;
-
   }
 
   @override
-
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('writing', level: widget.level);

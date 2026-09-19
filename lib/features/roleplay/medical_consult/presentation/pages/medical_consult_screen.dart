@@ -32,7 +32,8 @@ class MedicalConsultScreen extends StatefulWidget {
   State<MedicalConsultScreen> createState() => _MedicalConsultScreenState();
 }
 
-class _MedicalConsultScreenState extends State<MedicalConsultScreen>with TickerProviderStateMixin, RoleplayGameScreenMixin {
+class _MedicalConsultScreenState extends State<MedicalConsultScreen>
+    with TickerProviderStateMixin, RoleplayGameScreenMixin {
   @override
   GameSubtype get gameType => widget.gameType;
 
@@ -42,13 +43,12 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen>with TickerP
   @override
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
-    
   late AnimationController _sweepController;
   late AnimationController _pulseController;
 
-    final ValueNotifier<List<String>> _diagnosedSymptoms = ValueNotifier([]);
+  final ValueNotifier<List<String>> _diagnosedSymptoms = ValueNotifier([]);
   final ScrollController _scrollController = ScrollController();
-        
+
   // Drag coordinate for physical scanning lens
   final ValueNotifier<Offset> _scanOffset = ValueNotifier(Offset.zero);
 
@@ -90,13 +90,12 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen>with TickerP
     _sweepController.dispose();
     _pulseController.dispose();
     _diagnosedSymptoms.dispose();
-                    _scanOffset.dispose();
+    _scanOffset.dispose();
     _scannedGlitches.dispose();
     _scrollController.dispose();
     disposeRoleplayGame();
     super.dispose();
   }
-
 
   Offset _getAnatomicalOffset(String text) {
     final lower = text.toLowerCase();
@@ -232,19 +231,15 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen>with TickerP
   }
 
   @override
-
   void onQuestionReset() {
-
     _diagnosedSymptoms.value = [];
 
     _scanOffset.value = Offset.zero;
 
     _scannedGlitches.value = [];
-
   }
 
   @override
-
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('roleplay', level: widget.level);
@@ -272,7 +267,8 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen>with TickerP
               level: widget.level,
               isAnswered:
                   isAnsweredNotifier.value &&
-                  (isCorrectNotifier.value != null || !isFirstStagePassedNotifier.value),
+                  (isCorrectNotifier.value != null ||
+                      !isFirstStagePassedNotifier.value),
               isCorrect: isCorrectNotifier.value,
               showConfetti: showConfettiNotifier.value,
               onContinue: () =>
@@ -372,13 +368,16 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen>with TickerP
                                                           _diagnosedSymptoms
                                                               .value,
                                                       isAnswered:
-                                                          isAnsweredNotifier.value &&
-                                                          (isCorrectNotifier.value !=
+                                                          isAnsweredNotifier
+                                                              .value &&
+                                                          (isCorrectNotifier
+                                                                      .value !=
                                                                   null ||
                                                               !isFirstStagePassedNotifier
                                                                   .value),
                                                       isCorrect:
-                                                          isCorrectNotifier.value,
+                                                          isCorrectNotifier
+                                                              .value,
                                                       onSymptomTapped:
                                                           _onSymptomTapped,
                                                     ),
@@ -389,7 +388,8 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen>with TickerP
                                                     ),
 
                                                     // Submit controls
-                                                    if (!isAnsweredNotifier.value &&
+                                                    if (!isAnsweredNotifier
+                                                            .value &&
                                                         _diagnosedSymptoms
                                                             .value
                                                             .isNotEmpty)
@@ -566,7 +566,8 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen>with TickerP
                                                       ),
 
                                                     // Explanations cards post-selection
-                                                    if (isAnsweredNotifier.value) ...[
+                                                    if (isAnsweredNotifier
+                                                        .value) ...[
                                                       SizedBox(
                                                         height: isCompact
                                                             ? 12.h
@@ -605,7 +606,8 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen>with TickerP
                                 ],
                               ),
                             ),
-                            if (isFirstStagePassedNotifier.value && !isAnsweredNotifier.value)
+                            if (isFirstStagePassedNotifier.value &&
+                                !isAnsweredNotifier.value)
                               SpeakToConfirmOverlay(
                                 expectedText:
                                     quest.correctAnswer ??

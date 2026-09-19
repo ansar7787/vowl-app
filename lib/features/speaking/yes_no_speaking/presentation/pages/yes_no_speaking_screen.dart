@@ -33,7 +33,8 @@ class YesNoSpeakingScreen extends StatefulWidget {
   State<YesNoSpeakingScreen> createState() => _YesNoSpeakingScreenState();
 }
 
-class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen> with SpeakingGameScreenMixin {
+class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen>
+    with SpeakingGameScreenMixin {
   @override
   GameSubtype get gameType => widget.gameType;
 
@@ -43,12 +44,10 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen> with Speaking
   @override
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
-    
-    
   final ValueNotifier<double> _tiltValue = ValueNotifier(0.0);
   final ValueNotifier<bool> _isSnapped = ValueNotifier(false);
 
-        Timer? _autoplayTimer;
+  Timer? _autoplayTimer;
   final ScrollController _scrollController = ScrollController();
 
   @override
@@ -76,11 +75,10 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen> with Speaking
     _autoplayTimer?.cancel();
     _tiltValue.dispose();
     _isSnapped.dispose();
-                _scrollController.dispose();
+    _scrollController.dispose();
     disposeSpeakingGame();
     super.dispose();
   }
-
 
   void _scrollToBottom() {
     Future.delayed(const Duration(milliseconds: 100), () {
@@ -179,17 +177,13 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen> with Speaking
   }
 
   @override
-
   void onQuestionReset() {
-
     _tiltValue.value = 0.0;
 
     _isSnapped.value = false;
-
   }
 
   @override
-
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('speaking', level: widget.level);

@@ -28,7 +28,8 @@ class ConnectedSpeechScreen extends StatefulWidget {
   State<ConnectedSpeechScreen> createState() => _ConnectedSpeechScreenState();
 }
 
-class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> with AccentGameScreenMixin {
+class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen>
+    with AccentGameScreenMixin {
   @override
   GameSubtype get gameType => widget.gameType;
 
@@ -38,14 +39,13 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> with Acce
   @override
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
-    
-      AccentQuest? _lastQuest;
-      
+  AccentQuest? _lastQuest;
+
   final List<String> _shuffledOptions = [];
   final int _shuffledCorrectIndex = 0;
 
   final ValueNotifier<int?> _selectedIndex = ValueNotifier(null);
-    Timer? _resetTimer;
+  Timer? _resetTimer;
 
   late final ScrollController _scrollController;
 
@@ -73,8 +73,8 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> with Acce
   @override
   void dispose() {
     _scrollController.dispose();
-                _selectedIndex.dispose();
-        _resetTimer?.cancel();
+    _selectedIndex.dispose();
+    _resetTimer?.cancel();
     disposeAccentGame();
     super.dispose();
   }
@@ -133,15 +133,11 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> with Acce
   }
 
   @override
-
   void onQuestionReset() {
-
     _selectedIndex.value = null;
-
   }
 
   @override
-
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('accent', level: widget.level);
@@ -277,7 +273,8 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> with Acce
                                                       isAnswered:
                                                           isFirstStagePassedNotifier
                                                               .value ||
-                                                          isAnsweredNotifier.value,
+                                                          isAnsweredNotifier
+                                                              .value,
                                                       color: theme.primaryColor,
                                                       isDark: isDark,
                                                       isCompact: isCompact,
@@ -312,7 +309,8 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> with Acce
                                                       color: theme.primaryColor,
                                                       isDark: isDark,
                                                       isAnswered:
-                                                          isAnsweredNotifier.value ||
+                                                          isAnsweredNotifier
+                                                              .value ||
                                                           isFirstStagePassedNotifier
                                                               .value,
                                                       selectedIndex:
@@ -330,7 +328,8 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> with Acce
                                           SizedBox(
                                             height:
                                                 (isAnsweredNotifier.value ||
-                                                    isFirstStagePassedNotifier.value)
+                                                    isFirstStagePassedNotifier
+                                                        .value)
                                                 ? 10.h
                                                 : 60.h,
                                           ),

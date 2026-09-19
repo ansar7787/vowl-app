@@ -30,7 +30,8 @@ class EmotionRecognitionScreen extends StatefulWidget {
       _EmotionRecognitionScreenState();
 }
 
-class _EmotionRecognitionScreenState extends State<EmotionRecognitionScreen> with ListeningGameScreenMixin {
+class _EmotionRecognitionScreenState extends State<EmotionRecognitionScreen>
+    with ListeningGameScreenMixin {
   @override
   GameSubtype get gameType => widget.gameType;
 
@@ -40,18 +41,17 @@ class _EmotionRecognitionScreenState extends State<EmotionRecognitionScreen> wit
   @override
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
-    
   final GlobalKey<SpeedChallengeTimerState> _timerKey =
       GlobalKey<SpeedChallengeTimerState>();
 
   final ValueNotifier<Offset> _coreOffset = ValueNotifier(Offset.zero);
-            final ValueNotifier<int?> _selectedIndex = ValueNotifier(null);
+  final ValueNotifier<int?> _selectedIndex = ValueNotifier(null);
   final ValueNotifier<int?> _pendingSelectedIndex = ValueNotifier(null);
   final ScrollController _scrollController = ScrollController();
 
   @override
   void dispose() {
-                _selectedIndex.dispose();
+    _selectedIndex.dispose();
     _pendingSelectedIndex.dispose();
     _coreOffset.dispose();
     _scrollController.dispose();
@@ -167,19 +167,15 @@ class _EmotionRecognitionScreenState extends State<EmotionRecognitionScreen> wit
   }
 
   @override
-
   void onQuestionReset() {
-
     _coreOffset.value = Offset.zero;
 
     _selectedIndex.value = null;
 
     _pendingSelectedIndex.value = null;
-
   }
 
   @override
-
   Widget build(BuildContext context) {
     final theme = LevelThemeHelper.getTheme('listening', level: widget.level);
 
@@ -284,7 +280,8 @@ class _EmotionRecognitionScreenState extends State<EmotionRecognitionScreen> wit
                                               quest.correctAnswerIndex ?? 0,
                                           color: theme.primaryColor,
                                           isAnswered: isAnsweredNotifier.value,
-                                          isCorrectState: isCorrectNotifier.value,
+                                          isCorrectState:
+                                              isCorrectNotifier.value,
                                           selectedIndex: _selectedIndex.value,
                                           coreOffset: _coreOffset,
                                           onCoreMove: _onCoreMove,

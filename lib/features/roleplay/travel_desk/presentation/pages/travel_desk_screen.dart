@@ -29,7 +29,8 @@ class TravelDeskScreen extends StatefulWidget {
   State<TravelDeskScreen> createState() => _TravelDeskScreenState();
 }
 
-class _TravelDeskScreenState extends State<TravelDeskScreen>with TickerProviderStateMixin, RoleplayGameScreenMixin {
+class _TravelDeskScreenState extends State<TravelDeskScreen>
+    with TickerProviderStateMixin, RoleplayGameScreenMixin {
   @override
   GameSubtype get gameType => widget.gameType;
 
@@ -39,13 +40,12 @@ class _TravelDeskScreenState extends State<TravelDeskScreen>with TickerProviderS
   @override
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
-    
   late AnimationController _rippleController;
   late AnimationController _pulseController;
 
-    final ValueNotifier<int?> _selectedIndex = ValueNotifier(null);
+  final ValueNotifier<int?> _selectedIndex = ValueNotifier(null);
   final ScrollController _scrollController = ScrollController();
-        
+
   // Custom drag feedback coordinates
   final ValueNotifier<int?> _hoveredIndex = ValueNotifier(null);
 
@@ -83,12 +83,11 @@ class _TravelDeskScreenState extends State<TravelDeskScreen>with TickerProviderS
     _rippleController.dispose();
     _pulseController.dispose();
     _selectedIndex.dispose();
-                    _hoveredIndex.dispose();
+    _hoveredIndex.dispose();
     _scrollController.dispose();
     disposeRoleplayGame();
     super.dispose();
   }
-
 
   void _submitStamp(int index, int correctIndex) {
     if (isAnsweredNotifier.value || isFirstStagePassedNotifier.value) return;
@@ -130,17 +129,13 @@ class _TravelDeskScreenState extends State<TravelDeskScreen>with TickerProviderS
   }
 
   @override
-
   void onQuestionReset() {
-
     _selectedIndex.value = null;
 
     _hoveredIndex.value = null;
-
   }
 
   @override
-
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('roleplay', level: widget.level);
@@ -167,7 +162,8 @@ class _TravelDeskScreenState extends State<TravelDeskScreen>with TickerProviderS
               level: widget.level,
               isAnswered:
                   isAnsweredNotifier.value &&
-                  (isCorrectNotifier.value != null || !isFirstStagePassedNotifier.value),
+                  (isCorrectNotifier.value != null ||
+                      !isFirstStagePassedNotifier.value),
               isCorrect: isCorrectNotifier.value,
               showConfetti: showConfettiNotifier.value,
               onContinue: () =>
@@ -250,11 +246,13 @@ class _TravelDeskScreenState extends State<TravelDeskScreen>with TickerProviderS
                                                       hoveredIndex:
                                                           _hoveredIndex.value,
                                                       isAnswered:
-                                                          isAnsweredNotifier.value ||
+                                                          isAnsweredNotifier
+                                                              .value ||
                                                           isFirstStagePassedNotifier
                                                               .value,
                                                       isCorrect:
-                                                          isCorrectNotifier.value,
+                                                          isCorrectNotifier
+                                                              .value,
                                                       rippleAnimation:
                                                           _rippleController,
                                                       onSubmitStamp:
@@ -278,7 +276,8 @@ class _TravelDeskScreenState extends State<TravelDeskScreen>with TickerProviderS
                                                     ),
 
                                                     // Stamp slammed terminal console
-                                                    if (!isAnsweredNotifier.value &&
+                                                    if (!isAnsweredNotifier
+                                                            .value &&
                                                         !isFirstStagePassedNotifier
                                                             .value)
                                                       TravelDeskStampStation(

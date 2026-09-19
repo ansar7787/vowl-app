@@ -29,7 +29,8 @@ class VowelDistinctionScreen extends StatefulWidget {
   State<VowelDistinctionScreen> createState() => _VowelDistinctionScreenState();
 }
 
-class _VowelDistinctionScreenState extends State<VowelDistinctionScreen> with AccentGameScreenMixin {
+class _VowelDistinctionScreenState extends State<VowelDistinctionScreen>
+    with AccentGameScreenMixin {
   @override
   GameSubtype get gameType => widget.gameType;
 
@@ -40,11 +41,10 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen> with Ac
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
   final ScrollController _scrollController = ScrollController();
-    
-            final ValueNotifier<double> _sliderValue = ValueNotifier(0.5);
+
+  final ValueNotifier<double> _sliderValue = ValueNotifier(0.5);
   final ValueNotifier<int?> _selectedIndex = ValueNotifier(null);
 
-  
   Timer? _mismatchResetTimer;
   Timer? _autoplayTimer;
 
@@ -73,7 +73,7 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen> with Ac
     _mismatchResetTimer?.cancel();
     _autoplayTimer?.cancel();
     _scrollController.dispose();
-                _sliderValue.dispose();
+    _sliderValue.dispose();
     _selectedIndex.dispose();
     disposeAccentGame();
     super.dispose();
@@ -148,17 +148,13 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen> with Ac
   }
 
   @override
-
   void onQuestionReset() {
-
     _sliderValue.value = 0.5;
 
     _selectedIndex.value = null;
-
   }
 
   @override
-
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('accent', level: widget.level);
@@ -364,7 +360,8 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen> with Ac
                                           ),
                                           SizedBox(
                                             height:
-                                                (isFirstStagePassedNotifier.value &&
+                                                (isFirstStagePassedNotifier
+                                                        .value &&
                                                     !isAnsweredNotifier.value)
                                                 ? 40.h
                                                 : 160.h,

@@ -28,7 +28,8 @@ class SkimmingScanningScreen extends StatefulWidget {
   State<SkimmingScanningScreen> createState() => _SkimmingScanningScreenState();
 }
 
-class _SkimmingScanningScreenState extends State<SkimmingScanningScreen> with ReadingGameScreenMixin {
+class _SkimmingScanningScreenState extends State<SkimmingScanningScreen>
+    with ReadingGameScreenMixin {
   @override
   GameSubtype get gameType => widget.gameType;
 
@@ -38,12 +39,11 @@ class _SkimmingScanningScreenState extends State<SkimmingScanningScreen> with Re
   @override
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
-    
   late ScrollController _scrollController;
   late ScrollController _mainScrollController;
   final GlobalKey<SpeedChallengeTimerState> _timerKey =
       GlobalKey<SpeedChallengeTimerState>();
-          
+
   @override
   void initState() {
     super.initState();
@@ -211,7 +211,8 @@ class _SkimmingScanningScreenState extends State<SkimmingScanningScreen> with Re
                                     SizedBox(height: 24.h),
                                     SkimmingScanningResult(
                                       quest: quest,
-                                      isCorrect: isCorrectNotifier.value == true,
+                                      isCorrect:
+                                          isCorrectNotifier.value == true,
                                       isDark: isDark,
                                     ),
                                   ],

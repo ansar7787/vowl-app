@@ -32,7 +32,8 @@ class FastSpeechDecoderScreen extends StatefulWidget {
       _FastSpeechDecoderScreenState();
 }
 
-class _FastSpeechDecoderScreenState extends State<FastSpeechDecoderScreen> with ListeningGameScreenMixin {
+class _FastSpeechDecoderScreenState extends State<FastSpeechDecoderScreen>
+    with ListeningGameScreenMixin {
   @override
   GameSubtype get gameType => widget.gameType;
 
@@ -42,20 +43,19 @@ class _FastSpeechDecoderScreenState extends State<FastSpeechDecoderScreen> with 
   @override
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
-    
   final GlobalKey<SpeedChallengeTimerState> _timerKey =
       GlobalKey<SpeedChallengeTimerState>();
 
   final ValueNotifier<double> _dialRotation = ValueNotifier(
     0.33,
   ); // 0.0 to 1.0 mapping to 0.5x - 2.0x
-            final ValueNotifier<int?> _selectedIndex = ValueNotifier(null);
+  final ValueNotifier<int?> _selectedIndex = ValueNotifier(null);
   final ValueNotifier<int?> _pendingSelectedIndex = ValueNotifier(null);
   final ScrollController _scrollController = ScrollController();
 
   @override
   void dispose() {
-                _selectedIndex.dispose();
+    _selectedIndex.dispose();
     _pendingSelectedIndex.dispose();
     _dialRotation.dispose();
     _scrollController.dispose();
@@ -157,19 +157,15 @@ class _FastSpeechDecoderScreenState extends State<FastSpeechDecoderScreen> with 
   }
 
   @override
-
   void onQuestionReset() {
-
     _dialRotation.value = 0.33;
 
     _selectedIndex.value = null;
 
     _pendingSelectedIndex.value = null;
-
   }
 
   @override
-
   Widget build(BuildContext context) {
     final theme = LevelThemeHelper.getTheme('listening', level: widget.level);
 

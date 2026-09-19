@@ -29,7 +29,8 @@ class SentenceCorrectionScreen extends StatefulWidget {
       _SentenceCorrectionScreenState();
 }
 
-class _SentenceCorrectionScreenState extends State<SentenceCorrectionScreen> with GrammarGameScreenMixin {
+class _SentenceCorrectionScreenState extends State<SentenceCorrectionScreen>
+    with GrammarGameScreenMixin {
   @override
   GameSubtype get gameType => widget.gameType;
 
@@ -39,25 +40,25 @@ class _SentenceCorrectionScreenState extends State<SentenceCorrectionScreen> wit
   @override
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
-      final ValueNotifier<int?> _selectedWordIndex = ValueNotifier(null);
+  final ValueNotifier<int?> _selectedWordIndex = ValueNotifier(null);
   final ValueNotifier<String?> _selectedOption = ValueNotifier(null);
   List<String>? _shuffledOptions;
 
   // States
-    
+
   // Detailed feedback states
   final ValueNotifier<bool?> _wordSelectionCorrect = ValueNotifier(null);
   final ValueNotifier<bool?> _optionSelectionCorrect = ValueNotifier(null);
 
-      final ScrollController _scrollController = ScrollController();
+  final ScrollController _scrollController = ScrollController();
 
   @override
   void dispose() {
     _selectedWordIndex.dispose();
     _selectedOption.dispose();
-            _wordSelectionCorrect.dispose();
+    _wordSelectionCorrect.dispose();
     _optionSelectionCorrect.dispose();
-            _scrollController.dispose();
+    _scrollController.dispose();
     disposeGrammarGame();
     super.dispose();
   }
@@ -74,7 +75,6 @@ class _SentenceCorrectionScreenState extends State<SentenceCorrectionScreen> wit
     });
   }
 
-    
   @override
   void initState() {
     super.initState();
@@ -223,9 +223,7 @@ class _SentenceCorrectionScreenState extends State<SentenceCorrectionScreen> wit
   }
 
   @override
-
   void onQuestionReset() {
-
     _selectedWordIndex.value = null;
 
     _selectedOption.value = null;
@@ -233,11 +231,9 @@ class _SentenceCorrectionScreenState extends State<SentenceCorrectionScreen> wit
     _wordSelectionCorrect.value = null;
 
     _optionSelectionCorrect.value = null;
-
   }
 
   @override
-
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('grammar', level: widget.level);
@@ -284,7 +280,8 @@ class _SentenceCorrectionScreenState extends State<SentenceCorrectionScreen> wit
               disablePadding: true,
               isAnswered:
                   isAnsweredNotifier.value &&
-                  (isCorrectNotifier.value != null || !isFirstStagePassedNotifier.value),
+                  (isCorrectNotifier.value != null ||
+                      !isFirstStagePassedNotifier.value),
               isCorrect: isCorrectNotifier.value,
               isFinalFailure: state is GrammarLoaded && state.isFinalFailure,
               showConfetti: showConfettiNotifier.value,
@@ -390,8 +387,10 @@ class _SentenceCorrectionScreenState extends State<SentenceCorrectionScreen> wit
                                                     bool isCorrectZap = false;
                                                     bool isWrongZap = false;
 
-                                                    if (isAnsweredNotifier.value) {
-                                                      if (isCorrectNotifier.value ==
+                                                    if (isAnsweredNotifier
+                                                        .value) {
+                                                      if (isCorrectNotifier
+                                                              .value ==
                                                           true) {
                                                         if (isTargetWord) {
                                                           isCorrectZap = true;
@@ -487,8 +486,10 @@ class _SentenceCorrectionScreenState extends State<SentenceCorrectionScreen> wit
                                           selectedOption: _selectedOption.value,
                                           isAnswered:
                                               isAnsweredNotifier.value &&
-                                              (isCorrectNotifier.value != null ||
-                                                  !isFirstStagePassedNotifier.value),
+                                              (isCorrectNotifier.value !=
+                                                      null ||
+                                                  !isFirstStagePassedNotifier
+                                                      .value),
                                           isDark: isDark,
                                           primaryColor: theme.primaryColor,
                                           onOptionSelect: (option) {

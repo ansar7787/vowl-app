@@ -32,7 +32,8 @@ class ReadingSpeedCheckScreen extends StatefulWidget {
       _ReadingSpeedCheckScreenState();
 }
 
-class _ReadingSpeedCheckScreenState extends State<ReadingSpeedCheckScreen> with ReadingGameScreenMixin {
+class _ReadingSpeedCheckScreenState extends State<ReadingSpeedCheckScreen>
+    with ReadingGameScreenMixin {
   @override
   GameSubtype get gameType => widget.gameType;
 
@@ -42,12 +43,11 @@ class _ReadingSpeedCheckScreenState extends State<ReadingSpeedCheckScreen> with 
   @override
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
-  
   final ValueNotifier<double> _pulseScale = ValueNotifier(1.0);
   final ValueNotifier<double> _clarityRadius = ValueNotifier(0.0);
   final ValueNotifier<int> _timerValue = ValueNotifier(12);
   final ValueNotifier<int> _timeLimit = ValueNotifier(12);
-            final ValueNotifier<bool> _isRevealed = ValueNotifier(false);
+  final ValueNotifier<bool> _isRevealed = ValueNotifier(false);
   final ScrollController _scrollController = ScrollController();
 
   @override
@@ -56,7 +56,7 @@ class _ReadingSpeedCheckScreenState extends State<ReadingSpeedCheckScreen> with 
     _clarityRadius.dispose();
     _timerValue.dispose();
     _timeLimit.dispose();
-                _isRevealed.dispose();
+    _isRevealed.dispose();
     _scrollController.dispose();
     disposeReadingGame();
     super.dispose();
@@ -127,9 +127,7 @@ class _ReadingSpeedCheckScreenState extends State<ReadingSpeedCheckScreen> with 
   }
 
   @override
-
   void onQuestionReset() {
-
     _pulseScale.value = 1.0;
 
     _clarityRadius.value = 0.0;
@@ -139,11 +137,9 @@ class _ReadingSpeedCheckScreenState extends State<ReadingSpeedCheckScreen> with 
     _timeLimit.value = 12;
 
     _isRevealed.value = false;
-
   }
 
   @override
-
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('reading', level: widget.level);
@@ -263,7 +259,8 @@ class _ReadingSpeedCheckScreenState extends State<ReadingSpeedCheckScreen> with 
                                     SizedBox(height: 30.h),
                                     ReadingSpeedResult(
                                       quest: quest,
-                                      isCorrect: isCorrectNotifier.value == true,
+                                      isCorrect:
+                                          isCorrectNotifier.value == true,
                                       isDark: isDark,
                                     ),
                                   ],

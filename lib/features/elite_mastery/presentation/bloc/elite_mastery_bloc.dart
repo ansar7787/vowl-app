@@ -222,7 +222,6 @@ class EliteMasteryBloc extends Bloc<EliteMasteryEvent, EliteMasteryState> {
       }
     } else if (currentState.answerStatus == AnswerStatus.correct) {
       // ── Level complete ────────────────────────────────────────────────────
-      
 
       // Resolve nullable fields — both are always set by the BLoC in
       // production, but are nullable for backward compatibility with

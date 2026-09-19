@@ -33,7 +33,8 @@ class SituationalResponseScreen extends StatefulWidget {
       _SituationalResponseScreenState();
 }
 
-class _SituationalResponseScreenState extends State<SituationalResponseScreen>with TickerProviderStateMixin, RoleplayGameScreenMixin {
+class _SituationalResponseScreenState extends State<SituationalResponseScreen>
+    with TickerProviderStateMixin, RoleplayGameScreenMixin {
   @override
   GameSubtype get gameType => widget.gameType;
 
@@ -43,13 +44,12 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen>wi
   @override
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
-    
   late AnimationController _timerController;
   late AnimationController _pulseController;
 
-      final ScrollController _scrollController = ScrollController();
-      final ValueNotifier<int?> _selectedOrbIndex = ValueNotifier(null);
-  
+  final ScrollController _scrollController = ScrollController();
+  final ValueNotifier<int?> _selectedOrbIndex = ValueNotifier(null);
+
   // Shuffled state
   final ValueNotifier<List<String>> _shuffledOptions = ValueNotifier([]);
   final ValueNotifier<int> _shuffledCorrectIndex = ValueNotifier(-1);
@@ -101,8 +101,8 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen>wi
   void dispose() {
     _timerController.dispose();
     _pulseController.dispose();
-                _selectedOrbIndex.dispose();
-        _shuffledOptions.dispose();
+    _selectedOrbIndex.dispose();
+    _shuffledOptions.dispose();
     _shuffledCorrectIndex.dispose();
     _scrollController.dispose();
     disposeRoleplayGame();
@@ -128,7 +128,6 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen>wi
       soundService.playHint(); // Play warning beep
     }
   }
-
 
   void _stopTimer() {
     _timerController.stop();
@@ -185,19 +184,15 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen>wi
   }
 
   @override
-
   void onQuestionReset() {
-
     _selectedOrbIndex.value = null;
 
     _shuffledOptions.value = [];
 
     _shuffledCorrectIndex.value = -1;
-
   }
 
   @override
-
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('roleplay', level: widget.level);
@@ -224,7 +219,8 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen>wi
               level: widget.level,
               isAnswered:
                   isAnsweredNotifier.value &&
-                  (isCorrectNotifier.value != null || !isFirstStagePassedNotifier.value),
+                  (isCorrectNotifier.value != null ||
+                      !isFirstStagePassedNotifier.value),
               isCorrect: isCorrectNotifier.value,
               showConfetti: showConfettiNotifier.value,
               onContinue: () =>
@@ -323,7 +319,8 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen>wi
                                                               isFirstStagePassedNotifier
                                                                   .value,
                                                           isCorrect:
-                                                              isCorrectNotifier.value,
+                                                              isCorrectNotifier
+                                                                  .value,
                                                           selectedOrbIndex:
                                                               _selectedOrbIndex
                                                                   .value,
@@ -350,7 +347,8 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen>wi
                                                                     .value,
                                                           ),
                                                       crossFadeState:
-                                                          isAnsweredNotifier.value
+                                                          isAnsweredNotifier
+                                                              .value
                                                           ? CrossFadeState
                                                                 .showSecond
                                                           : CrossFadeState
@@ -359,7 +357,8 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen>wi
                                                         milliseconds: 450,
                                                       ),
                                                     ),
-                                                    if (isAnsweredNotifier.value) ...[
+                                                    if (isAnsweredNotifier
+                                                        .value) ...[
                                                       SizedBox(
                                                         height: isCompact
                                                             ? 12.h
@@ -425,4 +424,3 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen>wi
     );
   }
 }
-

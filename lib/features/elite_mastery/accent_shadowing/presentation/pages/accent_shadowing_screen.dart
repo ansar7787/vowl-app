@@ -26,7 +26,8 @@ class AccentShadowingScreen extends StatefulWidget {
   State<AccentShadowingScreen> createState() => _AccentShadowingScreenState();
 }
 
-class _AccentShadowingScreenState extends State<AccentShadowingScreen> with EliteMasteryGameScreenMixin {
+class _AccentShadowingScreenState extends State<AccentShadowingScreen>
+    with EliteMasteryGameScreenMixin {
   @override
   GameSubtype get gameType => widget.gameType;
 
@@ -36,9 +37,8 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> with Elit
   @override
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
-    
-    final ScrollController _scrollController = ScrollController();
-      final ValueNotifier<int> _attempts = ValueNotifier(0);
+  final ScrollController _scrollController = ScrollController();
+  final ValueNotifier<int> _attempts = ValueNotifier(0);
   final ValueNotifier<Set<int>> _matchedIndices = ValueNotifier({});
 
   static const double _kCompactHeightBreakpoint = 580;
@@ -65,7 +65,7 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> with Elit
 
   @override
   void dispose() {
-                _attempts.dispose();
+    _attempts.dispose();
     _matchedIndices.dispose();
     _scrollController.dispose();
     disposeEliteMasteryGame();
@@ -96,17 +96,13 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> with Elit
   }
 
   @override
-
   void onQuestionReset() {
-
     _attempts.value = 0;
 
     _matchedIndices.value = {};
-
   }
 
   @override
-
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final isMidnight = context.watch<ThemeCubit>().state.isMidnight;
@@ -296,4 +292,3 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> with Elit
     );
   }
 }
-

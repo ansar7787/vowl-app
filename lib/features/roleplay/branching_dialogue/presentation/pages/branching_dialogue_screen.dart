@@ -31,7 +31,8 @@ class BranchingDialogueScreen extends StatefulWidget {
       _BranchingDialogueScreenState();
 }
 
-class _BranchingDialogueScreenState extends State<BranchingDialogueScreen>with TickerProviderStateMixin, RoleplayGameScreenMixin {
+class _BranchingDialogueScreenState extends State<BranchingDialogueScreen>
+    with TickerProviderStateMixin, RoleplayGameScreenMixin {
   @override
   GameSubtype get gameType => widget.gameType;
 
@@ -41,16 +42,15 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen>with T
   @override
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
-    
   late AnimationController _springController;
 
-      final ScrollController _scrollController = ScrollController();
-    
+  final ScrollController _scrollController = ScrollController();
+
   // Drag and drop mechanics relative points
   final ValueNotifier<Offset> _probeOffset = ValueNotifier(Offset.zero);
   final ValueNotifier<int?> _hoveredIndex = ValueNotifier(null);
   final ValueNotifier<int?> _selectedIndex = ValueNotifier(null);
-  
+
   @override
   void initState() {
     super.initState();
@@ -87,10 +87,10 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen>with T
   @override
   void dispose() {
     _springController.dispose();
-                _probeOffset.dispose();
+    _probeOffset.dispose();
     _hoveredIndex.dispose();
     _selectedIndex.dispose();
-        _scrollController.dispose();
+    _scrollController.dispose();
     disposeRoleplayGame();
     super.dispose();
   }
@@ -191,19 +191,15 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen>with T
   }
 
   @override
-
   void onQuestionReset() {
-
     _probeOffset.value = Offset.zero;
 
     _hoveredIndex.value = null;
 
     _selectedIndex.value = null;
-
   }
 
   @override
-
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('roleplay', level: widget.level);
@@ -231,7 +227,8 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen>with T
               level: widget.level,
               isAnswered:
                   isAnsweredNotifier.value &&
-                  (isCorrectNotifier.value != null || !isFirstStagePassedNotifier.value),
+                  (isCorrectNotifier.value != null ||
+                      !isFirstStagePassedNotifier.value),
               isCorrect: isCorrectNotifier.value,
               showConfetti: showConfettiNotifier.value,
               onContinue: () =>
@@ -286,7 +283,8 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen>with T
                                                           ? 10.h
                                                           : 16.h,
                                                     ),
-                                                    if (isAnsweredNotifier.value &&
+                                                    if (isAnsweredNotifier
+                                                            .value &&
                                                         _selectedIndex.value !=
                                                             null &&
                                                         quest.consequenceScores !=
@@ -341,7 +339,8 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen>with T
                                                       selectedIndex:
                                                           _selectedIndex.value,
                                                       isAnswered:
-                                                          isAnsweredNotifier.value ||
+                                                          isAnsweredNotifier
+                                                              .value ||
                                                           isFirstStagePassedNotifier
                                                               .value,
                                                       onProbeDragStart:

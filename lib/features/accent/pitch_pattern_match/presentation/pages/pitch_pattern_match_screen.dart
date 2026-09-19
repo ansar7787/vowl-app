@@ -30,7 +30,8 @@ class PitchPatternMatchScreen extends StatefulWidget {
       _PitchPatternMatchScreenState();
 }
 
-class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> with AccentGameScreenMixin {
+class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen>
+    with AccentGameScreenMixin {
   @override
   GameSubtype get gameType => widget.gameType;
 
@@ -41,9 +42,9 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> with 
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
   final ScrollController _scrollController = ScrollController();
-        final ValueNotifier<double> _sliderValue = ValueNotifier(0.5);
+  final ValueNotifier<double> _sliderValue = ValueNotifier(0.5);
   final ValueNotifier<int?> _selectedIndex = ValueNotifier(null);
-    AccentQuest? _lastQuest;
+  AccentQuest? _lastQuest;
 
   final ValueNotifier<double> _previewProgress = ValueNotifier(0.0);
   final ValueNotifier<bool> _isPreviewing = ValueNotifier(false);
@@ -75,7 +76,7 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> with 
     _scrollController.dispose();
     _previewProgress.dispose();
     _isPreviewing.dispose();
-                _sliderValue.dispose();
+    _sliderValue.dispose();
     _selectedIndex.dispose();
     disposeAccentGame();
     super.dispose();
@@ -177,9 +178,7 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> with 
   }
 
   @override
-
   void onQuestionReset() {
-
     _sliderValue.value = 0.5;
 
     _selectedIndex.value = null;
@@ -187,11 +186,9 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> with 
     _previewProgress.value = 0.0;
 
     _isPreviewing.value = false;
-
   }
 
   @override
-
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('accent', level: widget.level);
@@ -315,7 +312,8 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> with 
                                                     ),
                                                     SizedBox(height: gapPrompt),
 
-                                                    if (isAnsweredNotifier.value ||
+                                                    if (isAnsweredNotifier
+                                                            .value ||
                                                         isFirstStagePassedNotifier
                                                             .value) ...[
                                                       ValueListenableBuilder<
@@ -386,7 +384,8 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> with 
                                                       color: theme.primaryColor,
                                                       isDark: isDark,
                                                       isAnswered:
-                                                          isAnsweredNotifier.value ||
+                                                          isAnsweredNotifier
+                                                              .value ||
                                                           isFirstStagePassedNotifier
                                                               .value,
                                                       selectedIndex:
@@ -407,7 +406,8 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> with 
 
                                           SizedBox(
                                             height:
-                                                (isFirstStagePassedNotifier.value &&
+                                                (isFirstStagePassedNotifier
+                                                        .value &&
                                                     !isAnsweredNotifier.value)
                                                 ? 40.h
                                                 : 160.h,
@@ -457,4 +457,3 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> with 
     );
   }
 }
-

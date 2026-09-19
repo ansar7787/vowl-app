@@ -46,7 +46,8 @@ class GenericRoleplayScenarioScreen extends StatefulWidget {
 }
 
 class _GenericRoleplayScenarioScreenState
-    extends State<GenericRoleplayScenarioScreen> with RoleplayGameScreenMixin {
+    extends State<GenericRoleplayScenarioScreen>
+    with RoleplayGameScreenMixin {
   @override
   GameSubtype get gameType => widget.gameType;
 
@@ -57,21 +58,21 @@ class _GenericRoleplayScenarioScreenState
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
   // â”€â”€ Services â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-    final _ttsService = di.sl<SpeechService>();
+  final _ttsService = di.sl<SpeechService>();
   final _chatScrollController = ScrollController();
 
   // â”€â”€ Local UI state â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-    final ValueNotifier<int?> _selectedIndex = ValueNotifier(null);
-    final ValueNotifier<bool> _isProcessing = ValueNotifier(false);
-  
+  final ValueNotifier<int?> _selectedIndex = ValueNotifier(null);
+  final ValueNotifier<bool> _isProcessing = ValueNotifier(false);
+
   /// Number of wrong taps for the current quest (resets per quest).
   final ValueNotifier<int> _attempts = ValueNotifier(0);
 
   /// Tracks the last rendered quest index to detect advancement.
-  
+
   /// Null until the first [RoleplayLoaded] state arrives, avoiding a
   /// false-positive life-restore detection on first render.
-  
+
   /// Prevents completion / game-over dialogs from showing twice.
 
   final ValueNotifier<List<ChatMessage>> _chatMessages = ValueNotifier([]);
@@ -88,9 +89,9 @@ class _GenericRoleplayScenarioScreenState
   void dispose() {
     _chatScrollController.dispose();
     _ttsService.stop();
-        _selectedIndex.dispose();
-        _isProcessing.dispose();
-        _attempts.dispose();
+    _selectedIndex.dispose();
+    _isProcessing.dispose();
+    _attempts.dispose();
     _chatMessages.dispose();
     disposeRoleplayGame();
     super.dispose();
@@ -109,7 +110,6 @@ class _GenericRoleplayScenarioScreenState
       }
     });
   }
-
 
   // â”€â”€ Answer selection â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   //
@@ -174,9 +174,7 @@ class _GenericRoleplayScenarioScreenState
   // â”€â”€ Build â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
   @override
-
   void onQuestionReset() {
-
     _selectedIndex.value = null;
 
     _isProcessing.value = false;
@@ -184,11 +182,9 @@ class _GenericRoleplayScenarioScreenState
     _attempts.value = 0;
 
     _chatMessages.value = [];
-
   }
 
   @override
-
   Widget build(BuildContext context) {
     // context.select rebuilds only when the mascot ID field changes â€”
     // not on every auth state emission.
@@ -300,7 +296,9 @@ class _GenericRoleplayScenarioScreenState
                     ),
                   SliverToBoxAdapter(
                     child: SizedBox(
-                      height: (isFirstStagePassedNotifier.value && !isAnsweredNotifier.value)
+                      height:
+                          (isFirstStagePassedNotifier.value &&
+                              !isAnsweredNotifier.value)
                           ? 180.h
                           : 60.h,
                     ),
@@ -314,6 +312,3 @@ class _GenericRoleplayScenarioScreenState
     );
   }
 }
-
-
-

@@ -68,7 +68,6 @@ class _AudioSentenceOrderScreenState extends State<AudioSentenceOrderScreen>
 
   @override
   void dispose() {
-    
     _scrollController.dispose();
     disposeListeningGame();
     super.dispose();

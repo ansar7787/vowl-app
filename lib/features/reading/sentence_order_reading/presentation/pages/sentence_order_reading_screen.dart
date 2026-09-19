@@ -29,8 +29,8 @@ class SentenceOrderReadingScreen extends StatefulWidget {
       _SentenceOrderReadingScreenState();
 }
 
-class _SentenceOrderReadingScreenState
-    extends State<SentenceOrderReadingScreen> with ReadingGameScreenMixin {
+class _SentenceOrderReadingScreenState extends State<SentenceOrderReadingScreen>
+    with ReadingGameScreenMixin {
   @override
   GameSubtype get gameType => widget.gameType;
 
@@ -40,19 +40,17 @@ class _SentenceOrderReadingScreenState
   @override
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
-    
   final ValueNotifier<List<String>> _currentOrder = ValueNotifier([]);
-        final ScrollController _scrollController = ScrollController();
+  final ScrollController _scrollController = ScrollController();
 
   @override
   void dispose() {
     _currentOrder.dispose();
-                _scrollController.dispose();
+    _scrollController.dispose();
     disposeReadingGame();
     super.dispose();
   }
 
-    
   @override
   void initState() {
     super.initState();
@@ -110,15 +108,11 @@ class _SentenceOrderReadingScreenState
   }
 
   @override
-
   void onQuestionReset() {
-
     _currentOrder.value = [];
-
   }
 
   @override
-
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('reading', level: widget.level);
@@ -222,7 +216,8 @@ class _SentenceOrderReadingScreenState
                                     SizedBox(height: 30.h),
                                     SentenceOrderReadingResult(
                                       quest: quest,
-                                      isCorrect: isCorrectNotifier.value == true,
+                                      isCorrect:
+                                          isCorrectNotifier.value == true,
                                       isDark: isDark,
                                     ),
                                   ],

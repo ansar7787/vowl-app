@@ -28,7 +28,8 @@ class SyllableStressScreen extends StatefulWidget {
   State<SyllableStressScreen> createState() => _SyllableStressScreenState();
 }
 
-class _SyllableStressScreenState extends State<SyllableStressScreen> with AccentGameScreenMixin {
+class _SyllableStressScreenState extends State<SyllableStressScreen>
+    with AccentGameScreenMixin {
   @override
   GameSubtype get gameType => widget.gameType;
 
@@ -39,13 +40,13 @@ class _SyllableStressScreenState extends State<SyllableStressScreen> with Accent
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
   final ScrollController _scrollController = ScrollController();
-    
-            final ValueNotifier<int?> _selectedIndex = ValueNotifier(null);
-  
+
+  final ValueNotifier<int?> _selectedIndex = ValueNotifier(null);
+
   @override
   void dispose() {
     _scrollController.dispose();
-                _selectedIndex.dispose();
+    _selectedIndex.dispose();
     disposeAccentGame();
     super.dispose();
   }
@@ -126,15 +127,11 @@ class _SyllableStressScreenState extends State<SyllableStressScreen> with Accent
   }
 
   @override
-
   void onQuestionReset() {
-
     _selectedIndex.value = null;
-
   }
 
   @override
-
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('accent', level: widget.level);
@@ -401,7 +398,8 @@ class _SyllableStressScreenState extends State<SyllableStressScreen> with Accent
 
                                           SizedBox(
                                             height:
-                                                (isFirstStagePassedNotifier.value &&
+                                                (isFirstStagePassedNotifier
+                                                        .value &&
                                                     !isAnsweredNotifier.value)
                                                 ? 40.h
                                                 : 160.h,

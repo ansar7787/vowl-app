@@ -27,7 +27,8 @@ class ConditionalsScreen extends StatefulWidget {
   State<ConditionalsScreen> createState() => _ConditionalsScreenState();
 }
 
-class _ConditionalsScreenState extends State<ConditionalsScreen> with GrammarGameScreenMixin {
+class _ConditionalsScreenState extends State<ConditionalsScreen>
+    with GrammarGameScreenMixin {
   @override
   GameSubtype get gameType => widget.gameType;
 
@@ -37,19 +38,17 @@ class _ConditionalsScreenState extends State<ConditionalsScreen> with GrammarGam
   @override
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
-    
   final ValueNotifier<int> _targetIndex = ValueNotifier(-1);
-          final ScrollController _scrollController = ScrollController();
+  final ScrollController _scrollController = ScrollController();
 
   @override
   void dispose() {
     _targetIndex.dispose();
-                    _scrollController.dispose();
+    _scrollController.dispose();
     disposeGrammarGame();
     super.dispose();
   }
 
-    
   void _onStagePassedScroll() {
     Future.delayed(const Duration(milliseconds: 100), () {
       if (mounted && _scrollController.hasClients) {
@@ -131,15 +130,11 @@ class _ConditionalsScreenState extends State<ConditionalsScreen> with GrammarGam
   }
 
   @override
-
   void onQuestionReset() {
-
     _targetIndex.value = -1;
-
   }
 
   @override
-
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('grammar', level: widget.level);
@@ -617,7 +612,9 @@ class _ConditionalsScreenState extends State<ConditionalsScreen> with GrammarGam
         _targetIndex.value == i;
     final isWrong = isHit && isCorrectNotifier.value == false;
     final blockColor = isHit
-        ? (isCorrectNotifier.value == false ? Colors.redAccent : Colors.greenAccent)
+        ? (isCorrectNotifier.value == false
+              ? Colors.redAccent
+              : Colors.greenAccent)
         : primaryColor;
 
     return Padding(

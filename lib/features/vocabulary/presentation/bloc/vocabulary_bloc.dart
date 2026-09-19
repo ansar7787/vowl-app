@@ -34,6 +34,7 @@ class VocabularyBloc extends Bloc<VocabularyEvent, VocabularyState> {
   final UpdateUserCoins updateUserCoins;
   final UpdateUserRewards updateUserRewards;
   final UpdateCategoryStats updateCategoryStats;
+
   /// Injected for API parity with other game blocs. Level unlock is handled
   /// inside [updateUserRewards] server-side; calling it here would cause
   /// duplicate writes. Intentionally unused.
@@ -241,12 +242,7 @@ class VocabularyBloc extends Bloc<VocabularyEvent, VocabularyState> {
     }
   }
 
-  void _handleLevelComplete(
-    VocabularyLoaded s,
-    Emitter<VocabularyState> emit,
-  ) {
-    
-
+  void _handleLevelComplete(VocabularyLoaded s, Emitter<VocabularyState> emit) {
     const xp = VocabularyRewardConstants.baseXp;
     const coins = VocabularyRewardConstants.baseCoins;
 
@@ -267,26 +263,23 @@ class VocabularyBloc extends Bloc<VocabularyEvent, VocabularyState> {
       final gameType = _currentGameType!;
       final level = _currentLevel!;
 
-      Future.wait(
-        [
-          updateUserRewards(
-            UpdateUserRewardsParams(
-              gameType: gameType,
-              level: level,
-              xpIncrease: xp,
-              coinIncrease: coins,
-              starsEarned: s.livesRemaining,
-            ),
-          ).catchError(_swallow),
-          updateCategoryStats(
-            UpdateCategoryStatsParams(categoryId: gameType, isCorrect: true),
-          ).catchError(_swallow),
-          awardBadge(
-            VocabularyRewardConstants.masteryBadgeId,
-          ).catchError(_swallow),
-        ],
-        eagerError: false,
-      );
+      Future.wait([
+        updateUserRewards(
+          UpdateUserRewardsParams(
+            gameType: gameType,
+            level: level,
+            xpIncrease: xp,
+            coinIncrease: coins,
+            starsEarned: s.livesRemaining,
+          ),
+        ).catchError(_swallow),
+        updateCategoryStats(
+          UpdateCategoryStatsParams(categoryId: gameType, isCorrect: true),
+        ).catchError(_swallow),
+        awardBadge(
+          VocabularyRewardConstants.masteryBadgeId,
+        ).catchError(_swallow),
+      ], eagerError: false);
     }
   }
 

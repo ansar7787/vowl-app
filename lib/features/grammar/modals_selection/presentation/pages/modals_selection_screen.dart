@@ -28,7 +28,8 @@ class ModalsSelectionScreen extends StatefulWidget {
   State<ModalsSelectionScreen> createState() => _ModalsSelectionScreenState();
 }
 
-class _ModalsSelectionScreenState extends State<ModalsSelectionScreen> with GrammarGameScreenMixin {
+class _ModalsSelectionScreenState extends State<ModalsSelectionScreen>
+    with GrammarGameScreenMixin {
   @override
   GameSubtype get gameType => widget.gameType;
 
@@ -38,15 +39,14 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen> with Gram
   @override
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
-    
   final ValueNotifier<int> _selectedIndex = ValueNotifier(0);
-            final ValueNotifier<bool> _pendingJigsaw = ValueNotifier(false);
+  final ValueNotifier<bool> _pendingJigsaw = ValueNotifier(false);
   final ScrollController _scrollController = ScrollController();
 
   @override
   void dispose() {
     _selectedIndex.dispose();
-                _pendingJigsaw.dispose();
+    _pendingJigsaw.dispose();
     _scrollController.dispose();
     disposeGrammarGame();
     super.dispose();
@@ -352,17 +352,13 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen> with Gram
   }
 
   @override
-
   void onQuestionReset() {
-
     _selectedIndex.value = 0;
 
     _pendingJigsaw.value = false;
-
   }
 
   @override
-
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('grammar', level: widget.level);

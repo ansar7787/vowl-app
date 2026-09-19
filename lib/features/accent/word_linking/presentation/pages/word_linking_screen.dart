@@ -26,7 +26,8 @@ class WordLinkingScreen extends StatefulWidget {
   State<WordLinkingScreen> createState() => _WordLinkingScreenState();
 }
 
-class _WordLinkingScreenState extends State<WordLinkingScreen> with AccentGameScreenMixin {
+class _WordLinkingScreenState extends State<WordLinkingScreen>
+    with AccentGameScreenMixin {
   @override
   GameSubtype get gameType => widget.gameType;
 
@@ -37,13 +38,13 @@ class _WordLinkingScreenState extends State<WordLinkingScreen> with AccentGameSc
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
   final ScrollController _scrollController = ScrollController();
-        final ValueNotifier<int?> _selectedNodeIndex = ValueNotifier(null);
-    AccentQuest? _lastQuest;
+  final ValueNotifier<int?> _selectedNodeIndex = ValueNotifier(null);
+  AccentQuest? _lastQuest;
 
   @override
   void dispose() {
     _scrollController.dispose();
-                _selectedNodeIndex.dispose();
+    _selectedNodeIndex.dispose();
     disposeAccentGame();
     super.dispose();
   }
@@ -128,15 +129,11 @@ class _WordLinkingScreenState extends State<WordLinkingScreen> with AccentGameSc
   }
 
   @override
-
   void onQuestionReset() {
-
     _selectedNodeIndex.value = null;
-
   }
 
   @override
-
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('accent', level: widget.level);
@@ -199,7 +196,8 @@ class _WordLinkingScreenState extends State<WordLinkingScreen> with AccentGameSc
                                     children: [
                                       WordLinkingInstruction(
                                         color: theme.primaryColor,
-                                        instruction: isFirstStagePassedNotifier.value
+                                        instruction:
+                                            isFirstStagePassedNotifier.value
                                             ? "Great job! Now record yourself saying the phrase."
                                             : quest.instruction,
                                       ),
@@ -228,7 +226,8 @@ class _WordLinkingScreenState extends State<WordLinkingScreen> with AccentGameSc
                                 ),
                               ),
                             ),
-                            if (isFirstStagePassedNotifier.value && !isAnsweredNotifier.value)
+                            if (isFirstStagePassedNotifier.value &&
+                                !isAnsweredNotifier.value)
                               SliverToBoxAdapter(
                                 child: Column(
                                   children: [
@@ -257,4 +256,3 @@ class _WordLinkingScreenState extends State<WordLinkingScreen> with AccentGameSc
     );
   }
 }
-

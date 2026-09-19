@@ -31,7 +31,8 @@ class FlashcardsScreen extends StatefulWidget {
   State<FlashcardsScreen> createState() => _FlashcardsScreenState();
 }
 
-class _FlashcardsScreenState extends State<FlashcardsScreen> with VocabularyGameScreenMixin {
+class _FlashcardsScreenState extends State<FlashcardsScreen>
+    with VocabularyGameScreenMixin {
   @override
   GameSubtype get gameType => widget.gameType;
 
@@ -44,7 +45,7 @@ class _FlashcardsScreenState extends State<FlashcardsScreen> with VocabularyGame
   late final FlashcardController _controller;
   late ThemeResult _theme;
 
-    VocabularyQuest? _lastQuest;
+  VocabularyQuest? _lastQuest;
 
   @override
   void initState() {

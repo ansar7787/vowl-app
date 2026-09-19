@@ -28,7 +28,8 @@ class GuessTitleScreen extends StatefulWidget {
   State<GuessTitleScreen> createState() => _GuessTitleScreenState();
 }
 
-class _GuessTitleScreenState extends State<GuessTitleScreen> with ReadingGameScreenMixin {
+class _GuessTitleScreenState extends State<GuessTitleScreen>
+    with ReadingGameScreenMixin {
   @override
   GameSubtype get gameType => widget.gameType;
 
@@ -38,19 +39,17 @@ class _GuessTitleScreenState extends State<GuessTitleScreen> with ReadingGameScr
   @override
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
-    
-        final ValueNotifier<bool> _showTypeToConfirm = ValueNotifier(false);
+  final ValueNotifier<bool> _showTypeToConfirm = ValueNotifier(false);
   final ScrollController _scrollController = ScrollController();
 
   @override
   void dispose() {
-                _showTypeToConfirm.dispose();
+    _showTypeToConfirm.dispose();
     _scrollController.dispose();
     disposeReadingGame();
     super.dispose();
   }
 
-    
   @override
   void initState() {
     super.initState();
@@ -108,15 +107,11 @@ class _GuessTitleScreenState extends State<GuessTitleScreen> with ReadingGameScr
   }
 
   @override
-
   void onQuestionReset() {
-
     _showTypeToConfirm.value = false;
-
   }
 
   @override
-
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('reading', level: widget.level);
@@ -224,7 +219,8 @@ class _GuessTitleScreenState extends State<GuessTitleScreen> with ReadingGameScr
                                         SizedBox(height: 30.h),
                                         GuessTitleResult(
                                           quest: quest,
-                                          isCorrect: isCorrectNotifier.value == true,
+                                          isCorrect:
+                                              isCorrectNotifier.value == true,
                                           isDark: isDark,
                                         ),
                                       ],
@@ -244,7 +240,8 @@ class _GuessTitleScreenState extends State<GuessTitleScreen> with ReadingGameScr
                             ],
                           ),
                         ),
-                        if (_showTypeToConfirm.value && isAnsweredNotifier.value)
+                        if (_showTypeToConfirm.value &&
+                            isAnsweredNotifier.value)
                           TypeToConfirmOverlay(
                             expectedText: quest.correctAnswer ?? '',
                             primaryColor: theme.primaryColor,
@@ -270,7 +267,9 @@ class _GuessTitleScreenState extends State<GuessTitleScreen> with ReadingGameScr
     final passage = quest.passage ?? "";
     final evidence = quest.evidenceLine ?? "";
 
-    if (!isAnsweredNotifier.value || evidence.isEmpty || !passage.contains(evidence)) {
+    if (!isAnsweredNotifier.value ||
+        evidence.isEmpty ||
+        !passage.contains(evidence)) {
       return Text(
         passage,
         style: TextStyle(

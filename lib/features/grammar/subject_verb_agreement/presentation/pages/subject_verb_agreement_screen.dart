@@ -25,7 +25,8 @@ class SubjectVerbAgreementScreen extends StatefulWidget {
       _SubjectVerbAgreementScreenState();
 }
 
-class _SubjectVerbAgreementScreenState extends State<SubjectVerbAgreementScreen>with SingleTickerProviderStateMixin, GrammarGameScreenMixin {
+class _SubjectVerbAgreementScreenState extends State<SubjectVerbAgreementScreen>
+    with SingleTickerProviderStateMixin, GrammarGameScreenMixin {
   @override
   GameSubtype get gameType => widget.gameType;
 
@@ -35,8 +36,8 @@ class _SubjectVerbAgreementScreenState extends State<SubjectVerbAgreementScreen>
   @override
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
-      final ValueNotifier<Offset> _ringOffset = ValueNotifier(Offset.zero);
-            final ValueNotifier<bool> _pendingTypeSubmit = ValueNotifier(false);
+  final ValueNotifier<Offset> _ringOffset = ValueNotifier(Offset.zero);
+  final ValueNotifier<bool> _pendingTypeSubmit = ValueNotifier(false);
   final ScrollController _scrollController = ScrollController();
   late final AnimationController _springController;
   int _currentCorrectIndex = 0;
@@ -70,7 +71,7 @@ class _SubjectVerbAgreementScreenState extends State<SubjectVerbAgreementScreen>
   void dispose() {
     _springController.dispose();
     _ringOffset.dispose();
-                _pendingTypeSubmit.dispose();
+    _pendingTypeSubmit.dispose();
     _scrollController.dispose();
     disposeGrammarGame();
     super.dispose();
@@ -132,17 +133,13 @@ class _SubjectVerbAgreementScreenState extends State<SubjectVerbAgreementScreen>
   }
 
   @override
-
   void onQuestionReset() {
-
     _ringOffset.value = Offset.zero;
 
     _pendingTypeSubmit.value = false;
-
   }
 
   @override
-
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('grammar', level: widget.level);
@@ -574,7 +571,9 @@ class _SubjectVerbAgreementScreenState extends State<SubjectVerbAgreementScreen>
         isCorrectNotifier.value != false &&
         index == correctIndex;
     final isWrong =
-        isAnsweredNotifier.value && isCorrectNotifier.value == false && index != correctIndex;
+        isAnsweredNotifier.value &&
+        isCorrectNotifier.value == false &&
+        index != correctIndex;
     final terminalSize = isCompact ? 80.r : 110.r;
 
     return Align(
@@ -620,8 +619,11 @@ class _SubjectVerbAgreementScreenState extends State<SubjectVerbAgreementScreen>
   }
 
   Widget _buildQuantumCore(Color primaryColor, bool isCompact) {
-    final Color coreColor = (isAnsweredNotifier.value || _pendingTypeSubmit.value)
-        ? (isCorrectNotifier.value != false ? Colors.greenAccent : Colors.redAccent)
+    final Color coreColor =
+        (isAnsweredNotifier.value || _pendingTypeSubmit.value)
+        ? (isCorrectNotifier.value != false
+              ? Colors.greenAccent
+              : Colors.redAccent)
         : primaryColor;
     final coreSize = isCompact ? 50.r : 70.r;
     final innerSize = isCompact ? 14.r : 20.r;

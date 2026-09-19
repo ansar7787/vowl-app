@@ -31,7 +31,8 @@ class ConflictResolverScreen extends StatefulWidget {
   State<ConflictResolverScreen> createState() => _ConflictResolverScreenState();
 }
 
-class _ConflictResolverScreenState extends State<ConflictResolverScreen>with TickerProviderStateMixin, RoleplayGameScreenMixin {
+class _ConflictResolverScreenState extends State<ConflictResolverScreen>
+    with TickerProviderStateMixin, RoleplayGameScreenMixin {
   @override
   GameSubtype get gameType => widget.gameType;
 
@@ -41,15 +42,14 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen>with Tic
   @override
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
-    
   late AnimationController _waveController;
   late AnimationController _pulseController;
 
-    final ValueNotifier<double> _rotation = ValueNotifier(
+  final ValueNotifier<double> _rotation = ValueNotifier(
     0.0,
   ); // Slider score level (0.0 to 1.0)
   final ScrollController _scrollController = ScrollController();
-        
+
   @override
   void initState() {
     super.initState();
@@ -84,11 +84,10 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen>with Tic
     _waveController.dispose();
     _pulseController.dispose();
     _rotation.dispose();
-                    _scrollController.dispose();
+    _scrollController.dispose();
     disposeRoleplayGame();
     super.dispose();
   }
-
 
   // Realistic Physical dial rotation updater utilizing trigonometry
   void _onDialDragged(DragUpdateDetails details, Offset localDialCenter) {
@@ -152,15 +151,11 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen>with Tic
   }
 
   @override
-
   void onQuestionReset() {
-
     _rotation.value = 0.0;
-
   }
 
   @override
-
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('roleplay', level: widget.level);
@@ -186,7 +181,8 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen>with Tic
               level: widget.level,
               isAnswered:
                   isAnsweredNotifier.value &&
-                  (isCorrectNotifier.value != null || !isFirstStagePassedNotifier.value),
+                  (isCorrectNotifier.value != null ||
+                      !isFirstStagePassedNotifier.value),
               isCorrect: isCorrectNotifier.value,
               showConfetti: showConfettiNotifier.value,
               onContinue: () =>
@@ -276,7 +272,8 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen>with Tic
                                                     ),
 
                                                     // Submit control button
-                                                    if (!isAnsweredNotifier.value)
+                                                    if (!isAnsweredNotifier
+                                                        .value)
                                                       ScaleButton(
                                                         onTap: () =>
                                                             _submitAnswer(
@@ -393,7 +390,8 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen>with Tic
                                 ],
                               ),
                             ),
-                            if (isFirstStagePassedNotifier.value && !isAnsweredNotifier.value)
+                            if (isFirstStagePassedNotifier.value &&
+                                !isAnsweredNotifier.value)
                               SpeakToConfirmOverlay(
                                 expectedText:
                                     quest.correctAnswer ??

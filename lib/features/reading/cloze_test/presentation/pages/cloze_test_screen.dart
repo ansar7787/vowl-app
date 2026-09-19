@@ -27,7 +27,8 @@ class ClozeTestScreen extends StatefulWidget {
   State<ClozeTestScreen> createState() => _ClozeTestScreenState();
 }
 
-class _ClozeTestScreenState extends State<ClozeTestScreen> with ReadingGameScreenMixin {
+class _ClozeTestScreenState extends State<ClozeTestScreen>
+    with ReadingGameScreenMixin {
   @override
   GameSubtype get gameType => widget.gameType;
 
@@ -37,21 +38,19 @@ class _ClozeTestScreenState extends State<ClozeTestScreen> with ReadingGameScree
   @override
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
-    
   final ValueNotifier<String?> _dockedOption = ValueNotifier(null);
   final ValueNotifier<String?> _pendingDockedOption = ValueNotifier(null);
-        final ScrollController _scrollController = ScrollController();
+  final ScrollController _scrollController = ScrollController();
 
   @override
   void dispose() {
     _dockedOption.dispose();
     _pendingDockedOption.dispose();
-                _scrollController.dispose();
+    _scrollController.dispose();
     disposeReadingGame();
     super.dispose();
   }
 
-    
   @override
   void initState() {
     super.initState();
@@ -116,17 +115,13 @@ class _ClozeTestScreenState extends State<ClozeTestScreen> with ReadingGameScree
   }
 
   @override
-
   void onQuestionReset() {
-
     _dockedOption.value = null;
 
     _pendingDockedOption.value = null;
-
   }
 
   @override
-
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('reading', level: widget.level);

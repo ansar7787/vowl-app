@@ -30,7 +30,8 @@ class TrueFalseReadingScreen extends StatefulWidget {
   State<TrueFalseReadingScreen> createState() => _TrueFalseReadingScreenState();
 }
 
-class _TrueFalseReadingScreenState extends State<TrueFalseReadingScreen> with ReadingGameScreenMixin {
+class _TrueFalseReadingScreenState extends State<TrueFalseReadingScreen>
+    with ReadingGameScreenMixin {
   @override
   GameSubtype get gameType => widget.gameType;
 
@@ -40,11 +41,10 @@ class _TrueFalseReadingScreenState extends State<TrueFalseReadingScreen> with Re
   @override
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
-    
   final ValueNotifier<double> _coinX = ValueNotifier(0.0);
   final ValueNotifier<double> _coinY = ValueNotifier(0.0);
   final ValueNotifier<double> _coinRotation = ValueNotifier(0.0);
-          
+
   final ValueNotifier<bool?> _pendingAnswer = ValueNotifier(null);
   final ScrollController _scrollController = ScrollController();
 
@@ -53,7 +53,7 @@ class _TrueFalseReadingScreenState extends State<TrueFalseReadingScreen> with Re
     _coinX.dispose();
     _coinY.dispose();
     _coinRotation.dispose();
-                _pendingAnswer.dispose();
+    _pendingAnswer.dispose();
     _scrollController.dispose();
     disposeReadingGame();
     super.dispose();
@@ -153,9 +153,7 @@ class _TrueFalseReadingScreenState extends State<TrueFalseReadingScreen> with Re
   }
 
   @override
-
   void onQuestionReset() {
-
     _coinX.value = 0.0;
 
     _coinY.value = 0.0;
@@ -163,11 +161,9 @@ class _TrueFalseReadingScreenState extends State<TrueFalseReadingScreen> with Re
     _coinRotation.value = 0.0;
 
     _pendingAnswer.value = null;
-
   }
 
   @override
-
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('reading', level: widget.level);
@@ -264,7 +260,8 @@ class _TrueFalseReadingScreenState extends State<TrueFalseReadingScreen> with Re
                                         SizedBox(height: 30.h),
                                         TrueFalseReadingResult(
                                           quest: quest,
-                                          isCorrect: isCorrectNotifier.value == true,
+                                          isCorrect:
+                                              isCorrectNotifier.value == true,
                                           isDark: isDark,
                                         ),
                                       ],
@@ -282,7 +279,8 @@ class _TrueFalseReadingScreenState extends State<TrueFalseReadingScreen> with Re
                             ],
                           ),
                         ),
-                        if (_pendingAnswer.value != null && !isAnsweredNotifier.value)
+                        if (_pendingAnswer.value != null &&
+                            !isAnsweredNotifier.value)
                           EvidenceHighlightWrapper(
                             passage: quest.passage ?? "",
                             evidenceWords:

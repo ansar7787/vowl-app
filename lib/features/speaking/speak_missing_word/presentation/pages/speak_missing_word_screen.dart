@@ -29,7 +29,8 @@ class SpeakMissingWordScreen extends StatefulWidget {
   State<SpeakMissingWordScreen> createState() => _SpeakMissingWordScreenState();
 }
 
-class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen>with TickerProviderStateMixin, SpeakingGameScreenMixin {
+class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen>
+    with TickerProviderStateMixin, SpeakingGameScreenMixin {
   @override
   GameSubtype get gameType => widget.gameType;
 
@@ -39,18 +40,16 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen>with Tic
   @override
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
-    
   late AnimationController _vortexController;
   late AnimationController _pullController;
 
-    
   // Option states
   final ValueNotifier<List<String>> _dynamicOptions = ValueNotifier([]);
   final ValueNotifier<String?> _selectedWord = ValueNotifier(null);
   final ValueNotifier<bool> _isListening = ValueNotifier(false);
   final ValueNotifier<bool> _isWordPlaced = ValueNotifier(false);
 
-        final ScrollController _scrollController = ScrollController();
+  final ScrollController _scrollController = ScrollController();
 
   @override
   void initState() {
@@ -117,7 +116,7 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen>with Tic
     _selectedWord.dispose();
     _isListening.dispose();
     _isWordPlaced.dispose();
-                _scrollController.dispose();
+    _scrollController.dispose();
     disposeSpeakingGame();
     super.dispose();
   }
@@ -133,8 +132,6 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen>with Tic
       }
     });
   }
-
-
 
   void _onPullStart(String word) {
     if (isAnsweredNotifier.value || _isWordPlaced.value) return;
@@ -201,9 +198,7 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen>with Tic
   }
 
   @override
-
   void onQuestionReset() {
-
     _dynamicOptions.value = [];
 
     _selectedWord.value = null;
@@ -211,11 +206,9 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen>with Tic
     _isListening.value = false;
 
     _isWordPlaced.value = false;
-
   }
 
   @override
-
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('speaking', level: widget.level);
@@ -336,7 +329,8 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen>with Tic
                                 ),
                               ),
                             ),
-                            if (_isWordPlaced.value && !isAnsweredNotifier.value)
+                            if (_isWordPlaced.value &&
+                                !isAnsweredNotifier.value)
                               SliverToBoxAdapter(
                                 child: ShadowPlaybackCompare(
                                   expectedText: userCompletedSentence,

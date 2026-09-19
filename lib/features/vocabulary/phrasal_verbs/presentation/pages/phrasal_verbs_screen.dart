@@ -32,7 +32,8 @@ class PhrasalVerbsScreen extends StatefulWidget {
   State<PhrasalVerbsScreen> createState() => _PhrasalVerbsScreenState();
 }
 
-class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>with SingleTickerProviderStateMixin, VocabularyGameScreenMixin {
+class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
+    with SingleTickerProviderStateMixin, VocabularyGameScreenMixin {
   @override
   GameSubtype get gameType => widget.gameType;
 
@@ -42,10 +43,9 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>with SingleTicke
   @override
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
-    
-          final ValueNotifier<String?> _selectedOption = ValueNotifier(null);
+  final ValueNotifier<String?> _selectedOption = ValueNotifier(null);
   final ScrollController _scrollController = ScrollController();
-    VocabularyQuest? _lastQuest;
+  VocabularyQuest? _lastQuest;
 
   late AnimationController _vaultController;
 
@@ -72,7 +72,7 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>with SingleTicke
 
   @override
   void dispose() {
-                    _selectedOption.dispose();
+    _selectedOption.dispose();
     _scrollController.dispose();
     _vaultController.dispose();
     disposeVocabularyGame();
@@ -157,15 +157,11 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>with SingleTicke
   }
 
   @override
-
   void onQuestionReset() {
-
     _selectedOption.value = null;
-
   }
 
   @override
-
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
@@ -199,7 +195,8 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>with SingleTicke
               level: widget.level,
               isAnswered:
                   isAnsweredNotifier.value &&
-                  (isCorrectNotifier.value != null || !isFirstStagePassedNotifier.value),
+                  (isCorrectNotifier.value != null ||
+                      !isFirstStagePassedNotifier.value),
               isCorrect: isCorrectNotifier.value,
               showConfetti: showConfettiNotifier.value,
               hasStage2: true,

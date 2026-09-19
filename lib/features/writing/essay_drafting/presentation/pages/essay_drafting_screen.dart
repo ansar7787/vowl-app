@@ -30,7 +30,8 @@ class EssayDraftingScreen extends StatefulWidget {
   State<EssayDraftingScreen> createState() => _EssayDraftingScreenState();
 }
 
-class _EssayDraftingScreenState extends State<EssayDraftingScreen> with WritingGameScreenMixin {
+class _EssayDraftingScreenState extends State<EssayDraftingScreen>
+    with WritingGameScreenMixin {
   @override
   GameSubtype get gameType => widget.gameType;
 
@@ -40,12 +41,11 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen> with WritingG
   @override
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
-  
   final ValueNotifier<Map<String, String?>> _blueprintSlots = ValueNotifier({});
   WritingQuest? _lastQuest;
   final ValueNotifier<List<String>> _shuffledOptions = ValueNotifier([]);
 
-    final ValueNotifier<bool> _pendingSubmit = ValueNotifier(false);
+  final ValueNotifier<bool> _pendingSubmit = ValueNotifier(false);
 
   late final ScrollController _scrollController;
 
@@ -54,7 +54,7 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen> with WritingG
     _scrollController.dispose();
     _blueprintSlots.dispose();
     _shuffledOptions.dispose();
-        _pendingSubmit.dispose();
+    _pendingSubmit.dispose();
     disposeWritingGame();
     super.dispose();
   }
@@ -159,19 +159,15 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen> with WritingG
   }
 
   @override
-
   void onQuestionReset() {
-
     _blueprintSlots.value = {};
 
     _shuffledOptions.value = [];
 
     _pendingSubmit.value = false;
-
   }
 
   @override
-
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('writing', level: widget.level);

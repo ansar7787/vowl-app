@@ -28,7 +28,8 @@ class ReadingInferenceScreen extends StatefulWidget {
   State<ReadingInferenceScreen> createState() => _ReadingInferenceScreenState();
 }
 
-class _ReadingInferenceScreenState extends State<ReadingInferenceScreen> with ReadingGameScreenMixin {
+class _ReadingInferenceScreenState extends State<ReadingInferenceScreen>
+    with ReadingGameScreenMixin {
   @override
   GameSubtype get gameType => widget.gameType;
 
@@ -38,10 +39,9 @@ class _ReadingInferenceScreenState extends State<ReadingInferenceScreen> with Re
   @override
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
-  
   final ValueNotifier<List<Offset>> _rubPoints = ValueNotifier([]);
   final ValueNotifier<double> _clarity = ValueNotifier(0.0);
-        final ValueNotifier<bool> _showEvidence = ValueNotifier(false);
+  final ValueNotifier<bool> _showEvidence = ValueNotifier(false);
   final ValueNotifier<bool> _evidenceFound = ValueNotifier(false);
   final ScrollController _scrollController = ScrollController();
 
@@ -49,14 +49,13 @@ class _ReadingInferenceScreenState extends State<ReadingInferenceScreen> with Re
   void dispose() {
     _rubPoints.dispose();
     _clarity.dispose();
-                _showEvidence.dispose();
+    _showEvidence.dispose();
     _evidenceFound.dispose();
     _scrollController.dispose();
     disposeReadingGame();
     super.dispose();
   }
 
-    
   @override
   void initState() {
     super.initState();
@@ -109,9 +108,7 @@ class _ReadingInferenceScreenState extends State<ReadingInferenceScreen> with Re
   }
 
   @override
-
   void onQuestionReset() {
-
     _rubPoints.value = [];
 
     _clarity.value = 0.0;
@@ -119,11 +116,9 @@ class _ReadingInferenceScreenState extends State<ReadingInferenceScreen> with Re
     _showEvidence.value = false;
 
     _evidenceFound.value = false;
-
   }
 
   @override
-
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('reading', level: widget.level);
@@ -256,7 +251,8 @@ class _ReadingInferenceScreenState extends State<ReadingInferenceScreen> with Re
                                         SizedBox(height: 30.h),
                                         ReadingInferenceResult(
                                           quest: quest,
-                                          isCorrect: isCorrectNotifier.value == true,
+                                          isCorrect:
+                                              isCorrectNotifier.value == true,
                                           isDark: isDark,
                                         ),
                                       ],

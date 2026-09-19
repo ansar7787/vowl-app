@@ -30,7 +30,8 @@ class OpinionWritingScreen extends StatefulWidget {
   State<OpinionWritingScreen> createState() => _OpinionWritingScreenState();
 }
 
-class _OpinionWritingScreenState extends State<OpinionWritingScreen> with WritingGameScreenMixin {
+class _OpinionWritingScreenState extends State<OpinionWritingScreen>
+    with WritingGameScreenMixin {
   @override
   GameSubtype get gameType => widget.gameType;
 
@@ -40,12 +41,11 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen> with Writin
   @override
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
-  
   final ValueNotifier<List<String>> _leftPanArgs = ValueNotifier([]);
   final ValueNotifier<List<String>> _rightPanArgs = ValueNotifier([]);
 
   final ValueNotifier<double> _scaleRotation = ValueNotifier(0.0);
-    WritingQuest? _lastQuest;
+  WritingQuest? _lastQuest;
   final ValueNotifier<List<String>> _shuffledOptions = ValueNotifier([]);
   final ValueNotifier<bool> _pendingScaleSubmit = ValueNotifier(false);
 
@@ -57,7 +57,7 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen> with Writin
     _leftPanArgs.dispose();
     _rightPanArgs.dispose();
     _scaleRotation.dispose();
-        _shuffledOptions.dispose();
+    _shuffledOptions.dispose();
     _pendingScaleSubmit.dispose();
     disposeWritingGame();
     super.dispose();
@@ -162,9 +162,7 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen> with Writin
   }
 
   @override
-
   void onQuestionReset() {
-
     _leftPanArgs.value = [];
 
     _rightPanArgs.value = [];
@@ -174,11 +172,9 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen> with Writin
     _shuffledOptions.value = [];
 
     _pendingScaleSubmit.value = false;
-
   }
 
   @override
-
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('writing', level: widget.level);
@@ -375,7 +371,12 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen> with Writin
                                           ),
                                         ),
                                       SizedBox(
-                                        height: !isAnswered ? MediaQuery.viewInsetsOf(context).bottom + 40.h : 160.h,
+                                        height: !isAnswered
+                                            ? MediaQuery.viewInsetsOf(
+                                                    context,
+                                                  ).bottom +
+                                                  40.h
+                                            : 160.h,
                                       ),
                                     ],
                                   ),

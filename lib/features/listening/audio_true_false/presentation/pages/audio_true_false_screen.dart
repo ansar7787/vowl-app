@@ -32,7 +32,8 @@ class AudioTrueFalseScreen extends StatefulWidget {
   State<AudioTrueFalseScreen> createState() => _AudioTrueFalseScreenState();
 }
 
-class _AudioTrueFalseScreenState extends State<AudioTrueFalseScreen>with SingleTickerProviderStateMixin, ListeningGameScreenMixin {
+class _AudioTrueFalseScreenState extends State<AudioTrueFalseScreen>
+    with SingleTickerProviderStateMixin, ListeningGameScreenMixin {
   @override
   GameSubtype get gameType => widget.gameType;
 
@@ -42,11 +43,10 @@ class _AudioTrueFalseScreenState extends State<AudioTrueFalseScreen>with SingleT
   @override
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
-    
   final GlobalKey<SpeedChallengeTimerState> _timerKey =
       GlobalKey<SpeedChallengeTimerState>();
 
-            final ValueNotifier<bool?> _selectedVerdict = ValueNotifier(null);
+  final ValueNotifier<bool?> _selectedVerdict = ValueNotifier(null);
   final ScrollController _scrollController = ScrollController();
 
   late AnimationController _audioController;
@@ -54,7 +54,7 @@ class _AudioTrueFalseScreenState extends State<AudioTrueFalseScreen>with SingleT
   @override
   void dispose() {
     _audioController.dispose();
-                _selectedVerdict.dispose();
+    _selectedVerdict.dispose();
     _scrollController.dispose();
     disposeListeningGame();
     super.dispose();
@@ -173,15 +173,11 @@ class _AudioTrueFalseScreenState extends State<AudioTrueFalseScreen>with SingleT
   }
 
   @override
-
   void onQuestionReset() {
-
     _selectedVerdict.value = null;
-
   }
 
   @override
-
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme(
@@ -298,7 +294,9 @@ class _AudioTrueFalseScreenState extends State<AudioTrueFalseScreen>with SingleT
                               ),
                               SliverToBoxAdapter(
                                 child: SizedBox(
-                                  height: isAnsweredNotifier.value ? 200.h : 60.h,
+                                  height: isAnsweredNotifier.value
+                                      ? 200.h
+                                      : 60.h,
                                 ),
                               ),
                             ],

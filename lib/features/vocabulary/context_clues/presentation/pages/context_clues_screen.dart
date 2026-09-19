@@ -34,7 +34,8 @@ class ContextCluesScreen extends StatefulWidget {
   State<ContextCluesScreen> createState() => _ContextCluesScreenState();
 }
 
-class _ContextCluesScreenState extends State<ContextCluesScreen> with VocabularyGameScreenMixin {
+class _ContextCluesScreenState extends State<ContextCluesScreen>
+    with VocabularyGameScreenMixin {
   @override
   GameSubtype get gameType => widget.gameType;
 
@@ -44,12 +45,11 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> with Vocabulary
   @override
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
-    
   final ValueNotifier<Offset> _lensPosition = ValueNotifier(Offset.zero);
-          final ValueNotifier<String?> _selectedOption = ValueNotifier(null);
+  final ValueNotifier<String?> _selectedOption = ValueNotifier(null);
   final ScrollController _scrollController = ScrollController();
 
-    VocabularyQuest? _lastQuest;
+  VocabularyQuest? _lastQuest;
 
   @override
   void initState() {
@@ -74,7 +74,7 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> with Vocabulary
   @override
   void dispose() {
     _lensPosition.dispose();
-                    _selectedOption.dispose();
+    _selectedOption.dispose();
     _scrollController.dispose();
     disposeVocabularyGame();
     super.dispose();
@@ -166,17 +166,13 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> with Vocabulary
   }
 
   @override
-
   void onQuestionReset() {
-
     _lensPosition.value = Offset.zero;
 
     _selectedOption.value = null;
-
   }
 
   @override
-
   Widget build(BuildContext context) {
     return BlocConsumer<VocabularyBloc, VocabularyState>(
       listenWhen: vocabularyListenWhen,
@@ -252,7 +248,8 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> with Vocabulary
                                 child: Column(
                                   children: [
                                     IgnorePointer(
-                                      ignoring: isFirstStagePassedNotifier.value,
+                                      ignoring:
+                                          isFirstStagePassedNotifier.value,
                                       child: SizedBox(
                                         height: constraints.maxHeight,
                                         child: _buildForensicScene(

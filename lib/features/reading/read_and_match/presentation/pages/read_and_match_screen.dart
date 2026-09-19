@@ -28,7 +28,8 @@ class ReadAndMatchScreen extends StatefulWidget {
   State<ReadAndMatchScreen> createState() => _ReadAndMatchScreenState();
 }
 
-class _ReadAndMatchScreenState extends State<ReadAndMatchScreen> with ReadingGameScreenMixin {
+class _ReadAndMatchScreenState extends State<ReadAndMatchScreen>
+    with ReadingGameScreenMixin {
   @override
   GameSubtype get gameType => widget.gameType;
 
@@ -38,20 +39,19 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen> with ReadingGam
   @override
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
-    
   final GlobalKey _canvasKey = GlobalKey();
   final Map<String, GlobalKey> _terminalKeys = {};
 
   final ValueNotifier<String?> _activeKey = ValueNotifier(null);
   final ValueNotifier<Map<String, String>> _matches = ValueNotifier({});
-            final ValueNotifier<bool> _pendingSubmission = ValueNotifier(false);
+  final ValueNotifier<bool> _pendingSubmission = ValueNotifier(false);
   final ScrollController _scrollController = ScrollController();
 
   @override
   void dispose() {
     _activeKey.dispose();
     _matches.dispose();
-                _pendingSubmission.dispose();
+    _pendingSubmission.dispose();
     _scrollController.dispose();
     disposeReadingGame();
     super.dispose();
@@ -189,19 +189,15 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen> with ReadingGam
   }
 
   @override
-
   void onQuestionReset() {
-
     _activeKey.value = null;
 
     _matches.value = {};
 
     _pendingSubmission.value = false;
-
   }
 
   @override
-
   Widget build(BuildContext context) {
     final theme = LevelThemeHelper.getTheme('reading', level: widget.level);
     final isDark = Theme.of(context).brightness == Brightness.dark;
@@ -411,7 +407,8 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen> with ReadingGam
                             );
                           },
                         ),
-                        if (_pendingSubmission.value && !isAnsweredNotifier.value)
+                        if (_pendingSubmission.value &&
+                            !isAnsweredNotifier.value)
                           SpeakToConfirmOverlay(
                             expectedText:
                                 quest.textToSpeak ??

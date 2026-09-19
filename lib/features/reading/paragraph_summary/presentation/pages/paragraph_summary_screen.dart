@@ -27,7 +27,8 @@ class ParagraphSummaryScreen extends StatefulWidget {
   State<ParagraphSummaryScreen> createState() => _ParagraphSummaryScreenState();
 }
 
-class _ParagraphSummaryScreenState extends State<ParagraphSummaryScreen> with ReadingGameScreenMixin {
+class _ParagraphSummaryScreenState extends State<ParagraphSummaryScreen>
+    with ReadingGameScreenMixin {
   @override
   GameSubtype get gameType => widget.gameType;
 
@@ -37,21 +38,19 @@ class _ParagraphSummaryScreenState extends State<ParagraphSummaryScreen> with Re
   @override
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
-  
   final ValueNotifier<double> _pinchWidth = ValueNotifier(1.0);
   final ValueNotifier<bool> _isDistilled = ValueNotifier(false);
-        final ScrollController _scrollController = ScrollController();
+  final ScrollController _scrollController = ScrollController();
 
   @override
   void dispose() {
     _pinchWidth.dispose();
     _isDistilled.dispose();
-                _scrollController.dispose();
+    _scrollController.dispose();
     disposeReadingGame();
     super.dispose();
   }
 
-    
   @override
   void initState() {
     super.initState();
@@ -105,17 +104,13 @@ class _ParagraphSummaryScreenState extends State<ParagraphSummaryScreen> with Re
   }
 
   @override
-
   void onQuestionReset() {
-
     _pinchWidth.value = 1.0;
 
     _isDistilled.value = false;
-
   }
 
   @override
-
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('reading', level: widget.level);
@@ -218,7 +213,8 @@ class _ParagraphSummaryScreenState extends State<ParagraphSummaryScreen> with Re
                                         SizedBox(height: 30.h),
                                         ParagraphSummaryResult(
                                           quest: quest,
-                                          isCorrect: isCorrectNotifier.value == true,
+                                          isCorrect:
+                                              isCorrectNotifier.value == true,
                                           isDark: isDark,
                                         ),
                                       ],

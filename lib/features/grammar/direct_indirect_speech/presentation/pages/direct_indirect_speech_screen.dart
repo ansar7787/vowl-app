@@ -29,8 +29,8 @@ class DirectIndirectSpeechScreen extends StatefulWidget {
       _DirectIndirectSpeechScreenState();
 }
 
-class _DirectIndirectSpeechScreenState
-    extends State<DirectIndirectSpeechScreen> with GrammarGameScreenMixin {
+class _DirectIndirectSpeechScreenState extends State<DirectIndirectSpeechScreen>
+    with GrammarGameScreenMixin {
   @override
   GameSubtype get gameType => widget.gameType;
 
@@ -40,16 +40,15 @@ class _DirectIndirectSpeechScreenState
   @override
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
-    
   final ValueNotifier<double> _rotation = ValueNotifier(0.0);
   final ValueNotifier<int> _selectedReflection = ValueNotifier(-1);
-          final ScrollController _scrollController = ScrollController();
+  final ScrollController _scrollController = ScrollController();
 
   @override
   void dispose() {
     _rotation.dispose();
     _selectedReflection.dispose();
-                    _scrollController.dispose();
+    _scrollController.dispose();
     disposeGrammarGame();
     super.dispose();
   }
@@ -66,7 +65,6 @@ class _DirectIndirectSpeechScreenState
     });
   }
 
-    
   void _onStagePassedScroll() {
     Future.delayed(const Duration(milliseconds: 100), () {
       if (mounted && _scrollController.hasClients) {
@@ -139,17 +137,13 @@ class _DirectIndirectSpeechScreenState
   }
 
   @override
-
   void onQuestionReset() {
-
     _rotation.value = 0.0;
 
     _selectedReflection.value = -1;
-
   }
 
   @override
-
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('grammar', level: widget.level);
@@ -202,7 +196,8 @@ class _DirectIndirectSpeechScreenState
               level: widget.level,
               isAnswered:
                   isAnsweredNotifier.value &&
-                  (isCorrectNotifier.value != null || !isFirstStagePassedNotifier.value),
+                  (isCorrectNotifier.value != null ||
+                      !isFirstStagePassedNotifier.value),
               isCorrect: isCorrectNotifier.value,
               isFinalFailure: state is GrammarLoaded && state.isFinalFailure,
               showConfetti: showConfettiNotifier.value,
@@ -441,7 +436,8 @@ class _DirectIndirectSpeechScreenState
     final isCorrect =
         (isAnsweredNotifier.value || isFirstStagePassedNotifier.value) &&
         index == correctIndex;
-    final isWrong = isAnsweredNotifier.value && isSelected && index != correctIndex;
+    final isWrong =
+        isAnsweredNotifier.value && isSelected && index != correctIndex;
 
     final displayColor = isCorrect
         ? Colors.greenAccent

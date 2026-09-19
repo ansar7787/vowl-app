@@ -29,7 +29,8 @@ class ContextualUsageScreen extends StatefulWidget {
   State<ContextualUsageScreen> createState() => _ContextualUsageScreenState();
 }
 
-class _ContextualUsageScreenState extends State<ContextualUsageScreen> with VocabularyGameScreenMixin {
+class _ContextualUsageScreenState extends State<ContextualUsageScreen>
+    with VocabularyGameScreenMixin {
   @override
   GameSubtype get gameType => widget.gameType;
 
@@ -39,15 +40,14 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> with Voca
   @override
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
-    
-          final ValueNotifier<String?> _selectedOption = ValueNotifier(null);
+  final ValueNotifier<String?> _selectedOption = ValueNotifier(null);
   final ScrollController _scrollController = ScrollController();
 
-    VocabularyQuest? _lastQuest;
+  VocabularyQuest? _lastQuest;
 
   @override
   void dispose() {
-                    _selectedOption.dispose();
+    _selectedOption.dispose();
     _scrollController.dispose();
     disposeVocabularyGame();
     super.dispose();
@@ -126,15 +126,11 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> with Voca
   }
 
   @override
-
   void onQuestionReset() {
-
     _selectedOption.value = null;
-
   }
 
   @override
-
   Widget build(BuildContext context) {
     return BlocConsumer<VocabularyBloc, VocabularyState>(
       listenWhen: vocabularyListenWhen,
@@ -164,7 +160,8 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> with Voca
               level: widget.level,
               isAnswered:
                   isAnsweredNotifier.value &&
-                  (isCorrectNotifier.value != null || !isFirstStagePassedNotifier.value),
+                  (isCorrectNotifier.value != null ||
+                      !isFirstStagePassedNotifier.value),
               isCorrect: isCorrectNotifier.value,
               showConfetti: showConfettiNotifier.value,
               hasStage2: true,
@@ -219,7 +216,8 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> with Voca
                                 slivers: [
                                   SliverToBoxAdapter(
                                     child: IgnorePointer(
-                                      ignoring: isFirstStagePassedNotifier.value,
+                                      ignoring:
+                                          isFirstStagePassedNotifier.value,
                                       child: ConstrainedBox(
                                         constraints: BoxConstraints(
                                           minHeight: trueMaxHeight,
@@ -261,7 +259,8 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> with Voca
                                                         : null,
                                                   ),
                                                 ),
-                                                if (isFirstStagePassedNotifier.value)
+                                                if (isFirstStagePassedNotifier
+                                                    .value)
                                                   Padding(
                                                     padding:
                                                         EdgeInsets.symmetric(
@@ -296,7 +295,8 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> with Voca
                                                   ),
                                                 SizedBox(
                                                   height:
-                                                      (isAnsweredNotifier.value ||
+                                                      (isAnsweredNotifier
+                                                              .value ||
                                                           isFirstStagePassedNotifier
                                                               .value)
                                                       ? 10.h
@@ -421,7 +421,8 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> with Voca
                       color: color,
                       isDark: isDark,
                       isAnswered: isAnsweredNotifier.value,
-                      isCorrect: isCorrectNotifier.value ?? currentOptionCorrect,
+                      isCorrect:
+                          isCorrectNotifier.value ?? currentOptionCorrect,
                       selectedOption: _selectedOption.value,
                     ),
                   ),

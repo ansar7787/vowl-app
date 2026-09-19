@@ -31,7 +31,8 @@ class SpeakOppositeScreen extends StatefulWidget {
   State<SpeakOppositeScreen> createState() => _SpeakOppositeScreenState();
 }
 
-class _SpeakOppositeScreenState extends State<SpeakOppositeScreen> with SpeakingGameScreenMixin {
+class _SpeakOppositeScreenState extends State<SpeakOppositeScreen>
+    with SpeakingGameScreenMixin {
   @override
   GameSubtype get gameType => widget.gameType;
 
@@ -41,8 +42,6 @@ class _SpeakOppositeScreenState extends State<SpeakOppositeScreen> with Speaking
   @override
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
-    
-          
   final ValueNotifier<bool> _ttsFinished = ValueNotifier(false);
   Timer? _ttsTimer;
   final ScrollController _scrollController = ScrollController();
@@ -71,14 +70,12 @@ class _SpeakOppositeScreenState extends State<SpeakOppositeScreen> with Speaking
 
   @override
   void dispose() {
-                _scrollController.dispose();
+    _scrollController.dispose();
     _ttsFinished.dispose();
     _ttsTimer?.cancel();
     disposeSpeakingGame();
     super.dispose();
   }
-
-
 
   void _submitVerbalEvaluation(bool nailedIt, String expectedText) {
     if (isAnsweredNotifier.value) return;
@@ -112,15 +109,11 @@ class _SpeakOppositeScreenState extends State<SpeakOppositeScreen> with Speaking
   }
 
   @override
-
   void onQuestionReset() {
-
     _ttsFinished.value = false;
-
   }
 
   @override
-
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('speaking', level: widget.level);

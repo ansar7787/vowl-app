@@ -31,7 +31,8 @@ class EmergencyHubScreen extends StatefulWidget {
   State<EmergencyHubScreen> createState() => _EmergencyHubScreenState();
 }
 
-class _EmergencyHubScreenState extends State<EmergencyHubScreen>with TickerProviderStateMixin, RoleplayGameScreenMixin {
+class _EmergencyHubScreenState extends State<EmergencyHubScreen>
+    with TickerProviderStateMixin, RoleplayGameScreenMixin {
   @override
   GameSubtype get gameType => widget.gameType;
 
@@ -41,15 +42,14 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>with TickerProvi
   @override
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
-    
   late AnimationController _pulseController;
   late TextEditingController _codeController;
 
-    final ValueNotifier<double> _rotation = ValueNotifier(
+  final ValueNotifier<double> _rotation = ValueNotifier(
     0.0,
   ); // Valve rotation progress (0.0 to 1.0)
   final ScrollController _scrollController = ScrollController();
-        
+
   @override
   void initState() {
     super.initState();
@@ -82,11 +82,10 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>with TickerProvi
     _pulseController.dispose();
     _codeController.dispose();
     _rotation.dispose();
-                    _scrollController.dispose();
+    _scrollController.dispose();
     disposeRoleplayGame();
     super.dispose();
   }
-
 
   // Trigonometry-based circular dial update
   void _onValveDragged(DragUpdateDetails details, Offset localCenter) {
@@ -153,15 +152,11 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>with TickerProvi
   }
 
   @override
-
   void onQuestionReset() {
-
     _rotation.value = 0.0;
-
   }
 
   @override
-
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
@@ -186,7 +181,8 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>with TickerProvi
               level: widget.level,
               isAnswered:
                   isAnsweredNotifier.value &&
-                  (isCorrectNotifier.value != null || !isFirstStagePassedNotifier.value),
+                  (isCorrectNotifier.value != null ||
+                      !isFirstStagePassedNotifier.value),
               isCorrect: isCorrectNotifier.value,
               showConfetti: showConfettiNotifier.value,
               onContinue: () =>
@@ -296,7 +292,8 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>with TickerProvi
                                                     ),
 
                                                     // Dispatch lock confirm trigger button
-                                                    if (!isAnsweredNotifier.value &&
+                                                    if (!isAnsweredNotifier
+                                                            .value &&
                                                         _codeController
                                                             .text
                                                             .isNotEmpty)
@@ -413,7 +410,8 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>with TickerProvi
                                 ],
                               ),
                             ),
-                            if (isFirstStagePassedNotifier.value && !isAnsweredNotifier.value)
+                            if (isFirstStagePassedNotifier.value &&
+                                !isAnsweredNotifier.value)
                               SpeakToConfirmOverlay(
                                 expectedText:
                                     quest.correctAnswer ?? _codeController.text,

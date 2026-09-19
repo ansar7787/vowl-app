@@ -31,7 +31,8 @@ class GourmetOrderScreen extends StatefulWidget {
   State<GourmetOrderScreen> createState() => _GourmetOrderScreenState();
 }
 
-class _GourmetOrderScreenState extends State<GourmetOrderScreen>with TickerProviderStateMixin, RoleplayGameScreenMixin {
+class _GourmetOrderScreenState extends State<GourmetOrderScreen>
+    with TickerProviderStateMixin, RoleplayGameScreenMixin {
   @override
   GameSubtype get gameType => widget.gameType;
 
@@ -41,13 +42,12 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>with TickerProvi
   @override
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
-    
   late AnimationController _steamController;
   late AnimationController _pulseController;
 
-    final ValueNotifier<List<String>> _selectedItems = ValueNotifier([]);
+  final ValueNotifier<List<String>> _selectedItems = ValueNotifier([]);
   final ScrollController _scrollController = ScrollController();
-        
+
   @override
   void initState() {
     super.initState();
@@ -82,11 +82,10 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>with TickerProvi
     _steamController.dispose();
     _pulseController.dispose();
     _selectedItems.dispose();
-                    _scrollController.dispose();
+    _scrollController.dispose();
     disposeRoleplayGame();
     super.dispose();
   }
-
 
   void _onItemTapped(String item) {
     if (isAnsweredNotifier.value || isFirstStagePassedNotifier.value) return;
@@ -157,15 +156,11 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>with TickerProvi
   }
 
   @override
-
   void onQuestionReset() {
-
     _selectedItems.value = [];
-
   }
 
   @override
-
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('roleplay', level: widget.level);
@@ -192,7 +187,8 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>with TickerProvi
               level: widget.level,
               isAnswered:
                   isAnsweredNotifier.value &&
-                  (isCorrectNotifier.value != null || !isFirstStagePassedNotifier.value),
+                  (isCorrectNotifier.value != null ||
+                      !isFirstStagePassedNotifier.value),
               isCorrect: isCorrectNotifier.value,
               showConfetti: showConfettiNotifier.value,
               onContinue: () =>
@@ -264,13 +260,16 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>with TickerProvi
                                                       color: theme.primaryColor,
                                                       isDark: isDark,
                                                       isAnswered:
-                                                          isAnsweredNotifier.value &&
-                                                          (isCorrectNotifier.value !=
+                                                          isAnsweredNotifier
+                                                              .value &&
+                                                          (isCorrectNotifier
+                                                                      .value !=
                                                                   null ||
                                                               !isFirstStagePassedNotifier
                                                                   .value),
                                                       isCorrect:
-                                                          isCorrectNotifier.value,
+                                                          isCorrectNotifier
+                                                              .value,
                                                       selectedItems:
                                                           _selectedItems.value,
                                                       steamAnimation:
@@ -294,13 +293,16 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>with TickerProvi
                                                       color: theme.primaryColor,
                                                       isDark: isDark,
                                                       isAnswered:
-                                                          isAnsweredNotifier.value &&
-                                                          (isCorrectNotifier.value !=
+                                                          isAnsweredNotifier
+                                                              .value &&
+                                                          (isCorrectNotifier
+                                                                      .value !=
                                                                   null ||
                                                               !isFirstStagePassedNotifier
                                                                   .value),
                                                       isCorrect:
-                                                          isCorrectNotifier.value,
+                                                          isCorrectNotifier
+                                                              .value,
                                                       selectedItems:
                                                           _selectedItems.value,
                                                       onItemTapped:
@@ -319,7 +321,8 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>with TickerProvi
                                                     ),
 
                                                     // Trigger Action Buttons
-                                                    if (!isAnsweredNotifier.value &&
+                                                    if (!isAnsweredNotifier
+                                                            .value &&
                                                         _selectedItems
                                                             .value
                                                             .isNotEmpty)
@@ -521,7 +524,8 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>with TickerProvi
                                 ],
                               ),
                             ),
-                            if (isFirstStagePassedNotifier.value && !isAnsweredNotifier.value)
+                            if (isFirstStagePassedNotifier.value &&
+                                !isAnsweredNotifier.value)
                               SpeakToConfirmOverlay(
                                 expectedText:
                                     quest.correctAnswer ??

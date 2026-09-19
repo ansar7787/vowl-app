@@ -15,7 +15,10 @@ class VocabularyRepositoryImpl implements VocabularyRepository {
     int level,
   ) async {
     try {
-      final quests = await remoteDataSource.getVocabularyQuests(gameType, level);
+      final quests = await remoteDataSource.getVocabularyQuests(
+        gameType,
+        level,
+      );
       return Right(quests);
     } catch (e) {
       return Left(ServerFailure(e.toString()));

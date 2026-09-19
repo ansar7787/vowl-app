@@ -29,7 +29,8 @@ class PronounResolutionScreen extends StatefulWidget {
       _PronounResolutionScreenState();
 }
 
-class _PronounResolutionScreenState extends State<PronounResolutionScreen> with GrammarGameScreenMixin {
+class _PronounResolutionScreenState extends State<PronounResolutionScreen>
+    with GrammarGameScreenMixin {
   @override
   GameSubtype get gameType => widget.gameType;
 
@@ -39,17 +40,16 @@ class _PronounResolutionScreenState extends State<PronounResolutionScreen> with 
   @override
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
-    
   final ValueNotifier<double> _rotation = ValueNotifier(0.0);
   final ValueNotifier<int> _targetIndex = ValueNotifier(-1);
-            final ValueNotifier<bool> _pendingJigsaw = ValueNotifier(false);
+  final ValueNotifier<bool> _pendingJigsaw = ValueNotifier(false);
   final ScrollController _scrollController = ScrollController();
 
   @override
   void dispose() {
     _rotation.dispose();
     _targetIndex.dispose();
-                _pendingJigsaw.dispose();
+    _pendingJigsaw.dispose();
     _scrollController.dispose();
     disposeGrammarGame();
     super.dispose();
@@ -127,19 +127,15 @@ class _PronounResolutionScreenState extends State<PronounResolutionScreen> with 
   }
 
   @override
-
   void onQuestionReset() {
-
     _rotation.value = 0.0;
 
     _targetIndex.value = -1;
 
     _pendingJigsaw.value = false;
-
   }
 
   @override
-
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('grammar', level: widget.level);

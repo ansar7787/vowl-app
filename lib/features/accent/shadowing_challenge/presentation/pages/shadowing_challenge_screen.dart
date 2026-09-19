@@ -32,7 +32,8 @@ class ShadowingChallengeScreen extends StatefulWidget {
       _ShadowingChallengeScreenState();
 }
 
-class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen> with AccentGameScreenMixin {
+class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen>
+    with AccentGameScreenMixin {
   @override
   GameSubtype get gameType => widget.gameType;
 
@@ -43,9 +44,9 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen> wit
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
   final ScrollController _scrollController = ScrollController();
-      
+
   final ValueNotifier<int?> _selectedIndex = ValueNotifier(null);
-    final ValueNotifier<double> _currentSpeed = ValueNotifier(1.0);
+  final ValueNotifier<double> _currentSpeed = ValueNotifier(1.0);
 
   @override
   void initState() {
@@ -70,8 +71,8 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen> wit
   @override
   void dispose() {
     _scrollController.dispose();
-                _selectedIndex.dispose();
-        _currentSpeed.dispose();
+    _selectedIndex.dispose();
+    _currentSpeed.dispose();
     disposeAccentGame();
     super.dispose();
   }
@@ -134,17 +135,13 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen> wit
   }
 
   @override
-
   void onQuestionReset() {
-
     _selectedIndex.value = null;
 
     _currentSpeed.value = 1.0;
-
   }
 
   @override
-
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('accent', level: widget.level);
@@ -229,7 +226,8 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen> wit
                                                 ShadowingChallengeInstruction(
                                                   color: theme.primaryColor,
                                                   instruction:
-                                                      isFirstStagePassedNotifier.value
+                                                      isFirstStagePassedNotifier
+                                                          .value
                                                       ? "Great job! Now record yourself saying the phrase."
                                                       : quest.instruction,
                                                 ),
@@ -262,8 +260,10 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen> wit
                                                   color: theme.primaryColor,
                                                   isDark: isDark,
                                                   isAnswered:
-                                                      isAnsweredNotifier.value ||
-                                                      isFirstStagePassedNotifier.value,
+                                                      isAnsweredNotifier
+                                                          .value ||
+                                                      isFirstStagePassedNotifier
+                                                          .value,
                                                   selectedIndex:
                                                       _selectedIndex.value,
                                                   onSubmitChoice: _submitChoice,
@@ -276,7 +276,8 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen> wit
                                           SizedBox(
                                             height:
                                                 (isAnsweredNotifier.value ||
-                                                    isFirstStagePassedNotifier.value)
+                                                    isFirstStagePassedNotifier
+                                                        .value)
                                                 ? 10.h
                                                 : 60.h,
                                           ),
@@ -320,4 +321,3 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen> wit
     );
   }
 }
-

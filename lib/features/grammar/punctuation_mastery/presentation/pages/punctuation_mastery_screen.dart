@@ -29,7 +29,8 @@ class PunctuationMasteryScreen extends StatefulWidget {
       _PunctuationMasteryScreenState();
 }
 
-class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen> with GrammarGameScreenMixin {
+class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen>
+    with GrammarGameScreenMixin {
   @override
   GameSubtype get gameType => widget.gameType;
 
@@ -39,7 +40,6 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen> wit
   @override
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
-    
   // 2N slots (prefix and suffix per word) to ensure proper typographical wrapping
   final ValueNotifier<Map<int, List<String>>> _prefixStickers = ValueNotifier(
     {},
@@ -48,7 +48,7 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen> wit
     {},
   );
 
-            final ValueNotifier<bool> _pendingTyping = ValueNotifier(false);
+  final ValueNotifier<bool> _pendingTyping = ValueNotifier(false);
   final ValueNotifier<String?> _assembledSentence = ValueNotifier(null);
   final ScrollController _scrollController = ScrollController();
 
@@ -56,7 +56,7 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen> wit
   void dispose() {
     _prefixStickers.dispose();
     _suffixStickers.dispose();
-                _pendingTyping.dispose();
+    _pendingTyping.dispose();
     _assembledSentence.dispose();
     _scrollController.dispose();
     disposeGrammarGame();
@@ -215,9 +215,7 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen> wit
   }
 
   @override
-
   void onQuestionReset() {
-
     _prefixStickers.value = {};
 
     _suffixStickers.value = {};
@@ -225,11 +223,9 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen> wit
     _pendingTyping.value = false;
 
     _assembledSentence.value = null;
-
   }
 
   @override
-
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('grammar', level: widget.level);
@@ -473,7 +469,8 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen> wit
                                                       ),
 
                                                   // Result
-                                                  if (isAnsweredNotifier.value) ...[
+                                                  if (isAnsweredNotifier
+                                                      .value) ...[
                                                     SizedBox(
                                                       height: isCompact
                                                           ? 12.h
@@ -494,7 +491,8 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen> wit
                                                   ),
 
                                                   // Sticker Sheet
-                                                  if (!isAnsweredNotifier.value &&
+                                                  if (!isAnsweredNotifier
+                                                          .value &&
                                                       !_pendingTyping.value)
                                                     PunctuationStickerSheet(
                                                       marks: marks,
@@ -505,7 +503,8 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen> wit
                                                   const Spacer(),
 
                                                   // Submit Button
-                                                  if (!isAnsweredNotifier.value &&
+                                                  if (!isAnsweredNotifier
+                                                          .value &&
                                                       !_pendingTyping.value)
                                                     Padding(
                                                       padding:

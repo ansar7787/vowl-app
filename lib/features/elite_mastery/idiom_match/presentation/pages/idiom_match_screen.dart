@@ -26,7 +26,8 @@ class IdiomMatchScreen extends StatefulWidget {
   State<IdiomMatchScreen> createState() => _IdiomMatchScreenState();
 }
 
-class _IdiomMatchScreenState extends State<IdiomMatchScreen> with EliteMasteryGameScreenMixin {
+class _IdiomMatchScreenState extends State<IdiomMatchScreen>
+    with EliteMasteryGameScreenMixin {
   @override
   GameSubtype get gameType => widget.gameType;
 
@@ -36,13 +37,12 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> with EliteMasteryGa
   @override
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
-    
   final ValueNotifier<List<String>> _shuffledOptions = ValueNotifier([]);
   final ScrollController _scrollController = ScrollController();
   final ValueNotifier<List<int>> _originalIndices = ValueNotifier([]);
-    final ValueNotifier<int?> _selectedIndex = ValueNotifier(null);
-        final ValueNotifier<List<int>> _wrongIndices = ValueNotifier([]);
-  
+  final ValueNotifier<int?> _selectedIndex = ValueNotifier(null);
+  final ValueNotifier<List<int>> _wrongIndices = ValueNotifier([]);
+
   static const double _kCompactHeightBreakpoint = 580;
 
   @override
@@ -69,8 +69,8 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> with EliteMasteryGa
   void dispose() {
     _shuffledOptions.dispose();
     _originalIndices.dispose();
-        _selectedIndex.dispose();
-                _wrongIndices.dispose();
+    _selectedIndex.dispose();
+    _wrongIndices.dispose();
     _scrollController.dispose();
     disposeEliteMasteryGame();
     super.dispose();
@@ -87,7 +87,6 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> with EliteMasteryGa
       }
     });
   }
-
 
   void _onOptionSelected(int shuffledIndex, int? correctOriginalIndex) {
     if (isAnsweredNotifier.value ||
@@ -141,9 +140,7 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> with EliteMasteryGa
   }
 
   @override
-
   void onQuestionReset() {
-
     _shuffledOptions.value = [];
 
     _originalIndices.value = [];
@@ -151,11 +148,9 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> with EliteMasteryGa
     _selectedIndex.value = null;
 
     _wrongIndices.value = [];
-
   }
 
   @override
-
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final isMidnight = context.watch<ThemeCubit>().state.isMidnight;
@@ -545,12 +540,15 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> with EliteMasteryGa
                   ),
                   SliverToBoxAdapter(
                     child: SizedBox(
-                      height: (isAnsweredNotifier.value || isFirstStagePassedNotifier.value)
+                      height:
+                          (isAnsweredNotifier.value ||
+                              isFirstStagePassedNotifier.value)
                           ? 180.h
                           : 60.h,
                     ),
                   ),
-                  if (isFirstStagePassedNotifier.value && !isAnsweredNotifier.value)
+                  if (isFirstStagePassedNotifier.value &&
+                      !isAnsweredNotifier.value)
                     SliverToBoxAdapter(
                       child: Column(
                         children: [
@@ -576,4 +574,3 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> with EliteMasteryGa
     );
   }
 }
-

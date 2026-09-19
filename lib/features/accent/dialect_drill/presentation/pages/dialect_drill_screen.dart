@@ -27,7 +27,8 @@ class DialectDrillScreen extends StatefulWidget {
   State<DialectDrillScreen> createState() => _DialectDrillScreenState();
 }
 
-class _DialectDrillScreenState extends State<DialectDrillScreen> with AccentGameScreenMixin {
+class _DialectDrillScreenState extends State<DialectDrillScreen>
+    with AccentGameScreenMixin {
   @override
   GameSubtype get gameType => widget.gameType;
 
@@ -37,9 +38,8 @@ class _DialectDrillScreenState extends State<DialectDrillScreen> with AccentGame
   @override
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
-    
-      AccentQuest? _lastQuest;
-        
+  AccentQuest? _lastQuest;
+
   List<String>? _shuffledOptions;
   int? _shuffledCorrectIndex;
 
@@ -237,7 +237,8 @@ class _DialectDrillScreenState extends State<DialectDrillScreen> with AccentGame
                                             vertical: 24.h,
                                           ),
                                           child: IgnorePointer(
-                                            ignoring: isFirstStagePassedNotifier.value,
+                                            ignoring: isFirstStagePassedNotifier
+                                                .value,
                                             child: Column(
                                               mainAxisAlignment:
                                                   MainAxisAlignment.start,
@@ -272,14 +273,16 @@ class _DialectDrillScreenState extends State<DialectDrillScreen> with AccentGame
                                                       color: theme.primaryColor,
                                                       isDark: isDark,
                                                       isAnswered:
-                                                          isAnsweredNotifier.value ||
+                                                          isAnsweredNotifier
+                                                              .value ||
                                                           isFirstStagePassedNotifier
                                                               .value,
                                                       isCorrect:
                                                           isFirstStagePassedNotifier
                                                               .value
                                                           ? true
-                                                          : isCorrectNotifier.value,
+                                                          : isCorrectNotifier
+                                                                .value,
                                                       onPlayTargetAudio: () =>
                                                           _triggerAutoPlay(
                                                             quest,
@@ -300,7 +303,8 @@ class _DialectDrillScreenState extends State<DialectDrillScreen> with AccentGame
                                           curve: Curves.easeOut,
                                           child:
                                               (isAnsweredNotifier.value ||
-                                                  isFirstStagePassedNotifier.value)
+                                                  isFirstStagePassedNotifier
+                                                      .value)
                                               ? Padding(
                                                   padding: EdgeInsets.symmetric(
                                                     horizontal: 16.w,
@@ -389,7 +393,8 @@ class _DialectDrillScreenState extends State<DialectDrillScreen> with AccentGame
                                                   height:
                                                       (isFirstStagePassedNotifier
                                                               .value &&
-                                                          !isAnsweredNotifier.value)
+                                                          !isAnsweredNotifier
+                                                              .value)
                                                       ? 40.h
                                                       : 160.h,
                                                 ),

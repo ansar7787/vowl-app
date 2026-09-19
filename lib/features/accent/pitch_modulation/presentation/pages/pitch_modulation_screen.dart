@@ -75,7 +75,8 @@ class PitchModulationScreen extends StatefulWidget {
   State<PitchModulationScreen> createState() => _PitchModulationScreenState();
 }
 
-class _PitchModulationScreenState extends State<PitchModulationScreen> with AccentGameScreenMixin {
+class _PitchModulationScreenState extends State<PitchModulationScreen>
+    with AccentGameScreenMixin {
   @override
   GameSubtype get gameType => widget.gameType;
 
@@ -86,8 +87,8 @@ class _PitchModulationScreenState extends State<PitchModulationScreen> with Acce
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
   final ScrollController _scrollController = ScrollController();
-    
-      AccentQuest? _lastQuest;
+
+  AccentQuest? _lastQuest;
 
   final ValueNotifier<PitchModulationState> _state = ValueNotifier(
     const PitchModulationState(),
@@ -220,15 +221,11 @@ class _PitchModulationScreenState extends State<PitchModulationScreen> with Acce
   }
 
   @override
-
   void onQuestionReset() {
-
     _state.value = const PitchModulationState();
-
   }
 
   @override
-
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('accent', level: widget.level);

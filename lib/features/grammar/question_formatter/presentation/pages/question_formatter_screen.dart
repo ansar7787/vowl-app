@@ -29,7 +29,8 @@ class QuestionFormatterScreen extends StatefulWidget {
       _QuestionFormatterScreenState();
 }
 
-class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>with TickerProviderStateMixin, GrammarGameScreenMixin {
+class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>
+    with TickerProviderStateMixin, GrammarGameScreenMixin {
   @override
   GameSubtype get gameType => widget.gameType;
 
@@ -39,10 +40,9 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>with T
   @override
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
-    
   final ValueNotifier<double> _crankRotation = ValueNotifier(0.0);
   final ValueNotifier<bool> _isCrankComplete = ValueNotifier(false);
-            final ValueNotifier<bool> _pendingJigsaw = ValueNotifier(false);
+  final ValueNotifier<bool> _pendingJigsaw = ValueNotifier(false);
   final ValueNotifier<String?> _selectedOptionText = ValueNotifier(null);
   final ScrollController _scrollController = ScrollController();
 
@@ -52,7 +52,7 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>with T
     _pendingJigsaw.removeListener(_onStateChangeAutoScroll);
     _crankRotation.dispose();
     _isCrankComplete.dispose();
-                _pendingJigsaw.dispose();
+    _pendingJigsaw.dispose();
     _selectedOptionText.dispose();
     _scrollController.dispose();
     disposeGrammarGame();
@@ -96,7 +96,9 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>with T
   }
 
   void _autoSpin() {
-    if (isAnsweredNotifier.value || _isCrankComplete.value || _pendingJigsaw.value) {
+    if (isAnsweredNotifier.value ||
+        _isCrankComplete.value ||
+        _pendingJigsaw.value) {
       return;
     }
     hapticService.success();
@@ -122,7 +124,9 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>with T
   }
 
   void _onCrankUpdate(double delta) {
-    if (isAnsweredNotifier.value || _pendingJigsaw.value || _isCrankComplete.value) {
+    if (isAnsweredNotifier.value ||
+        _pendingJigsaw.value ||
+        _isCrankComplete.value) {
       return;
     }
     _crankRotation.value += delta.abs() * 0.02;
@@ -171,9 +175,7 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>with T
   }
 
   @override
-
   void onQuestionReset() {
-
     _crankRotation.value = 0.0;
 
     _isCrankComplete.value = false;
@@ -181,11 +183,9 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>with T
     _pendingJigsaw.value = false;
 
     _selectedOptionText.value = null;
-
   }
 
   @override
-
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('grammar', level: widget.level);
@@ -456,7 +456,8 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>with T
                                               // Game Mechanic Area
                                               Column(
                                                 children: [
-                                                  if (!isAnsweredNotifier.value &&
+                                                  if (!isAnsweredNotifier
+                                                          .value &&
                                                       !_pendingJigsaw.value &&
                                                       !_isCrankComplete.value)
                                                     ValueListenableBuilder<
@@ -464,31 +465,26 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>with T
                                                     >(
                                                       valueListenable:
                                                           _crankRotation,
-                                                      builder:
-                                                          (
-                                                            context,
-                                                            rotation,
-                                                            _,
-                                                          ) {
-                                                            return QuestionFormatterCrank(
-                                                              crankRotation:
-                                                                  rotation,
-                                                              isAnswered:
-                                                                  isAnsweredNotifier
-                                                                      .value ||
-                                                                  _pendingJigsaw
-                                                                      .value,
-                                                              isDark: isDark,
-                                                              primaryColor: theme
-                                                                  .primaryColor,
-                                                              onPanUpdate:
-                                                                  _onCrankUpdate,
-                                                              onAutoSpin:
-                                                                  _autoSpin,
-                                                            );
-                                                          },
+                                                      builder: (context, rotation, _) {
+                                                        return QuestionFormatterCrank(
+                                                          crankRotation:
+                                                              rotation,
+                                                          isAnswered:
+                                                              isAnsweredNotifier
+                                                                  .value ||
+                                                              _pendingJigsaw
+                                                                  .value,
+                                                          isDark: isDark,
+                                                          primaryColor: theme
+                                                              .primaryColor,
+                                                          onPanUpdate:
+                                                              _onCrankUpdate,
+                                                          onAutoSpin: _autoSpin,
+                                                        );
+                                                      },
                                                     )
-                                                  else if (!isAnsweredNotifier.value &&
+                                                  else if (!isAnsweredNotifier
+                                                          .value &&
                                                       !_pendingJigsaw.value)
                                                     _buildQuestionOptions(
                                                       options,
@@ -498,9 +494,11 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>with T
                                                       isDark,
                                                       isCompact,
                                                     )
-                                                  else if (isAnsweredNotifier.value)
+                                                  else if (isAnsweredNotifier
+                                                      .value)
                                                     _buildResult(
-                                                      isCorrectNotifier.value == true
+                                                      isCorrectNotifier.value ==
+                                                              true
                                                           ? cleanTargetSentence
                                                           : (_selectedOptionText
                                                                     .value ??

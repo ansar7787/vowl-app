@@ -35,7 +35,8 @@ class DailyExpressionScreen extends StatefulWidget {
   State<DailyExpressionScreen> createState() => _DailyExpressionScreenState();
 }
 
-class _DailyExpressionScreenState extends State<DailyExpressionScreen>with SingleTickerProviderStateMixin, SpeakingGameScreenMixin {
+class _DailyExpressionScreenState extends State<DailyExpressionScreen>
+    with SingleTickerProviderStateMixin, SpeakingGameScreenMixin {
   @override
   GameSubtype get gameType => widget.gameType;
 
@@ -45,9 +46,8 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>with Singl
   @override
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
-    
   final ValueNotifier<double> _scratchProgress = ValueNotifier(0.0);
-          
+
   late AnimationController _glowController;
   final ValueNotifier<double> _timeVal = ValueNotifier(0.0);
   String _targetExpression = "";
@@ -96,7 +96,7 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>with Singl
   void dispose() {
     _glowController.dispose();
     _scratchProgress.dispose();
-                _timeVal.dispose();
+    _timeVal.dispose();
     _scrollController.dispose();
     disposeSpeakingGame();
     super.dispose();
@@ -157,17 +157,13 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>with Singl
   }
 
   @override
-
   void onQuestionReset() {
-
     _scratchProgress.value = 0.0;
 
     _timeVal.value = 0.0;
-
   }
 
   @override
-
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('speaking', level: widget.level);

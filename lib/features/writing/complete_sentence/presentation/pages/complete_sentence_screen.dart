@@ -31,7 +31,8 @@ class CompleteSentenceScreen extends StatefulWidget {
   State<CompleteSentenceScreen> createState() => _CompleteSentenceScreenState();
 }
 
-class _CompleteSentenceScreenState extends State<CompleteSentenceScreen> with WritingGameScreenMixin {
+class _CompleteSentenceScreenState extends State<CompleteSentenceScreen>
+    with WritingGameScreenMixin {
   @override
   GameSubtype get gameType => widget.gameType;
 
@@ -41,12 +42,11 @@ class _CompleteSentenceScreenState extends State<CompleteSentenceScreen> with Wr
   @override
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
-  
   // PERF FIX: theme cached â€” not recomputed on every build().
   late dynamic _theme;
 
   final ValueNotifier<String?> _selectedProjectile = ValueNotifier(null);
-    final ValueNotifier<bool> _showAnagram = ValueNotifier(false);
+  final ValueNotifier<bool> _showAnagram = ValueNotifier(false);
 
   late final ScrollController _scrollController;
 
@@ -86,7 +86,7 @@ class _CompleteSentenceScreenState extends State<CompleteSentenceScreen> with Wr
   void dispose() {
     _scrollController.dispose();
     _selectedProjectile.dispose();
-        _showAnagram.dispose();
+    _showAnagram.dispose();
     disposeWritingGame();
     super.dispose();
   }
@@ -142,17 +142,13 @@ class _CompleteSentenceScreenState extends State<CompleteSentenceScreen> with Wr
   // ---------------------------------------------------------------------------
 
   @override
-
   void onQuestionReset() {
-
     _selectedProjectile.value = null;
 
     _showAnagram.value = false;
-
   }
 
   @override
-
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
@@ -405,4 +401,3 @@ class _CompleteSentenceBody extends StatelessWidget {
     );
   }
 }
-

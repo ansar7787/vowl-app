@@ -33,7 +33,8 @@ class PronunciationFocusScreen extends StatefulWidget {
       _PronunciationFocusScreenState();
 }
 
-class _PronunciationFocusScreenState extends State<PronunciationFocusScreen>with SingleTickerProviderStateMixin, SpeakingGameScreenMixin {
+class _PronunciationFocusScreenState extends State<PronunciationFocusScreen>
+    with SingleTickerProviderStateMixin, SpeakingGameScreenMixin {
   @override
   GameSubtype get gameType => widget.gameType;
 
@@ -43,9 +44,8 @@ class _PronunciationFocusScreenState extends State<PronunciationFocusScreen>with
   @override
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
-    
   final ValueNotifier<double> _heatLevel = ValueNotifier(0.0);
-          
+
   final ValueNotifier<bool> _ttsFinished = ValueNotifier(false);
   Timer? _ttsTimer;
 
@@ -87,7 +87,7 @@ class _PronunciationFocusScreenState extends State<PronunciationFocusScreen>with
   void dispose() {
     _tickerController.dispose();
     _heatLevel.dispose();
-                _timeVal.dispose();
+    _timeVal.dispose();
     _showGuide.dispose();
     _isUserRecording.dispose();
     _scrollController.dispose();
@@ -96,8 +96,6 @@ class _PronunciationFocusScreenState extends State<PronunciationFocusScreen>with
     disposeSpeakingGame();
     super.dispose();
   }
-
-
 
   void _submitVerbalEvaluation(bool nailedIt) {
     if (isAnsweredNotifier.value) return;
@@ -137,9 +135,7 @@ class _PronunciationFocusScreenState extends State<PronunciationFocusScreen>with
   }
 
   @override
-
   void onQuestionReset() {
-
     _heatLevel.value = 0.0;
 
     _ttsFinished.value = false;
@@ -149,11 +145,9 @@ class _PronunciationFocusScreenState extends State<PronunciationFocusScreen>with
     _showGuide.value = false;
 
     _isUserRecording.value = false;
-
   }
 
   @override
-
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('speaking', level: widget.level);

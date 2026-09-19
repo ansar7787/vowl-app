@@ -32,7 +32,8 @@ class SpeakSynonymScreen extends StatefulWidget {
   State<SpeakSynonymScreen> createState() => _SpeakSynonymScreenState();
 }
 
-class _SpeakSynonymScreenState extends State<SpeakSynonymScreen>with SingleTickerProviderStateMixin, SpeakingGameScreenMixin {
+class _SpeakSynonymScreenState extends State<SpeakSynonymScreen>
+    with SingleTickerProviderStateMixin, SpeakingGameScreenMixin {
   @override
   GameSubtype get gameType => widget.gameType;
 
@@ -42,9 +43,8 @@ class _SpeakSynonymScreenState extends State<SpeakSynonymScreen>with SingleTicke
   @override
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
-    
   final ValueNotifier<double> _bloomProgress = ValueNotifier(0.0);
-          
+
   final ValueNotifier<bool> _ttsFinished = ValueNotifier(false);
   Timer? _ttsTimer;
 
@@ -76,14 +76,12 @@ class _SpeakSynonymScreenState extends State<SpeakSynonymScreen>with SingleTicke
   @override
   void dispose() {
     _bloomProgress.dispose();
-                _scrollController.dispose();
+    _scrollController.dispose();
     _ttsFinished.dispose();
     _ttsTimer?.cancel();
     disposeSpeakingGame();
     super.dispose();
   }
-
-
 
   void _submitVerbalEvaluation(bool nailedIt) {
     if (isAnsweredNotifier.value) return;
@@ -125,17 +123,13 @@ class _SpeakSynonymScreenState extends State<SpeakSynonymScreen>with SingleTicke
   }
 
   @override
-
   void onQuestionReset() {
-
     _bloomProgress.value = 0.0;
 
     _ttsFinished.value = false;
-
   }
 
   @override
-
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('speaking', level: widget.level);

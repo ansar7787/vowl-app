@@ -33,7 +33,8 @@ class WritingEmailScreen extends StatefulWidget {
   State<WritingEmailScreen> createState() => _WritingEmailScreenState();
 }
 
-class _WritingEmailScreenState extends State<WritingEmailScreen> with WritingGameScreenMixin {
+class _WritingEmailScreenState extends State<WritingEmailScreen>
+    with WritingGameScreenMixin {
   @override
   GameSubtype get gameType => widget.gameType;
 
@@ -43,7 +44,6 @@ class _WritingEmailScreenState extends State<WritingEmailScreen> with WritingGam
   @override
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
-  
   final ValueNotifier<Map<String, String?>> _slots = ValueNotifier({
     'SUBJECT': null,
     'SALUTATION': null,
@@ -52,7 +52,7 @@ class _WritingEmailScreenState extends State<WritingEmailScreen> with WritingGam
   });
 
   final ValueNotifier<List<String>> _shuffledOptions = ValueNotifier([]);
-    final ValueNotifier<bool> _showSpeakToConfirm = ValueNotifier(false);
+  final ValueNotifier<bool> _showSpeakToConfirm = ValueNotifier(false);
   WritingQuest? _lastQuest;
 
   late final ScrollController _scrollController;
@@ -62,7 +62,7 @@ class _WritingEmailScreenState extends State<WritingEmailScreen> with WritingGam
     _scrollController.dispose();
     _slots.dispose();
     _shuffledOptions.dispose();
-        _showSpeakToConfirm.dispose();
+    _showSpeakToConfirm.dispose();
     disposeWritingGame();
     super.dispose();
   }
@@ -176,19 +176,20 @@ class _WritingEmailScreenState extends State<WritingEmailScreen> with WritingGam
   }
 
   @override
-
   void onQuestionReset() {
-
-    _slots.value = { 'SUBJECT': null, 'SALUTATION': null, 'BODY': null, 'SIGN-OFF': null };
+    _slots.value = {
+      'SUBJECT': null,
+      'SALUTATION': null,
+      'BODY': null,
+      'SIGN-OFF': null,
+    };
 
     _shuffledOptions.value = [];
 
     _showSpeakToConfirm.value = false;
-
   }
 
   @override
-
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('writing', level: widget.level);
@@ -439,7 +440,12 @@ class _WritingEmailScreenState extends State<WritingEmailScreen> with WritingGam
                                           ),
                                         ),
                                       SizedBox(
-                                        height: !isAnswered ? MediaQuery.viewInsetsOf(context).bottom + 40.h : 160.h,
+                                        height: !isAnswered
+                                            ? MediaQuery.viewInsetsOf(
+                                                    context,
+                                                  ).bottom +
+                                                  40.h
+                                            : 160.h,
                                       ),
                                     ],
                                   ),
