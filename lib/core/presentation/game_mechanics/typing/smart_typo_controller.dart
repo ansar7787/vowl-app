@@ -1,4 +1,3 @@
-import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:vowl/core/utils/smart_typo_evaluator.dart';
