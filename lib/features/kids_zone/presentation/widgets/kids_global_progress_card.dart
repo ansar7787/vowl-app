@@ -7,6 +7,7 @@ import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:go_router/go_router.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 /// A compact card showing the user's total quest progress across all 8 categories
 /// and their current global leaderboard rank.
@@ -62,7 +63,7 @@ class KidsGlobalProgressCard extends StatelessWidget {
             borderRadius: BorderRadius.circular(28.r),
             boxShadow: [
               BoxShadow(
-                color: const Color(0xFFF43F5E).withValues(alpha: 0.15),
+                color: AppColors.rose500.withValues(alpha: 0.15),
                 blurRadius: 30,
                 offset: const Offset(0, 10),
               ),
@@ -71,7 +72,7 @@ class KidsGlobalProgressCard extends StatelessWidget {
           child: GlassTile(
             borderRadius: BorderRadius.circular(28.r),
             padding: EdgeInsets.all(20.r),
-            borderColor: const Color(0xFFF43F5E).withValues(alpha: 0.3),
+            borderColor: AppColors.rose500.withValues(alpha: 0.3),
             child: ExcludeSemantics(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -84,7 +85,7 @@ class KidsGlobalProgressCard extends StatelessWidget {
                         padding: EdgeInsets.all(10.r),
                         decoration: BoxDecoration(
                           gradient: const LinearGradient(
-                            colors: [Color(0xFFF43F5E), Color(0xFFE11D48)],
+                            colors: [AppColors.rose500, AppColors.rose700],
                             begin: Alignment.topLeft,
                             end: Alignment.bottomRight,
                           ),
@@ -118,7 +119,7 @@ class KidsGlobalProgressCard extends StatelessWidget {
                                 fontFamily: 'Outfit',
                                 fontSize: 8.sp,
                                 fontWeight: FontWeight.w900,
-                                color: const Color(0xFFF43F5E),
+                                color: AppColors.rose500,
                                 letterSpacing: 2,
                               ),
                               maxLines: 1,
@@ -136,7 +137,7 @@ class KidsGlobalProgressCard extends StatelessWidget {
                                 fontWeight: FontWeight.w800,
                                 color: isDark
                                     ? Colors.white
-                                    : const Color(0xFF0F172A),
+                                    : AppColors.slate900,
                               ),
                               maxLines: 1,
                               overflow: TextOverflow.ellipsis,
@@ -237,7 +238,7 @@ class KidsGlobalProgressCard extends StatelessWidget {
                               fontFamily: 'Outfit',
                               fontSize: 28.sp,
                               fontWeight: FontWeight.w900,
-                              color: const Color(0xFFF43F5E),
+                              color: AppColors.rose500,
                               height: 1,
                             ),
                           ),
@@ -250,7 +251,7 @@ class KidsGlobalProgressCard extends StatelessWidget {
                               fontWeight: FontWeight.w700,
                               color: isDark
                                   ? Colors.white38
-                                  : const Color(0xFF94A3B8),
+                                  : AppColors.slate400,
                               height: 1,
                             ),
                           ),
@@ -283,8 +284,8 @@ class KidsGlobalProgressCard extends StatelessWidget {
                                 decoration: BoxDecoration(
                                   gradient: const LinearGradient(
                                     colors: [
-                                      Color(0xFFF43F5E),
-                                      Color(0xFFE11D48),
+                                      AppColors.rose500,
+                                      AppColors.rose700,
                                       Color(0xFFBE123C),
                                     ],
                                   ),
@@ -401,10 +402,10 @@ class KidsGlobalProgressCard extends StatelessWidget {
   }
 
   List<Color> _getRankGradient(int rank) {
-    if (rank == 1) return [const Color(0xFFFFD700), const Color(0xFFF59E0B)];
-    if (rank == 2) return [const Color(0xFFC0C0C0), const Color(0xFF94A3B8)];
+    if (rank == 1) return [AppColors.gold, AppColors.amber500];
+    if (rank == 2) return [const Color(0xFFC0C0C0), AppColors.slate400];
     if (rank == 3) return [const Color(0xFFCD7F32), const Color(0xFFA3713B)];
-    if (rank <= 10) return [const Color(0xFF3B82F6), const Color(0xFFF43F5E)];
-    return [const Color(0xFFF43F5E), const Color(0xFFE11D48)];
+    if (rank <= 10) return [AppColors.blue500, AppColors.rose500];
+    return [AppColors.rose500, AppColors.rose700];
   }
 }

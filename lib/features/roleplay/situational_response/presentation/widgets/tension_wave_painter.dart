@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class TensionWavePainter extends CustomPainter {
@@ -22,7 +23,9 @@ class TensionWavePainter extends CustomPainter {
 
     Color waveColor = themeColor;
     if (isAnswered) {
-      waveColor = (isCorrect ?? false) ? Colors.greenAccent : Colors.redAccent;
+      waveColor = (isCorrect ?? false)
+          ? AppColors.gameCorrect
+          : AppColors.gameIncorrect;
     } else {
       // Transition from cyan/blue to red based on time/tension progress
       waveColor =

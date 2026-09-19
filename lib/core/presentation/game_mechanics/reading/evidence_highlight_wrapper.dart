@@ -1,3 +1,5 @@
+import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -204,8 +206,9 @@ class _EvidenceHighlightWrapperState extends State<EvidenceHighlightWrapper> {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     final bgColor = isDark ? const Color(0xFF0C0C1A) : Colors.white;
-    final textColor = isDark ? Colors.white : const Color(0xFF0F172A);
+    final textColor = isDark ? Colors.white : AppColors.slate900;
     final subtitleColor = isDark ? Colors.white60 : Colors.black54;
 
     final content =
@@ -223,7 +226,7 @@ class _EvidenceHighlightWrapperState extends State<EvidenceHighlightWrapper> {
                       ),
                       border: Border.all(
                         color: isComplete
-                            ? Colors.greenAccent.withValues(alpha: 0.5)
+                            ? tokens.gameCorrect.withValues(alpha: 0.5)
                             : widget.primaryColor.withValues(alpha: 0.2),
                         width: 1.5,
                       ),
@@ -316,7 +319,7 @@ class _EvidenceHighlightWrapperState extends State<EvidenceHighlightWrapper> {
                                     ),
                                     decoration: BoxDecoration(
                                       color: evidenceFound >= _targetCount
-                                          ? Colors.greenAccent.withValues(
+                                          ? tokens.gameCorrect.withValues(
                                               alpha: 0.15,
                                             )
                                           : widget.primaryColor.withValues(
@@ -333,7 +336,7 @@ class _EvidenceHighlightWrapperState extends State<EvidenceHighlightWrapper> {
                                         fontSize: 11.sp,
                                         fontWeight: FontWeight.w800,
                                         color: evidenceFound >= _targetCount
-                                            ? Colors.greenAccent
+                                            ? tokens.gameCorrect
                                             : widget.primaryColor,
                                       ),
                                     ),
@@ -387,11 +390,11 @@ class _EvidenceHighlightWrapperState extends State<EvidenceHighlightWrapper> {
                                       ),
                                       decoration: BoxDecoration(
                                         color: isWrongTap
-                                            ? Colors.redAccent.withValues(
+                                            ? tokens.gameIncorrect.withValues(
                                                 alpha: 0.2,
                                               )
                                             : isCorrectEvidence
-                                            ? Colors.greenAccent.withValues(
+                                            ? tokens.gameCorrect.withValues(
                                                 alpha: 0.2,
                                               )
                                             : isHighlighted
@@ -404,13 +407,13 @@ class _EvidenceHighlightWrapperState extends State<EvidenceHighlightWrapper> {
                                         ),
                                         border: isCorrectEvidence
                                             ? Border.all(
-                                                color: Colors.greenAccent
+                                                color: tokens.gameCorrect
                                                     .withValues(alpha: 0.5),
                                                 width: 1.5,
                                               )
                                             : isWrongTap
                                             ? Border.all(
-                                                color: Colors.redAccent
+                                                color: tokens.gameIncorrect
                                                     .withValues(alpha: 0.5),
                                                 width: 1.5,
                                               )
@@ -425,9 +428,9 @@ class _EvidenceHighlightWrapperState extends State<EvidenceHighlightWrapper> {
                                               ? FontWeight.w800
                                               : FontWeight.w500,
                                           color: isWrongTap
-                                              ? Colors.redAccent
+                                              ? tokens.gameIncorrect
                                               : isCorrectEvidence
-                                              ? Colors.greenAccent
+                                              ? tokens.gameCorrect
                                               : textColor,
                                           height: 1.5,
                                         ),
@@ -465,7 +468,7 @@ class _EvidenceHighlightWrapperState extends State<EvidenceHighlightWrapper> {
                                         children: [
                                           Icon(
                                             Icons.verified_rounded,
-                                            color: Colors.greenAccent,
+                                            color: tokens.gameCorrect,
                                             size: 24.r,
                                           ),
                                           SizedBox(width: 8.w),
@@ -480,7 +483,7 @@ class _EvidenceHighlightWrapperState extends State<EvidenceHighlightWrapper> {
                                               fontFamily: 'Outfit',
                                               fontSize: 14.sp,
                                               fontWeight: FontWeight.w900,
-                                              color: Colors.greenAccent,
+                                              color: tokens.gameCorrect,
                                               letterSpacing: 1,
                                             ),
                                           ),

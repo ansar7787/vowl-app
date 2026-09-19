@@ -1,3 +1,5 @@
+import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -87,6 +89,7 @@ class _TranslationDownloadSheetState extends State<TranslationDownloadSheet> {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
 
     return ListenableBuilder(
       listenable: Listenable.merge([_progress, _isFinished]),
@@ -95,7 +98,7 @@ class _TranslationDownloadSheetState extends State<TranslationDownloadSheet> {
           width: double.infinity,
           padding: EdgeInsets.all(32.r),
           decoration: BoxDecoration(
-            color: isDark ? const Color(0xFF0F172A) : Colors.white,
+            color: isDark ? AppColors.slate900 : Colors.white,
             borderRadius: BorderRadius.vertical(top: Radius.circular(40.r)),
             boxShadow: [
               BoxShadow(
@@ -117,7 +120,7 @@ class _TranslationDownloadSheetState extends State<TranslationDownloadSheet> {
                 child: _isFinished.value
                     ? Icon(
                         LucideIcons.checkCircle2,
-                        color: Colors.greenAccent,
+                        color: tokens.gameCorrect,
                         size: 40.r,
                       ).animate().scale(curve: Curves.elasticOut)
                     : Icon(

@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
@@ -102,7 +103,7 @@ class SpeedSpellingCharacterDeck extends StatelessWidget {
                       fontFamily: 'Outfit',
                       fontSize: 22.sp,
                       fontWeight: FontWeight.w900,
-                      color: isDark ? Colors.white : const Color(0xFF1E293B),
+                      color: isDark ? Colors.white : AppColors.slate800,
                     ),
                   ),
                 ),

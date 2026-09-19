@@ -1,3 +1,5 @@
+import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'dart:async';
 import 'package:record/record.dart';
 import 'package:flutter/material.dart';
@@ -340,8 +342,9 @@ class _ShadowPlaybackCompareState extends State<ShadowPlaybackCompare> {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     final bgColor = isDark ? const Color(0xFF0C0C1A) : Colors.white;
-    final textColor = isDark ? Colors.white : const Color(0xFF0F172A);
+    final textColor = isDark ? Colors.white : AppColors.slate900;
     final subtitleColor = isDark ? Colors.white60 : Colors.black54;
 
     final content = Material(
@@ -523,7 +526,7 @@ class _ShadowPlaybackCompareState extends State<ShadowPlaybackCompare> {
                                             height: isRecording ? 60.h : 80.r,
                                             decoration: BoxDecoration(
                                               color: isRecording
-                                                  ? Colors.redAccent
+                                                  ? tokens.gameIncorrect
                                                   : widget.primaryColor,
                                               borderRadius:
                                                   BorderRadius.circular(
@@ -581,7 +584,7 @@ class _ShadowPlaybackCompareState extends State<ShadowPlaybackCompare> {
                                                 fontSize: 14.sp,
                                                 fontWeight: FontWeight.w600,
                                                 color: isRecording
-                                                    ? Colors.redAccent
+                                                    ? tokens.gameIncorrect
                                                     : subtitleColor,
                                               ),
                                             ),

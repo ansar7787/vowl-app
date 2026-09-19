@@ -1,3 +1,5 @@
+import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -33,6 +35,7 @@ class SituationalResponseReactionZone extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     return Container(
       width: 1.sw,
       height: 380.h,
@@ -95,11 +98,11 @@ class SituationalResponseReactionZone extends StatelessWidget {
 
     if (isAnswered) {
       if (isCorrect ?? false) {
-        coreColor = Colors.greenAccent;
+        coreColor = AppColors.gameCorrect;
         coreIcon = Icons.verified_rounded;
         label = "SYNERGY LOCKED";
       } else {
-        coreColor = Colors.redAccent;
+        coreColor = AppColors.gameIncorrect;
         coreIcon = Icons.warning_amber_rounded;
         label = "TENSION OVERLOAD";
       }
@@ -187,7 +190,9 @@ class SituationalResponseReactionZone extends StatelessWidget {
 
     Color orbColor = color;
     if (isAnswered && isSelected) {
-      orbColor = (isCorrect ?? false) ? Colors.greenAccent : Colors.redAccent;
+      orbColor = (isCorrect ?? false)
+          ? AppColors.gameCorrect
+          : AppColors.gameIncorrect;
     }
 
     return AnimatedPositioned(
@@ -206,7 +211,7 @@ class SituationalResponseReactionZone extends StatelessWidget {
                     height: 108.r,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
-                      color: isDark ? const Color(0xFF0F0F1B) : Colors.white,
+                      color: isDark ? AppColors.deepDark : Colors.white,
                       border: Border.all(
                         color: isSelected
                             ? orbColor

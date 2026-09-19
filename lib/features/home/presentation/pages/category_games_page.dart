@@ -22,6 +22,7 @@ import 'package:vowl/features/home/presentation/widgets/adaptive_smart_mix_widge
 import 'package:vowl/core/utils/pedagogical_blueprint.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 /// Configuration for category games scaling and rules
 const int _kMaxLevelsPerGame = 200;
@@ -93,16 +94,14 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
 
     if (user == null) {
       return Scaffold(
-        backgroundColor: isDark
-            ? const Color(0xFF0F172A)
-            : const Color(0xFFF8FAFC),
+        backgroundColor: isDark ? AppColors.slate900 : AppColors.slate50,
         body: SafeArea(
           child: GameShimmerLoading(primaryColor: theme.primaryColor),
         ),
       );
     }
 
-    final contentColor = isDark ? Colors.white : const Color(0xFF0F172A);
+    final contentColor = isDark ? Colors.white : AppColors.slate900;
     final hasBlueprint =
         PedagogicalBlueprintMap.getBlueprint(widget.categoryId) != null;
 
@@ -392,7 +391,7 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
     List<GameSubtype> games,
     bool isDark,
   ) {
-    final contentColor = isDark ? Colors.white : const Color(0xFF0F172A);
+    final contentColor = isDark ? Colors.white : AppColors.slate900;
     final displayColor = theme.primaryColor;
 
     // Calculate Progress dynamically
@@ -653,7 +652,7 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
               fontFamily: 'Outfit',
               fontSize: 12.sp,
               fontWeight: FontWeight.w900,
-              color: isDark ? Colors.white : const Color(0xFF0F172A),
+              color: isDark ? Colors.white : AppColors.slate900,
             ),
             maxLines: 1,
           ),
@@ -675,7 +674,7 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
         !user.categoryStats.containsKey(subtype.name) && currentLevel == 1;
 
     final displayColor = theme.primaryColor;
-    final contentColor = isDark ? Colors.white : const Color(0xFF0F172A);
+    final contentColor = isDark ? Colors.white : AppColors.slate900;
 
     // Abstract the math out of the widget parameters to ensure raw floats are clean
     final double cardProgress =

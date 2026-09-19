@@ -1,3 +1,5 @@
+import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -29,6 +31,7 @@ class SocialSparkGalaxyBoard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     return Container(
       width: 1.sw,
       height: 380.h,
@@ -116,7 +119,9 @@ class SocialSparkGalaxyBoard extends StatelessWidget {
 
     Color nodeColor = color;
     if (isAnswered && isSelected) {
-      nodeColor = (isCorrect ?? false) ? Colors.greenAccent : Colors.redAccent;
+      nodeColor = (isCorrect ?? false)
+          ? AppColors.gameCorrect
+          : AppColors.gameIncorrect;
     }
 
     return Positioned(
@@ -132,7 +137,7 @@ class SocialSparkGalaxyBoard extends StatelessWidget {
                     borderRadius: BorderRadius.circular(20.r),
                     color: isSelected
                         ? nodeColor
-                        : (isDark ? const Color(0xFF0F0F1B) : Colors.white),
+                        : (isDark ? AppColors.deepDark : Colors.white),
                     border: Border.all(
                       color: isSelected
                           ? Colors.white

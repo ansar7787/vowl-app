@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 // ---------------------------------------------------------------------------
 // Icon Header
@@ -21,12 +22,12 @@ class VerifyEmailIconHeader extends StatelessWidget {
         padding: EdgeInsets.all(20.r),
         decoration: BoxDecoration(
           shape: BoxShape.circle,
-          color: const Color(0xFF6366F1).withValues(alpha: 0.1),
+          color: AppColors.indigo500.withValues(alpha: 0.1),
         ),
         child: Icon(
           Icons.mark_email_unread_rounded,
           size: 64.r,
-          color: const Color(0xFF6366F1),
+          color: AppColors.indigo500,
         ),
       ),
     );
@@ -54,7 +55,7 @@ class VerifyEmailStatusText extends StatelessWidget {
             fontFamily: 'Outfit',
             fontSize: 28.sp,
             fontWeight: FontWeight.w800,
-            color: const Color(0xFF6366F1),
+            color: AppColors.indigo500,
           ),
           textAlign: TextAlign.center,
         ),
@@ -78,10 +79,10 @@ class VerifyEmailStatusText extends StatelessWidget {
           Container(
             padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
             decoration: BoxDecoration(
-              color: const Color(0xFF6366F1).withValues(alpha: 0.08),
+              color: AppColors.indigo500.withValues(alpha: 0.08),
               borderRadius: BorderRadius.circular(12.r),
               border: Border.all(
-                color: const Color(0xFF6366F1).withValues(alpha: 0.15),
+                color: AppColors.indigo500.withValues(alpha: 0.15),
               ),
             ),
             child: Row(
@@ -90,7 +91,7 @@ class VerifyEmailStatusText extends StatelessWidget {
                 Icon(
                   Icons.email_rounded,
                   size: 16.r,
-                  color: const Color(0xFF6366F1),
+                  color: AppColors.indigo500,
                 ),
                 SizedBox(width: 8.w),
                 Flexible(
@@ -103,7 +104,7 @@ class VerifyEmailStatusText extends StatelessWidget {
                         fontFamily: 'Outfit',
                         fontSize: 13.sp,
                         fontWeight: FontWeight.w700,
-                        color: const Color(0xFF6366F1),
+                        color: AppColors.indigo500,
                       ),
                       maxLines: 1,
                     ),
@@ -184,7 +185,7 @@ class ResendEmailButton extends StatelessWidget {
       child: ElevatedButton(
         onPressed: canResendEmail ? onPressed : null,
         style: ElevatedButton.styleFrom(
-          backgroundColor: const Color(0xFF6366F1),
+          backgroundColor: AppColors.indigo500,
           foregroundColor: Colors.white,
           minimumSize: Size(double.infinity, 56.h),
           shape: RoundedRectangleBorder(
@@ -228,7 +229,10 @@ class VerifyConfirmationButton extends StatelessWidget {
       child: OutlinedButton(
         onPressed: onPressed,
         style: OutlinedButton.styleFrom(
-          side: const BorderSide(color: Color(0xFF6366F1), width: 1.5),
+          side: BorderSide(
+            color: Theme.of(context).colorScheme.primary,
+            width: 1.5,
+          ),
           minimumSize: Size(double.infinity, 56.h),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(16.r),
@@ -245,7 +249,7 @@ class VerifyConfirmationButton extends StatelessWidget {
               fontFamily: 'Outfit',
               fontSize: 16.sp,
               fontWeight: FontWeight.bold,
-              color: const Color(0xFF6366F1),
+              color: AppColors.indigo500,
             ),
             maxLines: 1,
           ),

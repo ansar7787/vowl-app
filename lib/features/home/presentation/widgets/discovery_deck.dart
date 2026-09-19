@@ -8,6 +8,7 @@ import 'package:vowl/core/utils/locale_service.dart';
 import 'package:go_router/go_router.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/presentation/widgets/animated_page_indicator.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 class DiscoveryDeck extends StatefulWidget {
   const DiscoveryDeck({
@@ -51,7 +52,7 @@ class _DiscoveryDeckState extends State<DiscoveryDeck> {
           fallback: 'Recommended Quests',
         ),
         icon: Icons.lightbulb_outline_rounded,
-        color: const Color(0xFF6366F1), // Indigo — unique
+        color: AppColors.indigo500, // Indigo — unique
         quests: 3,
         difficulty: context.tr(
           'home.discovery_diff_adaptive',
@@ -102,7 +103,7 @@ class _DiscoveryDeckState extends State<DiscoveryDeck> {
           fallback: 'Master the rules',
         ),
         icon: Icons.verified_user_rounded,
-        color: const Color(0xFF10B981),
+        color: AppColors.emerald500,
         quests: 3,
         difficulty: context.tr(
           'home.discovery_diff_expert',
@@ -117,7 +118,7 @@ class _DiscoveryDeckState extends State<DiscoveryDeck> {
           fallback: 'Explore full library',
         ),
         icon: Icons.explore_rounded,
-        color: const Color(0xFFF43F5E), // Rose
+        color: AppColors.rose500, // Rose
         quests: -1,
         difficulty: context.tr('home.discovery_diff_all', fallback: 'All'),
         onTap: () => context.push(AppRouter.libraryRoute),
@@ -391,9 +392,7 @@ class _DiscoveryCollectionCard extends StatelessWidget {
                                   ? FontStyle.italic
                                   : FontStyle.normal,
                               fontWeight: FontWeight.w900,
-                              color: isDark
-                                  ? Colors.white
-                                  : const Color(0xFF0F172A),
+                              color: isDark ? Colors.white : AppColors.slate900,
                               height: 1.1,
                             ),
                             maxLines: 2,

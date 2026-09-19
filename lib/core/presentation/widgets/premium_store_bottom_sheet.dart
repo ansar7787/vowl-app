@@ -16,6 +16,7 @@ import 'package:vowl/core/utils/payment_service.dart';
 import 'package:vowl/core/utils/coin_packs_service.dart';
 import 'package:razorpay_flutter/razorpay_flutter.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 class PremiumStoreBottomSheet extends StatefulWidget {
   final bool isKidsMode;
@@ -322,9 +323,7 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
               child: Container(
                 height: MediaQuery.of(context).size.height * 0.85,
                 decoration: BoxDecoration(
-                  color: isDark
-                      ? const Color(0xFF0F172A)
-                      : const Color(0xFFF8FAFC),
+                  color: isDark ? AppColors.slate900 : AppColors.slate50,
                   borderRadius: BorderRadius.vertical(
                     top: Radius.circular(40.r),
                   ),
@@ -366,7 +365,10 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
                             padding: EdgeInsets.all(12.r),
                             decoration: BoxDecoration(
                               gradient: const LinearGradient(
-                                colors: [Color(0xFF6366F1), Color(0xFF8B5CF6)],
+                                colors: [
+                                  Theme.of(context).colorScheme.primary,
+                                  AppColors.violet500,
+                                ],
                                 begin: Alignment.topLeft,
                                 end: Alignment.bottomRight,
                               ),
@@ -392,7 +394,7 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
                                     fontFamily: 'Outfit',
                                     fontSize: 12.sp,
                                     fontWeight: FontWeight.w800,
-                                    color: const Color(0xFF8B5CF6),
+                                    color: AppColors.violet500,
                                     letterSpacing: 2,
                                   ),
                                 ),
@@ -407,7 +409,7 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
                                     fontWeight: FontWeight.w900,
                                     color: isDark
                                         ? Colors.white
-                                        : const Color(0xFF0F172A),
+                                        : AppColors.slate900,
                                   ),
                                 ),
                               ],
@@ -522,14 +524,17 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
         padding: EdgeInsets.all(20.r),
         decoration: BoxDecoration(
           gradient: const LinearGradient(
-            colors: [Color(0xFF6366F1), Color(0xFF8B5CF6)],
+            colors: [
+              Theme.of(context).colorScheme.primary,
+              AppColors.violet500,
+            ],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),
           borderRadius: BorderRadius.circular(24.r),
           boxShadow: [
             BoxShadow(
-              color: const Color(0xFF6366F1).withValues(alpha: 0.4),
+              color: AppColors.indigo500.withValues(alpha: 0.4),
               blurRadius: 20,
               offset: const Offset(0, 10),
             ),
@@ -614,7 +619,7 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
             child: Container(
               padding: EdgeInsets.all(20.r),
               decoration: BoxDecoration(
-                color: isDark ? const Color(0xFF1E293B) : Colors.white,
+                color: isDark ? AppColors.slate800 : Colors.white,
                 borderRadius: BorderRadius.circular(24.r),
                 border: Border.all(
                   color: pack.isBestValue
@@ -673,7 +678,7 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
                                 fontWeight: FontWeight.w800,
                                 color: isDark
                                     ? Colors.white
-                                    : const Color(0xFF0F172A),
+                                    : AppColors.slate900,
                               ),
                             ),
                             SizedBox(height: 6.h),

@@ -10,6 +10,7 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 @immutable
 class _MasteryCategory {
@@ -60,31 +61,31 @@ class AdventureMasteryGrid extends StatelessWidget {
       switch (type) {
         case QuestType.speaking:
           icon = Icons.mic_rounded;
-          color = const Color(0xFFEF4444);
+          color = AppColors.red500;
         case QuestType.listening:
           icon = Icons.headphones_rounded;
           color = const Color(0xFF06B6D4);
         case QuestType.reading:
           icon = Icons.menu_book_rounded;
-          color = const Color(0xFF3B82F6);
+          color = AppColors.blue500;
         case QuestType.writing:
           icon = Icons.edit_rounded;
-          color = const Color(0xFF10B981);
+          color = AppColors.emerald500;
         case QuestType.grammar:
           icon = Icons.book_rounded;
-          color = const Color(0xFF8B5CF6);
+          color = AppColors.violet500;
         case QuestType.vocabulary:
           icon = Icons.psychology_rounded;
-          color = const Color(0xFFF59E0B);
+          color = AppColors.amber500;
         case QuestType.accent:
           icon = Icons.graphic_eq_rounded;
-          color = const Color(0xFFF43F5E);
+          color = AppColors.rose500;
         case QuestType.roleplay:
           icon = Icons.groups_rounded;
-          color = const Color(0xFF6366F1);
+          color = AppColors.indigo500;
         case QuestType.eliteMastery:
           icon = Icons.workspace_premium_rounded;
-          color = const Color(0xFFFFD700);
+          color = AppColors.gold;
       }
 
       return _MasteryCategory(
@@ -127,7 +128,7 @@ class AdventureMasteryGrid extends StatelessWidget {
             fontFamily: 'Outfit',
             fontSize: 12.sp,
             fontWeight: FontWeight.w900,
-            color: isDark ? Colors.white38 : const Color(0xFF64748B),
+            color: isDark ? Colors.white38 : AppColors.slate500,
             letterSpacing: 1.5,
           ),
         ),
@@ -222,9 +223,7 @@ class AdventureMasteryGrid extends StatelessWidget {
                           fontFamily: 'Outfit',
                           fontSize: 13.sp,
                           fontWeight: FontWeight.w800,
-                          color: isDark
-                              ? Colors.white
-                              : const Color(0xFF1E293B),
+                          color: isDark ? Colors.white : AppColors.slate800,
                         ),
                       ),
                       Row(

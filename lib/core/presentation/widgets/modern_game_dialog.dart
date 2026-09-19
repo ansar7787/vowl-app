@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/presentation/widgets/vowl_mascot.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
@@ -46,9 +47,7 @@ class ModernGameDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final primaryColor = isSuccess
-        ? const Color(0xFF10B981)
-        : const Color(0xFFF43F5E);
+    final primaryColor = isSuccess ? AppColors.emerald500 : AppColors.rose500;
 
     return Dialog(
       backgroundColor: Colors.transparent,
@@ -71,7 +70,7 @@ class ModernGameDialog extends StatelessWidget {
                       decoration: BoxDecoration(
                         color:
                             (customIcon != null
-                                    ? const Color(0xFFF59E0B)
+                                    ? AppColors.amber500
                                     : primaryColor)
                                 .withValues(alpha: 0.1),
                         shape: BoxShape.circle,
@@ -104,7 +103,7 @@ class ModernGameDialog extends StatelessWidget {
                   fontFamily: 'Outfit',
                   fontSize: 24.sp,
                   fontWeight: FontWeight.w900,
-                  color: isDark ? Colors.white : const Color(0xFF1E293B),
+                  color: isDark ? Colors.white : AppColors.slate800,
                 ),
               ),
 
@@ -135,7 +134,7 @@ class ModernGameDialog extends StatelessWidget {
                                     Icon(
                                           Icons.star_rounded,
                                           size: index == 1 ? 50.r : 40.r,
-                                          color: const Color(0xFFFFD700),
+                                          color: AppColors.gold,
                                         )
                                         .animate(key: ValueKey(stars))
                                         .scale(
@@ -208,7 +207,7 @@ class ModernGameDialog extends StatelessWidget {
                                   color:
                                       (isRescueLife
                                               ? Colors.blue
-                                              : const Color(0xFFFFA500))
+                                              : AppColors.orange500)
                                           .withValues(alpha: 0.3),
                                   blurRadius: 12,
                                   offset: const Offset(0, 4),
@@ -332,7 +331,7 @@ class ModernGameDialog extends StatelessWidget {
                         fontWeight: FontWeight.w800,
                         color: isSuccess
                             ? (isDark ? Colors.white54 : Colors.black54)
-                            : const Color(0xFFFFD700),
+                            : AppColors.gold,
                       ),
                     ),
                   ),
@@ -347,12 +346,12 @@ class ModernGameDialog extends StatelessWidget {
 
   List<Color> get _adButtonColors {
     if (isExitConfirmation) {
-      return const [Color(0xFF64748B), Color(0xFF475569)];
+      return const [AppColors.slate500, AppColors.slate600];
     }
     if (isRescueLife) {
-      return const [Color(0xFF6366F1), Color(0xFF1E3A8A)];
+      return const [AppColors.indigo500, AppColors.blue900];
     }
-    return const [Color(0xFFFFD700), Color(0xFFFFA500)];
+    return const [AppColors.gold, AppColors.orange500];
   }
 
   Color get _adButtonContentColor =>

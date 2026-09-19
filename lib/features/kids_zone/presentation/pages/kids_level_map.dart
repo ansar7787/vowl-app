@@ -19,6 +19,7 @@ import 'package:vowl/core/theme/theme_cubit.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_star_vault_bottom_sheet.dart';
 import 'package:vowl/core/presentation/widgets/key_shop_bottom_sheet.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 class KidsLevelMap extends StatefulWidget {
   final String gameType;
@@ -359,11 +360,11 @@ class _KidsLevelMapState extends State<KidsLevelMap>
               : (isDark
                     ? Color.alphaBlend(
                         widget.primaryColor.withAlpha(100),
-                        const Color(0xFF0F172A),
+                        AppColors.slate900,
                       )
                     : Color.alphaBlend(
                         widget.primaryColor.withAlpha(60),
-                        const Color(0xFFF8FAFC),
+                        AppColors.slate50,
                       ));
 
           return ListenableBuilder(
@@ -410,7 +411,7 @@ class _KidsLevelMapState extends State<KidsLevelMap>
                                   height: 36.r,
                                   decoration: BoxDecoration(
                                     color: isDark
-                                        ? const Color(0xFF1E293B)
+                                        ? AppColors.slate800
                                         : Colors.white,
                                     shape: BoxShape.circle,
                                     border: Border.all(
@@ -430,7 +431,7 @@ class _KidsLevelMapState extends State<KidsLevelMap>
                                   ),
                                   child: Icon(
                                     Icons.arrow_back_ios_new_rounded,
-                                    color: const Color(0xFF0F172A),
+                                    color: AppColors.slate900,
                                     size: 16.r,
                                   ),
                                 ),
@@ -575,7 +576,7 @@ class _KidsLevelMapState extends State<KidsLevelMap>
       child: Container(
         padding: EdgeInsets.all(20.r),
         decoration: BoxDecoration(
-          color: isDark ? const Color(0xFF1E293B) : Colors.white,
+          color: isDark ? AppColors.slate800 : Colors.white,
           borderRadius: BorderRadius.circular(32.r),
           border: Border.all(color: widget.primaryColor, width: 3.w),
           boxShadow: [
@@ -634,7 +635,7 @@ class _KidsLevelMapState extends State<KidsLevelMap>
                       fontFamily: 'Outfit',
                       fontSize: 22.sp,
                       fontWeight: FontWeight.w900,
-                      color: isDark ? Colors.white : const Color(0xFF0F172A),
+                      color: isDark ? Colors.white : AppColors.slate900,
                     ),
                   ),
                   SizedBox(height: 8.h),
@@ -745,11 +746,7 @@ class _KidsLevelMapState extends State<KidsLevelMap>
                   ),
                 ),
                 SizedBox(width: 4.w),
-                Icon(
-                  Icons.star_rounded,
-                  color: const Color(0xFFFFD700),
-                  size: 18.sp,
-                ),
+                Icon(Icons.star_rounded, color: AppColors.gold, size: 18.sp),
               ],
             ),
           ),

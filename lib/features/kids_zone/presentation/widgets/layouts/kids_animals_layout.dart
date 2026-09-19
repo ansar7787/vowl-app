@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/utils/instruction_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -180,7 +181,7 @@ class KidsAnimalsLayout extends StatelessWidget {
               border: Border.all(
                 color: isHovering
                     ? const Color(0xFF92400E)
-                    : const Color(0xFF78350F),
+                    : AppColors.amber900,
                 width: isHovering ? 10.r : 8.r,
               ), // Dark leather
               boxShadow: [
@@ -198,7 +199,7 @@ class KidsAnimalsLayout extends StatelessWidget {
                 Container(
                   width: 12.w,
                   height: double.infinity,
-                  color: const Color(0xFF78350F),
+                  color: AppColors.amber900,
                 ),
                 Center(
                   child: Container(
@@ -224,7 +225,7 @@ class KidsAnimalsLayout extends StatelessWidget {
                                   fontFamily: 'Outfit',
                                   fontSize: 40.sp,
                                   fontWeight: FontWeight.w700,
-                                  color: const Color(0xFF1E293B),
+                                  color: AppColors.slate800,
                                 ),
                                 textAlign: TextAlign.center,
                                 maxLines: 4,
@@ -250,7 +251,7 @@ class KidsAnimalsLayout extends StatelessWidget {
     String text,
     bool isCorrect,
   ) {
-    final baseColor = const Color(0xFFD97706); // Wood
+    final baseColor = AppColors.amber600; // Wood
     final shadowColor = const Color(0xFF92400E); // Dark Wood
 
     final signpostWidget = Column(
@@ -291,7 +292,7 @@ class KidsAnimalsLayout extends StatelessWidget {
           width: 16.w,
           decoration: BoxDecoration(
             color: shadowColor,
-            border: Border.all(color: const Color(0xFF78350F), width: 1),
+            border: Border.all(color: AppColors.amber900, width: 1),
           ),
         ),
       ],

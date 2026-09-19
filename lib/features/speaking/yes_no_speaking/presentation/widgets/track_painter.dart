@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -20,7 +21,7 @@ class TrackPainter extends CustomPainter {
       ..strokeCap = StrokeCap.round;
 
     final Paint activePaint = Paint()
-      ..color = tiltValue < 0 ? Colors.redAccent : Colors.greenAccent
+      ..color = tiltValue < 0 ? AppColors.gameIncorrect : AppColors.gameCorrect
       ..strokeWidth = 5.h
       ..style = PaintingStyle.stroke
       ..strokeCap = StrokeCap.round

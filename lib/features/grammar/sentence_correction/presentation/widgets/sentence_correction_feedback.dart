@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -20,6 +21,7 @@ class SentenceCorrectionFeedback extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     String feedbackTitle = "GLITCH RESOLUTION";
     String feedbackMessage = "Correction: $correction";
 
@@ -46,9 +48,9 @@ class SentenceCorrectionFeedback extends StatelessWidget {
       margin: EdgeInsets.symmetric(horizontal: 24.w),
       padding: EdgeInsets.all(20.r),
       decoration: BoxDecoration(
-        color: Colors.redAccent.withValues(alpha: 0.05),
+        color: tokens.gameIncorrect.withValues(alpha: 0.05),
         borderRadius: BorderRadius.circular(24.r),
-        border: Border.all(color: Colors.redAccent.withValues(alpha: 0.2)),
+        border: Border.all(color: tokens.gameIncorrect.withValues(alpha: 0.2)),
       ),
       child: Column(
         children: [
@@ -58,7 +60,7 @@ class SentenceCorrectionFeedback extends StatelessWidget {
               fontFamily: 'Outfit',
               fontSize: 10.sp,
               fontWeight: FontWeight.w900,
-              color: Colors.redAccent,
+              color: tokens.gameIncorrect,
               letterSpacing: 1.5,
             ),
           ),
@@ -69,7 +71,7 @@ class SentenceCorrectionFeedback extends StatelessWidget {
             style: TextStyle(
               fontFamily: 'Outfit',
               fontSize: 16.sp,
-              color: Colors.redAccent,
+              color: tokens.gameIncorrect,
               fontWeight: FontWeight.w600,
             ),
           ),

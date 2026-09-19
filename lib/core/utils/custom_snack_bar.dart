@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 
 enum CustomSnackBarType { success, error, info, warning }
@@ -37,34 +38,26 @@ class CustomSnackBar {
 
     switch (type) {
       case CustomSnackBarType.success:
-        baseBgColor = isDark
-            ? const Color(0xFF064E3B)
-            : const Color(0xFFECFDF5);
-        accentColor = const Color(0xFF10B981);
+        baseBgColor = isDark ? AppColors.emerald950 : AppColors.emerald50;
+        accentColor = AppColors.emerald500;
         icon = Icons.check_circle_rounded;
         // FIX (HIGH-2): tr() key instead of hardcoded 'Success'.
         titleKey = 'snackbar.success';
       case CustomSnackBarType.error:
-        baseBgColor = isDark
-            ? const Color(0xFF7F1D1D)
-            : const Color(0xFFFEF2F2);
-        accentColor = const Color(0xFFEF4444);
+        baseBgColor = isDark ? AppColors.red900 : AppColors.red50;
+        accentColor = AppColors.red500;
         icon = Icons.error_rounded;
         // FIX (HIGH-2): tr() key instead of hardcoded 'Oops!'.
         titleKey = 'snackbar.error';
       case CustomSnackBarType.warning:
-        baseBgColor = isDark
-            ? const Color(0xFF78350F)
-            : const Color(0xFFFFFBEB);
-        accentColor = const Color(0xFFF59E0B);
+        baseBgColor = isDark ? AppColors.amber900 : AppColors.warningLight;
+        accentColor = AppColors.amber500;
         icon = Icons.warning_rounded;
         // FIX (HIGH-2): tr() key instead of hardcoded 'Notice'.
         titleKey = 'snackbar.warning';
       case CustomSnackBarType.info:
-        baseBgColor = isDark
-            ? const Color(0xFF1E3A8A)
-            : const Color(0xFFEFF6FF);
-        accentColor = const Color(0xFF3B82F6);
+        baseBgColor = isDark ? AppColors.blue900 : AppColors.blue50;
+        accentColor = AppColors.blue500;
         icon = Icons.info_rounded;
         // FIX (HIGH-2): tr() key instead of hardcoded 'Tip'.
         titleKey = 'snackbar.info';
@@ -73,10 +66,10 @@ class CustomSnackBar {
     final cardBgColor = isDark
         ? baseBgColor.withValues(alpha: 0.85)
         : baseBgColor.withValues(alpha: 0.95);
-    final textColor = isDark ? Colors.white : const Color(0xFF1E293B);
+    final textColor = isDark ? Colors.white : AppColors.slate800;
     final subtextColor = isDark
         ? Colors.white.withValues(alpha: 0.7)
-        : const Color(0xFF64748B);
+        : AppColors.slate500;
 
     // Resolve localised title. LocaleService is available without context.
     // Fall back to the raw key string if localisation fails gracefully.

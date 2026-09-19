@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -23,6 +24,7 @@ class EmergencyHubValveChamber extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     final double size = 200.r;
     final Offset center = Offset(size / 2, size / 2);
 
@@ -87,8 +89,8 @@ class EmergencyHubValveChamber extends StatelessWidget {
                         color: Colors.grey.shade900,
                         border: Border.all(
                           color: isValveAligned
-                              ? Colors.greenAccent
-                              : Colors.redAccent,
+                              ? tokens.gameCorrect
+                              : tokens.gameIncorrect,
                           width: 4,
                         ),
                         boxShadow: [
@@ -120,14 +122,14 @@ class EmergencyHubValveChamber extends StatelessWidget {
                             decoration: BoxDecoration(
                               shape: BoxShape.circle,
                               color: isValveAligned
-                                  ? Colors.greenAccent
-                                  : Colors.redAccent,
+                                  ? tokens.gameCorrect
+                                  : tokens.gameIncorrect,
                               boxShadow: [
                                 BoxShadow(
                                   color:
                                       (isValveAligned
-                                              ? Colors.greenAccent
-                                              : Colors.redAccent)
+                                              ? tokens.gameCorrect
+                                              : tokens.gameIncorrect)
                                           .withValues(alpha: 0.35),
                                   blurRadius: 10,
                                 ),
@@ -148,7 +150,7 @@ class EmergencyHubValveChamber extends StatelessWidget {
                             child: Icon(
                               Icons.arrow_drop_up_rounded,
                               color: isValveAligned
-                                  ? Colors.greenAccent
+                                  ? tokens.gameCorrect
                                   : Colors.white70,
                               size: 24.r,
                             ),
@@ -183,7 +185,9 @@ class EmergencyHubValveChamber extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   fontSize: 11.sp,
-                  color: isValveAligned ? Colors.greenAccent : Colors.redAccent,
+                  color: isValveAligned
+                      ? tokens.gameCorrect
+                      : tokens.gameIncorrect,
                   fontWeight: FontWeight.bold,
                 ),
               ),

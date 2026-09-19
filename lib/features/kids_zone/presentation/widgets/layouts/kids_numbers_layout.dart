@@ -9,6 +9,7 @@ import 'package:vowl/features/kids_zone/presentation/utils/kids_tts_service.dart
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_fitted_text.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 /// Space / Rocket Theme for Numbers Game
 /// Space Complexity: O(1)
@@ -115,13 +116,11 @@ class KidsNumbersLayout extends StatelessWidget {
           height: 260.r,
           decoration: BoxDecoration(
             color: isHovering
-                ? const Color(0xFF1E293B)
-                : const Color(0xFF0F172A), // Deep Space Blue
+                ? AppColors.slate800
+                : AppColors.slate900, // Deep Space Blue
             shape: BoxShape.circle,
             border: Border.all(
-              color: isHovering
-                  ? const Color(0xFF38BDF8)
-                  : const Color(0xFF94A3B8),
+              color: isHovering ? const Color(0xFF38BDF8) : AppColors.slate400,
               width: 16.r,
             ), // Silver metallic frame
             boxShadow: [
@@ -232,7 +231,7 @@ class KidsNumbersLayout extends StatelessWidget {
     int index,
   ) {
     // A vibrant gas giant planet style
-    final baseColor = const Color(0xFFF59E0B); // Amber planet
+    final baseColor = AppColors.amber500; // Amber planet
     final shadowColor = const Color(0xFFB45309);
 
     final planetWidget = Container(

@@ -9,6 +9,7 @@ import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/features/auth/presentation/bloc/progression_bloc.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 class AdventureStoreSection extends StatelessWidget {
   final UserEntity user;
@@ -30,7 +31,7 @@ class AdventureStoreSection extends StatelessWidget {
         ),
         'cost': 150,
         'icon': Icons.shield_rounded,
-        'color': const Color(0xFF10B981),
+        'color': AppColors.emerald500,
         'type': 'shield',
         'active': user.streakFreezes > 0,
         'activeText':
@@ -61,7 +62,7 @@ class AdventureStoreSection extends StatelessWidget {
         ),
         'cost': 2000,
         'icon': Icons.auto_awesome,
-        'color': const Color(0xFF8B5CF6),
+        'color': AppColors.violet500,
         'type': 'scroll',
         'locked': user.level < 200 || !user.isPremium,
         'active': user.hasPermanentXPBoost,
@@ -93,9 +94,7 @@ class AdventureStoreSection extends StatelessWidget {
                             fontFamily: 'Outfit',
                             fontSize: 12.sp,
                             fontWeight: FontWeight.w900,
-                            color: isDark
-                                ? Colors.white38
-                                : const Color(0xFF64748B),
+                            color: isDark ? Colors.white38 : AppColors.slate500,
                             letterSpacing: 1.5,
                           ),
                         ),
@@ -128,7 +127,7 @@ class AdventureStoreSection extends StatelessWidget {
                         Icon(
                           Icons.monetization_on_rounded,
                           size: 14.r,
-                          color: const Color(0xFFF59E0B),
+                          color: AppColors.amber500,
                         ),
                         SizedBox(width: 4.r),
                         Text(
@@ -137,7 +136,7 @@ class AdventureStoreSection extends StatelessWidget {
                             fontFamily: 'Outfit',
                             fontSize: 12.sp,
                             fontWeight: FontWeight.w900,
-                            color: const Color(0xFFF59E0B),
+                            color: AppColors.amber500,
                           ),
                         ),
                       ],
@@ -281,7 +280,7 @@ class AdventureStoreSection extends StatelessWidget {
                                         fontWeight: FontWeight.w900,
                                         color: isDark
                                             ? Colors.white
-                                            : const Color(0xFF0F172A),
+                                            : AppColors.slate900,
                                       ),
                                     ),
                                     Text(
@@ -304,8 +303,8 @@ class AdventureStoreSection extends StatelessWidget {
                                         color: isLocked
                                             ? Colors.red.withValues(alpha: 0.7)
                                             : isCurrentlyActive
-                                            ? const Color(0xFFF59E0B)
-                                            : const Color(0xFF10B981),
+                                            ? AppColors.amber500
+                                            : AppColors.emerald500,
                                       ),
                                     ),
                                     SizedBox(height: 2.r),
@@ -377,7 +376,7 @@ class AdventureStoreSection extends StatelessWidget {
                   fontFamily: 'Outfit',
                   fontSize: 18.sp,
                   fontWeight: FontWeight.w900,
-                  color: isDark ? Colors.white : const Color(0xFF0F172A),
+                  color: isDark ? Colors.white : AppColors.slate900,
                 ),
               ),
               SizedBox(height: 8.r),
@@ -399,7 +398,7 @@ class AdventureStoreSection extends StatelessWidget {
                   Icon(
                     Icons.monetization_on_rounded,
                     size: 20.r,
-                    color: const Color(0xFFF59E0B),
+                    color: AppColors.amber500,
                   ),
                   SizedBox(width: 6.r),
                   Text(
@@ -408,7 +407,7 @@ class AdventureStoreSection extends StatelessWidget {
                       fontFamily: 'Outfit',
                       fontSize: 22.sp,
                       fontWeight: FontWeight.w900,
-                      color: canAfford ? const Color(0xFFF59E0B) : Colors.red,
+                      color: canAfford ? AppColors.amber500 : Colors.red,
                     ),
                   ),
                 ],

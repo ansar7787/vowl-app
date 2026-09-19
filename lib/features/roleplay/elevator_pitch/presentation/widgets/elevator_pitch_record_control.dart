@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -25,6 +26,7 @@ class ElevatorPitchRecordControl extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     if (isAnswered) return const SizedBox.shrink();
 
     return Column(
@@ -39,11 +41,11 @@ class ElevatorPitchRecordControl extends StatelessWidget {
                       width: 90.r,
                       height: 90.r,
                       decoration: BoxDecoration(
-                        color: isListening ? Colors.redAccent : color,
+                        color: isListening ? tokens.gameIncorrect : color,
                         shape: BoxShape.circle,
                         boxShadow: [
                           BoxShadow(
-                            color: (isListening ? Colors.redAccent : color)
+                            color: (isListening ? tokens.gameIncorrect : color)
                                 .withValues(alpha: 0.35),
                             blurRadius: 18,
                           ),

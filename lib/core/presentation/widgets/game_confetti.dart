@@ -1,6 +1,7 @@
 import 'dart:math';
 import 'package:confetti/confetti.dart';
 import 'package:flutter/material.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 /// Multi-emitter confetti burst for level-completion celebrations.
 ///
@@ -24,11 +25,11 @@ class _GameConfettiState extends State<GameConfetti> {
   static const List<Color> _confettiColors = [
     Color(0xFFFFD700), // Gold
     Color(0xFF6366F1), // Indigo
-    Color(0xFF10B981), // Emerald
-    Color(0xFFF43F5E), // Rose
-    Color(0xFF8B5CF6), // Violet
+    AppColors.emerald500, // Emerald
+    AppColors.rose500, // Rose
+    AppColors.violet500, // Violet
     Color(0xFF3B82F6), // Blue
-    Color(0xFFF59E0B), // Amber
+    AppColors.amber500, // Amber
     Color(0xFFEC4899), // Pink
   ];
 

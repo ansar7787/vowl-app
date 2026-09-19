@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 class KidsRoomMoodIndicator extends StatelessWidget {
   final UserEntity user;
@@ -115,19 +116,19 @@ class KidsRoomMoodIndicator extends StatelessWidget {
         return _MoodData(
           emoji: '🥺',
           label: 'Hungry',
-          color: const Color(0xFFF59E0B), // Amber 500
+          color: AppColors.amber500, // Amber 500
         );
       case 'sleepy':
         return _MoodData(
           emoji: '😴',
           label: 'Sleepy',
-          color: const Color(0xFF6366F1), // Indigo 500
+          color: AppColors.indigo500, // Indigo 500
         );
       case 'bored':
         return _MoodData(
           emoji: '😒',
           label: 'Bored',
-          color: const Color(0xFF8B5CF6), // Violet 500
+          color: AppColors.violet500, // Violet 500
         );
       case 'excited':
         return _MoodData(
@@ -140,7 +141,7 @@ class KidsRoomMoodIndicator extends StatelessWidget {
         return _MoodData(
           emoji: '😊',
           label: 'Happy',
-          color: const Color(0xFF10B981), // Emerald 500
+          color: AppColors.emerald500, // Emerald 500
         );
     }
   }

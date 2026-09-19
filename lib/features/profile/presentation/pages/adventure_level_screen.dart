@@ -21,6 +21,7 @@ import 'package:vowl/core/presentation/widgets/game_confetti.dart';
 import 'package:vowl/core/presentation/widgets/modern_game_dialog.dart';
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 class AdventureLevelScreen extends StatelessWidget {
   const AdventureLevelScreen({super.key});
@@ -31,7 +32,7 @@ class AdventureLevelScreen extends StatelessWidget {
     final isMidnight = context.watch<ThemeCubit>().state.isMidnight;
     final bgColor = isMidnight
         ? Colors.black
-        : (isDark ? const Color(0xFF0F172A) : const Color(0xFFF8FAFC));
+        : (isDark ? AppColors.slate900 : AppColors.slate50);
 
     return Scaffold(
       backgroundColor: bgColor,
@@ -162,7 +163,7 @@ class AdventureLevelScreen extends StatelessWidget {
                                     fontWeight: FontWeight.w800,
                                     color: isDark
                                         ? Colors.white
-                                        : const Color(0xFF0F172A),
+                                        : AppColors.slate900,
                                   ),
                                 ),
                                 const Spacer(),
@@ -182,7 +183,7 @@ class AdventureLevelScreen extends StatelessWidget {
                                     children: [
                                       Icon(
                                         Icons.monetization_on_rounded,
-                                        color: const Color(0xFF10B981),
+                                        color: AppColors.emerald500,
                                         size: 14.r,
                                       ),
                                       SizedBox(width: 4.w),
@@ -192,7 +193,7 @@ class AdventureLevelScreen extends StatelessWidget {
                                           fontFamily: 'Outfit',
                                           fontSize: 12.sp,
                                           fontWeight: FontWeight.w800,
-                                          color: const Color(0xFF10B981),
+                                          color: AppColors.emerald500,
                                         ),
                                       ),
                                     ],
@@ -253,7 +254,7 @@ class AdventureLevelScreen extends StatelessWidget {
 
   Widget _buildMainLevelCard(BuildContext context, int level, double progress) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final color = const Color(0xFFF59E0B);
+    final color = AppColors.amber500;
 
     return GlassTile(
       padding: EdgeInsets.all(24.r),
@@ -304,7 +305,7 @@ class AdventureLevelScreen extends StatelessWidget {
                         fontFamily: 'Outfit',
                         fontSize: 26.sp,
                         fontWeight: FontWeight.w900,
-                        color: isDark ? Colors.white : const Color(0xFF0F172A),
+                        color: isDark ? Colors.white : AppColors.slate900,
                         height: 1.1,
                       ),
                     ),
@@ -353,12 +354,12 @@ class AdventureLevelScreen extends StatelessWidget {
                   height: 10.h,
                   decoration: BoxDecoration(
                     gradient: const LinearGradient(
-                      colors: [Color(0xFFF59E0B), Color(0xFFFBBF24)],
+                      colors: [AppColors.amber500, AppColors.amber400],
                     ),
                     borderRadius: BorderRadius.circular(5.r),
                     boxShadow: [
                       BoxShadow(
-                        color: const Color(0xFFF59E0B).withValues(alpha: 0.2),
+                        color: AppColors.amber500.withValues(alpha: 0.2),
                         blurRadius: 8,
                         offset: const Offset(0, 4),
                       ),
@@ -387,12 +388,12 @@ class AdventureLevelScreen extends StatelessWidget {
           Container(
             padding: EdgeInsets.all(12.r),
             decoration: BoxDecoration(
-              color: const Color(0xFF3B82F6).withValues(alpha: 0.1),
+              color: AppColors.blue500.withValues(alpha: 0.1),
               shape: BoxShape.circle,
             ),
             child: Icon(
               Icons.bolt_rounded,
-              color: const Color(0xFF3B82F6),
+              color: AppColors.blue500,
               size: 24.r,
             ),
           ),
@@ -407,7 +408,7 @@ class AdventureLevelScreen extends StatelessWidget {
                     fontFamily: 'Outfit',
                     fontSize: 10.sp,
                     fontWeight: FontWeight.w900,
-                    color: const Color(0xFF3B82F6),
+                    color: AppColors.blue500,
                     letterSpacing: 1.5,
                   ),
                 ),
@@ -418,7 +419,7 @@ class AdventureLevelScreen extends StatelessWidget {
                     fontFamily: 'Outfit',
                     fontSize: 18.sp,
                     fontWeight: FontWeight.w900,
-                    color: isDark ? Colors.white : const Color(0xFF0F172A),
+                    color: isDark ? Colors.white : AppColors.slate900,
                   ),
                 ),
                 Text(
@@ -452,7 +453,7 @@ class AdventureLevelScreen extends StatelessWidget {
         ),
         'level': 50,
         'icon': Icons.security_rounded,
-        'color': const Color(0xFF10B981),
+        'color': AppColors.emerald500,
         'active': user.level >= 50,
       },
       {
@@ -466,7 +467,7 @@ class AdventureLevelScreen extends StatelessWidget {
         ),
         'level': 100,
         'icon': Icons.stars_rounded,
-        'color': const Color(0xFFF59E0B),
+        'color': AppColors.amber500,
         'active': user.level >= 100,
       },
       {
@@ -480,7 +481,7 @@ class AdventureLevelScreen extends StatelessWidget {
         ),
         'level': 200,
         'icon': Icons.auto_awesome_rounded,
-        'color': const Color(0xFF8B5CF6),
+        'color': AppColors.violet500,
         'active': user.level >= 200,
       },
     ];
@@ -499,7 +500,7 @@ class AdventureLevelScreen extends StatelessWidget {
               fontFamily: 'Outfit',
               fontSize: 12.sp,
               fontWeight: FontWeight.w900,
-              color: isDark ? Colors.white38 : const Color(0xFF64748B),
+              color: isDark ? Colors.white38 : AppColors.slate500,
               letterSpacing: 1.5,
             ),
           ),
@@ -547,7 +548,7 @@ class AdventureLevelScreen extends StatelessWidget {
                           ),
                           decoration: BoxDecoration(
                             color: isActive
-                                ? const Color(0xFF10B981).withValues(alpha: 0.1)
+                                ? AppColors.emerald500.withValues(alpha: 0.1)
                                 : Colors.grey.withValues(alpha: 0.1),
                             borderRadius: BorderRadius.circular(8.r),
                           ),
@@ -566,7 +567,7 @@ class AdventureLevelScreen extends StatelessWidget {
                               fontSize: 10.sp,
                               fontWeight: FontWeight.w900,
                               color: isActive
-                                  ? const Color(0xFF10B981)
+                                  ? AppColors.emerald500
                                   : Colors.grey,
                             ),
                           ),
@@ -593,9 +594,7 @@ class AdventureLevelScreen extends StatelessWidget {
                           fontFamily: 'Outfit',
                           fontSize: 16.sp,
                           fontWeight: FontWeight.w800,
-                          color: isDark
-                              ? Colors.white
-                              : const Color(0xFF0F172A),
+                          color: isDark ? Colors.white : AppColors.slate900,
                         ),
                       ),
                     ),
@@ -644,7 +643,7 @@ class AdventureLevelScreen extends StatelessWidget {
             fontFamily: 'Outfit',
             fontSize: 12.sp,
             fontWeight: FontWeight.w900,
-            color: isDark ? Colors.white38 : const Color(0xFF64748B),
+            color: isDark ? Colors.white38 : AppColors.slate500,
             letterSpacing: 1.5,
           ),
         ),
@@ -736,9 +735,7 @@ class AdventureLevelScreen extends StatelessWidget {
                       fontWeight: FontWeight.w700,
                       color: isDark
                           ? (isReached ? Colors.white : Colors.white38)
-                          : (isReached
-                                ? const Color(0xFF1E293B)
-                                : Colors.black26),
+                          : (isReached ? AppColors.slate800 : Colors.black26),
                     ),
                   ),
                   Text(
@@ -747,7 +744,7 @@ class AdventureLevelScreen extends StatelessWidget {
                       fontFamily: 'Outfit',
                       fontSize: 12.sp,
                       fontWeight: FontWeight.w500,
-                      color: isDark ? Colors.white54 : const Color(0xFF64748B),
+                      color: isDark ? Colors.white54 : AppColors.slate500,
                     ),
                   ),
                 ],
@@ -756,7 +753,7 @@ class AdventureLevelScreen extends StatelessWidget {
             if (isClaimed)
               Icon(
                 Icons.check_circle_rounded,
-                color: const Color(0xFF10B981),
+                color: AppColors.emerald500,
                 size: 24.r,
               )
             else if (isReached)
@@ -764,7 +761,10 @@ class AdventureLevelScreen extends StatelessWidget {
                 padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
                 decoration: BoxDecoration(
                   gradient: const LinearGradient(
-                    colors: [Color(0xFF6366F1), Color(0xFF1D4ED8)],
+                    colors: [
+                      Theme.of(context).colorScheme.primary,
+                      Color(0xFF1D4ED8),
+                    ],
                   ),
                   borderRadius: BorderRadius.circular(12.r),
                   boxShadow: [
@@ -807,7 +807,7 @@ class AdventureLevelScreen extends StatelessWidget {
         'cost': 5000,
         'amount': 5,
         'icon': Icons.lightbulb_outline_rounded,
-        'color': const Color(0xFFFBBF24),
+        'color': AppColors.amber400,
       },
       {
         'title': 'Grand Master Pack',
@@ -815,7 +815,7 @@ class AdventureLevelScreen extends StatelessWidget {
         'cost': 20000,
         'amount': 25,
         'icon': Icons.auto_awesome_rounded,
-        'color': const Color(0xFFF59E0B),
+        'color': AppColors.amber500,
       },
     ];
 
@@ -830,7 +830,7 @@ class AdventureLevelScreen extends StatelessWidget {
               fontFamily: 'Outfit',
               fontSize: 12.sp,
               fontWeight: FontWeight.w900,
-              color: isDark ? Colors.white38 : const Color(0xFF64748B),
+              color: isDark ? Colors.white38 : AppColors.slate500,
               letterSpacing: 1.5,
             ),
           ),
@@ -899,7 +899,7 @@ class AdventureLevelScreen extends StatelessWidget {
                                     fontWeight: FontWeight.w800,
                                     color: isDark
                                         ? Colors.white
-                                        : const Color(0xFF0F172A),
+                                        : AppColors.slate900,
                                   ),
                                 ),
                                 Text(
@@ -919,7 +919,7 @@ class AdventureLevelScreen extends StatelessWidget {
                                     fontFamily: 'Outfit',
                                     fontSize: 10.sp,
                                     fontWeight: FontWeight.w600,
-                                    color: const Color(0xFF10B981),
+                                    color: AppColors.emerald500,
                                   ),
                                 ),
                               ],

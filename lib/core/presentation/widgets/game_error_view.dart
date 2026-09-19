@@ -4,6 +4,7 @@ import 'package:vowl/core/utils/locale_service.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 class GameErrorView extends StatelessWidget {
   final String message;
@@ -14,7 +15,7 @@ class GameErrorView extends StatelessWidget {
     super.key,
     required this.message,
     required this.onRetry,
-    this.primaryColor = const Color(0xFF6366F1),
+    this.primaryColor = AppColors.indigo500,
   });
 
   @override

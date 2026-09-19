@@ -8,6 +8,7 @@ import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/kids_zone/presentation/utils/kids_tts_service.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_fitted_text.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 /// Toy Construction Theme for Shapes Game
 /// Space Complexity: O(1)
@@ -118,7 +119,7 @@ class KidsShapesLayout extends StatelessWidget {
               height: 16.h,
               width: 180.w,
               decoration: BoxDecoration(
-                color: const Color(0xFFFBBF24), // Construction Yellow
+                color: AppColors.amber400, // Construction Yellow
                 borderRadius: BorderRadius.circular(4.r),
                 border: Border.all(color: const Color(0xFF92400E), width: 2),
               ),
@@ -212,10 +213,10 @@ class KidsShapesLayout extends StatelessWidget {
   ) {
     // Cycle through bright primary colors for the toy blocks
     final colors = [
-      const Color(0xFFEF4444), // Red
+      AppColors.red500, // Red
       const Color(0xFF3B82F6), // Blue
-      const Color(0xFF10B981), // Green
-      const Color(0xFFF59E0B), // Yellow
+      AppColors.emerald500, // Green
+      AppColors.amber500, // Yellow
     ];
     final color = colors[index % colors.length];
 

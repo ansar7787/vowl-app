@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lucide_icons/lucide_icons.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 /// Represents the data model and metadata configuration for a gamified level milestone badge.
 @immutable
@@ -52,14 +53,14 @@ abstract class BadgeConstants {
       id: 'silver_vanguard',
       nameKey: 'badges.silver_vanguard',
       icon: LucideIcons.shield,
-      color: Color(0xFF94A3B8),
+      color: AppColors.slate400,
       minLevel: 25,
     ),
     BadgeData(
       id: 'gold_legend',
       nameKey: 'badges.gold_legend',
       icon: LucideIcons.sparkles,
-      color: Color(0xFFFBBF24),
+      color: AppColors.amber400,
       minLevel: 50,
     ),
     BadgeData(
@@ -73,7 +74,7 @@ abstract class BadgeConstants {
       id: 'emerald_elite',
       nameKey: 'badges.emerald_elite',
       icon: LucideIcons.gem,
-      color: Color(0xFF10B981),
+      color: AppColors.emerald500,
       minLevel: 200,
     ),
     BadgeData(
@@ -87,14 +88,14 @@ abstract class BadgeConstants {
       id: 'ruby_royalty',
       nameKey: 'badges.ruby_royalty',
       icon: LucideIcons.heart,
-      color: Color(0xFFEF4444),
+      color: AppColors.red500,
       minLevel: 400,
     ),
     BadgeData(
       id: 'galactic_grandmaster',
       nameKey: 'badges.galactic_grandmaster',
       icon: LucideIcons.mountain,
-      color: Color(0xFF8B5CF6),
+      color: AppColors.violet500,
       minLevel: 500,
     ),
   ];

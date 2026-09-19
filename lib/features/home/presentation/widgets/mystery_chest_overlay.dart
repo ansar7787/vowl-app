@@ -6,6 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:confetti/confetti.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 /// A premium daily-chest overlay with AAA-grade staged transitions.
 ///
@@ -212,9 +213,7 @@ class _MysteryChestOverlayState extends State<MysteryChestOverlay>
 
   @override
   Widget build(BuildContext context) {
-    final chestColor = widget.isPremium
-        ? const Color(0xFFF59E0B)
-        : Colors.amber;
+    final chestColor = widget.isPremium ? AppColors.amber500 : Colors.amber;
 
     return Scaffold(
       backgroundColor: Colors.transparent,

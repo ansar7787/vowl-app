@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/theme/theme_cubit.dart';
@@ -28,7 +29,7 @@ class MeshGradientBackground extends StatelessWidget {
   /// Returns the best-contrast text colour for the current theme.
   static Color getContrastColor(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    return isDark ? Colors.white : const Color(0xFF0F172A);
+    return isDark ? Colors.white : AppColors.slate900;
   }
 
   @override
@@ -45,10 +46,10 @@ class MeshGradientBackground extends StatelessWidget {
         colors ??
         ((isMidnight || isDark)
             ? const [
-                Color(0xFF0F172A),
+                AppColors.slate900,
                 Color(0xFF312E81),
                 Color(0xFF064E3B),
-                Color(0xFF78350F),
+                AppColors.amber900,
               ]
             : const [
                 Color(0xFFFFFFFF),
@@ -64,7 +65,7 @@ class MeshGradientBackground extends StatelessWidget {
           ColoredBox(
             color: isMidnight
                 ? Colors.black
-                : (isDark ? const Color(0xFF0F172A) : const Color(0xFFF8FAFC)),
+                : (isDark ? AppColors.slate900 : const Color(0xFFF8FAFC)),
             child: const SizedBox.expand(),
           ),
 

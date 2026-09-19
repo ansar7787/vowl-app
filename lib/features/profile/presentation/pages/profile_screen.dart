@@ -27,6 +27,7 @@ import 'package:vowl/features/profile/presentation/widgets/profile_feature_card.
 import 'package:vowl/features/profile/presentation/widgets/profile_preferences_list.dart';
 import 'package:vowl/features/home/presentation/widgets/vowl_mascot_card.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
@@ -49,7 +50,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
     final isMidnight = context.watch<ThemeCubit>().state.isMidnight;
     final bgColor = isMidnight
         ? Colors.black
-        : (isDark ? const Color(0xFF0F172A) : const Color(0xFFF8FAFC));
+        : (isDark ? AppColors.slate900 : AppColors.slate50);
 
     return Scaffold(
       backgroundColor: bgColor,
@@ -64,7 +65,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               context.read<AuthBloc>().add(const AuthReloadUser());
               await Future.delayed(const Duration(milliseconds: 500));
             },
-            color: const Color(0xFF6366F1),
+            color: AppColors.indigo500,
             displacement: 100.h,
             child: Stack(
               children: [
@@ -153,7 +154,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                               ? Colors.white.withValues(
                                                   alpha: 0.1,
                                                 )
-                                              : const Color(0xFFF1F5F9),
+                                              : AppColors.slate100,
                                           backgroundImage:
                                               (user.photoUrl != null)
                                               ? NetworkImage(user.photoUrl!)
@@ -177,7 +178,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                             fontWeight: FontWeight.w800,
                                             color: isDark
                                                 ? Colors.white
-                                                : const Color(0xFF0F172A),
+                                                : AppColors.slate900,
                                           ),
                                         ),
                                       ],
@@ -437,7 +438,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
         fontFamily: 'Outfit',
         fontSize: 22.sp,
         fontWeight: FontWeight.w900,
-        color: isDark ? Colors.white : const Color(0xFF0F172A),
+        color: isDark ? Colors.white : AppColors.slate900,
         letterSpacing: -0.5,
       ),
     );
@@ -450,7 +451,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
         color: Colors.white,
         size: 24.r,
       ),
-      color: const Color(0xFF6366F1), // Premium screen Indigo
+      color: AppColors.indigo500, // Premium screen Indigo
       shadowColor: const Color(0xFF4F46E5), // Darker Indigo for shadow
       title: context.tr(
         'profile.upgrade_to_premium',
@@ -470,7 +471,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   Widget _buildKidsRoomCard(BuildContext context) {
     return ProfileFeatureCard(
       iconContent: Icon(Icons.toys_rounded, color: Colors.white, size: 24.r),
-      color: const Color(0xFFEF4444),
+      color: AppColors.red500,
       shadowColor: const Color(0xFFDC2626),
       title: context.tr('profile.kids_room_title', fallback: 'Kids Room'),
       subtitle: context.tr(
@@ -532,7 +533,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
           children: [
             Icon(
               Icons.power_settings_new_rounded,
-              color: const Color(0xFFEF4444),
+              color: AppColors.red500,
               size: 20.r,
             ),
             SizedBox(width: 10.w),
@@ -542,7 +543,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 fontFamily: 'Outfit',
                 fontSize: 16.sp,
                 fontWeight: FontWeight.w700,
-                color: const Color(0xFFEF4444),
+                color: AppColors.red500,
               ),
             ),
           ],
@@ -592,7 +593,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
           padding: EdgeInsets.all(32.w),
           decoration: BoxDecoration(
             color: isDark
-                ? const Color(0xFF1E293B).withValues(alpha: 0.8)
+                ? AppColors.slate800.withValues(alpha: 0.8)
                 : Colors.white.withValues(alpha: 0.8),
             borderRadius: BorderRadius.vertical(top: Radius.circular(40.r)),
             border: Border.all(
@@ -624,7 +625,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   fontFamily: 'Outfit',
                   fontSize: 24.sp,
                   fontWeight: FontWeight.w900,
-                  color: isDark ? Colors.white : const Color(0xFF0F172A),
+                  color: isDark ? Colors.white : AppColors.slate900,
                   letterSpacing: -0.5,
                 ),
               ),
@@ -713,10 +714,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
               Container(
                 padding: EdgeInsets.all(16.r),
                 decoration: BoxDecoration(
-                  color: const Color(0xFF6366F1).withValues(alpha: 0.1),
+                  color: AppColors.indigo500.withValues(alpha: 0.1),
                   shape: BoxShape.circle,
                 ),
-                child: Icon(icon, color: const Color(0xFF6366F1), size: 32.r),
+                child: Icon(icon, color: AppColors.indigo500, size: 32.r),
               ),
               SizedBox(height: 16.h),
               Text(
@@ -728,7 +729,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   fontFamily: 'Outfit',
                   fontSize: 16.sp,
                   fontWeight: FontWeight.w800,
-                  color: isDark ? Colors.white : const Color(0xFF1E293B),
+                  color: isDark ? Colors.white : AppColors.slate800,
                 ),
               ),
               SizedBox(height: 4.h),
@@ -793,7 +794,7 @@ class _EditNameSheetContentState extends State<_EditNameSheetContent> {
     return Container(
       padding: EdgeInsets.only(bottom: MediaQuery.viewInsetsOf(context).bottom),
       decoration: BoxDecoration(
-        color: isDark ? const Color(0xFF1E293B) : Colors.white,
+        color: isDark ? AppColors.slate800 : Colors.white,
         borderRadius: BorderRadius.vertical(top: Radius.circular(40.r)),
         border: Border.all(
           color: isDark
@@ -827,7 +828,7 @@ class _EditNameSheetContentState extends State<_EditNameSheetContent> {
                     fontFamily: 'Outfit',
                     fontSize: 24.sp,
                     fontWeight: FontWeight.w900,
-                    color: isDark ? Colors.white : const Color(0xFF0F172A),
+                    color: isDark ? Colors.white : AppColors.slate900,
                     letterSpacing: -0.5,
                   ),
                 ),
@@ -864,7 +865,7 @@ class _EditNameSheetContentState extends State<_EditNameSheetContent> {
                       fontFamily: 'Outfit',
                       fontSize: 18.sp,
                       fontWeight: FontWeight.w600,
-                      color: isDark ? Colors.white : const Color(0xFF0F172A),
+                      color: isDark ? Colors.white : AppColors.slate900,
                     ),
                     decoration: InputDecoration(
                       hintText: context.tr(
@@ -900,12 +901,15 @@ class _EditNameSheetContentState extends State<_EditNameSheetContent> {
                     padding: EdgeInsets.symmetric(vertical: 20.h),
                     decoration: BoxDecoration(
                       gradient: const LinearGradient(
-                        colors: [Color(0xFF6366F1), Color(0xFF4F46E5)],
+                        colors: [
+                          Theme.of(context).colorScheme.primary,
+                          Color(0xFF4F46E5),
+                        ],
                       ),
                       borderRadius: BorderRadius.circular(24.r),
                       boxShadow: [
                         BoxShadow(
-                          color: const Color(0xFF6366F1).withValues(alpha: 0.3),
+                          color: AppColors.indigo500.withValues(alpha: 0.3),
                           blurRadius: 20,
                           offset: const Offset(0, 10),
                         ),

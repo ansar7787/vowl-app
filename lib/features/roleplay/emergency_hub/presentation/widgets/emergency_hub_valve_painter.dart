@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -49,7 +50,7 @@ class EmergencyValvePainter extends CustomPainter {
     // Indicator sectors (AWAITING / ALIGNED)
     final Paint sectorPaint = Paint()
       ..color = isCodeCorrect
-          ? Colors.redAccent.withValues(alpha: 0.15)
+          ? AppColors.gameIncorrect.withValues(alpha: 0.15)
           : Colors.grey.withValues(alpha: 0.05)
       ..style = PaintingStyle.fill;
     canvas.drawCircle(center, radius - 20.w, sectorPaint);

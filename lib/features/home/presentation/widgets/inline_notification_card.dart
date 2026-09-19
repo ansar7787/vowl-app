@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -217,7 +218,7 @@ class _InlineNotificationCardState extends State<InlineNotificationCard>
               ),
               child: Container(
                 decoration: BoxDecoration(
-                  color: isDark ? const Color(0xFF1E293B) : Colors.white,
+                  color: isDark ? AppColors.slate800 : Colors.white,
                   borderRadius: BorderRadius.circular(24.r),
                   border: Border.all(
                     color: const Color(0xFFF97316).withValues(alpha: 0.15),
@@ -263,11 +264,11 @@ class _InlineNotificationCardState extends State<InlineNotificationCard>
                                       width: 10.r,
                                       height: 10.r,
                                       decoration: BoxDecoration(
-                                        color: const Color(0xFFEF4444),
+                                        color: AppColors.red500,
                                         shape: BoxShape.circle,
                                         border: Border.all(
                                           color: isDark
-                                              ? const Color(0xFF1E293B)
+                                              ? AppColors.slate800
                                               : Colors.white,
                                           width: 1.5.r,
                                         ),
@@ -297,7 +298,7 @@ class _InlineNotificationCardState extends State<InlineNotificationCard>
                                         fontWeight: FontWeight.w700,
                                         color: isDark
                                             ? Colors.white
-                                            : const Color(0xFF0F172A),
+                                            : AppColors.slate900,
                                       ),
                                       maxLines: 2,
                                       overflow: TextOverflow.ellipsis,

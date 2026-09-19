@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -22,6 +23,7 @@ class ShortAnswerInkwell extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     return Container(
       width: double.infinity,
       padding: EdgeInsets.all(24.r),
@@ -83,7 +85,7 @@ class ShortAnswerInkwell extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: wordCount >= 10
                       ? (isDark
-                            ? Colors.greenAccent.withValues(alpha: 0.1)
+                            ? tokens.gameCorrect.withValues(alpha: 0.1)
                             : const Color(0xFF16A34A).withValues(alpha: 0.1))
                       : (isDark ? Colors.white10 : Colors.black12),
                   borderRadius: BorderRadius.circular(12.r),
@@ -95,7 +97,7 @@ class ShortAnswerInkwell extends StatelessWidget {
                     fontSize: 9.sp,
                     color: wordCount >= 10
                         ? (isDark
-                              ? Colors.greenAccent
+                              ? tokens.gameCorrect
                               : const Color(0xFF16A34A))
                         : (isDark ? Colors.white54 : Colors.black54),
                     fontWeight: FontWeight.bold,

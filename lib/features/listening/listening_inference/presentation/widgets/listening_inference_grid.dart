@@ -1,3 +1,5 @@
+import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
@@ -24,6 +26,7 @@ class ListeningInferenceGrid extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 16.w),
       child: options.length == 2
@@ -61,9 +64,9 @@ class ListeningInferenceGrid extends StatelessWidget {
         padding: EdgeInsets.all(12.r),
         decoration: BoxDecoration(
           color: isChoiceCorrect
-              ? Colors.greenAccent
+              ? AppColors.gameCorrect
               : (isChoiceWrong
-                    ? Colors.redAccent
+                    ? AppColors.gameIncorrect
                     : (isSelected ? color : const Color(0xFF1E1E24))),
           borderRadius: BorderRadius.circular(12.r),
           border: Border.all(
@@ -82,8 +85,8 @@ class ListeningInferenceGrid extends StatelessWidget {
               BoxShadow(
                 color:
                     (isChoiceCorrect
-                            ? Colors.greenAccent
-                            : (isChoiceWrong ? Colors.redAccent : color))
+                            ? AppColors.gameCorrect
+                            : (isChoiceWrong ? AppColors.gameIncorrect : color))
                         .withValues(alpha: 0.3),
                 blurRadius: 15,
                 spreadRadius: 2,

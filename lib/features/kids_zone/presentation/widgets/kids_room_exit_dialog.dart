@@ -4,6 +4,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 class KidsRoomExitDialog extends StatelessWidget {
   final VoidCallback onExit;
@@ -106,7 +107,7 @@ class KidsRoomExitDialog extends StatelessWidget {
                                 child: Container(
                                   padding: EdgeInsets.symmetric(vertical: 14.h),
                                   decoration: BoxDecoration(
-                                    color: const Color(0xFF10B981),
+                                    color: AppColors.emerald500,
                                     borderRadius: BorderRadius.circular(20.r),
                                     border: Border.all(
                                       color: const Color(0xFF047857),

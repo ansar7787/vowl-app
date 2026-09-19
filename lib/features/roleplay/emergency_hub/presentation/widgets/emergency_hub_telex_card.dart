@@ -1,3 +1,5 @@
+import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -16,19 +18,20 @@ class EmergencyHubTelexCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     return Container(
       width: 1.sw,
       padding: EdgeInsets.all(22.r),
       decoration: BoxDecoration(
-        color: isDark ? const Color(0xFF0F0F1B) : Colors.white,
+        color: isDark ? AppColors.deepDark : Colors.white,
         borderRadius: BorderRadius.circular(30.r),
         border: Border.all(
-          color: Colors.redAccent.withValues(alpha: 0.2),
+          color: tokens.gameIncorrect.withValues(alpha: 0.2),
           width: 1.5,
         ),
         boxShadow: [
           BoxShadow(
-            color: Colors.redAccent.withValues(alpha: 0.08),
+            color: tokens.gameIncorrect.withValues(alpha: 0.08),
             blurRadius: 15,
           ),
         ],
@@ -41,12 +44,12 @@ class EmergencyHubTelexCard extends StatelessWidget {
               Container(
                     padding: EdgeInsets.all(8.r),
                     decoration: BoxDecoration(
-                      color: Colors.redAccent.withValues(alpha: 0.1),
+                      color: tokens.gameIncorrect.withValues(alpha: 0.1),
                       shape: BoxShape.circle,
                     ),
                     child: Icon(
                       Icons.warning_amber_rounded,
-                      color: Colors.redAccent,
+                      color: tokens.gameIncorrect,
                       size: 20.r,
                     ),
                   )
@@ -63,7 +66,7 @@ class EmergencyHubTelexCard extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   fontSize: 10.sp,
-                  color: Colors.redAccent,
+                  color: tokens.gameIncorrect,
                   letterSpacing: 2.0,
                   fontWeight: FontWeight.bold,
                 ),
@@ -82,7 +85,7 @@ class EmergencyHubTelexCard extends StatelessWidget {
           ),
           SizedBox(height: 16.h),
           Divider(
-            color: Colors.redAccent.withValues(alpha: 0.15),
+            color: tokens.gameIncorrect.withValues(alpha: 0.15),
             thickness: 1,
             height: 1,
           ),
@@ -111,7 +114,7 @@ class EmergencyHubTelexCard extends StatelessWidget {
                         decoration: BoxDecoration(
                           color: isActive
                               ? (urgencyLevel >= 4
-                                    ? Colors.redAccent
+                                    ? tokens.gameIncorrect
                                     : (urgencyLevel >= 3
                                           ? Colors.orangeAccent
                                           : Colors.yellowAccent))
@@ -122,7 +125,7 @@ class EmergencyHubTelexCard extends StatelessWidget {
                                   BoxShadow(
                                     color:
                                         (urgencyLevel >= 4
-                                                ? Colors.redAccent
+                                                ? tokens.gameIncorrect
                                                 : Colors.orangeAccent)
                                             .withValues(alpha: 0.4),
                                     blurRadius: 4,

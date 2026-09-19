@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 class ConnectorSlot extends StatelessWidget {
   final String? connector;
@@ -61,20 +62,20 @@ class ConnectorSlot extends StatelessWidget {
   }
 
   Color _getBgColor() {
-    if (isCorrect) return const Color(0xFF10B981).withValues(alpha: 0.2);
-    if (isWrong) return const Color(0xFFF43F5E).withValues(alpha: 0.2);
+    if (isCorrect) return AppColors.emerald500.withValues(alpha: 0.2);
+    if (isWrong) return AppColors.rose500.withValues(alpha: 0.2);
     return primaryColor.withValues(alpha: 0.05);
   }
 
   Color _getBorderColor() {
-    if (isCorrect) return const Color(0xFF10B981);
-    if (isWrong) return const Color(0xFFF43F5E);
+    if (isCorrect) return AppColors.emerald500;
+    if (isWrong) return AppColors.rose500;
     return primaryColor.withValues(alpha: connector == null ? 0.3 : 0.6);
   }
 
   Color _getTextColor() {
-    if (isCorrect) return const Color(0xFF10B981);
-    if (isWrong) return const Color(0xFFF43F5E);
+    if (isCorrect) return AppColors.emerald500;
+    if (isWrong) return AppColors.rose500;
     return connector == null
         ? primaryColor.withValues(alpha: 0.5)
         : primaryColor;

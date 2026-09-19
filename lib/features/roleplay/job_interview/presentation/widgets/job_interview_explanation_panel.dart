@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -19,9 +20,10 @@ class JobInterviewExplanationPanel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     final Color cardColor = (isCorrect ?? false)
-        ? Colors.greenAccent
-        : Colors.redAccent;
+        ? tokens.gameCorrect
+        : tokens.gameIncorrect;
 
     return Container(
       width: 1.sw,

@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -175,13 +176,13 @@ class SpeedChallengeTimerState extends State<SpeedChallengeTimer>
             if (remaining > 0.5) {
               barColor = Color.lerp(
                 const Color(0xFF22C55E), // green
-                const Color(0xFFFBBF24), // yellow
+                AppColors.amber400, // yellow
                 (1.0 - remaining) * 2.0, // 0→1 over top half
               )!;
             } else {
               barColor = Color.lerp(
-                const Color(0xFFFBBF24), // yellow
-                const Color(0xFFEF4444), // red
+                AppColors.amber400, // yellow
+                AppColors.red500, // red
                 (0.5 - remaining) * 2.0, // 0→1 over bottom half
               )!;
             }
@@ -243,13 +244,13 @@ class SpeedChallengeTimerState extends State<SpeedChallengeTimer>
             if (remainingFraction > 0.5) {
               barColor = Color.lerp(
                 startColor,
-                const Color(0xFFFBBF24),
+                AppColors.amber400,
                 (1.0 - remainingFraction) * 2.0,
               )!;
             } else {
               barColor = Color.lerp(
-                const Color(0xFFFBBF24),
-                const Color(0xFFEF4444),
+                AppColors.amber400,
+                AppColors.red500,
                 (0.5 - remainingFraction) * 2.0,
               )!;
             }

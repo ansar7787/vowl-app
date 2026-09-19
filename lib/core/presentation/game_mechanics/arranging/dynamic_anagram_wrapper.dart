@@ -1,3 +1,5 @@
+import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -238,10 +240,11 @@ class _DynamicAnagramWrapperState extends State<DynamicAnagramWrapper> {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     final bgColor = isDark ? const Color(0xFF0C0C1A) : Colors.white;
-    final textColor = isDark ? Colors.white : const Color(0xFF0F172A);
+    final textColor = isDark ? Colors.white : AppColors.slate900;
     final subtitleColor = isDark ? Colors.white60 : Colors.black54;
-    final errorColor = Colors.redAccent;
+    final errorColor = tokens.gameIncorrect;
 
     final content = Material(
       type: MaterialType.transparency,

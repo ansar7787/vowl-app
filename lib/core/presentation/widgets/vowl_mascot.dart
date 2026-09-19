@@ -1,3 +1,5 @@
+import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -77,6 +79,7 @@ class VowlMascot extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     // HIGH FIX: BlocSelector rebuilds ONLY when mascot-relevant user data
     // changes. Previously BlocBuilder rebuilt on every AuthState change.
     return BlocSelector<AuthBloc, AuthState, _MascotUserData>(
@@ -113,10 +116,10 @@ class VowlMascot extends StatelessWidget {
           auraColor = switch (effectiveMascotId) {
             'owly' => Colors.brown[300]!,
             'foxie' => Colors.orangeAccent,
-            'dino' => Colors.greenAccent,
+            'dino' => tokens.gameCorrect,
             'mascot_unicorn' => const Color(0xFFF472B6),
             'mascot_robot' => const Color(0xFF60A5FA),
-            'mascot_lion' => const Color(0xFFFBBF24),
+            'mascot_lion' => AppColors.amber400,
             _ => auraColor,
           };
         }

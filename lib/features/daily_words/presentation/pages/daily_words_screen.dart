@@ -24,6 +24,7 @@ import 'package:vowl/features/daily_words/presentation/bloc/daily_words_bloc.dar
 import 'package:vowl/features/daily_words/presentation/widgets/daily_words_widgets.dart';
 import 'package:vowl/core/presentation/widgets/game_confetti.dart';
 import 'package:vowl/core/presentation/game_mechanics/typing/type_to_confirm_overlay.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 class DailyWordsScreen extends StatefulWidget {
   const DailyWordsScreen({super.key});
@@ -146,7 +147,7 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
         return Container(
           padding: EdgeInsets.fromLTRB(24.w, 32.h, 24.w, 24.h),
           decoration: BoxDecoration(
-            color: isDark ? const Color(0xFF0F172A) : Colors.white,
+            color: isDark ? AppColors.slate900 : Colors.white,
             borderRadius: BorderRadius.vertical(top: Radius.circular(32.r)),
             boxShadow: [
               BoxShadow(
@@ -164,11 +165,11 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
                 Container(
                   padding: EdgeInsets.all(20.r),
                   decoration: BoxDecoration(
-                    color: const Color(0xFFF59E0B).withValues(alpha: 0.1),
+                    color: AppColors.amber500.withValues(alpha: 0.1),
                     shape: BoxShape.circle,
                     boxShadow: [
                       BoxShadow(
-                        color: const Color(0xFFF59E0B).withValues(alpha: 0.2),
+                        color: AppColors.amber500.withValues(alpha: 0.2),
                         blurRadius: 30,
                         spreadRadius: 5,
                       ),
@@ -176,7 +177,7 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
                   ),
                   child: Icon(
                     Icons.local_fire_department_rounded,
-                    color: const Color(0xFFF59E0B),
+                    color: AppColors.amber500,
                     size: 56.r,
                   ),
                 ),
@@ -190,7 +191,7 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
                     fontFamily: 'Outfit',
                     fontSize: 28.sp,
                     fontWeight: FontWeight.w900,
-                    color: isDark ? Colors.white : const Color(0xFF0F172A),
+                    color: isDark ? Colors.white : AppColors.slate900,
                     letterSpacing: -0.5,
                   ),
                 ),
@@ -221,13 +222,16 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20.r),
                     gradient: const LinearGradient(
-                      colors: [Color(0xFF6366F1), Color(0xFF8B5CF6)],
+                      colors: [
+                        Theme.of(context).colorScheme.primary,
+                        AppColors.violet500,
+                      ],
                       begin: Alignment.centerLeft,
                       end: Alignment.centerRight,
                     ),
                     boxShadow: [
                       BoxShadow(
-                        color: const Color(0xFF6366F1).withValues(alpha: 0.3),
+                        color: AppColors.indigo500.withValues(alpha: 0.3),
                         blurRadius: 20,
                         offset: const Offset(0, 8),
                       ),
@@ -298,10 +302,10 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20.r),
                     border: Border.all(
-                      color: const Color(0xFFF59E0B).withValues(alpha: 0.3),
+                      color: AppColors.amber500.withValues(alpha: 0.3),
                       width: 2,
                     ),
-                    color: const Color(0xFFF59E0B).withValues(alpha: 0.05),
+                    color: AppColors.amber500.withValues(alpha: 0.05),
                   ),
                   child: Material(
                     color: Colors.transparent,
@@ -316,7 +320,7 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
                         children: [
                           Icon(
                             Icons.workspace_premium_rounded,
-                            color: const Color(0xFFF59E0B),
+                            color: AppColors.amber500,
                             size: 24.r,
                           ),
                           SizedBox(width: 12.w),
@@ -329,7 +333,7 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
                               fontFamily: 'Outfit',
                               fontSize: 18.sp,
                               fontWeight: FontWeight.w800,
-                              color: const Color(0xFFF59E0B),
+                              color: AppColors.amber500,
                               letterSpacing: 0.5,
                             ),
                           ),
@@ -345,7 +349,7 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
                   style: TextButton.styleFrom(
                     foregroundColor: isDark
                         ? Colors.white54
-                        : const Color(0xFF94A3B8),
+                        : AppColors.slate400,
                   ),
                   child: Text(
                     context.tr(
@@ -566,7 +570,7 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
     return Scaffold(
-      backgroundColor: isDark ? const Color(0xFF0F172A) : Colors.white,
+      backgroundColor: isDark ? AppColors.slate900 : Colors.white,
       body: Stack(
         children: [
           const MeshGradientBackground(showLetters: false),
@@ -616,7 +620,7 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
               return TypeToConfirmOverlay(
                 expectedText: recallWord.word,
                 displayText: recallWord.definition,
-                primaryColor: const Color(0xFF10B981),
+                primaryColor: AppColors.emerald500,
                 onConfirmed: () {
                   _activeRecallWord.value = null;
                   _executeGotIt(recallWord);
@@ -734,9 +738,7 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
                               fontFamily: 'Outfit',
                               fontSize: 20.sp,
                               fontWeight: FontWeight.w900,
-                              color: isDark
-                                  ? Colors.white
-                                  : const Color(0xFF0F172A),
+                              color: isDark ? Colors.white : AppColors.slate900,
                             ),
                           ),
                           if (state.wordSet != null)
@@ -746,7 +748,7 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
                                 fontFamily: 'Outfit',
                                 fontSize: 13.sp,
                                 fontWeight: FontWeight.w600,
-                                color: const Color(0xFF6366F1),
+                                color: AppColors.indigo500,
                               ),
                               maxLines: 1,
                             ),
@@ -783,7 +785,7 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
                             children: [
                               Icon(
                                 Icons.local_fire_department_rounded,
-                                color: const Color(0xFFF59E0B),
+                                color: AppColors.amber500,
                                 size: 16.r,
                               ),
                               SizedBox(width: 4.w),
@@ -793,7 +795,7 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
                                   fontFamily: 'Outfit',
                                   fontSize: 14.sp,
                                   fontWeight: FontWeight.w900,
-                                  color: const Color(0xFFF59E0B),
+                                  color: AppColors.amber500,
                                 ),
                               ),
                             ],
@@ -909,7 +911,7 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
                             fallback: 'Show Definition',
                           ),
                           icon: Icons.visibility_rounded,
-                          color: const Color(0xFF6366F1),
+                          color: AppColors.indigo500,
                           isDark: isDark,
                           onTap: _toggleFlip,
                         )
@@ -923,7 +925,7 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
                                   fallback: 'Review Later',
                                 ),
                                 icon: Icons.replay_rounded,
-                                color: const Color(0xFFF59E0B),
+                                color: AppColors.amber500,
                                 isDark: isDark,
                                 onTap: () => _markNeedsReviewAndNext(word),
                               ),
@@ -937,7 +939,7 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
                                   fallback: 'Got it!',
                                 ),
                                 icon: Icons.verified_rounded,
-                                color: const Color(0xFF10B981),
+                                color: AppColors.emerald500,
                                 isDark: isDark,
                                 onTap: () => _triggerActiveRecall(word),
                               ),
@@ -986,8 +988,8 @@ class _DailyWordsProgressBar extends StatelessWidget {
                 backgroundColor: isDark
                     ? Colors.white.withValues(alpha: 0.1)
                     : const Color(0xFFE2E8F0),
-                valueColor: const AlwaysStoppedAnimation<Color>(
-                  Color(0xFF6366F1),
+                valueColor: AlwaysStoppedAnimation<Color>(
+                  Theme.of(context).colorScheme.primary,
                 ),
               ),
             ),
@@ -1001,7 +1003,7 @@ class _DailyWordsProgressBar extends StatelessWidget {
               fontWeight: FontWeight.w800,
               color: isDark
                   ? Colors.white.withValues(alpha: 0.7)
-                  : const Color(0xFF64748B),
+                  : AppColors.slate500,
             ),
           ),
         ],

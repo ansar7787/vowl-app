@@ -8,6 +8,7 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 /// Compact 4-item stats row that consolidates the old HomeQuickStats (3 items)
 /// and CommandPod vaultOnly (3 items) into a single unified row.
@@ -42,7 +43,7 @@ class UnifiedStatsRow extends StatelessWidget {
             label: context.tr('home.coins', fallback: 'Coins'),
             value: _formatNumber(user.coins),
             icon: Icons.paid_rounded,
-            color: const Color(0xFF10B981),
+            color: AppColors.emerald500,
             route: AppRouter.questCoinsRoute,
             delay: 80,
           ),
@@ -54,7 +55,7 @@ class UnifiedStatsRow extends StatelessWidget {
             label: context.tr('home.badges', fallback: 'Badges'),
             value: '${user.badges.length}',
             icon: Icons.emoji_events_rounded,
-            color: const Color(0xFFF59E0B),
+            color: AppColors.amber500,
             route: AppRouter.trophyRoomRoute,
             delay: 160,
           ),
@@ -66,7 +67,7 @@ class UnifiedStatsRow extends StatelessWidget {
             label: context.tr('home.rank_label', fallback: 'Rank'),
             value: globalRank != null ? '#$globalRank' : '—',
             icon: Icons.public_rounded,
-            color: const Color(0xFF6366F1),
+            color: AppColors.indigo500,
             route: AppRouter.leaderboardRoute,
             delay: 240,
           ),
@@ -121,9 +122,7 @@ class UnifiedStatsRow extends StatelessWidget {
                           fontFamily: 'Outfit',
                           fontSize: 16.sp,
                           fontWeight: FontWeight.w900,
-                          color: isDark
-                              ? Colors.white
-                              : const Color(0xFF0F172A),
+                          color: isDark ? Colors.white : AppColors.slate900,
                           height: 1.1,
                         ),
                         maxLines: 1,

@@ -6,6 +6,7 @@ import 'package:vowl/features/accent/presentation/bloc/accent_state.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/presentation/widgets/pedagogical_rule_box.dart';
 import 'package:vowl/core/utils/widgets/translate_button_widget.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 /// Slide-up feedback card shown after a player submits an answer.
 ///
@@ -38,11 +39,9 @@ class AccentFeedbackCard extends StatelessWidget {
     final lives = state.livesRemaining;
 
     final primaryGradient = success
-        ? const [Color(0xFF2DD4BF), Color(0xFF10B981)]
-        : const [Color(0xFFF43F5E), Color(0xFFE11D48)];
-    final shadowColor = success
-        ? const Color(0xFF10B981)
-        : const Color(0xFFE11D48);
+        ? const [Color(0xFF2DD4BF), AppColors.emerald500]
+        : const [AppColors.rose500, AppColors.rose700];
+    final shadowColor = success ? AppColors.emerald500 : AppColors.rose700;
 
     final icon = success ? Icons.check_circle_rounded : Icons.error_rounded;
     final title = success
@@ -73,7 +72,7 @@ class AccentFeedbackCard extends StatelessWidget {
       width: 342.w,
       padding: EdgeInsets.all(24.r),
       decoration: BoxDecoration(
-        color: isDark ? const Color(0xFF0F172A) : Colors.white,
+        color: isDark ? AppColors.slate900 : Colors.white,
         borderRadius: BorderRadius.vertical(top: Radius.circular(40.r)),
         boxShadow: [
           BoxShadow(

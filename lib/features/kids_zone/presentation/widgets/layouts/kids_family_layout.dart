@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/utils/instruction_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -73,7 +74,7 @@ class KidsFamilyLayout extends StatelessWidget {
                     width: double.infinity,
                     margin: EdgeInsets.symmetric(horizontal: 16.w),
                     decoration: BoxDecoration(
-                      color: const Color(0xFF78350F), // Dark wood mantle
+                      color: AppColors.amber900, // Dark wood mantle
                       borderRadius: BorderRadius.vertical(
                         top: Radius.circular(4.r),
                       ),
@@ -161,7 +162,7 @@ class KidsFamilyLayout extends StatelessWidget {
               borderRadius: BorderRadius.circular(4.r),
               border: Border.all(
                 color: isHovering
-                    ? const Color(0xFFD97706)
+                    ? AppColors.amber600
                     : const Color(0xFFB45309),
                 width: 16.r,
               ), // Ornate wooden frame
@@ -268,7 +269,7 @@ class KidsFamilyLayout extends StatelessWidget {
                       ? Text(emoji, style: TextStyle(fontSize: 32.sp))
                       : Icon(
                           Icons.photo_rounded,
-                          color: const Color(0xFF94A3B8),
+                          color: AppColors.slate400,
                           size: 24.r,
                         ),
                 ),

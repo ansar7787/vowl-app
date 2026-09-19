@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -65,6 +66,7 @@ class _ArticleFloatingOrbState extends State<ArticleFloatingOrb>
 
   @override
   Widget build(BuildContext context) {
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     final disableAnimations = MediaQuery.of(context).disableAnimations;
 
     Color textColor;
@@ -91,47 +93,47 @@ class _ArticleFloatingOrbState extends State<ArticleFloatingOrb>
     } else {
       if (widget.isSelected) {
         if (widget.isCorrectAnswer) {
-          textColor = Colors.greenAccent;
-          borderColor = Colors.greenAccent;
+          textColor = tokens.gameCorrect;
+          borderColor = tokens.gameCorrect;
           gradientColors = [
-            Colors.greenAccent.withValues(alpha: 0.3),
-            Colors.greenAccent.withValues(alpha: 0.1),
+            tokens.gameCorrect.withValues(alpha: 0.3),
+            tokens.gameCorrect.withValues(alpha: 0.1),
             Colors.white.withValues(alpha: 0.05),
           ];
           shadows = [
             BoxShadow(
-              color: Colors.greenAccent.withValues(alpha: 0.3),
+              color: tokens.gameCorrect.withValues(alpha: 0.3),
               blurRadius: 25,
               spreadRadius: 4,
             ),
           ];
         } else {
-          textColor = Colors.redAccent;
-          borderColor = Colors.redAccent;
+          textColor = tokens.gameIncorrect;
+          borderColor = tokens.gameIncorrect;
           gradientColors = [
-            Colors.redAccent.withValues(alpha: 0.3),
-            Colors.redAccent.withValues(alpha: 0.1),
+            tokens.gameIncorrect.withValues(alpha: 0.3),
+            tokens.gameIncorrect.withValues(alpha: 0.1),
             Colors.white.withValues(alpha: 0.05),
           ];
           shadows = [
             BoxShadow(
-              color: Colors.redAccent.withValues(alpha: 0.3),
+              color: tokens.gameIncorrect.withValues(alpha: 0.3),
               blurRadius: 25,
               spreadRadius: 4,
             ),
           ];
         }
       } else if (widget.isCorrectAnswer && widget.isFinalFailure) {
-        textColor = Colors.greenAccent;
-        borderColor = Colors.greenAccent.withValues(alpha: 0.6);
+        textColor = tokens.gameCorrect;
+        borderColor = tokens.gameCorrect.withValues(alpha: 0.6);
         gradientColors = [
-          Colors.greenAccent.withValues(alpha: 0.15),
-          Colors.greenAccent.withValues(alpha: 0.05),
+          tokens.gameCorrect.withValues(alpha: 0.15),
+          tokens.gameCorrect.withValues(alpha: 0.05),
           Colors.transparent,
         ];
         shadows = [
           BoxShadow(
-            color: Colors.greenAccent.withValues(alpha: 0.15),
+            color: tokens.gameCorrect.withValues(alpha: 0.15),
             blurRadius: 15,
             spreadRadius: 2,
           ),

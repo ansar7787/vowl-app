@@ -13,6 +13,7 @@ import 'package:vowl/core/utils/injection_container.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 import 'package:confetti/confetti.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 /// HatchingPage: introductory onboarding companion hatching animation.
 /// Guides the user through hatching their Vowl companion using a stylised egg.
@@ -138,16 +139,14 @@ class _HatchingPageState extends State<HatchingPage> {
         statusBarIconBrightness: isDark ? Brightness.light : Brightness.dark,
         statusBarBrightness: isDark ? Brightness.dark : Brightness.light,
         systemNavigationBarColor: isDark
-            ? const Color(0xFF0F172A)
-            : const Color(0xFFF8FAFC),
+            ? AppColors.slate900
+            : AppColors.slate50,
         systemNavigationBarIconBrightness: isDark
             ? Brightness.light
             : Brightness.dark,
       ),
       child: Scaffold(
-        backgroundColor: isDark
-            ? const Color(0xFF0F172A)
-            : const Color(0xFFF8FAFC),
+        backgroundColor: isDark ? AppColors.slate900 : AppColors.slate50,
         body: ValueListenableBuilder<int>(
           valueListenable: _stage,
           builder: (context, currentStage, child) {
@@ -331,7 +330,7 @@ class _HatchingPageState extends State<HatchingPage> {
     // FIX (H4): Text color adapts to theme
     final textColor = isDark
         ? Colors.white.withValues(alpha: 0.85)
-        : const Color(0xFF334155);
+        : AppColors.slate700;
     final subtleColor = isDark ? Colors.white60 : Colors.blueGrey;
 
     if (currentStage >= 2) {
@@ -354,7 +353,7 @@ class _HatchingPageState extends State<HatchingPage> {
                     children: [
                       Icon(
                         Icons.format_quote_rounded,
-                        color: const Color(0xFF6366F1).withValues(alpha: 0.5),
+                        color: AppColors.indigo500.withValues(alpha: 0.5),
                         size: 24.r,
                       ),
                       SizedBox(width: 8.w),
@@ -364,7 +363,7 @@ class _HatchingPageState extends State<HatchingPage> {
                           fontFamily: 'Outfit',
                           fontSize: 14.sp,
                           fontWeight: FontWeight.bold,
-                          color: const Color(0xFF6366F1),
+                          color: AppColors.indigo500,
                           letterSpacing: 1.2,
                         ),
                       ),
@@ -427,11 +426,11 @@ class _HatchingPageState extends State<HatchingPage> {
           height: 60.h,
           width: double.infinity,
           decoration: BoxDecoration(
-            color: const Color(0xFF6366F1),
+            color: AppColors.indigo500,
             borderRadius: BorderRadius.circular(20.r),
             boxShadow: [
               BoxShadow(
-                color: const Color(0xFF6366F1).withValues(alpha: 0.3),
+                color: AppColors.indigo500.withValues(alpha: 0.3),
                 blurRadius: 16,
                 offset: const Offset(0, 8),
               ),
@@ -460,13 +459,13 @@ class EggCrackPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     final paint = Paint()
-      ..color = const Color(0xFFFBBF24)
+      ..color = AppColors.amber400
       ..strokeWidth = 3.0
       ..style = PaintingStyle.stroke
       ..strokeCap = StrokeCap.round;
 
     final glowPaint = Paint()
-      ..color = const Color(0xFFFBBF24).withValues(alpha: 0.4)
+      ..color = AppColors.amber400.withValues(alpha: 0.4)
       ..strokeWidth = 6.0
       ..style = PaintingStyle.stroke
       ..strokeCap = StrokeCap.round;

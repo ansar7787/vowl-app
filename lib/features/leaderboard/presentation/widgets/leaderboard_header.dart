@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 class LeaderboardHeader extends StatelessWidget {
   final DateTime lastUpdated;
@@ -33,7 +34,7 @@ class LeaderboardHeader extends StatelessWidget {
                 padding: EdgeInsets.all(8.r),
                 decoration: BoxDecoration(
                   gradient: const LinearGradient(
-                    colors: [Color(0xFFFFD700), Color(0xFFF59E0B)],
+                    colors: [Color(0xFFFFD700), AppColors.amber500],
                   ),
                   borderRadius: BorderRadius.circular(12.r),
                 ),
@@ -66,9 +67,7 @@ class LeaderboardHeader extends StatelessWidget {
                               fontFamily: 'Outfit',
                               fontSize: 22.sp,
                               fontWeight: FontWeight.w900,
-                              color: isDark
-                                  ? Colors.white
-                                  : const Color(0xFF0F172A),
+                              color: isDark ? Colors.white : AppColors.slate900,
                               letterSpacing: 1,
                             ),
                             maxLines: 1,
@@ -95,7 +94,7 @@ class LeaderboardHeader extends StatelessWidget {
                                   Icons.update_rounded,
                                   color: isDark
                                       ? Colors.white54
-                                      : const Color(0xFF64748B),
+                                      : AppColors.slate500,
                                   size: 12.r,
                                 ),
                                 SizedBox(width: 4.w),
@@ -107,7 +106,7 @@ class LeaderboardHeader extends StatelessWidget {
                                     fontWeight: FontWeight.w700,
                                     color: isDark
                                         ? Colors.white54
-                                        : const Color(0xFF64748B),
+                                        : AppColors.slate500,
                                   ),
                                 ),
                               ],
@@ -131,9 +130,7 @@ class LeaderboardHeader extends StatelessWidget {
                         fontFamily: 'Outfit',
                         fontSize: 11.sp,
                         fontWeight: FontWeight.w600,
-                        color: isDark
-                            ? Colors.white38
-                            : const Color(0xFF94A3B8),
+                        color: isDark ? Colors.white38 : AppColors.slate400,
                       ),
                     ),
                   ],

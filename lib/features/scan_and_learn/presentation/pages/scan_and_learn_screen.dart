@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'dart:io';
 import 'dart:convert';
 import 'dart:math';
@@ -31,6 +32,7 @@ import 'package:confetti/confetti.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 class ScanAndLearnScreen extends StatefulWidget {
   const ScanAndLearnScreen({super.key});
@@ -336,14 +338,15 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
   @override
   Widget build(BuildContext context) {
     if (!_bountiesLoadedVal) {
-      return const Scaffold(
+      return Scaffold(
         body: SafeArea(
-          child: GameShimmerLoading(primaryColor: Color(0xFF6366F1)),
+          child: GameShimmerLoading(primaryColor: AppColors.indigo500),
         ),
       );
     }
 
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
 
     return PopScope(
       canPop: _imagePathVal == null,
@@ -555,7 +558,7 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
                   Icon(
                     Icons.document_scanner_rounded,
                     size: 16.r,
-                    color: const Color(0xFF6366F1),
+                    color: AppColors.indigo500,
                   ),
                   SizedBox(width: 8.w),
                   Text(
@@ -615,8 +618,8 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
                       Icon(
                         LucideIcons.alertTriangle,
                         color: isDark
-                            ? Colors.redAccent.shade100
-                            : Colors.redAccent,
+                            ? AppColors.gameIncorrect.withValues(alpha: 0.8)
+                            : AppColors.gameIncorrect,
                         size: 48.r,
                       ),
                       SizedBox(height: 16.h),
@@ -663,7 +666,7 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
                             vertical: 14.h,
                           ),
                           decoration: BoxDecoration(
-                            color: const Color(0xFF6366F1),
+                            color: AppColors.indigo500,
                             borderRadius: BorderRadius.circular(16.r),
                             boxShadow: [
                               BoxShadow(
@@ -802,7 +805,7 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
                             vertical: 14.h,
                           ),
                           decoration: BoxDecoration(
-                            color: const Color(0xFF6366F1),
+                            color: AppColors.indigo500,
                             borderRadius: BorderRadius.circular(16.r),
                             boxShadow: [
                               BoxShadow(
@@ -943,11 +946,11 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
               width: double.infinity,
               padding: EdgeInsets.symmetric(vertical: 20.h),
               decoration: BoxDecoration(
-                color: const Color(0xFF6366F1),
+                color: AppColors.indigo500,
                 borderRadius: BorderRadius.circular(100.r),
                 boxShadow: [
                   BoxShadow(
-                    color: const Color(0xFF6366F1).withValues(alpha: 0.4),
+                    color: AppColors.indigo500.withValues(alpha: 0.4),
                     blurRadius: 15,
                     offset: const Offset(0, 5),
                   ),
@@ -993,7 +996,7 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
                     height: 280.w,
                     decoration: BoxDecoration(
                       border: Border.all(
-                        color: const Color(0xFF6366F1).withValues(alpha: 0.3),
+                        color: AppColors.indigo500.withValues(alpha: 0.3),
                         width: 1.w,
                       ),
                     ),
@@ -1009,11 +1012,11 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
                             decoration: BoxDecoration(
                               border: Border(
                                 top: BorderSide(
-                                  color: const Color(0xFF6366F1),
+                                  color: AppColors.indigo500,
                                   width: 4.w,
                                 ),
                                 left: BorderSide(
-                                  color: const Color(0xFF6366F1),
+                                  color: AppColors.indigo500,
                                   width: 4.w,
                                 ),
                               ),
@@ -1030,11 +1033,11 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
                             decoration: BoxDecoration(
                               border: Border(
                                 top: BorderSide(
-                                  color: const Color(0xFF6366F1),
+                                  color: AppColors.indigo500,
                                   width: 4.w,
                                 ),
                                 right: BorderSide(
-                                  color: const Color(0xFF6366F1),
+                                  color: AppColors.indigo500,
                                   width: 4.w,
                                 ),
                               ),
@@ -1051,11 +1054,11 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
                             decoration: BoxDecoration(
                               border: Border(
                                 bottom: BorderSide(
-                                  color: const Color(0xFF6366F1),
+                                  color: AppColors.indigo500,
                                   width: 4.w,
                                 ),
                                 left: BorderSide(
-                                  color: const Color(0xFF6366F1),
+                                  color: AppColors.indigo500,
                                   width: 4.w,
                                 ),
                               ),
@@ -1072,11 +1075,11 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
                             decoration: BoxDecoration(
                               border: Border(
                                 bottom: BorderSide(
-                                  color: const Color(0xFF6366F1),
+                                  color: AppColors.indigo500,
                                   width: 4.w,
                                 ),
                                 right: BorderSide(
-                                  color: const Color(0xFF6366F1),
+                                  color: AppColors.indigo500,
                                   width: 4.w,
                                 ),
                               ),
@@ -1141,12 +1144,12 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
                 color: Colors.white,
                 boxShadow: [
                   BoxShadow(
-                    color: const Color(0xFF6366F1),
+                    color: AppColors.indigo500,
                     blurRadius: 10,
                     spreadRadius: 2,
                   ),
                   BoxShadow(
-                    color: const Color(0xFF6366F1).withValues(alpha: 0.5),
+                    color: AppColors.indigo500.withValues(alpha: 0.5),
                     blurRadius: 30,
                     spreadRadius: 10,
                   ),
@@ -1204,7 +1207,7 @@ class _AnimatedScannerTextState extends State<_AnimatedScannerText> {
           fontFamily: 'Outfit',
           fontWeight: FontWeight.w900,
           fontSize: 16.sp,
-          color: const Color(0xFF6366F1),
+          color: AppColors.indigo500,
           letterSpacing: 4.0,
         ),
       ),

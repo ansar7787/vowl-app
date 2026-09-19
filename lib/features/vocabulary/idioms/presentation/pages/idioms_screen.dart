@@ -1,3 +1,5 @@
+import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 
@@ -131,6 +133,7 @@ class _IdiomsScreenState extends State<IdiomsScreen>
 
   @override
   Widget build(BuildContext context) {
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     return BlocConsumer<VocabularyBloc, VocabularyState>(
       listenWhen: vocabularyListenWhen,
       listener: onVocabularyStateChanged,
@@ -459,7 +462,7 @@ class _IdiomsScreenState extends State<IdiomsScreen>
                 SizedBox(height: 10.h),
                 IdiomsSystemMessage(
                   text: "DECRYPTION FAILED. RE-EVALUATE SEQUENCE.",
-                  color: Colors.redAccent,
+                  color: AppColors.gameIncorrect,
                 ),
               ],
             ],
@@ -512,7 +515,7 @@ class _IdiomsScreenState extends State<IdiomsScreen>
             width: 8.r,
             height: 8.r,
             decoration: const BoxDecoration(
-              color: Colors.greenAccent,
+              color: AppColors.gameCorrect,
               shape: BoxShape.circle,
             ),
           ).animate(onPlay: (c) => c.repeat()).shimmer(duration: 2.seconds),

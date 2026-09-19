@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/translation/presentation/bloc/translation_bloc.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 class LanguageManagerSheet extends StatelessWidget {
   final bool isDark;
@@ -16,7 +17,7 @@ class LanguageManagerSheet extends StatelessWidget {
     return Container(
       height: MediaQuery.of(context).size.height * 0.7,
       decoration: BoxDecoration(
-        color: isDark ? const Color(0xFF1E293B) : Colors.white,
+        color: isDark ? AppColors.slate800 : Colors.white,
         borderRadius: BorderRadius.vertical(top: Radius.circular(32.r)),
       ),
       child: Column(
@@ -40,7 +41,7 @@ class LanguageManagerSheet extends StatelessWidget {
               fontFamily: 'Outfit',
               fontSize: 20.sp,
               fontWeight: FontWeight.w800,
-              color: isDark ? Colors.white : const Color(0xFF0F172A),
+              color: isDark ? Colors.white : AppColors.slate900,
             ),
           ),
           SizedBox(height: 8.h),
@@ -56,7 +57,7 @@ class LanguageManagerSheet extends StatelessWidget {
               style: TextStyle(
                 fontFamily: 'Outfit',
                 fontSize: 14.sp,
-                color: isDark ? Colors.white54 : const Color(0xFF64748B),
+                color: isDark ? Colors.white54 : AppColors.slate500,
               ),
             ),
           ),
@@ -74,9 +75,7 @@ class LanguageManagerSheet extends StatelessWidget {
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 16.sp,
-                        color: isDark
-                            ? Colors.white38
-                            : const Color(0xFF94A3B8),
+                        color: isDark ? Colors.white38 : AppColors.slate400,
                       ),
                     ),
                   );
@@ -96,7 +95,7 @@ class LanguageManagerSheet extends StatelessWidget {
                           children: [
                             Icon(
                               Icons.check_circle_rounded,
-                              color: const Color(0xFF10B981),
+                              color: AppColors.emerald500,
                               size: 20.r,
                             ),
                             SizedBox(width: 12.w),
@@ -109,7 +108,7 @@ class LanguageManagerSheet extends StatelessWidget {
                                   fontWeight: FontWeight.w700,
                                   color: isDark
                                       ? Colors.white
-                                      : const Color(0xFF0F172A),
+                                      : AppColors.slate900,
                                 ),
                                 maxLines: 1,
                               ),
@@ -120,7 +119,7 @@ class LanguageManagerSheet extends StatelessWidget {
                               },
                               icon: const Icon(
                                 Icons.delete_outline_rounded,
-                                color: Color(0xFFEF4444),
+                                color: AppColors.red500,
                               ),
                             ),
                           ],
@@ -141,7 +140,7 @@ class LanguageManagerSheet extends StatelessWidget {
     showDialog(
       context: context,
       builder: (ctx) => AlertDialog(
-        backgroundColor: isDark ? const Color(0xFF1E293B) : Colors.white,
+        backgroundColor: isDark ? AppColors.slate800 : Colors.white,
         title: Text(
           context.tr(
             'translation.delete_pack_title',
@@ -151,7 +150,7 @@ class LanguageManagerSheet extends StatelessWidget {
           style: TextStyle(
             fontFamily: 'Outfit',
             fontWeight: FontWeight.bold,
-            color: isDark ? Colors.white : const Color(0xFF0F172A),
+            color: isDark ? Colors.white : AppColors.slate900,
           ),
         ),
         content: Text(
@@ -184,7 +183,7 @@ class LanguageManagerSheet extends StatelessWidget {
             child: Text(
               context.tr('common.delete', fallback: 'Delete'),
               style: const TextStyle(
-                color: Color(0xFFEF4444),
+                color: AppColors.red500,
                 fontWeight: FontWeight.bold,
               ),
             ),

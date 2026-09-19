@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:vowl/core/theme/theme_cubit.dart';
 import 'package:confetti/confetti.dart';
 import 'package:flutter/material.dart';
@@ -13,6 +14,7 @@ import 'package:vowl/features/kids_zone/presentation/widgets/kids_background_ren
 import 'package:haptic_feedback/haptic_feedback.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 class StickerBookScreen extends StatefulWidget {
   const StickerBookScreen({super.key});
@@ -47,6 +49,7 @@ class _StickerBookScreenState extends State<StickerBookScreen>
   Widget build(BuildContext context) {
     final isMidnight = context.watch<ThemeCubit>().state.isMidnight;
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
 
     return BlocBuilder<AuthBloc, AuthState>(
       builder: (context, state) {
@@ -60,7 +63,7 @@ class _StickerBookScreenState extends State<StickerBookScreen>
         return Scaffold(
           backgroundColor: isMidnight
               ? Colors.black
-              : (isDark ? const Color(0xFF0F172A) : const Color(0xFFF8FAFC)),
+              : (isDark ? AppColors.slate900 : AppColors.slate50),
           body: Stack(
             children: [
               // Living Background - updated for cleaner look in light mode
@@ -119,7 +122,7 @@ class _StickerBookScreenState extends State<StickerBookScreen>
                     Colors.blue,
                     Colors.yellow,
                     Colors.purple,
-                    Colors.greenAccent,
+                    tokens.gameCorrect,
                   ],
                   maxBlastForce: 25,
                   minBlastForce: 15,
@@ -149,7 +152,7 @@ class _StickerBookScreenState extends State<StickerBookScreen>
           decoration: BoxDecoration(
             color: isMidnight
                 ? Colors.white.withValues(alpha: 0.05)
-                : (isDark ? const Color(0xFF1E293B) : Colors.white),
+                : (isDark ? AppColors.slate800 : Colors.white),
             borderRadius: BorderRadius.circular(30.r),
             boxShadow: isMidnight
                 ? null
@@ -248,7 +251,7 @@ class _StickerBookScreenState extends State<StickerBookScreen>
                             fontWeight: FontWeight.w900,
                             color: (isDark || isMidnight)
                                 ? Colors.white
-                                : const Color(0xFF0F172A),
+                                : AppColors.slate900,
                             letterSpacing: -0.5,
                             height: 1.1,
                           ),
@@ -276,7 +279,7 @@ class _StickerBookScreenState extends State<StickerBookScreen>
                                 decoration: BoxDecoration(
                                   gradient: const LinearGradient(
                                     colors: [
-                                      Color(0xFFF59E0B),
+                                      AppColors.amber500,
                                       Color(0xFFF97316),
                                     ],
                                   ),
@@ -374,7 +377,7 @@ class _StickerBookScreenState extends State<StickerBookScreen>
                 // Base unselected colors
                 final unselectedColor = isMidnight || isDark
                     ? Colors.white12
-                    : const Color(0xFFF1F5F9);
+                    : AppColors.slate100;
                 final unselectedBorderColor = isMidnight || isDark
                     ? Colors.white24
                     : Colors.grey.shade300;
@@ -541,12 +544,10 @@ class _StickerBookScreenState extends State<StickerBookScreen>
               color: isUnlocked
                   ? (isMidnight
                         ? rarityColor.withValues(alpha: 0.15)
-                        : (isDark ? const Color(0xFF1E293B) : Colors.white))
+                        : (isDark ? AppColors.slate800 : Colors.white))
                   : (isMidnight
                         ? Colors.black26
-                        : (isDark
-                              ? const Color(0xFF0F172A)
-                              : const Color(0xFFF1F5F9))),
+                        : (isDark ? AppColors.slate900 : AppColors.slate100)),
               borderRadius: BorderRadius.circular(32.r),
               boxShadow: isUnlocked
                   ? [
@@ -684,7 +685,7 @@ class _StickerBookScreenState extends State<StickerBookScreen>
                               fontWeight: FontWeight.w900,
                               color: (isDark || isMidnight)
                                   ? Colors.white70
-                                  : const Color(0xFF1E293B),
+                                  : AppColors.slate800,
                               letterSpacing: 1,
                             ),
                           ),
@@ -736,13 +737,13 @@ class _StickerBookScreenState extends State<StickerBookScreen>
   Color _getLevelColor(int level) {
     switch (level) {
       case 10:
-        return const Color(0xFF10B981); // Vibrant Emerald
+        return AppColors.emerald500; // Vibrant Emerald
       case 50:
-        return const Color(0xFFF59E0B); // Bright Bronze/Amber
+        return AppColors.amber500; // Bright Bronze/Amber
       case 100:
-        return const Color(0xFF94A3B8); // Shiny Silver
+        return AppColors.slate400; // Shiny Silver
       case 200:
-        return const Color(0xFFFFD700); // Radiant Gold
+        return AppColors.gold; // Radiant Gold
       default:
         return Colors.grey;
     }

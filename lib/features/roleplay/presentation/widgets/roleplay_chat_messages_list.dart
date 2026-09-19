@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -94,9 +95,7 @@ class _ChatBubble extends StatelessWidget {
             decoration: BoxDecoration(
               color: isUser
                   ? color
-                  : (isDark
-                        ? const Color(0xFF1E293B)
-                        : const Color(0xFFE2E8F0)),
+                  : (isDark ? AppColors.slate800 : const Color(0xFFE2E8F0)),
               borderRadius: BorderRadius.circular(20.r).copyWith(
                 bottomLeft: isUser ? Radius.circular(20.r) : Radius.zero,
                 bottomRight: isUser ? Radius.zero : Radius.circular(20.r),
@@ -110,7 +109,7 @@ class _ChatBubble extends StatelessWidget {
                 fontWeight: FontWeight.w500,
                 color: isUser
                     ? Colors.white
-                    : (isDark ? Colors.white : const Color(0xFF0F172A)),
+                    : (isDark ? Colors.white : AppColors.slate900),
               ),
             ),
           ),
@@ -139,7 +138,7 @@ class _TypingIndicator extends StatelessWidget {
           child: Container(
             padding: EdgeInsets.all(14.r),
             decoration: BoxDecoration(
-              color: isDark ? const Color(0xFF1E293B) : const Color(0xFFE2E8F0),
+              color: isDark ? AppColors.slate800 : const Color(0xFFE2E8F0),
               borderRadius: BorderRadius.circular(
                 20.r,
               ).copyWith(bottomLeft: Radius.zero),
@@ -150,7 +149,7 @@ class _TypingIndicator extends StatelessWidget {
                 fontFamily: 'Outfit',
                 fontSize: 15.sp,
                 fontWeight: FontWeight.w500,
-                color: isDark ? Colors.white : const Color(0xFF0F172A),
+                color: isDark ? Colors.white : AppColors.slate900,
               ),
             ),
           ),

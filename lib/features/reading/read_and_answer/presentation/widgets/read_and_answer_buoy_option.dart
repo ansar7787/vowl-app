@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 class ReadAndAnswerBuoyOption extends StatelessWidget {
   final int index;
@@ -50,12 +51,12 @@ class ReadAndAnswerBuoyOption extends StatelessWidget {
 
     if (showAsCorrect) {
       cardBg = isDark ? const Color(0xFF064E3B) : const Color(0xFFD1FAE5);
-      borderCol = const Color(0xFF10B981);
+      borderCol = AppColors.emerald500;
       iconCol = isDark ? const Color(0xFF34D399) : const Color(0xFF059669);
       iconData = Icons.check_circle_rounded;
     } else if (showAsWrong) {
       cardBg = isDark ? const Color(0xFF7F1D1D) : const Color(0xFFFEE2E2);
-      borderCol = const Color(0xFFEF4444);
+      borderCol = AppColors.red500;
       iconCol = isDark ? const Color(0xFFF87171) : const Color(0xFFDC2626);
       iconData = Icons.cancel_rounded;
     } else if (isSelected) {
@@ -153,7 +154,7 @@ class ReadAndAnswerBuoyOption extends StatelessWidget {
                       fontWeight: isSelected
                           ? FontWeight.w700
                           : FontWeight.w500,
-                      color: isDark ? Colors.white : const Color(0xFF1E293B),
+                      color: isDark ? Colors.white : AppColors.slate800,
                     ),
                   ),
                 ),

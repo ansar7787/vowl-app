@@ -7,6 +7,7 @@ import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 class StreakCalendar extends StatelessWidget {
   final UserEntity user;
@@ -70,10 +71,10 @@ class StreakCalendar extends StatelessWidget {
                       vertical: 4.h,
                     ),
                     decoration: BoxDecoration(
-                      color: const Color(0xFF10B981).withValues(alpha: 0.1),
+                      color: AppColors.emerald500.withValues(alpha: 0.1),
                       borderRadius: BorderRadius.circular(12.r),
                       border: Border.all(
-                        color: const Color(0xFF10B981).withValues(alpha: 0.3),
+                        color: AppColors.emerald500.withValues(alpha: 0.3),
                       ),
                     ),
                     child: Row(
@@ -81,7 +82,7 @@ class StreakCalendar extends StatelessWidget {
                       children: [
                         Icon(
                           Icons.security_rounded,
-                          color: const Color(0xFF10B981),
+                          color: AppColors.emerald500,
                           size: 12.r,
                         ),
                         SizedBox(width: 4.w),
@@ -94,7 +95,7 @@ class StreakCalendar extends StatelessWidget {
                             fontFamily: 'Outfit',
                             fontSize: 9.sp,
                             fontWeight: FontWeight.w900,
-                            color: const Color(0xFF10B981),
+                            color: AppColors.emerald500,
                             letterSpacing: 0.5,
                           ),
                           maxLines: 1,
@@ -120,7 +121,7 @@ class StreakCalendar extends StatelessWidget {
                 fontFamily: 'Outfit',
                 fontSize: 12.sp,
                 fontWeight: FontWeight.w500,
-                color: isDark ? Colors.white54 : const Color(0xFF64748B),
+                color: isDark ? Colors.white54 : AppColors.slate500,
               ),
             ),
           ),
@@ -284,9 +285,7 @@ class StreakCalendar extends StatelessWidget {
     if (!isFuture && isPlayed) {
       dayGradient = isFrozen
           ? const LinearGradient(colors: [Color(0xFF38BDF8), Color(0xFF3B82F6)])
-          : const LinearGradient(
-              colors: [Color(0xFFF97316), Color(0xFFEF4444)],
-            );
+          : const LinearGradient(colors: [Color(0xFFF97316), AppColors.red500]);
     }
 
     return Column(
@@ -299,7 +298,7 @@ class StreakCalendar extends StatelessWidget {
             color: isFuture
                 ? (isDark
                       ? Colors.white.withValues(alpha: 0.03)
-                      : const Color(0xFFF1F5F9))
+                      : AppColors.slate100)
                 : (!isPlayed
                       ? (isDark
                             ? Colors.white.withValues(alpha: 0.08)

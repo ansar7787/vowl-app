@@ -1,3 +1,5 @@
+import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -18,7 +20,8 @@ class FindWordMeaningResult extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final displayColor = isCorrect ? Colors.greenAccent : Colors.redAccent;
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
+    final displayColor = isCorrect ? tokens.gameCorrect : tokens.gameIncorrect;
 
     Widget card = Semantics(
       liveRegion: true,
@@ -130,7 +133,7 @@ class FindWordMeaningResult extends StatelessWidget {
                         fontStyle: FontStyle.italic,
                         color: isDark
                             ? Colors.white.withValues(alpha: 0.9)
-                            : const Color(0xFF1E293B),
+                            : AppColors.slate800,
                         height: 1.4,
                       ),
                     ),

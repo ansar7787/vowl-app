@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 class IntonationMimicVerticalFader extends StatelessWidget {
   final List<String> options;
@@ -66,17 +67,17 @@ class IntonationMimicVerticalFader extends StatelessWidget {
     final bool showResult = isAnswered && isSelected;
 
     Color cardColor = isDark
-        ? const Color(0xFF1E293B).withValues(alpha: 0.7)
+        ? AppColors.slate800.withValues(alpha: 0.7)
         : Colors.white.withValues(alpha: 0.8);
     Color borderColor = color.withValues(alpha: 0.3);
     Color textColor = isDark ? Colors.white70 : Colors.black87;
 
     if (showResult) {
       cardColor = correct
-          ? const Color(0xFF10B981).withValues(alpha: 0.15)
-          : const Color(0xFFE11D48).withValues(alpha: 0.15);
-      borderColor = correct ? const Color(0xFF10B981) : const Color(0xFFE11D48);
-      textColor = correct ? const Color(0xFF10B981) : const Color(0xFFE11D48);
+          ? AppColors.emerald500.withValues(alpha: 0.15)
+          : AppColors.rose700.withValues(alpha: 0.15);
+      borderColor = correct ? AppColors.emerald500 : AppColors.rose700;
+      textColor = correct ? AppColors.emerald500 : AppColors.rose700;
     } else if (isSelected) {
       cardColor = color.withValues(alpha: 0.2);
       borderColor = color;

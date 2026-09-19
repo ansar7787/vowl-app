@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -121,7 +122,7 @@ class _PrefixSuffixSynthesizerState extends State<PrefixSuffixSynthesizer> {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 32.w, vertical: 24.h),
       decoration: BoxDecoration(
-        color: widget.isDark ? const Color(0xFF1E293B) : Colors.white,
+        color: widget.isDark ? AppColors.slate800 : Colors.white,
         borderRadius: BorderRadius.circular(20.r),
         border: Border.all(
           color: widget.primaryColor.withValues(alpha: 0.4),
@@ -154,7 +155,7 @@ class _PrefixSuffixSynthesizerState extends State<PrefixSuffixSynthesizer> {
     Widget chip = Container(
       padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 16.h),
       decoration: BoxDecoration(
-        color: widget.isDark ? const Color(0xFF1E293B) : Colors.white,
+        color: widget.isDark ? AppColors.slate800 : Colors.white,
         borderRadius: BorderRadius.circular(16.r),
         border: Border.all(
           color: isHinted
@@ -214,7 +215,7 @@ class _PrefixSuffixSynthesizerState extends State<PrefixSuffixSynthesizer> {
             child: Container(
               padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 16.h),
               decoration: BoxDecoration(
-                color: widget.isDark ? const Color(0xFF1E293B) : Colors.white,
+                color: widget.isDark ? AppColors.slate800 : Colors.white,
                 borderRadius: BorderRadius.circular(16.r),
                 border: Border.all(color: widget.primaryColor, width: 2),
                 boxShadow: [

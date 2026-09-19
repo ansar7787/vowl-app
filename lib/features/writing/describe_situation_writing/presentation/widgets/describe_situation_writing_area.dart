@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -21,6 +22,7 @@ class DescribeSituationWritingArea extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     return Container(
       decoration: BoxDecoration(
         color: isDark ? Colors.black87 : Colors.white,
@@ -76,8 +78,10 @@ class DescribeSituationWritingArea extends StatelessWidget {
               Builder(
                 builder: (context) {
                   final displayColor = wordCount >= minWords
-                      ? (isDark ? Colors.greenAccent : const Color(0xFF16A34A))
-                      : (isDark ? Colors.redAccent : const Color(0xFFDC2626));
+                      ? (isDark ? tokens.gameCorrect : const Color(0xFF16A34A))
+                      : (isDark
+                            ? tokens.gameIncorrect
+                            : const Color(0xFFDC2626));
                   return Container(
                     padding: EdgeInsets.symmetric(
                       horizontal: 10.w,

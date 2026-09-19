@@ -4,13 +4,12 @@ import 'package:intl/intl.dart';
 
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 class AdventureDailyXpChart extends StatelessWidget {
   final Map<String, int> history;
 
   const AdventureDailyXpChart({super.key, required this.history});
-
-  static const _accent = Color(0xFF6366F1);
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +46,7 @@ class AdventureDailyXpChart extends StatelessWidget {
                   fontFamily: 'Outfit',
                   fontSize: 12.sp,
                   fontWeight: FontWeight.w900,
-                  color: isDark ? Colors.white38 : const Color(0xFF64748B),
+                  color: isDark ? Colors.white38 : AppColors.slate500,
                   letterSpacing: 1.5,
                 ),
               ),
@@ -58,7 +57,7 @@ class AdventureDailyXpChart extends StatelessWidget {
                     fontFamily: 'Outfit',
                     fontSize: 12.sp,
                     fontWeight: FontWeight.w800,
-                    color: _accent,
+                    color: Theme.of(context).colorScheme.primary,
                   ),
                 ),
             ],
@@ -122,7 +121,9 @@ class AdventureDailyXpChart extends StatelessWidget {
                                           fontSize: 9.sp,
                                           fontWeight: FontWeight.w800,
                                           color: isToday
-                                              ? _accent
+                                              ? Theme.of(
+                                                  context,
+                                                ).colorScheme.primary
                                               : (isDark
                                                     ? Colors.white54
                                                     : Colors.black45),
@@ -151,14 +152,19 @@ class AdventureDailyXpChart extends StatelessWidget {
                                       colors: xp > 0
                                           ? isToday
                                                 ? [
-                                                    _accent,
+                                                    Theme.of(
+                                                      context,
+                                                    ).colorScheme.primary,
                                                     const Color(0xFF818CF8),
                                                   ]
                                                 : [
-                                                    _accent,
-                                                    _accent.withValues(
-                                                      alpha: 0.6,
-                                                    ),
+                                                    Theme.of(
+                                                      context,
+                                                    ).colorScheme.primary,
+                                                    Theme.of(context)
+                                                        .colorScheme
+                                                        .primary
+                                                        .withValues(alpha: 0.6),
                                                   ]
                                           : [
                                               Colors.grey.withValues(
@@ -175,9 +181,12 @@ class AdventureDailyXpChart extends StatelessWidget {
                                     boxShadow: xp > 0
                                         ? [
                                             BoxShadow(
-                                              color: _accent.withValues(
-                                                alpha: isToday ? 0.5 : 0.3,
-                                              ),
+                                              color: Theme.of(context)
+                                                  .colorScheme
+                                                  .primary
+                                                  .withValues(
+                                                    alpha: isToday ? 0.5 : 0.3,
+                                                  ),
                                               blurRadius: isToday ? 12 : 8,
                                               offset: const Offset(0, 4),
                                             ),
@@ -200,10 +209,10 @@ class AdventureDailyXpChart extends StatelessWidget {
                                     ? FontWeight.w900
                                     : FontWeight.w800,
                                 color: isToday
-                                    ? _accent
+                                    ? Theme.of(context).colorScheme.primary
                                     : (isDark
                                           ? Colors.white38
-                                          : const Color(0xFF64748B)),
+                                          : AppColors.slate500),
                               ),
                             ),
                             // ── Today dot ──
@@ -213,7 +222,7 @@ class AdventureDailyXpChart extends StatelessWidget {
                                 width: 4.r,
                                 height: 4.r,
                                 decoration: const BoxDecoration(
-                                  color: _accent,
+                                  color: Theme.of(context).colorScheme.primary,
                                   shape: BoxShape.circle,
                                 ),
                               ),

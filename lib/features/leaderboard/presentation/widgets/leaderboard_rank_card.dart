@@ -8,6 +8,7 @@ import 'package:vowl/core/presentation/widgets/shimmer_image.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 class LeaderboardRankCard extends StatelessWidget {
   final List<UserEntity> allUsers;
@@ -42,10 +43,8 @@ class LeaderboardRankCard extends StatelessWidget {
         : currentUser.totalLevelsCompleted;
     final maxLevels = isKids ? _totalKidsLevels : _totalLevels;
     final progress = (levelsCleared / maxLevels).clamp(0.0, 1.0);
-    final contrastColor = isDark ? Colors.white : const Color(0xFF0F172A);
-    final secondaryTextColor = isDark
-        ? Colors.white60
-        : const Color(0xFF64748B);
+    final contrastColor = isDark ? Colors.white : AppColors.slate900;
+    final secondaryTextColor = isDark ? Colors.white60 : AppColors.slate500;
 
     return Semantics(
       // FIX (HIGH-5): Full accessibility label so TalkBack/VoiceOver
@@ -78,10 +77,10 @@ class LeaderboardRankCard extends StatelessWidget {
           ),
           borderRadius: BorderRadius.circular(24.r),
           borderColor: isDark
-              ? const Color(0xFF3B82F6).withValues(alpha: 0.5)
-              : const Color(0xFF6366F1).withValues(alpha: 0.3),
+              ? AppColors.blue500.withValues(alpha: 0.5)
+              : AppColors.indigo500.withValues(alpha: 0.3),
           color: isDark
-              ? const Color(0xFF0F172A).withValues(alpha: 0.75)
+              ? AppColors.slate900.withValues(alpha: 0.75)
               : Colors.white.withValues(alpha: 0.95),
           borderWidth: 1.5,
           child: Column(
@@ -95,12 +94,15 @@ class LeaderboardRankCard extends StatelessWidget {
                     height: 48.w,
                     decoration: BoxDecoration(
                       gradient: const LinearGradient(
-                        colors: [Color(0xFF6366F1), Color(0xFF3B82F6)],
+                        colors: [
+                          Theme.of(context).colorScheme.primary,
+                          AppColors.blue500,
+                        ],
                       ),
                       shape: BoxShape.circle,
                       boxShadow: [
                         BoxShadow(
-                          color: const Color(0xFF6366F1).withValues(alpha: 0.4),
+                          color: AppColors.indigo500.withValues(alpha: 0.4),
                           blurRadius: 12,
                         ),
                       ],
@@ -224,7 +226,7 @@ class LeaderboardRankCard extends StatelessWidget {
                                       decoration: BoxDecoration(
                                         gradient: const LinearGradient(
                                           colors: [
-                                            Color(0xFF3B82F6),
+                                            AppColors.blue500,
                                             Color(0xFF60A5FA),
                                           ],
                                         ),

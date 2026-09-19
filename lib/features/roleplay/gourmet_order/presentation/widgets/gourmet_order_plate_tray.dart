@@ -1,3 +1,5 @@
+import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -28,11 +30,12 @@ class GourmetOrderPlateTray extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     return Container(
       width: 1.sw,
       padding: EdgeInsets.all(16.r),
       decoration: BoxDecoration(
-        color: isDark ? const Color(0xFF0F0F1B) : Colors.white,
+        color: isDark ? AppColors.deepDark : Colors.white,
         borderRadius: BorderRadius.circular(30.r),
         border: Border.all(color: color.withValues(alpha: 0.1)),
       ),
@@ -84,7 +87,9 @@ class GourmetOrderPlateTray extends StatelessWidget {
 
     Color plateColor = color;
     if (isAnswered && isSelected) {
-      plateColor = (isCorrect ?? false) ? Colors.greenAccent : Colors.redAccent;
+      plateColor = (isCorrect ?? false)
+          ? AppColors.gameCorrect
+          : AppColors.gameIncorrect;
     }
 
     return Padding(

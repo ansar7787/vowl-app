@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -22,7 +23,7 @@ class MainWrapper extends StatelessWidget {
     return Scaffold(
       backgroundColor: isMidnight
           ? const Color(0xFF020617)
-          : (isDark ? const Color(0xFF0F172A) : Colors.white),
+          : (isDark ? AppColors.slate900 : Colors.white),
       extendBody: true,
       body: navigationShell,
       bottomNavigationBar: RepaintBoundary(

@@ -4,6 +4,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:intl/intl.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/premium/domain/entities/subscription_plan.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 class PremiumPlanCard extends StatelessWidget {
   final SubscriptionPlan plan;
@@ -229,7 +230,7 @@ class PremiumPlanCard extends StatelessWidget {
                                       '${context.tr('premium.save', fallback: 'SAVE')} $savingsPercent%',
                                       style: TextStyle(
                                         fontFamily: 'Outfit',
-                                        color: const Color(0xFF10B981),
+                                        color: AppColors.emerald500,
                                         fontSize: 9.sp,
                                         fontWeight: FontWeight.w800,
                                         letterSpacing: 0.5,

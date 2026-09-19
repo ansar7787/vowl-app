@@ -13,6 +13,7 @@ import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/core/theme/theme_cubit.dart';
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/theme/app_colors.dart';
 
 class MascotSelectionScreen extends StatelessWidget {
   const MascotSelectionScreen({super.key});
@@ -23,7 +24,7 @@ class MascotSelectionScreen extends StatelessWidget {
     final isMidnight = context.watch<ThemeCubit>().state.isMidnight;
     final bgColor = isMidnight
         ? Colors.black
-        : (isDark ? const Color(0xFF0F172A) : const Color(0xFFF8FAFC));
+        : (isDark ? AppColors.slate900 : AppColors.slate50);
 
     return Scaffold(
       backgroundColor: bgColor,
@@ -31,14 +32,10 @@ class MascotSelectionScreen extends StatelessWidget {
         children: [
           MeshGradientBackground(
             colors: isMidnight
-                ? [
-                    Colors.black,
-                    const Color(0xFF020617),
-                    const Color(0xFF0F172A),
-                  ]
+                ? [Colors.black, const Color(0xFF020617), AppColors.slate900]
                 : (isDark
                       ? [
-                          const Color(0xFF0F172A),
+                          AppColors.slate900,
                           const Color(0xFF1E1B4B),
                           const Color(0xFF312E81),
                         ]
@@ -61,7 +58,7 @@ class MascotSelectionScreen extends StatelessWidget {
                     onTap: () => context.pop(),
                     child: Container(
                       decoration: BoxDecoration(
-                        color: isDark ? const Color(0xFF1E293B) : Colors.white,
+                        color: isDark ? AppColors.slate800 : Colors.white,
                         shape: BoxShape.circle,
                         border: Border.all(
                           color: isDark
@@ -102,9 +99,7 @@ class MascotSelectionScreen extends StatelessWidget {
                               fontFamily: 'Outfit',
                               fontSize: 28.sp,
                               fontWeight: FontWeight.w900,
-                              color: isDark
-                                  ? Colors.white
-                                  : const Color(0xFF1E293B),
+                              color: isDark ? Colors.white : AppColors.slate800,
                             ),
                           )
                           .animate()
@@ -235,7 +230,7 @@ class _KidsMascotCardState extends State<KidsMascotCard> {
               width: double.infinity,
               padding: EdgeInsets.all(14.r),
               decoration: BoxDecoration(
-                color: isDark ? const Color(0xFF1E293B) : Colors.white,
+                color: isDark ? AppColors.slate800 : Colors.white,
                 borderRadius: BorderRadius.circular(32.r),
                 border: Border.all(
                   color: isSelected
@@ -333,7 +328,7 @@ class _KidsMascotCardState extends State<KidsMascotCard> {
                         fontFamily: 'Outfit',
                         fontSize: 19.sp,
                         fontWeight: FontWeight.w900,
-                        color: isDark ? Colors.white : const Color(0xFF1E293B),
+                        color: isDark ? Colors.white : AppColors.slate800,
                       ),
                     ),
                   ),

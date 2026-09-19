@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -19,6 +20,7 @@ class CorrectionWritingSentenceCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     final startIdx = passage.indexOf('[');
     final endIdx = passage.indexOf(']');
 
@@ -83,13 +85,13 @@ class CorrectionWritingSentenceCard extends StatelessWidget {
                     ),
                     decoration: BoxDecoration(
                       color: selectedCorrection != null
-                          ? Colors.greenAccent.withValues(alpha: 0.1)
-                          : Colors.redAccent.withValues(alpha: 0.1),
+                          ? tokens.gameCorrect.withValues(alpha: 0.1)
+                          : tokens.gameIncorrect.withValues(alpha: 0.1),
                       borderRadius: BorderRadius.circular(12.r),
                       border: Border.all(
                         color: selectedCorrection != null
-                            ? Colors.greenAccent
-                            : Colors.redAccent,
+                            ? tokens.gameCorrect
+                            : tokens.gameIncorrect,
                         width: 2,
                         style: selectedCorrection != null
                             ? BorderStyle.solid
@@ -105,8 +107,8 @@ class CorrectionWritingSentenceCard extends StatelessWidget {
                             fontFamily: 'Outfit',
                             fontSize: 14.sp,
                             color: selectedCorrection != null
-                                ? Colors.greenAccent
-                                : Colors.redAccent,
+                                ? tokens.gameCorrect
+                                : tokens.gameIncorrect,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
@@ -117,8 +119,8 @@ class CorrectionWritingSentenceCard extends StatelessWidget {
                               : Icons.cancel_outlined,
                           size: 14.r,
                           color: selectedCorrection != null
-                              ? Colors.greenAccent
-                              : Colors.redAccent,
+                              ? tokens.gameCorrect
+                              : tokens.gameIncorrect,
                         ),
                       ],
                     ),

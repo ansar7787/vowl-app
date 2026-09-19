@@ -10,6 +10,7 @@ import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 class ProfileBentoStats extends StatelessWidget {
   final UserEntity user;
@@ -38,7 +39,7 @@ class ProfileBentoStats extends StatelessWidget {
             fallback: 'Tap to view rank details',
           ),
           icon: Icons.workspace_premium_rounded,
-          color: const Color(0xFF8B5CF6),
+          color: AppColors.violet500,
           onTap: () {
             di.sl<HapticService>().selection();
             context.push(AppRouter.levelRoute);
@@ -55,7 +56,7 @@ class ProfileBentoStats extends StatelessWidget {
                 ),
                 value: '${user.coins}',
                 icon: Icons.paid_rounded,
-                color: const Color(0xFF10B981),
+                color: AppColors.emerald500,
                 onTap: () => context.push(AppRouter.questCoinsRoute),
               ),
             ),
@@ -72,7 +73,7 @@ class ProfileBentoStats extends StatelessWidget {
                   args: ['${user.currentStreak}'],
                 ),
                 icon: Icons.local_fire_department_rounded,
-                color: const Color(0xFFEF4444),
+                color: AppColors.red500,
                 onTap: () => context.push(AppRouter.streakRoute),
               ),
             ),
@@ -90,7 +91,7 @@ class ProfileBentoStats extends StatelessWidget {
             args: ['${user.totalExp}'],
           ),
           icon: Icons.auto_awesome_rounded,
-          color: const Color(0xFF3B82F6),
+          color: AppColors.blue500,
           onTap: () {
             di.sl<HapticService>().selection();
             context.push(AppRouter.adventureXPRoute);
@@ -126,7 +127,7 @@ class ProfileBentoStats extends StatelessWidget {
                       fontFamily: 'Outfit',
                       fontSize: 12.sp,
                       fontWeight: FontWeight.w900,
-                      color: const Color(0xFF3B82F6),
+                      color: AppColors.blue500,
                     ),
                   ),
                 ],
@@ -153,7 +154,7 @@ class ProfileBentoStats extends StatelessWidget {
                         width: trackWidth * xpProgress.clamp(0.0, 1.0),
                         decoration: BoxDecoration(
                           gradient: const LinearGradient(
-                            colors: [Color(0xFF3B82F6), Color(0xFF60A5FA)],
+                            colors: [AppColors.blue500, Color(0xFF60A5FA)],
                           ),
                           borderRadius: BorderRadius.circular(10.r),
                         ),
@@ -238,9 +239,7 @@ class _BentoWideCard extends StatelessWidget {
                           fontFamily: 'Outfit',
                           fontSize: 24.sp,
                           fontWeight: FontWeight.w900,
-                          color: isDark
-                              ? Colors.white
-                              : const Color(0xFF0F172A),
+                          color: isDark ? Colors.white : AppColors.slate900,
                         ),
                       ),
                       if (subtitle != null) ...[
@@ -330,7 +329,7 @@ class _StatPod extends StatelessWidget {
                   fontFamily: 'Outfit',
                   fontSize: 22.sp,
                   fontWeight: FontWeight.w900,
-                  color: isDark ? Colors.white : const Color(0xFF0F172A),
+                  color: isDark ? Colors.white : AppColors.slate900,
                 ),
               ),
               SizedBox(height: 4.h),

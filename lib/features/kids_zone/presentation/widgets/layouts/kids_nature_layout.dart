@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/utils/instruction_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -182,7 +183,7 @@ class KidsNatureLayout extends StatelessWidget {
             decoration: BoxDecoration(
               color: isHovering
                   ? const Color(0xFF92400E)
-                  : const Color(0xFF78350F), // Dark wood
+                  : AppColors.amber900, // Dark wood
               borderRadius: BorderRadius.circular(16.r),
               border: Border.all(
                 color: isHovering
@@ -306,7 +307,7 @@ class KidsNatureLayout extends StatelessWidget {
         height: 80.r,
         width: 80.r,
         decoration: BoxDecoration(
-          color: const Color(0xFF94A3B8), // Slate grey stone
+          color: AppColors.slate400, // Slate grey stone
           borderRadius: BorderRadius.only(
             topLeft: Radius.circular(30.r),
             topRight: Radius.circular(20.r),
@@ -341,7 +342,7 @@ class KidsNatureLayout extends StatelessWidget {
                   fontFamily: 'Outfit',
                   fontSize: 16.sp,
                   fontWeight: FontWeight.w700,
-                  color: const Color(0xFF0F172A),
+                  color: AppColors.slate900,
                 ),
                 textAlign: TextAlign.center,
               ),

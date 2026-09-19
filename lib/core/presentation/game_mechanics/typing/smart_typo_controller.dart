@@ -1,3 +1,5 @@
+import 'package:vowl/core/theme/app_color_tokens.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:vowl/core/utils/smart_typo_evaluator.dart';
 
@@ -5,7 +7,7 @@ class SmartTypoController extends TextEditingController {
   final String expectedText;
   bool _showDiff = false;
   Color correctColor = Colors.green;
-  Color incorrectColor = Colors.redAccent;
+  Color incorrectColor = AppColors.gameIncorrect;
 
   SmartTypoController({required this.expectedText});
 

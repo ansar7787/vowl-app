@@ -1,3 +1,5 @@
+import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -27,6 +29,7 @@ class ElevatorPitchChamberConsole extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     final double totalShaftHeight = 240.h;
     final double zoneHeight = 72.h;
 
@@ -80,19 +83,19 @@ class ElevatorPitchChamberConsole extends StatelessWidget {
                               width: 58.w,
                               height: zoneHeight,
                               decoration: BoxDecoration(
-                                color: Colors.greenAccent.withValues(
+                                color: tokens.gameCorrect.withValues(
                                   alpha: 0.15,
                                 ),
                                 borderRadius: BorderRadius.circular(20.r),
                                 border: Border.all(
-                                  color: Colors.greenAccent.withValues(
+                                  color: tokens.gameCorrect.withValues(
                                     alpha: 0.6,
                                   ),
                                   width: 1.5,
                                 ),
                                 boxShadow: [
                                   BoxShadow(
-                                    color: Colors.greenAccent.withValues(
+                                    color: tokens.gameCorrect.withValues(
                                       alpha: 0.2,
                                     ),
                                     blurRadius: 10,
@@ -102,7 +105,7 @@ class ElevatorPitchChamberConsole extends StatelessWidget {
                             )
                             .animate(onPlay: (c) => c.repeat(reverse: true))
                             .shimmer(
-                              color: Colors.greenAccent.withValues(alpha: 0.3),
+                              color: tokens.gameCorrect.withValues(alpha: 0.3),
                               duration: 1.5.seconds,
                             ),
                   ),
@@ -115,10 +118,10 @@ class ElevatorPitchChamberConsole extends StatelessWidget {
                       height: 32.r,
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
-                        color: isAligned ? Colors.greenAccent : color,
+                        color: isAligned ? tokens.gameCorrect : color,
                         boxShadow: [
                           BoxShadow(
-                            color: (isAligned ? Colors.greenAccent : color)
+                            color: (isAligned ? tokens.gameCorrect : color)
                                 .withValues(alpha: 0.45),
                             blurRadius: 12,
                             spreadRadius: 1.5,
@@ -144,7 +147,7 @@ class ElevatorPitchChamberConsole extends StatelessWidget {
               height: totalShaftHeight,
               padding: EdgeInsets.all(18.r),
               decoration: BoxDecoration(
-                color: isDark ? const Color(0xFF0F0F1B) : Colors.white,
+                color: isDark ? AppColors.deepDark : Colors.white,
                 borderRadius: BorderRadius.circular(28.r),
                 border: Border.all(color: color.withValues(alpha: 0.1)),
               ),
@@ -170,7 +173,7 @@ class ElevatorPitchChamberConsole extends StatelessWidget {
                             decoration: BoxDecoration(
                               shape: BoxShape.circle,
                               color: isListening
-                                  ? Colors.redAccent
+                                  ? tokens.gameIncorrect
                                   : Colors.grey,
                             ),
                           )

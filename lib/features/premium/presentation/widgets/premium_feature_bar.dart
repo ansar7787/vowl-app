@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:lucide_icons/lucide_icons.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 class ModernFeatureBar extends StatelessWidget {
   const ModernFeatureBar({super.key});
@@ -45,7 +46,7 @@ class ModernFeatureBar extends StatelessWidget {
                 'Snap any object and learn its English name instantly using AI.',
           ),
           isDark: isDark,
-          customColor: const Color(0xFF14B8A6), // Teal
+          customColor: AppColors.teal500, // Teal
         ),
         SizedBox(height: 12.h),
         _buildFeatureCard(
@@ -61,7 +62,7 @@ class ModernFeatureBar extends StatelessWidget {
                 'Extract text from books or documents and get instant, real-time AI translations.',
           ),
           isDark: isDark,
-          customColor: const Color(0xFF6366F1), // Indigo
+          customColor: AppColors.indigo500, // Indigo
         ),
         SizedBox(height: 12.h),
         _buildFeatureCard(
@@ -76,7 +77,7 @@ class ModernFeatureBar extends StatelessWidget {
             fallback: 'Zero-lag, 100% offline native hints across all modules.',
           ),
           isDark: isDark,
-          customColor: const Color(0xFFF43F5E), // Rose
+          customColor: AppColors.rose500, // Rose
         ),
         SizedBox(height: 12.h),
         _buildFeatureCard(
@@ -91,7 +92,7 @@ class ModernFeatureBar extends StatelessWidget {
             fallback: 'A completely pure, ad-free learning experience.',
           ),
           isDark: isDark,
-          customColor: const Color(0xFF10B981), // Emerald
+          customColor: AppColors.emerald500, // Emerald
         ),
         SizedBox(height: 12.h),
         _buildFeatureCard(
@@ -107,7 +108,7 @@ class ModernFeatureBar extends StatelessWidget {
                 'Unlimited Smart Reply, Photo Vocabulary, Scan & Learn, Entity Highlighter — all ad-free.',
           ),
           isDark: isDark,
-          customColor: const Color(0xFF8B5CF6), // Violet
+          customColor: AppColors.violet500, // Violet
         ),
         SizedBox(height: 12.h),
         _buildFeatureCard(
@@ -123,7 +124,7 @@ class ModernFeatureBar extends StatelessWidget {
                 'Master concepts twice as fast with advanced XP tracking.',
           ),
           isDark: isDark,
-          customColor: const Color(0xFFF59E0B), // Amber
+          customColor: AppColors.amber500, // Amber
         ),
         SizedBox(height: 12.h),
         _buildFeatureCard(
@@ -138,7 +139,7 @@ class ModernFeatureBar extends StatelessWidget {
             fallback: 'Download curriculum and learn off the grid.',
           ),
           isDark: isDark,
-          customColor: const Color(0xFF64748B), // Slate
+          customColor: AppColors.slate500, // Slate
         ),
         SizedBox(height: 12.h),
         _buildFeatureCard(
@@ -199,7 +200,7 @@ class ModernFeatureBar extends StatelessWidget {
     Color? customColor,
   }) {
     final primaryColor =
-        customColor ?? const Color(0xFF6366F1); // Default to Indigo
+        customColor ?? AppColors.indigo500; // Default to Indigo
 
     return ClipRRect(
       borderRadius: BorderRadius.circular(20.r),

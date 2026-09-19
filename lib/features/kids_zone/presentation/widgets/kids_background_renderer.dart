@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -35,7 +36,7 @@ class KidsBackgroundRenderer extends StatelessWidget {
       gradientColors = isDark
           ? [
               const Color(0xFF1E1B4B),
-              const Color(0xFF0F172A),
+              AppColors.slate900,
               const Color(0xFF1E1B4B),
             ]
           : [
@@ -72,7 +73,7 @@ class KidsBackgroundRenderer extends StatelessWidget {
       gradientColors = isDark
           ? [
               primaryColor.withAlpha(100),
-              const Color(0xFF0F172A),
+              AppColors.slate900,
               primaryColor.withAlpha(80),
             ]
           : [

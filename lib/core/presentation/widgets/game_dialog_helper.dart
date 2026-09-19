@@ -15,6 +15,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/features/auth/data/repositories/gamification_repository_impl.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 // ═══════════════════════════════════════════════════════════════════════════
 //  GameDialogHelper — Shared completion & game-over dialogs for ALL games.
@@ -193,7 +194,7 @@ class GameDialogHelper {
                               fallback: 'Coins Tripled!',
                             ),
                             icon: Icons.auto_awesome_rounded,
-                            color: const Color(0xFF10B981),
+                            color: AppColors.emerald500,
                           );
                         }
                         Navigator.of(context).pop(popResult);
@@ -409,13 +410,13 @@ class GameDialogHelper {
   /// accent colors defined in `custom_snack_bar.dart`.
   static CustomSnackBarType _inferSnackBarType(Color? color) {
     if (color == null) return CustomSnackBarType.info;
-    if (color == const Color(0xFF10B981) || color == Colors.green) {
+    if (color == AppColors.emerald500 || color == Colors.green) {
       return CustomSnackBarType.success;
     }
-    if (color == const Color(0xFFEF4444) || color == Colors.red) {
+    if (color == AppColors.red500 || color == Colors.red) {
       return CustomSnackBarType.error;
     }
-    if (color == Colors.orange || color == const Color(0xFFF59E0B)) {
+    if (color == Colors.orange || color == AppColors.amber500) {
       return CustomSnackBarType.warning;
     }
     return CustomSnackBarType.info;
@@ -478,7 +479,7 @@ class GameDialogHelper {
                   fallback: 'REWARD EARNED: +1 Strategic Hint!',
                 ),
                 icon: Icons.lightbulb_rounded,
-                color: const Color(0xFFF59E0B),
+                color: AppColors.amber500,
               );
             },
             onDismissed: () {},
@@ -493,7 +494,7 @@ class GameDialogHelper {
         isRescueLife: true,
         customIcon: Icon(
           Icons.lightbulb_rounded,
-          color: const Color(0xFFF59E0B),
+          color: AppColors.amber500,
           size: 48.r,
         ),
       ),

@@ -9,6 +9,7 @@ import 'package:vowl/core/presentation/widgets/shimmer_image.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 class ProfileHeader extends StatelessWidget {
   final UserEntity user;
@@ -55,9 +56,7 @@ class ProfileHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final isPremium = user.isPremium;
-    final glowColor = isPremium
-        ? const Color(0xFFF59E0B)
-        : const Color(0xFF6366F1);
+    final glowColor = isPremium ? AppColors.amber500 : AppColors.indigo500;
 
     // XP progress within current level (0.0 - 1.0)
     final xpProgress = (user.totalExp % 100) / 100;
@@ -72,7 +71,7 @@ class ProfileHeader extends StatelessWidget {
                 padding: EdgeInsets.all(4.w),
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  color: isDark ? const Color(0xFF1E293B) : Colors.white,
+                  color: isDark ? AppColors.slate800 : Colors.white,
                   boxShadow: [
                     BoxShadow(
                       color: glowColor.withValues(alpha: isPremium ? 0.4 : 0.1),
@@ -82,7 +81,7 @@ class ProfileHeader extends StatelessWidget {
                     ),
                     if (user.level >= 200)
                       BoxShadow(
-                        color: const Color(0xFFF59E0B).withValues(alpha: 0.5),
+                        color: AppColors.amber500.withValues(alpha: 0.5),
                         blurRadius: 20,
                         spreadRadius: 5,
                       ),
@@ -132,13 +131,13 @@ class ProfileHeader extends StatelessWidget {
                             shape: BoxShape.circle,
                             border: Border.all(
                               color: (isPremium || user.level >= 200)
-                                  ? const Color(0xFFF59E0B)
+                                  ? AppColors.amber500
                                   : Colors.transparent,
                               width: 3.r,
                             ),
                             color: isDark
                                 ? Colors.white.withValues(alpha: 0.1)
-                                : const Color(0xFFF1F5F9),
+                                : AppColors.slate100,
                           ),
                           child: ClipOval(
                             child: (immediatePhotoUrl ?? user.photoUrl) != null
@@ -160,7 +159,7 @@ class ProfileHeader extends StatelessWidget {
                                         ))
                                 : Icon(
                                     Icons.person_rounded,
-                                    color: const Color(0xFF94A3B8),
+                                    color: AppColors.slate400,
                                     size: 60.r,
                                   ),
                           ),
@@ -205,9 +204,7 @@ class ProfileHeader extends StatelessWidget {
                             color: glowColor,
                             shape: BoxShape.circle,
                             border: Border.all(
-                              color: isDark
-                                  ? const Color(0xFF1E293B)
-                                  : Colors.white,
+                              color: isDark ? AppColors.slate800 : Colors.white,
                               width: 3,
                             ),
                           ),
@@ -259,9 +256,7 @@ class ProfileHeader extends StatelessWidget {
                           fontFamily: 'Outfit',
                           fontSize: 28.sp,
                           fontWeight: FontWeight.w900,
-                          color: isDark
-                              ? Colors.white
-                              : const Color(0xFF0F172A),
+                          color: isDark ? Colors.white : AppColors.slate900,
                           letterSpacing: -0.5,
                         ),
                       ),
@@ -271,8 +266,8 @@ class ProfileHeader extends StatelessWidget {
                     Builder(
                       builder: (context) {
                         final badgeColor = isPremium
-                            ? const Color(0xFFF59E0B)
-                            : const Color(0xFF6366F1);
+                            ? AppColors.amber500
+                            : AppColors.indigo500;
                         return Container(
                           padding: EdgeInsets.symmetric(
                             horizontal: 8.w,
@@ -348,7 +343,7 @@ class ProfileHeader extends StatelessWidget {
               if (isPremium) ...[
                 Icon(
                   Icons.verified_rounded,
-                  color: const Color(0xFFF59E0B),
+                  color: AppColors.amber500,
                   size: 16.r,
                 ),
                 SizedBox(width: 4.w),
@@ -363,7 +358,7 @@ class ProfileHeader extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 12.sp,
-                    color: const Color(0xFFF59E0B),
+                    color: AppColors.amber500,
                     fontWeight: FontWeight.w800,
                     letterSpacing: 1,
                   ),
@@ -390,7 +385,7 @@ class ProfileHeader extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 14.sp,
-                    color: isDark ? Colors.white60 : const Color(0xFF64748B),
+                    color: isDark ? Colors.white60 : AppColors.slate500,
                     fontWeight: FontWeight.w600,
                   ),
                 ),

@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
@@ -29,6 +30,7 @@ class ReadingInferenceOption extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     bool isSelected = selectedIndex == index;
     bool isCorrect =
         isAnswered && text.trim().toLowerCase() == correct.trim().toLowerCase();
@@ -46,9 +48,9 @@ class ReadingInferenceOption extends StatelessWidget {
             padding: EdgeInsets.all(20.r),
             borderRadius: BorderRadius.circular(20.r),
             color: isCorrect
-                ? Colors.greenAccent.withValues(alpha: 0.25)
+                ? tokens.gameCorrect.withValues(alpha: 0.25)
                 : (isWrong
-                      ? Colors.redAccent.withValues(alpha: 0.25)
+                      ? tokens.gameIncorrect.withValues(alpha: 0.25)
                       : (isSelected
                             ? color.withValues(alpha: 0.15)
                             : (isDark

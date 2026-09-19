@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -145,8 +146,8 @@ class EmotionRecognitionQuadrant extends StatelessWidget {
     bool isWrong = isAnswered && isSelected && isCorrectState == false;
 
     Color tileColor = isCorrect
-        ? Colors.greenAccent
-        : (isWrong ? Colors.redAccent : color);
+        ? AppColors.gameCorrect
+        : (isWrong ? AppColors.gameIncorrect : color);
 
     return GestureDetector(
       onTap: () {

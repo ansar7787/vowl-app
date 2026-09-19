@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -79,7 +80,7 @@ class AdventureXPScreen extends StatelessWidget {
           final isMidnight = context.watch<ThemeCubit>().state.isMidnight;
           final bgColor = isMidnight
               ? Colors.black
-              : (isDark ? const Color(0xFF0F172A) : const Color(0xFFF8FAFC));
+              : (isDark ? AppColors.slate900 : const Color(0xFFF8FAFC));
           return Scaffold(
             backgroundColor: bgColor,
             body: BlocBuilder<AuthBloc, AuthState>(
@@ -145,7 +146,7 @@ class AdventureXPScreen extends StatelessWidget {
                                       fontWeight: FontWeight.w800,
                                       color: isDark
                                           ? Colors.white
-                                          : const Color(0xFF0F172A),
+                                          : AppColors.slate900,
                                     ),
                                   ),
                                 ],

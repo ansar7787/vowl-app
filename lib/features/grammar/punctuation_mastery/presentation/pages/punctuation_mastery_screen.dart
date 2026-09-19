@@ -1,3 +1,5 @@
+import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -228,6 +230,7 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen>
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     final theme = LevelThemeHelper.getTheme('grammar', level: widget.level);
 
     return BlocConsumer<GrammarBloc, GrammarState>(
@@ -784,7 +787,9 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen>
     bool isCompact,
   ) {
     final bool correct = isCorrectNotifier.value == true;
-    final displayColor = correct ? Colors.greenAccent : Colors.redAccent;
+    final displayColor = correct
+        ? AppColors.gameCorrect
+        : AppColors.gameIncorrect;
 
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 24.w),

@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -29,7 +30,7 @@ class PhotoEmptyState extends StatelessWidget {
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 border: Border.all(
-                  color: const Color(0xFF14B8A6).withValues(alpha: 0.2),
+                  color: AppColors.teal500.withValues(alpha: 0.2),
                   width: 1.w,
                 ),
               ),
@@ -58,10 +59,10 @@ class PhotoEmptyState extends StatelessWidget {
                     width: 80.r,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
-                      color: const Color(0xFF14B8A6).withValues(alpha: 0.15),
+                      color: AppColors.teal500.withValues(alpha: 0.15),
                       boxShadow: [
                         BoxShadow(
-                          color: const Color(0xFF14B8A6).withValues(alpha: 0.3),
+                          color: AppColors.teal500.withValues(alpha: 0.3),
                           blurRadius: 30,
                           spreadRadius: 10,
                         ),
@@ -71,7 +72,7 @@ class PhotoEmptyState extends StatelessWidget {
                         Icon(
                               Icons.camera_alt_rounded,
                               size: 40.r,
-                              color: const Color(0xFF14B8A6),
+                              color: AppColors.teal500,
                             )
                             .animate(onPlay: (c) => c.repeat(reverse: true))
                             .fade(begin: 0.5, end: 1.0, duration: 1.seconds),
@@ -117,7 +118,7 @@ class PhotoEmptyState extends StatelessWidget {
                   fontFamily: 'Outfit',
                   fontSize: 14.sp,
                   fontWeight: FontWeight.w900,
-                  color: const Color(0xFF14B8A6),
+                  color: AppColors.teal500,
                   letterSpacing: 4.0,
                 ),
               )
@@ -212,7 +213,7 @@ class PhotoEmptyState extends StatelessWidget {
               decoration: BoxDecoration(
                 gradient: LinearGradient(
                   colors: [
-                    const Color(0xFF14B8A6).withValues(alpha: 0.15),
+                    AppColors.teal500.withValues(alpha: 0.15),
                     const Color(0xFF0D9488).withValues(alpha: 0.05),
                   ],
                   begin: Alignment.topLeft,
@@ -220,12 +221,12 @@ class PhotoEmptyState extends StatelessWidget {
                 ),
                 borderRadius: BorderRadius.circular(40.r),
                 border: Border.all(
-                  color: const Color(0xFF14B8A6).withValues(alpha: 0.4),
+                  color: AppColors.teal500.withValues(alpha: 0.4),
                   width: 1.5.w,
                 ),
                 boxShadow: [
                   BoxShadow(
-                    color: const Color(0xFF14B8A6).withValues(alpha: 0.1),
+                    color: AppColors.teal500.withValues(alpha: 0.1),
                     blurRadius: 20,
                     offset: const Offset(0, 8),
                   ),
@@ -234,7 +235,7 @@ class PhotoEmptyState extends StatelessWidget {
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Icon(icon, color: const Color(0xFF14B8A6), size: 36.r),
+                  Icon(icon, color: AppColors.teal500, size: 36.r),
                   SizedBox(height: 12.h),
                   Text(
                     label,
@@ -242,7 +243,7 @@ class PhotoEmptyState extends StatelessWidget {
                       fontFamily: 'Outfit',
                       fontSize: 16.sp,
                       fontWeight: FontWeight.w800,
-                      color: isDark ? Colors.white : const Color(0xFF0F172A),
+                      color: isDark ? Colors.white : AppColors.slate900,
                     ),
                   ),
                   SizedBox(height: 4.h),

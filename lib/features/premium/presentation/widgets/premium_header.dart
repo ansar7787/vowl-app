@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:lucide_icons/lucide_icons.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 class PremiumHeader extends StatelessWidget {
   const PremiumHeader({super.key});
@@ -66,13 +67,13 @@ class PremiumHeader extends StatelessWidget {
                   decoration: BoxDecoration(
                     gradient: LinearGradient(
                       colors: [
-                        const Color(0xFFF59E0B).withValues(alpha: 0.15),
+                        AppColors.amber500.withValues(alpha: 0.15),
                         const Color(0xFFEA580C).withValues(alpha: 0.05),
                       ],
                     ),
                     borderRadius: BorderRadius.circular(30.r),
                     border: Border.all(
-                      color: const Color(0xFFF59E0B).withValues(alpha: 0.2),
+                      color: AppColors.amber500.withValues(alpha: 0.2),
                     ),
                   ),
                   child: Row(
@@ -80,7 +81,7 @@ class PremiumHeader extends StatelessWidget {
                     children: [
                       Icon(
                         LucideIcons.sparkles,
-                        color: const Color(0xFFF59E0B),
+                        color: AppColors.amber500,
                         size: 14.r,
                       ),
                       SizedBox(width: 6.w),

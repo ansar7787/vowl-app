@@ -5,6 +5,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 /// A premium glassmorphic header widget displaying the active game category, level tier, and current coins.
 class GlassMapHeader extends StatelessWidget {
@@ -93,7 +94,7 @@ class GlassMapHeader extends StatelessWidget {
                       fontFamily: 'Outfit',
                       fontSize: 22.sp,
                       fontWeight: FontWeight.w900,
-                      color: isDark ? Colors.white : const Color(0xFF0F172A),
+                      color: isDark ? Colors.white : AppColors.slate900,
                       height: 1.1,
                     ),
                   ),
@@ -111,7 +112,7 @@ class GlassMapHeader extends StatelessWidget {
                         vertical: 4.h,
                       ),
                       decoration: BoxDecoration(
-                        color: const Color(0xFF10B981).withValues(alpha: 0.1),
+                        color: AppColors.emerald500.withValues(alpha: 0.1),
                         borderRadius: BorderRadius.circular(12.r),
                       ),
                       child: ExcludeSemantics(
@@ -120,7 +121,7 @@ class GlassMapHeader extends StatelessWidget {
                           children: [
                             Icon(
                               Icons.paid_rounded,
-                              color: const Color(0xFF10B981),
+                              color: AppColors.emerald500,
                               size: 10.r,
                             ),
                             SizedBox(width: 4.w),
@@ -137,7 +138,7 @@ class GlassMapHeader extends StatelessWidget {
                                   fontFamily: 'Outfit',
                                   fontSize: 9.sp,
                                   fontWeight: FontWeight.w900,
-                                  color: const Color(0xFF10B981),
+                                  color: AppColors.emerald500,
                                 ),
                               ),
                             ),

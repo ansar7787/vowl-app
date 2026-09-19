@@ -1,3 +1,5 @@
+import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -41,6 +43,7 @@ class _WordLinkingSentenceFieldState extends State<WordLinkingSentenceField> {
 
   @override
   Widget build(BuildContext context) {
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     List<Widget> children = [];
 
     for (int i = 0; i < widget.words.length; i++) {
@@ -134,9 +137,9 @@ class _WordLinkingSentenceFieldState extends State<WordLinkingSentenceField> {
     Color nodeColor = color.withValues(alpha: 0.5);
     if (widget.isAnswered) {
       if (correct) {
-        nodeColor = Colors.greenAccent;
+        nodeColor = AppColors.gameCorrect;
       } else if (isSelected) {
-        nodeColor = Colors.redAccent;
+        nodeColor = AppColors.gameIncorrect;
       } else {
         nodeColor = color.withValues(alpha: 0.15);
       }

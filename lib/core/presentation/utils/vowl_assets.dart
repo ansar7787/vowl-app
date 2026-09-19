@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 /// Centralised, immutable asset registry for Vowl mascots and accessories.
 ///
@@ -123,29 +124,29 @@ class VowlAssets {
   // ── Item theme colours ───────────────────────────────────────────────────
   static const Map<String, Color> itemColors = {
     // Mascots
-    'vowl_prime': Color(0xFF3B82F6),
-    'silver_wing': Color(0xFF64748B),
+    'vowl_prime': AppColors.blue500,
+    'silver_wing': AppColors.slate500,
     'crystal_swan': Color(0xFFE0F2FE),
     'neon_parrot': Color(0xFFEC4899),
     'night_bat': Color(0xFF6366F1),
-    'emerald_peacock': Color(0xFF10B981),
-    'golden_dragon': Color(0xFFF59E0B),
-    'shadow_wolf': Color(0xFF334155),
+    'emerald_peacock': AppColors.emerald500,
+    'golden_dragon': AppColors.amber500,
+    'shadow_wolf': AppColors.slate700,
     'frost_penguin': Color(0xFF06B6D4),
-    'cosmic_unicorn': Color(0xFF8B5CF6),
+    'cosmic_unicorn': AppColors.violet500,
     // Accessories
     'scholar_cap': Color(0xFF4F46E5),
-    'red_scarf': Color(0xFFEF4444),
-    'cyber_visor': Color(0xFF14B8A6),
+    'red_scarf': AppColors.red500,
+    'cyber_visor': AppColors.teal500,
     'magic_wand': Color(0xFFD946EF),
-    'golden_bell': Color(0xFFFBBF24),
+    'golden_bell': AppColors.amber400,
     'frost_aura': Color(0xFF06B6D4),
-    'wind_whistler': Color(0xFF64748B),
+    'wind_whistler': AppColors.slate500,
     'phoenix_wings': Color(0xFFF97316),
     'dragon_gem': Color(0xFFEC4899),
-    'golden_crown': Color(0xFFF59E0B),
+    'golden_crown': AppColors.amber500,
     'starlight_aura': Color(0xFFFEF08A),
-    'mystic_amulet': Color(0xFF8B5CF6),
+    'mystic_amulet': AppColors.violet500,
   };
 
   // =========================================================================
@@ -155,7 +156,7 @@ class VowlAssets {
   /// Resolves the theme colour for a mascot or accessory [key].
   static Color getItemColor(
     String key, {
-    Color fallback = const Color(0xFF6366F1),
+    Color fallback = AppColors.indigo500,
   }) => itemColors[key] ?? fallback;
 
   /// Resolves the emoji for a mascot [key].

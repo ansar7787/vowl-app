@@ -20,6 +20,7 @@ import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/presentation/widgets/hint_purchase_dialog.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 class VowlCoinsScreen extends StatelessWidget {
   const VowlCoinsScreen({super.key});
@@ -77,7 +78,7 @@ class VowlCoinsScreen extends StatelessWidget {
     final isMidnight = context.watch<ThemeCubit>().state.isMidnight;
     final bgColor = isMidnight
         ? Colors.black
-        : (isDark ? const Color(0xFF0F172A) : const Color(0xFFF8FAFC));
+        : (isDark ? AppColors.slate900 : AppColors.slate50);
 
     return Scaffold(
       backgroundColor: bgColor,
@@ -95,10 +96,8 @@ class VowlCoinsScreen extends StatelessWidget {
                     context.read<AuthBloc>().add(const AuthReloadUser());
                     await Future.delayed(const Duration(milliseconds: 800));
                   },
-                  backgroundColor: isDark
-                      ? const Color(0xFF1E293B)
-                      : Colors.white,
-                  color: isDark ? Colors.white : const Color(0xFF10B981),
+                  backgroundColor: isDark ? AppColors.slate800 : Colors.white,
+                  color: isDark ? Colors.white : AppColors.emerald500,
                   child: CustomScrollView(
                     physics: const AlwaysScrollableScrollPhysics(
                       parent: BouncingScrollPhysics(),
@@ -143,7 +142,7 @@ class VowlCoinsScreen extends StatelessWidget {
                                   fontWeight: FontWeight.w800,
                                   color: isDark
                                       ? Colors.white
-                                      : const Color(0xFF0F172A),
+                                      : AppColors.slate900,
                                 ),
                               ),
                               const Spacer(),
@@ -163,7 +162,7 @@ class VowlCoinsScreen extends StatelessWidget {
                                   children: [
                                     Icon(
                                       Icons.paid_rounded,
-                                      color: const Color(0xFF10B981),
+                                      color: AppColors.emerald500,
                                       size: 14.r,
                                     ),
                                     SizedBox(width: 4.w),
@@ -173,7 +172,7 @@ class VowlCoinsScreen extends StatelessWidget {
                                         fontFamily: 'Outfit',
                                         fontSize: 12.sp,
                                         fontWeight: FontWeight.w800,
-                                        color: const Color(0xFF10B981),
+                                        color: AppColors.emerald500,
                                       ),
                                     ),
                                   ],
@@ -210,7 +209,7 @@ class VowlCoinsScreen extends StatelessWidget {
                                       fallback: 'Earn up to 5,000+ coins',
                                     ),
                                     icon: Icons.local_fire_department_rounded,
-                                    color: const Color(0xFFEF4444),
+                                    color: AppColors.red500,
                                     onTap: () =>
                                         context.push(AppRouter.streakRoute),
                                   ),
@@ -239,7 +238,7 @@ class VowlCoinsScreen extends StatelessWidget {
                                       fallback: 'Buy freezes & XP multipliers',
                                     ),
                                     icon: Icons.bolt_rounded,
-                                    color: const Color(0xFF8B5CF6),
+                                    color: AppColors.violet500,
                                     onTap: () =>
                                         context.push(AppRouter.streakRoute),
                                   ),
@@ -254,7 +253,7 @@ class VowlCoinsScreen extends StatelessWidget {
                                     subtitle:
                                         'Buy Masteries, Scroll of Wisdom & more',
                                     icon: Icons.storefront_rounded,
-                                    color: const Color(0xFF6366F1),
+                                    color: AppColors.indigo500,
                                     onTap: () => context.push(
                                       AppRouter.adventureXPRoute,
                                     ),
@@ -318,7 +317,7 @@ class VowlCoinsScreen extends StatelessWidget {
   Widget _buildCoinBalanceCard(BuildContext context, UserEntity user) {
     final int coins = user.coins;
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final color = const Color(0xFF10B981); // Emerald Green for adult coins
+    final color = AppColors.emerald500; // Emerald Green for adult coins
 
     return GlassTile(
       padding: EdgeInsets.all(32.r),
@@ -403,7 +402,7 @@ class VowlCoinsScreen extends StatelessWidget {
                 fontFamily: 'Outfit',
                 fontSize: 48.sp,
                 fontWeight: FontWeight.w900,
-                color: isDark ? Colors.white : const Color(0xFF0F172A),
+                color: isDark ? Colors.white : AppColors.slate900,
                 height: 1.1,
                 letterSpacing: -1,
               ),
@@ -428,7 +427,7 @@ class VowlCoinsScreen extends StatelessWidget {
       decoration: BoxDecoration(
         color: isDark
             ? Colors.black.withValues(alpha: 0.15)
-            : const Color(0xFF0F172A).withValues(alpha: 0.06),
+            : AppColors.slate900.withValues(alpha: 0.06),
         borderRadius: BorderRadius.circular(24.r),
         border: Border.all(
           color: isDark
@@ -447,7 +446,7 @@ class VowlCoinsScreen extends StatelessWidget {
               fallback: '$hints hints available',
               args: [hints.toString()],
             ),
-            const Color(0xFFF59E0B),
+            AppColors.amber500,
           ),
         ],
       ),
@@ -471,7 +470,7 @@ class VowlCoinsScreen extends StatelessWidget {
             fontFamily: 'Outfit',
             fontSize: 13.sp,
             fontWeight: FontWeight.w700,
-            color: isDark ? Colors.white70 : const Color(0xFF334155),
+            color: isDark ? Colors.white70 : AppColors.slate700,
             letterSpacing: 0.3,
           ),
         ),
@@ -494,7 +493,7 @@ class VowlCoinsScreen extends StatelessWidget {
             fontFamily: 'Outfit',
             fontSize: 12.sp,
             fontWeight: FontWeight.w800,
-            color: isDark ? Colors.white38 : const Color(0xFF64748B),
+            color: isDark ? Colors.white38 : AppColors.slate500,
             letterSpacing: 1.2,
           ),
         ),
@@ -537,7 +536,7 @@ class VowlCoinsScreen extends StatelessWidget {
                       fontFamily: 'Outfit',
                       fontSize: 16.sp,
                       fontWeight: FontWeight.w700,
-                      color: isDark ? Colors.white : const Color(0xFF1E293B),
+                      color: isDark ? Colors.white : AppColors.slate800,
                     ),
                     maxLines: 1,
                     minFontSize: 10,
@@ -549,7 +548,7 @@ class VowlCoinsScreen extends StatelessWidget {
                       fontFamily: 'Outfit',
                       fontSize: 12.sp,
                       fontWeight: FontWeight.w500,
-                      color: isDark ? Colors.white54 : const Color(0xFF64748B),
+                      color: isDark ? Colors.white54 : AppColors.slate500,
                     ),
                     maxLines: 2,
                     minFontSize: 8,
@@ -634,7 +633,7 @@ class VowlCoinsScreen extends StatelessWidget {
         hints: _singleHintAmount,
         cost: _singleHintCost,
         icon: Icons.lightbulb_outline_rounded,
-        color: const Color(0xFFFBBF24),
+        color: AppColors.amber400,
         isBest: false,
       ),
       (
@@ -646,7 +645,7 @@ class VowlCoinsScreen extends StatelessWidget {
         hints: _hintsPerPack,
         cost: _hintPackCost,
         icon: Icons.lightbulb_rounded,
-        color: const Color(0xFFF59E0B),
+        color: AppColors.amber500,
         isBest: false,
       ),
       (
@@ -658,7 +657,7 @@ class VowlCoinsScreen extends StatelessWidget {
         hints: _bulkHintAmount,
         cost: _bulkHintCost,
         icon: Icons.auto_awesome_rounded,
-        color: const Color(0xFFF59E0B),
+        color: AppColors.amber500,
         isBest: true,
       ),
     ];
@@ -673,7 +672,7 @@ class VowlCoinsScreen extends StatelessWidget {
             children: [
               Icon(
                 Icons.lightbulb_rounded,
-                color: const Color(0xFFF59E0B),
+                color: AppColors.amber500,
                 size: 18.r,
               ),
               SizedBox(width: 8.w),
@@ -683,7 +682,7 @@ class VowlCoinsScreen extends StatelessWidget {
                   fontFamily: 'Outfit',
                   fontSize: 16.sp,
                   fontWeight: FontWeight.w700,
-                  color: isDark ? Colors.white : const Color(0xFF1E293B),
+                  color: isDark ? Colors.white : AppColors.slate800,
                 ),
               ),
             ],
@@ -761,7 +760,7 @@ class VowlCoinsScreen extends StatelessWidget {
                                     color: canAfford
                                         ? (isDark
                                               ? Colors.white
-                                              : const Color(0xFF1E293B))
+                                              : AppColors.slate800)
                                         : (isDark
                                               ? Colors.white30
                                               : Colors.black26),
@@ -775,7 +774,7 @@ class VowlCoinsScreen extends StatelessWidget {
                                       vertical: 2.h,
                                     ),
                                     decoration: BoxDecoration(
-                                      color: const Color(0xFF10B981),
+                                      color: AppColors.emerald500,
                                       borderRadius: BorderRadius.circular(6.r),
                                     ),
                                     child: Text(
@@ -804,7 +803,7 @@ class VowlCoinsScreen extends StatelessWidget {
                                 color: canAfford
                                     ? (isDark
                                           ? Colors.white38
-                                          : const Color(0xFF94A3B8))
+                                          : AppColors.slate400)
                                     : (isDark
                                           ? Colors.white12
                                           : Colors.black12),
@@ -880,7 +879,7 @@ class VowlCoinsScreen extends StatelessWidget {
                 fontFamily: 'Outfit',
                 fontSize: 12.sp,
                 fontWeight: FontWeight.w800,
-                color: isDark ? Colors.white38 : const Color(0xFF64748B),
+                color: isDark ? Colors.white38 : AppColors.slate500,
                 letterSpacing: 1.2,
               ),
             ),
@@ -937,7 +936,7 @@ class VowlCoinsScreen extends StatelessWidget {
                       fontFamily: 'Outfit',
                       fontSize: 16.sp,
                       fontWeight: FontWeight.w700,
-                      color: isDark ? Colors.white24 : const Color(0xFF94A3B8),
+                      color: isDark ? Colors.white24 : AppColors.slate400,
                     ),
                   ),
                   SizedBox(height: 4.h),
@@ -975,9 +974,7 @@ class VowlCoinsScreen extends StatelessWidget {
             final title = _localizeTransactionKey(context, rawKey, txn);
             final dateStr = txn['date'] as String?;
 
-            final color = isEarned
-                ? const Color(0xFF10B981)
-                : const Color(0xFFEF4444);
+            final color = isEarned ? AppColors.emerald500 : AppColors.red500;
 
             String formattedDate = '';
             if (dateStr != null) {
@@ -1036,9 +1033,7 @@ class VowlCoinsScreen extends StatelessWidget {
                               fontFamily: 'Outfit',
                               fontSize: 15.sp,
                               fontWeight: FontWeight.w800,
-                              color: isDark
-                                  ? Colors.white
-                                  : const Color(0xFF1E293B),
+                              color: isDark ? Colors.white : AppColors.slate800,
                               letterSpacing: 0.2,
                             ),
                             maxLines: 2,
@@ -1054,7 +1049,7 @@ class VowlCoinsScreen extends StatelessWidget {
                                 fontWeight: FontWeight.w700,
                                 color: isDark
                                     ? Colors.white38
-                                    : const Color(0xFF94A3B8),
+                                    : AppColors.slate400,
                                 letterSpacing: 1.2,
                               ),
                             ),

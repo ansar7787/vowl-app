@@ -5,6 +5,7 @@ import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/translation/presentation/bloc/translation_bloc.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 class TranslationBottomSheet extends StatelessWidget {
   final String textToTranslate;
@@ -52,7 +53,7 @@ class TranslationBottomSheet extends StatelessWidget {
         32.h + MediaQuery.of(context).viewInsets.bottom,
       ),
       decoration: BoxDecoration(
-        color: isDark ? const Color(0xFF1E293B) : Colors.white,
+        color: isDark ? AppColors.slate800 : Colors.white,
         borderRadius: BorderRadius.vertical(top: Radius.circular(32.r)),
       ),
       child: Column(
@@ -76,7 +77,7 @@ class TranslationBottomSheet extends StatelessWidget {
               fontFamily: 'Outfit',
               fontSize: 24.sp,
               fontWeight: FontWeight.w900,
-              color: isDark ? Colors.white : const Color(0xFF0F172A),
+              color: isDark ? Colors.white : AppColors.slate900,
             ),
           ),
           SizedBox(height: 16.h),
@@ -96,7 +97,7 @@ class TranslationBottomSheet extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 14.sp,
-                    color: const Color(0xFFEF4444),
+                    color: AppColors.red500,
                   ),
                 );
               }
@@ -115,7 +116,7 @@ class TranslationBottomSheet extends StatelessWidget {
                           fontFamily: 'Outfit',
                           fontSize: 12.sp,
                           fontWeight: FontWeight.w700,
-                          color: const Color(0xFF64748B),
+                          color: AppColors.slate500,
                         ),
                       ),
                       Padding(
@@ -123,7 +124,7 @@ class TranslationBottomSheet extends StatelessWidget {
                         child: Icon(
                           Icons.arrow_forward_rounded,
                           size: 16.r,
-                          color: const Color(0xFF10B981),
+                          color: AppColors.emerald500,
                         ),
                       ),
                       Text(
@@ -132,7 +133,7 @@ class TranslationBottomSheet extends StatelessWidget {
                           fontFamily: 'Outfit',
                           fontSize: 12.sp,
                           fontWeight: FontWeight.w800,
-                          color: const Color(0xFF10B981),
+                          color: AppColors.emerald500,
                         ),
                       ),
                     ],
@@ -143,7 +144,7 @@ class TranslationBottomSheet extends StatelessWidget {
                   // Translation Result
                   GlassTile(
                     padding: EdgeInsets.all(20.r),
-                    borderColor: const Color(0xFF10B981).withValues(alpha: 0.3),
+                    borderColor: AppColors.emerald500.withValues(alpha: 0.3),
                     child: SizedBox(
                       width: double.infinity,
                       child: _buildResultContent(state, isDark),
@@ -163,7 +164,7 @@ class TranslationBottomSheet extends StatelessWidget {
       return Center(
         child: Padding(
           padding: EdgeInsets.symmetric(vertical: 8.h),
-          child: const CircularProgressIndicator(color: Color(0xFF10B981)),
+          child: const CircularProgressIndicator(color: AppColors.emerald500),
         ),
       );
     }
@@ -175,7 +176,7 @@ class TranslationBottomSheet extends StatelessWidget {
         style: TextStyle(
           fontFamily: 'Outfit',
           fontSize: 14.sp,
-          color: const Color(0xFFEF4444),
+          color: AppColors.red500,
         ),
       );
     }
@@ -188,8 +189,8 @@ class TranslationBottomSheet extends StatelessWidget {
         fontSize: 22.sp,
         fontWeight: FontWeight.w600,
         color: state.translatedText.isEmpty
-            ? (isDark ? Colors.white38 : const Color(0xFF94A3B8))
-            : (isDark ? Colors.white : const Color(0xFF0F172A)),
+            ? (isDark ? Colors.white38 : AppColors.slate400)
+            : (isDark ? Colors.white : AppColors.slate900),
       ),
     );
   }

@@ -1,3 +1,5 @@
+import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -31,6 +33,7 @@ class VowelDistinctionSpectralSlider extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     return Column(
       children: [
         Row(
@@ -60,9 +63,9 @@ class VowelDistinctionSpectralSlider extends StatelessWidget {
     Color textColor = color;
     if (isAnswered && isSelected) {
       orbColor = correct
-          ? Colors.greenAccent.withValues(alpha: 0.2)
-          : Colors.redAccent.withValues(alpha: 0.2);
-      textColor = correct ? Colors.greenAccent : Colors.redAccent;
+          ? AppColors.gameCorrect.withValues(alpha: 0.2)
+          : AppColors.gameIncorrect.withValues(alpha: 0.2);
+      textColor = correct ? AppColors.gameCorrect : AppColors.gameIncorrect;
     } else if (isSelected) {
       orbColor = color;
       textColor = Colors.white;
@@ -91,7 +94,7 @@ class VowelDistinctionSpectralSlider extends StatelessWidget {
                       BoxShadow(
                         color: isSelected
                             ? (correct
-                                  ? Colors.greenAccent.withValues(alpha: 0.3)
+                                  ? AppColors.gameCorrect.withValues(alpha: 0.3)
                                   : color.withValues(alpha: 0.3))
                             : Colors.transparent,
                         blurRadius: 15,

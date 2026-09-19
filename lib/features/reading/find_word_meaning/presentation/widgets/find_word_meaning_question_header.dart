@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
@@ -60,7 +61,7 @@ class FindWordMeaningQuestionHeader extends StatelessWidget {
                     fontWeight: FontWeight.w600,
                     color: isDark
                         ? Colors.white.withValues(alpha: 0.9)
-                        : const Color(0xFF1E293B),
+                        : AppColors.slate800,
                     height: 1.4,
                   ),
                 ),

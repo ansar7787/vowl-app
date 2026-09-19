@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -49,8 +50,10 @@ class RelativeClausesQuantumPainter extends CustomPainter {
       final isCaught = isAnswered && targetNode == i;
       final isWrong = isAnswered && isCorrect == false && targetNode == i;
       final nodeColor = isCaught
-          ? (isCorrect == true ? Colors.greenAccent : Colors.redAccent)
-          : (isWrong ? Colors.redAccent : primaryColor);
+          ? (isCorrect == true
+                ? AppColors.gameCorrect
+                : AppColors.gameIncorrect)
+          : (isWrong ? AppColors.gameIncorrect : primaryColor);
 
       // Outer Plasma Glow
       canvas.drawCircle(
@@ -70,7 +73,9 @@ class RelativeClausesQuantumPainter extends CustomPainter {
           nodePoints[i],
           currentRadius,
           Paint()
-            ..color = Colors.greenAccent.withValues(alpha: 1.0 - particleValue)
+            ..color = AppColors.gameCorrect.withValues(
+              alpha: 1.0 - particleValue,
+            )
             ..style = PaintingStyle.stroke
             ..strokeWidth = 3.r,
         );
@@ -85,7 +90,7 @@ class RelativeClausesQuantumPainter extends CustomPainter {
             Offset(dx, dy),
             4.r * (1.0 - particleValue),
             Paint()
-              ..color = Colors.greenAccent.withValues(
+              ..color = AppColors.gameCorrect.withValues(
                 alpha: 1.0 - particleValue,
               ),
           );
@@ -117,7 +122,9 @@ class RelativeClausesQuantumPainter extends CustomPainter {
             fontSize: labelFontSize,
             fontWeight: FontWeight.w900,
             color: isCaught
-                ? (isCorrect == true ? Colors.greenAccent : Colors.redAccent)
+                ? (isCorrect == true
+                      ? AppColors.gameCorrect
+                      : AppColors.gameIncorrect)
                 : (isDark ? Colors.white : Colors.black),
             letterSpacing: isCompact ? 1.0 : 1.5,
           ),
@@ -172,7 +179,9 @@ class RelativeClausesQuantumPainter extends CustomPainter {
         );
 
       final beamColor = isAnswered
-          ? (isCorrect == true ? Colors.greenAccent : Colors.redAccent)
+          ? (isCorrect == true
+                ? AppColors.gameCorrect
+                : AppColors.gameIncorrect)
           : primaryColor;
 
       // Neon Data Glow

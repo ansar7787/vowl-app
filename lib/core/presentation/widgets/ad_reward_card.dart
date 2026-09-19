@@ -11,6 +11,7 @@ import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/utils/reward_limit_service.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 /// Card widget that awards 20 Vowl Coins in exchange for watching a
 /// rewarded video ad.
@@ -142,7 +143,7 @@ class _AdRewardCardState extends State<AdRewardCard> {
                     fontFamily: 'Outfit',
                     fontSize: 10.sp,
                     fontWeight: FontWeight.w900,
-                    color: const Color(0xFF6366F1),
+                    color: AppColors.indigo500,
                     letterSpacing: 2.0,
                   ),
                 ),
@@ -165,7 +166,7 @@ class _AdRewardCardState extends State<AdRewardCard> {
                             ),
                             child: Icon(
                               Icons.monetization_on_rounded,
-                              color: const Color(0xFF10B981),
+                              color: AppColors.emerald500,
                               size: 16.r,
                             ),
                           ),
@@ -183,7 +184,7 @@ class _AdRewardCardState extends State<AdRewardCard> {
                                 fontWeight: FontWeight.w900,
                                 color: isDark
                                     ? Colors.white
-                                    : const Color(0xFF0F172A),
+                                    : AppColors.slate900,
                               ),
                               overflow: TextOverflow.ellipsis,
                             ),
@@ -226,7 +227,7 @@ class _AdRewardCardState extends State<AdRewardCard> {
                                     ? null
                                     : const LinearGradient(
                                         colors: [
-                                          Color(0xFF6366F1),
+                                          Theme.of(context).colorScheme.primary,
                                           Color(0xFF4F46E5),
                                         ],
                                       ),

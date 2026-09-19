@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -57,7 +58,7 @@ class Kids3DButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final shadowColor = isGolden
-        ? const Color(0xFFD97706)
+        ? AppColors.amber600
         : color.withValues(alpha: 0.7);
 
     return ScaleButton(
@@ -158,7 +159,7 @@ class KidsDialogContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final bgColor = isDark
-        ? Color.lerp(const Color(0xFF1E293B), primaryColor, 0.15)!
+        ? Color.lerp(AppColors.slate800, primaryColor, 0.15)!
         : Colors.white;
 
     final usedRibbonColor = ribbonColor ?? primaryColor;

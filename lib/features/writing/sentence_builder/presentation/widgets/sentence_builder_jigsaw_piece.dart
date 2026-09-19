@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -180,7 +181,7 @@ class _PuzzlePiecePainter extends CustomPainter {
     final paint = Paint()
       ..color = isAssembled
           ? color.withValues(alpha: 0.25)
-          : (isDark ? const Color(0xFF1E293B) : Colors.white)
+          : (isDark ? AppColors.slate800 : Colors.white)
       ..style = PaintingStyle.fill;
 
     canvas.drawPath(path, paint);

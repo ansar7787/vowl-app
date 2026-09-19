@@ -27,6 +27,7 @@ import 'package:vowl/features/kids_zone/presentation/utils/kids_tts_service.dart
 import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/utils/age_gate_service.dart';
 import 'package:vowl/core/utils/translation_service.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({super.key});
@@ -252,7 +253,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
     );
     final bgColor = isMidnight
         ? Colors.black
-        : (isDark ? const Color(0xFF0F172A) : const Color(0xFFF8FAFC));
+        : (isDark ? AppColors.slate900 : AppColors.slate50);
 
     return ValueListenableBuilder<int>(
       valueListenable: _stateHash,
@@ -427,8 +428,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
         child: BackdropFilter(
           filter: ImageFilter.blur(sigmaX: 12, sigmaY: 12),
           child: Container(
-            color: (isDark ? const Color(0xFF0F172A) : const Color(0xFFF8FAFC))
-                .withValues(alpha: 0.7),
+            color: (isDark ? AppColors.slate900 : AppColors.slate50).withValues(
+              alpha: 0.7,
+            ),
           ),
         ),
       ),
@@ -466,7 +468,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
           fontFamily: 'Outfit',
           fontSize: 22.sp,
           fontWeight: FontWeight.w800,
-          color: isDark ? Colors.white : const Color(0xFF0F172A),
+          color: isDark ? Colors.white : AppColors.slate900,
         ),
       ),
     );
@@ -499,7 +501,7 @@ class _SettingsAccountGroup extends StatelessWidget {
                 fallback: 'Security & Password',
               ),
               icon: Icons.lock_person_rounded,
-              color: const Color(0xFF3B82F6),
+              color: AppColors.blue500,
               onTap: () => SettingsDialogs.showPasswordReset(
                 context,
                 context.read<AuthBloc>().state.user?.email ?? '',
@@ -511,7 +513,7 @@ class _SettingsAccountGroup extends StatelessWidget {
                 fallback: 'Age Verification',
               ),
               icon: Icons.verified_user_rounded,
-              color: const Color(0xFF8B5CF6),
+              color: AppColors.violet500,
               onTap: () async {
                 final confirm = await SettingsDialogs.showAgeVerificationReset(
                   context,
@@ -610,7 +612,7 @@ class _SettingsPreferencesGroup extends StatelessWidget {
                 fallback: 'Replace swiping with tapping for accessibility',
               ),
               icon: Icons.accessibility_new_rounded,
-              color: const Color(0xFF10B981),
+              color: AppColors.emerald500,
               value: reduceComplexGestures,
               isLoading: isLoading,
               onChanged: onToggleGestures,
@@ -626,7 +628,7 @@ class _SettingsPreferencesGroup extends StatelessWidget {
                   fallback: 'True black background for OLED screens',
                 ),
                 icon: Icons.nightlight_round,
-                color: const Color(0xFF6366F1),
+                color: AppColors.indigo500,
                 value: context.watch<ThemeCubit>().state.isMidnight,
                 isLoading: false,
                 onChanged: (val) =>
@@ -638,7 +640,7 @@ class _SettingsPreferencesGroup extends StatelessWidget {
                 fallback: 'Language Selection',
               ),
               icon: Icons.language_rounded,
-              color: const Color(0xFF14B8A6),
+              color: AppColors.teal500,
               onTap: () => LanguagePickerSheet.show(context),
               trailing: Text(
                 '${di.sl<LocaleService>().currentLocaleFlag} '
@@ -646,7 +648,7 @@ class _SettingsPreferencesGroup extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   fontSize: 12.sp,
-                  color: const Color(0xFF14B8A6),
+                  color: AppColors.teal500,
                   fontWeight: FontWeight.w700,
                 ),
               ),
@@ -661,7 +663,7 @@ class _SettingsPreferencesGroup extends StatelessWidget {
                 fallback: 'Used for hints and explanations in games',
               ),
               icon: Icons.g_translate_rounded,
-              color: const Color(0xFFF59E0B),
+              color: AppColors.amber500,
               onTap: onTapTranslationLanguage,
               trailing: translationLanguageName != null
                   ? Text(
@@ -669,7 +671,7 @@ class _SettingsPreferencesGroup extends StatelessWidget {
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 12.sp,
-                        color: const Color(0xFFF59E0B),
+                        color: AppColors.amber500,
                         fontWeight: FontWeight.w700,
                       ),
                     )
@@ -717,7 +719,7 @@ class _SettingsSupportGroup extends StatelessWidget {
                 fallback: 'Help Center',
               ),
               icon: Icons.help_center_rounded,
-              color: const Color(0xFF10B981),
+              color: AppColors.emerald500,
               onTap: onSupportTap,
             ),
             SettingsTile(
@@ -726,7 +728,7 @@ class _SettingsSupportGroup extends StatelessWidget {
                 fallback: 'Terms of Service',
               ),
               icon: Icons.description_rounded,
-              color: const Color(0xFF64748B),
+              color: AppColors.slate500,
               onTap: () => onLegalTap(
                 context.tr(
                   'settings.terms_of_service',
@@ -740,7 +742,7 @@ class _SettingsSupportGroup extends StatelessWidget {
                 fallback: 'Privacy Policy',
               ),
               icon: Icons.policy_rounded,
-              color: const Color(0xFF94A3B8),
+              color: AppColors.slate400,
               onTap: () => onLegalTap(
                 context.tr(
                   'settings.privacy_policy',
@@ -786,7 +788,7 @@ class _SettingsDangerGroup extends StatelessWidget {
         SettingsSectionTitle(
           title: context.tr('settings.danger_zone', fallback: 'Danger Zone'),
           isDark: isDark,
-          tintColor: const Color(0xFFEF4444),
+          tintColor: AppColors.red500,
         ),
         SettingsGroup(
           children: [
@@ -805,7 +807,7 @@ class _SettingsDangerGroup extends StatelessWidget {
                 fallback: 'Delete Account',
               ),
               icon: Icons.delete_forever_rounded,
-              color: const Color(0xFFEF4444),
+              color: AppColors.red500,
               onTap: () => SettingsDialogs.showDeleteAccount(context),
               isDestructive: true,
             ),

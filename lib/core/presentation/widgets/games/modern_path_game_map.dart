@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'dart:math' as math;
 import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
@@ -62,7 +63,7 @@ class ModernPathGameMap extends StatelessWidget {
     }
 
     return Scaffold(
-      backgroundColor: isDark ? const Color(0xFF0F172A) : Colors.white,
+      backgroundColor: isDark ? AppColors.slate900 : Colors.white,
       extendBodyBehindAppBar: true,
       appBar: _buildAppBar(context, theme, isDark),
       body: Stack(

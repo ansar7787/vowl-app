@@ -1,3 +1,5 @@
+import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
@@ -18,6 +20,7 @@ class AudioTrueFalseVerdictButtons extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
@@ -27,7 +30,7 @@ class AudioTrueFalseVerdictButtons extends StatelessWidget {
             false,
             "FALSE",
             Icons.close_rounded,
-            Colors.redAccent,
+            tokens.gameIncorrect,
           ),
         ),
         SizedBox(width: 16.w),
@@ -37,7 +40,7 @@ class AudioTrueFalseVerdictButtons extends StatelessWidget {
             true,
             "TRUE",
             Icons.check_rounded,
-            Colors.greenAccent,
+            tokens.gameCorrect,
           ),
         ),
       ],
@@ -56,9 +59,9 @@ class AudioTrueFalseVerdictButtons extends StatelessWidget {
     bool isWrong = isAnswered && isSelected && isCorrectState == false;
 
     Color buttonColor = isCorrect
-        ? Colors.greenAccent
+        ? AppColors.gameCorrect
         : (isWrong
-              ? Colors.redAccent
+              ? AppColors.gameIncorrect
               : (isSelected ? baseColor : baseColor.withValues(alpha: 0.1)));
 
     Color textColor = isSelected ? Colors.white : baseColor;

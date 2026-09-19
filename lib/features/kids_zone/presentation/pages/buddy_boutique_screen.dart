@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -17,6 +18,7 @@ import 'package:vowl/core/theme/theme_cubit.dart';
 import 'package:vowl/core/presentation/widgets/vowl_mascot.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 class BuddyBoutiqueScreen extends StatefulWidget {
   const BuddyBoutiqueScreen({super.key});
@@ -49,11 +51,12 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
 
     final isMidnight = context.watch<ThemeCubit>().state.isMidnight;
     final bgColor = isMidnight
         ? Colors.black
-        : (isDark ? const Color(0xFF1E3A8A) : const Color(0xFFF8FAFC));
+        : (isDark ? const Color(0xFF1E3A8A) : AppColors.slate50);
 
     return Scaffold(
       backgroundColor: bgColor,
@@ -119,7 +122,7 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
       title: Container(
         padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 8.h),
         decoration: BoxDecoration(
-          color: isDark ? const Color(0xFF1E293B) : Colors.white,
+          color: isDark ? AppColors.slate800 : Colors.white,
           borderRadius: BorderRadius.circular(24.r),
           border: Border.all(
             color: isDark ? Colors.blue.shade700 : Colors.blue.shade200,
@@ -155,7 +158,7 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
                   fontFamily: 'Outfit',
                   fontSize: 16.sp,
                   fontWeight: FontWeight.w800,
-                  color: isDark ? Colors.white : const Color(0xFF1E293B),
+                  color: isDark ? Colors.white : AppColors.slate800,
                 ),
                 overflow: TextOverflow.ellipsis,
               ),
@@ -175,7 +178,7 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
           return Container(
             margin: EdgeInsets.fromLTRB(24.w, 30.h, 24.w, 24.h),
             decoration: BoxDecoration(
-              color: isDark ? const Color(0xFF1E293B) : Colors.white,
+              color: isDark ? AppColors.slate800 : Colors.white,
               borderRadius: BorderRadius.circular(35.r),
               border: Border.all(
                 color: isDark ? Colors.blue.shade700 : Colors.blue.shade200,
@@ -216,9 +219,7 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
                               fontFamily: 'Outfit',
                               fontSize: 18.sp,
                               fontWeight: FontWeight.w800,
-                              color: isDark
-                                  ? Colors.white
-                                  : const Color(0xFF0F172A),
+                              color: isDark ? Colors.white : AppColors.slate900,
                             ),
                           ),
                         ],
@@ -311,7 +312,7 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
             margin: EdgeInsets.symmetric(horizontal: 24.w, vertical: 10.h),
             padding: EdgeInsets.all(24.r),
             decoration: BoxDecoration(
-              color: isDark ? const Color(0xFF1E293B) : Colors.white,
+              color: isDark ? AppColors.slate800 : Colors.white,
               borderRadius: BorderRadius.circular(32.r),
               border: Border.all(color: Colors.amber, width: 3.w),
               boxShadow: [
@@ -323,7 +324,7 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
                 Container(
                   padding: EdgeInsets.all(16.r),
                   decoration: BoxDecoration(
-                    color: Colors.redAccent.withValues(alpha: 0.1),
+                    color: AppColors.gameIncorrect.withValues(alpha: 0.1),
                     shape: BoxShape.circle,
                   ),
                   child: const Icon(
@@ -353,9 +354,7 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
                           fontFamily: 'Outfit',
                           fontSize: 28.sp,
                           fontWeight: FontWeight.w900,
-                          color: isDark
-                              ? Colors.white
-                              : const Color(0xFF0F172A),
+                          color: isDark ? Colors.white : AppColors.slate900,
                         ),
                       ),
                     ],
@@ -381,24 +380,14 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
           dividerColor: Colors.transparent,
           tabAlignment: TabAlignment.start,
           tabs: [
-            _buildTab(
-              "All",
-              Icons.apps_rounded,
-              const Color(0xFF6366F1),
-              isDark,
-            ),
+            _buildTab("All", Icons.apps_rounded, AppColors.indigo500, isDark),
             _buildTab(
               "Clothes",
               Icons.checkroom_rounded,
               const Color(0xFFEC4899),
               isDark,
             ),
-            _buildTab(
-              "Toys",
-              Icons.toys_rounded,
-              const Color(0xFFEF4444),
-              isDark,
-            ),
+            _buildTab("Toys", Icons.toys_rounded, AppColors.red500, isDark),
             _buildTab(
               "Magic",
               Icons.auto_awesome_rounded,
@@ -408,7 +397,7 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
             _buildTab(
               "Buddies",
               Icons.pets_rounded,
-              const Color(0xFF10B981),
+              AppColors.emerald500,
               isDark,
             ),
           ],
@@ -427,7 +416,7 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
         decoration: BoxDecoration(
           color: isSelected
               ? color
-              : (isDark ? const Color(0xFF1E293B) : Colors.white),
+              : (isDark ? AppColors.slate800 : Colors.white),
           borderRadius: BorderRadius.circular(20.r),
           border: Border.all(
             color: isSelected
@@ -529,7 +518,7 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
         decoration: BoxDecoration(
           color: isEquipped
               ? itemColor.withValues(alpha: 0.1)
-              : (isDark ? const Color(0xFF1E293B) : Colors.white),
+              : (isDark ? AppColors.slate800 : Colors.white),
           borderRadius: BorderRadius.circular(24.r),
           border: Border.all(color: itemColor, width: 3.w),
           boxShadow: [
@@ -557,7 +546,7 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
                 fontFamily: 'Outfit',
                 fontSize: 13.sp,
                 fontWeight: FontWeight.w900,
-                color: isDark ? Colors.white : const Color(0xFF1E293B),
+                color: isDark ? Colors.white : AppColors.slate800,
               ),
             ),
             SizedBox(height: 8.h),
@@ -598,6 +587,7 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
 
   Widget _buildPriceTag(int price, Color color) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 4.h),
       decoration: BoxDecoration(
@@ -609,7 +599,7 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
         children: [
           const Icon(
             Icons.monetization_on_rounded,
-            color: Color(0xFFF59E0B),
+            color: AppColors.amber500,
             size: 14,
           ),
           SizedBox(width: 4.w),
@@ -683,6 +673,7 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
     bool isMascot,
   ) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     final itemColor = item['color'] as Color;
     final price = item['price'] as int;
 
@@ -694,7 +685,7 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
         return Container(
           padding: EdgeInsets.fromLTRB(24.w, 24.h, 24.w, 40.h),
           decoration: BoxDecoration(
-            color: isDark ? const Color(0xFF1E293B) : Colors.white,
+            color: isDark ? AppColors.slate800 : Colors.white,
             borderRadius: BorderRadius.vertical(top: Radius.circular(32.r)),
             border: Border.all(color: itemColor, width: 3.w),
           ),
@@ -720,7 +711,7 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
                   fontFamily: 'Outfit',
                   fontSize: 22.sp,
                   fontWeight: FontWeight.w900,
-                  color: isDark ? Colors.white : const Color(0xFF1E293B),
+                  color: isDark ? Colors.white : AppColors.slate800,
                 ),
               ),
               SizedBox(height: 8.h),
@@ -759,9 +750,7 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
                       child: Container(
                         padding: EdgeInsets.symmetric(vertical: 14.h),
                         decoration: BoxDecoration(
-                          color: isDark
-                              ? Colors.white10
-                              : const Color(0xFFF1F5F9),
+                          color: isDark ? Colors.white10 : AppColors.slate100,
                           borderRadius: BorderRadius.circular(20.r),
                           border: Border.all(
                             color: isDark
@@ -900,7 +889,7 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
                 padding: EdgeInsets.all(24.r),
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
-                    colors: [const Color(0xFFEF4444), const Color(0xFF991B1B)],
+                    colors: [AppColors.red500, const Color(0xFF991B1B)],
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight,
                   ),

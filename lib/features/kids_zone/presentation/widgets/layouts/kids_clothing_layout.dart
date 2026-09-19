@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/utils/instruction_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -75,7 +76,7 @@ class KidsClothingLayout extends StatelessWidget {
                     child: Container(
                       height: 8.h,
                       decoration: BoxDecoration(
-                        color: const Color(0xFF94A3B8), // Silver rod
+                        color: AppColors.slate400, // Silver rod
                         borderRadius: BorderRadius.circular(4.r),
                         boxShadow: const [
                           BoxShadow(
@@ -159,7 +160,7 @@ class KidsClothingLayout extends StatelessWidget {
               borderRadius: BorderRadius.circular(16.r),
               border: Border.all(
                 color: isHovering
-                    ? const Color(0xFFD97706)
+                    ? AppColors.amber600
                     : const Color(0xFFB45309),
                 width: 12.r,
               ), // Dark wood frame
@@ -211,7 +212,7 @@ class KidsClothingLayout extends StatelessWidget {
                                   ? 70.sp
                                   : 24.sp,
                               fontWeight: FontWeight.w700,
-                              color: const Color(0xFFD97706).withValues(
+                              color: AppColors.amber600.withValues(
                                 alpha:
                                     (quest.question == "?" ||
                                         quest.question == null)
@@ -258,9 +259,9 @@ class KidsClothingLayout extends StatelessWidget {
           height: 15.h,
           decoration: BoxDecoration(
             border: Border(
-              top: BorderSide(color: const Color(0xFF94A3B8), width: 3.r),
-              left: BorderSide(color: const Color(0xFF94A3B8), width: 3.r),
-              right: BorderSide(color: const Color(0xFF94A3B8), width: 3.r),
+              top: BorderSide(color: AppColors.slate400, width: 3.r),
+              left: BorderSide(color: AppColors.slate400, width: 3.r),
+              right: BorderSide(color: AppColors.slate400, width: 3.r),
             ),
             borderRadius: BorderRadius.vertical(top: Radius.circular(10.r)),
           ),
@@ -270,7 +271,7 @@ class KidsClothingLayout extends StatelessWidget {
           height: 10.h,
           width: 80.w,
           decoration: BoxDecoration(
-            color: const Color(0xFFD97706),
+            color: AppColors.amber600,
             borderRadius: BorderRadius.circular(10.r),
           ),
         ),
@@ -297,7 +298,7 @@ class KidsClothingLayout extends StatelessWidget {
                   fontFamily: 'Outfit',
                   fontSize: 14.sp,
                   fontWeight: FontWeight.w700,
-                  color: const Color(0xFF0F172A),
+                  color: AppColors.slate900,
                   height: 1.1,
                 ),
                 textAlign: TextAlign.center,

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
+import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/category_colors.dart';
 
 enum GameCategory {
   speaking,
@@ -45,52 +47,13 @@ class LevelThemeHelper {
     'elitemastery',
   };
 
-  /// Core Category Base Colors (Audited 2026-09 — balanced for distinction,
-  /// LCD robustness, color-blindness safety, and AA contrast compliance).
+  /// Core Category Base Colors — delegates to the canonical
+  /// [CategoryColors.forCategory] to eliminate duplication.
   ///
   /// See also: [CategoryColors] in `core/theme/category_colors.dart` for the
   /// full token system (light tints, dark variants, onColor values).
   static Color getCategoryBaseColor(String category) {
-    switch (category
-        .trim()
-        .toLowerCase()
-        .replaceAll(' ', '')
-        .replaceAll('_', '')) {
-      case 'speaking':
-        return const Color(
-          0xFFD84315,
-        ); // Burnt Orange — vocal energy, warmth (deepened for AA contrast)
-      case 'writing':
-        return const Color(
-          0xFF5E35B1,
-        ); // Deep Violet — creativity, expression, literary imagination
-      case 'vocabulary':
-        return const Color(0xFF6A1B9A); // Deep Purple — wisdom, knowledge depth
-      case 'reading':
-        return const Color(0xFF2E7D32); // Forest Green — growth, comprehension
-      case 'accent':
-        return const Color(
-          0xFF00838F,
-        ); // Cyan-Teal — sound clarity, audio precision
-      case 'grammar':
-        return const Color(
-          0xFF1565C0,
-        ); // True Blue — structure, rules, precision
-      case 'listening':
-        return const Color(
-          0xFFAD1457,
-        ); // Deep Rose — emotional receptivity, immersion
-      case 'roleplay':
-        return const Color(
-          0xFFB71C1C,
-        ); // Theatre Red — drama, performance, action
-      case 'elitemastery':
-        return const Color(
-          0xFFF57F17,
-        ); // Deep Amber-Gold — prestige, achievement
-      default:
-        return const Color(0xFF1565C0); // Default to Grammar blue
-    }
+    return CategoryColors.forCategory(category);
   }
 
   /// Map categories to readable, capitalized Titles
@@ -156,19 +119,19 @@ class LevelThemeHelper {
   static Color getKidsGameColor(String gameType) {
     switch (gameType) {
       case 'alphabet':
-        return const Color(0xFFEF4444);
+        return AppColors.red500;
       case 'numbers':
         return const Color(0xFF3B82F6);
       case 'colors':
-        return const Color(0xFFF59E0B);
+        return AppColors.amber500;
       case 'shapes':
-        return const Color(0xFF10B981);
+        return AppColors.emerald500;
       case 'animals':
-        return const Color(0xFF8B5CF6);
+        return AppColors.violet500;
       case 'fruits':
         return const Color(0xFFEC4899);
       case 'family':
-        return const Color(0xFFF43F5E);
+        return AppColors.rose500;
       case 'school':
         return const Color(0xFFEAB308);
       case 'verbs':
@@ -178,7 +141,7 @@ class LevelThemeHelper {
       case 'emotions':
         return const Color(0xFF06B6D4);
       case 'prepositions':
-        return const Color(0xFF64748B);
+        return AppColors.slate500;
       case 'phonics':
         return const Color(0xFFD946EF);
       case 'jumble':
@@ -186,7 +149,7 @@ class LevelThemeHelper {
       case 'time':
         return const Color(0xFF84CC16);
       case 'opposites':
-        return const Color(0xFF14B8A6);
+        return AppColors.teal500;
       case 'day_night':
       case 'daynight':
         return const Color(0xFF1E3A8A);
@@ -200,7 +163,7 @@ class LevelThemeHelper {
         return const Color(0xFF0EA5E9);
       case 'body_parts':
       case 'bodyparts':
-        return const Color(0xFFE11D48);
+        return AppColors.rose700;
       case 'clothing':
         return const Color(0xFFA855F7);
       case 'handwriting':
@@ -233,7 +196,7 @@ class LevelThemeHelper {
 
     if (isDark) {
       bgTop = hsl.withLightness(0.15).withSaturation(0.6).toColor();
-      bgBottom = isMidnight ? const Color(0xFF000000) : const Color(0xFF0F172A);
+      bgBottom = isMidnight ? const Color(0xFF000000) : AppColors.slate900;
     } else {
       bgTop = hsl.withLightness(0.95).toColor();
       bgBottom = hsl.withLightness(0.85).toColor();
@@ -304,7 +267,7 @@ class LevelThemeHelper {
     if (isDark) {
       // Background is a very dark version of the primary color for immersion
       bgTop = primaryHsl.withLightness(0.12).withSaturation(0.5).toColor();
-      bgBottom = isMidnight ? const Color(0xFF000000) : const Color(0xFF0F172A);
+      bgBottom = isMidnight ? const Color(0xFF000000) : AppColors.slate900;
     } else {
       bgTop = primaryHsl.withLightness(0.92).toColor();
       bgBottom = primaryHsl.withLightness(0.82).toColor();

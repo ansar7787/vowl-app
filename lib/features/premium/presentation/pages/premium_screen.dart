@@ -21,6 +21,7 @@ import 'package:vowl/core/utils/subscription_plans_service.dart';
 import 'package:vowl/features/premium/domain/entities/subscription_plan.dart';
 import 'package:vowl/features/premium/presentation/widgets/widgets.dart';
 import 'package:vowl/core/presentation/widgets/vowl_button_spinner.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 class PremiumScreen extends StatefulWidget {
   const PremiumScreen({super.key});
@@ -251,7 +252,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final backgroundColor = isDark
         ? const Color(0xFF020617)
-        : const Color(0xFFF8FAFC);
+        : AppColors.slate50;
 
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: SystemUiOverlayStyle(
@@ -276,8 +277,8 @@ class _PremiumScreenState extends State<PremiumScreen> {
                 right: -100.w,
                 child: StaticGlow(
                   color: isDark
-                      ? const Color(0xFF6366F1).withValues(alpha: 0.15)
-                      : const Color(0xFF6366F1).withValues(alpha: 0.08),
+                      ? AppColors.indigo500.withValues(alpha: 0.15)
+                      : AppColors.indigo500.withValues(alpha: 0.08),
                   radius: 300,
                 ),
               ),
@@ -286,8 +287,8 @@ class _PremiumScreenState extends State<PremiumScreen> {
                 left: -100.w,
                 child: StaticGlow(
                   color: isDark
-                      ? const Color(0xFF8B5CF6).withValues(alpha: 0.15)
-                      : const Color(0xFF8B5CF6).withValues(alpha: 0.08),
+                      ? AppColors.violet500.withValues(alpha: 0.15)
+                      : AppColors.violet500.withValues(alpha: 0.08),
                   radius: 250,
                 ),
               ),
@@ -354,7 +355,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
                                 children: [
                                   Icon(
                                     Icons.workspace_premium_rounded,
-                                    color: const Color(0xFF6366F1),
+                                    color: AppColors.indigo500,
                                     size: 14.r,
                                   ),
                                   SizedBox(width: 4.w),
@@ -396,12 +397,12 @@ class _PremiumScreenState extends State<PremiumScreen> {
                   emissionFrequency: 0.05,
                   numberOfParticles: 50,
                   gravity: 0.1,
-                  colors: const [
-                    Color(0xFF6366F1),
-                    Color(0xFF8B5CF6),
+                  colors: [
+                    Theme.of(context).colorScheme.primary,
+                    AppColors.violet500,
                     Color(0xFFA855F7),
-                    Color(0xFF6366F1),
-                    Color(0xFFF43F5E),
+                    Theme.of(context).colorScheme.primary,
+                    AppColors.rose500,
                   ],
                 ),
               ),
@@ -476,7 +477,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
                 SizedBox(
                   width: 60.r,
                   height: 60.r,
-                  child: const VowlButtonSpinner(color: Color(0xFFF59E0B)),
+                  child: const VowlButtonSpinner(color: AppColors.amber500),
                 ),
                 SizedBox(height: 20.h),
                 Semantics(
@@ -603,7 +604,10 @@ class _PremiumScreenState extends State<PremiumScreen> {
                   height: 60.h,
                   decoration: BoxDecoration(
                     gradient: const LinearGradient(
-                      colors: [Color(0xFF6366F1), Color(0xFF8B5CF6)],
+                      colors: [
+                        Theme.of(context).colorScheme.primary,
+                        AppColors.violet500,
+                      ],
                       begin: Alignment.topLeft,
                       end: Alignment.bottomRight,
                     ),
@@ -614,7 +618,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
                     ),
                     boxShadow: [
                       BoxShadow(
-                        color: const Color(0xFF6366F1).withValues(alpha: 0.4),
+                        color: AppColors.indigo500.withValues(alpha: 0.4),
                         blurRadius: 25,
                         spreadRadius: 2,
                         offset: const Offset(0, 10),

@@ -17,6 +17,7 @@ import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 class ProgressDashboardScreen extends StatelessWidget {
   const ProgressDashboardScreen({super.key});
@@ -26,7 +27,7 @@ class ProgressDashboardScreen extends StatelessWidget {
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
     return Scaffold(
-      backgroundColor: isDark ? const Color(0xFF0F172A) : Colors.white,
+      backgroundColor: isDark ? AppColors.slate900 : Colors.white,
       body: BlocBuilder<AuthBloc, AuthState>(
         builder: (context, state) {
           final user = state.user;
@@ -87,7 +88,7 @@ class ProgressDashboardScreen extends StatelessWidget {
             onPressed: () => context.pop(),
             icon: Icon(
               Icons.arrow_back_rounded,
-              color: isDark ? Colors.white : const Color(0xFF0F172A),
+              color: isDark ? Colors.white : AppColors.slate900,
             ),
           ),
           SizedBox(width: 8.w),
@@ -101,7 +102,7 @@ class ProgressDashboardScreen extends StatelessWidget {
                 fontFamily: 'Outfit',
                 fontSize: 24.sp,
                 fontWeight: FontWeight.w900,
-                color: isDark ? Colors.white : const Color(0xFF0F172A),
+                color: isDark ? Colors.white : AppColors.slate900,
               ),
               maxLines: 1,
             ),
@@ -156,13 +157,13 @@ class _WeeklyXpChart extends StatelessWidget {
               Container(
                 padding: EdgeInsets.all(6.r),
                 decoration: BoxDecoration(
-                  color: const Color(0xFF6366F1).withValues(alpha: 0.1),
+                  color: AppColors.indigo500.withValues(alpha: 0.1),
                   shape: BoxShape.circle,
                 ),
                 child: Icon(
                   Icons.insights_rounded,
                   size: 14.r,
-                  color: const Color(0xFF6366F1),
+                  color: AppColors.indigo500,
                 ),
               ),
               SizedBox(width: 10.w),
@@ -189,7 +190,7 @@ class _WeeklyXpChart extends StatelessWidget {
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
                 decoration: BoxDecoration(
-                  color: const Color(0xFF10B981).withValues(alpha: 0.1),
+                  color: AppColors.emerald500.withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(12.r),
                 ),
                 child: AutoSizeText(
@@ -198,7 +199,7 @@ class _WeeklyXpChart extends StatelessWidget {
                     fontFamily: 'Outfit',
                     fontSize: 11.sp,
                     fontWeight: FontWeight.w900,
-                    color: const Color(0xFF10B981),
+                    color: AppColors.emerald500,
                   ),
                   maxLines: 1,
                   minFontSize: 8,
@@ -217,7 +218,7 @@ class _WeeklyXpChart extends StatelessWidget {
               fontFamily: 'Outfit',
               fontSize: 12.sp,
               fontWeight: FontWeight.w500,
-              color: isDark ? Colors.white54 : const Color(0xFF64748B),
+              color: isDark ? Colors.white54 : AppColors.slate500,
             ),
           ),
           SizedBox(height: 20.h),
@@ -253,7 +254,7 @@ class _WeeklyXpChart extends StatelessWidget {
                                   fontSize: 9.sp,
                                   fontWeight: FontWeight.w800,
                                   color: day.isToday
-                                      ? const Color(0xFF6366F1)
+                                      ? AppColors.indigo500
                                       : (isDark
                                             ? Colors.white54
                                             : Colors.black45),
@@ -272,7 +273,7 @@ class _WeeklyXpChart extends StatelessWidget {
                                     end: Alignment.topCenter,
                                     colors: day.isToday
                                         ? [
-                                            const Color(0xFF6366F1),
+                                            AppColors.indigo500,
                                             const Color(0xFF818CF8),
                                           ]
                                         : [
@@ -305,7 +306,7 @@ class _WeeklyXpChart extends StatelessWidget {
                                   ? FontWeight.w900
                                   : FontWeight.w600,
                               color: day.isToday
-                                  ? const Color(0xFF6366F1)
+                                  ? AppColors.indigo500
                                   : (isDark
                                         ? Colors.white.withValues(alpha: 0.4)
                                         : Colors.black.withValues(alpha: 0.4)),
@@ -395,13 +396,13 @@ class _CategoryMasteryOverview extends StatelessWidget {
               Container(
                 padding: EdgeInsets.all(6.r),
                 decoration: BoxDecoration(
-                  color: const Color(0xFF10B981).withValues(alpha: 0.1),
+                  color: AppColors.emerald500.withValues(alpha: 0.1),
                   shape: BoxShape.circle,
                 ),
                 child: Icon(
                   Icons.donut_large_rounded,
                   size: 14.r,
-                  color: const Color(0xFF10B981),
+                  color: AppColors.emerald500,
                 ),
               ),
               SizedBox(width: 10.w),
@@ -428,7 +429,7 @@ class _CategoryMasteryOverview extends StatelessWidget {
                   fontFamily: 'Outfit',
                   fontSize: 18.sp,
                   fontWeight: FontWeight.w900,
-                  color: const Color(0xFF10B981),
+                  color: AppColors.emerald500,
                 ),
                 maxLines: 1,
                 minFontSize: 12,
@@ -446,7 +447,7 @@ class _CategoryMasteryOverview extends StatelessWidget {
               fontFamily: 'Outfit',
               fontSize: 12.sp,
               fontWeight: FontWeight.w500,
-              color: isDark ? Colors.white54 : const Color(0xFF64748B),
+              color: isDark ? Colors.white54 : AppColors.slate500,
             ),
           ),
           SizedBox(height: 16.h),
@@ -466,12 +467,12 @@ class _CategoryMasteryOverview extends StatelessWidget {
               child: Container(
                 decoration: BoxDecoration(
                   gradient: const LinearGradient(
-                    colors: [Color(0xFF10B981), Color(0xFF34D399)],
+                    colors: [AppColors.emerald500, Color(0xFF34D399)],
                   ),
                   borderRadius: BorderRadius.circular(10.r),
                   boxShadow: [
                     BoxShadow(
-                      color: const Color(0xFF10B981).withValues(alpha: 0.3),
+                      color: AppColors.emerald500.withValues(alpha: 0.3),
                       blurRadius: 6,
                     ),
                   ],
@@ -675,13 +676,13 @@ class _ContinueLearningSection extends StatelessWidget {
             Container(
               padding: EdgeInsets.all(6.r),
               decoration: BoxDecoration(
-                color: const Color(0xFFF59E0B).withValues(alpha: 0.1),
+                color: AppColors.amber500.withValues(alpha: 0.1),
                 shape: BoxShape.circle,
               ),
               child: Icon(
                 Icons.play_arrow_rounded,
                 size: 14.r,
-                color: const Color(0xFFF59E0B),
+                color: AppColors.amber500,
               ),
             ),
             SizedBox(width: 10.w),
@@ -775,7 +776,7 @@ class _ContinueLearningSection extends StatelessWidget {
                       fontFamily: 'Outfit',
                       fontSize: 14.sp,
                       fontWeight: FontWeight.w900,
-                      color: isDark ? Colors.white : const Color(0xFF0F172A),
+                      color: isDark ? Colors.white : AppColors.slate900,
                       letterSpacing: 0.5,
                     ),
                   ),

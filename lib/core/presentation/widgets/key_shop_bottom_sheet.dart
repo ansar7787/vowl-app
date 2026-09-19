@@ -18,6 +18,7 @@ import 'package:vowl/core/presentation/widgets/premium_store_bottom_sheet.dart';
 import 'package:vowl/core/utils/reward_limit_service.dart';
 
 import 'package:vowl/core/presentation/widgets/shakeable_wrapper.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 class KeyShopBottomSheet {
   static void show({
@@ -106,7 +107,7 @@ class _KeyShopContentState extends State<_KeyShopContent> {
               padding: EdgeInsets.all(24.r),
               decoration: BoxDecoration(
                 color: Theme.of(context).brightness == Brightness.dark
-                    ? const Color(0xFF1E293B)
+                    ? AppColors.slate800
                     : Colors.white,
                 borderRadius: BorderRadius.vertical(top: Radius.circular(32.r)),
                 border: Border.all(
@@ -358,8 +359,8 @@ class _KeyShopContentState extends State<_KeyShopContent> {
                                         Colors.amber.shade700,
                                       ]
                                     : const [
-                                        Color(0xFF94A3B8),
-                                        Color(0xFF64748B),
+                                        AppColors.slate400,
+                                        AppColors.slate500,
                                       ], // Premium Slate
                                 begin: Alignment.topLeft,
                                 end: Alignment.bottomRight,
@@ -612,8 +613,8 @@ class _KeyShopContentState extends State<_KeyShopContent> {
                             gradient: LinearGradient(
                               colors: _remainingClaims <= 0
                                   ? const [
-                                      Color(0xFF94A3B8),
-                                      Color(0xFF64748B),
+                                      AppColors.slate400,
+                                      AppColors.slate500,
                                     ] // Premium Slate grey
                                   : const [
                                       Color(0xFF0EA5E9),
@@ -710,7 +711,10 @@ class _KeyShopContentState extends State<_KeyShopContent> {
                         padding: EdgeInsets.symmetric(vertical: 14.h),
                         decoration: BoxDecoration(
                           gradient: const LinearGradient(
-                            colors: [Color(0xFF6366F1), Color(0xFF8B5CF6)],
+                            colors: [
+                              Theme.of(context).colorScheme.primary,
+                              AppColors.violet500,
+                            ],
                             begin: Alignment.topLeft,
                             end: Alignment.bottomRight,
                           ),
@@ -796,7 +800,7 @@ class _KeyShopContentState extends State<_KeyShopContent> {
                                 ),
                                 child: Icon(
                                   Icons.workspace_premium_rounded,
-                                  color: const Color(0xFFF59E0B),
+                                  color: AppColors.amber500,
                                   size: 24.r,
                                 ),
                               ),
@@ -814,7 +818,7 @@ class _KeyShopContentState extends State<_KeyShopContent> {
                                         fontFamily: 'Outfit',
                                         fontSize: 16.sp,
                                         fontWeight: FontWeight.w900,
-                                        color: const Color(0xFFF59E0B),
+                                        color: AppColors.amber500,
                                       ),
                                     ),
                                     SizedBox(height: 2.h),
@@ -840,7 +844,7 @@ class _KeyShopContentState extends State<_KeyShopContent> {
                               ),
                               Icon(
                                 Icons.chevron_right_rounded,
-                                color: const Color(0xFFF59E0B),
+                                color: AppColors.amber500,
                                 size: 24.r,
                               ),
                             ],

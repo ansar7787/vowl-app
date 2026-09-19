@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:confetti/confetti.dart';
 import 'package:lottie/lottie.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 class KidsFeedbackOverlay extends StatelessWidget {
   final bool isCorrect;
@@ -115,7 +116,7 @@ class _KidsFeedbackOverlayContentState
             16.r,
           ), // Reduced padding since Lottie has its own whitespace
           decoration: BoxDecoration(
-            color: const Color(0xFF10B981), // Emerald 500
+            color: AppColors.emerald500, // Emerald 500
             shape: BoxShape.circle,
             border: Border.all(color: Colors.white, width: 8.w),
             boxShadow: [
@@ -149,7 +150,7 @@ class _KidsFeedbackOverlayContentState
     return Container(
           padding: EdgeInsets.all(32.r),
           decoration: BoxDecoration(
-            color: const Color(0xFFEF4444), // Red 500
+            color: AppColors.red500, // Red 500
             shape: BoxShape.circle,
             border: Border.all(color: Colors.white, width: 8.w),
             boxShadow: [
@@ -201,7 +202,7 @@ class _KidsFeedbackOverlayContentState
                 children: [
                   Icon(
                     Icons.lightbulb_rounded,
-                    color: const Color(0xFFF59E0B),
+                    color: AppColors.amber500,
                     size: 28.sp,
                   ),
                   SizedBox(width: 8.w),
@@ -211,7 +212,7 @@ class _KidsFeedbackOverlayContentState
                       fontFamily: 'Outfit',
                       fontSize: 16.sp,
                       fontWeight: FontWeight.w900,
-                      color: const Color(0xFF94A3B8),
+                      color: AppColors.slate400,
                       letterSpacing: 2,
                     ),
                   ),

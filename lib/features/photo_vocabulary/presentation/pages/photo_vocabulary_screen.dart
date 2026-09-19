@@ -1,3 +1,5 @@
+import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'dart:io';
 import 'dart:convert';
 import 'dart:math';
@@ -349,12 +351,13 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
     if (!_bountiesLoadedVal) {
       return const Scaffold(
         body: SafeArea(
-          child: GameShimmerLoading(primaryColor: Color(0xFF14B8A6)),
+          child: GameShimmerLoading(primaryColor: AppColors.teal500),
         ),
       );
     }
 
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
 
     return PopScope(
       canPop: _imagePathVal == null,
@@ -563,7 +566,7 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
                   Icon(
                     LucideIcons.scanLine,
                     size: 16.r,
-                    color: const Color(0xFF14B8A6),
+                    color: AppColors.teal500,
                   ),
                   SizedBox(width: 8.w),
                   Text(
@@ -617,8 +620,8 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
                   Icon(
                     LucideIcons.alertTriangle,
                     color: isDark
-                        ? Colors.redAccent.shade100
-                        : Colors.redAccent,
+                        ? AppColors.gameIncorrect.shade100
+                        : AppColors.gameIncorrect,
                     size: 48.r,
                   ),
                   SizedBox(height: 16.h),
@@ -664,7 +667,7 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
                         vertical: 14.h,
                       ),
                       decoration: BoxDecoration(
-                        color: const Color(0xFF14B8A6),
+                        color: AppColors.teal500,
                         borderRadius: BorderRadius.circular(16.r),
                         boxShadow: [
                           BoxShadow(
@@ -795,7 +798,7 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
                         vertical: 14.h,
                       ),
                       decoration: BoxDecoration(
-                        color: const Color(0xFF14B8A6),
+                        color: AppColors.teal500,
                         borderRadius: BorderRadius.circular(16.r),
                         boxShadow: [
                           BoxShadow(
@@ -913,11 +916,11 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
               width: double.infinity,
               padding: EdgeInsets.symmetric(vertical: 20.h),
               decoration: BoxDecoration(
-                color: const Color(0xFF14B8A6),
+                color: AppColors.teal500,
                 borderRadius: BorderRadius.circular(100.r),
                 boxShadow: [
                   BoxShadow(
-                    color: const Color(0xFF14B8A6).withValues(alpha: 0.4),
+                    color: AppColors.teal500.withValues(alpha: 0.4),
                     blurRadius: 15,
                     offset: const Offset(0, 5),
                   ),
@@ -963,7 +966,7 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
                     height: 280.w,
                     decoration: BoxDecoration(
                       border: Border.all(
-                        color: const Color(0xFF14B8A6).withValues(alpha: 0.3),
+                        color: AppColors.teal500.withValues(alpha: 0.3),
                         width: 1.w,
                       ),
                     ),
@@ -979,11 +982,11 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
                             decoration: BoxDecoration(
                               border: Border(
                                 top: BorderSide(
-                                  color: const Color(0xFF14B8A6),
+                                  color: AppColors.teal500,
                                   width: 4.w,
                                 ),
                                 left: BorderSide(
-                                  color: const Color(0xFF14B8A6),
+                                  color: AppColors.teal500,
                                   width: 4.w,
                                 ),
                               ),
@@ -1000,11 +1003,11 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
                             decoration: BoxDecoration(
                               border: Border(
                                 top: BorderSide(
-                                  color: const Color(0xFF14B8A6),
+                                  color: AppColors.teal500,
                                   width: 4.w,
                                 ),
                                 right: BorderSide(
-                                  color: const Color(0xFF14B8A6),
+                                  color: AppColors.teal500,
                                   width: 4.w,
                                 ),
                               ),
@@ -1021,11 +1024,11 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
                             decoration: BoxDecoration(
                               border: Border(
                                 bottom: BorderSide(
-                                  color: const Color(0xFF14B8A6),
+                                  color: AppColors.teal500,
                                   width: 4.w,
                                 ),
                                 left: BorderSide(
-                                  color: const Color(0xFF14B8A6),
+                                  color: AppColors.teal500,
                                   width: 4.w,
                                 ),
                               ),
@@ -1042,11 +1045,11 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
                             decoration: BoxDecoration(
                               border: Border(
                                 bottom: BorderSide(
-                                  color: const Color(0xFF14B8A6),
+                                  color: AppColors.teal500,
                                   width: 4.w,
                                 ),
                                 right: BorderSide(
-                                  color: const Color(0xFF14B8A6),
+                                  color: AppColors.teal500,
                                   width: 4.w,
                                 ),
                               ),
@@ -1084,7 +1087,7 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
                                       fontFamily: 'Outfit',
                                       fontWeight: FontWeight.w900,
                                       fontSize: 16.sp,
-                                      color: const Color(0xFF14B8A6),
+                                      color: AppColors.teal500,
                                       letterSpacing: 4.0,
                                     ),
                                   )
@@ -1131,12 +1134,12 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
                 color: Colors.white,
                 boxShadow: [
                   BoxShadow(
-                    color: const Color(0xFF14B8A6),
+                    color: AppColors.teal500,
                     blurRadius: 10,
                     spreadRadius: 2,
                   ),
                   BoxShadow(
-                    color: const Color(0xFF14B8A6).withValues(alpha: 0.5),
+                    color: AppColors.teal500.withValues(alpha: 0.5),
                     blurRadius: 30,
                     spreadRadius: 10,
                   ),
@@ -1191,7 +1194,7 @@ class _AnimatedScannerTextState extends State<_AnimatedScannerText> {
           fontFamily: 'Outfit',
           fontWeight: FontWeight.w900,
           fontSize: 16.sp,
-          color: const Color(0xFF14B8A6),
+          color: AppColors.teal500,
           letterSpacing: 4.0,
         ),
       ),

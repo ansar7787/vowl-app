@@ -14,6 +14,7 @@ import 'package:vowl/core/services/daily_challenge_service.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:vowl/features/auth/domain/usecases/update_user_coins.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 // ═══════════════════════════════════════════════════════════════════════════════
 // Word Snap Screen — Daily Challenge (10/10 Production Rewrite)
@@ -225,7 +226,7 @@ class _WordSnapScreenState extends State<WordSnapScreen> {
             onPressed: () => context.pop(),
             icon: Icon(
               Icons.arrow_back_rounded,
-              color: isDark ? Colors.white : const Color(0xFF0F172A),
+              color: isDark ? Colors.white : AppColors.slate900,
               size: 24.r,
             ),
             tooltip: context.tr('common.back', fallback: 'Back'),
@@ -240,7 +241,7 @@ class _WordSnapScreenState extends State<WordSnapScreen> {
                 fontFamily: 'Outfit',
                 fontSize: 18.sp,
                 fontWeight: FontWeight.w800,
-                color: isDark ? Colors.white : const Color(0xFF0F172A),
+                color: isDark ? Colors.white : AppColors.slate900,
                 letterSpacing: -0.3,
               ),
             ),
@@ -252,12 +253,12 @@ class _WordSnapScreenState extends State<WordSnapScreen> {
               padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 6.h),
               decoration: BoxDecoration(
                 gradient: const LinearGradient(
-                  colors: [Color(0xFFF59E0B), Color(0xFFEF4444)],
+                  colors: [AppColors.amber500, AppColors.red500],
                 ),
                 borderRadius: BorderRadius.circular(20.r),
                 boxShadow: [
                   BoxShadow(
-                    color: const Color(0xFFF59E0B).withValues(alpha: 0.3),
+                    color: AppColors.amber500.withValues(alpha: 0.3),
                     blurRadius: 8,
                     offset: const Offset(0, 2),
                   ),
@@ -567,7 +568,7 @@ class _WordSnapScreenState extends State<WordSnapScreen> {
                       fontFamily: 'Outfit',
                       fontSize: 18.sp,
                       fontWeight: FontWeight.w700,
-                      color: isDark ? Colors.white : const Color(0xFF0F172A),
+                      color: isDark ? Colors.white : AppColors.slate900,
                     ),
                   ),
                   SizedBox(height: 8.h),
@@ -648,12 +649,12 @@ class _WordSnapScreenState extends State<WordSnapScreen> {
                       gradient: const LinearGradient(
                         begin: Alignment.topLeft,
                         end: Alignment.bottomRight,
-                        colors: [Color(0xFF10B981), Color(0xFF059669)],
+                        colors: [AppColors.emerald500, Color(0xFF059669)],
                       ),
                       shape: BoxShape.circle,
                       boxShadow: [
                         BoxShadow(
-                          color: const Color(0xFF10B981).withValues(alpha: 0.3),
+                          color: AppColors.emerald500.withValues(alpha: 0.3),
                           blurRadius: 20,
                           offset: const Offset(0, 8),
                         ),
@@ -677,7 +678,7 @@ class _WordSnapScreenState extends State<WordSnapScreen> {
                       fontFamily: 'Outfit',
                       fontSize: 22.sp,
                       fontWeight: FontWeight.w900,
-                      color: isDark ? Colors.white : const Color(0xFF0F172A),
+                      color: isDark ? Colors.white : AppColors.slate900,
                     ),
                   ),
                   SizedBox(height: 8.h),
@@ -737,13 +738,13 @@ class _WordSnapScreenState extends State<WordSnapScreen> {
                           begin: Alignment.topLeft,
                           end: Alignment.bottomRight,
                           colors: [
-                            const Color(0xFFF59E0B).withValues(alpha: 0.12),
-                            const Color(0xFFEF4444).withValues(alpha: 0.08),
+                            AppColors.amber500.withValues(alpha: 0.12),
+                            AppColors.red500.withValues(alpha: 0.08),
                           ],
                         ),
                         borderRadius: BorderRadius.circular(20.r),
                         border: Border.all(
-                          color: const Color(0xFFF59E0B).withValues(alpha: 0.2),
+                          color: AppColors.amber500.withValues(alpha: 0.2),
                           width: 1,
                         ),
                       ),
@@ -763,7 +764,7 @@ class _WordSnapScreenState extends State<WordSnapScreen> {
                                   fontWeight: FontWeight.w900,
                                   color: isDark
                                       ? Colors.white
-                                      : const Color(0xFF0F172A),
+                                      : AppColors.slate900,
                                 ),
                               ),
                               Text(

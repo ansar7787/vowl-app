@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/tech_pattern_overlay.dart';
@@ -20,7 +21,7 @@ class SummarizeStoryManuscript extends StatelessWidget {
       width: double.infinity,
       padding: EdgeInsets.all(24.r),
       decoration: BoxDecoration(
-        color: isDark ? const Color(0xFF1E293B) : Colors.white,
+        color: isDark ? AppColors.slate800 : Colors.white,
         borderRadius: BorderRadius.circular(24.r),
         border: Border.all(color: color.withValues(alpha: 0.3), width: 2),
         boxShadow: [

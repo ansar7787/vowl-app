@@ -1,3 +1,5 @@
+import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -123,6 +125,7 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen>
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     final theme = LevelThemeHelper.getTheme('grammar', level: widget.level);
 
     return BlocConsumer<GrammarBloc, GrammarState>(
@@ -343,8 +346,8 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen>
         final isHighlight = candidateData.isNotEmpty;
         final portColor = (isAnsweredNotifier.value || _pendingTypeSubmit.value)
             ? (isCorrectNotifier.value != false
-                  ? Colors.greenAccent
-                  : Colors.redAccent)
+                  ? AppColors.gameCorrect
+                  : AppColors.gameIncorrect)
             : (isHighlight
                   ? primaryColor
                   : primaryColor.withValues(alpha: 0.3));
@@ -492,9 +495,9 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen>
   }) {
     Color borderColor = primaryColor.withValues(alpha: 0.4);
     if (isCorrect == true) {
-      borderColor = Colors.greenAccent;
+      borderColor = AppColors.gameCorrect;
     } else if (isCorrect == false) {
-      borderColor = Colors.redAccent;
+      borderColor = AppColors.gameIncorrect;
     }
 
     return Container(
@@ -524,9 +527,9 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen>
             Icons.link_rounded,
             size: isCompact ? 14.sp : 18.sp,
             color: isCorrect == true
-                ? Colors.greenAccent
+                ? AppColors.gameCorrect
                 : (isCorrect == false
-                      ? Colors.redAccent
+                      ? AppColors.gameIncorrect
                       : (isDark ? Colors.white70 : Colors.black54)),
           ),
           SizedBox(width: 8.w),
@@ -537,9 +540,9 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen>
               fontSize: isCompact ? 12.sp : 15.sp,
               fontWeight: FontWeight.w900,
               color: isCorrect == true
-                  ? Colors.greenAccent
+                  ? AppColors.gameCorrect
                   : (isCorrect == false
-                        ? Colors.redAccent
+                        ? AppColors.gameIncorrect
                         : (isDark ? Colors.white : Colors.black87)),
               letterSpacing: 1.5,
             ),

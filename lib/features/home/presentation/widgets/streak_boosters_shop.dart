@@ -13,6 +13,7 @@ import 'package:vowl/core/utils/ad_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 class StreakBoostersShop extends StatefulWidget {
   final UserEntity user;
@@ -345,7 +346,7 @@ class _StreakBoostersShopState extends State<StreakBoostersShop> {
             padding: EdgeInsets.all(24.r),
             decoration: BoxDecoration(
               color: isDark
-                  ? const Color(0xFF1E293B).withValues(alpha: 0.95)
+                  ? AppColors.slate800.withValues(alpha: 0.95)
                   : Colors.white.withValues(alpha: 0.95),
               borderRadius: BorderRadius.vertical(top: Radius.circular(32.r)),
             ),
@@ -370,7 +371,7 @@ class _StreakBoostersShopState extends State<StreakBoostersShop> {
                     fontFamily: 'Outfit',
                     fontSize: 20.sp,
                     fontWeight: FontWeight.w900,
-                    color: isDark ? Colors.white : const Color(0xFF0F172A),
+                    color: isDark ? Colors.white : AppColors.slate900,
                   ),
                 ),
                 SizedBox(height: 12.h),
@@ -402,7 +403,7 @@ class _StreakBoostersShopState extends State<StreakBoostersShop> {
                     fontFamily: 'Outfit',
                     fontSize: 12.sp,
                     fontWeight: FontWeight.w700,
-                    color: const Color(0xFF10B981),
+                    color: AppColors.emerald500,
                   ),
                 ),
                 SizedBox(height: 24.h),
@@ -441,7 +442,7 @@ class _StreakBoostersShopState extends State<StreakBoostersShop> {
                           _executePurchase(context, name: name, action: action);
                         },
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: const Color(0xFF6366F1),
+                          backgroundColor: AppColors.indigo500,
                           foregroundColor: Colors.white,
                           padding: EdgeInsets.symmetric(vertical: 14.h),
                           shape: RoundedRectangleBorder(
@@ -646,7 +647,7 @@ class _StreakBoostersShopState extends State<StreakBoostersShop> {
                                   decoration: BoxDecoration(
                                     color:
                                         (isActive
-                                                ? const Color(0xFF10B981)
+                                                ? AppColors.emerald500
                                                 : Colors.grey)
                                             .withValues(alpha: 0.1),
                                     borderRadius: BorderRadius.circular(8.r),
@@ -666,7 +667,7 @@ class _StreakBoostersShopState extends State<StreakBoostersShop> {
                                       fontSize: 10.sp,
                                       fontWeight: FontWeight.w800,
                                       color: isActive
-                                          ? const Color(0xFF10B981)
+                                          ? AppColors.emerald500
                                           : Colors.grey,
                                     ),
                                     maxLines: 1,

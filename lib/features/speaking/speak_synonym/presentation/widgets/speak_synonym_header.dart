@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -13,6 +14,7 @@ class SpeakSynonymHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     return Column(
       children: [
         Container(
@@ -25,7 +27,7 @@ class SpeakSynonymHeader extends StatelessWidget {
           child: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Icon(Icons.eco_rounded, size: 14.r, color: Colors.greenAccent),
+              Icon(Icons.eco_rounded, size: 14.r, color: tokens.gameCorrect),
               SizedBox(width: 8.w),
               Text(
                 "SYNONYM CHALLENGE",
@@ -33,7 +35,7 @@ class SpeakSynonymHeader extends StatelessWidget {
                   fontFamily: 'Outfit',
                   fontSize: 10.sp,
                   fontWeight: FontWeight.bold,
-                  color: Colors.greenAccent,
+                  color: tokens.gameCorrect,
                   letterSpacing: 1.5,
                 ),
               ),

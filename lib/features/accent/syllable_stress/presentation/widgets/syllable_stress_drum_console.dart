@@ -1,3 +1,5 @@
+import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -25,6 +27,7 @@ class SyllableStressDrumConsole extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     return Wrap(
       spacing: 16.w,
       runSpacing: 16.h,
@@ -48,12 +51,12 @@ class SyllableStressDrumConsole extends StatelessWidget {
     final bool isWrong = isAnswered && isSelected && index != correct;
 
     Color padColor = isCorrect
-        ? Colors.greenAccent
-        : (isWrong ? Colors.redAccent : color);
+        ? AppColors.gameCorrect
+        : (isWrong ? AppColors.gameIncorrect : color);
     Color contentColor = isSelected ? padColor : color;
     if (isAnswered && index == correct) {
-      padColor = Colors.greenAccent;
-      contentColor = Colors.greenAccent;
+      padColor = AppColors.gameCorrect;
+      contentColor = AppColors.gameCorrect;
     }
 
     return Semantics(
@@ -112,7 +115,7 @@ class SyllableStressDrumConsole extends StatelessWidget {
                   SizedBox(height: 4.h),
                   Icon(
                     Icons.bolt_rounded,
-                    color: Colors.greenAccent,
+                    color: AppColors.gameCorrect,
                     size: 18.r,
                   ).animate().scale(),
                 ],

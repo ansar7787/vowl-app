@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -56,6 +57,7 @@ class MedicalConsultScanBay extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     return Container(
       width: 1.sw,
       height: 330.h,
@@ -123,16 +125,16 @@ class MedicalConsultScanBay extends StatelessWidget {
                           shape: BoxShape.circle,
                           color: isResolved
                               ? color.withValues(alpha: 0.2)
-                              : Colors.redAccent.withValues(alpha: 0.08),
+                              : tokens.gameIncorrect.withValues(alpha: 0.08),
                           border: Border.all(
                             color: isResolved
                                 ? color
-                                : Colors.redAccent.withValues(alpha: 0.7),
+                                : tokens.gameIncorrect.withValues(alpha: 0.7),
                             width: 2.0,
                           ),
                           boxShadow: [
                             BoxShadow(
-                              color: (isResolved ? color : Colors.redAccent)
+                              color: (isResolved ? color : tokens.gameIncorrect)
                                   .withValues(alpha: 0.25),
                               blurRadius: 8,
                             ),
@@ -143,7 +145,7 @@ class MedicalConsultScanBay extends StatelessWidget {
                             isResolved
                                 ? Icons.check_circle_outline_rounded
                                 : Icons.warning_rounded,
-                            color: isResolved ? color : Colors.redAccent,
+                            color: isResolved ? color : tokens.gameIncorrect,
                             size: 14.r,
                           ),
                         ),

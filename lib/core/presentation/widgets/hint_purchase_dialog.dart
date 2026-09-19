@@ -7,6 +7,7 @@ import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 /// Shared confirmation dialog for spending Vowl Coins on hints.
 ///
@@ -64,20 +65,20 @@ class HintPurchaseDialog {
           child: GlassTile(
             borderRadius: BorderRadius.circular(32.r),
             padding: EdgeInsets.all(24.r),
-            borderColor: const Color(0xFFF59E0B).withValues(alpha: 0.3),
-            color: isDark ? const Color(0xFF1E293B) : Colors.white,
+            borderColor: AppColors.amber500.withValues(alpha: 0.3),
+            color: isDark ? AppColors.slate800 : Colors.white,
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
                 Container(
                   padding: EdgeInsets.all(20.r),
                   decoration: BoxDecoration(
-                    color: const Color(0xFFF59E0B).withValues(alpha: 0.1),
+                    color: AppColors.amber500.withValues(alpha: 0.1),
                     shape: BoxShape.circle,
                   ),
                   child: Icon(
                     Icons.lightbulb_rounded,
-                    color: const Color(0xFFF59E0B),
+                    color: AppColors.amber500,
                     size: 40.r,
                   ),
                 ).animate().scale(delay: 100.ms).fadeIn(),
@@ -91,7 +92,7 @@ class HintPurchaseDialog {
                     fontFamily: 'Outfit',
                     fontSize: 20.sp,
                     fontWeight: FontWeight.w900,
-                    color: isDark ? Colors.white : const Color(0xFF0F172A),
+                    color: isDark ? Colors.white : AppColors.slate900,
                     letterSpacing: 1,
                   ),
                 ),
@@ -102,7 +103,7 @@ class HintPurchaseDialog {
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 14.sp,
-                    color: isDark ? Colors.white70 : const Color(0xFF64748B),
+                    color: isDark ? Colors.white70 : AppColors.slate500,
                     height: 1.5,
                   ),
                 ),
@@ -122,9 +123,7 @@ class HintPurchaseDialog {
                           style: TextStyle(
                             fontFamily: 'Outfit',
                             fontWeight: FontWeight.w800,
-                            color: isDark
-                                ? Colors.white38
-                                : const Color(0xFF94A3B8),
+                            color: isDark ? Colors.white38 : AppColors.slate400,
                             letterSpacing: 1,
                           ),
                         ),
@@ -134,7 +133,7 @@ class HintPurchaseDialog {
                     Expanded(
                       child: FilledButton(
                         style: FilledButton.styleFrom(
-                          backgroundColor: const Color(0xFFF59E0B),
+                          backgroundColor: AppColors.amber500,
                           padding: EdgeInsets.symmetric(vertical: 16.h),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(16.r),

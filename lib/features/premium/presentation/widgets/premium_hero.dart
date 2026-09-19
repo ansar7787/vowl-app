@@ -3,6 +3,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:lucide_icons/lucide_icons.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 class PremiumHero extends StatelessWidget {
   const PremiumHero({super.key});
@@ -20,18 +21,21 @@ class PremiumHero extends StatelessWidget {
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 gradient: const LinearGradient(
-                  colors: [Color(0xFF6366F1), Color(0xFF8B5CF6)],
+                  colors: [
+                    Theme.of(context).colorScheme.primary,
+                    AppColors.violet500,
+                  ],
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
                 ),
                 boxShadow: [
                   BoxShadow(
-                    color: const Color(0xFF6366F1).withValues(alpha: 0.4),
+                    color: AppColors.indigo500.withValues(alpha: 0.4),
                     blurRadius: 30,
                     spreadRadius: 10,
                   ),
                   BoxShadow(
-                    color: const Color(0xFF8B5CF6).withValues(alpha: 0.2),
+                    color: AppColors.violet500.withValues(alpha: 0.2),
                     blurRadius: 10,
                     spreadRadius: 2,
                     offset: const Offset(0, 10),
@@ -65,7 +69,10 @@ class PremiumHero extends StatelessWidget {
         // Gradient Shader Text for a 2026 ultra-premium feel
         ShaderMask(
               shaderCallback: (bounds) => const LinearGradient(
-                colors: [Color(0xFF6366F1), Color(0xFF8B5CF6)],
+                colors: [
+                  Theme.of(context).colorScheme.primary,
+                  AppColors.violet500,
+                ],
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
               ).createShader(bounds),

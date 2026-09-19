@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -38,6 +39,7 @@ class IdiomMatchOptionsPanel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     return Column(
       children: List.generate(shuffledOptions.length, (index) {
         final option = shuffledOptions[index];
@@ -109,7 +111,7 @@ class IdiomMatchOptionsPanel extends StatelessWidget {
                                   : Icons.psychology_alt_rounded),
                         color: (isCorrect || isSelected)
                             ? Colors.green
-                            : (isWrong ? Colors.redAccent : primaryColor),
+                            : (isWrong ? tokens.gameIncorrect : primaryColor),
                         size: 20.r,
                       ),
                     ),

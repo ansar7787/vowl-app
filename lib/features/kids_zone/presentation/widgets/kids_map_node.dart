@@ -22,6 +22,7 @@ import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_toll_gate_bottom_sheet.dart';
 import 'package:vowl/features/kids_zone/presentation/painters/kids_segment_path_painter.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 class KidsMapNode extends StatefulWidget {
   final int level;
@@ -212,7 +213,7 @@ class _KidsMapNodeState extends State<KidsMapNode> {
               fontFamily: 'Outfit',
               fontSize: 14.sp,
               fontWeight: FontWeight.w900,
-              color: const Color(0xFF1E293B),
+              color: AppColors.slate800,
             ),
             textAlign: TextAlign.center,
             minFontSize: 10,
@@ -248,7 +249,7 @@ class _KidsMapNodeState extends State<KidsMapNode> {
     Color borderColor;
     String tierName;
     if (level == 10) {
-      borderColor = const Color(0xFF10B981); // Emerald Green
+      borderColor = AppColors.emerald500; // Emerald Green
       tierName = context.tr('kids_zone.tier_green', fallback: "GREEN TIER");
     } else if (level == 50) {
       borderColor = const Color(0xFFB45309); // Bronze/Amber
@@ -263,7 +264,7 @@ class _KidsMapNodeState extends State<KidsMapNode> {
         fallback: "LEGENDARY TIER",
       );
     } else {
-      borderColor = const Color(0xFFF59E0B); // Gold
+      borderColor = AppColors.amber500; // Gold
       tierName = context.tr('kids_zone.tier_gold', fallback: "GOLD TIER");
     }
 
@@ -734,9 +735,7 @@ class _KidsMapNodeState extends State<KidsMapNode> {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     // In Kids UI, locked nodes should be clean, opaque bubbles (White in light, Slate in dark)
     // This perfectly blocks the path line without looking muddy.
-    final Color lockedNodeColor = isDark
-        ? const Color(0xFF1E293B)
-        : Colors.white;
+    final Color lockedNodeColor = isDark ? AppColors.slate800 : Colors.white;
 
     // The path line can be translucent because it only sits on the background.
     final Color lockedPathColor = isDark

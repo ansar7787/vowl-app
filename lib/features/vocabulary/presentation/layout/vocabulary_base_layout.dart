@@ -13,6 +13,7 @@ import 'package:vowl/core/presentation/models/game_scaffold_config.dart';
 import 'package:vowl/features/vocabulary/topic_vocab/presentation/widgets/topic_vocab_mind_map.dart';
 import 'package:vowl/features/vocabulary/word_formation/presentation/widgets/word_formation_family_tree.dart';
 import 'package:vowl/core/presentation/widgets/pedagogical_rule_box.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 class VocabularyBaseLayout extends StatelessWidget {
   final GameSubtype gameType;
@@ -132,7 +133,7 @@ class VocabularyBaseLayout extends StatelessWidget {
             customContent = TopicVocabMindMap(
               relatedWords: quest.relatedWords!,
               color: isCorrect == true
-                  ? const Color(0xFF10B981)
+                  ? AppColors.emerald500
                   : theme.primaryColor,
             );
           }
@@ -145,7 +146,7 @@ class VocabularyBaseLayout extends StatelessWidget {
             customContent = WordFormationFamilyTree(
               familyTree: quest.familyTree!,
               color: isCorrect == true
-                  ? const Color(0xFF10B981)
+                  ? AppColors.emerald500
                   : theme.primaryColor,
             );
           }
@@ -160,7 +161,7 @@ class VocabularyBaseLayout extends StatelessWidget {
               titleFallback: 'Word Breakdown',
               rule: quest.meaningBreakdown!,
               shadowColor: isCorrect == true
-                  ? const Color(0xFF10B981)
+                  ? AppColors.emerald500
                   : theme.primaryColor,
               isDark: isDark,
             );

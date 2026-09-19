@@ -3,6 +3,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 class ConnectorOptionGrid extends StatelessWidget {
   final List<String> options;
@@ -44,9 +45,9 @@ class ConnectorOptionGrid extends StatelessWidget {
         Color? cardColor;
         if (showResult) {
           if (isCorrect) {
-            cardColor = const Color(0xFF10B981);
+            cardColor = AppColors.emerald500;
           } else if (isSelected) {
-            cardColor = const Color(0xFFF43F5E);
+            cardColor = AppColors.rose500;
           }
         }
 

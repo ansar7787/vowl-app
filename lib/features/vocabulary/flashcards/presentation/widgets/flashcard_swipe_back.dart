@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/utils/tts_service.dart';
@@ -63,7 +64,7 @@ class _FlashcardSwipeBackState extends State<FlashcardSwipeBack> {
         width: widget.width,
         height: widget.height,
         decoration: BoxDecoration(
-          color: widget.isDark ? const Color(0xFF0F172A) : Colors.white,
+          color: widget.isDark ? AppColors.slate900 : Colors.white,
           borderRadius: BorderRadius.circular(24.r),
           border: Border.all(
             color: widget.isDark

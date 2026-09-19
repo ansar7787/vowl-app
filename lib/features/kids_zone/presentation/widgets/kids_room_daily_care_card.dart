@@ -1,3 +1,5 @@
+import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -24,6 +26,7 @@ class KidsRoomDailyCareCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     final now = DateTime.now();
     final hasFed =
         user.kidsLastFeedTime != null &&
@@ -172,7 +175,7 @@ class KidsRoomDailyCareCard extends StatelessWidget {
       children: [
         Icon(
           isDone ? Icons.check_circle_rounded : Icons.circle_outlined,
-          color: isDone ? Colors.greenAccent.shade400 : Colors.grey.shade400,
+          color: isDone ? AppColors.gameCorrect.shade400 : Colors.grey.shade400,
           size: 20.sp,
         ),
         SizedBox(width: 8.w),
@@ -182,10 +185,12 @@ class KidsRoomDailyCareCard extends StatelessWidget {
             fontSize: 14.sp,
             fontWeight: isDone ? FontWeight.w800 : FontWeight.w600,
             color: isDone
-                ? (isDark ? Colors.greenAccent.shade100 : Colors.green.shade800)
+                ? (isDark
+                      ? AppColors.gameCorrect.shade100
+                      : Colors.green.shade800)
                 : (isDark ? Colors.white60 : Colors.black54),
             decoration: isDone ? TextDecoration.lineThrough : null,
-            decorationColor: isDone ? Colors.greenAccent.shade400 : null,
+            decorationColor: isDone ? AppColors.gameCorrect.shade400 : null,
             decorationThickness: 2,
           ),
         ),

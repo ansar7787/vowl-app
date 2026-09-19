@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 class KidsAssets {
   static const Map<String, List<String>> stickerMap = {
@@ -60,7 +61,7 @@ class KidsAssets {
       'name': 'Tiny Cape',
       'price': 50,
       'icon': '🦸',
-      'color': const Color(0xFFEF4444),
+      'color': AppColors.red500,
       'category': 'Clothes',
     },
     {
@@ -68,7 +69,7 @@ class KidsAssets {
       'name': 'Cool Shades',
       'price': 30,
       'icon': '🕶️',
-      'color': const Color(0xFF3B82F6),
+      'color': AppColors.blue500,
       'category': 'Clothes',
     },
     {
@@ -84,7 +85,7 @@ class KidsAssets {
       'name': 'Golden Bell',
       'price': 200,
       'icon': '🔔',
-      'color': const Color(0xFFF59E0B),
+      'color': AppColors.amber500,
       'category': 'Toys',
     },
     {
@@ -108,7 +109,7 @@ class KidsAssets {
       'name': 'Royal Crown',
       'price': 1000,
       'icon': '👑',
-      'color': const Color(0xFFFFD700),
+      'color': AppColors.gold,
       'category': 'Clothes',
     },
     {
@@ -124,7 +125,7 @@ class KidsAssets {
       'name': 'Smarty Lens',
       'price': 250,
       'icon': '🤓',
-      'color': const Color(0xFF6366F1),
+      'color': AppColors.indigo500,
       'category': 'Clothes',
     },
     {
@@ -132,7 +133,7 @@ class KidsAssets {
       'name': 'Hero Shield',
       'price': 750,
       'icon': '🛡️',
-      'color': const Color(0xFF3B82F6),
+      'color': AppColors.blue500,
       'category': 'Toys',
     },
     {
@@ -140,7 +141,7 @@ class KidsAssets {
       'name': 'Party Balloon',
       'price': 100,
       'icon': '🎈',
-      'color': const Color(0xFFEF4444),
+      'color': AppColors.red500,
       'category': 'Toys',
     },
     {
@@ -148,7 +149,7 @@ class KidsAssets {
       'name': 'Magic Sparkles',
       'price': 1500,
       'icon': '✨',
-      'color': const Color(0xFFF59E0B),
+      'color': AppColors.amber500,
       'category': 'Magic',
     },
     {
@@ -156,7 +157,7 @@ class KidsAssets {
       'name': 'Jetpack 3000',
       'price': 2500,
       'icon': '🚀',
-      'color': const Color(0xFF10B981),
+      'color': AppColors.emerald500,
       'category': 'Magic',
     },
     {
@@ -172,7 +173,7 @@ class KidsAssets {
       'name': 'Hero Mask',
       'price': 120,
       'icon': '🎭',
-      'color': const Color(0xFFF43F5E),
+      'color': AppColors.rose500,
       'category': 'Clothes',
     },
     {
@@ -204,7 +205,7 @@ class KidsAssets {
       'name': 'Stealth Wrap',
       'price': 400,
       'icon': '🥷',
-      'color': const Color(0xFF64748B),
+      'color': AppColors.slate500,
       'category': 'Clothes',
     },
     // COOL KIDS CATEGORY (7-9 Years)
@@ -213,7 +214,7 @@ class KidsAssets {
       'name': 'Gamer Audio',
       'price': 800,
       'icon': '🎧',
-      'color': const Color(0xFF8B5CF6),
+      'color': AppColors.violet500,
       'category': 'Toys',
     },
     {
@@ -221,7 +222,7 @@ class KidsAssets {
       'name': 'Pro Skater',
       'price': 1200,
       'icon': '🛹',
-      'color': const Color(0xFF10B981),
+      'color': AppColors.emerald500,
       'category': 'Toys',
     },
     {
@@ -229,7 +230,7 @@ class KidsAssets {
       'name': 'Neon Kicks',
       'price': 900,
       'icon': '👟',
-      'color': const Color(0xFFF43F5E),
+      'color': AppColors.rose500,
       'category': 'Clothes',
     },
     // NEW BUDDIES CATEGORY
@@ -254,7 +255,7 @@ class KidsAssets {
       'name': 'Leo the Brave',
       'price': 4000,
       'icon': '🦁',
-      'color': const Color(0xFFFBBF24),
+      'color': AppColors.amber400,
       'category': 'Buddies',
     },
   ];

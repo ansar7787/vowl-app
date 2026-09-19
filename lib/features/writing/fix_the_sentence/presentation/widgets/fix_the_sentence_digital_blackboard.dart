@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -30,6 +31,7 @@ class FixTheSentenceDigitalBlackboard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     final String escapedTarget = RegExp.escape(targetWord);
     final RegExp wordRegExp = RegExp(
       r'\b' + escapedTarget + r'\b',
@@ -80,7 +82,7 @@ class FixTheSentenceDigitalBlackboard extends StatelessWidget {
                         ? Builder(
                             builder: (context) {
                               final successColor = isDark
-                                  ? Colors.greenAccent
+                                  ? tokens.gameCorrect
                                   : const Color(0xFF16A34A);
                               return Container(
                                 margin: EdgeInsets.symmetric(horizontal: 8.w),
@@ -147,7 +149,7 @@ class FixTheSentenceDigitalBlackboard extends StatelessWidget {
                                         fontSize: 13.sp,
                                         fontWeight: FontWeight.w900,
                                         color: isDark
-                                            ? Colors.redAccent
+                                            ? tokens.gameIncorrect
                                             : const Color(0xFFDC2626),
                                       ),
                                     ),

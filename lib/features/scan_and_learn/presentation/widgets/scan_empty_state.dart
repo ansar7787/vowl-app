@@ -6,6 +6,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 class ScanEmptyState extends StatelessWidget {
   final Future<void> Function(ImageSource) onPickImage;
@@ -29,7 +30,7 @@ class ScanEmptyState extends StatelessWidget {
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 border: Border.all(
-                  color: const Color(0xFF6366F1).withValues(alpha: 0.2),
+                  color: AppColors.indigo500.withValues(alpha: 0.2),
                   width: 1.w,
                 ),
               ),
@@ -58,10 +59,10 @@ class ScanEmptyState extends StatelessWidget {
                     width: 80.r,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
-                      color: const Color(0xFF6366F1).withValues(alpha: 0.15),
+                      color: AppColors.indigo500.withValues(alpha: 0.15),
                       boxShadow: [
                         BoxShadow(
-                          color: const Color(0xFF6366F1).withValues(alpha: 0.3),
+                          color: AppColors.indigo500.withValues(alpha: 0.3),
                           blurRadius: 30,
                           spreadRadius: 10,
                         ),
@@ -71,7 +72,7 @@ class ScanEmptyState extends StatelessWidget {
                         Icon(
                               Icons.document_scanner_rounded,
                               size: 40.r,
-                              color: const Color(0xFF6366F1),
+                              color: AppColors.indigo500,
                             )
                             .animate(onPlay: (c) => c.repeat(reverse: true))
                             .fade(begin: 0.5, end: 1.0, duration: 1.seconds),
@@ -120,7 +121,7 @@ class ScanEmptyState extends StatelessWidget {
                   fontFamily: 'Outfit',
                   fontSize: 14.sp,
                   fontWeight: FontWeight.w900,
-                  color: const Color(0xFF6366F1),
+                  color: AppColors.indigo500,
                   letterSpacing: 4.0,
                 ),
               )
@@ -215,7 +216,7 @@ class ScanEmptyState extends StatelessWidget {
               decoration: BoxDecoration(
                 gradient: LinearGradient(
                   colors: [
-                    const Color(0xFF6366F1).withValues(alpha: 0.15),
+                    AppColors.indigo500.withValues(alpha: 0.15),
                     const Color(0xFF4F46E5).withValues(alpha: 0.05),
                   ],
                   begin: Alignment.topLeft,
@@ -223,12 +224,12 @@ class ScanEmptyState extends StatelessWidget {
                 ),
                 borderRadius: BorderRadius.circular(24.r),
                 border: Border.all(
-                  color: const Color(0xFF6366F1).withValues(alpha: 0.4),
+                  color: AppColors.indigo500.withValues(alpha: 0.4),
                   width: 1.5.w,
                 ),
                 boxShadow: [
                   BoxShadow(
-                    color: const Color(0xFF6366F1).withValues(alpha: 0.1),
+                    color: AppColors.indigo500.withValues(alpha: 0.1),
                     blurRadius: 20,
                     offset: const Offset(0, 8),
                   ),
@@ -236,7 +237,7 @@ class ScanEmptyState extends StatelessWidget {
               ),
               child: Column(
                 children: [
-                  Icon(icon, color: const Color(0xFF6366F1), size: 36.r),
+                  Icon(icon, color: AppColors.indigo500, size: 36.r),
                   SizedBox(height: 12.h),
                   Text(
                     label,
@@ -244,7 +245,7 @@ class ScanEmptyState extends StatelessWidget {
                       fontFamily: 'Outfit',
                       fontSize: 16.sp,
                       fontWeight: FontWeight.w800,
-                      color: isDark ? Colors.white : const Color(0xFF0F172A),
+                      color: isDark ? Colors.white : AppColors.slate900,
                     ),
                   ),
                   SizedBox(height: 4.h),

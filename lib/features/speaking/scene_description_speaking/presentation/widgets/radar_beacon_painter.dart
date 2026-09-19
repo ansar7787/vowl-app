@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -23,10 +24,10 @@ class RadarBeaconPainter extends CustomPainter {
     if (isCompleted) {
       // Completed solid static emerald green glow
       final Paint solidPaint = Paint()
-        ..color = Colors.greenAccent
+        ..color = AppColors.gameCorrect
         ..style = PaintingStyle.fill;
       final Paint glowPaint = Paint()
-        ..color = Colors.greenAccent.withValues(alpha: 0.25)
+        ..color = AppColors.gameCorrect.withValues(alpha: 0.25)
         ..maskFilter = MaskFilter.blur(BlurStyle.normal, 6.r);
 
       canvas.drawCircle(center, maxRadius * 0.4, glowPaint);

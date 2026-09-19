@@ -15,6 +15,7 @@ import 'package:vowl/core/presentation/widgets/vowl_button_spinner.dart';
 import 'package:vowl/core/presentation/widgets/shakeable_wrapper.dart';
 import 'package:vowl/core/utils/reward_limit_service.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 class KidsStarVaultBottomSheet extends StatefulWidget {
   final String gameType;
@@ -313,7 +314,7 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
                     onButtonPressed: () => Navigator.of(ctx).pop(),
                     customIcon: Icon(
                       Icons.auto_awesome_rounded,
-                      color: const Color(0xFF10B981),
+                      color: AppColors.emerald500,
                       size: 48.sp,
                     ),
                   ),
@@ -383,9 +384,7 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
                             ),
                             decoration: BoxDecoration(
                               color:
-                                  (isDark
-                                          ? const Color(0xFF1E293B)
-                                          : Colors.white)
+                                  (isDark ? AppColors.slate800 : Colors.white)
                                       .withValues(alpha: 0.95),
                               borderRadius: BorderRadius.vertical(
                                 top: Radius.circular(40.r),

@@ -1,3 +1,5 @@
+import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
@@ -26,6 +28,7 @@ class KidsGameHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     int currentIndex = 0;
     int totalQuests = 1;
     int lives = 3;
@@ -146,12 +149,12 @@ class KidsGameHeader extends StatelessWidget {
         color: Colors.white,
         borderRadius: BorderRadius.circular(20.r),
         border: Border.all(
-          color: Colors.redAccent.withValues(alpha: 0.3),
+          color: AppColors.gameIncorrect.withValues(alpha: 0.3),
           width: 3.w,
         ),
         boxShadow: [
           BoxShadow(
-            color: Colors.redAccent.withValues(alpha: 0.2),
+            color: AppColors.gameIncorrect.withValues(alpha: 0.2),
             offset: Offset(0, 4.h),
           ),
         ],
@@ -165,7 +168,9 @@ class KidsGameHeader extends StatelessWidget {
               index < lives
                   ? Icons.favorite_rounded
                   : Icons.favorite_border_rounded,
-              color: index < lives ? Colors.redAccent : Colors.grey.shade300,
+              color: index < lives
+                  ? AppColors.gameIncorrect
+                  : Colors.grey.shade300,
               size: 20.sp,
             ),
           );

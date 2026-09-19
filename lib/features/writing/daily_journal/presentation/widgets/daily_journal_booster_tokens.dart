@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/utils/tts_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
@@ -21,6 +22,7 @@ class DailyJournalBoosterTokens extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
@@ -41,7 +43,7 @@ class DailyJournalBoosterTokens extends StatelessWidget {
           children: keywords.map((k) {
             final bool isUsed = text.toLowerCase().contains(k.toLowerCase());
             final displayColor = isUsed
-                ? Colors.greenAccent
+                ? tokens.gameCorrect
                 : (isDark ? Colors.white24 : Colors.black26);
 
             return GestureDetector(
@@ -69,7 +71,7 @@ class DailyJournalBoosterTokens extends StatelessWidget {
                 padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
                 decoration: BoxDecoration(
                   color: isUsed
-                      ? Colors.greenAccent.withValues(alpha: 0.15)
+                      ? tokens.gameCorrect.withValues(alpha: 0.15)
                       : Colors.transparent,
                   borderRadius: BorderRadius.circular(20.r),
                   border: Border.all(color: displayColor, width: 2),
@@ -83,7 +85,7 @@ class DailyJournalBoosterTokens extends StatelessWidget {
                           : Icons.radio_button_unchecked_rounded,
                       size: 14.r,
                       color: isUsed
-                          ? Colors.greenAccent
+                          ? tokens.gameCorrect
                           : (isDark ? Colors.white30 : Colors.black38),
                     ),
                     SizedBox(width: 8.w),
@@ -92,7 +94,7 @@ class DailyJournalBoosterTokens extends StatelessWidget {
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         color: isUsed
-                            ? Colors.greenAccent
+                            ? tokens.gameCorrect
                             : (isDark ? Colors.white60 : Colors.black54),
                         fontSize: 11.sp,
                         fontWeight: FontWeight.bold,

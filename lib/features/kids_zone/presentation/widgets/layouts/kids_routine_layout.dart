@@ -8,6 +8,7 @@ import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/kids_zone/presentation/utils/kids_tts_service.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_fitted_text.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 /// Cozy Bedroom Theme for Routine Game
 /// Space Complexity: O(1)
@@ -73,14 +74,11 @@ class KidsRoutineLayout extends StatelessWidget {
                     width: double.infinity,
                     margin: EdgeInsets.symmetric(horizontal: 16.w),
                     decoration: BoxDecoration(
-                      color: const Color(0xFF6366F1), // Indigo blanket
+                      color: AppColors.indigo500, // Indigo blanket
                       borderRadius: BorderRadius.vertical(
                         top: Radius.circular(24.r),
                       ),
-                      border: Border.all(
-                        color: const Color(0xFF6366F1),
-                        width: 2,
-                      ),
+                      border: Border.all(color: AppColors.indigo500, width: 2),
                       boxShadow: [
                         BoxShadow(
                           color: Colors.black.withValues(alpha: 0.15),
@@ -255,7 +253,7 @@ class KidsRoutineLayout extends StatelessWidget {
                 child: Container(
                   width: 40.w,
                   decoration: BoxDecoration(
-                    color: const Color(0xFFF43F5E), // Rose red curtains
+                    color: AppColors.rose500, // Rose red curtains
                     borderRadius: BorderRadius.horizontal(
                       left: Radius.circular(8.r),
                     ),
@@ -269,7 +267,7 @@ class KidsRoutineLayout extends StatelessWidget {
                 child: Container(
                   width: 40.w,
                   decoration: BoxDecoration(
-                    color: const Color(0xFFF43F5E), // Rose red curtains
+                    color: AppColors.rose500, // Rose red curtains
                     borderRadius: BorderRadius.horizontal(
                       right: Radius.circular(8.r),
                     ),

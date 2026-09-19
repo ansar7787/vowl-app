@@ -6,6 +6,7 @@ import 'package:vowl/core/presentation/widgets/shimmer_image.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 class LeaderboardPodium extends StatelessWidget {
   final List<UserEntity> top3;
@@ -312,7 +313,7 @@ class _PodiumSlot extends StatelessWidget {
                               padding: EdgeInsets.only(left: 4.w),
                               child: Icon(
                                 Icons.verified_rounded,
-                                color: const Color(0xFFF59E0B),
+                                color: AppColors.amber500,
                                 size: isFirst ? 12.r : 10.r,
                               ),
                             ),
@@ -368,7 +369,7 @@ class _PodiumSlot extends StatelessWidget {
         children: [
           Icon(
             Icons.arrow_upward_rounded,
-            color: const Color(0xFF10B981),
+            color: AppColors.emerald500,
             size: 8.r,
           ),
           Text(
@@ -377,7 +378,7 @@ class _PodiumSlot extends StatelessWidget {
               fontFamily: 'Outfit',
               fontSize: 7.sp,
               fontWeight: FontWeight.w800,
-              color: const Color(0xFF10B981),
+              color: AppColors.emerald500,
             ),
           ),
         ],
@@ -388,7 +389,7 @@ class _PodiumSlot extends StatelessWidget {
         children: [
           Icon(
             Icons.arrow_downward_rounded,
-            color: const Color(0xFFEF4444),
+            color: AppColors.red500,
             size: 8.r,
           ),
           Text(
@@ -397,7 +398,7 @@ class _PodiumSlot extends StatelessWidget {
               fontFamily: 'Outfit',
               fontSize: 7.sp,
               fontWeight: FontWeight.w800,
-              color: const Color(0xFFEF4444),
+              color: AppColors.red500,
             ),
           ),
         ],
@@ -422,13 +423,13 @@ class _PodiumSlot extends StatelessWidget {
   static List<Color> _rankColors(int rank) {
     switch (rank) {
       case 1:
-        return [const Color(0xFFFFD700), const Color(0xFFF59E0B)];
+        return [AppColors.gold, AppColors.amber500];
       case 2:
-        return [const Color(0xFFC0C0C0), const Color(0xFF94A3B8)];
+        return [const Color(0xFFC0C0C0), AppColors.slate400];
       case 3:
         return [const Color(0xFFCD7F32), const Color(0xFFA3713B)];
       default:
-        return [const Color(0xFF3B82F6), const Color(0xFF6366F1)];
+        return [AppColors.blue500, AppColors.indigo500];
     }
   }
 }

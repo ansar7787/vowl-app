@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -28,20 +29,21 @@ class AudioMultipleChoiceSatellite extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     final isSelected = selectedIndex == index;
     final isCorrect = isAnswered && index == correct && isCorrectState == true;
     final isWrong = isAnswered && isSelected && isCorrectState == false;
 
     Color getBgColor() {
-      if (isCorrect) return Colors.greenAccent;
-      if (isWrong) return Colors.redAccent;
+      if (isCorrect) return tokens.gameCorrect;
+      if (isWrong) return tokens.gameIncorrect;
       if (isSelected) return color;
       return isDark ? Colors.grey[900]! : Colors.white;
     }
 
     Color getBorderColor() {
-      if (isCorrect) return Colors.greenAccent;
-      if (isWrong) return Colors.redAccent;
+      if (isCorrect) return tokens.gameCorrect;
+      if (isWrong) return tokens.gameIncorrect;
       if (isSelected) return color;
       return isDark
           ? color.withValues(alpha: 0.3)

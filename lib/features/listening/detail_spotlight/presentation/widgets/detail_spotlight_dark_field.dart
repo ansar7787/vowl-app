@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -99,6 +100,7 @@ class _DetailSpotlightDarkFieldState extends State<DetailSpotlightDarkField> {
 
   @override
   Widget build(BuildContext context) {
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     return LayoutBuilder(
       builder: (context, constraints) {
         if (widget.spotlightPos.value == const Offset(0, 0)) {
@@ -211,9 +213,9 @@ class _DetailSpotlightDarkFieldState extends State<DetailSpotlightDarkField> {
                               widget.isCorrectState == false;
 
                           Color tileColor = isCorrectStateUI
-                              ? Colors.greenAccent
+                              ? tokens.gameCorrect
                               : (isWrongStateUI
-                                    ? Colors.redAccent
+                                    ? tokens.gameIncorrect
                                     : Colors.white);
 
                           bool shouldReveal =

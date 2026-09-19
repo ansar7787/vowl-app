@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -26,6 +27,7 @@ class FindWordMeaningMagnifierField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     final words = passage.split(' ');
     return SizedBox(
       height: 420.h,
@@ -72,13 +74,13 @@ class FindWordMeaningMagnifierField extends StatelessWidget {
                       ),
                       decoration: BoxDecoration(
                         color: showAsCorrect
-                            ? Colors.greenAccent.withValues(
+                            ? tokens.gameCorrect.withValues(
                                 alpha: isDark ? 0.3 : 0.2,
                               )
                             : (isFocused ? color.withValues(alpha: 0.1) : null),
                         borderRadius: BorderRadius.circular(6.r),
                         border: showAsCorrect
-                            ? Border.all(color: Colors.greenAccent, width: 1.5)
+                            ? Border.all(color: tokens.gameCorrect, width: 1.5)
                             : null,
                       ),
                       child: Text(
@@ -87,7 +89,7 @@ class FindWordMeaningMagnifierField extends StatelessWidget {
                           fontFamily: 'Outfit',
                           fontSize: 18.sp,
                           color: showAsCorrect
-                              ? (isDark ? Colors.greenAccent : Colors.green)
+                              ? (isDark ? tokens.gameCorrect : Colors.green)
                               : (isFocused
                                     ? (isDark ? Colors.white : Colors.black87)
                                     : (isDark

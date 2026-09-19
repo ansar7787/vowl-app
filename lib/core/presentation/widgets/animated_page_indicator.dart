@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 class AnimatedPageIndicator extends StatelessWidget {
   final int itemCount;
@@ -31,7 +32,7 @@ class AnimatedPageIndicator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final defaultActiveColor = activeColor ?? const Color(0xFF6366F1);
+    final defaultActiveColor = activeColor ?? AppColors.indigo500;
 
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,

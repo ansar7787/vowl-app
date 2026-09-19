@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -26,6 +27,7 @@ class GuessTitleCargoCrate extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     return Container(
       padding: EdgeInsets.all(24.r),
       decoration: BoxDecoration(
@@ -53,7 +55,9 @@ class GuessTitleCargoCrate extends StatelessWidget {
             builder: (context, candidateData, rejectedData) {
               final isHovered = candidateData.isNotEmpty;
               final Color borderClr = isAnswered
-                  ? (isCorrect == true ? Colors.greenAccent : Colors.redAccent)
+                  ? (isCorrect == true
+                        ? tokens.gameCorrect
+                        : tokens.gameIncorrect)
                   : (isHovered ? color : color.withValues(alpha: 0.4));
 
               return Container(
@@ -80,8 +84,8 @@ class GuessTitleCargoCrate extends StatelessWidget {
                               fontSize: 13.sp,
                               fontWeight: FontWeight.w900,
                               color: isCorrect == true
-                                  ? Colors.greenAccent
-                                  : Colors.redAccent,
+                                  ? tokens.gameCorrect
+                                  : tokens.gameIncorrect,
                             ),
                           )
                         : Text(

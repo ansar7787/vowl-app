@@ -1,3 +1,5 @@
+import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:vowl/core/theme/theme_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -166,6 +168,7 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen>
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     final isMidnight = context.watch<ThemeCubit>().state.isMidnight;
     final theme = LevelThemeHelper.getTheme(
       widget.gameType.name,
@@ -348,16 +351,15 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen>
                                         ),
                                         border: Border.all(
                                           color: quest.difficultyTier == 'Rare'
-                                              ? Colors.redAccent.withValues(
-                                                  alpha: 0.3,
-                                                )
+                                              ? AppColors.gameIncorrect
+                                                    .withValues(alpha: 0.3)
                                               : (quest.difficultyTier ==
                                                         'Advanced'
                                                     ? Colors.orangeAccent
                                                           .withValues(
                                                             alpha: 0.3,
                                                           )
-                                                    : Colors.greenAccent
+                                                    : AppColors.gameCorrect
                                                           .withValues(
                                                             alpha: 0.3,
                                                           )),
@@ -377,11 +379,11 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen>
                                                             .star_border_rounded),
                                             color:
                                                 quest.difficultyTier == 'Rare'
-                                                ? Colors.redAccent
+                                                ? AppColors.gameIncorrect
                                                 : (quest.difficultyTier ==
                                                           'Advanced'
                                                       ? Colors.orangeAccent
-                                                      : Colors.greenAccent),
+                                                      : AppColors.gameCorrect),
                                             size: 14.r,
                                           ),
                                           SizedBox(width: 4.w),
@@ -393,11 +395,12 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen>
                                               fontWeight: FontWeight.w900,
                                               color:
                                                   quest.difficultyTier == 'Rare'
-                                                  ? Colors.redAccent
+                                                  ? AppColors.gameIncorrect
                                                   : (quest.difficultyTier ==
                                                             'Advanced'
                                                         ? Colors.orangeAccent
-                                                        : Colors.greenAccent),
+                                                        : AppColors
+                                                              .gameCorrect),
                                               letterSpacing: 1.5,
                                             ),
                                           ),
@@ -415,7 +418,7 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen>
                                     builder: (context, value, child) {
                                       final color = value > 10
                                           ? theme.primaryColor
-                                          : Colors.redAccent;
+                                          : AppColors.gameIncorrect;
                                       return Column(
                                         children: [
                                           Row(

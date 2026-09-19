@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -18,7 +19,8 @@ class ParagraphSummaryResult extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final displayColor = isCorrect ? Colors.greenAccent : Colors.redAccent;
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
+    final displayColor = isCorrect ? tokens.gameCorrect : tokens.gameIncorrect;
 
     return Container(
       padding: EdgeInsets.all(20.r),
@@ -98,7 +100,7 @@ class ParagraphSummaryResult extends StatelessWidget {
                                 ? Icons.check_circle
                                 : Icons.radio_button_unchecked,
                             color: isCorrect
-                                ? Colors.greenAccent
+                                ? tokens.gameCorrect
                                 : (isDark ? Colors.white30 : Colors.black26),
                             size: 18.r,
                           ),

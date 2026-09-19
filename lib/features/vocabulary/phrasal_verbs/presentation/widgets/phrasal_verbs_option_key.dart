@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -34,6 +35,7 @@ class PhrasalVerbsOptionKey extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     final isSelected = selectedOption == text;
     final isExploding =
         (isAnswered && isCorrect == true && text == correct) ||
@@ -48,11 +50,11 @@ class PhrasalVerbsOptionKey extends StatelessWidget {
 
     if (showCorrect) {
       cardBg = Colors.green;
-      cardBorder = Colors.greenAccent;
+      cardBorder = tokens.gameCorrect;
       textColor = Colors.white;
     } else if (isWrong) {
       cardBg = Colors.red;
-      cardBorder = Colors.redAccent;
+      cardBorder = tokens.gameIncorrect;
       textColor = Colors.white;
     } else if (isSelected) {
       cardBg = color;

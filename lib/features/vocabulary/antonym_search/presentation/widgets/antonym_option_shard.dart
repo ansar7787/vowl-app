@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -52,7 +53,7 @@ class AntonymOptionShard extends StatelessWidget {
                     width: 140.w,
                     height: 70.h,
                     decoration: BoxDecoration(
-                      color: (isDark ? const Color(0xFF1E293B) : Colors.white)
+                      color: (isDark ? AppColors.slate800 : Colors.white)
                           .withValues(alpha: 0.9),
                       borderRadius: BorderRadius.circular(16.r),
                       border: Border.all(

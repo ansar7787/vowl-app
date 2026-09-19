@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
@@ -54,7 +55,7 @@ class _SplashPageState extends State<SplashPage> {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final backgroundColor = isDark ? const Color(0xFF0F172A) : Colors.white;
+    final backgroundColor = isDark ? AppColors.slate900 : Colors.white;
 
     return BlocListener<AuthBloc, AuthState>(
       listenWhen: (prev, curr) => prev.status != curr.status,

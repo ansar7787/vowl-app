@@ -1,3 +1,5 @@
+import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -33,6 +35,7 @@ class PitchModulationDialControl extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     return Row(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
@@ -171,10 +174,10 @@ class PitchModulationDialControl extends StatelessWidget {
 
     if (isAnswered && isSelected) {
       cardColor = correct
-          ? Colors.greenAccent.withValues(alpha: 0.1)
-          : Colors.redAccent.withValues(alpha: 0.1);
-      borderColor = correct ? Colors.greenAccent : Colors.redAccent;
-      textColor = correct ? Colors.greenAccent : Colors.redAccent;
+          ? AppColors.gameCorrect.withValues(alpha: 0.1)
+          : AppColors.gameIncorrect.withValues(alpha: 0.1);
+      borderColor = correct ? AppColors.gameCorrect : AppColors.gameIncorrect;
+      textColor = correct ? AppColors.gameCorrect : AppColors.gameIncorrect;
     } else if (isSelected) {
       cardColor = color.withValues(alpha: 0.2);
       borderColor = color;

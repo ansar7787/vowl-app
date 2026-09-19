@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -13,6 +14,7 @@ import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/presentation/widgets/game_confetti.dart';
 import 'package:vowl/features/auth/data/repositories/gamification_repository_impl.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_dialog_components.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 class KidsGameDialogs {
   static String _safeTr(BuildContext context, String key, String fallback) {
@@ -137,7 +139,7 @@ class KidsGameDialogs {
                                   color:
                                       Theme.of(context).brightness ==
                                           Brightness.dark
-                                      ? const Color(0xFF1E293B)
+                                      ? AppColors.slate800
                                       : Colors.white,
                                   borderRadius: BorderRadius.circular(24.r),
                                   border: Border.all(
@@ -365,30 +367,34 @@ class KidsGameDialogs {
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 24.w),
               child: KidsDialogContainer(
-                primaryColor: const Color(0xFF6366F1), // Moody purple/indigo
+                primaryColor: AppColors.indigo500, // Moody purple/indigo
                 title: context.tr(
                   'games.kids_game_over',
                   fallback: 'Game Over',
                 ),
-                ribbonColor: Colors.redAccent,
+                ribbonColor: AppColors.gameIncorrect,
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Container(
                           padding: EdgeInsets.all(24.r),
                           decoration: BoxDecoration(
-                            color: Colors.redAccent.withValues(alpha: 0.1),
+                            color: AppColors.gameIncorrect.withValues(
+                              alpha: 0.1,
+                            ),
                             shape: BoxShape.circle,
                             boxShadow: [
                               BoxShadow(
-                                color: Colors.redAccent.withValues(alpha: 0.2),
+                                color: AppColors.gameIncorrect.withValues(
+                                  alpha: 0.2,
+                                ),
                                 blurRadius: 20,
                               ),
                             ],
                           ),
                           child: Icon(
                             Icons.heart_broken_rounded,
-                            color: Colors.redAccent,
+                            color: AppColors.gameIncorrect,
                             size: 60.sp,
                           ),
                         )
@@ -469,6 +475,7 @@ class KidsGameDialogs {
     required Color primaryColor,
   }) async {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     final result = await showDialog<bool?>(
       context: context,
       builder: (context) => BackdropFilter(
@@ -480,10 +487,10 @@ class KidsGameDialogs {
           child: Container(
             padding: EdgeInsets.all(20.w),
             decoration: BoxDecoration(
-              color: isDark ? const Color(0xFF1E293B) : Colors.white,
+              color: isDark ? AppColors.slate800 : Colors.white,
               borderRadius: BorderRadius.circular(40.r),
               border: Border.all(
-                color: const Color(0xFF8B5CF6),
+                color: AppColors.violet500,
                 width: 8.w,
               ), // Playful purple
               boxShadow: [
@@ -523,7 +530,7 @@ class KidsGameDialogs {
                       fontFamily: 'Outfit',
                       fontWeight: FontWeight.w900,
                       fontSize: 20.sp,
-                      color: isDark ? Colors.white : const Color(0xFF1E293B),
+                      color: isDark ? Colors.white : AppColors.slate800,
                     ),
                   ),
 
@@ -615,7 +622,7 @@ class KidsGameDialogs {
                                 style: TextStyle(
                                   fontFamily: 'Outfit',
                                   fontWeight: FontWeight.w900,
-                                  color: const Color(0xFF8B5CF6),
+                                  color: AppColors.violet500,
                                   fontSize: 14.sp,
                                   letterSpacing: 1,
                                 ),

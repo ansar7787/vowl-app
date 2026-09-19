@@ -11,6 +11,7 @@ import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/daily_words/domain/entities/word_progress.dart';
 import 'package:vowl/features/daily_words/presentation/bloc/daily_words_bloc.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 class WordBankScreen extends StatefulWidget {
   const WordBankScreen({super.key});
@@ -58,7 +59,7 @@ class _WordBankScreenState extends State<WordBankScreen> {
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
     return Scaffold(
-      backgroundColor: isDark ? const Color(0xFF0F172A) : Colors.white,
+      backgroundColor: isDark ? AppColors.slate900 : Colors.white,
       body: Stack(
         children: [
           const MeshGradientBackground(showLetters: false),
@@ -105,7 +106,7 @@ class _WordBankScreenState extends State<WordBankScreen> {
             onPressed: () => context.pop(),
             icon: Icon(
               Icons.arrow_back_rounded,
-              color: isDark ? Colors.white : const Color(0xFF0F172A),
+              color: isDark ? Colors.white : AppColors.slate900,
             ),
           ),
           SizedBox(width: 8.w),
@@ -116,7 +117,7 @@ class _WordBankScreenState extends State<WordBankScreen> {
                 fontFamily: 'Outfit',
                 fontSize: 24.sp,
                 fontWeight: FontWeight.w900,
-                color: isDark ? Colors.white : const Color(0xFF0F172A),
+                color: isDark ? Colors.white : AppColors.slate900,
               ),
               maxLines: 1,
             ),
@@ -134,7 +135,7 @@ class _WordBankScreenState extends State<WordBankScreen> {
         decoration: BoxDecoration(
           color: isDark
               ? Colors.white.withValues(alpha: 0.1)
-              : const Color(0xFFF1F5F9),
+              : AppColors.slate100,
           borderRadius: BorderRadius.circular(20.r),
           border: Border.all(
             color: isDark
@@ -146,7 +147,7 @@ class _WordBankScreenState extends State<WordBankScreen> {
           children: [
             Icon(
               Icons.search_rounded,
-              color: isDark ? Colors.white54 : const Color(0xFF94A3B8),
+              color: isDark ? Colors.white54 : AppColors.slate400,
               size: 20.r,
             ),
             SizedBox(width: 12.w),
@@ -156,7 +157,7 @@ class _WordBankScreenState extends State<WordBankScreen> {
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   fontSize: 16.sp,
-                  color: isDark ? Colors.white : const Color(0xFF0F172A),
+                  color: isDark ? Colors.white : AppColors.slate900,
                 ),
                 decoration: InputDecoration(
                   border: InputBorder.none,
@@ -167,7 +168,7 @@ class _WordBankScreenState extends State<WordBankScreen> {
                   hintStyle: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 16.sp,
-                    color: isDark ? Colors.white38 : const Color(0xFF94A3B8),
+                    color: isDark ? Colors.white38 : AppColors.slate400,
                   ),
                 ),
               ),
@@ -180,7 +181,7 @@ class _WordBankScreenState extends State<WordBankScreen> {
                 },
                 child: Icon(
                   Icons.close_rounded,
-                  color: isDark ? Colors.white54 : const Color(0xFF94A3B8),
+                  color: isDark ? Colors.white54 : AppColors.slate400,
                   size: 20.r,
                 ),
               ),
@@ -199,19 +200,19 @@ class _WordBankScreenState extends State<WordBankScreen> {
           _StatIndicator(
             label: 'Learning',
             count: (stats['new'] ?? 0) + (stats['learning'] ?? 0),
-            color: const Color(0xFF3B82F6),
+            color: AppColors.blue500,
             isDark: isDark,
           ),
           _StatIndicator(
             label: 'Reviewing',
             count: stats['reviewing'] ?? 0,
-            color: const Color(0xFFF59E0B),
+            color: AppColors.amber500,
             isDark: isDark,
           ),
           _StatIndicator(
             label: 'Mastered',
             count: stats['mastered'] ?? 0,
-            color: const Color(0xFF10B981),
+            color: AppColors.emerald500,
             isDark: isDark,
           ),
         ],
@@ -243,9 +244,7 @@ class _WordBankScreenState extends State<WordBankScreen> {
                           fontFamily: 'Outfit',
                           fontSize: 20.sp,
                           fontWeight: FontWeight.w800,
-                          color: isDark
-                              ? Colors.white
-                              : const Color(0xFF0F172A),
+                          color: isDark ? Colors.white : AppColors.slate900,
                         ),
                         maxLines: 1,
                       ),
@@ -255,9 +254,7 @@ class _WordBankScreenState extends State<WordBankScreen> {
                         style: TextStyle(
                           fontFamily: 'Outfit',
                           fontSize: 12.sp,
-                          color: isDark
-                              ? Colors.white54
-                              : const Color(0xFF64748B),
+                          color: isDark ? Colors.white54 : AppColors.slate500,
                         ),
                         maxLines: 1,
                       ),
@@ -279,15 +276,15 @@ class _WordBankScreenState extends State<WordBankScreen> {
     IconData icon;
 
     if (box == 0 || box <= 2) {
-      color = const Color(0xFF3B82F6);
+      color = AppColors.blue500;
       label = 'Learning';
       icon = Icons.school_rounded;
     } else if (box < 5) {
-      color = const Color(0xFFF59E0B);
+      color = AppColors.amber500;
       label = 'Reviewing';
       icon = Icons.loop_rounded;
     } else {
-      color = const Color(0xFF10B981);
+      color = AppColors.emerald500;
       label = 'Mastered';
       icon = Icons.workspace_premium_rounded;
     }
@@ -345,7 +342,7 @@ class _WordBankScreenState extends State<WordBankScreen> {
                 fontFamily: 'Outfit',
                 fontSize: 16.sp,
                 fontWeight: FontWeight.w500,
-                color: isDark ? Colors.white54 : const Color(0xFF64748B),
+                color: isDark ? Colors.white54 : AppColors.slate500,
               ),
               maxLines: 2,
             ),
@@ -379,7 +376,7 @@ class _StatIndicator extends StatelessWidget {
             fontFamily: 'Outfit',
             fontSize: 24.sp,
             fontWeight: FontWeight.w900,
-            color: isDark ? Colors.white : const Color(0xFF0F172A),
+            color: isDark ? Colors.white : AppColors.slate900,
           ),
         ),
         SizedBox(height: 4.h),

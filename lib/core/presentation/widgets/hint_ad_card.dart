@@ -11,6 +11,7 @@ import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/utils/reward_limit_service.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 /// Glassmorphic card that rewards users with a Strategic Hint after watching
 /// a rewarded video ad.
@@ -127,7 +128,7 @@ class _HintAdCardState extends State<HintAdCard> {
                   fontFamily: 'Outfit',
                   fontSize: 10.sp,
                   fontWeight: FontWeight.w900,
-                  color: const Color(0xFFF59E0B),
+                  color: AppColors.amber500,
                   letterSpacing: 2.0,
                 ),
               ),
@@ -150,7 +151,7 @@ class _HintAdCardState extends State<HintAdCard> {
                           ),
                           child: Icon(
                             Icons.lightbulb_rounded,
-                            color: const Color(0xFFF59E0B),
+                            color: AppColors.amber500,
                             size: 16.r,
                           ),
                         ),
@@ -166,9 +167,7 @@ class _HintAdCardState extends State<HintAdCard> {
                               fontFamily: 'Outfit',
                               fontSize: 14.sp,
                               fontWeight: FontWeight.w900,
-                              color: isDark
-                                  ? Colors.white
-                                  : const Color(0xFF0F172A),
+                              color: isDark ? Colors.white : AppColors.slate900,
                             ),
                             maxLines: 2,
                             overflow: TextOverflow.ellipsis,
@@ -218,8 +217,8 @@ class _HintAdCardState extends State<HintAdCard> {
                                   ? null
                                   : const LinearGradient(
                                       colors: [
-                                        Color(0xFFF59E0B),
-                                        Color(0xFFD97706),
+                                        AppColors.amber500,
+                                        AppColors.amber600,
                                       ],
                                     ),
                               color: isDisabled

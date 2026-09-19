@@ -10,6 +10,7 @@ import 'package:google_mlkit_entity_extraction/google_mlkit_entity_extraction.da
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/ml_services/entity_extraction_service.dart';
 import 'package:vowl/core/utils/ml_monetization_controller.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 /// Bottom-sheet style feedback card shown after the player answers.
 ///
@@ -52,11 +53,10 @@ class ReadingFeedbackCard extends StatelessWidget {
   bool get _success => isCorrect ?? false;
 
   List<Color> get _gradient => _success
-      ? const [Color(0xFF2DD4BF), Color(0xFF10B981)]
-      : const [Color(0xFFF43F5E), Color(0xFFE11D48)];
+      ? const [Color(0xFF2DD4BF), AppColors.emerald500]
+      : const [AppColors.rose500, AppColors.rose700];
 
-  Color get _shadowColor =>
-      _success ? const Color(0xFF10B981) : const Color(0xFFE11D48);
+  Color get _shadowColor => _success ? AppColors.emerald500 : AppColors.rose700;
 
   IconData get _icon =>
       _success ? Icons.check_circle_rounded : Icons.error_rounded;
@@ -139,7 +139,7 @@ class ReadingFeedbackCard extends StatelessWidget {
         width: double.infinity,
         padding: EdgeInsets.all(28.r),
         decoration: BoxDecoration(
-          color: isDark ? const Color(0xFF0F172A) : Colors.white,
+          color: isDark ? AppColors.slate900 : Colors.white,
           borderRadius: BorderRadius.vertical(top: Radius.circular(40.r)),
           boxShadow: [
             BoxShadow(
@@ -386,7 +386,7 @@ class _ExplanationBoxState extends State<_ExplanationBox> {
                 width: double.infinity,
                 padding: EdgeInsets.all(20.w),
                 decoration: BoxDecoration(
-                  color: widget.isDark ? const Color(0xFF1E293B) : Colors.white,
+                  color: widget.isDark ? AppColors.slate800 : Colors.white,
                   borderRadius: BorderRadius.circular(20.r),
                   border: Border.all(
                     color: widget.shadowColor.withValues(alpha: 0.3),

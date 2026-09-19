@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/utils/instruction_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -55,7 +56,7 @@ class _FlashcardSwipeFrontState extends State<FlashcardSwipeFront> {
         width: widget.width,
         height: widget.height,
         decoration: BoxDecoration(
-          color: widget.isDark ? const Color(0xFF1E293B) : Colors.white,
+          color: widget.isDark ? AppColors.slate800 : Colors.white,
           borderRadius: BorderRadius.circular(24.r),
           border: Border.all(
             color: widget.isDark

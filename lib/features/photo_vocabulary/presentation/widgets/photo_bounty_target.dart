@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -31,11 +32,11 @@ class PhotoBountyTarget extends StatelessWidget {
         : Colors.black.withValues(alpha: 0.15);
 
     final foundBgColor = isDark
-        ? const Color(0xFF14B8A6).withValues(alpha: 0.3)
-        : const Color(0xFF14B8A6).withValues(alpha: 0.15);
+        ? AppColors.teal500.withValues(alpha: 0.3)
+        : AppColors.teal500.withValues(alpha: 0.15);
     final foundBorderColor = isDark
         ? const Color(0xFF2DD4BF)
-        : const Color(0xFF14B8A6);
+        : AppColors.teal500;
 
     return Padding(
           padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 12.h),
@@ -61,7 +62,7 @@ class PhotoBountyTarget extends StatelessWidget {
                           ? Icons.verified_rounded
                           : Icons.radar_rounded,
                       color: bountyFound
-                          ? const Color(0xFF14B8A6)
+                          ? AppColors.teal500
                           : (isDark
                                 ? Colors.amber.shade400
                                 : Colors.amber.shade600),

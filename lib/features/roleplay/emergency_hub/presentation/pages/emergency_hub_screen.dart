@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:vowl/core/utils/instruction_helper.dart';
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
@@ -159,6 +160,7 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
 
     return BlocConsumer<RoleplayBloc, RoleplayState>(
       listenWhen: roleplayListenWhen,
@@ -200,7 +202,7 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>
                           children: [
                             RawScrollbar(
                               controller: _scrollController,
-                              thumbColor: Colors.redAccent.withValues(
+                              thumbColor: tokens.gameIncorrect.withValues(
                                 alpha: 0.5,
                               ),
                               radius: Radius.circular(8.r),
@@ -415,7 +417,7 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>
                               SpeakToConfirmOverlay(
                                 expectedText:
                                     quest.correctAnswer ?? _codeController.text,
-                                primaryColor: Colors.redAccent,
+                                primaryColor: tokens.gameIncorrect,
                                 isPositioned: true,
                                 onConfirmed: () {
                                   context.read<RoleplayBloc>().add(

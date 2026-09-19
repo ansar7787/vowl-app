@@ -1,3 +1,5 @@
+import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -30,6 +32,7 @@ class KidsRoomActionPanel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
 
     return ClipRRect(
       borderRadius: BorderRadius.vertical(top: Radius.circular(40.r)),
@@ -79,7 +82,7 @@ class KidsRoomActionPanel extends StatelessWidget {
                   context: context,
                   label: "Feed",
                   emoji: "🍎",
-                  color: Colors.greenAccent.shade700,
+                  color: tokens.gameCorrect.shade700,
                   onTap: onFeed,
                   isDark: isDark,
                 ),
@@ -226,7 +229,7 @@ class KidsRoomActionPanel extends StatelessWidget {
                 fontFamily: 'Outfit',
                 fontSize: 10.sp,
                 fontWeight: FontWeight.w900,
-                color: isDark ? Colors.white : const Color(0xFF1E293B),
+                color: isDark ? Colors.white : AppColors.slate800,
                 letterSpacing: 1.2,
                 shadows: [
                   if (isDark)

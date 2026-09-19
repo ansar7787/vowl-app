@@ -8,6 +8,7 @@ import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/kids_zone/presentation/utils/kids_tts_service.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_fitted_text.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 /// Music Studio Theme for Phonics Game
 /// Space Complexity: O(1)
@@ -155,7 +156,7 @@ class KidsPhonicsLayout extends StatelessWidget {
               borderRadius: BorderRadius.circular(16.r),
               border: Border.all(
                 color: isHovering
-                    ? const Color(0xFF6366F1)
+                    ? AppColors.indigo500
                     : const Color(0xFF52525B),
                 width: isHovering ? 14.r : 12.r,
               ), // Silver monitor frame
@@ -295,9 +296,9 @@ class KidsPhonicsLayout extends StatelessWidget {
     int index,
   ) {
     final colors = [
-      const Color(0xFFEF4444),
+      AppColors.red500,
       const Color(0xFF3B82F6),
-      const Color(0xFFF59E0B),
+      AppColors.amber500,
       const Color(0xFFEC4899),
     ];
     final labelColor = colors[index % colors.length];
@@ -379,7 +380,7 @@ class KidsPhonicsLayout extends StatelessWidget {
                 fontFamily: 'Outfit',
                 fontSize: 16.sp,
                 fontWeight: FontWeight.w700,
-                color: const Color(0xFF0F172A),
+                color: AppColors.slate900,
               ),
             ),
           ),

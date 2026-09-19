@@ -1,3 +1,5 @@
+import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/features/speaking/domain/entities/speaking_quest.dart';
@@ -31,6 +33,7 @@ class DialogueRoleplayExchangeStage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     final bool isCompleted = isAnswered && isCorrect;
 
     return Column(
@@ -74,7 +77,7 @@ class DialogueRoleplayExchangeStage extends StatelessWidget {
           ),
           content: userDisplayAnswer,
           avatarIcon: Icons.face_rounded,
-          color: Colors.greenAccent,
+          color: tokens.gameCorrect,
           isUser: true,
           isDark: isDark,
         ),
@@ -94,7 +97,7 @@ class DialogueRoleplayExchangeStage extends StatelessWidget {
     final soundService = di.sl<SoundService>();
     final bool highlight = isUser && isAnswered && isCorrect;
     final Color borderCol = highlight
-        ? Colors.greenAccent
+        ? AppColors.gameCorrect
         : (isUser
               ? color.withValues(alpha: 0.4)
               : color.withValues(alpha: 0.6));
@@ -109,7 +112,7 @@ class DialogueRoleplayExchangeStage extends StatelessWidget {
         boxShadow: highlight
             ? [
                 BoxShadow(
-                  color: Colors.greenAccent.withValues(alpha: 0.25),
+                  color: AppColors.gameCorrect.withValues(alpha: 0.25),
                   blurRadius: 15.r,
                 ),
               ]
@@ -126,11 +129,11 @@ class DialogueRoleplayExchangeStage extends StatelessWidget {
           CircleAvatar(
             radius: 20.r,
             backgroundColor: highlight
-                ? Colors.greenAccent.withValues(alpha: 0.1)
+                ? AppColors.gameCorrect.withValues(alpha: 0.1)
                 : color.withValues(alpha: 0.1),
             child: Icon(
               avatarIcon,
-              color: highlight ? Colors.greenAccent : color,
+              color: highlight ? AppColors.gameCorrect : color,
               size: 20.r,
             ),
           ),
@@ -147,7 +150,7 @@ class DialogueRoleplayExchangeStage extends StatelessWidget {
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 9.sp,
-                        color: highlight ? Colors.greenAccent : color,
+                        color: highlight ? AppColors.gameCorrect : color,
                         fontWeight: FontWeight.bold,
                         letterSpacing: 1.0,
                       ),

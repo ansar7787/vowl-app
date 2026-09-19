@@ -1,3 +1,5 @@
+import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -22,18 +24,19 @@ class SocialSparkConnectionMonitor extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     Color outlineColor = color;
     if (isAnswered) {
       outlineColor = (isCorrect ?? false)
-          ? Colors.greenAccent
-          : Colors.redAccent;
+          ? tokens.gameCorrect
+          : tokens.gameIncorrect;
     }
 
     return Container(
       width: 1.sw,
       padding: EdgeInsets.all(22.r),
       decoration: BoxDecoration(
-        color: isDark ? const Color(0xFF0F0F1B) : Colors.white,
+        color: isDark ? AppColors.deepDark : Colors.white,
         borderRadius: BorderRadius.circular(30.r),
         border: Border.all(
           color: outlineColor.withValues(alpha: 0.2),

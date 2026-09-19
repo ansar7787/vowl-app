@@ -11,6 +11,7 @@ import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/offline_play_gate_service.dart';
 import 'package:vowl/core/presentation/widgets/vowl_button_spinner.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 /// Shown when a free user exhausts their offline play quota.
 ///
@@ -154,7 +155,7 @@ class _OfflineQuotaExhaustedPageState extends State<OfflineQuotaExhaustedPage> {
 
           // 2. Solid color tint overlay
           Container(
-            color: (isDark ? const Color(0xFF0F172A) : Colors.white).withValues(
+            color: (isDark ? AppColors.slate900 : Colors.white).withValues(
               alpha: 0.92,
             ),
           ),
@@ -257,7 +258,7 @@ class _OfflineQuotaExhaustedPageState extends State<OfflineQuotaExhaustedPage> {
                                   letterSpacing: 2,
                                   color: isDark
                                       ? Colors.white
-                                      : const Color(0xFF0F172A),
+                                      : AppColors.slate900,
                                 ),
                               )
                               .animate()
@@ -300,10 +301,10 @@ class _OfflineQuotaExhaustedPageState extends State<OfflineQuotaExhaustedPage> {
                                         fallback: 'WATCH AD FOR +3 LEVELS',
                                       ),
                                       gradient: const [
-                                        Color(0xFF10B981),
+                                        AppColors.emerald500,
                                         Color(0xFF059669),
                                       ],
-                                      glowColor: const Color(0xFF10B981),
+                                      glowColor: AppColors.emerald500,
                                     );
                                   },
                                 )
@@ -326,8 +327,8 @@ class _OfflineQuotaExhaustedPageState extends State<OfflineQuotaExhaustedPage> {
                                       'connectivity.retry_button',
                                       fallback: 'RECONNECT',
                                     ),
-                                    gradient: const [
-                                      Color(0xFF6366F1),
+                                    gradient: [
+                                      Theme.of(context).colorScheme.primary,
                                       Color(0xFF1D4ED8),
                                     ],
                                     glowColor: Colors.blue,

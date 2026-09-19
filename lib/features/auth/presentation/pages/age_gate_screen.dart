@@ -10,6 +10,7 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/ad_service.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 /// A one-time age verification screen shown before the user enters the app.
 ///
@@ -40,7 +41,7 @@ class AgeGateScreen extends StatelessWidget {
           final isDarkSheet = Theme.of(ctx).brightness == Brightness.dark;
           return Container(
             decoration: BoxDecoration(
-              color: isDarkSheet ? const Color(0xFF1E293B) : Colors.white,
+              color: isDarkSheet ? AppColors.slate800 : Colors.white,
               borderRadius: BorderRadius.vertical(top: Radius.circular(24.r)),
             ),
             padding: EdgeInsets.fromLTRB(
@@ -212,12 +213,10 @@ class AgeGateScreen extends StatelessWidget {
       value: SystemUiOverlayStyle(
         statusBarColor: Colors.transparent,
         statusBarIconBrightness: isDark ? Brightness.light : Brightness.dark,
-        systemNavigationBarColor: isDark
-            ? const Color(0xFF0F172A)
-            : Colors.white,
+        systemNavigationBarColor: isDark ? AppColors.slate900 : Colors.white,
       ),
       child: Scaffold(
-        backgroundColor: isDark ? const Color(0xFF0F172A) : Colors.white,
+        backgroundColor: isDark ? AppColors.slate900 : Colors.white,
         body: SafeArea(
           child: Center(
             child: ConstrainedBox(
@@ -249,8 +248,10 @@ class AgeGateScreen extends StatelessWidget {
                                           decoration: BoxDecoration(
                                             gradient: const LinearGradient(
                                               colors: [
-                                                Color(0xFF6366F1),
-                                                Color(0xFF8B5CF6),
+                                                Theme.of(
+                                                  context,
+                                                ).colorScheme.primary,
+                                                AppColors.violet500,
                                               ],
                                               begin: Alignment.topLeft,
                                               end: Alignment.bottomRight,
@@ -300,7 +301,7 @@ class AgeGateScreen extends StatelessWidget {
                                       fontWeight: FontWeight.w900,
                                       color: isDark
                                           ? Colors.white
-                                          : const Color(0xFF0F172A),
+                                          : AppColors.slate900,
                                       letterSpacing: -0.5,
                                     ),
                                     textAlign: TextAlign.center,
@@ -358,8 +359,10 @@ class AgeGateScreen extends StatelessWidget {
                                             decoration: BoxDecoration(
                                               gradient: const LinearGradient(
                                                 colors: [
-                                                  Color(0xFF6366F1),
-                                                  Color(0xFF8B5CF6),
+                                                  Theme.of(
+                                                    context,
+                                                  ).colorScheme.primary,
+                                                  AppColors.violet500,
                                                 ],
                                               ),
                                               borderRadius:
@@ -447,8 +450,8 @@ class AgeGateScreen extends StatelessWidget {
                                             ),
                                             decoration: BoxDecoration(
                                               color: isDark
-                                                  ? const Color(0xFF1E293B)
-                                                  : const Color(0xFFF1F5F9),
+                                                  ? AppColors.slate800
+                                                  : AppColors.slate100,
                                               borderRadius:
                                                   BorderRadius.circular(16.r),
                                               border: Border.all(

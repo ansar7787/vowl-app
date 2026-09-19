@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -29,6 +30,7 @@ class SentenceCorrectionDiagnosticWord extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     Color itemColor = Colors.transparent;
     Color borderColor = primaryColor.withValues(alpha: 0.1);
     double borderWidth = 1;
@@ -44,24 +46,24 @@ class SentenceCorrectionDiagnosticWord extends StatelessWidget {
     }
 
     if (isCorrectZap) {
-      itemColor = Colors.greenAccent.withValues(alpha: 0.15);
-      borderColor = Colors.greenAccent;
+      itemColor = tokens.gameCorrect.withValues(alpha: 0.15);
+      borderColor = tokens.gameCorrect;
       borderWidth = 2;
-      textColor = Colors.greenAccent;
+      textColor = tokens.gameCorrect;
       shadows = [
         BoxShadow(
-          color: Colors.greenAccent.withValues(alpha: 0.3),
+          color: tokens.gameCorrect.withValues(alpha: 0.3),
           blurRadius: 15,
         ),
       ];
     } else if (isWrongZap) {
-      itemColor = Colors.redAccent.withValues(alpha: 0.15);
-      borderColor = Colors.redAccent;
+      itemColor = tokens.gameIncorrect.withValues(alpha: 0.15);
+      borderColor = tokens.gameIncorrect;
       borderWidth = 2;
-      textColor = Colors.redAccent;
+      textColor = tokens.gameIncorrect;
       shadows = [
         BoxShadow(
-          color: Colors.redAccent.withValues(alpha: 0.3),
+          color: tokens.gameIncorrect.withValues(alpha: 0.3),
           blurRadius: 15,
         ),
       ];
@@ -95,14 +97,14 @@ class SentenceCorrectionDiagnosticWord extends StatelessWidget {
                 if (isCorrectZap) ...[
                   Icon(
                     Icons.check_circle_rounded,
-                    color: Colors.greenAccent,
+                    color: tokens.gameCorrect,
                     size: 20.sp,
                   ),
                   SizedBox(width: 6.w),
                 ] else if (isWrongZap) ...[
                   Icon(
                     Icons.cancel_rounded,
-                    color: Colors.redAccent,
+                    color: tokens.gameIncorrect,
                     size: 20.sp,
                   ),
                   SizedBox(width: 6.w),
@@ -129,8 +131,8 @@ class SentenceCorrectionDiagnosticWord extends StatelessWidget {
         .shimmer(
           duration: 400.ms,
           color: isCorrectZap
-              ? Colors.greenAccent
-              : (isWrongZap ? Colors.redAccent : Colors.orangeAccent),
+              ? tokens.gameCorrect
+              : (isWrongZap ? tokens.gameIncorrect : Colors.orangeAccent),
         )
         .shake(duration: 300.ms, hz: isWrongZap ? 10 : 0)
         .scale(

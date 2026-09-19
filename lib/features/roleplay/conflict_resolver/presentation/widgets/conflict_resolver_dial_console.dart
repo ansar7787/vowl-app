@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -23,6 +24,7 @@ class ConflictResolverDialConsole extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     final double dialDiameter = 220.r;
     final Offset dialCenter = Offset(dialDiameter / 2, dialDiameter / 2);
     final bool isMatched = (rotation - targetValue).abs() < 0.12;
@@ -100,7 +102,7 @@ class ConflictResolverDialConsole extends StatelessWidget {
                         ],
                         border: Border.all(
                           color: isMatched
-                              ? Colors.greenAccent
+                              ? tokens.gameCorrect
                               : color.withValues(alpha: 0.3),
                           width: 3,
                         ),
@@ -115,7 +117,7 @@ class ConflictResolverDialConsole extends StatelessWidget {
                               width: 6.r,
                               height: 16.r,
                               decoration: BoxDecoration(
-                                color: isMatched ? Colors.greenAccent : color,
+                                color: isMatched ? tokens.gameCorrect : color,
                                 borderRadius: BorderRadius.circular(3.r),
                               ),
                             ),
@@ -125,7 +127,7 @@ class ConflictResolverDialConsole extends StatelessWidget {
                                 ? Icons.check_rounded
                                 : Icons.tune_rounded,
                             color: isMatched
-                                ? Colors.greenAccent
+                                ? tokens.gameCorrect
                                 : color.withValues(alpha: 0.7),
                             size: 32.r,
                           ),
@@ -159,10 +161,10 @@ class ConflictResolverDialConsole extends StatelessWidget {
                   fontSize: 12.sp,
                   fontWeight: FontWeight.bold,
                   color: isMatched
-                      ? Colors.greenAccent
+                      ? tokens.gameCorrect
                       : Color.lerp(
                           Colors.cyanAccent,
-                          Colors.redAccent,
+                          tokens.gameIncorrect,
                           rotation,
                         ),
                 ),

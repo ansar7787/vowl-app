@@ -1,7 +1,8 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 
 abstract final class AcademicWordColors {
-  static const Color cardDark = Color(0xFF1E293B);
+  static const Color cardDark = AppColors.slate800;
   static const Color shardDark = Color(0xFF334155);
   static const Color slotError = Colors.red;
 }

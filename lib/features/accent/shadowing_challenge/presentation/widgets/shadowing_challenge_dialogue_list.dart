@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 class ShadowingChallengeDialogueList extends StatelessWidget {
   final List<String> options;
@@ -42,7 +43,7 @@ class ShadowingChallengeDialogueList extends StatelessWidget {
     final bool showResult = isAnswered && isSelected;
 
     Color bubbleColor = isDark
-        ? const Color(0xFF1E293B).withValues(alpha: 0.6)
+        ? AppColors.slate800.withValues(alpha: 0.6)
         : Colors.white.withValues(alpha: 0.7);
     Color borderColor = color.withValues(alpha: 0.2);
     Color textColor = isDark ? Colors.white70 : Colors.black87;
@@ -50,10 +51,10 @@ class ShadowingChallengeDialogueList extends StatelessWidget {
 
     if (showResult) {
       bubbleColor = correct
-          ? const Color(0xFF10B981).withValues(alpha: 0.15)
-          : const Color(0xFFE11D48).withValues(alpha: 0.15);
-      borderColor = correct ? const Color(0xFF10B981) : const Color(0xFFE11D48);
-      textColor = correct ? const Color(0xFF10B981) : const Color(0xFFE11D48);
+          ? AppColors.emerald500.withValues(alpha: 0.15)
+          : AppColors.rose700.withValues(alpha: 0.15);
+      borderColor = correct ? AppColors.emerald500 : AppColors.rose700;
+      textColor = correct ? AppColors.emerald500 : AppColors.rose700;
       iconData = correct
           ? Icons.check_circle_outline_rounded
           : Icons.cancel_outlined;

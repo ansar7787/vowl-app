@@ -1,3 +1,5 @@
+import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -24,6 +26,7 @@ class OpinionWritingScaleInterface extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     return SizedBox(
       height: 210.h,
       child: Stack(
@@ -100,11 +103,11 @@ class OpinionWritingScaleInterface extends StatelessWidget {
         final highlight = candidateData.isNotEmpty;
 
         final successColor = isDark
-            ? Colors.greenAccent
+            ? AppColors.gameCorrect
             : const Color(0xFF16A34A);
         final headerColor = isLeft
             ? successColor
-            : (isDark ? Colors.redAccent : const Color(0xFFDC2626));
+            : (isDark ? AppColors.gameIncorrect : const Color(0xFFDC2626));
 
         return Column(
           mainAxisSize: MainAxisSize.min,

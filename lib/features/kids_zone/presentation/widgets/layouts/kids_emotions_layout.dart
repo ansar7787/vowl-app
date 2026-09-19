@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/utils/instruction_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -154,12 +155,10 @@ class KidsEmotionsLayout extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: isHovering
                       ? const Color(0xFF334155)
-                      : const Color(0xFF1E293B), // Dark backstage
+                      : AppColors.slate800, // Dark backstage
                   borderRadius: BorderRadius.circular(8.r),
                   border: Border.all(
-                    color: isHovering
-                        ? const Color(0xFFD97706)
-                        : const Color(0xFF78350F),
+                    color: isHovering ? AppColors.amber600 : AppColors.amber900,
                     width: 8.r,
                   ),
                   boxShadow: [
@@ -243,7 +242,7 @@ class KidsEmotionsLayout extends StatelessWidget {
                     ),
                     border: Border(
                       right: BorderSide(
-                        color: const Color(0xFFE11D48),
+                        color: AppColors.rose700,
                         width: 4.w,
                       ), // Curtain fold highlight
                     ),
@@ -263,10 +262,7 @@ class KidsEmotionsLayout extends StatelessWidget {
                       right: Radius.circular(4.r),
                     ),
                     border: Border(
-                      left: BorderSide(
-                        color: const Color(0xFFE11D48),
-                        width: 4.w,
-                      ),
+                      left: BorderSide(color: AppColors.rose700, width: 4.w),
                     ),
                   ),
                 ),
@@ -339,7 +335,7 @@ class KidsEmotionsLayout extends StatelessWidget {
                 fontFamily: 'Outfit',
                 fontSize: 16.sp,
                 fontWeight: FontWeight.w700,
-                color: const Color(0xFF1E293B),
+                color: AppColors.slate800,
               ),
               textAlign: TextAlign.center,
             ),

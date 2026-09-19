@@ -9,6 +9,7 @@ import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/forgot_password_cubit.dart';
 import 'package:vowl/features/auth/domain/constants/auth_validators.dart';
 import 'package:vowl/features/auth/presentation/widgets/auth_decoration.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 // ---------------------------------------------------------------------------
 // Email Input
@@ -182,7 +183,7 @@ class RememberPasswordFooter extends StatelessWidget {
             context.tr('auth.login', fallback: 'Log In'),
             style: const TextStyle(
               fontFamily: 'Outfit',
-              color: Color(0xFF6366F1),
+              color: Theme.of(context).colorScheme.primary,
               fontWeight: FontWeight.w900,
             ),
           ),

@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class BranchingPathPainter extends CustomPainter {
@@ -36,11 +37,11 @@ class BranchingPathPainter extends CustomPainter {
       if (isAnswered) {
         if (isSelected) {
           lineColor = (i == correctIndex)
-              ? Colors.greenAccent
-              : Colors.redAccent;
+              ? AppColors.gameCorrect
+              : AppColors.gameIncorrect;
           strokeWidth = 3.0;
         } else if (i == correctIndex) {
-          lineColor = Colors.greenAccent.withValues(alpha: 0.4);
+          lineColor = AppColors.gameCorrect.withValues(alpha: 0.4);
           strokeWidth = 2.0;
         } else {
           lineColor = Colors.transparent;

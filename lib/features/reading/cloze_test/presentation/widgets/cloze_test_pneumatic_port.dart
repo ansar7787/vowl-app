@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/tech_pattern_overlay.dart';
@@ -27,6 +28,7 @@ class ClozeTestPneumaticPort extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     final parts = text.split('____');
     return Container(
       padding: EdgeInsets.all(20.r),
@@ -78,11 +80,11 @@ class ClozeTestPneumaticPort extends StatelessWidget {
                                   ),
                                   decoration: BoxDecoration(
                                     color: correctDocked
-                                        ? Colors.greenAccent.withValues(
+                                        ? tokens.gameCorrect.withValues(
                                             alpha: 0.25,
                                           )
                                         : (wrongDocked
-                                              ? Colors.redAccent.withValues(
+                                              ? tokens.gameIncorrect.withValues(
                                                   alpha: 0.25,
                                                 )
                                               : (dockedOption != null
@@ -97,9 +99,9 @@ class ClozeTestPneumaticPort extends StatelessWidget {
                                     borderRadius: BorderRadius.circular(10.r),
                                     border: Border.all(
                                       color: correctDocked
-                                          ? Colors.greenAccent
+                                          ? tokens.gameCorrect
                                           : (wrongDocked
-                                                ? Colors.redAccent
+                                                ? tokens.gameIncorrect
                                                 : (dockedOption != null
                                                       ? color
                                                       : (isDark
@@ -112,9 +114,10 @@ class ClozeTestPneumaticPort extends StatelessWidget {
                                         BoxShadow(
                                           color:
                                               (correctDocked
-                                                      ? Colors.greenAccent
+                                                      ? tokens.gameCorrect
                                                       : (wrongDocked
-                                                            ? Colors.redAccent
+                                                            ? tokens
+                                                                  .gameIncorrect
                                                             : color))
                                                   .withValues(alpha: 0.3),
                                           blurRadius: 15,

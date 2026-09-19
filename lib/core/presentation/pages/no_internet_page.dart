@@ -7,6 +7,7 @@ import 'package:lucide_icons/lucide_icons.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/presentation/widgets/vowl_button_spinner.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 /// Premium glassmorphic offline page with accessible retry interaction.
 ///
@@ -69,7 +70,7 @@ class _NoInternetPageState extends State<NoInternetPage> {
 
           // 2. Solid color tint overlay
           Container(
-            color: (isDark ? const Color(0xFF0F172A) : Colors.white).withValues(
+            color: (isDark ? AppColors.slate900 : Colors.white).withValues(
               alpha: 0.85,
             ),
           ),
@@ -150,7 +151,7 @@ class _NoInternetPageState extends State<NoInternetPage> {
                                   letterSpacing: 2,
                                   color: isDark
                                       ? Colors.white
-                                      : const Color(0xFF0F172A),
+                                      : AppColors.slate900,
                                 ),
                               )
                               .animate()
@@ -403,7 +404,10 @@ class _RetryButton extends StatelessWidget {
                           Colors.blue.withValues(alpha: 0.5),
                           Colors.blue.withValues(alpha: 0.3),
                         ]
-                      : const [Color(0xFF6366F1), Color(0xFF1D4ED8)],
+                      : [
+                          Theme.of(context).colorScheme.primary,
+                          Color(0xFF1D4ED8),
+                        ],
                 ),
                 boxShadow: [
                   BoxShadow(

@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -26,7 +27,7 @@ class MedicalConsultBodyDiagram extends StatelessWidget {
       padding: EdgeInsets.all(20.r),
       decoration: BoxDecoration(
         color: isDark
-            ? const Color(0xFF0F172A).withValues(alpha: 0.5)
+            ? AppColors.slate900.withValues(alpha: 0.5)
             : primaryColor.withValues(alpha: 0.05),
         borderRadius: BorderRadius.circular(24.r),
         border: Border.all(

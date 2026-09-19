@@ -8,6 +8,7 @@ import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/kids_zone/presentation/utils/kids_tts_service.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_fitted_text.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 /// School Bus Theme for School Game
 /// Space Complexity: O(1)
@@ -72,7 +73,7 @@ class KidsSchoolLayout extends StatelessWidget {
                     height: 50.h,
                     width: double.infinity,
                     decoration: BoxDecoration(
-                      color: const Color(0xFF1E293B), // Dark seat color
+                      color: AppColors.slate800, // Dark seat color
                       borderRadius: BorderRadius.vertical(
                         top: Radius.circular(16.r),
                       ),
@@ -221,10 +222,10 @@ class KidsSchoolLayout extends StatelessWidget {
     int index,
   ) {
     final colors = [
-      const Color(0xFFEF4444), // Red
+      AppColors.red500, // Red
       const Color(0xFF3B82F6), // Blue
-      const Color(0xFF10B981), // Green
-      const Color(0xFF8B5CF6), // Purple
+      AppColors.emerald500, // Green
+      AppColors.violet500, // Purple
     ];
     final color = colors[index % colors.length];
 

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/widgets/translate_button_widget.dart';
@@ -69,10 +70,10 @@ class GameFeedbackCard extends StatelessWidget {
     this.isTwoStageGame = false,
   });
 
-  static const _successGradient = [Color(0xFF2DD4BF), Color(0xFF10B981)];
-  static const _failGradient = [Color(0xFFF43F5E), Color(0xFFE11D48)];
-  static const _successShadow = Color(0xFF10B981);
-  static const _failShadow = Color(0xFFE11D48);
+  static const _successGradient = [AppColors.teal400, AppColors.emerald500];
+  static const _failGradient = [AppColors.rose500, AppColors.rose700];
+  static const _successShadow = AppColors.emerald500;
+  static const _failShadow = AppColors.rose700;
 
   @override
   Widget build(BuildContext context) {

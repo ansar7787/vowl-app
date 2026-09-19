@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
@@ -20,7 +21,7 @@ class KidsRoomDecorSheet extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         color: Theme.of(context).brightness == Brightness.dark
-            ? const Color(0xFF1E293B)
+            ? AppColors.slate800
             : Colors.white,
         borderRadius: BorderRadius.vertical(top: Radius.circular(40.r)),
         border: Border.all(color: Colors.amber, width: 4.w),

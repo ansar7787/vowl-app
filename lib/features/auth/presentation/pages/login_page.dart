@@ -16,6 +16,7 @@ import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/login_cubit.dart';
 import 'package:vowl/features/auth/presentation/widgets/login_widgets.dart';
 import 'package:vowl/features/home/presentation/widgets/vowlbot_auth_companion.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -114,7 +115,7 @@ class _LoginViewState extends State<LoginView> {
           final isDark = Theme.of(context).brightness == Brightness.dark;
           final bgColor = isMidnight
               ? const Color(0xFF000000)
-              : (isDark ? const Color(0xFF0F172A) : const Color(0xFFF8FAFC));
+              : (isDark ? AppColors.slate900 : const Color(0xFFF8FAFC));
 
           return BlocBuilder<LoginCubit, LoginState>(
             buildWhen: (previous, current) =>
@@ -402,7 +403,9 @@ class _LoginViewState extends State<LoginView> {
                                                 ),
                                                 style: const TextStyle(
                                                   fontFamily: 'Outfit',
-                                                  color: Color(0xFF6366F1),
+                                                  color: Theme.of(
+                                                    context,
+                                                  ).colorScheme.primary,
                                                   fontWeight: FontWeight.w900,
                                                 ),
                                               ),

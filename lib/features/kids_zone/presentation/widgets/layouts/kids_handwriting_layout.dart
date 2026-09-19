@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'dart:async';
 import 'package:flutter/material.dart' hide Ink;
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -160,7 +161,7 @@ class _KidsHandwritingLayoutState extends State<KidsHandwritingLayout> {
                 width: 300.w,
                 padding: EdgeInsets.symmetric(vertical: 20.h),
                 decoration: BoxDecoration(
-                  color: isDark ? const Color(0xFF1E293B) : Colors.white,
+                  color: isDark ? AppColors.slate800 : Colors.white,
                   borderRadius: BorderRadius.circular(32.r),
                   border: Border.all(
                     color: widget.primaryColor.withValues(alpha: 0.3),

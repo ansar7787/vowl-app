@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -120,7 +121,7 @@ class ReactionCore extends StatelessWidget {
                                       fontWeight: FontWeight.w900,
                                       color: isDark
                                           ? Colors.white
-                                          : const Color(0xFF0F172A),
+                                          : AppColors.slate900,
                                       letterSpacing: 4,
                                     ),
                                   ),

@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -25,6 +26,7 @@ class ReadingConclusionTerminals extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     return Column(
       children: List.generate(
         options.length,
@@ -49,9 +51,9 @@ class ReadingConclusionTerminals extends StatelessWidget {
                   padding: EdgeInsets.all(18.r),
                   decoration: BoxDecoration(
                     color: isCorrect
-                        ? Colors.greenAccent.withValues(alpha: 0.25)
+                        ? tokens.gameCorrect.withValues(alpha: 0.25)
                         : (isWrong
-                              ? Colors.redAccent.withValues(alpha: 0.25)
+                              ? tokens.gameIncorrect.withValues(alpha: 0.25)
                               : (isSelected
                                     ? color.withValues(alpha: 0.15)
                                     : (isDark
@@ -63,8 +65,8 @@ class ReadingConclusionTerminals extends StatelessWidget {
                     border: Border.all(
                       color: isCorrect || isWrong || isSelected
                           ? (isCorrect
-                                ? Colors.greenAccent
-                                : (isWrong ? Colors.redAccent : color))
+                                ? tokens.gameCorrect
+                                : (isWrong ? tokens.gameIncorrect : color))
                           : (isDark ? Colors.white24 : Colors.black12),
                       width: 2,
                     ),

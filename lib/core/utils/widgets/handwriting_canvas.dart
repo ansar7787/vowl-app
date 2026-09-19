@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart' hide Ink;
 import 'package:google_mlkit_digital_ink_recognition/google_mlkit_digital_ink_recognition.dart';
 import 'package:lucide_icons/lucide_icons.dart';
@@ -74,7 +75,7 @@ class HandwritingCanvasState extends State<HandwritingCanvas> {
               onPressed: _undoStroke,
             ),
             IconButton(
-              icon: const Icon(LucideIcons.trash2, color: Colors.redAccent),
+              icon: Icon(LucideIcons.trash2, color: AppColors.gameIncorrect),
               onPressed: clearCanvas,
             ),
           ],

@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:vowl/core/utils/instruction_helper.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
@@ -98,6 +99,7 @@ class _SkimmingScanningScreenState extends State<SkimmingScanningScreen>
   Widget build(BuildContext context) {
     final theme = LevelThemeHelper.getTheme('reading', level: widget.level);
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
 
     return BlocConsumer<ReadingBloc, ReadingState>(
       listenWhen: readingListenWhen,
@@ -191,7 +193,7 @@ class _SkimmingScanningScreenState extends State<SkimmingScanningScreen>
                                     style: TextStyle(
                                       fontFamily: 'Outfit',
                                       color: isAnsweredNotifier.value
-                                          ? Colors.greenAccent
+                                          ? tokens.gameCorrect
                                           : theme.primaryColor,
                                       fontSize: 12.sp,
                                       letterSpacing: 2,

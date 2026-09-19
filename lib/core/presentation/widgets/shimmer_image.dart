@@ -1,3 +1,5 @@
+import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:shimmer/shimmer.dart';
@@ -26,16 +28,13 @@ class ShimmerImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
 
-    final baseColor = isDark
-        ? const Color(0xFF1E293B)
-        : const Color(0xFFE2E8F0);
+    final baseColor = isDark ? AppColors.slate800 : const Color(0xFFE2E8F0);
     final highlightColor = isDark
         ? const Color(0xFF334155)
-        : const Color(0xFFF1F5F9);
-    final placeholderBg = isDark
-        ? const Color(0xFF0F172A)
-        : const Color(0xFFF8FAFC);
+        : AppColors.slate100;
+    final placeholderBg = isDark ? AppColors.slate900 : const Color(0xFFF8FAFC);
     final iconColor = isDark ? Colors.white24 : Colors.black26;
 
     if (imageUrl.isEmpty) {
@@ -75,7 +74,7 @@ class ShimmerImage extends StatelessWidget {
           width: width,
           height: height,
           color: placeholderBg,
-          child: const Icon(Icons.error_outline, color: Colors.redAccent),
+          child: Icon(Icons.error_outline, color: tokens.gameIncorrect),
         ),
       ),
     );

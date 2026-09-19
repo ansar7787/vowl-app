@@ -14,6 +14,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:vowl/core/utils/kids_game_helper.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 /// Themed section groupings for the category grid.
 /// This transforms the flat wall of 25 cards into a scannable, grouped menu.
@@ -27,7 +28,7 @@ class _SectionDef {
 }
 
 const _kSections = [
-  _SectionDef('Language', '📚', Color(0xFFF43F5E), [
+  _SectionDef('Language', '📚', AppColors.rose500, [
     'handwriting',
     'alphabet',
     'phonics',
@@ -35,14 +36,14 @@ const _kSections = [
     'opposites',
     'prepositions',
   ]),
-  _SectionDef('World', '🌍', Color(0xFF10B981), [
+  _SectionDef('World', '🌍', AppColors.emerald500, [
     'animals',
     'nature',
     'weather',
     'day_night',
     'transport',
   ]),
-  _SectionDef('Life', '🏠', Color(0xFF8B5CF6), [
+  _SectionDef('Life', '🏠', AppColors.violet500, [
     'family',
     'school',
     'routine',
@@ -56,7 +57,7 @@ const _kSections = [
     'shapes',
     'time',
   ]),
-  _SectionDef('Skills', '⭐', Color(0xFFF59E0B), [
+  _SectionDef('Skills', '⭐', AppColors.amber500, [
     'fruits',
     'body_parts',
     'clothing',
@@ -331,7 +332,7 @@ class _KidsCategoryGridState extends State<KidsCategoryGrid> {
       child: Container(
         padding: EdgeInsets.all(20.r),
         decoration: BoxDecoration(
-          color: widget.isDark ? const Color(0xFF1E293B) : Colors.white,
+          color: widget.isDark ? AppColors.slate800 : Colors.white,
           borderRadius: BorderRadius.circular(32.r),
           border: Border.all(color: color, width: 3.w),
           boxShadow: [
@@ -409,7 +410,7 @@ class _KidsCategoryGridState extends State<KidsCategoryGrid> {
                           fontWeight: FontWeight.w900,
                           color: widget.isDark
                               ? Colors.white
-                              : const Color(0xFF1E293B),
+                              : AppColors.slate800,
                           height: 1.1,
                         ),
                       ),
@@ -543,7 +544,7 @@ class _DownloadModelDialogState extends State<_DownloadModelDialog> {
   @override
   Widget build(BuildContext context) {
     return Dialog(
-      backgroundColor: const Color(0xFF1E293B),
+      backgroundColor: AppColors.slate800,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(32.r)),
       child: Padding(
         padding: EdgeInsets.all(32.r),

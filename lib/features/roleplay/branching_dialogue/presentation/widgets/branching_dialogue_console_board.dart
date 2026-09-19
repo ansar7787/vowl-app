@@ -1,3 +1,5 @@
+import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -38,6 +40,7 @@ class BranchingDialogueConsoleBoard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     return Container(
       width: 1.sw,
       height: 400.h,
@@ -168,8 +171,8 @@ class BranchingDialogueConsoleBoard extends StatelessWidget {
     Color termColor = color;
     if (isAnswered && isSelected) {
       termColor = (index == correctIndex)
-          ? Colors.greenAccent
-          : Colors.redAccent;
+          ? AppColors.gameCorrect
+          : AppColors.gameIncorrect;
     }
 
     return AnimatedPositioned(
@@ -194,7 +197,7 @@ class BranchingDialogueConsoleBoard extends StatelessWidget {
                   shape: BoxShape.circle,
                   color: isHovered
                       ? color
-                      : (isDark ? const Color(0xFF0F0F1B) : Colors.white),
+                      : (isDark ? AppColors.deepDark : Colors.white),
                   border: Border.all(
                     color: isSelected
                         ? termColor
@@ -254,8 +257,10 @@ class BranchingDialogueConsoleBoard extends StatelessWidget {
                     decoration: BoxDecoration(
                       color: (isSelected && isAnswered)
                           ? (index == correctIndex
-                                ? Colors.greenAccent.withValues(alpha: 0.2)
-                                : Colors.redAccent.withValues(alpha: 0.2))
+                                ? AppColors.gameCorrect.withValues(alpha: 0.2)
+                                : AppColors.gameIncorrect.withValues(
+                                    alpha: 0.2,
+                                  ))
                           : color.withValues(alpha: 0.1),
                       borderRadius: BorderRadius.circular(4.r),
                     ),
@@ -267,8 +272,8 @@ class BranchingDialogueConsoleBoard extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                         color: (isSelected && isAnswered)
                             ? (index == correctIndex
-                                  ? Colors.greenAccent
-                                  : Colors.redAccent)
+                                  ? AppColors.gameCorrect
+                                  : AppColors.gameIncorrect)
                             : color,
                       ),
                     ),

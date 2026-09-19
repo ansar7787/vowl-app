@@ -1,3 +1,5 @@
+import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -138,6 +140,7 @@ class _PartsOfSpeechScreenState extends State<PartsOfSpeechScreen>
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     final theme = LevelThemeHelper.getTheme('grammar', level: widget.level);
 
     return BlocConsumer<GrammarBloc, GrammarState>(
@@ -325,7 +328,7 @@ class _PosQuestLayout extends StatelessWidget {
     Colors.blueAccent,
     Colors.purpleAccent,
     Colors.orangeAccent,
-    Colors.greenAccent,
+    AppColors.gameCorrect,
   ];
 
   static const _vortexAlignments = [

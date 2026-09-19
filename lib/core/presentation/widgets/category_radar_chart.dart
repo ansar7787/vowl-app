@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'dart:math' as math;
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -135,7 +136,7 @@ class _CategoryRadarChartState extends State<CategoryRadarChart> {
                   fontFamily: 'Outfit',
                   fontSize: 14.sp,
                   fontWeight: FontWeight.w900,
-                  color: widget.isDark ? Colors.white : const Color(0xFF0F172A),
+                  color: widget.isDark ? Colors.white : AppColors.slate900,
                   letterSpacing: 2,
                 ),
               ),

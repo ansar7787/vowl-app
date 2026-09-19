@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -165,7 +166,7 @@ class _KidsPickerTemplateState extends State<KidsPickerTemplate> {
                         fontFamily: 'Outfit',
                         fontSize: _getCentralFontSize(displayValue, isEmoji),
                         fontWeight: FontWeight.w900,
-                        color: const Color(0xFF1E293B),
+                        color: AppColors.slate800,
                         letterSpacing: isEmoji ? 4 : 0,
                         height: 1.0,
                       ),

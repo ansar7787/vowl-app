@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 /// Shared decoration builder for auth input fields.
 InputDecoration buildAuthDecoration({
@@ -25,7 +26,7 @@ InputDecoration buildAuthDecoration({
     suffixIcon: suffixIcon,
     filled: true,
     fillColor: Theme.of(context).brightness == Brightness.dark
-        ? const Color(0xFF1E293B)
+        ? AppColors.slate800
         : const Color(0xFFF3F4F6),
     border: OutlineInputBorder(
       borderRadius: BorderRadius.circular(16.r),
@@ -37,7 +38,10 @@ InputDecoration buildAuthDecoration({
     ),
     focusedBorder: OutlineInputBorder(
       borderRadius: BorderRadius.circular(16.r),
-      borderSide: const BorderSide(color: Color(0xFF6366F1), width: 1.5),
+      borderSide: BorderSide(
+        color: Theme.of(context).colorScheme.primary,
+        width: 1.5,
+      ),
     ),
     errorBorder: OutlineInputBorder(
       borderRadius: BorderRadius.circular(16.r),

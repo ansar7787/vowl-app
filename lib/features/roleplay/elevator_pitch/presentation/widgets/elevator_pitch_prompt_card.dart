@@ -1,3 +1,5 @@
+import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -18,11 +20,12 @@ class ElevatorPitchPromptCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     return Container(
       width: 1.sw,
       padding: EdgeInsets.all(22.r),
       decoration: BoxDecoration(
-        color: isDark ? const Color(0xFF0F0F1B) : Colors.white,
+        color: isDark ? AppColors.deepDark : Colors.white,
         borderRadius: BorderRadius.circular(30.r),
         border: Border.all(color: color.withValues(alpha: 0.15), width: 1.5),
         boxShadow: [
@@ -102,7 +105,7 @@ class ElevatorPitchPromptCard extends StatelessWidget {
                             Icon(
                               Icons.timer_outlined,
                               color: isLowTime
-                                  ? Colors.redAccent
+                                  ? tokens.gameIncorrect
                                   : color.withValues(alpha: 0.7),
                               size: 14.r,
                             ),
@@ -114,7 +117,7 @@ class ElevatorPitchPromptCard extends StatelessWidget {
                                 fontSize: 12.sp,
                                 fontWeight: FontWeight.bold,
                                 color: isLowTime
-                                    ? Colors.redAccent
+                                    ? tokens.gameIncorrect
                                     : (isDark
                                           ? Colors.white70
                                           : Colors.black87),

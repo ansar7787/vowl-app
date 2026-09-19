@@ -6,13 +6,12 @@ import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/domain/constants/user_game_constants.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 class AdventureTotalXpCard extends StatelessWidget {
   final UserEntity user;
 
   const AdventureTotalXpCard({super.key, required this.user});
-
-  static const _accent = Color(0xFF6366F1);
 
   @override
   Widget build(BuildContext context) {
@@ -35,18 +34,26 @@ class AdventureTotalXpCard extends StatelessWidget {
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
                     colors: [
-                      _accent.withValues(alpha: 0.2),
-                      _accent.withValues(alpha: 0.05),
+                      Theme.of(
+                        context,
+                      ).colorScheme.primary.withValues(alpha: 0.2),
+                      Theme.of(
+                        context,
+                      ).colorScheme.primary.withValues(alpha: 0.05),
                     ],
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight,
                   ),
                   borderRadius: BorderRadius.circular(20.r),
-                  border: Border.all(color: _accent.withValues(alpha: 0.2)),
+                  border: Border.all(
+                    color: Theme.of(
+                      context,
+                    ).colorScheme.primary.withValues(alpha: 0.2),
+                  ),
                 ),
                 child: Icon(
                   Icons.auto_fix_high_rounded,
-                  color: _accent,
+                  color: Theme.of(context).colorScheme.primary,
                   size: 32.r,
                 ),
               ),
@@ -64,7 +71,7 @@ class AdventureTotalXpCard extends StatelessWidget {
                         fontFamily: 'Outfit',
                         fontSize: 10.sp,
                         fontWeight: FontWeight.w900,
-                        color: _accent,
+                        color: Theme.of(context).colorScheme.primary,
                         letterSpacing: 2,
                       ),
                     ),
@@ -75,7 +82,7 @@ class AdventureTotalXpCard extends StatelessWidget {
                         fontFamily: 'Outfit',
                         fontSize: 26.sp,
                         fontWeight: FontWeight.w900,
-                        color: isDark ? Colors.white : const Color(0xFF0F172A),
+                        color: isDark ? Colors.white : AppColors.slate900,
                         height: 1.1,
                       ),
                     ),
@@ -96,7 +103,9 @@ class AdventureTotalXpCard extends StatelessWidget {
                         Icon(
                           Icons.insights_rounded,
                           size: 10.r,
-                          color: _accent.withValues(alpha: 0.5),
+                          color: Theme.of(
+                            context,
+                          ).colorScheme.primary.withValues(alpha: 0.5),
                         ),
                       ],
                     ),
@@ -119,7 +128,7 @@ class AdventureTotalXpCard extends StatelessWidget {
                   fontFamily: 'Outfit',
                   fontSize: 11.sp,
                   fontWeight: FontWeight.w900,
-                  color: _accent,
+                  color: Theme.of(context).colorScheme.primary,
                 ),
               ),
               SizedBox(width: 12.r),
@@ -128,8 +137,12 @@ class AdventureTotalXpCard extends StatelessWidget {
                   borderRadius: BorderRadius.circular(6.r),
                   child: LinearProgressIndicator(
                     value: progressToNext,
-                    backgroundColor: _accent.withValues(alpha: 0.1),
-                    valueColor: const AlwaysStoppedAnimation<Color>(_accent),
+                    backgroundColor: Theme.of(
+                      context,
+                    ).colorScheme.primary.withValues(alpha: 0.1),
+                    valueColor: const AlwaysStoppedAnimation<Color>(
+                      Theme.of(context).colorScheme.primary,
+                    ),
                     minHeight: 8.r,
                   ),
                 ),

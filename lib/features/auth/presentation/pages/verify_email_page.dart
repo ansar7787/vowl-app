@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -117,7 +118,7 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
     );
     return isMidnight
         ? const Color(0xFF000000)
-        : (isDark ? const Color(0xFF0F172A) : const Color(0xFFF8FAFC));
+        : (isDark ? AppColors.slate900 : const Color(0xFFF8FAFC));
   }
 
   // ---------------------------------------------------------------------------

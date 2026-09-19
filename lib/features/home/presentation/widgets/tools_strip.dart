@@ -11,6 +11,7 @@ import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 /// Horizontal scrolling tools strip with a **two-tier visual hierarchy**:
 ///
@@ -49,7 +50,7 @@ class ToolsStrip extends StatelessWidget {
         ),
         icon: Icons.child_care_rounded,
         emoji: '🧩',
-        color: const Color(0xFFF43F5E), // Rose — 0°
+        color: AppColors.rose500, // Rose — 0°
         darkColor: const Color(0xFFBE123C),
         route: AppRouter.kidsZoneRoute,
         requiresAd: false,
@@ -64,8 +65,8 @@ class ToolsStrip extends StatelessWidget {
         ),
         icon: Icons.menu_book_rounded,
         emoji: '📖',
-        color: const Color(0xFFF59E0B), // Amber — 45°
-        darkColor: const Color(0xFFD97706),
+        color: AppColors.amber500, // Amber — 45°
+        darkColor: AppColors.amber600,
         route: AppRouter.dailyWordsRoute,
         requiresAd: false,
         isFeatured: true,
@@ -79,7 +80,7 @@ class ToolsStrip extends StatelessWidget {
         ),
         icon: Icons.translate_rounded,
         emoji: '💬',
-        color: const Color(0xFF10B981), // Emerald — 160°
+        color: AppColors.emerald500, // Emerald — 160°
         darkColor: const Color(0xFF059669),
         route: AppRouter.translateRoute,
         requiresAd: false,
@@ -95,7 +96,7 @@ class ToolsStrip extends StatelessWidget {
           fallback: 'Point your camera to learn new words instantly',
         ),
         icon: Icons.camera_alt_rounded,
-        color: const Color(0xFF3B82F6), // Blue — 220°
+        color: AppColors.blue500, // Blue — 220°
         route: AppRouter.photoVocabularyRoute,
         requiresAd: false,
       ),
@@ -107,7 +108,7 @@ class ToolsStrip extends StatelessWidget {
           fallback: 'Scan any text to get instant definitions',
         ),
         icon: Icons.document_scanner_rounded,
-        color: const Color(0xFF14B8A6), // Teal — 175°
+        color: AppColors.teal500, // Teal — 175°
         route: AppRouter.scanAndLearnRoute,
         requiresAd: false,
       ),
@@ -274,7 +275,7 @@ class _FeaturedToolCard extends StatelessWidget {
         padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
         margin: EdgeInsets.symmetric(horizontal: 24.w),
         decoration: BoxDecoration(
-          color: isDark ? const Color(0xFF1E293B) : Colors.white,
+          color: isDark ? AppColors.slate800 : Colors.white,
           borderRadius: BorderRadius.circular(12.r),
           border: Border.all(color: def.color.withValues(alpha: 0.5), width: 1),
           boxShadow: [
@@ -290,7 +291,7 @@ class _FeaturedToolCard extends StatelessWidget {
           fontFamily: 'Outfit',
           fontSize: 12.sp,
           fontWeight: FontWeight.w600,
-          color: isDark ? Colors.white : const Color(0xFF0F172A),
+          color: isDark ? Colors.white : AppColors.slate900,
           height: 1.3,
         ),
         child: ScaleButton(
@@ -448,7 +449,7 @@ class _CompactToolCard extends StatelessWidget {
         padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
         margin: EdgeInsets.symmetric(horizontal: 24.w),
         decoration: BoxDecoration(
-          color: isDark ? const Color(0xFF1E293B) : Colors.white,
+          color: isDark ? AppColors.slate800 : Colors.white,
           borderRadius: BorderRadius.circular(12.r),
           border: Border.all(color: def.color.withValues(alpha: 0.5), width: 1),
           boxShadow: [
@@ -464,7 +465,7 @@ class _CompactToolCard extends StatelessWidget {
           fontFamily: 'Outfit',
           fontSize: 12.sp,
           fontWeight: FontWeight.w600,
-          color: isDark ? Colors.white : const Color(0xFF0F172A),
+          color: isDark ? Colors.white : AppColors.slate900,
           height: 1.3,
         ),
         child: ScaleButton(
@@ -511,9 +512,7 @@ class _CompactToolCard extends StatelessWidget {
                           fontFamily: 'Outfit',
                           fontSize: 14.sp,
                           fontWeight: FontWeight.w900,
-                          color: isDark
-                              ? Colors.white
-                              : const Color(0xFF0F172A),
+                          color: isDark ? Colors.white : AppColors.slate900,
                         ),
                       ),
                       SizedBox(height: 4.h),

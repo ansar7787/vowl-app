@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
@@ -76,13 +77,13 @@ class ProfilePreferencesList extends StatelessWidget {
                       fontFamily: 'Outfit',
                       fontSize: 16.sp,
                       fontWeight: FontWeight.w600,
-                      color: isDark ? Colors.white : const Color(0xFF1E293B),
+                      color: isDark ? Colors.white : AppColors.slate800,
                     ),
                   ),
                 ),
                 Icon(
                   Icons.chevron_right_rounded,
-                  color: isDark ? Colors.white38 : const Color(0xFF94A3B8),
+                  color: isDark ? Colors.white38 : AppColors.slate400,
                   size: 20.r,
                 ),
               ],

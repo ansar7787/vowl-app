@@ -8,6 +8,7 @@ import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/game_helper.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 class BentoArena extends StatefulWidget {
   const BentoArena({super.key, required this.user, this.collapsed = false});
@@ -147,10 +148,10 @@ class _BentoArenaState extends State<BentoArena> {
                       vertical: 12.h,
                     ),
                     decoration: BoxDecoration(
-                      color: const Color(0xFF6366F1).withValues(alpha: 0.1),
+                      color: AppColors.indigo500.withValues(alpha: 0.1),
                       borderRadius: BorderRadius.circular(20.r),
                       border: Border.all(
-                        color: const Color(0xFF6366F1).withValues(alpha: 0.3),
+                        color: AppColors.indigo500.withValues(alpha: 0.3),
                       ),
                     ),
                     child: Row(
@@ -170,7 +171,7 @@ class _BentoArenaState extends State<BentoArena> {
                             fontFamily: 'Outfit',
                             fontSize: 12.sp,
                             fontWeight: FontWeight.w800,
-                            color: const Color(0xFF6366F1),
+                            color: AppColors.indigo500,
                             letterSpacing: 0.5,
                           ),
                         ),
@@ -243,7 +244,7 @@ class _BentoCategoryTile extends StatelessWidget {
         child: ExcludeSemantics(
           child: Container(
             decoration: BoxDecoration(
-              color: isDark ? const Color(0xFF0F172A) : const Color(0xFFF8FAFC),
+              color: isDark ? AppColors.slate900 : const Color(0xFFF8FAFC),
               borderRadius: BorderRadius.circular(28.r),
               boxShadow: [
                 BoxShadow(
@@ -353,7 +354,7 @@ class _BentoCategoryTile extends StatelessWidget {
                                 fontWeight: FontWeight.w900,
                                 color: isDark
                                     ? Colors.white
-                                    : const Color(0xFF0F172A),
+                                    : AppColors.slate900,
                                 letterSpacing: 1.2,
                                 height: 1,
                               ),

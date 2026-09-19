@@ -8,6 +8,7 @@ import 'package:vowl/features/premium/presentation/pages/premium_screen.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 /// Unified monetization gate for ALL ML Kit features.
 ///
@@ -143,12 +144,15 @@ class _MlFeatureGateDialog extends StatelessWidget {
                 padding: EdgeInsets.all(16.r),
                 decoration: BoxDecoration(
                   gradient: const LinearGradient(
-                    colors: [Color(0xFF6366F1), Color(0xFF8B5CF6)],
+                    colors: [
+                      Theme.of(context).colorScheme.primary,
+                      AppColors.violet500,
+                    ],
                   ),
                   shape: BoxShape.circle,
                   boxShadow: [
                     BoxShadow(
-                      color: const Color(0xFF6366F1).withValues(alpha: 0.3),
+                      color: AppColors.indigo500.withValues(alpha: 0.3),
                       blurRadius: 20,
                       offset: const Offset(0, 8),
                     ),
@@ -193,12 +197,15 @@ class _MlFeatureGateDialog extends StatelessWidget {
                   padding: EdgeInsets.symmetric(vertical: 16.h),
                   decoration: BoxDecoration(
                     gradient: const LinearGradient(
-                      colors: [Color(0xFF6366F1), Color(0xFF8B5CF6)],
+                      colors: [
+                        Theme.of(context).colorScheme.primary,
+                        AppColors.violet500,
+                      ],
                     ),
                     borderRadius: BorderRadius.circular(16.r),
                     boxShadow: [
                       BoxShadow(
-                        color: const Color(0xFF6366F1).withValues(alpha: 0.3),
+                        color: AppColors.indigo500.withValues(alpha: 0.3),
                         blurRadius: 12,
                         offset: const Offset(0, 6),
                       ),

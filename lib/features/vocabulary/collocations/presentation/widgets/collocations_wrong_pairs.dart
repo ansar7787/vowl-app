@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -16,7 +17,8 @@ class CollocationsWrongPairs extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final warningColor = Colors.redAccent.shade200;
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
+    final warningColor = tokens.gameIncorrect.withValues(alpha: 0.8);
 
     return Container(
           width: double.infinity,

@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -32,12 +33,12 @@ class PremiumFailureOverlay extends StatelessWidget {
             color: Colors.white.withValues(alpha: 0.1),
             borderRadius: BorderRadius.circular(32.r),
             border: Border.all(
-              color: const Color(0xFFF43F5E).withValues(alpha: 0.4),
+              color: AppColors.rose500.withValues(alpha: 0.4),
               width: 1.5,
             ),
             boxShadow: [
               BoxShadow(
-                color: const Color(0xFFF43F5E).withValues(alpha: 0.15),
+                color: AppColors.rose500.withValues(alpha: 0.15),
                 blurRadius: 50,
                 spreadRadius: 10,
               ),
@@ -60,7 +61,7 @@ class PremiumFailureOverlay extends StatelessWidget {
                             decoration: BoxDecoration(
                               shape: BoxShape.circle,
                               gradient: const LinearGradient(
-                                colors: [Color(0xFFFB7185), Color(0xFFE11D48)],
+                                colors: [Color(0xFFFB7185), AppColors.rose700],
                                 begin: Alignment.topLeft,
                                 end: Alignment.bottomRight,
                               ),
@@ -91,7 +92,7 @@ class PremiumFailureOverlay extends StatelessWidget {
                 SizedBox(height: 28.h),
                 ShaderMask(
                   shaderCallback: (bounds) => const LinearGradient(
-                    colors: [Color(0xFFFB7185), Color(0xFFE11D48)],
+                    colors: [Color(0xFFFB7185), AppColors.rose700],
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight,
                   ).createShader(bounds),
@@ -122,7 +123,7 @@ class PremiumFailureOverlay extends StatelessWidget {
                         color: Colors.black.withValues(alpha: 0.2),
                         borderRadius: BorderRadius.circular(12.r),
                         border: Border.all(
-                          color: const Color(0xFFF43F5E).withValues(alpha: 0.3),
+                          color: AppColors.rose500.withValues(alpha: 0.3),
                         ),
                       ),
                       child: Text(
@@ -258,7 +259,7 @@ class PremiumFailureOverlay extends StatelessWidget {
                             padding: EdgeInsets.symmetric(vertical: 16.h),
                             decoration: BoxDecoration(
                               gradient: const LinearGradient(
-                                colors: [Color(0xFFFB7185), Color(0xFFE11D48)],
+                                colors: [Color(0xFFFB7185), AppColors.rose700],
                                 begin: Alignment.topLeft,
                                 end: Alignment.bottomRight,
                               ),

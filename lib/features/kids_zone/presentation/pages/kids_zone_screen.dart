@@ -24,6 +24,7 @@ import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/leaderboard/domain/repositories/leaderboard_repository.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 class KidsZoneScreen extends StatefulWidget {
   const KidsZoneScreen({super.key});
@@ -123,7 +124,7 @@ class _KidsZoneScreenState extends State<KidsZoneScreen> {
     final isMidnight = context.watch<ThemeCubit>().state.isMidnight;
     final bgColor = isMidnight
         ? Colors.black
-        : (isDark ? const Color(0xFF0F172A) : const Color(0xFFF8FAFC));
+        : (isDark ? AppColors.slate900 : const Color(0xFFF8FAFC));
 
     return Scaffold(
       backgroundColor: bgColor,
@@ -159,7 +160,7 @@ class _KidsZoneScreenState extends State<KidsZoneScreen> {
                 context.read<AuthBloc>().add(const AuthReloadUser());
                 await Future.delayed(const Duration(milliseconds: 1000));
               },
-              color: const Color(0xFF6366F1),
+              color: AppColors.indigo500,
               backgroundColor: Colors.white,
               displacement: 100,
               child: CustomScrollView(
@@ -233,7 +234,7 @@ class _KidsZoneScreenState extends State<KidsZoneScreen> {
             right: 20.w,
             child: Container(
               decoration: BoxDecoration(
-                color: isDark ? const Color(0xFF1E293B) : Colors.white,
+                color: isDark ? AppColors.slate800 : Colors.white,
                 borderRadius: BorderRadius.circular(40.r),
                 border: Border.all(
                   color: isDark
@@ -386,7 +387,7 @@ class _KidsZoneScreenState extends State<KidsZoneScreen> {
 
   Widget _buildSlimAppBar(BuildContext context, int coins) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final contrastColor = isDark ? Colors.white : const Color(0xFF1E293B);
+    final contrastColor = isDark ? Colors.white : AppColors.slate800;
 
     return SliverAppBar(
       floating: true,
@@ -410,7 +411,7 @@ class _KidsZoneScreenState extends State<KidsZoneScreen> {
           child: Container(
             padding: EdgeInsets.all(10.r),
             decoration: BoxDecoration(
-              color: isDark ? const Color(0xFF1E293B) : Colors.white,
+              color: isDark ? AppColors.slate800 : Colors.white,
               shape: BoxShape.circle,
               border: Border.all(
                 color: isDark ? Colors.blue.shade700 : Colors.blue.shade200,
@@ -455,7 +456,7 @@ class _KidsZoneScreenState extends State<KidsZoneScreen> {
             KeyShopBottomSheet.show(
               context: context,
               isKidsMode: true,
-              primaryColor: const Color(0xFF6366F1),
+              primaryColor: AppColors.indigo500,
             );
           },
           child: Container(
@@ -495,7 +496,7 @@ class _KidsZoneScreenState extends State<KidsZoneScreen> {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
       decoration: BoxDecoration(
-        color: isDark ? const Color(0xFF1E293B) : Colors.white,
+        color: isDark ? AppColors.slate800 : Colors.white,
         borderRadius: BorderRadius.circular(20.r),
         border: Border.all(color: Colors.amber, width: 3.w),
         boxShadow: [

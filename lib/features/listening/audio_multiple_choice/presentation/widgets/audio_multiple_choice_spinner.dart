@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -35,6 +36,7 @@ class AudioMultipleChoiceSpinner extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     return GestureDetector(
       onPanUpdate: (details) => onSpin(details.delta.dx),
       child: Container(
@@ -90,7 +92,7 @@ class AudioMultipleChoiceSpinner extends StatelessWidget {
                 height: 80.r,
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  color: isCorrectState == true ? Colors.greenAccent : color,
+                  color: isCorrectState == true ? tokens.gameCorrect : color,
                   border: Border.all(
                     color: isCorrectState == true
                         ? Colors.white
@@ -100,7 +102,7 @@ class AudioMultipleChoiceSpinner extends StatelessWidget {
                   boxShadow: [
                     BoxShadow(
                       color: isCorrectState == true
-                          ? Colors.greenAccent.withValues(alpha: 0.6)
+                          ? tokens.gameCorrect.withValues(alpha: 0.6)
                           : color.withValues(alpha: 0.6),
                       blurRadius: 24,
                       offset: const Offset(0, 8),

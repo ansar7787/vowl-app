@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/utils/instruction_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -188,7 +189,7 @@ class KidsFruitsLayout extends StatelessWidget {
                                       ? 70.sp
                                       : 24.sp,
                                   fontWeight: FontWeight.w900,
-                                  color: const Color(0xFF78350F).withValues(
+                                  color: AppColors.amber900.withValues(
                                     alpha:
                                         (quest.question == "?" ||
                                             quest.question == null)
@@ -252,7 +253,7 @@ class KidsFruitsLayout extends StatelessWidget {
     String text,
     bool isCorrect,
   ) {
-    final basketColor = const Color(0xFFD97706); // Wicker yellow/brown
+    final basketColor = AppColors.amber600; // Wicker yellow/brown
 
     final basketWidget = Stack(
       alignment: Alignment.bottomCenter,
@@ -303,7 +304,7 @@ class KidsFruitsLayout extends StatelessWidget {
               bottomLeft: Radius.circular(20.r),
               bottomRight: Radius.circular(20.r),
             ),
-            border: Border.all(color: const Color(0xFF78350F), width: 2),
+            border: Border.all(color: AppColors.amber900, width: 2),
             boxShadow: [
               BoxShadow(
                 color: Colors.black.withValues(alpha: 0.2),

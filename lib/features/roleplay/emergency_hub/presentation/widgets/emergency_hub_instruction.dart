@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -8,14 +9,17 @@ class EmergencyHubInstruction extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     return Column(
       children: [
         Container(
           padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 6.h),
           decoration: BoxDecoration(
-            color: Colors.redAccent.withValues(alpha: 0.1),
+            color: tokens.gameIncorrect.withValues(alpha: 0.1),
             borderRadius: BorderRadius.circular(30.r),
-            border: Border.all(color: Colors.redAccent.withValues(alpha: 0.2)),
+            border: Border.all(
+              color: tokens.gameIncorrect.withValues(alpha: 0.2),
+            ),
           ),
           child: Text(
             "SECTOR DISPATCH STATION",
@@ -23,7 +27,7 @@ class EmergencyHubInstruction extends StatelessWidget {
               fontFamily: 'Outfit',
               fontSize: 10.sp,
               fontWeight: FontWeight.w900,
-              color: Colors.redAccent,
+              color: tokens.gameIncorrect,
               letterSpacing: 2.5,
             ),
           ),

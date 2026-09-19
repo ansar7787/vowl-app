@@ -13,6 +13,7 @@ import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/core/theme/theme_cubit.dart';
 import 'package:vowl/features/profile/presentation/bloc/trophy_room_cubit.dart';
 import 'package:vowl/core/theme/category_colors.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 class TrophyRoomScreen extends StatelessWidget {
   const TrophyRoomScreen({super.key});
@@ -46,13 +47,13 @@ class _TrophyRoomView extends StatelessWidget {
             MeshGradientBackground(
               colors: isDark
                   ? [
-                      const Color(0xFF0F172A),
-                      const Color(0xFF1E293B),
+                      AppColors.slate900,
+                      AppColors.slate800,
                       const Color(0xFF33201C), // Deep gold tint
                     ]
                   : [
-                      const Color(0xFFF8FAFC),
-                      const Color(0xFFF1F5F9),
+                      AppColors.slate50,
+                      AppColors.slate100,
                       const Color(0xFFFEF3C7), // Light gold tint
                     ],
             ),
@@ -100,7 +101,7 @@ class _TrophyRoomView extends StatelessWidget {
       leading: IconButton(
         icon: Icon(
           Icons.arrow_back_ios_new_rounded,
-          color: isDark ? Colors.white : const Color(0xFF0F172A),
+          color: isDark ? Colors.white : AppColors.slate900,
           size: 20.r,
         ),
         onPressed: () => context.canPop() ? context.pop() : context.go('/home'),
@@ -111,7 +112,7 @@ class _TrophyRoomView extends StatelessWidget {
           fontFamily: 'Outfit',
           fontSize: 22.sp,
           fontWeight: FontWeight.w900,
-          color: isDark ? Colors.white : const Color(0xFF0F172A),
+          color: isDark ? Colors.white : AppColors.slate900,
           letterSpacing: -0.5,
         ),
       ),
@@ -152,9 +153,7 @@ class _TrophyRoomView extends StatelessWidget {
                             fontFamily: 'Outfit',
                             fontSize: 36.sp,
                             fontWeight: FontWeight.w900,
-                            color: isDark
-                                ? Colors.white
-                                : const Color(0xFF0F172A),
+                            color: isDark ? Colors.white : AppColors.slate900,
                             height: 1.1,
                           ),
                         ),
@@ -182,7 +181,7 @@ class _TrophyRoomView extends StatelessWidget {
                         width: double.infinity,
                         decoration: BoxDecoration(
                           color: isDark
-                              ? const Color(0xFF1E293B)
+                              ? AppColors.slate800
                               : const Color(0xFFE2E8F0),
                           borderRadius: BorderRadius.circular(10.r),
                           boxShadow: [
@@ -202,10 +201,7 @@ class _TrophyRoomView extends StatelessWidget {
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(10.r),
                                 gradient: const LinearGradient(
-                                  colors: [
-                                    Color(0xFFFFD700),
-                                    Color(0xFFF59E0B),
-                                  ],
+                                  colors: [AppColors.gold, AppColors.amber500],
                                   begin: Alignment.centerLeft,
                                   end: Alignment.centerRight,
                                 ),
@@ -233,14 +229,14 @@ class _TrophyRoomView extends StatelessWidget {
               padding: EdgeInsets.all(16.r),
               decoration: BoxDecoration(
                 gradient: const LinearGradient(
-                  colors: [Color(0xFFFFD700), Color(0xFFF59E0B)],
+                  colors: [AppColors.gold, AppColors.amber500],
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
                 ),
                 shape: BoxShape.circle,
                 boxShadow: [
                   BoxShadow(
-                    color: const Color(0xFFF59E0B).withValues(alpha: 0.3),
+                    color: AppColors.amber500.withValues(alpha: 0.3),
                     blurRadius: 15,
                     offset: const Offset(0, 6),
                   ),
@@ -267,7 +263,7 @@ class _TrophyRoomView extends StatelessWidget {
           width: double.infinity,
           padding: EdgeInsets.all(4.r),
           decoration: BoxDecoration(
-            color: isDark ? const Color(0xFF1E293B) : const Color(0xFFF1F5F9),
+            color: isDark ? AppColors.slate800 : AppColors.slate100,
             borderRadius: BorderRadius.circular(30.r),
             boxShadow: [
               BoxShadow(
@@ -291,7 +287,7 @@ class _TrophyRoomView extends StatelessWidget {
                     width: tabWidth,
                     child: Container(
                       decoration: BoxDecoration(
-                        color: isDark ? const Color(0xFF334155) : Colors.white,
+                        color: isDark ? AppColors.slate700 : Colors.white,
                         borderRadius: BorderRadius.circular(24.r),
                         boxShadow: [
                           BoxShadow(
@@ -360,7 +356,7 @@ class _TrophyRoomView extends StatelessWidget {
               fontSize: 14.sp,
               fontWeight: isSelected ? FontWeight.w800 : FontWeight.w600,
               color: isSelected
-                  ? (isDark ? Colors.white : const Color(0xFF0F172A))
+                  ? (isDark ? Colors.white : AppColors.slate900)
                   : (isDark ? Colors.white54 : Colors.black54),
             ),
             child: Text(title),
@@ -492,14 +488,14 @@ class _TrophyRoomView extends StatelessWidget {
             ),
             border: Border.all(
               color: isLegendary
-                  ? const Color(0xFFFFD700).withValues(alpha: 0.8)
+                  ? AppColors.gold.withValues(alpha: 0.8)
                   : colorPair[0].withValues(alpha: 0.5),
               width: isLegendary ? 2.5 : 1.5,
             ),
             boxShadow: isLegendary
                 ? [
                     BoxShadow(
-                      color: const Color(0xFFFFD700).withValues(alpha: 0.2),
+                      color: AppColors.gold.withValues(alpha: 0.2),
                       blurRadius: 15,
                       spreadRadius: 2,
                     ),
@@ -597,10 +593,7 @@ class _TrophyRoomView extends StatelessWidget {
 
   List<Color> _getCategoryColors(String badgeId, bool isLegendary) {
     if (isLegendary) {
-      return [
-        const Color(0xFFFFD700),
-        const Color(0xFFF59E0B),
-      ]; // Deep Gold Glow
+      return [AppColors.gold, AppColors.amber500]; // Deep Gold Glow
     }
 
     // Derive gradient pairs from the central CategoryColors source of truth.
@@ -628,7 +621,7 @@ class _TrophyRoomView extends StatelessWidget {
     }
 
     // Default Silver for unmapped standards
-    return [const Color(0xFF94A3B8), const Color(0xFF64748B)];
+    return [AppColors.slate400, AppColors.slate500];
   }
 
   String _getCategoryEmoji(String badgeId) {
@@ -675,7 +668,7 @@ class _TrophyRoomView extends StatelessWidget {
         categoryColor = Colors.white; // Pure White on dark brown
       } else {
         tierColor = isDark ? Colors.white54 : Colors.black54;
-        categoryColor = isDark ? Colors.white : const Color(0xFF0F172A);
+        categoryColor = isDark ? Colors.white : AppColors.slate900;
       }
 
       return Column(
@@ -728,7 +721,7 @@ class _TrophyRoomView extends StatelessWidget {
               ? (isDark ? Colors.white30 : Colors.black38)
               : (isLegendary
                     ? Colors.white
-                    : (isDark ? Colors.white : const Color(0xFF0F172A))),
+                    : (isDark ? Colors.white : AppColors.slate900)),
           height: 1.1,
           shadows: isLegendary
               ? const [

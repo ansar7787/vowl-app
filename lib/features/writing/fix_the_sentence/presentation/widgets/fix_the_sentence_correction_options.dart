@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -11,7 +12,8 @@ class FixTheSentenceWipedAlert extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final displayColor = isDark ? Colors.greenAccent : const Color(0xFF16A34A);
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
+    final displayColor = isDark ? tokens.gameCorrect : const Color(0xFF16A34A);
 
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),

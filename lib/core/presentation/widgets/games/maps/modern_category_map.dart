@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'dart:async';
 import 'dart:math' as math;
 
@@ -542,7 +543,7 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
                                                       .arrow_forward_ios_rounded
                                                 : Icons
                                                       .arrow_back_ios_new_rounded,
-                                            color: const Color(0xFF0F172A),
+                                            color: AppColors.slate900,
                                             size: 16.r,
                                           ),
                                         );

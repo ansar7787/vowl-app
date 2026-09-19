@@ -8,6 +8,7 @@ import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 class KidsMagicChest extends StatefulWidget {
   final VoidCallback onClaimed;
@@ -143,7 +144,7 @@ class _KidsMagicChestState extends State<KidsMagicChest> {
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
                     colors: canClaim
-                        ? [const Color(0xFFFBBF24), const Color(0xFFF59E0B)]
+                        ? [AppColors.amber400, AppColors.amber500]
                         : [
                             (isDark
                                     ? Colors.grey.shade900

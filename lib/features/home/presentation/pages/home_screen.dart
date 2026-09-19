@@ -27,6 +27,7 @@ import 'package:vowl/features/home/presentation/widgets/home_section_header.dart
 import 'package:vowl/features/home/presentation/widgets/unified_stats_row.dart';
 import 'package:vowl/features/home/presentation/widgets/tools_strip.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -105,7 +106,7 @@ class _HomeScreenState extends State<HomeScreen> {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final bgColor = isMidnight
         ? Colors.black
-        : (isDark ? const Color(0xFF0F172A) : Colors.white);
+        : (isDark ? AppColors.slate900 : Colors.white);
 
     return Scaffold(
       backgroundColor: bgColor,
@@ -168,7 +169,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     );
                     await Future.delayed(const Duration(milliseconds: 600));
                   },
-                  color: const Color(0xFF6366F1),
+                  color: AppColors.indigo500,
                   displacement: 40.h,
                   child: CustomScrollView(
                     controller: di.sl<ScrollController>(instanceName: 'home'),
@@ -260,7 +261,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 localizedTitleKey: 'home.quest_arena_title',
                                 localizedSubtitleKey:
                                     'home.quest_arena_subtitle',
-                                categoryColor: const Color(0xFF6366F1),
+                                categoryColor: AppColors.indigo500,
                                 onSeeAll: () =>
                                     context.push(AppRouter.libraryRoute),
                               ),
@@ -305,7 +306,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           'home.tools_subtitle',
                           fallback: 'Your learning toolkit',
                         ),
-                        categoryColor: const Color(0xFF10B981),
+                        categoryColor: AppColors.emerald500,
                       ),
                       const SliverToBoxAdapter(child: ToolsStrip()),
 

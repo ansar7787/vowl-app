@@ -19,6 +19,7 @@ import 'package:vowl/core/theme/theme_cubit.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 class GamesScreen extends StatelessWidget {
   const GamesScreen({super.key});
@@ -31,7 +32,7 @@ class GamesScreen extends StatelessWidget {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final bgColor = isMidnight
         ? Colors.black
-        : (isDark ? const Color(0xFF0F172A) : Colors.white);
+        : (isDark ? AppColors.slate900 : Colors.white);
 
     return Scaffold(
       backgroundColor: bgColor,
@@ -125,7 +126,7 @@ class _HeroDashboard extends StatelessWidget {
     final progress = totalLevels > 0 ? totalCleared / totalLevels : 0.0;
     final percent = (progress * 100).toStringAsFixed(1);
 
-    final contentColor = isDark ? Colors.white : const Color(0xFF0F172A);
+    final contentColor = isDark ? Colors.white : AppColors.slate900;
 
     return Padding(
       padding: EdgeInsets.fromLTRB(24.w, 16.h, 24.w, 8.h),
@@ -156,7 +157,7 @@ class _HeroDashboard extends StatelessWidget {
                             0xFF3B82F6,
                           ).withValues(alpha: 0.1),
                           valueColor: const AlwaysStoppedAnimation<Color>(
-                            Color(0xFF3B82F6),
+                            AppColors.blue500,
                           ),
                           strokeWidth: 4.r,
                           strokeCap: StrokeCap.round,
@@ -171,7 +172,7 @@ class _HeroDashboard extends StatelessWidget {
                               fontFamily: 'Outfit',
                               fontSize: 11.sp,
                               fontWeight: FontWeight.w900,
-                              color: const Color(0xFF3B82F6),
+                              color: AppColors.blue500,
                             ),
                           ),
                         ],
@@ -193,7 +194,7 @@ class _HeroDashboard extends StatelessWidget {
                           fontFamily: 'Outfit',
                           fontSize: 9.sp,
                           fontWeight: FontWeight.w800,
-                          color: const Color(0xFF3B82F6),
+                          color: AppColors.blue500,
                           letterSpacing: 1.5,
                         ),
                       ),
@@ -232,7 +233,7 @@ class _HeroDashboard extends StatelessWidget {
                   label: context.tr('games.streak', fallback: 'Streak'),
                   value: '${user.currentStreak}',
                   isDark: isDark,
-                  color: const Color(0xFFEF4444),
+                  color: AppColors.red500,
                 ),
                 SizedBox(width: 8.w),
                 _StatPill(
@@ -240,7 +241,7 @@ class _HeroDashboard extends StatelessWidget {
                   label: context.tr('games.total_xp', fallback: 'XP'),
                   value: _formatNumber(user.totalExp),
                   isDark: isDark,
-                  color: const Color(0xFFF59E0B),
+                  color: AppColors.amber500,
                 ),
               ],
             ),
@@ -269,7 +270,7 @@ class _StatPill extends StatelessWidget {
     required this.label,
     required this.value,
     required this.isDark,
-    this.color = const Color(0xFF3B82F6),
+    this.color = AppColors.blue500,
   });
 
   @override
@@ -294,7 +295,7 @@ class _StatPill extends StatelessWidget {
                   fontFamily: 'Outfit',
                   fontSize: 13.sp,
                   fontWeight: FontWeight.w900,
-                  color: isDark ? Colors.white : const Color(0xFF0F172A),
+                  color: isDark ? Colors.white : AppColors.slate900,
                 ),
               ),
             ),
@@ -459,12 +460,12 @@ class _GamesAppBar extends StatelessWidget {
                   Container(
                     padding: EdgeInsets.all(6.r),
                     decoration: BoxDecoration(
-                      color: const Color(0xFF3B82F6).withValues(alpha: 0.15),
+                      color: AppColors.blue500.withValues(alpha: 0.15),
                       shape: BoxShape.circle,
                     ),
                     child: Icon(
                       Icons.auto_awesome_mosaic_rounded,
-                      color: const Color(0xFF3B82F6),
+                      color: AppColors.blue500,
                       size: 14.r,
                     ),
                   ),
@@ -475,7 +476,7 @@ class _GamesAppBar extends StatelessWidget {
                       fontFamily: 'Outfit',
                       fontSize: 16.sp,
                       fontWeight: FontWeight.w900,
-                      color: isDark ? Colors.white : const Color(0xFF0F172A),
+                      color: isDark ? Colors.white : AppColors.slate900,
                       letterSpacing: 2.0,
                     ),
                   ),
@@ -642,7 +643,7 @@ class _GameSectionHeader extends StatelessWidget {
                     ? const LinearGradient(
                         begin: Alignment.topCenter,
                         end: Alignment.bottomCenter,
-                        colors: [Color(0xFFFFD700), Color(0xFFFFA000)],
+                        colors: [AppColors.gold, Color(0xFFFFA000)],
                       )
                     : null,
                 color: isEliteMastery ? null : color,
@@ -672,9 +673,7 @@ class _GameSectionHeader extends StatelessWidget {
                             fontFamily: 'Outfit',
                             fontSize: 18.sp,
                             fontWeight: FontWeight.w900,
-                            color: isDark
-                                ? Colors.white
-                                : const Color(0xFF0F172A),
+                            color: isDark ? Colors.white : AppColors.slate900,
                             letterSpacing: 1.2,
                           ),
                           maxLines: 1,
@@ -706,7 +705,7 @@ class _GameSectionHeader extends StatelessWidget {
                           ),
                           decoration: BoxDecoration(
                             gradient: const LinearGradient(
-                              colors: [Color(0xFFFFD700), Color(0xFFFFA000)],
+                              colors: [AppColors.gold, Color(0xFFFFA000)],
                             ),
                             borderRadius: BorderRadius.circular(6.r),
                           ),
@@ -722,7 +721,7 @@ class _GameSectionHeader extends StatelessWidget {
                       fontFamily: 'Outfit',
                       fontSize: 12.sp,
                       fontWeight: FontWeight.w600,
-                      color: isDark ? Colors.white38 : const Color(0xFF64748B),
+                      color: isDark ? Colors.white38 : AppColors.slate500,
                     ),
                   ),
                 ],

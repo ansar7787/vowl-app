@@ -1,8 +1,10 @@
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 /// Compact level/progress/lives header shared across all 9 game categories.
 ///
@@ -28,10 +30,11 @@ class GameProgressHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final titleColor = isDark ? Colors.white : const Color(0xFF0F172A);
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
+    final titleColor = isDark ? Colors.white : AppColors.slate900;
     final subColor = isDark
         ? Colors.white.withValues(alpha: 0.8)
-        : const Color(0xFF0F172A).withValues(alpha: 0.7);
+        : AppColors.slate900.withValues(alpha: 0.7);
     final progressPercent = (progress.clamp(0.0, 1.0) * 100).toInt();
 
     // BUG FIX (RTL): Icons.arrow_back_ios_new_rounded is a raw
@@ -148,6 +151,7 @@ class _ProgressBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     final clamped = progress.clamp(0.0, 1.0);
     final barColor = isDark ? Colors.white : themeColor;
 
@@ -203,6 +207,7 @@ class _LivesBadge extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     return Semantics(
       label: context.tr(
         'game_progress.lives_label',
@@ -220,7 +225,11 @@ class _LivesBadge extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Icon(Icons.favorite_rounded, color: Colors.redAccent, size: 16.r),
+            Icon(
+              Icons.favorite_rounded,
+              color: tokens.gameIncorrect,
+              size: 16.r,
+            ),
             SizedBox(width: 4.w),
             Text(
               '$lives',
@@ -228,7 +237,7 @@ class _LivesBadge extends StatelessWidget {
                 fontFamily: 'Outfit',
                 fontSize: 14.sp,
                 fontWeight: FontWeight.w900,
-                color: Colors.redAccent,
+                color: tokens.gameIncorrect,
               ),
             ),
           ],

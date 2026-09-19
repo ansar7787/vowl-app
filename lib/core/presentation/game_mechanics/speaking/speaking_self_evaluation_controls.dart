@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -238,6 +239,7 @@ class _SpeakingSelfEvaluationControlsState
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     final subtitleColor = isDark ? Colors.white60 : Colors.black54;
 
     return SttAutoPassWrapper(
@@ -280,13 +282,13 @@ class _SpeakingSelfEvaluationControlsState
                                 decoration: BoxDecoration(
                                   shape: BoxShape.circle,
                                   color: isRecording
-                                      ? Colors.redAccent
+                                      ? tokens.gameIncorrect
                                       : widget.primaryColor,
                                   boxShadow: [
                                     BoxShadow(
                                       color:
                                           (isRecording
-                                                  ? Colors.redAccent
+                                                  ? tokens.gameIncorrect
                                                   : widget.primaryColor)
                                               .withValues(alpha: 0.4),
                                       blurRadius: 20,
@@ -322,7 +324,9 @@ class _SpeakingSelfEvaluationControlsState
                         fontFamily: 'Outfit',
                         fontSize: 14.sp,
                         fontWeight: FontWeight.w600,
-                        color: isRecording ? Colors.redAccent : subtitleColor,
+                        color: isRecording
+                            ? tokens.gameIncorrect
+                            : subtitleColor,
                       ),
                     ).animate(target: isRecording ? 1 : 0).fade();
                   },
@@ -464,7 +468,7 @@ class _SpeakingSelfEvaluationControlsState
                           fallback: "Needs Work",
                         ),
                         icon: LucideIcons.x,
-                        color: Colors.redAccent,
+                        color: tokens.gameIncorrect,
                         onTap: _handleNeedsWork,
                       ),
                     ),
@@ -476,7 +480,7 @@ class _SpeakingSelfEvaluationControlsState
                           fallback: "Nailed It",
                         ),
                         icon: LucideIcons.check,
-                        color: Colors.greenAccent,
+                        color: tokens.gameCorrect,
                         onTap: _handleNailedIt,
                       ),
                     ),

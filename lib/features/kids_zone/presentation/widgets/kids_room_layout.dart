@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_background_renderer.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_room_furniture_renderer.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 class KidsRoomLayout extends StatelessWidget {
   final String theme;
@@ -183,11 +184,11 @@ class KidsRoomLayout extends StatelessWidget {
     if (hour >= 20 || hour < 6) {
       // Night time
       overlayColor = isDark
-          ? const Color(0xFF0F172A).withValues(alpha: 0.5)
+          ? AppColors.slate900.withValues(alpha: 0.5)
           : const Color(0xFF1E1B4B).withValues(alpha: 0.4);
     } else if (hour >= 18 && hour < 20) {
       // Evening/Sunset
-      overlayColor = const Color(0xFFF59E0B).withValues(alpha: 0.2);
+      overlayColor = AppColors.amber500.withValues(alpha: 0.2);
     }
 
     if (overlayColor == Colors.transparent) return const SizedBox();
@@ -225,7 +226,7 @@ class KidsRoomLayout extends StatelessWidget {
         return Opacity(
           opacity: 0.1,
           child: CustomPaint(
-            painter: _GrassTexturePainter(color: Colors.greenAccent),
+            painter: _GrassTexturePainter(color: AppColors.gameCorrect),
           ),
         );
     }

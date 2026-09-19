@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -22,6 +23,7 @@ class DailyJournalScratchArea extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     return Container(
       width: double.infinity,
       padding: EdgeInsets.all(20.r),
@@ -81,8 +83,8 @@ class DailyJournalScratchArea extends StatelessWidget {
                   fontFamily: 'Outfit',
                   fontSize: 10.sp,
                   color: wordCount >= 10
-                      ? Colors.greenAccent
-                      : Colors.redAccent,
+                      ? tokens.gameCorrect
+                      : tokens.gameIncorrect,
                   fontWeight: FontWeight.bold,
                 ),
               ),

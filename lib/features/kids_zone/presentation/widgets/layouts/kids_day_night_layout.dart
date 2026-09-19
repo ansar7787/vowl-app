@@ -9,6 +9,7 @@ import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/kids_zone/presentation/utils/kids_tts_service.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_fitted_text.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 /// Sky Observatory Theme for Day & Night Game
 /// Space Complexity: O(1)
@@ -147,16 +148,14 @@ class KidsDayNightLayout extends StatelessWidget {
             width: 280.w,
             height: 220.h,
             decoration: BoxDecoration(
-              color: isHovering
-                  ? const Color(0xFF1E293B)
-                  : const Color(0xFF0F172A),
+              color: isHovering ? AppColors.slate800 : AppColors.slate900,
               borderRadius: BorderRadius.circular(
                 40.r,
               ), // Chunky rounded rectangle
               border: Border.all(
                 color: isHovering
                     ? const Color(0xFF38BDF8)
-                    : const Color(0xFF64748B),
+                    : AppColors.slate500,
                 width: isHovering ? 12.r : 8.r,
               ), // Thick observatory metal frame
               boxShadow: [
@@ -276,13 +275,9 @@ class KidsDayNightLayout extends StatelessWidget {
         text.toLowerCase().contains("morning");
 
     // Day = Sunny Sky colors, Night = Deep Space colors
-    final color = isDay ? const Color(0xFF38BDF8) : const Color(0xFF1E293B);
-    final borderColor = isDay
-        ? const Color(0xFF7DD3FC)
-        : const Color(0xFF334155);
-    final shadowColor = isDay
-        ? const Color(0xFF0284C7)
-        : const Color(0xFF0F172A);
+    final color = isDay ? const Color(0xFF38BDF8) : AppColors.slate800;
+    final borderColor = isDay ? const Color(0xFF7DD3FC) : AppColors.slate700;
+    final shadowColor = isDay ? const Color(0xFF0284C7) : AppColors.slate900;
 
     final cardWidget = Container(
       height: 120.h,

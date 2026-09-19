@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -16,13 +17,13 @@ class SynapticLinkPainter extends CustomPainter {
   void paint(Canvas canvas, Size size) {
     final Paint linePaint = Paint()
       ..color = isConnected
-          ? Colors.greenAccent.withValues(alpha: 0.3)
+          ? AppColors.gameCorrect.withValues(alpha: 0.3)
           : themeColor.withValues(alpha: 0.15)
       ..style = PaintingStyle.stroke
       ..strokeWidth = 2.r;
 
     final Paint glowPaint = Paint()
-      ..color = isConnected ? Colors.greenAccent : themeColor
+      ..color = isConnected ? AppColors.gameCorrect : themeColor
       ..style = PaintingStyle.stroke
       ..strokeWidth = 4.r
       ..maskFilter = MaskFilter.blur(BlurStyle.normal, 5.r);
@@ -52,7 +53,7 @@ class SynapticLinkPainter extends CustomPainter {
       final tangent = metric.getTangentForOffset(metric.length * progress);
       if (tangent != null) {
         final Paint particlePaint = Paint()
-          ..color = isConnected ? Colors.greenAccent : Colors.white
+          ..color = isConnected ? AppColors.gameCorrect : Colors.white
           ..style = PaintingStyle.fill;
 
         canvas.drawCircle(tangent.position, 4.r, particlePaint);
@@ -60,7 +61,7 @@ class SynapticLinkPainter extends CustomPainter {
           tangent.position,
           8.r,
           Paint()
-            ..color = (isConnected ? Colors.greenAccent : themeColor)
+            ..color = (isConnected ? AppColors.gameCorrect : themeColor)
                 .withValues(alpha: 0.4)
             ..maskFilter = MaskFilter.blur(BlurStyle.normal, 4.r),
         );

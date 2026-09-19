@@ -1,3 +1,5 @@
+import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -157,12 +159,13 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
 
     final glassColor = isDark
         ? Colors.black.withValues(alpha: 0.85) // Highly opaque for dark mode
         : Colors.white.withValues(alpha: 0.95); // Nearly solid for light mode
 
-    final textColor = isDark ? Colors.white : const Color(0xFF0F172A);
+    final textColor = isDark ? Colors.white : AppColors.slate900;
     final subtitleColor = isDark ? Colors.white70 : Colors.black87;
 
     final innerContent = ClipRRect(
@@ -171,9 +174,9 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
         valueListenable: _status,
         builder: (context, status, child) {
           final borderColor = status == _BuilderStatus.success
-              ? Colors.greenAccent.withValues(alpha: 0.5)
+              ? tokens.gameCorrect.withValues(alpha: 0.5)
               : status == _BuilderStatus.error
-              ? Colors.redAccent.withValues(alpha: 0.5)
+              ? tokens.gameIncorrect.withValues(alpha: 0.5)
               : isDark
               ? widget.primaryColor.withValues(alpha: 0.3)
               : Colors.white.withValues(alpha: 0.8);
@@ -414,7 +417,7 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
                         borderRadius: BorderRadius.circular(16.r),
                         border: Border.all(
                           color: status == _BuilderStatus.error
-                              ? Colors.redAccent.withValues(alpha: 0.5)
+                              ? AppColors.gameIncorrect.withValues(alpha: 0.5)
                               : isDark
                               ? Colors.white10
                               : Colors.black12,
@@ -473,7 +476,7 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
                                     fontSize: 10.sp,
                                     fontWeight: FontWeight.w700,
                                     color: wordCount >= widget.minWordCount
-                                        ? Colors.greenAccent
+                                        ? AppColors.gameCorrect
                                         : subtitleColor.withValues(alpha: 0.6),
                                   ),
                                 );
@@ -496,9 +499,8 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
                                         fontFamily: 'Outfit',
                                         fontSize: 10.sp,
                                         fontWeight: FontWeight.w600,
-                                        color: Colors.redAccent.withValues(
-                                          alpha: 0.8,
-                                        ),
+                                        color: AppColors.gameIncorrect
+                                            .withValues(alpha: 0.8),
                                       ),
                                     );
                                   } else {
@@ -544,7 +546,9 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
                             fontFamily: 'Outfit',
                             fontSize: 12.sp,
                             fontWeight: FontWeight.w700,
-                            color: Colors.redAccent.withValues(alpha: 0.9),
+                            color: AppColors.gameIncorrect.withValues(
+                              alpha: 0.9,
+                            ),
                           ),
                         ),
                       );
@@ -679,7 +683,7 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
               children: [
                 Icon(
                   Icons.verified_rounded,
-                  color: Colors.greenAccent,
+                  color: AppColors.gameCorrect,
                   size: 56.r,
                 ).animate().scale(
                   begin: const Offset(0, 0),
@@ -694,7 +698,7 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
                     fontFamily: 'Outfit',
                     fontSize: 16.sp,
                     fontWeight: FontWeight.w900,
-                    color: Colors.greenAccent,
+                    color: AppColors.gameCorrect,
                     letterSpacing: 2,
                   ),
                 ).animate().fadeIn(delay: 200.ms),

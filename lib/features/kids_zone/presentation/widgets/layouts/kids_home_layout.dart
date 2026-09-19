@@ -8,6 +8,7 @@ import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/kids_zone/presentation/utils/kids_tts_service.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_fitted_text.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 /// Dollhouse Theme for Home Game
 /// Space Complexity: O(1)
@@ -78,10 +79,7 @@ class KidsHomeLayout extends StatelessWidget {
                         top: Radius.circular(8.r),
                       ),
                       border: Border(
-                        top: BorderSide(
-                          color: const Color(0xFF78350F),
-                          width: 4.h,
-                        ),
+                        top: BorderSide(color: AppColors.amber900, width: 4.h),
                       ),
                     ),
                   ),
@@ -159,7 +157,7 @@ class KidsHomeLayout extends StatelessWidget {
                   height: 60.h,
                   color: isHovering
                       ? const Color(0xFFDC2626)
-                      : const Color(0xFFEF4444), // Red roof
+                      : AppColors.red500, // Red roof
                 ),
               ),
               // Dollhouse Room
@@ -173,7 +171,7 @@ class KidsHomeLayout extends StatelessWidget {
                   border: Border.all(
                     color: isHovering
                         ? const Color(0xFF92400E)
-                        : const Color(0xFF78350F),
+                        : AppColors.amber900,
                     width: isHovering ? 8.r : 6.r,
                   ), // Wooden walls
                   boxShadow: [
@@ -261,10 +259,10 @@ class KidsHomeLayout extends StatelessWidget {
     int index,
   ) {
     final colors = [
-      const Color(0xFF6366F1), // Indigo Sofa
-      const Color(0xFF10B981), // Green Chair
-      const Color(0xFFF43F5E), // Pink Bed
-      const Color(0xFF8B5CF6), // Purple Wardrobe
+      AppColors.indigo500, // Indigo Sofa
+      AppColors.emerald500, // Green Chair
+      AppColors.rose500, // Pink Bed
+      AppColors.violet500, // Purple Wardrobe
     ];
     final furnitureColor = colors[index % colors.length];
 

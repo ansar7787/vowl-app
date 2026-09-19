@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/utils/instruction_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -148,7 +149,7 @@ class KidsProfessionsLayout extends StatelessWidget {
                           height: 40.h,
                           decoration: BoxDecoration(
                             color: index % 2 == 0
-                                ? const Color(0xFFEF4444)
+                                ? AppColors.red500
                                 : Colors.white,
                             borderRadius: BorderRadius.vertical(
                               bottom: Radius.circular(16.r),
@@ -306,7 +307,7 @@ class KidsProfessionsLayout extends StatelessWidget {
                       fontFamily: 'Outfit',
                       fontSize: 16.sp,
                       fontWeight: FontWeight.w700,
-                      color: const Color(0xFF1E293B),
+                      color: AppColors.slate800,
                       height: 1.1,
                     ),
                     textAlign: TextAlign.center,
@@ -323,7 +324,7 @@ class KidsProfessionsLayout extends StatelessWidget {
               width: 40.w,
               height: 20.h,
               decoration: BoxDecoration(
-                color: const Color(0xFF94A3B8), // Silver metal
+                color: AppColors.slate400, // Silver metal
                 borderRadius: BorderRadius.circular(6.r),
                 border: Border.all(color: const Color(0xFF475569), width: 2),
               ),

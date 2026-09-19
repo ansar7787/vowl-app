@@ -1,3 +1,5 @@
+import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -30,6 +32,7 @@ class StoryBuilderNarrativeTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     final originalIndex = quest.sentences?.indexOf(sentence) ?? -1;
     final correctOrderIndex = quest.correctOrder?.indexOf(originalIndex) ?? -1;
 
@@ -46,9 +49,9 @@ class StoryBuilderNarrativeTile extends StatelessWidget {
         ? Colors.white.withValues(alpha: 0.15)
         : Colors.black.withValues(alpha: 0.08);
     if (isCorrect == true) {
-      borderColor = Colors.greenAccent;
+      borderColor = tokens.gameCorrect;
     } else if (isCorrect == false) {
-      borderColor = Colors.redAccent;
+      borderColor = tokens.gameIncorrect;
     } else if (isHintVisible && isCorrectPosition) {
       borderColor = theme.primaryColor;
     }
@@ -90,9 +93,7 @@ class StoryBuilderNarrativeTile extends StatelessWidget {
                     fontFamily: 'Outfit',
                     fontSize: 14.sp,
                     fontWeight: FontWeight.w900,
-                    color: isDark
-                        ? theme.primaryColor
-                        : const Color(0xFF0F172A),
+                    color: isDark ? theme.primaryColor : AppColors.slate900,
                   ),
                 ),
               ),

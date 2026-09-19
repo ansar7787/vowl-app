@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -49,7 +50,7 @@ class TranslationMonetizationController {
                 padding: EdgeInsets.fromLTRB(20.w, 16.h, 20.w, 24.h),
                 decoration: BoxDecoration(
                   color: isDark
-                      ? const Color(0xFF0F172A).withValues(alpha: 0.85)
+                      ? AppColors.slate900.withValues(alpha: 0.85)
                       : Colors.white.withValues(alpha: 0.9),
                   border: Border.all(
                     color: Colors.white.withValues(alpha: 0.2),

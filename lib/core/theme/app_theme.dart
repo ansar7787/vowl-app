@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_color_tokens.dart';
 
 /// The central production-grade theme declaration for Vowl, coordinating
 /// light, dark, and midnight configurations with seamless system-level overlays.
@@ -7,68 +9,59 @@ class AppTheme {
   AppTheme._(); // Non-instantiable.
 
   // ---------------------------------------------------------------------------
-  // Palette — Primary
+  // Palette — Primary (delegating to AppColors for single-source-of-truth)
   // ---------------------------------------------------------------------------
 
   /// Primary brand colour: Indigo (Trust + Focus).
-  static const Color primaryIndigo = Color(
-    0xFF6366F1,
-  ); // Deepened to Indigo 700 for LCD consistency
+  static const Color primaryIndigo = AppColors.indigo500;
 
   /// Secondary brand colour: Emerald (Success + Progress).
-  static const Color secondaryEmerald = Color(
-    0xFF059669,
-  ); // Deepened to Emerald 600
+  static const Color secondaryEmerald = AppColors.emerald600;
 
   /// Accent colour: Amber (Rewards + Stars).
-  static const Color accentAmber = Color(0xFFD97706); // Deepened to Amber 600
+  static const Color accentAmber = AppColors.amber600;
 
   // ---------------------------------------------------------------------------
-  // Palette — Surface tints
+  // Palette — Surface tints (delegating to AppColors)
   // ---------------------------------------------------------------------------
 
   /// Light-surface indigo tint (Indigo 50).
-  static const Color primaryIndigoTintLight = Color(0xFFEEF2FF);
+  static const Color primaryIndigoTintLight = AppColors.indigo50;
 
   /// Dark-surface indigo tint (Indigo 950).
-  static const Color primaryIndigoTintDark = Color(0xFF1E1B4B);
+  static const Color primaryIndigoTintDark = AppColors.indigo950;
 
-  // FIX (MEDIUM-1): Extracted repeated `Color(0xFF8B5CF6)` into a named
-  // constant. Previously appeared in both darkTheme and midnightTheme without
-  // a name, risking silent drift if one was changed and the other was not.
-  /// Lighter indigo for dark-surface primary text/icons (Indigo 400).
-  static const Color primaryIndigoDark = Color(0xFF8B5CF6);
+  /// Lighter indigo for dark-surface primary text/icons (Violet 500).
+  static const Color primaryIndigoDark = AppColors.violet500;
 
-  // FIX (MEDIUM-1): Extracted repeated `Color(0xFF0B0F19)` into a named
-  // constant used for the midnight mode card/surface colour.
   /// Near-black card base for midnight mode — high contrast surface.
-  static const Color midnightCardBase = Color(0xFF0B0F19);
+  static const Color midnightCardBase = AppColors.midnightSurface;
 
   // ---------------------------------------------------------------------------
-  // Palette — Light mode surfaces
+  // Palette — Light mode surfaces (delegating to AppColors)
   // ---------------------------------------------------------------------------
 
   /// Light scaffold background (Slate 50).
-  static const Color scaffoldLight = Color(0xFFF8FAFC);
+  static const Color scaffoldLight = AppColors.slate50;
 
   /// Light card surface (pure white).
-  static const Color cardLight = Color(0xFFFFFFFF);
+  static const Color cardLight = AppColors.white;
 
   /// Light border colour (Slate 200).
-  static const Color borderLight = Color(0xFFE2E8F0);
+  static const Color borderLight = AppColors.slate200;
 
   // ---------------------------------------------------------------------------
-  // Palette — Dark mode surfaces
+  // Palette — Dark mode surfaces (delegating to AppColors)
   // ---------------------------------------------------------------------------
 
   /// Dark scaffold background (Slate 900).
-  static const Color scaffoldDark = Color(0xFF0F172A);
+  static const Color scaffoldDark = AppColors.slate900;
 
   /// Dark card surface (Slate 800).
-  static const Color cardDark = Color(0xFF1E293B);
+  static const Color cardDark = AppColors.slate800;
 
   /// Dark border colour (Slate 700).
-  static const Color borderDark = Color(0xFF334155);
+  static const Color borderDark = AppColors.slate700;
 
   // ---------------------------------------------------------------------------
   // Light Theme
@@ -77,6 +70,7 @@ class AppTheme {
   static final ThemeData lightTheme = ThemeData(
     useMaterial3: true,
     fontFamily: 'Outfit',
+    extensions: const <ThemeExtension>[AppColorTokens.light],
     colorScheme: ColorScheme.fromSeed(
       seedColor: primaryIndigo,
       primary: primaryIndigo,
@@ -91,7 +85,7 @@ class AppTheme {
     dividerColor: borderLight,
     textTheme: const TextTheme().apply(
       fontFamily: 'Outfit',
-      bodyColor: Color(0xFF0F172A), // Slate 900
+      bodyColor: AppColors.slate900,
       displayColor: primaryIndigo,
     ),
     appBarTheme: const AppBarTheme(
@@ -154,11 +148,10 @@ class AppTheme {
     useMaterial3: true,
     brightness: Brightness.dark,
     fontFamily: 'Outfit',
+    extensions: const <ThemeExtension>[AppColorTokens.dark],
     colorScheme: ColorScheme.fromSeed(
       seedColor: primaryIndigo,
       brightness: Brightness.dark,
-      // FIX (MEDIUM-1): Now references the named constant instead of a
-      // magic Color literal.
       primary: primaryIndigoDark,
       secondary: secondaryEmerald,
       tertiary: accentAmber,
@@ -171,7 +164,7 @@ class AppTheme {
     dividerColor: borderDark,
     textTheme: const TextTheme().apply(
       fontFamily: 'Outfit',
-      bodyColor: Color(0xFFF8FAFC), // Slate 50
+      bodyColor: AppColors.slate50,
       displayColor: Colors.white,
     ),
     appBarTheme: const AppBarTheme(
@@ -235,10 +228,10 @@ class AppTheme {
     useMaterial3: true,
     brightness: Brightness.dark,
     fontFamily: 'Outfit',
+    extensions: const <ThemeExtension>[AppColorTokens.midnight],
     colorScheme: ColorScheme.fromSeed(
       seedColor: primaryIndigo,
       brightness: Brightness.dark,
-      // FIX (MEDIUM-1): Named constants for both repeated values.
       primary: primaryIndigoDark,
       secondary: secondaryEmerald,
       tertiary: accentAmber,

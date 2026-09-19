@@ -7,6 +7,7 @@ import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 /// Presents a themed multi-part quest sequence, stepping through each part
 /// in order and showing aggregate progress.
@@ -159,7 +160,7 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
     return Scaffold(
-      backgroundColor: isDark ? const Color(0xFF0F172A) : Colors.white,
+      backgroundColor: isDark ? AppColors.slate900 : Colors.white,
       body: Stack(
         children: [
           const MeshGradientBackground(showLetters: false),
@@ -257,7 +258,7 @@ class _Header extends StatelessWidget {
                   fontSize: 14.sp,
                   fontWeight: FontWeight.w900,
                   letterSpacing: 2,
-                  color: const Color(0xFF6366F1),
+                  color: AppColors.indigo500,
                 ),
                 overflow: TextOverflow.ellipsis,
               ),
@@ -276,7 +277,7 @@ class _Header extends StatelessWidget {
                   fontFamily: 'Outfit',
                   fontSize: 24.sp,
                   fontWeight: FontWeight.w900,
-                  color: isDark ? Colors.white : const Color(0xFF0F172A),
+                  color: isDark ? Colors.white : AppColors.slate900,
                 ),
                 overflow: TextOverflow.ellipsis,
               ),
@@ -310,7 +311,9 @@ class _ProgressBar extends StatelessWidget {
           backgroundColor: isDark
               ? Colors.white10
               : Colors.black.withValues(alpha: 0.05),
-          valueColor: const AlwaysStoppedAnimation<Color>(Color(0xFF6366F1)),
+          valueColor: AlwaysStoppedAnimation<Color>(
+            Theme.of(context).colorScheme.primary,
+          ),
         ),
       ),
     );
@@ -347,7 +350,7 @@ class _QuestCard extends StatelessWidget {
           Icon(
             isFinished ? Icons.check_circle_rounded : quest!.questIconData,
             size: 64.r,
-            color: const Color(0xFF6366F1),
+            color: AppColors.indigo500,
           ),
           SizedBox(height: 24.h),
           Text(
@@ -362,7 +365,7 @@ class _QuestCard extends StatelessWidget {
               fontSize: 14.sp,
               fontWeight: FontWeight.w900,
               letterSpacing: 2,
-              color: const Color(0xFF6366F1),
+              color: AppColors.indigo500,
             ),
           ),
           SizedBox(height: 8.h),
@@ -386,7 +389,7 @@ class _QuestCard extends StatelessWidget {
               fontFamily: 'Outfit',
               fontSize: 20.sp,
               fontWeight: FontWeight.w800,
-              color: isDark ? Colors.white : const Color(0xFF0F172A),
+              color: isDark ? Colors.white : AppColors.slate900,
             ),
             textAlign: TextAlign.center,
           ),
@@ -400,12 +403,12 @@ class _QuestCard extends StatelessWidget {
                 padding: EdgeInsets.symmetric(vertical: 20.h),
                 decoration: BoxDecoration(
                   color: onAction == null
-                      ? const Color(0xFF6366F1).withValues(alpha: 0.5)
-                      : const Color(0xFF6366F1),
+                      ? AppColors.indigo500.withValues(alpha: 0.5)
+                      : AppColors.indigo500,
                   borderRadius: BorderRadius.circular(20.r),
                   boxShadow: [
                     BoxShadow(
-                      color: const Color(0xFF6366F1).withValues(alpha: 0.3),
+                      color: AppColors.indigo500.withValues(alpha: 0.3),
                       blurRadius: 15,
                       offset: const Offset(0, 5),
                     ),

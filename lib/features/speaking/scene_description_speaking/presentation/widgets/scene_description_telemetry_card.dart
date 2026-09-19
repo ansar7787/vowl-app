@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -15,6 +16,7 @@ class SceneDescriptionTelemetryCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     final bool isSuccess = spokenText.startsWith("DECODED SUCCESSFULLY!");
 
     return GlassTile(
@@ -27,7 +29,7 @@ class SceneDescriptionTelemetryCard extends StatelessWidget {
             children: [
               Icon(
                 isSuccess ? Icons.verified_user_rounded : Icons.sensors_rounded,
-                color: isSuccess ? Colors.greenAccent : Colors.cyanAccent,
+                color: isSuccess ? tokens.gameCorrect : Colors.cyanAccent,
                 size: 16.r,
               ),
               SizedBox(width: 8.w),
@@ -49,7 +51,7 @@ class SceneDescriptionTelemetryCard extends StatelessWidget {
               fontFamily: 'Outfit',
               fontSize: 14.sp,
               color: isSuccess
-                  ? Colors.greenAccent
+                  ? tokens.gameCorrect
                   : (isDark
                         ? Colors.white.withValues(alpha: 0.9)
                         : Colors.black87),

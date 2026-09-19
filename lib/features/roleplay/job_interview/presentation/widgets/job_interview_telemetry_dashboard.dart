@@ -1,3 +1,5 @@
+import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/features/roleplay/job_interview/presentation/widgets/job_interview_fusion_painter.dart';
@@ -18,18 +20,19 @@ class JobInterviewTelemetryDashboard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     Color ringColor = color;
     if (mercuryLevel > 0.6) {
-      ringColor = Colors.greenAccent;
+      ringColor = tokens.gameCorrect;
     } else if (mercuryLevel < 0.3) {
-      ringColor = Colors.redAccent;
+      ringColor = tokens.gameIncorrect;
     }
 
     return Container(
       width: 1.sw,
       padding: EdgeInsets.all(18.r),
       decoration: BoxDecoration(
-        color: isDark ? const Color(0xFF0F0F1B) : Colors.white,
+        color: isDark ? AppColors.deepDark : Colors.white,
         borderRadius: BorderRadius.circular(28.r),
         border: Border.all(color: color.withValues(alpha: 0.1)),
       ),

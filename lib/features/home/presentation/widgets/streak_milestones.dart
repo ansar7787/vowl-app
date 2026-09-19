@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -130,7 +131,7 @@ class _StreakMilestonesState extends State<StreakMilestones> {
                 fontFamily: 'Outfit',
                 fontSize: 12.sp,
                 fontWeight: FontWeight.w500,
-                color: isDark ? Colors.white54 : const Color(0xFF64748B),
+                color: isDark ? Colors.white54 : AppColors.slate500,
               ),
             ),
           ),

@@ -19,6 +19,7 @@ import 'package:vowl/features/leaderboard/presentation/widgets/leaderboard_rank_
 import 'package:vowl/features/leaderboard/presentation/widgets/leaderboard_rank_tile.dart';
 import 'package:vowl/core/theme/theme_cubit.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 class LeaderboardScreen extends StatefulWidget {
   final bool isKids;
@@ -53,7 +54,7 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final bgColor = isMidnight
         ? Colors.black
-        : (isDark ? const Color(0xFF0F172A) : Colors.white);
+        : (isDark ? AppColors.slate900 : Colors.white);
 
     return BlocProvider(
       create: (_) =>
@@ -202,7 +203,7 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
             await completer.future;
           },
           backgroundColor: Colors.transparent,
-          color: const Color(0xFF6366F1),
+          color: AppColors.indigo500,
           child: CustomScrollView(
             controller: _scrollController,
             physics: const AlwaysScrollableScrollPhysics(
@@ -269,7 +270,7 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
                             begin: Alignment.topCenter,
                             end: Alignment.bottomCenter,
                             colors: [
-                              const Color(0xFF6366F1).withValues(alpha: 0.8),
+                              AppColors.indigo500.withValues(alpha: 0.8),
                               const Color(0xFF3B82F6).withValues(alpha: 0.4),
                             ],
                           ),
@@ -454,7 +455,10 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
                         ),
                         decoration: BoxDecoration(
                           gradient: const LinearGradient(
-                            colors: [Color(0xFF6366F1), Color(0xFF3B82F6)],
+                            colors: [
+                              Theme.of(context).colorScheme.primary,
+                              Color(0xFF3B82F6),
+                            ],
                           ),
                           borderRadius: BorderRadius.circular(24.r),
                           boxShadow: [
@@ -546,8 +550,9 @@ class _StickyRankCardDelegate extends SliverPersistentHeaderDelegate {
                 sigmaY: isPinned ? 24 : 8,
               ),
               child: Container(
-                color: (isDark ? const Color(0xFF0F172A) : Colors.white)
-                    .withValues(alpha: isPinned ? 0.92 : 0.7),
+                color: (isDark ? AppColors.slate900 : Colors.white).withValues(
+                  alpha: isPinned ? 0.92 : 0.7,
+                ),
               ),
             ),
           ),
@@ -697,9 +702,7 @@ class _LeaderboardToggle extends StatelessWidget {
                 duration: const Duration(milliseconds: 250),
                 curve: Curves.easeOutCubic,
                 decoration: BoxDecoration(
-                  color: !isKidsMode
-                      ? const Color(0xFF6366F1)
-                      : Colors.transparent,
+                  color: !isKidsMode ? AppColors.indigo500 : Colors.transparent,
                   borderRadius: BorderRadius.circular(21.r),
                   boxShadow: !isKidsMode
                       ? [
@@ -754,9 +757,7 @@ class _LeaderboardToggle extends StatelessWidget {
                 duration: const Duration(milliseconds: 250),
                 curve: Curves.easeOutCubic,
                 decoration: BoxDecoration(
-                  color: isKidsMode
-                      ? const Color(0xFFF43F5E)
-                      : Colors.transparent,
+                  color: isKidsMode ? AppColors.rose500 : Colors.transparent,
                   borderRadius: BorderRadius.circular(21.r),
                   boxShadow: isKidsMode
                       ? [

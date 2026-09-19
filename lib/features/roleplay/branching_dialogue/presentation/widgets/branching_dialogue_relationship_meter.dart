@@ -1,3 +1,5 @@
+import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -16,19 +18,20 @@ class BranchingDialogueRelationshipMeter extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     // Score defines if it's polite (+1) or rude (-1) or neutral (null/0)
     final double value = consequenceScore == null
         ? 0.5
         : (consequenceScore! > 0 ? 1.0 : 0.0);
     final Color activeColor = value > 0.5
-        ? Colors.greenAccent
-        : (value < 0.5 ? Colors.redAccent : primaryColor);
+        ? tokens.gameCorrect
+        : (value < 0.5 ? tokens.gameIncorrect : primaryColor);
 
     return Container(
       width: double.infinity,
       padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
       decoration: BoxDecoration(
-        color: isDark ? const Color(0xFF0F0F1B) : Colors.white,
+        color: isDark ? AppColors.deepDark : Colors.white,
         borderRadius: BorderRadius.circular(16.r),
         border: Border.all(
           color: primaryColor.withValues(alpha: 0.15),

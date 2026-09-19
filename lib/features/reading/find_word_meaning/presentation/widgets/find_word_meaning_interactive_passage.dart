@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/theme/app_colors.dart';
 
 class FindWordMeaningInteractivePassage extends StatefulWidget {
   final String passage;
@@ -140,10 +141,10 @@ class _FindWordMeaningInteractivePassageState
                 activeColor = widget.isCorrectSelection!
                     ? (widget.isDark
                           ? const Color(0xFF34D399)
-                          : const Color(0xFF10B981))
+                          : AppColors.emerald500)
                     : (widget.isDark
                           ? const Color(0xFFF87171)
-                          : const Color(0xFFEF4444));
+                          : AppColors.red500);
               }
 
               final word = _words[index];
@@ -175,7 +176,7 @@ class _FindWordMeaningInteractivePassageState
                           ? activeColor
                           : (widget.isDark
                                 ? Colors.white.withValues(alpha: 0.9)
-                                : const Color(0xFF1E293B)),
+                                : AppColors.slate800),
                       height: 1.4,
                     ),
                   ),

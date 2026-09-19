@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 class KidsSmartMixWidget extends StatelessWidget {
   const KidsSmartMixWidget({super.key, required this.isDark});
@@ -21,13 +22,13 @@ class KidsSmartMixWidget extends StatelessWidget {
       {
         'route': '/kids/map/handwriting',
         'title': 'Write & Learn',
-        'color': const Color(0xFFF43F5E),
+        'color': AppColors.rose500,
         'icon': Icons.edit_rounded,
       },
       {
         'route': '/kids/map/alphabet',
         'title': 'ABC',
-        'color': const Color(0xFFF43F5E),
+        'color': AppColors.rose500,
         'icon': Icons.abc_rounded,
       },
       {
@@ -39,19 +40,19 @@ class KidsSmartMixWidget extends StatelessWidget {
       {
         'route': '/kids/map/colors',
         'title': 'Colors',
-        'color': const Color(0xFFF59E0B),
+        'color': AppColors.amber500,
         'icon': Icons.palette_rounded,
       },
       {
         'route': '/kids/map/shapes',
         'title': 'Shapes',
-        'color': const Color(0xFF10B981),
+        'color': AppColors.emerald500,
         'icon': Icons.category_rounded,
       },
       {
         'route': '/kids/map/animals',
         'title': 'Animals',
-        'color': const Color(0xFF8B5CF6),
+        'color': AppColors.violet500,
         'icon': Icons.pets_rounded,
       },
       {
@@ -69,15 +70,15 @@ class KidsSmartMixWidget extends StatelessWidget {
       margin: EdgeInsets.symmetric(horizontal: 24.w),
       padding: EdgeInsets.all(16.r),
       decoration: BoxDecoration(
-        color: isDark ? const Color(0xFF1E293B) : Colors.white,
+        color: isDark ? AppColors.slate800 : Colors.white,
         borderRadius: BorderRadius.circular(24.r),
         border: Border.all(
-          color: const Color(0xFF6366F1).withValues(alpha: 0.3),
+          color: AppColors.indigo500.withValues(alpha: 0.3),
           width: 3.w,
         ),
         boxShadow: [
           BoxShadow(
-            color: const Color(0xFF6366F1).withValues(alpha: 0.2),
+            color: AppColors.indigo500.withValues(alpha: 0.2),
             offset: Offset(0, 8.h),
             blurRadius: 15,
           ),
@@ -88,11 +89,7 @@ class KidsSmartMixWidget extends StatelessWidget {
         children: [
           Row(
             children: [
-              Icon(
-                Icons.auto_awesome,
-                color: const Color(0xFFF59E0B),
-                size: 20.sp,
-              ),
+              Icon(Icons.auto_awesome, color: AppColors.amber500, size: 20.sp),
               SizedBox(width: 8.w),
               Text(
                 'DAILY ADVENTURE',
@@ -100,7 +97,7 @@ class KidsSmartMixWidget extends StatelessWidget {
                   fontFamily: 'Outfit',
                   fontSize: 14.sp,
                   fontWeight: FontWeight.w900,
-                  color: isDark ? Colors.white : const Color(0xFF1E293B),
+                  color: isDark ? Colors.white : AppColors.slate800,
                   letterSpacing: 2,
                 ),
               ),
@@ -190,7 +187,7 @@ class KidsSmartMixWidget extends StatelessWidget {
                   fontFamily: 'Outfit',
                   fontSize: 14.sp,
                   fontWeight: FontWeight.w900,
-                  color: isDark ? Colors.white : const Color(0xFF1E293B),
+                  color: isDark ? Colors.white : AppColors.slate800,
                 ),
               ),
             ),

@@ -34,6 +34,7 @@ import 'package:vowl/features/kids_zone/presentation/widgets/kids_room_exit_dial
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_room_decor_sheet.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_room_food_sheet.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_room_theme_sheet.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 class KidsRoomScreen extends StatefulWidget {
   const KidsRoomScreen({super.key});
@@ -325,9 +326,7 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
               final isDark = Theme.of(context).brightness == Brightness.dark;
               final bgColor = isMidnight
                   ? Colors.black
-                  : (isDark
-                        ? const Color(0xFF0F172A)
-                        : const Color(0xFFF8FAFC));
+                  : (isDark ? AppColors.slate900 : const Color(0xFFF8FAFC));
               final now = DateTime.now();
               final isGameToday =
                   user.kidsLastGameDate != null &&
@@ -943,7 +942,7 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
                                       fontFamily: 'Outfit',
                                       fontSize: 12.sp,
                                       fontWeight: FontWeight.w900,
-                                      color: const Color(0xFF6366F1),
+                                      color: AppColors.indigo500,
                                     ),
                                   ),
                                 ],

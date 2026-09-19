@@ -1,3 +1,5 @@
+import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
@@ -29,6 +31,7 @@ class SpeedSpellingInputField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     final showCorrectGlow = isCorrect == true;
 
     return Container(
@@ -38,8 +41,8 @@ class SpeedSpellingInputField extends StatelessWidget {
         gradient: showCorrectGlow
             ? LinearGradient(
                 colors: [
-                  Colors.greenAccent.withValues(alpha: 0.2),
-                  Colors.greenAccent.withValues(alpha: 0.05),
+                  tokens.gameCorrect.withValues(alpha: 0.2),
+                  tokens.gameCorrect.withValues(alpha: 0.05),
                 ],
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
@@ -60,8 +63,8 @@ class SpeedSpellingInputField extends StatelessWidget {
         border: Border.all(
           color: (isAnswered || (isCorrect == false && attempts > 0))
               ? (isCorrect == true
-                    ? Colors.greenAccent.withValues(alpha: 0.6)
-                    : Colors.redAccent.withValues(alpha: 0.6))
+                    ? tokens.gameCorrect.withValues(alpha: 0.6)
+                    : tokens.gameIncorrect.withValues(alpha: 0.6))
               : (isDark
                     ? Colors.white.withValues(alpha: 0.15)
                     : Colors.black.withValues(alpha: 0.1)),
@@ -70,7 +73,7 @@ class SpeedSpellingInputField extends StatelessWidget {
         boxShadow: showCorrectGlow
             ? [
                 BoxShadow(
-                  color: Colors.greenAccent.withValues(alpha: 0.2),
+                  color: tokens.gameCorrect.withValues(alpha: 0.2),
                   blurRadius: 30,
                   spreadRadius: -5,
                 ),
@@ -140,13 +143,13 @@ class SpeedSpellingInputField extends StatelessWidget {
                       fontSize: 36.sp,
                       fontWeight: FontWeight.w900,
                       color: showCorrectGlow
-                          ? Colors.greenAccent
-                          : (isDark ? primaryColor : const Color(0xFF0F172A)),
+                          ? tokens.gameCorrect
+                          : (isDark ? primaryColor : AppColors.slate900),
                       letterSpacing: 6,
                       shadows: showCorrectGlow
                           ? [
                               Shadow(
-                                color: Colors.greenAccent.withValues(
+                                color: tokens.gameCorrect.withValues(
                                   alpha: 0.5,
                                 ),
                                 blurRadius: 20,
@@ -198,7 +201,7 @@ class SpeedSpellingInputField extends StatelessWidget {
                                 Icons.backspace_rounded,
                                 color: isDark
                                     ? Colors.white
-                                    : const Color(0xFF0F172A),
+                                    : AppColors.slate900,
                                 size: 18.r,
                               ),
                             ),
@@ -232,7 +235,7 @@ class SpeedSpellingInputField extends StatelessWidget {
                                 Icons.refresh_rounded,
                                 color: isDark
                                     ? Colors.white
-                                    : const Color(0xFF0F172A),
+                                    : AppColors.slate900,
                                 size: 18.r,
                               ),
                             ),

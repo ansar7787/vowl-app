@@ -1,3 +1,5 @@
+import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'dart:math';
 import 'dart:ui';
 import 'package:flutter/material.dart';
@@ -31,6 +33,7 @@ class AmbientIdSonarField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     return SizedBox(
       height: 380.h,
       width: double.infinity,
@@ -142,9 +145,9 @@ class AmbientIdSonarField extends StatelessWidget {
                 height: 90.r,
                 decoration: BoxDecoration(
                   color: isChoiceCorrect
-                      ? Colors.greenAccent
+                      ? AppColors.gameCorrect
                       : (isChoiceWrong
-                            ? Colors.redAccent
+                            ? AppColors.gameIncorrect
                             : (isSelected ? color : const Color(0xFF1E1E24))),
                   shape: BoxShape.circle,
                   border: Border.all(
@@ -158,9 +161,9 @@ class AmbientIdSonarField extends StatelessWidget {
                       BoxShadow(
                         color:
                             (isChoiceCorrect
-                                    ? Colors.greenAccent
+                                    ? AppColors.gameCorrect
                                     : (isChoiceWrong
-                                          ? Colors.redAccent
+                                          ? AppColors.gameIncorrect
                                           : color))
                                 .withValues(alpha: 0.4),
                         blurRadius: 15,

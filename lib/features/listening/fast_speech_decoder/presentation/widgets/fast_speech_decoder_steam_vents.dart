@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -25,6 +26,7 @@ class FastSpeechDecoderSteamVents extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: List.generate(options.length, (index) {
@@ -42,9 +44,9 @@ class FastSpeechDecoderSteamVents extends StatelessWidget {
               padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 14.h),
               decoration: BoxDecoration(
                 color: isChoiceCorrect
-                    ? Colors.greenAccent.withValues(alpha: 0.8)
+                    ? tokens.gameCorrect.withValues(alpha: 0.8)
                     : (isChoiceWrong
-                          ? Colors.redAccent.withValues(alpha: 0.8)
+                          ? tokens.gameIncorrect.withValues(alpha: 0.8)
                           : (isSelected ? color : const Color(0xFF1E1E24))),
                 borderRadius: BorderRadius.circular(12.r),
                 border: Border.all(
@@ -63,8 +65,10 @@ class FastSpeechDecoderSteamVents extends StatelessWidget {
                     BoxShadow(
                       color:
                           (isChoiceCorrect
-                                  ? Colors.greenAccent
-                                  : (isChoiceWrong ? Colors.redAccent : color))
+                                  ? tokens.gameCorrect
+                                  : (isChoiceWrong
+                                        ? tokens.gameIncorrect
+                                        : color))
                               .withValues(alpha: 0.4),
                       blurRadius: 15,
                       spreadRadius: 2,

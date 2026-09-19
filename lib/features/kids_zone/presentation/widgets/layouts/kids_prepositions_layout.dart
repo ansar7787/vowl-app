@@ -10,6 +10,7 @@ import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/kids_zone/presentation/utils/kids_tts_service.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_fitted_text.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 /// Magic Show Theme for Prepositions Game
 /// Space Complexity: O(1)
@@ -285,7 +286,7 @@ class KidsPrepositionsLayout extends StatelessWidget {
                         height: 55.h,
                         width: 60.w,
                         decoration: BoxDecoration(
-                          color: const Color(0xFF1E293B), // Black/dark grey hat
+                          color: AppColors.slate800, // Black/dark grey hat
                           borderRadius: BorderRadius.vertical(
                             top: Radius.circular(8.r),
                           ),
@@ -298,7 +299,7 @@ class KidsPrepositionsLayout extends StatelessWidget {
                             Container(
                               height: 12.h,
                               width: double.infinity,
-                              color: const Color(0xFFE11D48),
+                              color: AppColors.rose700,
                             ),
                           ],
                         ),
@@ -308,7 +309,7 @@ class KidsPrepositionsLayout extends StatelessWidget {
                         height: 10.h,
                         width: 80.w,
                         decoration: BoxDecoration(
-                          color: const Color(0xFF0F172A),
+                          color: AppColors.slate900,
                           borderRadius: BorderRadius.circular(10.r),
                           boxShadow: [
                             BoxShadow(
@@ -331,7 +332,7 @@ class KidsPrepositionsLayout extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 6.h),
             decoration: BoxDecoration(
               gradient: const LinearGradient(
-                colors: [Color(0xFFFBBF24), Color(0xFFF59E0B)], // Rich gold
+                colors: [AppColors.amber400, AppColors.amber500], // Rich gold
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
               ),

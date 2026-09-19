@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/translation_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/theme/app_colors.dart';
 
 class TranslationDownloadDialog extends StatefulWidget {
   const TranslationDownloadDialog({super.key});
@@ -65,7 +66,7 @@ class _TranslationDownloadDialogState extends State<TranslationDownloadDialog> {
                 fallback: 'Failed to download language model.',
               ),
             ),
-            backgroundColor: const Color(0xFFF43F5E),
+            backgroundColor: AppColors.rose500,
           ),
         );
       }
@@ -126,8 +127,8 @@ class _TranslationDownloadDialogState extends State<TranslationDownloadDialog> {
                         backgroundColor: isDark
                             ? Colors.white10
                             : Colors.black12,
-                        valueColor: const AlwaysStoppedAnimation<Color>(
-                          Color(0xFF6366F1),
+                        valueColor: AlwaysStoppedAnimation<Color>(
+                          Theme.of(context).colorScheme.primary,
                         ),
                       ),
                     ),

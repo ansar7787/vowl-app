@@ -13,6 +13,7 @@ import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/presentation/widgets/loading_overlay.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 /// All settings-related dialogs in one place.
 ///
@@ -116,7 +117,7 @@ class SettingsDialogs {
                     fontFamily: 'Outfit',
                     fontSize: 24.sp,
                     fontWeight: FontWeight.w900,
-                    color: isDark ? Colors.white : const Color(0xFF0F172A),
+                    color: isDark ? Colors.white : AppColors.slate900,
                   ),
                   textAlign: TextAlign.center,
                 ),
@@ -207,7 +208,7 @@ class SettingsDialogs {
                     fontFamily: 'Outfit',
                     fontSize: 24.sp,
                     fontWeight: FontWeight.w900,
-                    color: isDark ? Colors.white : const Color(0xFF0F172A),
+                    color: isDark ? Colors.white : AppColors.slate900,
                   ),
                   textAlign: TextAlign.center,
                 ),
@@ -324,7 +325,7 @@ class SettingsDialogs {
                     fontFamily: 'Outfit',
                     fontSize: 24.sp,
                     fontWeight: FontWeight.w900,
-                    color: isDark ? Colors.white : const Color(0xFF0F172A),
+                    color: isDark ? Colors.white : AppColors.slate900,
                   ),
                 ),
                 SizedBox(height: 16.h),
@@ -424,7 +425,7 @@ class SettingsDialogs {
                     fontFamily: 'Outfit',
                     fontSize: 24.sp,
                     fontWeight: FontWeight.w900,
-                    color: isDark ? Colors.white : const Color(0xFF0F172A),
+                    color: isDark ? Colors.white : AppColors.slate900,
                   ),
                 ),
                 SizedBox(height: 16.h),
@@ -509,7 +510,7 @@ class SettingsDialogs {
     return _showDisableConfirmation(
       context: context,
       icon: Icons.verified_user_rounded,
-      color: const Color(0xFF8B5CF6),
+      color: AppColors.violet500,
       titleKey: 'settings.reset_age_title',
       titleFallback: 'Reset Age Verification?',
       bodyKey: 'settings.reset_age_desc',
@@ -566,7 +567,7 @@ class SettingsDialogs {
                     fontFamily: 'Outfit',
                     fontSize: 24.sp,
                     fontWeight: FontWeight.w900,
-                    color: isDark ? Colors.white : const Color(0xFF0F172A),
+                    color: isDark ? Colors.white : AppColors.slate900,
                   ),
                 ),
                 SizedBox(height: 16.h),
@@ -776,7 +777,7 @@ class _EditProfileDialogContentState extends State<_EditProfileDialogContent> {
               fontFamily: 'Outfit',
               fontSize: 24.sp,
               fontWeight: FontWeight.w900,
-              color: isDark ? Colors.white : const Color(0xFF0F172A),
+              color: isDark ? Colors.white : AppColors.slate900,
             ),
             textAlign: TextAlign.center,
           ),
@@ -869,7 +870,7 @@ class _EditProfileDialogContentState extends State<_EditProfileDialogContent> {
             controller: _nameController,
             style: TextStyle(
               fontFamily: 'Outfit',
-              color: isDark ? Colors.white : const Color(0xFF0F172A),
+              color: isDark ? Colors.white : AppColors.slate900,
               fontSize: 16.sp,
               fontWeight: FontWeight.w600,
             ),
@@ -1068,7 +1069,7 @@ class _FinalDeleteDialogContentState extends State<_FinalDeleteDialogContent> {
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontFamily: 'Outfit',
-                      color: isDark ? Colors.white : const Color(0xFF0F172A),
+                      color: isDark ? Colors.white : AppColors.slate900,
                       fontWeight: FontWeight.bold,
                     ),
                     decoration: InputDecoration(

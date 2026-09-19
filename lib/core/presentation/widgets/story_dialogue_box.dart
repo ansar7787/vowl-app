@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -181,7 +182,7 @@ class StoryDialogueBox extends StatelessWidget {
                   fontWeight: FontWeight.w600,
                   color: isDark
                       ? Colors.white.withValues(alpha: 0.9)
-                      : const Color(0xFF1E293B),
+                      : AppColors.slate800,
                   height: 1.4,
                 ),
               )

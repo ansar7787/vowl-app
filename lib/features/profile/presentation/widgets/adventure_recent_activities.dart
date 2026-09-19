@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 class AdventureRecentActivities extends StatelessWidget {
   final UserEntity user;
@@ -40,7 +41,7 @@ class AdventureRecentActivities extends StatelessWidget {
             fontFamily: 'Outfit',
             fontSize: 12.sp,
             fontWeight: FontWeight.w900,
-            color: isDark ? Colors.white38 : const Color(0xFF64748B),
+            color: isDark ? Colors.white38 : AppColors.slate500,
             letterSpacing: 1.5,
           ),
         ),
@@ -108,9 +109,7 @@ class AdventureRecentActivities extends StatelessWidget {
                             ? Icons.explore_rounded
                             : Icons.shopping_bag_rounded,
                         size: 16.r,
-                        color: isDark
-                            ? Colors.white54
-                            : const Color(0xFF64748B),
+                        color: isDark ? Colors.white54 : AppColors.slate500,
                       ),
                     ),
                     SizedBox(width: 12.r),
@@ -138,9 +137,7 @@ class AdventureRecentActivities extends StatelessWidget {
                               fontFamily: 'Outfit',
                               fontSize: 13.sp,
                               fontWeight: FontWeight.w700,
-                              color: isDark
-                                  ? Colors.white
-                                  : const Color(0xFF1E293B),
+                              color: isDark ? Colors.white : AppColors.slate800,
                             ),
                           ),
                           if (showSubtitle)
@@ -175,7 +172,7 @@ class AdventureRecentActivities extends StatelessWidget {
                                 fontSize: 11.sp,
                                 fontWeight: FontWeight.w600,
                                 color: isDark
-                                    ? const Color(0xFF10B981)
+                                    ? AppColors.emerald500
                                     : const Color(0xFF059669),
                               ),
                             ),

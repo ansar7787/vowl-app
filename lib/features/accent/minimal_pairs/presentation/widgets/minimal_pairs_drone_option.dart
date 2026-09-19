@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -31,12 +32,13 @@ class MinimalPairsDroneOption extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     final bool isSelected = selectedDroneIndex == index;
     final bool correct = index == correctIndex;
 
     Color borderColor = color.withValues(alpha: isDark ? 0.4 : 0.3);
     if (isAnswered && isSelected) {
-      borderColor = correct ? Colors.greenAccent : Colors.redAccent;
+      borderColor = correct ? tokens.gameCorrect : tokens.gameIncorrect;
     } else if (isSelected) {
       borderColor = color;
     }
@@ -66,8 +68,8 @@ class MinimalPairsDroneOption extends StatelessWidget {
                       BoxShadow(
                         color: (isSelected && isAnswered)
                             ? (correct
-                                  ? Colors.greenAccent.withValues(alpha: 0.3)
-                                  : Colors.redAccent.withValues(alpha: 0.3))
+                                  ? tokens.gameCorrect.withValues(alpha: 0.3)
+                                  : tokens.gameIncorrect.withValues(alpha: 0.3))
                             : color.withValues(alpha: isDark ? 0.25 : 0.08),
                         blurRadius: 10,
                       ),
@@ -144,7 +146,7 @@ class MinimalPairsDroneOption extends StatelessWidget {
               opacity: (isAnswered && isSelected) ? 1.0 : 0.0,
               child: Icon(
                 correct ? Icons.check_circle_rounded : Icons.cancel_rounded,
-                color: correct ? Colors.greenAccent : Colors.redAccent,
+                color: correct ? tokens.gameCorrect : tokens.gameIncorrect,
                 size: 20.r,
               ).animate(target: (isAnswered && isSelected) ? 1 : 0).scale(),
             ),

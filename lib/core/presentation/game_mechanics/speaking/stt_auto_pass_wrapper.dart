@@ -1,3 +1,5 @@
+import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -216,7 +218,7 @@ class _SttAutoPassWrapperState extends State<SttAutoPassWrapper> {
         TextSpan(
           text: raw + (i < spokenWordsRaw.length - 1 ? ' ' : ''),
           style: TextStyle(
-            color: isMatch ? Colors.green : Colors.redAccent,
+            color: isMatch ? Colors.green : AppColors.gameIncorrect,
             decoration: isMatch ? null : TextDecoration.underline,
           ),
         ),
@@ -260,6 +262,7 @@ class _SttAutoPassWrapperState extends State<SttAutoPassWrapper> {
 
   @override
   Widget build(BuildContext context) {
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     if (_showFallback) {
       return widget.child;
     }
@@ -303,7 +306,7 @@ class _SttAutoPassWrapperState extends State<SttAutoPassWrapper> {
                     ),
                     decoration: BoxDecoration(
                       color: hasError
-                          ? Colors.redAccent.withValues(alpha: 0.1)
+                          ? tokens.gameIncorrect.withValues(alpha: 0.1)
                           : (isListening
                                 ? widget.primaryColor.withValues(alpha: 0.15)
                                 : ((Theme.of(context).brightness ==
@@ -313,7 +316,7 @@ class _SttAutoPassWrapperState extends State<SttAutoPassWrapper> {
                       borderRadius: BorderRadius.circular(24.r),
                       border: Border.all(
                         color: hasError
-                            ? Colors.redAccent
+                            ? tokens.gameIncorrect
                             : (isListening
                                   ? widget.primaryColor
                                   : widget.primaryColor.withValues(alpha: 0.3)),
@@ -422,7 +425,7 @@ class _SttAutoPassWrapperState extends State<SttAutoPassWrapper> {
                                         fontFamily: 'Outfit',
                                         fontSize: 12.sp,
                                         fontWeight: FontWeight.w600,
-                                        color: Colors.redAccent,
+                                        color: tokens.gameIncorrect,
                                       ),
                                     ),
                                   ).animate().fadeIn().slideY(begin: -0.2),
@@ -458,7 +461,7 @@ class _SttAutoPassWrapperState extends State<SttAutoPassWrapper> {
                   borderRadius: BorderRadius.circular(16.r),
                   side: BorderSide(
                     color: hasError
-                        ? Colors.redAccent.withValues(alpha: 0.3)
+                        ? tokens.gameIncorrect.withValues(alpha: 0.3)
                         : widget.primaryColor.withValues(alpha: 0.2),
                     width: hasError ? 1.5 : 1.0,
                   ),
@@ -476,7 +479,7 @@ class _SttAutoPassWrapperState extends State<SttAutoPassWrapper> {
                   fontSize: 12.sp,
                   fontWeight: FontWeight.w600,
                   color: hasError
-                      ? Colors.redAccent
+                      ? tokens.gameIncorrect
                       : widget.primaryColor.withValues(alpha: 0.7),
                 ),
               ),

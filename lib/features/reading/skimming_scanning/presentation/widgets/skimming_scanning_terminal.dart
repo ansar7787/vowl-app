@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -29,6 +30,7 @@ class SkimmingScanningTerminal extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     final List<String> words = text.split(RegExp(r'\s+'));
 
     return Container(
@@ -77,12 +79,12 @@ class SkimmingScanningTerminal extends StatelessWidget {
                         ),
                         decoration: BoxDecoration(
                           color: isTapped
-                              ? Colors.greenAccent.withValues(alpha: 0.25)
+                              ? tokens.gameCorrect.withValues(alpha: 0.25)
                               : Colors.transparent,
                           borderRadius: BorderRadius.circular(8.r),
                           border: Border.all(
                             color: isTapped
-                                ? Colors.greenAccent
+                                ? tokens.gameCorrect
                                 : Colors.transparent,
                             width: 1.5,
                           ),
@@ -93,8 +95,8 @@ class SkimmingScanningTerminal extends StatelessWidget {
                             fontFamily: 'Outfit',
                             fontSize: 18.sp,
                             color: isTapped
-                                ? Colors.greenAccent
-                                : Colors.greenAccent.withValues(alpha: 0.8),
+                                ? tokens.gameCorrect
+                                : tokens.gameCorrect.withValues(alpha: 0.8),
                             fontWeight: isTapped
                                 ? FontWeight.bold
                                 : FontWeight.normal,

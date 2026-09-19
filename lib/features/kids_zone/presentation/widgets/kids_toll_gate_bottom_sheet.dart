@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -34,7 +35,7 @@ class KidsTollGateBottomSheet {
               padding: EdgeInsets.all(24.r),
               decoration: BoxDecoration(
                 color: Theme.of(context).brightness == Brightness.dark
-                    ? const Color(0xFF1E293B)
+                    ? AppColors.slate800
                     : Colors.white,
                 borderRadius: BorderRadius.vertical(top: Radius.circular(30.r)),
                 border: Border.all(color: primaryColor, width: 4.w),

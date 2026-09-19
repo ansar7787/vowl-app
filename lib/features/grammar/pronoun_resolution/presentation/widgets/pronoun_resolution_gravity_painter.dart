@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -67,8 +68,8 @@ class PronounResolutionGravityPainter extends CustomPainter {
       final isActuallyCorrect = isAnswered && correctNode == i;
 
       final nodeColor = isActuallyCorrect
-          ? Colors.greenAccent
-          : (isWrong ? Colors.redAccent : primaryColor);
+          ? AppColors.gameCorrect
+          : (isWrong ? AppColors.gameIncorrect : primaryColor);
 
       // Node Container (Glass Morph)
       final rect = Rect.fromCenter(
@@ -98,9 +99,9 @@ class PronounResolutionGravityPainter extends CustomPainter {
             fontSize: labelSize,
             fontWeight: FontWeight.bold,
             color: isActuallyCorrect
-                ? Colors.greenAccent
+                ? AppColors.gameCorrect
                 : (isWrong
-                      ? Colors.redAccent
+                      ? AppColors.gameIncorrect
                       : (isDark ? Colors.white : Colors.black87)),
           ),
         ),
@@ -115,7 +116,7 @@ class PronounResolutionGravityPainter extends CustomPainter {
     // Draw Focal Beam
     if (!isAnswered || targetNode != -1) {
       final beamColor = isAnswered
-          ? (isCorrect ? Colors.greenAccent : Colors.redAccent)
+          ? (isCorrect ? AppColors.gameCorrect : AppColors.gameIncorrect)
           : primaryColor;
 
       final beamPaint = Paint()
@@ -140,7 +141,7 @@ class PronounResolutionGravityPainter extends CustomPainter {
 
     // Draw Gravity Core (The Pronoun)
     final coreColor = isAnswered
-        ? (isCorrect ? Colors.greenAccent : Colors.redAccent)
+        ? (isCorrect ? AppColors.gameCorrect : AppColors.gameIncorrect)
         : primaryColor;
     canvas.drawCircle(
       centerPoint,

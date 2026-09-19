@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -21,6 +22,7 @@ class TrueFalseReadingCoinZone extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     return SizedBox(
       height: 250.h,
       width: double.infinity,
@@ -30,11 +32,11 @@ class TrueFalseReadingCoinZone extends StatelessWidget {
           // Slots
           Positioned(
             left: 20.w,
-            child: _buildSlot("FALSE", Colors.redAccent, isDark),
+            child: _buildSlot("FALSE", tokens.gameIncorrect, isDark),
           ),
           Positioned(
             right: 20.w,
-            child: _buildSlot("TRUE", Colors.greenAccent, isDark),
+            child: _buildSlot("TRUE", tokens.gameCorrect, isDark),
           ),
 
           // The Coin

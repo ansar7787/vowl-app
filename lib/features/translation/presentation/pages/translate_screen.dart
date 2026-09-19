@@ -17,6 +17,7 @@ import 'package:vowl/features/translation/presentation/widgets/language_manager_
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/core/utils/ad_service.dart';
 import 'package:vowl/core/presentation/widgets/premium_lock_card.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 class TranslateScreen extends StatefulWidget {
   const TranslateScreen({super.key});
@@ -105,7 +106,7 @@ class _TranslateScreenState extends State<TranslateScreen> {
     final isPremium = context.watch<AuthBloc>().state.user?.isPremium ?? false;
 
     return Scaffold(
-      backgroundColor: isDark ? const Color(0xFF0F172A) : Colors.white,
+      backgroundColor: isDark ? AppColors.slate900 : Colors.white,
       body: Stack(
         children: [
           const MeshGradientBackground(showLetters: false),
@@ -200,7 +201,7 @@ class _TranslateScreenState extends State<TranslateScreen> {
             onPressed: () => context.pop(),
             icon: Icon(
               Icons.arrow_back_rounded,
-              color: isDark ? Colors.white : const Color(0xFF0F172A),
+              color: isDark ? Colors.white : AppColors.slate900,
             ),
           ),
           SizedBox(width: 8.w),
@@ -211,7 +212,7 @@ class _TranslateScreenState extends State<TranslateScreen> {
                 fontFamily: 'Outfit',
                 fontSize: 24.sp,
                 fontWeight: FontWeight.w900,
-                color: isDark ? Colors.white : const Color(0xFF0F172A),
+                color: isDark ? Colors.white : AppColors.slate900,
               ),
               maxLines: 1,
             ),
@@ -220,7 +221,7 @@ class _TranslateScreenState extends State<TranslateScreen> {
             onPressed: () => _showLanguageManager(context, isDark),
             icon: Icon(
               Icons.settings_rounded,
-              color: isDark ? Colors.white70 : const Color(0xFF64748B),
+              color: isDark ? Colors.white70 : AppColors.slate500,
             ),
           ),
         ],
@@ -250,12 +251,12 @@ class _TranslateScreenState extends State<TranslateScreen> {
                 Container(
                   padding: EdgeInsets.all(12.r),
                   decoration: BoxDecoration(
-                    color: const Color(0xFF6366F1).withValues(alpha: 0.1),
+                    color: AppColors.indigo500.withValues(alpha: 0.1),
                     shape: BoxShape.circle,
                   ),
                   child: Icon(
                     Icons.language_rounded,
-                    color: const Color(0xFF6366F1),
+                    color: AppColors.indigo500,
                     size: 24.r,
                   ),
                 ),
@@ -273,9 +274,7 @@ class _TranslateScreenState extends State<TranslateScreen> {
                           fontFamily: 'Outfit',
                           fontSize: 12.sp,
                           fontWeight: FontWeight.w700,
-                          color: isDark
-                              ? Colors.white54
-                              : const Color(0xFF94A3B8),
+                          color: isDark ? Colors.white54 : AppColors.slate400,
                         ),
                       ),
                       SizedBox(height: 2.h),
@@ -285,9 +284,7 @@ class _TranslateScreenState extends State<TranslateScreen> {
                           fontFamily: 'Outfit',
                           fontSize: 18.sp,
                           fontWeight: FontWeight.w800,
-                          color: isDark
-                              ? Colors.white
-                              : const Color(0xFF0F172A),
+                          color: isDark ? Colors.white : AppColors.slate900,
                         ),
                         maxLines: 1,
                       ),
@@ -296,7 +293,7 @@ class _TranslateScreenState extends State<TranslateScreen> {
                 ),
                 Icon(
                   Icons.keyboard_arrow_down_rounded,
-                  color: isDark ? Colors.white54 : const Color(0xFF94A3B8),
+                  color: isDark ? Colors.white54 : AppColors.slate400,
                 ),
               ],
             ),
@@ -315,7 +312,7 @@ class _TranslateScreenState extends State<TranslateScreen> {
         builder: (context, focused, child) => GlassTile(
           padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
           borderColor: focused
-              ? const Color(0xFF6366F1).withValues(alpha: 0.5)
+              ? AppColors.indigo500.withValues(alpha: 0.5)
               : null,
           borderWidth: focused ? 2.0 : null,
           child: child!,
@@ -337,7 +334,7 @@ class _TranslateScreenState extends State<TranslateScreen> {
                         fontFamily: 'Outfit',
                         fontSize: 12.sp,
                         fontWeight: FontWeight.w800,
-                        color: const Color(0xFF6366F1),
+                        color: AppColors.indigo500,
                         letterSpacing: 1.5,
                       ),
                     ),
@@ -360,7 +357,7 @@ class _TranslateScreenState extends State<TranslateScreen> {
                               children: [
                                 Icon(
                                   Icons.bolt_rounded,
-                                  color: const Color(0xFFF59E0B),
+                                  color: AppColors.amber500,
                                   size: 12.r,
                                 ),
                                 SizedBox(width: 4.w),
@@ -370,7 +367,7 @@ class _TranslateScreenState extends State<TranslateScreen> {
                                     fontFamily: 'Outfit',
                                     fontSize: 10.sp,
                                     fontWeight: FontWeight.w900,
-                                    color: const Color(0xFFF59E0B),
+                                    color: AppColors.amber500,
                                   ),
                                 ),
                               ],
@@ -404,9 +401,7 @@ class _TranslateScreenState extends State<TranslateScreen> {
                             vertical: 6.h,
                           ),
                           decoration: BoxDecoration(
-                            color: isDark
-                                ? Colors.white10
-                                : const Color(0xFFF1F5F9),
+                            color: isDark ? Colors.white10 : AppColors.slate100,
                             borderRadius: BorderRadius.circular(16.r),
                           ),
                           child: Row(
@@ -415,7 +410,7 @@ class _TranslateScreenState extends State<TranslateScreen> {
                                 Icons.paste_rounded,
                                 color: isDark
                                     ? Colors.white70
-                                    : const Color(0xFF64748B),
+                                    : AppColors.slate500,
                                 size: 14.r,
                               ),
                               SizedBox(width: 4.w),
@@ -427,7 +422,7 @@ class _TranslateScreenState extends State<TranslateScreen> {
                                   fontWeight: FontWeight.w600,
                                   color: isDark
                                       ? Colors.white70
-                                      : const Color(0xFF64748B),
+                                      : AppColors.slate500,
                                 ),
                               ),
                             ],
@@ -446,16 +441,12 @@ class _TranslateScreenState extends State<TranslateScreen> {
                         child: Container(
                           padding: EdgeInsets.all(4.r),
                           decoration: BoxDecoration(
-                            color: isDark
-                                ? Colors.white10
-                                : const Color(0xFFF1F5F9),
+                            color: isDark ? Colors.white10 : AppColors.slate100,
                             shape: BoxShape.circle,
                           ),
                           child: Icon(
                             Icons.close_rounded,
-                            color: isDark
-                                ? Colors.white54
-                                : const Color(0xFF64748B),
+                            color: isDark ? Colors.white54 : AppColors.slate500,
                             size: 16.r,
                           ),
                         ),
@@ -478,7 +469,7 @@ class _TranslateScreenState extends State<TranslateScreen> {
                 fontFamily: 'Outfit',
                 fontSize: 18.sp,
                 fontWeight: FontWeight.w500,
-                color: isDark ? Colors.white : const Color(0xFF0F172A),
+                color: isDark ? Colors.white : AppColors.slate900,
                 height: 1.4,
               ),
               decoration: InputDecoration(
@@ -490,7 +481,7 @@ class _TranslateScreenState extends State<TranslateScreen> {
                   fontFamily: 'Outfit',
                   fontSize: 18.sp,
                   fontWeight: FontWeight.w500,
-                  color: isDark ? Colors.white38 : const Color(0xFF94A3B8),
+                  color: isDark ? Colors.white38 : AppColors.slate400,
                 ),
                 border: InputBorder.none,
                 contentPadding: EdgeInsets.symmetric(
@@ -510,7 +501,7 @@ class _TranslateScreenState extends State<TranslateScreen> {
       builder: (context, state) {
         return GlassTile(
           padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
-          borderColor: const Color(0xFF10B981).withValues(alpha: 0.3),
+          borderColor: AppColors.emerald500.withValues(alpha: 0.3),
           borderWidth: 2,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -528,7 +519,7 @@ class _TranslateScreenState extends State<TranslateScreen> {
                       fontFamily: 'Outfit',
                       fontSize: 12.sp,
                       fontWeight: FontWeight.w800,
-                      color: const Color(0xFF10B981),
+                      color: AppColors.emerald500,
                       letterSpacing: 1.5,
                     ),
                   ),
@@ -564,7 +555,7 @@ class _TranslateScreenState extends State<TranslateScreen> {
                           height: 14.r,
                           child: const CircularProgressIndicator(
                             strokeWidth: 2,
-                            color: Color(0xFF10B981),
+                            color: AppColors.emerald500,
                           ),
                         ),
                       if (state.translatedText.isNotEmpty &&
@@ -612,7 +603,7 @@ class _TranslateScreenState extends State<TranslateScreen> {
                               children: [
                                 Icon(
                                   Icons.copy_rounded,
-                                  color: const Color(0xFF10B981),
+                                  color: AppColors.emerald500,
                                   size: 14.r,
                                 ),
                                 SizedBox(width: 4.w),
@@ -622,7 +613,7 @@ class _TranslateScreenState extends State<TranslateScreen> {
                                     fontFamily: 'Outfit',
                                     fontSize: 12.sp,
                                     fontWeight: FontWeight.w700,
-                                    color: const Color(0xFF10B981),
+                                    color: AppColors.emerald500,
                                   ),
                                 ),
                               ],
@@ -643,7 +634,7 @@ class _TranslateScreenState extends State<TranslateScreen> {
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 14.sp,
-                    color: const Color(0xFFEF4444),
+                    color: AppColors.red500,
                   ),
                 )
               else if (state.isModelDownloading)
@@ -659,9 +650,7 @@ class _TranslateScreenState extends State<TranslateScreen> {
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 16.sp,
-                        color: isDark
-                            ? Colors.white70
-                            : const Color(0xFF64748B),
+                        color: isDark ? Colors.white70 : AppColors.slate500,
                         fontStyle: FontStyle.italic,
                       ),
                     ),
@@ -671,7 +660,7 @@ class _TranslateScreenState extends State<TranslateScreen> {
                           ? Colors.white10
                           : const Color(0xFFE2E8F0),
                       valueColor: const AlwaysStoppedAnimation<Color>(
-                        Color(0xFF10B981),
+                        AppColors.emerald500,
                       ),
                     ),
                   ],
@@ -692,8 +681,8 @@ class _TranslateScreenState extends State<TranslateScreen> {
                       fontWeight: FontWeight.w500,
                       height: 1.4,
                       color: state.translatedText.isEmpty
-                          ? (isDark ? Colors.white38 : const Color(0xFF94A3B8))
-                          : (isDark ? Colors.white : const Color(0xFF0F172A)),
+                          ? (isDark ? Colors.white38 : AppColors.slate400)
+                          : (isDark ? Colors.white : AppColors.slate900),
                     ),
                   ),
                 ),
@@ -761,7 +750,7 @@ class _LanguagePickerSheetState extends State<_LanguagePickerSheet> {
     return Container(
       height: MediaQuery.of(context).size.height * 0.75,
       decoration: BoxDecoration(
-        color: isDark ? const Color(0xFF1E293B) : Colors.white,
+        color: isDark ? AppColors.slate800 : Colors.white,
         borderRadius: BorderRadius.vertical(top: Radius.circular(32.r)),
       ),
       child: Column(
@@ -785,7 +774,7 @@ class _LanguagePickerSheetState extends State<_LanguagePickerSheet> {
               fontFamily: 'Outfit',
               fontSize: 20.sp,
               fontWeight: FontWeight.w800,
-              color: isDark ? Colors.white : const Color(0xFF0F172A),
+              color: isDark ? Colors.white : AppColors.slate900,
             ),
           ),
           SizedBox(height: 16.h),
@@ -797,7 +786,7 @@ class _LanguagePickerSheetState extends State<_LanguagePickerSheet> {
               decoration: BoxDecoration(
                 color: isDark
                     ? Colors.white.withValues(alpha: 0.06)
-                    : const Color(0xFFF1F5F9),
+                    : AppColors.slate100,
                 borderRadius: BorderRadius.circular(16.r),
                 border: Border.all(
                   color: isDark ? Colors.white12 : const Color(0xFFE2E8F0),
@@ -807,7 +796,7 @@ class _LanguagePickerSheetState extends State<_LanguagePickerSheet> {
                 children: [
                   Icon(
                     Icons.search_rounded,
-                    color: isDark ? Colors.white38 : const Color(0xFF94A3B8),
+                    color: isDark ? Colors.white38 : AppColors.slate400,
                     size: 20.r,
                   ),
                   SizedBox(width: 8.w),
@@ -817,7 +806,7 @@ class _LanguagePickerSheetState extends State<_LanguagePickerSheet> {
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 16.sp,
-                        color: isDark ? Colors.white : const Color(0xFF0F172A),
+                        color: isDark ? Colors.white : AppColors.slate900,
                       ),
                       decoration: InputDecoration(
                         hintText: context.tr(
@@ -827,9 +816,7 @@ class _LanguagePickerSheetState extends State<_LanguagePickerSheet> {
                         hintStyle: TextStyle(
                           fontFamily: 'Outfit',
                           fontSize: 16.sp,
-                          color: isDark
-                              ? Colors.white38
-                              : const Color(0xFF94A3B8),
+                          color: isDark ? Colors.white38 : AppColors.slate400,
                         ),
                         border: InputBorder.none,
                         contentPadding: EdgeInsets.symmetric(vertical: 14.h),
@@ -841,9 +828,7 @@ class _LanguagePickerSheetState extends State<_LanguagePickerSheet> {
                       onTap: () => _searchController.clear(),
                       child: Icon(
                         Icons.close_rounded,
-                        color: isDark
-                            ? Colors.white38
-                            : const Color(0xFF94A3B8),
+                        color: isDark ? Colors.white38 : AppColors.slate400,
                         size: 18.r,
                       ),
                     ),
@@ -863,9 +848,7 @@ class _LanguagePickerSheetState extends State<_LanguagePickerSheet> {
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 16.sp,
-                        color: isDark
-                            ? Colors.white38
-                            : const Color(0xFF94A3B8),
+                        color: isDark ? Colors.white38 : AppColors.slate400,
                       ),
                     ),
                   )
@@ -923,10 +906,10 @@ class _LanguagePickerSheetState extends State<_LanguagePickerSheet> {
                                             ? FontWeight.w700
                                             : FontWeight.w500,
                                         color: isActive
-                                            ? const Color(0xFF6366F1)
+                                            ? AppColors.indigo500
                                             : (isDark
                                                   ? Colors.white
-                                                  : const Color(0xFF1E293B)),
+                                                  : AppColors.slate800),
                                       ),
                                     ),
                                   ),
@@ -954,7 +937,7 @@ class _LanguagePickerSheetState extends State<_LanguagePickerSheet> {
                                           fontFamily: 'Outfit',
                                           fontSize: 9.sp,
                                           fontWeight: FontWeight.w800,
-                                          color: const Color(0xFF10B981),
+                                          color: AppColors.emerald500,
                                           letterSpacing: 0.5,
                                         ),
                                       ),
@@ -962,7 +945,7 @@ class _LanguagePickerSheetState extends State<_LanguagePickerSheet> {
                                   if (isActive)
                                     Icon(
                                       Icons.check_circle_rounded,
-                                      color: const Color(0xFF6366F1),
+                                      color: AppColors.indigo500,
                                       size: 20.r,
                                     ),
                                 ],

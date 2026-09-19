@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -28,9 +29,12 @@ class DialectDrillTransmissionTower extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     Color towerColor = color;
     if (isAnswered && hoveredTowerIndex == index) {
-      towerColor = (isCorrect ?? false) ? Colors.greenAccent : Colors.redAccent;
+      towerColor = (isCorrect ?? false)
+          ? tokens.gameCorrect
+          : tokens.gameIncorrect;
     } else if (isHovered) {
       towerColor = color;
     } else {

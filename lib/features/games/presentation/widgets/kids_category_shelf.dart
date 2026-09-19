@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -190,7 +191,7 @@ class _KidsGameEntryCard extends StatelessWidget {
                         fontFamily: 'Outfit',
                         fontSize: 15.sp,
                         fontWeight: FontWeight.w900,
-                        color: isDark ? Colors.white : const Color(0xFF0F172A),
+                        color: isDark ? Colors.white : AppColors.slate900,
                         height: 1.1,
                       ),
                     ),

@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -23,6 +24,7 @@ class ParagraphSummaryOptionRack extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     return Column(
       children: options.map((opt) {
         final bool isSelected = selectedOption == opt;
@@ -32,11 +34,11 @@ class ParagraphSummaryOptionRack extends StatelessWidget {
 
         if (isAnswered) {
           if (opt.trim().toLowerCase() == correctAnswer.trim().toLowerCase()) {
-            cardColor = Colors.greenAccent.withValues(alpha: 0.15);
-            borderColor = Colors.greenAccent;
+            cardColor = tokens.gameCorrect.withValues(alpha: 0.15);
+            borderColor = tokens.gameCorrect;
           } else if (isSelected) {
-            cardColor = Colors.redAccent.withValues(alpha: 0.15);
-            borderColor = Colors.redAccent;
+            cardColor = tokens.gameIncorrect.withValues(alpha: 0.15);
+            borderColor = tokens.gameIncorrect;
           }
         } else if (isSelected) {
           borderColor = color;

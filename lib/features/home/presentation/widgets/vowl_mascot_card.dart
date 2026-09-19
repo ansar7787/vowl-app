@@ -11,6 +11,7 @@ import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/core/presentation/widgets/vowl_mascot.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 class VowlMascotCard extends StatefulWidget {
   const VowlMascotCard({super.key});
@@ -96,7 +97,7 @@ class _VowlMascotCardState extends State<VowlMascotCard> {
               child: GlassTile(
                 padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
                 borderRadius: BorderRadius.circular(20.r),
-                borderColor: const Color(0xFFF59E0B).withValues(alpha: 0.3),
+                borderColor: AppColors.amber500.withValues(alpha: 0.3),
                 child: SizedBox(
                   width: double.infinity,
                   child: Row(
@@ -107,7 +108,7 @@ class _VowlMascotCardState extends State<VowlMascotCard> {
                         height: 56.r,
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
-                          color: const Color(0xFFF59E0B).withValues(alpha: 0.1),
+                          color: AppColors.amber500.withValues(alpha: 0.1),
                           border: Border.all(
                             color: const Color(
                               0xFFF59E0B,
@@ -145,7 +146,7 @@ class _VowlMascotCardState extends State<VowlMascotCard> {
                                 Icon(
                                   Icons.auto_awesome_rounded,
                                   size: 10.r,
-                                  color: const Color(0xFFF59E0B),
+                                  color: AppColors.amber500,
                                 ),
                                 SizedBox(width: 4.w),
                                 Expanded(
@@ -153,7 +154,7 @@ class _VowlMascotCardState extends State<VowlMascotCard> {
                                     sanctuaryLabel,
                                     style: TextStyle(
                                       fontFamily: 'Outfit',
-                                      color: const Color(0xFFF59E0B),
+                                      color: AppColors.amber500,
                                       fontSize: 9.sp,
                                       fontWeight: FontWeight.w900,
                                       letterSpacing: 1.2,
@@ -177,7 +178,7 @@ class _VowlMascotCardState extends State<VowlMascotCard> {
                                     Theme.of(context).brightness ==
                                         Brightness.dark
                                     ? Colors.white
-                                    : const Color(0xFF0F172A),
+                                    : AppColors.slate900,
                               ),
                               maxLines: 2,
                               minFontSize: 12,

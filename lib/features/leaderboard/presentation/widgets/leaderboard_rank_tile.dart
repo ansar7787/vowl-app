@@ -5,6 +5,7 @@ import 'package:vowl/core/presentation/widgets/shimmer_image.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 class LeaderboardRankTile extends StatelessWidget {
   final UserEntity user;
@@ -31,12 +32,12 @@ class LeaderboardRankTile extends StatelessWidget {
         ? context.tr('leaderboard.coins', fallback: 'Coins')
         : context.tr('leaderboard.xp', fallback: 'XP');
     final tierColor = rank <= 5
-        ? const Color(0xFF6366F1)
+        ? AppColors.indigo500
         : rank <= 10
-        ? const Color(0xFF3B82F6)
+        ? AppColors.blue500
         : rank <= 25
         ? const Color(0xFF06B6D4)
-        : const Color(0xFF94A3B8);
+        : AppColors.slate400;
     final displayName =
         user.displayName ??
         context.tr('leaderboard.player', fallback: 'Player');
@@ -61,8 +62,8 @@ class LeaderboardRankTile extends StatelessWidget {
         showShadow: false,
         borderColor: isMe
             ? (isDark
-                  ? const Color(0xFF3B82F6).withValues(alpha: 0.4)
-                  : const Color(0xFF6366F1).withValues(alpha: 0.3))
+                  ? AppColors.blue500.withValues(alpha: 0.4)
+                  : AppColors.indigo500.withValues(alpha: 0.3))
             : (isDark
                   ? Colors.white.withValues(alpha: 0.1)
                   : const Color(0xFFCBD5E1).withValues(alpha: 0.6)),
@@ -148,7 +149,7 @@ class LeaderboardRankTile extends StatelessWidget {
                           padding: EdgeInsets.only(left: 4.w),
                           child: Icon(
                             Icons.verified_rounded,
-                            color: const Color(0xFFF59E0B),
+                            color: AppColors.amber500,
                             size: 14.r,
                           ),
                         ),
@@ -233,7 +234,7 @@ class LeaderboardRankTile extends StatelessWidget {
         children: [
           Icon(
             Icons.arrow_upward_rounded,
-            color: const Color(0xFF10B981),
+            color: AppColors.emerald500,
             size: 10.r,
           ),
           Text(
@@ -242,7 +243,7 @@ class LeaderboardRankTile extends StatelessWidget {
               fontFamily: 'Outfit',
               fontSize: 9.sp,
               fontWeight: FontWeight.w800,
-              color: const Color(0xFF10B981),
+              color: AppColors.emerald500,
             ),
           ),
         ],
@@ -254,7 +255,7 @@ class LeaderboardRankTile extends StatelessWidget {
         children: [
           Icon(
             Icons.arrow_downward_rounded,
-            color: const Color(0xFFEF4444),
+            color: AppColors.red500,
             size: 10.r,
           ),
           Text(
@@ -263,7 +264,7 @@ class LeaderboardRankTile extends StatelessWidget {
               fontFamily: 'Outfit',
               fontSize: 9.sp,
               fontWeight: FontWeight.w800,
-              color: const Color(0xFFEF4444),
+              color: AppColors.red500,
             ),
           ),
         ],

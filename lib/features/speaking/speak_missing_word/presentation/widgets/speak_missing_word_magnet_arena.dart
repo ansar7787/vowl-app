@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -139,9 +140,7 @@ class SpeakMissingWordMagnetArena extends StatelessWidget {
                         decoration: BoxDecoration(
                           color: isPulled
                               ? primaryColor.withValues(alpha: 0.25)
-                              : (isDark
-                                    ? const Color(0xFF0F0F1B)
-                                    : Colors.white),
+                              : (isDark ? AppColors.deepDark : Colors.white),
                           borderRadius: BorderRadius.circular(16.r),
                           border: Border.all(
                             color: isPulled

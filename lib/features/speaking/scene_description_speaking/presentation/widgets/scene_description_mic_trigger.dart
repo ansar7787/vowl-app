@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -27,6 +28,7 @@ class SceneDescriptionMicTrigger extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     if (isAnswered) return const SizedBox.shrink();
 
     final bool canRecord = activeHotspot != -1;
@@ -48,7 +50,7 @@ class SceneDescriptionMicTrigger extends StatelessWidget {
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
                           border: Border.all(
-                            color: Colors.redAccent.withValues(alpha: 0.15),
+                            color: tokens.gameIncorrect.withValues(alpha: 0.15),
                             width: 1.5.r,
                           ),
                         ),
@@ -73,7 +75,7 @@ class SceneDescriptionMicTrigger extends StatelessWidget {
                       border: Border.all(
                         color: canRecord
                             ? (isListening
-                                  ? Colors.redAccent.withValues(alpha: 0.35)
+                                  ? tokens.gameIncorrect.withValues(alpha: 0.35)
                                   : primaryColor.withValues(alpha: 0.15))
                             : Colors.grey.withValues(alpha: 0.1),
                         width: 4.r,
@@ -99,7 +101,7 @@ class SceneDescriptionMicTrigger extends StatelessWidget {
                     gradient: LinearGradient(
                       colors: canRecord
                           ? (isListening
-                                ? [Colors.red[900]!, Colors.redAccent]
+                                ? [Colors.red[900]!, tokens.gameIncorrect]
                                 : [
                                     const Color(0xFF1F1C2C),
                                     const Color(0xFF928DAB),
@@ -109,7 +111,9 @@ class SceneDescriptionMicTrigger extends StatelessWidget {
                     boxShadow: isListening
                         ? [
                             BoxShadow(
-                              color: Colors.redAccent.withValues(alpha: 0.45),
+                              color: tokens.gameIncorrect.withValues(
+                                alpha: 0.45,
+                              ),
                               blurRadius: 25.r,
                               spreadRadius: 2.r,
                             ),

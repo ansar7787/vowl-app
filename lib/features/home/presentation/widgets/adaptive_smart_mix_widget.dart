@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'dart:math' as math;
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -128,7 +129,7 @@ class _AdaptiveSmartMixWidgetState extends State<AdaptiveSmartMixWidget> {
                   fontWeight: FontWeight.w900,
                   color: (Theme.of(context).brightness == Brightness.dark)
                       ? Colors.white
-                      : const Color(0xFF0F172A),
+                      : AppColors.slate900,
                   letterSpacing: 2,
                 ),
               ),
@@ -202,7 +203,7 @@ class _AdaptiveSmartMixWidgetState extends State<AdaptiveSmartMixWidget> {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme(subtype.name, isDark: isDark);
     final displayColor = theme.primaryColor;
-    final contentColor = isDark ? Colors.white : const Color(0xFF0F172A);
+    final contentColor = isDark ? Colors.white : AppColors.slate900;
 
     return ScaleButton(
       onTap: () async {

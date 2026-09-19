@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -20,9 +21,9 @@ class ProfessionalismFusionPainter extends CustomPainter {
 
     Color fusionColor = themeColor;
     if (professionalismLevel > 0.6) {
-      fusionColor = Colors.greenAccent;
+      fusionColor = AppColors.gameCorrect;
     } else if (professionalismLevel < 0.3) {
-      fusionColor = Colors.redAccent;
+      fusionColor = AppColors.gameIncorrect;
     }
 
     // Draw background dim tracker circle

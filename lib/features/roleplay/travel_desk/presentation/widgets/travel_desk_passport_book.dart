@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -103,8 +104,8 @@ class TravelDeskPassportBook extends StatelessWidget {
       borderColor = color;
     } else if (isSelected) {
       borderColor = (isCorrect ?? false)
-          ? Colors.greenAccent
-          : Colors.redAccent;
+          ? AppColors.gameCorrect
+          : AppColors.gameIncorrect;
     }
 
     return DragTarget<int>(
@@ -127,7 +128,7 @@ class TravelDeskPassportBook extends StatelessWidget {
               height: 165.h,
               margin: EdgeInsets.symmetric(horizontal: 6.w, vertical: 8.h),
               decoration: BoxDecoration(
-                color: isDark ? const Color(0xFF0F0F1B) : Colors.white,
+                color: isDark ? AppColors.deepDark : Colors.white,
                 borderRadius: BorderRadius.circular(18.r),
                 border: Border.all(
                   color: borderColor,
@@ -138,8 +139,8 @@ class TravelDeskPassportBook extends StatelessWidget {
                     color: (isSelected || isHovered)
                         ? (isSelected
                                   ? ((isCorrect ?? false)
-                                        ? Colors.greenAccent
-                                        : Colors.redAccent)
+                                        ? AppColors.gameCorrect
+                                        : AppColors.gameIncorrect)
                                   : color)
                               .withValues(alpha: 0.25)
                         : Colors.black.withValues(alpha: 0.08),
@@ -214,8 +215,8 @@ class TravelDeskPassportBook extends StatelessWidget {
                               impactOffset: Offset(55.w, 82.h),
                               animationValue: rippleAnimation.value,
                               themeColor: (isCorrect ?? false)
-                                  ? Colors.greenAccent
-                                  : Colors.redAccent,
+                                  ? AppColors.gameCorrect
+                                  : AppColors.gameIncorrect,
                             ),
                           );
                         },
@@ -236,8 +237,8 @@ class TravelDeskPassportBook extends StatelessWidget {
                               decoration: BoxDecoration(
                                 border: Border.all(
                                   color: (isCorrect ?? false)
-                                      ? Colors.greenAccent
-                                      : Colors.redAccent,
+                                      ? AppColors.gameCorrect
+                                      : AppColors.gameIncorrect,
                                   width: 2.5,
                                 ),
                                 borderRadius: BorderRadius.circular(8.r),
@@ -250,8 +251,8 @@ class TravelDeskPassportBook extends StatelessWidget {
                                   fontSize: 13.sp,
                                   fontWeight: FontWeight.w900,
                                   color: (isCorrect ?? false)
-                                      ? Colors.greenAccent
-                                      : Colors.redAccent,
+                                      ? AppColors.gameCorrect
+                                      : AppColors.gameIncorrect,
                                   letterSpacing: 2,
                                 ),
                               ),

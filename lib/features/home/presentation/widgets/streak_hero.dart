@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -121,7 +122,7 @@ class StreakHero extends StatelessWidget {
                       padding: EdgeInsets.all(20.r),
                       decoration: BoxDecoration(
                         gradient: const LinearGradient(
-                          colors: [color, Color(0xFFEF4444)],
+                          colors: [color, AppColors.red500],
                           begin: Alignment.topLeft,
                           end: Alignment.bottomRight,
                         ),

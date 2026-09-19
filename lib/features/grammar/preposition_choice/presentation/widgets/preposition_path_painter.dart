@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -60,7 +61,7 @@ class PrepositionPathPainter extends CustomPainter {
     // Draw Nodes (Holographic Power Cells)
     for (int i = 0; i < nodes.length; i++) {
       final isTarget = isAnswered && targetNode == i;
-      final nodeColor = isTarget ? Colors.greenAccent : primaryColor;
+      final nodeColor = isTarget ? AppColors.gameCorrect : primaryColor;
 
       // Node Aura
       canvas.drawCircle(
@@ -89,7 +90,7 @@ class PrepositionPathPainter extends CustomPainter {
             fontSize: 14.sp,
             fontWeight: FontWeight.w900,
             color: isTarget
-                ? Colors.greenAccent
+                ? AppColors.gameCorrect
                 : (isDark ? Colors.white : Colors.black87),
             height: 1.1,
           ),
@@ -125,7 +126,7 @@ class PrepositionPathPainter extends CustomPainter {
       }
 
       final pathColor = isAnswered
-          ? (isCorrect ? Colors.greenAccent : Colors.redAccent)
+          ? (isCorrect ? AppColors.gameCorrect : AppColors.gameIncorrect)
           : primaryColor;
 
       // Outer Glow

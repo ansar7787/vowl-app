@@ -1,5 +1,7 @@
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 
@@ -65,6 +67,7 @@ class _GlobalErrorBoundaryState extends State<GlobalErrorBoundary> {
 
   @override
   Widget build(BuildContext context) {
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     return ValueListenableBuilder<int>(
       valueListenable: _stateHash,
       builder: (context, _, child) {
@@ -96,6 +99,7 @@ class _MinimalErrorFallback extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     return const SizedBox.shrink();
   }
 }
@@ -113,6 +117,7 @@ class _FullErrorScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     final truncated = errorMessage.length > 100
         ? '${errorMessage.substring(0, 100)}…'
         : errorMessage;
@@ -123,7 +128,7 @@ class _FullErrorScreen extends StatelessWidget {
         fallback: 'System Anomaly Detected',
       ),
       child: Scaffold(
-        backgroundColor: const Color(0xFF0F172A),
+        backgroundColor: AppColors.slate900,
         body: RepaintBoundary(
           // FIX (RESPONSIVENESS/ACCESSIBILITY): a fixed Column centered
           // directly in the viewport overflows at large accessibility
@@ -173,7 +178,7 @@ class _FullErrorScreen extends StatelessWidget {
                         style: TextStyle(
                           fontFamily: 'Outfit',
                           fontSize: 14.sp,
-                          color: Colors.redAccent.withValues(alpha: 0.8),
+                          color: tokens.gameIncorrect.withValues(alpha: 0.8),
                           fontWeight: FontWeight.w600,
                         ),
                       ),
@@ -207,7 +212,7 @@ class _FullErrorScreen extends StatelessWidget {
                             ),
                             constraints: BoxConstraints(minHeight: 48.h),
                             decoration: BoxDecoration(
-                              color: const Color(0xFF6366F1),
+                              color: AppColors.indigo500,
                               borderRadius: BorderRadius.circular(20.r),
                             ),
                             child: Text(

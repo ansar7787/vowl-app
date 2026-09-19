@@ -20,6 +20,7 @@ import 'package:vowl/core/presentation/widgets/games/maps/components/toll_gate_b
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/utils/tts_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/theme/app_colors.dart';
 
 class ModernMapNode extends StatefulWidget {
   final int index;
@@ -90,7 +91,7 @@ class _ModernMapNodeState extends State<ModernMapNode> {
     } else if (level == 200) {
       return const Color(0xFF00F0FF); // Legendary / Diamond
     } else if (level >= 150) {
-      return const Color(0xFFFFD700); // Gold
+      return AppColors.gold; // Gold
     } else if (level >= 100) {
       return const Color(
         0xFFA0B2C6,
@@ -296,7 +297,7 @@ class _ModernMapNodeState extends State<ModernMapNode> {
         shape: BoxShape.circle,
         gradient: LinearGradient(
           colors: (isCompleted || isPlayable || isHalfUnlocked)
-              ? [Colors.white, const Color(0xFFF1F5F9)]
+              ? [Colors.white, AppColors.slate100]
               : isTollGate
               ? [Colors.amber.shade200, Colors.amber.shade400]
               : isNextZone
@@ -307,23 +308,23 @@ class _ModernMapNodeState extends State<ModernMapNode> {
               : [
                   widget.isDark
                       ? Color.lerp(
-                          const Color(0xFF0F172A),
+                          AppColors.slate900,
                           widget.theme.primaryColor,
                           0.08,
                         )!
                       : Color.lerp(
-                          const Color(0xFFF8FAFC),
+                          AppColors.slate50,
                           widget.theme.primaryColor,
                           0.08,
                         )!,
                   widget.isDark
                       ? Color.lerp(
-                          const Color(0xFF0F172A),
+                          AppColors.slate900,
                           widget.theme.primaryColor,
                           0.03,
                         )!
                       : Color.lerp(
-                          const Color(0xFFF8FAFC),
+                          AppColors.slate50,
                           widget.theme.primaryColor,
                           0.03,
                         )!,

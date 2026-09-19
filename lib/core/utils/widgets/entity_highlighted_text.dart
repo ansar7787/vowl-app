@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -39,7 +40,7 @@ class EntityHighlightedText extends StatelessWidget {
       builder: (context) => Container(
         padding: EdgeInsets.all(24.w),
         decoration: BoxDecoration(
-          color: isDark ? const Color(0xFF1E293B) : Colors.white,
+          color: isDark ? AppColors.slate800 : Colors.white,
           borderRadius: BorderRadius.vertical(top: Radius.circular(32.r)),
         ),
         child: Column(

@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_image.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 class MasteryAvatar extends StatelessWidget {
   const MasteryAvatar({super.key, required this.user, required this.progress});
@@ -37,7 +38,7 @@ class MasteryAvatar extends StatelessWidget {
                 value: progress,
                 strokeWidth: 5.r,
                 backgroundColor: isDark ? Colors.white10 : Colors.black12,
-                color: const Color(0xFF6366F1),
+                color: AppColors.indigo500,
                 strokeCap: StrokeCap.round,
               ),
             ).animate().scale(duration: 600.ms, curve: Curves.easeOutBack),
@@ -46,7 +47,7 @@ class MasteryAvatar extends StatelessWidget {
               height: 62.r,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                color: isDark ? const Color(0xFF1E293B) : Colors.white,
+                color: isDark ? AppColors.slate800 : Colors.white,
                 boxShadow: [
                   BoxShadow(
                     color: Colors.black.withValues(alpha: 0.1),
@@ -60,7 +61,7 @@ class MasteryAvatar extends StatelessWidget {
                     ? ShimmerImage(imageUrl: user.photoUrl!)
                     : Icon(
                         Icons.face_retouching_natural_rounded,
-                        color: const Color(0xFF6366F1),
+                        color: AppColors.indigo500,
                         size: 32.r,
                       ),
               ),

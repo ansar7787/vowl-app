@@ -8,6 +8,7 @@ import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/kids_zone/presentation/utils/kids_tts_service.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_fitted_text.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 /// Sports Stadium Theme for Verbs (Action Words) Game
 /// Space Complexity: O(1)
@@ -146,12 +147,12 @@ class KidsVerbsLayout extends StatelessWidget {
             height: 180.h,
             decoration: BoxDecoration(
               color: isHovering
-                  ? const Color(0xFF1E293B)
-                  : const Color(0xFF0F172A), // Black board
+                  ? AppColors.slate800
+                  : AppColors.slate900, // Black board
               borderRadius: BorderRadius.circular(8.r),
               border: Border.all(
                 color: isHovering
-                    ? const Color(0xFF64748B)
+                    ? AppColors.slate500
                     : const Color(0xFF334155),
                 width: isHovering ? 10.r : 8.r,
               ), // Grey steel frame
@@ -203,7 +204,7 @@ class KidsVerbsLayout extends StatelessWidget {
                                   ? 70.sp
                                   : 24.sp,
                               fontWeight: FontWeight.w700,
-                              color: const Color(0xFFFBBF24).withValues(
+                              color: AppColors.amber400.withValues(
                                 alpha:
                                     (quest.question == "?" ||
                                         quest.question == null)
@@ -212,7 +213,7 @@ class KidsVerbsLayout extends StatelessWidget {
                               ),
                               shadows: const [
                                 Shadow(
-                                  color: Color(0xFFF59E0B),
+                                  color: AppColors.amber500,
                                   blurRadius: 10,
                                 ),
                               ],

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 class PremiumUpsellContent extends StatelessWidget {
   final String titleKey;
@@ -37,14 +38,17 @@ class PremiumUpsellContent extends StatelessWidget {
           padding: EdgeInsets.all(16.r),
           decoration: BoxDecoration(
             gradient: const LinearGradient(
-              colors: [Color(0xFF6366F1), Color(0xFF8B5CF6)],
+              colors: [
+                Theme.of(context).colorScheme.primary,
+                AppColors.violet500,
+              ],
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
             ),
             shape: BoxShape.circle,
             boxShadow: [
               BoxShadow(
-                color: const Color(0xFF6366F1).withValues(alpha: 0.3),
+                color: AppColors.indigo500.withValues(alpha: 0.3),
                 blurRadius: 12,
                 offset: const Offset(0, 6),
               ),
@@ -93,14 +97,17 @@ class PremiumUpsellContent extends StatelessWidget {
             padding: EdgeInsets.symmetric(vertical: 14.h),
             decoration: BoxDecoration(
               gradient: const LinearGradient(
-                colors: [Color(0xFF6366F1), Color(0xFF8B5CF6)],
+                colors: [
+                  Theme.of(context).colorScheme.primary,
+                  AppColors.violet500,
+                ],
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
               ),
               borderRadius: BorderRadius.circular(16.r),
               boxShadow: [
                 BoxShadow(
-                  color: const Color(0xFF6366F1).withValues(alpha: 0.4),
+                  color: AppColors.indigo500.withValues(alpha: 0.4),
                   blurRadius: 12,
                   offset: const Offset(0, 5),
                 ),

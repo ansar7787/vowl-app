@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -37,7 +38,7 @@ class OfflineBanner extends StatelessWidget {
                       ),
                       decoration: BoxDecoration(
                         color: isDark
-                            ? const Color(0xFF1E293B).withValues(alpha: 0.85)
+                            ? AppColors.slate800.withValues(alpha: 0.85)
                             : Colors.white.withValues(alpha: 0.85),
                         borderRadius: BorderRadius.circular(24.r),
                         border: Border.all(

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 class ConsonantClarityTactileGrid extends StatelessWidget {
   final List<String> options;
@@ -57,7 +58,7 @@ class ConsonantClarityTactileGrid extends StatelessWidget {
 
     // Default neutral styling for glassmorphic keycap
     Color capColor = isDark
-        ? const Color(0xFF1E293B).withValues(alpha: 0.8)
+        ? AppColors.slate800.withValues(alpha: 0.8)
         : Colors.white.withValues(alpha: 0.9);
     Color borderColor = color.withValues(alpha: 0.3);
     Color textColor = isDark ? Colors.white70 : Colors.black87;
@@ -65,12 +66,10 @@ class ConsonantClarityTactileGrid extends StatelessWidget {
     // Styling when selected / locked in
     if (showResult) {
       capColor = isCorrect
-          ? const Color(0xFF10B981).withValues(alpha: 0.2)
-          : const Color(0xFFE11D48).withValues(alpha: 0.2);
-      borderColor = isCorrect
-          ? const Color(0xFF10B981)
-          : const Color(0xFFE11D48);
-      textColor = isCorrect ? const Color(0xFF10B981) : const Color(0xFFE11D48);
+          ? AppColors.emerald500.withValues(alpha: 0.2)
+          : AppColors.rose700.withValues(alpha: 0.2);
+      borderColor = isCorrect ? AppColors.emerald500 : AppColors.rose700;
+      textColor = isCorrect ? AppColors.emerald500 : AppColors.rose700;
     } else if (isSelected) {
       capColor = color.withValues(alpha: 0.2);
       borderColor = color;

@@ -1,3 +1,5 @@
+import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -14,6 +16,7 @@ class IdiomsSystemMessage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     return Center(
       child: Container(
         padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
@@ -51,11 +54,12 @@ class IdiomsStrangerMessage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     return Container(
           constraints: BoxConstraints(maxWidth: 0.75.sw),
           padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 20.h),
           decoration: BoxDecoration(
-            color: isDark ? const Color(0xFF1E293B) : Colors.white,
+            color: isDark ? AppColors.slate800 : Colors.white,
             borderRadius: BorderRadius.only(
               topLeft: Radius.circular(24.r),
               topRight: Radius.circular(24.r),
@@ -97,11 +101,12 @@ class IdiomsStrangerTextMessage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     return Container(
           constraints: BoxConstraints(maxWidth: 0.75.sw),
           padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
           decoration: BoxDecoration(
-            color: isDark ? const Color(0xFF1E293B) : Colors.white,
+            color: isDark ? AppColors.slate800 : Colors.white,
             borderRadius: BorderRadius.only(
               topLeft: Radius.circular(24.r),
               topRight: Radius.circular(24.r),
@@ -154,6 +159,7 @@ class IdiomsUserMessage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     final bgColor = isCorrect == true
         ? Colors.green
         : (isCorrect == false ? Colors.red : color);
@@ -200,7 +206,7 @@ class IdiomsUserMessage extends StatelessWidget {
                 SizedBox(width: 10.w),
                 Icon(
                   isCorrect! ? Icons.verified_rounded : Icons.gpp_bad_rounded,
-                  color: isCorrect! ? Colors.greenAccent : Colors.redAccent,
+                  color: isCorrect! ? tokens.gameCorrect : tokens.gameIncorrect,
                   size: 18.r,
                 ).animate().scale(duration: 400.ms, curve: Curves.elasticOut),
               ],

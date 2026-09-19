@@ -9,6 +9,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/theme/app_colors.dart';
 
 class ProfileBadgesList extends StatefulWidget {
   final UserEntity user;
@@ -69,7 +70,7 @@ class _ProfileBadgesListState extends State<ProfileBadgesList> {
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontFamily: 'Outfit',
-                      color: isDark ? Colors.white : const Color(0xFF0F172A),
+                      color: isDark ? Colors.white : AppColors.slate900,
                       fontWeight: FontWeight.w900,
                       fontSize: 16.sp,
                       letterSpacing: 1,
@@ -381,12 +382,12 @@ class _ProfileBadgesListState extends State<ProfileBadgesList> {
           Container(
             padding: EdgeInsets.all(12.r),
             decoration: BoxDecoration(
-              color: const Color(0xFF8B5CF6).withValues(alpha: 0.15),
+              color: AppColors.violet500.withValues(alpha: 0.15),
               shape: BoxShape.circle,
             ),
             child: Icon(
               Icons.military_tech_rounded,
-              color: const Color(0xFF8B5CF6),
+              color: AppColors.violet500,
               size: 24.r,
             ),
           ),
@@ -407,9 +408,7 @@ class _ProfileBadgesListState extends State<ProfileBadgesList> {
                         fontFamily: 'Outfit',
                         fontSize: 13.sp,
                         fontWeight: FontWeight.w800,
-                        color: isDark
-                            ? Colors.white70
-                            : const Color(0xFF334155),
+                        color: isDark ? Colors.white70 : AppColors.slate700,
                       ),
                     ),
                     Text(
@@ -422,7 +421,7 @@ class _ProfileBadgesListState extends State<ProfileBadgesList> {
                         fontFamily: 'Outfit',
                         fontSize: 14.sp,
                         fontWeight: FontWeight.w900,
-                        color: const Color(0xFF8B5CF6),
+                        color: AppColors.violet500,
                       ),
                     ),
                   ],
@@ -456,7 +455,7 @@ class _ProfileBadgesListState extends State<ProfileBadgesList> {
                               decoration: BoxDecoration(
                                 gradient: const LinearGradient(
                                   colors: [
-                                    Color(0xFF8B5CF6),
+                                    AppColors.violet500,
                                     Color(0xFFC084FC),
                                   ],
                                 ),
@@ -464,7 +463,7 @@ class _ProfileBadgesListState extends State<ProfileBadgesList> {
                                 boxShadow: [
                                   if (value > 0)
                                     BoxShadow(
-                                      color: const Color(0xFF8B5CF6).withValues(
+                                      color: AppColors.violet500.withValues(
                                         alpha: (0.4 * value).clamp(0.0, 1.0),
                                       ),
                                       blurRadius: 8,

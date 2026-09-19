@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/utils/instruction_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -156,14 +157,14 @@ class KidsFoodLayout extends StatelessWidget {
                   borderRadius: BorderRadius.circular(16.r),
                   border: Border.all(
                     color: isHovering
-                        ? const Color(0xFFE11D48)
+                        ? AppColors.rose700
                         : const Color(0xFFD4D4D8),
                     width: isHovering ? 6.r : 4.r,
                   ), // Light grey tile border
                   boxShadow: [
                     BoxShadow(
                       color: isHovering
-                          ? const Color(0xFFE11D48).withValues(alpha: 0.3)
+                          ? AppColors.rose700.withValues(alpha: 0.3)
                           : Colors.black.withValues(alpha: 0.1),
                       blurRadius: isHovering ? 20 : 10,
                       offset: const Offset(0, 8),
@@ -212,7 +213,7 @@ class KidsFoodLayout extends StatelessWidget {
                                       ? 70.sp
                                       : 24.sp,
                                   fontWeight: FontWeight.w800,
-                                  color: const Color(0xFFE11D48).withValues(
+                                  color: AppColors.rose700.withValues(
                                     alpha:
                                         (quest.question == "?" ||
                                             quest.question == null)
@@ -290,7 +291,7 @@ class KidsFoodLayout extends StatelessWidget {
           decoration: BoxDecoration(
             color: const Color(0xFFE2E8F0), // Silver
             borderRadius: BorderRadius.vertical(top: Radius.circular(40.r)),
-            border: Border.all(color: const Color(0xFF94A3B8), width: 2),
+            border: Border.all(color: AppColors.slate400, width: 2),
             gradient: const LinearGradient(
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
@@ -304,7 +305,7 @@ class KidsFoodLayout extends StatelessWidget {
               width: 15.w,
               height: 8.h,
               decoration: BoxDecoration(
-                color: const Color(0xFF94A3B8), // Dome handle
+                color: AppColors.slate400, // Dome handle
                 borderRadius: BorderRadius.circular(4.r),
               ),
             ),
@@ -315,9 +316,9 @@ class KidsFoodLayout extends StatelessWidget {
           height: 35.h,
           width: 80.w,
           decoration: BoxDecoration(
-            color: const Color(0xFFF1F5F9), // Light silver plate
+            color: AppColors.slate100, // Light silver plate
             borderRadius: BorderRadius.vertical(bottom: Radius.circular(16.r)),
-            border: Border.all(color: const Color(0xFF94A3B8), width: 2),
+            border: Border.all(color: AppColors.slate400, width: 2),
             boxShadow: [
               BoxShadow(
                 color: Colors.black.withValues(alpha: 0.3),
@@ -336,7 +337,7 @@ class KidsFoodLayout extends StatelessWidget {
                     fontFamily: 'Outfit',
                     fontSize: 14.sp,
                     fontWeight: FontWeight.w700,
-                    color: const Color(0xFF0F172A),
+                    color: AppColors.slate900,
                   ),
                   textAlign: TextAlign.center,
                 ),

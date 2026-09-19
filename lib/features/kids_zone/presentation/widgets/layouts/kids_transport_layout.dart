@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/utils/instruction_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -241,7 +242,7 @@ class KidsTransportLayout extends StatelessWidget {
           width: 16.w,
           height: 40.h,
           decoration: BoxDecoration(
-            color: const Color(0xFF94A3B8), // Metal grey
+            color: AppColors.slate400, // Metal grey
             border: Border.all(color: const Color(0xFF475569), width: 2),
           ),
         ),
@@ -299,7 +300,7 @@ class KidsTransportLayout extends StatelessWidget {
                           'Outfit', // A rigid font looks more like a license plate
                       fontSize: 40.sp,
                       fontWeight: FontWeight.w700,
-                      color: const Color(0xFF0F172A),
+                      color: AppColors.slate900,
                     ),
                     textAlign: TextAlign.center,
                   ),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 class FlashcardActionButtons extends StatelessWidget {
   final bool isFlipped;
@@ -68,7 +69,7 @@ class FlashcardActionButtons extends StatelessWidget {
             child: _ActionBtn(
               label: context.tr('actions.again', fallback: 'AGAIN'),
               icon: Icons.keyboard_double_arrow_left_rounded,
-              color: const Color(0xFFEF4444), // Premium Red
+              color: AppColors.red500, // Premium Red
               isDark: isDark,
               onTap: isTransitioning ? null : onAgain,
             ),
@@ -78,7 +79,7 @@ class FlashcardActionButtons extends StatelessWidget {
             child: _ActionBtn(
               label: context.tr('actions.got_it', fallback: 'GOT IT'),
               icon: Icons.keyboard_double_arrow_right_rounded,
-              color: const Color(0xFF10B981), // Premium Green
+              color: AppColors.emerald500, // Premium Green
               isDark: isDark,
               onTap: isTransitioning ? null : onGotIt,
               isRight: true,

@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 
 /// Domain entity representing a purchasable subscription plan.
@@ -19,7 +20,7 @@ class SubscriptionPlan {
 
   /// Fallback color used if [color] cannot be parsed. Chosen to be a neutral,
   /// visually-obvious "something is wrong" indicator without crashing the UI.
-  static const Color _fallbackColor = Color(0xFF94A3B8);
+  static const Color _fallbackColor = AppColors.slate400;
 
   const SubscriptionPlan({
     required this.id,

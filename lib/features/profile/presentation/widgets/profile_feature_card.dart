@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
@@ -70,9 +71,7 @@ class ProfileFeatureCard extends StatelessWidget {
                           fontFamily: 'Outfit',
                           fontSize: 18.sp,
                           fontWeight: FontWeight.w800,
-                          color: isDark
-                              ? Colors.white
-                              : const Color(0xFF0F172A),
+                          color: isDark ? Colors.white : AppColors.slate900,
                         ),
                       ),
                       SizedBox(height: 4.h),

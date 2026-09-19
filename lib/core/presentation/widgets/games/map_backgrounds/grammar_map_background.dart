@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -14,7 +15,7 @@ class GrammarMapBackground extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CategoryMapBackground(
-      gradientColors: [const Color(0xFF0F172A), CategoryColors.grammarDark],
+      gradientColors: [AppColors.slate900, CategoryColors.grammarDark],
       decorationBuilder: (context) => Stack(
         children: List.generate(12, (i) {
           return Positioned(

@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -14,8 +15,8 @@ class KidsWorldBackgroundPainter extends StatelessWidget {
     // A crisp, pedagogical "school" aesthetic background.
     // Light mode: Clean, crisp white with subtle grey notebook dots.
     // Dark mode: Deep slate with subtle dark-blue dots.
-    final bgColor = isDark ? const Color(0xFF0F172A) : const Color(0xFFF8FAFC);
-    final dotColor = isDark ? const Color(0xFF1E293B) : const Color(0xFFE2E8F0);
+    final bgColor = isDark ? AppColors.slate900 : const Color(0xFFF8FAFC);
+    final dotColor = isDark ? AppColors.slate800 : const Color(0xFFE2E8F0);
 
     return Container(
       color: bgColor,

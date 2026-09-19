@@ -16,6 +16,7 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/curriculum_service.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 class QuestLibraryPage extends StatefulWidget {
   const QuestLibraryPage({super.key});
@@ -110,7 +111,7 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
   Color _getCategoryChipColor(String cat) {
     switch (cat) {
       case 'all':
-        return const Color(0xFF6366F1);
+        return AppColors.indigo500;
       case 'elite':
         return LevelThemeHelper.getCategoryBaseColor('elitemastery');
       default:
@@ -165,8 +166,8 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
 
     final bgColor = isMidnight
         ? const Color(0xFF020617)
-        : (isDark ? const Color(0xFF0F172A) : const Color(0xFFF8FAFC));
-    final contentColor = isDark ? Colors.white : const Color(0xFF0F172A);
+        : (isDark ? AppColors.slate900 : AppColors.slate50);
+    final contentColor = isDark ? Colors.white : AppColors.slate900;
 
     final authState = context.watch<AuthBloc>().state;
     final user = authState.user;
@@ -397,10 +398,10 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
                     vertical: 8.h,
                   ),
                   decoration: BoxDecoration(
-                    color: const Color(0xFF3B82F6).withValues(alpha: 0.15),
+                    color: AppColors.blue500.withValues(alpha: 0.15),
                     borderRadius: BorderRadius.circular(24.r),
                     border: Border.all(
-                      color: const Color(0xFF3B82F6).withValues(alpha: 0.2),
+                      color: AppColors.blue500.withValues(alpha: 0.2),
                     ),
                   ),
                   child: Row(
@@ -408,7 +409,7 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
                     children: [
                       Icon(
                         Icons.auto_stories_rounded,
-                        color: const Color(0xFF3B82F6),
+                        color: AppColors.blue500,
                         size: 16.r,
                       ),
                       SizedBox(width: 8.w),
@@ -441,7 +442,7 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
   }
 
   Widget _buildLibraryStatsDashboard(UserEntity user, bool isDark) {
-    final contentColor = isDark ? Colors.white : const Color(0xFF0F172A);
+    final contentColor = isDark ? Colors.white : AppColors.slate900;
 
     // Calculate global stats across all active games (200 levels each)
     int clearedLevels = 0;
@@ -471,9 +472,7 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
                 ? Colors.white.withValues(alpha: 0.08)
                 : Colors.white.withValues(alpha: 0.6),
             borderRadius: BorderRadius.circular(32.r),
-            border: Border.all(
-              color: const Color(0xFF3B82F6).withValues(alpha: 0.2),
-            ),
+            border: Border.all(color: AppColors.blue500.withValues(alpha: 0.2)),
             boxShadow: [
               BoxShadow(
                 color: Colors.black.withValues(alpha: 0.05),
@@ -503,7 +502,7 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
                                 fontFamily: 'Outfit',
                                 fontSize: 10.sp,
                                 fontWeight: FontWeight.w800,
-                                color: const Color(0xFF3B82F6),
+                                color: AppColors.blue500,
                                 letterSpacing: 0.5,
                               ),
                             ),
@@ -542,7 +541,7 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
                           vertical: 6.h,
                         ),
                         decoration: BoxDecoration(
-                          color: const Color(0xFF3B82F6).withValues(alpha: 0.1),
+                          color: AppColors.blue500.withValues(alpha: 0.1),
                           borderRadius: BorderRadius.circular(12.r),
                         ),
                         child: FittedBox(
@@ -560,7 +559,7 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
                               fontFamily: 'Outfit',
                               fontSize: 10.sp,
                               fontWeight: FontWeight.w900,
-                              color: const Color(0xFF3B82F6),
+                              color: AppColors.blue500,
                             ),
                             maxLines: 1,
                           ),
@@ -571,7 +570,7 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
                 ),
                 SizedBox(height: 20.h),
                 _buildProgressBar(
-                  const Color(0xFF3B82F6),
+                  AppColors.blue500,
                   clearedLevels + 1,
                   total: totalLevels,
                 ),
@@ -590,7 +589,7 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
                           ],
                         ),
                         '$clearedLevels',
-                        const Color(0xFF3B82F6),
+                        AppColors.blue500,
                         isDark,
                       ),
                     ),
@@ -603,7 +602,7 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
                             fallback: 'Status',
                           ),
                           _getGlobalStatus(context, progress),
-                          const Color(0xFF3B82F6),
+                          AppColors.blue500,
                           isDark,
                         ),
                       ),
@@ -620,7 +619,7 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
                           progress >= 0.99
                               ? '🏆'
                               : _getNextStatus(context, progress),
-                          const Color(0xFF10B981),
+                          AppColors.emerald500,
                           isDark,
                         ),
                       ),
@@ -706,7 +705,7 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
               fontFamily: 'Outfit',
               fontSize: 12.sp,
               fontWeight: FontWeight.w900,
-              color: isDark ? Colors.white : const Color(0xFF0F172A),
+              color: isDark ? Colors.white : AppColors.slate900,
             ),
             maxLines: 1,
           ),
@@ -752,7 +751,7 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
             ),
             prefixIcon: Icon(
               Icons.search_rounded,
-              color: const Color(0xFF3B82F6),
+              color: AppColors.blue500,
               size: 24.r,
             ),
             suffixIcon: ValueListenableBuilder<String>(
@@ -770,7 +769,8 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
             ),
             filled: true,
             fillColor: isDark
-                ? const Color(0xFF1E293B) // slate-800
+                ? AppColors
+                      .slate800 // slate-800
                 : Colors.white,
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(20.r),
@@ -790,7 +790,7 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
             ),
             focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(20.r),
-              borderSide: const BorderSide(color: Color(0xFF3B82F6), width: 2),
+              borderSide: const BorderSide(color: AppColors.blue500, width: 2),
             ),
             contentPadding: EdgeInsets.symmetric(
               vertical: 20.h,
@@ -1037,7 +1037,7 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
     final isMastered = completedCount >= 200;
     final isNew =
         !user.categoryStats.containsKey(subtype.name) && currentLevel == 1;
-    final contentColor = isDark ? Colors.white : const Color(0xFF0F172A);
+    final contentColor = isDark ? Colors.white : AppColors.slate900;
 
     return Semantics(
       button: true,
@@ -1057,7 +1057,7 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
               borderRadius: BorderRadius.circular(24.r),
               border: Border.all(
                 color: isMastered
-                    ? const Color(0xFFFFD700).withValues(alpha: 0.4)
+                    ? AppColors.gold.withValues(alpha: 0.4)
                     : catColor.withValues(alpha: isDark ? 0.15 : 0.1),
                 width: isMastered ? 1.5 : 1,
               ),
@@ -1125,7 +1125,7 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
                     else if (isMastered)
                       Icon(
                         Icons.verified_rounded,
-                        color: const Color(0xFFFFD700),
+                        color: AppColors.gold,
                         size: 18.r,
                       )
                     else
@@ -1234,7 +1234,7 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
         !user.categoryStats.containsKey(subtype.name) && currentLevel == 1;
     final isMastered = completedCount >= 200;
     final displayColor = theme.primaryColor;
-    final contentColor = isDark ? Colors.white : const Color(0xFF0F172A);
+    final contentColor = isDark ? Colors.white : AppColors.slate900;
     final completedPercent = (completedCount / 200 * 100).toInt();
 
     return Semantics(
@@ -1255,7 +1255,7 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
                 borderRadius: BorderRadius.circular(24.r),
                 border: Border.all(
                   color: isMastered
-                      ? const Color(0xFFFFD700).withValues(alpha: 0.4)
+                      ? AppColors.gold.withValues(alpha: 0.4)
                       : displayColor.withValues(alpha: isDark ? 0.12 : 0.08),
                   width: isMastered ? 1.5 : 1,
                 ),
@@ -1436,11 +1436,7 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
     bool isMastered = false,
   ]) {
     if (isMastered) {
-      return Icon(
-        Icons.verified_rounded,
-        color: const Color(0xFFFFD700),
-        size: 20.r,
-      );
+      return Icon(Icons.verified_rounded, color: AppColors.gold, size: 20.r);
     }
 
     if (isNew) {

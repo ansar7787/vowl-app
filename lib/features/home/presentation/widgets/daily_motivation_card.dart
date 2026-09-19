@@ -7,6 +7,7 @@ import 'package:go_router/go_router.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/presentation/widgets/vowl_mascot.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 /// Lifecycle of the daily hoot content, kept distinct from the text
 /// itself so the UI can tell "still loading" apart from "loaded, but
@@ -23,15 +24,15 @@ class _VowlCardPalette {
   // backgrounds, icons, and the badge border, where 3:1 is sufficient.
   // For the eyebrow label and CTA text we use [textSafeIndigo], which
   // clears AA with real margin.
-  static const Color indigo = Color(0xFF6366F1);
+  static Color indigo = Theme.of(context).colorScheme.primary;
   static const Color textSafeIndigo = Color(0xFF4F46E5); // ~6.3:1 on white
-  static const Color darkCard = Color(0xFF1E293B);
-  static const Color darkSecondaryText = Color(0xFF94A3B8);
-  static const Color lightSecondaryText = Color(0xFF64748B);
-  static const Color lightSurfaceAlt = Color(0xFFF8FAFC);
-  static const Color amber = Color(0xFFF59E0B);
-  static const Color amberDarkText = Color(0xFFFBBF24);
-  static const Color amberLightText = Color(0xFFD97706);
+  static const Color darkCard = AppColors.slate800;
+  static const Color darkSecondaryText = AppColors.slate400;
+  static const Color lightSecondaryText = AppColors.slate500;
+  static const Color lightSurfaceAlt = AppColors.slate50;
+  static const Color amber = AppColors.amber500;
+  static const Color amberDarkText = AppColors.amber400;
+  static const Color amberLightText = AppColors.amber600;
   static const Color amberDarkBg = Color(0xFF332000);
   static const Color amberLightBg = Color(0xFFFFF7ED);
 
@@ -40,7 +41,7 @@ class _VowlCardPalette {
   // introducing a whole new color language.
   static Color streakTextFor(int streak, bool isDark) {
     if (streak >= 100) {
-      return isDark ? const Color(0xFFFFD700) : const Color(0xFFB45309);
+      return isDark ? AppColors.gold : const Color(0xFFB45309);
     }
     if (streak >= 30) {
       return isDark ? const Color(0xFFFCD34D) : const Color(0xFFC2740A);
@@ -365,7 +366,7 @@ class _DailyMotivationCardState extends State<DailyMotivationCard>
                                     height: 1.5,
                                     color: isDark
                                         ? Colors.white
-                                        : const Color(0xFF0F172A),
+                                        : AppColors.slate900,
                                   ),
                                 ),
                               ),

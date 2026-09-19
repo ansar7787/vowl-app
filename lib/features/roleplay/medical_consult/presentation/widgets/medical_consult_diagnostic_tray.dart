@@ -1,3 +1,5 @@
+import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
@@ -26,11 +28,12 @@ class MedicalConsultDiagnosticTray extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     return Container(
       width: 1.sw,
       padding: EdgeInsets.all(18.r),
       decoration: BoxDecoration(
-        color: isDark ? const Color(0xFF0F0F1B) : Colors.white,
+        color: isDark ? AppColors.deepDark : Colors.white,
         borderRadius: BorderRadius.circular(28.r),
         border: Border.all(color: color.withValues(alpha: 0.1)),
       ),
@@ -71,8 +74,8 @@ class MedicalConsultDiagnosticTray extends StatelessWidget {
               Color cardColor = color;
               if (isAnswered && isChecked) {
                 cardColor = (isCorrect ?? false)
-                    ? Colors.greenAccent
-                    : Colors.redAccent;
+                    ? tokens.gameCorrect
+                    : tokens.gameIncorrect;
               }
 
               return ScaleButton(

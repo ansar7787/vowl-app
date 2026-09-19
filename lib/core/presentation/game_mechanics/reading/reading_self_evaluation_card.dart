@@ -1,3 +1,5 @@
+import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -120,7 +122,8 @@ class _ReadingSelfEvaluationCardState extends State<ReadingSelfEvaluationCard> {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final textColor = isDark ? Colors.white : const Color(0xFF0F172A);
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
+    final textColor = isDark ? Colors.white : AppColors.slate900;
     final subtitleColor = isDark ? Colors.white60 : Colors.black54;
 
     return ValueListenableBuilder<bool>(
@@ -227,7 +230,7 @@ class _ReadingSelfEvaluationCardState extends State<ReadingSelfEvaluationCard> {
       width: double.infinity,
       padding: EdgeInsets.all(24.r),
       decoration: BoxDecoration(
-        color: isDark ? const Color(0xFF1E293B) : Colors.white,
+        color: isDark ? AppColors.slate800 : Colors.white,
         borderRadius: BorderRadius.circular(24.r),
         border: Border.all(
           color: widget.primaryColor.withValues(alpha: 0.3),
@@ -365,7 +368,7 @@ class _ReadingSelfEvaluationCardState extends State<ReadingSelfEvaluationCard> {
                         'reading.missed_it',
                         fallback: 'MISSED IT',
                       ),
-                      color: Colors.redAccent,
+                      color: AppColors.gameIncorrect,
                       onTap: () => _evaluate(false),
                     ),
                   ),
@@ -377,7 +380,7 @@ class _ReadingSelfEvaluationCardState extends State<ReadingSelfEvaluationCard> {
                         'reading.nailed_it',
                         fallback: 'NAILED IT',
                       ),
-                      color: Colors.greenAccent,
+                      color: AppColors.gameCorrect,
                       onTap: () => _evaluate(true),
                     ),
                   ),

@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
@@ -77,7 +78,7 @@ class KidsZoneHomeHeader extends StatelessWidget {
                                 fontWeight: FontWeight.w900,
                                 color: isDark
                                     ? Colors.white
-                                    : const Color(0xFF1E293B),
+                                    : AppColors.slate800,
                                 height: 1.0,
                               ),
                               maxLines: 1,

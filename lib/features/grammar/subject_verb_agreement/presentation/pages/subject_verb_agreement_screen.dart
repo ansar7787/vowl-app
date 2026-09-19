@@ -1,3 +1,5 @@
+import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -142,6 +144,7 @@ class _SubjectVerbAgreementScreenState extends State<SubjectVerbAgreementScreen>
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     final theme = LevelThemeHelper.getTheme('grammar', level: widget.level);
 
     return BlocConsumer<GrammarBloc, GrammarState>(
@@ -585,15 +588,15 @@ class _SubjectVerbAgreementScreenState extends State<SubjectVerbAgreementScreen>
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   color: isCorrect
-                      ? Colors.greenAccent.withValues(alpha: 0.1)
+                      ? AppColors.gameCorrect.withValues(alpha: 0.1)
                       : (isWrong
-                            ? Colors.redAccent.withValues(alpha: 0.1)
+                            ? AppColors.gameIncorrect.withValues(alpha: 0.1)
                             : Colors.transparent),
                   border: Border.all(
                     color: isCorrect
-                        ? Colors.greenAccent
+                        ? AppColors.gameCorrect
                         : (isWrong
-                              ? Colors.redAccent
+                              ? AppColors.gameIncorrect
                               : primaryColor.withValues(alpha: 0.2)),
                     width: isCompact ? 2.r : 2.5.r,
                   ),
@@ -606,8 +609,8 @@ class _SubjectVerbAgreementScreenState extends State<SubjectVerbAgreementScreen>
                       fontSize: isCompact ? 13.sp : 16.sp,
                       fontWeight: FontWeight.bold,
                       color: isCorrect
-                          ? Colors.greenAccent
-                          : (isWrong ? Colors.redAccent : primaryColor),
+                          ? AppColors.gameCorrect
+                          : (isWrong ? AppColors.gameIncorrect : primaryColor),
                     ),
                   ),
                 ),
@@ -622,8 +625,8 @@ class _SubjectVerbAgreementScreenState extends State<SubjectVerbAgreementScreen>
     final Color coreColor =
         (isAnsweredNotifier.value || _pendingTypeSubmit.value)
         ? (isCorrectNotifier.value != false
-              ? Colors.greenAccent
-              : Colors.redAccent)
+              ? AppColors.gameCorrect
+              : AppColors.gameIncorrect)
         : primaryColor;
     final coreSize = isCompact ? 50.r : 70.r;
     final innerSize = isCompact ? 14.r : 20.r;

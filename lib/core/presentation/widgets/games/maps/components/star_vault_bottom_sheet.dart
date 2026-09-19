@@ -17,6 +17,7 @@ import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/core/presentation/widgets/vowl_button_spinner.dart';
 import 'package:vowl/core/presentation/widgets/shakeable_wrapper.dart';
 import 'package:vowl/core/utils/reward_limit_service.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 class StarVaultBottomSheet extends StatefulWidget {
   final String gameType;
@@ -328,7 +329,7 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
                   onButtonPressed: () => Navigator.of(ctx).pop(),
                   customIcon: Icon(
                     Icons.auto_awesome_rounded,
-                    color: const Color(0xFF10B981),
+                    color: AppColors.emerald500,
                     size: 48.sp,
                   ),
                 ),
@@ -396,7 +397,7 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
                         maxHeight: ScreenUtil().screenHeight * 0.85,
                       ),
                       decoration: BoxDecoration(
-                        color: (isDark ? const Color(0xFF1E293B) : Colors.white)
+                        color: (isDark ? AppColors.slate800 : Colors.white)
                             .withValues(alpha: 0.95),
                         borderRadius: BorderRadius.vertical(
                           top: Radius.circular(32.r),
@@ -966,7 +967,7 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
                                         decoration: BoxDecoration(
                                           gradient: const LinearGradient(
                                             colors: [
-                                              Color(0xFF8B5CF6),
+                                              AppColors.violet500,
                                               Color(0xFF6D28D9),
                                             ],
                                           ),

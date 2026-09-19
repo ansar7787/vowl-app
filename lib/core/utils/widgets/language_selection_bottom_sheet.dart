@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'dart:async';
 import 'dart:ui';
 import 'package:flutter/material.dart';
@@ -11,6 +12,7 @@ import 'package:vowl/core/utils/translation_service.dart';
 import 'package:google_mlkit_translation/google_mlkit_translation.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/presentation/widgets/vowl_button_spinner.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 /// A sleek 2026 glassmorphic bottom sheet for selecting the native translation language.
 class LanguageSelectionBottomSheet extends StatefulWidget {
@@ -71,7 +73,8 @@ class _LanguageSelectionBottomSheetState
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final primaryIndigo = const Color(0xFF6366F1);
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
+    final primaryIndigo = AppColors.indigo500;
 
     return ListenableBuilder(
       listenable: Listenable.merge([
@@ -94,7 +97,7 @@ class _LanguageSelectionBottomSheetState
               ),
               decoration: BoxDecoration(
                 color: isDark
-                    ? const Color(0xFF0F172A).withValues(alpha: 0.85)
+                    ? AppColors.slate900.withValues(alpha: 0.85)
                     : Colors.white.withValues(alpha: 0.9),
                 borderRadius: BorderRadius.vertical(top: Radius.circular(32.r)),
                 border: Border(
@@ -191,7 +194,7 @@ class _LanguageSelectionBottomSheetState
                         gradient: LinearGradient(
                           colors: [
                             primaryIndigo.withValues(alpha: 0.1),
-                            const Color(0xFF8B5CF6).withValues(alpha: 0.1),
+                            AppColors.violet500.withValues(alpha: 0.1),
                           ],
                         ),
                         borderRadius: BorderRadius.circular(16.r),
@@ -684,7 +687,9 @@ class _LanguageSelectionBottomSheetState
               ),
               if (isDetecting) ...[
                 SizedBox(height: 16.h),
-                const VowlButtonSpinner(color: Color(0xFF6366F1)),
+                const VowlButtonSpinner(
+                  color: Theme.of(context).colorScheme.primary,
+                ),
               ],
             ],
           ),
@@ -760,7 +765,7 @@ class _LanguageSelectionBottomSheetState
                                 ),
                                 style: const TextStyle(fontFamily: 'Outfit'),
                               ),
-                              backgroundColor: Colors.redAccent,
+                              backgroundColor: AppColors.gameIncorrect,
                               behavior: SnackBarBehavior.floating,
                             ),
                           );

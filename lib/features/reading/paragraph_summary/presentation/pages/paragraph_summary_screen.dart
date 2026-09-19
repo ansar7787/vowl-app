@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:vowl/core/utils/instruction_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
@@ -113,6 +114,7 @@ class _ParagraphSummaryScreenState extends State<ParagraphSummaryScreen>
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     final theme = LevelThemeHelper.getTheme('reading', level: widget.level);
 
     return BlocConsumer<ReadingBloc, ReadingState>(
@@ -189,7 +191,7 @@ class _ParagraphSummaryScreenState extends State<ParagraphSummaryScreen>
                                         style: TextStyle(
                                           fontFamily: 'Outfit',
                                           color: _isDistilled.value
-                                              ? Colors.greenAccent
+                                              ? tokens.gameCorrect
                                               : theme.primaryColor.withValues(
                                                   alpha: 0.6,
                                                 ),

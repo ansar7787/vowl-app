@@ -6,6 +6,7 @@ import 'package:vowl/core/presentation/widgets/vowl_mascot.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/core/presentation/utils/mascot_message_helper.dart';
 import '../bloc/elite_mastery_bloc.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 /// Floating mascot widget that peeks from the top-left of the game area.
 ///
@@ -130,7 +131,7 @@ class _SpeechBubble extends StatelessWidget {
                 fontFamily: 'Outfit',
                 fontSize: 11.sp,
                 fontWeight: FontWeight.bold,
-                color: const Color(0xFFF59E0B),
+                color: AppColors.amber500,
               ),
             ),
           ),

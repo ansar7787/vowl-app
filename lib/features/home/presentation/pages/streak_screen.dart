@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -40,8 +41,8 @@ class _StreakScreenState extends State<StreakScreen> {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final bgColor = isMidnight
         ? const Color(0xFF020617)
-        : (isDark ? const Color(0xFF0F172A) : const Color(0xFFF8FAFC));
-    final contentColor = isDark ? Colors.white : const Color(0xFF0F172A);
+        : (isDark ? AppColors.slate900 : const Color(0xFFF8FAFC));
+    final contentColor = isDark ? Colors.white : AppColors.slate900;
 
     return Scaffold(
       backgroundColor: bgColor,
@@ -107,9 +108,7 @@ class _StreakScreenState extends State<StreakScreen> {
                             fontFamily: 'Outfit',
                             fontSize: 12.sp,
                             fontWeight: FontWeight.w500,
-                            color: isDark
-                                ? Colors.white54
-                                : const Color(0xFF64748B),
+                            color: isDark ? Colors.white54 : AppColors.slate500,
                           ),
                         ),
                         SizedBox(height: 16.h),
@@ -267,7 +266,7 @@ class _StreakScreenState extends State<StreakScreen> {
     final freezeCount = user.streakFreezes;
     final color = freezeCount > 0
         ? const Color(0xFF38BDF8)
-        : const Color(0xFF64748B);
+        : AppColors.slate500;
 
     return Semantics(
       label: context.tr(

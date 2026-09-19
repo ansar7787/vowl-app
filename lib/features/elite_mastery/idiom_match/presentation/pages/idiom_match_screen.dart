@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/theme_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -383,7 +384,7 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen>
                                                   fontWeight: FontWeight.w600,
                                                   color: isDark
                                                       ? Colors.white
-                                                      : const Color(0xFF0F172A),
+                                                      : AppColors.slate900,
                                                   height: 1.4,
                                                   letterSpacing: 0.3,
                                                 ),

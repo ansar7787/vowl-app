@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/features/speaking/domain/entities/speaking_quest.dart';
@@ -114,7 +115,7 @@ class YesNoSpeakingAuditionCard extends StatelessWidget {
               fontFamily: 'Outfit',
               fontSize: 22.sp,
               fontWeight: FontWeight.w600,
-              color: isDark ? Colors.white : const Color(0xFF1E293B),
+              color: isDark ? Colors.white : AppColors.slate800,
               height: 1.35,
               letterSpacing: 0.5,
             ),

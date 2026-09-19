@@ -1,3 +1,5 @@
+import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -32,6 +34,7 @@ class AccentShadowingTargetPanel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     final isErrorState = isCorrect == false && attempts > 0;
     final words = text
         .split(RegExp(r'\s+'))
@@ -43,7 +46,9 @@ class AccentShadowingTargetPanel extends StatelessWidget {
       padding: EdgeInsets.all(32.r),
       border: (isAnswered || isErrorState)
           ? Border.all(
-              color: isCorrect == true ? Colors.greenAccent : Colors.redAccent,
+              color: isCorrect == true
+                  ? tokens.gameCorrect
+                  : tokens.gameIncorrect,
               width: 2,
             )
           : null,
@@ -86,7 +91,7 @@ class AccentShadowingTargetPanel extends StatelessWidget {
                 fontWeight: FontWeight.w700,
                 color: isDark
                     ? Colors.white70
-                    : const Color(0xFF1E293B).withValues(alpha: 0.7),
+                    : AppColors.slate800.withValues(alpha: 0.7),
               ),
               textAlign: TextAlign.center,
             ),
@@ -122,7 +127,7 @@ class AccentShadowingTargetPanel extends StatelessWidget {
                     ),
                     child: Icon(
                       Icons.volume_up_rounded,
-                      color: isDark ? primaryColor : const Color(0xFF0F172A),
+                      color: isDark ? primaryColor : AppColors.slate900,
                       size: 32.r,
                     ),
                   ),
@@ -136,7 +141,7 @@ class AccentShadowingTargetPanel extends StatelessWidget {
             Container(
               padding: EdgeInsets.all(12.r),
               decoration: BoxDecoration(
-                color: Colors.greenAccent.withValues(alpha: 0.1),
+                color: tokens.gameCorrect.withValues(alpha: 0.1),
                 borderRadius: BorderRadius.circular(12.r),
               ),
               child: Column(
@@ -146,7 +151,7 @@ class AccentShadowingTargetPanel extends StatelessWidget {
                     children: [
                       Icon(
                         Icons.graphic_eq_rounded,
-                        color: Colors.greenAccent,
+                        color: tokens.gameCorrect,
                         size: 16.r,
                       ),
                       SizedBox(width: 8.w),
@@ -156,7 +161,7 @@ class AccentShadowingTargetPanel extends StatelessWidget {
                           fontFamily: 'Outfit',
                           fontSize: 12.sp,
                           fontWeight: FontWeight.w900,
-                          color: Colors.greenAccent,
+                          color: tokens.gameCorrect,
                           letterSpacing: 1.2,
                         ),
                       ),
@@ -172,7 +177,7 @@ class AccentShadowingTargetPanel extends StatelessWidget {
                             (index % 2 == 0 ? 16.h : 24.h) *
                             (isAnswered ? 1.0 : 0.2),
                         decoration: BoxDecoration(
-                          color: Colors.greenAccent,
+                          color: tokens.gameCorrect,
                           borderRadius: BorderRadius.circular(2.r),
                         ),
                       );
@@ -216,8 +221,8 @@ class AccentShadowingTargetPanel extends StatelessWidget {
                   fontSize: 24.sp,
                   fontWeight: FontWeight.w900,
                   color: isMatched
-                      ? Colors.greenAccent
-                      : (isDark ? Colors.white : const Color(0xFF1E293B)),
+                      ? AppColors.gameCorrect
+                      : (isDark ? Colors.white : AppColors.slate800),
                   height: 1.4,
                 ),
               )

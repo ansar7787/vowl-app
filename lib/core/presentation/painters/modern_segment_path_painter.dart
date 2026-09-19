@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -52,7 +53,7 @@ class ModernSegmentPathPainter extends CustomPainter {
     // We use the exact same 8% tint as the locked node so they match perfectly,
     // while remaining fully opaque (visible) and dark (locked).
     final Color lockedColor = isDark
-        ? Color.lerp(const Color(0xFF0F172A), baseColor, 0.08)!
+        ? Color.lerp(AppColors.slate900, baseColor, 0.08)!
         : Color.lerp(const Color(0xFFF8FAFC), baseColor, 0.08)!;
 
     // ── Header connection (level 1 top connection) ──

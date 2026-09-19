@@ -11,6 +11,7 @@ import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/home/presentation/widgets/mastery_avatar.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 enum CommandPodMode { headerOnly, kidsOnly, vaultOnly, full }
 
@@ -49,7 +50,7 @@ class CommandPod extends StatelessWidget {
     if (level >= 50) {
       return (
         label: 'LEGEND',
-        color: const Color(0xFFFFD700),
+        color: AppColors.gold,
         icon: Icons.workspace_premium_rounded,
       );
     }
@@ -63,20 +64,20 @@ class CommandPod extends StatelessWidget {
     if (level >= 15) {
       return (
         label: 'COMMANDER',
-        color: const Color(0xFF3B82F6),
+        color: AppColors.blue500,
         icon: Icons.shield_rounded,
       );
     }
     if (level >= 5) {
       return (
         label: 'OPERATIVE',
-        color: const Color(0xFF6366F1),
+        color: AppColors.indigo500,
         icon: Icons.bolt_rounded,
       );
     }
     return (
       label: 'ROOKIE',
-      color: const Color(0xFF10B981),
+      color: AppColors.emerald500,
       icon: Icons.explore_rounded,
     );
   }
@@ -92,7 +93,7 @@ class CommandPod extends StatelessWidget {
         borderRadius: BorderRadius.circular(28.r),
         boxShadow: [
           BoxShadow(
-            color: const Color(0xFF6366F1).withValues(alpha: 0.15),
+            color: AppColors.indigo500.withValues(alpha: 0.15),
             blurRadius: 40,
             offset: const Offset(0, 15),
           ),
@@ -117,7 +118,7 @@ class CommandPod extends StatelessWidget {
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
                         border: Border.all(
-                          color: const Color(0xFF6366F1).withValues(alpha: 0.2),
+                          color: AppColors.indigo500.withValues(alpha: 0.2),
                           width: 2,
                         ),
                       ),
@@ -240,15 +241,15 @@ class CommandPod extends StatelessWidget {
                   gradient: const LinearGradient(
                     colors: [
                       Color(0xFF06B6D4), // Vibrant Cyan
-                      Color(0xFF3B82F6), // Azure Blue
-                      Color(0xFF8B5CF6), // Royal Purple
+                      AppColors.blue500, // Azure Blue
+                      AppColors.violet500, // Royal Purple
                     ],
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight,
                   ),
                   boxShadow: [
                     BoxShadow(
-                      color: const Color(0xFF3B82F6).withValues(alpha: 0.3),
+                      color: AppColors.blue500.withValues(alpha: 0.3),
                       blurRadius: 30,
                       offset: const Offset(0, 15),
                     ),
@@ -515,7 +516,7 @@ class CommandPod extends StatelessWidget {
                 context.tr('home.badges', fallback: 'Badges'),
                 '${user.badges.length}',
                 Icons.emoji_events_rounded,
-                const Color(0xFFF59E0B),
+                AppColors.amber500,
                 AppRouter.trophyRoomRoute,
               ),
             ),
@@ -526,7 +527,7 @@ class CommandPod extends StatelessWidget {
                 context.tr('home.level_label', fallback: 'Lvl'),
                 '${user.level}',
                 Icons.star_rounded,
-                const Color(0xFF3B82F6),
+                AppColors.blue500,
                 AppRouter.levelRoute,
               ),
             ),
@@ -595,7 +596,7 @@ class CommandPod extends StatelessWidget {
                         fontFamily: 'Outfit',
                         fontSize: 16.sp,
                         fontWeight: FontWeight.w900,
-                        color: isDark ? Colors.white : const Color(0xFF0F172A),
+                        color: isDark ? Colors.white : AppColors.slate900,
                         height: 1.1,
                       ),
                       maxLines: 1,

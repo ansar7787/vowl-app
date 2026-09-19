@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 
 /// Premium glassmorphic full-screen loading overlay with cycling status text.
@@ -115,11 +116,8 @@ class _LoadingOverlayState extends State<LoadingOverlay> {
 
                     // 2. Solid color tint layer
                     ColoredBox(
-                      color:
-                          (isDark
-                                  ? const Color(0xFF020617)
-                                  : const Color(0xFFF8FAFC))
-                              .withValues(alpha: 0.85),
+                      color: (isDark ? AppColors.slate950 : AppColors.slate50)
+                          .withValues(alpha: 0.85),
                     ),
 
                     // 3. Animated content layer
@@ -142,9 +140,8 @@ class _LoadingOverlayState extends State<LoadingOverlay> {
                                             strokeWidth: 2,
                                             valueColor:
                                                 AlwaysStoppedAnimation<Color>(
-                                                  const Color(
-                                                    0xFF6366F1,
-                                                  ).withValues(alpha: 0.5),
+                                                  AppColors.indigo500
+                                                      .withValues(alpha: 0.5),
                                                 ),
                                           ),
                                         )
@@ -198,7 +195,7 @@ class _LoadingOverlayState extends State<LoadingOverlay> {
                                             fontWeight: FontWeight.w900,
                                             color: isDark
                                                 ? Colors.white
-                                                : const Color(0xFF1E293B),
+                                                : AppColors.slate800,
                                             letterSpacing: 4.0,
                                           ),
                                         )
@@ -208,9 +205,9 @@ class _LoadingOverlayState extends State<LoadingOverlay> {
                                         )
                                         .fadeIn(duration: 1000.ms)
                                         .shimmer(
-                                          color: const Color(
-                                            0xFF6366F1,
-                                          ).withValues(alpha: 0.3),
+                                          color: AppColors.indigo500.withValues(
+                                            alpha: 0.3,
+                                          ),
                                         ),
                               ),
 
@@ -235,7 +232,7 @@ class _LoadingOverlayState extends State<LoadingOverlay> {
                                           color:
                                               (isDark
                                                       ? Colors.white
-                                                      : const Color(0xFF64748B))
+                                                      : AppColors.slate500)
                                                   .withValues(alpha: 0.4),
                                           letterSpacing: 1.5,
                                         ),

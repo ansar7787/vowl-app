@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -88,7 +89,7 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
           final isDark = Theme.of(context).brightness == Brightness.dark;
           final bgColor = isMidnight
               ? const Color(0xFF000000)
-              : (isDark ? const Color(0xFF0F172A) : const Color(0xFFF8FAFC));
+              : (isDark ? AppColors.slate900 : const Color(0xFFF8FAFC));
 
           return BlocBuilder<ForgotPasswordCubit, ForgotPasswordState>(
             // Previously rebuilt this entire subtree (gradient background,

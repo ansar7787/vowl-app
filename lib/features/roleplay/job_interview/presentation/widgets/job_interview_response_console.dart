@@ -1,3 +1,5 @@
+import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -27,6 +29,7 @@ class JobInterviewResponseConsole extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: List.generate(
@@ -43,11 +46,11 @@ class JobInterviewResponseConsole extends StatelessWidget {
     if (isAnswered) {
       if (isSelected) {
         stoneColor = (isCorrect ?? false)
-            ? Colors.greenAccent
-            : Colors.redAccent;
+            ? AppColors.gameCorrect
+            : AppColors.gameIncorrect;
       } else if (index == correctIndex) {
-        stoneColor =
-            Colors.greenAccent; // Highlight correct answer if incorrect chosen
+        stoneColor = AppColors
+            .gameCorrect; // Highlight correct answer if incorrect chosen
       }
     }
 
@@ -60,13 +63,13 @@ class JobInterviewResponseConsole extends StatelessWidget {
               decoration: BoxDecoration(
                 color: isSelected
                     ? stoneColor
-                    : (isDark ? const Color(0xFF0F0F1B) : Colors.white),
+                    : (isDark ? AppColors.deepDark : Colors.white),
                 borderRadius: BorderRadius.circular(22.r),
                 border: Border.all(
                   color: isSelected
                       ? Colors.white
                       : (isAnswered && index == correctIndex)
-                      ? Colors.greenAccent
+                      ? AppColors.gameCorrect
                       : color.withValues(alpha: 0.35),
                   width: (isSelected || (isAnswered && index == correctIndex))
                       ? 2.5
@@ -112,7 +115,7 @@ class JobInterviewResponseConsole extends StatelessWidget {
                         color: isSelected
                             ? Colors.white
                             : (isAnswered && index == correctIndex)
-                            ? (isDark ? Colors.greenAccent : Colors.green)
+                            ? (isDark ? AppColors.gameCorrect : Colors.green)
                             : (isDark ? Colors.white70 : Colors.black87),
                       ),
                     ),

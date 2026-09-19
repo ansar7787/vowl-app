@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/utils/instruction_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -168,7 +169,7 @@ class KidsWeatherLayout extends StatelessWidget {
                     child: Container(
                       width: 40.w,
                       decoration: BoxDecoration(
-                        color: const Color(0xFFEF4444), // Red curtains
+                        color: AppColors.red500, // Red curtains
                         borderRadius: BorderRadius.horizontal(
                           right: Radius.circular(30.r),
                         ),
@@ -189,7 +190,7 @@ class KidsWeatherLayout extends StatelessWidget {
                     child: Container(
                       width: 40.w,
                       decoration: BoxDecoration(
-                        color: const Color(0xFFEF4444), // Red curtains
+                        color: AppColors.red500, // Red curtains
                         borderRadius: BorderRadius.horizontal(
                           left: Radius.circular(30.r),
                         ),

@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/utils/app_logger.dart';
 import 'package:flutter/material.dart';
 
@@ -497,7 +498,7 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
           fontFamily: 'Outfit',
           fontSize: 14.sp,
           fontWeight: FontWeight.w600,
-          color: const Color(0xFF1E293B),
+          color: AppColors.slate800,
           height: 1.2,
         ),
         maxLines: 6,

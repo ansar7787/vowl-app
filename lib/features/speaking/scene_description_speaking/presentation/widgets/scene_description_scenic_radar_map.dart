@@ -1,3 +1,5 @@
+import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/features/speaking/scene_description_speaking/presentation/widgets/radar_beacon_painter.dart';
@@ -26,6 +28,7 @@ class SceneDescriptionScenicRadarMap extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     final disableAnimations = MediaQuery.of(context).disableAnimations;
 
     return Container(
@@ -88,7 +91,7 @@ class SceneDescriptionScenicRadarMap extends StatelessWidget {
                       fontFamily: 'Outfit',
                       fontSize: 10.sp,
                       color: inspectedHotspots.length == hotspotLabels.length
-                          ? Colors.greenAccent
+                          ? tokens.gameCorrect
                           : Colors.grey,
                       fontWeight: FontWeight.bold,
                     ),
@@ -154,7 +157,7 @@ class SceneDescriptionScenicRadarMap extends StatelessWidget {
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       color: isInspected
-                          ? Colors.greenAccent
+                          ? AppColors.gameCorrect
                           : (isActive ? primaryColor : Colors.black26),
                       border: Border.all(color: Colors.white30),
                     ),
@@ -178,7 +181,7 @@ class SceneDescriptionScenicRadarMap extends StatelessWidget {
                 fontFamily: 'Outfit',
                 fontSize: 8.sp,
                 color: isInspected
-                    ? Colors.greenAccent
+                    ? AppColors.gameCorrect
                     : (isActive ? primaryColor : Colors.grey),
                 fontWeight: FontWeight.bold,
               ),

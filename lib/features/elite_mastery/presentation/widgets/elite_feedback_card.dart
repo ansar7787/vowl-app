@@ -11,6 +11,7 @@ import 'package:vowl/features/elite_mastery/domain/entities/elite_mastery_quest.
 import '../bloc/elite_mastery_bloc.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/presentation/widgets/pedagogical_rule_box.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 /// Bottom-sheet feedback card displayed after the player answers a question.
 ///
@@ -47,11 +48,10 @@ class EliteFeedbackCard extends StatelessWidget {
   bool get _success => isCorrect ?? false;
 
   List<Color> get _gradient => _success
-      ? const [Color(0xFF2DD4BF), Color(0xFF10B981)]
-      : const [Color(0xFFF43F5E), Color(0xFFE11D48)];
+      ? const [Color(0xFF2DD4BF), AppColors.emerald500]
+      : const [AppColors.rose500, AppColors.rose700];
 
-  Color get _shadowColor =>
-      _success ? const Color(0xFF10B981) : const Color(0xFFE11D48);
+  Color get _shadowColor => _success ? AppColors.emerald500 : AppColors.rose700;
 
   String _title(BuildContext context) => _success
       ? context.tr('games.excellent', fallback: 'Excellent!')

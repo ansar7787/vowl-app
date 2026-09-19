@@ -1,3 +1,5 @@
+import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -17,6 +19,7 @@ class EmergencyHubTerminalInput extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     final bool isCodeValid =
         controller.text.trim().replaceAll(' ', '').toLowerCase() ==
         correctAnswer.trim().replaceAll(' ', '').toLowerCase();
@@ -46,14 +49,14 @@ class EmergencyHubTerminalInput extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   fontSize: 10.sp,
-                  color: isCodeValid ? Colors.greenAccent : Colors.amberAccent,
+                  color: isCodeValid ? tokens.gameCorrect : Colors.amberAccent,
                   letterSpacing: 1.5,
                   fontWeight: FontWeight.bold,
                 ),
               ),
               Icon(
                 isCodeValid ? Icons.vpn_key_rounded : Icons.keyboard_rounded,
-                color: isCodeValid ? Colors.greenAccent : Colors.amberAccent,
+                color: isCodeValid ? tokens.gameCorrect : Colors.amberAccent,
                 size: 16.r,
               ),
             ],
@@ -66,7 +69,7 @@ class EmergencyHubTerminalInput extends StatelessWidget {
             style: TextStyle(
               fontFamily: 'Outfit',
               fontSize: 18.sp,
-              color: isCodeValid ? Colors.greenAccent : Colors.redAccent,
+              color: isCodeValid ? tokens.gameCorrect : tokens.gameIncorrect,
               fontWeight: FontWeight.bold,
               letterSpacing: 2,
             ),
@@ -79,26 +82,28 @@ class EmergencyHubTerminalInput extends StatelessWidget {
                 letterSpacing: 1.5,
               ),
               filled: true,
-              fillColor: isDark ? const Color(0xFF0F0F1B) : Colors.white,
+              fillColor: isDark ? AppColors.deepDark : Colors.white,
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(16.r),
                 borderSide: BorderSide(
                   color: isCodeValid
-                      ? Colors.greenAccent.withValues(alpha: 0.4)
-                      : Colors.redAccent.withValues(alpha: 0.3),
+                      ? tokens.gameCorrect.withValues(alpha: 0.4)
+                      : tokens.gameIncorrect.withValues(alpha: 0.3),
                   width: 2,
                 ),
               ),
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(16.r),
                 borderSide: BorderSide(
-                  color: isCodeValid ? Colors.greenAccent : Colors.redAccent,
+                  color: isCodeValid
+                      ? tokens.gameCorrect
+                      : tokens.gameIncorrect,
                   width: 2,
                 ),
               ),
               prefixIcon: Icon(
                 Icons.terminal_rounded,
-                color: isCodeValid ? Colors.greenAccent : Colors.redAccent,
+                color: isCodeValid ? tokens.gameCorrect : tokens.gameIncorrect,
                 size: 20.r,
               ),
             ),

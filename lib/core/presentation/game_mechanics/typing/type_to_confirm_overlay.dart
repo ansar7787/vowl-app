@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -171,7 +172,7 @@ class _TypeToConfirmOverlayState extends State<TypeToConfirmOverlay> {
   }
 
   Widget _buildPanel(bool isDark) {
-    final textColor = isDark ? Colors.white : const Color(0xFF0F172A);
+    final textColor = isDark ? Colors.white : AppColors.slate900;
     final subtitleColor = isDark ? Colors.white70 : Colors.black87;
 
     return ClipRRect(
@@ -180,9 +181,9 @@ class _TypeToConfirmOverlayState extends State<TypeToConfirmOverlay> {
         valueListenable: _result,
         builder: (context, result, child) {
           final borderColor = result == _ConfirmResult.success
-              ? Colors.greenAccent.withValues(alpha: 0.5)
+              ? AppColors.gameCorrect.withValues(alpha: 0.5)
               : result == _ConfirmResult.mismatch
-              ? Colors.redAccent.withValues(alpha: 0.5)
+              ? AppColors.gameIncorrect.withValues(alpha: 0.5)
               : widget.primaryColor.withValues(alpha: 0.3);
 
           return Container(
@@ -356,14 +357,14 @@ class _TypeToConfirmOverlayState extends State<TypeToConfirmOverlay> {
                             Container(
                               padding: EdgeInsets.all(16.r),
                               decoration: BoxDecoration(
-                                color: Colors.greenAccent.withValues(
+                                color: AppColors.gameCorrect.withValues(
                                   alpha: 0.15,
                                 ),
                                 shape: BoxShape.circle,
                               ),
                               child: Icon(
                                 Icons.verified_rounded,
-                                color: Colors.greenAccent,
+                                color: AppColors.gameCorrect,
                                 size: 48.r,
                               ),
                             ).animate().scale(
@@ -379,7 +380,7 @@ class _TypeToConfirmOverlayState extends State<TypeToConfirmOverlay> {
                                 fontFamily: 'Outfit',
                                 fontSize: 18.sp,
                                 fontWeight: FontWeight.w900,
-                                color: Colors.greenAccent,
+                                color: AppColors.gameCorrect,
                                 letterSpacing: 2,
                               ),
                             ).animate().fadeIn(delay: 200.ms),
@@ -399,7 +400,9 @@ class _TypeToConfirmOverlayState extends State<TypeToConfirmOverlay> {
                                 borderRadius: BorderRadius.circular(16.r),
                                 border: Border.all(
                                   color: result == _ConfirmResult.mismatch
-                                      ? Colors.redAccent.withValues(alpha: 0.5)
+                                      ? AppColors.gameIncorrect.withValues(
+                                          alpha: 0.5,
+                                        )
                                       : widget.primaryColor.withValues(
                                           alpha: 0.2,
                                         ),
@@ -459,7 +462,7 @@ class _TypeToConfirmOverlayState extends State<TypeToConfirmOverlay> {
                                               fontFamily: 'Outfit',
                                               fontSize: 10.sp,
                                               fontWeight: FontWeight.w600,
-                                              color: Colors.redAccent
+                                              color: AppColors.gameIncorrect
                                                   .withValues(alpha: 0.8),
                                             ),
                                           );
@@ -491,7 +494,7 @@ class _TypeToConfirmOverlayState extends State<TypeToConfirmOverlay> {
                                 fontSize: 12.sp,
                                 fontWeight: FontWeight.w600,
                                 color: result == _ConfirmResult.mismatch
-                                    ? Colors.redAccent
+                                    ? AppColors.gameIncorrect
                                     : Colors.orangeAccent,
                               ),
                             ),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 /// A premium-feeling chip that displays a Smart Reply AI suggestion.
 ///
@@ -39,22 +40,22 @@ class SmartReplyChip extends StatelessWidget {
             gradient: LinearGradient(
               colors: isDark
                   ? [
-                      const Color(0xFF6366F1).withValues(alpha: 0.15),
-                      const Color(0xFF8B5CF6).withValues(alpha: 0.15),
+                      AppColors.indigo500.withValues(alpha: 0.15),
+                      AppColors.violet500.withValues(alpha: 0.15),
                     ]
                   : [
-                      const Color(0xFF6366F1).withValues(alpha: 0.08),
-                      const Color(0xFF8B5CF6).withValues(alpha: 0.08),
+                      AppColors.indigo500.withValues(alpha: 0.08),
+                      AppColors.violet500.withValues(alpha: 0.08),
                     ],
             ),
             borderRadius: BorderRadius.circular(20.r),
             border: Border.all(
-              color: const Color(0xFF8B5CF6).withValues(alpha: 0.3),
+              color: AppColors.violet500.withValues(alpha: 0.3),
               width: 1.5,
             ),
             boxShadow: [
               BoxShadow(
-                color: const Color(0xFF8B5CF6).withValues(alpha: 0.1),
+                color: AppColors.violet500.withValues(alpha: 0.1),
                 blurRadius: 10,
                 offset: const Offset(0, 4),
               ),
@@ -65,7 +66,7 @@ class SmartReplyChip extends StatelessWidget {
             children: [
               Icon(
                     Icons.auto_awesome_rounded,
-                    color: const Color(0xFF8B5CF6),
+                    color: AppColors.violet500,
                     size: 16.r,
                   )
                   .animate(

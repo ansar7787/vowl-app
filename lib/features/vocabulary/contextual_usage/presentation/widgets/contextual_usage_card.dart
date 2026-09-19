@@ -1,3 +1,5 @@
+import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -22,6 +24,7 @@ class ContextualUsageCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     return Center(
       child: Stack(
         alignment: Alignment.center,
@@ -46,7 +49,7 @@ class ContextualUsageCard extends StatelessWidget {
                 width: 0.88.sw,
                 padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 40.h),
                 decoration: BoxDecoration(
-                  color: isDark ? const Color(0xFF1E293B) : Colors.white,
+                  color: isDark ? AppColors.slate800 : Colors.white,
                   borderRadius: BorderRadius.circular(4.r),
                   border: Border.all(
                     color: color.withValues(alpha: isAnswered ? 0.6 : 0.2),
@@ -145,7 +148,9 @@ class ContextualUsageCard extends StatelessWidget {
               fontSize: 20.sp,
               fontWeight: FontWeight.w900,
               color: isAnswered
-                  ? (isCorrect == true ? Colors.greenAccent : Colors.redAccent)
+                  ? (isCorrect == true
+                        ? AppColors.gameCorrect
+                        : AppColors.gameIncorrect)
                   : color,
               decoration: isAnswered
                   ? TextDecoration.none

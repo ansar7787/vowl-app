@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -5,6 +6,7 @@ import 'package:go_router/go_router.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/daily_words/domain/entities/daily_word.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 class WordCardFront extends StatelessWidget {
   final DailyWord word;
@@ -50,7 +52,7 @@ class WordCardFront extends StatelessWidget {
                       vertical: 6.h,
                     ),
                     decoration: BoxDecoration(
-                      color: const Color(0xFF6366F1).withValues(alpha: 0.1),
+                      color: AppColors.indigo500.withValues(alpha: 0.1),
                       borderRadius: BorderRadius.circular(20.r),
                     ),
                     child: Text(
@@ -59,7 +61,7 @@ class WordCardFront extends StatelessWidget {
                         fontFamily: 'Outfit',
                         fontSize: 12.sp,
                         fontWeight: FontWeight.w900,
-                        color: const Color(0xFF6366F1),
+                        color: AppColors.indigo500,
                         letterSpacing: 1.5,
                       ),
                     ),
@@ -77,10 +79,10 @@ class WordCardFront extends StatelessWidget {
                     vertical: 4.h,
                   ),
                   decoration: BoxDecoration(
-                    color: const Color(0xFFF59E0B).withValues(alpha: 0.08),
+                    color: AppColors.amber500.withValues(alpha: 0.08),
                     borderRadius: BorderRadius.circular(12.r),
                     border: Border.all(
-                      color: const Color(0xFFF59E0B).withValues(alpha: 0.15),
+                      color: AppColors.amber500.withValues(alpha: 0.15),
                     ),
                   ),
                   child: Text(
@@ -89,7 +91,7 @@ class WordCardFront extends StatelessWidget {
                       fontFamily: 'Outfit',
                       fontSize: 11.sp,
                       fontWeight: FontWeight.w700,
-                      color: const Color(0xFFF59E0B),
+                      color: AppColors.amber500,
                     ),
                   ),
                 ),
@@ -101,7 +103,7 @@ class WordCardFront extends StatelessWidget {
                   fontFamily: 'Outfit',
                   fontSize: 48.sp,
                   fontWeight: FontWeight.w900,
-                  color: isDark ? Colors.white : const Color(0xFF0F172A),
+                  color: isDark ? Colors.white : AppColors.slate900,
                   letterSpacing: -1,
                 ),
                 maxLines: 1,
@@ -115,7 +117,7 @@ class WordCardFront extends StatelessWidget {
                     fontFamily: 'Outfit',
                     fontSize: 24.sp,
                     fontWeight: FontWeight.w700,
-                    color: const Color(0xFF10B981),
+                    color: AppColors.emerald500,
                   ),
                   maxLines: 1,
                   minFontSize: 16,
@@ -130,7 +132,7 @@ class WordCardFront extends StatelessWidget {
                   fontStyle: FontStyle.italic,
                   color: isDark
                       ? Colors.white.withValues(alpha: 0.5)
-                      : const Color(0xFF64748B),
+                      : AppColors.slate500,
                 ),
                 maxLines: 1,
                 minFontSize: 14,
@@ -211,7 +213,7 @@ class WordCardBack extends StatelessWidget {
                           fontFamily: 'Outfit',
                           fontSize: 24.sp,
                           fontWeight: FontWeight.w900,
-                          color: const Color(0xFF6366F1),
+                          color: AppColors.indigo500,
                         ),
                         maxLines: 1,
                       ),
@@ -249,7 +251,7 @@ class WordCardBack extends StatelessWidget {
                     fontFamily: 'Outfit',
                     fontSize: 16.sp,
                     fontWeight: FontWeight.w600,
-                    color: isDark ? Colors.white : const Color(0xFF1E293B),
+                    color: isDark ? Colors.white : AppColors.slate800,
                     height: 1.5,
                   ),
                 ),
@@ -261,7 +263,7 @@ class WordCardBack extends StatelessWidget {
                       fontFamily: 'Outfit',
                       fontSize: 15.sp,
                       fontWeight: FontWeight.w600,
-                      color: const Color(0xFF10B981),
+                      color: AppColors.emerald500,
                       height: 1.5,
                     ),
                   ),
@@ -276,10 +278,10 @@ class WordCardBack extends StatelessWidget {
                   width: double.infinity,
                   padding: EdgeInsets.all(14.r),
                   decoration: BoxDecoration(
-                    color: const Color(0xFF6366F1).withValues(alpha: 0.08),
+                    color: AppColors.indigo500.withValues(alpha: 0.08),
                     borderRadius: BorderRadius.circular(16.r),
                     border: Border.all(
-                      color: const Color(0xFF6366F1).withValues(alpha: 0.15),
+                      color: AppColors.indigo500.withValues(alpha: 0.15),
                     ),
                   ),
                   child: Column(
@@ -292,9 +294,7 @@ class WordCardBack extends StatelessWidget {
                           fontSize: 15.sp,
                           fontWeight: FontWeight.w600,
                           fontStyle: FontStyle.italic,
-                          color: isDark
-                              ? Colors.white70
-                              : const Color(0xFF334155),
+                          color: isDark ? Colors.white70 : AppColors.slate700,
                           height: 1.5,
                         ),
                       ),
@@ -307,7 +307,7 @@ class WordCardBack extends StatelessWidget {
                             fontSize: 14.sp,
                             fontWeight: FontWeight.w600,
                             fontStyle: FontStyle.italic,
-                            color: const Color(0xFF10B981),
+                            color: AppColors.emerald500,
                             height: 1.5,
                           ),
                         ),
@@ -346,13 +346,13 @@ class _TranslateButton extends StatelessWidget {
         height: 44.r,
         decoration: BoxDecoration(
           color: isTranslated
-              ? const Color(0xFF10B981)
+              ? AppColors.emerald500
               : const Color(
                   0xFF10B981,
                 ).withValues(alpha: isTranslating ? 0.05 : 0.15),
           shape: BoxShape.circle,
           border: Border.all(
-            color: const Color(0xFF10B981).withValues(
+            color: AppColors.emerald500.withValues(
               alpha: isTranslated ? 1.0 : (isTranslating ? 0.1 : 0.3),
             ),
           ),
@@ -368,16 +368,14 @@ class _TranslateButton extends StatelessWidget {
                 ? PulsingIcon(
                     key: const ValueKey('translating'),
                     icon: Icons.g_translate_rounded,
-                    color: const Color(0xFF10B981),
+                    color: AppColors.emerald500,
                   )
                 : Icon(
                     isTranslated
                         ? Icons.check_rounded
                         : Icons.g_translate_rounded,
                     key: ValueKey(isTranslated ? 'check' : 'translate'),
-                    color: isTranslated
-                        ? Colors.white
-                        : const Color(0xFF10B981),
+                    color: isTranslated ? Colors.white : AppColors.emerald500,
                     size: 20.r,
                   ),
           ),
@@ -446,10 +444,10 @@ class DailyWordsIconButton extends StatelessWidget {
         width: 44.r,
         height: 44.r,
         decoration: BoxDecoration(
-          color: const Color(0xFF6366F1).withValues(alpha: 0.1),
+          color: AppColors.indigo500.withValues(alpha: 0.1),
           shape: BoxShape.circle,
         ),
-        child: Icon(icon, color: const Color(0xFF6366F1), size: 20.r),
+        child: Icon(icon, color: AppColors.indigo500, size: 20.r),
       ),
     );
   }
@@ -467,7 +465,7 @@ class SectionLabel extends StatelessWidget {
         fontFamily: 'Outfit',
         fontSize: 12.sp,
         fontWeight: FontWeight.w900,
-        color: const Color(0xFF64748B),
+        color: AppColors.slate500,
         letterSpacing: 1.5,
       ),
       maxLines: 1,
@@ -550,7 +548,7 @@ class DailyWordsErrorView extends StatelessWidget {
             Icon(
               Icons.error_outline_rounded,
               size: 64.r,
-              color: Colors.redAccent,
+              color: AppColors.gameIncorrect,
             ),
             SizedBox(height: 16.h),
             Text(
@@ -593,6 +591,7 @@ class SessionCompleteView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     return Center(
       child: SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
@@ -606,11 +605,11 @@ class SessionCompleteView extends StatelessWidget {
               Container(
                 padding: EdgeInsets.all(28.r),
                 decoration: BoxDecoration(
-                  color: const Color(0xFF10B981).withValues(alpha: 0.1),
+                  color: AppColors.emerald500.withValues(alpha: 0.1),
                   shape: BoxShape.circle,
                   boxShadow: [
                     BoxShadow(
-                      color: const Color(0xFF10B981).withValues(alpha: 0.2),
+                      color: AppColors.emerald500.withValues(alpha: 0.2),
                       blurRadius: 40,
                       spreadRadius: 10,
                     ),
@@ -619,7 +618,7 @@ class SessionCompleteView extends StatelessWidget {
                 child: Icon(
                   Icons.emoji_events_rounded,
                   size: 72.r,
-                  color: const Color(0xFF10B981),
+                  color: AppColors.emerald500,
                 ),
               ),
               SizedBox(height: 28.h),
@@ -632,7 +631,7 @@ class SessionCompleteView extends StatelessWidget {
                   fontFamily: 'Outfit',
                   fontSize: 32.sp,
                   fontWeight: FontWeight.w900,
-                  color: isDark ? Colors.white : const Color(0xFF0F172A),
+                  color: isDark ? Colors.white : AppColors.slate900,
                 ),
               ),
               SizedBox(height: 8.h),
@@ -645,7 +644,7 @@ class SessionCompleteView extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   fontSize: 16.sp,
-                  color: isDark ? Colors.white70 : const Color(0xFF64748B),
+                  color: isDark ? Colors.white70 : AppColors.slate500,
                 ),
               ),
               SizedBox(height: 32.h),
@@ -660,7 +659,7 @@ class SessionCompleteView extends StatelessWidget {
                         'daily_words.streak_label',
                         fallback: 'Day Streak',
                       ),
-                      color: const Color(0xFFF59E0B),
+                      color: AppColors.amber500,
                       isDark: isDark,
                     ),
                   ),
@@ -673,7 +672,7 @@ class SessionCompleteView extends StatelessWidget {
                         'daily_words.words_today',
                         fallback: 'Words Today',
                       ),
-                      color: const Color(0xFF6366F1),
+                      color: AppColors.indigo500,
                       isDark: isDark,
                     ),
                   ),
@@ -686,7 +685,7 @@ class SessionCompleteView extends StatelessWidget {
                         'daily_words.total_learned',
                         fallback: 'Total Words',
                       ),
-                      color: const Color(0xFF10B981),
+                      color: AppColors.emerald500,
                       isDark: isDark,
                     ),
                   ),
@@ -704,12 +703,12 @@ class SessionCompleteView extends StatelessWidget {
                       borderRadius: BorderRadius.circular(20.r),
                       gradient: LinearGradient(
                         colors: [
-                          const Color(0xFF6366F1).withValues(alpha: 0.08),
-                          const Color(0xFF8B5CF6).withValues(alpha: 0.08),
+                          AppColors.indigo500.withValues(alpha: 0.08),
+                          AppColors.violet500.withValues(alpha: 0.08),
                         ],
                       ),
                       border: Border.all(
-                        color: const Color(0xFF6366F1).withValues(alpha: 0.2),
+                        color: AppColors.indigo500.withValues(alpha: 0.2),
                       ),
                     ),
                     child: Row(
@@ -724,7 +723,7 @@ class SessionCompleteView extends StatelessWidget {
                           ),
                           child: Icon(
                             Icons.workspace_premium_rounded,
-                            color: const Color(0xFF6366F1),
+                            color: AppColors.indigo500,
                             size: 22.r,
                           ),
                         ),
@@ -744,7 +743,7 @@ class SessionCompleteView extends StatelessWidget {
                                   fontWeight: FontWeight.w800,
                                   color: isDark
                                       ? Colors.white
-                                      : const Color(0xFF0F172A),
+                                      : AppColors.slate900,
                                 ),
                               ),
                               SizedBox(height: 2.h),
@@ -760,7 +759,7 @@ class SessionCompleteView extends StatelessWidget {
                                   fontWeight: FontWeight.w500,
                                   color: isDark
                                       ? Colors.white54
-                                      : const Color(0xFF64748B),
+                                      : AppColors.slate500,
                                 ),
                               ),
                             ],
@@ -768,7 +767,7 @@ class SessionCompleteView extends StatelessWidget {
                         ),
                         Icon(
                           Icons.arrow_forward_ios_rounded,
-                          color: const Color(0xFF6366F1),
+                          color: AppColors.indigo500,
                           size: 16.r,
                         ),
                       ],
@@ -784,7 +783,7 @@ class SessionCompleteView extends StatelessWidget {
                 child: ElevatedButton(
                   onPressed: () => context.pop(),
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xFF6366F1),
+                    backgroundColor: AppColors.indigo500,
                     foregroundColor: Colors.white,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(16.r),
@@ -848,7 +847,7 @@ class _CompletionStatTile extends StatelessWidget {
               fontFamily: 'Outfit',
               fontSize: 22.sp,
               fontWeight: FontWeight.w900,
-              color: isDark ? Colors.white : const Color(0xFF0F172A),
+              color: isDark ? Colors.white : AppColors.slate900,
             ),
           ),
           SizedBox(height: 4.h),
@@ -883,13 +882,13 @@ class _DifficultyBadge extends StatelessWidget {
     final String label;
     switch (difficulty) {
       case 1:
-        color = const Color(0xFF10B981);
+        color = AppColors.emerald500;
         label = 'EASY';
       case 2:
-        color = const Color(0xFFF59E0B);
+        color = AppColors.amber500;
         label = 'MEDIUM';
       default:
-        color = const Color(0xFFEF4444);
+        color = AppColors.red500;
         label = 'HARD';
     }
     return Container(
@@ -957,7 +956,7 @@ class _FlipHintState extends State<_FlipHint>
           Icon(
             Icons.touch_app_rounded,
             size: 16.r,
-            color: widget.isDark ? Colors.white38 : const Color(0xFF94A3B8),
+            color: widget.isDark ? Colors.white38 : AppColors.slate400,
           ),
           SizedBox(width: 6.w),
           Text(
@@ -966,7 +965,7 @@ class _FlipHintState extends State<_FlipHint>
               fontFamily: 'Outfit',
               fontSize: 13.sp,
               fontWeight: FontWeight.w600,
-              color: widget.isDark ? Colors.white38 : const Color(0xFF94A3B8),
+              color: widget.isDark ? Colors.white38 : AppColors.slate400,
             ),
           ),
         ],

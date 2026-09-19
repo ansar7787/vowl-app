@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/utils/instruction_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -73,7 +74,7 @@ class KidsBodyPartsLayout extends StatelessWidget {
                     width: double.infinity,
                     margin: EdgeInsets.symmetric(horizontal: 16.w),
                     decoration: BoxDecoration(
-                      color: const Color(0xFFF1F5F9),
+                      color: AppColors.slate100,
                       borderRadius: BorderRadius.vertical(
                         top: Radius.circular(8.r),
                       ),
@@ -151,8 +152,8 @@ class KidsBodyPartsLayout extends StatelessWidget {
             height: 200.h,
             decoration: BoxDecoration(
               color: isHovering
-                  ? const Color(0xFF1E293B)
-                  : const Color(0xFF0F172A), // Dark X-Ray background
+                  ? AppColors.slate800
+                  : AppColors.slate900, // Dark X-Ray background
               borderRadius: BorderRadius.circular(8.r),
               border: Border.all(
                 color: isHovering
@@ -291,7 +292,7 @@ class KidsBodyPartsLayout extends StatelessWidget {
                       fontFamily: 'Outfit',
                       fontSize: 14.sp,
                       fontWeight: FontWeight.w700,
-                      color: const Color(0xFF0F172A),
+                      color: AppColors.slate900,
                     ),
                     textAlign: TextAlign.center,
                   ),

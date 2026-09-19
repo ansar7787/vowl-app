@@ -1,3 +1,5 @@
+import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'dart:ui';
 import 'package:intl/intl.dart' hide TextDirection;
 import 'package:flutter/material.dart';
@@ -78,11 +80,12 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
   Widget build(BuildContext context) {
     final isMidnight = context.watch<ThemeCubit>().state.isMidnight;
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     final primaryColor = Theme.of(context).primaryColor;
     final surfaceColor = isMidnight
         ? const Color(0xFF020617)
-        : (isDark ? const Color(0xFF0F172A) : Colors.white);
-    final textColor = isDark ? Colors.white : const Color(0xFF0F172A);
+        : (isDark ? AppColors.slate900 : Colors.white);
+    final textColor = isDark ? Colors.white : AppColors.slate900;
 
     return BlocListener<ProfileBloc, ProfileState>(
       listenWhen: (prev, curr) =>
@@ -1230,9 +1233,11 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
                                 fallback: 'Link',
                               ),
                         color: isEquipped
-                            ? Colors.redAccent.withValues(alpha: 0.2)
+                            ? AppColors.gameIncorrect.withValues(alpha: 0.2)
                             : primaryColor.withValues(alpha: 0.15),
-                        textColor: isEquipped ? Colors.redAccent : primaryColor,
+                        textColor: isEquipped
+                            ? AppColors.gameIncorrect
+                            : primaryColor,
                         isLoading: isProcessing,
                         onTap: isProcessing
                             ? null
@@ -1360,7 +1365,7 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
           SizedBox(
             width: 4.w,
             height: 16.h,
-            child: const ColoredBox(color: Colors.greenAccent),
+            child: ColoredBox(color: AppColors.gameCorrect),
           ),
           SizedBox(width: 12.w),
           Expanded(

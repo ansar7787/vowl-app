@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -33,7 +34,8 @@ class DialectFeedbackPanel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final color = isCorrect ? Colors.greenAccent : Colors.orangeAccent;
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
+    final color = isCorrect ? tokens.gameCorrect : Colors.orangeAccent;
 
     return GlassTile(
       padding: EdgeInsets.all(24.r),
@@ -199,7 +201,7 @@ class DialectFeedbackPanel extends StatelessWidget {
                   locale: "en-GB",
                   bgColor: const Color(0xFFE94335).withValues(alpha: 0.1),
                   textColor: isDark
-                      ? Colors.redAccent.shade100
+                      ? tokens.gameIncorrect.shade100
                       : const Color(0xFFE94335),
                   borderColor: const Color(0xFFE94335).withValues(alpha: 0.3),
                 ),

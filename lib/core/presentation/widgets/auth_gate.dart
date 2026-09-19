@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
@@ -62,7 +63,7 @@ class _LoadingScreen extends StatelessWidget {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     return Scaffold(
       key: const ValueKey('auth_loading'),
-      backgroundColor: isDark ? const Color(0xFF0F172A) : Colors.white,
+      backgroundColor: isDark ? AppColors.slate900 : Colors.white,
       body: const Center(
         child: RepaintBoundary(
           child: ShimmerLoading.circular(width: 50, height: 50),

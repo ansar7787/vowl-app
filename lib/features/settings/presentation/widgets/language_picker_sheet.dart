@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/theme/app_colors.dart';
 
 /// Premium language picker bottom sheet for the Settings screen.
 ///
@@ -64,7 +65,7 @@ class _LanguagePickerSheetState extends State<LanguagePickerSheet> {
           child: Container(
             height: MediaQuery.of(context).size.height * 0.85,
             decoration: BoxDecoration(
-              color: isDark ? const Color(0xFF0F172A) : Colors.white,
+              color: isDark ? AppColors.slate900 : Colors.white,
               borderRadius: BorderRadius.vertical(top: Radius.circular(32.r)),
               border: Border(
                 top: BorderSide(
@@ -103,7 +104,7 @@ class _LanguagePickerSheetState extends State<LanguagePickerSheet> {
                         children: [
                           Icon(
                             Icons.translate_rounded,
-                            color: const Color(0xFF3B82F6),
+                            color: AppColors.blue500,
                             size: 24.r,
                           ),
                           SizedBox(width: 12.w),
@@ -116,7 +117,7 @@ class _LanguagePickerSheetState extends State<LanguagePickerSheet> {
                                 fontWeight: FontWeight.w900,
                                 color: isDark
                                     ? Colors.white
-                                    : const Color(0xFF0F172A),
+                                    : AppColors.slate900,
                               ),
                               maxLines: 1,
                               overflow: TextOverflow.ellipsis,
@@ -148,7 +149,7 @@ class _LanguagePickerSheetState extends State<LanguagePickerSheet> {
                       fontFamily: 'Outfit',
                       fontSize: 18.sp,
                       fontWeight: FontWeight.w500,
-                      color: isDark ? Colors.white : const Color(0xFF0F172A),
+                      color: isDark ? Colors.white : AppColors.slate900,
                     ),
                     decoration: InputDecoration(
                       hintText: localeService.tr('language_picker.search_hint'),
@@ -173,7 +174,7 @@ class _LanguagePickerSheetState extends State<LanguagePickerSheet> {
                       filled: true,
                       fillColor: isDark
                           ? Colors.white.withValues(alpha: 0.08)
-                          : const Color(0xFFF1F5F9),
+                          : AppColors.slate100,
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(16.r),
                         borderSide: BorderSide.none,
@@ -185,7 +186,7 @@ class _LanguagePickerSheetState extends State<LanguagePickerSheet> {
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(16.r),
                         borderSide: BorderSide(
-                          color: const Color(0xFF3B82F6).withValues(alpha: 0.5),
+                          color: AppColors.blue500.withValues(alpha: 0.5),
                           width: 2,
                         ),
                       ),
@@ -291,13 +292,13 @@ class _LanguageTile extends StatelessWidget {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20.r),
           color: isActive
-              ? const Color(0xFF3B82F6).withValues(alpha: 0.05)
+              ? AppColors.blue500.withValues(alpha: 0.05)
               : (isDark
                     ? Colors.white.withValues(alpha: 0.02)
-                    : const Color(0xFFF8FAFC)),
+                    : AppColors.slate50),
           border: Border.all(
             color: isActive
-                ? const Color(0xFF3B82F6)
+                ? AppColors.blue500
                 : (isDark
                       ? Colors.white.withValues(alpha: 0.08)
                       : Colors.black.withValues(alpha: 0.05)),
@@ -306,7 +307,7 @@ class _LanguageTile extends StatelessWidget {
         ),
         child: Material(
           color: isActive
-              ? const Color(0xFF3B82F6).withValues(alpha: 0.1)
+              ? AppColors.blue500.withValues(alpha: 0.1)
               : Colors.transparent,
           borderRadius: BorderRadius.circular(18.r),
           child: InkWell(
@@ -336,10 +337,8 @@ class _LanguageTile extends StatelessWidget {
                                 ? FontWeight.w900
                                 : FontWeight.w700,
                             color: isActive
-                                ? const Color(0xFF3B82F6)
-                                : (isDark
-                                      ? Colors.white
-                                      : const Color(0xFF0F172A)),
+                                ? AppColors.blue500
+                                : (isDark ? Colors.white : AppColors.slate900),
                           ),
                         ),
                         if (localeInfo.name != localeInfo.nativeName)
@@ -359,7 +358,7 @@ class _LanguageTile extends StatelessWidget {
                     Container(
                       padding: EdgeInsets.all(6.r),
                       decoration: const BoxDecoration(
-                        color: Color(0xFF3B82F6),
+                        color: AppColors.blue500,
                         shape: BoxShape.circle,
                       ),
                       child: Icon(

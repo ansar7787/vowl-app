@@ -427,8 +427,8 @@ class _AppShell extends StatelessWidget {
                     color: isMidnight
                         ? Colors.black
                         : (isActuallyDark
-                              ? const Color(0xFF0F172A)
-                              : const Color(0xFFF8FAFC)),
+                              ? AppTheme.scaffoldDark
+                              : AppTheme.scaffoldLight),
                     child: child!,
                   ),
                 );

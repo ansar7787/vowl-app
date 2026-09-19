@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -73,7 +74,7 @@ class InstructionPanel extends StatelessWidget {
                   fontWeight: FontWeight.w600,
                   color: isDark
                       ? Colors.white.withValues(alpha: 0.95)
-                      : const Color(0xFF0F172A),
+                      : AppColors.slate900,
                   letterSpacing: 0.3,
                   height: 1.4,
                 ),

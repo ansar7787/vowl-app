@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/utils/instruction_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -152,7 +153,7 @@ class KidsTimeLayout extends StatelessWidget {
               shape: BoxShape.circle,
               border: Border.all(
                 color: isHovering
-                    ? const Color(0xFFD97706)
+                    ? AppColors.amber600
                     : const Color(0xFFB45309),
                 width: isHovering ? 16.r : 12.r,
               ), // Brass frame
@@ -200,10 +201,7 @@ class KidsTimeLayout extends StatelessWidget {
                     decoration: BoxDecoration(
                       color: Colors.white.withValues(alpha: 0.95),
                       borderRadius: BorderRadius.circular(8.r),
-                      border: Border.all(
-                        color: const Color(0xFFD97706),
-                        width: 2,
-                      ),
+                      border: Border.all(color: AppColors.amber600, width: 2),
                     ),
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
@@ -244,7 +242,7 @@ class KidsTimeLayout extends StatelessWidget {
                                       ? 70.sp
                                       : 20.sp,
                                   fontWeight: FontWeight.w700,
-                                  color: const Color(0xFF1E293B).withValues(
+                                  color: AppColors.slate800.withValues(
                                     alpha:
                                         (quest.question == "?" ||
                                             quest.question == null)
@@ -274,7 +272,7 @@ class KidsTimeLayout extends StatelessWidget {
       fontFamily: 'Outfit',
       fontSize: 24.sp,
       fontWeight: FontWeight.w700,
-      color: const Color(0xFF78350F).withValues(alpha: 0.3),
+      color: AppColors.amber900.withValues(alpha: 0.3),
     );
   }
 
@@ -285,7 +283,7 @@ class KidsTimeLayout extends StatelessWidget {
       top: 110.r + y - (size / 2),
       child: Icon(
         Icons.settings_rounded,
-        color: const Color(0xFFD97706).withValues(alpha: 0.2),
+        color: AppColors.amber600.withValues(alpha: 0.2),
         size: size,
       ),
     );
@@ -307,7 +305,7 @@ class KidsTimeLayout extends StatelessWidget {
           Container(
             height: 15.h,
             width: 4.w,
-            color: const Color(0xFFFBBF24), // Gold chain
+            color: AppColors.amber400, // Gold chain
           ),
           // The Watch body
           Container(
@@ -317,7 +315,7 @@ class KidsTimeLayout extends StatelessWidget {
               color: Colors.white,
               shape: BoxShape.circle,
               border: Border.all(
-                color: const Color(0xFFFBBF24),
+                color: AppColors.amber400,
                 width: 6.r,
               ), // Gold rim
               boxShadow: [
@@ -338,7 +336,7 @@ class KidsTimeLayout extends StatelessWidget {
                       fontFamily: 'Outfit',
                       fontSize: 16.sp,
                       fontWeight: FontWeight.w700,
-                      color: const Color(0xFF0F172A),
+                      color: AppColors.slate900,
                     ),
                     textAlign: TextAlign.center,
                   ),

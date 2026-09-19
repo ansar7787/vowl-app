@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/utils/instruction_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -105,7 +106,7 @@ class KidsAlphabetLayout extends StatelessWidget {
     bool isCorrect,
   ) {
     final baseColor = const Color(0xFFFDE68A); // Light wood
-    final shadowColor = const Color(0xFFD97706); // Dark wood
+    final shadowColor = AppColors.amber600; // Dark wood
 
     final blockWidget = Container(
       height: 100.h,
@@ -125,7 +126,7 @@ class KidsAlphabetLayout extends StatelessWidget {
               fontFamily: 'Outfit',
               fontSize: 32.sp,
               fontWeight: FontWeight.w700,
-              color: const Color(0xFF78350F), // Etched wood color
+              color: AppColors.amber900, // Etched wood color
             ),
 
             textAlign: TextAlign.center,
@@ -342,7 +343,7 @@ class _KidsChalkboardState extends State<_KidsChalkboard> {
               Icon(
                 Icons.volume_up_rounded,
                 size: 20.sp,
-                color: const Color(0xFF78350F),
+                color: AppColors.amber900,
               ),
               SizedBox(width: 8.w),
               KidsFittedText(
@@ -351,7 +352,7 @@ class _KidsChalkboardState extends State<_KidsChalkboard> {
                   fontFamily: 'Outfit',
                   fontSize: 16.sp,
                   fontWeight: FontWeight.w800,
-                  color: const Color(0xFF78350F),
+                  color: AppColors.amber900,
                   letterSpacing: 1.2,
                 ),
                 maxLines: 1,

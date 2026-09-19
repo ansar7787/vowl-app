@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:vowl/core/utils/hint_utility.dart';
 import 'package:vowl/core/utils/tts_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
@@ -11,6 +12,7 @@ import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 /// Interactive hint button providing TTS-enabled hints, ad-backed rewarded
 /// hints, and visual status badges.
@@ -68,6 +70,7 @@ class QuestHintButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     return BlocBuilder<AuthBloc, AuthState>(
       builder: (context, state) {
         final hintCount = state.user?.hintCount ?? 0;
@@ -140,7 +143,7 @@ class QuestHintButton extends StatelessWidget {
                               : (hintCount > 0
                                     ? primaryColor
                                     : (isPremium
-                                          ? Colors.greenAccent
+                                          ? tokens.gameCorrect
                                           : Colors.amber[700])),
                           size: 26.r,
                         )
@@ -193,7 +196,7 @@ class QuestHintButton extends StatelessWidget {
                           decoration: BoxDecoration(
                             color: isPremium
                                 ? Colors.green
-                                : const Color(0xFFF59E0B),
+                                : AppColors.amber500,
                             shape: BoxShape.circle,
                             border: Border.all(color: Colors.white, width: 1),
                           ),

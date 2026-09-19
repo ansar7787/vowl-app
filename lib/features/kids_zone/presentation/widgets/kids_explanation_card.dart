@@ -1,3 +1,5 @@
+import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:vowl/core/utils/app_logger.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -56,6 +58,7 @@ class _KidsExplanationCardState extends State<KidsExplanationCard> {
 
   @override
   Widget build(BuildContext context) {
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     final bool isDark = Theme.of(context).brightness == Brightness.dark;
     final String explanation =
         widget.quest.explanation ??
@@ -65,14 +68,14 @@ class _KidsExplanationCardState extends State<KidsExplanationCard> {
       width: double.infinity,
       padding: EdgeInsets.all(24.r),
       decoration: BoxDecoration(
-        color: isDark ? const Color(0xFF1E293B) : Colors.white,
+        color: isDark ? AppColors.slate800 : Colors.white,
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(32.r),
           topRight: Radius.circular(32.r),
         ),
         boxShadow: [
           BoxShadow(
-            color: Colors.redAccent.withValues(alpha: 0.15),
+            color: tokens.gameIncorrect.withValues(alpha: 0.15),
             offset: const Offset(0, -10),
             blurRadius: 20,
           ),
@@ -93,12 +96,12 @@ class _KidsExplanationCardState extends State<KidsExplanationCard> {
                       Container(
                         padding: EdgeInsets.all(8.r),
                         decoration: BoxDecoration(
-                          color: Colors.redAccent.withValues(alpha: 0.15),
+                          color: tokens.gameIncorrect.withValues(alpha: 0.15),
                           shape: BoxShape.circle,
                         ),
                         child: Icon(
                           Icons.sentiment_dissatisfied_rounded,
-                          color: Colors.redAccent,
+                          color: tokens.gameIncorrect,
                           size: 28.r,
                         ),
                       ),
@@ -110,7 +113,7 @@ class _KidsExplanationCardState extends State<KidsExplanationCard> {
                             fontFamily: 'Outfit',
                             fontSize: 22.sp,
                             fontWeight: FontWeight.w900,
-                            color: Colors.redAccent,
+                            color: tokens.gameIncorrect,
                           ),
                         ),
                       ),
@@ -144,7 +147,7 @@ class _KidsExplanationCardState extends State<KidsExplanationCard> {
             child: Container(
               padding: EdgeInsets.symmetric(vertical: 16.h),
               decoration: BoxDecoration(
-                color: Colors.redAccent,
+                color: tokens.gameIncorrect,
                 borderRadius: BorderRadius.circular(20.r),
                 boxShadow: [
                   BoxShadow(

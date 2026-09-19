@@ -10,6 +10,7 @@ import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 // ---------------------------------------------------------------------------
 // SettingsSectionTitle
@@ -33,7 +34,7 @@ class SettingsSectionTitle extends StatelessWidget {
         tintColor ??
         (isDark
             ? Colors.white.withValues(alpha: 0.5)
-            : const Color(0xFF0F172A).withValues(alpha: 0.4));
+            : AppColors.slate900.withValues(alpha: 0.4));
     return Padding(
       padding: EdgeInsets.only(left: 8.w, bottom: 12.h),
       child: Column(
@@ -171,9 +172,7 @@ class SettingsTile extends StatelessWidget {
                           fontWeight: FontWeight.w600,
                           color: isDestructive
                               ? Colors.red
-                              : (isDark
-                                    ? Colors.white
-                                    : const Color(0xFF0F172A)),
+                              : (isDark ? Colors.white : AppColors.slate900),
                         ),
                         maxLines: 1,
                         minFontSize: 10,
@@ -273,7 +272,7 @@ class SettingsSwitchTile extends StatelessWidget {
                       fontFamily: 'Outfit',
                       fontSize: 15.sp,
                       fontWeight: FontWeight.w600,
-                      color: isDark ? Colors.white : const Color(0xFF0F172A),
+                      color: isDark ? Colors.white : AppColors.slate900,
                     ),
                   ),
                   AutoSizeText(
@@ -314,7 +313,7 @@ class SettingsSwitchTile extends StatelessWidget {
                     di.sl<HapticService>().light();
                     onChanged(val);
                   },
-                  activeThumbColor: const Color(0xFF6366F1),
+                  activeThumbColor: AppColors.indigo500,
                 ),
               ),
           ],
@@ -466,8 +465,8 @@ class SettingsProfileSection extends StatelessWidget {
                         BoxShadow(
                           color:
                               (currentUser.isPremium
-                                      ? const Color(0xFFF59E0B)
-                                      : const Color(0xFF64748B))
+                                      ? AppColors.amber500
+                                      : AppColors.slate500)
                                   .withValues(alpha: 0.3),
                           blurRadius: 12,
                           spreadRadius: 2,
@@ -476,12 +475,12 @@ class SettingsProfileSection extends StatelessWidget {
                       gradient: LinearGradient(
                         colors: currentUser.isPremium
                             ? [
-                                const Color(0xFFF59E0B),
-                                const Color(0xFFF59E0B).withValues(alpha: 0.2),
+                                AppColors.amber500,
+                                AppColors.amber500.withValues(alpha: 0.2),
                               ]
                             : [
-                                const Color(0xFF64748B),
-                                const Color(0xFF64748B).withValues(alpha: 0.2),
+                                AppColors.slate500,
+                                AppColors.slate500.withValues(alpha: 0.2),
                               ],
                         begin: Alignment.topLeft,
                         end: Alignment.bottomRight,
@@ -489,7 +488,7 @@ class SettingsProfileSection extends StatelessWidget {
                     ),
                     child: CircleAvatar(
                       radius: 36.r,
-                      backgroundColor: const Color(0xFF1E293B),
+                      backgroundColor: AppColors.slate800,
                       backgroundImage: currentUser.photoUrl?.isNotEmpty == true
                           ? (currentUser.photoUrl!.startsWith('http')
                                 ? NetworkImage(currentUser.photoUrl!)
@@ -513,14 +512,8 @@ class SettingsProfileSection extends StatelessWidget {
                       decoration: BoxDecoration(
                         gradient: LinearGradient(
                           colors: currentUser.isPremium
-                              ? [
-                                  const Color(0xFFF59E0B),
-                                  const Color(0xFFD97706),
-                                ]
-                              : [
-                                  const Color(0xFF64748B),
-                                  const Color(0xFF475569),
-                                ],
+                              ? [AppColors.amber500, AppColors.amber600]
+                              : [AppColors.slate500, const Color(0xFF475569)],
                           begin: Alignment.topLeft,
                           end: Alignment.bottomRight,
                         ),
@@ -558,7 +551,7 @@ class SettingsProfileSection extends StatelessWidget {
                       fontFamily: 'Outfit',
                       fontSize: 22.sp,
                       fontWeight: FontWeight.w900,
-                      color: isDark ? Colors.white : const Color(0xFF0F172A),
+                      color: isDark ? Colors.white : AppColors.slate900,
                       letterSpacing: -0.5,
                     ),
                     maxLines: 1,
@@ -572,7 +565,7 @@ class SettingsProfileSection extends StatelessWidget {
                       fontSize: 14.sp,
                       color: isDark
                           ? Colors.white54
-                          : const Color(0xFF0F172A).withValues(alpha: 0.6),
+                          : AppColors.slate900.withValues(alpha: 0.6),
                       fontWeight: FontWeight.w500,
                     ),
                     maxLines: 1,
@@ -583,8 +576,8 @@ class SettingsProfileSection extends StatelessWidget {
                   Builder(
                     builder: (context) {
                       final badgeColor = currentUser.isPremium
-                          ? const Color(0xFFF59E0B)
-                          : const Color(0xFF64748B);
+                          ? AppColors.amber500
+                          : AppColors.slate500;
                       return Container(
                         padding: EdgeInsets.symmetric(
                           horizontal: 10.w,

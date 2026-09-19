@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/features/speaking/yes_no_speaking/presentation/widgets/track_painter.dart';
@@ -23,6 +24,7 @@ class YesNoSpeakingTiltArena extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     final double trackWidth = 280.w;
 
     return Container(
@@ -56,11 +58,15 @@ class YesNoSpeakingTiltArena extends StatelessWidget {
           // 2. Boundary gate zones
           Positioned(
             left: 20.w,
-            child: _buildGateZone("NO", Colors.redAccent, tiltValue <= -0.85),
+            child: _buildGateZone(
+              "NO",
+              tokens.gameIncorrect,
+              tiltValue <= -0.85,
+            ),
           ),
           Positioned(
             right: 20.w,
-            child: _buildGateZone("YES", Colors.greenAccent, tiltValue >= 0.85),
+            child: _buildGateZone("YES", tokens.gameCorrect, tiltValue >= 0.85),
           ),
 
           // 3. Central dragging glowing sphere
@@ -82,9 +88,9 @@ class YesNoSpeakingTiltArena extends StatelessWidget {
                         colors: [
                           Colors.white,
                           tiltValue < 0
-                              ? Colors.redAccent
+                              ? tokens.gameIncorrect
                               : (tiltValue > 0
-                                    ? Colors.greenAccent
+                                    ? tokens.gameCorrect
                                     : primaryColor),
                         ],
                       ),
@@ -92,9 +98,9 @@ class YesNoSpeakingTiltArena extends StatelessWidget {
                         BoxShadow(
                           color:
                               (tiltValue < 0
-                                      ? Colors.redAccent
+                                      ? tokens.gameIncorrect
                                       : (tiltValue > 0
-                                            ? Colors.greenAccent
+                                            ? tokens.gameCorrect
                                             : primaryColor))
                                   .withValues(alpha: 0.45),
                           blurRadius: 18,

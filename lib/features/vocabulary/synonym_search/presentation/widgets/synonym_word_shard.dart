@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -89,9 +90,7 @@ class SynonymWordShard extends StatelessWidget {
                               maxWidth: isCompact ? 120.w : 150.w,
                             ),
                             decoration: BoxDecoration(
-                              color: isDark
-                                  ? const Color(0xFF1E293B)
-                                  : Colors.white,
+                              color: isDark ? AppColors.slate800 : Colors.white,
                               borderRadius: BorderRadius.circular(18.r),
                               border: Border.all(
                                 color: isActive

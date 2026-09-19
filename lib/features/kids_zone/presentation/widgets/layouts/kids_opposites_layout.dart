@@ -8,6 +8,7 @@ import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/kids_zone/presentation/utils/kids_tts_service.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_fitted_text.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 /// Split World Theme for Opposites Game
 /// Space Complexity: O(1)
@@ -73,7 +74,7 @@ class KidsOppositesLayout extends StatelessWidget {
                     width: double.infinity,
                     margin: EdgeInsets.symmetric(horizontal: 16.w),
                     decoration: BoxDecoration(
-                      color: const Color(0xFF64748B), // Slate shelf
+                      color: AppColors.slate500, // Slate shelf
                       borderRadius: BorderRadius.circular(4.r),
                     ),
                   ),
@@ -147,9 +148,7 @@ class KidsOppositesLayout extends StatelessWidget {
               color: Colors.white,
               borderRadius: BorderRadius.circular(16.r),
               border: Border.all(
-                color: isHovering
-                    ? const Color(0xFF6366F1)
-                    : const Color(0xFF1E293B),
+                color: isHovering ? AppColors.indigo500 : AppColors.slate800,
                 width: isHovering ? 10.r : 8.r,
               ), // Dark frame
               boxShadow: [
@@ -193,7 +192,7 @@ class KidsOppositesLayout extends StatelessWidget {
                     child: Container(
                       width: 4.w,
                       height: double.infinity,
-                      color: const Color(0xFF1E293B),
+                      color: AppColors.slate800,
                     ),
                   ),
                   // Main Text in a central circle
@@ -205,7 +204,7 @@ class KidsOppositesLayout extends StatelessWidget {
                         color: Colors.white.withValues(alpha: 0.95),
                         borderRadius: BorderRadius.circular(16.r),
                         border: Border.all(
-                          color: const Color(0xFF1E293B),
+                          color: AppColors.slate800,
                           width: 4.r,
                         ),
                       ),
@@ -254,14 +253,13 @@ class KidsOppositesLayout extends StatelessWidget {
                                             ? 70.sp
                                             : 22.sp,
                                         fontWeight: FontWeight.w700,
-                                        color: const Color(0xFF0F172A)
-                                            .withValues(
-                                              alpha:
-                                                  (quest.question == "?" ||
-                                                      quest.question == null)
-                                                  ? 0.7
-                                                  : 1.0,
-                                            ),
+                                        color: AppColors.slate900.withValues(
+                                          alpha:
+                                              (quest.question == "?" ||
+                                                  quest.question == null)
+                                              ? 0.7
+                                              : 1.0,
+                                        ),
                                       ),
                                       textAlign: TextAlign.center,
                                       maxLines: 6,
@@ -295,7 +293,7 @@ class KidsOppositesLayout extends StatelessWidget {
       width: 80.w,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12.r),
-        border: Border.all(color: const Color(0xFF1E293B), width: 2),
+        border: Border.all(color: AppColors.slate800, width: 2),
         boxShadow: [
           BoxShadow(
             color: Colors.black.withValues(alpha: 0.2),
@@ -328,7 +326,7 @@ class KidsOppositesLayout extends StatelessWidget {
               child: Container(
                 height: 2.h,
                 width: double.infinity,
-                color: const Color(0xFF1E293B),
+                color: AppColors.slate800,
               ),
             ),
             // Text Box in the middle
@@ -338,7 +336,7 @@ class KidsOppositesLayout extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(4.r),
-                  border: Border.all(color: const Color(0xFF1E293B), width: 1),
+                  border: Border.all(color: AppColors.slate800, width: 1),
                 ),
                 child: FittedBox(
                   fit: BoxFit.scaleDown,
@@ -348,7 +346,7 @@ class KidsOppositesLayout extends StatelessWidget {
                       fontFamily: 'Outfit',
                       fontSize: 16.sp,
                       fontWeight: FontWeight.w700,
-                      color: const Color(0xFF0F172A),
+                      color: AppColors.slate900,
                     ),
                     textAlign: TextAlign.center,
                   ),

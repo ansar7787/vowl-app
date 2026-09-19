@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -27,7 +28,7 @@ class PhotoResultChip extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    const primaryTeal = Color(0xFF14B8A6);
+    const primaryTeal = AppColors.teal500;
     final textColor = isDark ? Colors.white : Colors.black87;
     final entry = PhotoVocabularyDictionary.getEntry(label.label);
 

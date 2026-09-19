@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -17,9 +18,12 @@ class DialectDrillDataProbePin extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     Color pinColor = color;
     if (isAnswered) {
-      pinColor = (isCorrect ?? false) ? Colors.greenAccent : Colors.redAccent;
+      pinColor = (isCorrect ?? false)
+          ? tokens.gameCorrect
+          : tokens.gameIncorrect;
     }
 
     return MouseRegion(
@@ -34,7 +38,7 @@ class DialectDrillDataProbePin extends StatelessWidget {
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     border: Border.all(
-                      color: Colors.greenAccent.withValues(alpha: 0.6),
+                      color: tokens.gameCorrect.withValues(alpha: 0.6),
                       width: 1.5,
                       style: BorderStyle.solid,
                     ),

@@ -1,3 +1,5 @@
+import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 
 /// Static security alert screen shown when the app detects a rooted or
@@ -12,11 +14,12 @@ class InsecureDeviceScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark(),
       home: Scaffold(
-        backgroundColor: const Color(0xFF0F172A),
+        backgroundColor: AppColors.slate900,
         body: Semantics(
           liveRegion: true,
           label: 'Security alert: this device is not supported',
@@ -43,7 +46,7 @@ class InsecureDeviceScreen extends StatelessWidget {
                       children: [
                         const Icon(
                           Icons.security_rounded,
-                          color: Colors.redAccent,
+                          color: AppColors.gameIncorrect,
                           size: 80,
                           semanticLabel: 'Security warning',
                         ),
@@ -78,7 +81,7 @@ class InsecureDeviceScreen extends StatelessWidget {
                           style: TextStyle(
                             fontFamily: 'Outfit',
                             fontSize: 14,
-                            color: Colors.redAccent.withValues(alpha: 0.7),
+                            color: tokens.gameIncorrect.withValues(alpha: 0.7),
                             fontWeight: FontWeight.w700,
                           ),
                         ),

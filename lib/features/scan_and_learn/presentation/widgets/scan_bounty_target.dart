@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 class ScanBountyTarget extends StatelessWidget {
   final String currentBounty;
@@ -31,11 +32,11 @@ class ScanBountyTarget extends StatelessWidget {
         : Colors.black.withValues(alpha: 0.15);
 
     final foundBgColor = isDark
-        ? const Color(0xFF6366F1).withValues(alpha: 0.3)
-        : const Color(0xFF6366F1).withValues(alpha: 0.15);
+        ? AppColors.indigo500.withValues(alpha: 0.3)
+        : AppColors.indigo500.withValues(alpha: 0.15);
     final foundBorderColor = isDark
         ? const Color(0xFF818CF8)
-        : const Color(0xFF6366F1);
+        : AppColors.indigo500;
 
     return Padding(
           padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 12.h),
@@ -61,7 +62,7 @@ class ScanBountyTarget extends StatelessWidget {
                           ? Icons.verified_rounded
                           : Icons.document_scanner_rounded,
                       color: bountyFound
-                          ? const Color(0xFF6366F1)
+                          ? AppColors.indigo500
                           : (isDark
                                 ? Colors.amber.shade400
                                 : Colors.amber.shade600),
