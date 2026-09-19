@@ -398,58 +398,30 @@ class KidsBloc extends Bloc<KidsEvent, KidsState> {
             newSticker = "${s.gameType}_sticker_${s.level}";
           }
 
-          // 1. Primary persistence — must complete before UI shows the dialog
-          //    so that AuthRefreshUser reads committed data.
-          //    updateUserRewards already atomically updates completedLevels and
-          //    unlockedLevels inside _computeRewardUpdates, so a separate
-          //    updateUnlockedLevel call is intentionally omitted to avoid
-          //    Firestore transaction contention on the same document.
-          try {
-            await updateUserRewards(
-              UpdateUserRewardsParams(
-                gameType: s.gameType,
-                level: s.level,
-                xpIncrease: 3,
-                coinIncrease: 10,
-                starsEarned: s.livesRemaining > 0 ? s.livesRemaining : 1,
-              ),
-            );
-          } catch (_) {}
-
-          // 2. UI feedback — emitted after persistence.
-          // 1. UI feedback — emitted immediately to prevent double-taps.
+          // 1. Instant UI feedback — emitted immediately to prevent double-taps on the
+          // "Continue" button and eliminate UI delays.
           emit(
             KidsGameComplete(
-              xpEarned: 3,
+              xpEarned: 5,
               coinsEarned: 10,
               stickerAwarded: newSticker,
             ),
           );
 
-          // 3. Secondary persistence — sticker award (non-critical).
-          if (newSticker != null) {
-            try {
-              await awardKidsSticker(newSticker);
-            } catch (_) {}
-          }
-          // 2. Primary & Secondary persistence — Fire-and-forget.
+          // 2. Background persistence — Fire-and-forget.
           updateUserRewards(
-                UpdateUserRewardsParams(
-                  gameType: s.gameType,
-                  level: s.level,
-                  xpIncrease: 3,
-                  coinIncrease: 10,
-                  starsEarned: s.livesRemaining > 0 ? s.livesRemaining : 1,
-                ),
-              )
-              .then((_) {
-                if (newSticker != null) {
-                  awardKidsSticker(
-                    newSticker,
-                  ).catchError((_) => const Right<Failure, void>(null));
-                }
-              })
-              .catchError((_) => null);
+            UpdateUserRewardsParams(
+              gameType: s.gameType,
+              level: s.level,
+              xpIncrease: 5,
+              coinIncrease: 10,
+              starsEarned: s.livesRemaining > 0 ? s.livesRemaining : 1,
+            ),
+          ).then((_) {
+            if (newSticker != null) {
+              awardKidsSticker(newSticker).catchError((_) => const Right<Failure, void>(null));
+            }
+          }).catchError((_) => const Right<Failure, void>(null));
         } else {
           // Wrong answer on the very last quest
           emit(
