@@ -901,10 +901,7 @@ class _EditNameSheetContentState extends State<_EditNameSheetContent> {
                     padding: EdgeInsets.symmetric(vertical: 20.h),
                     decoration: BoxDecoration(
                       gradient: const LinearGradient(
-                        colors: [
-                          AppColors.indigo500,
-                          Color(0xFF4F46E5),
-                        ],
+                        colors: [AppColors.indigo500, Color(0xFF4F46E5)],
                       ),
                       borderRadius: BorderRadius.circular(24.r),
                       boxShadow: [
@@ -951,4 +948,3 @@ class ProfileShimmerLoading extends StatelessWidget {
     );
   }
 }
-

@@ -35,7 +35,6 @@ class PitchModulationDialControl extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     return Row(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [

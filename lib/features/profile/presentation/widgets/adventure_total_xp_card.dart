@@ -214,4 +214,3 @@ class AdventureTotalXpCard extends StatelessWidget {
     );
   }
 }
-

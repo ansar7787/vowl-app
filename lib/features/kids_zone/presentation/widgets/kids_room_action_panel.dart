@@ -246,4 +246,3 @@ class KidsRoomActionPanel extends StatelessWidget {
     );
   }
 }
-

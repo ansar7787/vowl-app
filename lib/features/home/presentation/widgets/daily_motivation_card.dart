@@ -636,4 +636,3 @@ class _StreakBadgeState extends State<_StreakBadge>
     );
   }
 }
-

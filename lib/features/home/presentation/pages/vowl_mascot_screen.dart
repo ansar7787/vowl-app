@@ -80,7 +80,6 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
   Widget build(BuildContext context) {
     final isMidnight = context.watch<ThemeCubit>().state.isMidnight;
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     final primaryColor = Theme.of(context).primaryColor;
     final surfaceColor = isMidnight
         ? const Color(0xFF020617)

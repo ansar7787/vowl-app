@@ -475,7 +475,6 @@ class KidsGameDialogs {
     required Color primaryColor,
   }) async {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     final result = await showDialog<bool?>(
       context: context,
       builder: (context) => BackdropFilter(

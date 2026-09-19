@@ -16,7 +16,6 @@ class IdiomsSystemMessage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     return Center(
       child: Container(
         padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
@@ -54,7 +53,6 @@ class IdiomsStrangerMessage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     return Container(
           constraints: BoxConstraints(maxWidth: 0.75.sw),
           padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 20.h),
@@ -101,7 +99,6 @@ class IdiomsStrangerTextMessage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     return Container(
           constraints: BoxConstraints(maxWidth: 0.75.sw),
           padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),

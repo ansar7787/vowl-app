@@ -346,7 +346,6 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
     }
 
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final tokens = Theme.of(context).extension<AppColorTokens>()!;
 
     return PopScope(
       canPop: _imagePathVal == null,

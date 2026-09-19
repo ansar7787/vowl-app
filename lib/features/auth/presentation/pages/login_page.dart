@@ -403,9 +403,7 @@ class _LoginViewState extends State<LoginView> {
                                                 ),
                                                 style: const TextStyle(
                                                   fontFamily: 'Outfit',
-                                                  color: Theme.of(
-                                                    context,
-                                                  ).colorScheme.primary,
+                                                  color: AppColors.indigo500,
                                                   fontWeight: FontWeight.w900,
                                                 ),
                                               ),
@@ -445,4 +443,3 @@ class _LoginViewState extends State<LoginView> {
     );
   }
 }
-

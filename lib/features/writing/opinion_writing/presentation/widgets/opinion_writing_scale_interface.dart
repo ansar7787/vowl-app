@@ -26,7 +26,6 @@ class OpinionWritingScaleInterface extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     return SizedBox(
       height: 210.h,
       child: Stack(

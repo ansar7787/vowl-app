@@ -122,7 +122,6 @@ class _ReadingSelfEvaluationCardState extends State<ReadingSelfEvaluationCard> {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     final textColor = isDark ? Colors.white : AppColors.slate900;
     final subtitleColor = isDark ? Colors.white60 : Colors.black54;
 

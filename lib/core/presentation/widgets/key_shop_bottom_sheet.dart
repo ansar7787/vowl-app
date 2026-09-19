@@ -711,10 +711,7 @@ class _KeyShopContentState extends State<_KeyShopContent> {
                         padding: EdgeInsets.symmetric(vertical: 14.h),
                         decoration: BoxDecoration(
                           gradient: const LinearGradient(
-                            colors: [
-                              AppColors.indigo500,
-                              AppColors.violet500,
-                            ],
+                            colors: [AppColors.indigo500, AppColors.violet500],
                             begin: Alignment.topLeft,
                             end: Alignment.bottomRight,
                           ),
@@ -864,4 +861,3 @@ class _KeyShopContentState extends State<_KeyShopContent> {
     );
   }
 }
-

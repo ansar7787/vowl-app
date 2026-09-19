@@ -116,7 +116,7 @@ class _StickerBookScreenState extends State<StickerBookScreen>
                   confettiController: _confettiController,
                   blastDirectionality: BlastDirectionality.explosive,
                   shouldLoop: false,
-                  colors: const [
+                  colors: [
                     Colors.orange,
                     Colors.pink,
                     Colors.blue,
@@ -166,7 +166,9 @@ class _StickerBookScreenState extends State<StickerBookScreen>
             border: Border.all(
               color: isMidnight
                   ? Colors.white24
-                  : (isDark ? Colors.white12 : Colors.grey.withValues(alpha: 0.4)),
+                  : (isDark
+                        ? Colors.white12
+                        : Colors.grey.withValues(alpha: 0.4)),
               width: 2,
             ),
           ),
@@ -789,4 +791,3 @@ class _StickerBookScreenState extends State<StickerBookScreen>
     );
   }
 }
-

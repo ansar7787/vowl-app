@@ -70,10 +70,7 @@ class GlobalProgressCard extends StatelessWidget {
                         padding: EdgeInsets.all(10.r),
                         decoration: BoxDecoration(
                           gradient: const LinearGradient(
-                            colors: [
-                              AppColors.indigo500,
-                              AppColors.violet500,
-                            ],
+                            colors: [AppColors.indigo500, AppColors.violet500],
                             begin: Alignment.topLeft,
                             end: Alignment.bottomRight,
                           ),
@@ -424,4 +421,3 @@ class GlobalProgressCard extends StatelessWidget {
     return [AppColors.indigo500, AppColors.violet500];
   }
 }
-

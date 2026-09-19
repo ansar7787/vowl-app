@@ -591,7 +591,6 @@ class SessionCompleteView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     return Center(
       child: SingleChildScrollView(
         physics: const BouncingScrollPhysics(),

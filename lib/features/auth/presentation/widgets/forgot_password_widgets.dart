@@ -192,4 +192,3 @@ class RememberPasswordFooter extends StatelessWidget {
     );
   }
 }
-

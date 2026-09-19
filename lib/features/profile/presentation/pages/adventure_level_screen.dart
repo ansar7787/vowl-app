@@ -761,10 +761,7 @@ class AdventureLevelScreen extends StatelessWidget {
                 padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
                 decoration: BoxDecoration(
                   gradient: const LinearGradient(
-                    colors: [
-                      AppColors.indigo500,
-                      Color(0xFF1D4ED8),
-                    ],
+                    colors: [AppColors.indigo500, Color(0xFF1D4ED8)],
                   ),
                   borderRadius: BorderRadius.circular(12.r),
                   boxShadow: [
@@ -973,4 +970,3 @@ class AdventureLevelScreen extends StatelessWidget {
     );
   }
 }
-

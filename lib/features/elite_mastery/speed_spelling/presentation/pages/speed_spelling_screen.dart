@@ -168,7 +168,6 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen>
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     final isMidnight = context.watch<ThemeCubit>().state.isMidnight;
     final theme = LevelThemeHelper.getTheme(
       widget.gameType.name,

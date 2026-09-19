@@ -51,7 +51,6 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final tokens = Theme.of(context).extension<AppColorTokens>()!;
 
     final isMidnight = context.watch<ThemeCubit>().state.isMidnight;
     final bgColor = isMidnight
@@ -587,7 +586,6 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
 
   Widget _buildPriceTag(int price, Color color) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 4.h),
       decoration: BoxDecoration(
@@ -673,7 +671,6 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
     bool isMascot,
   ) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     final itemColor = item['color'] as Color;
     final price = item['price'] as int;
 

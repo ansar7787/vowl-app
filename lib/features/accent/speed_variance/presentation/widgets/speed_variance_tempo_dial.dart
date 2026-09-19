@@ -35,7 +35,6 @@ class SpeedVarianceTempoDial extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     return Column(
       children: [
         _buildChromeDial(correctIndex, color, isDark),

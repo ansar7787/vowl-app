@@ -26,7 +26,6 @@ class ListeningInferenceGrid extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 16.w),
       child: options.length == 2

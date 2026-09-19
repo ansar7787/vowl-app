@@ -144,10 +144,7 @@ class _MlFeatureGateDialog extends StatelessWidget {
                 padding: EdgeInsets.all(16.r),
                 decoration: BoxDecoration(
                   gradient: const LinearGradient(
-                    colors: [
-                      AppColors.indigo500,
-                      AppColors.violet500,
-                    ],
+                    colors: [AppColors.indigo500, AppColors.violet500],
                   ),
                   shape: BoxShape.circle,
                   boxShadow: [
@@ -197,10 +194,7 @@ class _MlFeatureGateDialog extends StatelessWidget {
                   padding: EdgeInsets.symmetric(vertical: 16.h),
                   decoration: BoxDecoration(
                     gradient: const LinearGradient(
-                      colors: [
-                        AppColors.indigo500,
-                        AppColors.violet500,
-                      ],
+                      colors: [AppColors.indigo500, AppColors.violet500],
                     ),
                     borderRadius: BorderRadius.circular(16.r),
                     boxShadow: [
@@ -287,4 +281,3 @@ class _MlFeatureGateDialog extends StatelessWidget {
     );
   }
 }
-

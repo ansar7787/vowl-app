@@ -35,7 +35,6 @@ class SituationalResponseReactionZone extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     return Container(
       width: 1.sw,
       height: 380.h,

@@ -26,7 +26,6 @@ class KidsRoomDailyCareCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     final now = DateTime.now();
     final hasFed =
         user.kidsLastFeedTime != null &&
@@ -137,7 +136,9 @@ class KidsRoomDailyCareCard extends StatelessWidget {
                                   borderRadius: BorderRadius.circular(20.r),
                                   boxShadow: [
                                     BoxShadow(
-                                      color: Colors.green.withValues(alpha: 0.9),
+                                      color: Colors.green.withValues(
+                                        alpha: 0.9,
+                                      ),
                                       offset: Offset(0, 4.h),
                                     ),
                                   ],
@@ -175,7 +176,9 @@ class KidsRoomDailyCareCard extends StatelessWidget {
       children: [
         Icon(
           isDone ? Icons.check_circle_rounded : Icons.circle_outlined,
-          color: isDone ? AppColors.gameCorrect.withValues(alpha: 0.7) : Colors.grey.withValues(alpha: 0.7),
+          color: isDone
+              ? AppColors.gameCorrect.withValues(alpha: 0.7)
+              : Colors.grey.withValues(alpha: 0.7),
           size: 20.sp,
         ),
         SizedBox(width: 8.w),
@@ -190,7 +193,9 @@ class KidsRoomDailyCareCard extends StatelessWidget {
                       : Colors.green.shade800)
                 : (isDark ? Colors.white60 : Colors.black54),
             decoration: isDone ? TextDecoration.lineThrough : null,
-            decorationColor: isDone ? AppColors.gameCorrect.withValues(alpha: 0.7) : null,
+            decorationColor: isDone
+                ? AppColors.gameCorrect.withValues(alpha: 0.7)
+                : null,
             decorationThickness: 2,
           ),
         ),
@@ -198,4 +203,3 @@ class KidsRoomDailyCareCard extends StatelessWidget {
     );
   }
 }
-

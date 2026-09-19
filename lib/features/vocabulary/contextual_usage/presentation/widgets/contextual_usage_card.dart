@@ -24,7 +24,6 @@ class ContextualUsageCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     return Center(
       child: Stack(
         alignment: Alignment.center,

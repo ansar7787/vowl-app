@@ -30,7 +30,6 @@ class GameProgressHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     final titleColor = isDark ? Colors.white : AppColors.slate900;
     final subColor = isDark
         ? Colors.white.withValues(alpha: 0.8)
@@ -151,7 +150,6 @@ class _ProgressBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     final clamped = progress.clamp(0.0, 1.0);
     final barColor = isDark ? Colors.white : themeColor;
 

@@ -67,7 +67,6 @@ class _GlobalErrorBoundaryState extends State<GlobalErrorBoundary> {
 
   @override
   Widget build(BuildContext context) {
-    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     return ValueListenableBuilder<int>(
       valueListenable: _stateHash,
       builder: (context, _, child) {
@@ -99,7 +98,6 @@ class _MinimalErrorFallback extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     return const SizedBox.shrink();
   }
 }

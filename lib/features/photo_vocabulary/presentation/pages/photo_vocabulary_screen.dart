@@ -357,7 +357,6 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
     }
 
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final tokens = Theme.of(context).extension<AppColorTokens>()!;
 
     return PopScope(
       canPop: _imagePathVal == null,
@@ -1201,4 +1200,3 @@ class _AnimatedScannerTextState extends State<_AnimatedScannerText> {
     );
   }
 }
-

@@ -27,7 +27,6 @@ class SyllableStressDrumConsole extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     return Wrap(
       spacing: 16.w,
       runSpacing: 16.h,

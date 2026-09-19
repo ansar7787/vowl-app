@@ -230,7 +230,6 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen>
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     final theme = LevelThemeHelper.getTheme('grammar', level: widget.level);
 
     return BlocConsumer<GrammarBloc, GrammarState>(

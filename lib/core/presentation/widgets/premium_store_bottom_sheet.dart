@@ -524,10 +524,7 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
         padding: EdgeInsets.all(20.r),
         decoration: BoxDecoration(
           gradient: const LinearGradient(
-            colors: [
-              AppColors.indigo500,
-              AppColors.violet500,
-            ],
+            colors: [AppColors.indigo500, AppColors.violet500],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),
@@ -810,4 +807,3 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
         .moveY(begin: 20, end: 0, curve: Curves.easeOutBack);
   }
 }
-

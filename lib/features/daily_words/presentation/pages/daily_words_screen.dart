@@ -222,10 +222,7 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20.r),
                     gradient: const LinearGradient(
-                      colors: [
-                        AppColors.indigo500,
-                        AppColors.violet500,
-                      ],
+                      colors: [AppColors.indigo500, AppColors.violet500],
                       begin: Alignment.centerLeft,
                       end: Alignment.centerRight,
                     ),
@@ -988,9 +985,7 @@ class _DailyWordsProgressBar extends StatelessWidget {
                 backgroundColor: isDark
                     ? Colors.white.withValues(alpha: 0.1)
                     : const Color(0xFFE2E8F0),
-                valueColor: AlwaysStoppedAnimation<Color>(
-                  AppColors.indigo500,
-                ),
+                valueColor: AlwaysStoppedAnimation<Color>(AppColors.indigo500),
               ),
             ),
           ),
@@ -1011,4 +1006,3 @@ class _DailyWordsProgressBar extends StatelessWidget {
     );
   }
 }
-

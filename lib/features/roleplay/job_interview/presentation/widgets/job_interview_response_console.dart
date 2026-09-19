@@ -29,7 +29,6 @@ class JobInterviewResponseConsole extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: List.generate(

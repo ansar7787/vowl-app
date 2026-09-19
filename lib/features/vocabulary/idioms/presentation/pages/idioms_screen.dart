@@ -133,7 +133,6 @@ class _IdiomsScreenState extends State<IdiomsScreen>
 
   @override
   Widget build(BuildContext context) {
-    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     return BlocConsumer<VocabularyBloc, VocabularyState>(
       listenWhen: vocabularyListenWhen,
       listener: onVocabularyStateChanged,

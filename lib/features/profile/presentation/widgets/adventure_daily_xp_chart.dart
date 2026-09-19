@@ -237,4 +237,3 @@ class AdventureDailyXpChart extends StatelessWidget {
     );
   }
 }
-

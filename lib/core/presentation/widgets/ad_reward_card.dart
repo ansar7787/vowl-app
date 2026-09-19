@@ -320,4 +320,3 @@ class _AdRewardCardState extends State<AdRewardCard> {
     );
   }
 }
-

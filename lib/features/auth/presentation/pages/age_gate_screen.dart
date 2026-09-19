@@ -248,9 +248,7 @@ class AgeGateScreen extends StatelessWidget {
                                           decoration: BoxDecoration(
                                             gradient: const LinearGradient(
                                               colors: [
-                                                Theme.of(
-                                                  context,
-                                                ).colorScheme.primary,
+                                                AppColors.indigo500,
                                                 AppColors.violet500,
                                               ],
                                               begin: Alignment.topLeft,
@@ -359,9 +357,7 @@ class AgeGateScreen extends StatelessWidget {
                                             decoration: BoxDecoration(
                                               gradient: const LinearGradient(
                                                 colors: [
-                                                  Theme.of(
-                                                    context,
-                                                  ).colorScheme.primary,
+                                                  AppColors.indigo500,
                                                   AppColors.violet500,
                                                 ],
                                               ),
@@ -481,9 +477,10 @@ class AgeGateScreen extends StatelessWidget {
                                                           FontWeight.w800,
                                                       color: isDark
                                                           ? Colors.white70
-                                                          : Colors
-                                                                .grey
-                                                                .withValues(alpha: 0.9),
+                                                          : Colors.grey
+                                                                .withValues(
+                                                                  alpha: 0.9,
+                                                                ),
                                                       letterSpacing: 0.3,
                                                     ),
                                                   ),
@@ -551,4 +548,3 @@ class AgeGateScreen extends StatelessWidget {
     );
   }
 }
-

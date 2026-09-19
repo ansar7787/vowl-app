@@ -30,7 +30,6 @@ class GourmetOrderPlateTray extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     return Container(
       width: 1.sw,
       padding: EdgeInsets.all(16.r),

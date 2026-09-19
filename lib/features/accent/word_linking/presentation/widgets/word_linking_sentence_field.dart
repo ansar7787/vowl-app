@@ -43,7 +43,6 @@ class _WordLinkingSentenceFieldState extends State<WordLinkingSentenceField> {
 
   @override
   Widget build(BuildContext context) {
-    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     List<Widget> children = [];
 
     for (int i = 0; i < widget.words.length; i++) {

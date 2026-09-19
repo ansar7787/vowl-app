@@ -33,7 +33,6 @@ class AmbientIdSonarField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     return SizedBox(
       height: 380.h,
       width: double.infinity,

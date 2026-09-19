@@ -28,7 +28,6 @@ class KidsGameHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     int currentIndex = 0;
     int totalQuests = 1;
     int lives = 3;

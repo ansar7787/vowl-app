@@ -73,7 +73,6 @@ class _LanguageSelectionBottomSheetState
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     final primaryIndigo = AppColors.indigo500;
 
     return ListenableBuilder(
@@ -687,9 +686,7 @@ class _LanguageSelectionBottomSheetState
               ),
               if (isDetecting) ...[
                 SizedBox(height: 16.h),
-                const VowlButtonSpinner(
-                  color: AppColors.indigo500,
-                ),
+                const VowlButtonSpinner(color: AppColors.indigo500),
               ],
             ],
           ),
@@ -795,4 +792,3 @@ class _LanguageSelectionBottomSheetState
     });
   }
 }
-

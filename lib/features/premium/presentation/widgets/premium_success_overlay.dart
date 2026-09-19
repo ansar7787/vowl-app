@@ -93,10 +93,7 @@ class PremiumSuccessOverlay extends StatelessWidget {
                 SizedBox(height: 28.h),
                 ShaderMask(
                   shaderCallback: (bounds) => const LinearGradient(
-                    colors: [
-                      AppColors.indigo500,
-                      AppColors.violet500,
-                    ],
+                    colors: [AppColors.indigo500, AppColors.violet500],
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight,
                   ).createShader(bounds),
@@ -192,10 +189,7 @@ class PremiumSuccessOverlay extends StatelessWidget {
                       padding: EdgeInsets.symmetric(vertical: 16.h),
                       decoration: BoxDecoration(
                         gradient: const LinearGradient(
-                          colors: [
-                            AppColors.indigo500,
-                            AppColors.violet500,
-                          ],
+                          colors: [AppColors.indigo500, AppColors.violet500],
                           begin: Alignment.topLeft,
                           end: Alignment.bottomRight,
                         ),
@@ -247,4 +241,3 @@ class PremiumSuccessOverlay extends StatelessWidget {
     );
   }
 }
-
