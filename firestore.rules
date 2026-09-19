@@ -60,7 +60,7 @@ service cloud.firestore {
                 !('lastRewardTimestamp' in resource.data) || 
                 resource.data.lastRewardTimestamp == null ||
                 !(resource.data.lastRewardTimestamp is timestamp) ||
-                request.time >= resource.data.lastRewardTimestamp + duration.value(2, 's')
+                request.time >= resource.data.lastRewardTimestamp + duration.value(0, 's')
               )
             )
           )

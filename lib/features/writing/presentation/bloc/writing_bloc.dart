@@ -281,44 +281,45 @@ class WritingBloc extends Bloc<WritingEvent, WritingState> {
     if (_isCompletingLevel) return;
     _isCompletingLevel = true;
 
-    try {
-      final rewardRes = await updateUserRewards(
-        UpdateUserRewardsParams(
-          gameType: s.gameType.name,
-          level: s.level,
-          xpIncrease: _rewardXp,
-          coinIncrease: _rewardCoins,
-          starsEarned: s.livesRemaining,
-        ),
-      );
-      if (rewardRes.isLeft()) {
-        final fail = rewardRes.fold((l) => l, (r) => null);
-        emit(
-          WritingError(
-            'Failed: ${fail?.message} | Type: ${s.gameType.name}, Lvl: ${s.level}',
-          ),
-        );
-        return;
-      }
+    // 1. Instant UI feedback â€” emitted immediately to prevent double-taps on the
+    // "Continue" button and eliminate UI delays.
+    emit(
+      WritingGameComplete(
+        xpEarned: _rewardXp,
+        coinsEarned: _rewardCoins,
+        questCount: s.quests.length,
+        gameType: s.gameType,
+        level: s.level,
+      ),
+    );
 
-      await updateCategoryStats(
+    // 2. Background persistence â€” Fire-and-forget.
+    // By the time the user taps "OK" on the completion dialog (which takes
+    // 2-3s for animation), this will be finished, and AuthRefreshUser will
+    // read the committed data.
+    updateUserRewards(
+      UpdateUserRewardsParams(
+        gameType: s.gameType.name,
+        level: s.level,
+        xpIncrease: _rewardXp,
+        coinIncrease: _rewardCoins,
+        starsEarned: s.livesRemaining,
+      ),
+    ).then((rewardRes) {
+      if (rewardRes.isLeft()) {
+        // We log it but do not emit an error state because the UI has already
+        // transitioned to the completion card.
+        final fail = rewardRes.fold((l) => l, (r) => null);
+        print('Background save failed: ${fail?.message}');
+      }
+      
+      updateCategoryStats(
         UpdateCategoryStatsParams(categoryId: s.gameType.name, isCorrect: true),
       ).catchError(_swallow);
 
-      await awardBadge(_writingBadgeId).catchError(_swallow);
-
-      // 1. Instant UI feedback
-      emit(
-        WritingGameComplete(
-          xpEarned: _rewardXp,
-          coinsEarned: _rewardCoins,
-          questCount: s.quests.length,
-          gameType: s.gameType,
-          level: s.level,
-        ),
-      );
-    } finally {
+      awardBadge(_writingBadgeId).catchError(_swallow);
+    }).catchError(_swallow).whenComplete(() {
       _isCompletingLevel = false;
-    }
+    });
   }
 }
