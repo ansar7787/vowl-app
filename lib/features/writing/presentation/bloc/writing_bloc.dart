@@ -267,10 +267,6 @@ class WritingBloc extends Bloc<WritingEvent, WritingState> {
   // Private Helpers
   // ---------------------------------------------------------------------------
 
-  /// Silently absorbs a [Failure] from a persistence use-case so that individual
-  /// reward failures never crash an in-progress game session.
-  Either<Failure, void> _swallow(Object _) => const Right<Failure, void>(null);
-
   /// Persists rewards in the background before emitting [WritingGameComplete].
   /// A failing background save will still emit completion so it never
   /// disrupts the user's completion experience.
@@ -321,7 +317,9 @@ class WritingBloc extends Bloc<WritingEvent, WritingState> {
             ),
           ).catchError((_) => const Right<Failure, void>(null));
 
-          awardBadge(_writingBadgeId).catchError((_) => const Right<Failure, void>(null));
+          awardBadge(
+            _writingBadgeId,
+          ).catchError((_) => const Right<Failure, void>(null));
         })
         .catchError((_) {})
         .whenComplete(() {
