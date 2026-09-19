@@ -246,7 +246,6 @@ class RoleplayBloc extends Bloc<RoleplayEvent, RoleplayState> {
     }
 
     // ── Level complete ─────────────────────────────────────────────────
-    
 
     // 1. Instant UI feedback — emitted immediately to prevent double-taps on the
     // "Continue" button and eliminate UI delays.
@@ -261,22 +260,26 @@ class RoleplayBloc extends Bloc<RoleplayEvent, RoleplayState> {
 
     // 2. Background persistence — Fire-and-forget.
     updateUserRewards(
-      UpdateUserRewardsParams(
-        gameType: s.gameType.name,
-        level: s.level,
-        xpIncrease: kRoleplayLevelCompleteXp,
-        coinIncrease: kRoleplayLevelCompleteCoins,
-        starsEarned: s.livesRemaining,
-      ),
-    ).then((_) {
-      updateCategoryStats(
-        UpdateCategoryStatsParams(
-          categoryId: s.gameType.name,
-          isCorrect: true,
-        ),
-      ).catchError((_) => const Right<Failure, void>(null));
-      awardBadge(kRoleplayBadgeId).catchError((_) => const Right<Failure, void>(null));
-    }).catchError((_) => const Right<Failure, void>(null));
+          UpdateUserRewardsParams(
+            gameType: s.gameType.name,
+            level: s.level,
+            xpIncrease: kRoleplayLevelCompleteXp,
+            coinIncrease: kRoleplayLevelCompleteCoins,
+            starsEarned: s.livesRemaining,
+          ),
+        )
+        .then((_) {
+          updateCategoryStats(
+            UpdateCategoryStatsParams(
+              categoryId: s.gameType.name,
+              isCorrect: true,
+            ),
+          ).catchError((_) {});
+          awardBadge(
+            kRoleplayBadgeId,
+          ).catchError((_) {});
+        })
+        .catchError((_) {});
   }
 
   // ── ─────────────────────────────────────────────────────────────────────

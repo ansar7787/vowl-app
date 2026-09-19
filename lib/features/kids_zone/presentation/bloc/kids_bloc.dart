@@ -410,18 +410,22 @@ class KidsBloc extends Bloc<KidsEvent, KidsState> {
 
           // 2. Background persistence — Fire-and-forget.
           updateUserRewards(
-            UpdateUserRewardsParams(
-              gameType: s.gameType,
-              level: s.level,
-              xpIncrease: 5,
-              coinIncrease: 10,
-              starsEarned: s.livesRemaining > 0 ? s.livesRemaining : 1,
-            ),
-          ).then((_) {
-            if (newSticker != null) {
-              awardKidsSticker(newSticker).catchError((_) => const Right<Failure, void>(null));
-            }
-          }).catchError((_) => const Right<Failure, void>(null));
+                UpdateUserRewardsParams(
+                  gameType: s.gameType,
+                  level: s.level,
+                  xpIncrease: 5,
+                  coinIncrease: 10,
+                  starsEarned: s.livesRemaining > 0 ? s.livesRemaining : 1,
+                ),
+              )
+              .then((_) {
+                if (newSticker != null) {
+                  awardKidsSticker(
+                    newSticker,
+                  ).catchError((_) {});
+                }
+              })
+              .catchError((_) {});
         } else {
           // Wrong answer on the very last quest
           emit(
