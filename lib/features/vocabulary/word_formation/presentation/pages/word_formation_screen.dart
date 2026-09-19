@@ -32,7 +32,8 @@ class WordFormationScreen extends StatefulWidget {
   State<WordFormationScreen> createState() => _WordFormationScreenState();
 }
 
-class _WordFormationScreenState extends State<WordFormationScreen> with VocabularyGameScreenMixin {
+class _WordFormationScreenState extends State<WordFormationScreen>
+    with VocabularyGameScreenMixin {
   @override
   GameSubtype get gameType => widget.gameType;
 
@@ -42,7 +43,6 @@ class _WordFormationScreenState extends State<WordFormationScreen> with Vocabula
   @override
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
-    
   late final WordFormationController _controller;
   final ScrollController _scrollController = ScrollController();
   bool _hasScrolledToStage2 = false;
@@ -108,6 +108,14 @@ class _WordFormationScreenState extends State<WordFormationScreen> with Vocabula
     _controller.dispose();
     disposeVocabularyGame();
     super.dispose();
+  }
+
+  @override
+  void onQuestionReset() {
+    final state = context.read<VocabularyBloc>().state;
+    if (state is VocabularyLoaded && state.currentQuestOrNull != null) {
+      _controller.reset(state.currentQuestOrNull!, state.currentIndex);
+    }
   }
 
   @override

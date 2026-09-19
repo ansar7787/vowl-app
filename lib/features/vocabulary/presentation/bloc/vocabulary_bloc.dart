@@ -245,7 +245,7 @@ class VocabularyBloc extends Bloc<VocabularyEvent, VocabularyState> {
     VocabularyLoaded s,
     Emitter<VocabularyState> emit,
   ) {
-    soundService.playLevelComplete();
+    
 
     const xp = VocabularyRewardConstants.baseXp;
     const coins = VocabularyRewardConstants.baseCoins;

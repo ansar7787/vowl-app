@@ -30,7 +30,8 @@ class PrefixSuffixScreen extends StatefulWidget {
   State<PrefixSuffixScreen> createState() => _PrefixSuffixScreenState();
 }
 
-class _PrefixSuffixScreenState extends State<PrefixSuffixScreen> with VocabularyGameScreenMixin {
+class _PrefixSuffixScreenState extends State<PrefixSuffixScreen>
+    with VocabularyGameScreenMixin {
   @override
   GameSubtype get gameType => widget.gameType;
 
@@ -106,6 +107,14 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen> with Vocabulary
     _controller.dispose();
     disposeVocabularyGame();
     super.dispose();
+  }
+
+  @override
+  void onQuestionReset() {
+    final state = context.read<VocabularyBloc>().state;
+    if (state is VocabularyLoaded) {
+      _controller.reset(state.currentQuestOrNull, state.currentIndex);
+    }
   }
 
   @override

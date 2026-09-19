@@ -295,7 +295,7 @@ class ListeningBloc extends Bloc<ListeningEvent, ListeningState> {
   /// rewards in the background with up to [_kMaxSaveRetries] retries using
   /// exponential back-off so transient network errors don't silently lose XP.
   void _completeLevel(ListeningLoaded s, Emitter<ListeningState> emit) {
-    soundService.playLevelComplete();
+    
 
     // Capture non-null locals to avoid null assertions in async lambdas.
     final gameType = _currentGameType;

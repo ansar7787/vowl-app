@@ -202,7 +202,7 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
             await di.sl<UpdateUserRewards>()(
               UpdateUserRewardsParams(
                 xpIncrease: 5,
-                coinIncrease: 5,
+                coinIncrease: 10,
                 level: total,
                 gameType: 'PhotoVocabulary',
               ),

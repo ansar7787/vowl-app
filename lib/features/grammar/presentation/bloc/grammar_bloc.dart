@@ -204,7 +204,7 @@ class GrammarBloc extends Bloc<GrammarEvent, GrammarState> {
       }
     } else if (currentState.answerStatus.isCorrect) {
       // Level complete: the last question was answered correctly.
-      soundService.playLevelComplete();
+      
 
       emit(
         const GrammarGameComplete(

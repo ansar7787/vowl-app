@@ -270,7 +270,7 @@ class SpeakingBloc extends Bloc<SpeakingEvent, SpeakingState> {
   /// `unlockedLevels` inside [_computeRewardUpdates], so a separate
   /// [updateUnlockedLevel] call is intentionally omitted.
   void _handleLevelComplete(SpeakingLoaded s, Emitter<SpeakingState> emit) {
-    unawaited(soundService.playLevelComplete());
+    
 
     // : Derive xp/coins from quest metadata (q.xpReward ?? _kDefaultXp)
     // once SpeakingQuest exposes reward fields.

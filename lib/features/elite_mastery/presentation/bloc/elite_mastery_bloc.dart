@@ -34,7 +34,7 @@ class EliteMasteryBloc extends Bloc<EliteMasteryEvent, EliteMasteryState> {
   static const int _maxLives = 3;
   static const int _questsPerLevel = 3;
   static const int _maxWrongAttempts = 2;
-  static const int _xpReward = 10;
+  static const int _xpReward = 5;
   static const int _coinReward = 10;
 
   // ── Constructor ─────────────────────────────────────────────────────────────
@@ -222,7 +222,7 @@ class EliteMasteryBloc extends Bloc<EliteMasteryEvent, EliteMasteryState> {
       }
     } else if (currentState.answerStatus == AnswerStatus.correct) {
       // ── Level complete ────────────────────────────────────────────────────
-      soundService.playLevelComplete();
+      
 
       // Resolve nullable fields — both are always set by the BLoC in
       // production, but are nullable for backward compatibility with

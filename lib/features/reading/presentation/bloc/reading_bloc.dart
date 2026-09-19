@@ -234,7 +234,7 @@ class ReadingBloc extends Bloc<ReadingEvent, ReadingState> {
     }
 
     if (s.answerStatus == AnswerStatus.correct) {
-      soundService.playLevelComplete();
+      
 
       // 1. Instant UI feedback
       emit(

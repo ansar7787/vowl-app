@@ -11,7 +11,7 @@ import 'package:vowl/core/domain/entities/game_quest.dart';
 class VocabularyRewardConstants {
   const VocabularyRewardConstants._();
 
-  static const int baseXp = 10;
+  static const int baseXp = 5;
   static const int baseCoins = 10;
   static const int initialLives = 3;
   static const int reviveLives = 1;

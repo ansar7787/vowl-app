@@ -20,7 +20,7 @@ abstract final class ReadingGameConfig {
   static const int milestoneBriefingLevel = 100;
 
   /// XP awarded on successful level completion.
-  static const int xpPerLevel = 10;
+  static const int xpPerLevel = 5;
 
   /// Coins awarded on successful level completion.
   static const int coinsPerLevel = 10;

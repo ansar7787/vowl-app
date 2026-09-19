@@ -18,7 +18,7 @@ const int kRoleplayLowLifeThreshold = 2;
 // ── Rewards ────────────────────────────────────────────────────────────────
 
 /// XP awarded on level completion.
-const int kRoleplayLevelCompleteXp = 10;
+const int kRoleplayLevelCompleteXp = 5;
 
 /// Coins awarded on level completion.
 const int kRoleplayLevelCompleteCoins = 10;

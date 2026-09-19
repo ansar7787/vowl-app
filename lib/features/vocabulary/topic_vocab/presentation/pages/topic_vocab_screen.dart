@@ -33,7 +33,8 @@ class TopicVocabScreen extends StatefulWidget {
   State<TopicVocabScreen> createState() => _TopicVocabScreenState();
 }
 
-class _TopicVocabScreenState extends State<TopicVocabScreen> with VocabularyGameScreenMixin {
+class _TopicVocabScreenState extends State<TopicVocabScreen>
+    with VocabularyGameScreenMixin {
   @override
   GameSubtype get gameType => widget.gameType;
 
@@ -80,6 +81,14 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> with VocabularyGame
     _controller.dispose();
     disposeVocabularyGame();
     super.dispose();
+  }
+
+  @override
+  void onQuestionReset() {
+    final state = context.read<VocabularyBloc>().state;
+    if (state is VocabularyLoaded) {
+      _controller.reset(state.currentQuestOrNull);
+    }
   }
 
   @override

@@ -203,7 +203,7 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
           await di.sl<UpdateUserRewards>()(
             UpdateUserRewardsParams(
               xpIncrease: 5,
-              coinIncrease: 5,
+              coinIncrease: 10,
               level: total,
               gameType: 'ScanAndLearn',
             ),

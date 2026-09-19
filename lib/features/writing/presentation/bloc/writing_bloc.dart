@@ -40,10 +40,11 @@ class WritingBloc extends Bloc<WritingEvent, WritingState> {
   // _maxQuestsPerLevel should eventually come from remote config or the quest
   // entity so it can be A/B tested without a code deploy.
   // ---------------------------------------------------------------------------
-  static const int _rewardXp = 10;
+  static const int _rewardXp = 5;
   static const int _rewardCoins = 10;
   static const String _writingBadgeId = 'writing_master';
   static const int _maxQuestsPerLevel = 3;
+  bool _isCompletingLevel = false;
   static const int _wrongAnswerThreshold = 2;
   static const int _initialLives = 3;
 
@@ -277,38 +278,47 @@ class WritingBloc extends Bloc<WritingEvent, WritingState> {
     WritingLoaded s,
     Emitter<WritingState> emit,
   ) async {
-    soundService.playLevelComplete();
+    if (_isCompletingLevel) return;
+    _isCompletingLevel = true;
 
-    // 1. Instant UI feedback
-    emit(
-      WritingGameComplete(
-        xpEarned: _rewardXp,
-        coinsEarned: _rewardCoins,
-        questCount: s.quests.length,
-        gameType: s.gameType,
-        level: s.level,
-      ),
-    );
-
-    // 2. Background persistence — sequenced to prevent transaction contention
-    // on the same user document. (Running in Future.wait caused aborts).
-    updateUserRewards(
-      UpdateUserRewardsParams(
-        gameType: s.gameType.name,
-        level: s.level,
-        xpIncrease: _rewardXp,
-        coinIncrease: _rewardCoins,
-        starsEarned: s.livesRemaining,
-      ),
-    ).catchError(_swallow).then((_) {
-      updateCategoryStats(
-        UpdateCategoryStatsParams(
-          categoryId: s.gameType.name,
-          isCorrect: true,
+    try {
+      final rewardRes = await updateUserRewards(
+        UpdateUserRewardsParams(
+          gameType: s.gameType.name,
+          level: s.level,
+          xpIncrease: _rewardXp,
+          coinIncrease: _rewardCoins,
+          starsEarned: s.livesRemaining,
         ),
-      ).catchError(_swallow).then((_) {
-        awardBadge(_writingBadgeId).catchError(_swallow);
-      });
-    });
+      );
+      if (rewardRes.isLeft()) {
+        final fail = rewardRes.fold((l) => l, (r) => null);
+        emit(
+          WritingError(
+            'Failed: ${fail?.message} | Type: ${s.gameType.name}, Lvl: ${s.level}',
+          ),
+        );
+        return;
+      }
+
+      await updateCategoryStats(
+        UpdateCategoryStatsParams(categoryId: s.gameType.name, isCorrect: true),
+      ).catchError(_swallow);
+
+      await awardBadge(_writingBadgeId).catchError(_swallow);
+
+      // 1. Instant UI feedback
+      emit(
+        WritingGameComplete(
+          xpEarned: _rewardXp,
+          coinsEarned: _rewardCoins,
+          questCount: s.quests.length,
+          gameType: s.gameType,
+          level: s.level,
+        ),
+      );
+    } finally {
+      _isCompletingLevel = false;
+    }
   }
 }

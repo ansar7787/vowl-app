@@ -246,7 +246,7 @@ class RoleplayBloc extends Bloc<RoleplayEvent, RoleplayState> {
     }
 
     // ── Level complete ─────────────────────────────────────────────────
-    soundService.playLevelComplete();
+    
 
     // 1. Primary persistence — must complete before UI shows the dialog
     //    so that AuthRefreshUser reads committed data.

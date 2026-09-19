@@ -16,7 +16,7 @@ abstract final class GrammarConstants {
   static const int livesPerLevel = 3;
 
   /// XP awarded on successful level completion.
-  static const int xpPerLevel = 10;
+  static const int xpPerLevel = 5;
 
   /// Coins awarded on successful level completion.
   static const int coinsPerLevel = 10;

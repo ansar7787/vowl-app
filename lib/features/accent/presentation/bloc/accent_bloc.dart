@@ -253,8 +253,6 @@ class AccentBloc extends Bloc<AccentEvent, AccentState> {
       }
     } else if (s.answerStatus == AnswerStatus.correct) {
       // All quests complete → level won.
-      soundService.playLevelComplete();
-
       onAnalyticsEvent?.call('accent_level_complete', {
         'level': _currentLevel,
         'quest_count': s.quests.length,

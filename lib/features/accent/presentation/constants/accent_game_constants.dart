@@ -22,7 +22,7 @@ abstract final class AccentGameConstants {
 
   // ── Rewards ───────────────────────────────────────────────────────────────
   /// XP awarded on successful level completion.
-  static const int rewardXp = 10;
+  static const int rewardXp = 5;
 
   /// Base coins awarded per completed accent level
   static const int rewardCoins = 10;
