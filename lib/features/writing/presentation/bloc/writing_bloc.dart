@@ -310,8 +310,8 @@ class WritingBloc extends Bloc<WritingEvent, WritingState> {
           if (rewardRes.isLeft()) {
             // We log it but do not emit an error state because the UI has already
             // transitioned to the completion card.
-            final fail = rewardRes.fold((l) => l, (r) => null);
-            print('Background save failed: ${fail?.message}');
+            // final fail = rewardRes.fold((l) => l, (r) => null);
+            // developer.log('Background save failed: ${fail?.message}');
           }
 
           updateCategoryStats(
@@ -319,11 +319,11 @@ class WritingBloc extends Bloc<WritingEvent, WritingState> {
               categoryId: s.gameType.name,
               isCorrect: true,
             ),
-          ).catchError(_swallow);
+          ).catchError((_) => const Right<Failure, void>(null));
 
-          awardBadge(_writingBadgeId).catchError(_swallow);
+          awardBadge(_writingBadgeId).catchError((_) => const Right<Failure, void>(null));
         })
-        .catchError(_swallow)
+        .catchError((_) {})
         .whenComplete(() {
           _isCompletingLevel = false;
         });
