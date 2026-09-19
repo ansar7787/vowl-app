@@ -422,7 +422,7 @@ class KidsBloc extends Bloc<KidsEvent, KidsState> {
                 if (newSticker != null) {
                   awardKidsSticker(
                     newSticker,
-                  ).catchError((_) {});
+                  ).catchError((_) => const Right<Failure, void>(null));
                 }
               })
               .catchError((_) {});

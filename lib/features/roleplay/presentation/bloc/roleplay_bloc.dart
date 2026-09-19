@@ -274,10 +274,10 @@ class RoleplayBloc extends Bloc<RoleplayEvent, RoleplayState> {
               categoryId: s.gameType.name,
               isCorrect: true,
             ),
-          ).catchError((_) {});
+          ).catchError((_) => const Right<Failure, void>(null));
           awardBadge(
             kRoleplayBadgeId,
-          ).catchError((_) {});
+          ).catchError((_) => const Right<Failure, void>(null));
         })
         .catchError((_) {});
   }
