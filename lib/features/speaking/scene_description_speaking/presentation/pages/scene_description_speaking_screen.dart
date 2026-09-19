@@ -107,8 +107,9 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
   }
 
   void _onHotspotTap(int index) {
-    if (isAnsweredNotifier.value || _inspectedHotspots.value.contains(index))
+    if (isAnsweredNotifier.value || _inspectedHotspots.value.contains(index)) {
       return;
+    }
     hapticService.selection();
     if (!di.sl<AudioRecordingService>().isRecording) {
       soundService.playTts(_hotspotLabels[index]);
@@ -118,7 +119,9 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
   }
 
   void _submitVerbalEvaluation(bool nailedIt) {
-    if (isAnsweredNotifier.value || _activeHotspot.value == -1) return;
+    if (isAnsweredNotifier.value || _activeHotspot.value == -1) {
+      return;
+    }
 
     if (nailedIt) {
       hapticService.success();

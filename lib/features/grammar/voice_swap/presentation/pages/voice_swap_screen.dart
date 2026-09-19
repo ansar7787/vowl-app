@@ -99,8 +99,9 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen>
   void _submitAnswer(GameQuest? quest) {
     if (isAnsweredNotifier.value ||
         isFirstStagePassedNotifier.value ||
-        quest == null)
+        quest == null) {
       return;
+    }
 
     final selectedVoice = _isPassive.value ? "Passive" : "Active";
     bool isCorrect =
@@ -135,7 +136,9 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen>
   }
 
   void _submitVerbalEvaluation(bool nailedIt) {
-    if (isAnsweredNotifier.value) return;
+    if (isAnsweredNotifier.value) {
+      return;
+    }
 
     isAnsweredNotifier.value = true;
     isCorrectNotifier.value = nailedIt;

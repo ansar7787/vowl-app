@@ -73,7 +73,9 @@ class _PartsOfSpeechScreenState extends State<PartsOfSpeechScreen>
   }
 
   void _onFlick(int targetIndex, int correctIndex) {
-    if (isAnsweredNotifier.value || _isSubmitting.value) return;
+    if (isAnsweredNotifier.value || _isSubmitting.value) {
+      return;
+    }
     _isSubmitting.value = true;
 
     final isCorrect = targetIndex == correctIndex;
@@ -104,11 +106,15 @@ class _PartsOfSpeechScreenState extends State<PartsOfSpeechScreen>
   }
 
   void _checkCollision(int correctIndex, {required bool isCompact}) {
-    if (isAnsweredNotifier.value) return;
+    if (isAnsweredNotifier.value) {
+      return;
+    }
 
     final distance = _dragOffset.value.distance;
     final threshold = isCompact ? 60.r : 100.r;
-    if (distance <= threshold) return;
+    if (distance <= threshold) {
+      return;
+    }
 
     final targetIndex = switch ((
       _dragOffset.value.dx < 0,
@@ -221,8 +227,10 @@ class _PartsOfSpeechScreenState extends State<PartsOfSpeechScreen>
                                                   );
                                                 },
                                                 onPanUpdate: (details) {
-                                                  if (isAnsweredNotifier.value)
+                                                  if (isAnsweredNotifier
+                                                      .value) {
                                                     return;
+                                                  }
                                                   _dragOffset.value +=
                                                       details.delta;
                                                   _checkCollision(
@@ -232,8 +240,10 @@ class _PartsOfSpeechScreenState extends State<PartsOfSpeechScreen>
                                                   );
                                                 },
                                                 onPanEnd: (_) {
-                                                  if (isAnsweredNotifier.value)
+                                                  if (isAnsweredNotifier
+                                                      .value) {
                                                     return;
+                                                  }
                                                   _dragOffset.value =
                                                       Offset.zero;
                                                 },
@@ -415,7 +425,9 @@ class _PosQuestLayout extends StatelessWidget {
     final instruction = SpeechInstruction(
       primaryColor: theme.primaryColor as Color,
     );
-    if (!isCompact) return instruction;
+    if (!isCompact) {
+      return instruction;
+    }
     return SizedBox(
       height: 25.h,
       child: FittedBox(fit: BoxFit.scaleDown, child: instruction),
