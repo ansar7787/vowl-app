@@ -424,8 +424,9 @@ class GlobalProgressCard extends StatelessWidget {
   List<Color> _getRankGradient(int rank) {
     if (rank == 1) return [AppColors.gold, AppColors.amber500];
     if (rank == 2) return [_LocalPalette.colorc0c0c0, AppColors.slate400];
-    if (rank == 3)
+    if (rank == 3) {
       return [_LocalPalette.colorcd7f32, _LocalPalette.colora3713b];
+    }
     if (rank <= 10) return [AppColors.blue500, AppColors.indigo500];
     return [AppColors.indigo500, AppColors.violet500];
   }
