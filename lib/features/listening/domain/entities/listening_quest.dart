@@ -21,7 +21,6 @@ class ListeningQuest extends GameQuest {
   final List<String>? optionEmojis;
 
   // D3 Additions (Games 16-20)
-  final String? slowVersion;
   final int? emotionScale;
   final String? detailCategory;
   final String? literalMeaning;
@@ -64,7 +63,6 @@ class ListeningQuest extends GameQuest {
     this.pauseMarkers,
     this.evidenceQuote,
     this.optionEmojis,
-    this.slowVersion,
     this.emotionScale,
     this.detailCategory,
     this.literalMeaning,
@@ -95,7 +93,6 @@ class ListeningQuest extends GameQuest {
     pauseMarkers,
     evidenceQuote,
     optionEmojis,
-    slowVersion,
     emotionScale,
     detailCategory,
     literalMeaning,

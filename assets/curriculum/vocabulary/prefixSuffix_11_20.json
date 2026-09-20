@@ -3,483 +3,483 @@
     "quests": [
         {
             "id": "VOC_PREFIXSUFFIX_L11_Q1",
-            "hint": "Wearing jeans and a t-shirt to a casual weekend gathering, not a suit.",
-            "explanation": "IN- means 'not'. IN- + FORMAL = INFORMAL, meaning not formal.",
+            "hint": "Constructing a bridge again after a storm knocked it down.",
+            "explanation": "RE- means 'again.' Added to BUILD, it forms REBUILD \u2014 to construct something a second time after damage or failure.",
             "interactionType": "choice",
-            "correctAnswer": "INFORMAL",
-            "rootWord": "FORMAL",
+            "correctAnswer": "RE-",
+            "rootWord": "BUILD",
             "options": [
-                "-ABLE",
-                "-DOM",
-                "IM-",
-                "IN-"
+                "DE-",
+                "RE-",
+                "PRE-",
+                "MIS-"
             ],
-            "meaningBreakdown": "IN (prefix, 'not') + FORMAL (root)",
-            "instruction": "Choose the correct answer."
+            "meaningBreakdown": "RE (prefix, 'again') + BUILD (root)",
+            "instruction": "Which prefix fits the meaning below?"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L11_Q2",
-            "hint": "An answer on a test that does not match the right solution.",
-            "explanation": "IN- means 'not'. IN- + CORRECT = INCORRECT, meaning not correct.",
+            "hint": "A shop turning its lights back on and unlocking the doors after being closed for repairs.",
+            "explanation": "REOPEN is RE- + OPEN, meaning to open something again after it was closed.",
             "interactionType": "choice",
-            "correctAnswer": "INCORRECT",
-            "rootWord": "CORRECT",
+            "correctAnswer": "REOPEN",
+            "rootWord": "OPEN",
             "options": [
-                "IN-",
-                "-HOOD",
-                "-LESS",
-                "UN-"
+                "REWRITE",
+                "REOPEN",
+                "REFILL",
+                "REBUILD"
             ],
-            "meaningBreakdown": "IN (prefix, 'not') + CORRECT (root)",
-            "instruction": "Choose the correct answer."
+            "meaningBreakdown": "RE (prefix, 'again') + OPEN (root)",
+            "instruction": "Which word matches this situation?"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L11_Q3",
-            "hint": "Describing air, which cannot be seen by the eye.",
-            "explanation": "IN- means 'not'. IN- + VISIBLE = INVISIBLE, meaning not able to be seen.",
+            "hint": "Asking a waiter to top up your glass once it's empty.",
+            "explanation": "RE- ('again') builds REFILL, to fill something again. UN- would instead suggest removing what's inside \u2014 the opposite idea \u2014 so 'unfill' isn't how English expresses this.",
             "interactionType": "choice",
-            "correctAnswer": "INVISIBLE",
-            "rootWord": "VISIBLE",
+            "correctAnswer": "RE-",
+            "rootWord": "FILL",
             "options": [
-                "-ISH",
-                "IN-",
-                "CO-",
-                "-LESS"
+                "UN-",
+                "DIS-",
+                "MIS-",
+                "RE-"
             ],
-            "meaningBreakdown": "IN (prefix, 'not') + VISIBLE (root)",
-            "instruction": "Choose the correct answer."
+            "meaningBreakdown": "RE (prefix, 'again') + FILL (root)",
+            "instruction": "Which prefix correctly completes this word?"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L12_Q1",
-            "hint": "Describing a flight that goes directly to its destination with no stops.",
-            "explanation": "NON- means 'not' or 'without'. NON- + STOP = NONSTOP, meaning without stopping.",
+            "hint": "Spreading out a map that was previously creased into small squares.",
+            "explanation": "UN- reverses an action. FOLD + UN- = UNFOLD, to open something that was folded.",
             "interactionType": "choice",
-            "correctAnswer": "NONSTOP",
-            "rootWord": "STOP",
+            "correctAnswer": "UN-",
+            "rootWord": "FOLD",
             "options": [
-                "NON-",
+                "DIS-",
                 "UN-",
-                "-TION",
-                "-MENT"
+                "DE-",
+                "RE-"
             ],
-            "meaningBreakdown": "NON (prefix, 'without') + STOP (root)",
-            "instruction": "Choose the correct answer."
+            "meaningBreakdown": "UN (prefix, reverses the action) + FOLD (root)",
+            "instruction": "Which prefix fits the meaning below?"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L12_Q2",
-            "hint": "Words strung together that have no logical meaning at all.",
-            "explanation": "NON- means 'not' or 'without'. NON- + SENSE = NONSENSE, meaning without sense.",
+            "hint": "Pressing Ctrl+Z to erase your last edit and return the document to how it was before.",
+            "explanation": "UNDO reverses a previous action entirely, unlike REDO, which repeats an action. Ctrl+Z famously performs UNDO in most software.",
             "interactionType": "choice",
-            "correctAnswer": "NONSENSE",
-            "rootWord": "SENSE",
+            "correctAnswer": "UNDO",
+            "rootWord": "DO",
             "options": [
-                "PRE-",
-                "NON-",
-                "-ISH",
-                "-ISM"
+                "REDO",
+                "UNCOVER",
+                "UNFOLD",
+                "UNDO"
             ],
-            "meaningBreakdown": "NON (prefix, 'without') + SENSE (root)",
-            "instruction": "Choose the correct answer."
+            "meaningBreakdown": "UN (prefix, reverses the action) + DO (root)",
+            "instruction": "Which word matches this situation?"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L12_Q3",
-            "hint": "A biography or history book, which describes real events rather than invented ones.",
-            "explanation": "NON- means 'not'. NON- + FICTION = NONFICTION, meaning not fiction.",
+            "hint": "Pulling a tarp off a swimming pool to reveal the water underneath.",
+            "explanation": "UN- + COVER = UNCOVER, to reveal something that was hidden. DIS- also appears in words about concealment (like DISGUISE), but COVER specifically pairs with UN-.",
             "interactionType": "choice",
-            "correctAnswer": "NONFICTION",
-            "rootWord": "FICTION",
+            "correctAnswer": "UN-",
+            "rootWord": "COVER",
             "options": [
-                "NON-",
-                "-ISM",
-                "-IZE",
-                "PRE-"
-            ],
-            "meaningBreakdown": "NON (prefix, 'not') + FICTION (root)",
-            "instruction": "Choose the correct answer."
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L13_Q1",
-            "hint": "To eat far more than your body needs at a holiday dinner.",
-            "explanation": "OVER- means 'too much'. OVER- + EAT = OVEREAT, meaning to eat more than needed.",
-            "interactionType": "choice",
-            "correctAnswer": "OVEREAT",
-            "rootWord": "EAT",
-            "options": [
-                "OVER-",
-                "-ABLE",
-                "IM-",
-                "-LESS"
-            ],
-            "meaningBreakdown": "OVER (prefix, 'too much') + EAT (root)",
-            "instruction": "Choose the correct answer."
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L13_Q2",
-            "hint": "To wake up hours later than planned and miss your alarm.",
-            "explanation": "OVER- means 'too much'. OVER- + SLEEP = OVERSLEEP, meaning to sleep longer than intended.",
-            "interactionType": "choice",
-            "correctAnswer": "OVERSLEEP",
-            "rootWord": "SLEEP",
-            "options": [
-                "DIS-",
-                "-ER",
-                "OVER-",
-                "-DOM"
-            ],
-            "meaningBreakdown": "OVER (prefix, 'too much') + SLEEP (root)",
-            "instruction": "Choose the correct answer."
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L13_Q3",
-            "hint": "To put in far too many hours at the office and feel exhausted.",
-            "explanation": "OVER- means 'too much'. OVER- + WORK = OVERWORK, meaning to work more than is healthy.",
-            "interactionType": "choice",
-            "correctAnswer": "OVERWORK",
-            "rootWord": "WORK",
-            "options": [
-                "OVER-",
-                "-FUL",
-                "-SHIP",
-                "IN-"
-            ],
-            "meaningBreakdown": "OVER (prefix, 'too much') + WORK (root)",
-            "instruction": "Choose the correct answer."
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L14_Q1",
-            "hint": "A subway system that runs beneath the streets of a city.",
-            "explanation": "UNDER- means 'below' or 'beneath'. UNDER- + GROUND = UNDERGROUND, meaning below the ground.",
-            "interactionType": "choice",
-            "correctAnswer": "UNDERGROUND",
-            "rootWord": "GROUND",
-            "options": [
-                "-ABLE",
-                "EN-",
-                "-LY",
-                "UNDER-"
-            ],
-            "meaningBreakdown": "UNDER (prefix, 'beneath') + GROUND (root)",
-            "instruction": "Choose the correct answer."
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L14_Q2",
-            "hint": "To draw a straight mark beneath an important word in a sentence.",
-            "explanation": "UNDER- means 'below' or 'beneath'. UNDER- + LINE = UNDERLINE, meaning to draw a line below.",
-            "interactionType": "choice",
-            "correctAnswer": "UNDERLINE",
-            "rootWord": "LINE",
-            "options": [
-                "-SHIP",
-                "-LY",
+                "UN-",
                 "MIS-",
-                "UNDER-"
-            ],
-            "meaningBreakdown": "UNDER (prefix, 'beneath') + LINE (root)",
-            "instruction": "Choose the correct answer."
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L14_Q3",
-            "hint": "A tunnel that lets pedestrians walk beneath a busy road.",
-            "explanation": "UNDER- means 'below' or 'beneath'. UNDER- + PASS = UNDERPASS, meaning a passage below something.",
-            "interactionType": "choice",
-            "correctAnswer": "UNDERPASS",
-            "rootWord": "PASS",
-            "options": [
-                "MIS-",
-                "-ISM",
-                "UNDER-",
-                "-DOM"
-            ],
-            "meaningBreakdown": "UNDER (prefix, 'beneath') + PASS (root)",
-            "instruction": "Choose the correct answer."
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L15_Q1",
-            "hint": "The act of relocating your furniture into a new apartment.",
-            "explanation": "-MENT turns a verb into a noun naming the result of an action. MOVE + -MENT = MOVEMENT.",
-            "interactionType": "choice",
-            "correctAnswer": "MOVEMENT",
-            "rootWord": "MOVE",
-            "options": [
-                "-IZE",
-                "-MENT",
-                "EN-",
-                "OVER-"
-            ],
-            "meaningBreakdown": "MOVE (root) + MENT (suffix, 'result of')",
-            "instruction": "Choose the correct answer."
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L15_Q2",
-            "hint": "A heated disagreement between two people over politics.",
-            "explanation": "-MENT turns a verb into a noun. ARGUE + -MENT = ARGUMENT (note the final 'e' is dropped).",
-            "interactionType": "choice",
-            "correctAnswer": "ARGUMENT",
-            "rootWord": "ARGUE",
-            "options": [
-                "-MENT",
-                "-ABLE",
-                "SUB-",
-                "OUT-"
-            ],
-            "meaningBreakdown": "ARGU (root, e dropped) + MENT (suffix, 'result of')",
-            "instruction": "Choose the correct answer."
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L15_Q3",
-            "hint": "The thrill children feel the night before a big trip.",
-            "explanation": "-MENT turns a verb into a noun. EXCITE + -MENT = EXCITEMENT.",
-            "interactionType": "choice",
-            "correctAnswer": "EXCITEMENT",
-            "rootWord": "EXCITE",
-            "options": [
-                "-IFY",
-                "-MENT",
                 "DIS-",
                 "DE-"
             ],
-            "meaningBreakdown": "EXCITE (root) + MENT (suffix, 'result of')",
-            "instruction": "Choose the correct answer."
+            "meaningBreakdown": "UN (prefix, reverses the action) + COVER (root)",
+            "instruction": "Which prefix correctly completes this word?"
+        },
+        {
+            "id": "VOC_PREFIXSUFFIX_L13_Q1",
+            "hint": "Someone who clocks in at a factory every morning to do their job.",
+            "explanation": "-ER names a person who performs an action. WORK + -ER = WORKER, a person who works.",
+            "interactionType": "choice",
+            "correctAnswer": "-ER",
+            "rootWord": "WORK",
+            "options": [
+                "-MENT",
+                "-ER",
+                "-ISM",
+                "-SHIP"
+            ],
+            "meaningBreakdown": "WORK (root) + ER (suffix, 'person who does')",
+            "instruction": "Which suffix fits the meaning below?"
+        },
+        {
+            "id": "VOC_PREFIXSUFFIX_L13_Q2",
+            "hint": "Someone training for a marathon, logging miles every morning.",
+            "explanation": "RUNNER is RUN + -ER (with the N doubled before adding the suffix), naming a person who runs, such as someone training for a race.",
+            "interactionType": "choice",
+            "correctAnswer": "RUNNER",
+            "rootWord": "RUN",
+            "options": [
+                "RUNNER",
+                "PLAYER",
+                "WORKER",
+                "TEACHER"
+            ],
+            "meaningBreakdown": "RUN (root, n doubled) + ER (suffix, 'person who does')",
+            "instruction": "Which word matches this situation?"
+        },
+        {
+            "id": "VOC_PREFIXSUFFIX_L13_Q3",
+            "hint": "One of eleven people on a soccer team out on the field.",
+            "explanation": "-ER creates PLAYER from PLAY, someone who plays. -MENT and -DOM build entirely different kinds of nouns (a result, or a territory), not a person.",
+            "interactionType": "choice",
+            "correctAnswer": "-ER",
+            "rootWord": "PLAY",
+            "options": [
+                "-DOM",
+                "-ER",
+                "-MENT",
+                "-HOOD"
+            ],
+            "meaningBreakdown": "PLAY (root) + ER (suffix, 'person who does')",
+            "instruction": "Which suffix correctly completes this word?"
+        },
+        {
+            "id": "VOC_PREFIXSUFFIX_L14_Q1",
+            "hint": "Describing an engine strong enough to tow a heavy trailer.",
+            "explanation": "-FUL means 'full of.' POWER + -FUL = POWERFUL, full of power or strength.",
+            "interactionType": "choice",
+            "correctAnswer": "-FUL",
+            "rootWord": "POWER",
+            "options": [
+                "-FUL",
+                "-NESS",
+                "-MENT",
+                "-ISH"
+            ],
+            "meaningBreakdown": "POWER (root) + FUL (suffix, 'full of')",
+            "instruction": "Which suffix fits the meaning below?"
+        },
+        {
+            "id": "VOC_PREFIXSUFFIX_L14_Q2",
+            "hint": "How you feel toward a stranger who returns your lost wallet.",
+            "explanation": "THANKFUL is THANK + -FUL, full of gratitude toward someone.",
+            "interactionType": "choice",
+            "correctAnswer": "THANKFUL",
+            "rootWord": "THANK",
+            "options": [
+                "COLORFUL",
+                "POWERFUL",
+                "CAREFUL",
+                "THANKFUL"
+            ],
+            "meaningBreakdown": "THANK (root) + FUL (suffix, 'full of')",
+            "instruction": "Which word matches this situation?"
+        },
+        {
+            "id": "VOC_PREFIXSUFFIX_L14_Q3",
+            "hint": "Describing a garden bursting with red, yellow, and purple flowers.",
+            "explanation": "-FUL builds COLORFUL from COLOR, full of color. -LESS would create the opposite word, COLORLESS, describing something with no color at all \u2014 like plain water.",
+            "interactionType": "choice",
+            "correctAnswer": "-FUL",
+            "rootWord": "COLOR",
+            "options": [
+                "-ISH",
+                "-LESS",
+                "-FUL",
+                "-NESS"
+            ],
+            "meaningBreakdown": "COLOR (root) + FUL (suffix, 'full of')",
+            "instruction": "Which suffix correctly completes this word?"
+        },
+        {
+            "id": "VOC_PREFIXSUFFIX_L15_Q1",
+            "hint": "Describing a desert highway that seems to stretch on forever.",
+            "explanation": "-LESS means 'without.' END + -LESS = ENDLESS, without an end.",
+            "interactionType": "choice",
+            "correctAnswer": "-LESS",
+            "rootWord": "END",
+            "options": [
+                "-FUL",
+                "-ISH",
+                "-LESS",
+                "-NESS"
+            ],
+            "meaningBreakdown": "END (root) + LESS (suffix, 'without')",
+            "instruction": "Which suffix fits the meaning below?"
+        },
+        {
+            "id": "VOC_PREFIXSUFFIX_L15_Q2",
+            "hint": "Being so shocked by surprising news that you can't find any words to say.",
+            "explanation": "SPEECHLESS combines SPEECH with -LESS, describing someone temporarily without words, usually from shock.",
+            "interactionType": "choice",
+            "correctAnswer": "SPEECHLESS",
+            "rootWord": "SPEECH",
+            "options": [
+                "HELPLESS",
+                "HOMELESS",
+                "SPEECHLESS",
+                "ENDLESS"
+            ],
+            "meaningBreakdown": "SPEECH (root) + LESS (suffix, 'without')",
+            "instruction": "Which word matches this situation?"
+        },
+        {
+            "id": "VOC_PREFIXSUFFIX_L15_Q3",
+            "hint": "A kitten stuck at the top of a tree, unable to get down on its own.",
+            "explanation": "-LESS forms HELPLESS from HELP, meaning without the ability to help oneself. -FUL would flip this to HELPFUL, meaning full of help toward others \u2014 a very different idea.",
+            "interactionType": "choice",
+            "correctAnswer": "-LESS",
+            "rootWord": "HELP",
+            "options": [
+                "-NESS",
+                "-FUL",
+                "-ISH",
+                "-LESS"
+            ],
+            "meaningBreakdown": "HELP (root) + LESS (suffix, 'without')",
+            "instruction": "Which suffix correctly completes this word?"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L16_Q1",
-            "hint": "A person who paints, sculpts, or creates other works of art.",
-            "explanation": "-IST names a person who practices a skill or field. ART + -IST = ARTIST.",
+            "hint": "Telling your boss the real reason a deadline was missed, even though it's uncomfortable.",
+            "explanation": "-LY turns HONEST into an adverb, HONESTLY, describing how something is done \u2014 truthfully, without hiding facts.",
             "interactionType": "choice",
-            "correctAnswer": "ARTIST",
-            "rootWord": "ART",
+            "correctAnswer": "-LY",
+            "rootWord": "HONEST",
             "options": [
-                "-LESS",
-                "-IST",
-                "PRE-",
-                "ANTI-"
+                "-LY",
+                "-NESS",
+                "-FUL",
+                "-LESS"
             ],
-            "meaningBreakdown": "ART (root) + IST (suffix, 'person who practices')",
-            "instruction": "Choose the correct answer."
+            "meaningBreakdown": "HONEST (root) + LY (suffix, forms an adverb)",
+            "instruction": "Which suffix fits the meaning below?"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L16_Q2",
-            "hint": "A person visiting a foreign city to see its landmarks.",
-            "explanation": "-IST names a person who practices something. TOUR + -IST = TOURIST.",
+            "hint": "Describing how a firefighter runs into a burning building to save someone.",
+            "explanation": "BRAVELY is BRAVE + -LY, an adverb describing an action done with courage.",
             "interactionType": "choice",
-            "correctAnswer": "TOURIST",
-            "rootWord": "TOUR",
+            "correctAnswer": "BRAVELY",
+            "rootWord": "BRAVE",
             "options": [
-                "DE-",
-                "SUB-",
-                "-IST",
-                "-IFY"
+                "HONESTLY",
+                "QUIETLY",
+                "CAREFULLY",
+                "BRAVELY"
             ],
-            "meaningBreakdown": "TOUR (root) + IST (suffix, 'person who practices')",
-            "instruction": "Choose the correct answer."
+            "meaningBreakdown": "BRAVE (root) + LY (suffix, forms an adverb)",
+            "instruction": "Which word matches this situation?"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L16_Q3",
-            "hint": "A musician who performs on a keyboard instrument in a concert hall.",
-            "explanation": "-IST names a person who practices something. PIANO + -IST = PIANIST (note the final 'o' is dropped).",
+            "hint": "Describing how a surgeon handles delicate instruments during an operation.",
+            "explanation": "CAREFULLY stacks two suffixes onto CARE: -FUL ('full of') first builds the adjective CAREFUL, and -LY then turns that adjective into an adverb describing how an action is performed.",
             "interactionType": "choice",
-            "correctAnswer": "PIANIST",
-            "rootWord": "PIANO",
+            "correctAnswer": "-LY",
+            "rootWord": "CAREFUL",
             "options": [
+                "-FUL",
                 "-ISH",
-                "CO-",
-                "-IST",
-                "MIS-"
+                "-LY",
+                "-NESS"
             ],
-            "meaningBreakdown": "PIAN (root, o dropped) + IST (suffix, 'person who practices')",
-            "instruction": "Choose the correct answer."
+            "meaningBreakdown": "CARE (root) + FUL (suffix, 'full of') + LY (suffix, forms an adverb)",
+            "instruction": "Which suffix turns this adjective into an adverb?"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L17_Q1",
-            "hint": "To get the wrong idea about what someone actually meant.",
-            "explanation": "MIS- means 'wrongly'. MIS- + UNDERSTAND = MISUNDERSTAND, meaning to understand incorrectly.",
+            "hint": "The heavy feeling after saying goodbye to a close friend who is moving away.",
+            "explanation": "-NESS turns an adjective into a noun naming a state. SAD + -NESS = SADNESS.",
             "interactionType": "choice",
-            "correctAnswer": "MISUNDERSTAND",
-            "rootWord": "UNDERSTAND",
+            "correctAnswer": "-NESS",
+            "rootWord": "SAD",
             "options": [
-                "-ER",
-                "MIS-",
-                "UN-",
-                "-LY"
+                "-NESS",
+                "-ISH",
+                "-FUL",
+                "-LESS"
             ],
-            "meaningBreakdown": "MIS (prefix, 'wrongly') + UNDERSTAND (root)",
-            "instruction": "Choose the correct answer."
+            "meaningBreakdown": "SAD (root) + NESS (suffix, forms a noun of state)",
+            "instruction": "Which suffix fits the meaning below?"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L17_Q2",
-            "hint": "To put your keys somewhere and then forget exactly where.",
-            "explanation": "MIS- means 'wrongly'. MIS- + PLACE = MISPLACE, meaning to put something in the wrong place.",
+            "hint": "The reason someone stays home from work with a fever and a cough.",
+            "explanation": "ILLNESS is ILL + -NESS, the state of being sick.",
             "interactionType": "choice",
-            "correctAnswer": "MISPLACE",
-            "rootWord": "PLACE",
+            "correctAnswer": "ILLNESS",
+            "rootWord": "ILL",
             "options": [
-                "OVER-",
-                "-ISH",
-                "MIS-",
-                "-ER"
+                "SADNESS",
+                "ILLNESS",
+                "DARKNESS",
+                "WEAKNESS"
             ],
-            "meaningBreakdown": "MIS (prefix, 'wrongly') + PLACE (root)",
-            "instruction": "Choose the correct answer."
+            "meaningBreakdown": "ILL (root) + NESS (suffix, forms a noun of state)",
+            "instruction": "Which word matches this situation?"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L17_Q3",
-            "hint": "To give someone false directions that send them the wrong way.",
-            "explanation": "MIS- means 'wrongly'. MIS- + LEAD = MISLEAD, meaning to lead someone in the wrong direction.",
+            "hint": "The feeling of joy on your favorite holiday morning.",
+            "explanation": "-NESS forms HAPPINESS from HAPPY \u2014 notice the spelling: the Y changes to I before -NESS is added. -FUL wouldn't work here at all, since 'happyful' isn't a real word.",
             "interactionType": "choice",
-            "correctAnswer": "MISLEAD",
-            "rootWord": "LEAD",
+            "correctAnswer": "-NESS",
+            "rootWord": "HAPPY",
             "options": [
-                "MIS-",
-                "-HOOD",
-                "SUB-",
-                "-MENT"
+                "-FUL",
+                "-ISH",
+                "-NESS",
+                "-LESS"
             ],
-            "meaningBreakdown": "MIS (prefix, 'wrongly') + LEAD (root)",
-            "instruction": "Choose the correct answer."
+            "meaningBreakdown": "HAPPI (root, y changes to i) + NESS (suffix, forms a noun of state)",
+            "instruction": "Which suffix correctly completes this word?"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L18_Q1",
-            "hint": "Describing a gray afternoon when the streets are wet with a downpour.",
-            "explanation": "-Y means 'full of' or 'having the quality of'. RAIN + -Y = RAINY.",
+            "hint": "Unplugging a cable so a device is no longer linked to the network.",
+            "explanation": "DIS- means 'not' or 'the opposite of.' DIS- + CONNECT = DISCONNECT, to break a connection.",
             "interactionType": "choice",
-            "correctAnswer": "RAINY",
-            "rootWord": "RAIN",
+            "correctAnswer": "DIS-",
+            "rootWord": "CONNECT",
             "options": [
-                "-Y",
-                "-ISH",
-                "CO-",
-                "UN-"
+                "DE-",
+                "UN-",
+                "MIS-",
+                "DIS-"
             ],
-            "meaningBreakdown": "RAIN (root) + Y (suffix, 'full of')",
-            "instruction": "Choose the correct answer."
+            "meaningBreakdown": "DIS (prefix, 'the opposite of') + CONNECT (root)",
+            "instruction": "Which prefix fits the meaning below?"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L18_Q2",
-            "hint": "Describing a clear summer day without a single cloud.",
-            "explanation": "-Y means 'full of' or 'having the quality of'. SUN + -Y = SUNNY (note the doubled 'n').",
+            "hint": "A magician's assistant seeming to vanish from the stage in a puff of smoke.",
+            "explanation": "DISAPPEAR combines DIS- with APPEAR, meaning to stop being visible \u2014 the opposite of appearing.",
             "interactionType": "choice",
-            "correctAnswer": "SUNNY",
-            "rootWord": "SUN",
+            "correctAnswer": "DISAPPEAR",
+            "rootWord": "APPEAR",
             "options": [
-                "-TION",
-                "PRE-",
-                "-Y",
-                "OVER-"
+                "DISCONNECT",
+                "DISCONTINUE",
+                "DISOBEY",
+                "DISAPPEAR"
             ],
-            "meaningBreakdown": "SUNN (root, n doubled) + Y (suffix, 'full of')",
-            "instruction": "Choose the correct answer."
+            "meaningBreakdown": "DIS (prefix, 'the opposite of') + APPEAR (root)",
+            "instruction": "Which word matches this situation?"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L18_Q3",
-            "hint": "Describing boots after a hike through a muddy trail.",
-            "explanation": "-Y means 'full of' or 'having the quality of'. DIRT + -Y = DIRTY.",
+            "hint": "A company announcing it will stop making an older phone model.",
+            "explanation": "DIS- + CONTINUE = DISCONTINUE, to stop something that was ongoing. MIS- would instead suggest doing something incorrectly, not stopping it \u2014 'miscontinue' isn't how English expresses this idea.",
             "interactionType": "choice",
-            "correctAnswer": "DIRTY",
-            "rootWord": "DIRT",
+            "correctAnswer": "DIS-",
+            "rootWord": "CONTINUE",
             "options": [
                 "UN-",
-                "-ISM",
-                "-Y",
-                "IM-"
+                "DIS-",
+                "MIS-",
+                "DE-"
             ],
-            "meaningBreakdown": "DIRT (root) + Y (suffix, 'full of')",
-            "instruction": "Choose the correct answer."
+            "meaningBreakdown": "DIS (prefix, 'the opposite of') + CONTINUE (root)",
+            "instruction": "Which prefix correctly completes this word?"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L19_Q1",
-            "hint": "Describing an adult who sulks and stamps their feet like a toddler.",
-            "explanation": "-ISH means 'somewhat like'. CHILD + -ISH = CHILDISH, meaning behaving like a child (usually in a negative way).",
+            "hint": "Describing an armchair so soft you could nap in it for hours.",
+            "explanation": "-ABLE means 'capable of being' or 'providing.' COMFORT + -ABLE = COMFORTABLE, providing comfort.",
             "interactionType": "choice",
-            "correctAnswer": "CHILDISH",
-            "rootWord": "CHILD",
+            "correctAnswer": "-ABLE",
+            "rootWord": "COMFORT",
             "options": [
-                "PRE-",
+                "-MENT",
+                "-LESS",
                 "-ABLE",
-                "UN-",
-                "-ISH"
+                "-FUL"
             ],
-            "meaningBreakdown": "CHILD (root) + ISH (suffix, 'somewhat like')",
-            "instruction": "Choose the correct answer."
+            "meaningBreakdown": "COMFORT (root) + ABLE (suffix, 'capable of being')",
+            "instruction": "Which suffix fits the meaning below?"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L19_Q2",
-            "hint": "Describing hair that isn't quite orange and isn't quite brown.",
-            "explanation": "-ISH means 'somewhat'. RED + -ISH = REDDISH, meaning somewhat red (note the doubled 'd').",
+            "hint": "Describing a used car priced within a tight monthly budget.",
+            "explanation": "AFFORDABLE is AFFORD + -ABLE, meaning capable of being paid for without financial strain.",
             "interactionType": "choice",
-            "correctAnswer": "REDDISH",
-            "rootWord": "RED",
+            "correctAnswer": "AFFORDABLE",
+            "rootWord": "AFFORD",
             "options": [
-                "OVER-",
-                "-ER",
-                "-ISH",
-                "CO-"
+                "WASHABLE",
+                "AFFORDABLE",
+                "COMFORTABLE",
+                "LOVABLE"
             ],
-            "meaningBreakdown": "REDD (root, d doubled) + ISH (suffix, 'somewhat')",
-            "instruction": "Choose the correct answer."
+            "meaningBreakdown": "AFFORD (root) + ABLE (suffix, 'capable of being')",
+            "instruction": "Which word matches this situation?"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L19_Q3",
-            "hint": "Describing someone who never shares and only thinks of their own wants.",
-            "explanation": "-ISH means 'somewhat like'. SELF + -ISH = SELFISH, meaning too concerned with oneself.",
+            "hint": "Describing a puppy so sweet and affectionate that everyone wants to hug it.",
+            "explanation": "-ABLE attaches to LOVE to form LOVABLE \u2014 notice the silent E is dropped before adding the suffix. -LESS would instead build LOVELESS, meaning without love, the opposite feeling entirely.",
             "interactionType": "choice",
-            "correctAnswer": "SELFISH",
-            "rootWord": "SELF",
+            "correctAnswer": "-ABLE",
+            "rootWord": "LOVE",
             "options": [
-                "IM-",
-                "EN-",
-                "-ISH",
-                "-IFY"
+                "-ABLE",
+                "-NESS",
+                "-LESS",
+                "-FUL"
             ],
-            "meaningBreakdown": "SELF (root) + ISH (suffix, 'somewhat like')",
-            "instruction": "Choose the correct answer."
+            "meaningBreakdown": "LOV (root, silent e dropped) + ABLE (suffix, 'capable of being')",
+            "instruction": "Which suffix correctly completes this word?"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L20_Q1",
-            "hint": "A person who performs a role in a film or on stage.",
-            "explanation": "-OR names a person who does something. ACT + -OR = ACTOR.",
+            "hint": "A microwave button already programmed to heat popcorn for exactly the right amount of time.",
+            "explanation": "PRE- means 'before.' PRE- + SET = PRESET, set in advance, before it's needed.",
             "interactionType": "choice",
-            "correctAnswer": "ACTOR",
-            "rootWord": "ACT",
+            "correctAnswer": "PRE-",
+            "rootWord": "SET",
             "options": [
-                "IN-",
-                "-OR",
-                "OVER-",
-                "-LY"
+                "PRE-",
+                "RE-",
+                "DE-",
+                "-MENT"
             ],
-            "meaningBreakdown": "ACT (root) + OR (suffix, 'person who does')",
-            "instruction": "Choose the correct answer."
+            "meaningBreakdown": "PRE (prefix, 'before') + SET (root)",
+            "instruction": "Which prefix fits the meaning below?"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L20_Q2",
-            "hint": "A person who comes to see a museum's new exhibit.",
-            "explanation": "-OR names a person who does something. VISIT + -OR = VISITOR.",
+            "hint": "Reserving a copy of a video game weeks before it officially goes on sale.",
+            "explanation": "PREORDER is PRE- + ORDER, to place an order before a product is available.",
             "interactionType": "choice",
-            "correctAnswer": "VISITOR",
-            "rootWord": "VISIT",
+            "correctAnswer": "PREORDER",
+            "rootWord": "ORDER",
             "options": [
-                "-SHIP",
-                "-OR",
-                "MIS-",
-                "ANTI-"
+                "PREORDER",
+                "PRESET",
+                "PREHEAT",
+                "PREVIEW"
             ],
-            "meaningBreakdown": "VISIT (root) + OR (suffix, 'person who does')",
-            "instruction": "Choose the correct answer."
+            "meaningBreakdown": "PRE (prefix, 'before') + ORDER (root)",
+            "instruction": "Which word matches this situation?"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L20_Q3",
-            "hint": "The person at a newspaper who reviews and corrects articles before print.",
-            "explanation": "-OR names a person who does something. EDIT + -OR = EDITOR.",
+            "hint": "The classroom young children attend before starting regular elementary school.",
+            "explanation": "PRE- + SCHOOL = PRESCHOOL, school that comes before regular school. Across this unit, RE- has meant 'again,' UN- has reversed an action, and DIS- has meant 'not' \u2014 PRE- is the one that always points to 'before,' worth locking in before new prefixes appear.",
             "interactionType": "choice",
-            "correctAnswer": "EDITOR",
-            "rootWord": "EDIT",
+            "correctAnswer": "PRE-",
+            "rootWord": "SCHOOL",
             "options": [
-                "-OR",
-                "OVER-",
-                "OUT-",
-                "-TION"
+                "RE-",
+                "UN-",
+                "PRE-",
+                "DIS-"
             ],
-            "meaningBreakdown": "EDIT (root) + OR (suffix, 'person who does')",
-            "instruction": "Choose the correct answer."
+            "meaningBreakdown": "PRE (prefix, 'before') + SCHOOL (root)",
+            "instruction": "Review: which prefix always points to something happening earlier in time?"
         }
     ],
     "gameType": "prefixSuffix",

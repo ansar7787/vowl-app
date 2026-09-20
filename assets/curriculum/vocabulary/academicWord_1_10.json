@@ -1,667 +1,667 @@
 {
-    "levels": "1-10",
-    "quests": [
-        {
-            "word": "DATA",
-            "interactionType": "choice",
-            "id": "VOC_ACADEMICWORD_L1_Q1",
-            "hint": "DEFINITION: Facts, figures, or information used as a basis for analysis or discussion.",
-            "options": [
-                "INVITATIONS",
-                "DATA",
-                "RUMORS",
-                "APOLOGIES"
-            ],
-            "explanation": "Academic context: Before drawing any conclusions about rainfall patterns, the science class needed reliable DATA from the weather station. Here, \"DATA\" means factual information gathered for study, not gossip or social messages.",
-            "passage": "Before drawing any conclusions about rainfall patterns, the science class needed reliable [TARGET] from the weather station",
-            "correctAnswer": "DATA",
-            "instruction": "Drag the correct word to complete the sentence.",
-            "academicField": "Sociology",
-            "collocations": [
-                "significant DATA",
-                "complex DATA",
-                "analyze the DATA"
-            ]
-        },
-        {
-            "word": "DESIGN",
-            "interactionType": "choice",
-            "id": "VOC_ACADEMICWORD_L1_Q2",
-            "hint": "DEFINITION: A plan or drawing that shows how something will look or work.",
-            "options": [
-                "DESIGN",
-                "ARGUMENT",
-                "APOLOGY",
-                "COMPLAINT"
-            ],
-            "explanation": "Academic context: Before building the treehouse, Maya sketched a simple DESIGN so her brother would know where each board should go. Here, \"DESIGN\" means a plan showing how something is made, not a disagreement.",
-            "passage": "Before building the treehouse, Maya sketched a simple [TARGET] so her brother would know where each board should go",
-            "correctAnswer": "DESIGN",
-            "instruction": "Drag the correct word to complete the sentence.",
-            "academicField": "Psychology",
-            "collocations": [
-                "significant DESIGN",
-                "complex DESIGN",
-                "analyze the DESIGN"
-            ]
-        },
-        {
-            "word": "COMMUNITY",
-            "interactionType": "choice",
-            "id": "VOC_ACADEMICWORD_L1_Q3",
-            "hint": "DEFINITION: A group of people living in the same area or sharing common interests.",
-            "options": [
-                "FURNITURE",
-                "MACHINE",
-                "DOCUMENT",
-                "COMMUNITY"
-            ],
-            "explanation": "Academic context: After the flood, the whole COMMUNITY worked together to clean up the streets. Here, \"COMMUNITY\" refers to people connected by place or interest, not an object.",
-            "passage": "After the flood, the whole [TARGET] worked together to clean up the streets",
-            "correctAnswer": "COMMUNITY",
-            "instruction": "Drag the correct word to complete the sentence.",
-            "academicField": "Economics",
-            "collocations": [
-                "significant COMMUNITY",
-                "complex COMMUNITY",
-                "analyze the COMMUNITY"
-            ]
-        },
-        {
-            "word": "KNOWLEDGE",
-            "interactionType": "choice",
-            "id": "VOC_ACADEMICWORD_L2_Q1",
-            "hint": "DEFINITION: Information, understanding, or skill gained through study or experience.",
-            "options": [
-                "PAYMENT",
-                "KNOWLEDGE",
-                "SCHEDULE",
-                "LUGGAGE"
-            ],
-            "explanation": "Academic context: Years of traveling gave her deep KNOWLEDGE of different cultures and languages. Here, \"KNOWLEDGE\" means what a person understands or knows, not a physical item.",
-            "passage": "Years of traveling gave her deep [TARGET] of different cultures and languages",
-            "correctAnswer": "KNOWLEDGE",
-            "instruction": "Drag the correct word to complete the sentence.",
-            "academicField": "Biology",
-            "collocations": [
-                "significant KNOWLEDGE",
-                "complex KNOWLEDGE",
-                "analyze the KNOWLEDGE"
-            ]
-        },
-        {
-            "word": "QUALITY",
-            "interactionType": "choice",
-            "id": "VOC_ACADEMICWORD_L2_Q2",
-            "hint": "DEFINITION: The standard of something measured against similar things; how good or bad it is.",
-            "options": [
-                "QUALITY",
-                "LOCATION",
-                "NOISE",
-                "PARKING"
-            ],
-            "explanation": "Academic context: The restaurant lost customers after the QUALITY of its food dropped sharply. Here, \"QUALITY\" describes how good or bad something is, not where it is.",
-            "passage": "The restaurant lost customers after the [TARGET] of its food dropped sharply",
-            "correctAnswer": "QUALITY",
-            "instruction": "Drag the correct word to complete the sentence.",
-            "academicField": "Linguistics",
-            "collocations": [
-                "significant QUALITY",
-                "complex QUALITY",
-                "analyze the QUALITY"
-            ]
-        },
-        {
-            "word": "CHAPTER",
-            "interactionType": "choice",
-            "id": "VOC_ACADEMICWORD_L2_Q3",
-            "hint": "DEFINITION: A main division of a book, usually numbered or titled.",
-            "options": [
-                "RECEIPT",
-                "POSTER",
-                "CHAPTER",
-                "TICKET"
-            ],
-            "explanation": "Academic context: She stayed up late to finish the final CHAPTER of her mystery novel. Here, \"CHAPTER\" is a section of a book, not a piece of paper from a shop or wall.",
-            "passage": "She stayed up late to finish the final [TARGET] of her mystery novel",
-            "correctAnswer": "CHAPTER",
-            "instruction": "Drag the correct word to complete the sentence.",
-            "academicField": "Sociology",
-            "collocations": [
-                "significant CHAPTER",
-                "complex CHAPTER",
-                "analyze the CHAPTER"
-            ]
-        },
-        {
-            "word": "AREA",
-            "interactionType": "choice",
-            "id": "VOC_ACADEMICWORD_L3_Q1",
-            "hint": "DEFINITION: A particular part of a place, or a field of activity or interest.",
-            "options": [
-                "DEADLINE",
-                "AREA",
-                "SALARY",
-                "COSTUME"
-            ],
-            "explanation": "Academic context: Marketing is the AREA of business that Daniel finds most exciting. Here, \"AREA\" means a field of activity, not a payment or clothing.",
-            "passage": "Marketing is the [TARGET] of business that Daniel finds most exciting",
-            "correctAnswer": "AREA",
-            "instruction": "Drag the correct word to complete the sentence.",
-            "academicField": "Psychology",
-            "collocations": [
-                "significant AREA",
-                "complex AREA",
-                "analyze the AREA"
-            ]
-        },
-        {
-            "word": "GROUP",
-            "interactionType": "choice",
-            "id": "VOC_ACADEMICWORD_L3_Q2",
-            "hint": "DEFINITION: A number of people or things gathered or classed together.",
-            "options": [
-                "GROUP",
-                "SUITCASE",
-                "POSTCARD",
-                "UMBRELLA"
-            ],
-            "explanation": "Academic context: A small GROUP of tourists waited outside the museum for the doors to open. Here, \"GROUP\" refers to people together, not travel items.",
-            "passage": "A small [TARGET] of tourists waited outside the museum for the doors to open",
-            "correctAnswer": "GROUP",
-            "instruction": "Drag the correct word to complete the sentence.",
-            "academicField": "Economics",
-            "collocations": [
-                "significant GROUP",
-                "complex GROUP",
-                "analyze the GROUP"
-            ]
-        },
-        {
-            "word": "ROLE",
-            "interactionType": "choice",
-            "id": "VOC_ACADEMICWORD_L3_Q3",
-            "hint": "DEFINITION: The function or part someone plays in a particular situation.",
-            "options": [
-                "WHISTLE",
-                "STADIUM",
-                "ROLE",
-                "UNIFORM"
-            ],
-            "explanation": "Academic context: As team captain, her ROLE was to keep everyone motivated before the match. Here, \"ROLE\" describes a person's job in a situation, not sports equipment.",
-            "passage": "As team captain, her [TARGET] was to keep everyone motivated before the match",
-            "correctAnswer": "ROLE",
-            "instruction": "Drag the correct word to complete the sentence.",
-            "academicField": "Biology",
-            "collocations": [
-                "significant ROLE",
-                "complex ROLE",
-                "analyze the ROLE"
-            ]
-        },
-        {
-            "word": "ISSUE",
-            "interactionType": "choice",
-            "id": "VOC_ACADEMICWORD_L4_Q1",
-            "hint": "DEFINITION: An important topic or problem being discussed or dealt with.",
-            "options": [
-                "FESTIVAL",
-                "ISSUE",
-                "BAKERY",
-                "PARADE"
-            ],
-            "explanation": "Academic context: Traffic congestion has become a serious ISSUE in the city center. Here, \"ISSUE\" means a problem or important topic, not a celebration.",
-            "passage": "Traffic congestion has become a serious [TARGET] in the city center",
-            "correctAnswer": "ISSUE",
-            "instruction": "Drag the correct word to complete the sentence.",
-            "academicField": "Linguistics",
-            "collocations": [
-                "significant ISSUE",
-                "complex ISSUE",
-                "analyze the ISSUE"
-            ]
-        },
-        {
-            "word": "ITEM",
-            "interactionType": "choice",
-            "id": "VOC_ACADEMICWORD_L4_Q2",
-            "hint": "DEFINITION: An individual article or unit, especially one on a list.",
-            "options": [
-                "COMPLIMENT",
-                "APOLOGY",
-                "ITEM",
-                "RUMOR"
-            ],
-            "explanation": "Academic context: She crossed each ITEM off her shopping list as she found it in the supermarket. Here, \"ITEM\" is a single thing on a list, not a spoken remark.",
-            "passage": "She crossed each [TARGET] off her shopping list as she found it in the supermarket",
-            "correctAnswer": "ITEM",
-            "instruction": "Drag the correct word to complete the sentence.",
-            "academicField": "Sociology",
-            "collocations": [
-                "significant ITEM",
-                "complex ITEM",
-                "analyze the ITEM"
-            ]
-        },
-        {
-            "word": "PLAN",
-            "interactionType": "choice",
-            "id": "VOC_ACADEMICWORD_L4_Q3",
-            "hint": "DEFINITION: A detailed proposal for doing or achieving something.",
-            "options": [
-                "PLAN",
-                "ALLERGY",
-                "SOUVENIR",
-                "COSTUME"
-            ],
-            "explanation": "Academic context: The family made a careful PLAN for their road trip across three countries. Here, \"PLAN\" means an organized set of steps, not a condition or object.",
-            "passage": "The family made a careful [TARGET] for their road trip across three countries",
-            "correctAnswer": "PLAN",
-            "instruction": "Drag the correct word to complete the sentence.",
-            "academicField": "Psychology",
-            "collocations": [
-                "significant PLAN",
-                "complex PLAN",
-                "analyze the PLAN"
-            ]
-        },
-        {
-            "word": "ORDER",
-            "interactionType": "choice",
-            "id": "VOC_ACADEMICWORD_L5_Q1",
-            "hint": "DEFINITION: A request for food or goods at a restaurant or shop.",
-            "options": [
-                "MENU",
-                "ORDER",
-                "APRON",
-                "RECEIPT"
-            ],
-            "explanation": "Academic context: The waiter brought our ORDER to the table just minutes after we sat down. Here, \"ORDER\" means the food requested, since a menu is given before ordering, not after.",
-            "passage": "The waiter brought our [TARGET] to the table just minutes after we sat down",
-            "correctAnswer": "ORDER",
-            "instruction": "Drag the correct word to complete the sentence.",
-            "academicField": "Economics",
-            "collocations": [
-                "significant ORDER",
-                "complex ORDER",
-                "analyze the ORDER"
-            ]
-        },
-        {
-            "word": "FORM",
-            "interactionType": "choice",
-            "id": "VOC_ACADEMICWORD_L5_Q2",
-            "hint": "DEFINITION: A document with blank spaces for writing information.",
-            "options": [
-                "THERMOMETER",
-                "FORM",
-                "BANDAGE",
-                "PRESCRIPTION"
-            ],
-            "explanation": "Academic context: New patients must fill out a medical FORM before seeing the doctor. Here, \"FORM\" means a printed document to complete, not equipment or medicine.",
-            "passage": "New patients must fill out a medical [TARGET] before seeing the doctor",
-            "correctAnswer": "FORM",
-            "instruction": "Drag the correct word to complete the sentence.",
-            "academicField": "Biology",
-            "collocations": [
-                "significant FORM",
-                "complex FORM",
-                "analyze the FORM"
-            ]
-        },
-        {
-            "word": "MAJOR",
-            "interactionType": "choice",
-            "id": "VOC_ACADEMICWORD_L5_Q3",
-            "hint": "DEFINITION: Very important, large, or serious.",
-            "options": [
-                "IMAGINARY",
-                "TEMPORARY",
-                "MAJOR",
-                "BORROWED"
-            ],
-            "explanation": "Academic context: Losing her passport right before the flight was a MAJOR problem for Elena. Here, \"MAJOR\" means serious or large, which fits the urgency here better than the alternatives.",
-            "passage": "Losing her passport right before the flight was a [TARGET] problem for Elena",
-            "correctAnswer": "MAJOR",
-            "instruction": "Drag the correct word to complete the sentence.",
-            "academicField": "Linguistics",
-            "collocations": [
-                "significant MAJOR",
-                "complex MAJOR",
-                "analyze the MAJOR"
-            ]
-        },
-        {
-            "word": "FINAL",
-            "interactionType": "choice",
-            "id": "VOC_ACADEMICWORD_L6_Q1",
-            "hint": "DEFINITION: Last in a series; happening at the end.",
-            "options": [
-                "BORROWED",
-                "FINAL",
-                "FRAGILE",
-                "ANCIENT"
-            ],
-            "explanation": "Academic context: Fans cheered loudly during the FINAL minutes of the championship game. Here, \"FINAL\" describes the last part of an event, not its age or condition.",
-            "passage": "Fans cheered loudly during the [TARGET] minutes of the championship game",
-            "correctAnswer": "FINAL",
-            "instruction": "Drag the correct word to complete the sentence.",
-            "academicField": "Sociology",
-            "collocations": [
-                "significant FINAL",
-                "complex FINAL",
-                "analyze the FINAL"
-            ]
-        },
-        {
-            "word": "BASIC",
-            "interactionType": "choice",
-            "id": "VOC_ACADEMICWORD_L6_Q2",
-            "hint": "DEFINITION: Forming an essential foundation; simple and fundamental.",
-            "options": [
-                "EXPENSIVE",
-                "BASIC",
-                "FRAGILE",
-                "ANCIENT"
-            ],
-            "explanation": "Academic context: The cooking class taught students the BASIC skills needed to make a simple dinner. Here, \"BASIC\" means simple and fundamental, not costly or old.",
-            "passage": "The cooking class taught students the [TARGET] skills needed to make a simple dinner",
-            "correctAnswer": "BASIC",
-            "instruction": "Drag the correct word to complete the sentence.",
-            "academicField": "Psychology",
-            "collocations": [
-                "significant BASIC",
-                "complex BASIC",
-                "analyze the BASIC"
-            ]
-        },
-        {
-            "word": "REGION",
-            "interactionType": "choice",
-            "id": "VOC_ACADEMICWORD_L6_Q3",
-            "hint": "DEFINITION: An area, especially part of a country, with its own characteristics.",
-            "options": [
-                "RECIPE",
-                "FESTIVAL",
-                "REGION",
-                "HARVEST"
-            ],
-            "explanation": "Academic context: The southern REGION of the country is famous for its spicy street food. Here, \"REGION\" refers to a geographic area, not a meal or event.",
-            "passage": "The southern [TARGET] of the country is famous for its spicy street food",
-            "correctAnswer": "REGION",
-            "instruction": "Drag the correct word to complete the sentence.",
-            "academicField": "Economics",
-            "collocations": [
-                "significant REGION",
-                "complex REGION",
-                "analyze the REGION"
-            ]
-        },
-        {
-            "word": "PERIOD",
-            "interactionType": "choice",
-            "id": "VOC_ACADEMICWORD_L7_Q1",
-            "hint": "DEFINITION: A length or portion of time.",
-            "options": [
-                "PERIOD",
-                "DISPLAY",
-                "PARADE",
-                "RECEIPT"
-            ],
-            "explanation": "Academic context: The store saw its strongest sales during the holiday shopping PERIOD. Here, \"PERIOD\" describes a stretch of time, not a purchase document or decoration.",
-            "passage": "The store saw its strongest sales during the holiday shopping [TARGET]",
-            "correctAnswer": "PERIOD",
-            "instruction": "Drag the correct word to complete the sentence.",
-            "academicField": "Biology",
-            "collocations": [
-                "significant PERIOD",
-                "complex PERIOD",
-                "analyze the PERIOD"
-            ]
-        },
-        {
-            "word": "GOAL",
-            "interactionType": "choice",
-            "id": "VOC_ACADEMICWORD_L7_Q2",
-            "hint": "DEFINITION: An aim or desired result that a person works toward.",
-            "options": [
-                "ITINERARY",
-                "GOAL",
-                "VISA",
-                "SOUVENIR"
-            ],
-            "explanation": "Academic context: Her main GOAL this year is to save enough money for a trip to Japan. Here, \"GOAL\" means something a person works to achieve, not a travel document.",
-            "passage": "Her main [TARGET] this year is to save enough money for a trip to Japan",
-            "correctAnswer": "GOAL",
-            "instruction": "Drag the correct word to complete the sentence.",
-            "academicField": "Linguistics",
-            "collocations": [
-                "significant GOAL",
-                "complex GOAL",
-                "analyze the GOAL"
-            ]
-        },
-        {
-            "word": "TASK",
-            "interactionType": "choice",
-            "id": "VOC_ACADEMICWORD_L7_Q3",
-            "hint": "DEFINITION: A piece of work to be done, especially a tiresome one.",
-            "options": [
-                "TASK",
-                "COMPLIMENT",
-                "HOLIDAY",
-                "INVITATION"
-            ],
-            "explanation": "Academic context: Cleaning the garage was the last TASK on Dad's weekend to-do list. Here, \"TASK\" is a job that needs doing, not a celebration or remark.",
-            "passage": "Cleaning the garage was the last [TARGET] on Dad's weekend to-do list",
-            "correctAnswer": "TASK",
-            "instruction": "Drag the correct word to complete the sentence.",
-            "academicField": "Sociology",
-            "collocations": [
-                "significant TASK",
-                "complex TASK",
-                "analyze the TASK"
-            ]
-        },
-        {
-            "word": "TEAM",
-            "interactionType": "choice",
-            "id": "VOC_ACADEMICWORD_L8_Q1",
-            "hint": "DEFINITION: A group of people who work together, especially in sports or business.",
-            "options": [
-                "CLIPBOARD",
-                "TEAM",
-                "SCRUB",
-                "STRETCHER"
-            ],
-            "explanation": "Academic context: The hospital's surgical TEAM worked through the night to save the patient. Here, \"TEAM\" refers to a group of people working together, not a single piece of hospital equipment or clothing.",
-            "passage": "The hospital's surgical [TARGET] worked through the night to save the patient",
-            "correctAnswer": "TEAM",
-            "instruction": "Drag the correct word to complete the sentence.",
-            "academicField": "Psychology",
-            "collocations": [
-                "significant TEAM",
-                "complex TEAM",
-                "analyze the TEAM"
-            ]
-        },
-        {
-            "word": "RESOURCE",
-            "interactionType": "choice",
-            "id": "VOC_ACADEMICWORD_L8_Q2",
-            "hint": "DEFINITION: A stock or supply of something, such as money, materials, or staff, that can be drawn on when needed.",
-            "options": [
-                "PRESCRIPTION",
-                "RESOURCE",
-                "APPOINTMENT",
-                "CUSTOMER"
-            ],
-            "explanation": "Academic context: During flu season, the small rural clinic's most valuable RESOURCE was its small but dedicated nursing staff. Here, \"RESOURCE\" means a supply of something useful to draw on, not a person who buys goods, a scheduled visit, or a doctor's written order.",
-            "passage": "During flu season, the small rural clinic's most valuable [TARGET] was its small but dedicated nursing staff",
-            "correctAnswer": "RESOURCE",
-            "instruction": "Drag the correct word to complete the sentence.",
-            "academicField": "Economics",
-            "collocations": [
-                "significant RESOURCE",
-                "complex RESOURCE",
-                "analyze the RESOURCE"
-            ]
-        },
-        {
-            "word": "RULE",
-            "interactionType": "choice",
-            "id": "VOC_ACADEMICWORD_L8_Q3",
-            "hint": "DEFINITION: A statement that controls or guides behavior or action.",
-            "options": [
-                "RULE",
-                "CATALOG",
-                "DISPLAY",
-                "POSTER"
-            ],
-            "explanation": "Academic context: One important RULE at the library is that visitors must stay quiet. Here, \"RULE\" means a guideline for behavior, not a printed item found there.",
-            "passage": "One important [TARGET] at the library is that visitors must stay quiet",
-            "correctAnswer": "RULE",
-            "instruction": "Drag the correct word to complete the sentence.",
-            "academicField": "Biology",
-            "collocations": [
-                "significant RULE",
-                "complex RULE",
-                "analyze the RULE"
-            ]
-        },
-        {
-            "word": "LEVEL",
-            "interactionType": "choice",
-            "id": "VOC_ACADEMICWORD_L9_Q1",
-            "hint": "DEFINITION: A stage, position, or degree on a scale of rank or amount.",
-            "options": [
-                "SCOREBOARD",
-                "LEVEL",
-                "CONTROLLER",
-                "TROPHY"
-            ],
-            "explanation": "Academic context: After months of practice, she reached an advanced LEVEL in the video game. Here, \"LEVEL\" describes a stage or rank a player reaches, not game equipment.",
-            "passage": "After months of practice, she reached an advanced [TARGET] in the video game",
-            "correctAnswer": "LEVEL",
-            "instruction": "Drag the correct word to complete the sentence.",
-            "academicField": "Linguistics",
-            "collocations": [
-                "significant LEVEL",
-                "complex LEVEL",
-                "analyze the LEVEL"
-            ]
-        },
-        {
-            "word": "STYLE",
-            "interactionType": "choice",
-            "id": "VOC_ACADEMICWORD_L9_Q2",
-            "hint": "DEFINITION: A particular way of doing something; a manner or fashion.",
-            "options": [
-                "RECEIPT",
-                "INVOICE",
-                "STYLE",
-                "MENU"
-            ],
-            "explanation": "Academic context: The new cafe is known for its modern STYLE of furniture and lighting. Here, \"STYLE\" refers to a way of designing something, not a billing or food document.",
-            "passage": "The new cafe is known for its modern [TARGET] of furniture and lighting",
-            "correctAnswer": "STYLE",
-            "instruction": "Drag the correct word to complete the sentence.",
-            "academicField": "Sociology",
-            "collocations": [
-                "significant STYLE",
-                "complex STYLE",
-                "analyze the STYLE"
-            ]
-        },
-        {
-            "word": "FOCUS",
-            "interactionType": "choice",
-            "id": "VOC_ACADEMICWORD_L9_Q3",
-            "hint": "DEFINITION: Close attention or concentration on a particular thing.",
-            "options": [
-                "FOCUS",
-                "TEMPER",
-                "BALANCE",
-                "APPETITE"
-            ],
-            "explanation": "Academic context: During exam week, Maria lost her FOCUS because of the noise in the dorm. Here, \"FOCUS\" means concentrated attention, which fits losing it to noise better than the alternatives.",
-            "passage": "During exam week, Maria lost her [TARGET] because of the noise in the dorm",
-            "correctAnswer": "FOCUS",
-            "instruction": "Drag the correct word to complete the sentence.",
-            "academicField": "Psychology",
-            "collocations": [
-                "significant FOCUS",
-                "complex FOCUS",
-                "analyze the FOCUS"
-            ]
-        },
-        {
-            "word": "SECTION",
-            "interactionType": "choice",
-            "id": "VOC_ACADEMICWORD_L10_Q1",
-            "hint": "DEFINITION: A part or division of something larger.",
-            "options": [
-                "SECTION",
-                "COUNTER",
-                "AISLE",
-                "CART"
-            ],
-            "explanation": "Academic context: The grocery store recently rearranged the SECTION where the fresh fruit is kept. Here, \"SECTION\" names the divided area being described, not the walkway, the checkout counter, or the shopping cart.",
-            "passage": "The grocery store recently rearranged the [TARGET] where the fresh fruit is kept",
-            "correctAnswer": "SECTION",
-            "instruction": "Drag the correct word to complete the sentence.",
-            "academicField": "Economics",
-            "collocations": [
-                "significant SECTION",
-                "complex SECTION",
-                "analyze the SECTION"
-            ]
-        },
-        {
-            "word": "FEATURE",
-            "interactionType": "choice",
-            "id": "VOC_ACADEMICWORD_L10_Q2",
-            "hint": "DEFINITION: A distinctive attribute or aspect of something.",
-            "options": [
-                "DISCOUNT",
-                "COMPLAINT",
-                "WARRANTY",
-                "FEATURE"
-            ],
-            "explanation": "Academic context: The biggest FEATURE of the new phone is its long battery life. Here, \"FEATURE\" means a notable characteristic of a product, not a sales term.",
-            "passage": "The biggest [TARGET] of the new phone is its long battery life",
-            "correctAnswer": "FEATURE",
-            "instruction": "Drag the correct word to complete the sentence.",
-            "academicField": "Biology",
-            "collocations": [
-                "significant FEATURE",
-                "complex FEATURE",
-                "analyze the FEATURE"
-            ]
-        },
-        {
-            "word": "OPTION",
-            "interactionType": "choice",
-            "id": "VOC_ACADEMICWORD_L10_Q3",
-            "hint": "DEFINITION: A thing that may be chosen; a choice.",
-            "options": [
-                "INVOICE",
-                "OPTION",
-                "APOLOGY",
-                "REFUND"
-            ],
-            "explanation": "Academic context: The airline offered passengers the OPTION of a window or aisle seat. Here, \"OPTION\" is a choice someone can pick, not money returned or a document.",
-            "passage": "The airline offered passengers the [TARGET] of a window or aisle seat",
-            "correctAnswer": "OPTION",
-            "instruction": "Drag the correct word to complete the sentence.",
-            "academicField": "Linguistics",
-            "collocations": [
-                "significant OPTION",
-                "complex OPTION",
-                "analyze the OPTION"
-            ]
-        }
-    ],
-    "gameType": "academicWord",
-    "batchIndex": 1
+  "levels": "1-10",
+  "quests": [
+    {
+      "word": "ANALYZE",
+      "interactionType": "choice",
+      "id": "VOC_ACADEMICWORD_L1_Q1",
+      "hint": "DEFINITION: To examine something in detail in order to understand it.",
+      "options": [
+        "DISCARD",
+        "ANALYZE",
+        "ANNOUNCE",
+        "IGNORE"
+      ],
+      "explanation": "ANALYZE describes the careful, detailed examination the biologists use to understand what the samples reveal about pollution — not throwing the samples away, making a public statement about them, or simply disregarding them.",
+      "passage": "Marine biologists carefully [TARGET] water samples to determine how pollution levels have changed over the decade.",
+      "correctAnswer": "ANALYZE",
+      "instruction": "Choose the word that best completes the sentence.",
+      "academicField": "Biology",
+      "collocations": [
+        "analyze data",
+        "closely analyze",
+        "analyze the results"
+      ]
+    },
+    {
+      "word": "APPROACH",
+      "interactionType": "choice",
+      "id": "VOC_ACADEMICWORD_L1_Q2",
+      "hint": "DEFINITION: A way of dealing with or thinking about something.",
+      "options": [
+        "SCHEDULE",
+        "PUNISHMENT",
+        "OUTCOME",
+        "APPROACH"
+      ],
+      "explanation": "APPROACH names the particular way the teacher chose to handle the topic — a fresh way of teaching, not a fixed schedule, a form of discipline, or a result.",
+      "passage": "The teacher tried a new [TARGET] to explain fractions after noticing that students kept making the same mistakes.",
+      "correctAnswer": "APPROACH",
+      "instruction": "Select the answer that fits the sentence best.",
+      "academicField": "Education",
+      "collocations": [
+        "take a new approach",
+        "practical approach",
+        "approach to teaching"
+      ]
+    },
+    {
+      "word": "FACTOR",
+      "interactionType": "choice",
+      "id": "VOC_ACADEMICWORD_L1_Q3",
+      "hint": "DEFINITION: One of several things that influences or contributes to a result.",
+      "options": [
+        "FACTOR",
+        "TREND",
+        "SYMPTOM",
+        "CONSEQUENCE"
+      ],
+      "explanation": "FACTOR labels each separate influence that contributes to economic growth — distinct from a pattern over time (TREND), a resulting effect (CONSEQUENCE), or a warning sign (SYMPTOM).",
+      "passage": "Several key [TARGET]s, including interest rates and consumer confidence, determine whether a national economy grows or slows.",
+      "correctAnswer": "FACTOR",
+      "instruction": "Pick the word that completes the sentence correctly.",
+      "academicField": "Economics",
+      "collocations": [
+        "key factor",
+        "contributing factor",
+        "factor in the decision"
+      ]
+    },
+    {
+      "word": "EVIDENCE",
+      "interactionType": "choice",
+      "id": "VOC_ACADEMICWORD_L2_Q1",
+      "hint": "DEFINITION: Facts or information that show whether something is true.",
+      "options": [
+        "CLAIM",
+        "OPINION",
+        "EVIDENCE",
+        "RUMOR"
+      ],
+      "explanation": "EVIDENCE points to the actual data the team gathered — a CLAIM is only an assertion, an OPINION is a personal judgment, and a RUMOR is unverified gossip, none of which carries the same proof.",
+      "passage": "The research team found strong [TARGET] linking regular exercise to improved memory in older adults.",
+      "correctAnswer": "EVIDENCE",
+      "instruction": "Choose the correct word for the sentence.",
+      "academicField": "Psychology",
+      "collocations": [
+        "strong evidence",
+        "evidence suggests",
+        "supporting evidence"
+      ]
+    },
+    {
+      "word": "IDENTIFY",
+      "interactionType": "choice",
+      "id": "VOC_ACADEMICWORD_L2_Q2",
+      "hint": "DEFINITION: To recognize and name a specific thing.",
+      "options": [
+        "IDENTIFY",
+        "IGNORE",
+        "REPAIR",
+        "DESTROY"
+      ],
+      "explanation": "IDENTIFY captures the act of recognizing and pinpointing the bleached areas from the images — the scientists were not fixing the damage, causing it, or overlooking it.",
+      "passage": "Using satellite images, scientists were able to [TARGET] three new areas of coral bleaching along the reef.",
+      "correctAnswer": "IDENTIFY",
+      "instruction": "Select the word that best fits the blank.",
+      "academicField": "Environmental Science",
+      "collocations": [
+        "identify a pattern",
+        "identify the cause",
+        "help identify"
+      ]
+    },
+    {
+      "word": "OCCUR",
+      "interactionType": "choice",
+      "id": "VOC_ACADEMICWORD_L2_Q3",
+      "hint": "DEFINITION: To happen or take place.",
+      "options": [
+        "PAUSE",
+        "REVERSE",
+        "VANISH",
+        "OCCUR"
+      ],
+      "explanation": "OCCUR simply means that the shift takes place — it doesn't pause, disappear, or run backward.",
+      "passage": "Historians note that major shifts in trade routes often [TARGET] alongside changes in naval technology.",
+      "correctAnswer": "OCCUR",
+      "instruction": "Choose the word that completes the sentence correctly.",
+      "academicField": "History",
+      "collocations": [
+        "occur naturally",
+        "likely to occur",
+        "occur simultaneously"
+      ]
+    },
+    {
+      "word": "SIGNIFICANT",
+      "interactionType": "choice",
+      "id": "VOC_ACADEMICWORD_L3_Q1",
+      "hint": "DEFINITION: Large or important enough to be noticed or to matter.",
+      "options": [
+        "MINOR",
+        "SIGNIFICANT",
+        "IDENTICAL",
+        "TEMPORARY"
+      ],
+      "explanation": "SIGNIFICANT marks a difference large enough to matter, unlike a MINOR change, an IDENTICAL result, or one that fades away (TEMPORARY).",
+      "passage": "The therapy produced a [TARGET] improvement in patients' anxiety levels compared with those who received no treatment.",
+      "correctAnswer": "SIGNIFICANT",
+      "instruction": "Pick the best word to complete the sentence.",
+      "academicField": "Psychology",
+      "collocations": [
+        "statistically significant",
+        "significant difference",
+        "significant impact"
+      ]
+    },
+    {
+      "word": "PROCESS",
+      "interactionType": "choice",
+      "id": "VOC_ACADEMICWORD_L3_Q2",
+      "hint": "DEFINITION: A series of actions or steps taken to achieve a result.",
+      "options": [
+        "PRODUCT",
+        "MATERIAL",
+        "PROCESS",
+        "INGREDIENT"
+      ],
+      "explanation": "PROCESS names the sequence of steps involved in converting sunlight into energy — not the finished PRODUCT, a raw MATERIAL, or a single INGREDIENT.",
+      "passage": "Photosynthesis is the [TARGET] by which plants convert sunlight into chemical energy.",
+      "correctAnswer": "PROCESS",
+      "instruction": "Select the correct word.",
+      "academicField": "Biology",
+      "collocations": [
+        "complex process",
+        "process of converting",
+        "undergo a process"
+      ]
+    },
+    {
+      "word": "REQUIRE",
+      "interactionType": "choice",
+      "id": "VOC_ACADEMICWORD_L3_Q3",
+      "hint": "DEFINITION: To need something or make it necessary.",
+      "options": [
+        "REQUIRE",
+        "FORBID",
+        "EXCUSE",
+        "DELAY"
+      ],
+      "explanation": "REQUIRE shows that the letters are a necessary part of the application, the opposite of being forbidden, excused, or postponed.",
+      "passage": "Most graduate programs [TARGET] applicants to submit letters of recommendation along with their transcripts.",
+      "correctAnswer": "REQUIRE",
+      "instruction": "Choose the word that fits best.",
+      "academicField": "Education",
+      "collocations": [
+        "require applicants to",
+        "legally required",
+        "required documentation"
+      ]
+    },
+    {
+      "word": "METHOD",
+      "interactionType": "choice",
+      "id": "VOC_ACADEMICWORD_L4_Q1",
+      "hint": "DEFINITION: A particular way of doing something, especially a systematic one.",
+      "options": [
+        "OUTCOME",
+        "COMPLAINT",
+        "WARNING",
+        "METHOD"
+      ],
+      "explanation": "METHOD refers to the systematic technique the engineers created, not a result (OUTCOME), a grievance (COMPLAINT), or an alert (WARNING).",
+      "passage": "The engineers developed a new [TARGET] for compressing video files without losing picture quality.",
+      "correctAnswer": "METHOD",
+      "instruction": "Choose the word that best completes the sentence.",
+      "academicField": "Computer Science",
+      "collocations": [
+        "develop a method",
+        "effective method",
+        "method for analyzing"
+      ]
+    },
+    {
+      "word": "CONCLUDE",
+      "interactionType": "choice",
+      "id": "VOC_ACADEMICWORD_L4_Q2",
+      "hint": "DEFINITION: To decide something is true after considering the evidence.",
+      "options": [
+        "ASSUME",
+        "CONCLUDE",
+        "QUESTION",
+        "IGNORE"
+      ],
+      "explanation": "CONCLUDE reflects a judgment reached after weighing the survey data, unlike simply ASSUMING something without evidence, QUESTIONING it, or disregarding it.",
+      "passage": "After reviewing survey responses from over a thousand households, the researchers [TARGET] that income has little effect on reported happiness.",
+      "correctAnswer": "CONCLUDE",
+      "instruction": "Select the answer that completes the sentence.",
+      "academicField": "Sociology",
+      "collocations": [
+        "researchers conclude",
+        "conclude that",
+        "safely conclude"
+      ]
+    },
+    {
+      "word": "ACCURATE",
+      "interactionType": "choice",
+      "id": "VOC_ACADEMICWORD_L4_Q3",
+      "hint": "DEFINITION: Correct and free from errors.",
+      "options": [
+        "OUTDATED",
+        "INCOMPLETE",
+        "ACCURATE",
+        "DUPLICATE"
+      ],
+      "explanation": "ACCURATE stresses that the records must be correct and up to date, as opposed to being OUTDATED, missing information (INCOMPLETE), or simply copied (DUPLICATE).",
+      "passage": "Doctors need [TARGET] patient records to avoid prescribing medications that could cause harmful interactions.",
+      "correctAnswer": "ACCURATE",
+      "instruction": "Pick the word that fits the sentence.",
+      "academicField": "Public Health",
+      "collocations": [
+        "accurate data",
+        "accurate information",
+        "highly accurate"
+      ]
+    },
+    {
+      "word": "RESPOND",
+      "interactionType": "choice",
+      "id": "VOC_ACADEMICWORD_L5_Q1",
+      "hint": "DEFINITION: To react to something in a particular way.",
+      "options": [
+        "IGNORE",
+        "RESIST",
+        "REVERSE",
+        "RESPOND"
+      ],
+      "explanation": "RESPOND captures the root's reaction to the pull of gravity; growing downward is a reaction, so it can't IGNORE, RESIST, or REVERSE the force it's answering to.",
+      "passage": "In the experiment, plant roots [TARGET] to the pull of gravity within hours by curving steadily downward.",
+      "correctAnswer": "RESPOND",
+      "instruction": "Choose the correct word.",
+      "academicField": "Biology",
+      "collocations": [
+        "respond to stimuli",
+        "quick to respond",
+        "respond accordingly"
+      ]
+    },
+    {
+      "word": "SOURCE",
+      "interactionType": "choice",
+      "id": "VOC_ACADEMICWORD_L5_Q2",
+      "hint": "DEFINITION: A document or person providing firsthand information or evidence.",
+      "options": [
+        "SUMMARY",
+        "OPINION",
+        "COPY",
+        "SOURCE"
+      ],
+      "explanation": "SOURCE marks the diary as original firsthand material, unlike a later SUMMARY of events, a personal OPINION, or a COPY of another document.",
+      "passage": "Historians treat the diary as a valuable primary [TARGET] because it was written by someone who witnessed the event firsthand.",
+      "correctAnswer": "SOURCE",
+      "instruction": "Select the best word for the blank.",
+      "academicField": "History",
+      "collocations": [
+        "primary source",
+        "reliable source",
+        "source of information"
+      ]
+    },
+    {
+      "word": "RELEVANT",
+      "interactionType": "choice",
+      "id": "VOC_ACADEMICWORD_L5_Q3",
+      "hint": "DEFINITION: Closely connected to the matter at hand.",
+      "options": [
+        "RARE",
+        "RELEVANT",
+        "ANONYMOUS",
+        "EXPENSIVE"
+      ],
+      "explanation": "RELEVANT signals sources that directly relate to the research question, not ones that are simply RARE, ANONYMOUS, or costly to access.",
+      "passage": "The professor asked students to cite only sources [TARGET] to their specific research question, not general background reading.",
+      "correctAnswer": "RELEVANT",
+      "instruction": "Choose the word that best completes the sentence.",
+      "academicField": "Education",
+      "collocations": [
+        "relevant information",
+        "directly relevant",
+        "relevant to the topic"
+      ]
+    },
+    {
+      "word": "ESTIMATE",
+      "interactionType": "choice",
+      "id": "VOC_ACADEMICWORD_L6_Q1",
+      "hint": "DEFINITION: To roughly calculate or judge the value or amount of something.",
+      "options": [
+        "DENY",
+        "DISPROVE",
+        "ESTIMATE",
+        "GUARANTEE"
+      ],
+      "explanation": "ESTIMATE reflects a reasoned approximation based on the tree ring data, not a flat denial, a disproof, or an absolute guarantee.",
+      "passage": "Using tree ring data, scientists [TARGET] that the drought lasted nearly a decade.",
+      "correctAnswer": "ESTIMATE",
+      "instruction": "Pick the word that fits.",
+      "academicField": "Environmental Science",
+      "collocations": [
+        "estimate the cost",
+        "roughly estimate",
+        "scientists estimate"
+      ]
+    },
+    {
+      "word": "CONSIST",
+      "interactionType": "choice",
+      "id": "VOC_ACADEMICWORD_L6_Q2",
+      "hint": "DEFINITION: To be made up of particular parts.",
+      "options": [
+        "CONSIST",
+        "VANISH",
+        "DIVIDE",
+        "EXPAND"
+      ],
+      "explanation": "CONSIST OF signals what the cell is made up of; VANISH, DIVIDE, and EXPAND don't naturally combine with \"of\" to list components.",
+      "passage": "A typical animal cell [TARGET]s of a nucleus, cytoplasm, and an outer membrane.",
+      "correctAnswer": "CONSIST",
+      "instruction": "Choose the correct word.",
+      "academicField": "Biology",
+      "collocations": [
+        "consist of",
+        "largely consist of",
+        "consist primarily of"
+      ]
+    },
+    {
+      "word": "VARY",
+      "interactionType": "choice",
+      "id": "VOC_ACADEMICWORD_L6_Q3",
+      "hint": "DEFINITION: To differ or change from one instance to another.",
+      "options": [
+        "MATCH",
+        "REPEAT",
+        "FREEZE",
+        "VARY"
+      ],
+      "explanation": "VARY highlights that prices differ across regions, the opposite of staying the same (MATCH), repeating identically (REPEAT), or remaining fixed (FREEZE).",
+      "passage": "Prices for the same product often [TARGET] significantly from one region to another due to differences in local demand.",
+      "correctAnswer": "VARY",
+      "instruction": "Select the word that best fits.",
+      "academicField": "Economics",
+      "collocations": [
+        "vary widely",
+        "prices vary",
+        "vary depending on"
+      ]
+    },
+    {
+      "word": "FEATURE",
+      "interactionType": "choice",
+      "id": "VOC_ACADEMICWORD_L7_Q1",
+      "hint": "DEFINITION: A distinctive attribute or characteristic of something.",
+      "options": [
+        "FEATURE",
+        "ACCIDENT",
+        "RUMOR",
+        "EXCEPTION"
+      ],
+      "explanation": "FEATURE names a defining characteristic of the language, not a chance occurrence (ACCIDENT), an unverified claim (RUMOR), or a case that breaks the rule (EXCEPTION).",
+      "passage": "Tone is a defining [TARGET] of many East Asian languages, where pitch can change the meaning of a word entirely.",
+      "correctAnswer": "FEATURE",
+      "instruction": "Choose the word that completes the sentence.",
+      "academicField": "Linguistics",
+      "collocations": [
+        "defining feature",
+        "key feature",
+        "distinctive feature"
+      ]
+    },
+    {
+      "word": "PRIMARY",
+      "interactionType": "choice",
+      "id": "VOC_ACADEMICWORD_L7_Q2",
+      "hint": "DEFINITION: Main or most important; coming first in importance.",
+      "options": [
+        "SECONDARY",
+        "OPTIONAL",
+        "PRIMARY",
+        "OUTDATED"
+      ],
+      "explanation": "PRIMARY marks this as the leading strategy, ranked above a SECONDARY one, an OPTIONAL step, or an OUTDATED approach.",
+      "passage": "Reducing sugar intake is considered the [TARGET] strategy for preventing childhood obesity, ahead of exercise programs.",
+      "correctAnswer": "PRIMARY",
+      "instruction": "Pick the correct word.",
+      "academicField": "Public Health",
+      "collocations": [
+        "primary cause",
+        "primary source",
+        "primary concern"
+      ]
+    },
+    {
+      "word": "OBTAIN",
+      "interactionType": "choice",
+      "id": "VOC_ACADEMICWORD_L7_Q3",
+      "hint": "DEFINITION: To get or acquire something, especially through effort.",
+      "options": [
+        "OBTAIN",
+        "WAIVE",
+        "REVOKE",
+        "POSTPONE"
+      ],
+      "explanation": "OBTAIN means the researchers must actively secure consent first, not WAIVE the requirement, REVOKE it afterward, or POSTPONE the interview.",
+      "passage": "Researchers must [TARGET] informed consent from every participant before beginning an interview.",
+      "correctAnswer": "OBTAIN",
+      "instruction": "Choose the word that fits the sentence.",
+      "academicField": "Sociology",
+      "collocations": [
+        "obtain consent",
+        "obtain permission",
+        "obtain approval"
+      ]
+    },
+    {
+      "word": "RESEARCH",
+      "interactionType": "choice",
+      "id": "VOC_ACADEMICWORD_L8_Q1",
+      "hint": "DEFINITION: The systematic investigation of a subject to discover facts or reach conclusions.",
+      "options": [
+        "GOSSIP",
+        "ADVERTISEMENT",
+        "FOLKLORE",
+        "RESEARCH"
+      ],
+      "explanation": "RESEARCH points to a systematic study behind the claim, unlike unverified GOSSIP, a paid ADVERTISEMENT, or traditional FOLKLORE.",
+      "passage": "New [TARGET] suggests that brief daily meditation can measurably reduce stress hormones in adults.",
+      "correctAnswer": "RESEARCH",
+      "instruction": "Select the word that best completes the sentence.",
+      "academicField": "Psychology",
+      "collocations": [
+        "conduct research",
+        "research suggests",
+        "recent research"
+      ]
+    },
+    {
+      "word": "FUNCTION",
+      "interactionType": "choice",
+      "id": "VOC_ACADEMICWORD_L8_Q2",
+      "hint": "DEFINITION: The purpose or role that something serves.",
+      "options": [
+        "FUNCTION",
+        "LOCATION",
+        "SHAPE",
+        "COLOR"
+      ],
+      "explanation": "FUNCTION describes what the kidneys are meant to do, not where they sit (LOCATION), how they look (SHAPE), or their COLOR.",
+      "passage": "The kidneys' main [TARGET] is to filter waste products out of the bloodstream.",
+      "correctAnswer": "FUNCTION",
+      "instruction": "Choose the correct word.",
+      "academicField": "Biology",
+      "collocations": [
+        "biological function",
+        "serve a function",
+        "main function"
+      ]
+    },
+    {
+      "word": "CONTEXT",
+      "interactionType": "choice",
+      "id": "VOC_ACADEMICWORD_L8_Q3",
+      "hint": "DEFINITION: The surrounding words or situation that help explain the meaning of something.",
+      "options": [
+        "DIALECT",
+        "ACCENT",
+        "CONTEXT",
+        "GRAMMAR"
+      ],
+      "explanation": "CONTEXT is what surrounds the word and clarifies its meaning, distinct from a regional DIALECT, a pronunciation ACCENT, or sentence GRAMMAR.",
+      "passage": "The word \"bank\" can mean a riverside or a financial institution, so the surrounding [TARGET] determines which sense is intended.",
+      "correctAnswer": "CONTEXT",
+      "instruction": "Pick the word that fits best.",
+      "academicField": "Linguistics",
+      "collocations": [
+        "in context",
+        "historical context",
+        "context clues"
+      ]
+    },
+    {
+      "word": "CONSTANT",
+      "interactionType": "choice",
+      "id": "VOC_ACADEMICWORD_L9_Q1",
+      "hint": "DEFINITION: Remaining the same and not changing over time.",
+      "options": [
+        "RANDOM",
+        "UNKNOWN",
+        "CONSTANT",
+        "ADJUSTABLE"
+      ],
+      "explanation": "CONSTANT shows the temperature stayed fixed throughout the experiment, unlike being left RANDOM, UNKNOWN, or free to be ADJUSTED.",
+      "passage": "In the experiment, the temperature of the water bath was kept [TARGET] so that only one variable, light exposure, would change.",
+      "correctAnswer": "CONSTANT",
+      "instruction": "Choose the word that completes the sentence.",
+      "academicField": "Physics",
+      "collocations": [
+        "remain constant",
+        "kept constant",
+        "constant temperature"
+      ]
+    },
+    {
+      "word": "FOCUS",
+      "interactionType": "choice",
+      "id": "VOC_ACADEMICWORD_L9_Q2",
+      "hint": "DEFINITION: To concentrate attention or effort on a particular thing.",
+      "options": [
+        "SKIP",
+        "DELAY",
+        "SUMMARIZE",
+        "FOCUS"
+      ],
+      "explanation": "FOCUS ON means directing attention toward the most important topics, rather than SKIPPING them, putting them off (DELAY), or just SUMMARIZING them.",
+      "passage": "Instead of covering every chapter equally, the study guide encourages students to [TARGET] on the topics most likely to appear on the exam.",
+      "correctAnswer": "FOCUS",
+      "instruction": "Select the correct word.",
+      "academicField": "Education",
+      "collocations": [
+        "focus on",
+        "sharpen your focus",
+        "narrow focus"
+      ]
+    },
+    {
+      "word": "SUMMARY",
+      "interactionType": "choice",
+      "id": "VOC_ACADEMICWORD_L9_Q3",
+      "hint": "DEFINITION: A brief statement of the main points of something.",
+      "options": [
+        "FOOTNOTE",
+        "SUMMARY",
+        "APPENDIX",
+        "DISCLAIMER"
+      ],
+      "explanation": "SUMMARY condenses the key findings for quick reading, unlike a FOOTNOTE, an added APPENDIX, or a legal DISCLAIMER.",
+      "passage": "At the end of the report, the authors include a brief [TARGET] of their main findings for readers short on time.",
+      "correctAnswer": "SUMMARY",
+      "instruction": "Choose the word that best fits.",
+      "academicField": "Communication",
+      "collocations": [
+        "brief summary",
+        "summary of findings",
+        "provide a summary"
+      ]
+    },
+    {
+      "word": "ILLUSTRATE",
+      "interactionType": "choice",
+      "id": "VOC_ACADEMICWORD_L10_Q1",
+      "hint": "DEFINITION: To explain or make something clear by using examples, pictures, or diagrams.",
+      "options": [
+        "ILLUSTRATE",
+        "CONCEAL",
+        "CONTRADICT",
+        "DELAY"
+      ],
+      "explanation": "ILLUSTRATE describes using the diagram to make the process clear, the opposite of hiding it (CONCEAL), contradicting it, or delaying the explanation.",
+      "passage": "The teacher used a simple diagram to [TARGET] how blood circulates through the heart and lungs.",
+      "correctAnswer": "ILLUSTRATE",
+      "instruction": "Pick the word that fits the sentence.",
+      "academicField": "Education",
+      "collocations": [
+        "illustrate a point",
+        "diagram to illustrate",
+        "illustrate the process"
+      ]
+    },
+    {
+      "word": "DISTINCT",
+      "interactionType": "choice",
+      "id": "VOC_ACADEMICWORD_L10_Q2",
+      "hint": "DEFINITION: Clearly different or separate from something else.",
+      "options": [
+        "SIMILAR",
+        "IDENTICAL",
+        "DISTINCT",
+        "MATCHING"
+      ],
+      "explanation": "DISTINCT stresses that the pronunciation patterns are clearly different, the opposite of being SIMILAR, IDENTICAL, or MATCHING.",
+      "passage": "Although the two dialects share many words, they have [TARGET] pronunciation patterns that make speakers easy to tell apart.",
+      "correctAnswer": "DISTINCT",
+      "instruction": "Choose the correct word.",
+      "academicField": "Linguistics",
+      "collocations": [
+        "distinct from",
+        "clearly distinct",
+        "distinct pattern"
+      ]
+    },
+    {
+      "word": "GENERATE",
+      "interactionType": "choice",
+      "id": "VOC_ACADEMICWORD_L10_Q3",
+      "hint": "DEFINITION: To produce or create something.",
+      "options": [
+        "DELETE",
+        "REJECT",
+        "STORE",
+        "GENERATE"
+      ],
+      "explanation": "GENERATE captures the algorithm producing many candidate solutions, not deleting them, rejecting them outright, or merely storing existing ones.",
+      "passage": "The algorithm can [TARGET] thousands of possible solutions before selecting the most efficient one.",
+      "correctAnswer": "GENERATE",
+      "instruction": "Select the word that best completes the sentence.",
+      "academicField": "Computer Science",
+      "collocations": [
+        "generate results",
+        "generate ideas",
+        "automatically generate"
+      ]
+    }
+  ],
+  "gameType": "academicWord",
+  "batchIndex": 1
 }

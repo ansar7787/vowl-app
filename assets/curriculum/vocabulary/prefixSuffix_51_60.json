@@ -3,483 +3,483 @@
     "quests": [
         {
             "id": "VOC_PREFIXSUFFIX_L51_Q1",
-            "hint": "To reschedule a dentist appointment to a later date because of a scheduling conflict.",
-            "explanation": "POST- means 'after'. POST- + PONE = POSTPONE, meaning to delay something until a later time.",
+            "hint": "Buying tickets today for a concert that happens next month.",
+            "explanation": "PRE- means 'before the event.' PRE- + BOOK = PREBOOK, to reserve something ahead of time. RE- would instead mean booking a second time, which fits a very different situation, like fixing a cancelled reservation.",
             "interactionType": "choice",
-            "correctAnswer": "POSTPONE",
-            "rootWord": "PONE",
+            "correctAnswer": "PRE-",
+            "rootWord": "BOOK",
             "options": [
-                "-ISM",
+                "PRE-",
+                "RE-",
                 "DE-",
-                "-LY",
-                "POST-"
+                "UN-"
             ],
-            "meaningBreakdown": "POST (prefix, 'after') + PONE (root, 'place')",
-            "instruction": "Choose the correct answer."
+            "meaningBreakdown": "PRE (prefix, 'before') + BOOK (root)",
+            "instruction": "RE- means 'again.' PRE- means 'before.' Which one fits here?"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L51_Q2",
-            "hint": "Describing the economic recovery a country experiences in the years following a conflict.",
-            "explanation": "POST- means 'after'. POST- + WAR = POSTWAR, meaning occurring after a war.",
+            "hint": "Calling the airline a second time because your first call got disconnected.",
+            "explanation": "RE- ('again') fits RECALL in this sense, repeating an action already attempted. PRE- would instead mean calling before something happens, which doesn't match a follow-up call after a dropped line.",
             "interactionType": "choice",
-            "correctAnswer": "POSTWAR",
-            "rootWord": "WAR",
+            "correctAnswer": "RE-",
+            "rootWord": "CALL",
             "options": [
-                "-ISH",
-                "POST-",
-                "SUB-",
-                "-HOOD"
+                "PRE-",
+                "DE-",
+                "MIS-",
+                "RE-"
             ],
-            "meaningBreakdown": "POST (prefix, 'after') + WAR (root)",
-            "instruction": "Choose the correct answer."
+            "meaningBreakdown": "RE (prefix, 'again') + CALL (root)",
+            "instruction": "RE- means 'again.' PRE- means 'before.' Which one fits here?"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L51_Q3",
-            "hint": "The playoff games a team competes in after the regular schedule ends.",
-            "explanation": "POST- means 'after'. POST- + SEASON = POSTSEASON, meaning occurring after the regular season.",
+            "hint": "A word that means 'to guess an outcome before it happens,' based on evidence you already have.",
+            "explanation": "PREDICT is PRE- ('before') + DICT ('say'), to say what will happen before it does. Notice it isn't REDICT \u2014 there's no 'saying again' involved, only anticipating the future.",
             "interactionType": "choice",
-            "correctAnswer": "POSTSEASON",
-            "rootWord": "SEASON",
+            "correctAnswer": "PRE-",
+            "rootWord": "DICT",
             "options": [
-                "POST-",
-                "IM-",
-                "-LY",
-                "-ISM"
+                "RE-",
+                "UN-",
+                "MIS-",
+                "PRE-"
             ],
-            "meaningBreakdown": "POST (prefix, 'after') + SEASON (root)",
-            "instruction": "Choose the correct answer."
+            "meaningBreakdown": "PRE (prefix, 'before') + DICT (root, 'say')",
+            "instruction": "RE- means 'again.' PRE- means 'before.' Which one fits here?"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L52_Q1",
-            "hint": "To move forward with the meeting once the last guest finally arrives.",
-            "explanation": "PRO- means 'forward'. PRO- + CEED = PROCEED, meaning to move forward or continue.",
+            "hint": "Taking off a jacket you had zipped up a moment earlier.",
+            "explanation": "UN- reverses a specific, often physical action \u2014 ZIP becomes UNZIP, the exact opposite motion. DIS- tends to attach to more abstract ideas (agreement, comfort) rather than a simple physical reversal like this.",
             "interactionType": "choice",
-            "correctAnswer": "PROCEED",
-            "rootWord": "CEED",
+            "correctAnswer": "UN-",
+            "rootWord": "ZIP",
             "options": [
-                "-ISH",
-                "NON-",
-                "-ER",
-                "PRO-"
+                "DIS-",
+                "MIS-",
+                "UN-",
+                "DE-"
             ],
-            "meaningBreakdown": "PRO (prefix, 'forward') + CEED (root, 'go')",
-            "instruction": "Choose the correct answer."
+            "meaningBreakdown": "UN (prefix, reverses the action) + ZIP (root)",
+            "instruction": "UN- reverses an action. DIS- often means 'not' for more abstract ideas. Which fits here?"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L52_Q2",
-            "hint": "To move a hardworking employee up to a senior management position.",
-            "explanation": "PRO- means 'forward'. PRO- + MOTE = PROMOTE, meaning to raise someone to a higher position.",
+            "hint": "Two business partners ending their working relationship after years together.",
+            "explanation": "DISSOLVE (as in DISSOLVE a partnership) uses DIS- because it's describing an abstract relationship ending, not a physical object being reversed. UN- typically doesn't attach this way \u2014 'unsolve' means something else entirely (to work out an unsolved case).",
             "interactionType": "choice",
-            "correctAnswer": "PROMOTE",
-            "rootWord": "MOTE",
+            "correctAnswer": "DIS-",
+            "rootWord": "SOLVE",
             "options": [
-                "-ISM",
-                "CO-",
-                "-IZE",
-                "PRO-"
+                "UN-",
+                "MIS-",
+                "DIS-",
+                "DE-"
             ],
-            "meaningBreakdown": "PRO (prefix, 'forward') + MOTE (root, 'move')",
-            "instruction": "Choose the correct answer."
+            "meaningBreakdown": "DIS (prefix, 'the opposite of') + SOLVE (root, 'loosen')",
+            "instruction": "UN- reverses an action. DIS- often means 'not' for more abstract ideas. Which fits here?"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L52_Q3",
-            "hint": "To gather with signs outside city hall, speaking out against a new policy.",
-            "explanation": "PRO- can mean 'in favor of' or, combined here, 'forth'. PRO- + TEST = PROTEST, meaning to publicly object to something.",
+            "hint": "Removing the plug from the wall so an appliance is no longer connected to power.",
+            "explanation": "UN- + PLUG = UNPLUG, the direct physical reversal of plugging something in. DIS- would sound unnatural here \u2014 English speakers don't say 'displug,' since UN- is the prefix this specific action takes.",
             "interactionType": "choice",
-            "correctAnswer": "PROTEST",
-            "rootWord": "TEST",
+            "correctAnswer": "UN-",
+            "rootWord": "PLUG",
             "options": [
-                "EN-",
-                "-MENT",
-                "-ISM",
-                "PRO-"
+                "DIS-",
+                "UN-",
+                "DE-",
+                "NON-"
             ],
-            "meaningBreakdown": "PRO (prefix, 'forth') + TEST (root)",
-            "instruction": "Choose the correct answer."
+            "meaningBreakdown": "UN (prefix, reverses the action) + PLUG (root)",
+            "instruction": "UN- reverses an action. DIS- often means 'not' for more abstract ideas. Which fits here?"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L53_Q1",
-            "hint": "The printer jamming right before an important deadline, refusing to work properly.",
-            "explanation": "MAL- means 'badly' or 'poorly'. MAL- + FUNCTION = MALFUNCTION, meaning to fail to work correctly.",
+            "hint": "Sending a package to the wrong address by accident because you swapped two digits.",
+            "explanation": "MIS- + DIRECT = MISDIRECT, to send or guide something incorrectly, by mistake. DIS- would instead suggest actively refusing to direct something, not simply making an error.",
             "interactionType": "choice",
-            "correctAnswer": "MALFUNCTION",
-            "rootWord": "FUNCTION",
+            "correctAnswer": "MIS-",
+            "rootWord": "DIRECT",
             "options": [
-                "-ITY",
                 "DIS-",
-                "MAL-",
-                "-SHIP"
+                "MIS-",
+                "UN-",
+                "NON-"
             ],
-            "meaningBreakdown": "MAL (prefix, 'badly') + FUNCTION (root)",
-            "instruction": "Choose the correct answer."
+            "meaningBreakdown": "MIS (prefix, 'wrongly') + DIRECT (root)",
+            "instruction": "MIS- means 'wrongly.' DIS- means 'not/the opposite of.' Which fits here?"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L53_Q2",
-            "hint": "A serious health crisis caused by a diet lacking essential vitamins and minerals.",
-            "explanation": "MAL- means 'badly' or 'insufficiently'. MAL- + NUTRITION = MALNUTRITION, meaning poor or insufficient nutrition.",
+            "hint": "A teenager who ignores their curfew and stays out anyway, on purpose.",
+            "explanation": "DIS- + OBEY = DISOBEY, to deliberately not follow a rule. This is a choice, not an accident \u2014 which is exactly why it takes DIS- ('not') instead of MIS- ('wrongly, by mistake').",
             "interactionType": "choice",
-            "correctAnswer": "MALNUTRITION",
-            "rootWord": "NUTRITION",
+            "correctAnswer": "DIS-",
+            "rootWord": "OBEY",
             "options": [
-                "-HOOD",
-                "NON-",
-                "MAL-",
-                "-IFY"
+                "MIS-",
+                "DIS-",
+                "UN-",
+                "DE-"
             ],
-            "meaningBreakdown": "MAL (prefix, 'badly') + NUTRITION (root)",
-            "instruction": "Choose the correct answer."
+            "meaningBreakdown": "DIS (prefix, 'not') + OBEY (root)",
+            "instruction": "MIS- means 'wrongly.' DIS- means 'not/the opposite of.' Which fits here?"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L53_Q3",
-            "hint": "To handle a fragile package roughly, ignoring the 'handle with care' label.",
-            "explanation": "MAL- means 'badly'. MAL- + TREAT = MALTREAT, meaning to treat someone or something badly.",
+            "hint": "Repeating a rumor because you got a key fact confused with someone else's story.",
+            "explanation": "MIS- + INFORM = MISINFORM, to give someone incorrect information, typically without meaning to. The error is the key idea \u2014 that's the signal for MIS-, not DIS-.",
             "interactionType": "choice",
-            "correctAnswer": "MALTREAT",
-            "rootWord": "TREAT",
+            "correctAnswer": "MIS-",
+            "rootWord": "INFORM",
             "options": [
-                "-IZE",
-                "MAL-",
-                "-IFY",
-                "EN-"
+                "MIS-",
+                "DIS-",
+                "NON-",
+                "UN-"
             ],
-            "meaningBreakdown": "MAL (prefix, 'badly') + TREAT (root)",
-            "instruction": "Choose the correct answer."
+            "meaningBreakdown": "MIS (prefix, 'wrongly') + INFORM (root)",
+            "instruction": "MIS- means 'wrongly.' DIS- means 'not/the opposite of.' Which fits here?"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L54_Q1",
-            "hint": "Describing a violinist's performance so skillful it left the entire hall speechless.",
-            "explanation": "EXTRA- means 'beyond'. EXTRA- + ORDINARY = EXTRAORDINARY, meaning beyond what is ordinary.",
+            "hint": "A student who takes on five extra classes and ends up exhausted every night.",
+            "explanation": "OVER- + LOAD = OVERLOAD, to load with too much, beyond a reasonable limit. UNDER- would describe the opposite problem: too little of something.",
             "interactionType": "choice",
-            "correctAnswer": "EXTRAORDINARY",
-            "rootWord": "ORDINARY",
+            "correctAnswer": "OVER-",
+            "rootWord": "LOAD",
             "options": [
-                "-LESS",
-                "-ISM",
-                "EXTRA-",
-                "CO-"
+                "UNDER-",
+                "NON-",
+                "DE-",
+                "OVER-"
             ],
-            "meaningBreakdown": "EXTRA (prefix, 'beyond') + ORDINARY (root)",
-            "instruction": "Choose the correct answer."
+            "meaningBreakdown": "OVER (prefix, 'too much') + LOAD (root)",
+            "instruction": "OVER- means 'too much.' UNDER- means 'too little.' Which fits here?"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L54_Q2",
-            "hint": "The debate club and chess team a student joins outside of regular class hours.",
-            "explanation": "EXTRA- means 'outside of'. EXTRA- + CURRICULAR = EXTRACURRICULAR, meaning outside the regular curriculum.",
+            "hint": "A road with far fewer streetlights than a busy area actually needs at night.",
+            "explanation": "UNDER- + LIT = UNDERLIT, lit less than is needed or expected. OVER- would instead describe a space that's far too bright, the opposite issue.",
             "interactionType": "choice",
-            "correctAnswer": "EXTRACURRICULAR",
-            "rootWord": "CURRICULAR",
+            "correctAnswer": "UNDER-",
+            "rootWord": "LIT",
             "options": [
-                "EXTRA-",
-                "-SHIP",
-                "CO-",
-                "-MENT"
+                "UNDER-",
+                "OVER-",
+                "NON-",
+                "DE-"
             ],
-            "meaningBreakdown": "EXTRA (prefix, 'outside') + CURRICULAR (root)",
-            "instruction": "Choose the correct answer."
+            "meaningBreakdown": "UNDER (prefix, 'too little') + LIT (root)",
+            "instruction": "OVER- means 'too much.' UNDER- means 'too little.' Which fits here?"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L54_Q3",
-            "hint": "Describing a creature from a science fiction film that supposedly came from another planet.",
-            "explanation": "EXTRA- means 'beyond' or 'outside'. EXTRA- + TERRESTRIAL = EXTRATERRESTRIAL, meaning beyond or outside the Earth.",
+            "hint": "A patient given far more medicine than the correct dose calls for.",
+            "explanation": "OVER- + MEDICATE = OVERMEDICATE, to give too much medicine. UNDER- would instead mean giving too little \u2014 both are real medical concerns, but they describe opposite mistakes.",
             "interactionType": "choice",
-            "correctAnswer": "EXTRATERRESTRIAL",
-            "rootWord": "TERRESTRIAL",
+            "correctAnswer": "OVER-",
+            "rootWord": "MEDICATE",
             "options": [
-                "-IFY",
-                "NON-",
-                "-NESS",
-                "EXTRA-"
+                "UNDER-",
+                "MIS-",
+                "OVER-",
+                "NON-"
             ],
-            "meaningBreakdown": "EXTRA (prefix, 'beyond') + TERRESTRIAL (root)",
-            "instruction": "Choose the correct answer."
+            "meaningBreakdown": "OVER (prefix, 'too much') + MEDICATE (root)",
+            "instruction": "OVER- means 'too much.' UNDER- means 'too little.' Which fits here?"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L55_Q1",
-            "hint": "Describing skin that reacts painfully to even the gentlest soap.",
-            "explanation": "HYPER- means 'excessive' or 'over'. HYPER- + SENSITIVE = HYPERSENSITIVE, meaning excessively sensitive.",
+            "hint": "A tank completely filled to the brim with fresh water.",
+            "explanation": "-FUL means 'full of.' TANK... isn't the pattern here \u2014 think instead of a simpler word: CUP + -FUL = CUPFUL, containing as much as a cup can hold. -LESS would mean the opposite: containing none at all.",
             "interactionType": "choice",
-            "correctAnswer": "HYPERSENSITIVE",
-            "rootWord": "SENSITIVE",
+            "correctAnswer": "-FUL",
+            "rootWord": "CUP",
             "options": [
-                "-ITY",
-                "HYPER-",
-                "-NESS",
-                "OVER-"
+                "-LESS",
+                "-FUL",
+                "-ISH",
+                "-NESS"
             ],
-            "meaningBreakdown": "HYPER (prefix, 'excessive') + SENSITIVE (root)",
-            "instruction": "Choose the correct answer."
+            "meaningBreakdown": "CUP (root) + FUL (suffix, 'full of')",
+            "instruction": "-FUL means 'full of.' -LESS means 'without.' Which fits here?"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L55_Q2",
-            "hint": "A chronic medical condition in which a patient's blood pressure stays dangerously high.",
-            "explanation": "HYPER- means 'excessive'. HYPER- + TENSION = HYPERTENSION, meaning excessively high blood pressure.",
+            "hint": "A night sky in the countryside with absolutely no clouds blocking the stars.",
+            "explanation": "-LESS forms CLOUDLESS from CLOUD, without any clouds. -FUL would instead describe a sky packed with clouds \u2014 the exact opposite weather.",
             "interactionType": "choice",
-            "correctAnswer": "HYPERTENSION",
-            "rootWord": "TENSION",
+            "correctAnswer": "-LESS",
+            "rootWord": "CLOUD",
             "options": [
-                "IN-",
-                "HYPER-",
-                "-SHIP",
-                "-FUL"
+                "-FUL",
+                "-Y",
+                "-ISH",
+                "-LESS"
             ],
-            "meaningBreakdown": "HYPER (prefix, 'excessive') + TENSION (root)",
-            "instruction": "Choose the correct answer."
+            "meaningBreakdown": "CLOUD (root) + LESS (suffix, 'without')",
+            "instruction": "-FUL means 'full of.' -LESS means 'without.' Which fits here?"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L55_Q3",
-            "hint": "The blue underlined text on a webpage that takes you to another page when clicked.",
-            "explanation": "HYPER- here means 'beyond the ordinary'. HYPER- + LINK = HYPERLINK, a connection that jumps beyond a single page.",
+            "hint": "A meeting packed with useful takeaways that everyone can apply right away.",
+            "explanation": "-FUL builds USEFUL from USE, full of use or value. Compare USELESS from earlier: same root, opposite suffix, opposite meaning \u2014 a clean example of how one suffix swap flips a word's sense entirely.",
             "interactionType": "choice",
-            "correctAnswer": "HYPERLINK",
-            "rootWord": "LINK",
+            "correctAnswer": "-FUL",
+            "rootWord": "USE",
             "options": [
-                "OVER-",
-                "-ABLE",
-                "HYPER-",
-                "-HOOD"
+                "-LESS",
+                "-FUL",
+                "-ISH",
+                "-Y"
             ],
-            "meaningBreakdown": "HYPER (prefix, 'beyond ordinary') + LINK (root)",
-            "instruction": "Choose the correct answer."
+            "meaningBreakdown": "USE (root) + FUL (suffix, 'full of')",
+            "instruction": "-FUL means 'full of.' -LESS means 'without.' Which fits here?"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L56_Q1",
-            "hint": "The years a student spends in school and university, gaining knowledge and skills.",
-            "explanation": "-TION turns a verb into a noun naming a process. EDUCATE + -TION = EDUCATION (the final 'e' is dropped), the process of educating.",
+            "hint": "The special quality that makes a rare gem worth so much money.",
+            "explanation": "-ITY names an abstract, often more technical or formal quality: RARE + -ITY = RARITY, the state of being uncommon. -NESS tends to attach to everyday, plain-spoken adjectives instead (like KINDNESS or SADNESS).",
             "interactionType": "choice",
-            "correctAnswer": "EDUCATION",
-            "rootWord": "EDUCATE",
+            "correctAnswer": "-ITY",
+            "rootWord": "RARE",
             "options": [
-                "MIS-",
+                "-NESS",
+                "-MENT",
                 "-ITY",
-                "DE-",
-                "-TION"
+                "-FUL"
             ],
-            "meaningBreakdown": "EDUCAT (root, e dropped) + ION (suffix, 'process of')",
-            "instruction": "Choose the correct answer."
+            "meaningBreakdown": "RAR (root) + ITY (suffix, forms a noun of quality)",
+            "instruction": "-NESS and -ITY both form nouns of quality, but pair with different roots. Which fits here?"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L56_Q2",
-            "hint": "The final choice a jury makes after hours of deliberating a verdict.",
-            "explanation": "-SION turns a verb into a noun. DECIDE + -SION = DECISION (the spelling changes to 'cis'), the act of deciding.",
+            "hint": "The comfortable, plain feeling of an old pair of jeans you've worn for years.",
+            "explanation": "-NESS forms SOFTNESS from SOFT, a simple everyday quality. -ITY doesn't attach to SOFT in standard English \u2014 'softity' isn't a word, showing these two suffixes aren't interchangeable despite similar jobs.",
             "interactionType": "choice",
-            "correctAnswer": "DECISION",
-            "rootWord": "DECIDE",
+            "correctAnswer": "-NESS",
+            "rootWord": "SOFT",
             "options": [
-                "-SION",
-                "RE-",
+                "-ITY",
+                "-MENT",
                 "-ABLE",
-                "MIS-"
+                "-NESS"
             ],
-            "meaningBreakdown": "DECI (root, spelling changes) + SION (suffix, 'act of')",
-            "instruction": "Choose the correct answer."
+            "meaningBreakdown": "SOFT (root) + NESS (suffix, forms a noun of state)",
+            "instruction": "-NESS and -ITY both form nouns of quality, but pair with different roots. Which fits here?"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L56_Q3",
-            "hint": "A company's plan to open twenty new stores across the country next year.",
-            "explanation": "-SION turns a verb into a noun naming a process. EXPAND + -SION = EXPANSION (the spelling changes to 's'), the process of expanding.",
+            "hint": "The trait that lets a gymnast bend and twist her body into difficult positions.",
+            "explanation": "FLEXIBILITY combines FLEXIBLE (itself FLEX + -IBLE) with -ITY, naming the quality of being flexible. This is a more technical, physical-science-flavored word \u2014 exactly the register where -ITY tends to appear over -NESS.",
             "interactionType": "choice",
-            "correctAnswer": "EXPANSION",
-            "rootWord": "EXPAND",
+            "correctAnswer": "-ITY",
+            "rootWord": "FLEXIBLE",
             "options": [
-                "NON-",
-                "-SION",
-                "ANTI-",
-                "-FUL"
+                "-NESS",
+                "-MENT",
+                "-FUL",
+                "-ITY"
             ],
-            "meaningBreakdown": "EXPAN (root, spelling changes) + SION (suffix, 'process of')",
-            "instruction": "Choose the correct answer."
+            "meaningBreakdown": "FLEXIBIL (root) + ITY (suffix, forms a noun of quality)",
+            "instruction": "-NESS and -ITY both form nouns of quality, but pair with different roots. Which fits here?"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L57_Q1",
-            "hint": "Describing a steep mountain trail that is icy, narrow, and prone to rockslides.",
-            "explanation": "-OUS means 'full of'. DANGER + -OUS = DANGEROUS, meaning full of danger.",
+            "hint": "Someone who builds houses and other structures for a living.",
+            "explanation": "-ER often attaches to plain, everyday action verbs: BUILD + -ER = BUILDER, a person who builds. -IST tends to appear with fields of study or belief instead, like SCIENTIST or ARTIST.",
             "interactionType": "choice",
-            "correctAnswer": "DANGEROUS",
-            "rootWord": "DANGER",
+            "correctAnswer": "-ER",
+            "rootWord": "BUILD",
             "options": [
-                "-OUS",
-                "-DOM",
-                "IM-",
-                "PRE-"
+                "-IST",
+                "-MENT",
+                "-ER",
+                "-AL"
             ],
-            "meaningBreakdown": "DANGER (root) + OUS (suffix, 'full of')",
-            "instruction": "Choose the correct answer."
+            "meaningBreakdown": "BUILD (root) + ER (suffix, 'person who does')",
+            "instruction": "-ER and -IST both name a person, but attach to different kinds of roots. Which fits here?"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L57_Q2",
-            "hint": "Describing an actor whose face is instantly recognized by millions around the world.",
-            "explanation": "-OUS means 'full of'. FAME + -OUS = FAMOUS (the final 'e' is dropped), meaning full of fame.",
+            "hint": "Someone whose profession is analyzing numbers and predicting the economy.",
+            "explanation": "ECONOMIST is ECONOMY + -IST (the Y drops), a person specializing in a field of study. -ER doesn't attach here \u2014 'economer' isn't standard English, since fields of expertise typically pair with -IST.",
             "interactionType": "choice",
-            "correctAnswer": "FAMOUS",
-            "rootWord": "FAME",
+            "correctAnswer": "ECONOMIST",
+            "rootWord": "ECONOMY",
             "options": [
-                "-TION",
-                "ANTI-",
-                "PRE-",
-                "-OUS"
+                "BUILDER",
+                "TEACHER",
+                "ECONOMIST",
+                "WORKER"
             ],
-            "meaningBreakdown": "FAM (root, e dropped) + OUS (suffix, 'full of')",
-            "instruction": "Choose the correct answer."
+            "meaningBreakdown": "ECONOM (root) + IST (suffix, 'person associated with')",
+            "instruction": "Which word matches this situation?"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L57_Q3",
-            "hint": "Describing the shaky hands of a student waiting to walk on stage for a speech.",
-            "explanation": "-OUS means 'full of'. NERVE + -OUS = NERVOUS (the final 'e' is dropped), meaning full of nervous energy.",
+            "hint": "Someone hired to fix leaky pipes and install new bathroom fixtures.",
+            "explanation": "-ER forms PLUMBER from PLUMB, a person who does a specific everyday trade. -IST would sound out of place here \u2014 trades and hands-on jobs generally pick -ER over -IST.",
             "interactionType": "choice",
-            "correctAnswer": "NERVOUS",
-            "rootWord": "NERVE",
+            "correctAnswer": "-ER",
+            "rootWord": "PLUMB",
             "options": [
-                "-ITY",
-                "-OUS",
-                "MIS-",
-                "ANTI-"
+                "-ER",
+                "-IST",
+                "-MENT",
+                "-ITY"
             ],
-            "meaningBreakdown": "NERV (root, e dropped) + OUS (suffix, 'full of')",
-            "instruction": "Choose the correct answer."
+            "meaningBreakdown": "PLUMB (root) + ER (suffix, 'person who does')",
+            "instruction": "-ER and -IST both name a person, but attach to different kinds of roots. Which fits here?"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L58_Q1",
-            "hint": "Describing a designer who dreams up bold, original ideas no one has tried before.",
-            "explanation": "-IVE means 'having a tendency toward'. CREATE + -IVE = CREATIVE (the final 'e' is dropped), meaning having a tendency to create.",
+            "hint": "The formal act of officially starting a new law or government program.",
+            "explanation": "IMPLEMENTATION combines IMPLEMENT with -TION, naming the process of carrying a plan into effect. Notice IMPLEMENT itself already ends in -MENT (as a base word), while the action of doing it takes -TION on top.",
             "interactionType": "choice",
-            "correctAnswer": "CREATIVE",
-            "rootWord": "CREATE",
+            "correctAnswer": "-TION",
+            "rootWord": "IMPLEMENT",
             "options": [
-                "-IVE",
-                "OVER-",
-                "OUT-",
-                "-ISH"
+                "-TION",
+                "-MENT",
+                "-SION",
+                "-NESS"
             ],
-            "meaningBreakdown": "CREAT (root, e dropped) + IVE (suffix, 'tendency toward')",
-            "instruction": "Choose the correct answer."
+            "meaningBreakdown": "IMPLEMENT (root) + TION (suffix, forms a noun of process)",
+            "instruction": "-MENT and -TION both form nouns from verbs, but each verb picks only one. Which fits here?"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L58_Q2",
-            "hint": "Describing a storefront window display so eye-catching it draws customers off the street.",
-            "explanation": "-IVE means 'having a tendency toward'. ATTRACT + -IVE = ATTRACTIVE, meaning having the power to attract.",
+            "hint": "The excitement felt right before a long-awaited trip finally begins.",
+            "explanation": "-MENT forms EXCITEMENT from EXCITE, the state of being excited. -TION doesn't attach to EXCITE in standard English \u2014 'excitation' exists but means something more technical (like exciting a particle in physics), not everyday enthusiasm.",
             "interactionType": "choice",
-            "correctAnswer": "ATTRACTIVE",
-            "rootWord": "ATTRACT",
+            "correctAnswer": "-MENT",
+            "rootWord": "EXCITE",
             "options": [
-                "CO-",
-                "-IVE",
-                "DIS-",
-                "-ISH"
+                "-MENT",
+                "-TION",
+                "-SION",
+                "-ITY"
             ],
-            "meaningBreakdown": "ATTRACT (root) + IVE (suffix, 'tendency toward')",
-            "instruction": "Choose the correct answer."
+            "meaningBreakdown": "EXCITE (root) + MENT (suffix, forms a noun of state)",
+            "instruction": "-MENT and -TION both form nouns from verbs, but each verb picks only one. Which fits here?"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L58_Q3",
-            "hint": "Describing a manager who checks in daily and offers real help during a stressful project.",
-            "explanation": "-IVE means 'having a tendency toward'. SUPPORT + -IVE = SUPPORTIVE, meaning having a tendency to support others.",
+            "hint": "The formal process a company follows to hire and bring on new staff.",
+            "explanation": "RECRUITMENT is RECRUIT + -MENT, the process or act of recruiting. Like EXCITEMENT, this verb has settled on -MENT rather than -TION \u2014 there's no consistent rule, so recognizing common pairings by ear matters.",
             "interactionType": "choice",
-            "correctAnswer": "SUPPORTIVE",
-            "rootWord": "SUPPORT",
+            "correctAnswer": "-MENT",
+            "rootWord": "RECRUIT",
             "options": [
-                "-IVE",
-                "NON-",
-                "EN-",
-                "-ITY"
+                "-MENT",
+                "-TION",
+                "-SION",
+                "-AL"
             ],
-            "meaningBreakdown": "SUPPORT (root) + IVE (suffix, 'tendency toward')",
-            "instruction": "Choose the correct answer."
+            "meaningBreakdown": "RECRUIT (root) + MENT (suffix, forms a noun of process)",
+            "instruction": "-MENT and -TION both form nouns from verbs, but each verb picks only one. Which fits here?"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L59_Q1",
-            "hint": "The thick reference book you check when you're unsure how to spell a word.",
-            "explanation": "-ARY means 'relating to' or 'a place associated with'. DICTION + -ARY = DICTIONARY, a place of collected words.",
+            "hint": "A signature on a contract that can be checked against a known sample to confirm it's genuine.",
+            "explanation": "-IBLE, a close cousin of -ABLE, also means 'capable of being.' VERIFY + -IBLE = VERIFIABLE (with a spelling shift), capable of being verified. Both suffixes carry the same meaning; the specific root determines which spelling English settled on.",
             "interactionType": "choice",
-            "correctAnswer": "DICTIONARY",
-            "rootWord": "DICTION",
+            "correctAnswer": "-IBLE",
+            "rootWord": "VERIFY",
             "options": [
-                "-FUL",
-                "-ARY",
-                "OUT-",
-                "ANTI-"
+                "-ABLE",
+                "-IBLE",
+                "-ITY",
+                "-OUS"
             ],
-            "meaningBreakdown": "DICTION (root) + ARY (suffix, 'relating to')",
-            "instruction": "Choose the correct answer."
+            "meaningBreakdown": "VERIF (root) + IBLE (suffix, 'capable of being')",
+            "instruction": "-ABLE and -IBLE mean the same thing, but each root has one correct spelling. Which fits here?"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L59_Q2",
-            "hint": "Describing a chess match so remarkable that players still study it decades later.",
-            "explanation": "-ARY means 'relating to'. LEGEND + -ARY = LEGENDARY, meaning relating to a legend.",
+            "hint": "A rule so clearly written that everyone in the room interprets it the same way.",
+            "explanation": "UNDERSTANDABLE takes -ABLE, not -IBLE \u2014 English roots ending in a full, standalone word (like UNDERSTAND) almost always pair with -ABLE, while -IBLE tends to appear on roots that aren't complete words by themselves (like VERIF- or POSS-).",
             "interactionType": "choice",
-            "correctAnswer": "LEGENDARY",
-            "rootWord": "LEGEND",
+            "correctAnswer": "-ABLE",
+            "rootWord": "UNDERSTAND",
             "options": [
-                "-DOM",
-                "-ARY",
-                "PRE-",
-                "RE-"
+                "-IBLE",
+                "-ABLE",
+                "-ITY",
+                "-MENT"
             ],
-            "meaningBreakdown": "LEGEND (root) + ARY (suffix, 'relating to')",
-            "instruction": "Choose the correct answer."
+            "meaningBreakdown": "UNDERSTAND (root) + ABLE (suffix, 'capable of being')",
+            "instruction": "-ABLE and -IBLE mean the same thing, but each root has one correct spelling. Which fits here?"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L59_Q3",
-            "hint": "Describing the strict limits a department must follow to avoid overspending its funds.",
-            "explanation": "-ARY means 'relating to'. BUDGET + -ARY = BUDGETARY, meaning relating to a budget.",
+            "hint": "A single seat left on a fully booked flight, ready to be reserved by the next customer.",
+            "explanation": "-IBLE completes POSSIBLE from POSS- (an incomplete root borrowed from Latin, meaning 'able'). Since POSS- isn't a standalone English word, it takes -IBLE rather than -ABLE \u2014 a useful pattern for guessing which spelling a new word needs.",
             "interactionType": "choice",
-            "correctAnswer": "BUDGETARY",
-            "rootWord": "BUDGET",
+            "correctAnswer": "-IBLE",
+            "rootWord": "POSS",
             "options": [
-                "CO-",
-                "-ISH",
-                "ANTI-",
-                "-ARY"
+                "-ABLE",
+                "-IBLE",
+                "-ITY",
+                "-AL"
             ],
-            "meaningBreakdown": "BUDGET (root) + ARY (suffix, 'relating to')",
-            "instruction": "Choose the correct answer."
+            "meaningBreakdown": "POSS (root, 'able') + IBLE (suffix, 'capable of being')",
+            "instruction": "-ABLE and -IBLE mean the same thing, but each root has one correct spelling. Which fits here?"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L60_Q1",
-            "hint": "To condense a three-hundred-page report into a single readable paragraph.",
-            "explanation": "-IZE means 'to make or become'. SUMMARY + -IZE = SUMMARIZE (the 'y' changes to 'i'), meaning to make a summary of something.",
+            "hint": "Review: a word describing something you can't see through, versus something you can predict is coming.",
+            "explanation": "This unit trained you to tell related affixes apart: RE- ('again') from PRE- ('before'), UN- (physical reversal) from DIS- (abstract negation), and MIS- (an honest error) from DIS- (a deliberate refusal). VISIBLE takes -IBLE because VIS- isn't a standalone word, following the same pattern as POSSIBLE.",
             "interactionType": "choice",
-            "correctAnswer": "SUMMARIZE",
-            "rootWord": "SUMMARY",
+            "correctAnswer": "-IBLE",
+            "rootWord": "VIS",
             "options": [
-                "SUB-",
-                "-IZE",
-                "-FUL",
-                "EN-"
+                "-IBLE",
+                "-ABLE",
+                "-ITY",
+                "-OUS"
             ],
-            "meaningBreakdown": "SUMMARI (root, y changes to i) + IZE (suffix, 'make')",
-            "instruction": "Choose the correct answer."
+            "meaningBreakdown": "VIS (root, 'see') + IBLE (suffix, 'capable of being')",
+            "instruction": "Review: which suffix fits a root that isn't a complete word on its own?"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L60_Q2",
-            "hint": "To point out every flaw in a colleague's proposal during the team meeting.",
-            "explanation": "-IZE means 'to make or become'. CRITIC + -IZE = CRITICIZE, meaning to make critical judgments about something.",
+            "hint": "Review: someone whose entire career is devoted to studying and teaching economics at a university.",
+            "explanation": "-IST names a person tied to a field or belief, distinct from -ER, which usually names a person doing an everyday action. ECONOMIST fits the field-and-expertise pattern you practiced earlier in this unit.",
             "interactionType": "choice",
-            "correctAnswer": "CRITICIZE",
-            "rootWord": "CRITIC",
+            "correctAnswer": "-IST",
+            "rootWord": "ECONOMY",
             "options": [
-                "DIS-",
-                "CO-",
-                "-LY",
-                "-IZE"
+                "-ER",
+                "-MENT",
+                "-IST",
+                "-AL"
             ],
-            "meaningBreakdown": "CRITIC (root) + IZE (suffix, 'make')",
-            "instruction": "Choose the correct answer."
+            "meaningBreakdown": "ECONOM (root) + IST (suffix, 'person associated with')",
+            "instruction": "Review: which suffix names a person devoted to a field of study?"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L60_Q3",
-            "hint": "For a general doctor to focus their training entirely on treating heart conditions.",
-            "explanation": "-IZE means 'to make or become'. SPECIAL + -IZE = SPECIALIZE, meaning to become a specialist in something.",
+            "hint": "Review: a container completely full of coins, versus a wallet with nothing in it at all.",
+            "explanation": "-FUL ('full of') and -LESS ('without') are true opposites, unlike -NESS and -ITY, which mean nearly the same thing but pair with different roots. JARFUL fits the first pattern: full to the amount a jar can hold.",
             "interactionType": "choice",
-            "correctAnswer": "SPECIALIZE",
-            "rootWord": "SPECIAL",
+            "correctAnswer": "-FUL",
+            "rootWord": "JAR",
             "options": [
-                "-ITY",
-                "PRE-",
-                "-IZE",
-                "OVER-"
+                "-LESS",
+                "-ISH",
+                "-Y",
+                "-FUL"
             ],
-            "meaningBreakdown": "SPECIAL (root) + IZE (suffix, 'make')",
-            "instruction": "Choose the correct answer."
+            "meaningBreakdown": "JAR (root) + FUL (suffix, 'full of')",
+            "instruction": "Review: which suffix means 'full of,' the opposite of -LESS?"
         }
     ],
     "gameType": "prefixSuffix",
