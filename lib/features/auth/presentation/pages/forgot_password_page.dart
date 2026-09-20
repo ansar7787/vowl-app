@@ -89,7 +89,7 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
           final isDark = Theme.of(context).brightness == Brightness.dark;
           final bgColor = isMidnight
               ? const Color(0xFF000000)
-              : (isDark ? AppColors.slate900 : const Color(0xFFF8FAFC));
+              : (isDark ? AppColors.slate900 : AppColors.slate50);
 
           return BlocBuilder<ForgotPasswordCubit, ForgotPasswordState>(
             // Previously rebuilt this entire subtree (gradient background,

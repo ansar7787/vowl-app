@@ -182,7 +182,7 @@ class _TrophyRoomView extends StatelessWidget {
                         decoration: BoxDecoration(
                           color: isDark
                               ? AppColors.slate800
-                              : const Color(0xFFE2E8F0),
+                              : AppColors.slate200,
                           borderRadius: BorderRadius.circular(10.r),
                           boxShadow: [
                             BoxShadow(

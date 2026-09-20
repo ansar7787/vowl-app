@@ -295,9 +295,7 @@ class KidsDayNightLayout extends StatelessWidget {
             // Bouncing icon (Sun or Moon)
             Icon(
                   isDay ? Icons.wb_sunny_rounded : Icons.mode_night_rounded,
-                  color: isDay
-                      ? const Color(0xFFFEF08A)
-                      : const Color(0xFFE2E8F0),
+                  color: isDay ? const Color(0xFFFEF08A) : AppColors.slate200,
                   size: 42.sp,
                 )
                 .animate(onPlay: (c) => c.repeat(reverse: true))

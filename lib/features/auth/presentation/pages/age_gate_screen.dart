@@ -455,7 +455,7 @@ class AgeGateScreen extends StatelessWidget {
                                                     ? Colors.white.withValues(
                                                         alpha: 0.1,
                                                       )
-                                                    : const Color(0xFFE2E8F0),
+                                                    : AppColors.slate200,
                                                 width: 1.5,
                                               ),
                                             ),

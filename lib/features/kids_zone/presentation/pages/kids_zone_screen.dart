@@ -124,7 +124,7 @@ class _KidsZoneScreenState extends State<KidsZoneScreen> {
     final isMidnight = context.watch<ThemeCubit>().state.isMidnight;
     final bgColor = isMidnight
         ? Colors.black
-        : (isDark ? AppColors.slate900 : const Color(0xFFF8FAFC));
+        : (isDark ? AppColors.slate900 : AppColors.slate50);
 
     return Scaffold(
       backgroundColor: bgColor,

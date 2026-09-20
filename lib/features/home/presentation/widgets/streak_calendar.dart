@@ -302,7 +302,7 @@ class StreakCalendar extends StatelessWidget {
                 : (!isPlayed
                       ? (isDark
                             ? Colors.white.withValues(alpha: 0.08)
-                            : const Color(0xFFE2E8F0))
+                            : AppColors.slate200)
                       : null),
             shape: BoxShape.circle,
             border: (isToday && !isFuture)

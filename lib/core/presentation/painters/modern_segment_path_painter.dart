@@ -54,7 +54,7 @@ class ModernSegmentPathPainter extends CustomPainter {
     // while remaining fully opaque (visible) and dark (locked).
     final Color lockedColor = isDark
         ? Color.lerp(AppColors.slate900, baseColor, 0.08)!
-        : Color.lerp(const Color(0xFFF8FAFC), baseColor, 0.08)!;
+        : Color.lerp(AppColors.slate50, baseColor, 0.08)!;
 
     // ── Header connection (level 1 top connection) ──
     if (isFirst) {

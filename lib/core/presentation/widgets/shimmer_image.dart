@@ -30,11 +30,11 @@ class ShimmerImage extends StatelessWidget {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final tokens = Theme.of(context).extension<AppColorTokens>()!;
 
-    final baseColor = isDark ? AppColors.slate800 : const Color(0xFFE2E8F0);
+    final baseColor = isDark ? AppColors.slate800 : AppColors.slate200;
     final highlightColor = isDark
         ? const Color(0xFF334155)
         : AppColors.slate100;
-    final placeholderBg = isDark ? AppColors.slate900 : const Color(0xFFF8FAFC);
+    final placeholderBg = isDark ? AppColors.slate900 : AppColors.slate50;
     final iconColor = isDark ? Colors.white24 : Colors.black26;
 
     if (imageUrl.isEmpty) {

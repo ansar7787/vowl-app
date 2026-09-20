@@ -658,7 +658,7 @@ class _TranslateScreenState extends State<TranslateScreen> {
                     LinearProgressIndicator(
                       backgroundColor: isDark
                           ? Colors.white10
-                          : const Color(0xFFE2E8F0),
+                          : AppColors.slate200,
                       valueColor: const AlwaysStoppedAnimation<Color>(
                         AppColors.emerald500,
                       ),
@@ -760,7 +760,7 @@ class _LanguagePickerSheetState extends State<_LanguagePickerSheet> {
             width: 40.w,
             height: 4.h,
             decoration: BoxDecoration(
-              color: isDark ? Colors.white24 : const Color(0xFFCBD5E1),
+              color: isDark ? Colors.white24 : AppColors.slate300,
               borderRadius: BorderRadius.circular(2.r),
             ),
           ),
@@ -789,7 +789,7 @@ class _LanguagePickerSheetState extends State<_LanguagePickerSheet> {
                     : AppColors.slate100,
                 borderRadius: BorderRadius.circular(16.r),
                 border: Border.all(
-                  color: isDark ? Colors.white12 : const Color(0xFFE2E8F0),
+                  color: isDark ? Colors.white12 : AppColors.slate200,
                 ),
               ),
               child: Row(

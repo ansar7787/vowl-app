@@ -244,7 +244,7 @@ class _BentoCategoryTile extends StatelessWidget {
         child: ExcludeSemantics(
           child: Container(
             decoration: BoxDecoration(
-              color: isDark ? AppColors.slate900 : const Color(0xFFF8FAFC),
+              color: isDark ? AppColors.slate900 : AppColors.slate50,
               borderRadius: BorderRadius.circular(28.r),
               boxShadow: [
                 BoxShadow(

@@ -118,7 +118,7 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
     );
     return isMidnight
         ? const Color(0xFF000000)
-        : (isDark ? AppColors.slate900 : const Color(0xFFF8FAFC));
+        : (isDark ? AppColors.slate900 : AppColors.slate50);
   }
 
   // ---------------------------------------------------------------------------

@@ -324,7 +324,7 @@ class VowlCoinsScreen extends StatelessWidget {
       borderRadius: BorderRadius.circular(28.r),
       borderColor: isDark
           ? Colors.white.withValues(alpha: 0.15)
-          : const Color(0xFFCBD5E1),
+          : AppColors.slate300,
       color: isDark
           ? Colors.white.withValues(alpha: 0.05)
           : Colors.white.withValues(alpha: 0.95),
@@ -432,7 +432,7 @@ class VowlCoinsScreen extends StatelessWidget {
         border: Border.all(
           color: isDark
               ? Colors.white.withValues(alpha: 0.05)
-              : const Color(0xFFCBD5E1).withValues(alpha: 0.5),
+              : AppColors.slate300.withValues(alpha: 0.5),
         ),
       ),
       child: Row(
@@ -915,7 +915,7 @@ class VowlCoinsScreen extends StatelessWidget {
             borderRadius: BorderRadius.circular(24.r),
             borderColor: isDark
                 ? Colors.white.withValues(alpha: 0.05)
-                : const Color(0xFFCBD5E1).withValues(alpha: 0.3),
+                : AppColors.slate300.withValues(alpha: 0.3),
             child: Center(
               child: Column(
                 children: [
@@ -948,7 +948,7 @@ class VowlCoinsScreen extends StatelessWidget {
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       fontSize: 12.sp,
-                      color: isDark ? Colors.white10 : const Color(0xFFCBD5E1),
+                      color: isDark ? Colors.white10 : AppColors.slate300,
                     ),
                     textAlign: TextAlign.center,
                   ),
@@ -994,7 +994,7 @@ class VowlCoinsScreen extends StatelessWidget {
                 borderRadius: BorderRadius.circular(24.r),
                 borderColor: isDark
                     ? Colors.white.withValues(alpha: 0.15)
-                    : const Color(0xFFCBD5E1),
+                    : AppColors.slate300,
                 color: isDark
                     ? Colors.white.withValues(alpha: 0.05)
                     : Colors.white.withValues(alpha: 0.95),

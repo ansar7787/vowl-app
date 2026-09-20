@@ -314,7 +314,7 @@ class KidsNatureLayout extends StatelessWidget {
             bottomLeft: Radius.circular(25.r),
             bottomRight: Radius.circular(35.r),
           ),
-          border: Border.all(color: const Color(0xFFCBD5E1), width: 2),
+          border: Border.all(color: AppColors.slate300, width: 2),
           boxShadow: [
             // Shadow below
             BoxShadow(

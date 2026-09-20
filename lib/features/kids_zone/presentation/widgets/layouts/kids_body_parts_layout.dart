@@ -78,10 +78,7 @@ class KidsBodyPartsLayout extends StatelessWidget {
                       borderRadius: BorderRadius.vertical(
                         top: Radius.circular(8.r),
                       ),
-                      border: Border.all(
-                        color: const Color(0xFFCBD5E1),
-                        width: 2,
-                      ),
+                      border: Border.all(color: AppColors.slate300, width: 2),
                     ),
                   ),
                   Padding(
@@ -158,7 +155,7 @@ class KidsBodyPartsLayout extends StatelessWidget {
               border: Border.all(
                 color: isHovering
                     ? const Color(0xFF38BDF8)
-                    : const Color(0xFFE2E8F0),
+                    : AppColors.slate200,
                 width: 12.r,
               ), // Medical white frame
               boxShadow: [

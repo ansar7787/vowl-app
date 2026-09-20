@@ -140,7 +140,7 @@ class _WordBankScreenState extends State<WordBankScreen> {
           border: Border.all(
             color: isDark
                 ? Colors.white.withValues(alpha: 0.05)
-                : const Color(0xFFE2E8F0),
+                : AppColors.slate200,
           ),
         ),
         child: Row(
@@ -324,7 +324,7 @@ class _WordBankScreenState extends State<WordBankScreen> {
             Icon(
               Icons.menu_book_rounded,
               size: 64.r,
-              color: isDark ? Colors.white24 : const Color(0xFFCBD5E1),
+              color: isDark ? Colors.white24 : AppColors.slate300,
             ),
             SizedBox(height: 16.h),
             AutoSizeText(

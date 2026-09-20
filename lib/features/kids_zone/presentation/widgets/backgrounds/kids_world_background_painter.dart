@@ -15,8 +15,8 @@ class KidsWorldBackgroundPainter extends StatelessWidget {
     // A crisp, pedagogical "school" aesthetic background.
     // Light mode: Clean, crisp white with subtle grey notebook dots.
     // Dark mode: Deep slate with subtle dark-blue dots.
-    final bgColor = isDark ? AppColors.slate900 : const Color(0xFFF8FAFC);
-    final dotColor = isDark ? AppColors.slate800 : const Color(0xFFE2E8F0);
+    final bgColor = isDark ? AppColors.slate900 : AppColors.slate50;
+    final dotColor = isDark ? AppColors.slate800 : AppColors.slate200;
 
     return Container(
       color: bgColor,

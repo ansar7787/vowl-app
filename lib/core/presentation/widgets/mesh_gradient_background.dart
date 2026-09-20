@@ -65,7 +65,7 @@ class MeshGradientBackground extends StatelessWidget {
           ColoredBox(
             color: isMidnight
                 ? Colors.black
-                : (isDark ? AppColors.slate900 : const Color(0xFFF8FAFC)),
+                : (isDark ? AppColors.slate900 : AppColors.slate50),
             child: const SizedBox.expand(),
           ),
 

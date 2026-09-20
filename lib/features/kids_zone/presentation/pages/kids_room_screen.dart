@@ -326,7 +326,7 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
               final isDark = Theme.of(context).brightness == Brightness.dark;
               final bgColor = isMidnight
                   ? Colors.black
-                  : (isDark ? AppColors.slate900 : const Color(0xFFF8FAFC));
+                  : (isDark ? AppColors.slate900 : AppColors.slate50);
               final now = DateTime.now();
               final isGameToday =
                   user.kidsLastGameDate != null &&

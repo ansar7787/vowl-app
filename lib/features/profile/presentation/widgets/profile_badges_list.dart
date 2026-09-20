@@ -289,7 +289,7 @@ class _ProfileBadgesListState extends State<ProfileBadgesList> {
                                             end: Alignment.bottomCenter,
                                             colors: [
                                               Colors.white,
-                                              Color(0xFFE2E8F0),
+                                              AppColors.slate200,
                                             ],
                                           ).createShader(bounds),
                                       child: AutoSizeText(

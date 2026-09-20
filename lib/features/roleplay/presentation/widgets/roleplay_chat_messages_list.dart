@@ -95,7 +95,7 @@ class _ChatBubble extends StatelessWidget {
             decoration: BoxDecoration(
               color: isUser
                   ? color
-                  : (isDark ? AppColors.slate800 : const Color(0xFFE2E8F0)),
+                  : (isDark ? AppColors.slate800 : AppColors.slate200),
               borderRadius: BorderRadius.circular(20.r).copyWith(
                 bottomLeft: isUser ? Radius.circular(20.r) : Radius.zero,
                 bottomRight: isUser ? Radius.zero : Radius.circular(20.r),
@@ -138,7 +138,7 @@ class _TypingIndicator extends StatelessWidget {
           child: Container(
             padding: EdgeInsets.all(14.r),
             decoration: BoxDecoration(
-              color: isDark ? AppColors.slate800 : const Color(0xFFE2E8F0),
+              color: isDark ? AppColors.slate800 : AppColors.slate200,
               borderRadius: BorderRadius.circular(
                 20.r,
               ).copyWith(bottomLeft: Radius.zero),

@@ -263,7 +263,7 @@ class KidsFamilyLayout extends StatelessWidget {
             Expanded(
               child: Container(
                 width: double.infinity,
-                color: const Color(0xFFE2E8F0), // Blank photo grey
+                color: AppColors.slate200, // Blank photo grey
                 child: Center(
                   child: emoji.isNotEmpty
                       ? Text(emoji, style: TextStyle(fontSize: 32.sp))

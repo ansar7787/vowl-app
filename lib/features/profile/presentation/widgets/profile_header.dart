@@ -368,7 +368,7 @@ class ProfileHeader extends StatelessWidget {
                   width: 4.r,
                   height: 4.r,
                   decoration: BoxDecoration(
-                    color: isDark ? Colors.white24 : const Color(0xFFCBD5E1),
+                    color: isDark ? Colors.white24 : AppColors.slate300,
                     shape: BoxShape.circle,
                   ),
                 ),

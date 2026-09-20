@@ -293,7 +293,7 @@ class KidsRoutineLayout extends StatelessWidget {
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(16.r),
-        border: Border.all(color: const Color(0xFFE2E8F0), width: 2),
+        border: Border.all(color: AppColors.slate200, width: 2),
         boxShadow: [
           BoxShadow(
             color: Colors.black.withValues(alpha: 0.2),

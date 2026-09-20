@@ -984,7 +984,7 @@ class _DailyWordsProgressBar extends StatelessWidget {
                 minHeight: 8.h,
                 backgroundColor: isDark
                     ? Colors.white.withValues(alpha: 0.1)
-                    : const Color(0xFFE2E8F0),
+                    : AppColors.slate200,
                 valueColor: AlwaysStoppedAnimation<Color>(AppColors.indigo500),
               ),
             ),

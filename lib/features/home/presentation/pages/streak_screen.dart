@@ -41,7 +41,7 @@ class _StreakScreenState extends State<StreakScreen> {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final bgColor = isMidnight
         ? const Color(0xFF020617)
-        : (isDark ? AppColors.slate900 : const Color(0xFFF8FAFC));
+        : (isDark ? AppColors.slate900 : AppColors.slate50);
     final contentColor = isDark ? Colors.white : AppColors.slate900;
 
     return Scaffold(

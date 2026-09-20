@@ -66,7 +66,7 @@ class LeaderboardRankTile extends StatelessWidget {
                   : AppColors.indigo500.withValues(alpha: 0.3))
             : (isDark
                   ? Colors.white.withValues(alpha: 0.1)
-                  : const Color(0xFFCBD5E1).withValues(alpha: 0.6)),
+                  : AppColors.slate300.withValues(alpha: 0.6)),
         color: isDark
             ? Colors.white.withValues(alpha: 0.06)
             : Colors.white.withValues(

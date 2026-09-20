@@ -115,7 +115,7 @@ class _LoginViewState extends State<LoginView> {
           final isDark = Theme.of(context).brightness == Brightness.dark;
           final bgColor = isMidnight
               ? const Color(0xFF000000)
-              : (isDark ? AppColors.slate900 : const Color(0xFFF8FAFC));
+              : (isDark ? AppColors.slate900 : AppColors.slate50);
 
           return BlocBuilder<LoginCubit, LoginState>(
             buildWhen: (previous, current) =>

@@ -119,7 +119,7 @@ class _SignUpViewState extends State<SignUpView> {
           final isDark = Theme.of(context).brightness == Brightness.dark;
           final bgColor = isMidnight
               ? const Color(0xFF000000)
-              : (isDark ? AppColors.slate900 : const Color(0xFFF8FAFC));
+              : (isDark ? AppColors.slate900 : AppColors.slate50);
 
           return BlocBuilder<SignUpCubit, SignUpState>(
             buildWhen: (previous, current) =>

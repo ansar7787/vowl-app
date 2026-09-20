@@ -289,13 +289,13 @@ class KidsFoodLayout extends StatelessWidget {
         Container(
           height: 50.h,
           decoration: BoxDecoration(
-            color: const Color(0xFFE2E8F0), // Silver
+            color: AppColors.slate200, // Silver
             borderRadius: BorderRadius.vertical(top: Radius.circular(40.r)),
             border: Border.all(color: AppColors.slate400, width: 2),
             gradient: const LinearGradient(
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
-              colors: [Colors.white, Color(0xFFCBD5E1)],
+              colors: [Colors.white, AppColors.slate300],
             ),
           ),
           child: Align(
