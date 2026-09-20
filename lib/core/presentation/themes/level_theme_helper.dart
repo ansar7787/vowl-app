@@ -3,6 +3,29 @@ import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/category_colors.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_3B82F6 = Color(0xFF3B82F6);
+  static const Color c_EC4899 = Color(0xFFEC4899);
+  static const Color c_EAB308 = Color(0xFFEAB308);
+  static const Color c_6366F1 = Color(0xFF6366F1);
+  static const Color c_F97316 = Color(0xFFF97316);
+  static const Color c_06B6D4 = Color(0xFF06B6D4);
+  static const Color c_D946EF = Color(0xFFD946EF);
+  static const Color c_9333EA = Color(0xFF9333EA);
+  static const Color c_84CC16 = Color(0xFF84CC16);
+  static const Color c_1E3A8A = Color(0xFF1E3A8A);
+  static const Color c_22C55E = Color(0xFF22C55E);
+  static const Color c_CA8A04 = Color(0xFFCA8A04);
+  static const Color c_EA580C = Color(0xFFEA580C);
+  static const Color c_0EA5E9 = Color(0xFF0EA5E9);
+  static const Color c_A855F7 = Color(0xFFA855F7);
+  static const Color c_4F46E5 = Color(0xFF4F46E5);
+  static const Color c_38BDF8 = Color(0xFF38BDF8);
+  static const Color c_0D9488 = Color(0xFF0D9488);
+  static const Color c_000000 = Color(0xFF000000);
+}
+
 enum GameCategory {
   speaking,
   listening,
@@ -121,7 +144,7 @@ class LevelThemeHelper {
       case 'alphabet':
         return AppColors.red500;
       case 'numbers':
-        return const Color(0xFF3B82F6);
+        return _LocalPalette.c_3B82F6;
       case 'colors':
         return AppColors.amber500;
       case 'shapes':
@@ -129,49 +152,49 @@ class LevelThemeHelper {
       case 'animals':
         return AppColors.violet500;
       case 'fruits':
-        return const Color(0xFFEC4899);
+        return _LocalPalette.c_EC4899;
       case 'family':
         return AppColors.rose500;
       case 'school':
-        return const Color(0xFFEAB308);
+        return _LocalPalette.c_EAB308;
       case 'verbs':
-        return const Color(0xFF6366F1);
+        return _LocalPalette.c_6366F1;
       case 'routine':
-        return const Color(0xFFF97316);
+        return _LocalPalette.c_F97316;
       case 'emotions':
-        return const Color(0xFF06B6D4);
+        return _LocalPalette.c_06B6D4;
       case 'prepositions':
         return AppColors.slate500;
       case 'phonics':
-        return const Color(0xFFD946EF);
+        return _LocalPalette.c_D946EF;
       case 'jumble':
-        return const Color(0xFF9333EA);
+        return _LocalPalette.c_9333EA;
       case 'time':
-        return const Color(0xFF84CC16);
+        return _LocalPalette.c_84CC16;
       case 'opposites':
         return AppColors.teal500;
       case 'day_night':
       case 'daynight':
-        return const Color(0xFF1E3A8A);
+        return _LocalPalette.c_1E3A8A;
       case 'nature':
-        return const Color(0xFF22C55E);
+        return _LocalPalette.c_22C55E;
       case 'home':
-        return const Color(0xFFCA8A04);
+        return _LocalPalette.c_CA8A04;
       case 'food':
-        return const Color(0xFFEA580C);
+        return _LocalPalette.c_EA580C;
       case 'transport':
-        return const Color(0xFF0EA5E9);
+        return _LocalPalette.c_0EA5E9;
       case 'body_parts':
       case 'bodyparts':
         return AppColors.rose700;
       case 'clothing':
-        return const Color(0xFFA855F7);
+        return _LocalPalette.c_A855F7;
       case 'handwriting':
-        return const Color(0xFF4F46E5);
+        return _LocalPalette.c_4F46E5;
       case 'weather':
-        return const Color(0xFF38BDF8);
+        return _LocalPalette.c_38BDF8;
       case 'professions':
-        return const Color(0xFF0D9488);
+        return _LocalPalette.c_0D9488;
       default:
         return Colors.blue;
     }
@@ -196,7 +219,7 @@ class LevelThemeHelper {
 
     if (isDark) {
       bgTop = hsl.withLightness(0.15).withSaturation(0.6).toColor();
-      bgBottom = isMidnight ? const Color(0xFF000000) : AppColors.slate900;
+      bgBottom = isMidnight ? _LocalPalette.c_000000 : AppColors.slate900;
     } else {
       bgTop = hsl.withLightness(0.95).toColor();
       bgBottom = hsl.withLightness(0.85).toColor();
@@ -267,7 +290,7 @@ class LevelThemeHelper {
     if (isDark) {
       // Background is a very dark version of the primary color for immersion
       bgTop = primaryHsl.withLightness(0.12).withSaturation(0.5).toColor();
-      bgBottom = isMidnight ? const Color(0xFF000000) : AppColors.slate900;
+      bgBottom = isMidnight ? _LocalPalette.c_000000 : AppColors.slate900;
     } else {
       bgTop = primaryHsl.withLightness(0.92).toColor();
       bgBottom = primaryHsl.withLightness(0.82).toColor();

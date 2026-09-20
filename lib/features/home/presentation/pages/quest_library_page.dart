@@ -18,6 +18,11 @@ import 'package:vowl/core/utils/curriculum_service.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_020617 = Color(0xFF020617);
+}
+
 class QuestLibraryPage extends StatefulWidget {
   const QuestLibraryPage({super.key});
 
@@ -165,7 +170,7 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
     final isMidnight = context.watch<ThemeCubit>().state.isMidnight;
 
     final bgColor = isMidnight
-        ? const Color(0xFF020617)
+        ? _LocalPalette.c_020617
         : (isDark ? AppColors.slate900 : AppColors.slate50);
     final contentColor = isDark ? Colors.white : AppColors.slate900;
 

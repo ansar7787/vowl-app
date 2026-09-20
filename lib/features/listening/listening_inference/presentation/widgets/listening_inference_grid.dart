@@ -3,6 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_1E1E24 = Color(0xFF1E1E24);
+}
+
 class ListeningInferenceGrid extends StatelessWidget {
   final List<String> options;
   final int correctAnswerIndex;
@@ -65,7 +70,7 @@ class ListeningInferenceGrid extends StatelessWidget {
               ? AppColors.gameCorrect
               : (isChoiceWrong
                     ? AppColors.gameIncorrect
-                    : (isSelected ? color : const Color(0xFF1E1E24))),
+                    : (isSelected ? color : _LocalPalette.c_1E1E24)),
           borderRadius: BorderRadius.circular(12.r),
           border: Border.all(
             color: isChoiceCorrect || isChoiceWrong || isSelected

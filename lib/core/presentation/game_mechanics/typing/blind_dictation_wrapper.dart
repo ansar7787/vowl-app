@@ -14,6 +14,11 @@ import 'package:vowl/core/presentation/game_mechanics/shared/game_skip_bypass_bu
 
 import 'package:vowl/core/presentation/game_mechanics/typing/smart_typo_controller.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_0C0C1A = Color(0xFF0C0C1A);
+}
+
 class BlindDictationWrapper extends StatefulWidget {
   final String expectedText;
   final Color primaryColor;
@@ -149,7 +154,7 @@ class _BlindDictationWrapperState extends State<BlindDictationWrapper> {
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final tokens = Theme.of(context).extension<AppColorTokens>()!;
-    final bgColor = isDark ? const Color(0xFF0C0C1A) : Colors.white;
+    final bgColor = isDark ? _LocalPalette.c_0C0C1A : Colors.white;
     final textColor = isDark ? Colors.white : AppColors.slate900;
     final subtitleColor = isDark ? Colors.white60 : Colors.black54;
     final errorColor = tokens.gameIncorrect;

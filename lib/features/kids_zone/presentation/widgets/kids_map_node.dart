@@ -25,6 +25,12 @@ import 'package:vowl/features/kids_zone/presentation/painters/kids_segment_path_
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_A0B2C6 = Color(0xFFA0B2C6);
+  static const Color c_00F0FF = Color(0xFF00F0FF);
+}
+
 class KidsMapNode extends StatefulWidget {
   final int level;
   final bool isLocked;
@@ -256,10 +262,10 @@ class _KidsMapNodeState extends State<KidsMapNode> {
       borderColor = KidsColors.warmAmber; // Bronze/Amber
       tierName = context.tr('kids_zone.tier_bronze', fallback: "BRONZE TIER");
     } else if (level == 100) {
-      borderColor = const Color(0xFFA0B2C6); // Premium Ice-Silver
+      borderColor = _LocalPalette.c_A0B2C6; // Premium Ice-Silver
       tierName = context.tr('kids_zone.tier_silver', fallback: "SILVER TIER");
     } else if (level == 200) {
-      borderColor = const Color(0xFF00F0FF); // Cyan/Diamond (Legendary)
+      borderColor = _LocalPalette.c_00F0FF; // Cyan/Diamond (Legendary)
       tierName = context.tr(
         'kids_zone.tier_legendary',
         fallback: "LEGENDARY TIER",

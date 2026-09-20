@@ -5,6 +5,14 @@ import 'package:vowl/features/speaking/domain/entities/speaking_quest.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_1F1C2C = Color(0xFF1F1C2C);
+  static const Color c_FF512F = Color(0xFFFF512F);
+  static const Color c_928DAB = Color(0xFF928DAB);
+  static const Color c_DD2476 = Color(0xFFDD2476);
+}
+
 class PronunciationFocusPhonemeCrucible extends StatelessWidget {
   final SpeakingQuest quest;
   final Color primaryColor;
@@ -87,13 +95,13 @@ class PronunciationFocusPhonemeCrucible extends StatelessWidget {
                   gradient: LinearGradient(
                     colors: [
                       Color.lerp(
-                        const Color(0xFF1F1C2C),
-                        const Color(0xFFFF512F),
+                        _LocalPalette.c_1F1C2C,
+                        _LocalPalette.c_FF512F,
                         heatLevel,
                       )!,
                       Color.lerp(
-                        const Color(0xFF928DAB),
-                        const Color(0xFFDD2476),
+                        _LocalPalette.c_928DAB,
+                        _LocalPalette.c_DD2476,
                         heatLevel,
                       )!,
                     ],

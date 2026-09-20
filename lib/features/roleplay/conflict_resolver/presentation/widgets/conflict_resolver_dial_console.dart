@@ -4,6 +4,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/features/roleplay/conflict_resolver/presentation/widgets/conflict_resolver_equalizer_painter.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_07070F = Color(0xFF07070F);
+  static const Color c_2A2A3E = Color(0xFF2A2A3E);
+  static const Color c_131326 = Color(0xFF131326);
+}
+
 class ConflictResolverDialConsole extends StatelessWidget {
   final double targetValue;
   final Color color;
@@ -34,7 +41,7 @@ class ConflictResolverDialConsole extends StatelessWidget {
       padding: EdgeInsets.symmetric(vertical: 24.h),
       decoration: BoxDecoration(
         color: isDark
-            ? const Color(0xFF07070F)
+            ? _LocalPalette.c_07070F
             : Colors.black.withValues(alpha: 0.02),
         borderRadius: BorderRadius.circular(36.r),
         border: Border.all(
@@ -87,10 +94,7 @@ class ConflictResolverDialConsole extends StatelessWidget {
                           begin: Alignment.topLeft,
                           end: Alignment.bottomRight,
                           colors: isDark
-                              ? [
-                                  const Color(0xFF2A2A3E),
-                                  const Color(0xFF131326),
-                                ]
+                              ? [_LocalPalette.c_2A2A3E, _LocalPalette.c_131326]
                               : [Colors.white, Colors.grey.shade300],
                         ),
                         boxShadow: [

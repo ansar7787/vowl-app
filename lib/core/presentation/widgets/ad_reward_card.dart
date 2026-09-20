@@ -13,6 +13,11 @@ import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/utils/reward_limit_service.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_4F46E5 = Color(0xFF4F46E5);
+}
+
 /// Card widget that awards 20 Vowl Coins in exchange for watching a
 /// rewarded video ad.
 ///
@@ -228,7 +233,7 @@ class _AdRewardCardState extends State<AdRewardCard> {
                                     : const LinearGradient(
                                         colors: [
                                           AppColors.indigo500,
-                                          Color(0xFF4F46E5),
+                                          _LocalPalette.c_4F46E5,
                                         ],
                                       ),
                                 color: loading

@@ -10,6 +10,16 @@ import 'package:vowl/features/kids_zone/presentation/utils/kids_tts_service.dart
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_fitted_text.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_FACC15 = Color(0xFFFACC15);
+  static const Color c_22C55E = Color(0xFF22C55E);
+  static const Color c_166534 = Color(0xFF166534);
+  static const Color c_FDE047 = Color(0xFFFDE047);
+  static const Color c_93C5FD = Color(0xFF93C5FD);
+  static const Color c_86EFAC = Color(0xFF86EFAC);
+}
+
 /// Busy City Intersection Theme for Transport Game
 /// Space Complexity: O(1)
 /// Time Complexity: O(N) where N is the number of options (max 4)
@@ -86,7 +96,7 @@ class KidsTransportLayout extends StatelessWidget {
                           return Container(
                             width: 20.w,
                             height: 4.h,
-                            color: const Color(0xFFFACC15),
+                            color: _LocalPalette.c_FACC15,
                           );
                         }),
                       ),
@@ -161,8 +171,8 @@ class KidsTransportLayout extends StatelessWidget {
                 height: 180.h,
                 decoration: BoxDecoration(
                   color: isHovering
-                      ? const Color(0xFF22C55E)
-                      : const Color(0xFF166534), // Highway Green
+                      ? _LocalPalette.c_22C55E
+                      : _LocalPalette.c_166534, // Highway Green
                   borderRadius: BorderRadius.circular(12.r),
                   border: Border.all(
                     color: isHovering ? Colors.yellow : Colors.white,
@@ -258,10 +268,10 @@ class KidsTransportLayout extends StatelessWidget {
     int index,
   ) {
     final colors = [
-      const Color(0xFFFDE047), // Yellow plate (NY style)
+      _LocalPalette.c_FDE047, // Yellow plate (NY style)
       Colors.white, // White plate (CA style)
-      const Color(0xFF93C5FD), // Blue plate
-      const Color(0xFF86EFAC), // Green plate
+      _LocalPalette.c_93C5FD, // Blue plate
+      _LocalPalette.c_86EFAC, // Green plate
     ];
     final plateColor = colors[index % colors.length];
 

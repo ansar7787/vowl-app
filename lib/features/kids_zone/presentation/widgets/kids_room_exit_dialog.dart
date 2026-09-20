@@ -7,6 +7,12 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_7E22CE = Color(0xFF7E22CE);
+  static const Color c_047857 = Color(0xFF047857);
+}
+
 class KidsRoomExitDialog extends StatelessWidget {
   final VoidCallback onExit;
   final UserEntity user;
@@ -36,7 +42,7 @@ class KidsRoomExitDialog extends StatelessWidget {
                       ),
                       boxShadow: [
                         BoxShadow(
-                          color: const Color(0xFF7E22CE),
+                          color: _LocalPalette.c_7E22CE,
                           offset: Offset(0, 6.h),
                         ),
                       ],
@@ -50,7 +56,7 @@ class KidsRoomExitDialog extends StatelessWidget {
                             fontFamily: 'Outfit',
                             fontSize: 22.sp,
                             fontWeight: FontWeight.w900,
-                            color: const Color(0xFF7E22CE),
+                            color: _LocalPalette.c_7E22CE,
                             letterSpacing: 1.5,
                           ),
                         ),
@@ -111,12 +117,12 @@ class KidsRoomExitDialog extends StatelessWidget {
                                     color: AppColors.emerald500,
                                     borderRadius: BorderRadius.circular(20.r),
                                     border: Border.all(
-                                      color: const Color(0xFF047857),
+                                      color: _LocalPalette.c_047857,
                                       width: 3.w,
                                     ),
                                     boxShadow: [
                                       BoxShadow(
-                                        color: const Color(0xFF047857),
+                                        color: _LocalPalette.c_047857,
                                         offset: Offset(0, 4.h),
                                       ),
                                     ],

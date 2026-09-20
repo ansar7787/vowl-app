@@ -15,6 +15,11 @@ import 'package:vowl/features/auth/data/repositories/gamification_repository_imp
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_dialog_components.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_6D28D9 = Color(0xFF6D28D9);
+}
+
 class KidsGameDialogs {
   static String _safeTr(BuildContext context, String key, String fallback) {
     final translation = context.tr(key);
@@ -493,7 +498,7 @@ class KidsGameDialogs {
               ), // Playful purple
               boxShadow: [
                 BoxShadow(
-                  color: const Color(0xFF6D28D9),
+                  color: _LocalPalette.c_6D28D9,
                   offset: Offset(0, 12.h),
                 ),
               ],
@@ -598,12 +603,12 @@ class KidsGameDialogs {
                               color: Colors.white,
                               borderRadius: BorderRadius.circular(30.r),
                               border: Border.all(
-                                color: const Color(0xFF6D28D9),
+                                color: _LocalPalette.c_6D28D9,
                                 width: 4.w,
                               ),
                               boxShadow: [
                                 BoxShadow(
-                                  color: const Color(0xFF6D28D9),
+                                  color: _LocalPalette.c_6D28D9,
                                   offset: Offset(0, 5.h),
                                 ),
                               ],

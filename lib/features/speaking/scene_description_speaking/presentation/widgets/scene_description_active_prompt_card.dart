@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_0F0F1A = Color(0xFF0F0F1A);
+}
+
 class SceneDescriptionActivePromptCard extends StatelessWidget {
   final int activeHotspot;
   final String activePrompt;
@@ -22,7 +27,7 @@ class SceneDescriptionActivePromptCard extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 22.w, vertical: 16.h),
       decoration: BoxDecoration(
         color: isDark
-            ? const Color(0xFF0F0F1A)
+            ? _LocalPalette.c_0F0F1A
             : Colors.black.withValues(alpha: 0.02),
         borderRadius: BorderRadius.circular(24.r),
         border: Border.all(color: primaryColor.withValues(alpha: 0.25)),

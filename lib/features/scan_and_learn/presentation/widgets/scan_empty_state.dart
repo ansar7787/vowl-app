@@ -8,6 +8,11 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_4F46E5 = Color(0xFF4F46E5);
+}
+
 class ScanEmptyState extends StatelessWidget {
   final Future<void> Function(ImageSource) onPickImage;
 
@@ -217,7 +222,7 @@ class ScanEmptyState extends StatelessWidget {
                 gradient: LinearGradient(
                   colors: [
                     AppColors.indigo500.withValues(alpha: 0.15),
-                    const Color(0xFF4F46E5).withValues(alpha: 0.05),
+                    _LocalPalette.c_4F46E5.withValues(alpha: 0.05),
                   ],
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,

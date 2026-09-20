@@ -13,6 +13,11 @@ import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/presentation/widgets/verify_email_widgets.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_000000 = Color(0xFF000000);
+}
+
 /// Email-verification gate displayed after account creation.
 ///
 /// ### Architecture
@@ -117,7 +122,7 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
       (c) => c.state.isMidnight,
     );
     return isMidnight
-        ? const Color(0xFF000000)
+        ? _LocalPalette.c_000000
         : (isDark ? AppColors.slate900 : AppColors.slate50);
   }
 

@@ -8,6 +8,12 @@ import 'package:vowl/core/utils/locale_service.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_FB7185 = Color(0xFFFB7185);
+  static const Color c_8B9CF7 = Color(0xFF8B9CF7);
+}
+
 class PremiumFailureOverlay extends StatelessWidget {
   final VoidCallback onRetry;
   final VoidCallback onClose;
@@ -61,7 +67,10 @@ class PremiumFailureOverlay extends StatelessWidget {
                             decoration: BoxDecoration(
                               shape: BoxShape.circle,
                               gradient: const LinearGradient(
-                                colors: [Color(0xFFFB7185), AppColors.rose700],
+                                colors: [
+                                  _LocalPalette.c_FB7185,
+                                  AppColors.rose700,
+                                ],
                                 begin: Alignment.topLeft,
                                 end: Alignment.bottomRight,
                               ),
@@ -92,7 +101,7 @@ class PremiumFailureOverlay extends StatelessWidget {
                 SizedBox(height: 28.h),
                 ShaderMask(
                   shaderCallback: (bounds) => const LinearGradient(
-                    colors: [Color(0xFFFB7185), AppColors.rose700],
+                    colors: [_LocalPalette.c_FB7185, AppColors.rose700],
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight,
                   ).createShader(bounds),
@@ -132,7 +141,7 @@ class PremiumFailureOverlay extends StatelessWidget {
                         style: TextStyle(
                           fontFamily: 'Outfit',
                           fontSize: 13.sp,
-                          color: const Color(0xFFFB7185),
+                          color: _LocalPalette.c_FB7185,
                           height: 1.4,
                           fontWeight: FontWeight.w500,
                         ),
@@ -199,10 +208,10 @@ class PremiumFailureOverlay extends StatelessWidget {
                           style: TextStyle(
                             fontFamily: 'Outfit',
                             fontSize: 13.sp,
-                            color: const Color(0xFF8B9CF7),
+                            color: _LocalPalette.c_8B9CF7,
                             fontWeight: FontWeight.w700,
                             decoration: TextDecoration.underline,
-                            decorationColor: const Color(0xFF8B9CF7),
+                            decorationColor: _LocalPalette.c_8B9CF7,
                           ),
                         ),
                       ),
@@ -259,7 +268,10 @@ class PremiumFailureOverlay extends StatelessWidget {
                             padding: EdgeInsets.symmetric(vertical: 16.h),
                             decoration: BoxDecoration(
                               gradient: const LinearGradient(
-                                colors: [Color(0xFFFB7185), AppColors.rose700],
+                                colors: [
+                                  _LocalPalette.c_FB7185,
+                                  AppColors.rose700,
+                                ],
                                 begin: Alignment.topLeft,
                                 end: Alignment.bottomRight,
                               ),

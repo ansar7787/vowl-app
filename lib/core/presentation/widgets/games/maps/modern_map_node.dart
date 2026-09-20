@@ -22,6 +22,12 @@ import 'package:vowl/core/utils/tts_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/theme/app_colors.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_00F0FF = Color(0xFF00F0FF);
+  static const Color c_CD7F32 = Color(0xFFCD7F32);
+}
+
 class ModernMapNode extends StatefulWidget {
   final int index;
   final int levelNumber;
@@ -89,7 +95,7 @@ class _ModernMapNodeState extends State<ModernMapNode> {
     if (isTollGate) {
       return Colors.amber;
     } else if (level == 200) {
-      return const Color(0xFF00F0FF); // Legendary / Diamond
+      return _LocalPalette.c_00F0FF; // Legendary / Diamond
     } else if (level >= 150) {
       return AppColors.gold; // Gold
     } else if (level >= 100) {
@@ -97,7 +103,7 @@ class _ModernMapNodeState extends State<ModernMapNode> {
         0xFFA0B2C6,
       ); // Premium Ice-Silver (Distinct from locked nodes)
     } else if (level >= 50) {
-      return const Color(0xFFCD7F32); // Bronze
+      return _LocalPalette.c_CD7F32; // Bronze
     }
     return baseColor;
   }

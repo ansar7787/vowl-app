@@ -7,6 +7,11 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_818CF8 = Color(0xFF818CF8);
+}
+
 class ScanResultBlock extends StatelessWidget {
   final TextBlock block;
   final int index;
@@ -249,7 +254,7 @@ class ScanResultBlock extends StatelessWidget {
                                   child: Icon(
                                     Icons.volume_up_rounded,
                                     color: isDark
-                                        ? const Color(0xFF818CF8)
+                                        ? _LocalPalette.c_818CF8
                                         : primaryIndigo,
                                     size: 18.r,
                                   ),
@@ -374,7 +379,7 @@ class ScanResultBlock extends StatelessWidget {
                                       fontFamily: 'Outfit',
                                       fontSize: 16.sp,
                                       color: isDark
-                                          ? const Color(0xFF818CF8)
+                                          ? _LocalPalette.c_818CF8
                                           : primaryIndigo,
                                       fontWeight: FontWeight.w700,
                                       height: 1.3,

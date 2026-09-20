@@ -11,6 +11,11 @@ import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/audio_recording_service.dart';
 import 'package:vowl/core/utils/ml_monetization_controller.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_131326 = Color(0xFF131326);
+}
+
 class DialogueRoleplayExchangeStage extends StatelessWidget {
   final SpeakingQuest quest;
   final Color primaryColor;
@@ -106,7 +111,7 @@ class DialogueRoleplayExchangeStage extends StatelessWidget {
       width: 1.sw,
       padding: EdgeInsets.all(18.r),
       decoration: BoxDecoration(
-        color: isDark ? const Color(0xFF131326) : Colors.white,
+        color: isDark ? _LocalPalette.c_131326 : Colors.white,
         borderRadius: BorderRadius.circular(24.r),
         border: Border.all(color: borderCol, width: highlight ? 2 : 1),
         boxShadow: highlight

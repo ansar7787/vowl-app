@@ -11,6 +11,17 @@ import 'package:vowl/features/kids_zone/presentation/utils/kids_tts_service.dart
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_fitted_text.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_92400E = Color(0xFF92400E);
+  static const Color c_9F1239 = Color(0xFF9F1239);
+  static const Color c_BE123C = Color(0xFFBE123C);
+  static const Color c_FDE047 = Color(0xFFFDE047);
+  static const Color c_7DD3FC = Color(0xFF7DD3FC);
+  static const Color c_CA8A04 = Color(0xFFCA8A04);
+  static const Color c_0284C7 = Color(0xFF0284C7);
+}
+
 /// Puppet Theater Theme for Emotions Game
 /// Space Complexity: O(1)
 /// Time Complexity: O(N) where N is the number of options (max 4)
@@ -74,7 +85,7 @@ class KidsEmotionsLayout extends StatelessWidget {
                     height: 40.h,
                     width: double.infinity,
                     decoration: BoxDecoration(
-                      color: const Color(0xFF92400E), // Wooden stage
+                      color: _LocalPalette.c_92400E, // Wooden stage
                       border: Border(
                         top: BorderSide(
                           color: KidsColors.warmAmber,
@@ -237,7 +248,7 @@ class KidsEmotionsLayout extends StatelessWidget {
                 child: Container(
                   width: 40.w,
                   decoration: BoxDecoration(
-                    color: const Color(0xFF9F1239), // Velvet red
+                    color: _LocalPalette.c_9F1239, // Velvet red
                     borderRadius: BorderRadius.horizontal(
                       left: Radius.circular(4.r),
                     ),
@@ -258,7 +269,7 @@ class KidsEmotionsLayout extends StatelessWidget {
                 child: Container(
                   width: 40.w,
                   decoration: BoxDecoration(
-                    color: const Color(0xFF9F1239),
+                    color: _LocalPalette.c_9F1239,
                     borderRadius: BorderRadius.horizontal(
                       right: Radius.circular(4.r),
                     ),
@@ -276,7 +287,7 @@ class KidsEmotionsLayout extends StatelessWidget {
                 child: Container(
                   height: 30.h,
                   decoration: BoxDecoration(
-                    color: const Color(0xFFBE123C),
+                    color: _LocalPalette.c_BE123C,
                     borderRadius: BorderRadius.vertical(
                       top: Radius.circular(4.r),
                     ),
@@ -306,10 +317,10 @@ class KidsEmotionsLayout extends StatelessWidget {
   ) {
     // Alternate between "comedy" (yellow) and "tragedy" (blue) base colors for flair
     final isComedy = index % 2 == 0;
-    final color = isComedy ? const Color(0xFFFDE047) : const Color(0xFF7DD3FC);
+    final color = isComedy ? _LocalPalette.c_FDE047 : _LocalPalette.c_7DD3FC;
     final shadowColor = isComedy
-        ? const Color(0xFFCA8A04)
-        : const Color(0xFF0284C7);
+        ? _LocalPalette.c_CA8A04
+        : _LocalPalette.c_0284C7;
 
     final maskWidget = Container(
       height: 85.h,

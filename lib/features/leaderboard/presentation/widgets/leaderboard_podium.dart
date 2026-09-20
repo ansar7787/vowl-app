@@ -8,6 +8,13 @@ import 'package:vowl/core/utils/locale_service.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_C0C0C0 = Color(0xFFC0C0C0);
+  static const Color c_CD7F32 = Color(0xFFCD7F32);
+  static const Color c_A3713B = Color(0xFFA3713B);
+}
+
 class LeaderboardPodium extends StatelessWidget {
   final List<UserEntity> top3;
   final bool isKids;
@@ -425,9 +432,9 @@ class _PodiumSlot extends StatelessWidget {
       case 1:
         return [AppColors.gold, AppColors.amber500];
       case 2:
-        return [const Color(0xFFC0C0C0), AppColors.slate400];
+        return [_LocalPalette.c_C0C0C0, AppColors.slate400];
       case 3:
-        return [const Color(0xFFCD7F32), const Color(0xFFA3713B)];
+        return [_LocalPalette.c_CD7F32, _LocalPalette.c_A3713B];
       default:
         return [AppColors.blue500, AppColors.indigo500];
     }

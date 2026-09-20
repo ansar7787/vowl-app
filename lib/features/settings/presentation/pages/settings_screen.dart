@@ -30,6 +30,12 @@ import 'package:vowl/core/utils/age_gate_service.dart';
 import 'package:vowl/core/utils/translation_service.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_9CA3AF = Color(0xFF9CA3AF);
+  static const Color c_EAB308 = Color(0xFFEAB308);
+}
+
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({super.key});
 
@@ -757,7 +763,7 @@ class _SettingsSupportGroup extends StatelessWidget {
                 fallback: 'App Version',
               ),
               icon: Icons.info_outline_rounded,
-              color: const Color(0xFF9CA3AF),
+              color: _LocalPalette.c_9CA3AF,
               trailing: Text(
                 '$appVersion ($buildNumber)',
                 style: TextStyle(
@@ -799,7 +805,7 @@ class _SettingsDangerGroup extends StatelessWidget {
                 fallback: 'Clear Cache',
               ),
               icon: Icons.cleaning_services_rounded,
-              color: const Color(0xFFEAB308),
+              color: _LocalPalette.c_EAB308,
               onTap: onClearCache,
             ),
             SettingsTile(

@@ -12,6 +12,11 @@ import 'package:vowl/core/utils/ml_services/entity_extraction_service.dart';
 import 'package:vowl/core/utils/ml_monetization_controller.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_2DD4BF = Color(0xFF2DD4BF);
+}
+
 /// Bottom-sheet style feedback card shown after the player answers.
 ///
 /// Accessibility:
@@ -53,7 +58,7 @@ class ReadingFeedbackCard extends StatelessWidget {
   bool get _success => isCorrect ?? false;
 
   List<Color> get _gradient => _success
-      ? const [Color(0xFF2DD4BF), AppColors.emerald500]
+      ? const [_LocalPalette.c_2DD4BF, AppColors.emerald500]
       : const [AppColors.rose500, AppColors.rose700];
 
   Color get _shadowColor => _success ? AppColors.emerald500 : AppColors.rose700;

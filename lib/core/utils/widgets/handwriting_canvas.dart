@@ -3,6 +3,11 @@ import 'package:flutter/material.dart' hide Ink;
 import 'package:google_mlkit_digital_ink_recognition/google_mlkit_digital_ink_recognition.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_E0E0E0 = Color(0xFFE0E0E0);
+}
+
 class HandwritingCanvas extends StatefulWidget {
   final Function(Ink ink) onInkUpdated;
   final VoidCallback onClear;
@@ -17,7 +22,7 @@ class HandwritingCanvas extends StatefulWidget {
     required this.onClear,
     this.canvasColor = Colors.white,
     this.strokeColor = Colors.indigo,
-    this.borderColor = const Color(0xFFE0E0E0), // Colors.grey.shade300 approx
+    this.borderColor = _LocalPalette.c_E0E0E0, // Colors.grey.shade300 approx
     this.borderWidth = 2.0,
   });
 

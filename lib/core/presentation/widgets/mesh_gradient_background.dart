@@ -4,6 +4,17 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/theme/theme_cubit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_312E81 = Color(0xFF312E81);
+  static const Color c_064E3B = Color(0xFF064E3B);
+  static const Color c_FFFFFF = Color(0xFFFFFFFF);
+  static const Color c_E0F2FE = Color(0xFFE0F2FE);
+  static const Color c_FCE7F3 = Color(0xFFFCE7F3);
+  static const Color c_DCFCE7 = Color(0xFFDCFCE7);
+  static const Color c_FAF5FF = Color(0xFFFAF5FF);
+}
+
 /// Theme-adaptive aurora mesh gradient backdrop with organic glowing clouds,
 /// a dot-grid pattern, and corner-framing overlay.
 ///
@@ -47,15 +58,15 @@ class MeshGradientBackground extends StatelessWidget {
         ((isMidnight || isDark)
             ? const [
                 AppColors.slate900,
-                Color(0xFF312E81),
-                Color(0xFF064E3B),
+                _LocalPalette.c_312E81,
+                _LocalPalette.c_064E3B,
                 AppColors.amber900,
               ]
             : const [
-                Color(0xFFFFFFFF),
-                Color(0xFFE0F2FE),
-                Color(0xFFFCE7F3),
-                Color(0xFFDCFCE7),
+                _LocalPalette.c_FFFFFF,
+                _LocalPalette.c_E0F2FE,
+                _LocalPalette.c_FCE7F3,
+                _LocalPalette.c_DCFCE7,
               ]);
 
     return RepaintBoundary(
@@ -117,7 +128,7 @@ class MeshGradientBackground extends StatelessWidget {
             if (!isDark)
               _StaticBlob(
                 alignment: const Alignment(0.8, 0.9),
-                color: const Color(0xFFFAF5FF).withValues(alpha: 0.3),
+                color: _LocalPalette.c_FAF5FF.withValues(alpha: 0.3),
                 size: 400.w,
               ),
           ],

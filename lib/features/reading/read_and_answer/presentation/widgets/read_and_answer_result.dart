@@ -5,6 +5,18 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/features/reading/domain/entities/reading_quest.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_34D399 = Color(0xFF34D399);
+  static const Color c_059669 = Color(0xFF059669);
+  static const Color c_F87171 = Color(0xFFF87171);
+  static const Color c_DC2626 = Color(0xFFDC2626);
+  static const Color c_064E3B = Color(0xFF064E3B);
+  static const Color c_D1FAE5 = Color(0xFFD1FAE5);
+  static const Color c_7F1D1D = Color(0xFF7F1D1D);
+  static const Color c_FEE2E2 = Color(0xFFFEE2E2);
+}
+
 class ReadAndAnswerResult extends StatelessWidget {
   final ReadingQuest quest;
   final bool isCorrect;
@@ -22,16 +34,16 @@ class ReadAndAnswerResult extends StatelessWidget {
     final reduceMotion = MediaQuery.disableAnimationsOf(context);
 
     final displayColor = isCorrect
-        ? (isDark ? const Color(0xFF34D399) : const Color(0xFF059669))
-        : (isDark ? const Color(0xFFF87171) : const Color(0xFFDC2626));
+        ? (isDark ? _LocalPalette.c_34D399 : _LocalPalette.c_059669)
+        : (isDark ? _LocalPalette.c_F87171 : _LocalPalette.c_DC2626);
 
     final cardBg = isCorrect
         ? (isDark
-              ? const Color(0xFF064E3B).withValues(alpha: 0.2)
-              : const Color(0xFFD1FAE5).withValues(alpha: 0.5))
+              ? _LocalPalette.c_064E3B.withValues(alpha: 0.2)
+              : _LocalPalette.c_D1FAE5.withValues(alpha: 0.5))
         : (isDark
-              ? const Color(0xFF7F1D1D).withValues(alpha: 0.2)
-              : const Color(0xFFFEE2E2).withValues(alpha: 0.5));
+              ? _LocalPalette.c_7F1D1D.withValues(alpha: 0.2)
+              : _LocalPalette.c_FEE2E2.withValues(alpha: 0.5));
 
     final explanation = quest.explanation;
 

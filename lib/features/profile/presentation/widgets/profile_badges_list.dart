@@ -11,6 +11,11 @@ import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/theme/app_colors.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_C084FC = Color(0xFFC084FC);
+}
+
 class ProfileBadgesList extends StatefulWidget {
   final UserEntity user;
 
@@ -456,7 +461,7 @@ class _ProfileBadgesListState extends State<ProfileBadgesList> {
                                 gradient: const LinearGradient(
                                   colors: [
                                     AppColors.violet500,
-                                    Color(0xFFC084FC),
+                                    _LocalPalette.c_C084FC,
                                   ],
                                 ),
                                 borderRadius: BorderRadius.circular(8.r),

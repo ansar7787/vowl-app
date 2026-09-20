@@ -20,6 +20,12 @@ import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_1E3A8A = Color(0xFF1E3A8A);
+  static const Color c_991B1B = Color(0xFF991B1B);
+}
+
 class BuddyBoutiqueScreen extends StatefulWidget {
   const BuddyBoutiqueScreen({super.key});
 
@@ -55,7 +61,7 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
     final isMidnight = context.watch<ThemeCubit>().state.isMidnight;
     final bgColor = isMidnight
         ? Colors.black
-        : (isDark ? const Color(0xFF1E3A8A) : AppColors.slate50);
+        : (isDark ? _LocalPalette.c_1E3A8A : AppColors.slate50);
 
     return Scaffold(
       backgroundColor: bgColor,
@@ -65,7 +71,7 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
             painterName: 'KidsWorldBackground',
             shaderName: 'magic_twinkle',
             primaryColor: isDark
-                ? const Color(0xFF1E3A8A)
+                ? _LocalPalette.c_1E3A8A
                 : Colors.blue.shade100,
             gameType: 'shop',
           ),
@@ -886,7 +892,7 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
                 padding: EdgeInsets.all(24.r),
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
-                    colors: [AppColors.red500, const Color(0xFF991B1B)],
+                    colors: [AppColors.red500, _LocalPalette.c_991B1B],
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight,
                   ),

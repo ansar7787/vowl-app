@@ -13,6 +13,11 @@ import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_06B6D4 = Color(0xFF06B6D4);
+}
+
 @immutable
 class _MasteryCategory {
   final String id;
@@ -65,7 +70,7 @@ class AdventureMasteryGrid extends StatelessWidget {
           color = AppColors.red500;
         case QuestType.listening:
           icon = Icons.headphones_rounded;
-          color = const Color(0xFF06B6D4);
+          color = _LocalPalette.c_06B6D4;
         case QuestType.reading:
           icon = Icons.menu_book_rounded;
           color = AppColors.blue500;

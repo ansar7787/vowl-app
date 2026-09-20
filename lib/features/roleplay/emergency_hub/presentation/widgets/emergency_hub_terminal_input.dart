@@ -3,6 +3,11 @@ import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_07070F = Color(0xFF07070F);
+}
+
 class EmergencyHubTerminalInput extends StatelessWidget {
   final TextEditingController controller;
   final String correctAnswer;
@@ -29,7 +34,7 @@ class EmergencyHubTerminalInput extends StatelessWidget {
       padding: EdgeInsets.all(18.r),
       decoration: BoxDecoration(
         color: isDark
-            ? const Color(0xFF07070F)
+            ? _LocalPalette.c_07070F
             : Colors.black.withValues(alpha: 0.02),
         borderRadius: BorderRadius.circular(28.r),
         border: Border.all(

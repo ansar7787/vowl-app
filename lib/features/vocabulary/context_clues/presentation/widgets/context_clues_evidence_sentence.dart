@@ -2,6 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_1A1A1A = Color(0xFF1A1A1A);
+}
+
 class ContextCluesEvidenceSentence extends StatelessWidget {
   final String sentence;
   final Color color;
@@ -105,7 +110,7 @@ class ContextCluesEvidenceSentence extends StatelessWidget {
           width: isCompact ? 70.w : 100.w,
           height: isCompact ? 18.h : 24.h,
           decoration: BoxDecoration(
-            color: const Color(0xFF1A1A1A),
+            color: _LocalPalette.c_1A1A1A,
             borderRadius: BorderRadius.circular(2.r),
           ),
         )

@@ -4,6 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_121212 = Color(0xFF121212);
+}
+
 class ShortAnswerInkwell extends StatelessWidget {
   final TextEditingController controller;
   final bool isAnswered;
@@ -29,7 +34,7 @@ class ShortAnswerInkwell extends StatelessWidget {
       width: double.infinity,
       padding: EdgeInsets.all(24.r),
       decoration: BoxDecoration(
-        color: isDark ? const Color(0xFF121212) : Colors.white,
+        color: isDark ? _LocalPalette.c_121212 : Colors.white,
         borderRadius: BorderRadius.circular(24.r),
         border: Border.all(
           color: isAnswered

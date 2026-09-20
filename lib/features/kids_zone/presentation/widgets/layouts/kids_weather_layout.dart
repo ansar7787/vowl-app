@@ -10,6 +10,17 @@ import 'package:vowl/features/kids_zone/presentation/utils/kids_tts_service.dart
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_fitted_text.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_8B5A2B = Color(0xFF8B5A2B);
+  static const Color c_5C3A21 = Color(0xFF5C3A21);
+  static const Color c_87CEEB = Color(0xFF87CEEB);
+  static const Color c_E0F6FF = Color(0xFFE0F6FF);
+  static const Color c_0C4A6E = Color(0xFF0C4A6E);
+  static const Color c_93C5FD = Color(0xFF93C5FD);
+  static const Color c_0369A1 = Color(0xFF0369A1);
+}
+
 /// Immersive Sky Window Theme for Weather Game
 class KidsWeatherLayout extends StatelessWidget {
   final int level;
@@ -117,10 +128,10 @@ class KidsWeatherLayout extends StatelessWidget {
             width: 320.w,
             height: 240.h,
             decoration: BoxDecoration(
-              color: const Color(0xFF8B5A2B), // Wooden brown outer frame
+              color: _LocalPalette.c_8B5A2B, // Wooden brown outer frame
               borderRadius: BorderRadius.circular(16.r),
               border: Border.all(
-                color: isHovering ? Colors.yellow : const Color(0xFF5C3A21),
+                color: isHovering ? Colors.yellow : _LocalPalette.c_5C3A21,
                 width: isHovering ? 8 : 6,
               ),
               boxShadow: [
@@ -139,8 +150,8 @@ class KidsWeatherLayout extends StatelessWidget {
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
                   colors: [
-                    Color(0xFF87CEEB), // Sky blue
-                    Color(0xFFE0F6FF), // Lighter sky
+                    _LocalPalette.c_87CEEB, // Sky blue
+                    _LocalPalette.c_E0F6FF, // Lighter sky
                   ],
                 ),
               ),
@@ -151,14 +162,14 @@ class KidsWeatherLayout extends StatelessWidget {
                     child: Container(
                       width: double.infinity,
                       height: 8.h,
-                      color: const Color(0xFF8B5A2B),
+                      color: _LocalPalette.c_8B5A2B,
                     ),
                   ),
                   Center(
                     child: Container(
                       width: 8.w,
                       height: double.infinity,
-                      color: const Color(0xFF8B5A2B),
+                      color: _LocalPalette.c_8B5A2B,
                     ),
                   ),
                   // Curtains
@@ -242,7 +253,7 @@ class KidsWeatherLayout extends StatelessWidget {
                                     ? 80.sp
                                     : 32.sp,
                                 fontWeight: FontWeight.w900,
-                                color: const Color(0xFF0C4A6E).withValues(
+                                color: _LocalPalette.c_0C4A6E.withValues(
                                   alpha:
                                       (quest.question == "?" ||
                                           quest.question == null)
@@ -289,7 +300,7 @@ class KidsWeatherLayout extends StatelessWidget {
                 borderRadius: BorderRadius.circular(30.r),
                 boxShadow: [
                   BoxShadow(
-                    color: const Color(0xFF93C5FD).withValues(alpha: 0.5),
+                    color: _LocalPalette.c_93C5FD.withValues(alpha: 0.5),
                     offset: const Offset(0, 6),
                     blurRadius: 0, // Hard shadow for cartoon style
                   ),
@@ -334,7 +345,7 @@ class KidsWeatherLayout extends StatelessWidget {
                   fontFamily: 'Outfit',
                   fontSize: 18.sp,
                   fontWeight: FontWeight.w800,
-                  color: const Color(0xFF0369A1),
+                  color: _LocalPalette.c_0369A1,
                   height: 1.1,
                 ),
                 textAlign: TextAlign.center,

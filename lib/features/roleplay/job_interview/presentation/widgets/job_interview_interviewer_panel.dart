@@ -3,6 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_07070F = Color(0xFF07070F);
+}
+
 class JobInterviewInterviewerPanel extends StatelessWidget {
   final String text;
   final Color color;
@@ -34,7 +39,7 @@ class JobInterviewInterviewerPanel extends StatelessWidget {
       padding: EdgeInsets.all(22.r),
       decoration: BoxDecoration(
         color: isDark
-            ? const Color(0xFF07070F)
+            ? _LocalPalette.c_07070F
             : Colors.black.withValues(alpha: 0.02),
         borderRadius: BorderRadius.circular(32.r),
         border: Border.all(

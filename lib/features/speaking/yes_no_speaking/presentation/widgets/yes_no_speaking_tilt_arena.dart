@@ -4,6 +4,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/features/speaking/yes_no_speaking/presentation/widgets/track_painter.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_07070F = Color(0xFF07070F);
+}
+
 class YesNoSpeakingTiltArena extends StatelessWidget {
   final double tiltValue;
   final bool isSnapped;
@@ -33,7 +38,7 @@ class YesNoSpeakingTiltArena extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 16.w),
       decoration: BoxDecoration(
         color: isDark
-            ? const Color(0xFF07070F)
+            ? _LocalPalette.c_07070F
             : Colors.black.withValues(alpha: 0.02),
         borderRadius: BorderRadius.circular(32.r),
         border: Border.all(

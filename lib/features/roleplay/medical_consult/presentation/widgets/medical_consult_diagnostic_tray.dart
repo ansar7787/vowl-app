@@ -4,6 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_131326 = Color(0xFF131326);
+}
+
 class MedicalConsultDiagnosticTray extends StatelessWidget {
   final List<String> symptoms;
   final Color color;
@@ -89,7 +94,7 @@ class MedicalConsultDiagnosticTray extends StatelessWidget {
                     color: isChecked
                         ? cardColor
                         : (isDark
-                              ? const Color(0xFF131326)
+                              ? _LocalPalette.c_131326
                               : Colors.grey.shade100),
                     borderRadius: BorderRadius.circular(16.r),
                     border: Border.all(

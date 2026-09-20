@@ -4,6 +4,12 @@ import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/theme/app_colors.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_34D399 = Color(0xFF34D399);
+  static const Color c_F87171 = Color(0xFFF87171);
+}
+
 class FindWordMeaningInteractivePassage extends StatefulWidget {
   final String passage;
   final String targetWord;
@@ -140,10 +146,10 @@ class _FindWordMeaningInteractivePassageState
               if (isSelected && widget.isCorrectSelection != null) {
                 activeColor = widget.isCorrectSelection!
                     ? (widget.isDark
-                          ? const Color(0xFF34D399)
+                          ? _LocalPalette.c_34D399
                           : AppColors.emerald500)
                     : (widget.isDark
-                          ? const Color(0xFFF87171)
+                          ? _LocalPalette.c_F87171
                           : AppColors.red500);
               }
 

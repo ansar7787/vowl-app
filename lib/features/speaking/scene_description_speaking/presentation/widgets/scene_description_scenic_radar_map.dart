@@ -4,6 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/features/speaking/scene_description_speaking/presentation/widgets/radar_beacon_painter.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_131326 = Color(0xFF131326);
+}
+
 class SceneDescriptionScenicRadarMap extends StatelessWidget {
   final String sceneTitle;
   final Set<int> inspectedHotspots;
@@ -35,7 +40,7 @@ class SceneDescriptionScenicRadarMap extends StatelessWidget {
       width: 1.sw,
       height: 230.h,
       decoration: BoxDecoration(
-        color: isDark ? const Color(0xFF131326) : Colors.white,
+        color: isDark ? _LocalPalette.c_131326 : Colors.white,
         borderRadius: BorderRadius.circular(28.r),
         border: Border.all(color: Colors.white10),
         boxShadow: [BoxShadow(color: Colors.black26, blurRadius: 15.r)],

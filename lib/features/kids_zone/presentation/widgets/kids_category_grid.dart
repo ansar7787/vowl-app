@@ -16,6 +16,11 @@ import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_0EA5E9 = Color(0xFF0EA5E9);
+}
+
 /// Themed section groupings for the category grid.
 /// This transforms the flat wall of 25 cards into a scannable, grouped menu.
 class _SectionDef {
@@ -51,7 +56,7 @@ const _kSections = [
     'food',
     'home',
   ]),
-  _SectionDef('Math & Logic', '🔢', Color(0xFF0EA5E9), [
+  _SectionDef('Math & Logic', '🔢', _LocalPalette.c_0EA5E9, [
     'numbers',
     'colors',
     'shapes',

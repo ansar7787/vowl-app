@@ -2,6 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_F3F4F6 = Color(0xFFF3F4F6);
+}
+
 /// Shared decoration builder for auth input fields.
 InputDecoration buildAuthDecoration({
   required BuildContext context,
@@ -27,7 +32,7 @@ InputDecoration buildAuthDecoration({
     filled: true,
     fillColor: Theme.of(context).brightness == Brightness.dark
         ? AppColors.slate800
-        : const Color(0xFFF3F4F6),
+        : _LocalPalette.c_F3F4F6,
     border: OutlineInputBorder(
       borderRadius: BorderRadius.circular(16.r),
       borderSide: BorderSide.none,

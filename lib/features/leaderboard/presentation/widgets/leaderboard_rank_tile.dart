@@ -7,6 +7,12 @@ import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_06B6D4 = Color(0xFF06B6D4);
+  static const Color c_60A5FA = Color(0xFF60A5FA);
+}
+
 class LeaderboardRankTile extends StatelessWidget {
   final UserEntity user;
   final int rank;
@@ -36,7 +42,7 @@ class LeaderboardRankTile extends StatelessWidget {
         : rank <= 10
         ? AppColors.blue500
         : rank <= 25
-        ? const Color(0xFF06B6D4)
+        ? _LocalPalette.c_06B6D4
         : AppColors.slate400;
     final displayName =
         user.displayName ??
@@ -175,7 +181,7 @@ class LeaderboardRankTile extends StatelessWidget {
                                   fontFamily: 'Outfit',
                                   fontSize: 7.sp,
                                   fontWeight: FontWeight.w900,
-                                  color: const Color(0xFF60A5FA),
+                                  color: _LocalPalette.c_60A5FA,
                                   letterSpacing: 1,
                                 ),
                               ),

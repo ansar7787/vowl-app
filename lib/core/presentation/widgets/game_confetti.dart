@@ -4,6 +4,11 @@ import 'package:confetti/confetti.dart';
 import 'package:flutter/material.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_6366F1 = Color(0xFF6366F1);
+}
+
 /// Multi-emitter confetti burst for level-completion celebrations.
 ///
 /// Three emitters (left, right, top-centre) fire simultaneously for a
@@ -25,7 +30,7 @@ class _GameConfettiState extends State<GameConfetti> {
 
   static const List<Color> _confettiColors = [
     IllustrationColors.premiumGold, // Gold
-    Color(0xFF6366F1), // Indigo
+    _LocalPalette.c_6366F1, // Indigo
     AppColors.emerald500, // Emerald
     AppColors.rose500, // Rose
     AppColors.violet500, // Violet

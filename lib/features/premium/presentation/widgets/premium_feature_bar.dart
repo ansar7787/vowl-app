@@ -6,6 +6,12 @@ import 'package:vowl/core/utils/locale_service.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_06B6D4 = Color(0xFF06B6D4);
+  static const Color c_EAB308 = Color(0xFFEAB308);
+}
+
 class ModernFeatureBar extends StatelessWidget {
   const ModernFeatureBar({super.key});
 
@@ -170,7 +176,7 @@ class ModernFeatureBar extends StatelessWidget {
             fallback: 'Instantly unlock all elite and master difficulty tiers.',
           ),
           isDark: isDark,
-          customColor: const Color(0xFF06B6D4), // Cyan
+          customColor: _LocalPalette.c_06B6D4, // Cyan
         ),
         SizedBox(height: 12.h),
         _buildFeatureCard(
@@ -186,7 +192,7 @@ class ModernFeatureBar extends StatelessWidget {
                 'Flaunt your exclusive elite status on the global leaderboards.',
           ),
           isDark: isDark,
-          customColor: const Color(0xFFEAB308), // Yellow
+          customColor: _LocalPalette.c_EAB308, // Yellow
         ),
       ],
     );

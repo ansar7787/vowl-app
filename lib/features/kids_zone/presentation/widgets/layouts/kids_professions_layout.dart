@@ -11,6 +11,15 @@ import 'package:vowl/features/kids_zone/presentation/utils/kids_tts_service.dart
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_fitted_text.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_FDE047 = Color(0xFFFDE047);
+  static const Color c_CA8A04 = Color(0xFFCA8A04);
+  static const Color c_DBEAFE = Color(0xFFDBEAFE);
+  static const Color c_93C5FD = Color(0xFF93C5FD);
+  static const Color c_1E3A8A = Color(0xFF1E3A8A);
+}
+
 /// Immersive Storefront Theme for Professions Game
 class KidsProfessionsLayout extends StatelessWidget {
   final int level;
@@ -122,10 +131,10 @@ class KidsProfessionsLayout extends StatelessWidget {
             height: 260.h,
             clipBehavior: Clip.hardEdge,
             decoration: BoxDecoration(
-              color: const Color(0xFFFDE047), // Yellow building
+              color: _LocalPalette.c_FDE047, // Yellow building
               borderRadius: BorderRadius.circular(16.r),
               border: Border.all(
-                color: isHovering ? Colors.white : const Color(0xFFCA8A04),
+                color: isHovering ? Colors.white : _LocalPalette.c_CA8A04,
                 width: isHovering ? 8 : 6,
               ),
               boxShadow: [
@@ -175,10 +184,10 @@ class KidsProfessionsLayout extends StatelessWidget {
                   bottom: 20.h,
                   child: Container(
                     decoration: BoxDecoration(
-                      color: const Color(0xFFDBEAFE), // Glass blue
+                      color: _LocalPalette.c_DBEAFE, // Glass blue
                       borderRadius: BorderRadius.circular(12.r),
                       border: Border.all(
-                        color: const Color(0xFF93C5FD),
+                        color: _LocalPalette.c_93C5FD,
                         width: 4,
                       ),
                     ),
@@ -232,7 +241,7 @@ class KidsProfessionsLayout extends StatelessWidget {
                                     ? 80.sp
                                     : 32.sp,
                                 fontWeight: FontWeight.w900,
-                                color: const Color(0xFF1E3A8A).withValues(
+                                color: _LocalPalette.c_1E3A8A.withValues(
                                   alpha:
                                       (quest.question == "?" ||
                                           quest.question == null)

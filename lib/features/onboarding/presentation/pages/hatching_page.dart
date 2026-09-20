@@ -15,6 +15,14 @@ import 'package:flutter_tts/flutter_tts.dart';
 import 'package:confetti/confetti.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_93C5FD = Color(0xFF93C5FD);
+  static const Color c_1D4ED8 = Color(0xFF1D4ED8);
+  static const Color c_1E3A8A = Color(0xFF1E3A8A);
+  static const Color c_60A5FA = Color(0xFF60A5FA);
+}
+
 /// HatchingPage: introductory onboarding companion hatching animation.
 /// Guides the user through hatching their Vowl companion using a stylised egg.
 class HatchingPage extends StatefulWidget {
@@ -281,19 +289,19 @@ class _HatchingPageState extends State<HatchingPage> {
               radius: 0.85,
               colors: [
                 Colors.white.withValues(alpha: 0.7),
-                const Color(0xFF93C5FD).withValues(alpha: 0.4),
-                const Color(0xFF1D4ED8).withValues(alpha: 0.5),
+                _LocalPalette.c_93C5FD.withValues(alpha: 0.4),
+                _LocalPalette.c_1D4ED8.withValues(alpha: 0.5),
               ],
               stops: const [0.0, 0.4, 1.0],
             ),
             boxShadow: [
               BoxShadow(
-                color: const Color(0xFF1E3A8A).withValues(alpha: 0.2),
+                color: _LocalPalette.c_1E3A8A.withValues(alpha: 0.2),
                 blurRadius: 20,
                 offset: const Offset(0, 12),
               ),
               BoxShadow(
-                color: const Color(0xFF60A5FA).withValues(alpha: 0.15),
+                color: _LocalPalette.c_60A5FA.withValues(alpha: 0.15),
                 blurRadius: 10,
                 spreadRadius: -2,
               ),

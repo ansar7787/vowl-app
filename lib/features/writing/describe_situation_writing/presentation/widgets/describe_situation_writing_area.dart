@@ -3,6 +3,11 @@ import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_DC2626 = Color(0xFFDC2626);
+}
+
 class DescribeSituationWritingArea extends StatelessWidget {
   final TextEditingController textController;
   final int minWords;
@@ -82,7 +87,7 @@ class DescribeSituationWritingArea extends StatelessWidget {
                       ? (isDark ? tokens.gameCorrect : KidsColors.safeGreen)
                       : (isDark
                             ? tokens.gameIncorrect
-                            : const Color(0xFFDC2626));
+                            : _LocalPalette.c_DC2626);
                   return Container(
                     padding: EdgeInsets.symmetric(
                       horizontal: 10.w,

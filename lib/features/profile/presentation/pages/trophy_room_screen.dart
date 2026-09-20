@@ -15,6 +15,16 @@ import 'package:vowl/features/profile/presentation/bloc/trophy_room_cubit.dart';
 import 'package:vowl/core/theme/category_colors.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_020617 = Color(0xFF020617);
+  static const Color c_33201C = Color(0xFF33201C);
+  static const Color c_FEF3C7 = Color(0xFFFEF3C7);
+  static const Color c_451A03 = Color(0xFF451A03);
+  static const Color c_0EA5E9 = Color(0xFF0EA5E9);
+  static const Color c_0284C7 = Color(0xFF0284C7);
+}
+
 class TrophyRoomScreen extends StatelessWidget {
   const TrophyRoomScreen({super.key});
 
@@ -39,7 +49,7 @@ class _TrophyRoomView extends StatelessWidget {
     final isMidnight = context.watch<ThemeCubit>().state.isMidnight;
 
     return Scaffold(
-      backgroundColor: isMidnight ? const Color(0xFF020617) : null,
+      backgroundColor: isMidnight ? _LocalPalette.c_020617 : null,
       body: Stack(
         children: [
           if (!isMidnight)
@@ -49,12 +59,12 @@ class _TrophyRoomView extends StatelessWidget {
                   ? [
                       AppColors.slate900,
                       AppColors.slate800,
-                      const Color(0xFF33201C), // Deep gold tint
+                      _LocalPalette.c_33201C, // Deep gold tint
                     ]
                   : [
                       AppColors.slate50,
                       AppColors.slate100,
-                      const Color(0xFFFEF3C7), // Light gold tint
+                      _LocalPalette.c_FEF3C7, // Light gold tint
                     ],
             ),
 
@@ -473,7 +483,7 @@ class _TrophyRoomView extends StatelessWidget {
             gradient: LinearGradient(
               colors: isLegendary
                   ? [
-                      const Color(0xFF451A03).withValues(
+                      _LocalPalette.c_451A03.withValues(
                         alpha: isDark ? 0.8 : 0.9,
                       ), // Deep Amber Dark
                       const Color(
@@ -617,7 +627,7 @@ class _TrophyRoomView extends StatelessWidget {
     } else if (badgeId.contains('elitemastery')) {
       return [CategoryColors.eliteMastery, CategoryColors.eliteMasteryDark];
     } else if (badgeId.contains('streak')) {
-      return [const Color(0xFF0EA5E9), const Color(0xFF0284C7)]; // Sky Blue
+      return [_LocalPalette.c_0EA5E9, _LocalPalette.c_0284C7]; // Sky Blue
     }
 
     // Default Silver for unmapped standards

@@ -18,6 +18,11 @@ import 'package:vowl/core/utils/reward_limit_service.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_BE185D = Color(0xFFBE185D);
+}
+
 class KidsStarVaultBottomSheet extends StatefulWidget {
   final String gameType;
   final Color primaryColor;
@@ -936,7 +941,7 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
                                               borderRadius:
                                                   BorderRadius.circular(30.r),
                                               border: Border.all(
-                                                color: const Color(0xFFBE185D),
+                                                color: _LocalPalette.c_BE185D,
                                                 width: 3.w,
                                               ),
                                               boxShadow: [

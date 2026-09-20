@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_131326 = Color(0xFF131326);
+}
+
 class SceneDescriptionExplorerGuideCard extends StatelessWidget {
   final bool isDark;
 
@@ -13,7 +18,7 @@ class SceneDescriptionExplorerGuideCard extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 22.w, vertical: 16.h),
       decoration: BoxDecoration(
         color: isDark
-            ? const Color(0xFF131326)
+            ? _LocalPalette.c_131326
             : Colors.black.withValues(alpha: 0.02),
         borderRadius: BorderRadius.circular(24.r),
         border: Border.all(color: Colors.white10),

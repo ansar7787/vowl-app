@@ -14,6 +14,11 @@ import 'package:vowl/features/vocabulary/antonym_search/presentation/widgets/ant
 import 'package:vowl/features/vocabulary/antonym_search/presentation/widgets/antonym_gradient_scale.dart';
 import 'package:vowl/core/presentation/game_mechanics/speaking/speak_to_confirm_overlay.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_00E5FF = Color(0xFF00E5FF);
+}
+
 class AntonymSearchScreen extends StatefulWidget {
   final int level;
   final GameSubtype gameType;
@@ -100,7 +105,7 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen>
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final targetColor = const Color(0xFF00E5FF);
+    final targetColor = _LocalPalette.c_00E5FF;
 
     return BlocConsumer<VocabularyBloc, VocabularyState>(
       listenWhen: vocabularyListenWhen,

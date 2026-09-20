@@ -15,6 +15,13 @@ import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_FF5F6D = Color(0xFFFF5F6D);
+  static const Color c_38BDF8 = Color(0xFF38BDF8);
+  static const Color c_FCD34D = Color(0xFFFCD34D);
+}
+
 class StreakBoostersShop extends StatefulWidget {
   final UserEntity user;
 
@@ -175,7 +182,7 @@ class _StreakBoostersShopState extends State<StreakBoostersShop> {
               fallback: 'Melt the ice and restore your flame from yesterday.',
             ),
             icon: LucideIcons.flame,
-            color: const Color(0xFFFF5F6D),
+            color: _LocalPalette.c_FF5F6D,
             cost: 200,
             currentCoins: user.coins,
             isDisabled: user.currentStreak > 0,
@@ -236,7 +243,7 @@ class _StreakBoostersShopState extends State<StreakBoostersShop> {
               fallback: 'A mystical barrier that prevents streak loss.',
             ),
             icon: LucideIcons.shieldCheck,
-            color: const Color(0xFF38BDF8),
+            color: _LocalPalette.c_38BDF8,
             cost: 150,
             count: user.streakFreezes,
             currentCoins: user.coins,
@@ -264,7 +271,7 @@ class _StreakBoostersShopState extends State<StreakBoostersShop> {
               fallback: 'Double the wisdom, double the progress for 24h.',
             ),
             icon: LucideIcons.zap,
-            color: const Color(0xFFFCD34D),
+            color: _LocalPalette.c_FCD34D,
             cost: 300,
             isActive: user.isDoubleXPActive,
             activeUntil: user.doubleXPExpiry,

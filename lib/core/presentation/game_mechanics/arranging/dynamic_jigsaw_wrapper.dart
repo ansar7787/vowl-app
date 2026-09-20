@@ -9,6 +9,12 @@ import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
 import 'package:vowl/core/presentation/game_mechanics/shared/game_skip_bypass_button.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_0C0C1A = Color(0xFF0C0C1A);
+  static const Color c_1E1E2C = Color(0xFF1E1E2C);
+}
+
 class DynamicJigsawWrapper extends StatefulWidget {
   final String expectedText;
   final Color primaryColor;
@@ -264,7 +270,7 @@ class _DynamicJigsawWrapperState extends State<DynamicJigsawWrapper> {
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final tokens = Theme.of(context).extension<AppColorTokens>()!;
-    final bgColor = isDark ? const Color(0xFF0C0C1A) : Colors.white;
+    final bgColor = isDark ? _LocalPalette.c_0C0C1A : Colors.white;
     final textColor = isDark ? Colors.white : AppColors.slate900;
     final subtitleColor = isDark ? Colors.white60 : Colors.black54;
     final errorColor = tokens.gameIncorrect;
@@ -784,7 +790,7 @@ class _DynamicJigsawWrapperState extends State<DynamicJigsawWrapper> {
       child: Container(
         padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
         decoration: BoxDecoration(
-          color: isDark ? const Color(0xFF1E1E2C) : Colors.white,
+          color: isDark ? _LocalPalette.c_1E1E2C : Colors.white,
           borderRadius: BorderRadius.circular(18.r),
           border: Border.all(color: subtitleColor.withValues(alpha: 0.2)),
           boxShadow: [

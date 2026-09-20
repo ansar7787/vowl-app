@@ -4,6 +4,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/features/roleplay/gourmet_order/presentation/widgets/gourmet_order_steam_painter.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_07070F = Color(0xFF07070F);
+}
+
 class GourmetOrderTableSetting extends StatefulWidget {
   final Color color;
   final bool isDark;
@@ -79,7 +84,7 @@ class _GourmetOrderTableSettingState extends State<GourmetOrderTableSetting> {
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     color: widget.isDark
-                        ? const Color(0xFF07070F)
+                        ? _LocalPalette.c_07070F
                         : Colors.black.withValues(alpha: 0.02),
                     border: Border.all(
                       color: ringColor.withValues(

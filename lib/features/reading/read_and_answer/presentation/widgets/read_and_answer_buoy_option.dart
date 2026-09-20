@@ -3,6 +3,18 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_064E3B = Color(0xFF064E3B);
+  static const Color c_D1FAE5 = Color(0xFFD1FAE5);
+  static const Color c_34D399 = Color(0xFF34D399);
+  static const Color c_059669 = Color(0xFF059669);
+  static const Color c_7F1D1D = Color(0xFF7F1D1D);
+  static const Color c_FEE2E2 = Color(0xFFFEE2E2);
+  static const Color c_F87171 = Color(0xFFF87171);
+  static const Color c_DC2626 = Color(0xFFDC2626);
+}
+
 class ReadAndAnswerBuoyOption extends StatelessWidget {
   final int index;
   final String text;
@@ -50,14 +62,14 @@ class ReadAndAnswerBuoyOption extends StatelessWidget {
     final IconData iconData;
 
     if (showAsCorrect) {
-      cardBg = isDark ? const Color(0xFF064E3B) : const Color(0xFFD1FAE5);
+      cardBg = isDark ? _LocalPalette.c_064E3B : _LocalPalette.c_D1FAE5;
       borderCol = AppColors.emerald500;
-      iconCol = isDark ? const Color(0xFF34D399) : const Color(0xFF059669);
+      iconCol = isDark ? _LocalPalette.c_34D399 : _LocalPalette.c_059669;
       iconData = Icons.check_circle_rounded;
     } else if (showAsWrong) {
-      cardBg = isDark ? const Color(0xFF7F1D1D) : const Color(0xFFFEE2E2);
+      cardBg = isDark ? _LocalPalette.c_7F1D1D : _LocalPalette.c_FEE2E2;
       borderCol = AppColors.red500;
-      iconCol = isDark ? const Color(0xFFF87171) : const Color(0xFFDC2626);
+      iconCol = isDark ? _LocalPalette.c_F87171 : _LocalPalette.c_DC2626;
       iconData = Icons.cancel_rounded;
     } else if (isSelected) {
       cardBg = isDark

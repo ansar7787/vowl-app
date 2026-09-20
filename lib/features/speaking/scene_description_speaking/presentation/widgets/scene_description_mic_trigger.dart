@@ -4,6 +4,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_1F1C2C = Color(0xFF1F1C2C);
+  static const Color c_928DAB = Color(0xFF928DAB);
+}
+
 class SceneDescriptionMicTrigger extends StatelessWidget {
   final bool isListening;
   final int activeHotspot;
@@ -103,8 +109,8 @@ class SceneDescriptionMicTrigger extends StatelessWidget {
                           ? (isListening
                                 ? [Colors.red[900]!, tokens.gameIncorrect]
                                 : [
-                                    const Color(0xFF1F1C2C),
-                                    const Color(0xFF928DAB),
+                                    _LocalPalette.c_1F1C2C,
+                                    _LocalPalette.c_928DAB,
                                   ])
                           : [Colors.grey[800]!, Colors.grey[900]!],
                     ),

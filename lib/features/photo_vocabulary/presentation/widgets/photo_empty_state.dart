@@ -8,6 +8,11 @@ import 'package:lucide_icons/lucide_icons.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_0D9488 = Color(0xFF0D9488);
+}
+
 class PhotoEmptyState extends StatelessWidget {
   final Future<void> Function(ImageSource) onPickImage;
 
@@ -214,7 +219,7 @@ class PhotoEmptyState extends StatelessWidget {
                 gradient: LinearGradient(
                   colors: [
                     AppColors.teal500.withValues(alpha: 0.15),
-                    const Color(0xFF0D9488).withValues(alpha: 0.05),
+                    _LocalPalette.c_0D9488.withValues(alpha: 0.05),
                   ],
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,

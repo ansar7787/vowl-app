@@ -11,6 +11,15 @@ import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_fitted_text.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_DC2626 = Color(0xFFDC2626);
+  static const Color c_FEF3C7 = Color(0xFFFEF3C7);
+  static const Color c_FDE68A = Color(0xFFFDE68A);
+  static const Color c_92400E = Color(0xFF92400E);
+  static const Color c_451A03 = Color(0xFF451A03);
+}
+
 /// Dollhouse Theme for Home Game
 /// Space Complexity: O(1)
 /// Time Complexity: O(N) where N is the number of options (max 4)
@@ -157,7 +166,7 @@ class KidsHomeLayout extends StatelessWidget {
                   width: 280.w,
                   height: 60.h,
                   color: isHovering
-                      ? const Color(0xFFDC2626)
+                      ? _LocalPalette.c_DC2626
                       : AppColors.red500, // Red roof
                 ),
               ),
@@ -167,11 +176,11 @@ class KidsHomeLayout extends StatelessWidget {
                 height: 160.h, // Made slightly taller to fit instruction
                 decoration: BoxDecoration(
                   color: isHovering
-                      ? const Color(0xFFFEF3C7)
-                      : const Color(0xFFFDE68A), // Warm yellow wallpaper
+                      ? _LocalPalette.c_FEF3C7
+                      : _LocalPalette.c_FDE68A, // Warm yellow wallpaper
                   border: Border.all(
                     color: isHovering
-                        ? const Color(0xFF92400E)
+                        ? _LocalPalette.c_92400E
                         : AppColors.amber900,
                     width: isHovering ? 8.r : 6.r,
                   ), // Wooden walls
@@ -227,7 +236,7 @@ class KidsHomeLayout extends StatelessWidget {
                                       ? 70.sp
                                       : 24.sp,
                                   fontWeight: FontWeight.w800,
-                                  color: const Color(0xFF451A03).withValues(
+                                  color: _LocalPalette.c_451A03.withValues(
                                     alpha:
                                         (quest.question == "?" ||
                                             quest.question == null)

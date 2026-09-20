@@ -11,6 +11,12 @@ import 'package:vowl/features/kids_zone/presentation/utils/kids_tts_service.dart
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_fitted_text.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_FEF9C3 = Color(0xFFFEF9C3);
+  static const Color c_FEF08A = Color(0xFFFEF08A);
+}
+
 /// Cozy Living Room Theme for Family Game
 /// Space Complexity: O(1)
 /// Time Complexity: O(N) where N is the number of options (max 4)
@@ -158,8 +164,8 @@ class KidsFamilyLayout extends StatelessWidget {
             height: 200.h,
             decoration: BoxDecoration(
               color: isHovering
-                  ? const Color(0xFFFEF9C3)
-                  : const Color(0xFFFEF08A), // Highlight yellow
+                  ? _LocalPalette.c_FEF9C3
+                  : _LocalPalette.c_FEF08A, // Highlight yellow
               borderRadius: BorderRadius.circular(4.r),
               border: Border.all(
                 color: isHovering ? AppColors.amber600 : KidsColors.warmAmber,

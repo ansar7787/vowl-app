@@ -10,6 +10,13 @@ import 'package:vowl/features/kids_zone/presentation/utils/kids_tts_service.dart
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_fitted_text.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_FEF2F2 = Color(0xFFFEF2F2);
+  static const Color c_D4D4D8 = Color(0xFFD4D4D8);
+  static const Color c_E4E4E7 = Color(0xFFE4E4E7);
+}
+
 /// Chef's Kitchen Theme for Food Game
 /// Space Complexity: O(1)
 /// Time Complexity: O(N) where N is the number of options (max 4)
@@ -152,13 +159,13 @@ class KidsFoodLayout extends StatelessWidget {
                 height: 200.h,
                 decoration: BoxDecoration(
                   color: isHovering
-                      ? const Color(0xFFFEF2F2)
+                      ? _LocalPalette.c_FEF2F2
                       : Colors.white, // Light red tint on hover
                   borderRadius: BorderRadius.circular(16.r),
                   border: Border.all(
                     color: isHovering
                         ? AppColors.rose700
-                        : const Color(0xFFD4D4D8),
+                        : _LocalPalette.c_D4D4D8,
                     width: isHovering ? 6.r : 4.r,
                   ), // Light grey tile border
                   boxShadow: [
@@ -242,10 +249,7 @@ class KidsFoodLayout extends StatelessWidget {
                     borderRadius: BorderRadius.vertical(
                       top: Radius.circular(40.r),
                     ),
-                    border: Border.all(
-                      color: const Color(0xFFE4E4E7),
-                      width: 2,
-                    ),
+                    border: Border.all(color: _LocalPalette.c_E4E4E7, width: 2),
                   ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -253,17 +257,17 @@ class KidsFoodLayout extends StatelessWidget {
                       Container(
                         width: 2.w,
                         height: 20.h,
-                        color: const Color(0xFFE4E4E7),
+                        color: _LocalPalette.c_E4E4E7,
                       ),
                       Container(
                         width: 2.w,
                         height: 25.h,
-                        color: const Color(0xFFE4E4E7),
+                        color: _LocalPalette.c_E4E4E7,
                       ),
                       Container(
                         width: 2.w,
                         height: 20.h,
-                        color: const Color(0xFFE4E4E7),
+                        color: _LocalPalette.c_E4E4E7,
                       ),
                     ],
                   ),

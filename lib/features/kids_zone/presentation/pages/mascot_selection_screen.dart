@@ -15,6 +15,16 @@ import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/theme/app_colors.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_020617 = Color(0xFF020617);
+  static const Color c_1E1B4B = Color(0xFF1E1B4B);
+  static const Color c_312E81 = Color(0xFF312E81);
+  static const Color c_E0F2FE = Color(0xFFE0F2FE);
+  static const Color c_F0FDF4 = Color(0xFFF0FDF4);
+  static const Color c_FFF7ED = Color(0xFFFFF7ED);
+}
+
 class MascotSelectionScreen extends StatelessWidget {
   const MascotSelectionScreen({super.key});
 
@@ -32,17 +42,17 @@ class MascotSelectionScreen extends StatelessWidget {
         children: [
           MeshGradientBackground(
             colors: isMidnight
-                ? [Colors.black, const Color(0xFF020617), AppColors.slate900]
+                ? [Colors.black, _LocalPalette.c_020617, AppColors.slate900]
                 : (isDark
                       ? [
                           AppColors.slate900,
-                          const Color(0xFF1E1B4B),
-                          const Color(0xFF312E81),
+                          _LocalPalette.c_1E1B4B,
+                          _LocalPalette.c_312E81,
                         ]
                       : [
-                          const Color(0xFFE0F2FE),
-                          const Color(0xFFF0FDF4),
-                          const Color(0xFFFFF7ED),
+                          _LocalPalette.c_E0F2FE,
+                          _LocalPalette.c_F0FDF4,
+                          _LocalPalette.c_FFF7ED,
                         ]),
           ),
           CustomScrollView(

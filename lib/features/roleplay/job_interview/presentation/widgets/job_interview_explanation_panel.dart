@@ -4,6 +4,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/features/roleplay/domain/entities/roleplay_quest.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_131326 = Color(0xFF131326);
+}
+
 class JobInterviewExplanationPanel extends StatelessWidget {
   final RoleplayQuest quest;
   final bool isDark;
@@ -29,7 +34,7 @@ class JobInterviewExplanationPanel extends StatelessWidget {
       width: 1.sw,
       padding: EdgeInsets.all(20.r),
       decoration: BoxDecoration(
-        color: isDark ? const Color(0xFF131326) : Colors.white,
+        color: isDark ? _LocalPalette.c_131326 : Colors.white,
         borderRadius: BorderRadius.circular(24.r),
         border: Border.all(
           color: cardColor.withValues(alpha: 0.25),

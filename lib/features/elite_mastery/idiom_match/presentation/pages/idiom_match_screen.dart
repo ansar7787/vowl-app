@@ -14,6 +14,11 @@ import '../../../presentation/widgets/elite_hint_card.dart';
 import '../widgets/idiom_match_options_panel.dart';
 import 'package:vowl/features/elite_mastery/presentation/mixins/elite_mastery_game_screen_mixin.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_1A1A2E = Color(0xFF1A1A2E);
+}
+
 class IdiomMatchScreen extends StatefulWidget {
   final int level;
   final GameSubtype gameType;
@@ -437,7 +442,7 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen>
                                             ),
                                             decoration: BoxDecoration(
                                               color: isDark
-                                                  ? const Color(0xFF1A1A2E)
+                                                  ? _LocalPalette.c_1A1A2E
                                                   : Colors.blue.withValues(
                                                       alpha: 0.05,
                                                     ),

@@ -7,6 +7,11 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_22C55E = Color(0xFF22C55E);
+}
+
 /// A countdown timer bar for speed-challenge game modes.
 ///
 /// Displays a thin animated gradient bar that depletes left-to-right.
@@ -175,7 +180,7 @@ class SpeedChallengeTimerState extends State<SpeedChallengeTimer>
             Color barColor;
             if (remaining > 0.5) {
               barColor = Color.lerp(
-                const Color(0xFF22C55E), // green
+                _LocalPalette.c_22C55E, // green
                 AppColors.amber400, // yellow
                 (1.0 - remaining) * 2.0, // 0→1 over top half
               )!;
@@ -238,7 +243,7 @@ class SpeedChallengeTimerState extends State<SpeedChallengeTimer>
           builder: (context, remainingSec, _) {
             final remainingFraction = remainingSec / widget.durationSeconds;
             final Color startColor =
-                widget.primaryColor ?? const Color(0xFF22C55E);
+                widget.primaryColor ?? _LocalPalette.c_22C55E;
 
             Color barColor;
             if (remainingFraction > 0.5) {

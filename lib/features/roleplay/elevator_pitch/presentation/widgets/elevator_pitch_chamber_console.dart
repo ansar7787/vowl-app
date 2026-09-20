@@ -5,6 +5,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/features/roleplay/elevator_pitch/presentation/widgets/elevator_pitch_soundwave_painter.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_07070F = Color(0xFF07070F);
+  static const Color c_0B0B14 = Color(0xFF0B0B14);
+}
+
 class ElevatorPitchChamberConsole extends StatelessWidget {
   final Color color;
   final bool isDark;
@@ -44,7 +50,7 @@ class ElevatorPitchChamberConsole extends StatelessWidget {
       padding: EdgeInsets.all(20.r),
       decoration: BoxDecoration(
         color: isDark
-            ? const Color(0xFF07070F)
+            ? _LocalPalette.c_07070F
             : Colors.black.withValues(alpha: 0.02),
         borderRadius: BorderRadius.circular(36.r),
         border: Border.all(
@@ -62,7 +68,7 @@ class ElevatorPitchChamberConsole extends StatelessWidget {
               width: 64.w,
               height: totalShaftHeight,
               decoration: BoxDecoration(
-                color: isDark ? const Color(0xFF0B0B14) : Colors.grey.shade200,
+                color: isDark ? _LocalPalette.c_0B0B14 : Colors.grey.shade200,
                 borderRadius: BorderRadius.circular(32.r),
                 border: Border.all(
                   color: isDark

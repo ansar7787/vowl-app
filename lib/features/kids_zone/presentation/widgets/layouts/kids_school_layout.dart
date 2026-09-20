@@ -11,6 +11,15 @@ import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_fitted_text.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_BAE6FD = Color(0xFFBAE6FD);
+  static const Color c_E0F2FE = Color(0xFFE0F2FE);
+  static const Color c_FDE047 = Color(0xFFFDE047);
+  static const Color c_FACC15 = Color(0xFFFACC15);
+  static const Color c_0369A1 = Color(0xFF0369A1);
+}
+
 /// School Bus Theme for School Game
 /// Space Complexity: O(1)
 /// Time Complexity: O(N) where N is the number of options (max 4)
@@ -149,13 +158,13 @@ class KidsSchoolLayout extends StatelessWidget {
             height: 200.h,
             decoration: BoxDecoration(
               color: isHovering
-                  ? const Color(0xFFBAE6FD)
-                  : const Color(0xFFE0F2FE), // Sky blue outside window
+                  ? _LocalPalette.c_BAE6FD
+                  : _LocalPalette.c_E0F2FE, // Sky blue outside window
               borderRadius: BorderRadius.circular(24.r),
               border: Border.all(
                 color: isHovering
-                    ? const Color(0xFFFDE047)
-                    : const Color(0xFFFACC15),
+                    ? _LocalPalette.c_FDE047
+                    : _LocalPalette.c_FACC15,
                 width: 16.r,
               ), // School bus yellow frame
               boxShadow: [
@@ -181,7 +190,7 @@ class KidsSchoolLayout extends StatelessWidget {
                               )
                             : ColorFiltered(
                                 colorFilter: ColorFilter.mode(
-                                  const Color(0xFF0369A1).withValues(
+                                  _LocalPalette.c_0369A1.withValues(
                                     alpha: 0.15,
                                   ), // Dark blue silhouette
                                   BlendMode.srcIn,

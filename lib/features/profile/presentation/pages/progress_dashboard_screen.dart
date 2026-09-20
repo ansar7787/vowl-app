@@ -19,6 +19,12 @@ import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_818CF8 = Color(0xFF818CF8);
+  static const Color c_34D399 = Color(0xFF34D399);
+}
+
 class ProgressDashboardScreen extends StatelessWidget {
   const ProgressDashboardScreen({super.key});
 
@@ -274,7 +280,7 @@ class _WeeklyXpChart extends StatelessWidget {
                                     colors: day.isToday
                                         ? [
                                             AppColors.indigo500,
-                                            const Color(0xFF818CF8),
+                                            _LocalPalette.c_818CF8,
                                           ]
                                         : [
                                             const Color(
@@ -467,7 +473,7 @@ class _CategoryMasteryOverview extends StatelessWidget {
               child: Container(
                 decoration: BoxDecoration(
                   gradient: const LinearGradient(
-                    colors: [AppColors.emerald500, Color(0xFF34D399)],
+                    colors: [AppColors.emerald500, _LocalPalette.c_34D399],
                   ),
                   borderRadius: BorderRadius.circular(10.r),
                   boxShadow: [

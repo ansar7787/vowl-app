@@ -5,6 +5,11 @@ import 'package:vowl/features/speaking/domain/entities/speaking_quest.dart';
 
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_1E1E2C = Color(0xFF1E1E2C);
+}
+
 class YesNoSpeakingAuditionCard extends StatelessWidget {
   final SpeakingQuest quest;
   final Color primaryColor;
@@ -24,7 +29,7 @@ class YesNoSpeakingAuditionCard extends StatelessWidget {
     return Container(
       padding: EdgeInsets.all(24.r),
       decoration: BoxDecoration(
-        color: isDark ? const Color(0xFF1E1E2C) : Colors.white,
+        color: isDark ? _LocalPalette.c_1E1E2C : Colors.white,
         borderRadius: BorderRadius.circular(32.r),
         boxShadow: [
           BoxShadow(

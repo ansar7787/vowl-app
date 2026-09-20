@@ -6,6 +6,11 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/roleplay/social_spark/presentation/widgets/social_spark_painter.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_07070F = Color(0xFF07070F);
+}
+
 class SocialSparkGalaxyBoard extends StatelessWidget {
   final List<String> words;
   final Color color;
@@ -35,7 +40,7 @@ class SocialSparkGalaxyBoard extends StatelessWidget {
       height: 380.h,
       decoration: BoxDecoration(
         color: isDark
-            ? const Color(0xFF07070F)
+            ? _LocalPalette.c_07070F
             : Colors.black.withValues(alpha: 0.02),
         borderRadius: BorderRadius.circular(36.r),
         border: Border.all(

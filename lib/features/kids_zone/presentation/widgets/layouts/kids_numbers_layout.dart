@@ -12,6 +12,12 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_fitted_text.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_38BDF8 = Color(0xFF38BDF8);
+  static const Color c_1E1B4B = Color(0xFF1E1B4B);
+}
+
 /// Space / Rocket Theme for Numbers Game
 /// Space Complexity: O(1)
 /// Time Complexity: O(N) where N is the number of options (max 4)
@@ -121,7 +127,7 @@ class KidsNumbersLayout extends StatelessWidget {
                 : AppColors.slate900, // Deep Space Blue
             shape: BoxShape.circle,
             border: Border.all(
-              color: isHovering ? const Color(0xFF38BDF8) : AppColors.slate400,
+              color: isHovering ? _LocalPalette.c_38BDF8 : AppColors.slate400,
               width: 16.r,
             ), // Silver metallic frame
             boxShadow: [
@@ -173,7 +179,7 @@ class KidsNumbersLayout extends StatelessWidget {
                             )
                           : ColorFiltered(
                               colorFilter: ColorFilter.mode(
-                                const Color(0xFF1E1B4B).withValues(alpha: 0.15),
+                                _LocalPalette.c_1E1B4B.withValues(alpha: 0.15),
                                 BlendMode.srcIn,
                               ),
                               child: Text(
@@ -199,7 +205,10 @@ class KidsNumbersLayout extends StatelessWidget {
                                   : 1.0,
                             ),
                             shadows: const [
-                              Shadow(color: Color(0xFF38BDF8), blurRadius: 15),
+                              Shadow(
+                                color: _LocalPalette.c_38BDF8,
+                                blurRadius: 15,
+                              ),
                             ],
                           ),
                           textAlign: TextAlign.center,

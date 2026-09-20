@@ -11,6 +11,36 @@ import 'package:vowl/features/kids_zone/presentation/utils/kids_tts_service.dart
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_fitted_text.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_92400E = Color(0xFF92400E);
+  static const Color c_FDE047 = Color(0xFFFDE047);
+  static const Color c_EAB308 = Color(0xFFEAB308);
+  static const Color c_D4D4D8 = Color(0xFFD4D4D8);
+  static const Color c_9CA3AF = Color(0xFF9CA3AF);
+  static const Color c_E4E4E7 = Color(0xFFE4E4E7);
+  static const Color c_3F3F46 = Color(0xFF3F3F46);
+  static const Color c_52525B = Color(0xFF52525B);
+  static const Color c_000080 = Color(0xFF000080);
+  static const Color c_006400 = Color(0xFF006400);
+  static const Color c_800000 = Color(0xFF800000);
+  static const Color c_FA8072 = Color(0xFFFA8072);
+  static const Color c_FFFACD = Color(0xFFFFFACD);
+  static const Color c_4B0082 = Color(0xFF4B0082);
+  static const Color c_E6E6FA = Color(0xFFE6E6FA);
+  static const Color c_3E2723 = Color(0xFF3E2723);
+  static const Color c_D2B48C = Color(0xFFD2B48C);
+  static const Color c_424242 = Color(0xFF424242);
+  static const Color c_BDBDBD = Color(0xFFBDBDBD);
+  static const Color c_FFDAB9 = Color(0xFFFFDAB9);
+  static const Color c_32CD32 = Color(0xFF32CD32);
+  static const Color c_B22222 = Color(0xFFB22222);
+  static const Color c_50C878 = Color(0xFF50C878);
+  static const Color c_0F52BA = Color(0xFF0F52BA);
+  static const Color c_9966CC = Color(0xFF9966CC);
+  static const Color c_FFC87C = Color(0xFFFFC87C);
+}
+
 /// Art Studio Theme for Colors Game
 /// Space Complexity: O(1)
 /// Time Complexity: O(N) where N is the number of options (max 4)
@@ -119,11 +149,11 @@ class KidsColorsLayout extends StatelessWidget {
                 decoration: BoxDecoration(
                   border: Border(
                     left: BorderSide(
-                      color: const Color(0xFF92400E),
+                      color: _LocalPalette.c_92400E,
                       width: 12.w,
                     ),
                     right: BorderSide(
-                      color: const Color(0xFF92400E),
+                      color: _LocalPalette.c_92400E,
                       width: 12.w,
                     ),
                   ),
@@ -146,13 +176,13 @@ class KidsColorsLayout extends StatelessWidget {
                 height: 200.h,
                 decoration: BoxDecoration(
                   color: isHovering
-                      ? const Color(0xFFFDE047)
+                      ? _LocalPalette.c_FDE047
                       : Colors.white, // Highlight canvas on hover
                   borderRadius: BorderRadius.circular(4.r),
                   border: Border.all(
                     color: isHovering
-                        ? const Color(0xFFEAB308)
-                        : const Color(0xFFD4D4D8),
+                        ? _LocalPalette.c_EAB308
+                        : _LocalPalette.c_D4D4D8,
                     width: isHovering ? 4 : 2,
                   ),
                   boxShadow: [
@@ -177,7 +207,7 @@ class KidsColorsLayout extends StatelessWidget {
                               )
                             : ColorFiltered(
                                 colorFilter: const ColorFilter.mode(
-                                  Color(0xFF9CA3AF),
+                                  _LocalPalette.c_9CA3AF,
                                   BlendMode.srcIn,
                                 ),
                                 child: Text(
@@ -238,7 +268,7 @@ class KidsColorsLayout extends StatelessWidget {
               bottomLeft: Radius.circular(20.r),
               bottomRight: Radius.circular(20.r),
             ),
-            border: Border.all(color: const Color(0xFFE4E4E7), width: 2),
+            border: Border.all(color: _LocalPalette.c_E4E4E7, width: 2),
             boxShadow: [
               BoxShadow(color: Colors.black12, offset: Offset(0, 6.h)),
             ],
@@ -259,7 +289,7 @@ class KidsColorsLayout extends StatelessWidget {
                           fontFamily: 'Outfit',
                           fontSize: 16.sp,
                           fontWeight: FontWeight.w700,
-                          color: const Color(0xFF3F3F46),
+                          color: _LocalPalette.c_3F3F46,
                         ),
                         textAlign: TextAlign.center,
                         maxLines: 3,
@@ -276,7 +306,7 @@ class KidsColorsLayout extends StatelessWidget {
           height: 12.h,
           width: 30.w,
           decoration: BoxDecoration(
-            color: const Color(0xFF52525B), // Grey cap
+            color: _LocalPalette.c_52525B, // Grey cap
             borderRadius: BorderRadius.vertical(bottom: Radius.circular(4.r)),
           ),
         ),
@@ -307,7 +337,7 @@ class KidsColorsLayout extends StatelessWidget {
       return Colors.lightBlue;
     }
     if (lower.contains('dark blue') || lower.contains('navy')) {
-      return const Color(0xFF000080);
+      return _LocalPalette.c_000080;
     }
     if (lower.contains('light green') ||
         lower.contains('mint') ||
@@ -317,33 +347,33 @@ class KidsColorsLayout extends StatelessWidget {
     if (lower.contains('dark green') ||
         lower.contains('forest') ||
         lower.contains('olive')) {
-      return const Color(0xFF006400);
+      return _LocalPalette.c_006400;
     }
     if (lower.contains('dark red') ||
         lower.contains('maroon') ||
         lower.contains('burgundy')) {
-      return const Color(0xFF800000);
+      return _LocalPalette.c_800000;
     }
     if (lower.contains('light red') || lower.contains('salmon')) {
-      return const Color(0xFFFA8072);
+      return _LocalPalette.c_FA8072;
     }
     if (lower.contains('light yellow') || lower.contains('pastel yellow')) {
-      return const Color(0xFFFFFACD);
+      return _LocalPalette.c_FFFACD;
     }
     if (lower.contains('dark purple') ||
         lower.contains('plum') ||
         lower.contains('eggplant')) {
-      return const Color(0xFF4B0082);
+      return _LocalPalette.c_4B0082;
     }
     if (lower.contains('light purple') ||
         lower.contains('lavender') ||
         lower.contains('lilac')) {
-      return const Color(0xFFE6E6FA);
+      return _LocalPalette.c_E6E6FA;
     }
     if (lower.contains('dark brown') ||
         lower.contains('chocolate') ||
         lower.contains('espresso')) {
-      return const Color(0xFF3E2723);
+      return _LocalPalette.c_3E2723;
     }
     if (lower.contains('light brown') ||
         lower.contains('tan') ||
@@ -351,17 +381,17 @@ class KidsColorsLayout extends StatelessWidget {
         lower.contains('beige') ||
         lower.contains('cream') ||
         lower.contains('oatmeal')) {
-      return const Color(0xFFD2B48C);
+      return _LocalPalette.c_D2B48C;
     }
     if (lower.contains('dark gray') ||
         lower.contains('dark grey') ||
         lower.contains('charcoal')) {
-      return const Color(0xFF424242);
+      return _LocalPalette.c_424242;
     }
     if (lower.contains('light gray') ||
         lower.contains('light grey') ||
         lower.contains('silver')) {
-      return const Color(0xFFBDBDBD);
+      return _LocalPalette.c_BDBDBD;
     }
     if (lower.contains('hot pink') ||
         lower.contains('neon pink') ||
@@ -382,13 +412,13 @@ class KidsColorsLayout extends StatelessWidget {
     if (lower.contains('peach') ||
         lower.contains('coral') ||
         lower.contains('apricot')) {
-      return const Color(0xFFFFDAB9);
+      return _LocalPalette.c_FFDAB9;
     }
     if (lower.contains('gold')) {
       return IllustrationColors.premiumGold;
     }
     if (lower.contains('lime') || lower.contains('chartreuse')) {
-      return const Color(0xFF32CD32);
+      return _LocalPalette.c_32CD32;
     }
     if (lower.contains('indigo')) {
       return Colors.indigo;
@@ -399,19 +429,19 @@ class KidsColorsLayout extends StatelessWidget {
         lower.contains('garnet') ||
         lower.contains('scarlet') ||
         lower.contains('brick')) {
-      return const Color(0xFFB22222);
+      return _LocalPalette.c_B22222;
     }
     if (lower.contains('emerald') || lower.contains('jade')) {
-      return const Color(0xFF50C878);
+      return _LocalPalette.c_50C878;
     }
     if (lower.contains('sapphire')) {
-      return const Color(0xFF0F52BA);
+      return _LocalPalette.c_0F52BA;
     }
     if (lower.contains('amethyst')) {
-      return const Color(0xFF9966CC);
+      return _LocalPalette.c_9966CC;
     }
     if (lower.contains('topaz') || lower.contains('citrine')) {
-      return const Color(0xFFFFC87C);
+      return _LocalPalette.c_FFC87C;
     }
     if (lower.contains('onyx') || lower.contains('coal')) {
       return Colors.black87;
@@ -445,7 +475,7 @@ class KidsColorsLayout extends StatelessWidget {
     if (lower.contains('white') ||
         lower.contains('snow') ||
         lower.contains('pearl')) {
-      return const Color(0xFFE4E4E7); // Off-white for visibility on canvas
+      return _LocalPalette.c_E4E4E7; // Off-white for visibility on canvas
     }
     if (lower.contains('brown')) {
       return Colors.brown;

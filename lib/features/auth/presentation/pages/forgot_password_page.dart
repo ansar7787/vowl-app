@@ -17,6 +17,11 @@ import 'package:vowl/features/home/presentation/widgets/vowlbot_auth_companion.d
 import 'package:go_router/go_router.dart';
 import 'package:vowl/core/utils/app_router.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_000000 = Color(0xFF000000);
+}
+
 // ---------------------------------------------------------------------------
 // Page — provides the dedicated [ForgotPasswordCubit]
 // ---------------------------------------------------------------------------
@@ -88,7 +93,7 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
         builder: (context, isMidnight) {
           final isDark = Theme.of(context).brightness == Brightness.dark;
           final bgColor = isMidnight
-              ? const Color(0xFF000000)
+              ? _LocalPalette.c_000000
               : (isDark ? AppColors.slate900 : AppColors.slate50);
 
           return BlocBuilder<ForgotPasswordCubit, ForgotPasswordState>(

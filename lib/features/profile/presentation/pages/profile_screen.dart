@@ -29,6 +29,13 @@ import 'package:vowl/features/home/presentation/widgets/vowl_mascot_card.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_059669 = Color(0xFF059669);
+  static const Color c_4F46E5 = Color(0xFF4F46E5);
+  static const Color c_DC2626 = Color(0xFFDC2626);
+}
+
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
 
@@ -251,7 +258,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                           color: const Color(
                                             0xFF10B981,
                                           ), // Emerald
-                                          shadowColor: const Color(0xFF059669),
+                                          shadowColor: _LocalPalette.c_059669,
                                           title: context.tr(
                                             'profile.learning_report',
                                             fallback: 'Learning Report',
@@ -452,7 +459,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
         size: 24.r,
       ),
       color: AppColors.indigo500, // Premium screen Indigo
-      shadowColor: const Color(0xFF4F46E5), // Darker Indigo for shadow
+      shadowColor: _LocalPalette.c_4F46E5, // Darker Indigo for shadow
       title: context.tr(
         'profile.upgrade_to_premium',
         fallback: 'Upgrade to Premium',
@@ -472,7 +479,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
     return ProfileFeatureCard(
       iconContent: Icon(Icons.toys_rounded, color: Colors.white, size: 24.r),
       color: AppColors.red500,
-      shadowColor: const Color(0xFFDC2626),
+      shadowColor: _LocalPalette.c_DC2626,
       title: context.tr('profile.kids_room_title', fallback: 'Kids Room'),
       subtitle: context.tr(
         'profile.kids_room_subtitle',
@@ -901,7 +908,7 @@ class _EditNameSheetContentState extends State<_EditNameSheetContent> {
                     padding: EdgeInsets.symmetric(vertical: 20.h),
                     decoration: BoxDecoration(
                       gradient: const LinearGradient(
-                        colors: [AppColors.indigo500, Color(0xFF4F46E5)],
+                        colors: [AppColors.indigo500, _LocalPalette.c_4F46E5],
                       ),
                       borderRadius: BorderRadius.circular(24.r),
                       boxShadow: [

@@ -11,6 +11,16 @@ import 'package:vowl/features/kids_zone/presentation/utils/kids_tts_service.dart
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_fitted_text.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_FDE68A = Color(0xFFFDE68A);
+  static const Color c_FEF3C7 = Color(0xFFFEF3C7);
+  static const Color c_FCA5A5 = Color(0xFFFCA5A5);
+  static const Color c_93C5FD = Color(0xFF93C5FD);
+  static const Color c_6EE7B7 = Color(0xFF6EE7B7);
+  static const Color c_C4B5FD = Color(0xFFC4B5FD);
+}
+
 /// Fashion Wardrobe Theme for Clothing Game
 /// Space Complexity: O(1)
 /// Time Complexity: O(N) where N is the number of options (max 4)
@@ -156,8 +166,8 @@ class KidsClothingLayout extends StatelessWidget {
             height: 200.h,
             decoration: BoxDecoration(
               color: isHovering
-                  ? const Color(0xFFFDE68A)
-                  : const Color(0xFFFEF3C7), // Light wood inside closet
+                  ? _LocalPalette.c_FDE68A
+                  : _LocalPalette.c_FEF3C7, // Light wood inside closet
               borderRadius: BorderRadius.circular(16.r),
               border: Border.all(
                 color: isHovering ? AppColors.amber600 : KidsColors.warmAmber,
@@ -242,10 +252,10 @@ class KidsClothingLayout extends StatelessWidget {
     int index,
   ) {
     final colors = [
-      const Color(0xFFFCA5A5), // Light Red
-      const Color(0xFF93C5FD), // Light Blue
-      const Color(0xFF6EE7B7), // Mint
-      const Color(0xFFC4B5FD), // Light Purple
+      _LocalPalette.c_FCA5A5, // Light Red
+      _LocalPalette.c_93C5FD, // Light Blue
+      _LocalPalette.c_6EE7B7, // Mint
+      _LocalPalette.c_C4B5FD, // Light Purple
     ];
     final tagColor = colors[index % colors.length];
 

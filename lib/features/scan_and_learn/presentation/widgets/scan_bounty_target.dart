@@ -5,6 +5,11 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_818CF8 = Color(0xFF818CF8);
+}
+
 class ScanBountyTarget extends StatelessWidget {
   final String currentBounty;
   final bool bountyFound;
@@ -35,7 +40,7 @@ class ScanBountyTarget extends StatelessWidget {
         ? AppColors.indigo500.withValues(alpha: 0.3)
         : AppColors.indigo500.withValues(alpha: 0.15);
     final foundBorderColor = isDark
-        ? const Color(0xFF818CF8)
+        ? _LocalPalette.c_818CF8
         : AppColors.indigo500;
 
     return Padding(

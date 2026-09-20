@@ -10,6 +10,16 @@ import 'package:vowl/features/kids_zone/presentation/utils/kids_tts_service.dart
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_fitted_text.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_166534 = Color(0xFF166534);
+  static const Color c_14532D = Color(0xFF14532D);
+  static const Color c_15803D = Color(0xFF15803D);
+  static const Color c_FEF9C3 = Color(0xFFFEF9C3);
+  static const Color c_FEF3C7 = Color(0xFFFEF3C7);
+  static const Color c_92400E = Color(0xFF92400E);
+}
+
 /// Jungle Safari Theme for Animals Game
 /// Space Complexity: O(1)
 /// Time Complexity: O(N) where N is the number of options (max 4)
@@ -42,17 +52,17 @@ class KidsAnimalsLayout extends StatelessWidget {
             Positioned(
               top: 100.h,
               left: -20.w,
-              child: _buildLeaf(const Color(0xFF166534), 80.r, 0.5),
+              child: _buildLeaf(_LocalPalette.c_166534, 80.r, 0.5),
             ),
             Positioned(
               top: 180.h,
               right: -10.w,
-              child: _buildLeaf(const Color(0xFF14532D), 100.r, -0.8),
+              child: _buildLeaf(_LocalPalette.c_14532D, 100.r, -0.8),
             ),
             Positioned(
               bottom: 200.h,
               left: -30.w,
-              child: _buildLeaf(const Color(0xFF15803D), 120.r, 0.3),
+              child: _buildLeaf(_LocalPalette.c_15803D, 120.r, 0.3),
             ),
 
             Column(
@@ -173,15 +183,13 @@ class KidsAnimalsLayout extends StatelessWidget {
             height: 200.h,
             decoration: BoxDecoration(
               color: isHovering
-                  ? const Color(0xFFFEF9C3)
-                  : const Color(0xFFFEF3C7), // Safari Khaki
+                  ? _LocalPalette.c_FEF9C3
+                  : _LocalPalette.c_FEF3C7, // Safari Khaki
               borderRadius: BorderRadius.circular(
                 100.r,
               ), // Pill shape for binoculars
               border: Border.all(
-                color: isHovering
-                    ? const Color(0xFF92400E)
-                    : AppColors.amber900,
+                color: isHovering ? _LocalPalette.c_92400E : AppColors.amber900,
                 width: isHovering ? 10.r : 8.r,
               ), // Dark leather
               boxShadow: [
@@ -252,7 +260,7 @@ class KidsAnimalsLayout extends StatelessWidget {
     bool isCorrect,
   ) {
     final baseColor = AppColors.amber600; // Wood
-    final shadowColor = const Color(0xFF92400E); // Dark Wood
+    final shadowColor = _LocalPalette.c_92400E; // Dark Wood
 
     final signpostWidget = Column(
       mainAxisSize: MainAxisSize.min,

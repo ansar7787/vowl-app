@@ -20,6 +20,12 @@ import 'package:vowl/core/utils/reward_limit_service.dart';
 import 'package:vowl/core/presentation/widgets/shakeable_wrapper.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_0EA5E9 = Color(0xFF0EA5E9);
+  static const Color c_0284C7 = Color(0xFF0284C7);
+}
+
 class KeyShopBottomSheet {
   static void show({
     required BuildContext context,
@@ -617,8 +623,8 @@ class _KeyShopContentState extends State<_KeyShopContent> {
                                       AppColors.slate500,
                                     ] // Premium Slate grey
                                   : const [
-                                      Color(0xFF0EA5E9),
-                                      Color(0xFF0284C7),
+                                      _LocalPalette.c_0EA5E9,
+                                      _LocalPalette.c_0284C7,
                                     ],
                               begin: Alignment.topLeft,
                               end: Alignment.bottomRight,

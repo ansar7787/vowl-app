@@ -5,6 +5,13 @@ import 'package:vowl/features/speaking/domain/entities/speaking_quest.dart';
 import 'package:vowl/features/speaking/daily_expression/presentation/widgets/scratch_painter.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_131326 = Color(0xFF131326);
+  static const Color c_1E1E38 = Color(0xFF1E1E38);
+  static const Color c_111124 = Color(0xFF111124);
+}
+
 class DailyExpressionScratchPanel extends StatelessWidget {
   final SpeakingQuest quest;
   final Color primaryColor;
@@ -35,7 +42,7 @@ class DailyExpressionScratchPanel extends StatelessWidget {
         width: 1.sw,
         constraints: BoxConstraints(minHeight: 190.h),
         decoration: BoxDecoration(
-          color: isDark ? const Color(0xFF131326) : Colors.white,
+          color: isDark ? _LocalPalette.c_131326 : Colors.white,
           borderRadius: BorderRadius.circular(28.r),
           border: Border.all(color: Colors.white10),
           boxShadow: [BoxShadow(color: Colors.black26, blurRadius: 15.r)],
@@ -50,7 +57,7 @@ class DailyExpressionScratchPanel extends StatelessWidget {
                   decoration: BoxDecoration(
                     gradient: LinearGradient(
                       colors: isDark
-                          ? [const Color(0xFF1E1E38), const Color(0xFF111124)]
+                          ? [_LocalPalette.c_1E1E38, _LocalPalette.c_111124]
                           : [primaryColor.withValues(alpha: 0.2), Colors.white],
                       begin: Alignment.topLeft,
                       end: Alignment.bottomRight,

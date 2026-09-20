@@ -6,6 +6,11 @@ import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_818CF8 = Color(0xFF818CF8);
+}
+
 class AdventureDailyXpChart extends StatelessWidget {
   final Map<String, int> history;
 
@@ -155,7 +160,7 @@ class AdventureDailyXpChart extends StatelessWidget {
                                                     Theme.of(
                                                       context,
                                                     ).colorScheme.primary,
-                                                    const Color(0xFF818CF8),
+                                                    _LocalPalette.c_818CF8,
                                                   ]
                                                 : [
                                                     Theme.of(

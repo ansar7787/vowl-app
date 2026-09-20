@@ -13,6 +13,12 @@ import 'package:vowl/core/utils/offline_play_gate_service.dart';
 import 'package:vowl/core/presentation/widgets/vowl_button_spinner.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_059669 = Color(0xFF059669);
+  static const Color c_1D4ED8 = Color(0xFF1D4ED8);
+}
+
 /// Shown when a free user exhausts their offline play quota.
 ///
 /// Unlike [NoInternetPage] (which is a generic "no internet" blocker),
@@ -302,7 +308,7 @@ class _OfflineQuotaExhaustedPageState extends State<OfflineQuotaExhaustedPage> {
                                       ),
                                       gradient: const [
                                         AppColors.emerald500,
-                                        Color(0xFF059669),
+                                        _LocalPalette.c_059669,
                                       ],
                                       glowColor: AppColors.emerald500,
                                     );
@@ -329,7 +335,7 @@ class _OfflineQuotaExhaustedPageState extends State<OfflineQuotaExhaustedPage> {
                                     ),
                                     gradient: [
                                       Theme.of(context).colorScheme.primary,
-                                      Color(0xFF1D4ED8),
+                                      _LocalPalette.c_1D4ED8,
                                     ],
                                     glowColor: Colors.blue,
                                   );

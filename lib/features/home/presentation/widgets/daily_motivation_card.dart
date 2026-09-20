@@ -10,6 +10,15 @@ import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/presentation/widgets/vowl_mascot.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_4F46E5 = Color(0xFF4F46E5);
+  static const Color c_332000 = Color(0xFF332000);
+  static const Color c_FFF7ED = Color(0xFFFFF7ED);
+  static const Color c_FCD34D = Color(0xFFFCD34D);
+  static const Color c_C2740A = Color(0xFFC2740A);
+}
+
 /// Lifecycle of the daily hoot content, kept distinct from the text
 /// itself so the UI can tell "still loading" apart from "loaded, but
 /// nothing was configured for today" without inspecting strings.
@@ -26,7 +35,7 @@ class _VowlCardPalette {
   // For the eyebrow label and CTA text we use [textSafeIndigo], which
   // clears AA with real margin.
   static Color indigo = AppColors.indigo500;
-  static const Color textSafeIndigo = Color(0xFF4F46E5); // ~6.3:1 on white
+  static const Color textSafeIndigo = _LocalPalette.c_4F46E5; // ~6.3:1 on white
   static const Color darkCard = AppColors.slate800;
   static const Color darkSecondaryText = AppColors.slate400;
   static const Color lightSecondaryText = AppColors.slate500;
@@ -34,8 +43,8 @@ class _VowlCardPalette {
   static const Color amber = AppColors.amber500;
   static const Color amberDarkText = AppColors.amber400;
   static const Color amberLightText = AppColors.amber600;
-  static const Color amberDarkBg = Color(0xFF332000);
-  static const Color amberLightBg = Color(0xFFFFF7ED);
+  static const Color amberDarkBg = _LocalPalette.c_332000;
+  static const Color amberLightBg = _LocalPalette.c_FFF7ED;
 
   // Streak milestone tiers: at 7/30/100+ days the badge shifts to a
   // slightly richer tone so long streaks read as more valuable without
@@ -45,7 +54,7 @@ class _VowlCardPalette {
       return isDark ? AppColors.gold : KidsColors.warmAmber;
     }
     if (streak >= 30) {
-      return isDark ? const Color(0xFFFCD34D) : const Color(0xFFC2740A);
+      return isDark ? _LocalPalette.c_FCD34D : _LocalPalette.c_C2740A;
     }
     return isDark ? amberDarkText : amberLightText;
   }

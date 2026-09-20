@@ -9,6 +9,11 @@ import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/presentation/widgets/vowl_button_spinner.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_1D4ED8 = Color(0xFF1D4ED8);
+}
+
 /// Premium glassmorphic offline page with accessible retry interaction.
 ///
 /// RTL-safe: all directional values are set via [Directionality]-aware
@@ -406,7 +411,7 @@ class _RetryButton extends StatelessWidget {
                         ]
                       : [
                           Theme.of(context).colorScheme.primary,
-                          Color(0xFF1D4ED8),
+                          _LocalPalette.c_1D4ED8,
                         ],
                 ),
                 boxShadow: [

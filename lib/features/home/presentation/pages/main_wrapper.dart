@@ -11,6 +11,11 @@ import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_020617 = Color(0xFF020617);
+}
+
 class MainWrapper extends StatelessWidget {
   const MainWrapper({required this.navigationShell, super.key});
 
@@ -23,7 +28,7 @@ class MainWrapper extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: isMidnight
-          ? const Color(0xFF020617)
+          ? _LocalPalette.c_020617
           : (isDark ? AppColors.slate900 : Colors.white),
       extendBody: true,
       body: navigationShell,

@@ -12,6 +12,11 @@ import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_60A5FA = Color(0xFF60A5FA);
+}
+
 class ProfileBentoStats extends StatelessWidget {
   final UserEntity user;
 
@@ -154,7 +159,7 @@ class ProfileBentoStats extends StatelessWidget {
                         width: trackWidth * xpProgress.clamp(0.0, 1.0),
                         decoration: BoxDecoration(
                           gradient: const LinearGradient(
-                            colors: [AppColors.blue500, Color(0xFF60A5FA)],
+                            colors: [AppColors.blue500, _LocalPalette.c_60A5FA],
                           ),
                           borderRadius: BorderRadius.circular(10.r),
                         ),

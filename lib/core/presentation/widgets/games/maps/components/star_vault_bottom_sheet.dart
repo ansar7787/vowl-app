@@ -20,6 +20,11 @@ import 'package:vowl/core/presentation/widgets/shakeable_wrapper.dart';
 import 'package:vowl/core/utils/reward_limit_service.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_6D28D9 = Color(0xFF6D28D9);
+}
+
 class StarVaultBottomSheet extends StatefulWidget {
   final String gameType;
   final Color primaryColor;
@@ -970,7 +975,7 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
                                           gradient: const LinearGradient(
                                             colors: [
                                               AppColors.violet500,
-                                              Color(0xFF6D28D9),
+                                              _LocalPalette.c_6D28D9,
                                             ],
                                           ),
                                           borderRadius: BorderRadius.circular(

@@ -4,6 +4,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/features/roleplay/medical_consult/presentation/widgets/medical_consult_radar_painter.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_07070F = Color(0xFF07070F);
+}
+
 class MedicalConsultScanBay extends StatelessWidget {
   final List<String> symptoms;
   final Color color;
@@ -63,7 +68,7 @@ class MedicalConsultScanBay extends StatelessWidget {
       height: 330.h,
       decoration: BoxDecoration(
         color: isDark
-            ? const Color(0xFF07070F)
+            ? _LocalPalette.c_07070F
             : Colors.black.withValues(alpha: 0.02),
         borderRadius: BorderRadius.circular(36.r),
         border: Border.all(

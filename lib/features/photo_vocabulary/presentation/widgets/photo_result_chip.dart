@@ -7,6 +7,11 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/photo_vocabulary/utils/photo_vocabulary_dictionary.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_2DD4BF = Color(0xFF2DD4BF);
+}
+
 class PhotoResultChip extends StatelessWidget {
   final ImageLabel label;
   final int index;
@@ -134,7 +139,7 @@ class PhotoResultChip extends StatelessWidget {
                                           child: Icon(
                                             Icons.volume_up_rounded,
                                             color: isDark
-                                                ? const Color(0xFF2DD4BF)
+                                                ? _LocalPalette.c_2DD4BF
                                                 : primaryTeal,
                                             size: 18.r,
                                           ),
@@ -181,7 +186,7 @@ class PhotoResultChip extends StatelessWidget {
                                 fontSize: 13.sp,
                                 fontWeight: FontWeight.w900,
                                 color: isDark
-                                    ? const Color(0xFF2DD4BF)
+                                    ? _LocalPalette.c_2DD4BF
                                     : primaryTeal,
                               ),
                             ),
@@ -292,7 +297,7 @@ class PhotoResultChip extends StatelessWidget {
                                     fontFamily: 'Outfit',
                                     fontSize: 18.sp,
                                     color: isDark
-                                        ? const Color(0xFF2DD4BF)
+                                        ? _LocalPalette.c_2DD4BF
                                         : primaryTeal,
                                     fontWeight: FontWeight.w700,
                                     height: 1.2,

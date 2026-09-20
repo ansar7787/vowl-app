@@ -2,6 +2,11 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_03A9F4 = Color(0xFF03A9F4);
+}
+
 /// Factory that maps `visual_config.painter_type` strings to actual
 /// animated background widgets for quest screens.
 ///
@@ -23,7 +28,7 @@ class VisualConfigBackground extends StatelessWidget {
       }
       return Color(int.parse(hexColor, radix: 16));
     } catch (_) {
-      return const Color(0xFF03A9F4);
+      return _LocalPalette.c_03A9F4;
     }
   }
 

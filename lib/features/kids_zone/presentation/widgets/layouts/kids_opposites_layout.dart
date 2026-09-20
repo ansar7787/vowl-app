@@ -10,6 +10,16 @@ import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_fitted_text.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_FECACA = Color(0xFFFECACA);
+  static const Color c_FCA5A5 = Color(0xFFFCA5A5);
+  static const Color c_BFDBFE = Color(0xFFBFDBFE);
+  static const Color c_93C5FD = Color(0xFF93C5FD);
+  static const Color c_FDE047 = Color(0xFFFDE047);
+  static const Color c_C4B5FD = Color(0xFFC4B5FD);
+}
+
 /// Split World Theme for Opposites Game
 /// Space Complexity: O(1)
 /// Time Complexity: O(N) where N is the number of options (max 4)
@@ -171,8 +181,8 @@ class KidsOppositesLayout extends StatelessWidget {
                     width: 140.w, // Half width approx
                     child: Container(
                       color: isHovering
-                          ? const Color(0xFFFECACA)
-                          : const Color(0xFFFCA5A5),
+                          ? _LocalPalette.c_FECACA
+                          : _LocalPalette.c_FCA5A5,
                     ), // Light red
                   ),
                   // Right Half (Ice / Cold)
@@ -183,8 +193,8 @@ class KidsOppositesLayout extends StatelessWidget {
                     width: 140.w,
                     child: Container(
                       color: isHovering
-                          ? const Color(0xFFBFDBFE)
-                          : const Color(0xFF93C5FD),
+                          ? _LocalPalette.c_BFDBFE
+                          : _LocalPalette.c_93C5FD,
                     ), // Light blue
                   ),
                   // Center Divider Line
@@ -311,7 +321,7 @@ class KidsOppositesLayout extends StatelessWidget {
               left: 0,
               right: 0,
               height: 35.h,
-              child: Container(color: const Color(0xFFFDE047)), // Yellow
+              child: Container(color: _LocalPalette.c_FDE047), // Yellow
             ),
             // Bottom half
             Positioned(
@@ -319,7 +329,7 @@ class KidsOppositesLayout extends StatelessWidget {
               left: 0,
               right: 0,
               height: 35.h,
-              child: Container(color: const Color(0xFFC4B5FD)), // Purple
+              child: Container(color: _LocalPalette.c_C4B5FD), // Purple
             ),
             // Divider
             Center(

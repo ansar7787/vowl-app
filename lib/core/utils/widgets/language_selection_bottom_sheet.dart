@@ -13,6 +13,11 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/presentation/widgets/vowl_button_spinner.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_1E1E2A = Color(0xFF1E1E2A);
+}
+
 /// A sleek 2026 glassmorphic bottom sheet for selecting the native translation language.
 class LanguageSelectionBottomSheet extends StatefulWidget {
   const LanguageSelectionBottomSheet({super.key});
@@ -621,7 +626,7 @@ class _LanguageSelectionBottomSheetState
       context: context,
       builder: (dialogCtx) => StatefulBuilder(
         builder: (ctx, setDialogState) => AlertDialog(
-          backgroundColor: isDark ? const Color(0xFF1E1E2A) : Colors.white,
+          backgroundColor: isDark ? _LocalPalette.c_1E1E2A : Colors.white,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(24.r),
           ),

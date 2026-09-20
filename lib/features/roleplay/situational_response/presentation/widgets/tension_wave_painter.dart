@@ -1,6 +1,11 @@
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_FF3366 = Color(0xFFFF3366);
+}
+
 class TensionWavePainter extends CustomPainter {
   final double progress;
   final double pulseValue;
@@ -29,7 +34,7 @@ class TensionWavePainter extends CustomPainter {
     } else {
       // Transition from cyan/blue to red based on time/tension progress
       waveColor =
-          Color.lerp(themeColor, const Color(0xFFFF3366), progress) ??
+          Color.lerp(themeColor, _LocalPalette.c_FF3366, progress) ??
           themeColor;
     }
 

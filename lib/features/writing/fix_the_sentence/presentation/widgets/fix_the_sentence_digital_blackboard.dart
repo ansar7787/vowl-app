@@ -6,6 +6,11 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/tech_pattern_overlay.dart';
 import 'package:vowl/features/writing/fix_the_sentence/presentation/widgets/fix_the_sentence_scratch_overlay_painter.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_DC2626 = Color(0xFFDC2626);
+}
+
 class FixTheSentenceDigitalBlackboard extends StatelessWidget {
   final String fullText;
   final String targetWord;
@@ -151,7 +156,7 @@ class FixTheSentenceDigitalBlackboard extends StatelessWidget {
                                         fontWeight: FontWeight.w900,
                                         color: isDark
                                             ? tokens.gameIncorrect
-                                            : const Color(0xFFDC2626),
+                                            : _LocalPalette.c_DC2626,
                                       ),
                                     ),
                                   ),

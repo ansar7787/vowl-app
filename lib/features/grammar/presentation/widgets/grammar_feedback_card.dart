@@ -8,6 +8,11 @@ import 'package:vowl/core/utils/widgets/translate_button_widget.dart';
 import 'package:vowl/features/grammar/presentation/bloc/grammar_state.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_2DD4BF = Color(0xFF2DD4BF);
+}
+
 /// Bottom-sheet feedback card shown after the user submits an answer.
 ///
 /// Displays:
@@ -40,7 +45,10 @@ class GrammarFeedbackCard extends StatelessWidget {
 
   // --- Theme helpers -------------------------------------------------------
 
-  static const _successGradient = [Color(0xFF2DD4BF), AppColors.emerald500];
+  static const _successGradient = [
+    _LocalPalette.c_2DD4BF,
+    AppColors.emerald500,
+  ];
   static const _failGradient = [AppColors.rose500, AppColors.rose700];
   static const _successShadow = AppColors.emerald500;
   static const _failShadow = AppColors.rose700;

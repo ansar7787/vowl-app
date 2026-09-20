@@ -3,6 +3,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_00C896 = Color(0xFF00C896);
+  static const Color c_FF5E5E = Color(0xFFFF5E5E);
+}
+
 class SoundImageMatchGrid extends StatelessWidget {
   final List<String> options;
   final List<String> optionEmojis;
@@ -82,8 +88,8 @@ class SoundImageMatchGrid extends StatelessWidget {
     Color tileColor;
     Color borderColor;
 
-    final Color modernCorrect = const Color(0xFF00C896);
-    final Color modernIncorrect = const Color(0xFFFF5E5E);
+    final Color modernCorrect = _LocalPalette.c_00C896;
+    final Color modernIncorrect = _LocalPalette.c_FF5E5E;
 
     if (isAnswered && isSelected) {
       tileColor = isCorrectState == true

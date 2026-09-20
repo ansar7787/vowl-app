@@ -17,6 +17,11 @@ import 'package:vowl/features/auth/domain/usecases/update_user_coins.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_059669 = Color(0xFF059669);
+}
+
 // ═══════════════════════════════════════════════════════════════════════════════
 // Word Snap Screen — Daily Challenge (10/10 Production Rewrite)
 //
@@ -650,7 +655,7 @@ class _WordSnapScreenState extends State<WordSnapScreen> {
                       gradient: const LinearGradient(
                         begin: Alignment.topLeft,
                         end: Alignment.bottomRight,
-                        colors: [AppColors.emerald500, Color(0xFF059669)],
+                        colors: [AppColors.emerald500, _LocalPalette.c_059669],
                       ),
                       shape: BoxShape.circle,
                       boxShadow: [

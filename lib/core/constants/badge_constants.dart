@@ -2,6 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_CD7F32 = Color(0xFFCD7F32);
+  static const Color c_22D3EE = Color(0xFF22D3EE);
+  static const Color c_3B82F6 = Color(0xFF3B82F6);
+}
+
 /// Represents the data model and metadata configuration for a gamified level milestone badge.
 @immutable
 class BadgeData {
@@ -46,7 +53,7 @@ abstract class BadgeConstants {
       id: 'bronze_wings',
       nameKey: 'badges.bronze_wings',
       icon: LucideIcons.feather,
-      color: Color(0xFFCD7F32),
+      color: _LocalPalette.c_CD7F32,
       minLevel: 10,
     ),
     BadgeData(
@@ -67,7 +74,7 @@ abstract class BadgeConstants {
       id: 'platinum_master',
       nameKey: 'badges.platinum_master',
       icon: LucideIcons.trophy,
-      color: Color(0xFF22D3EE),
+      color: _LocalPalette.c_22D3EE,
       minLevel: 100,
     ),
     BadgeData(
@@ -81,7 +88,7 @@ abstract class BadgeConstants {
       id: 'sapphire_sovereign',
       nameKey: 'badges.sapphire_sovereign',
       icon: LucideIcons.crown,
-      color: Color(0xFF3B82F6),
+      color: _LocalPalette.c_3B82F6,
       minLevel: 300,
     ),
     BadgeData(

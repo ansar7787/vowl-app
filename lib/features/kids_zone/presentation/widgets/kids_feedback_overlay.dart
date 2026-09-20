@@ -5,6 +5,12 @@ import 'package:confetti/confetti.dart';
 import 'package:lottie/lottie.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_047857 = Color(0xFF047857);
+  static const Color c_B91C1C = Color(0xFFB91C1C);
+}
+
 class KidsFeedbackOverlay extends StatelessWidget {
   final bool isCorrect;
   final int attempts;
@@ -121,7 +127,7 @@ class _KidsFeedbackOverlayContentState
             border: Border.all(color: Colors.white, width: 8.w),
             boxShadow: [
               BoxShadow(
-                color: const Color(0xFF047857), // Emerald 700
+                color: _LocalPalette.c_047857, // Emerald 700
                 offset: Offset(0, 8.h),
               ),
             ],
@@ -155,7 +161,7 @@ class _KidsFeedbackOverlayContentState
             border: Border.all(color: Colors.white, width: 8.w),
             boxShadow: [
               BoxShadow(
-                color: const Color(0xFFB91C1C), // Red 700
+                color: _LocalPalette.c_B91C1C, // Red 700
                 offset: Offset(0, 8.h),
               ),
             ],

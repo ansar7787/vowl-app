@@ -17,6 +17,12 @@ import 'package:vowl/core/presentation/widgets/vowl_button_spinner.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/kids_zone/presentation/utils/kids_tts_service.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_1B3B2B = Color(0xFF1B3B2B);
+  static const Color c_8B4513 = Color(0xFF8B4513);
+}
+
 class KidsHandwritingLayout extends StatefulWidget {
   final int level;
   final String title;
@@ -221,9 +227,9 @@ class _KidsHandwritingLayoutState extends State<KidsHandwritingLayout> {
                 ),
                 child: HandwritingCanvas(
                   key: _canvasKey,
-                  canvasColor: const Color(0xFF1B3B2B), // Deep chalkboard green
+                  canvasColor: _LocalPalette.c_1B3B2B, // Deep chalkboard green
                   strokeColor: Colors.white, // White chalk
-                  borderColor: const Color(0xFF8B4513), // Wood brown frame
+                  borderColor: _LocalPalette.c_8B4513, // Wood brown frame
                   borderWidth: 12.w, // Thick wood frame
                   onInkUpdated: (ink) {
                     if (state.answerStatus.isAnswered) {

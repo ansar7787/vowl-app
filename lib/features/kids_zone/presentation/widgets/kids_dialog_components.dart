@@ -6,6 +6,12 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_FFEA70 = Color(0xFFFFEA70);
+  static const Color c_8B4513 = Color(0xFF8B4513);
+}
+
 /// AAA Rotating Sunburst Background for Victory Screens
 class KidsSunburstBackground extends StatelessWidget {
   final Color color;
@@ -83,7 +89,7 @@ class Kids3DButton extends StatelessWidget {
               gradient: isGolden
                   ? const LinearGradient(
                       colors: [
-                        Color(0xFFFFEA70),
+                        _LocalPalette.c_FFEA70,
                         IllustrationColors.premiumGold,
                       ],
                       begin: Alignment.topCenter,
@@ -111,7 +117,7 @@ class Kids3DButton extends StatelessWidget {
                       icon,
                       color:
                           textColor ??
-                          (isGolden ? const Color(0xFF8B4513) : Colors.white),
+                          (isGolden ? _LocalPalette.c_8B4513 : Colors.white),
                       size: 26.sp,
                     ),
                     SizedBox(width: 8.w),
@@ -124,7 +130,7 @@ class Kids3DButton extends StatelessWidget {
                         fontWeight: FontWeight.w900,
                         color:
                             textColor ??
-                            (isGolden ? const Color(0xFF8B4513) : Colors.white),
+                            (isGolden ? _LocalPalette.c_8B4513 : Colors.white),
                         fontSize: 18.sp,
                         letterSpacing: 1.5,
                       ),

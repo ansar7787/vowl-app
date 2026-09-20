@@ -14,6 +14,11 @@ import 'package:vowl/features/home/presentation/widgets/mastery_avatar.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_06B6D4 = Color(0xFF06B6D4);
+}
+
 enum CommandPodMode { headerOnly, kidsOnly, vaultOnly, full }
 
 class CommandPod extends StatelessWidget {
@@ -241,7 +246,7 @@ class CommandPod extends StatelessWidget {
                   borderRadius: BorderRadius.circular(28.r),
                   gradient: const LinearGradient(
                     colors: [
-                      Color(0xFF06B6D4), // Vibrant Cyan
+                      _LocalPalette.c_06B6D4, // Vibrant Cyan
                       AppColors.blue500, // Azure Blue
                       AppColors.violet500, // Royal Purple
                     ],

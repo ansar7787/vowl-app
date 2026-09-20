@@ -5,6 +5,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_2DD4BF = Color(0xFF2DD4BF);
+}
+
 class PhotoBountyTarget extends StatelessWidget {
   final String currentBounty;
   final bool bountyFound;
@@ -35,7 +40,7 @@ class PhotoBountyTarget extends StatelessWidget {
         ? AppColors.teal500.withValues(alpha: 0.3)
         : AppColors.teal500.withValues(alpha: 0.15);
     final foundBorderColor = isDark
-        ? const Color(0xFF2DD4BF)
+        ? _LocalPalette.c_2DD4BF
         : AppColors.teal500;
 
     return Padding(

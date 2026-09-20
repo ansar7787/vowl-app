@@ -6,6 +6,11 @@ import 'package:go_router/go_router.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_0EA5E9 = Color(0xFF0EA5E9);
+}
+
 class KidsSmartMixWidget extends StatelessWidget {
   const KidsSmartMixWidget({super.key, required this.isDark});
 
@@ -35,7 +40,7 @@ class KidsSmartMixWidget extends StatelessWidget {
       {
         'route': '/kids/map/numbers',
         'title': '123',
-        'color': const Color(0xFF0EA5E9),
+        'color': _LocalPalette.c_0EA5E9,
         'icon': Icons.pin_rounded,
       },
       {

@@ -12,6 +12,11 @@ import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_0C0C1A = Color(0xFF0C0C1A);
+}
+
 /// A text passage with tappable words for evidence-based highlighting.
 ///
 /// Renders a passage as individually tappable word spans. User must tap
@@ -207,7 +212,7 @@ class _EvidenceHighlightWrapperState extends State<EvidenceHighlightWrapper> {
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final tokens = Theme.of(context).extension<AppColorTokens>()!;
-    final bgColor = isDark ? const Color(0xFF0C0C1A) : Colors.white;
+    final bgColor = isDark ? _LocalPalette.c_0C0C1A : Colors.white;
     final textColor = isDark ? Colors.white : AppColors.slate900;
     final subtitleColor = isDark ? Colors.white60 : Colors.black54;
 

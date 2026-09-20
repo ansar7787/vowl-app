@@ -6,6 +6,11 @@ import 'package:vowl/core/utils/locale_service.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_EA580C = Color(0xFFEA580C);
+}
+
 class PremiumHeader extends StatelessWidget {
   const PremiumHeader({super.key});
 
@@ -68,7 +73,7 @@ class PremiumHeader extends StatelessWidget {
                     gradient: LinearGradient(
                       colors: [
                         AppColors.amber500.withValues(alpha: 0.15),
-                        const Color(0xFFEA580C).withValues(alpha: 0.05),
+                        _LocalPalette.c_EA580C.withValues(alpha: 0.05),
                       ],
                     ),
                     borderRadius: BorderRadius.circular(30.r),

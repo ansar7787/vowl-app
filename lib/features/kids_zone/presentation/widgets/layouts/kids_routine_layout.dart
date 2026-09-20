@@ -10,6 +10,12 @@ import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_fitted_text.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_0284C7 = Color(0xFF0284C7);
+  static const Color c_38BDF8 = Color(0xFF38BDF8);
+}
+
 /// Cozy Bedroom Theme for Routine Game
 /// Space Complexity: O(1)
 /// Time Complexity: O(N) where N is the number of options (max 4)
@@ -159,8 +165,8 @@ class KidsRoutineLayout extends StatelessWidget {
                 height: 180.h,
                 decoration: BoxDecoration(
                   color: isHovering
-                      ? const Color(0xFF0284C7)
-                      : const Color(0xFF38BDF8), // Light blue daytime sky
+                      ? _LocalPalette.c_0284C7
+                      : _LocalPalette.c_38BDF8, // Light blue daytime sky
                   borderRadius: BorderRadius.circular(8.r),
                   border: Border.all(
                     color: Colors.white,

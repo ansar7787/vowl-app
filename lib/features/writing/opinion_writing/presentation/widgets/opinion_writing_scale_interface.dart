@@ -4,6 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_DC2626 = Color(0xFFDC2626);
+}
+
 class OpinionWritingScaleInterface extends StatelessWidget {
   final double scaleRotation;
   final List<String> leftPanArgs;
@@ -106,7 +111,7 @@ class OpinionWritingScaleInterface extends StatelessWidget {
             : KidsColors.safeGreen;
         final headerColor = isLeft
             ? successColor
-            : (isDark ? AppColors.gameIncorrect : const Color(0xFFDC2626));
+            : (isDark ? AppColors.gameIncorrect : _LocalPalette.c_DC2626);
 
         return Column(
           mainAxisSize: MainAxisSize.min,

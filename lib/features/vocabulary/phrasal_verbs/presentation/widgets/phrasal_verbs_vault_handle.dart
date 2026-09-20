@@ -4,6 +4,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_151E2E = Color(0xFF151E2E);
+}
+
 class PhrasalVerbsVaultHandle extends StatelessWidget {
   final String verb;
   final Color color;
@@ -35,7 +40,7 @@ class PhrasalVerbsVaultHandle extends StatelessWidget {
                 height: 150.r,
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  color: isDark ? const Color(0xFF151E2E) : Colors.white,
+                  color: isDark ? _LocalPalette.c_151E2E : Colors.white,
                   border: Border.all(
                     color: color.withValues(alpha: 0.4),
                     width: 2,

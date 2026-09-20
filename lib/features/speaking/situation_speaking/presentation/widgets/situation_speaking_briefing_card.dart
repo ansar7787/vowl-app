@@ -6,6 +6,13 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_131326 = Color(0xFF131326);
+  static const Color c_1B1B33 = Color(0xFF1B1B33);
+  static const Color c_0F0F1D = Color(0xFF0F0F1D);
+}
+
 class SituationSpeakingBriefingCard extends StatefulWidget {
   final SpeakingQuest quest;
   final Color primaryColor;
@@ -75,7 +82,7 @@ class _SituationSpeakingBriefingCardState
           width: 1.sw,
           constraints: BoxConstraints(minHeight: 200.h),
           decoration: BoxDecoration(
-            color: widget.isDark ? const Color(0xFF131326) : Colors.white,
+            color: widget.isDark ? _LocalPalette.c_131326 : Colors.white,
             borderRadius: BorderRadius.circular(28.r),
             border: Border.all(
               color: _isFinishedTyping || widget.isAnswered
@@ -101,7 +108,7 @@ class _SituationSpeakingBriefingCardState
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
                     colors: widget.isDark
-                        ? [const Color(0xFF1B1B33), const Color(0xFF0F0F1D)]
+                        ? [_LocalPalette.c_1B1B33, _LocalPalette.c_0F0F1D]
                         : [
                             widget.primaryColor.withValues(alpha: 0.05),
                             Colors.white,

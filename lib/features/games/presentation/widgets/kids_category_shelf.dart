@@ -11,6 +11,13 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:vowl/core/utils/kids_game_helper.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_FFA000 = Color(0xFFFFA000);
+  static const Color c_C0C0C0 = Color(0xFFC0C0C0);
+  static const Color c_CD7F32 = Color(0xFFCD7F32);
+}
+
 class KidsCategoryShelf extends StatefulWidget {
   const KidsCategoryShelf({super.key, required this.user});
 
@@ -269,7 +276,7 @@ class _KidsGameEntryCard extends StatelessWidget {
         height: 26.r,
         decoration: BoxDecoration(
           gradient: const LinearGradient(
-            colors: [IllustrationColors.premiumGold, Color(0xFFFFA000)],
+            colors: [IllustrationColors.premiumGold, _LocalPalette.c_FFA000],
           ),
           shape: BoxShape.circle,
           boxShadow: [
@@ -288,9 +295,9 @@ class _KidsGameEntryCard extends StatelessWidget {
     if (levelsCleared >= 100) {
       ringColor = IllustrationColors.premiumGold;
     } else if (levelsCleared >= 50) {
-      ringColor = const Color(0xFFC0C0C0);
+      ringColor = _LocalPalette.c_C0C0C0;
     } else if (levelsCleared >= 25) {
-      ringColor = const Color(0xFFCD7F32);
+      ringColor = _LocalPalette.c_CD7F32;
     }
 
     final progress = (levelsCleared % 10) / 10.0;

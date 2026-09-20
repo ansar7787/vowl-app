@@ -17,6 +17,13 @@ import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_4C1D95 = Color(0xFF4C1D95);
+  static const Color c_FF9800 = Color(0xFFFF9800);
+  static const Color c_FF5722 = Color(0xFFFF5722);
+}
+
 class StickerBookScreen extends StatefulWidget {
   const StickerBookScreen({super.key});
 
@@ -75,7 +82,7 @@ class _StickerBookScreenState extends State<StickerBookScreen>
                   painterName: 'UnicornMist',
                   shaderName: 'magic_twinkle',
                   primaryColor: isDark
-                      ? const Color(0xFF4C1D95)
+                      ? _LocalPalette.c_4C1D95
                       : Colors.purple.withValues(alpha: 0.4),
                   gameType: 'album',
                 ),
@@ -200,7 +207,10 @@ class _StickerBookScreenState extends State<StickerBookScreen>
                         ),
                         decoration: BoxDecoration(
                           gradient: const LinearGradient(
-                            colors: [Color(0xFFFF9800), Color(0xFFFF5722)],
+                            colors: [
+                              _LocalPalette.c_FF9800,
+                              _LocalPalette.c_FF5722,
+                            ],
                           ),
                           borderRadius: BorderRadius.circular(30.r),
                           boxShadow: [

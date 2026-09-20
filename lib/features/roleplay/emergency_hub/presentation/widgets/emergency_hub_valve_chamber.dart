@@ -4,6 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/features/roleplay/emergency_hub/presentation/widgets/emergency_hub_valve_painter.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_07070F = Color(0xFF07070F);
+}
+
 class EmergencyHubValveChamber extends StatelessWidget {
   final String correctAnswer;
   final String inputText;
@@ -39,7 +44,7 @@ class EmergencyHubValveChamber extends StatelessWidget {
       padding: EdgeInsets.symmetric(vertical: 24.h),
       decoration: BoxDecoration(
         color: isDark
-            ? const Color(0xFF07070F)
+            ? _LocalPalette.c_07070F
             : Colors.black.withValues(alpha: 0.02),
         borderRadius: BorderRadius.circular(36.r),
         border: Border.all(

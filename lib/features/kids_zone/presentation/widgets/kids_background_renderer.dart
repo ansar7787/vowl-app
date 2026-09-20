@@ -4,6 +4,23 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
 
+class _LocalPalette {
+  _LocalPalette._();
+  static const Color c_00B4DB = Color(0xFF00B4DB);
+  static const Color c_0083B0 = Color(0xFF0083B0);
+  static const Color c_1E1B4B = Color(0xFF1E1B4B);
+  static const Color c_1A237E = Color(0xFF1A237E);
+  static const Color c_3949AB = Color(0xFF3949AB);
+  static const Color c_831843 = Color(0xFF831843);
+  static const Color c_500724 = Color(0xFF500724);
+  static const Color c_FFC0CB = Color(0xFFFFC0CB);
+  static const Color c_F8BBD0 = Color(0xFFF8BBD0);
+  static const Color c_064E3B = Color(0xFF064E3B);
+  static const Color c_022C22 = Color(0xFF022C22);
+  static const Color c_388E3C = Color(0xFF388E3C);
+  static const Color c_C8E6C9 = Color(0xFFC8E6C9);
+}
+
 class KidsBackgroundRenderer extends StatelessWidget {
   final String painterName;
   final String shaderName;
@@ -28,45 +45,41 @@ class KidsBackgroundRenderer extends StatelessWidget {
 
     if (painterName == 'OceanWave') {
       gradientColors = [
-        const Color(0xFF00B4DB),
-        const Color(0xFF0083B0),
-        const Color(0xFF00B4DB),
+        _LocalPalette.c_00B4DB,
+        _LocalPalette.c_0083B0,
+        _LocalPalette.c_00B4DB,
       ];
     } else if (painterName == 'StarryNight') {
       gradientColors = isDark
-          ? [
-              const Color(0xFF1E1B4B),
-              AppColors.slate900,
-              const Color(0xFF1E1B4B),
-            ]
+          ? [_LocalPalette.c_1E1B4B, AppColors.slate900, _LocalPalette.c_1E1B4B]
           : [
-              const Color(0xFF1A237E),
-              const Color(0xFF3949AB),
-              const Color(0xFF1A237E),
+              _LocalPalette.c_1A237E,
+              _LocalPalette.c_3949AB,
+              _LocalPalette.c_1A237E,
             ];
     } else if (painterName == 'CandyCloud') {
       gradientColors = isDark
           ? [
-              const Color(0xFF831843),
-              const Color(0xFF500724),
-              const Color(0xFF831843),
+              _LocalPalette.c_831843,
+              _LocalPalette.c_500724,
+              _LocalPalette.c_831843,
             ]
           : [
-              const Color(0xFFFFC0CB),
-              const Color(0xFFF8BBD0),
-              const Color(0xFFFFC0CB),
+              _LocalPalette.c_FFC0CB,
+              _LocalPalette.c_F8BBD0,
+              _LocalPalette.c_FFC0CB,
             ];
     } else if (painterName == 'ForestFriend') {
       gradientColors = isDark
           ? [
-              const Color(0xFF064E3B),
-              const Color(0xFF022C22),
-              const Color(0xFF064E3B),
+              _LocalPalette.c_064E3B,
+              _LocalPalette.c_022C22,
+              _LocalPalette.c_064E3B,
             ]
           : [
-              const Color(0xFF388E3C),
-              const Color(0xFFC8E6C9),
-              const Color(0xFF388E3C),
+              _LocalPalette.c_388E3C,
+              _LocalPalette.c_C8E6C9,
+              _LocalPalette.c_388E3C,
             ];
     } else {
       // Default: The Kids Level Map "Mesh Gradient" aesthetic based on primaryColor
