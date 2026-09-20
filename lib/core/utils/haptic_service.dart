@@ -1,5 +1,5 @@
 import 'package:flutter/foundation.dart';
-import 'package:hapticolorfeedback/hapticolorfeedback.dart';
+import 'package:haptic_feedback/haptic_feedback.dart';
 
 /// Abstract interface representing the haptic feedback coordinator for Vowl.
 ///

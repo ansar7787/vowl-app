@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:go_router/go_router.dart';
-import 'package:hapticolorfeedback/hapticolorfeedback.dart';
+import 'package:haptic_feedback/haptic_feedback.dart';
 
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';

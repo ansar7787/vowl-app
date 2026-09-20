@@ -2,7 +2,7 @@ import 'package:vowl/core/theme/illustration_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:hapticolorfeedback/hapticolorfeedback.dart';
+import 'package:haptic_feedback/haptic_feedback.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_background_renderer.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/auth/presentation/bloc/profile_bloc.dart';

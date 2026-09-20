@@ -6,7 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl/intl.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 import 'package:flutter/foundation.dart';
-import 'package:hapticolorfeedback/hapticolorfeedback.dart';
+import 'package:haptic_feedback/haptic_feedback.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/features/auth/presentation/bloc/progression_bloc.dart';
 import 'package:vowl/core/utils/ad_service.dart';

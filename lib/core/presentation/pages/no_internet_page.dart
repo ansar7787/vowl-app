@@ -2,7 +2,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:hapticolorfeedback/hapticolorfeedback.dart';
+import 'package:haptic_feedback/haptic_feedback.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/locale_service.dart';

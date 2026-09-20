@@ -2,7 +2,7 @@ import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:hapticolorfeedback/hapticolorfeedback.dart';
+import 'package:haptic_feedback/haptic_feedback.dart';
 import 'package:vowl/core/presentation/widgets/holographic_card.dart';
 import 'package:vowl/core/presentation/widgets/loading_overlay.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
