@@ -15,11 +15,11 @@ import 'package:vowl/core/theme/app_colors.dart';
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_4C1D95 = Color(0xFF4C1D95);
-  static const Color c_2E1065 = Color(0xFF2E1065);
-  static const Color c_E9D5FF = Color(0xFFE9D5FF);
-  static const Color c_C084FC = Color(0xFFC084FC);
-  static const Color c_9333EA = Color(0xFF9333EA);
+  static const Color color4c1d95 = Color(0xFF4C1D95);
+  static const Color color2e1065 = Color(0xFF2E1065);
+  static const Color colore9d5ff = Color(0xFFE9D5FF);
+  static const Color colorc084fc = Color(0xFFC084FC);
+  static const Color color9333ea = Color(0xFF9333EA);
 }
 
 /// Magic Show Theme for Prepositions Game
@@ -136,20 +136,20 @@ class KidsPrepositionsLayout extends StatelessWidget {
                 height: 200.h,
                 decoration: BoxDecoration(
                   color: isHovering
-                      ? _LocalPalette.c_4C1D95
-                      : _LocalPalette.c_2E1065, // Deep magical purple
+                      ? _LocalPalette.color4c1d95
+                      : _LocalPalette.color2e1065, // Deep magical purple
                   borderRadius: BorderRadius.circular(
                     100.r,
                   ), // Magical orb shape
                   border: Border.all(
                     color: isHovering
-                        ? _LocalPalette.c_E9D5FF
-                        : _LocalPalette.c_C084FC,
+                        ? _LocalPalette.colore9d5ff
+                        : _LocalPalette.colorc084fc,
                     width: 4.r,
                   ), // Glowing border
                   boxShadow: [
                     BoxShadow(
-                      color: _LocalPalette.c_9333EA.withValues(alpha: 0.5),
+                      color: _LocalPalette.color9333ea.withValues(alpha: 0.5),
                       blurRadius: isHovering ? 30 : 20,
                       spreadRadius: isHovering ? 10 : 5,
                     ),
@@ -365,7 +365,7 @@ class KidsPrepositionsLayout extends StatelessWidget {
                 fontFamily: 'Outfit',
                 fontSize: 14.sp,
                 fontWeight: FontWeight.w900,
-                color: _LocalPalette.c_4C1D95, // Deep magical purple text
+                color: _LocalPalette.color4c1d95, // Deep magical purple text
               ),
               maxLines: 2,
               textAlign: TextAlign.center,

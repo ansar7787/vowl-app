@@ -12,11 +12,11 @@ import 'package:vowl/features/kids_zone/presentation/widgets/kids_fitted_text.da
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_38BDF8 = Color(0xFF38BDF8);
-  static const Color c_FDE68A = Color(0xFFFDE68A);
-  static const Color c_FCA5A5 = Color(0xFFFCA5A5);
-  static const Color c_6EE7B7 = Color(0xFF6EE7B7);
-  static const Color c_93C5FD = Color(0xFF93C5FD);
+  static const Color color38bdf8 = Color(0xFF38BDF8);
+  static const Color colorfde68a = Color(0xFFFDE68A);
+  static const Color colorfca5a5 = Color(0xFFFCA5A5);
+  static const Color color6ee7b7 = Color(0xFF6EE7B7);
+  static const Color color93c5fd = Color(0xFF93C5FD);
 }
 
 /// Friendly Clinic Theme for Body Parts Game
@@ -162,12 +162,14 @@ class KidsBodyPartsLayout extends StatelessWidget {
                   : AppColors.slate900, // Dark X-Ray background
               borderRadius: BorderRadius.circular(8.r),
               border: Border.all(
-                color: isHovering ? _LocalPalette.c_38BDF8 : AppColors.slate200,
+                color: isHovering
+                    ? _LocalPalette.color38bdf8
+                    : AppColors.slate200,
                 width: 12.r,
               ), // Medical white frame
               boxShadow: [
                 BoxShadow(
-                  color: _LocalPalette.c_38BDF8.withValues(
+                  color: _LocalPalette.color38bdf8.withValues(
                     alpha: isHovering ? 0.6 : 0.3,
                   ), // Blue glowing backlight
                   blurRadius: isHovering ? 30 : 20,
@@ -246,10 +248,10 @@ class KidsBodyPartsLayout extends StatelessWidget {
     int index,
   ) {
     final colors = [
-      _LocalPalette.c_FDE68A, // Light tan
-      _LocalPalette.c_FCA5A5, // Pinkish
-      _LocalPalette.c_6EE7B7, // Mint green (fun kid bandaid)
-      _LocalPalette.c_93C5FD, // Light blue
+      _LocalPalette.colorfde68a, // Light tan
+      _LocalPalette.colorfca5a5, // Pinkish
+      _LocalPalette.color6ee7b7, // Mint green (fun kid bandaid)
+      _LocalPalette.color93c5fd, // Light blue
     ];
     final bandaidColor = colors[index % colors.length];
 

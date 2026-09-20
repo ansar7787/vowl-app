@@ -8,7 +8,7 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_1E1E24 = Color(0xFF1E1E24);
+  static const Color color1e1e24 = Color(0xFF1E1E24);
 }
 
 class AmbientIdSonarField extends StatelessWidget {
@@ -151,7 +151,7 @@ class AmbientIdSonarField extends StatelessWidget {
                       ? AppColors.gameCorrect
                       : (isChoiceWrong
                             ? AppColors.gameIncorrect
-                            : (isSelected ? color : _LocalPalette.c_1E1E24)),
+                            : (isSelected ? color : _LocalPalette.color1e1e24)),
                   shape: BoxShape.circle,
                   border: Border.all(
                     color: isChoiceCorrect || isChoiceWrong || isSelected

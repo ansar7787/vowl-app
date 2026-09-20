@@ -15,9 +15,9 @@ import 'package:auto_size_text/auto_size_text.dart';
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_FFA000 = Color(0xFFFFA000);
-  static const Color c_C0C0C0 = Color(0xFFC0C0C0);
-  static const Color c_CD7F32 = Color(0xFFCD7F32);
+  static const Color colorffa000 = Color(0xFFFFA000);
+  static const Color colorc0c0c0 = Color(0xFFC0C0C0);
+  static const Color colorcd7f32 = Color(0xFFCD7F32);
 }
 
 class CategoryShelf extends StatefulWidget {
@@ -286,7 +286,7 @@ class _GameEntryCard extends StatelessWidget {
         height: 26.r,
         decoration: BoxDecoration(
           gradient: const LinearGradient(
-            colors: [IllustrationColors.premiumGold, _LocalPalette.c_FFA000],
+            colors: [IllustrationColors.premiumGold, _LocalPalette.colorffa000],
           ),
           shape: BoxShape.circle,
           boxShadow: [
@@ -305,9 +305,9 @@ class _GameEntryCard extends StatelessWidget {
     if (levelsCleared >= 100) {
       ringColor = IllustrationColors.premiumGold; // Gold
     } else if (levelsCleared >= 50) {
-      ringColor = _LocalPalette.c_C0C0C0; // Silver
+      ringColor = _LocalPalette.colorc0c0c0; // Silver
     } else if (levelsCleared >= 25) {
-      ringColor = _LocalPalette.c_CD7F32; // Bronze
+      ringColor = _LocalPalette.colorcd7f32; // Bronze
     }
 
     final progress = (levelsCleared % 10) / 10.0;

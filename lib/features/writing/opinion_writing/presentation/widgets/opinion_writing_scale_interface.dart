@@ -6,7 +6,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_DC2626 = Color(0xFFDC2626);
+  static const Color colordc2626 = Color(0xFFDC2626);
 }
 
 class OpinionWritingScaleInterface extends StatelessWidget {
@@ -111,7 +111,7 @@ class OpinionWritingScaleInterface extends StatelessWidget {
             : KidsColors.safeGreen;
         final headerColor = isLeft
             ? successColor
-            : (isDark ? AppColors.gameIncorrect : _LocalPalette.c_DC2626);
+            : (isDark ? AppColors.gameIncorrect : _LocalPalette.colordc2626);
 
         return Column(
           mainAxisSize: MainAxisSize.min,

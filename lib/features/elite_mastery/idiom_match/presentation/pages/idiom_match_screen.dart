@@ -16,7 +16,7 @@ import 'package:vowl/features/elite_mastery/presentation/mixins/elite_mastery_ga
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_1A1A2E = Color(0xFF1A1A2E);
+  static const Color color1a1a2e = Color(0xFF1A1A2E);
 }
 
 class IdiomMatchScreen extends StatefulWidget {
@@ -442,7 +442,7 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen>
                                             ),
                                             decoration: BoxDecoration(
                                               color: isDark
-                                                  ? _LocalPalette.c_1A1A2E
+                                                  ? _LocalPalette.color1a1a2e
                                                   : Colors.blue.withValues(
                                                       alpha: 0.05,
                                                     ),

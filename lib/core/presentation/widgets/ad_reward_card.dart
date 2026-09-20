@@ -15,7 +15,7 @@ import 'package:vowl/core/theme/app_colors.dart';
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_4F46E5 = Color(0xFF4F46E5);
+  static const Color color4f46e5 = Color(0xFF4F46E5);
 }
 
 /// Card widget that awards 20 Vowl Coins in exchange for watching a
@@ -233,7 +233,7 @@ class _AdRewardCardState extends State<AdRewardCard> {
                                     : const LinearGradient(
                                         colors: [
                                           AppColors.indigo500,
-                                          _LocalPalette.c_4F46E5,
+                                          _LocalPalette.color4f46e5,
                                         ],
                                       ),
                                 color: loading

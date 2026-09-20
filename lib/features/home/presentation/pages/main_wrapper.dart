@@ -13,7 +13,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_020617 = Color(0xFF020617);
+  static const Color color020617 = Color(0xFF020617);
 }
 
 class MainWrapper extends StatelessWidget {
@@ -28,7 +28,7 @@ class MainWrapper extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: isMidnight
-          ? _LocalPalette.c_020617
+          ? _LocalPalette.color020617
           : (isDark ? AppColors.slate900 : Colors.white),
       extendBody: true,
       body: navigationShell,

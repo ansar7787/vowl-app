@@ -11,8 +11,8 @@ import 'package:vowl/core/presentation/utils/vowl_assets.dart';
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_F472B6 = Color(0xFFF472B6);
-  static const Color c_60A5FA = Color(0xFF60A5FA);
+  static const Color colorf472b6 = Color(0xFFF472B6);
+  static const Color color60a5fa = Color(0xFF60A5FA);
 }
 
 enum VowlMascotState { neutral, happy, worried, thinking, studying, sleeping }
@@ -123,8 +123,8 @@ class VowlMascot extends StatelessWidget {
             'owly' => Colors.brown[300]!,
             'foxie' => Colors.orangeAccent,
             'dino' => tokens.gameCorrect,
-            'mascot_unicorn' => _LocalPalette.c_F472B6,
-            'mascot_robot' => _LocalPalette.c_60A5FA,
+            'mascot_unicorn' => _LocalPalette.colorf472b6,
+            'mascot_robot' => _LocalPalette.color60a5fa,
             'mascot_lion' => AppColors.amber400,
             _ => auraColor,
           };

@@ -5,8 +5,8 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_00C896 = Color(0xFF00C896);
-  static const Color c_FF5E5E = Color(0xFFFF5E5E);
+  static const Color color00c896 = Color(0xFF00C896);
+  static const Color colorff5e5e = Color(0xFFFF5E5E);
 }
 
 class SoundImageMatchGrid extends StatelessWidget {
@@ -88,8 +88,8 @@ class SoundImageMatchGrid extends StatelessWidget {
     Color tileColor;
     Color borderColor;
 
-    final Color modernCorrect = _LocalPalette.c_00C896;
-    final Color modernIncorrect = _LocalPalette.c_FF5E5E;
+    final Color modernCorrect = _LocalPalette.color00c896;
+    final Color modernIncorrect = _LocalPalette.colorff5e5e;
 
     if (isAnswered && isSelected) {
       tileColor = isCorrectState == true

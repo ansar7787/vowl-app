@@ -4,13 +4,13 @@ import 'package:vowl/core/theme/app_colors.dart';
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_8B4513 = Color(0xFF8B4513);
-  static const Color c_06B6D4 = Color(0xFF06B6D4);
-  static const Color c_059669 = Color(0xFF059669);
-  static const Color c_0EA5E9 = Color(0xFF0EA5E9);
-  static const Color c_22C55E = Color(0xFF22C55E);
-  static const Color c_F472B6 = Color(0xFFF472B6);
-  static const Color c_60A5FA = Color(0xFF60A5FA);
+  static const Color color8b4513 = Color(0xFF8B4513);
+  static const Color color06b6d4 = Color(0xFF06B6D4);
+  static const Color color059669 = Color(0xFF059669);
+  static const Color color0ea5e9 = Color(0xFF0EA5E9);
+  static const Color color22c55e = Color(0xFF22C55E);
+  static const Color colorf472b6 = Color(0xFFF472B6);
+  static const Color color60a5fa = Color(0xFF60A5FA);
 }
 
 class KidsAssets {
@@ -105,7 +105,7 @@ class KidsAssets {
       'name': 'Explorer Hat',
       'price': 80,
       'icon': '🤠',
-      'color': _LocalPalette.c_8B4513,
+      'color': _LocalPalette.color8b4513,
       'category': 'Clothes',
     },
     {
@@ -113,7 +113,7 @@ class KidsAssets {
       'name': 'Star Wings',
       'price': 500,
       'icon': '🦋',
-      'color': _LocalPalette.c_06B6D4,
+      'color': _LocalPalette.color06b6d4,
       'category': 'Magic',
     },
     {
@@ -177,7 +177,7 @@ class KidsAssets {
       'name': 'Dragon Tail',
       'price': 3000,
       'icon': '🐲',
-      'color': _LocalPalette.c_059669,
+      'color': _LocalPalette.color059669,
       'category': 'Magic',
     },
     {
@@ -193,7 +193,7 @@ class KidsAssets {
       'name': 'Sky Goggles',
       'price': 350,
       'icon': '🥽',
-      'color': _LocalPalette.c_0EA5E9,
+      'color': _LocalPalette.color0ea5e9,
       'category': 'Clothes',
     },
     {
@@ -209,7 +209,7 @@ class KidsAssets {
       'name': 'Space Link',
       'price': 600,
       'icon': '👽',
-      'color': _LocalPalette.c_22C55E,
+      'color': _LocalPalette.color22c55e,
       'category': 'Magic',
     },
     {
@@ -251,7 +251,7 @@ class KidsAssets {
       'name': 'Magic Unicorn',
       'price': 5000,
       'icon': '🦄',
-      'color': _LocalPalette.c_F472B6,
+      'color': _LocalPalette.colorf472b6,
       'category': 'Buddies',
     },
     {
@@ -259,7 +259,7 @@ class KidsAssets {
       'name': 'Sparky Robot',
       'price': 3500,
       'icon': '🤖',
-      'color': _LocalPalette.c_60A5FA,
+      'color': _LocalPalette.color60a5fa,
       'category': 'Buddies',
     },
     {

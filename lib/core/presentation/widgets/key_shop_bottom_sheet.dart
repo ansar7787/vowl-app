@@ -22,8 +22,8 @@ import 'package:vowl/core/theme/app_colors.dart';
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_0EA5E9 = Color(0xFF0EA5E9);
-  static const Color c_0284C7 = Color(0xFF0284C7);
+  static const Color color0ea5e9 = Color(0xFF0EA5E9);
+  static const Color color0284c7 = Color(0xFF0284C7);
 }
 
 class KeyShopBottomSheet {
@@ -623,8 +623,8 @@ class _KeyShopContentState extends State<_KeyShopContent> {
                                       AppColors.slate500,
                                     ] // Premium Slate grey
                                   : const [
-                                      _LocalPalette.c_0EA5E9,
-                                      _LocalPalette.c_0284C7,
+                                      _LocalPalette.color0ea5e9,
+                                      _LocalPalette.color0284c7,
                                     ],
                               begin: Alignment.topLeft,
                               end: Alignment.bottomRight,

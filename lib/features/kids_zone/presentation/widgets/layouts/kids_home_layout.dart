@@ -13,11 +13,11 @@ import 'package:vowl/core/theme/app_colors.dart';
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_DC2626 = Color(0xFFDC2626);
-  static const Color c_FEF3C7 = Color(0xFFFEF3C7);
-  static const Color c_FDE68A = Color(0xFFFDE68A);
-  static const Color c_92400E = Color(0xFF92400E);
-  static const Color c_451A03 = Color(0xFF451A03);
+  static const Color colordc2626 = Color(0xFFDC2626);
+  static const Color colorfef3c7 = Color(0xFFFEF3C7);
+  static const Color colorfde68a = Color(0xFFFDE68A);
+  static const Color color92400e = Color(0xFF92400E);
+  static const Color color451a03 = Color(0xFF451A03);
 }
 
 /// Dollhouse Theme for Home Game
@@ -166,7 +166,7 @@ class KidsHomeLayout extends StatelessWidget {
                   width: 280.w,
                   height: 60.h,
                   color: isHovering
-                      ? _LocalPalette.c_DC2626
+                      ? _LocalPalette.colordc2626
                       : AppColors.red500, // Red roof
                 ),
               ),
@@ -176,11 +176,11 @@ class KidsHomeLayout extends StatelessWidget {
                 height: 160.h, // Made slightly taller to fit instruction
                 decoration: BoxDecoration(
                   color: isHovering
-                      ? _LocalPalette.c_FEF3C7
-                      : _LocalPalette.c_FDE68A, // Warm yellow wallpaper
+                      ? _LocalPalette.colorfef3c7
+                      : _LocalPalette.colorfde68a, // Warm yellow wallpaper
                   border: Border.all(
                     color: isHovering
-                        ? _LocalPalette.c_92400E
+                        ? _LocalPalette.color92400e
                         : AppColors.amber900,
                     width: isHovering ? 8.r : 6.r,
                   ), // Wooden walls
@@ -236,7 +236,7 @@ class KidsHomeLayout extends StatelessWidget {
                                       ? 70.sp
                                       : 24.sp,
                                   fontWeight: FontWeight.w800,
-                                  color: _LocalPalette.c_451A03.withValues(
+                                  color: _LocalPalette.color451a03.withValues(
                                     alpha:
                                         (quest.question == "?" ||
                                             quest.question == null)

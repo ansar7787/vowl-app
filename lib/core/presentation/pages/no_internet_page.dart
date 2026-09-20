@@ -2,7 +2,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:haptic_feedback/haptic_feedback.dart';
+import 'package:hapticolorfeedback/hapticolorfeedback.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/locale_service.dart';
@@ -11,7 +11,7 @@ import 'package:vowl/core/theme/app_colors.dart';
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_1D4ED8 = Color(0xFF1D4ED8);
+  static const Color color1d4ed8 = Color(0xFF1D4ED8);
 }
 
 /// Premium glassmorphic offline page with accessible retry interaction.
@@ -411,7 +411,7 @@ class _RetryButton extends StatelessWidget {
                         ]
                       : [
                           Theme.of(context).colorScheme.primary,
-                          _LocalPalette.c_1D4ED8,
+                          _LocalPalette.color1d4ed8,
                         ],
                 ),
                 boxShadow: [

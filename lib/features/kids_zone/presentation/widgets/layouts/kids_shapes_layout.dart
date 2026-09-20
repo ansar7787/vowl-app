@@ -13,8 +13,8 @@ import 'package:vowl/core/theme/app_colors.dart';
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_92400E = Color(0xFF92400E);
-  static const Color c_52525B = Color(0xFF52525B);
+  static const Color color92400e = Color(0xFF92400E);
+  static const Color color52525b = Color(0xFF52525B);
 }
 
 /// Toy Construction Theme for Shapes Game
@@ -128,14 +128,14 @@ class KidsShapesLayout extends StatelessWidget {
               decoration: BoxDecoration(
                 color: AppColors.amber400, // Construction Yellow
                 borderRadius: BorderRadius.circular(4.r),
-                border: Border.all(color: _LocalPalette.c_92400E, width: 2),
+                border: Border.all(color: _LocalPalette.color92400e, width: 2),
               ),
             ),
             // Crane Hook / Cables
             Container(
               height: 30.h,
               width: 4.w,
-              color: _LocalPalette.c_52525B, // Steel cable
+              color: _LocalPalette.color52525b, // Steel cable
             ),
             // The Blueprint Paper
             InkWell(

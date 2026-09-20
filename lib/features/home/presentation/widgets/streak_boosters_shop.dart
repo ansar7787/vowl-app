@@ -6,7 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl/intl.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 import 'package:flutter/foundation.dart';
-import 'package:haptic_feedback/haptic_feedback.dart';
+import 'package:hapticolorfeedback/hapticolorfeedback.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/features/auth/presentation/bloc/progression_bloc.dart';
 import 'package:vowl/core/utils/ad_service.dart';
@@ -17,9 +17,9 @@ import 'package:vowl/core/theme/app_colors.dart';
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_FF5F6D = Color(0xFFFF5F6D);
-  static const Color c_38BDF8 = Color(0xFF38BDF8);
-  static const Color c_FCD34D = Color(0xFFFCD34D);
+  static const Color colorff5f6d = Color(0xFFFF5F6D);
+  static const Color color38bdf8 = Color(0xFF38BDF8);
+  static const Color colorfcd34d = Color(0xFFFCD34D);
 }
 
 class StreakBoostersShop extends StatefulWidget {
@@ -182,7 +182,7 @@ class _StreakBoostersShopState extends State<StreakBoostersShop> {
               fallback: 'Melt the ice and restore your flame from yesterday.',
             ),
             icon: LucideIcons.flame,
-            color: _LocalPalette.c_FF5F6D,
+            color: _LocalPalette.colorff5f6d,
             cost: 200,
             currentCoins: user.coins,
             isDisabled: user.currentStreak > 0,
@@ -243,7 +243,7 @@ class _StreakBoostersShopState extends State<StreakBoostersShop> {
               fallback: 'A mystical barrier that prevents streak loss.',
             ),
             icon: LucideIcons.shieldCheck,
-            color: _LocalPalette.c_38BDF8,
+            color: _LocalPalette.color38bdf8,
             cost: 150,
             count: user.streakFreezes,
             currentCoins: user.coins,
@@ -271,7 +271,7 @@ class _StreakBoostersShopState extends State<StreakBoostersShop> {
               fallback: 'Double the wisdom, double the progress for 24h.',
             ),
             icon: LucideIcons.zap,
-            color: _LocalPalette.c_FCD34D,
+            color: _LocalPalette.colorfcd34d,
             cost: 300,
             isActive: user.isDoubleXPActive,
             activeUntil: user.doubleXPExpiry,

@@ -5,8 +5,8 @@ import 'package:vowl/core/theme/app_colors.dart';
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_4B5563 = Color(0xFF4B5563);
-  static const Color c_6B7280 = Color(0xFF6B7280);
+  static const Color color4b5563 = Color(0xFF4B5563);
+  static const Color color6b7280 = Color(0xFF6B7280);
 }
 
 // ---------------------------------------------------------------------------
@@ -75,7 +75,7 @@ class VerifyEmailStatusText extends StatelessWidget {
           style: TextStyle(
             fontFamily: 'Outfit',
             fontSize: 15.sp,
-            color: isDark ? Colors.white70 : _LocalPalette.c_4B5563,
+            color: isDark ? Colors.white70 : _LocalPalette.color4b5563,
             height: 1.5,
           ),
           textAlign: TextAlign.center,
@@ -291,7 +291,7 @@ class VerifyLogoutButton extends StatelessWidget {
             style: TextStyle(
               fontFamily: 'Outfit',
               fontSize: 16.sp,
-              color: _LocalPalette.c_6B7280,
+              color: _LocalPalette.color6b7280,
               fontWeight: FontWeight.w600,
             ),
             maxLines: 1,

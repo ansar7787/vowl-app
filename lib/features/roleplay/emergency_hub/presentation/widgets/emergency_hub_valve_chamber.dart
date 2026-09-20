@@ -6,7 +6,7 @@ import 'package:vowl/features/roleplay/emergency_hub/presentation/widgets/emerge
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_07070F = Color(0xFF07070F);
+  static const Color color07070f = Color(0xFF07070F);
 }
 
 class EmergencyHubValveChamber extends StatelessWidget {
@@ -44,7 +44,7 @@ class EmergencyHubValveChamber extends StatelessWidget {
       padding: EdgeInsets.symmetric(vertical: 24.h),
       decoration: BoxDecoration(
         color: isDark
-            ? _LocalPalette.c_07070F
+            ? _LocalPalette.color07070f
             : Colors.black.withValues(alpha: 0.02),
         borderRadius: BorderRadius.circular(36.r),
         border: Border.all(

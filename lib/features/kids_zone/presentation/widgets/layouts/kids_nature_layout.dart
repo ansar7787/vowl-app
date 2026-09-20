@@ -13,13 +13,13 @@ import 'package:vowl/features/kids_zone/presentation/widgets/kids_fitted_text.da
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_14532D = Color(0xFF14532D);
-  static const Color c_FEF08A = Color(0xFFFEF08A);
-  static const Color c_EAB308 = Color(0xFFEAB308);
-  static const Color c_92400E = Color(0xFF92400E);
-  static const Color c_451A03 = Color(0xFF451A03);
-  static const Color c_15803D = Color(0xFF15803D);
-  static const Color c_FEF3C7 = Color(0xFFFEF3C7);
+  static const Color color14532d = Color(0xFF14532D);
+  static const Color colorfef08a = Color(0xFFFEF08A);
+  static const Color coloreab308 = Color(0xFFEAB308);
+  static const Color color92400e = Color(0xFF92400E);
+  static const Color color451a03 = Color(0xFF451A03);
+  static const Color color15803d = Color(0xFF15803D);
+  static const Color colorfef3c7 = Color(0xFFFEF3C7);
 }
 
 /// Magical Forest Theme for Nature Game
@@ -92,7 +92,7 @@ class KidsNatureLayout extends StatelessWidget {
                         height: 40.h,
                         width: double.infinity,
                         decoration: BoxDecoration(
-                          color: _LocalPalette.c_14532D, // Dark green moss
+                          color: _LocalPalette.color14532d, // Dark green moss
                           borderRadius: BorderRadius.vertical(
                             top: Radius.circular(24.r),
                           ),
@@ -153,11 +153,11 @@ class KidsNatureLayout extends StatelessWidget {
         width: 10.r,
         height: 10.r,
         decoration: BoxDecoration(
-          color: _LocalPalette.c_FEF08A,
+          color: _LocalPalette.colorfef08a,
           shape: BoxShape.circle,
           boxShadow: [
             BoxShadow(
-              color: _LocalPalette.c_EAB308,
+              color: _LocalPalette.coloreab308,
               blurRadius: 10,
               spreadRadius: 2,
             ),
@@ -194,13 +194,13 @@ class KidsNatureLayout extends StatelessWidget {
             height: 200.h,
             decoration: BoxDecoration(
               color: isHovering
-                  ? _LocalPalette.c_92400E
+                  ? _LocalPalette.color92400e
                   : AppColors.amber900, // Dark wood
               borderRadius: BorderRadius.circular(16.r),
               border: Border.all(
                 color: isHovering
                     ? KidsColors.safeGreen
-                    : _LocalPalette.c_451A03,
+                    : _LocalPalette.color451a03,
                 width: isHovering ? 10.r : 6.r,
               ),
               boxShadow: [
@@ -230,7 +230,7 @@ class KidsNatureLayout extends StatelessWidget {
                   right: -10.w,
                   child: Icon(
                     Icons.eco_rounded,
-                    color: _LocalPalette.c_15803D,
+                    color: _LocalPalette.color15803d,
                     size: 50.r,
                   ),
                 ),
@@ -277,7 +277,7 @@ class KidsNatureLayout extends StatelessWidget {
                                       ? 70.sp
                                       : 22.sp,
                                   fontWeight: FontWeight.w700,
-                                  color: _LocalPalette.c_FEF3C7.withValues(
+                                  color: _LocalPalette.colorfef3c7.withValues(
                                     alpha:
                                         (quest.question == "?" ||
                                             quest.question == null)

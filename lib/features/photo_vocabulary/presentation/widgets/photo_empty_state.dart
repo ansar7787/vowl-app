@@ -10,7 +10,7 @@ import 'package:vowl/core/utils/locale_service.dart';
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_0D9488 = Color(0xFF0D9488);
+  static const Color color0d9488 = Color(0xFF0D9488);
 }
 
 class PhotoEmptyState extends StatelessWidget {
@@ -219,7 +219,7 @@ class PhotoEmptyState extends StatelessWidget {
                 gradient: LinearGradient(
                   colors: [
                     AppColors.teal500.withValues(alpha: 0.15),
-                    _LocalPalette.c_0D9488.withValues(alpha: 0.05),
+                    _LocalPalette.color0d9488.withValues(alpha: 0.05),
                   ],
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,

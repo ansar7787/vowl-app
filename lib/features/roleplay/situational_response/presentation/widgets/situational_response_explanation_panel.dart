@@ -6,7 +6,7 @@ import 'package:vowl/features/roleplay/domain/entities/roleplay_quest.dart';
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_131326 = Color(0xFF131326);
+  static const Color color131326 = Color(0xFF131326);
 }
 
 class SituationalResponseExplanationPanel extends StatelessWidget {
@@ -32,7 +32,7 @@ class SituationalResponseExplanationPanel extends StatelessWidget {
       width: 1.sw,
       padding: EdgeInsets.all(20.r),
       decoration: BoxDecoration(
-        color: isDark ? _LocalPalette.c_131326 : Colors.white,
+        color: isDark ? _LocalPalette.color131326 : Colors.white,
         borderRadius: BorderRadius.circular(24.r),
         border: Border.all(
           color: cardColor.withValues(alpha: 0.25),

@@ -5,7 +5,7 @@ import 'package:lucide_icons/lucide_icons.dart';
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_E0E0E0 = Color(0xFFE0E0E0);
+  static const Color colore0e0e0 = Color(0xFFE0E0E0);
 }
 
 class HandwritingCanvas extends StatefulWidget {
@@ -22,7 +22,7 @@ class HandwritingCanvas extends StatefulWidget {
     required this.onClear,
     this.canvasColor = Colors.white,
     this.strokeColor = Colors.indigo,
-    this.borderColor = _LocalPalette.c_E0E0E0, // Colors.grey.shade300 approx
+    this.borderColor = _LocalPalette.colore0e0e0, // Colors.grey.shade300 approx
     this.borderWidth = 2.0,
   });
 

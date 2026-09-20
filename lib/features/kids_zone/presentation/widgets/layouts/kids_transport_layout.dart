@@ -12,12 +12,12 @@ import 'package:vowl/features/kids_zone/presentation/widgets/kids_fitted_text.da
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_FACC15 = Color(0xFFFACC15);
-  static const Color c_22C55E = Color(0xFF22C55E);
-  static const Color c_166534 = Color(0xFF166534);
-  static const Color c_FDE047 = Color(0xFFFDE047);
-  static const Color c_93C5FD = Color(0xFF93C5FD);
-  static const Color c_86EFAC = Color(0xFF86EFAC);
+  static const Color colorfacc15 = Color(0xFFFACC15);
+  static const Color color22c55e = Color(0xFF22C55E);
+  static const Color color166534 = Color(0xFF166534);
+  static const Color colorfde047 = Color(0xFFFDE047);
+  static const Color color93c5fd = Color(0xFF93C5FD);
+  static const Color color86efac = Color(0xFF86EFAC);
 }
 
 /// Busy City Intersection Theme for Transport Game
@@ -96,7 +96,7 @@ class KidsTransportLayout extends StatelessWidget {
                           return Container(
                             width: 20.w,
                             height: 4.h,
-                            color: _LocalPalette.c_FACC15,
+                            color: _LocalPalette.colorfacc15,
                           );
                         }),
                       ),
@@ -171,8 +171,8 @@ class KidsTransportLayout extends StatelessWidget {
                 height: 180.h,
                 decoration: BoxDecoration(
                   color: isHovering
-                      ? _LocalPalette.c_22C55E
-                      : _LocalPalette.c_166534, // Highway Green
+                      ? _LocalPalette.color22c55e
+                      : _LocalPalette.color166534, // Highway Green
                   borderRadius: BorderRadius.circular(12.r),
                   border: Border.all(
                     color: isHovering ? Colors.yellow : Colors.white,
@@ -268,10 +268,10 @@ class KidsTransportLayout extends StatelessWidget {
     int index,
   ) {
     final colors = [
-      _LocalPalette.c_FDE047, // Yellow plate (NY style)
+      _LocalPalette.colorfde047, // Yellow plate (NY style)
       Colors.white, // White plate (CA style)
-      _LocalPalette.c_93C5FD, // Blue plate
-      _LocalPalette.c_86EFAC, // Green plate
+      _LocalPalette.color93c5fd, // Blue plate
+      _LocalPalette.color86efac, // Green plate
     ];
     final plateColor = colors[index % colors.length];
 

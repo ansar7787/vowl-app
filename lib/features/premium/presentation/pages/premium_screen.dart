@@ -26,7 +26,7 @@ import 'package:vowl/core/theme/app_colors.dart';
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_020617 = Color(0xFF020617);
+  static const Color color020617 = Color(0xFF020617);
 }
 
 class PremiumScreen extends StatefulWidget {
@@ -256,7 +256,9 @@ class _PremiumScreenState extends State<PremiumScreen> {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final backgroundColor = isDark ? _LocalPalette.c_020617 : AppColors.slate50;
+    final backgroundColor = isDark
+        ? _LocalPalette.color020617
+        : AppColors.slate50;
 
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: SystemUiOverlayStyle(

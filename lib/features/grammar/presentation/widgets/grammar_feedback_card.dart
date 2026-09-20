@@ -10,7 +10,7 @@ import 'package:vowl/core/theme/app_colors.dart';
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_2DD4BF = Color(0xFF2DD4BF);
+  static const Color color2dd4bf = Color(0xFF2DD4BF);
 }
 
 /// Bottom-sheet feedback card shown after the user submits an answer.
@@ -46,7 +46,7 @@ class GrammarFeedbackCard extends StatelessWidget {
   // --- Theme helpers -------------------------------------------------------
 
   static const _successGradient = [
-    _LocalPalette.c_2DD4BF,
+    _LocalPalette.color2dd4bf,
     AppColors.emerald500,
   ];
   static const _failGradient = [AppColors.rose500, AppColors.rose700];

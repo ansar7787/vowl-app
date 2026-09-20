@@ -13,7 +13,7 @@ import 'package:vowl/core/theme/app_colors.dart';
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_06B6D4 = Color(0xFF06B6D4);
+  static const Color color06b6d4 = Color(0xFF06B6D4);
 }
 
 class DiscoveryDeck extends StatefulWidget {
@@ -76,7 +76,7 @@ class _DiscoveryDeckState extends State<DiscoveryDeck> {
           fallback: 'Quick Practice',
         ),
         icon: Icons.auto_awesome_motion_rounded,
-        color: _LocalPalette.c_06B6D4, // Cyan — was duplicate indigo
+        color: _LocalPalette.color06b6d4, // Cyan — was duplicate indigo
         quests: 2,
         difficulty: context.tr(
           'home.discovery_diff_medium',

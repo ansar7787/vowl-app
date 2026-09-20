@@ -10,7 +10,7 @@ import 'package:vowl/core/theme/app_colors.dart';
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_4F46E5 = Color(0xFF4F46E5);
+  static const Color color4f46e5 = Color(0xFF4F46E5);
 }
 
 class ScanEmptyState extends StatelessWidget {
@@ -222,7 +222,7 @@ class ScanEmptyState extends StatelessWidget {
                 gradient: LinearGradient(
                   colors: [
                     AppColors.indigo500.withValues(alpha: 0.15),
-                    _LocalPalette.c_4F46E5.withValues(alpha: 0.05),
+                    _LocalPalette.color4f46e5.withValues(alpha: 0.05),
                   ],
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,

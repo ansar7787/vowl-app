@@ -12,7 +12,7 @@ import 'package:vowl/core/theme/app_colors.dart';
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_60A5FA = Color(0xFF60A5FA);
+  static const Color color60a5fa = Color(0xFF60A5FA);
 }
 
 class LeaderboardRankCard extends StatelessWidget {
@@ -229,7 +229,7 @@ class LeaderboardRankCard extends StatelessWidget {
                                         gradient: const LinearGradient(
                                           colors: [
                                             AppColors.blue500,
-                                            _LocalPalette.c_60A5FA,
+                                            _LocalPalette.color60a5fa,
                                           ],
                                         ),
                                         borderRadius: BorderRadius.circular(

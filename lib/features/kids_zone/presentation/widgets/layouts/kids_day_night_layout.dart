@@ -13,11 +13,11 @@ import 'package:vowl/core/theme/app_colors.dart';
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_38BDF8 = Color(0xFF38BDF8);
-  static const Color c_0EA5E9 = Color(0xFF0EA5E9);
-  static const Color c_7DD3FC = Color(0xFF7DD3FC);
-  static const Color c_0284C7 = Color(0xFF0284C7);
-  static const Color c_FEF08A = Color(0xFFFEF08A);
+  static const Color color38bdf8 = Color(0xFF38BDF8);
+  static const Color color0ea5e9 = Color(0xFF0EA5E9);
+  static const Color color7dd3fc = Color(0xFF7DD3FC);
+  static const Color color0284c7 = Color(0xFF0284C7);
+  static const Color colorfef08a = Color(0xFFFEF08A);
 }
 
 /// Sky Observatory Theme for Day & Night Game
@@ -162,7 +162,9 @@ class KidsDayNightLayout extends StatelessWidget {
                 40.r,
               ), // Chunky rounded rectangle
               border: Border.all(
-                color: isHovering ? _LocalPalette.c_38BDF8 : AppColors.slate500,
+                color: isHovering
+                    ? _LocalPalette.color38bdf8
+                    : AppColors.slate500,
                 width: isHovering ? 12.r : 8.r,
               ), // Thick observatory metal frame
               boxShadow: [
@@ -172,7 +174,7 @@ class KidsDayNightLayout extends StatelessWidget {
                   offset: const Offset(0, 10),
                 ),
                 BoxShadow(
-                  color: _LocalPalette.c_0EA5E9.withValues(
+                  color: _LocalPalette.color0ea5e9.withValues(
                     alpha: isHovering ? 0.3 : 0.1,
                   ), // Slight atmospheric glow
                   blurRadius: isHovering ? 60 : 40,
@@ -282,9 +284,9 @@ class KidsDayNightLayout extends StatelessWidget {
         text.toLowerCase().contains("morning");
 
     // Day = Sunny Sky colors, Night = Deep Space colors
-    final color = isDay ? _LocalPalette.c_38BDF8 : AppColors.slate800;
-    final borderColor = isDay ? _LocalPalette.c_7DD3FC : AppColors.slate700;
-    final shadowColor = isDay ? _LocalPalette.c_0284C7 : AppColors.slate900;
+    final color = isDay ? _LocalPalette.color38bdf8 : AppColors.slate800;
+    final borderColor = isDay ? _LocalPalette.color7dd3fc : AppColors.slate700;
+    final shadowColor = isDay ? _LocalPalette.color0284c7 : AppColors.slate900;
 
     final cardWidget = Container(
       height: 120.h,
@@ -302,7 +304,7 @@ class KidsDayNightLayout extends StatelessWidget {
             // Bouncing icon (Sun or Moon)
             Icon(
                   isDay ? Icons.wb_sunny_rounded : Icons.mode_night_rounded,
-                  color: isDay ? _LocalPalette.c_FEF08A : AppColors.slate200,
+                  color: isDay ? _LocalPalette.colorfef08a : AppColors.slate200,
                   size: 42.sp,
                 )
                 .animate(onPlay: (c) => c.repeat(reverse: true))

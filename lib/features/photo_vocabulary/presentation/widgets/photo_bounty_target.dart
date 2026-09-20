@@ -7,7 +7,7 @@ import 'package:vowl/core/utils/locale_service.dart';
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_2DD4BF = Color(0xFF2DD4BF);
+  static const Color color2dd4bf = Color(0xFF2DD4BF);
 }
 
 class PhotoBountyTarget extends StatelessWidget {
@@ -40,7 +40,7 @@ class PhotoBountyTarget extends StatelessWidget {
         ? AppColors.teal500.withValues(alpha: 0.3)
         : AppColors.teal500.withValues(alpha: 0.15);
     final foundBorderColor = isDark
-        ? _LocalPalette.c_2DD4BF
+        ? _LocalPalette.color2dd4bf
         : AppColors.teal500;
 
     return Padding(

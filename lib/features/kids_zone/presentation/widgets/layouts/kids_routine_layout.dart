@@ -12,8 +12,8 @@ import 'package:vowl/core/theme/app_colors.dart';
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_0284C7 = Color(0xFF0284C7);
-  static const Color c_38BDF8 = Color(0xFF38BDF8);
+  static const Color color0284c7 = Color(0xFF0284C7);
+  static const Color color38bdf8 = Color(0xFF38BDF8);
 }
 
 /// Cozy Bedroom Theme for Routine Game
@@ -165,8 +165,8 @@ class KidsRoutineLayout extends StatelessWidget {
                 height: 180.h,
                 decoration: BoxDecoration(
                   color: isHovering
-                      ? _LocalPalette.c_0284C7
-                      : _LocalPalette.c_38BDF8, // Light blue daytime sky
+                      ? _LocalPalette.color0284c7
+                      : _LocalPalette.color38bdf8, // Light blue daytime sky
                   borderRadius: BorderRadius.circular(8.r),
                   border: Border.all(
                     color: Colors.white,

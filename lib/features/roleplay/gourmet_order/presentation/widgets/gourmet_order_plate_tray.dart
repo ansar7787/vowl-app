@@ -5,7 +5,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_131326 = Color(0xFF131326);
+  static const Color color131326 = Color(0xFF131326);
 }
 
 class GourmetOrderPlateTray extends StatelessWidget {
@@ -152,7 +152,7 @@ class GourmetOrderPlateTray extends StatelessWidget {
           borderRadius: BorderRadius.circular(16.r),
           color: isSelected
               ? color
-              : (isDark ? _LocalPalette.c_131326 : Colors.white),
+              : (isDark ? _LocalPalette.color131326 : Colors.white),
           border: Border.all(
             color: isSelected ? Colors.white : color.withValues(alpha: 0.4),
             width: isSelected ? 3.0 : 1.5,

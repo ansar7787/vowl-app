@@ -6,7 +6,7 @@ import 'package:vowl/features/roleplay/medical_consult/presentation/widgets/medi
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_07070F = Color(0xFF07070F);
+  static const Color color07070f = Color(0xFF07070F);
 }
 
 class MedicalConsultScanBay extends StatelessWidget {
@@ -68,7 +68,7 @@ class MedicalConsultScanBay extends StatelessWidget {
       height: 330.h,
       decoration: BoxDecoration(
         color: isDark
-            ? _LocalPalette.c_07070F
+            ? _LocalPalette.color07070f
             : Colors.black.withValues(alpha: 0.02),
         borderRadius: BorderRadius.circular(36.r),
         border: Border.all(

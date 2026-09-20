@@ -6,9 +6,9 @@ import 'package:vowl/features/roleplay/conflict_resolver/presentation/widgets/co
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_07070F = Color(0xFF07070F);
-  static const Color c_2A2A3E = Color(0xFF2A2A3E);
-  static const Color c_131326 = Color(0xFF131326);
+  static const Color color07070f = Color(0xFF07070F);
+  static const Color color2a2a3e = Color(0xFF2A2A3E);
+  static const Color color131326 = Color(0xFF131326);
 }
 
 class ConflictResolverDialConsole extends StatelessWidget {
@@ -41,7 +41,7 @@ class ConflictResolverDialConsole extends StatelessWidget {
       padding: EdgeInsets.symmetric(vertical: 24.h),
       decoration: BoxDecoration(
         color: isDark
-            ? _LocalPalette.c_07070F
+            ? _LocalPalette.color07070f
             : Colors.black.withValues(alpha: 0.02),
         borderRadius: BorderRadius.circular(36.r),
         border: Border.all(
@@ -94,7 +94,10 @@ class ConflictResolverDialConsole extends StatelessWidget {
                           begin: Alignment.topLeft,
                           end: Alignment.bottomRight,
                           colors: isDark
-                              ? [_LocalPalette.c_2A2A3E, _LocalPalette.c_131326]
+                              ? [
+                                  _LocalPalette.color2a2a3e,
+                                  _LocalPalette.color131326,
+                                ]
                               : [Colors.white, Colors.grey.shade300],
                         ),
                         boxShadow: [

@@ -8,7 +8,7 @@ import 'package:vowl/core/theme/app_colors.dart';
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_818CF8 = Color(0xFF818CF8);
+  static const Color color818cf8 = Color(0xFF818CF8);
 }
 
 class AdventureDailyXpChart extends StatelessWidget {
@@ -160,7 +160,7 @@ class AdventureDailyXpChart extends StatelessWidget {
                                                     Theme.of(
                                                       context,
                                                     ).colorScheme.primary,
-                                                    _LocalPalette.c_818CF8,
+                                                    _LocalPalette.color818cf8,
                                                   ]
                                                 : [
                                                     Theme.of(

@@ -6,8 +6,8 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_1F1C2C = Color(0xFF1F1C2C);
-  static const Color c_928DAB = Color(0xFF928DAB);
+  static const Color color1f1c2c = Color(0xFF1F1C2C);
+  static const Color color928dab = Color(0xFF928DAB);
 }
 
 class SceneDescriptionMicTrigger extends StatelessWidget {
@@ -109,8 +109,8 @@ class SceneDescriptionMicTrigger extends StatelessWidget {
                           ? (isListening
                                 ? [Colors.red[900]!, tokens.gameIncorrect]
                                 : [
-                                    _LocalPalette.c_1F1C2C,
-                                    _LocalPalette.c_928DAB,
+                                    _LocalPalette.color1f1c2c,
+                                    _LocalPalette.color928dab,
                                   ])
                           : [Colors.grey[800]!, Colors.grey[900]!],
                     ),

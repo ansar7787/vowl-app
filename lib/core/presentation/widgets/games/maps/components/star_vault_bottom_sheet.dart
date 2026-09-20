@@ -22,7 +22,7 @@ import 'package:vowl/core/theme/app_colors.dart';
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_6D28D9 = Color(0xFF6D28D9);
+  static const Color color6d28d9 = Color(0xFF6D28D9);
 }
 
 class StarVaultBottomSheet extends StatefulWidget {
@@ -975,7 +975,7 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
                                           gradient: const LinearGradient(
                                             colors: [
                                               AppColors.violet500,
-                                              _LocalPalette.c_6D28D9,
+                                              _LocalPalette.color6d28d9,
                                             ],
                                           ),
                                           borderRadius: BorderRadius.circular(

@@ -7,11 +7,11 @@ import 'package:vowl/core/theme/app_colors.dart';
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_1E1B4B = Color(0xFF1E1B4B);
-  static const Color c_312E81 = Color(0xFF312E81);
-  static const Color c_0284C7 = Color(0xFF0284C7);
-  static const Color c_BE185D = Color(0xFFBE185D);
-  static const Color c_15803D = Color(0xFF15803D);
+  static const Color color1e1b4b = Color(0xFF1E1B4B);
+  static const Color color312e81 = Color(0xFF312E81);
+  static const Color color0284c7 = Color(0xFF0284C7);
+  static const Color colorbe185d = Color(0xFFBE185D);
+  static const Color color15803d = Color(0xFF15803D);
 }
 
 class KidsRoomLayout extends StatelessWidget {
@@ -194,7 +194,7 @@ class KidsRoomLayout extends StatelessWidget {
       // Night time
       overlayColor = isDark
           ? AppColors.slate900.withValues(alpha: 0.5)
-          : _LocalPalette.c_1E1B4B.withValues(alpha: 0.4);
+          : _LocalPalette.color1e1b4b.withValues(alpha: 0.4);
     } else if (hour >= 18 && hour < 20) {
       // Evening/Sunset
       overlayColor = AppColors.amber500.withValues(alpha: 0.2);
@@ -258,14 +258,14 @@ class KidsRoomLayout extends StatelessWidget {
   Color _getThemeColor() {
     switch (theme) {
       case 'space':
-        return _LocalPalette.c_312E81; // Indigo 900
+        return _LocalPalette.color312e81; // Indigo 900
       case 'ocean':
-        return _LocalPalette.c_0284C7; // Light Blue 600
+        return _LocalPalette.color0284c7; // Light Blue 600
       case 'sweet':
-        return _LocalPalette.c_BE185D; // Pink 700
+        return _LocalPalette.colorbe185d; // Pink 700
       case 'nature':
       default:
-        return _LocalPalette.c_15803D; // Green 700
+        return _LocalPalette.color15803d; // Green 700
     }
   }
 }

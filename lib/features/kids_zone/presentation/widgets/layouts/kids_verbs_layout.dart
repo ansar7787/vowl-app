@@ -12,11 +12,11 @@ import 'package:vowl/core/theme/app_colors.dart';
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_22C55E = Color(0xFF22C55E);
-  static const Color c_EA580C = Color(0xFFEA580C);
-  static const Color c_A3E635 = Color(0xFFA3E635);
-  static const Color c_064E3B = Color(0xFF064E3B);
-  static const Color c_B91C1C = Color(0xFFB91C1C);
+  static const Color color22c55e = Color(0xFF22C55E);
+  static const Color colorea580c = Color(0xFFEA580C);
+  static const Color colora3e635 = Color(0xFFA3E635);
+  static const Color color064e3b = Color(0xFF064E3B);
+  static const Color colorb91c1c = Color(0xFFB91C1C);
 }
 
 /// Sports Stadium Theme for Verbs (Action Words) Game
@@ -82,7 +82,7 @@ class KidsVerbsLayout extends StatelessWidget {
                     height: 40.h,
                     width: double.infinity,
                     decoration: BoxDecoration(
-                      color: _LocalPalette.c_22C55E, // Grass green
+                      color: _LocalPalette.color22c55e, // Grass green
                       border: Border(
                         top: BorderSide(color: Colors.white, width: 4.h),
                       ), // Pitch line
@@ -260,17 +260,17 @@ class KidsVerbsLayout extends StatelessWidget {
         textColor = Colors.black;
         break;
       case 'basketball':
-        ballColor = _LocalPalette.c_EA580C;
+        ballColor = _LocalPalette.colorea580c;
         textColor = Colors.white;
         break;
       case 'tennis':
-        ballColor = _LocalPalette.c_A3E635;
-        textColor = _LocalPalette.c_064E3B;
+        ballColor = _LocalPalette.colora3e635;
+        textColor = _LocalPalette.color064e3b;
         break;
       case 'baseball':
       default:
         ballColor = Colors.white;
-        textColor = _LocalPalette.c_B91C1C;
+        textColor = _LocalPalette.colorb91c1c;
         break;
     }
 

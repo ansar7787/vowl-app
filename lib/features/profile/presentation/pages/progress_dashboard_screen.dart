@@ -21,8 +21,8 @@ import 'package:vowl/core/theme/app_colors.dart';
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_818CF8 = Color(0xFF818CF8);
-  static const Color c_34D399 = Color(0xFF34D399);
+  static const Color color818cf8 = Color(0xFF818CF8);
+  static const Color color34d399 = Color(0xFF34D399);
 }
 
 class ProgressDashboardScreen extends StatelessWidget {
@@ -280,7 +280,7 @@ class _WeeklyXpChart extends StatelessWidget {
                                     colors: day.isToday
                                         ? [
                                             AppColors.indigo500,
-                                            _LocalPalette.c_818CF8,
+                                            _LocalPalette.color818cf8,
                                           ]
                                         : [
                                             const Color(
@@ -473,7 +473,7 @@ class _CategoryMasteryOverview extends StatelessWidget {
               child: Container(
                 decoration: BoxDecoration(
                   gradient: const LinearGradient(
-                    colors: [AppColors.emerald500, _LocalPalette.c_34D399],
+                    colors: [AppColors.emerald500, _LocalPalette.color34d399],
                   ),
                   borderRadius: BorderRadius.circular(10.r),
                   boxShadow: [

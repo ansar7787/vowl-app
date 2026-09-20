@@ -5,7 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_DC2626 = Color(0xFFDC2626);
+  static const Color colordc2626 = Color(0xFFDC2626);
 }
 
 class DescribeSituationWritingArea extends StatelessWidget {
@@ -87,7 +87,7 @@ class DescribeSituationWritingArea extends StatelessWidget {
                       ? (isDark ? tokens.gameCorrect : KidsColors.safeGreen)
                       : (isDark
                             ? tokens.gameIncorrect
-                            : _LocalPalette.c_DC2626);
+                            : _LocalPalette.colordc2626);
                   return Container(
                     padding: EdgeInsets.symmetric(
                       horizontal: 10.w,

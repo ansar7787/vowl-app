@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:go_router/go_router.dart';
-import 'package:haptic_feedback/haptic_feedback.dart';
+import 'package:hapticolorfeedback/hapticolorfeedback.dart';
 
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
@@ -17,12 +17,12 @@ import 'package:vowl/core/theme/app_colors.dart';
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_020617 = Color(0xFF020617);
-  static const Color c_33201C = Color(0xFF33201C);
-  static const Color c_FEF3C7 = Color(0xFFFEF3C7);
-  static const Color c_451A03 = Color(0xFF451A03);
-  static const Color c_0EA5E9 = Color(0xFF0EA5E9);
-  static const Color c_0284C7 = Color(0xFF0284C7);
+  static const Color color020617 = Color(0xFF020617);
+  static const Color color33201c = Color(0xFF33201C);
+  static const Color colorfef3c7 = Color(0xFFFEF3C7);
+  static const Color color451a03 = Color(0xFF451A03);
+  static const Color color0ea5e9 = Color(0xFF0EA5E9);
+  static const Color color0284c7 = Color(0xFF0284C7);
 }
 
 class TrophyRoomScreen extends StatelessWidget {
@@ -49,7 +49,7 @@ class _TrophyRoomView extends StatelessWidget {
     final isMidnight = context.watch<ThemeCubit>().state.isMidnight;
 
     return Scaffold(
-      backgroundColor: isMidnight ? _LocalPalette.c_020617 : null,
+      backgroundColor: isMidnight ? _LocalPalette.color020617 : null,
       body: Stack(
         children: [
           if (!isMidnight)
@@ -59,12 +59,12 @@ class _TrophyRoomView extends StatelessWidget {
                   ? [
                       AppColors.slate900,
                       AppColors.slate800,
-                      _LocalPalette.c_33201C, // Deep gold tint
+                      _LocalPalette.color33201c, // Deep gold tint
                     ]
                   : [
                       AppColors.slate50,
                       AppColors.slate100,
-                      _LocalPalette.c_FEF3C7, // Light gold tint
+                      _LocalPalette.colorfef3c7, // Light gold tint
                     ],
             ),
 
@@ -483,7 +483,7 @@ class _TrophyRoomView extends StatelessWidget {
             gradient: LinearGradient(
               colors: isLegendary
                   ? [
-                      _LocalPalette.c_451A03.withValues(
+                      _LocalPalette.color451a03.withValues(
                         alpha: isDark ? 0.8 : 0.9,
                       ), // Deep Amber Dark
                       const Color(
@@ -627,7 +627,7 @@ class _TrophyRoomView extends StatelessWidget {
     } else if (badgeId.contains('elitemastery')) {
       return [CategoryColors.eliteMastery, CategoryColors.eliteMasteryDark];
     } else if (badgeId.contains('streak')) {
-      return [_LocalPalette.c_0EA5E9, _LocalPalette.c_0284C7]; // Sky Blue
+      return [_LocalPalette.color0ea5e9, _LocalPalette.color0284c7]; // Sky Blue
     }
 
     // Default Silver for unmapped standards

@@ -4,7 +4,7 @@ import 'package:vowl/features/speaking/pronunciation_focus/presentation/widgets/
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_0C0C16 = Color(0xFF0C0C16);
+  static const Color color0c0c16 = Color(0xFF0C0C16);
 }
 
 class PronunciationFocusThermalGrid extends StatelessWidget {
@@ -28,7 +28,7 @@ class PronunciationFocusThermalGrid extends StatelessWidget {
       height: 120.h,
       decoration: BoxDecoration(
         color: isDark
-            ? _LocalPalette.c_0C0C16
+            ? _LocalPalette.color0c0c16
             : Colors.black.withValues(alpha: 0.02),
         borderRadius: BorderRadius.circular(24.r),
         border: Border.all(color: Colors.white10),

@@ -7,14 +7,14 @@ import 'package:vowl/core/utils/locale_service.dart';
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_34D399 = Color(0xFF34D399);
-  static const Color c_059669 = Color(0xFF059669);
-  static const Color c_F87171 = Color(0xFFF87171);
-  static const Color c_DC2626 = Color(0xFFDC2626);
-  static const Color c_064E3B = Color(0xFF064E3B);
-  static const Color c_D1FAE5 = Color(0xFFD1FAE5);
-  static const Color c_7F1D1D = Color(0xFF7F1D1D);
-  static const Color c_FEE2E2 = Color(0xFFFEE2E2);
+  static const Color color34d399 = Color(0xFF34D399);
+  static const Color color059669 = Color(0xFF059669);
+  static const Color colorf87171 = Color(0xFFF87171);
+  static const Color colordc2626 = Color(0xFFDC2626);
+  static const Color color064e3b = Color(0xFF064E3B);
+  static const Color colord1fae5 = Color(0xFFD1FAE5);
+  static const Color color7f1d1d = Color(0xFF7F1D1D);
+  static const Color colorfee2e2 = Color(0xFFFEE2E2);
 }
 
 class ReadAndAnswerResult extends StatelessWidget {
@@ -34,16 +34,16 @@ class ReadAndAnswerResult extends StatelessWidget {
     final reduceMotion = MediaQuery.disableAnimationsOf(context);
 
     final displayColor = isCorrect
-        ? (isDark ? _LocalPalette.c_34D399 : _LocalPalette.c_059669)
-        : (isDark ? _LocalPalette.c_F87171 : _LocalPalette.c_DC2626);
+        ? (isDark ? _LocalPalette.color34d399 : _LocalPalette.color059669)
+        : (isDark ? _LocalPalette.colorf87171 : _LocalPalette.colordc2626);
 
     final cardBg = isCorrect
         ? (isDark
-              ? _LocalPalette.c_064E3B.withValues(alpha: 0.2)
-              : _LocalPalette.c_D1FAE5.withValues(alpha: 0.5))
+              ? _LocalPalette.color064e3b.withValues(alpha: 0.2)
+              : _LocalPalette.colord1fae5.withValues(alpha: 0.5))
         : (isDark
-              ? _LocalPalette.c_7F1D1D.withValues(alpha: 0.2)
-              : _LocalPalette.c_FEE2E2.withValues(alpha: 0.5));
+              ? _LocalPalette.color7f1d1d.withValues(alpha: 0.2)
+              : _LocalPalette.colorfee2e2.withValues(alpha: 0.5));
 
     final explanation = quest.explanation;
 

@@ -8,7 +8,7 @@ import 'package:vowl/features/writing/fix_the_sentence/presentation/widgets/fix_
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_DC2626 = Color(0xFFDC2626);
+  static const Color colordc2626 = Color(0xFFDC2626);
 }
 
 class FixTheSentenceDigitalBlackboard extends StatelessWidget {
@@ -156,7 +156,7 @@ class FixTheSentenceDigitalBlackboard extends StatelessWidget {
                                         fontWeight: FontWeight.w900,
                                         color: isDark
                                             ? tokens.gameIncorrect
-                                            : _LocalPalette.c_DC2626,
+                                            : _LocalPalette.colordc2626,
                                       ),
                                     ),
                                   ),

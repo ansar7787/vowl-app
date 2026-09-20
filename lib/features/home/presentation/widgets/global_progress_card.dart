@@ -15,9 +15,9 @@ import 'package:vowl/core/theme/app_colors.dart';
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_C0C0C0 = Color(0xFFC0C0C0);
-  static const Color c_CD7F32 = Color(0xFFCD7F32);
-  static const Color c_A3713B = Color(0xFFA3713B);
+  static const Color colorc0c0c0 = Color(0xFFC0C0C0);
+  static const Color colorcd7f32 = Color(0xFFCD7F32);
+  static const Color colora3713b = Color(0xFFA3713B);
 }
 
 /// A compact card showing the user's total quest progress across all 8 categories
@@ -423,8 +423,9 @@ class GlobalProgressCard extends StatelessWidget {
 
   List<Color> _getRankGradient(int rank) {
     if (rank == 1) return [AppColors.gold, AppColors.amber500];
-    if (rank == 2) return [_LocalPalette.c_C0C0C0, AppColors.slate400];
-    if (rank == 3) return [_LocalPalette.c_CD7F32, _LocalPalette.c_A3713B];
+    if (rank == 2) return [_LocalPalette.colorc0c0c0, AppColors.slate400];
+    if (rank == 3)
+      return [_LocalPalette.colorcd7f32, _LocalPalette.colora3713b];
     if (rank <= 10) return [AppColors.blue500, AppColors.indigo500];
     return [AppColors.indigo500, AppColors.violet500];
   }

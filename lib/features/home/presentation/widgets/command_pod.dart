@@ -16,7 +16,7 @@ import 'package:vowl/core/theme/app_colors.dart';
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_06B6D4 = Color(0xFF06B6D4);
+  static const Color color06b6d4 = Color(0xFF06B6D4);
 }
 
 enum CommandPodMode { headerOnly, kidsOnly, vaultOnly, full }
@@ -246,7 +246,7 @@ class CommandPod extends StatelessWidget {
                   borderRadius: BorderRadius.circular(28.r),
                   gradient: const LinearGradient(
                     colors: [
-                      _LocalPalette.c_06B6D4, // Vibrant Cyan
+                      _LocalPalette.color06b6d4, // Vibrant Cyan
                       AppColors.blue500, // Azure Blue
                       AppColors.violet500, // Royal Purple
                     ],

@@ -13,7 +13,7 @@ import 'package:vowl/core/theme/app_colors.dart';
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_C084FC = Color(0xFFC084FC);
+  static const Color colorc084fc = Color(0xFFC084FC);
 }
 
 class ProfileBadgesList extends StatefulWidget {
@@ -461,7 +461,7 @@ class _ProfileBadgesListState extends State<ProfileBadgesList> {
                                 gradient: const LinearGradient(
                                   colors: [
                                     AppColors.violet500,
-                                    _LocalPalette.c_C084FC,
+                                    _LocalPalette.colorc084fc,
                                   ],
                                 ),
                                 borderRadius: BorderRadius.circular(8.r),

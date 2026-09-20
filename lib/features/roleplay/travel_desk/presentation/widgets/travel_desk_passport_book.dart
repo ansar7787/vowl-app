@@ -6,7 +6,7 @@ import 'package:vowl/features/roleplay/travel_desk/presentation/widgets/travel_d
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_06060E = Color(0xFF06060E);
+  static const Color color06060e = Color(0xFF06060E);
 }
 
 class TravelDeskPassportBook extends StatelessWidget {
@@ -50,7 +50,7 @@ class TravelDeskPassportBook extends StatelessWidget {
       padding: EdgeInsets.all(16.r),
       decoration: BoxDecoration(
         color: isDark
-            ? _LocalPalette.c_06060E
+            ? _LocalPalette.color06060e
             : Colors.black.withValues(alpha: 0.02),
         borderRadius: BorderRadius.circular(32.r),
         border: Border.all(

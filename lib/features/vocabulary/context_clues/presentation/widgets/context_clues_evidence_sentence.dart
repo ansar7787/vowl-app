@@ -4,7 +4,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_1A1A1A = Color(0xFF1A1A1A);
+  static const Color color1a1a1a = Color(0xFF1A1A1A);
 }
 
 class ContextCluesEvidenceSentence extends StatelessWidget {
@@ -110,7 +110,7 @@ class ContextCluesEvidenceSentence extends StatelessWidget {
           width: isCompact ? 70.w : 100.w,
           height: isCompact ? 18.h : 24.h,
           decoration: BoxDecoration(
-            color: _LocalPalette.c_1A1A1A,
+            color: _LocalPalette.color1a1a1a,
             borderRadius: BorderRadius.circular(2.r),
           ),
         )

@@ -7,10 +7,10 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_1F1C2C = Color(0xFF1F1C2C);
-  static const Color c_FF512F = Color(0xFFFF512F);
-  static const Color c_928DAB = Color(0xFF928DAB);
-  static const Color c_DD2476 = Color(0xFFDD2476);
+  static const Color color1f1c2c = Color(0xFF1F1C2C);
+  static const Color colorff512f = Color(0xFFFF512F);
+  static const Color color928dab = Color(0xFF928DAB);
+  static const Color colordd2476 = Color(0xFFDD2476);
 }
 
 class PronunciationFocusPhonemeCrucible extends StatelessWidget {
@@ -95,13 +95,13 @@ class PronunciationFocusPhonemeCrucible extends StatelessWidget {
                   gradient: LinearGradient(
                     colors: [
                       Color.lerp(
-                        _LocalPalette.c_1F1C2C,
-                        _LocalPalette.c_FF512F,
+                        _LocalPalette.color1f1c2c,
+                        _LocalPalette.colorff512f,
                         heatLevel,
                       )!,
                       Color.lerp(
-                        _LocalPalette.c_928DAB,
-                        _LocalPalette.c_DD2476,
+                        _LocalPalette.color928dab,
+                        _LocalPalette.colordd2476,
                         heatLevel,
                       )!,
                     ],

@@ -8,7 +8,7 @@ import 'package:vowl/core/theme/app_colors.dart';
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_EA580C = Color(0xFFEA580C);
+  static const Color colorea580c = Color(0xFFEA580C);
 }
 
 class PremiumHeader extends StatelessWidget {
@@ -73,7 +73,7 @@ class PremiumHeader extends StatelessWidget {
                     gradient: LinearGradient(
                       colors: [
                         AppColors.amber500.withValues(alpha: 0.15),
-                        _LocalPalette.c_EA580C.withValues(alpha: 0.05),
+                        _LocalPalette.colorea580c.withValues(alpha: 0.05),
                       ],
                     ),
                     borderRadius: BorderRadius.circular(30.r),

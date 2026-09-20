@@ -6,7 +6,7 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_1E1E24 = Color(0xFF1E1E24);
+  static const Color color1e1e24 = Color(0xFF1E1E24);
 }
 
 class FastSpeechDecoderSteamVents extends StatelessWidget {
@@ -52,7 +52,7 @@ class FastSpeechDecoderSteamVents extends StatelessWidget {
                     ? tokens.gameCorrect.withValues(alpha: 0.8)
                     : (isChoiceWrong
                           ? tokens.gameIncorrect.withValues(alpha: 0.8)
-                          : (isSelected ? color : _LocalPalette.c_1E1E24)),
+                          : (isSelected ? color : _LocalPalette.color1e1e24)),
                 borderRadius: BorderRadius.circular(12.r),
                 border: Border.all(
                   color: isChoiceCorrect || isChoiceWrong || isSelected

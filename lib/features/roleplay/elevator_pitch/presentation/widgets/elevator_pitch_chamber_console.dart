@@ -7,8 +7,8 @@ import 'package:vowl/features/roleplay/elevator_pitch/presentation/widgets/eleva
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_07070F = Color(0xFF07070F);
-  static const Color c_0B0B14 = Color(0xFF0B0B14);
+  static const Color color07070f = Color(0xFF07070F);
+  static const Color color0b0b14 = Color(0xFF0B0B14);
 }
 
 class ElevatorPitchChamberConsole extends StatelessWidget {
@@ -50,7 +50,7 @@ class ElevatorPitchChamberConsole extends StatelessWidget {
       padding: EdgeInsets.all(20.r),
       decoration: BoxDecoration(
         color: isDark
-            ? _LocalPalette.c_07070F
+            ? _LocalPalette.color07070f
             : Colors.black.withValues(alpha: 0.02),
         borderRadius: BorderRadius.circular(36.r),
         border: Border.all(
@@ -68,7 +68,9 @@ class ElevatorPitchChamberConsole extends StatelessWidget {
               width: 64.w,
               height: totalShaftHeight,
               decoration: BoxDecoration(
-                color: isDark ? _LocalPalette.c_0B0B14 : Colors.grey.shade200,
+                color: isDark
+                    ? _LocalPalette.color0b0b14
+                    : Colors.grey.shade200,
                 borderRadius: BorderRadius.circular(32.r),
                 border: Border.all(
                   color: isDark

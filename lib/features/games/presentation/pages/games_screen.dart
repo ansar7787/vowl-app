@@ -5,7 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:vowl/core/utils/locale_service.dart';
-import 'package:haptic_feedback/haptic_feedback.dart';
+import 'package:hapticolorfeedback/hapticolorfeedback.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
 import 'package:vowl/core/utils/app_router.dart';
@@ -23,8 +23,8 @@ import 'package:vowl/core/theme/app_colors.dart';
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_FF4081 = Color(0xFFFF4081);
-  static const Color c_FFA000 = Color(0xFFFFA000);
+  static const Color colorff4081 = Color(0xFFFF4081);
+  static const Color colorffa000 = Color(0xFFFFA000);
 }
 
 class GamesScreen extends StatelessWidget {
@@ -574,7 +574,7 @@ class _KidsGameSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const color = _LocalPalette.c_FF4081; // Bright pink for Kids Zone
+    const color = _LocalPalette.colorff4081; // Bright pink for Kids Zone
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -649,7 +649,7 @@ class _GameSectionHeader extends StatelessWidget {
                     ? const LinearGradient(
                         begin: Alignment.topCenter,
                         end: Alignment.bottomCenter,
-                        colors: [AppColors.gold, _LocalPalette.c_FFA000],
+                        colors: [AppColors.gold, _LocalPalette.colorffa000],
                       )
                     : null,
                 color: isEliteMastery ? null : color,
@@ -711,7 +711,10 @@ class _GameSectionHeader extends StatelessWidget {
                           ),
                           decoration: BoxDecoration(
                             gradient: const LinearGradient(
-                              colors: [AppColors.gold, _LocalPalette.c_FFA000],
+                              colors: [
+                                AppColors.gold,
+                                _LocalPalette.colorffa000,
+                              ],
                             ),
                             borderRadius: BorderRadius.circular(6.r),
                           ),

@@ -16,7 +16,7 @@ import 'package:vowl/core/presentation/game_mechanics/speaking/speak_to_confirm_
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_00E5FF = Color(0xFF00E5FF);
+  static const Color color00e5ff = Color(0xFF00E5FF);
 }
 
 class AntonymSearchScreen extends StatefulWidget {
@@ -105,7 +105,7 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen>
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final targetColor = _LocalPalette.c_00E5FF;
+    final targetColor = _LocalPalette.color00e5ff;
 
     return BlocConsumer<VocabularyBloc, VocabularyState>(
       listenWhen: vocabularyListenWhen,

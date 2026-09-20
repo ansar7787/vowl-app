@@ -22,8 +22,8 @@ import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_020617 = Color(0xFF020617);
-  static const Color c_38BDF8 = Color(0xFF38BDF8);
+  static const Color color020617 = Color(0xFF020617);
+  static const Color color38bdf8 = Color(0xFF38BDF8);
 }
 
 class StreakScreen extends StatefulWidget {
@@ -47,7 +47,7 @@ class _StreakScreenState extends State<StreakScreen> {
     final isMidnight = context.watch<ThemeCubit>().state.isMidnight;
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final bgColor = isMidnight
-        ? _LocalPalette.c_020617
+        ? _LocalPalette.color020617
         : (isDark ? AppColors.slate900 : AppColors.slate50);
     final contentColor = isDark ? Colors.white : AppColors.slate900;
 
@@ -271,7 +271,9 @@ class _StreakScreenState extends State<StreakScreen> {
 
   Widget _buildStreakFreezeChip(BuildContext context, UserEntity user) {
     final freezeCount = user.streakFreezes;
-    final color = freezeCount > 0 ? _LocalPalette.c_38BDF8 : AppColors.slate500;
+    final color = freezeCount > 0
+        ? _LocalPalette.color38bdf8
+        : AppColors.slate500;
 
     return Semantics(
       label: context.tr(

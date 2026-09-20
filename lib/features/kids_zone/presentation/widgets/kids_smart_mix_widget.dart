@@ -8,7 +8,7 @@ import 'package:vowl/core/theme/app_colors.dart';
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_0EA5E9 = Color(0xFF0EA5E9);
+  static const Color color0ea5e9 = Color(0xFF0EA5E9);
 }
 
 class KidsSmartMixWidget extends StatelessWidget {
@@ -40,7 +40,7 @@ class KidsSmartMixWidget extends StatelessWidget {
       {
         'route': '/kids/map/numbers',
         'title': '123',
-        'color': _LocalPalette.c_0EA5E9,
+        'color': _LocalPalette.color0ea5e9,
         'icon': Icons.pin_rounded,
       },
       {

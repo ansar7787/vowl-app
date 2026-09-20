@@ -7,7 +7,7 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_1E1E2C = Color(0xFF1E1E2C);
+  static const Color color1e1e2c = Color(0xFF1E1E2C);
 }
 
 class YesNoSpeakingAuditionCard extends StatelessWidget {
@@ -29,7 +29,7 @@ class YesNoSpeakingAuditionCard extends StatelessWidget {
     return Container(
       padding: EdgeInsets.all(24.r),
       decoration: BoxDecoration(
-        color: isDark ? _LocalPalette.c_1E1E2C : Colors.white,
+        color: isDark ? _LocalPalette.color1e1e2c : Colors.white,
         borderRadius: BorderRadius.circular(32.r),
         boxShadow: [
           BoxShadow(

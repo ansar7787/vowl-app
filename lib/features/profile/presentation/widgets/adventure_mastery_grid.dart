@@ -15,7 +15,7 @@ import 'package:vowl/core/theme/app_colors.dart';
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_06B6D4 = Color(0xFF06B6D4);
+  static const Color color06b6d4 = Color(0xFF06B6D4);
 }
 
 @immutable
@@ -70,7 +70,7 @@ class AdventureMasteryGrid extends StatelessWidget {
           color = AppColors.red500;
         case QuestType.listening:
           icon = Icons.headphones_rounded;
-          color = _LocalPalette.c_06B6D4;
+          color = _LocalPalette.color06b6d4;
         case QuestType.reading:
           icon = Icons.menu_book_rounded;
           color = AppColors.blue500;

@@ -13,13 +13,13 @@ import 'package:vowl/features/kids_zone/presentation/widgets/kids_fitted_text.da
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_FDE68A = Color(0xFFFDE68A);
-  static const Color c_2D6A4F = Color(0xFF2D6A4F);
-  static const Color c_1B4332 = Color(0xFF1B4332);
-  static const Color c_B07D45 = Color(0xFFB07D45);
-  static const Color c_8B5A2B = Color(0xFF8B5A2B);
-  static const Color c_A7F3D0 = Color(0xFFA7F3D0);
-  static const Color c_FCD34D = Color(0xFFFCD34D);
+  static const Color colorfde68a = Color(0xFFFDE68A);
+  static const Color color2d6a4f = Color(0xFF2D6A4F);
+  static const Color color1b4332 = Color(0xFF1B4332);
+  static const Color colorb07d45 = Color(0xFFB07D45);
+  static const Color color8b5a2b = Color(0xFF8B5A2B);
+  static const Color colora7f3d0 = Color(0xFFA7F3D0);
+  static const Color colorfcd34d = Color(0xFFFCD34D);
 }
 
 class KidsAlphabetLayout extends StatelessWidget {
@@ -116,7 +116,7 @@ class KidsAlphabetLayout extends StatelessWidget {
     String text,
     bool isCorrect,
   ) {
-    final baseColor = _LocalPalette.c_FDE68A; // Light wood
+    final baseColor = _LocalPalette.colorfde68a; // Light wood
     final shadowColor = AppColors.amber600; // Dark wood
 
     final blockWidget = Container(
@@ -213,13 +213,13 @@ class _KidsChalkboardState extends State<_KidsChalkboard> {
               padding: EdgeInsets.all(12.r),
               decoration: BoxDecoration(
                 color: isHovering
-                    ? _LocalPalette.c_2D6A4F
-                    : _LocalPalette.c_1B4332,
+                    ? _LocalPalette.color2d6a4f
+                    : _LocalPalette.color1b4332,
                 borderRadius: BorderRadius.circular(16.r),
                 border: Border.all(
                   color: isHovering
-                      ? _LocalPalette.c_B07D45
-                      : _LocalPalette.c_8B5A2B,
+                      ? _LocalPalette.colorb07d45
+                      : _LocalPalette.color8b5a2b,
                   width: 12.r,
                 ),
                 boxShadow: [
@@ -282,7 +282,7 @@ class _KidsChalkboardState extends State<_KidsChalkboard> {
       return [
         TextSpan(
           text: word,
-          style: const TextStyle(color: _LocalPalette.c_A7F3D0),
+          style: const TextStyle(color: _LocalPalette.colora7f3d0),
         ),
       ];
     }
@@ -294,20 +294,22 @@ class _KidsChalkboardState extends State<_KidsChalkboard> {
         TextSpan(
           text: firstPart,
           style: const TextStyle(
-            color: _LocalPalette.c_FCD34D,
+            color: _LocalPalette.colorfcd34d,
             fontWeight: FontWeight.w700,
           ), // Highlight Yellow
         ),
         TextSpan(
           text: restPart,
-          style: const TextStyle(color: _LocalPalette.c_A7F3D0), // Chalk mint
+          style: const TextStyle(
+            color: _LocalPalette.colora7f3d0,
+          ), // Chalk mint
         ),
       ];
     }
     return [
       TextSpan(
         text: word,
-        style: const TextStyle(color: _LocalPalette.c_A7F3D0),
+        style: const TextStyle(color: _LocalPalette.colora7f3d0),
       ),
     ];
   }
@@ -332,13 +334,13 @@ class _KidsChalkboardState extends State<_KidsChalkboard> {
           Icon(
             Icons.help_outline_rounded,
             size: 64.sp,
-            color: _LocalPalette.c_FDE68A.withValues(alpha: 0.5),
+            color: _LocalPalette.colorfde68a.withValues(alpha: 0.5),
           ),
         SizedBox(height: 16.h),
         Container(
           padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
           decoration: BoxDecoration(
-            color: _LocalPalette.c_FDE68A,
+            color: _LocalPalette.colorfde68a,
             borderRadius: BorderRadius.circular(24.r),
             boxShadow: [
               BoxShadow(
@@ -396,7 +398,9 @@ class _KidsChalkboardState extends State<_KidsChalkboard> {
                     if (quest.phonetic != null)
                       TextSpan(
                         text: ' (/${quest.phonetic}/)',
-                        style: const TextStyle(color: _LocalPalette.c_FCD34D),
+                        style: const TextStyle(
+                          color: _LocalPalette.colorfcd34d,
+                        ),
                       ),
                   ],
                 ),

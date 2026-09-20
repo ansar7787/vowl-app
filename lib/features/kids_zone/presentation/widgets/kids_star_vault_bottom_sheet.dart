@@ -20,7 +20,7 @@ import 'package:vowl/core/theme/app_colors.dart';
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_BE185D = Color(0xFFBE185D);
+  static const Color colorbe185d = Color(0xFFBE185D);
 }
 
 class KidsStarVaultBottomSheet extends StatefulWidget {
@@ -941,7 +941,8 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
                                               borderRadius:
                                                   BorderRadius.circular(30.r),
                                               border: Border.all(
-                                                color: _LocalPalette.c_BE185D,
+                                                color:
+                                                    _LocalPalette.colorbe185d,
                                                 width: 3.w,
                                               ),
                                               boxShadow: [

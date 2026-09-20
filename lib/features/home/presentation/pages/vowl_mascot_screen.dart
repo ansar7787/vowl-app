@@ -24,7 +24,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_020617 = Color(0xFF020617);
+  static const Color color020617 = Color(0xFF020617);
 }
 
 class VowlMascotScreen extends StatefulWidget {
@@ -86,7 +86,7 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final primaryColor = Theme.of(context).primaryColor;
     final surfaceColor = isMidnight
-        ? _LocalPalette.c_020617
+        ? _LocalPalette.color020617
         : (isDark ? AppColors.slate900 : Colors.white);
     final textColor = isDark ? Colors.white : AppColors.slate900;
 

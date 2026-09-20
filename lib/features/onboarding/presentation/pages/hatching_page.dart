@@ -17,10 +17,10 @@ import 'package:vowl/core/theme/app_colors.dart';
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_93C5FD = Color(0xFF93C5FD);
-  static const Color c_1D4ED8 = Color(0xFF1D4ED8);
-  static const Color c_1E3A8A = Color(0xFF1E3A8A);
-  static const Color c_60A5FA = Color(0xFF60A5FA);
+  static const Color color93c5fd = Color(0xFF93C5FD);
+  static const Color color1d4ed8 = Color(0xFF1D4ED8);
+  static const Color color1e3a8a = Color(0xFF1E3A8A);
+  static const Color color60a5fa = Color(0xFF60A5FA);
 }
 
 /// HatchingPage: introductory onboarding companion hatching animation.
@@ -289,19 +289,19 @@ class _HatchingPageState extends State<HatchingPage> {
               radius: 0.85,
               colors: [
                 Colors.white.withValues(alpha: 0.7),
-                _LocalPalette.c_93C5FD.withValues(alpha: 0.4),
-                _LocalPalette.c_1D4ED8.withValues(alpha: 0.5),
+                _LocalPalette.color93c5fd.withValues(alpha: 0.4),
+                _LocalPalette.color1d4ed8.withValues(alpha: 0.5),
               ],
               stops: const [0.0, 0.4, 1.0],
             ),
             boxShadow: [
               BoxShadow(
-                color: _LocalPalette.c_1E3A8A.withValues(alpha: 0.2),
+                color: _LocalPalette.color1e3a8a.withValues(alpha: 0.2),
                 blurRadius: 20,
                 offset: const Offset(0, 12),
               ),
               BoxShadow(
-                color: _LocalPalette.c_60A5FA.withValues(alpha: 0.15),
+                color: _LocalPalette.color60a5fa.withValues(alpha: 0.15),
                 blurRadius: 10,
                 spreadRadius: -2,
               ),

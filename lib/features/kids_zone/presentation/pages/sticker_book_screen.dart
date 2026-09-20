@@ -12,16 +12,16 @@ import 'package:vowl/features/auth/presentation/bloc/profile_bloc.dart';
 import 'package:vowl/features/kids_zone/presentation/utils/kids_assets.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_background_renderer.dart';
-import 'package:haptic_feedback/haptic_feedback.dart';
+import 'package:hapticolorfeedback/hapticolorfeedback.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_4C1D95 = Color(0xFF4C1D95);
-  static const Color c_FF9800 = Color(0xFFFF9800);
-  static const Color c_FF5722 = Color(0xFFFF5722);
+  static const Color color4c1d95 = Color(0xFF4C1D95);
+  static const Color colorff9800 = Color(0xFFFF9800);
+  static const Color colorff5722 = Color(0xFFFF5722);
 }
 
 class StickerBookScreen extends StatefulWidget {
@@ -82,7 +82,7 @@ class _StickerBookScreenState extends State<StickerBookScreen>
                   painterName: 'UnicornMist',
                   shaderName: 'magic_twinkle',
                   primaryColor: isDark
-                      ? _LocalPalette.c_4C1D95
+                      ? _LocalPalette.color4c1d95
                       : Colors.purple.withValues(alpha: 0.4),
                   gameType: 'album',
                 ),
@@ -208,8 +208,8 @@ class _StickerBookScreenState extends State<StickerBookScreen>
                         decoration: BoxDecoration(
                           gradient: const LinearGradient(
                             colors: [
-                              _LocalPalette.c_FF9800,
-                              _LocalPalette.c_FF5722,
+                              _LocalPalette.colorff9800,
+                              _LocalPalette.colorff5722,
                             ],
                           ),
                           borderRadius: BorderRadius.circular(30.r),

@@ -8,8 +8,8 @@ import 'package:vowl/core/presentation/widgets/pedagogical_rule_box.dart';
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_4285F4 = Color(0xFF4285F4);
-  static const Color c_E94335 = Color(0xFFE94335);
+  static const Color color4285f4 = Color(0xFF4285F4);
+  static const Color colore94335 = Color(0xFFE94335);
 }
 
 class DialectFeedbackPanel extends StatelessWidget {
@@ -170,7 +170,7 @@ class DialectFeedbackPanel extends StatelessWidget {
                         fontFamily: 'Outfit',
                         fontSize: 18.sp,
                         fontWeight: FontWeight.w800,
-                        color: _LocalPalette.c_4285F4, // Theme generic blue
+                        color: _LocalPalette.color4285f4, // Theme generic blue
                       ),
                     ),
                   ],
@@ -205,11 +205,11 @@ class DialectFeedbackPanel extends StatelessWidget {
                   icon: Icons.record_voice_over_rounded,
                   textToPlay: word,
                   locale: "en-GB",
-                  bgColor: _LocalPalette.c_E94335.withValues(alpha: 0.1),
+                  bgColor: _LocalPalette.colore94335.withValues(alpha: 0.1),
                   textColor: isDark
                       ? tokens.gameIncorrect.withValues(alpha: 0.2)
-                      : _LocalPalette.c_E94335,
-                  borderColor: _LocalPalette.c_E94335.withValues(alpha: 0.3),
+                      : _LocalPalette.colore94335,
+                  borderColor: _LocalPalette.colore94335.withValues(alpha: 0.3),
                 ),
               ),
               SizedBox(width: 16.w),
@@ -221,11 +221,11 @@ class DialectFeedbackPanel extends StatelessWidget {
                   icon: Icons.record_voice_over_rounded,
                   textToPlay: word,
                   locale: "en-US",
-                  bgColor: _LocalPalette.c_4285F4.withValues(alpha: 0.1),
+                  bgColor: _LocalPalette.color4285f4.withValues(alpha: 0.1),
                   textColor: isDark
                       ? Colors.blueAccent.withValues(alpha: 0.2)
-                      : _LocalPalette.c_4285F4,
-                  borderColor: _LocalPalette.c_4285F4.withValues(alpha: 0.3),
+                      : _LocalPalette.color4285f4,
+                  borderColor: _LocalPalette.color4285f4.withValues(alpha: 0.3),
                 ),
               ),
             ],

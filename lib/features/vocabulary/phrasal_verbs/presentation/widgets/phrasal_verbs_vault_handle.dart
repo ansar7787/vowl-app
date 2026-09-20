@@ -6,7 +6,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_151E2E = Color(0xFF151E2E);
+  static const Color color151e2e = Color(0xFF151E2E);
 }
 
 class PhrasalVerbsVaultHandle extends StatelessWidget {
@@ -40,7 +40,7 @@ class PhrasalVerbsVaultHandle extends StatelessWidget {
                 height: 150.r,
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  color: isDark ? _LocalPalette.c_151E2E : Colors.white,
+                  color: isDark ? _LocalPalette.color151e2e : Colors.white,
                   border: Border.all(
                     color: color.withValues(alpha: 0.4),
                     width: 2,

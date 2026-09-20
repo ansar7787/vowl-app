@@ -8,7 +8,7 @@ import 'package:vowl/core/theme/app_colors.dart';
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_1E1E2A = Color(0xFF1E1E2A);
+  static const Color color1e1e2a = Color(0xFF1E1E2A);
 }
 
 class TranslationDownloadDialog extends StatefulWidget {
@@ -109,7 +109,7 @@ class _TranslationDownloadDialogState extends State<TranslationDownloadDialog> {
       listenable: Listenable.merge([_progress, _languageName]),
       builder: (context, _) {
         return Dialog(
-          backgroundColor: isDark ? _LocalPalette.c_1E1E2A : Colors.white,
+          backgroundColor: isDark ? _LocalPalette.color1e1e2a : Colors.white,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(24.r),
           ),

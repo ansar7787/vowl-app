@@ -16,8 +16,8 @@ import 'package:vowl/core/theme/app_colors.dart';
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_BE123C = Color(0xFFBE123C);
-  static const Color c_059669 = Color(0xFF059669);
+  static const Color colorbe123c = Color(0xFFBE123C);
+  static const Color color059669 = Color(0xFF059669);
 }
 
 /// Horizontal scrolling tools strip with a **two-tier visual hierarchy**:
@@ -58,7 +58,7 @@ class ToolsStrip extends StatelessWidget {
         icon: Icons.child_care_rounded,
         emoji: '🧩',
         color: AppColors.rose500, // Rose — 0°
-        darkColor: _LocalPalette.c_BE123C,
+        darkColor: _LocalPalette.colorbe123c,
         route: AppRouter.kidsZoneRoute,
         requiresAd: false,
         isFeatured: true,
@@ -88,7 +88,7 @@ class ToolsStrip extends StatelessWidget {
         icon: Icons.translate_rounded,
         emoji: '💬',
         color: AppColors.emerald500, // Emerald — 160°
-        darkColor: _LocalPalette.c_059669,
+        darkColor: _LocalPalette.color059669,
         route: AppRouter.translateRoute,
         requiresAd: false,
         isFeatured: true,

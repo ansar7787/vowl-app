@@ -4,7 +4,7 @@ import 'package:vowl/core/domain/entities/game_quest.dart';
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_03A9F4 = Color(0xFF03A9F4);
+  static const Color color03a9f4 = Color(0xFF03A9F4);
 }
 
 /// Factory that maps `visual_config.painter_type` strings to actual
@@ -28,7 +28,7 @@ class VisualConfigBackground extends StatelessWidget {
       }
       return Color(int.parse(hexColor, radix: 16));
     } catch (_) {
-      return _LocalPalette.c_03A9F4;
+      return _LocalPalette.color03a9f4;
     }
   }
 

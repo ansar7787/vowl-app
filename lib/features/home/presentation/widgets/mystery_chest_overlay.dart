@@ -10,8 +10,8 @@ import 'package:vowl/core/theme/app_colors.dart';
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_FCD34D = Color(0xFFFCD34D);
-  static const Color c_FDE68A = Color(0xFFFDE68A);
+  static const Color colorfcd34d = Color(0xFFFCD34D);
+  static const Color colorfde68a = Color(0xFFFDE68A);
 }
 
 /// A premium daily-chest overlay with AAA-grade staged transitions.
@@ -344,7 +344,7 @@ class _MysteryChestOverlayState extends State<MysteryChestOverlay>
           fontSize: widget.isPremium && !isOpen ? 26.sp : 28.sp,
           fontWeight: FontWeight.w900,
           color: widget.isPremium && !isOpen
-              ? _LocalPalette.c_FCD34D
+              ? _LocalPalette.colorfcd34d
               : Colors.white,
           letterSpacing: 4,
           decoration: TextDecoration.none,
@@ -378,7 +378,7 @@ class _MysteryChestOverlayState extends State<MysteryChestOverlay>
         fontSize: 14.sp,
         fontWeight: FontWeight.w700,
         color: widget.isPremium && !isOpen
-            ? _LocalPalette.c_FDE68A
+            ? _LocalPalette.colorfde68a
             : Colors.white54,
         letterSpacing: 2,
         decoration: TextDecoration.none,

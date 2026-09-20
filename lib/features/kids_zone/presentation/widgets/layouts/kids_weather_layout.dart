@@ -12,13 +12,13 @@ import 'package:vowl/features/kids_zone/presentation/widgets/kids_fitted_text.da
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_8B5A2B = Color(0xFF8B5A2B);
-  static const Color c_5C3A21 = Color(0xFF5C3A21);
-  static const Color c_87CEEB = Color(0xFF87CEEB);
-  static const Color c_E0F6FF = Color(0xFFE0F6FF);
-  static const Color c_0C4A6E = Color(0xFF0C4A6E);
-  static const Color c_93C5FD = Color(0xFF93C5FD);
-  static const Color c_0369A1 = Color(0xFF0369A1);
+  static const Color color8b5a2b = Color(0xFF8B5A2B);
+  static const Color color5c3a21 = Color(0xFF5C3A21);
+  static const Color color87ceeb = Color(0xFF87CEEB);
+  static const Color colore0f6ff = Color(0xFFE0F6FF);
+  static const Color color0c4a6e = Color(0xFF0C4A6E);
+  static const Color color93c5fd = Color(0xFF93C5FD);
+  static const Color color0369a1 = Color(0xFF0369A1);
 }
 
 /// Immersive Sky Window Theme for Weather Game
@@ -128,10 +128,10 @@ class KidsWeatherLayout extends StatelessWidget {
             width: 320.w,
             height: 240.h,
             decoration: BoxDecoration(
-              color: _LocalPalette.c_8B5A2B, // Wooden brown outer frame
+              color: _LocalPalette.color8b5a2b, // Wooden brown outer frame
               borderRadius: BorderRadius.circular(16.r),
               border: Border.all(
-                color: isHovering ? Colors.yellow : _LocalPalette.c_5C3A21,
+                color: isHovering ? Colors.yellow : _LocalPalette.color5c3a21,
                 width: isHovering ? 8 : 6,
               ),
               boxShadow: [
@@ -150,8 +150,8 @@ class KidsWeatherLayout extends StatelessWidget {
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
                   colors: [
-                    _LocalPalette.c_87CEEB, // Sky blue
-                    _LocalPalette.c_E0F6FF, // Lighter sky
+                    _LocalPalette.color87ceeb, // Sky blue
+                    _LocalPalette.colore0f6ff, // Lighter sky
                   ],
                 ),
               ),
@@ -162,14 +162,14 @@ class KidsWeatherLayout extends StatelessWidget {
                     child: Container(
                       width: double.infinity,
                       height: 8.h,
-                      color: _LocalPalette.c_8B5A2B,
+                      color: _LocalPalette.color8b5a2b,
                     ),
                   ),
                   Center(
                     child: Container(
                       width: 8.w,
                       height: double.infinity,
-                      color: _LocalPalette.c_8B5A2B,
+                      color: _LocalPalette.color8b5a2b,
                     ),
                   ),
                   // Curtains
@@ -253,7 +253,7 @@ class KidsWeatherLayout extends StatelessWidget {
                                     ? 80.sp
                                     : 32.sp,
                                 fontWeight: FontWeight.w900,
-                                color: _LocalPalette.c_0C4A6E.withValues(
+                                color: _LocalPalette.color0c4a6e.withValues(
                                   alpha:
                                       (quest.question == "?" ||
                                           quest.question == null)
@@ -300,7 +300,7 @@ class KidsWeatherLayout extends StatelessWidget {
                 borderRadius: BorderRadius.circular(30.r),
                 boxShadow: [
                   BoxShadow(
-                    color: _LocalPalette.c_93C5FD.withValues(alpha: 0.5),
+                    color: _LocalPalette.color93c5fd.withValues(alpha: 0.5),
                     offset: const Offset(0, 6),
                     blurRadius: 0, // Hard shadow for cartoon style
                   ),
@@ -345,7 +345,7 @@ class KidsWeatherLayout extends StatelessWidget {
                   fontFamily: 'Outfit',
                   fontSize: 18.sp,
                   fontWeight: FontWeight.w800,
-                  color: _LocalPalette.c_0369A1,
+                  color: _LocalPalette.color0369a1,
                   height: 1.1,
                 ),
                 textAlign: TextAlign.center,

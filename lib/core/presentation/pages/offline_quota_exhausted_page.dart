@@ -3,7 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:haptic_feedback/haptic_feedback.dart';
+import 'package:hapticolorfeedback/hapticolorfeedback.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 import 'package:vowl/core/utils/ad_service.dart';
 import 'package:vowl/core/utils/app_router.dart';
@@ -15,8 +15,8 @@ import 'package:vowl/core/theme/app_colors.dart';
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_059669 = Color(0xFF059669);
-  static const Color c_1D4ED8 = Color(0xFF1D4ED8);
+  static const Color color059669 = Color(0xFF059669);
+  static const Color color1d4ed8 = Color(0xFF1D4ED8);
 }
 
 /// Shown when a free user exhausts their offline play quota.
@@ -308,7 +308,7 @@ class _OfflineQuotaExhaustedPageState extends State<OfflineQuotaExhaustedPage> {
                                       ),
                                       gradient: const [
                                         AppColors.emerald500,
-                                        _LocalPalette.c_059669,
+                                        _LocalPalette.color059669,
                                       ],
                                       glowColor: AppColors.emerald500,
                                     );
@@ -335,7 +335,7 @@ class _OfflineQuotaExhaustedPageState extends State<OfflineQuotaExhaustedPage> {
                                     ),
                                     gradient: [
                                       Theme.of(context).colorScheme.primary,
-                                      _LocalPalette.c_1D4ED8,
+                                      _LocalPalette.color1d4ed8,
                                     ],
                                     glowColor: Colors.blue,
                                   );

@@ -7,7 +7,7 @@ import 'package:vowl/core/theme/app_colors.dart';
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_818CF8 = Color(0xFF818CF8);
+  static const Color color818cf8 = Color(0xFF818CF8);
 }
 
 class ScanBountyTarget extends StatelessWidget {
@@ -40,7 +40,7 @@ class ScanBountyTarget extends StatelessWidget {
         ? AppColors.indigo500.withValues(alpha: 0.3)
         : AppColors.indigo500.withValues(alpha: 0.15);
     final foundBorderColor = isDark
-        ? _LocalPalette.c_818CF8
+        ? _LocalPalette.color818cf8
         : AppColors.indigo500;
 
     return Padding(

@@ -13,8 +13,8 @@ import 'package:vowl/features/kids_zone/presentation/widgets/kids_fitted_text.da
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_FEF9C3 = Color(0xFFFEF9C3);
-  static const Color c_FEF08A = Color(0xFFFEF08A);
+  static const Color colorfef9c3 = Color(0xFFFEF9C3);
+  static const Color colorfef08a = Color(0xFFFEF08A);
 }
 
 /// Cozy Living Room Theme for Family Game
@@ -164,8 +164,8 @@ class KidsFamilyLayout extends StatelessWidget {
             height: 200.h,
             decoration: BoxDecoration(
               color: isHovering
-                  ? _LocalPalette.c_FEF9C3
-                  : _LocalPalette.c_FEF08A, // Highlight yellow
+                  ? _LocalPalette.colorfef9c3
+                  : _LocalPalette.colorfef08a, // Highlight yellow
               borderRadius: BorderRadius.circular(4.r),
               border: Border.all(
                 color: isHovering ? AppColors.amber600 : KidsColors.warmAmber,

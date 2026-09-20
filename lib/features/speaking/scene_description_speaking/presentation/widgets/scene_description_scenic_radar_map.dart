@@ -6,7 +6,7 @@ import 'package:vowl/features/speaking/scene_description_speaking/presentation/w
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_131326 = Color(0xFF131326);
+  static const Color color131326 = Color(0xFF131326);
 }
 
 class SceneDescriptionScenicRadarMap extends StatelessWidget {
@@ -40,7 +40,7 @@ class SceneDescriptionScenicRadarMap extends StatelessWidget {
       width: 1.sw,
       height: 230.h,
       decoration: BoxDecoration(
-        color: isDark ? _LocalPalette.c_131326 : Colors.white,
+        color: isDark ? _LocalPalette.color131326 : Colors.white,
         borderRadius: BorderRadius.circular(28.r),
         border: Border.all(color: Colors.white10),
         boxShadow: [BoxShadow(color: Colors.black26, blurRadius: 15.r)],

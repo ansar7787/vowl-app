@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import 'package:haptic_feedback/haptic_feedback.dart';
+import 'package:hapticolorfeedback/hapticolorfeedback.dart';
 import 'package:vowl/core/presentation/widgets/holographic_card.dart';
 import 'package:vowl/core/presentation/widgets/loading_overlay.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
@@ -20,7 +20,7 @@ import 'package:vowl/core/theme/app_colors.dart';
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_000000 = Color(0xFF000000);
+  static const Color color000000 = Color(0xFF000000);
 }
 
 class LoginPage extends StatelessWidget {
@@ -119,7 +119,7 @@ class _LoginViewState extends State<LoginView> {
         builder: (context, isMidnight) {
           final isDark = Theme.of(context).brightness == Brightness.dark;
           final bgColor = isMidnight
-              ? _LocalPalette.c_000000
+              ? _LocalPalette.color000000
               : (isDark ? AppColors.slate900 : AppColors.slate50);
 
           return BlocBuilder<LoginCubit, LoginState>(

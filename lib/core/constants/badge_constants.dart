@@ -4,9 +4,9 @@ import 'package:vowl/core/theme/app_colors.dart';
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_CD7F32 = Color(0xFFCD7F32);
-  static const Color c_22D3EE = Color(0xFF22D3EE);
-  static const Color c_3B82F6 = Color(0xFF3B82F6);
+  static const Color colorCd7f32 = Color(0xFFCD7F32);
+  static const Color color22d3ee = Color(0xFF22D3EE);
+  static const Color color3b82f6 = Color(0xFF3B82F6);
 }
 
 /// Represents the data model and metadata configuration for a gamified level milestone badge.
@@ -53,7 +53,7 @@ abstract class BadgeConstants {
       id: 'bronze_wings',
       nameKey: 'badges.bronze_wings',
       icon: LucideIcons.feather,
-      color: _LocalPalette.c_CD7F32,
+      color: _LocalPalette.colorCd7f32,
       minLevel: 10,
     ),
     BadgeData(
@@ -74,7 +74,7 @@ abstract class BadgeConstants {
       id: 'platinum_master',
       nameKey: 'badges.platinum_master',
       icon: LucideIcons.trophy,
-      color: _LocalPalette.c_22D3EE,
+      color: _LocalPalette.color22d3ee,
       minLevel: 100,
     ),
     BadgeData(
@@ -88,7 +88,7 @@ abstract class BadgeConstants {
       id: 'sapphire_sovereign',
       nameKey: 'badges.sapphire_sovereign',
       icon: LucideIcons.crown,
-      color: _LocalPalette.c_3B82F6,
+      color: _LocalPalette.color3b82f6,
       minLevel: 300,
     ),
     BadgeData(

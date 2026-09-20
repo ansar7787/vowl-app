@@ -9,7 +9,7 @@ import 'package:vowl/core/theme/app_colors.dart';
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_059669 = Color(0xFF059669);
+  static const Color color059669 = Color(0xFF059669);
 }
 
 class AdventureRecentActivities extends StatelessWidget {
@@ -178,7 +178,7 @@ class AdventureRecentActivities extends StatelessWidget {
                                 fontWeight: FontWeight.w600,
                                 color: isDark
                                     ? AppColors.emerald500
-                                    : _LocalPalette.c_059669,
+                                    : _LocalPalette.color059669,
                               ),
                             ),
                         ],

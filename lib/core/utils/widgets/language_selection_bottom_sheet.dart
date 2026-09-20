@@ -15,7 +15,7 @@ import 'package:vowl/core/theme/app_colors.dart';
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_1E1E2A = Color(0xFF1E1E2A);
+  static const Color color1e1e2a = Color(0xFF1E1E2A);
 }
 
 /// A sleek 2026 glassmorphic bottom sheet for selecting the native translation language.
@@ -626,7 +626,7 @@ class _LanguageSelectionBottomSheetState
       context: context,
       builder: (dialogCtx) => StatefulBuilder(
         builder: (ctx, setDialogState) => AlertDialog(
-          backgroundColor: isDark ? _LocalPalette.c_1E1E2A : Colors.white,
+          backgroundColor: isDark ? _LocalPalette.color1e1e2a : Colors.white,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(24.r),
           ),

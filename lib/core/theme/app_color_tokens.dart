@@ -3,7 +3,7 @@ import 'package:vowl/core/theme/app_colors.dart';
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_F1F5F9 = Color(0xFFF1F5F9);
+  static const Color colorf1f5f9 = Color(0xFFF1F5F9);
 }
 
 /// Semantic color tokens for the Vowl design system.
@@ -327,7 +327,7 @@ class AppColorTokens extends ThemeExtension<AppColorTokens> {
     textDisabled: AppColors.slate300,
     // Borders
     border: AppColors.slate200,
-    borderSubtle: _LocalPalette.c_F1F5F9, // slate100 — barely visible
+    borderSubtle: _LocalPalette.colorf1f5f9, // slate100 — barely visible
     divider: AppColors.slate200,
     // Success
     success: AppColors.emerald500,

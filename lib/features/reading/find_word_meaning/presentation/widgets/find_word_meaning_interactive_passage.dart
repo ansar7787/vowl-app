@@ -6,8 +6,8 @@ import 'package:vowl/core/theme/app_colors.dart';
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_34D399 = Color(0xFF34D399);
-  static const Color c_F87171 = Color(0xFFF87171);
+  static const Color color34d399 = Color(0xFF34D399);
+  static const Color colorf87171 = Color(0xFFF87171);
 }
 
 class FindWordMeaningInteractivePassage extends StatefulWidget {
@@ -146,10 +146,10 @@ class _FindWordMeaningInteractivePassageState
               if (isSelected && widget.isCorrectSelection != null) {
                 activeColor = widget.isCorrectSelection!
                     ? (widget.isDark
-                          ? _LocalPalette.c_34D399
+                          ? _LocalPalette.color34d399
                           : AppColors.emerald500)
                     : (widget.isDark
-                          ? _LocalPalette.c_F87171
+                          ? _LocalPalette.colorf87171
                           : AppColors.red500);
               }
 

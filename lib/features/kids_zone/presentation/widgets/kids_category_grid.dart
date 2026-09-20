@@ -18,7 +18,7 @@ import 'package:vowl/core/theme/app_colors.dart';
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_0EA5E9 = Color(0xFF0EA5E9);
+  static const Color color0ea5e9 = Color(0xFF0EA5E9);
 }
 
 /// Themed section groupings for the category grid.
@@ -56,7 +56,7 @@ const _kSections = [
     'food',
     'home',
   ]),
-  _SectionDef('Math & Logic', '🔢', _LocalPalette.c_0EA5E9, [
+  _SectionDef('Math & Logic', '🔢', _LocalPalette.color0ea5e9, [
     'numbers',
     'colors',
     'shapes',

@@ -13,10 +13,10 @@ import 'package:vowl/features/kids_zone/presentation/widgets/kids_fitted_text.da
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_FEF9C3 = Color(0xFFFEF9C3);
-  static const Color c_FEF3C7 = Color(0xFFFEF3C7);
-  static const Color c_92400E = Color(0xFF92400E);
-  static const Color c_451A03 = Color(0xFF451A03);
+  static const Color colorfef9c3 = Color(0xFFFEF9C3);
+  static const Color colorfef3c7 = Color(0xFFFEF3C7);
+  static const Color color92400e = Color(0xFF92400E);
+  static const Color color451a03 = Color(0xFF451A03);
 }
 
 /// Farmer's Market Theme for Fruits Game
@@ -137,13 +137,13 @@ class KidsFruitsLayout extends StatelessWidget {
                 height: 200.h,
                 decoration: BoxDecoration(
                   color: isHovering
-                      ? _LocalPalette.c_FEF9C3
-                      : _LocalPalette.c_FEF3C7, // Light wood
+                      ? _LocalPalette.colorfef9c3
+                      : _LocalPalette.colorfef3c7, // Light wood
                   borderRadius: BorderRadius.circular(8.r),
                   border: Border.all(
                     color: isHovering
                         ? KidsColors.warmAmber
-                        : _LocalPalette.c_92400E,
+                        : _LocalPalette.color92400e,
                     width: isHovering ? 8.r : 6.r,
                   ), // Dark wood frame
                   boxShadow: [
@@ -281,7 +281,7 @@ class KidsFruitsLayout extends StatelessWidget {
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(6.r),
-              border: Border.all(color: _LocalPalette.c_92400E, width: 1.5),
+              border: Border.all(color: _LocalPalette.color92400e, width: 1.5),
             ),
             alignment: Alignment.center,
             child: FittedBox(
@@ -295,7 +295,7 @@ class KidsFruitsLayout extends StatelessWidget {
                   fontWeight: FontWeight.w800,
                   height:
                       1.2, // Fixes descenders like p, g from touching bottom
-                  color: _LocalPalette.c_451A03,
+                  color: _LocalPalette.color451a03,
                 ),
                 textAlign: TextAlign.center,
                 maxLines: 1,

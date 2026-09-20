@@ -9,8 +9,8 @@ import 'package:vowl/core/theme/app_colors.dart';
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_06B6D4 = Color(0xFF06B6D4);
-  static const Color c_60A5FA = Color(0xFF60A5FA);
+  static const Color color06b6d4 = Color(0xFF06B6D4);
+  static const Color color60a5fa = Color(0xFF60A5FA);
 }
 
 class LeaderboardRankTile extends StatelessWidget {
@@ -42,7 +42,7 @@ class LeaderboardRankTile extends StatelessWidget {
         : rank <= 10
         ? AppColors.blue500
         : rank <= 25
-        ? _LocalPalette.c_06B6D4
+        ? _LocalPalette.color06b6d4
         : AppColors.slate400;
     final displayName =
         user.displayName ??
@@ -181,7 +181,7 @@ class LeaderboardRankTile extends StatelessWidget {
                                   fontFamily: 'Outfit',
                                   fontSize: 7.sp,
                                   fontWeight: FontWeight.w900,
-                                  color: _LocalPalette.c_60A5FA,
+                                  color: _LocalPalette.color60a5fa,
                                   letterSpacing: 1,
                                 ),
                               ),

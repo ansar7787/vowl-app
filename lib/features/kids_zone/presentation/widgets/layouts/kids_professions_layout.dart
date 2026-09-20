@@ -13,11 +13,11 @@ import 'package:vowl/features/kids_zone/presentation/widgets/kids_fitted_text.da
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_FDE047 = Color(0xFFFDE047);
-  static const Color c_CA8A04 = Color(0xFFCA8A04);
-  static const Color c_DBEAFE = Color(0xFFDBEAFE);
-  static const Color c_93C5FD = Color(0xFF93C5FD);
-  static const Color c_1E3A8A = Color(0xFF1E3A8A);
+  static const Color colorfde047 = Color(0xFFFDE047);
+  static const Color colorca8a04 = Color(0xFFCA8A04);
+  static const Color colordbeafe = Color(0xFFDBEAFE);
+  static const Color color93c5fd = Color(0xFF93C5FD);
+  static const Color color1e3a8a = Color(0xFF1E3A8A);
 }
 
 /// Immersive Storefront Theme for Professions Game
@@ -131,10 +131,10 @@ class KidsProfessionsLayout extends StatelessWidget {
             height: 260.h,
             clipBehavior: Clip.hardEdge,
             decoration: BoxDecoration(
-              color: _LocalPalette.c_FDE047, // Yellow building
+              color: _LocalPalette.colorfde047, // Yellow building
               borderRadius: BorderRadius.circular(16.r),
               border: Border.all(
-                color: isHovering ? Colors.white : _LocalPalette.c_CA8A04,
+                color: isHovering ? Colors.white : _LocalPalette.colorca8a04,
                 width: isHovering ? 8 : 6,
               ),
               boxShadow: [
@@ -184,10 +184,10 @@ class KidsProfessionsLayout extends StatelessWidget {
                   bottom: 20.h,
                   child: Container(
                     decoration: BoxDecoration(
-                      color: _LocalPalette.c_DBEAFE, // Glass blue
+                      color: _LocalPalette.colordbeafe, // Glass blue
                       borderRadius: BorderRadius.circular(12.r),
                       border: Border.all(
-                        color: _LocalPalette.c_93C5FD,
+                        color: _LocalPalette.color93c5fd,
                         width: 4,
                       ),
                     ),
@@ -241,7 +241,7 @@ class KidsProfessionsLayout extends StatelessWidget {
                                     ? 80.sp
                                     : 32.sp,
                                 fontWeight: FontWeight.w900,
-                                color: _LocalPalette.c_1E3A8A.withValues(
+                                color: _LocalPalette.color1e3a8a.withValues(
                                   alpha:
                                       (quest.question == "?" ||
                                           quest.question == null)

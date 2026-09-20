@@ -14,8 +14,8 @@ import 'package:vowl/core/theme/app_colors.dart';
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_38BDF8 = Color(0xFF38BDF8);
-  static const Color c_1E1B4B = Color(0xFF1E1B4B);
+  static const Color color38bdf8 = Color(0xFF38BDF8);
+  static const Color color1e1b4b = Color(0xFF1E1B4B);
 }
 
 /// Space / Rocket Theme for Numbers Game
@@ -127,7 +127,9 @@ class KidsNumbersLayout extends StatelessWidget {
                 : AppColors.slate900, // Deep Space Blue
             shape: BoxShape.circle,
             border: Border.all(
-              color: isHovering ? _LocalPalette.c_38BDF8 : AppColors.slate400,
+              color: isHovering
+                  ? _LocalPalette.color38bdf8
+                  : AppColors.slate400,
               width: 16.r,
             ), // Silver metallic frame
             boxShadow: [
@@ -179,7 +181,9 @@ class KidsNumbersLayout extends StatelessWidget {
                             )
                           : ColorFiltered(
                               colorFilter: ColorFilter.mode(
-                                _LocalPalette.c_1E1B4B.withValues(alpha: 0.15),
+                                _LocalPalette.color1e1b4b.withValues(
+                                  alpha: 0.15,
+                                ),
                                 BlendMode.srcIn,
                               ),
                               child: Text(
@@ -206,7 +210,7 @@ class KidsNumbersLayout extends StatelessWidget {
                             ),
                             shadows: const [
                               Shadow(
-                                color: _LocalPalette.c_38BDF8,
+                                color: _LocalPalette.color38bdf8,
                                 blurRadius: 15,
                               ),
                             ],

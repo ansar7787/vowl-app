@@ -8,9 +8,9 @@ import 'package:vowl/features/roleplay/situational_response/presentation/widgets
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_07070F = Color(0xFF07070F);
-  static const Color c_FF3366 = Color(0xFFFF3366);
-  static const Color c_0F0F1F = Color(0xFF0F0F1F);
+  static const Color color07070f = Color(0xFF07070F);
+  static const Color colorff3366 = Color(0xFFFF3366);
+  static const Color color0f0f1f = Color(0xFF0F0F1F);
 }
 
 class SituationalResponseReactionZone extends StatelessWidget {
@@ -46,7 +46,7 @@ class SituationalResponseReactionZone extends StatelessWidget {
       height: 380.h,
       decoration: BoxDecoration(
         color: isDark
-            ? _LocalPalette.c_07070F
+            ? _LocalPalette.color07070f
             : Colors.black.withValues(alpha: 0.02),
         borderRadius: BorderRadius.circular(36.r),
         border: Border.all(
@@ -113,7 +113,7 @@ class SituationalResponseReactionZone extends StatelessWidget {
       }
     } else {
       coreColor =
-          Color.lerp(color, _LocalPalette.c_FF3366, timerValue) ?? color;
+          Color.lerp(color, _LocalPalette.colorff3366, timerValue) ?? color;
       if (timerValue > 0.7) {
         coreIcon = Icons.priority_high_rounded;
         label = "TENSION DANGER";
@@ -133,7 +133,7 @@ class SituationalResponseReactionZone extends StatelessWidget {
           width: 120.r,
           height: 120.r,
           decoration: BoxDecoration(
-            color: isDark ? _LocalPalette.c_0F0F1F : Colors.white,
+            color: isDark ? _LocalPalette.color0f0f1f : Colors.white,
             shape: BoxShape.circle,
             border: Border.all(color: coreColor, width: 3.5),
             boxShadow: [

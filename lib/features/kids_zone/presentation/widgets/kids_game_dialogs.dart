@@ -17,7 +17,7 @@ import 'package:vowl/core/theme/app_colors.dart';
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_6D28D9 = Color(0xFF6D28D9);
+  static const Color color6d28d9 = Color(0xFF6D28D9);
 }
 
 class KidsGameDialogs {
@@ -498,7 +498,7 @@ class KidsGameDialogs {
               ), // Playful purple
               boxShadow: [
                 BoxShadow(
-                  color: _LocalPalette.c_6D28D9,
+                  color: _LocalPalette.color6d28d9,
                   offset: Offset(0, 12.h),
                 ),
               ],
@@ -603,12 +603,12 @@ class KidsGameDialogs {
                               color: Colors.white,
                               borderRadius: BorderRadius.circular(30.r),
                               border: Border.all(
-                                color: _LocalPalette.c_6D28D9,
+                                color: _LocalPalette.color6d28d9,
                                 width: 4.w,
                               ),
                               boxShadow: [
                                 BoxShadow(
-                                  color: _LocalPalette.c_6D28D9,
+                                  color: _LocalPalette.color6d28d9,
                                   offset: Offset(0, 5.h),
                                 ),
                               ],

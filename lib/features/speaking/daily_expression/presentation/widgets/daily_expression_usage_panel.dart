@@ -4,7 +4,7 @@ import 'package:vowl/features/speaking/domain/entities/speaking_quest.dart';
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_0F0F1A = Color(0xFF0F0F1A);
+  static const Color color0f0f1a = Color(0xFF0F0F1A);
 }
 
 class DailyExpressionUsagePanel extends StatelessWidget {
@@ -26,7 +26,7 @@ class DailyExpressionUsagePanel extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 22.w, vertical: 16.h),
       decoration: BoxDecoration(
         color: isDark
-            ? _LocalPalette.c_0F0F1A
+            ? _LocalPalette.color0f0f1a
             : Colors.black.withValues(alpha: 0.02),
         borderRadius: BorderRadius.circular(24.r),
         border: Border.all(color: Colors.white10),

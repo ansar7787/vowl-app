@@ -6,7 +6,7 @@ import 'package:vowl/core/theme/app_colors.dart';
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_6366F1 = Color(0xFF6366F1);
+  static const Color color6366f1 = Color(0xFF6366F1);
 }
 
 /// Multi-emitter confetti burst for level-completion celebrations.
@@ -30,7 +30,7 @@ class _GameConfettiState extends State<GameConfetti> {
 
   static const List<Color> _confettiColors = [
     IllustrationColors.premiumGold, // Gold
-    _LocalPalette.c_6366F1, // Indigo
+    _LocalPalette.color6366f1, // Indigo
     AppColors.emerald500, // Emerald
     AppColors.rose500, // Rose
     AppColors.violet500, // Violet

@@ -6,7 +6,7 @@ import 'package:vowl/features/roleplay/gourmet_order/presentation/widgets/gourme
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_07070F = Color(0xFF07070F);
+  static const Color color07070f = Color(0xFF07070F);
 }
 
 class GourmetOrderTableSetting extends StatefulWidget {
@@ -84,7 +84,7 @@ class _GourmetOrderTableSettingState extends State<GourmetOrderTableSetting> {
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     color: widget.isDark
-                        ? _LocalPalette.c_07070F
+                        ? _LocalPalette.color07070f
                         : Colors.black.withValues(alpha: 0.02),
                     border: Border.all(
                       color: ringColor.withValues(

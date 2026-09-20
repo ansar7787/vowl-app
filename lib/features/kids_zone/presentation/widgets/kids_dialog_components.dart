@@ -8,8 +8,8 @@ import 'package:auto_size_text/auto_size_text.dart';
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_FFEA70 = Color(0xFFFFEA70);
-  static const Color c_8B4513 = Color(0xFF8B4513);
+  static const Color colorffea70 = Color(0xFFFFEA70);
+  static const Color color8b4513 = Color(0xFF8B4513);
 }
 
 /// AAA Rotating Sunburst Background for Victory Screens
@@ -89,7 +89,7 @@ class Kids3DButton extends StatelessWidget {
               gradient: isGolden
                   ? const LinearGradient(
                       colors: [
-                        _LocalPalette.c_FFEA70,
+                        _LocalPalette.colorffea70,
                         IllustrationColors.premiumGold,
                       ],
                       begin: Alignment.topCenter,
@@ -117,7 +117,7 @@ class Kids3DButton extends StatelessWidget {
                       icon,
                       color:
                           textColor ??
-                          (isGolden ? _LocalPalette.c_8B4513 : Colors.white),
+                          (isGolden ? _LocalPalette.color8b4513 : Colors.white),
                       size: 26.sp,
                     ),
                     SizedBox(width: 8.w),
@@ -130,7 +130,9 @@ class Kids3DButton extends StatelessWidget {
                         fontWeight: FontWeight.w900,
                         color:
                             textColor ??
-                            (isGolden ? _LocalPalette.c_8B4513 : Colors.white),
+                            (isGolden
+                                ? _LocalPalette.color8b4513
+                                : Colors.white),
                         fontSize: 18.sp,
                         letterSpacing: 1.5,
                       ),

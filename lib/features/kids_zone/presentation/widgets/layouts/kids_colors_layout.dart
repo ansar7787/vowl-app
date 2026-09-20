@@ -13,32 +13,32 @@ import 'package:vowl/features/kids_zone/presentation/widgets/kids_fitted_text.da
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_92400E = Color(0xFF92400E);
-  static const Color c_FDE047 = Color(0xFFFDE047);
-  static const Color c_EAB308 = Color(0xFFEAB308);
-  static const Color c_D4D4D8 = Color(0xFFD4D4D8);
-  static const Color c_9CA3AF = Color(0xFF9CA3AF);
-  static const Color c_E4E4E7 = Color(0xFFE4E4E7);
-  static const Color c_3F3F46 = Color(0xFF3F3F46);
-  static const Color c_52525B = Color(0xFF52525B);
-  static const Color c_000080 = Color(0xFF000080);
-  static const Color c_006400 = Color(0xFF006400);
-  static const Color c_800000 = Color(0xFF800000);
-  static const Color c_FA8072 = Color(0xFFFA8072);
-  static const Color c_FFFACD = Color(0xFFFFFACD);
-  static const Color c_4B0082 = Color(0xFF4B0082);
-  static const Color c_E6E6FA = Color(0xFFE6E6FA);
-  static const Color c_3E2723 = Color(0xFF3E2723);
-  static const Color c_D2B48C = Color(0xFFD2B48C);
-  static const Color c_424242 = Color(0xFF424242);
-  static const Color c_BDBDBD = Color(0xFFBDBDBD);
-  static const Color c_FFDAB9 = Color(0xFFFFDAB9);
-  static const Color c_32CD32 = Color(0xFF32CD32);
-  static const Color c_B22222 = Color(0xFFB22222);
-  static const Color c_50C878 = Color(0xFF50C878);
-  static const Color c_0F52BA = Color(0xFF0F52BA);
-  static const Color c_9966CC = Color(0xFF9966CC);
-  static const Color c_FFC87C = Color(0xFFFFC87C);
+  static const Color color92400e = Color(0xFF92400E);
+  static const Color colorfde047 = Color(0xFFFDE047);
+  static const Color coloreab308 = Color(0xFFEAB308);
+  static const Color colord4d4d8 = Color(0xFFD4D4D8);
+  static const Color color9ca3af = Color(0xFF9CA3AF);
+  static const Color colore4e4e7 = Color(0xFFE4E4E7);
+  static const Color color3f3f46 = Color(0xFF3F3F46);
+  static const Color color52525b = Color(0xFF52525B);
+  static const Color color000080 = Color(0xFF000080);
+  static const Color color006400 = Color(0xFF006400);
+  static const Color color800000 = Color(0xFF800000);
+  static const Color colorfa8072 = Color(0xFFFA8072);
+  static const Color colorfffacd = Color(0xFFFFFACD);
+  static const Color color4b0082 = Color(0xFF4B0082);
+  static const Color colore6e6fa = Color(0xFFE6E6FA);
+  static const Color color3e2723 = Color(0xFF3E2723);
+  static const Color colord2b48c = Color(0xFFD2B48C);
+  static const Color color424242 = Color(0xFF424242);
+  static const Color colorbdbdbd = Color(0xFFBDBDBD);
+  static const Color colorffdab9 = Color(0xFFFFDAB9);
+  static const Color color32cd32 = Color(0xFF32CD32);
+  static const Color colorb22222 = Color(0xFFB22222);
+  static const Color color50c878 = Color(0xFF50C878);
+  static const Color color0f52ba = Color(0xFF0F52BA);
+  static const Color color9966cc = Color(0xFF9966CC);
+  static const Color colorffc87c = Color(0xFFFFC87C);
 }
 
 /// Art Studio Theme for Colors Game
@@ -149,11 +149,11 @@ class KidsColorsLayout extends StatelessWidget {
                 decoration: BoxDecoration(
                   border: Border(
                     left: BorderSide(
-                      color: _LocalPalette.c_92400E,
+                      color: _LocalPalette.color92400e,
                       width: 12.w,
                     ),
                     right: BorderSide(
-                      color: _LocalPalette.c_92400E,
+                      color: _LocalPalette.color92400e,
                       width: 12.w,
                     ),
                   ),
@@ -176,13 +176,13 @@ class KidsColorsLayout extends StatelessWidget {
                 height: 200.h,
                 decoration: BoxDecoration(
                   color: isHovering
-                      ? _LocalPalette.c_FDE047
+                      ? _LocalPalette.colorfde047
                       : Colors.white, // Highlight canvas on hover
                   borderRadius: BorderRadius.circular(4.r),
                   border: Border.all(
                     color: isHovering
-                        ? _LocalPalette.c_EAB308
-                        : _LocalPalette.c_D4D4D8,
+                        ? _LocalPalette.coloreab308
+                        : _LocalPalette.colord4d4d8,
                     width: isHovering ? 4 : 2,
                   ),
                   boxShadow: [
@@ -207,7 +207,7 @@ class KidsColorsLayout extends StatelessWidget {
                               )
                             : ColorFiltered(
                                 colorFilter: const ColorFilter.mode(
-                                  _LocalPalette.c_9CA3AF,
+                                  _LocalPalette.color9ca3af,
                                   BlendMode.srcIn,
                                 ),
                                 child: Text(
@@ -268,7 +268,7 @@ class KidsColorsLayout extends StatelessWidget {
               bottomLeft: Radius.circular(20.r),
               bottomRight: Radius.circular(20.r),
             ),
-            border: Border.all(color: _LocalPalette.c_E4E4E7, width: 2),
+            border: Border.all(color: _LocalPalette.colore4e4e7, width: 2),
             boxShadow: [
               BoxShadow(color: Colors.black12, offset: Offset(0, 6.h)),
             ],
@@ -289,7 +289,7 @@ class KidsColorsLayout extends StatelessWidget {
                           fontFamily: 'Outfit',
                           fontSize: 16.sp,
                           fontWeight: FontWeight.w700,
-                          color: _LocalPalette.c_3F3F46,
+                          color: _LocalPalette.color3f3f46,
                         ),
                         textAlign: TextAlign.center,
                         maxLines: 3,
@@ -306,7 +306,7 @@ class KidsColorsLayout extends StatelessWidget {
           height: 12.h,
           width: 30.w,
           decoration: BoxDecoration(
-            color: _LocalPalette.c_52525B, // Grey cap
+            color: _LocalPalette.color52525b, // Grey cap
             borderRadius: BorderRadius.vertical(bottom: Radius.circular(4.r)),
           ),
         ),
@@ -337,7 +337,7 @@ class KidsColorsLayout extends StatelessWidget {
       return Colors.lightBlue;
     }
     if (lower.contains('dark blue') || lower.contains('navy')) {
-      return _LocalPalette.c_000080;
+      return _LocalPalette.color000080;
     }
     if (lower.contains('light green') ||
         lower.contains('mint') ||
@@ -347,33 +347,33 @@ class KidsColorsLayout extends StatelessWidget {
     if (lower.contains('dark green') ||
         lower.contains('forest') ||
         lower.contains('olive')) {
-      return _LocalPalette.c_006400;
+      return _LocalPalette.color006400;
     }
     if (lower.contains('dark red') ||
         lower.contains('maroon') ||
         lower.contains('burgundy')) {
-      return _LocalPalette.c_800000;
+      return _LocalPalette.color800000;
     }
     if (lower.contains('light red') || lower.contains('salmon')) {
-      return _LocalPalette.c_FA8072;
+      return _LocalPalette.colorfa8072;
     }
     if (lower.contains('light yellow') || lower.contains('pastel yellow')) {
-      return _LocalPalette.c_FFFACD;
+      return _LocalPalette.colorfffacd;
     }
     if (lower.contains('dark purple') ||
         lower.contains('plum') ||
         lower.contains('eggplant')) {
-      return _LocalPalette.c_4B0082;
+      return _LocalPalette.color4b0082;
     }
     if (lower.contains('light purple') ||
         lower.contains('lavender') ||
         lower.contains('lilac')) {
-      return _LocalPalette.c_E6E6FA;
+      return _LocalPalette.colore6e6fa;
     }
     if (lower.contains('dark brown') ||
         lower.contains('chocolate') ||
         lower.contains('espresso')) {
-      return _LocalPalette.c_3E2723;
+      return _LocalPalette.color3e2723;
     }
     if (lower.contains('light brown') ||
         lower.contains('tan') ||
@@ -381,17 +381,17 @@ class KidsColorsLayout extends StatelessWidget {
         lower.contains('beige') ||
         lower.contains('cream') ||
         lower.contains('oatmeal')) {
-      return _LocalPalette.c_D2B48C;
+      return _LocalPalette.colord2b48c;
     }
     if (lower.contains('dark gray') ||
         lower.contains('dark grey') ||
         lower.contains('charcoal')) {
-      return _LocalPalette.c_424242;
+      return _LocalPalette.color424242;
     }
     if (lower.contains('light gray') ||
         lower.contains('light grey') ||
         lower.contains('silver')) {
-      return _LocalPalette.c_BDBDBD;
+      return _LocalPalette.colorbdbdbd;
     }
     if (lower.contains('hot pink') ||
         lower.contains('neon pink') ||
@@ -412,13 +412,13 @@ class KidsColorsLayout extends StatelessWidget {
     if (lower.contains('peach') ||
         lower.contains('coral') ||
         lower.contains('apricot')) {
-      return _LocalPalette.c_FFDAB9;
+      return _LocalPalette.colorffdab9;
     }
     if (lower.contains('gold')) {
       return IllustrationColors.premiumGold;
     }
     if (lower.contains('lime') || lower.contains('chartreuse')) {
-      return _LocalPalette.c_32CD32;
+      return _LocalPalette.color32cd32;
     }
     if (lower.contains('indigo')) {
       return Colors.indigo;
@@ -429,19 +429,19 @@ class KidsColorsLayout extends StatelessWidget {
         lower.contains('garnet') ||
         lower.contains('scarlet') ||
         lower.contains('brick')) {
-      return _LocalPalette.c_B22222;
+      return _LocalPalette.colorb22222;
     }
     if (lower.contains('emerald') || lower.contains('jade')) {
-      return _LocalPalette.c_50C878;
+      return _LocalPalette.color50c878;
     }
     if (lower.contains('sapphire')) {
-      return _LocalPalette.c_0F52BA;
+      return _LocalPalette.color0f52ba;
     }
     if (lower.contains('amethyst')) {
-      return _LocalPalette.c_9966CC;
+      return _LocalPalette.color9966cc;
     }
     if (lower.contains('topaz') || lower.contains('citrine')) {
-      return _LocalPalette.c_FFC87C;
+      return _LocalPalette.colorffc87c;
     }
     if (lower.contains('onyx') || lower.contains('coal')) {
       return Colors.black87;
@@ -475,7 +475,7 @@ class KidsColorsLayout extends StatelessWidget {
     if (lower.contains('white') ||
         lower.contains('snow') ||
         lower.contains('pearl')) {
-      return _LocalPalette.c_E4E4E7; // Off-white for visibility on canvas
+      return _LocalPalette.colore4e4e7; // Off-white for visibility on canvas
     }
     if (lower.contains('brown')) {
       return Colors.brown;

@@ -9,7 +9,7 @@ import 'package:vowl/features/photo_vocabulary/utils/photo_vocabulary_dictionary
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_2DD4BF = Color(0xFF2DD4BF);
+  static const Color color2dd4bf = Color(0xFF2DD4BF);
 }
 
 class PhotoResultChip extends StatelessWidget {
@@ -139,7 +139,7 @@ class PhotoResultChip extends StatelessWidget {
                                           child: Icon(
                                             Icons.volume_up_rounded,
                                             color: isDark
-                                                ? _LocalPalette.c_2DD4BF
+                                                ? _LocalPalette.color2dd4bf
                                                 : primaryTeal,
                                             size: 18.r,
                                           ),
@@ -186,7 +186,7 @@ class PhotoResultChip extends StatelessWidget {
                                 fontSize: 13.sp,
                                 fontWeight: FontWeight.w900,
                                 color: isDark
-                                    ? _LocalPalette.c_2DD4BF
+                                    ? _LocalPalette.color2dd4bf
                                     : primaryTeal,
                               ),
                             ),
@@ -297,7 +297,7 @@ class PhotoResultChip extends StatelessWidget {
                                     fontFamily: 'Outfit',
                                     fontSize: 18.sp,
                                     color: isDark
-                                        ? _LocalPalette.c_2DD4BF
+                                        ? _LocalPalette.color2dd4bf
                                         : primaryTeal,
                                     fontWeight: FontWeight.w700,
                                     height: 1.2,

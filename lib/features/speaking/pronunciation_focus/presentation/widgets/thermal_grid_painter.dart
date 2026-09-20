@@ -4,8 +4,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_1D2671 = Color(0xFF1D2671);
-  static const Color c_FF5722 = Color(0xFFFF5722);
+  static const Color color1d2671 = Color(0xFF1D2671);
+  static const Color colorff5722 = Color(0xFFFF5722);
 }
 
 class ThermalGridPainter extends CustomPainter {
@@ -51,8 +51,12 @@ class ThermalGridPainter extends CustomPainter {
         final double finalSize = baseSize * activeMultiplier;
 
         // Sizzle heat colors: cold cobalt blue -> superheated thermodynamic orange
-        final Color coldColor = _LocalPalette.c_1D2671.withValues(alpha: 0.2);
-        final Color hotColor = _LocalPalette.c_FF5722.withValues(alpha: 0.95);
+        final Color coldColor = _LocalPalette.color1d2671.withValues(
+          alpha: 0.2,
+        );
+        final Color hotColor = _LocalPalette.colorff5722.withValues(
+          alpha: 0.95,
+        );
         final Color activeColor = Color.lerp(
           coldColor,
           hotColor,

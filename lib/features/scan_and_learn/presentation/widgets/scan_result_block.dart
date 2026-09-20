@@ -9,7 +9,7 @@ import 'package:vowl/core/theme/app_colors.dart';
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_818CF8 = Color(0xFF818CF8);
+  static const Color color818cf8 = Color(0xFF818CF8);
 }
 
 class ScanResultBlock extends StatelessWidget {
@@ -254,7 +254,7 @@ class ScanResultBlock extends StatelessWidget {
                                   child: Icon(
                                     Icons.volume_up_rounded,
                                     color: isDark
-                                        ? _LocalPalette.c_818CF8
+                                        ? _LocalPalette.color818cf8
                                         : primaryIndigo,
                                     size: 18.r,
                                   ),
@@ -379,7 +379,7 @@ class ScanResultBlock extends StatelessWidget {
                                       fontFamily: 'Outfit',
                                       fontSize: 16.sp,
                                       color: isDark
-                                          ? _LocalPalette.c_818CF8
+                                          ? _LocalPalette.color818cf8
                                           : primaryIndigo,
                                       fontWeight: FontWeight.w700,
                                       height: 1.3,

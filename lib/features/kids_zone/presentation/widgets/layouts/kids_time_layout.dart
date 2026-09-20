@@ -13,9 +13,9 @@ import 'package:vowl/features/kids_zone/presentation/widgets/kids_fitted_text.da
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_451A03 = Color(0xFF451A03);
-  static const Color c_FEF9C3 = Color(0xFFFEF9C3);
-  static const Color c_FEF3C7 = Color(0xFFFEF3C7);
+  static const Color color451a03 = Color(0xFF451A03);
+  static const Color colorfef9c3 = Color(0xFFFEF9C3);
+  static const Color colorfef3c7 = Color(0xFFFEF3C7);
 }
 
 /// Giant Clock Tower Theme for Time Game
@@ -82,7 +82,7 @@ class KidsTimeLayout extends StatelessWidget {
                     width: double.infinity,
                     margin: EdgeInsets.symmetric(horizontal: 16.w),
                     decoration: BoxDecoration(
-                      color: _LocalPalette.c_451A03, // Dark wood
+                      color: _LocalPalette.color451a03, // Dark wood
                       borderRadius: BorderRadius.vertical(
                         top: Radius.circular(8.r),
                       ),
@@ -156,8 +156,8 @@ class KidsTimeLayout extends StatelessWidget {
             height: 260.r,
             decoration: BoxDecoration(
               color: isHovering
-                  ? _LocalPalette.c_FEF9C3
-                  : _LocalPalette.c_FEF3C7, // Antique clock face
+                  ? _LocalPalette.colorfef9c3
+                  : _LocalPalette.colorfef3c7, // Antique clock face
               shape: BoxShape.circle,
               border: Border.all(
                 color: isHovering ? AppColors.amber600 : KidsColors.warmAmber,

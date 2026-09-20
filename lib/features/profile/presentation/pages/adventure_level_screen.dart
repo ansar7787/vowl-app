@@ -25,7 +25,7 @@ import 'package:vowl/core/theme/app_colors.dart';
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_1D4ED8 = Color(0xFF1D4ED8);
+  static const Color color1d4ed8 = Color(0xFF1D4ED8);
 }
 
 class AdventureLevelScreen extends StatelessWidget {
@@ -766,7 +766,7 @@ class AdventureLevelScreen extends StatelessWidget {
                 padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
                 decoration: BoxDecoration(
                   gradient: const LinearGradient(
-                    colors: [AppColors.indigo500, _LocalPalette.c_1D4ED8],
+                    colors: [AppColors.indigo500, _LocalPalette.color1d4ed8],
                   ),
                   borderRadius: BorderRadius.circular(12.r),
                   boxShadow: [

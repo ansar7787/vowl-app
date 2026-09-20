@@ -12,7 +12,7 @@ import 'package:vowl/core/theme/app_colors.dart';
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_38BDF8 = Color(0xFF38BDF8);
+  static const Color color38bdf8 = Color(0xFF38BDF8);
 }
 
 class StreakCalendar extends StatelessWidget {
@@ -291,7 +291,10 @@ class StreakCalendar extends StatelessWidget {
     if (!isFuture && isPlayed) {
       dayGradient = isFrozen
           ? const LinearGradient(
-              colors: [_LocalPalette.c_38BDF8, IllustrationColors.brightBlue],
+              colors: [
+                _LocalPalette.color38bdf8,
+                IllustrationColors.brightBlue,
+              ],
             )
           : const LinearGradient(
               colors: [IllustrationColors.warmOrange, AppColors.red500],
@@ -322,7 +325,7 @@ class StreakCalendar extends StatelessWidget {
                 ? [
                     BoxShadow(
                       color: isFrozen
-                          ? _LocalPalette.c_38BDF8.withValues(alpha: 0.25)
+                          ? _LocalPalette.color38bdf8.withValues(alpha: 0.25)
                           : IllustrationColors.warmOrange.withValues(
                               alpha: 0.35,
                             ),

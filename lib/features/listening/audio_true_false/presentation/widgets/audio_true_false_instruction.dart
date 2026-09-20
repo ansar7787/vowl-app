@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_1A1A1A = Color(0xFF1A1A1A);
+  static const Color color1a1a1a = Color(0xFF1A1A1A);
 }
 
 class AudioTrueFalseInstruction extends StatelessWidget {
@@ -41,7 +41,7 @@ class AudioTrueFalseInstruction extends StatelessWidget {
               fontFamily: 'Outfit',
               fontSize: 24.sp,
               fontWeight: FontWeight.w800,
-              color: isDark ? Colors.white : _LocalPalette.c_1A1A1A,
+              color: isDark ? Colors.white : _LocalPalette.color1a1a1a,
               letterSpacing: 0.2,
               height: 1.2,
             ),

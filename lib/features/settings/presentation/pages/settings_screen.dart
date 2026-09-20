@@ -32,8 +32,8 @@ import 'package:vowl/core/theme/app_colors.dart';
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_9CA3AF = Color(0xFF9CA3AF);
-  static const Color c_EAB308 = Color(0xFFEAB308);
+  static const Color color9ca3af = Color(0xFF9CA3AF);
+  static const Color coloreab308 = Color(0xFFEAB308);
 }
 
 class SettingsScreen extends StatefulWidget {
@@ -763,7 +763,7 @@ class _SettingsSupportGroup extends StatelessWidget {
                 fallback: 'App Version',
               ),
               icon: Icons.info_outline_rounded,
-              color: _LocalPalette.c_9CA3AF,
+              color: _LocalPalette.color9ca3af,
               trailing: Text(
                 '$appVersion ($buildNumber)',
                 style: TextStyle(
@@ -805,7 +805,7 @@ class _SettingsDangerGroup extends StatelessWidget {
                 fallback: 'Clear Cache',
               ),
               icon: Icons.cleaning_services_rounded,
-              color: _LocalPalette.c_EAB308,
+              color: _LocalPalette.coloreab308,
               onTap: onClearCache,
             ),
             SettingsTile(

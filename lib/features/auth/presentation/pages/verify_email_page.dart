@@ -15,7 +15,7 @@ import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_000000 = Color(0xFF000000);
+  static const Color color000000 = Color(0xFF000000);
 }
 
 /// Email-verification gate displayed after account creation.
@@ -122,7 +122,7 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
       (c) => c.state.isMidnight,
     );
     return isMidnight
-        ? _LocalPalette.c_000000
+        ? _LocalPalette.color000000
         : (isDark ? AppColors.slate900 : AppColors.slate50);
   }
 

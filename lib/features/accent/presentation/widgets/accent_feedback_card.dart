@@ -10,7 +10,7 @@ import 'package:vowl/core/theme/app_colors.dart';
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_2DD4BF = Color(0xFF2DD4BF);
+  static const Color color2dd4bf = Color(0xFF2DD4BF);
 }
 
 /// Slide-up feedback card shown after a player submits an answer.
@@ -44,7 +44,7 @@ class AccentFeedbackCard extends StatelessWidget {
     final lives = state.livesRemaining;
 
     final primaryGradient = success
-        ? const [_LocalPalette.c_2DD4BF, AppColors.emerald500]
+        ? const [_LocalPalette.color2dd4bf, AppColors.emerald500]
         : const [AppColors.rose500, AppColors.rose700];
     final shadowColor = success ? AppColors.emerald500 : AppColors.rose700;
 

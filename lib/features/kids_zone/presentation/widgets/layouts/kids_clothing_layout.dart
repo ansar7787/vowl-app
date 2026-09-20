@@ -13,12 +13,12 @@ import 'package:vowl/features/kids_zone/presentation/widgets/kids_fitted_text.da
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_FDE68A = Color(0xFFFDE68A);
-  static const Color c_FEF3C7 = Color(0xFFFEF3C7);
-  static const Color c_FCA5A5 = Color(0xFFFCA5A5);
-  static const Color c_93C5FD = Color(0xFF93C5FD);
-  static const Color c_6EE7B7 = Color(0xFF6EE7B7);
-  static const Color c_C4B5FD = Color(0xFFC4B5FD);
+  static const Color colorfde68a = Color(0xFFFDE68A);
+  static const Color colorfef3c7 = Color(0xFFFEF3C7);
+  static const Color colorfca5a5 = Color(0xFFFCA5A5);
+  static const Color color93c5fd = Color(0xFF93C5FD);
+  static const Color color6ee7b7 = Color(0xFF6EE7B7);
+  static const Color colorc4b5fd = Color(0xFFC4B5FD);
 }
 
 /// Fashion Wardrobe Theme for Clothing Game
@@ -166,8 +166,8 @@ class KidsClothingLayout extends StatelessWidget {
             height: 200.h,
             decoration: BoxDecoration(
               color: isHovering
-                  ? _LocalPalette.c_FDE68A
-                  : _LocalPalette.c_FEF3C7, // Light wood inside closet
+                  ? _LocalPalette.colorfde68a
+                  : _LocalPalette.colorfef3c7, // Light wood inside closet
               borderRadius: BorderRadius.circular(16.r),
               border: Border.all(
                 color: isHovering ? AppColors.amber600 : KidsColors.warmAmber,
@@ -252,10 +252,10 @@ class KidsClothingLayout extends StatelessWidget {
     int index,
   ) {
     final colors = [
-      _LocalPalette.c_FCA5A5, // Light Red
-      _LocalPalette.c_93C5FD, // Light Blue
-      _LocalPalette.c_6EE7B7, // Mint
-      _LocalPalette.c_C4B5FD, // Light Purple
+      _LocalPalette.colorfca5a5, // Light Red
+      _LocalPalette.color93c5fd, // Light Blue
+      _LocalPalette.color6ee7b7, // Mint
+      _LocalPalette.colorc4b5fd, // Light Purple
     ];
     final tagColor = colors[index % colors.length];
 

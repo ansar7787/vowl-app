@@ -10,9 +10,9 @@ import 'package:vowl/core/theme/app_colors.dart';
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_C0C0C0 = Color(0xFFC0C0C0);
-  static const Color c_CD7F32 = Color(0xFFCD7F32);
-  static const Color c_A3713B = Color(0xFFA3713B);
+  static const Color colorc0c0c0 = Color(0xFFC0C0C0);
+  static const Color colorcd7f32 = Color(0xFFCD7F32);
+  static const Color colora3713b = Color(0xFFA3713B);
 }
 
 class LeaderboardPodium extends StatelessWidget {
@@ -432,9 +432,9 @@ class _PodiumSlot extends StatelessWidget {
       case 1:
         return [AppColors.gold, AppColors.amber500];
       case 2:
-        return [_LocalPalette.c_C0C0C0, AppColors.slate400];
+        return [_LocalPalette.colorc0c0c0, AppColors.slate400];
       case 3:
-        return [_LocalPalette.c_CD7F32, _LocalPalette.c_A3713B];
+        return [_LocalPalette.colorcd7f32, _LocalPalette.colora3713b];
       default:
         return [AppColors.blue500, AppColors.indigo500];
     }

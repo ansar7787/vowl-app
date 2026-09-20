@@ -3,14 +3,14 @@ import 'package:vowl/core/theme/app_colors.dart';
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_E0F2FE = Color(0xFFE0F2FE);
-  static const Color c_EC4899 = Color(0xFFEC4899);
-  static const Color c_6366F1 = Color(0xFF6366F1);
-  static const Color c_06B6D4 = Color(0xFF06B6D4);
-  static const Color c_4F46E5 = Color(0xFF4F46E5);
-  static const Color c_D946EF = Color(0xFFD946EF);
-  static const Color c_F97316 = Color(0xFFF97316);
-  static const Color c_FEF08A = Color(0xFFFEF08A);
+  static const Color colore0f2fe = Color(0xFFE0F2FE);
+  static const Color colorec4899 = Color(0xFFEC4899);
+  static const Color color6366f1 = Color(0xFF6366F1);
+  static const Color color06b6d4 = Color(0xFF06B6D4);
+  static const Color color4f46e5 = Color(0xFF4F46E5);
+  static const Color colord946ef = Color(0xFFD946EF);
+  static const Color colorf97316 = Color(0xFFF97316);
+  static const Color colorfef08a = Color(0xFFFEF08A);
 }
 
 /// Centralised, immutable asset registry for Vowl mascots and accessories.
@@ -138,26 +138,26 @@ class VowlAssets {
     // Mascots
     'vowl_prime': AppColors.blue500,
     'silver_wing': AppColors.slate500,
-    'crystal_swan': _LocalPalette.c_E0F2FE,
-    'neon_parrot': _LocalPalette.c_EC4899,
-    'night_bat': _LocalPalette.c_6366F1,
+    'crystal_swan': _LocalPalette.colore0f2fe,
+    'neon_parrot': _LocalPalette.colorec4899,
+    'night_bat': _LocalPalette.color6366f1,
     'emerald_peacock': AppColors.emerald500,
     'golden_dragon': AppColors.amber500,
     'shadow_wolf': AppColors.slate700,
-    'frost_penguin': _LocalPalette.c_06B6D4,
+    'frost_penguin': _LocalPalette.color06b6d4,
     'cosmic_unicorn': AppColors.violet500,
     // Accessories
-    'scholar_cap': _LocalPalette.c_4F46E5,
+    'scholar_cap': _LocalPalette.color4f46e5,
     'red_scarf': AppColors.red500,
     'cyber_visor': AppColors.teal500,
-    'magic_wand': _LocalPalette.c_D946EF,
+    'magic_wand': _LocalPalette.colord946ef,
     'golden_bell': AppColors.amber400,
-    'frost_aura': _LocalPalette.c_06B6D4,
+    'frost_aura': _LocalPalette.color06b6d4,
     'wind_whistler': AppColors.slate500,
-    'phoenix_wings': _LocalPalette.c_F97316,
-    'dragon_gem': _LocalPalette.c_EC4899,
+    'phoenix_wings': _LocalPalette.colorf97316,
+    'dragon_gem': _LocalPalette.colorec4899,
     'golden_crown': AppColors.amber500,
-    'starlight_aura': _LocalPalette.c_FEF08A,
+    'starlight_aura': _LocalPalette.colorfef08a,
     'mystic_amulet': AppColors.violet500,
   };
 

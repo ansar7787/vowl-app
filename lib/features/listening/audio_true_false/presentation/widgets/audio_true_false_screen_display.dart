@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_1A1A1A = Color(0xFF1A1A1A);
+  static const Color color1a1a1a = Color(0xFF1A1A1A);
 }
 
 class AudioTrueFalseScreenDisplay extends StatelessWidget {
@@ -27,7 +27,7 @@ class AudioTrueFalseScreenDisplay extends StatelessWidget {
       constraints: BoxConstraints(minHeight: 120.h),
       padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 32.h),
       decoration: BoxDecoration(
-        color: isDark ? _LocalPalette.c_1A1A1A : Colors.white,
+        color: isDark ? _LocalPalette.color1a1a1a : Colors.white,
         borderRadius: BorderRadius.circular(24.r),
         border: Border.all(
           color: isDark

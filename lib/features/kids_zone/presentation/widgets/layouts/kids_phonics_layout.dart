@@ -13,13 +13,13 @@ import 'package:vowl/core/theme/app_colors.dart';
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color c_09090B = Color(0xFF09090B);
-  static const Color c_52525B = Color(0xFF52525B);
-  static const Color c_818CF8 = Color(0xFF818CF8);
-  static const Color c_22C55E = Color(0xFF22C55E);
-  static const Color c_18181B = Color(0xFF18181B);
-  static const Color c_3F3F46 = Color(0xFF3F3F46);
-  static const Color c_27272A = Color(0xFF27272A);
+  static const Color color09090b = Color(0xFF09090B);
+  static const Color color52525b = Color(0xFF52525B);
+  static const Color color818cf8 = Color(0xFF818CF8);
+  static const Color color22c55e = Color(0xFF22C55E);
+  static const Color color18181b = Color(0xFF18181B);
+  static const Color color3f3f46 = Color(0xFF3F3F46);
+  static const Color color27272a = Color(0xFF27272A);
 }
 
 /// Music Studio Theme for Phonics Game
@@ -161,12 +161,12 @@ class KidsPhonicsLayout extends StatelessWidget {
             width: 280.w,
             height: 200.h,
             decoration: BoxDecoration(
-              color: _LocalPalette.c_09090B, // Deep black screen
+              color: _LocalPalette.color09090b, // Deep black screen
               borderRadius: BorderRadius.circular(16.r),
               border: Border.all(
                 color: isHovering
                     ? AppColors.indigo500
-                    : _LocalPalette.c_52525B,
+                    : _LocalPalette.color52525b,
                 width: isHovering ? 14.r : 12.r,
               ), // Silver monitor frame
               boxShadow: [
@@ -239,8 +239,8 @@ class KidsPhonicsLayout extends StatelessWidget {
                                   shadows: [
                                     Shadow(
                                       color: isHovering
-                                          ? _LocalPalette.c_818CF8
-                                          : _LocalPalette.c_22C55E,
+                                          ? _LocalPalette.color818cf8
+                                          : _LocalPalette.color22c55e,
                                       blurRadius: 15,
                                     ),
                                   ],
@@ -320,9 +320,9 @@ class KidsPhonicsLayout extends StatelessWidget {
           height: 90.r,
           width: 80.w, // Added width constraint for uniform responsive behavior
           decoration: BoxDecoration(
-            color: _LocalPalette.c_18181B,
+            color: _LocalPalette.color18181b,
             shape: BoxShape.circle,
-            border: Border.all(color: _LocalPalette.c_3F3F46, width: 1),
+            border: Border.all(color: _LocalPalette.color3f3f46, width: 1),
             boxShadow: [
               BoxShadow(
                 color: Colors.black.withValues(alpha: 0.3),
@@ -339,7 +339,7 @@ class KidsPhonicsLayout extends StatelessWidget {
                 height: 70.r,
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  border: Border.all(color: _LocalPalette.c_27272A),
+                  border: Border.all(color: _LocalPalette.color27272a),
                 ),
               ),
               Container(
@@ -347,7 +347,7 @@ class KidsPhonicsLayout extends StatelessWidget {
                 height: 50.r,
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  border: Border.all(color: _LocalPalette.c_27272A),
+                  border: Border.all(color: _LocalPalette.color27272a),
                 ),
               ),
 
