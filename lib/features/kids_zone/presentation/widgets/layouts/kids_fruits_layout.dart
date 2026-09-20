@@ -1,3 +1,4 @@
+import 'package:vowl/features/kids_zone/theme/kids_colors.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/utils/instruction_helper.dart';
 import 'package:flutter/material.dart';
@@ -133,7 +134,7 @@ class KidsFruitsLayout extends StatelessWidget {
                   borderRadius: BorderRadius.circular(8.r),
                   border: Border.all(
                     color: isHovering
-                        ? const Color(0xFFB45309)
+                        ? KidsColors.warmAmber
                         : const Color(0xFF92400E),
                     width: isHovering ? 8.r : 6.r,
                   ), // Dark wood frame

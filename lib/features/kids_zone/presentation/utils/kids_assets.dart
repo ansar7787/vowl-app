@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/illustration_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 
@@ -77,7 +78,7 @@ class KidsAssets {
       'name': 'Magic Wand',
       'price': 100,
       'icon': '🪄',
-      'color': const Color(0xFFA855F7),
+      'color': IllustrationColors.richPurple,
       'category': 'Magic',
     },
     {
@@ -117,7 +118,7 @@ class KidsAssets {
       'name': 'Pink Ribbon',
       'price': 150,
       'icon': '🎀',
-      'color': const Color(0xFFEC4899),
+      'color': IllustrationColors.vibrantPink,
       'category': 'Clothes',
     },
     {
@@ -189,7 +190,7 @@ class KidsAssets {
       'name': 'Star Chef',
       'price': 220,
       'icon': '👨‍🍳',
-      'color': const Color(0xFFF97316),
+      'color': IllustrationColors.warmOrange,
       'category': 'Clothes',
     },
     {

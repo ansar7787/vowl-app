@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/illustration_colors.dart';
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -58,7 +59,7 @@ class KidsSmartMixWidget extends StatelessWidget {
       {
         'route': '/kids/map/fruits',
         'title': 'Fruits',
-        'color': const Color(0xFFEC4899),
+        'color': IllustrationColors.vibrantPink,
         'icon': Icons.apple_rounded,
       },
     ];

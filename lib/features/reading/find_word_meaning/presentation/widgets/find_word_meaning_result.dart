@@ -90,7 +90,7 @@ class FindWordMeaningResult extends StatelessWidget {
                   height: 1.5,
                   color: isDark
                       ? Colors.white.withValues(alpha: 0.8)
-                      : const Color(0xFF475569),
+                      : AppColors.slate600,
                 ),
               ),
             ],

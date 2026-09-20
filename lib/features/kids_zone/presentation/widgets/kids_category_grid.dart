@@ -141,7 +141,7 @@ class _KidsCategoryGridState extends State<KidsCategoryGrid> {
                         fontWeight: FontWeight.w900,
                         color: widget.isDark
                             ? Colors.white70
-                            : const Color(0xFF475569),
+                            : AppColors.slate600,
                         letterSpacing: 1,
                       ),
                     ),

@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/illustration_colors.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -81,7 +82,10 @@ class Kids3DButton extends StatelessWidget {
             decoration: BoxDecoration(
               gradient: isGolden
                   ? const LinearGradient(
-                      colors: [Color(0xFFFFEA70), Color(0xFFFFD700)],
+                      colors: [
+                        Color(0xFFFFEA70),
+                        IllustrationColors.premiumGold,
+                      ],
                       begin: Alignment.topCenter,
                       end: Alignment.bottomCenter,
                     )

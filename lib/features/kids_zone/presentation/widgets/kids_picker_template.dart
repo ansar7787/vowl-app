@@ -325,7 +325,7 @@ class _KidsPickerTemplateState extends State<KidsPickerTemplate> {
           fontFamily: 'Outfit',
           fontSize: _getOptionFontSize(option),
           fontWeight: FontWeight.w800,
-          color: const Color(0xFF334155),
+          color: AppColors.slate700,
         ),
         textAlign: TextAlign.center,
       ),

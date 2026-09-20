@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/illustration_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -34,7 +35,10 @@ class LeaderboardHeader extends StatelessWidget {
                 padding: EdgeInsets.all(8.r),
                 decoration: BoxDecoration(
                   gradient: const LinearGradient(
-                    colors: [Color(0xFFFFD700), AppColors.amber500],
+                    colors: [
+                      IllustrationColors.premiumGold,
+                      AppColors.amber500,
+                    ],
                   ),
                   borderRadius: BorderRadius.circular(12.r),
                 ),

@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/illustration_colors.dart';
 import 'dart:ui' as ui;
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
@@ -518,7 +519,8 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
                                             SizedBox(width: 4.w),
                                             Icon(
                                               Icons.star_rounded,
-                                              color: const Color(0xFFFFD700),
+                                              color: IllustrationColors
+                                                  .premiumGold,
                                               size: 28.sp,
                                             ),
                                           ],

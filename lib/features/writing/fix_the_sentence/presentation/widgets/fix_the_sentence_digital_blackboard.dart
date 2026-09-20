@@ -1,3 +1,4 @@
+import 'package:vowl/features/kids_zone/theme/kids_colors.dart';
 import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -83,7 +84,7 @@ class FixTheSentenceDigitalBlackboard extends StatelessWidget {
                             builder: (context) {
                               final successColor = isDark
                                   ? tokens.gameCorrect
-                                  : const Color(0xFF16A34A);
+                                  : KidsColors.safeGreen;
                               return Container(
                                 margin: EdgeInsets.symmetric(horizontal: 8.w),
                                 padding: EdgeInsets.symmetric(

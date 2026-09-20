@@ -151,9 +151,7 @@ class KidsVerbsLayout extends StatelessWidget {
                   : AppColors.slate900, // Black board
               borderRadius: BorderRadius.circular(8.r),
               border: Border.all(
-                color: isHovering
-                    ? AppColors.slate500
-                    : const Color(0xFF334155),
+                color: isHovering ? AppColors.slate500 : AppColors.slate700,
                 width: isHovering ? 10.r : 8.r,
               ), // Grey steel frame
               boxShadow: [

@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/illustration_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -356,7 +357,7 @@ class GlobalProgressCard extends StatelessWidget {
                                     colors: [
                                       AppColors.indigo500,
                                       AppColors.violet500,
-                                      Color(0xFFA855F7),
+                                      IllustrationColors.richPurple,
                                     ],
                                   ),
                                   borderRadius: BorderRadius.circular(4.r),

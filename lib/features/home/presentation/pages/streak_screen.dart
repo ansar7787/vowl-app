@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/illustration_colors.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'dart:ui';
 import 'package:flutter/material.dart';
@@ -221,17 +222,17 @@ class _StreakScreenState extends State<StreakScreen> {
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
                 decoration: BoxDecoration(
-                  color: const Color(0xFFF97316).withValues(alpha: 0.15),
+                  color: IllustrationColors.warmOrange.withValues(alpha: 0.15),
                   borderRadius: BorderRadius.circular(24.r),
                   border: Border.all(
-                    color: const Color(0xFFF97316).withValues(alpha: 0.2),
+                    color: IllustrationColors.warmOrange.withValues(alpha: 0.2),
                   ),
                 ),
                 child: Row(
                   children: [
                     Icon(
                       Icons.local_fire_department_rounded,
-                      color: const Color(0xFFF97316),
+                      color: IllustrationColors.warmOrange,
                       size: 16.r,
                     ),
                     SizedBox(width: 8.w),

@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/illustration_colors.dart';
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -930,7 +931,8 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
                                               vertical: 18.h,
                                             ),
                                             decoration: BoxDecoration(
-                                              color: const Color(0xFFEC4899),
+                                              color: IllustrationColors
+                                                  .vibrantPink,
                                               borderRadius:
                                                   BorderRadius.circular(30.r),
                                               border: Border.all(

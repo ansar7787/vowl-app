@@ -1,3 +1,4 @@
+import 'package:vowl/features/kids_zone/theme/kids_colors.dart';
 import 'package:vowl/core/utils/instruction_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -338,7 +339,7 @@ class KidsPrepositionsLayout extends StatelessWidget {
               ),
               borderRadius: BorderRadius.circular(8.r),
               border: Border.all(
-                color: const Color(0xFFB45309),
+                color: KidsColors.warmAmber,
                 width: 2,
               ), // Bronze border
               boxShadow: const [

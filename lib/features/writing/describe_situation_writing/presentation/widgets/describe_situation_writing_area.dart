@@ -1,3 +1,4 @@
+import 'package:vowl/features/kids_zone/theme/kids_colors.dart';
 import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -78,7 +79,7 @@ class DescribeSituationWritingArea extends StatelessWidget {
               Builder(
                 builder: (context) {
                   final displayColor = wordCount >= minWords
-                      ? (isDark ? tokens.gameCorrect : const Color(0xFF16A34A))
+                      ? (isDark ? tokens.gameCorrect : KidsColors.safeGreen)
                       : (isDark
                             ? tokens.gameIncorrect
                             : const Color(0xFFDC2626));

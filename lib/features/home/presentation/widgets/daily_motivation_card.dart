@@ -1,3 +1,4 @@
+import 'package:vowl/features/kids_zone/theme/kids_colors.dart';
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -41,7 +42,7 @@ class _VowlCardPalette {
   // introducing a whole new color language.
   static Color streakTextFor(int streak, bool isDark) {
     if (streak >= 100) {
-      return isDark ? AppColors.gold : const Color(0xFFB45309);
+      return isDark ? AppColors.gold : KidsColors.warmAmber;
     }
     if (streak >= 30) {
       return isDark ? const Color(0xFFFCD34D) : const Color(0xFFC2740A);

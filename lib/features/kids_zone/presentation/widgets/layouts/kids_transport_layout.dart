@@ -73,7 +73,7 @@ class KidsTransportLayout extends StatelessWidget {
                     height: 40.h,
                     width: double.infinity,
                     decoration: BoxDecoration(
-                      color: const Color(0xFF334155), // Dark asphalt
+                      color: AppColors.slate700, // Dark asphalt
                       borderRadius: BorderRadius.vertical(
                         top: Radius.circular(24.r),
                       ),
@@ -243,7 +243,7 @@ class KidsTransportLayout extends StatelessWidget {
           height: 40.h,
           decoration: BoxDecoration(
             color: AppColors.slate400, // Metal grey
-            border: Border.all(color: const Color(0xFF475569), width: 2),
+            border: Border.all(color: AppColors.slate600, width: 2),
           ),
         ),
       ],
@@ -272,7 +272,7 @@ class KidsTransportLayout extends StatelessWidget {
         decoration: BoxDecoration(
           color: plateColor,
           borderRadius: BorderRadius.circular(8.r),
-          border: Border.all(color: const Color(0xFF475569), width: 3),
+          border: Border.all(color: AppColors.slate600, width: 3),
           boxShadow: [
             BoxShadow(
               color: Colors.black.withValues(alpha: 0.3),
@@ -331,7 +331,7 @@ class KidsTransportLayout extends StatelessWidget {
       width: 6.r,
       height: 6.r,
       decoration: const BoxDecoration(
-        color: Color(0xFF475569),
+        color: AppColors.slate600,
         shape: BoxShape.circle,
       ),
     );

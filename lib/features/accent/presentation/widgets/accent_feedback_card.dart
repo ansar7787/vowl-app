@@ -423,7 +423,7 @@ class _ExplanationBoxState extends State<_ExplanationBox> {
                             fontWeight: FontWeight.w600,
                             color: widget.isDark
                                 ? Colors.white.withValues(alpha: 0.9)
-                                : const Color(0xFF334155),
+                                : AppColors.slate700,
                             height: 1.4,
                           ),
                         ),

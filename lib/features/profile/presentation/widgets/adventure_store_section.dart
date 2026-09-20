@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/illustration_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -45,7 +46,7 @@ class AdventureStoreSection extends StatelessWidget {
         ),
         'cost': 300,
         'icon': Icons.bolt_rounded,
-        'color': const Color(0xFF3B82F6),
+        'color': IllustrationColors.brightBlue,
         'type': 'warp',
         'active': user.isDoubleXPActive,
         'activeText':

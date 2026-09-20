@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/illustration_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -44,7 +45,7 @@ import 'package:vowl/core/theme/app_colors.dart';
 const _kCompletionKeyPrefix = 'word_mixer_completed_';
 
 /// The fixed brand colour for this game screen.
-const _kPrimaryColor = Color(0xFFA855F7);
+const _kPrimaryColor = IllustrationColors.richPurple;
 
 class WordMixerScreen extends StatefulWidget {
   const WordMixerScreen({super.key});
@@ -191,7 +192,7 @@ class _WordMixerScreenState extends State<WordMixerScreen> {
     final length = _getWordLength();
     if (length <= 4) return AppColors.emerald500; // Emerald
     if (length <= 6) return AppColors.amber500; // Amber
-    if (length <= 8) return const Color(0xFFF97316); // Orange
+    if (length <= 8) return IllustrationColors.warmOrange; // Orange
     return AppColors.red500; // Red
   }
 

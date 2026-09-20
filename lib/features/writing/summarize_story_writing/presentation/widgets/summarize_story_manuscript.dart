@@ -43,7 +43,7 @@ class SummarizeStoryManuscript extends StatelessWidget {
               fontSize: 14.sp,
               color: isDark
                   ? Colors.white.withValues(alpha: 0.9)
-                  : const Color(0xFF334155),
+                  : AppColors.slate700,
               height: 1.5,
               fontWeight: FontWeight.w500,
             ),

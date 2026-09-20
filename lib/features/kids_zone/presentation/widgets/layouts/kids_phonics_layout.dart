@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/illustration_colors.dart';
 import 'package:vowl/core/utils/instruction_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -73,15 +74,12 @@ class KidsPhonicsLayout extends StatelessWidget {
                     height: 30.h,
                     width: double.infinity,
                     decoration: BoxDecoration(
-                      color: const Color(0xFF334155), // Slate desk
+                      color: AppColors.slate700, // Slate desk
                       borderRadius: BorderRadius.vertical(
                         top: Radius.circular(8.r),
                       ),
                       border: Border(
-                        top: BorderSide(
-                          color: const Color(0xFF475569),
-                          width: 4.h,
-                        ),
+                        top: BorderSide(color: AppColors.slate600, width: 4.h),
                       ),
                     ),
                   ),
@@ -297,9 +295,9 @@ class KidsPhonicsLayout extends StatelessWidget {
   ) {
     final colors = [
       AppColors.red500,
-      const Color(0xFF3B82F6),
+      IllustrationColors.brightBlue,
       AppColors.amber500,
-      const Color(0xFFEC4899),
+      IllustrationColors.vibrantPink,
     ];
     final labelColor = colors[index % colors.length];
 

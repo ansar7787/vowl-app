@@ -1,3 +1,5 @@
+import 'package:vowl/core/theme/illustration_colors.dart';
+import 'package:vowl/features/kids_zone/theme/kids_colors.dart';
 import 'package:vowl/core/utils/instruction_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -195,7 +197,7 @@ class KidsColorsLayout extends StatelessWidget {
                 width: 300.w,
                 height: 20.h,
                 decoration: BoxDecoration(
-                  color: const Color(0xFFB45309),
+                  color: KidsColors.warmAmber,
                   borderRadius: BorderRadius.circular(4.r),
                   boxShadow: const [
                     BoxShadow(color: Colors.black26, offset: Offset(0, 4)),
@@ -383,7 +385,7 @@ class KidsColorsLayout extends StatelessWidget {
       return const Color(0xFFFFDAB9);
     }
     if (lower.contains('gold')) {
-      return const Color(0xFFFFD700);
+      return IllustrationColors.premiumGold;
     }
     if (lower.contains('lime') || lower.contains('chartreuse')) {
       return const Color(0xFF32CD32);

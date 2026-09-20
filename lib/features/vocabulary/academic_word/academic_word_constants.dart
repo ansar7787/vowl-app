@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 abstract final class AcademicWordColors {
   static const Color cardDark = AppColors.slate800;
-  static const Color shardDark = Color(0xFF334155);
+  static const Color shardDark = AppColors.slate700;
   static const Color slotError = Colors.red;
 }
 

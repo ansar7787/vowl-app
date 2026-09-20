@@ -1,3 +1,4 @@
+import 'package:vowl/features/kids_zone/theme/kids_colors.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/utils/instruction_helper.dart';
 import 'package:flutter/material.dart';
@@ -76,7 +77,7 @@ class KidsEmotionsLayout extends StatelessWidget {
                       color: const Color(0xFF92400E), // Wooden stage
                       border: Border(
                         top: BorderSide(
-                          color: const Color(0xFFB45309),
+                          color: KidsColors.warmAmber,
                           width: 6.h,
                         ),
                       ),
@@ -154,7 +155,7 @@ class KidsEmotionsLayout extends StatelessWidget {
                 height: 200.h,
                 decoration: BoxDecoration(
                   color: isHovering
-                      ? const Color(0xFF334155)
+                      ? AppColors.slate700
                       : AppColors.slate800, // Dark backstage
                   borderRadius: BorderRadius.circular(8.r),
                   border: Border.all(

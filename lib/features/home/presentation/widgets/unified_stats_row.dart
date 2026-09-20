@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/illustration_colors.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -31,7 +32,7 @@ class UnifiedStatsRow extends StatelessWidget {
             label: context.tr('home.streak', fallback: 'Streak'),
             value: '${user.currentStreak}',
             icon: Icons.local_fire_department_rounded,
-            color: const Color(0xFFF97316),
+            color: IllustrationColors.warmOrange,
             route: AppRouter.streakRoute,
             delay: 0,
           ),

@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/illustration_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -297,8 +298,8 @@ class _PremiumScreenState extends State<PremiumScreen> {
                 left: -50.w,
                 child: StaticGlow(
                   color: isDark
-                      ? const Color(0xFFA855F7).withValues(alpha: 0.1)
-                      : const Color(0xFFA855F7).withValues(alpha: 0.05),
+                      ? IllustrationColors.richPurple.withValues(alpha: 0.1)
+                      : IllustrationColors.richPurple.withValues(alpha: 0.05),
                   radius: 200,
                 ),
               ),
@@ -400,7 +401,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
                   colors: [
                     AppColors.indigo500,
                     AppColors.violet500,
-                    Color(0xFFA855F7),
+                    IllustrationColors.richPurple,
                     AppColors.indigo500,
                     AppColors.rose500,
                   ],

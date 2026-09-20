@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/illustration_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -88,7 +89,7 @@ class _DiscoveryDeckState extends State<DiscoveryDeck> {
           fallback: 'Beat the clock',
         ),
         icon: Icons.bolt_rounded,
-        color: const Color(0xFFF97316),
+        color: IllustrationColors.warmOrange,
         quests: 3,
         difficulty: context.tr('home.discovery_diff_hard', fallback: 'Hard'),
         onTap: () => widget.onLaunchQuest('speed_blitz'),

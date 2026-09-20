@@ -209,7 +209,7 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
                       fontFamily: 'Outfit',
                       fontSize: 16.sp,
                       fontWeight: FontWeight.w500,
-                      color: isDark ? Colors.white70 : const Color(0xFF475569),
+                      color: isDark ? Colors.white70 : AppColors.slate600,
                       height: 1.5,
                     ),
                   ),

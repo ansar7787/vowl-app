@@ -1,3 +1,4 @@
+import 'package:vowl/features/kids_zone/theme/kids_colors.dart';
 import 'package:vowl/core/utils/instruction_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -232,7 +233,7 @@ class KidsNumbersLayout extends StatelessWidget {
   ) {
     // A vibrant gas giant planet style
     final baseColor = AppColors.amber500; // Amber planet
-    final shadowColor = const Color(0xFFB45309);
+    final shadowColor = KidsColors.warmAmber;
 
     final planetWidget = Container(
       height: 100.h,

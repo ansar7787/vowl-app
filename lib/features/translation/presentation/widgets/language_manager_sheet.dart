@@ -162,7 +162,7 @@ class LanguageManagerSheet extends StatelessWidget {
           ),
           style: TextStyle(
             fontFamily: 'Outfit',
-            color: isDark ? Colors.white70 : const Color(0xFF475569),
+            color: isDark ? Colors.white70 : AppColors.slate600,
           ),
         ),
         actions: [

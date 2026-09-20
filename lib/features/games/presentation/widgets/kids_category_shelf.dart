@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/illustration_colors.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -268,12 +269,12 @@ class _KidsGameEntryCard extends StatelessWidget {
         height: 26.r,
         decoration: BoxDecoration(
           gradient: const LinearGradient(
-            colors: [Color(0xFFFFD700), Color(0xFFFFA000)],
+            colors: [IllustrationColors.premiumGold, Color(0xFFFFA000)],
           ),
           shape: BoxShape.circle,
           boxShadow: [
             BoxShadow(
-              color: const Color(0xFFFFD700).withValues(alpha: 0.4),
+              color: IllustrationColors.premiumGold.withValues(alpha: 0.4),
               blurRadius: 6,
             ),
           ],
@@ -285,7 +286,7 @@ class _KidsGameEntryCard extends StatelessWidget {
     // Progress tier ring colors
     Color ringColor = color;
     if (levelsCleared >= 100) {
-      ringColor = const Color(0xFFFFD700);
+      ringColor = IllustrationColors.premiumGold;
     } else if (levelsCleared >= 50) {
       ringColor = const Color(0xFFC0C0C0);
     } else if (levelsCleared >= 25) {

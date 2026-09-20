@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/illustration_colors.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -37,7 +38,7 @@ class StreakHero extends StatelessWidget {
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final streak = user.currentStreak;
-    const color = Color(0xFFF97316);
+    const color = IllustrationColors.warmOrange;
 
     final now = DateTime.now();
     final hasPlayedToday =

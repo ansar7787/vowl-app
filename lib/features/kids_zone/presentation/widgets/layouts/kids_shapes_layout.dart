@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/illustration_colors.dart';
 import 'package:vowl/core/utils/instruction_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -147,7 +148,7 @@ class KidsShapesLayout extends StatelessWidget {
                 height: 200.h,
                 decoration: BoxDecoration(
                   color: isHovering
-                      ? const Color(0xFF3B82F6)
+                      ? IllustrationColors.brightBlue
                       : const Color(
                           0xFF1E3A8A,
                         ), // Blueprint Blue (lighter when hovering)
@@ -214,7 +215,7 @@ class KidsShapesLayout extends StatelessWidget {
     // Cycle through bright primary colors for the toy blocks
     final colors = [
       AppColors.red500, // Red
-      const Color(0xFF3B82F6), // Blue
+      IllustrationColors.brightBlue, // Blue
       AppColors.emerald500, // Green
       AppColors.amber500, // Yellow
     ];

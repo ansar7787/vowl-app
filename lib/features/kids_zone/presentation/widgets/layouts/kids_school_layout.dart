@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/illustration_colors.dart';
 import 'package:vowl/core/utils/instruction_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -223,7 +224,7 @@ class KidsSchoolLayout extends StatelessWidget {
   ) {
     final colors = [
       AppColors.red500, // Red
-      const Color(0xFF3B82F6), // Blue
+      IllustrationColors.brightBlue, // Blue
       AppColors.emerald500, // Green
       AppColors.violet500, // Purple
     ];

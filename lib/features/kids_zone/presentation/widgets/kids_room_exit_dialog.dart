@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/illustration_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -30,7 +31,7 @@ class KidsRoomExitDialog extends StatelessWidget {
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(30.r),
                       border: Border.all(
-                        color: const Color(0xFFA855F7),
+                        color: IllustrationColors.richPurple,
                         width: 4.w,
                       ),
                       boxShadow: [

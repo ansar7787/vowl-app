@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/illustration_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -284,8 +285,12 @@ class StreakCalendar extends StatelessWidget {
     Gradient? dayGradient;
     if (!isFuture && isPlayed) {
       dayGradient = isFrozen
-          ? const LinearGradient(colors: [Color(0xFF38BDF8), Color(0xFF3B82F6)])
-          : const LinearGradient(colors: [Color(0xFFF97316), AppColors.red500]);
+          ? const LinearGradient(
+              colors: [Color(0xFF38BDF8), IllustrationColors.brightBlue],
+            )
+          : const LinearGradient(
+              colors: [IllustrationColors.warmOrange, AppColors.red500],
+            );
     }
 
     return Column(
@@ -313,7 +318,9 @@ class StreakCalendar extends StatelessWidget {
                     BoxShadow(
                       color: isFrozen
                           ? const Color(0xFF38BDF8).withValues(alpha: 0.25)
-                          : const Color(0xFFF97316).withValues(alpha: 0.35),
+                          : IllustrationColors.warmOrange.withValues(
+                              alpha: 0.35,
+                            ),
                       blurRadius: 8,
                       spreadRadius: 2,
                     ),

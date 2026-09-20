@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/illustration_colors.dart';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -30,7 +31,7 @@ class ModernFeatureBar extends StatelessWidget {
                 'Unlock the ultimate word bank with zero ad interruptions.',
           ),
           isDark: isDark,
-          customColor: const Color(0xFF3B82F6), // Blue
+          customColor: IllustrationColors.brightBlue, // Blue
         ),
         SizedBox(height: 12.h),
         _buildFeatureCard(
@@ -154,7 +155,7 @@ class ModernFeatureBar extends StatelessWidget {
             fallback: 'Claim 100 free bonus coins every single day.',
           ),
           isDark: isDark,
-          customColor: const Color(0xFFEC4899), // Pink
+          customColor: IllustrationColors.vibrantPink, // Pink
         ),
         SizedBox(height: 12.h),
         _buildFeatureCard(

@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/illustration_colors.dart';
 import 'dart:math';
 import 'package:confetti/confetti.dart';
 import 'package:flutter/material.dart';
@@ -23,14 +24,14 @@ class _GameConfettiState extends State<GameConfetti> {
   final Random _random = Random(42);
 
   static const List<Color> _confettiColors = [
-    Color(0xFFFFD700), // Gold
+    IllustrationColors.premiumGold, // Gold
     Color(0xFF6366F1), // Indigo
     AppColors.emerald500, // Emerald
     AppColors.rose500, // Rose
     AppColors.violet500, // Violet
-    Color(0xFF3B82F6), // Blue
+    IllustrationColors.brightBlue, // Blue
     AppColors.amber500, // Amber
-    Color(0xFFEC4899), // Pink
+    IllustrationColors.vibrantPink, // Pink
   ];
 
   @override

@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/illustration_colors.dart';
 import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:vowl/core/theme/theme_cubit.dart';
 import 'package:confetti/confetti.dart';
@@ -282,7 +283,7 @@ class _StickerBookScreenState extends State<StickerBookScreen>
                                   gradient: const LinearGradient(
                                     colors: [
                                       AppColors.amber500,
-                                      Color(0xFFF97316),
+                                      IllustrationColors.warmOrange,
                                     ],
                                   ),
                                   borderRadius: BorderRadius.circular(8.r),

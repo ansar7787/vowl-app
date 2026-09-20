@@ -1,3 +1,4 @@
+import 'package:vowl/features/kids_zone/theme/kids_colors.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/utils/instruction_helper.dart';
 import 'package:flutter/material.dart';
@@ -161,9 +162,7 @@ class KidsFamilyLayout extends StatelessWidget {
                   : const Color(0xFFFEF08A), // Highlight yellow
               borderRadius: BorderRadius.circular(4.r),
               border: Border.all(
-                color: isHovering
-                    ? AppColors.amber600
-                    : const Color(0xFFB45309),
+                color: isHovering ? AppColors.amber600 : KidsColors.warmAmber,
                 width: 16.r,
               ), // Ornate wooden frame
               boxShadow: [
@@ -283,7 +282,7 @@ class KidsFamilyLayout extends StatelessWidget {
                 fontFamily: 'ComicSans', // Or any casual font
                 fontSize: 16.sp,
                 fontWeight: FontWeight.w700,
-                color: const Color(0xFF334155),
+                color: AppColors.slate700,
               ),
               maxLines: 2,
               textAlign: TextAlign.center,

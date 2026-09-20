@@ -159,6 +159,9 @@ class AppColors {
   /// Slate 700 — dark borders, strong muted text.
   static const Color slate700 = Color(0xFF334155);
 
+  /// Slate 700 - dark borders and subtle dark text.
+  static const Color slate700 = Color(0xFF334155);
+
   /// Slate 600 — secondary dark text.
   static const Color slate600 = Color(0xFF475569);
 

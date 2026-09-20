@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/illustration_colors.dart';
 import 'dart:math';
 
 import 'package:flutter/material.dart';
@@ -112,7 +113,7 @@ class AdventureMasteryGrid extends StatelessWidget {
         icon: Icons.child_care_rounded,
         progress: kidsProg,
         levelsCompleted: user.kidsTotalLevelsCompleted,
-        color: const Color(0xFFEC4899),
+        color: IllustrationColors.vibrantPink,
       ),
     );
 

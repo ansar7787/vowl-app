@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/illustration_colors.dart';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -134,7 +135,7 @@ class KidsRoomMoodIndicator extends StatelessWidget {
         return _MoodData(
           emoji: '🤩',
           label: 'Excited',
-          color: const Color(0xFFEC4899), // Pink 500
+          color: IllustrationColors.vibrantPink, // Pink 500
         );
       case 'happy':
       default:

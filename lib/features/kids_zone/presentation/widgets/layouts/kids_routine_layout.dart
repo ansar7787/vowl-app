@@ -313,7 +313,7 @@ class KidsRoutineLayout extends StatelessWidget {
                 fontFamily: 'Outfit',
                 fontSize: 16.sp,
                 fontWeight: FontWeight.w700,
-                color: const Color(0xFF475569),
+                color: AppColors.slate600,
               ),
               textAlign: TextAlign.center,
             ),

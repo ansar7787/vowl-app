@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/utils/locale_service.dart';
@@ -110,7 +111,7 @@ class _PedagogicalRuleBoxState extends State<PedagogicalRuleBox> {
                         fontWeight: FontWeight.w700,
                         color: widget.isDark
                             ? Colors.white.withValues(alpha: 0.8)
-                            : const Color(0xFF475569),
+                            : AppColors.slate600,
                         height: 1.4,
                       ),
                     ),

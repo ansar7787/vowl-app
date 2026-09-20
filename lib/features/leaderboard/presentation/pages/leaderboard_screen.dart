@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/illustration_colors.dart';
 import 'dart:async';
 import 'dart:math' as math;
 import 'dart:ui' as ui;
@@ -271,7 +272,9 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
                             end: Alignment.bottomCenter,
                             colors: [
                               AppColors.indigo500.withValues(alpha: 0.8),
-                              const Color(0xFF3B82F6).withValues(alpha: 0.4),
+                              IllustrationColors.brightBlue.withValues(
+                                alpha: 0.4,
+                              ),
                             ],
                           ),
                           borderRadius: BorderRadius.circular(2.r),
@@ -455,7 +458,10 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
                         ),
                         decoration: BoxDecoration(
                           gradient: const LinearGradient(
-                            colors: [AppColors.indigo500, Color(0xFF3B82F6)],
+                            colors: [
+                              AppColors.indigo500,
+                              IllustrationColors.brightBlue,
+                            ],
                           ),
                           borderRadius: BorderRadius.circular(24.r),
                           boxShadow: [

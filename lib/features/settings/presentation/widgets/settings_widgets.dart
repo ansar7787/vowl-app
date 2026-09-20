@@ -513,7 +513,7 @@ class SettingsProfileSection extends StatelessWidget {
                         gradient: LinearGradient(
                           colors: currentUser.isPremium
                               ? [AppColors.amber500, AppColors.amber600]
-                              : [AppColors.slate500, const Color(0xFF475569)],
+                              : [AppColors.slate500, AppColors.slate600],
                           begin: Alignment.topLeft,
                           end: Alignment.bottomRight,
                         ),

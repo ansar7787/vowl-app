@@ -1,3 +1,4 @@
+import 'package:vowl/features/kids_zone/theme/kids_colors.dart';
 import 'dart:async';
 import 'dart:math' as math;
 import 'dart:ui';
@@ -252,7 +253,7 @@ class _KidsMapNodeState extends State<KidsMapNode> {
       borderColor = AppColors.emerald500; // Emerald Green
       tierName = context.tr('kids_zone.tier_green', fallback: "GREEN TIER");
     } else if (level == 50) {
-      borderColor = const Color(0xFFB45309); // Bronze/Amber
+      borderColor = KidsColors.warmAmber; // Bronze/Amber
       tierName = context.tr('kids_zone.tier_bronze', fallback: "BRONZE TIER");
     } else if (level == 100) {
       borderColor = const Color(0xFFA0B2C6); // Premium Ice-Silver

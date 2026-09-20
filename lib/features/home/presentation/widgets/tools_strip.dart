@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/illustration_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -120,7 +121,7 @@ class ToolsStrip extends StatelessWidget {
           fallback: 'Match words and meanings in a fast-paced memory game',
         ),
         icon: Icons.extension_rounded,
-        color: const Color(0xFFEC4899), // Pink — 330°
+        color: IllustrationColors.vibrantPink, // Pink — 330°
         route: AppRouter.wordSnapRoute,
         requiresAd: false,
       ),
@@ -132,7 +133,7 @@ class ToolsStrip extends StatelessWidget {
           fallback: 'Combine letters to form words under pressure',
         ),
         icon: Icons.sort_by_alpha_rounded,
-        color: const Color(0xFFA855F7), // Purple — 270°
+        color: IllustrationColors.richPurple, // Purple — 270°
         route: AppRouter.wordMixerRoute,
         requiresAd: false,
       ),

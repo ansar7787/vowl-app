@@ -1,3 +1,4 @@
+import 'package:vowl/features/kids_zone/theme/kids_colors.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -102,7 +103,7 @@ class OpinionWritingScaleInterface extends StatelessWidget {
 
         final successColor = isDark
             ? AppColors.gameCorrect
-            : const Color(0xFF16A34A);
+            : KidsColors.safeGreen;
         final headerColor = isLeft
             ? successColor
             : (isDark ? AppColors.gameIncorrect : const Color(0xFFDC2626));

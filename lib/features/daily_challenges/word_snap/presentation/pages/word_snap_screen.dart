@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/illustration_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -46,7 +47,7 @@ import 'package:vowl/core/theme/app_colors.dart';
 const _kCompletionKeyPrefix = 'word_snap_completed_';
 
 /// The fixed brand colour for this game screen — matches tools_strip pink.
-const _kPrimaryColor = Color(0xFFEC4899);
+const _kPrimaryColor = IllustrationColors.vibrantPink;
 
 class WordSnapScreen extends StatefulWidget {
   final int level;

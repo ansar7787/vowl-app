@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/illustration_colors.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'dart:ui';
 import 'package:flutter/material.dart';
@@ -133,7 +134,7 @@ class MainWrapper extends StatelessWidget {
   ) {
     final isSelected = navigationShell.currentIndex == index;
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    const accentColor = Color(0xFF3B82F6);
+    const accentColor = IllustrationColors.brightBlue;
 
     return Semantics(
       button: true,

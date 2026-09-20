@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/illustration_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -382,14 +383,14 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
             _buildTab(
               "Clothes",
               Icons.checkroom_rounded,
-              const Color(0xFFEC4899),
+              IllustrationColors.vibrantPink,
               isDark,
             ),
             _buildTab("Toys", Icons.toys_rounded, AppColors.red500, isDark),
             _buildTab(
               "Magic",
               Icons.auto_awesome_rounded,
-              const Color(0xFFA855F7),
+              IllustrationColors.richPurple,
               isDark,
             ),
             _buildTab(

@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/illustration_colors.dart';
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -57,7 +58,7 @@ class CommandPod extends StatelessWidget {
     if (level >= 30) {
       return (
         label: 'ELITE',
-        color: const Color(0xFFA855F7),
+        color: IllustrationColors.richPurple,
         icon: Icons.diamond_rounded,
       );
     }
@@ -538,7 +539,7 @@ class CommandPod extends StatelessWidget {
                 context.tr('home.total_xp', fallback: 'Total XP'),
                 _formatXp(user.totalExp),
                 Icons.bolt_rounded,
-                const Color(0xFFA855F7),
+                IllustrationColors.richPurple,
                 AppRouter.adventureXPRoute,
               ),
             ),

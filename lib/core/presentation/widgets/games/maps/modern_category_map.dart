@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/illustration_colors.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'dart:async';
 import 'dart:math' as math;
@@ -827,7 +828,7 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
                     SizedBox(width: 4.w),
                     Icon(
                       Icons.star_rounded,
-                      color: const Color(0xFFFFD700),
+                      color: IllustrationColors.premiumGold,
                       size: 18.sp,
                     ),
                   ],

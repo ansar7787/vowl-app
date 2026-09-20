@@ -226,7 +226,7 @@ class _KidsFeedbackOverlayContentState
                   fontFamily: 'Outfit',
                   fontSize: 20.sp,
                   fontWeight: FontWeight.w700,
-                  color: const Color(0xFF334155),
+                  color: AppColors.slate700,
                   height: 1.4,
                 ),
               ),

@@ -1,3 +1,4 @@
+import 'package:vowl/features/kids_zone/theme/kids_colors.dart';
 import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -56,7 +57,7 @@ class ShortAnswerBoosterTokens extends StatelessWidget {
             ).hasMatch(text);
             final successColor = isDark
                 ? tokens.gameCorrect
-                : const Color(0xFF16A34A);
+                : KidsColors.safeGreen;
             final displayColor = isUsed
                 ? successColor
                 : (isDark ? Colors.white24 : Colors.black26);

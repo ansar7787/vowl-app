@@ -1,3 +1,4 @@
+import 'package:vowl/features/kids_zone/theme/kids_colors.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/utils/instruction_helper.dart';
 import 'package:flutter/material.dart';
@@ -152,9 +153,7 @@ class KidsTimeLayout extends StatelessWidget {
                   : const Color(0xFFFEF3C7), // Antique clock face
               shape: BoxShape.circle,
               border: Border.all(
-                color: isHovering
-                    ? AppColors.amber600
-                    : const Color(0xFFB45309),
+                color: isHovering ? AppColors.amber600 : KidsColors.warmAmber,
                 width: isHovering ? 16.r : 12.r,
               ), // Brass frame
               boxShadow: [

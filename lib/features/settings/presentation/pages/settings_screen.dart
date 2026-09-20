@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/illustration_colors.dart';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -582,7 +583,7 @@ class _SettingsPreferencesGroup extends StatelessWidget {
                 fallback: 'Game sounds and music',
               ),
               icon: Icons.volume_up_rounded,
-              color: const Color(0xFFEC4899),
+              color: IllustrationColors.vibrantPink,
               value: soundEnabled,
               isLoading: isLoading,
               onChanged: onToggleSound,
@@ -597,7 +598,7 @@ class _SettingsPreferencesGroup extends StatelessWidget {
                 fallback: 'Daily reminders and alerts',
               ),
               icon: Icons.notifications_active_rounded,
-              color: const Color(0xFFF97316),
+              color: IllustrationColors.warmOrange,
               value: notificationsEnabled,
               isLoading: isLoading,
               onChanged: onToggleNotifications,

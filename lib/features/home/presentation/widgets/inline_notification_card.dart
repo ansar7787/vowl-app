@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/illustration_colors.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -221,12 +222,16 @@ class _InlineNotificationCardState extends State<InlineNotificationCard>
                   color: isDark ? AppColors.slate800 : Colors.white,
                   borderRadius: BorderRadius.circular(24.r),
                   border: Border.all(
-                    color: const Color(0xFFF97316).withValues(alpha: 0.15),
+                    color: IllustrationColors.warmOrange.withValues(
+                      alpha: 0.15,
+                    ),
                     width: 1.0,
                   ),
                   boxShadow: [
                     BoxShadow(
-                      color: const Color(0xFFF97316).withValues(alpha: 0.08),
+                      color: IllustrationColors.warmOrange.withValues(
+                        alpha: 0.08,
+                      ),
                       blurRadius: 24.r,
                       offset: const Offset(0, 8),
                     ),
@@ -254,7 +259,7 @@ class _InlineNotificationCardState extends State<InlineNotificationCard>
                                 children: [
                                   Icon(
                                     Icons.notifications_active_rounded,
-                                    color: const Color(0xFFF97316),
+                                    color: IllustrationColors.warmOrange,
                                     size: 24.r,
                                   ),
                                   PositionedDirectional(

@@ -1,3 +1,4 @@
+import 'package:vowl/features/kids_zone/theme/kids_colors.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/utils/instruction_helper.dart';
 import 'package:flutter/material.dart';
@@ -187,7 +188,7 @@ class KidsNatureLayout extends StatelessWidget {
               borderRadius: BorderRadius.circular(16.r),
               border: Border.all(
                 color: isHovering
-                    ? const Color(0xFF16A34A)
+                    ? KidsColors.safeGreen
                     : const Color(0xFF451A03),
                 width: isHovering ? 10.r : 6.r,
               ),
@@ -209,7 +210,7 @@ class KidsNatureLayout extends StatelessWidget {
                   left: -10.w,
                   child: Icon(
                     Icons.eco_rounded,
-                    color: const Color(0xFF16A34A),
+                    color: KidsColors.safeGreen,
                     size: 60.r,
                   ),
                 ),

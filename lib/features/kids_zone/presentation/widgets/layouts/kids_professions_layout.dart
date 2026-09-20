@@ -1,3 +1,4 @@
+import 'package:vowl/features/kids_zone/theme/kids_colors.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/utils/instruction_helper.dart';
 import 'package:flutter/material.dart';
@@ -276,7 +277,7 @@ class KidsProfessionsLayout extends StatelessWidget {
             right: 0,
             child: Container(
               decoration: BoxDecoration(
-                color: const Color(0xFFB45309), // Dark Wood
+                color: KidsColors.warmAmber, // Dark Wood
                 borderRadius: BorderRadius.circular(8.r),
                 boxShadow: [
                   BoxShadow(
@@ -326,14 +327,14 @@ class KidsProfessionsLayout extends StatelessWidget {
               decoration: BoxDecoration(
                 color: AppColors.slate400, // Silver metal
                 borderRadius: BorderRadius.circular(6.r),
-                border: Border.all(color: const Color(0xFF475569), width: 2),
+                border: Border.all(color: AppColors.slate600, width: 2),
               ),
               child: Center(
                 child: Container(
                   width: 20.w,
                   height: 4.h,
                   decoration: BoxDecoration(
-                    color: const Color(0xFF334155),
+                    color: AppColors.slate700,
                     borderRadius: BorderRadius.circular(2.r),
                   ),
                 ),

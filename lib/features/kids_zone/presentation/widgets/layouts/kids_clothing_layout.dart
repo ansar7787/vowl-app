@@ -1,3 +1,4 @@
+import 'package:vowl/features/kids_zone/theme/kids_colors.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/utils/instruction_helper.dart';
 import 'package:flutter/material.dart';
@@ -159,9 +160,7 @@ class KidsClothingLayout extends StatelessWidget {
                   : const Color(0xFFFEF3C7), // Light wood inside closet
               borderRadius: BorderRadius.circular(16.r),
               border: Border.all(
-                color: isHovering
-                    ? AppColors.amber600
-                    : const Color(0xFFB45309),
+                color: isHovering ? AppColors.amber600 : KidsColors.warmAmber,
                 width: 12.r,
               ), // Dark wood frame
               boxShadow: [
