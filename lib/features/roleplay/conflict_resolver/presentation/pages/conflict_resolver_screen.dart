@@ -53,6 +53,22 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen>
   @override
   void initState() {
     super.initState();
+    isFirstStagePassedNotifier.addListener(() {
+      if (isFirstStagePassedNotifier.value &&
+          mounted &&
+          _scrollController.hasClients) {
+        Future.delayed(const Duration(milliseconds: 300), () {
+          if (mounted && _scrollController.hasClients) {
+            _scrollController.animateTo(
+              _scrollController.position.maxScrollExtent,
+              duration: const Duration(milliseconds: 400),
+              curve: Curves.easeOutCubic,
+            );
+          }
+        });
+      }
+    });
+
     isAnsweredNotifier.addListener(() {
       if (isAnsweredNotifier.value && mounted && _scrollController.hasClients) {
         Future.delayed(const Duration(milliseconds: 100), () {
@@ -177,6 +193,7 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen>
           ]),
           builder: (context, _) {
             return RoleplayBaseLayout(
+              disablePadding: true,
               gameType: widget.gameType,
               level: widget.level,
               isAnswered:
@@ -194,219 +211,208 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen>
                   ? GameShimmerLoading(primaryColor: theme.primaryColor)
                   : LayoutBuilder(
                       builder: (context, constraints) {
-                        return Stack(
-                          children: [
-                            RawScrollbar(
-                              controller: _scrollController,
-                              thumbColor: theme.primaryColor.withValues(
-                                alpha: 0.5,
-                              ),
-                              radius: Radius.circular(8.r),
-                              thickness: 4.w,
-                              child: CustomScrollView(
-                                physics: const BouncingScrollPhysics(),
-                                slivers: [
-                                  SliverFillRemaining(
-                                    hasScrollBody: true,
-                                    child: Column(
-                                      children: [
-                                        Expanded(
-                                          child: LayoutBuilder(
-                                            builder: (context, constraints) {
-                                              final isCompact =
-                                                  constraints.maxHeight < 580;
-                                              return Padding(
-                                                padding: EdgeInsets.symmetric(
-                                                  horizontal: 16.w,
-                                                  vertical: isCompact
-                                                      ? 5.h
-                                                      : 10.h,
-                                                ),
-                                                child: Column(
-                                                  children: [
-                                                    ConflictResolverInstruction(
-                                                      primaryColor:
-                                                          theme.primaryColor,
-                                                      instruction:
-                                                          InstructionHelper.getInstruction(
-                                                            quest,
-                                                          ),
-                                                    ),
-                                                    SizedBox(
-                                                      height: isCompact
-                                                          ? 10.h
-                                                          : 16.h,
-                                                    ),
-                                                    ConflictResolverConflictCard(
-                                                      scene: quest.scene ?? "",
-                                                      escalationLevel:
-                                                          quest
-                                                              .escalationLevel ??
-                                                          5,
-                                                      color: theme.primaryColor,
-                                                      isDark: isDark,
-                                                      rotation: _rotation.value,
-                                                    ),
-                                                    SizedBox(
-                                                      height: isCompact
-                                                          ? 16.h
-                                                          : 24.h,
-                                                    ),
-
-                                                    // Circular audio dials
-                                                    ConflictResolverDialConsole(
-                                                      targetValue:
-                                                          empathyTarget,
-                                                      color: theme.primaryColor,
-                                                      isDark: isDark,
-                                                      rotation: _rotation.value,
-                                                      waveAnimation:
-                                                          _waveController,
-                                                      onDialDragged:
-                                                          _onDialDragged,
-                                                    ),
-                                                    SizedBox(
-                                                      height: isCompact
-                                                          ? 20.h
-                                                          : 28.h,
-                                                    ),
-
-                                                    // Submit control button
-                                                    if (!isAnsweredNotifier
-                                                        .value)
-                                                      ScaleButton(
-                                                        onTap: () =>
-                                                            _submitAnswer(
-                                                              empathyTarget,
-                                                            ),
-                                                        child: Container(
-                                                          padding:
-                                                              EdgeInsets.symmetric(
-                                                                horizontal:
-                                                                    48.w,
-                                                                vertical:
-                                                                    isCompact
-                                                                    ? 10.h
-                                                                    : 14.h,
-                                                              ),
-                                                          decoration: BoxDecoration(
-                                                            borderRadius:
-                                                                BorderRadius.circular(
-                                                                  30.r,
-                                                                ),
-                                                            gradient: LinearGradient(
-                                                              colors: [
-                                                                theme
-                                                                    .primaryColor,
-                                                                theme
-                                                                    .primaryColor
-                                                                    .withValues(
-                                                                      alpha:
-                                                                          0.8,
-                                                                    ),
-                                                              ],
-                                                            ),
-                                                            boxShadow: [
-                                                              BoxShadow(
-                                                                color: theme
-                                                                    .primaryColor
-                                                                    .withValues(
-                                                                      alpha:
-                                                                          0.35,
-                                                                    ),
-                                                                blurRadius:
-                                                                    isCompact
-                                                                    ? 10
-                                                                    : 15,
-                                                              ),
-                                                            ],
-                                                          ),
-                                                          child: Row(
-                                                            mainAxisSize:
-                                                                MainAxisSize
-                                                                    .min,
-                                                            children: [
-                                                              Icon(
-                                                                Icons
-                                                                    .security_rounded,
-                                                                color: Colors
-                                                                    .white,
-                                                                size: isCompact
-                                                                    ? 16.r
-                                                                    : 18.r,
-                                                              ),
-                                                              SizedBox(
-                                                                width: 8.w,
-                                                              ),
-                                                              Text(
-                                                                "LOCK HARMONIC FREQUENCY",
-                                                                style: TextStyle(
-                                                                  fontFamily:
-                                                                      'Outfit',
-                                                                  fontSize:
-                                                                      isCompact
-                                                                      ? 10.sp
-                                                                      : 12.sp,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .bold,
-                                                                  color: Colors
-                                                                      .white,
-                                                                  letterSpacing:
-                                                                      1.5,
-                                                                ),
-                                                              ),
-                                                            ],
-                                                          ),
-                                                        ),
-                                                      ).animate().fadeIn(
-                                                        duration: 300.ms,
+                        return RawScrollbar(
+                          controller: _scrollController,
+                          thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                          radius: Radius.circular(8.r),
+                          thickness: 4.w,
+                          child: CustomScrollView(
+                            physics: const BouncingScrollPhysics(),
+                            slivers: [
+                              SliverFillRemaining(
+                                hasScrollBody: true,
+                                child: Column(
+                                  children: [
+                                    Expanded(
+                                      child: LayoutBuilder(
+                                        builder: (context, constraints) {
+                                          final isCompact =
+                                              constraints.maxHeight < 580;
+                                          return Padding(
+                                            padding: EdgeInsets.symmetric(
+                                              horizontal: 16.w,
+                                              vertical: isCompact ? 5.h : 10.h,
+                                            ),
+                                            child: Column(
+                                              children: [
+                                                ConflictResolverInstruction(
+                                                  primaryColor:
+                                                      theme.primaryColor,
+                                                  instruction:
+                                                      InstructionHelper.getInstruction(
+                                                        quest,
                                                       ),
-
-                                                    // Post-answer review cards
-                                                    SizedBox(
-                                                      height: isCompact
-                                                          ? 20.h
-                                                          : 40.h,
-                                                    ),
-                                                  ],
                                                 ),
-                                              );
-                                            },
-                                          ),
-                                        ),
-                                      ],
+                                                SizedBox(
+                                                  height: isCompact
+                                                      ? 10.h
+                                                      : 16.h,
+                                                ),
+                                                ConflictResolverConflictCard(
+                                                  scene: quest.scene ?? "",
+                                                  escalationLevel:
+                                                      quest.escalationLevel ??
+                                                      5,
+                                                  color: theme.primaryColor,
+                                                  isDark: isDark,
+                                                  rotation: _rotation.value,
+                                                ),
+                                                SizedBox(
+                                                  height: isCompact
+                                                      ? 16.h
+                                                      : 24.h,
+                                                ),
+
+                                                // Circular audio dials
+                                                ConflictResolverDialConsole(
+                                                  targetValue: empathyTarget,
+                                                  color: theme.primaryColor,
+                                                  isDark: isDark,
+                                                  rotation: _rotation.value,
+                                                  waveAnimation:
+                                                      _waveController,
+                                                  onDialDragged: _onDialDragged,
+                                                ),
+                                                SizedBox(
+                                                  height: isCompact
+                                                      ? 20.h
+                                                      : 28.h,
+                                                ),
+
+                                                // Submit control button
+                                                if (!isAnsweredNotifier.value)
+                                                  ScaleButton(
+                                                    onTap: () => _submitAnswer(
+                                                      empathyTarget,
+                                                    ),
+                                                    child: Container(
+                                                      padding:
+                                                          EdgeInsets.symmetric(
+                                                            horizontal: 48.w,
+                                                            vertical: isCompact
+                                                                ? 10.h
+                                                                : 14.h,
+                                                          ),
+                                                      decoration: BoxDecoration(
+                                                        borderRadius:
+                                                            BorderRadius.circular(
+                                                              30.r,
+                                                            ),
+                                                        gradient: LinearGradient(
+                                                          colors: [
+                                                            theme.primaryColor,
+                                                            theme.primaryColor
+                                                                .withValues(
+                                                                  alpha: 0.8,
+                                                                ),
+                                                          ],
+                                                        ),
+                                                        boxShadow: [
+                                                          BoxShadow(
+                                                            color: theme
+                                                                .primaryColor
+                                                                .withValues(
+                                                                  alpha: 0.35,
+                                                                ),
+                                                            blurRadius:
+                                                                isCompact
+                                                                ? 10
+                                                                : 15,
+                                                          ),
+                                                        ],
+                                                      ),
+                                                      child: Row(
+                                                        mainAxisSize:
+                                                            MainAxisSize.min,
+                                                        children: [
+                                                          Icon(
+                                                            Icons
+                                                                .security_rounded,
+                                                            color: Colors.white,
+                                                            size: isCompact
+                                                                ? 16.r
+                                                                : 18.r,
+                                                          ),
+                                                          SizedBox(width: 8.w),
+                                                          Text(
+                                                            "LOCK HARMONIC FREQUENCY",
+                                                            style: TextStyle(
+                                                              fontFamily:
+                                                                  'Outfit',
+                                                              fontSize:
+                                                                  isCompact
+                                                                  ? 10.sp
+                                                                  : 12.sp,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .bold,
+                                                              color:
+                                                                  Colors.white,
+                                                              letterSpacing:
+                                                                  1.5,
+                                                            ),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                    ),
+                                                  ).animate().fadeIn(
+                                                    duration: 300.ms,
+                                                  ),
+
+                                                // Post-answer review cards
+                                                SizedBox(
+                                                  height: isCompact
+                                                      ? 20.h
+                                                      : 40.h,
+                                                ),
+                                              ],
+                                            ),
+                                          );
+                                        },
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+
+                              if (isFirstStagePassedNotifier.value &&
+                                  !isAnsweredNotifier.value)
+                                SliverToBoxAdapter(
+                                  child: Padding(
+                                    padding: EdgeInsets.symmetric(
+                                      horizontal: 24.w,
+                                    ),
+                                    child: SpeakToConfirmOverlay(
+                                      expectedText:
+                                          quest.correctAnswer ??
+                                          "De-escalating conflict",
+                                      primaryColor: theme.primaryColor,
+                                      isPositioned: false,
+                                      onConfirmed: () {
+                                        context.read<RoleplayBloc>().add(
+                                          const RoleplaySpeakConfirmed(5),
+                                        );
+                                        _submitVerbalEvaluation(true);
+                                      },
+                                      onSkipped: () =>
+                                          _submitVerbalEvaluation(false),
                                     ),
                                   ),
-                                  SliverToBoxAdapter(
-                                    child: SizedBox(
-                                      height:
-                                          (isFirstStagePassedNotifier.value &&
-                                              !isAnsweredNotifier.value)
-                                          ? 380.h
-                                          : 60.h,
-                                    ),
-                                  ),
-                                ],
+                                ),
+                              SliverToBoxAdapter(
+                                child: SizedBox(
+                                  height:
+                                      MediaQuery.of(context).viewInsets.bottom >
+                                          0
+                                      ? MediaQuery.of(
+                                              context,
+                                            ).viewInsets.bottom +
+                                            40.h
+                                      : 120.h,
+                                ),
                               ),
-                            ),
-                            if (isFirstStagePassedNotifier.value &&
-                                !isAnsweredNotifier.value)
-                              SpeakToConfirmOverlay(
-                                expectedText:
-                                    quest.correctAnswer ??
-                                    "De-escalating conflict",
-                                primaryColor: theme.primaryColor,
-                                isPositioned: true,
-                                onConfirmed: () {
-                                  context.read<RoleplayBloc>().add(
-                                    const RoleplaySpeakConfirmed(5),
-                                  );
-                                  _submitVerbalEvaluation(true);
-                                },
-                                onSkipped: () => _submitVerbalEvaluation(false),
-                              ),
-                          ],
+                            ],
+                          ),
                         );
                       },
                     ),

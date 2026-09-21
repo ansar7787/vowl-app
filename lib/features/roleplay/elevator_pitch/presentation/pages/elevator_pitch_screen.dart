@@ -104,6 +104,7 @@ class _ElevatorPitchScreenState extends State<ElevatorPitchScreen>
           ]),
           builder: (context, _) {
             return RoleplayBaseLayout(
+              disablePadding: true,
               gameType: widget.gameType,
               level: widget.level,
               isAnswered: isAnsweredNotifier.value,
@@ -118,97 +119,102 @@ class _ElevatorPitchScreenState extends State<ElevatorPitchScreen>
                   ? GameShimmerLoading(primaryColor: theme.primaryColor)
                   : LayoutBuilder(
                       builder: (context, constraints) {
-                        return Stack(
-                          children: [
-                            RawScrollbar(
-                              controller: _scrollController,
-                              thumbColor: theme.primaryColor.withValues(
-                                alpha: 0.5,
+                        return RawScrollbar(
+                          controller: _scrollController,
+                          thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                          radius: Radius.circular(8.r),
+                          thickness: 4.w,
+                          child: CustomScrollView(
+                            physics: const BouncingScrollPhysics(),
+                            slivers: [
+                              SliverFillRemaining(
+                                hasScrollBody: true,
+                                child: Column(
+                                  children: [
+                                    Expanded(
+                                      child: LayoutBuilder(
+                                        builder: (context, constraints) {
+                                          final isCompact =
+                                              constraints.maxHeight < 580;
+                                          return Padding(
+                                            padding: EdgeInsets.symmetric(
+                                              horizontal: 16.w,
+                                              vertical: isCompact ? 5.h : 10.h,
+                                            ),
+                                            child: Column(
+                                              children: [
+                                                ElevatorPitchInstruction(
+                                                  primaryColor:
+                                                      theme.primaryColor,
+                                                  instruction:
+                                                      InstructionHelper.getInstruction(
+                                                        quest,
+                                                      ),
+                                                ),
+                                                SizedBox(
+                                                  height: isCompact
+                                                      ? 10.h
+                                                      : 16.h,
+                                                ),
+                                                ElevatorPitchPromptCard(
+                                                  prompt: quest.prompt ?? "",
+                                                  timeLimit:
+                                                      quest.timeLimit ?? 30,
+                                                  color: theme.primaryColor,
+                                                  isDark: isDark,
+                                                ),
+                                                SizedBox(
+                                                  height: isCompact
+                                                      ? 20.h
+                                                      : 40.h,
+                                                ),
+                                              ],
+                                            ),
+                                          );
+                                        },
+                                      ),
+                                    ),
+                                  ],
+                                ),
                               ),
-                              radius: Radius.circular(8.r),
-                              thickness: 4.w,
-                              child: CustomScrollView(
-                                physics: const BouncingScrollPhysics(),
-                                slivers: [
-                                  SliverFillRemaining(
-                                    hasScrollBody: true,
-                                    child: Column(
-                                      children: [
-                                        Expanded(
-                                          child: LayoutBuilder(
-                                            builder: (context, constraints) {
-                                              final isCompact =
-                                                  constraints.maxHeight < 580;
-                                              return Padding(
-                                                padding: EdgeInsets.symmetric(
-                                                  horizontal: 16.w,
-                                                  vertical: isCompact
-                                                      ? 5.h
-                                                      : 10.h,
-                                                ),
-                                                child: Column(
-                                                  children: [
-                                                    ElevatorPitchInstruction(
-                                                      primaryColor:
-                                                          theme.primaryColor,
-                                                      instruction:
-                                                          InstructionHelper.getInstruction(
-                                                            quest,
-                                                          ),
-                                                    ),
-                                                    SizedBox(
-                                                      height: isCompact
-                                                          ? 10.h
-                                                          : 16.h,
-                                                    ),
-                                                    ElevatorPitchPromptCard(
-                                                      prompt:
-                                                          quest.prompt ?? "",
-                                                      timeLimit:
-                                                          quest.timeLimit ?? 30,
-                                                      color: theme.primaryColor,
-                                                      isDark: isDark,
-                                                    ),
-                                                    SizedBox(
-                                                      height: isCompact
-                                                          ? 20.h
-                                                          : 40.h,
-                                                    ),
-                                                  ],
-                                                ),
-                                              );
-                                            },
-                                          ),
-                                        ),
-                                      ],
+
+                              if (!isAnsweredNotifier.value)
+                                SliverToBoxAdapter(
+                                  child: Padding(
+                                    padding: EdgeInsets.symmetric(
+                                      horizontal: 24.w,
+                                    ),
+                                    child: SpeakToConfirmOverlay(
+                                      expectedText:
+                                          quest.correctAnswer ??
+                                          "Elevator Pitch Example",
+                                      primaryColor: theme.primaryColor,
+                                      isPositioned: false,
+                                      onConfirmed: () {
+                                        context.read<RoleplayBloc>().add(
+                                          const RoleplaySpeakConfirmed(5),
+                                        );
+                                        _submitVerbalEvaluation(true);
+                                      },
+                                      onSkipped: () =>
+                                          _submitVerbalEvaluation(false),
                                     ),
                                   ),
-                                  SliverToBoxAdapter(
-                                    child: SizedBox(
-                                      height: (!isAnsweredNotifier.value)
-                                          ? 380.h
-                                          : 60.h,
-                                    ),
-                                  ),
-                                ],
+                                ),
+                              SliverToBoxAdapter(
+                                child: SizedBox(
+                                  height:
+                                      MediaQuery.of(context).viewInsets.bottom >
+                                          0
+                                      ? MediaQuery.of(
+                                              context,
+                                            ).viewInsets.bottom +
+                                            40.h
+                                      : 120.h,
+                                ),
                               ),
-                            ),
-                            if (!isAnsweredNotifier.value)
-                              SpeakToConfirmOverlay(
-                                expectedText:
-                                    quest.correctAnswer ??
-                                    "Elevator Pitch Example",
-                                primaryColor: theme.primaryColor,
-                                isPositioned: true,
-                                onConfirmed: () {
-                                  context.read<RoleplayBloc>().add(
-                                    const RoleplaySpeakConfirmed(5),
-                                  );
-                                  _submitVerbalEvaluation(true);
-                                },
-                                onSkipped: () => _submitVerbalEvaluation(false),
-                              ),
-                          ],
+                            ],
+                          ),
                         );
                       },
                     ),

@@ -219,6 +219,7 @@ class _GenericRoleplayScenarioScreenState
           ]),
           builder: (context, _) {
             return RoleplayBaseLayout(
+              disablePadding: true,
               gameType: widget.gameType,
               level: widget.level,
               mascotId: mascotId,
@@ -296,11 +297,9 @@ class _GenericRoleplayScenarioScreenState
                     ),
                   SliverToBoxAdapter(
                     child: SizedBox(
-                      height:
-                          (isFirstStagePassedNotifier.value &&
-                              !isAnsweredNotifier.value)
-                          ? 180.h
-                          : 60.h,
+                      height: MediaQuery.of(context).viewInsets.bottom > 0
+                          ? MediaQuery.of(context).viewInsets.bottom + 40.h
+                          : 120.h,
                     ),
                   ),
                 ],

@@ -61,6 +61,22 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen>
   @override
   void initState() {
     super.initState();
+    _showSpeakToConfirm.addListener(() {
+      if (_showSpeakToConfirm.value &&
+          mounted &&
+          _scrollController.hasClients) {
+        Future.delayed(const Duration(milliseconds: 300), () {
+          if (mounted && _scrollController.hasClients) {
+            _scrollController.animateTo(
+              _scrollController.position.maxScrollExtent,
+              duration: const Duration(milliseconds: 400),
+              curve: Curves.easeOutCubic,
+            );
+          }
+        });
+      }
+    });
+
     isAnsweredNotifier.addListener(() {
       if (isAnsweredNotifier.value && mounted && _scrollController.hasClients) {
         Future.delayed(const Duration(milliseconds: 100), () {
@@ -373,187 +389,196 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen>
             builder: (context, _) {
               return activeQuest == null
                   ? GameShimmerLoading(primaryColor: theme.primaryColor)
-                  : Stack(
-                      children: [
-                        RawScrollbar(
-                          controller: _scrollController,
-                          thumbColor: theme.primaryColor.withValues(alpha: 0.5),
-                          radius: Radius.circular(8.r),
-                          thickness: 4.w,
-                          child: CustomScrollView(
-                            controller: _scrollController,
-                            physics: const BouncingScrollPhysics(),
-                            slivers: [
-                              SliverPadding(
+                  : RawScrollbar(
+                      controller: _scrollController,
+                      thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                      radius: Radius.circular(8.r),
+                      thickness: 4.w,
+                      child: CustomScrollView(
+                        controller: _scrollController,
+                        physics: const BouncingScrollPhysics(),
+                        slivers: [
+                          SliverPadding(
+                            padding: EdgeInsets.symmetric(horizontal: 24.w),
+                            sliver: SliverToBoxAdapter(
+                              child: Column(
+                                children: [
+                                  SizedBox(height: 16.h),
+                                  DescribeSituationInstruction(
+                                    primaryColor: theme.primaryColor,
+                                    instruction: activeQuest.instruction,
+                                  ),
+                                  SizedBox(height: 24.h),
+
+                                  DescribeSituationPromptCard(
+                                    prompt: activeQuest.situation ?? "",
+                                    color: theme.primaryColor,
+                                    isDark: isDark,
+                                  ),
+                                  SizedBox(height: 24.h),
+
+                                  DescribeSituationWritingArea(
+                                    textController: _textController,
+                                    minWords: minWords,
+                                    wordCount: _wordCount.value,
+                                    usedKeywords: _usedKeywords.value,
+                                    color: theme.primaryColor,
+                                    isDark: isDark,
+                                  ),
+                                  SizedBox(height: 24.h),
+
+                                  DescribeSituationConstellationMap(
+                                    emojis: emojis,
+                                    keywords: rawKeywords,
+                                    color: theme.primaryColor,
+                                    isDark: isDark,
+                                    expandedEmojiIndex:
+                                        _expandedEmojiIndex.value,
+                                    onEmojiTap: (idx) =>
+                                        _onEmojiTap(idx, isAnswered),
+                                    onInjectKeyword: (kw) =>
+                                        _injectKeyword(kw, isAnswered),
+                                  ),
+                                  if (activeQuest.modelAnswer != null &&
+                                      isAnswered) ...[
+                                    SizedBox(height: 32.h),
+                                    Container(
+                                      padding: EdgeInsets.all(20.r),
+                                      decoration: BoxDecoration(
+                                        color: theme.primaryColor.withValues(
+                                          alpha: 0.1,
+                                        ),
+                                        borderRadius: BorderRadius.circular(
+                                          20.r,
+                                        ),
+                                        border: Border.all(
+                                          color: theme.primaryColor.withValues(
+                                            alpha: 0.3,
+                                          ),
+                                        ),
+                                      ),
+                                      child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                            "MODEL ANSWER",
+                                            style: TextStyle(
+                                              fontFamily: 'Outfit',
+                                              fontSize: 12.sp,
+                                              fontWeight: FontWeight.w800,
+                                              color: theme.primaryColor,
+                                              letterSpacing: 2,
+                                            ),
+                                          ),
+                                          SizedBox(height: 12.h),
+                                          Text(
+                                            activeQuest.modelAnswer!,
+                                            style: TextStyle(
+                                              fontFamily: 'Outfit',
+                                              fontSize: 14.sp,
+                                              color: isDark
+                                                  ? Colors.white70
+                                                  : Colors.black87,
+                                              height: 1.5,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+                                  SizedBox(height: 30.h),
+                                ],
+                              ),
+                            ),
+                          ),
+                          SliverToBoxAdapter(
+                            child: Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 24.w),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: [
+                                  if (!_showSpeakToConfirm.value && !isAnswered)
+                                    ScaleButton(
+                                      onTap: () => _submitAnswer(
+                                        minWords,
+                                        allKeywordPool,
+                                        isAnswered,
+                                      ),
+                                      child: Container(
+                                        width: double.infinity,
+                                        height: 60.h,
+                                        decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.circular(
+                                            20.r,
+                                          ),
+                                          color: _wordCount.value >= minWords
+                                              ? theme.primaryColor
+                                              : Colors.grey,
+                                          boxShadow: [
+                                            if (_wordCount.value >= minWords)
+                                              BoxShadow(
+                                                color: theme.primaryColor
+                                                    .withValues(alpha: 0.3),
+                                                blurRadius: 15,
+                                              ),
+                                          ],
+                                        ),
+                                        child: Center(
+                                          child: Text(
+                                            "SEAL NARRATIVE",
+                                            style: TextStyle(
+                                              fontFamily: 'Outfit',
+                                              fontSize: 16.sp,
+                                              fontWeight: FontWeight.w900,
+                                              color: Colors.white,
+                                              letterSpacing: 2,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  SizedBox(
+                                    height: !isAnswered
+                                        ? MediaQuery.viewInsetsOf(
+                                                context,
+                                              ).bottom +
+                                              40.h
+                                        : 160.h,
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+
+                          if (_showSpeakToConfirm.value && !isAnswered)
+                            SliverToBoxAdapter(
+                              child: Padding(
                                 padding: EdgeInsets.symmetric(horizontal: 24.w),
-                                sliver: SliverToBoxAdapter(
-                                  child: Column(
-                                    children: [
-                                      SizedBox(height: 16.h),
-                                      DescribeSituationInstruction(
-                                        primaryColor: theme.primaryColor,
-                                        instruction: activeQuest.instruction,
-                                      ),
-                                      SizedBox(height: 24.h),
-
-                                      DescribeSituationPromptCard(
-                                        prompt: activeQuest.situation ?? "",
-                                        color: theme.primaryColor,
-                                        isDark: isDark,
-                                      ),
-                                      SizedBox(height: 24.h),
-
-                                      DescribeSituationWritingArea(
-                                        textController: _textController,
-                                        minWords: minWords,
-                                        wordCount: _wordCount.value,
-                                        usedKeywords: _usedKeywords.value,
-                                        color: theme.primaryColor,
-                                        isDark: isDark,
-                                      ),
-                                      SizedBox(height: 24.h),
-
-                                      DescribeSituationConstellationMap(
-                                        emojis: emojis,
-                                        keywords: rawKeywords,
-                                        color: theme.primaryColor,
-                                        isDark: isDark,
-                                        expandedEmojiIndex:
-                                            _expandedEmojiIndex.value,
-                                        onEmojiTap: (idx) =>
-                                            _onEmojiTap(idx, isAnswered),
-                                        onInjectKeyword: (kw) =>
-                                            _injectKeyword(kw, isAnswered),
-                                      ),
-                                      if (activeQuest.modelAnswer != null &&
-                                          isAnswered) ...[
-                                        SizedBox(height: 32.h),
-                                        Container(
-                                          padding: EdgeInsets.all(20.r),
-                                          decoration: BoxDecoration(
-                                            color: theme.primaryColor
-                                                .withValues(alpha: 0.1),
-                                            borderRadius: BorderRadius.circular(
-                                              20.r,
-                                            ),
-                                            border: Border.all(
-                                              color: theme.primaryColor
-                                                  .withValues(alpha: 0.3),
-                                            ),
-                                          ),
-                                          child: Column(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: [
-                                              Text(
-                                                "MODEL ANSWER",
-                                                style: TextStyle(
-                                                  fontFamily: 'Outfit',
-                                                  fontSize: 12.sp,
-                                                  fontWeight: FontWeight.w800,
-                                                  color: theme.primaryColor,
-                                                  letterSpacing: 2,
-                                                ),
-                                              ),
-                                              SizedBox(height: 12.h),
-                                              Text(
-                                                activeQuest.modelAnswer!,
-                                                style: TextStyle(
-                                                  fontFamily: 'Outfit',
-                                                  fontSize: 14.sp,
-                                                  color: isDark
-                                                      ? Colors.white70
-                                                      : Colors.black87,
-                                                  height: 1.5,
-                                                ),
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                      ],
-                                      SizedBox(height: 30.h),
-                                    ],
-                                  ),
+                                child: SpeakToConfirmOverlay(
+                                  expectedText: _textController.text.trim(),
+                                  primaryColor: theme.primaryColor,
+                                  onConfirmed: _onSpeakConfirmed,
+                                  onSkipped: () {
+                                    _showSpeakToConfirm.value = false;
+                                    context.read<WritingBloc>().add(
+                                      const SubmitAnswer(false),
+                                    );
+                                  },
                                 ),
                               ),
-                              SliverToBoxAdapter(
-                                child: Padding(
-                                  padding: EdgeInsets.symmetric(
-                                    horizontal: 24.w,
-                                  ),
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.end,
-                                    children: [
-                                      if (!_showSpeakToConfirm.value &&
-                                          !isAnswered)
-                                        ScaleButton(
-                                          onTap: () => _submitAnswer(
-                                            minWords,
-                                            allKeywordPool,
-                                            isAnswered,
-                                          ),
-                                          child: Container(
-                                            width: double.infinity,
-                                            height: 60.h,
-                                            decoration: BoxDecoration(
-                                              borderRadius:
-                                                  BorderRadius.circular(20.r),
-                                              color:
-                                                  _wordCount.value >= minWords
-                                                  ? theme.primaryColor
-                                                  : Colors.grey,
-                                              boxShadow: [
-                                                if (_wordCount.value >=
-                                                    minWords)
-                                                  BoxShadow(
-                                                    color: theme.primaryColor
-                                                        .withValues(alpha: 0.3),
-                                                    blurRadius: 15,
-                                                  ),
-                                              ],
-                                            ),
-                                            child: Center(
-                                              child: Text(
-                                                "SEAL NARRATIVE",
-                                                style: TextStyle(
-                                                  fontFamily: 'Outfit',
-                                                  fontSize: 16.sp,
-                                                  fontWeight: FontWeight.w900,
-                                                  color: Colors.white,
-                                                  letterSpacing: 2,
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                      SizedBox(
-                                        height: !isAnswered
-                                            ? MediaQuery.viewInsetsOf(
-                                                    context,
-                                                  ).bottom +
-                                                  40.h
-                                            : 160.h,
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            ],
+                            ),
+                          SliverToBoxAdapter(
+                            child: SizedBox(
+                              height:
+                                  MediaQuery.of(context).viewInsets.bottom > 0
+                                  ? MediaQuery.of(context).viewInsets.bottom +
+                                        40.h
+                                  : 120.h,
+                            ),
                           ),
-                        ),
-                        if (_showSpeakToConfirm.value && !isAnswered)
-                          SpeakToConfirmOverlay(
-                            expectedText: _textController.text.trim(),
-                            primaryColor: theme.primaryColor,
-                            onConfirmed: _onSpeakConfirmed,
-                            onSkipped: () {
-                              _showSpeakToConfirm.value = false;
-                              context.read<WritingBloc>().add(
-                                const SubmitAnswer(false),
-                              );
-                            },
-                          ),
-                      ],
+                        ],
+                      ),
                     );
             },
           ),

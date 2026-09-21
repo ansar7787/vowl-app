@@ -416,6 +416,15 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen>
                               ),
                             ),
                           ),
+                          SliverToBoxAdapter(
+                            child: SizedBox(
+                              height:
+                                  MediaQuery.of(context).viewInsets.bottom > 0
+                                  ? MediaQuery.of(context).viewInsets.bottom +
+                                        40.h
+                                  : 120.h,
+                            ),
+                          ),
                         ],
                       ),
                     );

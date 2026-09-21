@@ -165,6 +165,8 @@ class _ReadingSpeedCheckScreenState extends State<ReadingSpeedCheckScreen>
           ]),
           builder: (context, _) {
             return ReadingBaseLayout(
+              useScrolling: false,
+              disablePadding: true,
               gameType: widget.gameType,
               level: widget.level,
               isAnswered: isAnsweredNotifier.value,
@@ -267,6 +269,15 @@ class _ReadingSpeedCheckScreenState extends State<ReadingSpeedCheckScreen>
                                   SizedBox(height: 60.h),
                                 ],
                               ),
+                            ),
+                          ),
+                          SliverToBoxAdapter(
+                            child: SizedBox(
+                              height:
+                                  MediaQuery.of(context).viewInsets.bottom > 0
+                                  ? MediaQuery.of(context).viewInsets.bottom +
+                                        40.h
+                                  : 120.h,
                             ),
                           ),
                         ],

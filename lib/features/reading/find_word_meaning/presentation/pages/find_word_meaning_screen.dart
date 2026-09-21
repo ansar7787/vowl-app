@@ -48,6 +48,22 @@ class _FindWordMeaningScreenState extends State<FindWordMeaningScreen>
   @override
   void initState() {
     super.initState();
+    _showSentenceBuilder.addListener(() {
+      if (_showSentenceBuilder.value &&
+          mounted &&
+          _scrollController.hasClients) {
+        Future.delayed(const Duration(milliseconds: 300), () {
+          if (mounted && _scrollController.hasClients) {
+            _scrollController.animateTo(
+              _scrollController.position.maxScrollExtent,
+              duration: const Duration(milliseconds: 400),
+              curve: Curves.easeOutCubic,
+            );
+          }
+        });
+      }
+    });
+
     initReadingGame();
   }
 
@@ -146,6 +162,7 @@ class _FindWordMeaningScreenState extends State<FindWordMeaningScreen>
                 : isCorrectBloc;
 
             return ReadingBaseLayout(
+              useScrolling: false,
               gameType: widget.gameType,
               level: widget.level,
               isAnswered: isAnswered,
@@ -158,111 +175,110 @@ class _FindWordMeaningScreenState extends State<FindWordMeaningScreen>
                   context.read<ReadingBloc>().add(const ReadingHintUsed()),
               child: quest == null
                   ? GameShimmerLoading(primaryColor: theme.primaryColor)
-                  : Stack(
-                      children: [
-                        RawScrollbar(
-                          controller: _scrollController,
-                          thumbColor: theme.primaryColor.withValues(alpha: 0.5),
-                          radius: Radius.circular(8.r),
-                          thickness: 4.w,
-                          child: CustomScrollView(
-                            controller: _scrollController,
-                            physics: const BouncingScrollPhysics(),
-                            slivers: [
-                              SliverPadding(
-                                padding: EdgeInsets.symmetric(horizontal: 24.w),
-                                sliver: SliverToBoxAdapter(
-                                  child: Column(
-                                    children: [
-                                      SizedBox(height: 16.h),
-                                      FindWordMeaningInstruction(
-                                        primaryColor: theme.primaryColor,
-                                        instruction:
-                                            InstructionHelper.getInstruction(
-                                              quest,
-                                            ),
-                                      ),
-                                      SizedBox(height: 24.h),
-                                      FindWordMeaningQuestionHeader(
-                                        text: quest.question ?? "",
-                                        color: theme.primaryColor,
-                                        isDark: isDark,
-                                      ),
-                                      SizedBox(height: 32.h),
-                                      FindWordMeaningInteractivePassage(
-                                        passage: quest.passage ?? "",
-                                        targetWord: quest.targetWord ?? "",
-                                        primaryColor: theme.primaryColor,
-                                        isDark: isDark,
-                                        isAnswered: isAnswered,
-                                        selectedIndex:
-                                            _pendingSelectedIndex.value,
-                                        isCorrectSelection: isCorrect,
-                                        onWordSelected:
-                                            (isCorrectTap, word, index) {
-                                              _submitFinalAnswer(
-                                                isCorrectTap,
-                                                index,
-                                                quest,
-                                              );
-                                            },
-                                      ),
-                                      if (isAnsweredBloc) ...[
-                                        SizedBox(height: 30.h),
-                                        FindWordMeaningResult(
-                                          quest: quest,
-                                          isCorrect: isCorrect == true,
-                                          isDark: isDark,
-                                        ),
-                                      ],
-                                    ],
+                  : RawScrollbar(
+                      controller: _scrollController,
+                      thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                      radius: Radius.circular(8.r),
+                      thickness: 4.w,
+                      child: CustomScrollView(
+                        controller: _scrollController,
+                        physics: const BouncingScrollPhysics(),
+                        slivers: [
+                          SliverPadding(
+                            padding: EdgeInsets.symmetric(horizontal: 24.w),
+                            sliver: SliverToBoxAdapter(
+                              child: Column(
+                                children: [
+                                  SizedBox(height: 16.h),
+                                  FindWordMeaningInstruction(
+                                    primaryColor: theme.primaryColor,
+                                    instruction:
+                                        InstructionHelper.getInstruction(quest),
                                   ),
-                                ),
-                              ),
-                              if (!_showSentenceBuilder.value)
-                                SliverToBoxAdapter(
-                                  child: Center(
-                                    child: Padding(
-                                      padding: EdgeInsets.only(
-                                        top: 40.h,
-                                        bottom: 20.h,
-                                      ),
-                                      child: Icon(
-                                        Icons.menu_book_rounded,
-                                        size: 140.r,
-                                        color: isDark
-                                            ? Colors.white.withValues(
-                                                alpha: 0.02,
-                                              )
-                                            : theme.primaryColor.withValues(
-                                                alpha: 0.05,
-                                              ),
-                                      ),
+                                  SizedBox(height: 24.h),
+                                  FindWordMeaningQuestionHeader(
+                                    text: quest.question ?? "",
+                                    color: theme.primaryColor,
+                                    isDark: isDark,
+                                  ),
+                                  SizedBox(height: 32.h),
+                                  FindWordMeaningInteractivePassage(
+                                    passage: quest.passage ?? "",
+                                    targetWord: quest.targetWord ?? "",
+                                    primaryColor: theme.primaryColor,
+                                    isDark: isDark,
+                                    isAnswered: isAnswered,
+                                    selectedIndex: _pendingSelectedIndex.value,
+                                    isCorrectSelection: isCorrect,
+                                    onWordSelected:
+                                        (isCorrectTap, word, index) {
+                                          _submitFinalAnswer(
+                                            isCorrectTap,
+                                            index,
+                                            quest,
+                                          );
+                                        },
+                                  ),
+                                  if (isAnsweredBloc) ...[
+                                    SizedBox(height: 30.h),
+                                    FindWordMeaningResult(
+                                      quest: quest,
+                                      isCorrect: isCorrect == true,
+                                      isDark: isDark,
                                     ),
+                                  ],
+                                ],
+                              ),
+                            ),
+                          ),
+                          if (!_showSentenceBuilder.value)
+                            SliverToBoxAdapter(
+                              child: Center(
+                                child: Padding(
+                                  padding: EdgeInsets.only(
+                                    top: 40.h,
+                                    bottom: 20.h,
+                                  ),
+                                  child: Icon(
+                                    Icons.menu_book_rounded,
+                                    size: 140.r,
+                                    color: isDark
+                                        ? Colors.white.withValues(alpha: 0.02)
+                                        : theme.primaryColor.withValues(
+                                            alpha: 0.05,
+                                          ),
                                   ),
                                 ),
-                              SliverToBoxAdapter(
-                                child: SizedBox(
-                                  height: _showSentenceBuilder.value
-                                      ? 380.h
-                                      : 60.h,
+                              ),
+                            ),
+
+                          if (_showSentenceBuilder.value)
+                            SliverToBoxAdapter(
+                              child: Padding(
+                                padding: EdgeInsets.symmetric(horizontal: 24.w),
+                                child: ContextSentenceBuilder(
+                                  targetKeyword: quest.word ?? '',
+                                  primaryColor: theme.primaryColor,
+                                  onConfirmed: _onSentenceBuilderComplete,
+                                  onSkipped: _onSentenceBuilderComplete,
+                                  allowSkip: true,
+                                  bonusCoins: 5,
+                                  isPositioned: false,
+                                  exampleSentence: quest.wordInContext,
                                 ),
                               ),
-                            ],
+                            ),
+                          SliverToBoxAdapter(
+                            child: SizedBox(
+                              height:
+                                  MediaQuery.of(context).viewInsets.bottom > 0
+                                  ? MediaQuery.of(context).viewInsets.bottom +
+                                        40.h
+                                  : 120.h,
+                            ),
                           ),
-                        ),
-                        if (_showSentenceBuilder.value)
-                          ContextSentenceBuilder(
-                            targetKeyword: quest.word ?? '',
-                            primaryColor: theme.primaryColor,
-                            onConfirmed: _onSentenceBuilderComplete,
-                            onSkipped: _onSentenceBuilderComplete,
-                            allowSkip: true,
-                            bonusCoins: 5,
-                            isPositioned: true,
-                            exampleSentence: quest.wordInContext,
-                          ),
-                      ],
+                        ],
+                      ),
                     ),
             );
           },

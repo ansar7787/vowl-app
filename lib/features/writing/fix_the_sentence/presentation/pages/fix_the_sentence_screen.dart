@@ -187,6 +187,7 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen>
             : null;
 
         return WritingBaseLayout(
+          disablePadding: true,
           gameType: widget.gameType,
           isFinalFailure: isLoaded ? state.isFinalFailure : false,
           level: widget.level,
@@ -361,6 +362,15 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen>
                                       : 160.h,
                                 ),
                               ],
+                            ),
+                          ),
+                          SliverToBoxAdapter(
+                            child: SizedBox(
+                              height:
+                                  MediaQuery.of(context).viewInsets.bottom > 0
+                                  ? MediaQuery.of(context).viewInsets.bottom +
+                                        40.h
+                                  : 120.h,
                             ),
                           ),
                         ],

@@ -50,6 +50,22 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
   @override
   void initState() {
     super.initState();
+    isFirstStagePassedNotifier.addListener(() {
+      if (isFirstStagePassedNotifier.value &&
+          mounted &&
+          _scrollController.hasClients) {
+        Future.delayed(const Duration(milliseconds: 300), () {
+          if (mounted && _scrollController.hasClients) {
+            _scrollController.animateTo(
+              _scrollController.position.maxScrollExtent,
+              duration: const Duration(milliseconds: 400),
+              curve: Curves.easeOutCubic,
+            );
+          }
+        });
+      }
+    });
+
     isAnsweredNotifier.addListener(() {
       if (isAnsweredNotifier.value && mounted && _scrollController.hasClients) {
         Future.delayed(const Duration(milliseconds: 100), () {
@@ -184,6 +200,7 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
           ]),
           builder: (context, _) {
             return RoleplayBaseLayout(
+              disablePadding: true,
               gameType: widget.gameType,
               level: widget.level,
               isAnswered:
@@ -201,325 +218,318 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
                   ? GameShimmerLoading(primaryColor: theme.primaryColor)
                   : LayoutBuilder(
                       builder: (context, constraints) {
-                        return Stack(
-                          children: [
-                            RawScrollbar(
-                              controller: _scrollController,
-                              thumbColor: theme.primaryColor.withValues(
-                                alpha: 0.5,
-                              ),
-                              radius: Radius.circular(8.r),
-                              thickness: 4.w,
-                              child: CustomScrollView(
-                                physics: const BouncingScrollPhysics(),
-                                slivers: [
-                                  SliverFillRemaining(
-                                    hasScrollBody: true,
-                                    child: Column(
-                                      children: [
-                                        Expanded(
-                                          child: LayoutBuilder(
-                                            builder: (context, constraints) {
-                                              final isCompact =
-                                                  constraints.maxHeight < 580;
-                                              return Padding(
-                                                padding: EdgeInsets.symmetric(
-                                                  horizontal: 16.w,
-                                                  vertical: isCompact
-                                                      ? 5.h
-                                                      : 10.h,
+                        return RawScrollbar(
+                          controller: _scrollController,
+                          thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                          radius: Radius.circular(8.r),
+                          thickness: 4.w,
+                          child: CustomScrollView(
+                            physics: const BouncingScrollPhysics(),
+                            slivers: [
+                              SliverFillRemaining(
+                                hasScrollBody: true,
+                                child: Column(
+                                  children: [
+                                    Expanded(
+                                      child: LayoutBuilder(
+                                        builder: (context, constraints) {
+                                          final isCompact =
+                                              constraints.maxHeight < 580;
+                                          return Padding(
+                                            padding: EdgeInsets.symmetric(
+                                              horizontal: 16.w,
+                                              vertical: isCompact ? 5.h : 10.h,
+                                            ),
+                                            child: Column(
+                                              children: [
+                                                SocialSparkInstruction(
+                                                  primaryColor:
+                                                      theme.primaryColor,
+                                                  instruction:
+                                                      InstructionHelper.getInstruction(
+                                                        quest,
+                                                      ),
                                                 ),
-                                                child: Column(
-                                                  children: [
-                                                    SocialSparkInstruction(
-                                                      primaryColor:
-                                                          theme.primaryColor,
-                                                      instruction:
-                                                          InstructionHelper.getInstruction(
-                                                            quest,
-                                                          ),
-                                                    ),
-                                                    SizedBox(
-                                                      height: isCompact
-                                                          ? 10.h
-                                                          : 16.h,
-                                                    ),
+                                                SizedBox(
+                                                  height: isCompact
+                                                      ? 10.h
+                                                      : 16.h,
+                                                ),
 
-                                                    SocialSparkConnectionMonitor(
-                                                      text: currentText,
-                                                      socialContext:
-                                                          quest.socialContext,
-                                                      color: theme.primaryColor,
-                                                      isDark: isDark,
-                                                      isAnswered:
-                                                          isAnsweredNotifier
-                                                              .value &&
-                                                          (isCorrectNotifier
-                                                                      .value !=
-                                                                  null ||
-                                                              !isFirstStagePassedNotifier
-                                                                  .value),
-                                                      isCorrect:
-                                                          isCorrectNotifier
-                                                              .value,
-                                                    ),
-                                                    SizedBox(
-                                                      height: isCompact
-                                                          ? 12.h
-                                                          : 20.h,
-                                                    ),
+                                                SocialSparkConnectionMonitor(
+                                                  text: currentText,
+                                                  socialContext:
+                                                      quest.socialContext,
+                                                  color: theme.primaryColor,
+                                                  isDark: isDark,
+                                                  isAnswered:
+                                                      isAnsweredNotifier
+                                                          .value &&
+                                                      (isCorrectNotifier
+                                                                  .value !=
+                                                              null ||
+                                                          !isFirstStagePassedNotifier
+                                                              .value),
+                                                  isCorrect:
+                                                      isCorrectNotifier.value,
+                                                ),
+                                                SizedBox(
+                                                  height: isCompact
+                                                      ? 12.h
+                                                      : 20.h,
+                                                ),
 
-                                                    SocialSparkGalaxyBoard(
-                                                      words: words,
-                                                      color: theme.primaryColor,
-                                                      isDark: isDark,
-                                                      selectedIndices:
-                                                          _selectedIndices
-                                                              .value,
-                                                      isAnswered:
-                                                          isAnsweredNotifier
-                                                              .value &&
-                                                          (isCorrectNotifier
-                                                                      .value !=
-                                                                  null ||
-                                                              !isFirstStagePassedNotifier
-                                                                  .value),
-                                                      isCorrect:
-                                                          isCorrectNotifier
-                                                              .value,
-                                                      pulseValue:
-                                                          _pulseController
-                                                              .value,
-                                                      onStarTap: _onStarTap,
-                                                    ),
-                                                    SizedBox(
-                                                      height: isCompact
-                                                          ? 12.h
-                                                          : 20.h,
-                                                    ),
+                                                SocialSparkGalaxyBoard(
+                                                  words: words,
+                                                  color: theme.primaryColor,
+                                                  isDark: isDark,
+                                                  selectedIndices:
+                                                      _selectedIndices.value,
+                                                  isAnswered:
+                                                      isAnsweredNotifier
+                                                          .value &&
+                                                      (isCorrectNotifier
+                                                                  .value !=
+                                                              null ||
+                                                          !isFirstStagePassedNotifier
+                                                              .value),
+                                                  isCorrect:
+                                                      isCorrectNotifier.value,
+                                                  pulseValue:
+                                                      _pulseController.value,
+                                                  onStarTap: _onStarTap,
+                                                ),
+                                                SizedBox(
+                                                  height: isCompact
+                                                      ? 12.h
+                                                      : 20.h,
+                                                ),
 
-                                                    // Trigger Action Buttons
-                                                    if (!isAnsweredNotifier
-                                                            .value &&
-                                                        _selectedIndices
-                                                            .value
-                                                            .isNotEmpty)
-                                                      Row(
-                                                        mainAxisAlignment:
-                                                            MainAxisAlignment
-                                                                .center,
-                                                        children: [
-                                                          ScaleButton(
-                                                            onTap:
-                                                                _clearSelection,
-                                                            child: Container(
-                                                              padding:
-                                                                  EdgeInsets.symmetric(
-                                                                    horizontal:
-                                                                        isCompact
-                                                                        ? 16.w
-                                                                        : 24.w,
-                                                                    vertical:
-                                                                        isCompact
-                                                                        ? 10.h
-                                                                        : 12.h,
+                                                // Trigger Action Buttons
+                                                if (!isAnsweredNotifier.value &&
+                                                    _selectedIndices
+                                                        .value
+                                                        .isNotEmpty)
+                                                  Row(
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .center,
+                                                    children: [
+                                                      ScaleButton(
+                                                        onTap: _clearSelection,
+                                                        child: Container(
+                                                          padding:
+                                                              EdgeInsets.symmetric(
+                                                                horizontal:
+                                                                    isCompact
+                                                                    ? 16.w
+                                                                    : 24.w,
+                                                                vertical:
+                                                                    isCompact
+                                                                    ? 10.h
+                                                                    : 12.h,
+                                                              ),
+                                                          decoration: BoxDecoration(
+                                                            color: theme
+                                                                .primaryColor
+                                                                .withValues(
+                                                                  alpha: 0.1,
+                                                                ),
+                                                            borderRadius:
+                                                                BorderRadius.circular(
+                                                                  30.r,
+                                                                ),
+                                                            border: Border.all(
+                                                              color: theme
+                                                                  .primaryColor
+                                                                  .withValues(
+                                                                    alpha: 0.3,
                                                                   ),
-                                                              decoration: BoxDecoration(
+                                                            ),
+                                                          ),
+                                                          child: Row(
+                                                            children: [
+                                                              Icon(
+                                                                Icons
+                                                                    .refresh_rounded,
+                                                                color: theme
+                                                                    .primaryColor,
+                                                                size: isCompact
+                                                                    ? 16.r
+                                                                    : 18.r,
+                                                              ),
+                                                              SizedBox(
+                                                                width: 6.w,
+                                                              ),
+                                                              Text(
+                                                                "CLEAR PATH",
+                                                                style: TextStyle(
+                                                                  fontFamily:
+                                                                      'Outfit',
+                                                                  fontSize:
+                                                                      isCompact
+                                                                      ? 10.sp
+                                                                      : 12.sp,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .bold,
+                                                                  color: theme
+                                                                      .primaryColor,
+                                                                ),
+                                                              ),
+                                                            ],
+                                                          ),
+                                                        ),
+                                                      ),
+                                                      SizedBox(
+                                                        width: isCompact
+                                                            ? 10.w
+                                                            : 16.w,
+                                                      ),
+                                                      ScaleButton(
+                                                        onTap: () => _submitAnswer(
+                                                          words,
+                                                          quest.correctAnswer ??
+                                                              "",
+                                                        ),
+                                                        child: Container(
+                                                          padding:
+                                                              EdgeInsets.symmetric(
+                                                                horizontal:
+                                                                    isCompact
+                                                                    ? 20.w
+                                                                    : 32.w,
+                                                                vertical:
+                                                                    isCompact
+                                                                    ? 10.h
+                                                                    : 12.h,
+                                                              ),
+                                                          decoration: BoxDecoration(
+                                                            borderRadius:
+                                                                BorderRadius.circular(
+                                                                  30.r,
+                                                                ),
+                                                            gradient: LinearGradient(
+                                                              colors: [
+                                                                theme
+                                                                    .primaryColor,
+                                                                theme
+                                                                    .primaryColor
+                                                                    .withValues(
+                                                                      alpha:
+                                                                          0.8,
+                                                                    ),
+                                                              ],
+                                                            ),
+                                                            boxShadow: [
+                                                              BoxShadow(
                                                                 color: theme
                                                                     .primaryColor
                                                                     .withValues(
                                                                       alpha:
-                                                                          0.1,
+                                                                          0.35,
                                                                     ),
-                                                                borderRadius:
-                                                                    BorderRadius.circular(
-                                                                      30.r,
-                                                                    ),
-                                                                border: Border.all(
-                                                                  color: theme
-                                                                      .primaryColor
-                                                                      .withValues(
-                                                                        alpha:
-                                                                            0.3,
-                                                                      ),
+                                                                blurRadius:
+                                                                    isCompact
+                                                                    ? 10
+                                                                    : 15,
+                                                              ),
+                                                            ],
+                                                          ),
+                                                          child: Row(
+                                                            children: [
+                                                              Icon(
+                                                                Icons
+                                                                    .bolt_rounded,
+                                                                color: Colors
+                                                                    .white,
+                                                                size: isCompact
+                                                                    ? 16.r
+                                                                    : 18.r,
+                                                              ),
+                                                              SizedBox(
+                                                                width: 6.w,
+                                                              ),
+                                                              Text(
+                                                                "IGNITE SPARK",
+                                                                style: TextStyle(
+                                                                  fontFamily:
+                                                                      'Outfit',
+                                                                  fontSize:
+                                                                      isCompact
+                                                                      ? 10.sp
+                                                                      : 12.sp,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .bold,
+                                                                  color: Colors
+                                                                      .white,
+                                                                  letterSpacing:
+                                                                      1.5,
                                                                 ),
                                                               ),
-                                                              child: Row(
-                                                                children: [
-                                                                  Icon(
-                                                                    Icons
-                                                                        .refresh_rounded,
-                                                                    color: theme
-                                                                        .primaryColor,
-                                                                    size:
-                                                                        isCompact
-                                                                        ? 16.r
-                                                                        : 18.r,
-                                                                  ),
-                                                                  SizedBox(
-                                                                    width: 6.w,
-                                                                  ),
-                                                                  Text(
-                                                                    "CLEAR PATH",
-                                                                    style: TextStyle(
-                                                                      fontFamily:
-                                                                          'Outfit',
-                                                                      fontSize:
-                                                                          isCompact
-                                                                          ? 10.sp
-                                                                          : 12.sp,
-                                                                      fontWeight:
-                                                                          FontWeight
-                                                                              .bold,
-                                                                      color: theme
-                                                                          .primaryColor,
-                                                                    ),
-                                                                  ),
-                                                                ],
-                                                              ),
-                                                            ),
+                                                            ],
                                                           ),
-                                                          SizedBox(
-                                                            width: isCompact
-                                                                ? 10.w
-                                                                : 16.w,
-                                                          ),
-                                                          ScaleButton(
-                                                            onTap: () =>
-                                                                _submitAnswer(
-                                                                  words,
-                                                                  quest.correctAnswer ??
-                                                                      "",
-                                                                ),
-                                                            child: Container(
-                                                              padding:
-                                                                  EdgeInsets.symmetric(
-                                                                    horizontal:
-                                                                        isCompact
-                                                                        ? 20.w
-                                                                        : 32.w,
-                                                                    vertical:
-                                                                        isCompact
-                                                                        ? 10.h
-                                                                        : 12.h,
-                                                                  ),
-                                                              decoration: BoxDecoration(
-                                                                borderRadius:
-                                                                    BorderRadius.circular(
-                                                                      30.r,
-                                                                    ),
-                                                                gradient: LinearGradient(
-                                                                  colors: [
-                                                                    theme
-                                                                        .primaryColor,
-                                                                    theme
-                                                                        .primaryColor
-                                                                        .withValues(
-                                                                          alpha:
-                                                                              0.8,
-                                                                        ),
-                                                                  ],
-                                                                ),
-                                                                boxShadow: [
-                                                                  BoxShadow(
-                                                                    color: theme
-                                                                        .primaryColor
-                                                                        .withValues(
-                                                                          alpha:
-                                                                              0.35,
-                                                                        ),
-                                                                    blurRadius:
-                                                                        isCompact
-                                                                        ? 10
-                                                                        : 15,
-                                                                  ),
-                                                                ],
-                                                              ),
-                                                              child: Row(
-                                                                children: [
-                                                                  Icon(
-                                                                    Icons
-                                                                        .bolt_rounded,
-                                                                    color: Colors
-                                                                        .white,
-                                                                    size:
-                                                                        isCompact
-                                                                        ? 16.r
-                                                                        : 18.r,
-                                                                  ),
-                                                                  SizedBox(
-                                                                    width: 6.w,
-                                                                  ),
-                                                                  Text(
-                                                                    "IGNITE SPARK",
-                                                                    style: TextStyle(
-                                                                      fontFamily:
-                                                                          'Outfit',
-                                                                      fontSize:
-                                                                          isCompact
-                                                                          ? 10.sp
-                                                                          : 12.sp,
-                                                                      fontWeight:
-                                                                          FontWeight
-                                                                              .bold,
-                                                                      color: Colors
-                                                                          .white,
-                                                                      letterSpacing:
-                                                                          1.5,
-                                                                    ),
-                                                                  ),
-                                                                ],
-                                                              ),
-                                                            ),
-                                                          ),
-                                                        ],
-                                                      ).animate().fadeIn(
-                                                        duration: 300.ms,
+                                                        ),
                                                       ),
+                                                    ],
+                                                  ).animate().fadeIn(
+                                                    duration: 300.ms,
+                                                  ),
 
-                                                    // Post-answer review cards
-                                                    SizedBox(
-                                                      height: isCompact
-                                                          ? 20.h
-                                                          : 40.h,
-                                                    ),
-                                                  ],
+                                                // Post-answer review cards
+                                                SizedBox(
+                                                  height: isCompact
+                                                      ? 20.h
+                                                      : 40.h,
                                                 ),
-                                              );
-                                            },
-                                          ),
-                                        ),
-                                      ],
+                                              ],
+                                            ),
+                                          );
+                                        },
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+
+                              if (isFirstStagePassedNotifier.value &&
+                                  !isAnsweredNotifier.value)
+                                SliverToBoxAdapter(
+                                  child: Padding(
+                                    padding: EdgeInsets.symmetric(
+                                      horizontal: 24.w,
+                                    ),
+                                    child: SpeakToConfirmOverlay(
+                                      expectedText:
+                                          quest.correctAnswer ?? currentText,
+                                      primaryColor: theme.primaryColor,
+                                      isPositioned: false,
+                                      onConfirmed: () {
+                                        context.read<RoleplayBloc>().add(
+                                          const RoleplaySpeakConfirmed(5),
+                                        );
+                                        _submitVerbalEvaluation(true);
+                                      },
+                                      onSkipped: () =>
+                                          _submitVerbalEvaluation(false),
                                     ),
                                   ),
-                                  SliverToBoxAdapter(
-                                    child: SizedBox(
-                                      height:
-                                          (isFirstStagePassedNotifier.value &&
-                                              !isAnsweredNotifier.value)
-                                          ? 380.h
-                                          : 60.h,
-                                    ),
-                                  ),
-                                ],
+                                ),
+                              SliverToBoxAdapter(
+                                child: SizedBox(
+                                  height:
+                                      MediaQuery.of(context).viewInsets.bottom >
+                                          0
+                                      ? MediaQuery.of(
+                                              context,
+                                            ).viewInsets.bottom +
+                                            40.h
+                                      : 120.h,
+                                ),
                               ),
-                            ),
-                            if (isFirstStagePassedNotifier.value &&
-                                !isAnsweredNotifier.value)
-                              SpeakToConfirmOverlay(
-                                expectedText:
-                                    quest.correctAnswer ?? currentText,
-                                primaryColor: theme.primaryColor,
-                                isPositioned: true,
-                                onConfirmed: () {
-                                  context.read<RoleplayBloc>().add(
-                                    const RoleplaySpeakConfirmed(5),
-                                  );
-                                  _submitVerbalEvaluation(true);
-                                },
-                                onSkipped: () => _submitVerbalEvaluation(false),
-                              ),
-                          ],
+                            ],
+                          ),
                         );
                       },
                     ),

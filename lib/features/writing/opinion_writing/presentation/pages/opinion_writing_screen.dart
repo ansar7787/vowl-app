@@ -66,6 +66,22 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen>
   @override
   void initState() {
     super.initState();
+    _pendingScaleSubmit.addListener(() {
+      if (_pendingScaleSubmit.value &&
+          mounted &&
+          _scrollController.hasClients) {
+        Future.delayed(const Duration(milliseconds: 300), () {
+          if (mounted && _scrollController.hasClients) {
+            _scrollController.animateTo(
+              _scrollController.position.maxScrollExtent,
+              duration: const Duration(milliseconds: 400),
+              curve: Curves.easeOutCubic,
+            );
+          }
+        });
+      }
+    });
+
     isAnsweredNotifier.addListener(() {
       if (isAnsweredNotifier.value && mounted && _scrollController.hasClients) {
         Future.delayed(const Duration(milliseconds: 100), () {
@@ -231,169 +247,182 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen>
 
               return quest == null
                   ? GameShimmerLoading(primaryColor: theme.primaryColor)
-                  : Stack(
-                      children: [
-                        RawScrollbar(
-                          controller: _scrollController,
-                          thumbColor: theme.primaryColor.withValues(alpha: 0.5),
-                          radius: Radius.circular(8.r),
-                          thickness: 4.w,
-                          child: CustomScrollView(
-                            controller: _scrollController,
-                            physics: const BouncingScrollPhysics(),
-                            slivers: [
-                              SliverPadding(
+                  : RawScrollbar(
+                      controller: _scrollController,
+                      thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                      radius: Radius.circular(8.r),
+                      thickness: 4.w,
+                      child: CustomScrollView(
+                        controller: _scrollController,
+                        physics: const BouncingScrollPhysics(),
+                        slivers: [
+                          SliverPadding(
+                            padding: EdgeInsets.symmetric(horizontal: 24.w),
+                            sliver: SliverToBoxAdapter(
+                              child: Column(
+                                children: [
+                                  SizedBox(height: 16.h),
+                                  OpinionWritingInstruction(
+                                    primaryColor: theme.primaryColor,
+                                  ),
+                                  SizedBox(height: 16.h),
+                                  if (quest.structureGuide != null)
+                                    Container(
+                                      margin: EdgeInsets.only(bottom: 16.h),
+                                      padding: EdgeInsets.symmetric(
+                                        horizontal: 12.w,
+                                        vertical: 8.h,
+                                      ),
+                                      decoration: BoxDecoration(
+                                        color: theme.primaryColor.withValues(
+                                          alpha: 0.1,
+                                        ),
+                                        borderRadius: BorderRadius.circular(
+                                          12.r,
+                                        ),
+                                        border: Border.all(
+                                          color: theme.primaryColor.withValues(
+                                            alpha: 0.3,
+                                          ),
+                                        ),
+                                      ),
+                                      child: Row(
+                                        mainAxisSize: MainAxisSize.min,
+                                        children: [
+                                          Icon(
+                                            Icons.format_list_bulleted,
+                                            color: theme.primaryColor,
+                                            size: 16.sp,
+                                          ),
+                                          SizedBox(width: 8.w),
+                                          Text(
+                                            quest.structureGuide!,
+                                            style: TextStyle(
+                                              fontFamily: 'Outfit',
+                                              fontSize: 12.sp,
+                                              fontWeight: FontWeight.w700,
+                                              color: theme.primaryColor,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  OpinionWritingThesisCard(
+                                    text: quest.prompt ?? "",
+                                    color: theme.primaryColor,
+                                    isDark: isDark,
+                                  ),
+                                  SizedBox(height: 8.h),
+
+                                  OpinionWritingScaleInterface(
+                                    scaleRotation: _scaleRotation.value,
+                                    leftPanArgs: _leftPanArgs.value,
+                                    rightPanArgs: _rightPanArgs.value,
+                                    color: theme.primaryColor,
+                                    isDark: isDark,
+                                    onDropArg: (arg, isLeft) =>
+                                        _onDropArg(arg, isLeft, isAnswered),
+                                    onRemoveArg: (arg, isLeft) =>
+                                        _removeArg(arg, isLeft, isAnswered),
+                                  ),
+                                  SizedBox(height: 8.h),
+
+                                  OpinionWritingArgumentStones(
+                                    options: options,
+                                    leftPanArgs: _leftPanArgs.value,
+                                    rightPanArgs: _rightPanArgs.value,
+                                    color: theme.primaryColor,
+                                    isDark: isDark,
+                                  ),
+                                  SizedBox(height: 24.h),
+                                ],
+                              ),
+                            ),
+                          ),
+                          SliverToBoxAdapter(
+                            child: Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 24.w),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: [
+                                  if (!isAnswered)
+                                    ScaleButton(
+                                      onTap: totalPlaced == 4
+                                          ? () => _submitAnswer(isAnswered)
+                                          : null,
+                                      child: Container(
+                                        width: double.infinity,
+                                        height: 60.h,
+                                        decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.circular(
+                                            20.r,
+                                          ),
+                                          color: totalPlaced == 4
+                                              ? theme.primaryColor
+                                              : Colors.grey,
+                                          boxShadow: [
+                                            if (totalPlaced == 4)
+                                              BoxShadow(
+                                                color: theme.primaryColor
+                                                    .withValues(alpha: 0.3),
+                                                blurRadius: 15,
+                                              ),
+                                          ],
+                                        ),
+                                        child: Center(
+                                          child: Text(
+                                            totalPlaced == 4
+                                                ? "BALANCE THE TRUTH"
+                                                : "PLACE ${4 - totalPlaced} MORE CARDS",
+                                            style: TextStyle(
+                                              fontFamily: 'Outfit',
+                                              fontSize: 16.sp,
+                                              fontWeight: FontWeight.w900,
+                                              color: Colors.white,
+                                              letterSpacing: 2,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  SizedBox(
+                                    height: !isAnswered
+                                        ? MediaQuery.viewInsetsOf(
+                                                context,
+                                              ).bottom +
+                                              40.h
+                                        : 160.h,
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+
+                          if (_pendingScaleSubmit.value && !isAnswered)
+                            SliverToBoxAdapter(
+                              child: Padding(
                                 padding: EdgeInsets.symmetric(horizontal: 24.w),
-                                sliver: SliverToBoxAdapter(
-                                  child: Column(
-                                    children: [
-                                      SizedBox(height: 16.h),
-                                      OpinionWritingInstruction(
-                                        primaryColor: theme.primaryColor,
-                                      ),
-                                      SizedBox(height: 16.h),
-                                      if (quest.structureGuide != null)
-                                        Container(
-                                          margin: EdgeInsets.only(bottom: 16.h),
-                                          padding: EdgeInsets.symmetric(
-                                            horizontal: 12.w,
-                                            vertical: 8.h,
-                                          ),
-                                          decoration: BoxDecoration(
-                                            color: theme.primaryColor
-                                                .withValues(alpha: 0.1),
-                                            borderRadius: BorderRadius.circular(
-                                              12.r,
-                                            ),
-                                            border: Border.all(
-                                              color: theme.primaryColor
-                                                  .withValues(alpha: 0.3),
-                                            ),
-                                          ),
-                                          child: Row(
-                                            mainAxisSize: MainAxisSize.min,
-                                            children: [
-                                              Icon(
-                                                Icons.format_list_bulleted,
-                                                color: theme.primaryColor,
-                                                size: 16.sp,
-                                              ),
-                                              SizedBox(width: 8.w),
-                                              Text(
-                                                quest.structureGuide!,
-                                                style: TextStyle(
-                                                  fontFamily: 'Outfit',
-                                                  fontSize: 12.sp,
-                                                  fontWeight: FontWeight.w700,
-                                                  color: theme.primaryColor,
-                                                ),
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                      OpinionWritingThesisCard(
-                                        text: quest.prompt ?? "",
-                                        color: theme.primaryColor,
-                                        isDark: isDark,
-                                      ),
-                                      SizedBox(height: 8.h),
-
-                                      OpinionWritingScaleInterface(
-                                        scaleRotation: _scaleRotation.value,
-                                        leftPanArgs: _leftPanArgs.value,
-                                        rightPanArgs: _rightPanArgs.value,
-                                        color: theme.primaryColor,
-                                        isDark: isDark,
-                                        onDropArg: (arg, isLeft) =>
-                                            _onDropArg(arg, isLeft, isAnswered),
-                                        onRemoveArg: (arg, isLeft) =>
-                                            _removeArg(arg, isLeft, isAnswered),
-                                      ),
-                                      SizedBox(height: 8.h),
-
-                                      OpinionWritingArgumentStones(
-                                        options: options,
-                                        leftPanArgs: _leftPanArgs.value,
-                                        rightPanArgs: _rightPanArgs.value,
-                                        color: theme.primaryColor,
-                                        isDark: isDark,
-                                      ),
-                                      SizedBox(height: 24.h),
-                                    ],
-                                  ),
+                                child: SpeakToConfirmOverlay(
+                                  expectedText:
+                                      quest.prompt ??
+                                      "I have balanced the arguments",
+                                  primaryColor: theme.primaryColor,
+                                  onConfirmed: () => _submitFinalAnswer(true),
+                                  onSkipped: () => _submitFinalAnswer(false),
                                 ),
                               ),
-                              SliverToBoxAdapter(
-                                child: Padding(
-                                  padding: EdgeInsets.symmetric(
-                                    horizontal: 24.w,
-                                  ),
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.end,
-                                    children: [
-                                      if (!isAnswered)
-                                        ScaleButton(
-                                          onTap: totalPlaced == 4
-                                              ? () => _submitAnswer(isAnswered)
-                                              : null,
-                                          child: Container(
-                                            width: double.infinity,
-                                            height: 60.h,
-                                            decoration: BoxDecoration(
-                                              borderRadius:
-                                                  BorderRadius.circular(20.r),
-                                              color: totalPlaced == 4
-                                                  ? theme.primaryColor
-                                                  : Colors.grey,
-                                              boxShadow: [
-                                                if (totalPlaced == 4)
-                                                  BoxShadow(
-                                                    color: theme.primaryColor
-                                                        .withValues(alpha: 0.3),
-                                                    blurRadius: 15,
-                                                  ),
-                                              ],
-                                            ),
-                                            child: Center(
-                                              child: Text(
-                                                totalPlaced == 4
-                                                    ? "BALANCE THE TRUTH"
-                                                    : "PLACE ${4 - totalPlaced} MORE CARDS",
-                                                style: TextStyle(
-                                                  fontFamily: 'Outfit',
-                                                  fontSize: 16.sp,
-                                                  fontWeight: FontWeight.w900,
-                                                  color: Colors.white,
-                                                  letterSpacing: 2,
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                      SizedBox(
-                                        height: !isAnswered
-                                            ? MediaQuery.viewInsetsOf(
-                                                    context,
-                                                  ).bottom +
-                                                  40.h
-                                            : 160.h,
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            ],
+                            ),
+                          SliverToBoxAdapter(
+                            child: SizedBox(
+                              height:
+                                  MediaQuery.of(context).viewInsets.bottom > 0
+                                  ? MediaQuery.of(context).viewInsets.bottom +
+                                        40.h
+                                  : 120.h,
+                            ),
                           ),
-                        ),
-                        if (_pendingScaleSubmit.value && !isAnswered)
-                          SpeakToConfirmOverlay(
-                            expectedText:
-                                quest.prompt ?? "I have balanced the arguments",
-                            primaryColor: theme.primaryColor,
-                            onConfirmed: () => _submitFinalAnswer(true),
-                            onSkipped: () => _submitFinalAnswer(false),
-                          ),
-                      ],
+                        ],
+                      ),
                     );
             },
           ),

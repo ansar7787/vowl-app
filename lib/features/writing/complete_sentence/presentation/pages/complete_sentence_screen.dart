@@ -381,21 +381,24 @@ class _CompleteSentenceBody extends StatelessWidget {
           SliverPadding(
             padding: EdgeInsets.only(top: 32.h, left: 24.w, right: 24.w),
             sliver: SliverToBoxAdapter(
-              child: DynamicAnagramWrapper(
-                expectedText: quest.correctAnswer ?? '',
-                primaryColor: theme.primaryColor,
-                onConfirmed: onAnagramSuccess,
-                onFailed: onAnagramFailed,
-                isPositioned: false,
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 24.w),
+                child: DynamicAnagramWrapper(
+                  expectedText: quest.correctAnswer ?? '',
+                  primaryColor: theme.primaryColor,
+                  onConfirmed: onAnagramSuccess,
+                  onFailed: onAnagramFailed,
+                  isPositioned: false,
+                ),
               ),
             ),
           ),
         SliverToBoxAdapter(
           child: SizedBox(
-            height: !isAnswered
-                ? MediaQuery.viewInsetsOf(context).bottom + 40.h
-                : 60.h,
-          ), // Bottom docking padding
+            height: MediaQuery.of(context).viewInsets.bottom > 0
+                ? MediaQuery.of(context).viewInsets.bottom + 40.h
+                : 120.h,
+          ),
         ),
       ],
     );

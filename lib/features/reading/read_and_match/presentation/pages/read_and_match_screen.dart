@@ -71,6 +71,20 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen>
   @override
   void initState() {
     super.initState();
+    _pendingSubmission.addListener(() {
+      if (_pendingSubmission.value && mounted && _scrollController.hasClients) {
+        Future.delayed(const Duration(milliseconds: 300), () {
+          if (mounted && _scrollController.hasClients) {
+            _scrollController.animateTo(
+              _scrollController.position.maxScrollExtent,
+              duration: const Duration(milliseconds: 400),
+              curve: Curves.easeOutCubic,
+            );
+          }
+        });
+      }
+    });
+
     isAnsweredNotifier.addListener(() {
       if (isAnsweredNotifier.value && mounted && _scrollController.hasClients) {
         Future.delayed(const Duration(milliseconds: 100), () {
@@ -246,6 +260,8 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen>
           ]),
           builder: (context, _) {
             return ReadingBaseLayout(
+              useScrolling: false,
+              disablePadding: true,
               gameType: widget.gameType,
               level: widget.level,
               isAnswered: isAnsweredNotifier.value,
@@ -257,181 +273,166 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen>
                   context.read<ReadingBloc>().add(const ReadingHintUsed()),
               child: quest == null
                   ? GameShimmerLoading(primaryColor: theme.primaryColor)
-                  : Stack(
-                      children: [
-                        LayoutBuilder(
-                          builder: (context, constraints) {
-                            return RawScrollbar(
-                              controller: _scrollController,
-                              thumbColor: theme.primaryColor.withValues(
-                                alpha: 0.5,
-                              ),
-                              radius: Radius.circular(8.r),
-                              thickness: 4.w,
-                              child: CustomScrollView(
-                                controller: _scrollController,
-                                physics: const BouncingScrollPhysics(),
-                                slivers: [
-                                  SliverPadding(
-                                    padding: EdgeInsets.symmetric(
-                                      horizontal: 20.w,
-                                    ),
-                                    sliver: SliverToBoxAdapter(
-                                      child: Column(
-                                        children: [
-                                          SizedBox(height: 16.h),
-                                          ReadAndMatchInstruction(
-                                            primaryColor: theme.primaryColor,
-                                            instruction:
-                                                InstructionHelper.getInstruction(
-                                                  quest,
-                                                ),
-                                          ),
-                                          SizedBox(height: 32.h),
-
-                                          // Interactive Canvas Stack
-                                          SizedBox(
-                                            key: _canvasKey,
-                                            height: 420.h,
-                                            child: Stack(
-                                              children: [
-                                                Row(
-                                                  children: [
-                                                    // Left Keys Column
-                                                    Expanded(
-                                                      child: Column(
-                                                        mainAxisAlignment:
-                                                            MainAxisAlignment
-                                                                .spaceEvenly,
-                                                        children: keys
-                                                            .map(
-                                                              (
-                                                                k,
-                                                              ) => ReadAndMatchTerminal(
-                                                                text: k,
-                                                                isSource: true,
-                                                                color:
-                                                                    getColorForKey(
-                                                                      k,
-                                                                    ),
-                                                                isDark: isDark,
-                                                                isMatched: _matches
-                                                                    .value
-                                                                    .containsKey(
-                                                                      k,
-                                                                    ),
-                                                                isActive:
-                                                                    _activeKey
-                                                                        .value ==
-                                                                    k,
-                                                                onTap: () =>
-                                                                    _onKeyTap(
-                                                                      k,
-                                                                    ),
-                                                              ),
-                                                            )
-                                                            .toList(),
-                                                      ),
-                                                    ),
-                                                    SizedBox(width: 40.w),
-                                                    // Right Values Column
-                                                    Expanded(
-                                                      child: Column(
-                                                        mainAxisAlignment:
-                                                            MainAxisAlignment
-                                                                .spaceEvenly,
-                                                        children: values
-                                                            .map(
-                                                              (
-                                                                v,
-                                                              ) => ReadAndMatchTerminal(
-                                                                text: v,
-                                                                isSource: false,
-                                                                color:
-                                                                    getColorForValue(
-                                                                      v,
-                                                                    ),
-                                                                isDark: isDark,
-                                                                isMatched: _matches
-                                                                    .value
-                                                                    .containsValue(
-                                                                      v,
-                                                                    ),
-                                                                isActive: false,
-                                                                onTap: () =>
-                                                                    _onValueTap(
-                                                                      v,
-                                                                      pairs,
-                                                                    ),
-                                                              ),
-                                                            )
-                                                            .toList(),
-                                                      ),
-                                                    ),
-                                                  ],
-                                                ),
-
-                                                // Render Glowing Lasers dynamically using key positions!
-                                                IgnorePointer(
-                                                  child: CustomPaint(
-                                                    painter: LaserBridgePainter(
-                                                      matches: _matches.value,
-                                                      activeKey:
-                                                          _activeKey.value,
-                                                      getCenter: _getCenterOf,
-                                                      getKey: _getKeyFor,
-                                                      color: theme.primaryColor,
-                                                      colorMap: colorMap,
-                                                    ),
-                                                    size: Size.infinite,
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
+                  : RawScrollbar(
+                      controller: _scrollController,
+                      thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                      radius: Radius.circular(8.r),
+                      thickness: 4.w,
+                      child: CustomScrollView(
+                        controller: _scrollController,
+                        physics: const BouncingScrollPhysics(),
+                        slivers: [
+                          SliverPadding(
+                            padding: EdgeInsets.symmetric(horizontal: 20.w),
+                            sliver: SliverToBoxAdapter(
+                              child: Column(
+                                children: [
+                                  SizedBox(height: 16.h),
+                                  ReadAndMatchInstruction(
+                                    primaryColor: theme.primaryColor,
+                                    instruction:
+                                        InstructionHelper.getInstruction(quest),
                                   ),
-                                  SliverToBoxAdapter(
-                                    child: SizedBox(
-                                      height:
-                                          (_pendingSubmission.value &&
-                                              !isAnsweredNotifier.value)
-                                          ? 380.h
-                                          : 60.h,
+                                  SizedBox(height: 32.h),
+
+                                  // Interactive Canvas Stack
+                                  SizedBox(
+                                    key: _canvasKey,
+                                    height: 420.h,
+                                    child: Stack(
+                                      children: [
+                                        Row(
+                                          children: [
+                                            // Left Keys Column
+                                            Expanded(
+                                              child: Column(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment
+                                                        .spaceEvenly,
+                                                children: keys
+                                                    .map(
+                                                      (
+                                                        k,
+                                                      ) => ReadAndMatchTerminal(
+                                                        text: k,
+                                                        isSource: true,
+                                                        color: getColorForKey(
+                                                          k,
+                                                        ),
+                                                        isDark: isDark,
+                                                        isMatched: _matches
+                                                            .value
+                                                            .containsKey(k),
+                                                        isActive:
+                                                            _activeKey.value ==
+                                                            k,
+                                                        onTap: () =>
+                                                            _onKeyTap(k),
+                                                      ),
+                                                    )
+                                                    .toList(),
+                                              ),
+                                            ),
+                                            SizedBox(width: 40.w),
+                                            // Right Values Column
+                                            Expanded(
+                                              child: Column(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment
+                                                        .spaceEvenly,
+                                                children: values
+                                                    .map(
+                                                      (
+                                                        v,
+                                                      ) => ReadAndMatchTerminal(
+                                                        text: v,
+                                                        isSource: false,
+                                                        color: getColorForValue(
+                                                          v,
+                                                        ),
+                                                        isDark: isDark,
+                                                        isMatched: _matches
+                                                            .value
+                                                            .containsValue(v),
+                                                        isActive: false,
+                                                        onTap: () =>
+                                                            _onValueTap(
+                                                              v,
+                                                              pairs,
+                                                            ),
+                                                      ),
+                                                    )
+                                                    .toList(),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+
+                                        // Render Glowing Lasers dynamically using key positions!
+                                        IgnorePointer(
+                                          child: CustomPaint(
+                                            painter: LaserBridgePainter(
+                                              matches: _matches.value,
+                                              activeKey: _activeKey.value,
+                                              getCenter: _getCenterOf,
+                                              getKey: _getKeyFor,
+                                              color: theme.primaryColor,
+                                              colorMap: colorMap,
+                                            ),
+                                            size: Size.infinite,
+                                          ),
+                                        ),
+                                      ],
                                     ),
                                   ),
                                 ],
                               ),
-                            );
-                          },
-                        ),
-                        if (_pendingSubmission.value &&
-                            !isAnsweredNotifier.value)
-                          SpeakToConfirmOverlay(
-                            expectedText:
-                                quest.textToSpeak ??
-                                quest.correctAnswer ??
-                                "Confirm",
-                            primaryColor: theme.primaryColor,
-                            onConfirmed: () => _submitFinalAnswer(true, pairs),
-                            onSkipped: () => _submitFinalAnswer(false, pairs),
-                            allowSkip: true,
-                            isPositioned: true,
-                          ),
-                        if (isAnsweredNotifier.value)
-                          Positioned(
-                            bottom: 50.h,
-                            left: 20.w,
-                            right: 20.w,
-                            child: ReadAndMatchResult(
-                              quest: quest,
-                              isCorrect: isCorrectNotifier.value == true,
-                              isDark: isDark,
                             ),
                           ),
-                      ],
+
+                          if (_pendingSubmission.value &&
+                              !isAnsweredNotifier.value)
+                            SliverToBoxAdapter(
+                              child: Padding(
+                                padding: EdgeInsets.symmetric(horizontal: 24.w),
+                                child: SpeakToConfirmOverlay(
+                                  expectedText:
+                                      quest.textToSpeak ??
+                                      quest.correctAnswer ??
+                                      "Confirm",
+                                  primaryColor: theme.primaryColor,
+                                  onConfirmed: () =>
+                                      _submitFinalAnswer(true, pairs),
+                                  onSkipped: () =>
+                                      _submitFinalAnswer(false, pairs),
+                                  allowSkip: true,
+                                  isPositioned: false,
+                                ),
+                              ),
+                            ),
+                          if (isAnsweredNotifier.value)
+                            SliverToBoxAdapter(
+                              child: Padding(
+                                padding: EdgeInsets.only(top: 24.h),
+                                child: ReadAndMatchResult(
+                                  quest: quest,
+                                  isCorrect: isCorrectNotifier.value == true,
+                                  isDark: isDark,
+                                ),
+                              ),
+                            ),
+
+                          SliverToBoxAdapter(
+                            child: SizedBox(
+                              height:
+                                  MediaQuery.of(context).viewInsets.bottom > 0
+                                  ? MediaQuery.of(context).viewInsets.bottom +
+                                        40.h
+                                  : 120.h,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
             );
           },

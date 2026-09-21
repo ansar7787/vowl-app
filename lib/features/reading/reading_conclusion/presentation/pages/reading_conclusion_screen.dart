@@ -102,6 +102,8 @@ class _ReadingConclusionScreenState extends State<ReadingConclusionScreen>
           ]),
           builder: (context, _) {
             return ReadingBaseLayout(
+              useScrolling: false,
+              disablePadding: true,
               gameType: widget.gameType,
               level: widget.level,
               isAnswered: isAnsweredNotifier.value,
@@ -113,94 +115,103 @@ class _ReadingConclusionScreenState extends State<ReadingConclusionScreen>
                   context.read<ReadingBloc>().add(const ReadingHintUsed()),
               child: quest == null
                   ? GameShimmerLoading(primaryColor: theme.primaryColor)
-                  : Stack(
-                      children: [
-                        RawScrollbar(
-                          controller: _scrollController,
-                          thumbColor: theme.primaryColor.withValues(alpha: 0.5),
-                          radius: Radius.circular(8.r),
-                          thickness: 4.w,
-                          child: CustomScrollView(
-                            controller: _scrollController,
-                            physics: const BouncingScrollPhysics(),
-                            slivers: [
-                              SliverPadding(
+                  : RawScrollbar(
+                      controller: _scrollController,
+                      thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                      radius: Radius.circular(8.r),
+                      thickness: 4.w,
+                      child: CustomScrollView(
+                        controller: _scrollController,
+                        physics: const BouncingScrollPhysics(),
+                        slivers: [
+                          SliverPadding(
+                            padding: EdgeInsets.symmetric(horizontal: 24.w),
+                            sliver: SliverToBoxAdapter(
+                              child: Column(
+                                children: [
+                                  SizedBox(height: 16.h),
+                                  ReadingConclusionInstruction(
+                                    primaryColor: theme.primaryColor,
+                                    instruction:
+                                        InstructionHelper.getInstruction(quest),
+                                  ),
+                                  SizedBox(height: 32.h),
+
+                                  ReadingConclusionPassage(
+                                    passage: quest.passage ?? "",
+                                    color: theme.primaryColor,
+                                    isDark: isDark,
+                                  ),
+                                  SizedBox(height: 32.h),
+
+                                  Text(
+                                    quest.question?.toUpperCase() ??
+                                        "WHAT IS THE LOGICAL CONCLUSION?",
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit',
+                                      fontSize: 14.sp,
+                                      fontWeight: FontWeight.w900,
+                                      color: theme.primaryColor,
+                                      letterSpacing: 1.5,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                          SliverToBoxAdapter(
+                            child: Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 24.w),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: [
+                                  if (isAnsweredNotifier.value) ...[
+                                    SizedBox(height: 30.h),
+                                    ReadingConclusionResult(
+                                      quest: quest,
+                                      isCorrect:
+                                          isCorrectNotifier.value == true,
+                                      isDark: isDark,
+                                    ),
+                                  ],
+                                  SizedBox(
+                                    height: (!isAnsweredNotifier.value)
+                                        ? 380.h
+                                        : 60.h,
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+
+                          if (!isAnsweredNotifier.value)
+                            SliverToBoxAdapter(
+                              child: Padding(
                                 padding: EdgeInsets.symmetric(horizontal: 24.w),
-                                sliver: SliverToBoxAdapter(
-                                  child: Column(
-                                    children: [
-                                      SizedBox(height: 16.h),
-                                      ReadingConclusionInstruction(
-                                        primaryColor: theme.primaryColor,
-                                        instruction:
-                                            InstructionHelper.getInstruction(
-                                              quest,
-                                            ),
-                                      ),
-                                      SizedBox(height: 32.h),
-
-                                      ReadingConclusionPassage(
-                                        passage: quest.passage ?? "",
-                                        color: theme.primaryColor,
-                                        isDark: isDark,
-                                      ),
-                                      SizedBox(height: 32.h),
-
-                                      Text(
-                                        quest.question?.toUpperCase() ??
-                                            "WHAT IS THE LOGICAL CONCLUSION?",
-                                        textAlign: TextAlign.center,
-                                        style: TextStyle(
-                                          fontFamily: 'Outfit',
-                                          fontSize: 14.sp,
-                                          fontWeight: FontWeight.w900,
-                                          color: theme.primaryColor,
-                                          letterSpacing: 1.5,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
+                                child: TypeToConfirmOverlay(
+                                  expectedText: quest.correctAnswer ?? "",
+                                  primaryColor: theme.primaryColor,
+                                  onConfirmed: () =>
+                                      _submitFinalAnswer(true, quest),
+                                  onSkipped: () =>
+                                      _submitFinalAnswer(false, quest),
+                                  allowSkip: true,
+                                  isPositioned: false,
                                 ),
                               ),
-                              SliverToBoxAdapter(
-                                child: Padding(
-                                  padding: EdgeInsets.symmetric(
-                                    horizontal: 24.w,
-                                  ),
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.end,
-                                    children: [
-                                      if (isAnsweredNotifier.value) ...[
-                                        SizedBox(height: 30.h),
-                                        ReadingConclusionResult(
-                                          quest: quest,
-                                          isCorrect:
-                                              isCorrectNotifier.value == true,
-                                          isDark: isDark,
-                                        ),
-                                      ],
-                                      SizedBox(
-                                        height: (!isAnsweredNotifier.value)
-                                            ? 380.h
-                                            : 60.h,
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            ],
+                            ),
+                          SliverToBoxAdapter(
+                            child: SizedBox(
+                              height:
+                                  MediaQuery.of(context).viewInsets.bottom > 0
+                                  ? MediaQuery.of(context).viewInsets.bottom +
+                                        40.h
+                                  : 120.h,
+                            ),
                           ),
-                        ),
-                        if (!isAnsweredNotifier.value)
-                          TypeToConfirmOverlay(
-                            expectedText: quest.correctAnswer ?? "",
-                            primaryColor: theme.primaryColor,
-                            onConfirmed: () => _submitFinalAnswer(true, quest),
-                            onSkipped: () => _submitFinalAnswer(false, quest),
-                            allowSkip: true,
-                            isPositioned: true,
-                          ),
-                      ],
+                        ],
+                      ),
                     ),
             );
           },

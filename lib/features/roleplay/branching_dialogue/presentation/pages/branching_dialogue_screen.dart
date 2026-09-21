@@ -54,6 +54,22 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen>
   @override
   void initState() {
     super.initState();
+    isFirstStagePassedNotifier.addListener(() {
+      if (isFirstStagePassedNotifier.value &&
+          mounted &&
+          _scrollController.hasClients) {
+        Future.delayed(const Duration(milliseconds: 300), () {
+          if (mounted && _scrollController.hasClients) {
+            _scrollController.animateTo(
+              _scrollController.position.maxScrollExtent,
+              duration: const Duration(milliseconds: 400),
+              curve: Curves.easeOutCubic,
+            );
+          }
+        });
+      }
+    });
+
     isAnsweredNotifier.addListener(() {
       if (isAnsweredNotifier.value && mounted && _scrollController.hasClients) {
         Future.delayed(const Duration(milliseconds: 100), () {
@@ -223,6 +239,7 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen>
           ]),
           builder: (context, _) {
             return RoleplayBaseLayout(
+              disablePadding: true,
               gameType: widget.gameType,
               level: widget.level,
               isAnswered:
@@ -240,164 +257,165 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen>
                   ? GameShimmerLoading(primaryColor: theme.primaryColor)
                   : LayoutBuilder(
                       builder: (context, constraints) {
-                        return Stack(
-                          children: [
-                            RawScrollbar(
-                              controller: _scrollController,
-                              thumbColor: theme.primaryColor.withValues(
-                                alpha: 0.5,
-                              ),
-                              radius: Radius.circular(8.r),
-                              thickness: 4.w,
-                              child: CustomScrollView(
-                                physics: const BouncingScrollPhysics(),
-                                slivers: [
-                                  SliverFillRemaining(
-                                    hasScrollBody: true,
-                                    child: Column(
-                                      children: [
-                                        Expanded(
-                                          child: LayoutBuilder(
-                                            builder: (context, constraints) {
-                                              final isCompact =
-                                                  constraints.maxHeight < 580;
-                                              return Padding(
-                                                padding: EdgeInsets.symmetric(
-                                                  horizontal: 16.w,
-                                                  vertical: isCompact
-                                                      ? 5.h
-                                                      : 10.h,
+                        return RawScrollbar(
+                          controller: _scrollController,
+                          thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                          radius: Radius.circular(8.r),
+                          thickness: 4.w,
+                          child: CustomScrollView(
+                            physics: const BouncingScrollPhysics(),
+                            slivers: [
+                              SliverFillRemaining(
+                                hasScrollBody: true,
+                                child: Column(
+                                  children: [
+                                    Expanded(
+                                      child: LayoutBuilder(
+                                        builder: (context, constraints) {
+                                          final isCompact =
+                                              constraints.maxHeight < 580;
+                                          return Padding(
+                                            padding: EdgeInsets.symmetric(
+                                              horizontal: 16.w,
+                                              vertical: isCompact ? 5.h : 10.h,
+                                            ),
+                                            child: Column(
+                                              children: [
+                                                BranchingDialogueInstruction(
+                                                  primaryColor:
+                                                      theme.primaryColor,
+                                                  instruction:
+                                                      InstructionHelper.getInstruction(
+                                                        quest,
+                                                      ),
                                                 ),
-                                                child: Column(
-                                                  children: [
-                                                    BranchingDialogueInstruction(
-                                                      primaryColor:
-                                                          theme.primaryColor,
-                                                      instruction:
-                                                          InstructionHelper.getInstruction(
-                                                            quest,
-                                                          ),
-                                                    ),
-                                                    SizedBox(
-                                                      height: isCompact
+                                                SizedBox(
+                                                  height: isCompact
+                                                      ? 10.h
+                                                      : 16.h,
+                                                ),
+                                                if (isAnsweredNotifier.value &&
+                                                    _selectedIndex.value !=
+                                                        null &&
+                                                    quest.consequenceScores !=
+                                                        null)
+                                                  Padding(
+                                                    padding: EdgeInsets.only(
+                                                      bottom: isCompact
                                                           ? 10.h
                                                           : 16.h,
                                                     ),
-                                                    if (isAnsweredNotifier
-                                                            .value &&
-                                                        _selectedIndex.value !=
-                                                            null &&
-                                                        quest.consequenceScores !=
-                                                            null)
-                                                      Padding(
-                                                        padding:
-                                                            EdgeInsets.only(
-                                                              bottom: isCompact
-                                                                  ? 10.h
-                                                                  : 16.h,
-                                                            ),
-                                                        child: BranchingDialogueRelationshipMeter(
-                                                          consequenceScore:
-                                                              quest
-                                                                  .consequenceScores![_selectedIndex
-                                                                  .value!],
-                                                          primaryColor: theme
-                                                              .primaryColor,
-                                                          isDark: isDark,
-                                                        ),
-                                                      ),
-                                                    BranchingDialoguePersonaConsole(
-                                                      quest: quest,
-                                                      color: theme.primaryColor,
-                                                      isDark: isDark,
-                                                      onListen: () =>
-                                                          _triggerAutoPlay(
-                                                            quest,
-                                                          ),
-                                                    ),
-                                                    SizedBox(
-                                                      height: isCompact
-                                                          ? 12.h
-                                                          : 20.h,
-                                                    ),
-                                                    BranchingDialogueConsoleBoard(
-                                                      options: options,
-                                                      consequencePreviews:
+                                                    child: BranchingDialogueRelationshipMeter(
+                                                      consequenceScore:
                                                           quest
-                                                              .consequencePreviews ??
-                                                          [],
-                                                      correctIndex:
-                                                          quest
-                                                              .correctAnswerIndex ??
-                                                          0,
-                                                      color: theme.primaryColor,
+                                                              .consequenceScores![_selectedIndex
+                                                              .value!],
+                                                      primaryColor:
+                                                          theme.primaryColor,
                                                       isDark: isDark,
-                                                      probeOffset:
-                                                          _probeOffset.value,
-                                                      hoveredIndex:
-                                                          _hoveredIndex.value,
-                                                      selectedIndex:
-                                                          _selectedIndex.value,
-                                                      isAnswered:
-                                                          isAnsweredNotifier
-                                                              .value ||
-                                                          isFirstStagePassedNotifier
-                                                              .value,
-                                                      onProbeDragStart:
-                                                          _onProbeDragStart,
-                                                      onProbeDragUpdate:
-                                                          _onProbeDragUpdate,
-                                                      onProbeDragEnd:
-                                                          _onProbeDragEnd,
-                                                      onOptionTapped: (index) =>
-                                                          _submitChoice(
-                                                            index,
-                                                            quest.correctAnswerIndex ??
-                                                                0,
-                                                          ),
                                                     ),
-                                                    SizedBox(
-                                                      height: isCompact
-                                                          ? 20.h
-                                                          : 40.h,
-                                                    ),
-                                                  ],
+                                                  ),
+                                                BranchingDialoguePersonaConsole(
+                                                  quest: quest,
+                                                  color: theme.primaryColor,
+                                                  isDark: isDark,
+                                                  onListen: () =>
+                                                      _triggerAutoPlay(quest),
                                                 ),
-                                              );
-                                            },
-                                          ),
-                                        ),
-                                      ],
+                                                SizedBox(
+                                                  height: isCompact
+                                                      ? 12.h
+                                                      : 20.h,
+                                                ),
+                                                BranchingDialogueConsoleBoard(
+                                                  options: options,
+                                                  consequencePreviews:
+                                                      quest
+                                                          .consequencePreviews ??
+                                                      [],
+                                                  correctIndex:
+                                                      quest
+                                                          .correctAnswerIndex ??
+                                                      0,
+                                                  color: theme.primaryColor,
+                                                  isDark: isDark,
+                                                  probeOffset:
+                                                      _probeOffset.value,
+                                                  hoveredIndex:
+                                                      _hoveredIndex.value,
+                                                  selectedIndex:
+                                                      _selectedIndex.value,
+                                                  isAnswered:
+                                                      isAnsweredNotifier
+                                                          .value ||
+                                                      isFirstStagePassedNotifier
+                                                          .value,
+                                                  onProbeDragStart:
+                                                      _onProbeDragStart,
+                                                  onProbeDragUpdate:
+                                                      _onProbeDragUpdate,
+                                                  onProbeDragEnd:
+                                                      _onProbeDragEnd,
+                                                  onOptionTapped: (index) =>
+                                                      _submitChoice(
+                                                        index,
+                                                        quest.correctAnswerIndex ??
+                                                            0,
+                                                      ),
+                                                ),
+                                                SizedBox(
+                                                  height: isCompact
+                                                      ? 20.h
+                                                      : 40.h,
+                                                ),
+                                              ],
+                                            ),
+                                          );
+                                        },
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+
+                              if (isFirstStagePassedNotifier.value &&
+                                  !isAnsweredNotifier.value &&
+                                  _selectedIndex.value != null)
+                                SliverToBoxAdapter(
+                                  child: Padding(
+                                    padding: EdgeInsets.symmetric(
+                                      horizontal: 24.w,
+                                    ),
+                                    child: SpeakToConfirmOverlay(
+                                      expectedText:
+                                          options[_selectedIndex.value!],
+                                      primaryColor: theme.primaryColor,
+                                      isPositioned: false,
+                                      onConfirmed: () {
+                                        context.read<RoleplayBloc>().add(
+                                          const RoleplaySpeakConfirmed(5),
+                                        );
+                                        _submitVerbalEvaluation(true);
+                                      },
+                                      onSkipped: () =>
+                                          _submitVerbalEvaluation(false),
                                     ),
                                   ),
-                                  SliverToBoxAdapter(
-                                    child: SizedBox(
-                                      height:
-                                          (isFirstStagePassedNotifier.value &&
-                                              !isAnsweredNotifier.value)
-                                          ? 380.h
-                                          : 60.h,
-                                    ),
-                                  ),
-                                ],
+                                ),
+                              SliverToBoxAdapter(
+                                child: SizedBox(
+                                  height:
+                                      MediaQuery.of(context).viewInsets.bottom >
+                                          0
+                                      ? MediaQuery.of(
+                                              context,
+                                            ).viewInsets.bottom +
+                                            40.h
+                                      : 120.h,
+                                ),
                               ),
-                            ),
-                            if (isFirstStagePassedNotifier.value &&
-                                !isAnsweredNotifier.value &&
-                                _selectedIndex.value != null)
-                              SpeakToConfirmOverlay(
-                                expectedText: options[_selectedIndex.value!],
-                                primaryColor: theme.primaryColor,
-                                isPositioned: true,
-                                onConfirmed: () {
-                                  context.read<RoleplayBloc>().add(
-                                    const RoleplaySpeakConfirmed(5),
-                                  );
-                                  _submitVerbalEvaluation(true);
-                                },
-                                onSkipped: () => _submitVerbalEvaluation(false),
-                              ),
-                          ],
+                            ],
+                          ),
                         );
                       },
                     ),

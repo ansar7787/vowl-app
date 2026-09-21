@@ -55,6 +55,20 @@ class _ParagraphSummaryScreenState extends State<ParagraphSummaryScreen>
   @override
   void initState() {
     super.initState();
+    _isDistilled.addListener(() {
+      if (_isDistilled.value && mounted && _scrollController.hasClients) {
+        Future.delayed(const Duration(milliseconds: 300), () {
+          if (mounted && _scrollController.hasClients) {
+            _scrollController.animateTo(
+              _scrollController.position.maxScrollExtent,
+              duration: const Duration(milliseconds: 400),
+              curve: Curves.easeOutCubic,
+            );
+          }
+        });
+      }
+    });
+
     isAnsweredNotifier.addListener(() {
       if (isAnsweredNotifier.value && mounted && _scrollController.hasClients) {
         Future.delayed(const Duration(milliseconds: 100), () {
@@ -135,6 +149,8 @@ class _ParagraphSummaryScreenState extends State<ParagraphSummaryScreen>
           ]),
           builder: (context, _) {
             return ReadingBaseLayout(
+              useScrolling: false,
+              disablePadding: true,
               gameType: widget.gameType,
               level: widget.level,
               isAnswered: isAnsweredNotifier.value,
@@ -144,106 +160,115 @@ class _ParagraphSummaryScreenState extends State<ParagraphSummaryScreen>
               onHint: () => context.read<ReadingBloc>().add(ReadingHintUsed()),
               child: quest == null
                   ? GameShimmerLoading(primaryColor: theme.primaryColor)
-                  : Stack(
-                      children: [
-                        RawScrollbar(
-                          controller: _scrollController,
-                          thumbColor: theme.primaryColor.withValues(alpha: 0.5),
-                          radius: Radius.circular(8.r),
-                          thickness: 4.w,
-                          child: CustomScrollView(
-                            controller: _scrollController,
-                            physics: const BouncingScrollPhysics(),
-                            slivers: [
-                              SliverPadding(
-                                padding: EdgeInsets.symmetric(horizontal: 24.w),
-                                sliver: SliverToBoxAdapter(
-                                  child: Column(
-                                    children: [
-                                      SizedBox(height: 16.h),
-                                      ParagraphSummaryInstruction(
-                                        primaryColor: theme.primaryColor,
-                                        instruction:
-                                            InstructionHelper.getInstruction(
-                                              quest,
+                  : RawScrollbar(
+                      controller: _scrollController,
+                      thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                      radius: Radius.circular(8.r),
+                      thickness: 4.w,
+                      child: CustomScrollView(
+                        controller: _scrollController,
+                        physics: const BouncingScrollPhysics(),
+                        slivers: [
+                          SliverPadding(
+                            padding: EdgeInsets.symmetric(horizontal: 24.w),
+                            sliver: SliverToBoxAdapter(
+                              child: Column(
+                                children: [
+                                  SizedBox(height: 16.h),
+                                  ParagraphSummaryInstruction(
+                                    primaryColor: theme.primaryColor,
+                                    instruction:
+                                        InstructionHelper.getInstruction(quest),
+                                  ),
+                                  SizedBox(height: 24.h),
+                                  GestureDetector(
+                                    onScaleUpdate: (details) =>
+                                        _onPinchUpdate(details.scale),
+                                    onScaleEnd: (details) => _onPinchEnd(),
+                                    child: ParagraphSummaryTube(
+                                      passage: quest.passage ?? "",
+                                      keywords: quest.keywords ?? [],
+                                      color: theme.primaryColor,
+                                      isDark: isDark,
+                                      pinchWidth: _pinchWidth.value,
+                                      isDistilled: _isDistilled.value,
+                                    ),
+                                  ),
+                                  SizedBox(height: 16.h),
+                                  Text(
+                                    _isDistilled.value
+                                        ? "DISTILLATION COMPLETE! THINK OF THE CORE SUMMARY AND REVEAL:"
+                                        : "PINCH/SQUEEZE THE TUBE TO DISTILL CORE CONCEPTS",
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit',
+                                      color: _isDistilled.value
+                                          ? tokens.gameCorrect
+                                          : theme.primaryColor.withValues(
+                                              alpha: 0.6,
                                             ),
-                                      ),
-                                      SizedBox(height: 24.h),
-                                      GestureDetector(
-                                        onScaleUpdate: (details) =>
-                                            _onPinchUpdate(details.scale),
-                                        onScaleEnd: (details) => _onPinchEnd(),
-                                        child: ParagraphSummaryTube(
-                                          passage: quest.passage ?? "",
-                                          keywords: quest.keywords ?? [],
-                                          color: theme.primaryColor,
-                                          isDark: isDark,
-                                          pinchWidth: _pinchWidth.value,
-                                          isDistilled: _isDistilled.value,
-                                        ),
-                                      ),
-                                      SizedBox(height: 16.h),
-                                      Text(
-                                        _isDistilled.value
-                                            ? "DISTILLATION COMPLETE! THINK OF THE CORE SUMMARY AND REVEAL:"
-                                            : "PINCH/SQUEEZE THE TUBE TO DISTILL CORE CONCEPTS",
-                                        textAlign: TextAlign.center,
-                                        style: TextStyle(
-                                          fontFamily: 'Outfit',
-                                          color: _isDistilled.value
-                                              ? tokens.gameCorrect
-                                              : theme.primaryColor.withValues(
-                                                  alpha: 0.6,
-                                                ),
-                                          fontSize: 11.sp,
-                                          letterSpacing: 2,
-                                        ),
-                                      ),
-                                    ],
+                                      fontSize: 11.sp,
+                                      letterSpacing: 2,
+                                    ),
                                   ),
+                                ],
+                              ),
+                            ),
+                          ),
+                          SliverToBoxAdapter(
+                            child: Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 24.w),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: [
+                                  if (isAnsweredNotifier.value) ...[
+                                    SizedBox(height: 30.h),
+                                    ParagraphSummaryResult(
+                                      quest: quest,
+                                      isCorrect:
+                                          isCorrectNotifier.value == true,
+                                      isDark: isDark,
+                                    ),
+                                  ],
+                                  SizedBox(
+                                    height:
+                                        (_isDistilled.value &&
+                                            !isAnsweredNotifier.value)
+                                        ? 380.h
+                                        : 60.h,
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+
+                          if (_isDistilled.value && !isAnsweredNotifier.value)
+                            SliverToBoxAdapter(
+                              child: Padding(
+                                padding: EdgeInsets.symmetric(horizontal: 24.w),
+                                child: TypeToConfirmOverlay(
+                                  expectedText: quest.correctAnswer ?? "",
+                                  primaryColor: theme.primaryColor,
+                                  onConfirmed: () =>
+                                      _submitFinalAnswer(true, quest),
+                                  onSkipped: () =>
+                                      _submitFinalAnswer(false, quest),
+                                  allowSkip: true,
+                                  isPositioned: false,
                                 ),
                               ),
-                              SliverToBoxAdapter(
-                                child: Padding(
-                                  padding: EdgeInsets.symmetric(
-                                    horizontal: 24.w,
-                                  ),
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.end,
-                                    children: [
-                                      if (isAnsweredNotifier.value) ...[
-                                        SizedBox(height: 30.h),
-                                        ParagraphSummaryResult(
-                                          quest: quest,
-                                          isCorrect:
-                                              isCorrectNotifier.value == true,
-                                          isDark: isDark,
-                                        ),
-                                      ],
-                                      SizedBox(
-                                        height:
-                                            (_isDistilled.value &&
-                                                !isAnsweredNotifier.value)
-                                            ? 380.h
-                                            : 60.h,
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            ],
+                            ),
+                          SliverToBoxAdapter(
+                            child: SizedBox(
+                              height:
+                                  MediaQuery.of(context).viewInsets.bottom > 0
+                                  ? MediaQuery.of(context).viewInsets.bottom +
+                                        40.h
+                                  : 120.h,
+                            ),
                           ),
-                        ),
-                        if (_isDistilled.value && !isAnsweredNotifier.value)
-                          TypeToConfirmOverlay(
-                            expectedText: quest.correctAnswer ?? "",
-                            primaryColor: theme.primaryColor,
-                            onConfirmed: () => _submitFinalAnswer(true, quest),
-                            onSkipped: () => _submitFinalAnswer(false, quest),
-                            allowSkip: true,
-                            isPositioned: true,
-                          ),
-                      ],
+                        ],
+                      ),
                     ),
             );
           },

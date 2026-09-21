@@ -59,6 +59,20 @@ class _ReadingInferenceScreenState extends State<ReadingInferenceScreen>
   @override
   void initState() {
     super.initState();
+    _showEvidence.addListener(() {
+      if (_showEvidence.value && mounted && _scrollController.hasClients) {
+        Future.delayed(const Duration(milliseconds: 300), () {
+          if (mounted && _scrollController.hasClients) {
+            _scrollController.animateTo(
+              _scrollController.position.maxScrollExtent,
+              duration: const Duration(milliseconds: 400),
+              curve: Curves.easeOutCubic,
+            );
+          }
+        });
+      }
+    });
+
     isAnsweredNotifier.addListener(() {
       if (isAnsweredNotifier.value && mounted && _scrollController.hasClients) {
         Future.delayed(const Duration(milliseconds: 100), () {
@@ -143,6 +157,8 @@ class _ReadingInferenceScreenState extends State<ReadingInferenceScreen>
           ]),
           builder: (context, _) {
             return ReadingBaseLayout(
+              useScrolling: false,
+              disablePadding: true,
               gameType: widget.gameType,
               level: widget.level,
               isAnswered: isAnsweredNotifier.value,
@@ -154,131 +170,138 @@ class _ReadingInferenceScreenState extends State<ReadingInferenceScreen>
                   context.read<ReadingBloc>().add(const ReadingHintUsed()),
               child: quest == null
                   ? GameShimmerLoading(primaryColor: theme.primaryColor)
-                  : Stack(
-                      children: [
-                        RawScrollbar(
-                          controller: _scrollController,
-                          thumbColor: theme.primaryColor.withValues(alpha: 0.5),
-                          radius: Radius.circular(8.r),
-                          thickness: 4.w,
-                          child: CustomScrollView(
-                            controller: _scrollController,
-                            physics: const BouncingScrollPhysics(),
-                            slivers: [
-                              SliverPadding(
+                  : RawScrollbar(
+                      controller: _scrollController,
+                      thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                      radius: Radius.circular(8.r),
+                      thickness: 4.w,
+                      child: CustomScrollView(
+                        controller: _scrollController,
+                        physics: const BouncingScrollPhysics(),
+                        slivers: [
+                          SliverPadding(
+                            padding: EdgeInsets.symmetric(horizontal: 24.w),
+                            sliver: SliverToBoxAdapter(
+                              child: Column(
+                                children: [
+                                  SizedBox(height: 16.h),
+                                  ReadingInferenceInstruction(
+                                    primaryColor: theme.primaryColor,
+                                    instruction:
+                                        InstructionHelper.getInstruction(quest),
+                                  ),
+                                  SizedBox(height: 32.h),
+
+                                  ReadingInferenceFoggyMirror(
+                                    passage: quest.passage ?? "",
+                                    color: theme.primaryColor,
+                                    isDark: isDark,
+                                    isAnswered:
+                                        isAnsweredNotifier.value ||
+                                        _showEvidence.value,
+                                    rubPoints: _rubPoints.value,
+                                    clarity: _clarity.value,
+                                    onRub: _onRub,
+                                  ),
+                                  SizedBox(height: 32.h),
+
+                                  Text(
+                                    quest.question?.toUpperCase() ??
+                                        "INFER THE HIDDEN TRUTH",
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit',
+                                      fontSize: 14.sp,
+                                      fontWeight: FontWeight.w900,
+                                      color: theme.primaryColor,
+                                      letterSpacing: 1.5,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                          SliverToBoxAdapter(
+                            child: Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 24.w),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: [
+                                  SizedBox(height: 24.h),
+                                  if (!_showEvidence.value &&
+                                      !_evidenceFound.value)
+                                    AnimatedOpacity(
+                                      duration: const Duration(
+                                        milliseconds: 300,
+                                      ),
+                                      opacity: _clarity.value >= 0.3
+                                          ? 1.0
+                                          : 0.3,
+                                      child: AbsorbPointer(
+                                        absorbing:
+                                            _clarity.value < 0.3 ||
+                                            isAnsweredNotifier.value,
+                                        child: ReadingSelfEvaluationCard(
+                                          correctAnswer:
+                                              quest.correctAnswer ?? "",
+                                          explanation: quest.explanation,
+                                          primaryColor: theme.primaryColor,
+                                          onEvaluated: (isCorrect) =>
+                                              _submitSelfEvalAnswer(
+                                                isCorrect,
+                                                quest,
+                                              ),
+                                        ),
+                                      ),
+                                    ),
+
+                                  if (isAnsweredNotifier.value &&
+                                      (!_showEvidence.value ||
+                                          _evidenceFound.value)) ...[
+                                    SizedBox(height: 30.h),
+                                    ReadingInferenceResult(
+                                      quest: quest,
+                                      isCorrect:
+                                          isCorrectNotifier.value == true,
+                                      isDark: isDark,
+                                    ),
+                                  ],
+                                  SizedBox(
+                                    height: (_showEvidence.value)
+                                        ? 380.h
+                                        : 60.h,
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+
+                          if (_showEvidence.value)
+                            SliverToBoxAdapter(
+                              child: Padding(
                                 padding: EdgeInsets.symmetric(horizontal: 24.w),
-                                sliver: SliverToBoxAdapter(
-                                  child: Column(
-                                    children: [
-                                      SizedBox(height: 16.h),
-                                      ReadingInferenceInstruction(
-                                        primaryColor: theme.primaryColor,
-                                        instruction:
-                                            InstructionHelper.getInstruction(
-                                              quest,
-                                            ),
-                                      ),
-                                      SizedBox(height: 32.h),
-
-                                      ReadingInferenceFoggyMirror(
-                                        passage: quest.passage ?? "",
-                                        color: theme.primaryColor,
-                                        isDark: isDark,
-                                        isAnswered:
-                                            isAnsweredNotifier.value ||
-                                            _showEvidence.value,
-                                        rubPoints: _rubPoints.value,
-                                        clarity: _clarity.value,
-                                        onRub: _onRub,
-                                      ),
-                                      SizedBox(height: 32.h),
-
-                                      Text(
-                                        quest.question?.toUpperCase() ??
-                                            "INFER THE HIDDEN TRUTH",
-                                        textAlign: TextAlign.center,
-                                        style: TextStyle(
-                                          fontFamily: 'Outfit',
-                                          fontSize: 14.sp,
-                                          fontWeight: FontWeight.w900,
-                                          color: theme.primaryColor,
-                                          letterSpacing: 1.5,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
+                                child: EvidenceHighlightWrapper(
+                                  passage: quest.passage ?? "",
+                                  evidenceWords: quest.clueWords ?? [],
+                                  primaryColor: theme.primaryColor,
+                                  onCorrectHighlight: _onEvidenceFound,
+                                  instruction:
+                                      'Highlight the clue words that gave you the answer!',
+                                  isPositioned: false,
                                 ),
                               ),
-                              SliverToBoxAdapter(
-                                child: Padding(
-                                  padding: EdgeInsets.symmetric(
-                                    horizontal: 24.w,
-                                  ),
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.end,
-                                    children: [
-                                      SizedBox(height: 24.h),
-                                      if (!_showEvidence.value &&
-                                          !_evidenceFound.value)
-                                        AnimatedOpacity(
-                                          duration: const Duration(
-                                            milliseconds: 300,
-                                          ),
-                                          opacity: _clarity.value >= 0.3
-                                              ? 1.0
-                                              : 0.3,
-                                          child: AbsorbPointer(
-                                            absorbing:
-                                                _clarity.value < 0.3 ||
-                                                isAnsweredNotifier.value,
-                                            child: ReadingSelfEvaluationCard(
-                                              correctAnswer:
-                                                  quest.correctAnswer ?? "",
-                                              explanation: quest.explanation,
-                                              primaryColor: theme.primaryColor,
-                                              onEvaluated: (isCorrect) =>
-                                                  _submitSelfEvalAnswer(
-                                                    isCorrect,
-                                                    quest,
-                                                  ),
-                                            ),
-                                          ),
-                                        ),
-
-                                      if (isAnsweredNotifier.value &&
-                                          (!_showEvidence.value ||
-                                              _evidenceFound.value)) ...[
-                                        SizedBox(height: 30.h),
-                                        ReadingInferenceResult(
-                                          quest: quest,
-                                          isCorrect:
-                                              isCorrectNotifier.value == true,
-                                          isDark: isDark,
-                                        ),
-                                      ],
-                                      SizedBox(
-                                        height: (_showEvidence.value)
-                                            ? 380.h
-                                            : 60.h,
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            ],
+                            ),
+                          SliverToBoxAdapter(
+                            child: SizedBox(
+                              height:
+                                  MediaQuery.of(context).viewInsets.bottom > 0
+                                  ? MediaQuery.of(context).viewInsets.bottom +
+                                        40.h
+                                  : 120.h,
+                            ),
                           ),
-                        ),
-                        if (_showEvidence.value)
-                          EvidenceHighlightWrapper(
-                            passage: quest.passage ?? "",
-                            evidenceWords: quest.clueWords ?? [],
-                            primaryColor: theme.primaryColor,
-                            onCorrectHighlight: _onEvidenceFound,
-                            instruction:
-                                'Highlight the clue words that gave you the answer!',
-                            isPositioned: true,
-                          ),
-                      ],
+                        ],
+                      ),
                     ),
             );
           },
