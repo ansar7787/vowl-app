@@ -141,14 +141,34 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen>
     _activeKey.value = null;
 
     if (_matches.value.length == pairs.length) {
-      _pendingSubmission.value = true;
+      bool isCorrect = true;
+      for (var pair in pairs) {
+        if (_matches.value[pair['key']] != pair['value']) {
+          isCorrect = false;
+          break;
+        }
+      }
+
+      if (isCorrect) {
+        _pendingSubmission.value = true;
+      } else {
+        hapticService.error();
+        soundService.playWrong();
+        isAnsweredNotifier.value = true;
+        isCorrectNotifier.value = false;
+        context.read<ReadingBloc>().add(const SubmitAnswer(false));
+        Future.delayed(const Duration(milliseconds: 1500), () {
+          if (mounted) {
+            _matches.value = {};
+            isAnsweredNotifier.value = false;
+            isCorrectNotifier.value = null;
+          }
+        });
+      }
     }
   }
 
-  void _submitFinalAnswer(
-    bool nailedSpeaking,
-    List<Map<String, String>> pairs,
-  ) {
+  void _submitFinalAnswer(bool nailedSpeaking) {
     _pendingSubmission.value = false;
 
     if (!nailedSpeaking) {
@@ -167,39 +187,12 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen>
       return;
     }
 
-    _submitAnswer(pairs);
-  }
-
-  void _submitAnswer(List<Map<String, String>> pairs) {
-    bool isCorrect = true;
-    for (var pair in pairs) {
-      if (_matches.value[pair['key']] != pair['value']) {
-        isCorrect = false;
-        break;
-      }
-    }
-
-    if (isCorrect) {
-      hapticService.success();
-      soundService.playCorrect();
-      isAnsweredNotifier.value = true;
-      isCorrectNotifier.value = true;
-      context.read<ReadingBloc>().add(const ReadingSpeakConfirmed(5));
-      context.read<ReadingBloc>().add(const SubmitAnswer(true));
-    } else {
-      hapticService.error();
-      soundService.playWrong();
-      isAnsweredNotifier.value = true;
-      isCorrectNotifier.value = false;
-      context.read<ReadingBloc>().add(const SubmitAnswer(false));
-      Future.delayed(const Duration(milliseconds: 1500), () {
-        if (mounted) {
-          _matches.value = {};
-          isAnsweredNotifier.value = false;
-          isCorrectNotifier.value = null;
-        }
-      });
-    }
+    hapticService.success();
+    soundService.playCorrect();
+    isAnsweredNotifier.value = true;
+    isCorrectNotifier.value = true;
+    context.read<ReadingBloc>().add(const ReadingSpeakConfirmed(5));
+    context.read<ReadingBloc>().add(const SubmitAnswer(true));
   }
 
   @override
@@ -401,10 +394,8 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen>
                                       quest.correctAnswer ??
                                       "Confirm",
                                   primaryColor: theme.primaryColor,
-                                  onConfirmed: () =>
-                                      _submitFinalAnswer(true, pairs),
-                                  onSkipped: () =>
-                                      _submitFinalAnswer(false, pairs),
+                                  onConfirmed: () => _submitFinalAnswer(true),
+                                  onSkipped: () => _submitFinalAnswer(false),
                                   allowSkip: true,
                                   isPositioned: false,
                                 ),

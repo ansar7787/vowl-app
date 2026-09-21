@@ -86,36 +86,34 @@ class _ClozeTestScreenState extends State<ClozeTestScreen>
     initReadingGame();
   }
 
-  void _onDock(String option) {
+  void _onDock(String option, ReadingQuest quest) {
     if (isAnsweredNotifier.value || _pendingDockedOption.value != null) return;
     hapticService.selection();
-    _pendingDockedOption.value = option;
+
+    final correct = quest.correctAnswer ?? "";
+    bool isCorrect =
+        option.trim().toLowerCase() == correct.trim().toLowerCase();
+
+    if (isCorrect) {
+      _pendingDockedOption.value = option;
+    } else {
+      _dockedOption.value = option;
+      submitWrongAnswer(quest: quest, userAnswer: option);
+    }
   }
 
   void _submitFinalAnswer(bool nailedTyping, ReadingQuest quest) {
     if (_pendingDockedOption.value == null) return;
 
+    final selected = _pendingDockedOption.value!;
+    _dockedOption.value = selected;
+
     if (!nailedTyping) {
-      _dockedOption.value = _pendingDockedOption.value;
-      submitWrongAnswer(quest: quest, userAnswer: _pendingDockedOption.value);
+      submitWrongAnswer(quest: quest, userAnswer: selected);
       return;
     }
 
-    final selected = _pendingDockedOption.value!;
-    _dockedOption.value = _pendingDockedOption.value;
-    _submitAnswer(selected, quest);
-  }
-
-  void _submitAnswer(String selected, ReadingQuest quest) {
-    final correct = quest.correctAnswer ?? "";
-    bool isCorrect =
-        selected.trim().toLowerCase() == correct.trim().toLowerCase();
-
-    if (isCorrect) {
-      submitCorrectAnswer();
-    } else {
-      submitWrongAnswer(quest: quest, userAnswer: selected);
-    }
+    submitCorrectAnswer();
   }
 
   @override
@@ -194,7 +192,7 @@ class _ClozeTestScreenState extends State<ClozeTestScreen>
                                         _pendingDockedOption.value,
                                     wordCategory: quest.wordCategory,
                                     isAnswered: isAnsweredNotifier.value,
-                                    onDock: (opt) => _onDock(opt),
+                                    onDock: (opt) => _onDock(opt, quest),
                                   ),
                                 ],
                               ),
@@ -214,7 +212,7 @@ class _ClozeTestScreenState extends State<ClozeTestScreen>
                                     dockedOption:
                                         _dockedOption.value ??
                                         _pendingDockedOption.value,
-                                    onTap: (opt) => _onDock(opt),
+                                    onTap: (opt) => _onDock(opt, quest),
                                   ),
                                   SizedBox(
                                     height:
