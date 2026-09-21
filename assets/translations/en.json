@@ -226,13 +226,13 @@
       "rule_2": "Pinpoint exact information"
     },
     "clozeTest": {
-      "title": "Blank Filler",
-      "objective": "Use logic and contextual clues to fill in the missing words in the narrative. Getting good at this helps you understand English much faster.",
+      "title": "Fill the Blank",
+      "objective": "Read the sentence and find the missing word. You'll drag or tap your answer, then prove you know it by spelling it out! This builds both your reading speed and vocabulary.",
       "actionText": "Fill Blanks",
-      "tip": "PRO TIP: Determine if the missing word needs to be a noun, verb, or adjective before looking at options.",
-      "rule_0": "Read the surrounding sentence",
-      "rule_1": "Identify required word type",
-      "rule_2": "Select the perfect fit"
+      "tip": "PRO TIP: Try to guess the missing word before checking the options. And get ready � you have to spell it to lock it in!",
+      "rule_0": "Read the sentence",
+      "rule_1": "Tap or drag the best word",
+      "rule_2": "Spell it out to confirm"
     },
     "roleplay": {
       "title": "Roleplay Partner",
@@ -600,13 +600,13 @@
       "rule_2": "Speak the full sentence aloud"
     },
     "fixTheSentence": {
-      "title": "Fix The Sentence",
-      "objective": "Read the sentence and find the mistake. Tap or wipe the wrong word, pick the right replacement, and type out the final sentence to lock it in.",
-      "actionText": "Start Editing",
-      "tip": "PRO TIP: Read the sentence out loud! If something sounds a bit awkward or unnatural, that's usually where the mistake is hidden.",
-      "rule_0": "Wipe the wrong word",
-      "rule_1": "Choose the right repair",
-      "rule_2": "Type out the sentence"
+      "title": "Clarity Editor",
+      "objective": "Scrub the logical decay and select the correct replacement word. Being able to do this helps you write naturally and clearly in the real world.",
+      "actionText": "Apply Edit",
+      "tip": "PRO TIP: Read the sentence out loud in your head! If it sounds clumsy, revise it.",
+      "rule_0": "Locate the error",
+      "rule_1": "Scrub the decay away",
+      "rule_2": "Select correct replacement"
     },
     "sentenceBuilder": {
       "title": "Sentence Architect",
@@ -634,15 +634,6 @@
       "rule_0": "Tap emojis for keywords",
       "rule_1": "Use vivid adjectives",
       "rule_2": "Be specific & clear"
-    },
-    "fixTheSentence": {
-      "title": "Clarity Editor",
-      "objective": "Scrub the logical decay and select the correct replacement word. Being able to do this helps you write naturally and clearly in the real world.",
-      "actionText": "Apply Edit",
-      "tip": "PRO TIP: Read the sentence out loud in your head! If it sounds clumsy, revise it.",
-      "rule_0": "Locate the error",
-      "rule_1": "Scrub the decay away",
-      "rule_2": "Select correct replacement"
     },
     "shortAnswerWriting": {
       "title": "Briefing Pro",
@@ -2323,7 +2314,21 @@
       "rule_0": "Listen to the audio",
       "rule_1": "Find the first word",
       "rule_2": "Drag them into order"
-    }
+    },
+    "clozeTest": {
+      "title": "Fill the Blank",
+      "objective": "Read the sentence and find the missing word. You'll drag or tap your answer, then prove you know it by spelling it out! This builds both your reading speed and vocabulary.",
+      "actionText": "Fill Blanks",
+      "tip": "PRO TIP: Try to guess the missing word before checking the options. And get ready � you have to spell it to lock it in!",
+      "rule_0": "Read the sentence",
+      "rule_1": "Tap or drag the best word",
+      "rule_2": "Spell it out to confirm"
+    },
+    "clozetest_beat_1": "Great job! Learning to catch missing words is a huge step toward real fluency.",
+    "clozetest_beat_2": "You're getting really fast at picking up on context clues!",
+    "clozetest_beat_3": "50 levels cleared! Your reading speed and vocabulary are looking rock solid.",
+    "clozetest_beat_4": "Level 100 Centurion! You're reading and spelling like an absolute natural now.",
+    "clozetest_beat_5": "Level 200 Double Centurion! Nobody fills in the blanks faster than you do."
   },
   "story": {
     "new_quest": "NEW QUEST",
@@ -2437,7 +2442,7 @@
     "sentenceOrderReading": "Put the sentences in the right order to make a complete story.",
     "trueFalseReading": "Read the text and decide which statements are true.",
     "skimmingScanning": "Practice looking quickly through a text to find specific information.",
-    "clozeTest": "Use your logic to fill in the missing words and complete the text.",
+    "clozeTest": "Read the sentence, find the missing word, and spell it out to prove it!",
     "branchingDialogue": "Choose what to say next and see where the conversation goes.",
     "conflictResolver": "Practice handling disagreements calmly and politely.",
     "elevatorPitch": "Practice introducing yourself and your ideas quickly and clearly.",
@@ -2867,11 +2872,11 @@
     "skimmingscanning_beat_4": "Level 100! You are an absolute master of skimming and scanning.",
     "skimmingscanning_beat_5": "200 levels cleared! Your skimming and scanning abilities are unmatched globally.",
     "clozetest_beat_0": "",
-    "clozetest_beat_1": "Great job! Mastering cloze reading is key to true fluency.",
-    "clozetest_beat_2": "You are navigating cloze reading with increasing confidence.",
-    "clozetest_beat_3": "50 levels cleared! Your cloze reading skills are rock solid.",
-    "clozetest_beat_4": "Centurion! You have conquered the complexities of cloze reading.",
-    "clozetest_beat_5": "Double Centurion! No one knows cloze reading better than you.",
+    "clozetest_beat_1": "Great job! Learning to catch missing words is a huge step toward real fluency.",
+    "clozetest_beat_2": "You're getting really fast at picking up on context clues!",
+    "clozetest_beat_3": "50 levels cleared! Your reading speed and vocabulary are looking rock solid.",
+    "clozetest_beat_4": "Level 100 Centurion! You're reading and spelling like an absolute natural now.",
+    "clozetest_beat_5": "Level 200 Double Centurion! Nobody fills in the blanks faster than you do.",
     "branchingdialogue_beat_0": "",
     "branchingdialogue_beat_1": "Nice work! Conquering dialogue paths is a huge step forward.",
     "branchingdialogue_beat_2": "You are decoding dialogue paths with impressive accuracy.",

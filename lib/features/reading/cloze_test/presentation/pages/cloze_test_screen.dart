@@ -7,7 +7,6 @@ import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/features/reading/presentation/bloc/reading_bloc.dart';
 import 'package:vowl/features/reading/presentation/mixins/reading_game_screen_mixin.dart';
 import 'package:vowl/features/reading/presentation/layout/reading_base_layout.dart';
-import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/reading/domain/entities/reading_quest.dart';
 import 'package:vowl/features/reading/cloze_test/presentation/widgets/cloze_test_instruction.dart';
 import 'package:vowl/features/reading/cloze_test/presentation/widgets/cloze_test_pneumatic_port.dart';
@@ -87,54 +86,45 @@ class _ClozeTestScreenState extends State<ClozeTestScreen>
     initReadingGame();
   }
 
-  void _onDock(String option, String correct) {
+  void _onDock(String option) {
     if (isAnsweredNotifier.value || _pendingDockedOption.value != null) return;
     hapticService.selection();
     _pendingDockedOption.value = option;
   }
 
-  void _submitFinalAnswer(bool nailedTyping, String correct) {
+  void _submitFinalAnswer(bool nailedTyping, ReadingQuest quest) {
     if (_pendingDockedOption.value == null) return;
 
     if (!nailedTyping) {
-      hapticService.error();
-      soundService.playWrong();
       _dockedOption.value = _pendingDockedOption.value;
-      isAnsweredNotifier.value = true;
-      isCorrectNotifier.value = false;
-      context.read<ReadingBloc>().add(const SubmitAnswer(false));
+      submitWrongAnswer(quest: quest, userAnswer: _pendingDockedOption.value);
       return;
     }
 
     final selected = _pendingDockedOption.value!;
     _dockedOption.value = _pendingDockedOption.value;
-    _submitAnswer(selected, correct);
+    _submitAnswer(selected, quest);
   }
 
-  void _submitAnswer(String selected, String correct) {
+  void _submitAnswer(String selected, ReadingQuest quest) {
+    final correct = quest.correctAnswer ?? "";
     bool isCorrect =
         selected.trim().toLowerCase() == correct.trim().toLowerCase();
 
     if (isCorrect) {
-      hapticService.success();
-      soundService.playCorrect();
-      isAnsweredNotifier.value = true;
-      isCorrectNotifier.value = true;
-      context.read<ReadingBloc>().add(const SubmitAnswer(true));
+      submitCorrectAnswer();
     } else {
-      hapticService.error();
-      soundService.playWrong();
-      isAnsweredNotifier.value = true;
-      isCorrectNotifier.value = false;
-      context.read<ReadingBloc>().add(const SubmitAnswer(false));
+      submitWrongAnswer(quest: quest, userAnswer: selected);
     }
   }
 
   @override
   void onQuestionReset() {
     _dockedOption.value = null;
-
     _pendingDockedOption.value = null;
+    if (_scrollController.hasClients) {
+      _scrollController.jumpTo(0);
+    }
   }
 
   @override
@@ -190,11 +180,7 @@ class _ClozeTestScreenState extends State<ClozeTestScreen>
                                   SizedBox(height: 16.h),
                                   ClozeTestInstruction(
                                     primaryColor: theme.primaryColor,
-                                    instruction: context.tr(
-                                      'games.clozeTest_instruction',
-                                      fallback:
-                                          'Complete the sentence by docking the correct word.',
-                                    ),
+                                    instruction: quest.instruction,
                                   ),
                                   SizedBox(height: 32.h),
 
@@ -208,8 +194,7 @@ class _ClozeTestScreenState extends State<ClozeTestScreen>
                                         _pendingDockedOption.value,
                                     wordCategory: quest.wordCategory,
                                     isAnswered: isAnsweredNotifier.value,
-                                    onDock: (opt) =>
-                                        _onDock(opt, quest.correctAnswer ?? ""),
+                                    onDock: (opt) => _onDock(opt),
                                   ),
                                 ],
                               ),
@@ -229,6 +214,7 @@ class _ClozeTestScreenState extends State<ClozeTestScreen>
                                     dockedOption:
                                         _dockedOption.value ??
                                         _pendingDockedOption.value,
+                                    onTap: (opt) => _onDock(opt),
                                   ),
                                   SizedBox(
                                     height:
@@ -249,18 +235,13 @@ class _ClozeTestScreenState extends State<ClozeTestScreen>
                                 padding: EdgeInsets.symmetric(horizontal: 24.w),
                                 child: DynamicAnagramWrapper(
                                   expectedText:
-                                      quest.targetWord ??
-                                      quest.correctAnswer ??
-                                      "",
+                                      _pendingDockedOption.value ?? "",
+                                  isPositioned: false,
                                   primaryColor: theme.primaryColor,
-                                  onConfirmed: () => _submitFinalAnswer(
-                                    true,
-                                    quest.correctAnswer ?? "",
-                                  ),
-                                  onFailed: () => _submitFinalAnswer(
-                                    false,
-                                    quest.correctAnswer ?? "",
-                                  ),
+                                  onConfirmed: () =>
+                                      _submitFinalAnswer(true, quest),
+                                  onFailed: () =>
+                                      _submitFinalAnswer(false, quest),
                                 ),
                               ),
                             ),

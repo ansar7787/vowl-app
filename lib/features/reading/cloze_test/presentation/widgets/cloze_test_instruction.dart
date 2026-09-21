@@ -33,15 +33,19 @@ class ClozeTestInstruction extends StatelessWidget {
             child: Text(
               instruction?.toUpperCase() ??
                   "INJECT FUEL CELLS TO POWER THE PASSAGE",
+              textAlign: TextAlign.center,
               style: TextStyle(
                 fontFamily: 'Outfit',
                 fontSize: 10.sp,
                 fontWeight: FontWeight.w900,
                 color: primaryColor,
+                height: 1.4,
                 letterSpacing: 1.5,
               ),
             ),
           ),
+          // Balances the icon on the left to perfectly center the text visually
+          SizedBox(width: 14.r + 12.w),
         ],
       ),
     );

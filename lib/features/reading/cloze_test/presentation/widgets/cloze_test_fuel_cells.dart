@@ -7,12 +7,15 @@ class ClozeTestFuelCells extends StatelessWidget {
   final bool isDark;
   final String? dockedOption;
 
+  final void Function(String)? onTap;
+
   const ClozeTestFuelCells({
     super.key,
     required this.options,
     required this.color,
     required this.isDark,
     required this.dockedOption,
+    this.onTap,
   });
 
   @override
@@ -23,21 +26,25 @@ class ClozeTestFuelCells extends StatelessWidget {
       alignment: WrapAlignment.center,
       children: options.map((o) {
         final bool isAlreadyDocked = dockedOption == o;
+        final bool isAnyDocked = dockedOption != null;
         return Opacity(
-          opacity: isAlreadyDocked ? 0.35 : 1.0,
+          opacity: isAnyDocked ? (isAlreadyDocked ? 0.2 : 0.5) : 1.0,
           child: IgnorePointer(
-            ignoring: isAlreadyDocked,
-            child: Draggable<String>(
-              data: o,
-              feedback: Material(
-                color: Colors.transparent,
-                child: _buildCellWidget(o, color, isDark, true),
-              ),
-              childWhenDragging: Opacity(
-                opacity: 0.3,
+            ignoring: isAnyDocked,
+            child: GestureDetector(
+              onTap: () => onTap?.call(o),
+              child: Draggable<String>(
+                data: o,
+                feedback: Material(
+                  color: Colors.transparent,
+                  child: _buildCellWidget(o, color, isDark, true),
+                ),
+                childWhenDragging: Opacity(
+                  opacity: 0.3,
+                  child: _buildCellWidget(o, color, isDark, false),
+                ),
                 child: _buildCellWidget(o, color, isDark, false),
               ),
-              child: _buildCellWidget(o, color, isDark, false),
             ),
           ),
         );

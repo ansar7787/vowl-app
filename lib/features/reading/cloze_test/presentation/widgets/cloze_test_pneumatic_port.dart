@@ -134,8 +134,8 @@ class ClozeTestPneumaticPort extends StatelessWidget {
                                                 ? Colors.white
                                                 : Colors.black87)
                                           : (isDark
-                                                ? Colors.white30
-                                                : Colors.black38),
+                                                ? Colors.white54
+                                                : Colors.black54),
                                       fontWeight: FontWeight.w900,
                                     ),
                                   ),
@@ -160,7 +160,8 @@ class ClozeTestPneumaticPort extends StatelessWidget {
                       },
                     ),
                   ),
-                  if (parts.length > 1) TextSpan(text: parts[1]),
+                  if (parts.length > 1)
+                    TextSpan(text: parts.sublist(1).join('____')),
                 ],
               ),
             ),
