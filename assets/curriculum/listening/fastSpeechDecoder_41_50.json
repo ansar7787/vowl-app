@@ -6,13 +6,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L41_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch the exact day, and finish versus start.",
-            "explanation": "'Gonna' is the natural spoken reduction of 'going to' - extremely common in fast speech but rarely written down. 'Going to' said carefully and 'gonna' said quickly mean exactly the same thing, so don't let the spelling throw you off.",
-            "textToSpeak": "I'm gonna finish this project by Friday.",
+            "instruction": "Listen carefully and catch the exact sentence.",
+            "hint": "The article itself is almost silent — focus on the noun instead.",
+            "explanation": "'A' and 'an' shrink to a bare 'uh' sound in natural speech, barely a full syllable, so nearly all the meaning rides on the noun that follows.",
+            "textToSpeak": "I need a printer for the office.",
             "options": [
-                "I'm gonna finish this project by Monday.",
-                "I'm gonna finish this project by Friday."
+                "I need a scanner for the office.",
+                "I need a printer for the office."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -21,13 +21,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L41_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch he versus she, and present versus prepare.",
-            "explanation": "'He's gonna' packs 'he is going to' into a fast, casual run of sound. 'Present' (show the finished results) and 'prepare' (get them ready) are different stages of the same project, so listen for the exact verb.",
-            "textToSpeak": "He's gonna present the results tomorrow.",
+            "instruction": "They said it fast — what did you actually hear?",
+            "hint": "Catch whether it's one item or a specific one already mentioned.",
+            "explanation": "Weak 'a' blends so fully into the surrounding words that it can be easy to miss it exists at all — listen for the noun it quietly attaches to.",
+            "textToSpeak": "She ordered an extra chair for the meeting.",
             "options": [
-                "She's gonna present the results today.",
-                "He's gonna present the results tomorrow."
+                "She ordered the extra chair for the meeting.",
+                "She ordered an extra chair for the meeting."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -36,13 +36,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L41_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Notice more versus less, and they're versus we're.",
-            "explanation": "'More' and 'less' are opposites, so that word decides whether this is good news or bad news for the deadline. 'They're' and 'we're' also reduce closely, so track the vowel.",
-            "textToSpeak": "They're gonna need more time on this.",
+            "instruction": "Natural speech blends words together. Catch the real message.",
+            "hint": "Notice the exact object mentioned after the weak article.",
+            "explanation": "Because 'a' carries almost no sound of its own, the noun immediately after it becomes the entire focus of the sentence.",
+            "textToSpeak": "He borrowed a ladder from the neighbor.",
             "options": [
-                "They're gonna need more help on this.",
-                "They're gonna need more time on this."
+                "He borrowed a hammer from the neighbor.",
+                "He borrowed a ladder from the neighbor."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -51,28 +51,28 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L42_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch the meal, and who's being invited.",
-            "explanation": "'Wanna' is 'want to' reduced in casual speech - both versions mean exactly the same thing, so don't assume a difference in meaning, only in formality. Focus instead on the meal and the person being asked.",
-            "textToSpeak": "Do you wanna come over for dinner?",
+            "instruction": "Listen for the small word that changes the meaning.",
+            "hint": "Catch the exact destination, since 'to' itself barely gets a sound.",
+            "explanation": "'To' reduces to a light, quick vowel in casual speech, so almost none of the meaning comes from the word itself — it all comes from what follows.",
+            "textToSpeak": "I'm heading to the pharmacy first.",
             "options": [
-                "Do you wanna come over for dinner?",
-                "Do you want to come over for dinner?"
+                "I'm heading to the bakery first.",
+                "I'm heading to the pharmacy first."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L42_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch start versus end, and whether 'don't' is there.",
-            "explanation": "'Don't wanna' losing its 'don't' would flip the whole sentence into wanting to miss it, so that negative is essential. 'Start' and 'end' are opposite points in a film too.",
-            "textToSpeak": "I don't wanna miss the start of the film.",
+            "instruction": "Focus on the key detail hidden in the fast sentence.",
+            "hint": "Listen for the purpose of the trip, not just that there is one.",
+            "explanation": "In 'want to' and similar phrases, 'to' almost disappears into the surrounding sounds, so the verb after it holds the real information.",
+            "textToSpeak": "I need to renew my passport this month.",
             "options": [
-                "I don't wanna miss the end of the film.",
-                "I don't wanna miss the start of the film."
+                "I need to renew my license this month.",
+                "I need to renew my passport this month."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -81,28 +81,28 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L42_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Notice he versus she, and it versus them.",
-            "explanation": "'Doesn't wanna' stacks two reductions together - 'does not' and 'want to' - so there's a lot packed into a short space. Pin down the subject and exactly what's being avoided.",
-            "textToSpeak": "He really doesn't wanna talk about it.",
+            "instruction": "Listen again — which version matches what was said?",
+            "hint": "Catch whether they're going toward something or coming from it.",
+            "explanation": "'To' and 'from' point in opposite directions, and while 'to' reduces almost to nothing, 'from' stays clearer — listen for which one is actually there.",
+            "textToSpeak": "He's driving to the coast this weekend.",
             "options": [
-                "He really doesn't wanna talk about it.",
-                "He really doesn't wanna think about it."
+                "He's driving from the coast this weekend.",
+                "He's driving to the coast this weekend."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L43_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch the deadline, and return versus exchange.",
-            "explanation": "'Gotta' is the fast, spoken version of 'got to', usually following 'have' - 'I've gotta' or simply 'I gotta' are both heard in casual speech. Listen past the reduction to the deadline and the action.",
-            "textToSpeak": "I've gotta return this by the weekend.",
+            "instruction": "Listen carefully and catch the exact sentence.",
+            "hint": "Notice who this is actually intended for.",
+            "explanation": "'For' weakens to a quick, unstressed sound in the middle of a sentence, so the name or person right after it is what really counts.",
+            "textToSpeak": "I picked this up for Daniel.",
             "options": [
-                "I've gotta return this by tomorrow.",
-                "I've gotta return this by the weekend."
+                "I picked this up for David.",
+                "I picked this up for Daniel."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -111,13 +111,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L43_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Notice fast versus soon, and parking spot versus petrol station.",
-            "explanation": "'Fast' and 'soon' both suggest urgency but aren't identical in meaning, so catch the specific word. 'We've' and 'they've' also reduce almost the same way right before 'gotta'.",
-            "textToSpeak": "We've gotta find a parking spot fast.",
+            "instruction": "They said it fast — what did you actually hear?",
+            "hint": "Catch the exact reason, not just that a reason exists.",
+            "explanation": "Because 'for' reduces so heavily, the purpose clause that follows it carries almost all of the sentence's real content.",
+            "textToSpeak": "We stopped for gas on the way.",
             "options": [
-                "We've gotta find a parking spot soon.",
-                "We've gotta find a parking spot fast."
+                "We stopped for directions on the way.",
+                "We stopped for gas on the way."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -126,13 +126,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L43_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch sometime versus soon, and try versus taste.",
-            "explanation": "'Sometime' (no rush) and 'soon' (fairly soon) suggest different levels of urgency behind the same recommendation. 'Try' and 'taste' overlap in meaning here, so listen for the exact verb.",
-            "textToSpeak": "You've really gotta try this recipe sometime.",
+            "instruction": "Natural speech blends words together. Catch the real message.",
+            "hint": "Listen for the exact length of time mentioned.",
+            "explanation": "'For' before a time expression almost vanishes at speed, so the number that follows is where all the important information actually sits.",
+            "textToSpeak": "We waited for almost an hour.",
             "options": [
-                "You've really gotta try this recipe sometime.",
-                "You've really gotta try this recipe soon."
+                "We waited for almost an hour.",
+                "We waited for almost a minute."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -141,13 +141,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L44_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch before versus after, and pick up versus drop off.",
-            "explanation": "'Hafta' is how 'have to' often sounds in quick, casual speech - the same meaning as the fully pronounced version. 'Before' and 'after' are opposites, so that word decides the whole schedule.",
-            "textToSpeak": "I hafta pick up groceries after work.",
+            "instruction": "Listen for the small word that changes the meaning.",
+            "hint": "Notice the small joining word — is it 'and' or 'or'? Also catch the advice itself.",
+            "explanation": "'And' means do both things; 'or' means pick one — a tiny, barely-stressed word with a big effect on the meaning of the whole sentence.",
+            "textToSpeak": "Drink plenty of water and get some rest.",
             "options": [
-                "I hafta pick up groceries before work.",
-                "I hafta pick up groceries after work."
+                "Drink plenty of water or get some rest.",
+                "Drink plenty of water and get some rest."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -156,88 +156,88 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L44_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Notice early versus late, and traffic versus queue.",
-            "explanation": "'Beat' and 'avoid' the traffic both make sense, so listen for the exact word rather than guessing from context. 'Early' and 'late' are opposites that completely change the plan.",
-            "textToSpeak": "We hafta leave early to beat the traffic.",
+            "instruction": "Focus on the key detail hidden in the fast sentence.",
+            "hint": "Catch both items joined together, not just the first one.",
+            "explanation": "'And' reduces to barely more than a quick 'n' sound connecting two words, so both items on either side of it need equal attention.",
+            "textToSpeak": "Bring your laptop and charger tomorrow.",
             "options": [
-                "We hafta leave early to avoid the traffic.",
-                "We hafta leave early to beat the traffic."
+                "Bring your laptop and charger tomorrow.",
+                "Bring your laptop and notebook tomorrow."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L44_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch before versus after, and report versus essay.",
-            "explanation": "'Before' and 'after' lunch are opposite deadlines, so that preposition is the most important word here. 'Report' and 'essay' are different documents too, so listen precisely.",
-            "textToSpeak": "He hafta finish the report before lunch.",
+            "instruction": "Listen again — which version matches what was said?",
+            "hint": "Listen for whether both things happened, or just one.",
+            "explanation": "A weak 'and' can be nearly silent between two verbs, so listen for whether both actions are actually mentioned or only the first one.",
+            "textToSpeak": "She called the client and confirmed the order.",
             "options": [
-                "She hafta finish the report after lunch.",
-                "He hafta finish the report before lunch."
+                "She called the client and confirmed the order.",
+                "She called the client but cancelled the order."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L45_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch flight versus train, and miss versus catch.",
-            "explanation": "'Miss' and 'catch' are opposite outcomes for the same flight, so that verb is the whole story. 'We're' and 'they're' also reduce closely before 'gonna', so track the vowel.",
-            "textToSpeak": "We're gonna miss our connecting flight home.",
+            "instruction": "Listen carefully and catch the exact sentence.",
+            "hint": "Catch the exact quantity mentioned after the weak 'of'.",
+            "explanation": "'Of' reduces to an almost silent connector in phrases like 'a lot of' or 'a cup of', so the number or amount that follows is where the real detail lives.",
+            "textToSpeak": "We need a couple of chairs more.",
             "options": [
-                "We're gonna miss our connecting train home.",
-                "We're gonna miss our connecting flight home."
+                "We need a couple of chairs more.",
+                "We need a dozen chairs more."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L45_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Notice window versus aisle, and this time versus next time.",
-            "explanation": "'This time' and 'next time' both refer to seating choices but at different moments, one now and one later. 'Sit' and 'stand' also change the whole picture of what's happening.",
-            "textToSpeak": "I'm gonna sit near the window this time.",
+            "instruction": "They said it fast — what did you actually hear?",
+            "hint": "Listen for exactly what the box contains.",
+            "explanation": "Because 'of' barely registers as a sound in casual speech, the noun right after it is really the whole point of the phrase.",
+            "textToSpeak": "There's a box of old photographs upstairs.",
             "options": [
-                "I'm gonna sit near the window this time.",
-                "I'm gonna sit near the aisle this time."
+                "There's a box of old letters upstairs.",
+                "There's a box of old photographs upstairs."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L45_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch appealing versus appalling, and delay versus refund.",
-            "explanation": "When a word ending in a vowel sound meets one starting with a vowel, speakers often slip in a light linking sound between them, so 'idea of' can sound like 'idea-r-of'. 'Appealing' and 'appalling' look similar in writing too, so listen carefully.",
-            "textToSpeak": "The idea of a delay isn't appealing.",
+            "instruction": "Natural speech blends words together. Catch the real message.",
+            "hint": "Catch whether it's most of it, or all of it.",
+            "explanation": "'Most of' and 'all of' both reduce their connecting word, so the quantity word at the front is the real thing being tested here.",
+            "textToSpeak": "Most of the guests have already left.",
             "options": [
-                "The idea of a delay isn't appealing.",
-                "The idea of a delay isn't appalling."
+                "All of the guests have already left.",
+                "Most of the guests have already left."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L46_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch photos versus files, and first versus later.",
-            "explanation": "'Wanna' softens 'want to' into a casual suggestion here, so the useful details are in what's being backed up and when. Also notice 'do you' versus 'does he'.",
-            "textToSpeak": "Do you wanna back up your photos first?",
+            "instruction": "Listen for the small word that changes the meaning.",
+            "hint": "Listen for the stress — a weak, quick 'can' sounds very different from a clearly stressed one.",
+            "explanation": "In statements, 'can' usually weakens to a fast, low sound, almost like 'kn', while the important word is the verb that follows it.",
+            "textToSpeak": "I can meet you at the station.",
             "options": [
-                "Do you wanna back up your photos first?",
-                "Does he wanna back up your photos first?"
+                "I can meet you at the station.",
+                "I can meet you at the airport."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -246,43 +246,43 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L46_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Notice plan versus provider, and switch versus change.",
-            "explanation": "'Switch' and 'change' are near-synonyms, so pin down the exact verb rather than the general idea. 'Plan' and 'provider' are also easy to blur together if you're not listening closely.",
-            "textToSpeak": "I wanna switch to a different plan.",
+            "instruction": "Focus on the key detail hidden in the fast sentence.",
+            "hint": "Catch exactly what ability or permission is being described.",
+            "explanation": "Since weak 'can' barely stands out in the sentence, the verb phrase after it is where the actual message is carried.",
+            "textToSpeak": "She can speak three languages fluently.",
             "options": [
-                "I wanna switch to a different plan.",
-                "I wanna switch to a different provider."
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "fastSpeechDecoder",
-            "emoji": "⚡"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L46_Q3",
-            "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch before versus after, and they versus we.",
-            "explanation": "'Before' and 'after' the warranty ends describe opposite strategies, so that word matters most. 'Ends' and 'expires' are near-synonyms too, so listen for the specific one used.",
-            "textToSpeak": "They wanna upgrade before the warranty ends.",
-            "options": [
-                "They wanna upgrade after the warranty ends.",
-                "They wanna upgrade before the warranty ends."
+                "She can speak two languages fluently.",
+                "She can speak three languages fluently."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
+            "id": "LIS_FASTSPEECHDECODER_L46_Q3",
+            "interactionType": "choice",
+            "instruction": "Listen again — which version matches what was said?",
+            "hint": "Notice whether this describes something usual, or something new.",
+            "explanation": "A weak 'can' in a general statement often signals a routine ability, so context clues around it, like frequency words, matter just as much.",
+            "textToSpeak": "He can usually finish the crossword in ten minutes.",
+            "options": [
+                "He can usually finish the crossword in ten minutes.",
+                "He can usually finish the crossword in twenty minutes."
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "fastSpeechDecoder",
+            "emoji": "⚡"
+        },
+        {
             "id": "LIS_FASTSPEECHDECODER_L47_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch caffeine versus sugar, and 'cut back' versus 'cut out'.",
-            "explanation": "'Cut back on' (reduce) and 'cut out' (stop completely) are different levels of commitment, so listen for the exact phrase. 'Cut back' and 'cut down' mean almost the same thing, which makes the precise wording even more important.",
-            "textToSpeak": "I've really gotta cut back on caffeine.",
+            "instruction": "Listen carefully and catch the exact sentence.",
+            "hint": "Catch the reduced 'have' at the start, then the real content after it.",
+            "explanation": "As an auxiliary, 'have' often weakens to a quick 'uv' sound rather than its full pronunciation, especially before another verb.",
+            "textToSpeak": "We have chosen the venue already.",
             "options": [
-                "I've really gotta cut back on caffeine.",
-                "I've really gotta cut back on sugar."
+                "We have chosen the venue already.",
+                "We have chosen the caterer already."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -291,43 +291,43 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L47_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Notice warm up versus cool down, and before versus after.",
-            "explanation": "'Warm up' and 'cool down' are opposite parts of exercise, so that phrase is the key detail. 'Before' and 'after' running also completely change the advice being given.",
-            "textToSpeak": "You've gotta warm up before you run.",
+            "instruction": "They said it fast — what did you actually hear?",
+            "hint": "Listen for who has the information, not just that someone does.",
+            "explanation": "Weak 'have' can blend almost completely into the pronoun before it, so the subject needs your full attention here.",
+            "textToSpeak": "They have the results from the test.",
             "options": [
-                "You've gotta warm up before you run.",
-                "You've gotta warm up before you swim."
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "fastSpeechDecoder",
-            "emoji": "⚡"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L47_Q3",
-            "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch book versus cancel, and that versus this.",
-            "explanation": "'Book' and 'cancel' are opposite actions, so that verb decides the whole meaning of the sentence. 'That' and 'this' are small, quick words too, so listen closely.",
-            "textToSpeak": "We've gotta book that dentist appointment soon.",
-            "options": [
-                "We've gotta book this dentist appointment soon.",
-                "We've gotta book that dentist appointment soon."
+                "We have the results from the test.",
+                "They have the results from the test."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
+            "id": "LIS_FASTSPEECHDECODER_L47_Q3",
+            "interactionType": "choice",
+            "instruction": "Natural speech blends words together. Catch the real message.",
+            "hint": "Catch the exact number of attempts mentioned.",
+            "explanation": "'Have' fades into the background of the sentence, so the number and noun that follow are really where the meaning is decided.",
+            "textToSpeak": "We have tried three different suppliers.",
+            "options": [
+                "We have tried three different suppliers.",
+                "We have tried four different suppliers."
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "fastSpeechDecoder",
+            "emoji": "⚡"
+        },
+        {
             "id": "LIS_FASTSPEECHDECODER_L48_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch the exact day, and this versus that.",
-            "explanation": "'Hafta' is the natural fast-speech version of 'have to', so don't let the casual sound distract you from the real details: the deadline and 'this' versus 'that' essay.",
-            "textToSpeak": "I hafta hand in this essay by Monday.",
+            "instruction": "Listen for the small word that changes the meaning.",
+            "hint": "Catch whether this was one person or several.",
+            "explanation": "'Was' and 'were' both weaken heavily in casual speech, so the vowel is the main clue to whether the subject was singular or plural.",
+            "textToSpeak": "The window was left open overnight.",
             "options": [
-                "I hafta hand in this essay by Friday.",
-                "I hafta hand in this essay by Monday."
+                "The windows were left open overnight.",
+                "The window was left open overnight."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -336,28 +336,28 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L48_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Notice whole versus half, and redo versus review.",
-            "explanation": "'Redo' (do again) and 'review' (check over) require very different amounts of work, so catch the exact verb. 'Whole' and 'half' also change how big the task really is.",
-            "textToSpeak": "She hafta redo the whole assignment tonight.",
+            "instruction": "Focus on the key detail hidden in the fast sentence.",
+            "hint": "Listen for the specific detail, since the weak verb itself gives little away.",
+            "explanation": "A weak 'was' barely registers on its own, so the description that follows it, here the exact state of the room, carries the real information.",
+            "textToSpeak": "The house was completely empty when we arrived.",
             "options": [
-                "He hafta redo the whole assignment tonight.",
-                "She hafta redo the whole assignment tonight."
+                "The house was completely empty when we arrived.",
+                "The house was completely full when we arrived."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L48_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch this week versus next week, and project versus proposal.",
-            "explanation": "'This week' and 'next week' are a classic timing swap in fast speech, so lock that down first. 'Project' and 'proposal' also sound close enough to require careful listening.",
-            "textToSpeak": "We hafta present our project next week.",
+            "instruction": "Listen again — which version matches what was said?",
+            "hint": "Notice who exactly this description applies to.",
+            "explanation": "'Were' reduces to a fast, light sound before the next word, so tracking the subject correctly depends on catching it early in the sentence.",
+            "textToSpeak": "The instructions were surprisingly easy to follow.",
             "options": [
-                "We hafta present our project next week.",
-                "We hafta present our proposal next week."
+                "The instructions were surprisingly easy to follow.",
+                "The instructions were surprisingly hard to follow."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -366,43 +366,43 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L49_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch go versus stay, and work versus study.",
-            "explanation": "This sentence stacks two reductions back to back, 'wanna' and 'gotta', so there's a lot of fast, casual speech packed together. Slow it down in your head and catch each verb separately.",
-            "textToSpeak": "I wanna go, but I've gotta work late.",
+            "instruction": "Listen carefully and catch the exact sentence.",
+            "hint": "Catch two weak words at once: the article, and the connector.",
+            "explanation": "'A' and 'of' can both reduce to nearly silent sounds in the same sentence, so most of the meaning rests entirely on the surrounding content words.",
+            "textToSpeak": "I grabbed a bag of apples on the way home.",
             "options": [
-                "I wanna go, but I've gotta study late.",
-                "I wanna go, but I've gotta work late."
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "fastSpeechDecoder",
-            "emoji": "⚡"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L49_Q2",
-            "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch late versus early, and he versus she.",
-            "explanation": "'Cause squeezes 'because' down to a single syllable in fast speech - so common it's often written this way too. On top of that, 'gonna' and 'gotta' both appear, so there's a lot of reduced speech to track in one sentence.",
-            "textToSpeak": "He's gonna be late 'cause he's gotta finish this first.",
-            "options": [
-                "He's gonna be late 'cause he's gotta finish this first.",
-                "She's gonna be late 'cause he's gotta finish this first."
+                "I grabbed a bag of apples on the way home.",
+                "I grabbed a bag of oranges on the way home."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
+            "id": "LIS_FASTSPEECHDECODER_L49_Q2",
+            "interactionType": "choice",
+            "instruction": "They said it fast — what did you actually hear?",
+            "hint": "Listen for two weak forms working together in one phrase.",
+            "explanation": "'For' and 'a' both weaken here, stacking two nearly silent words back to back, so the noun and purpose that follow carry the whole message.",
+            "textToSpeak": "She left early for a doctor's appointment.",
+            "options": [
+                "She left early for a dentist's appointment.",
+                "She left early for a doctor's appointment."
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "fastSpeechDecoder",
+            "emoji": "⚡"
+        },
+        {
             "id": "LIS_FASTSPEECHDECODER_L49_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch first versus soon, and 'wanna' versus 'hafta'.",
-            "explanation": "Stacking 'gonna' and 'wanna' together as 'gonna wanna' is very natural in fast speech, even though it looks strange written down. Listen for the small word right after it: first or soon.",
-            "textToSpeak": "They're gonna wanna see the results first.",
+            "instruction": "Natural speech blends words together. Catch the real message.",
+            "hint": "Catch what was true, and what it was true of.",
+            "explanation": "'Was' and 'of' both fade at speed, leaving the content words to do almost all the communicating in this sentence.",
+            "textToSpeak": "Most of the paint was still wet.",
             "options": [
-                "They're gonna wanna see the results first.",
-                "They're gonna wanna see the results soon."
+                "Most of the paint was still wet.",
+                "Most of the paint was already dry."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -411,43 +411,43 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L50_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch minute versus moment, and think versus talk.",
-            "explanation": "'Minute' and 'moment' both suggest a short pause but aren't identical words, so listen for the exact one. 'Think about' and 'talk about' are different actions entirely, so don't assume.",
-            "textToSpeak": "I'm gonna need a minute to think about it.",
+            "instruction": "Listen for the small word that changes the meaning.",
+            "hint": "By now, expect the small function words to almost disappear — focus on content.",
+            "explanation": "This sentence strings together several weak forms — 'a', 'to', 'of' — none of which carry real stress, so your ear should be trained to skip past them automatically.",
+            "textToSpeak": "I need to pick up a couple of things for dinner.",
             "options": [
-                "I'm gonna need a moment to think about it.",
-                "I'm gonna need a minute to think about it."
+                "I need to pick up a couple of things for dinner.",
+                "I need to pick up a couple of things for lunch."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L50_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Notice busy versus dark, and 'wanna' versus 'hafta'.",
-            "explanation": "'Wanna' (a preference) and 'hafta' (an obligation) sound close but carry different levels of urgency. 'Busy' and 'dark' also completely change the reason for hurrying.",
-            "textToSpeak": "We wanna get there before it gets busy.",
+            "instruction": "Focus on the key detail hidden in the fast sentence.",
+            "hint": "Catch the full detail even though most of the small words barely sound at all.",
+            "explanation": "'Was' and 'for' both weaken here, so this sentence tests whether you can extract the real message, who it was for, from a very lightly-stressed frame.",
+            "textToSpeak": "That gift was for her birthday, not mine.",
             "options": [
-                "We hafta get there before it gets busy.",
-                "We wanna get there before it gets busy."
+                "That gift was for her birthday, not mine.",
+                "That gift was for his birthday, not mine."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L50_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch funny versus clever, and admit versus agree.",
-            "explanation": "'Admit' (accept something reluctantly) and 'agree' (share the same opinion) are subtly different, so listen for the exact verb. 'Funny' and 'clever' are close enough in meaning to require careful listening too.",
-            "textToSpeak": "You've gotta admit, that was pretty funny.",
+            "instruction": "Listen again — which version matches what was said?",
+            "hint": "Notice how much of the sentence's meaning survives even when the small words vanish.",
+            "explanation": "By this level, weak forms should feel almost invisible to you — the skill is trusting the content words to carry the story, which they usually do.",
+            "textToSpeak": "We waited for a while and then gave up.",
             "options": [
-                "You've gotta admit, that was pretty funny.",
-                "You've gotta admit, that was pretty clever."
+                "We waited for a while and then gave up.",
+                "We waited for a while and then got in."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",

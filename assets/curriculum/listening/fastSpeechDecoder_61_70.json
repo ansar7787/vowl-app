@@ -6,28 +6,28 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L61_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch sooner versus later, and 'coulda' versus 'couldn't have'.",
-            "explanation": "'Coulda' is how 'could have' sounds in fast, casual speech - a soft 'uh' where 'have' used to be. Notice how different that is from 'couldn't have', which keeps an extra, audible negative syllable.",
-            "textToSpeak": "I coulda finished it sooner if I'd known.",
+            "instruction": "Listen carefully and catch the exact sentence.",
+            "hint": "Notice the smooth glide between 'go' and 'on' — no gap at all.",
+            "explanation": "When one word ends in a vowel and the next starts with one, speakers often add a light glide sound between them, so 'go on' can sound like 'gowon'.",
+            "textToSpeak": "Just go on without me.",
             "options": [
-                "I coulda finished it sooner if I'd known.",
-                "I coulda finished it sooner if I'd asked."
+                "Just go in without me.",
+                "Just go on without me."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L61_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch taxi versus bus, and walking versus driving.",
-            "explanation": "'Coulda' packs 'could have' into one relaxed sound, useful to recognise, but the real content here is in the nouns: taxi or bus, walking or driving.",
-            "textToSpeak": "We coulda taken a taxi instead of walking.",
+            "instruction": "They said it fast — what did you actually hear?",
+            "hint": "Catch exactly what they asked about, since the boundary can become hard to hear.",
+            "explanation": "'I asked' often blends its vowels together at natural speed, so 'I asked' can start to sound like one smoother sound rather than two clear words.",
+            "textToSpeak": "I asked about the refund policy.",
             "options": [
-                "We coulda taken a bus instead of walking.",
-                "We coulda taken a taxi instead of walking."
+                "I asked about the return policy.",
+                "I asked about the refund policy."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -36,13 +36,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L61_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Notice earlier versus sooner, and this versus that.",
-            "explanation": "'Earlier' and 'sooner' are near-synonyms, both meaning 'before now', so the exact word matters here. Also confirm he versus she, and this versus that - small words carrying real meaning.",
-            "textToSpeak": "He coulda mentioned that detail a bit earlier.",
+            "instruction": "Natural speech blends words together. Catch the real message.",
+            "hint": "Listen for whether they saw it, or only heard about it.",
+            "explanation": "'See it' often gains a soft glide sound between the two vowels, making the phrase flow as one smooth unit rather than two separate words.",
+            "textToSpeak": "Did you see it happen yourself?",
             "options": [
-                "She coulda mentioned that detail a bit sooner.",
-                "He coulda mentioned that detail a bit earlier."
+                "Did you hear about it happen yourself?",
+                "Did you see it happen yourself?"
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -51,13 +51,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L62_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch called versus texted, and before versus after.",
-            "explanation": "'Shoulda' softens 'should have' the same way 'coulda' softens 'could have' - a light 'uh' replacing 'have'. 'Before' and 'after' flip the timing completely, so listen carefully.",
-            "textToSpeak": "I shoulda called first before coming over.",
+            "instruction": "Listen for the small word that changes the meaning.",
+            "hint": "Catch who exactly they're talking about here.",
+            "explanation": "'She isn't' and similar phrases can develop a light glide between the vowels, so the whole phrase may sound smoother and faster than you'd expect from the spelling.",
+            "textToSpeak": "She isn't answering her phone.",
             "options": [
-                "I shoulda called first after coming over.",
-                "I shoulda called first before coming over."
+                "He isn't answering her phone.",
+                "She isn't answering her phone."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -66,13 +66,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L62_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Notice months versus weeks, and this versus that.",
-            "explanation": "'Months ago' and 'weeks ago' both describe the past but very different lengths of it, so that detail really matters. 'Booked' and 'visited' are also different actions entirely.",
-            "textToSpeak": "We shoulda booked this place months ago.",
+            "instruction": "Focus on the key detail hidden in the fast sentence.",
+            "hint": "Notice exactly what they're offering to do.",
+            "explanation": "'I offered' can blend its vowels into a smoother, faster sound at natural speed, so listen past the linking for the specific offer that follows.",
+            "textToSpeak": "I offered to cover the extra shift.",
             "options": [
-                "We shoulda booked that place months ago.",
-                "We shoulda booked this place months ago."
+                "I offered to cover the extra cost.",
+                "I offered to cover the extra shift."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -81,13 +81,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L62_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch change versus delay, and us versus me.",
-            "explanation": "'Change' and 'delay' are related family-planning words but describe different problems. 'Us' and 'me' also change how many people were actually affected.",
-            "textToSpeak": "They shoulda told us about the change sooner.",
+            "instruction": "Listen again — which version matches what was said?",
+            "hint": "Catch whether they went alone, or with someone else.",
+            "explanation": "'Go alone' often glides its vowels together in casual speech, so the detail about company, alone or not, deserves close attention.",
+            "textToSpeak": "She decided to go alone this time.",
             "options": [
-                "They shoulda told us about the change earlier.",
-                "They shoulda told us about the change sooner."
+                "She decided to go along this time.",
+                "She decided to go alone this time."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -96,28 +96,28 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L63_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch bigger versus cheaper, bought versus tried, and it versus that.",
-            "explanation": "'Woulda' is 'would have' relaxed into one quick sound, used for a hypothetical about something that didn't happen. The real decision-maker in this sentence is the reason given: cheaper or bigger.",
-            "textToSpeak": "I woulda bought it if it was cheaper.",
+            "instruction": "Listen carefully and catch the exact sentence.",
+            "hint": "Listen for the glide between 'who is' and catch exactly who's asked about.",
+            "explanation": "'Who is' often reduces and glides together at speed, and the name or role that follows carries the real content of the question.",
+            "textToSpeak": "Who is organizing the event this year?",
             "options": [
-                "I woulda bought it if it was cheaper.",
-                "I woulda tried it if it was cheaper."
+                "Who is sponsoring the event this year?",
+                "Who is organizing the event this year?"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L63_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Notice called versus texted, and needed versus wanted.",
-            "explanation": "'Needed' (a requirement) and 'wanted' (a preference) suggest slightly different levels of urgency, so listen for the exact word. He versus she is also a quick, easy swap to miss.",
-            "textToSpeak": "She woulda called if she needed anything.",
+            "instruction": "They said it fast — what did you actually hear?",
+            "hint": "Catch whether they're asking about now, or about earlier.",
+            "explanation": "'How often' can blend its vowel sounds at speed, so the tense of the verb that follows is what actually tells you the timeframe.",
+            "textToSpeak": "How often did you visit before moving away?",
             "options": [
-                "He woulda called if she needed anything.",
-                "She woulda called if she needed anything."
+                "How often do you visit before moving away?",
+                "How often did you visit before moving away?"
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -126,43 +126,43 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L63_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch bigger versus smaller, and size versus option.",
-            "explanation": "'Bigger' and 'smaller' are opposites, so nail that word down first. 'Size' and 'option' are also close enough in this context that you need to hear the actual word.",
-            "textToSpeak": "We woulda gone with the bigger size.",
+            "instruction": "Natural speech blends words together. Catch the real message.",
+            "hint": "Notice exactly what they're unsure about.",
+            "explanation": "'Are you okay' glides its vowels together into a smooth, fast question, so the follow-up detail is where the real concern is expressed.",
+            "textToSpeak": "Are you okay with the new schedule?",
             "options": [
-                "They woulda gone with the bigger size.",
-                "We woulda gone with the bigger size."
+                "Are you okay with the new schedule?",
+                "Are you okay with the new budget?"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L64_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch 'a lot' versus 'a little', and 'musta' versus 'must'.",
-            "explanation": "'Musta' expresses a confident guess about the past, 'must have put in effort', while plain 'must' would be a rule about right now. That reduced 'have' changes the whole meaning.",
-            "textToSpeak": "You musta put a lot of effort into this.",
+            "instruction": "Listen for the small word that changes the meaning.",
+            "hint": "Catch the negative first, since the vowel glide can make it slip by.",
+            "explanation": "'I'm not able to' can glide together at speed, blurring the boundary between 'not' and 'able', so both the negative and the reason need attention.",
+            "textToSpeak": "I'm not able to attend the whole meeting.",
             "options": [
-                "You musta put a little effort into this.",
-                "You musta put a lot of effort into this."
+                "I'm not able to attend the whole meeting.",
+                "I'm able to attend the whole meeting."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L64_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Notice spice versus sugar, and tonight versus today.",
-            "explanation": "'Spice' and 'sugar' would make the dish taste completely different, so that noun is the real clue. 'Chef' and 'waiter' also play very different roles in a kitchen.",
-            "textToSpeak": "The chef musta added extra spice tonight.",
+            "instruction": "Focus on the key detail hidden in the fast sentence.",
+            "hint": "Listen for whether they agree or not, since the vowels blend together here.",
+            "explanation": "'I agree' and 'I don't agree' both involve vowel linking around 'I', but the negative changes everything that follows.",
+            "textToSpeak": "I don't agree with that decision.",
             "options": [
-                "The chef musta added extra sugar tonight.",
-                "The chef musta added extra spice tonight."
+                "I agree with that decision.",
+                "I don't agree with that decision."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -171,13 +171,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L64_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch save versus book, and remembered versus forgotten.",
-            "explanation": "'Remembered' and 'forgotten' are direct opposites, so that verb decides the whole story. 'Table' and 'seats' are close enough in meaning that you need the exact word too.",
-            "textToSpeak": "They musta forgotten to save our table.",
+            "instruction": "Listen again — which version matches what was said?",
+            "hint": "Notice exactly what they're avoiding, and whether they can or can't.",
+            "explanation": "The vowels in 'I'm unable' often glide into each other, so this sentence tests both the negative meaning and the specific detail that follows.",
+            "textToSpeak": "I'm unable to make it before six.",
             "options": [
-                "They musta forgotten to save our table.",
-                "They musta forgotten to book our table."
+                "I'm unable to make it before six.",
+                "I'm able to make it before six."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -186,43 +186,43 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L65_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch flights versus hotels, and 'coulda' versus 'shoulda'.",
-            "explanation": "'Coulda' (it was possible) and 'shoulda' (it would have been wise) suggest slightly different regrets. 'Flights' and 'hotels' also completely change what's being discussed.",
-            "textToSpeak": "We coulda gotten a better deal on flights.",
+            "instruction": "Listen carefully and catch the exact sentence.",
+            "hint": "Catch the full sentence — the vowel glides run right through it.",
+            "explanation": "Longer sentences often have several vowel-to-vowel boundaries in a row, each with a light glide, so the whole thing can feel like one continuous flow of sound.",
+            "textToSpeak": "I ended up ordering the same thing as always.",
             "options": [
-                "We coulda gotten a better deal on hotels.",
-                "We coulda gotten a better deal on flights."
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "fastSpeechDecoder",
-            "emoji": "⚡"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L65_Q2",
-            "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Notice shoes versus socks, and packed versus brought.",
-            "explanation": "'Packed' and 'brought' overlap in meaning around travel, so listen for the exact verb. 'Shoes' and 'socks' are also easy to mix up if you're not paying full attention.",
-            "textToSpeak": "I shoulda packed an extra pair of shoes.",
-            "options": [
-                "I shoulda packed an extra pair of shoes.",
-                "I shoulda packed an extra pair of socks."
+                "I ended up ordering the same thing as always.",
+                "I ended up ordering something different as always."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
+            "id": "LIS_FASTSPEECHDECODER_L65_Q2",
+            "interactionType": "choice",
+            "instruction": "They said it fast — what did you actually hear?",
+            "hint": "Notice exactly who else was there.",
+            "explanation": "'He and I' links across two vowel sounds smoothly, so the extra detail about who else attended is what really matters here.",
+            "textToSpeak": "He and I ended up staying late.",
+            "options": [
+                "She and I ended up staying late.",
+                "He and I ended up staying late."
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "fastSpeechDecoder",
+            "emoji": "⚡"
+        },
+        {
             "id": "LIS_FASTSPEECHDECODER_L65_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch security versus customs, and queue versus crowd.",
-            "explanation": "'Security' and 'customs' are different parts of an airport, so that noun really matters. 'Shoulda' and 'coulda' also sound close, so listen for the exact modal.",
-            "textToSpeak": "You shoulda seen the queue at security.",
+            "instruction": "Natural speech blends words together. Catch the real message.",
+            "hint": "Catch the outcome, since the glide can make the sentence sound like one long breath.",
+            "explanation": "'I ended up' is a common phrase where the vowels glide together, so listen through to the final outcome named at the end.",
+            "textToSpeak": "I ended up walking home in the rain.",
             "options": [
-                "You shoulda seen the queue at security.",
-                "You coulda seen the queue at security."
+                "I ended up walking home in the rain.",
+                "I ended up driving home in the rain."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -231,43 +231,43 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L66_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Notice sooner versus later, and 'realised' versus 'known'.",
-            "explanation": "'Realised' and 'known' are close synonyms for understanding something, so the exact word takes real focus. 'Woulda' (a hypothetical choice) and 'musta' (a guess) also mean very different things here.",
-            "textToSpeak": "I woulda upgraded sooner if I'd realised.",
+            "instruction": "Listen for the small word that changes the meaning.",
+            "hint": "Listen for the exact time, since the glide blurs the sentence's edges.",
+            "explanation": "'She and I' glides its vowels together, so hold onto the time detail that appears afterward as the real point of the sentence.",
+            "textToSpeak": "She and I are meeting at eleven.",
             "options": [
-                "I musta upgraded sooner if I'd realised.",
-                "I woulda upgraded sooner if I'd realised."
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "fastSpeechDecoder",
-            "emoji": "⚡"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L66_Q2",
-            "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch weeks versus months, and bug versus error.",
-            "explanation": "'Weeks' and 'months' both describe a length of time but very different ones. 'Bug' and 'error' are near-synonyms in tech talk too, so listen for the specific word.",
-            "textToSpeak": "This bug musta been there for weeks.",
-            "options": [
-                "This bug musta been there for weeks.",
-                "This bug musta gone there for weeks."
+                "She and I are meeting at eleven.",
+                "She and I are meeting at twelve."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
+            "id": "LIS_FASTSPEECHDECODER_L66_Q2",
+            "interactionType": "choice",
+            "instruction": "Focus on the key detail hidden in the fast sentence.",
+            "hint": "Notice exactly where they ended up going.",
+            "explanation": "'We ended up' is a smooth, glided phrase, so the destination that follows carries almost all of the real information.",
+            "textToSpeak": "We ended up at a small café downtown.",
+            "options": [
+                "We ended up at a small restaurant downtown.",
+                "We ended up at a small café downtown."
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "fastSpeechDecoder",
+            "emoji": "⚡"
+        },
+        {
             "id": "LIS_FASTSPEECHDECODER_L66_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch mattered versus worked, and it versus that.",
-            "explanation": "'Mattered' and 'worked' lead to different conclusions about why she stayed quiet. He versus she, and it versus that, are also small words worth double-checking.",
-            "textToSpeak": "She woulda mentioned it if it mattered.",
+            "instruction": "Listen again — which version matches what was said?",
+            "hint": "Catch whether this happened once, or is happening again.",
+            "explanation": "'I already' can glide its vowels together into a fast, smooth sound, so the surrounding words are the real clue to timing here.",
+            "textToSpeak": "I already answered that question earlier.",
             "options": [
-                "She woulda mentioned it if it mattered.",
-                "She woulda mentioned it if it worked."
+                "I already answered that question earlier.",
+                "I'll answer that question again later."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -276,13 +276,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L67_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch eat versus have, and the exact meal.",
-            "explanation": "'Whaddya' packs 'what do you' into one quick, tapped sound - so common in natural speech that the individual words almost disappear. Focus on the verb and the meal that follow it.",
-            "textToSpeak": "Whaddya usually eat for breakfast these days?",
+            "instruction": "Listen carefully and catch the exact sentence.",
+            "hint": "Listen for the actual opinion, since the intro phrase glides together.",
+            "explanation": "'I honestly' often blends its vowel sounds at speed, so most of the real meaning sits in the opinion that follows this smooth opening.",
+            "textToSpeak": "I honestly think it's a great idea.",
             "options": [
-                "Whaddya usually eat for breakfast these days?",
-                "Whaddya usually eat for dinner these days?"
+                "I honestly think it's a great idea.",
+                "I honestly think it's a bad idea."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -291,28 +291,28 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L67_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Notice diet versus exercise, and this versus that.",
-            "explanation": "'Whaddya think' is extremely common in casual speech, so recognising the reduction itself isn't the hard part - catching 'diet' versus 'exercise' plan is.",
-            "textToSpeak": "Whaddya think of this new diet plan?",
+            "instruction": "They said it fast — what did you actually hear?",
+            "hint": "Catch whether they actually enjoyed it or not.",
+            "explanation": "'I enjoyed' glides across its vowel sounds naturally, so the specific reaction that follows is where the real content lies.",
+            "textToSpeak": "I enjoyed the presentation more than expected.",
             "options": [
-                "Whaddya think of this new diet plan?",
-                "Whaddya think about this new diet plan?"
+                "I didn't enjoy the presentation as much as expected.",
+                "I enjoyed the presentation more than expected."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L67_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch headaches versus dizziness, singular versus plural, and 'reckon's' versus 'think's'.",
-            "explanation": "'Reckon' is an informal way of saying 'think' or 'guess', often used in casual health chats. 'Reckon's' packs 'reckon is' together too, so there's a lot of quick reduction stacked into one word.",
-            "textToSpeak": "Whaddya reckon's really been causing the headaches?",
+            "instruction": "Natural speech blends words together. Catch the real message.",
+            "hint": "Notice the exact reason behind their opinion.",
+            "explanation": "'I always thought' links its vowels smoothly together, so the reasoning that follows carries the real substance of the sentence.",
+            "textToSpeak": "I always thought the plan needed more detail.",
             "options": [
-                "Whaddya reckon's really been causing the headaches?",
-                "Whaddya reckon's really been causing the dizziness?"
+                "I always thought the plan needed more detail.",
+                "I always thought the plan needed less detail."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -321,13 +321,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L68_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch test versus exam, and 'think' versus 'reckon'.",
-            "explanation": "This sentence stacks two reductions, 'whaddya' (what do you) and 'gonna' (going to), exactly how a quick, casual question sounds between classmates. 'Think' and 'reckon' are near-synonyms too, so listen closely.",
-            "textToSpeak": "Whaddya think the test's actually gonna cover?",
+            "instruction": "Listen for the small word that changes the meaning.",
+            "hint": "Track both halves of the sentence — each one has its own vowel glide.",
+            "explanation": "This sentence has vowel linking in two separate places, so treat it as two smaller listening checks joined together.",
+            "textToSpeak": "I asked her to wait, and she agreed to stay.",
             "options": [
-                "Whaddya think the test's actually gonna cover?",
-                "Whaddya reckon the test's actually gonna cover?"
+                "I asked her to wait, and she agreed to stay.",
+                "I asked her to leave, and she agreed to stay."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -336,13 +336,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L68_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Notice tonight versus tomorrow, and study versus revise.",
-            "explanation": "'Whaddya say' is a common casual way to suggest something, packing 'what do you' into one quick run of sound. The real proposal is in the details after it: when, and doing what exactly.",
-            "textToSpeak": "Whaddya say we study together later tonight?",
+            "instruction": "Focus on the key detail hidden in the fast sentence.",
+            "hint": "Catch what happened first, and what happened as a result.",
+            "explanation": "'I ended up' and 'he offered' both glide their vowels smoothly, so hold onto both parts of the story as it unfolds.",
+            "textToSpeak": "She ended up asking, and he offered to help right away.",
             "options": [
-                "Whaddya think we study together later tonight?",
-                "Whaddya say we study together later tonight?"
+                "She ended up offering, and he asked to help right away.",
+                "She ended up asking, and he offered to help right away."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -351,13 +351,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L68_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch passing versus failing, and my versus her.",
-            "explanation": "'Passing' and 'failing' are opposites, so that word decides the entire tone of the question. 'My' and 'her' are also quick, light pronouns easy to mishear in a rush.",
-            "textToSpeak": "Whaddya reckon my chances are of passing?",
+            "instruction": "Listen again — which version matches what was said?",
+            "hint": "Notice exactly how the two events are connected.",
+            "explanation": "This sentence links vowels across two clauses, so listen for the exact relationship between the two parts, not just the individual words.",
+            "textToSpeak": "I agreed to wait, even though I already knew the answer.",
             "options": [
-                "Whaddya reckon my chances are of passing?",
-                "Whaddya think my chances are of passing?"
+                "I agreed to wait, even though I already knew the answer.",
+                "I refused to wait, even though I already knew the answer."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -366,13 +366,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L69_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch movie versus show, and 'coulda' versus 'shoulda'.",
-            "explanation": "'Coulda been better' (it had potential) and 'shoulda been better' (it was a letdown given expectations) carry a slightly different tone. Also confirm movie versus show, and 'so much' versus 'a little' better.",
-            "textToSpeak": "That movie coulda been so much better.",
+            "instruction": "Listen carefully and catch the exact sentence.",
+            "hint": "Catch the subtle difference hidden inside the smoothly linked phrase.",
+            "explanation": "'I owe you' glides its vowels into a fast, connected sound, so the exact amount or favor mentioned afterward is what really carries the meaning.",
+            "textToSpeak": "I owe you an explanation for that.",
             "options": [
-                "That movie coulda been so much better.",
-                "That movie shoulda been so much better."
+                "I owe you an explanation for that.",
+                "I owe you an apology for that."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -381,13 +381,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L69_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Notice spent versus saved, and effects versus costume.",
-            "explanation": "'Spent' and 'saved' are opposites, so that verb changes the whole comment about the budget. 'A fortune' and 'a lot' both mean a large amount, so listen for the specific phrase.",
-            "textToSpeak": "They musta spent a fortune on those effects.",
+            "instruction": "They said it fast — what did you actually hear?",
+            "hint": "Listen for whether they're actually available, or not.",
+            "explanation": "'I am available' glides across two vowels smoothly, so the surrounding context is the real clue to whether this is a yes or a no.",
+            "textToSpeak": "I'm not available until Thursday.",
             "options": [
-                "They musta spent a fortune on that costume.",
-                "They musta spent a fortune on those effects."
+                "I'm available until Thursday.",
+                "I'm not available until Thursday."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -396,13 +396,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L69_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch cried versus laughed, and too versus anyway.",
-            "explanation": "'Cried' and 'laughed' are opposite reactions to the same scene, so that verb is the whole point. 'I' and 'you' are also easy to mix up when spoken quickly and quietly.",
-            "textToSpeak": "I woulda cried at that ending too.",
+            "instruction": "Natural speech blends words together. Catch the real message.",
+            "hint": "Notice exactly what they're owed, and by whom.",
+            "explanation": "This sentence combines a vowel glide with a specific detail, so both the smooth linking and the actual content need your attention.",
+            "textToSpeak": "They owe us an update by tomorrow.",
             "options": [
-                "I woulda cried at that ending too.",
-                "I woulda laughed at that ending too."
+                "They owe us an update by tomorrow.",
+                "We owe them an update by tomorrow."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -411,43 +411,43 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L70_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch time versus money, and 'coulda' versus 'shoulda'.",
-            "explanation": "'Coulda saved' (it was possible) and 'shoulda saved' (it would have been the smart choice) carry slightly different regrets. 'Time' and 'money' also completely change what's actually being discussed.",
-            "textToSpeak": "We coulda saved a lot of time honestly.",
+            "instruction": "Listen for the small word that changes the meaning.",
+            "hint": "By now, expect vowel sounds to glide together across whole phrases.",
+            "explanation": "This level brings together several vowel-linking patterns in one sentence, so trust your ear to follow the meaning through the smooth, connected flow.",
+            "textToSpeak": "We ended up asking her, and she agreed right away.",
             "options": [
-                "We coulda saved a lot of money honestly.",
-                "We coulda saved a lot of time honestly."
+                "We ended up asking her, and she agreed right away.",
+                "We ended up asking her, and she refused right away."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L70_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Notice already versus anyway, and known versus guessed.",
-            "explanation": "'Known' (had real information) and 'guessed' (made an assumption) suggest very different levels of certainty. 'Already' and 'anyway' also change the tone of the question.",
-            "textToSpeak": "You musta known about that already, right?",
+            "instruction": "Focus on the key detail hidden in the fast sentence.",
+            "hint": "Catch the full sentence, since several glides appear in a row.",
+            "explanation": "Vowel linking rarely happens just once in a real sentence — here it appears twice, so listen through the whole thing rather than just the start.",
+            "textToSpeak": "I already offered, and he already agreed to help.",
             "options": [
-                "You musta known about that anyway, right?",
-                "You musta known about that already, right?"
+                "I already offered, and he already agreed to help.",
+                "I already agreed, and he already offered to help."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L70_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch 'shoulda' versus 'coulda', and we versus they.",
-            "explanation": "'Shoulda done differently' (a clear regret) and 'coulda done differently' (just a possibility) frame the reflection in different ways. This sentence also stacks 'whaddya' right alongside it, so slow the whole thing down in your head.",
-            "textToSpeak": "Whaddya reckon we really shoulda done differently?",
+            "instruction": "Listen again — which version matches what was said?",
+            "hint": "Notice how naturally the whole sentence flows despite the linking.",
+            "explanation": "By this level, vowel-to-vowel glides should feel like a normal part of fast English rather than something confusing — the meaning still comes through clearly.",
+            "textToSpeak": "I honestly think we ended up in the right place.",
             "options": [
-                "Whaddya reckon we really shoulda done differently?",
-                "Whaddya reckon they really shoulda done differently?"
+                "I honestly think we ended up in the right place.",
+                "I honestly think we ended up in the wrong place."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",

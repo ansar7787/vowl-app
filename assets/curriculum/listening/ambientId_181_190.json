@@ -5,632 +5,662 @@
     "quests": [
         {
             "id": "LIS_AMBIENTID_L181_Q1",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Which place fits these sounds?",
             "interactionType": "choice",
-            "hint": "Listen for muted disbelieving applause after a tense wait and a loaded image.",
-            "explanation": "Muted applause breaking a tense silence the moment a landing image finally loads captures the emotional release after years of preparation reach their culmination.",
-            "textToSpeak": "A room erupts into muted, disbelieving applause as a single grainy image finally loads, confirming a safe landing after a wait stretched taut with silence.",
+            "hint": "Listen for what gets compared against what, and the tone of that last sentence.",
+            "explanation": "Careful pre-discussion photos, a traced scuff mark, a pulled-up comparison folder, and a defensive final line describe a disputed damage claim during a rental car return, not a routine return or repair.",
+            "textToSpeak": "A phone camera clicks several times close to the car's rear panel before anyone says a word, an attendant traces a fingertip slowly along a scuff mark without quite committing to blaming anyone yet, a folder of the original pickup photos gets pulled up on a tablet for comparison, and a slightly tense pause follows before someone finally says, \"I really don't remember that being there.\"",
             "options": [
-                "International Space Station Laboratory Module",
-                "Mars Rover Mission Control",
-                "Lunar Sample Analysis Lab",
-                "Live Television Broadcast Control Room"
+                "Rental Car Scratch Dispute",
+                "Rental Car Return",
+                "Car Dealership Service Waiting Area",
+                "Auto Repair Garage"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Rental car return with a damage dispute",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "scuff mark",
+                "comparison photos",
+                "don't remember"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L181_Q2",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "What environment are you hearing?",
             "interactionType": "choice",
-            "hint": "Listen for exchanged evidence binders and arbitrators conferring behind raised hands.",
-            "explanation": "Evidence binders exchanged in silence and arbitrators conferring privately behind raised hands reflect the deliberate, procedural pace of resolving a formal international dispute.",
-            "textToSpeak": "Two sets of counsel exchange thick binders of evidence in near silence as a panel of arbitrators confers in hushed, unhurried tones behind raised hands.",
+            "hint": "Listen for what the person on the phone can't actually do, no matter how many questions they ask.",
+            "explanation": "A pain scale rated over the phone, a fever-duration follow-up, a spoken decision between home care and urgent care, and a case number for callback describe a remote medical triage line rather than an in-person visit.",
+            "textToSpeak": "A voice on the other end asks someone to rate a pain level on a scale from one to ten without being able to see anything at all, a pause follows a specific answer about how long a fever has lasted, a decision gets made out loud between suggesting a home remedy and recommending an urgent visit, and a case number gets read back before the call ends in case a callback is needed.",
             "options": [
-                "Head-of-State Motorcade Departure",
-                "Intelligence Briefing Room",
-                "International Arbitration Tribunal",
-                "Treaty Signing Ceremony"
+                "Doctor's Office",
+                "Nurse Triage Phone Line",
+                "Customer Service Call Center",
+                "Urgent Care Clinic"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Nurse triage phone line",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "pain scale",
+                "triage decision",
+                "callback"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L181_Q3",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Based on these sounds, where are you?",
             "interactionType": "choice",
-            "hint": "Listen for a sharp cork crack, an arcing spray, and a beginning anthem.",
-            "explanation": "A cork cracking open, a high arc of spray, and a national anthem beginning together mark the unmistakable ceremonial climax of a major race.",
-            "textToSpeak": "A cork releases with a sharp crack as a plume of spray arcs high overhead, and a national anthem begins just as three helmets are finally set down.",
+            "hint": "Listen for what happens before any actual number gets said out loud.",
+            "explanation": "A silent head-shake response, a scarcity claim, a spoken counteroffer below the tag, and a split-the-difference handshake describe an informal price negotiation typical of a flea market stall.",
+            "textToSpeak": "A price gets quoted and immediately met with a slow shake of the head rather than any spoken counteroffer at first, a vendor mentions almost casually that it's the last one of its kind, a number finally gets said out loud that's noticeably lower than the one written on a small tag, and a handshake settles things somewhere between the two figures without either side seeming to feel like they lost.",
             "options": [
-                "Sailing Regatta Race Deck",
-                "Chess Grandmaster Championship Match",
-                "Formula One Championship Podium",
-                "Olympic Photo Finish Review"
+                "Flea Market Price Negotiation",
+                "Farmers Market",
+                "Antique Auction House",
+                "Yard Sale"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Flea market price negotiation",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "counteroffer",
+                "last one",
+                "split the difference"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L182_Q1",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Listen carefully. Where are you?",
             "interactionType": "choice",
-            "hint": "Listen for a steadily biting drill and a called-out depth in meters.",
-            "explanation": "A drill boring steadily downward and depth called out in meters reflect the slow, methodical process of retrieving a record of ancient climate from deep ice.",
-            "textToSpeak": "A drill bites steadily downward through compressed ice as a technician calls out a depth in meters, each number representing centuries pulled up from below.",
+            "hint": "Listen for the unprompted tip from a stranger, and what it tells you about who else might be staying here.",
+            "explanation": "A copied passport, a color-coded wristband, a bunk assigned from a hand-drawn map, and an unprompted tip from a fellow guest describe checking into a shared hostel dorm rather than a private hotel room.",
+            "textToSpeak": "A passport gets copied at a small front desk before a locker key gets handed over along with a color-coded wristband, a bunk number gets pointed out on a hand-drawn map taped to the wall, someone already staying there offers an unprompted tip about which shower actually has hot water, and a lockbox code gets explained twice because the first explanation clearly didn't land.",
             "options": [
-                "Fine Art Forgery Investigation Lab",
-                "Lunar Sample Analysis Lab",
-                "Antarctic Ozone Monitoring Station",
-                "Polar Ice Core Drilling Site"
+                "Hostel Shared Dorm Check-In",
+                "Budget Motel Room",
+                "Hotel Lobby",
+                "University Dorm Room"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Hostel check-in for a shared dorm room",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "bunk",
+                "wristband",
+                "lockbox code"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L182_Q2",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "What place does this soundscape suggest?",
             "interactionType": "choice",
-            "hint": "Listen for ceremonially laid pens and a synchronized burst of flashbulbs.",
-            "explanation": "Pens laid out with ceremony and flashbulbs popping together at the moment of signing capture the choreographed formality of this kind of event.",
-            "textToSpeak": "Two pens are laid side by side with quiet ceremony as flashbulbs pop in a single synchronized burst, capturing a signature still drying on the page.",
+            "hint": "Listen for what the timer is actually switching, and why a name tag would need two flags.",
+            "explanation": "A timed language switch, gentle grammar correction only when invited, a failed idiom translation, and a two-flag name tag describe a structured language exchange meetup.",
+            "textToSpeak": "A timer on a phone gets set for exactly ten minutes before a conversation switches from one language to the other, someone corrects a small grammar mistake gently, only after being asked to, and a laugh follows an attempted idiom that clearly didn't translate the way it was meant to, and a name tag lists two flags rather than just one.",
             "options": [
-                "G20 Economic Summit Negotiation",
-                "Head-of-State Motorcade Departure",
-                "Treaty Signing Ceremony",
-                "War Crimes Tribunal Courtroom"
+                "Book Club Meeting",
+                "Study Abroad Info Session",
+                "Networking Mixer",
+                "Language Exchange Meetup"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Language exchange meetup",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "language switch",
+                "idiom",
+                "name tag with two flags"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L182_Q3",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Which setting best matches what you hear?",
             "interactionType": "choice",
-            "hint": "Listen for a lightly marked top note and a silent scene change around it.",
-            "explanation": "A note deliberately sung lightly to preserve the voice, set against a silently executed scene change, reflects the practical restraint singers use during a final rehearsal.",
-            "textToSpeak": "A soprano marks her top note lightly rather than singing full voice, preserving her instrument as stagehands run a full scene change around her in complete silence.",
+            "hint": "Listen for who actually turns out to know the area, and what that changes about the plan.",
+            "explanation": "Two disagreeing map apps, a slowly re-read street sign, a shared laugh about mutual confusion, and a decision to walk together describe two lost strangers navigating together rather than one confidently guiding the other.",
+            "textToSpeak": "Two phones get held side by side comparing two different map apps that don't quite agree with each other, a street sign gets read aloud slowly as if double-checking it against something, a shared laugh follows the realization that neither person actually knows this area any better than the other, and a decision gets made to just walk together toward what looks like a busier street.",
             "options": [
-                "Rare Violin Auction",
-                "Nobel Prize Ceremony Rehearsal",
-                "Ballet Gala Opening Night",
-                "Grand Opera Dress Rehearsal"
+                "Airport Curbside Check-in",
+                "Two Lost Strangers Trading Directions",
+                "Downtown Rideshare Pickup",
+                "Bike Share Rental Kiosk"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Two strangers navigating together while lost",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "map apps disagree",
+                "double-checking",
+                "walk together"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L183_Q1",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Where would you most likely hear this?",
             "interactionType": "choice",
-            "hint": "Listen for a tiny extracted pigment sample cross-referenced against a paint database.",
-            "explanation": "A minute pigment sample checked against known period paints reflects the precise scientific method used to determine whether an artwork is genuinely as old as claimed.",
-            "textToSpeak": "A pigment sample no larger than a grain of sand is extracted under magnification, as a researcher cross-references its chemical signature against a database of period-accurate paints.",
+            "hint": "Listen for the question about a specific ingredient, and who it's being asked for.",
+            "explanation": "An uncoordinated table of dishes, a nut allergy check for a child, an on-the-spot recipe request, and a half-full slow cooker leaving describe a casual, shared community potluck.",
+            "textToSpeak": "A folding table fills up gradually with dishes that clearly weren't coordinated with each other, someone asks quietly whether a dish has nuts in it before serving a small plate to a child, a recipe gets requested on the spot and typed straight into a phone rather than written down, and a slow cooker gets unplugged and carried out still half full toward the end of the night.",
             "options": [
-                "Fine Art Forgery Investigation Lab",
-                "Presidential Debate Stage Before Broadcast",
-                "Polar Ice Core Drilling Site",
-                "Antarctic Ozone Monitoring Station"
+                "Housewarming Party",
+                "Neighborhood Block Party",
+                "Family Dinner Table Conversation",
+                "Community Potluck Dinner"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Community potluck dinner",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "uncoordinated dishes",
+                "nut allergy check",
+                "on the spot"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L183_Q2",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Listen to the scene. What is the setting?",
             "interactionType": "choice",
-            "hint": "Listen for a sealed door, an opened restricted folder, and a lowered voice.",
-            "explanation": "A voice dropping lower only after a door seals shut reflects the heightened discretion expected once sensitive material is unveiled in this setting.",
-            "textToSpeak": "A folder marked with a restrictive cover sheet is opened only after the door seals shut, and a briefer's voice drops noticeably lower before continuing.",
+            "hint": "Listen for how calmly a lost child situation gets handled, compared to how it might sound elsewhere.",
+            "explanation": "A double-counted volunteer cash box, a ticket stub exchange, a walkie-talkie request to cover a station, and a calmly handled lost child describe organized parent volunteering at a school fun fair.",
+            "textToSpeak": "A cash box gets counted twice by two different volunteers before a shift change, a ticket roll unwinds with a papery whir as a child hands over a stub for a game, a walkie-talkie crackles asking if anyone can cover the face-painting table for ten minutes, and a lost child gets calmly walked toward an announcement table rather than any panic at all.",
             "options": [
-                "Presidential Debate Stage Before Broadcast",
-                "Constitutional Court Deliberation",
-                "Treaty Signing Ceremony",
-                "Intelligence Briefing Room"
+                "Fairground",
+                "School Fun Fair Volunteering",
+                "School Open House",
+                "Carnival Game Booth"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "School fun fair volunteer station",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "cash box",
+                "cover a station",
+                "announcement table"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L183_Q3",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Which place fits these sounds?",
             "interactionType": "choice",
-            "hint": "Listen for a sharply struck clock, an advanced pawn, and a distant distracting cough.",
-            "explanation": "A clock struck deliberately after a single move, in a room silent enough for a distant cough to draw attention, captures the intense focus of elite competitive play.",
-            "textToSpeak": "A clock is struck with a sharp, deliberate tap as a single pawn is advanced, and a room otherwise so silent that a distant cough draws several glances.",
+            "hint": "Listen for what two things are being compared against each other, item by item.",
+            "explanation": "A checklist compared to move-in photos, a debated nail hole, counted key copies, and a mentioned deposit timeline describe a tenant's final move-out walkthrough with a landlord.",
+            "textToSpeak": "A checklist gets read down item by item comparing the apartment's current condition to photos from move-in day, a nail hole in a wall gets pointed out and a note made about whether it counts as normal wear, keys get counted out loud to make sure all the copies are accounted for, and a deposit return timeline gets mentioned almost as an afterthought right at the door.",
             "options": [
-                "Formula One Championship Podium",
-                "Chess Grandmaster Championship Match",
-                "Grand Slam Tennis Final Match Point",
-                "Sailing Regatta Race Deck"
+                "Apartment Viewing Tour",
+                "Real Estate Open House",
+                "Tenant Move-Out Final Walkthrough",
+                "Home Inspection Walkthrough"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Tenant move-out final walkthrough",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "move-in photos",
+                "normal wear",
+                "deposit timeline"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L184_Q1",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "What environment are you hearing?",
             "interactionType": "choice",
-            "hint": "Listen for a grinding winch, a cracking sail, and a called wind shift.",
-            "explanation": "A grinding winch, a snapping sail, and a called wind shift reflect the split-second coordination required aboard a competitive racing yacht.",
-            "textToSpeak": "A winch grinds rapidly as a sail snaps taut with a sudden crack, and a tactician calls a shift in wind angle just seconds before the crew responds.",
+            "hint": "Listen for what happens after the tool itself has already been handed over.",
+            "explanation": "An unprompted wipe-down, an apology for lateness, a reciprocal offer out of habit, and lingering conversation after the exchange describe a casual, neighborly tool return.",
+            "textToSpeak": "A drill gets wiped down with a rag before being handed back, even though it clearly wasn't asked for, a quick apology comes for how long it took to return, longer than either person probably expected, an offer gets made to lend something in return sometime, more out of habit than any real need, and the conversation lingers a minute or two past when the actual tool exchange was finished.",
             "options": [
-                "Chess Grandmaster Championship Match",
-                "Formula One Qualifying Lap",
-                "Sailing Regatta Race Deck",
-                "Formula One Championship Podium"
+                "Carpentry Workshop",
+                "Neighborly Tool Return",
+                "Locksmith Shop",
+                "Hardware Store"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Returning a borrowed tool to a neighbor",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "wiped down",
+                "lingering conversation",
+                "out of habit"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L184_Q2",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Based on these sounds, where are you?",
             "interactionType": "choice",
-            "hint": "Listen for a floating sealed sample manipulated through ports and constant filtration hum.",
-            "explanation": "A floating sample manipulated through sealed ports beneath a constant filtration hum reflects the unique, contained conditions of conducting research in microgravity.",
-            "textToSpeak": "A sample floats gently within a sealed containment box as gloved hands manipulate it through built-in ports, a faint hum of air filtration humming constantly overhead.",
+            "hint": "Listen for why the phone is being deliberately ignored, and what makes the pause over the check feel different from a family dinner.",
+            "explanation": "A stalling menu read, an early allergy question, a deliberately untouched phone, and an awkward pause over the check describe the small tells of a first date rather than a comfortable, established relationship.",
+            "textToSpeak": "A menu gets scanned quickly by one person and much more slowly by the other, clearly stalling for something else to talk about, a question about food allergies comes up a little earlier in the conversation than it might with an old friend, a phone stays face-down and untouched on the table the entire time, and a slightly awkward pause follows the check arriving before anyone reaches for it.",
             "options": [
-                "Live Television Broadcast Control Room",
-                "International Space Station Laboratory Module",
-                "Lunar Sample Analysis Lab",
-                "Mars Rover Mission Control"
+                "Family Dinner Table Conversation",
+                "Caf\u00e9",
+                "First Date at a Casual Restaurant",
+                "Casual Diner"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "First date at a casual restaurant",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "stalling",
+                "face-down phone",
+                "awkward pause"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L184_Q3",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Listen carefully. Where are you?",
             "interactionType": "choice",
-            "hint": "Listen for a wall of angles and a director calling a switch just before it happens.",
-            "explanation": "A director calling a camera switch a half-second ahead of it happening, without a trace of hesitation, reflects the practiced anticipation required in live broadcasting.",
-            "textToSpeak": "A wall of screens shows a dozen camera angles at once as a director calls out a switch a half-second before it happens, voice utterly steady.",
+            "hint": "Listen for what gets negotiated so early, before any real friendship has even started.",
+            "explanation": "A hesitant doorway pause, an apologetic tour, an early logistics negotiation, and a fast number exchange describe the careful, slightly formal first meeting between new roommates.",
+            "textToSpeak": "A box gets set down just inside a doorway while someone still hovers there, unsure exactly where anything should go yet, a quick tour gets offered that includes an apology for a mess that isn't really that bad, a question gets asked about a preferred grocery-shopping schedule almost as if negotiating rather than just chatting, and an exchange of phone numbers happens before either person has even finished unpacking a single box.",
             "options": [
-                "Live Television Broadcast Control Room",
-                "Lunar Sample Analysis Lab",
-                "Mars Rover Mission Control",
-                "International Space Station Laboratory Module"
+                "Housewarming Party",
+                "Apartment Viewing Tour",
+                "Meeting a New Roommate",
+                "University Dorm Room"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Meeting a new roommate for the first time",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "hover",
+                "negotiating logistics",
+                "exchange numbers"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L185_Q1",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "What place does this soundscape suggest?",
             "interactionType": "choice",
-            "hint": "Listen for a sharp test clap and a called-out level reading from above.",
-            "explanation": "A test clap answered by a called level reading from a booth reflects the technical sound checks completed before any words are spoken live.",
-            "textToSpeak": "A sound technician claps once sharply as an engineer, headset pressed close, calls out a level reading from a booth high above the empty seating.",
+            "hint": "Listen for who's carrying the backpack, and what that small detail implies without anyone saying anything.",
+            "explanation": "A referenced earlier call, a signed sign-out sheet with a reason, a checked fever, and a parent quietly carrying the backpack describe a parent arriving to take a sick child home.",
+            "textToSpeak": "A phone call from earlier in the day gets referenced before anyone even says hello, a sign-out sheet gets signed with a specific time noted next to a reason written in just a few words, a small hand feels a forehead through a fever that seems worse than what the nurse described over the phone, and a backpack gets carried by the parent rather than the child, without either one commenting on it.",
             "options": [
-                "Head-of-State Motorcade Departure",
-                "War Crimes Tribunal Courtroom",
-                "International Arbitration Tribunal",
-                "Presidential Debate Stage Before Broadcast"
+                "Daycare Center",
+                "School Nurse's Office",
+                "Doctor's Office",
+                "Sick Child's School Pickup"
             ],
             "correctAnswerIndex": 3,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Parent picking up a sick child from school",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "sign-out sheet",
+                "fever check",
+                "carried the backpack"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L185_Q2",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Which setting best matches what you hear?",
             "interactionType": "choice",
-            "hint": "Listen for a demonstrated sustained note and a telling, appraising hush.",
-            "explanation": "A demonstration note followed by a telling silence reflects how tone, rather than paperwork alone, often defines the value of a rare instrument to those bidding.",
-            "textToSpeak": "A specialist draws a single sustained note from the instrument to demonstrate its tone, and the room falls into a hush more telling than any written appraisal.",
+            "hint": "Listen for the reference to something earlier that clearly didn't get fixed the first time.",
+            "explanation": "A jointly confirmed charge, an interrupted hold, a frustrated reference to a prior unresolved call, and a carefully noted credit promise describe a persistent billing dispute phone call.",
+            "textToSpeak": "A specific charge gets read back slowly to make sure both people are looking at the same line on the same bill, a hold happens with music that gets interrupted twice by a recorded apology for the wait, a reference number from an earlier unresolved call gets mentioned with visible frustration, and a promise of a credit within one to two billing cycles gets written down carefully this time.",
             "options": [
-                "Symphony Orchestra Recording Session",
-                "Rare Violin Auction",
-                "Grand Opera Dress Rehearsal",
-                "Ballet Gala Opening Night"
+                "Insurance Claims Office",
+                "Billing Error Dispute Call",
+                "Internet Provider Customer Service Desk",
+                "Customer Service Call Center"
             ],
             "correctAnswerIndex": 1,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Billing error dispute phone call",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "reference number",
+                "unresolved",
+                "billing cycle"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L185_Q3",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Where would you most likely hear this?",
             "interactionType": "choice",
-            "hint": "Listen for an echoing empty hall and a silently timed walk to a podium.",
-            "explanation": "A rehearsed walk timed by a hidden stopwatch in an otherwise empty hall reflects the meticulous choreography rehearsed before a major formal ceremony.",
-            "textToSpeak": "An empty hall echoes as a stand-in walks a measured path to a podium, timed silently by an official holding a stopwatch just out of sight.",
+            "hint": "Listen for what's being checked against a list from earlier in the week.",
+            "explanation": "A wind-anchored tablecloth, quiet background music, a redirected dog, and a checked sign-up sheet describe an outdoor community potluck in a park rather than a private backyard gathering.",
+            "textToSpeak": "A folding table gets anchored against a light breeze with a few water bottles weighing down the corners of a tablecloth, a portable speaker plays music quietly enough that conversation never has to compete with it, a dog on a leash gets gently redirected away from a table of food more than once, and a sign-up sheet passed around earlier in the week gets checked against what actually showed up.",
             "options": [
-                "Symphony Orchestra Recording Session",
-                "Nobel Prize Ceremony Rehearsal",
-                "Rare Violin Auction",
-                "Grand Opera Dress Rehearsal"
+                "Farmers Market",
+                "Backyard Pool Party",
+                "Community Potluck at a Park",
+                "Neighborhood Block Party"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Community potluck in a park",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "anchored tablecloth",
+                "redirected dog",
+                "sign-up sheet"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L186_Q1",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Listen to the scene. What is the setting?",
             "interactionType": "choice",
-            "hint": "Listen for a quietly set-down fork and a discreetly photographed plate.",
-            "explanation": "A discreetly photographed plate and a fork set down without drawing attention reflect the careful anonymity maintained by a professional restaurant reviewer.",
-            "textToSpeak": "A single fork is set down mid-course with deliberate quiet as a plate is photographed discreetly beneath the table, unnoticed by the attentive server nearby.",
+            "hint": "Listen for what no longer matches between the screen and the boarding pass, and what gets offered as compensation.",
+            "explanation": "A mismatched flight number, a nearly empty circling carousel, a bag described without a tag number, and an unplanned hotel voucher describe missing a connection and losing a bag rather than a routine arrival.",
+            "textToSpeak": "A flight number gets read off a screen that clearly no longer matches the one on someone's boarding pass, a baggage carousel keeps turning with fewer and fewer unclaimed bags circling past, a form gets filled out describing a suitcase by color and brand rather than by any tag number that's already gone missing, and a hotel voucher gets mentioned as compensation for a night no one had planned on spending here.",
             "options": [
-                "War Crimes Tribunal Courtroom",
-                "Michelin Inspector's Anonymous Dinner",
-                "Ballet Gala Opening Night",
-                "Whisky Cask Auction Cellar"
+                "Missed Connecting Flight Baggage Claim",
+                "Airport Domestic Check-In Desk",
+                "Baggage Claim",
+                "Airport Lounge"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Baggage claim after a missed connection",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "mismatched flight number",
+                "unclaimed bags",
+                "hotel voucher"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L186_Q2",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Which place fits these sounds?",
             "interactionType": "choice",
-            "hint": "Listen for threading translation, a tapping pen, and elusive consensus language.",
-            "explanation": "Translation threading through many headsets and a pen tapped while consensus wording proves elusive capture the layered difficulty of multinational economic negotiation.",
-            "textToSpeak": "A translator's murmur threads through a dozen headsets simultaneously as a finance minister taps a pen against a briefing folder, waiting for consensus language that keeps eluding the room.",
+            "hint": "Listen for who the note at the end is actually being written for.",
+            "explanation": "A studied seating chart, a closely followed lesson plan, a boundary-testing question, and a summary note for the returning teacher describe a substitute teacher navigating an unfamiliar classroom for the first time.",
+            "textToSpeak": "A seating chart gets studied carefully before a single name is attempted out loud, a lesson plan left by the regular teacher gets followed almost word for word rather than adapted at all, a student tests the boundaries with a question about whether today's assignment is really due, and a small note gets written for the returning teacher summarizing exactly how the day went.",
             "options": [
-                "Head-of-State Motorcade Departure",
-                "Intelligence Briefing Room",
-                "G20 Economic Summit Negotiation",
-                "War Crimes Tribunal Courtroom"
+                "New Employee Training Session",
+                "Substitute Teacher's First Day",
+                "Middle School Classroom",
+                "Elementary Classroom"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Substitute teacher's first day in an unfamiliar classroom",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "seating chart",
+                "boundary-testing",
+                "summary note"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L186_Q3",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "What environment are you hearing?",
             "interactionType": "choice",
-            "hint": "Listen for adjusted translation headphones and a slow, transcribed testimony.",
-            "explanation": "Translation headphones and testimony transcribed word by word in real time reflect the meticulous, multilingual documentation required in this kind of international proceeding.",
-            "textToSpeak": "Headphones are adjusted for simultaneous translation as a witness speaks slowly through an interpreter, every word transcribed in real time by a court reporter nearby.",
+            "hint": "Listen for how the customer ends up ordering by pointing rather than by name.",
+            "explanation": "Menu items identified by pointing, a twice-explained dish, a negotiated spice level, and pointing at a neighboring table's order describe a customer navigating an unfamiliar cuisine's menu.",
+            "textToSpeak": "A menu gets pointed at rather than read aloud, since half the words don't have any obvious pronunciation, a server patiently explains what one dish actually contains after being asked twice, a spice level gets negotiated down from what's traditionally served after a cautious question about tolerance, and a neighboring table's dish gets pointed to as a simpler way of asking, \"can we get that instead?\"",
             "options": [
-                "G20 Economic Summit Negotiation",
-                "Intelligence Briefing Room",
-                "War Crimes Tribunal Courtroom",
-                "Constitutional Court Deliberation"
+                "Casual Diner",
+                "Unfamiliar Cuisine Restaurant Questions",
+                "Restaurant Reservation Check-In",
+                "Fine Dining Restaurant"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Ordering at a restaurant with an unfamiliar cuisine",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "pointing at the menu",
+                "spice level",
+                "neighboring table"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L187_Q1",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Based on these sounds, where are you?",
             "interactionType": "choice",
-            "hint": "Listen for a gentle talkback request and dozens of musicians turning back a page together.",
-            "explanation": "A talkback request for a retake followed by an entire orchestra turning back a page in unison reflects the collaborative precision of a professional recording session.",
-            "textToSpeak": "A producer's voice crackles gently through a talkback speaker, requesting a single passage be retaken for warmth, as dozens of musicians quietly turn back a page.",
+            "hint": "Listen for what gets waved off as unnecessary, and what that tells you about the relationship between these two people.",
+            "explanation": "An awkwardly timed doorbell, an apology before the request, an explanation about mid-recipe urgency, and a waved-off repayment offer describe a casual neighbor borrowing a small ingredient.",
+            "textToSpeak": "A doorbell rings at a slightly awkward hour for a casual visit, an apology comes before the actual request even gets made, a quick explanation follows about being halfway through baking something with no time to run to a store, and a promise to replace it tomorrow gets waved off as completely unnecessary before the door even closes again.",
             "options": [
-                "Nobel Prize Ceremony Rehearsal",
-                "Grand Opera Dress Rehearsal",
-                "Ballet Gala Opening Night",
-                "Symphony Orchestra Recording Session"
+                "Home Kitchen",
+                "Housewarming Party",
+                "Grandmother's Kitchen on a Holiday Morning",
+                "Neighbor Borrowing an Egg"
             ],
             "correctAnswerIndex": 3,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Neighbor borrowing an ingredient",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "awkward hour",
+                "apology before asking",
+                "waved off"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L187_Q2",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Listen carefully. Where are you?",
             "interactionType": "choice",
-            "hint": "Listen for a ritual bounce count and a crowd dropping to complete silence.",
-            "explanation": "A precise pre-serve ritual met with total crowd silence reflects the intense focus and tension of a decisive point in a major final.",
-            "textToSpeak": "A ball is bounced exactly the same number of times before every serve, the crowd's usual murmur dropping to complete silence as a racket is raised.",
+            "hint": "Listen for what shelf space suggests about whether this was planned in advance.",
+            "explanation": "An unused-bed suitcase, barely sorted laundry, an immediately charged phone, and pre-cleared souvenir shelf space describe someone unpacking and settling back in after returning from a trip.",
+            "textToSpeak": "A suitcase zipper drags open onto a bed that clearly hasn't been slept in for over a week, laundry gets sorted into two piles with barely a glance at what's actually in each one, a phone charger gets plugged in before almost anything else, out of pure habit, and a souvenir gets set on a shelf that already has room cleared for exactly one more thing.",
             "options": [
-                "Grand Slam Tennis Final Match Point",
-                "Chess Grandmaster Championship Match",
-                "Formula One Qualifying Lap",
-                "Formula One Championship Podium"
+                "A Long Car Ride in Comfortable Silence",
+                "Storage Unit Move-in",
+                "Unpacking After a Long Trip",
+                "Moving Truck Loading"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Unpacking after returning from a long trip",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "barely sorted",
+                "out of pure habit",
+                "cleared space"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L187_Q3",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "What place does this soundscape suggest?",
             "interactionType": "choice",
-            "hint": "Listen for a briefly projected image dismissed by a click and a raised question.",
-            "explanation": "An image shown only briefly before being replaced reflects the careful, need-to-know pacing of presenting sensitive information.",
-            "textToSpeak": "A satellite image is projected briefly before being dismissed with a single click, replaced by a summary that raises more questions than it answers.",
+            "hint": "Listen for how carefully neutral the landlord stays, and what gets scheduled for later.",
+            "explanation": "A precisely timed complaint, a deliberately neutral landlord response, a referenced quiet-hours clause, and a scheduled follow-up describe a tenant's noise complaint being handled diplomatically.",
+            "textToSpeak": "A specific time gets mentioned for when the noise reportedly started, down to the half hour, a landlord's voice stays carefully neutral, promising to speak with the other tenant rather than taking any side outright, a lease clause about quiet hours gets referenced almost from memory, and a follow-up call gets scheduled in a few days just to check whether anything's actually improved.",
             "options": [
-                "Treaty Signing Ceremony",
-                "G20 Economic Summit Negotiation",
-                "Intelligence Briefing Room",
-                "International Arbitration Tribunal"
+                "HR Mediation Meeting",
+                "Apartment Viewing Tour",
+                "Landlord-Tenant Dispute Meeting",
+                "Noise Complaint to a Landlord"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Tenant noise complaint call to a landlord",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "quiet hours clause",
+                "carefully neutral",
+                "follow-up call"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L188_Q1",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Which setting best matches what you hear?",
             "interactionType": "choice",
-            "hint": "Listen for a razor-thin line call confirmed by an umpire before a deafening roar.",
-            "explanation": "A close line call confirmed by an umpire followed by an erupting roar captures the razor-thin margins that decide a major final.",
-            "textToSpeak": "A single shot lands a hair's width from the line as a chair umpire's voice confirms it, and a stadium erupts into a single deafening roar.",
+            "hint": "Listen for the specific warning from a folder note, and what it tells you to do differently.",
+            "explanation": "A double-checked leash buckle, a behavioral warning from a folder, a calm-passing reward, and a returned water bowl describe a volunteer's structured dog-walking shift at a shelter.",
+            "textToSpeak": "A leash gets clipped onto a collar with a staff member double-checking the buckle before letting go, a folder note gets mentioned about one dog pulling hard toward other animals so a wider path might be smarter today, a treat gets offered as a reward for calmly passing another dog on a narrow trail, and a water bowl gets refilled back at the shelter before the leash is even fully unclipped.",
             "options": [
-                "Olympic Photo Finish Review",
-                "Grand Slam Tennis Final Match Point",
-                "Chess Grandmaster Championship Match",
-                "Formula One Championship Podium"
+                "Pet Store",
+                "Adoption Day at Animal Shelter",
+                "Dog Park Conversation Between Two Owners",
+                "Volunteering to Walk Shelter Dogs"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Volunteer dog-walking shift at an animal shelter",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "buckle check",
+                "behavioral note",
+                "reward for calm"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L188_Q2",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Where would you most likely hear this?",
             "interactionType": "choice",
-            "hint": "Listen for a steady red light through an unbroken take with deliberate silence.",
-            "explanation": "A steady recording light through a long take with not even a creaking chair reflects the intense collective discipline required for a flawless recorded performance.",
-            "textToSpeak": "A red light holds steady through a long, unbroken take as not a single chair creaks, the silence between phrases feeling as deliberate as the notes themselves.",
+            "hint": "Listen for what gets updated at the very end, and why that matters going forward.",
+            "explanation": "A proposed schedule change, a scheduling-conflict pushback, a split-the-difference compromise, and an immediately updated shared calendar describe a carpool group negotiating a new routine.",
+            "textToSpeak": "A group message gets read aloud from a phone proposing a pickup time ten minutes earlier starting next week, one voice pushes back gently, mentioning a conflict with a younger sibling's own schedule, a compromise time gets floated that splits the difference almost exactly, and a shared calendar gets updated on the spot so no one has an excuse to forget it.",
             "options": [
-                "Symphony Orchestra Recording Session",
-                "Nobel Prize Ceremony Rehearsal",
-                "Rare Violin Auction",
-                "Ballet Gala Opening Night"
+                "Park and Ride Lot",
+                "Carpool Group Changing Pickup Time",
+                "Carpool Pickup Point",
+                "School Bus Pickup Sequence"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Carpool group negotiating a new pickup time",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "group message",
+                "compromise time",
+                "shared calendar"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L188_Q3",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Listen to the scene. What is the setting?",
             "interactionType": "choice",
-            "hint": "Listen for a lingering handshake and a folder closed with deliberate finality.",
-            "explanation": "A lingering handshake and a folder closed with deliberate finality mark the symbolic conclusion of a long negotiation finally made official.",
-            "textToSpeak": "A handshake lingers a beat longer than usual as applause rises in a single wave, and a folder is closed with quiet, deliberate finality.",
+            "hint": "Listen for how many people get a practice question wrong before someone finally gets it right.",
+            "explanation": "Compared color-coded notes, a practice question missed twice before being answered, a panicked countdown mention, and a decision to keep studying describe an anxious pre-exam study group session.",
+            "textToSpeak": "A stack of color-coded notes gets compared page by page against someone else's slightly different set, a practice question gets read aloud and answered wrong by the first two people who try before a third gets it, a countdown to the actual exam date gets mentioned with a slight edge of panic in the voice, and a decision gets made to meet again tomorrow rather than call it a night just yet.",
             "options": [
-                "Head-of-State Motorcade Departure",
-                "G20 Economic Summit Negotiation",
-                "Intelligence Briefing Room",
-                "Treaty Signing Ceremony"
+                "Community College Registration Desk",
+                "Academic Advising Appointment",
+                "Study Group Before a Final Exam",
+                "University Library"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Study group session before a final exam",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "color-coded notes",
+                "practice question",
+                "countdown to the exam"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L189_Q1",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Which place fits these sounds?",
             "interactionType": "choice",
-            "hint": "Listen for a hoisted trophy, a roaring click of cameras, and a shaken bottle.",
-            "explanation": "A hoisted trophy and a shaken bottle aimed at a rival with a grin reflect the celebratory, good-natured ritual that follows a hard-fought race.",
-            "textToSpeak": "A trophy is hoisted overhead as cameras click in a continuous roar, and a bottle is shaken furiously before being aimed at a rival with a grin.",
+            "hint": "Listen for what gets arranged as a compromise rather than solving the whole problem right now.",
+            "explanation": "An unexpectedly high price, an explained coverage gap, a suggested insurance call, and a partial pickup compromise describe navigating an insurance issue at a pharmacy counter.",
+            "textToSpeak": "A price on a screen comes back higher than expected, prompting a pause before anyone reaches for a wallet, a pharmacist explains that a specific insurance plan doesn't cover this particular brand the way it covers a similar one, a phone call to the insurance company gets suggested as the next step rather than just paying it today, and a partial pickup gets arranged for one medication now and the rest once things get sorted out.",
             "options": [
-                "Chess Grandmaster Championship Match",
-                "Sailing Regatta Race Deck",
-                "Formula One Championship Podium",
-                "Olympic Photo Finish Review"
+                "Pharmacy Counter",
+                "Insurance Claims Office",
+                "Flu Shot Pharmacy Sequence",
+                "Pharmacy Insurance Issue"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Pharmacy pickup with an insurance coverage issue",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "coverage gap",
+                "partial pickup",
+                "insurance call"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L189_Q2",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "What environment are you hearing?",
             "interactionType": "choice",
-            "hint": "Listen for a transmitted command followed by a long interplanetary wait.",
-            "explanation": "A room falling still while waiting many minutes for a signal to cross space reflects the immense distances involved in operating a vehicle on another planet.",
-            "textToSpeak": "A command is transmitted and then simply waited on, the room falling still for the many minutes it takes to cross the gulf between two planets.",
+            "hint": "Listen for what gets emphasized as the very first step, before contacting any neighbor.",
+            "explanation": "A circled block map, a carefully anonymized incident description, an uneven patrol sign-up, and a reminder to call emergency services first describe a neighborhood watch organizing meeting.",
+            "textToSpeak": "A printed map of the block gets passed around with a few houses circled for reasons explained one at a time, a recent incident gets described carefully without naming anyone specifically involved, a sign-up sheet for patrol shifts gets started with noticeably more names volunteering for weekend slots than weeknights, and a reminder gets given about calling an actual emergency number first before calling any neighbor.",
             "options": [
-                "Mars Rover Mission Control",
-                "International Space Station Laboratory Module",
-                "Live Television Broadcast Control Room",
-                "Lunar Sample Analysis Lab"
+                "Union Meeting Hall",
+                "City Council Meeting",
+                "Community Center Meeting",
+                "Neighborhood Watch Meeting"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Neighborhood watch meeting",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "circled map",
+                "patrol shift",
+                "emergency number first"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L189_Q3",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Based on these sounds, where are you?",
             "interactionType": "choice",
-            "hint": "Listen for perfectly timed service and a quickly tucked-away notebook.",
-            "explanation": "A notebook tucked away just as a server turns reflects the discretion required to evaluate a restaurant without revealing one's true purpose.",
-            "textToSpeak": "A dish arrives exactly on time as a small notebook is tucked quickly beneath a napkin, the observation captured before a server has fully turned away.",
+            "hint": "Listen for what the deal ultimately gets sealed with, instead of exact money changing hands.",
+            "explanation": "A peeling price sticker, a remembered prior admiration, a friendship-adjusted price, and a favor-based settlement rather than exact change describe a neighbor-to-neighbor garage sale negotiation.",
+            "textToSpeak": "A price sticker peels halfway off an old lamp before anyone even asks about it, a neighbor mentions having admired this exact item through a window months ago, a number gets suggested that's lower than the sticker but higher than what a stranger might have gotten away with, and the sale gets sealed with a promise to return the favor at the next block gathering rather than needing exact change right now.",
             "options": [
-                "Whisky Cask Auction Cellar",
-                "Polar Ice Core Drilling Site",
-                "Formula One Championship Podium",
-                "Michelin Inspector's Anonymous Dinner"
+                "Neighbor Garage Sale Negotiation",
+                "Yard Sale",
+                "Estate Sale",
+                "Flea Market Price Negotiation"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Garage sale negotiation between neighbors",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "admired it before",
+                "friendship price",
+                "return the favor"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L190_Q1",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Listen carefully. Where are you?",
             "interactionType": "choice",
-            "hint": "Listen for measured lecterns and a pacing producer murmuring timing cues.",
-            "explanation": "Lecterns measured for identical height and a producer murmuring timing cues reflect the careful, fairness-driven preparation behind a major televised event.",
-            "textToSpeak": "Two lecterns are measured with a tape for identical height as a producer paces back and forth, murmuring timing cues into a small handheld radio.",
+            "hint": "Listen for whether any argument or extra charge comes up, and what that tells you about how routine this correction is.",
+            "explanation": "A politely returned cup, a checked printed ticket, an immediate no-charge remake, and an apologetic correction describe a smoothly handled order mistake at a coffee counter.",
+            "textToSpeak": "A cup gets slid back across the counter with a polite but clear explanation that it isn't quite what was ordered, a barista checks a printed ticket taped to the machine before agreeing something did get mixed up, a new cup gets started without any argument or extra charge mentioned at all, and a small apology gets offered along with the corrected drink a few minutes later.",
             "options": [
-                "Constitutional Court Deliberation",
-                "G20 Economic Summit Negotiation",
-                "Presidential Debate Stage Before Broadcast",
-                "Treaty Signing Ceremony"
+                "Wrong Coffee Order Remake",
+                "Coffee Counter Order Pickup",
+                "Take-Out Counter",
+                "Caf\u00e9"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Getting a wrong coffee order corrected",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "ticket check",
+                "no extra charge",
+                "corrected drink"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L190_Q2",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "What place does this soundscape suggest?",
             "interactionType": "choice",
-            "hint": "Listen for a drifting released tool caught calmly and a read-aloud checklist.",
-            "explanation": "A tool drifting the instant it's released, caught without alarm, is a small but telling detail of routine life and work in microgravity.",
-            "textToSpeak": "A wrench drifts slightly the moment it's released, caught calmly before it can float away, as a checklist is read aloud between two crew members.",
+            "hint": "Listen for how quietly everything is happening, and why someone might glance around after silencing a phone.",
+            "explanation": "A quietly eased-open door, a whispered apology, a discreet back-row seating, and a slightly late phone silence describe someone arriving late and trying not to disrupt an already-started wedding ceremony.",
+            "textToSpeak": "A side door gets eased open as quietly as possible partway through something already in progress, a program gets accepted with an apologetic whisper rather than any spoken thank-you, an usher points toward a mostly empty row near the back rather than walking anyone all the way down the aisle, and a phone gets silenced a beat later than it probably should have been, judging by the quick glance that follows.",
             "options": [
-                "Live Television Broadcast Control Room",
-                "Mars Rover Mission Control",
-                "Lunar Sample Analysis Lab",
-                "International Space Station Laboratory Module"
+                "Church Service",
+                "Wedding Ceremony Processional",
+                "Late Wedding Arrival",
+                "Wedding Reception"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Arriving late to a wedding ceremony",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "eased open quietly",
+                "whispered apology",
+                "discreet seating"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L190_Q3",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Which setting best matches what you hear?",
             "interactionType": "choice",
-            "hint": "Listen for a revealing scan and a hushed exchange about a mismatch.",
-            "explanation": "A scan revealing a hidden sketch, followed by discussion of an inconsistency, reflects how hidden layers can expose whether a painting is authentic.",
-            "textToSpeak": "An imaging scan reveals a faint sketch beneath the visible surface, and a hushed exchange follows about a detail that doesn't quite match the artist's known habits.",
+            "hint": "Listen for what actually ends the conversation, and how deliberately (or not) that ending happens.",
+            "explanation": "A slow, secondary coffee-making focus, a sighed deadline mention, a casually floated task-splitting idea, and a machine-cycle-triggered departure describe an informal hallway-style work conversation rather than a scheduled meeting.",
+            "textToSpeak": "A mug gets filled slowly while a conversation happens almost as an afterthought to the actual coffee-making, a deadline gets mentioned with a sigh rather than any real detail about the work itself, a suggestion to split a task in half gets floated casually, more as a passing thought than a real plan yet, and both people head back to their desks in different directions the moment the machine finishes its cycle.",
             "options": [
-                "Antarctic Ozone Monitoring Station",
-                "Fine Art Forgery Investigation Lab",
-                "Polar Ice Core Drilling Site",
-                "International Space Station Laboratory Module"
+                "Office Coffee Machine Chat",
+                "Corporate Meeting Room",
+                "Office Break Room",
+                "Team Standup Meeting"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Coworkers discussing a deadline at the coffee machine",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "afterthought",
+                "passing thought",
+                "machine cycle ending"
             ]
         }
     ]

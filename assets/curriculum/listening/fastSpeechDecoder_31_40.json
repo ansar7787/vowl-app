@@ -6,28 +6,28 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L31_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch email versus message, and 'yet' versus 'today'.",
-            "explanation": "'Hasn't' packs 'has' plus 'not' into one word, so the whole meaning depends on catching that ending clearly. 'Replied' and 'responded' are near-synonyms, so listen for the exact verb too.",
-            "textToSpeak": "He hasn't replied to my email yet.",
+            "instruction": "Listen carefully and catch the exact sentence.",
+            "hint": "Catch whether one person or several people are involved.",
+            "explanation": "'Has' marks a single subject while 'have' marks plural, but at speed both reduce to a quiet puff of air before the next word.",
+            "textToSpeak": "My manager has approved the request.",
             "options": [
-                "He hasn't replied to my email yet.",
-                "He hasn't responded to my email yet."
+                "My managers have approved the request.",
+                "My manager has approved the request."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L31_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Notice arrived versus left, and package versus delivery.",
-            "explanation": "Dropping the 'n't' from 'hasn't' would flip the meaning to 'it did arrive' - that ending consonant is doing all the work. 'Arrived' and 'left' also describe very different moments.",
-            "textToSpeak": "The package hasn't arrived yet.",
+            "instruction": "They said it fast — what did you actually hear?",
+            "hint": "Listen for the exact number of times mentioned.",
+            "explanation": "'Have' itself reduces to almost nothing here, so the detail that actually matters, how many times, sits in the words right after it.",
+            "textToSpeak": "We have visited that museum twice this year.",
             "options": [
-                "The delivery hasn't arrived yet.",
-                "The package hasn't arrived yet."
+                "We have visited that museum once this year.",
+                "We have visited that museum twice this year."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -36,13 +36,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L31_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch where versus when, and he versus she.",
-            "explanation": "'Where' and 'when' are both short question words that can blend together at speed, so listen carefully to the vowel. Then confirm the subject: he or she.",
-            "textToSpeak": "He hasn't decided where to go yet.",
+            "instruction": "Natural speech blends words together. Catch the real message.",
+            "hint": "Notice who has the update, and what it actually says.",
+            "explanation": "'Has' can blend almost silently into the subject before it, so keep listening past it for the real content, the update itself.",
+            "textToSpeak": "The team has released a new update today.",
             "options": [
-                "She hasn't decided where to go yet.",
-                "He hasn't decided where to go yet."
+                "The team has released a new update yesterday.",
+                "The team has released a new update today."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -51,13 +51,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L32_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch noticed versus realised, and late versus early.",
-            "explanation": "'Hadn't' places this before another past event, so 'was' at the end matches that timing - swapping it for 'is' would break the sequence. 'Noticed' and 'realised' are close synonyms, so listen closely.",
-            "textToSpeak": "I hadn't noticed how late it was.",
+            "instruction": "Listen for the small word that changes the meaning.",
+            "hint": "Catch whether this happened before or after the other event.",
+            "explanation": "'Had' signals that one thing finished before another started, but it reduces to a light, fast sound that's easy to miss in a quick sentence.",
+            "textToSpeak": "By the time I arrived, they had already left.",
             "options": [
-                "I hadn't noticed how early it was.",
-                "I hadn't noticed how late it was."
+                "By the time I arrived, they already left.",
+                "By the time I arrived, they had already left."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -66,43 +66,43 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L32_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Notice 'hadn't' versus 'haven't', and seen versus spoken.",
-            "explanation": "'Hadn't' (before another past event) and 'haven't' (up to now) sound almost the same at speed, but they place the story at different points in time.",
-            "textToSpeak": "They hadn't seen each other in years.",
+            "instruction": "Focus on the key detail hidden in the fast sentence.",
+            "hint": "Listen for what exactly had happened first.",
+            "explanation": "Once you catch the reduced 'had', the real content, what actually occurred earlier, is carried entirely by the verb that follows.",
+            "textToSpeak": "She had forgotten her umbrella at home.",
             "options": [
-                "They hadn't seen each other in years.",
-                "They hadn't spoken to each other in years."
+                "She had forgotten her wallet at home.",
+                "She had forgotten her umbrella at home."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L32_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch long versus late, and we versus they.",
-            "explanation": "'Long' (duration) and 'late' (time of day) are easy to confuse when said quickly, so listen for the whole word rather than just the first sound. Also confirm the subject pronoun.",
-            "textToSpeak": "We hadn't planned on staying this long.",
+            "instruction": "Listen again — which version matches what was said?",
+            "hint": "Notice the order of events across the whole sentence.",
+            "explanation": "'Had' places one action clearly before another, so the sequence itself is the thing being tested here, not just the individual words.",
+            "textToSpeak": "The film had already started when we got there.",
             "options": [
-                "We hadn't planned on staying this long.",
-                "We hadn't planned on staying this late."
+                "The film hadn't started yet when we got there.",
+                "The film had already started when we got there."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L33_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch singular versus plural, and who it's for.",
-            "explanation": "'Them' relaxes into a light 'em' sound after 'wrap', so it's easy to miss whether it was 'it' (one item) or 'them' (several). Also notice 'could' versus 'would' - both polite, but different words.",
-            "textToSpeak": "Could you wrap them up for me?",
+            "instruction": "Listen carefully and catch the exact sentence.",
+            "hint": "Catch the exact action that's been completed.",
+            "explanation": "'Have' links smoothly into the past participle that follows, almost like one word, so listen through the whole verb phrase, not just the start of it.",
+            "textToSpeak": "They have finally fixed the elevator.",
             "options": [
-                "Could you wrap them up for me?",
-                "Would you wrap them up for me?"
+                "They have finally fixed the elevator.",
+                "They have finally fixed the escalator."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -111,58 +111,58 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L33_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Notice singular versus plural, and what happens before deciding.",
-            "explanation": "Just like before, 'them' can shrink to almost nothing, so listen for whether it's one item or several. Then catch the final verb: decide, pay, or buy.",
-            "textToSpeak": "I'll try them on before I decide.",
+            "instruction": "They said it fast — what did you actually hear?",
+            "hint": "Listen for whether this happened once or has never happened.",
+            "explanation": "'Has never' reduces the auxiliary right into the negative word, so the whole phrase can sound like a quick blur unless you isolate 'never'.",
+            "textToSpeak": "He has never missed a deadline.",
             "options": [
-                "I'll try them on before I decide.",
-                "I'll try them on before I buy."
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "fastSpeechDecoder",
-            "emoji": "⚡"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L33_Q3",
-            "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch my versus your, and 'have' versus 'had'.",
-            "explanation": "'My' and 'your' are both quick, unstressed words that are easy to mix up in a busy shop. 'Have' (now) versus 'had' (already checked) also changes the timing of the request.",
-            "textToSpeak": "Can you check if they have my size?",
-            "options": [
-                "Could you check if they have my size?",
-                "Can you check if they have my size?"
+                "He missed a deadline.",
+                "He has never missed a deadline."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
-            "id": "LIS_FASTSPEECHDECODER_L34_Q1",
+            "id": "LIS_FASTSPEECHDECODER_L33_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch the exact time, and café versus restaurant.",
-            "explanation": "The word 'at' reduces to almost nothing twice in this sentence, so lean on the nouns around it - the place and the time - to get the full picture.",
-            "textToSpeak": "Let's meet at the café at noon.",
+            "instruction": "Natural speech blends words together. Catch the real message.",
+            "hint": "Catch exactly what's been decided, not just that a decision exists.",
+            "explanation": "'Have' collapses down fast before the verb, so hold your attention on the specific outcome named right after it.",
+            "textToSpeak": "We have decided to postpone the launch.",
             "options": [
-                "Let's meet at the café at noon.",
-                "Let's meet at the café at one."
+                "We have decided to postpone the launch.",
+                "We have decided to cancel the launch."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
+            "id": "LIS_FASTSPEECHDECODER_L34_Q1",
+            "interactionType": "choice",
+            "instruction": "Listen for the small word that changes the meaning.",
+            "hint": "Notice what had already gone wrong before the story starts.",
+            "explanation": "'Had' plus a past participle points to something that happened even earlier than the rest of the story, and it reduces heavily at speed.",
+            "textToSpeak": "The printer had already jammed twice that morning.",
+            "options": [
+                "The printer jammed twice that morning.",
+                "The printer had already jammed twice that morning."
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "fastSpeechDecoder",
+            "emoji": "⚡"
+        },
+        {
             "id": "LIS_FASTSPEECHDECODER_L34_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Notice opens versus closes, and the exact hour.",
-            "explanation": "'Opens' and 'closes' are opposites, so that verb is essential to catch first. 'Seven' and 'eight' are also a classic number mix-up at natural speed.",
-            "textToSpeak": "The bakery opens at seven every day.",
+            "instruction": "Focus on the key detail hidden in the fast sentence.",
+            "hint": "Catch the exact reason given for the delay.",
+            "explanation": "Once 'had' is caught, the specific cause that follows carries the real explanation — that's the detail worth focusing on here.",
+            "textToSpeak": "The flight was delayed because the crew had missed their connection.",
             "options": [
-                "The bakery opens at seven every day.",
-                "The bakery opens at seven every morning."
+                "The flight was delayed because the crew had missed their connection.",
+                "The flight was delayed because the crew had missed their briefing."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -171,13 +171,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L34_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch early versus late, and arrived versus left.",
-            "explanation": "'Early' and 'late' are opposites hiding in similarly-shaped phrases, so that's the priority word. 'A bit' and 'a little' mean the same thing, so don't let familiar wording distract you from the real difference: arrived or left.",
-            "textToSpeak": "We arrived at the restaurant a bit early.",
+            "instruction": "Listen again — which version matches what was said?",
+            "hint": "Listen for whether the work was done in advance or not at all.",
+            "explanation": "'Hadn't' squeezes a negative onto an already-reduced auxiliary, so this sentence tests two layers of listening at once.",
+            "textToSpeak": "They hadn't prepared the slides in advance.",
             "options": [
-                "We arrived at the restaurant a bit late.",
-                "We arrived at the restaurant a bit early."
+                "They had prepared the slides in advance.",
+                "They hadn't prepared the slides in advance."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -186,13 +186,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L35_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch here versus there, and when versus before.",
-            "explanation": "'Wake me up' links together smoothly as one quick phrase. From there, 'when' versus 'before' and 'here' versus 'there' are the small words that decide the whole instruction.",
-            "textToSpeak": "Wake me up when we get there.",
+            "instruction": "Listen carefully and catch the exact sentence.",
+            "hint": "Catch what's actually happening right now, in progress.",
+            "explanation": "The progressive form links the reduced 'be' verb directly onto the '-ing' word, so the two run together almost as one sound at natural speed.",
+            "textToSpeak": "I'm currently reviewing your application.",
             "options": [
-                "Wake me up when we get there.",
-                "Wake me up when we get here."
+                "I'm currently reviewing your application.",
+                "I currently reviewed your application."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -201,13 +201,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L35_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Notice 'drop off' versus 'pick up', and 'next' versus 'this'.",
-            "explanation": "'Drop me off' and 'pick me up' are opposite requests for a driver, so that phrase matters most. 'Corner' and 'junction' are close enough in meaning to require careful listening too.",
-            "textToSpeak": "Drop me off at the next corner.",
+            "instruction": "They said it fast — what did you actually hear?",
+            "hint": "Listen for exactly which task is in progress.",
+            "explanation": "Once the reduced 'is' or 'are' is caught, the real information, the activity itself, is entirely in the word that follows.",
+            "textToSpeak": "The team is still testing the new feature.",
             "options": [
-                "Drop me off at the next junction.",
-                "Drop me off at the next corner."
+                "The team is still testing the old feature.",
+                "The team is still testing the new feature."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -216,13 +216,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L35_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch land versus leave, and me versus her.",
-            "explanation": "'Let me know' links tightly together, so the real content sits at the very end - 'land', 'leave', or 'can' each change what you're actually being asked to report.",
-            "textToSpeak": "Let me know as soon as you land.",
+            "instruction": "Natural speech blends words together. Catch the real message.",
+            "hint": "Catch whether this is an ongoing action or a repeated habit.",
+            "explanation": "A progressive form describes something happening right now, while a simple form describes a routine — the difference hinges on a small, fast-reducing verb.",
+            "textToSpeak": "She's working late again tonight.",
             "options": [
-                "Let her know as soon as you land.",
-                "Let me know as soon as you land."
+                "She works late again every night.",
+                "She's working late again tonight."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -231,13 +231,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L36_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch mine versus yours, and 'isn't' versus 'is'.",
-            "explanation": "'As...as' both reduce to quick, weak sounds in a comparison, so what matters is the words they frame - here, 'fast' or 'light', and 'isn't' or 'is'.",
-            "textToSpeak": "This laptop isn't as fast as mine.",
+            "instruction": "Listen for the small word that changes the meaning.",
+            "hint": "Listen for the exact advice word, and which professional.",
+            "explanation": "'Should' and 'could' both compress into a light, fast sound, but one gives firm advice while the other just offers a possibility.",
+            "textToSpeak": "You should see a specialist about that.",
             "options": [
-                "This laptop isn't as fast as mine.",
-                "This laptop isn't as fast as yours."
+                "You should see a specialist about that.",
+                "You could see a specialist about that."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -246,28 +246,28 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L36_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Notice expensive versus cheap, and whether 'not' is there.",
-            "explanation": "Losing 'not' here would mean the price matched expectations instead of surprising you - a completely different feeling. 'Thought' and 'expected' are close synonyms, so listen for the specific word.",
-            "textToSpeak": "It's not as expensive as I thought.",
+            "instruction": "Focus on the key detail hidden in the fast sentence.",
+            "hint": "Catch whether this is required or merely allowed.",
+            "explanation": "'Must' expresses an obligation, while 'may' just permits something — both are short words that can be lost in a fast sentence if you're not listening closely.",
+            "textToSpeak": "Passengers must fasten their seatbelts now.",
             "options": [
-                "It's not as expensive as I thought.",
-                "It's not as expensive as I expected."
+                "Passengers may fasten their seatbelts now.",
+                "Passengers must fasten their seatbelts now."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L36_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch update versus version, and buggy versus slow.",
-            "explanation": "'As buggy as' packs three weak, linked sounds into a smooth run, so let the two content words on either end guide you: 'update' or 'version', 'buggy' or 'slow'.",
-            "textToSpeak": "The new update isn't as buggy as the last.",
+            "instruction": "Listen again — which version matches what was said?",
+            "hint": "Notice how sure the speaker sounds about this.",
+            "explanation": "'Might' signals real uncertainty, while 'will' sounds confident — mixing them up completely changes how likely the speaker thinks this is.",
+            "textToSpeak": "It might rain later this afternoon.",
             "options": [
-                "The new update isn't as buggy as before.",
-                "The new update isn't as buggy as the last."
+                "It will rain later this afternoon.",
+                "It might rain later this afternoon."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -276,13 +276,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L37_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch when this happened, sleep versus eat, and who it happened to.",
-            "explanation": "'Couldn't' packs a lot into one quick word - losing the final 't' would flip it to 'could', so listen for that ending. Then confirm the timing and the subject.",
-            "textToSpeak": "I couldn't sleep at all last night.",
+            "instruction": "Listen carefully and catch the exact sentence.",
+            "hint": "Catch the reduced auxiliary at the very start of the question.",
+            "explanation": "'Have you' often blurs into a quick 'ave-you' sound at natural speed, with the initial 'h' almost disappearing entirely.",
+            "textToSpeak": "Have you finished the report yet?",
             "options": [
-                "I couldn't sleep at all last night.",
-                "I couldn't sleep at all last week."
+                "Have you finished the report yet?",
+                "Did you finish the report yet?"
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -291,13 +291,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L37_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Notice hear versus see, and whether it's 'couldn't' or 'could'.",
-            "explanation": "'Couldn't' versus 'could' is a single consonant's difference but a complete reversal of meaning, so it's always worth listening for. 'Clearly' and 'properly' are near-synonyms, so pin down the exact word too.",
-            "textToSpeak": "We couldn't hear the announcement clearly.",
+            "instruction": "They said it fast — what did you actually hear?",
+            "hint": "Listen for whether this question is about ability or permission.",
+            "explanation": "'Can' and 'could' both shrink to a quick, light sound at the start of a question, but 'could' usually sounds a touch more formal or polite.",
+            "textToSpeak": "Could you send that file over?",
             "options": [
-                "We could hear the announcement clearly.",
-                "We couldn't hear the announcement clearly."
+                "Can you send that file over?",
+                "Could you send that file over?"
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -306,28 +306,28 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L37_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch finish versus start, and the reason given.",
-            "explanation": "'Finish' and 'start' are opposite points in a race, so that verb changes the whole story. 'Finish' and 'complete' are near-synonyms too, so listen for the precise word actually spoken.",
-            "textToSpeak": "She couldn't finish the race due to an injury.",
+            "instruction": "Natural speech blends words together. Catch the real message.",
+            "hint": "Catch whether they're asking about the past or checking right now.",
+            "explanation": "'Did' and 'does' both reduce heavily, but one points to something already finished and the other to a current habit or fact.",
+            "textToSpeak": "Did she call the client back?",
             "options": [
-                "She couldn't complete the race due to an injury.",
-                "She couldn't finish the race due to an injury."
+                "Did she call the client back?",
+                "Does she call the client back?"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L38_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch worry versus think, and 'shouldn't' versus 'should'.",
-            "explanation": "'Shouldn't' (advice against something) losing its 't' becomes 'should' (advice for it) - completely opposite guidance. 'Worry' and 'think' are close enough to require careful listening too.",
-            "textToSpeak": "You shouldn't worry about the results yet.",
+            "instruction": "Listen for the small word that changes the meaning.",
+            "hint": "Listen carefully for whether this is finished now or was finished earlier.",
+            "explanation": "'Have' and 'had' differ by a single reduced vowel sound, but one places the action in the recent past and the other much further back.",
+            "textToSpeak": "We had already boarded when the delay was announced.",
             "options": [
-                "You should worry about the results yet.",
-                "You shouldn't worry about the results yet."
+                "We have already boarded when the delay was announced.",
+                "We had already boarded when the delay was announced."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -336,58 +336,58 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L38_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Notice late versus long, and 'shouldn't have' versus 'should have'.",
-            "explanation": "'Shouldn't have' (a regret about a mistake) and 'should have' (a regret about a missed chance) sound alike but mean opposite things. Also catch we versus they.",
-            "textToSpeak": "We shouldn't have left it so late.",
+            "instruction": "Focus on the key detail hidden in the fast sentence.",
+            "hint": "Catch the tense first, then the specific detail that follows.",
+            "explanation": "This sentence hinges entirely on 'has' versus 'had' — both reduce fast, but only one keeps the story anchored to right now.",
+            "textToSpeak": "She has just landed at the airport.",
             "options": [
-                "They shouldn't have left it so late.",
-                "We shouldn't have left it so late."
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "fastSpeechDecoder",
-            "emoji": "⚡"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L38_Q3",
-            "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch himself versus herself, and 'too' versus 'so'.",
-            "explanation": "'Himself' should match the subject 'he' - a mismatch is a useful clue if you mishear. Also confirm that 'shouldn't' kept its full negative force.",
-            "textToSpeak": "He shouldn't be too hard on himself.",
-            "options": [
-                "He shouldn't be too hard on himself.",
-                "He shouldn't be too hard on herself."
+                "She has just landed at the airport.",
+                "She had just landed at the airport."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
-            "id": "LIS_FASTSPEECHDECODER_L39_Q1",
+            "id": "LIS_FASTSPEECHDECODER_L38_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch 'wouldn't' versus 'would', and restaurant versus hotel.",
-            "explanation": "'Wouldn't' and 'would' are one consonant apart but give completely opposite advice, so this is a critical sound to catch. Then confirm restaurant versus hotel, and 'that' versus 'this'.",
-            "textToSpeak": "I wouldn't recommend that restaurant.",
+            "instruction": "Listen again — which version matches what was said?",
+            "hint": "Notice whether the problem is still ongoing or already resolved earlier.",
+            "explanation": "'Have fixed' means it's done as of now; 'had fixed' means it was already done before some other past moment — a subtle but real difference.",
+            "textToSpeak": "They have fixed the leak, so we're fine now.",
             "options": [
-                "I wouldn't recommend this restaurant.",
-                "I wouldn't recommend that restaurant."
+                "They had fixed the leak, so we're fine now.",
+                "They have fixed the leak, so we're fine now."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
+            "id": "LIS_FASTSPEECHDECODER_L39_Q1",
+            "interactionType": "choice",
+            "instruction": "Listen carefully and catch the exact sentence.",
+            "hint": "Listen for how strongly this is being recommended.",
+            "explanation": "'Should have' and 'could have' both reduce to a fast 'shoulda' or 'coulda' sound, but one is advice about a mistake and the other just a missed option.",
+            "textToSpeak": "You should have booked earlier.",
+            "options": [
+                "You should have booked earlier.",
+                "You could have booked earlier."
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "fastSpeechDecoder",
+            "emoji": "⚡"
+        },
+        {
             "id": "LIS_FASTSPEECHDECODER_L39_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Notice her versus him, and 'wouldn't' versus 'couldn't'.",
-            "explanation": "'Wouldn't' (refused to) and 'couldn't' (was unable to) describe two different reasons for staying quiet. Also track 'her' versus 'him' carefully, since both are light, quick pronouns.",
-            "textToSpeak": "She wouldn't say who told her.",
+            "instruction": "They said it fast — what did you actually hear?",
+            "hint": "Catch whether this was required, or simply possible.",
+            "explanation": "'Must have' and 'might have' both compress heavily, but one states near-certainty about the past while the other only guesses.",
+            "textToSpeak": "He might have missed the announcement.",
             "options": [
-                "She wouldn't say what he told her.",
-                "She wouldn't say who told her."
+                "He must have missed the announcement.",
+                "He might have missed the announcement."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -396,58 +396,58 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L39_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch your versus her, and 'without' versus 'with'.",
-            "explanation": "'Without' and 'with' are near-opposites separated by just two sounds, so that word is essential. 'Wouldn't have' and 'couldn't have' are close synonyms here too, so listen for the exact modal.",
-            "textToSpeak": "We wouldn't have made it without your help.",
+            "instruction": "Natural speech blends words together. Catch the real message.",
+            "hint": "Notice the exact level of confidence in the modal chosen.",
+            "explanation": "'Would have' and 'wouldn't have' differ by that same small negative sound seen throughout this course — always worth a second listen.",
+            "textToSpeak": "I wouldn't have said that in the meeting.",
             "options": [
-                "We wouldn't have made it without your help.",
-                "We wouldn't have made it with your help."
+                "I would have said that in the meeting.",
+                "I wouldn't have said that in the meeting."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L40_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch traffic versus queue, and 'hadn't' versus 'haven't'.",
-            "explanation": "'Hadn't' places this before another past moment, while 'haven't' would connect it to right now - a subtle but real difference. 'Bad' and 'heavy' are near-synonyms for traffic, so listen closely.",
-            "textToSpeak": "I hadn't expected the traffic to be this bad.",
+            "instruction": "Listen for the small word that changes the meaning.",
+            "hint": "Track the full sequence: what had happened, what's happening now.",
+            "explanation": "This sentence blends 'had' and 'is' together, each reduced, each pointing to a different point in time — treat them as two separate checks.",
+            "textToSpeak": "The bags had already been checked, and boarding is starting now.",
             "options": [
-                "I haven't expected the traffic to be this bad.",
-                "I hadn't expected the traffic to be this bad."
+                "The bags had already been checked, and boarding is starting now.",
+                "The bags have already been checked, and boarding was starting now."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L40_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Notice 'shouldn't' versus 'wouldn't', and twice versus once.",
-            "explanation": "'Shouldn't have to' (it isn't fair that you must) and 'wouldn't have to' (a different situation) shift the whole tone of the sentence. 'Twice' and 'once' are opposites here too.",
-            "textToSpeak": "You shouldn't have to ask twice.",
+            "instruction": "Focus on the key detail hidden in the fast sentence.",
+            "hint": "Catch the modal, the auxiliary, and the actual detail together.",
+            "explanation": "By this level, a single sentence can combine a modal, a reduced auxiliary, and a specific detail — all three need to land for the full meaning to come through.",
+            "textToSpeak": "You could have mentioned that the meeting has been moved.",
             "options": [
-                "You shouldn't have to ask once.",
-                "You shouldn't have to ask twice."
+                "You could have mentioned that the meeting has been moved.",
+                "You should have mentioned that the meeting has been moved."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L40_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch dinner versus lunch, and where versus when.",
-            "explanation": "'Agree' and 'decide' overlap in meaning but aren't identical, so listen for the exact verb used. 'Where' and 'when' are both short question words that blend together at speed, so catch the vowel carefully.",
-            "textToSpeak": "We couldn't agree on where to go for dinner.",
+            "instruction": "Listen again — which version matches what was said?",
+            "hint": "Notice what was true before, and what's true right now.",
+            "explanation": "This sentence contrasts a past-perfect clause with a present progressive one, so the two different reduced auxiliaries need to be told apart clearly.",
+            "textToSpeak": "They hadn't noticed the error until it was already fixed.",
             "options": [
-                "We couldn't agree on where to go for dinner.",
-                "We couldn't agree on when to go for dinner."
+                "They hadn't noticed the error until it was already fixed.",
+                "They haven't noticed the error until it was already fixed."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",

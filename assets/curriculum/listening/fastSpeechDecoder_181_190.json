@@ -6,13 +6,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L181_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch before versus after, and draft versus report.",
-            "explanation": "'Before' and 'after' completely flip the timeline of this complaint, so that word is essential. 'Coulda' (a simple observation) and 'shoulda' (a real criticism) also carry a slightly different tone.",
-            "textToSpeak": "I get why they wanted changes, but they coulda jus' told us before we'd already finished the whole draft.",
+            "instruction": "Listen carefully and catch the exact sentence.",
+            "hint": "Catch whether this is a specific one already known, or just any one.",
+            "explanation": "'A' and 'the' both reduce heavily, but 'the' signals something specific while 'a' signals something general — a genuinely subtle distinction at speed.",
+            "textToSpeak": "I found a solution that might work.",
             "options": [
-                "I get why they wanted changes, but they coulda jus' told us after we'd already finished the whole draft.",
-                "I get why they wanted changes, but they coulda jus' told us before we'd already finished the whole draft."
+                "I found the solution that might work.",
+                "I found a solution that might work."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -21,13 +21,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L181_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch 'fail' versus 'flop', and he versus she.",
-            "explanation": "'Fail' and 'flop' mean almost the same thing, so listen for the precise word rather than the general idea. That hidden 'n't' confirms her objection came from real conviction, not just stubbornness.",
-            "textToSpeak": "She wouldn't've pushed back on the proposal so hard if she hadn't jus' genuinely believed it'd fail.",
+            "instruction": "They said it fast — what did you actually hear?",
+            "hint": "Listen closely for the exact preposition, since 'in' and 'on' both reduce.",
+            "explanation": "'In' and 'on' describe different kinds of location, and both weaken heavily in fast speech, so this is a genuinely close call.",
+            "textToSpeak": "The file's on the shared drive now.",
             "options": [
-                "He wouldn't've pushed back on the proposal so hard if she hadn't jus' genuinely believed it'd fail.",
-                "She wouldn't've pushed back on the proposal so hard if she hadn't jus' genuinely believed it'd fail."
+                "The file's in the shared drive now.",
+                "The file's on the shared drive now."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -36,43 +36,43 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L181_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch 'change' versus 'fix', and 'woulda' versus 'coulda'.",
-            "explanation": "This is one of the longest sentences in the entire course, a genuinely natural chain of thought a native speaker might produce without pausing. Let the rhythm carry you through it rather than trying to catch every word individually.",
-            "textToSpeak": "Honestly, whatcha reckon woulda happened if we'd jus' brought this up in the meeting instead of after, when it was already too late to change anything?",
+            "instruction": "Natural speech blends words together. Catch the real message.",
+            "hint": "Notice whether the deadline is at a specific time, or by a certain point.",
+            "explanation": "'At' and 'by' both reduce to a similar fast sound, but 'at' means a fixed moment while 'by' means any time before a deadline.",
+            "textToSpeak": "It needs to be done by five.",
             "options": [
-                "Honestly, whatcha reckon woulda happened if we'd jus' brought this up in the meeting instead of after, when it was already too late to change anything?",
-                "Honestly, whatcha reckon woulda happened if we'd jus' brought this up in the meeting instead of after, when it was already too late to fix anything?"
+                "It needs to be done at five.",
+                "It needs to be done by five."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L182_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch 'see eye to eye' versus 'agree', and listen for the hidden 'n't'.",
-            "explanation": "'See eye to eye' and 'agree' mean the same thing, an idiom versus a plain verb, so listen for the exact phrase used. This whole sentence is heartfelt gratitude, which only works with the hidden 'n't' in 'couldn't've' intact.",
-            "textToSpeak": "I know we don't always see eye to eye, but I couldn't've asked for a more supportive family growing up.",
+            "instruction": "Listen for the small word that changes the meaning.",
+            "hint": "Catch whether this is a finished action, or one still connected to now.",
+            "explanation": "'I finished' and 'I've finished' describe a similar action but with a subtly different connection to the present moment.",
+            "textToSpeak": "I've finished the report, just so you know.",
             "options": [
-                "I know we don't always see eye to eye, but I couldn't've asked for a more supportive family growing up.",
-                "I know we don't always see eye to eye, but I couldn't've asked for a more supportive family growing up, honestly."
+                "I finished the report, just so you know.",
+                "I've finished the report, just so you know."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L182_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch 'hurt' versus 'upset', and he versus she.",
-            "explanation": "'Hurt' and 'upset' are close synonyms for the same lingering feeling, so listen for the exact word. This long sentence explains an emotional reaction, hinging on that essential hidden 'n't'.",
-            "textToSpeak": "He wouldn't've brought up the old argument again if he hadn't jus' still been a little hurt about how it ended.",
+            "instruction": "Focus on the key detail hidden in the fast sentence.",
+            "hint": "Listen for whether this is a habit, or something happening right now.",
+            "explanation": "'I work' and 'I'm working' describe different things — a routine versus something in progress — and the reduced auxiliary is the only real clue.",
+            "textToSpeak": "I'm working from home this week.",
             "options": [
-                "He wouldn't've brought up the old argument again if he hadn't jus' still been a little upset about how it ended.",
-                "He wouldn't've brought up the old argument again if he hadn't jus' still been a little hurt about how it ended."
+                "I work from home this week.",
+                "I'm working from home this week."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -81,13 +81,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L182_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch 'properly' versus 'honestly', and I versus we.",
-            "explanation": "This is a genuinely long, natural sentence about repairing a relationship, so let the whole thought unfold rather than trying to catch each word in isolation. 'Properly' and 'honestly' are near-synonyms, so listen for the specific one used.",
-            "textToSpeak": "Look, I dunno if we'll ever fully agree on this, but at least we're finally jus' talking about it properly instead of avoiding it like we usta.",
+            "instruction": "Listen again — which version matches what was said?",
+            "hint": "Notice whether this happened before, or is happening as we speak.",
+            "explanation": "'Had left' places the action before another past moment, while 'has left' connects it to now — a genuinely subtle timing distinction.",
+            "textToSpeak": "By the time I called, she had already left.",
             "options": [
-                "Look, I dunno if we'll ever fully agree on this, but at least we're finally jus' talking about it honestly instead of avoiding it like we usta.",
-                "Look, I dunno if we'll ever fully agree on this, but at least we're finally jus' talking about it properly instead of avoiding it like we usta."
+                "By the time I called, she has already left.",
+                "By the time I called, she had already left."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -96,28 +96,28 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L183_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch 'a lot' versus 'a little', and 'coulda' versus 'shoulda'.",
-            "explanation": "This sentence carefully distances itself from real regret, 'it's not that I regret it', before landing on a mild observation. 'A lot less' and 'a little less' describe very different possible savings.",
-            "textToSpeak": "I mean, it's not that I regret buying it, I jus' reckon we coulda found the exact same thing for a lot less somewhere else.",
+            "instruction": "Listen carefully and catch the exact sentence.",
+            "hint": "This sentence hinges entirely on one small, easy-to-miss sound.",
+            "explanation": "At this level, negatives reduce so heavily that the only real difference between opposite meanings can be a single, barely-released consonant.",
+            "textToSpeak": "I wasn't aware of the change until today.",
             "options": [
-                "I mean, it's not that I regret buying it, I jus' reckon we coulda found the exact same thing for a lot less somewhere else.",
-                "I mean, it's not that I regret buying it, I jus' reckon we coulda found the exact same thing for a lot less somewhere close."
+                "I was aware of the change until today.",
+                "I wasn't aware of the change until today."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L183_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch months versus weeks, and we versus they.",
-            "explanation": "This long sentence justifies a purchase, so the timeframe, months of searching, really matters to the story. That hidden 'n't' confirms this was a genuinely rare find, not an impulse buy.",
-            "textToSpeak": "We wouldn't've splurged on it at all if it hadn't jus' been exactly what we'd been looking for for months.",
+            "instruction": "They said it fast — what did you actually hear?",
+            "hint": "Listen extremely closely for the negative sound in this sentence.",
+            "explanation": "'Couldn't' and 'could' differ by a sound that often barely survives in casual speech, making this one of the hardest negative pairs to catch.",
+            "textToSpeak": "I couldn't tell if he was joking.",
             "options": [
-                "They wouldn't've splurged on it at all if it hadn't jus' been exactly what we'd been looking for for months.",
-                "We wouldn't've splurged on it at all if it hadn't jus' been exactly what we'd been looking for for months."
+                "I could tell if he was joking.",
+                "I couldn't tell if he was joking."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -126,28 +126,28 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L183_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch 'money' versus 'cost', and 'quality' versus 'value'.",
-            "explanation": "This sentence poses a genuinely sceptical, two-part question about spending, so track both halves carefully. 'Quality' and 'value' are related but distinct ideas, so listen for the precise word.",
-            "textToSpeak": "Honestly, whatcha reckon's actually worth the extra money here, and whatcha reckon's jus' clever marketing dressed up as quality?",
+            "instruction": "Natural speech blends words together. Catch the real message.",
+            "hint": "Notice whether the outcome was positive, or the opposite.",
+            "explanation": "This sentence relies entirely on a reduced negative to flip its meaning, so a careful, deliberate second listen may be needed.",
+            "textToSpeak": "It doesn't look like we'll make the deadline.",
             "options": [
-                "Honestly, whatcha reckon's actually worth the extra money here, and whatcha reckon's jus' clever marketing dressed up as value?",
-                "Honestly, whatcha reckon's actually worth the extra money here, and whatcha reckon's jus' clever marketing dressed up as quality?"
+                "It doesn't look like we'll make the deadline.",
+                "It does look like we'll make the deadline."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L184_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch 'fussy' versus 'picky', and 'coulda' versus 'shoulda'.",
-            "explanation": "'Fussy' and 'picky' are near-synonyms for being hard to please, so listen for the exact word the speaker chose to describe themselves. 'Coulda been amazing' and 'shoulda been amazing' frame the review slightly differently.",
-            "textToSpeak": "I know it sounds fussy, but I jus' reckon this place coulda been amazing if they hadn't rushed the whole service so much.",
+            "instruction": "Listen for the small word that changes the meaning.",
+            "hint": "Catch whether one person or several people are responsible here.",
+            "explanation": "'Has been' and 'have been' differ only in that single reduced auxiliary, so number agreement is the real, subtle test in this sentence.",
+            "textToSpeak": "The team has been working on this for weeks.",
             "options": [
-                "I know it sounds fussy, but I jus' reckon this place shoulda been amazing if they hadn't rushed the whole service so much.",
-                "I know it sounds fussy, but I jus' reckon this place coulda been amazing if they hadn't rushed the whole service so much."
+                "The teams have been working on this for weeks.",
+                "The team has been working on this for weeks."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -156,43 +156,43 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L184_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch 'in the end' versus 'eventually', and he versus she.",
-            "explanation": "'In the end' and 'eventually' both describe a delayed payoff, so listen for the exact phrase rather than the general idea. That hidden 'n't' confirms the food genuinely justified the wait.",
-            "textToSpeak": "She wouldn't've mentioned the wait time at all if the food hadn't jus' genuinely made up for it in the end.",
+            "instruction": "Focus on the key detail hidden in the fast sentence.",
+            "hint": "Listen for whether this describes something ongoing, or already complete.",
+            "explanation": "'Was reviewing' and 'has reviewed' both describe past actions, but one is ongoing and one is finished — a genuinely subtle aspect distinction.",
+            "textToSpeak": "She has reviewed the whole document already.",
             "options": [
-                "He wouldn't've mentioned the wait time at all if the food hadn't jus' genuinely made up for it in the end.",
-                "She wouldn't've mentioned the wait time at all if the food hadn't jus' genuinely made up for it in the end."
+                "She has reviewed the whole document already.",
+                "She was reviewing the whole document already."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L184_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch 'changed hands' versus 'closed down', and 'actual' versus 'real'.",
-            "explanation": "'Changed hands' (new ownership) and 'closed down' (no longer open) are very different fates for the same restaurant. 'Actual' and 'real' are near-synonyms too, so listen for the exact word used.",
-            "textToSpeak": "Look, whatcha reckon's the actual difference between this place and the one we usta go to before it changed hands?",
+            "instruction": "Listen again — which version matches what was said?",
+            "hint": "Notice the exact auxiliary, since it changes the certainty of the sentence.",
+            "explanation": "'Would have' and 'should have' both reduce to a similar fast sound, but one expresses a hypothetical and the other regret or advice.",
+            "textToSpeak": "I would have mentioned it earlier if I'd known.",
             "options": [
-                "Look, whatcha reckon's the actual difference between this place and the one we usta go to before it closed down?",
-                "Look, whatcha reckon's the actual difference between this place and the one we usta go to before it changed hands?"
+                "I would have mentioned it earlier if I'd known.",
+                "I should have mentioned it earlier if I'd known."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L185_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch cheaper versus quicker, and 'coulda' versus 'shoulda'.",
-            "explanation": "This long sentence weighs cost against convenience, a genuinely common travel dilemma, so hold both ideas in mind. 'Coulda saved' (a simple reflection) and 'shoulda saved' (real regret) carry a slightly different weight.",
-            "textToSpeak": "I get that it was cheaper, but honestly, we coulda saved ourselves so much hassle if we'd jus' booked the direct flight instead.",
+            "instruction": "Listen carefully and catch the exact sentence.",
+            "hint": "Catch whether there are a few, or hardly any at all.",
+            "explanation": "'A few' and 'few' look almost identical but mean nearly opposite things — one is a small positive amount, the other is almost none.",
+            "textToSpeak": "We have a few options left to consider.",
             "options": [
-                "I get that it was cheaper, but honestly, we coulda saved ourselves so much hassle if we'd jus' booked the direct flight instead.",
-                "I get that it was quicker, but honestly, we coulda saved ourselves so much hassle if we'd jus' booked the direct flight instead."
+                "We have a few options left to consider.",
+                "We have few options left to consider."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -201,13 +201,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L185_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch 'literally' versus 'pretty much', and we versus they.",
-            "explanation": "'Literally everything' and 'pretty much everything' both express enthusiasm, but at slightly different strengths, so listen for the exact word. That hidden 'n't' also confirms the location genuinely shaped how much they saw.",
-            "textToSpeak": "We wouldn't've explored half as much if the hotel hadn't jus' been within walking distance of literally everything.",
+            "instruction": "They said it fast — what did you actually hear?",
+            "hint": "Listen for whether this is offered generally, or in a specific negative context.",
+            "explanation": "'Some' and 'any' both reduce heavily, but 'any' typically appears in negatives or questions — so the surrounding sentence shape is a real clue.",
+            "textToSpeak": "There isn't any coffee left in the pot.",
             "options": [
-                "They wouldn't've explored half as much if the hotel hadn't jus' been within walking distance of literally everything.",
-                "We wouldn't've explored half as much if the hotel hadn't jus' been within walking distance of literally everything."
+                "There is some coffee left in the pot.",
+                "There isn't any coffee left in the pot."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -216,13 +216,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L185_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch 'pick' versus 'give', and 'went' versus 'go'.",
-            "explanation": "'Went' keeps this whole question in a hypothetical past frame, so swapping it for 'go' shifts the whole meaning slightly. This is one of the most naturally-flowing long questions in the course, so trust the rhythm.",
-            "textToSpeak": "Honestly, whatcha reckon's the one thing you'd tell someone before they went, if you could only jus' pick one piece of advice?",
+            "instruction": "Natural speech blends words together. Catch the real message.",
+            "hint": "Notice whether the amount is described as a little, or a lot.",
+            "explanation": "'A little' and 'little' follow the same subtle pattern as 'a few' and 'few' — one is a modest amount, the other is nearly none.",
+            "textToSpeak": "There's a little time before the next session.",
             "options": [
-                "Honestly, whatcha reckon's the one thing you'd tell someone before they went, if you could only jus' pick one piece of advice?",
-                "Honestly, whatcha reckon's the one thing you'd tell someone before they go, if you could only jus' pick one piece of advice?"
+                "There's a little time before the next session.",
+                "There's little time before the next session."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -231,28 +231,28 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L186_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch redesigned versus rebuilt, and 'in' versus 'with'.",
-            "explanation": "'Redesigned' and 'rebuilt' suggest different scales of change to the product, so listen for the exact word. The tiny preposition at the end is easy to lose but still matters grammatically.",
-            "textToSpeak": "I get why they redesigned it, but honestly, I reckon the old version was jus' easier to actually get things done in.",
+            "instruction": "Listen for the small word that changes the meaning.",
+            "hint": "Catch whether this is a deadline, or an ongoing duration.",
+            "explanation": "'By Friday' names a deadline, while 'until Friday' describes something continuing up to that point — a subtle but meaningful difference.",
+            "textToSpeak": "The offer's valid until Friday.",
             "options": [
-                "I get why they redesigned it, but honestly, I reckon the old version was jus' easier to actually get things done in.",
-                "I get why they redesigned it, but honestly, I reckon the old version was jus' easier to actually get things done with."
+                "The offer's valid by Friday.",
+                "The offer's valid until Friday."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L186_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch 'slower' versus 'harder', and he versus she.",
-            "explanation": "'Slower' (about speed) and 'harder' (about difficulty) are different complaints about the same software. That hidden 'n't' confirms the frustration was real enough to justify reverting.",
-            "textToSpeak": "He wouldn't've switched back to the old system if the new one hadn't jus' genuinely made everything slower.",
+            "instruction": "Focus on the key detail hidden in the fast sentence.",
+            "hint": "Listen for whether this describes a starting point, or a length of time.",
+            "explanation": "'Since' marks when something started, while 'for' describes how long it's lasted, and both reduce heavily in casual speech.",
+            "textToSpeak": "I've been waiting since noon.",
             "options": [
-                "He wouldn't've switched back to the old system if the new one hadn't jus' genuinely made everything harder.",
-                "He wouldn't've switched back to the old system if the new one hadn't jus' genuinely made everything slower."
+                "I've been waiting for noon.",
+                "I've been waiting since noon."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -261,43 +261,43 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L186_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch 'group' versus 'team', and 'testing' versus 'trialling'.",
-            "explanation": "'Testing' and 'trialling' are near-synonyms for trying something out, so listen for the specific word. This is a genuinely long, natural sentence about a big rollout, so let it unfold at its own pace.",
-            "textToSpeak": "Look, whatcha reckon's actually gonna happen when they finally roll this out to everyone instead of jus' testing it on a small group?",
+            "instruction": "Listen again — which version matches what was said?",
+            "hint": "Notice whether this happens once, or repeats regularly.",
+            "explanation": "'Every other week' and 'every week' differ only in that easily-lost middle word, changing the actual frequency significantly.",
+            "textToSpeak": "We meet every other week, usually.",
             "options": [
-                "Look, whatcha reckon's actually gonna happen when they finally roll this out to everyone instead of jus' trialling it on a small group?",
-                "Look, whatcha reckon's actually gonna happen when they finally roll this out to everyone instead of jus' testing it on a small group?"
+                "We meet every other week, usually.",
+                "We meet every week, usually."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L187_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch week versus month, and listen for the hidden 'n't'.",
-            "explanation": "This sentence opens by acknowledging its own dramatic tone before making a genuine point about sleep. That hidden 'n't' in 'couldn't've' confirms this really was as bad as it sounds.",
-            "textToSpeak": "I know I probably sound dramatic, but I genuinely couldn't've functioned this week without jus' getting a proper night's sleep for once.",
+            "instruction": "Listen carefully and catch the exact sentence.",
+            "hint": "Catch whose item this actually is.",
+            "explanation": "'His' and 'her' can both reduce to a quick, light sound before a noun, so this is one of the harder pronoun pairs to separate at speed.",
+            "textToSpeak": "That's his laptop on the desk.",
             "options": [
-                "I know I probably sound dramatic, but I genuinely couldn't've functioned this month without jus' getting a proper night's sleep for once.",
-                "I know I probably sound dramatic, but I genuinely couldn't've functioned this week without jus' getting a proper night's sleep for once."
+                "That's his laptop on the desk.",
+                "That's her laptop on the desk."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L187_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch days versus weeks, and he versus she.",
-            "explanation": "This long sentence explains what finally prompted a doctor's visit, so the exact timeframe genuinely matters to the story. That hidden 'n't' confirms this wasn't a routine check-up but a real response to worsening symptoms.",
-            "textToSpeak": "He wouldn't've gone to the doctor at all if the pain hadn't jus' gotten noticeably worse over the last few days.",
+            "instruction": "They said it fast — what did you actually hear?",
+            "hint": "Listen for whether this belongs to it, or is a contraction of 'it is'.",
+            "explanation": "'Its' and 'it's' sound identical, but only context tells you whether this is possession or a reduced 'it is'.",
+            "textToSpeak": "It's working perfectly now.",
             "options": [
-                "She wouldn't've gone to the doctor at all if the pain hadn't jus' gotten noticeably worse over the last few days.",
-                "He wouldn't've gone to the doctor at all if the pain hadn't jus' gotten noticeably worse over the last few days."
+                "Its working perfectly now.",
+                "It's working perfectly now."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -306,13 +306,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L187_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch 'sleep' versus 'rest', and 'actual' versus 'real'.",
-            "explanation": "'Sleep' and 'rest' overlap in meaning but aren't quite identical, so listen for the precise word. This is one of the most naturally rambling, genuine-sounding long questions in the whole course, so trust your ear over your instinct to guess.",
-            "textToSpeak": "Honestly, whatcha reckon's the actual turning point gonna be, is it jus' getting more sleep, or is it actually something bigger than that?",
+            "instruction": "Natural speech blends words together. Catch the real message.",
+            "hint": "Notice whether they're talking about themselves, or someone else entirely.",
+            "explanation": "'Their' and 'they're' sound identical, so only the surrounding grammar tells you whether this is possession or a contraction.",
+            "textToSpeak": "They're moving offices next month.",
             "options": [
-                "Honestly, whatcha reckon's the actual turning point gonna be, is it jus' getting more sleep, or is it actually something bigger than that?",
-                "Honestly, whatcha reckon's the actual turning point gonna be, is it jus' getting more rest, or is it actually something bigger than that?"
+                "They're moving offices next month.",
+                "Their moving offices next month."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -321,28 +321,28 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L188_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch dissertation versus essay, and 'coulda' versus 'shoulda'.",
-            "explanation": "This long sentence opens by acknowledging its own bad timing before making a genuine reflection. 'Coulda approached' (a neutral thought) and 'shoulda approached' (real regret) carry a slightly different tone.",
-            "textToSpeak": "I know it's a bit late to say this now, but I genuinely reckon we coulda approached the whole dissertation differently from the start.",
+            "instruction": "Listen for the small word that changes the meaning.",
+            "hint": "Catch exactly where one word ends and the next begins.",
+            "explanation": "Fast linking can make 'an aim' and 'a name' sound nearly identical, since the 'n' sound can shift to either side of the word boundary.",
+            "textToSpeak": "She has a clear aim in mind.",
             "options": [
-                "I know it's a bit late to say this now, but I genuinely reckon we coulda approached the whole dissertation differently from the start.",
-                "I know it's a bit late to say this now, but I genuinely reckon we coulda approached the whole dissertation differently from the beginning."
+                "She has a clear name in mind.",
+                "She has a clear aim in mind."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L188_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch 'for him' versus 'for her', and listen for the hidden 'n't'.",
-            "explanation": "This sentence explains a genuine change in strategy, so the pronoun consistency, him referring back to the same person, is worth checking. That hidden 'n't' confirms the old method really had stopped being effective.",
-            "textToSpeak": "He wouldn't've changed his whole approach to studying if the old method hadn't jus' genuinely stopped working for him.",
+            "instruction": "Focus on the key detail hidden in the fast sentence.",
+            "hint": "Listen for whether this is about ice cream, or 'I scream'.",
+            "explanation": "This classic example shows how linking can completely change word boundaries — the individual sounds are identical either way.",
+            "textToSpeak": "I heard someone shout, and then I saw the ice cream truck.",
             "options": [
-                "He wouldn't've changed his whole approach to studying if the old method hadn't jus' genuinely stopped working for him.",
-                "He wouldn't've changed his whole approach to studying if the old method hadn't jus' genuinely stopped working for her."
+                "I heard someone shout, and then I saw the ice cream truck.",
+                "I heard someone scream, and then I saw the ice cream truck."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -351,13 +351,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L188_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch 'grade' versus 'mark', and 'stressing' versus 'worrying'.",
-            "explanation": "'Grade' and 'mark' are near-synonyms for the same result, so listen for the exact word used. This is a genuinely thoughtful, long either-or question about what really matters, so let both halves land.",
-            "textToSpeak": "Look, whatcha reckon's actually worth stressing about here, the final grade, or jus' whether you actually understood the material properly?",
+            "instruction": "Listen again — which version matches what was said?",
+            "hint": "Notice whether this describes 'a nice man' or something that sounds similar.",
+            "explanation": "Linking can shift the 'n' sound at word boundaries, so pay close attention to where the words actually divide in this sentence.",
+            "textToSpeak": "He seemed like a nice man to me.",
             "options": [
-                "Look, whatcha reckon's actually worth stressing about here, the final grade, or jus' whether you actually understood the material properly?",
-                "Look, whatcha reckon's actually worth stressing about here, the final mark, or jus' whether you actually understood the material properly?"
+                "He seemed like a nice man to me.",
+                "He seemed like an ice man to me."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -366,13 +366,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L189_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch twenty versus thirty minutes, and 'reckon' versus 'think'.",
-            "explanation": "This sentence sets up a slightly unpopular opinion, acknowledging that others disagreed, before making the actual point. The exact number of minutes is easy to lose in such a long, flowing sentence, so listen carefully.",
-            "textToSpeak": "I know everyone else loved it, but honestly, I reckon the whole thing coulda been at least twenty minutes shorter without losing anything.",
+            "instruction": "Listen carefully and catch the exact sentence.",
+            "hint": "Catch whether this changed something, or was the outcome itself.",
+            "explanation": "'Affect' and 'effect' sound extremely close, and only the surrounding grammar, verb versus noun, tells you which one is meant.",
+            "textToSpeak": "The delay didn't affect our schedule much.",
             "options": [
-                "I know everyone else loved it, but honestly, I reckon the whole thing coulda been at least twenty minutes shorter without losing anything.",
-                "I know everyone else loved it, but honestly, I reckon the whole thing coulda been at least thirty minutes shorter without losing anything."
+                "The delay didn't affect our schedule much.",
+                "The delay didn't have much of an effect."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -381,13 +381,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L189_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch 'that much' versus 'that long', and he versus she.",
-            "explanation": "'That much' and 'that long' both describe intensity, but in slightly different ways, so listen for the exact phrase. That hidden 'n't' confirms the story genuinely had a lasting impact on her.",
-            "textToSpeak": "She wouldn't've kept talking about the ending for weeks if it hadn't jus' genuinely stuck with her that much.",
+            "instruction": "They said it fast — what did you actually hear?",
+            "hint": "Listen for whether they're accepting the offer, or excluding something.",
+            "explanation": "'Accept' and 'except' sound very similar in fast speech, and mixing them up completely reverses the meaning of the sentence.",
+            "textToSpeak": "Everyone's coming, except Owen.",
             "options": [
-                "He wouldn't've kept talking about the ending for weeks if it hadn't jus' genuinely stuck with her that much.",
-                "She wouldn't've kept talking about the ending for weeks if it hadn't jus' genuinely stuck with her that much."
+                "Everyone's coming, and they accept Owen.",
+                "Everyone's coming, except Owen."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -396,13 +396,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L189_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch 'marketed' versus 'advertised', and 'genuinely' versus 'actually'.",
-            "explanation": "'Marketed' and 'advertised' are close synonyms, so listen for the precise word rather than the general idea. This is a genuinely reflective-feeling question, but notice it's still built entirely from everyday words and structures you already know.",
-            "textToSpeak": "Honestly, whatcha reckon's the difference between something being genuinely good, and something jus' being really well marketed?",
+            "instruction": "Natural speech blends words together. Catch the real message.",
+            "hint": "Notice whether this is advice being given, or an action taking place.",
+            "explanation": "'Advice' and 'advise' sound nearly identical, so only the sentence structure, noun versus verb, reveals which one is meant.",
+            "textToSpeak": "Let me give you some advice before you go.",
             "options": [
-                "Honestly, whatcha reckon's the difference between something being genuinely good, and something jus' being really well marketed?",
-                "Honestly, whatcha reckon's the difference between something being genuinely good, and something jus' being really well advertised?"
+                "Let me give you some advice before you go.",
+                "Let me advise you before you go."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -411,13 +411,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L190_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch 'first' versus 'sooner', and 'reckon' versus 'think'.",
-            "explanation": "This review question is a genuinely long, natural reflection on a small disagreement, so let it flow rather than freezing on any single word. 'Coulda avoided' (a simple thought) and 'shoulda avoided' (real regret) frame the memory slightly differently.",
-            "textToSpeak": "I know it probably sounds like a small thing, but honestly, I reckon we coulda avoided the whole argument if someone had jus' apologised first.",
+            "instruction": "Listen for the small word that changes the meaning.",
+            "hint": "By now, expect the distractors to be extremely close to the real sentence.",
+            "explanation": "This level combines subtle grammar, a reduced negative, and a close word pair, so treat every word as a possible point of confusion.",
+            "textToSpeak": "We hadn't quite accepted the offer when they called back.",
             "options": [
-                "I know it probably sounds like a small thing, but honestly, I think we coulda avoided the whole argument if someone had jus' apologised first.",
-                "I know it probably sounds like a small thing, but honestly, I reckon we coulda avoided the whole argument if someone had jus' apologised first."
+                "We had quite accepted the offer when they called back.",
+                "We hadn't quite accepted the offer when they called back."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -426,28 +426,28 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L190_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch 'sometimes' versus 'occasionally', and we versus they.",
-            "explanation": "'Sometimes' and 'occasionally' mean almost the same thing, so listen for the exact word rather than the general sense. This is one of the longest, most naturally warm sentences in the whole course, appreciating a real friendship.",
-            "textToSpeak": "We wouldn't've kept in touch this well over the years if we hadn't jus' made the effort to actually visit each other sometimes.",
+            "instruction": "Focus on the key detail hidden in the fast sentence.",
+            "hint": "Catch the full sentence despite very close, plausible alternatives.",
+            "explanation": "By Level 190, distinguishing near-identical options should feel like genuine, careful listening work, not a simple guess.",
+            "textToSpeak": "It's had little effect on the numbers so far.",
             "options": [
-                "We wouldn't've kept in touch this well over the years if we hadn't jus' made the effort to actually visit each other occasionally.",
-                "We wouldn't've kept in touch this well over the years if we hadn't jus' made the effort to actually visit each other sometimes."
+                "It's had little effect on the numbers so far.",
+                "It's had a little effect on the numbers so far."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L190_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch 'yet' versus 'tonight', and 'actual' versus 'real'.",
-            "explanation": "This closing question of the tier's first half is the longest, most genuinely reflective sentence yet, weaving together nearly everything you've practised across the whole course. If you followed this all the way through, you're ready for the final ten levels: the true finish line.",
-            "textToSpeak": "Honestly, whatcha reckon's the actual secret to staying close to people, is it jus' making time, or is it something else entirely that we haven't jus' talked about yet?",
+            "instruction": "Listen again — which version matches what was said?",
+            "hint": "Notice how much precision this level demands compared to where you started.",
+            "explanation": "This kind of fine discrimination, between 'a few' and 'few', 'since' and 'for', 'affect' and 'effect', is exactly what separates strong listeners from average ones.",
+            "textToSpeak": "They've been in touch since the announcement, not before.",
             "options": [
-                "Honestly, whatcha reckon's the actual secret to staying close to people, is it jus' making time, or is it something else entirely that we haven't jus' talked about yet?",
-                "Honestly, whatcha reckon's the actual secret to staying close to people, is it jus' making time, or is it something else entirely that we haven't jus' talked about tonight?"
+                "They've been in touch since the announcement, not before.",
+                "They've been in touch for the announcement, not before."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",

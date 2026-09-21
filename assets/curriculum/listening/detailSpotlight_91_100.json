@@ -6,572 +6,572 @@
         {
             "id": "LIS_DETAILSPOTLIGHT_L91_Q1",
             "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "What role does the sentence give to its subject?",
-            "explanation": "The person in question is negotiator: a person who discusses terms to reach an agreement. To be exact, a calm negotiator has been mediating the dispute for several hours.",
-            "textToSpeak": "A calm negotiator has been mediating the dispute for several hours.",
-            "targetDetail": "negotiator",
+            "instruction": "Focus on the new meeting time.",
+            "hint": "One speaker asks about the old plan. The other speaker gives the update.",
+            "explanation": "Correct: 2:30. The answer to the question is ‘not anymore’, so four is no longer the time.",
+            "textToSpeak": "Are we still meeting at four? Not anymore. Priya has to leave early, so we've moved it to two thirty.",
+            "targetDetail": "2:30",
             "options": [
-                "negotiator",
-                "mediator",
-                "consultant",
-                "commuter"
+                "4:30",
+                "2:00",
+                "2:30",
+                "4:00"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "detailSpotlight",
             "emoji": "🤝",
-            "detailCategory": "Key Information"
+            "detailCategory": "Change"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L91_Q2",
             "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "The action word is your target — don't confuse it with the object.",
-            "explanation": "Right answer: mediates, meaning to help settle a disagreement between two sides. That's because she mediates conflicts more patiently than most senior managers.",
-            "textToSpeak": "She mediates conflicts more patiently than most senior managers.",
-            "targetDetail": "mediates",
+            "instruction": "Spot where the order should be delivered.",
+            "hint": "Two corrections are given. Focus on the one about where.",
+            "explanation": "‘Not the office’ rejects the wrong place. Thirty boxes is a separate correction. So the answer is the warehouse.",
+            "textToSpeak": "Tell Bruno the order is for thirty boxes, not twenty. And the delivery address is the warehouse on Mill Road, not the office.",
+            "targetDetail": "the warehouse",
             "options": [
-                "certifies",
-                "mediates",
-                "allocates",
-                "consults"
+                "the office",
+                "the depot",
+                "the shop",
+                "the warehouse"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "subtype": "detailSpotlight",
-            "emoji": "⚖️",
-            "detailCategory": "Key Information"
+            "emoji": "📦",
+            "detailCategory": "Correction"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L91_Q3",
             "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "Which word answers 'what is this actually about?'",
-            "explanation": "You heard settlement, an official agreement that ends a disagreement. Notice that he should sign the settlement before the offer expires.",
-            "textToSpeak": "He should sign the settlement before the offer expires.",
-            "targetDetail": "settlement",
+            "instruction": "Listen for where they finally agreed to meet.",
+            "hint": "Two suggestions are rejected. Wait for the phrase ‘in the end’.",
+            "explanation": "Correct: the library. Neither person got their first choice. They compromised on a third place.",
+            "textToSpeak": "Emma said she'd meet Jake at the station, but Jake said he'd rather meet at the café. In the end, they agreed on the library.",
+            "targetDetail": "the library",
             "options": [
-                "settlement",
-                "manuscript",
-                "portfolio",
-                "audit"
+                "the museum",
+                "the station",
+                "the library",
+                "the café"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "detailSpotlight",
-            "emoji": "📜",
-            "detailCategory": "Key Information"
+            "emoji": "📍",
+            "detailCategory": "Final Decision"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L92_Q1",
             "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "Pay attention to who the sentence is about.",
-            "explanation": "Recruiter fits — a person who finds and hires new employees. You can hear that a dedicated recruiter has been interviewing candidates all week.",
-            "textToSpeak": "A dedicated recruiter has been interviewing candidates all week.",
-            "targetDetail": "recruiter",
+            "instruction": "Wipe the glass, then tap how much salt the speaker usually uses.",
+            "hint": "The recipe amount and the speaker's own amount are different.",
+            "explanation": "Two teaspoons is what the recipe says. So the answer is 1½ teaspoons.",
+            "textToSpeak": "The recipe says two teaspoons of salt, but that's too much for me. I usually use one and a half.",
+            "targetDetail": "1½ teaspoons",
             "options": [
-                "analyst",
-                "inspector",
-                "recruiter",
-                "scientist"
-            ],
-            "correctAnswerIndex": 2,
-            "subtype": "detailSpotlight",
-            "emoji": "🧑‍💼",
-            "detailCategory": "Key Information"
-        },
-        {
-            "id": "LIS_DETAILSPOTLIGHT_L92_Q2",
-            "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "The verb carries the key detail — listen for it precisely.",
-            "explanation": "Recruits is the detail — to find and persuade people to join an organization. The audio makes clear that she recruits graduates more carefully since the last bad hire.",
-            "textToSpeak": "She recruits graduates more carefully since the last bad hire.",
-            "targetDetail": "recruits",
-            "options": [
-                "oversees",
-                "delegates",
-                "recruits",
-                "authorizes"
-            ],
-            "correctAnswerIndex": 2,
-            "subtype": "detailSpotlight",
-            "emoji": "🎓",
-            "detailCategory": "Key Information"
-        },
-        {
-            "id": "LIS_DETAILSPOTLIGHT_L92_Q3",
-            "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "Notice which object the sentence is really about.",
-            "explanation": "Resume is the detail — a document listing a person's work history and skills. Specifically, he must update his resume before applying for the role.",
-            "textToSpeak": "He must update his resume before applying for the role.",
-            "targetDetail": "resume",
-            "options": [
-                "salary",
-                "resume",
-                "script",
-                "record"
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "detailSpotlight",
-            "emoji": "📄",
-            "detailCategory": "Key Information"
-        },
-        {
-            "id": "LIS_DETAILSPOTLIGHT_L93_Q1",
-            "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "Listen past the action to find out who's involved.",
-            "explanation": "Listen for curator: a person who manages the items in a museum or gallery. In this case, the museum's curator has been rearranging the exhibit since Tuesday.",
-            "textToSpeak": "The museum's curator has been rearranging the exhibit since Tuesday.",
-            "targetDetail": "curator",
-            "options": [
-                "administrator",
-                "curator",
-                "publisher",
-                "biographer"
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "detailSpotlight",
-            "emoji": "🖼️",
-            "detailCategory": "Key Information"
-        },
-        {
-            "id": "LIS_DETAILSPOTLIGHT_L93_Q2",
-            "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "Listen for the action word - what is the person or thing doing?",
-            "explanation": "The doing-word is compiles — to collect information from different sources into one. The sentence confirms she compiles the collection more efficiently than the previous system.",
-            "textToSpeak": "She compiles the collection more efficiently than the previous system.",
-            "targetDetail": "compiles",
-            "options": [
-                "drafts",
-                "finalizes",
-                "compiles",
-                "sponsors"
-            ],
-            "correctAnswerIndex": 2,
-            "subtype": "detailSpotlight",
-            "emoji": "🗃️",
-            "detailCategory": "Key Information"
-        },
-        {
-            "id": "LIS_DETAILSPOTLIGHT_L93_Q3",
-            "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "Listen for the word naming what's being discussed.",
-            "explanation": "Exhibit fits here — a public display of art or objects. You can hear that he should visit the exhibit before it closes next week.",
-            "textToSpeak": "He should visit the exhibit before it closes next week.",
-            "targetDetail": "exhibit",
-            "options": [
-                "exhibit",
-                "review",
-                "performance",
-                "subscription"
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "detailSpotlight",
-            "emoji": "🎨",
-            "detailCategory": "Key Information"
-        },
-        {
-            "id": "LIS_DETAILSPOTLIGHT_L94_Q1",
-            "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "Home in on the title used for the person.",
-            "explanation": "Volunteer is who's described — a person who works for a cause without being paid. The audio states that a dedicated volunteer has been organizing supplies since the storm hit.",
-            "textToSpeak": "A dedicated volunteer has been organizing supplies since the storm hit.",
-            "targetDetail": "volunteer",
-            "options": [
-                "journalist",
-                "plumber",
-                "volunteer",
-                "podcaster"
-            ],
-            "correctAnswerIndex": 2,
-            "subtype": "detailSpotlight",
-            "emoji": "📦",
-            "detailCategory": "Key Information"
-        },
-        {
-            "id": "LIS_DETAILSPOTLIGHT_L94_Q2",
-            "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "Track the verb through the whole sentence.",
-            "explanation": "You heard donates: to give money or goods to help a cause. In this sentence, she donates more supplies than anyone else at the shelter.",
-            "textToSpeak": "She donates more supplies than anyone else at the shelter.",
-            "targetDetail": "donates",
-            "options": [
-                "donates",
-                "approves",
-                "reports",
-                "reserves"
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "detailSpotlight",
-            "emoji": "🥫",
-            "detailCategory": "Key Information"
-        },
-        {
-            "id": "LIS_DETAILSPOTLIGHT_L94_Q3",
-            "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "Your job: name the object, not the action around it.",
-            "explanation": "Listen for donation: money or goods given to help a person or cause. In this sentence, he should send a donation before the campaign ends tonight.",
-            "textToSpeak": "He should send a donation before the campaign ends tonight.",
-            "targetDetail": "donation",
-            "options": [
-                "visa",
-                "vaccine",
-                "meeting",
-                "donation"
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "detailSpotlight",
-            "emoji": "💝",
-            "detailCategory": "Key Information"
-        },
-        {
-            "id": "LIS_DETAILSPOTLIGHT_L95_Q1",
-            "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "Which single word tells you the person's role here?",
-            "explanation": "Diplomat is the detail here — a person who represents their country in relations abroad. As the audio says, the retired diplomat has been advising the ministry since January.",
-            "textToSpeak": "The retired diplomat has been advising the ministry since January.",
-            "targetDetail": "diplomat",
-            "options": [
-                "diplomat",
-                "historian",
-                "researcher",
-                "correspondent"
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "detailSpotlight",
-            "emoji": "🌍",
-            "detailCategory": "Key Information"
-        },
-        {
-            "id": "LIS_DETAILSPOTLIGHT_L95_Q2",
-            "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "Which word answers 'what exactly is being done?'",
-            "explanation": "The verb here is negotiates, meaning to discuss something in order to reach an agreement. Notice that she negotiates trade terms more patiently than her predecessor did.",
-            "textToSpeak": "She negotiates trade terms more patiently than her predecessor did.",
-            "targetDetail": "negotiates",
-            "options": [
-                "operates",
-                "verifies",
-                "negotiates",
-                "analyzes"
-            ],
-            "correctAnswerIndex": 2,
-            "subtype": "detailSpotlight",
-            "emoji": "🤝",
-            "detailCategory": "Key Information"
-        },
-        {
-            "id": "LIS_DETAILSPOTLIGHT_L95_Q3",
-            "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "What object does the sentence describe? Listen for it.",
-            "explanation": "The object described is regulation — an official rule that controls how something is done. As stated, he must review the new regulation before the summit begins.",
-            "textToSpeak": "He must review the new regulation before the summit begins.",
-            "targetDetail": "regulation",
-            "options": [
-                "regulation",
-                "merger",
-                "drone",
-                "database"
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "detailSpotlight",
-            "emoji": "📜",
-            "detailCategory": "Key Information"
-        },
-        {
-            "id": "LIS_DETAILSPOTLIGHT_L96_Q1",
-            "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "Your job: name the person, not what they did.",
-            "explanation": "You heard host, which means a person who welcomes and entertains guests. Notice that a cheerful host has been welcoming guests since the doors opened.",
-            "textToSpeak": "A cheerful host has been welcoming guests since the doors opened.",
-            "targetDetail": "host",
-            "options": [
-                "host",
-                "cousin",
-                "neighbor",
-                "aunt"
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "detailSpotlight",
-            "emoji": "🎉",
-            "detailCategory": "Key Information"
-        },
-        {
-            "id": "LIS_DETAILSPOTLIGHT_L96_Q2",
-            "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "Catch the exact verb, not a similar-sounding one.",
-            "explanation": "The correct action is celebrates — to do something enjoyable to mark a special occasion. Specifically, she celebrates milestones more elaborately than most other planners.",
-            "textToSpeak": "She celebrates milestones more elaborately than most other planners.",
-            "targetDetail": "celebrates",
-            "options": [
-                "writes",
-                "lends",
-                "invites",
-                "celebrates"
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "detailSpotlight",
-            "emoji": "🎂",
-            "detailCategory": "Key Information"
-        },
-        {
-            "id": "LIS_DETAILSPOTLIGHT_L96_Q3",
-            "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "Which concrete thing is named in the sentence?",
-            "explanation": "Right answer: invitation, a written or spoken request for someone to attend. That's because he should send the invitation before the venue is fully booked.",
-            "textToSpeak": "He should send the invitation before the venue is fully booked.",
-            "targetDetail": "invitation",
-            "options": [
-                "invitation",
-                "medication",
-                "neighborhood",
-                "dessert"
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "detailSpotlight",
-            "emoji": "💌",
-            "detailCategory": "Key Information"
-        },
-        {
-            "id": "LIS_DETAILSPOTLIGHT_L97_Q1",
-            "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "Focus on identity: who exactly is being talked about?",
-            "explanation": "That's counselor: a person trained to give guidance on personal problems. The audio confirms it — a thoughtful counselor has been guiding new students since orientation began.",
-            "textToSpeak": "A thoughtful counselor has been guiding new students since orientation began.",
-            "targetDetail": "counselor",
-            "options": [
-                "surgeon",
-                "critic",
-                "auditor",
-                "counselor"
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "detailSpotlight",
-            "emoji": "🧑‍🏫",
-            "detailCategory": "Key Information"
-        },
-        {
-            "id": "LIS_DETAILSPOTLIGHT_L97_Q2",
-            "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "Notice how the action is described in the sentence.",
-            "explanation": "Trains is correct — to teach a skill through regular practice. Notice how she trains new counselors more thoroughly than the old program did.",
-            "textToSpeak": "She trains new counselors more thoroughly than the old program did.",
-            "targetDetail": "trains",
-            "options": [
-                "translates",
-                "trains",
-                "checks in",
-                "navigates"
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "detailSpotlight",
-            "emoji": "📋",
-            "detailCategory": "Key Information"
-        },
-        {
-            "id": "LIS_DETAILSPOTLIGHT_L97_Q3",
-            "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "Which item is central to the sentence? Listen closely.",
-            "explanation": "The correct object is curriculum — the subjects taught in a course of study. In the audio, he must complete the curriculum before the term ends.",
-            "textToSpeak": "He must complete the curriculum before the term ends.",
-            "targetDetail": "curriculum",
-            "options": [
-                "lecture",
-                "curriculum",
-                "ceremony",
-                "voucher"
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "detailSpotlight",
-            "emoji": "📚",
-            "detailCategory": "Key Information"
-        },
-        {
-            "id": "LIS_DETAILSPOTLIGHT_L98_Q1",
-            "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "Who is the sentence talking about? Listen for their role.",
-            "explanation": "The person mentioned is tour guide: a person who shows visitors around a place. Here, a confident tour guide has been leading groups since sunrise.",
-            "textToSpeak": "A confident tour guide has been leading groups since sunrise.",
-            "targetDetail": "tour guide",
-            "options": [
-                "receptionist",
-                "sculptor",
-                "pharmacist",
-                "tour guide"
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "detailSpotlight",
-            "emoji": "🧭",
-            "detailCategory": "Key Information"
-        },
-        {
-            "id": "LIS_DETAILSPOTLIGHT_L98_Q2",
-            "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "Home in on the verb, wherever it falls in the sentence.",
-            "explanation": "Navigates fits the sentence — to find the way to a destination. You can hear that she navigates crowded markets more skillfully than the newer guides.",
-            "textToSpeak": "She navigates crowded markets more skillfully than the newer guides.",
-            "targetDetail": "navigates",
-            "options": [
-                "navigates",
-                "requests",
-                "evaluates",
-                "recovers"
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "detailSpotlight",
-            "emoji": "🗺️",
-            "detailCategory": "Key Information"
-        },
-        {
-            "id": "LIS_DETAILSPOTLIGHT_L98_Q3",
-            "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "What is the sentence actually about? Listen for that noun.",
-            "explanation": "That's itinerary — a planned route or list of stops for a trip. The audio confirms it: he should check the itinerary before the bus departs.",
-            "textToSpeak": "He should check the itinerary before the bus departs.",
-            "targetDetail": "itinerary",
-            "options": [
-                "boarding pass",
-                "itinerary",
-                "playlist",
-                "app"
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "detailSpotlight",
-            "emoji": "🗺️",
-            "detailCategory": "Key Information"
-        },
-        {
-            "id": "LIS_DETAILSPOTLIGHT_L99_Q1",
-            "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "Focus on who is being described, not what they do or use.",
-            "explanation": "executive is correct — a senior person who manages a company. In the audio, a generous executive has been sponsoring the program since it began.",
-            "textToSpeak": "A generous executive has been sponsoring the program since it began.",
-            "targetDetail": "executive",
-            "options": [
-                "executive",
-                "scientist",
-                "professor",
-                "architect"
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "detailSpotlight",
-            "emoji": "🏆",
-            "detailCategory": "Key Information"
-        },
-        {
-            "id": "LIS_DETAILSPOTLIGHT_L99_Q2",
-            "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "What's happening in the sentence? Listen for that word.",
-            "explanation": "The action named is sponsors, which means to financially support a person, team, or event. To be exact, she sponsors more young athletes than any other local donor.",
-            "textToSpeak": "She sponsors more young athletes than any other local donor.",
-            "targetDetail": "sponsors",
-            "options": [
-                "supervises",
-                "sponsors",
-                "forecasts",
-                "mediates"
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "detailSpotlight",
-            "emoji": "🎗️",
-            "detailCategory": "Key Information"
-        },
-        {
-            "id": "LIS_DETAILSPOTLIGHT_L99_Q3",
-            "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "Track the specific thing referenced in the audio.",
-            "explanation": "The item named is endowment, a gift of money given to provide lasting income. To be exact, he must sign the endowment before the fiscal year closes.",
-            "textToSpeak": "He must sign the endowment before the fiscal year closes.",
-            "targetDetail": "endowment",
-            "options": [
-                "algorithm",
-                "merger",
-                "endowment",
-                "server"
-            ],
-            "correctAnswerIndex": 2,
-            "subtype": "detailSpotlight",
-            "emoji": "🤝",
-            "detailCategory": "Key Information"
-        },
-        {
-            "id": "LIS_DETAILSPOTLIGHT_L100_Q1",
-            "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "Which role or relationship is named in the sentence?",
-            "explanation": "Right answer: chef, a person who cooks food, especially in a restaurant. That's because the head chef has been training a new team since the reopening.",
-            "textToSpeak": "The head chef has been training a new team since the reopening.",
-            "targetDetail": "chef",
-            "options": [
-                "chef",
-                "doctor",
-                "traveler",
-                "babysitter"
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "detailSpotlight",
-            "emoji": "👨‍🍳",
-            "detailCategory": "Key Information"
-        },
-        {
-            "id": "LIS_DETAILSPOTLIGHT_L100_Q2",
-            "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "Which word tells you what actually took place?",
-            "explanation": "Listen for seasons: to add salt, spices, or herbs to food. As stated, she seasons every dish more boldly than the previous chef did.",
-            "textToSpeak": "She seasons every dish more boldly than the previous chef did.",
-            "targetDetail": "seasons",
-            "options": [
-                "recommends",
-                "seasons",
-                "interviews",
-                "updates"
+                "3 teaspoons",
+                "1½ teaspoons",
+                "1 teaspoon",
+                "2 teaspoons"
             ],
             "correctAnswerIndex": 1,
             "subtype": "detailSpotlight",
             "emoji": "🧂",
-            "detailCategory": "Key Information"
+            "detailCategory": "Quantity"
+        },
+        {
+            "id": "LIS_DETAILSPOTLIGHT_L92_Q2",
+            "interactionType": "choice",
+            "instruction": "Notice when the money should be available.",
+            "hint": "The bank and the app give different information. Follow the final conclusion with ‘so’.",
+            "explanation": "The answer is this afternoon. Two days was the bank's estimate, but the app shows the money has arrived.",
+            "textToSpeak": "The bank said the transfer would take two days, but the app says it's already arrived. So it should be available this afternoon.",
+            "targetDetail": "this afternoon",
+            "options": [
+                "next week",
+                "in two days",
+                "this afternoon",
+                "tomorrow morning"
+            ],
+            "correctAnswerIndex": 2,
+            "subtype": "detailSpotlight",
+            "emoji": "🏦",
+            "detailCategory": "Status"
+        },
+        {
+            "id": "LIS_DETAILSPOTLIGHT_L92_Q3",
+            "interactionType": "choice",
+            "instruction": "Clear the glass and tap which seat the friend chose.",
+            "hint": "Two people made two choices. Match the choice to the friend.",
+            "explanation": "The speaker took the aisle, and the middle seat is unused. So the answer is window.",
+            "textToSpeak": "I asked for the aisle seat because I like to stretch my legs. My friend chose the window, and the middle seat is empty.",
+            "targetDetail": "window",
+            "options": [
+                "middle",
+                "window",
+                "aisle",
+                "front"
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "detailSpotlight",
+            "emoji": "🛫",
+            "detailCategory": "Preference"
+        },
+        {
+            "id": "LIS_DETAILSPOTLIGHT_L93_Q1",
+            "interactionType": "choice",
+            "instruction": "Catch who will speak first.",
+            "hint": "The planned speaker and the actual speaker are different people.",
+            "explanation": "The answer is Mr. Ellis. Dr. Rao is delayed, and ‘instead’ introduces the replacement.",
+            "textToSpeak": "Good morning, everyone. Today's speaker was going to be Dr. Rao, but she's stuck in traffic. Mr. Ellis from the finance team will start instead.",
+            "targetDetail": "Mr. Ellis",
+            "options": [
+                "Dr. Rao",
+                "Mr. Evans",
+                "Ms. Hall",
+                "Mr. Ellis"
+            ],
+            "correctAnswerIndex": 3,
+            "subtype": "detailSpotlight",
+            "emoji": "🎙️",
+            "detailCategory": "Change"
+        },
+        {
+            "id": "LIS_DETAILSPOTLIGHT_L93_Q2",
+            "interactionType": "choice",
+            "instruction": "Tap why the last swim is before closing time.",
+            "hint": "The answer follows ‘because’. Ignore the times.",
+            "explanation": "Correct: the staff need to clean. It explains why the last swim is thirty minutes early.",
+            "textToSpeak": "The pool closes at nine, but the last swim is at eight thirty because the staff need time to clean.",
+            "targetDetail": "the staff need to clean",
+            "options": [
+                "the staff need to clean",
+                "the pool is booked",
+                "the water is cold",
+                "the lifeguard leaves"
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "detailSpotlight",
+            "emoji": "🏊",
+            "detailCategory": "Reason"
+        },
+        {
+            "id": "LIS_DETAILSPOTLIGHT_L93_Q3",
+            "interactionType": "choice",
+            "instruction": "Listen for how much they save each night.",
+            "hint": "The number of dollars is linked to ‘saves’. Compare the endings of the options.",
+            "explanation": "The answer is $80. ‘Eighty’ has a short ending, unlike ‘eighteen’.",
+            "textToSpeak": "We booked the cheaper hotel, the one by the airport. It's not as nice as the one downtown, but it saves us eighty dollars a night.",
+            "targetDetail": "$80",
+            "options": [
+                "$8",
+                "$80",
+                "$18",
+                "$180"
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "detailSpotlight",
+            "emoji": "🏨",
+            "detailCategory": "Price"
+        },
+        {
+            "id": "LIS_DETAILSPOTLIGHT_L94_Q1",
+            "interactionType": "choice",
+            "instruction": "Identify when the movie actually starts.",
+            "hint": "The speaker's first belief was wrong. Listen for the correct time.",
+            "explanation": "7:45 is correct. Seven was only a mistaken idea.",
+            "textToSpeak": "I thought the movie started at seven, so I got there early. Then I found out it doesn't start until seven forty-five.",
+            "targetDetail": "7:45",
+            "options": [
+                "7:00",
+                "7:40",
+                "7:15",
+                "7:45"
+            ],
+            "correctAnswerIndex": 3,
+            "subtype": "detailSpotlight",
+            "emoji": "🎬",
+            "detailCategory": "Correction"
+        },
+        {
+            "id": "LIS_DETAILSPOTLIGHT_L94_Q2",
+            "interactionType": "choice",
+            "instruction": "Notice what is still broken.",
+            "hint": "One machine is repaired and another is not. Listen for ‘still’.",
+            "explanation": "Correct: the scanner. The printer is fixed, and the technician returns on Friday.",
+            "textToSpeak": "Please tell your manager that the printer is fixed, but the scanner still isn't working. The technician will come back on Friday.",
+            "targetDetail": "the scanner",
+            "options": [
+                "the scanner",
+                "the printer",
+                "the copier",
+                "the phone line"
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "detailSpotlight",
+            "emoji": "🖨️",
+            "detailCategory": "Status"
+        },
+        {
+            "id": "LIS_DETAILSPOTLIGHT_L94_Q3",
+            "interactionType": "choice",
+            "instruction": "Identify why they plan to arrive so early.",
+            "hint": "‘That way’ introduces the purpose of the plan.",
+            "explanation": "To check bags and eat is correct. The extra time is for those two things.",
+            "textToSpeak": "Our flight leaves at six, so we should get to the airport by three. That way we'll have time to check our bags and eat something.",
+            "targetDetail": "to check bags and eat",
+            "options": [
+                "to check bags and eat",
+                "to meet a friend",
+                "to change seats",
+                "to buy tickets"
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "detailSpotlight",
+            "emoji": "🧳",
+            "detailCategory": "Reason"
+        },
+        {
+            "id": "LIS_DETAILSPOTLIGHT_L95_Q1",
+            "interactionType": "choice",
+            "instruction": "Notice when the new schedule will be ready.",
+            "hint": "Two speakers talk. The answer comes from the second speaker's final advice.",
+            "explanation": "Friday is the schedule's date, not when it will be ready. So the answer is by lunchtime.",
+            "textToSpeak": "Can you send me Friday's schedule? Sure, but the one I have is from last month, so it's better to wait for the new one. It'll be ready by lunchtime.",
+            "targetDetail": "by lunchtime",
+            "options": [
+                "on Friday",
+                "next month",
+                "tomorrow morning",
+                "by lunchtime"
+            ],
+            "correctAnswerIndex": 3,
+            "subtype": "detailSpotlight",
+            "emoji": "🗓️",
+            "detailCategory": "Time"
+        },
+        {
+            "id": "LIS_DETAILSPOTLIGHT_L95_Q2",
+            "interactionType": "choice",
+            "instruction": "Wipe away the fog and tap the place added in place of the cathedral.",
+            "hint": "A closed place is replaced by another. ‘Instead’ points to it.",
+            "explanation": "The castle and market were already part of the tour. So the answer is the gardens.",
+            "textToSpeak": "The tour includes the castle and the old market, but the cathedral is closed for repairs, so the guide will take us to the gardens instead.",
+            "targetDetail": "the gardens",
+            "options": [
+                "the castle",
+                "the old market",
+                "the harbor",
+                "the gardens"
+            ],
+            "correctAnswerIndex": 3,
+            "subtype": "detailSpotlight",
+            "emoji": "🏰",
+            "detailCategory": "Change"
+        },
+        {
+            "id": "LIS_DETAILSPOTLIGHT_L95_Q3",
+            "interactionType": "choice",
+            "instruction": "Listen for how many chairs there are.",
+            "hint": "The number of guests and the number of chairs are different.",
+            "explanation": "20 is correct. Ten is the number of guests.",
+            "textToSpeak": "I'd say about ten people are coming, but we've got chairs for twenty, so there's plenty of room.",
+            "targetDetail": "20",
+            "options": [
+                "20",
+                "12",
+                "30",
+                "10"
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "detailSpotlight",
+            "emoji": "🪑",
+            "detailCategory": "Quantity"
+        },
+        {
+            "id": "LIS_DETAILSPOTLIGHT_L96_Q1",
+            "interactionType": "choice",
+            "instruction": "Clear the glass and tap the date the appointment is really on.",
+            "hint": "The first date is incorrect. Listen for the speaker who corrects it.",
+            "explanation": "The twelfth is the mistaken date. So the answer is December 2.",
+            "textToSpeak": "You said your appointment was on the twelfth? No, the second. It's the second of December, at nine thirty.",
+            "targetDetail": "December 2",
+            "options": [
+                "December 20",
+                "December 12",
+                "December 2",
+                "November 2"
+            ],
+            "correctAnswerIndex": 2,
+            "subtype": "detailSpotlight",
+            "emoji": "📅",
+            "detailCategory": "Correction"
+        },
+        {
+            "id": "LIS_DETAILSPOTLIGHT_L96_Q2",
+            "interactionType": "choice",
+            "instruction": "Listen for who will chair the meeting.",
+            "hint": "The person who is late is not the person leading. Listen to the second sentence.",
+            "explanation": "Ms. Bell is correct. Mr. Adams is late, so Ms. Bell leads until he arrives.",
+            "textToSpeak": "Mr. Adams called to say he's running late and asked us to start without him. Ms. Bell will chair the meeting until he arrives.",
+            "targetDetail": "Ms. Bell",
+            "options": [
+                "Mr. Adams",
+                "Mr. Bell",
+                "Ms. Bell",
+                "Ms. Ford"
+            ],
+            "correctAnswerIndex": 2,
+            "subtype": "detailSpotlight",
+            "emoji": "🪑",
+            "detailCategory": "Person"
+        },
+        {
+            "id": "LIS_DETAILSPOTLIGHT_L96_Q3",
+            "interactionType": "choice",
+            "instruction": "Tap what seniors pay.",
+            "hint": "Each group has its own amount. Match the group to its amount.",
+            "explanation": "Students enter free, and everyone else pays ten dollars. So the answer is half price.",
+            "textToSpeak": "The gallery is free for students, half price for seniors, and ten dollars for everyone else.",
+            "targetDetail": "half price",
+            "options": [
+                "free",
+                "$5",
+                "$10",
+                "half price"
+            ],
+            "correctAnswerIndex": 3,
+            "subtype": "detailSpotlight",
+            "emoji": "🖼️",
+            "detailCategory": "Price"
+        },
+        {
+            "id": "LIS_DETAILSPOTLIGHT_L97_Q1",
+            "interactionType": "choice",
+            "instruction": "Listen for who is staying in sales.",
+            "hint": "One speaker reports what another person said. Then the person corrects it.",
+            "explanation": "The answer is Carlos. He says he's staying in sales, so Sofia's information was wrong.",
+            "textToSpeak": "Sofia said Carlos was joining the design team, but Carlos told me he's staying in sales. He says Sofia got confused.",
+            "targetDetail": "Carlos",
+            "options": [
+                "Carlos",
+                "Sofia",
+                "Paulo",
+                "Tomas"
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "detailSpotlight",
+            "emoji": "💬",
+            "detailCategory": "Speaker Identity"
+        },
+        {
+            "id": "LIS_DETAILSPOTLIGHT_L97_Q2",
+            "interactionType": "choice",
+            "instruction": "Tap the price including shipping.",
+            "hint": "The product price and the final price are different.",
+            "explanation": "$105 is correct. A hundred and five includes the delivery cost.",
+            "textToSpeak": "The price on the website was ninety dollars, but at the checkout it said a hundred and five with shipping.",
+            "targetDetail": "$105",
+            "options": [
+                "$15",
+                "$150",
+                "$105",
+                "$90"
+            ],
+            "correctAnswerIndex": 2,
+            "subtype": "detailSpotlight",
+            "emoji": "🛒",
+            "detailCategory": "Price"
+        },
+        {
+            "id": "LIS_DETAILSPOTLIGHT_L97_Q3",
+            "interactionType": "choice",
+            "instruction": "Listen for how long after the exam the results come.",
+            "hint": "The time gap is measured from the exam, not from today.",
+            "explanation": "The answer is 10 days. The exam is on Friday, and the results follow ten days later.",
+            "textToSpeak": "The exam is on the last Friday of the month, and we'll get the results ten days after that.",
+            "targetDetail": "10 days",
+            "options": [
+                "14 days",
+                "10 days",
+                "7 days",
+                "30 days"
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "detailSpotlight",
+            "emoji": "📊",
+            "detailCategory": "Duration"
+        },
+        {
+            "id": "LIS_DETAILSPOTLIGHT_L98_Q1",
+            "interactionType": "choice",
+            "instruction": "Clear the glass and tap where they will stop for lunch.",
+            "hint": "‘Halfway’ describes when they stop. The location comes at the end.",
+            "explanation": "Correct: by the river. The two-hour drive is the length of the journey.",
+            "textToSpeak": "It's a two-hour drive, so we'll stop halfway for lunch at a small restaurant by the river.",
+            "targetDetail": "by the river",
+            "options": [
+                "by the river",
+                "at a gas station",
+                "in the city",
+                "at the airport"
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "detailSpotlight",
+            "emoji": "🚗",
+            "detailCategory": "Location"
+        },
+        {
+            "id": "LIS_DETAILSPOTLIGHT_L98_Q2",
+            "interactionType": "choice",
+            "instruction": "Listen for what you should do first at reception.",
+            "hint": "The steps are in order. Choose the one that comes before the others.",
+            "explanation": "Sign in is correct. It is the first of three steps.",
+            "textToSpeak": "When you get to reception, sign in, take a visitor badge, and wait for someone from the department to collect you.",
+            "targetDetail": "sign in",
+            "options": [
+                "sign in",
+                "wait for someone",
+                "take a badge",
+                "call the department"
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "detailSpotlight",
+            "emoji": "🪪",
+            "detailCategory": "Sequence"
+        },
+        {
+            "id": "LIS_DETAILSPOTLIGHT_L98_Q3",
+            "interactionType": "choice",
+            "instruction": "Find the last three digits of the number.",
+            "hint": "The speaker repeats the ending. Listen for what changes.",
+            "explanation": "Correct: 223. The speaker first says two two eight, then corrects it.",
+            "textToSpeak": "My phone number is oh seven nine, four one six, two two eight. Sorry, that's two two three at the end.",
+            "targetDetail": "223",
+            "options": [
+                "228",
+                "223",
+                "632",
+                "322"
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "detailSpotlight",
+            "emoji": "📞",
+            "detailCategory": "Correction"
+        },
+        {
+            "id": "LIS_DETAILSPOTLIGHT_L99_Q1",
+            "interactionType": "choice",
+            "instruction": "Notice who you should tell about dietary needs.",
+            "hint": "There are two groups: the person you talk to and the people who prepare food.",
+            "explanation": "Amira is correct. The kitchen prepares the food, but Amira is the contact.",
+            "textToSpeak": "Lunch is at twelve thirty, but if you have dietary needs, tell Amira before eleven so the kitchen can prepare something.",
+            "targetDetail": "Amira",
+            "options": [
+                "the manager",
+                "Amira",
+                "the waiter",
+                "the kitchen"
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "detailSpotlight",
+            "emoji": "🍽️",
+            "detailCategory": "Instruction"
+        },
+        {
+            "id": "LIS_DETAILSPOTLIGHT_L99_Q2",
+            "interactionType": "choice",
+            "instruction": "Wipe the glass and tap how many people the new stadium holds.",
+            "hint": "The old and new stadiums have different sizes. Choose the new one.",
+            "explanation": "35,000 is correct. Fifty thousand is the old stadium's capacity.",
+            "textToSpeak": "The old stadium held fifty thousand people. The new one is smaller, with room for thirty-five thousand, but the seats are much better.",
+            "targetDetail": "35,000",
+            "options": [
+                "53,000",
+                "15,000",
+                "50,000",
+                "35,000"
+            ],
+            "correctAnswerIndex": 3,
+            "subtype": "detailSpotlight",
+            "emoji": "🏟️",
+            "detailCategory": "Quantity"
+        },
+        {
+            "id": "LIS_DETAILSPOTLIGHT_L99_Q3",
+            "interactionType": "choice",
+            "instruction": "Focus on what only the express train does.",
+            "hint": "One thing is shared and one is unique. ‘Only’ points to the unique one.",
+            "explanation": "The answer is reaches London directly. Stopping at Ashford is true for both trains.",
+            "textToSpeak": "Both trains stop at Ashford, but only the express reaches London without changing, and it costs twelve dollars more.",
+            "targetDetail": "reaches London directly",
+            "options": [
+                "reaches London directly",
+                "leaves earlier",
+                "costs less",
+                "stops at Ashford"
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "detailSpotlight",
+            "emoji": "🚄",
+            "detailCategory": "Comparison"
+        },
+        {
+            "id": "LIS_DETAILSPOTLIGHT_L100_Q1",
+            "interactionType": "choice",
+            "instruction": "Wipe the glass and tap the new appointment date.",
+            "hint": "The old date is canceled. Listen for the date after ‘rebooked’.",
+            "explanation": "Correct: the 16th. The 9th was canceled.",
+            "textToSpeak": "The doctor's office called. My appointment on the ninth is canceled, and they've rebooked me for the sixteenth at two.",
+            "targetDetail": "the 16th",
+            "options": [
+                "the 6th",
+                "the 16th",
+                "the 12th",
+                "the 9th"
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "detailSpotlight",
+            "emoji": "🩺",
+            "detailCategory": "Change"
+        },
+        {
+            "id": "LIS_DETAILSPOTLIGHT_L100_Q2",
+            "interactionType": "choice",
+            "instruction": "Listen for what cannot be refunded.",
+            "hint": "The second speaker accepts the request, then adds a condition.",
+            "explanation": "Correct: the deposit. The first half is paid now and cannot be returned.",
+            "textToSpeak": "Can I pay half now and half when the work is finished? That's fine, but the deposit is non-refundable.",
+            "targetDetail": "the deposit",
+            "options": [
+                "the tax",
+                "the deposit",
+                "the delivery fee",
+                "the final payment"
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "detailSpotlight",
+            "emoji": "💵",
+            "detailCategory": "Condition"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L100_Q3",
             "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "Notice the specific item being used, fixed, or mentioned.",
-            "explanation": "Menu is correct — a list of food and drinks available at a restaurant. The sentence tells us he should check the menu before the guests arrive tonight.",
-            "textToSpeak": "He should check the menu before the guests arrive tonight.",
-            "targetDetail": "menu",
+            "instruction": "Tap where today's meeting is.",
+            "hint": "Yesterday and today have different rooms. Listen for the length of the number.",
+            "explanation": "Room 14 is correct. Fourteen has an ending sound, and the reason is the bigger screen.",
+            "textToSpeak": "Yesterday we met in Room four, but today the meeting's in Room fourteen because we need the bigger screen.",
+            "targetDetail": "Room 14",
             "options": [
-                "costume",
-                "thermometer",
-                "backpack",
-                "menu"
+                "Room 41",
+                "Room 4",
+                "Room 40",
+                "Room 14"
             ],
             "correctAnswerIndex": 3,
             "subtype": "detailSpotlight",
-            "emoji": "📋",
-            "detailCategory": "Key Information"
+            "emoji": "🖥️",
+            "detailCategory": "Location"
         }
     ]
 }

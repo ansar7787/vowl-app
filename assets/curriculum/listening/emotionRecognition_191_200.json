@@ -6,37 +6,301 @@
         {
             "id": "LIS_EMOTIONRECOGNITION_L191_Q1",
             "interactionType": "choice",
-            "instruction": "How are they feeling? Lock in the right emotion.",
-            "hint": "Rehearsing a single word many times before a reunion, and still doubting your own delivery, points to unease about what's ahead.",
-            "explanation": "Rehearsing one significant word many times, and still doubting yourself, is a specific and grounded apprehension.",
-            "textToSpeak": "She's flying in to meet the baby for the first time since we stopped speaking. I've rehearsed how I'll introduce her as 'Grandma' about a hundred times, and it still catches in my throat every time.",
+            "instruction": "Listen to the whole message. What is the speaker really feeling?",
+            "hint": "Is the 'thank you' sincere? Look at what comes after it.",
+            "explanation": "The thanks is a cold, formal setup. The mention of a formal complaint shows the speaker is seriously upset and holding it under control. The speaker is angry.",
+            "textToSpeak": "Thank you for the update. I notice this is the first time in a month that anyone's told me anything before it happened. So I'd like to record my appreciation, and I'd like to ask why it took a formal complaint.",
             "options": [
-                "anxious",
-                "nervous",
-                "apprehensive",
-                "conflicted"
+                "annoyed",
+                "disappointed",
+                "grateful",
+                "angry"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "subtype": "emotionRecognition",
-            "emoji": "😧",
+            "emoji": "😠",
             "emotionScale": 3,
             "optionEmojis": [
-                "😰",
-                "😬",
-                "😧",
-                "😖"
+                "🙄",
+                "😞",
+                "🙏",
+                "😠"
             ]
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L191_Q2",
             "interactionType": "choice",
-            "instruction": "How are they feeling? Lock in the right emotion.",
-            "hint": "Someone very new handling an emotionally difficult moment better than someone with decades of experience points to admiration.",
-            "explanation": "Someone very new handling a hard moment better than an experienced colleague is a genuine cause of being impressed.",
-            "textToSpeak": "The trainee, six weeks into the job, talked a patient's terrified family through a decision so clearly and so gently that the attending physician asked her afterward where she'd trained for that.",
+            "instruction": "Listen to the whole message. What is the speaker really feeling?",
+            "hint": "Catch what the speaker keeps checking, and why.",
+            "explanation": "The reassurance is undermined by the repeated, needless checking. So nervous is the best fit.",
+            "textToSpeak": "No, don't worry about me. I've done this a hundred times. I'll just check the microphone once more. And the water. And where the exits are, which I know. I do know that.",
             "options": [
+                "tired",
+                "bored",
+                "nervous",
+                "confident"
+            ],
+            "correctAnswerIndex": 2,
+            "subtype": "emotionRecognition",
+            "emoji": "😬",
+            "emotionScale": 3,
+            "optionEmojis": [
+                "😴",
+                "🥱",
+                "😬",
+                "😎"
+            ]
+        },
+        {
+            "id": "LIS_EMOTIONRECOGNITION_L191_Q3",
+            "interactionType": "choice",
+            "instruction": "Listen to the whole message. What is the speaker really feeling?",
+            "hint": "What does the speaker read as a message, and why?",
+            "explanation": "The coat and the tea say what she wouldn't say aloud, and the speaker is moved by that. The speaker is touched.",
+            "textToSpeak": "My grandmother didn't say she was proud. She never does. But when I turned around at the ceremony, she was in the aisle seat, wearing the coat she keeps for weddings and funerals, and she'd brought a flask of tea for the walk home. That's how I knew.",
+            "options": [
+                "proud",
                 "grateful",
-                "surprised",
+                "touched",
+                "embarrassed"
+            ],
+            "correctAnswerIndex": 2,
+            "subtype": "emotionRecognition",
+            "emoji": "🥹",
+            "emotionScale": 3,
+            "optionEmojis": [
+                "🙌",
+                "🙏",
+                "🥹",
+                "😳"
+            ]
+        },
+        {
+            "id": "LIS_EMOTIONRECOGNITION_L192_Q1",
+            "interactionType": "choice",
+            "instruction": "Listen to the whole message. What is the speaker really feeling?",
+            "hint": "What do the phrases 'never mind' and 'nice weekend at home' do for the speaker?",
+            "explanation": "The speaker is generous in words but is quietly adjusting to a plan that has fallen through. That's what the clues add up to: disappointment.",
+            "textToSpeak": "I said I was fine with the change of plan, and I meant it. I'm glad they found something that suits everyone. It's just that I'd already told my parents to book a hotel, and that will take some explaining. Never mind. It'll be a nice weekend at home.",
+            "options": [
+                "disappointed",
+                "angry",
+                "embarrassed",
+                "relieved"
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "emotionRecognition",
+            "emoji": "😞",
+            "emotionScale": 3,
+            "optionEmojis": [
+                "😞",
+                "😠",
+                "😳",
+                "😌"
+            ]
+        },
+        {
+            "id": "LIS_EMOTIONRECOGNITION_L192_Q2",
+            "interactionType": "choice",
+            "instruction": "Listen to the whole message. What is the speaker really feeling?",
+            "hint": "Why doesn't the speaker want to tell the doctor yet?",
+            "explanation": "The speaker sees a good sign but is careful not to trust it too soon. Everything points to hope.",
+            "textToSpeak": "I can't tell if it's getting better or if I'm just used to it. But this morning I walked to the corner and back without stopping, and the man at the shop said I looked well. I'm not telling the doctor yet. I want to see if it's still true tomorrow.",
+            "options": [
+                "hopeful",
+                "relieved",
+                "worried",
+                "proud"
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "emotionRecognition",
+            "emoji": "🤞",
+            "emotionScale": 3,
+            "optionEmojis": [
+                "🤞",
+                "😌",
+                "😟",
+                "🙌"
+            ]
+        },
+        {
+            "id": "LIS_EMOTIONRECOGNITION_L192_Q3",
+            "interactionType": "choice",
+            "instruction": "Listen to the whole message. What is the speaker really feeling?",
+            "hint": "What is the speaker not saying?",
+            "explanation": "The speaker hides their true feelings behind a laugh and grows uneasy in a situation with real risk. That's fear.",
+            "textToSpeak": "The path was fine when we started. Then the light went, the phone lost signal, and I realized I hadn't seen a marker for a long time. My friend made a joke. I laughed, and I checked my watch, and I didn't say what I was thinking.",
+            "options": [
+                "tired",
+                "annoyed",
+                "nervous",
+                "scared"
+            ],
+            "correctAnswerIndex": 3,
+            "subtype": "emotionRecognition",
+            "emoji": "😨",
+            "emotionScale": 3,
+            "optionEmojis": [
+                "😴",
+                "🙄",
+                "😬",
+                "😨"
+            ]
+        },
+        {
+            "id": "LIS_EMOTIONRECOGNITION_L193_Q1",
+            "interactionType": "choice",
+            "instruction": "Listen to the whole message. What is the speaker really feeling?",
+            "hint": "Consider what the speaker says about the day's quiet ending.",
+            "explanation": "There's no excitement or celebration, just a settled sense that things are as they should be. Everything points to contentment.",
+            "textToSpeak": "The market shuts at two. By half past one we've sold everything except one loaf. Mari always keeps that one for the old man who comes late. We wrap it, and we sit on the crates, and nobody says anything. Some days are just right.",
+            "options": [
+                "tired",
+                "proud",
+                "content",
+                "happy"
+            ],
+            "correctAnswerIndex": 2,
+            "subtype": "emotionRecognition",
+            "emoji": "🙂",
+            "emotionScale": 3,
+            "optionEmojis": [
+                "😴",
+                "🙌",
+                "🙂",
+                "😊"
+            ]
+        },
+        {
+            "id": "LIS_EMOTIONRECOGNITION_L193_Q2",
+            "interactionType": "choice",
+            "instruction": "Listen to the whole message. What is the speaker really feeling?",
+            "hint": "What does the porch light stand for?",
+            "explanation": "The speaker won't say they believe it but their action leaves the door open. That's cautious hope.",
+            "textToSpeak": "He's promised before, and it hasn't lasted. This time he's gone to the meetings and given me the key without being asked. I'm not going to say I believe it. I'm going to say I'll keep the porch light on.",
+            "options": [
+                "worried",
+                "skeptical",
+                "relieved",
+                "hopeful"
+            ],
+            "correctAnswerIndex": 3,
+            "subtype": "emotionRecognition",
+            "emoji": "🤞",
+            "emotionScale": 3,
+            "optionEmojis": [
+                "😟",
+                "🤨",
+                "😌",
+                "🤞"
+            ]
+        },
+        {
+            "id": "LIS_EMOTIONRECOGNITION_L193_Q3",
+            "interactionType": "choice",
+            "instruction": "Listen to the whole message. What is the speaker really feeling?",
+            "hint": "Notice what the speaker does for a desk that nobody is using.",
+            "explanation": "Tending the plant and greeting it are small acts that keep a lost colleague present. The feeling underneath is sadness.",
+            "textToSpeak": "His desk is still exactly as he left it, the chipped mug, the pen on the notepad. It's been two months. I water his plant, and I've noticed I say good morning to it.",
+            "options": [
+                "guilty",
+                "sad",
+                "tired",
+                "annoyed"
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "emotionRecognition",
+            "emoji": "😢",
+            "emotionScale": 3,
+            "optionEmojis": [
+                "😔",
+                "😢",
+                "😴",
+                "🙄"
+            ]
+        },
+        {
+            "id": "LIS_EMOTIONRECOGNITION_L194_Q1",
+            "interactionType": "choice",
+            "instruction": "Listen to the whole message. What is the speaker really feeling?",
+            "hint": "How do the first and last sentences fit together?",
+            "explanation": "The gracious words are undercut by the last sentence, and the speaker is mildly irritated at the timing. Everything points to annoyance.",
+            "textToSpeak": "That's very generous of you to offer to help. I'll bear it in mind. I only wish it had come before I finished the whole thing on my own last night at two.",
+            "options": [
+                "annoyed",
+                "disappointed",
+                "angry",
+                "grateful"
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "emotionRecognition",
+            "emoji": "🙄",
+            "emotionScale": 3,
+            "optionEmojis": [
+                "🙄",
+                "😞",
+                "😠",
+                "🙏"
+            ]
+        },
+        {
+            "id": "LIS_EMOTIONRECOGNITION_L194_Q2",
+            "interactionType": "choice",
+            "instruction": "Listen to the whole message. What is the speaker really feeling?",
+            "hint": "What change from the usual pattern does the speaker point out?",
+            "explanation": "The unusual silence, close to a deadline, makes the speaker fear something has gone wrong. That's what the clues add up to: worry.",
+            "textToSpeak": "The class group chat has been silent since Tuesday, and it never stops. Nobody's answered my messages, and the shared document hasn't been opened since. The presentation is on Monday, and I don't know whether to panic or wait.",
+            "options": [
+                "annoyed",
+                "embarrassed",
+                "worried",
+                "bored"
+            ],
+            "correctAnswerIndex": 2,
+            "subtype": "emotionRecognition",
+            "emoji": "😟",
+            "emotionScale": 3,
+            "optionEmojis": [
+                "🙄",
+                "😳",
+                "😟",
+                "🥱"
+            ]
+        },
+        {
+            "id": "LIS_EMOTIONRECOGNITION_L194_Q3",
+            "interactionType": "choice",
+            "instruction": "Listen to the whole message. What is the speaker really feeling?",
+            "hint": "What does the speaker do after listing the problems?",
+            "explanation": "The speaker doesn't complain or hope for change. They just accept the situation and get on with it. That's resignation.",
+            "textToSpeak": "The elevator's out. The trains are off. The taxi line goes around the corner. Right, then. I'll walk. It's only eleven miles, and I've got a good coat.",
+            "options": [
+                "angry",
+                "resigned",
+                "hopeful",
+                "annoyed"
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "emotionRecognition",
+            "emoji": "😑",
+            "emotionScale": 3,
+            "optionEmojis": [
+                "😠",
+                "😑",
+                "🤞",
+                "🙄"
+            ]
+        },
+        {
+            "id": "LIS_EMOTIONRECOGNITION_L195_Q1",
+            "interactionType": "choice",
+            "instruction": "Listen to the whole message. What is the speaker really feeling?",
+            "hint": "What does the speaker decide to do after watching him?",
+            "explanation": "Noting the technique down shows that the speaker is admiring skill they'd like to learn. That's being impressed.",
+            "textToSpeak": "I've seen people in his position deal with hostile questions before. They usually get defensive. He thanked the man, agreed with the part that was fair, and explained the rest in two sentences. The room actually relaxed. I made a note of that.",
+            "options": [
+                "relieved",
+                "curious",
                 "proud",
                 "impressed"
             ],
@@ -45,143 +309,239 @@
             "emoji": "😮",
             "emotionScale": 3,
             "optionEmojis": [
-                "🙏",
-                "😲",
+                "😌",
+                "🤔",
                 "🙌",
                 "😮"
             ]
         },
         {
-            "id": "LIS_EMOTIONRECOGNITION_L191_Q3",
+            "id": "LIS_EMOTIONRECOGNITION_L195_Q2",
             "interactionType": "choice",
-            "instruction": "How are they feeling? Lock in the right emotion.",
-            "hint": "People who barely knew you sustaining real, practical care for weeks, without making it uncomfortable, points to a warm feeling.",
-            "explanation": "Near-strangers sustaining real care for weeks, without ever making it feel like charity, is a deep cause of gratitude.",
-            "textToSpeak": "My neighbors, who I'd exchanged maybe ten words with in three years, organized meals for our family every single night for a month without ever once making it feel like charity.",
+            "instruction": "Listen to the whole message. What is the speaker really feeling?",
+            "hint": "Is there a specific problem, and what is the speaker doing about it?",
+            "explanation": "Everything is going well, yet the speaker can't settle and checks obsessively. That's anxiety.",
+            "textToSpeak": "Nothing's wrong. That's what's strange. The results are good, the team's happy, the client's happy. I've slept badly for a week, and every morning I check the numbers again, as if they might have changed overnight.",
             "options": [
-                "grateful",
-                "touched",
-                "happy",
-                "relieved ‍"
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "emotionRecognition",
-            "emoji": "🙏",
-            "emotionScale": 3,
-            "optionEmojis": [
-                "🙏",
-                "🥹",
-                "😊",
-                "😮"
-            ]
-        },
-        {
-            "id": "LIS_EMOTIONRECOGNITION_L192_Q1",
-            "interactionType": "choice",
-            "instruction": "How are they feeling? Lock in the right emotion.",
-            "hint": "A decision that clearly protects someone while breaking a long-held, once-easy promise to them points to a torn feeling.",
-            "explanation": "A decision that protects someone while breaking a long-held promise to them is a genuine, painful conflict.",
-            "textToSpeak": "Moving Dad into care means he's finally safe from the falls. It also means breaking the one promise I made him twenty years ago, back when neither of us thought I'd ever actually have to keep it.",
-            "options": [
-                "guilty",
-                "conflicted",
-                "sad",
-                "apprehensive"
+                "relieved",
+                "anxious",
+                "tired",
+                "worried"
             ],
             "correctAnswerIndex": 1,
             "subtype": "emotionRecognition",
-            "emoji": "😖",
+            "emoji": "😰",
             "emotionScale": 3,
             "optionEmojis": [
-                "😔",
-                "😖",
-                "😢",
-                "😧"
+                "😌",
+                "😰",
+                "😴",
+                "😟"
             ]
         },
         {
-            "id": "LIS_EMOTIONRECOGNITION_L192_Q2",
+            "id": "LIS_EMOTIONRECOGNITION_L195_Q3",
             "interactionType": "choice",
-            "instruction": "How are they feeling? Lock in the right emotion.",
-            "hint": "Watching someone use a trait once treated as a flaw to unite a divided room brings a specific, deep feeling.",
-            "explanation": "Watching someone turn a once-criticized trait into something that unites a divided room is a profound, specific pride.",
-            "textToSpeak": "My daughter, who spent her school years being told to be quieter, stood up at the town hall and asked the question that got the whole room applauding, including two people who'd been arguing with each other minutes before.",
+            "instruction": "Listen to the whole message. What is the speaker really feeling?",
+            "hint": "What causes the speaker to forget their speech?",
+            "explanation": "A former teacher's enthusiastic reaction breaks the speaker's composure with emotion. Being touched is the feeling here.",
+            "textToSpeak": "They read out my name for the award, and I walked up trying to look like I did this every week. Then I saw my old teacher at the back, clapping with both hands above her head, and I forgot the speech I'd rehearsed.",
             "options": [
-                "happy",
-                "relieved ‍",
-                "proud",
-                "touched"
-            ],
-            "correctAnswerIndex": 2,
-            "subtype": "emotionRecognition",
-            "emoji": "🙌",
-            "emotionScale": 3,
-            "optionEmojis": [
-                "😊",
-                "😮",
-                "🙌",
-                "🥹"
-            ]
-        },
-        {
-            "id": "LIS_EMOTIONRECOGNITION_L192_Q3",
-            "interactionType": "choice",
-            "instruction": "How are they feeling? Lock in the right emotion.",
-            "hint": "A private ritual reserved for one person quietly folding into an ordinary, general habit points to a settled feeling.",
-            "explanation": "A once-private ritual quietly folding into an ordinary, shared habit is a gentle, honest resignation.",
-            "textToSpeak": "I used to save the good news for him specifically, imagining his exact reaction before I even told anyone else. These days the good news just goes straight into the family group chat with everyone else's.",
-            "options": [
-                "sad",
-                "disappointed",
-                "content",
-                "resigned"
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "emotionRecognition",
-            "emoji": "😑",
-            "emotionScale": 3,
-            "optionEmojis": [
-                "😢",
-                "😞",
-                "🙂",
-                "😑"
-            ]
-        },
-        {
-            "id": "LIS_EMOTIONRECOGNITION_L193_Q1",
-            "interactionType": "choice",
-            "instruction": "How are they feeling? Lock in the right emotion.",
-            "hint": "A room full of separate people independently remembering the same small trait points to a deep, collective feeling.",
-            "explanation": "A room of people independently remembering the very same small trait, without coordinating, is a powerful feeling of being touched.",
-            "textToSpeak": "Every single person at the memorial, one after another, without being asked, brought up the exact same small habit of his, the way he always let the next person go first at the counter. Nobody had planned that. It just kept happening.",
-            "options": [
+                "embarrassed",
                 "touched",
-                "grateful",
-                "sad",
-                "happy"
+                "relieved",
+                "proud"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "emotionRecognition",
             "emoji": "🥹",
             "emotionScale": 3,
             "optionEmojis": [
+                "😳",
                 "🥹",
-                "🙏",
-                "😢",
-                "😊"
+                "😌",
+                "🙌"
             ]
         },
         {
-            "id": "LIS_EMOTIONRECOGNITION_L193_Q2",
+            "id": "LIS_EMOTIONRECOGNITION_L196_Q1",
             "interactionType": "choice",
-            "instruction": "How are they feeling? Lock in the right emotion.",
-            "hint": "A description that doesn't match the basic, checkable facts about a place tends to raise real doubt.",
-            "explanation": "A glowing description contradicted by basic, checkable facts is a reasonable and well-founded skepticism.",
-            "textToSpeak": "The developer's brochure calls the new building 'a vibrant, walkable community,' on a plot with no grocery store, no bus route, and a forty-minute drive to the nearest school.",
+            "instruction": "Listen to the whole message. What is the speaker really feeling?",
+            "hint": "Compare how small the event is with how the speaker walks away.",
+            "explanation": "Being recognized after months of feeling unknown gives the speaker a glow far bigger than the event. That's happiness.",
+            "textToSpeak": "It's a small thing, but the woman at the counter said, 'You again! The usual?' She remembered my order after one visit. I've lived in this city three months. I walked to the bus stop as if I'd been given a medal.",
+            "options": [
+                "excited",
+                "proud",
+                "happy",
+                "relieved"
+            ],
+            "correctAnswerIndex": 2,
+            "subtype": "emotionRecognition",
+            "emoji": "😊",
+            "emotionScale": 3,
+            "optionEmojis": [
+                "🤩",
+                "🙌",
+                "😊",
+                "😌"
+            ]
+        },
+        {
+            "id": "LIS_EMOTIONRECOGNITION_L196_Q2",
+            "interactionType": "choice",
+            "instruction": "Listen to the whole message. What is the speaker really feeling?",
+            "hint": "What is the speaker actually objecting to?",
+            "explanation": "The dry humor about the swan shows a mild, recurring irritation rather than rage. This is annoyance.",
+            "textToSpeak": "I don't mind that he's late. I mind that he arrives every time with an explanation so elaborate I can't tell whether it's true, and then acts as though the meeting has only just begun. Today it was a swan. On the highway. I'd like to see the swan.",
+            "options": [
+                "disappointed",
+                "annoyed",
+                "tired",
+                "angry"
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "emotionRecognition",
+            "emoji": "🙄",
+            "emotionScale": 3,
+            "optionEmojis": [
+                "😞",
+                "🙄",
+                "😴",
+                "😠"
+            ]
+        },
+        {
+            "id": "LIS_EMOTIONRECOGNITION_L196_Q3",
+            "interactionType": "choice",
+            "instruction": "Listen to the whole message. What is the speaker really feeling?",
+            "hint": "What sentence tells you the speaker noticed something wrong?",
+            "explanation": "Elena's polite but unusual behavior worries the speaker about what was said in the office. Everything points to worry.",
+            "textToSpeak": "The audit's done and the report's filed. It was fine. But when Elena came out of the director's office, she smiled at everyone, thanked reception, took her coat, and left an hour early. She never leaves early.",
+            "options": [
+                "worried",
+                "annoyed",
+                "curious",
+                "relieved"
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "emotionRecognition",
+            "emoji": "😟",
+            "emotionScale": 3,
+            "optionEmojis": [
+                "😟",
+                "🙄",
+                "🤔",
+                "😌"
+            ]
+        },
+        {
+            "id": "LIS_EMOTIONRECOGNITION_L197_Q1",
+            "interactionType": "choice",
+            "instruction": "Listen to the whole message. What is the speaker really feeling?",
+            "hint": "What has the speaker been doing that contradicts 'I'm not making plans'?",
+            "explanation": "The speaker denies planning but keeps picturing the future. That's cautious hope.",
+            "textToSpeak": "I'm not making plans. I'm just saying that if the visa comes through, there's an apartment I've looked at, and it has a window that faces the river. I've looked at that window more often than I'd like to admit.",
+            "options": [
+                "excited",
+                "anxious",
+                "nervous",
+                "hopeful"
+            ],
+            "correctAnswerIndex": 3,
+            "subtype": "emotionRecognition",
+            "emoji": "🤞",
+            "emotionScale": 3,
+            "optionEmojis": [
+                "🤩",
+                "😰",
+                "😬",
+                "🤞"
+            ]
+        },
+        {
+            "id": "LIS_EMOTIONRECOGNITION_L197_Q2",
+            "interactionType": "choice",
+            "instruction": "Listen to the whole message. What is the speaker really feeling?",
+            "hint": "Pay attention to what the speaker wants the 'record to show'.",
+            "explanation": "The speaker admits they needed help and thanks the person for it. That's why grateful fits best.",
+            "textToSpeak": "You're right, I could have done it alone. I'd have done it worse, missed the deadline, and never known there was a better way. I'd like the record to show that I'm glad you didn't let me.",
+            "options": [
+                "relieved",
+                "grateful",
+                "impressed",
+                "embarrassed"
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "emotionRecognition",
+            "emoji": "🙏",
+            "emotionScale": 3,
+            "optionEmojis": [
+                "😌",
+                "🙏",
+                "😮",
+                "😳"
+            ]
+        },
+        {
+            "id": "LIS_EMOTIONRECOGNITION_L197_Q3",
+            "interactionType": "choice",
+            "instruction": "Listen to the whole message. What is the speaker really feeling?",
+            "hint": "What does the speaker do after finding the pencil marks?",
+            "explanation": "The good news is factual, but the photo and the time on the floor show the loss the speaker is feeling. Sadness is the feeling here.",
+            "textToSpeak": "The house sold for a good price. Everyone says it was the right decision. On the last day I walked through the empty rooms and found the pencil marks on the kitchen doorframe. I took a picture of them, and then I sat on the floor for a while.",
+            "options": [
+                "disappointed",
+                "relieved",
+                "sad",
+                "tired"
+            ],
+            "correctAnswerIndex": 2,
+            "subtype": "emotionRecognition",
+            "emoji": "😢",
+            "emotionScale": 3,
+            "optionEmojis": [
+                "😞",
+                "😌",
+                "😢",
+                "😴"
+            ]
+        },
+        {
+            "id": "LIS_EMOTIONRECOGNITION_L198_Q1",
+            "interactionType": "choice",
+            "instruction": "Listen to the whole message. What is the speaker really feeling?",
+            "hint": "What does the speaker say they will now do, and why?",
+            "explanation": "Wanting to look at the carpet after a public mistake is a classic embarrassed reaction.",
+            "textToSpeak": "I'd been introduced as 'the expert,' so when the first question came, I answered it with great confidence and at some length. It turned out the question had been for the person next to me. She was very kind about it. I've decided to become interested in the carpet.",
+            "options": [
+                "nervous",
+                "annoyed",
+                "guilty",
+                "embarrassed"
+            ],
+            "correctAnswerIndex": 3,
+            "subtype": "emotionRecognition",
+            "emoji": "😳",
+            "emotionScale": 3,
+            "optionEmojis": [
+                "😬",
+                "🙄",
+                "😔",
+                "😳"
+            ]
+        },
+        {
+            "id": "LIS_EMOTIONRECOGNITION_L198_Q2",
+            "interactionType": "choice",
+            "instruction": "Listen to the whole message. What is the speaker really feeling?",
+            "hint": "What condition does the speaker set before they'll believe it?",
+            "explanation": "The speaker uses past experience to doubt the claim and asks for evidence. Skepticism is the feeling here.",
+            "textToSpeak": "I've been told the new process is 'seamless.' I've also been told that about the last two. So I'll believe it when I've seen a full week of payroll go out without someone staying until midnight to fix it.",
             "options": [
                 "curious",
                 "skeptical",
-                "worried",
+                "hopeful",
                 "annoyed"
             ],
             "correctAnswerIndex": 1,
@@ -191,536 +551,176 @@
             "optionEmojis": [
                 "🤔",
                 "🤨",
-                "😟",
-                "🙄"
-            ]
-        },
-        {
-            "id": "LIS_EMOTIONRECOGNITION_L193_Q3",
-            "interactionType": "choice",
-            "instruction": "How are they feeling? Lock in the right emotion.",
-            "hint": "Someone breaking an unspoken family pattern that's held for four decades points to a forward-looking feeling.",
-            "explanation": "Someone breaking a four-decade family pattern, on their own initiative, is a grounded and moving hope.",
-            "textToSpeak": "Nobody in this family has ever gone back to finish a degree once they'd left it. My mother enrolled again last week, forty years later, in the same course she dropped out of at nineteen.",
-            "options": [
-                "anxious",
-                "relieved ‍",
-                "hopeful",
-                "excited"
-            ],
-            "correctAnswerIndex": 2,
-            "subtype": "emotionRecognition",
-            "emoji": "🤞",
-            "emotionScale": 3,
-            "optionEmojis": [
-                "😰",
-                "😮",
                 "🤞",
-                "🤩"
-            ]
-        },
-        {
-            "id": "LIS_EMOTIONRECOGNITION_L194_Q1",
-            "interactionType": "choice",
-            "instruction": "How are they feeling? Lock in the right emotion.",
-            "hint": "Facing several major, unrelated life demands at the exact same time, to the point of being unable to move, points to a flooded state.",
-            "explanation": "Facing several major, unrelated life demands at once, to the point of being unable to act, is a vivid picture of being overwhelmed.",
-            "textToSpeak": "Between closing down my father's business, my own diagnosis appointment next week, and a daughter who needs a decision about school by Friday, I sat in the car in a parking lot for twenty minutes this morning without turning the key.",
-            "options": [
-                "tired",
-                "anxious",
-                "sad",
-                "overwhelmed ‍"
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "emotionRecognition",
-            "emoji": "😵‍💫",
-            "emotionScale": 3,
-            "optionEmojis": [
-                "😴",
-                "😰",
-                "😢",
-                "😵"
-            ]
-        },
-        {
-            "id": "LIS_EMOTIONRECOGNITION_L194_Q2",
-            "interactionType": "choice",
-            "instruction": "How are they feeling? Lock in the right emotion.",
-            "hint": "Losing track of an old way of measuring success, entirely on its own, in a genuinely good moment, points to a calm feeling.",
-            "explanation": "An old way of measuring success simply falling away, unforced, in a good moment, reflects real contentment.",
-            "textToSpeak": "We are exactly as far along as we are, which is not very far by most measures I used to care about, and watching him fall asleep on my shoulder on this train, I can't locate a single one of those measures in my head right now.",
-            "options": [
-                "content",
-                "happy",
-                "tired",
-                "resigned"
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "emotionRecognition",
-            "emoji": "🙂",
-            "emotionScale": 3,
-            "optionEmojis": [
-                "🙂",
-                "😊",
-                "😴",
-                "😑"
-            ]
-        },
-        {
-            "id": "LIS_EMOTIONRECOGNITION_L194_Q3",
-            "interactionType": "choice",
-            "instruction": "How are they feeling? Lock in the right emotion.",
-            "hint": "Being fully prepared for your own part while remaining genuinely unsure of someone else's points to unease about what's coming.",
-            "explanation": "Being fully ready for your own part while genuinely unsure of someone else's is a specific, grounded apprehension.",
-            "textToSpeak": "The mediator says both parties will read a statement before any questions. I know exactly what's in mine. I have no idea what's in his, and that's the part I keep circling back to.",
-            "options": [
-                "anxious",
-                "apprehensive",
-                "nervous",
-                "worried"
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "emotionRecognition",
-            "emoji": "😧",
-            "emotionScale": 3,
-            "optionEmojis": [
-                "😰",
-                "😧",
-                "😬",
-                "😟"
-            ]
-        },
-        {
-            "id": "LIS_EMOTIONRECOGNITION_L195_Q1",
-            "interactionType": "choice",
-            "instruction": "How are they feeling? Lock in the right emotion.",
-            "hint": "Someone offering ongoing reassurance before you even know to ask for it points to a warm, specific feeling.",
-            "explanation": "Someone offering sustained reassurance before you even think to ask is a deep and direct cause of gratitude.",
-            "textToSpeak": "The surgeon who operated on my son, unprompted, called every single evening for the first week just to say things were still going as expected, before we'd even thought to ask.",
-            "options": [
-                "touched",
-                "happy",
-                "grateful",
-                "relieved ‍"
-            ],
-            "correctAnswerIndex": 2,
-            "subtype": "emotionRecognition",
-            "emoji": "🙏",
-            "emotionScale": 3,
-            "optionEmojis": [
-                "🥹",
-                "😊",
-                "🙏",
-                "😮"
-            ]
-        },
-        {
-            "id": "LIS_EMOTIONRECOGNITION_L195_Q2",
-            "interactionType": "choice",
-            "instruction": "How are they feeling? Lock in the right emotion.",
-            "hint": "A long-standing understanding, never doubted, contradicted by an official document points to a deflated feeling.",
-            "explanation": "A long-standing understanding contradicted by an official document is a real, significant disappointment.",
-            "textToSpeak": "The whole partnership was built on the understanding that both names would be on the practice. The paperwork that arrived this morning only has one.",
-            "options": [
-                "sad",
-                "angry",
-                "conflicted",
-                "disappointed"
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "emotionRecognition",
-            "emoji": "😞",
-            "emotionScale": 3,
-            "optionEmojis": [
-                "😢",
-                "😠",
-                "😖",
-                "😞"
-            ]
-        },
-        {
-            "id": "LIS_EMOTIONRECOGNITION_L195_Q3",
-            "interactionType": "choice",
-            "instruction": "How are they feeling? Lock in the right emotion.",
-            "hint": "Someone's lived memory proving more accurate than an official, printed record points to admiration.",
-            "explanation": "Someone's lived memory outperforming an official printed record is a genuine, moving cause of being impressed.",
-            "textToSpeak": "My grandmother, ninety-one, corrected the museum guide's date for the photograph on the wall. She was in it. She remembered the year better than the placard did.",
-            "options": [
-                "impressed",
-                "grateful",
-                "surprised",
-                "proud"
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "emotionRecognition",
-            "emoji": "😮",
-            "emotionScale": 3,
-            "optionEmojis": [
-                "😮",
-                "🙏",
-                "😲",
-                "🙌"
-            ]
-        },
-        {
-            "id": "LIS_EMOTIONRECOGNITION_L196_Q1",
-            "interactionType": "choice",
-            "instruction": "How are they feeling? Lock in the right emotion.",
-            "hint": "Doing the right thing for a stranger while ending a debt of trust to someone who once saved you points to a torn feeling.",
-            "explanation": "Doing right by a stranger while ending a debt of trust to someone who once helped you is a genuine, painful conflict.",
-            "textToSpeak": "Testifying to what I saw clears an innocent man. It also means the friend who asked me to stay quiet, the one who got me through the worst year of my life, never trusts me again.",
-            "options": [
-                "guilty",
-                "conflicted",
-                "sad",
-                "angry"
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "emotionRecognition",
-            "emoji": "😖",
-            "emotionScale": 3,
-            "optionEmojis": [
-                "😔",
-                "😖",
-                "😢",
-                "😠"
-            ]
-        },
-        {
-            "id": "LIS_EMOTIONRECOGNITION_L196_Q2",
-            "interactionType": "choice",
-            "instruction": "How are they feeling? Lock in the right emotion.",
-            "hint": "A group performing something deeply personal from memory, in an unlikely place, purely for one person, points to a deep feeling.",
-            "explanation": "A group performing something deeply personal, from memory, purely for one person, is a profound feeling of being touched.",
-            "textToSpeak": "The whole choir he used to direct, most of them well into their seventies now, showed up unannounced and sang, from memory, the one piece he always said was his favorite, right there in the hospital corridor.",
-            "options": [
-                "grateful",
-                "happy",
-                "touched",
-                "proud"
-            ],
-            "correctAnswerIndex": 2,
-            "subtype": "emotionRecognition",
-            "emoji": "🥹",
-            "emotionScale": 3,
-            "optionEmojis": [
-                "🙏",
-                "😊",
-                "🥹",
-                "🙌"
-            ]
-        },
-        {
-            "id": "LIS_EMOTIONRECOGNITION_L196_Q3",
-            "interactionType": "choice",
-            "instruction": "How are they feeling? Lock in the right emotion.",
-            "hint": "Repeatedly checking something that was never actually the obstacle points to a restless, ongoing feeling.",
-            "explanation": "Repeatedly checking something that was never the actual obstacle is a familiar, human form of anxiety.",
-            "textToSpeak": "Nothing about the transplant list has changed since last week's call. I've still checked my phone's signal bars more times today than I could count, as if that's ever been the problem.",
-            "options": [
-                "nervous",
-                "worried",
-                "apprehensive",
-                "anxious"
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "emotionRecognition",
-            "emoji": "😰",
-            "emotionScale": 3,
-            "optionEmojis": [
-                "😬",
-                "😟",
-                "😧",
-                "😰"
-            ]
-        },
-        {
-            "id": "LIS_EMOTIONRECOGNITION_L197_Q1",
-            "interactionType": "choice",
-            "instruction": "How are they feeling? Lock in the right emotion.",
-            "hint": "Completing, for someone, the very thing they spent a lifetime doing for everyone except themselves brings a deep, specific feeling.",
-            "explanation": "Completing for someone the thing they spent a lifetime doing for everyone but themselves is a profound, specific pride.",
-            "textToSpeak": "My father spent thirty years being the man who fixed other people's roofs and never once finished his own. My brother and I put the last tiles up ourselves this weekend, using what he taught us, while he stood below just watching and not saying much of anything.",
-            "options": [
-                "proud",
-                "happy",
-                "relieved ‍",
-                "touched"
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "emotionRecognition",
-            "emoji": "🙌",
-            "emotionScale": 3,
-            "optionEmojis": [
-                "🙌",
-                "😊",
-                "😮",
-                "🥹"
-            ]
-        },
-        {
-            "id": "LIS_EMOTIONRECOGNITION_L197_Q2",
-            "interactionType": "choice",
-            "instruction": "How are they feeling? Lock in the right emotion.",
-            "hint": "A repeated question about someone long gone, asked as though newly, points to a specific unease about someone you love.",
-            "explanation": "A loved one repeatedly asking about someone long gone, each time as though for the first time, is a deep and reasonable worry.",
-            "textToSpeak": "My mother's asked me the same question about her own mother, who's been gone eleven years now, three times this visit, each time as if for the first time.",
-            "options": [
-                "anxious",
-                "worried",
-                "sad",
-                "apprehensive"
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "emotionRecognition",
-            "emoji": "😟",
-            "emotionScale": 3,
-            "optionEmojis": [
-                "😰",
-                "😟",
-                "😢",
-                "😧"
-            ]
-        },
-        {
-            "id": "LIS_EMOTIONRECOGNITION_L197_Q3",
-            "interactionType": "choice",
-            "instruction": "How are they feeling? Lock in the right emotion.",
-            "hint": "An old, once-assumed life plan fading without protest, no longer spoken of, points to a settled, specific feeling.",
-            "explanation": "An old, once-assumed plan fading without ongoing protest, and no longer needing to be mourned aloud, is a quiet resignation.",
-            "textToSpeak": "There was a version of this where we grew old on the same street our whole lives, the way our parents did. That version quietly stopped being the plan a long time ago, and neither of us mourns it out loud anymore.",
-            "options": [
-                "sad",
-                "disappointed",
-                "resigned",
-                "content"
-            ],
-            "correctAnswerIndex": 2,
-            "subtype": "emotionRecognition",
-            "emoji": "😑",
-            "emotionScale": 3,
-            "optionEmojis": [
-                "😢",
-                "😞",
-                "😑",
-                "🙂"
-            ]
-        },
-        {
-            "id": "LIS_EMOTIONRECOGNITION_L198_Q1",
-            "interactionType": "choice",
-            "instruction": "How are they feeling? Lock in the right emotion.",
-            "hint": "Avoiding practicing something difficult until the very last possible moment points to unease about the moment ahead.",
-            "explanation": "Putting off practicing something emotionally difficult until the last possible moment is a grounded apprehension.",
-            "textToSpeak": "The department has asked me to read the names of everyone we lost this year at the memorial. I've had the list for a month. I only let myself practice reading it out loud for the first time last night.",
-            "options": [
-                "anxious",
-                "nervous",
-                "conflicted",
-                "apprehensive"
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "emotionRecognition",
-            "emoji": "😧",
-            "emotionScale": 3,
-            "optionEmojis": [
-                "😰",
-                "😬",
-                "😖",
-                "😧"
-            ]
-        },
-        {
-            "id": "LIS_EMOTIONRECOGNITION_L198_Q2",
-            "interactionType": "choice",
-            "instruction": "How are they feeling? Lock in the right emotion.",
-            "hint": "A stranger going to real, unnecessary lengths to return something irreplaceable, years later, points to a warm feeling.",
-            "explanation": "A stranger going to real lengths to return something irreplaceable, years after it was lost, is a deep cause of gratitude.",
-            "textToSpeak": "The stranger who found my late husband's wallet, lost for two years somewhere in this city, tracked down our new address through an old business card inside it and mailed it back with everything, including the photo, still in place.",
-            "options": [
-                "grateful",
-                "touched",
-                "happy",
-                "relieved ‍"
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "emotionRecognition",
-            "emoji": "🙏",
-            "emotionScale": 3,
-            "optionEmojis": [
-                "🙏",
-                "🥹",
-                "😊",
-                "😮"
+                "🙄"
             ]
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L198_Q3",
             "interactionType": "choice",
-            "instruction": "How are they feeling? Lock in the right emotion.",
-            "hint": "An old, specific expectation for your life simply losing its grip, unforced, in an ordinary happy moment, points to a calm feeling.",
-            "explanation": "An old expectation for your life losing its grip naturally, in an ordinary good moment, reflects genuine contentment.",
-            "textToSpeak": "We are not the family I pictured at twenty-five, and some nights, watching the four of us argue cheerfully over a board game neither of the kids will let anyone win, I can't remember why that picture ever mattered so much.",
+            "instruction": "Listen to the whole message. What is the speaker really feeling?",
+            "hint": "What is the speaker literally and figuratively holding?",
+            "explanation": "Task after task landing at once, with no clear priority, shows that the speaker is overwhelmed.",
+            "textToSpeak": "Three hours ago I was fine. Then the projector broke, then a client changed the brief, then my mother called about the boiler, and just now someone asked if I could 'quickly' cover a meeting. I'm standing in the corridor holding four things, and I can't remember which one I meant to put down first.",
             "options": [
-                "happy",
-                "content",
+                "overwhelmed",
                 "tired",
-                "resigned"
+                "frustrated",
+                "anxious"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "emotionRecognition",
-            "emoji": "🙂",
+            "emoji": "😵",
             "emotionScale": 3,
             "optionEmojis": [
-                "😊",
-                "🙂",
+                "😵",
                 "😴",
-                "😑"
+                "😤",
+                "😰"
             ]
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L199_Q1",
             "interactionType": "choice",
-            "instruction": "How are they feeling? Lock in the right emotion.",
-            "hint": "A small, deliberate shift in someone's careful choice of words points to a forward-looking feeling.",
-            "explanation": "A small, deliberate shift in someone's careful wording, likely meant to be noticed, is a grounded and earned hope.",
-            "textToSpeak": "The specialist still won't use the word we're all waiting for. But she used the phrase 'when this is behind you' for the first time today, instead of 'if.' I noticed. I think she meant for me to.",
+            "instruction": "Listen to the whole message. What is the speaker really feeling?",
+            "hint": "What is new about this reply, according to the speaker?",
+            "explanation": "The speaker weighs two readings and takes encouragement from something new. That's cautious hope.",
+            "textToSpeak": "It isn't a yes. It's a 'send us the full plan.' Which, in my experience, is what people say when they're interested and when they're not. But they've never asked for the full plan before. I'm going to work on it this weekend, and I'm going to try not to look at my phone.",
             "options": [
-                "anxious",
-                "relieved ‍",
+                "resigned",
                 "hopeful",
+                "nervous",
                 "excited"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "emotionRecognition",
             "emoji": "🤞",
             "emotionScale": 3,
             "optionEmojis": [
-                "😰",
-                "😮",
+                "😑",
                 "🤞",
+                "😬",
                 "🤩"
             ]
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L199_Q2",
             "interactionType": "choice",
-            "instruction": "How are they feeling? Lock in the right emotion.",
-            "hint": "Accepting an outcome that solves a real, urgent need while requiring you to affirm something you know is false points to a torn feeling.",
-            "explanation": "Solving a real, urgent need at the cost of affirming something you know isn't true is a genuine, difficult conflict.",
-            "textToSpeak": "Taking the settlement means my mother's care is finally paid for without worry. It also means signing something that says the hospital did nothing wrong, when both of us know exactly what happened that night.",
+            "instruction": "Listen to the whole message. What is the speaker really feeling?",
+            "hint": "What did the speaker fear until the nurse's words?",
+            "explanation": "After a race against time, the nurse's words end the fear of missing it. Not remembering the next minute shows the release of tension.",
+            "textToSpeak": "I said I'd be there for the birth. Then the flight was cancelled, and the next was delayed. I ran through the airport with my shoes in my hand. When I reached the ward, the nurse smiled and said, 'She's waiting for you.' I don't remember the next minute.",
             "options": [
-                "guilty",
-                "sad",
-                "resigned",
-                "conflicted"
+                "proud",
+                "happy",
+                "tired",
+                "relieved"
             ],
             "correctAnswerIndex": 3,
             "subtype": "emotionRecognition",
-            "emoji": "😖",
+            "emoji": "😌",
             "emotionScale": 3,
             "optionEmojis": [
-                "😔",
-                "😢",
-                "😑",
-                "😖"
+                "🙌",
+                "😊",
+                "😴",
+                "😌"
             ]
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L199_Q3",
             "interactionType": "choice",
-            "instruction": "How are they feeling? Lock in the right emotion.",
-            "hint": "A younger generation making real, coordinated effort to preserve something in a language not their own, purely to honor someone, points to a deep feeling.",
-            "explanation": "A younger generation making coordinated effort in an unfamiliar language, purely to honor someone, is a profound feeling of being touched.",
-            "textToSpeak": "Every single one of my father's grandchildren, from three different countries, learned the same four lines of the poem he used to recite, in a language none of them actually speak, just to say it together once, at the end.",
+            "instruction": "Listen to the whole message. What is the speaker really feeling?",
+            "hint": "How does the speaker describe their preparation and decision?",
+            "explanation": "Thorough preparation and a firm decision show settled confidence.",
+            "textToSpeak": "I've asked all the questions I can think of. I've read the contract, spoken to two former employees, and slept on it. If it goes wrong, I'll know I did my best. I'm going to say yes, and I'm going to enjoy it.",
             "options": [
-                "touched",
-                "grateful",
-                "happy",
-                "proud"
+                "confident",
+                "hopeful",
+                "nervous",
+                "relieved"
             ],
             "correctAnswerIndex": 0,
             "subtype": "emotionRecognition",
-            "emoji": "🥹",
+            "emoji": "😎",
             "emotionScale": 3,
             "optionEmojis": [
-                "🥹",
-                "🙏",
-                "😊",
-                "🙌"
+                "😎",
+                "🤞",
+                "😬",
+                "😌"
             ]
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L200_Q1",
             "interactionType": "choice",
-            "instruction": "How are they feeling? Lock in the right emotion.",
-            "hint": "Recognizing how far your own understanding has come, without needing anything pointed out anymore, brings a deep, personal feeling.",
-            "explanation": "Recognizing real, hard-won growth in your own understanding, needing nothing explained anymore, is a genuine and well-earned pride.",
-            "textToSpeak": "Two hundred levels ago, a sentence like this one would have needed every word spelled out. Reading it now, and simply knowing, quietly, without having to check, is its own kind of finish line.",
+            "instruction": "Listen to the whole message. What is the speaker really feeling?",
+            "hint": "Which word does the speaker add at the very end, and why might they need to?",
+            "explanation": "The speaker is generous and professional, but the extra 'Really' and the careful tone show they are losing someone they wanted to keep. The speaker is disappointed.",
+            "textToSpeak": "Of course, I completely understand. It's a big decision, and I'd never want you to feel rushed. I'll let the others know you're joining a different team, and I'll make sure they hear how much you contributed. Good luck with everything. Really.",
             "options": [
-                "happy",
-                "proud",
-                "relieved ‍",
-                "touched"
+                "disappointed",
+                "relieved",
+                "angry",
+                "embarrassed"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "emotionRecognition",
-            "emoji": "🙌",
+            "emoji": "😞",
             "emotionScale": 3,
             "optionEmojis": [
-                "😊",
-                "🙌",
-                "😮",
-                "🥹"
+                "😞",
+                "😌",
+                "😠",
+                "😳"
             ]
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L200_Q2",
             "interactionType": "choice",
-            "instruction": "How are they feeling? Lock in the right emotion.",
-            "hint": "Recognizing that consistent, quiet effort over a long stretch has led somewhere real points to a warm, reflective feeling.",
-            "explanation": "Recognizing that sustained, quiet effort over time has led somewhere real is a natural, well-earned gratitude.",
-            "textToSpeak": "Whatever got you all the way to this last level, the early mornings, the replays, the levels you almost gave up on, none of it went unnoticed. It added up to exactly this moment.",
+            "instruction": "Listen to the whole message. What is the speaker really feeling?",
+            "hint": "What is the speaker doing quietly that they've told others not to do?",
+            "explanation": "Advising patience while secretly planning ahead shows real hope, tempered by caution.",
+            "textToSpeak": "Nothing's certain until Friday. Still, the man from the council smiled at the map, and he asked where we'd put the benches, which he wouldn't do if he'd already decided. I've told the others to wait. But quietly, I've started a list of names for the garden.",
             "options": [
-                "touched",
-                "happy",
-                "grateful",
-                "relieved ‍"
+                "relieved",
+                "excited",
+                "hopeful",
+                "nervous"
             ],
             "correctAnswerIndex": 2,
             "subtype": "emotionRecognition",
-            "emoji": "🙏",
+            "emoji": "🤞",
             "emotionScale": 3,
             "optionEmojis": [
-                "🥹",
-                "😊",
-                "🙏",
-                "😮"
+                "😌",
+                "🤩",
+                "🤞",
+                "😬"
             ]
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L200_Q3",
             "interactionType": "choice",
-            "instruction": "How are they feeling? Lock in the right emotion.",
-            "hint": "A finish line that points forward, toward real conversations still to come, rather than backward, points to a forward-looking feeling.",
-            "explanation": "A finish line that points toward real conversations still ahead, rather than simply ending, is a grounded, genuine hope.",
-            "textToSpeak": "This is the last level, not the last thing you'll ever learn. Whatever conversation you have next, in English, in real life, is the one this was actually building toward all along.",
+            "instruction": "Listen to the whole message. What is the speaker really feeling?",
+            "hint": "What does 'so quiet' suggest about how the feeling arrived?",
+            "explanation": "There's no celebration. A long-standing weight has simply lifted, and what's left is calm. The speaker is relieved.",
+            "textToSpeak": "He's finally said sorry. It took six years and a very awkward wedding, but he said it, and he meant it. I told him it was fine. I think it might even be true. It's just that I didn't expect it to feel so quiet.",
             "options": [
-                "anxious",
-                "relieved ‍",
-                "excited",
-                "hopeful"
+                "relieved",
+                "guilty",
+                "sad",
+                "happy"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "emotionRecognition",
-            "emoji": "🤞",
+            "emoji": "😌",
             "emotionScale": 3,
             "optionEmojis": [
-                "😰",
-                "😮",
-                "🤩",
-                "🤞"
+                "😌",
+                "😔",
+                "😢",
+                "😊"
             ]
         }
     ]

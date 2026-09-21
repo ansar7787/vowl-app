@@ -5,632 +5,662 @@
     "quests": [
         {
             "id": "LIS_AMBIENTID_L171_Q1",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Based on these sounds, where are you?",
             "interactionType": "choice",
-            "hint": "Listen for a creaking cellar door and an audible intake of breath.",
-            "explanation": "A creaking cellar door and an audible gasp at a revealed vintage capture the anticipation built into unveiling a rare bottle.",
-            "textToSpeak": "A cellar door creaks open as dust is wiped from a label, revealing a vintage that draws an audible intake of breath.",
+            "hint": "Listen for what happens to phones before anyone even enters, and how a move gets recorded before it's finished.",
+            "explanation": "An ignored low-battery clock, a silently patrolling arbiter, notation recorded before a piece is released, and confiscated phones at the door describe the strict procedure of a championship-level chess tournament.",
+            "textToSpeak": "A digital clock's low battery warning beeps are studiously ignored by a player deep in thought, an arbiter walks silently between boards without a single word needed to keep order, a pen scratches a move down in algebraic notation before the piece is even released from the player's fingers, and a spectator's phone gets confiscated at the door before anyone is even allowed to sit down.",
             "options": [
-                "Deep-Sea Submersible Descent",
-                "Quantum Computing Lab",
-                "Vineyard Estate Wine Auction",
-                "Michelin Guide Anonymous Dinner"
+                "Championship Chess Tournament",
+                "Chess Club Meeting",
+                "Community Center Meeting",
+                "Board Game Caf\u00e9"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Championship chess tournament",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "algebraic notation",
+                "arbiter",
+                "confiscated"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L171_Q2",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Listen carefully. Where are you?",
             "interactionType": "choice",
-            "hint": "Listen for a calmly counted distance and short, controlled thruster bursts.",
-            "explanation": "A calmly counted closing distance alongside short thruster bursts reflects the precise, incremental process of aligning two vessels in orbit.",
-            "textToSpeak": "A calm countdown of remaining distance is read aloud in careful increments as thrusters fire in short, controlled bursts.",
+            "hint": "Listen for how small the adjustments being made actually are, and how much time each one takes.",
+            "explanation": "Minute hair adjustments, precise light meter and flash calibration, a rapid outfit change, and a one-word mood direction changing an entire pose describe the exacting pace of a professional fashion shoot.",
+            "textToSpeak": "A stylist adjusts a single strand of hair for the fourth time while a photographer waits with visible patience, a light meter gets checked and a flash power adjusted by a fraction before a single frame is taken, a rack of nearly identical outfits gets wheeled past for a change that takes less time than deciding on it did, and a director calls out a mood in one word that somehow changes the entire pose that follows.",
             "options": [
-                "Radio Telescope Array",
-                "Space Station Docking Procedure",
-                "Cryptography Research Lab",
-                "Quantum Computing Lab"
+                "Photography Studio",
+                "Boutique Clothing Store",
+                "Fashion Photography Shoot",
+                "Fashion Show Backstage"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Professional fashion photography shoot",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "light meter",
+                "one-word direction",
+                "minute adjustment"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L171_Q3",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "What place does this soundscape suggest?",
             "interactionType": "choice",
-            "hint": "Listen for a murmured schedule and a thrust-forward microphone.",
-            "explanation": "A publicist managing a tight schedule and a quickly thrust microphone reflect the fast, choreographed pace of red carpet interviews.",
-            "textToSpeak": "A publicist murmurs a tight schedule into an earpiece as a microphone is thrust forward for a brief, rehearsed comment.",
+            "hint": "Listen for the judge's face, and what a single tap on a plate seems to mean without any words.",
+            "explanation": "An expressionless judge's tasting, a shrinking-interval countdown, a silently rejected plate, and total focus replacing conversation describe the pressure of a timed elite culinary competition.",
+            "textToSpeak": "A judge tastes from a spoon and writes a single word on a card without any visible reaction on their face at all, a countdown clock gets called out at intervals that grow shorter as time runs low, a plate gets sent back untouched from the pass with only a single tap indicating it isn't ready, and absolute focus replaces any conversation entirely for the final several minutes before time runs out.",
             "options": [
-                "Jazz Club Late Set",
-                "Opera Premiere Night",
-                "Fashion Week Backstage",
-                "Film Festival Red Carpet"
+                "Restaurant Kitchen",
+                "Elite Culinary Competition",
+                "Science Fair",
+                "Michelin-Starred Restaurant Kitchen"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Elite culinary competition",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "expressionless",
+                "shrinking countdown",
+                "silently rejected"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L172_Q1",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Which setting best matches what you hear?",
             "interactionType": "choice",
-            "hint": "Listen for popping confetti and a wall of numbers flickering to life.",
-            "explanation": "Popping confetti and a wall of numbers flickering awake together reflect the celebratory ceremony often held to open a trading session.",
-            "textToSpeak": "Confetti cannons pop suddenly as a small crowd cheers, and a wall of numbers behind them flickers to life all at once.",
+            "hint": "Listen for what the break actually gets called, rather than what it might sound like at first.",
+            "explanation": "Pre-distributed headphones, a half-second-delayed translation, a deliberately ordered flag arrangement, and a break framed as consultation time describe a formal international diplomatic summit.",
+            "textToSpeak": "Headphones get distributed at each seat before any speaking even begins, a translator's voice comes through a half-second behind whoever is actually speaking, a flag arrangement behind the main table follows a specific order that clearly wasn't arbitrary, and a break gets described as a chance for delegations to consult rather than simply as lunch.",
             "options": [
-                "Currency Printing Facility",
-                "Central Bank Press Conference",
-                "Shareholder Annual Meeting",
-                "Stock Exchange Opening Bell Ceremony"
+                "City Council Meeting",
+                "Diplomatic Reception",
+                "International Diplomatic Summit",
+                "International Tribunal"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "International diplomatic summit",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "translator delay",
+                "delegation",
+                "consult"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L172_Q2",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Where would you most likely hear this?",
             "interactionType": "choice",
-            "hint": "Listen for a fastened gas mask and urgently called-out readings.",
-            "explanation": "A hastily fastened gas mask and urgently called readings reflect the careful precautions taken when monitoring volcanic gas levels closely.",
-            "textToSpeak": "A gas mask is fastened quickly as a strong sulfur smell drifts on the wind, and readings are called out with urgency.",
+            "hint": "Listen for what actually gets the strongest reaction from the room.",
+            "explanation": "A rehearsed-casual CEO statement, a specific numbers-based question, a tallied proxy vote, and applause specifically for a dividend increase describe a corporate shareholders meeting.",
+            "textToSpeak": "A CEO reads a prepared statement about quarterly performance in a tone rehearsed enough to sound almost casual, a hand rises during a question period to ask about a specific dip in a number from the report, a proxy vote gets tallied by a system rather than a raised-hand count, and polite applause follows an announcement of a dividend increase more than it follows anything else said all meeting.",
             "options": [
-                "Volcanology Field Camp",
-                "Antarctic Research Station",
-                "Deep-Sea Submersible Descent",
-                "Seismology Monitoring Station"
+                "City Council Meeting",
+                "International Diplomatic Summit",
+                "Union Meeting Hall",
+                "Corporate Shareholders Meeting"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Corporate shareholders meeting",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "proxy vote",
+                "dividend",
+                "quarterly performance"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L172_Q3",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Listen to the scene. What is the setting?",
             "interactionType": "choice",
-            "hint": "Listen for a faint sonar ping and a light cutting through blackness.",
-            "explanation": "A faint sonar ping and a beam of light cutting through total blackness capture the eerie isolation of the deep ocean floor.",
-            "textToSpeak": "A sonar ping echoes faintly through the hull as a light beam cuts through utter blackness, revealing something unexpected below.",
+            "hint": "Listen for what gets raised during the vote, and what makes it different from a plain hand.",
+            "explanation": "A called country name before speaking, a referenced resolution number, multiple overlapping translation channels, and labeled placard voting describe a formal UN-style committee session.",
+            "textToSpeak": "A country's name gets called before its representative is permitted to speak, a resolution number gets referenced instead of any plain description of the topic, a translator's voice overlaps faintly with several others across different channels available at each seat, and a vote gets conducted by each delegation raising a small labeled placard rather than a simple hand.",
             "options": [
-                "Antarctic Research Station",
-                "Seismology Monitoring Station",
-                "Deep-Sea Submersible Descent",
-                "Ice Core Drilling Camp"
+                "UN-Style Committee Session",
+                "City Council Meeting",
+                "International Diplomatic Summit",
+                "Corporate Shareholders Meeting"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "United Nations-style committee session",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "resolution number",
+                "translation channel",
+                "placard vote"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L173_Q1",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Which place fits these sounds?",
             "interactionType": "choice",
-            "hint": "Listen for a blinking warning light and a rushed final sentence.",
-            "explanation": "A blinking time-warning light and a rushed final sentence capture the strict time limits imposed during formal legal arguments at this level.",
-            "textToSpeak": "A red light on the podium blinks a warning as an attorney rushes to finish a sentence before time runs out entirely.",
+            "hint": "Listen for what the ticking gets compared against, rather than simply being listened to alone.",
+            "explanation": "An extended loupe focus, gear-steadying tweezers over felt, a ticking comparison against a reference, and a held breath before the smallest screw describe the extreme precision of master watchmaking rather than routine repair.",
+            "textToSpeak": "A loupe stays fixed to one eye for several uninterrupted minutes while tiny tweezers hold a single gear steady above a felt-lined tray, a soft ticking gets compared against a second reference clock rather than trusted on its own, and a single held breath happens right before the smallest screw of the day gets placed into position.",
             "options": [
-                "Parliamentary Debate Chamber",
-                "Supreme Court Oral Argument",
-                "Election Night Vote-Counting Center",
-                "Diplomatic Treaty Signing"
+                "Locksmith Shop",
+                "Master Watchmaker's Atelier",
+                "Jewelry Store Counter",
+                "Watch Repair Shop"
             ],
             "correctAnswerIndex": 1,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Master watchmaker's atelier",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "loupe focus",
+                "reference clock",
+                "held breath"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L173_Q2",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "What environment are you hearing?",
             "interactionType": "choice",
-            "hint": "Listen for a banged dispatch box and repeated calls for order.",
-            "explanation": "A hand banged on a dispatch box and repeated calls for order are distinctive, ritualized sounds of a lively legislative debate.",
-            "textToSpeak": "A speaker bangs a hand on a wooden dispatch box for emphasis as a presiding officer calls repeatedly for order.",
+            "hint": "Listen for why the report is being dictated so carefully, and who it's really for.",
+            "explanation": "Carefully measured solution drops, a revealed hidden paint layer, hesitant gloved hovering before contact, and a dictated permanent record describe institutional museum conservation work rather than private restoration.",
+            "textToSpeak": "A cotton swab gets dipped in a solution measured out in careful drops rather than poured freely, a painting under bright examination light reveals a layer invisible to the naked eye in normal conditions, gloved hands hover without touching for a long moment before finally making contact, and a report gets dictated aloud describing exactly what was done, for a record that will outlast everyone currently in the room.",
             "options": [
-                "Election Night Vote-Counting Center",
-                "Diplomatic Treaty Signing",
-                "Parliamentary Debate Chamber",
-                "Supreme Court Oral Argument"
+                "High-End Antique Restoration Workshop",
+                "Art Class",
+                "Museum Gallery",
+                "Museum Conservation Lab"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Museum art conservation lab",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "measured drops",
+                "hidden layer",
+                "dictated record"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L173_Q3",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Based on these sounds, where are you?",
             "interactionType": "choice",
-            "hint": "Listen for an exposed solo passage above total silence.",
-            "explanation": "A solo passage rising above total silence, exposed and unaccompanied, is a hallmark moment of a formal live performance.",
-            "textToSpeak": "A single instrument's solo passage rises above complete silence, so exposed that even a rustled program feels like an intrusion.",
+            "hint": "Listen for where the stain gets tested first, and why.",
+            "explanation": "An anxious client call about authenticity, a hidden-surface stain test, raking-light joint analysis, and a price given only after full explanation describe a private high-end restoration workshop serving individual clients rather than an institution.",
+            "textToSpeak": "A client's voice on speakerphone asks anxiously how original a repair will actually look once finished, a specific wood stain gets mixed and tested on a hidden underside first rather than the visible surface, an old joint gets studied under raking light to understand exactly how it originally failed, and a price gets mentioned only after the full scope of damage has been explained in careful detail.",
             "options": [
-                "Rare Manuscript Restoration Lab",
-                "Art Biennale Gallery Opening",
-                "Jazz Club Late Set",
-                "Concert Hall Live Performance"
+                "Antique Furniture Store",
+                "High-End Antique Restoration Workshop",
+                "Home Carpentry Workshop",
+                "Museum Conservation Lab"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "High-end antique restoration workshop",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "raking light",
+                "hidden underside",
+                "full scope"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L174_Q1",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Listen carefully. Where are you?",
             "interactionType": "choice",
-            "hint": "Listen for hissing hairspray and overlapping voices competing with runway bass.",
-            "explanation": "Hissing hairspray and overlapping voices competing with runway music reflect the controlled chaos typical of preparing for a live show.",
-            "textToSpeak": "Hairspray hisses in short bursts as a dozen conversations overlap, all competing with a thumping bass line from the runway beyond.",
+            "hint": "Listen for how the exit gets signaled, and how many lights need to agree first.",
+            "explanation": "A precisely marked stop, an overlapping burst of wheel guns, a lollipop drop timed to simultaneous green lights, and a sub-two-second departure describe the extreme precision of a Formula One pit stop.",
+            "textToSpeak": "A car screeches to a stop within centimeters of a precise mark on the ground, four wheel guns fire in an overlapping burst that's finished before most people could count to three, a lollipop sign drops the instant every green light on a control box turns on at once, and the entire car is gone again in under two seconds from the moment it fully stopped.",
             "options": [
-                "Concert Hall Live Performance",
-                "Film Festival Red Carpet",
-                "Art Biennale Gallery Opening",
-                "Fashion Week Backstage"
+                "Formula One Pit Stop",
+                "Auto Repair Garage",
+                "NASCAR Pit Crew",
+                "Go-Kart Track"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Formula One pit stop",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "wheel guns",
+                "lollipop sign",
+                "precise mark"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L174_Q2",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "What place does this soundscape suggest?",
             "interactionType": "choice",
-            "hint": "Listen for filled chairs in near-unison and a quiet ceremonial rap.",
-            "explanation": "Several seats filled almost simultaneously followed by a brief ceremonial opening reflects the formal ritual that begins this kind of proceeding.",
-            "textToSpeak": "A hush falls as several justices take their seats almost simultaneously, and a single ceremonial rap opens the session quietly.",
+            "hint": "Listen for how the fuel actually goes in, and what sound the tires make on the way back out.",
+            "explanation": "A headset instruction about tire pressure, a heavy manual fuel glug, a dropped jack timed to the last lug nut, and chirping tires on exit describe a NASCAR pit stop's specific sound signature, distinct from Formula One's electric refueling-free system.",
+            "textToSpeak": "A crew chief's voice comes through a driver's headset with a calm instruction about tire pressure adjustments for the next stint, a fuel can empties with a distinct heavy glugging rhythm rather than any quiet electric pump, a jack drops a car back down with a solid thud right as the last lug nut gets torqued, and the car peels back onto pit road with tires briefly chirping against pavement.",
             "options": [
-                "Parliamentary Debate Chamber",
-                "Election Night Vote-Counting Center",
-                "Supreme Court Oral Argument",
-                "Diplomatic Treaty Signing"
+                "Tire Rotation Service Bay",
+                "NASCAR Pit Crew",
+                "Auto Repair Garage",
+                "Formula One Pit Stop"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "NASCAR pit crew stop",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "crew chief",
+                "fuel glug",
+                "tires chirping"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L174_Q3",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Which setting best matches what you hear?",
             "interactionType": "choice",
-            "hint": "Listen for a leaning-in hush and a steady walking bass line.",
-            "explanation": "A room leaning in around a steady bass line beneath an unhurried melody captures the relaxed, late-night atmosphere of this setting.",
-            "textToSpeak": "A hushed room leans in as a bass line walks steadily beneath a smoky, unhurried melody drifting just above it.",
+            "hint": "Listen for the units being used to describe distance between riders, and how the handoffs happen while everything is still moving.",
+            "explanation": "Second-based time gap updates, a wheel handed out through a moving car window, a moving handoff of bottles, and a warning about an upcoming descent describe a professional cycling team's support vehicle during a race.",
+            "textToSpeak": "A radio crackles with a director reading off time gaps to riders up the road in seconds rather than minutes, a spare wheel gets handed out through a car window to a mechanic leaning out at speed, water bottles get passed forward in a practiced handoff between a moving car and a moving rider, and a voice calmly warns of a technical descent coming up in a few kilometers.",
             "options": [
-                "Fashion Week Backstage",
-                "Art Biennale Gallery Opening",
-                "Jazz Club Late Set",
-                "Opera Premiere Night"
+                "Professional Cycling Team Support Vehicle",
+                "Race Day Corral Assignment",
+                "Formula One Racing Pit Stop",
+                "Marathon Race Water Station"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Professional cycling team support vehicle",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "time gap",
+                "moving handoff",
+                "technical descent"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L175_Q1",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Where would you most likely hear this?",
             "interactionType": "choice",
-            "hint": "Listen for a loudly spinning fan and a completion chime after an overnight run.",
-            "explanation": "A fan spinning up during a long overnight calculation, followed by a completion chime, is a familiar sound of intensive computational research.",
-            "textToSpeak": "A processor fan spins up loudly as a calculation runs overnight, and a soft chime finally signals it has completed.",
+            "hint": "Listen for what's being confirmed about specific seats, and why that confirmation matters so much tonight.",
+            "explanation": "An anxious producer, an imperceptible final lighting tweak, an urgent check on critics' seats, and a uniquely significant hush describe the high-stakes tension of a Broadway opening night rather than any rehearsal.",
+            "textToSpeak": "A producer paces near the back of the house checking a phone that hasn't actually received any new messages in the last few minutes, a final lighting cue gets adjusted by a fraction that the average audience member would never consciously notice, a company manager confirms with quiet urgency that every critic's seat has actually been filled, and a hush falls over the entire building in the specific way that only happens once, right before a very particular kind of night.",
             "options": [
-                "Cryptography Research Lab",
-                "Space Station Docking Procedure",
-                "Quantum Computing Lab",
-                "Radio Telescope Array"
+                "Off-Broadway Rehearsal",
+                "Broadway Stage Before Opening Night",
+                "Community Theater Rehearsal",
+                "High School Musical Dress Rehearsal"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Broadway theater before opening night",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "critic's seat",
+                "imperceptible cue",
+                "opening night hush"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L175_Q2",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Listen to the scene. What is the setting?",
             "interactionType": "choice",
-            "hint": "Listen for a rippling standing ovation and passed-forward flowers.",
-            "explanation": "An ovation rippling upward row by row alongside passed flowers is a classic, celebratory close to a triumphant premiere.",
-            "textToSpeak": "A standing ovation ripples upward row by row as flowers are passed forward toward a curtain call already underway.",
+            "hint": "Listen for the room's size, implied by how the director's voice carries, and how much doubling-up the small cast has to do.",
+            "explanation": "A mic-free director's note in a small room, a mid-scene restart, a squeaking floor-tape mark, and understudies covering multiple parts describe the smaller-scale, more flexible rehearsal process of an off-Broadway production.",
+            "textToSpeak": "A director calls out a note from the house without needing a microphone in a room this size, a scene gets stopped and restarted from a specific line rather than the top of the whole thing, a stage manager tapes a new mark onto the floor with a marker that squeaks faintly, and a smaller cast means the same two understudies keep getting asked to read multiple parts back to back.",
             "options": [
-                "Fashion Week Backstage",
-                "Film Festival Red Carpet",
-                "Ballet Company Dress Rehearsal",
-                "Opera Premiere Night"
+                "Backstage Before a Play",
+                "Broadway Stage Before Opening Night",
+                "Community Theater Rehearsal",
+                "Off-Broadway Rehearsal"
             ],
             "correctAnswerIndex": 3,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Off-Broadway rehearsal",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "from the house",
+                "floor mark",
+                "doubling parts"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L175_Q3",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Which place fits these sounds?",
             "interactionType": "choice",
-            "hint": "Listen for rippling screams and a name spreading through an unseen crowd.",
-            "explanation": "Screams rippling through a crowd before anyone can confirm who has arrived is a familiar, breathless sound of this kind of event.",
-            "textToSpeak": "A ripple of screams rises from behind a barrier as a name spreads through the crowd faster than anyone can confirm who it is.",
+            "hint": "Listen for who's actually helping backstage, and what room this performance is ultimately happening in.",
+            "explanation": "A frantic parent volunteer, a crackling amateur mic pack, a last-second costume pin, and a reminder about projecting in a gym describe the resourceful, lower-budget reality of a high school musical rehearsal.",
+            "textToSpeak": "A parent volunteer backstage searches frantically for a missing prop that turns up exactly where it was supposed to be all along, a microphone pack crackles with static that a teacher tries to fix with a spare battery from a labeled bag, a chorus member's costume is a full size too large and gets pinned in place at the last second, and a director reminds everyone for the third time tonight to project toward the back of the gym.",
             "options": [
-                "Concert Hall Live Performance",
-                "Rare Manuscript Restoration Lab",
-                "Opera Premiere Night",
-                "Film Festival Red Carpet"
+                "School Talent Show",
+                "Community Theater Rehearsal",
+                "Off-Broadway Rehearsal",
+                "High School Musical Dress Rehearsal"
             ],
             "correctAnswerIndex": 3,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "High school musical dress rehearsal",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "parent volunteer",
+                "mic pack static",
+                "project to the back"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L176_Q1",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "What environment are you hearing?",
             "interactionType": "choice",
-            "hint": "Listen for a confirming double tap and restrained, polite applause.",
-            "explanation": "A confirming gavel tap followed by restrained applause reflects the polished, understated etiquette typical of this kind of exclusive sale.",
-            "textToSpeak": "A gavel taps twice as a final bid is confirmed, and a ripple of restrained applause moves politely through rows of seated bidders.",
+            "hint": "Listen for how a piece of information gets shared with 'no one in particular' yet still gets heard by the right people.",
+            "explanation": "Constantly updating monitors, a shouted ticker meant for the whole room, a slammed phone after a rejection, and a synchronized brief groan describe the loud, reactive intensity of an investment bank's internal trading floor.",
+            "textToSpeak": "Dozens of monitors glow with numbers that update faster than any single person could read all of them, a trader shouts a ticker symbol and a size across the room to no one in particular yet everyone relevant hears it, a phone gets slammed down rather than simply hung up after a rejected price, and a sudden collective groan rises and fades within seconds as some number moves the wrong way for the room.",
             "options": [
-                "Vineyard Estate Wine Auction",
-                "Michelin Guide Anonymous Dinner",
-                "Quantum Computing Lab",
-                "Seismology Monitoring Station"
+                "Stock Exchange Floor",
+                "Customer Service Call Center",
+                "Investment Bank Trading Floor",
+                "Cryptocurrency Trading Office"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Investment bank trading floor",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "ticker symbol",
+                "slammed phone",
+                "collective groan"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L176_Q2",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Based on these sounds, where are you?",
             "interactionType": "choice",
-            "hint": "Listen for soft distant applause and a crackling greeting through an opened hatch.",
-            "explanation": "Soft applause far away paired with a crackling greeting through a newly opened hatch marks the successful, celebrated end of a docking procedure.",
-            "textToSpeak": "Applause breaks out softly in a control room far below as a hatch is confirmed open and a faint greeting crackles through.",
+            "hint": "Listen for who's actually ringing the bell today, and why cameras seem to be involved.",
+            "explanation": "A precisely scheduled opening bell, hand signals over unshoutable noise, a shared public index display, and executives ringing a ceremonial bell for cameras describe the public exchange floor rather than a private bank's trading room.",
+            "textToSpeak": "A bell rings at a precise scheduled moment to open trading for the entire day at once, brightly jacketed traders use hand signals across distances too loud to shout over reliably, a large display board updates an index number for everyone in the building to see simultaneously, and a single company's executives ring a ceremonial bell themselves as cameras capture the specific moment.",
             "options": [
-                "Cryptography Research Lab",
-                "Space Station Docking Procedure",
-                "Quantum Computing Lab",
-                "Radio Telescope Array"
+                "Cryptocurrency Trading Office",
+                "Stock Exchange Floor",
+                "Investment Bank Trading Floor",
+                "Corporate Shareholders Meeting"
             ],
             "correctAnswerIndex": 1,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Stock exchange trading floor",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "opening bell",
+                "hand signals",
+                "ceremonial bell"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L176_Q3",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Listen carefully. Where are you?",
             "interactionType": "choice",
-            "hint": "Listen for an immediate ring and a confirmed epicenter call.",
-            "explanation": "A phone ringing immediately after a spike appears everywhere is a familiar sound of rapid response following a detected seismic event.",
-            "textToSpeak": "A phone rings immediately as a spike appears on every monitor at once, and a call is placed to confirm the epicenter.",
+            "hint": "Listen for what never closes, unlike a traditional exchange, and who or what is actually placing some of the orders.",
+            "explanation": "Never-closing price charts, casual blockchain confirmation talk, an automated bot's notification rather than a human order, and jargon-heavy debate describe a cryptocurrency trading office's distinct round-the-clock, partly automated culture.",
+            "textToSpeak": "A wall of screens tracks price charts that never actually close for the night the way a traditional market would, a trader mentions a specific blockchain confirmation time as casually as most people mention a bus schedule, a notification sound goes off from an automated trading bot rather than any human placing an order, and a debate breaks out over a technical term that would mean nothing outside this particular room.",
             "options": [
-                "Deep-Sea Submersible Descent",
-                "Seismology Monitoring Station",
-                "Ice Core Drilling Camp",
-                "Antarctic Research Station"
+                "IT Server Room",
+                "Stock Exchange Floor",
+                "Investment Bank Trading Floor",
+                "Cryptocurrency Trading Office"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Cryptocurrency trading office",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "never closes",
+                "blockchain confirmation",
+                "trading bot"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L177_Q1",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "What place does this soundscape suggest?",
             "interactionType": "choice",
-            "hint": "Listen for clicking heels on concrete and hushed debate beneath a piece.",
-            "explanation": "Clicking heels on bare concrete and hushed debate beneath a dramatic installation reflect the deliberately minimalist style of many contemporary galleries.",
-            "textToSpeak": "Heels click steadily across a polished concrete floor as hushed debate continues beneath a piece suspended dramatically from the ceiling.",
+            "hint": "Listen for what the diner deliberately avoids doing, despite clearly having strong opinions.",
+            "explanation": "Disguised note-taking, precise but non-complaining feedback, an anonymous reservation name, and a full payment with no requested treatment describe the deliberately undetectable style of a Michelin inspector's visit.",
+            "textToSpeak": "A single diner takes notes on a phone disguised as texting rather than openly writing anything down, a dish gets sent back not for any complaint but described instead in careful, specific vocabulary to the server, a reservation was made under a name that means nothing to anyone on staff, and a bill gets paid in full without a single request for any special treatment at any point in the meal.",
             "options": [
-                "Film Festival Red Carpet",
-                "Jazz Club Late Set",
-                "Opera Premiere Night",
-                "Art Biennale Gallery Opening"
+                "Michelin Inspector's Anonymous Visit",
+                "Fine Dining Restaurant",
+                "Regular Restaurant Dinner Service",
+                "Food Critic's Review Visit"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Michelin inspector's anonymous restaurant visit",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "disguised note-taking",
+                "anonymous reservation",
+                "no special treatment"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L177_Q2",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Which setting best matches what you hear?",
             "interactionType": "choice",
-            "hint": "Listen for a requested show of hands and a quiet aisle count.",
-            "explanation": "A requested show of hands counted carefully by an aide is a classic procedural sound of formal shareholder voting.",
-            "textToSpeak": "A show of hands is requested for a formal vote as an aide moves quietly through the aisles, counting carefully.",
+            "hint": "Listen for what comes out openly on the table, unlike a more secretive kind of visit.",
+            "explanation": "An overhead pre-bite photo, a companion's probing sourcing questions, an openly visible notebook, and a cross-restaurant comparison describe a food critic's more visibly evaluative dining visit.",
+            "textToSpeak": "A photo gets taken of a dish from directly overhead before a single bite is touched, a companion asks the server pointed questions about sourcing while the critic mostly stays quiet and observant, a notebook actually comes out openly on the table rather than staying hidden at all, and a comment gets made comparing tonight's dish to one from a completely different restaurant across town.",
             "options": [
-                "Central Bank Press Conference",
-                "Currency Printing Facility",
-                "Stock Exchange Opening Bell Ceremony",
-                "Shareholder Annual Meeting"
+                "Fine Dining Restaurant",
+                "Regular Restaurant Dinner Service",
+                "Food Critic's Review Visit",
+                "Michelin Inspector's Anonymous Visit"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Food critic's restaurant review visit",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "overhead photo",
+                "openly visible notebook",
+                "cross-restaurant comparison"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L177_Q3",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Where would you most likely hear this?",
             "interactionType": "choice",
-            "hint": "Listen for an awkwardly rung bell and rapidly clicking shutters.",
-            "explanation": "A guest ringing a bell somewhat awkwardly while cameras click rapidly is a familiar, slightly staged ceremonial detail of this event.",
-            "textToSpeak": "A guest of honor rings a handheld bell awkwardly as photographers' shutters click rapidly, capturing the slightly clumsy moment.",
+            "hint": "Listen for how routine and repeated everything feels, rather than anything being closely observed or evaluated.",
+            "explanation": "A repeatedly recommended dish, a casually requested kids' menu, a routine off-key birthday song, and a friendly split-check disagreement describe an ordinary, unexamined night of regular restaurant service.",
+            "textToSpeak": "A server recommends the same popular dish they've recommended to the last three tables tonight, a kids' menu gets requested at a table two seats down without any fuss at all, a birthday song gets sung awkwardly off-key by a group of servers who clearly do this several times a week, and a check gets split four ways with a bit of friendly disagreement over the exact math.",
             "options": [
-                "Shareholder Annual Meeting",
-                "Central Bank Press Conference",
-                "Stock Exchange Opening Bell Ceremony",
-                "Currency Printing Facility"
+                "Fine Dining Restaurant",
+                "Michelin Inspector's Anonymous Visit",
+                "Casual Diner",
+                "Regular Restaurant Dinner Service"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Regular restaurant dinner service",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "popular dish",
+                "kids' menu",
+                "split check"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L178_Q1",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Listen to the scene. What is the setting?",
             "interactionType": "choice",
-            "hint": "Listen for a rhythmic pump and hushed talk of a fragile state.",
-            "explanation": "A rhythmically cycling pump and hushed talk of a fragile system reflect the extreme sensitivity of this kind of experimental setup.",
-            "textToSpeak": "A pump cycles rhythmically in the background as a researcher speaks in hushed, careful tones about a fragile, sensitive state.",
+            "hint": "Listen for what gets measured and analyzed rather than simply asked about.",
+            "explanation": "Multi-angle stride analysis, a checked meal plan, a precisely timed ice bath, and a reviewed heart rate graph instead of a simple question describe the data-driven environment of an elite athletic training facility.",
+            "textToSpeak": "A biomechanics camera captures a single stride from multiple angles simultaneously for analysis after the fact, a nutritionist checks a printed meal plan against what's actually being eaten right now, a recovery specialist times an ice bath down to the exact second on a stopwatch, and a coach reviews a heart rate graph on a tablet rather than simply asking how someone feels.",
             "options": [
-                "Quantum Computing Lab",
-                "Radio Telescope Array",
-                "Space Station Docking Procedure",
-                "Cryptography Research Lab"
+                "Elite Athletic Training Facility",
+                "Fitness Gym",
+                "Physical Therapy for a Professional Athlete",
+                "College Sports Training Room"
             ],
             "correctAnswerIndex": 0,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Elite athletic training facility",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "biomechanics camera",
+                "meal plan",
+                "heart rate graph"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L178_Q2",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Which place fits these sounds?",
             "interactionType": "choice",
-            "hint": "Listen for a rushed safety pin and a shouted ten-second warning.",
-            "explanation": "A rushed safety pin and a shouted countdown reflect the split-second urgency of last-minute adjustments just before a runway appearance.",
-            "textToSpeak": "A safety pin is bitten open in a rush as someone shouts that the next look is due on the runway in ten seconds.",
+            "hint": "Listen for what decision is being deferred, and why it depends on this particular session.",
+            "explanation": "Shared knowledge of a specific past injury, a joint-specific exercise, a week-over-week comparison, and a deferred practice decision describe individualized professional athlete rehabilitation rather than general physical therapy.",
+            "textToSpeak": "A trainer references a specific injury from months ago as though it were common knowledge everyone in the room already shared, a resistance band gets used for an exercise designed around one very particular joint rather than general fitness, a comment gets made comparing today's range of motion to a number recorded the previous week, and a decision about tomorrow's practice gets deferred until this session's results are fully reviewed.",
             "options": [
-                "Jazz Club Late Set",
-                "Fashion Week Backstage",
-                "Rare Manuscript Restoration Lab",
-                "Film Festival Red Carpet"
+                "Pro Athlete's Physical Therapy",
+                "Elite Athletic Training Facility",
+                "Chiropractic Office",
+                "Physical Therapy Clinic"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Physical therapy for a professional athlete",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "specific injury history",
+                "range of motion",
+                "deferred decision"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L178_Q3",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "What environment are you hearing?",
             "interactionType": "choice",
-            "hint": "Listen for a softly beeping camera and a spreading red heat patch.",
-            "explanation": "A thermal camera tracking a spreading patch of heat is a distinctive modern tool used to monitor volcanic activity from a safe distance.",
-            "textToSpeak": "A thermal camera beeps softly as a bright red patch spreads slowly across its screen, tracking a new flow of heat.",
+            "hint": "Listen for what else is being discussed alongside the athletic training, and what that tells you about who these people are.",
+            "explanation": "Casual talk of an exam during taping, shared equipment across several teams, an embarrassed freshman's question, and a quick attendance check describe the shared, informal resource of a college sports training room.",
+            "textToSpeak": "A student trainer tapes an ankle while asking casually about an upcoming exam at the same time, a whiteboard schedule lists several different teams' practice times all sharing the same limited equipment, a freshman asks a slightly embarrassed question about a machine that upperclassmen clearly already know how to use, and a coach pokes their head in just to check attendance rather than to run any actual session.",
             "options": [
-                "Volcanology Field Camp",
-                "Genetic Sequencing Lab",
-                "Seismology Monitoring Station",
-                "Deep-Sea Submersible Descent"
+                "Elite Athletic Training Facility",
+                "Fitness Gym",
+                "Physical Therapy for a Professional Athlete",
+                "College Sports Training Room"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "College sports training room",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "shared equipment",
+                "embarrassed question",
+                "attendance check"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L179_Q1",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Based on these sounds, where are you?",
             "interactionType": "choice",
-            "hint": "Listen for rustling order sheets and echoing footsteps toward a count.",
-            "explanation": "Members moving to be formally counted, with footsteps echoing down a corridor, reflects the traditional voting procedure of this kind of chamber.",
-            "textToSpeak": "Paper order sheets rustle as members shuffle toward a lobby to be counted, their footsteps echoing through a long stone corridor.",
+            "hint": "Listen for who's actually being questioned, and whether any witnesses are involved at all.",
+            "explanation": "Multiple questioning judges, an interruption over a lower court's exact wording, the complete absence of witnesses, and a later-released written opinion describe an appellate hearing focused purely on legal argument.",
+            "textToSpeak": "A panel of several judges rather than just one asks pointed questions from a raised bench that stretches the width of the room, an attorney gets interrupted mid-sentence by a specific question about a lower court's exact wording, no witnesses are called at all since only legal arguments are being reviewed here, and a decision gets promised in a written opinion released only after everyone has already gone home.",
             "options": [
-                "Election Night Vote-Counting Center",
-                "Diplomatic Treaty Signing",
-                "Parliamentary Debate Chamber",
-                "Supreme Court Oral Argument"
+                "International Tribunal",
+                "Federal Courtroom",
+                "High Court Appeal Hearing",
+                "Local Courtroom Trial"
             ],
             "correctAnswerIndex": 2,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "High court appeal hearing",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "panel of judges",
+                "legal argument only",
+                "written opinion"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L179_Q2",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Listen carefully. Where are you?",
             "interactionType": "choice",
-            "hint": "Listen for a sealed door against the cold and stamped-off snow.",
-            "explanation": "A sealed door against the cold and snow stamped from boots are familiar small rituals of returning indoors at a polar research site.",
-            "textToSpeak": "A heavy door seals with a hiss against the cold as someone stamps snow from their boots before a debrief begins.",
+            "hint": "Listen for who's actually testifying, and where the verdict finally gets delivered.",
+            "explanation": "A single modest-bench judge, a directly questioned witness, an audibly restless jury, and a verdict delivered in the same room describe an ordinary local trial rather than an appellate review.",
+            "textToSpeak": "A single judge oversees proceedings from a bench far more modest than any appellate court would use, a witness answers questions directly from a lawyer standing just a few feet away, a jury shifts audibly in their seats during a long objection discussion held at the bench, and a verdict gets delivered aloud in the same room where everything else already happened.",
             "options": [
-                "Deep-Sea Submersible Descent",
-                "Antarctic Research Station",
-                "Ice Core Drilling Camp",
-                "Volcanology Field Camp"
+                "High Court Appeal Hearing",
+                "Small Claims Court Waiting Area",
+                "Local Courtroom Trial",
+                "Federal Courtroom"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Local courtroom trial",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "modest bench",
+                "restless jury",
+                "verdict delivered"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L179_Q3",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "What place does this soundscape suggest?",
             "interactionType": "choice",
-            "hint": "Listen for a centrifuge whirring to a stop and a carefully extracted sample.",
-            "explanation": "A centrifuge slowing to a stop and a carefully extracted sample reflect one methodical step within a much longer sequencing process.",
-            "textToSpeak": "A small centrifuge whirs to a stop as a sample is extracted carefully, one of many steps before results are ready.",
+            "hint": "Listen for what a scheduling conflict actually seems to be about, geographically.",
+            "explanation": "Multi-language simultaneous interpretation, notably international judges, cross-country evidence by document number, and a time-zone scheduling conflict describe a specifically international tribunal rather than a domestic court.",
+            "textToSpeak": "Testimony gets delivered through simultaneous interpretation into several different languages at once through individual headsets, a judge's nationality gets mentioned as relevant background rather than treated as unusual in any way, evidence spanning multiple countries gets referenced by document numbers rather than simple descriptions, and a session adjourns specifically because of a scheduling conflict between judges from different time zones.",
             "options": [
-                "Ice Core Drilling Camp",
-                "Seismology Monitoring Station",
-                "Genetic Sequencing Lab",
-                "Volcanology Field Camp"
+                "Federal Courtroom",
+                "International Tribunal",
+                "International Diplomatic Summit",
+                "High Court Appeal Hearing"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "International tribunal hearing",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "simultaneous interpretation",
+                "document number",
+                "time zone conflict"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L180_Q1",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Which setting best matches what you hear?",
             "interactionType": "choice",
-            "hint": "Listen for a unified wave of applause rising into a sustained ovation.",
-            "explanation": "Applause erupting as one unified wave and building into a sustained ovation is the classic close of a moving live performance.",
-            "textToSpeak": "Applause erupts in a single unified wave the instant the final note fades, quickly rising into a rhythmic, sustained ovation.",
+            "hint": "Listen for how a reporter actually gets permission to ask a follow-up question.",
+            "explanation": "A camera-drawing official seal, a deflection disguised as a promise, an overlapping shouted scrum, and name-called follow-ups from a prepared list describe the scale and formality of a presidential-level press briefing.",
+            "textToSpeak": "A podium bears a specific seal that everyone in the room seems to instinctively angle their cameras toward, a spokesperson deflects a pointed question by promising to circle back later in terms that clearly mean they won't, dozens of reporters shout overlapping questions the instant any pause seems to open up, and a follow-up gets allowed only after a specific reporter is called on by name from a prepared list.",
             "options": [
-                "Rare Manuscript Restoration Lab",
-                "Film Festival Red Carpet",
-                "Concert Hall Live Performance",
-                "Fashion Week Backstage"
+                "Local News Press Conference",
+                "City Council Meeting",
+                "Presidential Press Briefing",
+                "Corporate Product Launch Press Event"
             ],
             "correctAnswerIndex": 2,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Presidential press briefing",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "circle back",
+                "prepared list",
+                "overlapping questions"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L180_Q2",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Where would you most likely hear this?",
             "interactionType": "choice",
-            "hint": "Listen for a hull creak, a tense pause, and a calm confirmation.",
-            "explanation": "A hull creak followed by a tense pause and calm confirmation reflects the careful vigilance required under extreme underwater pressure.",
-            "textToSpeak": "A creak passes through the hull, met with a brief, tense pause, before a calm voice confirms all readings remain normal.",
+            "hint": "Listen for how many reporters are actually there, and how quickly the whole thing wraps up.",
+            "explanation": "A handful of competing local reporters, a brief statement with few questions, borrowed lighting equipment, and a quick fifteen-minute wrap-up describe the smaller scale of a local news press conference.",
+            "textToSpeak": "A handful of reporters from competing local stations set up nearly identical microphones on the same small stand, an official reads a brief prepared statement about a community issue before taking only two or three questions total, a camera operator adjusts a light that's clearly borrowed equipment rather than anything permanently installed, and the whole event wraps up in under fifteen minutes without much fanfare at all.",
             "options": [
-                "Deep-Sea Submersible Descent",
-                "Genetic Sequencing Lab",
-                "Seismology Monitoring Station",
-                "Ice Core Drilling Camp"
+                "Presidential Press Briefing",
+                "City Council Meeting",
+                "Local News Press Conference",
+                "Corporate Product Launch Press Event"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Local news press conference",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "competing stations",
+                "borrowed equipment",
+                "brief statement"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L180_Q3",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Listen to the scene. What is the setting?",
             "interactionType": "choice",
-            "hint": "Listen for murmuring observers and a double-checked uneven stack.",
-            "explanation": "Observers murmuring notes and a double-checked stack reflect the careful scrutiny built into this kind of counting process.",
-            "textToSpeak": "Observers lean in close, murmuring notes to one another, as a supervisor double-checks a stack that seems slightly uneven.",
+            "hint": "Listen for what gets mentioned aloud as though it mattered as much as the actual product.",
+            "explanation": "Music-timed dramatic pauses, rehearsed-sounding enthusiasm, a build-up countdown to an unveiling, and an aloud-mentioned hashtag describe the marketing theater of a corporate product launch press event.",
+            "textToSpeak": "A dramatic pause before a product reveal gets timed to a swelling piece of background music rather than any silence at all, a live demonstration gets narrated with rehearsed enthusiasm that sounds identical to a rehearsal run earlier that day, a countdown on a large screen builds toward an unveiling rather than any actual departure or event start, and a hashtag gets mentioned aloud as though it were as important as the product itself.",
             "options": [
-                "Diplomatic Treaty Signing",
-                "Parliamentary Debate Chamber",
-                "Supreme Court Oral Argument",
-                "Election Night Vote-Counting Center"
+                "Corporate Product Launch Press Event",
+                "Local News Press Conference",
+                "Trade Show Booth",
+                "Presidential Press Briefing"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Corporate product launch press event",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "dramatic pause",
+                "rehearsed enthusiasm",
+                "hashtag"
             ]
         }
     ]

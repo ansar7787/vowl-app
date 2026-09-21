@@ -6,13 +6,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L111_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch 'falls through' versus 'works out', and 'should' versus 'could'.",
-            "explanation": "Before a word starting with a consonant like 'case', the 'n' in 'in' often shifts forward in the mouth to match it, so 'in case' can sound closer to 'ing case'. 'Falls through' and 'works out' are opposite outcomes, so that phrase is essential.",
-            "textToSpeak": "We should have a backup plan in case it falls through.",
+            "instruction": "Listen carefully and catch the exact sentence.",
+            "hint": "Catch exactly what they're picking up, since the two words link tightly.",
+            "explanation": "'Pick up' links into a fast, connected sound, and phrasal verbs like this carry a meaning you can't guess from 'pick' alone — here, to collect something.",
+            "textToSpeak": "Can you pick up some bread on your way home?",
             "options": [
-                "We should have a backup plan in case it works out.",
-                "We should have a backup plan in case it falls through."
+                "Can you pick up some milk on your way home?",
+                "Can you pick up some bread on your way home?"
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -21,88 +21,88 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L111_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Notice report versus document, and 'progress' versus 'review'.",
-            "explanation": "'In progress' often comes out sounding like 'im progress' in fast speech, because the 'n' shifts to match the 'p' sound that follows it - both made with closed lips. That's a pronunciation shift only, though; the spelling never changes. 'Progress' and 'review' are different stages entirely.",
-            "textToSpeak": "This report's still in progress, so don't send it yet.",
+            "instruction": "They said it fast — what did you actually hear?",
+            "hint": "Listen for whether the meeting is delayed, or happening as planned.",
+            "explanation": "'Put off' means to postpone, a meaning that has nothing to do with 'put' or 'off' separately, so catching the whole phrase together matters.",
+            "textToSpeak": "They put off the meeting until next week.",
             "options": [
-                "This report's still in progress, so don't send it yet.",
-                "This report's still in progress, so don't send it out."
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "fastSpeechDecoder",
-            "emoji": "⚡"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L111_Q3",
-            "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch 'officially' versus 'finally', and announced versus confirmed.",
-            "explanation": "Before 'confidence', which starts with a 'k' sound, the 'n' in 'in' shifts back in the mouth to match it, giving a nasal sound closer to the 'ng' in 'sing'. This is the same assimilation pattern as 'in progress', just adjusting to a different following sound.",
-            "textToSpeak": "Keep this in confidence, please, until it's officially announced.",
-            "options": [
-                "Keep this in confidence, please, until it's finally announced.",
-                "Keep this in confidence, please, until it's officially announced."
+                "They kept the meeting as planned for next week.",
+                "They put off the meeting until next week."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
-            "id": "LIS_FASTSPEECHDECODER_L112_Q1",
+            "id": "LIS_FASTSPEECHDECODER_L111_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch the exact day, dinner versus lunch, and the number.",
-            "explanation": "'Ten people' often comes out sounding like 'tem people' in fast, connected speech, since the 'n' shifts to match the 'p' sound right after it. Numbers are especially easy to mishear this way, so always double-check the exact one.",
-            "textToSpeak": "We've got ten people coming for dinner this Sunday.",
+            "instruction": "Natural speech blends words together. Catch the real message.",
+            "hint": "Notice exactly what's being picked up this time.",
+            "explanation": "Phrasal verbs like 'pick up' reduce and link the same way as any other fast phrase, so context around it is a useful extra clue.",
+            "textToSpeak": "Don't forget to pick up your prescription today.",
             "options": [
-                "We've got ten people coming for dinner this Sunday.",
-                "We've got nine people coming for dinner this Sunday."
+                "Don't forget to pick up your prescription today.",
+                "Don't forget to pick up your package today."
             ],
             "correctAnswerIndex": 0,
+            "subtype": "fastSpeechDecoder",
+            "emoji": "⚡"
+        },
+        {
+            "id": "LIS_FASTSPEECHDECODER_L112_Q1",
+            "interactionType": "choice",
+            "instruction": "Listen for the small word that changes the meaning.",
+            "hint": "Catch exactly what they found out, since the phrase links smoothly.",
+            "explanation": "'Find out' means to discover, and the linking between the two words can make it sound almost like one word at natural speed.",
+            "textToSpeak": "We finally found out the reason for the delay.",
+            "options": [
+                "We finally forgot the reason for the delay.",
+                "We finally found out the reason for the delay."
+            ],
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L112_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Notice the exact month, cousin versus sister, and first versus second.",
-            "explanation": "'First' loses its 't' before 'baby', another consonant-cluster simplification like the ones you've already practised. The month and the relative are the details that carry the real news here.",
-            "textToSpeak": "My cousin's expecting her firs' baby sometime in March.",
+            "instruction": "Focus on the key detail hidden in the fast sentence.",
+            "hint": "Listen for exactly what they're searching for.",
+            "explanation": "'Look for' links its two words together, and the object of the search, named right after, is the real content of the sentence.",
+            "textToSpeak": "I'm looking for a quieter place to work.",
             "options": [
-                "My cousin's expecting her firs' baby sometime in March.",
-                "My cousin's expecting her firs' baby sometime in April."
+                "I'm looking for a bigger place to work.",
+                "I'm looking for a quieter place to work."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L112_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch the exact number, and grandma versus grandpa.",
-            "explanation": "'Ten' can shift toward a 'tem' sound before 'days', since the following 'd' pulls the 'n' forward slightly - but that's a pronunciation detail only, not a spelling change. Focus on the actual number and which grandparent is visiting.",
-            "textToSpeak": "Grandma's coming to stay for a whole ten days.",
+            "instruction": "Listen again — which version matches what was said?",
+            "hint": "Notice whether they found out already, or are still trying to.",
+            "explanation": "Tense matters here — 'found out' is finished, while 'trying to find out' is ongoing — and the phrasal verb itself sounds the same either way.",
+            "textToSpeak": "She's still trying to find out what happened.",
             "options": [
-                "Grandma's coming to stay for a whole ten days.",
-                "Grandma's coming to stay for a whole two weeks."
+                "She already found out what happened.",
+                "She's still trying to find out what happened."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L113_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch this versus these, and brown versus plain.",
-            "explanation": "'Brown paper' often blurs together at speed, since the 'n' at the end of 'brown' shifts slightly to match the 'p' that follows. 'This' and 'these' are also quick, light words worth listening for carefully.",
-            "textToSpeak": "Can I get a brown paper bag for this one?",
+            "instruction": "Listen carefully and catch the exact sentence.",
+            "hint": "Catch exactly what's run out, since the phrase compresses together.",
+            "explanation": "'Run out' means to have none left, a meaning you can't predict just from 'run' — the noun right after tells you what's actually gone.",
+            "textToSpeak": "We've run out of milk again.",
             "options": [
-                "Can I get a brown paper bag for this one?",
-                "Can I get a brown paper bag for these ones?"
+                "We've run out of milk again.",
+                "We've run out of bread again."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -111,28 +111,28 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L113_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Notice one versus two, and 'in stock' versus 'in store'.",
-            "explanation": "Numbers like 'one' can shift slightly before certain sounds too, so don't rely on the shape of the word alone, listen for the actual vowel. 'In stock' and 'in store' are close enough in meaning that you need the exact phrase.",
-            "textToSpeak": "I'll take one more if you've still got it in stock.",
+            "instruction": "They said it fast — what did you actually hear?",
+            "hint": "Listen for exactly when they need to check in.",
+            "explanation": "'Check in' links its two words together fast, so the time detail that follows carries the real information here.",
+            "textToSpeak": "We need to check in before ten tomorrow.",
             "options": [
-                "I'll take one more if you've still got it in stock.",
-                "I'll take one more if you've already got it in stock."
+                "We need to check in before nine tomorrow.",
+                "We need to check in before ten tomorrow."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L113_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch select versus certain, and apparently versus unfortunately.",
-            "explanation": "'Select' and 'certain' mean almost the same thing here, so the exact word takes real focus rather than the general idea. 'Apparently' (based on what you've heard) and 'unfortunately' (expressing regret) also carry a different tone.",
-            "textToSpeak": "This coupon only works on select items, apparently.",
+            "instruction": "Natural speech blends words together. Catch the real message.",
+            "hint": "Notice whether time or patience is what's running low.",
+            "explanation": "'Run out of' can attach to many different nouns, so the specific thing that's running out needs your close attention.",
+            "textToSpeak": "I think we're running out of time.",
             "options": [
-                "This coupon only works on select items, apparently.",
-                "This coupon only works on select items, unfortunately."
+                "I think we're running out of time.",
+                "I think we're running out of patience."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -141,13 +141,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L114_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch the exact time, course versus dish, and 'or so' versus 'exactly'.",
-            "explanation": "'Main course' can sound like 'maing course' since the 'n' shifts to match the 'k' sound in 'course', a subtle nasal shift rather than a change in spelling. The timing and the precise dish name are what really matter here.",
-            "textToSpeak": "The main course still needs another ten minutes or so.",
+            "instruction": "Listen for the small word that changes the meaning.",
+            "hint": "Catch exactly when they'll get back to you.",
+            "explanation": "'Get back' means to return, or to respond, depending on context, and the timing word after it tells you which meaning applies here.",
+            "textToSpeak": "I'll get back to you by tomorrow morning.",
             "options": [
-                "The main course still needs another ten minutes or so.",
-                "The main course still needs another five minutes or so."
+                "I'll get back to you by tomorrow morning.",
+                "I'll get back to you by tomorrow evening."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -156,28 +156,28 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L114_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Notice more versus less, and green versus runner.",
-            "explanation": "'Green beans' often blends into 'greem beans' at speed, the 'n' shifting to match the 'b' sound. 'More' and 'less' seasoning are opposites, so that word decides the whole comment.",
-            "textToSpeak": "These green beans could use a bit more seasoning.",
+            "instruction": "Focus on the key detail hidden in the fast sentence.",
+            "hint": "Listen for whether they turned down the offer, or accepted it.",
+            "explanation": "'Turn down' means to refuse, a meaning that has nothing to do with volume or direction here, so the phrase as a whole is what matters.",
+            "textToSpeak": "She turned down the job offer.",
             "options": [
-                "These green beans could use a bit more seasoning.",
-                "These green beans could use a bit less seasoning."
+                "She accepted the job offer.",
+                "She turned down the job offer."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L114_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch 'quick' versus 'proper', and bite versus snack.",
-            "explanation": "'Jus' enough' (barely enough) and 'almost enough' (not quite enough) carry a subtly different meaning, so listen closely. 'Bite' and 'snack' are near-synonyms too, so pin down the exact word.",
-            "textToSpeak": "We've got jus' enough time to grab a quick bite.",
+            "instruction": "Listen again — which version matches what was said?",
+            "hint": "Notice exactly what they're getting back, since the phrase links smoothly.",
+            "explanation": "'Get back' can also mean to retrieve something, so context around the phrase tells you which of its meanings is intended here.",
+            "textToSpeak": "I finally got my deposit back today.",
             "options": [
-                "We've got jus' enough time to grab a quick bite.",
-                "We've got jus' enough time to grab a quick snack."
+                "I finally got my deposit back today.",
+                "I finally got my refund back today."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -186,13 +186,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L115_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch twenty versus thirty, and this versus that.",
-            "explanation": "This longer sentence stacks 'dunno' with a tricky number comparison, ten versus twenty versus thirty, all sharing that same '-ty' ending that blurs at speed. Take your time separating each piece.",
-            "textToSpeak": "I dunno if we've got ten minutes or twenty to catch this train.",
+            "instruction": "Listen carefully and catch the exact sentence.",
+            "hint": "Catch exactly what needs working out, since the phrase links together.",
+            "explanation": "'Work out' can mean to solve or to exercise, so the words around it, like the noun right after, tell you which meaning is intended.",
+            "textToSpeak": "We still need to work out the final budget.",
             "options": [
-                "I dunno if we've got ten minutes or twenty to catch this train.",
-                "We dunno if we've got ten minutes or twenty to catch this train."
+                "We still need to work out the final budget.",
+                "We still need to work out the final guest list."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -201,58 +201,58 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L115_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch packed versus late, and next versus last.",
-            "explanation": "This sentence stacks four separate reductions - 'nex'', 'prolly', 'gonna', and 'jus'' - about as dense as casual speech gets. Decode it piece by piece: next, probably, going to, and just.",
-            "textToSpeak": "The nex' train's prolly gonna be packed, jus' so you know.",
+            "instruction": "They said it fast — what did you actually hear?",
+            "hint": "Listen for whether they've thought about it, or haven't yet.",
+            "explanation": "'Think about' links its words smoothly, and the negative or its absence completely changes whether a decision has been made.",
+            "textToSpeak": "I haven't thought about it properly yet.",
             "options": [
-                "The nex' train's prolly gonna be packed, jus' so you know.",
-                "The nex' train's prolly gonna be packed, jus' so you're aware."
+                "I've thought about it properly already.",
+                "I haven't thought about it properly yet."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L115_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch behind versus ahead, and 'mus' versus 'could'.",
-            "explanation": "'Behind' and 'ahead' of schedule are opposites, so that word decides whether this is stressful news or good news. 'Mus' be' (a confident guess) and 'could be' (just a possibility) also carry different levels of certainty.",
-            "textToSpeak": "We mus' be running about ten minutes behind schedule now.",
+            "instruction": "Natural speech blends words together. Catch the real message.",
+            "hint": "Notice exactly how the situation eventually worked out.",
+            "explanation": "'Worked out' in past tense describes an outcome, and the detail that follows tells you whether that outcome was good or bad.",
+            "textToSpeak": "In the end, everything worked out fine.",
             "options": [
-                "We mus' be running about ten minutes ahead of schedule now.",
-                "We mus' be running about ten minutes behind schedule now."
+                "In the end, everything worked out fine.",
+                "In the end, nothing worked out at all."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L116_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch crashing versus freezing, and the exact interval.",
-            "explanation": "'Every ten minutes' packs a number into the middle of a sentence, exactly where it's easiest to lose focus. Crashing and freezing are different tech problems too, so listen for the specific word.",
-            "textToSpeak": "I dunno why this keeps crashing every ten minutes or so.",
+            "instruction": "Listen for the small word that changes the meaning.",
+            "hint": "Catch two phrasal verbs in the same sentence, each linked internally.",
+            "explanation": "This sentence combines 'find out' and 'get back', two separate phrasal verbs, so track both actions as the sentence moves between them.",
+            "textToSpeak": "Once we find out the price, I'll get back to you.",
             "options": [
-                "I dunno why this keeps crashing every twenty minutes or so.",
-                "I dunno why this keeps crashing every ten minutes or so."
+                "Once we find out the price, I'll get back to you.",
+                "Once I get back to you, we'll find out the price."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L116_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Notice firmware versus software, and update versus upgrade.",
-            "explanation": "'Firmware' and 'software' are related but different things, so the exact word really matters here. 'Update' and 'upgrade' are also close enough in meaning to require careful listening.",
-            "textToSpeak": "This'll prolly need a firmware update before it'll work properly.",
+            "instruction": "Focus on the key detail hidden in the fast sentence.",
+            "hint": "Listen for what exactly they're looking for, and where.",
+            "explanation": "'Look for' links tightly here, and the location that follows tells you where the search is actually happening.",
+            "textToSpeak": "I've been looking for my keys in the car.",
             "options": [
-                "This'll prolly need a firmware update before it'll work properly.",
-                "This'll prolly need a firmware upgrade before it'll work properly."
+                "I've been looking for my keys in the car.",
+                "I've been looking for my keys in the house."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -261,28 +261,28 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L116_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch next versus last, and everyone versus most people.",
-            "explanation": "This sentence stacks 'jus'' with the elided 'nex'', two consonant-cluster reductions close together. 'Everyone' and 'most people' describe very different rollout sizes, so listen for the precise phrase.",
-            "textToSpeak": "We jus' got the nex' version rolled out to everyone.",
+            "instruction": "Listen again — which version matches what was said?",
+            "hint": "Notice exactly what ran out, and what they did about it.",
+            "explanation": "This sentence pairs 'ran out' with a follow-up action, so both the problem and the solution need to be caught for the full picture.",
+            "textToSpeak": "We ran out of chairs, so we borrowed some.",
             "options": [
-                "We jus' got the nex' version rolled out to most people.",
-                "We jus' got the nex' version rolled out to everyone."
+                "We ran out of chairs, so we borrowed some.",
+                "We ran out of plates, so we borrowed some."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L117_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch soon versus now, and 'due' versus 'overdue'.",
-            "explanation": "'Due' (on schedule) and 'overdue' (past the schedule) suggest slightly different levels of urgency, so listen for the precise word. Doctor versus nurse is also worth confirming.",
-            "textToSpeak": "The doctor said I mus' be due for a check-up soon.",
+            "instruction": "Listen carefully and catch the exact sentence.",
+            "hint": "Catch exactly what they're asking you to figure out.",
+            "explanation": "'Work out' in a question still links smoothly, so the topic that follows is the real thing being asked about.",
+            "textToSpeak": "Can you work out what went wrong?",
             "options": [
-                "The doctor said I mus' be due for a check-up soon.",
-                "The doctor said I mus' be due for a check-up now."
+                "Can you work out what went wrong?",
+                "Can you work out what went right?"
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -291,13 +291,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L117_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch ate versus touched, and rash versus mark.",
-            "explanation": "This longer sentence stacks 'dunno' and 'jus'' together while also asking you to catch the cause: something eaten or something touched, both plausible triggers for a reaction.",
-            "textToSpeak": "I dunno if this rash is jus' a reaction to something I ate.",
+            "instruction": "They said it fast — what did you actually hear?",
+            "hint": "Listen for whether they're asking about checking in or checking out.",
+            "explanation": "'Check in' and 'check out' sound similar at the start, so the final word is what actually separates the two different questions.",
+            "textToSpeak": "Have you checked out of the hotel yet?",
             "options": [
-                "We dunno if this rash is jus' a reaction to something I ate.",
-                "I dunno if this rash is jus' a reaction to something I ate."
+                "Have you checked in to the hotel yet?",
+                "Have you checked out of the hotel yet?"
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -306,43 +306,43 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L117_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch days versus weeks, and 'prolly' versus 'definitely'.",
-            "explanation": "'Prolly' (a likely guess) and 'definitely' (a certainty) suggest very different confidence levels in the prediction. 'Days' and 'weeks' are also wildly different recovery times.",
-            "textToSpeak": "You'll prolly feel a bit sore for the nex' couple days.",
+            "instruction": "Natural speech blends words together. Catch the real message.",
+            "hint": "Notice exactly what they're asking you to turn down or turn up.",
+            "explanation": "'Turn down' and 'turn up' link the same way but point in opposite directions, so that final word decides the whole meaning.",
+            "textToSpeak": "Could you turn down the volume a bit?",
             "options": [
-                "You'll definitely feel a bit sore for the nex' couple days.",
-                "You'll prolly feel a bit sore for the nex' couple days."
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "fastSpeechDecoder",
-            "emoji": "⚡"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L118_Q1",
-            "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch the exact numbers, and I versus we.",
-            "explanation": "This sentence buries two numbers close together, ten and fifteen, exactly the kind of detail fast speech loves to blur. Slow each one down separately as you listen.",
-            "textToSpeak": "I dunno if we've got ten minutes or fifteen left for this test.",
-            "options": [
-                "I dunno if we've got ten minutes or fifteen left for this test.",
-                "We dunno if we've got ten minutes or fifteen left for this test."
+                "Could you turn down the volume a bit?",
+                "Could you turn up the volume a bit?"
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
+            "id": "LIS_FASTSPEECHDECODER_L118_Q1",
+            "interactionType": "choice",
+            "instruction": "Listen for the small word that changes the meaning.",
+            "hint": "Catch the negative, then exactly what they didn't find out.",
+            "explanation": "'Didn't find out' combines a reduced negative with a phrasal verb, so both pieces need to register together for the sentence to make sense.",
+            "textToSpeak": "We didn't find out until it was too late.",
+            "options": [
+                "We found out in plenty of time.",
+                "We didn't find out until it was too late."
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "fastSpeechDecoder",
+            "emoji": "⚡"
+        },
+        {
             "id": "LIS_FASTSPEECHDECODER_L118_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch the exact number, and redo versus review.",
-            "explanation": "'Redo' (do it again) and 'review' (check it over) require different amounts of effort, so listen for the exact verb. He versus she is also worth confirming.",
-            "textToSpeak": "He'll prolly need to redo the nex' two questions.",
+            "instruction": "Focus on the key detail hidden in the fast sentence.",
+            "hint": "Listen for whether they're not going to turn it down, or will.",
+            "explanation": "'Not going to turn it down' stacks a negative onto a phrasal verb, so hold onto both parts to get the full, accurate meaning.",
+            "textToSpeak": "I'm not going to turn down that offer.",
             "options": [
-                "He'll prolly need to redo the nex' two questions.",
-                "She'll prolly need to redo the nex' three questions."
+                "I'm not going to turn down that offer.",
+                "I'm going to turn down that offer."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -351,43 +351,43 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L118_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch updated versus shortened, and read versus see.",
-            "explanation": "This sentence stacks 'jus'' with the elided 'mus'', two reductions layered together in a school context. 'Updated' and 'shortened' describe very different changes to the list.",
-            "textToSpeak": "We jus' found out the mus'-read list got updated again.",
+            "instruction": "Listen again — which version matches what was said?",
+            "hint": "Notice exactly what they can't work out.",
+            "explanation": "'Can't work out' combines the negative modal with a phrasal verb, so the topic that follows is the real content still worth catching.",
+            "textToSpeak": "I can't work out why the printer stopped.",
             "options": [
-                "We've jus' found out the mus'-read list got updated again.",
-                "We jus' found out the mus'-read list got updated again."
+                "I can't work out why the printer stopped.",
+                "I can work out why the printer stopped."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L119_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch the exact time, next versus last, and 'prolly' versus 'definitely'.",
-            "explanation": "This sentence layers three reductions - 'nex'', 'prolly', and 'gonna' - alongside a tricky number right at the end. Take it apart carefully: next, probably, going to, and ten minutes.",
-            "textToSpeak": "The nex' concert's prolly gonna sell out within ten minutes.",
+            "instruction": "Listen carefully and catch the exact sentence.",
+            "hint": "Catch the full story, since two phrasal verbs and a reason appear together.",
+            "explanation": "This sentence links 'ran out' with a cause, so the reason for running out is just as important to catch as the phrasal verb itself.",
+            "textToSpeak": "We ran out of time because the traffic was so bad.",
             "options": [
-                "The nex' concert's prolly gonna sell out within twenty minutes.",
-                "The nex' concert's prolly gonna sell out within ten minutes."
+                "We ran out of time because the traffic was so bad.",
+                "We ran out of time because the meeting ran long."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L119_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch better versus worse, and season versus episode.",
-            "explanation": "'Better' and 'worse' are opposites, so that word decides the whole opinion being shared. 'Season' and 'episode' are also different scales of a show, so listen for the exact one.",
-            "textToSpeak": "I dunno why this show only gets better with the nex' season.",
+            "instruction": "They said it fast — what did you actually hear?",
+            "hint": "Listen for what they eventually worked out, and how.",
+            "explanation": "'Worked it out' describes a resolved outcome, and the method or detail that follows tells you how it actually got resolved.",
+            "textToSpeak": "We worked it out by splitting the cost evenly.",
             "options": [
-                "We dunno why this show only gets better with the nex' season.",
-                "I dunno why this show only gets better with the nex' season."
+                "We worked it out by splitting the cost unevenly.",
+                "We worked it out by splitting the cost evenly."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -396,13 +396,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L119_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch summer versus year, and tickets versus seats.",
-            "explanation": "This sentence stacks 'jus'' with the elided 'mus'-see', a natural pairing of reductions in excited, casual speech. 'Summer' and 'year' describe very different timeframes.",
-            "textToSpeak": "We jus' got tickets for the mus'-see show of the summer.",
+            "instruction": "Natural speech blends words together. Catch the real message.",
+            "hint": "Notice exactly what they're going to look into.",
+            "explanation": "'Going to look into' combines a reduced chunk with a phrasal verb, so the topic that follows carries the real substance of the sentence.",
+            "textToSpeak": "I'm going to look into cheaper flights.",
             "options": [
-                "We jus' got tickets for the mus'-see show of the summer.",
-                "We jus' got tickets for the mus'-see show of the year."
+                "I'm going to look into cheaper flights.",
+                "I'm going to look into cheaper hotels."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -411,45 +411,45 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L120_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch longest versus shortest, and next versus last.",
-            "explanation": "This review question layers 'dunno' with the elided 'nex'' and a number right in the middle. 'Longest' and 'shortest' are opposites, so that word wraps up the whole feeling being described.",
-            "textToSpeak": "I dunno why the nex' ten minutes always feel the longest.",
+            "instruction": "Listen for the small word that changes the meaning.",
+            "hint": "By now, expect phrasal verbs to blend and link just like any other fast phrase.",
+            "explanation": "This level combines several phrasal verbs in one natural sentence — 'find out', 'get back', 'work out' — exactly as they'd appear in real conversation.",
+            "textToSpeak": "Once we find out more, I'll get back to you and we'll work it out.",
             "options": [
-                "I dunno why the nex' ten minutes always feel the shortest.",
-                "I dunno why the nex' ten minutes always feel the longest."
+                "Once we find out more, I'll get back to you and we'll work it out.",
+                "Once we work it out, I'll get back to you and we'll find out more."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L120_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch the exact time, 'wrap up' versus 'start', and 'prolly' versus 'definitely'.",
-            "explanation": "'Wrap up' (finish) and 'start' are opposite points in a task, so that verb decides the whole meaning. This sentence also stacks 'prolly' and 'jus'' together, a very natural combination in casual speech.",
-            "textToSpeak": "It'll prolly jus' take me another ten minutes to wrap up.",
+            "instruction": "Focus on the key detail hidden in the fast sentence.",
+            "hint": "Catch the full sentence despite several linked phrasal verbs.",
+            "explanation": "By Level 120, phrasal verbs should register as single meaningful units, not separate small words that need to be decoded one at a time.",
+            "textToSpeak": "They put off the decision until they could look into it properly.",
             "options": [
-                "It'll definitely jus' take me another ten minutes to wrap up.",
-                "It'll prolly jus' take me another ten minutes to wrap up."
+                "They put off the decision until they could look into it properly.",
+                "They rushed the decision without looking into it properly."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L120_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Zero in on 'now' versus 'soon', and whether it's 'jus' about' or 'almost'.",
-            "explanation": "This closing question stacks three reductions in a row - 'mus'', 'jus'', and 'nex'' - the densest sentence in the tier so far. If you can decode all three smoothly, you're ready to move into even faster, more natural speech.",
-            "textToSpeak": "We mus' be jus' about ready for the nex' step now.",
+            "instruction": "Listen again — which version matches what was said?",
+            "hint": "Notice how naturally the whole sentence flows despite several phrasal verbs stacked together.",
+            "explanation": "Phrasal verbs are some of the most frequent structures in spoken English, so recognizing them instantly here will help with almost any real conversation.",
+            "textToSpeak": "We ran out of options, so we had to turn down the deal.",
             "options": [
-                "They mus' be jus' about ready for the nex' step now.",
-                "We mus' be jus' about ready for the nex' step now."
+                "We ran out of options, so we had to turn down the deal.",
+                "We ran out of options, so we had to accept the deal."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         }

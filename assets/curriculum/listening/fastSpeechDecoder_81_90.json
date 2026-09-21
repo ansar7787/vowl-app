@@ -6,43 +6,43 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L81_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch later versus tomorrow, and 'im versus 'er.",
-            "explanation": "After a verb, 'him' often loses its 'h' sound and shrinks to just 'im, so 'tell him' sounds like 'tell'im'. Listen carefully for the vowel to tell 'im (him) apart from 'er (her).",
-            "textToSpeak": "Can you tell 'im I'll call back a bit later?",
+            "instruction": "They said it fast — what did you actually hear?",
+            "hint": "Listen for the exact color, since the sound before it can shift.",
+            "explanation": "Before a word starting with 'b', an 'n' sound often shifts toward an 'm' sound, so 'green bag' can come out closer to 'greem bag'.",
+            "textToSpeak": "She's carrying a green bag.",
             "options": [
-                "Can you tell 'im I'll call back a bit later?",
-                "Can you tell 'im I'll call back a bit tomorrow?"
+                "She's carrying a blue bag.",
+                "She's carrying a green bag."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L81_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Notice deadline versus meeting, and twice versus once.",
-            "explanation": "'Asked 'im' packs the same h-dropping reduction into a past-tense verb. The real content to catch is how many times, and what exactly was being asked about.",
-            "textToSpeak": "I already asked 'im twice about the deadline.",
+            "instruction": "Listen carefully and catch the exact sentence.",
+            "hint": "Catch what exactly they don't believe.",
+            "explanation": "'Don't believe' can shift its final 'n' sound toward the following 'b', blending the two words closer together than the spelling shows.",
+            "textToSpeak": "I don't believe that excuse at all.",
             "options": [
-                "I already asked 'im twice about the deadline.",
-                "I already asked 'im twice about the meeting."
+                "I do believe that excuse at all.",
+                "I don't believe that excuse at all."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L81_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch 'im versus 'er, and hear back versus get back.",
-            "explanation": "'Let him know' reduces so smoothly that 'him' becomes just a light 'im sound tucked onto 'let'. 'Hear back' (receive a reply) and 'get back' (return somewhere) are very different instructions too.",
-            "textToSpeak": "Let 'im know as soon as you hear back.",
+            "instruction": "Natural speech blends words together. Catch the real message.",
+            "hint": "Notice exactly which month is being confirmed.",
+            "explanation": "'Ten people' can shift its final sound toward the following consonant, so the number itself deserves a careful second listen.",
+            "textToSpeak": "Ten people confirmed for Saturday.",
             "options": [
-                "Let 'er know as soon as you hear back.",
-                "Let 'im know as soon as you hear back."
+                "Ten people confirmed for Sunday.",
+                "Ten people confirmed for Saturday."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -51,13 +51,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L82_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch 'er versus 'im, and weekend versus holiday.",
-            "explanation": "'Her' reduces to 'er after a verb, just like 'him' reduces to 'im - both lose that initial 'h' sound in fast, connected speech. Ask versus tell is also worth double-checking here.",
-            "textToSpeak": "Did you ask 'er about the weekend plans yet?",
+            "instruction": "They said it fast — what did you actually hear?",
+            "hint": "Listen for the blended sound where 'don't' meets 'you'.",
+            "explanation": "When 't' meets 'y' across a word boundary, the two often merge into a 'ch' sound, so 'don't you' can sound like 'dontcha'.",
+            "textToSpeak": "Don't you think it's a bit early?",
             "options": [
-                "Did you tell 'er about the weekend plans yet?",
-                "Did you ask 'er about the weekend plans yet?"
+                "Do you think it's a bit early?",
+                "Don't you think it's a bit early?"
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -66,28 +66,28 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L82_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Notice 'er versus 'im, and shop versus café.",
-            "explanation": "'Saw 'er' is a smooth, fast blend of 'saw her' - the 'h' simply vanishes between the two vowel-adjacent sounds. Catch the location and the timing too.",
-            "textToSpeak": "I saw 'er at the shop earlier this morning.",
+            "instruction": "Listen carefully and catch the exact sentence.",
+            "hint": "Catch exactly what they want, since the sounds merge together.",
+            "explanation": "'Want you' often merges into something close to 'wantcha' at natural speed, blending the 't' and 'y' sounds into one.",
+            "textToSpeak": "I want you to double-check the figures.",
             "options": [
-                "I saw 'er at the shop earlier this morning.",
-                "I saw 'im at the shop earlier this morning."
+                "I need you to double-check the figures.",
+                "I want you to double-check the figures."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L82_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch call versus text, and 'a chance' versus 'the chance'.",
-            "explanation": "'Give her a call' compresses down to 'give'er a call' in relaxed speech. The small article 'a' versus 'the' at the end is subtle but still worth listening for.",
-            "textToSpeak": "Give 'er a call when you get a chance.",
+            "instruction": "Natural speech blends words together. Catch the real message.",
+            "hint": "Notice whether they got it or not.",
+            "explanation": "'Did you' commonly merges into 'didja' in casual speech, as the 'd' and 'y' sounds blend into each other.",
+            "textToSpeak": "Did you get my message earlier?",
             "options": [
-                "Give 'er a text when you get a chance.",
-                "Give 'er a call when you get a chance."
+                "Didn't you get my message earlier?",
+                "Did you get my message earlier?"
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -96,28 +96,28 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L83_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch bags versus boxes, and upstairs versus downstairs.",
-            "explanation": "'Them' reduces to a quick 'em sound after a verb, similar to how 'him' and 'her' reduce. 'Upstairs' and 'downstairs' are opposites, so that word decides the whole request.",
-            "textToSpeak": "Could you help 'em carry these bags upstairs?",
+            "instruction": "They said it fast — what did you actually hear?",
+            "hint": "Catch the exact favor being asked, since the sounds blend at the boundary.",
+            "explanation": "'Would you' often merges its 'd' and 'y' sounds together into a 'j'-like sound, coming out close to 'wouldja'.",
+            "textToSpeak": "Would you mind grabbing my bag?",
             "options": [
-                "Could you help 'em carry these bags upstairs?",
-                "Would you help 'em carry these bags upstairs?"
+                "Could you mind grabbing my bag?",
+                "Would you mind grabbing my bag?"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L83_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Pin down 'closes' versus 'opens', plus the exact time.",
-            "explanation": "'Opens' and 'closes' are opposites, and catching the wrong one would send someone at completely the wrong time. 'Told' and 'asked' are also different actions worth confirming.",
-            "textToSpeak": "I told 'em the store closes at nine tonight.",
+            "instruction": "Listen carefully and catch the exact sentence.",
+            "hint": "Listen for whether they should or shouldn't.",
+            "explanation": "'Should you' blends the same way as 'would you', so this sentence depends on catching the negative that changes its meaning.",
+            "textToSpeak": "Shouldn't you be heading home by now?",
             "options": [
-                "I told 'em the store closes at nine tonight.",
-                "I asked 'em the store closes at nine tonight."
+                "Shouldn't you be heading home by now?",
+                "Shouldn't you be heading out by now?"
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -126,28 +126,28 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L83_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch discount versus refund, and bulk versus online.",
-            "explanation": "'Discount' (a lower price) and 'refund' (money given back) are different offers entirely, so that noun really matters. 'Should' and 'could' also carry slightly different levels of obligation.",
-            "textToSpeak": "We should give 'em a discount for buying in bulk.",
+            "instruction": "Natural speech blends words together. Catch the real message.",
+            "hint": "Notice exactly what they're guiding, since the sounds merge together.",
+            "explanation": "'Could you' merges toward 'couldja' at speed, so the actual request that follows carries the real information here.",
+            "textToSpeak": "Could you show me the way to the exit?",
             "options": [
-                "We should give 'em a discount for buying online.",
-                "We should give 'em a discount for buying in bulk."
+                "Could you show me the way to the exit?",
+                "Could you show me the way to the entrance?"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L84_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch restaurant versus café, and try versus like.",
-            "explanation": "'Didja' packs 'did you' into one quick, casual sound - the 'd' and 'y' blend together into a soft 'j'. From there, the real details are the place and the verb.",
-            "textToSpeak": "Didja try that new restaurant downtown yet?",
+            "instruction": "They said it fast — what did you actually hear?",
+            "hint": "Listen for the exact shop mentioned, since two 's'-like sounds merge into one.",
+            "explanation": "When 's' meets 'sh' across a boundary, the two sounds often blend into a single longer 'sh', so 'this shop' can sound closer to 'thishop'.",
+            "textToSpeak": "This shop closes earlier on weekends.",
             "options": [
-                "Didja like that new restaurant downtown yet?",
-                "Didja try that new restaurant downtown yet?"
+                "That shop closes earlier on weekends.",
+                "This shop closes earlier on weekends."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -156,28 +156,28 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L84_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Notice remember versus forget, and chicken versus fish.",
-            "explanation": "'Remember' and 'forget' are opposites, so that verb decides whether this is good news or bad news for dinner. 'This morning' and 'last night' also completely change the timing.",
-            "textToSpeak": "Didja remember to defrost the chicken this morning?",
+            "instruction": "Listen carefully and catch the exact sentence.",
+            "hint": "Catch whether the news was shared or kept quiet.",
+            "explanation": "'Was shared' blends its final 's' into the following 'sh' sound, merging the two words at natural speed.",
+            "textToSpeak": "The news was shared with the whole team.",
             "options": [
-                "Didja forget to defrost the chicken this morning?",
-                "Didja remember to defrost the chicken this morning?"
+                "The news was shared with the whole team.",
+                "The news was kept from the whole team."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L84_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch bill versus receipt, and service charge versus delivery charge.",
-            "explanation": "'Bill' and 'receipt' are related but different documents, so listen for the exact word. 'Service charge' and 'delivery charge' are also different fees you'd want to catch precisely.",
-            "textToSpeak": "Didja notice the bill included a service charge?",
+            "instruction": "Natural speech blends words together. Catch the real message.",
+            "hint": "Notice exactly which store is being described.",
+            "explanation": "'This' merging into the following 'sh' sound is common across many phrases, so context clues around it help confirm the meaning.",
+            "textToSpeak": "This showroom just opened last month.",
             "options": [
-                "Didja notice the bill included a service charge?",
-                "Didja notice the receipt included a service charge?"
+                "This showroom just opened last month.",
+                "This showroom just closed last month."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -186,13 +186,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L85_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch online versus early, and flying versus driving.",
-            "explanation": "'Dontcha' blends 'don't you' together, with the 't' and 'y' merging into a soft 'ch' sound. That kind of coalescence is extremely common right before 'you' in fast speech.",
-            "textToSpeak": "Dontcha usually check in online before flying?",
+            "instruction": "They said it fast — what did you actually hear?",
+            "hint": "Catch what exactly they asked about, since the sounds merge together.",
+            "explanation": "'Did that' can blend its consonants together fast, so the specific topic that follows deserves close attention.",
+            "textToSpeak": "Did that actually solve the problem?",
             "options": [
-                "Dontcha usually check in early before flying?",
-                "Dontcha usually check in online before flying?"
+                "Does that actually solve the problem?",
+                "Did that actually solve the problem?"
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -201,13 +201,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L85_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Notice itinerary versus reservation, and 'should' versus 'could'.",
-            "explanation": "'Itinerary' and 'reservation' are both travel documents but cover different things, so listen closely. 'Should' and 'could' also carry a slightly different level of suggestion.",
-            "textToSpeak": "Dontcha think we should double-check the itinerary?",
+            "instruction": "Listen carefully and catch the exact sentence.",
+            "hint": "Listen for whether they noticed the change or missed it entirely.",
+            "explanation": "'Did you notice' merges its 'd' and 'y' sounds, coming out closer to 'didja notice', so the verb that follows is the key detail.",
+            "textToSpeak": "Did you notice the new sign outside?",
             "options": [
-                "Dontcha think we should double-check the itinerary?",
-                "Dontcha think we should double-check the reservation?"
+                "Did you notice the new sign outside?",
+                "Did you miss the new sign outside?"
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -216,88 +216,88 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L85_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch visa versus permit, and country versus region.",
-            "explanation": "'Visa' and 'permit' are related travel documents but not the same thing, so the exact word matters. 'Dontcha' and the fully pronounced 'don't you' mean exactly the same thing, just said at different speeds.",
-            "textToSpeak": "Dontcha need a visa to visit that country?",
+            "instruction": "Natural speech blends words together. Catch the real message.",
+            "hint": "Notice the exact outcome, since the question blends together.",
+            "explanation": "'Did that help' compresses its consonants at speed, so the surrounding context tells you whether the answer was positive or not.",
+            "textToSpeak": "Did that actually help in the end?",
             "options": [
-                "Dontcha need a permit to visit that country?",
-                "Dontcha need a visa to visit that country?"
+                "Did that actually help in the end?",
+                "Did that actually hurt in the end?"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L86_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch the exact timeframe, and office versus home versus studio.",
-            "explanation": "'Whatcha' blends 'what are you' (or sometimes 'what have you') into one relaxed sound. Because the reduction hides the grammar, lean on the content words: when, and where.",
-            "textToSpeak": "Whatcha working on this week at the office?",
+            "instruction": "They said it fast — what did you actually hear?",
+            "hint": "Track two blended boundaries in the same sentence.",
+            "explanation": "This sentence has two separate assimilation points, 'don't you' and 'want you', so treat it as two smaller checks in one breath.",
+            "textToSpeak": "Don't you want your own copy of the file?",
             "options": [
-                "Whatcha working on this week at the office?",
-                "Whatcha working on this month at the office?"
+                "Do you want your own copy of the file?",
+                "Don't you want your own copy of the file?"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L86_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Notice new versus old, and laptop versus tablet.",
-            "explanation": "'Whatcha got' packs 'what have you got' into a very casual, quick phrase. 'Installed' and 'downloaded' overlap in meaning, so listen for the precise word used.",
-            "textToSpeak": "Whatcha got installed on that new laptop?",
+            "instruction": "Listen carefully and catch the exact sentence.",
+            "hint": "Catch exactly what they thought would happen.",
+            "explanation": "'Would you have' blends its consonants heavily, so the hypothetical outcome that follows is the real content of the sentence.",
+            "textToSpeak": "Would you have done it differently?",
             "options": [
-                "Whatcha got installed on that old laptop?",
-                "Whatcha got installed on that new laptop?"
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "fastSpeechDecoder",
-            "emoji": "⚡"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L86_Q3",
-            "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch server versus system, and 'think' versus 'reckon'.",
-            "explanation": "'Server' and 'system' are related tech terms but not interchangeable, so listen carefully. 'Think' and 'reckon' are near-synonyms too, so the exact word takes real focus.",
-            "textToSpeak": "Whatcha think caused the server to crash overnight?",
-            "options": [
-                "Whatcha reckon caused the server to crash overnight?",
-                "Whatcha think caused the server to crash overnight?"
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "fastSpeechDecoder",
-            "emoji": "⚡"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L87_Q1",
-            "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch the exact day, and book versus confirm.",
-            "explanation": "'Gotcha' here means 'I understand', a casual reply that blends 'got you' into one syllable. 'Got it' means almost the same thing, so listen for the actual phrase rather than assuming.",
-            "textToSpeak": "Gotcha, I'll book the appointment for Thursday then.",
-            "options": [
-                "Gotcha, I'll book the appointment for Thursday then.",
-                "Gotcha, I'll book the appointment for Tuesday then."
+                "Would you have done it differently?",
+                "Should you have done it differently?"
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
+            "id": "LIS_FASTSPEECHDECODER_L86_Q3",
+            "interactionType": "choice",
+            "instruction": "Natural speech blends words together. Catch the real message.",
+            "hint": "Notice whether this is a genuine question or a polite check.",
+            "explanation": "'Shouldn't we' blends its ending into the following word, so tone and context are useful clues alongside the sound itself.",
+            "textToSpeak": "Shouldn't we double-check before sending?",
+            "options": [
+                "Shouldn't we double-check before sending?",
+                "Shouldn't we double-check after sending?"
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "fastSpeechDecoder",
+            "emoji": "⚡"
+        },
+        {
+            "id": "LIS_FASTSPEECHDECODER_L87_Q1",
+            "interactionType": "choice",
+            "instruction": "They said it fast — what did you actually hear?",
+            "hint": "Catch exactly what they need from you.",
+            "explanation": "'Need you' merges into something close to 'needja' at speed, so the request that follows carries the real information.",
+            "textToSpeak": "I need you to review this by noon.",
+            "options": [
+                "I want you to review this by noon.",
+                "I need you to review this by noon."
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "fastSpeechDecoder",
+            "emoji": "⚡"
+        },
+        {
             "id": "LIS_FASTSPEECHDECODER_L87_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Notice the exact day, and 'should' versus 'could' versus 'are already'.",
-            "explanation": "'Should be back' (an expectation) and 'could be back' (just a possibility) suggest slightly different levels of certainty. The day mentioned is also worth confirming precisely.",
-            "textToSpeak": "Gotcha, so the results should be back by Monday.",
+            "instruction": "Listen carefully and catch the exact sentence.",
+            "hint": "Listen for whether they should or shouldn't send it yet.",
+            "explanation": "'Should you' merges its consonants together, so the negative or its absence is the real thing being tested here.",
+            "textToSpeak": "Should you send that before it's approved?",
             "options": [
-                "Gotcha, so the results should be back by Monday.",
-                "Gotcha, so the results should be back by Friday."
+                "Should you send that before it's approved?",
+                "Shouldn't you send that before it's approved?"
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -306,43 +306,43 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L87_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch singular versus plural, and 'make sure' versus 'try'.",
-            "explanation": "'Make sure' (a firm promise) and 'try' (a weaker attempt) suggest different levels of confidence in getting it done. Singular 'allergy' versus plural 'allergies' is also a small but real detail.",
-            "textToSpeak": "Gotcha, I'll make sure to mention your allergy.",
+            "instruction": "Natural speech blends words together. Catch the real message.",
+            "hint": "Notice the exact deadline mentioned after the merged phrase.",
+            "explanation": "'Could you have' blends together fast, so the timing detail that follows is where the real content sits.",
+            "textToSpeak": "Could you have it ready by Thursday?",
             "options": [
-                "Gotcha, I'll make sure to ask about your allergy.",
-                "Gotcha, I'll make sure to mention your allergy."
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "fastSpeechDecoder",
-            "emoji": "⚡"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L88_Q1",
-            "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch notes versus books, and project versus presentation.",
-            "explanation": "'Wontcha' blends 'won't you' together the same way 'dontcha' blends 'don't you' - the 't' and 'y' coalesce into 'ch'. The fully pronounced 'won't you' means exactly the same thing, just spoken more carefully.",
-            "textToSpeak": "Wontcha need your notes for the group project?",
-            "options": [
-                "Wontcha need your notes for the group project?",
-                "Won't you need your notes for the group project?"
+                "Could you have it ready by Thursday?",
+                "Could you have it ready by Wednesday?"
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
+            "id": "LIS_FASTSPEECHDECODER_L88_Q1",
+            "interactionType": "choice",
+            "instruction": "They said it fast — what did you actually hear?",
+            "hint": "Catch whether this is a request or already a confirmed plan.",
+            "explanation": "'Would you rather' blends its sounds together, so the tone and the option chosen afterward tell you what's really being asked.",
+            "textToSpeak": "Would you rather meet in person?",
+            "options": [
+                "Do you want to meet in person?",
+                "Would you rather meet in person?"
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "fastSpeechDecoder",
+            "emoji": "⚡"
+        },
+        {
             "id": "LIS_FASTSPEECHDECODER_L88_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Notice the exact name, and tonight versus tomorrow.",
-            "explanation": "Names can be genuinely tricky to catch at speed since they carry no context clues, so listen closely for 'Sarah' versus 'Hannah'. 'Studying' and 'revising' are also close enough in meaning to require full attention.",
-            "textToSpeak": "Wontcha be studying with Sarah again tonight?",
+            "instruction": "Listen carefully and catch the exact sentence.",
+            "hint": "Listen for exactly what they didn't expect.",
+            "explanation": "'Didn't you' blends its sounds at the boundary, so the surprise or expectation that follows is the real content here.",
+            "textToSpeak": "Didn't you expect a bigger turnout?",
             "options": [
-                "Wontcha be studying with Sarah again tonight?",
-                "Wontcha be studying with Sarah again tomorrow?"
+                "Didn't you expect a bigger turnout?",
+                "Did you expect a bigger turnout?"
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -351,43 +351,43 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L88_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch exam versus course, and soon versus today.",
-            "explanation": "'Wontcha' always stands for 'won't you' specifically, a useful pattern to recognise since it only ever means one thing. 'Exam' and 'course' are related school words but not the same, so listen precisely.",
-            "textToSpeak": "Wontcha need to register for that exam soon?",
+            "instruction": "Natural speech blends words together. Catch the real message.",
+            "hint": "Notice whether this happened before or hasn't happened yet.",
+            "explanation": "'Hasn't she' blends its ending into the next word, so tense and the surrounding detail both matter for the full meaning.",
+            "textToSpeak": "Hasn't she already left for the airport?",
             "options": [
-                "Won't you need to register for that exam soon?",
-                "Wontcha need to register for that exam soon?"
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "fastSpeechDecoder",
-            "emoji": "⚡"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L89_Q1",
-            "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch season versus episode, 'reckon' versus 'think', and the tense.",
-            "explanation": "'Reckon' and 'think' are near-synonyms for guessing, so listen for the exact one used. The tense also matters here: 'happens' (a prediction) versus 'happened' (something already known).",
-            "textToSpeak": "Whatcha reckon happens at the end of the season?",
-            "options": [
-                "Whatcha reckon happens at the end of the season?",
-                "Whatcha reckon happened at the end of the season?"
+                "Hasn't she already left for the airport?",
+                "Has she already left for the airport?"
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
+            "id": "LIS_FASTSPEECHDECODER_L89_Q1",
+            "interactionType": "choice",
+            "instruction": "They said it fast — what did you actually hear?",
+            "hint": "Track the merged sound in each half of the sentence.",
+            "explanation": "This sentence blends sounds in two separate places, so listen to it as two connected chunks rather than one long unbroken phrase.",
+            "textToSpeak": "I don't think you noticed, but I did mention it.",
+            "options": [
+                "I think you noticed, but I did mention it.",
+                "I don't think you noticed, but I did mention it."
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "fastSpeechDecoder",
+            "emoji": "⚡"
+        },
+        {
             "id": "LIS_FASTSPEECHDECODER_L89_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Notice starts versus ends, and story versus film.",
-            "explanation": "This sentence stacks two reductions together, 'dontcha' and 'wanna', exactly how an excited, casual question sounds. 'Starts' and 'ends' are opposites, so that word decides everything.",
-            "textToSpeak": "Dontcha wanna know how the story ends?",
+            "instruction": "Listen carefully and catch the exact sentence.",
+            "hint": "Catch exactly what they'd rather do, and why.",
+            "explanation": "'Would you rather' merges its sounds, and the reason that follows tells you the real preference being expressed.",
+            "textToSpeak": "Would you rather wait here, since it's starting to rain?",
             "options": [
-                "Dontcha wanna know how the story ends?",
-                "Don't you wanna know how the story ends?"
+                "Would you rather wait here, since it's starting to rain?",
+                "Would you rather leave now, since it's starting to rain?"
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -396,60 +396,60 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L89_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch soundtrack versus setlist, and 'for' versus 'about'.",
-            "explanation": "This sentence packs in two separate coalescence patterns back to back, 'gotcha' and 'whatcha' - a real workout for your ear. 'Soundtrack' and 'setlist' are related music terms but not the same thing.",
-            "textToSpeak": "Gotcha, so whatcha thinking for the soundtrack then?",
+            "instruction": "Natural speech blends words together. Catch the real message.",
+            "hint": "Notice both the question and its underlying assumption.",
+            "explanation": "'Shouldn't you have' blends across three words, so hold onto the full meaning rather than reacting to just the first sound you catch.",
+            "textToSpeak": "Shouldn't you have told me sooner about the change?",
             "options": [
-                "Gotcha, so whatcha thinking for the setlist then?",
-                "Gotcha, so whatcha thinking for the soundtrack then?"
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "fastSpeechDecoder",
-            "emoji": "⚡"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L90_Q1",
-            "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch 'er versus 'im, before versus after, and pick up versus drop off.",
-            "explanation": "This sentence uses two h-dropped pronouns back to back, 'er (her) and 'em (them), both losing their initial sound in fast, connected speech. There's a lot to track here, so take it detail by detail.",
-            "textToSpeak": "Tell 'er I'll pick 'em up after school today.",
-            "options": [
-                "Tell 'er I'll pick 'em up after school today.",
-                "Tell 'er I'll drop 'em off after school today."
+                "Shouldn't you have told me sooner about the change?",
+                "Shouldn't you have told me later about the change?"
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
-            "id": "LIS_FASTSPEECHDECODER_L90_Q2",
+            "id": "LIS_FASTSPEECHDECODER_L90_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch harsh versus unfair, and 'er versus 'im.",
-            "explanation": "This sentence stacks three reductions in a row - 'dontcha', 'whatcha', and 'er - a genuine workout for fast-speech listening. Break it into pieces: don't you, what have you, and her.",
-            "textToSpeak": "Dontcha think whatcha told 'er was a bit harsh?",
+            "instruction": "They said it fast — what did you actually hear?",
+            "hint": "By now, expect consonants at word boundaries to blend into new sounds.",
+            "explanation": "This level combines several assimilation patterns in one sentence — 'don't you', 'want you' — each shifting the sounds at the boundary.",
+            "textToSpeak": "Don't you think they want you to speak up?",
             "options": [
-                "Dontcha think whatcha told 'er was a bit unfair?",
-                "Dontcha think whatcha told 'er was a bit harsh?"
+                "Do you think they want you to speak up?",
+                "Don't you think they want you to speak up?"
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
+            "id": "LIS_FASTSPEECHDECODER_L90_Q2",
+            "interactionType": "choice",
+            "instruction": "Listen carefully and catch the exact sentence.",
+            "hint": "Catch the full sentence despite several blended boundaries.",
+            "explanation": "Assimilation often stacks up in casual speech, with several sounds shifting in the same sentence — trust the content words to guide the meaning.",
+            "textToSpeak": "Would you have believed it if I hadn't shown you?",
+            "options": [
+                "Would you have believed it if I hadn't shown you?",
+                "Would you have believed it if I had shown you?"
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "fastSpeechDecoder",
+            "emoji": "⚡"
+        },
+        {
             "id": "LIS_FASTSPEECHDECODER_L90_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch the exact day, 'im versus 'er, and 'gotcha' versus 'got it'.",
-            "explanation": "This final review question layers 'gotcha' with two more h-dropped pronouns, 'im and 'em - three separate reductions in one breath. Real conversations really do sound like this, so this kind of density is exactly what you're training for.",
-            "textToSpeak": "Gotcha, so tell 'im we'll help 'em move on Saturday.",
+            "instruction": "Natural speech blends words together. Catch the real message.",
+            "hint": "Notice how naturally the blended sounds still carry a clear meaning.",
+            "explanation": "By this level, assimilation should sound like ordinary fast English rather than a puzzle — the meaning comes through once you stop expecting crisp word edges.",
+            "textToSpeak": "Didn't you say you'd rather handle it yourself?",
             "options": [
-                "Gotcha, so tell 'im we'll help 'em move on Sunday.",
-                "Gotcha, so tell 'im we'll help 'em move on Saturday."
+                "Didn't you say you'd rather handle it yourself?",
+                "Did you say you'd rather handle it yourself?"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         }

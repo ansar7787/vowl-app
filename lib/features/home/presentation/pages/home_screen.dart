@@ -228,7 +228,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         sliver: SliverToBoxAdapter(
                           child: Column(
                             children: [
-                              SizedBox(height: 16.h),
+                              SizedBox(height: 24.h),
                               ValueListenableBuilder<int?>(
                                 valueListenable: _globalRank,
                                 builder: (context, rank, child) {
@@ -249,7 +249,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         sliver: SliverToBoxAdapter(
                           child: Column(
                             children: [
-                              SizedBox(height: 32.h),
+                              SizedBox(height: 24.h),
                               HomeSectionHeader(
                                 title: context.tr(
                                   'home.quest_arena_title',

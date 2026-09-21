@@ -6,13 +6,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L21_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Check for 'won't' versus 'will', then catch what's being missed.",
-            "explanation": "'Won't' and 'will' can sound close together at speed, since only a final consonant separates them - miss it, and an apology turns into a promise.",
-            "textToSpeak": "I won't be able to make the meeting.",
+            "instruction": "Listen carefully and catch the exact sentence.",
+            "hint": "Check whether the habit is there or missing before anything else.",
+            "explanation": "'Don't' squeezes a whole negative into one quick syllable. That final 't' is often barely released, so it's easy to hear 'do' when the speaker actually meant the opposite.",
+            "textToSpeak": "I don't usually drink coffee after lunch.",
             "options": [
-                "I won't be able to join the meeting.",
-                "I won't be able to make the meeting."
+                "I usually drink coffee after lunch.",
+                "I don't usually drink coffee after lunch."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -21,28 +21,28 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L21_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Listen for 'won't' or 'will', and the exact word for what's being asked.",
-            "explanation": "'Won't' versus 'will' hinges on a barely-there final sound, so don't assume - listen for it directly. 'Approve' and 'accept' are close in meaning but not identical, so catch the real verb.",
-            "textToSpeak": "The manager won't approve this request.",
+            "instruction": "They said it fast — what did you actually hear?",
+            "hint": "Listen for the clipped 't' sound at the end of 'doesn't'.",
+            "explanation": "'Doesn't' packs 'does' and 'not' into one beat, so the negative can slide by almost silently. Miss it and the sentence means the exact opposite.",
+            "textToSpeak": "This app doesn't work without wifi.",
             "options": [
-                "The manager won't approve this request.",
-                "The manager won't approve this refund."
+                "This app works without wifi.",
+                "This app doesn't work without wifi."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L21_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Notice printer versus scanner, and 'won't' versus 'can't'.",
-            "explanation": "'Won't' (refuses to) and 'can't' (is unable to) describe two different problems, even though both are quick negative contractions. Also confirm which device is having trouble.",
-            "textToSpeak": "This printer won't connect to the network.",
+            "instruction": "Natural speech blends words together. Catch the real message.",
+            "hint": "Catch both the negative and the exact day mentioned.",
+            "explanation": "Beyond the reduced 'doesn't', a second detail — the day of the week — also needs full attention, since it's easy to focus on one and miss the other.",
+            "textToSpeak": "The library doesn't open on Mondays.",
             "options": [
-                "This printer can't connect to the network.",
-                "This printer won't connect to the network."
+                "The library doesn't open on Sundays.",
+                "The library doesn't open on Mondays."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -51,28 +51,28 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L22_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch the tense, and what you tried to do.",
-            "explanation": "'Wasn't' (past) and 'isn't' (present) share a similar rushed shape, so the vowel is your real clue to the timing. 'Called' versus 'visited' also changes exactly what happened.",
-            "textToSpeak": "He wasn't home when I called.",
+            "instruction": "Listen for the small word that changes the meaning.",
+            "hint": "Listen for whether the message actually arrived or not.",
+            "explanation": "'Didn't' compresses 'did' and 'not' together, and the negative 't' at the end is short and easy to swallow at natural speed.",
+            "textToSpeak": "I didn't get your text until this morning.",
             "options": [
-                "He wasn't home when I called.",
-                "She wasn't home when I called."
+                "I got your text until this morning.",
+                "I didn't get your text until this morning."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L22_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Listen for who wasn't ready, and what triggered it.",
-            "explanation": "'They weren't' and 'we weren't' can blur together, since the subject pronoun carries very little stress in fast speech. Also catch 'arrived' versus 'left' - opposite moments in a visit.",
-            "textToSpeak": "They weren't ready when we arrived.",
+            "instruction": "Focus on the key detail hidden in the fast sentence.",
+            "hint": "Catch the negative first, then who it applies to.",
+            "explanation": "'Didn't' can reduce so far that only a faint stop remains where the 't' should be, making it sound close to a plain past tense 'did'.",
+            "textToSpeak": "They didn't mention the price at all.",
             "options": [
-                "They weren't ready when we left.",
-                "They weren't ready when we arrived."
+                "They mentioned the price at all.",
+                "They didn't mention the price at all."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -81,43 +81,43 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L22_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch which relatives, and 'surprised' versus 'shocked'.",
-            "explanation": "'Weren't' packs 'were' plus 'not' into one beat - losing that final 't' sound would completely reverse the reaction described. 'Surprised' and 'shocked' are close synonyms, so listen for the specific word.",
-            "textToSpeak": "My grandparents weren't surprised at all.",
+            "instruction": "Listen again — which version matches what was said?",
+            "hint": "Notice whether the plan happened or didn't happen.",
+            "explanation": "This sentence hinges entirely on that short, unstressed 't' sound in 'didn't' — everything else in the sentence stays the same either way.",
+            "textToSpeak": "We didn't make it to the airport on time.",
             "options": [
-                "My grandparents weren't surprised at all.",
-                "My grandparents weren't surprised at first."
+                "We made it to the airport on time.",
+                "We didn't make it to the airport on time."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L23_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch who the gift is for, and whether it's happening now or before.",
-            "explanation": "The word 'for' is barely stressed here, almost swallowed between the words around it - so lean on the content words, like 'mum' or 'dad', rather than 'for' itself.",
-            "textToSpeak": "I'm looking for a gift for my mum.",
+            "instruction": "Listen carefully and catch the exact sentence.",
+            "hint": "The whole meaning depends on one small sound — is it 'can' or 'can't'?",
+            "explanation": "'Can't' and 'can' sound almost identical in quick speech — really just that final 't', often barely released. Miss it, and the sentence means the exact opposite.",
+            "textToSpeak": "We can't find the car keys anywhere.",
             "options": [
-                "I'm looking for a gift for my mum.",
-                "I was looking for a gift for my mum."
+                "We can find the car keys anywhere.",
+                "We can't find the car keys anywhere."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L23_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Notice how long it's valid, and coupon versus voucher.",
-            "explanation": "'For' and 'until' both reduce to a quick, weak sound in casual speech, so listen to the word that follows to work out which one was actually meant.",
-            "textToSpeak": "This coupon's only valid for today.",
+            "instruction": "They said it fast — what did you actually hear?",
+            "hint": "Listen for what exactly is or isn't possible.",
+            "explanation": "'Can't' reduces fast, so hold your attention on the verb that follows it too — here, the specific thing that's not possible.",
+            "textToSpeak": "I can't reach the top shelf without help.",
             "options": [
-                "This coupon's only valid for today.",
-                "This voucher's only valid for today."
+                "I can't reach the top shelf without help.",
+                "I can't reach the bottom shelf without help."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -126,28 +126,28 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L23_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch the activity, and shoes versus boots.",
-            "explanation": "The weak little word 'for' just glues two content words together in fast speech, so your ear should focus on 'shoes' versus 'boots' and the exact activity.",
-            "textToSpeak": "These shoes are perfect for hiking.",
+            "instruction": "Natural speech blends words together. Catch the real message.",
+            "hint": "Check for the negative, then whether it's about now or the past.",
+            "explanation": "'Couldn't' is the past form of 'can't', and both reduce to a quick stop at the end — the tense is easy to mix up if you're not careful.",
+            "textToSpeak": "She couldn't hear us over the music.",
             "options": [
-                "These shoes are perfect for hiking.",
-                "These shoes are perfect for running."
+                "She could hear us over the music.",
+                "She couldn't hear us over the music."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L24_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Listen for 'and' versus 'or', and catch both food items.",
-            "explanation": "'And' reduces to barely more than a light 'n' sound in fast speech, so it's easy to miss whether the speaker said 'and' (both items) or 'or' (a choice).",
-            "textToSpeak": "I'll have a coffee and a croissant.",
+            "instruction": "Listen for the small word that changes the meaning.",
+            "hint": "Listen closely for the refusal hidden in 'won't'.",
+            "explanation": "'Won't' is 'will not' fused together, and it can sound surprisingly close to 'want' in a fast sentence if the vowel isn't tracked carefully.",
+            "textToSpeak": "He won't answer his phone today.",
             "options": [
-                "I'll have a coffee and a croissant.",
-                "I'll have a coffee or a croissant."
+                "He won't answer his phone today.",
+                "He wants to answer his phone today."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -156,13 +156,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L24_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch the meal, and exactly what was eaten with the soup.",
-            "explanation": "That light 'and' can almost vanish between two nouns, so 'soup and bread' can sound like one quick phrase. Listen carefully to what comes right after it too.",
-            "textToSpeak": "We had soup and bread for lunch.",
+            "instruction": "Focus on the key detail hidden in the fast sentence.",
+            "hint": "Catch whether this is a firm refusal or a soft hesitation.",
+            "explanation": "'Wouldn't' softens a refusal into something more like reluctance, and its reduced ending can sound close to 'wouldn' with the negative almost lost.",
+            "textToSpeak": "I wouldn't count on the weather clearing up.",
             "options": [
-                "We had soup and bread for dinner.",
-                "We had soup and bread for lunch."
+                "I would count on the weather clearing up.",
+                "I wouldn't count on the weather clearing up."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -171,13 +171,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L24_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Notice 'and' versus 'or', and 'some' versus 'a little'.",
-            "explanation": "'Salt and pepper' is such a common pair that your brain might fill in 'and' automatically - but always confirm you actually heard it, since 'or' would mean something different.",
-            "textToSpeak": "Add some salt and pepper to taste.",
+            "instruction": "Listen again — which version matches what was said?",
+            "hint": "Notice exactly what they refuse to do.",
+            "explanation": "Once you've caught 'won't', the action that follows carries the rest of the meaning — here, exactly what's being refused.",
+            "textToSpeak": "They won't budge on the price.",
             "options": [
-                "Add some salt and pepper to taste.",
-                "Add some salt or pepper to taste."
+                "They won't budge on the price.",
+                "They won't budge on the deadline."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -186,13 +186,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L25_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch the destination, and 'planning' versus 'hoping'.",
-            "explanation": "The word 'to' reduces to a quick, weak sound twice in this sentence, so most of the meaning rests on the surrounding words - the verb and the destination.",
-            "textToSpeak": "We're planning to travel to Portugal.",
+            "instruction": "Listen carefully and catch the exact sentence.",
+            "hint": "Listen for the weather word, and whether it's happening or not.",
+            "explanation": "'Isn't' packs 'is' plus 'not' into one beat, and that final 't' sound is easy to miss entirely at speed.",
+            "textToSpeak": "It isn't raining outside anymore.",
             "options": [
-                "We're planning to travel through Portugal.",
-                "We're planning to travel to Portugal."
+                "It is raining outside anymore.",
+                "It isn't raining outside anymore."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -201,13 +201,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L25_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Notice the timing, and 'need' versus 'want'.",
-            "explanation": "'Need to' and 'want to' express different levels of urgency, but both squeeze 'to' down to almost nothing. Listen to the stronger word to judge how urgent it really is.",
-            "textToSpeak": "I need to renew my passport soon.",
+            "instruction": "They said it fast — what did you actually hear?",
+            "hint": "Catch whether the seats are or aren't available.",
+            "explanation": "'Aren't' reduces the negative down to a soft, quick sound, so it's easy to hear a plain 'are' if you're not listening for that final consonant.",
+            "textToSpeak": "There aren't any seats left near the front.",
             "options": [
-                "I need to renew my passport soon.",
-                "I want to renew my passport soon."
+                "There aren't any seats left near the front.",
+                "There are still seats left near the front."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -216,13 +216,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L25_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch how they travelled, and the reason for the trip.",
-            "explanation": "Both instances of 'to' here are weak and quick, so focus on 'flew' versus 'drove' and 'family' versus 'friends' - the content words carry the real information.",
-            "textToSpeak": "They flew to Rome to visit family.",
+            "instruction": "Natural speech blends words together. Catch the real message.",
+            "hint": "Notice both the negative and exactly what's being described.",
+            "explanation": "This sentence tests the negative sound in 'isn't' alongside a second detail, the actual complaint, so both pieces need your attention.",
+            "textToSpeak": "This coffee isn't as strong as I expected.",
             "options": [
-                "They flew to Rome to visit family.",
-                "They flew to Rome to see family."
+                "This coffee isn't as strong as I expected.",
+                "This coffee isn't as sweet as I expected."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -231,28 +231,28 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L26_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch what ran out, which device, and the tense.",
-            "explanation": "'Of' reduces to a barely-there sound between 'out' and 'storage', so the surrounding nouns matter most. Also notice 'ran out' (finished) versus 'running out' (almost finished).",
-            "textToSpeak": "I ran out of storage on my phone.",
+            "instruction": "Listen for the small word that changes the meaning.",
+            "hint": "Check whether this happened, or was expected but didn't.",
+            "explanation": "'Wasn't' compresses the negative past tense into one beat, and the missing final sound is what separates it from a simple 'was'.",
+            "textToSpeak": "The meeting wasn't as long as I thought.",
             "options": [
-                "I ran out of storage on my phone.",
-                "I ran out of battery on my phone."
+                "The meeting was as long as I thought.",
+                "The meeting wasn't as long as I thought."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L26_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Notice 'most' versus 'some', and what needs doing.",
-            "explanation": "'Most of' and 'some of' both flatten 'of' into a quick, weak sound, so the real difference sits in 'most' versus 'some' - the quantity, not the tiny word joining them.",
-            "textToSpeak": "Most of my apps need updating.",
+            "instruction": "Focus on the key detail hidden in the fast sentence.",
+            "hint": "Listen for whether they were or weren't there.",
+            "explanation": "'Weren't' reduces its final consonant heavily in fast speech, making it easy to confuse with a plain 'were' if you're not paying close attention.",
+            "textToSpeak": "They weren't home when we knocked.",
             "options": [
-                "Most of my apps need updating.",
-                "Most of my apps need deleting."
+                "They weren't home when we knocked.",
+                "They were home when we knocked."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -261,13 +261,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L26_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch what's impressive, and which feature exactly.",
-            "explanation": "The phrase 'of this' links tightly into one quick sound, so listen instead for what comes before it (battery life or screen quality) and after it (impressive or average).",
-            "textToSpeak": "The battery life of this laptop is impressive.",
+            "instruction": "Listen again — which version matches what was said?",
+            "hint": "Notice the negative, then exactly what wasn't true.",
+            "explanation": "Beyond catching 'wasn't', the specific detail that follows also needs full attention, since that's what actually changes the meaning here.",
+            "textToSpeak": "The line wasn't nearly as bad as last time.",
             "options": [
-                "The battery life of this laptop is impressive.",
-                "The battery life of this phone is impressive."
+                "The line wasn't nearly as bad as last time.",
+                "The line wasn't nearly as short as last time."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -276,43 +276,43 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L27_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch how much better, compared to when, and better versus worse.",
-            "explanation": "'Than' reduces to a very light, quick sound in comparisons, so the words on either side of it carry the real meaning - here, 'much better' and 'yesterday'.",
-            "textToSpeak": "I feel much better than yesterday.",
+            "instruction": "Listen carefully and catch the exact sentence.",
+            "hint": "Two negatives appear here — catch both, not just the first.",
+            "explanation": "'Doesn't' and 'isn't' both reduce their endings, and when two negatives sit close together it's easy to catch one and miss the other entirely.",
+            "textToSpeak": "He doesn't cook much, so the kitchen isn't well stocked.",
             "options": [
-                "I feel much better than this morning.",
-                "I feel much better than yesterday."
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "fastSpeechDecoder",
-            "emoji": "⚡"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L27_Q2",
-            "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Notice faster versus better, and 'last one' versus 'other one'.",
-            "explanation": "'Faster' (speed) and 'better' (quality) are both positive but describe different things, so pin down the exact word. 'Than' just glues the comparison together and barely gets any stress.",
-            "textToSpeak": "This medicine works faster than the last one.",
-            "options": [
-                "This medicine works faster than the last one.",
-                "This medicine works better than the last one."
+                "He doesn't cook much, so the kitchen isn't well stocked.",
+                "He cooks a lot, so the kitchen isn't well stocked."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
+            "id": "LIS_FASTSPEECHDECODER_L27_Q2",
+            "interactionType": "choice",
+            "instruction": "They said it fast — what did you actually hear?",
+            "hint": "Listen for whether they can or can't, and whether it's true or not.",
+            "explanation": "This sentence combines 'can't' with 'isn't', two different negative reductions, so both final sounds need to register clearly.",
+            "textToSpeak": "We can't leave yet because the gate isn't open.",
+            "options": [
+                "We can leave yet because the gate isn't open.",
+                "We can't leave yet because the gate isn't open."
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "fastSpeechDecoder",
+            "emoji": "⚡"
+        },
+        {
             "id": "LIS_FASTSPEECHDECODER_L27_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch whose appointment, and longer versus shorter.",
-            "explanation": "'Longer' and 'shorter' are opposites, so that's the word to nail down first. 'Expected' and 'planned' are close synonyms, so listen carefully for the exact one used after the weak 'than'.",
-            "textToSpeak": "Her appointment took longer than expected.",
+            "instruction": "Natural speech blends words together. Catch the real message.",
+            "hint": "Catch the negative, then the exact reason given.",
+            "explanation": "'Don't' reduces fast, and the reason clause that follows carries a second piece of information that's just as important to catch.",
+            "textToSpeak": "I don't mind waiting, since the delay isn't my fault.",
             "options": [
-                "Her appointment took longer than expected.",
-                "Her appointment took longer than planned."
+                "I don't mind waiting, since the delay isn't my fault.",
+                "I don't mind waiting, since the delay is my fault."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -321,28 +321,28 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L28_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch optional versus compulsory, and whether 'that' is included or dropped.",
-            "explanation": "'That' as a connector often reduces to almost nothing, or disappears completely in casual speech - both versions are grammatical, so don't rely on it. Focus on 'optional' versus 'compulsory' instead.",
-            "textToSpeak": "The teacher said that homework is optional.",
+            "instruction": "Listen for the small word that changes the meaning.",
+            "hint": "Catch both negatives, past tense throughout.",
+            "explanation": "'Didn't' and 'wasn't' both reduce heavily here, and since both are past tense, the whole sentence hinges on catching two quiet 't' sounds.",
+            "textToSpeak": "I didn't call because the signal wasn't strong enough.",
             "options": [
-                "The teacher said that homework is compulsory.",
-                "The teacher said that homework is optional."
+                "I didn't call because the signal wasn't strong enough.",
+                "I called because the signal wasn't strong enough."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L28_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Notice postponed versus cancelled, and exam versus class.",
-            "explanation": "'Postponed' (delayed) and 'cancelled' (called off) lead to very different outcomes for a student, so that's the detail to catch. The connecting 'that' can appear or vanish without changing the meaning.",
-            "textToSpeak": "I heard that the exam was postponed.",
+            "instruction": "Focus on the key detail hidden in the fast sentence.",
+            "hint": "Listen for whether they could and whether they were around.",
+            "explanation": "'Couldn't' and 'weren't' stack two reduced negatives together, so hold onto both as the sentence moves quickly from one to the other.",
+            "textToSpeak": "She couldn't reach them because they weren't answering.",
             "options": [
-                "I heard that the exam was cancelled.",
-                "I heard that the exam was postponed."
+                "She could reach them because they weren't answering.",
+                "She couldn't reach them because they weren't answering."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -351,103 +351,103 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L28_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch he versus she, and studied versus worked.",
-            "explanation": "The weak 'that' can be present or silently dropped in fast speech without changing the grammar, so don't lean on it. Instead, catch the pronoun and the exact verb, studied or worked.",
-            "textToSpeak": "It's clear that she studied hard.",
+            "instruction": "Listen again — which version matches what was said?",
+            "hint": "Notice what didn't happen, and what wasn't ready yet.",
+            "explanation": "Two clauses, two negatives — 'didn't' and 'wasn't' — so treat this as two small listening checks rather than one long guess.",
+            "textToSpeak": "We didn't start filming because the set wasn't finished.",
             "options": [
-                "It's clear that he studied hard.",
-                "It's clear that she studied hard."
+                "We didn't start filming because the set wasn't finished.",
+                "We started filming because the set wasn't finished."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L29_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch up versus down, 'a little' versus 'a lot', and can versus can't.",
-            "explanation": "'Turn it up' links into one smooth phrase, almost 'turnitup'. From there, 'up' versus 'down' and 'can' versus 'can't' are the two details that completely change the request.",
-            "textToSpeak": "Turn it up a little, I can't hear it.",
+            "instruction": "Listen carefully and catch the exact sentence.",
+            "hint": "Listen for whether this is a real question or a checking-in question.",
+            "explanation": "'Isn't' in a question often checks something the speaker already believes, and losing that reduced negative changes it into a completely open question.",
+            "textToSpeak": "Isn't the store closed on Sundays?",
             "options": [
-                "Turn it down a little, I can't hear it.",
-                "Turn it up a little, I can't hear it."
+                "Isn't the store closed on Sundays?",
+                "Is the store closed on Sundays?"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L29_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Notice 'a chance' versus 'the chance' versus 'a moment', and 'when' versus 'if'.",
-            "explanation": "'Check it out' links into a single quick run of sound. The real test is the small words after it - 'when' versus 'if', 'a' versus 'the' - barely stressed but tone-changing.",
-            "textToSpeak": "Check it out when you get a chance.",
+            "instruction": "They said it fast — what did you actually hear?",
+            "hint": "Catch whether the answer is a firm no or a soft maybe.",
+            "explanation": "'I don't think so' reduces 'don't' down fast, and it can sound close to a flat 'I think so' if the negative slips past unnoticed.",
+            "textToSpeak": "I don't think so, but I'll double check.",
             "options": [
-                "Check it out when you get a chance.",
-                "Check it out when you get the chance."
+                "I think so, but I'll double check.",
+                "I don't think so, but I'll double check."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L29_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch 'second' versus 'minute', and 'grab' versus 'get'.",
-            "explanation": "'Hang on' and 'hold on' mean the same thing and are equally common, so don't assume - listen for the actual word. 'A second' and 'a minute' are also easy to swap if you're not paying attention.",
-            "textToSpeak": "Hang on a second, let me grab it.",
+            "instruction": "Natural speech blends words together. Catch the real message.",
+            "hint": "Notice whether they were or weren't invited.",
+            "explanation": "This question leans on 'weren't', a heavily reduced negative, to check something the speaker suspects — miss it and the question loses its point.",
+            "textToSpeak": "Weren't you invited to the wedding too?",
             "options": [
-                "Hang on a minute, let me grab it.",
-                "Hang on a second, let me grab it."
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "fastSpeechDecoder",
-            "emoji": "⚡"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L30_Q1",
-            "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Check 'won't' versus 'will', and long versus late.",
-            "explanation": "'Won't' and 'will' sound closest right before a pause, so listen carefully for that final consonant. 'Promise' and 'swear' are both sincere, but only one is the exact word used.",
-            "textToSpeak": "I won't be long, I promise.",
-            "options": [
-                "I won't be long, I promise.",
-                "I will be long, I promise."
+                "Weren't you invited to the wedding too?",
+                "Were you invited to the wedding too?"
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
-            "id": "LIS_FASTSPEECHDECODER_L30_Q2",
+            "id": "LIS_FASTSPEECHDECODER_L30_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Listen for 'not', and 'was' versus 'am'.",
-            "explanation": "Dropping 'not' flips this from surprise to confirmation - a small word with a big effect. 'Was' versus 'am' also shifts the timing, a past reaction or a present one.",
-            "textToSpeak": "That's not what I was expecting at all.",
+            "instruction": "Listen for the small word that changes the meaning.",
+            "hint": "This one small sound reverses the entire sentence — listen hard.",
+            "explanation": "By this level, negatives can appear anywhere in a sentence and reduce almost to nothing. Train your ear to expect them, not just react if you happen to hear them.",
+            "textToSpeak": "I wouldn't say the flight was delayed, exactly.",
             "options": [
-                "That's not what I was expecting after all.",
-                "That's not what I was expecting at all."
+                "I would say the flight was delayed, exactly.",
+                "I wouldn't say the flight was delayed, exactly."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
+            "id": "LIS_FASTSPEECHDECODER_L30_Q2",
+            "interactionType": "choice",
+            "instruction": "Focus on the key detail hidden in the fast sentence.",
+            "hint": "Catch the negative early, since it changes everything after it.",
+            "explanation": "'Doesn't' near the start of a sentence still governs everything that follows, even though it reduces to almost nothing at natural speed.",
+            "textToSpeak": "He doesn't think the plan will work at all.",
+            "options": [
+                "He doesn't think the plan will work at all.",
+                "He thinks the plan will work at all."
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "fastSpeechDecoder",
+            "emoji": "⚡"
+        },
+        {
             "id": "LIS_FASTSPEECHDECODER_L30_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch which weekend, and 'better' versus 'good'.",
-            "explanation": "'This weekend' and 'next weekend' are a classic timing mix-up in fast speech. 'Better' (an improvement) and 'good' (simply positive) carry slightly different meanings, so listen for the exact word.",
-            "textToSpeak": "We're hoping for better weather this weekend.",
+            "instruction": "Listen again — which version matches what was said?",
+            "hint": "Listen for the full picture — what happened, and what didn't.",
+            "explanation": "This sentence pairs a plain past action with a reduced negative, so don't assume everything is positive just because part of it sounds like good news.",
+            "textToSpeak": "We arrived on time, but they weren't ready for us.",
             "options": [
-                "We're hoping for better weather this weekend.",
-                "We're hoping for better weather next weekend."
+                "We arrived on time, but they weren't ready for us.",
+                "We arrived late, but they weren't ready for us."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",

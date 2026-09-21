@@ -6,13 +6,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L91_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch this versus that, and 'any' versus 'some'.",
-            "explanation": "'Lemme' is the fast-speech version of 'let me', extremely common when offering help casually. 'Any' and 'some' both work grammatically here, so the exact word is what you need to catch.",
-            "textToSpeak": "Lemme know if you need any help with that.",
+            "instruction": "Listen carefully and catch the exact sentence.",
+            "hint": "Listen for what's actually better, since the middle sound softens.",
+            "explanation": "Between two vowels, many speakers turn a 't' into a quick, soft tap that sounds closer to a fast 'd', so 'better' can sound like 'bedder'.",
+            "textToSpeak": "This version is a lot better than the last one.",
             "options": [
-                "Let 'im know if you need any help with that.",
-                "Lemme know if you need any help with that."
+                "This version is a lot worse than the last one.",
+                "This version is a lot better than the last one."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -21,28 +21,28 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L91_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Notice send versus submit, and figure versus number.",
-            "explanation": "'Send' and 'submit' overlap in meaning but aren't identical actions, so listen for the specific verb. 'Figure' and 'number' are near-synonyms too, so catch the exact word used.",
-            "textToSpeak": "Lemme just double-check that figure before we send it.",
+            "instruction": "They said it fast — what did you actually hear?",
+            "hint": "Catch exactly what's getting colder, since the middle 't' softens.",
+            "explanation": "'Getting' often has its 't' flapped into a soft tap sound between the two vowels, making it sound closer to 'gedding'.",
+            "textToSpeak": "It's getting busier every weekend.",
             "options": [
-                "Lemme just double-check that figure before we send it.",
-                "Lemme just double-check that number before we send it."
+                "It's getting quieter every weekend.",
+                "It's getting busier every weekend."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L91_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch notes versus laptop, and starts versus ends.",
-            "explanation": "'Notes' and 'laptop' are different things to grab, so that noun is essential. 'Starts' and 'ends' are opposites too, completely changing the timing of the request.",
-            "textToSpeak": "Lemme grab my notes before the meeting starts.",
+            "instruction": "Natural speech blends words together. Catch the real message.",
+            "hint": "Notice the exact amount of water mentioned.",
+            "explanation": "'Water' flaps its middle 't' into a light tap in many varieties of English, so it can sound closer to 'wadder' than its spelling suggests.",
+            "textToSpeak": "We need a bit more water for the plants.",
             "options": [
-                "Let 'er grab my notes before the meeting starts.",
-                "Lemme grab my notes before the meeting starts."
+                "We need a bit less water for the plants.",
+                "We need a bit more water for the plants."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -51,13 +51,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L92_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch second versus minute, and there versus over.",
-            "explanation": "'Gimme' packs 'give me' into one relaxed syllable, very common when asking someone to wait briefly. 'Second' and 'minute' both suggest a short wait but aren't identical.",
-            "textToSpeak": "Gimme a second, I'll be right there with you.",
+            "instruction": "Listen for the small word that changes the meaning.",
+            "hint": "Catch the exact number, since the middle sound can soften.",
+            "explanation": "Numbers like 'thirty' and 'forty' often flap their middle 't', so they can sound closer to 'thirdy' or 'fordy' at natural speed.",
+            "textToSpeak": "It's about thirty minutes from here.",
             "options": [
-                "Give 'er a second, I'll be right there with you.",
-                "Gimme a second, I'll be right there with you."
+                "It's about forty minutes from here.",
+                "It's about thirty minutes from here."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -66,13 +66,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L92_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Notice call versus text, and landed versus left.",
-            "explanation": "'Call' and 'text' are different ways of getting in touch, so listen for the exact word. 'Landed' and 'left' also describe opposite ends of a flight.",
-            "textToSpeak": "Gimme a call once you've landed safely.",
+            "instruction": "Focus on the key detail hidden in the fast sentence.",
+            "hint": "Listen for exactly what's a little later, or a little earlier.",
+            "explanation": "'A little later' has a flapped 't' in the middle, softening it into a quick tap sound between the two surrounding vowels.",
+            "textToSpeak": "Let's meet a little later than planned.",
             "options": [
-                "Gimme a call once you've left safely.",
-                "Gimme a call once you've landed safely."
+                "Let's meet a little earlier than planned.",
+                "Let's meet a little later than planned."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -81,73 +81,73 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L92_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch boxes versus bags, and 'free' versus 'ready'.",
-            "explanation": "'Boxes' and 'bags' sound different once you focus, but at speed with other noise they can blend. 'Free' and 'ready' are close in meaning here too, so listen for the specific word.",
-            "textToSpeak": "Gimme a hand with these boxes when you're free.",
+            "instruction": "Listen again — which version matches what was said?",
+            "hint": "Notice the exact city mentioned, since the flap softens the word before it.",
+            "explanation": "'Got to' commonly flaps into something close to 'gotta', with the softened middle sound blending the two words together.",
+            "textToSpeak": "We've got to catch the earlier train to Leeds.",
             "options": [
-                "Gimme a hand with these boxes when you're free.",
-                "Gimme a hand with these bags when you're free."
+                "We've got to catch the earlier train to Bath.",
+                "We've got to catch the earlier train to Leeds."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L93_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch bigger versus smaller, and this versus that.",
-            "explanation": "'Couldya' blends 'could you' into a smooth, casual sound, a polite request said quickly. 'Couldya' (are you able to) and 'wouldya' (are you willing to) are subtly different requests too.",
-            "textToSpeak": "Couldya check if this comes in a bigger size?",
+            "instruction": "Listen for the small word that changes the meaning.",
+            "hint": "Catch what exactly they were doing when it happened.",
+            "explanation": "'Waiting' flaps its middle 't' into a soft tap between vowels, so it can sound closer to 'wading' than its spelling suggests.",
+            "textToSpeak": "I was waiting outside when it started to rain.",
             "options": [
-                "Wouldya check if this comes in a bigger size?",
-                "Couldya check if this comes in a bigger size?"
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "fastSpeechDecoder",
-            "emoji": "⚡"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L93_Q2",
-            "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Notice this versus that, and wallet versus card.",
-            "explanation": "'Wouldya mind' is a polite, indirect way to ask for a favour, and it reduces heavily in casual speech. The item being held, and what you're looking for, are the real details.",
-            "textToSpeak": "Wouldya mind holding this while I find my wallet?",
-            "options": [
-                "Wouldya mind holding this while I find my wallet?",
-                "Couldya mind holding this while I find my wallet."
+                "I was waiting outside when it started to rain.",
+                "I was walking outside when it started to rain."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
-            "id": "LIS_FASTSPEECHDECODER_L93_Q3",
+            "id": "LIS_FASTSPEECHDECODER_L93_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch one versus two, and shelf versus counter.",
-            "explanation": "'One' and 'two' can blur together at natural speed, so listen for the exact number. 'Shelf' and 'counter' also point to different parts of a shop.",
-            "textToSpeak": "Couldya grab me one of those from the shelf?",
+            "instruction": "Focus on the key detail hidden in the fast sentence.",
+            "hint": "Listen for whether they're sitting or standing.",
+            "explanation": "'Sitting' has a flapped middle 't', softening it into a quick tap, so the word can sound shorter and lighter than expected.",
+            "textToSpeak": "She's been sitting there for over an hour.",
             "options": [
-                "Couldya grab me two of those from the shelf?",
-                "Couldya grab me one of those from the shelf?"
+                "She's been standing there for over an hour.",
+                "She's been sitting there for over an hour."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
+            "id": "LIS_FASTSPEECHDECODER_L93_Q3",
+            "interactionType": "choice",
+            "instruction": "Listen again — which version matches what was said?",
+            "hint": "Catch the exact activity mentioned after the flapped word.",
+            "explanation": "'Putting' flaps its middle sound in casual speech, so the object that follows carries the real content of the sentence.",
+            "textToSpeak": "He's putting the final touches on the design.",
+            "options": [
+                "He's putting the final touches on the design.",
+                "He's putting the finishing details on the design."
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "fastSpeechDecoder",
+            "emoji": "⚡"
+        },
+        {
             "id": "LIS_FASTSPEECHDECODER_L94_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch this versus that, and try versus have.",
-            "explanation": "'Try' and 'have' a bite mean almost the same thing, so the precise verb matters less than the pointing word: 'this' or 'that'. Listen for both carefully.",
-            "textToSpeak": "Lemme try a bite of that before you finish it.",
+            "instruction": "Listen for the small word that changes the meaning.",
+            "hint": "Catch both the flapped sound and the linked phrase in the same sentence.",
+            "explanation": "This sentence combines a flapped 't' in 'getting' with a linked phrase, 'out of', so two separate connected-speech features stack together here.",
+            "textToSpeak": "We're getting out of here before it gets busy.",
             "options": [
-                "Lemme try a bite of that before you finish it.",
-                "Lemme have a bite of that before you finish it."
+                "We're getting out of here before it gets busy.",
+                "We're staying in here before it gets busy."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -156,43 +156,43 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L94_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Notice 'a minute' versus 'a second', and start versus finish.",
-            "explanation": "'A minute' and 'a second' both suggest a short wait but different lengths of it. 'Start' and 'finish' plating are also opposite stages of getting a dish ready.",
-            "textToSpeak": "Gimme a minute to finish plating this dish.",
+            "instruction": "Focus on the key detail hidden in the fast sentence.",
+            "hint": "Listen for exactly what's a lot easier, or a lot harder.",
+            "explanation": "'A lot better' flaps its middle sound while also linking smoothly into the next word, so both features combine in one quick phrase.",
+            "textToSpeak": "This route is a lot quicker than the old one.",
             "options": [
-                "Gimme a minute to finish plating this dish.",
-                "Gimme a second to finish plating this dish."
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "fastSpeechDecoder",
-            "emoji": "⚡"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L94_Q3",
-            "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch more versus less, and soup versus sauce.",
-            "explanation": "'More' and 'less' salt are opposite adjustments, so that word is the whole point of the sentence. 'Soup' and 'sauce' are also different dishes entirely.",
-            "textToSpeak": "Lemme know if the soup needs more salt.",
-            "options": [
-                "Let 'em know if the soup needs more salt.",
-                "Lemme know if the soup needs more salt."
+                "This route is a lot slower than the old one.",
+                "This route is a lot quicker than the old one."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
+            "id": "LIS_FASTSPEECHDECODER_L94_Q3",
+            "interactionType": "choice",
+            "instruction": "Listen again — which version matches what was said?",
+            "hint": "Notice the exact material mentioned, since the flap softens the word before it.",
+            "explanation": "'A little bit of' softens its middle sounds and links them together, so the noun that follows is where the real detail sits.",
+            "textToSpeak": "There's a little bit of paint left in the can.",
+            "options": [
+                "There's a little bit of paint left in the can.",
+                "There's a little bit of glue left in the can."
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "fastSpeechDecoder",
+            "emoji": "⚡"
+        },
+        {
             "id": "LIS_FASTSPEECHDECODER_L95_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch the exact delay, and 'im versus 'er.",
-            "explanation": "This sentence stacks 'couldya' with the h-dropped 'im, two separate reductions layered together. The delay length, one hour or two, is the detail with the biggest real-world impact.",
-            "textToSpeak": "Couldya tell 'im our flight's been delayed an hour?",
+            "instruction": "Listen for the small word that changes the meaning.",
+            "hint": "Catch whether this is the first or the last occurrence.",
+            "explanation": "When two similar consonant sounds meet at a word boundary, like the 't' at the end of 'last' and the 't' at the start of 'time', they often merge into a single, slightly longer sound.",
+            "textToSpeak": "This is the last time I'm explaining this.",
             "options": [
-                "Couldya tell 'im our flight's been delayed an hour?",
-                "Couldya tell 'im our flight's been delayed two hours?"
+                "This is the last time I'm explaining this.",
+                "This is the first time I'm explaining this."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -201,13 +201,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L95_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Notice itinerary versus schedule, and 'should' versus 'could'.",
-            "explanation": "'Itinerary' and 'schedule' overlap closely in travel contexts, so listen for the exact word. 'Should' and 'could' also carry a slightly different sense of obligation.",
-            "textToSpeak": "Whatcha reckon we should tell 'em about the itinerary change?",
+            "instruction": "Focus on the key detail hidden in the fast sentence.",
+            "hint": "Listen for the exact plan mentioned after the blended sounds.",
+            "explanation": "'Best time' blends its matching consonants into one, so the plan or activity that follows carries the real content of the sentence.",
+            "textToSpeak": "Now's probably the best time to ask.",
             "options": [
-                "Whatcha reckon we could tell 'em about the itinerary change?",
-                "Whatcha reckon we should tell 'em about the itinerary change?"
+                "Now's probably the worst time to ask.",
+                "Now's probably the best time to ask."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -216,13 +216,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L95_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch 'er versus 'is, and passport versus ticket.",
-            "explanation": "This sentence packs three reductions together - 'gimme', 'lemme', and 'er - genuinely dense, natural fast speech. Break it apart piece by piece: give me, let me, and her.",
-            "textToSpeak": "Gimme a sec, lemme just check 'er passport's still valid.",
+            "instruction": "Listen again — which version matches what was said?",
+            "hint": "Notice exactly what's different this time around.",
+            "explanation": "'Next time' blends its double consonant sound into a single, connected beat, so the detail that follows is where the real meaning lives.",
+            "textToSpeak": "Next time, let's try a smaller venue.",
             "options": [
-                "Gimme a sec, lemme just check 'er passport's still valid.",
-                "Gimme a sec, lemme just check 'er ticket's still valid."
+                "Next time, let's try a smaller venue.",
+                "Next time, let's try a bigger venue."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -231,13 +231,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L96_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch link versus file, and 'im versus 'er.",
-            "explanation": "'Send 'im' compresses 'send him' into one smooth phrase, so listen past the reduction to what's actually being sent and to whom.",
-            "textToSpeak": "Couldya send 'im the link once it's live?",
+            "instruction": "Listen for the small word that changes the meaning.",
+            "hint": "Catch exactly what's being described, since the double 's' sound merges into one.",
+            "explanation": "'This stuff' blends its two 's' sounds together into a single, slightly longer hiss rather than two separate sounds.",
+            "textToSpeak": "This stuff works better than I expected.",
             "options": [
-                "Couldya send 'im the link once it's live?",
-                "Wouldya send 'im the link once it's live?"
+                "This stuff works better than I expected.",
+                "This stuff works worse than I expected."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -246,43 +246,43 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L96_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Notice 'er versus 'is, and old versus new.",
-            "explanation": "'Er (her) and 'is (his) are both h-dropped possessives that sound remarkably similar at speed, so the vowel is your main clue. 'Old' and 'new' also completely change the story.",
-            "textToSpeak": "Whatcha think happened to 'er old account?",
+            "instruction": "Focus on the key detail hidden in the fast sentence.",
+            "hint": "Listen for exactly which seat they're claiming.",
+            "explanation": "'Best seat' merges its two matching sounds into one, so the location detail that follows is what really carries the meaning.",
+            "textToSpeak": "That's definitely the best seat in the house.",
             "options": [
-                "Whatcha think happened to 'er old account?",
-                "Whatcha reckon happened to 'er old account?"
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "fastSpeechDecoder",
-            "emoji": "⚡"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L96_Q3",
-            "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch reset versus change, and 'em versus 'im.",
-            "explanation": "'Reset' and 'change' a password sound similar in context but are different actions technically, so listen precisely. 'Em (them) versus 'im (him) also needs your full attention.",
-            "textToSpeak": "Lemme show 'em how to reset the password properly.",
-            "options": [
-                "Lemme show 'em how to change the password properly.",
-                "Lemme show 'em how to reset the password properly."
+                "That's definitely the worst seat in the house.",
+                "That's definitely the best seat in the house."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
+            "id": "LIS_FASTSPEECHDECODER_L96_Q3",
+            "interactionType": "choice",
+            "instruction": "Listen again — which version matches what was said?",
+            "hint": "Notice whether this is a small issue or the entire thing.",
+            "explanation": "'This section' blends its consonants together at the word boundary, so context clues around it help confirm the exact meaning.",
+            "textToSpeak": "This section needs a bit more work.",
+            "options": [
+                "This section needs a bit more work.",
+                "This whole thing needs a bit more work."
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "fastSpeechDecoder",
+            "emoji": "⚡"
+        },
+        {
             "id": "LIS_FASTSPEECHDECODER_L97_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch 'er versus 'im, and 'at' versus 'on'.",
-            "explanation": "'At' and 'on' are both weak little prepositions here, easy to mishear, but only one is grammatically natural with a time. Focus on 'er versus 'im too.",
-            "textToSpeak": "Couldya ask 'er what time the appointment's actually at?",
+            "instruction": "Listen for the small word that changes the meaning.",
+            "hint": "Catch exactly what they're asking you to consider.",
+            "explanation": "'What time' softens its middle sound in fast, casual questions, so the word or number that follows carries the real content.",
+            "textToSpeak": "What time were you thinking of leaving?",
             "options": [
-                "Couldya ask 'er what time the appointment's actually at?",
-                "Wouldya ask 'er what time the appointment's actually at?"
+                "What time were you thinking of leaving?",
+                "What time were you thinking of arriving?"
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -291,13 +291,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L97_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Notice 'come through' versus 'come back', and results versus update.",
-            "explanation": "'Come through' and 'come back' mean almost the same thing in this context, so the exact phrase matters more than the general idea. 'Results' and 'update' are also close enough to require careful listening.",
-            "textToSpeak": "Gimme the results as soon as they come through.",
+            "instruction": "Focus on the key detail hidden in the fast sentence.",
+            "hint": "Listen for whether it's better or worse than expected.",
+            "explanation": "'Is it better' flaps its middle 't' into a soft tap, so the comparison word at the end tells you the real judgment being made.",
+            "textToSpeak": "Is it better with or without the sauce?",
             "options": [
-                "Show 'er the results as soon as they come through.",
-                "Gimme the results as soon as they come through."
+                "Is it worse with or without the sauce?",
+                "Is it better with or without the sauce?"
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -306,13 +306,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L97_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch swelling versus pain, and 'gone down' versus 'gone away'.",
-            "explanation": "'Gone down' (reduced) and 'gone away' (disappeared) describe different amounts of improvement, so listen for the precise phrase. The timeframe is also worth confirming.",
-            "textToSpeak": "Lemme know if the swelling hasn't gone down by tomorrow.",
+            "instruction": "Listen again — which version matches what was said?",
+            "hint": "Notice exactly what's being compared.",
+            "explanation": "'What's the difference' softens its consonants together in fast speech, so the two things being compared need your close attention.",
+            "textToSpeak": "What's the difference between these two plans?",
             "options": [
-                "Lemme know if the swelling hasn't gone down by tomorrow.",
-                "Lemme know if the swelling hasn't gone away by tomorrow."
+                "What's the difference between these two plans?",
+                "What's the difference between these two prices?"
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -321,88 +321,88 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L98_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch the exact day, and 'im versus 'er.",
-            "explanation": "'Remind 'im' blends 'remind him' into a fast, casual run of sound, the pronoun almost disappears. The deadline itself is the detail worth locking in.",
-            "textToSpeak": "Couldya remind 'im the assignment's due on Friday?",
+            "instruction": "Listen for the small word that changes the meaning.",
+            "hint": "Track both the flapped sound and the blended boundary in this sentence.",
+            "explanation": "This sentence has a flapped 't' in 'getting' and a blended cluster in 'last stop', so two connected-speech features appear one after another.",
+            "textToSpeak": "We're getting close to the last stop on the line.",
             "options": [
-                "Couldya remind 'im the assignment's due on Monday?",
-                "Couldya remind 'im the assignment's due on Friday?"
+                "We're getting close to the last stop on the line.",
+                "We're getting close to the first stop on the line."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L98_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Notice 'is versus 'er, and 'getting in' versus 'getting through'.",
-            "explanation": "'Is (his) and 'er (her) are h-dropped possessives that sound close together, so the vowel is your real clue. 'Getting in' and 'getting through' also describe subtly different outcomes.",
-            "textToSpeak": "Whatcha reckon 'is chances are of getting in?",
+            "instruction": "Focus on the key detail hidden in the fast sentence.",
+            "hint": "Catch exactly what's a lot faster, since several sounds soften together.",
+            "explanation": "'A lot faster' softens several consonants in a row, so the comparison itself is the real content to hold onto here.",
+            "textToSpeak": "This method is a lot faster once you get used to it.",
             "options": [
-                "Whatcha reckon 'is chances are of getting in?",
-                "Whatcha reckon 'er chances are of getting in?"
+                "This method is a lot slower once you get used to it.",
+                "This method is a lot faster once you get used to it."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L98_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch understand versus finish, and 'em versus 'im.",
-            "explanation": "'Understand' (grasp the concept) and 'finish' (complete the task) are genuinely different kinds of help, so listen for the exact verb. 'Em versus 'im also needs careful attention.",
-            "textToSpeak": "Lemme help 'em understand the assignment before it's due.",
+            "instruction": "Listen again — which version matches what was said?",
+            "hint": "Notice the full outcome despite several softened sounds.",
+            "explanation": "By this level, several flapped and blended sounds can appear in a single sentence, so trust the content words to keep the meaning clear.",
+            "textToSpeak": "It's getting better a little bit every day.",
             "options": [
-                "Lemme help 'em understand the assignment before it's marked.",
-                "Lemme help 'em understand the assignment before it's due."
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "fastSpeechDecoder",
-            "emoji": "⚡"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L99_Q1",
-            "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch 'er versus 'im, and tickets versus seats.",
-            "explanation": "'Tell 'er' blends 'tell her' into one smooth phrase, so listen past it to the actual news: what sold out, and to whom it should be told.",
-            "textToSpeak": "Couldya tell 'er the tickets sold out already?",
-            "options": [
-                "Couldya tell 'er the tickets sold out already?",
-                "Couldya tell 'im the tickets sold out already?"
+                "It's getting better a little bit every day.",
+                "It's getting worse a little bit every day."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
-            "id": "LIS_FASTSPEECHDECODER_L99_Q2",
+            "id": "LIS_FASTSPEECHDECODER_L99_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Notice 'is versus 'er, and film versus show.",
-            "explanation": "'Is (his) and 'er (her) are easy to mix up at speed since both are quick, reduced possessives. 'Film' and 'show' are also different types of entertainment worth telling apart.",
-            "textToSpeak": "Whatcha think 'is favourite scene in the whole film was?",
+            "instruction": "Listen for the small word that changes the meaning.",
+            "hint": "Catch the subtle difference hidden in the softened sounds.",
+            "explanation": "'A little bit better' softens several sounds together, so the exact comparison, better or worse, is what really needs confirming.",
+            "textToSpeak": "The traffic's a little bit better today.",
             "options": [
-                "Whatcha think 'er favourite scene in the whole film was?",
-                "Whatcha think 'is favourite scene in the whole film was?"
+                "The traffic's a little bit worse today.",
+                "The traffic's a little bit better today."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
+            "id": "LIS_FASTSPEECHDECODER_L99_Q2",
+            "interactionType": "choice",
+            "instruction": "Listen carefully and catch the exact sentence.",
+            "hint": "Listen for exactly what they're getting ready for.",
+            "explanation": "'Getting ready for' flaps and blends several sounds in a row, so the event or task named at the end is the real content here.",
+            "textToSpeak": "I'm getting ready for the interview tomorrow.",
+            "options": [
+                "I'm getting ready for the interview tomorrow.",
+                "I'm getting ready for the flight tomorrow."
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "fastSpeechDecoder",
+            "emoji": "⚡"
+        },
+        {
             "id": "LIS_FASTSPEECHDECODER_L99_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch better versus cheaper, and 'em versus 'im.",
-            "explanation": "This sentence stacks three reductions together, 'gimme', 'lemme', and 'em - a lot of fast, casual speech in a short space. Take it apart piece by piece as you listen.",
-            "textToSpeak": "Gimme a sec, lemme just find 'em better seats.",
+            "instruction": "They said it fast — what did you actually hear?",
+            "hint": "Notice whether they noticed a difference or not.",
+            "explanation": "'A little bit different' softens its consonants together into a smooth, connected phrase, so the surrounding context confirms the meaning.",
+            "textToSpeak": "It tastes a little bit different this time.",
             "options": [
-                "Gimme a sec, lemme just find 'em cheaper seats.",
-                "Gimme a sec, lemme just find 'em better seats."
+                "It tastes exactly the same this time.",
+                "It tastes a little bit different this time."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -411,13 +411,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L100_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch 'em versus 'im, and 'heard back from' versus 'written back to'.",
-            "explanation": "This milestone question stacks three reductions - 'couldya', 'lemme', and 'em - a genuine test of everything you've practised through the Intermediate levels. Break it into its full words: could you, let me, and them.",
-            "textToSpeak": "Couldya lemme know once you've heard back from 'em?",
+            "instruction": "Natural speech blends words together. Catch the real message.",
+            "hint": "By now, expect linking, elision, assimilation, and flapping to all appear together.",
+            "explanation": "This sentence pulls together several connected-speech features at once — a flapped 't', a linked phrase, and a softened boundary — the way real conversation actually sounds.",
+            "textToSpeak": "We got it sorted out a little quicker than expected.",
             "options": [
-                "Couldya lemme know once you've heard back from 'em?",
-                "Couldya lemme know once you've written back to 'em?"
+                "We got it sorted out a little quicker than expected.",
+                "We got it sorted out a little slower than expected."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -426,13 +426,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L100_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Notice 'anything' versus 'everything', and 'er versus 'im.",
-            "explanation": "'Anything' and 'everything' suggest very different scopes for what shouldn't be said yet, so that word is essential. 'Er (her) versus 'im (him) also needs your full attention here.",
-            "textToSpeak": "Gimme a chance to explain before you tell 'er anything.",
+            "instruction": "Listen for the small word that changes the meaning.",
+            "hint": "Catch the full sentence despite several stacked reductions.",
+            "explanation": "By Level 100, natural fast speech should start to feel decodable as a whole, even when several separate reduction types appear in the same breath.",
+            "textToSpeak": "I'm getting used to it a lot faster than I thought I would.",
             "options": [
-                "Gimme a chance to explain before you tell 'im anything.",
-                "Gimme a chance to explain before you tell 'er anything."
+                "I'm getting used to it a lot slower than I thought I would.",
+                "I'm getting used to it a lot faster than I thought I would."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -441,15 +441,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L100_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch sooner versus later, and 'woulda' versus 'coulda'.",
-            "explanation": "This final question of the Intermediate tier stacks four reductions in one breath: 'whatcha', 'reckon', 'woulda', and 'em. If you can decode this smoothly, you're genuinely ready for what comes next: even faster, even more natural speech.",
-            "textToSpeak": "Whatcha reckon woulda happened if we'd told 'em sooner?",
+            "instruction": "Focus on the key detail hidden in the fast sentence.",
+            "hint": "Notice how much of the meaning survives, even with heavy reduction throughout.",
+            "explanation": "This marks the end of the connected-speech foundation — from here, the same skills apply to real conversational chunks, phrasal verbs, and longer natural speech.",
+            "textToSpeak": "It's a lot better once you stop expecting every sound to be perfectly clear.",
             "options": [
-                "Whatcha reckon coulda happened if we'd told 'em sooner?",
-                "Whatcha reckon woulda happened if we'd told 'em sooner?"
+                "It's a lot better once you stop expecting every sound to be perfectly clear.",
+                "It's a lot worse once you stop expecting every sound to be perfectly clear."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         }

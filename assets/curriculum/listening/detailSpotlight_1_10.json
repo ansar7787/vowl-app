@@ -6,572 +6,572 @@
         {
             "id": "LIS_DETAILSPOTLIGHT_L1_Q1",
             "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "Zero in on the person's identity, not their action.",
-            "explanation": "That's teacher: a person who helps students learn at a school. The audio confirms it — the teacher arrives at school every morning.",
-            "textToSpeak": "Our teacher arrives at school every morning.",
-            "targetDetail": "teacher",
+            "instruction": "Catch who is making the tea.",
+            "hint": "In a short sentence, the person usually comes first. Hold on to that first word.",
+            "explanation": "Grandpa is correct. The sentence starts with the person and then tells you what he is doing: making tea.",
+            "textToSpeak": "Grandpa is making tea in the kitchen.",
+            "targetDetail": "grandpa",
             "options": [
-                "teacher",
-                "grandmother",
-                "aunt",
-                "chef"
+                "grandpa",
+                "brother",
+                "neighbor",
+                "uncle"
             ],
             "correctAnswerIndex": 0,
             "subtype": "detailSpotlight",
-            "emoji": "👩‍🏫",
-            "detailCategory": "Key Information"
+            "emoji": "☕",
+            "detailCategory": "Person"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L1_Q2",
             "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "Notice the action being performed in the audio.",
-            "explanation": "Waters is correct — to pour water on plants to help them grow. Notice how she waters the flowers every single day.",
-            "textToSpeak": "She waters the flowers every single day.",
-            "targetDetail": "waters",
+            "instruction": "Clear the glass and tap the place where they eat lunch.",
+            "hint": "Place words often come after ‘in the’. Listen to what follows.",
+            "explanation": "The answer is garden. The speaker says they eat lunch ‘in the garden’, so the place is outside the house.",
+            "textToSpeak": "We eat lunch in the garden today.",
+            "targetDetail": "garden",
             "options": [
-                "waters",
-                "bakes",
-                "lends",
-                "writes"
+                "kitchen",
+                "classroom",
+                "garden",
+                "park"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "detailSpotlight",
-            "emoji": "🪴",
-            "detailCategory": "Key Information"
+            "emoji": "🍽️",
+            "detailCategory": "Place"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L1_Q3",
             "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "Focus on the item, not the person or action described.",
-            "explanation": "Phone is correct — a device used to make calls and send messages. The sentence tells us he keeps the phone in his front pocket.",
-            "textToSpeak": "He keeps his phone in his front pocket.",
-            "targetDetail": "phone",
+            "instruction": "Catch how many brothers the speaker has.",
+            "hint": "Count in your head as you listen, then match the number you hear.",
+            "explanation": "The answer is 3. The speaker says ‘three brothers’. Numbers come right before the thing they count.",
+            "textToSpeak": "I have three brothers.",
+            "targetDetail": "3",
             "options": [
-                "phone",
-                "gift",
-                "notebook",
-                "textbook"
+                "2",
+                "4",
+                "5",
+                "3"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "subtype": "detailSpotlight",
-            "emoji": "📱",
-            "detailCategory": "Key Information"
+            "emoji": "👨‍👩‍👧‍👦",
+            "detailCategory": "Quantity"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L2_Q1",
             "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "Focus on the word that tells you who did this.",
-            "explanation": "The person mentioned is uncle: the brother of someone's mother or father. Here, the uncle works as a friendly bus driver.",
-            "textToSpeak": "My uncle works as a friendly bus driver.",
-            "targetDetail": "uncle",
+            "instruction": "Listen for what you are asked to open.",
+            "hint": "Things you can touch usually come after ‘your’. Wait for that word.",
+            "explanation": "The speaker says ‘open your book’, so the thing to open is a book. So the answer is book.",
+            "textToSpeak": "Please open your book.",
+            "targetDetail": "book",
             "options": [
-                "uncle",
-                "babysitter",
-                "tourist",
-                "singer"
+                "bag",
+                "door",
+                "book",
+                "window"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "detailSpotlight",
-            "emoji": "🚌",
-            "detailCategory": "Key Information"
+            "emoji": "🏫",
+            "detailCategory": "Object"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L2_Q2",
             "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "Which verb captures the main activity here?",
-            "explanation": "Cleans fits the sentence — to remove dirt from something. You can hear that the sister cleans her room every Saturday.",
-            "textToSpeak": "My sister cleans her room every Saturday.",
-            "targetDetail": "cleans",
+            "instruction": "Tap the time the bus comes.",
+            "hint": "Numbers can sound close together. Say each option quietly and compare it with what you heard.",
+            "explanation": "7:00 is correct. ‘Seven o'clock’ means exactly seven, with no extra minutes.",
+            "textToSpeak": "The bus comes at seven o'clock.",
+            "targetDetail": "7:00",
             "options": [
-                "buys",
-                "teaches",
-                "greets",
-                "cleans"
+                "6:00",
+                "9:00",
+                "7:00",
+                "8:00"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "detailSpotlight",
-            "emoji": "🧹",
-            "detailCategory": "Key Information"
+            "emoji": "🚌",
+            "detailCategory": "Time"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L2_Q3",
             "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "Listen for the specific thing described in the audio.",
-            "explanation": "The thing mentioned is umbrella: an object used to protect against rain. Here, the family keeps a big umbrella by the door.",
-            "textToSpeak": "We keep a big umbrella by the door.",
-            "targetDetail": "umbrella",
+            "instruction": "Catch what the baby is doing right now.",
+            "hint": "Words ending in -ing tell you what is happening at this moment.",
+            "explanation": "Sleeping is correct. The speaker says the baby ‘is sleeping now’. The word ‘now’ tells you it is happening at this moment.",
+            "textToSpeak": "The baby is sleeping now.",
+            "targetDetail": "sleeping",
             "options": [
-                "key",
-                "umbrella",
-                "ticket",
-                "invitation"
+                "crying",
+                "sleeping",
+                "eating",
+                "walking"
             ],
             "correctAnswerIndex": 1,
             "subtype": "detailSpotlight",
-            "emoji": "☂️",
-            "detailCategory": "Key Information"
+            "emoji": "🏠",
+            "detailCategory": "Action"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L3_Q1",
             "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "The sentence names a person — catch exactly who.",
-            "explanation": "nurse is correct — a person who cares for patients, often in a hospital. In the audio, a kind nurse works at the small clinic.",
-            "textToSpeak": "A kind nurse works at the small clinic.",
-            "targetDetail": "nurse",
+            "instruction": "Pick out the meat the speaker asks for.",
+            "hint": "Two food words are said. Only one of them is a meat.",
+            "explanation": "Correct: chicken. Rice is not a meat, so the meat the speaker wants is chicken.",
+            "textToSpeak": "I want rice and chicken, please.",
+            "targetDetail": "chicken",
             "options": [
-                "classmate",
-                "nurse",
-                "mechanic",
-                "passenger"
+                "beef",
+                "chicken",
+                "lamb",
+                "fish"
             ],
             "correctAnswerIndex": 1,
             "subtype": "detailSpotlight",
-            "emoji": "👩‍⚕️",
-            "detailCategory": "Key Information"
+            "emoji": "🍴",
+            "detailCategory": "Preference"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L3_Q2",
             "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "The key word describes an action or activity.",
-            "explanation": "The action named is cooks, which means to prepare food by heating it. To be exact, the dad cooks dinner every night.",
-            "textToSpeak": "My dad cooks dinner for us every night.",
-            "targetDetail": "cooks",
+            "instruction": "Listen for the day the shop is closed.",
+            "hint": "Day names can sound alike at the start. Wait for the whole word before you decide.",
+            "explanation": "The answer is Sunday. The word ‘closed’ comes before the day, so the shop is not open then.",
+            "textToSpeak": "The shop is closed on Sunday.",
+            "targetDetail": "Sunday",
             "options": [
-                "builds",
-                "cooks",
-                "borrows",
-                "plants"
+                "Sunday",
+                "Friday",
+                "Monday",
+                "Saturday"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "detailSpotlight",
-            "emoji": "🍳",
-            "detailCategory": "Key Information"
+            "emoji": "🛍️",
+            "detailCategory": "Day"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L3_Q3",
             "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "The item's name is the target — set aside who and what happened.",
-            "explanation": "You heard key, a small metal object used to lock or unlock something. Notice that she lost her house key at the park.",
-            "textToSpeak": "She lost her house key at the park.",
-            "targetDetail": "key",
+            "instruction": "Catch the color you hear.",
+            "hint": "Ignore the object and listen only for the word that describes it.",
+            "explanation": "The color comes before the noun: ‘a red bag’. So the answer is red.",
+            "textToSpeak": "She has a red bag.",
+            "targetDetail": "red",
             "options": [
-                "cart",
-                "key",
-                "blanket",
-                "map"
+                "black",
+                "blue",
+                "red",
+                "green"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "subtype": "detailSpotlight",
-            "emoji": "🔑",
-            "detailCategory": "Key Information"
+            "emoji": "🎒",
+            "detailCategory": "Description"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L4_Q1",
             "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "Listen closely for how the person is identified.",
-            "explanation": "Right answer: farmer, a person who grows crops or raises animals for a living. That's because the young farmer grows corn on his land.",
-            "textToSpeak": "The young farmer grows corn on his land.",
-            "targetDetail": "farmer",
+            "instruction": "Notice the mother's job.",
+            "hint": "The job word comes after ‘is a’. Listen for what follows.",
+            "explanation": "The answer is nurse. ‘My mother is a nurse’ tells you her job.",
+            "textToSpeak": "My mother is a nurse.",
+            "targetDetail": "nurse",
             "options": [
-                "traveler",
-                "athlete",
-                "neighbor",
-                "farmer"
+                "driver",
+                "teacher",
+                "nurse",
+                "cook"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "detailSpotlight",
-            "emoji": "🌾",
-            "detailCategory": "Key Information"
+            "emoji": "👪",
+            "detailCategory": "Role"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L4_Q2",
             "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "Catch the word that tells you what takes place.",
-            "explanation": "Listen for reads: to look at and understand written words. As stated, the brother reads comic books before bedtime.",
-            "textToSpeak": "My brother reads comic books before bedtime.",
-            "targetDetail": "reads",
+            "instruction": "Where is the cat? Listen for the small word that shows its position.",
+            "hint": "Position words are short. Focus on the word between the cat and the chair.",
+            "explanation": "Correct: under. The cat is below the chair, not on it or behind it.",
+            "textToSpeak": "The cat is under the chair.",
+            "targetDetail": "under",
             "options": [
-                "reads",
-                "fixes",
-                "invites",
-                "washes"
+                "under",
+                "on",
+                "behind",
+                "near"
             ],
             "correctAnswerIndex": 0,
             "subtype": "detailSpotlight",
-            "emoji": "📖",
-            "detailCategory": "Key Information"
+            "emoji": "🐾",
+            "detailCategory": "Location"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L4_Q3",
             "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "Don't get distracted by the person; focus on the thing.",
-            "explanation": "Gift is the detail — something given to someone, often to celebrate an occasion. Specifically, they packed a small gift for grandma.",
-            "textToSpeak": "They packed a small gift for grandma.",
-            "targetDetail": "gift",
+            "instruction": "Tap the price you hear.",
+            "hint": "Prices come just before the word ‘dollars’.",
+            "explanation": "‘Two dollars’ is the price of the bread. So the answer is $2.",
+            "textToSpeak": "The bread is two dollars.",
+            "targetDetail": "$2",
             "options": [
-                "receipt",
-                "gift",
-                "letter",
-                "schedule"
+                "$1",
+                "$2",
+                "$5",
+                "$3"
             ],
             "correctAnswerIndex": 1,
             "subtype": "detailSpotlight",
-            "emoji": "🎁",
-            "detailCategory": "Key Information"
+            "emoji": "🛒",
+            "detailCategory": "Price"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L5_Q1",
             "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "Catch the specific role or job title in the sentence.",
-            "explanation": "The role named is waiter, a person who serves food to customers in a restaurant. Specifically, a friendly waiter brought warm bread.",
-            "textToSpeak": "A friendly waiter brought us warm bread.",
-            "targetDetail": "waiter",
+            "instruction": "Find the weather word.",
+            "hint": "‘Very’ is a clue that the next word describes the weather strongly.",
+            "explanation": "‘Very hot’ describes the weather today. So the answer is hot.",
+            "textToSpeak": "It is very hot today.",
+            "targetDetail": "hot",
             "options": [
-                "waiter",
-                "cook",
-                "host",
-                "customer"
+                "hot",
+                "rainy",
+                "windy",
+                "cold"
             ],
             "correctAnswerIndex": 0,
             "subtype": "detailSpotlight",
-            "emoji": "🍞",
-            "detailCategory": "Key Information"
+            "emoji": "🚶",
+            "detailCategory": "Description"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L5_Q2",
             "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "Catch the verb that tells you what's happening.",
-            "explanation": "That's the verb walks: to move on foot at a normal pace. Here, he walks his dog around the block.",
-            "textToSpeak": "He walks his dog around the block.",
-            "targetDetail": "walks",
+            "instruction": "Listen for the friend's name.",
+            "hint": "Names are usually said clearly at the start. Compare the first sound of each option.",
+            "explanation": "The answer is Ali. The name comes first, then the speaker explains who he is: a best friend.",
+            "textToSpeak": "Ali is my best friend.",
+            "targetDetail": "Ali",
             "options": [
-                "paints",
-                "packs",
-                "walks",
-                "visits"
+                "Ben",
+                "Omar",
+                "Ali",
+                "Sam"
             ],
             "correctAnswerIndex": 2,
             "subtype": "detailSpotlight",
-            "emoji": "🐕",
-            "detailCategory": "Key Information"
+            "emoji": "🤝",
+            "detailCategory": "Person"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L5_Q3",
             "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "Focus on the noun that identifies the object.",
-            "explanation": "Letter fits here — a written message sent to someone, often by post. You can hear that she wrote a long letter to her cousin.",
-            "textToSpeak": "She wrote a long letter to her cousin.",
-            "targetDetail": "letter",
+            "instruction": "How does Dad get to work? Catch the action.",
+            "hint": "Focus on the word right after ‘Dad’. It tells you how he moves.",
+            "explanation": "Drives is correct. Dad uses a car to get to work. The other options are other ways to move.",
+            "textToSpeak": "Dad drives to work.",
+            "targetDetail": "drives",
             "options": [
-                "passport",
-                "letter",
-                "thermometer",
-                "menu"
+                "runs",
+                "walks",
+                "cycles",
+                "drives"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "subtype": "detailSpotlight",
-            "emoji": "✉️",
-            "detailCategory": "Key Information"
+            "emoji": "🏢",
+            "detailCategory": "Action"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L6_Q1",
             "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "Catch the specific title used to describe someone.",
-            "explanation": "The correct person is neighbor — a person who lives next door or nearby. The sentence tells us the neighbor feeds the birds every morning.",
-            "textToSpeak": "Our neighbor feeds the birds every morning.",
-            "targetDetail": "neighbor",
+            "instruction": "Catch the time the train leaves.",
+            "hint": "Listen for both parts of the time: the hour, then the minutes.",
+            "explanation": "Correct: 8:30. ‘Eight thirty’ means half past eight.",
+            "textToSpeak": "The train leaves at eight thirty.",
+            "targetDetail": "8:30",
             "options": [
-                "neighbor",
-                "cashier",
-                "guest",
-                "grandfather"
+                "9:30",
+                "8:30",
+                "8:15",
+                "8:45"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "detailSpotlight",
-            "emoji": "🐦",
-            "detailCategory": "Key Information"
+            "emoji": "🚉",
+            "detailCategory": "Time"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L6_Q2",
             "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "The detail to catch is the specific verb used.",
-            "explanation": "bakes is the action — to cook food, such as bread, using dry heat. In the audio, the baker bakes fresh bread at dawn.",
-            "textToSpeak": "The baker bakes fresh bread at dawn.",
-            "targetDetail": "bakes",
+            "instruction": "Listen for what you are asked to turn off.",
+            "hint": "Requests often start with ‘please’. The important object comes at the end.",
+            "explanation": "Light is correct. The request is ‘turn off the light’.",
+            "textToSpeak": "Please turn off the light.",
+            "targetDetail": "light",
             "options": [
-                "apologizes",
-                "bakes",
-                "celebrates",
-                "drives"
+                "fan",
+                "light",
+                "TV",
+                "radio"
             ],
             "correctAnswerIndex": 1,
             "subtype": "detailSpotlight",
-            "emoji": "🥖",
-            "detailCategory": "Key Information"
+            "emoji": "🔌",
+            "detailCategory": "Instruction"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L6_Q3",
             "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "What single word best names the thing described?",
-            "explanation": "Listen for map: a drawing that shows the layout of an area. In this sentence, he checked the map before the trip.",
-            "textToSpeak": "He checked the map before the trip.",
-            "targetDetail": "map",
+            "instruction": "Focus on what is near the aunt's house.",
+            "hint": "‘Near’ is your signal. The place you need comes right after it.",
+            "explanation": "The aunt lives ‘near the river’. So the answer is river.",
+            "textToSpeak": "My aunt lives near the river.",
+            "targetDetail": "river",
             "options": [
-                "photo",
-                "reunion",
-                "neighborhood",
-                "map"
+                "river",
+                "lake",
+                "station",
+                "market"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "detailSpotlight",
-            "emoji": "🗺️",
-            "detailCategory": "Key Information"
+            "emoji": "🏡",
+            "detailCategory": "Location"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L7_Q1",
             "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "The person's identity is hiding in plain sight — listen for it.",
-            "explanation": "The person in question is baker: a person who makes and sells bread and cakes. To be exact, the tired baker rested after a long shift.",
-            "textToSpeak": "The tired baker rested after a long shift.",
-            "targetDetail": "baker",
+            "instruction": "Tap the day of the English class.",
+            "hint": "Some day names begin with the same sound. Listen closely to the start and the ending.",
+            "explanation": "The answer is Tuesday. It starts with a ‘too’ sound, while Thursday starts with ‘thur’.",
+            "textToSpeak": "We have English class on Tuesday.",
+            "targetDetail": "Tuesday",
             "options": [
-                "baker",
-                "driver",
-                "pilot",
-                "gardener"
+                "Thursday",
+                "Monday",
+                "Tuesday",
+                "Wednesday"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "detailSpotlight",
-            "emoji": "🥐",
-            "detailCategory": "Key Information"
+            "emoji": "📚",
+            "detailCategory": "Day"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L7_Q2",
             "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "Listen for the word that names the action taking place.",
-            "explanation": "Right answer: buys, meaning to get something by paying money for it. That's because the mom buys fruit at the market.",
-            "textToSpeak": "My mom buys fruit at the market.",
-            "targetDetail": "buys",
+            "instruction": "Pick out the clothing item he is wearing.",
+            "hint": "The color is a helper word. The clothing item comes right after it.",
+            "explanation": "‘Blue’ describes it: a blue jacket. So the answer is jacket.",
+            "textToSpeak": "He is wearing a blue jacket.",
+            "targetDetail": "jacket",
             "options": [
-                "thanks",
-                "chops",
-                "buys",
-                "orders"
+                "scarf",
+                "hat",
+                "shirt",
+                "jacket"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "subtype": "detailSpotlight",
-            "emoji": "🍎",
-            "detailCategory": "Key Information"
+            "emoji": "👀",
+            "detailCategory": "Object"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L7_Q3",
             "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "Catch the noun that names the object in the sentence.",
-            "explanation": "The object described is recipe — a set of instructions for cooking a dish. As stated, the family found the recipe in an old book.",
-            "textToSpeak": "We found the recipe in an old book.",
-            "targetDetail": "recipe",
+            "instruction": "How many eggs are in the box?",
+            "hint": "Listen to the length of the number word. Short and long numbers sound different.",
+            "explanation": "Correct: 12. ‘Twelve’ is one word for the number after eleven. It is not twenty.",
+            "textToSpeak": "There are twelve eggs in the box.",
+            "targetDetail": "12",
             "options": [
-                "recipe",
-                "garden",
-                "wallet",
-                "instrument"
+                "12",
+                "20",
+                "15",
+                "2"
             ],
             "correctAnswerIndex": 0,
             "subtype": "detailSpotlight",
-            "emoji": "📝",
-            "detailCategory": "Key Information"
+            "emoji": "📦",
+            "detailCategory": "Quantity"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L8_Q1",
             "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "Track the person's role as the audio plays.",
-            "explanation": "Student fits — a person who is learning at a school or college. You can hear that a young student studies hard for exams.",
-            "textToSpeak": "A young student studies hard for exams.",
-            "targetDetail": "student",
+            "instruction": "Listen for who is sick.",
+            "hint": "The sentence has two parts. The person is in the first part.",
+            "explanation": "Correct: coach. The coach is sick, and that is why there is no practice.",
+            "textToSpeak": "Our coach is sick today, so there is no practice.",
+            "targetDetail": "coach",
             "options": [
-                "librarian",
-                "dancer",
-                "cousin",
-                "student"
+                "teacher",
+                "driver",
+                "doctor",
+                "coach"
             ],
             "correctAnswerIndex": 3,
             "subtype": "detailSpotlight",
-            "emoji": "📚",
-            "detailCategory": "Key Information"
+            "emoji": "🏃",
+            "detailCategory": "Role"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L8_Q2",
             "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "Pay attention to what is happening, not who or what is involved.",
-            "explanation": "Fixes is the detail — to repair something that is broken. The audio makes clear that she fixes broken toys for the children.",
-            "textToSpeak": "She fixes broken toys for the children.",
-            "targetDetail": "fixes",
+            "instruction": "Tap what the speaker drinks at breakfast.",
+            "hint": "‘Usually’ tells you this is a habit. Listen for the drink after the verb.",
+            "explanation": "Milk is correct. The speaker says this is what they usually drink in the morning.",
+            "textToSpeak": "I usually drink milk at breakfast.",
+            "targetDetail": "milk",
             "options": [
-                "fixes",
-                "grills",
-                "calls",
-                "sells"
+                "milk",
+                "water",
+                "coffee",
+                "juice"
             ],
             "correctAnswerIndex": 0,
             "subtype": "detailSpotlight",
-            "emoji": "🧸",
-            "detailCategory": "Key Information"
+            "emoji": "🌅",
+            "detailCategory": "Object"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L8_Q3",
             "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "Listen for the noun tying the sentence's detail together.",
-            "explanation": "Right answer: suitcase, a case used for carrying clothes while traveling. That's because he carried a heavy suitcase up the stairs.",
-            "textToSpeak": "He carried a heavy suitcase up the stairs.",
-            "targetDetail": "suitcase",
+            "instruction": "Focus on the month of the birthday.",
+            "hint": "Month names are short or long. Notice how many sounds you hear.",
+            "explanation": "May is correct. ‘In May’ tells you the month of the birthday.",
+            "textToSpeak": "My birthday is in May.",
+            "targetDetail": "May",
             "options": [
-                "appointment",
-                "ladder",
-                "spice",
-                "suitcase"
+                "July",
+                "June",
+                "May",
+                "March"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "detailSpotlight",
-            "emoji": "🧳",
-            "detailCategory": "Key Information"
+            "emoji": "🎂",
+            "detailCategory": "Date"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L9_Q1",
             "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "Pay attention to the word describing the subject's role.",
-            "explanation": "Listen for babysitter: a person who looks after children for a short time. In this case, the kind babysitter reads stories every night.",
-            "textToSpeak": "The kind babysitter reads stories every night.",
-            "targetDetail": "babysitter",
+            "instruction": "Tap the place beside the pharmacy.",
+            "hint": "‘Next to’ points to the answer. The place comes right after it.",
+            "explanation": "The pharmacy is next to the bank, so they are side by side. So the answer is bank.",
+            "textToSpeak": "The pharmacy is next to the bank.",
+            "targetDetail": "bank",
             "options": [
-                "swimmer",
-                "doctor",
-                "coach",
-                "babysitter"
+                "bakery",
+                "hotel",
+                "bank",
+                "school"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "detailSpotlight",
-            "emoji": "🧸",
-            "detailCategory": "Key Information"
+            "emoji": "🧭",
+            "detailCategory": "Location"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L9_Q2",
             "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "Focus on the verb that drives the sentence.",
-            "explanation": "The doing-word is plants — to put a seed or plant in the ground to grow. The sentence confirms she plants flowers along the front path every spring.",
-            "textToSpeak": "She plants flowers along the front path every spring.",
-            "targetDetail": "plants",
+            "instruction": "Clear the glass and tap who walks with the speaker.",
+            "hint": "The word ‘with’ comes before the other person. Listen for it.",
+            "explanation": "The speaker walks to school ‘with my cousin’. So the answer is cousin.",
+            "textToSpeak": "I walk to school with my cousin.",
+            "targetDetail": "cousin",
             "options": [
-                "plants",
-                "shops",
-                "helps",
-                "grows"
+                "cousin",
+                "teacher",
+                "neighbor",
+                "brother"
             ],
             "correctAnswerIndex": 0,
             "subtype": "detailSpotlight",
-            "emoji": "🌷",
-            "detailCategory": "Key Information"
+            "emoji": "🚸",
+            "detailCategory": "Relationship"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L9_Q3",
             "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "Catch the exact word naming the thing involved.",
-            "explanation": "The correct object is wallet — a small case for carrying money and cards. In the audio, he forgot his wallet at the office.",
-            "textToSpeak": "He forgot his wallet at the office.",
-            "targetDetail": "wallet",
+            "instruction": "Catch the word that describes the soup.",
+            "hint": "Taste words often come after ‘very’. Listen for the word that follows.",
+            "explanation": "The speaker says the soup is ‘very salty’. So the answer is salty.",
+            "textToSpeak": "The soup is very salty.",
+            "targetDetail": "salty",
             "options": [
-                "uniform",
-                "wallet",
-                "delivery",
-                "costume"
+                "sweet",
+                "spicy",
+                "cold",
+                "salty"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "subtype": "detailSpotlight",
-            "emoji": "👛",
-            "detailCategory": "Key Information"
+            "emoji": "🥄",
+            "detailCategory": "Description"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L10_Q1",
             "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "The person's role is the detail to spot here.",
-            "explanation": "Cashier is who's described — a person who takes payments at a shop or till. The audio states that the cousin works part-time as a cashier.",
-            "textToSpeak": "My cousin works part-time as a cashier.",
-            "targetDetail": "cashier",
+            "instruction": "Listen for what Sara is washing.",
+            "hint": "The action is washing. The thing being washed comes last.",
+            "explanation": "‘Sara is washing the car’ ends with the thing she is cleaning. So the answer is car.",
+            "textToSpeak": "Sara is washing the car.",
+            "targetDetail": "car",
             "options": [
-                "artist",
-                "cashier",
-                "barista",
-                "actor"
+                "dog",
+                "window",
+                "floor",
+                "car"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "subtype": "detailSpotlight",
-            "emoji": "🧾",
-            "detailCategory": "Key Information"
+            "emoji": "🧼",
+            "detailCategory": "Object"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L10_Q2",
             "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "Listen for what is happening, not to whom or with what.",
-            "explanation": "You heard repairs: to fix something that is broken or damaged. In this sentence, the mechanic repairs cars at the small garage.",
-            "textToSpeak": "The mechanic repairs cars at the small garage.",
-            "targetDetail": "repairs",
+            "instruction": "Tap the time the bank opens.",
+            "hint": "Hour words are different lengths. Listen for the whole word, not just the first sound.",
+            "explanation": "The answer is 9:00. ‘At nine’ means nine o'clock.",
+            "textToSpeak": "The bank opens at nine.",
+            "targetDetail": "9:00",
             "options": [
-                "explores",
-                "approves",
-                "replies",
-                "repairs"
+                "7:00",
+                "9:00",
+                "8:00",
+                "10:00"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "detailSpotlight",
-            "emoji": "🔧",
-            "detailCategory": "Key Information"
+            "emoji": "🏦",
+            "detailCategory": "Time"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L10_Q3",
             "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "The object, not the person or action, is the target here.",
-            "explanation": "That's passport — an official document needed to travel to other countries. The audio confirms it: she keeps her passport in a safe place.",
-            "textToSpeak": "She keeps her passport in a safe place.",
-            "targetDetail": "passport",
+            "instruction": "Pick out the part of her body that hurts.",
+            "hint": "‘Sore’ tells you something hurts. The body part comes right after it.",
+            "explanation": "Knee is correct. The grandmother's sore part is her knee.",
+            "textToSpeak": "My grandmother has a sore knee.",
+            "targetDetail": "knee",
             "options": [
-                "medication",
-                "package",
-                "passport",
-                "dessert"
+                "shoulder",
+                "knee",
+                "ankle",
+                "elbow"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "detailSpotlight",
-            "emoji": "🛂",
-            "detailCategory": "Key Information"
+            "emoji": "🏠",
+            "detailCategory": "Status"
         }
     ]
 }

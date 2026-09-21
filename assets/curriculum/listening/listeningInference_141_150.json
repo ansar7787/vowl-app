@@ -6,542 +6,542 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L141_Q1",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "Think about what 'not matching the price' plus 'more value overall' is doing together.",
-            "explanation": "Refusing to match a price while immediately pivoting to 'value overall' is a classic negotiation move: concede one point, then redirect attention to where you're stronger, rather than competing on the customer's terms.",
-            "textToSpeak": "We're not in a position to match that offer, but we're confident our package brings more value overall.",
-            "question": "What is the negotiator doing?",
+            "instruction": "Listen closely and infer what is really happening.",
+            "hint": "Weigh the two clues: a smiling photo posted online versus a tired voice on the phone the same day.",
+            "explanation": "A cheerful photo posted online can be curated for others to see, while a tired, flat voice heard directly on a call is a more reliable clue to how someone actually feels in the moment.",
+            "textToSpeak": "She posted a smiling photo from the trip, but on the phone that same night her voice sounded tired and flat.",
+            "question": "Which clue better reflects how she's really feeling?",
             "options": [
-                "Declining to compete on price while defending the offer another way",
-                "Withdrawing from the negotiation entirely"
+                "Her smiling photo online",
+                "Her tired voice on the phone"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference",
-            "emoji": "🔦",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "📷",
+            "literalMeaning": "She posted a smiling photo but sounded tired on the phone.",
+            "impliedMeaning": "Her tired voice on the phone is likely the more reliable clue."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L141_Q2",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "What does 'intuitive appeal' versus 'empirical support remains limited' contrast?",
-            "explanation": "'Intuitive appeal' = it seems plausible, makes sense intuitively (subjective). 'Empirical support remains limited' = evidence doesn't strongly back it (objective). This contrast is critical: something can seem right without being demonstrated to be right. The theory appeals to reason but lacks evidential grounding.",
-            "textToSpeak": "While the theory has intuitive appeal, empirical support remains limited.",
-            "question": "What is the speaker arguing?",
+            "instruction": "What does the situation suggest? Make your best guess.",
+            "hint": "Weigh the two clues: a colleague saying 'I'm not worried at all' versus repeatedly checking the project status page.",
+            "explanation": "Saying 'I'm not worried at all' can be said for appearances, while the repeated, private act of checking a status page reflects genuine concern more reliably.",
+            "textToSpeak": "\"I'm not worried at all,\" he said, while quietly refreshing the project status page for the fifth time that hour.",
+            "question": "Which clue better reflects his true feelings?",
             "options": [
-                "The theory is fully supported by evidence",
-                "The theory seems logical but lacks strong evidence"
+                "Repeatedly checking the status page",
+                "His statement that he isn't worried"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
-            "emoji": "💬",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "🔄",
+            "literalMeaning": "He said he wasn't worried but kept refreshing the status page.",
+            "impliedMeaning": "His repeated checking likely reflects his true feelings better."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L141_Q3",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "Think about what 'withholding treatment from the control group' implies once a benefit is already known.",
-            "explanation": "Once results clearly show a treatment works, continuing to give some patients a placebo becomes an ethical problem, not a scientific one — so trials are stopped early specifically to avoid that.",
-            "textToSpeak": "The trial was halted early after the interim results showed a clear benefit, and continuing would have meant withholding treatment from the control group.",
-            "question": "Why was the trial stopped early?",
+            "instruction": "Use the clues to work out the meaning.",
+            "hint": "Weigh the two clues: a five-star review posted online versus a private comment overheard about the same product.",
+            "explanation": "A public five-star review can be influenced by promotions or incentives, while a private, unprompted comment tends to reflect a more honest opinion.",
+            "textToSpeak": "The product had a five-star review online, but she was overheard telling a friend, \"Honestly, it broke after a week.\"",
+            "question": "Which clue better reflects the true quality of the product?",
             "options": [
-                "The treatment was found to be harmful",
-                "Continuing would be unethical once benefit was already clear"
+                "The five-star online review",
+                "Her private comment to a friend"
             ],
             "correctAnswerIndex": 1,
             "subtype": "listeningInference",
-            "emoji": "⏰",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "⭐",
+            "literalMeaning": "The review was five stars, but she privately said it broke quickly.",
+            "impliedMeaning": "Her private comment likely reflects the truth more accurately."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L142_Q1",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "What does the government's own framing ('necessary and proportionate') suggest about potential opposition?",
-            "explanation": "Governments use 'necessary and proportionate' precisely because critics argue otherwise. The phrasing preemptively defends against exactly those accusations. By asserting these qualities, the government signals awareness that the measures could be seen as unnecessary or disproportionate - and is getting ahead of that criticism.",
-            "textToSpeak": "The government described the measures as necessary and proportionate.",
-            "question": "What might critics argue?",
+            "instruction": "What can you infer from what you hear?",
+            "hint": "Weigh the two clues: someone insisting they slept fine versus dark circles under their eyes.",
+            "explanation": "Insisting verbally that one slept fine can be said out of habit or pride, while visible physical evidence like dark circles is often a more reliable sign of actual tiredness.",
+            "textToSpeak": "\"I slept just fine,\" he insisted, though the dark circles under his eyes told a different story.",
+            "question": "Which clue better reflects how well he actually slept?",
             "options": [
-                "The measures are disproportionate or unjustified",
-                "The measures are clearly necessary"
+                "The dark circles under his eyes",
+                "His statement that he slept fine"
             ],
             "correctAnswerIndex": 0,
             "subtype": "listeningInference",
-            "emoji": "🏛️",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "😴",
+            "literalMeaning": "He said he slept fine, but had visible dark circles.",
+            "impliedMeaning": "The dark circles likely reflect the truth more accurately."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L142_Q2",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "What does 'popular short-term / significant long-term consequences' imply about the policy?",
-            "explanation": "Short-term popularity + long-term consequences = the policy pleased people immediately but at a future cost. The implicit criticism: the policy prioritised short-term approval (perhaps for political benefit) over long-term wellbeing. 'Consequences' is neutral but typically implies negative results.",
-            "textToSpeak": "The policy was popular in the short term but had significant long-term consequences.",
-            "question": "What is the implied criticism?",
+            "instruction": "Listen for the clues behind the words.",
+            "hint": "Weigh the two clues: a company's official statement calling sales 'strong' versus several stores closing that same month.",
+            "explanation": "An official statement calling sales 'strong' can be chosen to protect public image, while the concrete fact of store closures is harder to dismiss as spin.",
+            "textToSpeak": "The company's statement called sales \"strong,\" but three of its stores quietly closed that same month.",
+            "question": "Which clue is stronger evidence about the company's situation?",
             "options": [
-                "There were no longer-term consequences",
-                "Short-term gains came at a longer-term cost"
+                "The official statement calling sales strong",
+                "The store closures"
             ],
             "correctAnswerIndex": 1,
             "subtype": "listeningInference",
-            "emoji": "🏛️",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "🏬",
+            "literalMeaning": "The statement said sales were strong, but stores closed that month.",
+            "impliedMeaning": "The store closures are likely the stronger evidence."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L142_Q3",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "Who commissioned the report, and what is their relationship to it?",
-            "explanation": "Those who commissioned (paid for) the report have a stake in it being seen as good. Describing it as 'comprehensive' = a positive self-assessment from a potentially biased source. A more credible assessment would come from an independent party. This is source credibility inference: assess who made the claim and whether they're partial.",
-            "textToSpeak": "The report was described as comprehensive by those who commissioned it.",
-            "question": "Why might the phrasing be notable?",
+            "instruction": "What is most likely true here?",
+            "hint": "Weigh the two clues: a friend saying a hike was 'no big deal' versus their limping the next day.",
+            "explanation": "Saying a hike was 'no big deal' can be said to appear tough, while limping the next day is harder to fake and more reliably shows the physical toll it took.",
+            "textToSpeak": "\"That hike was no big deal,\" she said, then limped noticeably for the rest of the week.",
+            "question": "Which clue better reflects how difficult the hike really was?",
             "options": [
-                "The commissioner is always the most reliable assessor",
-                "The positive description comes from a potentially partial source"
+                "Her limping afterward",
+                "Her statement that it was no big deal"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
-            "emoji": "💼",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "🥾",
+            "literalMeaning": "She called the hike easy but limped for days afterward.",
+            "impliedMeaning": "Her limping likely reflects the true difficulty of the hike."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L143_Q1",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "What does knowing a number by memory despite years without contact reveal?",
-            "explanation": "Remembering a phone number from memory after years of no contact reveals the depth of a previous relationship - the number is embedded enough to be recalled automatically. This small detail conveys the significance of the relationship despite the estrangement, and the emotional weight of making the call.",
-            "textToSpeak": "He hadn't spoken to his brother in years, yet found himself dialling the number from memory.",
-            "question": "What does dialling from memory suggest?",
+            "instruction": "What is the speaker implying?",
+            "hint": "Weigh the two clues: an email saying a decision is final versus a manager privately mentioning it might still change.",
+            "explanation": "An email calling a decision 'final' may be written to sound decisive to a wide audience, while a private comment from the person actually making the call may reveal more current, honest information.",
+            "textToSpeak": "The email said the decision was final, but the manager mentioned privately afterward that it could still change.",
+            "question": "Which clue is more trustworthy about whether the decision might change?",
             "options": [
-                "Despite the estrangement, the number was still deeply embedded",
-                "He looked it up online before calling"
+                "The manager's private comment",
+                "The official email calling it final"
             ],
             "correctAnswerIndex": 0,
             "subtype": "listeningInference",
-            "emoji": "👨‍👩‍👧",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "📧",
+            "literalMeaning": "The email said final, but the manager privately hinted it might change.",
+            "impliedMeaning": "The manager's private comment is likely more trustworthy here."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L143_Q2",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "What does 'exactly as remembered' and 'the same curtains' tell us about time and change?",
-            "explanation": "'Down to the same curtains' = even the smallest details were unchanged. This signals the passage of time (she had been away long enough to have memories) while emphasising stasis (nothing changed). The detail creates a sense of suspended time - the house as a fixed anchor while life moved on.",
-            "textToSpeak": "The house was exactly as she remembered it - down to the same curtains.",
-            "question": "What can we reasonably conclude from this?",
+            "instruction": "What does this situation point to?",
+            "hint": "Weigh the two clues: a friend claiming they're 'totally over' a breakup versus avoiding all mention of their ex.",
+            "explanation": "Claiming to be 'totally over' something while carefully avoiding any related topic suggests the claim may not fully match how the person feels inside.",
+            "textToSpeak": "\"I'm totally over it,\" she said, though she carefully avoided any mention of her ex for the rest of the evening.",
+            "question": "Which clue better reflects how she really feels?",
             "options": [
-                "She had never actually been there before",
-                "Time had passed but the house remained unchanged"
+                "Her claim that she's totally over it",
+                "Her avoidance of the topic"
             ],
             "correctAnswerIndex": 1,
             "subtype": "listeningInference",
-            "emoji": "🪞",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "💔",
+            "literalMeaning": "She claimed to be over it but avoided the topic all evening.",
+            "impliedMeaning": "Her avoidance of the topic likely reflects her true feelings better."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L143_Q3",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "What does 'not a happy laugh' tell you about the emotion behind it?",
-            "explanation": "The clarification 'not a happy laugh' signals that laughter here isn't joy. It's a laugh of disbelief, bitterness, or dark irony - the kind that comes when something is so painful or absurd that it provokes laughter instead of tears. The note apparently confirmed something he found bitterly ironic.",
-            "textToSpeak": "He laughed when he found the note - not a happy laugh.",
-            "question": "What kind of laugh was it?",
+            "instruction": "Read between the lines and choose the best answer.",
+            "hint": "Weigh the two clues: a landlord saying the building has 'no issues' versus tenants describing frequent repairs.",
+            "explanation": "A landlord calling a building issue-free may want to reassure a potential tenant, while multiple independent tenant accounts of frequent repairs offer more consistent, firsthand evidence.",
+            "textToSpeak": "The landlord said the building had \"no issues,\" but several tenants described frequent repair visits over the past year.",
+            "question": "Which clue is stronger evidence about the building's condition?",
             "options": [
-                "A laugh of bitter irony or disbelief",
-                "A polite social laugh"
+                "The landlord's claim of no issues",
+                "The tenants' accounts of frequent repairs"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference",
-            "emoji": "😊",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "🏢",
+            "literalMeaning": "The landlord said no issues, but tenants described frequent repairs.",
+            "impliedMeaning": "The tenants' accounts are likely stronger evidence about the building's condition."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L144_Q1",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "Think about what a 'penalty clause' tied to a specific time period tells you.",
-            "explanation": "The contract allows termination, but the penalty clause specifically for the first year means early exit is possible — it just isn't free. Timing changes the cost, not the right to leave.",
-            "textToSpeak": "The contract can be terminated by either party, though doing so within the first year triggers a penalty clause.",
-            "question": "What is true about ending the contract early?",
+            "instruction": "Piece the clues together to find the real meaning.",
+            "hint": "Weigh the two clues: a résumé listing five years of experience versus vague, uncertain answers about basic tasks in the interview.",
+            "explanation": "A résumé's listed experience is a written claim, while direct, observed answers during an interview provide firsthand evidence that may support or contradict that claim.",
+            "textToSpeak": "His résumé listed five years of experience, but he gave vague, uncertain answers about basic tasks in the interview.",
+            "question": "Which clue raises more doubt about his actual experience?",
             "options": [
-                "It requires a court order",
-                "It's possible but comes at a financial cost in year one"
+                "His vague answers in the interview",
+                "The years listed on his résumé"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
-            "emoji": "🎉",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "📄",
+            "literalMeaning": "His résumé claimed experience, but his interview answers were vague.",
+            "impliedMeaning": "His vague interview answers raise more doubt about his actual experience."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L144_Q2",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "Think about the gap between 'monitoring' and an actual advisory.",
-            "explanation": "'Monitoring' signals genuine concern, but the deliberate choice not to issue a formal advisory shows the embassy isn't ready to take the stronger, more alarming step yet — a calibrated, cautious middle position.",
-            "textToSpeak": "The embassy said it was 'closely monitoring the situation' but stopped short of issuing a formal travel advisory.",
-            "question": "What does the embassy's careful wording suggest?",
+            "instruction": "What's really going on? Trust the evidence.",
+            "hint": "Weigh the two clues: a restaurant's menu describing a dish as 'freshly made' versus a strong freezer-burn smell noticed at the table.",
+            "explanation": "A menu description is a marketing claim, while a specific, noticeable sensory detail like a freezer-burn smell is direct evidence that can contradict that claim.",
+            "textToSpeak": "The menu described the dish as \"freshly made,\" but there was a distinct smell of freezer burn at the table.",
+            "question": "Which clue is stronger evidence about the dish?",
             "options": [
-                "It is concerned but not yet ready to formally warn travellers",
-                "It considers the situation completely safe"
+                "The menu's 'freshly made' description",
+                "The freezer-burn smell"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference",
-            "emoji": "🤔",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "🍲",
+            "literalMeaning": "The menu said freshly made, but there was a freezer-burn smell.",
+            "impliedMeaning": "The freezer-burn smell is likely the stronger evidence here."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L144_Q3",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "What does reframing the question from 'whether' to 'how fundamental' achieve?",
-            "explanation": "Shifting from 'whether' (binary: yes/no) to 'how fundamental' (degree: how much) assumes the answer to 'whether' is settled. The speaker is saying: we all agree change is needed; the debate is now about the scale. This reframing closes one debate and opens another at a higher level.",
-            "textToSpeak": "The question is not whether change is needed, but how fundamental that change needs to be.",
-            "question": "What does this signal?",
+            "instruction": "Think it through — what do the clues add up to?",
+            "hint": "Weigh the two clues: a coworker saying a deadline is 'no problem' versus the same coworker asking for help on three separate tasks that day.",
+            "explanation": "Saying a deadline is 'no problem' can be a reassuring statement, while repeatedly asking for help on multiple tasks that same day is more direct evidence of actual struggle.",
+            "textToSpeak": "\"The deadline's no problem,\" he said, then asked for help with three different tasks that same afternoon.",
+            "question": "Which clue better reflects the real situation?",
             "options": [
-                "The question has been resolved",
-                "Everyone agrees change is needed, but the extent is contested"
+                "His statement that it's no problem",
+                "Him asking for help three times"
             ],
             "correctAnswerIndex": 1,
             "subtype": "listeningInference",
-            "emoji": "🧩",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "🆘",
+            "literalMeaning": "He said the deadline was fine but asked for help three times.",
+            "impliedMeaning": "Him asking for help repeatedly likely reflects the real situation better."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L145_Q1",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "What does 'respect the argument but find evidence insufficient' communicate?",
-            "explanation": "Respecting the argument = acknowledging its logic or merit. 'Evidence insufficient for such a strong claim' = the specific problem: the claim is bigger than what the evidence can support. This is a targeted criticism: not rejecting the argument outright but questioning whether the evidence justifies the strength of the conclusion.",
-            "textToSpeak": "While I respect the argument, I find the evidence insufficient to support such a strong claim.",
-            "question": "What is the speaker's position?",
+            "instruction": "Listen closely and infer what is really happening.",
+            "hint": "Weigh the two clues: a car dealer calling a used car 'like new' versus a mechanic's inspection finding several worn parts.",
+            "explanation": "A dealer's sales description is meant to attract buyers, while an independent mechanic's inspection provides objective, technical evidence that carries more weight.",
+            "textToSpeak": "The dealer called the used car \"practically like new,\" but the mechanic's inspection found several worn parts.",
+            "question": "Which is stronger evidence about the car's true condition?",
             "options": [
-                "Complete rejection of the argument",
-                "Acknowledges the argument but isn't convinced by the evidence"
+                "The mechanic's inspection",
+                "The dealer's description"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
-            "emoji": "🔬",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "🚗",
+            "literalMeaning": "The dealer called it like new, but the mechanic found worn parts.",
+            "impliedMeaning": "The mechanic's inspection is likely the stronger evidence."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L145_Q2",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "Think about the contrast between 'broad rights' and 'few users read past the first screen'.",
-            "explanation": "The sentence pairs sweeping data permissions with the fact that almost nobody actually reads them — implying that legal consent and informed consent aren't the same thing here.",
-            "textToSpeak": "The app's privacy policy grants it broad rights to user data, though few users read past the first screen before accepting.",
-            "question": "What is the speaker getting at?",
+            "instruction": "What does the situation suggest? Make your best guess.",
+            "hint": "Weigh the two clues: a friend saying 'the trip was amazing' versus mentioning they cried twice out of frustration during it.",
+            "explanation": "Calling a trip 'amazing' overall doesn't necessarily contradict having difficult moments, so both clues can be weighed together rather than assuming one cancels out the other.",
+            "textToSpeak": "\"The trip was amazing overall,\" she said, \"though I did cry twice out of pure frustration at one point.\"",
+            "question": "What is the most reasonable conclusion?",
             "options": [
-                "Consent to extensive data use is often given without real awareness",
-                "The app collects no personal data"
+                "The trip was actually a total disaster",
+                "The trip had both wonderful and difficult moments"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference",
-            "emoji": "🏛️",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "🌍",
+            "literalMeaning": "She called the trip amazing but mentioned crying twice from frustration.",
+            "impliedMeaning": "The most reasonable conclusion is that the trip had both wonderful and difficult moments."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L145_Q3",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "What does accepting a premise but rejecting the conclusion reveal about where the problem lies?",
-            "explanation": "If you accept the premise but not the conclusion, the problem is in the reasoning that connects them - the logic, evidence, or steps used to get from premise to conclusion are what's being contested. This is a precise, technically sophisticated form of disagreement: agreeing with the starting point but disputing the path.",
-            "textToSpeak": "I accept the premise but not the conclusion derived from it.",
-            "question": "What is the underlying message?",
+            "instruction": "Use the clues to work out the meaning.",
+            "hint": "Weigh the two clues: a job listing promising 'flexible hours' versus former employees describing being on call constantly.",
+            "explanation": "A job listing is written to attract applicants, while consistent accounts from multiple former employees offer more grounded, firsthand evidence of daily reality.",
+            "textToSpeak": "The job listing promised \"flexible hours,\" but several former employees described being on call at all hours.",
+            "question": "Which is stronger evidence about the actual work conditions?",
             "options": [
-                "The starting point is accepted but the reasoning or derivation is challenged",
-                "Complete disagreement with everything"
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "listeningInference",
-            "emoji": "🎯",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L146_Q1",
-            "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "Think about why someone would seek another opinion right after giving praise.",
-            "explanation": "Praising something publicly and then privately seeking a second opinion suggests the initial compliment didn't capture the whole picture — there's some lingering doubt behind the polite response.",
-            "textToSpeak": "The client praised the design in the meeting, then quietly asked a colleague for a second opinion afterwards.",
-            "question": "What does this suggest about the client's real reaction?",
-            "options": [
-                "They were completely satisfied with no reservations",
-                "Their public praise didn't fully reflect private uncertainty"
+                "The job listing's promise",
+                "The former employees' accounts"
             ],
             "correctAnswerIndex": 1,
             "subtype": "listeningInference",
             "emoji": "💼",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "literalMeaning": "The listing promised flexibility, but former employees described being on call constantly.",
+            "impliedMeaning": "The former employees' accounts are likely the stronger evidence."
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L146_Q1",
+            "interactionType": "choice",
+            "instruction": "What can you infer from what you hear?",
+            "hint": "Weigh the two clues: a patient saying the pain has 'mostly gone away' versus still wincing when standing up.",
+            "explanation": "Saying pain has 'mostly gone away' is a subjective report, while wincing during a specific movement offers direct, observable evidence that may qualify that report.",
+            "textToSpeak": "\"The pain's mostly gone,\" he told the doctor, then winced noticeably while standing up from the chair.",
+            "question": "Which clue suggests the pain hasn't fully resolved?",
+            "options": [
+                "His statement that it's mostly gone",
+                "Wincing when standing up"
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "listeningInference",
+            "emoji": "🤕",
+            "literalMeaning": "He said the pain was mostly gone but winced standing up.",
+            "impliedMeaning": "The wincing suggests the pain has likely not fully resolved."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L146_Q2",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "Think about why a surgeon would pause deliberately before a signature.",
-            "explanation": "Explaining risks fully and then pausing for questions before any signature is standard practice for genuine informed consent — making sure the patient understands and agrees freely, not just complies quickly.",
-            "textToSpeak": "The surgeon explained the risks in detail, then paused and asked if she had any questions before signing the consent form.",
-            "question": "What does the surgeon's approach show?",
+            "instruction": "Listen for the clues behind the words.",
+            "hint": "Weigh the two clues: a app store description claiming 'no ads' versus several recent user reviews mentioning frequent ads.",
+            "explanation": "An app's own description is written by its developers to promote it, while multiple recent, independent user reviews reporting the same issue provide more reliable evidence.",
+            "textToSpeak": "The app description promised \"no ads,\" but several recent reviews complained about frequent ad interruptions.",
+            "question": "Which is stronger evidence about the app's actual behavior?",
             "options": [
-                "A careful effort to ensure informed, voluntary consent",
-                "An attempt to rush the patient into agreeing"
+                "The recent user reviews",
+                "The app's own description"
             ],
             "correctAnswerIndex": 0,
             "subtype": "listeningInference",
-            "emoji": "🧭",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "📱",
+            "literalMeaning": "The description said no ads, but recent reviews mentioned frequent ads.",
+            "impliedMeaning": "The recent user reviews are likely the stronger evidence."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L146_Q3",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "Think about what filing permits has to do with renovations actually happening.",
-            "explanation": "Real renovation work typically requires permits before it can legally begin. Citing renovations as a reason to end a tenancy while skipping that step raises doubt about whether the renovation is the true motive.",
-            "textToSpeak": "The landlord's letter cited 'necessary renovations' as the reason for ending the tenancy, though no permits had been filed.",
-            "question": "What does the missing permit suggest?",
+            "instruction": "What is most likely true here?",
+            "hint": "Weigh the two clues: a teacher saying a lesson 'went great' versus test scores showing most students struggled with the material.",
+            "explanation": "A teacher's own impression of a lesson may reflect classroom energy or engagement, while concrete test scores provide more objective evidence of whether the material was actually understood.",
+            "textToSpeak": "\"The lesson went great,\" the teacher said, but the test scores showed most students had struggled with the material.",
+            "question": "Which is stronger evidence about how well the lesson worked?",
             "options": [
-                "The tenant broke the lease first",
-                "The stated reason for eviction may not be genuine"
+                "The teacher's impression that it went great",
+                "The test scores"
             ],
             "correctAnswerIndex": 1,
             "subtype": "listeningInference",
             "emoji": "📊",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "literalMeaning": "The teacher felt it went great, but scores showed struggle.",
+            "impliedMeaning": "The test scores are likely the stronger evidence about the lesson's effectiveness."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L147_Q1",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "What does 'still kept' after 'everything that had happened' imply?",
-            "explanation": "'Even after everything' = despite difficult or painful events. 'Still kept' = retained despite those events. The inference: the letter holds meaning that transcended whatever happened between them. Keeping something you could discard, after painful events, signals deep unresolved attachment or significance.",
-            "textToSpeak": "She still kept the letter, even after everything that had happened.",
-            "question": "What is the intended meaning?",
+            "instruction": "What is the speaker implying?",
+            "hint": "Weigh the two clues: a hotel's website showing bright, spacious photos versus recent guest reviews describing a cramped, dim room.",
+            "explanation": "A hotel's own promotional photos are chosen to look appealing, while multiple recent guest accounts describing the same disappointing reality provide more reliable, current evidence.",
+            "textToSpeak": "The website showed bright, spacious photos of the room, but recent reviews described it as cramped and dim.",
+            "question": "Which is stronger evidence about the actual room?",
             "options": [
-                "Despite a difficult history, the letter still held meaning",
-                "She had no other personal letters"
+                "The website's photos",
+                "The recent guest reviews"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference",
-            "emoji": "📜",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "🏨",
+            "literalMeaning": "The website showed spacious photos, but reviews described a cramped room.",
+            "impliedMeaning": "The recent guest reviews are likely the stronger evidence."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L147_Q2",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "What happens to memories through repeated narration?",
-            "explanation": "Repeated storytelling can change memories - each retelling potentially alters emphasis, detail, or framing. Eventually, the narrative version and the original memory become indistinguishable. This is a psychological insight: storytelling about one's own experience can replace or alter the original memory.",
-            "textToSpeak": "He had told the story so many times that he was no longer sure what was true.",
-            "question": "What's the hidden meaning here?",
+            "instruction": "What does this situation point to?",
+            "hint": "Weigh the two clues: a friend insisting they're 'not mad' versus giving one-word answers for the rest of the evening.",
+            "explanation": "Insisting verbally that one isn't upset, while behaving in a way that suggests otherwise for an extended period, points to the behavior being the more reliable signal.",
+            "textToSpeak": "\"I'm not mad,\" she said, then gave one-word answers for the rest of the evening.",
+            "question": "Which clue better reflects how she actually feels?",
             "options": [
-                "Repeated retelling can blur the boundary between memory and narrative",
-                "The story changes each time it's told"
+                "Her one-word answers all evening",
+                "Her statement that she's not mad"
             ],
             "correctAnswerIndex": 0,
             "subtype": "listeningInference",
-            "emoji": "💭",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "😐",
+            "literalMeaning": "She said she wasn't mad but gave one-word answers all evening.",
+            "impliedMeaning": "Her behavior for the rest of the evening likely reflects her true feelings better."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L147_Q3",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "What does mutual silence about a topic imply?",
-            "explanation": "Both the non-asking and the non-offering are deliberate. Each knows the other knows. Their shared silence is a mutual decision - either understood or tacit - not to engage with the topic. This implies either a tense truce or a mutually protective avoidance. The symmetry of the silence is significant.",
-            "textToSpeak": "She didn't ask where he had been. He didn't offer to say.",
-            "question": "What is implied about their relationship?",
+            "instruction": "Read between the lines and choose the best answer.",
+            "hint": "Weigh the two clues: a company claiming its product is 'eco-friendly' versus an independent lab report finding non-biodegradable materials.",
+            "explanation": "A company's own marketing claim about being eco-friendly can be chosen to appeal to customers, while an independent lab's technical findings provide objective, verified evidence.",
+            "textToSpeak": "The company called its packaging \"eco-friendly,\" but an independent lab report found it contained non-biodegradable materials.",
+            "question": "Which is stronger evidence about the packaging?",
             "options": [
-                "They communicate completely openly",
-                "There is a mutual, possibly tense, decision not to discuss it"
+                "The independent lab report",
+                "The company's own claim"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
-            "emoji": "🔦",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "🧪",
+            "literalMeaning": "The company claimed eco-friendly, but a lab found non-biodegradable materials.",
+            "impliedMeaning": "The independent lab report is likely the stronger evidence."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L148_Q1",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "What does 'generally understood' + 'senior member makes the call' establish?",
-            "explanation": "'Generally understood' = an informal but widely shared norm, not a written rule. 'Senior member makes the final call' = hierarchy determines decision authority. This is an implicit governance rule - not stated but assumed by all participants. Understanding such unstated norms is essential for navigating organisations.",
-            "textToSpeak": "It is generally understood that the senior member makes the final call.",
-            "question": "What is the implied rule?",
+            "instruction": "Piece the clues together to find the real meaning.",
+            "hint": "Weigh the two clues: someone claiming they 'barely noticed' the criticism versus reading the same message five times that night.",
+            "explanation": "Claiming not to notice criticism much, while rereading the exact message multiple times later, suggests the criticism affected the person more than they admitted.",
+            "textToSpeak": "\"I barely noticed the criticism,\" he said, though he reread the message five separate times that night.",
+            "question": "Which clue better reflects how much the criticism affected him?",
             "options": [
-                "Everyone has equal say in the decision",
-                "Seniority determines who decides"
+                "His statement that he barely noticed it",
+                "Rereading the message five times"
             ],
             "correctAnswerIndex": 1,
             "subtype": "listeningInference",
-            "emoji": "📱",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "📩",
+            "literalMeaning": "He said he barely noticed the criticism but reread it five times.",
+            "impliedMeaning": "Rereading the message repeatedly likely reflects the true impact better."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L148_Q2",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "What does a raised eyebrow typically communicate non-verbally?",
-            "explanation": "A raised eyebrow = a non-verbal signal of questioning, scepticism, surprise, or mild disapproval. 'Said nothing' = chose not to voice the reaction verbally. Together: she had a visible reaction (surprise/disapproval) but chose restraint in not speaking. The eyebrow is the only visible sign of her real response.",
-            "textToSpeak": "She raised an eyebrow but said nothing.",
-            "question": "What does this gesture likely communicate?",
+            "instruction": "What's really going on? Trust the evidence.",
+            "hint": "Weigh the two clues: a city report calling a neighborhood's crime rate 'low' versus long-time residents describing frequent break-ins.",
+            "explanation": "An official city report may rely on broader statistics or outdated data, while consistent, firsthand accounts from long-time residents offer grounded, current evidence.",
+            "textToSpeak": "The city report described the neighborhood's crime rate as \"low,\" but long-time residents described frequent break-ins nearby.",
+            "question": "Which is stronger evidence about the neighborhood's current safety?",
             "options": [
-                "Complete approval",
-                "Surprise or disapproval expressed non-verbally"
+                "The official city report",
+                "The residents' firsthand accounts"
             ],
             "correctAnswerIndex": 1,
             "subtype": "listeningInference",
-            "emoji": "💬",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "🏘️",
+            "literalMeaning": "The report called crime low, but residents described frequent break-ins.",
+            "impliedMeaning": "The residents' firsthand accounts are likely the stronger evidence."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L148_Q3",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "Why would a room go quiet when someone enters?",
-            "explanation": "A room going quiet on entry signals that the person carries significant presence - whether through authority, status, or a powerful personality. It's not necessarily negative; it could be respect. The immediate effect on the room shows the person commands attention without saying a word.",
-            "textToSpeak": "The room went quiet when he walked in.",
-            "question": "What does this suggest about the person?",
+            "instruction": "Think it through — what do the clues add up to?",
+            "hint": "Weigh the two clues: a friend saying they 'don't care at all' about not being invited versus asking three separate times who else was there.",
+            "explanation": "Claiming indifference about not being invited, while repeatedly asking who attended, suggests genuine curiosity or hurt feelings behind the claim of indifference.",
+            "textToSpeak": "\"I don't care at all that I wasn't invited,\" she said, then asked three separate times who had gone.",
+            "question": "Which clue better reflects how she really feels?",
             "options": [
-                "He commands attention or carries authority",
-                "He had done something wrong recently"
+                "Asking repeatedly who attended",
+                "Her statement that she doesn't care"
             ],
             "correctAnswerIndex": 0,
             "subtype": "listeningInference",
-            "emoji": "⚖️",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "🎉",
+            "literalMeaning": "She claimed not to care but asked three times who attended.",
+            "impliedMeaning": "Her repeated questions likely reflect her true feelings better."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L149_Q1",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "Think about the size of the problem compared to the size of the offered fix.",
-            "explanation": "A meal voucher addresses hunger during a delay, but it does nothing about a missed connecting flight — a much bigger disruption. The gesture is real, but it's mismatched to the actual inconvenience caused.",
-            "textToSpeak": "The airline offered a meal voucher, but the delay had already caused her to miss her connecting flight home.",
-            "question": "What is the real problem the voucher doesn't solve?",
+            "instruction": "Listen closely and infer what is really happening.",
+            "hint": "Weigh the two clues: a supplement label claiming 'clinically proven results' versus the fine print citing a single small unpublished study.",
+            "explanation": "A bold marketing claim on a label can sound impressive, while examining the actual evidence behind it, such as a small unpublished study, gives a more accurate picture of how strong that claim really is.",
+            "textToSpeak": "The label boasted \"clinically proven results,\" but the fine print cited only one small, unpublished study.",
+            "question": "Which is the more reliable indicator of the product's actual effectiveness?",
             "options": [
-                "A missed connection that a meal can't fix",
-                "She wasn't hungry during the delay"
+                "The bold claim on the front label",
+                "The weak evidence cited in the fine print"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference",
-            "emoji": "✈️",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "💊",
+            "literalMeaning": "The label made a bold claim, but the fine print cited weak evidence.",
+            "impliedMeaning": "The weak evidence cited in the fine print is the more reliable indicator."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L149_Q2",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "What is the logical meaning of 'the exception proves the rule'?",
-            "explanation": "This counterintuitive phrase means: an exception that needs to be noted actually confirms that a rule exists (you can only have an exception if there's a rule to except from). 'Proves' = tests or demonstrates (older meaning). The exception's existence implies a general rule from which it deviates.",
-            "textToSpeak": "The exception, in this case, proves the rule.",
-            "question": "What is the implication?",
+            "instruction": "What does the situation suggest? Make your best guess.",
+            "hint": "Weigh the two clues: a friend saying a new coworker seems 'totally fine' versus mentioning three separate incidents that concerned them.",
+            "explanation": "Calling someone 'totally fine' overall, while describing multiple specific concerning incidents, suggests the individual incidents may carry more useful information than the general impression.",
+            "textToSpeak": "\"He seems totally fine,\" she said, before describing three separate incidents that had concerned her.",
+            "question": "Which is more informative about the coworker?",
             "options": [
-                "The exception disproves the rule",
-                "The existence of an exception confirms the rule exists"
+                "Her general statement that he seems fine",
+                "The three specific incidents she described"
             ],
             "correctAnswerIndex": 1,
             "subtype": "listeningInference",
-            "emoji": "🧭",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "🧑‍💼",
+            "literalMeaning": "She called him fine overall but described three concerning incidents.",
+            "impliedMeaning": "The three specific incidents are likely more informative than the general statement."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L149_Q3",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "What does the same argument being used for different conclusions reveal?",
-            "explanation": "If the same reasoning can justify opposite conclusions, it reveals the argument's flexibility - which may signal vagueness, internal weakness, or susceptibility to cherry-picking applications. Strong arguments should lead consistently to the same types of conclusions; arguments that don't are suspect.",
-            "textToSpeak": "This line of argument has been used to justify very different conclusions at different times.",
-            "question": "What danger is being pointed out?",
+            "instruction": "Use the clues to work out the meaning.",
+            "hint": "Weigh the two clues: an airline's on-time record showing 95 percent versus this specific flight being delayed three hours.",
+            "explanation": "A general statistic like an airline's overall on-time record describes typical performance, while a specific delay on this exact flight is direct evidence about what actually happened this time.",
+            "textToSpeak": "The airline advertised a 95 percent on-time record, but this particular flight was delayed by three hours.",
+            "question": "Which clue is more relevant to today's actual travel experience?",
             "options": [
-                "The argument is flexible enough to be used by opposing sides",
-                "The argument is perfectly consistent"
+                "The three-hour delay on this specific flight",
+                "The airline's general on-time statistic"
             ],
             "correctAnswerIndex": 0,
             "subtype": "listeningInference",
-            "emoji": "⚠️",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "✈️",
+            "literalMeaning": "The airline's overall record was strong, but this flight was delayed three hours.",
+            "impliedMeaning": "The specific delay on this flight is the more relevant clue for today's experience."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L150_Q1",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "What do 'competent' and 'met the required standard' (rather than exceeded it) signal?",
-            "explanation": "'Competent' = capable, adequate (not inspired). 'Met the required standard' = did what was necessary (didn't go beyond). Together: the work was sufficient, not exceptional. This is damning with faint praise - technically positive but implying nothing more than the minimum. Performance reviews are full of such coded language.",
-            "textToSpeak": "The work was competent and met the required standard.",
-            "question": "What is the subtle assessment?",
+            "instruction": "What can you infer from what you hear?",
+            "hint": "Weigh the two clues: a manager saying performance reviews 'went well across the board' versus two team members quietly updating their résumés that same week.",
+            "explanation": "A manager's broad statement that reviews 'went well' is a general summary, while specific individual actions like updating résumés can be more telling evidence about how some people truly feel.",
+            "textToSpeak": "\"Reviews went well across the board,\" the manager announced, though two team members were quietly updating their résumés that same week.",
+            "question": "Which clue raises more doubt about how well the reviews really went?",
             "options": [
-                "The work was excellent",
-                "The work was adequate but not remarkable"
+                "The résumé updates",
+                "The manager's general announcement"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
-            "emoji": "🪞",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "📄",
+            "literalMeaning": "The manager said reviews went well, but two people updated their résumés.",
+            "impliedMeaning": "The résumé updates raise more doubt about how well the reviews actually went."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L150_Q2",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "What does 'technical skills fine / soft skills need development' communicate?",
-            "explanation": "Technical skills (specific job competencies) = assessed as sufficient. Soft skills (communication, teamwork, emotional intelligence) = identified as the development area. This is a common performance or job interview assessment: technically capable, but less effective in interpersonal dimensions. Soft skills often distinguish adequate from excellent.",
-            "textToSpeak": "He has all the technical skills - it's the soft skills that need development.",
-            "question": "What is the point being made?",
+            "instruction": "Listen for the clues behind the words.",
+            "hint": "Weigh the two clues: a friend describing their new relationship as 'perfect' versus mentioning they've already had two serious arguments.",
+            "explanation": "Calling a relationship 'perfect' overall doesn't necessarily rule out real friction, so both clues should be weighed together rather than dismissing the arguments as unimportant.",
+            "textToSpeak": "\"It's honestly perfect,\" she said about the new relationship, \"though we've already had two pretty serious arguments.\"",
+            "question": "What is the most reasonable conclusion?",
             "options": [
-                "Technical ability is fine but interpersonal skills need work",
-                "He is ready for the role immediately"
+                "The relationship truly has no problems at all",
+                "The relationship has both strong points and real friction"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference",
-            "emoji": "🎯",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "❤️",
+            "literalMeaning": "She called the relationship perfect but mentioned two serious arguments.",
+            "impliedMeaning": "The most reasonable conclusion is that it has both strong points and real friction."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L150_Q3",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "What does 'too ambitious for its own good' mean?",
-            "explanation": "'Too ambitious for its own good' = the ambition exceeds what can actually be achieved - reach exceeds grasp. The ambition (positive) becomes a liability because it sets goals the work can't fully realise. This is a specific type of failure: not lack of effort or intelligence but overreaching. The qualifier 'for its own good' creates an internal tension.",
-            "textToSpeak": "The novel is ambitious - perhaps too ambitious for its own good.",
-            "question": "What is the real message here?",
+            "instruction": "What is most likely true here?",
+            "hint": "Weigh the two clues: a store's return policy stating 'hassle-free returns' versus several customers describing weeks-long refund delays.",
+            "explanation": "A store's advertised policy describes an ideal process, while multiple independent customer accounts of long delays offer more reliable evidence about what actually happens.",
+            "textToSpeak": "The store advertised \"hassle-free returns,\" but several customers described refund delays lasting weeks.",
+            "question": "Which is stronger evidence about the real return process?",
             "options": [
-                "The novel does not try hard enough",
-                "The novel tries to do too much and may not fully succeed"
+                "The store's advertised policy",
+                "The customer accounts of delays"
             ],
             "correctAnswerIndex": 1,
             "subtype": "listeningInference",
-            "emoji": "📚",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "🧾",
+            "literalMeaning": "The store advertised hassle-free returns, but customers described long delays.",
+            "impliedMeaning": "The customer accounts of delays are likely the stronger evidence."
         }
     ]
 }

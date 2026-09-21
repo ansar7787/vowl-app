@@ -7,25 +7,23 @@
             "id": "LIS_AUDIOSENTENCEORDER_L1_Q1",
             "interactionType": "reorder",
             "instruction": "Snap the scrambled words back into the order you hear.",
-            "hint": "Start with 'She'. Time phrases come at the end.",
-            "explanation": "Subject (She) + drinks (verb) + milk (object) + every morning (time). Time expressions like 'every morning' usually appear at the end of a sentence.",
-            "textToSpeak": "She drinks milk every morning.",
+            "hint": "Listen for the small word right after 'I' — it changes the whole sentence.",
+            "explanation": "Subject (I) comes first, then the verb 'have', then the object (a car). This is the most basic English word order: who, then what they do, then what they act on.",
+            "textToSpeak": "I have a car.",
             "shuffledSentences": [
-                "milk",
-                "every",
-                "morning",
-                "drinks",
-                "She"
+                "have",
+                "car",
+                "I",
+                "a"
             ],
             "correctOrder": [
-                4,
-                3,
+                2,
                 0,
-                1,
-                2
+                3,
+                1
             ],
             "subtype": "audioSentenceOrder",
-            "emoji": "🥛",
+            "emoji": "🚗",
             "pauseMarkers": [
                 1,
                 2,
@@ -35,26 +33,22 @@
         {
             "id": "LIS_AUDIOSENTENCEORDER_L1_Q2",
             "interactionType": "reorder",
-            "instruction": "Snap the scrambled words back into the order you hear.",
-            "hint": "Start with 'He'. The manner adverb comes last.",
-            "explanation": "Subject (He) + reads (verb) + a book (object) + quietly (manner). Adverbs of manner like 'quietly' follow the verb and its object.",
-            "textToSpeak": "He reads a book quietly.",
+            "instruction": "Listen closely, then rebuild the sentence in the order you hear it.",
+            "hint": "The word 'is' links the pointing word 'This' to the describing word.",
+            "explanation": "'This' points at something, 'is' links it to the description, and 'delicious' tells us the quality. Linking sentences always follow this three-part pattern.",
+            "textToSpeak": "This is delicious.",
             "shuffledSentences": [
-                "reads",
-                "a",
-                "He",
-                "book",
-                "quietly"
+                "delicious",
+                "This",
+                "is"
             ],
             "correctOrder": [
-                2,
-                0,
                 1,
-                3,
-                4
+                2,
+                0
             ],
             "subtype": "audioSentenceOrder",
-            "emoji": "📖",
+            "emoji": "😋",
             "pauseMarkers": [
                 1,
                 2,
@@ -64,26 +58,22 @@
         {
             "id": "LIS_AUDIOSENTENCEORDER_L1_Q3",
             "interactionType": "reorder",
-            "instruction": "Snap the scrambled words back into the order you hear.",
-            "hint": "Start with 'The cat'. 'All day' is a time expression.",
-            "explanation": "Subject (The cat) + sleeps (verb) + all day (time). 'All day' means for the entire day, and naturally ends the sentence.",
-            "textToSpeak": "The cat sleeps all day.",
+            "instruction": "Put the scrambled words back in the order you hear them.",
+            "hint": "Only one word describes how the group feels — listen for it at the end.",
+            "explanation": "'We' names the group, 'are' is the plural form of 'be', and 'ready' describes their state. Short sentences like this are common in real conversation.",
+            "textToSpeak": "We are ready.",
             "shuffledSentences": [
-                "day",
-                "cat",
-                "The",
-                "sleeps",
-                "all"
+                "ready",
+                "We",
+                "are"
             ],
             "correctOrder": [
-                2,
                 1,
-                3,
-                4,
+                2,
                 0
             ],
             "subtype": "audioSentenceOrder",
-            "emoji": "🐈",
+            "emoji": "👍",
             "pauseMarkers": [
                 1,
                 2,
@@ -94,25 +84,25 @@
             "id": "LIS_AUDIOSENTENCEORDER_L2_Q1",
             "interactionType": "reorder",
             "instruction": "Snap the scrambled words back into the order you hear.",
-            "hint": "Start with 'My'. The object is a type of food.",
-            "explanation": "Subject (My sister) + loves (verb) + chocolate cake (object). 'Chocolate' acts as an adjective here, describing the type of cake.",
-            "textToSpeak": "My sister loves chocolate cake.",
+            "hint": "'My father' is one unit — don't split it apart.",
+            "explanation": "'My father' (subject) + 'drives' (verb) + 'a taxi' (object) describes a job. Notice 'my father' always stays together as a single chunk.",
+            "textToSpeak": "My father drives a taxi.",
             "shuffledSentences": [
-                "sister",
-                "cake",
-                "loves",
+                "drives",
+                "a",
+                "taxi",
                 "My",
-                "chocolate"
+                "father"
             ],
             "correctOrder": [
                 3,
-                0,
-                2,
                 4,
-                1
+                0,
+                1,
+                2
             ],
             "subtype": "audioSentenceOrder",
-            "emoji": "🍰",
+            "emoji": "🚕",
             "pauseMarkers": [
                 1,
                 2,
@@ -122,81 +112,23 @@
         {
             "id": "LIS_AUDIOSENTENCEORDER_L2_Q2",
             "interactionType": "reorder",
-            "instruction": "Snap the scrambled words back into the order you hear.",
-            "hint": "Start with 'The dog'. 'Very' comes before the adverb.",
-            "explanation": "Subject (The dog) + barks (verb) + very loudly (manner). 'Very' is an intensifier placed before 'loudly' to strengthen its meaning.",
-            "textToSpeak": "The dog barks very loudly.",
+            "instruction": "Listen closely, then rebuild the sentence in the order you hear it.",
+            "hint": "The place phrase 'near the school' comes after the verb, as one chunk.",
+            "explanation": "Subject (They) + verb (live) + place (near the school). 'Near' tells us the school is close by, not far away.",
+            "textToSpeak": "They live near the school.",
             "shuffledSentences": [
-                "loudly",
-                "The",
-                "dog",
-                "barks",
-                "very"
+                "live",
+                "They",
+                "near",
+                "the",
+                "school"
             ],
             "correctOrder": [
                 1,
-                2,
-                3,
-                4,
-                0
-            ],
-            "subtype": "audioSentenceOrder",
-            "emoji": "🐕",
-            "pauseMarkers": [
-                1,
-                2,
-                3
-            ]
-        },
-        {
-            "id": "LIS_AUDIOSENTENCEORDER_L2_Q3",
-            "interactionType": "reorder",
-            "instruction": "Snap the scrambled words back into the order you hear.",
-            "hint": "Start with 'We'. 'Games' is the object; 'on weekends' tells us when.",
-            "explanation": "Subject (We) + play (verb) + games (object) + on weekends (time). 'On weekends' uses 'on' for recurring days or time periods.",
-            "textToSpeak": "We play games on weekends.",
-            "shuffledSentences": [
-                "weekends",
-                "play",
-                "on",
-                "We",
-                "games"
-            ],
-            "correctOrder": [
-                3,
-                1,
-                4,
-                2,
-                0
-            ],
-            "subtype": "audioSentenceOrder",
-            "emoji": "🎮",
-            "pauseMarkers": [
-                1,
-                2,
-                3
-            ]
-        },
-        {
-            "id": "LIS_AUDIOSENTENCEORDER_L3_Q1",
-            "interactionType": "reorder",
-            "instruction": "Snap the scrambled words back into the order you hear.",
-            "hint": "Start with 'He'. 'To school' tells us where he goes.",
-            "explanation": "Subject (He) + goes (verb) + to school (place) + early (time). 'Early' here means he arrives before the usual time.",
-            "textToSpeak": "He goes to school early.",
-            "shuffledSentences": [
-                "to",
-                "early",
-                "school",
-                "goes",
-                "He"
-            ],
-            "correctOrder": [
-                4,
-                3,
                 0,
                 2,
-                1
+                3,
+                4
             ],
             "subtype": "audioSentenceOrder",
             "emoji": "🏫",
@@ -207,28 +139,88 @@
             ]
         },
         {
-            "id": "LIS_AUDIOSENTENCEORDER_L3_Q2",
+            "id": "LIS_AUDIOSENTENCEORDER_L2_Q3",
             "interactionType": "reorder",
-            "instruction": "Snap the scrambled words back into the order you hear.",
-            "hint": "Start with 'She'. The base verb 'cook' comes last.",
-            "explanation": "Subject (She) + helps (verb) + her mother (object) + cook (base verb). 'Help someone + base verb' is a natural English pattern.",
-            "textToSpeak": "She helps her mother cook.",
+            "instruction": "Put the scrambled words back in the order you hear them.",
+            "hint": "This sentence gives an instruction, so there's no subject at the start — it begins with the request word.",
+            "explanation": "Requests like this skip the subject and start directly with 'Please' + the action (close the door), ending with the time word 'now'.",
+            "textToSpeak": "Please close the door now.",
             "shuffledSentences": [
-                "her",
-                "She",
-                "helps",
-                "mother",
-                "cook"
+                "the",
+                "close",
+                "Please",
+                "door",
+                "now"
             ],
             "correctOrder": [
-                1,
                 2,
+                1,
                 0,
                 3,
                 4
             ],
             "subtype": "audioSentenceOrder",
-            "emoji": "🍳",
+            "emoji": "🚪",
+            "pauseMarkers": [
+                1,
+                2,
+                3
+            ]
+        },
+        {
+            "id": "LIS_AUDIOSENTENCEORDER_L3_Q1",
+            "interactionType": "reorder",
+            "instruction": "Snap the scrambled words back into the order you hear.",
+            "hint": "'At noon' is a fixed time chunk — the two words never separate.",
+            "explanation": "Subject (Our train) + verb (leaves) + time (at noon). 'At' pairs with exact clock times like noon, midnight, or six o'clock.",
+            "textToSpeak": "Our train leaves at noon.",
+            "shuffledSentences": [
+                "noon",
+                "leaves",
+                "at",
+                "Our",
+                "train"
+            ],
+            "correctOrder": [
+                3,
+                4,
+                1,
+                2,
+                0
+            ],
+            "subtype": "audioSentenceOrder",
+            "emoji": "🚆",
+            "pauseMarkers": [
+                1,
+                2,
+                3
+            ]
+        },
+        {
+            "id": "LIS_AUDIOSENTENCEORDER_L3_Q2",
+            "interactionType": "reorder",
+            "instruction": "Listen closely, then rebuild the sentence in the order you hear it.",
+            "hint": "'In my bag' tells you where, and it comes last, as one group.",
+            "explanation": "Subject (I) + verb (keep) + object (snacks) + place (in my bag). 'In' is used because the bag is a container that holds things.",
+            "textToSpeak": "I keep snacks in my bag.",
+            "shuffledSentences": [
+                "in",
+                "I",
+                "my",
+                "keep",
+                "bag",
+                "snacks"
+            ],
+            "correctOrder": [
+                1,
+                3,
+                5,
+                0,
+                2,
+                4
+            ],
+            "subtype": "audioSentenceOrder",
+            "emoji": "🎒",
             "pauseMarkers": [
                 1,
                 2,
@@ -238,26 +230,26 @@
         {
             "id": "LIS_AUDIOSENTENCEORDER_L3_Q3",
             "interactionType": "reorder",
-            "instruction": "Snap the scrambled words back into the order you hear.",
-            "hint": "Start with 'The children'. Two verbs are joined by 'and'.",
-            "explanation": "Subject (The children) + sing (verb 1) + and + dance (verb 2). Two verbs joined by 'and' describe two simultaneous or related actions.",
-            "textToSpeak": "The children sing and dance.",
+            "instruction": "Put the scrambled words back in the order you hear them.",
+            "hint": "'Outside' is a single-word place — it sits right after the object.",
+            "explanation": "Subject (She) + verb (waters) + object (the plants) + place (outside). One-word place adverbs like 'outside' or 'inside' need no preposition.",
+            "textToSpeak": "She waters the plants outside.",
             "shuffledSentences": [
-                "sing",
-                "and",
-                "dance",
-                "The",
-                "children"
+                "She",
+                "the",
+                "outside",
+                "plants",
+                "waters"
             ],
             "correctOrder": [
-                3,
-                4,
                 0,
+                4,
                 1,
+                3,
                 2
             ],
             "subtype": "audioSentenceOrder",
-            "emoji": "🎵",
+            "emoji": "🌱",
             "pauseMarkers": [
                 1,
                 2,
@@ -268,25 +260,25 @@
             "id": "LIS_AUDIOSENTENCEORDER_L4_Q1",
             "interactionType": "reorder",
             "instruction": "Snap the scrambled words back into the order you hear.",
-            "hint": "Start with 'I'. 'At noon' is a time expression.",
-            "explanation": "Subject (I) + eat (verb) + lunch (object) + at noon (time). 'At' is used with specific times: at noon, at midnight, at six o'clock.",
-            "textToSpeak": "I eat lunch at noon.",
+            "hint": "The describing word 'warm' sits directly before the thing it describes.",
+            "explanation": "In English, adjectives like 'warm' always come right before the noun: a warm jacket, never 'a jacket warm'.",
+            "textToSpeak": "He wears a warm jacket.",
             "shuffledSentences": [
-                "at",
-                "I",
-                "lunch",
-                "eat",
-                "noon"
+                "jacket",
+                "He",
+                "warm",
+                "wears",
+                "a"
             ],
             "correctOrder": [
                 1,
                 3,
+                4,
                 2,
-                0,
-                4
+                0
             ],
             "subtype": "audioSentenceOrder",
-            "emoji": "🍽️",
+            "emoji": "🧥",
             "pauseMarkers": [
                 1,
                 2,
@@ -296,26 +288,26 @@
         {
             "id": "LIS_AUDIOSENTENCEORDER_L4_Q2",
             "interactionType": "reorder",
-            "instruction": "Snap the scrambled words back into the order you hear.",
-            "hint": "Start with 'The rain'. 'Heavily' describes the manner; 'today' ends it.",
-            "explanation": "Subject (The rain) + falls (verb) + heavily (manner) + today (time). When both manner and time appear, manner usually comes before time.",
-            "textToSpeak": "The rain falls heavily today.",
+            "instruction": "Listen closely, then rebuild the sentence in the order you hear it.",
+            "hint": "'Fresh' describes the bread, so it stays glued to that word.",
+            "explanation": "Subject (My mother) + verb (bakes) + adjective + noun (fresh bread). The adjective-noun pair moves as a single unit.",
+            "textToSpeak": "My mother bakes fresh bread.",
             "shuffledSentences": [
-                "heavily",
-                "rain",
-                "The",
-                "today",
-                "falls"
+                "fresh",
+                "mother",
+                "My",
+                "bakes",
+                "bread"
             ],
             "correctOrder": [
                 2,
                 1,
-                4,
+                3,
                 0,
-                3
+                4
             ],
             "subtype": "audioSentenceOrder",
-            "emoji": "🌧️",
+            "emoji": "🍞",
             "pauseMarkers": [
                 1,
                 2,
@@ -325,26 +317,26 @@
         {
             "id": "LIS_AUDIOSENTENCEORDER_L4_Q3",
             "interactionType": "reorder",
-            "instruction": "Snap the scrambled words back into the order you hear.",
-            "hint": "Start with 'She'. 'Birthday' describes the type of gift.",
-            "explanation": "Subject (She) + opens (verb) + her birthday gift (object). 'Birthday' acts as an adjective modifying 'gift', describing its occasion.",
-            "textToSpeak": "She opens her birthday gift.",
+            "instruction": "Put the scrambled words back in the order you hear them.",
+            "hint": "This time the adjective describes the subject, not the object — listen for where 'small' attaches.",
+            "explanation": "'The small shop' is the subject group (with the adjective attached to 'shop'), followed by the verb (sells) and object (fruit).",
+            "textToSpeak": "The small shop sells fruit.",
             "shuffledSentences": [
-                "gift",
-                "birthday",
-                "She",
-                "opens",
-                "her"
+                "The",
+                "fruit",
+                "sells",
+                "shop",
+                "small"
             ],
             "correctOrder": [
-                2,
-                3,
+                0,
                 4,
-                1,
-                0
+                3,
+                2,
+                1
             ],
             "subtype": "audioSentenceOrder",
-            "emoji": "🎁",
+            "emoji": "🍎",
             "pauseMarkers": [
                 1,
                 2,
@@ -355,25 +347,25 @@
             "id": "LIS_AUDIOSENTENCEORDER_L5_Q1",
             "interactionType": "reorder",
             "instruction": "Snap the scrambled words back into the order you hear.",
-            "hint": "Start with 'He'. 'Daily' is a frequency adverb at the end.",
-            "explanation": "Subject (He) + cleans (verb) + his room (object) + daily (frequency). 'Daily' means every day and acts as a frequency adverb.",
-            "textToSpeak": "He cleans his room daily.",
+            "hint": "'Usually' sits between the subject and the verb, not at the very start or end.",
+            "explanation": "Frequency adverbs like 'usually' typically go right after the subject and before the main verb: I usually walk, not usually I walk.",
+            "textToSpeak": "I usually walk to work.",
             "shuffledSentences": [
-                "cleans",
-                "He",
-                "daily",
-                "his",
-                "room"
+                "usually",
+                "walk",
+                "I",
+                "work",
+                "to"
             ],
             "correctOrder": [
-                1,
+                2,
                 0,
-                3,
+                1,
                 4,
-                2
+                3
             ],
             "subtype": "audioSentenceOrder",
-            "emoji": "🧹",
+            "emoji": "🚶",
             "pauseMarkers": [
                 1,
                 2,
@@ -383,26 +375,26 @@
         {
             "id": "LIS_AUDIOSENTENCEORDER_L5_Q2",
             "interactionType": "reorder",
-            "instruction": "Snap the scrambled words back into the order you hear.",
-            "hint": "'Always' comes before the main verb 'eat'.",
-            "explanation": "Subject (We) + always (adverb) + eat (verb) + dinner (object) + together (manner). Frequency adverbs like 'always' sit between the subject and the main verb.",
-            "textToSpeak": "We always eat dinner together.",
+            "instruction": "Listen closely, then rebuild the sentence in the order you hear it.",
+            "hint": "'Sometimes' comes early, but 'together' waits until the very end.",
+            "explanation": "Subject (We) + frequency adverb (sometimes) + verb (eat) + object (pizza) + manner (together). Two adverb-type words can appear in one sentence, in different positions.",
+            "textToSpeak": "We sometimes eat pizza together.",
             "shuffledSentences": [
-                "eat",
-                "always",
-                "dinner",
+                "together",
+                "sometimes",
                 "We",
-                "together"
+                "pizza",
+                "eat"
             ],
             "correctOrder": [
-                3,
-                1,
-                0,
                 2,
-                4
+                1,
+                4,
+                3,
+                0
             ],
             "subtype": "audioSentenceOrder",
-            "emoji": "🍽️",
+            "emoji": "🍕",
             "pauseMarkers": [
                 1,
                 2,
@@ -412,26 +404,26 @@
         {
             "id": "LIS_AUDIOSENTENCEORDER_L5_Q3",
             "interactionType": "reorder",
-            "instruction": "Snap the scrambled words back into the order you hear.",
-            "hint": "Start with 'The teacher'. 'A story' is the object.",
-            "explanation": "Subject (The teacher) + reads (verb) + a story (object). 'A' is the indefinite article used before a singular, countable noun like 'story'.",
-            "textToSpeak": "The teacher reads a story.",
+            "instruction": "Put the scrambled words back in the order you hear them.",
+            "hint": "'Never' takes the same spot 'usually' and 'sometimes' took earlier.",
+            "explanation": "'Never' behaves grammatically like other frequency adverbs — it sits between the subject and the verb, even though its meaning is negative.",
+            "textToSpeak": "She never drinks cold coffee.",
             "shuffledSentences": [
-                "story",
-                "a",
-                "teacher",
-                "reads",
-                "The"
+                "She",
+                "coffee",
+                "drinks",
+                "never",
+                "cold"
             ],
             "correctOrder": [
-                4,
-                2,
+                0,
                 3,
-                1,
-                0
+                2,
+                4,
+                1
             ],
             "subtype": "audioSentenceOrder",
-            "emoji": "📖",
+            "emoji": "☕",
             "pauseMarkers": [
                 1,
                 2,
@@ -442,25 +434,27 @@
             "id": "LIS_AUDIOSENTENCEORDER_L6_Q1",
             "interactionType": "reorder",
             "instruction": "Snap the scrambled words back into the order you hear.",
-            "hint": "Start with 'She'. 'In her diary' tells us where.",
-            "explanation": "Subject (She) + writes (verb) + in her diary (place). 'In' is used for enclosed or contained spaces: in a diary, in a notebook.",
-            "textToSpeak": "She writes in her diary.",
+            "hint": "'His grandmother' is the whole object — the possessive word stays attached.",
+            "explanation": "Subject (He) + verb (calls) + object (his grandmother) + time (every week). Possessives like 'his' always come directly before the noun they own.",
+            "textToSpeak": "He calls his grandmother every week.",
             "shuffledSentences": [
-                "her",
-                "She",
-                "diary",
-                "writes",
-                "in"
+                "his",
+                "He",
+                "every",
+                "grandmother",
+                "week",
+                "calls"
             ],
             "correctOrder": [
                 1,
-                3,
-                4,
+                5,
                 0,
-                2
+                3,
+                2,
+                4
             ],
             "subtype": "audioSentenceOrder",
-            "emoji": "📓",
+            "emoji": "📞",
             "pauseMarkers": [
                 1,
                 2,
@@ -470,26 +464,26 @@
         {
             "id": "LIS_AUDIOSENTENCEORDER_L6_Q2",
             "interactionType": "reorder",
-            "instruction": "Snap the scrambled words back into the order you hear.",
-            "hint": "Start with 'The bus'. 'At seven' is the time.",
-            "explanation": "Subject (The bus) + arrives (verb) + at seven (time). 'At' is the correct preposition with specific clock times.",
-            "textToSpeak": "The bus arrives at seven.",
+            "instruction": "Listen closely, then rebuild the sentence in the order you hear it.",
+            "hint": "'Us' is a short object pronoun — it replaces a name, so it sits right after the verb.",
+            "explanation": "Subject (They) + verb (invite) + object pronoun (us) + reason (for dinner). Object pronouns like 'us', 'me', and 'him' always follow the verb.",
+            "textToSpeak": "They invite us for dinner.",
             "shuffledSentences": [
-                "bus",
-                "arrives",
-                "The",
-                "seven",
-                "at"
+                "invite",
+                "dinner",
+                "They",
+                "us",
+                "for"
             ],
             "correctOrder": [
                 2,
                 0,
-                1,
+                3,
                 4,
-                3
+                1
             ],
             "subtype": "audioSentenceOrder",
-            "emoji": "🚌",
+            "emoji": "🍽️",
             "pauseMarkers": [
                 1,
                 2,
@@ -499,26 +493,26 @@
         {
             "id": "LIS_AUDIOSENTENCEORDER_L6_Q3",
             "interactionType": "reorder",
-            "instruction": "Snap the scrambled words back into the order you hear.",
-            "hint": "Start with 'He'. 'Twice' means two times and ends the sentence.",
-            "explanation": "Subject (He) + brushes (verb) + his teeth (object) + twice (frequency). 'Twice' means two times and usually appears at the end of the sentence.",
-            "textToSpeak": "He brushes his teeth twice.",
+            "instruction": "Put the scrambled words back in the order you hear them.",
+            "hint": "Two objects follow the verb here: who receives it, then what is given.",
+            "explanation": "'Lend' takes two objects in this order: the person (him) comes first, then the thing given (my umbrella).",
+            "textToSpeak": "I lend him my umbrella.",
             "shuffledSentences": [
-                "brushes",
-                "He",
-                "his",
-                "twice",
-                "teeth"
+                "I",
+                "him",
+                "lend",
+                "my",
+                "umbrella"
             ],
             "correctOrder": [
-                1,
                 0,
                 2,
-                4,
-                3
+                1,
+                3,
+                4
             ],
             "subtype": "audioSentenceOrder",
-            "emoji": "🪥",
+            "emoji": "☔",
             "pauseMarkers": [
                 1,
                 2,
@@ -529,25 +523,29 @@
             "id": "LIS_AUDIOSENTENCEORDER_L7_Q1",
             "interactionType": "reorder",
             "instruction": "Snap the scrambled words back into the order you hear.",
-            "hint": "Start with 'The flowers'. 'In spring' uses 'in' with seasons.",
-            "explanation": "Subject (The flowers) + bloom (verb) + in spring (time). 'In' is always used with the four seasons: in spring, in summer, in autumn, in winter.",
-            "textToSpeak": "The flowers bloom in spring.",
+            "hint": "'Next to' is a two-word preposition that always stays together.",
+            "explanation": "Subject (Our house) + verb (is) + place (next to the park). 'Next to' means directly beside something.",
+            "textToSpeak": "Our house is next to the park.",
             "shuffledSentences": [
-                "flowers",
-                "in",
-                "spring",
-                "bloom",
-                "The"
+                "park",
+                "Our",
+                "next",
+                "is",
+                "the",
+                "house",
+                "to"
             ],
             "correctOrder": [
-                4,
-                0,
-                3,
                 1,
-                2
+                5,
+                3,
+                2,
+                6,
+                4,
+                0
             ],
             "subtype": "audioSentenceOrder",
-            "emoji": "🌸",
+            "emoji": "🏡",
             "pauseMarkers": [
                 1,
                 2,
@@ -557,26 +555,28 @@
         {
             "id": "LIS_AUDIOSENTENCEORDER_L7_Q2",
             "interactionType": "reorder",
-            "instruction": "Snap the scrambled words back into the order you hear.",
-            "hint": "Start with 'She'. 'Daily' is a frequency adverb at the end.",
-            "explanation": "Subject (She) + waters (verb) + her plants (object) + daily (frequency). 'Water' as a verb means to give water to plants - a common action.",
-            "textToSpeak": "She waters her plants daily.",
+            "instruction": "Listen closely, then rebuild the sentence in the order you hear it.",
+            "hint": "'Under' points to a location beneath something — listen for where it attaches.",
+            "explanation": "Subject (The keys) + verb (are) + place (under the mat). 'Under' describes something positioned below another object.",
+            "textToSpeak": "The keys are under the mat.",
             "shuffledSentences": [
-                "plants",
-                "her",
-                "waters",
-                "daily",
-                "She"
+                "keys",
+                "the",
+                "are",
+                "The",
+                "mat",
+                "under"
             ],
             "correctOrder": [
-                4,
-                2,
-                1,
+                3,
                 0,
-                3
+                2,
+                5,
+                1,
+                4
             ],
             "subtype": "audioSentenceOrder",
-            "emoji": "🪴",
+            "emoji": "🔑",
             "pauseMarkers": [
                 1,
                 2,
@@ -586,26 +586,28 @@
         {
             "id": "LIS_AUDIOSENTENCEORDER_L7_Q3",
             "interactionType": "reorder",
-            "instruction": "Snap the scrambled words back into the order you hear.",
-            "hint": "Start with 'He'. 'Well' is the adverb form of 'good'.",
-            "explanation": "Subject (He) + plays (verb) + the guitar (object) + well (manner). 'Well' is the adverb form of 'good' - never say 'plays good'.",
-            "textToSpeak": "He plays the guitar well.",
+            "instruction": "Put the scrambled words back in the order you hear them.",
+            "hint": "'At the hospital' names the workplace, and it comes last.",
+            "explanation": "Subject (My sister) + verb (works) + place (at the hospital). 'At' is used for specific workplaces and buildings.",
+            "textToSpeak": "My sister works at the hospital.",
             "shuffledSentences": [
-                "guitar",
-                "He",
+                "works",
+                "at",
+                "sister",
                 "the",
-                "plays",
-                "well"
+                "My",
+                "hospital"
             ],
             "correctOrder": [
-                1,
-                3,
+                4,
                 2,
                 0,
-                4
+                1,
+                3,
+                5
             ],
             "subtype": "audioSentenceOrder",
-            "emoji": "🎸",
+            "emoji": "🏥",
             "pauseMarkers": [
                 1,
                 2,
@@ -616,25 +618,25 @@
             "id": "LIS_AUDIOSENTENCEORDER_L8_Q1",
             "interactionType": "reorder",
             "instruction": "Snap the scrambled words back into the order you hear.",
-            "hint": "Start with 'They'. 'At the beach' is the location.",
-            "explanation": "Subject (They) + swim (verb) + at the beach (place). 'At' is used with specific locations like 'the beach', 'the park', 'the office'.",
-            "textToSpeak": "They swim at the beach.",
+            "hint": "Two time words join together at the end: which day, then which part of the day.",
+            "explanation": "Subject (My flight) + verb (leaves) + time (tomorrow morning). Present simple can describe a scheduled future event, like a timetable.",
+            "textToSpeak": "My flight leaves tomorrow morning.",
             "shuffledSentences": [
-                "They",
-                "beach",
-                "the",
-                "swim",
-                "at"
+                "flight",
+                "My",
+                "leaves",
+                "tomorrow",
+                "morning"
             ],
             "correctOrder": [
+                1,
                 0,
-                3,
-                4,
                 2,
-                1
+                3,
+                4
             ],
             "subtype": "audioSentenceOrder",
-            "emoji": "🏊",
+            "emoji": "✈️",
             "pauseMarkers": [
                 1,
                 2,
@@ -644,28 +646,28 @@
         {
             "id": "LIS_AUDIOSENTENCEORDER_L8_Q2",
             "interactionType": "reorder",
-            "instruction": "Snap the scrambled words back into the order you hear.",
-            "hint": "Start with 'The baby'. 'In the afternoon' uses 'in' with time of day.",
-            "explanation": "Subject (The baby) + sleeps (verb) + in the afternoon (time). Time of day phrases - morning, afternoon, evening - all use 'in'.",
-            "textToSpeak": "The baby sleeps in the afternoon.",
+            "instruction": "Listen closely, then rebuild the sentence in the order you hear it.",
+            "hint": "'This weekend' names a specific time close to now.",
+            "explanation": "Subject (We) + verb (visit) + object (our grandparents) + time (this weekend). 'This' points to the weekend that is coming up soon.",
+            "textToSpeak": "We visit our grandparents this weekend.",
             "shuffledSentences": [
-                "sleeps",
-                "baby",
-                "The",
-                "the",
-                "afternoon",
-                "in"
+                "We",
+                "visit",
+                "this",
+                "our",
+                "grandparents",
+                "weekend"
             ],
             "correctOrder": [
-                2,
-                1,
                 0,
-                5,
+                1,
                 3,
-                4
+                4,
+                2,
+                5
             ],
             "subtype": "audioSentenceOrder",
-            "emoji": "😴",
+            "emoji": "👵",
             "pauseMarkers": [
                 1,
                 2,
@@ -675,26 +677,28 @@
         {
             "id": "LIS_AUDIOSENTENCEORDER_L8_Q3",
             "interactionType": "reorder",
-            "instruction": "Snap the scrambled words back into the order you hear.",
-            "hint": "Start with 'She'. 'Beautiful' comes before 'pictures'. 'Often' ends the sentence.",
-            "explanation": "Subject (She) + paints (verb) + beautiful pictures (object) + often (frequency). Adjectives like 'beautiful' always directly precede the noun they describe.",
-            "textToSpeak": "She paints beautiful pictures often.",
+            "instruction": "Put the scrambled words back in the order you hear them.",
+            "hint": "'In ten minutes' means counting forward from now — the two number words stay together.",
+            "explanation": "Subject (The meeting) + verb (starts) + time (in ten minutes). 'In' with a duration means 'from now until then'.",
+            "textToSpeak": "The meeting starts in ten minutes.",
             "shuffledSentences": [
-                "often",
-                "beautiful",
-                "paints",
-                "pictures",
-                "She"
+                "The",
+                "in",
+                "ten",
+                "starts",
+                "meeting",
+                "minutes"
             ],
             "correctOrder": [
+                0,
                 4,
-                2,
-                1,
                 3,
-                0
+                1,
+                2,
+                5
             ],
             "subtype": "audioSentenceOrder",
-            "emoji": "🎨",
+            "emoji": "🕘",
             "pauseMarkers": [
                 1,
                 2,
@@ -705,27 +709,25 @@
             "id": "LIS_AUDIOSENTENCEORDER_L9_Q1",
             "interactionType": "reorder",
             "instruction": "Snap the scrambled words back into the order you hear.",
-            "hint": "Start with 'He'. 'At the bakery' tells us where.",
-            "explanation": "Subject (He) + buys (verb) + bread (object) + at the bakery (place). 'At' is used with shops and public establishments.",
-            "textToSpeak": "He buys bread at the bakery.",
+            "hint": "This is a question, so the small helper word jumps to the very front, before the subject.",
+            "explanation": "Questions with 'can' move the auxiliary in front of the subject: Can you...? instead of You can... This word order signals a request.",
+            "textToSpeak": "Can you pass the salt?",
             "shuffledSentences": [
-                "bread",
-                "bakery",
-                "at",
+                "salt",
                 "the",
-                "He",
-                "buys"
+                "pass",
+                "Can",
+                "you"
             ],
             "correctOrder": [
-                4,
-                5,
-                0,
-                2,
                 3,
-                1
+                4,
+                2,
+                1,
+                0
             ],
             "subtype": "audioSentenceOrder",
-            "emoji": "🥖",
+            "emoji": "🧂",
             "pauseMarkers": [
                 1,
                 2,
@@ -735,28 +737,26 @@
         {
             "id": "LIS_AUDIOSENTENCEORDER_L9_Q2",
             "interactionType": "reorder",
-            "instruction": "Snap the scrambled words back into the order you hear.",
-            "hint": "Start with 'The sun'. 'In the east' uses 'in' with directions.",
-            "explanation": "Subject (The sun) + rises (verb) + in the east (place). 'In' is used with compass directions: in the north, in the south, in the east, in the west.",
-            "textToSpeak": "The sun rises in the east.",
+            "instruction": "Listen closely, then rebuild the sentence in the order you hear it.",
+            "hint": "Listen for the question word right at the start — it comes before 'you', not after.",
+            "explanation": "Yes/no questions in present simple begin with 'Do' or 'Does', then the subject, then the base verb: Do you need...?",
+            "textToSpeak": "Do you need a pen?",
             "shuffledSentences": [
-                "east",
-                "the",
-                "sun",
-                "rises",
-                "in",
-                "The"
+                "need",
+                "you",
+                "pen",
+                "Do",
+                "a"
             ],
             "correctOrder": [
-                5,
-                2,
                 3,
-                4,
                 1,
-                0
+                0,
+                4,
+                2
             ],
             "subtype": "audioSentenceOrder",
-            "emoji": "🌅",
+            "emoji": "🖊️",
             "pauseMarkers": [
                 1,
                 2,
@@ -766,28 +766,26 @@
         {
             "id": "LIS_AUDIOSENTENCEORDER_L9_Q3",
             "interactionType": "reorder",
-            "instruction": "Snap the scrambled words back into the order you hear.",
-            "hint": "Start with 'She'. 'Every day' is a time expression at the end.",
-            "explanation": "Subject (She) + calls (verb) + her friend (object) + every day (frequency). 'Every day' (two words) means each day. Compare 'everyday' (one word) = ordinary.",
-            "textToSpeak": "She calls her friend every day.",
+            "instruction": "Put the scrambled words back in the order you hear them.",
+            "hint": "The question word 'Where' leads, then the verb 'is' follows immediately after it.",
+            "explanation": "Wh-questions start with the question word (Where), followed by the verb (is), then the subject (the nearest bank).",
+            "textToSpeak": "Where is the nearest bank?",
             "shuffledSentences": [
-                "friend",
-                "calls",
-                "her",
-                "every",
-                "day",
-                "She"
+                "Where",
+                "the",
+                "nearest",
+                "is",
+                "bank"
             ],
             "correctOrder": [
-                5,
-                1,
-                2,
                 0,
                 3,
+                1,
+                2,
                 4
             ],
             "subtype": "audioSentenceOrder",
-            "emoji": "📱",
+            "emoji": "🏦",
             "pauseMarkers": [
                 1,
                 2,
@@ -798,25 +796,27 @@
             "id": "LIS_AUDIOSENTENCEORDER_L10_Q1",
             "interactionType": "reorder",
             "instruction": "Snap the scrambled words back into the order you hear.",
-            "hint": "Start with 'We'. 'Movies' is the object; 'on weekends' tells us when.",
-            "explanation": "Subject (We) + watch (verb) + movies (object) + on weekends (time). 'On' is used with days and parts of days: on Monday, on weekends, on Friday evenings.",
-            "textToSpeak": "We watch movies on weekends.",
+            "hint": "'Before dinner' tells you the order of two events — it comes after the main action.",
+            "explanation": "Subject (I) + verb (finish) + object (my homework) + time clause (before dinner). 'Before' shows which event happens first.",
+            "textToSpeak": "I finish my homework before dinner.",
             "shuffledSentences": [
-                "We",
-                "movies",
-                "on",
-                "weekends",
-                "watch"
+                "dinner",
+                "my",
+                "I",
+                "homework",
+                "before",
+                "finish"
             ],
             "correctOrder": [
-                0,
-                4,
-                1,
                 2,
-                3
+                5,
+                1,
+                3,
+                4,
+                0
             ],
             "subtype": "audioSentenceOrder",
-            "emoji": "🍿",
+            "emoji": "📚",
             "pauseMarkers": [
                 1,
                 2,
@@ -826,26 +826,28 @@
         {
             "id": "LIS_AUDIOSENTENCEORDER_L10_Q2",
             "interactionType": "reorder",
-            "instruction": "Snap the scrambled words back into the order you hear.",
-            "hint": "Start with 'He'. 'Broken' is an adjective before 'chair'.",
-            "explanation": "Subject (He) + fixes (verb) + the broken chair (object). 'Broken' is a past participle used as an adjective to describe the state of the chair.",
-            "textToSpeak": "He fixes the broken chair.",
+            "instruction": "Listen closely, then rebuild the sentence in the order you hear it.",
+            "hint": "A number word and a describing word both sit in front of 'drinks' — in that order.",
+            "explanation": "Subject (The waiter) + verb (brings) + quantity + adjective + noun (two cold drinks). Numbers come before adjectives, which come before the noun.",
+            "textToSpeak": "The waiter brings two cold drinks.",
             "shuffledSentences": [
-                "fixes",
-                "He",
-                "broken",
-                "the",
-                "chair"
+                "drinks",
+                "The",
+                "two",
+                "cold",
+                "waiter",
+                "brings"
             ],
             "correctOrder": [
                 1,
-                0,
-                3,
+                4,
+                5,
                 2,
-                4
+                3,
+                0
             ],
             "subtype": "audioSentenceOrder",
-            "emoji": "🪑",
+            "emoji": "🥤",
             "pauseMarkers": [
                 1,
                 2,
@@ -855,28 +857,30 @@
         {
             "id": "LIS_AUDIOSENTENCEORDER_L10_Q3",
             "interactionType": "reorder",
-            "instruction": "Snap the scrambled words back into the order you hear.",
-            "hint": "Start with 'The dog'. 'Happily' is a manner adverb at the end.",
-            "explanation": "Subject (The dog) + fetches (verb) + the ball (object) + happily (manner). 'Happily' is the adverb form of 'happy', showing how the dog performs the action.",
-            "textToSpeak": "The dog fetches the ball happily.",
+            "instruction": "Put the scrambled words back in the order you hear them.",
+            "hint": "Two actions are joined by 'and' — listen for where the second action begins.",
+            "explanation": "Subject (We) + verb 1 (pack our bags) + 'and' + verb 2 (leave early). 'And' links two actions done by the same subject, in the order they happen.",
+            "textToSpeak": "We pack our bags and leave early.",
             "shuffledSentences": [
-                "ball",
-                "happily",
-                "fetches",
-                "dog",
-                "the",
-                "The"
+                "and",
+                "leave",
+                "our",
+                "early",
+                "We",
+                "bags",
+                "pack"
             ],
             "correctOrder": [
-                5,
-                3,
-                2,
                 4,
+                6,
+                2,
+                5,
                 0,
-                1
+                1,
+                3
             ],
             "subtype": "audioSentenceOrder",
-            "emoji": "🐕",
+            "emoji": "🧳",
             "pauseMarkers": [
                 1,
                 2,

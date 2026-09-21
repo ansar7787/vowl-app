@@ -7,398 +7,350 @@
             "id": "LIS_EMOTIONRECOGNITION_L11_Q1",
             "interactionType": "choice",
             "instruction": "How are they feeling? Lock in the right emotion.",
-            "hint": "Notice 'finally' and the enthusiastic planning that follows right away.",
-            "explanation": "Starting to plan every room the moment you get new house keys is a clear sign of excitement.",
-            "textToSpeak": "We finally got the keys to our new house. I've already started planning how to decorate every room.",
+            "hint": "Listen to what the speaker's reaction is whenever they enter the room.",
+            "explanation": "Smiling automatically at the finished room shows lasting happiness.",
+            "textToSpeak": "We painted the whole room this weekend. Now every time I walk in, I can't help smiling.",
             "options": [
-                "bored",
-                "nervous",
-                "excited",
-                "sad"
+                "happy",
+                "angry",
+                "sad",
+                "bored"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "emotionRecognition",
-            "emoji": "🤩",
+            "emoji": "😊",
             "emotionScale": 3,
             "optionEmojis": [
-                "🥱",
-                "😬",
-                "🤩",
-                "😢"
+                "😊",
+                "😠",
+                "😢",
+                "🥱"
             ]
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L11_Q2",
             "interactionType": "choice",
             "instruction": "How are they feeling? Lock in the right emotion.",
-            "hint": "Listen for what the speaker missed and how they're judging themselves for it.",
-            "explanation": "Missing a loved one's funeral through no fault of your own, and blaming yourself anyway, is a deep and specific kind of sadness.",
-            "textToSpeak": "The flight was cancelled and I couldn't make it to my grandmother's funeral. I'll never forgive myself.",
+            "hint": "Ask whether anyone is being blamed, or whether something was simply lost.",
+            "explanation": "Nobody is blamed and nothing can be done, so the feeling is sadness about the loss rather than anger.",
+            "textToSpeak": "My ice cream fell on the ground before I even tasted it.",
             "options": [
-                "surprised",
-                "nervous",
-                "angry",
-                "sad"
+                "sad",
+                "curious",
+                "bored",
+                "angry"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "emotionRecognition",
             "emoji": "😢",
             "emotionScale": 3,
             "optionEmojis": [
-                "😲",
-                "😬",
-                "😠",
-                "😢"
+                "😢",
+                "🤔",
+                "🥱",
+                "😠"
             ]
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L11_Q3",
             "interactionType": "choice",
             "instruction": "How are they feeling? Lock in the right emotion.",
-            "hint": "Notice 'I know exactly' — the speaker has no doubt left about their preparation.",
-            "explanation": "Saying you know exactly what to say, after a full week of preparation, is a straightforward sign of confidence.",
-            "textToSpeak": "I've prepared for this presentation all week. I know exactly what to say and when to say it.",
+            "hint": "Notice the question at the end and how it is asked.",
+            "explanation": "The sharp rhetorical question shows the speaker feels let down and is upset with him. Anger is the feeling here.",
+            "textToSpeak": "He promised to help me move, and now he says he's busy? Are you kidding me?",
             "options": [
-                "confident",
-                "nervous",
-                "bored",
-                "sad"
+                "curious",
+                "sad",
+                "angry",
+                "bored"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "emotionRecognition",
-            "emoji": "😎",
+            "emoji": "😠",
             "emotionScale": 3,
             "optionEmojis": [
-                "😎",
-                "😬",
-                "🥱",
-                "😢"
+                "🤔",
+                "😢",
+                "😠",
+                "🥱"
             ]
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L12_Q1",
             "interactionType": "choice",
             "instruction": "How are they feeling? Lock in the right emotion.",
-            "hint": "Notice the gap between the promise and what actually happened.",
-            "explanation": "A promised one-hour callback that turns into three days, called 'ridiculous,' is a clear sign of anger.",
-            "textToSpeak": "They promised to call back within an hour, and that was three days ago. This is ridiculous.",
+            "hint": "Listen to what the speaker asks for just before the performance.",
+            "explanation": "Asking for a hand to hold before going on stage shows nervousness.",
+            "textToSpeak": "The music is starting, and it's almost our turn to walk on stage. Somebody hold my hand.",
             "options": [
-                "happy",
                 "angry",
-                "surprised",
-                "curious"
+                "bored",
+                "nervous",
+                "excited"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "subtype": "emotionRecognition",
-            "emoji": "😠",
+            "emoji": "😬",
             "emotionScale": 3,
             "optionEmojis": [
-                "😊",
                 "😠",
-                "😲",
-                "🤔"
+                "🥱",
+                "😬",
+                "🤩"
             ]
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L12_Q2",
             "interactionType": "choice",
             "instruction": "How are they feeling? Lock in the right emotion.",
-            "hint": "'I can't believe it' is a direct signal — think about why this news didn't fit expectations.",
-            "explanation": "News that contradicts everything you expected from someone, like a quiet neighbor winning a national contest, is a clear cause of surprise.",
-            "textToSpeak": "My quiet neighbor, who never talks to anyone, just won the national singing competition. I can't believe it.",
+            "hint": "Notice the word 'finally' and the time the speaker has been waiting.",
+            "explanation": "Two years of waiting ends tomorrow, and the speaker sounds eager. That's what the clues add up to: excitement.",
+            "textToSpeak": "I've been saving for two years, and tomorrow I finally pick up my very first bicycle!",
             "options": [
-                "curious",
-                "angry",
-                "surprised",
-                "bored"
+                "nervous",
+                "sad",
+                "bored",
+                "excited"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "subtype": "emotionRecognition",
-            "emoji": "😲",
+            "emoji": "🤩",
             "emotionScale": 3,
             "optionEmojis": [
-                "🤔",
-                "😠",
-                "😲",
-                "🥱"
+                "😬",
+                "😢",
+                "🥱",
+                "🤩"
             ]
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L12_Q3",
             "interactionType": "choice",
             "instruction": "How are they feeling? Lock in the right emotion.",
-            "hint": "Checking something three times and still feeling uneasy points to a particular state of mind.",
-            "explanation": "Triple-checking and still feeling uneasy afterward is a familiar sign of nervousness.",
-            "textToSpeak": "I've triple-checked everything but I still feel like I've forgotten something important.",
+            "hint": "Listen to the question the speaker asks about what they see.",
+            "explanation": "The speaker didn't know about any of this and asks what is going on. That's surprise.",
+            "textToSpeak": "There's a cake on my desk, and balloons, and everyone is shouting my name. What is this?",
             "options": [
-                "happy",
-                "excited",
-                "curious",
-                "nervous"
+                "surprised",
+                "sad",
+                "angry",
+                "bored"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "emotionRecognition",
-            "emoji": "😬",
+            "emoji": "😲",
             "emotionScale": 3,
             "optionEmojis": [
-                "😊",
-                "🤩",
-                "🤔",
-                "😬"
+                "😲",
+                "😢",
+                "😠",
+                "🥱"
             ]
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L13_Q1",
             "interactionType": "choice",
             "instruction": "How are they feeling? Lock in the right emotion.",
-            "hint": "Think about the mood of an evening spent laughing with people you love.",
-            "explanation": "Hours spent talking and laughing with family over dinner is a warm, simple picture of happiness.",
-            "textToSpeak": "My whole family came for dinner last night. We sat at the table for hours just talking and laughing.",
+            "hint": "Listen to how the speaker ends the sentence.",
+            "explanation": "Noticing a pattern and asking what's inside shows a wish to find out. That's what the clues add up to: curiosity.",
+            "textToSpeak": "My neighbor gets a package every Monday, and it's always the same long box. What could be in it?",
             "options": [
-                "happy",
-                "neutral",
-                "sad",
-                "curious"
+                "bored",
+                "nervous",
+                "curious",
+                "sad"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "emotionRecognition",
-            "emoji": "😊",
+            "emoji": "🤔",
             "emotionScale": 3,
             "optionEmojis": [
-                "😊",
-                "😐",
-                "😢",
-                "🤔"
+                "🥱",
+                "😬",
+                "🤔",
+                "😢"
             ]
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L13_Q2",
             "interactionType": "choice",
             "instruction": "How are they feeling? Lock in the right emotion.",
-            "hint": "'Always wanted to know' tells you exactly how the speaker feels about this mystery.",
-            "explanation": "'Always wanted to know what's inside' is a direct, simple statement of curiosity.",
-            "textToSpeak": "There's a locked door at the end of the hallway that nobody ever opens. I've always wanted to know what's inside.",
+            "hint": "Notice what the speaker says about the TV.",
+            "explanation": "Having a TV on without watching it, and nothing to do, shows boredom.",
+            "textToSpeak": "I finished my homework an hour ago. The TV is on, but I'm not really watching. There's nothing to do.",
             "options": [
-                "bored",
-                "curious",
-                "nervous",
-                "angry"
+                "excited",
+                "happy",
+                "angry",
+                "bored"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "subtype": "emotionRecognition",
-            "emoji": "🤔",
+            "emoji": "🥱",
             "emotionScale": 3,
             "optionEmojis": [
-                "🥱",
-                "🤔",
-                "😬",
-                "😠"
+                "🤩",
+                "😊",
+                "😠",
+                "🥱"
             ]
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L13_Q3",
             "interactionType": "choice",
             "instruction": "How are they feeling? Lock in the right emotion.",
-            "hint": "Think about what it means when someone stops listening because a topic drags on.",
-            "explanation": "Tuning out after forty minutes on the same topic is a clear, relatable sign of boredom.",
-            "textToSpeak": "He's been talking about the same topic for forty minutes. I've completely stopped listening.",
+            "hint": "Listen to the plans and how the speaker sums them up.",
+            "explanation": "Pizza, a movie and calling it the best Friday ever show simple happiness.",
+            "textToSpeak": "Mom just said we can have pizza for dinner, and then a movie. Best Friday ever.",
             "options": [
-                "surprised",
-                "happy",
                 "bored",
-                "sad"
+                "sad",
+                "angry",
+                "happy"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "subtype": "emotionRecognition",
-            "emoji": "🥱",
+            "emoji": "😊",
             "emotionScale": 3,
             "optionEmojis": [
-                "😲",
-                "😊",
                 "🥱",
-                "😢"
+                "😢",
+                "😠",
+                "😊"
             ]
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L14_Q1",
             "interactionType": "choice",
             "instruction": "How are they feeling? Lock in the right emotion.",
-            "hint": "Think about what finding someone's old letters might stir up.",
-            "explanation": "Sitting on the floor to read every one of someone's old letters suggests a quiet, personal sadness.",
-            "textToSpeak": "I found her old letters while cleaning the house. I sat on the floor and read every single one.",
+            "hint": "Notice which word the speaker uses to judge what happened.",
+            "explanation": "The speaker sees the situation as unfair and someone else got credit. Anger is the feeling here.",
+            "textToSpeak": "The teacher gave my drawing to another student, and now it's on the wall with their name. It's not fair!",
             "options": [
-                "happy",
-                "bored",
-                "curious",
-                "sad"
+                "angry",
+                "nervous",
+                "sad",
+                "curious"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "emotionRecognition",
-            "emoji": "😢",
+            "emoji": "😠",
             "emotionScale": 3,
             "optionEmojis": [
-                "😊",
-                "🥱",
-                "🤔",
-                "😢"
+                "😠",
+                "😬",
+                "😢",
+                "🤔"
             ]
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L14_Q2",
             "interactionType": "choice",
             "instruction": "How are they feeling? Lock in the right emotion.",
-            "hint": "Listen for the result and how the speaker reacts to this personal win.",
-            "explanation": "Winning first place out of two hundred entries is exactly the kind of news that produces real excitement.",
-            "textToSpeak": "The competition results just came in — and I won! First place out of over two hundred entries!",
+            "hint": "Think about what the speaker is remembering as they walk past.",
+            "explanation": "The speaker misses the old friends and the old times. That's what the clues add up to: sadness.",
+            "textToSpeak": "I walked past the empty house where my old friends lived. There's a new family there now.",
             "options": [
                 "excited",
-                "nervous",
                 "sad",
-                "bored"
+                "curious",
+                "angry"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "emotionRecognition",
-            "emoji": "🤩",
+            "emoji": "😢",
             "emotionScale": 3,
             "optionEmojis": [
                 "🤩",
-                "😬",
                 "😢",
-                "🥱"
+                "🤔",
+                "😠"
             ]
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L14_Q3",
             "interactionType": "choice",
             "instruction": "How are they feeling? Lock in the right emotion.",
-            "hint": "The word 'furious' is a direct label — what emotion does it name?",
-            "explanation": "'Absolutely furious' is a strong, direct word choice that clearly names intense anger.",
-            "textToSpeak": "Someone walked into my office and moved all my things without permission. I was absolutely furious.",
+            "hint": "Listen to how the speaker prepares in the last seconds.",
+            "explanation": "Coaching themselves to breathe and smile just before a big moment shows nervousness.",
+            "textToSpeak": "The interviewer is coming out of the room now. Okay. Deep breath. Smile. Deep breath.",
             "options": [
                 "happy",
                 "angry",
-                "curious",
-                "surprised"
+                "bored",
+                "nervous"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "subtype": "emotionRecognition",
-            "emoji": "😠",
+            "emoji": "😬",
             "emotionScale": 3,
             "optionEmojis": [
                 "😊",
                 "😠",
-                "🤔",
-                "😲"
+                "🥱",
+                "😬"
             ]
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L15_Q1",
             "interactionType": "choice",
             "instruction": "How are they feeling? Lock in the right emotion.",
-            "hint": "This sentence is giving information only — does the speaker share any personal feeling?",
-            "explanation": "Plain opening-hours information, with no emotional language attached, is a good example of a neutral tone.",
-            "textToSpeak": "The store closes at nine on Thursdays and stays open until ten on Fridays.",
+            "hint": "Listen to the details the speaker has already planned.",
+            "explanation": "Planning even the snacks a day ahead shows eager anticipation. Everything points to excitement.",
+            "textToSpeak": "Tomorrow we're taking the train to the mountains! I already know which snacks I'm bringing.",
             "options": [
-                "happy",
                 "bored",
-                "neutral",
-                "curious"
+                "excited",
+                "sad",
+                "angry"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "emotionRecognition",
-            "emoji": "😐",
+            "emoji": "🤩",
             "emotionScale": 3,
             "optionEmojis": [
-                "😊",
                 "🥱",
-                "😐",
-                "🤔"
+                "🤩",
+                "😢",
+                "😠"
             ]
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L15_Q2",
             "interactionType": "choice",
             "instruction": "How are they feeling? Lock in the right emotion.",
-            "hint": "Compare what she said first with what she then revealed.",
-            "explanation": "A flat contradiction like 'never visited another country' followed by 'lived in Tokyo for eight years' is a natural cause of surprise.",
-            "textToSpeak": "She said she'd never visited another country, then casually mentioned she'd lived in Tokyo for eight years.",
+            "hint": "Notice what the speaker just learned about the other person.",
+            "explanation": "This is a fact the speaker didn't know, and they react with repeated questions. So surprised is the best fit.",
+            "textToSpeak": "You speak Spanish? To that man? I never knew you could speak Spanish!",
             "options": [
-                "sad",
+                "angry",
+                "surprised",
                 "bored",
-                "neutral",
-                "surprised"
+                "sad"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "emotionRecognition",
             "emoji": "😲",
             "emotionScale": 3,
             "optionEmojis": [
-                "😢",
+                "😠",
+                "😲",
                 "🥱",
-                "😐",
-                "😲"
+                "😢"
             ]
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L15_Q3",
             "interactionType": "choice",
             "instruction": "How are they feeling? Lock in the right emotion.",
-            "hint": "Think about why someone would reread something they've already sent.",
-            "explanation": "Rereading a form you've already submitted, out of worry about mistakes, is a common sign of nervousness.",
-            "textToSpeak": "I keep rereading my application. I've submitted it, but I'm not sure if everything was filled in correctly.",
-            "options": [
-                "nervous",
-                "confident",
-                "angry",
-                "excited"
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "emotionRecognition",
-            "emoji": "😬",
-            "emotionScale": 3,
-            "optionEmojis": [
-                "😬",
-                "😎",
-                "😠",
-                "🤩"
-            ]
-        },
-        {
-            "id": "LIS_EMOTIONRECOGNITION_L16_Q1",
-            "interactionType": "choice",
-            "instruction": "How are they feeling? Lock in the right emotion.",
-            "hint": "'My heart felt full' describes a warm feeling — what emotion is that?",
-            "explanation": "'Heart felt full' is a common idiom for a deep, warm sense of happiness.",
-            "textToSpeak": "My daughter called from the other side of the world just to say she was thinking of me. My heart felt full.",
-            "options": [
-                "surprised",
-                "happy",
-                "nervous",
-                "sad"
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "emotionRecognition",
-            "emoji": "😊",
-            "emotionScale": 3,
-            "optionEmojis": [
-                "😲",
-                "😊",
-                "😬",
-                "😢"
-            ]
-        },
-        {
-            "id": "LIS_EMOTIONRECOGNITION_L16_Q2",
-            "interactionType": "choice",
-            "instruction": "How are they feeling? Lock in the right emotion.",
-            "hint": "'Intrigued' is a synonym hiding in plain sight — which option means the same thing?",
-            "explanation": "'Intrigued' by not knowing what's coming is simply another word for curiosity.",
-            "textToSpeak": "The restaurant has no menu and the chef decides what you eat. I have no idea what I'll get, but I'm intrigued.",
+            "hint": "Listen to what the speaker decides to do.",
+            "explanation": "Moving closer to find out a secret shows curiosity.",
+            "textToSpeak": "She's whispering something to him and smiling. What are they planning? Let me get closer.",
             "options": [
                 "bored",
-                "angry",
+                "sad",
                 "curious",
-                "nervous"
+                "angry"
             ],
             "correctAnswerIndex": 2,
             "subtype": "emotionRecognition",
@@ -406,71 +358,263 @@
             "emotionScale": 3,
             "optionEmojis": [
                 "🥱",
-                "😠",
+                "😢",
                 "🤔",
-                "😬"
+                "😠"
+            ]
+        },
+        {
+            "id": "LIS_EMOTIONRECOGNITION_L16_Q1",
+            "interactionType": "choice",
+            "instruction": "How are they feeling? Lock in the right emotion.",
+            "hint": "Notice what the speaker is trying to hide.",
+            "explanation": "Trying not to yawn while listening to a long explanation shows boredom.",
+            "textToSpeak": "Grandpa is explaining his stamp collection again. I'm trying not to yawn. There are so many stamps.",
+            "options": [
+                "nervous",
+                "happy",
+                "bored",
+                "angry"
+            ],
+            "correctAnswerIndex": 2,
+            "subtype": "emotionRecognition",
+            "emoji": "🥱",
+            "emotionScale": 3,
+            "optionEmojis": [
+                "😬",
+                "😊",
+                "🥱",
+                "😠"
+            ]
+        },
+        {
+            "id": "LIS_EMOTIONRECOGNITION_L16_Q2",
+            "interactionType": "choice",
+            "instruction": "How are they feeling? Lock in the right emotion.",
+            "hint": "Think about why someone reads the same letter three times.",
+            "explanation": "Rereading a warm letter shows how much it pleased them. So happy is the best fit.",
+            "textToSpeak": "I got a letter from my pen pal today, and she sent a photo of her new puppy. I read it three times!",
+            "options": [
+                "happy",
+                "bored",
+                "sad",
+                "angry"
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "emotionRecognition",
+            "emoji": "😊",
+            "emotionScale": 3,
+            "optionEmojis": [
+                "😊",
+                "🥱",
+                "😢",
+                "😠"
             ]
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L16_Q3",
             "interactionType": "choice",
             "instruction": "How are they feeling? Lock in the right emotion.",
-            "hint": "Notice the comparison the speaker makes to a harder situation in the past.",
-            "explanation": "Comparing tonight to a tougher past experience, and expecting no trouble, is a clear expression of confidence.",
-            "textToSpeak": "I've driven this route in far worse weather than this. Tonight's drive will be no problem at all.",
+            "hint": "Listen to the question at the end and who it is aimed at.",
+            "explanation": "The repeated request and the sharp question show the speaker is upset with the person. Everything points to anger.",
+            "textToSpeak": "You left the door open again, and now the cat is outside. How many times do I have to ask you?",
             "options": [
-                "nervous",
+                "angry",
+                "sad",
                 "bored",
-                "excited",
-                "confident"
+                "curious"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "emotionRecognition",
-            "emoji": "😎",
+            "emoji": "😠",
             "emotionScale": 3,
             "optionEmojis": [
-                "😬",
+                "😠",
+                "😢",
                 "🥱",
-                "🤩",
-                "😎"
+                "🤔"
             ]
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L17_Q1",
             "interactionType": "choice",
             "instruction": "How are they feeling? Lock in the right emotion.",
-            "hint": "Think about what a shared routine feels like the first time you do it alone.",
-            "explanation": "Doing a routine you once shared, alone for the first time, points to someone missing — a natural cause of sadness.",
-            "textToSpeak": "We used to walk this path together every Sunday. I walked it alone today for the first time.",
+            "hint": "Listen to what the speaker says they could do right there.",
+            "explanation": "A very early start and a long day make the speaker say they could sleep at the desk. That's why tired fits best.",
+            "textToSpeak": "I've been up since five, and I still have two hours of work left. I could fall asleep right here on my desk.",
             "options": [
                 "sad",
-                "bored",
                 "angry",
-                "curious"
+                "tired",
+                "bored"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "emotionRecognition",
-            "emoji": "😢",
+            "emoji": "😴",
             "emotionScale": 3,
             "optionEmojis": [
                 "😢",
-                "🥱",
                 "😠",
-                "🤔"
+                "😴",
+                "🥱"
             ]
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L17_Q2",
             "interactionType": "choice",
             "instruction": "How are they feeling? Lock in the right emotion.",
-            "hint": "Notice the repeated request and how the speaker reacts to it being ignored.",
-            "explanation": "Asking twice and still being ignored, then saying 'unbelievable,' is a familiar way to express anger.",
-            "textToSpeak": "I specifically asked for no onions — twice! And they put onions on it anyway. Unbelievable!",
+            "hint": "Notice what the speaker asks the other person to do.",
+            "explanation": "Asking to turn off the light and stay quiet shows the speaker wants to hide from danger. Fear is the natural reading.",
+            "textToSpeak": "Did you hear that? Something is moving in the garage. Turn off the light. Please stay quiet.",
+            "options": [
+                "excited",
+                "curious",
+                "scared",
+                "sad"
+            ],
+            "correctAnswerIndex": 2,
+            "subtype": "emotionRecognition",
+            "emoji": "😨",
+            "emotionScale": 3,
+            "optionEmojis": [
+                "🤩",
+                "🤔",
+                "😨",
+                "😢"
+            ]
+        },
+        {
+            "id": "LIS_EMOTIONRECOGNITION_L17_Q3",
+            "interactionType": "choice",
+            "instruction": "How are they feeling? Lock in the right emotion.",
+            "hint": "Listen to the two facts that make the speaker uneasy.",
+            "explanation": "The person is late and unreachable, so the speaker fears something is wrong. Everything points to worry.",
+            "textToSpeak": "It's midnight, and she's not home yet. She said nine, and now her phone is off.",
+            "options": [
+                "excited",
+                "bored",
+                "angry",
+                "worried"
+            ],
+            "correctAnswerIndex": 3,
+            "subtype": "emotionRecognition",
+            "emoji": "😟",
+            "emotionScale": 3,
+            "optionEmojis": [
+                "🤩",
+                "🥱",
+                "😠",
+                "😟"
+            ]
+        },
+        {
+            "id": "LIS_EMOTIONRECOGNITION_L18_Q1",
+            "interactionType": "choice",
+            "instruction": "How are they feeling? Lock in the right emotion.",
+            "hint": "Listen for how many different answers the speaker mentions.",
+            "explanation": "The speaker has three conflicting pieces of information and can't make sense of them. That's confusion.",
+            "textToSpeak": "Wait, so the meeting's at three, but the email says four, and Ben says it's tomorrow?",
+            "options": [
+                "bored",
+                "confused",
+                "angry",
+                "excited"
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "emotionRecognition",
+            "emoji": "😕",
+            "emotionScale": 3,
+            "optionEmojis": [
+                "🥱",
+                "😕",
+                "😠",
+                "🤩"
+            ]
+        },
+        {
+            "id": "LIS_EMOTIONRECOGNITION_L18_Q2",
+            "interactionType": "choice",
+            "instruction": "How are they feeling? Lock in the right emotion.",
+            "hint": "Notice who made the cake, and how other people reacted.",
+            "explanation": "The speaker did something new alone and people praised it. That's what the clues add up to: pride.",
+            "textToSpeak": "I made this whole cake by myself. My first cake ever, and everyone asked for a second piece.",
+            "options": [
+                "bored",
+                "proud",
+                "nervous",
+                "sad"
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "emotionRecognition",
+            "emoji": "🙌",
+            "emotionScale": 3,
+            "optionEmojis": [
+                "🥱",
+                "🙌",
+                "😬",
+                "😢"
+            ]
+        },
+        {
+            "id": "LIS_EMOTIONRECOGNITION_L18_Q3",
+            "interactionType": "choice",
+            "instruction": "How are they feeling? Lock in the right emotion.",
+            "hint": "Listen to how fast the speaker's search becomes urgent.",
+            "explanation": "Losing a passport in a strange place makes the speaker panic. That's fear.",
+            "textToSpeak": "I turned around and my bag was gone. My passport was in it! I looked under the seat, in the aisle... nothing!",
+            "options": [
+                "curious",
+                "angry",
+                "bored",
+                "scared"
+            ],
+            "correctAnswerIndex": 3,
+            "subtype": "emotionRecognition",
+            "emoji": "😨",
+            "emotionScale": 3,
+            "optionEmojis": [
+                "🤔",
+                "😠",
+                "🥱",
+                "😨"
+            ]
+        },
+        {
+            "id": "LIS_EMOTIONRECOGNITION_L19_Q1",
+            "interactionType": "choice",
+            "instruction": "How are they feeling? Lock in the right emotion.",
+            "hint": "Listen to what the speaker looks forward to, and what they leave out.",
+            "explanation": "Welcoming a peaceful day off with relief from work shows simple happiness.",
+            "textToSpeak": "Finally, the weekend. No alarm clock, no emails. Just me, my couch, and a long, quiet day.",
+            "options": [
+                "nervous",
+                "happy",
+                "sad",
+                "angry"
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "emotionRecognition",
+            "emoji": "😊",
+            "emotionScale": 3,
+            "optionEmojis": [
+                "😬",
+                "😊",
+                "😢",
+                "😠"
+            ]
+        },
+        {
+            "id": "LIS_EMOTIONRECOGNITION_L19_Q2",
+            "interactionType": "choice",
+            "instruction": "How are they feeling? Lock in the right emotion.",
+            "hint": "Compare how the speaker was treated with how others were treated.",
+            "explanation": "The speaker was ignored while later customers were served, which feels unfair. That's why angry fits best.",
+            "textToSpeak": "I asked the waiter for water three times. Now the couple who arrived after us has their food.",
             "options": [
                 "sad",
                 "angry",
-                "neutral",
-                "surprised"
+                "tired",
+                "curious"
             ],
             "correctAnswerIndex": 1,
             "subtype": "emotionRecognition",
@@ -479,151 +623,7 @@
             "optionEmojis": [
                 "😢",
                 "😠",
-                "😐",
-                "😲"
-            ]
-        },
-        {
-            "id": "LIS_EMOTIONRECOGNITION_L17_Q3",
-            "interactionType": "choice",
-            "instruction": "How are they feeling? Lock in the right emotion.",
-            "hint": "Think about the kind of anticipation that makes someone say they can barely breathe.",
-            "explanation": "Being unable to breathe during a rocket launch countdown is a vivid way to describe intense excitement.",
-            "textToSpeak": "The countdown is at five seconds. I can barely breathe — this rocket is about to launch!",
-            "options": [
-                "bored",
-                "nervous",
-                "excited",
-                "angry"
-            ],
-            "correctAnswerIndex": 2,
-            "subtype": "emotionRecognition",
-            "emoji": "🤩",
-            "emotionScale": 3,
-            "optionEmojis": [
-                "🥱",
-                "😬",
-                "🤩",
-                "😠"
-            ]
-        },
-        {
-            "id": "LIS_EMOTIONRECOGNITION_L18_Q1",
-            "interactionType": "choice",
-            "instruction": "How are they feeling? Lock in the right emotion.",
-            "hint": "Think about how it feels to run out of anything fresh to watch.",
-            "explanation": "Having watched everything twice, with nothing new left, is a classic description of boredom.",
-            "textToSpeak": "I've watched everything on this streaming service twice already. There's nothing new here.",
-            "options": [
-                "curious",
-                "sad",
-                "angry",
-                "bored"
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "emotionRecognition",
-            "emoji": "🥱",
-            "emotionScale": 3,
-            "optionEmojis": [
-                "🤔",
-                "😢",
-                "😠",
-                "🥱"
-            ]
-        },
-        {
-            "id": "LIS_EMOTIONRECOGNITION_L18_Q2",
-            "interactionType": "choice",
-            "instruction": "How are they feeling? Lock in the right emotion.",
-            "hint": "Think about what happens when an event is completely hidden from the person it's for.",
-            "explanation": "Walking into a room full of people you didn't expect is one of the clearest everyday examples of surprise.",
-            "textToSpeak": "I thought I was meeting one friend for coffee. I walked in and twenty people jumped up and yelled happy birthday.",
-            "options": [
-                "surprised",
-                "bored",
-                "neutral",
-                "excited"
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "emotionRecognition",
-            "emoji": "😲",
-            "emotionScale": 3,
-            "optionEmojis": [
-                "😲",
-                "🥱",
-                "😐",
-                "🤩"
-            ]
-        },
-        {
-            "id": "LIS_EMOTIONRECOGNITION_L18_Q3",
-            "interactionType": "choice",
-            "instruction": "How are they feeling? Lock in the right emotion.",
-            "hint": "'Stage fright' is named directly — what physical signs go along with it here?",
-            "explanation": "Sweating palms and no appetite are physical symptoms the speaker links to stage fright, which is a form of nervousness.",
-            "textToSpeak": "My palms are sweating and I can't eat anything. I wonder if this is what stage fright feels like.",
-            "options": [
-                "happy",
-                "nervous",
-                "curious",
-                "confident"
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "emotionRecognition",
-            "emoji": "😬",
-            "emotionScale": 3,
-            "optionEmojis": [
-                "😊",
-                "😬",
-                "🤔",
-                "😎"
-            ]
-        },
-        {
-            "id": "LIS_EMOTIONRECOGNITION_L19_Q1",
-            "interactionType": "choice",
-            "instruction": "How are they feeling? Lock in the right emotion.",
-            "hint": "'Heart is soaring' despite tired legs signals a particular feeling.",
-            "explanation": "'Heart is soaring' is an idiom for great joy, even when the body is worn out from effort.",
-            "textToSpeak": "I ran my first marathon today. My legs are exhausted, but my heart is absolutely soaring.",
-            "options": [
-                "bored",
-                "angry",
-                "happy",
-                "nervous"
-            ],
-            "correctAnswerIndex": 2,
-            "subtype": "emotionRecognition",
-            "emoji": "😊",
-            "emotionScale": 3,
-            "optionEmojis": [
-                "🥱",
-                "😠",
-                "😊",
-                "😬"
-            ]
-        },
-        {
-            "id": "LIS_EMOTIONRECOGNITION_L19_Q2",
-            "interactionType": "choice",
-            "instruction": "How are they feeling? Lock in the right emotion.",
-            "hint": "'Keep wondering' is the key phrase — what does it tell you about the speaker's interest?",
-            "explanation": "'Keep wondering' about someone else's thoughts is a simple, ongoing expression of curiosity.",
-            "textToSpeak": "The old man sits at the same bench every morning and stares at the fountain. I keep wondering what he's thinking about.",
-            "options": [
-                "sad",
-                "bored",
-                "happy",
-                "curious"
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "emotionRecognition",
-            "emoji": "🤔",
-            "emotionScale": 3,
-            "optionEmojis": [
-                "😢",
-                "🥱",
-                "😊",
+                "😴",
                 "🤔"
             ]
         },
@@ -631,71 +631,71 @@
             "id": "LIS_EMOTIONRECOGNITION_L19_Q3",
             "interactionType": "choice",
             "instruction": "How are they feeling? Lock in the right emotion.",
-            "hint": "Think about the feeling of seeing strangers in a place full of personal memories.",
-            "explanation": "Seeing strangers in a garden full of childhood memories brings a quiet sense of loss and sadness.",
-            "textToSpeak": "The house sold yesterday. I drove past and saw strangers in the garden where we used to play.",
+            "hint": "Listen to the physical description and what the speaker wants next.",
+            "explanation": "Heavy legs and a wish to lie down after a long day show tiredness.",
+            "textToSpeak": "I ran six miles this morning and then worked all day. My legs feel like stone. I just want to lie down.",
             "options": [
-                "sad",
-                "surprised",
                 "angry",
-                "excited"
+                "excited",
+                "curious",
+                "tired"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "subtype": "emotionRecognition",
-            "emoji": "😢",
+            "emoji": "😴",
             "emotionScale": 3,
             "optionEmojis": [
-                "😢",
-                "😲",
                 "😠",
-                "🤩"
+                "🤩",
+                "🤔",
+                "😴"
             ]
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L20_Q1",
             "interactionType": "choice",
             "instruction": "How are they feeling? Lock in the right emotion.",
-            "hint": "Think about how an hour of waiting, followed by being turned away, would make you feel.",
-            "explanation": "An hour of waiting followed by being sent away with no solution is a common trigger for anger.",
-            "textToSpeak": "I've been waiting in line for an hour, and now they're telling me the system is down and I have to come back tomorrow!",
+            "hint": "Listen to what the speaker hopes will not happen.",
+            "explanation": "Hoping not to be picked, in front of others, shows nervousness.",
+            "textToSpeak": "Everyone else knows the answer, and I don't. I hope she doesn't call my name.",
             "options": [
-                "happy",
                 "angry",
+                "nervous",
                 "curious",
-                "sad"
+                "bored"
             ],
             "correctAnswerIndex": 1,
             "subtype": "emotionRecognition",
-            "emoji": "😠",
+            "emoji": "😬",
             "emotionScale": 3,
             "optionEmojis": [
-                "😊",
                 "😠",
+                "😬",
                 "🤔",
-                "😢"
+                "🥱"
             ]
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L20_Q2",
             "interactionType": "choice",
             "instruction": "How are they feeling? Lock in the right emotion.",
-            "hint": "'Ready for whatever they throw at me' signals a particular attitude toward a challenge.",
-            "explanation": "Inviting any question after ten years of study is a direct, natural way to express confidence.",
-            "textToSpeak": "I've studied this subject for ten years. Ask me anything — I'm ready for whatever they throw at me.",
+            "hint": "Notice what the speaker has been doing all week.",
+            "explanation": "Smiling all week while preparing shows looking forward to it. That's excitement, not worry.",
+            "textToSpeak": "Tomorrow I start my new job. My clothes are ready, and I've been smiling about it all week.",
             "options": [
+                "sad",
                 "nervous",
                 "excited",
-                "confident",
                 "bored"
             ],
             "correctAnswerIndex": 2,
             "subtype": "emotionRecognition",
-            "emoji": "😎",
+            "emoji": "🤩",
             "emotionScale": 3,
             "optionEmojis": [
+                "😢",
                 "😬",
                 "🤩",
-                "😎",
                 "🥱"
             ]
         },
@@ -703,24 +703,24 @@
             "id": "LIS_EMOTIONRECOGNITION_L20_Q3",
             "interactionType": "choice",
             "instruction": "How are they feeling? Lock in the right emotion.",
-            "hint": "Notice the complete contrast between what the speaker expected and what actually happened.",
-            "explanation": "Expecting bad news and getting the opposite instead is a strong, clear setup for surprise.",
-            "textToSpeak": "My boss called me into her office. I thought I was in trouble. She gave me a raise and a promotion.",
+            "hint": "Think about what the new dress means now that the plan has changed.",
+            "explanation": "The plan is gone and the dress was bought for it. The speaker feels sadness about the lost event.",
+            "textToSpeak": "The tickets are sold out, so we can't go. And I already bought a new dress for it.",
             "options": [
-                "bored",
                 "sad",
+                "bored",
                 "curious",
-                "surprised"
+                "angry"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "emotionRecognition",
-            "emoji": "😲",
+            "emoji": "😢",
             "emotionScale": 3,
             "optionEmojis": [
-                "🥱",
                 "😢",
+                "🥱",
                 "🤔",
-                "😲"
+                "😠"
             ]
         }
     ]

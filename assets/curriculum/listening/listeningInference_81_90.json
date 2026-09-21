@@ -6,542 +6,542 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L81_Q1",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "Track what 'not again', 'just fix it last week', and 'apparently not' together tell you.",
-            "explanation": "'Not again' = it has happened before. 'Didn't they just fix it?' = a repair was made very recently. 'Apparently not' = the repair clearly didn't work. Inference: the system was repaired last week but has failed again. This is a pattern of recurring technical failure.",
-            "textToSpeak": "A: The system's been down all morning. B: Not again - didn't they just fix it last week? A: Apparently not.",
-            "question": "What does the dialogue reveal?",
+            "instruction": "Listen closely and infer what is really happening.",
+            "hint": "Think about what it suggests when someone answers a question with another question.",
+            "explanation": "Responding to a direct question with a question of her own, instead of a clear answer, suggests she is uncertain or trying to buy time before committing to a response.",
+            "textToSpeak": "\"Are you coming to the meeting tomorrow?\" \"Wait, is it definitely happening tomorrow?\" she replied.",
+            "question": "What can you infer about her?",
             "options": [
-                "The repair will be scheduled for next week",
-                "The system was repaired recently but has broken again"
+                "She is confident and fully decided",
+                "She seems uncertain about her plans"
             ],
             "correctAnswerIndex": 1,
             "subtype": "listeningInference",
-            "emoji": "💭",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "🤨",
+            "literalMeaning": "She answered a question with another question.",
+            "impliedMeaning": "She seems uncertain about her own plans."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L81_Q2",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "What does 'like a different person' after leaving the job imply?",
-            "explanation": "'Like a different person' since leaving = she changed significantly. The change is positive ('looks really well'). The implication: the job was causing unhappiness or stress that showed in her appearance/demeanour. Leaving removed that cause and she improved noticeably.",
-            "textToSpeak": "A: I bumped into Sarah - she looks really well. B: Yes, since she left that job she's like a different person.",
-            "question": "What is implied about the job she left?",
+            "instruction": "What does the situation suggest? Make your best guess.",
+            "hint": "Think about what it means when someone praises a coworker's project but never mentions the results.",
+            "explanation": "Praising the effort behind a project while carefully avoiding any comment on how it actually turned out suggests the results were less than impressive.",
+            "textToSpeak": "\"You clearly put a lot of work into this,\" he said, without mentioning how the numbers came out.",
+            "question": "What can you infer?",
             "options": [
-                "The job was making her unhappy or unwell",
-                "The job suited her perfectly"
+                "The results were an outstanding success",
+                "The results were probably disappointing"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference",
-            "emoji": "📜",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "📈",
+            "literalMeaning": "He praised the effort but said nothing about the results.",
+            "impliedMeaning": "The results were probably not very good."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L81_Q3",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "Why would someone suggest waiting until after a presentation to mention a delay?",
-            "explanation": "Timing is strategic: mentioning bad news (delay) before a presentation could undermine it. Waiting until after protects the presentation's impact. A agrees ('Good point'). This is practical communication management - choosing the optimal moment for difficult information.",
-            "textToSpeak": "A: We should probably mention the delay. B: Let's wait until after the presentation. A: Good point.",
-            "question": "What does this suggest about the speakers?",
+            "instruction": "Use the clues to work out the meaning.",
+            "hint": "Think about what it means when someone says 'I guess we'll see' about plans they made themselves.",
+            "explanation": "Saying 'I guess we'll see' about a plan they proposed themselves suggests less confidence in the plan than they showed at first.",
+            "textToSpeak": "\"I guess we'll see how it goes,\" he said about the plan he had suggested just that morning.",
+            "question": "What can you infer?",
             "options": [
-                "They want to hide the delay permanently",
-                "They are choosing a better moment to mention the delay"
+                "He is more excited than ever about it",
+                "He has become less confident in his own plan"
             ],
             "correctAnswerIndex": 1,
             "subtype": "listeningInference",
-            "emoji": "💼",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "🤷",
+            "literalMeaning": "He said 'I guess we'll see' about his own plan.",
+            "impliedMeaning": "He has likely become less confident about it."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L82_Q1",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "What does 'I'd love to, but' structure communicate?",
-            "explanation": "'I'd love to' = expresses desire (positive opening). 'But I've already committed' = explains impossibility. This is the classic polite decline structure: positive statement + but + reason. The 'I'd love to' softens the refusal. This is an indirect 'no' - common in social English.",
-            "textToSpeak": "I'd love to, but I've already committed to something else that evening.",
-            "question": "What is going on here?",
+            "instruction": "What can you infer from what you hear?",
+            "hint": "Think about what it means when someone says 'if you really want to' instead of agreeing directly.",
+            "explanation": "Responding with 'if you really want to' rather than a clear yes suggests reluctance, even while technically agreeing to the request.",
+            "textToSpeak": "\"Could you help me carry these boxes?\" \"I mean, if you really want me to,\" he answered.",
+            "question": "What can you infer about his attitude?",
             "options": [
-                "Declining politely with an explanation",
-                "Asking for more details about the event"
+                "He is reluctant, even though he's agreeing",
+                "He is thrilled to help right away"
             ],
             "correctAnswerIndex": 0,
             "subtype": "listeningInference",
-            "emoji": "📖",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "📦",
+            "literalMeaning": "He said 'if you really want me to' instead of a clear yes.",
+            "impliedMeaning": "He seems reluctant despite technically agreeing."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L82_Q2",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "In professional settings, what does 'explore it further' often signal?",
-            "explanation": "'Explore it further' is non-committal - it doesn't promise action. 'Definitely' sounds positive but often accompanies vague language in corporate contexts. 'Interesting idea' + 'explore further' without a specific next step is often corporate politeness for deprioritising a suggestion.",
-            "textToSpeak": "That's a really interesting idea - we'll definitely explore it further.",
-            "question": "What might this actually mean in a business context?",
+            "instruction": "Listen for the clues behind the words.",
+            "hint": "Think about what it means when someone changes 'I love this restaurant' to 'it's fine, I guess' the second time it's mentioned.",
+            "explanation": "Softening a strongly positive opinion into a lukewarm one when the topic returns suggests the person's feelings may have shifted or weren't fully genuine.",
+            "textToSpeak": "She'd called the restaurant her favorite last week, but this time she only said, \"It's fine, I guess.\"",
+            "question": "What can you infer?",
             "options": [
-                "The idea is being enthusiastically adopted by the team",
-                "The idea may not progress any further"
+                "Her opinion of the restaurant has changed",
+                "Her opinion has stayed exactly the same"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
-            "emoji": "🪞",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "🍝",
+            "literalMeaning": "She changed from 'favorite' to 'fine, I guess.'",
+            "impliedMeaning": "Her opinion of the restaurant seems to have changed."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L82_Q3",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "What does 'I think I'll manage' communicate about accepting help?",
-            "explanation": "'I think I'll manage' = I can handle it myself. 'But' signals rejection of the offer. 'Appreciate the offer' softens the refusal with gratitude. Together: a polite rejection of offered help while maintaining social harmony. 'Manage' = cope without assistance.",
-            "textToSpeak": "I appreciate the offer, but I think I'll manage.",
-            "question": "What is the speaker in the middle of doing?",
+            "instruction": "What is most likely true here?",
+            "hint": "Think about what it means when someone answers 'sure, why not' to an invitation instead of showing enthusiasm.",
+            "explanation": "Replying with a flat 'sure, why not' to an invitation, rather than expressing enthusiasm, suggests only mild interest in attending.",
+            "textToSpeak": "\"Want to come to the party Friday?\" \"Sure, why not,\" she said, without looking up from her phone.",
+            "question": "What can you infer about her interest?",
             "options": [
-                "Declining help politely",
-                "Asking for more help"
+                "Her interest in going is extremely high",
+                "Her interest in going seems mild at best"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference",
-            "emoji": "🧩",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "🎉",
+            "literalMeaning": "She replied 'sure, why not' without looking up.",
+            "impliedMeaning": "Her interest in attending seems only mild."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L83_Q1",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "Why would both the person AND others avoid a topic?",
-            "explanation": "Both the person avoiding a topic and others tiptoeing around it suggests the topic carries emotional weight for her. The collective silence is protective - people sense she doesn't want to discuss it. This is a social dynamic of protecting someone from a difficult subject.",
-            "textToSpeak": "She hasn't mentioned it since that day, and nobody brings it up around her.",
-            "question": "What does this hint at?",
+            "instruction": "What is the speaker implying?",
+            "hint": "Think about what it means when someone lists several reasons why a decision 'makes sense' without being asked.",
+            "explanation": "Offering several unsolicited reasons why a decision 'makes sense' can be a sign that the person is trying to convince themselves as much as anyone else.",
+            "textToSpeak": "\"It makes sense financially, and honestly it's the practical choice, and really, it's not a big deal,\" he explained, unprompted.",
+            "question": "What can you infer?",
             "options": [
-                "The topic is emotionally sensitive for her",
-                "Everyone has forgotten about it"
+                "He may be trying to convince himself",
+                "He is completely at peace with the decision"
             ],
             "correctAnswerIndex": 0,
             "subtype": "listeningInference",
-            "emoji": "💬",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "🧾",
+            "literalMeaning": "He listed several reasons the decision made sense, unprompted.",
+            "impliedMeaning": "He may be trying to convince himself as much as others."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L83_Q2",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "Why would a new employee volunteer for everything?",
-            "explanation": "Volunteering for everything as a new employee signals eagerness to prove oneself, gain experience, and make a positive impression. It's impression management - showing enthusiasm and reliability to establish a reputation quickly. This is common career-building behaviour.",
-            "textToSpeak": "He volunteered for every project available in his first few months.",
-            "question": "What can be inferred about his motivation?",
+            "instruction": "What does this situation point to?",
+            "hint": "Think about what it means when someone says 'no rush, whenever you get to it' but follows up the next hour.",
+            "explanation": "Saying there's no rush but then following up soon afterward suggests the matter is actually more urgent than the person first admitted.",
+            "textToSpeak": "\"No rush, whenever you get to it,\" she wrote, then messaged again an hour later asking if it was done.",
+            "question": "What can you infer?",
             "options": [
-                "He was being told to volunteer by management",
-                "He was eager to make a strong impression"
+                "The matter is more urgent than she said",
+                "The matter truly isn't urgent at all"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
-            "emoji": "💼",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "⏱️",
+            "literalMeaning": "She said 'no rush' but followed up an hour later.",
+            "impliedMeaning": "The matter is likely more urgent than she admitted."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L83_Q3",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "What does the combination of reading AND taking notes on negative reviews suggest?",
-            "explanation": "Reading criticism carefully + taking notes = treating feedback as useful information, not as a personal attack. This is a growth mindset approach - extracting learning from negative feedback. Taking notes shows she intends to act on the information, not just react emotionally.",
-            "textToSpeak": "She read every negative review carefully and took detailed notes.",
-            "question": "What does this reveal about her?",
+            "instruction": "Read between the lines and choose the best answer.",
+            "hint": "Think about what it means when someone answers 'not really' to 'are you upset?' but stops making eye contact.",
+            "explanation": "Denying being upset while avoiding eye contact suggests the person may actually feel upset but is choosing not to say so directly.",
+            "textToSpeak": "\"Are you upset with me?\" \"Not really,\" he said, looking down at the table instead of at her.",
+            "question": "What can you infer?",
             "options": [
-                "She enjoys reading negative content",
-                "She uses criticism constructively to improve"
+                "He is completely relaxed about it",
+                "He may actually feel upset"
             ],
             "correctAnswerIndex": 1,
             "subtype": "listeningInference",
-            "emoji": "🎯",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "👀",
+            "literalMeaning": "He said 'not really' while looking down at the table.",
+            "impliedMeaning": "He may actually be upset despite saying otherwise."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L84_Q1",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "Why would someone specifically request the original over a summary?",
-            "explanation": "Asking for the original contract rather than a summary suggests he wants to see the precise wording, not an interpretation. Summaries can omit or simplify. He's being thorough - wanting direct access to the source document. This suggests caution, detail-orientation, or distrust of summaries.",
-            "textToSpeak": "He asked to see the original contract, not just the summary.",
-            "question": "What does this phrase really convey?",
+            "instruction": "Piece the clues together to find the real meaning.",
+            "hint": "Think about what it means when someone describes a trip as 'interesting' without saying anything else about it.",
+            "explanation": "Describing an experience only as 'interesting,' without any further detail or enthusiasm, often signals a mixed or lukewarm reaction rather than genuine enjoyment.",
+            "textToSpeak": "\"How was the trip?\" \"It was... interesting,\" she said, and left it at that.",
+            "question": "What can you infer about the trip?",
             "options": [
-                "He wants to verify details for himself",
-                "He needs to send the contract to someone else"
+                "It was clearly the best trip of her life",
+                "It probably didn't go especially well"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference",
-            "emoji": "📝",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "🧳",
+            "literalMeaning": "She called the trip 'interesting' and said nothing more.",
+            "impliedMeaning": "The trip probably didn't go especially well."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L84_Q2",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "What does asking for clarification before agreeing reveal about decision-making style?",
-            "explanation": "Asking clarifying questions before committing shows she understands what she's agreeing to before she agrees. This is careful, deliberate decision-making - not impulsive. 'Before agreeing to anything' emphasises she won't commit without full information.",
-            "textToSpeak": "She asked several clarifying questions before agreeing to anything.",
-            "question": "What can we conclude about her?",
+            "instruction": "What's really going on? Trust the evidence.",
+            "hint": "Think about what it means when someone says 'to be fair' before criticizing something they earlier praised.",
+            "explanation": "Starting with 'to be fair' before pointing out flaws in something once praised suggests the person's opinion has become more critical over time.",
+            "textToSpeak": "\"To be fair, it's not quite what I expected when I first bought it,\" he admitted.",
+            "question": "What can you infer?",
             "options": [
-                "She is careful about what she commits to",
-                "She was trying to slow down the process"
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "listeningInference",
-            "emoji": "🤔",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L84_Q3",
-            "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "Why would someone suddenly change their arrival habits?",
-            "explanation": "A sudden change in behaviour - specifically becoming earlier rather than gradually - often follows feedback or a specific incident. 'Started arriving ten minutes early' suggests a behaviour change prompted by external feedback (perhaps being told he was consistently late). This is a corrective response.",
-            "textToSpeak": "He started arriving ten minutes early to every meeting.",
-            "question": "What had probably happened?",
-            "options": [
-                "He received feedback about his punctuality",
-                "He moved closer to the office"
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "listeningInference",
-            "emoji": "⏰",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L85_Q1",
-            "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "Why might a group agree unanimously and immediately with a manager?",
-            "explanation": "Unanimous agreement without debate in a hierarchical context often signals power imbalance - people may fear disagreeing with a manager. Genuine agreement through discussion looks different; silence without pushback can indicate suppression of dissent rather than actual consensus.",
-            "textToSpeak": "Everyone agreed with the manager's suggestion without any debate.",
-            "question": "What does this imply about the team dynamic?",
-            "options": [
-                "People felt uncomfortable disagreeing",
-                "The meeting was too short for debate"
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "listeningInference",
-            "emoji": "💼",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L85_Q2",
-            "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "Why would a senior person specifically name junior colleagues in an acceptance speech?",
-            "explanation": "Naming junior colleagues specifically by name shows recognition of their contribution when he didn't have to - acceptances could easily credit 'the team' anonymously. This is genuine acknowledgement of others' work. It signals modesty, generosity, and appreciation.",
-            "textToSpeak": "He thanked three junior colleagues by name in his acceptance speech.",
-            "question": "What does this say about him?",
-            "options": [
-                "He wanted to appear humble",
-                "He is modest and acknowledges others' contributions"
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "listeningInference",
-            "emoji": "🗣️",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L85_Q3",
-            "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "What does proactively ensuring everyone is introduced reveal?",
-            "explanation": "Proactively facilitating introductions shows social awareness and consideration for others' comfort. She's making sure nobody feels excluded or awkward through not knowing people. This is the behaviour of a thoughtful host - prioritising others' social experience over her own.",
-            "textToSpeak": "She went around the room and made sure everyone had been introduced.",
-            "question": "What does this tell us about her?",
-            "options": [
-                "She is a thoughtful and considerate host",
-                "She is the most senior person present"
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "listeningInference",
-            "emoji": "📜",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L86_Q1",
-            "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "What does a small sample size mean for research conclusions?",
-            "explanation": "A small sample = fewer participants/data points. The more limited the sample, the less confident you can be that findings apply beyond that specific group. This is a key research methods concept: small samples limit generalisability (external validity). It doesn't make the findings wrong, just limited in scope.",
-            "textToSpeak": "The sample size was small, which limits how broadly the findings can be applied.",
-            "question": "What is the issue with the research?",
-            "options": [
-                "The findings are definitely wrong",
-                "The findings can't easily be generalised to larger populations"
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "listeningInference",
-            "emoji": "🔬",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L86_Q2",
-            "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "What do inconsistent results across multiple studies indicate?",
-            "explanation": "Inconsistent results = different studies found different things. This means no clear, reliable conclusion has emerged. The field is unresolved - different conditions, methods, or populations may produce different results. This signals ongoing uncertainty or complexity in the area.",
-            "textToSpeak": "Previous studies in this area have shown inconsistent results.",
-            "question": "What does this suggest about the research field?",
-            "options": [
-                "Results in this field are not yet conclusive",
-                "There is little scientific interest in this area"
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "listeningInference",
-            "emoji": "🔬",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L86_Q3",
-            "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "What is a conflict of interest in research funding?",
-            "explanation": "When a company funds research on its own product, there's a financial incentive for positive results. This creates a potential conflict of interest - the funder may consciously or unconsciously influence the study design, interpretation, or reporting. Independent research is generally considered more credible.",
-            "textToSpeak": "The study was funded by the company whose product was being tested.",
-            "question": "Why might this be a concern?",
-            "options": [
-                "Company-funded research is always reliable",
-                "There could be a conflict of interest affecting objectivity"
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "listeningInference",
-            "emoji": "🔬",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L87_Q1",
-            "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "What does a long pause before answering typically signal?",
-            "explanation": "A long pause = processing time. This suggests the question requires thought - possibly because it's difficult, sensitive, or the answer is uncertain. Immediate answers suggest easy/automatic responses; pauses suggest complexity, care, or hesitation.",
-            "textToSpeak": "He gave a long pause before answering.",
-            "question": "What does this mean?",
-            "options": [
-                "He didn't hear the question",
-                "He was thinking carefully or was uncertain"
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "listeningInference",
-            "emoji": "🔎",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L87_Q2",
-            "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "What level of commitment does 'We'll see' express?",
-            "explanation": "'We'll see' = I'm not committing either way - the outcome is undecided. It's non-committal. In social contexts, it's often used as a gentle way of not promising something. It leaves the door open without saying yes or no. The smile might make it feel positive, but no commitment is made.",
-            "textToSpeak": "She smiled and said 'We'll see'.",
-            "question": "What does 'We'll see' typically mean?",
-            "options": [
-                "A firm no",
-                "An uncertain or non-committal response"
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "listeningInference",
-            "emoji": "😊",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L87_Q3",
-            "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "Why would someone specifically wait until others had left?",
-            "explanation": "Waiting for privacy to raise an issue suggests he wanted a one-to-one conversation - not a public one. The issue may be sensitive, personal, or about someone specific. Choosing privacy is deliberate and strategic: he wanted to avoid audience or public discussion.",
-            "textToSpeak": "He waited until everyone else had left before raising the issue.",
-            "question": "What is being implied?",
-            "options": [
-                "He was shy about speaking in groups",
-                "He wanted a private one-to-one conversation"
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "listeningInference",
-            "emoji": "💭",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L88_Q1",
-            "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "What level of certainty does 'a possibility... depending on circumstances' express?",
-            "explanation": "'A possibility' = not certain, not impossible. 'Could be' = conditional future. 'Depending on circumstances' = contingent on conditions. Together: it might happen if conditions allow - neither a promise nor a refusal. This is careful, hedged language managing expectations.",
-            "textToSpeak": "There's a possibility the deadline could be extended, depending on circumstances.",
-            "question": "What should you take from this?",
-            "options": [
-                "The deadline might be extended under certain conditions",
-                "The deadline cannot be extended"
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "listeningInference",
-            "emoji": "💼",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L88_Q2",
-            "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "What does 'exploring options' tell you about the decision-making process?",
-            "explanation": "'Exploring options' = still investigating possibilities, no decision made. 'At this stage' = right now, with the implication that it may change. This is very early-stage language - they're looking, not deciding. Companies use this to avoid commitment while keeping options open.",
-            "textToSpeak": "We're exploring options at this stage.",
-            "question": "What stage is the company at?",
-            "options": [
-                "They are in early stages of deciding",
-                "They have made a firm decision"
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "listeningInference",
-            "emoji": "🔍",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L88_Q3",
-            "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "What is the purpose of 'results may vary' in advertising or product information?",
-            "explanation": "'Results may vary' is a disclaimer that the outcome shown or described is not guaranteed for all users. What works for one person may not work for another. It's legal protection against specific claims while acknowledging variability in outcomes.",
-            "textToSpeak": "Results may vary.",
-            "question": "What does this disclaimer communicate?",
-            "options": [
-                "The outcome can be different for different people",
-                "The product always works perfectly"
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "listeningInference",
-            "emoji": "🪞",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L89_Q1",
-            "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "What is the normal social consequence of disappearing without telling anyone?",
-            "explanation": "Leaving without informing anyone is likely to cause worry, especially if he's expected somewhere. People who were waiting or expecting him will not know where he is or when he'll return. The absence of information causes concern - a natural social consequence of unexplained departure.",
-            "textToSpeak": "He left without telling anyone where he was going.",
-            "question": "What is likely to happen?",
-            "options": [
-                "People will be worried about him",
-                "Someone will immediately follow him"
+                "His opinion has become more critical",
+                "His opinion has become more positive"
             ],
             "correctAnswerIndex": 0,
             "subtype": "listeningInference",
             "emoji": "⚖️",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "literalMeaning": "He said 'to be fair' before noting the item wasn't what he expected.",
+            "impliedMeaning": "His opinion of it has become more critical."
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L84_Q3",
+            "interactionType": "choice",
+            "instruction": "Think it through — what do the clues add up to?",
+            "hint": "Think about what it means when someone answers 'it's whatever, honestly' about a plan that fell through.",
+            "explanation": "Saying a canceled plan is 'whatever, honestly' in a tone that doesn't quite match the words can suggest more disappointment than the person admits.",
+            "textToSpeak": "\"The trip got canceled.\" \"It's whatever, honestly,\" she said, her voice a little too quick.",
+            "question": "What can you infer?",
+            "options": [
+                "She is genuinely unbothered by the news",
+                "She is probably more disappointed than she lets on"
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "listeningInference",
+            "emoji": "😑",
+            "literalMeaning": "She said 'it's whatever' a bit too quickly.",
+            "impliedMeaning": "She is probably more disappointed than she admits."
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L85_Q1",
+            "interactionType": "choice",
+            "instruction": "Listen closely and infer what is really happening.",
+            "hint": "Think about what it means when someone praises the venue but avoids mentioning the food after a dinner.",
+            "explanation": "Complimenting the venue while carefully avoiding any comment on the food suggests the food itself was probably not very good.",
+            "textToSpeak": "\"The place looked beautiful,\" she said about the dinner, without a word about how the food tasted.",
+            "question": "What can you infer?",
+            "options": [
+                "The food was clearly excellent",
+                "The food was probably not very good"
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "listeningInference",
+            "emoji": "🍴",
+            "literalMeaning": "She praised the venue but said nothing about the food.",
+            "impliedMeaning": "The food was likely not very good."
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L85_Q2",
+            "interactionType": "choice",
+            "instruction": "What does the situation suggest? Make your best guess.",
+            "hint": "Think about what it means when someone says 'we'll figure something out' after being asked a direct question about a plan.",
+            "explanation": "Responding with a vague 'we'll figure something out' instead of a clear answer suggests that no real plan currently exists.",
+            "textToSpeak": "\"So what's the plan for the weekend?\" \"We'll figure something out,\" he said vaguely.",
+            "question": "What can you infer?",
+            "options": [
+                "There is already a detailed plan",
+                "There isn't a clear plan yet"
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "listeningInference",
+            "emoji": "🤷‍♂️",
+            "literalMeaning": "He gave a vague answer instead of a clear plan.",
+            "impliedMeaning": "There likely isn't a clear plan yet."
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L85_Q3",
+            "interactionType": "choice",
+            "instruction": "Use the clues to work out the meaning.",
+            "hint": "Think about what it means when someone says 'you know how it is' instead of explaining what actually happened.",
+            "explanation": "Replying with a vague phrase like 'you know how it is' instead of details suggests the person would rather not go into specifics.",
+            "textToSpeak": "\"What happened at work today?\" \"Ah, you know how it is,\" she said, changing the subject.",
+            "question": "What can you infer?",
+            "options": [
+                "She would rather not go into detail",
+                "She is eager to share every detail"
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "listeningInference",
+            "emoji": "🙊",
+            "literalMeaning": "She avoided details with a vague phrase.",
+            "impliedMeaning": "She would rather not go into detail about it."
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L86_Q1",
+            "interactionType": "choice",
+            "instruction": "What can you infer from what you hear?",
+            "hint": "Think about what it means when someone says 'I mean, if that's what everyone else wants' about a group decision.",
+            "explanation": "Agreeing to a group decision only 'if that's what everyone else wants' suggests the person doesn't personally support the choice but doesn't want to object.",
+            "textToSpeak": "\"I mean, if that's what everyone else wants,\" he said about the restaurant choice.",
+            "question": "What can you infer?",
+            "options": [
+                "He suggested the restaurant himself",
+                "He doesn't personally support the choice"
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "listeningInference",
+            "emoji": "🍕",
+            "literalMeaning": "He agreed only 'if that's what everyone wants.'",
+            "impliedMeaning": "He likely doesn't personally support the choice."
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L86_Q2",
+            "interactionType": "choice",
+            "instruction": "Listen for the clues behind the words.",
+            "hint": "Think about what it means when someone answers 'it went fine' in a tone that doesn't match the words.",
+            "explanation": "Saying something 'went fine' in a flat, unconvinced tone often suggests the outcome was actually less than fine.",
+            "textToSpeak": "\"How did the interview go?\" \"It went fine,\" she said flatly, staring at the wall.",
+            "question": "What can you infer?",
+            "options": [
+                "The interview clearly went perfectly",
+                "The interview probably did not go well"
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "listeningInference",
+            "emoji": "📄",
+            "literalMeaning": "She said the interview 'went fine' in a flat tone.",
+            "impliedMeaning": "The interview probably did not go well."
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L86_Q3",
+            "interactionType": "choice",
+            "instruction": "What is most likely true here?",
+            "hint": "Think about what it means when someone changes the subject right after being asked if they're free this weekend.",
+            "explanation": "Quickly changing the subject after being asked about weekend availability suggests the person would rather not answer, possibly to avoid the plan.",
+            "textToSpeak": "\"Are you free this weekend?\" \"So, did you see the game last night?\" he replied.",
+            "question": "What can you infer?",
+            "options": [
+                "He would rather avoid answering",
+                "He is eager to make weekend plans"
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "listeningInference",
+            "emoji": "🙈",
+            "literalMeaning": "He changed the subject instead of answering about the weekend.",
+            "impliedMeaning": "He would rather avoid answering the question."
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L87_Q1",
+            "interactionType": "choice",
+            "instruction": "What is the speaker implying?",
+            "hint": "Think about what it means when someone repeats 'it's okay, don't worry about it' several times in one conversation.",
+            "explanation": "Repeating reassurance like 'it's okay, don't worry about it' multiple times can actually suggest the person is still bothered by what happened.",
+            "textToSpeak": "\"It's okay, don't worry about it,\" she said, then said it again twice more before the topic changed.",
+            "question": "What can you infer?",
+            "options": [
+                "She is likely still bothered by it",
+                "She has completely forgotten about it"
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "listeningInference",
+            "emoji": "🙂",
+            "literalMeaning": "She repeated 'it's okay, don't worry about it' three times.",
+            "impliedMeaning": "She is likely still bothered by what happened."
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L87_Q2",
+            "interactionType": "choice",
+            "instruction": "What does this situation point to?",
+            "hint": "Think about what it means when someone praises a plan but immediately lists three concerns about it.",
+            "explanation": "Praising an idea and then immediately raising several concerns suggests genuine hesitation about the plan despite the polite opening.",
+            "textToSpeak": "\"It's a great idea, but what about the cost, the timing, and who's actually going to run it?\" he asked.",
+            "question": "What can you infer?",
+            "options": [
+                "He is fully confident it will work",
+                "He has real hesitations about the plan"
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "listeningInference",
+            "emoji": "🧐",
+            "literalMeaning": "He praised the idea but listed three concerns.",
+            "impliedMeaning": "He likely has real hesitations about the plan."
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L87_Q3",
+            "interactionType": "choice",
+            "instruction": "Read between the lines and choose the best answer.",
+            "hint": "Think about what it means when someone says 'we'll see how busy things get' instead of confirming a plan.",
+            "explanation": "Answering with 'we'll see how busy things get' instead of a firm yes suggests the person is not fully committing to the plan.",
+            "textToSpeak": "\"Can we count on you for Saturday?\" \"We'll see how busy things get,\" she answered.",
+            "question": "What can you infer?",
+            "options": [
+                "She is not fully committing to it",
+                "She has already fully committed"
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "listeningInference",
+            "emoji": "📅",
+            "literalMeaning": "She gave a conditional answer instead of a firm yes.",
+            "impliedMeaning": "She is not fully committing to Saturday."
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L88_Q1",
+            "interactionType": "choice",
+            "instruction": "Piece the clues together to find the real meaning.",
+            "hint": "Think about what it means when someone says 'it's not that I don't like it' before listing complaints.",
+            "explanation": "Starting with 'it's not that I don't like it' before listing several complaints suggests the person actually has real reservations about it.",
+            "textToSpeak": "\"It's not that I don't like the new schedule, it's just that mornings are hard, and the commute is longer, and...\" he trailed off.",
+            "question": "What can you infer?",
+            "options": [
+                "He has real reservations about the schedule",
+                "He is completely satisfied with it"
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "listeningInference",
+            "emoji": "🗓️",
+            "literalMeaning": "He said he liked it but listed several complaints.",
+            "impliedMeaning": "He likely has real reservations about the schedule."
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L88_Q2",
+            "interactionType": "choice",
+            "instruction": "What's really going on? Trust the evidence.",
+            "hint": "Think about what it means when someone answers 'I don't really mind either way' but then argues for one option.",
+            "explanation": "Claiming not to mind either option, but then arguing in favor of one, suggests the person actually has a preference they aren't stating directly.",
+            "textToSpeak": "\"I don't really mind either way, but honestly the blue one just looks so much better,\" she said.",
+            "question": "What can you infer?",
+            "options": [
+                "She actually does have a preference",
+                "She truly has no preference at all"
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "listeningInference",
+            "emoji": "🎨",
+            "literalMeaning": "She said she didn't mind, then argued for the blue one.",
+            "impliedMeaning": "She likely does have a preference after all."
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L88_Q3",
+            "interactionType": "choice",
+            "instruction": "Think it through — what do the clues add up to?",
+            "hint": "Think about what it means when someone answers a compliment with 'oh, it was nothing, really' while smiling widely.",
+            "explanation": "Downplaying a compliment while smiling widely suggests the person is actually pleased, even while being modest about it.",
+            "textToSpeak": "\"That presentation was amazing.\" \"Oh, it was nothing, really,\" he said, grinning from ear to ear.",
+            "question": "What can you infer?",
+            "options": [
+                "He is annoyed by the compliment",
+                "He is pleased despite being modest"
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "listeningInference",
+            "emoji": "😁",
+            "literalMeaning": "He downplayed the compliment while smiling widely.",
+            "impliedMeaning": "He is likely pleased despite acting modest."
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L89_Q1",
+            "interactionType": "choice",
+            "instruction": "Listen closely and infer what is really happening.",
+            "hint": "Think about what it means when someone lists three reasons they're 'totally fine' with a change they didn't ask for.",
+            "explanation": "Offering multiple unprompted reasons for being 'totally fine' with an unwanted change suggests the person is trying to convince themselves it's not a problem.",
+            "textToSpeak": "\"I'm totally fine with the new desk, honestly, it's closer to the window, and it's quieter, and it's fine,\" she said quickly.",
+            "question": "What can you infer?",
+            "options": [
+                "She may be trying to convince herself it's fine",
+                "She requested this exact change herself"
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "listeningInference",
+            "emoji": "🪑",
+            "literalMeaning": "She listed several reasons she was 'fine' with the change.",
+            "impliedMeaning": "She may be trying to convince herself it's fine."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L89_Q2",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "What's the logical response to a misdirected email discovered immediately?",
-            "explanation": "Realising immediately that an email was misdirected creates urgency: contact either the wrong recipient (to explain/retract) or the right one (to send correctly), or both. Sending a follow-up correction or apology is the most professional and immediate response - damage control.",
-            "textToSpeak": "She sent the email to the wrong person and realised immediately.",
-            "question": "What would you expect to happen next?",
+            "instruction": "What does the situation suggest? Make your best guess.",
+            "hint": "Think about what it means when someone says 'let's just say it could have gone better' about an event.",
+            "explanation": "Describing an event with the understatement 'it could have gone better' suggests the event actually went quite poorly.",
+            "textToSpeak": "\"How was the presentation?\" \"Let's just say it could have gone better,\" he said with a tight smile.",
+            "question": "What can you infer?",
             "options": [
-                "Ignore it and hope it's overlooked",
-                "Send a follow-up correction or apology"
+                "The presentation likely went poorly",
+                "The presentation was a clear success"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
-            "emoji": "📜",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "📉",
+            "literalMeaning": "He said the presentation 'could have gone better.'",
+            "impliedMeaning": "The presentation likely went poorly."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L89_Q3",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "What happens when you miss a grant submission deadline?",
-            "explanation": "Grant deadlines are typically firm - missing them means the application is not considered in that funding round. 'Final submission deadline' emphasises finality. Unlike some academic deadlines, funding deadlines rarely allow late submissions. The consequence: no funding in this cycle.",
-            "textToSpeak": "They missed the final submission deadline for the grant application.",
-            "question": "What is the consequence?",
+            "instruction": "Use the clues to work out the meaning.",
+            "hint": "Think about what it means when someone answers 'I'm not one to complain, but...' before listing several complaints.",
+            "explanation": "Opening with 'I'm not one to complain, but' right before listing complaints suggests the person actually has quite a few frustrations to share.",
+            "textToSpeak": "\"I'm not one to complain, but the noise, the delays, and the parking have all been a lot lately,\" she said.",
+            "question": "What can you infer?",
             "options": [
-                "They will not receive funding in this cycle",
-                "They can submit the following week instead"
+                "She truly has nothing to complain about",
+                "She has several real frustrations"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference",
-            "emoji": "💼",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "😤",
+            "literalMeaning": "She said she doesn't complain, then listed complaints.",
+            "impliedMeaning": "She likely has several real frustrations."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L90_Q1",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "What do all three details together suggest about her new way of life?",
-            "explanation": "Three changes: city → village (location), grows food (self-sufficiency), keeps chickens (rural practice), rarely uses phone (disconnecting from digital life). Together, these paint a picture of intentional simplification - choosing a slower, more self-sufficient rural life over an urban, connected one.",
-            "textToSpeak": "She moved from the city to a small village. She grows her own vegetables, keeps chickens, and rarely uses her phone.",
-            "question": "What lifestyle change has she made?",
+            "instruction": "What can you infer from what you hear?",
+            "hint": "Think about what it means when someone answers 'maybe, we'll see' to a question they usually answer instantly.",
+            "explanation": "A hesitant 'maybe, we'll see' from someone who normally answers such questions right away suggests something has changed about how they feel.",
+            "textToSpeak": "She always said yes to game night immediately, but this time she just said, \"Maybe, we'll see.\"",
+            "question": "What can you infer?",
             "options": [
-                "She has adopted a simpler, rural lifestyle",
-                "She is working harder than before"
+                "Nothing at all has changed for her",
+                "Something has changed about how she feels"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference",
-            "emoji": "📱",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "🎲",
+            "literalMeaning": "She hesitated instead of answering right away as usual.",
+            "impliedMeaning": "Something has likely changed about how she feels."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L90_Q2",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "What does the combination of study, sacrifice, and financial planning suggest?",
-            "explanation": "Three simultaneous changes (learning, reducing social spending, budgeting) that all involve sacrifice and focus suggest a deliberate plan - he's investing time and money into something important. This is purposeful self-improvement behaviour: studying for a better qualification, career, or goal.",
-            "textToSpeak": "He started evening classes, cut back on socialising, and restructured his budget.",
-            "question": "What is he working towards?",
+            "instruction": "Listen for the clues behind the words.",
+            "hint": "Think about what it means when someone says 'it's fine, I've dealt with worse' about a difficult situation.",
+            "explanation": "Saying 'I've dealt with worse' about something difficult suggests the person is minimizing how much the current situation actually affects them.",
+            "textToSpeak": "\"This deadline is brutal.\" \"It's fine, I've dealt with worse,\" he said, not looking up from his screen.",
+            "question": "What can you infer?",
             "options": [
-                "He is making deliberate changes to improve his situation",
-                "He is experiencing a health problem"
+                "He is minimizing how hard this actually is",
+                "This deadline doesn't affect him at all"
             ],
             "correctAnswerIndex": 0,
             "subtype": "listeningInference",
-            "emoji": "💰",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "😮‍💨",
+            "literalMeaning": "He said he's 'dealt with worse' without looking up.",
+            "impliedMeaning": "He is likely minimizing how difficult this is for him."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L90_Q3",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "What does losing two of three supermarkets over a decade suggest?",
-            "explanation": "Two closures out of three in ten years indicates retail decline - shops closing because they're not profitable. The remaining one has changed hands, which can also signal difficulty. Together, these suggest a struggling local economy or reduced customer base. This is inference about economic context from specific data points.",
-            "textToSpeak": "The area had three supermarkets ten years ago. Two have closed, and the third is now under new management.",
-            "question": "What does this suggest about the area?",
+            "instruction": "What is most likely true here?",
+            "hint": "Think about what it means when someone answers 'it's complicated' instead of a simple yes or no.",
+            "explanation": "Replying 'it's complicated' to a question that normally has a simple answer suggests there are unresolved feelings or details the person isn't ready to share.",
+            "textToSpeak": "\"Are you two still together?\" \"It's complicated,\" she said, looking away.",
+            "question": "What can you infer?",
             "options": [
-                "The local retail environment has become more challenging",
-                "The supermarkets moved to larger premises"
+                "There are unresolved feelings or details",
+                "The situation is completely simple"
             ],
             "correctAnswerIndex": 0,
             "subtype": "listeningInference",
-            "emoji": "📊",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "❓",
+            "literalMeaning": "She answered 'it's complicated' instead of yes or no.",
+            "impliedMeaning": "There are likely unresolved feelings involved."
         }
     ]
 }

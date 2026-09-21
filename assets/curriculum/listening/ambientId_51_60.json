@@ -5,632 +5,662 @@
     "quests": [
         {
             "id": "LIS_AMBIENTID_L51_Q1",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Based on these sounds, where are you?",
             "interactionType": "choice",
-            "hint": "Listen for clinking ice and a call about dinner.",
-            "explanation": "Clinking ice and a call that food is ready are familiar sounds of a casual outdoor gathering.",
-            "textToSpeak": "Ice clinks in a cooler as someone flips a burger and calls out that dinner is almost ready.",
+            "hint": "Listen for how quickly the empty plate disappears.",
+            "explanation": "A sommelier's pairing suggestion, deliberately quiet silverware, and immediate plate-clearing point to attentive fine-dining service.",
+            "textToSpeak": "A sommelier describes a wine pairing in a low, practiced voice, silverware is set down with deliberate quiet care, and a plate is cleared the moment the last bite is finished.",
             "options": [
-                "Campus Cafeteria",
-                "Recycling Center",
-                "Open-Plan Office",
-                "Rooftop Barbecue"
+                "Fine Dining Restaurant",
+                "Restaurant Kitchen",
+                "Caf\u00e9",
+                "Casual Diner"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Fine dining restaurant",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "sommelier",
+                "pairing",
+                "attentive service"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L51_Q2",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Listen carefully. Where are you?",
             "interactionType": "choice",
-            "hint": "Listen for a called order among mixed food smells.",
-            "explanation": "A called order surrounded by many different food smells is common in a shared dining space.",
-            "textToSpeak": "A dozen different smells drift by as one stall calls out a finished order over the noise.",
+            "hint": "Listen for the kind of numbering system being mentioned.",
+            "explanation": "Humming laptops, a group project whisper, and call-number directions across floors suggest a university library's research stacks rather than a small public branch.",
+            "textToSpeak": "Laptop fans hum quietly across a long table, a small group whispers over a shared assignment, and a librarian directs someone to a call number three floors up.",
             "options": [
-                "Campus Cafeteria",
-                "Open-Plan Office",
-                "Bike Repair Shop",
-                "Food Court"
+                "University Library",
+                "Public Library",
+                "Bookstore",
+                "Study Hall"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "University library research floor",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "call number",
+                "laptop fan",
+                "stacks"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L51_Q3",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "What place does this soundscape suggest?",
             "interactionType": "choice",
-            "hint": "Listen for shuffling feet and an echoing announcement.",
-            "explanation": "An echoing arrival announcement over a crowd is a familiar sound during a busy commute.",
-            "textToSpeak": "Shoes shuffle quickly across the platform as an arrival announcement echoes over the noise of the crowd.",
+            "hint": "Listen for whether there's any barrier between the platform and the street.",
+            "explanation": "A tram bell, nearby street traffic, and the absence of ticket gates point to an open-air light rail platform rather than an enclosed subway.",
+            "textToSpeak": "A bell rings twice as the tram approaches, street traffic hums just beyond a low railing, and a short two-car train glides in without any gate to pass through.",
             "options": [
-                "Storage Facility",
-                "Art Class",
-                "Food Court",
-                "Rush-Hour Train Platform"
+                "City Bus",
+                "Train Station Platform",
+                "Subway Platform",
+                "Light Rail Tram Platform"
             ],
             "correctAnswerIndex": 3,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Light rail tram platform",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "tram bell",
+                "open-air platform",
+                "two-car train"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L52_Q1",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Which setting best matches what you hear?",
             "interactionType": "choice",
-            "hint": "Listen for thudding sacks and a called headcount.",
-            "explanation": "Thudding sacks and a called number of loaves are common sounds of a working kitchen like this.",
-            "textToSpeak": "Heavy sacks thud onto the counter as a baker calls out how many loaves are still needed.",
+            "hint": "Listen for how much effort it takes to close the bin.",
+            "explanation": "A tight, effortful overhead bin, a creaky tray table, and a standard landing announcement point to an economy cabin rather than a roomier premium one.",
+            "textToSpeak": "An overhead bin slams shut after some effort, a tray table creaks down with a squeak, and a flight attendant asks everyone to stow trays before landing.",
             "options": [
-                "Bike Repair Shop",
-                "Recycling Center",
-                "Bakery Kitchen",
-                "Daycare Center"
+                "Airport Departure Gate",
+                "Long-Haul International Flight Cabin",
+                "Business Class Flight Cabin",
+                "Domestic Economy Flight Cabin"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Economy class airplane cabin",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "overhead bin",
+                "tray table",
+                "stow"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L52_Q2",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Where would you most likely hear this?",
             "interactionType": "choice",
-            "hint": "Listen for a crackling dispatcher and a ticking signal.",
-            "explanation": "A crackling dispatcher radio is a familiar sound in this kind of vehicle while it is on the road.",
-            "textToSpeak": "A dispatcher's voice crackles through the dashboard radio while the turn signal ticks at a red light.",
+            "hint": "Listen for what's happening just outside the door.",
+            "explanation": "A pump beeping outside, a scratched lottery ticket, and a muffled voice behind glass point to a gas station's attended kiosk.",
+            "textToSpeak": "A fuel pump beeps faintly through a propped-open door, a lottery ticket scratches against the counter, and a voice sounds muffled behind a thick glass partition.",
             "options": [
-                "Dry Cleaner",
-                "Print Shop",
-                "Taxi",
-                "Food Truck"
+                "Toll Booth",
+                "Newsstand Kiosk",
+                "Gas Station Kiosk",
+                "Convenience Store"
             ],
             "correctAnswerIndex": 2,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Gas station attendant kiosk",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "fuel pump",
+                "lottery ticket",
+                "partition"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L52_Q3",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Listen to the scene. What is the setting?",
             "interactionType": "choice",
-            "hint": "Listen for a repeated phrase and a clicking metronome.",
-            "explanation": "A repeated phrase practiced against a clicking metronome is a familiar sound of learning an instrument.",
-            "textToSpeak": "The same short phrase repeats several times as a metronome clicks steadily in the background.",
+            "hint": "Listen for the specificity of the plant being described.",
+            "explanation": "A courtyard fountain, a named rare species, and a long gravel path point to a curated botanical garden rather than a greenhouse or community plot.",
+            "textToSpeak": "A fountain trickles steadily in an open courtyard, a guide names a rare orchid species for a small group, and gravel crunches underfoot along a long winding path.",
             "options": [
-                "Bike Repair Shop",
-                "Piano Lesson",
-                "Open-Plan Office",
-                "Flower Shop"
+                "Neighborhood Park",
+                "Community Garden",
+                "Greenhouse",
+                "Botanical Garden"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Botanical garden grounds",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "fountain",
+                "rare species",
+                "gravel path"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L53_Q1",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Which place fits these sounds?",
             "interactionType": "choice",
-            "hint": "Listen for a sliding window and a called order number.",
-            "explanation": "A sliding serving window and a called order number are familiar sounds of picking up street food.",
-            "textToSpeak": "A serving window slides open with a bang as an order number is called out over the noise.",
+            "hint": "Listen for what's creating the waves \u2014 is it natural or mechanical?",
+            "explanation": "A mechanical wave cycle, echo off a glass ceiling, and overlapping slide splashes point to an indoor water park rather than a still swimming pool.",
+            "textToSpeak": "A wave pool rumbles on a mechanical cycle, screams echo off a high glass ceiling, and a whistle blows just as someone splashes down a slide nearby.",
             "options": [
-                "Taxi",
-                "Driving Range",
-                "Dry Cleaner",
-                "Food Truck"
+                "Backyard Pool Party",
+                "Beach Boardwalk",
+                "Indoor Water Park",
+                "Swimming Pool"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Indoor water park",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "wave pool",
+                "echo",
+                "waterslide"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L53_Q2",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "What environment are you hearing?",
             "interactionType": "choice",
-            "hint": "Listen for a humming laminator and counted flyers.",
-            "explanation": "A humming laminator and counted flyers are familiar sounds of collecting a finished print order.",
-            "textToSpeak": "A laminating machine hums as warm sheets slide out while a clerk counts finished flyers into a stack.",
+            "hint": "Listen for what's happening at the entrance, not just the music.",
+            "explanation": "Wall-shaking bass, a shouted drink order, and an ID check at a rope point to a nightclub rather than an open-air concert.",
+            "textToSpeak": "Bass thumps so hard it seems to shake the walls, a bartender shouts a drink order twice to be heard, and a bouncer checks an ID under a rope at the entrance.",
             "options": [
-                "Hardware Store",
-                "Print Shop",
-                "Rooftop Barbecue",
-                "Taxi"
+                "Outdoor Concert",
+                "Nightclub",
+                "Neighborhood Pub",
+                "Sports Bar"
             ],
             "correctAnswerIndex": 1,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Nightclub interior",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "bass",
+                "bouncer",
+                "rope line"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L53_Q3",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Based on these sounds, where are you?",
             "interactionType": "choice",
-            "hint": "Listen for clinking bottles and a quiet chat about color.",
-            "explanation": "Clinking polish bottles and a conversation about shade choice are familiar sounds here.",
-            "textToSpeak": "Small bottles clink together as a technician chats quietly, helping choose the perfect shade of red.",
+            "hint": "Listen for whether anyone has to raise their voice.",
+            "explanation": "A dart hitting a board, a regular greeted personally, and an easy quiet conversation point to a low-key neighborhood pub rather than a loud club or bar.",
+            "textToSpeak": "A dart thuds into a board across the room, someone is greeted by name as a regular, and a quiet conversation continues easily over two pints.",
             "options": [
-                "Print Shop",
-                "Nail Salon",
-                "Yoga Studio",
-                "Food Court"
+                "Sports Bar",
+                "Nightclub",
+                "Neighborhood Pub",
+                "Restaurant Bar Area"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Neighborhood pub",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "darts",
+                "regular",
+                "pint"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L54_Q1",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Listen carefully. Where are you?",
             "interactionType": "choice",
-            "hint": "Listen for clattering blocks and encouraging clapping.",
-            "explanation": "Clattering blocks and encouraging clapping are common sounds of playtime among young children.",
-            "textToSpeak": "Building blocks clatter to the floor as a toddler giggles and a caregiver claps encouragingly.",
+            "hint": "Listen for how many different games seem to be playing.",
+            "explanation": "Multiple simultaneous games, a synchronized groan, and rushed drink orders during a break point to a sports bar rather than a quiet pub.",
+            "textToSpeak": "Several televisions show different games at once, a group groans together at a missed shot, and a bartender pours three drinks fast during a commercial break.",
             "options": [
-                "Driving Range",
-                "Bike Repair Shop",
-                "Locksmith Shop",
-                "Daycare Center"
+                "Nightclub",
+                "Sports Bar",
+                "Neighborhood Pub",
+                "Sports Stadium"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Sports bar interior",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "commercial break",
+                "groan",
+                "televisions"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L54_Q2",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "What place does this soundscape suggest?",
             "interactionType": "choice",
-            "hint": "Listen for a beeping scale and scratching claws.",
-            "explanation": "A beeping scale weighing a small animal is a common sound of a routine checkup here.",
-            "textToSpeak": "A scale beeps as a small animal is weighed while claws scratch nervously against the metal table.",
+            "hint": "Listen for the specific game being named.",
+            "explanation": "A gym whistle, a named children's game, and an echoing rubber ball point to an elementary school gym class rather than an adult fitness gym.",
+            "textToSpeak": "A whistle blows and sneakers squeak across a shiny floor, a teacher calls out that it's time for dodgeball, and a rubber ball bounces with an echo off the high walls.",
             "options": [
-                "Print Shop",
-                "Rooftop Barbecue",
-                "Nail Salon",
-                "Veterinary Clinic"
+                "Fitness Gym",
+                "Elementary School Gym Class",
+                "Playground",
+                "High School Hallway"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Elementary school gymnasium",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "dodgeball",
+                "gym floor",
+                "echo"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L54_Q3",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Which setting best matches what you hear?",
             "interactionType": "choice",
-            "hint": "Listen for a rush of tunnel air and an appearing light.",
-            "explanation": "A rush of air from a tunnel is a classic warning sign of an arriving train underground.",
-            "textToSpeak": "Cool air rushes from the tunnel just before a bright headlight appears around the bend.",
+            "hint": "Listen for how the drink gets paid for.",
+            "explanation": "A towel cart, charging drinks to a room number, and hidden resort music point to a hotel pool rather than a public or backyard one.",
+            "textToSpeak": "A towel cart squeaks past with a small stack of folded towels, a bartender asks for a room number instead of cash, and quiet music plays from speakers hidden somewhere in the palms.",
             "options": [
-                "Yoga Studio",
-                "Copy Center",
-                "Subway Station",
-                "Rooftop Barbecue"
+                "Cruise Ship Deck",
+                "Swimming Pool",
+                "Backyard Pool Party",
+                "Hotel Swimming Pool"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Hotel resort swimming pool",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "towel cart",
+                "room charge",
+                "resort music"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L55_Q1",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Where would you most likely hear this?",
             "interactionType": "choice",
-            "hint": "Listen for humming lights and passed plates.",
-            "explanation": "Humming string lights and passed plates are common sounds of an evening gathering outdoors above the city.",
-            "textToSpeak": "String lights hum faintly overhead as plates are passed around under the open evening sky.",
+            "hint": "Listen for the specific drink being poured, and what time of day it suggests.",
+            "explanation": "A fizzing mimosa, a long weekend-style wait, and a brunch-specific order point to a busy brunch caf\u00e9 rather than a regular coffee shop.",
+            "textToSpeak": "A mimosa fizzes as it's poured into a glass, a host mentions a forty-minute wait for a table, and someone orders avocado toast with a side of fruit.",
             "options": [
-                "Rooftop Barbecue",
-                "Tattoo Studio",
-                "Print Shop",
-                "Recycling Center"
+                "Brunch Caf\u00e9",
+                "Fine Dining Restaurant",
+                "Casual Diner",
+                "Caf\u00e9"
             ],
             "correctAnswerIndex": 0,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Weekend brunch caf\u00e9",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "mimosa",
+                "wait time",
+                "brunch"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L55_Q2",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Listen to the scene. What is the setting?",
             "interactionType": "choice",
-            "hint": "Listen for a sputtering engine and a cloth wiping hands.",
-            "explanation": "A sputtering engine starting up is a familiar test sound after a repair is finished.",
-            "textToSpeak": "An engine sputters, then roars to life, as oily hands are wiped clean on a cloth nearby.",
+            "hint": "Listen for the small, casual favor being asked.",
+            "explanation": "Thin-wall roommate noise, a mini-fridge, and borrowing a charger point to a shared university dorm room rather than a private hotel stay.",
+            "textToSpeak": "Music thumps faintly through a thin wall from a roommate's side, a small fridge hums under a desk, and someone asks if anyone has a charger to borrow.",
             "options": [
-                "Recycling Center",
-                "Auto Repair Garage",
-                "Campus Cafeteria",
-                "Subway Station"
+                "Hotel Room",
+                "Vacation Rental Apartment",
+                "Budget Motel Room",
+                "University Dorm Room"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "University dormitory room",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "roommate",
+                "mini-fridge",
+                "charger"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L55_Q3",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Which place fits these sounds?",
             "interactionType": "choice",
-            "hint": "Listen for swirling water and a rinsed brush.",
-            "explanation": "Swirling water used to rinse a brush is a common sound heard throughout a painting lesson.",
-            "textToSpeak": "Water swirls in a jar as a brush is rinsed clean before dipping into a fresh color.",
+            "hint": "Listen for what's being reviewed with the customer, not just fixed.",
+            "explanation": "A waiting-area coffee machine, a name called for an estimate review, and a low-volume TV point to a dealership's service waiting room rather than the garage floor itself.",
+            "textToSpeak": "A coffee machine gurgles in a small nook, a service advisor calls out a name to go over a repair estimate, and a television plays quietly with the volume turned low.",
             "options": [
-                "Community Pool",
-                "Art Class",
-                "Open-Plan Office",
-                "Bike Repair Shop"
+                "Car Dealership Service Waiting Area",
+                "Family Doctor's Office",
+                "Car Dealership Showroom",
+                "Auto Repair Garage"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Car dealership service waiting area",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "service advisor",
+                "estimate",
+                "waiting nook"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L56_Q1",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "What environment are you hearing?",
             "interactionType": "choice",
-            "hint": "Listen for unspooling ribbon and a tucked card.",
-            "explanation": "Unspooling ribbon and a tucked card are common finishing sounds of preparing an order here.",
-            "textToSpeak": "Ribbon unspools with a soft hiss as a small card is tucked carefully among the fresh petals.",
+            "hint": "Listen for what's printing, and why someone needs help.",
+            "explanation": "A tapped touchscreen, a printing boarding pass, and a request for help with the machine point to a self-check-in kiosk rather than a staffed gate.",
+            "textToSpeak": "A touchscreen beeps with each tap, a boarding pass prints out with a soft whir, and a passenger asks a nearby staff member why the screen won't accept their passport.",
             "options": [
-                "Flower Shop",
-                "Bakery Kitchen",
-                "Rooftop Barbecue",
-                "Community Pool"
+                "Baggage Claim",
+                "Airport Departure Gate",
+                "Airport Self-Check-In Kiosk",
+                "Airport Security Checkpoint"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Airport self-check-in kiosk area",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "touchscreen",
+                "boarding pass",
+                "kiosk"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L56_Q2",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Based on these sounds, where are you?",
             "interactionType": "choice",
-            "hint": "Listen for steady breathing and a guiding voice.",
-            "explanation": "Steady group breathing guided by a calm voice is a signature sound of this kind of class.",
-            "textToSpeak": "Slow, steady breathing fills the room as an instructor gently guides everyone into the next pose.",
+            "hint": "Listen for what's happening around the ovens besides baking.",
+            "explanation": "An in-store oven bell, stickered pastry boxes, and a passing shopping cart point to a supermarket's bakery section rather than a standalone bakery.",
+            "textToSpeak": "A bell chimes as fresh bread comes out of an in-store oven, a price sticker gets pressed onto a box of pastries, and a shopping cart wheel squeaks past on its way to another aisle.",
             "options": [
-                "Bakery Kitchen",
-                "Yoga Studio",
-                "Piano Lesson",
-                "Recycling Center"
+                "Farmers Market",
+                "Grocery Store Bakery Section",
+                "Neighborhood Bakery",
+                "Home Kitchen"
             ],
             "correctAnswerIndex": 1,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Supermarket in-store bakery section",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "in-store oven",
+                "price sticker",
+                "pastry"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L56_Q3",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Listen carefully. Where are you?",
             "interactionType": "choice",
-            "hint": "Listen for a humming drawer and shaped dough.",
-            "explanation": "A humming proofing drawer and dough being shaped are familiar sounds behind the scenes of a bakery.",
-            "textToSpeak": "A proofing drawer hums quietly as risen dough is shaped firmly before its final rest.",
+            "hint": "Listen for how the order started \u2014 was it placed in person?",
+            "explanation": "A phone order taken by hand, a stapled bag, and a name confirmed at pickup point to a take-out counter rather than an in-person fast food line.",
+            "textToSpeak": "A phone rings and an order gets taken down by hand, a paper bag is stapled shut with two quick clicks, and someone at the door confirms a name instead of paying right there.",
             "options": [
-                "Daycare Center",
-                "Locksmith Shop",
-                "Bakery Kitchen",
-                "Piano Lesson"
+                "Restaurant Kitchen",
+                "Take-Out Counter",
+                "Food Truck",
+                "Fast Food Counter"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Restaurant take-out pickup counter",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "phone order",
+                "stapled bag",
+                "pickup"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L57_Q1",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "What place does this soundscape suggest?",
             "interactionType": "choice",
-            "hint": "Listen for a snapping tape measure and compared planks.",
-            "explanation": "A snapping tape measure is a familiar sound of shopping for building materials.",
-            "textToSpeak": "A tape measure snaps back with a click while someone compares two sizes of wooden planks.",
+            "hint": "Listen for how the door was unlocked in the first place.",
+            "explanation": "A key attached to a bulky block, an exterior door letting in traffic noise, and a stuck paper towel dispenser point to a small gas station restroom.",
+            "textToSpeak": "A large block key clatters against the door as it's unlocked, passing traffic hums through a door that opens straight outside, and a paper towel dispenser rattles without giving up a sheet.",
             "options": [
-                "Bike Repair Shop",
-                "Hardware Store",
-                "Food Truck",
-                "Rooftop Barbecue"
+                "Gas Station Restroom",
+                "Mall Public Restroom",
+                "Public Park Restroom",
+                "Airplane Lavatory"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Gas station restroom",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "key block",
+                "exterior door",
+                "dispenser"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L57_Q2",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Which setting best matches what you hear?",
             "interactionType": "choice",
-            "hint": "Listen for a knock on glass and a meeting in progress.",
-            "explanation": "A knock on a glass wall before joining a meeting is a common workplace sound.",
-            "textToSpeak": "Someone knocks twice on a glass wall before sliding quietly into a meeting already in progress.",
+            "hint": "Listen for the makeshift, improvised quality of the space.",
+            "explanation": "A blanket-lined closet, a too-close laptop fan, and waiting out a dog barking outside point to an improvised home recording setup rather than a professional studio.",
+            "textToSpeak": "A closet door creaks open, lined inside with blankets pinned to the walls, a laptop fan hums just a little too close to the microphone, and a dog barks faintly outside until someone waits it out.",
             "options": [
-                "Art Class",
-                "Open-Plan Office",
-                "Hardware Store",
-                "Recycling Center"
+                "Recording Studio",
+                "Home Recording Setup",
+                "Podcast Studio",
+                "Home Theater"
             ],
             "correctAnswerIndex": 1,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Improvised home recording space",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "sound dampening",
+                "laptop fan",
+                "improvised"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L57_Q3",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Where would you most likely hear this?",
             "interactionType": "choice",
-            "hint": "Listen for scraping chairs and a search for tables.",
-            "explanation": "Scraping chairs and a search for seating are familiar sounds of a busy lunch rush here.",
-            "textToSpeak": "Chairs scrape against tile floors as families search for a free table during the lunch rush.",
+            "hint": "Listen for the reading level and who it's aimed at.",
+            "explanation": "A read-aloud story time, picture books, and small furniture point to an elementary school library rather than a general public or university one.",
+            "textToSpeak": "A librarian reads a story aloud to a group sitting cross-legged on the carpet, a stack of colorful picture books gets returned to a low shelf, and small chairs scrape softly nearby.",
             "options": [
                 "Daycare Center",
-                "Community Pool",
-                "Food Court",
-                "Auto Repair Garage"
+                "University Library",
+                "Elementary School Library",
+                "Public Library"
             ],
             "correctAnswerIndex": 2,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Elementary school library",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "story time",
+                "picture books",
+                "low shelf"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L58_Q1",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Listen to the scene. What is the setting?",
             "interactionType": "choice",
-            "hint": "Listen for a turned page and a pause after a mistake.",
-            "explanation": "A pause after a small mistake, followed by continued playing, is common during a music lesson.",
-            "textToSpeak": "A sheet of music turns quietly as the playing pauses, then continues after a small mistake is fixed.",
+            "hint": "Listen for the pace of everything, and the volume of the television.",
+            "explanation": "A bingo call, a slow walker, and a loud television point to a retirement home's common room rather than a hospital ward.",
+            "textToSpeak": "A number is called out slowly for a game of bingo, a walker's wheels squeak across the floor at an unhurried pace, and an old game show plays from a television turned up loud.",
             "options": [
-                "Open-Plan Office",
-                "Piano Lesson",
-                "Bike Repair Shop",
-                "Tattoo Studio"
+                "Community Center Meeting",
+                "Hospital Ward",
+                "Daycare Center",
+                "Retirement Home Common Room"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Retirement home common room",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "bingo",
+                "walker",
+                "common room"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L58_Q2",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Which place fits these sounds?",
             "interactionType": "choice",
-            "hint": "Listen for a beeping card reader and a printed receipt.",
-            "explanation": "A beeping card reader and a small printed receipt are common sounds at the end of a paid ride.",
-            "textToSpeak": "A card reader beeps for payment as a small receipt prints out at the end of the ride.",
+            "hint": "Listen for what happens before any actual experiment begins.",
+            "explanation": "Class-wide safety instructions, goggles passed row by row, and a burner needing a few tries point to a supervised high school chemistry lab.",
+            "textToSpeak": "A teacher reads safety instructions aloud to the whole class before anyone touches anything, a box of goggles is passed down each row, and a Bunsen burner clicks several times before catching.",
             "options": [
-                "Taxi",
-                "Driving Range",
-                "Rooftop Barbecue",
-                "Campus Cafeteria"
+                "Elementary Classroom",
+                "Science Laboratory",
+                "University Chemistry Lab",
+                "High School Chemistry Lab"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "High school chemistry classroom",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "safety instructions",
+                "goggles",
+                "Bunsen burner"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L58_Q3",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "What environment are you hearing?",
             "interactionType": "choice",
-            "hint": "Listen for bubbling water and a beeping timer.",
-            "explanation": "Bubbling water in a small basin and a beeping timer are common sounds of a pedicure.",
-            "textToSpeak": "Warm water bubbles gently in a small basin while a timer beeps softly for the next client.",
+            "hint": "Listen for the tool used to signal a transition, not just the activity.",
+            "explanation": "A cleanup song, construction paper scissors, and enthusiastic praise for a drawing point to a kindergarten classroom rather than an older elementary grade.",
+            "textToSpeak": "A cleanup song plays to signal it's time to tidy up, small scissors snip carefully through construction paper, and a teacher praises a drawing with real enthusiasm held up for everyone to see.",
             "options": [
-                "Nail Salon",
-                "Driving Range",
-                "Rush-Hour Train Platform",
-                "Copy Center"
+                "Kindergarten Classroom",
+                "Daycare Center",
+                "Art Class",
+                "Elementary Classroom"
             ],
             "correctAnswerIndex": 0,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Kindergarten classroom",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "cleanup song",
+                "construction paper",
+                "praise"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L59_Q1",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Based on these sounds, where are you?",
             "interactionType": "choice",
-            "hint": "Listen for laughter and an echoing dropped tray.",
-            "explanation": "A dropped tray met with laughter is a familiar, echoing sound of a large shared dining hall.",
-            "textToSpeak": "Laughter erupts from a crowded table as someone drops a tray with a loud, echoing clatter.",
+            "hint": "Listen for how much time is mentioned as still remaining.",
+            "explanation": "A meal service deep into a dim cabin and a mention of many hours remaining point to a long-haul international flight rather than a short domestic hop.",
+            "textToSpeak": "A meal cart rattles slowly down a dim aisle lit mostly by scattered screens, and an announcement mentions six hours still remaining before landing, well after most passengers have gone quiet.",
             "options": [
-                "Rush-Hour Train Platform",
-                "Daycare Center",
-                "Veterinary Clinic",
-                "Campus Cafeteria"
+                "Domestic Economy Flight Cabin",
+                "Airport Lounge",
+                "Business Class Flight Cabin",
+                "Long-Haul International Flight Cabin"
             ],
             "correctAnswerIndex": 3,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Long-haul international flight cabin",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "meal cart",
+                "dimmed cabin",
+                "hours remaining"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L59_Q2",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Listen carefully. Where are you?",
             "interactionType": "choice",
-            "hint": "Listen for dropped coins and crinkling foil.",
-            "explanation": "Crinkling foil around a fresh order is a common sound of food served through a small window.",
-            "textToSpeak": "Coins drop into a tip jar as foil wraps crinkle around a fresh order handed through the window.",
+            "hint": "Listen for what's required before someone can go in the deep end.",
+            "explanation": "A swim test check, a lane-closure announcement for a class, and a shallow end full of children point to a public community pool's structured schedule.",
+            "textToSpeak": "A lifeguard checks a swim test card before letting someone into the deep end, a speaker announces that two lanes will close soon for a class, and children's voices from the shallow end far outnumber any adults.",
             "options": [
-                "Food Truck",
-                "Rush-Hour Train Platform",
-                "Campus Cafeteria",
-                "Flower Shop"
+                "Indoor Water Park",
+                "Hotel Swimming Pool",
+                "Community Swimming Pool",
+                "Swimming Pool"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Public community swimming pool",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "swim test",
+                "lane closure",
+                "shallow end"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L59_Q3",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "What place does this soundscape suggest?",
             "interactionType": "choice",
-            "hint": "Listen for clicking cartridges and a test page.",
-            "explanation": "Clicking ink cartridges and a test print are common sounds before a large printing job starts.",
-            "textToSpeak": "Ink cartridges click into place as a technician checks a colorful sample page before the big run begins.",
+            "hint": "Listen for what starts before anyone actually orders.",
+            "explanation": "A grill sizzling unprompted, a regular's order started early, and a swiveling counter stool point to a small corner diner's breakfast counter.",
+            "textToSpeak": "A flat-top grill sizzles as a cook flips something without being asked, a regular's usual order is already started before they've even sat down, and a stool swivels with a soft squeak at the counter.",
             "options": [
-                "Piano Lesson",
-                "Print Shop",
-                "Bike Repair Shop",
-                "Flower Shop"
+                "Fast Food Counter",
+                "Neighborhood Caf\u00e9",
+                "Corner Diner Breakfast Counter",
+                "Casual Diner"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Corner diner breakfast counter",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "flat-top grill",
+                "regular's order",
+                "counter stool"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L60_Q1",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Which setting best matches what you hear?",
             "interactionType": "choice",
-            "hint": "Listen for a repeating song and scraping small chairs.",
-            "explanation": "A repeating song and small chairs scraping into a circle are classic sounds before story time.",
-            "textToSpeak": "A gentle song plays on repeat as tiny chairs scrape into a circle for story time.",
+            "hint": "Listen for who else is in the room besides the children.",
+            "explanation": "A puppet during a story, parents present at the back, and an interactive question to the group point to a public library's children's story-time session.",
+            "textToSpeak": "A puppet squeaks as it's used to act out part of a story, a few parents sit quietly near the back of the room, and a librarian pauses to ask the group what they think happens next.",
             "options": [
-                "Art Class",
-                "Veterinary Clinic",
-                "Auto Repair Garage",
+                "Children's Library Story-Time Room",
+                "Kindergarten Classroom",
+                "Elementary School Library",
                 "Daycare Center"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Public library story-time room",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "puppet",
+                "story-time",
+                "interactive"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L60_Q2",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Where would you most likely hear this?",
             "interactionType": "choice",
-            "hint": "Listen for torn cardboard and sorted paper.",
-            "explanation": "Torn cardboard and sorted paper piles are common sounds of separating materials for reuse.",
-            "textToSpeak": "Cardboard is torn and flattened as a worker sorts paper into a growing pile nearby.",
+            "hint": "Listen for whether this feels like a class or independent work.",
+            "explanation": "A continuously roaring fume hood, precise unprompted measurements, and solitary late-night work point to university-level independent lab research.",
+            "textToSpeak": "A fume hood fan roars continuously in the background, a lab partner reads off a measurement in milliliters without needing to be asked, and a research assistant works alone, well past when any class would have ended.",
             "options": [
-                "Recycling Center",
-                "Driving Range",
-                "Food Truck",
-                "Yoga Studio"
+                "Hospital Lab",
+                "University Chemistry Lab",
+                "High School Chemistry Lab",
+                "Science Laboratory"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "University chemistry research lab",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "fume hood",
+                "milliliters",
+                "research assistant"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L60_Q3",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Listen to the scene. What is the setting?",
             "interactionType": "choice",
-            "hint": "Listen for a rush of air and a growing rumble.",
-            "explanation": "A rush of air followed by a growing rumble often means an arrival is only seconds away.",
-            "textToSpeak": "A gust of warm air rushes forward just before a distant rumble grows steadily louder.",
+            "hint": "Listen for who is handling the passport, and how the luggage disappears.",
+            "explanation": "An agent tagging and belting a suitcase, a handled passport, and a question about bag count point to a staffed check-in desk rather than a self-service kiosk.",
+            "textToSpeak": "An agent tags a suitcase and sends it onto a belt behind the counter, a passport is handed across and returned a moment later, and a question comes up about whether it's one bag being checked or two.",
             "options": [
-                "Storage Facility",
-                "Rush-Hour Train Platform",
-                "Campus Cafeteria",
-                "Flower Shop"
+                "Baggage Claim",
+                "Airport Self-Check-In Kiosk",
+                "Airport Domestic Check-In Desk",
+                "Airport Departure Gate"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Airport staffed check-in desk",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "tag",
+                "check-in desk",
+                "passport"
             ]
         }
     ]

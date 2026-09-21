@@ -6,542 +6,542 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L181_Q1",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "Where does the real dispute in this argument lie?",
-            "explanation": "Valid argument = if premises are true, conclusion must follow. The observation: the logic is fine (conclusion follows from premise). The real dispute: the premise itself. Arguments can be logically valid while resting on contested assumptions. The weak point is before the argument even starts - in what is granted as given.",
-            "textToSpeak": "If the premise is conceded, the conclusion follows - yet the premise itself is far from obvious.",
-            "question": "What is the key issue?",
+            "instruction": "Listen closely and infer what is really happening.",
+            "hint": "Combine the dialogue tone, the mention of a canceled trip, and the sudden subject change to weigh what's really happening.",
+            "explanation": "A flat 'we're fine, really' immediately followed by a mention of a canceled trip and a quick subject change together suggest more tension between them than either statement admits on its own.",
+            "textToSpeak": "\"We're fine, really,\" she said flatly. \"We just canceled our trip, actually. Anyway, how's your week been?\"",
+            "question": "What can you most reasonably infer?",
             "options": [
-                "The argument is valid but the starting assumption is questionable",
-                "The logic is faulty"
+                "Everything is exactly as fine as she says",
+                "There is likely more tension than she is admitting"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference",
-            "emoji": "📜",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "🧳",
+            "literalMeaning": "She said they were fine, mentioned a canceled trip, then changed the subject quickly.",
+            "impliedMeaning": "There is likely more tension between them than she is directly admitting."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L181_Q2",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "Think about what paying to be listed might do to the independence of a rating.",
-            "explanation": "A rating from a platform the hotel pays to appear on doesn't necessarily mean the score is fabricated, but the financial relationship is exactly the kind of thing that can quietly bias an evaluation.",
-            "textToSpeak": "The hotel's five-star rating came from a review site the hotel itself had paid to be listed on.",
-            "question": "What does this raise a concern about?",
+            "instruction": "What does the situation suggest? Make your best guess.",
+            "hint": "Combine the manager's praise, the mention of upcoming budget reviews, and the sudden request for everyone's availability next week.",
+            "explanation": "General praise for the team, paired with a mention of budget reviews and a sudden request for everyone's schedules, together suggest the praise may be setting up for a more difficult announcement, such as layoffs.",
+            "textToSpeak": "\"You've all done such great work this year,\" the director said, mentioning the upcoming budget review, then asked everyone to confirm their availability next week.",
+            "question": "What can you most reasonably infer?",
             "options": [
-                "Whether the rating reflects independent, unbiased opinion",
-                "The location of the hotel"
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "listeningInference",
-            "emoji": "🏨",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L181_Q3",
-            "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "Think about what the condition attached to the offer actually asks for.",
-            "explanation": "Generous compensation tied to a non-disclosure condition means the payment isn't just resolving the incident — it's also purchasing the passenger's silence about it, which changes what the offer really represents.",
-            "textToSpeak": "The airline's compensation offer was generous, on condition that she agreed not to discuss the incident publicly.",
-            "question": "What is the real trade-off being offered?",
-            "options": [
-                "Money in exchange for the passenger's silence",
-                "Compensation with no conditions attached"
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "listeningInference",
-            "emoji": "🎯",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L182_Q1",
-            "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "Think about what leaving one department out, right after its bad news, might be doing.",
-            "explanation": "A conspicuous, single omission — right after a significant loss — is rarely random. Leaving out exactly the department with the worst news is a quiet way to avoid highlighting it.",
-            "textToSpeak": "The quarterly update mentioned every department's achievements except the one that had just lost its biggest client.",
-            "question": "What does this omission likely signal?",
-            "options": [
-                "That department had no news to report",
-                "An attempt to avoid drawing attention to a setback"
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "listeningInference",
-            "emoji": "💼",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L182_Q2",
-            "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "What is the sophisticated skill of appearing neutral while actually advocating?",
-            "explanation": "This is a high-level rhetorical technique: framing, word choice, selection of emphasis, question formulation all allow a speaker to guide audiences toward a conclusion while appearing to present 'just the facts'. The appearance of neutrality makes the advocacy more effective because it's invisible.",
-            "textToSpeak": "The speaker managed to take a strong position without appearing to have taken any position at all.",
-            "question": "What rhetorical skill is being described?",
-            "options": [
-                "The ability to communicate a view while maintaining an appearance of neutrality",
-                "Genuine indecisiveness"
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "listeningInference",
-            "emoji": "🔍",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L182_Q3",
-            "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "Think about what kind of news is typically softened with a phrase like this before it's delivered.",
-            "explanation": "'Not what we hoped for' is a common way clinicians ease into disappointing results — signalling that something less positive is coming before stating the specifics, to soften the impact.",
-            "textToSpeak": "The doctor said the results were 'not what we hoped for' before explaining what they actually showed.",
-            "question": "What is this phrasing likely preparing the listener for?",
-            "options": [
-                "Difficult or disappointing news to follow",
-                "A request for more test samples"
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "listeningInference",
-            "emoji": "🩺",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L183_Q1",
-            "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "Why would more knowledge make understanding the past harder in one specific way?",
-            "explanation": "More knowledge = more context, more subsequent events, more hindsight. But those who lived through a period had none of that subsequent knowledge - they experienced only the present of their time. The expert's knowledge is precisely what removes them from the perspective of ignorance and uncertainty that characterised the lived experience.",
-            "textToSpeak": "The historian's dilemma: the more you know about a period, the harder it becomes to see it as those who lived through it did.",
-            "question": "What is the paradox?",
-            "options": [
-                "Expertise can create distance from the lived experience being studied",
-                "Historical knowledge makes understanding easier"
+                "A difficult announcement may be coming soon",
+                "The company is planning a celebration for the team"
             ],
             "correctAnswerIndex": 0,
             "subtype": "listeningInference",
             "emoji": "📊",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "literalMeaning": "Praise was followed by mentioning budget reviews and requesting everyone's availability.",
+            "impliedMeaning": "A difficult announcement, possibly about budget cuts, may be coming soon."
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L181_Q3",
+            "interactionType": "choice",
+            "instruction": "Use the clues to work out the meaning.",
+            "hint": "Combine the friend's excited tone about a new job, the mention of a much longer commute, and the quick change of subject when asked about pay.",
+            "explanation": "Genuine excitement about a new job, paired with mentioning a longer commute and quickly avoiding the topic of pay, together suggest the position may involve real trade-offs the person hasn't fully processed or wants to avoid discussing.",
+            "textToSpeak": "\"I'm so excited about the new job!\" she said, mentioning the commute is almost twice as long now, then quickly changed the subject when asked about the salary.",
+            "question": "What can you most reasonably infer?",
+            "options": [
+                "The new job is a perfect upgrade in every way",
+                "The new job likely involves real trade-offs she's avoiding discussing"
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "listeningInference",
+            "emoji": "💼",
+            "literalMeaning": "She was excited but mentioned a longer commute and avoided the pay question.",
+            "impliedMeaning": "The new job likely involves real trade-offs she is avoiding discussing directly."
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L182_Q1",
+            "interactionType": "choice",
+            "instruction": "What can you infer from what you hear?",
+            "hint": "Combine the coach's calm tone, the mention of a key player's minor injury, and the sudden change to the starting lineup.",
+            "explanation": "A calm reassurance about the team's readiness, combined with mentioning a player's minor injury and then quietly changing the starting lineup, together suggest the injury may be more significant than the calm tone lets on.",
+            "textToSpeak": "\"We're not worried at all,\" the coach said calmly, mentioning the star player's \"minor\" injury, right before quietly changing the starting lineup.",
+            "question": "What can you most reasonably infer?",
+            "options": [
+                "The injury has had no real effect on the team",
+                "The injury may be more significant than described"
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "listeningInference",
+            "emoji": "🏥",
+            "literalMeaning": "The coach downplayed an injury but then changed the starting lineup.",
+            "impliedMeaning": "The injury is likely more significant than the calm description suggests."
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L182_Q2",
+            "interactionType": "choice",
+            "instruction": "Listen for the clues behind the words.",
+            "hint": "Combine the couple's cheerful tone about moving, the mention of downsizing from their current home, and the quick subject change when asked about their savings.",
+            "explanation": "A cheerful description of an upcoming move, combined with mentioning a downsize and quickly avoiding a question about savings, together suggest the move may be financially motivated rather than purely a lifestyle choice.",
+            "textToSpeak": "\"We're so excited to move to somewhere smaller!\" they said, mentioning it would be a big downsize, then changed the subject quickly when asked how their savings were doing.",
+            "question": "What can you most reasonably infer?",
+            "options": [
+                "The move may be financially motivated",
+                "The move is purely about wanting a simpler lifestyle"
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "listeningInference",
+            "emoji": "🏠",
+            "literalMeaning": "They were cheerful about downsizing but avoided the savings question.",
+            "impliedMeaning": "The move is likely at least partly financially motivated."
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L182_Q3",
+            "interactionType": "choice",
+            "instruction": "What is most likely true here?",
+            "hint": "Combine the student's confident tone about the exam, the mention of studying 'a little,' and the sudden request to see a friend's notes the night before.",
+            "explanation": "Confidently claiming to feel prepared, while admitting to studying 'a little' and urgently requesting a friend's notes the night before, together suggest less preparation than the confident tone implies.",
+            "textToSpeak": "\"I feel pretty good about the exam,\" he said, mentioning he'd studied \"a little,\" before urgently texting a friend that night asking to see their notes.",
+            "question": "What can you most reasonably infer?",
+            "options": [
+                "He has thoroughly prepared and needs nothing else",
+                "He is likely less prepared than his tone suggests"
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "listeningInference",
+            "emoji": "📚",
+            "literalMeaning": "He seemed confident but studied only a little and urgently asked for notes.",
+            "impliedMeaning": "He is likely less prepared for the exam than his confident tone suggests."
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L183_Q1",
+            "interactionType": "choice",
+            "instruction": "What is the speaker implying?",
+            "hint": "Combine the landlord's reassurance about the building, the mention of an upcoming inspection, and the sudden rush to repaint the hallways.",
+            "explanation": "Reassuring tenants that everything is fine, mentioning an inspection is coming, and then suddenly rushing to repaint the hallways together suggest the building may have issues the landlord wants addressed before the inspection.",
+            "textToSpeak": "\"Everything here is in great shape,\" the landlord said, mentioning an inspection was scheduled soon, right before suddenly having the hallways repainted.",
+            "question": "What can you most reasonably infer?",
+            "options": [
+                "The building likely has issues being addressed before the inspection",
+                "The repainting was completely unrelated to the inspection"
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "listeningInference",
+            "emoji": "🏢",
+            "literalMeaning": "The landlord reassured tenants, mentioned an inspection, then had hallways repainted.",
+            "impliedMeaning": "The building likely has issues that are being addressed ahead of the inspection."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L183_Q2",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "What is the relationship between focus and exclusion in interpretation?",
-            "explanation": "Interpretation requires selection: what to attend to, what to emphasise, what to connect. By choosing what to interpret, you simultaneously choose what not to interpret. Every reading of a text, situation, or event has its constitutive outside - what it leaves out to maintain its coherence. No interpretation is total.",
-            "textToSpeak": "Every interpretation is also a choice of what not to interpret.",
-            "question": "What can you infer from this?",
+            "instruction": "What does this situation point to?",
+            "hint": "Combine the friend's upbeat description of their diet, the mention of feeling tired lately, and the sudden question about vitamin supplements.",
+            "explanation": "An upbeat description of a new diet, paired with mentioning recent tiredness and suddenly asking about vitamin supplements, together suggest the diet may not be providing everything the person's body needs.",
+            "textToSpeak": "\"The new diet has been great!\" she said, mentioning she'd been feeling more tired lately, then asked if he knew anything about vitamin supplements.",
+            "question": "What can you most reasonably infer?",
             "options": [
-                "Every act of interpretation necessarily focuses some things while setting others aside",
-                "Interpretations cover everything"
+                "The diet has had no effect on her energy at all",
+                "The diet may not be providing everything her body needs"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference",
-            "emoji": "🔦",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "🥗",
+            "literalMeaning": "She was upbeat about her diet but mentioned tiredness and asked about supplements.",
+            "impliedMeaning": "The diet may not be providing everything her body currently needs."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L183_Q3",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "What is the significance of discipline-specific evidence standards?",
-            "explanation": "A randomised controlled trial is gold standard in medicine; ethnographic immersion in anthropology; mathematical proof in mathematics. These aren't interchangeable. When disciplines engage, conflicts often stem from different, unarticulated standards. The observation: this difference exists and matters, but isn't often named or examined.",
-            "textToSpeak": "What counts as evidence varies significantly between disciplines, and those differences are rarely acknowledged.",
-            "question": "What is being pointed out?",
+            "instruction": "Read between the lines and choose the best answer.",
+            "hint": "Combine the company's announcement about 'exciting new opportunities,' the mention of restructuring, and the sudden scheduling of one-on-one meetings with every employee.",
+            "explanation": "An announcement framed around 'exciting new opportunities,' combined with mentioning restructuring and then scheduling individual meetings with everyone, together suggest significant, possibly unwelcome changes are about to be discussed individually.",
+            "textToSpeak": "\"We have some exciting new opportunities ahead,\" the email read, mentioning a restructuring, followed by one-on-one meetings being scheduled with every employee.",
+            "question": "What can you most reasonably infer?",
             "options": [
-                "Different fields have different standards for evidence, which is rarely discussed openly",
-                "Disciplines always agree on methods"
+                "Significant, possibly unwelcome changes are coming",
+                "The company plans to give everyone a bonus"
             ],
             "correctAnswerIndex": 0,
             "subtype": "listeningInference",
-            "emoji": "🔬",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "📧",
+            "literalMeaning": "The email mentioned opportunities and restructuring, then scheduled individual meetings.",
+            "impliedMeaning": "Significant changes, possibly unwelcome ones, are likely coming for individual employees."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L184_Q1",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "Why is claiming methodological neutrality a theoretical position?",
-            "explanation": "Claiming neutrality isn't neutral - it's a stance that refuses to acknowledge its own assumptions. Every methodology embeds assumptions about what counts as evidence, what questions are worth asking, what counts as rigour. Claiming to have no such assumptions is itself an assumption. Neutrality is a claim requiring examination, not a default state.",
-            "textToSpeak": "The field assumes its own methodology to be neutral, which is itself a theoretical position.",
-            "question": "What is the speaker communicating?",
+            "instruction": "Piece the clues together to find the real meaning.",
+            "hint": "Combine the doctor's reassuring words, the mention of ordering additional scans, and the noticeably longer appointment time given.",
+            "explanation": "Reassuring words from a doctor, combined with ordering additional scans and scheduling a longer appointment than usual, together suggest more caution is being taken than the reassuring tone alone implies.",
+            "textToSpeak": "\"Nothing to worry about,\" the doctor said, ordering a few additional scans, then scheduling a follow-up appointment twice as long as usual.",
+            "question": "What can you most reasonably infer?",
             "options": [
-                "The field has no methodology",
-                "Claiming neutrality is itself a form of methodological bias"
+                "More caution is being taken than the tone suggests",
+                "There is genuinely nothing at all to investigate"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
-            "emoji": "🔎",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "🩺",
+            "literalMeaning": "The doctor reassured the patient but ordered extra scans and a longer follow-up.",
+            "impliedMeaning": "More caution is likely being taken than the reassuring tone alone suggests."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L184_Q2",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "What prerequisite knowledge is needed even for formulating good questions?",
-            "explanation": "Formulating the right question = knowing enough to know where the gaps are. A complete novice doesn't know what they don't know - they can't identify the right question because they don't have the framework within which the question makes sense. Knowing what you don't know requires knowing what you do know.",
-            "textToSpeak": "To ask the right questions, you must already understand enough to know what you don't know.",
-            "question": "What does this reveal about inquiry?",
+            "instruction": "What's really going on? Trust the evidence.",
+            "hint": "Combine the friend's enthusiastic description of a new relationship, the mention of not introducing them to family yet, and hesitation when asked how long they've been together.",
+            "explanation": "Enthusiasm about a new relationship, combined with not yet introducing the partner to family and hesitating over how long they've been together, together suggest the relationship may be newer or less settled than the enthusiasm suggests.",
+            "textToSpeak": "\"This is honestly the best relationship I've ever had!\" she said, though she hadn't introduced him to her family yet, and hesitated when asked how long they'd been together.",
+            "question": "What can you most reasonably infer?",
             "options": [
-                "Knowing your own ignorance requires a foundation of knowledge",
-                "Understanding and questioning are completely independent"
+                "The relationship has clearly lasted for many years",
+                "The relationship may be newer than her enthusiasm suggests"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference",
-            "emoji": "🤔",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "❤️",
+            "literalMeaning": "She was enthusiastic but hadn't introduced him to family and hesitated about the timeline.",
+            "impliedMeaning": "The relationship may be newer or less settled than her enthusiasm suggests."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L184_Q3",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "Why does engaging with objections make an argument more persuasive?",
-            "explanation": "Ignoring objections makes an argument look weak or evasive. Engaging with the strongest objections and responding to them shows: the speaker has considered other views seriously; the argument can survive challenge; the conclusion is more reliable for having been tested. This pre-empts objections and demonstrates intellectual confidence.",
-            "textToSpeak": "The most persuasive arguments are not those that leave no room for doubt, but those that anticipate and answer the best objections.",
-            "question": "What is one supposed to gather from this?",
+            "instruction": "Think it through — what do the clues add up to?",
+            "hint": "Combine the store's announcement of a 'limited-time sale,' the mention that the same items were also discounted last month, and a new sign advertising the sale as 'ending soon' for the third week in a row.",
+            "explanation": "Announcing a 'limited-time' sale that was also discounted last month, and being advertised as 'ending soon' for three weeks straight, together suggest the urgency being marketed may not reflect an actual limited timeframe.",
+            "textToSpeak": "The store advertised a \"limited-time sale,\" though the same items had also been discounted last month, and the \"ending soon\" sign had been up for three weeks straight.",
+            "question": "What can you most reasonably infer?",
             "options": [
-                "Addressing strong objections proactively is more persuasive than projecting certainty",
-                "Arguments should simply ignore objections"
+                "The sale's urgency may not reflect a real limited timeframe",
+                "The sale genuinely will end within days as advertised"
             ],
             "correctAnswerIndex": 0,
             "subtype": "listeningInference",
-            "emoji": "🗣️",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "🏷️",
+            "literalMeaning": "The 'limited-time' sale had been advertised as ending soon for three weeks.",
+            "impliedMeaning": "The sale's advertised urgency likely doesn't reflect an actual limited timeframe."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L185_Q1",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "What is a dialectical 'change of terms'?",
-            "explanation": "Conceding a specific point while reframing the larger debate is a sophisticated move: you accept the criticism at one level to contest at a higher or different level. This prevents full defeat while maintaining the substantive position. The terms of the debate are shifted to ground where the speaker has advantage.",
-            "textToSpeak": "He concedes the point but changes the terms of the debate - a classic dialectical move.",
-            "question": "What is happening?",
+            "instruction": "Listen closely and infer what is really happening.",
+            "hint": "Combine the coworker's relaxed tone about the deadline, the mention of canceling weekend plans, and a light left on in the office late at night.",
+            "explanation": "A relaxed tone about an approaching deadline, combined with canceling weekend plans and staying in the office late at night, together suggest more pressure is being felt than the relaxed tone admits.",
+            "textToSpeak": "\"The deadline's not a big deal,\" he said casually, though he'd canceled his weekend plans, and his office light stayed on well past midnight.",
+            "question": "What can you most reasonably infer?",
             "options": [
-                "He accepts one point while shifting the discussion to more favourable ground",
-                "He is giving up his argument entirely"
+                "The deadline truly isn't a concern for him at all",
+                "He likely feels more pressure than his tone admits"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference",
-            "emoji": "🪞",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "💡",
+            "literalMeaning": "He seemed relaxed but canceled plans and worked late into the night.",
+            "impliedMeaning": "He likely feels more pressure about the deadline than his relaxed tone admits."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L185_Q2",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "Think about what 'thanking' a question and then not answering it usually means.",
-            "explanation": "Praising a question as 'interesting' is a common, polite stalling technique — it buys a moment of goodwill before pivoting to a more comfortable topic instead of engaging with what was actually asked.",
-            "textToSpeak": "The spokesperson thanked the journalist for the 'interesting question' before answering a different one entirely.",
-            "question": "What is the spokesperson likely doing?",
+            "instruction": "What does the situation suggest? Make your best guess.",
+            "hint": "Combine the parent's calm reassurance about the school issue, the mention of scheduling a meeting with the teacher, and printing out extra homework sheets that same evening.",
+            "explanation": "A calm reassurance that everything is fine at school, combined with scheduling a teacher meeting and printing extra homework that same evening, together suggest more concern exists than the calm words alone reveal.",
+            "textToSpeak": "\"It's really nothing to worry about,\" the parent said, then scheduled a meeting with the teacher and printed out extra homework sheets that same evening.",
+            "question": "What can you most reasonably infer?",
             "options": [
-                "Politely avoiding the original question",
-                "Refusing to speak with the press at all"
+                "There is genuinely no concern about school at all",
+                "There is likely more concern than the calm words reveal"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference",
-            "emoji": "⚖️",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "📚",
+            "literalMeaning": "The parent stayed calm but scheduled a meeting and printed extra homework.",
+            "impliedMeaning": "There is likely more concern about school than the calm reassurance reveals."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L185_Q3",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "What does introducing something quietly before a long weekend suggest strategically?",
-            "explanation": "A holiday weekend = reduced media attention, reduced public engagement, fewer people working to respond. Introducing significant measures at such times can minimise initial scrutiny and debate. 'Quietly' + 'before a holiday' = the conjunction is suspicious, suggesting deliberate low-profile rollout. Strategic timing is a form of political management.",
-            "textToSpeak": "The reform was introduced quietly just before a holiday weekend.",
-            "question": "What can be inferred about the timing?",
+            "instruction": "Use the clues to work out the meaning.",
+            "hint": "Combine the vendor's confident claim about product quality, the mention of a newly extended return policy, and a noticeably shorter warranty than similar products.",
+            "explanation": "A confident claim about product quality, combined with a newly extended return policy and a shorter warranty than similar products, together suggest the company may be less confident in long-term durability than the marketing claims.",
+            "textToSpeak": "\"This product is built to last,\" the ad claimed, right around when the return policy was extended, and the warranty period remained shorter than similar products on the market.",
+            "question": "What can you most reasonably infer?",
             "options": [
-                "The timing was entirely coincidental",
-                "The timing appears strategic - designed to reduce public scrutiny"
+                "The company may be less confident in long-term durability",
+                "The company is fully confident in the product's long-term durability"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
-            "emoji": "🗺️",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "🛠️",
+            "literalMeaning": "The ad claimed durability, but the return policy was extended and the warranty stayed short.",
+            "impliedMeaning": "The company may be less confident in the product's long-term durability than the ad claims."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L186_Q1",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "Why might the intensity of a denial be informative?",
-            "explanation": "The most emphatic denials targeting the most significant accusations may reflect the stakes of those specific accusations rather than the falseness of others. Emphasis can signal: this is where the real vulnerability is. Vehement denial isn't proof of guilt, but can indicate where the greatest exposure lies. It's worth noticing which denials attract most energy.",
-            "textToSpeak": "His most emphatic denials came precisely in response to the accusations he had most reason to deny.",
-            "question": "What is really being said here?",
+            "instruction": "What can you infer from what you hear?",
+            "hint": "Combine the team's celebratory tone about hitting a target, the mention of the target being lowered earlier in the year, and no mention of last year's comparison.",
+            "explanation": "Celebrating hitting a target that was quietly lowered earlier in the year, and avoiding any comparison to the previous year's numbers, together suggest the achievement may look better than the underlying performance actually is.",
+            "textToSpeak": "\"We hit our target!\" the team celebrated, though the target had quietly been lowered earlier in the year, and no one mentioned how it compared to last year.",
+            "question": "What can you most reasonably infer?",
             "options": [
-                "The intensity of certain denials may itself be revealing",
-                "He was honest about everything"
+                "This year's performance clearly beat last year's easily",
+                "The achievement may look better than the actual performance"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference",
-            "emoji": "🧭",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "🎯",
+            "literalMeaning": "The team celebrated hitting a target that had been lowered, without comparing to last year.",
+            "impliedMeaning": "The achievement may look better on paper than the underlying performance actually is."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L186_Q2",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "What is the rhetorical difference between 'concession as generosity' vs 'acknowledgement of error'?",
-            "explanation": "Framing a concession as generosity = 'I chose to give this'. Framing it as error = 'I was wrong and had to change'. The first preserves agency and face; the second admits failure. Same outcome, entirely different meaning. Framing choices reveal attempts to manage perception and maintain power even in defeat.",
-            "textToSpeak": "She framed the concession as a generous offer rather than an acknowledgement of error.",
-            "question": "What is the speaker doing?",
+            "instruction": "Listen for the clues behind the words.",
+            "hint": "Combine the friend's cheerful update about their startup, the mention of a co-founder recently leaving, and a sudden pivot to a completely different product idea.",
+            "explanation": "A cheerful startup update, combined with a co-founder recently leaving and a sudden pivot to an entirely new product, together suggest the company may be facing real internal difficulties beneath the cheerful surface.",
+            "textToSpeak": "\"Things are going great with the startup!\" he said, mentioning his co-founder had recently left, and that they were pivoting to a completely different product.",
+            "question": "What can you most reasonably infer?",
             "options": [
-                "Reframing a defeat as a voluntary choice to preserve her position",
-                "Being genuinely generous"
+                "The startup may be facing real internal difficulties",
+                "The startup is thriving exactly as planned"
             ],
             "correctAnswerIndex": 0,
             "subtype": "listeningInference",
-            "emoji": "🔦",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "🚀",
+            "literalMeaning": "He was upbeat but mentioned a co-founder leaving and a sudden product pivot.",
+            "impliedMeaning": "The startup may be facing real internal difficulties beneath the cheerful update."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L186_Q3",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "How can opening questions be more valuable than providing answers?",
-            "explanation": "Opening questions = expanding what's knowable, creating new research directions, identifying new problems. Providing wrong or premature answers = closing down inquiry. In early stages of a field, the right questions may be more valuable than available answers. The paper's contribution is generative - it grows what can be asked.",
-            "textToSpeak": "The paper's most valuable contribution may be the questions it opens rather than the answers it provides.",
-            "question": "What conclusion can you draw from this?",
+            "instruction": "What is most likely true here?",
+            "hint": "Combine the school's announcement of 'record enrollment,' the mention of larger class sizes this year, and a new wait-list system just introduced for popular electives.",
+            "explanation": "Announcing record enrollment, combined with mentioning larger class sizes and a newly introduced wait-list for electives, together suggest the school's resources may be stretched by the growth being celebrated.",
+            "textToSpeak": "\"We're proud to report record enrollment this year,\" the school announced, mentioning larger class sizes, and introducing a new wait-list system for popular electives.",
+            "question": "What can you most reasonably infer?",
             "options": [
-                "The paper's value lies primarily in generating further inquiry",
-                "The paper is not valuable"
+                "The school's resources may be stretched by the growth",
+                "The growth has had no effect on resources at all"
             ],
             "correctAnswerIndex": 0,
             "subtype": "listeningInference",
-            "emoji": "🎯",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "🏫",
+            "literalMeaning": "The school celebrated record enrollment but mentioned larger classes and a new wait-list.",
+            "impliedMeaning": "The school's resources may be stretched by the enrollment growth being celebrated."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L187_Q1",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "How can the research question itself introduce bias before data is collected?",
-            "explanation": "The research question determines what is looked for, what data is collected, what counts as relevant. A question framed to look for X will find X-type evidence. The question embeds assumptions about what matters, what to compare, and what an answer would look like. Methodology can be impeccable while the question is already skewed.",
-            "textToSpeak": "While the methodology is sound, the framing of the research question itself may introduce bias.",
-            "question": "What is the speaker's main point?",
+            "instruction": "What is the speaker implying?",
+            "hint": "Combine the friend's calm description of the surgery as 'routine,' the mention of clearing their entire week afterward, and asking someone to be on call that day.",
+            "explanation": "Calling a surgery 'routine,' while also clearing an entire week afterward and asking someone to be reachable that day, together suggest more caution is being taken than the calm word 'routine' implies.",
+            "textToSpeak": "\"It's a pretty routine procedure,\" he said, though he'd cleared his entire week afterward and asked a friend to be reachable that day.",
+            "question": "What can you most reasonably infer?",
             "options": [
-                "Framing never affects research outcomes",
-                "Even with good methods, how the question is asked can affect what is found"
+                "There is truly nothing notable about this procedure",
+                "More caution is being taken than 'routine' suggests"
             ],
             "correctAnswerIndex": 1,
             "subtype": "listeningInference",
-            "emoji": "🔬",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "🏥",
+            "literalMeaning": "He called it routine but cleared his week and asked a friend to be reachable.",
+            "impliedMeaning": "More caution is likely being taken than the word 'routine' suggests."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L187_Q2",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "Think about what it means when even specialists struggle with a piece of text.",
-            "explanation": "If trained lawyers — people whose job is reading contracts — ask for a clause to be reworded, that's a strong signal the language was unusually convoluted, not just difficult for a layperson.",
-            "textToSpeak": "The clause was written in language dense enough that even the lawyers in the room asked for it to be reworded.",
-            "question": "What does this reveal about the clause?",
+            "instruction": "What does this situation point to?",
+            "hint": "Combine the city's press release about 'improving public transit,' the mention of reduced service on two lines, and no mention of new funding.",
+            "explanation": "Announcing improvements to public transit, while also mentioning reduced service on certain lines and no new funding, together suggest the stated improvement may involve real trade-offs elsewhere in the system.",
+            "textToSpeak": "The press release promised \"improving public transit,\" while also mentioning reduced service on two lines, with no mention of any new funding for the changes.",
+            "question": "What can you most reasonably infer?",
             "options": [
-                "It was written in very simple, plain language",
-                "It was unusually hard to understand, even for experts"
+                "Every part of the transit system is improving equally",
+                "The stated improvement likely involves real trade-offs"
             ],
             "correctAnswerIndex": 1,
             "subtype": "listeningInference",
-            "emoji": "💬",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "🚌",
+            "literalMeaning": "Transit was said to be improving, but two lines had reduced service and no new funding.",
+            "impliedMeaning": "The stated improvement likely involves real trade-offs elsewhere in the system."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L187_Q3",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "Think about what 'complex history' allows a guide to gesture at without actually describing.",
-            "explanation": "'Complex history' is vague enough to acknowledge that difficult things happened without naming them specifically — it signals awareness while avoiding the more uncomfortable, concrete details.",
-            "textToSpeak": "The tour guide's script praised the palace's 'complex history' without mentioning whose suffering had built it.",
-            "question": "What does this phrasing avoid confronting directly?",
+            "instruction": "Read between the lines and choose the best answer.",
+            "hint": "Combine the coworker's casual mention of 'exploring other options,' the sudden update to their professional profile, and taking several days off with no explanation.",
+            "explanation": "Casually mentioning 'exploring other options,' along with a sudden profile update and unexplained days off, together suggest the person may be actively job searching, even without saying so directly.",
+            "textToSpeak": "\"I've just been exploring other options lately,\" she mentioned casually, right after updating her professional profile and taking a few unexplained days off.",
+            "question": "What can you most reasonably infer?",
             "options": [
-                "The architecture of the palace",
-                "The harder, less comfortable parts of the history"
+                "She may be actively job searching",
+                "She is completely satisfied and staying long term"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
-            "emoji": "🤔",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "💼",
+            "literalMeaning": "She mentioned exploring options, updated her profile, and took unexplained days off.",
+            "impliedMeaning": "She may be actively searching for a new job, even without stating it directly."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L188_Q1",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "What is the distinction between manufactured and discovered consensus?",
-            "explanation": "Discovered consensus = independent agreement arising organically from evidence. Manufactured consensus = strategically constructed through media, messaging, framing to create the appearance of agreement that doesn't naturally exist. The critique: what looks like widespread agreement may be an artefact of coordination, not genuine convergence.",
-            "textToSpeak": "The consensus is manufactured, not discovered.",
-            "question": "What can we reasonably conclude from this?",
+            "instruction": "Piece the clues together to find the real meaning.",
+            "hint": "Combine the airline's statement that the flight is 'on schedule,' the mention of the crew being swapped last minute, and passengers already being told to expect a short delay.",
+            "explanation": "Calling a flight 'on schedule' while also mentioning a last-minute crew swap and telling passengers to expect a short delay together suggest the 'on schedule' claim may not hold up much longer.",
+            "textToSpeak": "The gate agent said the flight was \"on schedule,\" though the crew had been swapped last minute, and passengers were quietly told to expect a short delay.",
+            "question": "What can you most reasonably infer?",
             "options": [
-                "The appearance of agreement has been constructed rather than emerging naturally",
-                "There is genuine widespread agreement on this topic"
+                "The flight will certainly depart exactly on time",
+                "The 'on schedule' claim may not hold up much longer"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference",
-            "emoji": "💭",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "🛫",
+            "literalMeaning": "The flight was called on schedule despite a crew swap and a hinted delay.",
+            "impliedMeaning": "The 'on schedule' claim likely will not hold up much longer."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L188_Q2",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "Why is power most effective when it appears natural?",
-            "explanation": "Power that seems natural is unquestioned - it looks like 'just the way things are', not like someone's interest being served. When people internalise it as normal, they reproduce it without coercion. Explicit power requires enforcement; naturalised power reproduces itself. This is the insight about ideology: power through normalisation.",
-            "textToSpeak": "Power rarely announces itself - it operates most effectively when it appears most natural.",
-            "question": "What's the hidden meaning here?",
+            "instruction": "What's really going on? Trust the evidence.",
+            "hint": "Combine the restaurant's claim of 'fresh, local ingredients,' the mention of a new supplier chosen for lower prices, and a recent drop in customer reviews about taste.",
+            "explanation": "Claiming fresh, local ingredients while switching suppliers for lower prices, alongside a recent drop in reviews about taste, together suggest the claim may not fully match a recent change in sourcing.",
+            "textToSpeak": "The menu still says \"fresh, local ingredients,\" though a new supplier was chosen mainly for lower prices, and recent reviews have started mentioning changes in taste.",
+            "question": "What can you most reasonably infer?",
             "options": [
-                "Power is always visible and explicit",
-                "The most effective power is that which seems inevitable and natural rather than imposed"
+                "The claim may not fully match a recent change in sourcing",
+                "The ingredients and taste have remained completely unchanged"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
-            "emoji": "📖",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "🍽️",
+            "literalMeaning": "The menu claimed local ingredients despite a new lower-cost supplier and taste complaints.",
+            "impliedMeaning": "The claim may not fully match a recent change in how ingredients are sourced."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L188_Q3",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "How does a word's history affect its current use?",
-            "explanation": "Words accumulate connotations, associations, and histories through use. A word associated with significant historical events, ideologies, or struggles cannot be fully stripped of those associations by individual users. Attempting neutral use still activates the historical resonance - hearers bring that history to the word whether speakers intend it or not.",
-            "textToSpeak": "The word carries so much historical baggage that using it neutrally is now impossible.",
-            "question": "What is the speaker getting across?",
+            "instruction": "Think it through — what do the clues add up to?",
+            "hint": "Combine the museum's claim of being 'fully accessible,' the mention that the main accessible entrance has been closed for repairs, and no signage directing visitors to an alternative.",
+            "explanation": "Claiming full accessibility while the main accessible entrance is closed for repairs, with no alternative signage provided, together suggest the accessibility claim may not currently reflect the actual visitor experience.",
+            "textToSpeak": "The museum website states it is \"fully accessible,\" though the main accessible entrance has been closed for repairs, with no signs pointing visitors to another way in.",
+            "question": "What can you most reasonably infer?",
             "options": [
-                "Historical associations make neutral use of the word impossible",
-                "The word's history is irrelevant to its current use"
+                "The accessibility claim may not reflect current conditions",
+                "The museum is currently fully accessible as claimed"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
-            "emoji": "🔍",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "🏛️",
+            "literalMeaning": "The museum claimed full accessibility despite a closed entrance and no alternative signage.",
+            "impliedMeaning": "The accessibility claim may not currently reflect the actual visitor experience."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L189_Q1",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "How does language shape what can be conceived?",
-            "explanation": "The Sapir-Whorf hypothesis (moderate version): the language available to us partly determines what we can easily think, categorise, and communicate. Concepts without words are harder to sustain and share. Language provides cognitive scaffolding - not just labels for pre-existing concepts but structures that enable certain thoughts and make others harder.",
-            "textToSpeak": "Language not only describes reality - it also shapes what we can conceive of.",
-            "question": "What is this claim about?",
+            "instruction": "Listen closely and infer what is really happening.",
+            "hint": "Combine the diplomat's statement calling talks 'productive,' the mention that no agreement was reached, and both sides scheduling separate press conferences.",
+            "explanation": "Calling talks 'productive' while no agreement was reached and each side holds a separate press conference, rather than a joint one, together suggest the talks may have been less successful than the word 'productive' implies.",
+            "textToSpeak": "\"The talks were productive,\" the statement read, though no agreement was reached, and each side scheduled its own separate press conference afterward.",
+            "question": "What can you most reasonably infer?",
             "options": [
-                "Language both reflects and constrains the possibilities of thought",
-                "Description is language's only function"
+                "The talks resulted in a clear, mutual agreement",
+                "The talks were likely less successful than described"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference",
-            "emoji": "🗣️",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "🤝",
+            "literalMeaning": "Talks were called productive despite no agreement and separate press conferences.",
+            "impliedMeaning": "The talks were likely less successful than the word 'productive' suggests."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L189_Q2",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "Think about what saying 'I understand' does when nothing changes afterward.",
-            "explanation": "A scripted empathy line can sound caring, but if it isn't followed by any actual resolution, its real function is to manage the customer's emotion in the moment rather than to solve the underlying issue.",
-            "textToSpeak": "The airline's customer service script instructed staff to say 'I understand your frustration' before offering no actual solution.",
-            "question": "What is this phrase functioning as here?",
+            "instruction": "What does the situation suggest? Make your best guess.",
+            "hint": "Combine the app's five-star average rating, the mention that most recent reviews are far more critical, and a note that older reviews make up most of the total count.",
+            "explanation": "A high overall average built mostly from older reviews, alongside more critical recent reviews, together suggest the app's current quality may not match its overall rating.",
+            "textToSpeak": "The app shows a five-star average, but most of that comes from older reviews, and recent ones have been noticeably more critical.",
+            "question": "What can you most reasonably infer?",
             "options": [
-                "A guaranteed promise of a refund",
-                "A scripted way to sound empathetic without resolving the problem"
+                "The app's current quality may not match its overall rating",
+                "The app has remained equally excellent the whole time"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
-            "emoji": "😠",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "⭐",
+            "literalMeaning": "The high rating came mostly from older reviews, with recent ones more critical.",
+            "impliedMeaning": "The app's current quality may not fully match its overall average rating."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L189_Q3",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "Why might certainty signal insufficient thought?",
-            "explanation": "Deep thinking reveals complexity, exceptions, and alternative perspectives that simple thinking misses. Complete certainty may mean the thinker hasn't encountered these complications - hasn't gone deep enough to find the difficulties. 'The more I know, the more I know I don't know' is the epistemology here. Expertise often increases not certainty but appreciated uncertainty.",
-            "textToSpeak": "To be certain about something is sometimes a sign of not having thought carefully enough.",
-            "question": "What does this phrase really convey?",
+            "instruction": "Use the clues to work out the meaning.",
+            "hint": "Combine the mayor's statement praising the city's safety record, the mention that reporting methods changed this year, and a footnote saying comparisons to prior years are limited.",
+            "explanation": "Praising a safety record based on a year when reporting methods changed, with a footnote noting limited comparability to prior years, together suggest the improvement being celebrated may be partly a result of how the data was measured, not just real change.",
+            "textToSpeak": "The mayor praised the city's improved safety record, though reporting methods had changed this year, with a footnote noting that comparisons to prior years were limited.",
+            "question": "What can you most reasonably infer?",
             "options": [
-                "Genuine deep thinking often reveals complexity that reduces certainty",
-                "Thinking carefully always leads to certainty"
+                "The improvement may partly reflect a change in measurement",
+                "The improvement clearly reflects a real change in safety alone"
             ],
             "correctAnswerIndex": 0,
             "subtype": "listeningInference",
-            "emoji": "📝",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "🏙️",
+            "literalMeaning": "The safety record improved, but reporting methods changed and comparisons were noted as limited.",
+            "impliedMeaning": "The improvement may partly reflect a change in how data was measured, not just real change."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L190_Q1",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "How can the pursuit of objectivity become ideological?",
-            "explanation": "If you commit to objectivity as an absolute value - refusing to acknowledge that perspectives always exist - this itself becomes a dogmatic position. Ironically, extreme objectivism is a subjective commitment that can't examine itself critically. It becomes a closed system: the claim to objectivity protects itself from the critique that no perspective is truly objective.",
-            "textToSpeak": "Objectivity, pursued too absolutely, becomes a kind of ideology.",
-            "question": "What can be inferred here?",
+            "instruction": "What can you infer from what you hear?",
+            "hint": "Combine the CEO's message calling the company 'stronger than ever,' the mention of a hiring freeze, and several senior leaders departing within the same month.",
+            "explanation": "Calling the company 'stronger than ever' while freezing hiring and losing several senior leaders in the same month together suggest the internal situation may be more difficult than the message conveys.",
+            "textToSpeak": "\"We're stronger than ever,\" the CEO's message read, around the same time hiring was frozen and several senior leaders left within a single month.",
+            "question": "What can you most reasonably infer?",
             "options": [
-                "Objectivity is always valuable",
-                "Extreme commitment to objectivity can itself become a rigid and unreflective stance"
+                "The company's situation is exactly as strong as stated",
+                "The internal situation may be more difficult than described"
             ],
             "correctAnswerIndex": 1,
             "subtype": "listeningInference",
-            "emoji": "📜",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "📈",
+            "literalMeaning": "The CEO called the company strong despite a hiring freeze and senior departures.",
+            "impliedMeaning": "The internal situation is likely more difficult than the CEO's message suggests."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L190_Q2",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "What is the relationship between observation and interpretation?",
-            "explanation": "What we call 'pure observation' always involves interpretation: selecting what to attend to, categorising what we see, recognising patterns. There is no raw, pre-interpretive observation available to us. This challenges the naive distinction between 'objective fact' (observed) and 'subjective opinion' (interpreted). The two are always intertwined.",
-            "textToSpeak": "We are always interpreting, even when we believe we are merely observing.",
-            "question": "What does this challenge?",
+            "instruction": "Listen for the clues behind the words.",
+            "hint": "Combine the couple's announcement of an 'amicable split,' the mention of lawyers already being involved, and neither person attending events together anymore.",
+            "explanation": "Describing a split as 'amicable' while lawyers are already involved and the couple no longer appears together at any events together suggests the situation may be more complicated than the word 'amicable' implies.",
+            "textToSpeak": "\"It's a completely amicable split,\" they announced, though lawyers were already involved, and neither had been seen at any shared events since.",
+            "question": "What can you most reasonably infer?",
             "options": [
-                "The distinction between good and bad interpreters",
-                "The possibility of pure unmediated observation"
+                "The situation is likely more complicated than 'amicable' suggests",
+                "The split has genuinely caused no tension between them"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
-            "emoji": "🧩",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "💔",
+            "literalMeaning": "The split was called amicable despite lawyers being involved and no shared appearances since.",
+            "impliedMeaning": "The situation is likely more complicated than the word 'amicable' suggests."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L190_Q3",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "What is the distinction between freedom as condition versus freedom as practice?",
-            "explanation": "Freedom as condition = a state granted by law, protected by rights (you either have it or you don't). Freedom as practice = actively exercised, lived, enacted in daily choices and self-determination. The observation reframes freedom from passive possession to active exercise - you don't just have it; you do it, and it can atrophy without being practised.",
-            "textToSpeak": "Freedom, it turns out, is less a condition than a practice - less something you have than something you do.",
-            "question": "What does this line really mean?",
+            "instruction": "What is most likely true here?",
+            "hint": "Combine the school district's claim of 'no change to bus routes,' the mention of two schools merging next year, and parents being asked to fill out new transportation forms.",
+            "explanation": "Claiming no change to bus routes, while also merging two schools and requiring parents to fill out new transportation forms, together suggest that bus routes will likely need to change despite the reassurance.",
+            "textToSpeak": "The district said there would be \"no change to bus routes,\" even as two schools were set to merge next year, and parents were asked to complete new transportation forms.",
+            "question": "What can you most reasonably infer?",
             "options": [
-                "Freedom depends only on external conditions",
-                "Freedom is better understood as an ongoing activity or mode of existence"
+                "Bus routes will likely need to change despite the reassurance",
+                "Bus routes are guaranteed to remain exactly the same"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
-            "emoji": "💬",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "🚌",
+            "literalMeaning": "No route changes were claimed, despite a school merger and new transportation forms.",
+            "impliedMeaning": "Bus routes will likely need to change despite the district's reassurance."
         }
     ]
 }

@@ -6,691 +6,691 @@
         {
             "id": "LIS_SOUNDIMAGEMATCH_L91_Q1",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "Focus on the object, not the people or the setting around it.",
-            "explanation": "Wheelchair is right. Think of it as a chair with wheels used by people who cannot walk easily.",
-            "textToSpeak": "The airport staff brought a wheelchair to the gate.",
+            "instruction": "Tap the picture that shows everything you hear.",
+            "hint": "Which came first, the payment or the receipt?",
+            "explanation": "She paid first and the receipt came after. 'After' gives the order.",
+            "textToSpeak": "After she paid at the counter, the cashier gave her a receipt.",
             "options": [
-                "receipt",
-                "wheelchair",
-                "headphones",
-                "hospital"
+                "cash, then receipt",
+                "pay, then receipt",
+                "pay, then bag",
+                "receipt, then pay"
             ],
             "correctAnswerIndex": 1,
             "subtype": "soundImageMatch",
-            "emoji": "♿",
+            "emoji": "💳➡️🧾",
             "optionEmojis": [
-                "🧾",
-                "♿",
-                "🎧",
-                "🏥"
+                "💵➡️🧾",
+                "💳➡️🧾",
+                "💳➡️🛍️",
+                "🧾➡️💳"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L91_Q2",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "The sentence names one specific thing among several related ones.",
-            "explanation": "That's discount. It refers to a reduction in the usual price of something. Specifically: offered a discount during the holiday sale.",
-            "textToSpeak": "The store offered a discount during the holiday sale.",
+            "instruction": "Listen closely and choose the picture that fits the sentence.",
+            "hint": "Listen to what the baby did after waking.",
+            "explanation": "The baby slept first, then woke and cried. Laughing or milk are not mentioned.",
+            "textToSpeak": "The baby woke up and started to cry.",
             "options": [
-                "stadium",
-                "receipt",
-                "prescription",
-                "discount"
+                "wake, then laugh",
+                "cry, then sleep",
+                "wake, then milk",
+                "wake, then cry"
             ],
             "correctAnswerIndex": 3,
             "subtype": "soundImageMatch",
-            "emoji": "🏷️",
+            "emoji": "😴➡️😢",
             "optionEmojis": [
-                "🏟️",
-                "🧾",
-                "📝",
-                "🏷️"
+                "😴➡️😂",
+                "😢➡️😴",
+                "😴➡️🍼",
+                "😴➡️😢"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L91_Q3",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "Focus on the specific noun, not the general situation.",
-            "explanation": "Medicine is correct — something you take to treat an illness. In the sentence: made her feel drowsy.",
-            "textToSpeak": "The medicine made her feel drowsy.",
+            "instruction": "Listen for the details, then tap the matching picture.",
+            "hint": "Both actions are in the sentence. Listen for the order and the direction.",
+            "explanation": "The lights went off first, then the door was locked. 'Before' shows locking was later.",
+            "textToSpeak": "She turned off the lights before she locked the door.",
             "options": [
-                "concert",
-                "medicine",
-                "pharmacy",
-                "museum"
+                "lights off, then lock",
+                "lock, then lights off",
+                "lights on, then lock",
+                "lights off, then unlock"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "soundImageMatch",
-            "emoji": "💊",
+            "emoji": "💡🚫➡️🔒",
             "optionEmojis": [
-                "🎵",
-                "💊",
-                "⚕️",
-                "🏛️"
+                "💡🚫➡️🔒",
+                "🔒➡️💡🚫",
+                "💡➡️🔒",
+                "💡🚫➡️🔓"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L92_Q1",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "The sentence describes a clear scene — match the object in it.",
-            "explanation": "Receipt is the key word here. It means a printed paper that proves you paid for something. As heard in the audio: couldn't find her receipt for the return.",
-            "textToSpeak": "She couldn't find her receipt for the return.",
+            "instruction": "Picture what the speaker describes, then tap the match.",
+            "hint": "Two things at the same time. Which two?",
+            "explanation": "'While he waited' means the reading happened at the same time as the waiting.",
+            "textToSpeak": "He was reading the newspaper while he waited for the bus.",
             "options": [
-                "receipt",
-                "warranty",
-                "concert",
-                "pharmacy"
+                "newspaper and school together",
+                "book and bus stop together",
+                "newspaper and bus stop together",
+                "newspaper, then bus stop"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "soundImageMatch",
-            "emoji": "🧾",
+            "emoji": "📰➕🚏",
             "optionEmojis": [
-                "🧾",
-                "🛡️",
-                "🎵",
-                "⚕️"
+                "📰➕🏫",
+                "📖➕🚏",
+                "📰➕🚏",
+                "📰➡️🚏"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L92_Q2",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "The four options share a topic — listen for the one actually said.",
-            "explanation": "Stadium is the key word here. It means a large building with seats where people watch sports. Specifically: walked for twenty minutes to reach the stadium.",
-            "textToSpeak": "They walked for twenty minutes to reach the stadium.",
+            "instruction": "Listen to the whole sentence and tap the picture that matches it.",
+            "hint": "'Once' means after something has happened.",
+            "explanation": "The water must boil first, and then the noodles go in. Cold water or rice would be wrong.",
+            "textToSpeak": "Once the water boils, add the noodles.",
             "options": [
-                "stadium",
-                "hospital",
-                "delivery",
-                "theater"
+                "boiling water, then noodles",
+                "boiling water, then rice",
+                "noodles, then boiling water",
+                "cold water, then noodles"
             ],
             "correctAnswerIndex": 0,
             "subtype": "soundImageMatch",
-            "emoji": "🏟️",
+            "emoji": "🔥💧➡️🍜",
             "optionEmojis": [
-                "🏟️",
-                "🏥",
-                "📦",
-                "🎭"
+                "🔥💧➡️🍜",
+                "🔥💧➡️🍚",
+                "🍜➡️🔥💧",
+                "🧊💧➡️🍜"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L92_Q3",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "Listen for exactly what the person did or used.",
-            "explanation": "You were listening for prescription: a doctor's written order for medicine. The audio included: lost her prescription before reaching the pharmacy.",
-            "textToSpeak": "She lost her prescription before reaching the pharmacy.",
+            "instruction": "Listen closely and choose the picture that fits the sentence.",
+            "hint": "Catch the weather now and the weather later.",
+            "explanation": "The weather is fine now and rain comes later. 'Later' points to the second picture.",
+            "textToSpeak": "It's bright now, but the forecast says rain later, so she took an umbrella.",
             "options": [
-                "bandage",
-                "customer",
-                "warranty",
-                "prescription"
+                "sun now, snow later",
+                "sun now, rain later",
+                "sun now, storm later",
+                "rain now, sun later"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "soundImageMatch",
-            "emoji": "📝",
+            "emoji": "🌤️➡️🌧️",
             "optionEmojis": [
-                "🩹",
-                "🛍️",
-                "🛡️",
-                "📝"
+                "🌤️➡️❄️",
+                "🌤️➡️🌧️",
+                "🌤️➡️⛈️",
+                "🌧️➡️🌤️"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L93_Q1",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "Picture the place described, then listen for what's inside it.",
-            "explanation": "The word you needed was delivery — the act of bringing goods to a customer's address. Notice this detail: tracked her delivery on her phone.",
-            "textToSpeak": "She tracked her delivery on her phone.",
+            "instruction": "Picture what the speaker describes, then tap the match.",
+            "hint": "Notice who he met after studying.",
+            "explanation": "Studying came first and going out came second. His friends are the group he met.",
+            "textToSpeak": "He studied for two hours and then went out with his friends.",
             "options": [
-                "wheelchair",
-                "delivery",
-                "stadium",
-                "cashier"
+                "study, then games",
+                "study, then family",
+                "friends, then study",
+                "study, then friends"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "subtype": "soundImageMatch",
-            "emoji": "📦",
+            "emoji": "📖➡️👫",
             "optionEmojis": [
-                "♿",
-                "📦",
-                "🏟️",
-                "🛒"
+                "📖➡️🎮",
+                "📖➡️👨‍👩‍👧",
+                "👫➡️📖",
+                "📖➡️👫"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L93_Q2",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "The correct word is the specific detail, not the overall subject.",
-            "explanation": "You were listening for festival: a special event with music, food, or celebration. That part goes: tried food from every stall at the festival.",
-            "textToSpeak": "They tried food from every stall at the festival.",
+            "instruction": "Listen for the details, then tap the matching picture.",
+            "hint": "'Until' tells you what to wait for.",
+            "explanation": "You wait for the timer first, and only then take the cake out.",
+            "textToSpeak": "Don't take the cake out until the timer rings.",
             "options": [
-                "headphones",
-                "festival",
-                "customer",
-                "wheelchair"
+                "timer, then cookies",
+                "cake, then timer",
+                "timer, then cake",
+                "timer, then bread"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "subtype": "soundImageMatch",
-            "emoji": "🎪",
+            "emoji": "⏲️➡️🍰",
             "optionEmojis": [
-                "🎧",
-                "🎉",
-                "🛍️",
-                "♿"
+                "⏲️➡️🍪",
+                "🍰➡️⏲️",
+                "⏲️➡️🍰",
+                "⏲️➡️🍞"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L93_Q3",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "The correct option matches the sentence word for word.",
-            "explanation": "Hospital is correct. In everyday terms, it's a place where sick or injured people go to get medical care. From the audio: visited his grandfather at the hospital every evening.",
-            "textToSpeak": "He visited his grandfather at the hospital every evening.",
+            "instruction": "Tap the picture that shows everything you hear.",
+            "hint": "The lights went out in the middle of something.",
+            "explanation": "'We were having dinner when...' means the lights went out during dinner, so both happen together.",
+            "textToSpeak": "We were having dinner when the lights went out.",
             "options": [
-                "medicine",
-                "customer",
-                "hospital",
-                "receipt"
+                "dinner, then lights out",
+                "sleeping when lights out",
+                "dinner with lights on",
+                "dinner and lights out together"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "subtype": "soundImageMatch",
-            "emoji": "🏥",
+            "emoji": "🍽️➕💡🚫",
             "optionEmojis": [
-                "💊",
-                "🛍️",
-                "🏥",
-                "🧾"
+                "🍽️➡️💡🚫",
+                "😴➕💡🚫",
+                "🍽️➕💡",
+                "🍽️➕💡🚫"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L94_Q1",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "Don't guess from context alone — listen for the precise word.",
-            "explanation": "Customer fits best here — a person who buys goods or a service. Listen again: has shopped there for years.",
-            "textToSpeak": "A loyal customer has shopped there for years.",
+            "instruction": "Listen for the details, then tap the matching picture.",
+            "hint": "Three jobs. Read the pictures from left to right.",
+            "explanation": "The order is clean, cook, set the table. The other pictures mix the order.",
+            "textToSpeak": "She cleaned the kitchen, cooked dinner, and set the table.",
             "options": [
-                "receipt",
-                "customer",
-                "medicine",
-                "concert"
+                "clean, table, cook",
+                "table, cook, clean",
+                "clean, cook, table",
+                "cook, clean, table"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "subtype": "soundImageMatch",
-            "emoji": "🙋",
+            "emoji": "🧹🍳🍽️",
             "optionEmojis": [
-                "🧾",
-                "🛍️",
-                "💊",
-                "🎵"
+                "🧹🍽️🍳",
+                "🍽️🍳🧹",
+                "🧹🍳🍽️",
+                "🍳🧹🍽️"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L94_Q2",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "Two options may seem to fit the topic — only one was spoken.",
-            "explanation": "Nice work if you chose bandage — a strip of material used to cover a wound. Recall: changed the bandage on his hand every day.",
-            "textToSpeak": "He changed the bandage on his hand every day.",
+            "instruction": "Picture what the speaker describes, then tap the match.",
+            "hint": "Who was first, the people or the train?",
+            "explanation": "The people arrived first and the train left later. 'Just before' means the arrival came a moment earlier.",
+            "textToSpeak": "We arrived at the station just before the train left.",
             "options": [
-                "delivery",
-                "bandage",
-                "prescription",
-                "stadium"
+                "train leaves, then arrive",
+                "arrive, then train leaves",
+                "arrive at school, then train",
+                "arrive, then bus leaves"
             ],
             "correctAnswerIndex": 1,
             "subtype": "soundImageMatch",
-            "emoji": "🩹",
+            "emoji": "🚶🚉➡️🚆",
             "optionEmojis": [
-                "📦",
-                "🩹",
-                "📝",
-                "🏟️"
+                "🚆➡️🚶🚉",
+                "🚶🚉➡️🚆",
+                "🚶🏫➡️🚆",
+                "🚶🚉➡️🚌"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L94_Q3",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "Listen for the item connected to the action described.",
-            "explanation": "Delivery fits best here — the act of bringing goods to a customer's address. That part goes: waited by the window for the delivery.",
-            "textToSpeak": "He waited by the window for the delivery.",
+            "instruction": "Tap the picture that shows everything you hear.",
+            "hint": "Listen for the drink and what came next.",
+            "explanation": "Water came first and then sleep. Milk is a different drink.",
+            "textToSpeak": "He drank a glass of water, then went back to sleep.",
             "options": [
-                "festival",
-                "delivery",
-                "pharmacy",
-                "customer"
+                "water, then sleep",
+                "milk, then sleep",
+                "water, then walk",
+                "sleep, then water"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "soundImageMatch",
-            "emoji": "📦",
+            "emoji": "💧➡️😴",
             "optionEmojis": [
-                "🎉",
-                "📦",
-                "⚕️",
-                "🛍️"
+                "💧➡️😴",
+                "🥛➡️😴",
+                "💧➡️🚶",
+                "😴➡️💧"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L95_Q1",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "Focus on the specific noun, not the general situation.",
-            "explanation": "That's museum. It refers to a building where art or historical objects are displayed. That part goes: is free on Sundays.",
-            "textToSpeak": "Entry to the museum is free on Sundays.",
+            "instruction": "Listen for the details, then tap the matching picture.",
+            "hint": "Two people do two things at once.",
+            "explanation": "'While' shows that driving and reading the map happened together.",
+            "textToSpeak": "While Dad was driving, Mum was reading the map.",
             "options": [
-                "bandage",
-                "doctor",
-                "museum",
-                "festival"
+                "driving, then map",
+                "cycling and map together",
+                "driving and book together",
+                "driving and map together"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "subtype": "soundImageMatch",
-            "emoji": "🖼️",
+            "emoji": "🚗➕🗺️",
             "optionEmojis": [
-                "🩹",
-                "👨‍⚕️",
-                "🏛️",
-                "🎉"
+                "🚗➡️🗺️",
+                "🚲➕🗺️",
+                "🚗➕📖",
+                "🚗➕🗺️"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L95_Q2",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "The sentence describes a clear scene — match the object in it.",
-            "explanation": "Concert fits best here — a live music performance in front of an audience. The audio included: saved up for months to attend the concert.",
-            "textToSpeak": "She saved up for months to attend the concert.",
+            "instruction": "Picture what the speaker describes, then tap the match.",
+            "hint": "Notice what job came after graduating.",
+            "explanation": "Graduating came first and then she worked as a nurse. A teacher or cook is a different job.",
+            "textToSpeak": "After graduating, she worked as a nurse for two years.",
             "options": [
-                "concert",
-                "delivery",
-                "bandage",
-                "headphones"
+                "nurse, then graduate",
+                "graduate, then cook",
+                "graduate, then nurse",
+                "graduate, then teacher"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "soundImageMatch",
-            "emoji": "🎤",
+            "emoji": "🎓➡️👩‍⚕️",
             "optionEmojis": [
-                "🎵",
-                "📦",
-                "🩹",
-                "🎧"
+                "👩‍⚕️➡️🎓",
+                "🎓➡️🍳",
+                "🎓➡️👩‍⚕️",
+                "🎓➡️👩‍🏫"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L95_Q3",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "The sentence names one specific thing among several related ones.",
-            "explanation": "The right choice is theater, meaning a building where people watch plays or movies. Listen again: works part-time selling tickets at the theater.",
-            "textToSpeak": "She works part-time selling tickets at the theater.",
+            "instruction": "Listen for the details, then tap the matching picture.",
+            "hint": "'Before the exam' tells you what came first.",
+            "explanation": "Revising took place first and the exam was after. 'Before' marks the earlier event.",
+            "textToSpeak": "Before the exam, the students revised for a week.",
             "options": [
-                "bandage",
-                "pharmacy",
-                "theater",
-                "concert"
+                "revise, then party",
+                "exam, then revise",
+                "revise, then exam",
+                "games, then exam"
             ],
             "correctAnswerIndex": 2,
             "subtype": "soundImageMatch",
-            "emoji": "🎭",
+            "emoji": "📖➡️📝",
             "optionEmojis": [
-                "🩹",
-                "⚕️",
-                "🎭",
-                "🎵"
+                "📖➡️🎉",
+                "📝➡️📖",
+                "📖➡️📝",
+                "🎮➡️📝"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L96_Q1",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "Listen for exactly what the person did or used.",
-            "explanation": "Prescription means a doctor's written order for medicine. The clue: needs a new prescription for his glasses.",
-            "textToSpeak": "He needs a new prescription for his glasses.",
+            "instruction": "Listen to the whole sentence and tap the picture that matches it.",
+            "hint": "Three steps in order.",
+            "explanation": "The order is bucket, soap, car. 'Finally' points to washing the car.",
+            "textToSpeak": "First fill the bucket, then add soap, and finally wash the car.",
             "options": [
-                "museum",
-                "customer",
-                "medicine",
-                "prescription"
+                "bucket, car, soap",
+                "car, soap, bucket",
+                "soap, bucket, car",
+                "bucket, soap, car"
             ],
             "correctAnswerIndex": 3,
             "subtype": "soundImageMatch",
-            "emoji": "📝",
+            "emoji": "🪣🧼🚗",
             "optionEmojis": [
-                "🏛️",
-                "🛍️",
-                "💊",
-                "📝"
+                "🪣🚗🧼",
+                "🚗🧼🪣",
+                "🧼🪣🚗",
+                "🪣🧼🚗"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L96_Q2",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "The right answer is named clearly once in the sentence.",
-            "explanation": "Warranty fits best here — a written promise to repair or replace a product if it breaks. Listen again: broke just after the warranty ended.",
-            "textToSpeak": "His laptop broke just after the warranty ended.",
+            "instruction": "Listen closely and choose the picture that fits the sentence.",
+            "hint": "Count the rings, then listen for what happened.",
+            "explanation": "Two rings and then silence. One or three rings would be a different count.",
+            "textToSpeak": "The phone rang twice, and then it stopped.",
             "options": [
-                "headphones",
-                "medicine",
-                "warranty",
-                "receipt"
+                "two rings, then stop",
+                "two rings, then answer",
+                "two rings, then doorbell",
+                "one ring, then stop"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "soundImageMatch",
-            "emoji": "📜",
+            "emoji": "📞📞➡️🔇",
             "optionEmojis": [
-                "🎧",
-                "💊",
-                "🛡️",
-                "🧾"
+                "📞📞➡️🔇",
+                "📞📞➡️🗣️",
+                "📞📞➡️🔔",
+                "📞➡️🔇"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L96_Q3",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "Listen for the noun tied to the person's action.",
-            "explanation": "The sentence points to festival — a special event with music, food, or celebration. Reference: didn't stop the crowd at the festival.",
-            "textToSpeak": "Rain didn't stop the crowd at the festival.",
+            "instruction": "Tap the picture that shows everything you hear.",
+            "hint": "The students' action came right after the bell.",
+            "explanation": "The bell rang first, then the students ran. 'As soon as' means right after.",
+            "textToSpeak": "As soon as the bell rang, the students ran out of the classroom.",
             "options": [
-                "discount",
-                "headphones",
-                "hospital",
-                "festival"
+                "bell, then sleep",
+                "run, then bell",
+                "bell, then walk",
+                "bell, then run"
             ],
             "correctAnswerIndex": 3,
             "subtype": "soundImageMatch",
-            "emoji": "🎪",
+            "emoji": "🔔➡️🏃",
             "optionEmojis": [
-                "🏷️",
-                "🎧",
-                "🏥",
-                "🎉"
+                "🔔➡️😴",
+                "🏃➡️🔔",
+                "🔔➡️🚶",
+                "🔔➡️🏃"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L97_Q1",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "The four options share a topic — listen for the one actually said.",
-            "explanation": "That's cashier. It refers to a person who takes payments in a shop.",
-            "textToSpeak": "A new cashier was still learning the register.",
+            "instruction": "Listen for the details, then tap the matching picture.",
+            "hint": "Listen for where the speaker will be first.",
+            "explanation": "Getting to the airport comes first and then the call. 'When' shows the trigger.",
+            "textToSpeak": "I'll call you when I get to the airport.",
             "options": [
-                "delivery",
-                "festival",
-                "nurse",
-                "cashier"
+                "station, then call",
+                "airport, then call",
+                "call, then airport",
+                "airport, then letter"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "soundImageMatch",
-            "emoji": "💳",
+            "emoji": "🛫➡️📞",
             "optionEmojis": [
-                "📦",
-                "🎉",
-                "👩‍⚕️",
-                "🛒"
+                "🚉➡️📞",
+                "🛫➡️📞",
+                "📞➡️🛫",
+                "🛫➡️💌"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L97_Q2",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "Focus on the object, not the people or the setting around it.",
-            "explanation": "Nurse is correct — a person trained to care for patients, often in a hospital. Notice this detail: trained for three years to become a nurse.",
-            "textToSpeak": "She trained for three years to become a nurse.",
+            "instruction": "Picture what the speaker describes, then tap the match.",
+            "hint": "'Until' marks when the playing stopped.",
+            "explanation": "They played first, and dinner came at the end. The mother's call is what ended the game.",
+            "textToSpeak": "The kids played in the garden until their mother called them in for dinner.",
             "options": [
-                "nurse",
-                "customer",
-                "doctor",
-                "headphones"
+                "play in garden, then dinner",
+                "dinner, then play in garden",
+                "play in garden, then sleep",
+                "play in garden, then shower"
             ],
             "correctAnswerIndex": 0,
             "subtype": "soundImageMatch",
-            "emoji": "👩‍⚕️",
+            "emoji": "🌳⚽➡️🍽️",
             "optionEmojis": [
-                "👩‍⚕️",
-                "🛍️",
-                "👨‍⚕️",
-                "🎧"
+                "🌳⚽➡️🍽️",
+                "🍽️➡️🌳⚽",
+                "🌳⚽➡️😴",
+                "🌳⚽➡️🚿"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L97_Q3",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "Two options may seem to fit the topic — only one was spoken.",
-            "explanation": "Discount is the answer — a reduction in the usual price of something. That part goes: asked if there was a student discount.",
-            "textToSpeak": "He asked if there was a student discount.",
+            "instruction": "Listen for the details, then tap the matching picture.",
+            "hint": "Three steps. Read the pictures left to right.",
+            "explanation": "The order is computer, file, typing. 'Started typing' is the last step.",
+            "textToSpeak": "He turned on the computer, opened a file, and started typing.",
             "options": [
-                "museum",
-                "bandage",
-                "cashier",
-                "discount"
+                "computer, file, typing",
+                "computer, typing, file",
+                "typing, computer, file",
+                "file, computer, typing"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "soundImageMatch",
-            "emoji": "🏷️",
+            "emoji": "💻📂⌨️",
             "optionEmojis": [
-                "🏛️",
-                "🩹",
-                "🛒",
-                "🏷️"
+                "💻📂⌨️",
+                "💻⌨️📂",
+                "⌨️💻📂",
+                "📂💻⌨️"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L98_Q1",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "Focus on the specific noun, not the general situation.",
-            "explanation": "Listen for customer — a person who buys goods or a service. Reference: thanked every customer with a small gift.",
-            "textToSpeak": "The shop thanked every customer with a small gift.",
+            "instruction": "Tap the picture that shows everything you hear.",
+            "hint": "Three moments: lunch, the beach, and the end of the day.",
+            "explanation": "The order is lunch, beach, sunset. 'Until sunset' is the last moment.",
+            "textToSpeak": "After lunch we walked to the beach and stayed until sunset.",
             "options": [
-                "prescription",
-                "pharmacy",
-                "customer",
-                "discount"
+                "sunset, beach, lunch",
+                "beach, lunch, sunset",
+                "lunch, sunset, beach",
+                "lunch, beach, sunset"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "subtype": "soundImageMatch",
-            "emoji": "🙋",
+            "emoji": "🍽️🏖️🌇",
             "optionEmojis": [
-                "📝",
-                "⚕️",
-                "🛍️",
-                "🏷️"
+                "🌇🏖️🍽️",
+                "🏖️🍽️🌇",
+                "🍽️🌇🏖️",
+                "🍽️🏖️🌇"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L98_Q2",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "Listen for the item connected to the action described.",
-            "explanation": "Nice work if you chose wheelchair — a chair with wheels used by people who cannot walk easily.",
-            "textToSpeak": "She pushed her mother's wheelchair through the park.",
+            "instruction": "Picture what the speaker describes, then tap the match.",
+            "hint": "'Before it gets dark' tells you when to do it.",
+            "explanation": "The tent goes up first and darkness comes after. Night is the second event.",
+            "textToSpeak": "Before it gets dark, we should put up the tent.",
             "options": [
-                "festival",
-                "wheelchair",
-                "headphones",
-                "hospital"
+                "night, then tent",
+                "tent, then night",
+                "tent, then morning",
+                "camp, then night"
             ],
             "correctAnswerIndex": 1,
             "subtype": "soundImageMatch",
-            "emoji": "♿",
+            "emoji": "⛺➡️🌙",
             "optionEmojis": [
-                "🎉",
-                "♿",
-                "🎧",
-                "🏥"
+                "🌙➡️⛺",
+                "⛺➡️🌙",
+                "⛺➡️🌅",
+                "🏕️➡️🌙"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L98_Q3",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "The sentence names one specific thing among several related ones.",
-            "explanation": "Headphones is correct — a device you wear on your ears to listen to sound privately. Here's the detail: block out background noise.",
-            "textToSpeak": "The new headphones block out background noise.",
+            "instruction": "Listen to the whole sentence and tap the picture that matches it.",
+            "hint": "Which must happen before swimming?",
+            "explanation": "First the rain has to stop, then swimming is possible. 'Until' names the event to wait for.",
+            "textToSpeak": "We can't go swimming until the rain stops.",
             "options": [
-                "headphones",
-                "discount",
-                "prescription",
-                "museum"
+                "sun, then swimming",
+                "swimming, then rain",
+                "rain, then swimming",
+                "rain, then walking"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "soundImageMatch",
-            "emoji": "🎧",
+            "emoji": "🌧️➡️🏊",
             "optionEmojis": [
-                "🎧",
-                "🏷️",
-                "📝",
-                "🏛️"
+                "☀️➡️🏊",
+                "🏊➡️🌧️",
+                "🌧️➡️🏊",
+                "🌧️➡️🚶"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L99_Q1",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "The correct word is the specific detail, not the overall subject.",
-            "explanation": "Medicine is right. Think of it as something you take to treat an illness. Context: picked up her medicine from the pharmacy.",
-            "textToSpeak": "She picked up her medicine from the pharmacy.",
+            "instruction": "Tap the picture that shows everything you hear.",
+            "hint": "'As' can mean 'at the same time as'.",
+            "explanation": "The hat blew off in the middle of crossing, so the events are together.",
+            "textToSpeak": "As she was crossing the street, her hat blew off.",
             "options": [
-                "theater",
-                "medicine",
-                "prescription",
-                "customer"
+                "crossing, then hat blows",
+                "crossing and scarf blowing together",
+                "crossing and hat blowing together",
+                "crossing and rain together"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "subtype": "soundImageMatch",
-            "emoji": "💊",
+            "emoji": "🚸➕🧢💨",
             "optionEmojis": [
-                "🎭",
-                "💊",
-                "📝",
-                "🛍️"
+                "🚸➡️🧢💨",
+                "🚸➕🧣💨",
+                "🚸➕🧢💨",
+                "🚸➕🌧️"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L99_Q2",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "Listen for the noun tied to the person's action.",
-            "explanation": "That's doctor. It refers to a person trained to treat sick or injured people. Notice this detail: asked the doctor about his test results.",
-            "textToSpeak": "He asked the doctor about his test results.",
+            "instruction": "Listen closely and choose the picture that fits the sentence.",
+            "hint": "What happened after everyone left?",
+            "explanation": "People left first and then he turned off the lights. Locking was not mentioned.",
+            "textToSpeak": "He waited until everyone had left, and then he turned off the lights.",
             "options": [
-                "bandage",
-                "doctor",
-                "delivery",
-                "stadium"
+                "people leave, then lights off",
+                "lights off, then people leave",
+                "people leave, then lock",
+                "people leave, then lights on"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "soundImageMatch",
-            "emoji": "🩺",
+            "emoji": "🚶➡️💡🚫",
             "optionEmojis": [
-                "🩹",
-                "👨‍⚕️",
-                "📦",
-                "🏟️"
+                "🚶➡️💡🚫",
+                "💡🚫➡️🚶",
+                "🚶➡️🔒",
+                "🚶➡️💡"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L99_Q3",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "Focus on the object, not the people or the setting around it.",
-            "explanation": "Receipt: a printed paper that proves you paid for something. As heard in the audio: printed a long receipt for the order.",
-            "textToSpeak": "The cashier printed a long receipt for the order.",
+            "instruction": "Listen to the whole sentence and tap the picture that matches it.",
+            "hint": "Three groups arrived one after another. Who was last?",
+            "explanation": "The singer came first, the band second, the audience last.",
+            "textToSpeak": "First the singer arrived, then the band, and last of all the audience.",
             "options": [
-                "customer",
-                "medicine",
-                "receipt",
-                "pharmacy"
+                "singer, audience, band",
+                "band, singer, audience",
+                "audience, singer, band",
+                "singer, band, audience"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "subtype": "soundImageMatch",
-            "emoji": "🧾",
+            "emoji": "🎤🎸👥",
             "optionEmojis": [
-                "🛍️",
-                "💊",
-                "🧾",
-                "⚕️"
+                "🎤👥🎸",
+                "🎸🎤👥",
+                "👥🎤🎸",
+                "🎤🎸👥"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L100_Q1",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "Picture the place described, then listen for what's inside it.",
-            "explanation": "The audio names hospital, which means a place where sick or injured people go to get medical care. Listen again: added a new wing for children.",
-            "textToSpeak": "The hospital added a new wing for children.",
+            "instruction": "Listen for the details, then tap the matching picture.",
+            "hint": "Three steps. 'Then' shows each new step.",
+            "explanation": "The order is coffee, email, work. Each 'then' moves to the next step.",
+            "textToSpeak": "She has coffee first, then checks her email, and then starts work.",
             "options": [
-                "bandage",
-                "hospital",
-                "theater",
-                "warranty"
+                "work, coffee, email",
+                "coffee, email, work",
+                "coffee, work, email",
+                "email, coffee, work"
             ],
             "correctAnswerIndex": 1,
             "subtype": "soundImageMatch",
-            "emoji": "🏥",
+            "emoji": "☕📧💼",
             "optionEmojis": [
-                "🩹",
-                "🏥",
-                "🎭",
-                "🛡️"
+                "💼☕📧",
+                "☕📧💼",
+                "☕💼📧",
+                "📧☕💼"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L100_Q2",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "Listen for exactly what the person did or used.",
-            "explanation": "Pharmacy is right. Think of it as a shop where you can buy medicine. Reference: asked the pharmacy to refill his prescription.",
-            "textToSpeak": "He asked the pharmacy to refill his prescription.",
+            "instruction": "Picture what the speaker describes, then tap the match.",
+            "hint": "'Had already started' means it began earlier.",
+            "explanation": "The film began first and then they found their seats. 'Had already' marks the earlier event.",
+            "textToSpeak": "The film had already started when we found our seats.",
             "options": [
-                "delivery",
-                "pharmacy",
-                "hospital",
-                "customer"
+                "film starts, then seats",
+                "music starts, then seats",
+                "seats, then film starts",
+                "film starts, then popcorn"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "soundImageMatch",
-            "emoji": "⚕️",
+            "emoji": "🎬➡️💺",
             "optionEmojis": [
-                "📦",
-                "⚕️",
-                "🏥",
-                "🛍️"
+                "🎬➡️💺",
+                "🎵➡️💺",
+                "💺➡️🎬",
+                "🎬➡️🍿"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L100_Q3",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "The correct option matches the sentence word for word.",
-            "explanation": "Stadium fits best here — a large building with seats where people watch sports. The audio included: lit up the sky above the stadium.",
-            "textToSpeak": "Fireworks lit up the sky above the stadium.",
+            "instruction": "Listen to the whole sentence and tap the picture that matches it.",
+            "hint": "Listen for which happens first, eating or taking the medicine.",
+            "explanation": "Eating comes first and the medicine after. It's a common instruction on medicine labels.",
+            "textToSpeak": "You should take this medicine after you eat.",
             "options": [
-                "stadium",
-                "pharmacy",
-                "headphones",
-                "hospital"
+                "sleep, then medicine",
+                "food, then medicine",
+                "medicine, then food",
+                "food, then injection"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "soundImageMatch",
-            "emoji": "🏟️",
+            "emoji": "🍽️➡️💊",
             "optionEmojis": [
-                "🏟️",
-                "⚕️",
-                "🎧",
-                "🏥"
+                "😴➡️💊",
+                "🍽️➡️💊",
+                "💊➡️🍽️",
+                "🍽️➡️💉"
             ]
         }
     ]

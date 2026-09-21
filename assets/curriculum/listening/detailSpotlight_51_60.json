@@ -6,572 +6,572 @@
         {
             "id": "LIS_DETAILSPOTLIGHT_L51_Q1",
             "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "What role does the sentence give to its subject?",
-            "explanation": "negotiator is correct — a person who discusses terms to reach an agreement. In the audio, a confident negotiator settled the dispute more quickly.",
-            "textToSpeak": "A confident negotiator settled the dispute more quickly.",
-            "targetDetail": "negotiator",
+            "instruction": "Find who is bringing the snacks.",
+            "hint": "Each person is linked to a different item. Follow the food, not the first name you hear.",
+            "explanation": "Priya is correct. Dan is bringing the drinks, and Priya is bringing the snacks.",
+            "textToSpeak": "Dan said he'd bring the drinks, and Priya offered to bring the snacks.",
+            "targetDetail": "Priya",
             "options": [
-                "researcher",
-                "biographer",
-                "negotiator",
-                "judge"
+                "Dan",
+                "Nadia",
+                "Marcus",
+                "Priya"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "subtype": "detailSpotlight",
-            "emoji": "🤝",
-            "detailCategory": "Key Information"
+            "emoji": "🎉",
+            "detailCategory": "Person"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L51_Q2",
             "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "Set aside who and what; focus only on the doing.",
-            "explanation": "The action named is mediates, which means to help settle a disagreement between two sides. To be exact, she mediates conflicts more calmly than most managers.",
-            "textToSpeak": "She mediates conflicts more calmly than most managers.",
-            "targetDetail": "mediates",
+            "instruction": "Catch what you do not need to bring.",
+            "hint": "Some items are needed and one is not. Listen for the negative.",
+            "explanation": "Lunch is correct. ‘You don't need to bring’ marks the item that is not required.",
+            "textToSpeak": "For the hike, wear boots and bring a raincoat, but you don't need to bring lunch.",
+            "targetDetail": "lunch",
             "options": [
-                "allocates",
-                "forecasts",
-                "mediates",
-                "verifies"
+                "a raincoat",
+                "boots",
+                "lunch",
+                "water"
             ],
             "correctAnswerIndex": 2,
             "subtype": "detailSpotlight",
-            "emoji": "⚖️",
-            "detailCategory": "Key Information"
+            "emoji": "🥾",
+            "detailCategory": "Instruction"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L51_Q3",
             "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "Which object or thing do you hear in the sentence?",
-            "explanation": "The object described is settlement — an official agreement that ends a disagreement. As stated, he signed the settlement earlier than his lawyer advised.",
-            "textToSpeak": "He signed the settlement earlier than his lawyer advised.",
-            "targetDetail": "settlement",
+            "instruction": "Tap when the bookstore opens on Sundays.",
+            "hint": "The schedule has one time for weekdays and another for Sunday. Listen for ‘but’.",
+            "explanation": "12:00 is correct. Ten is the weekday time. Sunday opening is at noon.",
+            "textToSpeak": "The bookstore opens at ten on weekdays, but on Sundays it opens at noon.",
+            "targetDetail": "12:00",
             "options": [
-                "regulation",
-                "settlement",
-                "database",
-                "audit"
+                "1:00",
+                "10:00",
+                "12:00",
+                "11:00"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "subtype": "detailSpotlight",
-            "emoji": "📜",
-            "detailCategory": "Key Information"
+            "emoji": "📚",
+            "detailCategory": "Time"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L52_Q1",
             "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "Pay attention to who the sentence is about.",
-            "explanation": "Right answer: entrepreneur, a person who starts and runs a business. That's because an ambitious entrepreneur launched a bigger store downtown.",
-            "textToSpeak": "An ambitious entrepreneur launched a bigger store downtown.",
-            "targetDetail": "entrepreneur",
+            "instruction": "Wipe the glass and tap how many people stayed for the discussion.",
+            "hint": "One number is the whole group, and the other is part of it. The word ‘only’ helps.",
+            "explanation": "Forty is the number of people who came, but twelve stayed. So the answer is 12.",
+            "textToSpeak": "There were forty people in the room, but only twelve stayed for the discussion.",
+            "targetDetail": "12",
             "options": [
-                "administrator",
-                "historian",
-                "economist",
-                "entrepreneur"
+                "12",
+                "40",
+                "20",
+                "14"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "detailSpotlight",
-            "emoji": "🏪",
-            "detailCategory": "Key Information"
+            "emoji": "🗣️",
+            "detailCategory": "Quantity"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L52_Q2",
             "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "Pinpoint the exact action mentioned in the audio.",
-            "explanation": "Listen for promotes: to raise someone to a higher position, or to advertise something. As stated, she promotes her products more boldly than her rivals.",
-            "textToSpeak": "She promotes her products more boldly than her rivals.",
-            "targetDetail": "promotes",
+            "instruction": "Where does the aunt's daughter study?",
+            "hint": "Two people and two cities. Match the city to the person who studies.",
+            "explanation": "Vancouver is correct. The aunt lives in Toronto, but her daughter studies in Vancouver.",
+            "textToSpeak": "My aunt lives in Toronto, and her daughter studies in Vancouver.",
+            "targetDetail": "Vancouver",
             "options": [
-                "checks out",
-                "performs",
-                "promotes",
-                "evaluates"
+                "Calgary",
+                "Toronto",
+                "Montreal",
+                "Vancouver"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "subtype": "detailSpotlight",
-            "emoji": "📣",
-            "detailCategory": "Key Information"
+            "emoji": "🍁",
+            "detailCategory": "Location"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L52_Q3",
             "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "Which single word identifies the object in question?",
-            "explanation": "Right answer: discount, a reduction in the usual price of something. That's because he offered a bigger discount than the other shop.",
-            "textToSpeak": "He offered a bigger discount than the other shop.",
-            "targetDetail": "discount",
+            "instruction": "Focus on the problem that should make you call the front desk.",
+            "hint": "The word ‘if’ introduces the condition. Focus on what comes after it.",
+            "explanation": "The heater stops working is correct. It is the condition after ‘if’.",
+            "textToSpeak": "Please call the front desk if the heater stops working.",
+            "targetDetail": "the heater stops working",
             "options": [
-                "bandage",
-                "curriculum",
-                "discount",
-                "boarding pass"
+                "the heater stops working",
+                "the room is noisy",
+                "the door won't lock",
+                "the towels are missing"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "detailSpotlight",
-            "emoji": "🏷️",
-            "detailCategory": "Key Information"
+            "emoji": "🛎️",
+            "detailCategory": "Condition"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L53_Q1",
             "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "Listen past the action to find out who's involved.",
-            "explanation": "The role named is architect, a person who designs buildings. Specifically, a careful architect redesigned the lobby more efficiently.",
-            "textToSpeak": "A careful architect redesigned the lobby more efficiently.",
-            "targetDetail": "architect",
+            "instruction": "Wipe the glass, then tap how the pharmacist says to take the medicine.",
+            "hint": "One way is rejected. Listen for the way that is recommended.",
+            "explanation": "The answer is with food. ‘Not on an empty stomach’ is what the pharmacist advises against.",
+            "textToSpeak": "The pharmacist explained that I should take the medicine with food, not on an empty stomach.",
+            "targetDetail": "with food",
             "options": [
-                "diplomat",
-                "critic",
-                "recruiter",
-                "architect"
+                "on an empty stomach",
+                "before bed",
+                "with milk",
+                "with food"
             ],
             "correctAnswerIndex": 3,
             "subtype": "detailSpotlight",
-            "emoji": "📐",
-            "detailCategory": "Key Information"
+            "emoji": "💊",
+            "detailCategory": "Instruction"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L53_Q2",
             "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "The action word is your target — don't confuse it with the object.",
-            "explanation": "That's the verb drafts: to write a first version of a document. Here, she drafts blueprints faster than the junior team.",
-            "textToSpeak": "She drafts blueprints faster than the junior team.",
-            "targetDetail": "drafts",
+            "instruction": "Where is the conference this year?",
+            "hint": "Two years, two cities. The time expression tells you which one you need.",
+            "explanation": "Madrid was last year's location. So the answer is Berlin.",
+            "textToSpeak": "The conference is in Berlin this year, but last year it was in Madrid.",
+            "targetDetail": "Berlin",
             "options": [
-                "analyzes",
-                "delegates",
-                "drafts",
-                "certifies"
+                "Berlin",
+                "Lisbon",
+                "Madrid",
+                "Vienna"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "detailSpotlight",
-            "emoji": "📏",
-            "detailCategory": "Key Information"
+            "emoji": "🎤",
+            "detailCategory": "Location"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L53_Q3",
             "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "Focus on the thing mentioned, not who mentions it.",
-            "explanation": "The correct object is budget — a plan for how money will be spent. In the audio, he approved a bigger budget for the new wing.",
-            "textToSpeak": "He approved a bigger budget for the new wing.",
-            "targetDetail": "budget",
+            "instruction": "Identify when Kevin's sister was born.",
+            "hint": "Each birthday belongs to a different person. Listen for the word ‘sister’.",
+            "explanation": "October is correct. June is Kevin's month.",
+            "textToSpeak": "Kevin was born in June, but his sister was born in October.",
+            "targetDetail": "October",
             "options": [
-                "budget",
-                "contract",
-                "prescription",
-                "presentation"
+                "September",
+                "October",
+                "November",
+                "June"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "detailSpotlight",
-            "emoji": "💰",
-            "detailCategory": "Key Information"
+            "emoji": "🎂",
+            "detailCategory": "Date"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L54_Q1",
             "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "Home in on the title used for the person.",
-            "explanation": "The correct person is researcher — a person who studies a subject in careful detail. The sentence tells us a curious researcher studied the topic more deeply than most.",
-            "textToSpeak": "A curious researcher studied the topic more deeply than most.",
-            "targetDetail": "researcher",
+            "instruction": "Tap when the Leeds train arrives.",
+            "hint": "Two trains, two times. The minute part is what separates them.",
+            "explanation": "The answer is 6:20. Ten past six is the Manchester train. Twenty past six is Leeds.",
+            "textToSpeak": "The train from Manchester arrives at ten past six, and the one from Leeds arrives at twenty past six.",
+            "targetDetail": "6:20",
             "options": [
-                "auditor",
-                "researcher",
-                "analyst",
-                "inspector"
+                "6:50",
+                "6:20",
+                "6:15",
+                "6:10"
             ],
             "correctAnswerIndex": 1,
             "subtype": "detailSpotlight",
-            "emoji": "🔬",
-            "detailCategory": "Key Information"
+            "emoji": "🚆",
+            "detailCategory": "Time"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L54_Q2",
             "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "The verb carries the key detail — listen for it precisely.",
-            "explanation": "analyzes is the action — to examine something in detail to understand it. In the audio, she analyzes data more carefully than the previous team.",
-            "textToSpeak": "She analyzes data more carefully than the previous team.",
-            "targetDetail": "analyzes",
+            "instruction": "Identify the color of the speaker's own car.",
+            "hint": "Ownership words like ‘mine’ show whose car is being described.",
+            "explanation": "Black is correct. The neighbor has the white car. The speaker says the black one is ‘mine’.",
+            "textToSpeak": "The white car belongs to my neighbor, and the black one is mine.",
+            "targetDetail": "black",
             "options": [
-                "forecasts",
-                "supervises",
-                "allocates",
-                "analyzes"
+                "black",
+                "white",
+                "silver",
+                "red"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "detailSpotlight",
-            "emoji": "📈",
-            "detailCategory": "Key Information"
+            "emoji": "🚗",
+            "detailCategory": "Description"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L54_Q3",
             "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "Which word answers 'what is this actually about?'",
-            "explanation": "That's report — a document that gives information or an account of something. The audio confirms it: he published a longer report than his colleagues expected.",
-            "textToSpeak": "He published a longer report than his colleagues expected.",
-            "targetDetail": "report",
+            "instruction": "Listen for where the customer would like to sit.",
+            "hint": "The number of seats and the location are different details.",
+            "explanation": "By the window is correct. Four is how many people there are.",
+            "textToSpeak": "I'd like a table for four, please, by the window if possible.",
+            "targetDetail": "by the window",
             "options": [
-                "subscription",
-                "device",
-                "report",
-                "scholarship"
+                "outside",
+                "by the window",
+                "in the corner",
+                "near the door"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "detailSpotlight",
-            "emoji": "📑",
-            "detailCategory": "Key Information"
+            "emoji": "🍽️",
+            "detailCategory": "Preference"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L55_Q1",
             "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "Which single word tells you the person's role here?",
-            "explanation": "The person in question is recruiter: a person who finds and hires new employees. To be exact, an organized recruiter interviewed more candidates than planned.",
-            "textToSpeak": "An organized recruiter interviewed more candidates than planned.",
-            "targetDetail": "recruiter",
+            "instruction": "Wipe the glass and tap the sister's job.",
+            "hint": "Two siblings and two jobs. Connect each job to the right person.",
+            "explanation": "Journalist is correct. The brother is the pilot.",
+            "textToSpeak": "Julia's brother is a pilot, and her sister is a journalist.",
+            "targetDetail": "journalist",
             "options": [
-                "executive",
-                "critic",
-                "biographer",
-                "recruiter"
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "detailSpotlight",
-            "emoji": "🧑‍💼",
-            "detailCategory": "Key Information"
-        },
-        {
-            "id": "LIS_DETAILSPOTLIGHT_L55_Q2",
-            "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "Listen for the action word - what is the person or thing doing?",
-            "explanation": "Right answer: recruits, meaning to find and persuade people to join an organization. That's because she recruits interns more carefully since the last mistake.",
-            "textToSpeak": "She recruits interns more carefully since the last mistake.",
-            "targetDetail": "recruits",
-            "options": [
-                "mediates",
-                "recruits",
-                "audits",
-                "finalizes"
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "detailSpotlight",
-            "emoji": "🧑‍🎓",
-            "detailCategory": "Key Information"
-        },
-        {
-            "id": "LIS_DETAILSPOTLIGHT_L55_Q3",
-            "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "Notice which object the sentence is really about.",
-            "explanation": "The item named is resume, a document listing a person's work history and skills. To be exact, he rewrote his resume shorter than the last version.",
-            "textToSpeak": "He rewrote his resume shorter than the last version.",
-            "targetDetail": "resume",
-            "options": [
-                "album",
-                "meeting",
-                "exhibit",
-                "resume"
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "detailSpotlight",
-            "emoji": "📄",
-            "detailCategory": "Key Information"
-        },
-        {
-            "id": "LIS_DETAILSPOTLIGHT_L56_Q1",
-            "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "Your job: name the person, not what they did.",
-            "explanation": "Volunteer fits — a person who works for a cause without being paid. You can hear that a dedicated volunteer organized a bigger food drive.",
-            "textToSpeak": "A dedicated volunteer organized a bigger food drive.",
-            "targetDetail": "volunteer",
-            "options": [
-                "volunteer",
-                "tour guide",
-                "photographer",
-                "florist"
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "detailSpotlight",
-            "emoji": "🥫",
-            "detailCategory": "Key Information"
-        },
-        {
-            "id": "LIS_DETAILSPOTLIGHT_L56_Q2",
-            "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "Track the verb through the whole sentence.",
-            "explanation": "Donates is the detail — to give money or goods to help a cause. The audio makes clear that she donates more clothes every winter than before.",
-            "textToSpeak": "She donates more clothes every winter than before.",
-            "targetDetail": "donates",
-            "options": [
-                "warns",
-                "updates",
-                "donates",
-                "arrives"
-            ],
-            "correctAnswerIndex": 2,
-            "subtype": "detailSpotlight",
-            "emoji": "🧥",
-            "detailCategory": "Key Information"
-        },
-        {
-            "id": "LIS_DETAILSPOTLIGHT_L56_Q3",
-            "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "Listen for the word naming what's being discussed.",
-            "explanation": "Donation is correct — money or goods given to help a person or cause. The sentence tells us he gave a bigger donation than he planned.",
-            "textToSpeak": "He gave a bigger donation than he planned.",
-            "targetDetail": "donation",
-            "options": [
-                "proposal",
-                "lecture",
-                "exam",
-                "donation"
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "detailSpotlight",
-            "emoji": "💝",
-            "detailCategory": "Key Information"
-        },
-        {
-            "id": "LIS_DETAILSPOTLIGHT_L57_Q1",
-            "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "Focus on identity: who exactly is being talked about?",
-            "explanation": "Listen for curator: a person who manages the items in a museum or gallery. In this case, a thoughtful curator arranged the exhibit more carefully this time.",
-            "textToSpeak": "A thoughtful curator arranged the exhibit more carefully this time.",
-            "targetDetail": "curator",
-            "options": [
-                "professor",
-                "curator",
-                "counselor",
-                "diplomat"
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "detailSpotlight",
-            "emoji": "🖼️",
-            "detailCategory": "Key Information"
-        },
-        {
-            "id": "LIS_DETAILSPOTLIGHT_L57_Q2",
-            "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "Which word answers 'what exactly is being done?'",
-            "explanation": "The doing-word is compiles — to collect information from different sources into one. The sentence confirms she compiles collections faster than the museum's old system.",
-            "textToSpeak": "She compiles collections faster than the museum's old system.",
-            "targetDetail": "compiles",
-            "options": [
-                "negotiates",
-                "operates",
-                "oversees",
-                "compiles"
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "detailSpotlight",
-            "emoji": "🗃️",
-            "detailCategory": "Key Information"
-        },
-        {
-            "id": "LIS_DETAILSPOTLIGHT_L57_Q3",
-            "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "Your job: name the object, not the action around it.",
-            "explanation": "The thing mentioned is exhibit: a public display of art or objects. Here, he printed a longer catalog for the spring exhibit.",
-            "textToSpeak": "He printed a longer catalog for the spring exhibit.",
-            "targetDetail": "exhibit",
-            "options": [
-                "novel",
-                "exhibit",
-                "invoice",
-                "festival"
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "detailSpotlight",
-            "emoji": "🎨",
-            "detailCategory": "Key Information"
-        },
-        {
-            "id": "LIS_DETAILSPOTLIGHT_L58_Q1",
-            "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "Who is the sentence talking about? Listen for their role.",
-            "explanation": "Inspector is who's described — a person who checks that rules or standards are met. The audio states that a calm inspector checked the building more thoroughly than before.",
-            "textToSpeak": "A calm inspector checked the building more thoroughly than before.",
-            "targetDetail": "inspector",
-            "options": [
-                "entrepreneur",
-                "correspondent",
-                "surgeon",
-                "inspector"
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "detailSpotlight",
-            "emoji": "🔍",
-            "detailCategory": "Key Information"
-        },
-        {
-            "id": "LIS_DETAILSPOTLIGHT_L58_Q2",
-            "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "Catch the exact verb, not a similar-sounding one.",
-            "explanation": "You heard verifies: to check that something is true or accurate. In this sentence, she verifies safety records more strictly than her predecessor.",
-            "textToSpeak": "She verifies safety records more strictly than her predecessor.",
-            "targetDetail": "verifies",
-            "options": [
-                "certifies",
-                "authorizes",
-                "verifies",
-                "delegates"
-            ],
-            "correctAnswerIndex": 2,
-            "subtype": "detailSpotlight",
-            "emoji": "✅",
-            "detailCategory": "Key Information"
-        },
-        {
-            "id": "LIS_DETAILSPOTLIGHT_L58_Q3",
-            "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "What object does the sentence describe? Listen for it.",
-            "explanation": "You heard regulation, an official rule that controls how something is done. Notice that he read the regulation twice before signing off.",
-            "textToSpeak": "He read the regulation twice before signing off.",
-            "targetDetail": "regulation",
-            "options": [
-                "regulation",
-                "server",
-                "archive",
-                "circuit"
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "detailSpotlight",
-            "emoji": "📜",
-            "detailCategory": "Key Information"
-        },
-        {
-            "id": "LIS_DETAILSPOTLIGHT_L59_Q1",
-            "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "Focus on who is being described, not what they do or use.",
-            "explanation": "Economist is the detail here — a person who studies how money and markets work. As the audio says, a determined economist predicted a stronger recovery than expected.",
-            "textToSpeak": "A determined economist predicted a stronger recovery than expected.",
-            "targetDetail": "economist",
-            "options": [
-                "scientist",
-                "consultant",
-                "economist",
-                "judge"
-            ],
-            "correctAnswerIndex": 2,
-            "subtype": "detailSpotlight",
-            "emoji": "📉",
-            "detailCategory": "Key Information"
-        },
-        {
-            "id": "LIS_DETAILSPOTLIGHT_L59_Q2",
-            "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "Notice how the action is described in the sentence.",
-            "explanation": "The verb here is forecasts, meaning to predict what will happen based on current information. Notice that she forecasts growth more cautiously than her colleagues.",
-            "textToSpeak": "She forecasts growth more cautiously than her colleagues.",
-            "targetDetail": "forecasts",
-            "options": [
-                "sponsors",
-                "compiles",
-                "drafts",
-                "forecasts"
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "detailSpotlight",
-            "emoji": "📊",
-            "detailCategory": "Key Information"
-        },
-        {
-            "id": "LIS_DETAILSPOTLIGHT_L59_Q3",
-            "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "Which concrete thing is named in the sentence?",
-            "explanation": "Forecast is the detail — a prediction of what is likely to happen. Specifically, he shared a longer forecast at the morning meeting.",
-            "textToSpeak": "He shared a longer forecast at the morning meeting.",
-            "targetDetail": "forecast",
-            "options": [
-                "sensor",
-                "forecast",
-                "credential",
-                "endowment"
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "detailSpotlight",
-            "emoji": "🌤️",
-            "detailCategory": "Key Information"
-        },
-        {
-            "id": "LIS_DETAILSPOTLIGHT_L60_Q1",
-            "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "Which role or relationship is named in the sentence?",
-            "explanation": "You heard executive, which means a senior person who manages a company. Notice that a senior executive approved the bigger sponsorship budget.",
-            "textToSpeak": "A senior executive approved the bigger sponsorship budget.",
-            "targetDetail": "executive",
-            "options": [
-                "executive",
-                "historian",
-                "administrator",
-                "negotiator"
+                "journalist",
+                "lawyer",
+                "dentist",
+                "pilot"
             ],
             "correctAnswerIndex": 0,
             "subtype": "detailSpotlight",
             "emoji": "💼",
-            "detailCategory": "Key Information"
+            "detailCategory": "Role"
+        },
+        {
+            "id": "LIS_DETAILSPOTLIGHT_L55_Q2",
+            "interactionType": "choice",
+            "instruction": "Which bus number can you take?",
+            "hint": "Numbers like these share a sound. Listen to the second part of the number.",
+            "explanation": "22 is correct. Twenty-two is two tens and two ones. Ten minutes is the walking time.",
+            "textToSpeak": "It's about a ten-minute walk from the station, or you can take bus twenty-two.",
+            "targetDetail": "22",
+            "options": [
+                "2",
+                "22",
+                "12",
+                "20"
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "detailSpotlight",
+            "emoji": "🧭",
+            "detailCategory": "Number"
+        },
+        {
+            "id": "LIS_DETAILSPOTLIGHT_L55_Q3",
+            "interactionType": "choice",
+            "instruction": "Wipe the glass and tap why he can't come.",
+            "hint": "The reason comes after ‘because’. The day is only background.",
+            "explanation": "The answer is a dentist appointment. It explains why he is not available.",
+            "textToSpeak": "He can't come on Wednesday because he has a dentist appointment.",
+            "targetDetail": "a dentist appointment",
+            "options": [
+                "a job interview",
+                "a football match",
+                "a family dinner",
+                "a dentist appointment"
+            ],
+            "correctAnswerIndex": 3,
+            "subtype": "detailSpotlight",
+            "emoji": "📅",
+            "detailCategory": "Reason"
+        },
+        {
+            "id": "LIS_DETAILSPOTLIGHT_L56_Q1",
+            "interactionType": "choice",
+            "instruction": "Notice how many eggs the speaker needs to buy.",
+            "hint": "Do a quick calculation: how many are needed, and how many are missing?",
+            "explanation": "The answer is 1. Three are needed and two are at home, so one more is needed.",
+            "textToSpeak": "The recipe needs three eggs, but I only have two, so I'll go to the store for one more.",
+            "targetDetail": "1",
+            "options": [
+                "5",
+                "2",
+                "1",
+                "3"
+            ],
+            "correctAnswerIndex": 2,
+            "subtype": "detailSpotlight",
+            "emoji": "🥚",
+            "detailCategory": "Quantity"
+        },
+        {
+            "id": "LIS_DETAILSPOTLIGHT_L56_Q2",
+            "interactionType": "choice",
+            "instruction": "Find what Omar is wearing.",
+            "hint": "Two men are described in different ways. Focus on the description of Omar.",
+            "explanation": "Ravi is the tall man by the fountain. So the answer is gray jacket.",
+            "textToSpeak": "Ravi is the tall man standing next to the fountain, and Omar is the one in the gray jacket.",
+            "targetDetail": "gray jacket",
+            "options": [
+                "gray jacket",
+                "gray hat",
+                "black coat",
+                "green jacket"
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "detailSpotlight",
+            "emoji": "👥",
+            "detailCategory": "Description"
+        },
+        {
+            "id": "LIS_DETAILSPOTLIGHT_L56_Q3",
+            "interactionType": "choice",
+            "instruction": "Tap the day the gallery is free.",
+            "hint": "One day is different from all the others. Listen for the word that signals it.",
+            "explanation": "Thursday is correct. On every other day there is a ten-dollar fee.",
+            "textToSpeak": "The gallery is free on Thursdays, but on other days it costs ten dollars.",
+            "targetDetail": "Thursday",
+            "options": [
+                "Friday",
+                "Thursday",
+                "Tuesday",
+                "Saturday"
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "detailSpotlight",
+            "emoji": "🖼️",
+            "detailCategory": "Day"
+        },
+        {
+            "id": "LIS_DETAILSPOTLIGHT_L57_Q1",
+            "interactionType": "choice",
+            "instruction": "Wipe the glass and tap what you should wear.",
+            "hint": "The reason for the advice can help you predict what is recommended.",
+            "explanation": "The answer is comfortable shoes. Two hours of walking is the reason.",
+            "textToSpeak": "Please wear comfortable shoes because we'll be walking around the campus for two hours.",
+            "targetDetail": "comfortable shoes",
+            "options": [
+                "old clothes",
+                "comfortable shoes",
+                "warm jackets",
+                "formal shoes"
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "detailSpotlight",
+            "emoji": "🏫",
+            "detailCategory": "Instruction"
+        },
+        {
+            "id": "LIS_DETAILSPOTLIGHT_L57_Q2",
+            "interactionType": "choice",
+            "instruction": "Listen for who takes the children to practice.",
+            "hint": "Two people do two different steps. Focus on the second step.",
+            "explanation": "The answer is Luis. Marta picks up the children first, and Luis takes them to practice.",
+            "textToSpeak": "Marta will pick up the children, and then Luis will take them to soccer practice.",
+            "targetDetail": "Luis",
+            "options": [
+                "Sofia",
+                "Marta",
+                "Diego",
+                "Luis"
+            ],
+            "correctAnswerIndex": 3,
+            "subtype": "detailSpotlight",
+            "emoji": "⚽",
+            "detailCategory": "Sequence"
+        },
+        {
+            "id": "LIS_DETAILSPOTLIGHT_L57_Q3",
+            "interactionType": "choice",
+            "instruction": "Wipe the glass and tap how soon a taxi could be there.",
+            "hint": "There are two waiting times. Match each one to its type of transport.",
+            "explanation": "4 minutes is correct. Twelve minutes is the bus. The taxi is faster.",
+            "textToSpeak": "The next bus is in twelve minutes, but a taxi could be here in four.",
+            "targetDetail": "4 minutes",
+            "options": [
+                "12 minutes",
+                "40 minutes",
+                "4 minutes",
+                "14 minutes"
+            ],
+            "correctAnswerIndex": 2,
+            "subtype": "detailSpotlight",
+            "emoji": "⏱️",
+            "detailCategory": "Duration"
+        },
+        {
+            "id": "LIS_DETAILSPOTLIGHT_L58_Q1",
+            "interactionType": "choice",
+            "instruction": "Tap what the speaker liked best about the trip.",
+            "hint": "The word ‘best’ points to the favorite part. Ignore the other places and things.",
+            "explanation": "The answer is the food. The hotel and beach are mentioned, but the food is called the best.",
+            "textToSpeak": "We stayed in a small hotel near the beach, but the food was the best part of the trip.",
+            "targetDetail": "the food",
+            "options": [
+                "the beach",
+                "the weather",
+                "the hotel",
+                "the food"
+            ],
+            "correctAnswerIndex": 3,
+            "subtype": "detailSpotlight",
+            "emoji": "🧳",
+            "detailCategory": "Preference"
+        },
+        {
+            "id": "LIS_DETAILSPOTLIGHT_L58_Q2",
+            "interactionType": "choice",
+            "instruction": "Tap who you should email.",
+            "hint": "The person who is away is not the person you should contact.",
+            "explanation": "Correct: her assistant. The manager is on vacation, so the instruction is to email the assistant.",
+            "textToSpeak": "I'm afraid the manager is on vacation until the fifteenth, so please email her assistant.",
+            "targetDetail": "her assistant",
+            "options": [
+                "the manager",
+                "the director",
+                "the receptionist",
+                "her assistant"
+            ],
+            "correctAnswerIndex": 3,
+            "subtype": "detailSpotlight",
+            "emoji": "📧",
+            "detailCategory": "Instruction"
+        },
+        {
+            "id": "LIS_DETAILSPOTLIGHT_L58_Q3",
+            "interactionType": "choice",
+            "instruction": "Focus on how long the homework was.",
+            "hint": "‘Half’ describes the students, not the homework. Listen for the number of questions.",
+            "explanation": "20 questions is correct. Half is the part of the class that finished.",
+            "textToSpeak": "Only half of the class finished the homework, which was twenty questions.",
+            "targetDetail": "20 questions",
+            "options": [
+                "15 questions",
+                "10 questions",
+                "20 questions",
+                "30 questions"
+            ],
+            "correctAnswerIndex": 2,
+            "subtype": "detailSpotlight",
+            "emoji": "✏️",
+            "detailCategory": "Quantity"
+        },
+        {
+            "id": "LIS_DETAILSPOTLIGHT_L59_Q1",
+            "interactionType": "choice",
+            "instruction": "Wipe the glass and tap when the neighbors are noisy.",
+            "hint": "Two times of day, two opposite descriptions. Listen for ‘noisy’.",
+            "explanation": "The answer is at night. During the day, the neighbors are helpful.",
+            "textToSpeak": "Our neighbors are noisy at night, but they're very helpful during the day.",
+            "targetDetail": "at night",
+            "options": [
+                "during the day",
+                "at night",
+                "in the morning",
+                "at weekends"
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "detailSpotlight",
+            "emoji": "🏘️",
+            "detailCategory": "Time"
+        },
+        {
+            "id": "LIS_DETAILSPOTLIGHT_L59_Q2",
+            "interactionType": "choice",
+            "instruction": "Notice how much the speaker actually paid.",
+            "hint": "There is an original price and a final price. Ask which one the speaker paid.",
+            "explanation": "$20 is correct. Thirty was the shirt's price. The coupon brought it down to twenty.",
+            "textToSpeak": "The shirt was thirty dollars, but I got it for twenty with a coupon.",
+            "targetDetail": "$20",
+            "options": [
+                "$30",
+                "$10",
+                "$50",
+                "$20"
+            ],
+            "correctAnswerIndex": 3,
+            "subtype": "detailSpotlight",
+            "emoji": "🧾",
+            "detailCategory": "Price"
+        },
+        {
+            "id": "LIS_DETAILSPOTLIGHT_L59_Q3",
+            "interactionType": "choice",
+            "instruction": "Pick out what the students must write.",
+            "hint": "Two tasks are given, one for reading and one for writing.",
+            "explanation": "Reading pages ten to fifteen is the other task. So the answer is a short summary.",
+            "textToSpeak": "The teacher asked us to read pages ten to fifteen and write a short summary.",
+            "targetDetail": "a short summary",
+            "options": [
+                "a long essay",
+                "a short summary",
+                "a list of words",
+                "a book review"
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "detailSpotlight",
+            "emoji": "📖",
+            "detailCategory": "Requirement"
+        },
+        {
+            "id": "LIS_DETAILSPOTLIGHT_L60_Q1",
+            "interactionType": "choice",
+            "instruction": "Tap how long the speaker had to wait.",
+            "hint": "The waiting time is connected to the next train, not to the late bus.",
+            "explanation": "An hour is correct. The speaker missed the train and waited for the next one.",
+            "textToSpeak": "The bus was late, so I missed my train and had to wait an hour for the next one.",
+            "targetDetail": "an hour",
+            "options": [
+                "two hours",
+                "half an hour",
+                "an hour",
+                "ten minutes"
+            ],
+            "correctAnswerIndex": 2,
+            "subtype": "detailSpotlight",
+            "emoji": "⏰",
+            "detailCategory": "Duration"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L60_Q2",
             "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "Home in on the verb, wherever it falls in the sentence.",
-            "explanation": "The correct action is sponsors — to financially support a person, team, or event. Specifically, she sponsors young athletes more generously than most donors.",
-            "textToSpeak": "She sponsors young athletes more generously than most donors.",
-            "targetDetail": "sponsors",
+            "instruction": "Clear the glass and tap who you should ask for.",
+            "hint": "Listen for the title and the family name, not just the name.",
+            "explanation": "The answer is Mr. Silva. The title ‘Mr.’ shows the person is a man.",
+            "textToSpeak": "Ask for Mr. Silva at the reception on the ground floor, then take the elevator to the fourth floor.",
+            "targetDetail": "Mr. Silva",
             "options": [
-                "verifies",
-                "sponsors",
-                "supervises",
-                "certifies"
+                "Ms. Silva",
+                "Mr. Sousa",
+                "Mr. Silva",
+                "Mr. Santos"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "subtype": "detailSpotlight",
-            "emoji": "🎗️",
-            "detailCategory": "Key Information"
+            "emoji": "🏢",
+            "detailCategory": "Person"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L60_Q3",
             "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "Which item is central to the sentence? Listen closely.",
-            "explanation": "Endowment fits here — a gift of money given to provide lasting income. You can hear that he signed a longer endowment agreement than expected.",
-            "textToSpeak": "He signed a longer endowment agreement than expected.",
-            "targetDetail": "endowment",
+            "instruction": "Notice where the meeting will actually be.",
+            "hint": "A usual place is rejected, and a new one is announced with ‘so’.",
+            "explanation": "The projector is broken, so the meeting moves. So the answer is the library.",
+            "textToSpeak": "The meeting isn't in the conference room today because the projector is broken, so we'll use the library.",
+            "targetDetail": "the library",
             "options": [
-                "drone",
-                "endowment",
-                "algorithm",
-                "satellite"
+                "the manager's office",
+                "the conference room",
+                "the cafeteria",
+                "the library"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "subtype": "detailSpotlight",
-            "emoji": "🤝",
-            "detailCategory": "Key Information"
+            "emoji": "🛠️",
+            "detailCategory": "Change"
         }
     ]
 }

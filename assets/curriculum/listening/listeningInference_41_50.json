@@ -6,542 +6,542 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L41_Q1",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "What does 'in a meeting until three' tell you about when the manager is available?",
-            "explanation": "'Until three' = the meeting ends at three. Until then, the manager is unavailable. 'In a meeting' = currently occupied. The inference: you cannot see the manager before 3 PM. 'Until' marks the endpoint of unavailability.",
-            "textToSpeak": "A: Is the manager in? B: He's in a meeting until three.",
-            "question": "What can be inferred from this exchange?",
+            "instruction": "Listen closely and infer what is really happening.",
+            "hint": "Think about what would cause the smoke alarm to suddenly go off.",
+            "explanation": "Smoke pouring from a pan and a blaring alarm together suggest that something on the stove burned and set off the smoke detector.",
+            "textToSpeak": "Smoke poured from the pan just as the alarm started blaring through the kitchen.",
+            "question": "What most likely caused the alarm to go off?",
             "options": [
-                "The manager will be free no earlier than three o'clock",
-                "You can speak to the manager right now"
+                "Someone opened a window",
+                "Something burned on the stove"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference",
-            "emoji": "💼",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "🔥",
+            "literalMeaning": "Smoke poured from the pan and the alarm blared.",
+            "impliedMeaning": "Something burning on the stove caused the alarm."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L41_Q2",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "Think about why someone sets multiple alarms.",
-            "explanation": "Setting three alarms suggests she can't risk oversleeping - she has something important requiring an early, reliable wake-up time. One alarm would do for an ordinary day; three alarms signals a critical morning commitment.",
-            "textToSpeak": "She set three alarms for the next morning.",
-            "question": "What's the hidden meaning here?",
+            "instruction": "What does the situation suggest? Make your best guess.",
+            "hint": "Think about what would cause someone to suddenly slip on the floor.",
+            "explanation": "A wet floor left unmarked, followed by someone slipping, suggests the spill itself was the direct cause of the fall.",
+            "textToSpeak": "He stepped onto the wet floor and slipped before anyone could warn him.",
+            "question": "What most likely caused him to slip?",
             "options": [
-                "She usually sleeps through alarms",
-                "She has an important reason to wake up early"
+                "The wet floor",
+                "A loose shoelace"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
-            "emoji": "🗣️",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "💧",
+            "literalMeaning": "He stepped on the wet floor and slipped.",
+            "impliedMeaning": "The wet floor most likely caused the fall."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L41_Q3",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "Think about what ordering all three courses implies about appetite.",
-            "explanation": "Ordering all three courses - starter (appetiser), main (entrée), dessert - represents a full, substantial restaurant meal. This implies significant hunger or appetite. Someone not hungry would typically skip the starter or dessert.",
-            "textToSpeak": "He ordered a starter, a main course, and a dessert.",
-            "question": "What does this reveal?",
+            "instruction": "Use the clues to work out the meaning.",
+            "hint": "Think about what would cause the plants to wilt like this.",
+            "explanation": "Dry, cracked soil combined with drooping leaves suggests the plants have not been watered in some time.",
+            "textToSpeak": "The soil had cracked and turned pale, and every leaf on the plant drooped toward the pot.",
+            "question": "What most likely caused this?",
             "options": [
-                "He was very hungry and had a large meal",
-                "He was on a strict diet"
+                "The plant was watered too much",
+                "The plant was not watered"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference",
-            "emoji": "🍰",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "🌱",
+            "literalMeaning": "The soil cracked and the leaves drooped.",
+            "impliedMeaning": "A lack of water most likely caused this."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L42_Q1",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "Think about why someone comments on warmth indoors.",
-            "explanation": "Commenting on indoor warmth is typically an indirect request for action - open a window, turn down the heating, or turn on a fan. It's not a sincere question about whether others agree; it's a socially softened request. Indirect requests are very common in British English.",
-            "textToSpeak": "It's quite warm in here, don't you think?",
-            "question": "What is the speaker really suggesting?",
+            "instruction": "What can you infer from what you hear?",
+            "hint": "Think about what effect a long delay would have on the passengers.",
+            "explanation": "A three-hour delay announcement followed by groans and people slumping in their seats suggests the delay caused frustration among passengers.",
+            "textToSpeak": "The announcement mentioned a three-hour delay, and groans rippled through the row as people slumped back in their seats.",
+            "question": "What was the effect of the announcement?",
             "options": [
-                "They want to have a conversation about temperature",
-                "They want someone to open a window or turn down the heating"
+                "Passengers cheered happily",
+                "Passengers became frustrated"
             ],
             "correctAnswerIndex": 1,
             "subtype": "listeningInference",
-            "emoji": "📜",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "😩",
+            "literalMeaning": "A delay was announced and passengers groaned.",
+            "impliedMeaning": "The delay caused frustration among passengers."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L42_Q2",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "Why does someone draw attention to a full bin?",
-            "explanation": "Drawing attention to a full bin is an indirect way of requesting that someone empties it. Direct requests ('please empty the bin') can seem rude; indirect observations ('the bin is full') achieve the same goal more politely. This is a common pattern in shared living or working spaces.",
-            "textToSpeak": "I notice the bin is completely full.",
-            "question": "What might the speaker want?",
+            "instruction": "Listen for the clues behind the words.",
+            "hint": "Think about what effect skipping breakfast might have later in the day.",
+            "explanation": "Skipping breakfast, followed by a growling stomach and trouble focusing by mid-morning, suggests the missed meal caused the hunger and distraction.",
+            "textToSpeak": "She skipped breakfast, and by mid-morning her stomach growled loudly while she struggled to focus on her work.",
+            "question": "What most likely caused her trouble focusing?",
             "options": [
-                "Someone to empty the bin",
-                "To buy a new bin"
+                "She skipped breakfast",
+                "She stayed up too late reading"
             ],
             "correctAnswerIndex": 0,
             "subtype": "listeningInference",
-            "emoji": "💬",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "🍳",
+            "literalMeaning": "She skipped breakfast and struggled to focus later.",
+            "impliedMeaning": "Skipping breakfast likely caused her hunger and distraction."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L42_Q3",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "Why would someone draw attention to unwashed dishes?",
-            "explanation": "Pointing out that dishes have been sitting there for a long time is an indirect way of saying they need washing. The length of time ('since this morning') adds urgency and mild reproach. It's a passive observation with an implicit request.",
-            "textToSpeak": "The dishes have been sitting there since this morning.",
-            "question": "What does this statement really mean?",
+            "instruction": "What is most likely true here?",
+            "hint": "Think about what effect the broken air conditioner would have on the office.",
+            "explanation": "A broken air conditioner followed by employees fanning themselves and propping open doors suggests the heat caused people to seek relief.",
+            "textToSpeak": "The air conditioner broke down, and soon employees were fanning themselves with folders and propping open every door.",
+            "question": "What most likely caused people to fan themselves?",
             "options": [
-                "The dishes are a new purchase",
-                "The dishes need to be washed"
+                "New furniture arrived",
+                "The broken air conditioner made it hot"
             ],
             "correctAnswerIndex": 1,
             "subtype": "listeningInference",
-            "emoji": "💭",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "🥵",
+            "literalMeaning": "The air conditioner broke and people fanned themselves.",
+            "impliedMeaning": "The broken air conditioner made the office too hot."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L43_Q1",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "Think about what physical reaction going pale suggests.",
-            "explanation": "Going pale = losing colour from your face - a physical sign of shock or alarm. Looking at a bill and going pale means the amount was unexpectedly high. This is a physiological response to a shocking stimulus: shock → facial pallor.",
-            "textToSpeak": "She took one look at the bill and went pale.",
-            "question": "How did she feel?",
+            "instruction": "What is the speaker implying?",
+            "hint": "Think about what would cause the baby to suddenly start crying.",
+            "explanation": "A loud crash from the kitchen followed immediately by the baby crying suggests the sudden noise startled the baby.",
+            "textToSpeak": "A pot crashed to the kitchen floor, and seconds later the baby began crying from the next room.",
+            "question": "What most likely caused the baby to cry?",
             "options": [
-                "Delighted",
-                "Shocked"
+                "The sudden loud crash",
+                "The baby was hungry"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
-            "emoji": "🧠",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "👶",
+            "literalMeaning": "A pot crashed and the baby began crying.",
+            "impliedMeaning": "The sudden crash likely startled the baby."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L43_Q2",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "Think about why reading the same paragraph multiple times might be necessary.",
-            "explanation": "Re-reading the same paragraph repeatedly suggests difficulty concentrating - the information isn't being absorbed. If he were enjoying it, he'd move forward; if studying, he'd take notes. Re-reading suggests distraction or an inability to take in the content.",
-            "textToSpeak": "He kept reading the same paragraph over and over.",
-            "question": "What should a listener conclude here?",
+            "instruction": "What does this situation point to?",
+            "hint": "Think about what would cause the printer line to form.",
+            "explanation": "The printer jamming repeatedly, followed by a line of frustrated coworkers forming behind it, suggests the jam caused the delay and the growing line.",
+            "textToSpeak": "The printer jammed for the third time, and a line of coworkers began forming behind it, arms crossed.",
+            "question": "What most likely caused the line to form?",
             "options": [
-                "He was distracted and couldn't focus",
-                "He was enjoying it so much he wanted to memorise it"
+                "Everyone wanted to chat",
+                "The printer kept jamming"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference",
-            "emoji": "📚",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "🖨️",
+            "literalMeaning": "The printer jammed and a line formed behind it.",
+            "impliedMeaning": "The repeated jamming caused the line to form."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L43_Q3",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "Is there one clear reason, or could this be ambiguous?",
-            "explanation": "Silence between people can mean many things: they argued (tension), they're comfortable together (contentment), they're tired, or they're processing something. Unlike crying or laughing, silence is ambiguous. Recognising when a situation has multiple plausible explanations is an important inference skill.",
-            "textToSpeak": "They walked in silence for most of the journey home.",
-            "question": "What is the real message here?",
+            "instruction": "Read between the lines and choose the best answer.",
+            "hint": "Think about what would cause the garden to flood like this.",
+            "explanation": "Hours of heavy rain followed by water pooling across the garden suggests the rainfall caused the flooding.",
+            "textToSpeak": "Rain had fallen steadily for hours, and by morning, water pooled across the entire garden.",
+            "question": "What most likely caused the flooding?",
             "options": [
-                "Several of these are possible",
-                "They were both tired and comfortable"
+                "Hours of heavy rain",
+                "A broken garden hose"
             ],
             "correctAnswerIndex": 0,
             "subtype": "listeningInference",
-            "emoji": "🎯",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "🌧️",
+            "literalMeaning": "Rain fell for hours and water pooled in the garden.",
+            "impliedMeaning": "The heavy rain likely caused the flooding."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L44_Q1",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "Listen for who claims to have organised it.",
-            "explanation": "'I organised it' - the first person singular 'I' in B's statement. B is the organiser. The question from A ('are you coming?') shows A didn't know B was involved. This is a common conversational revelation of hidden information.",
-            "textToSpeak": "A: Are you coming to the staff meeting? B: Of course - I organised it.",
-            "question": "Who organised the meeting?",
+            "instruction": "Piece the clues together to find the real meaning.",
+            "hint": "Think about what effect losing the game might have on the team.",
+            "explanation": "A missed final shot followed by the team walking off with their heads down suggests the loss caused their disappointment.",
+            "textToSpeak": "The final shot missed the basket, and the team walked off the court with their heads down.",
+            "question": "What was the effect of missing the shot?",
             "options": [
-                "Person B",
-                "Person A"
+                "The team felt disappointed",
+                "The team celebrated loudly"
             ],
             "correctAnswerIndex": 0,
             "subtype": "listeningInference",
-            "emoji": "💼",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "🏀",
+            "literalMeaning": "The shot missed and the team walked off with heads down.",
+            "impliedMeaning": "Missing the shot caused the team's disappointment."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L44_Q2",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "Listen for the word that reveals the relationship.",
-            "explanation": "'Mum' (British English for 'Mum') = mother. A calls B 'Mum' directly, immediately revealing the relationship. B's response ('you said you'd be back by six') is a typical parental reproach. Together: child arriving home late, mother noting the broken promise.",
-            "textToSpeak": "A: Sorry I'm late, Mum. B: You said you'd be back by six.",
-            "question": "What is the probable relationship here?",
+            "instruction": "What's really going on? Trust the evidence.",
+            "hint": "Think about what effect the traffic jam had on her morning.",
+            "explanation": "Sitting in traffic for over an hour followed by rushing into the office late suggests the traffic caused her lateness.",
+            "textToSpeak": "She sat in traffic for over an hour, then rushed into the office, apologizing for being late.",
+            "question": "What most likely caused her to be late?",
             "options": [
-                "Mother and child",
-                "Two friends"
+                "She overslept at home",
+                "The long traffic jam"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference",
-            "emoji": "⏰",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "🚗",
+            "literalMeaning": "She sat in traffic for an hour and arrived late.",
+            "impliedMeaning": "The traffic jam likely caused her lateness."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L44_Q3",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "Listen for B's exclamation to understand the occasion.",
-            "explanation": "B says 'our anniversary!' - revealing the reason for the booking. 'Anniversary' typically refers to a wedding anniversary. 'Oh lovely' shows B is pleased and perhaps surprised. B's reaction reveals what A hasn't explicitly stated.",
-            "textToSpeak": "A: I've booked a table for two at seven. B: Oh lovely - our anniversary!",
-            "question": "Why did person A book the table?",
+            "instruction": "Think it through — what do the clues add up to?",
+            "hint": "Think about what effect forgetting an umbrella might have.",
+            "explanation": "Forgetting an umbrella followed by arriving somewhere soaked from the rain suggests the missing umbrella led to getting wet.",
+            "textToSpeak": "He forgot his umbrella at home, and by the time he reached the office, his shirt was soaked through.",
+            "question": "What most likely caused him to get soaked?",
             "options": [
-                "It's a birthday celebration",
-                "It's their wedding anniversary"
+                "He forgot his umbrella",
+                "He took a shower before leaving"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
-            "emoji": "📚",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "☔",
+            "literalMeaning": "He forgot his umbrella and arrived soaked.",
+            "impliedMeaning": "Forgetting his umbrella caused him to get soaked."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L45_Q1",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "This is a common English idiom - what does crossing a bridge represent?",
-            "explanation": "'Cross that bridge when you come to it' = deal with a problem only when it actually becomes a problem, not in advance. The 'bridge' represents a future obstacle. It's practical wisdom: don't worry about hypothetical problems - wait to see if they actually arise.",
-            "textToSpeak": "She said she'd cross that bridge when she came to it.",
-            "question": "What is the speaker's opinion here?",
+            "instruction": "Listen closely and infer what is really happening.",
+            "hint": "Think about what would cause the internet connection to drop.",
+            "explanation": "A storm knocking out power followed by the router losing its lights suggests the outage caused the internet to go down.",
+            "textToSpeak": "The storm knocked out the power for a moment, and the router's lights went dark right after.",
+            "question": "What most likely caused the internet to go down?",
             "options": [
-                "She is worried about the future",
-                "She'll deal with the problem if and when it arises"
+                "The power outage from the storm",
+                "Someone updated the software"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
-            "emoji": "🔦",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "📡",
+            "literalMeaning": "The power went out and the router's lights went dark.",
+            "impliedMeaning": "The storm's power outage likely caused the internet loss."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L45_Q2",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "What does 'bite the bullet' mean?",
-            "explanation": "'Bite the bullet' = endure something painful or unpleasant with courage. Making the appointment was something he'd been avoiding (perhaps a difficult medical or professional appointment). 'Finally' confirms he'd been delaying. He forced himself to act despite reluctance.",
-            "textToSpeak": "He bit the bullet and finally made the appointment.",
-            "question": "What is the essential point here?",
+            "instruction": "What does the situation suggest? Make your best guess.",
+            "hint": "Think about what effect the surprise pop quiz had on the class.",
+            "explanation": "An unannounced quiz followed by students groaning and flipping frantically through their notes suggests the surprise caused their scramble to prepare.",
+            "textToSpeak": "The teacher announced a surprise quiz, and students groaned while flipping frantically through their notebooks.",
+            "question": "What most likely caused the students to scramble?",
             "options": [
-                "He did something difficult or unpleasant despite reluctance",
-                "He was excited about the appointment"
+                "The class was about to end early",
+                "The unannounced quiz"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference",
-            "emoji": "📜",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "📝",
+            "literalMeaning": "A surprise quiz was announced and students scrambled.",
+            "impliedMeaning": "The surprise quiz caused the students to scramble."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L45_Q3",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "What does 'let sleeping dogs lie' mean?",
-            "explanation": "'Let sleeping dogs lie' = leave an old problem alone rather than bringing it up again and causing new trouble. The idiom suggests that disturbing a settled situation (sleeping dog) is likely to cause problems (angry dog waking up). It's advice to leave the past alone.",
-            "textToSpeak": "They decided to let sleeping dogs lie.",
-            "question": "What did they decide?",
+            "instruction": "Use the clues to work out the meaning.",
+            "hint": "Think about what would cause the ice cream to melt so fast.",
+            "explanation": "Leaving ice cream out on the counter under the sun through the window, followed by it turning to liquid, suggests the heat and time caused the melting.",
+            "textToSpeak": "The ice cream sat forgotten on the counter in direct sunlight, and within minutes it had turned to liquid.",
+            "question": "What most likely caused it to melt?",
             "options": [
-                "To adopt a dog",
-                "Not to raise an old problem or reopen a settled issue"
+                "It was left out in the sun",
+                "It was placed in the freezer"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
-            "emoji": "🗳️",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "🍦",
+            "literalMeaning": "The ice cream sat in sunlight and turned to liquid.",
+            "impliedMeaning": "Being left in the sun caused it to melt."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L46_Q1",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "Think about why people make pros-and-cons lists.",
-            "explanation": "A pros-and-cons list is a decision-making tool - listing advantages (pros) and disadvantages (cons) to help choose between options. 'Before making her decision' confirms the purpose: the list is a structured way to think through choices.",
-            "textToSpeak": "She made a list of pros and cons before making her decision.",
-            "question": "Why did she make the list?",
+            "instruction": "What can you infer from what you hear?",
+            "hint": "Think about what effect the broken elevator had on the building.",
+            "explanation": "A broken elevator followed by a long line of people taking the stairs suggests the elevator failure caused people to use the stairs instead.",
+            "textToSpeak": "A sign read 'Elevator Out of Order,' and a steady stream of people trudged up the stairwell instead.",
+            "question": "What most likely caused people to use the stairs?",
             "options": [
-                "To share her thoughts with a friend",
-                "To help her evaluate options and decide"
+                "The elevator was broken",
+                "The stairs were recently repainted"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
-            "emoji": "🗳️",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "🛗",
+            "literalMeaning": "The elevator was broken and people used the stairs.",
+            "impliedMeaning": "The broken elevator caused people to take the stairs."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L46_Q2",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "Think about why performers take deep breaths before going on stage.",
-            "explanation": "Deep breathing before performing is a calming technique. 'Going on stage' = a performance context where nerves are common. Deep breaths slow the heart rate and reduce anxiety. The context (stage performance) + the action (deep breaths) = calming nerves.",
-            "textToSpeak": "He took several deep breaths before going on stage.",
-            "question": "Why did he do this?",
+            "instruction": "Listen for the clues behind the words.",
+            "hint": "Think about what would cause the fire alarm test to interrupt the meeting.",
+            "explanation": "A scheduled fire alarm test followed by everyone standing up mid-meeting and covering their ears suggests the loud test disrupted the meeting.",
+            "textToSpeak": "The fire alarm test blared without warning, and everyone in the meeting stood up, covering their ears.",
+            "question": "What most likely caused the interruption?",
             "options": [
-                "He was stretching before exercise",
-                "He was trying to calm himself down"
+                "The meeting had just ended",
+                "A scheduled fire alarm test"
             ],
             "correctAnswerIndex": 1,
             "subtype": "listeningInference",
-            "emoji": "🧠",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "🚨",
+            "literalMeaning": "The alarm blared and people stood up covering their ears.",
+            "impliedMeaning": "The alarm test caused the meeting to be interrupted."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L46_Q3",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "Think about why you reread something before sending.",
-            "explanation": "Rereading before sending is a quality-check habit - looking for errors, unclear wording, or missing information. 'Before sending' = a final review stage. This is a common professional behaviour: reviewing your own writing to ensure accuracy and clarity.",
-            "textToSpeak": "She reread the email before sending it.",
-            "question": "What was she probably doing?",
+            "instruction": "What is most likely true here?",
+            "hint": "Think about what effect the spoiled milk had on breakfast.",
+            "explanation": "Milk smelling sour the moment the carton opened, followed by cereal being poured back into the box, suggests the spoiled milk ruined breakfast plans.",
+            "textToSpeak": "The milk smelled sour the second the carton opened, so he poured the cereal back into the box.",
+            "question": "What most likely caused him to change his plan?",
             "options": [
-                "Writing a reply to it",
-                "Checking for mistakes or unclear wording"
+                "He wasn't hungry anymore",
+                "The milk had spoiled"
             ],
             "correctAnswerIndex": 1,
             "subtype": "listeningInference",
-            "emoji": "⚖️",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "🥛",
+            "literalMeaning": "The milk smelled sour and he poured the cereal back.",
+            "impliedMeaning": "The spoiled milk caused him to change his plan."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L47_Q1",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "Listen for the comparison and which receives stronger praise.",
-            "explanation": "'Wasn't bad' = lukewarm praise for the film. 'Much better' = strong positive comparison for the book. 'But' signals the contrast. The speaker prefers the book significantly. 'Much better' is a stronger comparative - not just 'better' but 'much' better.",
-            "textToSpeak": "The film wasn't bad, but the book was much better.",
-            "question": "What does the speaker prefer?",
+            "instruction": "What is the speaker implying?",
+            "hint": "Think about what would cause the bridge traffic to back up for miles.",
+            "explanation": "An accident reported ahead followed by cars slowing to a crawl for miles suggests the accident caused the traffic backup.",
+            "textToSpeak": "The radio mentioned an accident ahead, and traffic on the bridge slowed to a crawl for miles.",
+            "question": "What most likely caused the traffic backup?",
             "options": [
-                "Neither was worth the time",
-                "The book"
+                "Road construction finished early",
+                "An accident ahead"
             ],
             "correctAnswerIndex": 1,
             "subtype": "listeningInference",
-            "emoji": "🎬",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "🚦",
+            "literalMeaning": "An accident was reported and traffic slowed for miles.",
+            "impliedMeaning": "The accident likely caused the traffic backup."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L47_Q2",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "What does 'you wouldn't know it now' imply about his current personality?",
-            "explanation": "'You wouldn't know it now' = you can't tell he was shy by looking at him today. The contrast is: past (very shy) vs. present (apparently not shy at all). He has transformed - the shyness has gone. 'Used to be' describes a past state that no longer applies.",
-            "textToSpeak": "He used to be very shy, but you wouldn't know it now.",
-            "question": "What does this ultimately suggest?",
+            "instruction": "What does this situation point to?",
+            "hint": "Think about what effect the broken zipper had on packing.",
+            "explanation": "A stuck zipper on the suitcase followed by clothes being unpacked and repacked in a different bag suggests the zipper problem forced a change of plans.",
+            "textToSpeak": "The suitcase zipper jammed halfway, so she pulled everything out and repacked it into a different bag.",
+            "question": "What most likely caused her to switch bags?",
             "options": [
-                "He pretends to be confident but is still shy",
-                "He has become much more confident"
+                "The zipper jammed",
+                "She decided to bring more clothes"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
-            "emoji": "🎯",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "🧳",
+            "literalMeaning": "The zipper jammed so she repacked into another bag.",
+            "impliedMeaning": "The jammed zipper caused her to switch bags."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L47_Q3",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "Listen for 'while' introducing a contrast between what was good and what wasn't.",
-            "explanation": "'While... well structured' = the structure was good (concession). 'Content was hard to follow' = the main problem. 'While' introduces a positive concession before the negative. The structure (how it was organised) was fine; the content itself (what was said) was the issue.",
-            "textToSpeak": "While the presentation was well structured, the content was hard to follow.",
-            "question": "What was the main problem?",
+            "instruction": "Read between the lines and choose the best answer.",
+            "hint": "Think about what would cause the sudden power outage in the building.",
+            "explanation": "A tree falling on a power line followed by every light in the building going dark suggests the fallen tree caused the outage.",
+            "textToSpeak": "A tree crashed onto the power line outside, and every light in the building went dark at once.",
+            "question": "What most likely caused the outage?",
             "options": [
-                "The structure was confusing",
-                "The content was unclear or difficult"
+                "A tree fell on the power line",
+                "Someone turned off the main switch"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
-            "emoji": "💼",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "⚡",
+            "literalMeaning": "A tree fell on the power line and the lights went dark.",
+            "impliedMeaning": "The fallen tree likely caused the power outage."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L48_Q1",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "Think about where nurses work and explain dosages.",
-            "explanation": "A nurse who explains dosage (the amount of medicine to take) works in a medical setting. 'Dosage' is a medical/pharmaceutical term. Nurses are found in hospitals, clinics, or GP surgeries. The vocabulary - nurse + dosage - locates the scene in a healthcare environment.",
-            "textToSpeak": "She asked the nurse to explain the dosage again.",
-            "question": "Where is she most likely?",
+            "instruction": "Piece the clues together to find the real meaning.",
+            "hint": "Think about what effect the noisy construction had on the neighbors.",
+            "explanation": "Drilling starting at dawn followed by a neighbor banging on the wall suggests the construction noise caused the neighbor's complaint.",
+            "textToSpeak": "The drilling started right at dawn, and moments later, someone banged loudly on the shared wall.",
+            "question": "What most likely caused the banging?",
             "options": [
-                "In a hospital or clinic",
-                "At a supermarket"
+                "The neighbor was practicing music",
+                "The early drilling noise"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference",
-            "emoji": "🩺",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "🔨",
+            "literalMeaning": "Drilling started at dawn and someone banged on the wall.",
+            "impliedMeaning": "The drilling noise likely caused the banging."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L48_Q2",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "Think about where there's a screen at the front and people speak quietly.",
-            "explanation": "Lowering the voice + a screen at the front of the room suggests either a cinema (watching a film) or a lecture hall (a presentation). The combination of quiet (lowered voice) and a shared visual screen narrows the context significantly.",
-            "textToSpeak": "He lowered his voice and pointed to the screen at the front of the room.",
-            "question": "Where are they probably?",
+            "instruction": "What's really going on? Trust the evidence.",
+            "hint": "Think about what would cause the plants on the balcony to die so quickly.",
+            "explanation": "A sudden frost overnight followed by blackened leaves the next morning suggests the cold weather caused the damage.",
+            "textToSpeak": "A sudden frost hit overnight, and by morning, every leaf on the balcony plants had turned black.",
+            "question": "What most likely caused the damage?",
             "options": [
-                "In a coffee shop",
-                "In a cinema or lecture hall"
+                "Too much sunlight",
+                "An overnight frost"
             ],
             "correctAnswerIndex": 1,
             "subtype": "listeningInference",
-            "emoji": "💭",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "🥶",
+            "literalMeaning": "Frost hit overnight and the leaves turned black.",
+            "impliedMeaning": "The overnight frost likely caused the damage."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L48_Q3",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "Think about where you check in luggage and find duty-free shops.",
-            "explanation": "'Checked in her luggage' = submitted bags for transport. 'Duty-free shop' = a shop selling goods without import tax, found exclusively in airports. Both pieces of vocabulary together make the location unmistakably an airport.",
-            "textToSpeak": "She checked in her luggage and headed to the duty-free shop.",
-            "question": "Where is she?",
+            "instruction": "Think it through — what do the clues add up to?",
+            "hint": "Think about what effect losing his notes had before the presentation.",
+            "explanation": "Notes going missing right before a presentation followed by scrambling to rewrite key points from memory suggests the lost notes caused the panic.",
+            "textToSpeak": "His notes went missing minutes before the presentation, so he scrambled to rewrite the key points from memory.",
+            "question": "What most likely caused him to scramble?",
             "options": [
-                "At a shopping centre",
-                "At an airport"
+                "His notes went missing",
+                "He arrived early to prepare"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
-            "emoji": "🧳",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "📄",
+            "literalMeaning": "His notes went missing and he rewrote points from memory.",
+            "impliedMeaning": "The missing notes caused him to scramble."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L49_Q1",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "Think about what consistent early arrival tells you about someone's character.",
-            "explanation": "Consistently arriving early (not just on time, but 15 minutes early) indicates a habit of punctuality and good organisation. It requires advance planning, good time management, and reliability. This is a character trait, not an accidental behaviour.",
-            "textToSpeak": "She always arrives fifteen minutes early for meetings.",
-            "question": "What can be inferred about her?",
+            "instruction": "Listen closely and infer what is really happening.",
+            "hint": "Think about what would cause the fish tank water to turn cloudy.",
+            "explanation": "Overfeeding the fish for several days followed by the water turning cloudy suggests the excess food caused the cloudiness.",
+            "textToSpeak": "He had been overfeeding the fish for days, and now the tank water looked cloudy and dull.",
+            "question": "What most likely caused the cloudy water?",
             "options": [
-                "She doesn't trust public transport",
-                "She is punctual and well-organised"
+                "Overfeeding the fish",
+                "Adding new decorations"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
-            "emoji": "⏰",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "🐠",
+            "literalMeaning": "He overfed the fish and the water turned cloudy.",
+            "impliedMeaning": "Overfeeding likely caused the cloudy water."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L49_Q2",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "What does regular charitable giving tell you about someone?",
-            "explanation": "Regular, substantial charitable giving indicates generosity - prioritising others' needs over personal wealth accumulation. It's a choice, not an obligation. The inference is about character (generous) based on behaviour (monthly donations), not about income level.",
-            "textToSpeak": "He donated a significant part of his salary to charity every month.",
-            "question": "What can be inferred about him?",
+            "instruction": "What does the situation suggest? Make your best guess.",
+            "hint": "Think about what effect the canceled flight had on her plans.",
+            "explanation": "A canceled flight followed by scrambling to rebook a hotel and find a new route suggests the cancellation disrupted her travel plans.",
+            "textToSpeak": "Her flight was suddenly canceled, and she scrambled to rebook a hotel and find another route.",
+            "question": "What most likely caused her to scramble?",
             "options": [
-                "He has no personal expenses",
-                "He is a generous person"
+                "Her flight was canceled",
+                "Her flight arrived early"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
-            "emoji": "💼",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "✈️",
+            "literalMeaning": "Her flight was canceled and she scrambled to rebook.",
+            "impliedMeaning": "The canceled flight disrupted her plans."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L49_Q3",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "Think about what reading terms and conditions reveals about decision-making style.",
-            "explanation": "Reading terms and conditions (usually long and detailed) before agreeing shows careful, thorough decision-making. It's not the same as general suspicion - it's due diligence. This suggests a methodical character who protects themselves through information.",
-            "textToSpeak": "She checked the terms and conditions before agreeing to anything.",
-            "question": "What can you infer about her?",
+            "instruction": "Use the clues to work out the meaning.",
+            "hint": "Think about what would cause the bread dough to rise so much overnight.",
+            "explanation": "Warm yeast added the night before followed by dough overflowing the bowl by morning suggests the yeast's activity caused the rise.",
+            "textToSpeak": "She had added warm yeast the night before, and by morning, the dough had overflowed the bowl.",
+            "question": "What most likely caused the dough to overflow?",
             "options": [
-                "She is careful and thorough",
-                "She doesn't trust the company at all"
+                "The bowl was too small from the start",
+                "The warm yeast caused it to rise"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference",
-            "emoji": "📜",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "🍞",
+            "literalMeaning": "Warm yeast was added and the dough overflowed by morning.",
+            "impliedMeaning": "The warm yeast likely caused the dough to rise so much."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L50_Q1",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "What would you normally expect after twelve hours of work?",
-            "explanation": "'Despite' introduces a surprising contrast: twelve hours of work → normally = exhaustion. 'Didn't feel tired' contradicts the expected outcome. 'Despite' + surprising result is a key signal of unexpected contrast. The surprise is the absence of tiredness, not the work itself.",
-            "textToSpeak": "Despite working for twelve hours, she didn't feel tired.",
-            "question": "What is surprising about this?",
+            "instruction": "What can you infer from what you hear?",
+            "hint": "Think about what effect the broken heater had on the apartment.",
+            "explanation": "A broken heater followed by everyone wrapping themselves in blankets and wearing coats indoors suggests the cold caused people to bundle up.",
+            "textToSpeak": "The heater stopped working, and soon everyone in the apartment was wrapped in blankets, wearing coats indoors.",
+            "question": "What most likely caused people to bundle up?",
             "options": [
-                "She wasn't tired after twelve hours of work",
-                "She worked quickly"
+                "The broken heater made it cold",
+                "New blankets arrived as a gift"
             ],
             "correctAnswerIndex": 0,
             "subtype": "listeningInference",
-            "emoji": "😴",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "🧣",
+            "literalMeaning": "The heater broke and everyone bundled up in blankets.",
+            "impliedMeaning": "The broken heater likely made the apartment cold."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L50_Q2",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "What does 'not exactly the world's greatest' imply?",
-            "explanation": "'Not exactly' softens a critical statement. 'The world's greatest cook' is a hyperbolic positive that, when negated, becomes mild criticism. Together: he's not a good cook, expressed diplomatically with understatement. British understatement often works this way.",
-            "textToSpeak": "He's not exactly the world's greatest cook.",
-            "question": "What is the speaker suggesting?",
+            "instruction": "Listen for the clues behind the words.",
+            "hint": "Think about what would cause the sudden silence in the office after the announcement.",
+            "explanation": "News of unexpected layoffs followed by the office falling completely silent suggests the announcement caused the shocked reaction.",
+            "textToSpeak": "The manager announced unexpected layoffs, and the entire office fell completely silent.",
+            "question": "What most likely caused the silence?",
             "options": [
-                "He is not a very good cook",
-                "He is a brilliant cook"
+                "It was the end of the workday",
+                "The layoff announcement shocked everyone"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference",
-            "emoji": "🎯",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "😶",
+            "literalMeaning": "Layoffs were announced and the office fell silent.",
+            "impliedMeaning": "The layoff announcement likely caused the shocked silence."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L50_Q3",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "What does 'plucked up the courage' tell you about the action?",
-            "explanation": "'Pluck up the courage' = gather enough bravery to do something difficult or anxiety-inducing. 'Finally' suggests it took a long time - she'd been putting it off. Together: she'd been avoiding a conversation she found intimidating and eventually forced herself to do it.",
-            "textToSpeak": "She finally plucked up the courage to speak to her manager.",
-            "question": "What is the real meaning behind this?",
+            "instruction": "What is most likely true here?",
+            "hint": "Think about what effect the spilled coffee had on his laptop.",
+            "explanation": "Coffee spilling directly onto the keyboard followed by the screen flickering and going black suggests the spill caused the laptop to fail.",
+            "textToSpeak": "Coffee splashed straight onto the keyboard, and seconds later the screen flickered and went completely black.",
+            "question": "What most likely caused the laptop to fail?",
             "options": [
-                "She had been hesitating because it felt difficult",
-                "Talking to her manager felt easy"
+                "The spilled coffee",
+                "A software update finishing"
             ],
             "correctAnswerIndex": 0,
             "subtype": "listeningInference",
-            "emoji": "💼",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "☕",
+            "literalMeaning": "Coffee spilled on the keyboard and the screen went black.",
+            "impliedMeaning": "The spilled coffee most likely caused the laptop to fail."
         }
     ]
 }

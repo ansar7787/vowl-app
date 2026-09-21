@@ -6,691 +6,691 @@
         {
             "id": "LIS_SOUNDIMAGEMATCH_L11_Q1",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "Listen for the word that names who or what the sentence describes.",
-            "explanation": "Chair is the answer — a piece of furniture you sit on.",
-            "textToSpeak": "The old chair creaked when she sat down.",
+            "instruction": "Tap the picture that matches what you hear.",
+            "hint": "The colored dot shows the color. Match it to the object.",
+            "explanation": "Red is the color and backpack is the object, so the red dot with the backpack fits. The other pictures show the same bag in other colors.",
+            "textToSpeak": "She's carrying a red backpack.",
             "options": [
-                "milk",
-                "chair",
-                "hat",
-                "ball"
+                "blue backpack",
+                "yellow backpack",
+                "green backpack",
+                "red backpack"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "subtype": "soundImageMatch",
-            "emoji": "🪑",
+            "emoji": "🔴🎒",
             "optionEmojis": [
-                "🥛",
-                "🪑",
-                "🎩",
-                "⚽"
+                "🔵🎒",
+                "🟡🎒",
+                "🟢🎒",
+                "🔴🎒"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L11_Q2",
             "interactionType": "match",
             "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "The correct picture matches exactly one word in the sentence.",
-            "explanation": "The word you needed was bird — a small animal with feathers that can fly. Recall: fed the bird some seeds.",
-            "textToSpeak": "The children fed the bird some seeds.",
+            "hint": "Listen for how he feels, not what he does.",
+            "explanation": "Excited means very happy and full of energy about something. The star-eyed face shows that feeling.",
+            "textToSpeak": "He's so excited about the trip!",
             "options": [
-                "banana",
-                "book",
-                "milk",
-                "bird"
+                "sad",
+                "sleepy",
+                "angry",
+                "excited"
             ],
             "correctAnswerIndex": 3,
             "subtype": "soundImageMatch",
-            "emoji": "🐦",
+            "emoji": "🤩",
             "optionEmojis": [
-                "🍌",
-                "📖",
-                "🥛",
-                "🐦"
+                "😢",
+                "😴",
+                "😠",
+                "🤩"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L11_Q3",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "Listen closely to the middle of the sentence for the key word.",
-            "explanation": "The correct answer is shoe: something you wear to cover your foot. Listen again: lost a shoe at the party.",
-            "textToSpeak": "She lost a shoe at the party.",
+            "instruction": "Listen carefully, then tap the matching picture.",
+            "hint": "The object stays the same. Listen for how many.",
+            "explanation": "'Two loaves' gives the number. Number words like one, two and three change the picture, so the pair of breads is right.",
+            "textToSpeak": "I bought two loaves of bread.",
             "options": [
-                "dog",
-                "book",
-                "chair",
-                "shoe"
+                "two loaves",
+                "three loaves",
+                "four loaves",
+                "one loaf"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "soundImageMatch",
-            "emoji": "👟",
+            "emoji": "🍞🍞",
             "optionEmojis": [
-                "🐶",
-                "📖",
-                "🪑",
-                "👟"
+                "🍞🍞",
+                "🍞🍞🍞",
+                "🍞🍞🍞🍞",
+                "🍞"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L12_Q1",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "Pay attention to the noun — the person, animal, or thing.",
-            "explanation": "Egg is the key word here. It means an oval food that comes from a chicken. Context: laid an egg this morning.",
-            "textToSpeak": "The hen laid an egg this morning.",
+            "instruction": "Listen to the speaker and tap the picture that fits.",
+            "hint": "Two things are described: the drink and its temperature.",
+            "explanation": "The sentence gives the drink (tea) and its temperature (very hot). Only the steaming tea gets both right; the others miss one detail.",
+            "textToSpeak": "Be careful, the tea is very hot.",
             "options": [
-                "bird",
-                "brother",
-                "egg",
-                "cat"
+                "cold soup",
+                "iced tea",
+                "hot tea",
+                "hot soup"
             ],
             "correctAnswerIndex": 2,
             "subtype": "soundImageMatch",
-            "emoji": "🥚",
+            "emoji": "🍵🔥",
             "optionEmojis": [
-                "🐦",
-                "👦",
-                "🥚",
-                "🐱"
+                "🍲🧊",
+                "🍵🧊",
+                "🍵🔥",
+                "🍲🔥"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L12_Q2",
             "interactionType": "match",
             "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "The answer names the thing the sentence is talking about.",
-            "explanation": "Dog fits best here — a common pet animal that barks. From the audio: walks her dog every evening.",
-            "textToSpeak": "She walks her dog every evening.",
+            "hint": "Same notebook, different colors. Listen for the color word.",
+            "explanation": "The customer chooses the purple one. In requests like 'I'd like the ..., please', the color tells you which item.",
+            "textToSpeak": "I'd like the purple notebook, please.",
             "options": [
-                "shoe",
-                "apple",
-                "dog",
-                "pencil"
+                "green notebook",
+                "orange notebook",
+                "blue notebook",
+                "purple notebook"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "subtype": "soundImageMatch",
-            "emoji": "🐶",
+            "emoji": "🟣📓",
             "optionEmojis": [
-                "👟",
-                "🍎",
-                "🐶",
-                "✏️"
+                "🟢📓",
+                "🟠📓",
+                "🔵📓",
+                "🟣📓"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L12_Q3",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "Listen for a simple, everyday word you already know.",
-            "explanation": "The right choice is sister, meaning a girl who has the same parents as you. Specifically: is younger than him.",
-            "textToSpeak": "His sister is younger than him.",
+            "instruction": "Listen and tap the picture that goes with what you hear.",
+            "hint": "Catch the number before the noun.",
+            "explanation": "'Three birds' means one, two, three: the picture with three birds fits. Numbers usually come just before the thing they count.",
+            "textToSpeak": "There are three birds on the wire.",
             "options": [
-                "pencil",
-                "apple",
-                "sister",
-                "bread"
+                "three birds",
+                "four birds",
+                "two birds",
+                "one bird"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "soundImageMatch",
-            "emoji": "👧",
+            "emoji": "🐦🐦🐦",
             "optionEmojis": [
-                "✏️",
-                "🍎",
-                "👧",
-                "🍞"
+                "🐦🐦🐦",
+                "🐦🐦🐦🐦",
+                "🐦🐦",
+                "🐦"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L13_Q1",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "The answer is something you could point to in a picture.",
-            "explanation": "Listen for hat — something you wear to cover your head. Context: blew his hat off.",
-            "textToSpeak": "The wind blew his hat off.",
+            "instruction": "Tap the picture that matches what you hear.",
+            "hint": "Listen for how she looked after the trip.",
+            "explanation": "Tired means needing rest. 'After the long trip' explains why she looks that way, and the yawning face matches.",
+            "textToSpeak": "She looked tired after the long trip.",
             "options": [
-                "cat",
-                "banana",
-                "hat",
-                "sister"
+                "happy",
+                "surprised",
+                "scared",
+                "tired"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "subtype": "soundImageMatch",
-            "emoji": "🎩",
+            "emoji": "🥱",
             "optionEmojis": [
-                "🐱",
-                "🍌",
-                "🎩",
-                "👧"
+                "😄",
+                "😲",
+                "😨",
+                "🥱"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L13_Q2",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "The key word is easy to picture in your mind.",
-            "explanation": "The audio names milk, which means a white drink that comes from cows. That part goes: out of milk again.",
-            "textToSpeak": "We are out of milk again.",
+            "instruction": "Listen carefully, then tap the matching picture.",
+            "hint": "Listen for what the sky is like.",
+            "explanation": "'Dark outside' means it's night. The moon is the picture for night; sunrise and the midday sun are bright times of day.",
+            "textToSpeak": "We eat dinner late, when it's already dark outside.",
             "options": [
-                "father",
-                "bird",
-                "milk",
-                "hat"
+                "afternoon",
+                "morning",
+                "night",
+                "rain"
             ],
             "correctAnswerIndex": 2,
             "subtype": "soundImageMatch",
-            "emoji": "🥛",
+            "emoji": "🌙",
             "optionEmojis": [
-                "👨",
-                "🐦",
-                "🥛",
-                "🎩"
+                "☀️",
+                "🌅",
+                "🌙",
+                "🌧️"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L13_Q3",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "One word matches a picture you can see clearly — listen for it.",
-            "explanation": "The audio names apple, which means a round fruit that is often red or green. The line was: picked an apple from the tree.",
-            "textToSpeak": "He picked an apple from the tree.",
+            "instruction": "Listen and tap the picture that goes with what you hear.",
+            "hint": "You need two details: the color and the clothing.",
+            "explanation": "Yellow is the color and scarf is the item. Yellow cap has the right color but the wrong item; red scarf has the reverse.",
+            "textToSpeak": "Grandpa is wearing a yellow scarf.",
             "options": [
-                "dog",
-                "mother",
-                "apple",
-                "cat"
+                "red scarf",
+                "yellow scarf",
+                "yellow cap",
+                "red cap"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "soundImageMatch",
-            "emoji": "🍎",
+            "emoji": "🟡🧣",
             "optionEmojis": [
-                "🐶",
-                "👩",
-                "🍎",
-                "🐱"
+                "🔴🧣",
+                "🟡🧣",
+                "🟡🧢",
+                "🔴🧢"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L14_Q1",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "Focus on what the sentence is really about.",
-            "explanation": "Father fits best here — a man who has a child. You heard: reads the news every morning.",
-            "textToSpeak": "Her father reads the news every morning.",
+            "instruction": "Tap the picture that matches what you hear.",
+            "hint": "There are two fruits and two numbers to keep track of.",
+            "explanation": "Two apples and one orange matches 🍎🍎🍊. The option with the numbers swapped uses the same fruit but the wrong amounts.",
+            "textToSpeak": "Please give me two apples and one orange.",
             "options": [
-                "hat",
-                "father",
-                "dog",
-                "banana"
+                "one apple, two oranges",
+                "three apples",
+                "two apples, one orange",
+                "three oranges"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "subtype": "soundImageMatch",
-            "emoji": "👨",
+            "emoji": "🍎🍎🍊",
             "optionEmojis": [
-                "🎩",
-                "👨",
-                "🐶",
-                "🍌"
+                "🍎🍊🍊",
+                "🍎🍎🍎",
+                "🍎🍎🍊",
+                "🍊🍊🍊"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L14_Q2",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "One of the four options is said out loud. Listen carefully.",
-            "explanation": "You were listening for bread: a common food made from baked flour. Reference: smells great.",
-            "textToSpeak": "The bread on the table smells great.",
+            "instruction": "Listen carefully, then tap the matching picture.",
+            "hint": "Listen for the place and whether it is open or closed.",
+            "explanation": "The bank is the place and 'closed' is its state. The locked bank matches; the open bank has the opposite state.",
+            "textToSpeak": "The bank is closed today.",
             "options": [
-                "father",
-                "sister",
-                "bread",
-                "hat"
+                "closed shop",
+                "closed bank",
+                "open shop",
+                "open bank"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "soundImageMatch",
-            "emoji": "🍞",
+            "emoji": "🏦🔒",
             "optionEmojis": [
-                "👨",
-                "👧",
-                "🍞",
-                "🎩"
+                "🏪🔒",
+                "🏦🔒",
+                "🏪🔓",
+                "🏦🔓"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L14_Q3",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "Listen for a simple, everyday word you already know.",
-            "explanation": "Hat is correct. In everyday terms, it's something you wear to cover your head. From the audio: bought a new hat for the trip.",
-            "textToSpeak": "He bought a new hat for the trip.",
+            "instruction": "Listen and tap the picture that goes with what you hear.",
+            "hint": "Listen carefully to the number before o'clock.",
+            "explanation": "'Seven o'clock' is exactly 7:00. Seven and eleven can sound alike in fast speech, so listen for the whole word.",
+            "textToSpeak": "The train leaves at seven o'clock.",
             "options": [
-                "brother",
-                "book",
-                "hat",
-                "sister"
+                "8:00",
+                "1:00",
+                "7:00",
+                "11:00"
             ],
             "correctAnswerIndex": 2,
             "subtype": "soundImageMatch",
-            "emoji": "🎩",
+            "emoji": "🕖",
             "optionEmojis": [
-                "👦",
-                "📖",
-                "🎩",
-                "👧"
+                "🕗",
+                "🕐",
+                "🕖",
+                "🕚"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L15_Q1",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "Listen for the name of the person or thing in the sentence.",
-            "explanation": "Ball is right. Think of it as a round object used in many games. From the audio: chased the ball across the park.",
-            "textToSpeak": "The dog chased the ball across the park.",
+            "instruction": "Tap the picture that matches what you hear.",
+            "hint": "Both the color and the type of bag matter.",
+            "explanation": "The bag is black, and it's a handbag rather than a backpack. Each wrong option gets one of those two details wrong.",
+            "textToSpeak": "I lost my black handbag.",
             "options": [
-                "mother",
-                "ball",
-                "father",
-                "banana"
+                "white handbag",
+                "white backpack",
+                "black handbag",
+                "black backpack"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "subtype": "soundImageMatch",
-            "emoji": "⚽",
+            "emoji": "⚫👜",
             "optionEmojis": [
-                "👩",
-                "⚽",
-                "👨",
-                "🍌"
+                "⚪👜",
+                "⚪🎒",
+                "⚫👜",
+                "⚫🎒"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L15_Q2",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "The answer is the main person, animal, or object in the sentence.",
-            "explanation": "Milk means a white drink that comes from cows. Reference: drank a bottle of milk.",
-            "textToSpeak": "The baby drank a bottle of milk.",
+            "instruction": "Listen and tap the picture that goes with what you hear.",
+            "hint": "Count the children and count the umbrellas.",
+            "explanation": "Two kids and one umbrella are both stated. 'Sharing' tells you the kids use the same umbrella.",
+            "textToSpeak": "Two kids are sharing one umbrella.",
             "options": [
-                "milk",
-                "cat",
-                "book",
-                "pencil"
+                "one kid, one umbrella",
+                "two kids, two umbrellas",
+                "three kids, one umbrella",
+                "two kids, one umbrella"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "subtype": "soundImageMatch",
-            "emoji": "🥛",
+            "emoji": "👧👦☂️",
             "optionEmojis": [
-                "🥛",
-                "🐱",
-                "📖",
-                "✏️"
+                "👧☂️",
+                "👧👦☂️☂️",
+                "👧👦👶☂️",
+                "👧👦☂️"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L15_Q3",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "The answer names the thing the sentence is talking about.",
-            "explanation": "The correct answer is bird: a small animal with feathers that can fly.",
-            "textToSpeak": "We heard a bird singing outside.",
+            "instruction": "Listen to the speaker and tap the picture that fits.",
+            "hint": "Listen for what the girl began to do.",
+            "explanation": "'Started to cry' means tears began. The crying face fits; scared or angry faces would need different words.",
+            "textToSpeak": "The little girl started to cry.",
             "options": [
-                "bird",
-                "mother",
-                "bread",
-                "banana"
+                "scared",
+                "laughing",
+                "crying",
+                "angry"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "soundImageMatch",
-            "emoji": "🐦",
+            "emoji": "😢",
             "optionEmojis": [
-                "🐦",
-                "👩",
-                "🍞",
-                "🍌"
+                "😨",
+                "😂",
+                "😢",
+                "😠"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L16_Q1",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "Listen for the word that names who or what the sentence describes.",
-            "explanation": "You were listening for cat: a common pet animal that says meow. Reference: jumped onto the kitchen table.",
-            "textToSpeak": "A cat jumped onto the kitchen table.",
+            "instruction": "Listen carefully, then tap the matching picture.",
+            "hint": "Pay attention to the word that tells you the size.",
+            "explanation": "'Tall' describes height, and a building is what is tall here. The tower is right; a house is usually low.",
+            "textToSpeak": "Look at that tall building!",
             "options": [
-                "cat",
-                "chair",
-                "baby",
-                "spoon"
+                "tall building",
+                "tent",
+                "shop",
+                "small house"
             ],
             "correctAnswerIndex": 0,
             "subtype": "soundImageMatch",
-            "emoji": "🐱",
+            "emoji": "🏢",
             "optionEmojis": [
-                "🐱",
-                "🪑",
-                "👶",
-                "🥄"
+                "🏢",
+                "⛺",
+                "🏪",
+                "🏠"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L16_Q2",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "The correct picture matches exactly one word in the sentence.",
-            "explanation": "The audio names sister, which means a girl who has the same parents as you. Listen again: called my sister last night.",
-            "textToSpeak": "I called my sister last night.",
+            "instruction": "Listen and tap the picture that goes with what you hear.",
+            "hint": "Pay attention to both the number and the color.",
+            "explanation": "Three and red are both said. The other options change the number, the color, or both.",
+            "textToSpeak": "She has three red balloons.",
             "options": [
-                "sister",
-                "spoon",
-                "milk",
-                "hat"
+                "two blue balloons",
+                "two red balloons",
+                "three red balloons",
+                "three blue balloons"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "soundImageMatch",
-            "emoji": "👧",
+            "emoji": "🔴🎈🎈🎈",
             "optionEmojis": [
-                "👧",
-                "🥄",
-                "🥛",
-                "🎩"
+                "🔵🎈🎈",
+                "🔴🎈🎈",
+                "🔴🎈🎈🎈",
+                "🔵🎈🎈🎈"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L16_Q3",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "Listen closely to the middle of the sentence for the key word.",
-            "explanation": "The right choice is shoe, meaning something you wear to cover your foot. That part goes: chewed on my shoe.",
-            "textToSpeak": "The dog chewed on my shoe.",
+            "instruction": "Tap the picture that matches what you hear.",
+            "hint": "The weather and the time of day both matter.",
+            "explanation": "Snowed is the weather and 'all night' is the time. Only the picture with snow and the moon shows both.",
+            "textToSpeak": "It snowed all night.",
             "options": [
-                "ball",
-                "shoe",
-                "father",
-                "bird"
+                "snow by day",
+                "snow at night",
+                "rain by day",
+                "rain at night"
             ],
             "correctAnswerIndex": 1,
             "subtype": "soundImageMatch",
-            "emoji": "👟",
+            "emoji": "❄️🌙",
             "optionEmojis": [
-                "⚽",
-                "👟",
-                "👨",
-                "🐦"
+                "❄️☀️",
+                "❄️🌙",
+                "🌧️☀️",
+                "🌧️🌙"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L17_Q1",
             "interactionType": "match",
             "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "Try picturing the sentence as you listen.",
-            "explanation": "Egg is the key word here. It means an oval food that comes from a chicken. Specifically: cracked an egg into the bowl.",
-            "textToSpeak": "She cracked an egg into the bowl.",
+            "hint": "Listen for how the speaker feels.",
+            "explanation": "'I'm really hot' describes the speaker's body, and the sweaty face shows it. Asking for an open window supports the idea.",
+            "textToSpeak": "Open the window, please. I'm really hot.",
             "options": [
-                "egg",
-                "ball",
-                "brother",
-                "father"
+                "hot",
+                "sleepy",
+                "sad",
+                "cold"
             ],
             "correctAnswerIndex": 0,
             "subtype": "soundImageMatch",
-            "emoji": "🥚",
+            "emoji": "🥵",
             "optionEmojis": [
-                "🥚",
-                "⚽",
-                "👦",
-                "👨"
+                "🥵",
+                "😴",
+                "😢",
+                "🥶"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L17_Q2",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "One word matches a picture you can see clearly — listen for it.",
-            "explanation": "The audio names dog, which means a common pet animal that barks. That part goes: ran across the yard.",
-            "textToSpeak": "A small dog ran across the yard.",
+            "instruction": "Listen and tap the picture that goes with what you hear.",
+            "hint": "Both the color and the object can change between pictures.",
+            "explanation": "The speaker wants the green bottle. The green cup has the right color but is the wrong thing.",
+            "textToSpeak": "Pass me the green bottle, please.",
             "options": [
-                "shoe",
-                "dog",
-                "spoon",
-                "milk"
+                "blue cup",
+                "green bottle",
+                "green cup",
+                "blue bottle"
             ],
             "correctAnswerIndex": 1,
             "subtype": "soundImageMatch",
-            "emoji": "🐶",
+            "emoji": "🟢🧴",
             "optionEmojis": [
-                "👟",
-                "🐶",
-                "🥄",
-                "🥛"
+                "🔵🥤",
+                "🟢🧴",
+                "🟢🥤",
+                "🔵🧴"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L17_Q3",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "Focus on what the sentence is really about.",
-            "explanation": "Chair: a piece of furniture you sit on. Notice this detail: only one chair in this room.",
-            "textToSpeak": "There is only one chair in this room.",
+            "instruction": "Tap the picture that matches what you hear.",
+            "hint": "Listen for the amount that is left.",
+            "explanation": "'Only one seat left' means a single seat remains. 'No seats' would be the opposite, so a single seat is correct.",
+            "textToSpeak": "There's only one seat left on the bus.",
             "options": [
-                "book",
-                "chair",
-                "hat",
-                "shoe"
+                "one seat",
+                "three seats",
+                "two seats",
+                "no seats"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "soundImageMatch",
-            "emoji": "🪑",
+            "emoji": "💺",
             "optionEmojis": [
-                "📖",
-                "🪑",
-                "🎩",
-                "👟"
+                "💺",
+                "💺💺💺",
+                "💺💺",
+                "🚫💺"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L18_Q1",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "Pay attention to the noun — the person, animal, or thing.",
-            "explanation": "Listen for mother — a woman who has a child. From the audio: hugged her mother.",
-            "textToSpeak": "The little girl hugged her mother.",
+            "instruction": "Listen to the speaker and tap the picture that fits.",
+            "hint": "Focus on who the sentence describes.",
+            "explanation": "Grandfather means the father of a parent, and 'very old' agrees with the elderly man. A boy or baby would not fit.",
+            "textToSpeak": "My grandfather is very old.",
             "options": [
-                "mother",
-                "milk",
-                "ball",
-                "spoon"
+                "old man",
+                "baby",
+                "woman",
+                "boy"
             ],
             "correctAnswerIndex": 0,
             "subtype": "soundImageMatch",
-            "emoji": "👩",
+            "emoji": "👴",
             "optionEmojis": [
+                "👴",
+                "👶",
                 "👩",
-                "🥛",
-                "⚽",
-                "🥄"
+                "👦"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L18_Q2",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "Listen for a simple, everyday word you already know.",
-            "explanation": "Book is the word actually spoken — a set of printed pages you read. Straight from the audio: borrowed a book from my friend.",
-            "textToSpeak": "I borrowed a book from my friend.",
+            "instruction": "Listen and tap the picture that goes with what you hear.",
+            "hint": "Track the color and the piece of clothing.",
+            "explanation": "Blue is the color and shirt is the clothing. Blue trousers share only the color.",
+            "textToSpeak": "My teacher is wearing a blue shirt today.",
             "options": [
-                "banana",
-                "book",
-                "milk",
-                "father"
+                "red shirt",
+                "blue shirt",
+                "blue trousers",
+                "red trousers"
             ],
             "correctAnswerIndex": 1,
             "subtype": "soundImageMatch",
-            "emoji": "📖",
+            "emoji": "🔵👕",
             "optionEmojis": [
-                "🍌",
-                "📖",
-                "🥛",
-                "👨"
+                "🔴👕",
+                "🔵👕",
+                "🔵👖",
+                "🔴👖"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L18_Q3",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "The answer is the main person, animal, or object in the sentence.",
-            "explanation": "The right choice is pencil, meaning a tool used for writing or drawing. Context: need a pencil to finish this.",
-            "textToSpeak": "I need a pencil to finish this.",
+            "instruction": "Tap the picture that matches what you hear.",
+            "hint": "Catch how he felt before the exam.",
+            "explanation": "Nervous means worried about something that is about to happen. 'Before the exam' explains the feeling.",
+            "textToSpeak": "He was nervous before the exam.",
             "options": [
-                "brother",
-                "mother",
-                "pencil",
-                "apple"
+                "sick",
+                "angry",
+                "bored",
+                "nervous"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "subtype": "soundImageMatch",
-            "emoji": "✏️",
+            "emoji": "😰",
             "optionEmojis": [
-                "👦",
-                "👩",
-                "✏️",
-                "🍎"
+                "🤒",
+                "😠",
+                "😐",
+                "😰"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L19_Q1",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "The answer names the thing the sentence is talking about.",
-            "explanation": "Apple is the answer — a round fruit that is often red or green. Listen again: an apple in my bag.",
-            "textToSpeak": "There is an apple in my bag.",
+            "instruction": "Listen and tap the picture that goes with what you hear.",
+            "hint": "Keep track of two things and their numbers.",
+            "explanation": "Two pencils and a ruler means 2 + 1. The picture with those numbers is right; the swapped version reverses them.",
+            "textToSpeak": "I need two pencils and a ruler.",
             "options": [
-                "shoe",
-                "apple",
-                "brother",
-                "dog"
+                "one pencil, two rulers",
+                "two pencils, one ruler",
+                "three pencils, one ruler",
+                "one pencil, one ruler"
             ],
             "correctAnswerIndex": 1,
             "subtype": "soundImageMatch",
-            "emoji": "🍎",
+            "emoji": "✏️✏️📏",
             "optionEmojis": [
-                "👟",
-                "🍎",
-                "👦",
-                "🐶"
+                "✏️📏📏",
+                "✏️✏️📏",
+                "✏️✏️✏️📏",
+                "✏️📏"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L19_Q2",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "Listen for the name of the person or thing in the sentence.",
-            "explanation": "Listen for baby — a very young child.",
-            "textToSpeak": "Our neighbor has a new baby.",
+            "instruction": "Listen carefully, then tap the matching picture.",
+            "hint": "Focus on both the hour and the 'half'.",
+            "explanation": "'Half past seven' is 7:30, thirty minutes after seven. The clock with the hour hand between seven and eight fits.",
+            "textToSpeak": "We usually have breakfast at half past seven.",
             "options": [
-                "ball",
-                "cat",
-                "hat",
-                "baby"
+                "7:30",
+                "8:00",
+                "8:30",
+                "7:00"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "soundImageMatch",
-            "emoji": "👶",
+            "emoji": "🕢",
             "optionEmojis": [
-                "⚽",
-                "🐱",
-                "🎩",
-                "👶"
+                "🕢",
+                "🕗",
+                "🕣",
+                "🕖"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L19_Q3",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "The answer is something you could point to in a picture.",
-            "explanation": "The sentence points to brother — a boy who has the same parents as you. Recall: helped their brother stand up.",
-            "textToSpeak": "The kids helped their brother stand up.",
+            "instruction": "Listen to the speaker and tap the picture that fits.",
+            "hint": "Both the color and the clothing matter here.",
+            "explanation": "Green is the color and socks are the item. Green gloves match the color but not the item.",
+            "textToSpeak": "She bought a pair of green socks.",
             "options": [
-                "brother",
-                "cat",
-                "apple",
-                "book"
+                "green gloves",
+                "green socks",
+                "red gloves",
+                "red socks"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "soundImageMatch",
-            "emoji": "👦",
+            "emoji": "🟢🧦",
             "optionEmojis": [
-                "👦",
-                "🐱",
-                "🍎",
-                "📖"
+                "🟢🧤",
+                "🟢🧦",
+                "🔴🧤",
+                "🔴🧦"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L20_Q1",
             "interactionType": "match",
             "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "Pay attention to the noun — the person, animal, or thing.",
-            "explanation": "Father is the answer — a man who has a child. Reference: waved at his father.",
-            "textToSpeak": "The boy waved at his father.",
+            "hint": "Check the count first, then the color.",
+            "explanation": "Two and green are both said. Wrong options change either the number or the color.",
+            "textToSpeak": "Two green bikes are parked outside.",
             "options": [
-                "cat",
-                "ball",
-                "hat",
-                "father"
+                "one green bike",
+                "two red bikes",
+                "two green bikes",
+                "one red bike"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "soundImageMatch",
-            "emoji": "👨",
+            "emoji": "🟢🚲🚲",
             "optionEmojis": [
-                "🐱",
-                "⚽",
-                "🎩",
-                "👨"
+                "🟢🚲",
+                "🔴🚲🚲",
+                "🟢🚲🚲",
+                "🔴🚲"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L20_Q2",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "The key word is easy to picture in your mind.",
-            "explanation": "The word you needed was spoon — a small tool used for eating soup or cereal. Context: needs a spoon for his soup.",
-            "textToSpeak": "He needs a spoon for his soup.",
+            "instruction": "Tap the picture that matches what you hear.",
+            "hint": "Listen for how he reacted to the gift.",
+            "explanation": "Surprised means you didn't expect something. The wide-eyed face matches his reaction to the gift.",
+            "textToSpeak": "He was really surprised by the gift.",
             "options": [
-                "baby",
-                "banana",
-                "spoon",
-                "apple"
+                "surprised",
+                "angry",
+                "sleepy",
+                "sad"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "soundImageMatch",
-            "emoji": "🥄",
+            "emoji": "😲",
             "optionEmojis": [
-                "👶",
-                "🍌",
-                "🥄",
-                "🍎"
+                "😲",
+                "😠",
+                "😴",
+                "😢"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L20_Q3",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "One of the four options is said out loud. Listen carefully.",
-            "explanation": "Banana: a long yellow fruit. From the audio: sliced a banana onto her cereal.",
-            "textToSpeak": "She sliced a banana onto her cereal.",
+            "instruction": "Listen to the speaker and tap the picture that fits.",
+            "hint": "The color and the count both change between options.",
+            "explanation": "Green and three are both stated. Each wrong option gets either the color or the number wrong.",
+            "textToSpeak": "The basket has three green apples.",
             "options": [
-                "father",
-                "bird",
-                "banana",
-                "brother"
+                "two red apples",
+                "three red apples",
+                "two green apples",
+                "three green apples"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "subtype": "soundImageMatch",
-            "emoji": "🍌",
+            "emoji": "🍏🍏🍏",
             "optionEmojis": [
-                "👨",
-                "🐦",
-                "🍌",
-                "👦"
+                "🍎🍎",
+                "🍎🍎🍎",
+                "🍏🍏",
+                "🍏🍏🍏"
             ]
         }
     ]

@@ -6,13 +6,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L171_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch weeks versus months, and 'coulda' versus 'shoulda'.",
-            "explanation": "'Look' and 'I mean' are discourse markers that soften a complaint, buying the speaker a second to organise their thoughts before the real point lands. 'Their minds' and 'the brief' describe different kinds of inconsistency from management.",
-            "textToSpeak": "Look, I mean, we coulda finished this weeks ago if management hadn't jus' kept changing their minds.",
+            "instruction": "Listen carefully and catch the exact sentence.",
+            "hint": "Catch both halves of the sentence, since the connection between them matters.",
+            "explanation": "Longer sentences often link two ideas with a small connector like 'so' or 'but', and that connector changes how the two halves relate.",
+            "textToSpeak": "The meeting ran long, so we pushed lunch back an hour.",
             "options": [
-                "Look, I mean, we coulda finished this months ago if management hadn't jus' kept changing their minds.",
-                "Look, I mean, we coulda finished this weeks ago if management hadn't jus' kept changing their minds."
+                "The meeting ran short, so we pushed lunch back an hour.",
+                "The meeting ran long, so we pushed lunch back an hour."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -21,13 +21,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L171_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch error versus mistake, and listen for the hidden 'n't'.",
-            "explanation": "This sentence opens with 'honestly' and 'I dunno', two casual softeners, before landing on the crucial hidden 'n't' in 'wouldn't've'. 'Error' and 'mistake' are near-synonyms too, so listen precisely.",
-            "textToSpeak": "Honestly, I dunno how we wouldn't've noticed the error if nobody had jus' reviewed it properly.",
+            "instruction": "They said it fast — what did you actually hear?",
+            "hint": "Listen for the full cause-and-effect relationship in this sentence.",
+            "explanation": "This sentence's second half depends entirely on the first, so losing either part changes the whole meaning of the story.",
+            "textToSpeak": "Since the flight got delayed, we missed the connection.",
             "options": [
-                "Honestly, we dunno how we wouldn't've noticed the error if nobody had jus' reviewed it properly.",
-                "Honestly, I dunno how we wouldn't've noticed the error if nobody had jus' reviewed it properly."
+                "Since the flight got delayed, we made the connection.",
+                "Since the flight got delayed, we missed the connection."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -36,43 +36,43 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L171_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch approve versus accept, and 'em versus 'im.",
-            "explanation": "'At the end of the day' is a common idiom for 'when everything else is considered', often used to introduce the real bottom line. 'Approve' and 'accept' are near-synonyms, so the exact word still matters.",
-            "textToSpeak": "At the end of the day, whatcha reckon's actually gonna convince 'em to approve this?",
+            "instruction": "Natural speech blends words together. Catch the real message.",
+            "hint": "Notice exactly how the two parts of the sentence contrast.",
+            "explanation": "'Even though' signals a contrast between the two halves, so catching that connector changes how you interpret everything after it.",
+            "textToSpeak": "Even though it rained, the event still went ahead.",
             "options": [
-                "At the end of the day, whatcha reckon's actually gonna convince 'em to approve this?",
-                "At the end of the day, whatcha reckon's actually gonna convince 'em to accept this?"
+                "Even though it rained, the event was cancelled.",
+                "Even though it rained, the event still went ahead."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L172_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch 'sound' versus 'look', and listen for the hidden 'n't'.",
-            "explanation": "This sentence ends in a tag question, 'would you?', a common way to seek agreement in an emotional conversation. That hidden 'n't' in 'wouldn't've' is what makes this a gentle accusation rather than a simple observation.",
-            "textToSpeak": "You wouldn't've said that if you'd really thought about how it'd sound, would you?",
+            "instruction": "Listen for the small word that changes the meaning.",
+            "hint": "Track all three parts of this longer sentence.",
+            "explanation": "This sentence has three connected ideas in a row, so hold each one in mind as the sentence moves quickly from the first to the last.",
+            "textToSpeak": "We left early, hit no traffic, and got there right on time.",
             "options": [
-                "You wouldn't've said that if you'd really thought about how it'd sound, would you?",
-                "You wouldn't've said that if you'd really thought about how it'd sound, would you now?"
+                "We left late, hit no traffic, and got there right on time.",
+                "We left early, hit no traffic, and got there right on time."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L172_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Zero in on 'coulda' against 'shoulda', and check we versus they.",
-            "explanation": "This sentence uses a tag question, 'couldn't we?', to invite agreement rather than state a hard fact. 'Coulda' and 'shoulda' subtly change whether this is a neutral observation or a real regret.",
-            "textToSpeak": "We coulda handled that whole thing better as a family, couldn't we, looking back on it now?",
+            "instruction": "Focus on the key detail hidden in the fast sentence.",
+            "hint": "Catch the sequence of events across the whole sentence.",
+            "explanation": "Three-part sentences like this test whether you can follow a full sequence, not just catch isolated words along the way.",
+            "textToSpeak": "She called, left a message, and then texted just in case.",
             "options": [
-                "They coulda handled that whole thing better as a family, couldn't we, looking back on it now?",
-                "We coulda handled that whole thing better as a family, couldn't we, looking back on it now?"
+                "She called, left a message, and then gave up entirely.",
+                "She called, left a message, and then texted just in case."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -81,28 +81,28 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L172_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch 'this time round' versus 'this year', and 'get along' versus 'get on'.",
-            "explanation": "'Get along' and 'get on' mean almost exactly the same thing, so listen for the exact phrase rather than the general idea. This sentence also ends with another tag question, 'don't you think?', inviting a shared opinion.",
-            "textToSpeak": "I reckon she's jus' hoping we'll all jus' get along better this time round, don't you think?",
+            "instruction": "Listen again — which version matches what was said?",
+            "hint": "Notice how the three parts of this sentence build on each other.",
+            "explanation": "This sentence layers a cause, an action, and an outcome together, so listening for the full chain matters more than any single word.",
+            "textToSpeak": "The printer jammed, I called support, and it's fixed now.",
             "options": [
-                "I reckon she's jus' hoping we'll all jus' get along better this time round, don't you think?",
-                "I reckon she's jus' hoping we'll all jus' get along better this year, don't you think?"
+                "The printer jammed, I called support, and it's still broken.",
+                "The printer jammed, I called support, and it's fixed now."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L173_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Listen for the hidden 'n't', and we versus they.",
-            "explanation": "'At the end of the day' introduces the bottom line after weighing up the options. That hidden 'n't' in 'wouldn't've' is what confirms waiting genuinely wasn't worth it.",
-            "textToSpeak": "At the end of the day, we wouldn't've saved much by waiting for the sale anyway.",
+            "instruction": "Listen carefully and catch the exact sentence.",
+            "hint": "Catch the full realistic response, not just the first few words.",
+            "explanation": "Real conversational responses often start with a filler like 'well' before getting to the actual point, so listen past the opening.",
+            "textToSpeak": "Well, it's complicated, but basically we're still figuring it out.",
             "options": [
-                "At the end of the day, we wouldn't've saved much by waiting for the sale anyway.",
-                "At the end of the day, they wouldn't've saved much by waiting for the sale anyway."
+                "Well, it's complicated, but basically we're still figuring it out.",
+                "Well, it's simple, but basically we're still figuring it out."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -111,133 +111,133 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L173_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch 'a lot' versus 'a little', and cheaper versus pricier.",
-            "explanation": "'I mean' signals the speaker is about to clarify or justify a choice, softening what follows. 'A lot better' and 'a little better' suggest very different levels of confidence in the decision.",
-            "textToSpeak": "I mean, we coulda gone with the cheaper option, but this one's jus' built a lot better.",
+            "instruction": "They said it fast — what did you actually hear?",
+            "hint": "Listen for the full natural response, including any hesitation.",
+            "explanation": "Natural speech includes small hesitations like 'I mean' that don't add new information, so filter past them to the real content.",
+            "textToSpeak": "I mean, it could work, but I'm honestly not sure.",
             "options": [
-                "I mean, we coulda gone with the cheaper option, but this one's jus' built a lot better.",
-                "I mean, we coulda gone with the pricier option, but this one's jus' built a lot better."
+                "I mean, it definitely won't work, and I'm sure of it.",
+                "I mean, it could work, but I'm honestly not sure."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L173_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch 'altogether' versus 'completely', and 'splurging' versus 'spending'.",
-            "explanation": "'Splurging' (spending generously on a treat) and 'spending' (a neutral word) carry different tones, so listen for the exact one. This sentence also asks two questions in one breath, so track both halves.",
-            "textToSpeak": "Honestly, whatcha reckon's worth splurging on, and whatcha reckon we should jus' skip altogether?",
+            "instruction": "Natural speech blends words together. Catch the real message.",
+            "hint": "Notice the full, natural shape of this longer response.",
+            "explanation": "This kind of sentence mixes a soft opinion with a specific detail, exactly like a real, unscripted conversational answer.",
+            "textToSpeak": "To be fair, it's probably worth the extra cost.",
             "options": [
-                "Honestly, whatcha reckon's worth splurging on, and whatcha reckon we should jus' skip completely?",
-                "Honestly, whatcha reckon's worth splurging on, and whatcha reckon we should jus' skip altogether?"
+                "To be fair, it's probably worth the extra cost.",
+                "To be fair, it's probably not worth the extra cost."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L174_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch 'somewhere' versus 'something', and 'shoulda' versus 'coulda'.",
-            "explanation": "This sentence embeds a question, 'whether we shoulda...', inside a statement of uncertainty, a genuinely natural structure in casual speech. 'Somewhere new' (a place) and 'something new' (a dish) are subtly different suggestions.",
-            "textToSpeak": "I dunno whether we shoulda jus' stuck with what we know instead of trying somewhere new.",
+            "instruction": "Listen for the small word that changes the meaning.",
+            "hint": "Catch the full description, since several details appear in sequence.",
+            "explanation": "Longer descriptive sentences pack several details together, so track each one as it comes rather than trying to remember the whole thing at once.",
+            "textToSpeak": "It's a small place, a bit out of the way, but really worth the trip.",
             "options": [
-                "I dunno whether we shoulda jus' stuck with what we know instead of trying somewhere new.",
-                "We dunno whether we shoulda jus' stuck with what we know instead of trying somewhere new."
+                "It's a large place, right in the center, but really worth the trip.",
+                "It's a small place, a bit out of the way, but really worth the trip."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L174_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch overcooked versus undercooked, and he versus she.",
-            "explanation": "'Overcooked' and 'undercooked' are opposite kitchen mistakes, so that word decides the whole confession. This sentence is genuinely dense, stacking the hidden 'n't' with 'jus'' twice in one breath.",
-            "textToSpeak": "She wouldn't've admitted the dish was jus' a little overcooked if you hadn't jus' asked her directly.",
+            "instruction": "Focus on the key detail hidden in the fast sentence.",
+            "hint": "Listen for the full picture painted across this sentence.",
+            "explanation": "This sentence builds a complete description across several phrases, so the overall impression matters as much as any single detail.",
+            "textToSpeak": "The room was cramped, noisy, but somehow still charming.",
             "options": [
-                "He wouldn't've admitted the dish was jus' a little overcooked if you hadn't jus' asked her directly.",
-                "She wouldn't've admitted the dish was jus' a little overcooked if you hadn't jus' asked her directly."
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "fastSpeechDecoder",
-            "emoji": "⚡"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L174_Q3",
-            "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch 'filling' versus 'heavy', and tonight versus tomorrow.",
-            "explanation": "'Filling' and 'heavy' both describe a substantial meal, but they're not quite the same word, so listen precisely. This sentence opens with 'look', a casual way to draw attention before a genuine question.",
-            "textToSpeak": "Look, whatcha reckon we're actually in the mood for tonight, something light or something filling?",
-            "options": [
-                "Look, whatcha reckon we're actually in the mood for tomorrow, something light or something filling?",
-                "Look, whatcha reckon we're actually in the mood for tonight, something light or something filling?"
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "fastSpeechDecoder",
-            "emoji": "⚡"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L175_Q1",
-            "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch 'shoulda' versus 'coulda', and bags versus tickets.",
-            "explanation": "This long sentence describes a sequence, first this, then that, so hold the order in mind as you listen. 'The other way round' and 'the wrong way round' are close enough that you need to catch the exact phrase.",
-            "textToSpeak": "We shoulda jus' checked in online first, then dealt with the bags, instead of doing it the other way round.",
-            "options": [
-                "We shoulda jus' checked in online first, then dealt with the bags, instead of doing it the wrong way round.",
-                "We shoulda jus' checked in online first, then dealt with the bags, instead of doing it the other way round."
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "fastSpeechDecoder",
-            "emoji": "⚡"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L175_Q2",
-            "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch coffee versus lunch, and we versus they.",
-            "explanation": "This sentence explains a near-miss with a flight, hinging on both the hidden 'n't' and the exact reason for the delay. 'Coffee' and 'lunch' take very different amounts of time, so that detail matters.",
-            "textToSpeak": "I reckon we wouldn't've missed the connection if we hadn't jus' stopped for coffee right before boarding.",
-            "options": [
-                "I reckon we wouldn't've missed the connection if we hadn't jus' stopped for coffee right before boarding.",
-                "I reckon we wouldn't've missed the connection if we hadn't jus' stopped for lunch right before boarding."
+                "The room was cramped, noisy, but somehow still charming.",
+                "The room was spacious, quiet, but somehow still charming."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
-            "id": "LIS_FASTSPEECHDECODER_L175_Q3",
+            "id": "LIS_FASTSPEECHDECODER_L174_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch 'city' versus 'town', and 'smartest' versus 'cheapest'.",
-            "explanation": "'Smartest' (the wisest overall choice) and 'cheapest' (purely about cost) suggest different priorities for the journey. 'City centre' and 'town centre' are close enough to blur together, so listen for the exact word.",
-            "textToSpeak": "Honestly, whatcha reckon's the smartest way to jus' get from the airport into the city centre?",
+            "instruction": "Listen again — which version matches what was said?",
+            "hint": "Notice how the description shifts partway through the sentence.",
+            "explanation": "This sentence starts one way and pivots with 'but', so catching that shift changes your whole impression of what's being described.",
+            "textToSpeak": "It looked rough from outside, but the food was excellent.",
             "options": [
-                "Honestly, whatcha reckon's the smartest way to jus' get from the airport into the town centre?",
-                "Honestly, whatcha reckon's the smartest way to jus' get from the airport into the city centre?"
+                "It looked rough from outside, but the food was excellent.",
+                "It looked rough from outside, and the food was terrible too."
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "fastSpeechDecoder",
+            "emoji": "⚡"
+        },
+        {
+            "id": "LIS_FASTSPEECHDECODER_L175_Q1",
+            "interactionType": "choice",
+            "instruction": "Listen carefully and catch the exact sentence.",
+            "hint": "Catch every step in this longer instruction.",
+            "explanation": "Multi-step instructions pack several actions into one sentence, so following the full sequence matters more than catching any single word.",
+            "textToSpeak": "Grab your badge, head to the second floor, and check in at reception.",
+            "options": [
+                "Grab your badge, head to the second floor, and check in at reception.",
+                "Grab your badge, head to the third floor, and check in at reception."
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "fastSpeechDecoder",
+            "emoji": "⚡"
+        },
+        {
+            "id": "LIS_FASTSPEECHDECODER_L175_Q2",
+            "interactionType": "choice",
+            "instruction": "They said it fast — what did you actually hear?",
+            "hint": "Listen for the full condition attached to this instruction.",
+            "explanation": "This sentence's instruction only applies under a certain condition, so catching that condition changes whether it applies to you at all.",
+            "textToSpeak": "If you're running late, just message the group chat.",
+            "options": [
+                "If you're running early, just message the group chat.",
+                "If you're running late, just message the group chat."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
+            "id": "LIS_FASTSPEECHDECODER_L175_Q3",
+            "interactionType": "choice",
+            "instruction": "Natural speech blends words together. Catch the real message.",
+            "hint": "Notice the full sequence of steps in this instruction.",
+            "explanation": "This instruction has a clear order, first one thing, then another, so tracking the sequence is the real listening challenge here.",
+            "textToSpeak": "Save your work first, then close the program completely.",
+            "options": [
+                "Save your work first, then close the program completely.",
+                "Close the program first, then save your work completely."
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "fastSpeechDecoder",
+            "emoji": "⚡"
+        },
+        {
             "id": "LIS_FASTSPEECHDECODER_L176_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch 'a lot' versus 'a little', and version versus update.",
-            "explanation": "This comparative sentence weighs two qualities against each other, reliability and speed, so track both halves carefully. 'A lot more' and 'a little more' describe very different sizes of improvement.",
-            "textToSpeak": "This new version's a lot more reliable than the last one, even though it's jus' as fast.",
+            "instruction": "Listen for the small word that changes the meaning.",
+            "hint": "Catch the full explanation, since the reason comes after the main point.",
+            "explanation": "This sentence states an outcome first, then explains why, so hold both parts together for the complete picture.",
+            "textToSpeak": "We're switching suppliers because the quality's been inconsistent lately.",
             "options": [
-                "This new update's a lot more reliable than the last one, even though it's jus' as fast.",
-                "This new version's a lot more reliable than the last one, even though it's jus' as fast."
+                "We're switching suppliers because the quality's been excellent lately.",
+                "We're switching suppliers because the quality's been inconsistent lately."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -246,73 +246,73 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L176_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch leak versus issue, and I versus we.",
-            "explanation": "This sentence is a technical explanation with the hidden 'n't' doing crucial work, so slow down and separate each clause. 'Memory leak' and 'memory issue' are near-synonyms in tech talk, so listen for the specific phrase.",
-            "textToSpeak": "I dunno why it wouldn't've crashed jus' as often if we hadn't already fixed the memory leak.",
+            "instruction": "Focus on the key detail hidden in the fast sentence.",
+            "hint": "Listen for the full chain of cause and effect across the sentence.",
+            "explanation": "This sentence links a cause to an effect with 'which meant', so catching that connector is key to understanding the full outcome.",
+            "textToSpeak": "The server went down, which meant we lost about an hour of work.",
             "options": [
-                "I dunno why it wouldn't've crashed jus' as often if we hadn't already fixed the memory issue.",
-                "I dunno why it wouldn't've crashed jus' as often if we hadn't already fixed the memory leak."
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "fastSpeechDecoder",
-            "emoji": "⚡"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L176_Q3",
-            "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch 'for now' versus 'for later', and 'faster' versus 'cheaper'.",
-            "explanation": "This sentence weighs two options against each other, a proper fix versus a quick patch, so hold both in mind. 'Faster' and 'cheaper' suggest different priorities for making the decision.",
-            "textToSpeak": "Whatcha reckon's actually faster in the long run, fixing this properly or jus' patching it for now?",
-            "options": [
-                "Whatcha reckon's actually cheaper in the long run, fixing this properly or jus' patching it for now?",
-                "Whatcha reckon's actually faster in the long run, fixing this properly or jus' patching it for now?"
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "fastSpeechDecoder",
-            "emoji": "⚡"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L177_Q1",
-            "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch week versus month, and 'going' versus 'working'.",
-            "explanation": "'To tell you the truth' signals an honest admission is coming, often about something the speaker hasn't said out loud before. This whole confession only makes sense with the hidden 'n't' in 'couldn't've' intact.",
-            "textToSpeak": "To tell you the truth, I couldn't've kept going without jus' taking that whole week off to rest.",
-            "options": [
-                "To tell you the truth, I couldn't've kept going without jus' taking that whole month off to rest.",
-                "To tell you the truth, I couldn't've kept going without jus' taking that whole week off to rest."
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "fastSpeechDecoder",
-            "emoji": "⚡"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L177_Q2",
-            "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch 'all-clear' versus 'go-ahead', and he versus she.",
-            "explanation": "'The all-clear' and 'the go-ahead' both mean permission was granted, so listen for the exact idiom used. That hidden 'n't' also confirms he was being genuinely careful, not reckless.",
-            "textToSpeak": "He wouldn't've gone back to the gym so soon if the doctor hadn't jus' given her the all-clear.",
-            "options": [
-                "He wouldn't've gone back to the gym so soon if the doctor hadn't jus' given her the all-clear.",
-                "She wouldn't've gone back to the gym so soon if the doctor hadn't jus' given her the all-clear."
+                "The server went down, which meant we lost about an hour of work.",
+                "The server went down, which meant we saved about an hour of work."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
+            "id": "LIS_FASTSPEECHDECODER_L176_Q3",
+            "interactionType": "choice",
+            "instruction": "Listen again — which version matches what was said?",
+            "hint": "Notice the full explanation, including the unexpected twist at the end.",
+            "explanation": "This sentence builds toward a twist with 'turns out', so the ending often contains the most important, unexpected detail.",
+            "textToSpeak": "We assumed it was the software, but turns out it was the hardware.",
+            "options": [
+                "We assumed it was the software, but turns out it was the hardware.",
+                "We assumed it was the hardware, but turns out it was the software."
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "fastSpeechDecoder",
+            "emoji": "⚡"
+        },
+        {
+            "id": "LIS_FASTSPEECHDECODER_L177_Q1",
+            "interactionType": "choice",
+            "instruction": "Listen carefully and catch the exact sentence.",
+            "hint": "Catch the full sentence, including the question hidden inside it.",
+            "explanation": "This sentence embeds a question, 'whether it's worth it', inside a longer statement, so listen for the whole structure, not just the start.",
+            "textToSpeak": "I'm still not sure whether it's worth the extra cost.",
+            "options": [
+                "I'm still not sure whether it's worth the extra cost.",
+                "I'm still not sure whether it's worth the extra time."
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "fastSpeechDecoder",
+            "emoji": "⚡"
+        },
+        {
+            "id": "LIS_FASTSPEECHDECODER_L177_Q2",
+            "interactionType": "choice",
+            "instruction": "They said it fast — what did you actually hear?",
+            "hint": "Listen for the full embedded question and its answer.",
+            "explanation": "This sentence asks an embedded question, then partly answers it, so both the uncertainty and the partial answer need attention.",
+            "textToSpeak": "I don't know exactly why, but the numbers just don't match.",
+            "options": [
+                "I know exactly why, but the numbers just don't match.",
+                "I don't know exactly why, but the numbers just don't match."
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "fastSpeechDecoder",
+            "emoji": "⚡"
+        },
+        {
             "id": "LIS_FASTSPEECHDECODER_L177_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch 'finished' versus 'started', and 'again' versus 'once'.",
-            "explanation": "'Finished' and 'started' the treatment describe completely different situations, so that verb is essential. This long sentence also opens with 'look', a natural way to introduce a genuinely worried question.",
-            "textToSpeak": "Look, whatcha reckon we oughta do if the symptoms come back again after we jus' finished the treatment?",
+            "instruction": "Natural speech blends words together. Catch the real message.",
+            "hint": "Notice the full sentence structure, question and statement combined.",
+            "explanation": "This kind of sentence blends genuine uncertainty with a specific detail, exactly like natural spoken reasoning out loud.",
+            "textToSpeak": "I'm not sure how, but somehow the numbers worked out fine.",
             "options": [
-                "Look, whatcha reckon we oughta do if the symptoms come back again after we jus' finished the treatment?",
-                "Look, whatcha reckon we oughta do if the symptoms come back once after we jus' finished the treatment?"
+                "I'm not sure how, but somehow the numbers worked out fine.",
+                "I'm not sure how, but somehow the numbers worked out badly."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -321,13 +321,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L178_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Nail down 'coulda' versus 'shoulda' first, then confirm we versus they.",
-            "explanation": "This sentence ends in a tag question, 'couldn't we?', inviting the other person to agree. 'Coulda' and 'shoulda' subtly shift whether this is a neutral observation or genuine self-criticism.",
-            "textToSpeak": "We coulda studied together more this term, couldn't we, instead of jus' leaving it all to the last minute?",
+            "instruction": "Listen for the small word that changes the meaning.",
+            "hint": "Catch every piece of information packed into this dense sentence.",
+            "explanation": "This sentence packs a time, a place, and a reason into one breath, so treat it as several small details rather than one long blur.",
+            "textToSpeak": "We're meeting at the café near the station at nine, before it gets busy.",
             "options": [
-                "We coulda studied together more this term, couldn't we, instead of jus' leaving it all to the last week?",
-                "We coulda studied together more this term, couldn't we, instead of jus' leaving it all to the last minute?"
+                "We're meeting at the café near the station at ten, before it gets busy.",
+                "We're meeting at the café near the station at nine, before it gets busy."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -336,28 +336,28 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L178_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch mistake versus error, and I versus we.",
-            "explanation": "This sentence is genuine surprise at an oversight, which only reads that way with the hidden 'n't' in 'wouldn't've' intact. 'Mistake' and 'error' are near-synonyms, so listen for the exact word.",
-            "textToSpeak": "I dunno how she wouldn't've noticed the mistake if she'd jus' read through it one more time.",
+            "instruction": "Focus on the key detail hidden in the fast sentence.",
+            "hint": "Listen for the full density of detail in this natural sentence.",
+            "explanation": "Information-dense sentences like this reflect how people actually talk when they're giving you several facts at once quickly.",
+            "textToSpeak": "The flight leaves at seven, so we should leave the house by five.",
             "options": [
-                "We dunno how she wouldn't've noticed the mistake if she'd jus' read through it one more time.",
-                "I dunno how she wouldn't've noticed the mistake if she'd jus' read through it one more time."
+                "The flight leaves at seven, so we should leave the house by five.",
+                "The flight leaves at seven, so we should leave the house by six."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L178_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch 'most' versus 'all', and 'fairer' versus 'better'.",
-            "explanation": "'Most' and 'all' of the work describe very different levels of imbalance, so listen for the exact word. 'Fairer' (about equal credit) and 'better' (about overall quality) also frame the question differently.",
-            "textToSpeak": "Honestly, whatcha reckon's a fairer way to grade group work when jus' one person does most of it?",
+            "instruction": "Listen again — which version matches what was said?",
+            "hint": "Notice how much detail survives even in one long, fast sentence.",
+            "explanation": "This sentence links a location, a time, and a condition together, testing whether you can extract all three from one continuous stream of speech.",
+            "textToSpeak": "If the weather holds, we'll eat outside on the terrace around noon.",
             "options": [
-                "Honestly, whatcha reckon's a fairer way to grade group work when jus' one person does most of it?",
-                "Honestly, whatcha reckon's a better way to grade group work when jus' one person does most of it?"
+                "If the weather holds, we'll eat outside on the terrace around noon.",
+                "If the weather holds, we'll eat inside by the window around noon."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -366,13 +366,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L179_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch 'really' versus 'pretty', and something else versus something different.",
-            "explanation": "This sentence stacks two discourse markers, 'I mean' and 'look', before settling into genuine praise. 'Really good' and 'pretty good' are both positive but at slightly different strengths.",
-            "textToSpeak": "I mean, look, we coulda jus' watched something else, but honestly, this one's actually jus' really good.",
+            "instruction": "Listen carefully and catch the exact sentence.",
+            "hint": "Catch the full two-sentence thought, since the second sentence adds a key detail.",
+            "explanation": "This utterance spans two full sentences, and the second one adds a detail that changes how you should read the first.",
+            "textToSpeak": "I called twice this morning. No answer either time.",
             "options": [
-                "I mean, look, we coulda jus' watched something else, but honestly, this one's actually jus' really good.",
-                "I mean, look, we coulda jus' watched something different, but honestly, this one's actually jus' really good."
+                "I called twice this morning. No answer either time.",
+                "I called once this morning. No answer either time."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -381,13 +381,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L179_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch 'impressive' versus 'decent', and he versus she.",
-            "explanation": "'Impressive' and 'decent' are both positive but at very different levels of enthusiasm, so listen for the exact word. That hidden 'n't' confirms the whole night was genuinely worth staying for.",
-            "textToSpeak": "She wouldn't've stayed for the whole concert if the opening act hadn't jus' been genuinely impressive too.",
+            "instruction": "They said it fast — what did you actually hear?",
+            "hint": "Listen for both sentences, since the second one explains the first.",
+            "explanation": "The second sentence here explains the first, so losing it means losing the actual reason behind the statement.",
+            "textToSpeak": "The order's delayed. Apparently there's a shortage of parts.",
             "options": [
-                "He wouldn't've stayed for the whole concert if the opening act hadn't jus' been genuinely impressive too.",
-                "She wouldn't've stayed for the whole concert if the opening act hadn't jus' been genuinely impressive too."
+                "The order's ready. Apparently there's a shortage of parts.",
+                "The order's delayed. Apparently there's a shortage of parts."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -396,13 +396,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L179_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch the tense at the end, and 'actual' versus 'real'.",
-            "explanation": "'Did' keeps this comparison firmly in the past, so swapping it for 'do' would shift the whole discussion to right now. 'Actual' and 'real' are near-synonyms too, so listen for the specific word.",
-            "textToSpeak": "To be honest, whatcha reckon's the actual reason critics loved it so much more than audiences did?",
+            "instruction": "Natural speech blends words together. Catch the real message.",
+            "hint": "Notice how the two sentences work together to tell the full story.",
+            "explanation": "This kind of realistic two-sentence utterance is exactly what natural conversation sounds like, one thought following naturally into the next.",
+            "textToSpeak": "We almost missed the train. Made it with about ten seconds to spare.",
             "options": [
-                "To be honest, whatcha reckon's the actual reason critics loved it so much more than audiences did?",
-                "To be honest, whatcha reckon's the actual reason critics loved it so much more than audiences do?"
+                "We almost missed the train. Made it with about ten seconds to spare.",
+                "We almost missed the train. Missed it by about ten seconds."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -411,13 +411,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L180_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch the tense at the end, and 'coulda' versus 'shoulda'.",
-            "explanation": "This review question stacks three discourse markers, 'look', 'I mean', and 'honestly', before landing on a genuine reflection. 'Did' and 'have' subtly shift whether this is a finished memory or an ongoing pattern.",
-            "textToSpeak": "Look, I mean, honestly, we coulda handled the whole situation a lot more calmly than we actually did.",
+            "instruction": "Listen for the small word that changes the meaning.",
+            "hint": "By now, expect full, realistic multi-part utterances, not isolated short sentences.",
+            "explanation": "This level combines a cause, a reaction, and a plan in one flowing utterance, matching the density of real spoken English.",
+            "textToSpeak": "The site went down for an hour, so support's been swamped, but it's stable now.",
             "options": [
-                "Look, I mean, honestly, we coulda handled that whole situation a lot more calmly than we actually did.",
-                "Look, I mean, honestly, we coulda handled the whole situation a lot more calmly than we actually did."
+                "The site went down for an hour, so support's been quiet, but it's stable now.",
+                "The site went down for an hour, so support's been swamped, but it's stable now."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -426,28 +426,28 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L180_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch 'first' versus 'at all', and listen for the hidden 'n't'.",
-            "explanation": "This is one of the longest, most layered sentences in the entire tier, stacking the hidden 'n't' with two separate 'jus'' reductions. Trust everything you've built up so far and let your ear follow the whole shape of the sentence.",
-            "textToSpeak": "I dunno how we wouldn't've fallen out over it eventually if we hadn't jus' talked it through properly first.",
+            "instruction": "Focus on the key detail hidden in the fast sentence.",
+            "hint": "Catch the full, dense utterance despite several connected ideas.",
+            "explanation": "By Level 180, sentences this long and detailed should feel manageable, since you've built up to this density gradually across the file.",
+            "textToSpeak": "I thought I'd missed the deadline, but it turns out there's still time.",
             "options": [
-                "We dunno how we wouldn't've fallen out over it eventually if we hadn't jus' talked it through properly first.",
-                "I dunno how we wouldn't've fallen out over it eventually if we hadn't jus' talked it through properly first."
+                "I thought I'd missed the deadline, but it turns out there's still time.",
+                "I thought I'd made the deadline, but it turns out there's no time left."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L180_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch 'from the start' versus 'from the beginning', and 'woulda' versus 'coulda'.",
-            "explanation": "This closing question of the Advanced+ tier is genuinely the longest sentence in the course so far, opening with a discourse marker and layering five separate reductions. If you followed every detail here, you're fully ready for the Expert tier: real, unfiltered, native-speed English.",
-            "textToSpeak": "At the end of the day, whatcha reckon woulda happened if nobody had jus' been honest about how they were really feeling from the start?",
+            "instruction": "Listen again — which version matches what was said?",
+            "hint": "Notice how naturally this longer, realistic utterance still communicates clearly.",
+            "explanation": "This kind of natural, multi-clause speech is what real conversation actually sounds like — the goal is following the whole thought, not each word.",
+            "textToSpeak": "We nearly cancelled the trip, but honestly, I'm glad we didn't.",
             "options": [
-                "At the end of the day, whatcha reckon woulda happened if nobody had jus' been honest about how they were really feeling from the start?",
-                "At the end of the day, whatcha reckon woulda happened if nobody had jus' been honest about how they were really feeling from the beginning?"
+                "We nearly cancelled the trip, but honestly, I'm glad we didn't.",
+                "We nearly extended the trip, but honestly, I'm glad we didn't."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",

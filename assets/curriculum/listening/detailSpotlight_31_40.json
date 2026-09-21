@@ -6,572 +6,572 @@
         {
             "id": "LIS_DETAILSPOTLIGHT_L31_Q1",
             "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "Listen for the name or role of the person in the sentence.",
-            "explanation": "The person in question is colleague: a person someone works with. To be exact, the colleague reviewed the report before lunch.",
-            "textToSpeak": "My colleague reviewed the report before lunch.",
-            "targetDetail": "colleague",
+            "instruction": "Tap the time the train leaves.",
+            "hint": "‘Past’ means after the hour. Think about how many minutes a quarter is.",
+            "explanation": "5:15 is correct. A quarter is fifteen minutes, so ‘a quarter past five’ is fifteen minutes after five.",
+            "textToSpeak": "The next train to Boston leaves at a quarter past five.",
+            "targetDetail": "5:15",
             "options": [
-                "fisherman",
-                "optician",
-                "colleague",
-                "referee"
+                "5:45",
+                "5:50",
+                "5:15",
+                "4:15"
             ],
             "correctAnswerIndex": 2,
             "subtype": "detailSpotlight",
-            "emoji": "📄",
-            "detailCategory": "Key Information"
+            "emoji": "🚆",
+            "detailCategory": "Time"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L31_Q2",
             "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "Focus on the activity, not who does it or what it involves.",
-            "explanation": "Right answer: coordinates, meaning to organize people or things to work well together. That's because she coordinates schedules for the whole department.",
-            "textToSpeak": "She coordinates schedules for the whole department.",
-            "targetDetail": "coordinates",
+            "instruction": "Wipe away the fog and tap how often you should take the tablets.",
+            "hint": "Two numbers are said. One is how many tablets; the other is how often.",
+            "explanation": "The answer is three times a day. Two is the number of tablets each time.",
+            "textToSpeak": "Take two tablets after lunch, three times a day.",
+            "targetDetail": "three times a day",
             "options": [
-                "performs",
-                "tastes",
-                "recovers",
-                "coordinates"
+                "three times a day",
+                "twice a day",
+                "four times a day",
+                "once a day"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "detailSpotlight",
-            "emoji": "🗓️",
-            "detailCategory": "Key Information"
+            "emoji": "💊",
+            "detailCategory": "Frequency"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L31_Q3",
             "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "Pay attention to the thing, not who is using it or what they do.",
-            "explanation": "The correct object is agenda — a list of items to be discussed at a meeting. In the audio, he printed the agenda for the morning meeting.",
-            "textToSpeak": "He printed the agenda for the morning meeting.",
-            "targetDetail": "agenda",
+            "instruction": "Catch the age the sister is turning.",
+            "hint": "Numbers ending in ‘-teen’ and ‘-ty’ are easy to mix up. Listen to the very end of the number.",
+            "explanation": "The answer is 13. ‘Thirteen’ ends with a clear ‘-teen’. ‘Thirty’ ends quickly.",
+            "textToSpeak": "My sister is turning thirteen next week.",
+            "targetDetail": "13",
             "options": [
-                "charity",
-                "lecture",
-                "agenda",
-                "report"
+                "3",
+                "12",
+                "30",
+                "13"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "subtype": "detailSpotlight",
-            "emoji": "📋",
-            "detailCategory": "Key Information"
+            "emoji": "🎂",
+            "detailCategory": "Number"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L32_Q1",
             "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "Listen for the type of person described in the sentence.",
-            "explanation": "Volunteer fits — a person who works for a cause without being paid. You can hear that a cheerful volunteer served soup at the shelter.",
-            "textToSpeak": "A cheerful volunteer served soup at the shelter.",
-            "targetDetail": "volunteer",
+            "instruction": "Wipe the glass and tap the place across from the post office.",
+            "hint": "‘Opposite’ means across from. The place follows that word.",
+            "explanation": "The post office and the supermarket face each other. The corner is a different detail. So the answer is supermarket.",
+            "textToSpeak": "The post office is opposite the supermarket, on the corner.",
+            "targetDetail": "supermarket",
             "options": [
-                "musician",
-                "security guard",
-                "author",
-                "volunteer"
+                "pharmacy",
+                "bookstore",
+                "supermarket",
+                "bank"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "detailSpotlight",
-            "emoji": "🥣",
-            "detailCategory": "Key Information"
+            "emoji": "📮",
+            "detailCategory": "Location"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L32_Q2",
             "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "Which action or activity do you hear in the sentence?",
-            "explanation": "Donates is the detail — to give money or goods to help a cause. The audio makes clear that she donates old clothes to the charity shop.",
-            "textToSpeak": "She donates old clothes to the charity shop.",
-            "targetDetail": "donates",
+            "instruction": "Tap the price of the pizza.",
+            "hint": "Prices with cents have two parts. Listen for both the whole amount and the cents.",
+            "explanation": "‘Eleven fifty’ means eleven dollars and fifty cents. Nine ninety-five is the pasta. So the answer is $11.50.",
+            "textToSpeak": "The pasta costs nine ninety-five, and the pizza is eleven fifty.",
+            "targetDetail": "$11.50",
             "options": [
-                "records",
-                "prepares",
-                "donates",
-                "describes"
+                "$9.95",
+                "$15.10",
+                "$11.15",
+                "$11.50"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "subtype": "detailSpotlight",
-            "emoji": "👕",
-            "detailCategory": "Key Information"
+            "emoji": "🍕",
+            "detailCategory": "Price"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L32_Q3",
             "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "The detail to catch is the object's exact name.",
-            "explanation": "That's charity — an organization that helps people in need. The audio confirms it: he signed up for the charity fun run.",
-            "textToSpeak": "He signed up for the charity fun run.",
-            "targetDetail": "charity",
+            "instruction": "Wipe the glass, then tap the days of the class.",
+            "hint": "Two days are given. Each wrong option changes one of them.",
+            "explanation": "The answer is Mondays and Wednesdays. Two to three is the time, not the days.",
+            "textToSpeak": "Our class is on Mondays and Wednesdays from two to three.",
+            "targetDetail": "Mondays and Wednesdays",
             "options": [
-                "charity",
-                "concert",
-                "review",
-                "network"
+                "Mondays and Thursdays",
+                "Mondays and Wednesdays",
+                "Tuesdays and Wednesdays",
+                "Wednesdays and Fridays"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "detailSpotlight",
-            "emoji": "🎗️",
-            "detailCategory": "Key Information"
+            "emoji": "📅",
+            "detailCategory": "Day"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L33_Q1",
             "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "Listen for the label attached to the subject.",
-            "explanation": "Listen for supervisor: a person who oversees the work of others. In this case, the supervisor praised the whole team on Friday.",
-            "textToSpeak": "The supervisor praised the whole team on Friday.",
-            "targetDetail": "supervisor",
+            "instruction": "Listen for the weather at noon.",
+            "hint": "The weather changes during the day. Notice the word ‘but’.",
+            "explanation": "Cloudy is the morning weather. ‘By noon’ shows the change. So the answer is sunny.",
+            "textToSpeak": "It's cloudy this morning, but it will be sunny by noon.",
+            "targetDetail": "sunny",
             "options": [
-                "sculptor",
-                "landlord",
-                "supervisor",
-                "plumber"
+                "windy",
+                "rainy",
+                "sunny",
+                "cloudy"
             ],
             "correctAnswerIndex": 2,
             "subtype": "detailSpotlight",
-            "emoji": "👏",
-            "detailCategory": "Key Information"
+            "emoji": "🕛",
+            "detailCategory": "Change"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L33_Q2",
             "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "Your job: name the action, nothing else.",
-            "explanation": "The doing-word is schedules — to arrange a time for something to happen. The sentence confirms she schedules meetings for the entire department.",
-            "textToSpeak": "She schedules meetings for the entire department.",
-            "targetDetail": "schedules",
+            "instruction": "Wipe away the fog and tap where the museum is.",
+            "hint": "Two directions are said. One is a turn, and one is the museum's position.",
+            "explanation": "You turn right at the light, and then the museum is on the left. So the answer is on your left.",
+            "textToSpeak": "Turn right at the traffic light and the museum is on your left.",
+            "targetDetail": "on your left",
             "options": [
-                "monitors",
-                "schedules",
-                "seasons",
-                "navigates"
+                "on your right",
+                "on your left",
+                "behind you",
+                "straight ahead"
             ],
             "correctAnswerIndex": 1,
             "subtype": "detailSpotlight",
-            "emoji": "🗓️",
-            "detailCategory": "Key Information"
+            "emoji": "🧭",
+            "detailCategory": "Direction"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L33_Q3",
             "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "Zero in on the noun naming the item or concept.",
-            "explanation": "The item named is deadline, the latest time by which something must be finished. To be exact, he forgot the deadline for the sales report.",
-            "textToSpeak": "He forgot the deadline for the sales report.",
-            "targetDetail": "deadline",
+            "instruction": "Catch how many people the hall holds.",
+            "hint": "Big numbers have extra parts. Listen for the size word after the digit.",
+            "explanation": "500 is correct. ‘Five hundred’ is five times a hundred. Fifty is much smaller.",
+            "textToSpeak": "The concert hall holds about five hundred people.",
+            "targetDetail": "500",
             "options": [
-                "deadline",
-                "scholarship",
-                "warranty",
-                "playlist"
+                "500",
+                "150",
+                "5,000",
+                "50"
             ],
             "correctAnswerIndex": 0,
             "subtype": "detailSpotlight",
-            "emoji": "⏰",
-            "detailCategory": "Key Information"
+            "emoji": "🎼",
+            "detailCategory": "Quantity"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L34_Q1",
             "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "Don't get distracted by the action; focus on who.",
-            "explanation": "Tailor is who's described — a person who makes or adjusts clothes. The audio states that an experienced tailor shortened the sleeves quickly.",
-            "textToSpeak": "An experienced tailor shortened the sleeves quickly.",
-            "targetDetail": "tailor",
+            "instruction": "Tap the time the meeting ends.",
+            "hint": "‘Until’ marks the end of the meeting. Listen for the time that comes after it.",
+            "explanation": "‘Until eleven thirty’ means the meeting ends at that time. So the answer is 11:30.",
+            "textToSpeak": "Sorry, the manager is in a meeting until eleven thirty.",
+            "targetDetail": "11:30",
             "options": [
-                "veterinarian",
-                "optician",
-                "painter",
-                "tailor"
+                "11:30",
+                "12:30",
+                "1:30",
+                "11:00"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "detailSpotlight",
-            "emoji": "🧵",
-            "detailCategory": "Key Information"
+            "emoji": "🕰️",
+            "detailCategory": "Time"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L34_Q2",
             "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "What is being done? Listen for the verb.",
-            "explanation": "You heard returns: to bring or send something back. In this sentence, she returns items that don't fit properly.",
-            "textToSpeak": "She returns items that don't fit properly.",
-            "targetDetail": "returns",
+            "instruction": "Find how the shop counts its price.",
+            "hint": "The price and the unit are different details. Listen for the phrase that begins with ‘by the’.",
+            "explanation": "By the hour is correct. The price is six dollars, and the shop charges for each hour.",
+            "textToSpeak": "We rent bikes by the hour, and it costs six dollars.",
+            "targetDetail": "by the hour",
             "options": [
-                "exercises",
-                "commutes",
-                "requests",
-                "returns"
+                "by the day",
+                "by the kilometer",
+                "by the week",
+                "by the hour"
             ],
             "correctAnswerIndex": 3,
             "subtype": "detailSpotlight",
-            "emoji": "🛍️",
-            "detailCategory": "Key Information"
+            "emoji": "🚲",
+            "detailCategory": "Measurement"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L34_Q3",
             "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "Listen for the name of the thing or object mentioned.",
-            "explanation": "Warranty is correct — a written promise to repair or replace a faulty product. The sentence tells us he kept the warranty card in a drawer.",
-            "textToSpeak": "He kept the warranty card in a drawer.",
-            "targetDetail": "warranty",
+            "instruction": "Notice who is with Anna.",
+            "hint": "Two people are mentioned. Focus on the second one.",
+            "explanation": "Correct: grandmother. Anna is with her grandmother in the kitchen.",
+            "textToSpeak": "Anna is in the kitchen with her grandmother, making bread.",
+            "targetDetail": "grandmother",
             "options": [
-                "app",
-                "ceremony",
-                "donation",
-                "warranty"
+                "mother",
+                "aunt",
+                "grandmother",
+                "neighbor"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "detailSpotlight",
-            "emoji": "📃",
-            "detailCategory": "Key Information"
+            "emoji": "🍞",
+            "detailCategory": "Relationship"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L35_Q1",
             "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "Listen for the noun that identifies a person.",
-            "explanation": "Florist is the detail here — a person who arranges and sells flowers. As the audio says, a cheerful florist arranged flowers for the wedding.",
-            "textToSpeak": "A cheerful florist arranged flowers for the wedding.",
-            "targetDetail": "florist",
+            "instruction": "Wipe the glass and tap why the flight was late.",
+            "hint": "‘Because of’ is followed by a noun that gives the cause.",
+            "explanation": "‘Because of fog’ gives the reason for the two-hour delay. So the answer is fog.",
+            "textToSpeak": "The flight to Rome was two hours late because of fog.",
+            "targetDetail": "fog",
             "options": [
-                "instructor",
-                "referee",
-                "florist",
-                "carpenter"
+                "a storm",
+                "snow",
+                "fog",
+                "a strike"
             ],
             "correctAnswerIndex": 2,
             "subtype": "detailSpotlight",
-            "emoji": "💐",
-            "detailCategory": "Key Information"
+            "emoji": "🛫",
+            "detailCategory": "Reason"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L35_Q2",
             "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "Listen closely for the doing-word in the sentence.",
-            "explanation": "The verb here is prepares, meaning to make something ready. Notice that she prepares breakfast for the whole family.",
-            "textToSpeak": "She prepares breakfast for the whole family.",
-            "targetDetail": "prepares",
+            "instruction": "Listen for where you cannot pay by card.",
+            "hint": "One place is allowed and one is not. Listen for ‘but not’.",
+            "explanation": "The answer is in the café. Cards are fine everywhere except the café.",
+            "textToSpeak": "You can pay by card, but not in the café.",
+            "targetDetail": "in the café",
             "options": [
-                "prepares",
-                "checks in",
-                "warns",
-                "boards"
+                "in the café",
+                "at the hotel",
+                "in the shop",
+                "on the bus"
             ],
             "correctAnswerIndex": 0,
             "subtype": "detailSpotlight",
-            "emoji": "🍳",
-            "detailCategory": "Key Information"
+            "emoji": "💳",
+            "detailCategory": "Instruction"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L35_Q3",
             "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "Home in on the specific item described.",
-            "explanation": "The thing mentioned is coupon: a small ticket that gives a discount on a purchase. Here, he used a coupon to save on groceries.",
-            "textToSpeak": "He used a coupon to save on groceries.",
-            "targetDetail": "coupon",
+            "instruction": "Wipe the glass and tap how much time you have.",
+            "hint": "Two numbers are heard. One counts questions, the other counts minutes.",
+            "explanation": "The answer is 30 minutes. Forty is the number of questions.",
+            "textToSpeak": "The exam has forty questions, and you have thirty minutes.",
+            "targetDetail": "30 minutes",
             "options": [
-                "coupon",
-                "ingredient",
-                "suitcase",
-                "recipe"
+                "40 minutes",
+                "13 minutes",
+                "30 minutes",
+                "60 minutes"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "detailSpotlight",
-            "emoji": "🧾",
-            "detailCategory": "Key Information"
+            "emoji": "📝",
+            "detailCategory": "Duration"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L36_Q1",
             "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "Listen for a word naming an occupation or relation.",
-            "explanation": "You heard security guard, which means a person who protects a building or place. Notice that the security guard checked everyone's badge at the entrance.",
-            "textToSpeak": "The security guard checked everyone's badge at the entrance.",
-            "targetDetail": "security guard",
+            "instruction": "Tap where the sister works.",
+            "hint": "Both siblings are described. Match the word ‘sister’ to her workplace.",
+            "explanation": "The brother works in a bank, but the sister works in a hospital. So the answer is hospital.",
+            "textToSpeak": "My brother works in a bank, and my sister works in a hospital.",
+            "targetDetail": "hospital",
             "options": [
-                "translator",
-                "security guard",
-                "firefighter",
-                "musician"
+                "bank",
+                "hospital",
+                "factory",
+                "school"
             ],
             "correctAnswerIndex": 1,
             "subtype": "detailSpotlight",
-            "emoji": "🛂",
-            "detailCategory": "Key Information"
+            "emoji": "👨‍👩‍👧",
+            "detailCategory": "Place"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L36_Q2",
             "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "Listen for the word describing the ongoing task.",
-            "explanation": "The correct action is translates — to change speech or text into another language. Specifically, she translates letters for elderly neighbors sometimes.",
-            "textToSpeak": "She translates letters for elderly neighbors sometimes.",
-            "targetDetail": "translates",
+            "instruction": "Wipe the glass and tap the time guests should be there.",
+            "hint": "There are two times. One is the event; the other is when you should arrive.",
+            "explanation": "Dinner is at eight, but guests should be there half an hour before. So the answer is 7:30.",
+            "textToSpeak": "Dinner is at eight, so please be here by seven thirty.",
+            "targetDetail": "7:30",
             "options": [
-                "announces",
-                "translates",
-                "recommends",
-                "compares"
+                "7:30",
+                "8:00",
+                "8:30",
+                "7:00"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "detailSpotlight",
-            "emoji": "🌐",
-            "detailCategory": "Key Information"
+            "emoji": "🍷",
+            "detailCategory": "Time"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L36_Q3",
             "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "Catch the word that names the object precisely.",
-            "explanation": "You heard voucher, a piece of paper that can be used instead of money. Notice that he used a discount voucher before booking a hotel.",
-            "textToSpeak": "He used a discount voucher before booking a hotel.",
-            "targetDetail": "voucher",
+            "instruction": "Listen for what the building is behind.",
+            "hint": "The building has a description and a location. The place you need is at the end.",
+            "explanation": "The glass door describes the building; ‘behind the cinema’ shows its location. So the answer is cinema.",
+            "textToSpeak": "It's the tall building with a glass door, just behind the cinema.",
+            "targetDetail": "cinema",
             "options": [
-                "voucher",
-                "curriculum",
-                "diagnosis",
-                "subscription"
+                "school",
+                "cinema",
+                "hotel",
+                "library"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "detailSpotlight",
-            "emoji": "🏨",
-            "detailCategory": "Key Information"
+            "emoji": "🏙️",
+            "detailCategory": "Location"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L37_Q1",
             "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "Which person's name or role do you hear in the sentence?",
-            "explanation": "That's firefighter: a person trained to put out fires and rescue people. The audio confirms it — a retired firefighter now teaches safety classes.",
-            "textToSpeak": "A retired firefighter now teaches safety classes.",
-            "targetDetail": "firefighter",
+            "instruction": "Clear the glass and tap the date of the appointment.",
+            "hint": "Dates use ordinal numbers. Listen for the whole word, not only its first sound.",
+            "explanation": "The answer is March 20. ‘The twentieth of March’ includes both the day and the month.",
+            "textToSpeak": "Your appointment is on the twentieth of March, at ten.",
+            "targetDetail": "March 20",
             "options": [
-                "receptionist",
-                "comedian",
-                "firefighter",
-                "tenant"
+                "April 20",
+                "March 12",
+                "March 2",
+                "March 20"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "subtype": "detailSpotlight",
-            "emoji": "🚒",
-            "detailCategory": "Key Information"
+            "emoji": "🗓️",
+            "detailCategory": "Date"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L37_Q2",
             "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "The action, not the person or item, is the target here.",
-            "explanation": "Announces is correct — to officially tell people about something. Notice how he announces the winners at the school fair.",
-            "textToSpeak": "He announces the winners at the school fair.",
-            "targetDetail": "announces",
+            "instruction": "Listen for what the children are doing.",
+            "hint": "The action ends in ‘-ing’. Listen for it and the noun that follows.",
+            "explanation": "Watching TV is correct. The living room is only the place where it happens.",
+            "textToSpeak": "The children are watching TV in the living room.",
+            "targetDetail": "watching TV",
             "options": [
-                "arrives",
-                "manages",
-                "reviews",
-                "announces"
+                "playing games",
+                "reading",
+                "watching TV",
+                "doing homework"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "detailSpotlight",
-            "emoji": "📢",
-            "detailCategory": "Key Information"
+            "emoji": "🛋️",
+            "detailCategory": "Action"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L37_Q3",
             "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "Isolate the noun that names the thing itself.",
-            "explanation": "Concert is the detail — a live performance of music. Specifically, she kept every concert ticket from that summer.",
-            "textToSpeak": "She kept every concert ticket from that summer.",
-            "targetDetail": "concert",
+            "instruction": "Wipe away the fog and tap how heavy the box is.",
+            "hint": "The word ‘about’ means the number is close, not exact. Listen for the number after it.",
+            "explanation": "10 kilos is correct. ‘About ten’ shows an approximate weight.",
+            "textToSpeak": "The box is heavy, about ten kilos.",
+            "targetDetail": "10 kilos",
             "options": [
-                "concert",
-                "device",
-                "album",
-                "exhibit"
+                "100 kilos",
+                "2 kilos",
+                "20 kilos",
+                "10 kilos"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "subtype": "detailSpotlight",
-            "emoji": "🎟️",
-            "detailCategory": "Key Information"
+            "emoji": "📦",
+            "detailCategory": "Measurement"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L38_Q1",
             "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "Isolate the noun that answers 'who did this?'",
-            "explanation": "The person mentioned is paramedic: a person trained to give emergency medical care. Here, the paramedic calmed the frightened passengers quickly.",
-            "textToSpeak": "The paramedic calmed the frightened passengers quickly.",
-            "targetDetail": "paramedic",
+            "instruction": "Tap when the doctor is off.",
+            "hint": "‘Off’ means not working. Notice which days come before and after it.",
+            "explanation": "The answer is weekends. She works Tuesday to Friday, so she is off on Saturday and Sunday.",
+            "textToSpeak": "The doctor works Tuesday to Friday, and she's off on weekends.",
+            "targetDetail": "weekends",
             "options": [
-                "butcher",
-                "paramedic",
-                "roommate",
-                "journalist"
+                "weekends",
+                "Wednesdays",
+                "Fridays",
+                "Mondays"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "detailSpotlight",
-            "emoji": "🚑",
-            "detailCategory": "Key Information"
+            "emoji": "🩺",
+            "detailCategory": "Day"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L38_Q2",
             "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "What action connects the subject to the rest of the sentence?",
-            "explanation": "Reviews fits the sentence — to examine something again to check or judge it. You can hear that he reviews the safety checklist before every flight.",
-            "textToSpeak": "He reviews the safety checklist before every flight.",
-            "targetDetail": "reviews",
+            "instruction": "Find who should get the report.",
+            "hint": "Both names are said. The speaker chooses only one.",
+            "explanation": "Mr. Brown is correct. ‘Not Mr. Green’ means Mr. Green is the wrong person.",
+            "textToSpeak": "Could you send the report to Mr. Brown, not Mr. Green?",
+            "targetDetail": "Mr. Brown",
             "options": [
-                "treats",
-                "reports",
-                "measures",
-                "reviews"
+                "Mr. Green",
+                "Mr. White",
+                "Mr. Black",
+                "Mr. Brown"
             ],
             "correctAnswerIndex": 3,
             "subtype": "detailSpotlight",
-            "emoji": "✅",
-            "detailCategory": "Key Information"
+            "emoji": "📧",
+            "detailCategory": "Correction"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L38_Q3",
             "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "Focus on the item, not the person or action described.",
-            "explanation": "Receipt fits here — a paper that proves something was paid for. You can hear that she saved the receipt for the return policy.",
-            "textToSpeak": "She saved the receipt for the return policy.",
-            "targetDetail": "receipt",
+            "instruction": "Listen for how Ryan is travelling.",
+            "hint": "The way of travelling follows the word ‘by’.",
+            "explanation": "Correct: train. ‘By train’ shows the type of transport, and half past nine is his arrival time.",
+            "textToSpeak": "Ryan is coming by train and arriving at half past nine.",
+            "targetDetail": "train",
             "options": [
-                "phone",
-                "photo",
-                "key",
-                "receipt"
+                "bus",
+                "train",
+                "plane",
+                "taxi"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "detailSpotlight",
-            "emoji": "🧾",
-            "detailCategory": "Key Information"
+            "emoji": "🧳",
+            "detailCategory": "Action"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L39_Q1",
             "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "The detail to catch is a job title or a family role.",
-            "explanation": "carpenter is correct — a person who builds and repairs things made of wood. In the audio, a carpenter repaired the wobbly kitchen table.",
-            "textToSpeak": "A carpenter repaired the wobbly kitchen table.",
-            "targetDetail": "carpenter",
+            "instruction": "Clear the glass and tap how many students are in the class in total.",
+            "hint": "‘Total’ means everyone. One of the numbers is only part of the group.",
+            "explanation": "The answer is 30. Fifteen is just the girls. Thirty is the whole class.",
+            "textToSpeak": "There are thirty students in my class, and fifteen are girls.",
+            "targetDetail": "30",
             "options": [
-                "author",
-                "cyclist",
-                "podcaster",
-                "carpenter"
+                "30",
+                "50",
+                "15",
+                "13"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "detailSpotlight",
-            "emoji": "🪑",
-            "detailCategory": "Key Information"
+            "emoji": "🏫",
+            "detailCategory": "Quantity"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L39_Q2",
             "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "Notice the action being performed in the audio.",
-            "explanation": "The action named is measures, which means to find the exact size or amount of something. To be exact, she measures the room before ordering furniture.",
-            "textToSpeak": "She measures the room before ordering furniture.",
-            "targetDetail": "measures",
+            "instruction": "How often does the speaker go swimming?",
+            "hint": "How often means the number of times, not the days. Listen for ‘a week’.",
+            "explanation": "The answer is twice a week. Tuesday and Saturday are the two days, which fits ‘twice’.",
+            "textToSpeak": "I go swimming twice a week, usually on Tuesday and Saturday.",
+            "targetDetail": "twice a week",
             "options": [
-                "measures",
-                "donates",
-                "restores",
-                "presents"
+                "three times a week",
+                "twice a week",
+                "every day",
+                "once a week"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "detailSpotlight",
-            "emoji": "📏",
-            "detailCategory": "Key Information"
+            "emoji": "🏊",
+            "detailCategory": "Frequency"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L39_Q3",
             "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "Listen for the specific thing described in the audio.",
-            "explanation": "Listen for ladder: a structure used for climbing up or down. In this sentence, he borrowed a ladder from the neighbor.",
-            "textToSpeak": "He borrowed a ladder from the neighbor.",
-            "targetDetail": "ladder",
+            "instruction": "Wipe the glass and tap what the receptionist asks you to do.",
+            "hint": "The receptionist gives one instruction and one promise. Choose the instruction.",
+            "explanation": "Take a seat is correct. ‘The doctor will see you soon’ is only a promise.",
+            "textToSpeak": "Please take a seat, and the doctor will see you soon.",
+            "targetDetail": "take a seat",
             "options": [
-                "delivery",
-                "blanket",
-                "ladder",
-                "textbook"
+                "pay now",
+                "show your card",
+                "take a seat",
+                "fill out a form"
             ],
             "correctAnswerIndex": 2,
             "subtype": "detailSpotlight",
-            "emoji": "🪜",
-            "detailCategory": "Key Information"
+            "emoji": "🏥",
+            "detailCategory": "Instruction"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L40_Q1",
             "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "Which word answers the question 'who exactly?'",
-            "explanation": "Right answer: mechanic, a person who repairs cars and other engines. That's because an honest mechanic explained the repair costs clearly.",
-            "textToSpeak": "An honest mechanic explained the repair costs clearly.",
-            "targetDetail": "mechanic",
+            "instruction": "Tap where Mary put her passport.",
+            "hint": "The passport has a container and the container has a place. Listen for the first one.",
+            "explanation": "In the blue folder is correct. The desk is only where the folder is.",
+            "textToSpeak": "Mary put her passport in the blue folder on the desk.",
+            "targetDetail": "in the blue folder",
             "options": [
-                "passenger",
-                "cook",
-                "barista",
-                "mechanic"
+                "in the red folder",
+                "in the blue folder",
+                "in the desk drawer",
+                "in her bag"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "detailSpotlight",
-            "emoji": "🔧",
-            "detailCategory": "Key Information"
+            "emoji": "🗂️",
+            "detailCategory": "Location"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L40_Q2",
             "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "Which verb captures the main activity here?",
-            "explanation": "Listen for recommends: to suggest that something is good or suitable. As stated, she recommends this bakery to all her friends.",
-            "textToSpeak": "She recommends this bakery to all her friends.",
-            "targetDetail": "recommends",
+            "instruction": "Wipe the glass, then tap when the break is.",
+            "hint": "Two times are given for two different events. Match the event to the time.",
+            "explanation": "The answer is 10:15. Nine o'clock is when class starts. The break is at ten fifteen.",
+            "textToSpeak": "The class starts at nine, and the break is at ten fifteen.",
+            "targetDetail": "10:15",
             "options": [
-                "photographs",
-                "recommends",
-                "examines",
-                "reserves"
+                "9:15",
+                "10:15",
+                "10:30",
+                "10:50"
             ],
             "correctAnswerIndex": 1,
             "subtype": "detailSpotlight",
-            "emoji": "🥐",
-            "detailCategory": "Key Information"
+            "emoji": "☕",
+            "detailCategory": "Time"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L40_Q3",
             "interactionType": "choice",
-            "instruction": "Wipe the glass and tap the hidden detail you hear.",
-            "hint": "The item's name is the target — set aside who and what happened.",
-            "explanation": "The object described is discount — a reduction in the usual price of something. As stated, he kept the discount code for his next order.",
-            "textToSpeak": "He kept the discount code for his next order.",
-            "targetDetail": "discount",
+            "instruction": "Listen for how long the tour takes.",
+            "hint": "Numbers ending in ‘-ty’ and ‘-teen’ can sound close. Check where the stress falls.",
+            "explanation": "‘Ninety’ is stressed on the first part. The break is included in the time. So the answer is 90 minutes.",
+            "textToSpeak": "The museum tour takes about ninety minutes, including a short break.",
+            "targetDetail": "90 minutes",
             "options": [
-                "performance",
-                "prescription",
-                "salary",
-                "discount"
+                "45 minutes",
+                "19 minutes",
+                "90 minutes",
+                "60 minutes"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "detailSpotlight",
-            "emoji": "🏷️",
-            "detailCategory": "Key Information"
+            "emoji": "🏛️",
+            "detailCategory": "Duration"
         }
     ]
 }

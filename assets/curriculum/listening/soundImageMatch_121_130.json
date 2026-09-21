@@ -6,691 +6,691 @@
         {
             "id": "LIS_SOUNDIMAGEMATCH_L121_Q1",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "Listen for the precise term, since the options are closely related.",
-            "explanation": "Portal is the key word here. It means an online gateway used to access a website or service. That part goes: log their hours through the company portal.",
-            "textToSpeak": "Employees log their hours through the company portal.",
+            "instruction": "Listen to the whole message, then tap the picture that matches its meaning.",
+            "hint": "In a restaurant, listen for how many people and where they want to sit.",
+            "explanation": "A table for two means two seats, and 'by the window' gives the place. The door or a third chair would be wrong.",
+            "textToSpeak": "Could we have a table for two by the window, please?",
             "options": [
-                "satellite",
-                "brochure",
-                "portal",
-                "node"
+                "two chairs, window",
+                "three chairs, window",
+                "one chair, window",
+                "two chairs, door"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "soundImageMatch",
-            "emoji": "🚪",
+            "emoji": "🪑🪑🪟",
             "optionEmojis": [
-                "🛰️",
-                "📰",
-                "🌀",
-                "🔵"
+                "🪑🪑🪟",
+                "🪑🪑🪑🪟",
+                "🪑🪟",
+                "🪑🪑🚪"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L121_Q2",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "All four options are plausible — only one was actually said aloud.",
-            "explanation": "Terminal is right. Think of it as a screen and keyboard used to type commands into a computer system. From the audio: typed several commands into the terminal.",
-            "textToSpeak": "The IT technician typed several commands into the terminal.",
+            "instruction": "Tap the picture that matches what the speaker means.",
+            "hint": "The customer is asking the waiter for something. What?",
+            "explanation": "The menu is the list of dishes. The bill is what you ask for at the end, not here.",
+            "textToSpeak": "Excuse me, could we see the menu again?",
             "options": [
-                "terminal",
-                "archive",
-                "portal",
-                "visa"
+                "drink",
+                "menu",
+                "bill",
+                "plate"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "soundImageMatch",
-            "emoji": "⌨️",
+            "emoji": "📋",
             "optionEmojis": [
-                "🚉",
-                "🗄️",
-                "🌀",
-                "🛂"
+                "🥤",
+                "📋",
+                "🧾",
+                "🍽️"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L121_Q3",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "Listen for the noun connected to the main action of the sentence.",
-            "explanation": "Protocol fits best here — a set of official rules for how something should be done.",
-            "textToSpeak": "The hospital follows a strict protocol for handling emergencies.",
+            "instruction": "Listen to the whole message, then tap the picture that matches its meaning.",
+            "hint": "Catch the food and what the customer wants done.",
+            "explanation": "The pasta is cold and the customer wants it heated. The picture shows the wanted result: hot pasta.",
+            "textToSpeak": "The pasta is cold. Could you heat it up, please?",
             "options": [
-                "circuit",
-                "terminal",
-                "visa",
-                "protocol"
+                "cold pasta",
+                "hot pizza",
+                "hot pasta",
+                "hot noodles"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "soundImageMatch",
-            "emoji": "📋",
+            "emoji": "🍝🔥",
             "optionEmojis": [
-                "🔌",
-                "🚉",
-                "🛂",
-                "📋"
+                "🍝🧊",
+                "🍕🔥",
+                "🍝🔥",
+                "🍜🔥"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L122_Q1",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "The distractors share a category with the answer — listen carefully.",
-            "explanation": "You were listening for database: an organized collection of information stored electronically for easy access.",
-            "textToSpeak": "The clinic updated its database with the new patient records.",
+            "instruction": "Listen to the speaker and choose the picture that fits best.",
+            "hint": "A shopper asks about the price. What is on sale?",
+            "explanation": "'Discount' means a lower price, shown by the tag. The item is shoes.",
+            "textToSpeak": "Is there a discount on these shoes?",
             "options": [
-                "circuit",
-                "database",
-                "itinerary",
-                "terminal"
+                "shoes on sale",
+                "bag on sale",
+                "shoes in cart",
+                "shoes repaired"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "soundImageMatch",
-            "emoji": "🗃️",
+            "emoji": "👟🏷️",
             "optionEmojis": [
-                "🔌",
-                "🗄️",
-                "🗺️",
-                "🚉"
+                "👟🏷️",
+                "👜🏷️",
+                "👟🛒",
+                "👟🔧"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L122_Q2",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "Listen past the introduction for the specific detail.",
-            "explanation": "The correct answer is compass: a tool that shows direction, used for finding your way. Listen again: used a compass to find their way back.",
-            "textToSpeak": "The hikers used a compass to find their way back.",
+            "instruction": "Listen carefully and tap the best matching picture.",
+            "hint": "Listen for the item and what the customer wants to do with it.",
+            "explanation": "'Return' means bring it back to the shop. The item is the jacket.",
+            "textToSpeak": "I'd like to return this jacket; it's the wrong color.",
             "options": [
-                "node",
-                "visa",
-                "compass",
-                "brochure"
+                "buy jacket",
+                "return shoes",
+                "fix jacket",
+                "return jacket"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "subtype": "soundImageMatch",
-            "emoji": "🧭",
+            "emoji": "🧥↩️",
             "optionEmojis": [
-                "🔵",
-                "🛂",
-                "🧭",
-                "📰"
+                "🧥🛒",
+                "👟↩️",
+                "🧥🔧",
+                "🧥↩️"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L122_Q3",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "Listen for what the sentence says was updated, checked, or used.",
-            "explanation": "Nice work if you chose visa — an official mark in a passport that allows entry to a country.",
-            "textToSpeak": "He applied for a visa three months before the trip.",
+            "instruction": "Build the scene in your mind, then tap the matching picture.",
+            "hint": "The shop is telling the customer how to pay.",
+            "explanation": "'Only take cash' means notes and coins, not cards or transfers. The banknote is the closest match.",
+            "textToSpeak": "Sorry, we only take cash here.",
             "options": [
-                "compass",
-                "visa",
-                "customs",
-                "module"
+                "bank transfer",
+                "phone payment",
+                "card",
+                "cash"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "subtype": "soundImageMatch",
-            "emoji": "📘",
+            "emoji": "💵",
             "optionEmojis": [
-                "🧭",
-                "🛂",
-                "🛃",
-                "🧩"
+                "🏦",
+                "📱",
+                "💳",
+                "💵"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L123_Q1",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "The sentence gives one precise clue among several similar options.",
-            "explanation": "Customs is the word actually spoken — the airport checkpoint where officials inspect travelers' goods. The line was: waited nearly an hour to clear customs.",
-            "textToSpeak": "They waited nearly an hour to clear customs.",
+            "instruction": "Tap the picture that matches what the speaker means.",
+            "hint": "A passenger asks about the vehicle and the destination.",
+            "explanation": "The passenger asks about a bus and the airport. The other pictures change the vehicle or the place.",
+            "textToSpeak": "Excuse me, does this bus go to the airport?",
             "options": [
-                "compass",
-                "visa",
-                "sensor",
-                "customs"
+                "bus to airport",
+                "bus to station",
+                "taxi to airport",
+                "bus to hospital"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "soundImageMatch",
-            "emoji": "🛃",
+            "emoji": "🚌🛫",
             "optionEmojis": [
-                "🧭",
-                "🛂",
-                "📡",
-                "🛃"
+                "🚌🛫",
+                "🚌🚉",
+                "🚕🛫",
+                "🚌🏥"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L123_Q2",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "Pay close attention — the options are easy to confuse with each other.",
-            "explanation": "Listen for checkpoint — a place where travelers or vehicles are stopped and checked. The line was: stopped every vehicle at the checkpoint.",
-            "textToSpeak": "Guards stopped every vehicle at the checkpoint.",
+            "instruction": "Listen to the whole message, then tap the picture that matches its meaning.",
+            "hint": "Numbers matter at stations. Which platform?",
+            "explanation": "'Platform three' is the number to listen for. Two, five and eight are other platforms.",
+            "textToSpeak": "The train to the city leaves from platform three.",
             "options": [
-                "checkpoint",
-                "brochure",
-                "cargo",
-                "itinerary"
+                "train, platform 2",
+                "train, platform 3",
+                "train, platform 5",
+                "train, platform 8"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "soundImageMatch",
-            "emoji": "🚧",
+            "emoji": "🚆3️⃣",
             "optionEmojis": [
-                "🛂",
-                "📰",
-                "🚢",
-                "🗺️"
+                "🚆2️⃣",
+                "🚆3️⃣",
+                "🚆5️⃣",
+                "🚆8️⃣"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L123_Q3",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "Don't rely on the topic alone — the exact word matters here.",
-            "explanation": "Brochure fits best here — a small printed booklet that gives information, often about a trip. Specifically: picked up a brochure about local tours.",
-            "textToSpeak": "She picked up a brochure about local tours.",
+            "instruction": "Tap the picture that matches what the speaker means.",
+            "hint": "Someone is asking for directions. To where?",
+            "explanation": "The question mark shows a request for help, and the place asked for is the hospital.",
+            "textToSpeak": "Could you tell me how to get to the hospital?",
             "options": [
-                "runway",
-                "circuit",
-                "checkpoint",
-                "brochure"
+                "asking for bank",
+                "asking for hotel",
+                "asking for school",
+                "asking for hospital"
             ],
             "correctAnswerIndex": 3,
             "subtype": "soundImageMatch",
-            "emoji": "📗",
+            "emoji": "❓🏥",
             "optionEmojis": [
-                "🛫",
-                "🔌",
-                "🛂",
-                "📰"
+                "❓🏦",
+                "❓🏨",
+                "❓🏫",
+                "❓🏥"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L124_Q1",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "The correct word may be tucked inside a longer clause.",
-            "explanation": "Shipment means a batch of goods sent to a customer or another location. Reference: arrived two days later than expected.",
-            "textToSpeak": "The shipment arrived two days later than expected.",
+            "instruction": "Listen to the speaker and choose the picture that fits best.",
+            "hint": "A patient describes a problem. Which one?",
+            "explanation": "A headache is pain in the head. The bandaged-head face matches better than fever or sneezing.",
+            "textToSpeak": "I've had a headache since yesterday.",
             "options": [
-                "shipment",
-                "warehouse",
-                "cargo",
-                "module"
+                "sneezing",
+                "fever",
+                "mask",
+                "headache"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "subtype": "soundImageMatch",
-            "emoji": "🚢",
+            "emoji": "🤕",
             "optionEmojis": [
-                "🚢",
-                "🏭",
-                "🚢",
-                "🧩"
+                "🤧",
+                "🤒",
+                "😷",
+                "🤕"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L124_Q2",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "The correct word fits the sentence exactly, not just loosely.",
-            "explanation": "You were listening for circuit: a closed path that lets electricity flow to power a device. Straight from the audio: caused the lights to go out.",
-            "textToSpeak": "A short circuit caused the lights to go out.",
+            "instruction": "Listen carefully and tap the best matching picture.",
+            "hint": "Pay attention to what was checked and the result.",
+            "explanation": "The nurse checked the temperature and the result was normal. A smiling face shows all is fine.",
+            "textToSpeak": "The nurse took my temperature, and it was normal.",
             "options": [
-                "checkpoint",
-                "satellite",
-                "circuit",
-                "portal"
+                "normal temperature",
+                "high temperature",
+                "injection",
+                "very hot temperature"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "soundImageMatch",
-            "emoji": "🔌",
+            "emoji": "🌡️😊",
             "optionEmojis": [
-                "🛂",
-                "🛰️",
-                "🔌",
-                "🌀"
+                "🌡️😊",
+                "🌡️🤒",
+                "💉😊",
+                "🌡️🥵"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L124_Q3",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "The sentence uses formal language — focus on the core noun.",
-            "explanation": "Archive fits best here — a collection of stored records or files kept for future reference. In the sentence: spent weeks searching through the city archive.",
-            "textToSpeak": "The historian spent weeks searching through the city archive.",
+            "instruction": "Tap the picture that matches what the speaker means.",
+            "hint": "Notice who the appointment is with and the time.",
+            "explanation": "The dentist (teeth) at 'half past three', which is 3:30.",
+            "textToSpeak": "I have an appointment with the dentist at half past three.",
             "options": [
-                "archive",
-                "node",
-                "itinerary",
-                "database"
+                "dentist at 4:30",
+                "dentist at 3:00",
+                "dentist at 3:30",
+                "doctor at 3:30"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "soundImageMatch",
-            "emoji": "🗄️",
+            "emoji": "🦷🕞",
             "optionEmojis": [
-                "🗄️",
-                "🔵",
-                "🗺️",
-                "🗄️"
+                "🦷🕟",
+                "🦷🕒",
+                "🦷🕞",
+                "👨‍⚕️🕞"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L125_Q1",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "The right answer is the specific object, system, or document named.",
-            "explanation": "Itinerary is the key word here. It means a planned schedule of a trip. As heard in the audio: planned a detailed itinerary for their trip to Japan.",
-            "textToSpeak": "She planned a detailed itinerary for their trip to Japan.",
+            "instruction": "Listen carefully and tap the best matching picture.",
+            "hint": "Something is missing from the machine.",
+            "explanation": "'Out of paper' means no paper is left. The 🚫 shows what is missing.",
+            "textToSpeak": "The printer is out of paper again.",
             "options": [
-                "circuit",
-                "brochure",
-                "visa",
-                "itinerary"
+                "computer, no paper",
+                "printer with paper",
+                "printer broken",
+                "printer, no paper"
             ],
             "correctAnswerIndex": 3,
             "subtype": "soundImageMatch",
-            "emoji": "🗺️",
+            "emoji": "🖨️🚫📄",
             "optionEmojis": [
-                "🔌",
-                "📰",
-                "🛂",
-                "🗺️"
+                "💻🚫📄",
+                "🖨️📄",
+                "🖨️🔧",
+                "🖨️🚫📄"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L125_Q2",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "Focus on the exact term used, not a related idea.",
-            "explanation": "The right choice is runway, meaning the long strip an airplane uses to take off and land. Listen again: waited on the runway for clearance to take off.",
-            "textToSpeak": "The plane waited on the runway for clearance to take off.",
+            "instruction": "Listen to the speaker and choose the picture that fits best.",
+            "hint": "Listen for where the speaker will work.",
+            "explanation": "'Working from home' means the laptop and the house. The plumber is the reason.",
+            "textToSpeak": "I'll be working from home tomorrow because the plumber is coming.",
             "options": [
-                "itinerary",
-                "cargo",
-                "customs",
-                "runway"
+                "sleep at home",
+                "work at office",
+                "work in car",
+                "work at home"
             ],
             "correctAnswerIndex": 3,
             "subtype": "soundImageMatch",
-            "emoji": "🛫",
+            "emoji": "🏠💻",
             "optionEmojis": [
-                "🗺️",
-                "🚢",
-                "🛃",
-                "🛫"
+                "🏠😴",
+                "🏢💻",
+                "🚗💻",
+                "🏠💻"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L125_Q3",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "The sentence gives one precise clue among several similar options.",
-            "explanation": "The right choice is sensor, meaning a device that detects change and sends the information onward. Straight from the audio: turns the lights on automatically.",
-            "textToSpeak": "The sensor in the hallway turns the lights on automatically.",
+            "instruction": "Listen to the whole message, then tap the picture that matches its meaning.",
+            "hint": "Pay attention to who speaks and to whom.",
+            "explanation": "A woman presents to the whole team, a group. A single listener or a man would be different.",
+            "textToSpeak": "She's giving a presentation to the whole team this afternoon.",
             "options": [
-                "warehouse",
-                "terminal",
-                "portal",
-                "sensor"
+                "woman presenting to team",
+                "woman presenting to one person",
+                "man presenting to team",
+                "woman using laptop with team"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "soundImageMatch",
-            "emoji": "🌡️",
+            "emoji": "👩📊👥",
             "optionEmojis": [
-                "🏭",
-                "🚉",
-                "🌀",
-                "📡"
+                "👩📊👥",
+                "👩📊👤",
+                "👨📊👥",
+                "👩💻👥"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L126_Q1",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "Listen past the introduction for the specific detail.",
-            "explanation": "Node is the answer — a single connection point within a larger network. Listen again: fails, traffic reroutes automatically.",
-            "textToSpeak": "If one node in the network fails, traffic reroutes automatically.",
+            "instruction": "Listen carefully and tap the best matching picture.",
+            "hint": "In class, numbers give instructions. Which page?",
+            "explanation": "'Page ten' is 10. The other pages are different numbers.",
+            "textToSpeak": "Please open your books to page ten.",
             "options": [
-                "satellite",
-                "node",
-                "itinerary",
-                "protocol"
+                "book, page 3",
+                "book, page 8",
+                "book, page 10",
+                "book, page 6"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "subtype": "soundImageMatch",
-            "emoji": "📍",
+            "emoji": "📖🔟",
             "optionEmojis": [
-                "🛰️",
-                "🔵",
-                "🗺️",
-                "📋"
+                "📖3️⃣",
+                "📖8️⃣",
+                "📖🔟",
+                "📖6️⃣"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L126_Q2",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "Listen for what the sentence says was updated, checked, or used.",
-            "explanation": "Listen for satellite — a device sent into space to orbit the earth and relay signals.",
-            "textToSpeak": "The satellite sends weather images back to earth every hour.",
+            "instruction": "Listen to the whole message, then tap the picture that matches its meaning.",
+            "hint": "Focus on what happened to the trip and why.",
+            "explanation": "The trip is cancelled and the storm is the reason. Sun would not explain a cancellation.",
+            "textToSpeak": "The school trip has been cancelled because of the storm.",
             "options": [
-                "sensor",
-                "shipment",
-                "module",
-                "satellite"
+                "trip, storm",
+                "bag cancelled, storm",
+                "trip cancelled, storm",
+                "trip cancelled, sun"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "soundImageMatch",
-            "emoji": "🛰️",
+            "emoji": "🚌🚫⛈️",
             "optionEmojis": [
-                "📡",
-                "🚢",
-                "🧩",
-                "🛰️"
+                "🚌⛈️",
+                "🎒🚫⛈️",
+                "🚌🚫⛈️",
+                "🚌🚫☀️"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L126_Q3",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "All four options are plausible — only one was actually said aloud.",
-            "explanation": "You were listening for module: a separate section that is part of a larger system, course, or program.",
-            "textToSpeak": "Students must complete this module before moving to the next one.",
+            "instruction": "Listen to the speaker and choose the picture that fits best.",
+            "hint": "Two things to remember. Which two?",
+            "explanation": "The teacher lists homework and a sports bag. Books or a football are not mentioned.",
+            "textToSpeak": "Don't forget your homework and your sports bag tomorrow.",
             "options": [
-                "module",
-                "itinerary",
-                "sensor",
-                "portal"
+                "homework and bag",
+                "books and bag",
+                "homework and books",
+                "homework and football"
             ],
             "correctAnswerIndex": 0,
             "subtype": "soundImageMatch",
-            "emoji": "🧩",
+            "emoji": "📝🎒",
             "optionEmojis": [
-                "🧩",
-                "🗺️",
-                "📡",
-                "🌀"
+                "📝🎒",
+                "📚🎒",
+                "📝📚",
+                "📝⚽"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L127_Q1",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "Listen for the noun connected to the main action of the sentence.",
-            "explanation": "Cargo means goods that are transported by truck, ship, or plane. Recall: carried cargo from three different countries.",
-            "textToSpeak": "The ship carried cargo from three different countries.",
+            "instruction": "Listen carefully and tap the best matching picture.",
+            "hint": "Something at home needs fixing. Who should come?",
+            "explanation": "The tap is the problem and a plumber is the person to call.",
+            "textToSpeak": "The kitchen tap is dripping. Can you call a plumber?",
             "options": [
-                "runway",
-                "cargo",
-                "warehouse",
-                "shipment"
+                "shower, plumber",
+                "plug, plumber",
+                "tap, plumber",
+                "tap, water"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "subtype": "soundImageMatch",
-            "emoji": "🚛",
+            "emoji": "🚰🧑‍🔧",
             "optionEmojis": [
-                "🛫",
-                "🚢",
-                "🏭",
-                "🚢"
+                "🚿🧑‍🔧",
+                "🔌🧑‍🔧",
+                "🚰🧑‍🔧",
+                "🚰💧"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L127_Q2",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "Listen for the precise term, since the options are closely related.",
-            "explanation": "The audio names warehouse, which means a large building used to store goods before they are sold. Recall: stores its extra stock in a large warehouse.",
-            "textToSpeak": "The company stores its extra stock in a large warehouse.",
+            "instruction": "Listen to the whole message, then tap the picture that matches its meaning.",
+            "hint": "Focus on how, where and why.",
+            "explanation": "The speaker will walk to the shop for eggs. Driving, milk or the bank would change a detail.",
+            "textToSpeak": "We've run out of eggs. I'm walking to the shop to get some.",
             "options": [
-                "shipment",
-                "cargo",
-                "warehouse",
-                "terminal"
+                "walk to shop for milk",
+                "walk to shop for eggs",
+                "drive to shop for eggs",
+                "walk to bank for eggs"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "soundImageMatch",
-            "emoji": "🏭",
+            "emoji": "🚶🏪🥚",
             "optionEmojis": [
-                "🚢",
-                "🚢",
-                "🏭",
-                "🚉"
+                "🚶🏪🥛",
+                "🚶🏪🥚",
+                "🚗🏪🥚",
+                "🚶🏦🥚"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L127_Q3",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "The sentence uses formal language — focus on the core noun.",
-            "explanation": "Itinerary is the answer — a planned schedule of a trip. Here's the detail: included two days in the mountains.",
-            "textToSpeak": "Their itinerary included two days in the mountains.",
+            "instruction": "Build the scene in your mind, then tap the matching picture.",
+            "hint": "A neighbor is asked for a favor.",
+            "explanation": "The favor is watering the plants. 'While we're away' says why it's needed.",
+            "textToSpeak": "Could you water the plants while we're away?",
             "options": [
-                "terminal",
-                "itinerary",
-                "customs",
-                "runway"
+                "water plants",
+                "clean plants",
+                "sun for plants",
+                "water carrots"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "soundImageMatch",
-            "emoji": "🗺️",
+            "emoji": "🪴💧",
             "optionEmojis": [
-                "🚉",
-                "🗺️",
-                "🛃",
-                "🛫"
+                "🪴💧",
+                "🪴🧹",
+                "🪴☀️",
+                "🥕💧"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L128_Q1",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "Pay close attention — the options are easy to confuse with each other.",
-            "explanation": "The correct answer is warehouse: a large building used to store goods before they are sold. Reference: loaded pallets onto trucks outside the warehouse.",
-            "textToSpeak": "Workers loaded pallets onto trucks outside the warehouse.",
+            "instruction": "Listen to the whole message, then tap the picture that matches its meaning.",
+            "hint": "On the phone, the second speaker explains where Mrs. Patel is.",
+            "explanation": "The receptionist says 'she's in a meeting', so the briefcase is the match.",
+            "textToSpeak": "Could I speak to Mrs. Patel, please? — I'm sorry, she's in a meeting.",
             "options": [
-                "database",
-                "cargo",
-                "shipment",
-                "warehouse"
+                "phone, lunch",
+                "phone, meeting",
+                "phone, hospital",
+                "phone, beach"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "soundImageMatch",
-            "emoji": "🏭",
+            "emoji": "📞💼",
             "optionEmojis": [
-                "🗄️",
-                "🚢",
-                "🚢",
-                "🏭"
+                "📞🍽️",
+                "📞💼",
+                "📞🏥",
+                "📞🏖️"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L128_Q2",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "The right answer is the specific object, system, or document named.",
-            "explanation": "Compass is correct — a tool that shows direction, used for finding your way. Recall: gave her an old brass compass.",
-            "textToSpeak": "Her grandfather gave her an old brass compass.",
+            "instruction": "Listen to the speaker and choose the picture that fits best.",
+            "hint": "Catch why the call is a problem.",
+            "explanation": "'No signal' means the phone can't connect. The 🚫 with the bars shows this.",
+            "textToSpeak": "Sorry, there's no signal here. I'll call you back later.",
             "options": [
-                "node",
-                "compass",
-                "customs",
-                "visa"
+                "low battery",
+                "signal",
+                "no signal",
+                "silent call"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "subtype": "soundImageMatch",
-            "emoji": "🧭",
+            "emoji": "📞🚫📶",
             "optionEmojis": [
-                "🔵",
-                "🧭",
-                "🛃",
-                "🛂"
+                "📞🔋",
+                "📞📶",
+                "📞🚫📶",
+                "📞🔇"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L128_Q3",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "The correct word fits the sentence exactly, not just loosely.",
-            "explanation": "Protocol fits best here — a set of official rules for how something should be done. The line was: updated the safety protocol after the inspection.",
-            "textToSpeak": "They updated the safety protocol after the inspection.",
+            "instruction": "Listen to the whole message, then tap the picture that matches its meaning.",
+            "hint": "The person is not available. What is offered?",
+            "explanation": "'Leave a message' means to write or say something to be passed on. The speech bubble matches.",
+            "textToSpeak": "She's not here right now. Would you like to leave a message?",
             "options": [
-                "protocol",
-                "node",
-                "module",
-                "visa"
+                "call twice",
+                "hang up",
+                "leave message",
+                "talk now"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "soundImageMatch",
-            "emoji": "📋",
+            "emoji": "📞💬",
             "optionEmojis": [
-                "📋",
-                "🔵",
-                "🧩",
-                "🛂"
+                "📞📞",
+                "📞🚫",
+                "📞💬",
+                "📞🗣️"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L129_Q1",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "The correct word may be tucked inside a longer clause.",
-            "explanation": "Portal is correct — an online gateway used to access a website or service. Straight from the audio: launched a new portal for course registration.",
-            "textToSpeak": "The university launched a new portal for course registration.",
+            "instruction": "Listen to the speaker and choose the picture that fits best.",
+            "hint": "This is a rule. What is not allowed, and where?",
+            "explanation": "'No food' and 'library' are both in the sign. Phones or school would change the meaning.",
+            "textToSpeak": "No food or drink is allowed in the library.",
             "options": [
-                "node",
-                "cargo",
-                "portal",
-                "circuit"
+                "no food in library",
+                "no phones in library",
+                "no food in school",
+                "food in library"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "soundImageMatch",
-            "emoji": "🚪",
+            "emoji": "🚫🍔📚",
             "optionEmojis": [
-                "🔵",
-                "🚢",
-                "🌀",
-                "🔌"
+                "🚫🍔📚",
+                "🚫📱📚",
+                "🚫🍔🏫",
+                "🍔📚"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L129_Q2",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "The distractors share a category with the answer — listen carefully.",
-            "explanation": "The word you needed was satellite — a device sent into space to orbit the earth and relay signals. The audio included: can sometimes interrupt the satellite connection.",
-            "textToSpeak": "A storm can sometimes interrupt the satellite connection.",
+            "instruction": "Tap the picture that matches what the speaker means.",
+            "hint": "Notice the place and the closing time.",
+            "explanation": "'At sunset' gives the time and 'the park' gives the place. Beach or noon would be different.",
+            "textToSpeak": "The park closes at sunset, so we should leave soon.",
             "options": [
-                "archive",
-                "satellite",
-                "itinerary",
-                "circuit"
+                "beach at sunset",
+                "park at noon",
+                "park at sunset",
+                "park at night"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "subtype": "soundImageMatch",
-            "emoji": "🛰️",
+            "emoji": "🏞️🌇",
             "optionEmojis": [
-                "🗄️",
-                "🛰️",
-                "🗺️",
-                "🔌"
+                "🏖️🌇",
+                "🏞️☀️",
+                "🏞️🌇",
+                "🏞️🌙"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L129_Q3",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "Don't rely on the topic alone — the exact word matters here.",
-            "explanation": "Database fits best here — an organized collection of information stored electronically for easy access.",
-            "textToSpeak": "Someone accidentally deleted a file from the shared database.",
+            "instruction": "Listen to the whole message, then tap the picture that matches its meaning.",
+            "hint": "Pay attention to what has stopped working.",
+            "explanation": "'Isn't working' means out of order. The lift is the thing that has stopped.",
+            "textToSpeak": "The lift isn't working, so we have to use the stairs.",
             "options": [
-                "database",
-                "circuit",
-                "module",
-                "compass"
+                "lift working",
+                "lift out of order",
+                "door closed",
+                "car broken"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "soundImageMatch",
-            "emoji": "🗃️",
+            "emoji": "🛗🚫",
             "optionEmojis": [
-                "🗄️",
-                "🔌",
-                "🧩",
-                "🧭"
+                "🛗✅",
+                "🛗🚫",
+                "🚪🚫",
+                "🚗🚫"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L130_Q1",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "Listen past the introduction for the specific detail.",
-            "explanation": "Listen for shipment — a batch of goods sent to a customer or another location. Context: tracked the shipment online after placing the order.",
-            "textToSpeak": "She tracked the shipment online after placing the order.",
+            "instruction": "Listen carefully and tap the best matching picture.",
+            "hint": "Numbers at the airport: listen to each digit.",
+            "explanation": "Twelve is 1 then 2. Thirteen and ten sound similar, and twenty-one reverses the digits.",
+            "textToSpeak": "Passengers for Dubai should go to gate twelve.",
             "options": [
-                "cargo",
-                "compass",
-                "shipment",
-                "warehouse"
+                "gate 10",
+                "gate 21",
+                "gate 13",
+                "gate 12"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "subtype": "soundImageMatch",
-            "emoji": "🚢",
+            "emoji": "✈️1️⃣2️⃣",
             "optionEmojis": [
-                "🚢",
-                "🧭",
-                "🚢",
-                "🏭"
+                "✈️1️⃣0️⃣",
+                "✈️2️⃣1️⃣",
+                "✈️1️⃣3️⃣",
+                "✈️1️⃣2️⃣"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L130_Q2",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "The sentence uses formal language — focus on the core noun.",
-            "explanation": "Archive is correct — a collection of stored records or files kept for future reference. Recall: are kept in the archive.",
-            "textToSpeak": "Old newspapers from the 1950s are kept in the archive.",
+            "instruction": "Tap the picture that matches what the speaker means.",
+            "hint": "Something did not arrive. What was it?",
+            "explanation": "The suitcase didn't arrive, and the plane landing shows arrival.",
+            "textToSpeak": "My suitcase didn't arrive at the airport.",
             "options": [
-                "archive",
-                "sensor",
-                "compass",
-                "terminal"
+                "suitcase didn't leave",
+                "suitcase didn't arrive",
+                "bag didn't arrive",
+                "suitcase arrived"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "soundImageMatch",
-            "emoji": "🗄️",
+            "emoji": "🧳🚫🛬",
             "optionEmojis": [
-                "🗄️",
-                "📡",
-                "🧭",
-                "🚉"
+                "🧳🚫🛫",
+                "🧳🚫🛬",
+                "🎒🚫🛬",
+                "🧳🛬"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L130_Q3",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "The sentence gives one precise clue among several similar options.",
-            "explanation": "Runway fits best here — the long strip an airplane uses to take off and land. Recall: delayed flights leaving the runway.",
-            "textToSpeak": "Heavy fog delayed flights leaving the runway.",
+            "instruction": "Listen carefully and tap the best matching picture.",
+            "hint": "Listen for the number of nights and the type of place.",
+            "explanation": "Three nights at a hotel. The picture with the beach only doesn't show the hotel.",
+            "textToSpeak": "We're staying at a hotel near the beach for three nights.",
             "options": [
-                "brochure",
-                "runway",
-                "terminal",
-                "itinerary"
+                "hotel, 1 night",
+                "hotel, 3 nights",
+                "beach, 3 nights",
+                "hotel, 2 nights"
             ],
             "correctAnswerIndex": 1,
             "subtype": "soundImageMatch",
-            "emoji": "🛫",
+            "emoji": "🏨🌙🌙🌙",
             "optionEmojis": [
-                "📰",
-                "🛫",
-                "🚉",
-                "🗺️"
+                "🏨🌙",
+                "🏨🌙🌙🌙",
+                "🏖️🌙🌙🌙",
+                "🏨🌙🌙"
             ]
         }
     ]

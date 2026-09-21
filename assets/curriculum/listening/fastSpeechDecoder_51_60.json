@@ -6,28 +6,28 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L51_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch behind versus ahead, and 'right now' versus 'already'.",
-            "explanation": "'Kinda' softens 'kind of' into a casual hedge, showing the speaker isn't being too direct. 'Behind' and 'ahead' are total opposites for a schedule, so that's the word to prioritise.",
-            "textToSpeak": "This project's kinda behind schedule right now.",
+            "instruction": "Listen carefully and catch the exact sentence.",
+            "hint": "Listen closely to 'pick up an' — the words run together. Then catch the item.",
+            "explanation": "In fast speech, 'pick up an' links into almost one word as the final consonant slides onto the next vowel, like 'pi-kuh-pan'.",
+            "textToSpeak": "Could you pick up an umbrella on your way in?",
             "options": [
-                "This project's kinda behind schedule right now.",
-                "That project's kinda behind schedule right now."
+                "Could you pick out an umbrella on your way in?",
+                "Could you pick up an umbrella on your way in?"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L51_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Notice 'kinda' versus 'really', and push versus meet.",
-            "explanation": "'Kinda hoping' (a soft, tentative wish) and 'really hoping' (a strong one) show very different levels of confidence. 'Push' (delay) and 'meet' (achieve) the deadline are opposite outcomes too.",
-            "textToSpeak": "I'm kinda hoping we can push the deadline.",
+            "instruction": "They said it fast — what did you actually hear?",
+            "hint": "Catch what's being turned off, and how completely.",
+            "explanation": "'Turn it off' links so tightly that 'turn-it' can sound like one word, with the 't' sliding straight into the vowel of 'it'.",
+            "textToSpeak": "Could you turn it off completely?",
             "options": [
-                "I'm kinda hoping we can move the deadline.",
-                "I'm kinda hoping we can push the deadline."
+                "Could you turn it down completely?",
+                "Could you turn it off completely?"
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -36,13 +36,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L51_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch design versus delay, and 'kinda' versus 'pretty'.",
-            "explanation": "'Kinda unhappy' (a little) and 'pretty unhappy' (quite a lot) describe different levels of concern using similar-sounding hedge words. Also listen for singular 'client's' versus plural 'clients are'.",
-            "textToSpeak": "The client's kinda unhappy with the design.",
+            "instruction": "Natural speech blends words together. Catch the real message.",
+            "hint": "Notice exactly what's being picked up, since the linking makes the phrase sound like one word.",
+            "explanation": "'Pick it up' fuses into a single fast chunk, almost 'pi-ki-tup', so the object named right after needs your full attention.",
+            "textToSpeak": "Can you pick it up on your way?",
             "options": [
-                "The client's kinda unhappy with the delay.",
-                "The client's kinda unhappy with the design."
+                "Can you drop it off on your way?",
+                "Can you pick it up on your way?"
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -51,28 +51,28 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L52_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch party versus dinner, and 'sorta' versus 'really'.",
-            "explanation": "'Sorta' softens 'sort of' the same way 'kinda' softens 'kind of' - both are casual hedges meaning 'a little'. Compare that to 'really', which shows no hedging at all.",
-            "textToSpeak": "We're sorta running late for the party.",
+            "instruction": "Listen for the small word that changes the meaning.",
+            "hint": "Listen for the linked sound between 'need' and 'a', then the object.",
+            "explanation": "The final 'd' in 'need' links smoothly onto the vowel of 'a', so 'need a' can sound almost like 'nee-da' in fast speech.",
+            "textToSpeak": "I need a pen to sign this.",
             "options": [
-                "We're sorta running late for the party.",
-                "They're sorta running late for the party."
+                "I need a stamp to sign this.",
+                "I need a pen to sign this."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L52_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Notice uncle versus aunt, and comedian versus favourite.",
-            "explanation": "'Sorta' and 'kinda' mean roughly the same thing, so if you catch one but aren't sure which exact one, don't panic - focus instead on who's being described and how.",
-            "textToSpeak": "My uncle's sorta the family comedian.",
+            "instruction": "Focus on the key detail hidden in the fast sentence.",
+            "hint": "Catch whether they want more of the same, or something different.",
+            "explanation": "'Take another' links the 'k' straight into the following vowel, so it can sound like 'tay-kuh-nother' — listen past the link to what's being offered.",
+            "textToSpeak": "Would you like to take another look?",
             "options": [
-                "My uncle's kinda the family comedian.",
-                "My uncle's sorta the family comedian."
+                "Would you like to take a closer look?",
+                "Would you like to take another look?"
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -81,13 +81,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L52_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch excited versus nervous, and singular versus plural.",
-            "explanation": "'Excited' and 'nervous' can actually go together in real life, which is exactly why you can't guess - you have to hear the specific word. Also confirm 'kids' (plural) versus 'kid' (singular).",
-            "textToSpeak": "The kids are sorta excited about the trip.",
+            "instruction": "Listen again — which version matches what was said?",
+            "hint": "Notice the exact item requested after the linked phrase.",
+            "explanation": "'Give me a' compresses into a fast, connected chunk, almost 'gi-mi-uh', with the real content landing entirely on the noun that follows.",
+            "textToSpeak": "Could you give me a hand with this?",
             "options": [
-                "The kids are sorta nervous about the trip.",
-                "The kids are sorta excited about the trip."
+                "Could you give me a minute with this?",
+                "Could you give me a hand with this?"
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -96,163 +96,163 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L53_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch milk versus bread, and grab versus get.",
-            "explanation": "'Outta' is the fast-speech version of 'out of', so common it barely sounds like two words anymore. 'Grab' and 'get' mean almost the same thing, so listen for the specific verb used.",
-            "textToSpeak": "We're outta milk again, can you grab some?",
+            "instruction": "Listen carefully and catch the exact sentence.",
+            "hint": "Catch where exactly they need to get out of.",
+            "explanation": "'Get out' links its final consonant onto the vowel of 'out', so the phrase compresses into a fast, connected sound.",
+            "textToSpeak": "We need to get out of the city before rush hour.",
             "options": [
-                "We're almost outta milk again, can you grab some?",
-                "We're outta milk again, can you grab some?"
+                "We need to get out of the city before rush hour.",
+                "We need to get into the city before rush hour."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L53_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Notice jacket versus jumper, and 'my size' versus 'every size'.",
-            "explanation": "'Outta stock' (completely unavailable) and 'low on stock' (almost gone) describe different situations, so listen for the precise phrase. 'My size' versus 'every size' also changes how bad the news really is.",
-            "textToSpeak": "This jacket's outta stock in my size.",
+            "instruction": "They said it fast — what did you actually hear?",
+            "hint": "Listen for whether it's being sent now or already sent.",
+            "explanation": "'Send it' links tightly, almost 'sen-dit', so the timing word around it is what actually tells you when this is happening.",
+            "textToSpeak": "I'll send it over right away.",
             "options": [
-                "This jacket's outta stock in my size.",
-                "This jacket's outta stock in every size."
+                "I've sent it over right away.",
+                "I'll send it over right away."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L53_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch cash versus change, and could versus can.",
-            "explanation": "'Cash' (notes and coins generally) and 'change' (small coins specifically) are related but different, so listen for the exact word. 'Can' and 'could' are both polite here, so catch the actual one used too.",
-            "textToSpeak": "I'm outta cash, can I pay by card?",
+            "instruction": "Natural speech blends words together. Catch the real message.",
+            "hint": "Catch exactly what they're checking out, since the linking blurs the word boundary.",
+            "explanation": "'Check it out' links three words into a fast, smooth run, so the object being checked needs your close attention.",
+            "textToSpeak": "You should check it out before you decide.",
             "options": [
-                "I'm outta cash, could I pay by card?",
-                "I'm outta cash, can I pay by card?"
+                "You should check it out before you decide.",
+                "You should rule it out before you decide."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L54_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch 'the same thing' versus 'something different', and last time versus always.",
-            "explanation": "'The same thing' and 'something different' are opposite choices at a restaurant, so that phrase decides the whole sentence. 'Order' and 'try' are close enough to require careful listening too.",
-            "textToSpeak": "I'm gonna order the same thing as last time.",
+            "instruction": "Listen for the small word that changes the meaning.",
+            "hint": "Notice what's being put on, and where.",
+            "explanation": "'Put on' links the 't' directly onto the vowel of 'on', producing a smooth, connected sound rather than two separate words.",
+            "textToSpeak": "Put on your jacket before you go outside.",
             "options": [
-                "I'm gonna try the same thing as last time.",
-                "I'm gonna order the same thing as last time."
+                "Put on your jacket before you go outside.",
+                "Take off your jacket before you go outside."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L54_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Notice dessert versus starter, and your versus her.",
-            "explanation": "'Split' and 'share' mean almost the same thing when it comes to food, so pin down the actual word spoken. 'Your own' versus 'her own' also changes exactly who's being asked.",
-            "textToSpeak": "Do you wanna split a dessert or get your own?",
+            "instruction": "Focus on the key detail hidden in the fast sentence.",
+            "hint": "Catch who's being invited in, and when.",
+            "explanation": "'Come in' links so closely that the boundary between the two words nearly disappears, so context clues around it matter more than usual.",
+            "textToSpeak": "Come in whenever you're ready.",
             "options": [
-                "Do you wanna split a dessert or get her own?",
-                "Do you wanna split a dessert or get your own?"
+                "Come in whenever you're ready.",
+                "Come back whenever you're ready."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L54_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch bigger versus smaller, and everyone versus the group.",
-            "explanation": "'Bigger' and 'smaller' are opposites, so that adjective is the priority. 'We're' and 'they're' also reduce closely before 'gonna', so listen for the vowel.",
-            "textToSpeak": "We're gonna need a bigger table for everyone.",
+            "instruction": "Listen again — which version matches what was said?",
+            "hint": "Listen for exactly what they're looking at.",
+            "explanation": "'Look at' fuses the final consonant onto the following vowel, so the object of attention, named right after, carries the real content.",
+            "textToSpeak": "Take a look at the numbers on page three.",
             "options": [
-                "We're gonna need a bigger table for everyone.",
-                "They're gonna need a bigger table for everyone."
+                "Take a look at the numbers on page two.",
+                "Take a look at the numbers on page three."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L55_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch the exact time, and gate versus desk.",
-            "explanation": "'Gotta be' packs urgency into a quick, reduced phrase, so don't lose the two details that matter most here - the place and the exact time.",
-            "textToSpeak": "We've gotta be at the gate by six.",
+            "instruction": "Listen carefully and catch the exact sentence.",
+            "hint": "Catch the linked phrase, then the exact number of items.",
+            "explanation": "'Give it a' links into a quick, smooth run, so the number that follows is the detail you actually need to isolate.",
+            "textToSpeak": "Give it another five minutes to load.",
             "options": [
-                "We've gotta be at the gate by seven.",
-                "We've gotta be at the gate by six."
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "fastSpeechDecoder",
-            "emoji": "⚡"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L55_Q2",
-            "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Notice before versus after, and convert versus exchange.",
-            "explanation": "'Convert' and 'exchange' money mean almost the same thing, so the exact verb matters less than 'before' versus 'after' - which completely changes the timing of the plan.",
-            "textToSpeak": "I hafta convert some money before we go.",
-            "options": [
-                "I hafta convert some money before we go.",
-                "I hafta convert some money before we leave."
+                "Give it another five minutes to load.",
+                "Give it another ten minutes to load."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
-            "id": "LIS_FASTSPEECHDECODER_L55_Q3",
+            "id": "LIS_FASTSPEECHDECODER_L55_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch this versus that, and incredible versus amazing.",
-            "explanation": "'Incredible' and 'amazing' are both strong compliments, so listen for the specific word rather than assuming. 'This' and 'that' also point to different views, so don't mix them up.",
-            "textToSpeak": "You've gotta see this view, it's incredible.",
+            "instruction": "They said it fast — what did you actually hear?",
+            "hint": "Notice exactly how many times they've tried.",
+            "explanation": "'Tried it out' links each word into the next, so the number word tucked inside is easy to miss unless you listen for it specifically.",
+            "textToSpeak": "I've tried it out twice already.",
             "options": [
-                "You've gotta see this view, it's amazing.",
-                "You've gotta see this view, it's incredible."
+                "I've tried it out once already.",
+                "I've tried it out twice already."
             ],
             "correctAnswerIndex": 1,
+            "subtype": "fastSpeechDecoder",
+            "emoji": "⚡"
+        },
+        {
+            "id": "LIS_FASTSPEECHDECODER_L55_Q3",
+            "interactionType": "choice",
+            "instruction": "Natural speech blends words together. Catch the real message.",
+            "hint": "Listen for whether it's being kept on or taken off.",
+            "explanation": "'Leave it on' links smoothly across all three words, so the final choice, on or off, needs to be caught clearly despite the fast pace.",
+            "textToSpeak": "Just leave it on overnight.",
+            "options": [
+                "Just leave it on overnight.",
+                "Just leave it off overnight."
+            ],
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L56_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch phone versus laptop, and 'kinda' versus 'pretty'.",
-            "explanation": "'Kinda' hedges the complaint a little, while 'pretty' makes it sound stronger - both are common in casual speech but carry a different tone. Also confirm phone versus laptop.",
-            "textToSpeak": "This new phone's kinda expensive for what it offers.",
+            "instruction": "Listen for the small word that changes the meaning.",
+            "hint": "Catch two linked phrases in the same sentence.",
+            "explanation": "This sentence links 'drop it off' and 'pick it up' back to back, each fusing its own words together, so track both linked chunks separately.",
+            "textToSpeak": "I'll drop it off in the morning and pick it up tonight.",
             "options": [
-                "This new phone's pretty expensive for what it offers.",
-                "This new phone's kinda expensive for what it offers."
+                "I'll drop it off in the morning and pick it up tonight.",
+                "I'll pick it up in the morning and drop it off tonight."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L56_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Notice app versus website, and open versus use.",
-            "explanation": "'Open' and 'use' overlap here but aren't identical, so catch the exact verb. 'Sorta' and 'kinda' both work as hedges, so don't assume which one you heard - listen for it directly.",
-            "textToSpeak": "The app's sorta confusing when you first open it.",
+            "instruction": "Focus on the key detail hidden in the fast sentence.",
+            "hint": "Notice what exactly needs sorting out.",
+            "explanation": "'Sort it out' links into a fast, connected run, and the specific issue mentioned right after carries the real content of the sentence.",
+            "textToSpeak": "We still need to sort out the seating plan.",
             "options": [
-                "The app's sorta confusing when you first open it.",
-                "The app's kinda confusing when you first open it."
+                "We still need to sort out the seating plan.",
+                "We still need to sort out the guest list."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -261,13 +261,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L56_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch update versus feature, and 'actually' versus 'apparently'.",
-            "explanation": "'Actually' (based on personal certainty) and 'apparently' (based on what others say) suggest different sources of confidence. 'Update' and 'feature' are also related but distinct terms.",
-            "textToSpeak": "This update's kinda a big deal, actually.",
+            "instruction": "Listen again — which version matches what was said?",
+            "hint": "Listen for who's coming over, and roughly when.",
+            "explanation": "'Come over' links the final consonant onto the vowel of 'over', and the timing word after it is where the useful detail actually sits.",
+            "textToSpeak": "She's coming over around noon.",
             "options": [
-                "This update's kinda a big deal, actually.",
-                "This update's kinda a big deal, apparently."
+                "She's coming over around noon.",
+                "She's coming over around six."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -276,13 +276,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L57_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch energy versus breath, and before versus after.",
-            "explanation": "'Outta energy' (completely drained) and 'low on energy' (partly drained) are different levels of tiredness, so listen for the precise phrase. 'Before' and 'after' the workout also matter a lot here.",
-            "textToSpeak": "I'm outta energy after that workout.",
+            "instruction": "Listen carefully and catch the exact sentence.",
+            "hint": "Catch the very end of the sentence, since the linking happens right there.",
+            "explanation": "When a sentence ends with a linked phrase like 'sort it out', the final consonant often trails off, so listen through to the very last sound.",
+            "textToSpeak": "I promise I'll figure it out.",
             "options": [
-                "I'm outta energy after that workout.",
-                "I'm outta energy before that workout."
+                "I promise I'll figure it out.",
+                "I promise I'll rule it out."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -291,13 +291,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L57_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Notice 'a lotta' versus 'a little', and perform versus look.",
-            "explanation": "'Lotta' is the fast-speech version of 'a lot of', and confusing it with 'a little' would completely flip the amount of pressure being described. 'Perform' and 'look' well are also very different goals.",
-            "textToSpeak": "There's a lotta pressure to perform well.",
+            "instruction": "They said it fast — what did you actually hear?",
+            "hint": "Notice whether they're giving up or trying again.",
+            "explanation": "'Give it up' and 'give it another go' both link tightly, but they point in opposite directions — quitting versus continuing.",
+            "textToSpeak": "Don't give it up just yet.",
             "options": [
-                "There's a lotta pressure to perform perfectly.",
-                "There's a lotta pressure to perform well."
+                "Don't give it another shot just yet.",
+                "Don't give it up just yet."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -306,58 +306,58 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L57_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch 'a lotta' versus 'a little', and muscle versus weight.",
-            "explanation": "'A lotta' and 'a little' are near-opposites in amount, both reduced to quick, light sounds in casual speech. 'Muscle' and 'weight' are related but describe different changes, so listen precisely.",
-            "textToSpeak": "He's put on a lotta muscle this year.",
+            "instruction": "Natural speech blends words together. Catch the real message.",
+            "hint": "Listen for the exact instruction at the end of the sentence.",
+            "explanation": "Linked phrases at the end of a sentence often lose their final consonant release entirely, so the last word can sound clipped and quick.",
+            "textToSpeak": "Just leave it up to me.",
             "options": [
-                "He's put on a lotta muscle this month.",
-                "He's put on a lotta muscle this year."
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "fastSpeechDecoder",
-            "emoji": "⚡"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L58_Q1",
-            "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch this versus that, and whether 'skip' replaces 'pull'.",
-            "explanation": "Stacking 'gonna' and 'hafta' together packs two reductions into one breath, which is completely normal in fast, stressed-out speech. Listen past the rush to the small word 'this' versus 'that'.",
-            "textToSpeak": "I'm gonna hafta pull an all-nighter for this.",
-            "options": [
-                "I'm gonna hafta skip the all-nighter for this.",
-                "I'm gonna hafta pull an all-nighter for this."
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "fastSpeechDecoder",
-            "emoji": "⚡"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L58_Q2",
-            "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Notice too late versus too soon, and 'kinda' versus 'really'.",
-            "explanation": "'Too late' and 'too soon' are opposite timing problems, so that phrase is essential. 'Kinda worried' and 'really worried' also show very different levels of stress.",
-            "textToSpeak": "She's kinda worried she left it too late.",
-            "options": [
-                "She's kinda worried she left it too late.",
-                "He's kinda worried he left it too late."
+                "Just leave it up to me.",
+                "Just leave it down to me."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
+            "id": "LIS_FASTSPEECHDECODER_L58_Q1",
+            "interactionType": "choice",
+            "instruction": "Listen for the small word that changes the meaning.",
+            "hint": "Catch the linked question, then exactly what's being asked about.",
+            "explanation": "'Can you turn it up' links across four words into one fast run, so isolate the last part, up or down, to know the real request.",
+            "textToSpeak": "Can you turn it up a little?",
+            "options": [
+                "Can you turn it up a little?",
+                "Can you turn it down a little?"
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "fastSpeechDecoder",
+            "emoji": "⚡"
+        },
+        {
+            "id": "LIS_FASTSPEECHDECODER_L58_Q2",
+            "interactionType": "choice",
+            "instruction": "Focus on the key detail hidden in the fast sentence.",
+            "hint": "Notice whether they're checking it out or checking it in.",
+            "explanation": "'Check it in' and 'check it out' link almost identically at the start, so the final word is what actually separates the two meanings.",
+            "textToSpeak": "Did you check it in already?",
+            "options": [
+                "Did you check it out already?",
+                "Did you check it in already?"
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "fastSpeechDecoder",
+            "emoji": "⚡"
+        },
+        {
             "id": "LIS_FASTSPEECHDECODER_L58_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch study versus revision, and soon versus today.",
-            "explanation": "'Study plan' and 'revision plan' overlap a lot in meaning, so listen for the specific word rather than the general idea. 'Soon' and 'today' also suggest different levels of urgency.",
-            "textToSpeak": "We've gotta figure out a study plan soon.",
+            "instruction": "Listen again — which version matches what was said?",
+            "hint": "Listen for exactly what needs figuring out.",
+            "explanation": "'Work it out' links into a smooth, connected phrase, so the topic that follows is where the real question actually lies.",
+            "textToSpeak": "Have you worked out the total cost yet?",
             "options": [
-                "We've gotta figure out a study plan soon.",
-                "We've just gotta figure out a study plan soon."
+                "Have you worked out the total cost yet?",
+                "Have you worked out the total time yet?"
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -366,13 +366,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L59_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch binge versus watch, and tonight versus tomorrow.",
-            "explanation": "'Binge' (watch it all at once) and 'watch' (a more general word) suggest different levels of commitment. 'Kinda' and 'really' also show different levels of enthusiasm behind the plan.",
-            "textToSpeak": "I kinda wanna binge the whole series tonight.",
+            "instruction": "Listen carefully and catch the exact sentence.",
+            "hint": "Track both linked phrases, since each one fuses its own words together.",
+            "explanation": "'Sort it out' and 'let you know' both link internally, so the sentence has two separate fast chunks to decode, not just one.",
+            "textToSpeak": "I'll sort it out and let you know by five.",
             "options": [
-                "I kinda wanna binge the whole series tonight.",
-                "I really wanna binge the whole series tonight."
+                "I'll sort it out and let you know by five.",
+                "I'll sort it out and let you know by nine."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -381,13 +381,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L59_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Notice release versus event, and 'gonna be' versus 'already'.",
-            "explanation": "'Gonna be' (predicting the future) and 'already' (describing right now) place this at two different points in time. 'A lotta' versus 'a little' hype also completely changes the picture.",
-            "textToSpeak": "There's gonna be a lotta hype around this release.",
+            "instruction": "They said it fast — what did you actually hear?",
+            "hint": "Catch the linked phrase, then the exact place mentioned.",
+            "explanation": "'Drop me off at' links across the whole phrase, so the location named right after is where the real content is carried.",
+            "textToSpeak": "Could you drop me off at the corner?",
             "options": [
-                "There's already a lotta hype around this release.",
-                "There's gonna be a lotta hype around this release."
+                "Could you drop me off at the entrance?",
+                "Could you drop me off at the corner?"
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -396,13 +396,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L59_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch show versus game, and 'sorta' versus 'kinda'.",
-            "explanation": "'Sorta' and 'kinda' both work as casual hedges before 'obsessed', so don't guess which one you heard - listen directly for it. 'Show' and 'game' are also different types of entertainment.",
-            "textToSpeak": "We're sorta obsessed with this new show.",
+            "instruction": "Natural speech blends words together. Catch the real message.",
+            "hint": "Notice the order — is it fixed first, or checked first?",
+            "explanation": "This sentence links 'check it out' and 'fix it up', two separate phrases, so pay attention to which action actually comes first.",
+            "textToSpeak": "We'll check it out and fix it up next week.",
             "options": [
-                "We're sorta obsessed with this new show.",
-                "We're sorta obsessed with this new game."
+                "We'll check it out and fix it up next week.",
+                "We'll fix it up and check it out next week."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -411,13 +411,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L60_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch ideas versus time, and point versus stage.",
-            "explanation": "'Outta ideas' (no more suggestions) and 'outta time' (no more minutes) are very different problems to have. 'Kinda' and 'sorta' are near-identical hedges, so listen for the actual one used.",
-            "textToSpeak": "I'm kinda outta ideas at this point.",
+            "instruction": "Listen for the small word that changes the meaning.",
+            "hint": "By now, expect entire phrases to run together as one connected sound.",
+            "explanation": "This level combines several linked phrases in one sentence — 'pick it up', 'drop it off' — each fusing into a fast, single unit of sound.",
+            "textToSpeak": "I can pick it up and drop it off before noon.",
             "options": [
-                "I'm kinda outta ideas at this point.",
-                "I'm kinda outta ideas at this stage."
+                "I can pick it up and drop it off before noon.",
+                "I can drop it off and pick it up before noon."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -426,28 +426,28 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L60_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch tonight versus tomorrow, and make versus reach.",
-            "explanation": "'Make' and 'reach' a decision mean almost the same thing, so listen for the specific verb rather than the general idea. 'Tonight' and 'tomorrow' also completely change how urgent this really is.",
-            "textToSpeak": "We've really gotta make a decision by tonight.",
+            "instruction": "Focus on the key detail hidden in the fast sentence.",
+            "hint": "Catch the linked request, then the specific detail that follows.",
+            "explanation": "'Look into it' links all three words into one connected run, so the reason or detail that follows is the real content to hold onto.",
+            "textToSpeak": "Could you look into it before the meeting?",
             "options": [
-                "We've really gotta make a decision by tomorrow.",
-                "We've really gotta make a decision by tonight."
+                "Could you look into it before the meeting?",
+                "Could you look into it after the meeting?"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L60_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch 'kinda' versus 'pretty', and this versus that.",
-            "explanation": "This sentence stacks three separate reductions - 'gonna', 'wanna', and 'kinda' - which is exactly how native speakers talk when excited. Break it down piece by piece rather than trying to catch it all at once.",
-            "textToSpeak": "You're gonna wanna hear this, it's kinda big news.",
+            "instruction": "Listen again — which version matches what was said?",
+            "hint": "Listen for the full linked chain across the sentence.",
+            "explanation": "Natural fast speech treats these phrases almost like single long words, so trust your ear to separate them by meaning, not by pauses.",
+            "textToSpeak": "I'll set it up and test it out tonight.",
             "options": [
-                "You're gonna wanna hear this, it's kinda big news.",
-                "You're gonna wanna hear this, it's pretty big news."
+                "I'll set it up and test it out tonight.",
+                "I'll test it out and set it up tonight."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",

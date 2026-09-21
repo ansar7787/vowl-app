@@ -5,632 +5,662 @@
     "quests": [
         {
             "id": "LIS_AMBIENTID_L71_Q1",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Where would you most likely hear this?",
             "interactionType": "choice",
-            "hint": "Listen for snipping shears and sorted pots.",
-            "explanation": "Snipping shears and pots sorted by size are common sounds of tending plants for sale.",
-            "textToSpeak": "Pruning shears snip steadily as a worker sorts small pots by size along a long wooden bench.",
+            "hint": "Listen for why everyone moves seats at exactly the same moment.",
+            "explanation": "A timed bell, a repeated opening question, and a checkmark on a card before rotating point to a speed dating event's structured format.",
+            "textToSpeak": "A bell rings and half the room shifts seats at once, someone repeats the same opening question they've clearly asked several times already, and a small card gets a quick checkmark before the next bell.",
             "options": [
-                "Shipping Dock",
-                "Woodworking Workshop",
-                "Physical Therapy Clinic",
-                "Plant Nursery"
+                "Book Club Meeting",
+                "Speed Dating Event",
+                "Job Fair",
+                "Networking Event"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Speed dating event",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "rotate",
+                "checkmark",
+                "timed"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L71_Q2",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Listen to the scene. What is the setting?",
             "interactionType": "choice",
-            "hint": "Listen for a fading jingle and a read-out of details.",
-            "explanation": "A fading jingle followed by a quick read of details is a familiar transition during a live show.",
-            "textToSpeak": "A jingle fades out smoothly as a host reads the time and temperature from a printed sheet.",
+            "hint": "Listen for what the disagreement is actually about.",
+            "explanation": "A dog-eared page, wine passed casually, and a debate about a story's ending point to a relaxed book club discussion.",
+            "textToSpeak": "Someone flips to a dog-eared page to find a favorite line, a bottle of wine gets passed around a coffee table, and a gentle disagreement breaks out over what the ending really meant.",
             "options": [
-                "Radio Station",
-                "Photography Studio",
-                "Woodworking Workshop",
-                "Driving School Car"
+                "Speed Dating Event",
+                "Support Group Meeting",
+                "Book Club Meeting",
+                "Community Center Meeting"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Book club meeting",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "dog-eared",
+                "discussion",
+                "ending"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L71_Q3",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Which place fits these sounds?",
             "interactionType": "choice",
-            "hint": "Listen for a tested door and a popped hood.",
-            "explanation": "A door tested repeatedly and a hood popped for inspection are common sounds of a test visit here.",
-            "textToSpeak": "A door is opened and closed several times, testing the seal, while a hood is popped for inspection.",
+            "hint": "Listen for the specific everyday complaint being raised.",
+            "explanation": "A row-by-row agenda, a parking complaint, and a treasurer's balance report point to a homeowners' association meeting.",
+            "textToSpeak": "A printed agenda gets passed row by row, someone raises a hand to complain about a parking rule, and a treasurer reads out a balance from a folder before anyone can move on.",
             "options": [
-                "Insurance Office",
-                "Bicycle Shop",
-                "Travel Agency",
-                "Car Dealership"
+                "Union Meeting Hall",
+                "Courtroom",
+                "Neighborhood HOA Meeting",
+                "Community Center Meeting"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Homeowners association meeting",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "agenda",
+                "treasurer",
+                "complaint"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L72_Q1",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "What environment are you hearing?",
             "interactionType": "choice",
-            "hint": "Listen for a tapped chisel and curling shavings.",
-            "explanation": "A tapped chisel carving wood and curling shavings are classic sounds of detailed handwork on timber.",
-            "textToSpeak": "A mallet taps a chisel steadily, carving a groove, while thin shavings curl away in long ribbons.",
+            "hint": "Listen for the specific phrase being repeated to each person served.",
+            "explanation": "A large refilled pot, a repeated warm greeting, and trays sliding along a serving line point to a volunteer-run soup kitchen.",
+            "textToSpeak": "A ladle scrapes the bottom of a large pot before it's refilled, someone in an apron thanks each person by saying, \"here you go, stay warm,\" and a tray slides down a long metal counter toward the next server.",
             "options": [
-                "Real Estate Open House",
-                "Recording Studio",
-                "Physical Therapy Clinic",
-                "Woodworking Workshop"
+                "Volunteer Soup Kitchen",
+                "Restaurant Kitchen",
+                "School Cafeteria",
+                "Food Bank Distribution"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Volunteer soup kitchen",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "ladle",
+                "serving line",
+                "volunteer"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L72_Q2",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Based on these sounds, where are you?",
             "interactionType": "choice",
-            "hint": "Listen for a clicking pen and a request to remove shoes.",
-            "explanation": "A sign-in sheet and a request to remove shoes are familiar routines at this kind of property viewing.",
-            "textToSpeak": "A sign-in sheet's pen clicks as visitors are asked politely to remove their shoes at the front door.",
+            "hint": "Listen for what information is checked before anything is given out.",
+            "explanation": "A household-size check, canned goods being boxed, and a car pulled around to a pickup window point to a food bank's distribution process.",
+            "textToSpeak": "A clipboard checks off a household size before a box is filled, canned goods thud one after another into a cardboard box, and someone is asked politely to pull their car around to a second window.",
             "options": [
-                "Dance Rehearsal Studio",
-                "Recording Studio",
-                "Warehouse",
-                "Real Estate Open House"
+                "Warehouse Club Store",
+                "Grocery Store Deli Counter",
+                "Volunteer Soup Kitchen",
+                "Food Bank Distribution"
             ],
             "correctAnswerIndex": 3,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Food bank distribution site",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "household size",
+                "canned goods",
+                "pickup window"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L72_Q3",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Listen carefully. Where are you?",
             "interactionType": "choice",
-            "hint": "Listen for slicing shears and a looped measuring tape.",
-            "explanation": "Shears cutting cloth and a tape measured around the shoulders are familiar sounds of a clothing fitting.",
-            "textToSpeak": "Fabric shears slice cleanly through cloth while a measuring tape is looped once around a customer's shoulders.",
+            "hint": "Listen for what's offered at the very end, and why it matters later.",
+            "explanation": "Bags lifted from a trunk, rough sorting by season, and a tax receipt point to a clothing donation drop-off rather than a store transaction.",
+            "textToSpeak": "A trunk pops open and bags are lifted out one by one, a worker peeks inside to sort items roughly by season, and a receipt is offered for tax purposes before the car pulls away.",
             "options": [
-                "Tailor's Workshop",
-                "Customs Checkpoint",
-                "Travel Agency",
-                "Pottery Studio"
+                "Thrift Store",
+                "Clothing Donation Drop-off",
+                "Neighborhood Yard Sale",
+                "Recycling Center"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Clothing donation drop-off point",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "donation",
+                "sort",
+                "receipt"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L73_Q1",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "What place does this soundscape suggest?",
             "interactionType": "choice",
-            "hint": "Listen for an advancing slide and a paused silence.",
-            "explanation": "Slides advancing and a pause for questions are familiar sounds of a large university lecture.",
-            "textToSpeak": "A slide advances with a soft click as the speaker pauses, waiting for a raised hand to lower.",
+            "hint": "Listen for who is writing notes, and why.",
+            "explanation": "A sudden maneuver request, a nervously extended turn signal, and an examiner's note after a rolling stop point to a live driving test rather than practice.",
+            "textToSpeak": "An examiner asks for a three-point turn without much warning, a turn signal clicks steadily longer than it needs to out of nerves, and a clipboard pen scratches a quick note after a rolling stop.",
             "options": [
-                "University Lecture Hall",
-                "Pottery Studio",
-                "Locksmith Workshop",
-                "School Science Lab"
+                "Driving School Classroom",
+                "Parking Garage",
+                "In-Car Driving Test",
+                "Auto Repair Garage"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "In-car driving test",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "examiner",
+                "maneuver",
+                "rolling stop"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L73_Q2",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Which setting best matches what you hear?",
             "interactionType": "choice",
-            "hint": "Listen for a ratcheting strap and secured crates.",
-            "explanation": "A ratcheting strap tightened around crates is a familiar sound of securing cargo for transport.",
-            "textToSpeak": "Straps are ratcheted tight with a sharp clicking sound, securing crates before the truck pulls away.",
+            "hint": "Listen for whether anyone is actually driving right now.",
+            "explanation": "A paused instructional video, a discussion question, and an unfinished worksheet point to classroom-based driving instruction rather than the road test itself.",
+            "textToSpeak": "A video plays about following distance while chairs creak restlessly, an instructor pauses it to ask what everyone would do next, and a worksheet gets passed around half-finished.",
             "options": [
-                "Locksmith Workshop",
-                "Radio Station",
-                "Shipping Dock",
-                "Driving School Car"
+                "Elementary Classroom",
+                "High School Chemistry Lab",
+                "In-Car Driving Test",
+                "Driving School Classroom"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Driving school classroom",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "following distance",
+                "pause",
+                "worksheet"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L73_Q3",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Where would you most likely hear this?",
             "interactionType": "choice",
-            "hint": "Listen for a connection chime and a scripted greeting.",
-            "explanation": "A chime signaling a new call followed by a scripted greeting is a familiar routine in this kind of workplace.",
-            "textToSpeak": "A soft chime plays as a new call connects, and a scripted greeting begins right on cue.",
+            "hint": "Listen for the last-minute advice, and who it's coming from.",
+            "explanation": "A called name, nervously jingling keys, and a last-second tip from a friend point to the anxious wait before a road test rather than the test itself.",
+            "textToSpeak": "A name is called from a clipboard and someone stands up too fast, keys jingle nervously in a tight fist, and a friend in the row of chairs offers one last quick tip under their breath.",
             "options": [
-                "Call Center",
-                "Shipping Dock",
-                "Bicycle Shop",
-                "Insurance Office"
+                "DMV Road Test Waiting Area",
+                "Vehicle Licensing Office",
+                "Job Interview Waiting Area",
+                "In-Car Driving Test"
             ],
             "correctAnswerIndex": 0,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "DMV road test waiting area",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "nervous",
+                "last tip",
+                "called name"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L74_Q1",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Listen to the scene. What is the setting?",
             "interactionType": "choice",
-            "hint": "Listen for safety instructions and passed-down equipment.",
-            "explanation": "Safety instructions and equipment being handed out are familiar sounds before a hands-on science lesson.",
-            "textToSpeak": "A teacher reads safety instructions aloud while protective goggles are passed down each row of desks.",
+            "hint": "Listen for how the audience responds even when something goes slightly wrong.",
+            "explanation": "A nervously folded program, a rushed opening that settles, and forgiving applause point to a student recital audience rather than a lesson or professional concert.",
+            "textToSpeak": "A program is folded and unfolded nervously in someone's lap, a piece is played slightly too fast in the first few bars before settling, and quiet applause follows even a small mistake.",
             "options": [
-                "School Science Lab",
-                "Optometrist's Office",
-                "Plant Nursery",
-                "University Lecture Hall"
+                "Piano Recital",
+                "Open Mic Night",
+                "Piano Lesson",
+                "School Talent Show"
             ],
             "correctAnswerIndex": 0,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Piano recital performance",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "program",
+                "bars",
+                "forgiving applause"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L74_Q2",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Which place fits these sounds?",
             "interactionType": "choice",
-            "hint": "Listen for a slicing wire and a lifted piece.",
-            "explanation": "A wire slicing a finished piece from the wheel is a classic final step of shaping it by hand.",
-            "textToSpeak": "A thin wire slices cleanly under a finished bowl, lifting it free from the spinning wheel below.",
+            "hint": "Listen for how mixed the audience's ages and enthusiasm seem to be.",
+            "explanation": "A rushed backstage changeover, a checked running order, and an unevenly enthusiastic mixed-age audience point to a school talent show.",
+            "textToSpeak": "A backstage curtain rustles as one act rushes off and the next scrambles on, a teacher's voice checks a running order from a clipboard, and an audience of mixed ages claps unevenly for a magic trick.",
             "options": [
-                "Dance Rehearsal Studio",
-                "Driving School Car",
-                "Pottery Studio",
-                "Travel Agency"
+                "Open Mic Night",
+                "School Talent Show",
+                "Piano Recital",
+                "Community Theater Rehearsal"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "School talent show",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "running order",
+                "backstage rush",
+                "mixed audience"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L74_Q3",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "What environment are you hearing?",
             "interactionType": "choice",
-            "hint": "Listen for a hissing press and a smoothed crease.",
-            "explanation": "A hissing steam press smoothing fabric is a common finishing sound of altering or making clothing.",
-            "textToSpeak": "A steam press hisses and thumps down firmly, smoothing a crease from a freshly stitched sleeve.",
+            "hint": "Listen for what replaces clapping after the performance.",
+            "explanation": "A running signup sheet, a single-mic setup, and snapping instead of applause point to a casual open mic night rather than a formal show.",
+            "textToSpeak": "A host reads a name from a signup sheet that's clearly been added to all evening, a stool scrapes forward toward a single microphone, and scattered snaps replace applause after a poem.",
             "options": [
-                "Job Interview Waiting Room",
-                "Customs Checkpoint",
-                "Pottery Studio",
-                "Tailor's Workshop"
+                "Piano Recital",
+                "School Talent Show",
+                "Open Mic Night",
+                "Community Theater Rehearsal"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Open mic night at a small venue",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "signup sheet",
+                "single mic",
+                "snap"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L75_Q1",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Based on these sounds, where are you?",
             "interactionType": "choice",
-            "hint": "Listen for adjusted headphones and a quiet count-in.",
-            "explanation": "A quiet count-in through headphones is a familiar cue used to start a new take.",
-            "textToSpeak": "Headphones are adjusted with a click as a voice counts in quietly, cueing the next take to begin.",
+            "hint": "Listen for how much is happening for the very first time, all at once.",
+            "explanation": "An awkward first badge photo, a blur of new names, and unwrapped equipment point to someone's very first day rather than an established routine.",
+            "textToSpeak": "A badge photo is taken a little awkwardly against a plain wall, someone is introduced to five names in a row that are already starting to blur together, and a laptop is handed over still wrapped in its setup instructions.",
             "options": [
-                "Radio Station",
-                "Dance Rehearsal Studio",
-                "Car Dealership",
-                "Recording Studio"
+                "New Employee Training Session",
+                "Coworking Space",
+                "First Day at a New Job",
+                "Job Interview Waiting Area"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "First day at a new job",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "badge photo",
+                "introductions",
+                "setup instructions"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L75_Q2",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Listen carefully. Where are you?",
             "interactionType": "choice",
-            "hint": "Listen for a revved engine and signed paperwork.",
-            "explanation": "A revving engine from a nearby service bay and signed paperwork are familiar sounds of finalizing a purchase.",
-            "textToSpeak": "An engine revs briefly in a service bay nearby as paperwork is signed at a desk close to the window.",
+            "hint": "Listen for what's promised once a specific section finishes.",
+            "explanation": "A slide-by-slide session, a question already covered ahead, and a promised break after a module point to a structured training session.",
+            "textToSpeak": "A slide deck advances every few minutes to scattered note-taking, someone asks a question that's clearly covered two slides later, and a trainer promises a short break once the current module wraps up.",
             "options": [
-                "Bicycle Shop",
-                "Travel Agency",
-                "Warehouse",
-                "Car Dealership"
+                "Corporate Meeting Room",
+                "First Day at a New Job",
+                "University Lecture Hall",
+                "New Employee Training Session"
             ],
             "correctAnswerIndex": 3,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "New employee training session",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "module",
+                "slide deck",
+                "break"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L75_Q3",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "What place does this soundscape suggest?",
             "interactionType": "choice",
-            "hint": "Listen for a straining crane and a settling container.",
-            "explanation": "A straining crane lowering a heavy container is a signature sound of a busy loading area.",
-            "textToSpeak": "A crane's engine strains as a heavy container swings slowly and settles with a deep, metallic thud.",
+            "hint": "Listen for the kind of question being asked about the past, not the future.",
+            "explanation": "Final paperwork, a reflective question about improvement, and a lingering handshake point to an exit interview at the end of someone's employment.",
+            "textToSpeak": "A folder of final paperwork is slid across a desk, a manager asks gently what could have made things better, and a handshake happens a little longer than a normal one before the door opens.",
             "options": [
-                "Textile Workshop",
-                "Driving School Car",
-                "Photography Studio",
-                "Shipping Dock"
+                "Human Resources Office",
+                "Job Interview Waiting Area",
+                "Performance Review Meeting",
+                "Exit Interview"
             ],
             "correctAnswerIndex": 3,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Employee exit interview",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "final paperwork",
+                "reflective",
+                "handshake"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L76_Q1",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Which setting best matches what you hear?",
             "interactionType": "choice",
-            "hint": "Listen for rattling shelving and echoing stacked boxes.",
-            "explanation": "Rattling shelving and echoing stacked boxes are common sounds of a large storage space.",
-            "textToSpeak": "Metal shelving rattles as boxes are stacked high, the sound echoing across the vast, open space.",
+            "hint": "Listen for who the agent seems to be talking to, and how.",
+            "explanation": "Flyers for anyone to take, an agent's rehearsed detail said to the room, and shoes removed out of habit point to a public open house rather than a private viewing.",
+            "textToSpeak": "A stack of printed flyers sits by the door for anyone to take, an agent mentions the roof was replaced two years ago to no one in particular, and shoes come off out of habit before stepping onto pale carpet.",
             "options": [
-                "Warehouse",
-                "Dance Rehearsal Studio",
-                "School Science Lab",
-                "Real Estate Open House"
+                "Real Estate Open House",
+                "Apartment Viewing Tour",
+                "Home Inspection Walkthrough",
+                "Furniture Store"
             ],
             "correctAnswerIndex": 0,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Real estate open house",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "flyer",
+                "rehearsed detail",
+                "open house"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L76_Q2",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Where would you most likely hear this?",
             "interactionType": "choice",
-            "hint": "Listen for a delayed voice and a silent countdown.",
-            "explanation": "A delayed caller and a silent hand-counted countdown are common behind-the-scenes sounds of a live show.",
-            "textToSpeak": "A caller's voice comes through slightly delayed as a producer signals a countdown with raised fingers.",
+            "hint": "Listen for the specific concern being raised about a neighbor.",
+            "explanation": "A landlord's key explanation, a quick water test, and a question about upstairs noise point to a private rental apartment viewing.",
+            "textToSpeak": "A landlord jangles a ring of keys while explaining which one is for the mailbox, water is run briefly in a sink just to show it works, and someone asks quietly whether the noise from upstairs is usually this loud.",
             "options": [
-                "Dance Rehearsal Studio",
-                "Shipping Dock",
-                "Locksmith Workshop",
-                "Radio Station"
+                "Real Estate Open House",
+                "Apartment Viewing Tour",
+                "Home Inspection Walkthrough",
+                "Moving Day Apartment"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Apartment rental viewing",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "landlord",
+                "water test",
+                "upstairs noise"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L76_Q3",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Listen to the scene. What is the setting?",
             "interactionType": "choice",
-            "hint": "Listen for rattling blinds and flooding light.",
-            "explanation": "Blinds opened to show off natural light are a common small touch during a property showing.",
-            "textToSpeak": "Blinds are pulled open with a soft rattle, flooding an otherwise empty room with afternoon light.",
+            "hint": "Listen for what's being left clear, and why.",
+            "explanation": "A rattling roll-up door, a flashlight check of an empty unit, and boxes stacked with a walking path point to moving belongings into a storage unit.",
+            "textToSpeak": "A roll-up door rattles upward loudly along its metal track, a flashlight sweeps across an empty concrete space to check the corners, and boxes are stacked two high with a note to leave a path down the middle.",
             "options": [
-                "Airport Baggage Claim",
-                "Radio Station",
-                "Real Estate Open House",
-                "Photography Studio"
+                "Storage Unit Move-in",
+                "Recycling Center",
+                "Moving Day Apartment",
+                "Parking Garage"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Self-storage unit move-in",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "roll-up door",
+                "concrete space",
+                "stack"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L77_Q1",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Which place fits these sounds?",
             "interactionType": "choice",
-            "hint": "Listen for a dragged stand and a call to hold still.",
-            "explanation": "Equipment being repositioned and a call to hold still are familiar sounds just before a photo is taken.",
-            "textToSpeak": "A light stand is dragged into place as someone calls out to hold perfectly still for just one more frame.",
+            "hint": "Listen for how little conversation happens compared to an office visit.",
+            "explanation": "A silent stamp, a passport returned under glass, and a shuffling line toward a floor marker point to an arrivals passport control booth rather than an office appointment.",
+            "textToSpeak": "A stamp comes down without a word being exchanged, a passport slides back under a thick glass window, and a line shuffles forward one small step at a time toward a painted line on the floor.",
             "options": [
-                "Customs Checkpoint",
-                "Pottery Studio",
-                "Car Dealership",
-                "Photography Studio"
+                "Airport Passport Control",
+                "Airport Domestic Check-In Desk",
+                "Airport Security Checkpoint",
+                "Immigration Office"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Airport arrivals passport control",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "glass window",
+                "floor line",
+                "shuffle forward"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L77_Q2",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "What environment are you hearing?",
             "interactionType": "choice",
-            "hint": "Listen for a silent second listener and logged notes.",
-            "explanation": "A supervisor monitoring a call while notes are typed is a common quality-check routine in this setting.",
-            "textToSpeak": "A supervisor listens quietly on a second line while a keyboard clicks, logging notes from the call.",
+            "hint": "Listen for what happens to the bag itself, not just the paperwork.",
+            "explanation": "A checked declaration form, a hand search of a bag, and a final approving stamp point to a customs declaration process rather than passport control.",
+            "textToSpeak": "A form is double-checked for anything left blank, a bag is unzipped and searched by hand while its owner waits quietly to the side, and a stamp finally lands with a small thud before the bag is waved through.",
             "options": [
-                "Bicycle Shop",
-                "Call Center",
-                "Locksmith Workshop",
-                "Dance Rehearsal Studio"
+                "Airport Passport Control",
+                "Baggage Claim",
+                "Customs Declaration",
+                "Airport Security Checkpoint"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Customs declaration checkpoint",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "declaration form",
+                "hand search",
+                "waved through"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L77_Q3",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Based on these sounds, where are you?",
             "interactionType": "choice",
-            "hint": "Listen for adjusted frames and an offered mirror.",
-            "explanation": "Frames being adjusted and a mirror offered for a look are familiar final steps of choosing new glasses.",
-            "textToSpeak": "New frames are gently adjusted with a small tool as a mirror is offered for a final look.",
+            "hint": "Listen for what's being calculated, and how many times it's checked.",
+            "explanation": "A double-counted stack of bills, a clicking exchange-rate calculation, and a stapled receipt point to a currency exchange counter rather than a standard bank withdrawal.",
+            "textToSpeak": "A stack of bills is counted twice by hand behind thick glass, a small calculator's buttons click through an exchange rate, and a receipt is stapled to a thin envelope before it's slid across.",
             "options": [
-                "Radio Station",
-                "Call Center",
-                "Optometrist's Office",
-                "Physical Therapy Clinic"
+                "Toll Booth",
+                "Airport Passport Control",
+                "Bank Branch",
+                "Currency Exchange Counter"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Currency exchange counter",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "exchange rate",
+                "double-count",
+                "envelope"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L78_Q1",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Listen carefully. Where are you?",
             "interactionType": "choice",
-            "hint": "Listen for a called name and a quickly smoothed jacket.",
-            "explanation": "A called name prompting someone to stand quickly is a common cue that a meeting is about to begin.",
-            "textToSpeak": "A door opens and a name is called warmly, prompting someone to quickly stand and smooth their jacket.",
+            "hint": "Listen for what happens the instant the horn sounds.",
+            "explanation": "A bullhorn countdown, last-second shoelace checks, and a surging crowd at the horn point to a race start line rather than any point mid-race.",
+            "textToSpeak": "A countdown gets shouted through a bullhorn over restless shuffling feet, someone double-knots a shoelace one last time, and a horn blasts as a wave of runners surges forward all at once.",
             "options": [
-                "Job Interview Waiting Room",
-                "University Lecture Hall",
-                "Plant Nursery",
-                "Call Center"
+                "Marathon Water Station",
+                "Outdoor Concert",
+                "Charity Race Start Line",
+                "Race Finish Area"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Charity race start line",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "bullhorn",
+                "surge",
+                "start line"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L78_Q2",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "What place does this soundscape suggest?",
             "interactionType": "choice",
-            "hint": "Listen for counted beats over a bass line.",
-            "explanation": "A teacher counting beats aloud over music is a familiar sound of practicing choreography.",
-            "textToSpeak": "Quick footwork echoes off the mirrors as a teacher counts eight beats aloud over a pounding bass line.",
+            "hint": "Listen for what's being sorted by side, and what happens to the cups afterward.",
+            "explanation": "Rapidly grabbed paper cups, a sorted water-versus-drink call, and crushed cups underfoot point to a mid-race water station.",
+            "textToSpeak": "Paper cups are lined up along a folding table faster than they can be grabbed, a volunteer shouts which side has water and which has electrolyte drink, and dozens of crushed cups crunch underfoot right after.",
             "options": [
-                "Dance Rehearsal Studio",
-                "Plant Nursery",
-                "Recording Studio",
-                "Real Estate Open House"
+                "Charity Race Start Line",
+                "Marathon Water Station",
+                "Volunteer Soup Kitchen",
+                "Race Finish Area"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Marathon water station",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "paper cups",
+                "electrolyte",
+                "crushed cups"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L78_Q3",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Which setting best matches what you hear?",
             "interactionType": "choice",
-            "hint": "Listen for an adjusting table and a tested joint.",
-            "explanation": "An adjusting treatment table and a gently tested joint are common sounds of a hands-on therapy session.",
-            "textToSpeak": "A treatment table adjusts with a soft mechanical whir as a therapist gently tests a stiff shoulder.",
+            "hint": "Listen for what's placed on the runner's body, in what order.",
+            "explanation": "A beeping timing mat, a medal placed over a bowed head, and a crinkling foil blanket point to the finish line rather than the starting area.",
+            "textToSpeak": "A timing mat beeps steadily under each pair of feet crossing it, a medal is placed over someone's head as they bend forward, exhausted, and a foil blanket crinkles as it's wrapped around their shoulders.",
             "options": [
-                "Pottery Studio",
-                "Optometrist's Office",
-                "Physical Therapy Clinic",
-                "School Science Lab"
+                "Charity Race Start Line",
+                "Race Finish Area",
+                "Marathon Water Station",
+                "Sports Stadium"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Race finish line area",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "timing mat",
+                "medal",
+                "foil blanket"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L79_Q1",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Where would you most likely hear this?",
             "interactionType": "choice",
-            "hint": "Listen for bubbling liquid and a close-watching group.",
-            "explanation": "A bubbling test tube being watched closely for a color change is a classic experiment sound.",
-            "textToSpeak": "Liquid bubbles softly in a test tube as students lean in close, watching the color slowly change.",
+            "hint": "Listen for how mistakes are handled, and by whom.",
+            "explanation": "A director's restart instruction, a forgotten line covered with a laugh, and a loudly flipped script point to an in-progress theater rehearsal.",
+            "textToSpeak": "A director calls out to take it from the top of the scene, someone forgets a line and covers it with an awkward laugh, and a script page flips loudly in the quiet that follows.",
             "options": [
-                "University Lecture Hall",
-                "Warehouse",
-                "Car Dealership",
-                "School Science Lab"
+                "Community Theater Rehearsal",
+                "Piano Recital",
+                "Backstage Before a Play",
+                "School Talent Show"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Community theater rehearsal",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "from the top",
+                "forgotten line",
+                "script"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L79_Q2",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Listen to the scene. What is the setting?",
             "interactionType": "choice",
-            "hint": "Listen for a cradled phone and quick typing.",
-            "explanation": "A phone call confirming details while typing continues is a common sound of chasing a story on deadline.",
-            "textToSpeak": "A phone is cradled against a shoulder while fingers type quickly, confirming a quote for tomorrow's story.",
+            "hint": "Listen for the specific countdown being whispered, and why it's whispered.",
+            "explanation": "A whispered time warning, a costume being wrestled into, and a final line rehearsed under someone's breath point to the tense minutes backstage before a show.",
+            "textToSpeak": "A stage manager whispers a five-minute warning down a hallway of doors, a zipper struggles against a tight costume, and someone repeats their opening line one final time under their breath.",
             "options": [
+                "Community Theater Rehearsal",
+                "Piano Recital",
                 "Photography Studio",
-                "Plant Nursery",
-                "Newsroom",
-                "Job Interview Waiting Room"
+                "Backstage Before a Play"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Backstage before a live performance",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "five-minute warning",
+                "costume",
+                "under their breath"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L79_Q3",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Which place fits these sounds?",
             "interactionType": "choice",
-            "hint": "Listen for dripping water and humming insects.",
-            "explanation": "Dripping water and humming bees among flowering rows are familiar sounds of a place that grows plants.",
-            "textToSpeak": "A hose drips steadily onto damp soil while bees hum lazily between rows of flowering plants.",
+            "hint": "Listen for what's replacing spoken instructions entirely.",
+            "explanation": "A silent wheeled set piece, a hand signal instead of words, and a timed lock into place before lights rise point to a rehearsed stage crew set change.",
+            "textToSpeak": "A wall panel is wheeled quickly across a darkened stage without a single word spoken, a hand signal passes silently between two crew members, and everything locks into place just as the lights begin to rise again.",
             "options": [
-                "School Science Lab",
-                "Plant Nursery",
-                "University Lecture Hall",
-                "Upholstery Workshop"
+                "Home Renovation Site",
+                "Backstage Before a Play",
+                "Community Theater Rehearsal",
+                "Stage Crew Set Change"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Backstage set change during a performance",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "set piece",
+                "hand signal",
+                "lights rise"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L80_Q1",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "What environment are you hearing?",
             "interactionType": "choice",
-            "hint": "Listen for squeaking cart wheels and hauled suitcases.",
-            "explanation": "A squeaking luggage cart hauling suitcases toward the exit is a common final sound of arriving somewhere.",
-            "textToSpeak": "A cart's wheels squeak across polished tile as someone hauls two heavy suitcases toward the exit at once.",
+            "hint": "Listen for what happens to a caller who gets put on hold.",
+            "explanation": "A scripted headset greeting, a hold button trapping a caller in music, and typed account notes point to a phone-based customer service call center.",
+            "textToSpeak": "A headset clicks on with a soft beep before a scripted greeting begins, a hold button traps a caller in looping music mid-sentence, and a keyboard clatters as notes are typed into an account file.",
             "options": [
-                "Optometrist's Office",
-                "Shipping Dock",
-                "Airport Baggage Claim",
-                "Pottery Studio"
+                "In-Person Tech Support Helpdesk",
+                "Customer Service Call Center",
+                "Open-Plan Office",
+                "Radio Station Booth"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Customer service call center",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "headset",
+                "hold music",
+                "account notes"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L80_Q2",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Based on these sounds, where are you?",
             "interactionType": "choice",
-            "hint": "Listen for uneven typing and an echoing distant voice.",
-            "explanation": "Uneven typing across a large room and an echoing voice from the front are common lecture-hall sounds.",
-            "textToSpeak": "Laptop keys clatter unevenly across the room while a distant voice echoes from a podium at the front.",
+            "hint": "Listen for whether the technician can actually see the problem, not just hear about it.",
+            "explanation": "A shared screen, a watched restart attempt, and a ticket note before the device is taken to the back point to an in-person tech support desk.",
+            "textToSpeak": "A laptop is turned around on the counter so both people can see the same screen, a technician asks someone to try restarting it while they watch, and a ticket number is written on a small sticky note before the laptop is taken to the back.",
             "options": [
-                "School Science Lab",
-                "University Lecture Hall",
-                "Customs Checkpoint",
-                "Real Estate Open House"
+                "In-Person Tech Support Helpdesk",
+                "Customer Service Call Center",
+                "Electronics Store",
+                "Store Returns Counter"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "In-person tech support helpdesk",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "shared screen",
+                "restart",
+                "ticket note"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L80_Q3",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Listen carefully. Where are you?",
             "interactionType": "choice",
-            "hint": "Listen for rasping paper on a rough surface.",
-            "explanation": "Rasping sandpaper smoothing a rough surface is a familiar final step in building furniture by hand.",
-            "textToSpeak": "Coarse paper rasps back and forth across a tabletop until the surface finally feels smooth to the touch.",
+            "hint": "Listen for what's being checked on the item itself before anything is refunded.",
+            "explanation": "A rescanned receipt, a tag check on the returned item, and a refund to the original card point to a store's returns counter process.",
+            "textToSpeak": "A receipt is smoothed flat and scanned twice because the first attempt fails, an item is turned over to check for a tag still attached, and a refund is confirmed onto the same card that was used originally.",
             "options": [
-                "Woodworking Workshop",
-                "Newsroom",
-                "University Lecture Hall",
-                "School Science Lab"
+                "Pawn Shop",
+                "In-Person Tech Support Helpdesk",
+                "Customer Service Call Center",
+                "Store Returns Counter"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Retail store returns counter",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "receipt scan",
+                "tag check",
+                "refund"
             ]
         }
     ]

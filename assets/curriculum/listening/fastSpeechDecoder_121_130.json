@@ -6,13 +6,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L121_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch promoted versus transferred, and guy versus girl.",
-            "explanation": "'Who's' packs 'who is' into one syllable inside a relative clause, so don't lose track of the subject as the sentence runs on. 'Promoted' and 'transferred' are different career moves entirely, so listen for the exact word.",
-            "textToSpeak": "The guy who's handling our account jus' got promoted.",
+            "instruction": "Listen carefully and catch the exact sentence.",
+            "hint": "Listen for the stress — 'thirteen' and 'thirty' put the emphasis in different places.",
+            "explanation": "'Thirteen' stresses the second syllable while 'thirty' stresses the first, but at fast speed that difference can shrink, so the ending sound matters too.",
+            "textToSpeak": "The delivery should take thirteen days.",
             "options": [
-                "The guy who's handling our account jus' got transferred.",
-                "The guy who's handling our account jus' got promoted."
+                "The delivery should take thirty days.",
+                "The delivery should take thirteen days."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -21,13 +21,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L121_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch behind versus ahead, and budget versus timeline.",
-            "explanation": "This sentence buries the real reason inside a longer structure, 'the reason...is jus' that...', so you have to track the whole clause rather than just the first few words. 'Behind' and 'ahead' are opposites too.",
-            "textToSpeak": "The reason they're behind is jus' that the budget got cut.",
+            "instruction": "They said it fast — what did you actually hear?",
+            "hint": "Catch the exact age mentioned, since teen and -ty numbers can sound alike.",
+            "explanation": "'Fourteen' and 'forty' share the same first syllable, so the ending consonant is really the only reliable clue at natural speed.",
+            "textToSpeak": "She'll be turning forty next month.",
             "options": [
-                "The reason they're behind is jus' that the budget got delayed.",
-                "The reason they're behind is jus' that the budget got cut."
+                "She'll be turning fourteen next month.",
+                "She'll be turning forty next month."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -36,13 +36,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L121_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch 'should' versus 'could', and 'em versus 'im.",
-            "explanation": "This longer sentence tucks the h-dropped 'em into the middle of a warning, so don't lose focus halfway through. 'Should' (a recommendation) and 'could' (a mere option) also carry different levels of urgency.",
-            "textToSpeak": "We should probably let 'em know before they find out some other way.",
+            "instruction": "Natural speech blends words together. Catch the real message.",
+            "hint": "Notice the exact price, since these number pairs are easy to mix up.",
+            "explanation": "'Fifteen' and 'fifty' are a classic listening trap in fast speech, so always double-check the final sound before assuming the amount.",
+            "textToSpeak": "The tickets are fifteen dollars each.",
             "options": [
-                "We should probably let 'im know before they find out some other way.",
-                "We should probably let 'em know before they find out some other way."
+                "The tickets are fifty dollars each.",
+                "The tickets are fifteen dollars each."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -51,28 +51,28 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L122_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch more versus less, and 'woulda' versus 'coulda'.",
-            "explanation": "This conditional sentence hides two separate reductions - 'she'd' (she had) at the start and 'woulda' (would have) later on - so track the whole structure, not just the opening words. 'More' and 'less' are opposites too.",
-            "textToSpeak": "If she'd known you were coming, she woulda cooked more.",
+            "instruction": "Listen for the small word that changes the meaning.",
+            "hint": "Catch the exact time, since half past and quarter to can sound similar in a rush.",
+            "explanation": "'Half past' and 'quarter past' both reduce quickly in casual speech, so the specific fraction word needs a careful listen.",
+            "textToSpeak": "The train leaves at half past six.",
             "options": [
-                "If she'd known you were coming, she woulda cooked more.",
-                "If she'd known you were coming, she woulda cooked less."
+                "The train leaves at quarter past six.",
+                "The train leaves at half past six."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L122_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch called versus texted, and change versus delay.",
-            "explanation": "This conditional sentence is longer and more layered than earlier levels, so hold the whole 'if...then' structure in mind as you listen, not just the first half. 'Change' and 'delay' are related but different pieces of news.",
-            "textToSpeak": "If they hadn't called, we wouldn't have known about the change at all.",
+            "instruction": "Focus on the key detail hidden in the fast sentence.",
+            "hint": "Listen for whether it's morning or evening.",
+            "explanation": "AM and PM markers often get spoken fast and lightly, so context clues, like the activity mentioned, help confirm the actual time of day.",
+            "textToSpeak": "We're meeting at nine in the morning.",
             "options": [
-                "If they hadn't called, we wouldn't have known about the change until later.",
-                "If they hadn't called, we wouldn't have known about the change at all."
+                "We're meeting at nine in the evening.",
+                "We're meeting at nine in the morning."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -81,58 +81,58 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L122_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch on time versus late, and traffic versus weather.",
-            "explanation": "'Would've' (a certain outcome) and 'could've' (just a possibility) suggest slightly different levels of confidence about what almost happened. Traffic and weather are also different reasons for the delay.",
-            "textToSpeak": "If it hadn't been for the traffic, we would've been on time.",
+            "instruction": "Listen again — which version matches what was said?",
+            "hint": "Notice the exact starting time for the appointment.",
+            "explanation": "Appointment times are often said quickly in passing, so isolating the specific hour and minute takes deliberate attention.",
+            "textToSpeak": "Your appointment is scheduled for ten fifteen.",
             "options": [
-                "If it hadn't been for the traffic, we would've been on time.",
-                "If it hadn't been for the traffic, we would've been late."
+                "Your appointment is scheduled for ten fifty.",
+                "Your appointment is scheduled for ten fifteen."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L123_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch sale versus offer, and 'good deal' versus 'worth buying'.",
-            "explanation": "'Fact that' loses its final 't' before 'that', the same cluster-simplification pattern you've seen with 'next', 'must', and 'just'. 'Sale' and 'offer' are near-synonyms, so listen for the specific word.",
-            "textToSpeak": "The fac' that it's on sale doesn't mean it's a good deal.",
+            "instruction": "Listen carefully and catch the exact sentence.",
+            "hint": "Catch the exact date, since ordinal numbers reduce quickly.",
+            "explanation": "Dates like 'the fourteenth' and 'the fortieth' don't actually both exist, but similar-sounding ordinals still cause real confusion at speed.",
+            "textToSpeak": "The deadline is the fourteenth of March.",
             "options": [
-                "The fac' that it's on sale doesn't mean it's a good deal.",
-                "The fac' that it's on sale doesn't mean it's a great deal."
+                "The deadline is the fourth of March.",
+                "The deadline is the fourteenth of March."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L123_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch the exact act number, and story versus plot.",
-            "explanation": "'Act three' loses its final 't' before 'three', another example of that same consonant-cluster pattern showing up in a completely different context. The number is easy to lose in the rush, so listen carefully.",
-            "textToSpeak": "In ac' three, the whole story finally comes together.",
+            "instruction": "They said it fast — what did you actually hear?",
+            "hint": "Listen for the exact month mentioned in the fast sentence.",
+            "explanation": "Month names can blur together at speed, especially ones with similar starting sounds, so isolating the full word matters.",
+            "textToSpeak": "The conference is happening in June this year.",
             "options": [
-                "In ac' three, the whole story finally comes together.",
-                "In ac' three, the whole plot finally comes together."
+                "The conference is happening in July this year.",
+                "The conference is happening in June this year."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L123_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch refund versus credit, and 'coulda' versus 'shoulda'.",
-            "explanation": "'Coulda' (it was an option) and 'shoulda' (it would have been smarter) suggest slightly different regrets about the choice made. 'Refund', 'credit', and 'exchange' are all different outcomes too, so listen precisely.",
-            "textToSpeak": "We coulda jus' asked for a refund instead of a replacement.",
+            "instruction": "Natural speech blends words together. Catch the real message.",
+            "hint": "Notice the exact day of the week, since it's easy to mishear quickly.",
+            "explanation": "Day names reduce and blend at speed, so the first sound of the word is often the clearest clue to which day is meant.",
+            "textToSpeak": "The results come out on Wednesday.",
             "options": [
-                "We coulda jus' asked for a refund instead of a replacement.",
-                "We coulda jus' asked for a refund instead of an exchange."
+                "The results come out on Wednesday.",
+                "The results come out on Thursday."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -141,13 +141,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L124_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch Fridays versus Sundays, and 'jus' closed' versus 'almost closed'.",
-            "explanation": "This sentence buries the key details, the day and the outcome, inside a longer relative clause structure. 'Jus' closed down' (it's gone) and 'almost closed down' (it survived) are very different endings to the story.",
-            "textToSpeak": "The place that we usta go to on Fridays jus' closed down.",
+            "instruction": "Listen for the small word that changes the meaning.",
+            "hint": "Catch the exact price, since numbers and currency reduce together fast.",
+            "explanation": "Prices often compress the number and the currency into one quick phrase, so the full amount deserves a careful second listen.",
+            "textToSpeak": "The jacket costs sixty-five dollars.",
             "options": [
-                "The place that we usta go to on Fridays jus' closed down.",
-                "The place that we usta go to on Sundays jus' closed down."
+                "The jacket costs sixty-five dollars.",
+                "The jacket costs sixty dollars."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -156,28 +156,28 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L124_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch cooking versus baking, and 'in there' versus 'down there'.",
-            "explanation": "'Incredible' and 'amazing' are both strong compliments, so listen for the specific word used rather than assuming. 'Cooking' and 'baking' are also different techniques, so catch the exact verb.",
-            "textToSpeak": "Whatever it is that they're cooking in there smells incredible.",
+            "instruction": "Focus on the key detail hidden in the fast sentence.",
+            "hint": "Listen for whether the price includes tax or not.",
+            "explanation": "Small details like 'including tax' or 'plus tax' can be spoken quickly and easily missed, but they change the real total significantly.",
+            "textToSpeak": "That total includes tax already.",
             "options": [
-                "Whatever it is that they're cooking in there smells incredible.",
-                "Whatever it is that they're cooking down there smells incredible."
+                "That total doesn't include tax yet.",
+                "That total includes tax already."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L124_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch amazing versus okay, and this versus that.",
-            "explanation": "'Amazing' and 'okay' are wildly different levels of praise, so that word carries the entire opinion. This sentence also stacks 'dunno' and 'jus'' together, a very natural pairing in enthusiastic, casual speech.",
-            "textToSpeak": "I dunno what's in this sauce, but it's jus' amazing.",
+            "instruction": "Listen again — which version matches what was said?",
+            "hint": "Notice the exact discount mentioned, since percentages reduce fast.",
+            "explanation": "Percentages like 'twenty percent' can compress heavily in casual speech, so the number itself is the real detail to isolate.",
+            "textToSpeak": "Everything's twenty percent off this weekend.",
             "options": [
-                "I dunno what's in this sauce, but it's jus' amazing.",
-                "I dunno what's in this sauce, but it's jus' okay."
+                "Everything's twenty percent off this weekend.",
+                "Everything's thirty percent off this weekend."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -186,13 +186,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L125_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch taxi versus bus, and 'on time' versus 'at all'.",
-            "explanation": "'Runnin'' drops its final 'g' sound in casual speech, alongside the already-familiar 'cause for 'because'. 'On time' (eventually arrived late) and 'at all' (never arrived) are very different problems.",
-            "textToSpeak": "We're runnin' late 'cause the taxi never showed up on time.",
+            "instruction": "Listen carefully and catch the exact sentence.",
+            "hint": "Catch the exact quantity, since 'a couple of' and 'a couple' can differ slightly.",
+            "explanation": "'A couple of' usually means around two, and it reduces heavily in casual speech, so the noun after it confirms what's actually meant.",
+            "textToSpeak": "We only need a couple of extra chairs.",
             "options": [
-                "We're runnin' late 'cause the taxi never showed up on time.",
-                "We were runnin' late 'cause the taxi never showed up on time."
+                "We only need a couple of extra chairs.",
+                "We only need a dozen extra chairs."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -201,43 +201,43 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L125_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch relax versus sleep, and thinking versus worrying.",
-            "explanation": "'Relax' and 'sleep' are related but different activities, so listen for the exact verb rather than the general idea. 'Thinking about' and 'worrying about' also carry a different emotional weight.",
-            "textToSpeak": "I couldn't relax 'cause I kept thinking about the connecting flight.",
+            "instruction": "They said it fast — what did you actually hear?",
+            "hint": "Listen for whether there's enough, or not quite enough.",
+            "explanation": "'Just enough' and 'not quite enough' both reduce at speed, but they describe opposite situations, so the negative is the key thing to catch.",
+            "textToSpeak": "We don't quite have enough seats for everyone.",
             "options": [
-                "I couldn't relax 'cause I kept thinking about the connecting flight.",
-                "I couldn't relax 'cause I kept thinking about the connecting train."
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "fastSpeechDecoder",
-            "emoji": "⚡"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L125_Q3",
-            "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch cancelled versus postponed, and signed up versus showed up.",
-            "explanation": "'Cancelled' (called off entirely) and 'postponed' (delayed to later) lead to very different next steps, so that verb is essential. 'Signed up' and 'showed up' are also different stages of joining a tour.",
-            "textToSpeak": "The tour got cancelled 'cause not enough people signed up for it.",
-            "options": [
-                "The tour got postponed 'cause not enough people signed up for it.",
-                "The tour got cancelled 'cause not enough people signed up for it."
+                "We have just enough seats for everyone.",
+                "We don't quite have enough seats for everyone."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
+            "id": "LIS_FASTSPEECHDECODER_L125_Q3",
+            "interactionType": "choice",
+            "instruction": "Natural speech blends words together. Catch the real message.",
+            "hint": "Notice the exact number of people mentioned in this fast sentence.",
+            "explanation": "Group sizes are often mentioned quickly in passing, so the specific number word needs your full attention rather than a rough guess.",
+            "textToSpeak": "There'll be about eight of us for dinner.",
+            "options": [
+                "There'll be about eight of us for dinner.",
+                "There'll be about eighteen of us for dinner."
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "fastSpeechDecoder",
+            "emoji": "⚡"
+        },
+        {
             "id": "LIS_FASTSPEECHDECODER_L126_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch now versus later, and backed up versus saved.",
-            "explanation": "This conditional stacks two reductions, 'you'd' (you had) and 'wouldn't', across a longer sentence, so keep the whole structure in mind rather than just the ending. 'Backed up' and 'saved' overlap in meaning but aren't identical.",
-            "textToSpeak": "If you'd backed it up, you wouldn't be in this mess now.",
+            "instruction": "Listen for the small word that changes the meaning.",
+            "hint": "Catch the exact countdown, since urgency often speeds up the numbers.",
+            "explanation": "When speakers are in a hurry, numbers tend to compress even more than usual, so slow down mentally even if the speaker doesn't.",
+            "textToSpeak": "We've got about fifteen minutes left.",
             "options": [
-                "If you'd backed it up, you wouldn't be in this mess later.",
-                "If you'd backed it up, you wouldn't be in this mess now."
+                "We've got about fifty minutes left.",
+                "We've got about fifteen minutes left."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -246,13 +246,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L126_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch 'at all' versus 'again', and update versus patch.",
-            "explanation": "'Wasn't for' and 'hadn't been for' both introduce the same kind of hypothetical, so don't worry if you can't tell them apart instantly, focus on what actually caused the problem. 'At all' and 'again' describe very different histories with this issue.",
-            "textToSpeak": "If it wasn't for the update, this wouldn't have happened at all.",
+            "instruction": "Focus on the key detail hidden in the fast sentence.",
+            "hint": "Listen for the exact boarding time, since flight announcements move fast.",
+            "explanation": "Announcements often deliver numbers at a rapid, even pace, so isolating the specific gate and time takes real focus.",
+            "textToSpeak": "Boarding begins at gate twelve in twenty minutes.",
             "options": [
-                "If it wasn't for the update, this wouldn't have happened at all.",
-                "If it wasn't for the update, this wouldn't have happened again."
+                "Boarding begins at gate twelve in twenty minutes.",
+                "Boarding begins at gate twenty in twelve minutes."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -261,103 +261,103 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L126_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch ignored versus read, and 'woulda' versus 'coulda'.",
-            "explanation": "This sentence stacks four reductions across a full hypothetical question: 'whatcha', 'reckon', 'woulda', and 'jus''. Breaking it into its full words helps: what have you, reckon, would have, and just.",
-            "textToSpeak": "Whatcha reckon woulda happened if we'd jus' ignored the warning?",
+            "instruction": "Listen again — which version matches what was said?",
+            "hint": "Notice the exact wait time given, since the number is easy to mishear under pressure.",
+            "explanation": "Waiting-time announcements often blend the number and the noun together quickly, so listen for the full phrase, not just the first sound.",
+            "textToSpeak": "The wait is currently about forty-five minutes.",
             "options": [
-                "Whatcha reckon woulda happened if we'd jus' read the warning?",
-                "Whatcha reckon woulda happened if we'd jus' ignored the warning?"
+                "The wait is currently about forty-five minutes.",
+                "The wait is currently about fifteen minutes."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L127_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch sleep versus rest, and 'switch off' versus 'slow down'.",
-            "explanation": "This sentence buries the real explanation inside a longer 'the reason...is jus' that...' structure, so hold onto the whole clause. 'Switch off' and 'slow down' describe different kinds of restlessness.",
-            "textToSpeak": "The reason I couldn't sleep is jus' that my mind wouldn't switch off.",
+            "instruction": "Listen carefully and catch the exact sentence.",
+            "hint": "Catch the exact house number, since digits reduce quickly in speech.",
+            "explanation": "Addresses often compress several numbers into one fast phrase, so isolating each individual digit takes deliberate attention.",
+            "textToSpeak": "The office is at number forty-two on Elm Street.",
             "options": [
-                "The reason I couldn't sleep was jus' that my mind wouldn't switch off.",
-                "The reason I couldn't sleep is jus' that my mind wouldn't switch off."
+                "The office is at number forty-two on Elm Street.",
+                "The office is at number twenty-four on Elm Street."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L127_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch he versus she, and allergy versus intolerance.",
-            "explanation": "'Allergy' and 'intolerance' are related but medically different, so listen for the exact word used. He versus she is also worth confirming in this longer conditional sentence.",
-            "textToSpeak": "If she hadn't mentioned the allergy, they woulda served it anyway.",
+            "instruction": "They said it fast — what did you actually hear?",
+            "hint": "Listen for the exact floor mentioned, since numbers blend fast.",
+            "explanation": "Floor numbers are often said quickly in passing directions, so the specific number deserves a careful, deliberate listen.",
+            "textToSpeak": "Our office is on the fifth floor.",
             "options": [
-                "If she hadn't mentioned the allergy, they woulda served it anyway.",
-                "If she hadn't mentioned the intolerance, they woulda served it anyway."
+                "Our office is on the fifteenth floor.",
+                "Our office is on the fifth floor."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L127_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch stress versus tiredness, and 'checked out' versus 'looked at'.",
-            "explanation": "This longer sentence stacks 'dunno' and 'jus'' while also presenting two possible explanations, so track both halves of the comparison: stress, or something more serious.",
-            "textToSpeak": "I dunno whether it's jus' stress or something I should get checked out.",
+            "instruction": "Natural speech blends words together. Catch the real message.",
+            "hint": "Notice the exact distance mentioned, since it's easy to mishear.",
+            "explanation": "Distance phrases like 'about a mile' compress quickly, so isolating the specific number and unit takes real focus.",
+            "textToSpeak": "It's about two miles from here.",
             "options": [
-                "I dunno whether it's jus' stress or something I should get looked at.",
-                "I dunno whether it's jus' stress or something I should get checked out."
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "fastSpeechDecoder",
-            "emoji": "⚡"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L128_Q1",
-            "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch strict versus fair, and essays versus papers.",
-            "explanation": "'Strict' and 'fair' paint very different pictures of the same teacher, so that adjective is the whole point. 'Marking' and 'grading' are near-synonyms too, so listen for the exact verb.",
-            "textToSpeak": "The teacher who's marking our essays is jus' really strict.",
-            "options": [
-                "The teacher who's marking our essays is jus' really strict.",
-                "The teacher who's grading our essays is jus' really strict."
+                "It's about two miles from here.",
+                "It's about twelve miles from here."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
-            "id": "LIS_FASTSPEECHDECODER_L128_Q2",
+            "id": "LIS_FASTSPEECHDECODER_L128_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch help versus advice, and 'woulda' versus 'coulda'.",
-            "explanation": "'Woulda failed' (a certainty) and 'coulda failed' (a real risk, but not certain) suggest different levels of how close the situation really was. 'Help' and 'advice' are near-synonyms too.",
-            "textToSpeak": "If I hadn't asked for help, I woulda failed that module completely.",
+            "instruction": "Listen for the small word that changes the meaning.",
+            "hint": "Catch both the reduced phrase and the exact number that follows.",
+            "explanation": "'Gonna be about' combines a reduced chunk with a number, so both pieces of fast speech need to be decoded together here.",
+            "textToSpeak": "It's gonna be about thirty dollars total.",
             "options": [
-                "If I hadn't asked for help, I coulda failed that module completely.",
-                "If I hadn't asked for help, I woulda failed that module completely."
+                "It's gonna be about thirteen dollars total.",
+                "It's gonna be about thirty dollars total."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
+            "id": "LIS_FASTSPEECHDECODER_L128_Q2",
+            "interactionType": "choice",
+            "instruction": "Focus on the key detail hidden in the fast sentence.",
+            "hint": "Listen for whether it's roughly the number given, or exactly that number.",
+            "explanation": "'About' softens a number into an estimate, and it reduces heavily at speed, so listen for whether it's actually there or not.",
+            "textToSpeak": "We're expecting exactly twenty guests.",
+            "options": [
+                "We're expecting exactly twenty guests.",
+                "We're expecting about twenty guests."
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "fastSpeechDecoder",
+            "emoji": "⚡"
+        },
+        {
             "id": "LIS_FASTSPEECHDECODER_L128_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch the exact number, and 'fastest' versus 'best'.",
-            "explanation": "'Fastest' (speed) and 'best' (quality) suggest different priorities for how to catch up, so listen for the precise word. The chapter count is also easy to lose track of in a longer sentence.",
-            "textToSpeak": "Whatcha reckon's the fastest way to catch up on the nex' three chapters?",
+            "instruction": "Listen again — which version matches what was said?",
+            "hint": "Notice the exact quantity requested, since the reduced chunk before it can distract from the number.",
+            "explanation": "'Could you get me a couple of' reduces heavily before the actual number-like quantity, so listen through to the noun at the end.",
+            "textToSpeak": "Could you get me a couple of extra copies?",
             "options": [
-                "Whatcha reckon's the fastest way to catch up on the nex' three chapters?",
-                "Whatcha reckon's the fastest way to catch up on the nex' two chapters?"
+                "Could you get me a couple of extra copies?",
+                "Could you get me a dozen extra copies?"
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -366,13 +366,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L129_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch director versus producer, and action movie versus comedy.",
-            "explanation": "This sentence uses a relative clause to build up expectation before delivering the surprising news at the end, so hold your attention through the whole structure. 'Director' and 'producer' are different roles too.",
-            "textToSpeak": "The director who's known for slow, artsy films jus' announced an action movie.",
+            "instruction": "Listen carefully and catch the exact sentence.",
+            "hint": "Catch the exact total, since it comes at the end of a fast sentence.",
+            "explanation": "Totals are often announced at natural speed right at the end of a sentence, so keep your attention through to the very last number.",
+            "textToSpeak": "With tax, that comes to fifty-two dollars.",
             "options": [
-                "The director who's known for slow, artsy films jus' announced an action movie.",
-                "The director who's known for fast, artsy films jus' announced an action movie."
+                "With tax, that comes to fifty-two dollars.",
+                "With tax, that comes to fifteen dollars."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -381,28 +381,28 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L129_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch ending versus opening, and 'leaked' versus 'spoiled'.",
-            "explanation": "'Leaked' and 'spoiled' both ruin a surprise but in slightly different ways, so listen for the exact verb. 'Ending' and 'opening' are also opposite parts of the story.",
-            "textToSpeak": "If they hadn't leaked the ending, I woulda been genuinely surprised.",
+            "instruction": "They said it fast — what did you actually hear?",
+            "hint": "Listen for the exact interest rate mentioned, since percentages reduce heavily.",
+            "explanation": "Interest rates and similar figures often blend into the surrounding words, so the specific percentage deserves careful isolation.",
+            "textToSpeak": "The rate on that account is four percent.",
             "options": [
-                "If they hadn't leaked the ending, I woulda been genuinely surprised.",
-                "If they hadn't leaked the ending, I woulda been genuinely shocked."
+                "The rate on that account is forty percent.",
+                "The rate on that account is four percent."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L129_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch 'woulda' versus 'coulda', and 'split up' versus 'broken up'.",
-            "explanation": "'Split up' and 'broken up' mean almost the same thing, so the exact phrase matters less than catching 'woulda' versus 'coulda' correctly, since that changes how certain this hypothetical really is.",
-            "textToSpeak": "Whatcha reckon woulda happened if the band hadn't jus' split up?",
+            "instruction": "Natural speech blends words together. Catch the real message.",
+            "hint": "Notice the exact number of items left in stock.",
+            "explanation": "Stock or availability numbers are often mentioned quickly in passing, so isolating the specific figure takes deliberate focus.",
+            "textToSpeak": "There are only six left in stock.",
             "options": [
-                "Whatcha reckon woulda happened if the band hadn't jus' split up?",
-                "Whatcha reckon coulda happened if the band hadn't jus' split up?"
+                "There are only six left in stock.",
+                "There are only sixteen left in stock."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -411,13 +411,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L130_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch 'get ready' versus 'get up', and the tense.",
-            "explanation": "This review question buries the real cause inside a longer 'the reason...is that...' structure, testing whether you can hold onto meaning across a full sentence. 'Get ready' and 'get up' are different parts of a morning routine.",
-            "textToSpeak": "The reason we're jus' running late is that the kids wouldn't get ready.",
+            "instruction": "Listen for the small word that changes the meaning.",
+            "hint": "By now, expect numbers to compress heavily alongside other reductions.",
+            "explanation": "This level combines a reduced chunk, a time, and a number all in one sentence, so treat each piece as a separate small listening check.",
+            "textToSpeak": "We've gotta leave by half past seven to make the nine fifteen train.",
             "options": [
-                "The reason we're jus' running late is that the kids wouldn't get ready.",
-                "The reason we were jus' running late is that the kids wouldn't get ready."
+                "We've gotta leave by half past seven to make the nine fifteen train.",
+                "We've gotta leave by half past eight to make the nine fifteen train."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -426,30 +426,30 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L130_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch 'in time' versus 'at all', and checked versus looked.",
-            "explanation": "'In time' (just barely) and 'at all' (never) describe very different near-misses, so that ending phrase really matters. This conditional also stacks 'jus'' inside a longer clause, so keep tracking the whole sentence.",
-            "textToSpeak": "If we hadn't jus' checked, we wouldn't have caught the mistake in time.",
+            "instruction": "Focus on the key detail hidden in the fast sentence.",
+            "hint": "Catch the full sentence despite several numbers appearing close together.",
+            "explanation": "By Level 130, multiple numbers in one sentence should feel manageable, since you've trained on teens, tens, times, and prices separately.",
+            "textToSpeak": "The fifty dollar deposit covers the first two nights.",
             "options": [
-                "If we hadn't jus' checked, we wouldn't have caught the mistake at all.",
-                "If we hadn't jus' checked, we wouldn't have caught the mistake in time."
+                "The fifty dollar deposit covers the first two nights.",
+                "The fifteen dollar deposit covers the first two nights."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L130_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch 'about it' versus 'sooner', and 'woulda' versus 'coulda'.",
-            "explanation": "This closing question of the tier combines a hypothetical with several stacked reductions - 'whatcha', 'reckon', 'jus'', and 'woulda' - the most demanding sentence structure so far. If this feels manageable now, the tier ahead will build on exactly this skill.",
-            "textToSpeak": "Whatcha reckon woulda happened if nobody had jus' spoken up about it?",
+            "instruction": "Listen again — which version matches what was said?",
+            "hint": "Notice how much detail survives even when numbers come fast and close together.",
+            "explanation": "Numbers carry some of the most practically important information in real conversation, so this careful listening habit pays off constantly in daily life.",
+            "textToSpeak": "It's thirty percent off if you order before noon.",
             "options": [
-                "Whatcha reckon coulda happened if nobody had jus' spoken up about it?",
-                "Whatcha reckon woulda happened if nobody had jus' spoken up about it?"
+                "It's thirty percent off if you order before noon.",
+                "It's thirteen percent off if you order before noon."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         }

@@ -6,43 +6,43 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L131_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch tonight versus tomorrow, and he versus she.",
-            "explanation": "'He'd' can mean either 'he would' or 'he had' depending on context - here it's a promise about the future, reported secondhand. Report versus proposal is also worth catching precisely.",
-            "textToSpeak": "He said she'd finish the report by tonight, jus' so you know.",
+            "instruction": "Listen carefully and catch the exact sentence.",
+            "hint": "Catch the exact item, since the cashier says it quickly in passing.",
+            "explanation": "In real shopping conversations, clerks speak at natural conversational speed, blending small words together around the item name.",
+            "textToSpeak": "Do you need a bag for that?",
             "options": [
-                "He said she'd finish the report by tonight, jus' so you know.",
-                "She said she'd finish the report by tonight, jus' so you know."
+                "Do you need a box for that?",
+                "Do you need a bag for that?"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L131_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch sent versus signed, and he versus she (as the one telling you).",
-            "explanation": "This sentence reports someone else's claim while also expressing doubt about it, so track both layers: what was said, and how much you trust it. 'Sent' and 'signed' are different actions on a document too.",
-            "textToSpeak": "He told me he'd already sent it, but I dunno if that's true.",
+            "instruction": "They said it fast — what did you actually hear?",
+            "hint": "Listen for whether this is in stock, or sold out.",
+            "explanation": "'We're out of' compresses heavily in fast speech, and the item named right after tells you exactly what's unavailable.",
+            "textToSpeak": "We're out of your size in that color.",
             "options": [
-                "He told me he'd already sent it, but I dunno if that's true.",
-                "She told me he'd already sent it, but I dunno if that's true."
+                "We have your size in that color.",
+                "We're out of your size in that color."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L131_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch the exact day, and 'prolly' versus 'definitely'.",
-            "explanation": "'Reckon' introduces someone else's guess, and 'prolly' inside that guess adds a second layer of uncertainty, so the whole sentence is really just a hopeful estimate, not a promise.",
-            "textToSpeak": "They reckon they'll prolly have an answer for us by Friday.",
+            "instruction": "Natural speech blends words together. Catch the real message.",
+            "hint": "Notice the exact return policy detail mentioned.",
+            "explanation": "Store policies are often explained quickly and routinely, so the specific time frame, easy to lose in fast speech, is the real detail here.",
+            "textToSpeak": "You can return it within thirty days.",
             "options": [
-                "They reckon they'll prolly have an answer for us by Monday.",
-                "They reckon they'll prolly have an answer for us by Friday."
+                "You can return it within fourteen days.",
+                "You can return it within thirty days."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -51,28 +51,28 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L132_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch call versus text, and mum versus dad.",
-            "explanation": "'She'd call' reports a promise made earlier, using the reduced 'she would'. The instruction that follows, keeping your phone on or charged, is a separate detail worth catching just as carefully.",
-            "textToSpeak": "Mum said she'd call once she landed, so keep your phone on.",
+            "instruction": "Listen for the small word that changes the meaning.",
+            "hint": "Catch the exact platform number, since transit announcements move fast.",
+            "explanation": "Transit announcements are often delivered at a rapid, routine pace, so isolating the specific number takes real focus.",
+            "textToSpeak": "Your train departs from platform six.",
             "options": [
-                "Mum said she'd call once she landed, so keep your phone on.",
-                "Dad said she'd call once she landed, so keep your phone on."
+                "Your train departs from platform sixteen.",
+                "Your train departs from platform six."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L132_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch party versus dinner, and 'prolly' versus 'definitely'.",
-            "explanation": "'Reckons' introduces a casual prediction, and 'prolly' softens it even further into a light guess. He versus she is also worth confirming as the one making the prediction.",
-            "textToSpeak": "He reckons they'll prolly be late for the party, knowing them.",
+            "instruction": "Focus on the key detail hidden in the fast sentence.",
+            "hint": "Listen for whether the bus is delayed or running on time.",
+            "explanation": "'Running late' and 'running on time' can both blend at speed, so the key status word deserves careful attention.",
+            "textToSpeak": "The bus is running about ten minutes late.",
             "options": [
-                "She reckons they'll prolly be late for the party, knowing them.",
-                "He reckons they'll prolly be late for the party, knowing them."
+                "The bus is running right on time.",
+                "The bus is running about ten minutes late."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -81,13 +81,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L132_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch closer versus further, and he versus she.",
-            "explanation": "'Movin'' drops its final 'g', the same casual pattern you saw with 'runnin''. 'Closer' and 'further' are opposites, so that word decides the whole direction of the news.",
-            "textToSpeak": "I heard she's thinking about movin' closer to the family.",
+            "instruction": "Listen again — which version matches what was said?",
+            "hint": "Notice the exact stop where they need to get off.",
+            "explanation": "Directions on public transport are often given quickly, so the specific stop name is the real detail worth isolating.",
+            "textToSpeak": "You'll want to get off at the next stop.",
             "options": [
-                "I heard he's thinking about movin' closer to the family.",
-                "I heard she's thinking about movin' closer to the family."
+                "You'll want to get off at the last stop.",
+                "You'll want to get off at the next stop."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -96,13 +96,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L133_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch sale versus offer, and 'should' versus 'could'.",
-            "explanation": "'Should' (weighing what's wise) and 'could' (weighing what's possible) frame this decision slightly differently, so listen for the exact modal. 'Sale' and 'offer' are near-synonyms too.",
-            "textToSpeak": "I dunno if I should jus' get the one that's on sale.",
+            "instruction": "Listen carefully and catch the exact sentence.",
+            "hint": "Catch exactly what they're recommending, since it's said quickly.",
+            "explanation": "Restaurant recommendations often come out fast and casually, so the specific dish named needs your close attention.",
+            "textToSpeak": "I'd recommend the grilled salmon tonight.",
             "options": [
-                "I dunno if I should jus' get the one that's on offer.",
-                "I dunno if I should jus' get the one that's on sale."
+                "I'd recommend the grilled chicken tonight.",
+                "I'd recommend the grilled salmon tonight."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -111,28 +111,28 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L133_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch smaller versus bigger, and 'probably' versus 'definitely'.",
-            "explanation": "'It'd' packs 'it would' into a light, quick sound inside someone else's reported advice. 'Smaller' and 'bigger' point in opposite directions, so that word is the whole recommendation.",
-            "textToSpeak": "The assistant reckoned it'd probably fit better in a size smaller.",
+            "instruction": "They said it fast — what did you actually hear?",
+            "hint": "Listen for whether the table is ready, or still needs a bit more time.",
+            "explanation": "'Just a few more minutes' reduces at speed, so listen for whether the wait continues or the table is confirmed as ready.",
+            "textToSpeak": "Your table's ready whenever you are.",
             "options": [
-                "The assistant reckoned it'd probably fit better in a size smaller.",
-                "The assistant reckoned it'd probably fit better in a size bigger."
+                "Your table needs a few more minutes.",
+                "Your table's ready whenever you are."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L133_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch late versus early, and 'em versus 'im.",
-            "explanation": "This sentence stacks 'couldya', 'jus'', and the h-dropped 'em together, a genuinely dense casual request. 'Late' and 'early' are opposites too, so that word matters most.",
-            "textToSpeak": "Couldya jus' let 'em know we'll be a few minutes late?",
+            "instruction": "Natural speech blends words together. Catch the real message.",
+            "hint": "Notice the exact allergy or dietary detail mentioned.",
+            "explanation": "Dietary details are often mentioned quickly and in passing, so the specific ingredient or restriction is the real content here.",
+            "textToSpeak": "This dish is completely nut-free.",
             "options": [
-                "Couldya jus' let 'em know we'll be a few minutes late?",
-                "Couldya jus' let 'em know we'll be a few minutes early?"
+                "This dish is completely nut-free.",
+                "This dish is completely dairy-free."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -141,58 +141,58 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L134_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch tonight versus tomorrow, and whether it's a he or a she doing the telling.",
-            "explanation": "This sentence reports a casual plan, softened by 'probably', so it's a likely choice rather than a firm decision. 'Order in' and 'cooking' are opposite approaches to dinner.",
-            "textToSpeak": "She mentioned she'd probably jus' order in instead of cooking tonight.",
+            "instruction": "Listen for the small word that changes the meaning.",
+            "hint": "Catch the exact gate number, since airport announcements are fast and routine.",
+            "explanation": "Gate numbers are announced quickly and repetitively, so isolating the specific number from the background noise of the phrase matters.",
+            "textToSpeak": "Final boarding is now at gate twenty-three.",
             "options": [
-                "She mentioned she'd probably jus' order in instead of cooking tonight.",
-                "She mentioned she'd probably jus' order in instead of cooking tomorrow."
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "fastSpeechDecoder",
-            "emoji": "⚡"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L134_Q2",
-            "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch more versus less, and 'coulda' versus 'shoulda'.",
-            "explanation": "'Coulda used less' (a mild opinion) and 'shoulda used less' (a firmer criticism) carry slightly different tones. 'More' and 'less' sugar are opposites too, so that word decides the whole comment.",
-            "textToSpeak": "I reckon this recipe coulda used a bit less sugar, honestly.",
-            "options": [
-                "I reckon this recipe coulda used a bit less sugar, honestly.",
-                "I reckon this recipe coulda used a bit more sugar, honestly."
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "fastSpeechDecoder",
-            "emoji": "⚡"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L134_Q3",
-            "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch 'to share' versus 'to start', and 'should' versus 'could'.",
-            "explanation": "'Should' (seeking a real recommendation) and 'could' (just brainstorming options) frame this question slightly differently. 'To share' and 'to start' are also very different parts of a meal.",
-            "textToSpeak": "Whatcha reckon we should order for the table to share?",
-            "options": [
-                "Whatcha reckon we could order for the table to share?",
-                "Whatcha reckon we should order for the table to share?"
+                "Final boarding is now at gate thirty-two.",
+                "Final boarding is now at gate twenty-three."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
+            "id": "LIS_FASTSPEECHDECODER_L134_Q2",
+            "interactionType": "choice",
+            "instruction": "Focus on the key detail hidden in the fast sentence.",
+            "hint": "Listen for whether the flight is delayed, or on time.",
+            "explanation": "Flight status updates blend their key word into the surrounding announcement, so isolating 'delayed' versus 'on time' really matters.",
+            "textToSpeak": "Your flight is currently on time.",
+            "options": [
+                "Your flight is currently delayed.",
+                "Your flight is currently on time."
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "fastSpeechDecoder",
+            "emoji": "⚡"
+        },
+        {
+            "id": "LIS_FASTSPEECHDECODER_L134_Q3",
+            "interactionType": "choice",
+            "instruction": "Listen again — which version matches what was said?",
+            "hint": "Notice exactly what needs to go in the overhead bin, or under the seat.",
+            "explanation": "Cabin crew instructions are delivered quickly and routinely, so the specific placement detail needs deliberate attention.",
+            "textToSpeak": "Please place your bag under the seat in front of you.",
+            "options": [
+                "Please place your bag under the seat in front of you.",
+                "Please place your bag in the overhead bin above you."
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "fastSpeechDecoder",
+            "emoji": "⚡"
+        },
+        {
             "id": "LIS_FASTSPEECHDECODER_L135_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch hotel versus hostel, and airport versus station.",
-            "explanation": "This reported plan hinges entirely on the two locations mentioned, so both need your full attention. 'They'd' (they would/had) is now a familiar reduction, so let it guide you rather than confuse you.",
-            "textToSpeak": "They said they'd meet us at the hotel instead of the airport.",
+            "instruction": "Listen carefully and catch the exact sentence.",
+            "hint": "Catch exactly who they're trying to reach.",
+            "explanation": "Phone conversations move quickly and casually, so names and departments can blend together unless you listen closely.",
+            "textToSpeak": "I'm trying to reach someone in billing.",
             "options": [
-                "They said they'd meet us at the hotel instead of the airport.",
-                "They said they'd meet us at the hostel instead of the airport."
+                "I'm trying to reach someone in billing.",
+                "I'm trying to reach someone in sales."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -201,28 +201,28 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L135_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch earlier versus later, and 'shoulda' versus 'coulda'.",
-            "explanation": "'Shoulda booked' expresses real regret about a choice already made, while 'coulda booked' just notes it was possible. 'Earlier' and 'later' are opposites too, deciding the whole direction of the regret.",
-            "textToSpeak": "I reckon we shoulda booked the earlier flight after all.",
+            "instruction": "They said it fast — what did you actually hear?",
+            "hint": "Listen for whether the call got through, or went to voicemail.",
+            "explanation": "'Went straight to voicemail' compresses at speed, so the outcome of the call is the real detail to catch here.",
+            "textToSpeak": "It went straight to voicemail again.",
             "options": [
-                "I reckon we shoulda booked the earlier flight after all.",
-                "I reckon we shoulda booked the earlier train after all."
+                "It rang through and I got them.",
+                "It went straight to voicemail again."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L135_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch 'best' versus 'fastest', and here versus there.",
-            "explanation": "'Best' (overall quality) and 'fastest' (pure speed) suggest different priorities for the journey, so listen for the specific word. 'Here' and 'there' also change where the question is actually being asked from.",
-            "textToSpeak": "Whatcha reckon's the best way to get downtown from here?",
+            "instruction": "Natural speech blends words together. Catch the real message.",
+            "hint": "Notice the exact callback number given.",
+            "explanation": "Phone numbers are often read out at a steady, rapid pace, so isolating each digit takes real, deliberate focus.",
+            "textToSpeak": "Please call us back at extension four one two.",
             "options": [
-                "Whatcha reckon's the best way to get downtown from here?",
-                "Whatcha reckon's the fastest way to get downtown from here?"
+                "Please call us back at extension four one two.",
+                "Please call us back at extension four one four."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -231,13 +231,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L136_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch next versus this, and fix versus update.",
-            "explanation": "'Fix'd' packs 'fix would' into a light sound, a reduction pattern that works the same way as 'she'd' or 'they'd'. He versus she is also worth confirming here.",
-            "textToSpeak": "He mentioned the fix'd probably be ready sometime nex' week.",
+            "instruction": "Listen for the small word that changes the meaning.",
+            "hint": "Catch the exact day the appointment is being moved to.",
+            "explanation": "Rescheduling details are often mentioned quickly and casually, so the new day or time needs your close attention.",
+            "textToSpeak": "We'll need to move your appointment to Friday.",
             "options": [
-                "She mentioned the fix'd probably be ready sometime nex' week.",
-                "He mentioned the fix'd probably be ready sometime nex' week."
+                "We'll need to move your appointment to Thursday.",
+                "We'll need to move your appointment to Friday."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -246,13 +246,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L136_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch 'coulda' versus 'shoulda', and 'a lot' versus 'a little'.",
-            "explanation": "'Coulda lasted longer' (a simple observation) and 'shoulda lasted longer' (a real complaint about quality) carry different levels of frustration. 'A lot' and 'a little' also change how big the disappointment really is.",
-            "textToSpeak": "I reckon this laptop coulda lasted a lot longer, honestly.",
+            "instruction": "Focus on the key detail hidden in the fast sentence.",
+            "hint": "Listen for whether they need to confirm, or cancel entirely.",
+            "explanation": "'Confirm' and 'cancel' share a similar rhythm but very different meanings, so the specific word needs careful isolation.",
+            "textToSpeak": "Could you confirm your appointment for us?",
             "options": [
-                "I reckon that laptop coulda lasted a lot longer, honestly.",
-                "I reckon this laptop coulda lasted a lot longer, honestly."
+                "Could you cancel your appointment for us?",
+                "Could you confirm your appointment for us?"
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -261,58 +261,58 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L136_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch login versus loading, and we versus they.",
-            "explanation": "'Oughta' (ought to) is another casual modal reduction, similar in feel to 'gotta' or 'hafta', suggesting a mild obligation. 'Login' and 'loading' are different tech problems too, so listen precisely.",
-            "textToSpeak": "Whatcha reckon we oughta do about the login issue?",
+            "instruction": "Listen again — which version matches what was said?",
+            "hint": "Notice exactly how early they should arrive.",
+            "explanation": "Arrival instructions are often given quickly at the end of a call, so the specific number of minutes is the real detail to catch.",
+            "textToSpeak": "Please arrive fifteen minutes early.",
             "options": [
-                "Whatcha reckon they oughta do about the login issue?",
-                "Whatcha reckon we oughta do about the login issue?"
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "fastSpeechDecoder",
-            "emoji": "⚡"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L137_Q1",
-            "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch week versus month, and 'probably' versus 'definitely'.",
-            "explanation": "'It'd' (it would) softens this into a likely outcome rather than a promise, especially paired with 'probably'. Doctor versus nurse, and the exact timeframe, are the real details to catch.",
-            "textToSpeak": "The doctor mentioned it'd probably clear up within a week or so.",
-            "options": [
-                "The doctor mentioned it'd probably clear up within a month or so.",
-                "The doctor mentioned it'd probably clear up within a week or so."
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "fastSpeechDecoder",
-            "emoji": "⚡"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L137_Q2",
-            "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch 'shoulda' versus 'coulda', and 'jumping back in' versus 'slowing back down'.",
-            "explanation": "'Shoulda rested' expresses genuine concern about the choice made, more direct than 'coulda rested'. 'Jumping back in' and 'slowing back down' also describe opposite approaches to recovery.",
-            "textToSpeak": "I reckon you shoulda rested a bit more before jumping back in.",
-            "options": [
-                "I reckon you shoulda rested a bit more before jumping back in.",
-                "I reckon you shoulda rested a bit longer before jumping back in."
+                "Please arrive fifteen minutes early.",
+                "Please arrive five minutes early."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
+            "id": "LIS_FASTSPEECHDECODER_L137_Q1",
+            "interactionType": "choice",
+            "instruction": "Listen carefully and catch the exact sentence.",
+            "hint": "Catch exactly what needs fixing around the house.",
+            "explanation": "Household conversations move quickly and casually, so the specific item that's broken needs your close attention.",
+            "textToSpeak": "The kitchen tap's been leaking all week.",
+            "options": [
+                "The kitchen tap's been leaking all week.",
+                "The bathroom tap's been leaking all week."
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "fastSpeechDecoder",
+            "emoji": "⚡"
+        },
+        {
+            "id": "LIS_FASTSPEECHDECODER_L137_Q2",
+            "interactionType": "choice",
+            "instruction": "They said it fast — what did you actually hear?",
+            "hint": "Listen for whether the delivery has arrived, or is still on its way.",
+            "explanation": "'Still on its way' and 'already arrived' both compress at speed, so the status word is the real thing to isolate here.",
+            "textToSpeak": "The package is still on its way.",
+            "options": [
+                "The package has already arrived.",
+                "The package is still on its way."
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "fastSpeechDecoder",
+            "emoji": "⚡"
+        },
+        {
             "id": "LIS_FASTSPEECHDECODER_L137_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch 'em versus 'im, and tell versus ask.",
-            "explanation": "'Oughta' carries a similar weight to 'should', a mild sense of obligation, layered here with the h-dropped 'em. 'Tell' and 'ask' are opposite directions of communication too.",
-            "textToSpeak": "Whatcha reckon we oughta tell 'em about the results?",
+            "instruction": "Natural speech blends words together. Catch the real message.",
+            "hint": "Notice the exact chore that still needs doing.",
+            "explanation": "Household to-do lists are often mentioned quickly in passing conversation, so the specific task is where the real content lies.",
+            "textToSpeak": "We still need to take out the recycling.",
             "options": [
-                "Whatcha reckon we oughta tell 'em about the results?",
-                "Whatcha reckon we oughta tell 'im about the results?"
+                "We still need to take out the recycling.",
+                "We still need to take out the trash."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -321,43 +321,43 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L138_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch next versus this term, and he versus she.",
-            "explanation": "This sentence layers a reported plan, 'she'd probably', with the elided 'jus'' and 'nex'', a lot of natural reduction packed together. The exact timing is what really matters here.",
-            "textToSpeak": "She told me she'd probably jus' retake the exam nex' term.",
+            "instruction": "Listen for the small word that changes the meaning.",
+            "hint": "Catch the exact errand, since it's mentioned quickly in a busy list.",
+            "explanation": "Lists of errands are often rattled off quickly and casually, so each individual task needs deliberate attention to catch.",
+            "textToSpeak": "I still need to drop off the dry cleaning.",
             "options": [
-                "She told me she'd probably jus' retake the exam nex' term.",
-                "He told me she'd probably jus' retake the exam nex' term."
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "fastSpeechDecoder",
-            "emoji": "⚡"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L138_Q2",
-            "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch 'coulda' versus 'shoulda', and he versus she.",
-            "explanation": "'Coulda explained' (a mild observation) and 'shoulda explained' (a real criticism of the teaching) suggest different levels of frustration. He versus she is also worth confirming.",
-            "textToSpeak": "I reckon he coulda explained that a lot more clearly, honestly.",
-            "options": [
-                "I reckon he shoulda explained that a lot more clearly, honestly.",
-                "I reckon he coulda explained that a lot more clearly, honestly."
+                "I still need to pick up the dry cleaning.",
+                "I still need to drop off the dry cleaning."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
+            "id": "LIS_FASTSPEECHDECODER_L138_Q2",
+            "interactionType": "choice",
+            "instruction": "Focus on the key detail hidden in the fast sentence.",
+            "hint": "Listen for whether the pharmacy is open, or already closed.",
+            "explanation": "Store hours are often mentioned casually and quickly, so the actual status, open or closed, needs your close attention.",
+            "textToSpeak": "The pharmacy's already closed for the day.",
+            "options": [
+                "The pharmacy's already closed for the day.",
+                "The pharmacy's still open for the day."
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "fastSpeechDecoder",
+            "emoji": "⚡"
+        },
+        {
             "id": "LIS_FASTSPEECHDECODER_L138_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch 'fair' versus 'good', and project versus work.",
-            "explanation": "'Fair' (about equal treatment) and 'good' (about a general quality) are subtly different standards for the same decision. 'Project' and 'work' are near-synonyms too, so listen for the specific word.",
-            "textToSpeak": "Whatcha reckon's a fair way to split up the group project?",
+            "instruction": "Listen again — which version matches what was said?",
+            "hint": "Notice the exact place mentioned for the last errand.",
+            "explanation": "The final stop on an errand run is often mentioned quickly at the end of a sentence, so listen through to the very last detail.",
+            "textToSpeak": "Last stop is the post office before we head home.",
             "options": [
-                "Whatcha reckon's a fair way to split up the group project?",
-                "Whatcha reckon's a fair way to split up the group work?"
+                "Last stop is the post office before we head home.",
+                "Last stop is the bank before we head home."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -366,58 +366,58 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L139_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch next versus this year, and sequel versus reboot.",
-            "explanation": "'Sequel'd' packs 'sequel would' into a light sound, the same contraction pattern working on a noun instead of a pronoun. He versus she is also worth confirming.",
-            "textToSpeak": "He mentioned the sequel'd probably come out sometime nex' year.",
+            "instruction": "Listen carefully and catch the exact sentence.",
+            "hint": "Catch exactly which way to turn, since directions come quickly.",
+            "explanation": "Spoken directions are often given at a fast, continuous pace, so each turn needs to be caught individually as it's mentioned.",
+            "textToSpeak": "Turn left at the second traffic light.",
             "options": [
-                "He mentioned the sequel'd probably come out sometime this year.",
-                "He mentioned the sequel'd probably come out sometime nex' year."
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "fastSpeechDecoder",
-            "emoji": "⚡"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L139_Q2",
-            "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch 'coulda' versus 'shoulda', and this versus that.",
-            "explanation": "'Coulda been more satisfying' (a mild wish) and 'shoulda been more satisfying' (a firmer complaint) carry a slightly different tone. This versus that ending also matters, so listen closely.",
-            "textToSpeak": "I reckon that ending coulda been a lot more satisfying.",
-            "options": [
-                "I reckon that ending coulda been a lot more satisfying.",
-                "I reckon this ending coulda been a lot more satisfying."
+                "Turn left at the second traffic light.",
+                "Turn right at the second traffic light."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
-            "id": "LIS_FASTSPEECHDECODER_L139_Q3",
+            "id": "LIS_FASTSPEECHDECODER_L139_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch tonight versus tomorrow, and 'heavy' versus 'serious'.",
-            "explanation": "'Heavy' and 'serious' both describe intense content but aren't identical words, so listen for the specific one used. This sentence also gives you a genuine choice to track: light, or something more demanding.",
-            "textToSpeak": "Whatcha reckon we oughta watch tonight, something light or something heavy?",
+            "instruction": "They said it fast — what did you actually hear?",
+            "hint": "Listen for whether the destination is on the left, or the right.",
+            "explanation": "'On your left' and 'on your right' reduce their key word quickly, so that final direction word is really what decides the meaning.",
+            "textToSpeak": "The entrance is on your right.",
             "options": [
-                "Whatcha reckon we oughta watch tomorrow, something light or something heavy?",
-                "Whatcha reckon we oughta watch tonight, something light or something heavy?"
+                "The entrance is on your left.",
+                "The entrance is on your right."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
+            "id": "LIS_FASTSPEECHDECODER_L139_Q3",
+            "interactionType": "choice",
+            "instruction": "Natural speech blends words together. Catch the real message.",
+            "hint": "Notice the exact landmark mentioned for orientation.",
+            "explanation": "Landmarks are often mentioned quickly as a shortcut in directions, so the specific one named needs your close attention.",
+            "textToSpeak": "You'll see a bakery on the corner.",
+            "options": [
+                "You'll see a bakery on the corner.",
+                "You'll see a pharmacy on the corner."
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "fastSpeechDecoder",
+            "emoji": "⚡"
+        },
+        {
             "id": "LIS_FASTSPEECHDECODER_L140_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch 'off' versus 'tired', and he versus she.",
-            "explanation": "This review question stacks a reported plan with 'jus'' and a vague feeling at the end, so hold the whole sentence together as you listen. 'Off' (something's not quite right) and 'tired' (simply sleepy) are subtly different complaints.",
-            "textToSpeak": "She said she'd probably jus' head home early tonight, feeling a bit off.",
+            "instruction": "Listen for the small word that changes the meaning.",
+            "hint": "By now, expect everyday details to arrive fast and in combination.",
+            "explanation": "This level combines a plan, a place, and a time all in one natural sentence, the way real weekend planning conversations actually sound.",
+            "textToSpeak": "Let's grab lunch downtown around one, if that works.",
             "options": [
-                "She said she'd probably jus' head home early tonight, feeling a bit off.",
-                "She said she'd probably jus' head home early tonight, feeling a bit tired."
+                "Let's grab lunch downtown around one, if that works.",
+                "Let's grab lunch downtown around three, if that works."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -426,28 +426,28 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L140_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch 'coulda' versus 'shoulda', and we versus they.",
-            "explanation": "'Coulda handled it better' (a neutral reflection) and 'shoulda handled it better' (a real regret) frame the same situation quite differently. We versus they also changes who's actually being reflected on.",
-            "textToSpeak": "I reckon we coulda handled that whole situation a lot better.",
+            "instruction": "Focus on the key detail hidden in the fast sentence.",
+            "hint": "Catch the full plan despite several fast, everyday details.",
+            "explanation": "By Level 140, everyday practical conversations, shopping, transport, errands, should feel much more decodable than they did at Level 51.",
+            "textToSpeak": "We'll swing by the shop, then head straight to the station.",
             "options": [
-                "I reckon we shoulda handled that whole situation a lot better.",
-                "I reckon we coulda handled that whole situation a lot better."
+                "We'll swing by the shop, then head straight to the station.",
+                "We'll head straight to the station, then swing by the shop."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L140_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Pin down 'sooner' against 'later', and don't mix up 'woulda' with 'coulda'.",
-            "explanation": "This closing question of the tier is the longest, most layered sentence yet, combining a hypothetical with four stacked reductions. If you caught all the details here, you're genuinely ready for the Advanced levels ahead.",
-            "textToSpeak": "Whatcha reckon woulda happened if we'd jus' spoken up sooner about it?",
+            "instruction": "Listen again — which version matches what was said?",
+            "hint": "Notice how much practical detail survives even at a natural, fast pace.",
+            "explanation": "Everyday situations like these are exactly where fast, reduced speech shows up most, so this practice transfers directly into daily life.",
+            "textToSpeak": "If the traffic's bad, we'll just take the back roads.",
             "options": [
-                "Whatcha reckon woulda happened if we'd jus' spoken up sooner about it?",
-                "Whatcha reckon coulda happened if we'd jus' spoken up sooner about it?"
+                "If the traffic's bad, we'll just take the back roads.",
+                "If the traffic's light, we'll just take the back roads."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",

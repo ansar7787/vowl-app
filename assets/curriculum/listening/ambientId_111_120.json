@@ -5,632 +5,662 @@
     "quests": [
         {
             "id": "LIS_AMBIENTID_L111_Q1",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Where would you most likely hear this?",
             "interactionType": "choice",
-            "hint": "Listen for arranged flags and assigned nameplates.",
-            "explanation": "Arranged flags and nameplates marking assigned seats are familiar formal touches of a large international meeting.",
-            "textToSpeak": "Flags are arranged neatly along the wall as delegates find their assigned seats, each marked with a small nameplate.",
+            "hint": "Listen for what gets reviewed before anyone says the room is cleared.",
+            "explanation": "A returned key card, a reviewed bill, and a final confirmation, in that order, describe the hotel check-out process rather than checking in.",
+            "textToSpeak": "A key card is set down on the counter first, a printed bill is reviewed line by line for a moment, and only once it's confirmed correct does a receptionist finally say the room has been cleared.",
             "options": [
-                "Embassy Reception",
-                "International Conference Room",
-                "Corporate Legal Archive",
-                "Courtroom During Trial"
+                "Hotel Room",
+                "Hotel Check-Out Process",
+                "Budget Motel Room",
+                "Hotel Lobby"
             ],
             "correctAnswerIndex": 1,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Hotel check-out counter",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "reviewed bill",
+                "confirmed",
+                "cleared"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L111_Q2",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Listen to the scene. What is the setting?",
             "interactionType": "choice",
-            "hint": "Listen for crackling overlapping instructions and tracked aircraft.",
-            "explanation": "Crackling overlapping instructions and multiple tracked aircraft reflect the constant multitasking of this high-focus role.",
-            "textToSpeak": "Headsets crackle with overlapping instructions as a controller glances between two screens, tracking several aircraft at once.",
+            "hint": "Listen for what's being checked around the car before any receipt is printed.",
+            "explanation": "A pulled-in lane, a damage check with a scanner, and a receipt afterward, in that order, describe returning a rental car rather than picking one up.",
+            "textToSpeak": "A car pulls into a numbered return lane first, an attendant walks around it with a handheld scanner checking for damage, and only after that final walk-around does a printed receipt get handed through the window.",
             "options": [
-                "Submarine Control Room",
-                "Train Dispatch Control Room",
-                "Freight Rail Yard",
-                "Air Traffic Control Tower"
+                "Car Rental Counter",
+                "Parking Garage",
+                "Rental Car Return",
+                "Car Wash"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Rental car return lane",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "return lane",
+                "damage check",
+                "handheld scanner"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L111_Q3",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Which place fits these sounds?",
             "interactionType": "choice",
-            "hint": "Listen for a read-aloud depth and a hissing valve.",
-            "explanation": "A steadily read depth gauge and a hissing valve are classic sounds of carefully controlling a vessel underwater.",
-            "textToSpeak": "A depth gauge is read aloud steadily as a valve hisses somewhere, adjusting the vessel's careful, silent descent.",
+            "hint": "Listen for what's repeating on a loop before the shuttle even starts moving.",
+            "explanation": "An idling shuttle with a looping announcement, loaded luggage, and departure only once seated, in that order, describe an airport rental car shuttle.",
+            "textToSpeak": "A shuttle idles at a curb first while a recorded voice repeats a company name on a loop, luggage thuds into a rear compartment a moment later, and only once everyone is seated does the driver finally pull away toward the lot.",
             "options": [
-                "Ship's Navigation Bridge",
-                "Submarine Control Room",
-                "Customs Cargo Inspection Bay",
-                "Freight Rail Yard"
+                "Airport Lounge",
+                "Car Rental Counter",
+                "Tour Coach Bus",
+                "Airport Rental Car Shuttle"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Airport rental car shuttle bus",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "loop announcement",
+                "rear compartment",
+                "curb"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L112_Q1",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "What environment are you hearing?",
             "interactionType": "choice",
-            "hint": "Listen for a steady humming printer and a checked layer.",
-            "explanation": "A 3D printer building an object layer by layer is a distinctive, unmistakable sound of a modern prototyping lab.",
-            "textToSpeak": "A printer hums steadily, building a part layer by layer, as its progress is checked every few minutes.",
+            "hint": "Listen for what clicks into place right before the needle is used.",
+            "explanation": "A tied-off arm, a checked vein, and a clicked-in vial just before the needle, in that order, describe a routine blood draw.",
+            "textToSpeak": "An arm is tied off with a rubber band first, a vein is tapped gently to check it, and only once a small vial clicks into place does the needle actually go in.",
             "options": [
-                "Wind Farm Control Room",
-                "Robotics Workshop",
-                "Satellite Uplink Facility",
-                "Engineering Prototype Lab"
+                "Doctor's Office",
+                "Blood Donation Center",
+                "Blood Test Lab Draw Sequence",
+                "Hospital Pharmacy Ward"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Medical blood test lab draw",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "tied off",
+                "vial",
+                "vein"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L112_Q2",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Based on these sounds, where are you?",
             "interactionType": "choice",
-            "hint": "Listen for a paused answer and flipped-back pages.",
-            "explanation": "A paused witness and flipped-back pages checking an earlier statement are classic sounds of careful legal questioning.",
-            "textToSpeak": "A witness pauses before answering as a lawyer flips back several pages, searching for an earlier, slightly different statement.",
+            "hint": "Listen for what's heard right before the pinch itself.",
+            "explanation": "A filled-out form, a rolled-up sleeve, and an alcohol swab just before the pinch, in that order, describe getting a flu shot at a pharmacy.",
+            "textToSpeak": "A brief form is filled out at a counter first, a sleeve gets rolled up a few minutes later behind a small curtain, and only after an alcohol swab is heard does a quick pinch finally happen.",
             "options": [
-                "Patent Filing Office",
-                "Embassy Reception",
-                "Corporate Legal Archive",
-                "Law Firm Deposition Room"
+                "Flu Shot Pharmacy Sequence",
+                "Urgent Care Clinic",
+                "Doctor's Office",
+                "Pharmacy Counter"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Pharmacy flu shot appointment",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "alcohol swab",
+                "sleeve",
+                "form"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L112_Q3",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Listen carefully. Where are you?",
             "interactionType": "choice",
-            "hint": "Listen for a swinging arm and a quick correction.",
-            "explanation": "A robotic arm stopping unexpectedly and a quick correction at the keyboard are familiar sounds of hands-on robotics work.",
-            "textToSpeak": "A metal arm swings, then stops abruptly, as someone quickly reaches for a keyboard to correct its path.",
+            "hint": "Listen for the test that happens before the badge is actually confirmed working.",
+            "explanation": "A taken photo, a printed badge, and a successful test tap, in that order, describe setting up new employee building access.",
+            "textToSpeak": "A photo is taken against a plain wall first, a badge prints out a moment later with a soft whir, and only after it's tapped against a reader for a test does a green light finally confirm it works.",
             "options": [
-                "Municipal Water Treatment Plant",
-                "Data Center Server Room",
-                "Robotics Workshop",
-                "Wind Farm Control Room"
+                "ID Card Office",
+                "First Day at a New Job",
+                "New Employee Badge Access Setup",
+                "Passport Photo Booth"
             ],
             "correctAnswerIndex": 2,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "New employee badge access setup",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "badge print",
+                "test tap",
+                "green light"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L113_Q1",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "What place does this soundscape suggest?",
             "interactionType": "choice",
-            "hint": "Listen for a soft quartet and a checked badge.",
-            "explanation": "A soft string quartet and quietly checked badges at the entrance reflect the formal atmosphere of this kind of event.",
-            "textToSpeak": "A string quartet plays softly in a corner as name badges are checked quietly at a guarded entrance nearby.",
+            "hint": "Listen for what happens before the customer even physically arrives.",
+            "explanation": "A pre-arrival notification, a self-served cup, and a silent pickup, in that order, describe a mobile order rather than an in-person order.",
+            "textToSpeak": "A phone buzzes with a notification that an order is ready before anyone even walks in, a name is found already written on a cup at a separate counter, and only after checking the app once more does it finally get picked up without a word exchanged.",
             "options": [
-                "Embassy Reception",
-                "International Conference Room",
-                "City Council Meeting Hall",
-                "Jury Deliberation Room"
+                "Caf\u00e9",
+                "Coffee Shop Mobile Order Pickup",
+                "Take-Out Counter",
+                "Coffee Counter Order Pickup"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Coffee shop mobile order pickup shelf",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "mobile order",
+                "pre-arrival",
+                "self-served"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L113_Q2",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Which setting best matches what you hear?",
             "interactionType": "choice",
-            "hint": "Listen for a slammed phone and a reaction to a sudden drop.",
-            "explanation": "A slammed phone and a sharp reaction to a sudden number drop capture the tension of high-stakes financial trading.",
-            "textToSpeak": "A phone is slammed down mid-sentence as someone across the room reacts sharply to a sudden, steep drop on the display.",
+            "hint": "Listen for what's tapped before the ticket ever prints.",
+            "explanation": "A touchscreen order, several menu taps, and a card tap before the ticket prints, in that order, describe ordering at a self-service kiosk rather than with a cashier.",
+            "textToSpeak": "A touchscreen lights up with a welcome message first, a combo is selected through several taps, and only after a card is tapped against a small reader does a ticket number finally print out.",
             "options": [
-                "Investment Bank Trading Floor",
-                "Stock Exchange Floor",
-                "Submarine Control Room",
-                "Power Plant Control Room"
+                "Fast Food Counter",
+                "Self-Checkout Kiosk",
+                "Drive-Through Restaurant",
+                "Fast Food Kiosk Ordering"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Fast food self-service ordering kiosk",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "touchscreen order",
+                "ticket number",
+                "tap to pay"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L113_Q3",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Where would you most likely hear this?",
             "interactionType": "choice",
-            "hint": "Listen for a brief buzz and a self-corrected system.",
-            "explanation": "A brief alarm followed by confirmation that a system corrected itself reflects the careful monitoring done in this control room.",
-            "textToSpeak": "An alarm buzzes briefly as a warning light flashes, and a calm voice confirms the system has corrected itself.",
+            "hint": "Listen for what has to happen to the cup before any price is calculated.",
+            "explanation": "A self-served swirl, added toppings, and a final weigh-in for the price, in that order, describe a self-service frozen yogurt shop's pay-by-weight system.",
+            "textToSpeak": "A machine handle is pulled down and swirls into a cup first, several toppings get sprinkled on at a separate counter, and only once the full cup is set on a scale does a price finally get calculated.",
             "options": [
-                "Satellite Uplink Facility",
-                "Municipal Water Treatment Plant",
-                "Data Center Server Room",
-                "Power Plant Control Room"
+                "Grocery Store Deli Counter",
+                "Self-Service Frozen Yogurt Weigh-and-Pay",
+                "Classic Ice Cream Parlor",
+                "Grocery Store Produce Section"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Self-service frozen yogurt shop",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "weigh-and-pay",
+                "swirl",
+                "toppings"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L114_Q1",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Listen to the scene. What is the setting?",
             "interactionType": "choice",
-            "hint": "Listen for a solemn oath and an approaching lawyer.",
-            "explanation": "A solemn oath followed by a lawyer approaching with evidence is a classic early moment in a formal trial.",
-            "textToSpeak": "A witness is sworn in with a solemn oath as a lawyer approaches slowly, flipping open a folder of evidence.",
+            "hint": "Listen for what has to happen to the car's height before any draining starts.",
+            "explanation": "A car on a lift, a rising hydraulic hum, and draining only once fully raised, in that order, describe the specific sequence of an oil change.",
+            "textToSpeak": "A car is driven onto a lift first, the lift rises with a steady hydraulic hum, and only once it's fully raised does a technician finally begin draining the old oil from below.",
             "options": [
-                "City Council Meeting Hall",
-                "Law Firm Deposition Room",
-                "International Conference Room",
-                "Courtroom During Trial"
+                "Car Dealership Service Waiting Area",
+                "Car Wash",
+                "Car Oil Change Service Sequence",
+                "Auto Repair Garage"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Auto shop oil change bay",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "hydraulic lift",
+                "drain",
+                "raised"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L114_Q2",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Which place fits these sounds?",
             "interactionType": "choice",
-            "hint": "Listen for a soft gavel and settling silence.",
-            "explanation": "A soft gavel tap followed by many conversations settling at once is a classic opening of a formal international session.",
-            "textToSpeak": "A gavel taps softly to open the session as a hundred quiet conversations settle into respectful silence at once.",
+            "hint": "Listen for what's checked by hand only after every tire is already back on.",
+            "explanation": "Loosened lug nuts, swapped tires, and a final hand-torque check, in that order, describe a tire rotation service.",
+            "textToSpeak": "Lug nuts are loosened with a rapid pneumatic wrench first, a tire is pulled off and swapped to the opposite side a moment later, and only once all four are back on does a final torque check finally happen by hand.",
             "options": [
-                "Corporate Legal Archive",
-                "Patent Filing Office",
-                "Embassy Reception",
-                "International Conference Room"
+                "Car Wash",
+                "Auto Repair Garage",
+                "Tire Rotation Service Bay",
+                "Car Dealership Showroom"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Tire rotation service bay",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "lug nuts",
+                "torque check",
+                "swap"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L114_Q3",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "What environment are you hearing?",
             "interactionType": "choice",
-            "hint": "Listen for poured water and a murmured side conversation.",
-            "explanation": "A quiet break with murmured side conversation is a familiar pause during a long formal questioning session.",
-            "textToSpeak": "A glass of water is poured quietly during a break as two lawyers murmur just out of earshot near the door.",
+            "hint": "Listen for what has to print out before anyone says pass or fail.",
+            "explanation": "A connected hose, a reading engine, and a result only after the printout, in that order, describe a vehicle emissions inspection.",
+            "textToSpeak": "A hose is connected to the tailpipe first, an engine idles steadily while a machine reads out numbers, and only once a printout finishes does an inspector finally say whether it passed.",
             "options": [
-                "Law Firm Deposition Room",
-                "Patent Filing Office",
-                "City Council Meeting Hall",
-                "Courtroom During Trial"
+                "Vehicle Licensing Office",
+                "Auto Repair Garage",
+                "Car Dealership Service Waiting Area",
+                "Vehicle Emissions Inspection Station"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Vehicle emissions inspection station",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "tailpipe hose",
+                "printout",
+                "pass or fail"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L115_Q1",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Based on these sounds, where are you?",
             "interactionType": "choice",
-            "hint": "Listen for a formal toast and raised glasses beneath flags.",
-            "explanation": "A formal toast beneath a row of flags is a familiar ceremonial sound of a diplomatic gathering.",
-            "textToSpeak": "A toast is proposed in careful, formal language as glasses are raised together beneath a row of national flags.",
+            "hint": "Listen for the brief pause at the top, and what happens right after it.",
+            "explanation": "A slow incline climb, a brief pause at the top, and an immediate splashing plunge, in that order, describe a log flume ride.",
+            "textToSpeak": "A log-shaped boat clicks slowly up a steep incline first, it levels off just briefly at the very top, and only a second later does it plunge down into a splash that soaks the front row.",
             "options": [
-                "Law Firm Deposition Room",
-                "Embassy Reception",
-                "City Council Meeting Hall",
-                "Patent Filing Office"
+                "Amusement Park Log Flume Ride",
+                "Ferris Wheel Ride Boarding",
+                "Roller Coaster Launch Sequence",
+                "Indoor Water Park"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Amusement park log flume ride",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "incline",
+                "plunge",
+                "splash"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L115_Q2",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Listen carefully. Where are you?",
             "interactionType": "choice",
-            "hint": "Listen for a humming printer and a pinned blueprint.",
-            "explanation": "A large blueprint being printed and pinned among earlier drafts is a common sound of an active design studio.",
-            "textToSpeak": "A printer hums, producing a large blueprint, as it is pinned carefully to a wall already covered with earlier drafts.",
+            "hint": "Listen for how long the silence lasts before anything actually happens.",
+            "explanation": "A creaking entrance, uncertain footsteps, and a jump scare after a deliberate pause, in that order, describe walking through a haunted house attraction.",
+            "textToSpeak": "A heavy door creaks open into near total darkness first, footsteps echo uncertainly for a few steps, and only after a long silent pause does a sudden loud noise finally make someone scream.",
             "options": [
-                "Architecture Design Studio",
-                "Merger Negotiation Room",
-                "Engineering Prototype Lab",
-                "Insurance Claims Office"
+                "Haunted House Walkthrough",
+                "Circus Tent Performance",
+                "Home Theater",
+                "Escape Room"
             ],
             "correctAnswerIndex": 0,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Haunted house walkthrough attraction",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "jump scare",
+                "total darkness",
+                "pause"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L115_Q3",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "What place does this soundscape suggest?",
             "interactionType": "choice",
-            "hint": "Listen for bursts of typing and overlapping confirmed numbers.",
-            "explanation": "Bursts of typing and overlapping voices confirming a number twice reflect the careful, fast-paced checking common in financial trading.",
-            "textToSpeak": "Keyboards clatter in bursts as several overlapping voices confirm the same trade number, checking it twice before it locks in.",
+            "hint": "Listen for what freezes only after the shout, not before it.",
+            "explanation": "A finally-opened lock, a triumphant shout, and a frozen timer with time to spare, in that order, describe successfully finishing an escape room.",
+            "textToSpeak": "A final lock clicks open after several failed tries before it, a triumphant shout goes up from the group, and only seconds later does a timer freeze on the wall with time still left to spare.",
             "options": [
-                "Data Center Server Room",
-                "Cybersecurity Operations Center",
-                "Stock Exchange Floor",
-                "Investment Bank Trading Floor"
+                "Video Game Tournament",
+                "Robotics Competition",
+                "Escape Room",
+                "Escape Room Countdown Finale"
             ],
             "correctAnswerIndex": 3,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Escape room successful finish",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "frozen timer",
+                "triumphant",
+                "final lock"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L116_Q1",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Which setting best matches what you hear?",
             "interactionType": "choice",
-            "hint": "Listen for a muttered countdown and a final keystroke.",
-            "explanation": "A muttered countdown and a final keystroke cutting off a connection capture the tension of stopping a live threat.",
-            "textToSpeak": "A countdown is muttered under someone's breath as a suspicious connection is traced and cut off with a final keystroke.",
+            "hint": "Listen for what's saved until the very last step of the visit.",
+            "explanation": "A nervous puppy, extra-gentle reassurance, and vaccinations given only at the end, in that order, describe a puppy's very first vet visit.",
+            "textToSpeak": "A puppy scrambles and whines on a slick metal table first, a vet speaks in an especially soft, reassuring voice while checking its ears, and only at the very end is a first round of vaccinations finally given.",
             "options": [
-                "Robotics Workshop",
-                "Engineering Prototype Lab",
-                "Cybersecurity Operations Center",
-                "Data Center Server Room"
+                "Veterinary Clinic",
+                "New Puppy Vet First Visit",
+                "Veterinary Surgery Room",
+                "Pet Store"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "First veterinary visit for a puppy",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "reassuring voice",
+                "vaccination",
+                "scramble"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L116_Q2",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Where would you most likely hear this?",
             "interactionType": "choice",
-            "hint": "Listen for fluttering paper slips and a loud price argument.",
-            "explanation": "Fluttering paper order slips and a loud disagreement over price capture the energy of a busy trading floor.",
-            "textToSpeak": "Paper order slips flutter to the floor as a cluster of traders argues loudly over a fast-changing price.",
+            "hint": "Listen for what's signed before the leash ever gets clipped on.",
+            "explanation": "Rattling kennels, a chosen dog, and signed paperwork before the leash is clipped on, in that order, describe adopting a pet from a shelter.",
+            "textToSpeak": "A row of kennels rattles with excited barking as visitors walk by first, a specific dog is pointed out and asked about, and only after paperwork is signed at a desk does a leash finally get clipped on to take it home.",
             "options": [
-                "International Conference Room",
-                "Stock Exchange Floor",
-                "Investment Bank Trading Floor",
-                "Satellite Uplink Facility"
+                "Adoption Day at Animal Shelter",
+                "Veterinary Clinic",
+                "Family Farm",
+                "Pet Store"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Animal shelter adoption day",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "kennel",
+                "paperwork",
+                "leash"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L116_Q3",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Listen to the scene. What is the setting?",
             "interactionType": "choice",
-            "hint": "Listen for a deliberately set pen and a long silence.",
-            "explanation": "A deliberately set-down pen followed by a long silence after a final offer is a familiar beat in high-level negotiations.",
-            "textToSpeak": "A pen is set down deliberately as one side proposes a final number, and the room falls into a long, considering silence.",
+            "hint": "Listen for what's added only at the very end, after everything else is finished.",
+            "explanation": "Buzzing clippers, a rinse, and a bow added only once fully dry, in that order, describe the standard sequence of a dog grooming appointment.",
+            "textToSpeak": "Clippers buzz first along a thick, matted coat, warm water splashes next during a thorough rinse, and only once a blow dryer finishes does a bow finally get clipped onto a clean, fluffy coat.",
             "options": [
-                "Merger Negotiation Room",
-                "Insurance Claims Office",
-                "Architecture Design Studio",
-                "Ship's Navigation Bridge"
+                "Pet Store",
+                "Dog Grooming Appointment",
+                "Hair Salon",
+                "Veterinary Clinic"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Dog grooming salon appointment",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "matted coat",
+                "rinse",
+                "blow dryer"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L117_Q1",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Which place fits these sounds?",
             "interactionType": "choice",
-            "hint": "Listen for an impatient tap and a stalled disagreement.",
-            "explanation": "An impatient tap during a stalled disagreement captures the tension of a group struggling to agree.",
-            "textToSpeak": "Someone taps a pen impatiently as a disagreement over one detail keeps the group from reaching an agreement.",
+            "hint": "Listen for what has to be lifted before anyone claps.",
+            "explanation": "An attention-getting tap, a shared cut, and applause only after a slice is lifted, in that order, describe the wedding cake-cutting tradition.",
+            "textToSpeak": "A microphone taps twice to get everyone's attention first, a knife is guided together by two hands over a tall cake, and only after the first small slice is lifted does applause finally break out.",
             "options": [
-                "Law Firm Deposition Room",
-                "City Council Meeting Hall",
-                "Jury Deliberation Room",
-                "International Conference Room"
+                "Child's Birthday Party",
+                "Wedding Cake Cutting Moment",
+                "Wedding Reception",
+                "Awards Banquet"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Wedding reception cake-cutting moment",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "shared cut",
+                "slice",
+                "attention tap"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L117_Q2",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "What environment are you hearing?",
             "interactionType": "choice",
-            "hint": "Listen for a soft alarm and a swift radio call.",
-            "explanation": "A soft alarm flagging two trains near the same junction is a tense, familiar sound of rail traffic coordination.",
-            "textToSpeak": "A soft alarm chimes as two approaching services are flagged nearing the same junction, prompting a swift radio call.",
+            "hint": "Listen for what the whole room does only once the gift is actually visible.",
+            "explanation": "An untied ribbon, crinkling tissue paper, and a group reaction only once the gift is visible, in that order, describe opening gifts at a baby shower.",
+            "textToSpeak": "A ribbon is untied slowly to a chorus of gentle teasing first, tissue paper crinkles as it's pulled aside, and only once the gift is finally lifted into view does a room full of guests coo all at once.",
             "options": [
-                "Train Dispatch Control Room",
-                "Air Traffic Control Tower",
-                "Customs Cargo Inspection Bay",
-                "Ship's Navigation Bridge"
+                "Birthday Party",
+                "Retirement Party Send-off",
+                "Baby Shower Gift Opening",
+                "Wedding Reception"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Baby shower gift-opening moment",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "ribbon",
+                "tissue paper",
+                "coo"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L117_Q3",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Based on these sounds, where are you?",
             "interactionType": "choice",
-            "hint": "Listen for a called vote and murmured hesitation.",
-            "explanation": "A called vote followed by murmured hesitation before hands are raised is a familiar moment in this kind of meeting.",
-            "textToSpeak": "A chairperson calls for a vote as members murmur uncertainly before raising their hands one by one.",
+            "hint": "Listen for what's presented only after the slideshow and the speech are both finished.",
+            "explanation": "A gathered group, a photo slideshow during a speech, and a gift presented only at the end, in that order, describe a retirement send-off party.",
+            "textToSpeak": "Coworkers gather with drinks in hand first, a slideshow of old photos plays quietly on a screen behind a short speech, and only at the very end is a framed gift finally presented to warm, lingering applause.",
             "options": [
-                "Law Firm Deposition Room",
-                "City Council Meeting Hall",
-                "Corporate Legal Archive",
-                "Patent Filing Office"
+                "Awards Banquet",
+                "Wedding Reception",
+                "Job Promotion Announcement Meeting",
+                "Retirement Party Send-off"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Workplace retirement send-off party",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "slideshow",
+                "framed gift",
+                "lingering applause"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L118_Q1",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Listen carefully. Where are you?",
             "interactionType": "choice",
-            "hint": "Listen for spinning wheels and laughter at a stuck machine.",
-            "explanation": "Wheels spinning uselessly and laughter over a stuck machine capture the trial-and-error spirit of a robotics workshop.",
-            "textToSpeak": "Wheels spin uselessly against a table's edge as laughter breaks out over a small machine stuck in a corner.",
+            "hint": "Listen for what has to reach the end before anyone announces anything.",
+            "explanation": "A typed command, a progress bar, and an announcement only once it finishes, in that order, describe deploying a new software release.",
+            "textToSpeak": "A command is typed and entered first, a progress bar ticks upward slowly on a shared screen, and only once it reaches the very end does someone finally announce that the new version is live.",
             "options": [
-                "Engineering Prototype Lab",
-                "Robotics Workshop",
-                "Power Plant Control Room",
-                "Municipal Water Treatment Plant"
+                "Live Software Deployment",
+                "IT Server Room",
+                "Open-Plan Office",
+                "Corporate Meeting Room"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Software deployment release process",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "deploy",
+                "progress bar",
+                "live"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L118_Q2",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "What place does this soundscape suggest?",
             "interactionType": "choice",
-            "hint": "Listen for a low foghorn and a visibility report.",
-            "explanation": "A low foghorn and a report of reduced visibility are classic cautious sounds of navigating through fog.",
-            "textToSpeak": "A foghorn sounds low and long from just outside as a crew member reports reduced visibility ahead.",
+            "hint": "Listen for what's checked against a gauge before any stamp is applied.",
+            "explanation": "A conveyed part, a gauge check, and a passing stamp before packaging, in that order, describe a quality control checkpoint on a factory line.",
+            "textToSpeak": "A finished part slides down a conveyor first, an inspector picks it up and checks it against a gauge, and only once it passes does a stamp finally mark it before it moves on to packaging.",
             "options": [
-                "Train Dispatch Control Room",
-                "Air Traffic Control Tower",
-                "Ship's Navigation Bridge",
-                "Customs Cargo Inspection Bay"
+                "Factory Quality Control Station",
+                "Home Improvement Warehouse",
+                "Warehouse Package Sorting Sequence",
+                "Car Assembly Line"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Factory quality control checkpoint",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "gauge",
+                "quality stamp",
+                "conveyor"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L118_Q3",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Which setting best matches what you hear?",
             "interactionType": "choice",
-            "hint": "Listen for a sharp objection and a judge's pause.",
-            "explanation": "A sharp objection followed by a judge's considered pause is one of the most familiar exchanges of a trial.",
-            "textToSpeak": "An objection is raised sharply, interrupting a question, as the judge pauses to consider it before responding firmly.",
+            "hint": "Listen for what decides which chute the package goes down.",
+            "explanation": "A scanned barcode, a redirecting arm, and a counter updating after it lands, in that order, describe an automated warehouse sorting system.",
+            "textToSpeak": "A package's barcode is scanned first as it passes under a reader, a mechanical arm redirects it down one of several chutes a moment later, and only once it lands does a counter tick upward on a nearby screen.",
             "options": [
-                "City Council Meeting Hall",
-                "Embassy Reception",
-                "Jury Deliberation Room",
-                "Courtroom During Trial"
+                "Shipping Container Port",
+                "Warehouse Package Sorting Sequence",
+                "Neighborhood Post Office",
+                "Recycling Center"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Automated warehouse sorting facility",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "barcode scan",
+                "chute",
+                "redirect"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L119_Q1",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Where would you most likely hear this?",
             "interactionType": "choice",
-            "hint": "Listen for a brief silence and a watched landing.",
-            "explanation": "A brief silence while watching a landing through the window is a quiet, tense moment familiar to this workplace.",
-            "textToSpeak": "A brief silence falls as all eyes turn to the window, watching an aircraft touch down exactly on schedule.",
+            "hint": "Listen for what's checked on the list before anything gets handed over.",
+            "explanation": "A shown confirmation, a checked name, and a handed-over race bib, in that order, describe picking up a race packet the day before a marathon.",
+            "textToSpeak": "A confirmation email is shown on a phone screen first, a name is found on a printed list a moment later, and only after that does a race bib with a timing chip finally get handed over in a plastic bag.",
             "options": [
-                "Submarine Control Room",
-                "Air Traffic Control Tower",
-                "Train Dispatch Control Room",
-                "Ship's Navigation Bridge"
+                "Marathon Packet Pickup",
+                "Race Finish Area",
+                "Job Fair",
+                "Charity Race Start Line"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Marathon race packet pickup",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "race bib",
+                "timing chip",
+                "confirmation"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L119_Q2",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Listen to the scene. What is the setting?",
             "interactionType": "choice",
-            "hint": "Listen for a brief spark and a tripped breaker.",
-            "explanation": "A brief spark and a tripped breaker followed by frustration are familiar setbacks of testing new hardware.",
-            "textToSpeak": "A component sparks briefly before a breaker trips, and someone mutters that it is back to the drawing board.",
+            "hint": "Listen for what has to be called by number before any group actually moves.",
+            "explanation": "A checked bib number, a matching roped section, and movement only once that number is called, in that order, describe organized corral starts at a large race.",
+            "textToSpeak": "A bib number is checked against a posted sign first, runners funnel slowly into a roped-off section that matches it, and only once a starting wave is called by number does that specific corral finally move forward.",
             "options": [
-                "Power Plant Control Room",
-                "Robotics Workshop",
-                "Engineering Prototype Lab",
-                "Cybersecurity Operations Center"
+                "Marathon Water Station",
+                "Charity Race Start Line",
+                "Marathon Packet Pickup",
+                "Race Day Corral Assignment"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Marathon starting corral",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "corral",
+                "roped-off section",
+                "starting wave"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L119_Q3",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Which place fits these sounds?",
             "interactionType": "choice",
-            "hint": "Listen for pattering rain on a sensor and updated numbers.",
-            "explanation": "Rain hitting a rooftop sensor and numbers updating in real time are classic sounds of tracking live weather conditions.",
-            "textToSpeak": "Rain patters steadily on a rooftop sensor as a monitor updates with a fresh set of numbers every few seconds.",
+            "hint": "Listen for how the order of names builds toward something, rather than being random.",
+            "explanation": "Names read from slowest to fastest, rising attention, and a winner announced last, in that order, describe a structured post-race awards ceremony.",
+            "textToSpeak": "Names are read out slowest for the last-place finishers first as a warm-up, the crowd's attention sharpens as top times get closer, and only at the very end does the overall winner finally step up to a small podium.",
             "options": [
-                "Law Firm Deposition Room",
-                "International Conference Room",
-                "Stock Exchange Floor",
-                "Weather Observatory"
+                "Post-Race Awards Presentation",
+                "High School Graduation Ceremony",
+                "Awards Banquet",
+                "Race Finish Area"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Post-race awards ceremony",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "podium",
+                "overall winner",
+                "build-up"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L120_Q1",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "What environment are you hearing?",
             "interactionType": "choice",
-            "hint": "Listen for a sealing hatch and a systems check.",
-            "explanation": "A sealing hatch and a calm systems check are familiar, careful sounds of operating in a sealed underwater vessel.",
-            "textToSpeak": "A hatch seals with a heavy metallic clunk as a quiet voice confirms that all systems are holding steady.",
+            "hint": "Listen for the delay between what's seen and what's finally heard.",
+            "explanation": "A counted-down launch, a flash before any sound, and a delayed rumble, in that order, describe watching a rocket launch from a distance.",
+            "textToSpeak": "A loudspeaker counts down steadily from ten first, a bright flash appears at the base of the rocket a few seconds before any sound arrives, and only after that delay does a deep rumble finally roll across the crowd.",
             "options": [
-                "Submarine Control Room",
-                "Customs Cargo Inspection Bay",
-                "Freight Rail Yard",
-                "Air Traffic Control Tower"
+                "Fireworks Show Grand Finale",
+                "Airport Departure Gate",
+                "New Year's Eve Countdown Party",
+                "Rocket Launch Viewing Countdown"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Rocket launch public viewing area",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "countdown",
+                "delayed rumble",
+                "flash"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L120_Q2",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Based on these sounds, where are you?",
             "interactionType": "choice",
-            "hint": "Listen for a sharp alert and a traced cable.",
-            "explanation": "A sharp alert cutting through steady background hum is a familiar sound of troubleshooting inside a large server room.",
-            "textToSpeak": "A single alert beeps sharply among the steady hum, and a technician quickly traces a cable to a flashing unit.",
+            "hint": "Listen for the quiet moment of uncertainty right before everything happens at once.",
+            "explanation": "A misleading pause, a murmuring crowd, and an overwhelming final burst, in that order, describe the grand finale of a fireworks show.",
+            "textToSpeak": "A brief pause in the show first makes the crowd wonder if it's already over, a low murmur of anticipation follows, and only then does a rapid burst of overlapping explosions finally light up the entire sky at once.",
             "options": [
-                "Satellite Uplink Facility",
-                "Cybersecurity Operations Center",
-                "Data Center Server Room",
-                "Municipal Water Treatment Plant"
+                "New Year's Eve Countdown Party",
+                "Outdoor Concert",
+                "Rocket Launch Viewing Countdown",
+                "Fireworks Show Grand Finale"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Fireworks show grand finale",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "grand finale",
+                "anticipation",
+                "overlapping bursts"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L120_Q3",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Listen carefully. Where are you?",
             "interactionType": "choice",
-            "hint": "Listen for a logged shift change and a pointed-out gauge.",
-            "explanation": "A quiet shift change with a briefing on a gauge to watch is a familiar routine of round-the-clock monitoring.",
-            "textToSpeak": "A shift change is logged quietly as one operator briefs another, pointing out a gauge that needs watching closely.",
+            "hint": "Listen for what the room does together, and what happens the instant the count hits zero.",
+            "explanation": "A broadcast countdown, a joined group shout, and confetti released exactly at zero, in that order, describe a New Year's Eve countdown celebration.",
+            "textToSpeak": "A television broadcast counts down loudly from ten first, the whole room joins in shouting the last few numbers together, and only at the stroke of the final number does confetti finally burst overhead to cheering.",
             "options": [
-                "Data Center Server Room",
-                "Power Plant Control Room",
-                "Robotics Workshop",
-                "Satellite Uplink Facility"
+                "Fireworks Show Grand Finale",
+                "Concert Encore",
+                "New Year's Eve Countdown Party",
+                "Wedding Reception"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "New Year's Eve countdown celebration",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "countdown",
+                "confetti",
+                "stroke of midnight"
             ]
         }
     ]

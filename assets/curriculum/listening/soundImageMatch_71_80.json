@@ -6,691 +6,691 @@
         {
             "id": "LIS_SOUNDIMAGEMATCH_L71_Q1",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "Listen for the exact object mentioned, even inside a longer sentence.",
-            "explanation": "Chip is the answer — a small electronic part that stores or processes information inside a device. That part goes: stores her payment details.",
-            "textToSpeak": "A tiny chip inside the card stores her payment details.",
+            "instruction": "Listen for the details, then tap the matching picture.",
+            "hint": "Focus on who gets which dish.",
+            "explanation": "The soup goes to the woman and the salad goes to her husband. 'Her husband' is the man in the pair.",
+            "textToSpeak": "The waiter brought the soup to the woman and the salad to her husband.",
             "options": [
-                "chip",
-                "calendar",
-                "device",
-                "badge"
+                "woman soup, man salad",
+                "woman salad, man soup",
+                "both salad",
+                "both soup"
             ],
             "correctAnswerIndex": 0,
             "subtype": "soundImageMatch",
-            "emoji": "💾",
+            "emoji": "👩🍲👨🥗",
             "optionEmojis": [
-                "🍟",
-                "📅",
-                "📱",
-                "📛"
+                "👩🍲👨🥗",
+                "👩🥗👨🍲",
+                "👩🥗👨🥗",
+                "👩🍲👨🍲"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L71_Q2",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "Notice which option the speaker actually names, not just implies.",
-            "explanation": "Subway is the answer — an underground train system in a city. Specifically: was delayed because of a signal problem.",
-            "textToSpeak": "The subway was delayed because of a signal problem.",
+            "instruction": "Picture what the speaker describes, then tap the match.",
+            "hint": "The words after 'who' describe which person is meant.",
+            "explanation": "'Who is holding the balloon' tells you which child is meant. A niece is a girl, so the boy is wrong.",
+            "textToSpeak": "The girl who is holding the balloon is my niece.",
             "options": [
-                "subway",
-                "software",
-                "printer",
-                "ticket"
+                "boy with balloon",
+                "girl with football",
+                "girl with gift",
+                "girl with balloon"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "subtype": "soundImageMatch",
-            "emoji": "🚇",
+            "emoji": "👧🎈",
             "optionEmojis": [
-                "🚇",
-                "💻",
-                "🖨️",
-                "🎟️"
+                "👦🎈",
+                "👧⚽",
+                "👧🎁",
+                "👧🎈"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L71_Q3",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "Don't choose based on the topic alone — listen for the exact word.",
-            "explanation": "That's system. It refers to a set of parts that work together as a whole. The line was: went off in the middle of the night.",
-            "textToSpeak": "Their alarm system went off in the middle of the night.",
+            "instruction": "Tap the picture that shows everything you hear.",
+            "hint": "Notice what the dog did in the end.",
+            "explanation": "'That was barking' just describes the dog. The main action is that it ran into the garden.",
+            "textToSpeak": "The dog that was barking at the mailman ran into the garden.",
             "options": [
-                "system",
-                "code",
-                "subway",
-                "badge"
+                "dog running to garden",
+                "dog sleeping in garden",
+                "cat running to garden",
+                "dog running to school"
             ],
             "correctAnswerIndex": 0,
             "subtype": "soundImageMatch",
-            "emoji": "🖥️",
+            "emoji": "🐶🏃🌳",
             "optionEmojis": [
-                "⚙️",
-                "👩‍💻",
-                "🚇",
-                "📛"
+                "🐶🏃🌳",
+                "🐶😴🌳",
+                "🐱🏃🌳",
+                "🐶🏃🏫"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L72_Q1",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "Focus on the noun the sentence is built around.",
-            "explanation": "Code is the word actually spoken — a set of written instructions that tells a computer what to do. You heard: fixing a bug in the code.",
-            "textToSpeak": "He spent the weekend fixing a bug in the code.",
+            "instruction": "Listen to the whole sentence and tap the picture that matches it.",
+            "hint": "'The one' is answered by where the car is parked.",
+            "explanation": "'The one parked next to the bus' identifies the car by its position. The answer is the car beside the bus.",
+            "textToSpeak": "Which one is your car? The one parked next to the bus.",
             "options": [
-                "folder",
-                "badge",
-                "engine",
-                "code"
+                "car next to bus",
+                "car next to taxi",
+                "car on bus",
+                "bike next to bus"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "soundImageMatch",
-            "emoji": "💻",
+            "emoji": "🚗↔️🚌",
             "optionEmojis": [
-                "📁",
-                "📛",
-                "⚙️",
-                "👩‍💻"
+                "🚗↔️🚌",
+                "🚗↔️🚕",
+                "🚗⬆️🚌",
+                "🚲↔️🚌"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L72_Q2",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "The key word usually appears after the subject and verb.",
-            "explanation": "The right choice is signal, meaning a sound, light, or radio wave that carries information. Here's the detail: sent a signal warning the ships nearby.",
-            "textToSpeak": "The captain sent a signal warning the ships nearby.",
+            "instruction": "Listen for the details, then tap the matching picture.",
+            "hint": "'It' refers to something the aunt sent.",
+            "explanation": "'It' means the card, and the photo on it shows her cat. A parcel is a different thing to send.",
+            "textToSpeak": "My aunt sent me a card, and it had a photo of her cat.",
             "options": [
-                "code",
-                "office",
-                "hotel",
-                "signal"
+                "card with dog",
+                "parcel with cat",
+                "card with cat",
+                "card with house"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "soundImageMatch",
-            "emoji": "📶",
+            "emoji": "✉️🐱",
             "optionEmojis": [
-                "👩‍💻",
-                "🏢",
-                "🏨",
-                "📶"
+                "✉️🐶",
+                "📦🐱",
+                "✉️🐱",
+                "✉️🏠"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L72_Q3",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "The distractors are related ideas — only one was actually spoken.",
-            "explanation": "Nice work if you chose folder — a cover used to hold and organize loose papers. Listen again: handed the client a folder full of documents.",
-            "textToSpeak": "He handed the client a folder full of documents.",
+            "instruction": "Picture what the speaker describes, then tap the match.",
+            "hint": "Notice the words 'none' and 'all'.",
+            "explanation": "'None' rules out vegetables, and 'all of them wanted ice cream' gives the food they chose.",
+            "textToSpeak": "None of the kids wanted vegetables, but all of them wanted ice cream.",
             "options": [
-                "engine",
-                "folder",
-                "network",
-                "calendar"
+                "kids want cake",
+                "one kid wants ice cream",
+                "kids want carrots",
+                "kids want ice cream"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "subtype": "soundImageMatch",
-            "emoji": "📁",
+            "emoji": "👧👦🍦",
             "optionEmojis": [
-                "⚙️",
-                "📁",
-                "🕸️",
-                "📅"
+                "👧👦🍰",
+                "👧🍦",
+                "👧👦🥕",
+                "👧👦🍦"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L73_Q1",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "Listen carefully near the middle of the sentence for the target word.",
-            "explanation": "Ticket means a piece of paper that lets you travel or enter an event. The audio included: lost her ticket right before boarding.",
-            "textToSpeak": "She lost her ticket right before boarding.",
+            "instruction": "Tap the picture that shows everything you hear.",
+            "hint": "The clause with 'who' tells you which woman.",
+            "explanation": "The woman lives upstairs in a building and is a nurse. A house, a teacher or a man would each change one detail.",
+            "textToSpeak": "The woman who lives upstairs is a nurse.",
             "options": [
-                "ticket",
-                "engine",
-                "airport",
-                "code"
+                "male nurse in apartment building",
+                "nurse in house",
+                "teacher in apartment building",
+                "nurse in apartment building"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "subtype": "soundImageMatch",
-            "emoji": "🎫",
+            "emoji": "👩‍⚕️🏢",
             "optionEmojis": [
-                "🎟️",
-                "⚙️",
-                "✈️",
-                "👩‍💻"
+                "👨‍⚕️🏢",
+                "👩‍⚕️🏠",
+                "👩‍🏫🏢",
+                "👩‍⚕️🏢"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L73_Q2",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "The sentence gives one clear, specific detail — catch it.",
-            "explanation": "Listen for software — the programs that tell a computer what to do. Notice this detail: forgot to update the software before the meeting.",
-            "textToSpeak": "He forgot to update the software before the meeting.",
+            "instruction": "Listen for the details, then tap the matching picture.",
+            "hint": "Listen for who is described and what is new for them.",
+            "explanation": "The baby has just started to walk, so the walking baby is right. A girl would be older than a baby.",
+            "textToSpeak": "My sister's baby has just started to walk.",
             "options": [
-                "office",
-                "software",
-                "system",
-                "ticket"
+                "baby sleeping",
+                "baby walking",
+                "baby drinking milk",
+                "girl walking"
             ],
             "correctAnswerIndex": 1,
             "subtype": "soundImageMatch",
-            "emoji": "📀",
+            "emoji": "👶🚶",
             "optionEmojis": [
-                "🏢",
-                "💻",
-                "⚙️",
-                "🎟️"
+                "👶😴",
+                "👶🚶",
+                "👶🍼",
+                "👧🚶"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L73_Q3",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "Listen through the whole sentence before choosing your answer.",
-            "explanation": "Data is the word actually spoken — information that is collected, stored, or processed, often by a computer. Context: backed up her data before updating her phone.",
-            "textToSpeak": "She backed up her data before updating her phone.",
+            "instruction": "Listen to the whole sentence and tap the picture that matches it.",
+            "hint": "'They' and 'them' stand for two different things.",
+            "explanation": "'They' means the grandparents and 'them' means the flowers. Watering is the daily job.",
+            "textToSpeak": "My grandparents' garden has lots of flowers, and they water them every day.",
             "options": [
-                "ticket",
-                "printer",
-                "data",
-                "drone"
+                "grandparents watering flowers",
+                "grandparents watering vegetables",
+                "grandfather watering flowers",
+                "grandparents sweeping flowers"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "soundImageMatch",
-            "emoji": "📊",
+            "emoji": "👴👵💧🌷",
             "optionEmojis": [
-                "🎟️",
-                "🖨️",
-                "📊",
-                "🚁"
+                "👴👵💧🌷",
+                "👴👵💧🥕",
+                "👴💧🌷",
+                "👴👵🧹🌷"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L74_Q1",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "Listen for the object being used, fixed, or checked.",
-            "explanation": "Airport: a place where airplanes take off and land. Notice this detail: was packed during the holiday season.",
-            "textToSpeak": "The airport was packed during the holiday season.",
+            "instruction": "Tap the picture that shows everything you hear.",
+            "hint": "Listen for what the boy was told to do.",
+            "explanation": "'Him' and 'his' both mean the boy. Washing hands is done with soap.",
+            "textToSpeak": "The boy's mother told him to wash his hands.",
             "options": [
-                "subway",
-                "drone",
-                "airport",
-                "device"
+                "boy brushing teeth",
+                "boy washing hands",
+                "girl washing hands",
+                "boy eating"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "soundImageMatch",
-            "emoji": "✈️",
+            "emoji": "👦🧼",
             "optionEmojis": [
-                "🚇",
-                "🚁",
-                "✈️",
-                "📱"
+                "👦🪥",
+                "👦🧼",
+                "👧🧼",
+                "👦🍽️"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L74_Q2",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "Notice which option the speaker actually names, not just implies.",
-            "explanation": "Network fits best here — a group of connected computers or devices that share information.",
-            "textToSpeak": "The company built a network connecting all five branches.",
+            "instruction": "Picture what the speaker describes, then tap the match.",
+            "hint": "'Their' refers to the boy and his family. Listen for where the kite is.",
+            "explanation": "The kite is caught in the tree, not on the house. 'Beside their house' only tells you where the tree is.",
+            "textToSpeak": "The boy's kite got stuck in the tree beside their house.",
             "options": [
-                "passport",
-                "folder",
-                "network",
-                "data"
+                "kite in car",
+                "kite in tree",
+                "ball in tree",
+                "kite on house"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "soundImageMatch",
-            "emoji": "🌐",
+            "emoji": "🪁📥🌳",
             "optionEmojis": [
-                "🛂",
-                "📁",
-                "🕸️",
-                "📊"
+                "🪁📥🚗",
+                "🪁📥🌳",
+                "⚽📥🌳",
+                "🪁⬆️🏠"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L74_Q3",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "The distractors are related ideas — only one was actually spoken.",
-            "explanation": "Engine: the part of a vehicle or machine that produces power to make it move. You heard: roared as it prepared for takeoff.",
-            "textToSpeak": "The plane's engine roared as it prepared for takeoff.",
+            "instruction": "Listen closely and choose the picture that fits the sentence.",
+            "hint": "Keep track of how many animals and which drink.",
+            "explanation": "There were two elephants, and 'one of them' drank water. The picture with two elephants and water fits.",
+            "textToSpeak": "We saw two elephants at the zoo, and one of them was drinking water.",
             "options": [
-                "engine",
-                "ticket",
-                "printer",
-                "data"
+                "two elephants, water",
+                "two giraffes, water",
+                "two elephants, bananas",
+                "one elephant, water"
             ],
             "correctAnswerIndex": 0,
             "subtype": "soundImageMatch",
-            "emoji": "⚙️",
+            "emoji": "🐘🐘💧",
             "optionEmojis": [
-                "⚙️",
-                "🎟️",
-                "🖨️",
-                "📊"
+                "🐘🐘💧",
+                "🦒🦒💧",
+                "🐘🐘🍌",
+                "🐘💧"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L75_Q1",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "Focus on what the sentence says happened, not what you'd expect.",
-            "explanation": "That's software. It refers to the programs that tell a computer what to do. The audio included: helps small shops track their sales.",
-            "textToSpeak": "This software helps small shops track their sales.",
+            "instruction": "Listen for the details, then tap the matching picture.",
+            "hint": "Listen for who ends up with the seat.",
+            "explanation": "The woman gave up her seat and the old man took it. He was carrying bags, so they are in the picture.",
+            "textToSpeak": "A woman gave her seat to an old man who was carrying heavy bags.",
             "options": [
-                "software",
-                "ticket",
-                "network",
-                "calendar"
+                "old man sitting",
+                "woman sitting with bags",
+                "old man sitting with bags",
+                "old man walking with bags"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "soundImageMatch",
-            "emoji": "📀",
+            "emoji": "👴💺🛍️",
             "optionEmojis": [
-                "💻",
-                "🎟️",
-                "🕸️",
-                "📅"
+                "👴💺",
+                "👩💺🛍️",
+                "👴💺🛍️",
+                "👴🚶🛍️"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L75_Q2",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "Focus on the noun the sentence is built around.",
-            "explanation": "Code is correct — a set of written instructions that tells a computer what to do. Reference: need a four-digit code to unlock the safe.",
-            "textToSpeak": "You need a four-digit code to unlock the safe.",
+            "instruction": "Listen to the whole sentence and tap the picture that matches it.",
+            "hint": "Work out who is praised.",
+            "explanation": "'Her' and 'she' both mean Mia, the girl. The teacher is the one who gave the praise.",
+            "textToSpeak": "Mia's teacher praised her because she had worked so hard.",
             "options": [
-                "signal",
-                "folder",
-                "printer",
-                "code"
+                "doctor praises girl",
+                "teacher praises girl",
+                "teacher praises boy",
+                "teacher angry at girl"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "soundImageMatch",
-            "emoji": "💻",
+            "emoji": "🧑‍🏫👏👧",
             "optionEmojis": [
-                "📶",
-                "📁",
-                "🖨️",
-                "👩‍💻"
+                "👨‍⚕️👏👧",
+                "🧑‍🏫👏👧",
+                "🧑‍🏫👏👦",
+                "🧑‍🏫😠👧"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L75_Q3",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "Picture the workplace or travel scene as you listen.",
-            "explanation": "Data is the key word here. It means information that is collected, stored, or processed, often by a computer. You heard: collects data to improve its service.",
-            "textToSpeak": "The company collects data to improve its service.",
+            "instruction": "Tap the picture that shows everything you hear.",
+            "hint": "Listen for who has the problem and what it is.",
+            "explanation": "'Their father' is the person who can't eat cheese. The children love pizza, so they are not the ones with the problem.",
+            "textToSpeak": "The kids love pizza, but their father can't eat cheese.",
             "options": [
-                "folder",
-                "data",
-                "subway",
-                "engine"
+                "kids, no cheese",
+                "father, no cheese",
+                "father, no pizza",
+                "father, cheese"
             ],
             "correctAnswerIndex": 1,
             "subtype": "soundImageMatch",
-            "emoji": "📊",
+            "emoji": "👨🚫🧀",
             "optionEmojis": [
-                "📁",
-                "📊",
-                "🚇",
-                "⚙️"
+                "👧👦🚫🧀",
+                "👨🚫🧀",
+                "👨🚫🍕",
+                "👨🧀"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L76_Q1",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "Listen for the exact object mentioned, even inside a longer sentence.",
-            "explanation": "Drone is correct. In everyday terms, it's an aircraft that flies without a pilot on board, often controlled remotely.",
-            "textToSpeak": "A drone delivered the package to their front porch.",
+            "instruction": "Listen to the whole sentence and tap the picture that matches it.",
+            "hint": "'That hangs above the sofa' tells you which picture.",
+            "explanation": "The clause 'that hangs above the sofa' gives its position. The painter is only extra information.",
+            "textToSpeak": "The picture that hangs above the sofa was painted by my grandmother.",
             "options": [
-                "office",
-                "calendar",
-                "chip",
-                "drone"
+                "mirror above sofa",
+                "picture under sofa",
+                "picture above sofa",
+                "picture above bed"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "soundImageMatch",
-            "emoji": "🚁",
+            "emoji": "🖼️⬆️🛋️",
             "optionEmojis": [
-                "🏢",
-                "📅",
-                "🍟",
-                "🚁"
+                "🪞⬆️🛋️",
+                "🖼️⬇️🛋️",
+                "🖼️⬆️🛋️",
+                "🖼️⬆️🛏️"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L76_Q2",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "Don't choose based on the topic alone — listen for the exact word.",
-            "explanation": "Listen for passport — an official document you need to travel to another country. That part goes: checked his passport at the border.",
-            "textToSpeak": "The officer checked his passport at the border.",
+            "instruction": "Tap the picture that shows everything you hear.",
+            "hint": "Pay attention to who the man contacted.",
+            "explanation": "The man's car was stolen, so he called the police. 'Whose' connects the man to the car.",
+            "textToSpeak": "The man whose car was stolen called the police.",
             "options": [
-                "passport",
-                "system",
-                "chip",
-                "ticket"
+                "man calls doctor",
+                "man orders pizza",
+                "man calls police",
+                "man in car, police"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "soundImageMatch",
-            "emoji": "🛂",
+            "emoji": "👨📞👮",
             "optionEmojis": [
-                "🛂",
-                "⚙️",
-                "🍟",
-                "🎟️"
+                "👨📞👨‍⚕️",
+                "👨📞🍕",
+                "👨📞👮",
+                "👨🚗👮"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L76_Q3",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "The correct word is concrete — something with a clear function.",
-            "explanation": "Subway is the answer — an underground train system in a city. Context: ran to catch the last subway home.",
-            "textToSpeak": "He ran to catch the last subway home.",
+            "instruction": "Listen closely and choose the picture that fits the sentence.",
+            "hint": "'Both' and 'neither' tell you who the tickets are for.",
+            "explanation": "'Both' means two tickets, and they are for the parents. 'Neither is for me' means the speaker gets none.",
+            "textToSpeak": "Both of these tickets are for my parents; neither is for me.",
             "options": [
-                "subway",
-                "folder",
-                "hotel",
-                "data"
+                "two tickets for children",
+                "one ticket for parent",
+                "two tickets for man and boy",
+                "two tickets for parents"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "subtype": "soundImageMatch",
-            "emoji": "🚇",
+            "emoji": "🎟️🎟️👨👩",
             "optionEmojis": [
-                "🚇",
-                "📁",
-                "🏨",
-                "📊"
+                "🎟️🎟️👧👦",
+                "🎟️👨",
+                "🎟️🎟️👨👦",
+                "🎟️🎟️👨👩"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L77_Q1",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "The sentence gives one clear, specific detail — catch it.",
-            "explanation": "The word you needed was office — a building or room where people do office work.",
-            "textToSpeak": "He set up his laptop in a quiet corner of the office.",
+            "instruction": "Listen for the details, then tap the matching picture.",
+            "hint": "Catch each person's job. 'Her husband' is the second person.",
+            "explanation": "The aunt is the teacher and her husband is the driver. Both jobs are needed to match the picture.",
+            "textToSpeak": "My dad's sister is a teacher, and her husband is a driver.",
             "options": [
-                "engine",
-                "office",
-                "network",
-                "calendar"
+                "teacher and doctor",
+                "two teachers",
+                "teacher and driver",
+                "doctor and driver"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "subtype": "soundImageMatch",
-            "emoji": "🏢",
+            "emoji": "👩‍🏫🚕",
             "optionEmojis": [
-                "⚙️",
-                "🏢",
-                "🕸️",
-                "📅"
+                "👩‍🏫👨‍⚕️",
+                "👩‍🏫🧑‍🏫",
+                "👩‍🏫🚕",
+                "👩‍⚕️🚕"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L77_Q2",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "The right answer is named directly, not just suggested.",
-            "explanation": "System fits best here — a set of parts that work together as a whole.",
-            "textToSpeak": "The airport's check-in system crashed during the holidays.",
+            "instruction": "Listen to the whole sentence and tap the picture that matches it.",
+            "hint": "The words 'who arrived early' describe the children. Listen to what they got.",
+            "explanation": "The children who came early sat in the best seats. The clause tells you who, not what happened.",
+            "textToSpeak": "The children who arrived early got the best seats.",
             "options": [
-                "system",
-                "office",
-                "software",
-                "folder"
+                "children eating",
+                "children in seats",
+                "children walking",
+                "one child in seat"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "soundImageMatch",
-            "emoji": "🖥️",
+            "emoji": "👧👦💺",
             "optionEmojis": [
-                "⚙️",
-                "🏢",
-                "💻",
-                "📁"
+                "👧👦🍽️",
+                "👧👦💺",
+                "👧👦🚶",
+                "👧💺"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L77_Q3",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "Listen through the whole sentence before choosing your answer.",
-            "explanation": "The correct answer is badge: a card that shows a person's name and identity at work. Specifically: must wear a badge while inside the office.",
-            "textToSpeak": "Visitors must wear a badge while inside the office.",
+            "instruction": "Picture what the speaker describes, then tap the match.",
+            "hint": "'It' refers to the neighbor's pet. What can it do?",
+            "explanation": "'It' means the parrot, and it can speak. The speech icon shows talking.",
+            "textToSpeak": "My neighbor has a parrot, and it can say my name.",
             "options": [
-                "software",
-                "data",
-                "calendar",
-                "badge"
+                "parrot talking",
+                "parrot sleeping",
+                "parrot eating",
+                "dog barking"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "soundImageMatch",
-            "emoji": "🪪",
+            "emoji": "🦜🗣️",
             "optionEmojis": [
-                "💻",
-                "📊",
-                "📅",
-                "📛"
+                "🦜🗣️",
+                "🦜😴",
+                "🦜🍎",
+                "🐶🗣️"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L78_Q1",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "The key word usually appears after the subject and verb.",
-            "explanation": "You were listening for signal: a sound, light, or radio wave that carries information. The line was: made the video call keep freezing.",
-            "textToSpeak": "The weak signal made the video call keep freezing.",
+            "instruction": "Listen for the details, then tap the matching picture.",
+            "hint": "'Each' means two gifts. 'Them' points to them.",
+            "explanation": "Two people each brought a gift, so there are two gifts. 'Them' means the gifts and they went to the teacher.",
+            "textToSpeak": "Ravi and Meena each brought a gift, and they gave them to their teacher.",
             "options": [
-                "data",
-                "folder",
-                "passport",
-                "signal"
+                "two gifts to friends",
+                "one gift to teacher",
+                "two gifts to teacher",
+                "two gifts to doctor"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "soundImageMatch",
-            "emoji": "📶",
+            "emoji": "🎁🎁🧑‍🏫",
             "optionEmojis": [
-                "📊",
-                "📁",
-                "🛂",
-                "📶"
+                "🎁🎁👫",
+                "🎁🧑‍🏫",
+                "🎁🎁🧑‍🏫",
+                "🎁🎁👨‍⚕️"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L78_Q2",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "Picture the workplace or travel scene as you listen.",
-            "explanation": "Printer is the key word here. It means a machine that produces paper copies of documents.",
-            "textToSpeak": "He fixed the paper jam in the printer.",
+            "instruction": "Tap the picture that shows everything you hear.",
+            "hint": "Follow who ends up with the purse.",
+            "explanation": "'It' means the purse and 'her' means the woman. The purse goes back to its owner.",
+            "textToSpeak": "The woman behind me dropped her purse, so I gave it back to her.",
             "options": [
-                "printer",
-                "hotel",
-                "drone",
-                "office"
+                "woman with umbrella",
+                "woman with purse",
+                "man with purse",
+                "woman with phone"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "soundImageMatch",
-            "emoji": "🖨️",
+            "emoji": "👩👛",
             "optionEmojis": [
-                "🖨️",
-                "🏨",
-                "🚁",
-                "🏢"
+                "👩☂️",
+                "👩👛",
+                "👨👛",
+                "👩📱"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L78_Q3",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "Listen carefully near the middle of the sentence for the target word.",
-            "explanation": "Nice work if you chose chip — a small electronic part that stores or processes information inside a device.",
-            "textToSpeak": "Engineers redesigned the chip to use less battery power.",
+            "instruction": "Picture what the speaker describes, then tap the match.",
+            "hint": "Pay attention to who they like in common.",
+            "explanation": "The twins share one liking: the same teacher. The subject is something they don't share.",
+            "textToSpeak": "The twins like the same teacher, but they don't like the same subject.",
             "options": [
-                "calendar",
-                "drone",
-                "chip",
-                "subway"
+                "twins and cook",
+                "twins and doctor",
+                "one child and teacher",
+                "twins and teacher"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "subtype": "soundImageMatch",
-            "emoji": "💾",
+            "emoji": "👧👦🧑‍🏫",
             "optionEmojis": [
-                "📅",
-                "🚁",
-                "🍟",
-                "🚇"
+                "👧👦🧑‍🍳",
+                "👧👦👨‍⚕️",
+                "👧🧑‍🏫",
+                "👧👦🧑‍🏫"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L79_Q1",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "The sentence gives one clear, specific detail — catch it.",
-            "explanation": "Airport: a place where airplanes take off and land. Straight from the audio: waited for her cousin outside the airport.",
-            "textToSpeak": "She waited for her cousin outside the airport.",
+            "instruction": "Tap the picture that shows everything you hear.",
+            "hint": "'It' means something the mechanic examined. What did it need?",
+            "explanation": "'It' means the car, and what it needed was a new battery. Petrol or a key would be different problems.",
+            "textToSpeak": "The mechanic looked at the car and said it needed a new battery.",
             "options": [
-                "office",
-                "ticket",
-                "airport",
-                "calendar"
+                "bike needs battery",
+                "car needs key",
+                "car needs battery",
+                "car needs petrol"
             ],
             "correctAnswerIndex": 2,
             "subtype": "soundImageMatch",
-            "emoji": "✈️",
+            "emoji": "🚗🔋",
             "optionEmojis": [
-                "🏢",
-                "🎟️",
-                "✈️",
-                "📅"
+                "🚲🔋",
+                "🚗🔑",
+                "🚗🔋",
+                "🚗⛽"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L79_Q2",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "Focus on what the sentence says happened, not what you'd expect.",
-            "explanation": "Listen for device — a small machine or tool designed to do a specific job.",
-            "textToSpeak": "This device can track your steps and heart rate.",
+            "instruction": "Listen for the details, then tap the matching picture.",
+            "hint": "Catch where the girl helps and who she helps.",
+            "explanation": "Her parents own a restaurant, and she helps there. 'Them' means her parents.",
+            "textToSpeak": "Priya's parents own a restaurant, and she helps them on weekends.",
             "options": [
-                "engine",
-                "device",
-                "ticket",
-                "folder"
+                "girl in hospital",
+                "girl helping in restaurant",
+                "girl at school",
+                "girl helping in shop"
             ],
             "correctAnswerIndex": 1,
             "subtype": "soundImageMatch",
-            "emoji": "📱",
+            "emoji": "👧🍽️👨‍🍳",
             "optionEmojis": [
-                "⚙️",
-                "📱",
-                "🎟️",
-                "📁"
+                "👧🏥",
+                "👧🍽️👨‍🍳",
+                "👧🏫",
+                "👧🏪🛒"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L79_Q3",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "Don't choose based on the topic alone — listen for the exact word.",
-            "explanation": "You were listening for folder: a cover used to hold and organize loose papers.",
-            "textToSpeak": "The folder on his desk was labeled 'urgent'.",
+            "instruction": "Picture what the speaker describes, then tap the match.",
+            "hint": "Decide what 'them' means.",
+            "explanation": "'Them' means the books, and 'their bags' is where they went. In means inside.",
+            "textToSpeak": "The teacher gave each student a book, and they put them in their bags.",
             "options": [
-                "signal",
-                "badge",
-                "folder",
-                "code"
+                "books in bags",
+                "books on desk",
+                "books in car",
+                "pencils in bags"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "soundImageMatch",
-            "emoji": "📁",
+            "emoji": "📚📥🎒",
             "optionEmojis": [
-                "📶",
-                "📛",
-                "📁",
-                "👩‍💻"
+                "📚📥🎒",
+                "📚⬆️🪑",
+                "📚📥🚗",
+                "✏️📥🎒"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L80_Q1",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "Focus on the noun the sentence is built around.",
-            "explanation": "Listen for calendar — a chart that shows the days, weeks, and months of the year. You heard: checked the calendar before planning the trip.",
-            "textToSpeak": "They checked the calendar before planning the trip.",
+            "instruction": "Listen closely and choose the picture that fits the sentence.",
+            "hint": "Notice what the two sisters share and what they don't.",
+            "explanation": "They share the room but not a bed, so each has her own bed. One bed would mean they share it.",
+            "textToSpeak": "My sister and I share a room, but we don't have to share a bed.",
             "options": [
-                "passport",
-                "drone",
-                "printer",
-                "calendar"
+                "two girls, two beds",
+                "one girl, two beds",
+                "two girls, two sofas",
+                "two girls, one bed"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "soundImageMatch",
-            "emoji": "📅",
+            "emoji": "👧👧🛏️🛏️",
             "optionEmojis": [
-                "🛂",
-                "🚁",
-                "🖨️",
-                "📅"
+                "👧👧🛏️🛏️",
+                "👧🛏️🛏️",
+                "👧👧🛋️🛋️",
+                "👧👧🛏️"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L80_Q2",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "The correct word is concrete — something with a clear function.",
-            "explanation": "Listen for hotel — a building where travelers pay to sleep for the night. Reference: booked a hotel near the train station.",
-            "textToSpeak": "She booked a hotel near the train station.",
+            "instruction": "Picture what the speaker describes, then tap the match.",
+            "hint": "Follow the medal to the end.",
+            "explanation": "The girl won the medal and gave it to her little brother. So the boy is the one who has it at the end.",
+            "textToSpeak": "The girl who won the race gave her medal to her little brother.",
             "options": [
-                "calendar",
-                "hotel",
-                "ticket",
-                "device"
+                "mother with medal",
+                "girl with medal",
+                "boy with trophy",
+                "boy with medal"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "subtype": "soundImageMatch",
-            "emoji": "🏨",
+            "emoji": "👦🏅",
             "optionEmojis": [
-                "📅",
-                "🏨",
-                "🎟️",
-                "📱"
+                "👩🏅",
+                "👧🏅",
+                "👦🏆",
+                "👦🏅"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L80_Q3",
             "interactionType": "match",
-            "instruction": "Hear the phrase and tap the picture that matches it.",
-            "hint": "The right answer is named directly, not just suggested.",
-            "explanation": "Listen for ticket — a piece of paper that lets you travel or enter an event. Here's the detail: included entry to both museums.",
-            "textToSpeak": "The ticket included entry to both museums.",
+            "instruction": "Listen closely and choose the picture that fits the sentence.",
+            "hint": "'Them' stands for someone mentioned earlier. Who?",
+            "explanation": "'Them' means both brothers, and 'neither was at home' explains the call. So the speaker phoned two boys.",
+            "textToSpeak": "Neither of my brothers was at home, so I phoned them.",
             "options": [
-                "airport",
-                "signal",
-                "ticket",
-                "system"
+                "phone two girls",
+                "phone parents",
+                "phone one boy",
+                "phone two boys"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "subtype": "soundImageMatch",
-            "emoji": "🎫",
+            "emoji": "📞👦👦",
             "optionEmojis": [
-                "✈️",
-                "📶",
-                "🎟️",
-                "⚙️"
+                "📞👧👧",
+                "📞👨👩",
+                "📞👦",
+                "📞👦👦"
             ]
         }
     ]

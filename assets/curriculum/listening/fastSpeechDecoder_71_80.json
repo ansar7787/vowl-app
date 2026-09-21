@@ -6,58 +6,58 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L71_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch the exact time, and report versus email versus summary.",
-            "explanation": "'Supposta' is the fast, spoken version of 'supposed to' - so reduced that the middle sounds almost disappear. Since the reduction itself doesn't change meaning, focus on the real details: the deadline and the document.",
-            "textToSpeak": "You're supposta send that report by five.",
+            "instruction": "Listen carefully and catch the exact sentence.",
+            "hint": "Listen for the exact night mentioned, since a sound quietly drops out before it.",
+            "explanation": "In 'last night', the 't' at the end of 'last' often disappears completely between two consonants, so it can sound closer to 'las night'.",
+            "textToSpeak": "We stayed up late last night.",
             "options": [
-                "You're supposta send that report by five.",
-                "You're supposta send that summary by five."
+                "We stayed up late last week.",
+                "We stayed up late last night."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L71_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Notice the exact time, and meet versus call.",
-            "explanation": "'Meet' and 'call' lead to very different afternoons, so that verb is essential. 'Client' and 'manager' are also different people entirely, so listen carefully.",
-            "textToSpeak": "We're supposta meet the client at three.",
+            "instruction": "They said it fast — what did you actually hear?",
+            "hint": "Catch what exactly must be true.",
+            "explanation": "'Must be' often drops the 't' sound between the two consonants, so it can sound like 'muss be' rather than a fully pronounced 'must'.",
+            "textToSpeak": "That must be Sarah's new car.",
             "options": [
-                "We're supposta meet the client at three.",
-                "We're supposta meet the client at two."
+                "That could be Sarah's new car.",
+                "That must be Sarah's new car."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L71_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch lead versus join, and today versus tomorrow.",
-            "explanation": "'Lead' (be in charge) and 'join' (just attend) are very different roles in a meeting, so listen for the specific verb. He versus she is also worth double-checking.",
-            "textToSpeak": "He's supposta lead the meeting today, right?",
+            "instruction": "Natural speech blends words together. Catch the real message.",
+            "hint": "Notice the exact day, since the sound before it can disappear.",
+            "explanation": "'Next day' can lose the final 't' of 'next' in casual speech, blending the two words closer together than the spelling suggests.",
+            "textToSpeak": "They're arriving the next day.",
             "options": [
-                "He's supposta lead the meeting today, right?",
-                "She's supposta join the meeting today, right?"
+                "They're arriving the same day.",
+                "They're arriving the next day."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L72_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch summer versus winter, and visit versus call.",
-            "explanation": "'Usta' is how 'used to' sounds in fast speech, describing a habit from the past that's no longer true. The season and the action are what actually carry the story here.",
-            "textToSpeak": "We usta visit my grandparents every summer.",
+            "instruction": "Listen for the small word that changes the meaning.",
+            "hint": "Catch what exactly they wanted, since a sound quietly disappears.",
+            "explanation": "'Wanted to' often loses its middle 't' sound in casual speech, so it can come out sounding closer to 'wan-id to' or even 'wanna'.",
+            "textToSpeak": "She wanted to leave early today.",
             "options": [
-                "They usta visit my grandparents every summer.",
-                "We usta visit my grandparents every summer."
+                "She wanted to stay late today.",
+                "She wanted to leave early today."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -66,13 +66,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L72_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Notice kid versus teen, and dark versus spiders.",
-            "explanation": "'Usta be' (a past habit, now gone) is very different from 'am usta being' (a current tolerance) - a subtle but real grammar difference. 'Kid' and 'teen' also place the memory at different ages.",
-            "textToSpeak": "I usta be scared of the dark as a kid.",
+            "instruction": "Focus on the key detail hidden in the fast sentence.",
+            "hint": "Listen for the exact place mentioned after the reduced phrase.",
+            "explanation": "'Kind of' frequently drops its middle sounds, coming out closer to 'kinda', so pay attention to what actually follows it.",
+            "textToSpeak": "It's kind of far from the station.",
             "options": [
-                "I'm usta being scared of the dark as a kid.",
-                "I usta be scared of the dark as a kid."
+                "It's kind of close to the station.",
+                "It's kind of far from the station."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -81,28 +81,28 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L72_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch argue versus laugh, and parents versus grandparents.",
-            "explanation": "'Argue' and 'laugh' paint completely different pictures of the same memory, so that verb is essential. 'Strangest' and 'smallest' are also close enough that you need to hear the exact word.",
-            "textToSpeak": "My parents usta argue about the strangest things.",
+            "instruction": "Listen again — which version matches what was said?",
+            "hint": "Notice whether they actually did it or not.",
+            "explanation": "'Didn't' can lose almost its entire final sound in relaxed speech, so listen for the surrounding context to confirm the negative.",
+            "textToSpeak": "I didn't expect that response at all.",
             "options": [
-                "My parents usta argue about the strangest things.",
-                "My parents usta argue about the smallest things."
+                "I expected that response at all.",
+                "I didn't expect that response at all."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L73_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch jackets versus coats, and these versus those.",
-            "explanation": "'Tryna' packs 'trying to' into one fast syllable, a very common reduction in casual speech. 'Decide' and 'choose' are near-synonyms, so listen for the specific verb used.",
-            "textToSpeak": "I'm tryna decide between these two jackets.",
+            "instruction": "Listen carefully and catch the exact sentence.",
+            "hint": "Catch exactly what happened first, since sounds can vanish at word boundaries.",
+            "explanation": "'First time' can lose the final 't' of 'first' when it meets the 't' of 'time', merging the two into a single, quicker sound.",
+            "textToSpeak": "This is the first time I've tried it.",
             "options": [
-                "I'm tryna decide between these two coats.",
-                "I'm tryna decide between these two jackets."
+                "This is the last time I've tried it.",
+                "This is the first time I've tried it."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -111,28 +111,28 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L73_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Notice month versus year, and budget versus plan.",
-            "explanation": "'This month' and 'this year' describe very different timeframes for the same goal, so listen carefully. 'Budget' and 'plan' are related but different things too.",
-            "textToSpeak": "We're tryna stick to a budget this month.",
+            "instruction": "They said it fast — what did you actually hear?",
+            "hint": "Listen for who exactly is the best fit.",
+            "explanation": "'Best fit' merges its two 't'-ish sounds together, so the phrase can sound shorter and quicker than its spelling suggests.",
+            "textToSpeak": "She's probably the best fit for the role.",
             "options": [
-                "We're tryna stick to a budget this month.",
-                "We're tryna stick to a budget this year."
+                "He's probably the best fit for the role.",
+                "She's probably the best fit for the role."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L73_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch return versus exchange, and receipt versus packaging.",
-            "explanation": "'Return' (get money back) and 'exchange' (swap for something else) are different requests entirely, so listen for the exact verb. 'Receipt' and 'packaging' are also easy to mix up quickly.",
-            "textToSpeak": "She's tryna return this without the receipt.",
+            "instruction": "Natural speech blends words together. Catch the real message.",
+            "hint": "Catch the exact amount, since the sound before it can disappear.",
+            "explanation": "'Just about' often drops sounds in the middle, so the number or amount that follows deserves your closest attention.",
+            "textToSpeak": "We're just about out of time.",
             "options": [
-                "She's tryna return this without the receipt.",
-                "She's tryna return that without the receipt."
+                "We're just about out of time.",
+                "We're just about out of money."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -141,28 +141,28 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L74_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch the exact number, and serve versus feed.",
-            "explanation": "'Serve' and 'feed' mean almost the same thing here, so listen for the precise word rather than the general idea. The number of people is also worth locking in exactly.",
-            "textToSpeak": "This recipe's supposta serve about six people.",
+            "instruction": "Listen for the small word that changes the meaning.",
+            "hint": "Listen for whether they should have or shouldn't have.",
+            "explanation": "'Shouldn't have' compresses heavily, often losing sounds in the middle entirely, so the negative can be easy to miss at natural speed.",
+            "textToSpeak": "You shouldn't have waited for me.",
             "options": [
-                "This recipe's supposta serve about six people.",
-                "That recipe's supposta serve about six people."
+                "You should have waited for me.",
+                "You shouldn't have waited for me."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L74_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Notice rest versus rise, and dough versus sauce.",
-            "explanation": "'Rest' and 'rise' are different steps in baking, so that verb genuinely matters. 'An hour' versus 'a while' is also a big difference if you're following a recipe closely.",
-            "textToSpeak": "You're supposta let the dough rest for an hour.",
+            "instruction": "Focus on the key detail hidden in the fast sentence.",
+            "hint": "Catch what exactly they must not do.",
+            "explanation": "'Mustn't' drops sounds heavily in casual speech, and this strong prohibition can slip by unnoticed if you're not listening for it.",
+            "textToSpeak": "You mustn't forget your ID at the gate.",
             "options": [
-                "You're supposta let the dough rest for an hour.",
-                "You're supposta let the dough rest for a while."
+                "You mustn't forget your ID at the gate.",
+                "You must remember your ID at the gate."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -171,28 +171,28 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L74_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch tonight versus tomorrow versus later, and dish versus drink.",
-            "explanation": "'Dish' and 'drink' are very different contributions to a gathering, so listen for the exact word. The timing words here all sound short and quick, so catch them precisely.",
-            "textToSpeak": "We're supposta bring a dish to share tonight.",
+            "instruction": "Listen again — which version matches what was said?",
+            "hint": "Notice whether this is possible or actually impossible.",
+            "explanation": "'Can't possibly' loses sound density fast, blending together, so the strength of the refusal is easy to underestimate if you're not careful.",
+            "textToSpeak": "I can't possibly finish this by Friday.",
             "options": [
-                "We're supposta bring a dish to share tonight.",
-                "We're supposta bring a dish to share later."
+                "I can possibly finish this by Friday.",
+                "I can't possibly finish this by Friday."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L75_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch quieter versus busier, and area versus street.",
-            "explanation": "'Quieter' and 'busier' are opposites, so that's the word that decides the whole comment about how the place has changed. 'A lot' and 'a little' also describe how big that change really was.",
-            "textToSpeak": "This area usta be a lot quieter.",
+            "instruction": "Listen carefully and catch the exact sentence.",
+            "hint": "Catch the full detail even though several sounds quietly vanish.",
+            "explanation": "In longer, casual sentences, several sounds can drop out in a row, so trust the surrounding words to guide you even when individual sounds disappear.",
+            "textToSpeak": "I just want to get this exactly right.",
             "options": [
-                "This area usta be a lot quieter.",
-                "This area usta be a little quieter."
+                "I just want to get this exactly right.",
+                "I just want to get this done quickly."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -201,28 +201,28 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L75_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Notice fly versus drive, and 'all the time' versus 'every year'.",
-            "explanation": "'Fly' and 'drive' describe completely different journeys, so that verb is the real content here. 'All the time' and 'every year' also suggest very different levels of frequency.",
-            "textToSpeak": "We usta fly this route all the time.",
+            "instruction": "They said it fast — what did you actually hear?",
+            "hint": "Listen for the exact number of attempts, since sounds drop between them.",
+            "explanation": "'Asked twice already' loses some of its consonant density at speed, so the number itself needs your close attention.",
+            "textToSpeak": "I've asked twice already this week.",
             "options": [
-                "We usta fly this route all the time.",
-                "They usta fly this route all the time."
+                "I've asked once already this week.",
+                "I've asked twice already this week."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L75_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch terrible versus mild, and jet lag versus motion sickness.",
-            "explanation": "'Terrible' and 'mild' describe very different levels of discomfort, so listen for the exact adjective. 'Jet lag' and 'motion sickness' are also different travel problems entirely.",
-            "textToSpeak": "I usta get terrible jet lag on this trip.",
+            "instruction": "Natural speech blends words together. Catch the real message.",
+            "hint": "Notice what exactly went wrong, since the explanation is where the meaning lives.",
+            "explanation": "'Turns out' often reduces heavily, sounding almost like 'terns out', so the real news, what actually happened, comes right after.",
+            "textToSpeak": "Turns out the flight was cancelled.",
             "options": [
-                "I usta get terrible jet lag on this trip.",
-                "I usta get terrible jet lag on that trip."
+                "Turns out the flight was cancelled.",
+                "Turns out the flight was delayed."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -231,13 +231,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L76_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch crashing versus freezing, and this versus that.",
-            "explanation": "'Crashing' and 'freezing' are different tech problems, so listen for the exact word describing the issue. 'Figure out' and 'work out' are near-synonyms too, so catch the specific phrase.",
-            "textToSpeak": "I'm tryna figure out why this keeps crashing.",
+            "instruction": "Listen for the small word that changes the meaning.",
+            "hint": "Catch the exact favor being asked for.",
+            "explanation": "'Would you mind' can compress its middle sounds together fast, so the specific request that follows carries the real content.",
+            "textToSpeak": "Would you mind closing the window?",
             "options": [
-                "I'm tryna figure out why that keeps crashing.",
-                "I'm tryna figure out why this keeps crashing."
+                "Would you mind opening the window?",
+                "Would you mind closing the window?"
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -246,43 +246,43 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L76_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Notice the exact day, and 'all' versus 'some'.",
-            "explanation": "'All' and 'some' of the data are very different amounts of work, so that word really matters. 'Migrate' and 'transfer' are close synonyms in tech talk, so listen for the specific one used.",
-            "textToSpeak": "We're tryna migrate all the data by Friday.",
+            "instruction": "Focus on the key detail hidden in the fast sentence.",
+            "hint": "Listen for whether this is a firm no, or just a soft hesitation.",
+            "explanation": "'I don't suppose' loses sounds heavily in the middle, so the overall tone, hesitant rather than firm, is the real clue here.",
+            "textToSpeak": "I don't suppose you've got a minute?",
             "options": [
-                "We're tryna migrate all the data by Monday.",
-                "We're tryna migrate all the data by Friday."
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "fastSpeechDecoder",
-            "emoji": "⚡"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L76_Q3",
-            "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch office versus meeting, and set up versus fix.",
-            "explanation": "'Set up' (install fresh) and 'fix' (repair something broken) describe different tasks entirely, so listen for the exact verb. He versus she is also worth double-checking.",
-            "textToSpeak": "She's tryna set up the printer for the office.",
-            "options": [
-                "She's tryna set up the printer for the office.",
-                "She's tryna set up the printer for the meeting."
+                "I don't suppose you've got a minute?",
+                "I definitely think you've got a minute."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
+            "id": "LIS_FASTSPEECHDECODER_L76_Q3",
+            "interactionType": "choice",
+            "instruction": "Listen again — which version matches what was said?",
+            "hint": "Notice exactly what they're trying to avoid.",
+            "explanation": "'Trying not to' compresses its negative deep into the middle of the phrase, so listen closely for what's actually being avoided.",
+            "textToSpeak": "I'm trying not to be late again.",
+            "options": [
+                "I'm trying to be late again.",
+                "I'm trying not to be late again."
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "fastSpeechDecoder",
+            "emoji": "⚡"
+        },
+        {
             "id": "LIS_FASTSPEECHDECODER_L77_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch with versus before, and food versus water.",
-            "explanation": "'With food' and 'before food' completely change how this medicine should be taken, so that preposition is critical. 'This' and 'that' medicine also need to be told apart clearly.",
-            "textToSpeak": "You're supposta take this medicine with food.",
+            "instruction": "Listen carefully and catch the exact sentence.",
+            "hint": "Catch exactly what's expected, since the phrase compresses heavily.",
+            "explanation": "'Supposed to' commonly reduces to something close to 'supposta', with several sounds dropping out in the middle entirely.",
+            "textToSpeak": "The report was supposed to go out yesterday.",
             "options": [
-                "You're supposta take this medicine with food.",
-                "You're supposta take this medicine with water."
+                "The report was supposed to go out yesterday.",
+                "The report was supposed to go out today."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -291,58 +291,58 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L77_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch 'more often' versus 'less often', and headaches versus stomach aches.",
-            "explanation": "'More often' and 'less often' are opposites, so that phrase tells you whether things have gotten better or worse. 'Headaches' and 'stomach aches' are also different complaints entirely.",
-            "textToSpeak": "I usta get headaches a lot more often.",
+            "instruction": "They said it fast — what did you actually hear?",
+            "hint": "Listen for whether they actually got to it, or not.",
+            "explanation": "'Didn't get around to' loses considerable sound density in the middle, so the negative meaning depends on catching the surrounding context.",
+            "textToSpeak": "I didn't get around to calling them back.",
             "options": [
-                "I usta get headaches a lot more often.",
-                "I usta get stomach aches a lot more often."
+                "I got around to calling them back.",
+                "I didn't get around to calling them back."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L77_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Notice 'cut down on' versus 'cut out', and processed versus sugary.",
-            "explanation": "'Cut down on' (reduce) and 'cut out' (stop completely) are different levels of commitment, so listen for the exact phrase. 'Processed' and 'sugary' food are related but distinct categories too.",
-            "textToSpeak": "We're tryna cut down on processed food.",
+            "instruction": "Natural speech blends words together. Catch the real message.",
+            "hint": "Catch the exact deadline, since the phrase before it reduces heavily.",
+            "explanation": "'Needs to be' often loses its middle consonant, coming out closer to 'nee-sta-be', so the deadline that follows is the real detail.",
+            "textToSpeak": "This needs to be finished by Monday.",
             "options": [
-                "They're tryna cut down on processed food.",
-                "We're tryna cut down on processed food."
+                "This needs to be finished by Monday.",
+                "This needs to be finished by Friday."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L78_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch the exact time, and submit versus finish.",
-            "explanation": "'Submit' (hand it in) and 'finish' (just complete it) are different stages of the same task, so listen for the precise verb. 'Midnight' and 'noon' are also very different deadlines.",
-            "textToSpeak": "We're supposta submit this before midnight.",
+            "instruction": "Listen for the small word that changes the meaning.",
+            "hint": "Track two separate reductions in the same sentence.",
+            "explanation": "This sentence loses sounds in two different spots, 'last chance' and 'must be', so treat it as two small listening checks joined together.",
+            "textToSpeak": "This is probably our last chance, so it must be right.",
             "options": [
-                "We're supposta finish this before midnight.",
-                "We're supposta submit this before midnight."
+                "This is probably our last chance, so it must be right.",
+                "This is probably our first chance, so it must be right."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L78_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Notice struggle versus enjoy, and maths versus science.",
-            "explanation": "'Struggle with' and 'enjoy' describe opposite feelings about the same subject, so that verb changes the whole story. 'Maths' and 'science' are also different subjects entirely.",
-            "textToSpeak": "I usta struggle with maths a lot more.",
+            "instruction": "Focus on the key detail hidden in the fast sentence.",
+            "hint": "Catch what exactly they didn't want to admit.",
+            "explanation": "'Didn't want to' compresses its consonants together fast, so the specific thing avoided is the real content of the sentence.",
+            "textToSpeak": "He didn't want to admit he was wrong.",
             "options": [
-                "I usta struggle with maths a lot more.",
-                "I usta struggle with science a lot more."
+                "He didn't want to admit he was wrong.",
+                "He didn't want to admit he was tired."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -351,13 +351,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L78_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch classes versus work, and missed versus skipped.",
-            "explanation": "'Missed' (couldn't attend) and 'skipped' (chose not to attend) suggest very different reasons for falling behind. He versus she is also worth confirming.",
-            "textToSpeak": "She's tryna catch up on the classes she missed.",
+            "instruction": "Listen again — which version matches what was said?",
+            "hint": "Notice the full outcome despite the reduced sounds throughout.",
+            "explanation": "By now, expect entire clusters of sound to shrink together in casual speech — the meaning still comes through if you follow the content words.",
+            "textToSpeak": "It turns out we didn't need the extra chairs after all.",
             "options": [
-                "He's tryna catch up on the classes she missed.",
-                "She's tryna catch up on the classes she missed."
+                "It turns out we needed the extra chairs after all.",
+                "It turns out we didn't need the extra chairs after all."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -366,90 +366,90 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L79_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch 'sell out' versus 'run out', and tickets versus seats.",
-            "explanation": "'Sell out' and 'run out' mean almost the same thing here, so listen for the precise phrase rather than the general idea. 'Tickets' and 'seats' are also close enough to require careful listening.",
-            "textToSpeak": "We're supposta get tickets before they sell out.",
+            "instruction": "Listen carefully and catch the exact sentence.",
+            "hint": "Catch the exact word that's easy to lose in the reduction.",
+            "explanation": "'Almost forgot' can lose part of its middle sound, so it's worth listening twice to confirm exactly what nearly slipped their mind.",
+            "textToSpeak": "I almost forgot your birthday.",
             "options": [
-                "We're supposta get seats before they sell out.",
-                "We're supposta get tickets before they sell out."
+                "I almost forgot your birthday.",
+                "I almost forgot my birthday."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L79_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Notice constantly versus occasionally, and listen versus play.",
-            "explanation": "'Constantly' and 'occasionally' are near-opposites in frequency, so that adverb really matters. 'Listen to' and 'play' are also different actions, so catch the exact verb.",
-            "textToSpeak": "I usta listen to this song constantly.",
+            "instruction": "They said it fast — what did you actually hear?",
+            "hint": "Listen for whether this was expected, or came as a surprise.",
+            "explanation": "'I didn't expect' reduces heavily around the negative, so the surrounding tone, surprised or not, is a useful secondary clue.",
+            "textToSpeak": "I didn't expect to see you here.",
             "options": [
-                "I usta listen to this song constantly.",
-                "I usta listen to this song occasionally."
+                "I expected to see you here.",
+                "I didn't expect to see you here."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L79_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch season versus series, and 'this weekend' versus 'this week'.",
-            "explanation": "'Season' and 'series' are close terms for TV shows, so listen for the exact one used. 'This weekend' and 'this week' also describe different amounts of time.",
-            "textToSpeak": "They're tryna get through the whole season this weekend.",
+            "instruction": "Natural speech blends words together. Catch the real message.",
+            "hint": "Notice exactly what they meant to say, since a sound quietly drops.",
+            "explanation": "'Meant to' reduces close to 'men-ta' in fast speech, so keep listening past it for the actual thing that was intended.",
+            "textToSpeak": "I meant to call you back sooner.",
             "options": [
-                "They're tryna get through the whole series this weekend.",
-                "They're tryna get through the whole season this weekend."
+                "I meant to call you back sooner.",
+                "I meant to text you back sooner."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L80_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch the exact frequency, and these versus those.",
-            "explanation": "'Twice' and 'once' a week are very different care instructions, so that number is essential. 'Water' and 'feed' are also different actions when it comes to plants.",
-            "textToSpeak": "You're supposta water these plants twice a week.",
+            "instruction": "Listen for the small word that changes the meaning.",
+            "hint": "By now, expect whole clusters of sound to shrink together — trust the content words.",
+            "explanation": "This level combines several elision patterns in one sentence, so the individual sounds matter less than following the overall meaning.",
+            "textToSpeak": "I didn't mean to interrupt, but this really can't wait.",
             "options": [
-                "You're supposta water these plants once a week.",
-                "You're supposta water these plants twice a week."
+                "I didn't mean to interrupt, but this really can't wait.",
+                "I meant to interrupt, but this really can't wait."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L80_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Notice hate versus love, and early versus late.",
-            "explanation": "This sentence contrasts a past feeling with a present one, so both halves matter: what you 'usta' feel, and how things stand now. Catch 'hate' or 'love', and 'early' or 'late', at each end.",
-            "textToSpeak": "I usta hate waking up early, but now I don't mind.",
+            "instruction": "Focus on the key detail hidden in the fast sentence.",
+            "hint": "Catch the full sentence, since reductions appear more than once.",
+            "explanation": "'Supposed to' and 'didn't' both reduce heavily here, stacking two elisions close together, so listen through the whole sentence carefully.",
+            "textToSpeak": "It was supposed to arrive today, but it didn't show up.",
             "options": [
-                "I usta hate waking up early, but now I love it.",
-                "I usta hate waking up early, but now I don't mind."
+                "It was supposed to arrive today, but it didn't show up.",
+                "It was supposed to arrive today, and it did show up."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L80_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch arrive versus leave, and sorted versus ready.",
-            "explanation": "'Arrive' and 'leave' are opposite moments for your guests, so that verb decides the urgency here. 'Sorted' and 'ready' are near-synonyms too, so listen for the exact word.",
-            "textToSpeak": "We're tryna get everything sorted before the guests arrive.",
+            "instruction": "Listen again — which version matches what was said?",
+            "hint": "Notice how much still comes through, even with sounds missing.",
+            "explanation": "By this level, elision should feel like a natural part of fast English — the content words still tell the whole story clearly.",
+            "textToSpeak": "I almost didn't recognize you with the new haircut.",
             "options": [
-                "We're tryna get everything sorted before the guests arrive.",
-                "We're tryna get most things sorted before the guests arrive."
+                "I almost recognized you with the new haircut.",
+                "I almost didn't recognize you with the new haircut."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         }

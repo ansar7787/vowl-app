@@ -6,542 +6,542 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L21_Q1",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "Think about what 'turn down' means and why they want it.",
-            "explanation": "'Turn that down' = reduce the volume. 'A bit' = slightly. The reason is 'trying to concentrate', which is difficult with loud noise. This is an indirect request: the speaker asks about the noise but wants quiet to focus.",
-            "textToSpeak": "Could you turn that down a bit? I'm trying to concentrate.",
-            "question": "What does the speaker really want?",
+            "instruction": "Listen closely and infer what is really happening.",
+            "hint": "Combine the clue about the calendar with the clue about the packed bag.",
+            "explanation": "A circled date on the calendar and a bag already packed near the door are two separate clues that together point to an upcoming trip on that date.",
+            "textToSpeak": "She circled a date on the calendar, then set her packed bag by the door a few days early.",
+            "question": "What can you infer?",
             "options": [
-                "The volume reduced",
-                "The TV turned up louder"
+                "She forgot about an appointment",
+                "She is preparing for a trip on that date"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference",
-            "emoji": "🎯",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "🗓️",
+            "literalMeaning": "She circled a date and packed a bag early.",
+            "impliedMeaning": "She is preparing for a trip on that date."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L21_Q2",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "Listen for what has been used up.",
-            "explanation": "'Used the last of it' = finished the supply. 'It' refers to coffee, which was mentioned in the question 'Have we got any more coffee?' The speaker is checking if more coffee is available because the current supply is gone.",
-            "textToSpeak": "Have we got any more coffee? I've just used the last of it.",
-            "question": "What is the speaker looking for?",
+            "instruction": "What does the situation suggest? Make your best guess.",
+            "hint": "Combine the clue about the missed bus with the clue about checking the time.",
+            "explanation": "Watching the bus pull away and then repeatedly checking the time are two clues that together suggest the person is now worried about being late.",
+            "textToSpeak": "He watched the bus pull away, then checked his watch three times in the next minute.",
+            "question": "What can you infer?",
             "options": [
-                "Milk",
-                "Coffee"
+                "He was hoping to miss the bus",
+                "He is now worried about being late"
             ],
             "correctAnswerIndex": 1,
             "subtype": "listeningInference",
-            "emoji": "☕",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "🚌",
+            "literalMeaning": "He watched the bus leave and checked his watch three times.",
+            "impliedMeaning": "He is worried about being late."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L21_Q3",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "Listen for the specific time phrase used.",
-            "explanation": "'First thing Monday morning' is an idiom meaning the very beginning of Monday (early morning, before other tasks). 'On my desk' specifies where it should be. This is a deadline instruction combining day and time-of-day.",
-            "textToSpeak": "I'm going to need that report on my desk first thing Monday morning.",
-            "question": "When does the person need the report?",
+            "instruction": "Use the clues to work out the meaning.",
+            "hint": "Combine the clue about the cold coffee with the clue about the unread messages.",
+            "explanation": "A now-cold cup of coffee and a phone full of unread messages both suggest that someone has been completely absorbed in work for a long stretch of time.",
+            "textToSpeak": "Her coffee had gone cold, and her phone showed twelve unread messages she hadn't noticed.",
+            "question": "What can you infer?",
             "options": [
-                "Friday afternoon",
-                "First thing Monday morning"
+                "She has been absorbed in work for a while",
+                "She just woke up from a nap"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
-            "emoji": "💼",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "☕",
+            "literalMeaning": "Her coffee was cold and she had many unread messages.",
+            "impliedMeaning": "She has been focused on something for a long time."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L22_Q1",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "Think about where you ask 'Is this seat taken?'",
-            "explanation": "'Is this seat taken?' = is someone sitting here? This question is typically asked on public transport, in cinemas, or other places where seats are limited. You wouldn't typically ask this in a library (silence) or hotel lobby (seats aren't assigned).",
-            "textToSpeak": "Excuse me, is this seat taken?",
-            "question": "Where is this conversation most likely happening?",
+            "instruction": "What can you infer from what you hear?",
+            "hint": "Combine the clue about the empty leash hook with the clue about the open gate.",
+            "explanation": "An empty hook where the leash usually hangs and an open gate together suggest that someone has taken the dog outside recently.",
+            "textToSpeak": "The leash hook by the door was empty, and the back gate stood slightly open.",
+            "question": "What can you infer?",
             "options": [
-                "On a bus or in a cinema",
-                "In a restaurant"
+                "Someone took the dog outside",
+                "The dog is sleeping in its bed"
             ],
             "correctAnswerIndex": 0,
             "subtype": "listeningInference",
-            "emoji": "💭",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "🐕",
+            "literalMeaning": "The leash hook was empty and the gate was open.",
+            "impliedMeaning": "Someone has taken the dog outside."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L22_Q2",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "Think about where someone asks about a table and reservations.",
-            "explanation": "'Table for two' = a table for two people to eat at. 'Do you have a reservation?' = have you booked in advance? Both questions together strongly suggest a restaurant. Hotels ask about bookings, not tables for dining parties.",
-            "textToSpeak": "Table for two? Do you have a reservation?",
-            "question": "Where are the speakers?",
+            "instruction": "Listen for the clues behind the words.",
+            "hint": "Combine the clue about the dimmed screen brightness with the clue about the low battery icon.",
+            "explanation": "A screen dimmed to save power along with a red low-battery icon together suggest that the phone is about to run out of charge.",
+            "textToSpeak": "The screen brightness had dropped on its own, and a red battery icon blinked in the corner.",
+            "question": "What can you infer?",
             "options": [
-                "A cinema",
-                "A restaurant"
+                "The phone was just fully charged",
+                "The phone is about to die"
             ],
             "correctAnswerIndex": 1,
             "subtype": "listeningInference",
-            "emoji": "📖",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "🔋",
+            "literalMeaning": "The screen dimmed and a red battery icon blinked.",
+            "impliedMeaning": "The phone is nearly out of battery."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L22_Q3",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "Think about where you 'try on' clothes and there are changing rooms.",
-            "explanation": "'Try it on' = put on a piece of clothing to see if it fits. 'Changing rooms' are cubicles in clothing shops for trying on clothes. This combination of vocabulary - trying on, changing rooms - clearly indicates a clothing shop/boutique.",
-            "textToSpeak": "Would you like to try it on? The changing rooms are on your left.",
-            "question": "Where does this most likely take place?",
+            "instruction": "What is most likely true here?",
+            "hint": "Combine the clue about the tangled cords with the clue about the half-built shelf.",
+            "explanation": "Tangled cords scattered on the floor next to a shelf that is only half assembled suggest a project that has been paused partway through.",
+            "textToSpeak": "Cords lay tangled across the floor, and the shelf stood only half assembled against the wall.",
+            "question": "What can you infer?",
             "options": [
-                "A clothing shop",
-                "A gym"
+                "A project was just finished",
+                "A project was paused partway through"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference",
-            "emoji": "🔍",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "🔧",
+            "literalMeaning": "Cords were tangled and the shelf was half built.",
+            "impliedMeaning": "A project has been paused partway through."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L23_Q1",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "Think about why someone takes aspirin and lies down.",
-            "explanation": "Taking aspirin suggests pain (headache, fever). Lying down after taking medicine suggests he wasn't feeling well. This is inference: two actions together (medicine + lying down) suggest illness. A healthy person wouldn't typically take aspirin and rest.",
-            "textToSpeak": "He took an aspirin and went to lie down.",
-            "question": "Why did he probably lie down?",
+            "instruction": "What is the speaker implying?",
+            "hint": "Combine the clue about the recipe card with the clue about the timer counting down.",
+            "explanation": "A recipe card propped against the wall and a timer counting down together suggest that a dish is currently in the oven.",
+            "textToSpeak": "A recipe card leaned against the wall, and the oven timer counted down from ten minutes.",
+            "question": "What can you infer?",
             "options": [
-                "He was bored",
-                "He was probably feeling unwell"
+                "Something is baking in the oven",
+                "The oven was just cleaned"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
-            "emoji": "🔦",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "🍞",
+            "literalMeaning": "A recipe card was out and the timer counted down.",
+            "impliedMeaning": "Something is currently baking in the oven."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L23_Q2",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "Think about why you look in the fridge before shopping.",
-            "explanation": "The sequence is: check fridge → write shopping list. The logical reason is to see what food is already there and what is needed. If you know what's in the fridge, you can write an accurate shopping list. This is logical cause-and-effect inference.",
-            "textToSpeak": "She checked the fridge before writing the shopping list.",
-            "question": "Why did she check the fridge?",
+            "instruction": "What does this situation point to?",
+            "hint": "Combine the clue about the crossed-out items on a to-do list with the clue about the clock.",
+            "explanation": "Several crossed-out items on a to-do list combined with a late hour on the clock suggest someone has been steadily working through tasks all day.",
+            "textToSpeak": "Half the items on her list were crossed out, and the clock on the wall already read nearly midnight.",
+            "question": "What can you infer?",
             "options": [
-                "To see what they needed to buy",
-                "To find something to eat quickly"
+                "She just started her list",
+                "She has been working through tasks all day"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference",
-            "emoji": "📊",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "📋",
+            "literalMeaning": "Half her list was crossed out and it was nearly midnight.",
+            "impliedMeaning": "She has been working on tasks for a long time."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L23_Q3",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "Think about why someone carries an umbrella when it's not raining.",
-            "explanation": "Taking an umbrella when it's not raining suggests anticipation of future rain. 'Even though it wasn't raining' sets up the contrast that requires inference - he was prepared for rain despite clear skies. This is forward-planning behaviour.",
-            "textToSpeak": "He took his umbrella even though it wasn't raining.",
-            "question": "Why did he take his umbrella?",
+            "instruction": "Read between the lines and choose the best answer.",
+            "hint": "Combine the clue about the muddy boots with the clue about the wet dog towel.",
+            "explanation": "Muddy boots left by the door along with a damp towel used for drying a dog together suggest a walk outside in wet or muddy conditions.",
+            "textToSpeak": "Muddy boots sat by the door next to a damp towel still smelling faintly of wet fur.",
+            "question": "What can you infer?",
             "options": [
-                "He borrowed it from someone",
-                "He expected it might rain"
+                "Someone walked the dog in wet conditions",
+                "Someone just gave the dog a bath indoors"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
-            "emoji": "☂️",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "🥾",
+            "literalMeaning": "Muddy boots and a damp towel were by the door.",
+            "impliedMeaning": "Someone walked the dog in muddy or wet weather."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L24_Q1",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "Think about what happens after you pack a suitcase.",
-            "explanation": "Packing a suitcase is a preparation for travel. The next logical step is to travel - go somewhere. 'Just finished packing' uses the present perfect to show a very recently completed action. The suitcase suggests a departure is imminent.",
-            "textToSpeak": "She's just finished packing her suitcase.",
-            "question": "What will she probably do next?",
+            "instruction": "Piece the clues together to find the real meaning.",
+            "hint": "Combine the clue about the dimmed restaurant lights with the clue about a small candle placed between two plates.",
+            "explanation": "Dim lighting and a single candle placed between only two plates together suggest a romantic dinner for two rather than a large gathering.",
+            "textToSpeak": "The lights were dim, and a single candle flickered between the two plates set at the small table.",
+            "question": "What can you infer?",
             "options": [
-                "Go on a trip",
-                "Go to sleep"
+                "This is a romantic dinner for two",
+                "This is a large family gathering"
             ],
             "correctAnswerIndex": 0,
             "subtype": "listeningInference",
-            "emoji": "🧳",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "🕯️",
+            "literalMeaning": "The lights were dim with a candle between two plates.",
+            "impliedMeaning": "This is likely a romantic dinner for two."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L24_Q2",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "Think about what you do when you can't decide from a menu.",
-            "explanation": "Reading the menu three times without deciding suggests he's overwhelmed. Asking the waiter is the most natural next step - waiters know the menu well and can recommend dishes. This is an inference about social behaviour in a restaurant.",
-            "textToSpeak": "He's read the menu three times and still can't decide.",
-            "question": "What will he probably do next?",
+            "instruction": "What's really going on? Trust the evidence.",
+            "hint": "Combine the clue about the stethoscope in the bag with the clue about the rushed steps down the hallway.",
+            "explanation": "A stethoscope glimpsed inside a bag along with hurried steps down a hospital hallway suggest a medical staff member responding to something urgent.",
+            "textToSpeak": "A stethoscope peeked out of her bag as she hurried down the hallway past the waiting room.",
+            "question": "What can you infer?",
             "options": [
-                "Ask the waiter for a recommendation",
-                "Call a friend for advice"
+                "She is responding to something urgent at work",
+                "She is leaving for vacation"
             ],
             "correctAnswerIndex": 0,
             "subtype": "listeningInference",
-            "emoji": "🍽️",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "🏥",
+            "literalMeaning": "A stethoscope was in her bag as she hurried down the hallway.",
+            "impliedMeaning": "She is likely responding to an urgent situation."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L24_Q3",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "Think about what running shoes and leg stretches prepare you for.",
-            "explanation": "Running shoes + leg stretching = preparation for running. These are actions that directly precede a run. 'About to' = on the verge of starting. The combination of equipment (shoes) and preparation (stretching) makes the inference very clear.",
-            "textToSpeak": "She put on her running shoes and stretched her legs.",
-            "question": "What is she about to do?",
+            "instruction": "Think it through — what do the clues add up to?",
+            "hint": "Combine the clue about the folded map with the clue about a circled hotel address.",
+            "explanation": "A folded paper map with one hotel address circled in pen suggests someone is planning to travel to an unfamiliar place.",
+            "textToSpeak": "A folded map lay open on the seat, one hotel address circled in blue pen.",
+            "question": "What can you infer?",
             "options": [
-                "Go for a run",
-                "Cook dinner"
+                "Someone is redecorating their home",
+                "Someone is traveling to an unfamiliar place"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference",
-            "emoji": "🏃",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "🗺️",
+            "literalMeaning": "A map was open with a hotel address circled.",
+            "impliedMeaning": "Someone is traveling somewhere unfamiliar."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L25_Q1",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "Listen for the type of seat the speaker always chooses.",
-            "explanation": "'Always choose the aisle seat' - stated explicitly. 'Hate feeling trapped' is the reason - a window or middle seat feels enclosed. The aisle seat allows easy access to the corridor. The speaker's preference and reason are both given.",
-            "textToSpeak": "I always choose the aisle seat on flights - I hate feeling trapped.",
-            "question": "What kind of seat does the speaker prefer?",
+            "instruction": "Listen closely and infer what is really happening.",
+            "hint": "Combine the clue about the silent classroom with the clue about pencils moving quickly.",
+            "explanation": "A completely silent classroom combined with pencils moving quickly across paper suggests students are taking a timed test.",
+            "textToSpeak": "The classroom stayed completely silent except for the scratch of pencils moving quickly across paper.",
+            "question": "What can you infer?",
             "options": [
-                "An aisle seat",
-                "A seat at the back"
+                "Students are having a group discussion",
+                "Students are taking a test"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference",
-            "emoji": "📜",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "✏️",
+            "literalMeaning": "The classroom was silent with pencils moving quickly.",
+            "impliedMeaning": "Students are likely taking a test."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L25_Q2",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "Think about what skipping dessert and having herbal tea suggests.",
-            "explanation": "Skipping dessert = choosing not to eat more. Herbal tea = a light, often low-calorie drink. Together, these suggest she's either full or watching what she eats, and doesn't want anything more. Inference from what she didn't choose is as important as what she did.",
-            "textToSpeak": "She skipped dessert and just had a herbal tea.",
-            "question": "What does this say about her?",
+            "instruction": "What does the situation suggest? Make your best guess.",
+            "hint": "Combine the clue about the flashing 'boarding' sign with the clue about people gathering their bags.",
+            "explanation": "A flashing boarding sign combined with passengers standing and gathering their bags suggests a flight is now boarding.",
+            "textToSpeak": "The sign flashed 'boarding,' and rows of passengers stood up, gathering their bags at once.",
+            "question": "What can you infer?",
             "options": [
-                "She was still very hungry",
-                "She doesn't want anything more to eat"
+                "The flight has just landed",
+                "The flight is now boarding"
             ],
             "correctAnswerIndex": 1,
             "subtype": "listeningInference",
-            "emoji": "🍵",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "🛫",
+            "literalMeaning": "The sign flashed 'boarding' and passengers stood up.",
+            "impliedMeaning": "The flight is currently boarding."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L25_Q3",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "Listen for the positive preference ('books a villa') and the contrast ('never a hotel').",
-            "explanation": "'Books a villa with a pool' = his preference. 'Never a hotel' = explicitly rejected alternative. 'Always/never' are strong frequency words that make preferences clear. A villa with a pool suggests he values space, privacy, and amenities.",
-            "textToSpeak": "He books a villa with a pool when they go on holiday - never a hotel.",
-            "question": "What does he prefer for holidays?",
+            "instruction": "Use the clues to work out the meaning.",
+            "hint": "Combine the clue about a half-drawn curtain with the clue about a suitcase in the corner of a hotel room.",
+            "explanation": "A half-drawn curtain and a suitcase set in the corner of an unfamiliar room suggest someone has recently arrived and is settling in.",
+            "textToSpeak": "The curtain was pulled back only halfway, and a suitcase sat unopened in the corner of the room.",
+            "question": "What can you infer?",
             "options": [
-                "Camping in nature",
-                "Renting a villa with a pool"
+                "Someone has just arrived and is settling in",
+                "Someone is about to check out"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
-            "emoji": "🏨",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "🧳",
+            "literalMeaning": "The curtain was half-drawn and a suitcase sat in the corner.",
+            "impliedMeaning": "Someone has recently arrived and is settling in."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L26_Q1",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "Think about what shaking hands typically indicate.",
-            "explanation": "Shaking hands is a physical symptom of nervousness or anxiety. Opening exam results is a high-stakes moment. The combination strongly suggests anxiety. Physical symptoms of emotion are valuable clues: shaking = nervous, smiling = happy, frowning = unhappy.",
-            "textToSpeak": "Her hands were shaking as she opened the exam results.",
-            "question": "How was she probably feeling?",
+            "instruction": "What can you infer from what you hear?",
+            "hint": "Combine the clue about a clean apron with the clue about knives lined up on the counter.",
+            "explanation": "A freshly tied clean apron along with knives neatly lined up on the counter suggest someone is preparing to cook, not that they have already finished.",
+            "textToSpeak": "He tied on a clean apron and lined up the knives carefully on the cutting board.",
+            "question": "What can you infer?",
             "options": [
-                "Nervous and anxious",
-                "Excited and completely calm"
+                "He is about to start cooking",
+                "He has just finished eating"
             ],
             "correctAnswerIndex": 0,
             "subtype": "listeningInference",
-            "emoji": "🏫",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "🔪",
+            "literalMeaning": "He tied on an apron and lined up knives.",
+            "impliedMeaning": "He is about to start cooking."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L26_Q2",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "Think about what slamming a door typically communicates.",
-            "explanation": "Slamming a door = a forceful, aggressive action typically caused by anger or frustration. In social contexts, door-slamming is culturally understood as a sign of anger. 'On his way out' suggests he was leaving after an argument or upsetting event.",
-            "textToSpeak": "He slammed the door on his way out.",
-            "question": "What does this suggest about his mood?",
+            "instruction": "Listen for the clues behind the words.",
+            "hint": "Combine the clue about a half-filled glass of water with the clue about pill bottles on the nightstand.",
+            "explanation": "A half-filled glass of water beside several pill bottles on a nightstand suggests someone is currently taking medication, possibly while unwell.",
+            "textToSpeak": "A glass of water sat half full next to two pill bottles on the nightstand.",
+            "question": "What can you infer?",
             "options": [
-                "He was angry",
-                "He was very happy"
+                "Someone is preparing a meal",
+                "Someone is currently taking medication"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference",
-            "emoji": "🎯",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "💊",
+            "literalMeaning": "A glass of water and pill bottles were on the nightstand.",
+            "impliedMeaning": "Someone is likely taking medication."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L26_Q3",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "Think about what these behaviours together suggest.",
-            "explanation": "Silence + pushing food around = lack of appetite and emotional distance. These two behaviours together suggest she's preoccupied or unwell, not simply disliking the food (which might cause her to say something) or being excited (which would show energy).",
-            "textToSpeak": "She didn't say much at dinner and just pushed her food around her plate.",
-            "question": "What can you infer about her?",
+            "instruction": "What is most likely true here?",
+            "hint": "Combine the clue about scattered flour on the counter with the clue about a birthday candle box nearby.",
+            "explanation": "Flour scattered across the counter along with a box of birthday candles nearby suggests someone is baking a birthday cake.",
+            "textToSpeak": "Flour dusted the counter, and an open box of birthday candles sat within reach.",
+            "question": "What can you infer?",
             "options": [
-                "She wasn't feeling her best",
-                "She didn't like the food"
+                "Someone is baking a birthday cake",
+                "Someone is cleaning the kitchen"
             ],
             "correctAnswerIndex": 0,
             "subtype": "listeningInference",
-            "emoji": "🍽️",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "🎂",
+            "literalMeaning": "Flour was on the counter with a box of birthday candles.",
+            "impliedMeaning": "Someone is likely baking a birthday cake."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L27_Q1",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "Think about why someone comments on tiredness and asks about sleep.",
-            "explanation": "Saying 'you look tired' + asking about sleep directly implies the person needs more sleep. The speaker is making an observation (tired appearance) and an implicit suggestion (sleep more). This is indirect advice through observation.",
-            "textToSpeak": "You look tired - when did you last get a proper night's sleep?",
-            "question": "What does the speaker mean?",
+            "instruction": "What is the speaker implying?",
+            "hint": "Combine the clue about a stack of unpaid bills with the clue about a calculator left open.",
+            "explanation": "A stack of bills next to an open calculator suggests someone is currently reviewing their finances or trying to budget.",
+            "textToSpeak": "A stack of bills sat beside the calculator, its screen still lit from the last calculation.",
+            "question": "What can you infer?",
             "options": [
-                "That the person needs more sleep",
-                "That the person should see a doctor"
+                "Someone is reviewing their finances",
+                "Someone just went shopping for fun"
             ],
             "correctAnswerIndex": 0,
             "subtype": "listeningInference",
-            "emoji": "😴",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "🧮",
+            "literalMeaning": "Bills sat next to a lit calculator screen.",
+            "impliedMeaning": "Someone is reviewing or calculating their finances."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L27_Q2",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "'It wouldn't hurt to call first' - what action is being suggested?",
-            "explanation": "'It wouldn't hurt to' = a gentle, indirect recommendation. 'Call her first' = phone before going. 'Make sure she's in' = verify she's at home. This is advice to check before going - to avoid wasted journeys. The phrasing is polite and non-directive.",
-            "textToSpeak": "It wouldn't hurt to call her first and make sure she's in.",
-            "question": "What is the speaker's suggestion?",
+            "instruction": "What does this situation point to?",
+            "hint": "Combine the clue about a helmet resting on a desk with the clue about muddy tire tracks near the door.",
+            "explanation": "A helmet left on the desk and muddy tire tracks leading to the door together suggest someone recently arrived by bike or motorcycle in wet conditions.",
+            "textToSpeak": "The helmet sat on the desk, and muddy tire tracks led straight from the door.",
+            "question": "What can you infer?",
             "options": [
-                "Phone before going to visit",
-                "Send a message instead of calling"
+                "Someone arrived recently by bike in wet conditions",
+                "Someone is about to leave for a swim"
             ],
             "correctAnswerIndex": 0,
             "subtype": "listeningInference",
-            "emoji": "📱",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "🏍️",
+            "literalMeaning": "A helmet was on the desk with muddy tire tracks by the door.",
+            "impliedMeaning": "Someone recently arrived by bike or motorcycle."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L27_Q3",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "Listen for what action is advised in the conditional.",
-            "explanation": "'If I were you, I'd...' is a classic advice structure (second conditional for advice). 'Get it fixed' = arrange a repair. 'Before it gets worse' = urgency - act now, not later. The speaker implies the problem will worsen without action.",
-            "textToSpeak": "If I were you, I'd get it fixed before it gets any worse.",
-            "question": "What is the speaker recommending?",
+            "instruction": "Read between the lines and choose the best answer.",
+            "hint": "Combine the clue about a stopwatch around someone's neck with the clue about a line of runners stretching.",
+            "explanation": "A stopwatch worn around the neck combined with runners stretching nearby suggests a coach preparing to time a race or practice.",
+            "textToSpeak": "The stopwatch hung around her neck as a line of runners stretched along the track.",
+            "question": "What can you infer about her role?",
             "options": [
-                "Waiting to see what happens",
-                "Getting it repaired soon"
+                "She is watching a movie",
+                "She is likely coaching or timing the runners"
             ],
             "correctAnswerIndex": 1,
             "subtype": "listeningInference",
-            "emoji": "📖",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "⏱️",
+            "literalMeaning": "A stopwatch hung around her neck near stretching runners.",
+            "impliedMeaning": "She is likely coaching or timing the runners."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L28_Q1",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "Notice the sarcastic tone - does 'fantastic' match the situation?",
-            "explanation": "This is sarcasm - 'fantastic' in a complaining tone about something unwanted. 'Another Monday morning meeting' implies there have been many already (repetition = annoyance). When spoken with a sigh or flat tone, 'fantastic' means the opposite of its literal meaning.",
-            "textToSpeak": "Oh, fantastic - another Monday morning meeting.",
-            "question": "What is the speaker's actual feeling about the meeting?",
+            "instruction": "Piece the clues together to find the real meaning.",
+            "hint": "Combine the clue about a torn wrapping paper on the floor with the clue about wide eyes and a big smile.",
+            "explanation": "Torn wrapping paper scattered on the floor along with wide eyes and a big smile suggest someone has just opened a gift they're excited about.",
+            "textToSpeak": "Wrapping paper lay torn on the floor as her eyes went wide and a huge smile spread across her face.",
+            "question": "What can you infer?",
             "options": [
-                "They are looking forward to it",
-                "They dislike Monday morning meetings"
+                "She just lost something valuable",
+                "She just opened a gift she loves"
             ],
             "correctAnswerIndex": 1,
             "subtype": "listeningInference",
-            "emoji": "💼",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "🎁",
+            "literalMeaning": "Torn paper was on the floor and she smiled widely.",
+            "impliedMeaning": "She just opened a gift she is excited about."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L28_Q2",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "Listen to what 'only' ironically suggests about frequency.",
-            "explanation": "'Only the third time this week' - used ironically. 'Only' normally minimises, but here it's sarcastic: being late three times in one week is clearly excessive. The emphasis is on the repetition of lateness, not on it being a small number.",
-            "textToSpeak": "That's only the third time this week he's been late.",
-            "question": "What is the core of the speaker's argument?",
+            "instruction": "What's really going on? Trust the evidence.",
+            "hint": "Combine the clue about a paused video call with the clue about someone rubbing their temples.",
+            "explanation": "A paused video call combined with someone rubbing their temples suggests a stressful or frustrating meeting.",
+            "textToSpeak": "The video call froze mid-sentence, and he rubbed his temples while waiting for it to reconnect.",
+            "question": "What can you infer?",
             "options": [
-                "He has been late several times this week",
-                "He was only late once"
+                "He is enjoying a relaxing break",
+                "He is frustrated by the technical problem"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference",
-            "emoji": "⏰",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "💻",
+            "literalMeaning": "The call froze and he rubbed his temples.",
+            "impliedMeaning": "He is frustrated by the interruption."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L28_Q3",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "Listen for the hesitation and understated evaluation.",
-            "explanation": "'I suppose', 'all right', and 'nothing special' together signal mediocrity. 'All right' = passable but not good. 'Nothing special' = not impressive. 'I suppose' adds hesitation. The speaker is damning with faint praise - technically positive but actually lukewarm.",
-            "textToSpeak": "Well, I suppose the food was all right - nothing special.",
-            "question": "How did the speaker feel about the food?",
+            "instruction": "Think it through — what do the clues add up to?",
+            "hint": "Combine the clue about a half-eaten dinner going cold with the clue about a phone lighting up nonstop.",
+            "explanation": "A dinner going cold untouched while a phone keeps lighting up with notifications suggests someone has been distracted by something on their phone.",
+            "textToSpeak": "Her dinner sat cooling, barely touched, as her phone kept lighting up again and again.",
+            "question": "What can you infer?",
             "options": [
-                "It was average - neither bad nor good",
-                "They hated it"
+                "She has been distracted by her phone",
+                "She already finished her meal"
             ],
             "correctAnswerIndex": 0,
             "subtype": "listeningInference",
-            "emoji": "📊",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "📲",
+            "literalMeaning": "Her dinner was cooling and her phone kept lighting up.",
+            "impliedMeaning": "She has been distracted by her phone."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L29_Q1",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "Think about what 'I'll think about it' typically signals in English.",
-            "explanation": "'I'll think about it' is often a polite way of declining without saying 'no' directly. It avoids confrontation while signalling reluctance. In English social norms, a definite 'yes' is stated directly; 'I'll think about it' usually means the answer is leaning towards no.",
-            "textToSpeak": "She said she'd think about it.",
-            "question": "What does this probably mean?",
+            "instruction": "Listen closely and infer what is really happening.",
+            "hint": "Combine the clue about a rolled-up yoga mat with the clue about a water bottle by the door.",
+            "explanation": "A rolled yoga mat and a full water bottle placed together by the door suggest someone is about to head to an exercise class.",
+            "textToSpeak": "The yoga mat was rolled up tight, and a full water bottle sat right beside it near the door.",
+            "question": "What can you infer?",
             "options": [
-                "She is very enthusiastic",
-                "She is probably going to say no"
+                "Someone is about to go to an exercise class",
+                "Someone just returned from a long trip"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
-            "emoji": "🧭",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "🧘",
+            "literalMeaning": "A rolled mat and full water bottle were by the door.",
+            "impliedMeaning": "Someone is preparing to exercise."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L29_Q2",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "Notice the pause before 'interesting' - what does that signal?",
-            "explanation": "The hesitation (signalled by '...') before 'interesting' indicates the speaker is choosing the word carefully. 'Interesting' used with hesitation is often a polite understatement for something unusual, confusing, or disappointing. A genuinely positive reaction would use 'excellent', 'brilliant', or 'impressive'.",
-            "textToSpeak": "The presentation was... interesting.",
-            "question": "What does the speaker really mean?",
+            "instruction": "What does the situation suggest? Make your best guess.",
+            "hint": "Combine the clue about a dimmed nursery lamp with the clue about a soft humming sound.",
+            "explanation": "A dimmed lamp in a nursery along with soft humming nearby suggests someone is trying to help a baby fall asleep.",
+            "textToSpeak": "The nursery lamp glowed low, and a soft hum drifted from the rocking chair in the corner.",
+            "question": "What can you infer?",
             "options": [
-                "The speaker was highly impressed",
-                "The speaker found it strange or disappointing"
+                "Someone is trying to help a baby sleep",
+                "Someone is throwing a loud party"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
-            "emoji": "💼",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "🍼",
+            "literalMeaning": "A dim lamp glowed and soft humming came from the chair.",
+            "impliedMeaning": "Someone is trying to get a baby to sleep."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L29_Q3",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "Analyse the qualified praise in this statement.",
-            "explanation": "'Not bad' = acceptable, not great. 'For a first attempt' acknowledges the newness and sets lower expectations. Together: it's a positive-ish assessment given the circumstances, but implicitly suggests improvement is expected. This is a classic backhanded or qualified compliment.",
-            "textToSpeak": "Not bad for a first attempt.",
-            "question": "What claim is the speaker making?",
+            "instruction": "Use the clues to work out the meaning.",
+            "hint": "Combine the clue about a folder marked 'urgent' with the clue about someone speed-walking down the hall.",
+            "explanation": "A folder marked 'urgent' being carried while someone hurries down the hallway suggests an important task needs attention right away.",
+            "textToSpeak": "She gripped a folder marked 'urgent' and half-jogged down the long office hallway.",
+            "question": "What can you infer?",
             "options": [
-                "The work was worse than expected",
-                "It's a reasonable start but there's room for improvement"
+                "She is heading out for lunch",
+                "Something important needs attention right away"
             ],
             "correctAnswerIndex": 1,
             "subtype": "listeningInference",
-            "emoji": "🧩",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "📁",
+            "literalMeaning": "She carried an 'urgent' folder while hurrying down the hall.",
+            "impliedMeaning": "Something important needs immediate attention."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L30_Q1",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "Think about who gives this type of instruction in real life.",
-            "explanation": "Telling someone to tidy their room and setting a curfew (be back by nine) are typical parental instructions to a child. A boss wouldn't tell an employee to tidy their room. A teacher wouldn't set a curfew. This is classic domestic, authoritative parenting language.",
-            "textToSpeak": "Don't forget to tidy your room before you go out, and be back by nine.",
-            "question": "What is the likely relationship between the speakers?",
+            "instruction": "What can you infer from what you hear?",
+            "hint": "Combine the clue about a receipt printing at the register with the clue about bags being handed across the counter.",
+            "explanation": "A receipt printing followed by bags being handed across the counter suggests a purchase has just been completed at a store.",
+            "textToSpeak": "The receipt printed with a soft whir, and the cashier slid two bags across the counter.",
+            "question": "What can you infer?",
             "options": [
-                "Two friends",
-                "Parent and child"
+                "The store just opened for the day",
+                "A purchase has just been completed"
             ],
             "correctAnswerIndex": 1,
             "subtype": "listeningInference",
-            "emoji": "💬",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "🧾",
+            "literalMeaning": "A receipt printed and bags were handed over.",
+            "impliedMeaning": "A purchase has just been completed."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L30_Q2",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "Who has the power to give someone a pay rise?",
-            "explanation": "Only someone in authority (a manager, employer) can give someone a pay rise. 'We've decided' = a management decision. 'Starting next month' = it will take effect. This is workplace communication from an employer to an employee.",
-            "textToSpeak": "We've decided to give you a pay rise starting next month.",
-            "question": "What connects these two speakers?",
+            "instruction": "Listen for the clues behind the words.",
+            "hint": "Combine the clue about a dimmed theater with the clue about the rustle of popcorn bags settling.",
+            "explanation": "Theater lights dimming while the rustle of popcorn bags settles suggests a movie is about to begin.",
+            "textToSpeak": "The theater lights dimmed, and the last rustle of popcorn bags settled into silence.",
+            "question": "What can you infer?",
             "options": [
-                "Customer and shop assistant",
-                "Manager and employee"
+                "The movie is about to start",
+                "The movie has just ended"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
-            "emoji": "💰",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "🍿",
+            "literalMeaning": "The lights dimmed and popcorn bags settled into silence.",
+            "impliedMeaning": "The movie is about to start."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L30_Q3",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "Think about when you ask for 'the bill' and from whom.",
-            "explanation": "'The bill' = the payment receipt for food and drinks at a restaurant. You ask for the bill from a waiter or waitress at the end of a meal. 'When you have a moment' is polite phrasing showing the speaker doesn't want to interrupt. This is classic restaurant end-of-meal language.",
-            "textToSpeak": "Could I get the bill when you have a moment?",
-            "question": "Who is the speaker talking to?",
+            "instruction": "What is most likely true here?",
+            "hint": "Combine the clue about a half-packed toolbox with the clue about a ladder leaning against the wall outside.",
+            "explanation": "A half-packed toolbox next to a ladder leaning outside suggests someone is in the middle of a repair job.",
+            "textToSpeak": "The toolbox sat half packed, and a ladder leaned against the outside wall near the gutter.",
+            "question": "What can you infer?",
             "options": [
-                "A librarian",
-                "A waiter"
+                "Someone just finished mowing the lawn",
+                "Someone is in the middle of a repair job"
             ],
             "correctAnswerIndex": 1,
             "subtype": "listeningInference",
-            "emoji": "⚖️",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "🪜",
+            "literalMeaning": "A half-packed toolbox and a ladder were outside.",
+            "impliedMeaning": "Someone is in the middle of a repair job."
         }
     ]
 }

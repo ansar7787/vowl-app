@@ -5,632 +5,662 @@
     "quests": [
         {
             "id": "LIS_AMBIENTID_L141_Q1",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Which place fits these sounds?",
             "interactionType": "choice",
-            "hint": "Listen for a faint rhythmic beep and a quiet confirmation.",
-            "explanation": "A faint, steady beep and a quiet confirmation it hasn't been lost are familiar sounds of maintaining contact across vast distances.",
-            "textToSpeak": "A faint, rhythmic beep repeats steadily on a screen as an operator quietly confirms the signal has not been lost.",
+            "hint": "Notice what's stacked, and how few people's sounds you can actually hear.",
+            "explanation": "Chairs stacked up, a floor being mopped, and one person quietly humming alone suggest a diner being closed and cleaned after hours, not one that's open.",
+            "textToSpeak": "A single overhead light hums over stacked chairs, a mop swishes in slow wide arcs across a floor still faintly sticky, and someone hums along quietly to a radio only they can hear.",
             "options": [
-                "Satellite Mission Control Room",
-                "Rocket Launch Control Room",
-                "Nuclear Power Plant Control Room",
-                "Deep Space Tracking Station"
+                "Late-Night Diner After Hours",
+                "Corner Diner Breakfast Counter",
+                "School Cafeteria",
+                "Casual Diner"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Diner being cleaned after closing",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "stacked chairs",
+                "mop",
+                "alone"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L141_Q2",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "What environment are you hearing?",
             "interactionType": "choice",
-            "hint": "Listen for a circled figure and rippling murmured disagreement.",
-            "explanation": "A circled figure sparking quiet disagreement around a table captures the weighty, understated tension of setting economic policy.",
-            "textToSpeak": "A single figure on a printed page is circled twice in red as murmured disagreement ripples quietly around a long, polished table.",
+            "hint": "Notice how much quieter and slower everything feels than during the day.",
+            "explanation": "Deliberately soft footsteps, a slower monitor rhythm, and a whispered check-in suggest the overnight hours of a hospital ward rather than a busy daytime shift.",
+            "textToSpeak": "Footsteps move deliberately soft down a dim corridor, a monitor beeps at a slower interval than it did earlier, and a nurse's voice drops to barely a whisper checking in on someone already asleep.",
             "options": [
-                "Central Bank Policy Meeting",
-                "Hedge Fund Trading Desk",
-                "Haute Couture Fitting Room",
-                "Corporate Earnings Call Studio"
+                "Overnight Hospital Ward",
+                "Hospital Ward",
+                "Hospital Admission Process",
+                "Emergency Room"
             ],
             "correctAnswerIndex": 0,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Hospital ward overnight shift",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "dim corridor",
+                "whisper",
+                "overnight"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L141_Q3",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Based on these sounds, where are you?",
             "interactionType": "choice",
-            "hint": "Listen for a smooth rehearsed line delivered to an empty room.",
-            "explanation": "A polished line delivered to an empty room and a microphone reflects the controlled, one-way nature of a broadcast financial update.",
-            "textToSpeak": "A rehearsed opening line is delivered smoothly to an empty room, aimed at a single microphone and a wall of silent monitors.",
+            "hint": "Notice how few machines are actually running compared to how many probably could be.",
+            "explanation": "One machine running alone, a distant radio for company, and a quiet solitary thermos break suggest a skeleton night shift rather than a full working factory floor.",
+            "textToSpeak": "A single machine hums on alone in a mostly silent building, a radio plays low from somewhere far off to keep one person company, and a thermos lid unscrews with a small pop in the quiet.",
             "options": [
-                "Hedge Fund Trading Desk",
-                "Central Bank Policy Meeting",
-                "Rare Book Auction Room",
-                "Corporate Earnings Call Studio"
+                "Factory Quality Control Station",
+                "Car Assembly Line",
+                "Night Shift at a Factory",
+                "Warehouse Shift Change"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Factory overnight shift",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "skeleton shift",
+                "alone",
+                "thermos"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L142_Q1",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Listen carefully. Where are you?",
             "interactionType": "choice",
-            "hint": "Listen for clattering tablets and a sharp instant rejection click.",
-            "explanation": "Tablets clattering along a line with instant automated rejection reflect the strict quality control used in large-scale production here.",
-            "textToSpeak": "Rows of tablets clatter steadily along a line as a sensor rejects one with a sharp click, sorting it aside instantly.",
+            "hint": "Notice what time of day is implied by the cold and the dark, not by any customer.",
+            "explanation": "Crates unloaded in the dark, tents set up with no customers yet, and a comment about early cold suggest a market being set up before dawn rather than one already open.",
+            "textToSpeak": "Crates thud down from a truck bed in the near dark, a tent pole clicks into place before any customer could possibly be awake, and someone's breath is visible in a comment about the early cold.",
             "options": [
-                "Pharmaceutical Manufacturing Floor",
-                "Particle Physics Research Lab",
-                "Forensic Autopsy Room",
-                "Forensic Crime Laboratory"
+                "Pre-Dawn Farmers Market Setup",
+                "Farmers Market",
+                "Freight Loading Dock",
+                "Night Market"
             ],
             "correctAnswerIndex": 0,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Farmers market pre-dawn setup",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "crates",
+                "before dawn",
+                "setup"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L142_Q2",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "What place does this soundscape suggest?",
             "interactionType": "choice",
-            "hint": "Listen for a steadying countdown voice and a room falling silent.",
-            "explanation": "A countdown voice steadying near zero, with the whole room falling silent, is the unmistakable tension of a launch's final seconds.",
-            "textToSpeak": "A countdown voice steadies as it reaches the final ten seconds, and a room that was murmuring falls completely silent.",
+            "hint": "Notice which lights are on, and why a register might be counted with no one else around.",
+            "explanation": "A vacuum in empty aisles, a private register count, and half the lights already off suggest a store being cleaned after closing rather than one still serving customers.",
+            "textToSpeak": "A vacuum drones steadily up and down empty aisles, a register drawer is counted twice in careful silence, and the lights over half the store have already been switched off to save power.",
             "options": [
-                "Rocket Launch Control Room",
-                "Satellite Mission Control Room",
-                "Nuclear Power Plant Control Room",
-                "Deep Space Tracking Station"
+                "Supermarket",
+                "Department Store",
+                "Store Cleaning After Hours",
+                "Warehouse Club Store"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Retail store cleaning after hours",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "vacuum",
+                "register count",
+                "lights off"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L142_Q3",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Which setting best matches what you hear?",
             "interactionType": "choice",
-            "hint": "Listen for a set-aside loupe and a line-by-line comparison.",
-            "explanation": "A diagram compared carefully against earlier filings is a classic sound of determining whether an idea is genuinely new.",
-            "textToSpeak": "A magnifying loupe is set aside as a diagram is compared line by line against a stack of earlier filed applications.",
+            "hint": "Notice how much the sound echoes, and how few other sounds compete with it.",
+            "explanation": "Echoing solitary footsteps, one creaking seat, and an announcement with barely anyone to hear it suggest a nearly empty late-night train car.",
+            "textToSpeak": "A single pair of footsteps echoes the length of an entire car, a seat creaks under just one person shifting to get comfortable, and an announcement plays to what sounds like almost no one at all.",
             "options": [
-                "Simultaneous Interpretation Booth",
-                "Military Strategy Briefing Room",
-                "Classified Document Archive",
-                "Patent Examination Office"
+                "Subway Turnstile Entry",
+                "Light Rail Tram Platform",
+                "Commuter Train Platform Morning Rush",
+                "Late Train Car Nearly Empty"
             ],
             "correctAnswerIndex": 3,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Nearly empty late-night train car",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "echo",
+                "nearly empty",
+                "solitary"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L143_Q1",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Where would you most likely hear this?",
             "interactionType": "choice",
-            "hint": "Listen for gloved hands turning a fragile page and a held-breath hush.",
-            "explanation": "Gloved hands turning a fragile page under a room's collective hush reflect the reverence given to a rare, valuable printed work.",
-            "textToSpeak": "White gloves turn a fragile page with exaggerated care as a hush falls over a room already holding its breath.",
+            "hint": "Notice what's being apologized for, and why the clock seems so loud.",
+            "explanation": "A restless wait, an unusually audible clock, and an apology about visiting hours ending suggest someone waiting past the normal hospital visiting window.",
+            "textToSpeak": "A chair creaks as someone shifts for the fifth or sixth time, a clock's second hand seems unusually loud in the quiet, and a nurse passing by says visiting hours ended a while ago in an apologetic tone.",
             "options": [
-                "Private Art Restoration Vault",
-                "Luxury Watch Repair Workshop",
-                "Rare Book Auction Room",
-                "Antiques Appraisal Roadshow"
+                "Emergency Room",
+                "Waiting Room After Visiting Hours",
+                "Hospital Waiting Room",
+                "Hospital Admission Process"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Hospital waiting room after visiting hours",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "restless",
+                "apologetic",
+                "past hours"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L143_Q2",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Listen to the scene. What is the setting?",
             "interactionType": "choice",
-            "hint": "Listen for a building hum and a countdown toward a collision.",
-            "explanation": "A building hum from a powering magnet and a countdown toward a collision are signature sounds of this kind of large-scale experiment.",
-            "textToSpeak": "A low hum builds steadily as a massive magnet powers up, and a countdown on a screen ticks toward the next collision.",
+            "hint": "Notice how deliberately every small sound is being avoided.",
+            "explanation": "An extremely careful page turn, a barely-moved chair, and an instantly silenced phone suggest someone working in an individual study carrel rather than a general reading area.",
+            "textToSpeak": "A page turns so carefully it barely makes a sound, a chair is adjusted an inch at a time to avoid any scrape, and a phone is silenced the instant it starts to vibrate.",
             "options": [
-                "Particle Physics Research Lab",
-                "Forensic Crime Laboratory",
-                "Forensic Autopsy Room",
-                "Pharmaceutical Manufacturing Floor"
+                "University Library",
+                "Library Reference Desk",
+                "Public Library",
+                "Quiet Study Carrel in Library"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Library individual study carrel",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "deliberately quiet",
+                "carrel",
+                "silenced"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L143_Q3",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Which place fits these sounds?",
             "interactionType": "choice",
-            "hint": "Listen for silently checked dials and a steady confirming alarm tone.",
-            "explanation": "Dials checked in silence with a steady confirming tone reflect the careful, calm monitoring required in this highly regulated setting.",
-            "textToSpeak": "A row of dials is checked in silence as a low, steady tone confirms every system remains well within range.",
+            "hint": "Notice how long the silence lasts after the one sound that does happen.",
+            "explanation": "A single bell followed by extended silence, unsynchronized breathing among many people, and near-total stillness suggest a formal silent meditation retreat.",
+            "textToSpeak": "A single bell rings once and then nothing follows for a very long time, dozens of people breathe in a loose, unsynchronized rhythm, and even a shifted cushion barely disturbs the stillness.",
             "options": [
-                "Rocket Launch Control Room",
-                "Nuclear Power Plant Control Room",
-                "Satellite Mission Control Room",
-                "Deep Space Tracking Station"
+                "Neighborhood Yoga Studio",
+                "Church Service",
+                "Support Group Meeting",
+                "Meditation Retreat Silent Session"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Silent meditation retreat session",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "stillness",
+                "unsynchronized breathing",
+                "extended silence"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L144_Q1",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "What environment are you hearing?",
             "interactionType": "choice",
-            "hint": "Listen for a hissing pressurized door and muffled protective footsteps.",
-            "explanation": "A hissing pressurized door and muffled footsteps in protective gear are signature sounds of entering a contamination-controlled space.",
-            "textToSpeak": "A door hisses as air pressure equalizes, and a gowned figure steps through, footsteps muffled by soft protective covers.",
+            "hint": "Notice what outside sound suddenly seems too loud, and why that would only happen in a very quiet room.",
+            "explanation": "A near-whispered voice, instructions to go heavy and still, and an outside sound suddenly seeming loud suggest the final relaxation pose at the end of a yoga class.",
+            "textToSpeak": "A teacher's voice drops to almost nothing, encouraging everyone to let their arms go heavy, and the room goes so still that a single distant car horn outside suddenly seems far too loud.",
             "options": [
-                "Forensic Autopsy Room",
-                "Pharmaceutical Manufacturing Floor",
-                "Biotech Research Cleanroom",
-                "Particle Physics Research Lab"
+                "Yoga Class Cool-Down (Savasana)",
+                "Meditation Retreat Silent Session",
+                "Yoga Studio",
+                "Physical Therapy Pool"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Yoga class final relaxation pose",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "heavy and still",
+                "near-whisper",
+                "cool-down"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L144_Q2",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Based on these sounds, where are you?",
             "interactionType": "choice",
-            "hint": "Listen for an instant unison reply the moment an order is called.",
-            "explanation": "An instant unison reply the moment an order is called reflects the disciplined communication expected in an elite professional kitchen.",
-            "textToSpeak": "A confirming reply echoes back instantly and in unison the moment an order is called out across the pass.",
+            "hint": "Notice the caller's voice, and what it suggests about the hour.",
+            "explanation": "A slower, warmer host tone, a caller who sounds just woken up, and longer pauses suggest a late-night radio call-in show rather than a daytime broadcast.",
+            "textToSpeak": "A host's voice takes on a warmer, slower tone than any daytime show would use, a caller's voice comes through a little rough, as if they'd just been woken up by their own phone, and the pauses between words feel longer than usual.",
             "options": [
-                "Forensic Crime Laboratory",
-                "Sommelier Cellar Tasting",
-                "Michelin-Star Restaurant Kitchen",
-                "Forensic Autopsy Room"
+                "Late Night Radio Call-In Show",
+                "Customer Service Call Center",
+                "Podcast Studio",
+                "Radio Station Booth"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Late-night radio call-in show",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "warmer tone",
+                "just woken up",
+                "longer pauses"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L144_Q3",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Listen carefully. Where are you?",
             "interactionType": "choice",
-            "hint": "Listen for avoided eye contact and a slowly read proposal.",
-            "explanation": "Careful avoided eye contact and a slowly read proposal capture the tension of negotiating between opposing sides.",
-            "textToSpeak": "Two delegations sit at a long table, carefully avoiding each other's eyes, as a mediator reads a proposal aloud slowly.",
+            "hint": "Notice how unhurried and routine the whole check-in sounds.",
+            "explanation": "A sweeping flashlight, softly jingling keys, and a bored routine radio check-in suggest a security guard's overnight patrol rather than any active workday.",
+            "textToSpeak": "A flashlight beam sweeps slowly across dark shelves, a set of keys jingles softly on a belt with each unhurried step, and a radio crackles once with a check-in that gets a simple, bored confirmation back.",
             "options": [
-                "Diplomatic Peace Summit",
-                "International Press Briefing Room",
-                "Simultaneous Interpretation Booth",
-                "Election Vote Tabulation Room"
+                "Warehouse Package Sorting Sequence",
+                "Storage Facility Front Office",
+                "Recycling Center",
+                "Overnight Security Guard Patrol"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Overnight security patrol",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "flashlight sweep",
+                "unhurried",
+                "routine check-in"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L145_Q1",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "What place does this soundscape suggest?",
             "interactionType": "choice",
-            "hint": "Listen for dozens of clicking shutters and an adjusted stack of papers.",
-            "explanation": "A burst of camera shutters as a spokesperson steps up is the unmistakable opening sound of a major public briefing.",
-            "textToSpeak": "Dozens of camera shutters click at once as a spokesperson steps up, adjusting a stack of papers before speaking.",
+            "hint": "Notice how many machines are actually running compared to how many are just sitting empty.",
+            "explanation": "One lone running machine, an unnoticed buzzing light, and someone dozing off suggest a nearly empty laundromat in the middle of the night.",
+            "textToSpeak": "Only one machine out of a whole row is actually running, a fluorescent light buzzes faintly overhead with no one nearby to notice, and someone dozes in a plastic chair with a phone still lit in their lap.",
             "options": [
-                "Diplomatic Peace Summit",
-                "Refugee Processing Center",
-                "International Press Briefing Room",
-                "Classified Document Archive"
+                "Late-Night Diner After Hours",
+                "Home Recording Setup",
+                "Laundromat",
+                "24-Hour Laundromat at 3am"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "24-hour laundromat in the middle of the night",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "dozing",
+                "one machine",
+                "fluorescent buzz"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L145_Q2",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Which setting best matches what you hear?",
             "interactionType": "choice",
-            "hint": "Listen for a steady hushed voice trailing just behind another speaker.",
-            "explanation": "A hushed voice trailing consistently behind another speaker through glass is the defining, unmistakable sound of real-time interpretation.",
-            "textToSpeak": "A voice speaks in a steady, hushed stream, always trailing a few words behind the speaker on the other side of the glass.",
+            "hint": "Notice how many lights are actually on, and who else seems to still be around.",
+            "explanation": "One remaining lit desk, unhurried typing, and a distant cleaning crew suggest one person working late in an otherwise empty office.",
+            "textToSpeak": "A single desk lamp is still on in an otherwise dark room, a keyboard clicks slowly with no urgency at all, and a distant vacuum cleaner hums somewhere down the hall where a cleaning crew has already started.",
             "options": [
-                "Simultaneous Interpretation Booth",
-                "Diplomatic Peace Summit",
-                "Election Vote Tabulation Room",
-                "Patent Examination Office"
+                "Coworking Space",
+                "Empty Office After Hours",
+                "IT Server Room",
+                "Open-Plan Office"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Office after most people have left",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "one lit desk",
+                "unhurried",
+                "cleaning crew"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L145_Q3",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Where would you most likely hear this?",
             "interactionType": "choice",
-            "hint": "Listen for a gently repeated translated question and a slowly filled form.",
-            "explanation": "A calmly repeated translated question and a form completed carefully reflect the patient, procedural nature of this kind of intake process.",
-            "textToSpeak": "A translator's calm voice repeats a question gently in a second language as a form is filled out slowly, line by line.",
+            "hint": "Listen for which direction the door gets locked or unlocked from.",
+            "explanation": "Chairs being set down, beans measured before full lighting, and a door locked from the inside suggest a caf\u00e9 being prepared before it opens, not one already serving customers.",
+            "textToSpeak": "A chair leg scrapes as it's turned right-side up from the counter, a bag of beans is measured out in the near-dark before the lights are even fully on, and a key turns in the front door lock from the inside, not the outside.",
             "options": [
-                "International Press Briefing Room",
-                "Refugee Processing Center",
-                "Patent Examination Office",
-                "Classified Document Archive"
+                "Coffee Counter Order Pickup",
+                "Quiet Coffee Shop Before Opening",
+                "Caf\u00e9",
+                "Coffee Roastery"
             ],
             "correctAnswerIndex": 1,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Caf\u00e9 being prepared before opening",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "before opening",
+                "right-side up",
+                "locked from inside"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L146_Q1",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Listen to the scene. What is the setting?",
             "interactionType": "choice",
-            "hint": "Listen for an enlarged monitor and a low whistle at an unexpected move.",
-            "explanation": "A monitor suddenly enlarged and a low whistle at an unexpected market move reflect the constant, quiet vigilance of managing large positions.",
-            "textToSpeak": "A single monitor is enlarged abruptly as a low whistle escapes someone's lips, watching a position move further than expected.",
+            "hint": "Notice how the footsteps echo, and what 'clear' seems to mean here.",
+            "explanation": "Sections being switched off one by one, unusually echoing footsteps, and a wing confirmed clear over a radio suggest a museum being closed up for the night.",
+            "textToSpeak": "A set of keys jingles as a gallery light switches off one section at a time, footsteps echo far more than they would with any crowd around, and a walkie-talkie crackles with a simple confirmation that the east wing is clear.",
             "options": [
-                "Corporate Earnings Call Studio",
-                "Hedge Fund Trading Desk",
-                "Central Bank Policy Meeting",
-                "Diplomatic Peace Summit"
+                "Art Class",
+                "Historical Reenactment",
+                "Museum After Closing",
+                "Museum Gallery"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Museum being closed for the night",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "section by section",
+                "echo",
+                "wing clear"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L146_Q2",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Which place fits these sounds?",
             "interactionType": "choice",
-            "hint": "Listen for a groaning rotating dish and a crackling signal decoded.",
-            "explanation": "A rotating dish and a faint signal turned into readable data are signature sounds of listening for a distant spacecraft.",
-            "textToSpeak": "A dish rotates with a low mechanical groan as a faint, crackling signal is slowly pulled apart into readable data.",
+            "hint": "Notice how many seats are empty, and how flat the microphone test sounds compared to an actual game.",
+            "explanation": "One set of footsteps among thousands of empty seats, a field being watered, and a flat mic test suggest a stadium being prepared hours before any actual game.",
+            "textToSpeak": "A single set of footsteps taps across rows of thousands of empty seats, a sprinkler system hisses to life over a perfectly striped field, and a distant voice tests a microphone with one flat, unenthusiastic word.",
             "options": [
-                "Satellite Mission Control Room",
-                "Deep Space Tracking Station",
-                "Rocket Launch Control Room",
-                "Nuclear Power Plant Control Room"
+                "Empty Stadium Before a Game",
+                "Professional Sports Stadium",
+                "Race Finish Area",
+                "Outdoor Concert"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Empty stadium hours before a game",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "empty seats",
+                "striped field",
+                "mic test"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L146_Q3",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "What environment are you hearing?",
             "interactionType": "choice",
-            "hint": "Listen for brushed fine powder revealing a faint pattern.",
-            "explanation": "Fine powder brushed carefully to reveal a faint pattern is a classic method used here to recover hidden evidence.",
-            "textToSpeak": "A fine powder is brushed carefully across a smooth surface as a faint pattern begins to emerge beneath a bright lamp.",
+            "hint": "Notice how much of the theater is actually lit, and why.",
+            "explanation": "One work light on an empty stage, quiet backstage repairs, and a single observer in the back suggest a theater during off-hours rather than an actual performance.",
+            "textToSpeak": "A single work light glows on an otherwise dark stage, a hammer taps somewhere unseen in the wings fixing something for tomorrow, and a chair in the very back row creaks under someone just watching quietly.",
             "options": [
-                "Biotech Research Cleanroom",
-                "Forensic Crime Laboratory",
-                "Pharmaceutical Manufacturing Floor",
-                "Forensic Autopsy Room"
+                "Movie Theater Screening Room",
+                "Community Theater Rehearsal",
+                "Empty Theater During Off-Hours",
+                "Backstage Before a Play"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Theater during off-hours maintenance",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "work light",
+                "off-hours",
+                "back row"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L147_Q1",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Based on these sounds, where are you?",
             "interactionType": "choice",
-            "hint": "Listen for a clicked-on recorder and calm dictated observations.",
-            "explanation": "A recorder capturing calm, methodical observations aloud is characteristic of documenting findings precisely in this setting.",
-            "textToSpeak": "A recorder clicks on as a calm, clinical voice begins dictating a series of careful, methodical observations aloud.",
+            "hint": "Notice how many people you can actually hear besides the one jogger.",
+            "explanation": "Waves with no other voices, a shuttered stand's creaking sign, and a lone jogger fading into silence suggest a beach town emptied out for the off-season.",
+            "textToSpeak": "Waves roll in against a stretch of sand with not another voice in earshot, a shuttered ice cream stand's sign creaks loosely on one remaining hinge, and a single jogger's footsteps fade into the distance without another soul in sight.",
             "options": [
-                "Pharmaceutical Manufacturing Floor",
-                "Biotech Research Cleanroom",
-                "Forensic Autopsy Room",
-                "Forensic Crime Laboratory"
+                "Ferry Terminal",
+                "Off-Season Beach Town",
+                "Beach Boardwalk",
+                "Backyard Pool Party"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Beach town during the off-season",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "shuttered",
+                "off-season",
+                "not another soul"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L147_Q2",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Listen carefully. Where are you?",
             "interactionType": "choice",
-            "hint": "Listen for a tapping pointer on a wall map and focused silence.",
-            "explanation": "A pointer tapping across a wall map before a silent, focused room reflects the formal structure of a strategic briefing.",
-            "textToSpeak": "A pointer taps steadily across a large wall map as a room of officers listens in complete, focused silence.",
+            "hint": "Notice the comment about the road, and what it implies about getting anywhere.",
+            "explanation": "A fire as the dominant sound, snow pressing against a window, and a comment about the unplowed road suggest a cabin cut off by snow rather than a normal getaway.",
+            "textToSpeak": "A fire crackles steadily as the only real sound for a long stretch, a window creaks under a soft build-up of snow leaning against it, and someone finally says out loud that the road probably won't be plowed until tomorrow.",
             "options": [
-                "Classified Document Archive",
-                "Refugee Processing Center",
-                "Simultaneous Interpretation Booth",
-                "Military Strategy Briefing Room"
+                "Home Alarm System Installation",
+                "Campsite",
+                "Ski Resort Lodge",
+                "Winter Cabin Snowed In"
             ],
             "correctAnswerIndex": 3,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Cabin snowed in for the winter",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "snowed in",
+                "unplowed",
+                "fire crackling"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L147_Q3",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "What place does this soundscape suggest?",
             "interactionType": "choice",
-            "hint": "Listen for small deliberate climbing numbers and two unwavering bidders.",
-            "explanation": "Numbers climbing in small, deliberate steps between two unwavering bidders capture a tense standoff over a coveted item.",
-            "textToSpeak": "A number climbs in small, deliberate steps as two determined bidders refuse to look away from each other.",
+            "hint": "Notice how still and unanswered everything is.",
+            "explanation": "A single soft cast, rising morning mist, and an unanswered distant bird call suggest a solitary early morning fishing spot rather than any busier outdoor setting.",
+            "textToSpeak": "A reel clicks softly just once as a line is cast out over still water, mist rises visibly off the surface in the cold morning air, and a distant bird calls out to absolutely no reply.",
             "options": [
-                "Luxury Watch Repair Workshop",
-                "Private Art Restoration Vault",
-                "Haute Couture Fitting Room",
-                "Rare Book Auction Room"
+                "Community Pool Lifeguard Training",
+                "Quiet Fishing Spot at Dawn",
+                "Ferry Terminal",
+                "Campsite"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Quiet dawn fishing spot",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "cast",
+                "mist",
+                "solitary"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L148_Q1",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Which setting best matches what you hear?",
             "interactionType": "choice",
-            "hint": "Listen for many raised hands and a single called name.",
-            "explanation": "Many hands rising at once for a chance to ask a question is a familiar, competitive sound of this kind of briefing.",
-            "textToSpeak": "A dozen hands rise at once the moment a pause for questions begins, and one name is finally called out.",
+            "hint": "Notice how far away that siren sounds, and what that tells you about the height and quiet of this place.",
+            "explanation": "An early mat unroll before traffic, an easily carrying voice, and a distant-sounding siren suggest an elevated rooftop practice in the quiet early morning.",
+            "textToSpeak": "A mat unrolls with a soft slap against cool concrete well before any traffic noise has picked up for the day, a teacher's voice carries easily in the still morning air, and a distant siren from several streets over feels oddly far away.",
             "options": [
-                "Diplomatic Peace Summit",
-                "Patent Examination Office",
-                "International Press Briefing Room",
-                "Simultaneous Interpretation Booth"
+                "Yoga Class Cool-Down (Savasana)",
+                "Botanical Garden",
+                "Yoga Studio",
+                "Sunrise Yoga on a Rooftop"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Rooftop yoga session at sunrise",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "rooftop",
+                "before traffic",
+                "carries easily"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L148_Q2",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Where would you most likely hear this?",
             "interactionType": "choice",
-            "hint": "Listen for a rising centrifuge whine settling into a steady hum.",
-            "explanation": "A centrifuge's rising whine settling into a steady hum is a classic sound of separating a sample by density.",
-            "textToSpeak": "A centrifuge spins up with a rising whine before settling into a steady hum, separating a sample into distinct layers.",
+            "hint": "Notice who's actually in the room, and what they're preparing for someone else.",
+            "explanation": "Precisely placed clipboards, a repeatedly straightened chair, and an adjusted centerpiece with no audience yet suggest a room being set up before a silent auction begins.",
+            "textToSpeak": "A clipboard is placed beside each item with careful precision, a chair is straightened for what must be the third time, and a florist quietly adjusts a centerpiece with no one there yet to appreciate it.",
             "options": [
-                "Forensic Crime Laboratory",
-                "Biotech Research Cleanroom",
-                "Particle Physics Research Lab",
-                "Pharmaceutical Manufacturing Floor"
+                "Wedding Reception",
+                "Silent Auction Room Setup",
+                "Charity Silent Auction",
+                "Awards Banquet"
             ],
             "correctAnswerIndex": 1,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Silent auction room being set up",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "precision",
+                "straightened",
+                "no one there yet"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L148_Q3",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Listen to the scene. What is the setting?",
             "interactionType": "choice",
-            "hint": "Listen for tweezers placing one precise herb before a final inspection.",
-            "explanation": "A single herb placed with tweezers before a final inspection reflects the exacting attention to detail expected at this level of cooking.",
-            "textToSpeak": "Tweezers place a single herb with exaggerated precision as a dish is inspected once more before it leaves the pass.",
+            "hint": "Notice who's actually sitting in the pews right now.",
+            "explanation": "A vacuum in empty pews, a straightened hymnal, and light falling on empty seats suggest a church between services rather than one holding a service.",
+            "textToSpeak": "A vacuum hums faintly somewhere near the back pews, a hymnal is straightened back into its holder after being left askew, and light falls through stained glass onto rows of seats with no one sitting in them.",
             "options": [
-                "Michelin-Star Restaurant Kitchen",
-                "Rocket Launch Control Room",
-                "Biotech Research Cleanroom",
-                "Sommelier Cellar Tasting"
+                "Church Service",
+                "Funeral Home Visitation",
+                "Church Empty Between Services",
+                "Wedding Ceremony Processional"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Church between services",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "empty pews",
+                "straightened",
+                "between services"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L149_Q1",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Which place fits these sounds?",
             "interactionType": "choice",
-            "hint": "Listen for silently flipped notes and a smoothly rendered phrase.",
-            "explanation": "Notes flipped silently while a difficult phrase is rendered smoothly reflects the intense concentration required for this kind of work.",
-            "textToSpeak": "A page of notes is flipped silently as a difficult phrase is rendered smoothly into another language without missing a beat.",
+            "hint": "Notice what's moving even though nobody seems to be there to move it.",
+            "explanation": "A self-swaying swing, one passerby's footsteps, and a streetlight switching on at dusk suggest an empty playground rather than one full of children.",
+            "textToSpeak": "A swing sways slightly on its own in a light breeze with no one pushing it, gravel crunches under just one set of footsteps passing through on their way somewhere else, and a streetlight flickers on as the last bit of daylight fades.",
             "options": [
-                "Classified Document Archive",
-                "Patent Examination Office",
-                "International Press Briefing Room",
-                "Simultaneous Interpretation Booth"
+                "Empty Playground at Dusk",
+                "Neighborhood Park",
+                "Neighborhood Block Party",
+                "Playground"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Empty playground at dusk",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "on its own",
+                "passerby",
+                "dusk"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L149_Q2",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "What environment are you hearing?",
             "interactionType": "choice",
-            "hint": "Listen for a measured voice reading a carefully worded statement.",
-            "explanation": "A carefully worded statement read in a measured voice reflects how every phrase in this setting is chosen to avoid shaking financial markets.",
-            "textToSpeak": "A chairperson's measured voice reads a carefully worded statement aloud, each phrase clearly chosen to avoid unsettling the markets.",
+            "hint": "Notice what's being ignored even though it's clearly ready.",
+            "explanation": "A repeatedly checked phone, restless shifting, and a forgotten, finished kettle suggest someone anxiously waiting at home for important news.",
+            "textToSpeak": "A phone is checked for the third time in five minutes though nothing has changed, a chair creaks as someone shifts from sitting to standing and back again, and a kettle that finished boiling minutes ago sits forgotten and untouched.",
             "options": [
-                "Rare Book Auction Room",
-                "Central Bank Policy Meeting",
-                "Hedge Fund Trading Desk",
-                "Corporate Earnings Call Studio"
+                "Home Office During a Video Call",
+                "First Day at a New Job",
+                "Waiting for a Job Offer Call at Home",
+                "Job Interview Waiting Area"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Waiting anxiously at home for a call",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "checked again",
+                "restless",
+                "forgotten kettle"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L149_Q3",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Based on these sounds, where are you?",
             "interactionType": "choice",
-            "hint": "Listen for a firmly closed folder and a plainly stated conclusion.",
-            "explanation": "A folder closed firmly alongside a plainly stated conclusion reflects the decisive tone of finalizing a formal plan.",
-            "textToSpeak": "A folder marked with a bold cover is closed firmly as a voice states plainly that the plan is now final.",
+            "hint": "Notice the time implied by the drink, and what's happening elsewhere that this person isn't part of.",
+            "explanation": "A late-night highlighter, a post-midnight energy drink, and distant party bass someone isn't attending suggest solitary late-night studying in a dorm room.",
+            "textToSpeak": "A highlighter squeaks faintly across a page in an otherwise silent room, an energy drink can cracks open with a small hiss well past midnight, and muffled bass from someone else's party leaks faintly through a wall two rooms over.",
             "options": [
-                "Election Vote Tabulation Room",
-                "Diplomatic Peace Summit",
-                "Patent Examination Office",
-                "Military Strategy Briefing Room"
+                "University Library",
+                "Late-Night Solo Dorm Studying",
+                "University Dorm Room",
+                "Study Abroad Info Session"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Solitary late-night studying in a dorm room",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "highlighter",
+                "past midnight",
+                "muffled bass"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L150_Q1",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Listen carefully. Where are you?",
             "interactionType": "choice",
-            "hint": "Listen for a quiet cheer at an unexpected spike on a screen.",
-            "explanation": "A quiet cheer at an unexpected spike on a graph captures the excitement of an unusual result during a physics experiment.",
-            "textToSpeak": "A quiet cheer breaks out as a graph on a screen spikes unexpectedly, and several researchers lean in at once.",
+            "hint": "Notice what almost got caught by the mute button, and the apology that follows.",
+            "explanation": "A late mute click, an apology for background noise, and an audible laptop fan during a pause suggest a home office during a video call rather than an in-person meeting.",
+            "textToSpeak": "A mute button clicks on a half second too late to catch a dog barking in the background, someone apologizes quietly for the noise before continuing where they left off, and a laptop fan spins up audibly during an awkward pause in the conversation.",
             "options": [
-                "Pharmaceutical Manufacturing Floor",
-                "Forensic Autopsy Room",
-                "Particle Physics Research Lab",
-                "Biotech Research Cleanroom"
+                "Corporate Meeting Room",
+                "Home Office During a Video Call",
+                "New Employee Training Session",
+                "Open-Plan Office"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Home office during a video call",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "mute button",
+                "apologize",
+                "laptop fan"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L150_Q2",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "What place does this soundscape suggest?",
             "interactionType": "choice",
-            "hint": "Listen for a tense silence broken by a calmly confirmed signal.",
-            "explanation": "A tense silence broken by a calmly confirmed signal reflects the high-stakes waiting involved in tracking a distant spacecraft.",
-            "textToSpeak": "A faint signal is confirmed after a long, tense silence, and a single calm word is spoken quietly into a headset.",
+            "hint": "Notice how long that photo album seems to have been sitting untouched.",
+            "explanation": "A noticeably loud old clock, a repeatedly requested family recipe, and a long-undisturbed photo album suggest a familiar, unhurried visit to a grandparent's house.",
+            "textToSpeak": "A clock ticks noticeably louder than any clock really should, a familiar recipe gets requested for what must be the hundredth time, and a photo album is pulled down from a shelf that hasn't moved in years.",
             "options": [
-                "Deep Space Tracking Station",
-                "Nuclear Power Plant Control Room",
-                "Rocket Launch Control Room",
-                "Satellite Mission Control Room"
+                "Retirement Home Common Room",
+                "Housewarming Party",
+                "Family Dinner Table Conversation",
+                "Grandparent's House Sunday Visit"
             ],
             "correctAnswerIndex": 3,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Sunday visit to a grandparent's house",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "loud clock",
+                "hundredth time",
+                "untouched shelf"
             ]
         },
         {
             "id": "LIS_AMBIENTID_L150_Q3",
-            "instruction": "Close your eyes. Where are these sounds coming from?",
+            "instruction": "Which setting best matches what you hear?",
             "interactionType": "choice",
-            "hint": "Listen for two independently verified readings before a signed log.",
-            "explanation": "Two operators independently confirming the same reading before signing off reflects the strict double-checking required in this environment.",
-            "textToSpeak": "Two operators independently verify the same reading aloud before either is willing to sign off on the log.",
+            "hint": "Notice how the familiar joke lands this time, differently than it probably usually does.",
+            "explanation": "A mid-sentence pause, a familiar joke met with a groan instead of a laugh, and an early chair push-back suggest ordinary, slightly tense family dinner dynamics.",
+            "textToSpeak": "A fork sets down mid-sentence as someone makes a point they clearly feel strongly about, a sibling interrupts with a familiar joke that gets a groan rather than a laugh this time, and a chair gets pushed back before dessert is even mentioned.",
             "options": [
-                "Satellite Mission Control Room",
-                "Nuclear Power Plant Control Room",
-                "Deep Space Tracking Station",
-                "Rocket Launch Control Room"
+                "Wedding Reception",
+                "Casual Diner",
+                "Family Dinner Table Conversation",
+                "Grandparent's House Sunday Visit"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "subtype": "ambientId",
-            "locationContext": "Background location.",
+            "locationContext": "Family dinner table conversation",
             "vocabularyWords": [
-                "ambient",
-                "noise"
+                "mid-sentence",
+                "familiar joke",
+                "push back"
             ]
         }
     ]

@@ -6,542 +6,542 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L151_Q1",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "What does 'committed to continuous improvement' implicitly acknowledge?",
-            "explanation": "Being 'committed to improvement' implicitly acknowledges that improvement is needed - you can't improve something that's already perfect. 'Continuous' = this is an ongoing effort, not a one-time fix. Despite positive framing, this statement concedes imperfection. It's corporate language for 'we're not there yet'.",
-            "textToSpeak": "We are committed to continuous improvement in all aspects of our service delivery.",
-            "question": "What is the underlying message?",
+            "instruction": "What is the speaker implying?",
+            "hint": "Consider the full context: budget cuts announced, then the same department losing two people, then remaining staff covering extra duties.",
+            "explanation": "Budget cuts, followed by two people leaving a department, followed by remaining staff picking up extra tasks, together paint a picture of a team being stretched thin after losing resources.",
+            "textToSpeak": "After the budget cuts were announced, two people left the design department, and the rest of the team started covering their old duties on top of their own.",
+            "question": "What does this situation suggest about the team?",
             "options": [
-                "The company has already improved everything",
-                "The company acknowledges there is room for improvement"
+                "The remaining team is stretched thin",
+                "The team has more resources than before"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
-            "emoji": "📱",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "📉",
+            "literalMeaning": "Budget cuts led to departures and extra duties for remaining staff.",
+            "impliedMeaning": "The remaining team is now stretched thin covering extra work."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L151_Q2",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "What do 'opportunities for enhancement' mean in corporate language?",
-            "explanation": "'Opportunities for enhancement' = problems or weaknesses, framed positively. 'Enhancement' = improvement. 'Identified' = the review found these issues. Together, in plain language: the review found things wrong with the onboarding process that need fixing. Corporate language often reframes problems as opportunities.",
-            "textToSpeak": "The review identified several opportunities for enhancement in the onboarding process.",
-            "question": "In plain language, what does this mean?",
+            "instruction": "What does this situation point to?",
+            "hint": "Consider the full context: a new manager arriving, several policies changing quickly, and longtime employees exchanging quiet glances.",
+            "explanation": "A new manager making rapid changes, combined with longtime employees exchanging quiet, uneasy glances, suggests some unease about the pace or direction of the changes.",
+            "textToSpeak": "The new manager changed three policies in her first two weeks, and longtime employees kept exchanging quiet glances during the announcements.",
+            "question": "What does this situation suggest?",
             "options": [
-                "There are weaknesses in onboarding that should be fixed",
-                "The onboarding process is excellent"
+                "Some employees feel uneasy about the changes",
+                "All employees are thrilled about the changes"
             ],
             "correctAnswerIndex": 0,
             "subtype": "listeningInference",
-            "emoji": "🔦",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "👀",
+            "literalMeaning": "A new manager made rapid changes and employees exchanged quiet glances.",
+            "impliedMeaning": "Some employees likely feel uneasy about the pace of change."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L151_Q3",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "What does 'proactive approach to addressing concerns' claim about their response?",
-            "explanation": "'Value feedback' = we appreciate being told about problems. 'Proactive approach to addressing concerns' = we act on problems, not just listen. This is customer service language claiming active engagement. Whether this matches reality varies, but the communication function is: we're responsive and action-oriented with complaints.",
-            "textToSpeak": "We value all feedback and take a proactive approach to addressing concerns.",
-            "question": "What is the company communicating?",
+            "instruction": "Read between the lines and choose the best answer.",
+            "hint": "Consider the full context: a company announcing record profits while simultaneously freezing all hiring.",
+            "explanation": "Announcing record profits while freezing hiring at the same time suggests the company may be cautious about the future despite current success, rather than fully confident.",
+            "textToSpeak": "The company announced record profits this quarter, but at the same meeting, they also announced a freeze on all new hiring.",
+            "question": "What does this combination suggest?",
             "options": [
-                "They receive very few complaints",
-                "They listen to and respond to complaints"
+                "The company plans to expand rapidly soon",
+                "The company may be cautious despite current success"
             ],
             "correctAnswerIndex": 1,
             "subtype": "listeningInference",
-            "emoji": "🤔",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "🏢",
+            "literalMeaning": "Record profits were announced alongside a hiring freeze.",
+            "impliedMeaning": "The company may be cautious about the future despite its current success."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L152_Q1",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "What does 'trust' + 'tragic' together imply about the outcome?",
-            "explanation": "Linking trust with tragedy implies the trust was betrayed or exploited. 'That was what made it tragic' = the trust is identified as the cause of the tragedy. The narrator's positive quality (trust) became the vehicle for their downfall - a classic tragic structure where a strength becomes a fatal flaw.",
-            "textToSpeak": "The narrator trusted everyone - and that was what made the story so tragic.",
-            "question": "What does this remark reveal?",
+            "instruction": "Piece the clues together to find the real meaning.",
+            "hint": "Consider the full context: a student's grades slipping, missed classes increasing, and a part-time job schedule expanding at the same time.",
+            "explanation": "Slipping grades and missed classes appearing at the same time a part-time job schedule expands suggests the added work hours may be affecting the student's ability to keep up with school.",
+            "textToSpeak": "Her grades had started slipping, she'd missed several classes, and around the same time, her part-time job had increased her hours significantly.",
+            "question": "What does this combination most likely suggest?",
             "options": [
-                "The story has a happy ending",
-                "The narrator's trust led to negative consequences"
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "listeningInference",
-            "emoji": "🧩",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L152_Q2",
-            "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "What does forgiving others but not oneself reveal about self-perception?",
-            "explanation": "Forgiving others but not yourself = stricter personal standards than interpersonal ones. She can release others from responsibility but cannot do the same for herself. This reveals deep self-criticism, guilt, or a sense that she should have known or done better - a character insight about inner severity.",
-            "textToSpeak": "By the end, she had forgiven everyone except herself.",
-            "question": "What does this say about her character?",
-            "options": [
-                "She holds herself to a higher standard than she applies to others",
-                "She forgave no one"
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "listeningInference",
-            "emoji": "💭",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L152_Q3",
-            "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "What is the tension created by hero of own story / villain in everyone else's?",
-            "explanation": "Perfect irony: from his perspective, he's the protagonist - noble, justified. From everyone else's perspective, he's the antagonist - harmful, destructive. The same person, two opposite narratives. This captures self-justification vs. external reality - how self-narrative and communal narrative can fundamentally diverge.",
-            "textToSpeak": "He was the hero of his own story - and the villain in everyone else's.",
-            "question": "What does this convey?",
-            "options": [
-                "He is genuinely heroic",
-                "Self-perception and others' perception of him are completely opposite"
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "listeningInference",
-            "emoji": "🧠",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L153_Q1",
-            "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "What does the public/private split reveal about her communication?",
-            "explanation": "Public embrace + private reservations = performing support without feeling it. This is a split between public performance and private reality - common in organisations where visible dissent is risky. It raises questions about authenticity and about cultures that reward visible compliance over honest feedback.",
-            "textToSpeak": "She embraced the restructuring publicly while privately having serious reservations.",
-            "question": "What does this ultimately suggest?",
-            "options": [
-                "She appeared supportive but had private doubts",
-                "She fully supported the restructuring"
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "listeningInference",
-            "emoji": "⚖️",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L153_Q2",
-            "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "What is the sophisticated position of a traditionalist who acknowledges tradition's limits?",
-            "explanation": "Acknowledging the limits of one's own foundational value (tradition) shows intellectual honesty and nuance. He doesn't abandon tradition - he holds it - but he recognises it can't solve everything. This is a mature, self-aware traditionalism: valuing the past while accepting present demands require adaptation.",
-            "textToSpeak": "He was a traditionalist who recognised that tradition alone was not sufficient.",
-            "question": "What conclusion can you draw from this?",
-            "options": [
-                "He completely opposes all change",
-                "He values tradition but understands the need for adaptation"
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "listeningInference",
-            "emoji": "🪞",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L153_Q3",
-            "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "What is the irony of those who called for change resisting it when it came?",
-            "explanation": "Those who demanded change (in the abstract) resisted it once it became concrete and specific. This is a common irony: people support change in principle but resist it in practice when it affects them personally. The reversal of expected alliances is the source of surprise and irony.",
-            "textToSpeak": "The most surprising aspect was the resistance from those who had originally called for change.",
-            "question": "What is unexpectedly contradictory here?",
-            "options": [
-                "Those who originally wanted change now opposed it",
-                "The reform went exactly as planned"
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "listeningInference",
-            "emoji": "😲",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L154_Q1",
-            "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "What does 'play devil's advocate' mean?",
-            "explanation": "'Devil's advocate' = arguing a position you don't necessarily believe, for the purpose of examining its weaknesses or testing the opposing argument. The speaker is about to challenge an existing position, but the phrase signals they may not personally hold the challenge. It's an intellectual testing exercise.",
-            "textToSpeak": "Let me play devil's advocate for a moment.",
-            "question": "What is the speaker about to do?",
-            "options": [
-                "Argue a position they may not personally hold to test the idea",
-                "Describe their genuine personal view"
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "listeningInference",
-            "emoji": "⚽",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L154_Q2",
-            "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "What does establishing agreement on a shared value before 'and yet' accomplish?",
-            "explanation": "Establishing shared ground ('we'd all agree') creates consensus before introducing a contradiction ('and yet'). The strategy: get everyone agreeing on a general principle, then show a specific case where that principle creates difficulty or conflict. The 'and yet' pivots from agreement to complication.",
-            "textToSpeak": "I think we'd all agree that honesty is important. And yet...",
-            "question": "What technique is the speaker using?",
-            "options": [
-                "Ending the discussion about honesty",
-                "Establishing a shared value before introducing a complication"
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "listeningInference",
-            "emoji": "🗣️",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L154_Q3",
-            "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "What is the difference between 'good or bad' and 'whether it works'?",
-            "explanation": "'Good or bad' = normative/ethical evaluation (values). 'Whether it works' = pragmatic evaluation (effectiveness). The speaker shifts from a value-based question to a practical one. This reframes the debate: instead of judging morally, judge functionally. It's a classic rhetorical move in pragmatism.",
-            "textToSpeak": "Rather than asking whether this is good or bad, let's ask whether it works.",
-            "question": "What shift is the speaker making?",
-            "options": [
-                "From ethical evaluation to pragmatic evaluation",
-                "From evidence to opinion"
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "listeningInference",
-            "emoji": "📊",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L155_Q1",
-            "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "Think about what 'acknowledging' without 'committing' allows the museum to do.",
-            "explanation": "Naming the controversy shows awareness and some accountability, but stopping short of committing to return the item lets the museum avoid the harder, costlier decision — acknowledgement without action.",
-            "textToSpeak": "The museum's new plaques acknowledge the artefact's disputed origins without committing to returning it.",
-            "question": "What does this wording achieve?",
-            "options": [
-                "Acknowledging a controversy while avoiding a firm decision",
-                "Removing the artefact from display entirely"
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "listeningInference",
-            "emoji": "🎯",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L155_Q2",
-            "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "What does 'as much X as Y' structure communicate about the two elements?",
-            "explanation": "'As much X as Y' = both elements are equally present. 'Memoir' (personal story) + 'critique' (analytical evaluation) in equal measure = the book operates in both registers simultaneously. This is a description of genre hybridity - not choosing between personal and critical but doing both.",
-            "textToSpeak": "The book is as much a memoir as it is a critique.",
-            "question": "What does this suggest about the book?",
-            "options": [
-                "It is neither personal nor analytical",
-                "It combines personal narrative with critical analysis"
+                "Her studies have no connection to her job",
+                "The extra work hours may be affecting her studies"
             ],
             "correctAnswerIndex": 1,
             "subtype": "listeningInference",
             "emoji": "📚",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "literalMeaning": "Grades slipped and missed classes coincided with more work hours.",
+            "impliedMeaning": "The extra work hours may be affecting her ability to keep up with studies."
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L152_Q2",
+            "interactionType": "choice",
+            "instruction": "What's really going on? Trust the evidence.",
+            "hint": "Consider the full context: a restaurant's online orders rising sharply while dine-in reservations drop at the same time.",
+            "explanation": "A sharp rise in online orders paired with a drop in dine-in reservations suggests a shift in how customers prefer to experience the restaurant, not necessarily a decline in overall business.",
+            "textToSpeak": "Online orders had risen sharply over the past few months, while dine-in reservations had dropped noticeably during that same period.",
+            "question": "What does this combination most likely suggest?",
+            "options": [
+                "Customer habits are shifting toward ordering online",
+                "The restaurant is losing all of its customers"
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "listeningInference",
+            "emoji": "🍔",
+            "literalMeaning": "Online orders rose while dine-in reservations dropped.",
+            "impliedMeaning": "Customer habits appear to be shifting toward ordering online rather than dining in."
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L152_Q3",
+            "interactionType": "choice",
+            "instruction": "Think it through — what do the clues add up to?",
+            "hint": "Consider the full context: a neighborhood seeing new coffee shops open while several older stores close down.",
+            "explanation": "New coffee shops opening while older stores close in the same neighborhood suggests the area may be changing in character, attracting different kinds of businesses and customers.",
+            "textToSpeak": "Two new coffee shops had opened on the block this year, while three older, family-run stores had closed their doors for good.",
+            "question": "What does this combination most likely suggest?",
+            "options": [
+                "The neighborhood has stayed exactly the same",
+                "The neighborhood's character is changing"
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "listeningInference",
+            "emoji": "☕",
+            "literalMeaning": "New coffee shops opened as older stores closed nearby.",
+            "impliedMeaning": "The neighborhood's character appears to be changing over time."
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L153_Q1",
+            "interactionType": "choice",
+            "instruction": "Listen closely and infer what is really happening.",
+            "hint": "Consider the full context: a patient reporting improved symptoms while requesting a longer prescription refill than usual.",
+            "explanation": "Reporting improved symptoms while asking for an unusually long refill can raise a question about whether the improvement is as complete as described, since it doesn't fully match the request.",
+            "textToSpeak": "\"I'm feeling much better,\" the patient told the doctor, then asked for a three-month refill instead of the usual one month.",
+            "question": "What does this combination raise a question about?",
+            "options": [
+                "Whether the improvement is as complete as described",
+                "Whether the doctor made a prescription error"
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "listeningInference",
+            "emoji": "💊",
+            "literalMeaning": "The patient reported feeling better but asked for an unusually long refill.",
+            "impliedMeaning": "This combination raises a question about whether the improvement is fully genuine."
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L153_Q2",
+            "interactionType": "choice",
+            "instruction": "What does the situation suggest? Make your best guess.",
+            "hint": "Consider the full context: a company praising 'strong team morale' in a press release while its employee turnover rate quietly climbs.",
+            "explanation": "Publicly praising strong morale while employee turnover quietly rises suggests the internal reality may not fully match the public messaging.",
+            "textToSpeak": "The press release praised \"strong team morale,\" while internal records showed employee turnover had quietly climbed over the past year.",
+            "question": "What does this combination most likely suggest?",
+            "options": [
+                "Morale is clearly as strong as reported",
+                "The internal reality may not match the public message"
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "listeningInference",
+            "emoji": "📰",
+            "literalMeaning": "The company praised morale publicly while turnover quietly rose internally.",
+            "impliedMeaning": "The internal reality may not fully match the public messaging about morale."
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L153_Q3",
+            "interactionType": "choice",
+            "instruction": "Use the clues to work out the meaning.",
+            "hint": "Consider the full context: a family reporting excitement about moving while quietly delaying the actual move date twice.",
+            "explanation": "Expressing excitement about a move while repeatedly postponing the actual date suggests some hesitation exists beneath the surface, even if it isn't stated directly.",
+            "textToSpeak": "\"We're so excited for the move,\" they said, though they had already pushed back the actual moving date twice.",
+            "question": "What does this combination most likely suggest?",
+            "options": [
+                "There may be underlying hesitation about the move",
+                "They are fully ready and eager to move immediately"
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "listeningInference",
+            "emoji": "📦",
+            "literalMeaning": "They expressed excitement but delayed the move date twice.",
+            "impliedMeaning": "There may be underlying hesitation about the move despite the stated excitement."
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L154_Q1",
+            "interactionType": "choice",
+            "instruction": "What can you infer from what you hear?",
+            "hint": "Consider the full context: a city announcing a new public park while nearby residents circulate a petition against it.",
+            "explanation": "A city celebrating a new park while nearby residents organize a petition against it suggests the project may have real drawbacks for some people that the announcement doesn't mention.",
+            "textToSpeak": "The city announced a new public park with excitement, while nearby residents began circulating a petition opposing its location.",
+            "question": "What does this combination most likely suggest?",
+            "options": [
+                "Every resident is thrilled about the new park",
+                "The project has real drawbacks for some residents"
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "listeningInference",
+            "emoji": "🏞️",
+            "literalMeaning": "The city celebrated the park while residents circulated an opposing petition.",
+            "impliedMeaning": "The project likely has real drawbacks for some nearby residents."
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L154_Q2",
+            "interactionType": "choice",
+            "instruction": "Listen for the clues behind the words.",
+            "hint": "Consider the full context: a job candidate speaking confidently about leadership experience while struggling to name a single specific project they led.",
+            "explanation": "Speaking confidently in general terms about leadership, but struggling to give specific examples when asked, raises doubt about how much hands-on leadership experience the person actually has.",
+            "textToSpeak": "He spoke confidently about his leadership experience, but when asked for a specific project he'd led, he struggled to name one.",
+            "question": "What does this combination suggest?",
+            "options": [
+                "His actual leadership experience may be limited",
+                "His leadership experience is clearly extensive"
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "listeningInference",
+            "emoji": "🎤",
+            "literalMeaning": "He spoke confidently about leadership but couldn't name a specific project.",
+            "impliedMeaning": "His actual hands-on leadership experience may be more limited than it first sounded."
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L154_Q3",
+            "interactionType": "choice",
+            "instruction": "What is most likely true here?",
+            "hint": "Consider the full context: an athlete claiming to feel 'stronger than ever' while their recent performance times have been slower than last season.",
+            "explanation": "Claiming to feel stronger than ever, while actual performance numbers show a decline, suggests the subjective feeling may not match the objective results.",
+            "textToSpeak": "\"I feel stronger than ever,\" the runner said, even though her race times this season have all been slower than last year's.",
+            "question": "What does this combination suggest?",
+            "options": [
+                "Her subjective feeling may not match her actual results",
+                "Her race times have clearly improved this season"
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "listeningInference",
+            "emoji": "🏃‍♀️",
+            "literalMeaning": "She said she felt stronger, but her race times were slower this season.",
+            "impliedMeaning": "Her subjective feeling may not match her actual performance results."
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L155_Q1",
+            "interactionType": "choice",
+            "instruction": "What is the speaker implying?",
+            "hint": "Consider the full context: a landlord advertising an apartment as 'quiet and peaceful' while scheduling all showings for weekday mornings only.",
+            "explanation": "Advertising an apartment as quiet while only scheduling showings during weekday mornings, when noise from traffic or neighbors might be lower, raises a question about whether the description holds true at other times.",
+            "textToSpeak": "The listing described the apartment as \"quiet and peaceful,\" but the landlord only offered showings on weekday mornings, never evenings or weekends.",
+            "question": "What does this combination raise a question about?",
+            "options": [
+                "Whether the landlord is available on weekends",
+                "Whether the apartment stays quiet at other times"
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "listeningInference",
+            "emoji": "🏢",
+            "literalMeaning": "The listing said quiet, but showings were only offered on weekday mornings.",
+            "impliedMeaning": "This raises a question about whether the apartment stays quiet at other times of day."
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L155_Q2",
+            "interactionType": "choice",
+            "instruction": "What does this situation point to?",
+            "hint": "Consider the full context: a couple insisting they've 'never been better' while friends notice they haven't been seen together in weeks.",
+            "explanation": "Insisting a relationship has 'never been better' while friends notice the couple hasn't been seen together recently suggests the claim may not match what others are observing.",
+            "textToSpeak": "\"We've never been better,\" they told friends, though those same friends realized they hadn't actually seen the couple together in weeks.",
+            "question": "What does this combination suggest?",
+            "options": [
+                "The claim may not match what others are observing",
+                "Friends have simply been too busy to notice them"
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "listeningInference",
+            "emoji": "💑",
+            "literalMeaning": "They claimed things were great, but friends hadn't seen them together in weeks.",
+            "impliedMeaning": "The claim may not fully match what others are actually observing."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L155_Q3",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "What is the distinction between passion and advocacy?",
-            "explanation": "'Passion' = emotional investment visible in the writing. 'Advocacy' = actively trying to persuade or change minds/behaviour. The distinction: she cares deeply about the topic (passion) but doesn't tell readers what to do or believe (no advocacy). She informs and expresses; she doesn't campaign.",
-            "textToSpeak": "She writes with evident passion but stops short of advocacy.",
-            "question": "What should you take from this?",
+            "instruction": "Read between the lines and choose the best answer.",
+            "hint": "Consider the full context: a factory reporting no safety incidents this year while several employees mention new bandages and slings among coworkers.",
+            "explanation": "Reporting zero official safety incidents while employees mention visible injuries among coworkers suggests some incidents may not be reflected in the official record.",
+            "textToSpeak": "The factory's report showed zero safety incidents this year, though several employees mentioned coworkers wearing bandages and slings recently.",
+            "question": "What does this combination suggest?",
             "options": [
-                "She has no emotional investment in the topic",
-                "She writes with emotion but doesn't try to persuade readers to act"
+                "Some incidents may not appear in the official record",
+                "The factory report is definitely completely accurate"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
-            "emoji": "🔦",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "🏭",
+            "literalMeaning": "The report showed zero incidents, but employees mentioned visible injuries.",
+            "impliedMeaning": "Some incidents may not be reflected in the official safety record."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L156_Q1",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "What is the problem with applying findings from one context to another?",
-            "explanation": "Contexts differ in ways that affect outcomes: different institutions, cultures, economies, infrastructure. Research findings that hold in developed economies may not hold where conditions are fundamentally different. The caution: don't assume universality of findings - always consider the context of original research.",
-            "textToSpeak": "The data from developed economies may not translate to developing contexts.",
-            "question": "What is the speaker cautioning against?",
+            "instruction": "Piece the clues together to find the real meaning.",
+            "hint": "Consider the full context: a city reporting improved traffic flow while commuters describe their drives taking longer than ever.",
+            "explanation": "Official reports of improved traffic flow, combined with commuters consistently describing longer drive times, suggest a gap between the official measurement and people's actual daily experience.",
+            "textToSpeak": "The city reported improved traffic flow this year, while commuters consistently described their daily drives as taking longer than ever.",
+            "question": "What does this combination suggest?",
             "options": [
-                "Collecting data from developing economies",
-                "Assuming findings from one context automatically apply in another"
+                "Commuters are clearly mistaken about their own drives",
+                "There may be a gap between the report and daily experience"
             ],
             "correctAnswerIndex": 1,
             "subtype": "listeningInference",
-            "emoji": "🔬",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "🚦",
+            "literalMeaning": "The city reported improved flow, but commuters described longer drives.",
+            "impliedMeaning": "There is likely a gap between the official report and people's actual daily experience."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L156_Q2",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "What does linking loudness of criticism to lack of experience imply?",
-            "explanation": "This is an implicit credibility challenge: those who criticise loudest have least experience, suggesting their criticism may be based on limited understanding. The speaker doesn't say they're wrong, but connects vocal criticism to inexperience - implying direct experience would produce a more nuanced or different view.",
-            "textToSpeak": "The most vocal critics were often those with the least direct experience of the system.",
-            "question": "What does this phrase really convey?",
+            "instruction": "What's really going on? Trust the evidence.",
+            "hint": "Consider the full context: a school claiming to fully support students while cutting funding for tutoring and counseling programs.",
+            "explanation": "Claiming full support for students while cutting the very programs that provide direct support, like tutoring and counseling, suggests a mismatch between the stated commitment and the actual resources provided.",
+            "textToSpeak": "The school's statement said it fully supported student wellbeing, even as it cut funding for the tutoring and counseling programs.",
+            "question": "What does this combination suggest?",
             "options": [
-                "Critics without direct experience are always wrong",
-                "The speaker is dismissing criticism from those outside the system"
+                "The school has increased support for students",
+                "There is a mismatch between the statement and the actual resources"
             ],
             "correctAnswerIndex": 1,
             "subtype": "listeningInference",
-            "emoji": "🪞",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "🏫",
+            "literalMeaning": "The school claimed full support while cutting tutoring and counseling funding.",
+            "impliedMeaning": "There appears to be a mismatch between the stated commitment and the actual resources provided."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L156_Q3",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "What is the distinction between correlation and consensus?",
-            "explanation": "Correlation = things occurring together statistically. Consensus = genuine agreement among people. Just because views appear to overlap or co-occur (correlate) doesn't mean there's real, substantive agreement (consensus). The warning: don't interpret statistical patterns as social or intellectual harmony.",
-            "textToSpeak": "We should not mistake correlation for consensus.",
-            "question": "What is the speaker warning about?",
+            "instruction": "Think it through — what do the clues add up to?",
+            "hint": "Consider the full context: a friend saying they're 'not stressed about the wedding at all' while making three separate lists of things that could go wrong.",
+            "explanation": "Claiming to feel no stress about an event, while privately preparing multiple lists of potential problems, suggests real anxiety exists beneath the calm statement.",
+            "textToSpeak": "\"I'm not stressed about the wedding at all,\" she said, though she'd already made three separate lists of things that could go wrong.",
+            "question": "What does this combination suggest?",
             "options": [
-                "Confusing statistical with social agreement",
-                "Assuming things that occur together automatically reflect genuine broad agreement"
+                "She likely feels real anxiety beneath the calm statement",
+                "She truly feels no concern whatsoever"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
-            "emoji": "⚠️",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "📋",
+            "literalMeaning": "She claimed no stress but made three lists of potential problems.",
+            "impliedMeaning": "She likely feels real anxiety beneath her calm statement."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L157_Q1",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "What does 'with dignity' add to receiving difficult news?",
-            "explanation": "'Dignity' = composure, self-respect, grace under pressure. 'Received with dignity' implies the news was difficult (otherwise dignity wouldn't be remarkable) but she maintained composure. This is praise for emotional resilience - responding to adversity without losing composure or self-possession.",
-            "textToSpeak": "She received the news with dignity.",
-            "question": "What does received with dignity mean?",
+            "instruction": "Listen closely and infer what is really happening.",
+            "hint": "Consider the full context: a company's ad claiming 'customers love us' while its support line reports a growing number of complaint calls.",
+            "explanation": "An advertisement's broad claim that 'customers love us,' combined with a rising number of complaint calls to support, suggests the ad's message may not reflect the full customer experience.",
+            "textToSpeak": "The ad proudly claimed \"customers love us,\" while the support line reported a steadily growing number of complaint calls each month.",
+            "question": "What does this combination suggest?",
             "options": [
-                "She responded to difficult news in a composed and graceful way",
-                "She was completely unaffected"
+                "The ad may not reflect the full customer experience",
+                "Every single customer is fully satisfied"
             ],
             "correctAnswerIndex": 0,
             "subtype": "listeningInference",
-            "emoji": "🔎",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "📢",
+            "literalMeaning": "The ad claimed customers love the company, but complaint calls kept rising.",
+            "impliedMeaning": "The ad's claim likely doesn't reflect the full customer experience."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L157_Q2",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "What does being 'generous in defeat' describe as a character quality?",
-            "explanation": "'Generous in defeat' = accepting loss with grace and acknowledging the winner's achievement rather than making excuses or being bitter. It's the sportsmanship ideal: a winner wins well; a 'generous' loser loses well. This is a positive character assessment of how someone behaves when things don't go their way.",
-            "textToSpeak": "He was generous in defeat.",
-            "question": "What does generous in defeat mean?",
+            "instruction": "What does the situation suggest? Make your best guess.",
+            "hint": "Consider the full context: a coach telling reporters the team is 'in great shape' while several starting players have been missing recent practices.",
+            "explanation": "Publicly describing a team as being in great shape, while key players have actually been absent from recent practices, suggests the public statement may be more optimistic than the current reality.",
+            "textToSpeak": "\"We're in great shape heading into the finals,\" the coach told reporters, even though three starting players had missed the last two practices.",
+            "question": "What does this combination suggest?",
             "options": [
-                "He accepted defeat graciously and praised the winner",
-                "He was very upset after losing"
+                "The team is at full strength as described",
+                "The public statement may be more optimistic than reality"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference",
-            "emoji": "🗣️",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "🏆",
+            "literalMeaning": "The coach said the team was in great shape, but starters missed practices.",
+            "impliedMeaning": "The public statement may be more optimistic than the current reality."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L157_Q3",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "Why would someone's composure make a situation harder to watch?",
-            "explanation": "Composure in suffering can be more heartbreaking than expressed grief - the effort to maintain control while clearly suffering intensifies the observer's empathy. 'Somehow made it harder' = an unexpected effect. Stoicism here doesn't mean absence of pain; it means pain suppressed, which can be more moving than tears.",
-            "textToSpeak": "She was stoic throughout - which somehow made it harder to watch.",
-            "question": "What does the observer imply?",
+            "instruction": "Use the clues to work out the meaning.",
+            "hint": "Consider the full context: a friend describing their new diet as 'easy to stick to' while mentioning three separate cheat days that same week.",
+            "explanation": "Describing a diet as easy to maintain, while also mentioning multiple cheat days within the same week, suggests the diet may be more difficult to follow than the description suggests.",
+            "textToSpeak": "\"It's honestly so easy to stick to,\" she said about her new diet, then mentioned having three cheat days that same week.",
+            "question": "What does this combination suggest?",
             "options": [
-                "Her controlled composure made the situation feel even more painful to observe",
-                "The observer was unmoved"
+                "The diet may be harder to follow than described",
+                "The diet is exactly as easy as she says"
             ],
             "correctAnswerIndex": 0,
             "subtype": "listeningInference",
-            "emoji": "⌚",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "🥗",
+            "literalMeaning": "She called the diet easy but mentioned three cheat days that week.",
+            "impliedMeaning": "The diet may actually be harder to follow than her description suggests."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L158_Q1",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "What does 'form and content in perfect harmony' mean in film criticism?",
-            "explanation": "'Form' = how something is made (cinematography, editing, structure). 'Content' = what it's about (story, themes, ideas). 'In harmony' = they support and reinforce each other. This is high praise: the film's how and what are not in tension but mutually illuminate. This is rare and distinguished.",
-            "textToSpeak": "The film is a rare example of form and content working in perfect harmony.",
-            "question": "What is the speaker saying about the film?",
+            "instruction": "What can you infer from what you hear?",
+            "hint": "Consider the full context: a startup announcing a 'record-breaking year' while quietly laying off a quarter of its staff the same month.",
+            "explanation": "Announcing a record-breaking year while simultaneously laying off a large portion of staff suggests the overall financial picture may be more complicated than the announcement alone implies.",
+            "textToSpeak": "The startup announced a \"record-breaking year\" in its newsletter, while quietly laying off a quarter of its staff that same month.",
+            "question": "What does this combination suggest?",
             "options": [
-                "The content is rich but the form is poor",
-                "How the film is made and what it's about reinforce each other perfectly"
+                "The company's financial picture may be more complicated",
+                "The company is clearly thriving without any issues"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
-            "emoji": "🎬",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "📈",
+            "literalMeaning": "The company announced a record year while laying off a quarter of its staff.",
+            "impliedMeaning": "The company's financial picture is likely more complicated than the announcement suggests."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L158_Q2",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "What does 'economical to the point of austerity' describe about writing style?",
-            "explanation": "'Economical' = using few words (positive). 'To the point of austerity' = taken so far it becomes starkly bare - possibly beyond optimal minimalism. 'Austerity' implies severity, harshness, lack of adornment. This is praise for economy that subtly questions whether it goes too far into deliberate bareness.",
-            "textToSpeak": "His prose is economical to the point of austerity.",
-            "question": "What can you infer from this?",
+            "instruction": "Listen for the clues behind the words.",
+            "hint": "Consider the full context: a doctor saying a treatment has 'minimal side effects' while patients online frequently describe severe reactions.",
+            "explanation": "A doctor's general description of minimal side effects, combined with frequent patient reports of severe reactions, suggests the typical experience described may not match what many patients actually go through.",
+            "textToSpeak": "The doctor described the treatment as having \"minimal side effects,\" though patients online frequently described severe reactions.",
+            "question": "What does this combination suggest?",
             "options": [
-                "His writing lacks interesting ideas",
-                "His writing is very sparse, stripped down, and bare"
+                "The typical description may not match many patients' experiences",
+                "The treatment definitely has no notable side effects"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
-            "emoji": "💭",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "emoji": "💊",
+            "literalMeaning": "The doctor said side effects were minimal, but patients described severe reactions.",
+            "impliedMeaning": "The typical description may not match many patients' actual experiences."
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L158_Q3",
             "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "What does 'too clever by half' communicate about excess sophistication?",
-            "explanation": "'Too clever by half' = trying to be clever to the point where it backfires - the cleverness undermines itself or becomes counterproductive. Applied to argument: the sophistication of the construction draws attention away from the substance or creates unnecessary complexity. Cleverness for its own sake is the implied flaw.",
-            "textToSpeak": "The argument is sophisticated but perhaps too clever by half.",
-            "question": "What does too clever by half mean?",
+            "instruction": "What is most likely true here?",
+            "hint": "Consider the full context: a couple describing their finances as 'totally under control' while quietly selling off several valuable possessions.",
+            "explanation": "Describing finances as fully under control, while at the same time quietly selling valuable possessions, suggests the financial situation may be more strained than the couple is letting on.",
+            "textToSpeak": "\"Our finances are totally under control,\" they told family, while quietly selling off several valuable items around the same time.",
+            "question": "What does this combination suggest?",
             "options": [
-                "The argument is moderately sophisticated",
-                "The argument is so elaborate it becomes its own problem"
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "listeningInference",
-            "emoji": "🧭",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L159_Q1",
-            "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "What does 'insisted despite figures suggesting otherwise' create?",
-            "explanation": "'Insisted' = claimed strongly, possibly defensively. 'Despite figures suggesting otherwise' = the evidence contradicts the claim. The sentence structure places the minister's assertion against contradicting evidence - a classic journalistic construction that highlights tension between official claims and data.",
-            "textToSpeak": "The minister insisted the policy was working, despite figures suggesting otherwise.",
-            "question": "What is the sentence structure revealing?",
-            "options": [
-                "The minister's claim and the evidence are in conflict",
-                "The minister and the data are in agreement"
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "listeningInference",
-            "emoji": "🏛️",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L159_Q2",
-            "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "Think about what 'small number' means next to a total of two million units.",
-            "explanation": "Without a real figure, 'a small number' sounds reassuring — but placed next to two million units shipped, even a modest percentage could be a very large count. The phrase is technically vague enough to soften the impact.",
-            "textToSpeak": "The recall notice described the fault as affecting 'a small number of units', though the manufacturer had shipped over two million of the model.",
-            "question": "What does this phrasing suggest?",
-            "options": [
-                "The scale of the problem may be downplayed by the wording",
-                "The fault affects almost every unit sold"
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "listeningInference",
-            "emoji": "🤔",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L159_Q3",
-            "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "What rhetorical purpose does presenting multiple named perspectives serve?",
-            "explanation": "Presenting three different voices (company, critics, independent experts) with different relationships to the subject creates balance - readers can weigh each perspective knowing its source. 'The company says' = interested party; 'critics argue' = opposition; 'independent experts suggest' = neutral. Good journalistic practice.",
-            "textToSpeak": "The company says... critics argue... independent experts suggest...",
-            "question": "What does this sentence structure reflect?",
-            "options": [
-                "A presentation of multiple perspectives to allow readers to evaluate",
-                "One unanimous viewpoint"
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "listeningInference",
-            "emoji": "📖",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L160_Q1",
-            "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "What is the criticism implied by 'raises but doesn't pursue'?",
-            "explanation": "Raising a question without pursuing it = a missed opportunity. The author recognised something interesting enough to raise but didn't investigate or answer it. This is a critical observation about a gap - the question deserved further attention that it didn't receive. It's praise for the observation plus criticism for the abandonment.",
-            "textToSpeak": "The author raises the question but does not pursue it.",
-            "question": "What is implied here?",
-            "options": [
-                "The author answered the question fully",
-                "An interesting question was raised but not developed or answered"
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "listeningInference",
-            "emoji": "🧩",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L160_Q2",
-            "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "What does 'loses force where it needs it most' identify as the critical flaw?",
-            "explanation": "Timing of weakness is the problem: the argument weakens at the most crucial point - exactly when it needs to be strongest. This is a precise structural critique: not that the argument is generally weak, but that it fails at its most important moment. The precision makes it a particularly damaging criticism.",
-            "textToSpeak": "The argument loses its force precisely where it needs it most.",
-            "question": "What is the critic saying?",
-            "options": [
-                "The argument is consistently strong throughout",
-                "The weakest point of the argument is at the most critical moment"
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "listeningInference",
-            "emoji": "🧠",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L160_Q3",
-            "interactionType": "choice",
-            "instruction": "What are they really saying? Make a split decision.",
-            "hint": "Think about what asking for a third study on the same issue implies about the first two.",
-            "explanation": "Recommending yet another study on a question already studied twice suggests the earlier work didn't produce a clear enough answer — or that further billable work was more attractive than a conclusion.",
-            "textToSpeak": "The consultant's report recommended 'further study' on the exact issue the client had already paid two previous studies to investigate.",
-            "question": "What does this recommendation imply?",
-            "options": [
-                "This was the first study on the topic",
-                "The previous studies may not have resolved anything conclusively"
+                "Their finances are exactly as strong as they claim",
+                "Their financial situation may be more strained than they admit"
             ],
             "correctAnswerIndex": 1,
             "subtype": "listeningInference",
             "emoji": "💰",
-            "literalMeaning": "What is actually said.",
-            "impliedMeaning": "What is really meant."
+            "literalMeaning": "They claimed control over finances while quietly selling valuables.",
+            "impliedMeaning": "Their financial situation is likely more strained than they are admitting."
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L159_Q1",
+            "interactionType": "choice",
+            "instruction": "What is the speaker implying?",
+            "hint": "Consider the full context: a city claiming its water is 'perfectly safe' while advising residents in one neighborhood to boil it before drinking.",
+            "explanation": "Claiming water is perfectly safe overall while issuing a specific boil-water advisory for one neighborhood suggests the general claim doesn't fully apply to every area at every time.",
+            "textToSpeak": "The city's website stated the water was \"perfectly safe,\" while also issuing a boil-water advisory for one specific neighborhood that week.",
+            "question": "What does this combination suggest?",
+            "options": [
+                "The general claim doesn't fully apply to every area",
+                "The advisory was issued by mistake"
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "listeningInference",
+            "emoji": "🚰",
+            "literalMeaning": "The city called the water safe overall but issued a boil advisory for one neighborhood.",
+            "impliedMeaning": "The general safety claim likely doesn't fully apply to every area at all times."
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L159_Q2",
+            "interactionType": "choice",
+            "instruction": "What does this situation point to?",
+            "hint": "Consider the full context: a manager praising an employee's 'excellent teamwork' in a public meeting while privately noting missed deadlines in a review.",
+            "explanation": "Publicly praising teamwork while privately documenting missed deadlines in a formal review suggests a more complicated overall performance than the public praise alone reveals.",
+            "textToSpeak": "The manager praised the employee's \"excellent teamwork\" in the team meeting, but privately noted several missed deadlines in the written review.",
+            "question": "What does this combination suggest?",
+            "options": [
+                "The employee's overall performance is more complicated than the praise suggests",
+                "The employee has no performance issues at all"
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "listeningInference",
+            "emoji": "📝",
+            "literalMeaning": "The manager praised teamwork publicly but noted missed deadlines privately.",
+            "impliedMeaning": "The employee's overall performance appears more complicated than the public praise alone suggests."
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L159_Q3",
+            "interactionType": "choice",
+            "instruction": "Read between the lines and choose the best answer.",
+            "hint": "Consider the full context: a friend calling their new city 'the best decision I've ever made' while asking for advice on moving back home three months later.",
+            "explanation": "Calling a move the best decision ever, then asking about moving back only a few months later, suggests the initial enthusiasm may not have lasted as the reality set in.",
+            "textToSpeak": "\"Moving here was the best decision I've ever made,\" she said, then asked for advice about moving back home just three months later.",
+            "question": "What does this combination suggest?",
+            "options": [
+                "She has remained completely happy the whole time",
+                "Her initial enthusiasm may not have lasted"
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "listeningInference",
+            "emoji": "🏙️",
+            "literalMeaning": "She called the move the best decision, then asked about moving back a few months later.",
+            "impliedMeaning": "Her initial enthusiasm about the move likely did not last."
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L160_Q1",
+            "interactionType": "choice",
+            "instruction": "Piece the clues together to find the real meaning.",
+            "hint": "Consider the full context: a factory reporting 'excellent working conditions' in its annual review while inspectors note several safety violations in the same report.",
+            "explanation": "A company's overall summary describing conditions as excellent, alongside specific documented safety violations within the very same report, suggests the specific findings are more reliable than the general summary.",
+            "textToSpeak": "The annual review described \"excellent working conditions\" overall, even though the same report documented several specific safety violations.",
+            "question": "Which part of the report is more reliable about actual conditions?",
+            "options": [
+                "The documented safety violations",
+                "The general summary calling conditions excellent"
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "listeningInference",
+            "emoji": "🏭",
+            "literalMeaning": "The report called conditions excellent while also documenting specific violations.",
+            "impliedMeaning": "The documented safety violations are likely the more reliable part of the report."
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L160_Q2",
+            "interactionType": "choice",
+            "instruction": "What's really going on? Trust the evidence.",
+            "hint": "Consider the full context: a friend saying a new job is 'exactly what I wanted' while mentioning they've already updated their résumé twice.",
+            "explanation": "Describing a job as exactly what was wanted, while also having already updated a résumé multiple times since starting, suggests some dissatisfaction may exist beneath the positive description.",
+            "textToSpeak": "\"This job is exactly what I wanted,\" he said, though he'd already updated his résumé twice since starting.",
+            "question": "What does this combination suggest?",
+            "options": [
+                "He is completely satisfied with no doubts at all",
+                "Some dissatisfaction may exist beneath the positive description"
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "listeningInference",
+            "emoji": "💼",
+            "literalMeaning": "He called the job exactly what he wanted but updated his résumé twice.",
+            "impliedMeaning": "Some dissatisfaction likely exists beneath his positive description."
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L160_Q3",
+            "interactionType": "choice",
+            "instruction": "Think it through — what do the clues add up to?",
+            "hint": "Consider the full context: an airline's satisfaction survey showing 90 percent approval while its complaint department reports its busiest year on record.",
+            "explanation": "A high approval rating from a satisfaction survey, alongside a record number of complaints in the same year, suggests both pieces of data may be capturing different parts of a more complicated overall picture.",
+            "textToSpeak": "The airline's own survey showed 90 percent customer approval, while its complaint department reported its busiest year on record.",
+            "question": "What is the most reasonable conclusion from these two facts together?",
+            "options": [
+                "Both numbers clearly agree with each other completely",
+                "The overall picture is more complicated than either number alone suggests"
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "listeningInference",
+            "emoji": "✈️",
+            "literalMeaning": "The survey showed high approval, but complaints reached a record high the same year.",
+            "impliedMeaning": "The overall picture is likely more complicated than either number alone suggests."
         }
     ]
 }

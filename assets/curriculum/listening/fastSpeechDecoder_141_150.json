@@ -6,13 +6,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L141_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Listen closely for that tiny 'n't' hiding inside 'couldn't've' - is it there or not?",
-            "explanation": "'Couldn't've' (could not have) and 'coulda' (could have) differ by just one quiet, easily-missed sound, but that sound completely reverses the meaning: needing help versus not needing it at all. This is the trickiest kind of listening in the whole course, so slow right down.",
-            "textToSpeak": "I couldn't've finished the whole project without your help on this one.",
+            "instruction": "Listen carefully and catch the exact sentence.",
+            "hint": "Catch exactly what's been moved to next week.",
+            "explanation": "Meeting updates are often delivered quickly and routinely, so the specific item being rescheduled needs your close attention.",
+            "textToSpeak": "We've pushed the review meeting to next week.",
             "options": [
-                "I couldn't've finished the whole project without your help on this bit.",
-                "I couldn't've finished the whole project without your help on this one."
+                "We've pushed the kickoff meeting to next week.",
+                "We've pushed the review meeting to next week."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -21,13 +21,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L141_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch 'up' versus 'back', and whether 'couldn't've' keeps its hidden 'n't'.",
-            "explanation": "Missing the 'n't' in 'couldn't've' turns 'there was no way he could have known' into 'he definitely could have known' - the opposite claim entirely. 'Up' and 'back' are also opposite directions for a deadline to shift.",
-            "textToSpeak": "He couldn't've known the deadline would move up like that.",
+            "instruction": "They said it fast — what did you actually hear?",
+            "hint": "Listen for whether everyone needs to attend, or just a few people.",
+            "explanation": "'Everyone' and 'just a few of us' both compress at speed, so the scope of attendance is the real detail to isolate here.",
+            "textToSpeak": "Just a few of us need to be there.",
             "options": [
-                "She couldn't've known the deadline would move back like that.",
-                "He couldn't've known the deadline would move up like that."
+                "Everyone needs to be there.",
+                "Just a few of us need to be there."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -36,58 +36,58 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L141_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch 'better' versus 'worse', and listen for that hidden 'n't'.",
-            "explanation": "'Better' and 'worse' are opposites, so that word alone tells you if this is praise or a complaint. But without catching the 'n't' in 'couldn't've', you might miss that this sentence is actually praise, not criticism.",
-            "textToSpeak": "We couldn't've asked for a better result this quarter, honestly.",
+            "instruction": "Natural speech blends words together. Catch the real message.",
+            "hint": "Notice the exact topic that's first on the agenda.",
+            "explanation": "Agenda items are often listed quickly at the start of a meeting, so the first topic mentioned deserves careful attention.",
+            "textToSpeak": "First up, let's go over the budget numbers.",
             "options": [
-                "We couldn't've asked for a better result this quarter, honestly.",
-                "We couldn't've asked for a worse result this quarter, honestly."
+                "First up, let's go over the timeline changes.",
+                "First up, let's go over the budget numbers."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L142_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Listen for that quiet 'n't' inside 'shouldn't've', and catch dinner versus lunch.",
-            "explanation": "'Shouldn't've said' (a genuine regret) and 'shoulda said' (a missed opportunity) are opposite feelings, hinging entirely on that barely-audible 'n't'. 'Everyone' and 'anyone' also subtly change how public the moment was.",
-            "textToSpeak": "I shouldn't've said that in front of everyone at dinner.",
+            "instruction": "Listen for the small word that changes the meaning.",
+            "hint": "Catch the exact deadline, since it's often stated quickly and firmly.",
+            "explanation": "Deadlines are usually stated at natural conversational speed without much emphasis, so the specific day needs deliberate listening.",
+            "textToSpeak": "Everything needs to be submitted by Thursday.",
             "options": [
-                "I shouldn't've said that in front of everyone at dinner.",
-                "I shouldn't've said that in front of everyone at lunch."
+                "Everything needs to be submitted by Wednesday.",
+                "Everything needs to be submitted by Thursday."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L142_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch 'fine' versus 'badly', and whether that hidden 'n't' is really there.",
-            "explanation": "This sentence is reassurance, but drop the 'n't' from 'shouldn't've' and it becomes an accusation instead, a huge shift in tone from one tiny sound. 'Fine' and 'badly' are opposites too.",
-            "textToSpeak": "You shouldn't've worried so much, everything worked out fine in the end.",
+            "instruction": "Focus on the key detail hidden in the fast sentence.",
+            "hint": "Listen for whether the deadline moved earlier, or later.",
+            "explanation": "'Moved up' and 'pushed back' point in opposite directions, so that key phrase is what actually decides the new timeline.",
+            "textToSpeak": "The deadline's been moved up a full week.",
             "options": [
-                "You shouldn't've worried so much, everything worked out fine in the end.",
-                "You shouldn't've worried so much, everything worked out badly in the end."
+                "The deadline's been pushed back a full week.",
+                "The deadline's been moved up a full week."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L142_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch 'cancelled' versus 'postponed', and listen for the hidden 'n't'.",
-            "explanation": "This sentence criticises an overreaction, but without the 'n't' in 'shouldn't've', it would agree with the decision instead. 'Cancelled' (called off completely) and 'postponed' (delayed) are also different outcomes.",
-            "textToSpeak": "They shouldn't've cancelled the trip jus' because of a bit of rain.",
+            "instruction": "Listen again — which version matches what was said?",
+            "hint": "Notice exactly what's still outstanding before the deadline.",
+            "explanation": "Outstanding tasks are often mentioned quickly in passing, so the specific item still needed is where the real content lies.",
+            "textToSpeak": "We're still waiting on the final approval.",
             "options": [
-                "They shouldn't've postponed the trip jus' because of a bit of rain.",
-                "They shouldn't've cancelled the trip jus' because of a bit of rain."
+                "We're still waiting on the final invoice.",
+                "We're still waiting on the final approval."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -96,43 +96,43 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L143_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch break versus leak versus fade, and listen for the hidden 'n't'.",
-            "explanation": "'Wouldn't've bought it' (a regret about a purchase) and 'woulda bought it' (no regret at all) are opposite feelings hiding behind a nearly-silent 'n't'. The exact way it failed is also worth catching.",
-            "textToSpeak": "I wouldn't've bought it if I'd known it was jus' gonna break.",
+            "instruction": "Listen carefully and catch the exact sentence.",
+            "hint": "Catch exactly which chapter needs reviewing before class.",
+            "explanation": "Assignment instructions are often given quickly and casually, so the specific chapter or section mentioned needs your full attention.",
+            "textToSpeak": "Please review chapter six before our next class.",
             "options": [
-                "I wouldn't've bought it if I'd known it was jus' gonna break.",
-                "I wouldn't've bought it if I'd known it was jus' gonna leak."
+                "Please review chapter sixteen before our next class.",
+                "Please review chapter six before our next class."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L143_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Listen for the hidden 'n't', and he versus she.",
-            "explanation": "This sentence claims he genuinely wouldn't have spotted it, but losing that quiet 'n't' flips it into a claim that he definitely would have. He versus she is also easy to mishear.",
-            "textToSpeak": "He wouldn't've noticed the difference if you hadn't pointed it out.",
+            "instruction": "They said it fast — what did you actually hear?",
+            "hint": "Listen for whether the essay is due, or has already been submitted.",
+            "explanation": "'Due' and 'already submitted' both compress at speed, so the actual status of the assignment is the real detail to catch.",
+            "textToSpeak": "That essay's already been submitted.",
             "options": [
-                "He wouldn't've noticed the difference if you hadn't pointed it out.",
-                "She wouldn't've noticed the difference if you hadn't pointed it out."
+                "That essay's still due next week.",
+                "That essay's already been submitted."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L143_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch table versus seat, and 'a bit' versus 'a lot'.",
-            "explanation": "'Wouldn't've minded' means it genuinely wasn't a problem, while 'woulda minded' means the opposite: it really would have bothered you. That single hidden 'n't' is the whole story here.",
-            "textToSpeak": "We wouldn't've minded waiting a bit longer for a table.",
+            "instruction": "Natural speech blends words together. Catch the real message.",
+            "hint": "Notice the exact word count required for the assignment.",
+            "explanation": "Word counts are often mentioned quickly and specifically, so the number itself needs deliberate, careful listening.",
+            "textToSpeak": "It needs to be at least fifteen hundred words.",
             "options": [
-                "We wouldn't've minded waiting a bit longer for a table.",
-                "We wouldn't've minded waiting a bit longer for a seat."
+                "It needs to be at least fifteen hundred words.",
+                "It needs to be at least five hundred words."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -141,103 +141,103 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L144_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch 'amazing' versus 'lovely', and listen for the hidden 'n't'.",
-            "explanation": "This is high praise, but without the 'n't' in 'couldn't've', it would insult the cook by claiming you could have done better yourself. 'This' and 'that' also point to different things.",
-            "textToSpeak": "I couldn't've cooked a better meal myself, this is genuinely amazing.",
+            "instruction": "Listen for the small word that changes the meaning.",
+            "hint": "Catch exactly which part of the project is behind schedule.",
+            "explanation": "Project status updates are often given quickly, so the specific component that's delayed needs your close attention.",
+            "textToSpeak": "The design phase is running behind schedule.",
             "options": [
-                "I couldn't've cooked a better meal myself, this is genuinely amazing.",
-                "I couldn't've cooked a better meal myself, this is genuinely lovely."
+                "The testing phase is running behind schedule.",
+                "The design phase is running behind schedule."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L144_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch 'half' versus 'any', and listen for the hidden 'n't'.",
-            "explanation": "'Half' (some was eaten) and 'any' (none at all) describe very different amounts of leftover food. This whole sentence is also a regret, which only works if that quiet 'n't' survives the fast speech.",
-            "textToSpeak": "We shouldn't've ordered so much food, we barely finished half of it.",
+            "instruction": "Focus on the key detail hidden in the fast sentence.",
+            "hint": "Listen for whether they've decided to keep the current approach, or change it.",
+            "explanation": "'Stick with' and 'switch from' both compress quickly, but they describe opposite decisions, so the exact phrase matters a lot.",
+            "textToSpeak": "We've decided to stick with the original plan.",
             "options": [
-                "We shouldn't've ordered so much food, we barely finished half of it.",
-                "We shouldn't've ordered so much food, we barely finished any of it."
+                "We've decided to switch from the original plan.",
+                "We've decided to stick with the original plan."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L144_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch the tense at the end, and he versus she.",
-            "explanation": "'Was' matches this story firmly in the past, so swapping it for 'is' would break the timeline slightly. He versus she is also worth confirming, alongside that essential hidden 'n't'.",
-            "textToSpeak": "He wouldn't've tried it if he'd known how spicy it actually was.",
+            "instruction": "Listen again — which version matches what was said?",
+            "hint": "Notice exactly who's responsible for the next step.",
+            "explanation": "Task ownership is often assigned quickly and casually in project talk, so the name or role mentioned is the real content here.",
+            "textToSpeak": "Marketing will handle the next round of feedback.",
             "options": [
-                "He wouldn't've tried it if he'd known how spicy it actually is.",
-                "He wouldn't've tried it if he'd known how spicy it actually was."
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "fastSpeechDecoder",
-            "emoji": "⚡"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L145_Q1",
-            "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch 'better' versus 'worse', and this versus that.",
-            "explanation": "'Better' and 'worse' are total opposites, deciding whether this sentence is praise or a complaint about the planning. Only the hidden 'n't' in 'couldn't've' confirms it's genuine praise.",
-            "textToSpeak": "We couldn't've planned this trip any better if we'd tried.",
-            "options": [
-                "We couldn't've planned this trip any worse if we'd tried.",
-                "We couldn't've planned this trip any better if we'd tried."
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "fastSpeechDecoder",
-            "emoji": "⚡"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L145_Q2",
-            "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch freezing versus sweating, and lightly versus heavily.",
-            "explanation": "'Freezing' and 'sweating' describe opposite problems with the weather, so that word is essential. The regret itself, admitting a packing mistake, only comes through if you catch that quiet 'n't'.",
-            "textToSpeak": "I shouldn't've packed so lightly, I'm freezing out here.",
-            "options": [
-                "I shouldn't've packed so lightly, I'm freezing out here.",
-                "I shouldn't've packed so lightly, I'm sweating out here."
+                "Marketing will handle the next round of feedback.",
+                "Engineering will handle the next round of feedback."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
-            "id": "LIS_FASTSPEECHDECODER_L145_Q3",
+            "id": "LIS_FASTSPEECHDECODER_L145_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch upgraded versus changed, and nicely versus twice.",
-            "explanation": "'Upgraded' (a better room) and 'changed' (just a different one) are different outcomes, so listen for the specific word. This whole sentence also depends on that hidden 'n't' to make sense as a genuine explanation.",
-            "textToSpeak": "They wouldn't've upgraded our room if we hadn't jus' asked nicely.",
+            "instruction": "Listen carefully and catch the exact sentence.",
+            "hint": "Catch the exact time slot being proposed.",
+            "explanation": "Scheduling suggestions are often floated quickly in conversation, so the specific time proposed needs your close attention.",
+            "textToSpeak": "Would two o'clock work for everyone?",
             "options": [
-                "They wouldn't've changed our room if we hadn't jus' asked nicely.",
-                "They wouldn't've upgraded our room if we hadn't jus' asked nicely."
+                "Would two o'clock work for everyone?",
+                "Would twelve o'clock work for everyone?"
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "fastSpeechDecoder",
+            "emoji": "⚡"
+        },
+        {
+            "id": "LIS_FASTSPEECHDECODER_L145_Q2",
+            "interactionType": "choice",
+            "instruction": "They said it fast — what did you actually hear?",
+            "hint": "Listen for whether the slot is available, or already booked.",
+            "explanation": "'Already booked' and 'still open' both compress at speed, so the exact availability status is the real detail to catch.",
+            "textToSpeak": "That slot's still open on my end.",
+            "options": [
+                "That slot's already booked on my end.",
+                "That slot's still open on my end."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
+            "id": "LIS_FASTSPEECHDECODER_L145_Q3",
+            "interactionType": "choice",
+            "instruction": "Natural speech blends words together. Catch the real message.",
+            "hint": "Notice exactly how long the call is expected to run.",
+            "explanation": "Call durations are often mentioned quickly in passing, so the specific length of time needs deliberate attention.",
+            "textToSpeak": "Let's keep it to about thirty minutes.",
+            "options": [
+                "Let's keep it to about thirty minutes.",
+                "Let's keep it to about thirteen minutes."
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "fastSpeechDecoder",
+            "emoji": "⚡"
+        },
+        {
             "id": "LIS_FASTSPEECHDECODER_L146_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch codebase versus database, and bug versus error.",
-            "explanation": "'Codebase' and 'database' are related but different tech terms, so listen for the exact one. The admission of difficulty here also only holds together if that quiet 'n't' survives the fast delivery.",
-            "textToSpeak": "I couldn't've fixed that bug without looking at the whole codebase.",
+            "instruction": "Listen for the small word that changes the meaning.",
+            "hint": "Catch the exact document being requested.",
+            "explanation": "Requests at work are often phrased quickly and casually, so the specific document or file named needs your full attention.",
+            "textToSpeak": "Could you send over the latest draft?",
             "options": [
-                "I couldn't've fixed that bug without looking at the whole database.",
-                "I couldn't've fixed that bug without looking at the whole codebase."
+                "Could you send over the final draft?",
+                "Could you send over the latest draft?"
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -246,13 +246,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L146_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Don't miss the quiet 'n't' inside 'shouldn't've', and confirm he versus she.",
-            "explanation": "This sentence is a criticism of a mistake, but losing the 'n't' in 'shouldn't've' would turn it into agreement with the decision instead. He versus she is also worth confirming.",
-            "textToSpeak": "She shouldn't've deleted that file before checking if we needed it.",
+            "instruction": "Focus on the key detail hidden in the fast sentence.",
+            "hint": "Listen for whether this needs to happen before, or after the meeting.",
+            "explanation": "'Before' and 'after' the meeting completely change the urgency, so that small word needs a careful, close listen.",
+            "textToSpeak": "Please have it ready before the meeting starts.",
             "options": [
-                "She shouldn't've deleted that file before checking if we needed it.",
-                "He shouldn't've deleted that file before checking if we needed it."
+                "Please have it ready before the meeting starts.",
+                "Please have it ready after the meeting starts."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -261,13 +261,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L146_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch 'noticed' versus 'caused', and listen for the hidden 'n't'.",
-            "explanation": "'Noticed' (became aware of) and 'caused' (was responsible for) describe completely different roles in the story. That quiet 'n't' is also essential to keeping the sentence's real meaning intact.",
-            "textToSpeak": "We wouldn't've noticed the slowdown if the report hadn't flagged it.",
+            "instruction": "Listen again — which version matches what was said?",
+            "hint": "Notice exactly what format they'd prefer the file in.",
+            "explanation": "File format requests are often mentioned quickly at the end of a sentence, so listen through to the very last detail.",
+            "textToSpeak": "Could you send it as a PDF instead?",
             "options": [
-                "We wouldn't've noticed the slowdown if the report hadn't flagged it.",
-                "We wouldn't've caused the slowdown if the report hadn't flagged it."
+                "Could you send it as a PDF instead?",
+                "Could you send it as a spreadsheet instead?"
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -276,43 +276,43 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L147_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch 'worse' versus 'better', and morning versus evening.",
-            "explanation": "'Any worse' and 'any better' are opposites, so that word tells you exactly how bad things were at the start. This whole opening only makes sense with that hidden 'n't' intact.",
-            "textToSpeak": "I couldn't've felt any worse this morning, but I'm doing better now.",
+            "instruction": "Listen carefully and catch the exact sentence.",
+            "hint": "Catch exactly what they're asking you to clarify.",
+            "explanation": "Clarifying questions often move quickly since the speaker already has context, so the specific detail they're unsure about needs attention.",
+            "textToSpeak": "Sorry, could you clarify the second point?",
             "options": [
-                "I couldn't've felt any worse this evening, but I'm doing better now.",
-                "I couldn't've felt any worse this morning, but I'm doing better now."
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "fastSpeechDecoder",
-            "emoji": "⚡"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L147_Q2",
-            "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch recovered versus rested, and 'hard' versus 'far'.",
-            "explanation": "'Recovered' and 'rested' are related but different states, so listen for the precise word. This is genuine concern, which flips into approval entirely if that quiet 'n't' gets lost.",
-            "textToSpeak": "You shouldn't've pushed yourself so hard before you were fully recovered.",
-            "options": [
-                "You shouldn't've pushed yourself so hard before you were fully recovered.",
-                "You shouldn't've pushed yourself so far before you were fully recovered."
+                "Sorry, could you clarify the second point?",
+                "Sorry, could you clarify the third point?"
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
+            "id": "LIS_FASTSPEECHDECODER_L147_Q2",
+            "interactionType": "choice",
+            "instruction": "They said it fast — what did you actually hear?",
+            "hint": "Listen for whether they understood, or are still confused.",
+            "explanation": "'That makes sense now' and 'still not sure' both compress quickly, but they describe opposite states of understanding.",
+            "textToSpeak": "I'm still not totally sure about that part.",
+            "options": [
+                "That makes total sense to me now.",
+                "I'm still not totally sure about that part."
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "fastSpeechDecoder",
+            "emoji": "⚡"
+        },
+        {
             "id": "LIS_FASTSPEECHDECODER_L147_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch worried versus curious, and he versus she.",
-            "explanation": "'Worried' and 'curious' suggest very different reasons for bringing something up, so listen for the exact word. He versus she also needs your attention alongside that essential hidden 'n't'.",
-            "textToSpeak": "He wouldn't've mentioned the symptoms if he wasn't jus' a little worried.",
+            "instruction": "Natural speech blends words together. Catch the real message.",
+            "hint": "Notice exactly what they meant by the earlier comment.",
+            "explanation": "'What I meant was' often reduces quickly, so the real explanation that follows is where the useful content actually lives.",
+            "textToSpeak": "What I meant was we should wait until Friday.",
             "options": [
-                "He wouldn't've mentioned the symptoms if he wasn't jus' a little worried.",
-                "She wouldn't've mentioned the symptoms if he wasn't jus' a little worried."
+                "What I meant was we should wait until Friday.",
+                "What I meant was we should wait until Monday."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -321,103 +321,103 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L148_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch exam versus test, and studying versus revising.",
-            "explanation": "'Studying' and 'revising' overlap closely in meaning, so the exact word matters less than catching the hidden 'n't' in 'couldn't've' - without it, this becomes a boast instead of an admission.",
-            "textToSpeak": "I couldn't've passed that exam without staying up half the night studying.",
+            "instruction": "Listen for the small word that changes the meaning.",
+            "hint": "Catch exactly which slide they're referring to.",
+            "explanation": "Presenters often move quickly through slide references, so the specific number or topic mentioned needs your close attention.",
+            "textToSpeak": "If you look at slide seven, you'll see the trend.",
             "options": [
-                "I couldn't've passed that exam without staying up half the night studying.",
-                "I couldn't've passed that test without staying up half the night studying."
+                "If you look at slide seventeen, you'll see the trend.",
+                "If you look at slide seven, you'll see the trend."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L148_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Track down that barely-there 'n't', and check who the sentence is actually about.",
-            "explanation": "This is a mild criticism softened by good news at the end, but it only reads that way with the 'n't' from 'shouldn't've' intact. He versus she is also worth confirming.",
-            "textToSpeak": "She shouldn't've left the essay until the very last minute, but it worked out.",
+            "instruction": "Focus on the key detail hidden in the fast sentence.",
+            "hint": "Listen for whether questions come now, or at the end.",
+            "explanation": "'Now' and 'at the end' point to very different moments, so catching that timing word changes what you should do next.",
+            "textToSpeak": "We'll take questions at the end, if that's okay.",
             "options": [
-                "She shouldn't've left the essay until the very last moment, but it worked out.",
-                "She shouldn't've left the essay until the very last minute, but it worked out."
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "fastSpeechDecoder",
-            "emoji": "⚡"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L148_Q3",
-            "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch 'finished' versus 'started', and listen for the hidden 'n't'.",
-            "explanation": "'Finished' and 'started' are different points in a project, so that verb genuinely matters. The gratitude behind this sentence also depends entirely on catching that quiet 'n't'.",
-            "textToSpeak": "We wouldn't've finished the group project on time without everyone pitching in.",
-            "options": [
-                "We wouldn't've finished the group project on time without everyone helping out.",
-                "We wouldn't've finished the group project on time without everyone pitching in."
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "fastSpeechDecoder",
-            "emoji": "⚡"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L149_Q1",
-            "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch 'better' versus 'worse', and film versus show.",
-            "explanation": "'Better' and 'worse' are opposites, deciding whether this is a compliment or a complaint about tonight's choice. That hidden 'n't' in 'couldn't've' is what confirms this is genuine praise.",
-            "textToSpeak": "I couldn't've picked a better film for tonight if I'd tried for hours.",
-            "options": [
-                "I couldn't've picked a better show for tonight if I'd tried for hours.",
-                "I couldn't've picked a better film for tonight if I'd tried for hours."
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "fastSpeechDecoder",
-            "emoji": "⚡"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L149_Q2",
-            "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch started versus finished, and season versus series.",
-            "explanation": "'Started' and 'finished' the season describe very different amounts of catching up left to do. This is real frustration, which only holds together with the 'n't' in 'shouldn't've' intact.",
-            "textToSpeak": "You shouldn't've spoiled the ending, I hadn't even started the season yet.",
-            "options": [
-                "You shouldn't've spoiled the ending, I hadn't even started the season yet.",
-                "You shouldn't've spoiled the ending, I hadn't even finished the season yet."
+                "We'll take questions at the end, if that's okay.",
+                "We'll take questions right now, if that's okay."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
-            "id": "LIS_FASTSPEECHDECODER_L149_Q3",
+            "id": "LIS_FASTSPEECHDECODER_L148_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch 'extended' versus 'cancelled', and listen for the hidden 'n't'.",
-            "explanation": "'Extended' and 'cancelled' are opposite outcomes for a show, so that verb is essential. The whole explanation here also depends on that easily-missed 'n't' surviving the fast delivery.",
-            "textToSpeak": "They wouldn't've extended the show if the tickets weren't selling so well.",
+            "instruction": "Listen again — which version matches what was said?",
+            "hint": "Notice the exact figure highlighted in the presentation.",
+            "explanation": "Key statistics in a talk are often delivered quickly and confidently, so the specific number deserves careful, deliberate listening.",
+            "textToSpeak": "Revenue grew by twelve percent this quarter.",
             "options": [
-                "They wouldn't've cancelled the show if the tickets weren't selling so well.",
-                "They wouldn't've extended the show if the tickets weren't selling so well."
+                "Revenue grew by twelve percent this quarter.",
+                "Revenue grew by twenty percent this quarter."
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "fastSpeechDecoder",
+            "emoji": "⚡"
+        },
+        {
+            "id": "LIS_FASTSPEECHDECODER_L149_Q1",
+            "interactionType": "choice",
+            "instruction": "Listen carefully and catch the exact sentence.",
+            "hint": "Catch exactly what they said was in the email.",
+            "explanation": "People often summarize emails quickly in conversation, so the specific detail they mention needs your full attention.",
+            "textToSpeak": "The email said the launch is confirmed for March.",
+            "options": [
+                "The email said the launch is confirmed for March.",
+                "The email said the launch is confirmed for April."
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "fastSpeechDecoder",
+            "emoji": "⚡"
+        },
+        {
+            "id": "LIS_FASTSPEECHDECODER_L149_Q2",
+            "interactionType": "choice",
+            "instruction": "They said it fast — what did you actually hear?",
+            "hint": "Listen for whether they've replied already, or still need to.",
+            "explanation": "'Already replied' and 'still need to reply' both compress quickly, but they describe opposite states of progress.",
+            "textToSpeak": "I still need to reply to that thread.",
+            "options": [
+                "I already replied to that thread.",
+                "I still need to reply to that thread."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
+            "id": "LIS_FASTSPEECHDECODER_L149_Q3",
+            "interactionType": "choice",
+            "instruction": "Natural speech blends words together. Catch the real message.",
+            "hint": "Notice exactly who was copied on the message.",
+            "explanation": "Names mentioned in passing while discussing an email can blur together at speed, so isolating the specific name matters.",
+            "textToSpeak": "They copied the whole finance team on it.",
+            "options": [
+                "They copied the whole finance team on it.",
+                "They copied the whole design team on it."
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "fastSpeechDecoder",
+            "emoji": "⚡"
+        },
+        {
             "id": "LIS_FASTSPEECHDECODER_L150_Q1",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch weekend versus week, relaxing versus exciting, and the hidden 'n't'.",
-            "explanation": "This review question packs several details into one long, satisfied sentence, so hold onto all of them: the timeframe, the mood, and that essential quiet 'n't' that makes this genuine praise rather than a complaint.",
-            "textToSpeak": "I couldn't've asked for a more relaxing weekend, honestly, it was jus' perfect.",
+            "instruction": "Listen for the small word that changes the meaning.",
+            "hint": "By now, expect workplace sentences to pack in several details at once.",
+            "explanation": "This level combines a deadline, a task owner, and a next step all in one flowing sentence, the way a real status update actually sounds.",
+            "textToSpeak": "Once design signs off, engineering can start building by Monday.",
             "options": [
-                "I couldn't've asked for a more exciting weekend, honestly, it was jus' perfect.",
-                "I couldn't've asked for a more relaxing weekend, honestly, it was jus' perfect."
+                "Once engineering signs off, design can start building by Monday.",
+                "Once design signs off, engineering can start building by Monday."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -426,28 +426,28 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L150_Q2",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch 'properly' versus 'at all', and we versus they.",
-            "explanation": "This sentence expresses real regret about delaying an important talk, which only makes sense with the 'n't' in 'shouldn't've' intact. We versus they is also worth double-checking.",
-            "textToSpeak": "We shouldn't've waited this long to jus' have this conversation properly.",
+            "instruction": "Focus on the key detail hidden in the fast sentence.",
+            "hint": "Catch the full update despite several fast, technical details.",
+            "explanation": "By Level 150, dense workplace speech, meetings, deadlines, project status, should feel far more manageable than at the start of this file.",
+            "textToSpeak": "We're still on track, assuming the review wraps up by Thursday.",
             "options": [
-                "We shouldn't've waited this long to jus' have this conversation at all.",
-                "We shouldn't've waited this long to jus' have this conversation properly."
+                "We're still on track, assuming the review wraps up by Thursday.",
+                "We're already behind, assuming the review wraps up by Thursday."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L150_Q3",
             "interactionType": "choice",
-            "instruction": "They're talking fast! Catch exactly what they just said.",
-            "hint": "Catch 'everything' versus 'anything', and listen for the hidden 'n't'.",
-            "explanation": "This closing question of the tier is the longest and most demanding yet, hinging entirely on that barely-audible 'n't' plus the difference between 'everything' (a lot changed) and 'anything' (barely anything did). If you caught all of this, your ear is genuinely doing advanced-level work now.",
-            "textToSpeak": "You wouldn't've believed how much everything changed if you'd jus' seen it yourself.",
+            "instruction": "Listen again — which version matches what was said?",
+            "hint": "Notice how much professional detail survives even at a natural, rapid pace.",
+            "explanation": "Workplace and study English often move quickly because the speakers share context, so training on dense, realistic sentences like this builds real confidence.",
+            "textToSpeak": "As long as the numbers hold, we'll present the findings Friday.",
             "options": [
-                "You wouldn't've believed how much everything changed if you'd jus' seen it yourself.",
-                "You wouldn't've believed how much anything changed if you'd jus' seen it yourself."
+                "As long as the numbers hold, we'll present the findings Friday.",
+                "As long as the numbers hold, we'll present the findings Monday."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
