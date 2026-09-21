@@ -9,23 +9,22 @@
             "subtype": "sentenceOrderReading",
             "interactionType": "reorder",
             "shuffledSentences": [
-                "By lunchtime, she already felt part of the team.",
-                "It was Mia's first day at her new job.",
-                "Her manager gave her a short tour of the office.",
-                "She met her teammates and set up her desk."
+                "Stir until the powder has dissolved completely.",
+                "Taste the drink, and add sugar only if it is still too bitter.",
+                "Pour hot water over the coffee.",
+                "Put a spoonful of instant coffee into a mug."
             ],
             "correctOrder": [
-                1,
-                2,
                 3,
-                0
+                2,
+                0,
+                1
             ],
-            "hint": "Think about what usually happens on someone's very first day somewhere new — introductions come before feeling settled in.",
-            "explanation": "The day unfolds naturally: arriving as a newcomer comes first, the tour and introductions follow, and feeling comfortable is the final outcome.",
+            "hint": "Look at which steps refer to something an earlier step has already prepared: a mug, the coffee, the powder, the drink.",
+            "explanation": "Each step uses what the step before it created. The definite phrases \"the coffee\", \"the powder\" and \"the drink\" show the drink is being built up, and you can only judge its taste after the powder has dissolved.",
             "transitionWords": [
-                "First",
-                "Then",
-                "Finally"
+                "Until",
+                "The drink"
             ]
         },
         {
@@ -34,23 +33,21 @@
             "subtype": "sentenceOrderReading",
             "interactionType": "reorder",
             "shuffledSentences": [
-                "Dad restarted the router and waited a minute.",
-                "The wifi light turned green again.",
-                "The Turner family's internet suddenly stopped working.",
-                "Everyone's devices reconnected within seconds."
+                "Turn on the new phone and choose your language.",
+                "Wait while your favorite apps download and install.",
+                "Sign in with your email account to restore your contacts.",
+                "Connect to a Wi-Fi network so that the phone can go online."
             ],
             "correctOrder": [
-                2,
                 0,
-                1,
-                3
+                3,
+                2,
+                1
             ],
-            "hint": "A technical problem is usually followed by an attempted fix before anyone can see whether it worked.",
-            "explanation": "The paragraph moves from problem to solution to result: the internet fails first, the restart is attempted next, and the reconnection follows as proof it worked.",
+            "hint": "Signing in to an account requires something that must already be working. What is it?",
+            "explanation": "A phone needs to be on before you set it up, and it needs an internet connection before it can check your account. Downloading your apps depends on being signed in, so it comes last.",
             "transitionWords": [
-                "First",
-                "Then",
-                "Finally"
+                "So that"
             ]
         },
         {
@@ -59,23 +56,22 @@
             "subtype": "sentenceOrderReading",
             "interactionType": "reorder",
             "shuffledSentences": [
-                "His mother gave him an antihistamine right away.",
-                "Jake broke out in a rash after lunch.",
-                "The rash faded within a couple of hours.",
-                "He remembered he had eaten shrimp for the first time."
+                "Fold the two slanted edges in once more to make a pointed nose.",
+                "Fold the top corners in toward the center line.",
+                "Fold a sheet of paper in half lengthwise, then open it again.",
+                "Fold the plane in half along the center line and lift the wings."
             ],
             "correctOrder": [
+                2,
                 1,
-                3,
                 0,
-                2
+                3
             ],
-            "hint": "A reaction usually has to appear before anyone can figure out its cause and treat it.",
-            "explanation": "This paragraph follows cause and effect: the rash appears, its likely cause is identified, treatment is given, and recovery happens last.",
+            "hint": "Some folds only make sense after the paper already has a certain shape. Which shapes are mentioned?",
+            "explanation": "The center line comes from the first fold, the slanted edges appear only after the corners have been folded in, and the paper only becomes \"the plane\" near the end. Each new name shows progress.",
             "transitionWords": [
-                "First",
                 "Then",
-                "Finally"
+                "Once more"
             ]
         },
         {
@@ -84,23 +80,22 @@
             "subtype": "sentenceOrderReading",
             "interactionType": "reorder",
             "shuffledSentences": [
-                "On Monday, he presented confidently in front of the class.",
-                "He spent the weekend researching and building slides.",
-                "His teacher gave him one of the highest grades.",
-                "Ravi was assigned a class presentation about volcanoes."
+                "Collect each item from the shelves.",
+                "Wrap the fragile ones in paper and place everything in a box.",
+                "Seal the box and stick the address label on top.",
+                "Check the order form to see which items the customer wants."
             ],
             "correctOrder": [
                 3,
-                1,
                 0,
+                1,
                 2
             ],
-            "hint": "Research and preparation usually happen well before anyone stands up to present.",
-            "explanation": "The order follows a school project's natural stages: the assignment comes first, preparation follows, the presentation happens next, and the grade is the final result.",
+            "hint": "A worker cannot collect items before knowing which ones are needed, and cannot seal anything before it is full.",
+            "explanation": "The order form tells you what to pick, the items are gathered, and then they are packed. \"The box\" appears in the third sentence, so sealing it must come after.",
             "transitionWords": [
-                "First",
-                "Then",
-                "Finally"
+                "The box",
+                "Everything"
             ]
         },
         {
@@ -109,23 +104,23 @@
             "subtype": "sentenceOrderReading",
             "interactionType": "reorder",
             "shuffledSentences": [
-                "The clerk exchanged it for a larger size without any trouble.",
-                "She returned to the store the next day.",
-                "Wei bought a jacket that turned out to be the wrong size.",
-                "She kept the receipt safely in her bag."
+                "Stir in the flour to make a thick dough.",
+                "Mix the butter and sugar until the mixture looks creamy.",
+                "Roll the dough into small balls and place them on a tray.",
+                "Bake the cookies until their edges turn golden."
             ],
             "correctOrder": [
-                2,
-                3,
                 1,
-                0
+                0,
+                2,
+                3
             ],
-            "hint": "Something usually has to go wrong with a purchase before anyone thinks about returning it.",
-            "explanation": "The paragraph follows a simple problem-solution pattern: the wrong purchase is the problem, keeping the receipt sets up the fix, and the exchange resolves it.",
+            "hint": "The food is called by different names as it changes. Follow those names.",
+            "explanation": "Butter and sugar become a mixture, then a dough, then balls of dough, and finally cookies. The changing names show how far the recipe has progressed.",
             "transitionWords": [
-                "First",
-                "Then",
-                "Finally"
+                "Until",
+                "The dough",
+                "The cookies"
             ]
         },
         {
@@ -134,23 +129,21 @@
             "subtype": "sentenceOrderReading",
             "interactionType": "reorder",
             "shuffledSentences": [
-                "Her suitcase appeared safely on the carousel after landing.",
-                "She went through security with only her small backpack.",
-                "At the airport, Sara checked her heavy suitcase at the counter.",
-                "She boarded the plane and found her assigned seat."
+                "Choose a printer and the number of copies from the print menu.",
+                "Click Print and wait for the machine to start.",
+                "Open the document you want to print.",
+                "Collect the pages from the tray and check that none are missing."
             ],
             "correctOrder": [
                 2,
+                0,
                 1,
-                3,
-                0
+                3
             ],
-            "hint": "Bags are usually checked in at the counter well before a passenger ever reaches the gate.",
-            "explanation": "This paragraph follows a typical airport journey: checking the bag comes first, security and boarding follow, and collecting the suitcase happens only after landing.",
+            "hint": "Think about what a computer needs to know before it can send anything to a printer.",
+            "explanation": "You open the file, tell the computer how to print it, start the job, and only then can you collect paper from the tray. Each step needs the result of the step before it.",
             "transitionWords": [
-                "First",
-                "Then",
-                "Finally"
+                "The pages"
             ]
         },
         {
@@ -159,23 +152,22 @@
             "subtype": "sentenceOrderReading",
             "interactionType": "reorder",
             "shuffledSentences": [
-                "After a month, he had saved enough for a new game.",
-                "Dad told his kids that extra chores would earn extra allowance.",
-                "He collected a small payment at the end of each week.",
-                "Leo decided to wash the car every Saturday."
+                "Lift the seedling gently out of its tray and set it in the middle of the pot.",
+                "Fill the gaps around the roots with more soil and press down lightly.",
+                "Water the plant well and place it in a sunny spot.",
+                "Half fill a flowerpot with fresh soil."
             ],
             "correctOrder": [
-                1,
                 3,
-                2,
-                0
+                0,
+                1,
+                2
             ],
-            "hint": "An offer or a new rule usually comes before anyone decides to act on it.",
-            "explanation": "The order shows cause and effect: the offer comes first, Leo's decision and effort follow, and his final reward comes only after weeks of work.",
+            "hint": "The word \"more\" only makes sense if soil has already been mentioned. What else depends on an earlier step?",
+            "explanation": "Soil goes in first, the seedling is set on it, and \"more soil\" fills the gaps around the roots. Watering \"the plant\" happens once it is properly potted.",
             "transitionWords": [
-                "First",
-                "Then",
-                "Finally"
+                "More soil",
+                "The plant"
             ]
         },
         {
@@ -184,23 +176,21 @@
             "subtype": "sentenceOrderReading",
             "interactionType": "reorder",
             "shuffledSentences": [
-                "A neighbor spotted her hiding under a porch nearby.",
-                "The family rushed over and brought her safely home.",
-                "They printed posters with her photo and phone number.",
-                "The Coopers' cat slipped out through an open door."
+                "Confirm your choice and wait for the email receipt.",
+                "Log in to the library website with your card number.",
+                "Choose one of the rooms that are still free at that time.",
+                "Pick a date and a time from the booking calendar."
             ],
             "correctOrder": [
+                1,
                 3,
                 2,
-                0,
-                1
+                0
             ],
-            "hint": "A pet usually needs to go missing before anyone starts searching for it.",
-            "explanation": "This is a clear cause-and-effect story: the cat escapes, the family searches, someone spots her, and the happy reunion happens last.",
+            "hint": "Which step limits the options that appear in the next one?",
+            "explanation": "The site has to know who you are, then when you want a room, and then which rooms are free at that time. \"That time\" points back to the date and time you just picked.",
             "transitionWords": [
-                "First",
-                "Then",
-                "Finally"
+                "At that time"
             ]
         },
         {
@@ -209,23 +199,22 @@
             "subtype": "sentenceOrderReading",
             "interactionType": "reorder",
             "shuffledSentences": [
-                "A guide led them through rooms full of ancient fossils.",
-                "They stopped at the gift shop before heading home.",
-                "The children asked question after question about each skeleton.",
-                "The Fosters bought tickets for the new dinosaur exhibit."
+                "Raise the frame by bending the poles into place.",
+                "Choose a flat spot and clear away any sharp stones.",
+                "Spread the tent out on the ground and thread the poles through the sleeves.",
+                "Pull each rope tight and fix it to the ground with a peg."
             ],
             "correctOrder": [
-                3,
-                0,
+                1,
                 2,
-                1
+                0,
+                3
             ],
-            "hint": "Tickets are almost always purchased before a group can actually enter an exhibit.",
-            "explanation": "The visit unfolds in order: buying tickets comes first, touring the exhibit follows, and the gift shop is naturally the last stop before leaving.",
+            "hint": "A frame cannot be raised until something has been prepared for it. What is being prepared?",
+            "explanation": "The ground is cleared, the tent and poles are laid out, the frame is raised, and the ropes are fixed last to hold it there. \"The frame\" refers to the poles put through the sleeves.",
             "transitionWords": [
-                "First",
-                "Then",
-                "Finally"
+                "The frame",
+                "Each rope"
             ]
         },
         {
@@ -234,23 +223,22 @@
             "subtype": "sentenceOrderReading",
             "interactionType": "reorder",
             "shuffledSentences": [
-                "The manager summarized the next steps before everyone left.",
-                "During the meeting, each person shared their progress.",
-                "The manager scheduled a team meeting for Monday morning.",
-                "Everyone prepared a short update on their current projects."
+                "Let everything simmer until the carrots are tender.",
+                "Chop an onion and two carrots into small pieces.",
+                "Fry the onion in a little oil until it turns soft.",
+                "Add the carrots and enough water to cover them."
             ],
             "correctOrder": [
+                1,
                 2,
                 3,
-                1,
                 0
             ],
-            "hint": "A meeting is usually scheduled before anyone begins preparing for it.",
-            "explanation": "The steps follow a typical workplace routine: scheduling comes first, preparation follows, the meeting itself happens next, and a summary wraps things up.",
+            "hint": "Something is added to the pot only after another ingredient has been cooked. Which one?",
+            "explanation": "Vegetables are chopped, the onion is fried, and the carrots and water join it before everything simmers. \"Everything\" in the last sentence includes both the onion and the carrots.",
             "transitionWords": [
-                "First",
-                "Then",
-                "Finally"
+                "Until",
+                "Everything"
             ]
         },
         {
@@ -259,23 +247,22 @@
             "subtype": "sentenceOrderReading",
             "interactionType": "reorder",
             "shuffledSentences": [
-                "He realized he had forgotten his password completely.",
-                "Noah tried to log into his account three times without success.",
-                "He created a new password and logged in successfully.",
-                "He clicked 'forgot password' and checked his email for a link."
+                "Under the subject line, suggest two possible times.",
+                "Write a subject line that explains the purpose of the meeting.",
+                "Read the message once more, then press Send.",
+                "Open a new message and type your colleague's address."
             ],
             "correctOrder": [
+                3,
                 1,
                 0,
-                3,
                 2
             ],
-            "hint": "Someone usually notices they can't remember something before they try to reset it.",
-            "explanation": "This paragraph follows a common tech problem: failed attempts come first, recognizing the issue follows, and resetting the password leads to success.",
+            "hint": "Find the sentence that describes a position on the screen. What must already be there?",
+            "explanation": "The address and subject line must exist before you can write \"under the subject line\", and checking the message comes before sending. \"Then\" marks the final action.",
             "transitionWords": [
-                "First",
-                "Then",
-                "Finally"
+                "Under",
+                "Then"
             ]
         },
         {
@@ -284,23 +271,22 @@
             "subtype": "sentenceOrderReading",
             "interactionType": "reorder",
             "shuffledSentences": [
-                "Ali rested for a week before returning to practice.",
-                "Ali twisted his ankle while playing basketball.",
-                "His coach helped him off the court right away.",
-                "A doctor confirmed it was only a mild sprain."
+                "Place a white flower in the glass and leave it near a window.",
+                "Fill a glass with water and add ten drops of blue food coloring.",
+                "Notice that its petals have turned pale blue as the colored water traveled up the stem.",
+                "Check the flower after a full day."
             ],
             "correctOrder": [
                 1,
-                2,
+                0,
                 3,
-                0
+                2
             ],
-            "hint": "An injury has to happen before anyone can respond to it or treat it.",
-            "explanation": "The sequence follows cause and effect: the injury occurs first, immediate help follows, diagnosis comes next, and recovery is the final stage.",
+            "hint": "Which sentence is an observation, and what must have happened before anything can be observed?",
+            "explanation": "The colored water is prepared, the flower is put in it, and the result is observed after a day. \"Its petals have turned\" describes a change that needs time.",
             "transitionWords": [
-                "First",
-                "Then",
-                "Finally"
+                "After a full day",
+                "As"
             ]
         },
         {
@@ -309,23 +295,22 @@
             "subtype": "sentenceOrderReading",
             "interactionType": "reorder",
             "shuffledSentences": [
-                "A confirmation email arrived a few minutes later.",
-                "They booked a room with an ocean view.",
-                "The Diaz family wanted to visit the coast for a weekend.",
-                "They compared hotel prices on several travel websites."
+                "Type the email address you used to register.",
+                "Follow the link inside it and choose a new password.",
+                "Click the link that says you forgot your password.",
+                "Open the message that the website sends to that address."
             ],
             "correctOrder": [
                 2,
+                0,
                 3,
-                1,
-                0
+                1
             ],
-            "hint": "A destination usually has to be chosen before anyone starts comparing hotel options.",
-            "explanation": "Planning a trip follows a logical order: deciding where to go comes first, comparing options follows, and booking leads to confirmation.",
+            "hint": "The website can only send a message after it receives something from you. What is it?",
+            "explanation": "You ask for help, give your email address, receive the message at \"that address\", and use the link \"inside it\". The references \"that address\" and \"it\" show the chain of dependence.",
             "transitionWords": [
-                "First",
-                "Then",
-                "Finally"
+                "That address",
+                "Inside it"
             ]
         },
         {
@@ -334,23 +319,23 @@
             "subtype": "sentenceOrderReading",
             "interactionType": "reorder",
             "shuffledSentences": [
-                "Within a year, the amount of landfill waste dropped noticeably.",
-                "Most families quickly adjusted to sorting their waste.",
-                "The city introduced a new recycling program last spring.",
-                "Residents received separate bins for paper, glass, and plastic."
+                "Take off the wheel and pull the damaged tube out of the tire.",
+                "Slide a new tube inside and pump it up until it feels firm.",
+                "Fit the wheel back onto the frame and turn it to check that it spins freely.",
+                "Turn the bicycle upside down so that it rests on the seat and handlebars."
             ],
             "correctOrder": [
-                2,
                 3,
+                0,
                 1,
-                0
+                2
             ],
-            "hint": "A new program usually needs to be introduced before residents can start following it.",
-            "explanation": "This shows cause and effect over time: the program starts, tools are provided, habits change, and a measurable result follows.",
+            "hint": "The word \"new\" and the word \"back\" each depend on something removed earlier.",
+            "explanation": "The bike is positioned, the wheel and old tube come out, a new tube goes in, and the wheel goes \"back\" onto the frame. \"New\" contrasts with \"damaged\", and \"back\" implies it was taken off.",
             "transitionWords": [
-                "First",
-                "Then",
-                "Finally"
+                "So that",
+                "Back",
+                "Until"
             ]
         },
         {
@@ -359,23 +344,23 @@
             "subtype": "sentenceOrderReading",
             "interactionType": "reorder",
             "shuffledSentences": [
-                "She organized her results into a simple chart.",
-                "Yuki chose to grow plants under different colors of light for her project.",
-                "Her project won second place at the school science fair.",
-                "She recorded each plant's height every day for a month."
+                "She compares the total with the sales report printed by the register.",
+                "When the shop closes, the cashier counts the money in the till.",
+                "The envelope goes into the safe until the bank opens the next morning.",
+                "If the two numbers match, she puts the cash in an envelope."
             ],
             "correctOrder": [
                 1,
-                3,
                 0,
+                3,
                 2
             ],
-            "hint": "Data usually has to be collected and organized before a project can be judged.",
-            "explanation": "A science project follows clear stages: choosing the experiment, collecting data, organizing results, and finally, recognition for the finished work.",
+            "hint": "Which step depends on a condition being met?",
+            "explanation": "The cashier counts, compares, and only if the numbers match does she seal the cash away. \"The envelope\" refers to the one mentioned in the previous sentence, and \"the two numbers\" refers to the total and the report.",
             "transitionWords": [
-                "First",
-                "Then",
-                "Finally"
+                "When",
+                "If",
+                "Until"
             ]
         },
         {
@@ -384,23 +369,22 @@
             "subtype": "sentenceOrderReading",
             "interactionType": "reorder",
             "shuffledSentences": [
-                "They spent months testing recipes in a rented kitchen.",
-                "They finally opened their doors to the public in June.",
-                "Within weeks, customers were lining up outside every evening.",
-                "Two friends decided to open a small noodle restaurant together."
+                "Choose a topic that interests you and write down the main question.",
+                "Write a first draft by expanding each point into a paragraph.",
+                "Read the draft aloud to find mistakes and improve the wording.",
+                "Make an outline with three key points under that question."
             ],
             "correctOrder": [
-                3,
                 0,
+                3,
                 1,
                 2
             ],
-            "hint": "A business idea usually needs testing and preparation before it can open to the public.",
-            "explanation": "This entrepreneurial story follows a natural order: the idea comes first, development follows, the opening happens next, and success is shown by the growing crowds.",
+            "hint": "Writers plan before they draft and draft before they revise. Which sentences show each stage?",
+            "explanation": "A question gives the essay direction, an outline organizes the answer, a draft turns points into paragraphs, and reading aloud improves what already exists. \"That question\" and \"the draft\" point back to earlier steps.",
             "transitionWords": [
-                "First",
-                "Then",
-                "Finally"
+                "That question",
+                "The draft"
             ]
         },
         {
@@ -409,23 +393,23 @@
             "subtype": "sentenceOrderReading",
             "interactionType": "reorder",
             "shuffledSentences": [
-                "She set aside part of her paycheck every month.",
-                "She landed at the airport where her cousins were waiting.",
-                "After a year, she finally booked a round-trip ticket.",
-                "Layla wanted to visit her cousins in another country."
+                "Cover the dough with a cloth and let it rest for half an hour.",
+                "Mix the flour and salt in a large bowl, then add warm water a little at a time.",
+                "Divide the rested dough into balls and roll each one flat.",
+                "Knead the mixture for ten minutes until the dough feels smooth."
             ],
             "correctOrder": [
+                1,
                 3,
                 0,
-                2,
-                1
+                2
             ],
-            "hint": "A goal usually comes before the saving that eventually makes it possible.",
-            "explanation": "The paragraph follows a goal being achieved step by step: wanting the trip, saving money, booking the flight, and finally arriving.",
+            "hint": "One word describes the dough as it is after waiting. Which step must come before it?",
+            "explanation": "\"The rested dough\" can only be divided after it has been left to rest. The mixture becomes dough through kneading, and the dough rests before it is shaped.",
             "transitionWords": [
-                "First",
                 "Then",
-                "Finally"
+                "Until",
+                "Rested"
             ]
         },
         {
@@ -434,23 +418,22 @@
             "subtype": "sentenceOrderReading",
             "interactionType": "reorder",
             "shuffledSentences": [
-                "Now they can turn the lights on just by speaking.",
-                "The Bakers installed a smart speaker in their kitchen.",
-                "They connected it to their home wifi network.",
-                "They set up simple voice commands for the lights."
+                "Connect your camera to the computer with a cable.",
+                "Disconnect the camera safely once the copying bar has disappeared.",
+                "Open the folder that appears on the screen and select the photos you want to keep.",
+                "Drag the selected photos into a new folder on your desktop."
             ],
             "correctOrder": [
-                1,
+                0,
                 2,
                 3,
-                0
+                1
             ],
-            "hint": "A device usually needs to be connected to the internet before it can be controlled with commands.",
-            "explanation": "Setting up new technology follows a logical order: installing the device, connecting it, configuring it, and finally using it with ease.",
+            "hint": "The folder \"appears\" because of one action, and the photos are \"selected\" before they are moved.",
+            "explanation": "The camera must be connected before its folder appears, photos are selected before they are dragged, and the cable is removed only when copying is complete. \"Once\" signals the final condition.",
             "transitionWords": [
-                "First",
-                "Then",
-                "Finally"
+                "Once",
+                "The selected photos"
             ]
         },
         {
@@ -459,23 +442,23 @@
             "subtype": "sentenceOrderReading",
             "interactionType": "reorder",
             "shuffledSentences": [
-                "She arranged a free replacement to be shipped that day.",
-                "The staff member apologized and asked for the order number.",
-                "The customer thanked her and praised the quick service.",
-                "A customer called the store to complain about a broken item."
+                "After that, the system gives access to the staff calendar and shared files.",
+                "The manager sends the new employee's details to the IT department.",
+                "IT creates an account and emails a temporary password.",
+                "The employee logs in and is asked to choose a permanent password."
             ],
             "correctOrder": [
-                3,
                 1,
-                0,
-                2
+                2,
+                3,
+                0
             ],
-            "hint": "A complaint usually has to be made before a company can respond to it.",
-            "explanation": "The order follows a customer-service pattern: the complaint comes first, the response follows, a solution is offered, and satisfaction is the result.",
+            "hint": "A temporary password suggests a further step. What could it be?",
+            "explanation": "IT cannot create an account without details, the employee cannot log in without a password, and access is granted after the permanent password is set. \"Temporary\" and \"permanent\" show progress, and \"After that\" points to the last stage.",
             "transitionWords": [
-                "First",
-                "Then",
-                "Finally"
+                "Temporary",
+                "Permanent",
+                "After that"
             ]
         },
         {
@@ -484,23 +467,22 @@
             "subtype": "sentenceOrderReading",
             "interactionType": "reorder",
             "shuffledSentences": [
-                "He added short sprint drills to their weekly training.",
-                "The team's stamina slowly began to improve.",
-                "By the season's final race, they set a new team record.",
-                "Coach Ahn noticed his runners were tiring too quickly in races."
+                "Apply the first coat of paint with a roller.",
+                "Cover the floor and furniture with old sheets.",
+                "Fill any small holes in the wall and let the filler dry.",
+                "When the coat is dry, add a second one to cover any patches."
             ],
             "correctOrder": [
-                3,
-                0,
                 1,
-                2
+                2,
+                0,
+                3
             ],
-            "hint": "A coach usually identifies a weakness before deciding how to fix it.",
-            "explanation": "This paragraph follows a problem being solved through training: noticing the issue, adjusting the plan, seeing improvement, and reaching a final achievement.",
+            "hint": "\"A second one\" only makes sense if there has already been a first. Which other step protects something?",
+            "explanation": "Surfaces are protected, the wall is repaired, paint is applied, and \"a second one\" comes after the first has dried. Repairing the wall before painting avoids painting over holes.",
             "transitionWords": [
-                "First",
-                "Then",
-                "Finally"
+                "When",
+                "A second one"
             ]
         },
         {
@@ -509,23 +491,22 @@
             "subtype": "sentenceOrderReading",
             "interactionType": "reorder",
             "shuffledSentences": [
-                "By evening, they were unpacking in their new living room.",
-                "The Petrov family decided to move to a bigger apartment.",
-                "A moving truck carried everything to the new address.",
-                "They packed their belongings into labeled boxes over a weekend."
+                "Squeeze the juice from six lemons into a large jug.",
+                "Fill the jug with cold water and stir well.",
+                "Serve the lemonade over ice and add a few mint leaves.",
+                "Dissolve half a cup of sugar in hot water and add it to the juice."
             ],
             "correctOrder": [
-                1,
+                0,
                 3,
-                2,
-                0
+                1,
+                2
             ],
-            "hint": "A decision to move usually comes before any actual packing begins.",
-            "explanation": "A house move naturally follows this order: the decision, the packing, the transport, and finally settling into the new home.",
+            "hint": "The name of the drink changes near the end. What has to be finished before it gets its final name?",
+            "explanation": "Juice is collected, sweetened, diluted, and only then called \"the lemonade\". \"The juice\" in the second sentence refers to what was squeezed in the first.",
             "transitionWords": [
-                "First",
-                "Then",
-                "Finally"
+                "The juice",
+                "The lemonade"
             ]
         },
         {
@@ -534,23 +515,22 @@
             "subtype": "sentenceOrderReading",
             "interactionType": "reorder",
             "shuffledSentences": [
-                "He started jogging around his neighborhood three times a week.",
-                "After two months, the stairs no longer bothered him.",
-                "Marco realized he got out of breath just climbing the stairs.",
-                "He signed up for his first five-kilometer race."
+                "Wash your hands before touching the cut.",
+                "Rinse the cut under clean running water to remove any dirt.",
+                "Cover the cut with a bandage to keep it clean.",
+                "Press a clean cloth against it until the bleeding stops."
             ],
             "correctOrder": [
-                2,
                 0,
                 1,
-                3
+                3,
+                2
             ],
-            "hint": "Noticing a problem usually comes before anyone decides to build a new habit.",
-            "explanation": "This paragraph shows gradual improvement: the problem is noticed, a habit begins, progress is felt, and a new challenge is taken on.",
+            "hint": "Which step protects the wound before you touch it, and which protects it after it is treated?",
+            "explanation": "Clean hands come before contact, rinsing removes dirt, pressure stops the bleeding, and a bandage protects the area at the end. \"Until the bleeding stops\" shows the pressing step must finish before covering.",
             "transitionWords": [
-                "First",
-                "Then",
-                "Finally"
+                "Before",
+                "Until"
             ]
         },
         {
@@ -559,23 +539,22 @@
             "subtype": "sentenceOrderReading",
             "interactionType": "reorder",
             "shuffledSentences": [
-                "She completed one lesson every evening after work.",
-                "Fatima wanted to learn graphic design in her free time.",
-                "Three months later, she designed her first logo for a client.",
-                "She enrolled in an online course recommended by a friend."
+                "Put the slide on the microscope stage and look through the eyepiece.",
+                "Add a drop of water and lower a cover slip over it.",
+                "Place a thin slice of onion skin on a glass slide.",
+                "Turn the focus knob slowly until the cells appear sharp."
             ],
             "correctOrder": [
+                2,
                 1,
-                3,
                 0,
-                2
+                3
             ],
-            "hint": "Enrolling in a course usually happens before any lessons can actually be completed.",
-            "explanation": "This paragraph follows a learning journey: wanting a new skill, enrolling, practicing consistently, and finally applying the skill in real life.",
+            "hint": "A sample must be prepared before it is examined, and adjustments come after you can see something.",
+            "explanation": "The sample goes on the slide, is covered, is placed under the microscope, and is then focused. \"The slide\" in the third sentence refers to the prepared slide from the earlier steps.",
             "transitionWords": [
-                "First",
-                "Then",
-                "Finally"
+                "Until",
+                "The slide"
             ]
         },
         {
@@ -584,23 +563,22 @@
             "subtype": "sentenceOrderReading",
             "interactionType": "reorder",
             "shuffledSentences": [
-                "Parents and neighbors came out to buy cookies and cakes.",
-                "A local school needed new books for its library.",
-                "The school used the money to order dozens of new books.",
-                "Students organized a weekend bake sale in the parking lot."
+                "Check that you can hear the teacher and that she can hear you.",
+                "Raise your virtual hand when you want to ask a question.",
+                "Allow the website to use your microphone and camera when it asks.",
+                "Click the link in your teacher's email a few minutes before the lesson."
             ],
             "correctOrder": [
-                1,
                 3,
+                2,
                 0,
-                2
+                1
             ],
-            "hint": "A need usually has to exist before a community decides to organize a fundraiser.",
-            "explanation": "This shows a clear cause-and-effect chain: the need is identified, an event is organized, the community responds, and the goal is finally met.",
+            "hint": "You cannot test the microphone until the website has been given permission to use it.",
+            "explanation": "You enter the class, give permission, test your equipment, and then take part. The test only works after permission is given, and asking a question comes once the lesson is running.",
             "transitionWords": [
-                "First",
-                "Then",
-                "Finally"
+                "Before",
+                "When"
             ]
         },
         {
@@ -609,23 +587,23 @@
             "subtype": "sentenceOrderReading",
             "interactionType": "reorder",
             "shuffledSentences": [
-                "Rehearsals began the following Monday evening.",
-                "The local theater announced auditions for its spring play.",
-                "Dozens of hopeful actors showed up to try out.",
-                "The director selected the final cast after two rounds."
+                "Boil the pieces in salted water for fifteen minutes.",
+                "Peel the potatoes and cut them into equal pieces.",
+                "Taste the mash and add pepper before serving.",
+                "Drain the water and mash the potatoes with a little butter."
             ],
             "correctOrder": [
                 1,
-                2,
+                0,
                 3,
-                0
+                2
             ],
-            "hint": "An announcement usually comes before people can respond to it by showing up.",
-            "explanation": "This paragraph follows a typical audition process: the announcement, the tryouts, the selection, and finally the start of rehearsals.",
+            "hint": "\"The pieces\" and \"the mash\" are new names for the same food. Which name comes from which step?",
+            "explanation": "Whole potatoes become pieces, then boiled pieces, then mash. Each new name tells you what has already been done, and seasoning comes after tasting.",
             "transitionWords": [
-                "First",
-                "Then",
-                "Finally"
+                "The pieces",
+                "The mash",
+                "Before"
             ]
         },
         {
@@ -634,23 +612,23 @@
             "subtype": "sentenceOrderReading",
             "interactionType": "reorder",
             "shuffledSentences": [
-                "Elena applied for a position at a marketing agency.",
-                "She answered the panel's questions with clear examples.",
-                "Two days later, she received an offer by email.",
-                "She was invited for an interview the following week."
+                "Apologize and repeat the problem to show that you understand it.",
+                "Listen carefully while the customer explains the problem.",
+                "Offer a solution, such as a refund or a replacement.",
+                "Ask whether the solution is acceptable before you end the call."
             ],
             "correctOrder": [
-                0,
-                3,
                 1,
-                2
+                0,
+                2,
+                3
             ],
-            "hint": "An application usually has to be sent before anyone is invited to interview.",
-            "explanation": "A job search follows a familiar sequence: applying, interviewing, being evaluated, and finally receiving a decision.",
+            "hint": "You cannot repeat a problem until you have heard it, and you cannot check a solution until you have offered one.",
+            "explanation": "Understanding comes before responding, and a solution must be offered before it can be confirmed. \"The problem\" and \"the solution\" are repeated so that each step builds on the last.",
             "transitionWords": [
-                "First",
-                "Then",
-                "Finally"
+                "The problem",
+                "The solution",
+                "Before"
             ]
         },
         {
@@ -659,23 +637,22 @@
             "subtype": "sentenceOrderReading",
             "interactionType": "reorder",
             "shuffledSentences": [
-                "A sudden storm knocked out the power across the neighborhood.",
-                "They played card games together by candlelight.",
-                "The lights flickered back on just before midnight.",
-                "The Hughes family lit candles and gathered in the kitchen."
+                "Log in to your bank's app and open the payments menu.",
+                "Review the details on the screen before you confirm the payment.",
+                "Below the account number, type the amount due and pick a date.",
+                "Enter the company's name and the account number from your bill."
             ],
             "correctOrder": [
                 0,
                 3,
-                1,
-                2
+                2,
+                1
             ],
-            "hint": "A cause, like a storm, usually comes before the effects people experience afterward.",
-            "explanation": "This paragraph is built on cause and effect: the outage happens, the family adapts, they make the best of it, and normal life resumes.",
+            "hint": "One step describes where something is on the screen relative to another step. Which step must already exist?",
+            "explanation": "You log in first, enter who to pay, and then enter how much and when, \"below the account number\" you just typed. Reviewing everything is the last check before confirming.",
             "transitionWords": [
-                "First",
-                "Then",
-                "Finally"
+                "Below",
+                "Before"
             ]
         },
         {
@@ -684,23 +661,22 @@
             "subtype": "sentenceOrderReading",
             "interactionType": "reorder",
             "shuffledSentences": [
-                "They took notes from books and trusted websites.",
-                "Mr. Owusu assigned a report on famous inventors.",
-                "Students spent an afternoon researching in the library.",
-                "Each student wrote a short report to submit on Friday."
+                "On the day, they present in turn, following the plan they made.",
+                "The group divides the topic into parts, and every member takes one part.",
+                "Members research their parts and write a few notes.",
+                "The teacher assigns each group a topic for a short talk."
             ],
             "correctOrder": [
+                3,
                 1,
                 2,
-                0,
-                3
+                0
             ],
-            "hint": "Research usually has to happen before anyone can write a report based on it.",
-            "explanation": "This paragraph follows an academic process: the assignment, the research, the note-taking, and the final writing stage.",
+            "hint": "Which sentence sets the task, and which shows the final performance of it?",
+            "explanation": "A topic is given, divided among members, researched, and then presented. \"Their parts\" and \"the plan they made\" refer back to the division of work.",
             "transitionWords": [
-                "First",
-                "Then",
-                "Finally"
+                "Their parts",
+                "On the day"
             ]
         },
         {
@@ -709,23 +685,23 @@
             "subtype": "sentenceOrderReading",
             "interactionType": "reorder",
             "shuffledSentences": [
-                "A mechanic arrived and repaired a loose belt.",
-                "They continued their drive an hour later than planned.",
-                "They pulled over safely onto the shoulder of the road.",
-                "The Bennetts' car made a strange noise on the highway."
+                "Slide the pizza into a very hot oven.",
+                "Take it out when the cheese bubbles and the crust turns brown.",
+                "Roll the dough into a thin circle on a floured table.",
+                "Spread tomato sauce over it and scatter cheese on top."
             ],
             "correctOrder": [
-                3,
                 2,
+                3,
                 0,
                 1
             ],
-            "hint": "A problem with the car usually appears before the driver decides to pull over.",
-            "explanation": "This shows a typical roadside story: the problem appears, safety comes first, help arrives, and the journey resumes.",
+            "hint": "The food is only called \"the pizza\" once it is assembled.",
+            "explanation": "The dough is shaped, topped, and baked, and it is removed when it looks done. \"It\" in the second sentence refers to the dough, and \"the pizza\" appears after the toppings are added.",
             "transitionWords": [
-                "First",
-                "Then",
-                "Finally"
+                "It",
+                "The pizza",
+                "When"
             ]
         },
         {
@@ -734,23 +710,22 @@
             "subtype": "sentenceOrderReading",
             "interactionType": "reorder",
             "shuffledSentences": [
-                "By mid-morning, the square was busy with shoppers and music.",
-                "Every Saturday, local farmers set up stands at the town square.",
-                "Most farmers packed up and left by early afternoon.",
-                "Early risers arrived to get the freshest produce."
+                "Tap Update next to the app you want to refresh.",
+                "Look through the list of apps that have updates waiting.",
+                "Reopen the app once the button changes to Open.",
+                "Open the app store and tap your profile picture."
             ],
             "correctOrder": [
-                1,
                 3,
+                1,
                 0,
                 2
             ],
-            "hint": "A market has to open before shoppers are able to arrive and browse.",
-            "explanation": "This paragraph follows the natural rhythm of a market day: setup, an early rush, a busy peak, and finally closing time.",
+            "hint": "A list appears only after a certain screen has been opened. Which one?",
+            "explanation": "You reach your profile, see the list of waiting updates, choose one, and reopen the app when it is ready. \"The list\" and \"the button\" only make sense once those screens have been reached.",
             "transitionWords": [
-                "First",
-                "Then",
-                "Finally"
+                "Once",
+                "The list"
             ]
         }
     ]

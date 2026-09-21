@@ -9,27 +9,28 @@
             "subtype": "sentenceOrderReading",
             "interactionType": "reorder",
             "shuffledSentences": [
-                "Regulators in some jurisdictions have scrutinized this practice, particularly when switching costs seem deliberately engineered rather than incidental.",
-                "Some proposed regulations would require companies to support easier data portability specifically to reduce artificial switching costs.",
-                "Companies aware of this dynamic sometimes price initial adoption aggressively low, anticipating future switching costs will retain customers.",
-                "Economists refer to this difficulty as a switching cost, distinct from the sticker price of any competing alternative.",
-                "Companies offering complex software services often design their products around deep integration with a customer's existing workflows.",
-                "This deep integration, while genuinely useful, can make switching to a competing product considerably more difficult later."
+                "Questions about the relocation can be sent to the facilities mailbox, which will be monitored daily until the end of the month.",
+                "Beyond the equipment, anyone who requires special arrangements, such as accessible parking or a height-adjustable desk, should inform the office manager by the end of next week.",
+                "Company equipment, including monitors and docking stations, will be transferred by the facilities team and does not need to be packed by employees.",
+                "Once the move is complete, an orientation session will be held to explain the new layout, the meeting-room booking system, and the emergency exits.",
+                "Following the lease decision announced last month, the finance department will relocate to the third floor of the Harbor Building on the first of October.",
+                "To minimize disruption, the move has been scheduled for a weekend, and staff are asked to pack personal items into the crates that will be delivered on Thursday."
             ],
             "correctOrder": [
                 4,
                 5,
-                3,
                 2,
-                0,
-                1
+                1,
+                3,
+                0
             ],
-            "hint": "A described product feature usually precedes the economic consequence it creates, which then precedes any resulting regulatory concern.",
-            "explanation": "This paragraph explains a business dynamic and its regulatory scrutiny: the design choice, its side effect, the formal economic concept, how companies exploit it, the regulatory concern it raises, and a proposed remedy.",
+            "hint": "In a workplace memo, each paragraph part has a job: announce, give instructions, offer support, and invite questions. Which sentence announces the change, and which sentence points to a contrast with what employees must do themselves?",
+            "explanation": "The announcement comes first, the second sentence gives employees their task, the third sentence contrasts it with what the facilities team will do, \"beyond the equipment\" adds a further request, \"once the move is complete\" looks ahead, and the last sentence invites questions. The memo moves from decision to action to support.",
             "transitionWords": [
-                "First",
-                "Then",
-                "Finally"
+                "Following",
+                "Does not need",
+                "Beyond the equipment",
+                "Once"
             ]
         },
         {
@@ -38,27 +39,28 @@
             "subtype": "sentenceOrderReading",
             "interactionType": "reorder",
             "shuffledSentences": [
-                "Some journals have since begun requiring researchers to register their planned methods publicly before conducting a study.",
-                "Researchers have identified factors such as small sample sizes and selective reporting as significant contributors to the problem.",
-                "This practice, known as pre-registration, makes it considerably harder to selectively report only favorable results after the fact.",
-                "Early evidence suggests fields adopting pre-registration widely have seen modest improvements in subsequent reproducibility rates.",
-                "This pattern, often called the reproducibility crisis, has prompted considerable self-examination within several scientific fields.",
-                "A significant portion of published scientific findings, when independently retested, have failed to produce the same original results."
+                "Economists studying the episode argue that companies keeping small reserves of critical parts recovered noticeably faster than those relying on just-in-time delivery.",
+                "Container ships waiting offshore delayed the arrival of components that factories needed for their assembly lines.",
+                "As a result, many firms are now reconsidering the balance between cost efficiency and resilience.",
+                "Several manufacturers, unable to obtain a single missing part, were forced to reduce production even though their other materials were plentiful.",
+                "When a major port closed for repairs last year, the effects spread far beyond the shipping industry.",
+                "The resulting shortage of finished goods pushed prices upward, and retailers that depended on those products lost sales during the busiest season."
             ],
             "correctOrder": [
-                5,
                 4,
                 1,
+                3,
+                5,
                 0,
-                2,
-                3
+                2
             ],
-            "hint": "A described pattern usually precedes its formal name, which then precedes the contributing factors and eventual remedy identified.",
-            "explanation": "This paragraph explains a methodological challenge within science and its remedy: the pattern, its name, contributing causes identified, the remedy adopted, how that remedy addresses the cause, and the early evidence of its effectiveness.",
+            "hint": "\"The resulting shortage\" and \"the episode\" each summarize earlier material. Which sentences do they refer to?",
+            "explanation": "The closure is the trigger, delayed ships are the first effect, the factories' reduced output is the second, the shortage and higher prices are the third, the economists' analysis interprets the whole event, and \"as a result\" states the business response. Each nominal phrase compresses what came before.",
             "transitionWords": [
-                "First",
-                "Then",
-                "Finally"
+                "When",
+                "The resulting shortage",
+                "The episode",
+                "As a result"
             ]
         },
         {
@@ -67,27 +69,28 @@
             "subtype": "sentenceOrderReading",
             "interactionType": "reorder",
             "shuffledSentences": [
-                "Critics continue to raise concerns about the environmental impact of disposing of the concentrated salt byproduct at scale.",
-                "Early desalination plants required substantial energy input, making the resulting water considerably more expensive than conventional sources.",
-                "Advances in filtration membrane technology have since reduced the energy required for the process quite significantly.",
-                "Desalination technology, which removes salt from seawater, has offered one increasingly viable response to this shortage.",
-                "Several arid coastal regions have faced increasingly severe freshwater shortages as populations and agricultural demand have grown.",
-                "Several coastal cities now rely on desalinated water for a meaningful share of their overall municipal supply."
+                "Sunscreens are often chosen by their protection factor, yet that number describes only one type of ultraviolet radiation.",
+                "Because UVA exposure contributes to skin aging and to some cancers, dermatologists recommend products labeled broad-spectrum.",
+                "Clothing, shade, and sunglasses should complement lotion rather than replace it, since no single measure provides complete protection.",
+                "The factor measures protection against UVB rays, which cause sunburn, but says little about UVA rays, which penetrate deeper into the skin.",
+                "Even the best product loses its effect if too little is applied, and studies suggest that most people use less than half the amount tested in laboratories.",
+                "Reapplying every two hours, and after swimming, is therefore as important as the initial choice of product."
             ],
             "correctOrder": [
-                4,
+                0,
                 3,
                 1,
-                2,
+                4,
                 5,
-                0
+                2
             ],
-            "hint": "A described shortage usually precedes the technological response, and an early limitation of that response usually precedes the improvement that addressed it.",
-            "explanation": "This paragraph traces a technological response to a resource crisis: the shortage, the technology, its early limitation, the improvement made, its resulting adoption, and an environmental concern that remains unresolved.",
+            "hint": "\"Yet\" and \"even\" both signal that the reader should expect a limit or surprise. Which sentences contain each limit?",
+            "explanation": "The first sentence states a common practice and limits it, the second explains the limit, the third gives a recommendation, the fourth adds a second limit about quantity, the fifth draws a practical conclusion with \"therefore\", and the last sentence widens the advice. \"Initial choice\" refers to the product recommended earlier.",
             "transitionWords": [
-                "First",
-                "Then",
-                "Finally"
+                "Yet",
+                "Because",
+                "Even",
+                "Therefore"
             ]
         },
         {
@@ -96,27 +99,27 @@
             "subtype": "sentenceOrderReading",
             "interactionType": "reorder",
             "shuffledSentences": [
-                "Workers who lack this deeper understanding often struggle considerably when automated systems inevitably fail or behave unexpectedly.",
-                "These remaining tasks frequently demand a deeper, more holistic understanding than the original routine work ever required.",
-                "In several documented cases, however, automation has instead shifted required skills toward monitoring and exception handling.",
-                "Researchers studying this pattern have termed it the automation paradox, given how it can counterintuitively increase skill demands.",
-                "Automating routine tasks within a given profession is often expected to reduce the skill required to perform that job.",
-                "Some organizations have responded by deliberately preserving manual skill-building exercises alongside their newly automated processes."
+                "The customer service team recorded a sharp rise in complaints during the second week of the software update.",
+                "Because the update had been tested only on recent devices, the problem had gone unnoticed until customers began to report it.",
+                "The team will review the results of this change in six months and report its conclusions to senior management.",
+                "To prevent a recurrence, the company has added a range of older devices to its standard testing procedure.",
+                "An initial analysis showed that most of the complaints came from users of older tablets, whose screens displayed the new interface incorrectly.",
+                "The engineers released a corrective patch within five days, and the number of complaints returned to its normal level shortly afterwards."
             ],
             "correctOrder": [
-                4,
-                2,
-                1,
                 0,
+                4,
+                1,
                 5,
-                3
+                3,
+                2
             ],
-            "hint": "An expected outcome usually precedes the documented reality that complicates it, and a complication usually precedes the organizational response.",
-            "explanation": "This paragraph explains a counterintuitive pattern in workplace automation: the expectation, the documented complication, why that complication arises, its consequence for workers, an organizational response, and the pattern's formal name.",
+            "hint": "A report moves from symptom to cause, to remedy, and to prevention. Which sentence gives the cause, and which describes how it will be avoided in the future?",
+            "explanation": "The complaints are the symptom, the analysis identifies the group affected, \"because\" explains why the problem was missed, the patch is the remedy, \"to prevent a recurrence\" gives the long-term action, and the last sentence describes the review. \"This change\" refers to the new testing procedure.",
             "transitionWords": [
-                "First",
-                "Then",
-                "Finally"
+                "Because",
+                "To prevent a recurrence",
+                "This change"
             ]
         },
         {
@@ -125,26 +128,27 @@
             "subtype": "sentenceOrderReading",
             "interactionType": "reorder",
             "shuffledSentences": [
-                "Traffic fatalities at the redesigned intersections dropped considerably faster than fatalities citywide during the same period.",
-                "One city adopted an ambitious policy goal of eliminating all traffic fatalities within its borders over a set period.",
-                "Analysts examined years of accident data to identify a small number of intersections responsible for a disproportionate share of severe incidents.",
-                "Engineers redesigned these specific intersections using measures such as reduced turning speeds and improved pedestrian visibility.",
-                "Overall citywide traffic fatalities, while not eliminated entirely, fell substantially over the following several years.",
-                "The city subsequently expanded its data-driven redesign approach to additional high-risk locations identified through similar analysis."
+                "These should include torches with spare batteries, bottled water, non-perishable food, and a battery-powered radio for updates.",
+                "Power cuts are usually brief, but a prolonged outage can quickly turn a minor inconvenience into a serious problem.",
+                "Finally, a written list of emergency contacts is worth keeping, since mobile phone batteries may not last through a long outage.",
+                "Households that prepare in advance cope far better, and the most important step is to gather essential supplies in a single, accessible place.",
+                "Beyond food safety, those who rely on medical devices ought to register with their electricity provider, which can then prioritize them during restoration.",
+                "Because fridges and freezers stop working, families should also know how long food remains safe and keep the doors closed as much as possible."
             ],
             "correctOrder": [
                 1,
-                2,
                 3,
                 0,
                 5,
-                4
+                4,
+                2
             ],
-            "hint": "An analysis identifying a pattern usually precedes the specific intervention designed around that pattern.",
-            "explanation": "This paragraph follows a public safety policy implemented through targeted analysis: the goal, the analysis, the resulting intervention, its measured local effect, the resulting expansion, and the broader citywide outcome.",
+            "hint": "\"These\" and \"beyond food safety\" both build on something said in an earlier sentence. What?",
+            "explanation": "The problem is introduced, preparation is the general solution, \"these\" lists the supplies, the food-safety advice comes from the fact that fridges stop working, \"beyond food safety\" moves on to medical needs, and \"finally\" closes the list. The advice moves from the general to the specific.",
             "transitionWords": [
-                "First",
-                "Then",
+                "These",
+                "Also",
+                "Beyond food safety",
                 "Finally"
             ]
         },
@@ -154,27 +158,28 @@
             "subtype": "sentenceOrderReading",
             "interactionType": "reorder",
             "shuffledSentences": [
-                "Before standardized time zones existed, most towns set their own local clocks according to the sun's position overhead.",
-                "This shift required the public to adjust to a more abstract, externally imposed sense of time than they had previously known.",
-                "Governments eventually adopted these standardized zones officially, extending them well beyond their original railway origins.",
-                "Historians often cite this transition as an early example of technology reshaping a deeply ingrained aspect of daily life.",
-                "Railway companies began pushing for a standardized system of time zones to simplify scheduling across their networks.",
-                "The expansion of railway travel made these countless local time differences increasingly impractical for coordinating schedules."
+                "A satellite does not stay in orbit because gravity is absent; on the contrary, gravity is what keeps it there.",
+                "The result is a continual fall around the planet rather than into it.",
+                "The satellite is constantly falling toward the Earth, but it also moves sideways at enormous speed.",
+                "Because of that sideways motion, the ground curves away beneath it as fast as it falls.",
+                "This is why the International Space Station circles the planet about every ninety minutes, whereas satellites in much higher orbits take a full day.",
+                "Lower orbits require greater speeds, since gravity is stronger closer to the Earth."
             ],
             "correctOrder": [
                 0,
-                5,
-                4,
                 2,
+                3,
                 1,
-                3
+                5,
+                4
             ],
-            "hint": "A described inconvenience usually precedes the interested party who pushed for a solution, which then precedes the broader adoption of that solution.",
-            "explanation": "This paragraph traces a historical standardization and its social effect: the prior system, its growing impracticality, the interested party's push, the resulting official adoption, its social consequence, and its recognized historical significance.",
+            "hint": "\"On the contrary\" corrects a belief. Which sentence states the belief, and which sentence uses \"this\" to point to a general rule?",
+            "explanation": "A common misunderstanding is corrected, the two motions are described, \"because of that sideways motion\" explains the curve, the result is summarized, the rule about speed and height follows, and \"this is why\" applies it to a real example. \"Whereas\" contrasts low and high orbits.",
             "transitionWords": [
-                "First",
-                "Then",
-                "Finally"
+                "On the contrary",
+                "Because of that",
+                "This is why",
+                "Whereas"
             ]
         },
         {
@@ -183,27 +188,27 @@
             "subtype": "sentenceOrderReading",
             "interactionType": "reorder",
             "shuffledSentences": [
-                "Critics counter that the structure can insulate founders from meaningful accountability even amid serious company missteps.",
-                "Proponents argue this structure allows founders to pursue long-term strategic goals without pressure from short-term investor demands.",
-                "Some companies going public choose to issue two classes of stock carrying different levels of voting power.",
-                "The debate remains unresolved, reflecting a genuine and largely unsettled tension between founder autonomy and investor protection.",
-                "Several major stock exchanges have debated whether to restrict or specially flag companies using dual-class structures.",
-                "Founders typically retain the class carrying disproportionately greater voting influence relative to their actual ownership stake."
+                "However, the estimated construction cost exceeds the budget available for this phase of the project by nearly thirty percent.",
+                "We would welcome a revised version that reduces the scale of the building, and we can arrange a meeting to discuss possible adjustments.",
+                "For that reason, the committee regrets that it cannot proceed with the proposal in its current form.",
+                "Thank you for submitting your proposal for the new visitor center, which the committee reviewed carefully at its meeting on Tuesday.",
+                "We were impressed by the originality of the design and by the clear way in which you explained the intended use of each space.",
+                "Please let us know by the end of the month whether you would like to take up this invitation."
             ],
             "correctOrder": [
-                2,
-                5,
-                1,
-                0,
+                3,
                 4,
-                3
+                0,
+                2,
+                1,
+                5
             ],
-            "hint": "A described structure usually precedes the arguments both for and against it.",
-            "explanation": "This paragraph presents a corporate governance debate in balanced order: the structure, how it's typically used, the argument for it, the argument against it, the resulting regulatory debate, and an honest acknowledgment that no consensus has emerged.",
+            "hint": "A polite refusal usually gives thanks and praise before the difficulty. Which sentences do that, and which sentence introduces the difficulty?",
+            "explanation": "The thanks come first, the praise softens the news, \"however\" introduces the problem, \"for that reason\" states the decision, the invitation offers a way forward, and the last sentence refers to it as \"this invitation\". The letter follows a diplomatic order.",
             "transitionWords": [
-                "First",
-                "Then",
-                "Finally"
+                "However",
+                "For that reason",
+                "This invitation"
             ]
         },
         {
@@ -212,27 +217,28 @@
             "subtype": "sentenceOrderReading",
             "interactionType": "reorder",
             "shuffledSentences": [
-                "Public health agencies in many countries maintain surveillance networks tracking which bacterial infections are resisting standard antibiotic treatments.",
-                "International health organizations have since funded laboratory capacity-building specifically in these historically underrepresented regions.",
-                "Expanded data coverage has revealed resistance patterns previously invisible to global surveillance efforts entirely.",
-                "Researchers argue this more complete picture is essential for coordinating any effective global response to resistance.",
-                "This surveillance data allows physicians to select more effective treatments based on current, regionally specific resistance patterns.",
-                "Data collection gaps in lower-resource regions have historically limited the completeness of global resistance tracking."
+                "Families moved in large numbers from the countryside, and towns such as Manchester grew from modest markets into industrial centers within a few decades.",
+                "The modern city, with its regulations and public services, is in many ways a product of that difficult period.",
+                "Before the eighteenth century, most people in Britain lived in villages and earned their living from agriculture.",
+                "The spread of mechanized factories, first in textiles and later in iron and coal, created a demand for workers in a small number of locations.",
+                "Public alarm about these conditions eventually led to reforms, including laws on sanitation, factory hours, and the construction of proper drains.",
+                "Housing was built quickly and cheaply, and overcrowded districts without clean water or sewers became breeding grounds for disease."
             ],
             "correctOrder": [
-                0,
-                4,
-                5,
-                1,
                 2,
-                3
+                3,
+                0,
+                5,
+                4,
+                1
             ],
-            "hint": "A described system usually precedes its limitation, and a limitation usually precedes the effort made to address it.",
-            "explanation": "This paragraph traces a public health surveillance system's evolution: its purpose, its practical benefit, a historical limitation, the effort to address that limitation, the resulting improvement, and why that improvement matters for global coordination.",
+            "hint": "\"These conditions\" and \"that difficult period\" both name something described earlier. Which sentences do they refer to?",
+            "explanation": "The old rural life is the starting point, factories create demand, workers move, the towns grow, the housing is poor, \"these conditions\" leads to reform, and the last sentence links the past to today. Time phrases and nominal references both mark the progress.",
             "transitionWords": [
-                "First",
-                "Then",
-                "Finally"
+                "Before",
+                "Families moved",
+                "These conditions",
+                "That difficult period"
             ]
         },
         {
@@ -241,27 +247,28 @@
             "subtype": "sentenceOrderReading",
             "interactionType": "reorder",
             "shuffledSentences": [
-                "Linguists estimate that a significant share of these languages could disappear entirely within the coming century.",
-                "Linguists caution that digital tools alone cannot replace the intergenerational transmission that sustains a language long-term.",
-                "Some technology companies have partnered with remaining speakers to build digital dictionaries and speech recognition tools.",
-                "Early evidence from several such projects suggests modestly increased interest in language learning among younger community members.",
-                "These digital tools allow younger community members to engage with the language through platforms already familiar to them.",
-                "Thousands of the world's languages are spoken by increasingly small and aging populations of remaining fluent speakers."
+                "A child video-calling a grandparent or building a game with a friend is engaged very differently from one watching an endless stream of clips.",
+                "Adults who follow the same rules themselves tend to find that their children accept them more readily.",
+                "Parents often worry that their children spend too many hours in front of screens, but the length of time is only part of the picture.",
+                "Nevertheless, excessive use can displace sleep, exercise, and face-to-face play, all of which are essential for healthy development.",
+                "Researchers increasingly emphasize what children are doing, and with whom, rather than counting minutes alone.",
+                "Families are therefore advised to set clear limits at bedtime and during meals, and to keep devices out of bedrooms overnight."
             ],
             "correctOrder": [
-                5,
-                0,
                 2,
                 4,
+                0,
                 3,
+                5,
                 1
             ],
-            "hint": "A described trend usually precedes the intervention attempting to address it, and an intervention's early results usually precede an important caveat about its limits.",
-            "explanation": "This paragraph traces a cultural preservation effort and its limits: the trend, its projected consequence, the technological intervention, how it functions, its early positive signal, and an important caution about what it cannot fully replace.",
+            "hint": "\"Nevertheless\" limits a point that has just been made. Which sentence makes that point?",
+            "explanation": "A worry is stated and qualified, the researchers' shift in emphasis follows, the examples illustrate different kinds of use, \"nevertheless\" reminds the reader of the risks, \"therefore\" leads to advice, and the last sentence adds a note about example-setting. \"The same rules\" refers to the limits just described.",
             "transitionWords": [
-                "First",
-                "Then",
-                "Finally"
+                "But",
+                "Nevertheless",
+                "Therefore",
+                "The same rules"
             ]
         },
         {
@@ -270,27 +277,28 @@
             "subtype": "sentenceOrderReading",
             "interactionType": "reorder",
             "shuffledSentences": [
-                "Purchasing an existing solution allows faster deployment but can create dependency on an outside vendor's future decisions.",
-                "One company initially built a critical component internally, prioritizing tight customization over faster time to market.",
-                "The company eventually replaced it with a mature third-party solution, freeing its engineers to focus on more distinctive work.",
-                "Years later, maintaining that internal component consumed engineering resources disproportionate to the value it actually delivered.",
-                "Companies developing new software products regularly face a choice between building a needed component internally or purchasing an existing solution.",
-                "Building internally offers greater customization but typically demands more time, specialized talent, and ongoing maintenance."
+                "To make this system work, the salary must be set below the average monthly income, not at the level of the best months.",
+                "A common remedy is to pay every client payment into a separate account and to draw a fixed monthly salary from it.",
+                "Freelancers often struggle to budget because their income varies from month to month, while most of their bills stay the same.",
+                "Once the salary has been fixed, a proportion should also be set aside for taxes as soon as each payment arrives, which avoids an unpleasant surprise at the end of the year.",
+                "After a few months, the account itself shows whether the chosen salary is realistic and can be adjusted accordingly.",
+                "In good months, the surplus remains in the account, and in lean months, it covers the gap."
             ],
             "correctOrder": [
-                4,
+                2,
+                1,
                 5,
                 0,
-                1,
                 3,
-                2
+                4
             ],
-            "hint": "General trade-offs are usually presented before the specific choice one company made and later reconsidered.",
-            "explanation": "This paragraph explains a recurring strategic decision through a specific case: the general choice, one option's trade-off, the other option's trade-off, the specific decision made, its long-term cost, and the eventual reconsideration.",
+            "hint": "A reference to a system and a clause about a fixed salary both depend on earlier steps. Which steps?",
+            "explanation": "The problem comes first, the remedy is described, the surplus and lean months explain how it works, \"to make this system work\" states a condition, the tax advice follows the fixing of the salary, and the final sentence describes later adjustment. \"Accordingly\" links the adjustment to what the account shows.",
             "transitionWords": [
-                "First",
-                "Then",
-                "Finally"
+                "Because",
+                "To make this system work",
+                "Once",
+                "After a few months"
             ]
         },
         {
@@ -299,27 +307,27 @@
             "subtype": "sentenceOrderReading",
             "interactionType": "reorder",
             "shuffledSentences": [
-                "The persistence of the effect even among the forewarned illustrates just how deeply automatic this cognitive bias actually is.",
-                "Negotiators who state an initial number first tend to disproportionately influence the final agreed-upon outcome.",
-                "Researchers attribute this effect, known as anchoring, to how the first number offered shapes subsequent perceptions of what counts as reasonable.",
-                "Negotiators trained in these counter-strategies showed measurably reduced susceptibility to an opposing party's initial anchor.",
-                "This influence persists even among negotiators who are explicitly aware the anchoring effect exists and warned about it in advance.",
-                "Some negotiation training programs now teach counter-strategies, such as proposing a well-reasoned range rather than reacting immediately."
+                "Cooks who understand these processes can therefore control texture and flavor deliberately instead of relying on chance.",
+                "This reaction explains why toasted bread and roasted meat taste so different from their raw or boiled forms.",
+                "Vegetables, by contrast, are softened by heat, which breaks down the fibers that give them their crunch and makes them easier to chew and digest.",
+                "Heat causes the proteins in an egg to unfold and bond with one another, which turns the transparent liquid into a firm solid.",
+                "Cooking does more than make food warmer; it changes the structure of the ingredients themselves.",
+                "Browning, which occurs when sugars and proteins react at high temperatures, creates hundreds of new flavor compounds."
             ],
             "correctOrder": [
-                1,
-                2,
                 4,
-                5,
                 3,
+                2,
+                5,
+                1,
                 0
             ],
-            "hint": "A described effect usually precedes its formal name and explanation, which then precedes any strategy developed to counteract it.",
-            "explanation": "This paragraph explains a well-documented negotiation bias: the effect, its name and explanation, its surprising persistence even when known, a countermeasure developed, its measured benefit, and what the bias's persistence reveals about it.",
+            "hint": "\"By contrast\" sets one example against another. Which sentence gives the example that it is contrasted with?",
+            "explanation": "The general claim comes first, the egg example shows heat making something firm, the vegetable example shows the opposite, browning adds a third process, \"this reaction\" refers to browning, and \"these processes\" summarizes all of them in the conclusion.",
             "transitionWords": [
-                "First",
-                "Then",
-                "Finally"
+                "By contrast",
+                "This reaction",
+                "These processes"
             ]
         },
         {
@@ -328,27 +336,28 @@
             "subtype": "sentenceOrderReading",
             "interactionType": "reorder",
             "shuffledSentences": [
-                "Regions that adopted regular controlled burns experienced measurably less severe wildfire damage during subsequent fire seasons.",
-                "Decades of aggressively suppressing all wildfires, however small, gradually allowed dense, flammable underbrush to accumulate across many forests.",
-                "Forest management policy in several regions has since shifted from pure suppression toward this more proactive, fuel-reducing approach.",
-                "This accumulated fuel load contributed to increasingly severe and difficult-to-control wildfires when fires eventually did occur.",
-                "Communities near affected forests initially expressed concern about deliberately starting fires under any circumstances.",
-                "Forest scientists began advocating for controlled, deliberately set burns to reduce this dangerous fuel buildup safely."
+                "A rehearsal with the finished slides in front of a colleague often exposes unclear passages and timing problems that are invisible to the speaker alone.",
+                "Following up with a concise summary within a day reinforces the message and shows respect for the client's time.",
+                "Slides work best when they illustrate the argument rather than repeat it, so text should be kept to a minimum.",
+                "During the meeting itself, pausing to invite questions keeps the audience engaged and reveals any doubts that need to be addressed.",
+                "A successful client presentation begins long before the meeting, with a clear understanding of what the audience needs to decide.",
+                "The presenter should identify the single most important message and then select only the evidence that supports it."
             ],
             "correctOrder": [
-                1,
-                3,
-                5,
                 4,
+                5,
+                2,
                 0,
-                2
+                3,
+                1
             ],
-            "hint": "A described long-term practice usually precedes its unintended consequence, and a consequence usually precedes the alternative approach proposed in response.",
-            "explanation": "This paragraph traces a shift in environmental management policy: the prior practice, its unintended consequence, the proposed alternative, initial public concern, the measured benefit of the alternative, and the resulting broader policy shift.",
+            "hint": "The advice follows the timeline of a presentation. Which sentences deal with preparation, which with the meeting, and which with afterwards?",
+            "explanation": "The overall claim comes first, message and evidence are chosen, the slides are designed, the finished slides are rehearsed, questions are invited during the meeting, and the follow-up comes afterwards. \"The finished slides\" and \"the meeting itself\" both point to earlier stages.",
             "transitionWords": [
-                "First",
                 "Then",
-                "Finally"
+                "The finished slides",
+                "During the meeting itself",
+                "Following up"
             ]
         },
         {
@@ -357,27 +366,28 @@
             "subtype": "sentenceOrderReading",
             "interactionType": "reorder",
             "shuffledSentences": [
-                "Some software companies offer a basic version of their product entirely free, reserving advanced features for paying subscribers.",
-                "Careful analysis of which features to place behind the paywall often determines whether the entire model proves financially viable.",
-                "A large free user base can generate valuable word-of-mouth exposure that a purely paid product would likely never achieve.",
-                "Companies employing this model must therefore ensure their paid features remain compelling enough to justify the eventual conversion effort.",
-                "This approach, known as freemium pricing, allows a company to build a large user base before ever requiring payment.",
-                "Converting free users into paying subscribers nonetheless remains a persistent challenge, since only a small percentage typically upgrade."
+                "In most parliamentary systems, a proposed law begins as a draft known as a bill.",
+                "Committees examine the amended text, hear evidence from experts, and report their findings back to the full chamber.",
+                "The bill is introduced by a minister or a member of the legislature and receives a formal first reading, at which its title is announced.",
+                "Only after both houses have agreed, and the head of state has signed it, does the bill become law.",
+                "It is then debated in detail, and amendments may be proposed by members who wish to change particular provisions.",
+                "If the chamber approves the final version, the bill passes to the second house, which follows a similar procedure."
             ],
             "correctOrder": [
                 0,
-                4,
                 2,
+                4,
+                1,
                 5,
-                3,
-                1
+                3
             ],
-            "hint": "A described pricing structure usually precedes its benefit, which then precedes the persistent challenge that comes along with it.",
-            "explanation": "This paragraph explains a business model and its central trade-off: the approach, its name, its key benefit, the accompanying challenge, what companies must do to manage that challenge, and the ultimate factor determining the model's success.",
+            "hint": "\"The amended text\" and \"the final version\" refer to stages of the same document. Which sentences create each stage?",
+            "explanation": "The draft is introduced, read, debated and amended, examined by committees, approved by the chamber, passed to the second house, and finally signed. \"Only after both houses have agreed\" places the last step after everything else.",
             "transitionWords": [
-                "First",
                 "Then",
-                "Finally"
+                "The amended text",
+                "If",
+                "Only after"
             ]
         },
         {
@@ -386,27 +396,28 @@
             "subtype": "sentenceOrderReading",
             "interactionType": "reorder",
             "shuffledSentences": [
-                "Broad-spectrum antibiotics, while effective against harmful bacteria, also eliminate many beneficial bacteria residing within the gut.",
-                "This uncertainty has prompted more cautious antibiotic prescribing guidelines in several healthcare systems in recent years.",
-                "Physicians are now more frequently encouraged to weigh these longer-term considerations against the immediate benefit of antibiotic treatment.",
-                "Researchers have found that this disruption to the gut's microbial community can persist for months following a single antibiotic course.",
-                "Some researchers suspect, though have not yet definitively proven, links between reduced microbial diversity and various chronic conditions.",
-                "Repeated antibiotic use over a person's lifetime appears to have cumulative effects on the diversity of this microbial community."
+                "Buying a used car can save a great deal of money, but it also carries risks that a careful buyer should anticipate.",
+                "A test drive on both slow streets and fast roads can reveal noises, vibrations, and handling problems that are not obvious in a parked car.",
+                "If the car passes those checks, an independent mechanic can inspect it for hidden faults, for which most garages charge a modest fee.",
+                "The first step is to establish a realistic budget that includes insurance, tax, and likely maintenance as well as the purchase price.",
+                "Armed with the mechanic's report, the buyer can negotiate the price or walk away with confidence.",
+                "With a shortlist in hand, the buyer should ask each seller for the vehicle's service history and compare it with the mileage shown."
             ],
             "correctOrder": [
                 0,
                 3,
                 5,
-                4,
                 1,
-                2
+                2,
+                4
             ],
-            "hint": "A described immediate effect usually precedes its longer-term consequence, and an unproven suspicion usually precedes any resulting change in practice.",
-            "explanation": "This paragraph traces evolving medical understanding into changed practice: the immediate effect, its longer-term persistence, a cumulative pattern, an unproven but suspected link, the resulting caution in guidelines, and the practical consideration physicians must now weigh.",
+            "hint": "\"Those checks\" refers to actions already described. Which sentences describe them?",
+            "explanation": "The general claim comes first, the budget is the first step, the shortlist leads to the service-history check, the test drive is a further check, \"if the car passes those checks\" leads to the mechanic's inspection, and the report supports the final decision. Each step depends on the one before.",
             "transitionWords": [
-                "First",
-                "Then",
-                "Finally"
+                "First step",
+                "With a shortlist",
+                "Those checks",
+                "Armed with"
             ]
         },
         {
@@ -415,27 +426,28 @@
             "subtype": "sentenceOrderReading",
             "interactionType": "reorder",
             "shuffledSentences": [
-                "Researchers noted that microfinance appeared to help some borrowers meaningfully while leaving many others largely unaffected.",
-                "This more nuanced picture prompted some organizations to pair small loans with additional business training and mentorship.",
-                "Early proponents argued the model could serve as a powerful tool for reducing poverty at meaningful scale.",
-                "Programs combining loans with this additional support have reported somewhat stronger outcomes than loans offered in isolation.",
-                "Subsequent rigorous economic studies found the actual poverty-reduction effects were considerably more modest than early enthusiasm had suggested.",
-                "Microfinance programs, offering small loans to entrepreneurs lacking access to traditional banking, spread rapidly across many developing regions."
+                "This intermediate behavior makes it possible to control the flow of current with great precision.",
+                "In insulators such as rubber or glass, by contrast, the electrons are held tightly in place and cannot move freely.",
+                "These free electrons can drift through the material when a voltage is applied, forming an electric current.",
+                "Metals conduct electricity well because some of their electrons are not bound to individual atoms.",
+                "Semiconductors, including silicon, lie between these extremes, since a small amount of energy or a trace of impurity can release their electrons.",
+                "It is the basis of the transistors that operate every modern computer and phone."
             ],
             "correctOrder": [
-                5,
+                3,
                 2,
+                1,
                 4,
                 0,
-                1,
-                3
+                5
             ],
-            "hint": "An early enthusiastic claim usually precedes the more rigorous research that complicates it, and a complicated finding usually precedes the adjustment made in response.",
-            "explanation": "This paragraph traces a development strategy's evolving evidence base: the model, early enthusiasm, the more modest research finding, a specific nuance within that finding, the resulting programmatic adjustment, and the somewhat stronger results that followed.",
+            "hint": "\"These extremes\" refers to two opposite cases. Which sentences describe them?",
+            "explanation": "The conducting case is stated, its mechanism is explained, the insulating case is contrasted, the semiconductors are placed between the two, \"this intermediate behavior\" states the significance, and \"it\" links that control to modern technology. \"These free electrons\" and \"these extremes\" both refer back.",
             "transitionWords": [
-                "First",
-                "Then",
-                "Finally"
+                "These free electrons",
+                "By contrast",
+                "These extremes",
+                "This intermediate behavior"
             ]
         },
         {
@@ -444,27 +456,28 @@
             "subtype": "sentenceOrderReading",
             "interactionType": "reorder",
             "shuffledSentences": [
-                "Developers refer to the accumulated cost of these shortcuts as technical debt, drawing a deliberate comparison to financial debt.",
-                "The team ultimately paused new feature development entirely for one full quarter, dedicating that time exclusively to addressing the accumulated debt.",
-                "Like financial debt, a small amount can be a reasonable trade-off, but excessive accumulation eventually slows future work considerably.",
-                "One team, pressured by an aggressive product deadline, accumulated substantial technical debt over several consecutive product cycles.",
-                "Software teams under pressure to ship new features quickly sometimes take shortcuts that leave the underlying code less maintainable.",
-                "Adding even simple new features eventually began taking far longer than the team's original estimates had ever predicted."
+                "The change was recommended by the finance team, who found that paper claims took an average of three weeks to process and were frequently lost.",
+                "Employees who are unfamiliar with these procedures can attend one of the training sessions listed on the intranet.",
+                "From the start of the next quarter, employees will submit expense claims through an online portal instead of on paper forms.",
+                "Claims that match the company's guidelines are approved within two working days, whereas exceptional items are forwarded to a manager for review.",
+                "The finance team will evaluate the system after six months and adjust it in response to staff feedback.",
+                "Under the new system, each claim must be accompanied by a photograph of the receipt, which is checked automatically against the amount entered."
             ],
             "correctOrder": [
-                4,
-                0,
                 2,
-                3,
+                0,
                 5,
-                1
+                3,
+                1,
+                4
             ],
-            "hint": "A general concept is usually explained before the specific case illustrating how ignoring it eventually creates real cost.",
-            "explanation": "This paragraph explains a software engineering concept through a concrete case: the practice, its name and analogy, the trade-off it involves, one team's specific situation, the resulting consequence, and the corrective action ultimately taken.",
+            "hint": "\"The change\" and \"these procedures\" each point back to something described earlier. What?",
+            "explanation": "The new policy is announced, its justification follows, the rules of the new system are explained, the approval routes are compared with \"whereas\", the training refers to \"these procedures\", and the last sentence describes the future evaluation. The policy moves from decision to reason to practice.",
             "transitionWords": [
-                "First",
-                "Then",
-                "Finally"
+                "The change",
+                "Under the new system",
+                "Whereas",
+                "These procedures"
             ]
         },
         {
@@ -473,27 +486,28 @@
             "subtype": "sentenceOrderReading",
             "interactionType": "reorder",
             "shuffledSentences": [
-                "The district is now weighing whether to expand additional staffing support alongside any broader rollout of the program.",
-                "Administrators piloted a restorative justice program emphasizing structured dialogue between students in conflict, rather than automatic suspension.",
-                "One school district faced criticism over high suspension rates that disproportionately affected certain groups of students.",
-                "Teachers required substantial additional training to facilitate these dialogue sessions effectively and fairly.",
-                "Some teachers nonetheless reported feeling the new approach demanded more time than their existing schedules could reasonably accommodate.",
-                "Suspension rates in participating schools dropped considerably during the pilot's first full academic year."
+                "In the Amazon, this process contributes a substantial share of the moisture that later falls as rain.",
+                "Trees draw water from the soil through their roots and release it into the atmosphere from their leaves, a process known as transpiration.",
+                "When large areas are cleared, less water enters the air, and rainfall in the surrounding region can decline.",
+                "Large forests influence not only the air quality of a region but also the amount of rain that falls there.",
+                "Protecting forests is therefore relevant to farmers and city dwellers who live far from the trees themselves.",
+                "Reduced rainfall, in turn, makes the remaining forest drier and more vulnerable to fire."
             ],
             "correctOrder": [
-                2,
-                1,
                 3,
+                1,
+                0,
+                2,
                 5,
-                4,
-                0
+                4
             ],
-            "hint": "A criticism usually precedes the alternative approach piloted in response, and a described requirement usually precedes the concern raised about meeting it.",
-            "explanation": "This paragraph follows a school policy reform and its practical tension: the criticism, the pilot program, its staffing requirement, its measured benefit, a raised practical concern, and the resulting open decision about how to scale it.",
+            "hint": "\"This process\" and \"reduced rainfall\" each name something introduced earlier. Which sentences supply them?",
+            "explanation": "The claim comes first, transpiration is defined, the Amazon example uses \"this process\", clearing reduces the moisture, \"reduced rainfall\" names the consequence, and \"therefore\" leads to a wider conclusion. \"In turn\" shows that the last effect is caused by the previous one.",
             "transitionWords": [
-                "First",
-                "Then",
-                "Finally"
+                "A process known as",
+                "This process",
+                "Reduced rainfall",
+                "Therefore"
             ]
         },
         {
@@ -502,27 +516,28 @@
             "subtype": "sentenceOrderReading",
             "interactionType": "reorder",
             "shuffledSentences": [
-                "Composers began writing increasingly complex pieces, confident that notation could now faithfully preserve their original intentions.",
-                "Before standardized musical notation existed, musical compositions were passed down largely through oral tradition and imprecise handwritten notes.",
-                "This precision allowed musical works to be performed consistently across different regions and even across different historical eras.",
-                "Music historians consider this standardization essential to the development of the elaborate orchestral compositions that followed centuries later.",
-                "The gradual development of a more precise, standardized notation system allowed composers to specify pitch and rhythm with much greater accuracy.",
-                "This meant that a piece of music could vary considerably depending entirely on which performer had learned and transmitted it."
+                "Adjusting sleep patterns a few days before departure eases the transition to the new time zone.",
+                "Once on board, passengers are advised to drink water regularly, since cabin air is very dry and dehydration increases fatigue.",
+                "Wearing loose clothing and comfortable shoes makes this easier, and a light sweater deals with the temperature changes.",
+                "Long flights can be tiring, but sensible preparation reduces the discomfort considerably.",
+                "Moving around the cabin every hour or two, or at least stretching the legs in the seat, helps to keep the blood circulating.",
+                "On arrival, exposure to daylight helps the body clock to adapt more quickly."
             ],
             "correctOrder": [
+                3,
+                0,
                 1,
-                5,
                 4,
                 2,
-                0,
-                3
+                5
             ],
-            "hint": "A described limitation usually precedes the innovation addressing it, and an innovation usually precedes the more ambitious work it eventually enabled.",
-            "explanation": "This paragraph traces a historical innovation and its long-term consequence: the prior limitation, its effect on consistency, the innovation, its resulting precision, the more ambitious work it enabled, and its recognized significance to later musical history.",
+            "hint": "The advice follows a timeline, from before the flight to after it. Which sentence belongs to each stage?",
+            "explanation": "The general claim comes first, preparation before departure comes next, advice on board follows, movement is a specific recommendation, clothing makes movement easier, and arrival is the final stage. \"This\" in the fifth sentence refers to moving around.",
             "transitionWords": [
-                "First",
-                "Then",
-                "Finally"
+                "Before departure",
+                "Once on board",
+                "This easier",
+                "On arrival"
             ]
         },
         {
@@ -531,27 +546,28 @@
             "subtype": "sentenceOrderReading",
             "interactionType": "reorder",
             "shuffledSentences": [
-                "Certain digital markets have shown a strong tendency toward a small number of dominant firms capturing a disproportionate share of total activity.",
-                "The broader debate remains far from settled, given genuine disagreement over which explanation best fits the available evidence.",
-                "Economists have attributed part of this pattern to the low marginal cost of serving an additional digital customer.",
-                "Regulators have debated whether this tendency reflects healthy competition rewarding genuine quality, or a market structure resistant to it.",
-                "Once a firm establishes a meaningful early lead, this dynamic can make catching up increasingly difficult for later competitors.",
-                "Some proposed interventions focus on lowering the switching costs that help entrench an early leader's position."
+                "The researchers caution, however, that the participants were volunteers and may have been more motivated than the average employee.",
+                "After eight weeks, the group that took regular walks scored significantly higher on the test and reported less tiredness in the afternoons.",
+                "Concentration was measured weekly with a standard attention test, and participants also reported their fatigue levels.",
+                "Two hundred employees were randomly assigned either to take a five-minute walk every ninety minutes or to continue working without scheduled breaks.",
+                "They recommend larger trials in a wider range of workplaces before firm conclusions can be drawn.",
+                "This study examined whether short daily breaks improve concentration among office workers who spend most of the day at computers."
             ],
             "correctOrder": [
-                0,
-                2,
-                4,
-                3,
                 5,
-                1
+                3,
+                2,
+                1,
+                0,
+                4
             ],
-            "hint": "A described pattern usually precedes a proposed explanation, which then precedes the debate over its actual meaning.",
-            "explanation": "This paragraph explains a market dynamic and the disagreement surrounding it: the pattern, one proposed explanation, its self-reinforcing consequence, the resulting regulatory debate, a proposed intervention, and an honest acknowledgment that the debate remains unresolved.",
+            "hint": "A research summary usually states the question, the method, the results, and the limits. Which sentence gives the limits, and how do you know?",
+            "explanation": "The question comes first, the design describes who did what, the measurements explain how effects were judged, the results follow the eight weeks, \"however\" introduces a limitation, and the last sentence gives a recommendation. \"They\" in the final sentence refers to the researchers.",
             "transitionWords": [
-                "First",
-                "Then",
-                "Finally"
+                "Examined",
+                "Assigned",
+                "After eight weeks",
+                "However"
             ]
         },
         {
@@ -560,27 +576,28 @@
             "subtype": "sentenceOrderReading",
             "interactionType": "reorder",
             "shuffledSentences": [
-                "Shift workers whose schedules regularly conflict with this internal clock have shown elevated rates of several long-term health conditions in large studies.",
-                "The human body maintains an internal biological clock that regulates sleep, alertness, and various hormonal cycles across roughly a twenty-four-hour period.",
-                "Workplace scheduling interventions, such as rotating shifts in a consistent, predictable direction, have shown modest benefits in some studies.",
-                "Researchers have proposed that this disruption interferes with the body's normal cellular repair and hormonal regulation processes.",
-                "Occupational health researchers continue studying which scheduling adjustments most effectively balance operational needs against known health risks.",
-                "Complete elimination of circadian disruption remains impractical for many essential around-the-clock industries and services."
+                "That atmosphere attracted customers who, for a small entrance fee, could read newspapers, exchange news, and discuss politics and business.",
+                "Coffee reached Europe in the seventeenth century, and by the 1650s the first coffeehouses had opened in Oxford and London.",
+                "One such institution, which began as a coffeehouse for shipping merchants, grew into the insurance market that still bears its founder's name.",
+                "Unlike taverns, which served alcohol, these establishments offered a stimulating drink that encouraged conversation rather than drowsiness.",
+                "Merchants soon began to use particular coffeehouses as meeting places for deals, and some of these gatherings developed into permanent institutions.",
+                "The coffeehouse thus became a setting in which information circulated freely and new commercial ideas took shape."
             ],
             "correctOrder": [
                 1,
-                0,
                 3,
+                0,
+                4,
                 2,
-                5,
-                4
+                5
             ],
-            "hint": "A general biological mechanism usually precedes the disruption of that mechanism, which then precedes the research into practical remedies.",
-            "explanation": "This paragraph explains a biological and occupational health issue: the mechanism, the disruption and its consequence, a proposed explanation, an intervention with modest success, an acknowledged practical limit, and the ongoing research balancing competing needs.",
+            "hint": "\"That atmosphere\" and \"one such institution\" both refer back. What do they refer to?",
+            "explanation": "The arrival of coffee is dated, the drink distinguishes the new places from taverns, \"that atmosphere\" leads to the customers' activities, merchants turn the places into meeting points, \"one such institution\" gives an example, and \"thus\" states a conclusion. Each reference needs its earlier source.",
             "transitionWords": [
-                "First",
-                "Then",
-                "Finally"
+                "Unlike",
+                "That atmosphere",
+                "One such institution",
+                "Thus"
             ]
         },
         {
@@ -589,27 +606,28 @@
             "subtype": "sentenceOrderReading",
             "interactionType": "reorder",
             "shuffledSentences": [
-                "Some conservation programs have begun deliberately cultivating and transplanting these more heat-tolerant coral populations onto damaged reef sections.",
-                "Bleaching occurs when heat-stressed coral expels the symbiotic algae that normally provide it with both color and essential nutrients.",
-                "Marine biologists nonetheless caution that this approach can only complement, not replace, broader efforts to address rising ocean temperatures directly.",
-                "Early results suggest these transplanted populations survive subsequent heat events at meaningfully higher rates than the original reef population.",
-                "Rising ocean temperatures have caused increasingly frequent and severe coral bleaching events across reef systems worldwide.",
-                "Marine biologists have identified certain coral populations that appear to demonstrate greater natural heat tolerance than others nearby."
+                "Because rooms near windows are often heated, the air there can become very dry, so grouping plants together or placing a tray of damp pebbles nearby raises the humidity.",
+                "Houseplants that thrived in summer often decline in winter, not because they are neglected but because their conditions have changed.",
+                "Light matters more than water in this season, so plants should stand close to a window, although their leaves should not touch the cold glass.",
+                "Overwatering at this time of year is the most common mistake, since the excess moisture cannot be used and encourages root rot.",
+                "Shorter days mean less light, and growth slows as a result, so the plants need much less water than before.",
+                "With these adjustments, most plants survive until spring, when longer days signal that it is time to resume normal care."
             ],
             "correctOrder": [
-                4,
                 1,
-                5,
-                0,
+                4,
                 3,
-                2
+                2,
+                0,
+                5
             ],
-            "hint": "A described phenomenon usually precedes the mechanism explaining it, and a discovered variation usually precedes the intervention built around that variation.",
-            "explanation": "This paragraph explains an ecological crisis and a partial response: the phenomenon, its biological mechanism, a discovered natural variation, the conservation strategy built on it, its measured early success, and an important caution about its limited scope.",
+            "hint": "\"Than water\" and \"near windows\" both link a sentence to an earlier one. Which sentences do they connect?",
+            "explanation": "The problem and its cause come first, less light means less water is needed, overwatering is the mistake that follows, the window advice builds on the comparison between light and water, the humidity advice builds on the window, and the last sentence sums up the result. \"These adjustments\" refers to the advice given in the previous sentences.",
             "transitionWords": [
-                "First",
-                "Then",
-                "Finally"
+                "As a result",
+                "Than water",
+                "Near windows",
+                "These adjustments"
             ]
         },
         {
@@ -618,27 +636,28 @@
             "subtype": "sentenceOrderReading",
             "interactionType": "reorder",
             "shuffledSentences": [
-                "Technology companies have generally resisted such requirements, citing both security concerns and the cost of technical redesign.",
-                "The resulting policy debate reflects a genuine tension between user experience, competitive fairness, and technical complexity.",
-                "Regulators in several regions have proposed interoperability requirements intended to reduce this friction between competing ecosystems.",
-                "This tight integration, however, typically comes at the cost of reduced compatibility with products from other companies.",
-                "Users deeply invested in one such ecosystem often find themselves effectively discouraged from adopting competing products later.",
-                "Tightly integrated technology ecosystems often deliver a smoother, more polished user experience than loosely connected alternative systems."
+                "Funding for the workshops was approved in principle but postponed until the next financial year, when more money would be available.",
+                "Members first reviewed three proposals: new equipment for the laboratory, a series of staff workshops, and repairs to the ventilation system.",
+                "The remaining proposal, for laboratory equipment, was returned to its authors with a request for a more detailed cost comparison.",
+                "The committee met on Wednesday to decide how to spend the remaining budget for the year.",
+                "The chair thanked the members and confirmed that the next meeting would be held in three weeks' time.",
+                "The ventilation repairs were judged to be the most urgent, since inspectors had already issued a warning about air quality."
             ],
             "correctOrder": [
-                5,
                 3,
-                4,
-                2,
+                1,
+                5,
                 0,
-                1
+                2,
+                4
             ],
-            "hint": "A described benefit usually precedes its trade-off, and a trade-off usually precedes the regulatory response attempting to address it.",
-            "explanation": "This paragraph explains a recurring technology policy tension: the benefit, its trade-off, the resulting consequence for users, the regulatory proposal, industry resistance to it, and the underlying tension the debate reflects.",
+            "hint": "\"The remaining proposal\" only makes sense if other proposals have already been dealt with. Which sentences deal with them?",
+            "explanation": "The meeting's purpose comes first, the proposals are listed, the most urgent is decided, the second is approved with a delay, \"the remaining proposal\" is the third and last, and the chair closes the meeting. \"Remaining\" indicates the last item.",
             "transitionWords": [
                 "First",
-                "Then",
-                "Finally"
+                "The most urgent",
+                "Remaining",
+                "Next meeting"
             ]
         },
         {
@@ -647,27 +666,28 @@
             "subtype": "sentenceOrderReading",
             "interactionType": "reorder",
             "shuffledSentences": [
-                "Residents submitted project proposals ranging from park improvements to expanded public transit shelters.",
-                "A volunteer committee reviewed submissions for basic feasibility before finalizing which proposals appeared on the final ballot.",
-                "The city has since expanded the program's total budget allocation based on this encouraging early participation data.",
-                "One city allocated a modest portion of its annual municipal budget to be decided directly by resident vote rather than by council decision alone.",
-                "Voter turnout for the budgeting process was notably higher among residents who had never previously participated in local elections.",
-                "Officials credited the tangible, visible nature of the proposed projects with this increased civic engagement."
+                "The proportion required depends on how contagious a disease is, and highly infectious diseases such as measles need very high coverage.",
+                "When a large proportion of a population is immune, an infection struggles to find new hosts and eventually dies out locally.",
+                "Vaccines protect the people who receive them, but they also reduce the spread of disease within a community.",
+                "This indirect protection, known as herd immunity, shields those who cannot be vaccinated, such as newborn babies and people with weakened defenses.",
+                "Maintaining high coverage is therefore a shared responsibility as well as a personal choice.",
+                "If vaccination rates fall below that level, outbreaks become possible again, even in places where the disease had been rare for years."
             ],
             "correctOrder": [
+                2,
+                1,
                 3,
                 0,
-                1,
-                4,
                 5,
-                2
+                4
             ],
-            "hint": "A described process usually precedes the outcome it produced, and an outcome usually precedes the explanation offered for it.",
-            "explanation": "This paragraph follows a civic policy experiment and its interpreted success: the process, how proposals were generated, the review step, the surprising turnout result, an explanation for that result, and the resulting expansion of the program.",
+            "hint": "\"That level\" refers to a number that has been described. Which sentence describes it?",
+            "explanation": "The general claim comes first, the community effect is explained, \"this indirect protection\" is named, the required proportion depends on the disease, \"that level\" refers to that proportion, and \"therefore\" states the conclusion. \"Again\" implies that outbreaks had happened before.",
             "transitionWords": [
-                "First",
-                "Then",
-                "Finally"
+                "Also",
+                "This indirect protection",
+                "That level",
+                "Therefore"
             ]
         },
         {
@@ -676,27 +696,28 @@
             "subtype": "sentenceOrderReading",
             "interactionType": "reorder",
             "shuffledSentences": [
-                "This shift initially fragmented scholarly communication, since fewer scholars could read every other region's growing body of national-language work.",
-                "As nationalist sentiment grew across Europe, scholars increasingly began publishing significant work in their own native languages instead.",
-                "Historians of science note that English has since gradually assumed a role functionally similar to Latin's earlier position.",
-                "For centuries, Latin served as the standard shared language of scholarship across much of Europe, regardless of a scholar's native tongue.",
-                "Translation became an increasingly essential, institutionalized part of scholarly communication as this fragmentation deepened over subsequent generations.",
-                "This shared language allowed scholars from different regions to read and respond to each other's work without translation."
+                "Taking a moment to write a precise line thus saves time for both the sender and the reader.",
+                "A recipient often decides whether to open a message on the basis of the subject line alone.",
+                "Vague phrases such as a request for help, or an update, give the reader no reason to prioritize the message.",
+                "A useful subject line therefore states the purpose of the email in a few specific words.",
+                "By contrast, mentioning the topic and any deadline allows the recipient to judge the urgency at a glance.",
+                "The same clarity helps later, when a person needs to find the message among hundreds of others."
             ],
             "correctOrder": [
-                3,
-                5,
                 1,
-                0,
+                3,
+                2,
                 4,
-                2
+                5,
+                0
             ],
-            "hint": "A described shared system usually precedes the trend that gradually displaced it, and a displacement usually precedes its resulting consequence.",
-            "explanation": "This paragraph traces a historical linguistic shift and its long-term echo: the shared system, its benefit, the displacing trend, the resulting fragmentation, the institutional response to that fragmentation, and a modern parallel historians draw to it.",
+            "hint": "\"By contrast\" and \"the same clarity\" compare and link the sentences. Which earlier sentences do they refer to?",
+            "explanation": "The problem of attention comes first, \"therefore\" leads to advice, vague phrases are a bad example, \"by contrast\" gives the good example, \"the same clarity\" adds a later benefit, and \"thus\" summarizes the advantage for both sides.",
             "transitionWords": [
-                "First",
-                "Then",
-                "Finally"
+                "Therefore",
+                "By contrast",
+                "The same clarity",
+                "Thus"
             ]
         },
         {
@@ -705,27 +726,28 @@
             "subtype": "sentenceOrderReading",
             "interactionType": "reorder",
             "shuffledSentences": [
-                "Compensation structures tying executive pay closely to long-term company performance are one commonly proposed way to narrow this divergence.",
-                "Economists refer to this divergence as the principal-agent problem, a pattern observable well beyond corporate settings alone.",
-                "This delegation can create a divergence between what benefits shareholders broadly and what benefits executives personally in the short term.",
-                "Corporate governance researchers continue debating which combination of incentives and oversight most effectively aligns these competing interests.",
-                "Critics note that even carefully designed compensation structures can still be manipulated to reward short-term results at long-term expense.",
-                "Company shareholders, the ultimate owners of a corporation, typically delegate day-to-day decision-making to hired executive management."
+                "Automated programs called crawlers continuously follow links from page to page and record what they find.",
+                "When a query arrives, the engine identifies the pages in the index that contain relevant terms and then ranks them by several hundred criteria.",
+                "The recorded content is organized into an enormous index, much like the index at the back of a book.",
+                "These criteria include how recently a page was updated, how many other reputable sites refer to it, and how well it matches the intent of the search.",
+                "Because the criteria change regularly, the order of results for a given query can shift from month to month.",
+                "When a person types a query into a search engine, the results appear in a fraction of a second, but the work behind them began long before."
             ],
             "correctOrder": [
                 5,
+                0,
                 2,
                 1,
-                0,
-                4,
-                3
+                3,
+                4
             ],
-            "hint": "A described delegation usually precedes the divergence it can create, and a divergence usually precedes the attempted remedy and its own limitations.",
-            "explanation": "This paragraph explains a foundational governance concept and its imperfect remedy: the delegation, the resulting divergence, its formal name, the proposed remedy, a limitation of that remedy, and the ongoing scholarly debate about the best overall approach.",
+            "hint": "The opening idea promises unseen work behind the results. Which sentence introduces the earliest stage of that work?",
+            "explanation": "The instant results are described, the crawlers gather content, the content becomes an index, the query triggers matching and ranking, \"these criteria\" explains the ranking, and the last sentence explains why results change. \"Before\" in the first sentence means before the query.",
             "transitionWords": [
-                "First",
+                "Long before",
+                "The recorded content",
                 "Then",
-                "Finally"
+                "These criteria"
             ]
         },
         {
@@ -734,27 +756,28 @@
             "subtype": "sentenceOrderReading",
             "interactionType": "reorder",
             "shuffledSentences": [
-                "Rates of allergic and autoimmune conditions have risen noticeably in highly industrialized countries over recent decades.",
-                "Researchers proposed that reduced early childhood exposure to certain microbes might partly explain this pattern, an idea known as the hygiene hypothesis.",
-                "This important distinction has shaped ongoing research into which specific exposures might eventually inform preventive strategies.",
-                "Supporting evidence emerged from studies comparing children raised in different environments, such as farms versus urban settings.",
-                "Children raised in microbially richer environments showed measurably lower rates of certain allergic conditions in several such studies.",
-                "Researchers caution the hypothesis does not suggest that reduced hygiene itself is protective, but rather that specific microbial exposures may matter."
+                "When Pallavi was reassigned to another department, she had two weeks to hand over her projects to a colleague.",
+                "By the time she left, the clients had barely noticed the change, which she regarded as the best measure of a successful handover.",
+                "During her final week, she remained available for questions but let her colleague take the lead in meetings.",
+                "She began by writing a summary of each project, listing its goals, its current status, and any problems that remained unresolved.",
+                "Next, she introduced her colleague to the key clients so that they would know whom to contact in the future.",
+                "Once the clients had been introduced, they went through the shared folders together, and Pallavi explained the file structure and where the most important documents were stored."
             ],
             "correctOrder": [
                 0,
-                1,
                 3,
                 4,
                 5,
-                2
+                2,
+                1
             ],
-            "hint": "A described pattern usually precedes the hypothesis proposed to explain it, and supporting evidence usually precedes an important clarification about what that evidence actually shows.",
-            "explanation": "This paragraph traces a scientific hypothesis and its careful clarification: the pattern, the proposed hypothesis, supporting evidence, a specific detail within that evidence, an important clarification, and how that clarification shapes ongoing research.",
+            "hint": "One clause fixes a step in the timeline by referring to something already done. Which step must come before it?",
+            "explanation": "The reassignment sets a deadline, the summaries come first, the introductions follow, the folders come after the introductions, the final week reduces her role, and the last sentence evaluates the result. \"The change\" refers to the switch of contact person.",
             "transitionWords": [
-                "First",
-                "Then",
-                "Finally"
+                "Began by",
+                "Next",
+                "Once",
+                "By the time"
             ]
         },
         {
@@ -763,27 +786,28 @@
             "subtype": "sentenceOrderReading",
             "interactionType": "reorder",
             "shuffledSentences": [
-                "Compliance mechanisms varied considerably, with some agreements relying on voluntary reporting and others including enforceable penalties.",
-                "Airborne pollution generated in one country can travel significant distances, affecting air quality in neighboring countries entirely beyond their own control.",
-                "This comparison has strengthened arguments among policymakers favoring binding commitments over voluntary ones going forward.",
-                "Regions with stronger enforcement mechanisms have generally reported more significant reductions in measured cross-border pollution levels.",
-                "Several regions eventually established formal agreements requiring signatory countries to monitor and report their own cross-border emissions.",
-                "This reality has historically complicated efforts to hold any single polluting source clearly accountable for resulting harm."
+                "Engineers calculate their size according to the local range of temperatures, which can exceed fifty degrees between winter and summer.",
+                "The joints are therefore fitted with flexible seals or interlocking metal teeth that allow the two sections to slide while keeping the surface smooth.",
+                "Steel and concrete expand when they are heated and contract when they cool, and on a long bridge the change in length can be considerable.",
+                "Anyone who has driven over a large bridge has probably felt a rhythmic bump at certain points along the road.",
+                "Without gaps to absorb the movement, the materials would push against each other with enormous force and might crack or buckle.",
+                "These bumps are caused by expansion joints, which are gaps deliberately built into the structure."
             ],
             "correctOrder": [
-                1,
-                5,
-                4,
-                0,
                 3,
-                2
+                5,
+                2,
+                4,
+                1,
+                0
             ],
-            "hint": "A described problem usually precedes the agreement created to address it, and a comparison between approaches usually precedes the conclusion drawn from it.",
-            "explanation": "This paragraph traces an international policy issue toward a comparative conclusion: the problem, its complicating feature, the agreement formed, a variation in how it was implemented, the resulting comparison, and the argument that comparison has strengthened.",
+            "hint": "\"The joints\" and \"their size\" both need something to have been introduced. Which sentence introduces the joints?",
+            "explanation": "The everyday experience comes first, the bumps are explained by expansion joints, the science of expansion explains why they are needed, \"without gaps\" describes the alternative, \"therefore\" describes the solution, and the last sentence refers to the size of the joints. \"The movement\" refers to expansion and contraction.",
             "transitionWords": [
-                "First",
-                "Then",
-                "Finally"
+                "These bumps",
+                "Without gaps",
+                "Therefore",
+                "Their size"
             ]
         },
         {
@@ -792,27 +816,28 @@
             "subtype": "sentenceOrderReading",
             "interactionType": "reorder",
             "shuffledSentences": [
-                "This limitation historically pushed retailers toward stocking primarily the most popular, reliably selling items.",
-                "Economists observed that the combined revenue from these numerous niche items could rival, and sometimes exceed, revenue from top-selling hits alone.",
-                "Physical retail shelf space has always imposed a hard limit on how many distinct products a store could realistically offer at once.",
-                "Digital distribution platforms face no comparable physical shelf-space constraint, since storage costs for niche digital items are minimal.",
-                "This shift allowed platforms to profitably offer vast catalogs of niche items appealing to comparatively small audiences.",
-                "This pattern, often called the long tail, has reshaped strategy across industries ranging from music streaming to online retail."
+                "The annual customer survey, completed by more than four thousand people, produced a mixed picture of the company's performance.",
+                "The next survey will show whether these measures have restored confidence in the service.",
+                "Satisfaction with product quality reached its highest level in five years, and respondents particularly praised the durability of the newer models.",
+                "The company has therefore introduced an online chat service and hired additional staff to reduce the pressure on the helpline.",
+                "Analysis of the comments showed that the complaints came mainly from a period when two support centers had been merged.",
+                "In contrast, ratings for after-sales support declined, with many customers complaining about long waiting times on the telephone helpline."
             ],
             "correctOrder": [
-                2,
                 0,
-                3,
+                2,
+                5,
                 4,
-                1,
-                5
+                3,
+                1
             ],
-            "hint": "A described physical limitation usually precedes its removal, and that removal usually precedes the economic pattern it made possible.",
-            "explanation": "This paragraph explains an economic pattern enabled by technology: the prior limitation, its consequence, the technological shift removing that limitation, what it enabled, the resulting economic observation, and the pattern's formal name and broader influence.",
+            "hint": "\"Mixed picture\" promises both good and bad news. Which sentence gives the good, and which gives the bad?",
+            "explanation": "The overview announces mixed results, the positive result comes next, \"in contrast\" introduces the negative result, the analysis explains its cause, \"therefore\" leads to the company's action, and the last sentence looks ahead. \"These measures\" refers to the chat service and extra staff.",
             "transitionWords": [
-                "First",
-                "Then",
-                "Finally"
+                "Mixed",
+                "In contrast",
+                "Therefore",
+                "These measures"
             ]
         },
         {
@@ -821,27 +846,28 @@
             "subtype": "sentenceOrderReading",
             "interactionType": "reorder",
             "shuffledSentences": [
-                "Blood lead level testing among children in prioritized neighborhoods showed measurable improvement as replacement work progressed.",
-                "The city's approach has since been studied by other municipalities facing similarly aging water infrastructure of their own.",
-                "One city undertook a comprehensive initiative to map every remaining lead pipe within its water distribution system.",
-                "Even low levels of lead exposure through drinking water have been linked to serious, particularly long-term developmental harm in children.",
-                "Replacement work prioritized neighborhoods with both the oldest infrastructure and the highest concentration of young children.",
-                "Aging water infrastructure in many older cities still relies in part on lead pipes installed generations ago."
+                "Because high pressure rarely causes noticeable symptoms, regular measurement is the only reliable way of detecting it.",
+                "A reading that is consistently above the recommended range forces the heart and vessels to work harder than they should.",
+                "Over years, this strain can damage the arteries and increase the risk of heart disease and stroke.",
+                "It is recorded as two numbers, the higher of which is measured when the heart contracts and the lower when it relaxes between beats.",
+                "Blood pressure is the force with which the heart pushes blood against the walls of the arteries.",
+                "Physicians therefore advise adults to have their pressure checked periodically, even when they feel perfectly well."
             ],
             "correctOrder": [
-                5,
-                3,
-                2,
                 4,
+                3,
+                1,
+                2,
                 0,
-                1
+                5
             ],
-            "hint": "A described infrastructure problem usually precedes its health consequence, and a consequence usually precedes the prioritized response designed around it.",
-            "explanation": "This paragraph traces a public health infrastructure initiative: the problem, its health consequence, the response undertaken, how priorities were set within that response, the measured health improvement, and the resulting interest from other cities.",
+            "hint": "\"It\" and \"this strain\" both refer to earlier ideas. Which sentences introduce them?",
+            "explanation": "The definition comes first, \"it\" refers to blood pressure and explains the numbers, a high reading creates strain, \"this strain\" leads to long-term damage, \"because\" explains why measurement matters, and \"therefore\" leads to advice. \"Even when they feel perfectly well\" links back to the lack of symptoms.",
             "transitionWords": [
-                "First",
-                "Then",
-                "Finally"
+                "It",
+                "This strain",
+                "Because",
+                "Therefore"
             ]
         },
         {
@@ -850,27 +876,28 @@
             "subtype": "sentenceOrderReading",
             "interactionType": "reorder",
             "shuffledSentences": [
-                "Improved telescopic observations eventually provided direct evidence difficult to reconcile with the older geocentric model.",
-                "An alternative model proposing that Earth and other planets instead orbited the sun offered a considerably simpler mathematical explanation.",
-                "For centuries, most astronomers accepted a model placing Earth motionless at the center of the universe, with other bodies orbiting around it.",
-                "Historians of science frequently cite this transition as a foundational example of evidence eventually overturning deeply entrenched belief.",
-                "This geocentric model required increasingly complex mathematical adjustments to account accurately for the observed motion of the planets.",
-                "This heliocentric model initially faced significant resistance, given how strongly it conflicted with prevailing religious and philosophical assumptions."
+                "The first task is to inform the local council, which may require a formal application if the road needs to be closed.",
+                "After the event, thanking everyone who helped and sharing photographs encourages people to take part again next year.",
+                "Once permission has been granted, neighbors can be invited by a leaflet that gives the date, the time, and a contact number.",
+                "A backup plan in case of rain on that day avoids disappointment and can be as simple as reserving a nearby hall.",
+                "Organizing a street party involves more paperwork than most residents expect, and the process should begin at least two months in advance.",
+                "Volunteers are then needed to arrange tables, provide food, and supervise the road barriers on the day."
             ],
             "correctOrder": [
-                2,
                 4,
-                1,
-                5,
                 0,
-                3
+                2,
+                5,
+                3,
+                1
             ],
-            "hint": "A described model usually precedes its growing complications, and a simpler alternative usually precedes the resistance it initially faced.",
-            "explanation": "This paragraph traces one of history's most significant scientific shifts: the original model, its growing mathematical complications, the simpler alternative, the resistance it faced, the evidence that eventually settled the matter, and its lasting significance as an example.",
+            "hint": "\"That day\" needs a day to have been mentioned. Which sentence mentions it, and which steps come before it?",
+            "explanation": "The timing is stated, the council is informed first, permission allows invitations, volunteers are organized, the rain plan refers to \"that day\", and the last sentence describes the follow-up. \"Once permission has been granted\" and \"then\" give the order.",
             "transitionWords": [
-                "First",
+                "First task",
+                "Once",
                 "Then",
-                "Finally"
+                "After the event"
             ]
         }
     ]

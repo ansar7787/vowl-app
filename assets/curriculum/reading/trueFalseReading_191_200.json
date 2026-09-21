@@ -5,483 +5,483 @@
     "quests": [
         {
             "id": "RDG_TRUEFALSEREADING_L191_Q1",
-            "instruction": "Read the passage and determine if the statement is true or false.",
+            "instruction": "Read the passage carefully. Based only on what it says, decide whether the statement is true or false.",
             "subtype": "trueFalseReading",
             "interactionType": "trueFalse",
-            "passage": "Although the artisanal cheese producer's marketing materials emphasize an unbroken multi-generational family tradition dating back over a century as the foundation of its product's authenticity, a business history compiled for an industry trade publication, drawing on records the family itself provided for the project, revealed that production was in fact suspended entirely for nearly two decades during a period of wartime disruption, with the current operation restarted from documented historical recipes by a distant relative rather than through any continuous, unbroken family practice, a detail the marketing materials do not mention.",
-            "question": "A business history compiled from the family's own records revealed production was suspended entirely for nearly two decades at one point.",
+            "passage": "Doctors have long known that chronic stress can harm the body, but the mechanisms have only recently become clearer. Under stress, the body releases hormones that raise blood pressure and blood sugar, which is useful during a brief emergency. When the stress continues for months, these same changes can damage blood vessels and weaken the immune system. Studies also show that people who have supportive friends recover from stress more quickly. This does not mean that stress can be avoided, since some pressure is unavoidable and even helpful. The aim is to allow time for recovery. Health advisers therefore encourage people to build short pauses into the day, and to talk with friends or colleagues about pressures before they grow into larger problems. Regular sleep and gentle exercise are often mentioned in the same advice.",
+            "question": "The hormones that help in a short emergency can cause harm when stress lasts for months.",
             "correctAnswer": "true",
             "options": [
                 "true",
                 "false"
             ],
-            "hint": "Check what the business history compiled from family records actually revealed.",
-            "explanation": "The passage confirms this suspension is documented in the history, so the statement is true.",
-            "evidenceLine": "This line proves the answer."
+            "hint": "Compare the effect of brief stress with long stress.",
+            "explanation": "The same changes that help briefly can damage blood vessels and the immune system over months.",
+            "evidenceLine": "Under stress, the body releases hormones that raise blood pressure and blood sugar, which is useful during a brief emergency. When the stress continues for months, these same changes can damage blood vessels and weaken the immune system."
         },
         {
             "id": "RDG_TRUEFALSEREADING_L191_Q2",
-            "instruction": "Read the passage and determine if the statement is true or false.",
+            "instruction": "Read the passage carefully. Based only on what it says, decide whether the statement is true or false.",
             "subtype": "trueFalseReading",
             "interactionType": "trueFalse",
-            "passage": "The software company's frequently cited statistic that its customer support chatbot successfully resolves a specific, prominently advertised percentage of inquiries without human escalation is calculated, according to a methodology disclosure included only in a technical appendix rarely referenced in the company's marketing, based on a definition of successful resolution that counts any conversation in which the customer does not explicitly request a human agent, even when the customer subsequently abandons the conversation without their underlying issue being addressed at all.",
-            "question": "The methodology disclosure confirms successful resolution requires the customer's underlying issue to be genuinely and verifiably addressed.",
-            "correctAnswer": "false",
+            "passage": "Scientists at a laboratory reported a surprising result: a new material conducted electricity without resistance at room temperature. If true, this would transform electronics and power lines, which lose a great deal of energy as heat. Other laboratories rushed to repeat the experiment, but none obtained the same outcome. The original team said that their sample had been contaminated and later retracted the claim. Such episodes are not unusual in science, since extraordinary claims attract careful checking. Confidence grows only when different groups obtain the same result. Journalists who reported the original announcement have since said that they should have included more warnings from independent experts before the results were checked. The episode is now taught as a lesson in careful science.",
+            "question": "Other laboratories failed to reproduce the original result.",
+            "correctAnswer": "true",
             "options": [
                 "true",
                 "false"
             ],
-            "hint": "Check what the methodology disclosure actually requires for a resolution to count as successful.",
-            "explanation": "The passage says a conversation counts as successful even if the issue was never addressed, so requiring genuine resolution is false.",
-            "evidenceLine": "This line proves the answer."
+            "hint": "Follow what happened after the other laboratories repeated the experiment.",
+            "explanation": "None obtained the same outcome, and the original team later retracted the claim.",
+            "evidenceLine": "Other laboratories rushed to repeat the experiment, but none obtained the same outcome. The original team said that their sample had been contaminated and later retracted the claim."
         },
         {
             "id": "RDG_TRUEFALSEREADING_L191_Q3",
-            "instruction": "Read the passage and determine if the statement is true or false.",
+            "instruction": "Read the passage carefully. Based only on what it says, decide whether the statement is true or false.",
             "subtype": "trueFalseReading",
             "interactionType": "trueFalse",
-            "passage": "Although the pharmaceutical company's promotional materials for its new medication emphasize a specific, favorable rate of symptom improvement observed in clinical trials, a detail regulators require to be accompanied by additional context that the promotional summary tends to de-emphasize, the same trial data shows a comparably high rate of improvement in the placebo group as well, a detail present in the full regulatory filing but considerably less prominent in the medication's consumer-facing marketing materials, complicating any simple interpretation of the medication's added benefit beyond a placebo effect.",
-            "question": "The full trial data shows a comparably high improvement rate in the placebo group, a detail less prominent in consumer marketing.",
-            "correctAnswer": "true",
+            "passage": "A city banned plastic straws and announced that it had solved the problem of ocean plastic. Environmental groups welcomed the ban but pointed out that straws represent a tiny fraction of the plastic entering the sea. Fishing nets, packaging, and microfibers from clothing are far larger sources. Effective policies would therefore need to address production and waste collection, not just a single visible item. Supporters of the ban say that it raises awareness and prepares the ground for further measures. The city has promised to review other products next year. The city's environment department has said that it will publish data on plastic collected from beaches so that residents can see whether the situation actually improves. Several nearby towns are considering similar rules for other single-use items.",
+            "question": "Environmental groups said the ban had solved most of the ocean plastic problem.",
+            "correctAnswer": "false",
             "options": [
                 "true",
                 "false"
             ],
-            "hint": "Check what the full trial data shows about the placebo group's improvement rate.",
-            "explanation": "The passage confirms this comparably high placebo rate, so the statement is true.",
-            "evidenceLine": "This line proves the answer."
+            "hint": "How large a share of ocean plastic do straws represent?",
+            "explanation": "Environmental groups said straws are a tiny fraction of the plastic entering the sea.",
+            "evidenceLine": "Environmental groups welcomed the ban but pointed out that straws represent a tiny fraction of the plastic entering the sea."
         },
         {
             "id": "RDG_TRUEFALSEREADING_L192_Q1",
-            "instruction": "Read the passage and determine if the statement is true or false.",
+            "instruction": "Read the passage carefully. Based only on what it says, decide whether the statement is true or false.",
             "subtype": "trueFalseReading",
             "interactionType": "trueFalse",
-            "passage": "The music festival's frequently repeated claim of having sold out within minutes for six consecutive years, a statistic prominently featured in its marketing to justify continually rising ticket prices, was complicated by resale market data obtained by a consumer journalist, which showed that in at least two of those six years, a meaningful number of tickets were, in fact, still being sold directly through the festival's own official channels well beyond the initial minutes the festival's marketing referenced, contradicting the strict sold-out-in-minutes framing.",
-            "question": "Resale market data confirmed the festival genuinely sold out within minutes in all six years exactly as its marketing claimed.",
+            "passage": "A news website noticed that articles with dramatic headlines attracted many more clicks than careful ones. After changing its style, its traffic rose by a third within a month. However, a survey of readers showed that trust in the site had declined, and the number of regular subscribers fell. Analysts explained that clicks bring short-term advertising income, whereas trust brings loyal readers who pay. The site's editors eventually returned to a plainer style. They say traffic is lower but income is more stable. Media researchers add that readers rarely notice when a site's style changes gradually, but they do notice when they feel that they have been misled. The editors have shared their experience at several industry conferences.",
+            "question": "The dramatic headlines raised both clicks and reader trust.",
             "correctAnswer": "false",
             "options": [
                 "true",
                 "false"
             ],
-            "hint": "Check what the resale market data revealed about at least two of the six years.",
-            "explanation": "The passage says tickets were still available well beyond minutes in at least two years, so all six years matching the claim is false.",
-            "evidenceLine": "This line proves the answer."
+            "hint": "What happened to trust after the change of style?",
+            "explanation": "Trust in the site declined, so it did not rise.",
+            "evidenceLine": "However, a survey of readers showed that trust in the site had declined, and the number of regular subscribers fell."
         },
         {
             "id": "RDG_TRUEFALSEREADING_L192_Q2",
-            "instruction": "Read the passage and determine if the statement is true or false.",
+            "instruction": "Read the passage carefully. Based only on what it says, decide whether the statement is true or false.",
             "subtype": "trueFalseReading",
             "interactionType": "trueFalse",
-            "passage": "Although migratory eel populations were long assumed by fisheries scientists to complete their entire life cycle within a single, well-defined river system, satellite and genetic tracking conducted over the past two decades has revealed a considerably more complex pattern in which individuals from ostensibly distinct river populations converge to spawn in a shared, specific oceanic region before their offspring subsequently disperse to a wide range of river systems largely independent of where their parents originated, upending the earlier assumption of discrete, river-specific populations.",
-            "question": "Tracking research revealed that eel offspring disperse to a wide range of river systems largely independent of where their parents originated.",
+            "passage": "A running coach compared two training plans for beginners preparing for a ten-kilometer race. The first plan had runners train hard four times a week, and the second had them run three times a week with an easy day between sessions. Runners on the first plan improved faster at the beginning but were injured twice as often. At the time of the race, the second group had lost fewer training days and finished, on average, slightly faster. The coach concluded that consistency beats intensity for most beginners. She cautioned that the sample was small. Other coaches have begun to test similar plans with older runners, and they report that recovery time seems to matter even more for people over fifty. Both plans were designed by the same coach for a local club.",
+            "question": "The group that trained less often finished the race slightly faster on average.",
             "correctAnswer": "true",
             "options": [
                 "true",
                 "false"
             ],
-            "hint": "Check what the tracking research found about where eel offspring end up.",
-            "explanation": "The passage confirms this exact dispersal pattern, so the statement is true.",
-            "evidenceLine": "This line proves the answer."
+            "hint": "Compare the two groups at race time.",
+            "explanation": "The second group, with three sessions a week, finished slightly faster on average.",
+            "evidenceLine": "At the time of the race, the second group had lost fewer training days and finished, on average, slightly faster."
         },
         {
             "id": "RDG_TRUEFALSEREADING_L192_Q3",
-            "instruction": "Read the passage and determine if the statement is true or false.",
+            "instruction": "Read the passage carefully. Based only on what it says, decide whether the statement is true or false.",
             "subtype": "trueFalseReading",
             "interactionType": "trueFalse",
-            "passage": "The neighborhood association's frequently repeated claim that its community policing initiative alone produced the substantial, multi-year decline in reported property crime in the district, a claim featured prominently in grant applications seeking continued funding for the program, is complicated by city-wide crime statistics covering the same period, which show a comparably sized decline across several other districts that did not have any equivalent community policing initiative in place, suggesting broader city-wide or regional factors likely contributed alongside, or possibly instead of, the specific initiative being credited.",
-            "question": "City-wide statistics confirmed the decline occurred only in the district with the community policing initiative and nowhere else.",
-            "correctAnswer": "false",
+            "passage": "A tourist board wanted to attract visitors during the quiet winter months. It offered discounted train tickets, free museum entry, and a festival of lights in the main square. Visitor numbers rose by twenty percent, and hotels in the city center reported full bookings on weekends. Small businesses in outlying villages saw little change, since most visitors stayed close to the center. The board therefore plans to extend the discounts to regional buses. Local mayors have welcomed the idea. The board's director said that the next campaign would advertise smaller villages more directly, and would encourage visitors to travel by regional bus. The results will be reviewed again once the spring season begins.",
+            "question": "The winter campaign mainly benefited businesses in the city center.",
+            "correctAnswer": "true",
             "options": [
                 "true",
                 "false"
             ],
-            "hint": "Check what the city-wide statistics show about other districts without the initiative.",
-            "explanation": "The passage says other districts without the initiative saw a comparable decline, so occurring only in that one district is false.",
-            "evidenceLine": "This line proves the answer."
+            "hint": "Compare the effects in the center and in the villages.",
+            "explanation": "Center hotels were full while villages saw little change.",
+            "evidenceLine": "Visitor numbers rose by twenty percent, and hotels in the city center reported full bookings on weekends. Small businesses in outlying villages saw little change, since most visitors stayed close to the center."
         },
         {
             "id": "RDG_TRUEFALSEREADING_L193_Q1",
-            "instruction": "Read the passage and determine if the statement is true or false.",
+            "instruction": "Read the passage carefully. Based only on what it says, decide whether the statement is true or false.",
             "subtype": "trueFalseReading",
             "interactionType": "trueFalse",
-            "passage": "The oft-repeated claim that Tomas overhauled his entire diet overnight after a single alarming doctor's visit makes for a tidier narrative than what his own records actually show, which is a considerably more gradual process spanning nearly eight months, during which he eliminated one category of food every few weeks rather than attempting the wholesale change the popular version of his story implies, a distinction Tomas himself has taken to correcting whenever the shorter, more dramatic version circulates among people newly attempting similar changes.",
-            "question": "Tomas's own records confirm he overhauled his entire diet overnight in a single dramatic change, exactly as commonly described.",
+            "passage": "A study found that people who take vitamin supplements are healthier than those who do not. The headline suggested that supplements improve health. However, people who buy supplements also tend to exercise more, smoke less, and visit doctors regularly. When researchers adjusted for these differences in later trials, most supplements showed little benefit in people who eat a balanced diet. Exceptions include folic acid for pregnant women and vitamin D for people with limited sun exposure. Doctors advise taking supplements only when there is a specific need. Pharmacists say that customers often ask whether they should buy a vitamin, and they try to explain the differences between a general habit and a specific medical need. Pharmacies in the region display posters explaining this difference to customers.",
+            "question": "Later trials showed that most supplements clearly benefited people who eat a balanced diet.",
             "correctAnswer": "false",
             "options": [
                 "true",
                 "false"
             ],
-            "hint": "Check what Tomas's own records actually show about how the change happened.",
-            "explanation": "The passage says his records show a gradual eight-month process, so an overnight overhaul is false.",
-            "evidenceLine": "This line proves the answer."
+            "hint": "What did the later trials find?",
+            "explanation": "Most supplements showed little benefit for people with a balanced diet.",
+            "evidenceLine": "When researchers adjusted for these differences in later trials, most supplements showed little benefit in people who eat a balanced diet."
         },
         {
             "id": "RDG_TRUEFALSEREADING_L193_Q2",
-            "instruction": "Read the passage and determine if the statement is true or false.",
+            "instruction": "Read the passage carefully. Based only on what it says, decide whether the statement is true or false.",
             "subtype": "trueFalseReading",
             "interactionType": "trueFalse",
-            "passage": "Although it is frequently assumed, including by several of the district's own veteran teachers, that the marked improvement in standardized reading scores following the curriculum change must be attributable to the new curriculum itself, a careful comparison controlling for the fact that the same years also saw a substantial reduction in average class size, implemented for entirely separate budgetary reasons, found that class size reduction alone accounted for a comparable share of the score improvement, complicating any simple causal story crediting the curriculum in isolation.",
-            "question": "A careful comparison found that class size reduction alone accounted for a comparable share of the improvement, complicating the curriculum-only explanation.",
-            "correctAnswer": "true",
+            "passage": "A man decided to give up sugar completely on the first of January. For two weeks, he succeeded, but at a colleague's birthday he ate a slice of cake and decided that he had failed. He then ate sweets all weekend, thinking that the resolution was already ruined. Psychologists call this the why-bother effect: a small lapse triggers a large one because the person sees the goal as all or nothing. A better approach is to plan for lapses and to return to the goal at the next meal. Flexible rules last longer than strict ones. Coaches who work with people trying to change diets often begin by asking what the person will do after the first mistake, not how they will avoid it. Many people find this advice surprising when they first hear it.",
+            "question": "Psychologists say that a small lapse should be treated as proof that the goal has failed.",
+            "correctAnswer": "false",
             "options": [
                 "true",
                 "false"
             ],
-            "hint": "Check what the careful comparison found about class size reduction's contribution.",
-            "explanation": "The passage states the comparison found precisely this, so the statement is true.",
-            "evidenceLine": "This line proves the answer."
+            "hint": "What better approach do psychologists suggest?",
+            "explanation": "They suggest planning for lapses and returning to the goal at the next meal.",
+            "evidenceLine": "A better approach is to plan for lapses and to return to the goal at the next meal."
         },
         {
             "id": "RDG_TRUEFALSEREADING_L193_Q3",
-            "instruction": "Read the passage and determine if the statement is true or false.",
+            "instruction": "Read the passage carefully. Based only on what it says, decide whether the statement is true or false.",
             "subtype": "trueFalseReading",
             "interactionType": "trueFalse",
-            "passage": "The widely circulated account of the startup's rapid early growth, in which its founders describe achieving product-market fit within their first three months based almost entirely on organic word of mouth, a narrative that has since been referenced in numerous articles about lean startup methodology, omits a detail confirmed in the company's own later funding documents: a substantial early marketing budget, funded through a friends-and-family investment round the founders rarely mention publicly, was in fact deployed during precisely that period to seed initial user acquisition through paid channels the founders have since downplayed.",
-            "question": "The company's own funding documents confirm the early growth was achieved entirely through organic word of mouth with no paid marketing.",
-            "correctAnswer": "false",
+            "passage": "Meteorologists distinguish between a weather watch and a weather warning. A watch means that conditions are favorable for a dangerous event, such as a tornado, but that it has not yet been detected. A warning means that the event is occurring or is about to occur, and that people should act immediately. Confusing the two can be costly: people who treat a watch as a warning may become tired of alerts, while those who treat a warning as a watch may delay. Emergency agencies use simple slogans to help people remember the difference. Repeated public campaigns are needed. In regions that are hit by frequent storms, phone alerts now use different sounds for the two levels so that people can tell them apart without reading. Schools in stormy regions also teach children the difference each year.",
+            "question": "A warning means that people should take action right away.",
+            "correctAnswer": "true",
             "options": [
                 "true",
                 "false"
             ],
-            "hint": "Check what the company's own later funding documents actually reveal about paid marketing.",
-            "explanation": "The passage says documents confirm a substantial paid marketing budget was deployed, so entirely organic is false.",
-            "evidenceLine": "This line proves the answer."
+            "hint": "What does a warning tell people to do?",
+            "explanation": "It says the event is occurring or imminent and that people should act immediately.",
+            "evidenceLine": "A warning means that the event is occurring or is about to occur, and that people should act immediately."
         },
         {
             "id": "RDG_TRUEFALSEREADING_L194_Q1",
-            "instruction": "Read the passage and determine if the statement is true or false.",
+            "instruction": "Read the passage carefully. Based only on what it says, decide whether the statement is true or false.",
             "subtype": "trueFalseReading",
             "interactionType": "trueFalse",
-            "passage": "Although the cruise line's promotional materials describe its onboard water reclamation system as achieving a specific, frequently quoted percentage of freshwater self-sufficiency per voyage, an independent environmental audit commissioned by a maritime regulatory body found that this figure was calculated using an idealized operating scenario rarely matched under actual voyage conditions, with real-world self-sufficiency across a sampled set of actual voyages falling measurably short of the marketed figure, particularly during itineraries involving extended time in port rather than continuous open-water sailing.",
-            "question": "An independent audit found real-world self-sufficiency fell measurably short of the marketed figure, particularly during itineraries with extended time in port.",
-            "correctAnswer": "true",
+            "passage": "In a family business, the founder often expects the children to take over, but the children may want different careers. A study of such businesses found that those where the next generation was consulted early were more likely to survive. Businesses in which the founder simply announced a successor were more likely to end in disputes. Advisers recommend family meetings, outside mentors, and a written plan for handing over responsibility. The transition usually takes several years. Many founders find it painful to let go. Consultants who work with such businesses say that the first meeting is usually the hardest, because relatives must talk about money and fairness at the same table. Some universities now offer courses about running a family enterprise.",
+            "question": "Family businesses lasted longer when the founder announced a successor without consultation.",
+            "correctAnswer": "false",
             "options": [
                 "true",
                 "false"
             ],
-            "hint": "Check what the independent audit found about real-world performance versus the marketed figure.",
-            "explanation": "The passage describes the audit finding precisely this, so the statement is true.",
-            "evidenceLine": "This line proves the answer."
+            "hint": "Compare consulted successors with announced ones.",
+            "explanation": "Consulting the next generation early made survival more likely, and announcing led to disputes.",
+            "evidenceLine": "A study of such businesses found that those where the next generation was consulted early were more likely to survive. Businesses in which the founder simply announced a successor were more likely to end in disputes."
         },
         {
             "id": "RDG_TRUEFALSEREADING_L194_Q2",
-            "instruction": "Read the passage and determine if the statement is true or false.",
+            "instruction": "Read the passage carefully. Based only on what it says, decide whether the statement is true or false.",
             "subtype": "trueFalseReading",
             "interactionType": "trueFalse",
-            "passage": "The family's longstanding account of Aunt Rosa's supposedly instant and effortless adjustment to life in a new country, a story often invoked to encourage other relatives facing similar transitions, was substantially revised after her own diaries from that period surfaced following her passing, revealing a difficult, multi-year adjustment marked by considerable homesickness that she had, by her own admission in later interviews, deliberately chosen not to share with the wider family in order to avoid what she described as burdening them with worry.",
-            "question": "Aunt Rosa's diaries confirmed her adjustment to the new country was genuinely instant and effortless exactly as the family long believed.",
+            "passage": "Airline safety briefings can seem repetitive, and many passengers stop listening. Studies of emergency evacuations show, however, that people who have looked for the nearest exit in advance escape more quickly. Airlines have therefore experimented with humorous videos to hold attention. Evidence suggests that passengers remember more from an entertaining briefing than a dull one. Some experts worry that humor may reduce seriousness, and they call for further research. Regulators still require the basic content to be included. Some airlines now show short safety cards that use pictures only, so that passengers who do not speak the language of the crew can still follow the instructions. Flight attendants say that calm, clear announcements help passengers listen.",
+            "question": "Studies show that knowing the nearest exit has no effect on how fast people escape.",
             "correctAnswer": "false",
             "options": [
                 "true",
                 "false"
             ],
-            "hint": "Check what Aunt Rosa's own diaries actually revealed about her adjustment.",
-            "explanation": "The passage says the diaries revealed a difficult, multi-year adjustment, so instant and effortless is false.",
-            "evidenceLine": "This line proves the answer."
+            "hint": "What do evacuation studies show about looking for the exit?",
+            "explanation": "People who have looked for the nearest exit in advance escape more quickly.",
+            "evidenceLine": "Studies of emergency evacuations show, however, that people who have looked for the nearest exit in advance escape more quickly."
         },
         {
             "id": "RDG_TRUEFALSEREADING_L194_Q3",
-            "instruction": "Read the passage and determine if the statement is true or false.",
+            "instruction": "Read the passage carefully. Based only on what it says, decide whether the statement is true or false.",
             "subtype": "trueFalseReading",
             "interactionType": "trueFalse",
-            "passage": "Although the appliance manufacturer's warranty terms are marketed as providing comprehensive coverage for manufacturing defects over a five-year period, a class-action lawsuit's discovery process revealed internal engineering documents acknowledging a known failure pattern in a specific internal component that the company's own engineers had flagged prior to the product's release, a defect the company had nonetheless classified internally as normal wear and tear rather than a manufacturing defect specifically in order to exclude it from warranty coverage.",
-            "question": "Discovery revealed internal documents showing engineers had flagged the failure pattern before release, yet the company classified it as normal wear to limit warranty claims.",
-            "correctAnswer": "true",
+            "passage": "A guidebook claimed that a small mountain village was untouched by tourism and warned readers that it had no hotels. Readers who arrived found several guesthouses, cafés, and a shop selling souvenirs. The guidebook's author explained that the village had changed since the book was written eight years earlier. The local council said that visitor numbers had tripled, and residents were divided about whether this was welcome. Some feared the loss of traditions, while others welcomed the income. A new edition is planned. The village mayor said that she would like future guidebooks to mention both the changes and the quiet corners that visitors can still find early in the morning. A local artist has drawn a new map of the village.",
+            "question": "The guidebook's description matched the village as it was when readers visited.",
+            "correctAnswer": "false",
             "options": [
                 "true",
                 "false"
             ],
-            "hint": "Check what the discovery documents revealed about the engineers' knowledge and the company's classification decision.",
-            "explanation": "The passage confirms both parts of this claim, so the statement is true.",
-            "evidenceLine": "This line proves the answer."
+            "hint": "What did readers find when they arrived?",
+            "explanation": "They found guesthouses, cafés, and a souvenir shop, so the guidebook was outdated.",
+            "evidenceLine": "Readers who arrived found several guesthouses, cafés, and a shop selling souvenirs. The guidebook's author explained that the village had changed since the book was written eight years earlier."
         },
         {
             "id": "RDG_TRUEFALSEREADING_L195_Q1",
-            "instruction": "Read the passage and determine if the statement is true or false.",
+            "instruction": "Read the passage carefully. Based only on what it says, decide whether the statement is true or false.",
             "subtype": "trueFalseReading",
             "interactionType": "trueFalse",
-            "passage": "The popular restaurant chain's frequently cited claim that its signature dish has remained identical to the original recipe served at its first location decades ago, a detail proudly featured on menus and in company history materials distributed to franchisees, is complicated by discovery documents from an unrelated trademark dispute, which revealed at least three documented reformulations undertaken to reduce ingredient costs as the chain scaled nationally, changes that internal company memos from that period explicitly describe as necessary compromises rather than improvements.",
-            "question": "Discovery documents confirmed the signature dish has remained genuinely identical to the original recipe with no reformulation as the chain scaled nationally.",
-            "correctAnswer": "false",
+            "passage": "A university introduced a policy of allowing students to retake exams as often as they liked. Supporters said that it would reduce anxiety and encourage learning from mistakes. Critics feared that students would treat early attempts as practice and not prepare properly. Data from the first year showed that students took an average of two attempts, and final grades were similar to those of previous years. Staff workload increased because more exams had to be marked. The university is considering limiting the number of retakes to three. Students interviewed by the campus newspaper said that they liked the flexibility, although several admitted that they would rather have fewer chances and a clearer schedule. The final decision will be taken by the university council in June.",
+            "question": "Under the policy, final grades stayed similar to those of earlier years.",
+            "correctAnswer": "true",
             "options": [
                 "true",
                 "false"
             ],
-            "hint": "Check what the discovery documents actually revealed about reformulations.",
-            "explanation": "The passage says documents revealed at least three reformulations, so remaining genuinely identical is false.",
-            "evidenceLine": "This line proves the answer."
+            "hint": "Look at the data from the first year.",
+            "explanation": "Final grades were similar to those of previous years.",
+            "evidenceLine": "Data from the first year showed that students took an average of two attempts, and final grades were similar to those of previous years."
         },
         {
             "id": "RDG_TRUEFALSEREADING_L195_Q2",
-            "instruction": "Read the passage and determine if the statement is true or false.",
+            "instruction": "Read the passage carefully. Based only on what it says, decide whether the statement is true or false.",
             "subtype": "trueFalseReading",
             "interactionType": "trueFalse",
-            "passage": "A widely publicized claim from the cybersecurity firm that a particular strain of malware had been fully neutralized following its emergency patch release generated considerable positive press coverage for the firm at the time, but it was later revised in a far less publicized follow-up bulletin acknowledging that the patch had, in fact, only addressed the malware's primary infection vector, leaving a secondary, less common infection method still viable and responsible for a continuing, smaller number of new infections in the months that followed.",
-            "question": "The firm's follow-up bulletin confirmed the initial patch had fully and completely neutralized every infection vector with no remaining vulnerability.",
-            "correctAnswer": "false",
+            "passage": "Sea otters are known for using rocks as tools to crack open shellfish. Researchers have found that the behavior varies between groups: in some areas most otters use tools, while in others almost none do. The differences do not seem to depend on the availability of rocks. They appear instead to reflect the food available, since otters that eat hard-shelled prey need tools more. Young otters learn the technique by watching their mothers. The behavior may therefore be passed on culturally rather than genetically. Marine biologists studying otters along different coasts say that watching a single group over many years is the best way to see how habits spread. Filming of these groups has produced hours of valuable recordings.",
+            "question": "Whether otters use tools depends partly on what they eat.",
+            "correctAnswer": "true",
             "options": [
                 "true",
                 "false"
             ],
-            "hint": "Check what the follow-up bulletin actually acknowledged about remaining infection vectors.",
-            "explanation": "The passage says the bulletin acknowledged a secondary vector remained viable, so fully neutralizing every vector is false.",
-            "evidenceLine": "This line proves the answer."
+            "hint": "Find what the differences seem to reflect.",
+            "explanation": "They reflect the food available, since otters with hard-shelled prey need tools more.",
+            "evidenceLine": "They appear instead to reflect the food available, since otters that eat hard-shelled prey need tools more."
         },
         {
             "id": "RDG_TRUEFALSEREADING_L195_Q3",
-            "instruction": "Read the passage and determine if the statement is true or false.",
+            "instruction": "Read the passage carefully. Based only on what it says, decide whether the statement is true or false.",
             "subtype": "trueFalseReading",
             "interactionType": "trueFalse",
-            "passage": "The fitness chain's marketing claim that its signature high-intensity class program produces a specific average measurable improvement in cardiovascular fitness within a set number of weeks, a figure prominently displayed in promotional materials, is based on an internal study whose methodology, disclosed only upon request to a fitness industry journalist, excluded participants who did not complete the entire program, a group that internal attendance records suggest disproportionately included participants who dropped out specifically due to injury or excessive fatigue from the program's intensity.",
-            "question": "The internal study's methodology included every participant who started the program, regardless of whether they completed it.",
+            "passage": "A shop advertises a laptop for $900 and offers a payment plan of thirty-six monthly payments of $30. The plan sounds affordable, since $30 seems small next to the price. Adding up the payments gives $1,080, which means that the plan costs $180 more than paying in cash. The shop describes the extra as a service fee. Some customers prefer to pay over time because they cannot afford the full price at once. Others could pay cash but choose the plan because it feels easier. Some countries require stores to state the total price of installment plans in the same size of type as the monthly amount, so that customers can compare. The advertisement was later changed after several complaints from customers.",
+            "question": "The payment plan costs the same as paying $900 in cash.",
             "correctAnswer": "false",
             "options": [
                 "true",
                 "false"
             ],
-            "hint": "Check what the disclosed methodology actually says about which participants were included.",
-            "explanation": "The passage says the study excluded participants who did not complete the program, so including everyone is false.",
-            "evidenceLine": "This line proves the answer."
+            "hint": "Compare the total of the payments with the cash price.",
+            "explanation": "The payments add up to $1,080, which is $180 more than $900.",
+            "evidenceLine": "Adding up the payments gives $1,080, which means that the plan costs $180 more than paying in cash."
         },
         {
             "id": "RDG_TRUEFALSEREADING_L196_Q1",
-            "instruction": "Read the passage and determine if the statement is true or false.",
+            "instruction": "Read the passage carefully. Based only on what it says, decide whether the statement is true or false.",
             "subtype": "trueFalseReading",
             "interactionType": "trueFalse",
-            "passage": "Although the video streaming service's investor presentations have consistently emphasized subscriber growth as the primary indicator of the platform's overall health, a metric that has driven considerable positive market sentiment, a separate internal metric tracking subscriber engagement over time, referenced only briefly in a footnote of a more detailed regulatory filing, revealed that a meaningful share of new subscribers during the same growth period had already canceled their subscriptions within the first ninety days, a churn detail the investor-facing presentations do not prominently feature.",
-            "question": "A footnote in a regulatory filing revealed a meaningful share of new subscribers had already canceled within ninety days.",
+            "passage": "A chef explained that salt does more than add saltiness: it also reduces the perception of bitterness in some foods. A pinch of salt in coffee or dark chocolate can make the flavor seem smoother. Salt also draws moisture out of vegetables, which is why salted eggplant is left to rest before cooking. Too much, however, overwhelms other tastes and raises health concerns. Chefs therefore add salt in small amounts and taste frequently. Many home cooks are cautious and under-season their food. Food scientists are studying how salt interacts with the receptors on the tongue, and they hope to make low-salt products that taste just as pleasant to consumers. Many restaurants now offer unsalted bread on request for that reason.",
+            "question": "A small amount of salt can make bitter foods taste smoother.",
             "correctAnswer": "true",
             "options": [
                 "true",
                 "false"
             ],
-            "hint": "Check what the footnote in the regulatory filing actually revealed about early cancellations.",
-            "explanation": "The passage confirms this exact revelation, so the statement is true.",
-            "evidenceLine": "This line proves the answer."
+            "hint": "What does a pinch of salt do in coffee or dark chocolate?",
+            "explanation": "It makes the flavor seem smoother by reducing bitterness.",
+            "evidenceLine": "A pinch of salt in coffee or dark chocolate can make the flavor seem smoother."
         },
         {
             "id": "RDG_TRUEFALSEREADING_L196_Q2",
-            "instruction": "Read the passage and determine if the statement is true or false.",
+            "instruction": "Read the passage carefully. Based only on what it says, decide whether the statement is true or false.",
             "subtype": "trueFalseReading",
             "interactionType": "trueFalse",
-            "passage": "The popular claim that a particular species of jellyfish is entirely immune to aging and cannot die of natural causes under any circumstances, a characterization that has circulated widely in popular media coverage of the species' unusual regenerative capabilities, somewhat overstates findings that are, in the actual scientific literature, considerably more narrow: the species can, under certain stress conditions, revert to an earlier developmental stage rather than dying, but individual jellyfish nonetheless remain vulnerable to predation, disease, and environmental hazards throughout their lives.",
-            "question": "The underlying scientific research demonstrates the jellyfish is entirely immune to death under absolutely any circumstance, including predation and disease.",
+            "passage": "A documentary claimed that a common food additive was harmful and supported the claim with the testimony of three scientists. Reviewers later noted that the film did not mention several large studies that found no harm. Two of the scientists had also received funding from a company that sold an alternative product. The producers responded that they had included the best available evidence and that the funding was irrelevant. Independent experts said that a reliable film would have presented the disagreement openly. The film remains widely viewed. Several viewers wrote to the broadcaster asking for a follow-up program that would let scientists with different opinions discuss the evidence in the same studio. The broadcaster said that it would consider the request carefully.",
+            "question": "Reviewers found that the film presented the large studies fairly.",
             "correctAnswer": "false",
             "options": [
                 "true",
                 "false"
             ],
-            "hint": "Check what the passage says about jellyfish vulnerability to predation and disease.",
-            "explanation": "The passage says jellyfish remain vulnerable to predation and disease, so entire immunity to death is false.",
-            "evidenceLine": "This line proves the answer."
+            "hint": "What did the reviewers say the film left out?",
+            "explanation": "It did not mention several large studies that found no harm.",
+            "evidenceLine": "Reviewers later noted that the film did not mention several large studies that found no harm."
         },
         {
             "id": "RDG_TRUEFALSEREADING_L196_Q3",
-            "instruction": "Read the passage and determine if the statement is true or false.",
+            "instruction": "Read the passage carefully. Based only on what it says, decide whether the statement is true or false.",
             "subtype": "trueFalseReading",
             "interactionType": "trueFalse",
-            "passage": "Although the town's tourism board has consistently credited its rebranding campaign, launched three years ago at considerable expense, with the subsequent increase in annual visitor spending, an economic impact study commissioned by an independent regional planning body found that a significant, currency-driven shift making the town considerably more affordable for visitors from a neighboring country during the same period likely accounted for a substantial share of the spending increase, a factor entirely unrelated to and unaffected by the rebranding campaign the tourism board continues to credit.",
-            "question": "An independent economic impact study found a currency-driven affordability shift, unrelated to the rebranding, likely accounted for a substantial share of the spending increase.",
-            "correctAnswer": "true",
+            "passage": "A company introduced a four-day week, expecting productivity to fall. In a six-month trial, output remained the same, and employees reported less stress and fewer sick days. Managers noted that meetings became shorter and that staff wasted less time. However, some customer-facing teams found it difficult to cover the fifth day, so the company adjusted rotas to keep the service open. The trial cannot show whether the results would last, since novelty may boost motivation. A second trial is planned. Employees who took part in the trial were asked to keep a diary, and their entries will be studied by researchers from a local university next year. The company plans to publish a summary of the findings online.",
+            "question": "Output at the company did not stay the same during the trial.",
+            "correctAnswer": "false",
             "options": [
                 "true",
                 "false"
             ],
-            "hint": "Check what the independent economic impact study actually identified as a likely contributing factor.",
-            "explanation": "The passage states the study identified exactly this factor, so the statement is true.",
-            "evidenceLine": "This line proves the answer."
+            "hint": "What happened to output during the trial?",
+            "explanation": "Output remained the same during the trial.",
+            "evidenceLine": "In a six-month trial, output remained the same, and employees reported less stress and fewer sick days."
         },
         {
             "id": "RDG_TRUEFALSEREADING_L197_Q1",
-            "instruction": "Read the passage and determine if the statement is true or false.",
+            "instruction": "Read the passage carefully. Based only on what it says, decide whether the statement is true or false.",
             "subtype": "trueFalseReading",
             "interactionType": "trueFalse",
-            "passage": "While it would be convenient to attribute the noticeable improvement in Elena's sleep quality entirely to the white noise machine she began using eight months ago, a device she has recommended enthusiastically to nearly everyone she knows since, her own account, when pressed for detail, reveals that the machine's introduction coincided with a separate and arguably more significant change: she had, around the same time, finally addressed a long-standing conflict with a neighbor whose late-night activity had been a recurring source of disrupted sleep for well over a year.",
-            "question": "Elena's account reveals that resolving a neighbor conflict coincided with the white noise machine's introduction, complicating which factor deserves credit.",
-            "correctAnswer": "true",
+            "passage": "A small language spoken by a few hundred people in a mountain valley is at risk of disappearing. Young people move to cities and speak the national language, and children rarely learn the older tongue. Linguists have recorded stories and dictionaries, but they stress that recording is not the same as keeping the language alive. A language survives when people use it in daily life, in school, and in media. The community has opened a nursery where elders speak only the old language to children. Early results are encouraging. The language's last fluent speakers are all over seventy, so the nursery's organizers know that the coming decade will decide whether a new generation can take over. Volunteers from a nearby university help the elders record new stories.",
+            "question": "Linguists say that recording a language is enough to keep it alive.",
+            "correctAnswer": "false",
             "options": [
                 "true",
                 "false"
             ],
-            "hint": "Check what Elena's own account reveals about what else changed at the same time.",
-            "explanation": "The passage confirms this coinciding change, so the statement is true.",
-            "evidenceLine": "This line proves the answer."
+            "hint": "What do linguists stress about recording?",
+            "explanation": "Recording is not the same as keeping the language alive.",
+            "evidenceLine": "Linguists have recorded stories and dictionaries, but they stress that recording is not the same as keeping the language alive."
         },
         {
             "id": "RDG_TRUEFALSEREADING_L197_Q2",
-            "instruction": "Read the passage and determine if the statement is true or false.",
+            "instruction": "Read the passage carefully. Based only on what it says, decide whether the statement is true or false.",
             "subtype": "trueFalseReading",
             "interactionType": "trueFalse",
-            "passage": "The graduate program's frequently cited statistic that ninety percent of its alumni are employed in the field within six months of graduation, a figure prominently featured in its recruitment materials, is calculated, according to a methodology note buried in the program's own accreditation filing, using a denominator that excludes any graduate who did not respond to the program's voluntary post-graduation survey, a subset that internal emails suggest disproportionately includes graduates who remained unemployed and were less inclined to respond to a survey highlighting that fact.",
-            "question": "The ninety percent figure is calculated using a denominator that includes every single graduate regardless of survey response.",
-            "correctAnswer": "false",
+            "passage": "A city introduced congestion pricing, charging drivers to enter the center during peak hours. Traffic fell by fifteen percent in the first year, and bus journeys became faster. Some shop owners feared that customers would stay away, but sales in the zone slightly increased. Critics noted that lower-income commuters who have no alternative to driving were affected more. The city therefore used part of the revenue to improve bus routes serving those areas. Public support increased after the results were published. Other cities are studying the results closely, and some transport experts warn that the effect may depend on the quality of the public transport already available. The mayor has promised to publish an annual report on the scheme.",
+            "question": "The city spent part of the charge revenue on bus routes for the affected commuters.",
+            "correctAnswer": "true",
             "options": [
                 "true",
                 "false"
             ],
-            "hint": "Check what the methodology note actually says about which graduates are counted in the denominator.",
-            "explanation": "The passage says non-respondents are excluded from the denominator, so including every graduate is false.",
-            "evidenceLine": "This line proves the answer."
+            "hint": "What did the city do in response to the critics?",
+            "explanation": "It used part of the revenue to improve bus routes serving those areas.",
+            "evidenceLine": "The city therefore used part of the revenue to improve bus routes serving those areas."
         },
         {
             "id": "RDG_TRUEFALSEREADING_L197_Q3",
-            "instruction": "Read the passage and determine if the statement is true or false.",
+            "instruction": "Read the passage carefully. Based only on what it says, decide whether the statement is true or false.",
             "subtype": "trueFalseReading",
             "interactionType": "trueFalse",
-            "passage": "Although the retail chain's corporate communications have consistently attributed this year's improved employee retention figures to a newly introduced flexible scheduling policy rolled out company-wide at the start of the fiscal year, an internal analysis segmenting retention data by store location found that stores in regions where the local minimum wage had also increased independently of the company's own policy changes showed retention improvements considerably larger than stores in regions without such an increase.",
-            "question": "An internal analysis found stores in regions with an independent minimum wage increase showed considerably larger retention improvements.",
-            "correctAnswer": "true",
+            "passage": "A theater company decided to stage a classic play in modern clothes. Some critics argued that the setting distracted from the language, while others said that it revealed how relevant the story remains. Audience surveys found that younger viewers enjoyed the production more than older viewers. The director said that she did not change a single word of the script. Ticket sales exceeded the theater's expectations. The company will stage another classic next season in the same style. Reviewers noticed that the lighting and costumes were plain, which they said left the audience free to concentrate on the actors and the story. The production will tour three other cities before the end of the year.",
+            "question": "The director rewrote parts of the script to update the language.",
+            "correctAnswer": "false",
             "options": [
                 "true",
                 "false"
             ],
-            "hint": "Check what the internal analysis found when comparing regions by minimum wage changes.",
-            "explanation": "The passage confirms this exact comparison and finding, so the statement is true.",
-            "evidenceLine": "This line proves the answer."
+            "hint": "What did the director say about the script?",
+            "explanation": "She said she did not change a single word.",
+            "evidenceLine": "The director said that she did not change a single word of the script."
         },
         {
             "id": "RDG_TRUEFALSEREADING_L198_Q1",
-            "instruction": "Read the passage and determine if the statement is true or false.",
+            "instruction": "Read the passage carefully. Based only on what it says, decide whether the statement is true or false.",
             "subtype": "trueFalseReading",
             "interactionType": "trueFalse",
-            "passage": "The mountain resort's frequently repeated claim that its ski season has remained consistently reliable for over four decades, a talking point featured prominently in its marketing to reassure prospective visitors concerned about variable snowfall, is complicated by the resort's own internal snowfall records, which show a measurable, statistically significant decline in natural snowfall over the past fifteen years specifically, a decline the resort has offset primarily through substantially increased artificial snowmaking rather than through any actual consistency in natural conditions.",
-            "question": "The resort's own internal records confirm natural snowfall has remained perfectly consistent with no decline over the past fifteen years.",
-            "correctAnswer": "false",
+            "passage": "A river that had been polluted by a factory for decades began to recover after the factory closed. Within five years, fish returned to sections where none had been seen, and water tests met safety standards. However, chemicals that had settled in the mud continued to affect some species, and scientists advised against eating fish from the lower stretch. Experts noted that the visible recovery could give a false impression of complete safety. Cleaning the sediment would be expensive and disruptive. The government is weighing whether the benefit justifies the cost. Local anglers have asked that signs be placed at the riverbank in several languages, since many visitors do not read the warnings in the official notices. The environment agency tests the water again every three months.",
+            "question": "Despite the visible recovery, scientists advised against eating fish from part of the river.",
+            "correctAnswer": "true",
             "options": [
                 "true",
                 "false"
             ],
-            "hint": "Check what the resort's own internal snowfall records actually show for the past fifteen years.",
-            "explanation": "The passage says records show a statistically significant decline, so perfectly consistent is false.",
-            "evidenceLine": "This line proves the answer."
+            "hint": "Read the sentence that begins with \"however.\"",
+            "explanation": "Scientists advised against eating fish from the lower stretch because of chemicals in the mud.",
+            "evidenceLine": "However, chemicals that had settled in the mud continued to affect some species, and scientists advised against eating fish from the lower stretch."
         },
         {
             "id": "RDG_TRUEFALSEREADING_L198_Q2",
-            "instruction": "Read the passage and determine if the statement is true or false.",
+            "instruction": "Read the passage carefully. Based only on what it says, decide whether the statement is true or false.",
             "subtype": "trueFalseReading",
             "interactionType": "trueFalse",
-            "passage": "Although Hassan's family has long attributed the eventual reconciliation between his parents after a lengthy separation to a single dramatic conversation that has since become something of a family legend, a conversation Hassan himself has recounted in almost mythic terms, his mother's own account, shared candidly with Hassan only in recent years, describes the reconciliation as the culmination of a much slower, less dramatic process involving a therapist neither parent had previously disclosed to the children.",
-            "question": "Hassan's mother's own account describes the reconciliation as a slower process involving an undisclosed therapist, not a single dramatic conversation.",
+            "passage": "Farmers who grow a single crop over a large area often face outbreaks of pests, because the insects have abundant food. Some farmers now plant strips of wildflowers between fields, which attract insects that eat the pests. Early trials showed reduced damage to crops, but the results depended on the flowers chosen and on the distance from the fields. Flowers too far away were ignored by the predators. Researchers are therefore testing different mixtures and layouts. The approach appears promising but is not a complete substitute for other methods. Some farmers say that the strips also make the fields more attractive to bees, although they admit that they have not measured any effect on their honey. Insect surveys will continue for another two summers on the same farms.",
+            "question": "How well wildflower strips work depends on which flowers are planted and where.",
             "correctAnswer": "true",
             "options": [
                 "true",
                 "false"
             ],
-            "hint": "Check what Hassan's mother's own account actually describes about the reconciliation process.",
-            "explanation": "The passage confirms this exact description from his mother, so the statement is true.",
-            "evidenceLine": "This line proves the answer."
+            "hint": "What did the results depend on?",
+            "explanation": "On the flowers chosen and the distance from the fields.",
+            "evidenceLine": "Early trials showed reduced damage to crops, but the results depended on the flowers chosen and on the distance from the fields."
         },
         {
             "id": "RDG_TRUEFALSEREADING_L198_Q3",
-            "instruction": "Read the passage and determine if the statement is true or false.",
+            "instruction": "Read the passage carefully. Based only on what it says, decide whether the statement is true or false.",
             "subtype": "trueFalseReading",
             "interactionType": "trueFalse",
-            "passage": "The cosmetics brand's marketing claim that its best-selling serum was clinically proven to reduce the appearance of fine lines within a specific, frequently cited number of weeks, a statistic prominently featured across its packaging and advertising, was found by a regulatory review to be based on a single small-scale study funded directly by the brand itself, with the reviewing body specifically noting that no independent, peer-reviewed replication of the finding existed at the time the claim was first published and widely circulated.",
-            "question": "The regulatory review confirmed the clinical claim was independently replicated through peer-reviewed research before publication.",
+            "passage": "A company introduced an app that tracks employees' typing speed and mouse movement to measure productivity. Managers hoped it would identify who worked hardest. Employees quickly found ways to trick it, such as moving the mouse regularly while doing other things. Researchers noted that measuring what is easy to measure can lead to neglecting what matters, such as thinking and helping colleagues. After several months, the company abandoned the app. It now assesses results by talking to teams. Labor groups welcomed the decision and argued that any system that watches workers closely should be discussed with them before it is introduced. A similar debate is now taking place in several other countries.",
+            "question": "Employees did not find ways around the app.",
             "correctAnswer": "false",
             "options": [
                 "true",
                 "false"
             ],
-            "hint": "Check what the regulatory review actually noted about independent replication.",
-            "explanation": "The passage says the review noted no independent replication existed, so confirming replication is false.",
-            "evidenceLine": "This line proves the answer."
+            "hint": "How did employees respond to the app?",
+            "explanation": "Employees quickly found ways to trick the app.",
+            "evidenceLine": "Employees quickly found ways to trick it, such as moving the mouse regularly while doing other things."
         },
         {
             "id": "RDG_TRUEFALSEREADING_L199_Q1",
-            "instruction": "Read the passage and determine if the statement is true or false.",
+            "instruction": "Read the passage carefully. Based only on what it says, decide whether the statement is true or false.",
             "subtype": "trueFalseReading",
             "interactionType": "trueFalse",
-            "passage": "Although the specialty coffee company's marketing has long emphasized that its beans are sourced directly from a small number of named family farms, a claim central to its premium pricing and branding, a supply chain audit conducted after a journalist's inquiry found that during periods of shortfall from those named farms, the company had, on several documented occasions, supplemented its supply through a regional broker without disclosing this substitution to consumers, blending broker-sourced beans with the named-farm beans in a manner the audit noted was not reflected in the company's public sourcing claims.",
-            "question": "A supply chain audit found the company had, on documented occasions, supplemented supply through an undisclosed regional broker during shortfalls.",
+            "passage": "A soccer team lost its first six matches, and fans demanded that the coach be dismissed. The club's owners, however, looked at deeper statistics: the team had created many chances but had been unlucky with finishing. They decided to keep the coach for another month. In the following ten matches, the team won seven and drew two. Analysts said that judging a team only by results can be misleading, because luck plays a large part in the short term. Others responded that the owners had simply been fortunate. Statisticians remind readers that a run of results over ten matches is still a small sample, and that the same pattern might appear even without the coach. Local newspapers ran several stories about the decision at the time.",
+            "question": "The owners kept the coach because the team's chances suggested the losses were partly bad luck.",
             "correctAnswer": "true",
             "options": [
                 "true",
                 "false"
             ],
-            "hint": "Check what the supply chain audit actually found about how shortfalls were handled.",
-            "explanation": "This is exactly what the audit is described as uncovering, so the statement is true.",
-            "evidenceLine": "This line proves the answer."
+            "hint": "What did the deeper statistics show?",
+            "explanation": "The team created many chances but was unlucky with finishing, so the owners kept the coach.",
+            "evidenceLine": "The club's owners, however, looked at deeper statistics: the team had created many chances but had been unlucky with finishing. They decided to keep the coach for another month."
         },
         {
             "id": "RDG_TRUEFALSEREADING_L199_Q2",
-            "instruction": "Read the passage and determine if the statement is true or false.",
+            "instruction": "Read the passage carefully. Based only on what it says, decide whether the statement is true or false.",
             "subtype": "trueFalseReading",
             "interactionType": "trueFalse",
-            "passage": "The wearable device manufacturer markets its sleep-tracking feature as clinically validated for accuracy, yet a comparison study conducted by university researchers using polysomnography, the clinical gold standard for sleep measurement, as a reference point found that the device's accuracy, while reasonably strong for detecting whether a person was asleep or awake at a given moment, was considerably weaker specifically for distinguishing between different sleep stages, a nuance the manufacturer's general accuracy claims do not clearly convey to consumers.",
-            "question": "The comparison study found the device was considerably weaker at distinguishing sleep stages than at detecting sleep versus wakefulness.",
-            "correctAnswer": "true",
+            "passage": "A researcher noticed that cities with more ice cream sales also had more drownings and concluded that ice cream is dangerous. Colleagues pointed out that both rise in summer, when people eat more ice cream and also swim more. Temperature, a third factor, explains the pattern without any connection between the two. Such hidden factors are called confounders, and they are a frequent source of false conclusions. Good studies try to control for them, or use experiments in which people are assigned randomly. Confounders are not always obvious. Science teachers often use this example in class because it is easy to remember, and students can usually think of other pairs of events that rise together. Scientists sometimes call such links coincidences when nothing connects the two.",
+            "question": "The colleagues agreed that ice cream sales cause drownings.",
+            "correctAnswer": "false",
             "options": [
                 "true",
                 "false"
             ],
-            "hint": "Check what the comparison study found regarding these two specific types of accuracy.",
-            "explanation": "The passage confirms this exact distinction in accuracy, so the statement is true.",
-            "evidenceLine": "This line proves the answer."
+            "hint": "What did the colleagues say explains the pattern?",
+            "explanation": "Temperature, a third factor, explains it without any connection between ice cream and drownings.",
+            "evidenceLine": "Colleagues pointed out that both rise in summer, when people eat more ice cream and also swim more. Temperature, a third factor, explains the pattern without any connection between the two."
         },
         {
             "id": "RDG_TRUEFALSEREADING_L199_Q3",
-            "instruction": "Read the passage and determine if the statement is true or false.",
+            "instruction": "Read the passage carefully. Based only on what it says, decide whether the statement is true or false.",
             "subtype": "trueFalseReading",
             "interactionType": "trueFalse",
-            "passage": "Although the mental health app's marketing describes its mood-tracking algorithm as capable of detecting early warning signs of depressive episodes with a specific, frequently cited accuracy rate, an independent evaluation commissioned by a digital health research consortium found that this accuracy rate held only for users who logged entries consistently on a near-daily basis, a usage pattern the evaluation found represented a minority of the app's actual user base, with accuracy dropping substantially among the more typical, less consistent users the app is marketed to more broadly.",
-            "question": "The independent evaluation found the cited accuracy rate held only for a minority of users who logged entries near-daily.",
+            "passage": "A homeowner compared two ways of cooling his house: installing an air conditioner for $1,200 or adding roof insulation for $2,000. The air conditioner would use about $150 of electricity per summer, while the insulation would reduce the need for cooling and save about $200 a year. An advisor pointed out that the two options were not exclusive, and that insulation would also lower heating costs in winter. The homeowner did the calculation for ten years. He chose the insulation, which paid for itself more slowly but continued to bring savings. The advisor approved. An energy adviser added that prices for electricity and for insulation materials change from year to year, so calculations should be repeated before any decision is final. The homeowner has kept the receipts to compare the actual savings.",
+            "question": "The insulation would reduce heating costs in winter as well as cooling costs.",
             "correctAnswer": "true",
             "options": [
                 "true",
                 "false"
             ],
-            "hint": "Check what proportion of users the independent evaluation found the accuracy rate actually applied to.",
-            "explanation": "The passage confirms this held only for a minority of near-daily loggers, so the statement is true.",
-            "evidenceLine": "This line proves the answer."
+            "hint": "What extra benefit did the advisor mention?",
+            "explanation": "The advisor said insulation would also lower heating costs in winter.",
+            "evidenceLine": "An advisor pointed out that the two options were not exclusive, and that insulation would also lower heating costs in winter."
         },
         {
             "id": "RDG_TRUEFALSEREADING_L200_Q1",
-            "instruction": "Read the passage and determine if the statement is true or false.",
+            "instruction": "Read the passage carefully. Based only on what it says, decide whether the statement is true or false.",
             "subtype": "trueFalseReading",
             "interactionType": "trueFalse",
-            "passage": "The record label's widely circulated account of discovering its most commercially successful artist through a chance encounter at an open-mic night, a story that has become central to the label's own promotional identity and has been retold in numerous press profiles, was revised considerably after industry trade documents surfaced showing the artist had, in fact, been under consideration through a formal submission process for several months prior to that supposedly chance encounter, which label executives have since acknowledged was staged partly for promotional purposes after the formal deal was already substantially underway.",
-            "question": "Industry trade documents confirmed the chance encounter genuinely occurred with no prior formal consideration of the artist beforehand.",
-            "correctAnswer": "false",
-            "options": [
-                "true",
-                "false"
-            ],
-            "hint": "Check what the industry trade documents actually revealed about prior consideration of the artist.",
-            "explanation": "The passage says documents showed months of prior formal consideration, so no prior consideration is false.",
-            "evidenceLine": "This line proves the answer."
-        },
-        {
-            "id": "RDG_TRUEFALSEREADING_L200_Q2",
-            "instruction": "Read the passage and determine if the statement is true or false.",
-            "subtype": "trueFalseReading",
-            "interactionType": "trueFalse",
-            "passage": "Although a particular species of migratory bat was long believed by wildlife researchers to travel in family groups that remain stable across an individual's lifetime, a belief supported mainly by observational data limited to breeding season, more recent tracking studies using individually tagged bats across full annual cycles have found that group composition during the non-breeding migratory period is considerably more fluid than previously assumed, with individuals frequently joining and leaving different traveling groups over the course of a single migration.",
-            "question": "More recent tracking studies found group composition during the non-breeding migratory period is considerably more fluid than previously assumed.",
+            "passage": "In 1854, a physician in London traced an outbreak of cholera to a single water pump in Soho. Most experts at the time believed that the disease was caused by bad air, so his explanation was resisted. He mapped the deaths and showed that they clustered around the pump, and that people who drank elsewhere were far less likely to fall ill. The authorities removed the pump handle, and the outbreak declined, though it may have been ending anyway. Later research on bacteria confirmed his theory. His method of mapping cases remains a foundation of modern epidemiology. A small museum in the neighborhood now displays a replica of the pump, and guides use the case to explain how maps can turn scattered facts into evidence. Epidemiology courses still teach the case in their first week.",
+            "question": "It is uncertain whether removing the pump handle ended the outbreak.",
             "correctAnswer": "true",
             "options": [
                 "true",
                 "false"
             ],
-            "hint": "Check what the more recent tracking studies actually found about group composition.",
-            "explanation": "The passage states the tracking studies found precisely this, so the statement is true.",
-            "evidenceLine": "This line proves the answer."
+            "hint": "Notice the qualification after the outbreak declined.",
+            "explanation": "The passage says the outbreak may have been ending anyway, so the effect of the removal is uncertain.",
+            "evidenceLine": "The authorities removed the pump handle, and the outbreak declined, though it may have been ending anyway."
         },
         {
-            "id": "RDG_TRUEFALSEREADING_L200_Q3",
-            "instruction": "Read the passage and determine if the statement is true or false.",
+            "id": "RDG_TRUEFALSEREADING_L200_Q2",
+            "instruction": "Read the passage carefully. Based only on what it says, decide whether the statement is true or false.",
             "subtype": "trueFalseReading",
             "interactionType": "trueFalse",
-            "passage": "The public library system's widely cited statistic that program attendance increased dramatically following its recent renovation, a figure the system has referenced in its most recent funding request to the city council, is calculated, according to a footnote in the system's own internal reporting documents, by comparing attendance during the renovated branch's reopening celebration month, which included an unusually large number of one-time special events, against a typical month from before the renovation, a comparison the footnote itself acknowledges is not representative of sustained, ongoing attendance levels.",
-            "question": "The library system's own footnote confirms the comparison used represents typical, sustained attendance levels rather than an unusually eventful reopening month.",
+            "passage": "Some visitors to a foreign country assume that rules of politeness they know are universal. A traveler who tipped generously in a country where tipping is considered insulting learned this the hard way when the waiter refused the money. In another place, she gave her business card with one hand, not realizing that a respectful exchange requires both hands. Locals were forgiving, but she felt embarrassed. She now reads about customs before each trip and asks hosts for advice. She says that curiosity is the best guide. Guidebooks for travelers increasingly include short sections on customs that surprise visitors, but the author of this story says that no book can replace a friendly local. Locals in the country later invited her to a family dinner.",
+            "question": "The waiter accepted the generous tip and thanked her.",
             "correctAnswer": "false",
             "options": [
                 "true",
                 "false"
             ],
-            "hint": "Check what the library system's own footnote actually acknowledges about the comparison used.",
-            "explanation": "The passage says the footnote acknowledges the comparison is not representative of sustained levels, so it representing typical levels is false.",
-            "evidenceLine": "This line proves the answer."
+            "hint": "How did the waiter react to the tip?",
+            "explanation": "The waiter refused the money.",
+            "evidenceLine": "A traveler who tipped generously in a country where tipping is considered insulting learned this the hard way when the waiter refused the money."
+        },
+        {
+            "id": "RDG_TRUEFALSEREADING_L200_Q3",
+            "instruction": "Read the passage carefully. Based only on what it says, decide whether the statement is true or false.",
+            "subtype": "trueFalseReading",
+            "interactionType": "trueFalse",
+            "passage": "A small company developed a product that customers loved, yet it struggled to make a profit. An accountant discovered that the company priced items by adding a fixed percentage to production costs, ignoring the time staff spent handling complicated orders. Once these hidden costs were counted, several popular items were sold at a loss. The company raised prices on those items and simplified its options. Sales fell slightly, but profits rose, since the remaining orders were cheaper to serve. The founder says she had confused popularity with profitability. Other small firms in the region have since asked the accountant to review their own prices, and several have found similar gaps that were hurting their profits. The founder now reviews the pricing formula at the end of every quarter.",
+            "question": "Some popular items had been sold at a loss until the hidden costs were counted.",
+            "correctAnswer": "true",
+            "options": [
+                "true",
+                "false"
+            ],
+            "hint": "What did the accountant's discovery reveal about popular items?",
+            "explanation": "Once hidden costs were counted, several popular items turned out to be sold at a loss.",
+            "evidenceLine": "Once these hidden costs were counted, several popular items were sold at a loss."
         }
     ]
 }
