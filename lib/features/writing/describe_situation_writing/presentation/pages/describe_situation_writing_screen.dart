@@ -76,21 +76,6 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen>
         });
       }
     });
-
-    isAnsweredNotifier.addListener(() {
-      if (isAnsweredNotifier.value && mounted && _scrollController.hasClients) {
-        Future.delayed(const Duration(milliseconds: 100), () {
-          if (mounted && _scrollController.hasClients) {
-            _scrollController.animateTo(
-              _scrollController.position.maxScrollExtent,
-              duration: const Duration(milliseconds: 300),
-              curve: Curves.easeOut,
-            );
-          }
-        });
-      }
-    });
-
     _scrollController = ScrollController();
     initWritingGame();
     _textController.addListener(_onTextChanged);

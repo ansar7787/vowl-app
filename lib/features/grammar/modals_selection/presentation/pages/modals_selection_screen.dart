@@ -54,7 +54,7 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen>
   @override
   void initState() {
     super.initState();
-initGrammarGame();
+    initGrammarGame();
   }
 
   void _submitAnswer(int correctIndex) {

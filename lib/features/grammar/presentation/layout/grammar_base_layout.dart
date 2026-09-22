@@ -1,4 +1,3 @@
-import 'package:vowl/core/utils/locale_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';

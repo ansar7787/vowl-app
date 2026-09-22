@@ -73,21 +73,6 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen>
         });
       }
     });
-
-    isAnsweredNotifier.addListener(() {
-      if (isAnsweredNotifier.value && mounted && _scrollController.hasClients) {
-        Future.delayed(const Duration(milliseconds: 100), () {
-          if (mounted && _scrollController.hasClients) {
-            _scrollController.animateTo(
-              _scrollController.position.maxScrollExtent,
-              duration: const Duration(milliseconds: 300),
-              curve: Curves.easeOut,
-            );
-          }
-        });
-      }
-    });
-
     _sweepController = AnimationController(
       vsync: this,
       duration: const Duration(seconds: 3),
