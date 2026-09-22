@@ -35,7 +35,9 @@ class TrueFalseReadingInstruction extends StatelessWidget {
               ),
             ),
             TextSpan(
-              text: instruction?.toUpperCase() ?? "FLICK THE TRUTH COIN TO VALIDATE",
+              text:
+                  instruction?.toUpperCase() ??
+                  "FLICK THE TRUTH COIN TO VALIDATE",
             ),
           ],
         ),
