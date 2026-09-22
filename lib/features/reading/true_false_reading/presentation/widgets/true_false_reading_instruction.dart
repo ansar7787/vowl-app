@@ -20,30 +20,34 @@ class TrueFalseReadingInstruction extends StatelessWidget {
         borderRadius: BorderRadius.circular(30.r),
         border: Border.all(color: primaryColor.withValues(alpha: 0.2)),
       ),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Icon(
-            Icons.published_with_changes_rounded,
-            size: 16.r,
-            color: primaryColor,
-          ),
-          SizedBox(width: 12.w),
-          Flexible(
-            child: Text(
-              instruction?.toUpperCase() ?? "FLICK THE TRUTH COIN TO VALIDATE",
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 11.sp,
-                fontWeight: FontWeight.w900,
-                color: primaryColor,
-                letterSpacing: 1.5,
+      child: Text.rich(
+        TextSpan(
+          children: [
+            WidgetSpan(
+              alignment: PlaceholderAlignment.middle,
+              child: Padding(
+                padding: EdgeInsets.only(right: 8.w),
+                child: Icon(
+                  Icons.published_with_changes_rounded,
+                  size: 14.r,
+                  color: primaryColor,
+                ),
               ),
             ),
-          ),
-        ],
+            TextSpan(
+              text: instruction?.toUpperCase() ?? "FLICK THE TRUTH COIN TO VALIDATE",
+            ),
+          ],
+        ),
+        textAlign: TextAlign.center,
+        style: TextStyle(
+          fontFamily: 'Outfit',
+          fontSize: 10.sp,
+          fontWeight: FontWeight.w700,
+          color: primaryColor,
+          letterSpacing: 1.2,
+          height: 1.4,
+        ),
       ),
     );
   }
