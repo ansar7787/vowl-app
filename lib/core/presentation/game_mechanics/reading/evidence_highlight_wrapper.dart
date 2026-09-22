@@ -278,9 +278,7 @@ class _EvidenceHighlightWrapperState extends State<EvidenceHighlightWrapper> {
                     padding: EdgeInsets.fromLTRB(24.w, 20.h, 24.w, 20.h),
                     decoration: BoxDecoration(
                       color: bgColor,
-                      borderRadius: BorderRadius.vertical(
-                        top: Radius.circular(32.r),
-                      ),
+                      borderRadius: BorderRadius.circular(32.r),
                       border: Border.all(
                         color: isComplete
                             ? tokens.gameCorrect.withValues(alpha: 0.5)

@@ -238,17 +238,20 @@ class _TrueFalseReadingScreenState extends State<TrueFalseReadingScreen>
                           if (_pendingAnswer.value != null &&
                               !isAnsweredNotifier.value)
                             SliverToBoxAdapter(
-                              child: EvidenceHighlightWrapper(
-                                passage: quest.passage ?? "",
-                                evidenceWords:
-                                    (quest.evidenceLine ?? quest.passage ?? "")
-                                        .split(RegExp(r'\s+')),
-                                primaryColor: theme.primaryColor,
-                                onCorrectHighlight: () =>
-                                    _submitFinalAnswer(true, quest),
-                                instruction:
-                                    'Tap the words that prove your answer',
-                                isPositioned: false,
+                              child: Padding(
+                                padding: EdgeInsets.symmetric(horizontal: 24.w),
+                                child: EvidenceHighlightWrapper(
+                                  passage: quest.passage ?? "",
+                                  evidenceWords:
+                                      (quest.evidenceLine ?? quest.passage ?? "")
+                                          .split(RegExp(r'\s+')),
+                                  primaryColor: theme.primaryColor,
+                                  onCorrectHighlight: () =>
+                                      _submitFinalAnswer(true, quest),
+                                  instruction:
+                                      'Tap the words that prove your answer',
+                                  isPositioned: false,
+                                ),
                               ),
                             ),
                           SliverToBoxAdapter(
