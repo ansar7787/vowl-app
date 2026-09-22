@@ -20,12 +20,6 @@ import 'package:vowl/core/utils/reward_limit_service.dart';
 import 'package:vowl/core/presentation/widgets/shakeable_wrapper.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 
-class _LocalPalette {
-  _LocalPalette._();
-  static const Color color0ea5e9 = Color(0xFF0EA5E9);
-  static const Color color0284c7 = Color(0xFF0284C7);
-}
-
 class KeyShopBottomSheet {
   static void show({
     required BuildContext context,
@@ -148,14 +142,7 @@ class _KeyShopContentState extends State<_KeyShopContent> {
                     Container(
                           padding: EdgeInsets.all(16.r),
                           decoration: BoxDecoration(
-                            gradient: LinearGradient(
-                              colors: [
-                                widget.primaryColor.withValues(alpha: 0.15),
-                                widget.primaryColor.withValues(alpha: 0.25),
-                              ],
-                              begin: Alignment.topLeft,
-                              end: Alignment.bottomRight,
-                            ),
+                            color: widget.primaryColor.withValues(alpha: 0.2),
                             shape: BoxShape.circle,
                             border: Border.all(
                               color: widget.primaryColor.withValues(alpha: 0.4),
@@ -358,37 +345,25 @@ class _KeyShopContentState extends State<_KeyShopContent> {
                             width: double.infinity,
                             padding: EdgeInsets.symmetric(vertical: 14.h),
                             decoration: BoxDecoration(
-                              gradient: LinearGradient(
-                                colors: userCoins >= cost
-                                    ? [
-                                        widget.primaryColor,
-                                        Colors.amber.withValues(alpha: 0.9),
-                                      ]
-                                    : const [
-                                        AppColors.slate400,
-                                        AppColors.slate500,
-                                      ], // Premium Slate
-                                begin: Alignment.topLeft,
-                                end: Alignment.bottomRight,
-                              ),
+                              color: userCoins >= cost
+                                  ? widget.primaryColor
+                                  : AppColors.slate400,
                               borderRadius: BorderRadius.circular(16.r),
                               border: Border.all(
-                                color: Colors.white.withValues(
-                                  alpha: userCoins >= cost ? 0.3 : 0.15,
-                                ),
+                                color: Colors.black.withValues(alpha: 0.1),
                                 width: 1.w,
                               ),
                               boxShadow: userCoins >= cost
                                   ? [
                                       BoxShadow(
                                         color: widget.primaryColor.withValues(
-                                          alpha: 0.4,
+                                          alpha: 0.3,
                                         ),
                                         offset: Offset(0, 4.h),
-                                        blurRadius: 8.r,
+                                        blurRadius: 12.r,
                                       ),
                                     ]
-                                  : [], // No glowing shadow for inactive button
+                                  : [],
                             ),
                             alignment: Alignment.center,
                             child: Row(
@@ -425,343 +400,344 @@ class _KeyShopContentState extends State<_KeyShopContent> {
                       },
                     ),
 
-                    SizedBox(height: 12.h),
+                    SizedBox(height: 16.h),
 
-                    // Get with Ad
-                    ScaleButton(
-                      onTap: () {
-                        if (_isProcessing) return;
+                    // Secondary Actions Row
+                    Row(
+                      children: [
+                        Expanded(
+                          child: ScaleButton(
+                            onTap: () {
+                              if (_isProcessing) return;
 
-                        if (_remainingClaims <= 0) {
-                          _outOfAdsShake++;
-                          _updateState();
-                          showDialog(
-                            context: context,
-                            builder: (ctx) => ModernGameDialog(
-                              title: context.tr(
-                                'store.limit_reached_title',
-                                fallback: 'DAILY LIMIT REACHED',
-                              ),
-                              description: context.tr(
-                                'store.limit_reached_desc',
-                                fallback:
-                                    'You have claimed all your free keys for today! Come back tomorrow or visit the Premium Store for unlimited access.',
-                              ),
-                              buttonText: context.tr(
-                                'store.got_it',
-                                fallback: 'GOT IT',
-                              ),
-                              isSuccess: false,
-                              onButtonPressed: () => Navigator.of(ctx).pop(),
-                              customIcon: Icon(
-                                Icons.lock_clock_rounded,
-                                color: Colors.orange,
-                                size: 48.sp,
-                              ),
-                            ),
-                          );
-                          return;
-                        }
-                        final adService = di.sl<AdService>();
-                        // FIX: Read premium status from AuthBloc instead of
-                        // hardcoding `false`. Premium users who open the key
-                        // shop (e.g. via Kids Zone toll gate) should get the
-                        // premium bypass, not be forced to watch an ad.
-                        if (!isPremium && !adService.isRewardedAdLoaded) {
-                          showDialog(
-                            context: context,
-                            builder: (ctx) => ModernGameDialog(
-                              title: context.tr(
-                                'store.ad_not_ready_title',
-                                fallback: 'AD NOT READY',
-                              ),
-                              description: context.tr(
-                                'games.ad_not_ready',
-                                fallback:
-                                    'Ad not ready yet, try again in a moment.',
-                              ),
-                              buttonText: context.tr(
-                                'store.ok',
-                                fallback: 'OK',
-                              ),
-                              isSuccess: false,
-                              onButtonPressed: () => Navigator.of(ctx).pop(),
-                              customIcon: Icon(
-                                Icons.hourglass_empty_rounded,
-                                color: Colors.orange,
-                                size: 48.sp,
-                              ),
-                            ),
-                          );
-                          return;
-                        }
-
-                        _isProcessing = true;
-                        _updateState();
-                        bool rewardEarned = false;
-
-                        adService.showRewardedAd(
-                          context: context,
-                          isPremium: isPremium,
-                          // FIX: COPPA compliance — when the key shop is opened
-                          // from Kids Zone (isKidsMode: true), force child-safe
-                          // ad parameters.
-                          childSafe: widget.isKidsMode,
-                          onUserEarnedReward: (_) {
-                            rewardEarned = true;
-                          },
-                          onDismissed: () async {
-                            if (!mounted) return;
-                            _isProcessing = false;
-                            _updateState();
-
-                            if (!rewardEarned) return;
-
-                            _isProcessing = true;
-                            _updateState();
-
-                            final result = await di.sl<AddGoldenKey>().call(
-                              const AddGoldenKeyParams(amount: 1),
-                            );
-
-                            // Increment limits even if the widget unmounts during the API call,
-                            // but only if the API call was successful.
-                            if (result.isRight()) {
-                              await RewardLimitService.incrementClaimCount(
-                                'keys',
-                              );
-                            }
-
-                            if (!mounted) return;
-                            _isProcessing = false;
-                            _updateState();
-
-                            // BUG FIX: Show dialogs inside onDismissed instead of
-                            // onUserEarnedReward to prevent the Ad overlay from
-                            // blocking or prematurely killing the dialogs.
-                            result.fold(
-                              (failure) {
+                              if (_remainingClaims <= 0) {
+                                _outOfAdsShake++;
+                                _updateState();
                                 showDialog(
                                   context: context,
                                   builder: (ctx) => ModernGameDialog(
                                     title: context.tr(
-                                      'store.reward_failed_title',
-                                      fallback: 'REWARD FAILED',
+                                      'store.limit_reached_title',
+                                      fallback: 'DAILY LIMIT REACHED',
                                     ),
                                     description: context.tr(
-                                      'store.reward_failed_desc',
+                                      'store.limit_reached_desc',
                                       fallback:
-                                          "We couldn't grant your reward. Please contact support if this keeps happening.",
+                                          'You have claimed all your free keys for today! Come back tomorrow or visit the Premium Store for unlimited access.',
                                     ),
-                                    buttonText: context
-                                        .tr('common.ok', fallback: 'OK')
-                                        .toUpperCase(),
+                                    buttonText: context.tr(
+                                      'store.got_it',
+                                      fallback: 'GOT IT',
+                                    ),
                                     isSuccess: false,
                                     onButtonPressed: () =>
                                         Navigator.of(ctx).pop(),
+                                    customIcon: Icon(
+                                      Icons.lock_clock_rounded,
+                                      color: Colors.orange,
+                                      size: 48.sp,
+                                    ),
                                   ),
                                 );
-                              },
-                              (_) {
-                                widget.parentContext.read<AuthBloc>().add(
-                                  const AuthReloadUser(),
-                                );
-                                di.sl<HapticService>().success();
+                                return;
+                              }
+                              final adService = di.sl<AdService>();
+                              // FIX: Read premium status from AuthBloc instead of
+                              // hardcoding `false`. Premium users who open the key
+                              // shop (e.g. via Kids Zone toll gate) should get the
+                              // premium bypass, not be forced to watch an ad.
+                              if (!isPremium && !adService.isRewardedAdLoaded) {
                                 showDialog(
                                   context: context,
-                                  builder: (ctx) => Material(
-                                    type: MaterialType.transparency,
-                                    child: Stack(
-                                      alignment: Alignment.center,
-                                      children: [
-                                        ModernGameDialog(
-                                          title: context.tr(
-                                            'store.reward_unlocked_title',
-                                            fallback: 'REWARD UNLOCKED!',
-                                          ),
-                                          description: context.tr(
-                                            'store.got_key_desc',
-                                            fallback:
-                                                'You got a Golden Key! 🗝️',
-                                          ),
-                                          buttonText: context.tr(
-                                            'store.awesome',
-                                            fallback: 'AWESOME',
-                                          ),
-                                          isSuccess: true,
-                                          onButtonPressed: () {
-                                            Navigator.of(ctx).pop();
-                                            if (mounted && context.mounted) {
-                                              Navigator.of(context).pop();
-                                            }
-                                          },
-                                        ),
-                                        const Positioned.fill(
-                                          child: IgnorePointer(
-                                            child: GameConfetti(),
-                                          ),
-                                        ),
-                                      ],
+                                  builder: (ctx) => ModernGameDialog(
+                                    title: context.tr(
+                                      'store.ad_not_ready_title',
+                                      fallback: 'AD NOT READY',
+                                    ),
+                                    description: context.tr(
+                                      'games.ad_not_ready',
+                                      fallback:
+                                          'Ad not ready yet, try again in a moment.',
+                                    ),
+                                    buttonText: context.tr(
+                                      'store.ok',
+                                      fallback: 'OK',
+                                    ),
+                                    isSuccess: false,
+                                    onButtonPressed: () =>
+                                        Navigator.of(ctx).pop(),
+                                    customIcon: Icon(
+                                      Icons.hourglass_empty_rounded,
+                                      color: Colors.orange,
+                                      size: 48.sp,
                                     ),
                                   ),
                                 );
-                              },
-                            );
-                          },
-                        );
-                      },
-                      child: ShakeableWrapper(
-                        shakeCount: _outOfAdsShake,
-                        child: Container(
-                          width: double.infinity,
-                          padding: EdgeInsets.symmetric(vertical: 14.h),
-                          decoration: BoxDecoration(
-                            gradient: LinearGradient(
-                              colors: _remainingClaims <= 0
-                                  ? const [
-                                      AppColors.slate400,
-                                      AppColors.slate500,
-                                    ] // Premium Slate grey
-                                  : const [
-                                      _LocalPalette.color0ea5e9,
-                                      _LocalPalette.color0284c7,
-                                    ],
-                              begin: Alignment.topLeft,
-                              end: Alignment.bottomRight,
-                            ),
-                            borderRadius: BorderRadius.circular(16.r),
-                            border: Border.all(
-                              color: Colors.white.withValues(
-                                alpha: _remainingClaims <= 0 ? 0.15 : 0.3,
-                              ),
-                              width: 1.w,
-                            ),
-                            boxShadow: _remainingClaims <= 0
-                                ? [] // No glowing shadow for inactive buttons
-                                : [
-                                    BoxShadow(
-                                      color: const Color(
-                                        0xFF0EA5E9,
-                                      ).withValues(alpha: 0.4),
-                                      offset: Offset(0, 4.h),
-                                      blurRadius: 8.r,
+                                return;
+                              }
+
+                              _isProcessing = true;
+                              _updateState();
+                              bool rewardEarned = false;
+
+                              adService.showRewardedAd(
+                                context: context,
+                                isPremium: isPremium,
+                                // FIX: COPPA compliance — when the key shop is opened
+                                // from Kids Zone (isKidsMode: true), force child-safe
+                                // ad parameters.
+                                childSafe: widget.isKidsMode,
+                                onUserEarnedReward: (_) {
+                                  rewardEarned = true;
+                                },
+                                onDismissed: () async {
+                                  if (!mounted) return;
+                                  _isProcessing = false;
+                                  _updateState();
+
+                                  if (!rewardEarned) return;
+
+                                  _isProcessing = true;
+                                  _updateState();
+
+                                  final result = await di
+                                      .sl<AddGoldenKey>()
+                                      .call(
+                                        const AddGoldenKeyParams(amount: 1),
+                                      );
+
+                                  // Increment limits even if the widget unmounts during the API call,
+                                  // but only if the API call was successful.
+                                  if (result.isRight()) {
+                                    await RewardLimitService.incrementClaimCount(
+                                      'keys',
+                                    );
+                                  }
+
+                                  if (!mounted) return;
+                                  _isProcessing = false;
+                                  _updateState();
+
+                                  // BUG FIX: Show dialogs inside onDismissed instead of
+                                  // onUserEarnedReward to prevent the Ad overlay from
+                                  // blocking or prematurely killing the dialogs.
+                                  result.fold(
+                                    (failure) {
+                                      showDialog(
+                                        context: context,
+                                        builder: (ctx) => ModernGameDialog(
+                                          title: context.tr(
+                                            'store.reward_failed_title',
+                                            fallback: 'REWARD FAILED',
+                                          ),
+                                          description: context.tr(
+                                            'store.reward_failed_desc',
+                                            fallback:
+                                                "We couldn't grant your reward. Please contact support if this keeps happening.",
+                                          ),
+                                          buttonText: context
+                                              .tr('common.ok', fallback: 'OK')
+                                              .toUpperCase(),
+                                          isSuccess: false,
+                                          onButtonPressed: () =>
+                                              Navigator.of(ctx).pop(),
+                                        ),
+                                      );
+                                    },
+                                    (_) {
+                                      widget.parentContext.read<AuthBloc>().add(
+                                        const AuthReloadUser(),
+                                      );
+                                      di.sl<HapticService>().success();
+                                      showDialog(
+                                        context: context,
+                                        builder: (ctx) => Material(
+                                          type: MaterialType.transparency,
+                                          child: Stack(
+                                            alignment: Alignment.center,
+                                            children: [
+                                              ModernGameDialog(
+                                                title: context.tr(
+                                                  'store.reward_unlocked_title',
+                                                  fallback: 'REWARD UNLOCKED!',
+                                                ),
+                                                description: context.tr(
+                                                  'store.got_key_desc',
+                                                  fallback:
+                                                      'You got a Golden Key! 🗝️',
+                                                ),
+                                                buttonText: context.tr(
+                                                  'store.awesome',
+                                                  fallback: 'AWESOME',
+                                                ),
+                                                isSuccess: true,
+                                                onButtonPressed: () {
+                                                  Navigator.of(ctx).pop();
+                                                  if (mounted &&
+                                                      context.mounted) {
+                                                    Navigator.of(context).pop();
+                                                  }
+                                                },
+                                              ),
+                                              const Positioned.fill(
+                                                child: IgnorePointer(
+                                                  child: GameConfetti(),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      );
+                                    },
+                                  );
+                                },
+                              );
+                            },
+                            child: ShakeableWrapper(
+                              shakeCount: _outOfAdsShake,
+                              child: Container(
+                                width: double.infinity,
+                                padding: EdgeInsets.symmetric(
+                                  vertical: 12.h,
+                                  horizontal: 8.w,
+                                ),
+                                decoration: BoxDecoration(
+                                  color: _remainingClaims <= 0
+                                      ? AppColors.slate200
+                                      : const Color(
+                                          0xFF0EA5E9,
+                                        ).withValues(alpha: 0.1),
+                                  borderRadius: BorderRadius.circular(16.r),
+                                  border: Border.all(
+                                    color: _remainingClaims <= 0
+                                        ? AppColors.slate300
+                                        : const Color(
+                                            0xFF0EA5E9,
+                                          ).withValues(alpha: 0.3),
+                                    width: 1.5.w,
+                                  ),
+                                ),
+                                alignment: Alignment.center,
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Icon(
+                                      _isLoadingLimits
+                                          ? Icons.hourglass_empty_rounded
+                                          : _remainingClaims <= 0
+                                          ? Icons.lock_clock_rounded
+                                          : isPremium
+                                          ? Icons.redeem_rounded
+                                          : Icons.play_circle_fill_rounded,
+                                      color: _remainingClaims <= 0
+                                          ? AppColors.slate500
+                                          : const Color(0xFF0EA5E9),
+                                      size: 18.r,
+                                    ),
+                                    SizedBox(width: 6.w),
+                                    Flexible(
+                                      child: FittedBox(
+                                        fit: BoxFit.scaleDown,
+                                        child: Text(
+                                          _isLoadingLimits
+                                              ? context.tr(
+                                                  'store.loading_ad',
+                                                  fallback: 'Loading...',
+                                                )
+                                              : _remainingClaims <= 0
+                                              ? context.tr(
+                                                  'store.out_of_ads_today',
+                                                  fallback: "Out of Ads",
+                                                )
+                                              : isPremium
+                                              ? context.tr(
+                                                  'store.claim_free_key',
+                                                  fallback: 'Claim 1 Free',
+                                                )
+                                              : context.tr(
+                                                  'store.watch_ad_key',
+                                                  fallback: 'Watch Ad',
+                                                ),
+                                          style: TextStyle(
+                                            fontFamily: 'Outfit',
+                                            fontSize: 14.sp,
+                                            fontWeight: FontWeight.w800,
+                                            color: _remainingClaims <= 0
+                                                ? AppColors.slate500
+                                                : const Color(0xFF0EA5E9),
+                                            letterSpacing: 0.5,
+                                          ),
+                                        ),
+                                      ),
                                     ),
                                   ],
-                          ),
-                          alignment: Alignment.center,
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Icon(
-                                _isLoadingLimits
-                                    ? Icons.hourglass_empty_rounded
-                                    : _remainingClaims <= 0
-                                    ? Icons.lock_clock_rounded
-                                    : isPremium
-                                    ? Icons.redeem_rounded
-                                    : Icons.play_circle_fill_rounded,
-                                color: Colors.white.withValues(
-                                  alpha: _remainingClaims <= 0 ? 0.8 : 1.0,
                                 ),
-                                size: 20.r,
                               ),
-                              SizedBox(width: 8.w),
-                              Text(
-                                _isLoadingLimits
-                                    ? context.tr(
-                                        'store.loading_ad',
-                                        fallback: 'Loading...',
-                                      )
-                                    : _remainingClaims <= 0
-                                    ? context.tr(
-                                        'store.out_of_ads_today',
-                                        fallback: "Out of Ads Today",
-                                      ) // Better UX copy
-                                    : isPremium
-                                    ? context.tr(
-                                        'store.claim_free_key',
-                                        fallback: 'Claim 1 Free Key',
-                                      )
-                                    : context.tr(
-                                        'store.watch_ad_key',
-                                        fallback: 'Watch Ad for 1 Key',
-                                      ),
-                                style: TextStyle(
-                                  fontFamily: 'Outfit',
-                                  fontSize: 16.sp,
-                                  fontWeight: FontWeight.w800,
-                                  color: Colors.white.withValues(
-                                    alpha: _remainingClaims <= 0 ? 0.8 : 1.0,
+                            ),
+                          ),
+                        ),
+                        SizedBox(width: 12.w),
+                        Expanded(
+                          child: ScaleButton(
+                            onTap: () {
+                              Navigator.pop(context);
+                              PremiumStoreBottomSheet.show(
+                                context: widget.parentContext,
+                                isKidsMode: widget.isKidsMode,
+                              );
+                            },
+                            child: Container(
+                              width: double.infinity,
+                              padding: EdgeInsets.symmetric(
+                                vertical: 12.h,
+                                horizontal: 8.w,
+                              ),
+                              decoration: BoxDecoration(
+                                color: AppColors.indigo500.withValues(
+                                  alpha: 0.1,
+                                ),
+                                borderRadius: BorderRadius.circular(16.r),
+                                border: Border.all(
+                                  color: AppColors.indigo500.withValues(
+                                    alpha: 0.3,
                                   ),
-                                  letterSpacing: 0.5,
+                                  width: 1.5.w,
                                 ),
                               ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                    SizedBox(height: 16.h),
-
-                    // Open Premium Store
-                    ScaleButton(
-                      onTap: () {
-                        Navigator.pop(context);
-                        PremiumStoreBottomSheet.show(
-                          context: widget.parentContext,
-                          isKidsMode: widget.isKidsMode,
-                        );
-                      },
-                      child: Container(
-                        width: double.infinity,
-                        padding: EdgeInsets.symmetric(vertical: 14.h),
-                        decoration: BoxDecoration(
-                          gradient: const LinearGradient(
-                            colors: [AppColors.indigo500, AppColors.violet500],
-                            begin: Alignment.topLeft,
-                            end: Alignment.bottomRight,
-                          ),
-                          borderRadius: BorderRadius.circular(16.r),
-                          border: Border.all(
-                            color: Colors.white.withValues(alpha: 0.3),
-                            width: 1.w,
-                          ),
-                          boxShadow: [
-                            BoxShadow(
-                              color: const Color(
-                                0xFF6366F1,
-                              ).withValues(alpha: 0.4),
-                              offset: Offset(0, 4.h),
-                              blurRadius: 8,
-                            ),
-                          ],
-                        ),
-                        alignment: Alignment.center,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Icon(
-                              Icons.storefront_rounded,
-                              color: Colors.white,
-                              size: 20.r,
-                            ),
-                            SizedBox(width: 8.w),
-                            Text(
-                              context.tr(
-                                'store.get_more_coins_keys',
-                                fallback: 'Get More Coins & Keys',
-                              ),
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 16.sp,
-                                fontWeight: FontWeight.w800,
-                                color: Colors.white,
-                                letterSpacing: 0.5,
+                              alignment: Alignment.center,
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Icon(
+                                    Icons.storefront_rounded,
+                                    color: AppColors.indigo500,
+                                    size: 18.r,
+                                  ),
+                                  SizedBox(width: 6.w),
+                                  Flexible(
+                                    child: FittedBox(
+                                      fit: BoxFit.scaleDown,
+                                      child: Text(
+                                        context.tr(
+                                          'store.get_more_coins_keys',
+                                          fallback: 'Store',
+                                        ),
+                                        style: TextStyle(
+                                          fontFamily: 'Outfit',
+                                          fontSize: 14.sp,
+                                          fontWeight: FontWeight.w800,
+                                          color: AppColors.indigo500,
+                                          letterSpacing: 0.5,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
                               ),
                             ),
-                          ],
+                          ),
                         ),
-                      ),
+                      ],
                     ),
 
                     if (!isPremium) ...[
