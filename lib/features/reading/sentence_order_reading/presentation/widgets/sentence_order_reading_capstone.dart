@@ -20,15 +20,13 @@ class SentenceOrderReadingCapstone extends StatelessWidget {
         width: double.infinity,
         height: 70.h,
         decoration: BoxDecoration(
+          color: color,
           borderRadius: BorderRadius.circular(20.r),
-          gradient: LinearGradient(
-            colors: [color, color.withValues(alpha: 0.7)],
-          ),
           boxShadow: [
             BoxShadow(
-              color: color.withValues(alpha: 0.4),
-              blurRadius: 15,
-              offset: const Offset(0, 5),
+              color: color.withValues(alpha: 0.3),
+              blurRadius: 12,
+              offset: const Offset(0, 4),
             ),
           ],
         ),

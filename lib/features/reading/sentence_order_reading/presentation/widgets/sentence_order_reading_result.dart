@@ -52,8 +52,54 @@ class SentenceOrderReadingResult extends StatelessWidget {
               letterSpacing: 2,
             ),
           ),
+          if (!isCorrect &&
+              quest.shuffledSentences != null &&
+              quest.correctOrder != null) ...[
+            SizedBox(height: 16.h),
+            Container(
+              padding: EdgeInsets.all(12.r),
+              decoration: BoxDecoration(
+                color: isDark ? Colors.black12 : Colors.white54,
+                borderRadius: BorderRadius.circular(12.r),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Text(
+                    context.tr(
+                      'games.correct_order',
+                      fallback: 'Correct Order:',
+                    ),
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 11.sp,
+                      fontWeight: FontWeight.bold,
+                      color: isDark ? Colors.white54 : Colors.black54,
+                    ),
+                  ),
+                  SizedBox(height: 6.h),
+                  Text(
+                    quest.correctOrder!
+                        .where(
+                          (index) =>
+                              index >= 0 &&
+                              index < quest.shuffledSentences!.length,
+                        )
+                        .map((index) => quest.shuffledSentences![index])
+                        .join(' '),
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 13.sp,
+                      color: isDark ? Colors.white70 : Colors.black87,
+                      height: 1.4,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
           if (quest.explanation != null) ...[
-            SizedBox(height: 10.h),
+            SizedBox(height: 16.h),
             Text(
               quest.explanation!,
               textAlign: TextAlign.center,

@@ -20,24 +20,17 @@ class SentenceOrderReadingInstruction extends StatelessWidget {
         borderRadius: BorderRadius.circular(30.r),
         border: Border.all(color: primaryColor.withValues(alpha: 0.2)),
       ),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Icon(Icons.architecture_rounded, size: 14.r, color: primaryColor),
-          SizedBox(width: 12.w),
-          Flexible(
-            child: Text(
-              instruction?.toUpperCase() ?? "RESTORE THE LOGICAL STRUCTURE",
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 10.sp,
-                fontWeight: FontWeight.w900,
-                color: primaryColor,
-                letterSpacing: 1.5,
-              ),
-            ),
-          ),
-        ],
+      child: Text(
+        instruction?.toUpperCase() ?? "RESTORE THE LOGICAL STRUCTURE",
+        textAlign: TextAlign.center,
+        style: TextStyle(
+          fontFamily: 'Outfit',
+          fontSize: 11.sp,
+          fontWeight: FontWeight.w800,
+          color: primaryColor,
+          letterSpacing: 1.2,
+          height: 1.4,
+        ),
       ),
     );
   }

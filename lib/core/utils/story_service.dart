@@ -143,7 +143,7 @@ class StoryServiceImpl implements StoryService {
     'readingSpeedCheck':
         "Let's test your reading flow! Read the passage quickly but carefully, ensuring you understand the core message without slowing down.",
     'sentenceOrderReading':
-        "This story is all mixed up! Let's use narrative logic to rebuild the paragraph by putting every sentence back in its proper place.",
+        "These sentences are all mixed up! Let's read them carefully and put the story back in the right order.",
     'trueFalseReading':
         "Don't let them trick you! Let's carefully verify the facts in the text to separate the truth from false assumptions.",
     'skimmingScanning':
@@ -999,11 +999,11 @@ class StoryServiceImpl implements StoryService {
     ],
     'sentenceorderreading': [
       "",
-      "Well done! You are building a strong foundation in text sequencing.",
-      "You are navigating text sequencing with increasing confidence.",
-      "Level 50! Your command of text sequencing is exceptional.",
-      "100 levels beat! You truly dominate text sequencing.",
-      "Level 200! You have transcended the limits of text sequencing.",
+      "Great job! You're getting the hang of how native English flows.",
+      "Nice work! You're putting these stories together without even hesitating.",
+      "Level 50! You have a great feel for the rhythm of English paragraphs.",
+      "100 levels beat! You can naturally predict where sentences belong.",
+      "Level 200! Your reading flow is absolutely perfect. You organize thoughts just like a native writer!",
     ],
     'truefalsereading': [
       "",

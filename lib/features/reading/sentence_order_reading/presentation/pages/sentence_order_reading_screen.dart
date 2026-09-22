@@ -1,4 +1,3 @@
-import 'package:vowl/core/utils/instruction_helper.dart';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
@@ -42,6 +41,7 @@ class _SentenceOrderReadingScreenState extends State<SentenceOrderReadingScreen>
 
   final ValueNotifier<List<String>> _currentOrder = ValueNotifier([]);
   final ScrollController _scrollController = ScrollController();
+  RegExp? _transitionRegex;
 
   @override
   void dispose() {
@@ -71,6 +71,58 @@ class _SentenceOrderReadingScreenState extends State<SentenceOrderReadingScreen>
     initReadingGame();
   }
 
+  @override
+  void onReadingStateChanged(BuildContext context, ReadingState state) {
+    super.onReadingStateChanged(context, state);
+    if (state is ReadingLoaded) {
+      if (_currentOrder.value.isEmpty) {
+        final quest = state.currentQuest;
+        if (quest.shuffledSentences != null) {
+          final list = List<String>.from(quest.shuffledSentences!);
+
+          if (quest.correctOrder != null && list.length > 1) {
+            final correctStrings = quest.correctOrder!
+                .map((idx) => quest.shuffledSentences![idx])
+                .toList();
+
+            bool isSame = true;
+            int attempts = 0;
+            // Shuffle until it's NOT the correct order to prevent free wins
+            while (isSame && attempts < 10) {
+              list.shuffle();
+              isSame = false;
+              for (int i = 0; i < list.length; i++) {
+                if (list[i] != correctStrings[i]) {
+                  break;
+                }
+                if (i == list.length - 1) {
+                  isSame = true; // All matched
+                }
+              }
+              attempts++;
+            }
+          } else {
+            list.shuffle();
+          }
+
+          _currentOrder.value = list;
+        }
+
+        if (quest.transitionWords != null &&
+            quest.transitionWords!.isNotEmpty) {
+          final sortedWords = List<String>.from(quest.transitionWords!)
+            ..sort((a, b) => b.length.compareTo(a.length));
+          final pattern = sortedWords
+              .map((e) => r'\b' + RegExp.escape(e) + r'(?!\w)')
+              .join('|');
+          _transitionRegex = RegExp('($pattern)', caseSensitive: false);
+        } else {
+          _transitionRegex = null;
+        }
+      }
+    }
+  }
+
   void _onReorder(int oldIndex, int newIndex) {
     if (isAnsweredNotifier.value) return;
     final List<String> current = List.from(_currentOrder.value);
@@ -81,35 +133,43 @@ class _SentenceOrderReadingScreenState extends State<SentenceOrderReadingScreen>
     hapticService.selection();
   }
 
-  void _submitAnswer(List<int> correctOrder, List<String> original) {
+  void _submitAnswer(ReadingQuest quest) {
     if (isAnsweredNotifier.value) return;
 
+    final correctOrder = quest.correctOrder ?? [];
+    final original = quest.shuffledSentences ?? [];
+
     bool isCorrect = true;
-    for (int i = 0; i < _currentOrder.value.length; i++) {
-      if (_currentOrder.value[i] != original[correctOrder[i]]) {
-        isCorrect = false;
-        break;
+    if (_currentOrder.value.length != correctOrder.length) {
+      isCorrect = false;
+    } else {
+      for (int i = 0; i < _currentOrder.value.length; i++) {
+        final expectedIndex = correctOrder[i];
+        if (expectedIndex < 0 || expectedIndex >= original.length) {
+          isCorrect = false;
+          break;
+        }
+        if (_currentOrder.value[i] != original[expectedIndex]) {
+          isCorrect = false;
+          break;
+        }
       }
     }
 
     if (isCorrect) {
-      hapticService.success();
-      soundService.playCorrect();
-      isAnsweredNotifier.value = true;
-      isCorrectNotifier.value = true;
-      context.read<ReadingBloc>().add(SubmitAnswer(true));
+      submitCorrectAnswer();
     } else {
-      hapticService.error();
-      soundService.playWrong();
-      isAnsweredNotifier.value = true;
-      isCorrectNotifier.value = false;
-      context.read<ReadingBloc>().add(SubmitAnswer(false));
+      submitWrongAnswer(
+        quest: quest,
+        userAnswer: _currentOrder.value.join(' | '),
+      );
     }
   }
 
   @override
   void onQuestionReset() {
     _currentOrder.value = [];
+    _transitionRegex = null;
   }
 
   @override
@@ -121,9 +181,7 @@ class _SentenceOrderReadingScreenState extends State<SentenceOrderReadingScreen>
       listenWhen: readingListenWhen,
       listener: onReadingStateChanged,
       builder: (context, state) {
-        final ReadingQuest? quest = (state is ReadingLoaded)
-            ? state.currentQuest as ReadingQuest?
-            : null;
+        final quest = (state is ReadingLoaded) ? state.currentQuest : null;
 
         return ListenableBuilder(
           listenable: Listenable.merge([
@@ -159,63 +217,53 @@ class _SentenceOrderReadingScreenState extends State<SentenceOrderReadingScreen>
                             sliver: SliverToBoxAdapter(
                               child: Column(
                                 children: [
-                                  SizedBox(height: 16.h),
+                                  SizedBox(height: 24.h),
                                   SentenceOrderReadingInstruction(
                                     primaryColor: theme.primaryColor,
-                                    instruction:
-                                        InstructionHelper.getInstruction(quest),
+                                    instruction: quest.instruction,
                                   ),
-                                  SizedBox(height: 24.h),
-                                  ReorderableListView(
-                                    shrinkWrap: true,
-                                    physics:
-                                        const NeverScrollableScrollPhysics(),
-                                    proxyDecorator: (child, index, animation) =>
-                                        _buildProxy(
-                                          child,
-                                          animation,
-                                          theme.primaryColor,
-                                        ),
-                                    onReorder: _onReorder,
-                                    children: List.generate(
-                                      _currentOrder.value.length,
-                                      (index) => SentenceOrderReadingStoneSlab(
-                                        key: ValueKey(
-                                          _currentOrder.value[index],
-                                        ),
-                                        text: _currentOrder.value[index],
-                                        index: index,
-                                        color: theme.primaryColor,
-                                        isDark: isDark,
-                                        transitionWords: quest.transitionWords,
-                                      ),
-                                    ),
-                                  ),
+                                  SizedBox(height: 32.h),
                                 ],
                               ),
                             ),
                           ),
-                          SliverToBoxAdapter(
-                            child: Padding(
+                          if (quest.shuffledSentences != null)
+                            SliverPadding(
                               padding: EdgeInsets.symmetric(horizontal: 24.w),
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.end,
-                                children: [
-                                  if (!isAnsweredNotifier.value) ...[
-                                    SizedBox(height: 24.h),
-                                    SentenceOrderReadingCapstone(
-                                      color: theme.primaryColor,
-                                      onTap: () {
-                                        hapticService.heavy();
-                                        _submitAnswer(
-                                          quest.correctOrder ?? [],
-                                          quest.shuffledSentences ?? [],
-                                        );
-                                      },
+                              sliver: SliverReorderableList(
+                                itemCount: _currentOrder.value.length,
+                                proxyDecorator: (child, index, animation) =>
+                                    _buildProxy(
+                                      child,
+                                      animation,
+                                      theme.primaryColor,
                                     ),
-                                  ],
+                                onReorder: _onReorder,
+                                itemBuilder: (context, index) {
+                                  return ReorderableDelayedDragStartListener(
+                                    index: index,
+                                    key: ValueKey(_currentOrder.value[index]),
+                                    child: SentenceOrderReadingStoneSlab(
+                                      key: ValueKey(
+                                        'slab_${_currentOrder.value[index]}',
+                                      ),
+                                      text: _currentOrder.value[index],
+                                      index: index,
+                                      color: theme.primaryColor,
+                                      isDark: isDark,
+                                      transitionRegex: _transitionRegex,
+                                    ),
+                                  );
+                                },
+                              ),
+                            ),
+                          SliverPadding(
+                            padding: EdgeInsets.symmetric(horizontal: 24.w),
+                            sliver: SliverToBoxAdapter(
+                              child: Column(
+                                children: [
                                   if (isAnsweredNotifier.value) ...[
-                                    SizedBox(height: 30.h),
+                                    SizedBox(height: 24.h),
                                     SentenceOrderReadingResult(
                                       quest: quest,
                                       isCorrect:
@@ -223,18 +271,30 @@ class _SentenceOrderReadingScreenState extends State<SentenceOrderReadingScreen>
                                       isDark: isDark,
                                     ),
                                   ],
-                                  SizedBox(height: 50.h),
+                                  if (!isAnsweredNotifier.value) ...[
+                                    SizedBox(height: 24.h),
+                                    SentenceOrderReadingCapstone(
+                                      color: theme.primaryColor,
+                                      onTap: () {
+                                        hapticService.heavy();
+                                        _submitAnswer(quest);
+                                      },
+                                    ),
+                                  ],
+                                  SizedBox(
+                                    height:
+                                        MediaQuery.of(
+                                              context,
+                                            ).viewInsets.bottom >
+                                            0
+                                        ? MediaQuery.of(
+                                                context,
+                                              ).viewInsets.bottom +
+                                              40.h
+                                        : 120.h,
+                                  ),
                                 ],
                               ),
-                            ),
-                          ),
-                          SliverToBoxAdapter(
-                            child: SizedBox(
-                              height:
-                                  MediaQuery.of(context).viewInsets.bottom > 0
-                                  ? MediaQuery.of(context).viewInsets.bottom +
-                                        40.h
-                                  : 120.h,
                             ),
                           ),
                         ],
@@ -252,24 +312,7 @@ class _SentenceOrderReadingScreenState extends State<SentenceOrderReadingScreen>
       animation: animation,
       builder: (context, child) {
         final double scale = lerpDouble(1, 1.05, animation.value)!;
-        return Transform.scale(
-          scale: scale,
-          child: Material(
-            color: Colors.transparent,
-            child: Container(
-              decoration: BoxDecoration(
-                boxShadow: [
-                  BoxShadow(
-                    color: color.withValues(alpha: 0.3),
-                    blurRadius: 20,
-                    spreadRadius: 5,
-                  ),
-                ],
-              ),
-              child: child,
-            ),
-          ),
-        );
+        return Transform.scale(scale: scale, child: child);
       },
       child: child,
     );
