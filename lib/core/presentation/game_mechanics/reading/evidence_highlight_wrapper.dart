@@ -128,18 +128,63 @@ class _EvidenceHighlightWrapperState extends State<EvidenceHighlightWrapper> {
     final rawWords = widget.passage.split(RegExp(r'\s+'));
     _words = [];
 
-    // Normalise evidence words for case-insensitive matching
-    final normalised = widget.evidenceWords
-        .map((w) => w.toLowerCase().replaceAll(RegExp('[.,!?;:"\']+'), ''))
-        .toSet();
+    // Clean all words
+    final cleanRaw = rawWords
+        .map(
+          (w) => w.toLowerCase().replaceAll(
+            RegExp(
+              r'[.,!?;:"'
+              "'"
+              r']+',
+            ),
+            '',
+          ),
+        )
+        .toList();
+    final cleanEvidence = widget.evidenceWords
+        .map(
+          (w) => w.toLowerCase().replaceAll(
+            RegExp(
+              r'[.,!?;:"'
+              "'"
+              r']+',
+            ),
+            '',
+          ),
+        )
+        .where((w) => w.isNotEmpty)
+        .toList();
+
+    // Find the exact sequence
+    List<int> evidenceIndices = [];
+    if (cleanEvidence.isNotEmpty) {
+      for (int i = 0; i <= cleanRaw.length - cleanEvidence.length; i++) {
+        bool match = true;
+        for (int j = 0; j < cleanEvidence.length; j++) {
+          if (cleanRaw[i + j] != cleanEvidence[j]) {
+            match = false;
+            break;
+          }
+        }
+        if (match) {
+          for (int j = 0; j < cleanEvidence.length; j++) {
+            evidenceIndices.add(i + j);
+          }
+          break; // Found the first exact occurrence
+        }
+      }
+    }
 
     for (int i = 0; i < rawWords.length; i++) {
       final word = rawWords[i];
-      final cleanWord = word.toLowerCase().replaceAll(
-        RegExp('[.,!?;:"\']+'),
-        '',
-      );
-      final isEvidence = normalised.contains(cleanWord);
+      final cleanWord = cleanRaw[i];
+
+      // If exact sequence was found, only mark those indices.
+      // Otherwise, fallback to any matching word (bag-of-words approach).
+      final isEvidence = evidenceIndices.isNotEmpty
+          ? evidenceIndices.contains(i)
+          : cleanEvidence.contains(cleanWord);
+
       _words.add(
         _HighlightWord(
           index: i,
@@ -148,6 +193,13 @@ class _EvidenceHighlightWrapperState extends State<EvidenceHighlightWrapper> {
           isEvidence: isEvidence,
         ),
       );
+    }
+
+    // Safety check: ensure target count matches actual valid evidence words
+    // found, so the user can actually complete the task without soft-locking.
+    int actualEvidenceCount = _words.where((w) => w.isEvidence).length;
+    if (widget.requiredHighlights == null && actualEvidenceCount > 0) {
+      _targetCount = actualEvidenceCount;
     }
   }
 

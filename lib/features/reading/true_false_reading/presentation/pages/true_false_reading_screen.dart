@@ -40,18 +40,11 @@ class _TrueFalseReadingScreenState extends State<TrueFalseReadingScreen>
   @override
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
-  final ValueNotifier<double> _coinX = ValueNotifier(0.0);
-  final ValueNotifier<double> _coinY = ValueNotifier(0.0);
-  final ValueNotifier<double> _coinRotation = ValueNotifier(0.0);
-
   final ValueNotifier<bool?> _pendingAnswer = ValueNotifier(null);
   final ScrollController _scrollController = ScrollController();
 
   @override
   void dispose() {
-    _coinX.dispose();
-    _coinY.dispose();
-    _coinRotation.dispose();
     _pendingAnswer.dispose();
     _scrollController.dispose();
     disposeReadingGame();
@@ -62,11 +55,14 @@ class _TrueFalseReadingScreenState extends State<TrueFalseReadingScreen>
   void initState() {
     super.initState();
     _pendingAnswer.addListener(() {
-      if (_pendingAnswer.value == true &&
+      if (_pendingAnswer.value != null &&
+          !isAnsweredNotifier.value &&
           mounted &&
           _scrollController.hasClients) {
         Future.delayed(const Duration(milliseconds: 300), () {
-          if (mounted && _scrollController.hasClients) {
+          if (mounted &&
+              _scrollController.hasClients &&
+              !isAnsweredNotifier.value) {
             _scrollController.animateTo(
               _scrollController.position.maxScrollExtent,
               duration: const Duration(milliseconds: 400),
@@ -79,34 +75,20 @@ class _TrueFalseReadingScreenState extends State<TrueFalseReadingScreen>
     initReadingGame();
   }
 
-  void _onFlick(Offset delta) {
+  void _onAnswerSelected(bool isTrue) {
     if (isAnsweredNotifier.value || _pendingAnswer.value != null) return;
-    _coinX.value += delta.dx;
-    _coinY.value += delta.dy;
-    _coinRotation.value += (delta.dx + delta.dy) / 100;
-    hapticService.selection();
 
-    if (_coinX.value.abs() > 100.w) {
-      final bool pending = _coinX.value > 0;
+    final quest =
+        (context.read<ReadingBloc>().state as ReadingLoaded).currentQuest;
+    final String correct = quest.correctAnswer ?? "";
+    final bool isCorrect =
+        (isTrue ? "true" : "false") == correct.trim().toLowerCase();
 
-      final String correct =
-          (context.read<ReadingBloc>().state as ReadingLoaded)
-              .currentQuest
-              .correctAnswer ??
-          "";
-      final bool isCorrect =
-          (pending ? "true" : "false") == correct.trim().toLowerCase();
-
-      if (!isCorrect) {
-        _pendingAnswer.value = pending;
-        _submitFinalAnswer(
-          false,
-          (context.read<ReadingBloc>().state as ReadingLoaded).currentQuest,
-          true,
-        );
-      } else {
-        _pendingAnswer.value = pending;
-      }
+    if (!isCorrect) {
+      _pendingAnswer.value = isTrue;
+      _submitFinalAnswer(false, quest, true);
+    } else {
+      _pendingAnswer.value = isTrue;
     }
   }
 
@@ -122,8 +104,6 @@ class _TrueFalseReadingScreenState extends State<TrueFalseReadingScreen>
       soundService.playWrong();
       isAnsweredNotifier.value = true;
       isCorrectNotifier.value = false;
-      _coinX.value = _pendingAnswer.value! ? 120.w : -120.w;
-      _coinY.value = 0.0;
       ErrorJournalCollector.record(
         userId: 'local',
         gameType: widget.gameType.name,
@@ -142,8 +122,6 @@ class _TrueFalseReadingScreenState extends State<TrueFalseReadingScreen>
 
     isAnsweredNotifier.value = true;
     isCorrectNotifier.value = true;
-    _coinX.value = _pendingAnswer.value! ? 120.w : -120.w;
-    _coinY.value = 0.0;
 
     hapticService.success();
     soundService.playCorrect();
@@ -154,13 +132,10 @@ class _TrueFalseReadingScreenState extends State<TrueFalseReadingScreen>
 
   @override
   void onQuestionReset() {
-    _coinX.value = 0.0;
-
-    _coinY.value = 0.0;
-
-    _coinRotation.value = 0.0;
-
     _pendingAnswer.value = null;
+    if (_scrollController.hasClients) {
+      _scrollController.jumpTo(0.0);
+    }
   }
 
   @override
@@ -182,9 +157,6 @@ class _TrueFalseReadingScreenState extends State<TrueFalseReadingScreen>
             isCorrectNotifier,
             showConfettiNotifier,
             _pendingAnswer,
-            _coinX,
-            _coinY,
-            _coinRotation,
           ]),
           builder: (context, _) {
             return ReadingBaseLayout(
@@ -238,52 +210,45 @@ class _TrueFalseReadingScreenState extends State<TrueFalseReadingScreen>
                             ),
                           ),
                           SliverToBoxAdapter(
-                            child: Padding(
-                              padding: EdgeInsets.symmetric(horizontal: 24.w),
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.end,
-                                children: [
-                                  SizedBox(height: 40.h),
-                                  TrueFalseReadingCoinZone(
-                                    coinX: _coinX.value,
-                                    coinY: _coinY.value,
-                                    coinRotation: _coinRotation.value,
-                                    onFlick: _onFlick,
-                                    isDark: isDark,
-                                    themeColor: theme.primaryColor,
-                                  ),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
+                                SizedBox(height: 40.h),
+                                TrueFalseReadingCoinZone(
+                                  key: ValueKey(quest.id),
+                                  onAnswerSelected: _onAnswerSelected,
+                                  isDisabled:
+                                      isAnsweredNotifier.value ||
+                                      _pendingAnswer.value != null,
+                                  pendingAnswer: _pendingAnswer.value,
+                                  isDark: isDark,
+                                ),
 
-                                  SizedBox(
-                                    height:
-                                        (_pendingAnswer.value != null &&
-                                            !isAnsweredNotifier.value)
-                                        ? 380.h
-                                        : 60.h,
-                                  ),
-                                ],
-                              ),
+                                SizedBox(
+                                  height:
+                                      (_pendingAnswer.value != null &&
+                                          !isAnsweredNotifier.value)
+                                      ? 380.h
+                                      : 60.h,
+                                ),
+                              ],
                             ),
                           ),
 
                           if (_pendingAnswer.value != null &&
                               !isAnsweredNotifier.value)
                             SliverToBoxAdapter(
-                              child: Padding(
-                                padding: EdgeInsets.symmetric(horizontal: 24.w),
-                                child: EvidenceHighlightWrapper(
-                                  passage: quest.passage ?? "",
-                                  evidenceWords:
-                                      (quest.evidenceLine ??
-                                              quest.passage ??
-                                              "")
-                                          .split(RegExp(r'\s+')),
-                                  primaryColor: theme.primaryColor,
-                                  onCorrectHighlight: () =>
-                                      _submitFinalAnswer(true, quest),
-                                  instruction:
-                                      'Tap the words that prove your answer',
-                                  isPositioned: false,
-                                ),
+                              child: EvidenceHighlightWrapper(
+                                passage: quest.passage ?? "",
+                                evidenceWords:
+                                    (quest.evidenceLine ?? quest.passage ?? "")
+                                        .split(RegExp(r'\s+')),
+                                primaryColor: theme.primaryColor,
+                                onCorrectHighlight: () =>
+                                    _submitFinalAnswer(true, quest),
+                                instruction:
+                                    'Tap the words that prove your answer',
+                                isPositioned: false,
                               ),
                             ),
                           SliverToBoxAdapter(

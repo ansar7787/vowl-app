@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 
 class TrueFalseReadingPassage extends StatelessWidget {
   final String passage;
@@ -16,17 +15,34 @@ class TrueFalseReadingPassage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GlassTile(
-      padding: EdgeInsets.all(20.r),
-      borderRadius: BorderRadius.circular(20.r),
-      color: color.withValues(alpha: isDark ? 0.05 : 0.08),
+    return Container(
+      width: double.infinity,
+      padding: EdgeInsets.all(24.r),
+      decoration: BoxDecoration(
+        color: isDark ? const Color(0xFF1E1E2C) : Colors.white,
+        borderRadius: BorderRadius.circular(24.r),
+        border: Border.all(
+          color: color.withValues(alpha: isDark ? 0.2 : 0.15),
+          width: 1.5,
+        ),
+        boxShadow: [
+          BoxShadow(
+            color: color.withValues(alpha: isDark ? 0.05 : 0.08),
+            blurRadius: 20,
+            offset: const Offset(0, 8),
+          ),
+        ],
+      ),
       child: Text(
         passage,
         style: TextStyle(
           fontFamily: 'Outfit',
-          fontSize: 16.sp,
-          height: 1.5,
-          color: isDark ? Colors.white70 : Colors.black87,
+          fontSize: 18.sp,
+          height: 1.6,
+          fontWeight: FontWeight.w500,
+          color: isDark
+              ? Colors.white.withValues(alpha: 0.9)
+              : const Color(0xFF2D3142),
         ),
       ),
     );

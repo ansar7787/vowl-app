@@ -14,7 +14,7 @@ class TrueFalseReadingInstruction extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 12.h),
       decoration: BoxDecoration(
         color: primaryColor.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(30.r),
@@ -22,19 +22,21 @@ class TrueFalseReadingInstruction extends StatelessWidget {
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Icon(
             Icons.published_with_changes_rounded,
-            size: 14.r,
+            size: 16.r,
             color: primaryColor,
           ),
           SizedBox(width: 12.w),
           Flexible(
             child: Text(
               instruction?.toUpperCase() ?? "FLICK THE TRUTH COIN TO VALIDATE",
+              textAlign: TextAlign.center,
               style: TextStyle(
                 fontFamily: 'Outfit',
-                fontSize: 10.sp,
+                fontSize: 11.sp,
                 fontWeight: FontWeight.w900,
                 color: primaryColor,
                 letterSpacing: 1.5,
