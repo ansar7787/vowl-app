@@ -172,23 +172,22 @@ class _KeyShopContentState extends State<_KeyShopContent> {
                     SizedBox(height: 16.h),
                     Text(
                       context.tr(
-                        'store.golden_keys_title',
-                        fallback: 'Golden Keys',
+                        'store.golden_key_title_short',
+                        fallback: 'Golden Key',
                       ),
                       style: TextStyle(
                         fontFamily: 'Outfit',
-                        fontSize: 20.sp,
+                        fontSize: 24.sp,
                         fontWeight: FontWeight.w900,
                         color: widget.primaryColor,
                         letterSpacing: 1.0,
                       ),
                     ),
-                    SizedBox(height: 8.h),
+                    SizedBox(height: 4.h),
                     Text(
                       context.tr(
-                        'store.golden_keys_desc',
-                        fallback:
-                            'Get a Golden Key to unlock Toll Gates on the map!',
+                        'store.golden_key_desc_short',
+                        fallback: 'Unlocks map gates.',
                       ),
                       textAlign: TextAlign.center,
                       style: TextStyle(
@@ -370,7 +369,7 @@ class _KeyShopContentState extends State<_KeyShopContent> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Icon(
-                                  Icons.monetization_on_rounded,
+                                  Icons.toll_rounded,
                                   color: Colors.white.withValues(
                                     alpha: userCoins >= cost ? 1.0 : 0.8,
                                   ),
@@ -378,11 +377,17 @@ class _KeyShopContentState extends State<_KeyShopContent> {
                                 ),
                                 SizedBox(width: 8.w),
                                 Text(
-                                  context.tr(
-                                    'store.buy_for',
-                                    args: ['$cost'],
-                                    fallback: 'Buy for $cost',
-                                  ),
+                                  widget.isKidsMode
+                                      ? context.tr(
+                                          'store.buy_for_toys',
+                                          args: ['$cost'],
+                                          fallback: '$cost Toys',
+                                        )
+                                      : context.tr(
+                                          'store.buy_for_coins',
+                                          args: ['$cost'],
+                                          fallback: '$cost Coins',
+                                        ),
                                   style: TextStyle(
                                     fontFamily: 'Outfit',
                                     fontSize: 16.sp,
@@ -603,17 +608,33 @@ class _KeyShopContentState extends State<_KeyShopContent> {
                                 ),
                                 decoration: BoxDecoration(
                                   color: _remainingClaims <= 0
-                                      ? AppColors.slate200
-                                      : const Color(
-                                          0xFF0EA5E9,
-                                        ).withValues(alpha: 0.1),
+                                      ? (Theme.of(context).brightness ==
+                                                Brightness.dark
+                                            ? Colors.white.withValues(
+                                                alpha: 0.02,
+                                              )
+                                            : AppColors.slate50)
+                                      : (Theme.of(context).brightness ==
+                                                Brightness.dark
+                                            ? Colors.white.withValues(
+                                                alpha: 0.05,
+                                              )
+                                            : AppColors.slate100),
                                   borderRadius: BorderRadius.circular(16.r),
                                   border: Border.all(
                                     color: _remainingClaims <= 0
-                                        ? AppColors.slate300
-                                        : const Color(
-                                            0xFF0EA5E9,
-                                          ).withValues(alpha: 0.3),
+                                        ? (Theme.of(context).brightness ==
+                                                  Brightness.dark
+                                              ? Colors.white.withValues(
+                                                  alpha: 0.05,
+                                                )
+                                              : AppColors.slate200)
+                                        : (Theme.of(context).brightness ==
+                                                  Brightness.dark
+                                              ? Colors.white.withValues(
+                                                  alpha: 0.1,
+                                                )
+                                              : AppColors.slate300),
                                     width: 1.5.w,
                                   ),
                                 ),
@@ -631,7 +652,10 @@ class _KeyShopContentState extends State<_KeyShopContent> {
                                           : Icons.play_circle_fill_rounded,
                                       color: _remainingClaims <= 0
                                           ? AppColors.slate500
-                                          : const Color(0xFF0EA5E9),
+                                          : (Theme.of(context).brightness ==
+                                                    Brightness.dark
+                                                ? Colors.white70
+                                                : AppColors.slate700),
                                       size: 18.r,
                                     ),
                                     SizedBox(width: 6.w),
@@ -664,7 +688,12 @@ class _KeyShopContentState extends State<_KeyShopContent> {
                                             fontWeight: FontWeight.w800,
                                             color: _remainingClaims <= 0
                                                 ? AppColors.slate500
-                                                : const Color(0xFF0EA5E9),
+                                                : (Theme.of(
+                                                            context,
+                                                          ).brightness ==
+                                                          Brightness.dark
+                                                      ? Colors.white70
+                                                      : AppColors.slate700),
                                             letterSpacing: 0.5,
                                           ),
                                         ),
@@ -693,14 +722,18 @@ class _KeyShopContentState extends State<_KeyShopContent> {
                                 horizontal: 8.w,
                               ),
                               decoration: BoxDecoration(
-                                color: AppColors.indigo500.withValues(
-                                  alpha: 0.1,
-                                ),
+                                color:
+                                    Theme.of(context).brightness ==
+                                        Brightness.dark
+                                    ? Colors.white.withValues(alpha: 0.05)
+                                    : AppColors.slate100,
                                 borderRadius: BorderRadius.circular(16.r),
                                 border: Border.all(
-                                  color: AppColors.indigo500.withValues(
-                                    alpha: 0.3,
-                                  ),
+                                  color:
+                                      Theme.of(context).brightness ==
+                                          Brightness.dark
+                                      ? Colors.white.withValues(alpha: 0.1)
+                                      : AppColors.slate300,
                                   width: 1.5.w,
                                 ),
                               ),
@@ -710,7 +743,11 @@ class _KeyShopContentState extends State<_KeyShopContent> {
                                 children: [
                                   Icon(
                                     Icons.storefront_rounded,
-                                    color: AppColors.indigo500,
+                                    color:
+                                        Theme.of(context).brightness ==
+                                            Brightness.dark
+                                        ? Colors.white70
+                                        : AppColors.slate700,
                                     size: 18.r,
                                   ),
                                   SizedBox(width: 6.w),
@@ -726,7 +763,11 @@ class _KeyShopContentState extends State<_KeyShopContent> {
                                           fontFamily: 'Outfit',
                                           fontSize: 14.sp,
                                           fontWeight: FontWeight.w800,
-                                          color: AppColors.indigo500,
+                                          color:
+                                              Theme.of(context).brightness ==
+                                                  Brightness.dark
+                                              ? Colors.white70
+                                              : AppColors.slate700,
                                           letterSpacing: 0.5,
                                         ),
                                       ),
