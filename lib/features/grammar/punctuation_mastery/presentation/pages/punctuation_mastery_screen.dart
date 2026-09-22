@@ -1,4 +1,3 @@
-import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -13,7 +12,6 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/features/grammar/punctuation_mastery/presentation/widgets/punctuation_mastery_instruction.dart';
 import 'package:vowl/features/grammar/punctuation_mastery/presentation/widgets/punctuation_sticker_sheet.dart';
-import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/presentation/game_mechanics/typing/type_to_confirm_overlay.dart';
 
 class PunctuationMasteryScreen extends StatefulWidget {
@@ -67,20 +65,6 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen>
   @override
   void initState() {
     super.initState();
-    isAnsweredNotifier.addListener(() {
-      if (isAnsweredNotifier.value && mounted && _scrollController.hasClients) {
-        Future.delayed(const Duration(milliseconds: 100), () {
-          if (mounted && _scrollController.hasClients) {
-            _scrollController.animateTo(
-              _scrollController.position.maxScrollExtent,
-              duration: const Duration(milliseconds: 300),
-              curve: Curves.easeOut,
-            );
-          }
-        });
-      }
-    });
-
     initGrammarGame();
   }
 
@@ -470,21 +454,6 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen>
                                                       ),
 
                                                   // Result
-                                                  if (isAnsweredNotifier
-                                                      .value) ...[
-                                                    SizedBox(
-                                                      height: isCompact
-                                                          ? 12.h
-                                                          : 32.h,
-                                                    ),
-                                                    _buildResult(
-                                                      quest,
-                                                      theme.primaryColor,
-                                                      isDark,
-                                                      isCompact,
-                                                    ),
-                                                  ],
-
                                                   SizedBox(
                                                     height: isCompact
                                                         ? 16.h
@@ -776,90 +745,5 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen>
         );
       },
     );
-  }
-
-  Widget _buildResult(
-    GameQuest quest,
-    Color primaryColor,
-    bool isDark,
-    bool isCompact,
-  ) {
-    final bool correct = isCorrectNotifier.value == true;
-    final displayColor = correct
-        ? AppColors.gameCorrect
-        : AppColors.gameIncorrect;
-
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 24.w),
-      child: Container(
-        padding: EdgeInsets.all(isCompact ? 12.r : 24.r),
-        decoration: BoxDecoration(
-          color: displayColor.withValues(alpha: 0.05),
-          borderRadius: BorderRadius.circular(isCompact ? 16.r : 24.r),
-          border: Border.all(
-            color: displayColor.withValues(alpha: 0.3),
-            width: 2,
-          ),
-        ),
-        child: Column(
-          children: [
-            Icon(
-              correct ? Icons.check_circle_rounded : Icons.cancel_rounded,
-              color: displayColor,
-              size: isCompact ? 24.r : 40.r,
-            ),
-            SizedBox(height: isCompact ? 4.h : 12.h),
-            Text(
-              correct
-                  ? context
-                        .tr('games.correct', fallback: 'Correct')
-                        .toUpperCase()
-                  : context.tr('games.incorrect_caps', fallback: 'INCORRECT'),
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: isCompact ? 12.sp : 16.sp,
-                fontWeight: FontWeight.w900,
-                color: displayColor,
-                letterSpacing: 2,
-              ),
-            ),
-            SizedBox(height: isCompact ? 4.h : 12.h),
-            Text(
-              "CORRECT SENTENCE:",
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: isCompact ? 10.sp : 12.sp,
-                fontWeight: FontWeight.bold,
-                color: isDark ? Colors.white60 : Colors.black54,
-                letterSpacing: 1,
-              ),
-            ),
-            SizedBox(height: isCompact ? 3.h : 6.h),
-            Text(
-              quest.correctAnswer ?? "",
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: isCompact ? 14.sp : 20.sp,
-                fontWeight: FontWeight.w600,
-                color: displayColor,
-              ),
-            ),
-            if (!isCompact && quest.explanation != null) ...[
-              SizedBox(height: 12.h),
-              Text(
-                quest.explanation!,
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 13.sp,
-                  color: isDark ? Colors.white60 : Colors.black54,
-                ),
-              ),
-            ],
-          ],
-        ),
-      ),
-    ).animate().shimmer(duration: 2.seconds);
   }
 }

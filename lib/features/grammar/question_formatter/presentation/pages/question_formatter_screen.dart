@@ -1,4 +1,3 @@
-import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -13,7 +12,6 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/grammar/question_formatter/presentation/widgets/question_formatter_instruction.dart';
 import 'package:vowl/features/grammar/question_formatter/presentation/widgets/question_formatter_crank.dart';
-import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/presentation/game_mechanics/typing/type_to_confirm_overlay.dart';
 
 class QuestionFormatterScreen extends StatefulWidget {
@@ -63,20 +61,6 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>
   @override
   void initState() {
     super.initState();
-    isAnsweredNotifier.addListener(() {
-      if (isAnsweredNotifier.value && mounted && _scrollController.hasClients) {
-        Future.delayed(const Duration(milliseconds: 100), () {
-          if (mounted && _scrollController.hasClients) {
-            _scrollController.animateTo(
-              _scrollController.position.maxScrollExtent,
-              duration: const Duration(milliseconds: 300),
-              curve: Curves.easeOut,
-            );
-          }
-        });
-      }
-    });
-
     _isCrankComplete.addListener(_onStateChangeAutoScroll);
     _pendingJigsaw.addListener(_onStateChangeAutoScroll);
     initGrammarGame();
@@ -494,19 +478,6 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>
                                                       theme.primaryColor,
                                                       isDark,
                                                       isCompact,
-                                                    )
-                                                  else if (isAnsweredNotifier
-                                                      .value)
-                                                    _buildResult(
-                                                      isCorrectNotifier.value ==
-                                                              true
-                                                          ? cleanTargetSentence
-                                                          : (_selectedOptionText
-                                                                    .value ??
-                                                                "No selection"),
-                                                      theme.primaryColor,
-                                                      isDark,
-                                                      isCompact,
                                                     ),
                                                 ],
                                               ),
@@ -611,67 +582,5 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>
         );
       }).toList(),
     ).animate().fadeIn(duration: 400.ms).slideY(begin: 0.1, end: 0);
-  }
-
-  Widget _buildResult(
-    String result,
-    Color primaryColor,
-    bool isDark,
-    bool isCompact,
-  ) {
-    final bool correct = isCorrectNotifier.value == true;
-    final displayColor = correct
-        ? AppColors.gameCorrect
-        : AppColors.gameIncorrect;
-
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 24.w),
-      child: Container(
-        padding: EdgeInsets.all(isCompact ? 14.r : 28.r),
-        decoration: BoxDecoration(
-          color: displayColor.withValues(alpha: 0.05),
-          borderRadius: BorderRadius.circular(isCompact ? 18.r : 28.r),
-          border: Border.all(
-            color: displayColor.withValues(alpha: 0.3),
-            width: 2,
-          ),
-        ),
-        child: Column(
-          children: [
-            Icon(
-              correct ? Icons.check_circle_rounded : Icons.cancel_rounded,
-              color: displayColor,
-              size: isCompact ? 28.r : 40.r,
-            ),
-            SizedBox(height: isCompact ? 6.h : 16.h),
-            Text(
-              correct
-                  ? context
-                        .tr('games.correct', fallback: 'Correct')
-                        .toUpperCase()
-                  : context.tr('games.incorrect_caps', fallback: 'INCORRECT'),
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: isCompact ? 13.sp : 16.sp,
-                fontWeight: FontWeight.w900,
-                color: displayColor,
-                letterSpacing: 2,
-              ),
-            ),
-            SizedBox(height: isCompact ? 4.h : 8.h),
-            Text(
-              result,
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: isCompact ? 16.sp : 22.sp,
-                fontWeight: FontWeight.bold,
-                color: displayColor,
-              ),
-            ),
-          ],
-        ),
-      ),
-    ).animate().shimmer(duration: 2.seconds);
   }
 }

@@ -1,4 +1,3 @@
-import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -13,7 +12,6 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/grammar/modals_selection/presentation/widgets/modals_selection_instruction.dart';
 import 'package:vowl/features/grammar/modals_selection/presentation/widgets/modals_rotary_dial.dart';
-import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/presentation/game_mechanics/typing/type_to_confirm_overlay.dart';
 
 class ModalsSelectionScreen extends StatefulWidget {
@@ -296,64 +294,6 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen>
     );
   }
 
-  Widget _buildResult(GameQuest quest, Color primaryColor, bool isDark) {
-    final bool correct = isCorrectNotifier.value == true;
-    final displayColor = correct
-        ? AppColors.gameCorrect
-        : AppColors.gameIncorrect;
-
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 24.w),
-      child: Container(
-        padding: EdgeInsets.all(24.r),
-        decoration: BoxDecoration(
-          color: displayColor.withValues(alpha: 0.05),
-          borderRadius: BorderRadius.circular(24.r),
-          border: Border.all(
-            color: displayColor.withValues(alpha: 0.3),
-            width: 2,
-          ),
-        ),
-        child: Column(
-          children: [
-            Icon(
-              correct ? Icons.check_circle_rounded : Icons.cancel_rounded,
-              color: displayColor,
-              size: 40.r,
-            ),
-            SizedBox(height: 12.h),
-            Text(
-              correct
-                  ? context
-                        .tr('games.correct', fallback: 'Correct')
-                        .toUpperCase()
-                  : context.tr('games.incorrect_caps', fallback: 'INCORRECT'),
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 16.sp,
-                fontWeight: FontWeight.w900,
-                color: displayColor,
-                letterSpacing: 2,
-              ),
-            ),
-            if (quest.explanation != null) ...[
-              SizedBox(height: 12.h),
-              Text(
-                quest.explanation!,
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 13.sp,
-                  color: isDark ? Colors.white60 : Colors.black54,
-                ),
-              ),
-            ],
-          ],
-        ),
-      ),
-    ).animate().shimmer(duration: 2.seconds);
-  }
-
   @override
   void onQuestionReset() {
     _selectedIndex.value = 0;
@@ -431,25 +371,6 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen>
                                       options,
                                       theme.primaryColor,
                                       isDark,
-                                    ),
-
-                                    ListenableBuilder(
-                                      listenable: isAnsweredNotifier,
-                                      builder: (context, _) {
-                                        if (isAnsweredNotifier.value) {
-                                          return Column(
-                                            children: [
-                                              SizedBox(height: 24.h),
-                                              _buildResult(
-                                                quest,
-                                                theme.primaryColor,
-                                                isDark,
-                                              ),
-                                            ],
-                                          );
-                                        }
-                                        return const SizedBox.shrink();
-                                      },
                                     ),
 
                                     SizedBox(height: 32.h),

@@ -12,7 +12,6 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/features/grammar/domain/entities/grammar_quest.dart';
 import 'package:vowl/features/grammar/conjunctions/presentation/widgets/conjunctions_instruction.dart';
 import 'package:vowl/features/grammar/conjunctions/presentation/widgets/conjunctions_brick_sheet.dart';
-import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/presentation/game_mechanics/typing/type_to_confirm_overlay.dart';
 
 class ConjunctionsScreen extends StatefulWidget {
@@ -55,20 +54,6 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen>
   @override
   void initState() {
     super.initState();
-    isAnsweredNotifier.addListener(() {
-      if (isAnsweredNotifier.value && mounted && _scrollController.hasClients) {
-        Future.delayed(const Duration(milliseconds: 100), () {
-          if (mounted && _scrollController.hasClients) {
-            _scrollController.animateTo(
-              _scrollController.position.maxScrollExtent,
-              duration: const Duration(milliseconds: 300),
-              curve: Curves.easeOut,
-            );
-          }
-        });
-      }
-    });
-
     initGrammarGame();
   }
 
@@ -472,22 +457,6 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen>
                                                                         delay: 400
                                                                             .ms,
                                                                       ),
-                                                                    if (isAnsweredNotifier
-                                                                        .value) ...[
-                                                                      SizedBox(
-                                                                        height:
-                                                                            isCompact
-                                                                            ? 10.h
-                                                                            : 20.h,
-                                                                      ),
-                                                                      _buildCorrectResult(
-                                                                        quest,
-                                                                        theme
-                                                                            .primaryColor,
-                                                                        isDark,
-                                                                        isCompact,
-                                                                      ),
-                                                                    ],
                                                                   ],
                                                                 ),
                                                               ),
@@ -682,63 +651,5 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen>
         ),
       ),
     );
-  }
-
-  Widget _buildCorrectResult(
-    GrammarQuest quest,
-    Color primaryColor,
-    bool isDark,
-    bool isCompact,
-  ) {
-    final bool correct = isCorrectNotifier.value == true;
-    final displayColor = correct
-        ? AppColors.gameCorrect
-        : AppColors.gameIncorrect;
-
-    return Container(
-      padding: EdgeInsets.all(isCompact ? 10.r : 20.r),
-      decoration: BoxDecoration(
-        color: displayColor.withValues(alpha: 0.05),
-        borderRadius: BorderRadius.circular(isCompact ? 16.r : 24.r),
-        border: Border.all(
-          color: displayColor.withValues(alpha: 0.3),
-          width: 2,
-        ),
-      ),
-      child: Column(
-        children: [
-          Icon(
-            correct ? Icons.check_circle_rounded : Icons.cancel_rounded,
-            color: displayColor,
-            size: isCompact ? 24.r : 36.r,
-          ),
-          SizedBox(height: isCompact ? 4.h : 10.h),
-          Text(
-            correct
-                ? context.tr('games.correct', fallback: 'Correct').toUpperCase()
-                : context.tr('games.incorrect_caps', fallback: 'INCORRECT'),
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: isCompact ? 12.sp : 15.sp,
-              fontWeight: FontWeight.w900,
-              color: displayColor,
-              letterSpacing: 2,
-            ),
-          ),
-          if (quest.explanation != null) ...[
-            SizedBox(height: 10.h),
-            Text(
-              quest.explanation!,
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: isCompact ? 10.sp : 12.sp,
-                color: isDark ? Colors.white60 : Colors.black54,
-              ),
-            ),
-          ],
-        ],
-      ),
-    ).animate().shimmer(duration: 2.seconds);
   }
 }

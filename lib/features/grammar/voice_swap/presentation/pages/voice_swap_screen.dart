@@ -12,7 +12,6 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/grammar/voice_swap/presentation/widgets/voice_swap_instruction.dart';
 import 'package:vowl/features/grammar/voice_swap/presentation/widgets/voice_swap_toggle.dart';
-import 'package:vowl/features/grammar/voice_swap/presentation/widgets/voice_swap_result.dart';
 import 'package:vowl/core/presentation/game_mechanics/typing/type_to_confirm_overlay.dart';
 
 class VoiceSwapScreen extends StatefulWidget {
@@ -77,20 +76,6 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen>
   @override
   void initState() {
     super.initState();
-    isAnsweredNotifier.addListener(() {
-      if (isAnsweredNotifier.value && mounted && _scrollController.hasClients) {
-        Future.delayed(const Duration(milliseconds: 100), () {
-          if (mounted && _scrollController.hasClients) {
-            _scrollController.animateTo(
-              _scrollController.position.maxScrollExtent,
-              duration: const Duration(milliseconds: 300),
-              curve: Curves.easeOut,
-            );
-          }
-        });
-      }
-    });
-
     isFirstStagePassedNotifier.addListener(_onStagePassedScroll);
 
     initGrammarGame();
@@ -359,23 +344,6 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen>
                                                   onToggle: (val) =>
                                                       _isPassive.value = val,
                                                 ),
-
-                                                if (isAnsweredNotifier
-                                                    .value) ...[
-                                                  SizedBox(
-                                                    height: isCompact
-                                                        ? 12.h
-                                                        : 32.h,
-                                                  ),
-                                                  VoiceSwapResult(
-                                                    isCorrect:
-                                                        isCorrectNotifier
-                                                            .value ==
-                                                        true,
-                                                    quest: quest,
-                                                    isDark: isDark,
-                                                  ),
-                                                ],
 
                                                 const Spacer(),
 

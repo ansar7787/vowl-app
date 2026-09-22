@@ -13,7 +13,6 @@ import 'package:vowl/features/grammar/domain/entities/grammar_quest.dart';
 import 'package:vowl/features/grammar/conditionals/presentation/widgets/conditionals_instruction.dart';
 import 'package:vowl/core/presentation/game_mechanics/typing/type_to_confirm_overlay.dart';
 
-import 'package:vowl/core/utils/locale_service.dart';
 
 class ConditionalsScreen extends StatefulWidget {
   final int level;
@@ -65,20 +64,6 @@ class _ConditionalsScreenState extends State<ConditionalsScreen>
   @override
   void initState() {
     super.initState();
-    isAnsweredNotifier.addListener(() {
-      if (isAnsweredNotifier.value && mounted && _scrollController.hasClients) {
-        Future.delayed(const Duration(milliseconds: 100), () {
-          if (mounted && _scrollController.hasClients) {
-            _scrollController.animateTo(
-              _scrollController.position.maxScrollExtent,
-              duration: const Duration(milliseconds: 300),
-              curve: Curves.easeOut,
-            );
-          }
-        });
-      }
-    });
-
     isFirstStagePassedNotifier.addListener(_onStagePassedScroll);
 
     initGrammarGame();
@@ -505,16 +490,6 @@ class _ConditionalsScreenState extends State<ConditionalsScreen>
                                                 .slideY(begin: 0.2, end: 0),
 
                                             // Result
-                                            if (isAnsweredNotifier.value) ...[
-                                              SizedBox(height: gapMiddle),
-                                              _buildResult(
-                                                quest,
-                                                theme.primaryColor,
-                                                isDark,
-                                                isCompact,
-                                              ),
-                                            ],
-
                                             SizedBox(
                                               height: isCompact ? 16.h : 32.h,
                                             ),
@@ -680,92 +655,5 @@ class _ConditionalsScreenState extends State<ConditionalsScreen>
                 duration: 200.ms,
               ),
     );
-  }
-
-  Widget _buildResult(
-    GrammarQuest quest,
-    Color primaryColor,
-    bool isDark,
-    bool isCompact,
-  ) {
-    final bool correct = isCorrectNotifier.value == true;
-    final displayColor = correct
-        ? AppColors.gameCorrect
-        : AppColors.gameIncorrect;
-
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 24.w),
-      child: Container(
-        width: double.infinity,
-        padding: EdgeInsets.all(isCompact ? 10.r : 24.r),
-        decoration: BoxDecoration(
-          color: displayColor.withValues(alpha: 0.05),
-          borderRadius: BorderRadius.circular(isCompact ? 16.r : 24.r),
-          border: Border.all(
-            color: displayColor.withValues(alpha: 0.3),
-            width: 2,
-          ),
-        ),
-        child: Column(
-          children: [
-            Icon(
-              correct ? Icons.check_circle_rounded : Icons.cancel_rounded,
-              color: displayColor,
-              size: isCompact ? 24.r : 40.r,
-            ),
-            SizedBox(height: isCompact ? 4.h : 12.h),
-            Text(
-              correct
-                  ? context
-                        .tr('games.correct', fallback: 'Correct')
-                        .toUpperCase()
-                  : context.tr('games.incorrect_caps', fallback: 'INCORRECT'),
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: isCompact ? 12.sp : 16.sp,
-                fontWeight: FontWeight.w900,
-                color: displayColor,
-                letterSpacing: 2,
-              ),
-            ),
-            if (quest.grammarRule != null) ...[
-              SizedBox(height: 8.h),
-              Container(
-                padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 4.h),
-                decoration: BoxDecoration(
-                  color: displayColor.withValues(alpha: 0.1),
-                  borderRadius: BorderRadius.circular(12.r),
-                  border: Border.all(
-                    color: displayColor.withValues(alpha: 0.3),
-                  ),
-                ),
-                child: Text(
-                  quest.grammarRule!,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 12.sp,
-                    fontWeight: FontWeight.bold,
-                    color: displayColor,
-                  ),
-                ),
-              ),
-            ],
-            if (quest.explanation != null) ...[
-              SizedBox(height: 12.h),
-              Text(
-                quest.explanation!,
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 14.sp,
-                  color: isDark ? Colors.white70 : Colors.black87,
-                  height: 1.4,
-                ),
-              ),
-            ],
-          ],
-        ),
-      ),
-    ).animate().shimmer(duration: 2.seconds);
   }
 }
