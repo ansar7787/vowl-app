@@ -31,8 +31,9 @@ class ReadingSpeedInstruction extends StatelessWidget {
             child: Text(
               instruction?.toUpperCase() ??
                   (isRevealed
-                      ? "ANALYZE THE COMPREHENSION QUEST"
-                      : "TAP THE GLOWING SONIC CORE TO BRIEFLY UNBLUR TEXT"),
+                      ? "ANSWER THE COMPREHENSION QUESTION"
+                      : "READ QUICKLY AND TAP STOP WHEN DONE"),
+              textAlign: TextAlign.center,
               style: TextStyle(
                 fontFamily: 'Outfit',
                 fontSize: 10.sp,

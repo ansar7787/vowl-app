@@ -1,7 +1,7 @@
 import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:vowl/core/presentation/widgets/glass_tile.dart';
+
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
 class ReadingSpeedOption extends StatelessWidget {
@@ -34,29 +34,55 @@ class ReadingSpeedOption extends StatelessWidget {
         isAnswered && text.trim().toLowerCase() == correct.trim().toLowerCase();
     bool isWrong = isAnswered && isSelected && !isCorrect;
 
+    // Clean flat styling logic
+    final Color baseColor = isCorrect
+        ? tokens.gameCorrect
+        : (isWrong ? tokens.gameIncorrect : color);
+
+    final Color bgColor = isCorrect
+        ? tokens.gameCorrect.withValues(alpha: 0.15)
+        : (isWrong
+              ? tokens.gameIncorrect.withValues(alpha: 0.15)
+              : (isSelected
+                    ? color.withValues(alpha: 0.1)
+                    : (isDark ? const Color(0xFF1E1E1E) : Colors.white)));
+
     return Padding(
       padding: EdgeInsets.only(bottom: 12.h),
       child: ScaleButton(
         onTap: onTap,
-        child: GlassTile(
+        child: AnimatedContainer(
+          duration: const Duration(milliseconds: 200),
+          curve: Curves.easeOut,
           padding: EdgeInsets.all(20.r),
-          borderRadius: BorderRadius.circular(20.r),
-          color: isCorrect
-              ? tokens.gameCorrect.withValues(alpha: 0.25)
-              : (isWrong
-                    ? tokens.gameIncorrect.withValues(alpha: 0.25)
-                    : (isSelected
-                          ? color.withValues(alpha: 0.15)
-                          : (isDark
-                                ? Colors.white10
-                                : Colors.black.withValues(alpha: 0.04)))),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(20.r),
+            color: bgColor,
+            border: Border.all(
+              color: isSelected || isCorrect || isWrong
+                  ? baseColor.withValues(alpha: 0.8)
+                  : (isDark
+                        ? Colors.white12
+                        : Colors.black.withValues(alpha: 0.05)),
+              width: isSelected || isCorrect || isWrong ? 2.w : 1.w,
+            ),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withValues(alpha: 0.03),
+                blurRadius: 8,
+                offset: const Offset(0, 2),
+              ),
+            ],
+          ),
           child: Center(
             child: Text(
               text,
               style: TextStyle(
                 fontFamily: 'Outfit',
-                fontSize: 15.sp,
-                fontWeight: FontWeight.bold,
+                fontSize: 16.sp,
+                fontWeight: isSelected || isCorrect || isWrong
+                    ? FontWeight.w700
+                    : FontWeight.w600,
                 color: isDark ? Colors.white : Colors.black87,
               ),
             ),

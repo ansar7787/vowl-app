@@ -112,7 +112,8 @@ mixin ReadingGameScreenMixin<T extends StatefulWidget> on State<T> {
       ErrorJournalCollector.record(
         userId: authState.user!.id,
         gameType: gameType.name,
-        question: quest.textToSpeak ?? getCompletionTitle(context),
+        question:
+            quest.question ?? quest.textToSpeak ?? getCompletionTitle(context),
         userAnswer: userAnswer ?? '[Timeout]',
         correctAnswer:
             quest.correctAnswer ??

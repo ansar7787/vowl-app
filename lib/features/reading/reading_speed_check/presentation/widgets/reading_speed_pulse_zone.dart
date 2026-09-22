@@ -1,32 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:vowl/core/presentation/widgets/glass_tile.dart';
+
+import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
 class ReadingSpeedPulseZone extends StatelessWidget {
   final String passage;
   final Color color;
   final bool isDark;
-  final double clarityRadius;
-  final double pulseScale;
   final int timerValue;
   final int timeLimit;
   final int wordCount;
   final int wpmTarget;
   final VoidCallback onTapPulse;
+  final bool largeText;
 
   const ReadingSpeedPulseZone({
     super.key,
     required this.passage,
     required this.color,
     required this.isDark,
-    required this.clarityRadius,
-    required this.pulseScale,
     required this.timerValue,
     required this.timeLimit,
     required this.wordCount,
     required this.wpmTarget,
     required this.onTapPulse,
+    this.largeText = false,
   });
 
   int get _liveWpm {
@@ -39,93 +38,87 @@ class ReadingSpeedPulseZone extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Stack(
-          alignment: Alignment.center,
-          children: [
-            // The Passage (Hidden unless pulsed)
-            AnimatedOpacity(
-              duration: 400.milliseconds,
-              opacity: clarityRadius,
-              child: GlassTile(
-                padding: EdgeInsets.all(28.r),
-                borderRadius: BorderRadius.circular(24.r),
-                color: color.withValues(alpha: isDark ? 0.05 : 0.08),
-                child: Text(
-                  passage,
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 16.sp,
-                    height: 1.4,
-                    color: isDark ? Colors.white : Colors.black87,
-                    fontWeight: FontWeight.w500,
-                  ),
+        Container(
+          padding: EdgeInsets.all(largeText ? 32.r : 28.r),
+          decoration: BoxDecoration(
+            color: isDark ? const Color(0xFF1E1E1E) : Colors.white,
+            borderRadius: BorderRadius.circular(24.r),
+            border: Border.all(
+              color: color.withValues(alpha: 0.15),
+              width: 1.5.w,
+            ),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withValues(alpha: 0.05),
+                blurRadius: 10,
+                offset: const Offset(0, 4),
+              ),
+            ],
+          ),
+          child: Text(
+            passage,
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: largeText ? 24.sp : 18.sp,
+              height: 1.5,
+              color: isDark ? Colors.white : Colors.black87,
+              fontWeight: FontWeight.w500,
+            ),
+          ),
+        ),
+        SizedBox(height: 32.h),
+
+        // The Stop Button
+        ScaleButton(
+              onTap: onTapPulse,
+              child: Container(
+                width: 140.r,
+                height: 140.r,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: color.withValues(alpha: isDark ? 0.15 : 0.08),
+                  border: Border.all(color: color, width: 4),
+                  boxShadow: [
+                    BoxShadow(
+                      color: color.withValues(alpha: 0.3),
+                      blurRadius: 20,
+                      spreadRadius: 5,
+                    ),
+                  ],
+                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(Icons.stop_circle_rounded, color: color, size: 36.r),
+                    SizedBox(height: 4.h),
+                    Text(
+                      "$_liveWpm",
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        color: isDark ? Colors.white : color,
+                        fontSize: 22.sp,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    Text(
+                      "WPM",
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        color: isDark
+                            ? Colors.white70
+                            : color.withValues(alpha: 0.7),
+                        fontSize: 12.sp,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
                 ),
               ),
-            ),
+            )
+            .animate(onPlay: (c) => c.repeat(reverse: true))
+            .scaleXY(end: 1.05, duration: 800.ms),
 
-            // The Core Button
-            if (clarityRadius < 0.5)
-              GestureDetector(
-                onTap: onTapPulse,
-                child:
-                    TweenAnimationBuilder(
-                          tween: Tween<double>(begin: 1.0, end: pulseScale),
-                          duration: 100.milliseconds,
-                          builder: (context, double scale, child) {
-                            return Transform.scale(
-                              scale: scale,
-                              child: Container(
-                                width: 130.r,
-                                height: 130.r,
-                                decoration: BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  color: color.withValues(
-                                    alpha: isDark ? 0.15 : 0.08,
-                                  ),
-                                  border: Border.all(color: color, width: 4),
-                                  boxShadow: [
-                                    BoxShadow(
-                                      color: color.withValues(alpha: 0.3),
-                                      blurRadius: 30,
-                                      spreadRadius: 10,
-                                    ),
-                                  ],
-                                ),
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Text(
-                                      "$_liveWpm",
-                                      style: TextStyle(
-                                        fontFamily: 'Outfit',
-                                        color: isDark ? Colors.white : color,
-                                        fontSize: 26.sp,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                    ),
-                                    Text(
-                                      "WPM",
-                                      style: TextStyle(
-                                        fontFamily: 'Outfit',
-                                        color: isDark
-                                            ? Colors.white70
-                                            : color.withValues(alpha: 0.7),
-                                        fontSize: 12.sp,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            );
-                          },
-                        )
-                        .animate(onPlay: (c) => c.repeat())
-                        .shimmer(duration: 2.seconds, color: Colors.white24),
-              ),
-          ],
-        ),
         SizedBox(height: 24.h),
         Text(
           "TAP TO STOP TIMER & ANSWER",
@@ -138,16 +131,17 @@ class ReadingSpeedPulseZone extends StatelessWidget {
           ),
         ),
         SizedBox(height: 8.h),
-        Text(
-          "TARGET: $wpmTarget WPM",
-          style: TextStyle(
-            fontFamily: 'Outfit',
-            fontSize: 11.sp,
-            color: color.withValues(alpha: 0.4),
-            fontWeight: FontWeight.w700,
-            letterSpacing: 1.5,
+        if (wpmTarget > 0)
+          Text(
+            "TARGET: $wpmTarget WPM",
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 11.sp,
+              color: color.withValues(alpha: 0.4),
+              fontWeight: FontWeight.w700,
+              letterSpacing: 1.5,
+            ),
           ),
-        ),
       ],
     );
   }

@@ -9,12 +9,11 @@ import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/features/reading/presentation/bloc/reading_bloc.dart';
 import 'package:vowl/features/reading/presentation/mixins/reading_game_screen_mixin.dart';
 import 'package:vowl/features/reading/presentation/layout/reading_base_layout.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/features/reading/domain/entities/reading_quest.dart';
 import 'package:vowl/features/reading/reading_speed_check/presentation/widgets/reading_speed_instruction.dart';
 import 'package:vowl/features/reading/reading_speed_check/presentation/widgets/reading_speed_pulse_zone.dart';
 import 'package:vowl/features/reading/reading_speed_check/presentation/widgets/reading_speed_question_area.dart';
-import 'package:vowl/core/presentation/game_mechanics/reading/reading_self_evaluation_card.dart';
+import 'package:vowl/features/reading/reading_speed_check/presentation/widgets/reading_speed_option.dart';
 import 'package:vowl/features/reading/reading_speed_check/presentation/widgets/reading_speed_result.dart';
 import 'package:vowl/core/presentation/game_mechanics/shared/speed_challenge_timer.dart';
 
@@ -43,20 +42,20 @@ class _ReadingSpeedCheckScreenState extends State<ReadingSpeedCheckScreen>
   @override
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
-  final ValueNotifier<double> _pulseScale = ValueNotifier(1.0);
-  final ValueNotifier<double> _clarityRadius = ValueNotifier(0.0);
   final ValueNotifier<int> _timerValue = ValueNotifier(12);
   final ValueNotifier<int> _timeLimit = ValueNotifier(12);
   final ValueNotifier<bool> _isRevealed = ValueNotifier(false);
+  final ValueNotifier<int?> _selectedIndex = ValueNotifier(null);
+  final ValueNotifier<bool> _isLargeText = ValueNotifier(false);
   final ScrollController _scrollController = ScrollController();
 
   @override
   void dispose() {
-    _pulseScale.dispose();
-    _clarityRadius.dispose();
     _timerValue.dispose();
     _timeLimit.dispose();
     _isRevealed.dispose();
+    _selectedIndex.dispose();
+    _isLargeText.dispose();
     _scrollController.dispose();
     disposeReadingGame();
     super.dispose();
@@ -67,6 +66,7 @@ class _ReadingSpeedCheckScreenState extends State<ReadingSpeedCheckScreen>
   @override
   void initState() {
     super.initState();
+    timerKey = _timerKey;
     isAnsweredNotifier.addListener(() {
       if (isAnsweredNotifier.value && mounted && _scrollController.hasClients) {
         Future.delayed(const Duration(milliseconds: 100), () {
@@ -84,28 +84,30 @@ class _ReadingSpeedCheckScreenState extends State<ReadingSpeedCheckScreen>
     initReadingGame();
   }
 
-  void _onPulseTap() {
-    if (isAnsweredNotifier.value || _isRevealed.value) return;
-    _pulseScale.value = 1.4;
-    _clarityRadius.value = 1.0;
-    hapticService.selection();
+  @override
+  void onReadingStateChanged(BuildContext context, ReadingState state) {
+    if (state is ReadingLoaded) {
+      final quest = state.currentQuest;
+      final limit = quest.timeLimit ?? 30;
+      if (_timeLimit.value != limit) {
+        _timeLimit.value = limit;
+      }
+    }
+    super.onReadingStateChanged(context, state);
+  }
 
-    Future.delayed(150.milliseconds, () {
-      if (mounted) {
-        _pulseScale.value = 1.0;
-      }
-    });
-    Future.delayed(2.seconds, () {
-      if (mounted && !isAnsweredNotifier.value && !_isRevealed.value) {
-        _clarityRadius.value = 0.0;
-      }
-    });
+  void _onDoneReadingTap() {
+    if (isAnsweredNotifier.value || _isRevealed.value) return;
+    hapticService.selection();
+    _timerKey.currentState?.stop();
+    _isRevealed.value = true;
   }
 
   void _onTimeUp() {
     if (!mounted) return;
-    _isRevealed.value = true;
-    _clarityRadius.value = 0.0;
+    if (!_isRevealed.value) {
+      _isRevealed.value = true;
+    }
   }
 
   void _onTimerTick(int remaining) {
@@ -113,30 +115,29 @@ class _ReadingSpeedCheckScreenState extends State<ReadingSpeedCheckScreen>
     _timerValue.value = remaining;
   }
 
-  void _submitSelfEvalAnswer(bool isCorrect, ReadingQuest quest) {
+  void _submitAnswer(int index, ReadingQuest quest) {
     if (isAnsweredNotifier.value || !_isRevealed.value) return;
 
-    isAnsweredNotifier.value = true;
-    isCorrectNotifier.value = isCorrect;
+    final options = quest.options ?? [];
+    if (index < 0 || index >= options.length) return;
+
+    _selectedIndex.value = index;
+    final isCorrect =
+        options[index].trim().toLowerCase() ==
+        (quest.correctAnswer ?? "").trim().toLowerCase();
 
     if (isCorrect) {
-      context.read<ReadingBloc>().add(const SubmitAnswer(true));
+      submitCorrectAnswer();
     } else {
-      context.read<ReadingBloc>().add(const SubmitAnswer(false));
+      submitWrongAnswer(quest: quest, userAnswer: options[index]);
     }
   }
 
   @override
   void onQuestionReset() {
-    _pulseScale.value = 1.0;
-
-    _clarityRadius.value = 0.0;
-
-    _timerValue.value = 12;
-
-    _timeLimit.value = 12;
-
+    _timerValue.value = _timeLimit.value;
     _isRevealed.value = false;
+    _selectedIndex.value = null;
   }
 
   @override
@@ -158,12 +159,13 @@ class _ReadingSpeedCheckScreenState extends State<ReadingSpeedCheckScreen>
             isCorrectNotifier,
             showConfettiNotifier,
             _isRevealed,
-            _pulseScale,
-            _clarityRadius,
             _timerValue,
             _timeLimit,
+            _selectedIndex,
+            _isLargeText,
           ]),
           builder: (context, _) {
+            final options = quest?.options ?? [];
             return ReadingBaseLayout(
               useScrolling: false,
               disablePadding: true,
@@ -191,31 +193,90 @@ class _ReadingSpeedCheckScreenState extends State<ReadingSpeedCheckScreen>
                               child: Column(
                                 children: [
                                   SizedBox(height: 16.h),
-                                  ReadingSpeedInstruction(
-                                    primaryColor: theme.primaryColor,
-                                    isRevealed: _isRevealed.value,
-                                    instruction:
-                                        InstructionHelper.getInstruction(quest),
+                                  Stack(
+                                    alignment: Alignment.center,
+                                    children: [
+                                      SizedBox(
+                                        width: double.infinity,
+                                        child: Center(
+                                          child: ReadingSpeedInstruction(
+                                            primaryColor: theme.primaryColor,
+                                            isRevealed: _isRevealed.value,
+                                            instruction:
+                                                InstructionHelper.getInstruction(
+                                                  quest,
+                                                ),
+                                          ),
+                                        ),
+                                      ),
+                                      if (!_isRevealed.value)
+                                        Positioned(
+                                          right: 0,
+                                          child: GestureDetector(
+                                            onTap: () {
+                                              hapticService.selection();
+                                              _isLargeText.value =
+                                                  !_isLargeText.value;
+                                            },
+                                            child: Container(
+                                              padding: EdgeInsets.all(8.r),
+                                              decoration: BoxDecoration(
+                                                color: theme.primaryColor
+                                                    .withValues(alpha: 0.1),
+                                                shape: BoxShape.circle,
+                                              ),
+                                              child: Icon(
+                                                _isLargeText.value
+                                                    ? Icons
+                                                          .text_decrease_rounded
+                                                    : Icons.format_size_rounded,
+                                                color: theme.primaryColor,
+                                                size: 20.r,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                    ],
                                   ),
                                   SizedBox(height: 32.h),
-                                  if (!_isRevealed.value)
-                                    Padding(
-                                      padding: EdgeInsets.only(bottom: 24.h),
-                                      child: SpeedChallengeTimer(
-                                        key: _timerKey,
-                                        durationSeconds: _timeLimit.value,
-                                        primaryColor: theme.primaryColor,
-                                        onTimeUp: _onTimeUp,
-                                        onTick: _onTimerTick,
-                                        autoStart: true,
-                                      ),
-                                    ),
-                                  if (_isRevealed.value)
-                                    ReadingSpeedQuestionArea(
-                                      question: quest.question ?? "",
-                                      color: theme.primaryColor,
-                                      isDark: isDark,
-                                    ),
+                                  AnimatedSwitcher(
+                                    duration: const Duration(milliseconds: 400),
+                                    switchInCurve: Curves.easeOut,
+                                    switchOutCurve: Curves.easeIn,
+                                    transitionBuilder: (child, animation) {
+                                      return FadeTransition(
+                                        opacity: animation,
+                                        child: SlideTransition(
+                                          position: Tween<Offset>(
+                                            begin: const Offset(0.0, -0.1),
+                                            end: Offset.zero,
+                                          ).animate(animation),
+                                          child: child,
+                                        ),
+                                      );
+                                    },
+                                    child: _isRevealed.value
+                                        ? ReadingSpeedQuestionArea(
+                                            key: const ValueKey('question'),
+                                            question: quest.question ?? "",
+                                            color: theme.primaryColor,
+                                            isDark: isDark,
+                                          )
+                                        : Padding(
+                                            key: const ValueKey('timer'),
+                                            padding: EdgeInsets.only(
+                                              bottom: 24.h,
+                                            ),
+                                            child: SpeedChallengeTimer(
+                                              key: _timerKey,
+                                              durationSeconds: _timeLimit.value,
+                                              primaryColor: theme.primaryColor,
+                                              onTimeUp: _onTimeUp,
+                                              onTick: _onTimerTick,
+                                              autoStart: true,
+                                            ),
+                                          ),
+                                  ),
                                 ],
                               ),
                             ),
@@ -226,39 +287,69 @@ class _ReadingSpeedCheckScreenState extends State<ReadingSpeedCheckScreen>
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.end,
                                 children: [
-                                  if (!_isRevealed.value)
-                                    ReadingSpeedPulseZone(
-                                      passage: quest.passage ?? "",
-                                      color: theme.primaryColor,
-                                      isDark: isDark,
-                                      clarityRadius: _clarityRadius.value,
-                                      pulseScale: _pulseScale.value,
-                                      timerValue: _timerValue.value,
-                                      timeLimit: _timeLimit.value,
-                                      wordCount:
-                                          quest.passageWordCount ??
-                                          quest.passage
-                                              ?.split(RegExp(r'\s+'))
-                                              .length ??
-                                          0,
-                                      wpmTarget: quest.wpmTarget ?? 0,
-                                      onTapPulse: _onPulseTap,
-                                    )
-                                  else ...[
-                                    SizedBox(height: 32.h),
-                                    ReadingSelfEvaluationCard(
-                                      correctAnswer: quest.correctAnswer ?? "",
-                                      explanation: quest.explanation,
-                                      primaryColor: theme.primaryColor,
-                                      onEvaluated: (isCorrect) =>
-                                          _submitSelfEvalAnswer(
-                                            isCorrect,
-                                            quest,
+                                  AnimatedSwitcher(
+                                    duration: const Duration(milliseconds: 400),
+                                    switchInCurve: Curves.easeOut,
+                                    switchOutCurve: Curves.easeIn,
+                                    transitionBuilder: (child, animation) {
+                                      return FadeTransition(
+                                        opacity: animation,
+                                        child: SlideTransition(
+                                          position: Tween<Offset>(
+                                            begin: const Offset(0.0, 0.1),
+                                            end: Offset.zero,
+                                          ).animate(animation),
+                                          child: child,
+                                        ),
+                                      );
+                                    },
+                                    child: !_isRevealed.value
+                                        ? ReadingSpeedPulseZone(
+                                            key: const ValueKey('zone'),
+                                            passage: quest.passage ?? "",
+                                            color: theme.primaryColor,
+                                            isDark: isDark,
+                                            timerValue: _timerValue.value,
+                                            timeLimit: _timeLimit.value,
+                                            wordCount:
+                                                quest.passageWordCount ??
+                                                quest.passage
+                                                    ?.split(RegExp(r'\s+'))
+                                                    .length ??
+                                                0,
+                                            wpmTarget: quest.wpmTarget ?? 0,
+                                            onTapPulse: _onDoneReadingTap,
+                                            largeText: _isLargeText.value,
+                                          )
+                                        : Column(
+                                            key: const ValueKey('options'),
+                                            children: [
+                                              SizedBox(height: 32.h),
+                                              ...options.asMap().entries.map((
+                                                entry,
+                                              ) {
+                                                return ReadingSpeedOption(
+                                                  index: entry.key,
+                                                  text: entry.value,
+                                                  correct:
+                                                      quest.correctAnswer ?? "",
+                                                  color: theme.primaryColor,
+                                                  isDark: isDark,
+                                                  selectedIndex:
+                                                      _selectedIndex.value,
+                                                  isAnswered:
+                                                      isAnsweredNotifier.value,
+                                                  onTap: () => _submitAnswer(
+                                                    entry.key,
+                                                    quest,
+                                                  ),
+                                                );
+                                              }),
+                                            ],
                                           ),
-                                    ),
-                                  ],
+                                  ),
                                   if (isAnsweredNotifier.value) ...[
-                                    SizedBox(height: 30.h),
+                                    SizedBox(height: 20.h),
                                     ReadingSpeedResult(
                                       quest: quest,
                                       isCorrect:
