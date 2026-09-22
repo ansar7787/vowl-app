@@ -11,7 +11,6 @@ import 'package:vowl/features/reading/presentation/layout/reading_base_layout.da
 import 'package:vowl/features/reading/domain/entities/reading_quest.dart';
 import 'package:vowl/features/reading/reading_conclusion/presentation/widgets/reading_conclusion_instruction.dart';
 import 'package:vowl/features/reading/reading_conclusion/presentation/widgets/reading_conclusion_passage.dart';
-import 'package:vowl/features/reading/reading_conclusion/presentation/widgets/reading_conclusion_result.dart';
 import 'package:vowl/core/presentation/game_mechanics/typing/type_to_confirm_overlay.dart';
 
 class ReadingConclusionScreen extends StatefulWidget {
@@ -51,20 +50,6 @@ class _ReadingConclusionScreenState extends State<ReadingConclusionScreen>
   @override
   void initState() {
     super.initState();
-    isAnsweredNotifier.addListener(() {
-      if (isAnsweredNotifier.value && mounted && _scrollController.hasClients) {
-        Future.delayed(const Duration(milliseconds: 100), () {
-          if (mounted && _scrollController.hasClients) {
-            _scrollController.animateTo(
-              _scrollController.position.maxScrollExtent,
-              duration: const Duration(milliseconds: 300),
-              curve: Curves.easeOut,
-            );
-          }
-        });
-      }
-    });
-
     initReadingGame();
   }
 
@@ -166,15 +151,6 @@ class _ReadingConclusionScreenState extends State<ReadingConclusionScreen>
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.end,
                                 children: [
-                                  if (isAnsweredNotifier.value) ...[
-                                    SizedBox(height: 30.h),
-                                    ReadingConclusionResult(
-                                      quest: quest,
-                                      isCorrect:
-                                          isCorrectNotifier.value == true,
-                                      isDark: isDark,
-                                    ),
-                                  ],
                                   SizedBox(
                                     height: (!isAnsweredNotifier.value)
                                         ? 380.h

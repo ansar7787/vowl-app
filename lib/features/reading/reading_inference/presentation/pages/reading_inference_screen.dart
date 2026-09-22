@@ -11,7 +11,6 @@ import 'package:vowl/features/reading/presentation/layout/reading_base_layout.da
 import 'package:vowl/features/reading/domain/entities/reading_quest.dart';
 import 'package:vowl/features/reading/reading_inference/presentation/widgets/reading_inference_instruction.dart';
 import 'package:vowl/features/reading/reading_inference/presentation/widgets/reading_inference_foggy_mirror.dart';
-import 'package:vowl/features/reading/reading_inference/presentation/widgets/reading_inference_result.dart';
 import 'package:vowl/core/presentation/game_mechanics/reading/reading_self_evaluation_card.dart';
 import 'package:vowl/core/presentation/game_mechanics/reading/evidence_highlight_wrapper.dart';
 
@@ -59,34 +58,6 @@ class _ReadingInferenceScreenState extends State<ReadingInferenceScreen>
   @override
   void initState() {
     super.initState();
-    _showEvidence.addListener(() {
-      if (_showEvidence.value && mounted && _scrollController.hasClients) {
-        Future.delayed(const Duration(milliseconds: 300), () {
-          if (mounted && _scrollController.hasClients) {
-            _scrollController.animateTo(
-              _scrollController.position.maxScrollExtent,
-              duration: const Duration(milliseconds: 400),
-              curve: Curves.easeOutCubic,
-            );
-          }
-        });
-      }
-    });
-
-    isAnsweredNotifier.addListener(() {
-      if (isAnsweredNotifier.value && mounted && _scrollController.hasClients) {
-        Future.delayed(const Duration(milliseconds: 100), () {
-          if (mounted && _scrollController.hasClients) {
-            _scrollController.animateTo(
-              _scrollController.position.maxScrollExtent,
-              duration: const Duration(milliseconds: 300),
-              curve: Curves.easeOut,
-            );
-          }
-        });
-      }
-    });
-
     initReadingGame();
   }
 
@@ -255,17 +226,6 @@ class _ReadingInferenceScreenState extends State<ReadingInferenceScreen>
                                       ),
                                     ),
 
-                                  if (isAnsweredNotifier.value &&
-                                      (!_showEvidence.value ||
-                                          _evidenceFound.value)) ...[
-                                    SizedBox(height: 30.h),
-                                    ReadingInferenceResult(
-                                      quest: quest,
-                                      isCorrect:
-                                          isCorrectNotifier.value == true,
-                                      isDark: isDark,
-                                    ),
-                                  ],
                                   SizedBox(
                                     height: (_showEvidence.value)
                                         ? 380.h

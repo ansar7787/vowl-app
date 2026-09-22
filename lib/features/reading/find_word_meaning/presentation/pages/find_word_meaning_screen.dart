@@ -11,7 +11,6 @@ import 'package:vowl/features/reading/presentation/layout/reading_base_layout.da
 import 'package:vowl/features/reading/domain/entities/reading_quest.dart';
 import 'package:vowl/features/reading/find_word_meaning/presentation/widgets/find_word_meaning_instruction.dart';
 import 'package:vowl/features/reading/find_word_meaning/presentation/widgets/find_word_meaning_question_header.dart';
-import 'package:vowl/features/reading/find_word_meaning/presentation/widgets/find_word_meaning_result.dart';
 import 'package:vowl/features/reading/find_word_meaning/presentation/widgets/find_word_meaning_interactive_passage.dart';
 import 'package:vowl/core/presentation/game_mechanics/arranging/context_sentence_builder.dart';
 import 'package:vowl/core/services/error_journal_collector.dart';
@@ -207,14 +206,6 @@ class _FindWordMeaningScreenState extends State<FindWordMeaningScreen>
                                           );
                                         },
                                   ),
-                                  if (isAnsweredBloc) ...[
-                                    SizedBox(height: 30.h),
-                                    FindWordMeaningResult(
-                                      quest: quest,
-                                      isCorrect: isCorrect == true,
-                                      isDark: isDark,
-                                    ),
-                                  ],
                                 ],
                               ),
                             ),

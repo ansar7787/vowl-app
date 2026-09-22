@@ -13,7 +13,6 @@ import 'package:vowl/features/reading/true_false_reading/presentation/widgets/tr
 import 'package:vowl/features/reading/true_false_reading/presentation/widgets/true_false_reading_passage.dart';
 import 'package:vowl/features/reading/true_false_reading/presentation/widgets/true_false_reading_statement.dart';
 import 'package:vowl/features/reading/true_false_reading/presentation/widgets/true_false_reading_coin_zone.dart';
-import 'package:vowl/features/reading/true_false_reading/presentation/widgets/true_false_reading_result.dart';
 import 'package:vowl/core/presentation/game_mechanics/reading/evidence_highlight_wrapper.dart';
 import 'package:vowl/core/services/error_journal_collector.dart';
 
@@ -77,21 +76,6 @@ class _TrueFalseReadingScreenState extends State<TrueFalseReadingScreen>
         });
       }
     });
-
-    isAnsweredNotifier.addListener(() {
-      if (isAnsweredNotifier.value && mounted && _scrollController.hasClients) {
-        Future.delayed(const Duration(milliseconds: 100), () {
-          if (mounted && _scrollController.hasClients) {
-            _scrollController.animateTo(
-              _scrollController.position.maxScrollExtent,
-              duration: const Duration(milliseconds: 300),
-              curve: Curves.easeOut,
-            );
-          }
-        });
-      }
-    });
-
     initReadingGame();
   }
 
@@ -268,15 +252,7 @@ class _TrueFalseReadingScreenState extends State<TrueFalseReadingScreen>
                                     isDark: isDark,
                                     themeColor: theme.primaryColor,
                                   ),
-                                  if (isAnsweredNotifier.value) ...[
-                                    SizedBox(height: 30.h),
-                                    TrueFalseReadingResult(
-                                      quest: quest,
-                                      isCorrect:
-                                          isCorrectNotifier.value == true,
-                                      isDark: isDark,
-                                    ),
-                                  ],
+
                                   SizedBox(
                                     height:
                                         (_pendingAnswer.value != null &&

@@ -1,5 +1,5 @@
 import 'package:vowl/core/utils/instruction_helper.dart';
-import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -14,7 +14,6 @@ import 'package:vowl/features/reading/reading_speed_check/presentation/widgets/r
 import 'package:vowl/features/reading/reading_speed_check/presentation/widgets/reading_speed_pulse_zone.dart';
 import 'package:vowl/features/reading/reading_speed_check/presentation/widgets/reading_speed_question_area.dart';
 import 'package:vowl/features/reading/reading_speed_check/presentation/widgets/reading_speed_option.dart';
-import 'package:vowl/features/reading/reading_speed_check/presentation/widgets/reading_speed_result.dart';
 import 'package:vowl/core/presentation/game_mechanics/shared/speed_challenge_timer.dart';
 
 class ReadingSpeedCheckScreen extends StatefulWidget {
@@ -67,20 +66,6 @@ class _ReadingSpeedCheckScreenState extends State<ReadingSpeedCheckScreen>
   void initState() {
     super.initState();
     timerKey = _timerKey;
-    isAnsweredNotifier.addListener(() {
-      if (isAnsweredNotifier.value && mounted && _scrollController.hasClients) {
-        Future.delayed(const Duration(milliseconds: 100), () {
-          if (mounted && _scrollController.hasClients) {
-            _scrollController.animateTo(
-              _scrollController.position.maxScrollExtent,
-              duration: const Duration(milliseconds: 300),
-              curve: Curves.easeOut,
-            );
-          }
-        });
-      }
-    });
-
     initReadingGame();
   }
 
@@ -348,15 +333,7 @@ class _ReadingSpeedCheckScreenState extends State<ReadingSpeedCheckScreen>
                                             ],
                                           ),
                                   ),
-                                  if (isAnsweredNotifier.value) ...[
-                                    SizedBox(height: 20.h),
-                                    ReadingSpeedResult(
-                                      quest: quest,
-                                      isCorrect:
-                                          isCorrectNotifier.value == true,
-                                      isDark: isDark,
-                                    ),
-                                  ],
+
                                   SizedBox(height: 60.h),
                                 ],
                               ),

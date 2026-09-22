@@ -12,7 +12,6 @@ import 'package:vowl/features/reading/domain/entities/reading_quest.dart';
 import 'package:vowl/features/reading/read_and_match/presentation/widgets/read_and_match_instruction.dart';
 import 'package:vowl/features/reading/read_and_match/presentation/widgets/read_and_match_terminal.dart';
 import 'package:vowl/features/reading/read_and_match/presentation/widgets/laser_bridge_painter.dart';
-import 'package:vowl/features/reading/read_and_match/presentation/widgets/read_and_match_result.dart';
 import 'package:vowl/core/presentation/game_mechanics/speaking/speak_to_confirm_overlay.dart';
 
 class ReadAndMatchScreen extends StatefulWidget {
@@ -84,21 +83,6 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen>
         });
       }
     });
-
-    isAnsweredNotifier.addListener(() {
-      if (isAnsweredNotifier.value && mounted && _scrollController.hasClients) {
-        Future.delayed(const Duration(milliseconds: 100), () {
-          if (mounted && _scrollController.hasClients) {
-            _scrollController.animateTo(
-              _scrollController.position.maxScrollExtent,
-              duration: const Duration(milliseconds: 300),
-              curve: Curves.easeOut,
-            );
-          }
-        });
-      }
-    });
-
     initReadingGame();
   }
 
@@ -398,17 +382,6 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen>
                                   onSkipped: () => _submitFinalAnswer(false),
                                   allowSkip: true,
                                   isPositioned: false,
-                                ),
-                              ),
-                            ),
-                          if (isAnsweredNotifier.value)
-                            SliverToBoxAdapter(
-                              child: Padding(
-                                padding: EdgeInsets.only(top: 24.h),
-                                child: ReadAndMatchResult(
-                                  quest: quest,
-                                  isCorrect: isCorrectNotifier.value == true,
-                                  isDark: isDark,
                                 ),
                               ),
                             ),

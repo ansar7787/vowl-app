@@ -12,7 +12,6 @@ import 'package:vowl/features/reading/presentation/layout/reading_base_layout.da
 import 'package:vowl/features/reading/domain/entities/reading_quest.dart';
 import 'package:vowl/features/reading/paragraph_summary/presentation/widgets/paragraph_summary_instruction.dart';
 import 'package:vowl/features/reading/paragraph_summary/presentation/widgets/paragraph_summary_tube.dart';
-import 'package:vowl/features/reading/paragraph_summary/presentation/widgets/paragraph_summary_result.dart';
 import 'package:vowl/core/presentation/game_mechanics/typing/type_to_confirm_overlay.dart';
 
 class ParagraphSummaryScreen extends StatefulWidget {
@@ -68,21 +67,6 @@ class _ParagraphSummaryScreenState extends State<ParagraphSummaryScreen>
         });
       }
     });
-
-    isAnsweredNotifier.addListener(() {
-      if (isAnsweredNotifier.value && mounted && _scrollController.hasClients) {
-        Future.delayed(const Duration(milliseconds: 100), () {
-          if (mounted && _scrollController.hasClients) {
-            _scrollController.animateTo(
-              _scrollController.position.maxScrollExtent,
-              duration: const Duration(milliseconds: 300),
-              curve: Curves.easeOut,
-            );
-          }
-        });
-      }
-    });
-
     initReadingGame();
   }
 
@@ -221,15 +205,6 @@ class _ParagraphSummaryScreenState extends State<ParagraphSummaryScreen>
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.end,
                                 children: [
-                                  if (isAnsweredNotifier.value) ...[
-                                    SizedBox(height: 30.h),
-                                    ParagraphSummaryResult(
-                                      quest: quest,
-                                      isCorrect:
-                                          isCorrectNotifier.value == true,
-                                      isDark: isDark,
-                                    ),
-                                  ],
                                   SizedBox(
                                     height:
                                         (_isDistilled.value &&

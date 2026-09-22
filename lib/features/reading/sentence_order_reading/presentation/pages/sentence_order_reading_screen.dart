@@ -12,7 +12,6 @@ import 'package:vowl/features/reading/domain/entities/reading_quest.dart';
 import 'package:vowl/features/reading/sentence_order_reading/presentation/widgets/sentence_order_reading_instruction.dart';
 import 'package:vowl/features/reading/sentence_order_reading/presentation/widgets/sentence_order_reading_stone_slab.dart';
 import 'package:vowl/features/reading/sentence_order_reading/presentation/widgets/sentence_order_reading_capstone.dart';
-import 'package:vowl/features/reading/sentence_order_reading/presentation/widgets/sentence_order_reading_result.dart';
 
 class SentenceOrderReadingScreen extends StatefulWidget {
   final int level;
@@ -54,20 +53,6 @@ class _SentenceOrderReadingScreenState extends State<SentenceOrderReadingScreen>
   @override
   void initState() {
     super.initState();
-    isAnsweredNotifier.addListener(() {
-      if (isAnsweredNotifier.value && mounted && _scrollController.hasClients) {
-        Future.delayed(const Duration(milliseconds: 100), () {
-          if (mounted && _scrollController.hasClients) {
-            _scrollController.animateTo(
-              _scrollController.position.maxScrollExtent,
-              duration: const Duration(milliseconds: 300),
-              curve: Curves.easeOut,
-            );
-          }
-        });
-      }
-    });
-
     initReadingGame();
   }
 
@@ -262,15 +247,6 @@ class _SentenceOrderReadingScreenState extends State<SentenceOrderReadingScreen>
                             sliver: SliverToBoxAdapter(
                               child: Column(
                                 children: [
-                                  if (isAnsweredNotifier.value) ...[
-                                    SizedBox(height: 24.h),
-                                    SentenceOrderReadingResult(
-                                      quest: quest,
-                                      isCorrect:
-                                          isCorrectNotifier.value == true,
-                                      isDark: isDark,
-                                    ),
-                                  ],
                                   if (!isAnsweredNotifier.value) ...[
                                     SizedBox(height: 24.h),
                                     SentenceOrderReadingCapstone(

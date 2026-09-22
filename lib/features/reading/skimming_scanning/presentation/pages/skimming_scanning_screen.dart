@@ -13,7 +13,6 @@ import 'package:vowl/features/reading/presentation/layout/reading_base_layout.da
 import 'package:vowl/features/reading/domain/entities/reading_quest.dart';
 import 'package:vowl/features/reading/skimming_scanning/presentation/widgets/skimming_scanning_target_badge.dart';
 import 'package:vowl/features/reading/skimming_scanning/presentation/widgets/skimming_scanning_terminal.dart';
-import 'package:vowl/features/reading/skimming_scanning/presentation/widgets/skimming_scanning_result.dart';
 import 'package:vowl/core/presentation/game_mechanics/shared/speed_challenge_timer.dart';
 
 class SkimmingScanningScreen extends StatefulWidget {
@@ -98,7 +97,6 @@ class _SkimmingScanningScreenState extends State<SkimmingScanningScreen>
   @override
   Widget build(BuildContext context) {
     final theme = LevelThemeHelper.getTheme('reading', level: widget.level);
-    final isDark = Theme.of(context).brightness == Brightness.dark;
     final tokens = Theme.of(context).extension<AppColorTokens>()!;
 
     return BlocConsumer<ReadingBloc, ReadingState>(
@@ -210,18 +208,7 @@ class _SkimmingScanningScreenState extends State<SkimmingScanningScreen>
                               padding: EdgeInsets.symmetric(horizontal: 24.w),
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.end,
-                                children: [
-                                  if (isAnsweredNotifier.value) ...[
-                                    SizedBox(height: 24.h),
-                                    SkimmingScanningResult(
-                                      quest: quest,
-                                      isCorrect:
-                                          isCorrectNotifier.value == true,
-                                      isDark: isDark,
-                                    ),
-                                  ],
-                                  SizedBox(height: 50.h),
-                                ],
+                                children: [SizedBox(height: 50.h)],
                               ),
                             ),
                           ),

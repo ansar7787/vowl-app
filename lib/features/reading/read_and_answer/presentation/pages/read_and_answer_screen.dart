@@ -13,7 +13,6 @@ import 'package:vowl/features/reading/read_and_answer/presentation/widgets/read_
 import 'package:vowl/features/reading/read_and_answer/presentation/widgets/read_and_answer_anchor_point.dart';
 import 'package:vowl/features/reading/read_and_answer/presentation/widgets/read_and_answer_buoy_option.dart';
 import 'package:vowl/features/reading/read_and_answer/presentation/widgets/read_and_answer_floating_passage.dart';
-import 'package:vowl/features/reading/read_and_answer/presentation/widgets/read_and_answer_result.dart';
 import 'package:vowl/core/presentation/game_mechanics/reading/evidence_highlight_wrapper.dart';
 import 'package:vowl/core/services/error_journal_collector.dart';
 
@@ -58,20 +57,6 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen>
   @override
   void initState() {
     super.initState();
-    isAnsweredNotifier.addListener(() {
-      if (isAnsweredNotifier.value && mounted && _scrollController.hasClients) {
-        Future.delayed(const Duration(milliseconds: 100), () {
-          if (mounted && _scrollController.hasClients) {
-            _scrollController.animateTo(
-              _scrollController.position.maxScrollExtent,
-              duration: const Duration(milliseconds: 300),
-              curve: Curves.easeOut,
-            );
-          }
-        });
-      }
-    });
-
     initReadingGame();
   }
 
@@ -354,14 +339,7 @@ class _QuestContent extends StatelessWidget {
                           onTap: () => onOptionSelected(e.key, isOptionCorrect),
                         );
                       }),
-                    if (isAnswered && isCorrect != null) ...[
-                      SizedBox(height: 24.h),
-                      ReadAndAnswerResult(
-                        quest: quest,
-                        isCorrect: isCorrect!,
-                        isDark: isDark,
-                      ),
-                    ],
+
                     SizedBox(
                       height: (showEvidenceStep && !isAnswered) ? 380.h : 60.h,
                     ),

@@ -10,7 +10,6 @@ import 'package:vowl/features/reading/presentation/mixins/reading_game_screen_mi
 import 'package:vowl/features/reading/presentation/layout/reading_base_layout.dart';
 import 'package:vowl/features/reading/domain/entities/reading_quest.dart';
 import 'package:vowl/features/reading/guess_title/presentation/widgets/guess_title_instruction.dart';
-import 'package:vowl/features/reading/guess_title/presentation/widgets/guess_title_result.dart';
 import 'package:vowl/features/reading/guess_title/presentation/widgets/guess_title_options.dart';
 import 'package:vowl/core/presentation/game_mechanics/typing/type_to_confirm_overlay.dart';
 import 'package:vowl/core/services/error_journal_collector.dart';
@@ -66,21 +65,6 @@ class _GuessTitleScreenState extends State<GuessTitleScreen>
         });
       }
     });
-
-    isAnsweredNotifier.addListener(() {
-      if (isAnsweredNotifier.value && mounted && _scrollController.hasClients) {
-        Future.delayed(const Duration(milliseconds: 100), () {
-          if (mounted && _scrollController.hasClients) {
-            _scrollController.animateTo(
-              _scrollController.position.maxScrollExtent,
-              duration: const Duration(milliseconds: 300),
-              curve: Curves.easeOut,
-            );
-          }
-        });
-      }
-    });
-
     initReadingGame();
   }
 
@@ -221,15 +205,6 @@ class _GuessTitleScreenState extends State<GuessTitleScreen>
                                               selectedOption,
                                             );
                                           },
-                                    ),
-                                  ],
-                                  if (isAnsweredNotifier.value) ...[
-                                    SizedBox(height: 30.h),
-                                    GuessTitleResult(
-                                      quest: quest,
-                                      isCorrect:
-                                          isCorrectNotifier.value == true,
-                                      isDark: isDark,
                                     ),
                                   ],
                                 ],
