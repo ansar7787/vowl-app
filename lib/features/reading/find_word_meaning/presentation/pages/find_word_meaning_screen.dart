@@ -48,22 +48,6 @@ class _FindWordMeaningScreenState extends State<FindWordMeaningScreen>
   @override
   void initState() {
     super.initState();
-    _showSentenceBuilder.addListener(() {
-      if (_showSentenceBuilder.value &&
-          mounted &&
-          _scrollController.hasClients) {
-        Future.delayed(const Duration(milliseconds: 300), () {
-          if (mounted && _scrollController.hasClients) {
-            _scrollController.animateTo(
-              _scrollController.position.maxScrollExtent,
-              duration: const Duration(milliseconds: 400),
-              curve: Curves.easeOutCubic,
-            );
-          }
-        });
-      }
-    });
-
     initReadingGame();
   }
 
@@ -153,10 +137,14 @@ class _FindWordMeaningScreenState extends State<FindWordMeaningScreen>
           builder: (context, _) {
             // Computed state
             // If sentence builder is showing, the question is NOT finished yet.
-            final bool isAnswered =
+            final bool isGameAnswered =
                 isAnsweredBloc ||
                 (_pendingSelectedIndex.value != null &&
                     !_showSentenceBuilder.value);
+
+            final bool isPassageLocked =
+                isAnsweredBloc || _pendingSelectedIndex.value != null;
+
             final bool? isCorrect = _showSentenceBuilder.value
                 ? true
                 : isCorrectBloc;
@@ -165,7 +153,7 @@ class _FindWordMeaningScreenState extends State<FindWordMeaningScreen>
               useScrolling: false,
               gameType: widget.gameType,
               level: widget.level,
-              isAnswered: isAnswered,
+              isAnswered: isGameAnswered,
               isCorrect: isCorrect,
               showConfetti: showConfettiNotifier.value,
               disablePadding: true,
@@ -207,7 +195,7 @@ class _FindWordMeaningScreenState extends State<FindWordMeaningScreen>
                                     targetWord: quest.targetWord ?? "",
                                     primaryColor: theme.primaryColor,
                                     isDark: isDark,
-                                    isAnswered: isAnswered,
+                                    isAnswered: isPassageLocked,
                                     selectedIndex: _pendingSelectedIndex.value,
                                     isCorrectSelection: isCorrect,
                                     onWordSelected:
@@ -255,7 +243,7 @@ class _FindWordMeaningScreenState extends State<FindWordMeaningScreen>
                           if (_showSentenceBuilder.value)
                             SliverToBoxAdapter(
                               child: Padding(
-                                padding: EdgeInsets.symmetric(horizontal: 24.w),
+                                padding: EdgeInsets.only(top: 24.h),
                                 child: ContextSentenceBuilder(
                                   targetKeyword: quest.word ?? '',
                                   primaryColor: theme.primaryColor,

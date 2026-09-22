@@ -127,7 +127,7 @@ class StoryServiceImpl implements StoryService {
 
     // Reading
     'findWordMeaning':
-        "Let's be vocabulary detectives! We'll use the surrounding words as clues to uncover the meaning of new vocabulary.",
+        "Let's be vocabulary detectives! We'll look at the definition, scan the passage, and tap the exact word that matches it.",
     'guessTitle':
         "What's the big picture? Let's read the passage and figure out the perfect title that captures its core theme.",
     'paragraphSummary':
@@ -935,11 +935,11 @@ class StoryServiceImpl implements StoryService {
     ],
     'findwordmeaning': [
       "",
-      "Excellent start! Your understanding of contextual meaning is growing.",
-      "You are navigating contextual meaning with increasing confidence.",
-      "Halfway to 100! You are handling contextual meaning effortlessly.",
-      "Level 100! Your execution of contextual meaning is flawless.",
-      "Level 200 reached! Your grasp of contextual meaning is legendary.",
+      "Great start! You're already getting a feel for how words hide in sentences.",
+      "Look at you go! You're picking out new vocabulary like a natural.",
+      "50 levels cleared! Your vocabulary radar is getting seriously sharp.",
+      "Level 100! You're officially a master word detective now.",
+      "Level 200! Absolutely incredible—you read and understand English like a native speaker!",
     ],
     'guesstitle': [
       "",

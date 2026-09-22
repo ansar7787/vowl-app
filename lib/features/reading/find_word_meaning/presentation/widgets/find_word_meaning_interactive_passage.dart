@@ -10,6 +10,20 @@ class _LocalPalette {
   static const Color colorf87171 = Color(0xFFF87171);
 }
 
+class _PassageToken {
+  final String raw;
+  final String prefix;
+  final String word;
+  final String suffix;
+
+  _PassageToken({
+    required this.raw,
+    required this.prefix,
+    required this.word,
+    required this.suffix,
+  });
+}
+
 class FindWordMeaningInteractivePassage extends StatefulWidget {
   final String passage;
   final String targetWord;
@@ -40,7 +54,11 @@ class FindWordMeaningInteractivePassage extends StatefulWidget {
 class _FindWordMeaningInteractivePassageState
     extends State<FindWordMeaningInteractivePassage> {
   final _hapticService = di.sl<HapticService>();
-  List<String> _words = [];
+  List<_PassageToken> _tokens = [];
+
+  static final _prefixRegex = RegExp(r'^([^\p{L}\p{N}]+)', unicode: true);
+  static final _suffixRegex = RegExp(r'([^\p{L}\p{N}]+)$', unicode: true);
+  static final _cleanRegex = RegExp(r'[^\p{L}\p{N}\s]', unicode: true);
 
   @override
   void initState() {
@@ -57,12 +75,35 @@ class _FindWordMeaningInteractivePassageState
   }
 
   void _splitWords() {
-    // Split by space, keeping punctuation with the words, or we can just split by space
-    // Using RegExp to split by whitespace
-    _words = widget.passage
+    final rawWords = widget.passage
         .split(RegExp(r'\s+'))
         .where((s) => s.isNotEmpty)
         .toList();
+
+    _tokens = rawWords.map((rawWord) {
+      String prefix = '';
+      String suffix = '';
+      String word = rawWord;
+
+      final prefixMatch = _prefixRegex.firstMatch(word);
+      if (prefixMatch != null) {
+        prefix = prefixMatch.group(1)!;
+        word = word.substring(prefix.length);
+      }
+
+      final suffixMatch = _suffixRegex.firstMatch(word);
+      if (suffixMatch != null) {
+        suffix = suffixMatch.group(1)!;
+        word = word.substring(0, word.length - suffix.length);
+      }
+
+      return _PassageToken(
+        raw: rawWord,
+        prefix: prefix,
+        word: word,
+        suffix: suffix,
+      );
+    }).toList();
   }
 
   void _onWordTap(int index) {
@@ -70,14 +111,15 @@ class _FindWordMeaningInteractivePassageState
 
     _hapticService.selection();
 
-    final selected = _words[index];
-    // Clean punctuation for comparison
-    final cleanSelected = selected
-        .replaceAll(RegExp(r'[^\w\s]'), '')
+    final token = _tokens[index];
+
+    // Clean punctuation for comparison using unicode-aware regex
+    final cleanSelected = token.word
+        .replaceAll(_cleanRegex, '')
         .trim()
         .toLowerCase();
     final cleanTarget = widget.targetWord
-        .replaceAll(RegExp(r'[^\w\s]'), '')
+        .replaceAll(_cleanRegex, '')
         .trim()
         .toLowerCase();
 
@@ -137,9 +179,10 @@ class _FindWordMeaningInteractivePassageState
           ),
           SizedBox(height: 16.h),
           Wrap(
-            spacing: 2.w,
-            runSpacing: 4.h,
-            children: List.generate(_words.length, (index) {
+            spacing: 6.w,
+            runSpacing: 8.h,
+            children: List.generate(_tokens.length, (index) {
+              final token = _tokens[index];
               final isSelected = widget.selectedIndex == index;
 
               Color activeColor = widget.primaryColor;
@@ -153,40 +196,71 @@ class _FindWordMeaningInteractivePassageState
                           : AppColors.red500);
               }
 
-              final word = _words[index];
+              final baseTextStyle = TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 18.sp,
+                fontWeight: FontWeight.w400,
+                color: widget.isDark
+                    ? Colors.white.withValues(alpha: 0.9)
+                    : AppColors.slate800,
+                height: 1.4,
+              );
 
-              return GestureDetector(
-                onTap: () => _onWordTap(index),
-                child: AnimatedContainer(
-                  duration: const Duration(milliseconds: 200),
-                  padding: EdgeInsets.symmetric(horizontal: 2.w, vertical: 2.h),
-                  decoration: BoxDecoration(
-                    color: isSelected
-                        ? activeColor.withValues(alpha: 0.2)
-                        : Colors.transparent,
-                    borderRadius: BorderRadius.circular(6.r),
-                    border: Border.all(
-                      color: isSelected ? activeColor : Colors.transparent,
-                      width: 1.5,
-                    ),
-                  ),
+              if (token.word.isEmpty) {
+                return Padding(
+                  padding: EdgeInsets.symmetric(vertical: 2.h),
                   child: Text(
-                    word,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 18.sp,
-                      fontWeight: isSelected
-                          ? FontWeight.w600
-                          : FontWeight.w400,
-                      color: isSelected
-                          ? activeColor
-                          : (widget.isDark
-                                ? Colors.white.withValues(alpha: 0.9)
-                                : AppColors.slate800),
-                      height: 1.4,
+                    token.prefix + token.suffix,
+                    style: baseTextStyle,
+                  ),
+                );
+              }
+
+              return Row(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  if (token.prefix.isNotEmpty)
+                    Text(token.prefix, style: baseTextStyle),
+                  GestureDetector(
+                    onTap: () => _onWordTap(index),
+                    child: AnimatedContainer(
+                      duration: const Duration(milliseconds: 200),
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 2.w,
+                        vertical: 2.h,
+                      ),
+                      decoration: BoxDecoration(
+                        color: isSelected
+                            ? activeColor.withValues(alpha: 0.2)
+                            : Colors.transparent,
+                        borderRadius: BorderRadius.circular(6.r),
+                        border: Border.all(
+                          color: isSelected ? activeColor : Colors.transparent,
+                          width: 1.5,
+                        ),
+                      ),
+                      child: Text(
+                        token.word,
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 18.sp,
+                          fontWeight: isSelected
+                              ? FontWeight.w600
+                              : FontWeight.w400,
+                          color: isSelected
+                              ? activeColor
+                              : (widget.isDark
+                                    ? Colors.white.withValues(alpha: 0.9)
+                                    : AppColors.slate800),
+                          height: 1.4,
+                        ),
+                      ),
                     ),
                   ),
-                ),
+                  if (token.suffix.isNotEmpty)
+                    Text(token.suffix, style: baseTextStyle),
+                ],
               );
             }),
           ),

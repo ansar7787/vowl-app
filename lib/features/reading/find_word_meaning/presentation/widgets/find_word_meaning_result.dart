@@ -27,7 +27,7 @@ class FindWordMeaningResult extends StatelessWidget {
       liveRegion: true,
       label: isCorrect
           ? 'Correct! ${quest.explanation ?? ''}'
-          : 'Incorrect. ${quest.explanation ?? ''}',
+          : 'Incorrect. ${quest.explanation ?? ''} ${quest.wordInContext != null ? 'Example: ${quest.wordInContext}' : ''}',
       excludeSemantics: true,
       child: Container(
         padding: EdgeInsets.all(24.r),
@@ -94,7 +94,7 @@ class FindWordMeaningResult extends StatelessWidget {
                 ),
               ),
             ],
-            if (quest.wordInContext != null) ...[
+            if (quest.wordInContext != null && !isCorrect) ...[
               SizedBox(height: 16.h),
               Container(
                 width: double.infinity,
