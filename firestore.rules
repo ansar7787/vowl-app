@@ -73,6 +73,22 @@ service cloud.firestore {
 
       // DELETE: Only own document
       allow delete: if request.auth != null && request.auth.uid == userId;
+      
+      // ERROR JOURNAL: Allow users to log and clear their wrong answers
+      match /errorJournal/{errorId} {
+        // Users can read and dismiss (delete) their own logs
+        allow read, delete: if request.auth != null && request.auth.uid == userId;
+        
+        // Strict create rules to prevent hackers from spamming huge payloads (Billing/Storage Attack)
+        allow create: if request.auth != null 
+          && request.auth.uid == userId
+          // MAXIMUM payload length for strings (Prevents uploading massive fake logs to spike storage costs)
+          && (!('question' in request.resource.data) || request.resource.data.question.size() < 1000)
+          && (!('userAnswer' in request.resource.data) || request.resource.data.userAnswer.size() < 1000)
+          && (!('correctAnswer' in request.resource.data) || request.resource.data.correctAnswer.size() < 1000)
+          // Ensures the timestamp is a true server-side timestamp
+          && request.resource.data.timestamp == request.time;
+      }
     }
 
     // ─── GLOBAL METADATA ─────────────────────────────────────────────

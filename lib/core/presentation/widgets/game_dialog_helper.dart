@@ -253,65 +253,88 @@ class GameDialogHelper {
             ? context.tr('games.free_rescue', fallback: 'FREE RESCUE')
             : context.tr('games.watch_ad', fallback: 'WATCH AD'));
 
-    showDialog(
+    showDialog<bool>(
       context: context,
       barrierDismissible: false,
-      builder: (dialogCtx) => ModernGameDialog(
-        title: resolvedTitle,
-        description: resolvedDescription,
-        buttonText: resolvedButtonText,
-        isSuccess: false,
-        isRescueLife: onRestore != null,
-        onButtonPressed: () {
-          final nav = Navigator.of(context);
-          Navigator.of(dialogCtx).pop();
-          nav.pop();
-        },
-        onAdAction: onRestore != null
-            ? () {
-                final isPremium =
-                    context.read<AuthBloc>().state.user?.isPremium ?? false;
-                if (isPremium) {
-                  onRestore();
-                  Navigator.of(dialogCtx).pop();
-                  return;
-                }
+      builder: (dialogCtx) {
+        // PRODUCTION DEFENSE: Prevents double-tap routing bugs where users spam-click
+        // the button, causing Flutter to pop multiple screens and black-screen the app.
+        bool isActionTaken = false;
 
-                final adService = di.sl<AdService>();
-                if (!adService.isRewardedAdLoaded) {
-                  showPremiumSnackBar(
-                    context,
-                    context.tr(
-                      'games.ad_not_ready',
-                      fallback: 'Ad not ready yet, try again soon.',
-                    ),
-                    icon: Icons.hourglass_empty_rounded,
-                    color: Colors.orange,
-                  );
-                  return;
-                }
+        return ModernGameDialog(
+          title: resolvedTitle,
+          description: resolvedDescription,
+          buttonText: resolvedButtonText,
+          isSuccess: false,
+          isRescueLife: onRestore != null,
+          onButtonPressed: () {
+            if (isActionTaken) return;
+            isActionTaken = true;
+            // Pass true to signal the user wants to give up
+            Navigator.of(dialogCtx).pop(true);
+          },
+          onAdAction: onRestore != null
+              ? () {
+                  if (isActionTaken) return;
+                  isActionTaken = true;
 
-                bool rewardEarned = false;
-                adService.showRewardedAd(
-                  context: context,
-                  isPremium: false,
-                  onUserEarnedReward: (_) {
-                    rewardEarned = true;
-                  },
-                  onDismissed: () {
-                    if (rewardEarned) {
-                      onRestore();
-                      if (dialogCtx.mounted) {
-                        Navigator.of(dialogCtx).pop();
+                  final isPremium =
+                      context.read<AuthBloc>().state.user?.isPremium ?? false;
+                  if (isPremium) {
+                    onRestore();
+                    Navigator.of(dialogCtx).pop(false);
+                    return;
+                  }
+
+                  final adService = di.sl<AdService>();
+                  if (!adService.isRewardedAdLoaded) {
+                    isActionTaken = false; // Reset so they can try again
+                    showPremiumSnackBar(
+                      context,
+                      context.tr(
+                        'games.ad_not_ready',
+                        fallback: 'Ad not ready yet, try again soon.',
+                      ),
+                      icon: Icons.hourglass_empty_rounded,
+                      color: Colors.orange,
+                    );
+                    return;
+                  }
+
+                  bool rewardEarned = false;
+                  adService.showRewardedAd(
+                    context: context,
+                    isPremium: false,
+                    onUserEarnedReward: (_) {
+                      rewardEarned = true;
+                    },
+                    onDismissed: () {
+                      if (rewardEarned) {
+                        onRestore();
+                        if (dialogCtx.mounted) {
+                          Navigator.of(dialogCtx).pop(false);
+                        }
+                      } else {
+                        // User closed the ad early without getting the reward.
+                        // Reset the lock so they can click Give Up or try the ad again.
+                        isActionTaken = false;
                       }
-                    }
-                  },
-                );
-              }
-            : null,
-        adButtonText: onRestore != null ? resolvedAdButtonText : null,
-      ),
-    );
+                    },
+                  );
+                }
+              : null,
+          adButtonText: onRestore != null ? resolvedAdButtonText : null,
+        );
+      },
+    ).then((gaveUp) {
+      if (!context.mounted) return;
+
+      // If the user tapped "Give Up" (true) OR pressed the system Back button (null),
+      // we cleanly exit the game screen.
+      if (gaveUp == true || gaveUp == null) {
+        Navigator.of(context).pop();
+      }
+    });
   }
 
   // ─── Exit Confirmation ────────────────────────────────────────────────

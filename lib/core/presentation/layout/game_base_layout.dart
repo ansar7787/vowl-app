@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vowl/core/presentation/bloc/game_state_base.dart';
@@ -21,7 +22,7 @@ const int _kLastLifeThreshold = 1;
 const int _kNudgeTriggerLives = 2;
 
 /// Delay before TTS nudge fires — lets sound effects settle first.
-const Duration _kNudgeDelay = Duration(milliseconds: 1200);
+const Duration _kNudgeDelay = Duration(milliseconds: 600);
 
 typedef GameStateMapper<S> = GameStateBase Function(S state);
 typedef HeaderBuilder<S> =
@@ -72,6 +73,9 @@ class _GameBaseLayoutState<B extends StateStreamableSource<S>, S>
 
   late final ValueNotifier<int> _stateHash = ValueNotifier(0);
 
+  Timer? _nudgeTimer;
+  int _lastIndex = -1;
+
   void _updateState() {
     if (mounted) _stateHash.value++;
   }
@@ -88,6 +92,7 @@ class _GameBaseLayoutState<B extends StateStreamableSource<S>, S>
   @override
   void dispose() {
     _stateHash.dispose();
+    _nudgeTimer?.cancel();
     _ttsService.stop();
     _soundService.stopAudio();
     super.dispose();
@@ -96,7 +101,8 @@ class _GameBaseLayoutState<B extends StateStreamableSource<S>, S>
   void _handleLastLifeNudge() {
     if (_hasSpokenNudge) return;
     _hasSpokenNudge = true;
-    Future.delayed(_kNudgeDelay, () {
+    _nudgeTimer?.cancel();
+    _nudgeTimer = Timer(_kNudgeDelay, () {
       if (!mounted) return;
       _ttsService.speak(context.tr('games.kids_nudge', fallback: 'Let\'s go!'));
       _hapticService.warning();
@@ -107,11 +113,21 @@ class _GameBaseLayoutState<B extends StateStreamableSource<S>, S>
     final baseState = widget.stateMapper(state);
 
     if (baseState is GameOverState) {
+      _nudgeTimer?.cancel();
+      _ttsService.stop();
+      _soundService.stopTts();
       GameDialogHelper.showGameOver(ctx, onRestore: widget.onRestoreLife);
       return;
     }
 
     if (baseState is! GameLoadedState) return;
+
+    if (_lastIndex != -1 && baseState.currentIndex != _lastIndex) {
+      _nudgeTimer?.cancel();
+      _ttsService.stop();
+      _soundService.stopTts();
+    }
+    _lastIndex = baseState.currentIndex;
 
     final justDroppedToLastLife =
         _lastLives == _kNudgeTriggerLives &&
