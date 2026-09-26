@@ -1,577 +1,577 @@
 {
-    "gameType": "readAndAnswer",
-    "batchIndex": 9,
-    "levels": "81-90",
-    "quests": [
-        {
-            "id": "RDG_READANDANSWER_L81_Q1",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[Biometric Authentication] Fingerprint and facial recognition are increasingly replacing traditional passwords across banking apps, smartphones, and even office buildings, largely because they eliminate the need to remember complex login credentials. Security experts note an important trade-off, however: while a forgotten password can simply be reset, a stolen fingerprint database cannot be changed the way a compromised password can. This has led some companies to combine biometric login with a secondary verification step, ensuring that a single stolen dataset cannot fully compromise an account.",
-            "question": "Why have some companies added a secondary verification step to biometric login?",
-            "options": [
-                "It makes the login process faster overall",
-                "It replaces the need for fingerprints entirely",
-                "It is required for all banking apps by law",
-                "A single stolen dataset cannot fully compromise an account this way"
-            ],
-            "correctAnswer": "A single stolen dataset cannot fully compromise an account this way",
-            "correctAnswerIndex": 3,
-            "hint": "The purpose of the extra step is explained in the last sentence.",
-            "explanation": "The passage says companies add a secondary step so a stolen biometric dataset alone cannot fully compromise an account.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L81_Q2",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[Telemedicine Adoption] Telemedicine, once seen mainly as a convenience for minor complaints, expanded dramatically as both patients and doctors grew comfortable with video consultations. For rural patients who previously faced hours of travel to reach a specialist, the shift has been especially significant, opening access to care that was once effectively out of reach. Still, doctors caution that certain conditions, particularly those requiring physical examination or lab work, cannot be adequately assessed through a screen, meaning telemedicine works best as a complement to in-person care rather than a full replacement.",
-            "question": "Why has the shift to telemedicine been especially significant for rural patients?",
-            "options": [
-                "It eliminated the need for any doctor visits",
-                "It reduced the cost of medication",
-                "It replaced the need for health insurance",
-                "It gave them access to care once effectively out of reach"
-            ],
-            "correctAnswer": "It gave them access to care once effectively out of reach",
-            "correctAnswerIndex": 3,
-            "hint": "The significance for rural patients is explained in the second sentence.",
-            "explanation": "The passage says telemedicine opened access to care for rural patients who once faced long travel to see a specialist.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L81_Q3",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[The 'Quiet Quitting' Phenomenon] The term 'quiet quitting' spread widely online to describe employees who do exactly what their job requires, no more and no less, deliberately stepping back from unpaid overtime or extra responsibilities they once took on voluntarily. Supporters of the trend argue it is simply a healthy return to boundaries after years of employees over-extending themselves without extra pay or recognition. Critics, meanwhile, worry the term unfairly frames reasonable limits as a form of laziness rather than a legitimate response to burnout.",
-            "question": "What do critics of the term 'quiet quitting' worry about?",
-            "options": [
-                "It unfairly frames reasonable limits as laziness",
-                "It encourages employees to work more overtime",
-                "It has caused a shortage of available jobs",
-                "It is only used by company managers"
-            ],
-            "correctAnswer": "It unfairly frames reasonable limits as laziness",
-            "correctAnswerIndex": 0,
-            "hint": "The critics' concern is explained in the last sentence.",
-            "explanation": "The passage says critics worry the term mischaracterizes reasonable limits as laziness rather than a response to burnout.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L82_Q1",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[Responding to Overtourism] Venice, Barcelona, and other cities long popular with travelers have begun experimenting with measures to manage overtourism, from entry fees for day-trippers to caps on the number of new hotel licenses issued each year. Local residents have largely welcomed these changes, citing years of rising rents and crowded public spaces that made daily life increasingly difficult. Some tourism boards worry, however, that overly strict measures could damage local economies that depend heavily on visitor spending.",
-            "question": "Why have local residents largely welcomed measures against overtourism?",
-            "options": [
-                "A sudden drop in tourism income",
-                "New laws requiring tourists to leave",
-                "Years of rising rents and crowded public spaces",
-                "A decrease in available housing"
-            ],
-            "correctAnswer": "Years of rising rents and crowded public spaces",
-            "correctAnswerIndex": 2,
-            "hint": "The residents' reason is explained in the second sentence.",
-            "explanation": "The passage says residents welcomed the changes because of years of rising rents and overcrowded public spaces.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L82_Q2",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[Alternatives to Fast Fashion] As awareness grows about the environmental cost of fast fashion, secondhand clothing platforms and clothing rental services have seen significant growth, particularly among younger shoppers. Rental services in particular appeal to consumers who want variety for special occasions without the cost or environmental footprint of buying an outfit that might only be worn once. Traditional retailers have taken notice, with several major brands now launching their own resale or rental programs rather than losing that segment of the market entirely.",
-            "question": "Why do rental services particularly appeal to some consumers, according to the passage?",
-            "options": [
-                "They guarantee lower quality clothing",
-                "They require a long-term membership",
-                "They offer variety without the cost of buying rarely worn outfits",
-                "They only offer formal wear"
-            ],
-            "correctAnswer": "They offer variety without the cost of buying rarely worn outfits",
-            "correctAnswerIndex": 2,
-            "hint": "The appeal of rental services is explained in the second sentence.",
-            "explanation": "The passage says rental services appeal to shoppers who want variety without buying outfits they would rarely wear.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L82_Q3",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[Project-Based Learning] Rather than learning scientific concepts through lectures alone, students in project-based classrooms might spend weeks designing and testing a water filtration system, applying chemistry, physics, and engineering principles along the way. Advocates argue that this method deepens understanding because students encounter concepts in a meaningful context rather than as abstract facts to memorize. Critics counter that covering material this way takes considerably longer, which can make it difficult to fit an entire curriculum into a single school year.",
-            "question": "What concern do critics raise about project-based learning?",
-            "options": [
-                "It takes longer, making it hard to fit the curriculum in",
-                "It focuses too much on memorization",
-                "It is too easy for most students",
-                "It removes science from the classroom"
-            ],
-            "correctAnswer": "It takes longer, making it hard to fit the curriculum in",
-            "correctAnswerIndex": 0,
-            "hint": "The critics' concern is explained in the last sentence.",
-            "explanation": "The passage says critics worry project-based learning takes longer, making it difficult to cover a full curriculum.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L83_Q1",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[Interactive Theater] In contrast to traditional theater, where the audience remains seated throughout a performance, interactive theater invites attendees to move between rooms, make small choices that influence the scene, and sometimes even speak directly with actors in character. Performers describe the format as demanding, since no two nights unfold exactly the same way and actors must be ready to respond to unpredictable audience behavior. For many attendees, it is precisely this unpredictability that makes the experience feel more memorable than a conventional play.",
-            "question": "Why do many attendees find interactive theater more memorable than conventional plays?",
-            "options": [
-                "The unpredictability of each performance",
-                "The lower ticket prices",
-                "The shorter running time",
-                "The larger seating capacity"
-            ],
-            "correctAnswer": "The unpredictability of each performance",
-            "correctAnswerIndex": 0,
-            "hint": "The reason is stated in the last sentence.",
-            "explanation": "The passage says many attendees find the unpredictability of interactive theater makes it more memorable.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L83_Q2",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[Time Banks] A time bank operates on a simple principle: an hour spent helping a neighbor, whether through gardening, childcare, or minor home repairs, earns one hour of credit that can later be redeemed for help from anyone else in the network, regardless of the specific skill involved. Unlike traditional bartering, which requires two people to want exactly what the other offers, a time bank allows value to flow indirectly through the wider community. Members often say the system fosters connections between neighbors who might never have otherwise interacted.",
-            "question": "How does a time bank differ from traditional bartering, according to the passage?",
-            "options": [
-                "It requires payment in official currency",
-                "It only works between two specific people",
-                "It limits members to a single skill",
-                "It allows value to flow indirectly through the community"
-            ],
-            "correctAnswer": "It allows value to flow indirectly through the community",
-            "correctAnswerIndex": 3,
-            "hint": "The contrast with bartering is explained in the middle of the passage.",
-            "explanation": "The passage explains that unlike bartering, a time bank lets value flow indirectly rather than requiring a direct trade.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L83_Q3",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[Co-Housing Communities] In a co-housing community, residents own or rent private, fully equipped homes but share extensive common facilities, such as a large kitchen, laundry room, and garden, which are typically managed through regular resident meetings. Unlike a commune, where finances and property are often shared collectively, co-housing residents maintain full financial independence while benefiting from built-in opportunities for community and mutual support. Many residents cite this balance between privacy and connection as the model's greatest appeal.",
-            "question": "What balance do many residents say is the greatest appeal of co-housing?",
-            "options": [
-                "Low cost and high luxury",
-                "Privacy and connection",
-                "Independence and shared finances",
-                "Isolation and self-sufficiency"
-            ],
-            "correctAnswer": "Privacy and connection",
-            "correctAnswerIndex": 1,
-            "hint": "The balance is named in the last sentence.",
-            "explanation": "The passage says residents value the balance between privacy and connection that co-housing provides.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L84_Q1",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[Ghost Kitchens] Ghost kitchens, commercial cooking spaces that prepare food exclusively for delivery with no dine-in option or storefront, have expanded rapidly alongside the growth of food delivery apps. Because they eliminate the overhead costs of a dining room, waitstaff, and prime street-level real estate, ghost kitchens allow restaurant owners to test new menu concepts with significantly less financial risk than opening a traditional restaurant. Some entrepreneurs now operate several different virtual restaurant brands out of a single shared kitchen space.",
-            "question": "Why do ghost kitchens allow owners to test new concepts with less risk?",
-            "options": [
-                "They require government subsidies to operate",
-                "They eliminate overhead costs like a dining room and waitstaff",
-                "They only sell food during specific hours",
-                "They guarantee higher profits than dine-in restaurants"
-            ],
-            "correctAnswer": "They eliminate overhead costs like a dining room and waitstaff",
-            "correctAnswerIndex": 1,
-            "hint": "The reason is explained in the second sentence.",
-            "explanation": "The passage says ghost kitchens reduce risk by eliminating costs like a dining room, waitstaff, and prime real estate.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L84_Q2",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[Microplastics Research] Scientists studying ocean pollution have increasingly turned their attention to microplastics, tiny fragments smaller than five millimeters that result from the breakdown of larger plastic debris. These particles have been found not only in seawater but in table salt, drinking water, and even human blood, though researchers are still working to fully understand the long-term health effects of this widespread exposure. Some studies suggest the particles may cause inflammation, but scientists caution that far more research is needed before drawing firm conclusions.",
-            "question": "What do scientists say about the health effects of microplastics?",
-            "options": [
-                "They have proven microplastics are completely harmless",
-                "They have confirmed severe health effects for everyone",
-                "They are still working to fully understand the long-term effects",
-                "They have stopped researching the topic entirely"
-            ],
-            "correctAnswer": "They are still working to fully understand the long-term effects",
-            "correctAnswerIndex": 2,
-            "hint": "The scientists' current position is stated in the middle of the passage.",
-            "explanation": "The passage says researchers are still working to understand the long-term effects, and more research is needed.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L84_Q3",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[The Return of Vinyl Records] Despite the convenience of streaming services offering nearly unlimited music at the touch of a button, vinyl record sales have grown for over a decade, appealing especially to listeners who value the ritual of physically selecting and playing an album from start to finish. Industry analysts note that many buyers do not actually own a record player at all, suggesting that for some, vinyl functions more as a collectible object of appreciation for an artist than as a primary way of listening to music.",
-            "question": "What do industry analysts suggest about some vinyl buyers?",
-            "options": [
-                "They only buy vinyl to resell it later",
-                "Vinyl functions more as a collectible than a way to listen",
-                "They prefer vinyl's sound quality above all else",
-                "They no longer use streaming services at all"
-            ],
-            "correctAnswer": "Vinyl functions more as a collectible than a way to listen",
-            "correctAnswerIndex": 1,
-            "hint": "The analysts' observation is explained in the last sentence.",
-            "explanation": "The passage says analysts believe some buyers value vinyl as a collectible rather than as their main way of listening.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L85_Q1",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[A Shift Toward Skills-Based Hiring] An increasing number of employers are removing university degree requirements from job postings, choosing instead to evaluate candidates through skills assessments and practical work samples. Proponents argue this approach widens the talent pool by including capable candidates who gained expertise through non-traditional paths, such as self-study or vocational training. Some hiring managers admit the transition has required rethinking long-standing habits, since degree requirements had often been used as a quick, if imperfect, filter for narrowing large applicant pools.",
-            "question": "Why had degree requirements often been used, according to the passage?",
-            "options": [
-                "Because most jobs legally require a degree",
-                "Because they guarantee the best candidates",
-                "Because skills assessments are more expensive",
-                "As a quick, if imperfect, filter for narrowing applicant pools"
-            ],
-            "correctAnswer": "As a quick, if imperfect, filter for narrowing applicant pools",
-            "correctAnswerIndex": 3,
-            "hint": "The reason is explained in the last sentence.",
-            "explanation": "The passage says degree requirements were often used as a quick, imperfect filter for narrowing large applicant pools.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L85_Q2",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[Noise Ordinances and Outdoor Dining] When cities expanded outdoor dining permits during a period of reduced indoor capacity, many restaurants began hosting live music on patios that had previously been silent after dark. As the arrangement became permanent in some neighborhoods, longtime residents living above these restaurants started reporting sleep disruption to local officials, creating tension between business owners eager to maintain the new revenue stream and residents seeking a return to quieter evenings.",
-            "question": "What tension developed as outdoor dining became permanent?",
-            "options": [
-                "Between restaurants competing for the same customers",
-                "Between city officials over permit costs",
-                "Between diners over table availability",
-                "Between business owners and residents over noise"
-            ],
-            "correctAnswer": "Between business owners and residents over noise",
-            "correctAnswerIndex": 3,
-            "hint": "The specific tension is described in the last sentence.",
-            "explanation": "The passage describes a tension between business owners wanting revenue and residents wanting quieter evenings.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L85_Q3",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[A Look at Corporate Sabbaticals] A small but growing number of companies now offer long-tenured employees a paid sabbatical, typically four to eight weeks away from work after five or more years of service, distinct from ordinary vacation time. Employees who return from a sabbatical often describe renewed creativity and a clearer sense of priorities, benefits that human resources departments increasingly cite when justifying the program's cost to skeptical executives.",
-            "question": "What do HR departments cite to justify the cost of sabbaticals?",
-            "options": [
-                "Renewed creativity and clearer priorities in returning employees",
-                "A guaranteed increase in company profits",
-                "A reduction in employee salaries",
-                "A shorter average work week"
-            ],
-            "correctAnswer": "Renewed creativity and clearer priorities in returning employees",
-            "correctAnswerIndex": 0,
-            "hint": "The justification is described in the last sentence.",
-            "explanation": "The passage says HR departments cite employees' renewed creativity and clearer priorities to justify the program.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L86_Q1",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[The Psychology of Choice Overload] Psychologists studying decision-making have found that presenting consumers with too many options can paradoxically make them less likely to purchase anything at all, a phenomenon sometimes called choice overload. In one well-known study, a table offering a smaller selection of jam varieties generated significantly more sales than a table offering many more options, even though the larger display initially attracted more browsers. Researchers suggest that the mental effort of comparing numerous similar choices can leave shoppers feeling overwhelmed rather than satisfied.",
-            "question": "What did the jam study find about the smaller selection table?",
-            "options": [
-                "It generated significantly more sales than the larger display",
-                "It attracted far fewer browsers overall",
-                "It generated exactly the same sales",
-                "It was removed due to low interest"
-            ],
-            "correctAnswer": "It generated significantly more sales than the larger display",
-            "correctAnswerIndex": 0,
-            "hint": "The study's result is described in the middle of the passage.",
-            "explanation": "The passage says the smaller selection generated significantly more sales, despite attracting fewer initial browsers.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L86_Q2",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[A Rise in Multigenerational Vacations] Travel agencies report growing demand for trips that accommodate grandparents, parents, and children traveling together, often called multigenerational vacations. Planning these trips presents unique challenges, since itineraries must balance activities suitable for young children with the pace and comfort needs of older relatives, a balance that has led some resorts to redesign their offerings entirely around flexible, mixed-age scheduling.",
-            "question": "What challenge do multigenerational vacations present for planners?",
-            "options": [
-                "Finding destinations that allow children at all",
-                "Balancing activities for young children with older relatives' needs",
-                "Reducing the total cost of the trip",
-                "Booking flights for large groups"
-            ],
-            "correctAnswer": "Balancing activities for young children with older relatives' needs",
-            "correctAnswerIndex": 1,
-            "hint": "The challenge is explained in the second sentence.",
-            "explanation": "The passage says the challenge is balancing activities and pace for both young children and older relatives.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L86_Q3",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[A Debate Over Screen Time Guidelines] Pediatric guidelines on children's screen time have shifted in recent years, moving away from strict hourly limits toward a greater focus on the quality and context of screen use. Under this newer approach, a video call with a distant grandparent is treated very differently from passive video watching, even though both technically count as screen time. Some parents find the updated guidance more practical, while others say it offers less clear direction than a simple time limit did.",
-            "question": "How does the newer guidance treat a video call with a grandparent?",
-            "options": [
-                "Exactly the same as passive watching",
-                "Differently from passive video watching",
-                "As entirely forbidden for young children",
-                "As requiring parental permission each time"
-            ],
-            "correctAnswer": "Differently from passive video watching",
-            "correctAnswerIndex": 1,
-            "hint": "The comparison is made in the middle of the passage.",
-            "explanation": "The passage says the newer approach treats a video call with a grandparent differently from passive video watching.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L87_Q1",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[Corporate Apology Strategies] Communication researchers who study corporate crisis response have found that apologies acknowledging specific harm caused, rather than vague statements of regret, are far more likely to rebuild public trust after a company mistake. A statement such as 'we understand this delayed your shipment and caused real inconvenience' tends to be received better than a generic 'we apologize for any inconvenience,' since the specific version signals that the company genuinely understands what went wrong.",
-            "question": "Why do specific apologies tend to be received better, according to researchers?",
-            "options": [
-                "They are legally required after a mistake",
-                "They are always shorter than vague apologies",
-                "They guarantee a full refund to customers",
-                "They signal the company genuinely understands what went wrong"
-            ],
-            "correctAnswer": "They signal the company genuinely understands what went wrong",
-            "correctAnswerIndex": 3,
-            "hint": "The reason is explained in the last sentence.",
-            "explanation": "The passage says specific apologies work better because they signal genuine understanding of what went wrong.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L87_Q2",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[A Look at Urban Wildlife Adaptation] As cities expand into what was once wilderness, researchers have documented surprising behavioral changes in urban wildlife, from foxes learning to open latched garbage bins to birds altering their songs to be heard over traffic noise. Some scientists view these adaptations optimistically, as evidence of nature's flexibility, while others caution that adaptation to city life does not mean these species are thriving, only that they are managing to survive in a changed environment.",
-            "question": "What caution do some scientists raise about urban wildlife adaptation?",
-            "options": [
-                "Urban animals are becoming extinct rapidly",
-                "Cities should stop expanding entirely",
-                "Adapting to survive is not the same as thriving",
-                "Wildlife adaptation is always harmful"
-            ],
-            "correctAnswer": "Adapting to survive is not the same as thriving",
-            "correctAnswerIndex": 2,
-            "hint": "The caution is explained in the last sentence.",
-            "explanation": "The passage says some scientists caution that surviving in cities does not necessarily mean these species are thriving.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L87_Q3",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[A Debate Over Homework Load] A district-wide review of homework policies found wide variation between schools, with some assigning over two hours of homework nightly for middle school students while others assigned almost none. The review's authors did not find a clear connection between homework quantity and academic performance, leading several schools to adopt a more standardized policy focused on homework quality rather than sheer volume.",
-            "question": "What did the review's authors find regarding homework quantity?",
-            "options": [
-                "A strong link between more homework and better grades",
-                "Proof that homework should be eliminated entirely",
-                "No clear connection between quantity and academic performance",
-                "That all schools already had identical policies"
-            ],
-            "correctAnswer": "No clear connection between quantity and academic performance",
-            "correctAnswerIndex": 2,
-            "hint": "The authors' finding is described in the second sentence.",
-            "explanation": "The passage says the review found no clear connection between how much homework was assigned and academic performance.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L88_Q1",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[A Look at Deceptive Design in Apps] Consumer advocates have raised concerns about 'dark patterns,' interface designs deliberately built to make certain actions, such as cancelling a subscription, far more difficult to complete than signing up in the first place. A cancellation button buried several menus deep, for instance, is not simply poor design but, critics argue, a deliberate strategy to discourage customers from leaving. Some regulators have begun requiring that cancelling a service be exactly as simple as subscribing to it.",
-            "question": "What do critics argue about deeply buried cancellation buttons?",
-            "options": [
-                "They are a deliberate strategy to discourage customers from leaving",
-                "They are simply the result of careless design",
-                "They are required by consumer protection law",
-                "They only appear in free versions of apps"
-            ],
-            "correctAnswer": "They are a deliberate strategy to discourage customers from leaving",
-            "correctAnswerIndex": 0,
-            "hint": "The critics' view is explained in the middle of the passage.",
-            "explanation": "The passage says critics view buried cancellation buttons as a deliberate strategy, not just poor design.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L88_Q2",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[A Rise in Silent Book Clubs] Unlike traditional book clubs built around a single shared title and group discussion, silent book clubs simply gather people in the same space to read whatever book they have brought, with little to no discussion required. Organizers say the format appeals particularly to introverts and busy professionals who want the social benefit of reading alongside others without the pressure of finishing an assigned book on a deadline.",
-            "question": "Why does the silent book club format appeal to some people, according to organizers?",
-            "options": [
-                "It requires everyone to read the same book",
-                "It focuses mainly on group discussion",
-                "It offers social benefits without the pressure of a deadline",
-                "It only allows fiction to be read"
-            ],
-            "correctAnswer": "It offers social benefits without the pressure of a deadline",
-            "correctAnswerIndex": 2,
-            "hint": "The appeal is explained in the last sentence.",
-            "explanation": "The passage says the format appeals to people who want social reading without deadline pressure.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L88_Q3",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[A Look at Buy Nothing Groups] Local 'buy nothing' groups, typically organized through neighborhood social media pages, allow members to give away unwanted items for free rather than selling or discarding them, with everything from furniture to leftover paint changing hands. Members often describe an unexpected side effect: beyond reducing waste, the exchanges frequently spark conversations between neighbors who might otherwise never have spoken to each other.",
-            "question": "What unexpected side effect do members often describe?",
-            "options": [
-                "A sharp rise in neighborhood crime",
-                "A decrease in local shopping",
-                "The exchanges spark conversations between neighbors",
-                "A requirement to join in person"
-            ],
-            "correctAnswer": "The exchanges spark conversations between neighbors",
-            "correctAnswerIndex": 2,
-            "hint": "The side effect is explained in the last sentence.",
-            "explanation": "The passage says members describe the unexpected side effect of exchanges sparking conversations between neighbors.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L89_Q1",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[A Debate Over AI Customer Service] As companies increasingly deploy AI chatbots for customer service, satisfaction surveys reveal a consistent pattern: customers report reasonable satisfaction with chatbots for simple questions, such as checking an order status, but sharp frustration when the same bots are used for complex or emotionally sensitive issues, like a billing dispute. Companies that offer a clear, immediate option to reach a human representative for complicated issues tend to score better overall, even when the bot itself handles the majority of routine interactions.",
-            "question": "Which companies tend to score better on satisfaction, according to the passage?",
-            "options": [
-                "Those offering a clear option to reach a human for complex issues",
-                "Those that use chatbots exclusively for all issues",
-                "Those that removed chatbots completely",
-                "Those that charge extra for human support"
-            ],
-            "correctAnswer": "Those offering a clear option to reach a human for complex issues",
-            "correctAnswerIndex": 0,
-            "hint": "The higher-scoring companies are described in the last sentence.",
-            "explanation": "The passage says companies offering an easy path to a human representative for complex issues score better overall.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L89_Q2",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[A Look at Community Solar Programs] Community solar programs allow residents who cannot install panels on their own roof, whether because they rent their home or live in an apartment building, to still benefit from solar energy by subscribing to a share of a larger, shared solar installation elsewhere. Subscribers typically see a modest reduction on their monthly electricity bill, proportional to the size of the share they purchased, without any of the installation or maintenance responsibilities that come with owning panels directly.",
-            "question": "Who is community solar particularly designed to help, according to the passage?",
-            "options": [
-                "Only homeowners with large properties",
-                "Residents who cannot install panels on their own roof",
-                "People who already own solar panels",
-                "Businesses seeking tax deductions"
-            ],
-            "correctAnswer": "Residents who cannot install panels on their own roof",
-            "correctAnswerIndex": 1,
-            "hint": "The intended group is named in the first sentence.",
-            "explanation": "The passage says community solar helps residents who cannot install their own panels, such as renters or apartment dwellers.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L89_Q3",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[A Look at Micro-Retirement] Rather than working continuously for decades before a single retirement at the end of a career, a growing number of professionals are taking extended breaks, sometimes called micro-retirements, lasting several months at various points throughout their working lives. Advocates argue that spreading rest across a career, rather than saving it all for the end, allows people to enjoy travel and personal projects while still physically able to do so, though critics note the approach requires significant financial planning and is not realistic for everyone.",
-            "question": "What do advocates of micro-retirement argue is its main benefit?",
-            "options": [
-                "It guarantees a higher final retirement income",
-                "It allows people to enjoy travel while still physically able",
-                "It eliminates the need for any savings",
-                "It shortens the total length of a career"
-            ],
-            "correctAnswer": "It allows people to enjoy travel while still physically able",
-            "correctAnswerIndex": 1,
-            "hint": "The advocates' argument is explained in the middle of the passage.",
-            "explanation": "The passage says advocates believe spreading rest throughout a career lets people enjoy activities while still physically able.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L90_Q1",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[A Look at Algorithmic Playlists and Music Discovery] Streaming platforms increasingly rely on algorithmic playlists to introduce listeners to new music, a shift that has changed how many artists gain an audience. While the system has helped some previously unknown musicians reach millions of listeners overnight, critics argue it also tends to favor songs with an immediately catchy opening, since algorithms often prioritize whether a listener skips a track within the first few seconds, potentially discouraging artists from writing music that builds more gradually.",
-            "question": "What concern do critics raise about algorithmic playlists?",
-            "options": [
-                "They may discourage music that builds more gradually",
-                "They have made all new music impossible to discover",
-                "They only recommend songs from major record labels",
-                "They have eliminated the need for musicians entirely"
-            ],
-            "correctAnswer": "They may discourage music that builds more gradually",
-            "correctAnswerIndex": 0,
-            "hint": "The critics' concern is explained in the last sentence.",
-            "explanation": "The passage says critics worry the emphasis on catchy openings may discourage artists from writing gradually building music.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L90_Q2",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[A Debate Over Universal Design] Universal design refers to creating products and spaces usable by the widest possible range of people from the outset, rather than adding accommodations for disability as an afterthought. A curb cut originally intended for wheelchair users, for example, also benefits parents pushing strollers and travelers pulling luggage, illustrating how designing for accessibility often improves usability for everyone, not just the group it was originally intended for.",
-            "question": "What does the curb cut example illustrate, according to the passage?",
-            "options": [
-                "Accessibility features are rarely used by anyone else",
-                "Curb cuts were designed mainly for parents",
-                "Designing for accessibility often improves usability for everyone",
-                "Universal design increases construction costs significantly"
-            ],
-            "correctAnswer": "Designing for accessibility often improves usability for everyone",
-            "correctAnswerIndex": 2,
-            "hint": "The lesson from the example is stated in the last sentence.",
-            "explanation": "The passage says the curb cut example shows how designing for accessibility benefits everyone, not just the original group.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L90_Q3",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[A Look at Corporate Volunteering Programs] Many companies now offer employees a set number of paid days each year specifically for volunteering with a charity of their choice, a benefit human resources departments say improves both morale and public perception of the company. Employees who participate frequently report a stronger sense of connection to their coworkers, particularly when volunteering as a team rather than individually, since shared experiences outside a typical office setting tend to build relationships that carry back into daily work.",
-            "question": "When do employees most often report a stronger sense of connection?",
-            "options": [
-                "When volunteering is mandatory for everyone",
-                "When volunteering replaces their regular vacation days",
-                "When volunteering happens only once a year",
-                "When volunteering as a team rather than individually"
-            ],
-            "correctAnswer": "When volunteering as a team rather than individually",
-            "correctAnswerIndex": 3,
-            "hint": "The specific condition is described in the last sentence.",
-            "explanation": "The passage says employees report stronger connections particularly when volunteering as a team rather than alone.",
-            "passageWordCount": 100
-        }
-    ]
+  "gameType": "readAndAnswer",
+  "batchIndex": 9,
+  "levels": "81-90",
+  "quests": [
+    {
+      "id": "RDG_READANDANSWER_L81_Q1",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[A Community Recycling Program] The city's new recycling program has diverted nearly forty percent of household waste from the landfill in its first year, according to a report released this week. Officials credit clearer sorting instructions and weekly pickup reminders sent by text message. A second report on cost savings is expected later this year.",
+      "question": "Which of the following is NOT supported by the passage?",
+      "options": [
+        "The program has diverted nearly forty percent of waste",
+        "Cost savings from the program have already been confirmed",
+        "Text reminders were part of the program's approach",
+        "A cost report is expected later this year"
+      ],
+      "correctAnswer": "Cost savings from the program have already been confirmed",
+      "correctAnswerIndex": 1,
+      "hint": "Check each option against the passage carefully; one detail describes something still to come, not something already confirmed.",
+      "explanation": "The passage says a cost savings report is still expected, so cost savings have not yet been confirmed.",
+      "passageWordCount": 55
+    },
+    {
+      "id": "RDG_READANDANSWER_L81_Q2",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[A Community Recycling Program] The city's new recycling program has diverted nearly forty percent of household waste from the landfill in its first year, according to a report released this week. Officials credit clearer sorting instructions and weekly pickup reminders sent by text message. A second report on cost savings is expected later this year.",
+      "question": "What percentage of waste did the program divert in its first year?",
+      "options": [
+        "Nearly forty percent",
+        "Nearly twenty percent",
+        "Nearly sixty percent",
+        "Exactly fifty percent"
+      ],
+      "correctAnswer": "Nearly forty percent",
+      "correctAnswerIndex": 0,
+      "hint": "The percentage is given in the first sentence.",
+      "explanation": "The passage says the program diverted nearly forty percent of household waste.",
+      "passageWordCount": 55
+    },
+    {
+      "id": "RDG_READANDANSWER_L81_Q3",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[A Community Recycling Program] The city's new recycling program has diverted nearly forty percent of household waste from the landfill in its first year, according to a report released this week. Officials credit clearer sorting instructions and weekly pickup reminders sent by text message. A second report on cost savings is expected later this year.",
+      "question": "What two things do officials credit for the program's success?",
+      "options": [
+        "Lower collection fees and brand new trucks",
+        "New landfill regulations and higher fines",
+        "Clearer sorting instructions and text reminders",
+        "A public awareness campaign and more volunteers"
+      ],
+      "correctAnswer": "Clearer sorting instructions and text reminders",
+      "correctAnswerIndex": 2,
+      "hint": "The two credited factors are listed together in the middle of the passage.",
+      "explanation": "The passage credits clearer sorting instructions and text pickup reminders.",
+      "passageWordCount": 55
+    },
+    {
+      "id": "RDG_READANDANSWER_L82_Q1",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[A Skeptical Review of a New App] The new budgeting app promises to simplify saving money with automatic transfers and spending alerts, but after a month of testing, I found the alerts arrived too late to actually prevent overspending. The interface is attractive, though it does not make up for the delayed notifications.",
+      "question": "What is the reviewer's overall attitude toward the app?",
+      "options": [
+        "Entirely negative, no positive comments",
+        "Completely satisfied overall",
+        "Neutral, with no clear opinion at all",
+        "Mostly critical, despite one positive note"
+      ],
+      "correctAnswer": "Mostly critical, despite one positive note",
+      "correctAnswerIndex": 3,
+      "hint": "Weigh the criticism about delayed alerts against the single compliment about the interface.",
+      "explanation": "The reviewer raises a significant problem and only briefly praises the design, showing a mostly critical attitude.",
+      "passageWordCount": 53
+    },
+    {
+      "id": "RDG_READANDANSWER_L82_Q2",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[A Skeptical Review of a New App] The new budgeting app promises to simplify saving money with automatic transfers and spending alerts, but after a month of testing, I found the alerts arrived too late to actually prevent overspending. The interface is attractive, though it does not make up for the delayed notifications.",
+      "question": "What specific problem did the reviewer find with the app?",
+      "options": [
+        "The app crashed rather frequently",
+        "The automatic transfers often failed",
+        "The spending alerts arrived too late",
+        "The interface was somewhat confusing"
+      ],
+      "correctAnswer": "The spending alerts arrived too late",
+      "correctAnswerIndex": 2,
+      "hint": "The specific complaint is described in the middle of the passage.",
+      "explanation": "The passage says the alerts arrived too late to prevent overspending.",
+      "passageWordCount": 53
+    },
+    {
+      "id": "RDG_READANDANSWER_L82_Q3",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[A Skeptical Review of a New App] The new budgeting app promises to simplify saving money with automatic transfers and spending alerts, but after a month of testing, I found the alerts arrived too late to actually prevent overspending. The interface is attractive, though it does not make up for the delayed notifications.",
+      "question": "What positive feature does the reviewer mention?",
+      "options": [
+        "The alerts are fast",
+        "The app is free",
+        "The transfers are automatic and reliable",
+        "The interface is attractive"
+      ],
+      "correctAnswer": "The interface is attractive",
+      "correctAnswerIndex": 3,
+      "hint": "The one compliment appears near the end of the passage.",
+      "explanation": "The passage says the interface is attractive, even though it does not outweigh the flaw.",
+      "passageWordCount": 53
+    },
+    {
+      "id": "RDG_READANDANSWER_L83_Q1",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[Two Approaches to Studying] Priyanka studies in short, frequent sessions throughout the week, believing that spreading the material out helps her remember it longer. Her roommate prefers one long study session the night before an exam, arguing that the pressure helps her focus. Both have passed their classes with similar grades so far.",
+      "question": "How does the passage relate the two studying approaches to their outcomes?",
+      "options": [
+        "Priyanka's method produced clearly better grades",
+        "Both approaches led to similar results so far",
+        "Her roommate's method has clearly failed",
+        "Neither method produced any passing grades"
+      ],
+      "correctAnswer": "Both approaches led to similar results so far",
+      "correctAnswerIndex": 1,
+      "hint": "Look at the final sentence, which connects both methods to a shared outcome.",
+      "explanation": "The passage says both students have passed with similar grades despite using different methods.",
+      "passageWordCount": 53
+    },
+    {
+      "id": "RDG_READANDANSWER_L83_Q2",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[Two Approaches to Studying] Priyanka studies in short, frequent sessions throughout the week, believing that spreading the material out helps her remember it longer. Her roommate prefers one long study session the night before an exam, arguing that the pressure helps her focus. Both have passed their classes with similar grades so far.",
+      "question": "Why does Priyanka prefer short, frequent study sessions?",
+      "options": [
+        "It helps her remember material longer",
+        "She has very little free time",
+        "Her roommate suggested it to her",
+        "She finds long sessions rather boring"
+      ],
+      "correctAnswer": "It helps her remember material longer",
+      "correctAnswerIndex": 0,
+      "hint": "Her reasoning is given right after her method is described.",
+      "explanation": "The passage says Priyanka believes spreading study out helps her remember material longer.",
+      "passageWordCount": 53
+    },
+    {
+      "id": "RDG_READANDANSWER_L83_Q3",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[Two Approaches to Studying] Priyanka studies in short, frequent sessions throughout the week, believing that spreading the material out helps her remember it longer. Her roommate prefers one long study session the night before an exam, arguing that the pressure helps her focus. Both have passed their classes with similar grades so far.",
+      "question": "What does the roommate believe helps her focus?",
+      "options": [
+        "Studying in a quiet library",
+        "Taking many frequent breaks",
+        "The pressure of one long session",
+        "Studying together with a group"
+      ],
+      "correctAnswer": "The pressure of one long session",
+      "correctAnswerIndex": 2,
+      "hint": "The roommate's reasoning is given in the second sentence.",
+      "explanation": "The passage says the roommate believes the pressure of one long session helps her focus.",
+      "passageWordCount": 53
+    },
+    {
+      "id": "RDG_READANDANSWER_L84_Q1",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[Opening a Small Bakery] Naomi spent two years testing recipes in her home kitchen before she felt ready to open a bakery. She then spent six months searching for an affordable location, finally signing a lease last spring. The bakery is scheduled to open its doors this coming autumn.",
+      "question": "What did Naomi do first in this timeline?",
+      "options": [
+        "Signed the lease quickly",
+        "Tested recipes in her home kitchen",
+        "Opened her own bakery",
+        "Searched for an affordable location"
+      ],
+      "correctAnswer": "Tested recipes in her home kitchen",
+      "correctAnswerIndex": 1,
+      "hint": "The earliest activity is described at the very beginning of the passage.",
+      "explanation": "The passage says she spent two years testing recipes before anything else.",
+      "passageWordCount": 49
+    },
+    {
+      "id": "RDG_READANDANSWER_L84_Q2",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[Opening a Small Bakery] Naomi spent two years testing recipes in her home kitchen before she felt ready to open a bakery. She then spent six months searching for an affordable location, finally signing a lease last spring. The bakery is scheduled to open its doors this coming autumn.",
+      "question": "When did Naomi sign the lease?",
+      "options": [
+        "Last spring",
+        "Two years ago",
+        "This autumn",
+        "Six months ago"
+      ],
+      "correctAnswer": "Last spring",
+      "correctAnswerIndex": 0,
+      "hint": "The signing date is stated in the middle of the passage.",
+      "explanation": "The passage says she signed the lease last spring.",
+      "passageWordCount": 49
+    },
+    {
+      "id": "RDG_READANDANSWER_L84_Q3",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[Opening a Small Bakery] Naomi spent two years testing recipes in her home kitchen before she felt ready to open a bakery. She then spent six months searching for an affordable location, finally signing a lease last spring. The bakery is scheduled to open its doors this coming autumn.",
+      "question": "When is the bakery scheduled to open?",
+      "options": [
+        "Last spring already",
+        "Next coming summer",
+        "In about two years",
+        "This coming autumn"
+      ],
+      "correctAnswer": "This coming autumn",
+      "correctAnswerIndex": 3,
+      "hint": "The opening date is given at the very end of the passage.",
+      "explanation": "The passage says the bakery is scheduled to open this coming autumn.",
+      "passageWordCount": 49
+    },
+    {
+      "id": "RDG_READANDANSWER_L85_Q1",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[An Overwhelmed Volunteer Program] The animal shelter's volunteer program became so popular that coordinators struggled to manage the surge of new applicants. To handle the overwhelming demand, they introduced an online scheduling system that let volunteers sign up for shifts without contacting staff directly.",
+      "question": "What does \"surge\" most likely mean in this passage?",
+      "options": [
+        "A sudden large increase",
+        "A sudden sharp decrease",
+        "A steady, small number",
+        "A complete and total stop"
+      ],
+      "correctAnswer": "A sudden large increase",
+      "correctAnswerIndex": 0,
+      "hint": "Consider what would cause coordinators to struggle and require a new system.",
+      "explanation": "Since coordinators struggled and needed a new system, 'surge' suggests a sudden large increase in applicants.",
+      "passageWordCount": 44
+    },
+    {
+      "id": "RDG_READANDANSWER_L85_Q2",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[An Overwhelmed Volunteer Program] The animal shelter's volunteer program became so popular that coordinators struggled to manage the surge of new applicants. To handle the overwhelming demand, they introduced an online scheduling system that let volunteers sign up for shifts without contacting staff directly.",
+      "question": "What solution did the shelter introduce?",
+      "options": [
+        "A waiting list",
+        "An online scheduling system",
+        "A volunteer application fee",
+        "A limit on new volunteers"
+      ],
+      "correctAnswer": "An online scheduling system",
+      "correctAnswerIndex": 1,
+      "hint": "The specific solution is named in the second sentence.",
+      "explanation": "The passage says they introduced an online scheduling system.",
+      "passageWordCount": 44
+    },
+    {
+      "id": "RDG_READANDANSWER_L85_Q3",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[An Overwhelmed Volunteer Program] The animal shelter's volunteer program became so popular that coordinators struggled to manage the surge of new applicants. To handle the overwhelming demand, they introduced an online scheduling system that let volunteers sign up for shifts without contacting staff directly.",
+      "question": "What can volunteers now do without contacting staff directly?",
+      "options": [
+        "Apply to volunteer",
+        "Cancel their membership",
+        "Sign up for shifts",
+        "Request a schedule change by phone"
+      ],
+      "correctAnswer": "Sign up for shifts",
+      "correctAnswerIndex": 2,
+      "hint": "The specific action volunteers can now take is described at the end.",
+      "explanation": "The passage says volunteers can sign up for shifts without contacting staff directly.",
+      "passageWordCount": 44
+    },
+    {
+      "id": "RDG_READANDANSWER_L86_Q1",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[The Changing Factory Floor] Twenty years ago, most tasks on this factory floor required at least three workers per station. Today, automated machines handle much of the repetitive work, and a single technician can now oversee several stations at once, mainly checking for errors rather than performing the tasks by hand.",
+      "question": "How has the technician's role changed over time, according to the passage?",
+      "options": [
+        "From checking errors to hands-on work",
+        "The role has not changed at all",
+        "Technicians were fully replaced by machines",
+        "From hands-on tasks to mainly checking errors"
+      ],
+      "correctAnswer": "From hands-on tasks to mainly checking errors",
+      "correctAnswerIndex": 3,
+      "hint": "Compare what workers did twenty years ago with what technicians do today.",
+      "explanation": "The passage contrasts hands-on work in the past with today's error-checking role.",
+      "passageWordCount": 51
+    },
+    {
+      "id": "RDG_READANDANSWER_L86_Q2",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[The Changing Factory Floor] Twenty years ago, most tasks on this factory floor required at least three workers per station. Today, automated machines handle much of the repetitive work, and a single technician can now oversee several stations at once, mainly checking for errors rather than performing the tasks by hand.",
+      "question": "How many workers did each station typically require twenty years ago?",
+      "options": [
+        "At least five",
+        "Exactly one",
+        "At least two",
+        "At least three"
+      ],
+      "correctAnswer": "At least three",
+      "correctAnswerIndex": 3,
+      "hint": "The number of workers per station in the past is given in the first sentence.",
+      "explanation": "The passage says stations required at least three workers per station twenty years ago.",
+      "passageWordCount": 51
+    },
+    {
+      "id": "RDG_READANDANSWER_L86_Q3",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[The Changing Factory Floor] Twenty years ago, most tasks on this factory floor required at least three workers per station. Today, automated machines handle much of the repetitive work, and a single technician can now oversee several stations at once, mainly checking for errors rather than performing the tasks by hand.",
+      "question": "What does a single technician oversee today?",
+      "options": [
+        "Only one station",
+        "Several stations at once",
+        "The entire factory alone",
+        "No stations, only machines"
+      ],
+      "correctAnswer": "Several stations at once",
+      "correctAnswerIndex": 1,
+      "hint": "This detail is stated in the middle of the passage.",
+      "explanation": "The passage says a single technician can now oversee several stations at once.",
+      "passageWordCount": 51
+    },
+    {
+      "id": "RDG_READANDANSWER_L87_Q1",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[A Delayed Flight's Ripple Effect] A mechanical issue grounded the first flight of the day at a small regional airport. Because that plane was scheduled to fly three more routes before evening, all three later flights were delayed by several hours, leaving many connecting passengers stranded overnight.",
+      "question": "What can be inferred about why so many later flights were affected?",
+      "options": [
+        "The same plane had three more routes that day",
+        "The airport had a total power outage",
+        "All planes there had mechanical problems",
+        "The airline canceled flights on purpose"
+      ],
+      "correctAnswer": "The same plane had three more routes that day",
+      "correctAnswerIndex": 0,
+      "hint": "Notice how the passage explains the plane's schedule for the rest of the day.",
+      "explanation": "Since the same plane was booked for three more routes, its delay caused a chain reaction affecting later flights.",
+      "passageWordCount": 47
+    },
+    {
+      "id": "RDG_READANDANSWER_L87_Q2",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[A Delayed Flight's Ripple Effect] A mechanical issue grounded the first flight of the day at a small regional airport. Because that plane was scheduled to fly three more routes before evening, all three later flights were delayed by several hours, leaving many connecting passengers stranded overnight.",
+      "question": "What happened to many connecting passengers as a result?",
+      "options": [
+        "They received a full refund immediately",
+        "They were rebooked on a different airline",
+        "They were stranded overnight",
+        "They reached their destinations on time"
+      ],
+      "correctAnswer": "They were stranded overnight",
+      "correctAnswerIndex": 2,
+      "hint": "The consequence for passengers is described at the end of the passage.",
+      "explanation": "The passage says many connecting passengers were left stranded overnight.",
+      "passageWordCount": 47
+    },
+    {
+      "id": "RDG_READANDANSWER_L87_Q3",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[A Delayed Flight's Ripple Effect] A mechanical issue grounded the first flight of the day at a small regional airport. Because that plane was scheduled to fly three more routes before evening, all three later flights were delayed by several hours, leaving many connecting passengers stranded overnight.",
+      "question": "What originally caused the disruption?",
+      "options": [
+        "A mechanical issue with the first flight",
+        "Poor weather conditions nearby that day",
+        "An ongoing regional staffing shortage",
+        "A serious airport security concern"
+      ],
+      "correctAnswer": "A mechanical issue with the first flight",
+      "correctAnswerIndex": 0,
+      "hint": "The root cause is named in the first sentence.",
+      "explanation": "The passage says a mechanical issue grounded the first flight of the day.",
+      "passageWordCount": 47
+    },
+    {
+      "id": "RDG_READANDANSWER_L88_Q1",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[A City's New Composting Rule] Beginning next January, all restaurants within city limits will be required to separate food waste for composting instead of throwing it away with regular trash. The rule follows a two-year pilot program that reduced landfill waste from participating restaurants by nearly a third. Restaurants that do not comply may face fines starting at two hundred dollars.",
+      "question": "What is the central point of this passage?",
+      "options": [
+        "Restaurants always had to compost food",
+        "A new composting requirement for restaurants",
+        "The pilot program was fully cancelled",
+        "Fines for restaurants were greatly reduced"
+      ],
+      "correctAnswer": "A new composting requirement for restaurants",
+      "correctAnswerIndex": 1,
+      "hint": "Focus on the main policy being announced, not the supporting details about the pilot or fines.",
+      "explanation": "The passage centers on the new composting requirement, with the pilot results and fines as supporting details.",
+      "passageWordCount": 61
+    },
+    {
+      "id": "RDG_READANDANSWER_L88_Q2",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[A City's New Composting Rule] Beginning next January, all restaurants within city limits will be required to separate food waste for composting instead of throwing it away with regular trash. The rule follows a two-year pilot program that reduced landfill waste from participating restaurants by nearly a third. Restaurants that do not comply may face fines starting at two hundred dollars.",
+      "question": "What did the two-year pilot program achieve?",
+      "options": [
+        "It doubled the number of restaurants in the city",
+        "It eliminated all restaurant waste completely",
+        "It increased fines for non-compliance",
+        "It reduced landfill waste by nearly a third"
+      ],
+      "correctAnswer": "It reduced landfill waste by nearly a third",
+      "correctAnswerIndex": 3,
+      "hint": "The pilot program's result is described in the middle of the passage.",
+      "explanation": "The passage says the pilot program reduced landfill waste by nearly a third.",
+      "passageWordCount": 61
+    },
+    {
+      "id": "RDG_READANDANSWER_L88_Q3",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[A City's New Composting Rule] Beginning next January, all restaurants within city limits will be required to separate food waste for composting instead of throwing it away with regular trash. The rule follows a two-year pilot program that reduced landfill waste from participating restaurants by nearly a third. Restaurants that do not comply may face fines starting at two hundred dollars.",
+      "question": "What is the starting fine for restaurants that do not comply?",
+      "options": [
+        "One hundred dollars",
+        "Five hundred dollars",
+        "Two hundred dollars",
+        "Fifty dollars"
+      ],
+      "correctAnswer": "Two hundred dollars",
+      "correctAnswerIndex": 2,
+      "hint": "The exact fine amount is given at the end of the passage.",
+      "explanation": "The passage says fines start at two hundred dollars.",
+      "passageWordCount": 61
+    },
+    {
+      "id": "RDG_READANDANSWER_L89_Q1",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[A Frugal Traveler] Rather than staying in hotels, Hiroshi prefers frugal travel, booking hostels and cooking his own meals whenever possible. On his last trip, he spent less in three weeks than most travelers spend in a single week at a resort.",
+      "question": "Based on the passage, what does \"frugal\" most likely describe?",
+      "options": [
+        "Spending freely with no real planning",
+        "Traveling only to costly destinations",
+        "Spending carefully, avoiding unneeded costs",
+        "Refusing to travel at all ever"
+      ],
+      "correctAnswer": "Spending carefully, avoiding unneeded costs",
+      "correctAnswerIndex": 2,
+      "hint": "Look at his choices, like hostels and cooking, and how much he spent compared to others.",
+      "explanation": "His budget-conscious choices and lower spending both point to 'frugal' meaning careful with money.",
+      "passageWordCount": 42
+    },
+    {
+      "id": "RDG_READANDANSWER_L89_Q2",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[A Frugal Traveler] Rather than staying in hotels, Hiroshi prefers frugal travel, booking hostels and cooking his own meals whenever possible. On his last trip, he spent less in three weeks than most travelers spend in a single week at a resort.",
+      "question": "What does Hiroshi book instead of hotels?",
+      "options": [
+        "Resorts",
+        "Hostels",
+        "Rental cars",
+        "Guided tours"
+      ],
+      "correctAnswer": "Hostels",
+      "correctAnswerIndex": 1,
+      "hint": "His accommodation choice is named in the first sentence.",
+      "explanation": "The passage says he books hostels instead of hotels.",
+      "passageWordCount": 42
+    },
+    {
+      "id": "RDG_READANDANSWER_L89_Q3",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[A Frugal Traveler] Rather than staying in hotels, Hiroshi prefers frugal travel, booking hostels and cooking his own meals whenever possible. On his last trip, he spent less in three weeks than most travelers spend in a single week at a resort.",
+      "question": "How does his three-week spending compare to a typical traveler's one-week resort spending?",
+      "options": [
+        "His three weeks cost less than their one week",
+        "His three weeks cost more than their one week",
+        "The amounts were exactly the same",
+        "The passage does not compare the amounts"
+      ],
+      "correctAnswer": "His three weeks cost less than their one week",
+      "correctAnswerIndex": 0,
+      "hint": "The comparison is made directly in the final sentence.",
+      "explanation": "The passage says he spent less in three weeks than typical travelers spend in one week.",
+      "passageWordCount": 42
+    },
+    {
+      "id": "RDG_READANDANSWER_L90_Q1",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[A Quiet Competitor] Unlike her teammates, who often talked about their training routines online, Anya rarely posted anything about her preparation before races. Coaches who worked with her said this was intentional, since she believed that talking too much about a goal could weaken her drive to actually achieve it.",
+      "question": "What does the passage suggest about why Anya stayed quiet about her training?",
+      "options": [
+        "Her whole coaching team banned online posts",
+        "She did not train as seriously as others",
+        "She had no access to social media at all",
+        "Discussing goals too much could weaken her drive"
+      ],
+      "correctAnswer": "Discussing goals too much could weaken her drive",
+      "correctAnswerIndex": 3,
+      "hint": "Focus on the reason given by coaches near the end of the passage.",
+      "explanation": "The passage explains that coaches said her silence was intentional, tied to her belief about weakening drive.",
+      "passageWordCount": 50
+    },
+    {
+      "id": "RDG_READANDANSWER_L90_Q2",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[A Quiet Competitor] Unlike her teammates, who often talked about their training routines online, Anya rarely posted anything about her preparation before races. Coaches who worked with her said this was intentional, since she believed that talking too much about a goal could weaken her drive to actually achieve it.",
+      "question": "How did Anya's behavior differ from her teammates'?",
+      "options": [
+        "She rarely posted, while they often did",
+        "She posted more than her teammates",
+        "She trained far less than her teammates",
+        "She refused to compete in any races"
+      ],
+      "correctAnswer": "She rarely posted, while they often did",
+      "correctAnswerIndex": 0,
+      "hint": "The contrast between Anya and her teammates is stated at the start of the passage.",
+      "explanation": "The passage contrasts Anya's silence online with her teammates' frequent posts.",
+      "passageWordCount": 50
+    },
+    {
+      "id": "RDG_READANDANSWER_L90_Q3",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[A Quiet Competitor] Unlike her teammates, who often talked about their training routines online, Anya rarely posted anything about her preparation before races. Coaches who worked with her said this was intentional, since she believed that talking too much about a goal could weaken her drive to actually achieve it.",
+      "question": "Who explained the reason behind Anya's behavior?",
+      "options": [
+        "Anya's own close teammates",
+        "Coaches who worked with her",
+        "A local sports journalist covering her",
+        "Anya's own immediate family"
+      ],
+      "correctAnswer": "Coaches who worked with her",
+      "correctAnswerIndex": 1,
+      "hint": "The source of the explanation is named in the middle of the passage.",
+      "explanation": "The passage says coaches who worked with her explained the reason.",
+      "passageWordCount": 50
+    }
+  ]
 }

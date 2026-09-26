@@ -1,577 +1,577 @@
 {
-    "gameType": "readAndAnswer",
-    "batchIndex": 11,
-    "levels": "101-110",
-    "quests": [
-        {
-            "id": "RDG_READANDANSWER_L101_Q1",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[Quantum Computing Basics] Unlike classical computers, which process information as a series of definite ones and zeros, quantum computers exploit a property called superposition, allowing a quantum bit, or qubit, to represent multiple states simultaneously until it is measured. This characteristic theoretically enables quantum machines to evaluate an enormous number of possibilities in parallel, making them particularly promising for certain problems, such as simulating molecular interactions in drug development, that would take a classical supercomputer an impractical amount of time to solve. Despite this promise, current quantum computers remain highly experimental, requiring extreme cooling and remaining prone to errors that researchers are still working to overcome before the technology becomes broadly practical.",
-            "question": "For what kind of problem does the passage say quantum computers show particular promise?",
-            "options": [
-                "Everyday word processing tasks",
-                "Simulating molecular interactions in drug development",
-                "Sending emails more quickly",
-                "Browsing the internet securely"
-            ],
-            "correctAnswer": "Simulating molecular interactions in drug development",
-            "correctAnswerIndex": 1,
-            "hint": "The specific example is given in the middle of the passage.",
-            "explanation": "The passage names simulating molecular interactions in drug development as a problem where quantum computers show particular promise.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L101_Q2",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[Antibiotic Resistance] When bacteria are repeatedly exposed to antibiotics, the small fraction that happen to carry a random genetic mutation offering some resistance are more likely to survive and reproduce, gradually making the drug less effective against future infections. This process, known as antibiotic resistance, has accelerated in recent decades partly due to overprescription and the widespread use of antibiotics in livestock farming. Public health officials warn that without more careful use of existing antibiotics and continued investment in developing new ones, common infections that are currently easily treatable could once again become dangerous.",
-            "question": "What do public health officials warn could happen without changes to antibiotic use?",
-            "options": [
-                "All bacteria will be eliminated completely",
-                "Antibiotics will become far cheaper to produce",
-                "Livestock farming will be banned entirely",
-                "Common, easily treatable infections could become dangerous again"
-            ],
-            "correctAnswer": "Common, easily treatable infections could become dangerous again",
-            "correctAnswerIndex": 3,
-            "hint": "The officials' warning is stated in the last sentence.",
-            "explanation": "The passage says officials warn that currently treatable infections could become dangerous again without more careful antibiotic use.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L101_Q3",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[The Four-Day Week: An Economic Angle] Beyond employee wellbeing, some economists argue that a shorter work week could address a subtler economic problem: in many white-collar jobs, work tends to expand to fill the time available, meaning a portion of a standard forty-hour week is often spent on low-value tasks rather than genuinely productive work. Proponents suggest that compressing the same responsibilities into four focused days can force organizations to eliminate unnecessary meetings and redundant processes, potentially maintaining output while using employee time more efficiently overall.",
-            "question": "What subtler problem do some economists say a shorter week could address?",
-            "options": [
-                "Work often expands to fill available time, including low-value tasks",
-                "Employees are paid too much for their work",
-                "Companies hire too many new employees",
-                "Meetings are always highly productive"
-            ],
-            "correctAnswer": "Work often expands to fill available time, including low-value tasks",
-            "correctAnswerIndex": 0,
-            "hint": "The subtler problem is explained in the first half of the passage.",
-            "explanation": "The passage explains that economists point to work expanding to fill available time, filling it with low-value tasks, as the deeper issue.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L102_Q1",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[Space Tourism] As private companies compete to make suborbital and orbital flights available to paying passengers, space tourism has moved from a distant concept to an active, if extremely expensive, industry, with tickets currently costing hundreds of thousands of dollars for just a few minutes of weightlessness. Critics argue that the significant carbon emissions produced by rocket launches sit uneasily alongside the industry's marketing, which often emphasizes a renewed appreciation for Earth's fragility that many astronauts report experiencing after seeing the planet from space.",
-            "question": "What tension do critics point to regarding the space tourism industry's marketing?",
-            "options": [
-                "Its ticket prices are too low for its costs",
-                "Its high carbon emissions versus its message about Earth's fragility",
-                "It has completely eliminated weightlessness effects",
-                "It no longer employs professional astronauts"
-            ],
-            "correctAnswer": "Its high carbon emissions versus its message about Earth's fragility",
-            "correctAnswerIndex": 1,
-            "hint": "The tension is described in the last sentence.",
-            "explanation": "The passage describes a tension between the industry's carbon emissions and its marketing about appreciating Earth's fragility.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L102_Q2",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[Carbon Capture Technology] Carbon capture technology aims to remove carbon dioxide directly from the air or from industrial emissions before it enters the atmosphere, storing it underground or repurposing it for industrial use. While pilot projects have demonstrated the technology works at a small scale, critics note that current capture facilities remove only a tiny fraction of global emissions and warn that heavy investment in carbon capture could inadvertently reduce pressure to cut emissions at their source in the first place.",
-            "question": "What concern do critics raise about heavy investment in carbon capture?",
-            "options": [
-                "It could reduce pressure to cut emissions at their source",
-                "It has proven completely ineffective at any scale",
-                "It is illegal in most industrial countries",
-                "It requires no government funding whatsoever"
-            ],
-            "correctAnswer": "It could reduce pressure to cut emissions at their source",
-            "correctAnswerIndex": 0,
-            "hint": "The critics' concern is explained in the last sentence.",
-            "explanation": "The passage says critics worry heavy investment in carbon capture could reduce pressure to address emissions at their source.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L102_Q3",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[Metacognition: Learning How to Learn] Educational researchers increasingly emphasize metacognition, or a student's awareness of their own thinking and learning processes, as a skill that can be explicitly taught rather than something students either possess naturally or lack. A student who has learned to recognize when they are merely re-reading a passage without genuinely understanding it, for instance, can shift to a more effective study strategy, such as summarizing the material in their own words or testing themselves without notes.",
-            "question": "What example does the passage give of applying metacognitive awareness?",
-            "options": [
-                "Shifting to summarizing material after noticing re-reading isn't working",
-                "Reading a passage as many times as possible",
-                "Avoiding the use of any study strategies",
-                "Memorizing a textbook word for word"
-            ],
-            "correctAnswer": "Shifting to summarizing material after noticing re-reading isn't working",
-            "correctAnswerIndex": 0,
-            "hint": "The specific example is given in the last sentence.",
-            "explanation": "The passage gives the example of a student shifting to summarizing or self-testing after recognizing that re-reading alone was ineffective.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L103_Q1",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[The Growth of Esports] What began as small local gaming tournaments has grown into a global esports industry, with major competitions now filling arenas and streaming to millions of viewers online, complete with professional teams, coaches, and sponsorship deals comparable to those in traditional sports. Universities in several countries have begun offering esports scholarships, a development that would have seemed implausible to most people only fifteen years earlier, reflecting how quickly perceptions of competitive gaming as a legitimate pursuit have shifted.",
-            "question": "What development does the passage highlight as reflecting a shift in perceptions of esports?",
-            "options": [
-                "The invention of the first video game",
-                "A decline in traditional sports viewership",
-                "The banning of esports in some countries",
-                "Universities offering esports scholarships"
-            ],
-            "correctAnswer": "Universities offering esports scholarships",
-            "correctAnswerIndex": 3,
-            "hint": "The specific development is named in the second sentence.",
-            "explanation": "The passage highlights university esports scholarships as evidence of how quickly perceptions have shifted.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L103_Q2",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[Participatory Democracy Platforms] Several city governments have launched digital platforms that allow residents to propose and vote on local policy ideas between formal elections, aiming to create more continuous civic engagement than the traditional model of voting once every few years. Early adopters report that while participation rates remain modest relative to the total population, the residents who do engage tend to be more diverse in age and background than those who typically attend in-person town hall meetings, which advocates see as a meaningful, if partial, improvement in representation.",
-            "question": "What have advocates found encouraging about who participates on these platforms?",
-            "options": [
-                "Nearly the entire city population participates",
-                "Only elected officials are permitted to vote",
-                "Participation has declined every year since launch",
-                "Participants are more diverse than typical town hall attendees"
-            ],
-            "correctAnswer": "Participants are more diverse than typical town hall attendees",
-            "correctAnswerIndex": 3,
-            "hint": "The encouraging finding is described in the last sentence.",
-            "explanation": "The passage says advocates find it encouraging that platform participants are more diverse than typical town hall attendees.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L103_Q3",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[The Chosen Family Concept] The term 'chosen family' describes close, family-like bonds formed intentionally between people who are not related by blood or marriage, often built through years of mutual support during significant life events. While the concept has long been especially meaningful within LGBTQ+ communities, where biological family relationships have not always been supportive, its use has broadened in recent years to describe close friendships more generally, particularly among people who live far from their biological relatives.",
-            "question": "How has the use of the term 'chosen family' changed in recent years, according to the passage?",
-            "options": [
-                "It has become exclusively a legal term",
-                "It has disappeared from common use",
-                "It has broadened to describe close friendships more generally",
-                "It now only refers to biological relatives"
-            ],
-            "correctAnswer": "It has broadened to describe close friendships more generally",
-            "correctAnswerIndex": 2,
-            "hint": "The change is described in the last sentence.",
-            "explanation": "The passage says the term's use has broadened to describe close friendships more generally in recent years.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L104_Q1",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[Lab-Grown Seafood] Companies developing lab-grown seafood cultivate animal cells in nutrient-rich tanks to produce fish tissue without requiring the animal to be caught or farmed conventionally, a process its developers argue could relieve pressure on overfished wild populations. The technology faces a steeper challenge with seafood than with lab-grown beef or chicken, however, since replicating the delicate texture of foods like flaky fish or tender shrimp has proven more technically difficult than replicating denser meat products.",
-            "question": "Why does lab-grown seafood face a steeper challenge than lab-grown beef?",
-            "options": [
-                "Replicating delicate textures like flaky fish is more difficult",
-                "Seafood cells cannot be grown in tanks at all",
-                "Consumers refuse to try any lab-grown products",
-                "Wild fish populations are no longer at risk"
-            ],
-            "correctAnswer": "Replicating delicate textures like flaky fish is more difficult",
-            "correctAnswerIndex": 0,
-            "hint": "The specific challenge is explained in the last sentence.",
-            "explanation": "The passage says lab-grown seafood is harder to develop because replicating delicate textures is more technically difficult than denser meats.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L104_Q2",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[Memory Consolidation During Sleep] Neuroscientists studying memory have found that the brain does not simply store new information as it is learned but continues to process and strengthen those memories during sleep, particularly during certain stages associated with vivid dreaming. This finding has practical implications for studying: students who sleep shortly after learning new material tend to retain it better than those who stay awake for many additional hours, suggesting that pulling an all-nighter immediately after cramming may undermine the very retention a student is hoping to achieve.",
-            "question": "What practical implication does the passage draw from this research?",
-            "options": [
-                "Students should avoid sleeping before an exam entirely",
-                "Dreaming has no connection to memory at all",
-                "Pulling an all-nighter after cramming may undermine retention",
-                "Studying is only effective during the daytime"
-            ],
-            "correctAnswer": "Pulling an all-nighter after cramming may undermine retention",
-            "correctAnswerIndex": 2,
-            "hint": "The implication is stated in the last sentence.",
-            "explanation": "The passage says the research suggests pulling an all-nighter right after cramming may actually undermine retention.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L104_Q3",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[Oral History Projects] Local historical societies increasingly prioritize recording oral history interviews with older community members, capturing firsthand accounts of events and daily life that were never formally documented in official records. Historians involved in these projects note that oral histories often reveal details official records omit entirely, such as how a community actually experienced a factory closing, rather than simply the economic statistics a government report might contain.",
-            "question": "What do oral histories often reveal that official records might not, according to the passage?",
-            "options": [
-                "The exact dates that events occurred",
-                "Only information already found in newspapers",
-                "Details unrelated to the community's history",
-                "How a community actually experienced an event, not just statistics"
-            ],
-            "correctAnswer": "How a community actually experienced an event, not just statistics",
-            "correctAnswerIndex": 3,
-            "hint": "The specific example is given in the last sentence.",
-            "explanation": "The passage gives the example of oral histories revealing lived experience, unlike a report's economic statistics alone.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L105_Q1",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[Subscription Fatigue] As more services shift from one-time purchases to recurring subscriptions, from software to streaming to even car features, consumers increasingly report a phenomenon researchers call 'subscription fatigue,' a growing reluctance to add new recurring charges regardless of a service's individual value. Surveys suggest this fatigue is prompting some consumers to actively cancel underused subscriptions rather than simply losing track of them, a shift that has forced several companies to redesign pricing models around simpler, one-time payment options in response.",
-            "question": "How are some companies responding to subscription fatigue, according to the passage?",
-            "options": [
-                "Redesigning pricing models around one-time payment options",
-                "Increasing the number of subscriptions offered",
-                "Ignoring the trend entirely",
-                "Requiring longer subscription commitments"
-            ],
-            "correctAnswer": "Redesigning pricing models around one-time payment options",
-            "correctAnswerIndex": 0,
-            "hint": "The companies' response is described in the last sentence.",
-            "explanation": "The passage says some companies are responding by redesigning pricing around simpler, one-time payment options.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L105_Q2",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[Imposter Syndrome] Imposter syndrome refers to the persistent feeling that one's accomplishments are due to luck rather than genuine ability, often accompanied by an underlying fear of eventually being exposed as a fraud despite consistent evidence of competence. Psychologists note that the phenomenon appears across a wide range of successful individuals, and rather than being a sign of low ability, it is sometimes more common among high achievers who hold themselves to particularly demanding, occasionally unrealistic, personal standards.",
-            "question": "What do psychologists note about who experiences imposter syndrome most, according to the passage?",
-            "options": [
-                "It only affects people with genuinely low ability",
-                "It is sometimes more common among high achievers with demanding standards",
-                "It has been found exclusively in new employees",
-                "It disappears once someone becomes successful"
-            ],
-            "correctAnswer": "It is sometimes more common among high achievers with demanding standards",
-            "correctAnswerIndex": 1,
-            "hint": "The observation about who is affected is in the last sentence.",
-            "explanation": "The passage says imposter syndrome is sometimes more common among high achievers who hold demanding personal standards.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L105_Q3",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[15-Minute Cities] Urban planners promoting the '15-minute city' concept envision neighborhoods designed so that residents can reach most daily needs, including work, groceries, healthcare, and schools, within a fifteen-minute walk or bike ride, reducing dependence on cars for routine errands. While supporters point to potential benefits for both traffic congestion and community connection, the concept has also become an unexpected target of online misinformation, with some conspiracy theories falsely claiming the idea is intended to restrict residents' movement rather than simply improve local access to daily services.",
-            "question": "What misinformation has the 15-minute city concept unexpectedly become a target of?",
-            "options": [
-                "Claims that it would eliminate all local businesses",
-                "Claims that no cities have ever tried it",
-                "False claims that it is intended to restrict residents' movement",
-                "Claims that it requires no walking at all"
-            ],
-            "correctAnswer": "False claims that it is intended to restrict residents' movement",
-            "correctAnswerIndex": 2,
-            "hint": "The misinformation is described in the last sentence.",
-            "explanation": "The passage says the concept has become a target of false claims suggesting it is meant to restrict movement.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L106_Q1",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[A Look at Algorithmic Content Moderation] Social media platforms rely heavily on automated systems to flag content that may violate community guidelines, a necessity given the sheer volume of posts uploaded every minute, far beyond what human moderators alone could realistically review. However, these systems frequently struggle with context and nuance, sometimes flagging legitimate educational or news content about sensitive topics while occasionally missing more subtly harmful material that does not match the specific patterns the system was trained to detect.",
-            "question": "What weakness do automated moderation systems frequently show, according to the passage?",
-            "options": [
-                "They review content too slowly to be useful",
-                "They struggle with context and nuance",
-                "They require no human oversight whatsoever",
-                "They only work for text, never images"
-            ],
-            "correctAnswer": "They struggle with context and nuance",
-            "correctAnswerIndex": 1,
-            "hint": "The weakness is described in the second sentence.",
-            "explanation": "The passage says automated systems frequently struggle with context and nuance, leading to both false flags and missed content.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L106_Q2",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[A Look at Behavioral Nudges in Public Policy] Governments increasingly use small changes in how choices are presented, known as behavioral nudges, to encourage socially beneficial outcomes without restricting anyone's options outright. Changing a retirement savings program from opt-in to opt-out, for example, dramatically increases participation simply by making saving the default choice rather than requiring an active decision, while still allowing anyone who prefers not to participate to easily withdraw.",
-            "question": "How does changing a program from opt-in to opt-out affect participation, according to the passage?",
-            "options": [
-                "It has no measurable effect on participation",
-                "It dramatically increases participation by making saving the default",
-                "It forces everyone to participate with no exceptions",
-                "It only works for programs unrelated to savings"
-            ],
-            "correctAnswer": "It dramatically increases participation by making saving the default",
-            "correctAnswerIndex": 1,
-            "hint": "The effect is described in the second sentence.",
-            "explanation": "The passage says switching to opt-out dramatically increases participation by making saving the default choice.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L106_Q3",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[A Look at Restorative Justice Programs] Rather than focusing solely on punishment, restorative justice programs bring together the person who caused harm, the person affected, and sometimes community members, to discuss the impact of an offense and agree on a way to make amends. Advocates argue this approach can address underlying causes of harmful behavior more effectively than punishment alone, though the method is generally reserved for less severe offenses and always requires voluntary participation from everyone involved, including the person who was harmed.",
-            "question": "What is required from everyone involved in a restorative justice process, according to the passage?",
-            "options": [
-                "A signed legal contract",
-                "Payment of a formal fine",
-                "Approval from a jury",
-                "Voluntary participation"
-            ],
-            "correctAnswer": "Voluntary participation",
-            "correctAnswerIndex": 3,
-            "hint": "The requirement is stated at the very end of the passage.",
-            "explanation": "The passage says restorative justice always requires voluntary participation from everyone involved.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L107_Q1",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[A Look at the Psychology of Nostalgia] For much of the twentieth century, nostalgia was viewed by psychologists mainly as an unhealthy avoidance of the present, but more recent research has substantially revised this view, finding that nostalgic reflection can actually boost mood, strengthen a sense of social connection, and even increase motivation toward future goals when experienced in moderation. Researchers now distinguish this healthy form of reflection from a more problematic pattern in which someone uses nostalgia primarily to avoid engaging with present difficulties altogether.",
-            "question": "How has psychologists' view of nostalgia changed, according to the passage?",
-            "options": [
-                "It has remained exactly the same for a century",
-                "It moved from viewing it as unhealthy to recognizing potential benefits",
-                "It now views nostalgia as always harmful",
-                "It no longer studies nostalgia at all"
-            ],
-            "correctAnswer": "It moved from viewing it as unhealthy to recognizing potential benefits",
-            "correctAnswerIndex": 1,
-            "hint": "The shift in view is described in the first sentence.",
-            "explanation": "The passage says the view shifted from seeing nostalgia as unhealthy avoidance to recognizing it can have real benefits in moderation.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L107_Q2",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[A Look at Water-Efficient Landscaping] As droughts become more frequent in certain regions, some municipalities now offer rebates to homeowners who replace traditional grass lawns with drought-tolerant native plants, a practice sometimes called xeriscaping. Beyond reducing water consumption, proponents note that native plant landscaping typically requires far less maintenance, since these plants have evolved to thrive in local soil and rainfall conditions without the fertilizer and frequent mowing a conventional lawn demands.",
-            "question": "What additional benefit of xeriscaping do proponents note, beyond reduced water use?",
-            "options": [
-                "It eliminates the need for any soil",
-                "It requires more frequent mowing",
-                "It increases a home's cooling costs",
-                "Far less maintenance is required"
-            ],
-            "correctAnswer": "Far less maintenance is required",
-            "correctAnswerIndex": 3,
-            "hint": "The additional benefit is explained in the last sentence.",
-            "explanation": "The passage says proponents note that xeriscaping requires far less maintenance than a conventional lawn.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L107_Q3",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[A Look at Corporate Skip-Level Meetings] To counter the tendency for concerns to become diluted as they pass up multiple layers of management, some companies have introduced 'skip-level' meetings, where employees meet directly with their manager's manager without their immediate supervisor present. Executives who conduct these meetings regularly report learning about operational issues far earlier than they would through the standard chain of communication, though the practice requires careful handling to avoid undermining the authority of managers in between.",
-            "question": "What do executives report gaining from skip-level meetings, according to the passage?",
-            "options": [
-                "Complete control over all daily operations",
-                "A reduction in their overall workload",
-                "The ability to fire underperforming managers",
-                "Learning about operational issues far earlier"
-            ],
-            "correctAnswer": "Learning about operational issues far earlier",
-            "correctAnswerIndex": 3,
-            "hint": "The benefit for executives is stated in the middle of the passage.",
-            "explanation": "The passage says executives report learning about operational issues far earlier through skip-level meetings.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L108_Q1",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[A Look at Precision Agriculture] Precision agriculture uses sensors, satellite imagery, and data analysis to help farmers apply water, fertilizer, and pesticides only where and when a field actually needs them, rather than treating an entire field uniformly regardless of variation in soil quality or moisture. Early adopters report meaningful reductions in both resource costs and environmental runoff, though the significant upfront investment in sensors and software has so far limited widespread adoption mainly to larger commercial farming operations.",
-            "question": "What has limited widespread adoption of precision agriculture, according to the passage?",
-            "options": [
-                "A complete lack of interest from farmers",
-                "The significant upfront investment in sensors and software",
-                "Government bans on using sensors in farming",
-                "Its failure to reduce any costs at all"
-            ],
-            "correctAnswer": "The significant upfront investment in sensors and software",
-            "correctAnswerIndex": 1,
-            "hint": "The limiting factor is described in the last sentence.",
-            "explanation": "The passage says the significant upfront investment has limited adoption mainly to larger farming operations.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L108_Q2",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[A Look at the Rise of Micro-Credentials] As the pace of technological change accelerates, many professionals now pursue short, focused 'micro-credentials' in specific skills, such as a particular software platform or data analysis technique, rather than pursuing another full degree to stay current in their field. Employers in fast-moving industries increasingly recognize these credentials as valid evidence of updated expertise, particularly when combined with an established track record, though some more traditional fields still weigh a micro-credential far less heavily than a formal degree.",
-            "question": "How do some more traditional fields regard micro-credentials, according to the passage?",
-            "options": [
-                "They refuse to hire anyone without one",
-                "They consider them identical to a full degree",
-                "They weigh them far less heavily than a formal degree",
-                "They require candidates to have several of them"
-            ],
-            "correctAnswer": "They weigh them far less heavily than a formal degree",
-            "correctAnswerIndex": 2,
-            "hint": "This is described in the last part of the passage.",
-            "explanation": "The passage says some traditional fields still weigh micro-credentials less heavily than a formal degree.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L108_Q3",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[A Look at Slow Journalism] In contrast to the rapid pace of breaking news coverage, 'slow journalism' outlets deliberately take weeks or months to investigate a story fully before publishing, prioritizing depth and accuracy over being first to report. Proponents argue this approach produces more thoroughly verified reporting and reduces the spread of early, later-corrected misinformation, though critics note that the slower pace means these outlets rarely break major news themselves, relying instead on providing deeper context after a story has already emerged elsewhere.",
-            "question": "What limitation do critics note about slow journalism, according to the passage?",
-            "options": [
-                "Their reporting is consistently less accurate",
-                "They refuse to cover any current events",
-                "These outlets rarely break major news themselves",
-                "They are read by very few people"
-            ],
-            "correctAnswer": "These outlets rarely break major news themselves",
-            "correctAnswerIndex": 2,
-            "hint": "The limitation is described in the last sentence.",
-            "explanation": "The passage says critics note that slow journalism outlets rarely break major news themselves due to their slower pace.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L109_Q1",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[A Look at Adaptive Reuse of Shipping Containers] Architects have increasingly repurposed used shipping containers into affordable housing units, offices, and pop-up retail spaces, drawn by the containers' structural strength, standardized dimensions, and comparatively low material cost relative to conventional construction. Critics of the trend note that converting a container into a genuinely comfortable living space still requires substantial modification for insulation and ventilation, meaning the final cost savings compared to traditional building methods are often smaller than initial estimates suggest.",
-            "question": "What do critics note about the actual cost savings of container housing?",
-            "options": [
-                "They are often smaller than initial estimates suggest",
-                "They are always far larger than expected",
-                "They apply only to office buildings",
-                "They have never been measured accurately"
-            ],
-            "correctAnswer": "They are often smaller than initial estimates suggest",
-            "correctAnswerIndex": 0,
-            "hint": "The critics' point is explained in the last sentence.",
-            "explanation": "The passage says critics note the final cost savings are often smaller than initial estimates suggested.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L109_Q2",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[A Look at Cognitive Load in User Interface Design] User interface designers increasingly apply the concept of cognitive load, the amount of mental effort required to process information, when deciding how much content to place on a single screen. An interface cluttered with too many simultaneous options, even useful ones, can overwhelm users and lead to more errors or abandoned tasks, which is why many modern applications favor a simplified sequence of small decisions over presenting every possible choice at once.",
-            "question": "Why do many modern applications favor a sequence of small decisions?",
-            "options": [
-                "Small decisions are required by law",
-                "Users prefer seeing every option at once",
-                "Too many simultaneous options can overwhelm users and cause errors",
-                "It reduces the need for any design work"
-            ],
-            "correctAnswer": "Too many simultaneous options can overwhelm users and cause errors",
-            "correctAnswerIndex": 2,
-            "hint": "The reasoning is explained in the middle of the passage.",
-            "explanation": "The passage explains that cluttered interfaces increase cognitive load, causing errors, which is why simplified sequences are favored.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L109_Q3",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[A Look at Community Currency Systems] Some towns have experimented with local currencies that can only be spent at participating local businesses, aiming to keep money circulating within the community rather than flowing out to large national chains. Economists studying these systems find mixed results: while the currencies do appear to modestly boost sales at small local businesses, the added complexity of tracking a second currency has discouraged some potential participating merchants from joining the program at all.",
-            "question": "What has discouraged some merchants from joining local currency programs?",
-            "options": [
-                "A complete lack of interest from customers",
-                "Laws banning any form of local currency",
-                "The added complexity of tracking a second currency",
-                "The currencies being worth more than expected"
-            ],
-            "correctAnswer": "The added complexity of tracking a second currency",
-            "correctAnswerIndex": 2,
-            "hint": "The discouraging factor is described in the last sentence.",
-            "explanation": "The passage says the added complexity of tracking a second currency has discouraged some merchants from participating.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L110_Q1",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[A Look at the Attention Economy] Media researchers use the term 'attention economy' to describe a system in which human attention itself, rather than any physical good, functions as the primary scarce resource that companies compete to capture and hold, often through design choices specifically intended to maximize the time a user spends engaged with a platform. Critics argue that when a company's core business model depends on maximizing engagement, its incentives may not always align with what is genuinely beneficial for the user's wellbeing or actual goals.",
-            "question": "What tension do critics highlight regarding the attention economy?",
-            "options": [
-                "A company's incentives may not align with a user's wellbeing",
-                "Companies no longer compete for user attention",
-                "Users always benefit from maximized engagement",
-                "Physical goods have become more valuable than attention"
-            ],
-            "correctAnswer": "A company's incentives may not align with a user's wellbeing",
-            "correctAnswerIndex": 0,
-            "hint": "The tension is described in the last sentence.",
-            "explanation": "The passage says critics highlight that a platform's engagement-driven incentives may conflict with genuine user wellbeing.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L110_Q2",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[A Look at Passive Voice in Scientific Writing] For decades, scientific journals favored a passive, impersonal writing style, producing sentences like 'the sample was heated' rather than 'we heated the sample,' partly out of a belief that removing the researcher from the sentence conveyed greater objectivity. In recent years, however, a growing number of style guides have begun encouraging active voice and first-person pronouns instead, arguing that clearer, more direct writing does not actually compromise scientific rigor and often makes research substantially easier for readers, including non-specialists, to follow.",
-            "question": "Why do newer style guides encourage active voice in scientific writing?",
-            "options": [
-                "Passive voice is no longer grammatically correct",
-                "Active voice was required by a new international law",
-                "Clearer writing does not compromise rigor and helps readers follow research",
-                "Objectivity is no longer valued in scientific writing"
-            ],
-            "correctAnswer": "Clearer writing does not compromise rigor and helps readers follow research",
-            "correctAnswerIndex": 2,
-            "hint": "The reasoning is explained in the last sentence.",
-            "explanation": "The passage says newer guides argue clearer, active writing maintains rigor while making research easier to follow.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L110_Q3",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[A Look at Intergenerational Mentorship Circles] Some community centers now organize mentorship circles that deliberately mix several generations rather than pairing just one mentor with one mentee, allowing a college student, a mid-career professional, and a retiree to all learn from one another within the same small group. Organizers report that this structure often surfaces insights a traditional single-mentor pairing would miss entirely, since each participant brings a genuinely different, generationally shaped perspective to a shared discussion topic.",
-            "question": "What do organizers report about the mixed-generation group structure?",
-            "options": [
-                "It works better with only two participants",
-                "It surfaces insights a traditional single-mentor pairing would miss",
-                "It excludes older participants from discussions",
-                "It focuses solely on career advice"
-            ],
-            "correctAnswer": "It surfaces insights a traditional single-mentor pairing would miss",
-            "correctAnswerIndex": 1,
-            "hint": "The reported benefit is described in the last sentence.",
-            "explanation": "The passage says organizers report the mixed structure surfaces insights a single-mentor pairing would miss.",
-            "passageWordCount": 100
-        }
-    ]
+  "gameType": "readAndAnswer",
+  "batchIndex": 11,
+  "levels": "101-110",
+  "quests": [
+    {
+      "id": "RDG_READANDANSWER_L101_Q1",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[A Museum's New Audio Guide] The city art museum recently replaced its handheld audio guides with a smartphone app that visitors can download for free before their visit. Early feedback has been mixed: younger visitors appreciate not having to carry an extra device, while some older visitors say they preferred pressing physical buttons over navigating a phone screen.",
+      "question": "What does the passage suggest about the app's reception among visitors?",
+      "options": [
+        "Reactions varied by visitor familiarity with tech",
+        "All visitors dislike the app equally",
+        "All visitors prefer the app over old guides",
+        "The museum removed the app after complaints"
+      ],
+      "correctAnswer": "Reactions varied by visitor familiarity with tech",
+      "correctAnswerIndex": 0,
+      "hint": "Compare the reactions of younger and older visitors described in the passage.",
+      "explanation": "The passage shows a split reaction, with younger visitors favoring the app and older visitors preferring the old devices.",
+      "passageWordCount": 58
+    },
+    {
+      "id": "RDG_READANDANSWER_L101_Q2",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[A Museum's New Audio Guide] The city art museum recently replaced its handheld audio guides with a smartphone app that visitors can download for free before their visit. Early feedback has been mixed: younger visitors appreciate not having to carry an extra device, while some older visitors say they preferred pressing physical buttons over navigating a phone screen.",
+      "question": "What do younger visitors appreciate about the new app?",
+      "options": [
+        "Its bright, colorful screens",
+        "Its noticeably low cost",
+        "Its much longer battery life",
+        "Not carrying an extra device"
+      ],
+      "correctAnswer": "Not carrying an extra device",
+      "correctAnswerIndex": 3,
+      "hint": "This benefit is mentioned right after younger visitors are introduced.",
+      "explanation": "The passage says younger visitors appreciate not carrying an extra device.",
+      "passageWordCount": 58
+    },
+    {
+      "id": "RDG_READANDANSWER_L101_Q3",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[A Museum's New Audio Guide] The city art museum recently replaced its handheld audio guides with a smartphone app that visitors can download for free before their visit. Early feedback has been mixed: younger visitors appreciate not having to carry an extra device, while some older visitors say they preferred pressing physical buttons over navigating a phone screen.",
+      "question": "What did the app replace?",
+      "options": [
+        "Printed paper museum maps",
+        "Guided walking tour groups",
+        "Handheld audio guides",
+        "Ticket entry kiosks"
+      ],
+      "correctAnswer": "Handheld audio guides",
+      "correctAnswerIndex": 2,
+      "hint": "The replaced item is named in the first sentence.",
+      "explanation": "The passage says the app replaced handheld audio guides.",
+      "passageWordCount": 58
+    },
+    {
+      "id": "RDG_READANDANSWER_L102_Q1",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[Debating a Four-Day Workweek] A logistics company trialed a four-day workweek for six months, keeping employee pay the same while reducing hours. Productivity per project remained steady, and employee surveys showed a marked drop in reported stress. Management has not yet decided whether to make the change permanent, citing a need to review the trial's effect on client response times.",
+      "question": "What is the writer's main purpose in this passage?",
+      "options": [
+        "To convince readers a shorter week always increases profit",
+        "To report trial results without pushing a final conclusion",
+        "To argue shorter weeks always harm productivity",
+        "To announce the four-day week is now permanent"
+      ],
+      "correctAnswer": "To report trial results without pushing a final conclusion",
+      "correctAnswerIndex": 1,
+      "hint": "Notice that the passage reports results but explicitly says a decision has not been made.",
+      "explanation": "The passage presents balanced findings and states management has not decided, showing a neutral reporting purpose.",
+      "passageWordCount": 60
+    },
+    {
+      "id": "RDG_READANDANSWER_L102_Q2",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[Debating a Four-Day Workweek] A logistics company trialed a four-day workweek for six months, keeping employee pay the same while reducing hours. Productivity per project remained steady, and employee surveys showed a marked drop in reported stress. Management has not yet decided whether to make the change permanent, citing a need to review the trial's effect on client response times.",
+      "question": "What happened to employee pay during the trial?",
+      "options": [
+        "It stayed the same",
+        "It increased slightly",
+        "It decreased proportionally to hours",
+        "It was not mentioned"
+      ],
+      "correctAnswer": "It stayed the same",
+      "correctAnswerIndex": 0,
+      "hint": "The pay detail is given in the first sentence.",
+      "explanation": "The passage says pay stayed the same while hours were reduced.",
+      "passageWordCount": 60
+    },
+    {
+      "id": "RDG_READANDANSWER_L102_Q3",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[Debating a Four-Day Workweek] A logistics company trialed a four-day workweek for six months, keeping employee pay the same while reducing hours. Productivity per project remained steady, and employee surveys showed a marked drop in reported stress. Management has not yet decided whether to make the change permanent, citing a need to review the trial's effect on client response times.",
+      "question": "What is management still reviewing before making a final decision?",
+      "options": [
+        "The cost of employee salaries",
+        "The number of employees who quit",
+        "The trial's effect on office rent",
+        "The trial's effect on client response"
+      ],
+      "correctAnswer": "The trial's effect on client response",
+      "correctAnswerIndex": 3,
+      "hint": "The specific concern under review is named at the end of the passage.",
+      "explanation": "The passage says management wants to review the effect on client response times.",
+      "passageWordCount": 60
+    },
+    {
+      "id": "RDG_READANDANSWER_L103_Q1",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[A New Vaccine Storage Method] A research team developed a new method for storing a common vaccine at room temperature for up to two weeks, compared to the usual requirement of constant refrigeration. Early trials in three clinics showed no loss in effectiveness, though the researchers caution that results from larger, more diverse trials are still needed before the method is widely adopted.",
+      "question": "Which statement is directly supported by the passage?",
+      "options": [
+        "The new method has already replaced refrigeration everywhere",
+        "Researchers are confident no further testing is needed",
+        "Early trials showed no loss in vaccine effectiveness at room temperature",
+        "The vaccine can now be stored for months without refrigeration"
+      ],
+      "correctAnswer": "Early trials showed no loss in vaccine effectiveness at room temperature",
+      "correctAnswerIndex": 2,
+      "hint": "Check each option against exactly what the early trials showed, not future hopes.",
+      "explanation": "The passage states early trials in three clinics showed no loss in effectiveness.",
+      "passageWordCount": 63
+    },
+    {
+      "id": "RDG_READANDANSWER_L103_Q2",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[A New Vaccine Storage Method] A research team developed a new method for storing a common vaccine at room temperature for up to two weeks, compared to the usual requirement of constant refrigeration. Early trials in three clinics showed no loss in effectiveness, though the researchers caution that results from larger, more diverse trials are still needed before the method is widely adopted.",
+      "question": "How long can the vaccine now be stored at room temperature, according to the new method?",
+      "options": [
+        "Up to two days",
+        "Up to two weeks",
+        "Up to two months",
+        "Indefinitely"
+      ],
+      "correctAnswer": "Up to two weeks",
+      "correctAnswerIndex": 1,
+      "hint": "The storage duration is stated in the first sentence.",
+      "explanation": "The passage says the vaccine can be stored at room temperature for up to two weeks.",
+      "passageWordCount": 63
+    },
+    {
+      "id": "RDG_READANDANSWER_L103_Q3",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[A New Vaccine Storage Method] A research team developed a new method for storing a common vaccine at room temperature for up to two weeks, compared to the usual requirement of constant refrigeration. Early trials in three clinics showed no loss in effectiveness, though the researchers caution that results from larger, more diverse trials are still needed before the method is widely adopted.",
+      "question": "Why do the researchers urge caution before wide adoption?",
+      "options": [
+        "The vaccine failed in early trials",
+        "The storage method is too costly",
+        "Larger, more diverse trials are needed",
+        "Refrigeration is actually cheaper"
+      ],
+      "correctAnswer": "Larger, more diverse trials are needed",
+      "correctAnswerIndex": 2,
+      "hint": "The reason for caution is given at the end of the passage.",
+      "explanation": "The passage says researchers caution that larger, more diverse trials are still needed.",
+      "passageWordCount": 63
+    },
+    {
+      "id": "RDG_READANDANSWER_L104_Q1",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[A Measured Response to Criticism] Several readers wrote in questioning our recent coverage of the water treatment plant proposal. We stand by the factual accuracy of the article, though we acknowledge that including a broader range of community voices would have made the piece stronger, and we intend to do so in our follow-up report.",
+      "question": "What attitude does the writer take toward the readers' criticism?",
+      "options": [
+        "Dismissive of all reader criticism",
+        "Open to improvement, defending accuracy",
+        "Fully apologetic and quite regretful",
+        "Angry at readers for complaining"
+      ],
+      "correctAnswer": "Open to improvement, defending accuracy",
+      "correctAnswerIndex": 1,
+      "hint": "Notice how the writer defends one point while agreeing to improve another.",
+      "explanation": "The writer defends accuracy but admits the article could include more voices, showing openness to improvement.",
+      "passageWordCount": 55
+    },
+    {
+      "id": "RDG_READANDANSWER_L104_Q2",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[A Measured Response to Criticism] Several readers wrote in questioning our recent coverage of the water treatment plant proposal. We stand by the factual accuracy of the article, though we acknowledge that including a broader range of community voices would have made the piece stronger, and we intend to do so in our follow-up report.",
+      "question": "What do the readers' letters question?",
+      "options": [
+        "The newspaper's overall design",
+        "The cost of a subscription",
+        "An unrelated sports article",
+        "The water treatment plant coverage"
+      ],
+      "correctAnswer": "The water treatment plant coverage",
+      "correctAnswerIndex": 3,
+      "hint": "The subject of the criticism is named in the first sentence.",
+      "explanation": "The passage says readers questioned the coverage of the water treatment plant proposal.",
+      "passageWordCount": 55
+    },
+    {
+      "id": "RDG_READANDANSWER_L104_Q3",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[A Measured Response to Criticism] Several readers wrote in questioning our recent coverage of the water treatment plant proposal. We stand by the factual accuracy of the article, though we acknowledge that including a broader range of community voices would have made the piece stronger, and we intend to do so in our follow-up report.",
+      "question": "What does the writer plan to do in the follow-up report?",
+      "options": [
+        "Include broader community voices",
+        "Retract the original article",
+        "Avoid the topic entirely",
+        "Publish an anonymous response"
+      ],
+      "correctAnswer": "Include broader community voices",
+      "correctAnswerIndex": 0,
+      "hint": "The plan for the follow-up is stated at the end of the passage.",
+      "explanation": "The passage says the writer intends to include a broader range of voices in the follow-up.",
+      "passageWordCount": 55
+    },
+    {
+      "id": "RDG_READANDANSWER_L105_Q1",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[A Delayed Harvest Decision] If the forecasted frost arrives on schedule, farmers in the valley will need to harvest their grape crops within the next three days, even though the grapes have not fully ripened. Waiting any longer risks losing much of the crop to frost damage, but harvesting early would also reduce the sugar content that gives the wine its usual flavor.",
+      "question": "What difficult choice do the farmers face, according to the passage?",
+      "options": [
+        "Choosing between two different crops to plant",
+        "Harvest early and lose flavor, or wait and risk frost",
+        "Deciding whether to sell off the family land",
+        "Choosing between two competing grape buyers"
+      ],
+      "correctAnswer": "Harvest early and lose flavor, or wait and risk frost",
+      "correctAnswerIndex": 1,
+      "hint": "Weigh the risk mentioned first against the drawback mentioned second.",
+      "explanation": "The passage presents a trade-off between frost damage from waiting and lower flavor quality from harvesting early.",
+      "passageWordCount": 63
+    },
+    {
+      "id": "RDG_READANDANSWER_L105_Q2",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[A Delayed Harvest Decision] If the forecasted frost arrives on schedule, farmers in the valley will need to harvest their grape crops within the next three days, even though the grapes have not fully ripened. Waiting any longer risks losing much of the crop to frost damage, but harvesting early would also reduce the sugar content that gives the wine its usual flavor.",
+      "question": "What happens if the farmers wait too long to harvest?",
+      "options": [
+        "They risk losing crop to frost damage",
+        "They will earn a higher profit",
+        "The grapes will ripen further",
+        "The wine's flavor will improve"
+      ],
+      "correctAnswer": "They risk losing crop to frost damage",
+      "correctAnswerIndex": 0,
+      "hint": "The risk of waiting is described in the middle of the passage.",
+      "explanation": "The passage says waiting too long risks losing much of the crop to frost damage.",
+      "passageWordCount": 63
+    },
+    {
+      "id": "RDG_READANDANSWER_L105_Q3",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[A Delayed Harvest Decision] If the forecasted frost arrives on schedule, farmers in the valley will need to harvest their grape crops within the next three days, even though the grapes have not fully ripened. Waiting any longer risks losing much of the crop to frost damage, but harvesting early would also reduce the sugar content that gives the wine its usual flavor.",
+      "question": "What does harvesting early reduce, according to the passage?",
+      "options": [
+        "The number of grapes produced",
+        "The overall size of the grapes",
+        "The total cost of harvesting",
+        "The sugar content in the grapes"
+      ],
+      "correctAnswer": "The sugar content in the grapes",
+      "correctAnswerIndex": 3,
+      "hint": "The consequence of early harvesting is stated at the end of the passage.",
+      "explanation": "The passage says harvesting early would reduce the sugar content.",
+      "passageWordCount": 63
+    },
+    {
+      "id": "RDG_READANDANSWER_L106_Q1",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[Testing a New Fertilizer] In a controlled trial, one group of tomato plants received a new organic fertilizer while an identical group received the standard fertilizer already used on the farm. After eight weeks, the organic group produced fifteen percent more fruit by weight, though the plants also required watering twice as often to maintain the same soil moisture.",
+      "question": "Which conclusion is best supported by the passage?",
+      "options": [
+        "The organic fertilizer is worse in every measurable way",
+        "The standard fertilizer requires more watering than the organic one",
+        "The organic fertilizer increased yield but came with a higher watering demand",
+        "The trial found no meaningful difference between the fertilizers"
+      ],
+      "correctAnswer": "The organic fertilizer increased yield but came with a higher watering demand",
+      "correctAnswerIndex": 2,
+      "hint": "Weigh the yield increase against the added watering requirement described in the passage.",
+      "explanation": "The passage reports both a fifteen percent yield increase and a doubled watering need, supporting a mixed conclusion.",
+      "passageWordCount": 59
+    },
+    {
+      "id": "RDG_READANDANSWER_L106_Q2",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[Testing a New Fertilizer] In a controlled trial, one group of tomato plants received a new organic fertilizer while an identical group received the standard fertilizer already used on the farm. After eight weeks, the organic group produced fifteen percent more fruit by weight, though the plants also required watering twice as often to maintain the same soil moisture.",
+      "question": "How much more fruit did the organic group produce by weight?",
+      "options": [
+        "Fifty percent more",
+        "Five percent more",
+        "Twice as much",
+        "Fifteen percent more"
+      ],
+      "correctAnswer": "Fifteen percent more",
+      "correctAnswerIndex": 3,
+      "hint": "The specific percentage is stated in the middle of the passage.",
+      "explanation": "The passage says the organic group produced fifteen percent more fruit by weight.",
+      "passageWordCount": 59
+    },
+    {
+      "id": "RDG_READANDANSWER_L106_Q3",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[Testing a New Fertilizer] In a controlled trial, one group of tomato plants received a new organic fertilizer while an identical group received the standard fertilizer already used on the farm. After eight weeks, the organic group produced fifteen percent more fruit by weight, though the plants also required watering twice as often to maintain the same soil moisture.",
+      "question": "How long did the trial last?",
+      "options": [
+        "Eight weeks",
+        "Four weeks",
+        "Twelve weeks",
+        "One year"
+      ],
+      "correctAnswer": "Eight weeks",
+      "correctAnswerIndex": 0,
+      "hint": "The duration of the trial is given before the results are described.",
+      "explanation": "The passage says the results were measured after eight weeks.",
+      "passageWordCount": 59
+    },
+    {
+      "id": "RDG_READANDANSWER_L107_Q1",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[Should Homework Be Optional?] Proponents of optional homework argue that students learn better when practice is driven by genuine curiosity rather than obligation, pointing to schools that saw steady test scores after removing mandatory assignments. Critics counter that without required practice, students from less supportive home environments may fall further behind, since motivated peers already tend to study voluntarily.",
+      "question": "What is the central disagreement described in this passage?",
+      "options": [
+        "Whether test scores measure learning well",
+        "Whether optional homework helps or harms students",
+        "Whether teachers should assign more homework",
+        "Whether students prefer homework or none"
+      ],
+      "correctAnswer": "Whether optional homework helps or harms students",
+      "correctAnswerIndex": 1,
+      "hint": "Focus on what each side is actually debating, not a side issue.",
+      "explanation": "The passage centers on differing views about how optional homework affects students unevenly.",
+      "passageWordCount": 59
+    },
+    {
+      "id": "RDG_READANDANSWER_L107_Q2",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[Should Homework Be Optional?] Proponents of optional homework argue that students learn better when practice is driven by genuine curiosity rather than obligation, pointing to schools that saw steady test scores after removing mandatory assignments. Critics counter that without required practice, students from less supportive home environments may fall further behind, since motivated peers already tend to study voluntarily.",
+      "question": "What evidence do proponents of optional homework cite?",
+      "options": [
+        "A noticeable decline in teacher workload",
+        "Higher graduation rates nationwide",
+        "Steady test scores after removing homework",
+        "Increased state funding for schools"
+      ],
+      "correctAnswer": "Steady test scores after removing homework",
+      "correctAnswerIndex": 2,
+      "hint": "The supporting evidence is mentioned right after the proponents' argument.",
+      "explanation": "The passage says proponents point to steady test scores after removing mandatory homework.",
+      "passageWordCount": 59
+    },
+    {
+      "id": "RDG_READANDANSWER_L107_Q3",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[Should Homework Be Optional?] Proponents of optional homework argue that students learn better when practice is driven by genuine curiosity rather than obligation, pointing to schools that saw steady test scores after removing mandatory assignments. Critics counter that without required practice, students from less supportive home environments may fall further behind, since motivated peers already tend to study voluntarily.",
+      "question": "What is the critics' main concern about optional homework?",
+      "options": [
+        "Optional homework costs schools too much",
+        "Teachers would have too little to grade",
+        "Test scores would rise too quickly",
+        "Less supported students may fall behind"
+      ],
+      "correctAnswer": "Less supported students may fall behind",
+      "correctAnswerIndex": 3,
+      "hint": "The critics' concern is described in the second half of the passage.",
+      "explanation": "The passage says critics worry students from less supportive environments may fall further behind.",
+      "passageWordCount": 59
+    },
+    {
+      "id": "RDG_READANDANSWER_L108_Q1",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[A Cautious Endorsement] The committee gave the proposal a tepid endorsement, approving it by a narrow margin while attaching several conditions that must be met before funding is released. Supporters called the outcome a win, but even they admitted the enthusiasm in the room was noticeably lacking.",
+      "question": "What does \"tepid\" most likely mean in this context?",
+      "options": [
+        "Extremely energetic and excited",
+        "Lacking strong enthusiasm",
+        "Completely unanimous support",
+        "Aggressively opposed to it"
+      ],
+      "correctAnswer": "Lacking strong enthusiasm",
+      "correctAnswerIndex": 1,
+      "hint": "Look at the narrow margin and the admission that enthusiasm was lacking.",
+      "explanation": "The narrow approval margin and lack of enthusiasm both point to 'tepid' meaning unenthusiastic.",
+      "passageWordCount": 47
+    },
+    {
+      "id": "RDG_READANDANSWER_L108_Q2",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[A Cautious Endorsement] The committee gave the proposal a tepid endorsement, approving it by a narrow margin while attaching several conditions that must be met before funding is released. Supporters called the outcome a win, but even they admitted the enthusiasm in the room was noticeably lacking.",
+      "question": "What must happen before funding is released?",
+      "options": [
+        "A second committee vote must occur",
+        "The proposal must be rewritten entirely",
+        "Several conditions must be met",
+        "Supporters must resign"
+      ],
+      "correctAnswer": "Several conditions must be met",
+      "correctAnswerIndex": 2,
+      "hint": "The requirement for funding is stated in the first sentence.",
+      "explanation": "The passage says several conditions must be met before funding is released.",
+      "passageWordCount": 47
+    },
+    {
+      "id": "RDG_READANDANSWER_L108_Q3",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[A Cautious Endorsement] The committee gave the proposal a tepid endorsement, approving it by a narrow margin while attaching several conditions that must be met before funding is released. Supporters called the outcome a win, but even they admitted the enthusiasm in the room was noticeably lacking.",
+      "question": "How did supporters describe the outcome, despite the lack of enthusiasm?",
+      "options": [
+        "As a win",
+        "As a failure",
+        "As a delay",
+        "As unfair"
+      ],
+      "correctAnswer": "As a win",
+      "correctAnswerIndex": 0,
+      "hint": "The supporters' description is given in the final sentence.",
+      "explanation": "The passage says supporters called the outcome a win, even while admitting low enthusiasm.",
+      "passageWordCount": 47
+    },
+    {
+      "id": "RDG_READANDANSWER_L109_Q1",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[Rebuilding After the Flood] When the river flooded the small town three years ago, many residents debated whether to rebuild in the same location or relocate to higher ground. The town ultimately chose to rebuild in place but raised new foundations several feet and added a system of drainage channels. Since then, two lesser floods have caused only minor damage.",
+      "question": "What does the passage suggest about the town's rebuilding decision?",
+      "options": [
+        "The town regretted not relocating to higher ground",
+        "New foundations failed in a later flood",
+        "The town completely abandoned its rebuilding plans",
+        "Precautions appear to have reduced later flood damage"
+      ],
+      "correctAnswer": "Precautions appear to have reduced later flood damage",
+      "correctAnswerIndex": 3,
+      "hint": "Connect the precautions described with the outcome of the two later floods.",
+      "explanation": "The passage links the raised foundations and drainage system to only minor damage in later floods.",
+      "passageWordCount": 60
+    },
+    {
+      "id": "RDG_READANDANSWER_L109_Q2",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[Rebuilding After the Flood] When the river flooded the small town three years ago, many residents debated whether to rebuild in the same location or relocate to higher ground. The town ultimately chose to rebuild in place but raised new foundations several feet and added a system of drainage channels. Since then, two lesser floods have caused only minor damage.",
+      "question": "What two changes did the town make when rebuilding?",
+      "options": [
+        "Raised foundations and added drainage channels",
+        "Built a new bridge and widened roads",
+        "Relocated to higher ground and built a dam",
+        "Added a levee and moved the river"
+      ],
+      "correctAnswer": "Raised foundations and added drainage channels",
+      "correctAnswerIndex": 0,
+      "hint": "The two specific changes are listed together in the middle of the passage.",
+      "explanation": "The passage says the town raised foundations and added drainage channels.",
+      "passageWordCount": 60
+    },
+    {
+      "id": "RDG_READANDANSWER_L109_Q3",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[Rebuilding After the Flood] When the river flooded the small town three years ago, many residents debated whether to rebuild in the same location or relocate to higher ground. The town ultimately chose to rebuild in place but raised new foundations several feet and added a system of drainage channels. Since then, two lesser floods have caused only minor damage.",
+      "question": "How many lesser floods has the town experienced since rebuilding?",
+      "options": [
+        "One",
+        "Three",
+        "Two",
+        "None"
+      ],
+      "correctAnswer": "Two",
+      "correctAnswerIndex": 2,
+      "hint": "The number of later floods is stated at the end of the passage.",
+      "explanation": "The passage says two lesser floods have occurred since the town rebuilt.",
+      "passageWordCount": 60
+    },
+    {
+      "id": "RDG_READANDANSWER_L110_Q1",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[A Quiet Departure from Tradition] For generations, the Alvarado family bakery used only handwritten recipes passed down without measurements, relying on instinct built through years of practice. When the founder's granddaughter took over last year, she began carefully measuring and recording every recipe, explaining that she wanted newer employees to be able to learn the craft without needing a decade of experience first.",
+      "question": "What does the passage suggest motivated the granddaughter's change in approach?",
+      "options": [
+        "A belief the old recipes were wrong",
+        "A wish to make recipes easier for new staff",
+        "A requirement from a safety inspector",
+        "A wish to sell the bakery to a larger firm"
+      ],
+      "correctAnswer": "A wish to make recipes easier for new staff",
+      "correctAnswerIndex": 1,
+      "hint": "Her explanation for the change is given directly at the end of the passage.",
+      "explanation": "The passage says she wanted newer employees to learn the craft without needing years of experience.",
+      "passageWordCount": 63
+    },
+    {
+      "id": "RDG_READANDANSWER_L110_Q2",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[A Quiet Departure from Tradition] For generations, the Alvarado family bakery used only handwritten recipes passed down without measurements, relying on instinct built through years of practice. When the founder's granddaughter took over last year, she began carefully measuring and recording every recipe, explaining that she wanted newer employees to be able to learn the craft without needing a decade of experience first.",
+      "question": "How did the bakery's recipes traditionally get passed down?",
+      "options": [
+        "Through formal weekly cooking classes",
+        "Through a printed family recipe book",
+        "Through old family video recordings only",
+        "By hand, without measurements, using instinct"
+      ],
+      "correctAnswer": "By hand, without measurements, using instinct",
+      "correctAnswerIndex": 3,
+      "hint": "The traditional method is described in the first sentence.",
+      "explanation": "The passage says recipes were passed down by hand without measurements, relying on instinct.",
+      "passageWordCount": 63
+    },
+    {
+      "id": "RDG_READANDANSWER_L110_Q3",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[A Quiet Departure from Tradition] For generations, the Alvarado family bakery used only handwritten recipes passed down without measurements, relying on instinct built through years of practice. When the founder's granddaughter took over last year, she began carefully measuring and recording every recipe, explaining that she wanted newer employees to be able to learn the craft without needing a decade of experience first.",
+      "question": "When did the granddaughter take over the bakery?",
+      "options": [
+        "Ten years ago",
+        "This month",
+        "Last year",
+        "When it first opened"
+      ],
+      "correctAnswer": "Last year",
+      "correctAnswerIndex": 2,
+      "hint": "The timing of the handover is stated in the middle of the passage.",
+      "explanation": "The passage says the granddaughter took over last year.",
+      "passageWordCount": 63
+    }
+  ]
 }

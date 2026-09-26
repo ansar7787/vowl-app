@@ -8,18 +8,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A team of agricultural researchers comparing crop yields across a large number of farms noted that farms using a particular soil amendment reported yields twelve percent higher on average than farms not using it, a pattern that held consistently across farms in five different climate zones and three different soil types, though the researchers cautioned that farms choosing to purchase the amendment may also differ in other unmeasured ways, such as overall investment in soil health practices, that could partly explain the yield difference.",
+            "passage": "A weather station recorded unusually low pressure readings over the coastal region for three consecutive days, paired with a steady drop in temperature each afternoon. Local fishermen began securing their boats earlier than usual each evening.",
             "options": [
-                "The soil amendment's association with higher yields may be partly explained by other farming practices the researchers did not measure.",
-                "The soil amendment is proven to be the sole cause of the twelve percent yield increase.",
-                "Farms using the amendment reported yields lower than farms that did not use it.",
-                "The yield pattern held only in a single climate zone and soil type."
+                "A storm system had definitely already passed through the area.",
+                "A storm system was probably approaching the coast.",
+                "The weather conditions had no connection to the fishermen's behavior.",
+                "Temperatures were rising steadily each afternoon."
             ],
-            "correctAnswer": "The soil amendment's association with higher yields may be partly explained by other farming practices the researchers did not measure.",
-            "hint": "Notice the researchers' own caution near the end of the passage about what else might explain the pattern.",
-            "explanation": "The yield difference held across many climate zones and soil types, but the researchers themselves noted that farms using the amendment might also invest more broadly in soil health, meaning the amendment's true individual effect remains uncertain rather than proven.",
+            "correctAnswer": "A storm system was probably approaching the coast.",
+            "hint": "Consider what the pressure drop, cooling temperatures, and the fishermen's early precautions together suggest, without assuming certainty.",
+            "explanation": "Low pressure, dropping temperatures, and fishermen taking early precautions are classic signs consistent with an approaching storm, though the passage doesn't confirm a storm arrived, only that conditions probably pointed that way.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Pressure drops for three days -> temperatures fall each afternoon -> fishermen secure boats early -> conditions probably indicate an approaching storm"
             ]
         },
         {
@@ -27,18 +27,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A workplace analytics firm reviewing performance data from several dozen client companies found that teams whose members had overlapping working hours of at least four hours per day, even when working from different locations, completed collaborative projects faster on average than teams with less overlap, but the firm noted this pattern was strongest specifically for projects requiring frequent back-and-forth revision, such as design work, and much weaker for projects that were primarily completed independently before a final review.",
+            "passage": "Sales data for a small bookstore showed that mystery novel purchases rose every time a popular mystery podcast released a new episode discussing a similar book. This pattern repeated across six different podcast episodes over four months.",
             "options": [
-                "Overlapping hours mattered equally for every type of project studied.",
-                "Projects completed independently benefited the most from overlapping hours.",
-                "Overlapping work hours appear to matter most for collaborative work requiring frequent revision, rather than for all project types equally.",
-                "The amount of overlap in working hours had no bearing on project completion speed."
+                "The podcast episodes are definitely the only reason mystery sales rise, given how the events unfolded.",
+                "The podcast episodes may be encouraging listeners to buy mystery novels from the store.",
+                "Mystery novel sales dropped every time a new episode was released, based on the passage's account of what happened.",
+                "The bookstore stopped selling mystery novels after four months."
             ],
-            "correctAnswer": "Overlapping work hours appear to matter most for collaborative work requiring frequent revision, rather than for all project types equally.",
-            "hint": "Notice the passage specifies which type of project showed the strongest pattern.",
-            "explanation": "The benefit of overlapping hours was strongest for projects needing frequent revision and weaker for independent work, suggesting the advantage comes specifically from enabling real-time back-and-forth collaboration rather than simply being a general boost to all teamwork.",
+            "correctAnswer": "The podcast episodes may be encouraging listeners to buy mystery novels from the store.",
+            "hint": "Consider the repeated pattern while noting that the passage doesn't rule out other explanations entirely.",
+            "explanation": "A consistent pattern across six episodes over four months supports the podcast as a likely influence on sales, though the wording should reflect a reasonable possibility rather than an absolute, unproven certainty.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Podcast episode released -> mystery sales rise -> pattern repeats six times over four months -> podcast may be encouraging the sales increase"
             ]
         },
         {
@@ -46,18 +46,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A district evaluating a new algebra curriculum piloted it in ten randomly selected classrooms while ten similar classrooms continued using the previous curriculum, allowing for a reasonably controlled comparison. Students in the pilot classrooms scored higher on a common end-of-year assessment, but the difference was concentrated almost entirely among students who had scored in the middle range on a placement test at the start of the year, with little measurable difference among students who had scored in the highest or lowest ranges.",
+            "passage": "A pediatrician noticed that several young patients who had trouble sleeping also reported spending over two hours on tablets or phones right before bed, based on parent-reported screen time logs collected during checkups.",
             "options": [
-                "The new curriculum benefited students equally across every ability range.",
-                "The new curriculum appears to have specifically benefited students who started in the middle range of ability.",
-                "The new curriculum benefited only the highest-scoring students.",
-                "The curriculum had no measurable effect on any group of students."
+                "Evening screen time appears to be associated with the sleep difficulties reported by these patients.",
+                "Evening screen time is definitely the only possible cause of the sleep difficulties, based on the details the passage provides.",
+                "None of the patients used screens in the evening.",
+                "Screen time has been scientifically proven to cause sleep problems in every child."
             ],
-            "correctAnswer": "The new curriculum appears to have specifically benefited students who started in the middle range of ability.",
-            "hint": "Notice which specific group of students showed the largest difference in scores.",
-            "explanation": "The pilot curriculum's benefit was concentrated among middle-range students, with little difference for the highest or lowest scorers, suggesting the new approach was particularly well suited to students who weren't already excelling or significantly struggling.",
+            "correctAnswer": "Evening screen time appears to be associated with the sleep difficulties reported by these patients.",
+            "hint": "Consider what a repeated pattern from parent logs supports versus what would require far stronger evidence to claim.",
+            "explanation": "A repeated pattern linking screen time and sleep trouble in this small set of patients supports an association, but the evidence from a pediatrician's informal observations does not rise to the level of definitive proof for all children.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Patients with sleep trouble -> also report 2+ hours of evening screen time -> pattern observed across several patients -> screen time appears associated with the sleep difficulties"
             ]
         },
         {
@@ -65,18 +65,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A public health researcher comparing counties with different approaches to reducing opioid-related emergency room visits found that counties combining expanded access to a specific overdose-reversal medication with mobile outreach teams that could distribute it directly to at-risk individuals saw a much larger reduction in overdose deaths than counties that expanded access to the medication through pharmacies alone, without any accompanying direct outreach component, according to state health department data collected over a three-year period.",
+            "passage": "An orchard owner noticed that trees planted closer to the property's windbreak of tall pines consistently produced more fruit than trees planted in the open field, over three separate growing seasons.",
             "options": [
-                "Pharmacy access alone was more effective than combining it with outreach teams.",
-                "Direct outreach appears to add meaningful benefit beyond simply expanding pharmacy access to the medication alone.",
-                "Neither approach had any measurable effect on overdose deaths.",
-                "Outreach teams were effective only when pharmacy access was simultaneously reduced."
+                "Proximity to the windbreak is definitely the only factor affecting fruit production.",
+                "Trees in the open field produced more fruit than those near the windbreak, as the passage lays out the sequence of events.",
+                "The windbreak trees produced no fruit at all during this period.",
+                "Proximity to the windbreak may be helping the trees produce more fruit."
             ],
-            "correctAnswer": "Direct outreach appears to add meaningful benefit beyond simply expanding pharmacy access to the medication alone.",
-            "hint": "Compare counties that combined both approaches with counties that used only one.",
-            "explanation": "Counties combining medication access with direct outreach saw larger reductions in overdose deaths than counties relying on pharmacy access alone, suggesting that reaching at-risk individuals directly added a benefit beyond simply making the medication available somewhere in the community.",
+            "correctAnswer": "Proximity to the windbreak may be helping the trees produce more fruit.",
+            "hint": "Notice the pattern held across multiple seasons, but consider what a fair, non-absolute conclusion looks like.",
+            "explanation": "A pattern repeating across three seasons supports the windbreak as a likely contributing factor to fruit production, though other unmeasured variables could also play a role, so the conclusion should stay appropriately qualified.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Trees near windbreak: consistently more fruit -> trees in open field: less fruit -> pattern holds across three seasons -> windbreak may be helping increase fruit production"
             ]
         },
         {
@@ -84,18 +84,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A tourism research group studying traveler behavior across several major cities found that cities which invested heavily in multilingual signage throughout public transit systems saw increases in the average length of stay reported by international visitors, but cities that invested similarly in multilingual signage without also training frontline transit staff in basic conversational phrases saw a notably smaller increase, suggesting signage alone may not fully address the communication barriers visitors experience while actually navigating an unfamiliar system in real time.",
+            "passage": "A city noticed that intersections with pedestrian crossing countdown displays had fewer reported near-miss incidents than intersections with standard walk/don't walk signals, based on three years of incident reports.",
             "options": [
-                "Multilingual signage combined with staff training appears more effective than signage alone at improving visitors' experience.",
-                "Signage alone was more effective than combining it with staff training.",
-                "Staff training had no measurable effect on visitor length of stay.",
-                "Multilingual signage had no effect on visitor behavior in any city studied."
+                "Countdown displays appear linked to fewer near-miss incidents at these intersections.",
+                "Countdown displays are proven beyond doubt to prevent all pedestrian accidents.",
+                "Standard signals had fewer near-miss incidents than countdown displays.",
+                "No incidents of any kind were reported at any intersection."
             ],
-            "correctAnswer": "Multilingual signage combined with staff training appears more effective than signage alone at improving visitors' experience.",
-            "hint": "Compare cities that combined signage with staff training to cities that relied on signage alone.",
-            "explanation": "Cities pairing signage with staff training saw larger increases in visitor stays than cities using signage alone, suggesting that human interaction, not just written information, plays an important role in addressing the communication challenges travelers face.",
+            "correctAnswer": "Countdown displays appear linked to fewer near-miss incidents at these intersections.",
+            "hint": "Weigh what three years of incident data reasonably supports versus an absolute guarantee.",
+            "explanation": "Three years of consistent data support a link between countdown displays and fewer near-misses, but this pattern alone does not amount to proof beyond doubt for every possible pedestrian situation.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Countdown-display intersections: fewer near-miss incidents -> standard-signal intersections: more near-misses -> pattern holds over three years -> displays appear linked to fewer incidents"
             ]
         },
         {
@@ -103,18 +103,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A team evaluating an AI-assisted diagnostic tool for radiologists found that diagnostic accuracy improved when radiologists used the tool as a 'second opinion' after forming their own initial assessment, but accuracy showed no improvement, and in a few cases slightly worsened, when radiologists were shown the AI's suggestion before forming their own independent judgment, a pattern the researchers attributed to a tendency to defer to the tool's suggestion too readily when it was presented first.",
+            "passage": "A small clinic tracked patient no-show rates and found that patients who received a reminder call the day before their appointment missed appointments less often than patients who received only a text message reminder, across two years of scheduling records.",
             "options": [
-                "Seeing the AI's suggestion first always improved diagnostic accuracy the most.",
-                "The order of information had no bearing on diagnostic accuracy.",
-                "The order in which a radiologist encounters the AI's suggestion, relative to their own judgment, appears to affect how helpful the tool is.",
-                "Diagnostic accuracy declined regardless of when the AI's suggestion was shown."
+                "Phone call reminders are proven to work better than text reminders for every clinic everywhere, according to how the passage describes the situation.",
+                "Text reminders resulted in fewer no-shows than phone call reminders. This would be expected to hold across the entire situation as described.",
+                "Phone call reminders seem more effective than text reminders at reducing no-shows in this clinic's data.",
+                "No-show rates were unaffected by which reminder type patients received. This would remain the case regardless of any other detail in the passage."
             ],
-            "correctAnswer": "The order in which a radiologist encounters the AI's suggestion, relative to their own judgment, appears to affect how helpful the tool is.",
-            "hint": "Compare the two different orders in which radiologists could encounter the AI's suggestion.",
-            "explanation": "Accuracy improved when the AI was used as a second opinion after an initial judgment, but not when shown first, suggesting radiologists may have deferred too readily to the AI's suggestion when it came before their own independent assessment.",
+            "correctAnswer": "Phone call reminders seem more effective than text reminders at reducing no-shows in this clinic's data.",
+            "hint": "Consider what two years of data from a single clinic can and cannot support about clinics in general.",
+            "explanation": "Two years of consistent data from this clinic support phone calls as seemingly more effective locally, but the passage's scope is limited to this clinic and cannot be stretched into a universal claim about every clinic.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Phone reminders: fewer no-shows -> text reminders: more no-shows -> pattern holds over two years at this clinic -> phone calls seem more effective in this specific data"
             ]
         },
         {
@@ -122,18 +122,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "An economist analyzing consumer spending patterns during a period of high inflation found that households which had built an emergency savings fund equivalent to at least three months of expenses before the inflationary period began reduced their discretionary spending by a smaller percentage than households without such a fund, even though both groups experienced comparable increases in their essential monthly costs, such as groceries, fuel, and utilities, over the same twelve-month period the economist analyzed.",
+            "passage": "A manufacturing plant found that machines serviced on a strict weekly schedule broke down less often than machines serviced only when a problem was reported, based on maintenance logs from the past eighteen months.",
             "options": [
-                "Households with emergency savings cut discretionary spending more sharply than those without.",
-                "Essential costs rose only for households without emergency savings.",
-                "Emergency savings had no bearing on how households responded to rising costs.",
-                "Having pre-existing emergency savings appears to have cushioned households from cutting discretionary spending as sharply during inflation."
+                "Scheduled servicing has been proven to eliminate machine breakdowns entirely.",
+                "Machines serviced only when reported broke down less often.",
+                "Scheduled weekly servicing appears associated with fewer machine breakdowns.",
+                "Breakdown rates were unrelated to the type of servicing used."
             ],
-            "correctAnswer": "Having pre-existing emergency savings appears to have cushioned households from cutting discretionary spending as sharply during inflation.",
-            "hint": "Compare spending changes between the two groups, noting that essential costs rose similarly for both.",
-            "explanation": "Households with pre-existing emergency savings cut discretionary spending less than households without savings, even with similar increases in essential costs, suggesting the savings buffer allowed them to absorb rising costs without cutting back as much elsewhere.",
+            "correctAnswer": "Scheduled weekly servicing appears associated with fewer machine breakdowns.",
+            "hint": "Consider what eighteen months of maintenance logs reasonably support without overstating certainty.",
+            "explanation": "Eighteen months of consistent logs support an association between scheduled servicing and fewer breakdowns, but this falls short of proving the practice eliminates breakdowns entirely.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Weekly-serviced machines: fewer breakdowns -> reactively-serviced machines: more breakdowns -> pattern holds over 18 months -> scheduled servicing appears associated with fewer breakdowns"
             ]
         },
         {
@@ -141,18 +141,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A longitudinal study following young adults who grew up with divorced parents found that those whose parents maintained a low-conflict co-parenting relationship after separation, communicating primarily about logistics rather than airing personal grievances in front of the children, reported similar levels of relationship satisfaction in their own adult romantic relationships as young adults raised by married parents, while young adults whose parents maintained a high-conflict co-parenting relationship reported notably lower relationship satisfaction than either of the other two groups studied.",
+            "passage": "A city library noticed that branches offering free Wi-Fi hotspot rentals saw higher overall visitor numbers than branches without the rental program, based on foot-traffic counts collected over one year.",
             "options": [
-                "Divorce itself, regardless of co-parenting conflict, was the main factor in later relationship satisfaction.",
-                "The level of conflict between co-parents, rather than divorce itself, appears more closely linked to children's later relationship satisfaction.",
-                "Low-conflict co-parenting led to worse outcomes than high-conflict co-parenting.",
-                "All three groups reported identical relationship satisfaction as adults."
+                "The hotspot program is proven to be the reason every library sees more visitors, given the way the passage frames things.",
+                "The hotspot rental program appears linked to higher visitor numbers at these branches.",
+                "Branches without hotspot rentals had higher visitor numbers.",
+                "Visitor numbers had no relationship to any library programs."
             ],
-            "correctAnswer": "The level of conflict between co-parents, rather than divorce itself, appears more closely linked to children's later relationship satisfaction.",
-            "hint": "Compare outcomes across all three groups, noting which factor seems to distinguish them.",
-            "explanation": "Children of low-conflict divorced parents fared similarly to children of married parents, while children of high-conflict divorced parents fared worse, suggesting that ongoing conflict, rather than divorce itself, is more closely tied to later relationship satisfaction.",
+            "correctAnswer": "The hotspot rental program appears linked to higher visitor numbers at these branches.",
+            "hint": "Weigh what one year of foot-traffic data at these specific branches can support.",
+            "explanation": "A year of consistent foot-traffic data supports a link between the rental program and higher visitor numbers at these branches, though it stops short of proving the program works this way at every library everywhere.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Branches with hotspot rentals: higher visitor numbers -> branches without: lower visitor numbers -> pattern holds over one year -> program appears linked to higher visitor numbers at these branches"
             ]
         },
         {
@@ -160,18 +160,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "Researchers comparing carbon capture efficiency of urban tree species found that species with denser canopy coverage captured measurably more airborne particulate pollution per tree, but a full cost-benefit analysis that included water usage requirements, root damage to nearby sidewalks and pipes, and long-term maintenance costs found that a mid-density species performed better overall as a citywide street tree recommendation than the single highest-density species when city planning budgets and infrastructure costs were factored into the final recommendation.",
+            "passage": "A regional airline found that flights using a newly designed boarding pass with larger, clearer seat numbers had shorter average boarding times than flights using the old boarding pass design, based on data from 200 flights.",
             "options": [
-                "The best tree species for pollution capture alone was not necessarily the best overall choice once other costs were considered.",
-                "The highest-density species was recommended based on pollution capture alone, without further analysis.",
-                "Water usage and root damage were not considered relevant factors in the analysis.",
-                "All tree species performed identically once maintenance costs were included."
+                "The new design is proven to work for every airline in every situation.",
+                "The new boarding pass design seems to be associated with shorter boarding times.",
+                "The old boarding pass design resulted in shorter boarding times.",
+                "Boarding times were unaffected by which pass design was used."
             ],
-            "correctAnswer": "The best tree species for pollution capture alone was not necessarily the best overall choice once other costs were considered.",
-            "hint": "Notice the passage distinguishes between pollution capture alone and the full cost-benefit analysis.",
-            "explanation": "The highest-density species captured the most pollution, but a mid-density species was recommended overall once water use, infrastructure damage, and maintenance were factored in, showing that the single best-performing option on one measure wasn't necessarily the best overall choice.",
+            "correctAnswer": "The new boarding pass design seems to be associated with shorter boarding times.",
+            "hint": "Consider what a sample of 200 flights from one airline can reasonably support.",
+            "explanation": "Data from 200 flights support an association between the new design and shorter boarding times for this airline, but a sample from one company does not prove the design would work identically everywhere.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "New pass design: shorter boarding times -> old pass design: longer boarding times -> pattern from 200 flights -> new design seems associated with shorter boarding times"
             ]
         },
         {
@@ -179,18 +179,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A municipal government piloting participatory budgeting, in which residents directly vote on how to allocate a small portion of the city budget, found that neighborhoods with historically low voter turnout in general elections showed disproportionately high participation in the budgeting votes specifically, a pattern city officials attributed to the tangible, local nature of the decisions being voted on, compared to the often more abstract and distant stakes of a typical municipal election, according to participation data compiled after the pilot's first year.",
+            "passage": "A dermatology clinic observed that patients who used a specific moisturizer twice daily reported less skin dryness after four weeks than patients using a different moisturizer, based on self-reported surveys from 150 patients.",
             "options": [
-                "Participatory budgeting attracted mainly residents who already voted frequently in general elections.",
-                "Participatory budgeting appears to have specifically engaged residents who typically don't vote in general elections.",
-                "Neighborhoods with low general election turnout also showed low turnout in the budgeting votes.",
-                "The type of decision being voted on had no bearing on participation rates."
+                "This moisturizer has been proven effective for all skin types worldwide.",
+                "Patients using the other moisturizer reported less dryness.",
+                "Skin dryness levels were unrelated to which moisturizer was used.",
+                "The specific moisturizer appears associated with less reported dryness in this patient group."
             ],
-            "correctAnswer": "Participatory budgeting appears to have specifically engaged residents who typically don't vote in general elections.",
-            "hint": "Notice which specific neighborhoods showed the biggest jump in participation.",
-            "explanation": "Neighborhoods with historically low voter turnout showed unusually high participation in the budgeting votes specifically, suggesting the tangible, local nature of participatory budgeting engaged residents who don't typically turn out for more abstract general elections.",
+            "correctAnswer": "The specific moisturizer appears associated with less reported dryness in this patient group.",
+            "hint": "Consider what self-reported survey data from 150 patients at one clinic reasonably supports.",
+            "explanation": "Self-reported results from 150 patients support an association between this moisturizer and reduced dryness in this specific group, though such a survey-based sample doesn't amount to proof for all skin types everywhere.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Moisturizer A users: report less dryness after 4 weeks -> moisturizer B users: report more dryness -> based on 150 patients -> moisturizer A appears associated with less reported dryness in this group"
             ]
         },
         {
@@ -198,18 +198,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A national gymnastics federation reviewing several seasons of injury data across its youth programs found that gyms requiring a mandatory rest week between competition seasons reported significantly fewer overuse injuries, such as stress fractures, than gyms that allowed athletes to train through the transition without any scheduled break, though the federation noted that gyms with mandatory rest weeks also tended to have, on average, more experienced head coaches than gyms without the requirement in place.",
+            "passage": "A city's traffic engineers noted that intersections with a dedicated left-turn arrow had fewer reported collisions during rush hour than intersections relying on a standard green light for left turns, based on two years of collision reports.",
             "options": [
-                "The rest week is proven to be the only factor explaining the lower injury rate.",
-                "Gyms without mandatory rest weeks reported fewer overuse injuries.",
-                "The lower injury rate at rest-week gyms may be partly explained by coaching experience rather than the rest week alone.",
-                "Coaching experience was unrelated to whether a gym required a rest week."
+                "Dedicated left-turn arrows are proven to prevent every type of collision at any time of day, according to how the passage describes the situation.",
+                "Standard green lights resulted in fewer collisions than left-turn arrows, according to the account given.",
+                "Dedicated left-turn arrows appear linked to fewer rush-hour collisions at these intersections.",
+                "Collision rates were unrelated to the type of left-turn signal used."
             ],
-            "correctAnswer": "The lower injury rate at rest-week gyms may be partly explained by coaching experience rather than the rest week alone.",
-            "hint": "Notice the federation's own observation about a difference between the two types of gyms besides the rest week itself.",
-            "explanation": "Gyms with mandatory rest weeks had fewer injuries, but they also tended to have more experienced coaches, meaning the rest week's true individual contribution to injury reduction is uncertain, since coaching experience could also be playing a role.",
+            "correctAnswer": "Dedicated left-turn arrows appear linked to fewer rush-hour collisions at these intersections.",
+            "hint": "Weigh what two years of rush-hour collision data can reasonably support.",
+            "explanation": "Two years of rush-hour collision data support a link between dedicated arrows and fewer collisions specifically during that time, but this is short of proving the arrows prevent every kind of collision at all hours.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Left-turn arrow intersections: fewer rush-hour collisions -> standard-signal intersections: more rush-hour collisions -> pattern over two years -> arrows appear linked to fewer rush-hour collisions at these locations"
             ]
         },
         {
@@ -217,18 +217,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A museum studying visitor engagement with its permanent collection found that adding short audio commentary, narrated by the artist or a close family member when available rather than a professional narrator, kept visitors at a given artwork for measurably longer, and post-visit surveys showed higher recall of specific artwork details among visitors who had listened to the personal commentary compared to visitors who saw the same artwork without any audio commentary at all.",
+            "passage": "A survey of remote software teams found that teams which held a five-minute daily check-in reported fewer missed deadlines over six months than teams that only met weekly, based on responses from 40 teams across various companies.",
             "options": [
-                "Personal commentary reduced how long visitors spent with each artwork.",
-                "Visitors who heard no commentary recalled more artwork details.",
-                "The source of the audio commentary had no bearing on visitor engagement or recall.",
-                "Personal commentary from someone connected to the artwork appears to improve both engagement and memory of the details."
+                "Daily check-ins seem associated with fewer missed deadlines among the teams surveyed.",
+                "Daily check-ins are proven to eliminate missed deadlines for any team in any industry, according to how the passage describes the situation.",
+                "Teams that met only weekly reported fewer missed deadlines, given the way the passage frames things.",
+                "Missed deadlines had no relationship to meeting frequency in this survey, given the specific information included in the passage."
             ],
-            "correctAnswer": "Personal commentary from someone connected to the artwork appears to improve both engagement and memory of the details.",
-            "hint": "Notice the passage mentions two separate positive outcomes linked to the personal commentary.",
-            "explanation": "Visitors spent more time and recalled more details when personal commentary was available, suggesting a personal, connected voice engaged visitors more deeply than generic narration, affecting both how long they looked and what they remembered afterward.",
+            "correctAnswer": "Daily check-ins seem associated with fewer missed deadlines among the teams surveyed.",
+            "hint": "Consider what survey responses from 40 teams reasonably support without overreaching to every possible team.",
+            "explanation": "Responses from 40 teams support an association between daily check-ins and fewer missed deadlines within this survey, but this sample size and scope fall short of proving the practice eliminates missed deadlines universally.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Daily check-in teams: fewer missed deadlines -> weekly-meeting teams: more missed deadlines -> based on 40 teams surveyed -> daily check-ins seem associated with fewer missed deadlines in this group"
             ]
         },
         {
@@ -236,18 +236,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A manufacturing firm comparing safety outcomes across its facilities found that facilities where floor supervisors were required to personally demonstrate a safety procedure to new hires, rather than simply reviewing a written checklist together, reported fewer safety incidents among employees in their first ninety days, even though both training methods covered the exact same procedures and took approximately the same amount of time to complete, according to incident reports compiled across all facilities over two years.",
+            "passage": "A community garden coordinator noticed that plots watered with rainwater collected in barrels produced healthier-looking plants than plots watered with tap water, based on visual assessments over one growing season.",
             "options": [
-                "Hands-on demonstration during training appears more effective at preventing early safety incidents than a written review alone, despite similar time and content.",
-                "Written checklist review was more effective than hands-on demonstration.",
-                "The training method had no bearing on safety incidents among new hires.",
-                "The two training methods covered different procedures and took different amounts of time."
+                "Rainwater has been scientifically proven to be superior to tap water for all plants everywhere, based on what the passage actually says.",
+                "Plots watered with tap water looked healthier than rainwater-watered plots, given the specific information included in the passage.",
+                "Plant health showed no relationship to the water source used. This reading would hold true across the full sequence of events described.",
+                "Rainwater use appears associated with healthier-looking plants in this garden's observations."
             ],
-            "correctAnswer": "Hands-on demonstration during training appears more effective at preventing early safety incidents than a written review alone, despite similar time and content.",
-            "hint": "Notice what stayed the same between the two training methods, and what differed.",
-            "explanation": "Facilities using hands-on demonstration had fewer early safety incidents than those using written checklists alone, even with identical content and time, suggesting the format of training itself, not just its content, affects how well new hires retain safety procedures.",
+            "correctAnswer": "Rainwater use appears associated with healthier-looking plants in this garden's observations.",
+            "hint": "Consider what one season of visual assessments at a single garden can reasonably support.",
+            "explanation": "One season of visual assessment at a single garden supports an association between rainwater and healthier-looking plants there, but informal visual observations over one season fall well short of scientific proof for all plants everywhere.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Rainwater-watered plots: healthier-looking plants -> tap-water plots: less healthy-looking plants -> based on one season's observations -> rainwater appears associated with healthier plants in this garden"
             ]
         },
         {
@@ -255,18 +255,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A food industry analyst tracking sales of a popular snack brand across different regions found that a reformulation reducing sodium content by twenty percent led to a modest sales decline in regions where the change was prominently advertised on packaging as a health improvement, but sales in regions where the identical reformulated product was sold with no mention of the sodium change on the packaging remained essentially flat compared to sales of the previous formulation one year earlier.",
+            "passage": "A customer service department found that representatives who completed a new empathy-focused training had higher customer satisfaction ratings in the following quarter than representatives who had not yet completed the training.",
             "options": [
-                "The reformulation itself, regardless of advertising, caused sales to decline everywhere.",
-                "Advertising the health-focused reformulation appears to have hurt sales more than the reformulation itself.",
-                "Sales increased in regions where the change was prominently advertised.",
-                "Advertising the change had no bearing on sales in either region."
+                "The training is proven to guarantee perfect satisfaction ratings for every representative, as the situation is described here.",
+                "The empathy training seems linked to higher satisfaction ratings for representatives who completed it.",
+                "Representatives who had not completed the training received higher ratings, as the passage presents the situation.",
+                "Satisfaction ratings were unrelated to whether representatives completed the training, according to the account given."
             ],
-            "correctAnswer": "Advertising the health-focused reformulation appears to have hurt sales more than the reformulation itself.",
-            "hint": "Compare sales in regions where the change was advertised to regions where it wasn't mentioned.",
-            "explanation": "Sales declined only where the sodium reduction was advertised as a health change, while sales stayed flat where the identical product change went unmentioned, suggesting customers reacted negatively to the framing of the change rather than to the product itself.",
+            "correctAnswer": "The empathy training seems linked to higher satisfaction ratings for representatives who completed it.",
+            "hint": "Weigh what one quarter's worth of comparative data supports without exaggerating the certainty.",
+            "explanation": "A single quarter of comparative ratings supports a link between the training and improved satisfaction scores, but one quarter of data doesn't prove the training guarantees a particular outcome for every representative.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Trained representatives: higher satisfaction ratings -> untrained representatives: lower ratings -> pattern in the following quarter -> training seems linked to higher ratings for those who completed it"
             ]
         },
         {
@@ -274,18 +274,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A team studying urban heat islands across several metropolitan regions found that painting rooftops white to reflect sunlight reduced indoor cooling costs measurably during summer months, but researchers also observed that the cooling benefit was substantially smaller in cities with high humidity compared to cities with similar summer temperatures but noticeably lower humidity, a finding the research team noted has real implications for which cities should prioritize the technique within their broader heat-mitigation strategies.",
+            "passage": "A regional grocery chain observed that stores playing slower-tempo background music had customers who spent more time in the store and higher average purchase totals than stores playing faster-tempo music, based on three months of sales data.",
             "options": [
-                "White rooftops appear less effective at reducing cooling costs in humid climates than in drier ones with similar temperatures.",
-                "White rooftops were equally effective regardless of a city's humidity level.",
-                "White rooftops were more effective in humid cities than in dry ones.",
-                "Humidity had no measurable relationship to the cooling benefit of white rooftops."
+                "Music tempo is proven to control spending behavior in every retail store.",
+                "Faster-tempo music resulted in longer shopping times and higher totals.",
+                "Slower-tempo music appears associated with longer shopping times and higher purchase totals in this data.",
+                "Purchase totals showed no relationship to the music played."
             ],
-            "correctAnswer": "White rooftops appear less effective at reducing cooling costs in humid climates than in drier ones with similar temperatures.",
-            "hint": "Compare the cooling benefit between humid and low-humidity cities with similar temperatures.",
-            "explanation": "The cooling benefit of white rooftops was smaller in humid cities than in drier cities with similar temperatures, suggesting that humidity affects how well this particular technique works, beyond temperature alone.",
+            "correctAnswer": "Slower-tempo music appears associated with longer shopping times and higher purchase totals in this data.",
+            "hint": "Consider what three months of sales data from one grocery chain can reasonably support.",
+            "explanation": "Three months of sales data support an association between slower music and increased spending time and totals within this chain, though this remains short of proof that music tempo universally controls shopping behavior.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Slow-tempo stores: longer shopping time, higher totals -> fast-tempo stores: shorter time, lower totals -> based on three months of data -> slow tempo appears associated with the increased spending pattern"
             ]
         },
         {
@@ -293,18 +293,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A team studying electric vehicle charging behavior found that drivers with home charging access, allowing them to charge overnight, expressed significantly less anxiety about running out of charge during daily errands than drivers who relied entirely on public charging stations, even though public charging infrastructure in the drivers' city had expanded considerably in the two years leading up to the survey, according to responses from several hundred electric vehicle owners across the metropolitan area.",
+            "passage": "A university's career center found that students who attended at least one mock interview session reported feeling more confident during real interviews, based on post-interview surveys collected over two academic years.",
             "options": [
-                "Public charging expansion eliminated range anxiety for all drivers.",
-                "Drivers relying on public charging reported less anxiety than those with home access.",
-                "Access to home charging had no bearing on drivers' anxiety levels.",
-                "Home charging access appears to reduce range anxiety more than simply having more public charging stations available."
+                "Mock interviews are proven to guarantee job offers for every student who attends, given the way the passage frames things.",
+                "Students who skipped mock interviews reported the highest confidence levels. This reading would hold true across the full sequence of events described.",
+                "Confidence levels showed no relationship to mock interview attendance. This pattern would hold steady across the entire situation the passage lays out.",
+                "Attending a mock interview session appears associated with greater reported confidence in real interviews."
             ],
-            "correctAnswer": "Home charging access appears to reduce range anxiety more than simply having more public charging stations available.",
-            "hint": "Notice that public charging had expanded, yet a difference in anxiety still remained between the two groups.",
-            "explanation": "Drivers with home charging reported less anxiety than those relying on public stations, even after public infrastructure expanded, suggesting the convenience and predictability of home charging addresses anxiety in a way that public station availability alone does not.",
+            "correctAnswer": "Attending a mock interview session appears associated with greater reported confidence in real interviews.",
+            "hint": "Consider what two years of post-interview survey data can reasonably support.",
+            "explanation": "Two years of consistent survey responses support an association between mock interview attendance and increased confidence, but self-reported confidence data doesn't amount to proof of job outcomes.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Students attending mock interviews: report more confidence -> students skipping mock interviews: report less confidence -> pattern over two academic years -> attendance appears associated with greater confidence"
             ]
         },
         {
@@ -312,18 +312,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A clinical team studying medication adherence among patients with chronic conditions found that patients who received a brief phone call from a pharmacist within forty-eight hours of starting a new prescription were significantly more likely to still be taking the medication correctly at the three-month mark than patients who received only the standard printed instructions, with the effect being most pronounced among patients managing more than one chronic condition simultaneously, a group pharmacists noted often faces the most complex schedules.",
+            "passage": "A city's sanitation department noticed that neighborhoods using clear recycling bins had lower contamination rates, meaning fewer non-recyclable items mixed in, than neighborhoods using opaque bins, based on six months of bin audits.",
             "options": [
-                "The pharmacist call was equally effective regardless of how many conditions a patient managed.",
-                "Patients managing multiple conditions benefited least from the pharmacist call.",
-                "Printed instructions alone were more effective than a pharmacist's follow-up call.",
-                "The early pharmacist call appears especially valuable for patients managing multiple chronic conditions at once."
+                "Clear bins are proven to eliminate all recycling contamination everywhere.",
+                "Opaque bins resulted in lower contamination rates than clear bins.",
+                "Contamination rates showed no relationship to bin type.",
+                "Clear bins appear associated with lower contamination rates in this sanitation data."
             ],
-            "correctAnswer": "The early pharmacist call appears especially valuable for patients managing multiple chronic conditions at once.",
-            "hint": "Notice which specific group of patients showed the strongest effect from the pharmacist's call.",
-            "explanation": "The pharmacist call's benefit was strongest among patients managing multiple chronic conditions, suggesting that patients facing the most complex medication schedules gained the most from that early, personal follow-up.",
+            "correctAnswer": "Clear bins appear associated with lower contamination rates in this sanitation data.",
+            "hint": "Weigh what six months of bin audit data can reasonably support without overstating the finding.",
+            "explanation": "Six months of consistent audit data support an association between clear bins and lower contamination in these neighborhoods, though this falls short of proving the bins eliminate contamination entirely everywhere.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Clear-bin neighborhoods: lower contamination -> opaque-bin neighborhoods: higher contamination -> pattern over six months -> clear bins appear associated with lower contamination in this data"
             ]
         },
         {
@@ -331,18 +331,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A regional tourism board comparing visitor spending patterns found that tourists who booked at least one guided local experience, such as a cooking class or walking tour, in advance of their trip spent notably more at independent local businesses throughout their entire stay than tourists who arrived without any pre-booked activities, even after controlling for differences in overall trip length and total travel budget between the two groups of travelers surveyed.",
+            "passage": "A small manufacturing company found that shifts starting with a brief safety huddle had fewer reported minor injuries than shifts that skipped the huddle, based on incident logs collected over one year at a single facility.",
             "options": [
-                "Trip length and budget fully explained the difference in local spending.",
-                "Tourists without pre-booked activities spent more at local businesses overall.",
-                "Pre-booking a local experience had no bearing on overall spending patterns.",
-                "Booking a local experience in advance appears linked to greater overall local spending, beyond what trip length or budget alone would explain."
+                "Safety huddles are proven to prevent all workplace injuries at any facility, given the way the passage frames things.",
+                "Shifts that skipped the huddle had fewer reported injuries, as the passage lays out the sequence of events.",
+                "The safety huddle seems associated with fewer minor injuries at this facility.",
+                "Injury rates showed no relationship to whether a huddle was held, based on the details the passage provides."
             ],
-            "correctAnswer": "Booking a local experience in advance appears linked to greater overall local spending, beyond what trip length or budget alone would explain.",
-            "hint": "Notice the passage mentions that trip length and budget were accounted for separately from the spending pattern.",
-            "explanation": "Tourists who pre-booked a local experience spent more at local businesses overall, even after accounting for trip length and budget, suggesting that an early local connection may encourage more local spending throughout an entire visit.",
+            "correctAnswer": "The safety huddle seems associated with fewer minor injuries at this facility.",
+            "hint": "Consider what one year of incident logs from a single facility can reasonably support.",
+            "explanation": "One year of incident data from a single facility supports an association between the safety huddle and fewer minor injuries there, though data from one facility cannot prove the practice prevents all injuries everywhere.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Huddle shifts: fewer minor injuries -> no-huddle shifts: more minor injuries -> pattern over one year at this facility -> huddle seems associated with fewer injuries here"
             ]
         },
         {
@@ -350,18 +350,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A university department reviewing several years of course evaluation data found that instructors who posted detailed lecture slides online before class, allowing students to preview material in advance, received similar overall satisfaction ratings to instructors who did not post materials in advance, but received notably higher ratings specifically on questions related to how well the course accommodated different learning styles and paces, a distinction that stood out clearly across the aggregated responses the department reviewed.",
+            "passage": "A children's museum found that exhibits with hands-on interactive stations had longer average visitor dwell times than exhibits with only informational placards, based on visitor tracking data collected over three months.",
             "options": [
-                "Posting materials in advance improved every category of course evaluation equally.",
-                "Instructors who posted materials in advance received lower overall satisfaction ratings.",
-                "Posting materials in advance had no measurable effect on any evaluation category.",
-                "Posting materials in advance appears to specifically improve perceived accommodation of different learning styles, without changing overall satisfaction much."
+                "Interactive stations are proven to be the best exhibit design for every museum, as the passage presents the situation.",
+                "Exhibits with only placards had longer dwell times than interactive ones, based on the passage's account of what happened.",
+                "Interactive stations appear associated with longer visitor dwell times at these exhibits.",
+                "Dwell times showed no relationship to exhibit design. This would remain the case regardless of any other detail in the passage."
             ],
-            "correctAnswer": "Posting materials in advance appears to specifically improve perceived accommodation of different learning styles, without changing overall satisfaction much.",
-            "hint": "Notice the passage separates overall satisfaction from one specific category of evaluation.",
-            "explanation": "Overall satisfaction stayed similar regardless of whether materials were posted in advance, but ratings on accommodating different learning styles rose specifically, suggesting the advance materials helped students with different needs more than they changed general course satisfaction.",
+            "correctAnswer": "Interactive stations appear associated with longer visitor dwell times at these exhibits.",
+            "hint": "Consider what three months of visitor tracking data at one museum can reasonably support.",
+            "explanation": "Three months of tracking data support an association between interactive stations and longer dwell times at this museum's exhibits, though a single museum's data cannot prove this design is universally best.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Interactive exhibits: longer dwell times -> placard-only exhibits: shorter dwell times -> pattern over three months -> interactive design appears associated with longer engagement"
             ]
         },
         {
@@ -369,18 +369,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A recycling facility that switched from single-stream sorting, where all recyclables are mixed together in one bin and separated later by machine, to a dual-stream system requiring residents to separate paper from other materials at home, found that overall recycling volume dropped in the months just after the switch, but the contamination rate, the percentage of non-recyclable material mixed in, fell so significantly that the total amount of usable recycled material actually increased despite the lower total volume collected.",
+            "passage": "A regional bank found that customers who set up automatic bill payments had fewer late fee charges over the following year than customers who paid bills manually, based on account records from 5,000 customers.",
             "options": [
-                "The dual-stream system reduced both total volume and usable recycled material.",
-                "Contamination rates increased under the dual-stream system.",
-                "The dual-stream system appears to have improved the usable quality of recycling more than the drop in total volume hurt it.",
-                "Total volume and contamination rates were unaffected by the switch to dual-stream sorting."
+                "Automatic payments are proven to eliminate late fees for every customer at any bank, as the passage lays out the sequence of events.",
+                "Automatic bill payments appear associated with fewer late fees among these customers.",
+                "Customers who paid manually had fewer late fees than those using automatic payments, according to how the passage describes the situation.",
+                "Late fee charges showed no relationship to payment method."
             ],
-            "correctAnswer": "The dual-stream system appears to have improved the usable quality of recycling more than the drop in total volume hurt it.",
-            "hint": "Notice the passage distinguishes between total volume collected and the amount of usable material within that volume.",
-            "explanation": "Total recycling volume dropped, but contamination fell enough that usable recycled material actually increased, suggesting that quality, not just quantity, matters for how much recycling ultimately gets put to good use.",
+            "correctAnswer": "Automatic bill payments appear associated with fewer late fees among these customers.",
+            "hint": "Consider what account records from 5,000 customers at one bank reasonably support.",
+            "explanation": "Records from 5,000 customers support a clear association between automatic payments and fewer late fees at this bank, though even a large sample from one institution stops short of proving the outcome for every customer everywhere.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Automatic-payment customers: fewer late fees -> manual-payment customers: more late fees -> based on 5,000 accounts -> automatic payments appear associated with fewer late fees in this data"
             ]
         },
         {
@@ -388,18 +388,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "An analysis of small business loan defaults found that businesses that had completed a free consultation with a local Small Business Development Center before applying for financing defaulted at lower rates than businesses that had not, but the effect was concentrated almost entirely among first-time business owners, with little measurable difference in default rates among owners who had previously run at least one other business before their current venture, according to data reviewed across several regional lenders.",
+            "passage": "A hospital's cardiology department found that patients enrolled in a post-discharge phone support program had fewer emergency room returns within 30 days than patients who received no follow-up calls, based on records from 800 discharged patients.",
             "options": [
-                "The consultation benefited experienced business owners more than first-time owners.",
-                "The consultation had an identical effect regardless of the owner's prior experience.",
-                "The consultation appears to specifically benefit first-time business owners more than experienced ones.",
-                "Default rates were unaffected by whether a business owner attended a consultation."
+                "The phone support program is proven to eliminate emergency returns for all cardiology patients, based on the passage's account of what happened.",
+                "Patients without follow-up calls had fewer emergency room returns.",
+                "The phone support program appears associated with fewer emergency room returns in this patient group.",
+                "Emergency room returns showed no relationship to the phone support program, based on what the passage actually says."
             ],
-            "correctAnswer": "The consultation appears to specifically benefit first-time business owners more than experienced ones.",
-            "hint": "Notice which specific group of business owners showed the largest difference in default rates.",
-            "explanation": "The consultation's benefit was concentrated among first-time owners, with little effect for experienced owners, suggesting the guidance addressed gaps in knowledge that experienced owners had likely already filled through prior experience running a business.",
+            "correctAnswer": "The phone support program appears associated with fewer emergency room returns in this patient group.",
+            "hint": "Consider what records from 800 discharged patients at one hospital department can reasonably support.",
+            "explanation": "Records from 800 patients support an association between the phone program and fewer emergency returns in this hospital's cardiology patients, though this remains short of proof the program eliminates returns for every cardiology patient everywhere.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Phone-support patients: fewer ER returns within 30 days -> no-call patients: more ER returns -> based on 800 patients -> program appears associated with fewer returns in this group"
             ]
         },
         {
@@ -407,18 +407,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A family mediator who works with co-parenting families going through custody arrangements observed that families using a shared digital calendar to coordinate schedules and expenses reported fewer disputes requiring formal mediation over an eighteen-month period than families relying on informal text messages and phone calls, though the mediator noted this pattern held most strongly for families who had already agreed on a basic custody framework before adopting the digital calendar as their primary coordination tool.",
+            "passage": "A city's urban planning office found that streets with dedicated bike lanes had fewer reported vehicle-bicycle collisions than similar streets without bike lanes, based on five years of collision reports across matched pairs of streets.",
             "options": [
-                "The digital calendar was equally helpful regardless of whether a custody framework existed.",
-                "Families using text messages and calls had fewer disputes than those using a calendar.",
-                "A shared digital calendar appears most helpful for families who already have a basic custody agreement in place.",
-                "The mediator found no relationship between coordination method and dispute frequency."
+                "Bike lanes are proven to make bicycle riding completely risk-free. Such a pattern would remain constant throughout the scenario being described.",
+                "Streets without bike lanes had fewer collisions than streets with lanes, as the passage lays out the sequence of events.",
+                "Dedicated bike lanes appear linked to fewer vehicle-bicycle collisions on these matched streets.",
+                "Collision rates showed no relationship to the presence of bike lanes, given the specific information included in the passage."
             ],
-            "correctAnswer": "A shared digital calendar appears most helpful for families who already have a basic custody agreement in place.",
-            "hint": "Notice the condition the mediator mentions under which the pattern held most strongly.",
-            "explanation": "The digital calendar was linked to fewer disputes, but this pattern was strongest for families with an existing custody framework, suggesting the tool works best at reducing logistical friction once the bigger disagreements have already been resolved.",
+            "correctAnswer": "Dedicated bike lanes appear linked to fewer vehicle-bicycle collisions on these matched streets.",
+            "hint": "Consider what five years of matched-pair data can reasonably support, while avoiding claims of eliminated risk.",
+            "explanation": "Five years of matched comparison data support a meaningful link between bike lanes and fewer collisions on these streets, but this falls short of proving cycling becomes entirely risk-free.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Streets with bike lanes: fewer vehicle-bicycle collisions -> matched streets without lanes: more collisions -> pattern over five years -> bike lanes appear linked to fewer collisions on these streets"
             ]
         },
         {
@@ -426,18 +426,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A city analyzing participation in its free tax preparation assistance program, aimed at low- and moderate-income residents, found that participation rates were significantly higher in neighborhoods where the program was promoted through partnerships with local churches, community centers, and small businesses that residents already knew and regularly visited, than in neighborhoods where promotion relied primarily on the city's official website and printed mailers sent to every eligible household, according to enrollment data compiled at the conclusion of that tax season.",
+            "passage": "A national survey of small businesses found that companies offering flexible scheduling had lower employee turnover over a two-year period than companies with fixed schedules, based on responses from 1,200 businesses.",
             "options": [
-                "Promotion through trusted local community institutions appears more effective than official city communications for reaching eligible residents.",
-                "Official city communications were more effective than community partnerships.",
-                "The method of promotion had no bearing on program participation rates.",
-                "Participation rates were identical regardless of how the program was promoted."
+                "Flexible scheduling appears associated with lower turnover among the businesses surveyed.",
+                "Flexible scheduling is proven to eliminate turnover for every business in every industry, based on what the passage actually says.",
+                "Businesses with fixed schedules had lower turnover than those with flexible schedules, given how the events unfolded.",
+                "Turnover rates showed no relationship to scheduling type in this survey, based on the details the passage provides."
             ],
-            "correctAnswer": "Promotion through trusted local community institutions appears more effective than official city communications for reaching eligible residents.",
-            "hint": "Compare participation in neighborhoods that used different promotion strategies.",
-            "explanation": "Participation was higher in neighborhoods where trusted local institutions promoted the program than where the city relied on official channels alone, suggesting that community trust and familiarity may matter more than the source alone for reaching residents effectively.",
+            "correctAnswer": "Flexible scheduling appears associated with lower turnover among the businesses surveyed.",
+            "hint": "Consider what responses from 1,200 businesses reasonably support without overstating universal proof.",
+            "explanation": "Responses from 1,200 businesses support an association between flexible scheduling and lower turnover within this survey, though this scale of self-reported data stops short of proving the effect for every industry and business.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Flexible-schedule businesses: lower turnover -> fixed-schedule businesses: higher turnover -> based on 1,200 businesses surveyed -> flexible scheduling appears associated with lower turnover in this group"
             ]
         },
         {
@@ -445,18 +445,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A college athletic department comparing recovery outcomes for athletes with similar knee injuries found that athletes who began supervised physical therapy within one week of injury, rather than waiting the more traditional two to three weeks to allow initial swelling to fully subside, returned to competition faster on average, with no measurable increase in re-injury rates during their first full season back, based on outcomes tracked by the department's sports medicine staff over several seasons.",
+            "passage": "A research team studying sleep found that participants who avoided caffeine after 2 p.m. reported falling asleep faster than participants who consumed caffeine later in the day, based on sleep diaries kept by 300 volunteers over four weeks.",
             "options": [
-                "Starting physical therapy earlier appears to speed recovery without increasing the risk of re-injury.",
-                "Starting therapy earlier increased the rate of re-injury significantly.",
-                "Waiting two to three weeks led to faster return times.",
-                "The timing of physical therapy had no bearing on recovery speed or re-injury rates."
+                "Avoiding caffeine after 2 p.m. is proven to guarantee instant sleep for everyone, based on what the passage actually says.",
+                "Participants who consumed caffeine later fell asleep faster.",
+                "Avoiding afternoon caffeine appears associated with faster reported sleep onset among these volunteers.",
+                "Sleep onset times showed no relationship to caffeine timing in this study. Nothing described in the passage points to any exception to this pattern."
             ],
-            "correctAnswer": "Starting physical therapy earlier appears to speed recovery without increasing the risk of re-injury.",
-            "hint": "Notice the passage mentions two separate outcomes: return speed and re-injury rate.",
-            "explanation": "Athletes who started therapy earlier returned to competition faster, and re-injury rates stayed similar, suggesting the traditional waiting period may not have been necessary to protect against further injury.",
+            "correctAnswer": "Avoiding afternoon caffeine appears associated with faster reported sleep onset among these volunteers.",
+            "hint": "Consider what four weeks of self-reported sleep diaries from 300 volunteers can reasonably support.",
+            "explanation": "Four weeks of sleep diary data from 300 volunteers support an association between caffeine timing and reported sleep onset, though self-reported diary data falls short of guaranteeing a specific outcome for every individual.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "No afternoon caffeine: faster reported sleep onset -> afternoon caffeine: slower reported onset -> based on 300 volunteers over four weeks -> avoiding caffeine appears associated with faster reported sleep onset"
             ]
         },
         {
@@ -464,18 +464,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A public radio station that shifted a portion of its funding appeals from lengthy, multi-day on-air pledge drives to shorter, more frequent reminders embedded naturally within regular programming found that total annual donations remained roughly the same as in previous years, but listener complaints about programming interruptions dropped substantially, and average listening time per session increased slightly during the months following the change, according to internal ratings data reviewed at fiscal year's end.",
+            "passage": "A regional airport found that flights scheduled with a 45-minute buffer between arrival and departure had fewer missed connections than flights scheduled with a 30-minute buffer, based on records from 10,000 connecting passengers.",
             "options": [
-                "Donations declined significantly after the funding appeal format changed.",
-                "Listener complaints increased after the format change.",
-                "The shorter, more frequent appeals appear to have maintained donations while improving the listener experience.",
-                "The format of funding appeals had no measurable effect on donations or listener experience."
+                "A 45-minute buffer is proven to eliminate every possible missed connection, according to the account given.",
+                "The 30-minute buffer resulted in fewer missed connections than the 45-minute buffer, as the passage presents the situation.",
+                "A longer connection buffer appears associated with fewer missed connections in this data.",
+                "Missed connections showed no relationship to buffer length. Nothing in the passage suggests this changed at any point during the period described."
             ],
-            "correctAnswer": "The shorter, more frequent appeals appear to have maintained donations while improving the listener experience.",
-            "hint": "Notice the passage mentions one outcome that stayed the same and two that improved.",
-            "explanation": "Donations held steady while complaints dropped and listening time rose slightly, suggesting the shorter, embedded appeals achieved the same fundraising result while creating a noticeably better experience for listeners.",
+            "correctAnswer": "A longer connection buffer appears associated with fewer missed connections in this data.",
+            "hint": "Consider what records from 10,000 passengers at one airport can reasonably support.",
+            "explanation": "Records from 10,000 passengers support a clear association between longer buffers and fewer missed connections at this airport, though even this large sample stops short of proving every missed connection is eliminated.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "45-minute buffer: fewer missed connections -> 30-minute buffer: more missed connections -> based on 10,000 passengers -> longer buffer appears associated with fewer missed connections in this data"
             ]
         },
         {
@@ -483,18 +483,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A staffing analytics firm studying multi-year attrition among call center employees found that employees hired through an internal employee-referral program, where current staff recommend candidates from their own personal networks, stayed in their positions substantially longer on average than employees hired through traditional external job postings, even after the firm statistically controlled for starting pay, shift assignment, prior call center experience, and initial training scores across both groups of newly hired employees.",
+            "passage": "A dental association's survey found that patients who used an electric toothbrush reported fewer cavities at their most recent checkup than patients using a manual toothbrush, based on self-reported data from 2,500 respondents.",
             "options": [
-                "Being hired through employee referral appears linked to longer tenure, beyond what pay, shift, or experience alone would explain.",
-                "Pay and shift assignment fully explained the difference in employee tenure.",
-                "Employees hired through external postings stayed longer on average.",
-                "How an employee was hired had no bearing on how long they stayed."
+                "Electric toothbrush use appears associated with fewer reported cavities among these respondents.",
+                "Electric toothbrushes are proven to prevent cavities completely for everyone.",
+                "Manual toothbrush users reported fewer cavities than electric toothbrush users, given the specific information included in the passage.",
+                "Cavity reports showed no relationship to toothbrush type in this survey."
             ],
-            "correctAnswer": "Being hired through employee referral appears linked to longer tenure, beyond what pay, shift, or experience alone would explain.",
-            "hint": "Notice the passage lists several factors the firm accounted for separately from the hiring method itself.",
-            "explanation": "Referred employees stayed longer even after accounting for pay, shift, and experience, suggesting the referral process itself, perhaps through better-set expectations or an existing personal connection, contributed to longer tenure beyond those other measured factors.",
+            "correctAnswer": "Electric toothbrush use appears associated with fewer reported cavities among these respondents.",
+            "hint": "Consider what self-reported survey data from 2,500 respondents can reasonably support.",
+            "explanation": "Self-reported data from 2,500 respondents support an association between electric toothbrush use and fewer reported cavities, though this survey-based evidence stops short of proving cavity prevention for every individual.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Electric toothbrush users: fewer reported cavities -> manual toothbrush users: more reported cavities -> based on 2,500 respondents -> electric brush use appears associated with fewer reported cavities"
             ]
         },
         {
@@ -502,18 +502,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A team studying software developer productivity found that developers working in a codebase with comprehensive automated tests wrote new features faster on average than developers working in a similar codebase with minimal test coverage, but the productivity gap widened considerably as the codebase's overall size and complexity increased, suggesting the value of automated testing may become more pronounced as software projects grow larger and harder to reason about over time.",
+            "passage": "A city's fire department found that homes with interconnected smoke alarms, where one alarm triggers all others, had faster reported evacuation times during drills than homes with standalone alarms, based on data from 400 participating households.",
             "options": [
-                "The productivity gap remained constant regardless of codebase size.",
-                "Automated testing appears to provide a growing advantage as codebases become larger and more complex, not just a fixed benefit.",
-                "Automated testing provided the biggest advantage in the smallest codebases.",
-                "Codebase size and complexity had no bearing on the benefit of automated testing."
+                "Interconnected alarms are proven to guarantee safe evacuation in every real fire.",
+                "Interconnected smoke alarms appear associated with faster evacuation times in these household drills.",
+                "Standalone alarms resulted in faster evacuation times than interconnected alarms.",
+                "Evacuation times showed no relationship to alarm type in this data."
             ],
-            "correctAnswer": "Automated testing appears to provide a growing advantage as codebases become larger and more complex, not just a fixed benefit.",
-            "hint": "Notice how the productivity gap changed as codebase size and complexity increased.",
-            "explanation": "The productivity advantage of automated testing widened as codebases grew larger and more complex, suggesting the benefit isn't fixed but instead compounds as a software project becomes bigger and harder to manage without reliable tests.",
+            "correctAnswer": "Interconnected smoke alarms appear associated with faster evacuation times in these household drills.",
+            "hint": "Consider what drill data from 400 households can reasonably support, and note the difference between a drill and a real emergency.",
+            "explanation": "Drill data from 400 households support an association between interconnected alarms and faster evacuation during drills, but drill performance does not amount to a guarantee of safety in an actual, unpredictable fire.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Interconnected-alarm homes: faster evacuation in drills -> standalone-alarm homes: slower evacuation -> based on 400 households -> interconnected alarms appear associated with faster drill evacuation, not guaranteed real-fire safety"
             ]
         },
         {
@@ -521,18 +521,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "Researchers studying urban bird populations found that cities that reduced nighttime lighting in downtown areas during peak spring and fall migration periods, when many bird species travel at night guided partly by natural light cues, recorded substantially fewer bird deaths from building collisions than cities that maintained normal lighting levels year-round, even though the participating cities were otherwise similar in building density and overall population size, according to collision data collected across multiple migration seasons.",
+            "passage": "A retail analytics firm found that stores placing impulse-buy items near the checkout line saw those items' sales rise by an average of 18 percent compared to stores placing the same items elsewhere, based on data from 300 store locations over one quarter.",
             "options": [
-                "Reduced nighttime lighting increased bird collision deaths during migration.",
-                "Reducing nighttime lighting during migration season appears to reduce bird collision deaths, independent of a city's size or density.",
-                "Building density was the main factor explaining collision death rates.",
-                "Lighting levels had no bearing on bird collision deaths in any city studied."
+                "Checkout placement appears associated with higher sales for these impulse-buy items in this dataset.",
+                "Checkout placement is proven to increase sales of any product in any store, given the way the passage frames things.",
+                "Items placed elsewhere in the store sold better than those near checkout, based on what the passage actually says.",
+                "Sales figures showed no relationship to where items were placed."
             ],
-            "correctAnswer": "Reducing nighttime lighting during migration season appears to reduce bird collision deaths, independent of a city's size or density.",
-            "hint": "Notice that building density and size were similar between the compared cities.",
-            "explanation": "Cities that dimmed lights during migration season had fewer bird collision deaths than similarly sized cities with normal lighting, suggesting the lighting change itself, not other city characteristics, was linked to the improvement.",
+            "correctAnswer": "Checkout placement appears associated with higher sales for these impulse-buy items in this dataset.",
+            "hint": "Consider what one quarter of data from 300 store locations can reasonably support.",
+            "explanation": "One quarter of data across 300 locations supports an association between checkout placement and higher sales for these specific items, though this remains short of proving the effect applies to any product in any store.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Checkout-placed items: sales up 18% -> items placed elsewhere: lower sales increase -> based on 300 store locations, one quarter -> checkout placement appears associated with higher sales for these items"
             ]
         },
         {
@@ -540,18 +540,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A restaurant consultant analyzing menu design across dozens of client restaurants over several years found that menus listing prices without a dollar sign, showing simply '24' instead of '$24,' were associated with slightly higher average spending per table than menus using the traditional dollar sign format, a pattern the consultant attributed to the dollar sign serving as a subtle visual reminder of the act of spending money, based on informal diner interviews conducted at several of the restaurants studied.",
+            "passage": "A university's counseling center found that students who attended at least three stress-management workshops reported lower self-rated anxiety levels at the end of the semester than students who attended none, based on surveys from 600 students.",
             "options": [
-                "Including the dollar sign was associated with higher average spending.",
-                "The presence or absence of a dollar sign had no bearing on spending.",
-                "Average spending per table was identical regardless of menu price format.",
-                "Removing the dollar sign from menu prices appears associated with higher average spending."
+                "The workshops are proven to cure anxiety disorders for every student who attends, based on the passage's account of what happened.",
+                "Students who attended no workshops reported the lowest anxiety levels, given how the events unfolded.",
+                "Self-rated anxiety showed no relationship to workshop attendance in this survey, as the situation is described here.",
+                "Attending the workshops appears associated with lower self-rated anxiety among these students."
             ],
-            "correctAnswer": "Removing the dollar sign from menu prices appears associated with higher average spending.",
-            "hint": "Compare average spending between the two menu price formats.",
-            "explanation": "Menus without a dollar sign were linked to slightly higher spending than menus with one, suggesting that a small visual detail, the presence of a currency symbol, may subtly influence how much diners spend.",
+            "correctAnswer": "Attending the workshops appears associated with lower self-rated anxiety among these students.",
+            "hint": "Consider what self-rated survey data from 600 students can reasonably support without claiming a medical cure.",
+            "explanation": "Self-rated survey data from 600 students support an association between workshop attendance and lower reported anxiety, though self-reported wellbeing surveys fall well short of proving a clinical treatment effect.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Workshop attendees (3+): lower self-rated anxiety at semester end -> non-attendees: higher self-rated anxiety -> based on 600 students -> attendance appears associated with lower self-rated anxiety in this group"
             ]
         },
         {
@@ -559,18 +559,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "Since the Hendersons began keeping a small whiteboard in their kitchen listing each family member's activities and any needed items for the week, they say they have reduced last-minute store runs considerably compared to the previous year, though they also noted the system only works reliably when someone actually updates the board consistently, since it fell into disuse for several weeks last spring during a particularly busy stretch and old habits of forgetting items briefly returned.",
+            "passage": "A city's public works department found that streets repaved with a newer asphalt mixture showed fewer cracks after two winters than streets repaved with the older mixture, based on inspection records from 150 street segments.",
             "options": [
-                "The whiteboard system worked well even during the weeks it was neglected.",
-                "The whiteboard system appears effective at reducing last-minute errands, but only when family members keep it consistently updated.",
-                "Last-minute store runs increased after the family started using the whiteboard.",
-                "The whiteboard had no measurable effect on the family's errands regardless of use."
+                "The newer mixture is proven to prevent cracking in every climate under any conditions, given the specific information included in the passage.",
+                "The newer asphalt mixture appears associated with fewer cracks after two winters in this data.",
+                "The older mixture showed fewer cracks than the newer mixture.",
+                "Cracking rates showed no relationship to which asphalt mixture was used."
             ],
-            "correctAnswer": "The whiteboard system appears effective at reducing last-minute errands, but only when family members keep it consistently updated.",
-            "hint": "Notice what happened when the family temporarily stopped updating the board.",
-            "explanation": "The system reduced last-minute errands overall, but old habits returned during the weeks it went unused, showing that the whiteboard's benefit depends on consistent upkeep rather than being effective automatically just by existing in the kitchen.",
+            "correctAnswer": "The newer asphalt mixture appears associated with fewer cracks after two winters in this data.",
+            "hint": "Consider what inspection records from 150 street segments over two winters can reasonably support.",
+            "explanation": "Inspection records from 150 segments over two winters support an association between the newer mixture and fewer cracks in this data, though this remains short of proving the mixture prevents cracking under every possible climate condition.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Newer mixture segments: fewer cracks after two winters -> older mixture segments: more cracks -> based on 150 segments -> newer mixture appears associated with fewer cracks in this dataset"
             ]
         }
     ]

@@ -5,573 +5,573 @@
     "quests": [
         {
             "id": "RDG_SKIMMINGSCANNING_L1_Q1",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Scan the sentence to find the day mentioned.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Ben wakes up at seven every morning before breakfast.",
-            "targetItem": "seven",
+            "passage": "Maria's book club meets every Thursday evening.",
+            "targetItem": "Thursday",
             "options": [
-                "seven",
-                "eight",
-                "breakfast",
-                "morning"
+                "Tuesday",
+                "Thursday",
+                "evening",
+                "book"
             ],
-            "correctAnswer": "seven",
-            "hint": "Look for the number that tells what time Ben wakes up.",
-            "explanation": "The passage says Ben wakes up at seven, so that is the word to find.",
-            "timeLimit": 20,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "Thursday",
+            "hint": "Look for the name of a day of the week.",
+            "explanation": "The sentence names Thursday as the meeting day, not Tuesday.",
+            "timeLimit": 25,
+            "targetInfo": "Day of the week"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L1_Q2",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Search the sentence for the closing time.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "The evening class starts at six and ends at eight.",
-            "targetItem": "eight",
+            "passage": "The library closes at six o'clock tonight.",
+            "targetItem": "six",
             "options": [
-                "eight",
-                "class",
-                "evening",
-                "six"
+                "seven",
+                "tonight",
+                "six",
+                "library"
             ],
-            "correctAnswer": "eight",
-            "hint": "Find the number that shows when the class ends.",
-            "explanation": "The class ends at eight, so that is the correct word.",
-            "timeLimit": 20,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "six",
+            "hint": "Search for the number that tells the time.",
+            "explanation": "The library's closing time is six; seven does not appear as a time here.",
+            "timeLimit": 25,
+            "targetInfo": "Closing time"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L1_Q3",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Look through the sentence to find the pet's name.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Nurses at the clinic often work night shifts.",
-            "targetItem": "night",
+            "passage": "Tom's dog is named Rex.",
+            "targetItem": "Rex",
             "options": [
-                "nurses",
-                "day",
-                "night",
-                "clinic"
+                "Tom",
+                "Rex",
+                "Max",
+                "dog"
             ],
-            "correctAnswer": "night",
-            "hint": "Look for the word describing what kind of shift nurses work.",
-            "explanation": "The passage says nurses work night shifts, so 'night' is correct.",
-            "timeLimit": 20,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "Rex",
+            "hint": "Look for the word that is a name, not an everyday word.",
+            "explanation": "The dog's name is Rex; Tom is the owner, not the pet.",
+            "timeLimit": 25,
+            "targetInfo": "Pet's name"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L2_Q1",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Scan for the street name in the sentence.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "The flight to Rome leaves at nine tonight.",
-            "targetItem": "Rome",
+            "passage": "The bakery on Elm Street opens at seven every morning.",
+            "targetItem": "Elm",
             "options": [
-                "flight",
-                "Rome",
-                "Paris",
-                "tonight"
+                "Elm",
+                "Main",
+                "seven",
+                "bakery"
             ],
-            "correctAnswer": "Rome",
-            "hint": "Find the name of the city the flight is going to.",
-            "explanation": "The passage says the flight goes to Rome, so that is correct.",
-            "timeLimit": 20,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "Elm",
+            "hint": "Search for the name of the street, not the opening time.",
+            "explanation": "The bakery is on Elm Street; seven tells the opening time, not the place.",
+            "timeLimit": 24,
+            "targetInfo": "Street name"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L2_Q2",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Find the exact date given in the sentence.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Her grandmother lives just two streets away.",
-            "targetItem": "two",
+            "passage": "Grandpa's birthday is on the twelfth of May.",
+            "targetItem": "twelfth",
             "options": [
-                "streets",
-                "two",
-                "three",
-                "grandmother"
+                "May",
+                "birthday",
+                "Grandpa",
+                "twelfth"
             ],
-            "correctAnswer": "two",
-            "hint": "Look for the number of streets between them.",
-            "explanation": "The passage says her grandmother lives two streets away.",
-            "timeLimit": 20,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "twelfth",
+            "hint": "Find the number that shows the day of the month.",
+            "explanation": "The birthday falls on the twelfth; May only names the month.",
+            "timeLimit": 24,
+            "targetInfo": "Day of the month"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L2_Q3",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Search the sentence for the pizza size.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "The store offers a discount on shoes today.",
-            "targetItem": "discount",
+            "passage": "Sara ordered a medium pizza with mushrooms.",
+            "targetItem": "medium",
             "options": [
-                "today",
-                "refund",
-                "discount",
-                "shoes"
+                "large",
+                "medium",
+                "mushrooms",
+                "Sara"
             ],
-            "correctAnswer": "discount",
-            "hint": "Find the word describing the special offer at the store.",
-            "explanation": "The store offers a discount, so that is the target word.",
-            "timeLimit": 20,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "medium",
+            "hint": "Look for the word describing size, not the topping.",
+            "explanation": "Sara ordered a medium pizza; mushrooms is the topping, not the size.",
+            "timeLimit": 24,
+            "targetInfo": "Pizza size ordered"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L3_Q1",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Scan to find what time the team eats lunch.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "The soup needs a little more salt.",
-            "targetItem": "salt",
+            "passage": "After the meeting ends, the team will go to lunch at noon.",
+            "targetItem": "noon",
             "options": [
-                "more",
-                "salt",
-                "soup",
-                "pepper"
+                "meeting",
+                "team",
+                "morning",
+                "noon"
             ],
-            "correctAnswer": "salt",
-            "hint": "Look for the seasoning the soup is missing.",
-            "explanation": "The passage says the soup needs more salt, so that is correct.",
-            "timeLimit": 20,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "noon",
+            "hint": "Search for the time word placed near the word lunch.",
+            "explanation": "Lunch happens at noon; the sentence never gives a time for the meeting itself.",
+            "timeLimit": 23,
+            "targetInfo": "Lunch time"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L3_Q2",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Look for the platform number in the sentence.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Her new phone has a bigger screen.",
-            "targetItem": "screen",
+            "passage": "The train to Boston departs from platform four.",
+            "targetItem": "four",
             "options": [
-                "bigger",
-                "phone",
-                "battery",
-                "screen"
+                "four",
+                "Boston",
+                "three",
+                "train"
             ],
-            "correctAnswer": "screen",
-            "hint": "Find the part of the phone that changed size.",
-            "explanation": "The passage says the phone has a bigger screen, so 'screen' is correct.",
-            "timeLimit": 20,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "four",
+            "hint": "Search for the number that identifies the platform.",
+            "explanation": "The platform number is four; Boston only names the destination city.",
+            "timeLimit": 23,
+            "targetInfo": "Platform number"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L3_Q3",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Scan the sentence for the subject Mrs. Alvarez teaches.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "The doctor checked her blood pressure twice.",
-            "targetItem": "blood",
+            "passage": "Mrs. Alvarez teaches math to the ninth-grade class.",
+            "targetItem": "math",
             "options": [
-                "twice",
-                "heart",
-                "blood",
-                "doctor"
+                "science",
+                "math",
+                "ninth-grade",
+                "class"
             ],
-            "correctAnswer": "blood",
-            "hint": "Find the word that pairs with 'pressure' in the passage.",
-            "explanation": "The doctor checked her blood pressure, so 'blood' is the target word.",
-            "timeLimit": 20,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "math",
+            "hint": "Search for the school subject mentioned in the sentence.",
+            "explanation": "Mrs. Alvarez teaches math; ninth-grade only describes the class level.",
+            "timeLimit": 23,
+            "targetInfo": "Subject taught"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L4_Q1",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Search for the adult ticket price.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "The band played three new songs tonight.",
-            "targetItem": "three",
+            "passage": "The concert tickets cost fifteen dollars for adults and eight dollars for children.",
+            "targetItem": "fifteen",
             "options": [
-                "two",
-                "three",
-                "band",
-                "songs"
+                "fifteen",
+                "eight",
+                "adults",
+                "concert"
             ],
-            "correctAnswer": "three",
-            "hint": "Look for the number of new songs played.",
-            "explanation": "The passage says the band played three new songs.",
-            "timeLimit": 20,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "fifteen",
+            "hint": "Look for the price listed right before the word adults.",
+            "explanation": "Adult tickets cost fifteen dollars; eight dollars is the price for children.",
+            "timeLimit": 22,
+            "targetInfo": "Adult ticket price"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L4_Q2",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Scan the sentence to find the bus interval.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Bees collect pollen from bright flowers.",
-            "targetItem": "pollen",
+            "passage": "The bus to the airport leaves every twenty minutes.",
+            "targetItem": "twenty",
             "options": [
-                "nectar",
-                "pollen",
-                "bees",
-                "flowers"
+                "ten",
+                "airport",
+                "twenty",
+                "bus"
             ],
-            "correctAnswer": "pollen",
-            "hint": "Find what bees collect from the flowers.",
-            "explanation": "The passage says bees collect pollen, so that is correct.",
-            "timeLimit": 20,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "twenty",
+            "hint": "Search for the number describing the gap between buses.",
+            "explanation": "The bus leaves every twenty minutes; ten is not mentioned as the interval.",
+            "timeLimit": 22,
+            "targetInfo": "Time between buses"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L4_Q3",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Find the second practice day mentioned.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "The new park has a small playground.",
-            "targetItem": "playground",
+            "passage": "Emma's soccer practice is on Monday and Wednesday afternoons.",
+            "targetItem": "Wednesday",
             "options": [
-                "pool",
-                "small",
-                "park",
-                "playground"
+                "Monday",
+                "afternoons",
+                "soccer",
+                "Wednesday"
             ],
-            "correctAnswer": "playground",
-            "hint": "Look for the feature found inside the new park.",
-            "explanation": "The passage says the park has a playground, so that is the target word.",
-            "timeLimit": 20,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "Wednesday",
+            "hint": "Look for the day that comes after Monday in the sentence.",
+            "explanation": "Both days are practice days, but Wednesday is the second one named.",
+            "timeLimit": 22,
+            "targetInfo": "Second practice day"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L5_Q1",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Search for the name of David's brother.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Sara walks her dog around the park every evening.",
-            "targetItem": "park",
+            "passage": "David and his brother Carlos both work at the hospital downtown.",
+            "targetItem": "Carlos",
             "options": [
-                "park",
-                "dog",
-                "garden",
-                "evening"
+                "David",
+                "hospital",
+                "downtown",
+                "Carlos"
             ],
-            "correctAnswer": "park",
-            "hint": "Find where Sara walks her dog.",
-            "explanation": "The passage says Sara walks her dog around the park.",
-            "timeLimit": 20,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "Carlos",
+            "hint": "Look for the name that belongs to the brother, not to David.",
+            "explanation": "David is named first, but Carlos is specifically identified as his brother.",
+            "timeLimit": 22,
+            "targetInfo": "Brother's name"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L5_Q2",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Scan the sentence for the house number.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Students must bring a notebook to every lesson.",
-            "targetItem": "notebook",
+            "passage": "The package was delivered to 42 Baker Street on Friday.",
+            "targetItem": "42",
             "options": [
-                "pencil",
-                "every",
-                "lesson",
-                "notebook"
+                "42",
+                "24",
+                "Friday",
+                "Baker"
             ],
-            "correctAnswer": "notebook",
-            "hint": "Look for the item students must bring to class.",
-            "explanation": "The passage says students must bring a notebook, so that is correct.",
-            "timeLimit": 20,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "42",
+            "hint": "Search for the number that comes right before Baker Street.",
+            "explanation": "The address number is 42; 24 is a similar-looking number that never appears.",
+            "timeLimit": 21,
+            "targetInfo": "House number"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L5_Q3",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Look for the time period of the exhibit.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "The manager called a short meeting this morning.",
-            "targetItem": "short",
+            "passage": "The museum's new exhibit features paintings from the 1800s.",
+            "targetItem": "1800s",
             "options": [
-                "morning",
-                "short",
-                "meeting",
-                "long"
+                "1900s",
+                "museum",
+                "exhibit",
+                "1800s"
             ],
-            "correctAnswer": "short",
-            "hint": "Find the word describing how long the meeting was.",
-            "explanation": "The passage describes the meeting as short, so 'short' is the target word.",
-            "timeLimit": 20,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "1800s",
+            "hint": "Search for the number that names the century of the paintings.",
+            "explanation": "The paintings are from the 1800s; the 1900s never appears in the sentence.",
+            "timeLimit": 21,
+            "targetInfo": "Time period of paintings"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L6_Q1",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Search for when the connecting flight leaves.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Tourists often visit the museum on rainy days.",
-            "targetItem": "museum",
+            "passage": "The morning flight lands at ten, but the connecting flight leaves at eleven thirty.",
+            "targetItem": "eleven thirty",
             "options": [
-                "rainy",
-                "museum",
-                "beach",
-                "tourists"
+                "ten",
+                "eleven thirty",
+                "morning",
+                "lands"
             ],
-            "correctAnswer": "museum",
-            "hint": "Find the place tourists visit when it rains.",
-            "explanation": "The passage says tourists visit the museum on rainy days.",
-            "timeLimit": 20,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "eleven thirty",
+            "hint": "Search for the second time in the sentence, which is about leaving.",
+            "explanation": "Ten is the landing time; eleven thirty is when the connecting flight departs.",
+            "timeLimit": 21,
+            "targetInfo": "Connecting flight departure time"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L6_Q2",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Scan the recipe line for the sugar amount.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "The twins share a bedroom upstairs.",
-            "targetItem": "twins",
+            "passage": "The recipe needs two cups of flour and one cup of sugar.",
+            "targetItem": "one",
             "options": [
-                "upstairs",
-                "twins",
-                "brothers",
-                "bedroom"
+                "two",
+                "flour",
+                "one",
+                "cups"
             ],
-            "correctAnswer": "twins",
-            "hint": "Look for the word describing the two children.",
-            "explanation": "The passage says the twins share a bedroom, so 'twins' is correct.",
-            "timeLimit": 20,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "one",
+            "hint": "Look for the number placed right before the word sugar.",
+            "explanation": "The recipe needs one cup of sugar; two cups refers to the flour instead.",
+            "timeLimit": 21,
+            "targetInfo": "Amount of sugar"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L6_Q3",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Find the floor number in the sentence.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "She paid for the jacket with cash.",
-            "targetItem": "cash",
+            "passage": "The manager's office is on the third floor, next to the break room.",
+            "targetItem": "third",
             "options": [
-                "card",
-                "paid",
-                "jacket",
-                "cash"
+                "second",
+                "break",
+                "manager",
+                "third"
             ],
-            "correctAnswer": "cash",
-            "hint": "Find how she paid for the jacket.",
-            "explanation": "The passage says she paid with cash, so that is the target word.",
+            "correctAnswer": "third",
+            "hint": "Search for the number that names the floor.",
+            "explanation": "The office is on the third floor; the break room only shows what's nearby.",
             "timeLimit": 20,
-            "targetInfo": "Specific data to find."
+            "targetInfo": "Floor number"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L7_Q1",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Scan the notice for the closing day.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Grandma bakes cookies every Sunday afternoon.",
-            "targetItem": "cookies",
+            "passage": "Notice: The pool will be closed for cleaning on Sunday.",
+            "targetItem": "Sunday",
             "options": [
-                "cookies",
-                "bread",
                 "Sunday",
-                "afternoon"
+                "Saturday",
+                "pool",
+                "cleaning"
             ],
-            "correctAnswer": "cookies",
-            "hint": "Find what Grandma bakes every week.",
-            "explanation": "The passage says Grandma bakes cookies, so that is correct.",
+            "correctAnswer": "Sunday",
+            "hint": "Look for the day of the week written in the notice.",
+            "explanation": "The notice states the pool closes on Sunday, not Saturday.",
             "timeLimit": 20,
-            "targetInfo": "Specific data to find."
+            "targetInfo": "Day the pool is closed"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L7_Q2",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Search the reminder for the required item.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "The laptop charger stopped working yesterday.",
-            "targetItem": "charger",
+            "passage": "Reminder: Bring your ID card to the exam on Tuesday morning.",
+            "targetItem": "ID card",
             "options": [
-                "cable",
-                "charger",
-                "laptop",
-                "yesterday"
+                "pencil",
+                "exam",
+                "Tuesday",
+                "ID card"
             ],
-            "correctAnswer": "charger",
-            "hint": "Look for the part of the laptop that broke.",
-            "explanation": "The passage says the charger stopped working, so 'charger' is the target word.",
+            "correctAnswer": "ID card",
+            "hint": "Search for the item listed right after the word bring.",
+            "explanation": "The reminder asks students to bring an ID card, not a pencil.",
             "timeLimit": 20,
-            "targetInfo": "Specific data to find."
+            "targetInfo": "Item to bring"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L7_Q3",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Look through the message for the wait time.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "He takes a short walk every evening.",
-            "targetItem": "walk",
+            "passage": "Message: Dinner is ready, please come downstairs in five minutes.",
+            "targetItem": "five",
             "options": [
-                "walk",
-                "short",
-                "evening",
-                "run"
+                "five",
+                "ten",
+                "dinner",
+                "downstairs"
             ],
-            "correctAnswer": "walk",
-            "hint": "Find the activity he does every evening.",
-            "explanation": "The passage says he takes a short walk, so 'walk' is correct.",
+            "correctAnswer": "five",
+            "hint": "Look for the number of minutes mentioned in the message.",
+            "explanation": "The message says to come down in five minutes, not ten.",
             "timeLimit": 20,
-            "targetInfo": "Specific data to find."
+            "targetInfo": "Waiting time"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L8_Q1",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Scan for the workshop's real start time.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "She finished the mystery novel last night.",
-            "targetItem": "novel",
+            "passage": "The workshop begins at nine fifteen and the doors open at nine.",
+            "targetItem": "nine fifteen",
             "options": [
-                "finished",
-                "novel",
-                "mystery",
-                "movie"
+                "nine",
+                "doors",
+                "nine fifteen",
+                "workshop"
             ],
-            "correctAnswer": "novel",
-            "hint": "Find the type of book she finished.",
-            "explanation": "The passage says she finished the mystery novel, so 'novel' is correct.",
+            "correctAnswer": "nine fifteen",
+            "hint": "Search for the more exact time, not when the doors open.",
+            "explanation": "Doors open at nine, but the workshop itself starts at nine fifteen.",
             "timeLimit": 20,
-            "targetInfo": "Specific data to find."
+            "targetInfo": "Workshop start time"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L8_Q2",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Find how many guests arrived after lunch.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "The river flows past the old mill.",
-            "targetItem": "river",
+            "passage": "Two guests arrived early, but four more came right after lunch.",
+            "targetItem": "four",
             "options": [
-                "mill",
-                "river",
-                "old",
-                "stream"
+                "two",
+                "six",
+                "four",
+                "lunch"
             ],
-            "correctAnswer": "river",
-            "hint": "Look for what flows past the old mill.",
-            "explanation": "The passage says the river flows past the mill, so that is correct.",
-            "timeLimit": 20,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "four",
+            "hint": "Look for the number connected to arriving after lunch.",
+            "explanation": "Two guests were early; four more arrived later, after lunch.",
+            "timeLimit": 19,
+            "targetInfo": "Guests arriving after lunch"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L8_Q3",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Search for the winter watering frequency.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Volunteers cleaned the beach last Saturday.",
-            "targetItem": "Volunteers",
+            "passage": "The garden needs watering twice a day during summer, but only once in winter.",
+            "targetItem": "once",
             "options": [
-                "beach",
-                "Students",
-                "Volunteers",
-                "cleaned"
+                "once",
+                "twice",
+                "summer",
+                "garden"
             ],
-            "correctAnswer": "Volunteers",
-            "hint": "Find who cleaned the beach last Saturday.",
-            "explanation": "The passage says volunteers cleaned the beach, so that is the target word.",
-            "timeLimit": 20,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "once",
+            "hint": "Search for the frequency word placed near the word winter.",
+            "explanation": "In winter the garden is watered once, compared with twice in summer.",
+            "timeLimit": 19,
+            "targetInfo": "Winter watering frequency"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L9_Q1",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Scan both sentences for the main office's street.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Diego always locks the front door before leaving.",
-            "targetItem": "front",
+            "passage": "The clinic opened a new branch last month. The main office remains on Fifth Avenue.",
+            "targetItem": "Fifth Avenue",
             "options": [
-                "leaving",
-                "front",
-                "back",
-                "door"
+                "Fifth Avenue",
+                "last month",
+                "new branch",
+                "clinic"
             ],
-            "correctAnswer": "front",
-            "hint": "Find which door Diego always locks.",
-            "explanation": "The passage says he locks the front door, so 'front' is correct.",
-            "timeLimit": 20,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "Fifth Avenue",
+            "hint": "Look in the second sentence for the address.",
+            "explanation": "The first sentence mentions a new branch, but the second names Fifth Avenue as the main office.",
+            "timeLimit": 19,
+            "targetInfo": "Main office location"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L9_Q2",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Look for the name of Julia's friend.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "The library closes early on Fridays.",
-            "targetItem": "Fridays",
+            "passage": "Julia finished her homework before dinner. She then called her friend Wendy for twenty minutes.",
+            "targetItem": "Wendy",
             "options": [
-                "Mondays",
-                "library",
-                "Fridays",
-                "early"
+                "Wendy",
+                "Julia",
+                "dinner",
+                "homework"
             ],
-            "correctAnswer": "Fridays",
-            "hint": "Look for the day the library closes early.",
-            "explanation": "The passage says the library closes early on Fridays.",
-            "timeLimit": 20,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "Wendy",
+            "hint": "Search the second sentence for the name of the friend.",
+            "explanation": "Julia is the subject of the passage; Wendy is the friend she called.",
+            "timeLimit": 19,
+            "targetInfo": "Friend's name"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L9_Q3",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Find the Saturday discount percentage.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Employees receive a bonus every December.",
-            "targetItem": "December",
+            "passage": "The store restocks shelves every Monday. On Saturdays, it offers a ten percent discount.",
+            "targetItem": "ten percent",
             "options": [
-                "December",
-                "employees",
-                "November",
-                "bonus"
+                "Monday",
+                "ten percent",
+                "Saturdays",
+                "shelves"
             ],
-            "correctAnswer": "December",
-            "hint": "Find the month employees receive their bonus.",
-            "explanation": "The passage says employees receive a bonus every December, so that is correct.",
-            "timeLimit": 20,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "ten percent",
+            "hint": "Look in the second sentence for the number linked to discount.",
+            "explanation": "Restocking happens on Monday, but the ten percent discount applies on Saturdays.",
+            "timeLimit": 18,
+            "targetInfo": "Saturday discount amount"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L10_Q1",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Scan the sentence for Room B's capacity.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "The train station is near the old bridge.",
-            "targetItem": "bridge",
+            "passage": "The office has three meeting rooms. Room A seats six people, Room B seats ten, and Room C seats fourteen.",
+            "targetItem": "ten",
             "options": [
-                "river",
-                "near",
-                "bridge",
-                "station"
+                "six",
+                "fourteen",
+                "ten",
+                "three"
             ],
-            "correctAnswer": "bridge",
-            "hint": "Find what the train station is near.",
-            "explanation": "The passage says the station is near the old bridge, so 'bridge' is correct.",
-            "timeLimit": 20,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "ten",
+            "hint": "Search for the number that comes right after Room B.",
+            "explanation": "Room B seats ten people; six and fourteen belong to Rooms A and C instead.",
+            "timeLimit": 18,
+            "targetInfo": "Capacity of Room B"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L10_Q2",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Search for Seattle's departure time.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Uncle Mateo visits every other weekend.",
-            "targetItem": "Uncle",
+            "passage": "Flights depart for Chicago at 8 a.m., for Denver at 11 a.m., and for Seattle at 2 p.m.",
+            "targetItem": "2 p.m.",
             "options": [
-                "visits",
-                "Uncle",
-                "weekend",
-                "Aunt"
+                "2 p.m.",
+                "8 a.m.",
+                "11 a.m.",
+                "Denver"
             ],
-            "correctAnswer": "Uncle",
-            "hint": "Look for the family title used before the name Mateo.",
-            "explanation": "The passage refers to Uncle Mateo, so 'Uncle' is the target word.",
-            "timeLimit": 20,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "2 p.m.",
+            "hint": "Look for the time listed right after the word Seattle.",
+            "explanation": "The Seattle flight leaves at 2 p.m.; the earlier times belong to Chicago and Denver.",
+            "timeLimit": 18,
+            "targetInfo": "Seattle departure time"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L10_Q3",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Find the day set aside for adult patients.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "The bakery sells fresh bread every morning.",
-            "targetItem": "bakery",
+            "passage": "The clinic sees children on Mondays, adults on Wednesdays, and seniors on Fridays.",
+            "targetItem": "Wednesdays",
             "options": [
-                "bakery",
-                "market",
-                "bread",
-                "fresh"
+                "Mondays",
+                "Fridays",
+                "Wednesdays",
+                "seniors"
             ],
-            "correctAnswer": "bakery",
-            "hint": "Find the shop that sells fresh bread.",
-            "explanation": "The passage says the bakery sells fresh bread, so that is correct.",
-            "timeLimit": 20,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "Wednesdays",
+            "hint": "Search for the day that appears next to the word adults.",
+            "explanation": "Adults are seen on Wednesdays; Mondays and Fridays are set aside for children and seniors.",
+            "timeLimit": 18,
+            "targetInfo": "Day for adult patients"
         }
     ]
 }

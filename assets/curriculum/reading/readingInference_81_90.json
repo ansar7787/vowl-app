@@ -8,20 +8,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[A Revised Proposal] The client requests three separate rounds of revisions to the marketing proposal, each time asking for a more conservative budget than the last. By the third round, the creative director quietly removes the two most ambitious campaign ideas before resubmitting.",
-            "question": "What can be inferred about the creative director's decision to remove the ambitious ideas?",
+            "passage": "[Draft Feedback] Dear Jo, thank you for the draft. I have read it twice. The section on costs is very thorough. I am free on Thursday if you would like to talk it through, although I suspect you will want to revisit the timeline first. Best, Ms. Adler",
+            "question": "What does Ms. Adler most likely think of the timeline?",
             "options": [
-                "She anticipated the client would find them too costly given the pattern of requests.",
-                "She believed the ambitious ideas were poorly designed.",
-                "She was told directly to remove them by the client.",
-                "She wanted to reduce her own workload."
+                "It is thorough but too expensive.",
+                "It is the strongest part of the draft.",
+                "It has problems that she expects Jo to fix.",
+                "It is missing altogether."
             ],
-            "correctAnswer": "She anticipated the client would find them too costly given the pattern of requests.",
-            "hint": "Think about what three rounds of increasingly conservative budget requests would lead someone to predict about future feedback.",
-            "explanation": "After seeing the client request a smaller budget three times in a row, the director likely anticipated that costly ideas would be rejected again, so she removed them proactively.",
+            "correctAnswer": "It has problems that she expects Jo to fix.",
+            "hint": "Notice which section she praises and which she mentions only at the end.",
+            "explanation": "She praises the costs section, then says Jo will \"want to revisit\" the timeline. Politely, that means she sees weaknesses there.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "very thorough",
+                "revisit the timeline"
             ]
         },
         {
@@ -29,20 +29,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[A Pattern in the Symptoms] Dr. Ferreira notices that Mr. Solis's blood pressure readings are consistently higher at his Monday appointments than at his Thursday ones, even though his medication and diet remain unchanged. She asks him to describe his weekend routine in detail.",
-            "question": "What is the doctor most likely trying to determine?",
+            "passage": "[The Damaged Blender] We are sorry to hear that your blender arrived damaged. As your request falls outside our 14-day refund window, we are unable to offer a refund. As a gesture of goodwill, we have attached a 15% discount code, valid for 30 days on orders above $80.",
+            "question": "What is the company trying to do?",
             "options": [
-                "Whether his medication needs to be changed immediately.",
-                "Whether something specific to his weekends is affecting his blood pressure.",
-                "Whether the readings on Thursdays are inaccurate.",
-                "Whether his diet has changed recently."
+                "Ask the customer to return the blender.",
+                "Accept responsibility and repay the customer in full.",
+                "Decline the refund while keeping the customer's goodwill.",
+                "Explain how to repair the blender."
             ],
-            "correctAnswer": "Whether something specific to his weekends is affecting his blood pressure.",
-            "hint": "Notice which day the readings are consistently higher and what question she asks in response.",
-            "explanation": "Since his readings are higher only after weekends, and his medication and diet have not changed, the doctor is likely investigating what happens specifically during his weekends.",
+            "correctAnswer": "Decline the refund while keeping the customer's goodwill.",
+            "hint": "Look at what the company refuses and what it offers instead.",
+            "explanation": "The company refuses the refund on a rule, then offers a limited discount that requires a new purchase. It is protecting its policy and its customer relationship at once.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "unable to offer a refund",
+                "discount code"
             ]
         },
         {
@@ -50,20 +50,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[A Feature Nobody Requested] The software team spends two months building a feature that no customer had specifically requested, based on an executive's hunch about future demand. After launch, usage data shows fewer than one percent of customers ever open it.",
-            "question": "What can be inferred about the executive's hunch?",
+            "passage": "[Still Coming?] Ana: Is everyone still coming on Saturday? Lior: Probably! Mei: Will try! Tomás: Depends on work. Ana: So... maybe two of us?",
+            "question": "How does Ana feel about the plan?",
             "options": [
-                "It was confirmed as completely accurate by the data.",
-                "It led to the most popular feature in the software.",
-                "It was based on direct customer requests.",
-                "It did not accurately predict what customers actually wanted."
+                "She is angry at Lior.",
+                "She doubts the plan will actually happen.",
+                "She is delighted with the replies.",
+                "She wants to cancel Saturday deliberately."
             ],
-            "correctAnswer": "It did not accurately predict what customers actually wanted.",
-            "hint": "Compare what the executive expected with what the usage data actually showed.",
-            "explanation": "A feature used by fewer than one percent of customers, despite two months of development based on a hunch, suggests that hunch did not match real customer demand.",
+            "correctAnswer": "She doubts the plan will actually happen.",
+            "hint": "Notice the words in the replies, and the ellipsis in Ana's last message.",
+            "explanation": "\"Probably,\" \"will try,\" and \"depends\" are all uncertain. Ana's summary, \"maybe two of us,\" shows she is discouraged.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "Probably",
+                "maybe two of us"
             ]
         },
         {
@@ -71,20 +71,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[A Quiet Upgrade] The hotel's front desk staff upgrades the Hendersons to a suite without mentioning any reason, though the family had complained earlier that day about construction noise near their original room. The manager later reviews the maintenance schedule and adds a note about guest room assignments during renovations.",
-            "question": "What can be inferred about the reason for the upgrade?",
+            "passage": "[Only Looking] \"I'm only looking,\" Vera told the assistant. But she had already measured the bookcase twice with her phone and photographed the price tag. \"I'll be back,\" she said. \"I just need to check a few things at home.\"",
+            "question": "What do Vera's actions show about her intentions?",
             "options": [
-                "The Hendersons were charged extra for the change.",
-                "It was a random gesture unrelated to their stay.",
-                "It was a mistake made by the front desk.",
-                "It was likely a response to the noise complaint, even though it wasn't stated directly."
+                "She is planning to buy it today.",
+                "She is comparing it with a similar bookcase in another shop and will decide by measuring both.",
+                "She works for a competing shop.",
+                "She is seriously interested but not yet ready to commit."
             ],
-            "correctAnswer": "It was likely a response to the noise complaint, even though it wasn't stated directly.",
-            "hint": "Connect the earlier complaint, the unexplained upgrade, and the manager's later note about room assignments.",
-            "explanation": "The upgrade following a noise complaint, plus the manager later reviewing room assignments during renovations, suggests the hotel quietly addressed the issue without stating it outright.",
+            "correctAnswer": "She is seriously interested but not yet ready to commit.",
+            "hint": "Compare her words with her actions.",
+            "explanation": "Measuring and photographing the price are the actions of a serious buyer. Her wish to check at home shows she has not decided yet.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "measured the bookcase twice",
+                "check a few things at home"
             ]
         },
         {
@@ -92,20 +92,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[Splitting the Holidays] For the first time since the divorce, both of Maya's parents show up separately to her school play, sitting on opposite sides of the auditorium but both staying for the entire reception afterward. Neither leaves early, and both take photos with her at the end.",
-            "question": "What can be inferred about Maya's parents' priorities that evening?",
+            "passage": "[Happy to Help] Mr. Hale said he would be \"happy to help\" with the summer fair. Yet whenever the coordinator suggested a role, he had a reason he could not do it: a wedding on the stall day, a trip during setup, a headache for the cleanup.",
+            "question": "How willing is Mr. Hale to help?",
             "options": [
-                "One parent left before the play even started.",
-                "They both wanted to fully support Maya despite their separation.",
-                "They arrived together and sat side by side.",
-                "They were trying to avoid supporting Maya's interests."
+                "He has been ill all summer.",
+                "He is probably very busy but keen.",
+                "He dislikes the coordinator personally.",
+                "He does not really want to help."
             ],
-            "correctAnswer": "They both wanted to fully support Maya despite their separation.",
-            "hint": "Think about what staying the whole time and both taking photos, despite sitting apart, reveals about their intentions.",
-            "explanation": "Both parents staying for the full event and taking photos, despite sitting separately, suggests they each prioritized being fully present for Maya that evening.",
+            "correctAnswer": "He does not really want to help.",
+            "hint": "Line up what he says with what he does each time.",
+            "explanation": "His offer is contradicted by an excuse for every job. The pattern shows reluctance, not just bad luck.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "happy to help",
+                "a reason he could not do it"
             ]
         },
         {
@@ -113,20 +113,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[A Discontinued Model] The salesperson mentions that the sofa Priti is interested in is being phased out and directs her instead toward a similar model at a higher price. When Priti asks to see the discontinued sofa's price tag anyway, it turns out to be nearly 40 percent less than the one being recommended.",
-            "question": "What can be inferred about the salesperson's recommendation?",
+            "passage": "[Farewell Speech] In his farewell speech, the director thanked \"the wonderful staff\" in one sentence. He then spent several minutes listing the awards the department had won under his leadership. He did not mention a single colleague by name.",
+            "question": "What does the director's speech reveal about his priorities?",
             "options": [
-                "It was clearly the best financial choice for Priti.",
-                "It matched the discontinued sofa in price exactly.",
-                "It was based entirely on Priti's stated budget.",
-                "It may have been more beneficial to the store than to Priti."
+                "He is more focused on his own achievements than on the staff.",
+                "He is grateful to the staff but keeps the speech short because he is worried about time.",
+                "He is leaving for a better job.",
+                "He is angry with the staff."
             ],
-            "correctAnswer": "It may have been more beneficial to the store than to Priti.",
-            "hint": "Compare the price difference between the two sofas and think about who benefits from that difference.",
-            "explanation": "Steering a customer toward a pricier item when a similar, much cheaper option exists suggests the recommendation may have served the store's interests more than Priti's.",
+            "correctAnswer": "He is more focused on his own achievements than on the staff.",
+            "hint": "Compare the space given to thanks with the space given to awards.",
+            "explanation": "Thanks take a single sentence, while the awards under his leadership get minutes. No colleague is named, so the thanks sound like a formality.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "one sentence",
+                "under his leadership"
             ]
         },
         {
@@ -134,20 +134,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[A Silent Resignation Letter] Jonas submits his resignation letter on a Friday afternoon, and by the following Monday, his manager has already scheduled interviews for his replacement. No one on the team recalls the manager mentioning any surprise at the news.",
-            "question": "What can be inferred about the manager's awareness of Jonas's decision?",
+            "passage": "[The Long Way Home] As the train pulled out, Yuna kept waving until the last carriage disappeared. Then she stood for a while, folded the ticket into her pocket, and walked home the long way, past the park where they used to play.",
+            "question": "How does Yuna most likely feel?",
             "options": [
-                "The manager tried to convince Jonas to stay.",
-                "The manager was unaware Jonas had resigned.",
-                "The manager was completely caught off guard.",
-                "The manager likely already suspected or knew Jonas planned to leave."
+                "Excited about her own journey.",
+                "Relieved to see the train leave, but sad about having to walk home in the rain.",
+                "Relieved to be alone.",
+                "Sad, and thinking fondly about time spent with the person who left."
             ],
-            "correctAnswer": "The manager likely already suspected or knew Jonas planned to leave.",
-            "hint": "Think about how quickly interviews were scheduled and whether anyone noticed a reaction of surprise.",
-            "explanation": "Scheduling replacement interviews almost immediately, with no sign of surprise from the manager, suggests the resignation was likely expected rather than sudden news.",
+            "correctAnswer": "Sad, and thinking fondly about time spent with the person who left.",
+            "hint": "Notice her choice of route and how long she stays at the station.",
+            "explanation": "She waves to the last moment, lingers, and chooses the route that passes a place of shared memories. These choices show sadness and affection.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "kept waving",
+                "where they used to play"
             ]
         },
         {
@@ -155,20 +155,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[A Pattern in Attendance] The professor notices that attendance in her 8 a.m. lecture drops by nearly half every time a major deadline falls the following day in a different course, based on a schedule she cross-referenced with the registrar.",
-            "question": "What can be inferred about the students who are absent on those days?",
+            "passage": "[The Noticeboard] Idris found his name near the top of the list and stepped back without a word. His friend, looking lower down, whispered, \"It's not here.\" Idris looked at the floor. \"I'm sure it's a mistake,\" he said, and stayed beside him until the crowd thinned.",
+            "question": "How does Idris behave towards his friend?",
             "options": [
-                "They are uninterested in the professor's course in general.",
-                "They are likely prioritizing time to finish other coursework.",
-                "They are absent for reasons unrelated to their coursework.",
-                "They are attending a different section of the same class."
+                "He is pleased with his result but hides it out of consideration for his friend.",
+                "He is anxious that his friend will feel jealous, so he hides his result and says nothing more.",
+                "He does not care about his friend.",
+                "He is embarrassed by his friend."
             ],
-            "correctAnswer": "They are likely prioritizing time to finish other coursework.",
-            "hint": "Think about what dropping attendance specifically before deadlines in other courses suggests about their priorities that day.",
-            "explanation": "Attendance dropping specifically before deadlines in other classes suggests those students are choosing to spend the time finishing that other coursework instead.",
+            "correctAnswer": "He is pleased with his result but hides it out of consideration for his friend.",
+            "hint": "Look at what he does not say and what he does instead.",
+            "explanation": "He stays silent about his own success, comforts his friend, and stays with him. This shows kindness that overrides his own happiness.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "stepped back without a word",
+                "stayed beside him"
             ]
         },
         {
@@ -176,20 +176,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[Two Weeks of Better Sleep] After Mr. Kessler's employer introduces a policy banning after-hours emails, his sleep tracker shows he falls asleep an average of forty minutes earlier than his baseline over the following two weeks. His average number of nightly wake-ups also drops noticeably.",
-            "question": "What can be inferred about the connection between the new policy and his sleep?",
+            "passage": "[Too Loud] She had rehearsed what to say to Klaus for weeks. When he walked into the café, she only laughed, a little too loudly, and knocked over the sugar. \"Sorry,\" she said. \"Sit. Sit.\"",
+            "question": "What do the laughter and spilled sugar suggest about her feelings?",
             "options": [
-                "The reduced after-hours work stress may be improving his sleep.",
-                "The policy had no measurable effect on his sleep.",
-                "His sleep worsened after the new policy began.",
-                "The changes in his sleep are entirely unrelated to his job."
+                "She is nervous, and the meeting matters to her.",
+                "She does not remember Klaus.",
+                "She is annoyed that Klaus is late and is trying not to show it by laughing.",
+                "She is bored with Klaus."
             ],
-            "correctAnswer": "The reduced after-hours work stress may be improving his sleep.",
-            "hint": "Think about the timing between the new policy and the improvement in his sleep tracker data.",
-            "explanation": "Both falling asleep earlier and waking up less often, right after the after-hours email policy began, suggest the reduced work intrusion may be benefiting his sleep.",
+            "correctAnswer": "She is nervous, and the meeting matters to her.",
+            "hint": "Compare the weeks of rehearsal with what actually happens.",
+            "explanation": "All that preparation disappears into laughter, spilled sugar, and a repeated \"Sit.\" These signs show nerves, which implies the meeting is important.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "rehearsed what to say",
+                "knocked over the sugar"
             ]
         },
         {
@@ -197,20 +197,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[A Quiet Cameo] A minor actor from a canceled decade-old series appears in a single scene of the new blockbuster, credited only as 'Diner Patron.' Fans immediately flood forums analyzing the scene frame by frame, certain it signals something bigger.",
-            "question": "What can be inferred about the fans' reaction to the cameo?",
+            "passage": "[Under Review] The landlord's email said the boiler should be serviced before winter. The building manager replied that the budget was \"under review.\" In January, six flats were without heating for four days.",
+            "question": "What most likely contributed to the heating failure?",
             "options": [
-                "They think the actor's role is the film's main storyline.",
-                "They believe the small appearance may have deeper significance.",
-                "They are completely indifferent to the cameo.",
-                "They believe the cameo is a mistake by the studio."
+                "The tenants reported the boiler problem too late, and the repair was delayed by them.",
+                "The servicing was not done in time, which likely contributed to the failure.",
+                "The landlord ignored the manager's reply.",
+                "The boiler was replaced in November."
             ],
-            "correctAnswer": "They believe the small appearance may have deeper significance.",
-            "hint": "Think about what frame-by-frame analysis and forum discussion suggest about how fans are interpreting the cameo.",
-            "explanation": "Frame-by-frame analysis and forum speculation about a brief, minor cameo suggest fans suspect it carries more meaning than its small size implies.",
+            "correctAnswer": "The servicing was not done in time, which likely contributed to the failure.",
+            "hint": "Follow the timeline from the email to January.",
+            "explanation": "The service was recommended, the budget was postponed, and later the heating failed. This sequence supports a link, though the passage does not state it.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "under review",
+                "six flats"
             ]
         },
         {
@@ -218,20 +218,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[Downloads Without Reviews] The app climbs to the top of the download charts within days of its release, yet its review section remains almost entirely empty a month later, with only a handful of ratings despite millions of downloads.",
-            "question": "What can be inferred about how people are using the app?",
+            "passage": "[Quick Chat] Petya left the office at three on Friday \"to beat the traffic.\" At 3:20 a client phoned twice, then emailed the word \"URGENT.\" By Monday morning, his manager had put a meeting in his diary titled \"Quick chat.\"",
+            "question": "What will the meeting most likely be about?",
             "options": [
-                "Every user who downloads it leaves a detailed review.",
-                "The review section was intentionally disabled by the developer.",
-                "Many users may be downloading it without engaging with it deeply afterward.",
-                "The app has not actually been downloaded by anyone."
+                "A new client for the company.",
+                "His absence when the client needed him.",
+                "A change of office.",
+                "A pay rise for Petya."
             ],
-            "correctAnswer": "Many users may be downloading it without engaging with it deeply afterward.",
-            "hint": "Think about the gap between a huge number of downloads and a very small number of reviews.",
-            "explanation": "A huge gap between downloads and reviews suggests many people are trying the app briefly without becoming engaged enough to leave feedback.",
+            "correctAnswer": "His absence when the client needed him.",
+            "hint": "Connect the time he left with the client's contact.",
+            "explanation": "The client tried to reach him right after he left. The manager's meeting with a casual title suggests a serious conversation.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "left the office at three",
+                "URGENT"
             ]
         },
         {
@@ -239,20 +239,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[A Quiet Block Party] The annual block party, usually organized by a rotating group of five volunteers, is planned this year by only two people after the others cite scheduling conflicts. Attendance ends up noticeably lower than in past years, and the event wraps up two hours earlier than usual.",
-            "question": "What can be inferred about the connection between the smaller planning group and the event's outcome?",
+            "passage": "[Bin Watch] The council reduced bin collections to every three weeks. Within a month, the neighbours had started a group chat called \"Bin Watch,\" foxes were spreading rubbish along the lane, and someone had taped up a sign: \"Please bag your waste!\"",
+            "question": "What has the reduced collection led to?",
             "options": [
-                "Having fewer organizers may have limited the scale of the event.",
-                "The event was larger than in previous years.",
-                "The two remaining organizers refused to plan the event at all.",
-                "The number of organizers had no effect on the event."
+                "The foxes are probably the neighbours' pets.",
+                "Everyone is happy with the change.",
+                "The reduced collections caused overflowing rubbish and tension among neighbours.",
+                "The council's decision reduced rubbish, and neighbours started the group to praise the change."
             ],
-            "correctAnswer": "Having fewer organizers may have limited the scale of the event.",
-            "hint": "Think about what changed in the planning process and how the event's size compared to previous years.",
-            "explanation": "A smaller organizing group, followed by lower attendance and a shorter event, suggests the reduced planning capacity likely limited the event's scale.",
+            "correctAnswer": "The reduced collections caused overflowing rubbish and tension among neighbours.",
+            "hint": "Which events came after the council's decision?",
+            "explanation": "After the change came the group chat, the spread of rubbish, and a pointed sign. Together they show a problem and irritation.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "every three weeks",
+                "Please bag your waste"
             ]
         },
         {
@@ -260,20 +260,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[A Menu Without Prices] The restaurant removes prices from its new tasting menu, listing only the number of courses, and reservations for it require a credit card to hold the booking. Regulars who ask servers about the cost are told it 'varies based on selections that evening.'",
-            "question": "What can be inferred about the restaurant's tasting menu?",
+            "passage": "[Table Nine] The booking system showed Table 9 as reserved for 7:30. At 7:45 the waiter was still wiping it. At 8:00 he cleared away the second place setting. At 8:10 a couple who had been waiting by the door was shown to it.",
+            "question": "What happened to the reservation for Table 9?",
             "options": [
-                "It is significantly cheaper than the restaurant's regular menu.",
-                "It has a single fixed price listed clearly for every guest.",
-                "It requires no reservation or advance commitment.",
-                "It is likely a premium, higher-cost experience compared to the regular menu."
+                "The party who booked did not arrive, so the table was given to waiting customers.",
+                "The couple booked the table earlier by phone, and the waiter simply forgot to update the system.",
+                "The waiter made a mistake.",
+                "The restaurant was closing."
             ],
-            "correctAnswer": "It is likely a premium, higher-cost experience compared to the regular menu.",
-            "hint": "Think about what removing prices, requiring a card to hold a reservation, and giving a vague cost answer suggests about the price range.",
-            "explanation": "Removing prices, requiring a card on file, and giving only a vague cost answer are common signals of a premium dining experience with a higher price point.",
+            "correctAnswer": "The party who booked did not arrive, so the table was given to waiting customers.",
+            "hint": "Follow the table's history from 7:30 to 8:10.",
+            "explanation": "The table stayed empty after the reserved time, a setting was removed, and waiting customers were seated. The likeliest reading is a no-show.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "reserved for 7:30",
+                "cleared away the second place setting"
             ]
         },
         {
@@ -281,20 +281,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[A Familiar Face at the Clinic] Ms. Okoro arrives at the community clinic for a routine check-up, and the nurse greets her by name before she has said a word, already pulling up her file to the correct page.",
-            "question": "What can be inferred about Ms. Okoro's relationship with the clinic?",
+            "passage": "[Price of Butter] Notice: because of the increased price of butter, our croissants will cost twenty cents more from Monday. We have chosen not to change the recipe. Regular customers are welcome to ask about our punch card.",
+            "question": "What does the bakery value most?",
             "options": [
-                "The nurse mistook her for someone else.",
-                "This is her very first visit to the clinic.",
-                "She has likely been a patient there for some time.",
-                "She works at the clinic as a nurse herself."
+                "It wants fewer regular customers.",
+                "It is changing suppliers.",
+                "It plans to stop making croissants.",
+                "It would rather raise the price than lower the quality."
             ],
-            "correctAnswer": "She has likely been a patient there for some time.",
-            "hint": "Think about what being recognized by name and having her file ready immediately suggests about her history there.",
-            "explanation": "Being greeted by name with her file already prepared suggests Ms. Okoro is a familiar, returning patient rather than a first-time visitor.",
+            "correctAnswer": "It would rather raise the price than lower the quality.",
+            "hint": "Which decision does the bakery say it made, and which it avoided?",
+            "explanation": "It has \"chosen\" to raise the price and to keep the recipe. It is presenting the price rise as a way to keep quality, and it mentions a punch card to soften the effect.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "twenty cents more",
+                "not to change the recipe"
             ]
         },
         {
@@ -302,20 +302,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[A Route Change at the Border] The tour bus is redirected to a longer route after the driver receives a call and speaks quietly with the guide, who then announces only that they will be 'taking the scenic road today.' Passengers later notice the original road blocked by emergency vehicles as they pass nearby on a hill.",
-            "question": "What can be inferred about the original reason for the route change?",
+            "passage": "[Tuesdays and Thursdays] In September Bora attended all of Mr. Han's classes. In October she missed Tuesdays. In November she missed Tuesdays and Thursdays. Mr. Han's class starts at nine; Bora's new café job begins at eight.",
+            "question": "What might explain Bora's growing absences?",
             "options": [
-                "The original road was likely closed due to an incident.",
-                "The scenic road was always the planned route.",
-                "The change was unrelated to any road conditions.",
-                "The driver simply preferred a longer drive."
+                "She has transferred to another course.",
+                "Her job may be interfering with her attendance.",
+                "She has moved to another course and only attends Mr. Han's classes when she is free.",
+                "Mr. Han has changed the timetable."
             ],
-            "correctAnswer": "The original road was likely closed due to an incident.",
-            "hint": "Think about what the phone call, the vague announcement, and the later sighting of emergency vehicles together suggest.",
-            "explanation": "A private phone call, a vague announcement, and later spotting emergency vehicles on the original road all point to the route being changed because of an incident there.",
+            "correctAnswer": "Her job may be interfering with her attendance.",
+            "hint": "Compare the growing pattern of absences with the start times.",
+            "explanation": "Absences increase month by month, and an eight o'clock job leaves little time to reach a nine o'clock class. The link is plausible, though not stated.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "missed Tuesdays and Thursdays",
+                "begins at eight"
             ]
         },
         {
@@ -323,20 +323,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[A Draft Left Open] Elena finds an old email draft in her manager's shared folder, dated eight months ago, outlining a promotion recommendation for her that was apparently never sent. When she is finally promoted this month, her manager mentions it 'took longer than expected to make happen.'",
-            "question": "What can be inferred about the timeline of Elena's promotion?",
+            "passage": "[Shelf Assembly] Step 4: tighten the screws by hand only. Overtightening can crack the frame. If the shelf wobbles, do not add more screws; first check that the two side panels are level.",
+            "question": "What is the likely cause of a wobbling shelf?",
             "options": [
-                "Her manager only began considering the promotion this month.",
-                "Her manager was unaware of her performance until recently.",
-                "Her manager likely intended to promote her much earlier than it actually happened.",
-                "The draft was written after her promotion was finalized."
+                "The panels are level, and the extra screws are needed to stop the frame from rocking.",
+                "It has a cracked frame.",
+                "It needs extra screws.",
+                "It is more likely caused by uneven panels than by loose screws."
             ],
-            "correctAnswer": "Her manager likely intended to promote her much earlier than it actually happened.",
-            "hint": "Think about what an unsent draft from eight months ago, combined with the comment about delays, suggests about the manager's original intentions.",
-            "explanation": "An unsent draft recommending her promotion from eight months earlier, paired with the manager's comment about delays, suggests the promotion was intended much sooner than it occurred.",
+            "correctAnswer": "It is more likely caused by uneven panels than by loose screws.",
+            "hint": "What does the guide tell you to check first, and what does it forbid?",
+            "explanation": "The guide forbids extra screws and points to the panels, so it treats levelness as the likely cause.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "by hand only",
+                "side panels are level"
             ]
         },
         {
@@ -344,20 +344,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[A Second Set of Keys] Without being asked, Grandpa has a second set of house keys cut and leaves them in an envelope labeled with his grandson's name, tucked in the same drawer where he keeps his most important documents.",
-            "question": "What can be inferred about Grandpa's intentions?",
+            "passage": "[Lab Rules] Do not run in the laboratory. Do not return unused chemicals to their bottles. Report every spill, however small.",
+            "question": "Why should unused chemicals not go back into their bottles?",
             "options": [
-                "He plans to move out of the house soon.",
-                "He wants to sell the house to his grandson.",
-                "He wants his grandson to feel he always has a place to come to.",
-                "He is worried his grandson will lose his own keys."
+                "The bottles are probably too small.",
+                "They are always dangerous.",
+                "They could contaminate the remaining supply.",
+                "It saves time."
             ],
-            "correctAnswer": "He wants his grandson to feel he always has a place to come to.",
-            "hint": "Think about what preparing a labeled set of keys, stored with important documents, suggests about Grandpa's feelings.",
-            "explanation": "Preparing a labeled set of keys ahead of time, kept with his most important documents, suggests Grandpa wants his grandson to always feel welcome in his home.",
+            "correctAnswer": "They could contaminate the remaining supply.",
+            "hint": "What might get into a bottle along with something returned to it?",
+            "explanation": "Once a substance has been out, it may have picked up impurities. Returning it could spoil the whole bottle.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "unused chemicals",
+                "their bottles"
             ]
         },
         {
@@ -365,20 +365,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[A Suspiciously Low Price] The online listing for the laptop is priced almost 60 percent below every other retailer's price for the same model, and the seller's account was created only two weeks ago with no previous reviews.",
-            "question": "What can be inferred about this listing?",
+            "passage": "[Resting the Rice] For rice: do not stir it while it cooks. When the water has been absorbed, take the pan off the heat and leave the lid on for ten minutes.",
+            "question": "What is the purpose of the ten minutes?",
             "options": [
-                "It may not be a legitimate or trustworthy offer.",
-                "The seller has years of positive reviews.",
-                "It is priced the same as every other retailer.",
-                "It is a reliable deal from a well-established seller."
+                "To let the rice absorb more water.",
+                "To let the trapped steam finish cooking the rice.",
+                "To clean the pan.",
+                "To cool the rice so it can be stored."
             ],
-            "correctAnswer": "It may not be a legitimate or trustworthy offer.",
-            "hint": "Think about what an unusually low price, combined with a brand-new account with no history, suggests about trustworthiness.",
-            "explanation": "An unusually large discount paired with a brand-new, unreviewed seller account are common warning signs that a listing may not be legitimate.",
+            "correctAnswer": "To let the trapped steam finish cooking the rice.",
+            "hint": "Which two things stay on: the lid or the heat?",
+            "explanation": "The heat is off but the lid stays on, so steam remains inside. That steam finishes the cooking gently.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "take the pan off the heat",
+                "leave the lid on"
             ]
         },
         {
@@ -386,20 +386,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[A Change in Handwriting] The occupational therapist compares Mr. Reyes's handwriting samples from three months apart and notices the letters have become noticeably steadier and more evenly spaced, matching the timeline of his twice-weekly hand-strengthening exercises.",
-            "question": "What can be inferred about the hand-strengthening exercises?",
+            "passage": "[The Plot] \"I love the concept,\" Mira said. \"The characters are strong. And the setting is very original.\" Marek waited. \"And the plot?\" \"Well,\" she said, \"that's the part I need to think about.\"",
+            "question": "What does Mira really think about the plot?",
             "options": [
-                "They have made his handwriting less steady.",
-                "They have had no measurable effect on his handwriting.",
-                "They were discontinued before the second sample was taken.",
-                "They appear to be improving his fine motor control."
+                "She thinks the plot is the best part.",
+                "She has probably not read the plot.",
+                "She has serious reservations about the plot.",
+                "She dislikes the characters."
             ],
-            "correctAnswer": "They appear to be improving his fine motor control.",
-            "hint": "Think about what steadier, more even handwriting, matching the timeline of the exercises, suggests about their effect.",
-            "explanation": "Handwriting becoming steadier over the same period as the hand-strengthening exercises suggests the exercises are helping improve his fine motor control.",
+            "correctAnswer": "She has serious reservations about the plot.",
+            "hint": "What does Mira do when asked directly about the plot?",
+            "explanation": "She praises three other features, then avoids the plot with \"I need to think about.\" That points to a problem.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "And the plot",
+                "I need to think about"
             ]
         },
         {
@@ -407,20 +407,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[A Setting Buried in the Menu] Customer complaints about battery life drop noticeably after a tech blog publishes an article explaining how to disable a power-draining setting that is buried three menus deep and turned on by default in every new phone.",
-            "question": "What can be inferred about the setting mentioned in the article?",
+            "passage": "[When Budgets Allow] \"We really value you,\" the manager said, \"and I'm sure we can look at your salary again, when budgets allow.\" Sina wrote something in her notebook and asked, \"Do you know roughly when that will be?\"",
+            "question": "What is Sina's reaction?",
             "options": [
-                "It had no effect on battery life at all.",
-                "It was something only advanced users would ever discover.",
-                "It was likely contributing to shorter battery life for many users who did not know about it.",
-                "It was already turned off by default for every user."
+                "She is content but wants to write down the date so she can remind the manager later.",
+                "She wants a firmer commitment than she has been given.",
+                "She is satisfied with the answer.",
+                "She wants to leave the company."
             ],
-            "correctAnswer": "It was likely contributing to shorter battery life for many users who did not know about it.",
-            "hint": "Think about what a drop in complaints, right after users learned to disable this hidden setting, suggests about its effect.",
-            "explanation": "Complaints dropping after users learned to disable a hidden, default-on setting suggests that setting had been draining battery life for people unaware of it.",
+            "correctAnswer": "She wants a firmer commitment than she has been given.",
+            "hint": "What does \"when budgets allow\" leave open?",
+            "explanation": "The phrase has no date or promise. Sina writes it down and asks for a time, which shows she is seeking something more definite.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "when budgets allow",
+                "roughly when"
             ]
         },
         {
@@ -428,20 +428,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[A Quiet Return to the Studio] The singer, who has not released new material in six years, is photographed entering a recording studio three separate times in one month, each time carrying a notebook and leaving several hours later.",
-            "question": "What can be inferred about the singer's recent activity?",
+            "passage": "[Sometime] \"You must come for dinner sometime!\" \"I'd love to.\" \"Great! Sometime.\" Neither of them took out a phone.",
+            "question": "How serious was the dinner invitation?",
             "options": [
-                "She has already released a new album.",
-                "She may be working on new music.",
-                "She is visiting the studio purely for a tour.",
-                "She has permanently retired from music."
+                "The invitation was polite, but not a real plan.",
+                "They have arranged a date.",
+                "They are annoyed with each other.",
+                "They have no phones."
             ],
-            "correctAnswer": "She may be working on new music.",
-            "hint": "Think about what repeated studio visits with a notebook, after years away, suggest about what she might be doing.",
-            "explanation": "Multiple studio visits with a notebook, after years of no new material, suggest the singer may be working on new music.",
+            "correctAnswer": "The invitation was polite, but not a real plan.",
+            "hint": "What would people usually do to fix a real plan?",
+            "explanation": "No date, no phones, and a repeated \"sometime\" show that the invitation is a social courtesy.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "sometime",
+                "took out a phone"
             ]
         },
         {
@@ -449,20 +449,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[A Quiet Change in Seating] Midway through the semester, the teacher rearranges the classroom seating chart, moving two previously inseparable friends to opposite corners of the room without any public explanation, though their combined names appear in her private notes under 'off-task behavior, ongoing.'",
-            "question": "What can be inferred about the reason for the seating change?",
+            "passage": "[Mill Road] After the city added protected bike lanes on Mill Road, cycling rose by a third. Shop owners had warned that removing parking would hurt sales. A year later, sales on the street are unchanged, though the number of customers arriving on foot has grown.",
+            "question": "How has the shop owners' warning turned out?",
             "options": [
-                "Their grades had improved dramatically while sitting together.",
-                "The friends' behavior together was likely affecting their focus in class.",
-                "The two friends requested to be seated apart.",
-                "The change was made completely at random."
+                "It was ignored by the city.",
+                "It has not turned out to be true so far.",
+                "It proved to be exactly right.",
+                "It applies only to cyclists."
             ],
-            "correctAnswer": "The friends' behavior together was likely affecting their focus in class.",
-            "hint": "Think about what the teacher's private note about 'off-task behavior' suggests about her reason for separating them.",
-            "explanation": "A private note linking the two friends to ongoing off-task behavior, paired with the seating change, suggests their combination was affecting their focus.",
+            "correctAnswer": "It has not turned out to be true so far.",
+            "hint": "Compare the warning with the results after a year.",
+            "explanation": "They predicted that fewer parking spaces would cut sales, but sales are the same. The rise in walkers offers a possible explanation.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "hurt sales",
+                "sales on the street are unchanged"
             ]
         },
         {
@@ -470,20 +470,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[An Unusually Quiet Terminal] The airport terminal that is normally crowded with tourists this time of year sits nearly empty, and three currency exchange booths that are usually open have handwritten signs reading 'temporarily closed.'",
-            "question": "What can be inferred about travel to this destination right now?",
+            "passage": "[Sundays at the Library] Central Library will open on Sundays from next month. The change follows a survey in which 61 percent of respondents said weekdays were \"hard to fit in.\" The extra hours will be staffed partly by volunteers.",
+            "question": "What does the mention of volunteers imply?",
             "options": [
-                "It has likely decreased noticeably compared to a typical year.",
-                "It has increased compared to a typical year.",
-                "The airport has closed permanently.",
-                "It has remained exactly the same as usual."
+                "Weekday hours will be reduced.",
+                "The survey asked about book prices.",
+                "Volunteers will run the library on Sundays because paid staff prefer to work fewer hours.",
+                "The library cannot fully pay for extra staff."
             ],
-            "correctAnswer": "It has likely decreased noticeably compared to a typical year.",
-            "hint": "Think about what an unusually empty terminal and closed exchange booths, during what should be a busy season, suggest.",
-            "explanation": "An empty terminal and closed currency booths during what is normally a busy season suggest a noticeable drop in travelers to this destination.",
+            "correctAnswer": "The library cannot fully pay for extra staff.",
+            "hint": "Which sentence tells you about the staff?",
+            "explanation": "\"Partly by volunteers\" suggests the library cannot cover all the hours with paid workers. The survey explains the reason for the change.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "hard to fit in",
+                "staffed partly by volunteers"
             ]
         },
         {
@@ -491,20 +491,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[A Longer Phone Call Than Usual] Instead of the usual five-minute check-in, Priya's weekly call with her parents runs for over an hour, and afterward she immediately begins searching flight prices for a visit sooner than her originally planned trip next year.",
-            "question": "What can be inferred about the content of the phone call?",
+            "passage": "[Wet June] A local beekeeper says his hives produced less honey this summer. Rain fell on most days in June, when the bees usually gather nectar. \"On dry days they flew out,\" he says, \"but the flowers were already battered.\"",
+            "question": "Why did the hives produce less honey?",
             "options": [
-                "She had already planned to search for flights before the call.",
-                "Something discussed likely prompted her to want to visit sooner.",
-                "The call convinced her to cancel her visit entirely.",
-                "The call covered only routine, unremarkable topics."
+                "The beekeeper had fewer hives.",
+                "Flowers grew poorly because the rain washed away the soil, so there was less nectar.",
+                "The wet weather reduced the bees' chances to collect nectar.",
+                "The bees were sick."
             ],
-            "correctAnswer": "Something discussed likely prompted her to want to visit sooner.",
-            "hint": "Think about what an unusually long call, followed immediately by searching for earlier flights, suggests about what was discussed.",
-            "explanation": "An unusually long call followed immediately by searching for an earlier visit suggests something discussed during the call motivated her to move up her plans.",
+            "correctAnswer": "The wet weather reduced the bees' chances to collect nectar.",
+            "hint": "What two weather-related problems does he describe?",
+            "explanation": "Rain kept bees in on wet days, and dry days did not help because the flowers were damaged. Both limit nectar.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "Rain fell on most days",
+                "already battered"
             ]
         },
         {
@@ -512,20 +512,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[A Delayed Invoice] The freelance designer notices that her latest invoice, unlike her previous ten, has not been acknowledged after five business days, and an automatic reply now states the client's accounts team is 'reviewing current vendor agreements.'",
-            "question": "What can be inferred about the delay in this specific invoice?",
+            "passage": "[Keyboard] Battery lasts all day, and the screen is beautiful. The keyboard took some getting used to. After three weeks I am thinking of buying an external one for the office.",
+            "question": "How does the reviewer feel about the laptop overall?",
             "options": [
-                "The client has stopped using freelance designers entirely.",
-                "It may be connected to a broader review of the client's vendor relationships.",
-                "It is a routine delay unrelated to any company changes.",
-                "It was paid faster than her previous invoices."
+                "She is disappointed with the screen and battery, though she likes the keyboard a lot.",
+                "She loves the keyboard.",
+                "She is happy overall, but the keyboard is a real irritation.",
+                "She regrets buying the laptop."
             ],
-            "correctAnswer": "It may be connected to a broader review of the client's vendor relationships.",
-            "hint": "Think about what the automatic reply mentioning a 'vendor agreements' review suggests about the reason for the delay.",
-            "explanation": "An automatic reply mentioning a review of vendor agreements, right as this invoice stalls, suggests the delay may be linked to that broader review.",
+            "correctAnswer": "She is happy overall, but the keyboard is a real irritation.",
+            "hint": "What is she considering buying, and why?",
+            "explanation": "\"Some getting used to\" sounds mild, but thinking of an external keyboard after three weeks shows the problem persists.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "took some getting used to",
+                "external one"
             ]
         },
         {
@@ -533,20 +533,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[A Return Without a Receipt] The store's return policy requires a receipt for any refund, yet the manager approves a full refund for a regular customer who cannot find hers, after quickly checking the customer's purchase history in the system.",
-            "question": "What can be inferred about how the manager verified the return?",
+            "passage": "[Long Wait] We were told the wait would be twenty minutes. It was fifty. The manager apologised twice and brought us free drinks, which was kind. The pasta, when it finally came, was excellent.",
+            "question": "What is the reviewer's overall attitude?",
             "options": [
-                "She required the customer to pay again for the item.",
-                "She refused the refund in the end.",
-                "She ignored the store's policy completely without checking anything.",
-                "She found another way to confirm the purchase before approving the refund."
+                "Frustrated by the wait, but willing to forgive.",
+                "Furious and unforgiving.",
+                "Indifferent to the food.",
+                "Grateful to the manager but disappointed by the pasta."
             ],
-            "correctAnswer": "She found another way to confirm the purchase before approving the refund.",
-            "hint": "Think about what checking the purchase history, right before approving the refund, suggests about how she verified the purchase.",
-            "explanation": "Checking the purchase history right before approving the refund suggests the manager confirmed the purchase another way instead of relying only on a receipt.",
+            "correctAnswer": "Frustrated by the wait, but willing to forgive.",
+            "hint": "Find the sentence that criticises and the ones that soften the criticism.",
+            "explanation": "The mismatch between twenty and fifty minutes is a complaint. The apologies, free drinks, and excellent pasta reduce the annoyance.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "It was fifty",
+                "which was kind"
             ]
         },
         {
@@ -554,20 +554,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[A Grant That Comes with Conditions] The nonprofit receives a large grant explicitly earmarked for youth programs, and within the month, job postings appear for two new positions focused entirely on after-school tutoring, while no other departments see any new hires.",
-            "question": "What can be inferred about the source of funding for these new positions?",
+            "passage": "[Course Review] The lecturer clearly knows the subject. Unfortunately, the slides were often changed on the day, and the assignment instructions kept being updated. I learned a lot, mostly by working things out myself.",
+            "question": "How well was the course organised?",
             "options": [
-                "It is likely connected to the grant designated for youth programs.",
-                "The positions were funded before the grant was received.",
-                "It came from a completely separate, unrelated source.",
-                "The grant was used exclusively for administrative costs."
+                "It was poorly organised.",
+                "It was cancelled.",
+                "The lecturer did not know the subject.",
+                "It was easy."
             ],
-            "correctAnswer": "It is likely connected to the grant designated for youth programs.",
-            "hint": "Think about the connection between the grant's stated purpose and the type of positions that were created.",
-            "explanation": "New positions focused entirely on youth tutoring, appearing right after a youth-program grant, suggest that grant is the likely source of funding for these roles.",
+            "correctAnswer": "It was poorly organised.",
+            "hint": "What does \"mostly by working things out myself\" say about the teaching?",
+            "explanation": "Changing slides and instructions show poor planning, and the student learned by their own efforts.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "slides were often changed",
+                "working things out myself"
             ]
         },
         {
@@ -575,20 +575,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[A Change in Volume] The audiologist notices that Mr. Bianchi answers questions accurately when facing her directly but asks her to repeat herself whenever she speaks from another room, a pattern that has grown more frequent over his last three visits.",
-            "question": "What can be inferred about Mr. Bianchi's hearing?",
+            "passage": "[The Menu] Mr. and Mrs. Costa read the menu slowly. Mrs. Costa turned it over, then back, running her finger down the prices. They whispered to each other, ordered two glasses of water, apologised to the waiter, and left.",
+            "question": "Why did the couple leave without ordering food?",
             "options": [
-                "It may be declining, particularly without visual cues like lip movement.",
-                "It has nothing to do with his distance from her.",
-                "It has remained completely unchanged over his visits.",
-                "It is worse when she faces him directly."
+                "They disliked the waiter.",
+                "They could not read the menu.",
+                "They were waiting for a friend who had promised to arrive and pay for the meal.",
+                "They found the prices higher than they wanted to pay."
             ],
-            "correctAnswer": "It may be declining, particularly without visual cues like lip movement.",
-            "hint": "Think about what performing better face-to-face, but worse from another room, and this pattern increasing over time, suggests.",
-            "explanation": "Struggling more when she isn't visible, and this pattern increasing across visits, suggests his hearing may be gradually declining, especially without visual cues.",
+            "correctAnswer": "They found the prices higher than they wanted to pay.",
+            "hint": "What was Mrs. Costa checking on the menu?",
+            "explanation": "The finger going down the prices, the whispering, and the quick departure suggest that the cost, not the food or service, is the reason.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "running her finger down the prices",
+                "apologised to the waiter"
             ]
         },
         {
@@ -596,20 +596,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[A Sequel Nobody Asked For] The studio greenlights a sequel to a film that underperformed at the box office five years ago, citing 'renewed interest' after a fan-made trailer for an imagined sequel goes viral online, racking up millions of views.",
-            "question": "What can be inferred about the studio's reason for making the sequel now?",
+            "passage": "[New Schedule] When the new schedule was announced, Ms. Perić sat with her arms folded and said nothing. Later, in the corridor, she told a colleague, \"I'll wait to see who gets the weekend shifts.\"",
+            "question": "What is Ms. Perić worried about?",
             "options": [
-                "The original film performed extremely well at the box office.",
-                "The fan-made trailer was created by the studio itself.",
-                "The unexpected online attention likely influenced their decision.",
-                "The sequel was already in production long before the trailer appeared."
+                "She is concerned that the schedule may not treat her fairly.",
+                "She did not hear the announcement.",
+                "She is delighted with the new schedule, but wants to know which shifts other people get.",
+                "She is delighted with the schedule."
             ],
-            "correctAnswer": "The unexpected online attention likely influenced their decision.",
-            "hint": "Think about what 'renewed interest,' right after a viral fan trailer, suggests about what prompted the decision.",
-            "explanation": "Citing 'renewed interest' right after a fan trailer went viral suggests that unexpected online attention likely played a role in the studio's decision to move forward.",
+            "correctAnswer": "She is concerned that the schedule may not treat her fairly.",
+            "hint": "What is she waiting to see, and what was her posture?",
+            "explanation": "Folded arms and silence, then a comment about weekend shifts, show wariness about how work will be shared.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "arms folded",
+                "who gets the weekend shifts"
             ]
         },
         {
@@ -617,20 +617,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[A Setting That Resets Itself] Every time Noor updates her privacy settings on the app to limit data sharing, the settings quietly revert to their original, more permissive defaults after the next automatic update, according to a pattern she has now tracked for four months.",
-            "question": "What can be inferred about the app's approach to privacy settings?",
+            "passage": "[Save the Date] The invitations said \"Save the date: 14 June.\" In April a card arrived: \"New date to be announced.\" It was short and gave no reason. Two guests who know the couple well only said, \"Let's give them space.\"",
+            "question": "What explains the vague card and the guests' response?",
             "options": [
-                "It may be designed in a way that favors collecting more user data over time.",
-                "It permanently saves every privacy change a user makes.",
-                "It has no default settings at all.",
-                "It stopped updating four months ago."
+                "The guests are angry.",
+                "The couple has decided to hold the wedding earlier.",
+                "There is probably a private reason for the postponement.",
+                "The wedding is cancelled for a public reason."
             ],
-            "correctAnswer": "It may be designed in a way that favors collecting more user data over time.",
-            "hint": "Think about what settings consistently reverting to more permissive defaults, after every update, suggests about how the app is designed.",
-            "explanation": "Privacy settings repeatedly reverting to more permissive defaults after updates suggests the app may be designed to favor greater data collection over the user's stated preference.",
+            "correctAnswer": "There is probably a private reason for the postponement.",
+            "hint": "What do the guests who know the couple decide to do?",
+            "explanation": "No reason is given and close friends choose not to ask. This suggests a private matter.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "gave no reason",
+                "give them space"
             ]
         }
     ]

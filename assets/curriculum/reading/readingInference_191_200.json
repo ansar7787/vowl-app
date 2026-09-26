@@ -8,20 +8,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[A Content Recommendation Engine's Quiet Preference] A team of outside researchers granted limited access to a video platform's recommendation data finds that content flagged internally as 'high engagement, contested accuracy' is recommended to new users at a disproportionately higher rate than content with comparable engagement but no such flag, a pattern the platform's public statements attribute to 'engagement-based ranking with no editorial bias,' though the researchers note this explanation does not account for why the accuracy flag itself would correlate with placement, rather than engagement alone, if the ranking system were genuinely indifferent to a video's factual standing.",
-            "question": "Which inference is most strongly supported about the platform's public explanation for this pattern?",
+            "passage": "[Critical Thinking] The new curriculum promises to teach \"critical thinking.\" It also introduces fourteen standardised tests, each with a fixed marking scheme that rewards the \"correct\" answer. Teachers, asked whether the two goals fit together, tended to reply with a short laugh.",
+            "question": "What conflict do teachers see?",
             "options": [
-                "It does not appear to fully account for the specific correlation the researchers identified between placement and the accuracy flag itself.",
-                "It proves the accuracy flag has no relationship whatsoever to how content is recommended.",
-                "The researchers found no disproportionate recommendation pattern of any kind.",
-                "It has been fully confirmed as accurate by the researchers' findings."
+                "Teachers are worried about the number of tests but not about the marking.",
+                "Teachers think the tests will improve critical thinking over time.",
+                "Teachers see a conflict between the stated aim and the testing system.",
+                "Teachers found the question funny because it was badly worded."
             ],
-            "correctAnswer": "It does not appear to fully account for the specific correlation the researchers identified between placement and the accuracy flag itself.",
-            "hint": "Focus on the researchers' specific objection: that pure engagement-based ranking would not explain why the accuracy flag itself, not just engagement, correlates with recommendation rates.",
-            "explanation": "The researchers' pointed observation that a purely engagement-based explanation would not predict a correlation with the accuracy flag specifically most strongly supports the inference that the platform's stated explanation leaves this particular pattern unaccounted for.",
+            "correctAnswer": "Teachers see a conflict between the stated aim and the testing system.",
+            "hint": "What does the laugh answer, and what do the quotation marks suggest?",
+            "explanation": "The curriculum's aim and its tests pull in opposite directions, and teachers respond to that with a laugh rather than an answer. The quotation marks on \"correct\" hint at the same tension.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "critical thinking",
+                "short laugh"
             ]
         },
         {
@@ -29,20 +29,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[A Grief Ritual Adapted Across Distance] Immigrant communities separated from their ancestral burial grounds by oceans and, in some cases, by borders they can no longer safely cross, have developed a range of adapted mourning practices, memorial gatherings held at a symbolic distance, video calls broadcast to gravesides tended by relatives who remained behind, that anthropologists studying diaspora communities describe not as diminished substitutes for a lost tradition but as genuine, evolving expressions of the same underlying need the original practices served, reshaped by circumstance rather than abandoned by it.",
-            "question": "Which inference is most strongly supported about how the anthropologists characterize these adapted practices?",
+            "passage": "[Quiet Charm] Visitors are often struck by the town's \"quiet charm.\" Residents, who have watched the last three cafés and the bookshop close, prefer to use only the word \"quiet.\"",
+            "question": "How do residents' views differ from visitors'?",
             "options": [
-                "They view them as authentic continuations of an underlying tradition rather than as lesser replacements for it.",
-                "They view them as entirely unrelated to the original ancestral mourning traditions.",
-                "They view them as identical in every practical detail to the original practices.",
-                "They view them as evidence that the original traditions have been fully abandoned by these communities."
+                "Residents feel the town has declined, not gained charm.",
+                "Residents are proud of the town's calm and want visitors to respect it.",
+                "Residents agree with the visitors but prefer a shorter description.",
+                "Residents think the town is probably too quiet for young families to live in."
             ],
-            "correctAnswer": "They view them as authentic continuations of an underlying tradition rather than as lesser replacements for it.",
-            "hint": "Pay attention to the specific contrast the passage draws, 'not as diminished substitutes... but as genuine, evolving expressions,' and identify which side of that contrast the anthropologists favor.",
-            "explanation": "The passage explicitly states the anthropologists reject the 'diminished substitute' framing in favor of viewing these practices as genuine, adapted continuations, which most strongly supports characterizing them as authentic rather than lesser or unrelated.",
+            "correctAnswer": "Residents feel the town has declined, not gained charm.",
+            "hint": "Which word do residents keep, and which do they drop?",
+            "explanation": "Visitors add \"charm\"; residents keep \"quiet\" only. Their view is shaped by the closures they have seen.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "quiet charm",
+                "bookshop close"
             ]
         },
         {
@@ -50,20 +50,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[A Public Apology Measured Against a Private Record] The company's public apology for a data-handling failure states that the incident affected 'a limited number of accounts' and has since been 'fully resolved,' language that internal incident-response documents, later disclosed as part of an unrelated regulatory filing, describe considerably differently, characterizing the affected account count as 'substantial' and noting that a specific technical vulnerability underlying the incident 'remains only partially mitigated' as of the filing's date, several weeks after the public apology was issued.",
-            "question": "Which inference is most strongly supported about the relationship between the public apology and the internal documents?",
+            "passage": "[Other Departments] \"I would never tell you how to run your department,\" the director said, placing a spreadsheet on the table. \"I only thought you might like to see how the other departments manage their overtime.\"",
+            "question": "What is the director really doing?",
             "options": [
-                "The public apology likely understates both the scope of the incident and how completely it had actually been addressed.",
-                "The vulnerability was confirmed as completely resolved in the internal documents.",
-                "The public apology and the internal documents describe the incident in fully consistent terms.",
-                "The internal documents describe the incident as less serious than the public apology suggests."
+                "Praising the department's overtime figures compared with the others.",
+                "Suggesting indirectly that the overtime should be reduced.",
+                "Asking for help with a spreadsheet that shows all departments' data.",
+                "Offering to take over the department's overtime planning for a month."
             ],
-            "correctAnswer": "The public apology likely understates both the scope of the incident and how completely it had actually been addressed.",
-            "hint": "Compare the specific words used in each account, 'limited' versus 'substantial,' and 'fully resolved' versus 'partially mitigated,' rather than assuming the two descriptions roughly agree.",
-            "explanation": "The stark contrast between 'limited... fully resolved' in the public apology and 'substantial... partially mitigated' in the internal documents most strongly supports the inference that the public statement understated both the scope and the resolution status of the incident.",
+            "correctAnswer": "Suggesting indirectly that the overtime should be reduced.",
+            "hint": "Compare her opening sentence with what she does next.",
+            "explanation": "She says she will not give advice, then provides a comparison that implies the department is doing worse. The statement is a polite cover.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "would never tell you",
+                "other departments"
             ]
         },
         {
@@ -71,20 +71,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[A Productivity Study's Publication Bias] A meta-analysis pooling results from dozens of individual workplace productivity studies finds an overwhelmingly positive average effect for a popular management technique, a finding the meta-analysis's own authors caution should be interpreted carefully, since a supplementary funnel-plot analysis they conducted suggests studies finding negative or null results were considerably less likely to have been submitted for publication in the first place, a well-documented phenomenon in research literature that can inflate an apparent average effect well beyond what a complete, unfiltered set of studies, including unpublished ones, would likely show.",
-            "question": "Which inference is most strongly supported about the meta-analysis's reported positive effect?",
+            "passage": "[Consistent With] The authors write that their results \"are consistent with\" a link between the chemical and the condition, adding that \"further work is needed to exclude alternative explanations.\" The press release announces: \"Chemical linked to condition.\"",
+            "question": "How does the press release compare with the authors' claim?",
             "options": [
-                "It accurately reflects a complete, unfiltered set of every study ever conducted on this technique.",
-                "It almost certainly understates the technique's true average effect.",
-                "The authors found no evidence of publication bias affecting their analysis.",
-                "It may overstate the technique's true average effect due to the likely underrepresentation of unpublished negative or null findings."
+                "The press release is probably more careful than the authors' own conclusion.",
+                "The authors proved the link, and the press release repeats it correctly.",
+                "The press release and the authors agree that further work is not needed.",
+                "The press release is more definite than the authors were."
             ],
-            "correctAnswer": "It may overstate the technique's true average effect due to the likely underrepresentation of unpublished negative or null findings.",
-            "hint": "Think about what systematically missing negative results, due to a documented publication bias, would do to an average effect calculated only from studies that did get published.",
-            "explanation": "Since the authors' own funnel-plot analysis suggests negative and null studies were underrepresented in publication, the most supported inference is that the reported positive effect likely overstates the technique's true average impact.",
+            "correctAnswer": "The press release is more definite than the authors were.",
+            "hint": "Compare the phrases used by the authors and the press release.",
+            "explanation": "\"Consistent with\" plus a call for further work is tentative. \"Linked\" in a headline states the link as fact.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "consistent with",
+                "Chemical linked to condition"
             ]
         },
         {
@@ -92,20 +92,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[A Resignation Wave With an Unstated Common Thread] Six senior engineers depart the same product team within a four-month span, a turnover rate company leadership publicly attributes to 'a natural, unrelated mix of personal and career decisions,' though exit interview summaries obtained by an employee advocacy group show five of the six independently cited concerns about a specific director's management approach, a level of thematic overlap that, statisticians reviewing the summaries note, would be unusual to observe by chance if the departures were genuinely as unrelated as leadership's characterization suggests.",
-            "question": "Which inference is most strongly supported about leadership's characterization of these departures as 'unrelated'?",
+            "passage": "[The Drawer] Elena kept the letter for a week before opening it. When she did, she read it standing at the window, folded it into four with great care, and put it in the drawer where she kept the things she did not intend to answer.",
+            "question": "What has Elena decided about the letter?",
             "options": [
-                "The exit interviews found no common theme among any of the departing engineers.",
-                "Statisticians confirmed this level of overlap would be common and unremarkable if departures were unrelated.",
-                "It is fully supported by the pattern found across the exit interview summaries.",
-                "It appears inconsistent with the thematic overlap statisticians identified across most of the exit interviews."
+                "She did not read the letter and has put it away for later.",
+                "She will reply as soon as she has decided what to say.",
+                "She has thrown the letter away and wants to forget it.",
+                "She has decided not to reply, although the letter mattered to her."
             ],
-            "correctAnswer": "It appears inconsistent with the thematic overlap statisticians identified across most of the exit interviews.",
-            "hint": "Weigh leadership's public characterization against the specific statistical observation about how unusual this degree of thematic overlap would be under a genuinely 'unrelated' scenario.",
-            "explanation": "Statisticians' observation that this degree of overlap would be unusual under a genuinely unrelated scenario most strongly supports the inference that leadership's 'unrelated' characterization does not align well with the exit interview evidence.",
+            "correctAnswer": "She has decided not to reply, although the letter mattered to her.",
+            "hint": "What does the drawer's purpose tell you, and how does she treat the paper?",
+            "explanation": "The care with which she folds the letter shows it matters. Putting it in the drawer of unanswered things shows she will not reply.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "folded it into four with great care",
+                "did not intend to answer"
             ]
         },
         {
@@ -113,20 +113,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[A Historical Diet Claim Tested Against the Evidence] A popular diet program's marketing invokes the eating habits of a historical population as evidence for its recommended approach, an appeal that food historians examining the actual archaeological and written record of that population's diet find only loosely supported at best, since the historical evidence shows a far more varied and regionally inconsistent diet than the simplified, singular version the program presents, suggesting the program's account may function more as a persuasive narrative device than as an accurate historical description.",
-            "question": "Which inference is most strongly supported about the diet program's use of this historical population as evidence?",
+            "passage": "[At an Appropriate Time] The board \"welcomed\" the auditor's report and \"agreed that the recommendations merited careful consideration.\" It was agreed that the report would be reviewed \"at an appropriate time.\" The recommendations concerned safety.",
+            "question": "How urgently is the board treating safety?",
             "options": [
-                "It likely simplifies a more varied historical reality in a way that serves the program's persuasive purpose rather than accurately reflecting the historical record.",
-                "It has been fully confirmed as historically accurate by food historians' research.",
-                "Food historians found no meaningful difference between the program's account and the historical record.",
-                "The historical record shows this population followed a single, consistent diet exactly as the program describes."
+                "The board is not treating the recommendations as urgent.",
+                "The board rejected the recommendations after reading the report.",
+                "The board has begun acting on the safety recommendations.",
+                "The board is waiting for the auditor to change the report."
             ],
-            "correctAnswer": "It likely simplifies a more varied historical reality in a way that serves the program's persuasive purpose rather than accurately reflecting the historical record.",
-            "hint": "Weigh the program's simplified, singular historical claim against historians' finding of a more varied, regionally inconsistent actual record, and consider what function the simplified version serves.",
-            "explanation": "Historians' finding of a more varied historical diet than the program's simplified version, paired with the observation that this serves a persuasive function, most strongly supports the inference that the program's historical claim is more rhetorical than accurately descriptive.",
+            "correctAnswer": "The board is not treating the recommendations as urgent.",
+            "hint": "What does the board commit to, and when?",
+            "explanation": "The board offers welcome and consideration but no date. A safety matter reviewed \"at an appropriate time\" is not being treated as urgent.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "at an appropriate time",
+                "concerned safety"
             ]
         },
         {
@@ -134,20 +134,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[A Trial's Impressive Result, Narrowly Achieved] The experimental treatment's headline result, a 45 percent reduction in symptom severity compared to placebo, drew considerable attention upon publication, though a closer reading of the trial's statistical methodology reveals the result achieved statistical significance only after researchers, partway through the trial, revised their primary outcome measure from one that had been tracking toward a null result to an alternative measure that showed the more favorable finding, a practice statisticians describe as substantially increasing the risk that the reported result reflects a statistical artifact of the analytical choice rather than a genuine treatment effect.",
-            "question": "Which inference is most strongly supported about the reliability of the reported 45 percent finding?",
+            "passage": "[Raising His Voice] \"Twenty-six years,\" said the head of department, \"and in all that time I never once heard him raise his voice.\" She paused. \"Or, for that matter, offer an opinion in a meeting.\"",
+            "question": "What is the head of department doing in her speech?",
             "options": [
-                "It proves conclusively that the treatment has no real effect on symptoms whatsoever.",
-                "It should be treated with meaningful caution, given that the favorable measure was adopted only after an earlier measure was trending unfavorably.",
-                "The original outcome measure also showed the same 45 percent improvement.",
-                "It can be fully trusted as a straightforwardly established treatment effect."
+                "Harsh criticism of a colleague who never worked well with others.",
+                "A joke about his quiet voice that has no serious point.",
+                "Warm praise for a colleague who never lost his temper or gave his opinions.",
+                "Affectionate teasing that includes a real criticism of his passivity."
             ],
-            "correctAnswer": "It should be treated with meaningful caution, given that the favorable measure was adopted only after an earlier measure was trending unfavorably.",
-            "hint": "Focus on what statisticians say this specific practice, switching outcome measures mid-trial after an unfavorable trend, does to confidence in a subsequently favorable result.",
-            "explanation": "Statisticians' warning that switching outcome measures after an unfavorable trend increases the risk of an artifactual result most strongly supports treating the reported finding with meaningful caution, rather than either full trust or outright dismissal.",
+            "correctAnswer": "Affectionate teasing that includes a real criticism of his passivity.",
+            "hint": "What does the phrase \"for that matter\" add to the first compliment?",
+            "explanation": "The opening sounds like praise for calm, and the second half shows the same quietness meant he never contributed.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "never once heard him raise his voice",
+                "offer an opinion"
             ]
         },
         {
@@ -155,20 +155,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[A Diplomatic Silence Interpreted by Analysts] In its official summary of a high-level bilateral meeting, one government's foreign ministry makes no mention of a contentious border dispute that regional analysts had widely expected to dominate the discussions, an omission that experienced diplomats interviewed afterward describe as more likely a deliberate choice to avoid publicly escalating tension than evidence the topic was not discussed at all behind closed doors, noting that sensitive disputes are frequently addressed privately while excluded from public statements precisely to preserve room for continued negotiation.",
-            "question": "Which inference is most strongly supported about the absence of the border dispute from the official summary?",
+            "passage": "[Strength of Feeling] The council \"recognises the strength of feeling\" about the library closure and \"will continue to engage with stakeholders.\" The library will close on 30 September as planned.",
+            "question": "What will the council actually do?",
             "options": [
-                "It proves conclusively that the border dispute was not discussed at all during the meeting.",
-                "It likely reflects a deliberate choice about public messaging rather than evidence that the topic went undiscussed in the meeting itself.",
-                "Regional analysts had not expected this topic to be relevant to the discussions.",
-                "It proves conclusively that the border dispute was fully resolved during the meeting."
+                "The council agrees with the protesters and will look for another building.",
+                "The council is unsure about the closure and has asked for more time.",
+                "The council will consult stakeholders again and may delay the closure.",
+                "The council acknowledges the objections but will not change its decision."
             ],
-            "correctAnswer": "It likely reflects a deliberate choice about public messaging rather than evidence that the topic went undiscussed in the meeting itself.",
-            "hint": "Notice the diplomats' specific distinction between what appears in a public statement and what may have occurred privately, and identify which explanation they consider more likely.",
-            "explanation": "Diplomats' explanation that sensitive topics are often deliberately excluded from public statements while still being discussed privately most strongly supports the inference that the omission reflects a messaging choice, not confirmation that the topic was never raised.",
+            "correctAnswer": "The council acknowledges the objections but will not change its decision.",
+            "hint": "What is the final sentence, and how does it relate to the words before it?",
+            "explanation": "The first sentence expresses sympathy. The last sentence shows the decision is unaffected, so the sympathy has no effect.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "recognises the strength of feeling",
+                "as planned"
             ]
         },
         {
@@ -176,20 +176,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[A Community's Two Faces in Official Data] National crime statistics rank the small town among the safest in the region, a ranking based on reported crimes per capita that a sociologist conducting fieldwork in the town finds difficult to reconcile with extensive anecdotal accounts, gathered from dozens of residents, describing a pattern of domestic and interpersonal incidents that residents say are rarely reported to police due to the town's small size and the resulting social costs of formally reporting a neighbor, a dynamic the sociologist argues official statistics, by definition, cannot capture.",
-            "question": "Which inference is most strongly supported about what the town's official safety ranking actually reflects?",
+            "passage": "[You're Welcome] Every year Dad thanks Mum for the dinner as though it were a surprise. Every year she says, \"You're welcome,\" in exactly the tone that means \"You could have helped.\"",
+            "question": "What lies behind Mum's tone?",
             "options": [
-                "It likely reflects reported crime rates rather than the full scope of incidents actually occurring in the community.",
-                "It comprehensively captures every incident occurring within the town, whether reported or not.",
-                "Residents reported experiencing no social costs associated with formally reporting incidents.",
-                "The sociologist's fieldwork confirmed the anecdotal accounts were entirely fabricated by residents."
+                "Mum is annoyed that Dad pretends not to know who cooked the dinner.",
+                "Mum feels resentment about who does the work, and does not say it directly.",
+                "Dad does the cooking most days, and Mum is grateful for the change.",
+                "Mum enjoys cooking and is pleased to be thanked each year."
             ],
-            "correctAnswer": "It likely reflects reported crime rates rather than the full scope of incidents actually occurring in the community.",
-            "hint": "Think about what official crime statistics, based specifically on reported incidents, can and cannot capture when residents describe systemic reasons for not reporting.",
-            "explanation": "Since official statistics are based on reported crimes, and residents describe specific social pressures discouraging reporting in this small community, the most supported inference is that the ranking reflects reported incidents rather than the community's full, actual experience.",
+            "correctAnswer": "Mum feels resentment about who does the work, and does not say it directly.",
+            "hint": "What does the tone convey that the words do not?",
+            "explanation": "\"You're welcome\" is polite, but the tone carries the message. The repeated pattern suggests long-standing resentment.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "as though it were a surprise",
+                "You could have helped"
             ]
         },
         {
@@ -197,20 +197,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[A Traditional Craft's Economics Reconsidered] Development economists studying a region's handwoven textile industry find that the price premium consumers pay for goods marketed as 'authentically handmade' has, over the past decade, increasingly flowed to intermediary exporters and branding companies rather than to the weavers themselves, whose per-piece compensation, adjusted for inflation, has remained essentially flat over the same period during which retail prices for the finished goods have risen substantially, a divergence the researchers argue complicates any simple narrative in which growing consumer interest in 'authentic' craftsmanship straightforwardly benefits traditional artisans.",
-            "question": "Which inference is most strongly supported about the relationship between rising retail prices and weaver compensation?",
+            "passage": "[Sixty Pages] The reviewer calls the book's argument \"bold\" and its evidence \"wide-ranging.\" She adds that the footnotes \"run to sixty pages and will reward anyone who reads them, which excludes, I suspect, the author.\"",
+            "question": "What does the reviewer suspect about the author?",
             "options": [
-                "The rising retail prices have translated directly and proportionally into higher weaver compensation.",
-                "The rising retail prices do not appear to have translated into meaningfully greater compensation for the weavers themselves.",
-                "Weaver compensation has declined in nominal terms over this period.",
-                "Intermediary exporters and branding companies have seen their share of the premium decrease over this period."
+                "The reviewer doubts that the author read the sources carefully.",
+                "The reviewer loved the book and recommends reading every footnote.",
+                "The reviewer thinks the sources are outdated and poorly chosen.",
+                "The reviewer thinks the footnotes are too long for most readers."
             ],
-            "correctAnswer": "The rising retail prices do not appear to have translated into meaningfully greater compensation for the weavers themselves.",
-            "hint": "Compare what happened to weaver compensation, described as flat after adjusting for inflation, with what happened to retail prices and where the researchers say the added value has flowed instead.",
-            "explanation": "Since weaver compensation stayed essentially flat in real terms while retail prices rose and the added premium flowed increasingly to intermediaries, the most supported inference is a disconnect between rising consumer prices and any corresponding gain for the artisans themselves.",
+            "correctAnswer": "The reviewer doubts that the author read the sources carefully.",
+            "hint": "Which clause is a joke, and what does it accuse?",
+            "explanation": "The first praise is mild. The final clause claims the author did not read the footnotes, which questions the care behind the evidence.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "bold",
+                "excludes, I suspect, the author"
             ]
         },
         {
@@ -218,20 +218,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[A Whistleblower Policy Tested by Its Own Numbers] The corporation's compliance department reports that its confidential whistleblower hotline received a record number of calls last year, a figure leadership cites as evidence of a healthy, trust-based reporting culture, an interpretation an outside compliance auditor reviewing the same data finds only partially convincing, noting that a comparably plausible explanation, that the increase reflects a genuine rise in the underlying number of problems occurring, cannot be ruled out using call volume alone, since a healthy reporting culture and a worsening set of underlying issues would each independently be expected to produce exactly this same increase in calls.",
-            "question": "Which inference is most strongly supported about what the record hotline call volume, by itself, can confirm?",
+            "passage": "[Excluded] The team repeated the experiment five times. Four results agreed. The fifth, which showed the opposite, was \"excluded because of equipment error.\" No details of the error were given.",
+            "question": "Why might the exclusion be questionable?",
             "options": [
-                "It definitively confirms leadership's interpretation of a healthier reporting culture.",
-                "It cannot, on its own, distinguish between improved reporting culture and a genuine increase in underlying problems, since both would produce the same pattern.",
-                "The auditor found call volume to be an unreliable metric for any purpose whatsoever.",
-                "It definitively confirms an increase in the underlying number of problems at the company."
+                "The exclusion may be convenient, and the claimed error is not demonstrated.",
+                "The equipment was described in detail, so the error is well documented.",
+                "The fifth result was clearly wrong, so the team was right to exclude it.",
+                "The team should have excluded the other four results, not the fifth."
             ],
-            "correctAnswer": "It cannot, on its own, distinguish between improved reporting culture and a genuine increase in underlying problems, since both would produce the same pattern.",
-            "hint": "Focus on the auditor's specific logical point: that two very different underlying realities would each produce the identical observable pattern, making that pattern alone insufficient to distinguish between them.",
-            "explanation": "Since the auditor identifies two distinct, equally plausible explanations that would each independently produce the same rise in call volume, the most supported inference is that this figure alone cannot confirm which explanation is correct.",
+            "correctAnswer": "The exclusion may be convenient, and the claimed error is not demonstrated.",
+            "hint": "What information is missing about the fifth result?",
+            "explanation": "Excluding the only contradictory result without evidence of the error makes the four agreeing results look better than the evidence justifies.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "Four results agreed",
+                "No details of the error"
             ]
         },
         {
@@ -239,20 +239,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[A Patent's Priority Date Reconsidered] The technology company's patent application lists a filing date establishing it as the first to claim a particular innovation, a priority that a patent litigation researcher reviewing court exhibits from an unrelated infringement case finds complicated by internal engineering notebooks, entered into evidence in that separate case, showing a rival company's engineers had documented and tested a substantially similar approach nearly a year before the patent holder's filing date, notebooks that were never submitted during the original patent examination process.",
-            "question": "Which inference is most strongly supported about the patent's claimed priority?",
+            "passage": "[A Wonderful Opportunity] \"This is a wonderful opportunity for you,\" the manager said, handing over the client nobody else wanted. \"Nobody else has the patience.\"",
+            "question": "What is the manager really doing?",
             "options": [
-                "The rival company's notebooks were formally submitted and considered during the original examination.",
-                "It has been fully and independently confirmed as valid by the original patent examination process.",
-                "No evidence exists suggesting any other party worked on a similar approach before this filing date.",
-                "It may be less secure than the filing date alone suggests, given evidence of substantially similar prior work that was not considered during examination."
+                "The manager wants the client for herself but is pretending to be generous.",
+                "The client is difficult, and the flattery disguises an unwelcome task.",
+                "The client is important, and the manager trusts the employee with the account.",
+                "The manager is offering a promotion, but only to someone who has patience."
             ],
-            "correctAnswer": "It may be less secure than the filing date alone suggests, given evidence of substantially similar prior work that was not considered during examination.",
-            "hint": "Think about what evidence entered in an unrelated case, showing prior similar work that the original patent examiners never saw, supports about the strength of the priority claim.",
-            "explanation": "Notebooks showing substantially similar prior work, never submitted during the original examination, most strongly supports the inference that the patent's priority claim rests on an incomplete record and may be less secure than it initially appears.",
+            "correctAnswer": "The client is difficult, and the flattery disguises an unwelcome task.",
+            "hint": "What does \"nobody else wanted\" reveal about the compliment?",
+            "explanation": "The flattery and the description of the client do not match, which shows the manager is giving away a difficult task.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "wonderful opportunity",
+                "nobody else has the patience"
             ]
         },
         {
@@ -260,20 +260,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[A Genetic Risk Score's Narrow Foundation] A commercial genetic testing company markets a 'personalized disease risk score' calculated from a genomic reference database that, an independent genomics researcher auditing the company's published methodology notes, was assembled almost entirely from research participants of a single ancestral background, a limitation the researcher argues means the resulting risk calculations, while mathematically precise for the population the reference data actually represents, rest on a considerably less certain statistical foundation when applied to customers whose ancestry differs substantially from that of the original reference population, a caveat not prominently featured in the product's consumer-facing marketing.",
-            "question": "Which inference is most strongly supported about the reliability of this risk score for a customer of a different ancestral background than the reference population?",
+            "passage": "[Thirty Percent] Since the new ticketing system began, average queue time is \"down 30 percent.\" The company has not mentioned that it closed two of its five desks, or that the count now excludes anyone who leaves the queue.",
+            "question": "How trustworthy is the queue-time figure?",
             "options": [
-                "It likely carries greater uncertainty for such a customer than the score's precise-sounding presentation would suggest.",
-                "The consumer-facing marketing prominently discloses this specific limitation.",
-                "It is equally reliable for every customer regardless of ancestral background.",
-                "It is entirely meaningless and carries no statistical basis for any customer."
+                "The figure is accurate, but it does not include customers who buy online.",
+                "The system has cut queue times, and customers are waiting less than before.",
+                "The figure is probably misleading about customers' experience.",
+                "The company closed desks to save money, and queue times fell as a result."
             ],
-            "correctAnswer": "It likely carries greater uncertainty for such a customer than the score's precise-sounding presentation would suggest.",
-            "hint": "Distinguish between the score being mathematically precise for the population it was built from and it being equally reliable when applied outside that population, and consider what the marketing does and doesn't disclose.",
-            "explanation": "The researcher's point, that precision for the reference population does not guarantee equal reliability outside it, combined with the caveat's absence from consumer marketing, most strongly supports the inference that the score carries understated uncertainty for customers of different ancestry.",
+            "correctAnswer": "The figure is probably misleading about customers' experience.",
+            "hint": "Which two facts might change how the 30 percent should be read?",
+            "explanation": "If frustrated customers leave and are not counted, the average falls without an improvement in service. Fewer desks makes things worse, not better.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "down 30 percent",
+                "leaves the queue"
             ]
         },
         {
@@ -281,20 +281,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[A Historical Consensus Revisited by New Evidence] For much of the twentieth century, historians attributed the sudden abandonment of the ancient settlement primarily to warfare, based largely on the presence of fortified walls and weapon caches at the site, an interpretation more recent archaeological teams, employing soil analysis techniques unavailable to earlier researchers, now regard as incomplete, since the same soil layers show clear evidence of a multi-year drought coinciding precisely with the settlement's decline, evidence the newer researchers argue does not necessarily overturn the warfare explanation but does suggest environmental stress may have been an underappreciated contributing factor the earlier, more limited evidence could not have detected.",
-            "question": "Which inference is most strongly supported about how the newer researchers view the relationship between the warfare and drought explanations?",
+            "passage": "[Working Families] Asked whether she would raise taxes, the candidate said, \"I will not raise taxes on working families.\" She did not define \"working families,\" and her advisers declined to say.",
+            "question": "What is the candidate leaving open?",
             "options": [
-                "They believe the two explanations are entirely incompatible with one another.",
-                "They likely see the drought as a potentially significant additional factor rather than as evidence that fully replaces the warfare explanation.",
-                "They believe the drought evidence completely disproves any role for warfare in the settlement's abandonment.",
-                "They believe the fortified walls and weapon caches have been proven irrelevant to understanding the settlement's history."
+                "She is leaving room to raise taxes on some groups.",
+                "She has defined working families as those earning below the average wage.",
+                "She has promised that no group will pay higher taxes.",
+                "She is waiting for her advisers to write a detailed tax plan."
             ],
-            "correctAnswer": "They likely see the drought as a potentially significant additional factor rather than as evidence that fully replaces the warfare explanation.",
-            "hint": "Notice the passage's own careful phrasing: the new evidence 'does not necessarily overturn' the earlier explanation but suggests an 'underappreciated contributing factor,' pointing toward addition rather than replacement.",
-            "explanation": "The passage's explicit framing, that the new evidence does not necessarily overturn the warfare explanation but suggests an additional contributing factor, most strongly supports viewing the two explanations as potentially complementary rather than as mutually exclusive alternatives.",
+            "correctAnswer": "She is leaving room to raise taxes on some groups.",
+            "hint": "What exactly did she promise, and what did she leave undefined?",
+            "explanation": "A promise limited to one group with no definition of the group gives her flexibility.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "working families",
+                "declined to say"
             ]
         },
         {
@@ -302,20 +302,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[A Cultural Exchange Program's Uneven Flow] A bilateral student exchange program celebrated by both governments as a symbol of mutual educational partnership shows, upon review of a decade of participation records, a consistent and substantial imbalance, with roughly four times as many students traveling in one direction as in the other, a disparity program administrators attribute to differing scholarship funding structures between the two countries rather than to differing levels of interest, though the administrators acknowledge in the same review that they have not systematically surveyed prospective applicants in either country to test this explanation directly.",
-            "question": "Which inference is most strongly supported about the administrators' explanation for the imbalance?",
+            "passage": "[October] Thanks for meeting me. I now understand what I did not understand before, and I wish I had asked in October.",
+            "question": "What does the last sentence reveal?",
             "options": [
-                "The imbalance itself has been fully resolved as of this review.",
-                "It has been definitively disproven by the administrators' own review.",
-                "It remains a plausible but not fully tested explanation, since the administrators themselves acknowledge the absence of direct supporting data.",
-                "It has been rigorously tested and confirmed through systematic surveys of prospective applicants."
+                "He struggled for months without asking for help.",
+                "He is grateful for the meeting because he understood everything in October.",
+                "He only began to study in November and has to catch up quickly.",
+                "He is annoyed that the meeting did not happen earlier in the year."
             ],
-            "correctAnswer": "It remains a plausible but not fully tested explanation, since the administrators themselves acknowledge the absence of direct supporting data.",
-            "hint": "Focus on the administrators' own acknowledgment that they have not directly tested their explanation, and calibrate the inference to that specific, stated limitation.",
-            "explanation": "Since the administrators themselves acknowledge they have not systematically tested their funding-based explanation, the most supported inference is that this explanation remains plausible but unconfirmed, rather than either proven or disproven.",
+            "correctAnswer": "He struggled for months without asking for help.",
+            "hint": "What does the last clause say about the time he could have asked?",
+            "explanation": "He regrets not asking earlier, which shows the confusion had lasted for some time.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "what I did not understand",
+                "wish I had asked in October"
             ]
         },
         {
@@ -323,20 +323,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[A Language Model's Confident Fabrication] When asked to summarize a lengthy academic paper it had not actually been given access to, the AI writing assistant produced a fluent, plausible-sounding summary complete with specific page citations, a response that, upon the user later locating and reading the actual paper, bore no resemblance to its real content or structure, an incident AI researchers studying such systems describe as characteristic of a known failure mode in which the model generates statistically plausible-sounding text patterned after how summaries typically read, rather than genuinely retrieving or representing information it does not actually possess.",
-            "question": "Which inference is most strongly supported about how the AI system produced this particular summary?",
+            "passage": "[A Planned Redeployment] The general's memoir describes the retreat as \"a planned redeployment.\" A junior officer's diary, written at the time, records: \"No orders. The colonel wept. We left the guns.\"",
+            "question": "How does the memoir treat the retreat?",
             "options": [
-                "It likely generated text that resembled a plausible summary in form without being grounded in the actual paper's content.",
-                "It successfully retrieved and accurately summarized the paper's actual content and structure.",
-                "It explicitly informed the user that it did not have access to the paper.",
-                "This type of error is described as an unprecedented, previously undocumented failure mode."
+                "The diary was written years later and is less reliable than the memoir.",
+                "The memoir is accurate, and the diary shows how carefully the retreat was planned.",
+                "The general was absent, and the memoir repeats what other officers told him.",
+                "The memoir recasts a disorderly retreat in flattering terms."
             ],
-            "correctAnswer": "It likely generated text that resembled a plausible summary in form without being grounded in the actual paper's content.",
-            "hint": "Focus on the researchers' specific characterization of this failure mode: generating plausible-sounding text patterned after typical summaries, rather than genuinely representing content it does not have.",
-            "explanation": "Since researchers describe this as a known pattern of generating fluent, plausible text disconnected from actual source content, the most supported inference is that the system produced something resembling a summary in form without being grounded in the paper's real content.",
+            "correctAnswer": "The memoir recasts a disorderly retreat in flattering terms.",
+            "hint": "Compare when and by whom each account was written.",
+            "explanation": "The diary was written at the time and describes confusion and abandoned guns. The memoir is a later, more flattering account.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "planned redeployment",
+                "No orders"
             ]
         },
         {
@@ -344,20 +344,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[A Neighborhood's Renewal, Unevenly Felt] City officials tout a formerly neglected neighborhood's revitalization, pointing to rising property values, new businesses, and falling crime statistics as unambiguous evidence of successful policy, a narrative long-term residents interviewed by a local housing advocacy group complicate considerably, describing rising property values as indistinguishable, from their perspective, from rising rents that have already displaced a substantial share of the neighborhood's original population, meaning the same statistics celebrated as markers of success may simultaneously represent, for those no longer able to afford living there, markers of exclusion from a community's own improvement.",
-            "question": "Which inference is most strongly supported about the relationship between the officials' narrative and the residents' account?",
+            "passage": "[A Delight] Dear Ms. Mbeki, thank you for your report. Both of us were moved to read that Kofi is \"a delight in the classroom.\" We hope, in the light of this, that you might feel able to reconsider his grade.",
+            "question": "Why do the parents quote the report?",
             "options": [
-                "The same underlying statistics appear to represent meaningfully different, even opposing, realities depending on whose position within the neighborhood is considered.",
-                "The officials' narrative and the residents' account are essentially describing the identical experience in different words.",
-                "The rising crime statistics are the central point of disagreement between the two accounts.",
-                "The residents interviewed confirm that displacement has had no real connection to the rising property values."
+                "The parents are asking for Kofi to be moved to a more advanced class.",
+                "The parents are using praise as a reason to ask for a higher grade.",
+                "The parents believe the report is too positive and want the grade lowered.",
+                "The parents are pleased with the report and want Kofi to stay in the class."
             ],
-            "correctAnswer": "The same underlying statistics appear to represent meaningfully different, even opposing, realities depending on whose position within the neighborhood is considered.",
-            "hint": "Focus on how the passage frames the exact same statistic, rising property values, as simultaneously supporting two very different conclusions depending on one's position, rather than one account being simply more accurate.",
-            "explanation": "The passage's explicit framing of the same statistics as markers of 'success' for officials and markers of 'exclusion' for displaced residents most strongly supports the inference that these accounts reflect genuinely different experiences of the same underlying change, not a simple factual disagreement.",
+            "correctAnswer": "The parents are using praise as a reason to ask for a higher grade.",
+            "hint": "What follows \"in the light of this\"?",
+            "explanation": "The compliment is quoted, then linked to a request. The parents present good behaviour as a reason for a better mark.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "a delight in the classroom",
+                "reconsider his grade"
             ]
         },
         {
@@ -365,20 +365,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[A Debate Over a Coastline's Changing Shape] Residents of the coastal town hold sharply differing views on the cause of the beach's visible narrowing over the past fifteen years, with some attributing it primarily to a jetty constructed nearby a decade ago that altered local sediment flow, and others pointing to broader regional sea-level trends affecting the entire coastline, a disagreement a coastal geologist called in to assess the situation describes as difficult to resolve definitively without extensive site-specific sediment modeling, since both the jetty and the regional trend are, independently, plausible and scientifically recognized contributors to this kind of erosion.",
-            "question": "Which inference is most strongly supported about the cause of the beach's narrowing, based on the geologist's assessment?",
+            "passage": "[Say What I Can] The professor's email said: \"I am happy to write your reference. I will, of course, say what I can.\"",
+            "question": "How strong will the reference be?",
             "options": [
-                "The geologist has confirmed the regional sea-level trend as the sole, definitive cause of the erosion.",
-                "Both the jetty and the regional sea-level trend are plausible contributing factors, and the passage does not support confidently isolating one as the definitive cause without further study.",
-                "The geologist has confirmed the jetty as the sole, definitive cause of the erosion.",
-                "The geologist found neither explanation to be scientifically plausible."
+                "The reference will be excellent, because the professor is happy to write it.",
+                "The professor is uncertain about the student and will refuse to write it.",
+                "The reference will be short, since the professor is very busy.",
+                "The reference may not be strongly positive."
             ],
-            "correctAnswer": "Both the jetty and the regional sea-level trend are plausible contributing factors, and the passage does not support confidently isolating one as the definitive cause without further study.",
-            "hint": "Notice the geologist's explicit statement that resolving this 'definitively' requires further study, and that both explanations are independently described as plausible and recognized causes.",
-            "explanation": "The geologist's explicit statement that both factors are independently plausible and that definitive resolution requires further modeling most strongly supports treating both as credible contributors rather than confidently crediting either alone.",
+            "correctAnswer": "The reference may not be strongly positive.",
+            "hint": "What does the limiting phrase suggest about the amount of praise?",
+            "explanation": "\"Say what I can\" implies that there are things the professor cannot honestly say. The reference may be modest.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "happy to write your reference",
+                "say what I can"
             ]
         },
         {
@@ -386,20 +386,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[A Treatment Gap Explained by Access, Not Biology] Public health researchers comparing outcomes for a common, treatable condition across different income groups within the same country find a substantial gap in survival rates, an initial finding that some early commentary attributed to possible underlying biological or genetic differences between groups, an interpretation subsequent research examining treatment timelines has largely displaced, since the same studies find that patients across income groups who received comparably timely diagnosis and treatment showed statistically similar outcomes, suggesting the original survival gap more likely reflects disparities in timely access to care than any difference in the condition's biological course.",
-            "question": "Which inference is most strongly supported about the most likely explanation for the original survival gap?",
+            "passage": "[Reimagine] The new plan will \"reimagine the collection for a modern audience.\" The consultation documents list \"space efficiency\" as a key objective and identify \"objects with limited public engagement\" for review.",
+            "question": "What might happen to some objects?",
             "options": [
-                "It has been conclusively confirmed as resulting from underlying biological or genetic differences.",
-                "It more likely reflects differences in timely access to diagnosis and treatment than any underlying biological difference between groups.",
-                "Patients who received comparably timely treatment showed substantially different outcomes across income groups.",
-                "The condition in question has no established, effective treatment available."
+                "The museum will move to a larger building with more space.",
+                "The museum plans to lend its most popular objects to other museums.",
+                "Some items may be removed from display or disposed of.",
+                "More objects will be placed on display to attract visitors."
             ],
-            "correctAnswer": "It more likely reflects differences in timely access to diagnosis and treatment than any underlying biological difference between groups.",
-            "hint": "Trace the passage's own sequence: an initial biological hypothesis is explicitly described as being displaced by subsequent research pointing to a specific alternative factor, timely treatment access.",
-            "explanation": "Since subsequent research found similar outcomes among patients with comparably timely treatment regardless of income group, the most supported inference is that access disparities, not biological differences, better explain the original survival gap.",
+            "correctAnswer": "Some items may be removed from display or disposed of.",
+            "hint": "Translate \"space efficiency\" and \"limited public engagement\" into practical terms.",
+            "explanation": "Efficiency of space and a review of unpopular objects suggest that some may be put in storage or sold.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "space efficiency",
+                "limited public engagement"
             ]
         },
         {
@@ -407,20 +407,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[A Trade Delegation's Selective Itinerary] A visiting trade delegation's official itinerary includes tours of several showcase manufacturing facilities widely regarded, according to independent labor monitors familiar with the region, as atypical of general industry conditions, having been specifically upgraded and prepared in advance for high-profile visits, a practice the monitors describe as sufficiently common in the sector that delegation members experienced in trade diplomacy reportedly treat such tours as, at best, a partial and curated picture rather than a representative sample of conditions across the broader industry.",
-            "question": "Which inference is most strongly supported about what the delegation likely observed during these facility tours?",
+            "passage": "[Wisdom of Ordinary People] It is odd that the councillors who are most eager to praise \"the wisdom of ordinary people\" are so unwilling to ask them anything.",
+            "question": "What is the writer's complaint about the councillors?",
             "options": [
-                "It provided a fully representative, unfiltered view of typical conditions across the broader industry.",
-                "Experienced delegation members were unaware that such curated tours occur in this sector.",
-                "The facilities visited were selected entirely at random from across the industry.",
-                "It likely represented an atypical, specially prepared picture rather than a representative view of general industry conditions."
+                "The councillors consult residents often but ignore the answers.",
+                "The councillors praise residents without consulting them.",
+                "The writer admires the councillors for praising ordinary people.",
+                "The writer wants councillors to ask fewer questions of residents."
             ],
-            "correctAnswer": "It likely represented an atypical, specially prepared picture rather than a representative view of general industry conditions.",
-            "hint": "Focus on what labor monitors say about these specific facilities being 'atypical' and 'specifically upgraded... for high-profile visits,' and what experienced delegation members reportedly understand.",
-            "explanation": "Labor monitors' description of these facilities as atypical and specially prepared, combined with experienced delegates' reported skepticism, most strongly supports the inference that the tour offered a curated rather than representative picture of general conditions.",
+            "correctAnswer": "The councillors praise residents without consulting them.",
+            "hint": "Which two actions does the writer contrast?",
+            "explanation": "The sentence contrasts praise with a failure to ask. The writer believes the praise is empty.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "wisdom of ordinary people",
+                "unwilling to ask them anything"
             ]
         },
         {
@@ -428,20 +428,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[A Nonprofit's Overhead Ratio, Recalculated] The charity proudly advertises that 92 cents of every donated dollar goes 'directly to programs,' a figure a nonprofit accountability researcher reviewing the organization's full tax filings finds relies on a classification scheme in which a significant share of expenses for direct-mail fundraising campaigns, which the researcher's industry contacts describe as standard practice, are categorized internally as 'public education' program costs rather than as fundraising overhead, a classification that, while not uncommon in the sector, meaningfully inflates the reported program-spending percentage compared to a stricter accounting standard.",
-            "question": "Which inference is most strongly supported about the charity's advertised 92 percent figure?",
+            "passage": "[Fifty Thousand] The start-up's pitch says the app has \"50,000 downloads.\" The investor asks how many people use it each week. The founder says the team \"focuses on downloads.\"",
+            "question": "What does the founder's answer suggest?",
             "options": [
-                "The researcher found no connection between fundraising cost classification and the reported percentage.",
-                "It likely appears higher than a stricter accounting standard would produce, due to how certain fundraising costs are classified.",
-                "It would appear even higher under a stricter, more conservative accounting standard.",
-                "This classification practice is unique to this specific charity and unheard of elsewhere in the sector."
+                "The founder cannot answer because the team has not counted the downloads.",
+                "The investor is satisfied, since fifty thousand downloads is a large number.",
+                "The number of active users is probably low.",
+                "The app has thousands of weekly users, but the founder does not know how many."
             ],
-            "correctAnswer": "It likely appears higher than a stricter accounting standard would produce, due to how certain fundraising costs are classified.",
-            "hint": "Think about what reclassifying fundraising expenses as program costs, rather than as overhead, does to a percentage specifically measuring the share of donations going to programs.",
-            "explanation": "Since reclassifying fundraising costs as program expenses would inflate the program-spending percentage compared to a stricter standard, the most supported inference is that the advertised 92 percent figure likely overstates what a more conservative accounting approach would show.",
+            "correctAnswer": "The number of active users is probably low.",
+            "hint": "Did the founder answer the investor's question?",
+            "explanation": "The investor asks about weekly use, but the founder repeats the download number. Avoiding the direct answer suggests it is not impressive.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "50,000 downloads",
+                "focuses on downloads"
             ]
         },
         {
@@ -449,20 +449,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[A Legacy Reassessed After New Documents Surface] The philanthropist's foundation has long promoted a public narrative crediting his early business success entirely to individual ingenuity and relentless personal effort, a version of events a business historian reviewing recently unsealed corporate records finds difficult to fully reconcile with documentation showing his first major venture received substantial early capital and preferential contract terms from a family friend in a position of considerable regulatory influence at the time, details absent from the foundation's official biography though not, the historian notes, necessarily disproving that ingenuity and effort also played a genuine role.",
-            "question": "Which inference is most strongly supported about the foundation's official narrative in light of the newly reviewed records?",
+            "passage": "[The Boys Showed Character] The manager's post-match comments, \"the boys showed character\" and \"we will go again,\" were identical to those he gave after last week's defeat and after the 5-0 loss before it.",
+            "question": "What do the identical comments show?",
             "options": [
-                "It has been fully and completely disproven by the newly reviewed corporate records.",
-                "The unsealed records confirm that individual ingenuity and effort played no role whatsoever in his success.",
-                "The preferential contract terms and early capital are prominently featured in the foundation's official biography.",
-                "It likely presents an incomplete account that omits a documented advantage, without this necessarily meaning the emphasized personal qualities played no genuine role at all."
+                "He wants to protect the players by blaming the referee in private.",
+                "He was quoted wrongly, and the comments came from the assistant coach.",
+                "He gives the same encouragement each week because the team is improving.",
+                "He uses stock phrases and avoids analysing the results."
             ],
-            "correctAnswer": "It likely presents an incomplete account that omits a documented advantage, without this necessarily meaning the emphasized personal qualities played no genuine role at all.",
-            "hint": "Notice the historian's own careful qualification, that the new evidence complicates the narrative without necessarily disproving every element of it, and avoid overstating the conclusion.",
-            "explanation": "The historian's explicit qualification, that the documented advantage does not necessarily disprove a role for ingenuity and effort, most strongly supports a measured inference: the official narrative is likely incomplete, not entirely false.",
+            "correctAnswer": "He uses stock phrases and avoids analysing the results.",
+            "hint": "What is repeated across three matches?",
+            "explanation": "The same phrases after different results suggest a formula, not an honest assessment.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "identical to those",
+                "5-0 loss"
             ]
         },
         {
@@ -470,20 +470,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[A Terms-of-Service Update Timed to Coincide] The social platform updates its terms of service to grant itself broader rights to use user-generated content for AI training purposes, an update that takes effect the same week the company announces a lucrative licensing partnership with an AI developer, a sequence a technology policy analyst describes as consistent with, though not conclusively proof of, the terms update having been specifically timed to ensure the company held the necessary rights before the partnership's public announcement, rather than the two events being entirely coincidental in their timing.",
-            "question": "Which inference is most strongly supported about the relationship between the timing of these two events?",
+            "passage": "[Ten Thousand Trees] The company says it has \"planted 10,000 trees.\" The report does not say how many survived, or how many trees were felled at its quarry over the same period.",
+            "question": "What does the report leave out?",
             "options": [
-                "The licensing partnership was announced well before the terms of service update took effect.",
-                "A deliberate connection between the timing of the two events is plausible and consistent with the sequence described, though not proven with certainty by the passage alone.",
-                "The passage conclusively proves the terms update was deliberately timed to enable the partnership.",
-                "The passage conclusively proves the two events were entirely coincidental and unconnected."
+                "All the trees survived, and the quarry has closed since the report.",
+                "The company planted far fewer trees than it says, since the report gives no photos.",
+                "The company has cut down more trees than it planted, and the report admits it.",
+                "The claim leaves out information needed to judge the company's net effect."
             ],
-            "correctAnswer": "A deliberate connection between the timing of the two events is plausible and consistent with the sequence described, though not proven with certainty by the passage alone.",
-            "hint": "Pay attention to the analyst's own careful phrasing, 'consistent with, though not conclusively proof of,' and calibrate your inference to match that same level of supported certainty.",
-            "explanation": "The analyst's explicit phrasing that the sequence is consistent with, but not conclusive proof of, deliberate timing most strongly supports an inference of plausibility without certainty, rather than either a proven connection or a confirmed coincidence.",
+            "correctAnswer": "The claim leaves out information needed to judge the company's net effect.",
+            "hint": "Which two figures does the report not give?",
+            "explanation": "Survival rates and trees felled are needed to assess the balance. Without them, \"10,000\" is not enough to judge.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "planted 10,000 trees",
+                "felled at its quarry"
             ]
         },
         {
@@ -491,20 +491,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[An Explorer's Account Compared to His Crew's] The celebrated explorer's published memoir describes his historic expedition's success as resulting almost entirely from his own navigational judgment and leadership under pressure, an account that diverges notably from journals kept by two surviving crew members, discovered decades later in a family archive, which credit a local guide, mentioned only briefly and without name in the explorer's own published account, with identifying the specific route that ultimately allowed the expedition to proceed after the crew's own charts had proven unreliable.",
-            "question": "Which inference is most strongly supported about the explorer's published account of the expedition's success?",
+            "passage": "[Not Upset] \"Mum says you have not called.\" \"I was going to.\" \"She says she is not upset.\" \"Then why did she tell you?\" \"Exactly.\"",
+            "question": "How does Mum really feel?",
             "options": [
-                "The crew members' journals make no mention of the local guide at all.",
-                "It fully and accurately credits the local guide's contribution in proportion to the crew journals' account.",
-                "It likely minimizes a significant contribution from the local guide that the crew members' independent journals credit more substantially.",
-                "The explorer's own charts proved reliable throughout the expedition, according to the passage."
+                "Neither speaker knows whether Mum is upset or not.",
+                "Mum is upset but expresses it indirectly.",
+                "Mum is angry with the speaker and wants him to call at once.",
+                "Mum does not mind and only mentioned the calls in passing."
             ],
-            "correctAnswer": "It likely minimizes a significant contribution from the local guide that the crew members' independent journals credit more substantially.",
-            "hint": "Compare how prominently the local guide's contribution is credited in the explorer's own memoir versus in the independently discovered crew journals.",
-            "explanation": "Crew journals crediting the guide with identifying the crucial route, compared to the explorer's own account mentioning him only briefly and without name, most strongly supports the inference that the published memoir minimizes a contribution the crew's independent record treats as significant.",
+            "correctAnswer": "Mum is upset but expresses it indirectly.",
+            "hint": "What does the last exchange say about Mum's message?",
+            "explanation": "Someone who is not upset would not mention the missing call. The two speakers agree on this with \"Exactly.\"",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "she is not upset",
+                "Exactly"
             ]
         },
         {
@@ -512,20 +512,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[A Consensus Statement's Careful Qualifications] The international scientific panel's summary statement concludes that available evidence 'supports' a particular environmental intervention's effectiveness, careful wording that a science communication researcher notes was deliberately chosen over stronger alternatives like 'proves' or 'demonstrates conclusively' after extensive internal debate among panel members, some of whom reportedly argued the evidence, while substantial and consistent across multiple independent studies, still fell short of the standard they felt terms like 'proves' should be reserved for, a distinction the researcher argues is frequently lost when such statements are subsequently summarized in popular media coverage.",
-            "question": "Which inference is most strongly supported about the relationship between the panel's careful wording and its typical media coverage?",
+            "passage": "[The Secret Everyone Kept] The historian is careful to say that the letters \"suggest\" rather than \"prove\" that the treaty was known in advance. Yet the chapter's title is \"The Secret Everyone Kept.\"",
+            "question": "How does the title compare with the text?",
             "options": [
-                "The panel's internal debate concluded unanimously that the evidence was insufficient to support any claim.",
-                "The panel's deliberately measured language is likely often lost or flattened into stronger, more definitive claims when reported by popular media.",
-                "The panel ultimately chose to describe the evidence using the strongest available language, such as 'proves.'",
-                "Popular media coverage typically preserves the panel's precise, carefully qualified language without alteration."
+                "The letters prove that the treaty was known, and the title is accurate.",
+                "The title is more cautious than the historian's opinion in the text.",
+                "The chapter title claims more than the historian's cautious wording supports.",
+                "The historian denies that there was any secret about the treaty."
             ],
-            "correctAnswer": "The panel's deliberately measured language is likely often lost or flattened into stronger, more definitive claims when reported by popular media.",
-            "hint": "Focus on the researcher's specific claim about what 'is frequently lost' in translation to popular coverage, and match your inference to that stated pattern.",
-            "explanation": "The researcher's explicit observation that this careful distinction is 'frequently lost' in popular summaries most strongly supports the inference that media coverage often overstates the panel's more measured original language.",
+            "correctAnswer": "The chapter title claims more than the historian's cautious wording supports.",
+            "hint": "Compare the verbs in the text with the title.",
+            "explanation": "\"Suggest\" is tentative, yet the title states that everyone kept a secret. The title goes beyond the evidence.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "suggest",
+                "The Secret Everyone Kept"
             ]
         },
         {
@@ -533,20 +533,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[A Refugee Resettlement Statistic Read in Context] A country reports accepting a record number of resettled refugees this year, a figure government officials present as reflecting expanded humanitarian commitment, though demographers examining the underlying figures note the increase occurs against a backdrop of a substantially larger rise in total global displacement over the same period, meaning that while the absolute number of people resettled by this country grew, the proportion of globally displaced people it resettled relative to the overall crisis may have remained flat or even declined, a distinction the officials' framing does not address.",
-            "question": "Which inference is most strongly supported about what the record resettlement number, by itself, demonstrates?",
+            "passage": "[Step Back] The chair announced that she would \"step back from day-to-day duties,\" remain on the board, and \"mentor her successor.\" She has also asked that her portrait remain in the boardroom.",
+            "question": "How does the chair feel about leaving?",
             "options": [
-                "It conclusively demonstrates an expanded humanitarian commitment relative to the scale of global need.",
-                "It conclusively demonstrates a declining humanitarian commitment relative to the scale of global need.",
-                "Total global displacement remained essentially flat over this same period.",
-                "It does not by itself clarify whether the country's resettlement effort grew proportionally relative to the scale of global displacement, a distinction the officials' framing leaves unaddressed."
+                "She dislikes her successor and hopes to replace him soon.",
+                "She is reluctant to give up influence completely.",
+                "She is retiring to spend more time with her family.",
+                "She is leaving the company entirely and wants a memento."
             ],
-            "correctAnswer": "It does not by itself clarify whether the country's resettlement effort grew proportionally relative to the scale of global displacement, a distinction the officials' framing leaves unaddressed.",
-            "hint": "Distinguish between an absolute number increasing and a proportional share increasing, and notice which of these the passage says the officials' framing does not address.",
-            "explanation": "Since the passage explicitly notes the officials' framing does not address the proportional question relative to a larger rise in overall displacement, the most supported inference is that the absolute figure alone cannot confirm whether the country's relative humanitarian effort actually expanded.",
+            "correctAnswer": "She is reluctant to give up influence completely.",
+            "hint": "Which of her arrangements keep her connected?",
+            "explanation": "Staying on the board, mentoring, and asking for the portrait to remain all keep her present.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "remain on the board",
+                "portrait remain"
             ]
         },
         {
@@ -554,20 +554,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[A Housing Report's Convenient Timeframe] A real estate industry association's report proclaims that home affordability has 'improved significantly' over the past year, a claim based on a year-over-year comparison that a housing policy analyst notes begins measurement from an unusually severe affordability low point reached exactly twelve months earlier, meaning the reported improvement, while numerically accurate for the specific twelve-month window chosen, coexists with affordability levels that, measured against a five-year average rather than that single low point, remain considerably worse than they were before the acute downturn began.",
-            "question": "Which inference is most strongly supported about what the report's 'significant improvement' claim actually represents?",
+            "passage": "[Please Excuse Brevity] Every email from the CEO ends with \"Sent from my phone. Please excuse brevity.\" The staff have noticed that the emails are never brief, and that they are always sent at midnight.",
+            "question": "What do the staff's observations show?",
             "options": [
-                "The twelve-month comparison period was chosen at random with no relationship to affordability trends.",
-                "It likely reflects a recovery from an unusually severe low point rather than a return to healthier affordability levels overall.",
-                "It reflects affordability levels that now exceed the five-year average preceding the downturn.",
-                "Affordability has returned to levels comparable to those before the acute downturn began."
+                "The phrase is a habit, and the CEO works late.",
+                "The staff write the emails on behalf of the CEO at midnight.",
+                "The CEO sends short emails and uses the phrase to sound modest.",
+                "The phrase is probably a joke shared between the CEO and the staff."
             ],
-            "correctAnswer": "It likely reflects a recovery from an unusually severe low point rather than a return to healthier affordability levels overall.",
-            "hint": "Distinguish between improvement measured from an unusually low starting point and an actual return to healthier, historically typical conditions.",
-            "explanation": "Since affordability remains considerably worse than the five-year average despite improving from an unusually severe low point, the most supported inference is that the 'significant improvement' reflects recovery from that low point rather than a genuine return to healthier overall conditions.",
+            "correctAnswer": "The phrase is a habit, and the CEO works late.",
+            "hint": "Compare what the signature promises with what staff have noticed.",
+            "explanation": "The signature claims brevity, but the emails are long. Midnight shows the working hours, and the phrase is only a formula.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "never brief",
+                "midnight"
             ]
         },
         {
@@ -575,20 +575,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[A Company's Founding Myth, Reexamined] For decades, the technology company's official history has centered on a now-famous account of its founders developing the core product overnight in a garage, fueled by little more than instant coffee and stubborn conviction, a story repeated in countless interviews, retrospectives, and the company's own museum exhibit, until a business archivist, granted access to early investor correspondence for an unrelated research project, discovers detailed records indicating the product had, in fact, been under quiet development for nearly eighteen months prior, funded by a modest seed investment the official narrative has never mentioned, a period during which, the correspondence suggests, several of the product's defining technical decisions were actually made.",
-            "question": "Which conclusion is most strongly supported by the passage regarding the company's popular founding story?",
+            "passage": "[Experts] We often say we trust experts, and then we search for the expert who agrees with us. The habit is harmless when the question is which restaurant to visit. It is less harmless when the question concerns a diagnosis, a contract, or a bridge.",
+            "question": "What is the writer's main concern?",
             "options": [
-                "The archivist's findings prove the founders played no meaningful role in the product's eventual success.",
-                "It likely simplifies a longer, funded development process into a more dramatic and appealing narrative than the archival evidence suggests actually occurred.",
-                "It has been fully corroborated in every detail by the newly discovered investor correspondence.",
-                "The seed investment is prominently acknowledged within the company's official retrospectives and museum exhibit."
+                "That experts often disagree, so nobody should trust them at all.",
+                "That people should ask several experts and choose the cheapest.",
+                "That choosing only agreeable experts becomes risky when the stakes are high.",
+                "That restaurants matter as much as diagnoses, contracts and bridges."
             ],
-            "correctAnswer": "It likely simplifies a longer, funded development process into a more dramatic and appealing narrative than the archival evidence suggests actually occurred.",
-            "hint": "Weigh the vivid, widely repeated overnight-garage narrative against the specific documentary evidence of an eighteen-month funded development period.",
-            "explanation": "Newly discovered correspondence documenting eighteen months of funded, quiet development, entirely unmentioned in the popular account, most strongly supports the inference that the company's celebrated origin story compresses and dramatizes a longer, more conventional process rather than accurately reflecting it.",
+            "correctAnswer": "That choosing only agreeable experts becomes risky when the stakes are high.",
+            "hint": "Compare the examples of low stakes and high stakes.",
+            "explanation": "The writer says the habit is harmless with restaurants but not with diagnoses or bridges, so the concern is about consequences.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "expert who agrees with us",
+                "a diagnosis, a contract, or a bridge"
             ]
         },
         {
@@ -596,20 +596,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[A Retirement Announcement's Unspoken Context] After thirty-one years, the longtime conductor announces her retirement from the orchestra in a brief, warmly worded statement citing a desire to 'spend more time with family and pursue personal projects,' phrasing that several musicians who spoke to a classical music journalist on condition of anonymity describe as a diplomatic gloss over an increasingly strained relationship with the orchestra's board over programming decisions, a tension none of the musicians were willing to detail publicly but which multiple sources independently corroborated existed in some form during her final two seasons.",
-            "question": "Which inference is most strongly supported about the relationship between the conductor's public statement and her actual reasons for retiring?",
+            "passage": "[Frank Contributions] The chair is grateful to all members for their frank contributions at the last meeting. In the interests of progress, further frank contributions will be welcome in writing, in advance.",
+            "question": "What does the chair want to avoid?",
             "options": [
-                "The public statement fully and completely explains every factor behind her decision.",
-                "The public statement likely presents a simplified, more amicable account than the underlying situation, based on independently corroborated reports of unspecified tension.",
-                "The musicians who spoke to the journalist were willing to detail the tension publicly and on the record.",
-                "Multiple sources confirmed the conductor's relationship with the board was without any tension whatsoever."
+                "The chair wants to avoid open disagreement during meetings.",
+                "The chair enjoyed the frank contributions and hopes for more of them.",
+                "The chair wants members to bring more written comments to every meeting.",
+                "The chair wants a record of every comment for the minutes."
             ],
-            "correctAnswer": "The public statement likely presents a simplified, more amicable account than the underlying situation, based on independently corroborated reports of unspecified tension.",
-            "hint": "Weigh the diplomatic, personal framing of the public statement against multiple independently corroborated, if vague, accounts of underlying tension from musicians who insisted on anonymity.",
-            "explanation": "Multiple independent, anonymous sources corroborating some form of tension, despite a public statement citing only personal reasons, most strongly supports the inference that the announcement offers a simplified account of a more complicated actual situation.",
+            "correctAnswer": "The chair wants to avoid open disagreement during meetings.",
+            "hint": "What does the chair ask members to do differently, and what does \"frank\" often mean?",
+            "explanation": "\"Frank\" hints at disagreement, and the chair asks for future contributions in writing beforehand. This keeps disagreement out of the meeting.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "frank contributions",
+                "in writing, in advance"
             ]
         },
         {
@@ -617,20 +617,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[A Century-Old Photograph's Second Look] The photograph long displayed in the town archive with a caption identifying its subjects as the founding committee of the town's first hospital has, according to a local historian cross-referencing the image against newly digitized newspaper archives from the same period, actually been misidentified for decades, the newspaper's original caption from the photograph's initial publication naming an entirely different group photographed at a separate civic event held in the same hall just weeks earlier, a discrepancy the historian attributes to an early archivist's understandable but unverified assumption, made when the collection was first catalogued generations ago, that similarly formal group photographs from the same era and location depicted the same occasion.",
-            "question": "Which inference is most strongly supported about the accuracy of the long-displayed caption?",
+            "passage": "[Recommended] The bookshop's \"Recommended\" shelf held novels by local authors last month. This week it holds books from a single publisher, and the owner's handwritten cards have been replaced by printed ones. The shop has also begun accepting \"promotional partnerships.\"",
+            "question": "What may now drive the shelf's recommendations?",
             "options": [
-                "It has been fully confirmed as accurate by the newly digitized newspaper archives.",
-                "It likely reflects an unverified assumption made during cataloguing rather than a confirmed identification of the photograph's actual subjects and occasion.",
-                "The historian found no discrepancy between the archive's caption and the newspaper's original account.",
-                "The newspaper's original caption identifies the same founding committee described in the archive's display."
+                "The owner has started to promote local authors more strongly and now writes longer cards.",
+                "The printed cards are easier to read than the owner's handwriting.",
+                "The recommendations may now reflect commercial arrangements rather than the owner's taste.",
+                "The shop is closing and selling books from a single publisher."
             ],
-            "correctAnswer": "It likely reflects an unverified assumption made during cataloguing rather than a confirmed identification of the photograph's actual subjects and occasion.",
-            "hint": "Weigh the archive's long-standing but apparently unverified caption against the specific, original newspaper caption the historian located from the time of the photograph's first publication.",
-            "explanation": "A newspaper's original caption identifying an entirely different group and occasion, compared to the archive's long-displayed but seemingly unverified label, most strongly supports the inference that the display caption reflects an early, mistaken assumption rather than a confirmed identification.",
+            "correctAnswer": "The recommendations may now reflect commercial arrangements rather than the owner's taste.",
+            "hint": "Follow the changes in the shelf, the cards, and the last sentence.",
+            "explanation": "A shelf from one publisher, impersonal cards, and a new partnerships policy together suggest that paid arrangements now shape the recommendations.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "single publisher",
+                "promotional partnerships"
             ]
         }
     ]

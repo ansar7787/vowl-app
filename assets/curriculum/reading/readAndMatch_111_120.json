@@ -1,817 +1,817 @@
 {
-    "gameType": "readAndMatch",
-    "batchIndex": 12,
-    "levels": "111-120",
-    "quests": [
+  "gameType": "readAndMatch",
+  "batchIndex": 12,
+  "levels": "111-120",
+  "quests": [
+    {
+      "id": "RDG_READANDMATCH_L111_Q1",
+      "instruction": "Match each word with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "match",
+      "pairs": [
         {
-            "id": "RDG_READANDMATCH_L111_Q1",
-            "instruction": "Match each phrase with its meaning.",
-            "subtype": "readAndMatch",
-            "interactionType": "match",
-            "pairs": [
-                {
-                    "key": "[L111-Q1-0] Home Office",
-                    "value": "A dedicated workspace set up within a person's own home for work."
-                },
-                {
-                    "key": "[L111-Q1-1] Work-From-Home Policy",
-                    "value": "A company's official rules about employees working remotely."
-                },
-                {
-                    "key": "[L111-Q1-2] Time Zone Management",
-                    "value": "The practice of coordinating work across teams in different global time zones."
-                },
-                {
-                    "key": "[L111-Q1-3] Virtual Collaboration",
-                    "value": "Working together on shared projects using digital tools rather than in person."
-                }
-            ],
-            "hint": "Each phrase relates to the practical side of working outside a traditional office.",
-            "explanation": "A home office is the physical space someone works from, while a work-from-home policy is the company rule that allows it. Time zone management becomes necessary once a team is spread across different places, and virtual collaboration is different from the other three — the actual digital tools and habits used to work together despite the distance.",
-            "paragraphTopic": "Main topic of paragraph."
+          "key": "[L111-Q1-0] Preventive",
+          "value": "Intended to stop a problem before it happens."
         },
         {
-            "id": "RDG_READANDMATCH_L111_Q2",
-            "instruction": "Match each expression with its meaning.",
-            "subtype": "readAndMatch",
-            "interactionType": "match",
-            "pairs": [
-                {
-                    "key": "[L111-Q2-0] Tuition Fee",
-                    "value": "Money charged by an institution for teaching services."
-                },
-                {
-                    "key": "[L111-Q2-1] Student Loan",
-                    "value": "Money borrowed to cover education costs, repaid after the course ends."
-                },
-                {
-                    "key": "[L111-Q2-2] Bursary",
-                    "value": "A sum of money given to a student to help cover living or educational costs."
-                },
-                {
-                    "key": "[L111-Q2-3] Mature Student",
-                    "value": "A student who begins or returns to education as an adult."
-                }
-            ],
-            "hint": "Each phrase ties back to paying for, or returning to, higher education.",
-            "explanation": "A tuition fee is the cost of education, and a student loan is one common way to cover it, borrowed and repaid later. A bursary is different from a loan in an important way — it doesn't need to be paid back. Mature student is different from the other three — it describes a type of learner, not a way of paying.",
-            "paragraphTopic": "Main topic of paragraph."
+          "key": "[L111-Q1-1] Curative",
+          "value": "Intended to cure or treat an existing illness."
         },
         {
-            "id": "RDG_READANDMATCH_L111_Q3",
-            "instruction": "Match each term with its correct meaning.",
-            "subtype": "readAndMatch",
-            "interactionType": "match",
-            "pairs": [
-                {
-                    "key": "[L111-Q3-0] Lump Sum",
-                    "value": "A single large payment made at one time rather than in installments."
-                },
-                {
-                    "key": "[L111-Q3-1] Compound Interest",
-                    "value": "Interest calculated on both the principal and all previously earned interest."
-                },
-                {
-                    "key": "[L111-Q3-2] Pension Fund",
-                    "value": "A pool of money saved during working life to provide income after retirement."
-                },
-                {
-                    "key": "[L111-Q3-3] Diversification",
-                    "value": "Spreading investments across different assets to reduce risk."
-                }
-            ],
-            "hint": "Every one of these phrases connects to how money grows or is protected over the long term.",
-            "explanation": "A lump sum might be paid into a pension fund all at once, and compound interest is what helps that money grow steadily over many years. Diversification is different from the other three — a strategy for reducing risk by spreading money across different investments, rather than a way of paying or growing it.",
-            "paragraphTopic": "Main topic of paragraph."
+          "key": "[L111-Q1-2] Palliative",
+          "value": "Intended to relieve suffering rather than cure the underlying illness."
         },
         {
-            "id": "RDG_READANDMATCH_L112_Q1",
-            "instruction": "Match each phrase with its meaning.",
-            "subtype": "readAndMatch",
-            "interactionType": "match",
-            "pairs": [
-                {
-                    "key": "[L112-Q1-0] Overland Route",
-                    "value": "A journey made by traveling across land rather than by sea or air."
-                },
-                {
-                    "key": "[L112-Q1-1] Local Currency",
-                    "value": "The money officially used in the country being visited."
-                },
-                {
-                    "key": "[L112-Q1-2] Port of Entry",
-                    "value": "An officially designated location where travelers may enter a country."
-                },
-                {
-                    "key": "[L112-Q1-3] Travel Permit",
-                    "value": "An official document required to enter or pass through certain restricted areas."
-                }
-            ],
-            "hint": "Notice how each phrase connects to crossing borders and getting around during a long trip.",
-            "explanation": "An overland route avoids flying, crossing land instead, and a travel permit may be required to cross certain borders along the way. Port of entry is the specific checkpoint where you're officially allowed in, and local currency is different from the other three — the money you'll need once you actually arrive.",
-            "paragraphTopic": "Main topic of paragraph."
-        },
-        {
-            "id": "RDG_READANDMATCH_L112_Q2",
-            "instruction": "Match each word with its meaning.",
-            "subtype": "readAndMatch",
-            "interactionType": "match",
-            "pairs": [
-                {
-                    "key": "[L112-Q2-0] Godparent",
-                    "value": "An adult who sponsors a child at baptism and takes special interest in their upbringing."
-                },
-                {
-                    "key": "[L112-Q2-1] Stepsibling",
-                    "value": "A brother or sister through the marriage of one parent to another person."
-                },
-                {
-                    "key": "[L112-Q2-2] Family Tree",
-                    "value": "A diagram showing the relationships between family members across generations."
-                },
-                {
-                    "key": "[L112-Q2-3] Foster Care",
-                    "value": "A temporary arrangement where a child is placed with a family outside their own."
-                }
-            ],
-            "hint": "Each word or phrase relates to family connections beyond parents and children.",
-            "explanation": "A godparent takes a special interest in a child's upbringing without being a blood relative, and a stepsibling becomes family through a parent's remarriage instead. Foster care places a child with a family temporarily, and family tree is different from the other three — a diagram showing how everyone connects, not a relationship itself.",
-            "paragraphTopic": "Main topic of paragraph."
-        },
-        {
-            "id": "RDG_READANDMATCH_L112_Q3",
-            "instruction": "Match each expression with its meaning.",
-            "subtype": "readAndMatch",
-            "interactionType": "match",
-            "pairs": [
-                {
-                    "key": "[L112-Q3-0] Seasonal Discount",
-                    "value": "A price reduction offered at a specific time of year to attract customers."
-                },
-                {
-                    "key": "[L112-Q3-1] Gift Registry",
-                    "value": "A list of items a person wants as gifts, typically for a wedding or celebration."
-                },
-                {
-                    "key": "[L112-Q3-2] Retail Therapy",
-                    "value": "Shopping done specifically to improve someone's mood, rather than out of need."
-                },
-                {
-                    "key": "[L112-Q3-3] Consumer Confidence",
-                    "value": "The degree of optimism that consumers feel about the economy and spending."
-                }
-            ],
-            "hint": "These phrases all tie back to shopping, but for very different reasons.",
-            "explanation": "A seasonal discount encourages buying at a certain time of year, and a gift registry helps people buy exactly what someone wants for a celebration. Retail therapy is shopping done purely to feel better, and consumer confidence is different from the other three — a measure of how optimistic people feel about spending in general, not an individual purchase.",
-            "paragraphTopic": "Main topic of paragraph."
-        },
-        {
-            "id": "RDG_READANDMATCH_L113_Q1",
-            "instruction": "Match each word with its meaning.",
-            "subtype": "readAndMatch",
-            "interactionType": "match",
-            "pairs": [
-                {
-                    "key": "[L113-Q1-0] Cured",
-                    "value": "Describing food preserved using salt, smoke, or chemicals."
-                },
-                {
-                    "key": "[L113-Q1-1] Brined",
-                    "value": "Describing food soaked in a mixture of salt water before cooking or preserving."
-                },
-                {
-                    "key": "[L113-Q1-2] Smoked",
-                    "value": "Describing food flavored and preserved by exposure to smoke over time."
-                },
-                {
-                    "key": "[L113-Q1-3] Aged",
-                    "value": "Describing food, especially cheese or wine, stored over time to develop flavor."
-                }
-            ],
-            "hint": "Each word describes a different way of preparing or preserving food over time.",
-            "explanation": "Cured and brined both use salt to preserve food, though brined specifically uses a salt-water soak. Smoked adds both flavor and preservation through exposure to smoke, and aged is different from the other three — it simply means stored over time to let flavor develop, without necessarily using salt or smoke at all.",
-            "paragraphTopic": "Main topic of paragraph."
-        },
-        {
-            "id": "RDG_READANDMATCH_L113_Q2",
-            "instruction": "Match each term with its correct meaning.",
-            "subtype": "readAndMatch",
-            "interactionType": "match",
-            "pairs": [
-                {
-                    "key": "[L113-Q2-0] Cloud Computing",
-                    "value": "Delivering computing services over the internet rather than from a local server."
-                },
-                {
-                    "key": "[L113-Q2-1] Online Backup",
-                    "value": "Automatically saving copies of files to the internet in case the original is lost."
-                },
-                {
-                    "key": "[L113-Q2-2] Data Center",
-                    "value": "A facility housing computer systems and storage used to process and store data."
-                },
-                {
-                    "key": "[L113-Q2-3] Server",
-                    "value": "A computer or program that provides data and services to other connected computers."
-                }
-            ],
-            "hint": "Each of these phrases points to how and where your digital data is actually stored.",
-            "explanation": "Cloud computing delivers services over the internet instead of a local machine, and online backup is one common use of it, keeping copies of your files safe. A data center is where all of that information physically lives, and server is different from the other three — the specific computer or program that actually delivers the data you request.",
-            "paragraphTopic": "Main topic of paragraph."
-        },
-        {
-            "id": "RDG_READANDMATCH_L113_Q3",
-            "instruction": "Match each phrase with its meaning.",
-            "subtype": "readAndMatch",
-            "interactionType": "match",
-            "pairs": [
-                {
-                    "key": "[L113-Q3-0] Clinical Psychology",
-                    "value": "A branch of psychology focused on assessing and treating mental illness."
-                },
-                {
-                    "key": "[L113-Q3-1] Cognitive Behavioral Therapy",
-                    "value": "A therapy that helps people change negative thoughts and behaviors."
-                },
-                {
-                    "key": "[L113-Q3-2] Group Therapy",
-                    "value": "A type of psychotherapy where a small group meets to share and work through issues."
-                },
-                {
-                    "key": "[L113-Q3-3] Desensitization",
-                    "value": "A therapy technique that gradually reduces a strong emotional response to a stimulus."
-                }
-            ],
-            "hint": "Each phrase relates to a different approach within modern mental health treatment.",
-            "explanation": "Clinical psychology is the broad field behind treating mental illness, and cognitive behavioral therapy is one specific method within it, focused on changing thought patterns. Group therapy applies treatment in a shared setting instead of one-on-one, and desensitization is different from the other three — a technique that gradually reduces a specific fear or reaction, rather than a whole field or format.",
-            "paragraphTopic": "Main topic of paragraph."
-        },
-        {
-            "id": "RDG_READANDMATCH_L114_Q1",
-            "instruction": "Match each expression with its meaning.",
-            "subtype": "readAndMatch",
-            "interactionType": "match",
-            "pairs": [
-                {
-                    "key": "[L114-Q1-0] Open Mic",
-                    "value": "An event where anyone from the audience can perform on stage."
-                },
-                {
-                    "key": "[L114-Q1-1] Avant-Garde",
-                    "value": "Describing innovative, experimental, or unconventional work in arts."
-                },
-                {
-                    "key": "[L114-Q1-2] Debut Album",
-                    "value": "An artist's first official release of a collection of recorded songs."
-                },
-                {
-                    "key": "[L114-Q1-3] Tribute Act",
-                    "value": "A group or performer who imitates and pays homage to a famous artist."
-                }
-            ],
-            "hint": "Each word or phrase relates to a different stage or style in a musician's world.",
-            "explanation": "An open mic gives anyone a chance to perform, often where new artists get started, and a debut album marks a much bigger milestone once a career is underway. Avant-garde describes work that pushes creative boundaries, and tribute act is different from the other three — a performer who recreates someone else's music rather than creating something original.",
-            "paragraphTopic": "Main topic of paragraph."
-        },
-        {
-            "id": "RDG_READANDMATCH_L114_Q2",
-            "instruction": "Match each term with its correct meaning.",
-            "subtype": "readAndMatch",
-            "interactionType": "match",
-            "pairs": [
-                {
-                    "key": "[L114-Q2-0] Community Notice",
-                    "value": "A public message informing local residents about important information."
-                },
-                {
-                    "key": "[L114-Q2-1] Consultation Period",
-                    "value": "A set time during which the public can give feedback on a proposed plan."
-                },
-                {
-                    "key": "[L114-Q2-2] Petition",
-                    "value": "A formal document signed by many people to request action from an authority."
-                },
-                {
-                    "key": "[L114-Q2-3] Town Hall Meeting",
-                    "value": "A public meeting where community members can discuss issues with officials."
-                }
-            ],
-            "hint": "Each phrase ties back to how residents get informed or get involved locally.",
-            "explanation": "A community notice informs residents about something happening, and a consultation period gives them a chance to respond with feedback. A petition is a more active step, gathering signatures to demand action, and town hall meeting is different from the other three — a live, in-person event where residents can speak with officials directly.",
-            "paragraphTopic": "Main topic of paragraph."
-        },
-        {
-            "id": "RDG_READANDMATCH_L114_Q3",
-            "instruction": "Match each phrase with its meaning.",
-            "subtype": "readAndMatch",
-            "interactionType": "match",
-            "pairs": [
-                {
-                    "key": "[L114-Q3-0] Minimalism",
-                    "value": "A lifestyle or design philosophy focused on owning or using very few things."
-                },
-                {
-                    "key": "[L114-Q3-1] Zero-Waste Living",
-                    "value": "A lifestyle aimed at producing as little waste as possible."
-                },
-                {
-                    "key": "[L114-Q3-2] Capsule Wardrobe",
-                    "value": "A small collection of versatile clothing items that all work together."
-                },
-                {
-                    "key": "[L114-Q3-3] Conscious Spending",
-                    "value": "Deliberately choosing what to buy based on values and long-term goals."
-                }
-            ],
-            "hint": "Every one of these phrases connects to living with less, and choosing more carefully.",
-            "explanation": "Minimalism is a broad philosophy of owning fewer things, and a capsule wardrobe applies that same idea specifically to clothes. Zero-waste living takes a related but distinct goal, reducing waste rather than possessions, and conscious spending is different from the other three — it's about the decisions made before buying anything at all.",
-            "paragraphTopic": "Main topic of paragraph."
-        },
-        {
-            "id": "RDG_READANDMATCH_L115_Q1",
-            "instruction": "Match each expression with its meaning.",
-            "subtype": "readAndMatch",
-            "interactionType": "match",
-            "pairs": [
-                {
-                    "key": "[L115-Q1-0] Trial Period",
-                    "value": "A set amount of time to test something before making a final decision."
-                },
-                {
-                    "key": "[L115-Q1-1] Feedback Session",
-                    "value": "A meeting where people share their opinions and reactions about something."
-                },
-                {
-                    "key": "[L115-Q1-2] Risk Assessment",
-                    "value": "An evaluation of the potential dangers involved in a plan or activity."
-                },
-                {
-                    "key": "[L115-Q1-3] Action Plan",
-                    "value": "A detailed set of steps created to achieve a specific goal."
-                }
-            ],
-            "hint": "Notice how each phrase connects to how a new idea gets carefully tested before it's fully adopted.",
-            "explanation": "A trial period tests something on a small scale first, and a feedback session gathers reactions once people have tried it. Risk assessment looks ahead at what could go wrong, and action plan is different from the other three — the actual steps written down to make something happen, once everything else has been considered.",
-            "paragraphTopic": "Main topic of paragraph."
-        },
-        {
-            "id": "RDG_READANDMATCH_L115_Q2",
-            "instruction": "Match each term with its correct meaning.",
-            "subtype": "readAndMatch",
-            "interactionType": "match",
-            "pairs": [
-                {
-                    "key": "[L115-Q2-0] Fare Dodging",
-                    "value": "Travelling on public transport without paying the required fare."
-                },
-                {
-                    "key": "[L115-Q2-1] Interchange",
-                    "value": "A transport hub where passengers can switch between different services."
-                },
-                {
-                    "key": "[L115-Q2-2] Accessibility Ramp",
-                    "value": "A sloped surface designed to allow wheelchair or mobility aid access to transport."
-                },
-                {
-                    "key": "[L115-Q2-3] Freight Transport",
-                    "value": "The movement of goods and cargo from one location to another."
-                }
-            ],
-            "hint": "These phrases all tie back to using, or misusing, a public transport system.",
-            "explanation": "An interchange lets passengers switch between services, and an accessibility ramp makes sure everyone, including wheelchair users, can actually use that system. Freight transport moves goods rather than people through the same kind of network, and fare dodging is different from the other three — using the system without paying for it at all.",
-            "paragraphTopic": "Main topic of paragraph."
-        },
-        {
-            "id": "RDG_READANDMATCH_L115_Q3",
-            "instruction": "Match each word with its meaning.",
-            "subtype": "readAndMatch",
-            "interactionType": "match",
-            "pairs": [
-                {
-                    "key": "[L115-Q3-0] Fossil Fuel",
-                    "value": "A natural fuel such as coal, oil, or gas formed from ancient living matter."
-                },
-                {
-                    "key": "[L115-Q3-1] Solar Panel",
-                    "value": "A device that converts sunlight directly into electrical energy."
-                },
-                {
-                    "key": "[L115-Q3-2] Wind Turbine",
-                    "value": "A machine that converts wind energy into electrical power."
-                },
-                {
-                    "key": "[L115-Q3-3] Net Zero",
-                    "value": "Achieving an overall balance between greenhouse gas emissions and their removal."
-                }
-            ],
-            "hint": "Each word or phrase relates to where our energy comes from, and where it's heading.",
-            "explanation": "Fossil fuel is an older, limited energy source, while solar panel and wind turbine are two modern alternatives that generate power from nature instead. Net zero is different from the other three — it's not an energy source at all, but a goal of balancing out whatever emissions are still produced.",
-            "paragraphTopic": "Main topic of paragraph."
-        },
-        {
-            "id": "RDG_READANDMATCH_L116_Q1",
-            "instruction": "Match each phrase with its meaning.",
-            "subtype": "readAndMatch",
-            "interactionType": "match",
-            "pairs": [
-                {
-                    "key": "[L116-Q1-0] Civil Partnership",
-                    "value": "A legally recognized relationship between two people, similar to marriage."
-                },
-                {
-                    "key": "[L116-Q1-1] Arranged Marriage",
-                    "value": "A marriage planned and organized by the families of the couple."
-                },
-                {
-                    "key": "[L116-Q1-2] Marriage Certificate",
-                    "value": "An official document confirming that two people are legally married."
-                },
-                {
-                    "key": "[L116-Q1-3] Prenuptial Agreement",
-                    "value": "A legal contract made before marriage detailing how assets will be divided."
-                }
-            ],
-            "hint": "Each of these phrases points to how a marriage or partnership is formed and legally recognized.",
-            "explanation": "Civil partnership and arranged marriage describe two very different ways a relationship might begin, one a legal alternative to marriage, the other planned by families. A marriage certificate is the official proof once it happens, and prenuptial agreement is different from the other three — a legal contract made in advance, just in case things don't work out.",
-            "paragraphTopic": "Main topic of paragraph."
-        },
-        {
-            "id": "RDG_READANDMATCH_L116_Q2",
-            "instruction": "Match each expression with its meaning.",
-            "subtype": "readAndMatch",
-            "interactionType": "match",
-            "pairs": [
-                {
-                    "key": "[L116-Q2-0] Sticker Price",
-                    "value": "The original price displayed on an item before any discount."
-                },
-                {
-                    "key": "[L116-Q2-1] Unit Price",
-                    "value": "The cost of a single item or per unit of measurement."
-                },
-                {
-                    "key": "[L116-Q2-2] Bargain Hunting",
-                    "value": "Actively searching for the lowest prices or best deals while shopping."
-                },
-                {
-                    "key": "[L116-Q2-3] Premium Brand",
-                    "value": "A brand known for high quality and sold at a higher price than average."
-                }
-            ],
-            "hint": "Each phrase relates to comparing prices while shopping.",
-            "explanation": "Sticker price is what's shown before any deal, and unit price breaks that cost down further, per item or measurement. Bargain hunting is the active search for the best possible price, and premium brand is different from the other three — a brand known for charging more, not a way of judging or finding a price.",
-            "paragraphTopic": "Main topic of paragraph."
-        },
-        {
-            "id": "RDG_READANDMATCH_L116_Q3",
-            "instruction": "Match each term with its correct meaning.",
-            "subtype": "readAndMatch",
-            "interactionType": "match",
-            "pairs": [
-                {
-                    "key": "[L116-Q3-0] Dietary Supplement",
-                    "value": "A product taken to add nutrients not sufficiently obtained through diet alone."
-                },
-                {
-                    "key": "[L116-Q3-1] Probiotic",
-                    "value": "A live bacteria supplement that benefits digestive health."
-                },
-                {
-                    "key": "[L116-Q3-2] Antioxidant",
-                    "value": "A substance that protects body cells from damage caused by free radicals."
-                },
-                {
-                    "key": "[L116-Q3-3] Omega-3",
-                    "value": "A type of healthy fat found in fish and seeds, important for heart and brain health."
-                }
-            ],
-            "hint": "Each word or phrase names something you might see listed on a vitamin bottle.",
-            "explanation": "Dietary supplement is the broad category, anything added to boost nutrition, and probiotic, antioxidant, and omega-3 are three specific examples within it. Probiotic supports digestion, antioxidant protects cells from damage, and omega-3 is different from the other two — a healthy fat, not a bacteria or a protective compound.",
-            "paragraphTopic": "Main topic of paragraph."
-        },
-        {
-            "id": "RDG_READANDMATCH_L117_Q1",
-            "instruction": "Match each phrase with its meaning.",
-            "subtype": "readAndMatch",
-            "interactionType": "match",
-            "pairs": [
-                {
-                    "key": "[L117-Q1-0] Prototype Testing",
-                    "value": "The process of evaluating an early version of a product with real users."
-                },
-                {
-                    "key": "[L117-Q1-1] User Experience",
-                    "value": "The overall feeling a person has when using a product or service."
-                },
-                {
-                    "key": "[L117-Q1-2] Beta Version",
-                    "value": "An early release of software or a product available to a limited group for testing."
-                },
-                {
-                    "key": "[L117-Q1-3] Early Adopter",
-                    "value": "A person who starts using a new product or technology before most other people."
-                }
-            ],
-            "hint": "Each phrase ties back to how a new product is tested before it fully launches.",
-            "explanation": "Prototype testing checks an early version with real users, and beta version is a further step, released more widely for the same kind of testing. User experience measures how that testing actually feels for the people involved, and early adopter is different from the other three — a type of person, someone eager to try new products before most people do.",
-            "paragraphTopic": "Main topic of paragraph."
-        },
-        {
-            "id": "RDG_READANDMATCH_L117_Q2",
-            "instruction": "Match each expression with its meaning.",
-            "subtype": "readAndMatch",
-            "interactionType": "match",
-            "pairs": [
-                {
-                    "key": "[L117-Q2-0] Occupational Therapy",
-                    "value": "A therapy that helps people regain skills for daily activities after illness or injury."
-                },
-                {
-                    "key": "[L117-Q2-1] Physiotherapy",
-                    "value": "A treatment using physical methods to restore movement and function."
-                },
-                {
-                    "key": "[L117-Q2-2] Dietitian",
-                    "value": "A health professional who specializes in food and nutrition."
-                },
-                {
-                    "key": "[L117-Q2-3] Mental Health Nurse",
-                    "value": "A specialist nurse who works with people experiencing mental health conditions."
-                }
-            ],
-            "hint": "Each phrase names a different kind of healthcare professional, beyond just doctors.",
-            "explanation": "Occupational therapy and physiotherapy both help patients recover physical function, though occupational therapy focuses on daily activities specifically. A dietitian specializes in food and nutrition instead, and mental health nurse is different from the other three — a specialist focused on mental rather than physical recovery.",
-            "paragraphTopic": "Main topic of paragraph."
-        },
-        {
-            "id": "RDG_READANDMATCH_L117_Q3",
-            "instruction": "Match each term with its correct meaning.",
-            "subtype": "readAndMatch",
-            "interactionType": "match",
-            "pairs": [
-                {
-                    "key": "[L117-Q3-0] International Film Festival",
-                    "value": "A major event where films from around the world compete for prizes."
-                },
-                {
-                    "key": "[L117-Q3-1] Screenplay",
-                    "value": "The written text of a film, including dialogue and scene descriptions."
-                },
-                {
-                    "key": "[L117-Q3-2] Director of Photography",
-                    "value": "The professional responsible for the visual look and lighting of a film."
-                },
-                {
-                    "key": "[L117-Q3-3] Post-Production",
-                    "value": "The stage of filmmaking that occurs after filming, including editing and sound."
-                }
-            ],
-            "hint": "Every one of these phrases connects to a different stage or event in making a film.",
-            "explanation": "A screenplay is written long before filming starts, and a director of photography shapes how it actually looks once filming begins. Post-production happens after that, editing everything together, and international film festival is different from the other three — the event where the finished film might eventually be shown.",
-            "paragraphTopic": "Main topic of paragraph."
-        },
-        {
-            "id": "RDG_READANDMATCH_L118_Q1",
-            "instruction": "Match each phrase with its meaning.",
-            "subtype": "readAndMatch",
-            "interactionType": "match",
-            "pairs": [
-                {
-                    "key": "[L118-Q1-0] Active Transport",
-                    "value": "Travel by physically powered means such as walking or cycling."
-                },
-                {
-                    "key": "[L118-Q1-1] Carpooling",
-                    "value": "Sharing a private vehicle journey with others to reduce costs and emissions."
-                },
-                {
-                    "key": "[L118-Q1-2] Transit Pass",
-                    "value": "A card or document granting access to public transport for a set period."
-                },
-                {
-                    "key": "[L118-Q1-3] Cycle Lane",
-                    "value": "A part of a road or path designated for use by cyclists."
-                }
-            ],
-            "hint": "Notice how each phrase connects to getting around a city without relying on a private car alone.",
-            "explanation": "Active transport covers travel powered by your own body, like walking or cycling, and a cycle lane makes that kind of travel safer. Carpooling is a different solution, sharing a car instead of avoiding one, and transit pass is different from the other three — a pass for public transport, not a personal or shared vehicle.",
-            "paragraphTopic": "Main topic of paragraph."
-        },
-        {
-            "id": "RDG_READANDMATCH_L118_Q2",
-            "instruction": "Match each expression with its meaning.",
-            "subtype": "readAndMatch",
-            "interactionType": "match",
-            "pairs": [
-                {
-                    "key": "[L118-Q2-0] Statutory Right",
-                    "value": "A legal entitlement protected under national law."
-                },
-                {
-                    "key": "[L118-Q2-1] Consumer Protection Law",
-                    "value": "Legislation designed to safeguard buyers from unfair practices."
-                },
-                {
-                    "key": "[L118-Q2-2] Cooling-Off Period",
-                    "value": "A legal time window after a purchase during which a consumer can cancel."
-                },
-                {
-                    "key": "[L118-Q2-3] Small Claims Court",
-                    "value": "A court for resolving minor legal disputes, usually without a lawyer."
-                }
-            ],
-            "hint": "These phrases all tie back to the legal protections available to a shopper.",
-            "explanation": "A statutory right is guaranteed by law, and consumer protection law is the broader body of legislation that includes rights like it. A cooling-off period lets you cancel a purchase within a set time, and small claims court is different from the other three — where you'd actually go if a dispute couldn't be solved any other way.",
-            "paragraphTopic": "Main topic of paragraph."
-        },
-        {
-            "id": "RDG_READANDMATCH_L118_Q3",
-            "instruction": "Match each term with its correct meaning.",
-            "subtype": "readAndMatch",
-            "interactionType": "match",
-            "pairs": [
-                {
-                    "key": "[L118-Q3-0] Interpersonal Conflict",
-                    "value": "A disagreement or clash between two or more people."
-                },
-                {
-                    "key": "[L118-Q3-1] Empathetic Response",
-                    "value": "A reaction that shows understanding and acknowledgment of another's feelings."
-                },
-                {
-                    "key": "[L118-Q3-2] Non-Violent Communication",
-                    "value": "A method of expressing needs and listening that avoids blame and criticism."
-                },
-                {
-                    "key": "[L118-Q3-3] Common Ground",
-                    "value": "Shared interests or beliefs that two disagreeing people can both agree on."
-                }
-            ],
-            "hint": "Each of these phrases points to handling a disagreement in a healthy way.",
-            "explanation": "Interpersonal conflict is the disagreement itself, and an empathetic response can help ease it by showing real understanding. Non-violent communication offers a specific method for expressing needs without blame, and common ground is different from the other three — the shared point of agreement everyone is actually working toward.",
-            "paragraphTopic": "Main topic of paragraph."
-        },
-        {
-            "id": "RDG_READANDMATCH_L119_Q1",
-            "instruction": "Match each phrase with its meaning.",
-            "subtype": "readAndMatch",
-            "interactionType": "match",
-            "pairs": [
-                {
-                    "key": "[L119-Q1-0] Paid Leave",
-                    "value": "Time off work during which an employee still receives their normal salary."
-                },
-                {
-                    "key": "[L119-Q1-1] Flexi-Time",
-                    "value": "A system allowing employees to choose their start and finish times within set limits."
-                },
-                {
-                    "key": "[L119-Q1-2] Trade Secret",
-                    "value": "Confidential business information that provides a competitive advantage."
-                },
-                {
-                    "key": "[L119-Q1-3] Non-Compete Clause",
-                    "value": "A contract term preventing an employee from working for a competitor after leaving."
-                }
-            ],
-            "hint": "Each phrase relates to the terms and conditions written into a modern job.",
-            "explanation": "Paid leave and flexi-time both give employees more control over their time, one over days off, the other over daily hours. Trade secret protects a company's confidential advantage, and non-compete clause is different from the other three — a restriction on where an employee can work next, not a benefit at all.",
-            "paragraphTopic": "Main topic of paragraph."
-        },
-        {
-            "id": "RDG_READANDMATCH_L119_Q2",
-            "instruction": "Match each expression with its meaning.",
-            "subtype": "readAndMatch",
-            "interactionType": "match",
-            "pairs": [
-                {
-                    "key": "[L119-Q2-0] Border Control",
-                    "value": "The process of regulating who and what enters or exits a country."
-                },
-                {
-                    "key": "[L119-Q2-1] Travel Warning",
-                    "value": "An official notice advising against or cautioning travel to a specific area."
-                },
-                {
-                    "key": "[L119-Q2-2] Onward Travel",
-                    "value": "Continuing a journey to a further destination after arriving somewhere."
-                },
-                {
-                    "key": "[L119-Q2-3] Entry Requirements",
-                    "value": "The conditions a traveler must meet to be allowed into a country."
-                }
-            ],
-            "hint": "Each phrase ties back to what a traveler must know or prove before crossing a border.",
-            "explanation": "Border control checks every traveler entering a country, and entry requirements are exactly what officials there are checking for. Onward travel is sometimes one of those requirements, proof you won't overstay, and travel warning is different from the other three — official advice given before a trip, not a rule enforced during one.",
-            "paragraphTopic": "Main topic of paragraph."
-        },
-        {
-            "id": "RDG_READANDMATCH_L119_Q3",
-            "instruction": "Match each term with its correct meaning.",
-            "subtype": "readAndMatch",
-            "interactionType": "match",
-            "pairs": [
-                {
-                    "key": "[L119-Q3-0] Co-Parenting",
-                    "value": "Two separated parents sharing responsibility for raising their children."
-                },
-                {
-                    "key": "[L119-Q3-1] Helicopter Parent",
-                    "value": "A parent who is overly involved in every aspect of their child's life."
-                },
-                {
-                    "key": "[L119-Q3-2] Parental Guidance",
-                    "value": "Advice and support given by a parent to help a child make good decisions."
-                },
-                {
-                    "key": "[L119-Q3-3] Family Dynamics",
-                    "value": "The patterns of interaction and roles within a family group."
-                }
-            ],
-            "hint": "Every one of these phrases connects to different styles and structures of raising children.",
-            "explanation": "Co-parenting describes two separated parents sharing responsibility, while a helicopter parent takes a very different, overly involved approach regardless of the family structure. Parental guidance is the actual support offered along the way, and family dynamics is different from the other three — the broader pattern of how everyone in the family interacts.",
-            "paragraphTopic": "Main topic of paragraph."
-        },
-        {
-            "id": "RDG_READANDMATCH_L120_Q1",
-            "instruction": "Match each phrase with its meaning.",
-            "subtype": "readAndMatch",
-            "interactionType": "match",
-            "pairs": [
-                {
-                    "key": "[L120-Q1-0] Intellectual Property",
-                    "value": "A creation of the mind that is legally protected, such as inventions or writing."
-                },
-                {
-                    "key": "[L120-Q1-1] Copyright Infringement",
-                    "value": "The unauthorized use of material protected by copyright."
-                },
-                {
-                    "key": "[L120-Q1-2] Trademark",
-                    "value": "A symbol or name registered to represent a company or its products."
-                },
-                {
-                    "key": "[L120-Q1-3] Licensing Agreement",
-                    "value": "A contract allowing one party to use another's intellectual property legally."
-                }
-            ],
-            "hint": "Notice how each phrase connects to legally protecting a creative or business idea.",
-            "explanation": "Intellectual property is the broad legal category covering things like inventions and writing, and a trademark protects one specific part of it, a brand's name or symbol. Copyright infringement happens when that protection is ignored, and licensing agreement is different from the other three — a legal way to use someone else's intellectual property with permission.",
-            "paragraphTopic": "Main topic of paragraph."
-        },
-        {
-            "id": "RDG_READANDMATCH_L120_Q2",
-            "instruction": "Match each expression with its meaning.",
-            "subtype": "readAndMatch",
-            "interactionType": "match",
-            "pairs": [
-                {
-                    "key": "[L120-Q2-0] Market Competition",
-                    "value": "Rivalry between businesses trying to attract the same customers."
-                },
-                {
-                    "key": "[L120-Q2-1] Supply and Demand",
-                    "value": "The economic relationship between how much of a product is available and how much people want it."
-                },
-                {
-                    "key": "[L120-Q2-2] Monopoly",
-                    "value": "A market dominated by a single company with no significant competition."
-                },
-                {
-                    "key": "[L120-Q2-3] Price War",
-                    "value": "A situation where competing businesses repeatedly lower prices to try to outsell each other."
-                }
-            ],
-            "hint": "These phrases all tie back to how businesses compete, or fail to compete, for customers.",
-            "explanation": "Market competition drives businesses to improve and price fairly, guided by supply and demand. A price war is one aggressive form that competition can take, and monopoly is different from the other three — a situation where competition has disappeared almost entirely, with just one company left in control.",
-            "paragraphTopic": "Main topic of paragraph."
-        },
-        {
-            "id": "RDG_READANDMATCH_L120_Q3",
-            "instruction": "Match each word with its meaning.",
-            "subtype": "readAndMatch",
-            "interactionType": "match",
-            "pairs": [
-                {
-                    "key": "[L120-Q3-0] Cardiovascular Exercise",
-                    "value": "Physical activity that raises heart rate and improves heart and lung fitness."
-                },
-                {
-                    "key": "[L120-Q3-1] Strength Training",
-                    "value": "Exercise that builds muscle power by working against resistance."
-                },
-                {
-                    "key": "[L120-Q3-2] Flexibility",
-                    "value": "The range of motion available in a joint or group of muscles."
-                },
-                {
-                    "key": "[L120-Q3-3] Resting Heart Rate",
-                    "value": "The number of times the heart beats per minute when a person is at rest."
-                }
-            ],
-            "hint": "Each of these phrases points to a different measure or type of physical fitness.",
-            "explanation": "Cardiovascular exercise strengthens the heart and lungs, while strength training builds muscle instead, working against resistance. Flexibility measures how far your joints can move, and resting heart rate is different from the other three — a simple number, not a type of exercise or ability at all.",
-            "paragraphTopic": "Main topic of paragraph."
+          "key": "[L111-Q1-3] Elective",
+          "value": "Chosen voluntarily rather than medically necessary."
         }
-    ]
+      ],
+      "hint": "Two of these describe treating illness directly, and two describe managing it differently.",
+      "explanation": "Curative and preventive are related to treating illness, though preventive acts before a problem starts and curative treats it once it exists. Palliative and elective are different — one focuses on comfort rather than cure, one is a choice rather than a medical necessity.",
+      "paragraphTopic": "Vocabulary about types of medical care"
+    },
+    {
+      "id": "RDG_READANDMATCH_L111_Q2",
+      "instruction": "Match each sentence with what it means.",
+      "subtype": "readAndMatch",
+      "interactionType": "match",
+      "pairs": [
+        {
+          "key": "[L111-Q2-0] The new policy expands coverage for preventive screenings.",
+          "value": "The updated rules now include more early-detection tests as part of coverage."
+        },
+        {
+          "key": "[L111-Q2-1] Curative treatments for chronic illness remain fully covered.",
+          "value": "Treatments aimed at curing long-term conditions continue to be paid for in full."
+        },
+        {
+          "key": "[L111-Q2-2] Palliative care is covered for patients with terminal diagnoses.",
+          "value": "Care focused on comfort, rather than a cure, is covered for patients who aren't expected to recover."
+        },
+        {
+          "key": "[L111-Q2-3] Elective procedures still require separate approval.",
+          "value": "Optional medical procedures still need a different kind of authorization before they're covered."
+        }
+      ],
+      "hint": "Each sentence describes coverage for a different kind of medical care under the same policy.",
+      "explanation": "The first two sentences describe coverage for prevention and cure. The third describes coverage for comfort care, while the fourth is different — it describes a category that needs extra approval rather than being automatically covered.",
+      "paragraphTopic": "A healthcare policy's coverage rules"
+    },
+    {
+      "id": "RDG_READANDMATCH_L111_Q3",
+      "instruction": "Match each statement with how it relates to the passage above.",
+      "subtype": "readAndMatch",
+      "interactionType": "match",
+      "pairs": [
+        {
+          "key": "[L111-Q3-0] Preventive screenings are now more widely covered.",
+          "value": "This is directly stated in the passage."
+        },
+        {
+          "key": "[L111-Q3-1] Every type of medical procedure is now automatically covered.",
+          "value": "This contradicts the passage, since elective procedures still require separate approval."
+        },
+        {
+          "key": "[L111-Q3-2] The policy distinguishes between treatments meant to cure and those meant to comfort.",
+          "value": "This is a reasonable conclusion, based on curative and palliative care being covered differently."
+        },
+        {
+          "key": "[L111-Q3-3] Chronic illness treatment remains fully covered.",
+          "value": "This is directly stated in the passage."
+        }
+      ],
+      "hint": "Decide whether each statement is stated directly, a fair conclusion, or contradicted by the passage.",
+      "explanation": "The first statement is stated directly. The second contradicts the passage, since elective procedures still require separate approval. The third is a fair conclusion from curative and palliative care being covered differently. The fourth is stated directly.",
+      "paragraphTopic": "Stated facts versus conclusions in a healthcare passage"
+    },
+    {
+      "id": "RDG_READANDMATCH_L112_Q1",
+      "instruction": "Match each word with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "match",
+      "pairs": [
+        {
+          "key": "[L112-Q1-0] Breach",
+          "value": "An incident where security is broken and data is exposed or stolen."
+        },
+        {
+          "key": "[L112-Q1-1] Encryption",
+          "value": "The process of converting information into a code to prevent unauthorized access."
+        },
+        {
+          "key": "[L112-Q1-2] Vulnerability",
+          "value": "A weakness in a system that could be exploited."
+        },
+        {
+          "key": "[L112-Q1-3] Firewall",
+          "value": "A security system that monitors and controls incoming and outgoing network activity."
+        }
+      ],
+      "hint": "One is an incident, one is a protection method, one is a weakness, and one is a monitoring system.",
+      "explanation": "Breach and vulnerability are related, one the incident itself, one the weakness that made it possible. Encryption and firewall are different — both are protective measures, one scrambling data, one monitoring network activity.",
+      "paragraphTopic": "Vocabulary about cybersecurity"
+    },
+    {
+      "id": "RDG_READANDMATCH_L112_Q2",
+      "instruction": "Match each sentence with what it means.",
+      "subtype": "readAndMatch",
+      "interactionType": "match",
+      "pairs": [
+        {
+          "key": "[L112-Q2-0] The breach exposed customer data stored without encryption.",
+          "value": "The security incident revealed customer information that hadn't been protected by any coding system."
+        },
+        {
+          "key": "[L112-Q2-1] Investigators traced the incident to an unpatched vulnerability.",
+          "value": "Those looking into the incident found it happened because of a known weakness that hadn't been fixed."
+        },
+        {
+          "key": "[L112-Q2-2] The company's firewall had failed to detect unusual activity.",
+          "value": "The system meant to monitor network traffic didn't catch the suspicious behavior."
+        },
+        {
+          "key": "[L112-Q2-3] Since then, all sensitive data has been fully encrypted.",
+          "value": "From that point on, all important information has been converted into a protected code."
+        }
+      ],
+      "hint": "Each sentence follows the story of the same cybersecurity incident.",
+      "explanation": "The first sentence describes what was exposed, and the second explains how it happened. The third describes a failure in defense, while the fourth is different — it describes the fix put in place afterward.",
+      "paragraphTopic": "A cybersecurity incident and its cause"
+    },
+    {
+      "id": "RDG_READANDMATCH_L112_Q3",
+      "instruction": "Match each statement with how it relates to the passage above.",
+      "subtype": "readAndMatch",
+      "interactionType": "match",
+      "pairs": [
+        {
+          "key": "[L112-Q3-0] The exposed customer data had not been encrypted.",
+          "value": "This is directly stated in the passage."
+        },
+        {
+          "key": "[L112-Q3-1] The breach happened because of a security weakness that was already known but not fixed.",
+          "value": "This is a reasonable conclusion, based on the mention of an unpatched vulnerability."
+        },
+        {
+          "key": "[L112-Q3-2] The company's firewall successfully stopped the attack.",
+          "value": "This contradicts the passage, which says the firewall failed to detect the unusual activity."
+        },
+        {
+          "key": "[L112-Q3-3] All sensitive data is now encrypted.",
+          "value": "This is directly stated in the passage."
+        }
+      ],
+      "hint": "Decide whether each statement is stated directly, a fair conclusion, or contradicted by the passage.",
+      "explanation": "The first statement is stated directly. The second is a fair conclusion from the mention of an unpatched vulnerability. The third contradicts the passage, which says the firewall failed to detect the activity. The fourth is stated directly.",
+      "paragraphTopic": "Stated facts versus conclusions in a cybersecurity passage"
+    },
+    {
+      "id": "RDG_READANDMATCH_L113_Q1",
+      "instruction": "Match each word with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "match",
+      "pairs": [
+        {
+          "key": "[L113-Q1-0] Meritocratic",
+          "value": "Based purely on ability or achievement, rather than other factors."
+        },
+        {
+          "key": "[L113-Q1-1] Holistic",
+          "value": "Considering the whole picture, not just one measure, like a single test score."
+        },
+        {
+          "key": "[L113-Q1-2] Selective",
+          "value": "Accepting only a small portion of applicants, based on strict standards."
+        },
+        {
+          "key": "[L113-Q1-3] Inclusive",
+          "value": "Designed to welcome a wide range of people, without unnecessary barriers."
+        }
+      ],
+      "hint": "Two of these describe how broadly a process looks at applicants, and two describe how many it accepts or on what basis.",
+      "explanation": "Holistic and inclusive are related, one about considering the whole application, one about welcoming a wide range of people. Meritocratic and selective are different — one is about the basis for judging ability, one is about how few applicants are accepted.",
+      "paragraphTopic": "Vocabulary about university admissions"
+    },
+    {
+      "id": "RDG_READANDMATCH_L113_Q2",
+      "instruction": "Match each sentence with what it means.",
+      "subtype": "readAndMatch",
+      "interactionType": "match",
+      "pairs": [
+        {
+          "key": "[L113-Q2-0] The university moved from a purely test-based system to a holistic review.",
+          "value": "The school switched away from judging applicants by test scores alone to considering their full application."
+        },
+        {
+          "key": "[L113-Q2-1] Supporters say this creates a more inclusive process.",
+          "value": "People in favor of the change believe it opens the door to a wider range of applicants."
+        },
+        {
+          "key": "[L113-Q2-2] Critics argue it undermines meritocratic principles.",
+          "value": "Some people believe this makes the process less about raw ability and more subjective."
+        },
+        {
+          "key": "[L113-Q2-3] The university remains highly selective despite the change.",
+          "value": "The school still only accepts a small fraction of applicants, even with the new approach."
+        }
+      ],
+      "hint": "Each sentence adds a point to the same discussion of a university's admissions change.",
+      "explanation": "The first sentence describes the change itself, and the second and third present opposing views on it. The fourth is different — it adds a fact that holds true regardless of which side is right.",
+      "paragraphTopic": "A university's changing admissions policy"
+    },
+    {
+      "id": "RDG_READANDMATCH_L113_Q3",
+      "instruction": "Match each statement with how it relates to the passage above.",
+      "subtype": "readAndMatch",
+      "interactionType": "match",
+      "pairs": [
+        {
+          "key": "[L113-Q3-0] The university now considers more than just test scores.",
+          "value": "This is directly stated in the passage."
+        },
+        {
+          "key": "[L113-Q3-1] Everyone agrees the new admissions process is an improvement.",
+          "value": "This contradicts the passage, since critics specifically disagree with the change."
+        },
+        {
+          "key": "[L113-Q3-2] A more holistic process might weigh factors that are harder to measure objectively.",
+          "value": "This is a reasonable conclusion, based on critics' concern that the change undermines meritocratic principles."
+        },
+        {
+          "key": "[L113-Q3-3] The school still accepts only a small percentage of applicants.",
+          "value": "This is directly stated in the passage."
+        }
+      ],
+      "hint": "Decide whether each statement is stated directly, a fair conclusion, or contradicted by the passage.",
+      "explanation": "The first statement is stated directly. The second contradicts the passage, since critics specifically disagree. The third is a fair conclusion from critics' concern about undermining meritocratic principles. The fourth is stated directly.",
+      "paragraphTopic": "Stated facts versus conclusions in an admissions passage"
+    },
+    {
+      "id": "RDG_READANDMATCH_L114_Q1",
+      "instruction": "Match each word with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "match",
+      "pairs": [
+        {
+          "key": "[L114-Q1-0] Defect",
+          "value": "A flaw or fault in a product, especially one that affects its function."
+        },
+        {
+          "key": "[L114-Q1-1] Tolerance",
+          "value": "The acceptable range of variation allowed in a manufactured part."
+        },
+        {
+          "key": "[L114-Q1-2] Inspection",
+          "value": "A careful examination of a product to check for problems."
+        },
+        {
+          "key": "[L114-Q1-3] Recall",
+          "value": "A request to return a faulty product, often issued by the manufacturer."
+        }
+      ],
+      "hint": "One is a flaw, one is an acceptable range, one is a check, and one is a request to return a product.",
+      "explanation": "Defect and tolerance are related to a product's quality, one the flaw itself, one the acceptable range it fell outside of. Inspection and recall are different — one is the process that finds a problem, one is the action taken once it's found.",
+      "paragraphTopic": "Vocabulary about manufacturing quality"
+    },
+    {
+      "id": "RDG_READANDMATCH_L114_Q2",
+      "instruction": "Match each sentence with what it means.",
+      "subtype": "readAndMatch",
+      "interactionType": "match",
+      "pairs": [
+        {
+          "key": "[L114-Q2-0] Routine inspection caught a defect in the braking mechanism.",
+          "value": "A regular check discovered a flaw in the part that controls braking."
+        },
+        {
+          "key": "[L114-Q2-1] The part fell outside the manufacturer's tolerance for safe operation.",
+          "value": "The component didn't meet the range considered safe by the company that made it."
+        },
+        {
+          "key": "[L114-Q2-2] A recall was issued for all affected vehicles.",
+          "value": "The manufacturer asked owners of the vehicles involved to bring them in for the problem to be fixed."
+        },
+        {
+          "key": "[L114-Q2-3] No injuries were reported before the issue was caught.",
+          "value": "Fortunately, nobody was hurt before the problem was identified."
+        }
+      ],
+      "hint": "Each sentence follows the discovery and handling of the same manufacturing defect.",
+      "explanation": "The first sentence describes how the defect was found, and the second explains why it mattered. The third describes the company's response, while the fourth is different — it adds a reassuring fact about safety outcomes.",
+      "paragraphTopic": "A manufacturing defect and its recall"
+    },
+    {
+      "id": "RDG_READANDMATCH_L114_Q3",
+      "instruction": "Match each statement with how it relates to the passage above.",
+      "subtype": "readAndMatch",
+      "interactionType": "match",
+      "pairs": [
+        {
+          "key": "[L114-Q3-0] A routine inspection found the defect.",
+          "value": "This is directly stated in the passage."
+        },
+        {
+          "key": "[L114-Q3-1] The defect was serious enough to be outside the safe range for the part.",
+          "value": "This is a reasonable conclusion, based on the part falling outside the manufacturer's tolerance."
+        },
+        {
+          "key": "[L114-Q3-2] Several drivers were injured because of the defect before it was found.",
+          "value": "This contradicts the passage, which states no injuries were reported."
+        },
+        {
+          "key": "[L114-Q3-3] A recall was issued for the affected vehicles.",
+          "value": "This is directly stated in the passage."
+        }
+      ],
+      "hint": "Decide whether each statement is stated directly, a fair conclusion, or contradicted by the passage.",
+      "explanation": "The first statement is stated directly. The second is a fair conclusion from the part falling outside the manufacturer's tolerance. The third contradicts the passage, which states no injuries were reported. The fourth is stated directly.",
+      "paragraphTopic": "Stated facts versus conclusions in a manufacturing passage"
+    },
+    {
+      "id": "RDG_READANDMATCH_L115_Q1",
+      "instruction": "Match each word with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "match",
+      "pairs": [
+        {
+          "key": "[L115-Q1-0] Negotiate",
+          "value": "To discuss something formally in order to reach an agreement."
+        },
+        {
+          "key": "[L115-Q1-1] Arbitrate",
+          "value": "To settle a dispute by having a neutral third party make a binding decision."
+        },
+        {
+          "key": "[L115-Q1-2] Mediate",
+          "value": "To help two sides reach an agreement, without making the final decision for them."
+        },
+        {
+          "key": "[L115-Q1-3] Strike",
+          "value": "To stop working together, as a group, in order to demand better conditions."
+        }
+      ],
+      "hint": "One means stopping work as a group, and three describe different ways of resolving a disagreement.",
+      "explanation": "Negotiate and mediate both involve discussion aimed at agreement, though mediate specifically involves a helper who doesn't decide for either side. Arbitrate and strike are different — one ends in a binding decision by a third party, one is a group action taken when no agreement is reached.",
+      "paragraphTopic": "Vocabulary about resolving labor disputes"
+    },
+    {
+      "id": "RDG_READANDMATCH_L115_Q2",
+      "instruction": "Match each sentence with what it means.",
+      "subtype": "readAndMatch",
+      "interactionType": "match",
+      "pairs": [
+        {
+          "key": "[L115-Q2-0] The union and management failed to negotiate a new contract.",
+          "value": "The workers' group and the company couldn't reach an agreement on new terms through discussion."
+        },
+        {
+          "key": "[L115-Q2-1] A mediator was brought in to help both sides find common ground.",
+          "value": "A neutral helper joined the discussions to assist both sides in reaching an agreement, without deciding for them."
+        },
+        {
+          "key": "[L115-Q2-2] When that failed, the case moved to binding arbitration.",
+          "value": "Once that didn't work, the dispute was handed to a neutral party whose decision both sides would have to accept."
+        },
+        {
+          "key": "[L115-Q2-3] Workers had voted to strike if no agreement was reached by the deadline.",
+          "value": "The employees had already agreed among themselves to stop working if a deal wasn't made by the set date."
+        }
+      ],
+      "hint": "Each sentence follows the next stage of the same labor dispute.",
+      "explanation": "The first sentence describes a failed negotiation, and the second describes an attempt to help. The third describes what happened when that failed, while the fourth is different — it adds information about what workers had already decided in advance.",
+      "paragraphTopic": "A labor dispute moving through resolution steps"
+    },
+    {
+      "id": "RDG_READANDMATCH_L115_Q3",
+      "instruction": "Match each statement with how it relates to the passage above.",
+      "subtype": "readAndMatch",
+      "interactionType": "match",
+      "pairs": [
+        {
+          "key": "[L115-Q3-0] The union and management couldn't agree on a new contract through negotiation alone.",
+          "value": "This is directly stated in the passage."
+        },
+        {
+          "key": "[L115-Q3-1] The mediator made the final, binding decision for both sides.",
+          "value": "This contradicts the passage, since mediation is described as helping both sides, not deciding for them."
+        },
+        {
+          "key": "[L115-Q3-2] Arbitration involves a decision that both sides must accept, even if they disagree with it.",
+          "value": "This is a reasonable conclusion, based on arbitration being described as binding."
+        },
+        {
+          "key": "[L115-Q3-3] Workers had already agreed to stop working if no deal was reached in time.",
+          "value": "This is directly stated in the passage."
+        }
+      ],
+      "hint": "Decide whether each statement is stated directly, a fair conclusion, or contradicted by the passage.",
+      "explanation": "The first statement is stated directly. The second contradicts the passage, since mediation is described as helping, not deciding. The third is a fair conclusion from arbitration being described as binding. The fourth is stated directly.",
+      "paragraphTopic": "Stated facts versus conclusions in a labor dispute passage"
+    },
+    {
+      "id": "RDG_READANDMATCH_L116_Q1",
+      "instruction": "Match each word with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "match",
+      "pairs": [
+        {
+          "key": "[L116-Q1-0] Feasible",
+          "value": "Possible to do; achievable with available resources."
+        },
+        {
+          "key": "[L116-Q1-1] Viable",
+          "value": "Capable of working successfully; practical enough to succeed."
+        },
+        {
+          "key": "[L116-Q1-2] Impractical",
+          "value": "Not sensible or realistic to do, given the circumstances."
+        },
+        {
+          "key": "[L116-Q1-3] Untenable",
+          "value": "Not able to be defended or maintained; impossible to continue."
+        }
+      ],
+      "hint": "Two of these describe something realistic or workable, and two describe something that won't hold up.",
+      "explanation": "Feasible and viable both describe something workable, though viable specifically points to long-term success, not just initial possibility. Impractical and untenable are different — both describe something that doesn't hold up, one simply unwise, one impossible to continue.",
+      "paragraphTopic": "Vocabulary about practicality"
+    },
+    {
+      "id": "RDG_READANDMATCH_L116_Q2",
+      "instruction": "Match each sentence with what it means.",
+      "subtype": "readAndMatch",
+      "interactionType": "match",
+      "pairs": [
+        {
+          "key": "[L116-Q2-0] The initial plan seemed feasible, given the company's budget.",
+          "value": "The original plan looked achievable, considering how much money the company had available."
+        },
+        {
+          "key": "[L116-Q2-1] However, closer analysis revealed it wasn't truly viable long-term.",
+          "value": "But a more careful look showed the plan wouldn't actually succeed over time."
+        },
+        {
+          "key": "[L116-Q2-2] Expanding into five new markets at once proved impractical.",
+          "value": "Trying to grow into five new areas all at the same time turned out not to be sensible."
+        },
+        {
+          "key": "[L116-Q2-3] The original timeline quickly became untenable.",
+          "value": "The original schedule soon became impossible to stick to."
+        }
+      ],
+      "hint": "Each sentence follows the same business plan as it becomes harder to carry out.",
+      "explanation": "The first sentence describes the plan looking workable at first, and the second reveals a longer-term problem. The third describes a specific part that failed, while the fourth is different — it describes the schedule itself becoming impossible to maintain.",
+      "paragraphTopic": "A business plan that turns out to be unworkable"
+    },
+    {
+      "id": "RDG_READANDMATCH_L116_Q3",
+      "instruction": "Match each sentence with what 'address' means there.",
+      "subtype": "readAndMatch",
+      "interactionType": "match",
+      "pairs": [
+        {
+          "key": "[L116-Q3-0] The company plans to address customer concerns directly.",
+          "value": "Here, 'address' means to deal with or respond to something."
+        },
+        {
+          "key": "[L116-Q3-1] Please update your shipping address before checkout.",
+          "value": "Here, 'address' means the location where mail or deliveries are sent."
+        },
+        {
+          "key": "[L116-Q3-2] The CEO will address the shareholders at the annual meeting.",
+          "value": "Here, 'address' means to formally speak to a group of people."
+        },
+        {
+          "key": "[L116-Q3-3] You'll need to address the envelope before mailing it.",
+          "value": "Here, 'address' means to write the destination information on something being sent."
+        }
+      ],
+      "hint": "The word 'address' appears in all four sentences, but it means something different each time.",
+      "explanation": "In the first sentence, address means to deal with a concern, while in the second it means a mailing location. In the third, it means to formally speak to a group, and in the fourth, it means to write a destination on something being sent — four genuinely different meanings for the same word.",
+      "paragraphTopic": "One word, several meanings: 'address'"
+    },
+    {
+      "id": "RDG_READANDMATCH_L117_Q1",
+      "instruction": "Match each word with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "match",
+      "pairs": [
+        {
+          "key": "[L117-Q1-0] Scalable",
+          "value": "Able to grow larger without a proportional increase in cost or difficulty."
+        },
+        {
+          "key": "[L117-Q1-1] Unsustainable",
+          "value": "Not able to continue at the current rate without running into serious problems."
+        },
+        {
+          "key": "[L117-Q1-2] Bloated",
+          "value": "Larger or more complicated than necessary, often inefficient as a result."
+        },
+        {
+          "key": "[L117-Q1-3] Lean",
+          "value": "Efficient and free of unnecessary cost or waste."
+        }
+      ],
+      "hint": "One describes growing efficiently, one describes growth that can't continue, one describes being too complex, and one describes being efficiently simple.",
+      "explanation": "Scalable and lean both describe efficient growth, one about handling more without proportional cost, one about avoiding unnecessary size. Unsustainable and bloated are different — both describe problems, one about pace that can't continue, one about size and complexity.",
+      "paragraphTopic": "Vocabulary about business growth"
+    },
+    {
+      "id": "RDG_READANDMATCH_L117_Q2",
+      "instruction": "Match each sentence with what it means.",
+      "subtype": "readAndMatch",
+      "interactionType": "match",
+      "pairs": [
+        {
+          "key": "[L117-Q2-0] The startup grew quickly, but its costs grew even faster.",
+          "value": "The new company expanded fast, though its expenses increased at an even quicker pace."
+        },
+        {
+          "key": "[L117-Q2-1] Investors warned that this growth model was unsustainable.",
+          "value": "Investors cautioned that this way of growing couldn't continue without causing problems."
+        },
+        {
+          "key": "[L117-Q2-2] The company needed a more scalable approach to stay competitive.",
+          "value": "The company needed a way to grow that wouldn't cost proportionally more each time."
+        },
+        {
+          "key": "[L117-Q2-3] Eventually, the bloated organization had to cut several departments to become leaner.",
+          "value": "In the end, the overly large and complicated company had to eliminate a number of departments to run more efficiently."
+        }
+      ],
+      "hint": "Each sentence follows the financial story of the same startup as its growth becomes a problem.",
+      "explanation": "The first sentence describes fast growth alongside faster costs, and the second describes a warning about that pattern. The third describes what the company needed instead, while the fourth is different — it describes the eventual, difficult response to the problem.",
+      "paragraphTopic": "A startup's growth and its costs"
+    },
+    {
+      "id": "RDG_READANDMATCH_L117_Q3",
+      "instruction": "Match each sentence with what 'run' means there.",
+      "subtype": "readAndMatch",
+      "interactionType": "match",
+      "pairs": [
+        {
+          "key": "[L117-Q3-0] She decided to run for city council next year.",
+          "value": "Here, 'run' means to be a candidate in an election."
+        },
+        {
+          "key": "[L117-Q3-1] The new software runs on almost any device.",
+          "value": "Here, 'run' means to operate or function."
+        },
+        {
+          "key": "[L117-Q3-2] They run a small bakery downtown.",
+          "value": "Here, 'run' means to manage or operate a business."
+        },
+        {
+          "key": "[L117-Q3-3] Prices have run higher than expected this quarter.",
+          "value": "Here, 'run' means to reach or extend to a certain level."
+        }
+      ],
+      "hint": "The word 'run' appears in all four sentences, but it means something different each time.",
+      "explanation": "In the first sentence, run means to be a candidate for office, while in the second it means to operate or function. In the third, it means to manage a business, and in the fourth, it means to reach a certain level — four genuinely different meanings for the same word.",
+      "paragraphTopic": "One word, several meanings: 'run'"
+    },
+    {
+      "id": "RDG_READANDMATCH_L118_Q1",
+      "instruction": "Match each word with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "match",
+      "pairs": [
+        {
+          "key": "[L118-Q1-0] Diversify",
+          "value": "To expand into different areas, to reduce reliance on just one."
+        },
+        {
+          "key": "[L118-Q1-1] Consolidate",
+          "value": "To combine separate things into a single, more unified whole."
+        },
+        {
+          "key": "[L118-Q1-2] Streamline",
+          "value": "To make a process simpler and more efficient by removing unnecessary steps."
+        },
+        {
+          "key": "[L118-Q1-3] Fragment",
+          "value": "To break into smaller, separate, and often disconnected pieces."
+        }
+      ],
+      "hint": "One means expanding into new areas, one means combining things, one means simplifying, and one means breaking apart.",
+      "explanation": "Diversify and consolidate are related changes to a business's structure, one spreading out, one combining together. Streamline and fragment are different — one simplifies a process, one describes something breaking into disconnected pieces, often as a side effect of other changes.",
+      "paragraphTopic": "Vocabulary about business restructuring"
+    },
+    {
+      "id": "RDG_READANDMATCH_L118_Q2",
+      "instruction": "Match each sentence with what it means.",
+      "subtype": "readAndMatch",
+      "interactionType": "match",
+      "pairs": [
+        {
+          "key": "[L118-Q2-0] The company diversified into three new industries to reduce risk.",
+          "value": "The business expanded into three unrelated areas so it wouldn't depend so heavily on just one."
+        },
+        {
+          "key": "[L118-Q2-1] Later, it consolidated several departments into a single division.",
+          "value": "Afterward, it merged a number of separate departments into one combined division."
+        },
+        {
+          "key": "[L118-Q2-2] This move helped streamline decision-making.",
+          "value": "This change made the process of making decisions simpler and quicker."
+        },
+        {
+          "key": "[L118-Q2-3] However, some employees felt the company's culture had become fragmented.",
+          "value": "Even so, some workers felt the company's shared sense of identity had broken apart into disconnected pieces."
+        }
+      ],
+      "hint": "Each sentence follows the same company through a series of structural changes.",
+      "explanation": "The first sentence describes expanding into new areas, and the second describes combining departments. The third describes a benefit of that combination, while the fourth is different — it describes an unintended cost of all the change.",
+      "paragraphTopic": "A company's restructuring over time"
+    },
+    {
+      "id": "RDG_READANDMATCH_L118_Q3",
+      "instruction": "Match each sentence with what 'cover' means there.",
+      "subtype": "readAndMatch",
+      "interactionType": "match",
+      "pairs": [
+        {
+          "key": "[L118-Q3-0] Her insurance policy doesn't cover water damage.",
+          "value": "Here, 'cover' means to include as part of a protection or payment plan."
+        },
+        {
+          "key": "[L118-Q3-1] Can you cover my shift on Friday?",
+          "value": "Here, 'cover' means to take someone else's place or responsibility temporarily."
+        },
+        {
+          "key": "[L118-Q3-2] The magazine's cover featured a well-known scientist.",
+          "value": "Here, 'cover' means the outer front page of a publication."
+        },
+        {
+          "key": "[L118-Q3-3] The journalist was sent to cover the election.",
+          "value": "Here, 'cover' means to report on an event as a journalist."
+        }
+      ],
+      "hint": "The word 'cover' appears in all four sentences, but it means something different each time.",
+      "explanation": "In the first sentence, cover means to be included under an insurance policy, while in the second it means taking someone's place temporarily. In the third, it means the front page of a publication, and in the fourth, it means to report on an event — four genuinely different meanings for the same word.",
+      "paragraphTopic": "One word, several meanings: 'cover'"
+    },
+    {
+      "id": "RDG_READANDMATCH_L119_Q1",
+      "instruction": "Match each word with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "match",
+      "pairs": [
+        {
+          "key": "[L119-Q1-0] Provisional",
+          "value": "Arranged for the present, likely to be changed later."
+        },
+        {
+          "key": "[L119-Q1-1] Finalized",
+          "value": "Completed and settled, with no more changes expected."
+        },
+        {
+          "key": "[L119-Q1-2] Tentative",
+          "value": "Not fully certain or fixed; subject to change."
+        },
+        {
+          "key": "[L119-Q1-3] Binding",
+          "value": "Legally or formally required to be followed."
+        }
+      ],
+      "hint": "Two of these describe an agreement that isn't finished yet, and two describe how firmly it must be followed.",
+      "explanation": "Provisional and tentative both describe something not yet finished, likely to change. Finalized and binding are different — both describe an agreement that's fully settled, though binding specifically means it must be legally followed.",
+      "paragraphTopic": "Vocabulary about the status of an agreement"
+    },
+    {
+      "id": "RDG_READANDMATCH_L119_Q2",
+      "instruction": "Match each sentence with what it means.",
+      "subtype": "readAndMatch",
+      "interactionType": "match",
+      "pairs": [
+        {
+          "key": "[L119-Q2-0] Both sides reached a provisional agreement pending final review.",
+          "value": "The two sides came to a temporary agreement, waiting on one last check before it's official."
+        },
+        {
+          "key": "[L119-Q2-1] The terms remain tentative until the board approves them.",
+          "value": "The conditions aren't fixed yet and could still change until the board says yes."
+        },
+        {
+          "key": "[L119-Q2-2] Once signed, the contract becomes legally binding.",
+          "value": "After both sides sign, the contract must be followed by law."
+        },
+        {
+          "key": "[L119-Q2-3] The finalized version will be shared with both parties next week.",
+          "value": "The completed, settled version of the agreement will be sent to both sides the following week."
+        }
+      ],
+      "hint": "Each sentence follows the same contract as it moves from temporary to final.",
+      "explanation": "The first sentence describes a temporary agreement, and the second describes it as still subject to change. The third describes what happens once it's signed, while the fourth is different — it describes when the completed version will actually be shared.",
+      "paragraphTopic": "Reaching a contract agreement"
+    },
+    {
+      "id": "RDG_READANDMATCH_L119_Q3",
+      "instruction": "Match each sentence with what 'draft' means there.",
+      "subtype": "readAndMatch",
+      "interactionType": "match",
+      "pairs": [
+        {
+          "key": "[L119-Q3-0] Please review the first draft of the report before Friday.",
+          "value": "Here, 'draft' means an early, unfinished version of a piece of writing."
+        },
+        {
+          "key": "[L119-Q3-1] The team was excited about their top pick in the draft.",
+          "value": "Here, 'draft' means a formal process of selecting new players for a sports team."
+        },
+        {
+          "key": "[L119-Q3-2] Close the window; there's a draft coming through.",
+          "value": "Here, 'draft' means a current of cool air moving through a space."
+        },
+        {
+          "key": "[L119-Q3-3] He was drafted into military service at nineteen.",
+          "value": "Here, 'draft' means being formally required to join the military."
+        }
+      ],
+      "hint": "The word 'draft' appears in all four sentences, but it means something different each time.",
+      "explanation": "In the first sentence, draft means an early, unfinished version of writing, while in the second it means a process of selecting sports players. In the third, it means a current of air, and in the fourth, it means being required to join the military — four genuinely different meanings for the same word.",
+      "paragraphTopic": "One word, several meanings: 'draft'"
+    },
+    {
+      "id": "RDG_READANDMATCH_L120_Q1",
+      "instruction": "Match each word with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "match",
+      "pairs": [
+        {
+          "key": "[L120-Q1-0] Amicable",
+          "value": "Done in a friendly way, without serious conflict."
+        },
+        {
+          "key": "[L120-Q1-1] Contentious",
+          "value": "Likely to cause disagreement or argument."
+        },
+        {
+          "key": "[L120-Q1-2] Unresolved",
+          "value": "Not yet settled or decided."
+        },
+        {
+          "key": "[L120-Q1-3] Mutual",
+          "value": "Shared or felt equally by both sides."
+        }
+      ],
+      "hint": "Two of these describe how a disagreement is handled, and two describe whether it's actually settled.",
+      "explanation": "Amicable and contentious are opposites describing the tone of a disagreement, one friendly, one hostile. Unresolved and mutual are different — one is about whether something is settled at all, one is about whether an outcome is shared equally.",
+      "paragraphTopic": "Vocabulary about resolving a dispute"
+    },
+    {
+      "id": "RDG_READANDMATCH_L120_Q2",
+      "instruction": "Match each sentence with what it means.",
+      "subtype": "readAndMatch",
+      "interactionType": "match",
+      "pairs": [
+        {
+          "key": "[L120-Q2-0] After months of contentious debate, the two companies reached an amicable settlement.",
+          "value": "Following a long period of heated disagreement, the two companies came to a friendly agreement."
+        },
+        {
+          "key": "[L120-Q2-1] Both sides described the outcome as a mutual win.",
+          "value": "Each side described the result as a benefit shared equally by both of them."
+        },
+        {
+          "key": "[L120-Q2-2] One smaller issue, however, remains unresolved.",
+          "value": "One minor matter, though, still hasn't been settled."
+        },
+        {
+          "key": "[L120-Q2-3] Lawyers expect it to be addressed in a separate agreement.",
+          "value": "Legal representatives anticipate that this issue will be dealt with through a different, additional agreement."
+        }
+      ],
+      "hint": "Each sentence follows the resolution of the same dispute between two companies.",
+      "explanation": "The first sentence describes how a long disagreement ended, and the second describes how both sides viewed the outcome. The third introduces a remaining issue, while the fourth is different — it looks ahead to how that remaining issue will be handled.",
+      "paragraphTopic": "A dispute between two companies reaches resolution"
+    },
+    {
+      "id": "RDG_READANDMATCH_L120_Q3",
+      "instruction": "Match each sentence with what 'settle' means there.",
+      "subtype": "readAndMatch",
+      "interactionType": "match",
+      "pairs": [
+        {
+          "key": "[L120-Q3-0] The two companies agreed to settle out of court.",
+          "value": "Here, 'settle' means to resolve a legal dispute without going to trial."
+        },
+        {
+          "key": "[L120-Q3-1] After years of moving, they finally settled in one city.",
+          "value": "Here, 'settle' means to establish a permanent home somewhere."
+        },
+        {
+          "key": "[L120-Q3-2] Let the tea settle for a few minutes before drinking it.",
+          "value": "Here, 'settle' means for particles or sediment to sink and become still."
+        },
+        {
+          "key": "[L120-Q3-3] He couldn't settle on a single answer.",
+          "value": "Here, 'settle' means to firmly decide on one option among several."
+        }
+      ],
+      "hint": "The word 'settle' appears in all four sentences, but it means something different each time.",
+      "explanation": "In the first sentence, settle means resolving a legal matter outside court, while in the second it means establishing a permanent home. In the third, it means particles sinking and becoming still, and in the fourth, it means firmly deciding on one option — four genuinely different meanings for the same word.",
+      "paragraphTopic": "One word, several meanings: 'settle'"
+    }
+  ]
 }

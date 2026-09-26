@@ -5,573 +5,573 @@
     "quests": [
         {
             "id": "RDG_SKIMMINGSCANNING_L161_Q1",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Read the policy and find how much advance notice is required for remote work requests.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Were one to judge purely by the number of self-help books Kwame has purchased on the subject of morning routines, one might assume he has settled into an elaborate, multi-step ritual; in reality, the routine he has stuck with for over a year consists of exactly two elements.",
-            "targetItem": "ritual",
+            "passage": "Remote Work Policy: Employees may work remotely up to three days per week with manager approval. Teams that require in-person collaboration, such as design and manufacturing, are exempt from this policy and must remain on-site full time. All remote work requests must be submitted at least one week in advance.",
+            "targetItem": "one week in advance",
             "options": [
-                "ritual",
-                "habit",
-                "routine",
-                "elements"
+                "three days per week",
+                "design and manufacturing",
+                "manager approval",
+                "one week in advance"
             ],
-            "correctAnswer": "ritual",
-            "hint": "Find what one might assume Kwame has settled into.",
-            "explanation": "The passage says one might assume an elaborate ritual, so that is correct.",
+            "correctAnswer": "one week in advance",
+            "hint": "Judge which detail answers the actual question about notice, not eligibility.",
+            "explanation": "Requests must be submitted one week in advance; three days per week describes the remote work limit, not the notice period.",
             "timeLimit": 14,
-            "targetInfo": "Specific data to find."
+            "targetInfo": "Advance notice required for remote work requests"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L161_Q2",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Read the notice and find the extra requirement that applies specifically to business travelers.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Insofar as the university's writing center has data on the matter, students who attend at least three sessions before submitting a major paper show a measurably lower rate of receiving a revision request from instructors than those who attend once or not at all.",
-            "targetItem": "revision",
+            "passage": "Visa Requirements Notice: Travelers from most countries require a visa obtained in advance through the consulate. Citizens of participating countries under the visa-waiver program may instead apply for an electronic authorization online. Business travelers, regardless of nationality, must also provide a letter of invitation from their host company.",
+            "targetItem": "letter of invitation",
             "options": [
-                "revision",
-                "rejection",
-                "measurably",
-                "instructors"
+                "letter of invitation",
+                "visa-waiver program",
+                "electronic authorization",
+                "consulate"
             ],
-            "correctAnswer": "revision",
-            "hint": "Find what type of request students receive less often.",
-            "explanation": "The passage says a revision request, so that is correct.",
+            "correctAnswer": "letter of invitation",
+            "hint": "Judge which sentence applies to business travelers specifically, not general travelers.",
+            "explanation": "Business travelers must provide a letter of invitation; the visa-waiver program applies to a different group of travelers.",
             "timeLimit": 14,
-            "targetInfo": "Specific data to find."
+            "targetInfo": "Additional requirement for business travelers"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L161_Q3",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Read the comparison and find which model is recommended for durability.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Were the department's leadership to rely solely on the quarterly satisfaction survey, they would likely conclude that morale had improved substantially following the reorganization; a closer examination of the response rate, however, reveals a more complicated picture.",
-            "targetItem": "reorganization",
+            "passage": "Product Comparison Memo: Model A offers longer battery life but lacks water resistance. Model B is fully waterproof and includes a faster charging port, though its screen is noticeably smaller. For most users prioritizing durability, Model B is the stronger choice despite its display size.",
+            "targetItem": "Model B",
             "options": [
-                "restructuring",
-                "dissatisfied",
-                "reorganization",
-                "morale"
+                "Model B",
+                "Model A",
+                "faster charging port",
+                "screen"
             ],
-            "correctAnswer": "reorganization",
-            "hint": "Find what event morale supposedly improved following.",
-            "explanation": "The passage says following the reorganization, so that is correct.",
+            "correctAnswer": "Model B",
+            "hint": "Judge which model the memo actually recommends, not just which has more features listed.",
+            "explanation": "Model B is recommended for durability due to water resistance; Model A is discussed only for its battery life.",
             "timeLimit": 14,
-            "targetInfo": "Specific data to find."
+            "targetInfo": "Model recommended for durability"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L162_Q1",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Read the instructions and find how long refunds take once the item is received.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Were the popular assumption correct that direct flights are, without exception, faster than itineraries involving a single connection, travelers would have little reason to ever consider the latter; in practice, certain long-haul routes served only indirectly can arrive sooner than a direct route on older aircraft.",
-            "targetItem": "itineraries",
+            "passage": "Return Process Instructions: Start by locating your order number on the packing slip. Log into your account and select the item you wish to return. Print the prepaid shipping label and attach it to the original box. Refunds are typically processed within five business days of the item being received at our warehouse.",
+            "targetItem": "five business days",
             "options": [
-                "carrier",
-                "routes",
-                "exception",
-                "itineraries"
+                "five business days",
+                "order number",
+                "packing slip",
+                "prepaid shipping label"
             ],
-            "correctAnswer": "itineraries",
-            "hint": "Find what word describes travel plans involving a connection.",
-            "explanation": "The passage says itineraries involving a connection, so that is correct.",
+            "correctAnswer": "five business days",
+            "hint": "Judge which step in the process actually answers the timing question.",
+            "explanation": "Refunds take five business days after the item is received; the earlier steps describe how to start the return, not the timing.",
             "timeLimit": 14,
-            "targetInfo": "Specific data to find."
+            "targetInfo": "Refund processing time"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L162_Q2",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Read the memo and find the new paid parental leave duration, not the meeting change.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Remarkably, were it not for a particularly blunt conversation with her older cousin, who pointed out that Amara had been unconsciously repeating a caregiving pattern from her own childhood, Amara might never have recognized why she felt so compelled to manage her brother's life.",
-            "targetItem": "caregiving",
+            "passage": "Company Memo: This month's all-hands meeting has been moved to the auditorium due to expected attendance. Separately, the company is introducing a new parental leave policy offering twelve weeks of paid leave, up from eight, effective for all births and adoptions after January 1st.",
+            "targetItem": "twelve weeks",
             "options": [
-                "compelled",
-                "childhood",
-                "caregiving",
-                "parenting"
+                "auditorium",
+                "eight",
+                "January 1st",
+                "twelve weeks"
             ],
-            "correctAnswer": "caregiving",
-            "hint": "Find what type of pattern Amara was unconsciously repeating.",
-            "explanation": "The passage says a caregiving pattern, so that is correct.",
+            "correctAnswer": "twelve weeks",
+            "hint": "Judge which of the two unrelated topics the question is actually about.",
+            "explanation": "The new leave duration is twelve weeks, up from eight; the auditorium relates to a separate, unrelated topic.",
             "timeLimit": 14,
-            "targetInfo": "Specific data to find."
+            "targetInfo": "New paid parental leave duration"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L162_Q3",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Read the advisory and find the specific time window of highest risk.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Were the manufacturer's claim to be taken entirely at face value, that its new mattress model outperforms every competitor at a comparable price point across all sleep positions, one would expect independent testing to confirm uniform superiority.",
-            "targetItem": "uniform",
+            "passage": "Public Health Advisory: Residents are encouraged to stay hydrated during the current heat wave. Those with existing heart or respiratory conditions should limit outdoor activity between noon and 4 p.m., the period of highest risk. Cooling centers are open citywide for anyone without air conditioning.",
+            "targetItem": "noon and 4 p.m.",
             "options": [
-                "comparative",
-                "consistent",
-                "superiority",
-                "uniform"
+                "stay hydrated",
+                "noon and 4 p.m.",
+                "Cooling centers",
+                "heat wave"
             ],
-            "correctAnswer": "uniform",
-            "hint": "Find the word describing the kind of superiority one would expect.",
-            "explanation": "The passage says uniform superiority, so that is correct.",
+            "correctAnswer": "noon and 4 p.m.",
+            "hint": "Judge which recommendation includes the specific time window asked about.",
+            "explanation": "The highest-risk window is noon to 4 p.m.; the hydration and cooling center advice are general recommendations.",
             "timeLimit": 14,
-            "targetInfo": "Specific data to find."
+            "targetInfo": "Highest-risk period for at-risk residents"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L163_Q1",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Read the comparison and find which loan option minimizes total cost for long-term owners.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Were the popular belief correct that organic produce is, across the board, nutritionally superior to conventionally grown produce, one would expect controlled nutrient analyses to show a consistent advantage; the actual body of research has found the differences to be inconsistent and generally modest.",
-            "targetItem": "conventionally",
+            "passage": "Financing Comparison: The 36-month loan carries a lower interest rate but higher monthly payments. The 60-month loan spreads payments out further, lowering the monthly amount but increasing total interest paid over time. Buyers planning to keep the vehicle long-term often prefer the 36-month option to minimize total cost.",
+            "targetItem": "36-month option",
             "options": [
-                "organically",
-                "conventionally",
-                "inconsistent",
-                "controlled"
+                "60-month loan",
+                "monthly payments",
+                "36-month option",
+                "total interest"
             ],
-            "correctAnswer": "conventionally",
-            "hint": "Find the word describing how the compared produce was grown.",
-            "explanation": "The passage says conventionally grown produce, so that is correct.",
+            "correctAnswer": "36-month option",
+            "hint": "Judge which option the comparison actually recommends for long-term cost, not just which has lower monthly payments.",
+            "explanation": "The 36-month option minimizes total cost; the 60-month loan lowers monthly payments but costs more overall.",
             "timeLimit": 14,
-            "targetInfo": "Specific data to find."
+            "targetInfo": "Loan recommended for minimizing total cost"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L163_Q2",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Read the amendment and find which roles are exempt from the new, more casual dress code.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Crucially, were the widely circulated claim accurate that a particular messaging app's encryption made intercepted messages entirely unreadable under any circumstance, security researchers would have little basis for ongoing concern; a detailed audit found that metadata remained readily accessible despite the strong encryption.",
-            "targetItem": "metadata",
+            "passage": "Employee Handbook Amendment: Section 4.1 on dress code has been updated to allow business casual attire company-wide, replacing the previous formal requirement. This change does not apply to client-facing roles, which must still follow the formal dress code during meetings.",
+            "targetItem": "client-facing roles",
             "options": [
-                "accessible",
-                "metadata",
-                "intercepted",
-                "encryption"
+                "business casual",
+                "client-facing roles",
+                "Section 4.1",
+                "formal requirement"
             ],
-            "correctAnswer": "metadata",
-            "hint": "Find what remained readily accessible despite strong encryption.",
-            "explanation": "The passage says metadata remained accessible, so that is correct.",
+            "correctAnswer": "client-facing roles",
+            "hint": "Judge which group the exception actually applies to, not the general policy change.",
+            "explanation": "Client-facing roles are exempt and must stay formal; business casual is the new default for everyone else.",
             "timeLimit": 14,
-            "targetInfo": "Specific data to find."
+            "targetInfo": "Roles exempt from the new dress code"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L163_Q3",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Read the addendum and find the premium tier's guaranteed response time.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Were the assumption correct that chronic under-sleeping primarily affects only cognitive performance, the growing body of research linking sustained sleep deprivation to measurable changes in immune function and long-term cardiovascular risk would be considerably harder to explain.",
-            "targetItem": "deprivation",
+            "passage": "Service Agreement Addendum: Standard support covers issues reported during business hours, with a response time of four hours. Customers on the premium tier receive 24/7 support with a guaranteed response time of thirty minutes, regardless of when the issue is reported.",
+            "targetItem": "thirty minutes",
             "options": [
-                "cognitive",
-                "restriction",
-                "coincidence",
-                "deprivation"
+                "four hours",
+                "business hours",
+                "thirty minutes",
+                "24/7"
             ],
-            "correctAnswer": "deprivation",
-            "hint": "Find what type of sleep issue has been linked to immune changes.",
-            "explanation": "The passage says sleep deprivation, so that is correct.",
+            "correctAnswer": "thirty minutes",
+            "hint": "Judge which response time belongs to the premium tier, not the standard tier.",
+            "explanation": "Premium support guarantees a thirty-minute response; four hours is the standard tier's response time.",
             "timeLimit": 14,
-            "targetInfo": "Specific data to find."
+            "targetInfo": "Premium tier's guaranteed response time"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L164_Q1",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Read the briefing and find whether visitors must complete the forklift course.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Were the studio's public explanation for the film's delayed release, that additional time was needed purely for visual effects polish, the complete picture, one would not expect leaked internal memos to reveal extensive last-minute reshoots driven by disappointing test-audience reactions.",
-            "targetItem": "reshoots",
+            "passage": "Warehouse Safety Briefing: All visitors must wear a hard hat and safety vest at all times while on the floor. Forklift operators are required to complete a refresher course annually, regardless of prior certification. Visitors are not required to complete the forklift course unless they plan to operate equipment.",
+            "targetItem": "not required",
             "options": [
-                "revisions",
-                "disappointing",
-                "reshoots",
-                "memos"
+                "hard hat",
+                "not required",
+                "annually",
+                "prior certification"
             ],
-            "correctAnswer": "reshoots",
-            "hint": "Find what the leaked memos revealed had happened.",
-            "explanation": "The passage says extensive last-minute reshoots, so that is correct.",
+            "correctAnswer": "not required",
+            "hint": "Judge which rule specifically applies to visitors, not forklift operators.",
+            "explanation": "Visitors are not required to take the forklift course unless operating equipment; the annual refresher applies to operators instead.",
             "timeLimit": 14,
-            "targetInfo": "Specific data to find."
+            "targetInfo": "Whether visitors must complete the forklift course"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L164_Q2",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Read the memo and find the daily limit for meal reimbursement.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Importantly, were the common assumption correct that a forest's overall health can be reliably judged simply by the density and height of its trees, conservationists would have little reason to closely monitor understory diversity, yet several visually healthy forests have lost most of it.",
-            "targetItem": "understory",
+            "passage": "Conference Travel Memo: Staff attending the conference should book flights at least three weeks in advance to secure lower fares. Hotel reservations should be made through the company's preferred booking site to qualify for reimbursement. Meals during the conference are reimbursed up to $60 per day with receipts.",
+            "targetItem": "$60 per day",
             "options": [
-                "density",
-                "diversity",
-                "canopy",
-                "understory"
+                "three weeks",
+                "$60 per day",
+                "preferred booking site",
+                "receipts"
             ],
-            "correctAnswer": "understory",
-            "hint": "Find what conservationists closely monitor besides tree height.",
-            "explanation": "The passage says understory diversity, so that is correct.",
+            "correctAnswer": "$60 per day",
+            "hint": "Judge which detail actually answers the meal reimbursement question.",
+            "explanation": "Meals are reimbursed up to $60 per day; the flight and hotel booking advice cover separate expenses.",
             "timeLimit": 14,
-            "targetInfo": "Specific data to find."
+            "targetInfo": "Daily meal reimbursement limit"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L164_Q3",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Read the guide and find whether renters insurance is actually required by the lease.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Were the city's public rationale for closing the aging community pool, that repair costs had become prohibitively expensive, the complete explanation, one would not expect budget documents to reveal a considerably larger discretionary expenditure approved the very same fiscal year.",
-            "targetItem": "prohibitively",
+            "passage": "Apartment Move-In Guide: Utilities must be transferred into the tenant's name before move-in day. A walkthrough inspection will be scheduled within 48 hours of key pickup to document any existing damage. Renters insurance, while not required by the lease, is strongly recommended by management.",
+            "targetItem": "not required by the lease",
             "options": [
-                "prohibitively",
-                "excessively",
-                "discretionary",
-                "unrelated"
+                "48 hours",
+                "key pickup",
+                "not required by the lease",
+                "strongly recommended"
             ],
-            "correctAnswer": "prohibitively",
-            "hint": "Find the word describing how expensive the repair costs were said to be.",
-            "explanation": "The passage says prohibitively expensive, so that is correct.",
+            "correctAnswer": "not required by the lease",
+            "hint": "Judge whether the guide actually requires insurance or only recommends it.",
+            "explanation": "Renters insurance is not required by the lease, only strongly recommended; the 48-hour window applies to the walkthrough instead.",
             "timeLimit": 14,
-            "targetInfo": "Specific data to find."
+            "targetInfo": "Whether renters insurance is required"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L165_Q1",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Read the terms and find how many personal devices a single license covers.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Having spent years insisting that a cluttered desk was simply the price of being a creative thinker, Elif reversed her position entirely after a single afternoon spent working in a colleague's spotless office, an experience that left her noticeably calmer than she had anticipated.",
-            "targetItem": "cluttered",
+            "passage": "Software License Terms: A single license permits installation on up to two personal devices. Commercial use requires a separate business license, purchased at a different rate. Sharing login credentials with anyone outside your household violates the terms of this agreement.",
+            "targetItem": "two personal devices",
             "options": [
-                "messy",
-                "spotless",
-                "cluttered",
-                "calmer"
+                "two personal devices",
+                "business license",
+                "different rate",
+                "login credentials"
             ],
-            "correctAnswer": "cluttered",
-            "hint": "Find the word describing Elif's desk before she changed her mind.",
-            "explanation": "The passage says a cluttered desk, so that is correct.",
-            "timeLimit": 14,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "two personal devices",
+            "hint": "Judge which sentence actually answers the device-count question, not the commercial-use rule.",
+            "explanation": "A single license covers two personal devices; commercial use requires an entirely separate license.",
+            "timeLimit": 13,
+            "targetInfo": "Number of devices a single license covers"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L165_Q2",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Read the terms and find what elite members get access to beyond the standard tier.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Were it not for a chance conversation with a former classmate who had taken an unconventional path into the same field, Denzel might never have discovered that the credential he had spent three years assuming was mandatory was, in fact, treated as merely preferred.",
-            "targetItem": "credential",
+            "passage": "Gym Membership Terms: Standard members have access to the main workout floor and locker rooms only. Members on the elite tier gain additional access to the pool, sauna, and group fitness classes at no extra charge. All memberships require a thirty-day written notice to cancel.",
+            "targetItem": "pool, sauna, and group fitness classes",
             "options": [
-                "credential",
-                "certificate",
-                "classmate",
-                "employers"
+                "main workout floor",
+                "locker rooms",
+                "thirty-day",
+                "pool, sauna, and group fitness classes"
             ],
-            "correctAnswer": "credential",
-            "hint": "Find what Denzel assumed was mandatory for three years.",
-            "explanation": "The passage says the credential, so that is correct.",
-            "timeLimit": 14,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "pool, sauna, and group fitness classes",
+            "hint": "Judge which access applies to the elite tier specifically, not the standard tier.",
+            "explanation": "Elite members get the pool, sauna, and group fitness classes; standard members are limited to the floor and locker rooms.",
+            "timeLimit": 13,
+            "targetInfo": "Additional access for elite members"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L165_Q3",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Read the notice and find the declaration rule that applies to items intended for resale.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Given that the sales team had long relied on a single top performer to carry a disproportionate share of quarterly targets, management made a deliberate push to diversify where revenue came from, a strategy that paid off when that performer unexpectedly left mid-year.",
-            "targetItem": "disproportionate",
+            "passage": "Import Regulations Notice: Personal items valued under $800 generally do not require a customs declaration. Items intended for resale must be declared regardless of value. Travelers bringing food products should check restrictions in advance, as many fresh items are prohibited entirely.",
+            "targetItem": "regardless of value",
             "options": [
-                "substantial",
-                "diversify",
-                "disproportionate",
-                "unexpectedly"
+                "regardless of value",
+                "$800",
+                "customs declaration",
+                "food products"
             ],
-            "correctAnswer": "disproportionate",
-            "hint": "Find the word describing the top performer's share of targets.",
-            "explanation": "The passage says a disproportionate share, so that is correct.",
-            "timeLimit": 14,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "regardless of value",
+            "hint": "Judge which rule applies specifically to resale items, not personal items.",
+            "explanation": "Resale items must be declared regardless of value; the $800 threshold applies only to personal items.",
+            "timeLimit": 13,
+            "targetInfo": "Declaration rule for resale items"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L166_Q1",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Read the policy and find the consequence for permit holders who park on Level 1 without authorization.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Given the volcanic activity that occasionally disrupts flight schedules in the region, most airlines operating routes near the mountain maintain flexible rebooking policies that waive change fees during confirmed periods of ash disruption, a policy worth verifying before booking.",
-            "targetItem": "rebooking",
+            "passage": "Parking Garage Policy: Monthly permit holders may park in any unreserved spot on levels 2 through 5. Level 1 is reserved exclusively for visitors and deliveries. Permit holders who park on Level 1 without authorization may have their vehicle towed at their own expense.",
+            "targetItem": "towed at their own expense",
             "options": [
-                "accommodations",
-                "rebooking",
-                "disruption",
-                "cancellation"
+                "levels 2 through 5",
+                "towed at their own expense",
+                "visitors and deliveries",
+                "Monthly permit"
             ],
-            "correctAnswer": "rebooking",
-            "hint": "Find what type of policy airlines maintain near the volcano.",
-            "explanation": "The passage says flexible rebooking policies, so that is correct.",
+            "correctAnswer": "towed at their own expense",
+            "hint": "Judge which sentence actually describes the consequence, not just the parking zones.",
+            "explanation": "Unauthorized Level 1 parking can result in towing at the owner's expense; levels 2 through 5 are where permit holders normally park.",
             "timeLimit": 14,
-            "targetInfo": "Specific data to find."
+            "targetInfo": "Consequence for unauthorized Level 1 parking"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L166_Q2",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Read the update and find the correct way teachers should now request technical support.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Incidentally, given that her in-laws live only a short drive away, Petra has gradually taken on a role in their lives that goes well beyond the occasional holiday visit, including regular grocery runs and doctor's appointments she never anticipated handling.",
-            "targetItem": "role",
+            "passage": "Classroom Technology Update: All classrooms have been equipped with new projectors this semester. Teachers who need technical support should submit a ticket through the IT portal rather than calling the help desk directly, as phone lines are being phased out. Support requests are typically resolved within one business day.",
+            "targetItem": "IT portal",
             "options": [
-                "commitment",
-                "anticipated",
-                "role",
-                "responsibility"
+                "IT portal",
+                "new projectors",
+                "help desk",
+                "one business day"
             ],
-            "correctAnswer": "role",
-            "hint": "Find what Petra has gradually taken on in her in-laws' lives.",
-            "explanation": "The passage says she has taken on a role, so that is correct.",
+            "correctAnswer": "IT portal",
+            "hint": "Judge which method is actually correct now, not the outdated one being phased out.",
+            "explanation": "Teachers should use the IT portal; the help desk phone line is being phased out.",
             "timeLimit": 14,
-            "targetInfo": "Specific data to find."
+            "targetInfo": "Correct way to request technical support"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L166_Q3",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Read the policy and find how far in advance large parties must reserve.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Given how frequently she had been burned by ordering furniture online only to find the color drastically different from the listing photos, Ingrid now makes a point of requesting a physical fabric swatch before committing to any larger purchase.",
-            "targetItem": "swatch",
+            "passage": "Restaurant Reservation Policy: Parties of six or fewer can be seated without a reservation, subject to availability. Parties of seven or more must reserve at least 24 hours in advance and provide a credit card to hold the table. A cancellation fee applies for no-shows on reserved tables.",
+            "targetItem": "24 hours in advance",
             "options": [
-                "delays",
-                "listing",
-                "sample",
-                "swatch"
+                "24 hours in advance",
+                "six or fewer",
+                "credit card",
+                "cancellation fee"
             ],
-            "correctAnswer": "swatch",
-            "hint": "Find what Ingrid now requests before buying furniture.",
-            "explanation": "The passage says a physical fabric swatch, so that is correct.",
+            "correctAnswer": "24 hours in advance",
+            "hint": "Judge which rule applies to large parties specifically, not small ones.",
+            "explanation": "Parties of seven or more need 24 hours notice; parties of six or fewer can walk in without a reservation.",
             "timeLimit": 14,
-            "targetInfo": "Specific data to find."
+            "targetInfo": "Advance notice required for large parties"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L167_Q1",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Read the comparison and find the feature that comes only with the pro tier.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Given that the restaurant sources its seafood locally each morning, the menu changes daily depending on what the fishing boats happen to bring in, a level of unpredictability that regular customers have come to expect rather than resist.",
-            "targetItem": "unpredictability",
+            "passage": "Cloud Storage Plan Comparison: The free tier includes 5GB of storage with ads. The plus tier removes ads and increases storage to 100GB for a monthly fee. The pro tier, aimed at businesses, includes 2TB of storage plus priority customer support.",
+            "targetItem": "priority customer support",
             "options": [
-                "variability",
-                "seafood",
-                "fixed",
-                "unpredictability"
+                "priority customer support",
+                "5GB",
+                "ads",
+                "100GB"
             ],
-            "correctAnswer": "unpredictability",
-            "hint": "Find what regular customers have come to expect from the menu.",
-            "explanation": "The passage says this unpredictability, so that is correct.",
-            "timeLimit": 14,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "priority customer support",
+            "hint": "Judge which feature is exclusive to the pro tier, not shared with the others.",
+            "explanation": "Priority support comes only with the pro tier; 5GB and 100GB describe storage on the free and plus tiers.",
+            "timeLimit": 13,
+            "targetInfo": "Feature exclusive to the pro tier"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L167_Q2",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Read the instructions and find whether accidental damage is covered under the standard warranty.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Admittedly, given how frequently her laptop overheated during video calls, Naomi eventually traced the issue to a buildup of dust inside the cooling fan rather than any software problem, something a technician confirmed after opening the case.",
-            "targetItem": "overheated",
+            "passage": "Warranty Claim Instructions: Before filing a claim, check that your product is still within the coverage period listed on your receipt. Claims for accidental damage are not covered under the standard warranty and require separate accidental damage protection. Approved claims are typically resolved within ten business days.",
+            "targetItem": "not covered",
             "options": [
-                "components",
-                "cooling",
-                "overheated",
-                "crashed"
+                "coverage period",
+                "separate accidental damage protection",
+                "not covered",
+                "ten business days"
             ],
-            "correctAnswer": "overheated",
-            "hint": "Find what Naomi's laptop frequently did during calls.",
-            "explanation": "The passage says it overheated, so that is correct.",
-            "timeLimit": 14,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "not covered",
+            "hint": "Judge whether the standard warranty actually includes accidental damage.",
+            "explanation": "Accidental damage is not covered under the standard warranty; a separate protection plan is required for that.",
+            "timeLimit": 13,
+            "targetInfo": "Whether accidental damage is covered under the standard warranty"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L167_Q3",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Read the update and find how the fare increase affects reduced-fare riders.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Given her family's history of diabetes, Sofia began scheduling annual blood sugar screenings in her early thirties rather than waiting until the typically recommended age, a decision her doctor fully supported given the added risk factor.",
-            "targetItem": "screenings",
+            "passage": "Public Transit Fare Update: Standard fares will increase by 25 cents starting next month. Riders using the reduced-fare program for seniors and students will not see any change in their current rate. Monthly passes will also remain at their current price through the end of the year.",
+            "targetItem": "will not see any change",
             "options": [
-                "checkups",
-                "supported",
-                "recommended",
-                "screenings"
+                "25 cents",
+                "Monthly passes",
+                "will not see any change",
+                "end of the year"
             ],
-            "correctAnswer": "screenings",
-            "hint": "Find what Sofia began scheduling annually.",
-            "explanation": "The passage says blood sugar screenings, so that is correct.",
-            "timeLimit": 14,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "will not see any change",
+            "hint": "Judge which group of riders is actually unaffected by the increase.",
+            "explanation": "Reduced-fare riders will not see any change; the 25-cent increase applies only to standard fares.",
+            "timeLimit": 13,
+            "targetInfo": "Effect of the fare increase on reduced-fare riders"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L168_Q1",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Read the guide and find where requests for specialty equipment must be submitted.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Given the runaway success of the first film's practical effects over computer-generated ones, the director insisted on using the same approach for the sequel despite pressure from the studio to cut costs with digital alternatives.",
-            "targetItem": "practical",
+            "passage": "Office Supply Ordering Guide: Standard supplies like paper and pens can be ordered directly through the online portal without approval. Orders over $200 require manager sign-off before processing. Specialty equipment requests must go through the procurement department instead of the standard portal.",
+            "targetItem": "procurement department",
             "options": [
-                "practical",
-                "runaway",
-                "digital",
-                "credited"
+                "online portal",
+                "procurement department",
+                "$200",
+                "manager sign-off"
             ],
-            "correctAnswer": "practical",
-            "hint": "Find what type of effects the director insisted on using again.",
-            "explanation": "The passage says practical effects, so that is correct.",
-            "timeLimit": 14,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "procurement department",
+            "hint": "Judge which channel applies to specialty equipment, not standard supplies.",
+            "explanation": "Specialty equipment goes through procurement; the online portal is only for standard supplies.",
+            "timeLimit": 13,
+            "targetInfo": "Where specialty equipment requests must go"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L168_Q2",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Read the rules and find what happens if a bike isn't returned within 24 hours.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Revealingly, given that certain species of jellyfish are technically capable of reverting to an earlier stage of their life cycle when stressed or damaged, researchers have described them, somewhat controversially, as biologically immortal, even though individual jellyfish remain vulnerable to predation.",
-            "targetItem": "reverting",
+            "passage": "Bike Share Program Rules: Rides under 30 minutes are included in the base membership at no extra charge. Rides between 30 and 60 minutes incur a $2 fee. Members who fail to return a bike within 24 hours are charged the full replacement cost of the bike.",
+            "targetItem": "full replacement cost",
             "options": [
-                "vulnerable",
-                "reverting",
-                "returning",
-                "immortal"
+                "30 minutes",
+                "$2 fee",
+                "base membership",
+                "full replacement cost"
             ],
-            "correctAnswer": "reverting",
-            "hint": "Find what certain jellyfish are technically capable of doing.",
-            "explanation": "The passage says reverting to an earlier stage, so that is correct.",
-            "timeLimit": 14,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "full replacement cost",
+            "hint": "Judge which rule applies to bikes not returned at all, not just longer rides.",
+            "explanation": "Bikes not returned within 24 hours incur the full replacement cost; the $2 fee applies only to longer rides, not missing bikes.",
+            "timeLimit": 13,
+            "targetInfo": "Charge for not returning a bike within 24 hours"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L168_Q3",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Read the policy and find the refund rule for withdrawals after week four.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Given the steep rise in reported cases of loneliness among older residents living alone, the city funded a program pairing seniors with trained volunteers for weekly companionship visits, an initiative that surveys suggest has meaningfully reduced isolation.",
-            "targetItem": "companionship",
+            "passage": "Course Withdrawal Policy: Students may withdraw from a course with a full refund during the first two weeks of the semester. Withdrawals during weeks three and four receive a 50 percent refund. No refunds are issued for withdrawals after week four.",
+            "targetItem": "No refunds",
             "options": [
-                "meaningfully",
-                "companionship",
-                "mentorship",
-                "isolation"
+                "full refund",
+                "first two weeks",
+                "50 percent",
+                "No refunds"
             ],
-            "correctAnswer": "companionship",
-            "hint": "Find what type of weekly visits the volunteers provide.",
-            "explanation": "The passage says companionship visits, so that is correct.",
-            "timeLimit": 14,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "No refunds",
+            "hint": "Judge which rule applies to the latest withdrawal period, not the earlier ones.",
+            "explanation": "After week four, no refunds are issued; full and 50 percent refunds apply only to earlier withdrawal periods.",
+            "timeLimit": 13,
+            "targetInfo": "Refund policy after week four"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L169_Q1",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Read the notice and find whether the company sells collected data to third parties.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "It would be easy to attribute Tomas's newfound consistency with exercise entirely to willpower, yet a closer look at what actually changed reveals something less flattering to that narrative: he simply moved his gym membership three minutes from his apartment.",
-            "targetItem": "willpower",
+            "passage": "Data Privacy Notice: We collect basic usage data to improve our services, such as which features are used most often. This data is never sold to third parties. Users may request a full copy of their collected data or ask for it to be deleted at any time through account settings.",
+            "targetItem": "never sold",
             "options": [
-                "narrative",
-                "motivation",
-                "willpower",
-                "discipline"
+                "never sold",
+                "usage data",
+                "account settings",
+                "full copy"
             ],
-            "correctAnswer": "willpower",
-            "hint": "Find what one might easily but wrongly credit for the change.",
-            "explanation": "The passage says willpower, so that is correct.",
-            "timeLimit": 14,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "never sold",
+            "hint": "Judge which sentence directly answers whether data is sold.",
+            "explanation": "Data is never sold to third parties; usage data collection and account settings are separate details.",
+            "timeLimit": 13,
+            "targetInfo": "Whether collected data is sold to third parties"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L169_Q2",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Read the guidelines and find what craft and retail vendors must submit in place of a health permit.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Although it is frequently assumed that standardized test scores correlate straightforwardly with a student's overall academic ability, longitudinal research tracking students well beyond graduation has repeatedly found that non-cognitive factors predict long-term outcomes at least as strongly.",
-            "targetItem": "longitudinal",
+            "passage": "Event Vendor Guidelines: Food vendors must submit health permits at least two weeks before the event. Craft and retail vendors are not required to submit health permits but must provide proof of liability insurance instead. All vendors must be set up and ready by 8 a.m. on the event day.",
+            "targetItem": "proof of liability insurance",
             "options": [
-                "longitudinal",
-                "persistence",
-                "standardized",
-                "outcomes"
+                "health permits",
+                "two weeks",
+                "proof of liability insurance",
+                "8 a.m."
             ],
-            "correctAnswer": "longitudinal",
-            "hint": "Find what type of research tracked students beyond graduation.",
-            "explanation": "The passage says longitudinal research, so that is correct.",
-            "timeLimit": 14,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "proof of liability insurance",
+            "hint": "Judge which requirement applies to craft and retail vendors, not food vendors.",
+            "explanation": "Craft and retail vendors need liability insurance instead of a health permit, which is required only for food vendors.",
+            "timeLimit": 13,
+            "targetInfo": "What craft and retail vendors must submit instead of a health permit"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L169_Q3",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Read the guide and find how long to hold the pairing button if the remote fails to connect.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Because turnover among entry-level staff had quietly become the department's costliest problem, largely invisible in the usual quarterly reports, the new manager pushed for exit interviews to finally be tracked systematically rather than treated as an afterthought.",
-            "targetItem": "invisible",
+            "passage": "Streaming Device Setup Guide: Connect the device to your TV using the included HDMI cable. Once powered on, follow the on-screen prompts to connect to your home Wi-Fi network. If the remote fails to pair automatically, hold the pairing button for ten seconds to reset the connection.",
+            "targetItem": "ten seconds",
             "options": [
-                "afterthought",
-                "hidden",
-                "systematically",
-                "invisible"
+                "HDMI cable",
+                "home Wi-Fi",
+                "on-screen prompts",
+                "ten seconds"
             ],
-            "correctAnswer": "invisible",
-            "hint": "Find the word describing how the problem appeared in quarterly reports.",
-            "explanation": "The passage says largely invisible, so that is correct.",
-            "timeLimit": 14,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "ten seconds",
+            "hint": "Judge which step applies only when the automatic pairing fails.",
+            "explanation": "Holding the button for ten seconds resets pairing if it fails; the earlier steps describe normal setup.",
+            "timeLimit": 13,
+            "targetInfo": "How long to hold the pairing button if it fails to connect"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L170_Q1",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Read the policy and find whether business class on long international flights requires separate approval.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Although the island is often marketed as an undiscovered paradise far off the beaten path, the reality that greets most visitors these days is a coastline dotted with resorts and a peak season so crowded that booking six months ahead has become standard.",
-            "targetItem": "undiscovered",
+            "passage": "Corporate Travel Policy Update: Economy class remains standard for domestic flights under five hours. Flights longer than five hours qualify for premium economy upgrades, subject to manager approval. International flights over ten hours qualify for business class without requiring separate approval.",
+            "targetItem": "without requiring separate approval",
             "options": [
-                "seasoned",
-                "crowded",
-                "untouched",
-                "undiscovered"
+                "without requiring separate approval",
+                "premium economy",
+                "manager approval",
+                "five hours"
             ],
-            "correctAnswer": "undiscovered",
-            "hint": "Find how the island is often marketed.",
-            "explanation": "The passage says it is marketed as undiscovered, so that is correct.",
-            "timeLimit": 14,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "without requiring separate approval",
+            "hint": "Judge which flight category does not need manager approval, unlike the others.",
+            "explanation": "Long international flights get business class without separate approval; premium economy upgrades still need manager approval.",
+            "timeLimit": 13,
+            "targetInfo": "Approval requirement for long international flights"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L170_Q2",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Read the notice and find the maximum percentage the company will match.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Unsurprisingly, although Marcus and his siblings had assumed their parents' modest savings would comfortably cover a nursing home should the need ever arise, a frank conversation last year revealed that the actual costs would far exceed what had been set aside.",
-            "targetItem": "savings",
+            "passage": "Retirement Plan Enrollment Notice: New employees are automatically enrolled in the retirement plan at a 3 percent contribution rate unless they opt out within thirty days. Employees may increase their contribution rate at any time through the online portal. The company matches contributions up to 4 percent.",
+            "targetItem": "4 percent",
             "options": [
-                "savings",
-                "costs",
-                "contributing",
-                "pension"
+                "3 percent",
+                "thirty days",
+                "4 percent",
+                "online portal"
             ],
-            "correctAnswer": "savings",
-            "hint": "Find what the parents had set aside that turned out to be insufficient.",
-            "explanation": "The passage says their savings, so that is correct.",
-            "timeLimit": 14,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "4 percent",
+            "hint": "Judge which figure is the company's match, not the default enrollment rate.",
+            "explanation": "The company matches up to 4 percent; 3 percent is only the default automatic contribution rate.",
+            "timeLimit": 13,
+            "targetInfo": "Maximum company match"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L170_Q3",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Read the policy and find what groups larger than thirty must arrange.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Although the retailer's membership program advertises free shipping on all orders, the fine print reveals that this benefit applies only to orders shipped within the same country, leaving international members to pay standard rates regardless of status.",
-            "targetItem": "membership",
+            "passage": "Museum Group Tour Policy: Groups of ten or fewer may book a tour with 48 hours notice. Groups of eleven to thirty require one week's notice and a nonrefundable deposit. Groups larger than thirty must contact the events office directly to arrange a custom itinerary.",
+            "targetItem": "custom itinerary",
             "options": [
-                "shipping",
-                "distinction",
-                "subscription",
-                "membership"
+                "48 hours",
+                "one week's notice",
+                "custom itinerary",
+                "nonrefundable deposit"
             ],
-            "correctAnswer": "membership",
-            "hint": "Find what type of program advertises free shipping.",
-            "explanation": "The passage says the membership program, so that is correct.",
-            "timeLimit": 14,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "custom itinerary",
+            "hint": "Judge which rule applies to the largest group size, not the smaller ones.",
+            "explanation": "Groups larger than thirty arrange a custom itinerary through the events office; the other notice periods apply to smaller groups.",
+            "timeLimit": 13,
+            "targetInfo": "What large groups must arrange through the events office"
         }
     ]
 }

@@ -8,18 +8,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "Climate scientists analyzing several decades of data from a mountain research station found that the elevation at which a particular alpine wildflower species blooms each spring has shifted upward by roughly two hundred meters compared to where it typically bloomed forty years ago, a change that correlates closely with rising average spring temperatures recorded at the same station, though the researchers noted that pollinator insect populations at the new, higher elevation have not shifted upward at nearly the same pace.",
+            "passage": "After the city opened a new bike-share dock outside the train station, morning ridership on that dock rose quickly. Local business owners nearby noted increased foot traffic in their shops during the same weeks the dock opened.",
             "options": [
-                "Pollinator insects have shifted upward faster than the wildflower species.",
-                "Both the wildflower and its pollinators have shifted at an identical pace.",
-                "Rising temperatures have had no measurable effect on where the wildflower blooms.",
-                "The wildflower's shift to higher elevations may be outpacing the movement of the insects that pollinate it."
+                "The new dock directly caused every nearby shop's foot traffic to increase. Reading through everything the passage lays out, there is no specific detail that would push against treating this as the straightforward explanation.",
+                "The new dock's ridership growth coincided with more nearby foot traffic, though the passage does not confirm the dock caused the increase in shop visits.",
+                "The bike-share dock had no connection to changes near the train station. The full account given in the passage offers no particular basis for reading this any differently than as a plain, straightforward description of events.",
+                "Foot traffic near the shops decreased after the dock opened."
             ],
-            "correctAnswer": "The wildflower's shift to higher elevations may be outpacing the movement of the insects that pollinate it.",
-            "hint": "Compare how much the wildflower's blooming elevation has shifted with how much the pollinator population has shifted.",
-            "explanation": "The wildflower has moved upslope by two hundred meters while its pollinators haven't kept pace, suggesting a growing mismatch between where the flowers now bloom and where the insects that pollinate them are found.",
+            "correctAnswer": "The new dock's ridership growth coincided with more nearby foot traffic, though the passage does not confirm the dock caused the increase in shop visits.",
+            "hint": "Notice that the passage describes two things happening around the same time without stating that one definitely caused the other.",
+            "explanation": "The passage only shows the two trends occurring together, not that the dock definitely caused the shop traffic increase; claiming certainty about causation overstates what a simple timing coincidence supports.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Bike dock opens, ridership grows -> nearby shops see more foot traffic in same weeks -> passage shows correlation in timing, not confirmed causation"
             ]
         },
         {
@@ -27,18 +27,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A multinational company that allowed regional offices to set their own policies on remote work, rather than mandating a single company-wide rule, found substantial variation in productivity outcomes across offices: offices that combined remote flexibility with clearly defined core collaboration hours, during which all team members were expected to be reachable, reported productivity gains, while offices that offered flexibility without any defined core hours reported a slight decline in project completion speed over the same period.",
+            "passage": "A mid-size tech company noticed that engineers who used the company's new code-review tool submitted fewer bugs to production. The engineers who adopted the tool early were also generally the most senior members of the team.",
             "options": [
-                "Remote work flexibility appears to benefit productivity mainly when paired with defined core collaboration hours.",
-                "Remote work flexibility improved productivity regardless of whether core hours were defined.",
-                "Defined core hours alone, without remote flexibility, produced the best outcomes.",
-                "Every regional office reported identical productivity outcomes under the new policy."
+                "It is unclear from the passage whether the tool or the engineers' seniority explains the lower bug rate.",
+                "The code-review tool is definitely the sole reason for fewer bugs. This pattern would hold steady across the entire situation the passage lays out.",
+                "Seniority has no possible connection to the lower bug rate. This would be expected to hold across the entire situation as described.",
+                "Junior engineers were the first to adopt the new tool. Nothing described in the passage points to any exception to this pattern."
             ],
-            "correctAnswer": "Remote work flexibility appears to benefit productivity mainly when paired with defined core collaboration hours.",
-            "hint": "Compare the two types of offices, noting what distinguished the ones with productivity gains from the ones with declines.",
-            "explanation": "Only offices that paired flexibility with defined core hours saw productivity gains, while offices without core hours saw a decline, suggesting the flexibility itself wasn't enough without some structure to keep teams coordinated.",
+            "correctAnswer": "It is unclear from the passage whether the tool or the engineers' seniority explains the lower bug rate.",
+            "hint": "Notice that two possible explanations are mentioned together, and the passage doesn't rule either one out.",
+            "explanation": "Since senior engineers were also the early adopters, the passage leaves open whether the tool, their experience, or both explain the lower bug rate, so crediting the tool alone with certainty goes beyond the evidence.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Tool adopted early by senior engineers -> those engineers submit fewer bugs -> tool and seniority are both possible explanations, and the passage does not distinguish between them"
             ]
         },
         {
@@ -46,18 +46,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A researcher studying multigenerational households, where grandparents live with their adult children and grandchildren under one roof, found that households where grandparents took on a clearly defined role, such as being primarily responsible for after-school childcare, reported higher overall family satisfaction than households where grandparents lived in the home but had no specific defined responsibilities, with family members in the latter group frequently describing role confusion and occasional friction over decision-making authority.",
+            "passage": "A study found that students who ate breakfast at school scored slightly higher on morning quizzes than students who skipped breakfast. The school breakfast program is free and available to all students, while students who skip breakfast come from a range of different households and schedules.",
             "options": [
-                "Households without defined grandparent roles reported the highest satisfaction.",
-                "Grandparents having a clearly defined role appears linked to greater satisfaction in multigenerational households.",
-                "The presence or absence of a defined role made no difference to family satisfaction.",
-                "Role confusion was equally common in both types of households."
+                "The passage supports a link between eating breakfast and quiz scores, though it does not identify the specific reason for the difference.",
+                "Eating breakfast at school guarantees a perfect quiz score.",
+                "Students who skip breakfast always come from the same type of household.",
+                "The quiz scores were identical regardless of breakfast habits."
             ],
-            "correctAnswer": "Grandparents having a clearly defined role appears linked to greater satisfaction in multigenerational households.",
-            "hint": "Compare satisfaction levels between households where the grandparent's role was clearly defined and those where it wasn't.",
-            "explanation": "Households with a clearly defined role for grandparents reported higher satisfaction than those without one, where confusion and friction were more common, suggesting clarity about responsibilities helps multigenerational households function more smoothly.",
+            "correctAnswer": "The passage supports a link between eating breakfast and quiz scores, though it does not identify the specific reason for the difference.",
+            "hint": "Look at what the passage actually confirms about the score difference and what it says about the backgrounds of breakfast-skippers.",
+            "explanation": "The passage supports only a modest link between breakfast and slightly higher scores, without identifying a specific mechanism, so claims of guaranteed outcomes or a single shared background for all breakfast-skippers go beyond what's stated.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Breakfast eaters: slightly higher quiz scores -> breakfast-skippers: varied households and schedules -> passage supports a link, without pinpointing a specific reason"
             ]
         },
         {
@@ -65,18 +65,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A regional airport authority that operates three smaller airports within the same metropolitan area found that after consolidating all rental car counters into a single shared facility connected to all three airports by shuttle, rather than each airport maintaining its own separate counters, overall rental car wait times increased for travelers at the two smaller airports, even though total operating costs for the rental car companies decreased significantly across the entire region, according to a report commissioned the following year.",
+            "passage": "A national retailer found that stores with brighter lighting had slightly higher average sales than stores with dimmer lighting. However, the brighter stores were also newer buildings with larger parking lots and more visible street frontage.",
             "options": [
-                "Consolidation reduced both costs and wait times for all travelers.",
-                "Wait times decreased at the two smaller airports after consolidation.",
-                "Consolidation had no effect on either costs or wait times.",
-                "Consolidating rental car counters appears to have reduced costs at the expense of convenience for some travelers."
+                "Lighting alone is definitely responsible for the entire sales difference, as the passage presents the situation.",
+                "The dimmer stores had larger parking lots than the brighter stores. This would apply consistently across every detail the passage provides.",
+                "Several factors besides lighting could explain the sales difference between the two groups of stores.",
+                "Sales were identical between the two groups of stores."
             ],
-            "correctAnswer": "Consolidating rental car counters appears to have reduced costs at the expense of convenience for some travelers.",
-            "hint": "Notice the passage describes a benefit for the rental car companies alongside a drawback for some travelers.",
-            "explanation": "Costs dropped for rental car companies after consolidation, but wait times rose for travelers at the smaller airports, suggesting the efficiency gained from a shared facility came at the cost of convenience for some passengers.",
+            "correctAnswer": "Several factors besides lighting could explain the sales difference between the two groups of stores.",
+            "hint": "Notice how many differences exist between the two groups of stores besides lighting.",
+            "explanation": "Since the brighter stores also differed in building age, parking, and visibility, the passage supports the idea that multiple factors could account for the sales gap, not lighting alone with certainty.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Brighter stores: newer, bigger parking, more visible -> slightly higher sales -> multiple differing factors make it hard to credit lighting alone"
             ]
         },
         {
@@ -84,18 +84,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A cybersecurity firm that studied phishing email susceptibility across several large companies found that employees who had completed a single mandatory training session a year earlier were no less likely to click on a simulated phishing link than employees who had never completed any training at all, but employees who received brief, randomized simulated phishing tests every few months, with immediate feedback after each one, showed a substantial and lasting improvement over the two-year study period.",
+            "passage": "A fitness app found that users who set a daily step goal walked more on average than users who did not set a goal. Users who chose to set goals were also more likely to have paid for the app's premium subscription.",
             "options": [
-                "A single annual training session was highly effective at preventing phishing clicks.",
-                "Ongoing practice with immediate feedback appears far more effective at preventing phishing clicks than a single training session.",
-                "Neither training approach had any measurable effect on phishing susceptibility.",
-                "Employees with no training at all performed best in the study."
+                "Setting a step goal is definitely the only explanation for the higher counts. The passage offers no detail suggesting this changed over the period discussed.",
+                "It is unclear whether setting a goal or being a premium subscriber better explains the higher step counts.",
+                "Premium subscribers never set daily step goals.",
+                "Users without goals walked more than users with goals."
             ],
-            "correctAnswer": "Ongoing practice with immediate feedback appears far more effective at preventing phishing clicks than a single training session.",
-            "hint": "Compare the effectiveness of the one-time training with the effectiveness of ongoing simulated tests.",
-            "explanation": "A single training session showed no real improvement, while ongoing simulated tests with immediate feedback produced a lasting improvement, suggesting that repeated practice, not a one-time session, is what actually changes behavior around phishing emails.",
+            "correctAnswer": "It is unclear whether setting a goal or being a premium subscriber better explains the higher step counts.",
+            "hint": "Notice that goal-setters and premium subscribers overlap significantly in this passage.",
+            "explanation": "Because goal-setters were also more likely to be paying subscribers, a group possibly more motivated to begin with, the passage leaves it unclear whether the goal itself or the underlying motivation explains the difference.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Goal-setters walk more on average -> goal-setters also more likely to be premium subscribers -> unclear whether the goal or underlying motivation explains the difference"
             ]
         },
         {
@@ -103,18 +103,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A university that had always required all incoming international students to complete the same standardized six-week orientation program, regardless of their country of origin or prior study-abroad experience, began offering an abbreviated two-week version for students who had already studied in an English-speaking country for at least one full academic year. Academic performance during the first semester was statistically similar between students who completed the full orientation and those who completed the abbreviated version, provided they had the qualifying prior experience.",
+            "passage": "A university found that students who joined at least one club reported higher overall satisfaction with their college experience than students who joined no clubs. Club membership requires students to have time available outside of coursework and part-time jobs.",
             "options": [
-                "The abbreviated orientation led to significantly worse academic performance.",
-                "For students with relevant prior experience, the abbreviated orientation appears just as effective as the full program.",
-                "All students, regardless of prior experience, performed better with the full orientation.",
-                "The length of orientation had no bearing on any student's academic performance."
+                "Students with more available time may be more likely both to join clubs and to report higher satisfaction, making the exact cause unclear.",
+                "Joining a club is guaranteed to increase any student's satisfaction. Such a pattern would remain constant throughout the scenario being described.",
+                "Students with jobs are more likely to join multiple clubs.",
+                "Satisfaction scores were the same regardless of club membership."
             ],
-            "correctAnswer": "For students with relevant prior experience, the abbreviated orientation appears just as effective as the full program.",
-            "hint": "Notice the passage specifies which students were eligible for the abbreviated version.",
-            "explanation": "Students with qualifying prior experience performed similarly whether they completed the full or abbreviated orientation, suggesting that for that specific group, the shorter version provided sufficient preparation without requiring the full six weeks.",
+            "correctAnswer": "Students with more available time may be more likely both to join clubs and to report higher satisfaction, making the exact cause unclear.",
+            "hint": "Notice the detail about what club membership requires and how that might relate to who joins in the first place.",
+            "explanation": "Since joining clubs requires available time, students with lighter workloads or fewer job hours may be more likely to both join and report higher satisfaction, leaving the exact cause of the satisfaction gap unclear.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Club members: higher satisfaction -> club membership requires available time -> time availability may explain both club joining and satisfaction, making a single cause unclear"
             ]
         },
         {
@@ -122,18 +122,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A regional hospital system that introduced a policy requiring a mandatory ten-minute cooling-off period before any elective but non-urgent second opinion could be scheduled found that patients who went through the waiting period were slightly less likely to ultimately pursue an unnecessary duplicate procedure, based on a review of insurance claims, though patient satisfaction surveys showed a modest decline among patients who felt the waiting period was patronizing or unnecessary given their own research into their condition.",
+            "passage": "A restaurant chain found that locations near universities had higher weekday lunch sales than locations in suburban areas. University-area locations are also generally smaller and located closer to public transit stops.",
             "options": [
-                "The waiting period increased both unnecessary procedures and patient satisfaction.",
-                "Patient satisfaction improved significantly because of the waiting period.",
-                "The waiting period had no measurable effect on procedures or satisfaction.",
-                "The waiting period appears to have reduced unnecessary procedures while slightly lowering some patients' satisfaction."
+                "Proximity to universities may be linked to higher lunch sales, though the passage does not rule out other differences like size or transit access.",
+                "Store size definitely explains the entire difference in lunch sales. Nothing in the way the passage lays out these events gives any real reason to treat this as an incomplete or qualified reading of what took place.",
+                "Suburban locations always outsell university-area locations. Nothing about how the passage frames the surrounding circumstances would suggest this conclusion needs any further qualification or limitation.",
+                "Public transit access has no relationship to any of the sales data mentioned. This would remain the case regardless of any other detail in the passage."
             ],
-            "correctAnswer": "The waiting period appears to have reduced unnecessary procedures while slightly lowering some patients' satisfaction.",
-            "hint": "Notice the passage mentions one outcome that improved and one that declined.",
-            "explanation": "Unnecessary duplicate procedures decreased under the waiting period, but some patients felt the requirement was patronizing, showing the policy achieved its clinical goal at some cost to how certain patients experienced their care.",
+            "correctAnswer": "Proximity to universities may be linked to higher lunch sales, though the passage does not rule out other differences like size or transit access.",
+            "hint": "Notice all the differences mentioned between university-area and suburban locations, not just proximity to campus.",
+            "explanation": "The passage links university proximity to higher sales but also mentions other differences like size and transit access, so it doesn't rule out that these other factors, not proximity to campus alone, might contribute.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "University-area stores: higher weekday lunch sales -> also smaller, closer to transit -> proximity may be linked to sales, but other differences aren't ruled out"
             ]
         },
         {
@@ -141,18 +141,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A city council debating whether to approve a large mixed-use development downtown reviewed economic impact studies from three comparable cities that had approved similar projects in the past decade. In each case, retail vacancy rates in the surrounding blocks dropped within two years of the new development opening, but rental prices for existing nearby apartments also rose noticeably faster than the citywide average during that same two-year period, a pattern each of the three studies noted independently despite covering different cities.",
+            "passage": "A survey found that remote employees who used video calls for team meetings reported feeling more connected to their coworkers than employees who used audio-only calls. Teams that chose video calls also tended to have managers who scheduled more frequent one-on-one check-ins.",
             "options": [
-                "The developments reduced both retail vacancy and nearby rent increases.",
-                "Downtown development projects like this one may reduce retail vacancy while also accelerating nearby rent increases.",
-                "Rental prices near the developments rose more slowly than the citywide average.",
-                "The developments had no measurable effect on either vacancy rates or rents."
+                "Video calls are definitely the only reason for the stronger connection. This would remain the case regardless of any other detail in the passage.",
+                "Managers who scheduled check-ins never used video calls with their teams. The passage's account gives no reason to think this differed at any stage.",
+                "It is unclear whether video calls themselves or more frequent check-ins from managers better explain the stronger sense of connection.",
+                "Audio-only teams reported feeling more connected than video-call teams."
             ],
-            "correctAnswer": "Downtown development projects like this one may reduce retail vacancy while also accelerating nearby rent increases.",
-            "hint": "Notice the passage describes two different trends that occurred together in each of the three cities.",
-            "explanation": "Retail vacancy fell and nearby rents rose faster than average in all three comparable cities, suggesting this specific type of downtown development tends to come with both a commercial benefit and a housing cost trade-off.",
+            "correctAnswer": "It is unclear whether video calls themselves or more frequent check-ins from managers better explain the stronger sense of connection.",
+            "hint": "Notice that video-call teams and frequent check-ins tend to occur together in this passage.",
+            "explanation": "Since video-call teams also had managers who checked in more often, the passage leaves open whether the video format or the extra manager attention drives the stronger sense of connection.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Video-call teams: feel more connected -> also have managers with more frequent check-ins -> unclear whether video calls or check-in frequency explains the connection"
             ]
         },
         {
@@ -160,18 +160,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "An analysis comparing two employer-sponsored retirement plan designs found that plans defaulting new employees into a diversified target-date fund, rather than requiring employees to actively choose investments from a long list of options, resulted in far fewer employees holding an overly conservative all-cash allocation years into their careers, a pattern researchers had previously linked, in earlier interviews, to employees simply avoiding an overwhelming decision rather than making any deliberate investment choice at all.",
+            "passage": "A city found that parks with community gardens had lower reported vandalism than parks without gardens. Parks with gardens also tend to have more regular daytime visitors tending their garden plots throughout the week.",
             "options": [
-                "Requiring employees to actively choose investments led to more diversified portfolios.",
-                "Both plan designs resulted in identical investment allocations over time.",
-                "Defaulting employees into a diversified fund appears to prevent the kind of accidental over-caution that comes from decision avoidance.",
-                "Employees who avoided the decision entirely ended up with the most diversified portfolios."
+                "Lower vandalism in garden parks may be linked to more regular visitor presence, though the passage does not confirm the garden itself is the direct cause.",
+                "Community gardens are guaranteed to eliminate vandalism in any park. Nothing in the way the passage lays out these events gives any real reason to treat this as an incomplete or qualified reading of what took place.",
+                "Parks without gardens have no visitors at any time of day. Nothing about how the passage frames the surrounding circumstances would suggest this conclusion needs any further qualification or limitation.",
+                "Vandalism rates were the same in parks with and without gardens. The way the events are described throughout the passage offers no clear signal that this particular reading should be treated with any extra caution."
             ],
-            "correctAnswer": "Defaulting employees into a diversified fund appears to prevent the kind of accidental over-caution that comes from decision avoidance.",
-            "hint": "Think about what an overly conservative all-cash allocation years later suggests about how the original decision was made.",
-            "explanation": "Employees defaulted into a diversified fund were far less likely to end up holding an all-cash allocation than those who had to choose, suggesting the default helped avoid the passive, avoidance-driven conservatism seen under the choice-based design.",
+            "correctAnswer": "Lower vandalism in garden parks may be linked to more regular visitor presence, though the passage does not confirm the garden itself is the direct cause.",
+            "hint": "Notice the detail about regular visitor presence and how that might relate to lower vandalism.",
+            "explanation": "The passage links gardens to lower vandalism but also mentions increased daytime visitor presence, suggesting that the regular presence of people, not necessarily the garden itself, could be part of the explanation.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Garden parks: lower vandalism -> also more regular daytime visitors -> presence of visitors may explain part of the link, not confirmed as the garden alone"
             ]
         },
         {
@@ -179,18 +179,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A state environmental agency comparing two approaches to reducing highway litter, roadside signs threatening fines versus a program adopting stretches of highway under a local business's name displayed on a sign, found that the adopt-a-highway program resulted in measurably less litter accumulation over a five-year period, even in stretches where the threatened fines were rarely if ever actually enforced by state troopers patrolling the area, according to the agency's five-year cleanup and litter-count records.",
+            "passage": "A hospital found that patients treated by doctors who graduated from a specific residency program had slightly shorter recovery times. Doctors from that program also tend to be assigned to patients with less complex cases, based on the hospital's scheduling system.",
             "options": [
-                "Threatened fines were more effective than the adoption program at reducing litter.",
-                "Enforcement of fines was consistently high in both types of highway stretches.",
-                "A sense of local ownership through the adoption program appears more effective than an unenforced threat of fines.",
-                "Neither approach had any measurable effect on litter accumulation."
+                "The residency program alone definitely explains the shorter recovery times, given the specific information included in the passage.",
+                "Doctors from that program are always assigned the most complex cases.",
+                "Recovery times were identical regardless of which doctors treated patients.",
+                "Case complexity may partly explain the shorter recovery times, rather than the residency program alone."
             ],
-            "correctAnswer": "A sense of local ownership through the adoption program appears more effective than an unenforced threat of fines.",
-            "hint": "Notice that the fines were rarely enforced, yet one approach still worked better.",
-            "explanation": "The adoption program reduced litter more than the fine-based signs, even where fines went largely unenforced, suggesting that a sense of local ownership or visible accountability may motivate behavior more than a threat that isn't actually carried out.",
+            "correctAnswer": "Case complexity may partly explain the shorter recovery times, rather than the residency program alone.",
+            "hint": "Notice the detail about how patients are assigned to doctors from this particular program.",
+            "explanation": "Since doctors from this program tend to handle less complex cases, the passage suggests case complexity could be part of the explanation for the shorter recovery times, not the training alone.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Doctors from program X: patients recover slightly faster -> those doctors assigned less complex cases -> case complexity may partly explain the shorter recovery, not training alone"
             ]
         },
         {
@@ -198,18 +198,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A food science team testing consumer response to plant-based meat alternatives found that participants who were told a product's ingredient list before tasting it rated the taste significantly lower, on average, than participants who tasted the identical product without seeing the ingredient list first, even though every participant in the study rated the same physical sample prepared from the exact same batch of product on the exact same day, according to the study's blind-tasting protocol.",
+            "passage": "A city's transit survey found that riders who used a mobile ticketing app reported shorter perceived wait times than riders who used paper tickets. App users were also more likely to check real-time bus tracking before leaving home.",
             "options": [
-                "Seeing the ingredient list improved how participants rated the taste.",
-                "The ingredient list had no bearing on participants' taste ratings.",
-                "Knowing the ingredients in advance appears to lower how people perceive the taste of a food, independent of the food itself.",
-                "Participants tasted physically different samples depending on the group they were in."
+                "The mobile app alone is definitely responsible for the entire perception difference. The passage offers no detail suggesting this changed over the period discussed.",
+                "Checking real-time tracking, not just using the app itself, may explain part of the shorter perceived wait times.",
+                "Paper ticket users always check real-time tracking before leaving.",
+                "Perceived wait times were identical between the two groups."
             ],
-            "correctAnswer": "Knowing the ingredients in advance appears to lower how people perceive the taste of a food, independent of the food itself.",
-            "hint": "Notice that the food itself was identical for both groups; only what participants knew in advance differed.",
-            "explanation": "Participants who saw the ingredient list first rated the same food lower than those who didn't, suggesting that expectations formed before tasting can shape perceived taste even when the food itself hasn't changed at all.",
+            "correctAnswer": "Checking real-time tracking, not just using the app itself, may explain part of the shorter perceived wait times.",
+            "hint": "Notice the additional habit mentioned alongside app use.",
+            "explanation": "Since app users were also more likely to check real-time tracking, a habit that could reduce actual waiting by better timing arrivals, the passage suggests this habit, not the app alone, may explain part of the perception gap.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "App users: report shorter perceived wait times -> also more likely to check real-time tracking -> tracking habit may partly explain the difference, not the app alone"
             ]
         },
         {
@@ -217,18 +217,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A sports psychologist working with a college volleyball team introduced a brief, structured pre-game visualization routine, asking players to mentally rehearse specific in-game scenarios for five minutes before each match. Over a full season, the team's performance in high-pressure situations, such as close final sets, improved measurably compared to the previous season, although the team's overall win-loss record remained roughly the same as the year before, since the team also faced a notably tougher schedule of opponents that season, according to the coaching staff.",
+            "passage": "A company found that employees who took the optional public-speaking workshop received higher performance review scores the following year. Employees who signed up for the workshop had also, on average, received strong performance reviews the year before it was offered.",
             "options": [
-                "The team's overall win-loss record improved dramatically because of the routine.",
-                "The visualization routine had no measurable effect on the team's performance.",
-                "The visualization routine appears to have improved performance specifically in high-pressure moments, even though the overall record didn't change much.",
-                "High-pressure performance declined after the visualization routine was introduced."
+                "Employees with already-strong performance may have been more likely to sign up, making it unclear how much the workshop itself contributed.",
+                "The workshop is definitely the sole reason for the higher review scores.",
+                "Employees who signed up had weak performance reviews the year before.",
+                "Performance review scores were unrelated to workshop attendance in any way."
             ],
-            "correctAnswer": "The visualization routine appears to have improved performance specifically in high-pressure moments, even though the overall record didn't change much.",
-            "hint": "Notice the passage separates high-pressure performance from the team's overall season record.",
-            "explanation": "High-pressure performance improved even though the overall record stayed similar, and the passage notes the team faced tougher opponents that year, suggesting the routine had a real, specific effect that a simple win-loss count wouldn't fully capture.",
+            "correctAnswer": "Employees with already-strong performance may have been more likely to sign up, making it unclear how much the workshop itself contributed.",
+            "hint": "Notice the detail about workshop sign-ups and prior performance history.",
+            "explanation": "Since workshop attendees already had strong reviews the year before, the passage suggests these employees may have already been higher performers, making it unclear how much of the improvement is due to the workshop itself.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Workshop attendees: higher reviews the following year -> also had strong reviews the year before signing up -> prior performance may explain part of the pattern, not the workshop alone"
             ]
         },
         {
@@ -236,18 +236,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A city's public art commission that had always selected sculptures for a riverfront park through a closed panel of art experts began including an online public vote as thirty percent of the final selection score, with expert judges retaining the remaining seventy percent. The pieces ultimately selected under the new hybrid system attracted noticeably more foot traffic and social media attention than pieces selected purely by the expert panel in previous years, though several art critics complained the new selections favored crowd-pleasing over artistically ambitious work.",
+            "passage": "A study of home sales found that houses with solar panels sold for a higher average price than houses without them. Houses with solar panels in the study were also, on average, larger and located in newer developments.",
             "options": [
-                "The hybrid system increased public engagement with no complaints from critics.",
-                "The hybrid selection system appears to have increased public engagement, though possibly at some cost to artistic ambition.",
-                "Foot traffic and social media attention declined under the new system.",
-                "Art critics were uniformly pleased with the pieces selected under the new system."
+                "Size and neighborhood age may account for some of the price difference, in addition to the solar panels themselves.",
+                "Solar panels are definitely the only reason for the entire price difference. The passage gives no indication that this varied across the circumstances described.",
+                "Houses with solar panels were smaller than houses without them. The passage's account gives no reason to think this differed at any stage.",
+                "Home prices were identical regardless of solar panels. This would apply consistently across every detail the passage provides."
             ],
-            "correctAnswer": "The hybrid selection system appears to have increased public engagement, though possibly at some cost to artistic ambition.",
-            "hint": "Notice the passage mentions both a popular success and a critical concern about the new system.",
-            "explanation": "Public engagement rose under the hybrid system, but some critics felt the selections became less artistically ambitious, suggesting the change succeeded at broadening appeal while raising a real trade-off about artistic risk-taking.",
+            "correctAnswer": "Size and neighborhood age may account for some of the price difference, in addition to the solar panels themselves.",
+            "hint": "Notice the other differences mentioned between solar and non-solar homes.",
+            "explanation": "Because solar-panel homes were also larger and in newer developments, the passage suggests these factors, not the panels alone, likely contribute to at least part of the price difference.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Solar-panel homes: higher average sale price -> also larger, in newer developments -> size and neighborhood age may account for part of the price gap, not panels alone"
             ]
         },
         {
@@ -255,18 +255,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A consulting firm that tracked which junior employees were promoted to senior roles within five years found that junior employees who were assigned to at least one project outside their primary specialty during their first two years were promoted at meaningfully higher rates than junior employees who worked exclusively within their original specialty, even after the firm's analysts statistically accounted for differences in performance review scores between the two groups of employees.",
+            "passage": "A survey found that employees who worked at standing desks reported less afternoon fatigue than employees at traditional seated desks. Employees who requested standing desks also tended to report exercising regularly outside of work, according to a separate survey question.",
             "options": [
-                "Cross-specialty project experience early in a career seems linked to higher promotion rates beyond what performance scores alone explain.",
-                "Staying within one's original specialty led to higher promotion rates.",
-                "Performance review scores fully explained the difference in promotion rates.",
-                "Promotion rates were identical regardless of project assignment history."
+                "The standing desk is definitely the only cause of reduced fatigue. Such a pattern would remain constant throughout the scenario being described.",
+                "Employees who exercise regularly never request standing desks. No part of the passage's account suggests otherwise.",
+                "Regular exercise outside of work may partly explain the lower fatigue, rather than the standing desk alone.",
+                "Fatigue levels were identical regardless of desk type."
             ],
-            "correctAnswer": "Cross-specialty project experience early in a career seems linked to higher promotion rates beyond what performance scores alone explain.",
-            "hint": "Notice the passage mentions that performance scores were accounted for separately from the promotion pattern.",
-            "explanation": "Employees with cross-specialty project experience were promoted more often, even after accounting for performance scores, suggesting the broader experience itself, not just how well someone performed, played a role in advancement.",
+            "correctAnswer": "Regular exercise outside of work may partly explain the lower fatigue, rather than the standing desk alone.",
+            "hint": "Notice the detail about exercise habits among employees who requested standing desks.",
+            "explanation": "Since standing-desk employees also reported exercising more regularly, a habit independently linked to energy levels, the passage suggests exercise may partly explain the fatigue difference, not the desk alone.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Standing-desk employees: less afternoon fatigue -> also report exercising regularly outside work -> exercise habit may partly explain the fatigue difference, not the desk alone"
             ]
         },
         {
@@ -274,18 +274,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A team studying video call fatigue among remote workers found that participants who kept their own video feed hidden from their own view during calls, while still being visible to others, reported significantly less end-of-day tiredness than participants who could see their own live video feed throughout each call, even though both groups spent an identical number of hours in video meetings each day, based on daily fatigue surveys collected over a four-week period from several hundred participants.",
+            "passage": "A city found that neighborhoods with a higher density of coffee shops had lower average commute times to downtown. These neighborhoods also tend to be located closer to downtown overall, based on the city's zoning map.",
             "options": [
-                "Hiding one's own video feed increased end-of-day tiredness.",
-                "The number of meeting hours was the only factor affecting fatigue.",
-                "Seeing one's own video feed during calls appears to contribute to fatigue, separate from the number of hours spent in meetings.",
-                "Fatigue levels were identical regardless of whether participants saw their own feed."
+                "Coffee shops are definitely the direct cause of shorter commute times. The passage's account gives no reason to think this differed at any stage.",
+                "Proximity to downtown itself may explain both the coffee shop density and the shorter commutes, rather than one causing the other.",
+                "Neighborhoods far from downtown have the most coffee shops.",
+                "Commute times were the same regardless of coffee shop density."
             ],
-            "correctAnswer": "Seeing one's own video feed during calls appears to contribute to fatigue, separate from the number of hours spent in meetings.",
-            "hint": "Notice that meeting hours were equal between groups; only the self-view setting differed.",
-            "explanation": "Participants who hid their own video feed reported less fatigue than those who could see themselves, even with identical meeting hours, suggesting that watching oneself on camera, not just the meetings themselves, contributes to video call fatigue.",
+            "correctAnswer": "Proximity to downtown itself may explain both the coffee shop density and the shorter commutes, rather than one causing the other.",
+            "hint": "Notice the geographic detail about where these coffee-shop-dense neighborhoods are actually located.",
+            "explanation": "Since these neighborhoods are simply closer to downtown, that proximity likely explains both the higher coffee shop density and the shorter commutes, rather than one factor causing the other.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Neighborhoods with more coffee shops: shorter commutes -> those neighborhoods also closer to downtown -> proximity to downtown may explain both patterns rather than coffee shops causing shorter commutes"
             ]
         },
         {
@@ -293,18 +293,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A researcher studying adult siblings who had experienced their parents' divorce during childhood found that siblings who had been encouraged by at least one parent to maintain their own individual relationship with the other parent, rather than being asked to take sides, reported closer relationships with each other as adults than siblings who described feeling pressured to align with one parent over the other during the divorce process itself, based on interviews with adult sibling pairs from several dozen divorced families.",
+            "passage": "A research team found that patients who used a particular meditation app reported lower stress levels after eight weeks. Patients who chose to use the app were recruited through a stress-management clinic where they were already receiving other forms of counseling.",
             "options": [
-                "Feeling pressured to take sides led to closer adult sibling relationships.",
-                "How children were treated during a divorce had no bearing on adult sibling relationships.",
-                "Every sibling pair in the study reported identical relationship quality as adults.",
-                "Being allowed to maintain an independent relationship with each parent appears linked to closer adult sibling relationships."
+                "The meditation app is definitely the sole reason for the lower stress levels. The passage's account gives no reason to think this differed at any stage.",
+                "The counseling patients were already receiving may account for some of the reported improvement, not the app alone.",
+                "Patients using the app received no other treatment of any kind.",
+                "Stress levels were unchanged after eight weeks of app use."
             ],
-            "correctAnswer": "Being allowed to maintain an independent relationship with each parent appears linked to closer adult sibling relationships.",
-            "hint": "Compare the two groups of siblings based on how they were treated during their parents' divorce.",
-            "explanation": "Siblings who weren't pressured to take sides reported closer relationships with each other as adults, suggesting that being freed from divided loyalty during a difficult time may have protected their bond with each other.",
+            "correctAnswer": "The counseling patients were already receiving may account for some of the reported improvement, not the app alone.",
+            "hint": "Notice where the patients were recruited from and what else they were receiving at the same time.",
+            "explanation": "Because participants were already receiving counseling through the clinic, the passage suggests that ongoing treatment could account for part of the stress reduction, not the app in isolation.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "App users report lower stress after 8 weeks -> recruited through a clinic where they also receive counseling -> counseling may account for part of the improvement, not the app alone"
             ]
         },
         {
@@ -312,18 +312,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A physical therapy clinic that switched from scheduling all patients in fixed thirty-minute slots to a flexible scheduling system, where session length varied based on the complexity of each patient's treatment plan, found that patient-reported outcomes improved modestly overall, but therapists reported that the clinic's total daily patient capacity dropped by roughly fifteen percent, since more complex cases now occupied longer blocks of time than the old fixed schedule had allowed for any single patient.",
+            "passage": "A school district found that classrooms with newer computers had higher average test scores than classrooms with older computers. Schools that received the newer computers were selected based on having recently completed broader building renovations, including improved lighting and heating systems.",
             "options": [
-                "Flexible session lengths appear to have improved outcomes for patients while reducing how many patients the clinic could see each day.",
-                "Flexible scheduling improved outcomes without affecting how many patients could be seen.",
-                "Patient capacity increased under the flexible scheduling system.",
-                "Session length had no bearing on patient outcomes or clinic capacity."
+                "The broader renovations, not just the newer computers, may have contributed to the higher test scores.",
+                "The newer computers are definitely the sole reason for the higher scores. This would be expected to hold across the entire situation as described.",
+                "Schools with newer computers had no other renovations at all. Nothing described in the passage points to any exception to this pattern.",
+                "Test scores were the same regardless of computer age. The passage offers no detail suggesting this changed over the period discussed."
             ],
-            "correctAnswer": "Flexible session lengths appear to have improved outcomes for patients while reducing how many patients the clinic could see each day.",
-            "hint": "Notice the passage mentions a benefit for patients alongside a cost for the clinic's overall capacity.",
-            "explanation": "Patient outcomes improved modestly under flexible scheduling, but the clinic's daily capacity dropped because complex cases took longer, suggesting the more personalized approach came with a real trade-off in how many patients could be treated each day.",
+            "correctAnswer": "The broader renovations, not just the newer computers, may have contributed to the higher test scores.",
+            "hint": "Notice what other renovations happened at the same schools that got the newer computers.",
+            "explanation": "Since the schools with newer computers also underwent broader renovations like improved lighting and heating, the passage suggests these other improvements may have contributed to the higher scores as well.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Newer-computer classrooms: higher test scores -> those schools also had broader renovations -> renovations may have contributed alongside or instead of the computers alone"
             ]
         },
         {
@@ -331,18 +331,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A mattress retailer that had always offered only a thirty-day return window found that extending the window to one hundred days led to a modest increase in returns overall, but also led to a substantial increase in initial sales, since customer surveys showed the longer window meaningfully reduced the perceived risk of purchasing an expensive item that customers could not physically test for an extended period at home before deciding whether to keep it.",
+            "passage": "A gym chain found that members who attended group fitness classes had higher membership renewal rates than members who only used the gym's equipment individually. Members who attended group classes were also more likely to have joined the gym with a friend or family member.",
             "options": [
-                "The longer return window reduced both sales and returns.",
-                "Returns increased so much that overall sales declined.",
-                "The length of the return window had no bearing on either sales or returns.",
-                "The longer return window appears to have boosted sales more than it increased returns, likely by reducing perceived purchase risk."
+                "Group fitness classes are definitely the sole reason for higher renewal. Such a pattern would remain constant throughout the scenario being described.",
+                "Members who used equipment alone always joined with a friend. This would apply consistently across every detail the passage provides.",
+                "Joining with a friend or family member may partly explain the higher renewal rate, not group classes alone.",
+                "Renewal rates were the same for both groups of members."
             ],
-            "correctAnswer": "The longer return window appears to have boosted sales more than it increased returns, likely by reducing perceived purchase risk.",
-            "hint": "Notice the passage describes the return window's effect on two separate outcomes: sales and returns.",
-            "explanation": "Sales rose substantially while returns rose only modestly after the window was extended, suggesting that reducing customers' perceived risk in trying the mattress at home was worth more to sales than the small increase in returns cost the retailer.",
+            "correctAnswer": "Joining with a friend or family member may partly explain the higher renewal rate, not group classes alone.",
+            "hint": "Notice the detail about who these group-class members tended to join the gym with.",
+            "explanation": "Since group-class attendees were also more likely to have joined with someone else, a factor independently linked to sticking with a gym membership, the passage suggests this social element may partly explain the renewal difference.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Group-class members: higher renewal rate -> also more likely to have joined with a friend or family member -> social connection may partly explain the higher renewal, not classes alone"
             ]
         },
         {
@@ -350,18 +350,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "Marine biologists tracking a population of sea turtles that nest on a protected beach found that turtles fitted with small, lightweight satellite tags showed nesting success rates statistically indistinguishable from untagged turtles nesting on the same beach, addressing earlier concerns among some conservationists that the tagging process itself might interfere with a turtle's willingness or ability to nest successfully in subsequent seasons, a concern the research team specifically designed the multi-year study to investigate.",
+            "passage": "A financial firm found that clients who used its budgeting app saved more money on average than clients who did not use the app. Clients who chose to download the app had also, on average, expressed a stronger interest in saving money on an initial intake survey before ever using the app.",
             "options": [
-                "Tagged turtles showed significantly lower nesting success than untagged turtles.",
-                "Tagging improved nesting success compared to untagged turtles.",
-                "The study found no way to compare tagged and untagged turtles' nesting success.",
-                "The tagging process does not appear to interfere with turtles' nesting success."
+                "Clients' initial interest in saving money may explain part of the difference, not the app alone.",
+                "The budgeting app is definitely the sole reason for the greater savings.",
+                "Clients who did not use the app expressed the strongest interest in saving, as the passage presents the situation.",
+                "Savings amounts were identical regardless of app use."
             ],
-            "correctAnswer": "The tagging process does not appear to interfere with turtles' nesting success.",
-            "hint": "Compare nesting success rates between tagged and untagged turtles.",
-            "explanation": "Tagged and untagged turtles showed similar nesting success rates, addressing the concern that tagging might interfere with nesting, and suggesting the tags themselves were not harming the turtles' reproductive behavior.",
+            "correctAnswer": "Clients' initial interest in saving money may explain part of the difference, not the app alone.",
+            "hint": "Notice what the intake survey revealed about app users before they even started using it.",
+            "explanation": "Since app users already expressed stronger interest in saving before using the app, the passage suggests this pre-existing motivation could explain part of the savings gap, not the app alone.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "App users: save more on average -> those users showed stronger saving interest even before downloading -> prior motivation may explain part of the gap, not the app alone"
             ]
         },
         {
@@ -369,18 +369,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A budget airline that eliminated seat-back pockets from its aircraft, citing weight reduction and fuel savings, found that the change reduced average fuel costs per flight by a small but measurable amount, but customer complaint volume related to 'nowhere to put my phone or headphones' rose noticeably in the months following the change, eventually prompting the airline to install a simple elastic strap in place of the removed pockets on all affected aircraft.",
+            "passage": "A publisher found that books with a particular cover design style sold better than books with other cover styles. Books using that design style were also more frequently written by already well-known authors, based on the publisher's sales records.",
             "options": [
-                "Removing the pockets increased fuel costs and reduced complaints.",
-                "Passengers had no complaints related to the removal of seat-back pockets.",
-                "Removing the seat-back pockets saved fuel costs but created a new source of passenger frustration.",
-                "The airline reversed the change entirely and reinstalled the original pockets."
+                "Author recognition, not the cover design alone, may explain part of the sales difference.",
+                "The cover design style is definitely the sole reason for higher sales, as the passage lays out the sequence of events.",
+                "Books with that cover style were always written by unknown authors, based on the details the passage provides.",
+                "Sales were the same regardless of which cover design was used, given how the events unfolded."
             ],
-            "correctAnswer": "Removing the seat-back pockets saved fuel costs but created a new source of passenger frustration.",
-            "hint": "Notice the passage describes a benefit for the airline and a drawback for passengers.",
-            "explanation": "Fuel costs dropped after the pockets were removed, but passenger complaints rose, showing the change achieved its cost-saving goal while creating a real inconvenience that the airline eventually had to partially address.",
+            "correctAnswer": "Author recognition, not the cover design alone, may explain part of the sales difference.",
+            "hint": "Notice who tended to have books published with this particular design style.",
+            "explanation": "Since books with this cover style were also more often written by well-known authors, a factor independently linked to higher sales, the passage suggests author recognition may account for part of the difference.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Books with design style X: sell better -> those books more often written by well-known authors -> author recognition may explain part of the sales difference, not the cover alone"
             ]
         },
         {
@@ -388,18 +388,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A high school that switched its foreign language requirement from two years of a single language to allowing students to split their two required years between two different languages found that students who split their requirement reported enjoying the courses more, according to end-of-year surveys, but standardized proficiency test scores in either language were noticeably lower than scores among students who had completed two full years in a single language, based on results from the district's spring exam.",
+            "passage": "A city's health department found that residents in neighborhoods with more grocery stores selling fresh produce had lower rates of certain diet-related health conditions. Those same neighborhoods also had, on average, higher household incomes than neighborhoods with fewer grocery stores.",
             "options": [
-                "Splitting language study across two languages appears to increase enjoyment but reduce measurable proficiency in either one.",
-                "Splitting language study increased both enjoyment and proficiency scores.",
-                "Proficiency scores were identical regardless of how students split their language study.",
-                "Students who split their requirement reported enjoying the courses less."
+                "Grocery store access is definitely the sole reason for the health outcome difference, based on what the passage actually says.",
+                "Neighborhoods with more grocery stores had lower household incomes. Such a pattern would remain constant throughout the scenario being described.",
+                "Health outcomes were identical across all neighborhoods studied. This would be expected to hold across the entire situation as described.",
+                "Household income differences may partly explain the health outcome gap, not grocery store access alone."
             ],
-            "correctAnswer": "Splitting language study across two languages appears to increase enjoyment but reduce measurable proficiency in either one.",
-            "hint": "Notice the passage separates how much students enjoyed the courses from how well they performed on proficiency tests.",
-            "explanation": "Students who split their language requirement enjoyed it more but scored lower on proficiency tests than students who focused on one language, suggesting the trade-off was between enjoyment and measurable skill depth in either language.",
+            "correctAnswer": "Household income differences may partly explain the health outcome gap, not grocery store access alone.",
+            "hint": "Notice the additional demographic detail mentioned about these neighborhoods.",
+            "explanation": "Since neighborhoods with more grocery access also had higher incomes, a factor independently linked to health outcomes, the passage suggests income differences may account for part of the gap, not access to produce alone.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Neighborhoods with more fresh produce access: lower rates of diet-related conditions -> also higher household incomes -> income may partly explain the gap, not grocery access alone"
             ]
         },
         {
@@ -407,18 +407,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A regional orchestra that had always performed the same core repertoire of well-known classical works experimented with devoting one concert per season entirely to commissioned pieces by living composers. Attendance at the new-music concerts was consistently lower than attendance at traditional programming, but subscriber retention, the percentage of season ticket holders who renewed the following year, was highest among subscribers who had attended at least one new-music concert during the season, according to renewal records reviewed over three consecutive seasons.",
+            "passage": "A city's police department found that neighborhoods that participated in a citizen patrol program had lower burglary rates than neighborhoods without the program. Neighborhoods that chose to start the program were also, on average, neighborhoods where residents already reported strong existing social ties and frequent neighbor interaction.",
             "options": [
-                "New-music concerts drew larger audiences than traditional programming.",
-                "New-music concerts appear to draw smaller audiences but may strengthen loyalty among subscribers who attend them.",
-                "Subscriber retention was lowest among those who attended new-music concerts.",
-                "New-music concerts had no measurable effect on attendance or subscriber retention."
+                "The citizen patrol program is definitely the sole reason for the lower burglary rates.",
+                "Pre-existing social ties among neighbors may partly explain the lower burglary rates, not the patrol program alone.",
+                "Neighborhoods without the program had the strongest social ties.",
+                "Burglary rates were identical across all neighborhoods studied."
             ],
-            "correctAnswer": "New-music concerts appear to draw smaller audiences but may strengthen loyalty among subscribers who attend them.",
-            "hint": "Notice the passage separates attendance at a single concert from overall subscriber renewal behavior.",
-            "explanation": "New-music concerts drew smaller crowds, but subscribers who attended them renewed at the highest rates, suggesting that while these concerts aren't broadly popular, they may deepen commitment among the subscribers who do attend.",
+            "correctAnswer": "Pre-existing social ties among neighbors may partly explain the lower burglary rates, not the patrol program alone.",
+            "hint": "Notice what these program-participating neighborhoods already had in common before the program began.",
+            "explanation": "Since neighborhoods that started the program already had strong social ties, a factor independently linked to lower crime, the passage suggests those ties may account for part of the lower burglary rate, not the program alone.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Patrol-program neighborhoods: lower burglary rates -> those neighborhoods already had strong social ties before the program -> social ties may partly explain the lower rate, not the program alone"
             ]
         },
         {
@@ -426,18 +426,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A city that had always funded its public parks through general tax revenue considered switching a portion of park funding to a system of small user fees for specific amenities, such as reserving a picnic pavilion or sports field. Public feedback sessions revealed strong support for fees on reservable amenities used by a minority of residents, but strong opposition to any fee for basic access to trails, playgrounds, or open green space used regularly by the broader community.",
+            "passage": "A theater company found that plays performed with live orchestral music received higher audience ratings than plays performed with recorded music. Plays that used live music were also generally longer-running productions with bigger overall budgets.",
             "options": [
-                "Residents supported fees equally across all types of park amenities.",
-                "Residents opposed all forms of park fees without exception.",
-                "Public feedback showed no clear pattern in support for or against fees.",
-                "Residents appear to distinguish between amenities used by a few and basic access used by many when it comes to fees."
+                "Live orchestral music is definitely the sole reason for the higher ratings.",
+                "Bigger production budgets may partly explain the higher ratings, not the live music alone.",
+                "Plays with live music always had smaller budgets than others.",
+                "Audience ratings were identical regardless of music type."
             ],
-            "correctAnswer": "Residents appear to distinguish between amenities used by a few and basic access used by many when it comes to fees.",
-            "hint": "Notice the passage separates residents' views on reservable amenities from their views on basic open access.",
-            "explanation": "Residents supported fees for amenities like reservable pavilions but opposed fees for basic access like trails and playgrounds, suggesting a distinction in public opinion based on how exclusively an amenity is used versus how broadly it serves the community.",
+            "correctAnswer": "Bigger production budgets may partly explain the higher ratings, not the live music alone.",
+            "hint": "Notice the other production details mentioned about plays that used live music.",
+            "explanation": "Since plays with live music also tended to have bigger budgets and longer runs, factors that could independently improve production quality, the passage suggests these may account for part of the higher ratings.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Plays with live music: higher audience ratings -> also bigger budgets, longer runs -> production budget may partly explain the higher ratings, not live music alone"
             ]
         },
         {
@@ -445,18 +445,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A regional bank that began offering a round-up savings feature, automatically rounding up debit card purchases to the nearest dollar and depositing the difference into savings, found that customers using the feature saved modestly more per month on average than customers who did not use it, but a follow-up survey found that many round-up users had not noticed or adjusted their regular spending habits at all, crediting the small, painless increments for the extra savings rather than any deliberate budgeting effort.",
+            "passage": "A university found that students who studied in the campus library had higher average GPAs than students who studied primarily in their dorm rooms. Students who chose to study in the library were also, on average, students who had reported fewer work hours per week on a separate housing survey.",
             "options": [
-                "Customers using the feature made significant deliberate changes to their spending habits.",
-                "The round-up feature had no measurable effect on how much customers saved.",
-                "The round-up feature appears to increase savings through small, unnoticed increments rather than through deliberate budgeting changes.",
-                "Customers who did not use the feature saved more on average."
+                "Studying in the library is definitely the sole reason for the higher GPAs, based on the details the passage provides.",
+                "Students who studied in their dorms always worked fewer hours, given the specific information included in the passage.",
+                "GPAs were identical regardless of where students studied, according to how the passage describes the situation.",
+                "Fewer work hours may partly explain the higher GPAs, not studying location alone."
             ],
-            "correctAnswer": "The round-up feature appears to increase savings through small, unnoticed increments rather than through deliberate budgeting changes.",
-            "hint": "Notice what the follow-up survey revealed about how users perceived their own savings.",
-            "explanation": "Round-up users saved more without noticing changes in their spending, suggesting the extra savings came from small automatic increments rather than any conscious budgeting decision on the customer's part.",
+            "correctAnswer": "Fewer work hours may partly explain the higher GPAs, not studying location alone.",
+            "hint": "Notice the detail about work hours among students who preferred the library.",
+            "explanation": "Since library-studying students also worked fewer hours, a factor that could independently allow more time for studying, the passage suggests work hours may account for part of the GPA difference, not location alone.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Library-studying students: higher average GPA -> also report fewer work hours per week -> fewer work hours may partly explain the GPA gap, not study location alone"
             ]
         },
         {
@@ -464,18 +464,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A team analyzing usage of a home energy monitoring app found that households that received a single push notification per week, summarizing their energy use compared to the previous week, reduced consumption by a modest amount over six months, but households that received a daily notification with the same type of comparison actually reduced consumption less than the weekly-notification group, a result the team attributed to users eventually ignoring or muting notifications that arrived too frequently.",
+            "passage": "A regional airline found that flights departing before 8 a.m. had a higher on-time rate than flights departing later in the day. Early morning flights also generally face lighter air traffic at both departure and arrival airports, according to the airline's scheduling data.",
             "options": [
-                "Daily notifications were more effective than weekly ones at reducing consumption.",
-                "Weekly notifications appear to have been more effective than daily ones, possibly because daily alerts became easy to ignore.",
-                "Both notification frequencies produced identical reductions in consumption.",
-                "Notification frequency had no bearing on how much households reduced their energy use."
+                "The departure time alone is definitely unrelated to the higher on-time rate. This would remain the case regardless of any other detail in the passage.",
+                "Later flights always face lighter air traffic than early flights. This would be expected to hold across the entire situation as described.",
+                "On-time rates were identical regardless of departure time.",
+                "Lighter air traffic conditions likely play a role in the higher on-time rate, alongside the early departure time itself."
             ],
-            "correctAnswer": "Weekly notifications appear to have been more effective than daily ones, possibly because daily alerts became easy to ignore.",
-            "hint": "Compare the two notification frequencies, and consider the explanation the team offers for the difference.",
-            "explanation": "Weekly notifications led to greater reductions in energy use than daily ones, and the researchers suggest this happened because more frequent alerts became easy for users to tune out, reducing their overall impact over time.",
+            "correctAnswer": "Lighter air traffic conditions likely play a role in the higher on-time rate, alongside the early departure time itself.",
+            "hint": "Notice the additional detail about air traffic conditions specific to early flights.",
+            "explanation": "Since early flights specifically benefit from lighter air traffic, a factor closely tied to the timing itself, the passage supports both the departure time and the traffic conditions as related contributors, rather than ruling out the connection between them.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Early flights: higher on-time rate -> also face lighter air traffic at both ends -> traffic conditions and early timing appear related contributors to the on-time rate"
             ]
         },
         {
@@ -483,18 +483,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A youth swim league that switched from awarding medals to only the top three finishers in each race to awarding a personal-best ribbon to any swimmer who beat their own previous time, regardless of finishing place, found that overall participation in swim meets increased the following season, particularly among swimmers who had rarely finished in the top three under the old medal system and had previously skipped a number of optional meets earlier in their swimming careers.",
+            "passage": "A city's parks department found that trails with mile-marker signs had higher reported user satisfaction than trails without signs. Trails with mile markers were also generally the newer trails in the park system, built with wider paths and better drainage.",
             "options": [
-                "Rewarding personal improvement rather than only placement appears to have specifically boosted participation among swimmers who rarely medaled before.",
-                "Participation declined most among swimmers who rarely finished in the top three.",
-                "The change in awards had no measurable effect on meet participation.",
-                "Only the league's top swimmers increased their meet participation."
+                "Mile-marker signs are definitely the sole reason for the higher satisfaction, according to how the passage describes the situation.",
+                "Newer trail construction features, not just the mile markers, may contribute to the higher satisfaction.",
+                "Older trails in the system always had mile markers installed. This would apply consistently across every detail the passage provides.",
+                "Satisfaction ratings were identical regardless of trail age."
             ],
-            "correctAnswer": "Rewarding personal improvement rather than only placement appears to have specifically boosted participation among swimmers who rarely medaled before.",
-            "hint": "Notice which specific group of swimmers showed the biggest increase in participation.",
-            "explanation": "Participation rose most among swimmers who had rarely medaled before, suggesting that recognizing personal improvement, not just finishing place, gave a wider range of swimmers a reason to keep competing.",
+            "correctAnswer": "Newer trail construction features, not just the mile markers, may contribute to the higher satisfaction.",
+            "hint": "Notice the other construction differences mentioned about trails with mile markers.",
+            "explanation": "Since trails with mile markers were also newer, with wider paths and better drainage, the passage suggests these construction improvements may contribute to satisfaction alongside or instead of the markers alone.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Trails with mile markers: higher satisfaction -> also newer, wider, better drainage -> construction features may contribute alongside the markers, not markers alone"
             ]
         },
         {
@@ -502,18 +502,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A large coffee chain that tested replacing single-use plastic straws with paper straws at half of its locations, while keeping plastic straws at the other half as a comparison group, found that customer complaints about straws rose noticeably at paper-straw locations, primarily related to the straws becoming soggy in cold drinks, but a customer survey found that a majority of respondents still said they supported the switch for environmental reasons despite the practical complaints they had raised.",
+            "passage": "A software company found that customers who contacted support through live chat resolved their issues faster on average than customers who used email support. Customers who chose live chat also tended to have simpler, more common issues, based on a review of ticket categories.",
             "options": [
-                "Customers appear to have accepted the paper straws' practical downsides because they valued the environmental trade-off.",
-                "Customers rejected the environmental reasoning behind the switch to paper straws.",
-                "Complaints about straws decreased at the paper-straw locations.",
-                "Customer opinions were identical regarding both types of straws."
+                "Live chat is definitely the sole reason for faster issue resolution.",
+                "Customers using live chat always had the most complex issues.",
+                "Resolution times were identical between chat and email support.",
+                "The simplicity of the issues themselves may partly explain the faster resolution, not the chat format alone."
             ],
-            "correctAnswer": "Customers appear to have accepted the paper straws' practical downsides because they valued the environmental trade-off.",
-            "hint": "Notice the passage separates practical complaints from customers' broader opinion about the switch.",
-            "explanation": "Complaints about paper straws rose, yet most customers still said they supported the switch for environmental reasons, suggesting people were willing to tolerate a practical downside in service of a goal they valued more.",
+            "correctAnswer": "The simplicity of the issues themselves may partly explain the faster resolution, not the chat format alone.",
+            "hint": "Notice the detail about the types of issues that tended to come through live chat.",
+            "explanation": "Since live chat users tended to have simpler, more common issues, which are naturally faster to resolve, the passage suggests issue complexity may explain part of the speed difference, not the chat format alone.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Live chat customers: faster resolution -> also tend to have simpler, more common issues -> issue simplicity may partly explain the speed, not chat format alone"
             ]
         },
         {
@@ -521,18 +521,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A large hospital network that surveyed nurses about scheduling preferences before implementing self-scheduling software, which allowed nurses to select and trade shifts among themselves within certain guardrails rather than having a manager build the schedule manually, found that nurse-reported job satisfaction increased significantly in the first year, though the network's scheduling administrators reported that a small number of less popular overnight and holiday shifts became noticeably harder to fill without direct managerial assignment.",
+            "passage": "A national bank found that customers who opened accounts through its mobile app had higher average account balances than customers who opened accounts in person at a branch. Customers who used the mobile app also skewed younger and were more likely to be enrolled in direct deposit through an employer.",
             "options": [
-                "Self-scheduling appears to have improved nurse satisfaction while creating a new challenge in filling unpopular shifts.",
-                "Self-scheduling improved satisfaction with no new challenges for administrators.",
-                "Nurse satisfaction declined after self-scheduling was introduced.",
-                "Filling unpopular shifts became easier under the new self-scheduling system."
+                "Opening an account through the app is definitely the sole reason for higher balances. This would apply consistently across every detail the passage provides.",
+                "Branch customers were more likely to be enrolled in direct deposit.",
+                "Account balances were identical regardless of how the account was opened. The passage's account gives no reason to think this differed at any stage.",
+                "Age and direct deposit enrollment may both contribute to the balance difference, not the account-opening method alone."
             ],
-            "correctAnswer": "Self-scheduling appears to have improved nurse satisfaction while creating a new challenge in filling unpopular shifts.",
-            "hint": "Notice the passage mentions a benefit for nurses alongside a new difficulty for administrators.",
-            "explanation": "Nurse satisfaction rose under self-scheduling, but unpopular shifts became harder to fill without direct assignment, suggesting the added autonomy came with a real administrative trade-off around covering less desirable shifts.",
+            "correctAnswer": "Age and direct deposit enrollment may both contribute to the balance difference, not the account-opening method alone.",
+            "hint": "Notice the two additional characteristics mentioned about mobile app customers.",
+            "explanation": "Since mobile app customers also skewed younger and were more often enrolled in direct deposit, both factors that could independently affect account balances, the passage suggests these may contribute alongside the account-opening method.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Mobile app customers: higher average balances -> also younger, more likely on direct deposit -> age and direct deposit may contribute to the balance gap, not the app alone"
             ]
         },
         {
@@ -540,18 +540,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A coastal city comparing two seawall designs to protect against rising tides, a traditional solid concrete wall and a newer design incorporating gaps that allow limited water flow while still blocking major surges, found that the gapped design better preserved nearby tidal marsh ecosystems over a five-year monitoring period, though engineers noted the gapped design required more frequent inspection and maintenance than the simpler solid concrete wall, according to a joint report from the city's engineering and environmental departments.",
+            "passage": "A hospital found that patients discharged with a follow-up appointment already scheduled had lower readmission rates than patients discharged without one. Patients who received a pre-scheduled appointment were also, on average, patients treated by physicians who had more years of experience at that hospital.",
             "options": [
-                "The gapped seawall design appears to better protect ecosystems at the cost of requiring more upkeep.",
-                "The solid concrete wall better preserved the tidal marsh ecosystems.",
-                "The gapped design required less maintenance than the solid wall.",
-                "Neither seawall design had any measurable effect on the marsh ecosystems."
+                "The pre-scheduled appointment is definitely the sole reason for lower readmissions.",
+                "Patients without pre-scheduled appointments were treated by the most experienced physicians.",
+                "Physician experience may partly explain the lower readmission rates, not the pre-scheduled appointment alone.",
+                "Readmission rates were identical regardless of appointment scheduling."
             ],
-            "correctAnswer": "The gapped seawall design appears to better protect ecosystems at the cost of requiring more upkeep.",
-            "hint": "Notice the passage mentions an ecological benefit alongside a maintenance cost for the newer design.",
-            "explanation": "The gapped seawall preserved marsh ecosystems better than the solid wall but required more frequent maintenance, suggesting the ecological benefit came with a real ongoing cost in upkeep that engineers had to weigh against the environmental gain.",
+            "correctAnswer": "Physician experience may partly explain the lower readmission rates, not the pre-scheduled appointment alone.",
+            "hint": "Notice the detail about which physicians tended to schedule follow-up appointments before discharge.",
+            "explanation": "Since patients with pre-scheduled appointments were also treated by more experienced physicians, a factor that could independently affect readmission rates, the passage suggests experience may account for part of the difference.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Patients with pre-scheduled follow-ups: lower readmission rates -> also treated by more experienced physicians -> physician experience may partly explain the difference, not scheduling alone"
             ]
         },
         {
@@ -559,18 +559,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "Since the Alvarado family began holding a fifteen-minute Sunday evening meeting to review the coming week's schedule together, listing who needed to be where and when each day, they say they have missed far fewer appointments and after-school activities than in previous years, though the two teenagers in the family initially complained that the meeting felt unnecessary until a series of nearly missed conflicts convinced them of its value about halfway through the first semester.",
+            "passage": "A city's transportation office found that commuters who used carpool lanes reported shorter commute times than commuters who did not. Commuters who used carpool lanes were also required to have at least one passenger, meaning they had already coordinated their schedules with a co-worker or neighbor before leaving.",
             "options": [
-                "The teenagers remained opposed to the meeting throughout the entire year.",
-                "The weekly planning meeting appears to have reduced missed commitments, and even skeptical family members came to see its value over time.",
-                "The family has missed more appointments since starting the weekly meeting.",
-                "The meeting had no measurable effect on the family's scheduling conflicts."
+                "The carpool lane is definitely unrelated to the shorter commute times reported.",
+                "Commuters without passengers were required to use the carpool lane.",
+                "Commute times were identical regardless of lane choice.",
+                "The requirement to coordinate schedules with a passenger may relate to who chooses carpool lanes, alongside the lane's time-saving effect."
             ],
-            "correctAnswer": "The weekly planning meeting appears to have reduced missed commitments, and even skeptical family members came to see its value over time.",
-            "hint": "Notice the passage describes both an outcome (fewer missed events) and a change in attitude over time.",
-            "explanation": "Missed appointments dropped after the family started their weekly planning meeting, and even the initially skeptical teenagers came around once they saw it prevent real conflicts, suggesting the practice proved its value through results rather than immediate buy-in.",
+            "correctAnswer": "The requirement to coordinate schedules with a passenger may relate to who chooses carpool lanes, alongside the lane's time-saving effect.",
+            "hint": "Notice the requirement mentioned for using the carpool lane and what that implies about these commuters' planning.",
+            "explanation": "Since carpool lane use requires having a passenger and pre-coordinated schedules, the passage suggests this planning, together with the lane's typical traffic advantage, is consistent with the shorter reported commute times rather than ruling out a connection.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Carpool lane users: shorter commute times -> lane requires a coordinated passenger -> coordination and lane access both appear consistent with the shorter commute times"
             ]
         }
     ]

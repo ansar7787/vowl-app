@@ -8,20 +8,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[A Recipe Written Down] Even though the recipe has been in the family for three generations, Tia writes it down for the first time and hands copies to each of her cousins at the wedding.",
-            "question": "What can be inferred about Tia's reason for writing down the recipe?",
+            "passage": "[Two Reviews] Reviewer A: \"The film runs two hours, and it has some interesting moments.\" Reviewer B: \"Two hours? It felt like twenty minutes. Unforgettable moments from the first scene to the last.\"",
+            "question": "How do the two reviewers differ?",
             "options": [
-                "She dislikes the recipe and wants it forgotten.",
-                "She wants to keep the recipe secret from her cousins.",
-                "She wants to make sure the tradition continues for future generations.",
-                "She plans to sell the recipe to a company."
+                "Reviewer A hated the film.",
+                "Reviewer B did not finish the film.",
+                "Reviewer B is far more enthusiastic than Reviewer A.",
+                "They watched different films."
             ],
-            "correctAnswer": "She wants to make sure the tradition continues for future generations.",
-            "hint": "Think about why someone would finally write down and share something kept only in memory for generations.",
-            "explanation": "Writing it down for the first time and sharing it at a family event suggests Tia wants the tradition to be preserved and passed on.",
+            "correctAnswer": "Reviewer B is far more enthusiastic than Reviewer A.",
+            "hint": "Compare how each describes the same running time.",
+            "explanation": "Both mention two hours, but A says \"some interesting moments,\" while B says it felt like twenty minutes and calls the moments unforgettable. B's language is much warmer.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "some interesting moments",
+                "Unforgettable moments"
             ]
         },
         {
@@ -29,20 +29,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[Thinking It Over] The shopper adds the jacket to her cart, closes the browser, and returns three separate times over the next two days before finally completing the purchase.",
-            "question": "What can be inferred about the shopper's decision-making?",
+            "passage": "[Will Be Considered] \"Thank you for your feedback,\" the manager wrote. \"It will be considered.\" Two months later the process was unchanged, and nobody had heard anything further.",
+            "question": "What did \"It will be considered\" most likely mean?",
             "options": [
-                "She decided instantly without any hesitation.",
-                "She regretted the purchase immediately afterward.",
-                "She never actually bought the jacket.",
-                "She thought carefully before committing to the purchase."
+                "A request for more detailed feedback.",
+                "A promise to make the change next week.",
+                "An invitation to discuss the feedback in person.",
+                "A polite way of not promising any change."
             ],
-            "correctAnswer": "She thought carefully before committing to the purchase.",
-            "hint": "Think about what returning multiple times before buying suggests about how much thought went into the decision.",
-            "explanation": "Returning to the cart three times over two days before buying suggests the shopper carefully considered the purchase rather than deciding on impulse.",
+            "correctAnswer": "A polite way of not promising any change.",
+            "hint": "Compare the manager's words with what happened afterwards.",
+            "explanation": "The phrase does not commit to any action, and nothing followed. Events after the message show it was a polite reply, not a plan.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "will be considered",
+                "unchanged"
             ]
         },
         {
@@ -50,20 +50,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[Extra Legroom] The airline seats Mr. Novak next to the emergency exit without being asked, and the flight attendant mentions it offers a bit more legroom for tall passengers.",
-            "question": "What can be inferred about Mr. Novak?",
+            "passage": "[Thorough] \"Your presentation was... thorough,\" Mr. Bass said, glancing at his watch. \"Very thorough.\"",
+            "question": "What is Mr. Bass most likely implying?",
             "options": [
-                "He complained about having too much space.",
-                "He requested a middle seat specifically.",
-                "He is likely taller than an average passenger.",
-                "He is shorter than most passengers."
+                "The presentation began too late.",
+                "The presentation was probably the best he had seen.",
+                "The presentation was too long.",
+                "The presentation was full of errors."
             ],
-            "correctAnswer": "He is likely taller than an average passenger.",
-            "hint": "Think about why the extra legroom detail is mentioned specifically in relation to him.",
-            "explanation": "Highlighting the extra legroom for tall passengers, right after seating him there, suggests Mr. Novak is likely taller than average.",
+            "correctAnswer": "The presentation was too long.",
+            "hint": "Look at what he does while he speaks, and notice the pause.",
+            "explanation": "The pause, the repeated word \"thorough,\" and the glance at his watch show that the quality he is praising is also a complaint about length.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "thorough",
+                "glancing at his watch"
             ]
         },
         {
@@ -71,20 +71,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[Smiling Less] Ms. Anwar's therapist notices she smiles less during sessions lately and gently asks whether anything has changed at home or work recently.",
-            "question": "What can be inferred about the therapist's observation?",
+            "passage": "[The Lift] \"Do you want a lift?\" \"It's only ten minutes on foot.\" \"I know,\" said Kemal, holding the car door open. \"It's raining.\"",
+            "question": "What does Kemal's reply suggest?",
             "options": [
-                "She thinks Ms. Anwar has been smiling more than usual.",
-                "She believes nothing has changed for Ms. Anwar.",
-                "She noticed a change in Ms. Anwar's mood over time.",
-                "She has never met Ms. Anwar before this session."
+                "He does not know how far it is.",
+                "He wants to speak to her privately in the car, so he has invented the offer of a lift.",
+                "He would rather walk himself.",
+                "He thinks she should accept the ride because of the weather."
             ],
-            "correctAnswer": "She noticed a change in Ms. Anwar's mood over time.",
-            "hint": "Think about what noticing 'less' smiling, compared to before, suggests about a change over time.",
-            "explanation": "Noticing that Ms. Anwar smiles less than she used to suggests the therapist has observed a shift in her mood recently.",
+            "correctAnswer": "He thinks she should accept the ride because of the weather.",
+            "hint": "What does \"I know\" accept, and what does he add?",
+            "explanation": "He accepts her point about distance but adds a reason to ride. Holding the door open shows he means the offer.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "holding the car door open",
+                "It's raining"
             ]
         },
         {
@@ -92,20 +92,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[From Track Changes to 'Looks Good'] The intern's first draft comes back covered in track-changes, but by her fourth draft, her supervisor's only comment is 'looks good, send it.'",
-            "question": "What can be inferred about the intern's writing over time?",
+            "passage": "[Door Closed] \"I'm afraid Mr. Lund isn't available,\" the assistant said. \"He's in his office with the door closed, but I can take a message.\"",
+            "question": "What does the assistant imply?",
             "options": [
-                "It got worse with each draft.",
-                "It stayed exactly the same the whole time.",
-                "Her supervisor never actually read any of the drafts.",
-                "It improved significantly with practice."
+                "Mr. Lund does not want to be disturbed.",
+                "Mr. Lund has left the building.",
+                "Mr. Lund is looking forward to a visitor.",
+                "Mr. Lund has a new assistant."
             ],
-            "correctAnswer": "It improved significantly with practice.",
-            "hint": "Compare the amount of feedback on the first draft with the supervisor's comment on the fourth.",
-            "explanation": "Going from heavy corrections to a simple 'looks good' suggests the intern's writing improved considerably across the drafts.",
+            "correctAnswer": "Mr. Lund does not want to be disturbed.",
+            "hint": "What does a closed door usually communicate in an office?",
+            "explanation": "\"Isn't available\" plus the closed door indicates Mr. Lund is present but not to be interrupted. The offer to take a message shows the visitor should not knock.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "isn't available",
+                "door closed"
             ]
         },
         {
@@ -113,20 +113,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[A Full Study Room] Two weeks before finals, the study room that used to be empty every evening is now full of students by six o'clock.",
-            "question": "What can be inferred about the students' behavior before finals?",
+            "passage": "[Acquired Taste] \"The soup is... an acquired taste,\" Grandpa said, moving the bowl an inch further away.",
+            "question": "What does Grandpa probably think of the soup?",
             "options": [
-                "Fewer students are studying than before.",
-                "Students stopped using the room entirely.",
-                "The study room has been closed for renovations.",
-                "More of them are choosing to study in the evenings now."
+                "He is saving it for later.",
+                "He finds it too hot to eat.",
+                "He wants to try it again soon.",
+                "He does not enjoy it."
             ],
-            "correctAnswer": "More of them are choosing to study in the evenings now.",
-            "hint": "Compare how full the room used to be with how full it is now, and think about the timing.",
-            "explanation": "A once-empty study room filling up two weeks before finals suggests more students are dedicating evenings to studying as the exams approach.",
+            "correctAnswer": "He does not enjoy it.",
+            "hint": "Compare the phrase with the small movement of the bowl.",
+            "explanation": "\"An acquired taste\" is a gentle way of saying something is hard to like, and pushing the bowl away confirms it.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "an acquired taste",
+                "moving the bowl"
             ]
         },
         {
@@ -134,20 +134,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[Removing a Dish] The chef removes the fish dish from the menu after three customers in one week ask for it well-done rather than the traditional preparation.",
-            "question": "What can be inferred about the chef's decision?",
+            "passage": "[Free Week] The gym offered a free week. Sadiq signed up, went twice, and used the towel service each time. On day eight a message arrived: \"Your card has been charged $49.\"",
+            "question": "What does the charge on day eight most likely mean?",
             "options": [
-                "The traditional preparation was not matching customer expectations.",
-                "Every customer loved the traditional preparation.",
-                "The chef ran out of fish permanently.",
-                "The dish was too popular to keep making."
+                "The free trial ended and turned into a paid membership.",
+                "He upgraded on purpose.",
+                "The gym charged him for the towels only.",
+                "The gym charged him for two extra visits and the towel service without telling him."
             ],
-            "correctAnswer": "The traditional preparation was not matching customer expectations.",
-            "hint": "Think about why repeated requests to change how a dish is cooked might lead a chef to remove it instead.",
-            "explanation": "Repeated requests to change the preparation suggest the traditional style was not matching what several customers wanted, leading the chef to remove it.",
+            "correctAnswer": "The free trial ended and turned into a paid membership.",
+            "hint": "When did the charge appear compared with the free period?",
+            "explanation": "The message arrived on day eight, right after the free week. That timing suggests the trial converted automatically into a paid plan.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "free week",
+                "day eight"
             ]
         },
         {
@@ -155,20 +155,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[Still Talking About the Ending] The independent film wins no major awards, but three different critics write follow-up articles months later, still discussing its ending.",
-            "question": "What can be inferred about the film's impact?",
+            "passage": "[Cold Snap] Because the tenant never reported the cracked window, the landlord could not repair it. When the cold weather arrived, the room became so chilly that the tenant moved his bed into the kitchen.",
+            "question": "What is the most likely reason the room became cold?",
             "options": [
-                "It left a lasting impression despite not winning awards.",
-                "It was completely forgotten right after release.",
-                "It was widely regarded as a failure.",
-                "Critics refused to discuss it at all."
+                "The unrepaired window was letting cold air into the room.",
+                "The tenant wanted to be closer to the fridge.",
+                "The heating had been turned off by the landlord.",
+                "The kitchen was recently repainted."
             ],
-            "correctAnswer": "It left a lasting impression despite not winning awards.",
-            "hint": "Think about what critics still writing about it months later suggests, even without award wins.",
-            "explanation": "Critics still discussing the film's ending months later suggests it made a lasting impression, even without winning major awards.",
+            "correctAnswer": "The unrepaired window was letting cold air into the room.",
+            "hint": "Which problem was mentioned first, and which change followed it?",
+            "explanation": "An unreported cracked window, then cold weather, then a move to a warmer room form a chain. The window is the likely reason the room is cold.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "cracked window",
+                "moved his bed into the kitchen"
             ]
         },
         {
@@ -176,20 +176,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[Moving to a Bigger Field] The town's annual festival moves to a bigger field this year after last year's location ran out of parking spaces by early afternoon.",
-            "question": "What can be inferred about last year's festival attendance?",
+            "passage": "[Parking Charges] Since the town began charging for parking, High Street shops have handed out discount stickers. On Saturday the street market had only half its usual stalls.",
+            "question": "What is a reasonable inference?",
             "options": [
-                "It was larger than the original location could comfortably handle.",
-                "The festival was cancelled last year.",
-                "No one attended the festival last year.",
-                "It was smaller than expected."
+                "The market is closing permanently.",
+                "The charges may be discouraging visitors and traders.",
+                "The shops are making more money than before.",
+                "The town has banned cars altogether."
             ],
-            "correctAnswer": "It was larger than the original location could comfortably handle.",
-            "hint": "Think about what running out of parking by early afternoon suggests about how many people came.",
-            "explanation": "Running out of parking early, followed by a move to a bigger field, suggests last year's turnout exceeded what the original location could handle.",
+            "correctAnswer": "The charges may be discouraging visitors and traders.",
+            "hint": "Why would shops offer stickers, and what is happening to the market?",
+            "explanation": "Discount stickers suggest shops are trying to keep customers after the charge, and fewer stalls suggest fewer people are willing to come. This supports a link, though it is not certain.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "charging for parking",
+                "half its usual stalls"
             ]
         },
         {
@@ -197,20 +197,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[Steps in Large Letters] The grandmother asks her grandson to write down the steps for video-calling in large letters, then tapes the paper next to the tablet.",
-            "question": "What can be inferred about the grandmother?",
+            "passage": "[Progress Report] Mr. Kovač's report described the team's three successes in detail. Of everything else, it said only, \"Other tasks continue.\"",
+            "question": "What might the report's silence about the other tasks be hiding?",
             "options": [
-                "She plans to give the tablet away.",
-                "She wants to be able to make video calls on her own in the future.",
-                "She has no interest in ever using the tablet.",
-                "She already knows every step by heart."
+                "The team has no other tasks.",
+                "Some tasks may not have gone well, and he is avoiding detail.",
+                "The report was written in a hurry.",
+                "The team has completed its main tasks and the writer wants to move on to the next project quickly."
             ],
-            "correctAnswer": "She wants to be able to make video calls on her own in the future.",
-            "hint": "Think about why someone would want written steps taped somewhere they can see them repeatedly.",
-            "explanation": "Asking for written steps kept nearby suggests the grandmother wants to be able to make the calls herself going forward.",
+            "correctAnswer": "Some tasks may not have gone well, and he is avoiding detail.",
+            "hint": "Compare how much space the successes get with what the rest receives.",
+            "explanation": "Great detail on the successes and a vague phrase for everything else suggest the writer is not eager to explain the rest.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "three successes in detail",
+                "Other tasks continue"
             ]
         },
         {
@@ -218,20 +218,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[Recycled Wrapping] Every gift under the tree this year is wrapped in the same recycled paper, and the tags are made from cut-up cereal boxes instead of store-bought labels.",
-            "question": "What can be inferred about the family's approach to gift-giving this year?",
+            "passage": "[No Number] When she asked about the salary, the recruiter talked about the free lunches, the gym discount, and the friendly team. She never gave a figure.",
+            "question": "What does the recruiter's choice of topics suggest?",
             "options": [
-                "They received the gifts from a store already wrapped.",
-                "They are trying to reduce waste and reuse materials.",
-                "They forgot to buy wrapping paper this year.",
-                "They dislike giving gifts to each other."
+                "The salary may not be a strong selling point.",
+                "The job has no salary.",
+                "The salary is unusually high.",
+                "The recruiter does not know the company."
             ],
-            "correctAnswer": "They are trying to reduce waste and reuse materials.",
-            "hint": "Think about what reused materials for wrapping and tags suggest about their values this year.",
-            "explanation": "Using recycled paper and cereal-box tags instead of store-bought materials suggests the family is intentionally trying to reduce waste.",
+            "correctAnswer": "The salary may not be a strong selling point.",
+            "hint": "What does the recruiter talk about instead of the number?",
+            "explanation": "Talking about perks rather than pay suggests the pay is not what would attract her.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "asked about the salary",
+                "never gave a figure"
             ]
         },
         {
@@ -239,20 +239,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[A Well-Chosen Sample] The store clerk hands the customer a sample of the new cheese before he even asks, mentioning that it pairs well with the wine already in his basket.",
-            "question": "What can be inferred about the clerk?",
+            "passage": "[Best Quality] Asked what she liked most about her manager, Talia said, \"He's very punctual.\" After a pause, she added, \"And he always replies to emails.\"",
+            "question": "What does Talia's hesitation suggest about her view of her manager?",
             "options": [
-                "She is trying to prevent him from buying wine.",
-                "She offers samples to no one in the store.",
-                "She is unaware of what he put in his basket.",
-                "She paid attention to what he had already selected."
+                "She dislikes emails.",
+                "She wants a different job.",
+                "She struggles to find much to praise.",
+                "She admires him greatly."
             ],
-            "correctAnswer": "She paid attention to what he had already selected.",
-            "hint": "Think about how the clerk knew to connect the cheese sample to something specific in his basket.",
-            "explanation": "Connecting the cheese sample to the wine already in his basket shows the clerk noticed his selections and tailored her suggestion.",
+            "correctAnswer": "She struggles to find much to praise.",
+            "hint": "Notice what she chooses to mention and how she pauses.",
+            "explanation": "The qualities she names are minor, and the pause shows she searched for something to say. This suggests limited enthusiasm.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "very punctual",
+                "After a pause"
             ]
         },
         {
@@ -260,20 +260,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[Lingering After the Meeting] After the presentation, three senior partners linger in the room asking Amara follow-up questions, while everyone else has already filed out to lunch.",
-            "question": "What can be inferred about the senior partners' interest in Amara's presentation?",
+            "passage": "[Two Bakers] Baker A's loaves are cheaper but are all gone by evening. Baker B's loaves cost more, and there are always some left at closing time.",
+            "question": "What does Baker A's early sell-out suggest?",
             "options": [
-                "They found it completely uninteresting.",
-                "They had already heard the same information before.",
-                "They wanted to leave as quickly as possible.",
-                "It captured their attention more than a typical presentation."
+                "Baker A makes fewer loaves.",
+                "Baker B's bread is much tastier.",
+                "Customers do not care about price.",
+                "Baker A's loaves sell faster than Baker B's."
             ],
-            "correctAnswer": "It captured their attention more than a typical presentation.",
-            "hint": "Think about what staying behind to ask more questions, while others leave, suggests about their engagement.",
-            "explanation": "Senior partners staying behind with follow-up questions, while others leave for lunch, suggests Amara's presentation stood out to them.",
+            "correctAnswer": "Baker A's loaves sell faster than Baker B's.",
+            "hint": "What does selling out early say about demand?",
+            "explanation": "Baker A's bread is all gone by evening, while Baker B always has loaves left at closing. That shows A's loaves sell faster. The passage does not say why, so price is only one possible reason.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "cheaper",
+                "always some left"
             ]
         },
         {
@@ -281,20 +281,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[Weekend Visitor Log] The hiking trail's visitor log shows dozens of names each weekend, but on weekdays, sometimes an entire week passes with only two or three entries.",
-            "question": "What can be inferred about the trail's popularity?",
+            "passage": "[Faster Train] The new express is twelve minutes faster than the old train. But it stops only at the city centre, and Amit's office is at the far end of the suburb.",
+            "question": "Why might Amit still prefer the old train?",
             "options": [
-                "No one visits the trail at any time.",
-                "It receives the same number of visitors every day.",
-                "It is more popular on weekdays than weekends.",
-                "It is far more popular on weekends than on weekdays."
+                "The old train is cheaper, and the express is often cancelled in the evening.",
+                "The express may not save him time overall.",
+                "The express is more expensive.",
+                "The old train is faster."
             ],
-            "correctAnswer": "It is far more popular on weekends than on weekdays.",
-            "hint": "Compare the number of entries on weekends with the number during the week.",
-            "explanation": "Dozens of weekend entries compared to just a few during the week suggest the trail is much more popular on weekends.",
+            "correctAnswer": "The express may not save him time overall.",
+            "hint": "Think about the whole journey, not only the train time.",
+            "explanation": "The express saves time on the train, but if Amit's office is far from the city centre he may lose that time getting there.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "only at the city centre",
+                "far end of the suburb"
             ]
         },
         {
@@ -302,20 +302,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[A Glass of Water Before Meals] Since Mr. Petrov started drinking a full glass of water before every meal, his doctor notes that his usual afternoon headaches have not come up in his last two visits.",
-            "question": "What can be inferred about the connection between the new habit and his headaches?",
+            "passage": "[Ten Years On] Ten years ago, the village had a bakery, a bank, a pharmacy, and a post office. Now there is only the pharmacy, and the noticeboard advertises a mobile post service on Thursdays.",
+            "question": "What has happened to the village over ten years?",
             "options": [
-                "The new habit made his headaches worse.",
-                "His headaches never actually improved.",
-                "The two things are completely unrelated.",
-                "The new habit may have helped reduce his headaches."
+                "It has grown much larger.",
+                "It has moved to a new site.",
+                "It has lost many of its services.",
+                "The pharmacy has closed."
             ],
-            "correctAnswer": "The new habit may have helped reduce his headaches.",
-            "hint": "Think about what the doctor noticing this change, right after the new habit started, suggests.",
-            "explanation": "Headaches no longer coming up at his last two visits, after he started the new habit, suggests it may have helped reduce them.",
+            "correctAnswer": "It has lost many of its services.",
+            "hint": "Compare the two lists.",
+            "explanation": "Four services became one, and a mobile post service replaced a post office. The village has fewer services now.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "a bakery, a bank",
+                "mobile post service"
             ]
         },
         {
@@ -323,20 +323,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[Names from a Hat] The teacher assigns partners for the science project by drawing names from a hat instead of letting students choose, explaining only that 'it worked better last year.'",
-            "question": "What can be inferred about how students chose partners in previous years?",
+            "passage": "[Blue Paper] The letter to \"Mrs. E. Turner\" is written in ink on thin blue paper. Inside, a shopkeeper asks her to collect the telegram waiting at the post office.",
+            "question": "When was the letter probably written?",
             "options": [
-                "Letting students choose their own partners caused some problem.",
-                "Students were always assigned partners randomly before.",
-                "Every student was thrilled with their partner every year.",
-                "The teacher has never assigned a group project before."
+                "Last week.",
+                "Yesterday.",
+                "At about the time when the first emails were being sent between companies.",
+                "Long before mobile phones and email."
             ],
-            "correctAnswer": "Letting students choose their own partners caused some problem.",
-            "hint": "Think about what 'it worked better last year' implies about how the earlier method compared.",
-            "explanation": "Saying the new method 'worked better last year' suggests letting students pick their own partners had caused some kind of issue previously.",
+            "correctAnswer": "Long before mobile phones and email.",
+            "hint": "What technology does the letter mention?",
+            "explanation": "Telegrams, ink, and letters are signs of an earlier period, before instant electronic messaging.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "telegram",
+                "ink"
             ]
         },
         {
@@ -344,20 +344,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[Extra Matinees] The theater keeps adding extra matinee showings of the play, and the box office reports that most of them sell out within a day of being announced.",
-            "question": "What can be inferred about the demand for the play?",
+            "passage": "[Ten Minutes] \"Attention shoppers: the store will close in ten minutes. Please bring your final purchases to the registers. Fresh bread is now half price.\"",
+            "question": "Why is the fresh bread half price?",
             "options": [
-                "The play has stopped attracting audiences.",
-                "It is lower than the theater expected.",
-                "It exceeds what the original schedule could accommodate.",
-                "Tickets remain available for weeks after each showing."
+                "It is a special holiday.",
+                "The store wants to sell it before closing.",
+                "The store is opening a bakery.",
+                "The bread is poor quality."
             ],
-            "correctAnswer": "It exceeds what the original schedule could accommodate.",
-            "hint": "Think about what needing extra showings, which then sell out quickly, suggests about demand.",
-            "explanation": "Extra showings that sell out within a day suggest audience demand is higher than the theater's original schedule could handle.",
+            "correctAnswer": "The store wants to sell it before closing.",
+            "hint": "Link the price reduction to the time announced.",
+            "explanation": "The reduction comes with a closing announcement. Bread that will not keep is discounted to clear it before the day ends.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "close in ten minutes",
+                "half price"
             ]
         },
         {
@@ -365,20 +365,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[A Surprise for Everyone] Dad quietly pays off the layaway item at the store without telling anyone, then acts surprised along with everyone else when it is opened on the holiday.",
-            "question": "What can be inferred about Dad's behavior?",
+            "passage": "[Before Noon] Woke at six to the smell of pine. Packed a sleeping bag, stove, and two litres of water. The forecast for the summit is clear until noon, so we will start at once.",
+            "question": "What is the writer's plan?",
             "options": [
-                "He wants everyone to know it was his idea.",
-                "He forgot that he paid for the item.",
-                "He wants the gift to feel like a surprise, even for himself.",
-                "He genuinely does not know what the gift is."
+                "To wait until noon and then decide whether the weather is good enough to climb.",
+                "To stay in the camp all day.",
+                "To reach the summit before the weather changes.",
+                "To go back home at noon."
             ],
-            "correctAnswer": "He wants the gift to feel like a surprise, even for himself.",
-            "hint": "Think about why someone would hide their own involvement in a gift they already paid for.",
-            "explanation": "Pretending to be surprised, despite having paid for the gift himself, shows Dad wants to preserve the fun of the surprise for everyone, including himself.",
+            "correctAnswer": "To reach the summit before the weather changes.",
+            "hint": "Which time does the writer mention, and why does it matter?",
+            "explanation": "Clear weather only until noon and a decision to start at once suggest they want to finish the climb in good conditions.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "clear until noon",
+                "start at once"
             ]
         },
         {
@@ -386,20 +386,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[Motion-Sensor Lights] The neighborhood watch group adds motion-sensor lights to three streets after a string of package thefts reported over the winter.",
-            "question": "What can be inferred about the motion-sensor lights?",
+            "passage": "[The Workshop] Shelves are labelled by size, tools hang inside painted outlines, and the sawdust has been swept into a tidy pile. On the bench, a half-finished chair is clamped in place.",
+            "question": "What kind of person works in this workshop?",
             "options": [
-                "They were installed to save on the electric bill.",
-                "They are meant to attract more visitors to the area.",
-                "They are intended to help prevent further thefts.",
-                "They were added purely for decoration."
+                "They rarely use the tools.",
+                "They are orderly and in the middle of a project.",
+                "They only use the workshop occasionally and have left the chair unfinished for years.",
+                "They are probably a beginner."
             ],
-            "correctAnswer": "They are intended to help prevent further thefts.",
-            "hint": "Think about the connection between the recent thefts and the type of lights chosen.",
-            "explanation": "Installing motion-sensor lights right after a string of thefts suggests the group hopes the lights will help deter further incidents.",
+            "correctAnswer": "They are orderly and in the middle of a project.",
+            "hint": "Look at both the state of the room and the object on the bench.",
+            "explanation": "Labelled shelves and outlined tools show order, and the clamped chair shows work in progress. The tidy pile suggests regular cleaning.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "labelled by size",
+                "half-finished chair"
             ]
         },
         {
@@ -407,20 +407,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[Crashes After an Update] The app's crash reports spike right after the newest phone model is released, though the app works fine on every older device tested.",
-            "question": "What can be inferred about the app's issue?",
+            "passage": "[Frozen Bottle] Inside the tent, Lin can see her breath. Her boots are stiff, and there is ice on the surface of her water bottle.",
+            "question": "What were conditions like overnight?",
             "options": [
-                "It has never worked on any device.",
-                "It works better on the newest phone than older ones.",
-                "The crashes are unrelated to any specific device.",
-                "It may not be fully compatible with the newest phone model yet."
+                "It was below freezing overnight.",
+                "The bottle was leaking.",
+                "The tent was being heated.",
+                "It was probably a warm night."
             ],
-            "correctAnswer": "It may not be fully compatible with the newest phone model yet.",
-            "hint": "Compare how the app performs on older devices with how it performs right after the new phone's release.",
-            "explanation": "Crashes spiking specifically after the new model's release, while older devices work fine, suggest a compatibility issue with the newest phone.",
+            "correctAnswer": "It was below freezing overnight.",
+            "hint": "What must be true for water to turn to ice indoors?",
+            "explanation": "Breath visible, stiff boots, and ice in a bottle all point to freezing temperatures outside and inside the tent.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "see her breath",
+                "ice"
             ]
         },
         {
@@ -428,20 +428,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[Sticking to the List] The shopper brings a printed list into the store, checks off each item with a pen, and walks past the snack aisle without stopping even once.",
-            "question": "What can be inferred about the shopper's trip?",
+            "passage": "[After the Parade] Shutters are down on every shop. Flags still hang between the balconies, and confetti drifts along the gutters.",
+            "question": "What has just happened in the street?",
             "options": [
-                "She spent most of her time in the snack aisle.",
-                "She is sticking closely to a planned shopping list.",
-                "She forgot to bring a list.",
-                "She is buying items at random."
+                "The shops are being rebuilt.",
+                "A celebration is probably about to begin.",
+                "A celebration has just ended.",
+                "A storm is approaching."
             ],
-            "correctAnswer": "She is sticking closely to a planned shopping list.",
-            "hint": "Think about what checking off items and skipping an entire aisle suggests about her approach to shopping.",
-            "explanation": "Checking off a printed list and skipping the snack aisle entirely suggests the shopper is disciplined about sticking to her plan.",
+            "correctAnswer": "A celebration has just ended.",
+            "hint": "What has been left behind, and what is closed?",
+            "explanation": "Confetti and flags remain, while the shops are shut. This suggests a party has taken place and people have gone home.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "Flags still hang",
+                "confetti"
             ]
         },
         {
@@ -449,20 +449,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[Text Reminders] Since the clinic began sending appointment reminders by text instead of only by mail, the number of missed appointments has fallen by nearly half.",
-            "question": "What can be inferred about the mailed reminders?",
+            "passage": "[Second Week] In her second week, Rania asked her colleague Ivo for help three times. Each time he stopped what he was doing, explained slowly, and wrote the steps down for her.",
+            "question": "What kind of colleague is Ivo?",
             "options": [
-                "They worked better than the text reminders.",
-                "They were sent more frequently than the texts.",
-                "They were less effective at reaching patients in time.",
-                "They had no effect on missed appointments."
+                "He is trying to avoid work.",
+                "He is patient and supportive.",
+                "He does not trust her.",
+                "He is her supervisor."
             ],
-            "correctAnswer": "They were less effective at reaching patients in time.",
-            "hint": "Compare the missed-appointment rate before and after the switch to texting.",
-            "explanation": "Missed appointments falling by nearly half after switching to texts suggests the mailed reminders were less effective at reaching patients.",
+            "correctAnswer": "He is patient and supportive.",
+            "hint": "What does he do each time, not just once?",
+            "explanation": "He stops his own work, explains slowly, and writes steps down. Doing this every time shows patience and willingness to help.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "stopped what he was doing",
+                "wrote the steps down"
             ]
         },
         {
@@ -470,20 +470,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[Flipping Through the Pages] The border agent stamps everyone's passport quickly until she reaches Mr. Haddad's, pausing to flip through several pages before finally stamping it as well.",
-            "question": "What can be inferred about Mr. Haddad's passport?",
+            "passage": "[Pizza and Time Off] Mr. Dunn's team stayed late three nights running. On Friday he ordered pizza, left at four himself, and told everyone to come in late on Monday.",
+            "question": "Why did Mr. Dunn act this way?",
             "options": [
-                "It was rejected by the agent.",
-                "It likely contains more stamps or travel history than the others.",
-                "It was completely blank inside.",
-                "It belonged to someone else entirely."
+                "To hide a problem from management.",
+                "To punish the team for missing a deadline.",
+                "To celebrate his own birthday.",
+                "To thank the team for their extra effort."
             ],
-            "correctAnswer": "It likely contains more stamps or travel history than the others.",
-            "hint": "Think about what would make an agent pause and flip through more pages for one traveler.",
-            "explanation": "Pausing to flip through several pages, compared to quickly stamping everyone else's, suggests Mr. Haddad's passport has more travel history to look through.",
+            "correctAnswer": "To thank the team for their extra effort.",
+            "hint": "What did the team give, and what did he give back?",
+            "explanation": "The team gave extra hours, and he offered food and a late start. Rewards after effort suggest gratitude.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "stayed late three nights running",
+                "come in late on Monday"
             ]
         },
         {
@@ -491,20 +491,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[A Quiet Group Chat] The team's group chat goes quiet for the first time in weeks after the Friday announcement that the project has been placed on hold indefinitely.",
-            "question": "What can be inferred about the team's reaction to the announcement?",
+            "passage": "[Reply All] Ayşe accidentally sent her complaint about the printer to the whole department. Within ten minutes, four colleagues had replied to her privately: \"Thank you. Someone had to say it.\"",
+            "question": "What do the private replies reveal?",
             "options": [
-                "They had already expected this exact outcome for weeks.",
-                "They were thrilled by the announcement.",
-                "The news likely caught them off guard or disappointed them.",
-                "The chat was always quiet regardless of any news."
+                "The complaint was about a colleague.",
+                "Her colleagues are angry with her.",
+                "Many colleagues share her complaint.",
+                "The printer has probably been repaired."
             ],
-            "correctAnswer": "The news likely caught them off guard or disappointed them.",
-            "hint": "Think about what a sudden silence, right after previously being very active, suggests about the team's reaction.",
-            "explanation": "A chat that suddenly goes quiet right after this news, after being active for weeks, suggests the announcement surprised or disappointed the team.",
+            "correctAnswer": "Many colleagues share her complaint.",
+            "hint": "Read the replies.",
+            "explanation": "Four people responded within minutes and thanked her, which shows they agree. They replied privately, perhaps to avoid drawing attention.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "whole department",
+                "Someone had to say it"
             ]
         },
         {
@@ -512,20 +512,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[Snacks from Home] The cafeteria removes fried options from the menu, and within the month, students start bringing more snacks from home than they ever did before.",
-            "question": "What can be inferred about the students' reaction to the menu change?",
+            "passage": "[Glass Days] From 1 March, glass will be collected on the first Monday of each month. Paper and plastics will continue to be collected weekly. Please put glass in the green box, not in the blue one.",
+            "question": "What can residents infer about glass collection?",
             "options": [
-                "Every student preferred the new healthier menu immediately.",
-                "The change had no effect on student behavior.",
-                "Students stopped eating at school entirely.",
-                "Some students were not satisfied with the new options."
+                "It will be less frequent than paper and plastics.",
+                "It will be collected on the same day as paper, but in a different box.",
+                "It will stop altogether.",
+                "It will happen every week."
             ],
-            "correctAnswer": "Some students were not satisfied with the new options.",
-            "hint": "Think about what an increase in outside snacks, right after the menu change, suggests about satisfaction.",
-            "explanation": "More students bringing snacks from home right after fried options were removed suggests some were not fully satisfied with the new menu.",
+            "correctAnswer": "It will be less frequent than paper and plastics.",
+            "hint": "Compare the two schedules.",
+            "explanation": "Once a month is less often than weekly. The notice also points to a specific box for glass.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "first Monday of each month",
+                "weekly"
             ]
         },
         {
@@ -533,20 +533,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[Waiting for Uncle Marco] Every year, Uncle Marco arrives at the family dinner exactly one hour late, yet everyone waits to start eating until he walks through the door.",
-            "question": "What can be inferred about the family's feelings toward Uncle Marco?",
+            "passage": "[Study Rooms] Study rooms must be booked in advance. Any booking not confirmed by a staff member within fifteen minutes of the start time will be released.",
+            "question": "Why is there a fifteen-minute rule?",
             "options": [
-                "They start eating early to avoid him.",
-                "They are annoyed and refuse to wait for him.",
-                "They have stopped inviting him to dinners.",
-                "They value his presence enough to wait for him."
+                "To punish students who are late.",
+                "To free unused rooms for other students.",
+                "To reduce noise in the library.",
+                "To collect fees."
             ],
-            "correctAnswer": "They value his presence enough to wait for him.",
-            "hint": "Think about why a family would consistently delay a meal for one specific person.",
-            "explanation": "Consistently waiting to eat until Uncle Marco arrives suggests the family values having him there enough to hold off on the meal.",
+            "correctAnswer": "To free unused rooms for other students.",
+            "hint": "What happens to a room that nobody confirms?",
+            "explanation": "Releasing unconfirmed bookings means unused rooms become available to others.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "booked in advance",
+                "will be released"
             ]
         },
         {
@@ -554,20 +554,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[Notes for the Substitute] The substitute teacher receives a folder full of detailed lesson notes, sticky tabs marking each page, and a separate sheet listing which students need extra support.",
-            "question": "What can be inferred about the regular teacher who prepared these materials?",
+            "passage": "[Invoice 4471] Subject: Re: Re: Re: Invoice 4471. Dear Mr. Roy, please find the same invoice attached again. Payment is now two weeks overdue.",
+            "question": "What does the message history suggest about earlier reminders?",
             "options": [
-                "She rarely plans ahead for her classes.",
-                "She left no information for the substitute.",
-                "She is very thorough and considerate in her planning.",
-                "She dislikes having substitute teachers."
+                "Mr. Roy has asked for a new invoice.",
+                "Earlier reminders received no reply.",
+                "The invoice number has changed.",
+                "The invoice was paid two weeks ago."
             ],
-            "correctAnswer": "She is very thorough and considerate in her planning.",
-            "hint": "Think about what this level of detailed preparation reveals about the regular teacher's habits.",
-            "explanation": "Providing detailed notes, tabs, and a support list for the substitute shows the regular teacher is thorough and considerate in her planning.",
+            "correctAnswer": "Earlier reminders received no reply.",
+            "hint": "What does \"Re: Re: Re:\" show about the message history?",
+            "explanation": "Three \"Re:\" tags and the same invoice suggest repeated attempts. The sender's tone implies frustration.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "Re: Re: Re:",
+                "two weeks overdue"
             ]
         },
         {
@@ -575,20 +575,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[Three Songs Every Night] The band's setlist changes slightly every night of the tour, but three particular songs appear in every single show without exception.",
-            "question": "What can be inferred about those three songs?",
+            "passage": "[Gate Closed] Ruth stands at the gate holding her boarding pass. The board changed from \"Boarding\" to \"Gate closed\" while she was still in the security queue. Now she is asking the desk about the next flight.",
+            "question": "Why did Ruth miss her flight?",
             "options": [
-                "They are likely considered essential to the band's performance.",
-                "They are the band's least favorite songs to play.",
-                "They were removed from the tour entirely.",
-                "They are only played on request from fans."
+                "The airline cancelled her flight.",
+                "She is on the wrong flight.",
+                "She lost her passport.",
+                "She missed her flight because of the security queue."
             ],
-            "correctAnswer": "They are likely considered essential to the band's performance.",
-            "hint": "Think about what appearing in every show, while other songs rotate, suggests about their importance.",
-            "explanation": "Appearing in every single show, while the rest of the setlist changes, suggests these three songs are considered essential to the performance.",
+            "correctAnswer": "She missed her flight because of the security queue.",
+            "hint": "Put the queue and the board change in order.",
+            "explanation": "The status changed while she was in the queue, and she now asks about the next flight. This shows she missed it because of the queue.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "Gate closed",
+                "next flight"
             ]
         },
         {
@@ -596,20 +596,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[Eye-Level Displays] The boutique's owner rearranges the window display every Monday morning, always placing the newest arrivals at eye level facing the street.",
-            "question": "What can be inferred about the owner's strategy?",
+            "passage": "[Quiz Night] On the sign-up sheet, Arjun's name is written clearly. Under \"Team members,\" he has written \"TBC, TBC, TBC.\"",
+            "question": "What does \"TBC, TBC, TBC\" suggest about Arjun's team?",
             "options": [
-                "She never changes the display at all.",
-                "She places the oldest items at eye level.",
-                "She wants passersby to notice the newest items first.",
-                "She wants to hide the newest items from view."
+                "He has not yet found his teammates.",
+                "The quiz is cancelled.",
+                "He wants to play alone.",
+                "He forgot his own name."
             ],
-            "correctAnswer": "She wants passersby to notice the newest items first.",
-            "hint": "Think about why placing new items at eye level facing the street would matter for a shop owner.",
-            "explanation": "Placing the newest arrivals at eye level facing the street suggests the owner wants to catch the attention of people walking by.",
+            "correctAnswer": "He has not yet found his teammates.",
+            "hint": "What does \"TBC\" mean to a reader?",
+            "explanation": "TBC means \"to be confirmed.\" Three of them show he has not yet decided or asked people.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "written clearly",
+                "TBC"
             ]
         },
         {
@@ -617,20 +617,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[A Second Ticket Window] The community theater's ticket booth adds a second window this season after last year's opening-night line stretched around the block.",
-            "question": "What can be inferred about last year's opening night?",
+            "passage": "[Free to a Good Home] Free to a good home: sofa, two chairs, dining table. Must be collected by Sunday. Serious callers only. And no, I cannot deliver.",
+            "question": "What has the writer's experience of giving furniture away been?",
             "options": [
-                "Very few people showed up to buy tickets.",
-                "Attendance was higher than the booth could handle smoothly.",
-                "Tickets were available only online last year.",
-                "The theater was closed on opening night."
+                "They have a deadline and have received many casual enquiries.",
+                "They are selling the furniture for profit.",
+                "They are moving in.",
+                "They plan to keep the furniture."
             ],
-            "correctAnswer": "Attendance was higher than the booth could handle smoothly.",
-            "hint": "Think about what a line stretching around the block suggests about how many people came, and why a second window was added.",
-            "explanation": "A line stretching around the block, followed by the addition of a second ticket window, suggests attendance exceeded what one window could handle.",
+            "correctAnswer": "They have a deadline and have received many casual enquiries.",
+            "hint": "Which phrases look like answers to earlier questions?",
+            "explanation": "\"By Sunday\" is a deadline, \"Serious callers only\" suggests time-wasters, and \"no, I cannot deliver\" reads like an answer to repeated requests.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "collected by Sunday",
+                "Serious callers only"
             ]
         }
     ]

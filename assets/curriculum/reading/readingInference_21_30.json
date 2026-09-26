@@ -8,20 +8,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[A Rescheduled Meeting] The meeting was originally set for 10 a.m., but Diego's calendar invite now shows 2 p.m. with a new video link attached. His manager also sent a message apologizing for the short notice.",
-            "question": "What can be inferred about the meeting?",
+            "passage": "[Arriving at Work] Omar walks into the office with a helmet under his arm, a damp shirt clinging to his back, and a small pump sticking out of his bag.",
+            "question": "How did Omar most likely get to work?",
             "options": [
-                "It happened earlier than planned.",
-                "It will now take place in person instead of online.",
-                "It was rescheduled to a later time.",
-                "It was cancelled completely."
+                "By bicycle.",
+                "By car.",
+                "On foot.",
+                "By bus."
             ],
-            "correctAnswer": "It was rescheduled to a later time.",
-            "hint": "Compare the original time with the new time on the invite.",
-            "explanation": "A new time, a new video link, and an apology for short notice all point to the meeting being moved later, not cancelled.",
+            "correctAnswer": "By bicycle.",
+            "hint": "One clue alone is not enough. Ask what the helmet and the pump have in common.",
+            "explanation": "A helmet and a pump both belong with cycling, and a damp shirt fits an effortful ride. Each clue helps, but together they make one answer much stronger than the rest.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "helmet under his arm",
+                "small pump"
             ]
         },
         {
@@ -29,20 +29,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[Snow in the Mountains] Because of heavy snow in the mountains, the airline is offering free rebooking for anyone flying through the regional airport this week. Several travelers are already calling to change their tickets.",
-            "question": "What can be inferred about flights through the regional airport?",
+            "passage": "[The Guided Tour] The children stay close to the guide, whispering. In the last room, the smallest boy asks whether they can stay longer.",
+            "question": "How do the children feel about the visit?",
             "options": [
-                "They have been permanently shut down.",
-                "They are likely to be delayed or cancelled.",
-                "They are cheaper than usual this week.",
-                "They are running earlier than scheduled."
+                "They are bored and hoping to leave.",
+                "They have been told to stay quiet all day.",
+                "They are lost and looking for the exit.",
+                "They are interested in what they are seeing."
             ],
-            "correctAnswer": "They are likely to be delayed or cancelled.",
-            "hint": "Think about why an airline would offer free rebooking during bad weather.",
-            "explanation": "Free rebooking during heavy snow strongly suggests the airline expects delays or cancellations at that airport.",
+            "correctAnswer": "They are interested in what they are seeing.",
+            "hint": "Which child's question tells you the most?",
+            "explanation": "Staying close and whispering could be many things, but a child asking to stay longer clearly shows interest. The strongest clue is the request.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "whispering",
+                "stay longer"
             ]
         },
         {
@@ -50,20 +50,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[A Password Reset] The new app update asks users to reset their passwords, and the company's support page mentions unusual login attempts from several accounts last week.",
-            "question": "What can be inferred about the reason for the password reset?",
+            "passage": "[Unsent] Dina has not answered her sister's message for three days. Each evening she opens the chat, types for a while, and then deletes everything.",
+            "question": "Why has Dina not replied to her sister?",
             "options": [
-                "The reset is unrelated to account safety.",
-                "The company wants to make the app slower.",
-                "The update removed the login feature.",
-                "The company may be responding to a security concern."
+                "She has decided to ignore her sister completely.",
+                "She is too busy to read messages.",
+                "Her phone is broken.",
+                "She finds the message hard to answer."
             ],
-            "correctAnswer": "The company may be responding to a security concern.",
-            "hint": "Notice what the support page mentions right alongside the password reset request.",
-            "explanation": "Mentioning unusual login attempts alongside a forced password reset suggests the company is addressing a possible security issue.",
+            "correctAnswer": "She finds the message hard to answer.",
+            "hint": "What does repeated typing and deleting show about her effort?",
+            "explanation": "She reads the message and tries to reply again and again, so she is not ignoring it. Deleting each attempt suggests she does not know what to say.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "types for a while",
+                "deletes everything"
             ]
         },
         {
@@ -71,20 +71,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[Lemon Cookies] Every time her sister visits, Nadia bakes a batch of lemon cookies, even though she rarely bakes for anyone else. Her sister always leaves with a full container to take home.",
-            "question": "What can be inferred about Nadia's sister?",
+            "passage": "[Sunday Call] \"Did you eat?\" Grandma asks. \"Yes, Grandma.\" \"What did you eat?\" \"Soup.\" \"Just soup?\" She sighs. \"I'm sending food tomorrow.\"",
+            "question": "What does Grandma's reaction show?",
             "options": [
-                "She particularly enjoys Nadia's lemon cookies.",
-                "She dislikes sweet food.",
-                "She never visits Nadia's home.",
-                "She bakes the cookies herself."
+                "She has forgotten what her grandchild likes.",
+                "She worries that her grandchild is not eating well enough.",
+                "She is planning to visit that evening.",
+                "She is angry about the soup recipe."
             ],
-            "correctAnswer": "She particularly enjoys Nadia's lemon cookies.",
-            "hint": "Think about why Nadia would make this specific treat only for one visitor.",
-            "explanation": "Baking a special treat only for her sister, who always takes some home, suggests the sister especially enjoys those cookies.",
+            "correctAnswer": "She worries that her grandchild is not eating well enough.",
+            "hint": "Follow her questions, then what she decides to do.",
+            "explanation": "She keeps asking about the meal, sighs at \"just soup,\" and then promises to send food. These clues show concern about whether her grandchild is eating enough.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "Just soup",
+                "I'm sending food tomorrow"
             ]
         },
         {
@@ -92,20 +92,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[Swimsuits on Sale] The store manager marks down the swimsuits by sixty percent and moves the winter coats to the front window display.",
-            "question": "What can be inferred about the season?",
+            "passage": "[Team Photo] \"Smile, everyone!\" Kai says. Behind him, Dr. Lopez glances at his watch for the third time. \"One more,\" he says, \"and then we really must go.\"",
+            "question": "How does Dr. Lopez feel about the photo session?",
             "options": [
-                "The store is closing down permanently.",
-                "It is the middle of a heat wave.",
-                "Summer is ending and colder weather is approaching.",
-                "Winter is ending and summer is approaching."
+                "He is enjoying it a great deal.",
+                "He is worried about the camera.",
+                "He is getting impatient.",
+                "He wants to be in every photo."
             ],
-            "correctAnswer": "Summer is ending and colder weather is approaching.",
-            "hint": "Think about which items are being discounted and which are being promoted instead.",
-            "explanation": "Discounting swimsuits while featuring winter coats suggests the store is preparing customers for the colder months ahead.",
+            "correctAnswer": "He is getting impatient.",
+            "hint": "Count the number of times he checks his watch, and notice how he asks for \"one more.\"",
+            "explanation": "Repeatedly checking his watch and saying \"we really must go\" show he has somewhere to be and wants to finish.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "glances at his watch for the third time",
+                "we really must go"
             ]
         },
         {
@@ -113,20 +113,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[Evening Walks] After weeks of skipping his evening walks, Mr. Patel's doctor notices his blood pressure has risen slightly and recommends he start walking again.",
-            "question": "What can be inferred about the connection between walking and Mr. Patel's health?",
+            "passage": "[Not Hungry] \"I'm not hungry,\" Ben says, pushing his plate away. His mother notices he has been quiet since football practice and has not mentioned the match once.",
+            "question": "What most likely explains Ben's mood?",
             "options": [
-                "His blood pressure dropped after he stopped walking.",
-                "The doctor is unrelated to his walking habits.",
-                "Walking has no effect on his blood pressure.",
-                "Regular walking likely helped keep his blood pressure lower."
+                "He is bored with football.",
+                "He ate a large meal before coming home.",
+                "He is trying to lose weight.",
+                "Something about the match has upset him."
             ],
-            "correctAnswer": "Regular walking likely helped keep his blood pressure lower.",
-            "hint": "Think about what changed right before his blood pressure went up.",
-            "explanation": "Since his blood pressure rose after he stopped his regular walks, the passage suggests walking had been helping manage it.",
+            "correctAnswer": "Something about the match has upset him.",
+            "hint": "Ask what connects his mood to a specific event.",
+            "explanation": "His appetite and his talkativeness both dropped after the match, which he is not mentioning. That pattern suggests the match left him upset.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "quiet since football practice",
+                "not mentioned the match"
             ]
         },
         {
@@ -134,20 +134,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[An Extended Deadline] The professor extends the essay deadline by one week after nearly the entire class asks for more time during office hours.",
-            "question": "What can be inferred about the original deadline?",
+            "passage": "[Late Nights] All this month Sana has stayed in the university library until closing. She turned down two invitations, saying, \"Ask me again after the 20th.\"",
+            "question": "What is the most likely reason for her behaviour?",
             "options": [
-                "It was extended by a full month.",
-                "No students needed extra time.",
-                "It gave students far too much time.",
-                "Many students found it difficult to meet."
+                "She has become bored with social events.",
+                "She is avoiding her friends.",
+                "She has an important deadline or exam around the 20th.",
+                "The library is offering her a job."
             ],
-            "correctAnswer": "Many students found it difficult to meet.",
-            "hint": "Think about why a professor would change a deadline for almost the whole class.",
-            "explanation": "Extending the deadline because nearly the whole class requested more time suggests many students struggled to finish by the original date.",
+            "correctAnswer": "She has an important deadline or exam around the 20th.",
+            "hint": "What date does she give, and what does she say will change after it?",
+            "explanation": "The library nights and the promise \"after the 20th\" point to a specific date after which she will be free. That suggests an exam or deadline, not avoidance.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "until closing",
+                "after the 20th"
             ]
         },
         {
@@ -155,20 +155,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[Long Lines at the Museum] The museum adds a second exhibit hall and extends its weekend hours after months of long lines at the entrance.",
-            "question": "What can be inferred about the museum's popularity?",
+            "passage": "[Second Lock] After the third bicycle theft on the street, Mr. Petrov buys a thick chain and a second lock. He also asks the landlord to fix the broken gate.",
+            "question": "What is Mr. Petrov mainly concerned about?",
             "options": [
-                "More visitors have been coming than expected.",
-                "Visitor numbers have been dropping.",
-                "The museum is planning to close.",
-                "The museum removed an exhibit due to low interest."
+                "He may lose his keys.",
+                "The gate might fall on someone.",
+                "Someone might steal his bicycle.",
+                "His landlord may raise the rent."
             ],
-            "correctAnswer": "More visitors have been coming than expected.",
-            "hint": "Think about why long lines would lead to more space and longer hours.",
-            "explanation": "Adding space and extending hours after months of long lines suggests visitor numbers have grown beyond what the museum expected.",
+            "correctAnswer": "Someone might steal his bicycle.",
+            "hint": "What happened on the street before he made these purchases?",
+            "explanation": "The thefts come first, then the extra security. The gate repair fits the same purpose, because a broken gate makes stealing easier.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "third bicycle theft",
+                "thick chain"
             ]
         },
         {
@@ -176,20 +176,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[New Trees and Lamps] The neighborhood association plants new trees along the main street and installs solar-powered lamps at every corner.",
-            "question": "What can be inferred about the neighborhood association's goals?",
+            "passage": "[Water Station] Iris volunteered to hand out water at the marathon, though she does not run. When a friend asked why, she smiled and said, \"My dad ran his first one at this finish line.\"",
+            "question": "Why did Iris volunteer?",
             "options": [
-                "They want to make the street more difficult to walk on.",
-                "They want to improve the appearance and safety of the area.",
-                "They are trying to reduce the number of trees.",
-                "They plan to remove all street lighting."
+                "The race has personal meaning for her family.",
+                "Her employer required her to help.",
+                "She wants to begin training for marathons.",
+                "She was bored and had nothing else to do."
             ],
-            "correctAnswer": "They want to improve the appearance and safety of the area.",
-            "hint": "Think about what new trees and better lighting typically achieve for a neighborhood.",
-            "explanation": "Planting trees and adding lighting both point to an effort to make the neighborhood more attractive and safer.",
+            "correctAnswer": "The race has personal meaning for her family.",
+            "hint": "Which sentence gives her reason, even though it does not say \"because\"?",
+            "explanation": "She does not run and has no other stated reason. Her answer points to her father's first marathon, which shows a family connection.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "though she does not run",
+                "My dad ran his first one"
             ]
         },
         {
@@ -197,20 +197,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[Faster Than Expected] The restaurant's delivery app shows a thirty-five-minute wait, but Farid's order arrives at his door after only twelve minutes.",
-            "question": "What can be inferred about the delivery time?",
+            "passage": "[Skipped Stretching] Coach reminded the team to stretch before the match. Emre said he was late and ran straight onto the pitch. Ten minutes later he was limping off.",
+            "question": "What can the reader reasonably connect to Emre's limp?",
             "options": [
-                "The order never actually arrived.",
-                "It was faster than the app had predicted.",
-                "It matched the app's prediction exactly.",
-                "It took longer than the app estimated."
+                "He had played too many matches that season.",
+                "He skipped his warm-up.",
+                "He wore the wrong shoes.",
+                "He argued with the coach."
             ],
-            "correctAnswer": "It was faster than the app had predicted.",
-            "hint": "Compare the number the app showed with how long it actually took.",
-            "explanation": "Twelve minutes is much shorter than the predicted thirty-five, so the delivery arrived faster than expected.",
+            "correctAnswer": "He skipped his warm-up.",
+            "hint": "Compare what the coach asked with what Emre did.",
+            "explanation": "The coach's reminder, Emre's skipping it, and the limp ten minutes later form a sequence. The passage supports a link between the skipped warm-up and the injury, though it does not state it.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "reminded the team to stretch",
+                "limping off"
             ]
         },
         {
@@ -218,20 +218,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[A Programmed Thermostat] The smart thermostat lowers the temperature automatically every night at eleven and raises it again at six in the morning, without anyone touching the controls.",
-            "question": "What can be inferred about the thermostat?",
+            "passage": "[New Specials] The café raised its coffee price by fifty cents in March. By May, the owner had added a loyalty card and two cheaper lunch specials.",
+            "question": "Why did the owner most likely add these offers?",
             "options": [
-                "Someone adjusts it manually every night.",
-                "It changes temperature completely at random.",
-                "It is broken and needs replacing.",
-                "It has been programmed to follow a set schedule."
+                "To celebrate a change of owner.",
+                "To reduce the number of customers.",
+                "To win back customers put off by the higher prices.",
+                "To sell more expensive coffee."
             ],
-            "correctAnswer": "It has been programmed to follow a set schedule.",
-            "hint": "Think about what happening at the exact same times every day and night suggests.",
-            "explanation": "Changing at the same two times every day, without anyone touching it, suggests the thermostat follows a programmed schedule.",
+            "correctAnswer": "To win back customers put off by the higher prices.",
+            "hint": "What happened first, and what might the second step be responding to?",
+            "explanation": "The offers came after a price rise, and loyalty cards and cheaper lunches both reward customers. The likeliest purpose is to keep customers.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "raised its coffee price",
+                "loyalty card"
             ]
         },
         {
@@ -239,20 +239,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[Extra Questions at the Border] At the border crossing, officials ask Elena extra questions and search her bag more carefully than the travelers ahead of her.",
-            "question": "What can be inferred about Elena's situation at the border?",
+            "passage": "[Wrong Day] Mrs. Osei never reads the notices in the hallway. On Thursday she carried her bins out as usual, but the truck had already been on Wednesday because of a holiday.",
+            "question": "What was the hallway notice most likely about?",
             "options": [
-                "Something about her trip drew additional attention.",
-                "She was allowed to skip the checkpoint entirely.",
-                "She was treated exactly like everyone else.",
-                "The officials recognized her as a frequent traveler with no issues."
+                "A change to the rubbish collection day.",
+                "A request to keep the bins inside.",
+                "A plan to repaint the hallway.",
+                "A party for the residents."
             ],
-            "correctAnswer": "Something about her trip drew additional attention.",
-            "hint": "Compare how Elena was treated with how the other travelers were treated.",
-            "explanation": "Extra questions and a more thorough bag search, compared to other travelers, suggest something in Elena's case caught the officials' attention.",
+            "correctAnswer": "A change to the rubbish collection day.",
+            "hint": "What did she miss, and what happened as a result?",
+            "explanation": "She acted on her usual routine, and it turned out to be the wrong day. The change she missed must have been announced in the place she does not read.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "never reads the notices",
+                "because of a holiday"
             ]
         },
         {
@@ -260,20 +260,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[Two Job Offers] Two of the four interns are asked to stay on as full-time employees at the end of the summer, while the other two receive polite thank-you emails.",
-            "question": "What can be inferred about the two interns who received thank-you emails?",
+            "passage": "[Two Offers] Nadia received two job offers. One paid more but meant a two-hour commute each way. She chose the other, which is near her daughter's school.",
+            "question": "What matters most to Nadia?",
             "options": [
-                "They were promoted to management.",
-                "They will start immediately as full-time staff.",
-                "They quit before the internship ended.",
-                "They were not offered permanent positions."
+                "Working for a famous company.",
+                "Avoiding difficult work.",
+                "Having time and closeness to her family.",
+                "Earning the highest possible salary."
             ],
-            "correctAnswer": "They were not offered permanent positions.",
-            "hint": "Think about what usually happens when someone is thanked but not offered a role.",
-            "explanation": "A polite thank-you email, without a job offer, suggests those two interns were not selected for permanent positions.",
+            "correctAnswer": "Having time and closeness to her family.",
+            "hint": "What did she give up, and what did she gain?",
+            "explanation": "She turned down higher pay to avoid the long commute and stay near her daughter's school. This shows that family time outweighs pay.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "paid more",
+                "near her daughter's school"
             ]
         },
         {
@@ -281,20 +281,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[A Photo on the Table] Grandpa keeps a small photo of his late wife on the kitchen table and gently touches the frame every morning before making his coffee.",
-            "question": "What can be inferred about Grandpa's feelings?",
+            "passage": "[Still On] The concert is outdoors and the forecast says heavy rain. Tobias buys a poncho anyway and messages his friends: \"Still on. Dress for mud.\"",
+            "question": "What decision has Tobias made?",
             "options": [
-                "He recently met someone new to replace her.",
-                "He has forgotten about his wife.",
-                "He still deeply misses his wife.",
-                "He dislikes looking at old photos."
+                "To cancel the concert.",
+                "To go to the concert despite the weather.",
+                "To buy tickets for another night.",
+                "To move the concert indoors."
             ],
-            "correctAnswer": "He still deeply misses his wife.",
-            "hint": "Think about what a daily, gentle gesture toward a photo usually reveals.",
-            "explanation": "Touching the photo gently every single morning suggests Grandpa still holds strong feelings of love and loss for his late wife.",
+            "correctAnswer": "To go to the concert despite the weather.",
+            "hint": "Look at what he buys and what he tells his friends.",
+            "explanation": "He prepares for rain and says the plan is \"still on,\" so he has decided to go.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "buys a poncho",
+                "Still on"
             ]
         },
         {
@@ -302,20 +302,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[A Returned Blender] The customer returns the blender for the third time this year, and the store clerk quietly notes the model number in a separate file.",
-            "question": "What can be inferred about the blender model?",
+            "passage": "[Bigger Room] The hotel offered Gunnar a larger room for thirty dollars more per night. He glanced at the balcony photo and said, \"No, thanks. I'll be out all day anyway.\"",
+            "question": "Why did Gunnar decline the upgrade?",
             "options": [
-                "It was recently redesigned and improved.",
-                "It may have a recurring problem.",
-                "It is the store's best-selling product.",
-                "It has never had any issues before."
+                "He wanted a smaller room.",
+                "He does not want the balcony because it would be cold and noisy at that time of year.",
+                "He would not spend enough time in the room to make it worth the money.",
+                "He disliked the balcony."
             ],
-            "correctAnswer": "It may have a recurring problem.",
-            "hint": "Think about why a clerk would start keeping separate notes about one specific model.",
-            "explanation": "Three returns in one year, along with the clerk tracking the model separately, suggest this blender has a recurring issue.",
+            "correctAnswer": "He would not spend enough time in the room to make it worth the money.",
+            "hint": "Look at the reason he gives, not at the photo.",
+            "explanation": "He says he will be out all day. That shows the extra cost would not give him value.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "thirty dollars more",
+                "out all day"
             ]
         },
         {
@@ -323,20 +323,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[A Standing Desk] Since switching to a standing desk, Mr. Osei mentions to coworkers that his afternoon back pain has almost completely disappeared.",
-            "question": "What can be inferred about the standing desk?",
+            "passage": "[Signature Required] Your parcel will arrive between 9 a.m. and 6 p.m. tomorrow. Someone over 18 must sign for it. If nobody is home, a card with pick-up details will be left.",
+            "question": "Why does the company most likely require a signature?",
             "options": [
-                "It had no connection to his back pain.",
-                "It made his back pain much worse.",
-                "It seems to have helped reduce his back pain.",
-                "It caused him to leave his job."
+                "To make delivery faster.",
+                "To collect payment for the parcel.",
+                "To check the customer's address.",
+                "To make sure the parcel reaches a responsible adult."
             ],
-            "correctAnswer": "It seems to have helped reduce his back pain.",
-            "hint": "Think about what changed right after he started using the new desk.",
-            "explanation": "His back pain nearly disappearing after switching desks suggests the standing desk played a role in the improvement.",
+            "correctAnswer": "To make sure the parcel reaches a responsible adult.",
+            "hint": "Who is allowed to sign, and what does that suggest?",
+            "explanation": "The company wants an adult to sign. That suggests it wants to be sure the parcel is handed over safely and that someone accepts it.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "Someone over 18",
+                "sign for it"
             ]
         },
         {
@@ -344,20 +344,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[Mixed Reviews] Reviewers praise the film's visual effects but repeatedly mention that the story feels confusing and drags on for too long.",
-            "question": "What can be inferred about the reviewers' overall opinion of the film?",
+            "passage": "[Guest Wi-Fi] The hotel's Wi-Fi password is printed on the card in your room. The card is valid until checkout day, and a new one is issued for every guest.",
+            "question": "How does the hotel's Wi-Fi password work?",
             "options": [
-                "They think the film is perfect in every way.",
-                "They have mixed feelings about the film.",
-                "They believe the visual effects were poor.",
-                "They found the story clear and exciting."
+                "It works only in the lobby.",
+                "It changes for each guest.",
+                "It is chosen by the guest.",
+                "It is the same all year."
             ],
-            "correctAnswer": "They have mixed feelings about the film.",
-            "hint": "Notice that the reviewers praise one part but criticize another part.",
-            "explanation": "Praising the effects while criticizing the story suggests the reviewers see both strengths and weaknesses, meaning their opinion is mixed.",
+            "correctAnswer": "It changes for each guest.",
+            "hint": "Which detail shows what happens between one guest and the next?",
+            "explanation": "A new card is issued for every guest, and each card expires at checkout, so the password does not stay the same.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "valid until checkout day",
+                "new one is issued"
             ]
         },
         {
@@ -365,20 +365,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[Improving Grades] After the tutoring sessions began twice a week, Marcus's math quiz scores rose from failing grades to consistent passes within a month.",
-            "question": "What can be inferred about the tutoring sessions?",
+            "passage": "[Cancelled Class] Ms. Lund's ten o'clock class was cancelled. She posted a note: \"Please read pages 40 to 55 and come prepared for a short quiz next time.\"",
+            "question": "What can students infer from the note?",
             "options": [
-                "They had no effect on his grades.",
-                "They likely helped improve Marcus's math skills.",
-                "They caused his grades to drop further.",
-                "They focused only on subjects other than math."
+                "The quiz will probably be based on the reading.",
+                "The reading is optional.",
+                "The class will not meet again.",
+                "The quiz will be the same as the last one, so there is no need to study for it."
             ],
-            "correctAnswer": "They likely helped improve Marcus's math skills.",
-            "hint": "Compare Marcus's grades before and after the tutoring started.",
-            "explanation": "Scores rising from failing to passing soon after tutoring began suggests the sessions helped improve his math performance.",
+            "correctAnswer": "The quiz will probably be based on the reading.",
+            "hint": "What does the teacher connect to the quiz?",
+            "explanation": "The teacher asks for reading and preparation for a quiz in the same message, which suggests the quiz will cover those pages.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "pages 40 to 55",
+                "short quiz"
             ]
         },
         {
@@ -386,20 +386,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[A Loyal Guest] The hotel upgrades Priya to a room with an ocean view and leaves a handwritten note thanking her for being a loyal guest for ten years.",
-            "question": "What can be inferred about Priya?",
+            "passage": "[Green Umbrella] Ravi's green umbrella was in the hall closet when he left for his sister's party in his best shirt. When he got home, his shirt was soaked and the umbrella was still in the closet.",
+            "question": "What happened with Ravi's umbrella?",
             "options": [
-                "She has stayed at this hotel many times before.",
-                "She works as a manager at the hotel.",
-                "She complained about her previous room.",
-                "This is her very first visit to the hotel."
+                "His sister's party was cancelled.",
+                "He went out without taking the umbrella.",
+                "He lent the umbrella to his sister.",
+                "The umbrella was broken."
             ],
-            "correctAnswer": "She has stayed at this hotel many times before.",
-            "hint": "Think about what 'loyal guest for ten years' tells you about her history with the hotel.",
-            "explanation": "A note thanking her for ten years of loyalty shows Priya has been a returning guest at this hotel for a long time.",
+            "correctAnswer": "He went out without taking the umbrella.",
+            "hint": "Where was the umbrella at the beginning, and where is it at the end?",
+            "explanation": "The umbrella is in the same place before and after, and Ravi is wet. He must have left it behind.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "still in the closet",
+                "soaked"
             ]
         },
         {
@@ -407,20 +407,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[Ten Thousand Steps] The fitness tracker buzzes on Wen's wrist and displays a message congratulating her for reaching ten thousand steps, a goal she has missed the past two weeks.",
-            "question": "What can be inferred about Wen's activity level today?",
+            "passage": "[Train Day] Aiko packed her camera, checked the weather, and printed her ticket. On the morning of the trip she unpacked everything and made tea. Her phone showed a message from the railway company.",
+            "question": "What most likely changed Aiko's plans?",
             "options": [
-                "She has been more active than she was recently.",
-                "She never reaches this goal.",
-                "The tracker is malfunctioning.",
-                "She has been less active than usual."
+                "The railway company cancelled or disrupted her journey.",
+                "She had a bad experience on the last trip and wants to avoid taking photographs.",
+                "The weather turned bad.",
+                "She overslept and missed the train."
             ],
-            "correctAnswer": "She has been more active than she was recently.",
-            "hint": "Compare today's result with what happened during the past two weeks.",
-            "explanation": "Reaching a goal she had missed for two weeks suggests Wen has been noticeably more active today than in recent days.",
+            "correctAnswer": "The railway company cancelled or disrupted her journey.",
+            "hint": "What did she do once she saw the message?",
+            "explanation": "After careful preparation, she abandons the plan right after a message from the railway. The most likely cause is a problem with the train service.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "printed her ticket",
+                "message from the railway company"
             ]
         },
         {
@@ -428,20 +428,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[Standing Room Only] Residents pack the town hall meeting, and several stand along the back wall after all the chairs are taken.",
-            "question": "What can be inferred about the topic of the meeting?",
+            "passage": "[The Ladder] On Friday, Marcus lent his ladder to a neighbour. On Sunday the neighbour brought it back with a jar of homemade jam and said, \"Sorry, it took longer than I thought.\"",
+            "question": "How does the neighbour feel about borrowing the ladder?",
             "options": [
-                "Only a few people were invited.",
-                "It interests almost no one in town.",
-                "It was cancelled before it began.",
-                "It is important to many residents."
+                "He borrowed the ladder for a job he had not finished and is worried about being asked for it again.",
+                "He damaged the ladder.",
+                "He is annoyed at Marcus.",
+                "He appreciates the help and feels a little guilty about the delay."
             ],
-            "correctAnswer": "It is important to many residents.",
-            "hint": "Think about what a full room with standing attendees suggests about interest in the topic.",
-            "explanation": "A packed hall with people standing because all seats are taken suggests the meeting's topic matters to many residents.",
+            "correctAnswer": "He appreciates the help and feels a little guilty about the delay.",
+            "hint": "What does he add to the returned ladder, and what does he say?",
+            "explanation": "The jam and the apology show gratitude and a sense of having kept the ladder too long.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "homemade jam",
+                "Sorry"
             ]
         },
         {
@@ -449,20 +449,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[Sold Out by Nine] The bakery sells out of its sourdough loaves by nine every morning, so regular customers now start arriving before the doors even open.",
-            "question": "What can be inferred about the sourdough bread?",
+            "passage": "[Bookshop Email] Hi Elena, thanks for ordering. Unfortunately the book you wanted is out of stock until next month. We can offer the paperback now or the hardcover later. Let us know what suits you.",
+            "question": "Why is the shop offering two options?",
             "options": [
-                "It is only available in the afternoon.",
-                "It is in high demand among customers.",
-                "It is unpopular and often left unsold.",
-                "The bakery stopped making it."
+                "The book is no longer being printed.",
+                "The shop is offering two options because the first choice is unavailable.",
+                "The shop has cancelled her order.",
+                "The shop plans to stop stocking that book, so both formats will soon be hard to buy."
             ],
-            "correctAnswer": "It is in high demand among customers.",
-            "hint": "Think about why customers would start arriving before the store opens.",
-            "explanation": "Selling out early and customers arriving before opening both suggest the sourdough bread is very popular.",
+            "correctAnswer": "The shop is offering two options because the first choice is unavailable.",
+            "hint": "Read what the shop says about the book she wanted and what follows.",
+            "explanation": "The shop says the book is out of stock until next month and then offers two alternatives. It does not mention the price or cancel anything.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "out of stock until next month",
+                "paperback now or the hardcover later"
             ]
         },
         {
@@ -470,20 +470,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[The Wrong Dish] The waiter brings the wrong dish twice, and by the third attempt, the family decides to order dessert instead of a main course.",
-            "question": "What can be inferred about the family's mood?",
+            "passage": "[Late Again] Mr. Alves looks at the clock, then at the empty chair by the door. \"We'll start with the second item,\" he says, and moves his notes.",
+            "question": "Why does Mr. Alves change the order of the meeting?",
             "options": [
-                "They are likely feeling frustrated with the service.",
-                "They planned to skip dinner from the start.",
-                "They are celebrating a special occasion.",
-                "They are extremely satisfied with the service."
+                "The second item is unimportant.",
+                "Someone who was expected has not arrived yet.",
+                "The meeting is over.",
+                "Mr. Alves wants to end early."
             ],
-            "correctAnswer": "They are likely feeling frustrated with the service.",
-            "hint": "Think about how repeated mistakes with an order would affect a customer's patience.",
-            "explanation": "Giving up on a main course after two wrong dishes suggests the family's patience wore thin due to the repeated mistakes.",
+            "correctAnswer": "Someone who was expected has not arrived yet.",
+            "hint": "Which object does he look at besides the clock?",
+            "explanation": "He looks at the clock and the empty chair, then changes the plan to avoid waiting. This suggests a person is late.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "the empty chair by the door",
+                "start with the second item"
             ]
         },
         {
@@ -491,20 +491,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[Cooking Alone] Every holiday, Aunt Rosa insists on cooking the entire meal alone, waving away any offers of help from her nieces and nephews.",
-            "question": "What can be inferred about Aunt Rosa?",
+            "passage": "[Two Answers] \"Do you like the new schedule?\" the manager asks. Priya says, \"It's fine.\" Alex says, \"It's fine, but I'd need to leave the kids with someone at seven.\"",
+            "question": "What does Alex's answer reveal that Priya's does not?",
             "options": [
-                "She prefers to handle the cooking by herself.",
-                "She dislikes cooking for the family.",
-                "She is unable to cook at all.",
-                "She always asks others to cook instead."
+                "He is delighted with the new schedule.",
+                "He plans to leave the job.",
+                "He has a concern he is willing to mention.",
+                "He strongly prefers the old schedule."
             ],
-            "correctAnswer": "She prefers to handle the cooking by herself.",
-            "hint": "Think about what refusing help, holiday after holiday, says about her preference.",
-            "explanation": "Consistently waving away help suggests Aunt Rosa prefers to be the one in charge of the holiday cooking.",
+            "correctAnswer": "He has a concern he is willing to mention.",
+            "hint": "Compare Alex's answer with Priya's.",
+            "explanation": "Both say \"fine,\" but Alex adds a condition that shows a real concern. His answer is more specific and less relaxed.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "It's fine",
+                "leave the kids"
             ]
         },
         {
@@ -512,20 +512,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[Cancelled Tour Dates] The band cancels its last three tour dates after the lead singer is seen leaving a doctor's office with a bandage around her throat.",
-            "question": "What can be inferred about the reason for the cancellations?",
+            "passage": "[Painted Fence] Yesterday the fence in front of the school was white. This morning it has blue handprints all along it, and Mrs. Hale is standing beside it with a bucket and a smile.",
+            "question": "How does Mrs. Hale react to the handprints?",
             "options": [
-                "The venue was closed for renovations.",
-                "The singer likely has a throat injury or illness.",
-                "Ticket sales were too low to continue.",
-                "The band lost interest in performing."
+                "She wants to remove the fence.",
+                "She painted the handprints herself.",
+                "She is not angry about the handprints.",
+                "She is planning to punish the students."
             ],
-            "correctAnswer": "The singer likely has a throat injury or illness.",
-            "hint": "Think about what a bandage around the throat suggests for a singer.",
-            "explanation": "A bandaged throat and cancelled shows strongly suggest the singer is dealing with a throat problem that prevents her from performing.",
+            "correctAnswer": "She is not angry about the handprints.",
+            "hint": "Look at her expression and what she is carrying.",
+            "explanation": "A smile and a bucket suggest she is calm and ready to fix it, not furious. The passage does not say who made the marks.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "blue handprints",
+                "a smile"
             ]
         },
         {
@@ -533,20 +533,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[A Shorter Work Week] After the company switches to a four-day work week, employee sick-day requests drop noticeably over the following two months.",
-            "question": "What can be inferred about the four-day work week?",
+            "passage": "[Empty Locker] Farah cleaned out her locker, gave her key to the office, and said goodbye to each teacher, with a small gift for the librarian.",
+            "question": "What do Farah's actions suggest about her situation at school?",
             "options": [
-                "It made no difference to employee health.",
-                "It may have improved employees' overall well-being.",
-                "It caused employees to take more sick days.",
-                "It led the company to hire fewer workers."
+                "She is leaving the school.",
+                "She is on a short holiday.",
+                "She has lost her locker key.",
+                "She is starting a new subject."
             ],
-            "correctAnswer": "It may have improved employees' overall well-being.",
-            "hint": "Think about what a drop in sick days right after the schedule change suggests.",
-            "explanation": "Fewer sick-day requests after the shorter work week suggests the new schedule may have benefited employees' health.",
+            "correctAnswer": "She is leaving the school.",
+            "hint": "What would people not usually do for a short absence?",
+            "explanation": "Returning the key, saying goodbye to teachers, and giving a gift suggest a longer departure than a holiday.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "gave her key to the office",
+                "said goodbye"
             ]
         },
         {
@@ -554,20 +554,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[A Standing Ovation] The comedian's new special receives a standing ovation on opening night, and the theater quickly adds five more shows to the schedule.",
-            "question": "What can be inferred about the opening night reception?",
+            "passage": "[The Recipe Card] Nonna's recipe card is stained, soft at the edges, and covered in notes: \"less salt,\" \"add basil later,\" \"Marco loves this one.\" Ana has never changed a single line.",
+            "question": "What does the state of the recipe card suggest?",
             "options": [
-                "The theater cancelled all future shows.",
-                "The audience responded very positively.",
-                "The audience was largely disappointed.",
-                "The audience left before the show ended."
+                "It is a special recipe kept only for holidays, so it has been used only a handful of times.",
+                "It is Ana's own invention.",
+                "It is new and untested.",
+                "It is valuable to the family and has been used many times."
             ],
-            "correctAnswer": "The audience responded very positively.",
-            "hint": "Think about why a theater would add extra shows right after opening night.",
-            "explanation": "A standing ovation followed immediately by more scheduled shows suggests the audience loved the opening night performance.",
+            "correctAnswer": "It is valuable to the family and has been used many times.",
+            "hint": "What does a stained, soft card tell you about how it has been used?",
+            "explanation": "Stains, worn edges, and many notes show years of use, and Ana's keeping every line unchanged suggests she treasures it.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "stained, soft at the edges",
+                "never changed a single line"
             ]
         },
         {
@@ -575,20 +575,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[An Empty Fuel Gauge] The rental car's fuel gauge shows nearly empty, but the map app suggests the nearest gas station is forty minutes away.",
-            "question": "What can be inferred about the driver's situation?",
+            "passage": "[Practice Room] Yui closes the door of the practice room, sits down, and opens her sheet music. Ten minutes later she is still on the first page, repeating the same four bars and frowning.",
+            "question": "What is Yui's problem in the practice room?",
             "options": [
-                "They have more than enough fuel for the trip.",
-                "They are right next to a gas station.",
-                "They may struggle to reach a gas station in time.",
-                "The car does not use fuel at all."
+                "She is practising in a room that is too small, and the echo is putting her off.",
+                "She is bored with music.",
+                "She has finished the piece.",
+                "She is struggling with a difficult passage."
             ],
-            "correctAnswer": "They may struggle to reach a gas station in time.",
-            "hint": "Think about what an almost-empty tank combined with a distant gas station suggests.",
-            "explanation": "A nearly empty tank and a gas station forty minutes away suggest the driver may run out of fuel before arriving.",
+            "correctAnswer": "She is struggling with a difficult passage.",
+            "hint": "What does repeating the same four bars suggest?",
+            "explanation": "Ten minutes on the same short section and a frown show she cannot get it right yet.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "repeating the same four bars",
+                "frowning"
             ]
         },
         {
@@ -596,20 +596,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[A Missed Notification] The security camera footage shows a delivery driver leaving a package, but the homeowner's doorbell app never sends a notification.",
-            "question": "What can be inferred about the doorbell app?",
+            "passage": "[Free Sample] At the supermarket stall, the young man offers everyone a small piece of cheese. Most people take one, smile, and walk on. A few come back with their trolleys.",
+            "question": "What is the purpose of the free pieces?",
             "options": [
-                "It sent multiple notifications instantly.",
-                "It worked perfectly as expected.",
-                "There was no delivery to detect.",
-                "It may have failed to detect the delivery."
+                "To encourage people to buy the cheese.",
+                "To get rid of old cheese.",
+                "To thank regular customers.",
+                "To teach people how to make cheese."
             ],
-            "correctAnswer": "It may have failed to detect the delivery.",
-            "hint": "Compare what the camera recorded with what the app actually reported.",
-            "explanation": "A delivery clearly happening on camera, with no notification sent, suggests the doorbell app failed to register the event.",
+            "correctAnswer": "To encourage people to buy the cheese.",
+            "hint": "What do \"a few come back\" and \"trolleys\" suggest?",
+            "explanation": "Free samples let people taste the product. Those who return with trolleys suggest that tasting leads to buying.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "small piece of cheese",
+                "come back with their trolleys"
             ]
         },
         {
@@ -617,20 +617,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[Lights Out] Every light in the house switches off at exactly the same second, and the refrigerator stops humming in the kitchen.",
-            "question": "What can be inferred about the house?",
+            "passage": "[Group Decision] The class wanted a trip to the zoo. Ms. Cho reminded them that the bus costs $180 and the class has only $120. Afterwards, three students began planning a cake sale.",
+            "question": "What are the students likely to do about the missing money?",
             "options": [
-                "Someone turned off each light individually.",
-                "It has lost electrical power.",
-                "The electricity bill was just paid.",
-                "New appliances were just installed."
+                "The teacher will pay the difference.",
+                "The students will try to raise the missing money.",
+                "The bus will be free.",
+                "The trip has been cancelled."
             ],
-            "correctAnswer": "It has lost electrical power.",
-            "hint": "Think about what would cause every light and appliance to stop at once.",
-            "explanation": "All the lights and the refrigerator stopping at the exact same moment suggest a power outage rather than someone turning things off one by one.",
+            "correctAnswer": "The students will try to raise the missing money.",
+            "hint": "Compare the cost with the amount available, then read what the students do next.",
+            "explanation": "The gap between $180 and $120 is $60. The cake sale suggests the students intend to raise it so that the trip can go ahead.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "costs $180",
+                "cake sale"
             ]
         }
     ]

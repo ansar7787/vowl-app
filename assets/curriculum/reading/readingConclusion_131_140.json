@@ -8,18 +8,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A team of atmospheric scientists analyzing several decades of satellite data found that the total area covered by a particular type of reflective high-altitude cloud had decreased measurably over the study period, a trend that correlated with rising sea surface temperatures in the same regions, but the scientists emphasized that current climate models disagree substantially on whether the cloud decline is primarily a consequence of the warming ocean below or whether the cloud decline itself is contributing meaningfully to further warming by allowing more sunlight to reach the ocean surface, a question the team described as one of the more persistently unresolved puzzles in current climate research.",
+            "passage": "Subject: Re: Project Timeline Update. Hi team, I wanted to follow up on our conversation from Monday. After reviewing the client's revised requirements, I think we need to push our internal review date from the 15th to the 22nd. This isn't ideal, since it compresses the time before the final client presentation, but I'd rather we have a thorough review than rush through it. I've already spoken with the design team, and they're on board with the new timeline. Please let me know by Friday if this creates any conflicts on your end. Thanks, Priya.",
             "options": [
-                "Climate models have fully resolved the relationship between cloud decline and ocean warming.",
-                "The cloud decline has no relationship whatsoever to sea surface temperatures.",
-                "Scientists agree the cloud decline is purely a result of warming with no further effect.",
-                "Scientists remain genuinely uncertain about whether declining clouds are a result of ocean warming, a cause of further warming, or both."
+                "The client's requirements have not changed at all. The passage's account gives no reason to think this differed at any stage.",
+                "The design team refused to accept the new timeline. Nothing described in the passage points to any exception to this pattern.",
+                "The final client presentation has already taken place. This would be expected to hold across the entire situation as described.",
+                "Priya is proposing a schedule change that still needs confirmation from some team members."
             ],
-            "correctAnswer": "Scientists remain genuinely uncertain about whether declining clouds are a result of ocean warming, a cause of further warming, or both.",
-            "hint": "Notice the scientists' own description of this as an unresolved question in the field.",
-            "explanation": "The passage explicitly states that current models disagree on the direction of cause and effect between cloud decline and warming, meaning the honest conclusion is that this remains a genuinely open scientific question rather than a settled one in either direction.",
+            "correctAnswer": "Priya is proposing a schedule change that still needs confirmation from some team members.",
+            "hint": "Notice both what Priya has already arranged and what she is still waiting to hear back about.",
+            "explanation": "Priya explains the design team already agreed, but she is still asking the recipient to confirm by Friday, showing the change is proposed but not yet fully confirmed by everyone involved.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Requirements revised -> internal review date pushed back -> design team already agreed -> recipient's confirmation still needed by Friday -> change proposed, not yet fully confirmed"
             ]
         },
         {
@@ -27,18 +27,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A workforce economist analyzing wage growth across several metropolitan labor markets found that cities which had invested heavily in publicly funded vocational training programs targeting mid-career workers, rather than concentrating job-training investment primarily on new labor market entrants, showed measurably smaller increases in long-term unemployment during a regional economic downturn than comparable cities that had concentrated their limited training budgets mainly on younger workers just beginning their careers, suggesting that supporting workers already established in the labor force may provide meaningful economic resilience during downturns that training aimed only at newcomers does not equally provide.",
+            "passage": "Notice posted at the community pool entrance: 'Due to ongoing filtration system repairs, the pool will operate at reduced capacity (50 swimmers maximum) through the end of the month. Lap swim hours will remain unchanged, but open recreational swim sessions will now require a free timed ticket, available at the front desk starting 30 minutes before each session. We appreciate your patience as we complete these necessary repairs to keep the water quality safe for everyone.'",
             "options": [
-                "Training focused on new labor market entrants provided greater resilience during downturns.",
-                "The target age group of training programs had no bearing on unemployment resilience.",
-                "Investing in training for established mid-career workers appears to provide more economic resilience during downturns than focusing mainly on new workers.",
-                "Every city studied showed an identical increase in long-term unemployment regardless of training focus."
+                "Lap swim hours have been cancelled for the rest of the month.",
+                "The pool has closed completely until repairs are finished.",
+                "Tickets for recreational swim can be purchased weeks in advance online. This reading would hold true across the full sequence of events described.",
+                "Visitors hoping to swim during open recreational sessions will need to plan ahead to secure a ticket."
             ],
-            "correctAnswer": "Investing in training for established mid-career workers appears to provide more economic resilience during downturns than focusing mainly on new workers.",
-            "hint": "Compare the two types of cities based on which group of workers their training programs targeted.",
-            "explanation": "Cities investing in mid-career worker training saw smaller unemployment increases during the downturn than cities focused on new entrants, suggesting that broadening support to already-established workers, not just newcomers, may build more resilience into a local labor market.",
+            "correctAnswer": "Visitors hoping to swim during open recreational sessions will need to plan ahead to secure a ticket.",
+            "hint": "Focus on what the notice specifically says about how recreational swimmers must now get access.",
+            "explanation": "The notice states tickets are only available at the front desk starting 30 minutes before each session and capacity is capped, meaning recreational swimmers need to plan their arrival carefully rather than simply showing up.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Filtration repairs limit capacity to 50 -> lap swim unaffected -> recreational swim now requires a same-day ticket, available 30 min before -> visitors must plan ahead to get in"
             ]
         },
         {
@@ -46,18 +46,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A team of epidemiologists studying a regional outbreak of a foodborne illness found that while initial case reports pointed strongly toward a single contaminated produce supplier as the likely source, a more detailed genetic analysis of the bacteria recovered from affected patients later revealed at least two genetically distinct strains circulating simultaneously, indicating that the outbreak likely involved multiple independent sources rather than a single point of contamination, a distinction that significantly changed the scope and direction of the subsequent public health investigation and recall efforts undertaken by the state health department in the weeks that followed.",
+            "passage": "Text message thread: Landlord: 'Hi Tomás, just a heads up that the plumber will be at the building tomorrow between 9 and 11 am to check the water heater in unit 4B, which is right above your apartment. He may need brief access to your bathroom to check the pipes from below if there's an issue. I'll knock first, but wanted to give you notice in case you need to plan around it.' Tomás: 'Thanks for letting me know. I have a work call until 10, but should be free after that.'",
             "options": [
-                "The genetic analysis confirmed the initial single-supplier theory was correct all along.",
-                "Only one genetic strain of bacteria was ultimately found among affected patients.",
-                "The genetic findings had no bearing on the direction of the public health investigation.",
-                "The genetic analysis revealed the outbreak likely had multiple sources, contradicting the initial single-supplier theory."
+                "Tomás may need to adjust when he is available at home tomorrow morning.",
+                "Tomás confirmed he will not be home at all tomorrow.",
+                "The plumber is scheduled to work in Tomás's apartment for certain.",
+                "The water heater issue has already been completely resolved."
             ],
-            "correctAnswer": "The genetic analysis revealed the outbreak likely had multiple sources, contradicting the initial single-supplier theory.",
-            "hint": "Compare what the initial reports suggested with what the more detailed genetic analysis later revealed.",
-            "explanation": "Initial reports pointed to one supplier, but genetic analysis found multiple distinct bacterial strains, indicating multiple independent sources rather than one, which is why the passage says this finding changed the direction of the investigation rather than simply confirming the original suspicion.",
+            "correctAnswer": "Tomás may need to adjust when he is available at home tomorrow morning.",
+            "hint": "Combine the plumber's arrival window with Tomás's stated schedule for the morning.",
+            "explanation": "Since the plumber's window overlaps partly with Tomás's work call, and access to his bathroom is only a possibility depending on what's found upstairs, Tomás's reply shows he's adjusting his expectations around being available after 10.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Plumber arrives 9-11am, may need bathroom access if needed -> Tomás has a call until 10 -> Tomás notes he'll be free after -> Tomás adjusting his morning to be available if needed"
             ]
         },
         {
@@ -65,18 +65,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A team of computer scientists benchmarking several approaches to detecting deepfake videos found that models trained exclusively on a wide variety of deepfakes generated using older, now largely obsolete techniques performed poorly when tested against deepfakes produced using newer generation methods that had emerged only in the months just before testing, a finding the researchers said underscores a persistent challenge in this area of research: detection systems risk becoming outdated almost as quickly as the underlying generative techniques they are designed to catch continue to evolve and improve.",
+            "passage": "From a company-wide memo: 'As part of our commitment to sustainability, starting next month we will be transitioning away from single-use plastic cups in the break rooms. Reusable mugs will be provided to all employees, and a dishwasher will be installed in each kitchenette. We recognize this is a change to daily habits, so we're asking team leads to help remind their groups during the first few weeks. Feedback on how this transition is going can be shared through the usual suggestion box.'",
             "options": [
-                "Detection models performed equally well against both older and newer deepfake techniques.",
-                "Detection models trained on older deepfake techniques appear to struggle against newer methods, suggesting detection tools may need constant updating to stay effective.",
-                "Newer deepfake generation methods were easier for older models to detect than older fakes.",
-                "The age of the training data had no bearing on detection performance."
+                "Employees will be required to bring their own dishes from home, based on the passage's account of what happened.",
+                "The suggestion box has been removed as part of this change.",
+                "The company anticipates the change may take some adjustment for employees at first.",
+                "Single-use cups will remain available alongside the new mugs indefinitely, according to the specific details given."
             ],
-            "correctAnswer": "Detection models trained on older deepfake techniques appear to struggle against newer methods, suggesting detection tools may need constant updating to stay effective.",
-            "hint": "Compare how the models performed against older deepfake techniques versus newer ones.",
-            "explanation": "Models trained on older techniques struggled against newer ones, suggesting that as fake-generation methods keep evolving, detection systems trained on outdated examples may quickly fall behind, requiring continual updates to remain effective against the latest techniques.",
+            "correctAnswer": "The company anticipates the change may take some adjustment for employees at first.",
+            "hint": "Notice the memo's specific request to team leads and what that implies about the transition period.",
+            "explanation": "Asking team leads to help with reminders 'during the first few weeks' suggests the company expects the habit change to take some getting used to, rather than assuming it will happen instantly and smoothly.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Reusable mugs replace plastic cups -> team leads asked to remind groups for first few weeks -> request implies the company expects an adjustment period"
             ]
         },
         {
@@ -84,18 +84,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A researcher studying bilingual education programs found that students enrolled in dual-language immersion programs, where instruction is split between English and a partner language throughout elementary school, initially scored somewhat lower on English-only standardized tests in the early grades compared to students in English-only programs, but by the end of middle school, the dual-language students had not only closed this gap entirely but also scored measurably higher on average, while additionally demonstrating strong proficiency in a second language that the English-only students largely lacked by the time both groups reached the same point in their education.",
+            "passage": "From a course syllabus: 'Late Work Policy: Assignments submitted within 24 hours of the deadline will receive a 10% grade deduction. Assignments submitted between 24 and 72 hours late will receive a 25% deduction. No assignments will be accepted after 72 hours past the deadline, except in documented cases of medical or family emergency, which must be communicated to the instructor as soon as reasonably possible.'",
             "options": [
-                "Dual-language students never closed the early gap with English-only students.",
-                "English-only students ultimately outperformed dual-language students by the end of middle school.",
-                "Dual-language immersion appears to involve a temporary early gap that gives way to stronger long-term outcomes, including bilingual proficiency.",
-                "Dual-language immersion had no measurable effect on English test scores at any point."
+                "A student who submits an assignment 50 hours late would lose all possible points. No part of the passage's account suggests otherwise.",
+                "A student who submits an assignment 50 hours late, without an emergency, would lose a quarter of the possible points.",
+                "Emergency documentation must be submitted before the original deadline.",
+                "Assignments submitted after 72 hours are always accepted with a larger penalty. Nothing described in the passage points to any exception to this pattern."
             ],
-            "correctAnswer": "Dual-language immersion appears to involve a temporary early gap that gives way to stronger long-term outcomes, including bilingual proficiency.",
-            "hint": "Notice how the comparison between the two groups changed between elementary school and middle school.",
-            "explanation": "Dual-language students initially scored lower but eventually surpassed English-only students while also gaining a second language, suggesting the early gap was a temporary trade-off for stronger long-term academic and linguistic outcomes rather than a lasting disadvantage.",
+            "correctAnswer": "A student who submits an assignment 50 hours late, without an emergency, would lose a quarter of the possible points.",
+            "hint": "Match the specific time window, 50 hours, to the deduction tier described in the policy.",
+            "explanation": "Fifty hours falls within the 24-to-72-hour window, which the policy states carries a 25 percent deduction, not the smaller 10 percent tier or a complete loss of points reserved for submissions past 72 hours.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "24-72 hours late: 25% deduction tier -> 50 hours falls within that window -> student without emergency documentation would lose 25% of the points"
             ]
         },
         {
@@ -103,18 +103,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A cultural anthropologist studying the adaptation of a traditional harvest festival among a diaspora community living far from their ancestral homeland found that the version of the festival celebrated abroad had evolved to include several new elements entirely absent from the festival as celebrated in the homeland, including foods and rituals borrowed from the surrounding host culture, a pattern the anthropologist interpreted not as a loss of authentic tradition but as evidence of the festival's genuine vitality, since traditions that continue to evolve and absorb new influences tend to remain meaningfully alive within a community, whereas traditions frozen in an unchanging form more often signal that a practice has become primarily ceremonial rather than a living part of daily culture.",
+            "passage": "Voicemail transcript: 'Hi, this is Denise calling from Brightview Dental. I wanted to follow up on the estimate we sent over for your upcoming procedure. Your insurance will cover about 60 percent of the cost, which leaves an estimated out-of-pocket amount of $340. We do offer a payment plan that splits this into three monthly installments if that would be helpful. Give us a call back whenever you get a chance to let us know how you'd like to proceed.'",
             "options": [
-                "The anthropologist interpreted the changes as evidence the tradition had been lost entirely.",
-                "The festival celebrated abroad remained completely identical to the homeland version.",
-                "The anthropologist interprets the festival's evolution abroad as a sign of vitality rather than a loss of authenticity.",
-                "Traditions that evolve are, according to the passage, generally less alive than unchanging ones."
+                "Insurance will cover the entire cost of the procedure, as the passage presents the situation.",
+                "The payment plan is the only way to pay for the procedure, based on the passage's account of what happened.",
+                "The patient has more than one option for how to handle the remaining cost.",
+                "The out-of-pocket cost has already been paid in full, based on what the passage actually says."
             ],
-            "correctAnswer": "The anthropologist interprets the festival's evolution abroad as a sign of vitality rather than a loss of authenticity.",
-            "hint": "Notice how the anthropologist specifically interprets the changes, stated directly in the passage.",
-            "explanation": "The anthropologist explicitly frames the festival's evolution as a sign of its continued vitality rather than a loss of authenticity, contrasting it with unchanging traditions that may have become merely ceremonial, so the conclusion should reflect that stated interpretation directly.",
+            "correctAnswer": "The patient has more than one option for how to handle the remaining cost.",
+            "hint": "Notice that the voicemail mentions both a full out-of-pocket amount and a separate installment option.",
+            "explanation": "Denise mentions the $340 out-of-pocket estimate and then separately offers a three-month payment plan as something that 'would be helpful,' showing the patient can choose between paying the full amount or splitting it up.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Insurance covers 60% -> out-of-pocket estimate: $340 -> payment plan offered as an alternative option -> patient has more than one way to handle the remaining cost"
             ]
         },
         {
@@ -122,18 +122,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "An analysis of retirement outcomes among public sector employees found that workers enrolled in a defined-contribution plan, where the eventual retirement benefit depends on investment performance, reported significantly more anxiety about retirement readiness in surveys than workers enrolled in a traditional defined-benefit pension plan offering a guaranteed fixed payout, even when the analysis controlled for each worker's actual account balance or expected pension value, suggesting that the structural uncertainty inherent in a defined-contribution plan may itself be a meaningful source of anxiety, independent of how much money a worker has actually accumulated toward retirement.",
+            "passage": "From a homeowner association newsletter: 'Reminder: Pool passes for the 2024 season must be renewed by May 1st to guarantee your household's spot in the system before the summer rush. Passes renewed after May 1st will still be processed, but access may be delayed by up to two weeks during peak renewal season, as our small volunteer committee works through the backlog by hand each year.'",
             "options": [
-                "The uncertainty built into defined-contribution plans appears to cause anxiety independent of how much money workers have actually saved.",
-                "Anxiety was fully explained by account balance and expected pension value alone.",
-                "Workers in defined-benefit pension plans reported more anxiety than those in defined-contribution plans.",
-                "The type of retirement plan had no bearing on workers' reported anxiety levels."
+                "Passes renewed after May 1st will be rejected entirely.",
+                "Renewing after May 1st could mean waiting before gaining pool access.",
+                "The pool committee processes renewals instantly regardless of timing, given how the events unfolded.",
+                "There is no deadline at all for renewing pool passes."
             ],
-            "correctAnswer": "The uncertainty built into defined-contribution plans appears to cause anxiety independent of how much money workers have actually saved.",
-            "hint": "Notice what the analysis controlled for separately from the plan type itself.",
-            "explanation": "Anxiety was higher among defined-contribution plan participants even after accounting for actual savings, suggesting that the structural uncertainty of not knowing the final payout amount, rather than the amount saved, is itself a meaningful source of worry for workers.",
+            "correctAnswer": "Renewing after May 1st could mean waiting before gaining pool access.",
+            "hint": "Focus on what specifically happens to renewals submitted after the stated deadline.",
+            "explanation": "The newsletter explicitly states that late renewals 'may be delayed by up to two weeks' due to the volunteer committee's backlog, meaning late renewers should expect a wait rather than an outright rejection.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Deadline: May 1st for guaranteed processing -> after May 1st: still processed but may be delayed up to two weeks -> small volunteer committee causes the backlog -> late renewal likely means waiting for access"
             ]
         },
         {
@@ -141,18 +141,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "Researchers studying the effectiveness of urban wetland restoration as a flood-mitigation strategy found that restored wetlands reduced peak flood water levels significantly during moderate storms, but during the single severe hundred-year storm event that occurred partway through the multi-year study period, the restored wetlands' flood-reduction benefit was substantially smaller in proportion to the total flooding, since the sheer volume of water involved in the extreme event exceeded what the wetlands, however well restored, could realistically be expected to absorb or redirect on their own without additional engineered flood infrastructure working alongside the natural system.",
+            "passage": "From a used car listing description: 'One owner, non-smoker, garage kept. Regular maintenance records available upon request, including all oil changes and the timing belt replacement at 90,000 miles. Currently at 112,000 miles. Minor cosmetic wear on the rear bumper from a low-speed parking incident; does not affect drivability. Priced to sell quickly given the detailed maintenance history.'",
             "options": [
-                "Restored wetlands provided equal proportional benefit during both moderate and extreme storms.",
-                "Restored wetlands were more effective during the severe storm than during moderate storms.",
-                "Restored wetlands appear effective for moderate flooding but provide proportionally less benefit during the most extreme storm events.",
-                "Storm severity had no bearing on how effective the restored wetlands were."
+                "The car has never had any maintenance performed on it.",
+                "The seller is presenting the car's maintenance history as a reason to justify the asking price.",
+                "The rear bumper damage affects the car's ability to drive. This would apply consistently across every detail the passage provides.",
+                "The car has had multiple previous owners."
             ],
-            "correctAnswer": "Restored wetlands appear effective for moderate flooding but provide proportionally less benefit during the most extreme storm events.",
-            "hint": "Compare the wetlands' effectiveness during moderate storms with their effectiveness during the single severe storm.",
-            "explanation": "The wetlands significantly reduced flooding during moderate storms but had a proportionally smaller effect during the extreme event, suggesting that while restoration provides real benefits, it has practical limits when facing water volumes far beyond what a natural system alone can be expected to manage.",
+            "correctAnswer": "The seller is presenting the car's maintenance history as a reason to justify the asking price.",
+            "hint": "Notice how the listing connects the detailed maintenance history to the phrase about pricing.",
+            "explanation": "The listing explicitly ties the phrase 'priced to sell quickly' to the phrase 'given the detailed maintenance history,' showing the seller is using the documented upkeep as justification for the price being set the way it is.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Detailed maintenance history provided -> listing states price reflects that history -> seller is using the maintenance records to justify the asking price"
             ]
         },
         {
@@ -160,18 +160,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A regional airline analyzing customer loyalty program data found that members who redeemed points for experiential rewards, such as airport lounge access or seat upgrades, showed higher subsequent spending with the airline over the following two years than members who redeemed an equivalent point value for purely transactional rewards, such as statement credits applied directly to a past purchase, a pattern the airline's marketing team attributed to experiential rewards creating a more memorable, emotionally positive association with the brand than a credit that, once applied, blends anonymously into an ordinary billing statement.",
+            "passage": "From a city council meeting summary: 'The proposed ordinance to restrict overnight parking on Elm Street passed with a 4-3 vote after nearly two hours of public comment. Several residents spoke in favor, citing safety concerns about street width and emergency vehicle access. Several other residents opposed the measure, arguing it would create a hardship for households without off-street parking. The ordinance will take effect in 60 days, giving affected residents time to make alternate arrangements.'",
             "options": [
-                "Transactional rewards were more effective than experiential rewards at encouraging future spending.",
-                "Experiential rewards appear more effective than transactional rewards at encouraging future spending, possibly due to the more memorable impression they leave.",
-                "The type of reward redeemed had no bearing on future spending patterns.",
-                "Both types of rewards produced identical increases in future spending."
+                "Every resident who spoke supported the new ordinance.",
+                "The ordinance takes effect immediately upon the vote.",
+                "The council's decision was not unanimous, and residents held differing opinions on the issue.",
+                "The vote resulted in a tie that required a revote."
             ],
-            "correctAnswer": "Experiential rewards appear more effective than transactional rewards at encouraging future spending, possibly due to the more memorable impression they leave.",
-            "hint": "Compare future spending between members who chose experiential rewards and those who chose transactional ones.",
-            "explanation": "Members who chose experiential rewards spent more with the airline afterward than those who chose transactional rewards, suggesting that a memorable experience may build a stronger ongoing connection to the brand than a credit that simply reduces a bill without leaving much impression.",
+            "correctAnswer": "The council's decision was not unanimous, and residents held differing opinions on the issue.",
+            "hint": "Look at both the vote count and the description of the public comments.",
+            "explanation": "A 4-3 vote, along with the passage's description of residents speaking on both sides of the issue, shows the decision was contested rather than a clear consensus.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Vote: 4-3, not unanimous -> residents spoke both for and against -> ordinance takes effect in 60 days -> decision was contested, with differing resident opinions"
             ]
         },
         {
@@ -179,18 +179,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A researcher studying sibling caregiving arrangements for aging parents found that families who held an explicit conversation establishing each sibling's role and expected level of involvement before a parent's health began seriously declining reported substantially less resentment and conflict among siblings during the actual caregiving period than families who never had such a conversation and instead allowed roles to emerge informally and often unevenly once a health crisis had already begun, suggesting that proactive planning, undertaken well before it becomes urgently necessary, may meaningfully shape how smoothly a family navigates caregiving once the need eventually arrives.",
+            "passage": "From an internal IT help desk ticket log: 'Ticket #4471 - Reported: printer on 3rd floor jamming repeatedly. Diagnosis: paper tray sensor malfunctioning, causing feed misalignment. Replacement part ordered, ETA 5-7 business days. Temporary fix applied: printer set to manual feed mode, which resolves jamming but requires staff to feed paper one sheet at a time. Status: Open, pending part arrival.'",
             "options": [
-                "Establishing caregiving roles proactively, before a crisis, appears linked to less sibling conflict once caregiving actually becomes necessary.",
-                "Families who never discussed roles in advance reported less conflict during caregiving.",
-                "Whether families discussed roles in advance had no bearing on later conflict.",
-                "Conflict during caregiving was entirely unrelated to how or when roles were established."
+                "The printer is completely unusable until the replacement part arrives, according to the account given.",
+                "Staff on the 3rd floor can currently use the printer, but not in its normal automatic mode.",
+                "The paper tray sensor has already been fully repaired. This would apply consistently across every detail the passage provides.",
+                "The printer will remain broken for at least a month. This would remain the case regardless of any other detail in the passage."
             ],
-            "correctAnswer": "Establishing caregiving roles proactively, before a crisis, appears linked to less sibling conflict once caregiving actually becomes necessary.",
-            "hint": "Compare families who planned roles in advance with families who let roles emerge informally during a crisis.",
-            "explanation": "Families who proactively discussed caregiving roles before a crisis reported less conflict than families who let roles emerge informally during one, suggesting that early, deliberate planning may help siblings navigate caregiving more smoothly once the situation actually arrives.",
+            "correctAnswer": "Staff on the 3rd floor can currently use the printer, but not in its normal automatic mode.",
+            "hint": "Notice the distinction the ticket makes between the temporary fix and full repair.",
+            "explanation": "The ticket describes a temporary fix, manual feed mode, that resolves the jamming for now, meaning the printer works but requires a slower, hands-on process until the part arrives in 5 to 7 days.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Sensor malfunctioning -> replacement part ordered, 5-7 day ETA -> temporary fix: manual feed mode resolves jamming -> printer usable now, but not in normal automatic mode"
             ]
         },
         {
@@ -198,18 +198,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A city planning department evaluating the long-term effects of converting a portion of downtown street parking into protected bike lanes found that nearby small businesses initially reported revenue declines in the months immediately following the conversion, largely attributed by business owners themselves to the loss of convenient car parking directly in front of their storefronts, but revenue at those same businesses had recovered to match or exceed pre-conversion levels within roughly eighteen months, as increased foot and bike traffic gradually offset the initial reduction in car-based customers arriving from further away.",
+            "passage": "From a restaurant's online order confirmation: 'Your order has been received and is being prepared. Estimated ready time: 6:15 PM. Please note: due to a temporary staffing shortage in our kitchen this evening, wait times may run 10-15 minutes longer than usual. We appreciate your patience and have added a complimentary drink to your order as a thank you.'",
             "options": [
-                "The bike lane conversion appears to have caused a temporary revenue dip that later recovered as foot and bike traffic increased.",
-                "Business revenue declined permanently and never recovered after the conversion.",
-                "Business revenue increased immediately with no initial decline at all.",
-                "The bike lane conversion had no measurable effect on nearby business revenue at any point."
+                "The restaurant is proactively managing customer expectations about a possible delay.",
+                "The order has been cancelled due to the staffing shortage, based on the passage's account of what happened.",
+                "The complimentary drink was requested by the customer. Nothing in the passage suggests this changed at any point during the period described.",
+                "The kitchen is fully staffed as usual this evening."
             ],
-            "correctAnswer": "The bike lane conversion appears to have caused a temporary revenue dip that later recovered as foot and bike traffic increased.",
-            "hint": "Compare what happened to business revenue immediately after the conversion with what happened roughly eighteen months later.",
-            "explanation": "Revenue initially dropped after the conversion but recovered within about eighteen months as foot and bike traffic increased, suggesting the change caused a real but temporary adjustment period rather than a lasting harm to the nearby businesses.",
+            "correctAnswer": "The restaurant is proactively managing customer expectations about a possible delay.",
+            "hint": "Notice both the warning about extra wait time and the gesture the restaurant made in response.",
+            "explanation": "By flagging the likely delay in advance and adding a free drink without being asked, the restaurant is taking steps to manage the customer's expectations and soften the impact of the staffing shortage.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Kitchen understaffed tonight -> wait times may run 10-15 min longer than usual -> complimentary drink added proactively -> restaurant managing customer expectations about the delay"
             ]
         },
         {
@@ -217,18 +217,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A collegiate athletics department comparing academic outcomes among student-athletes found that athletes in sports with in-season competition schedules overlapping heavily with final exam periods, such as certain winter sports, had GPAs statistically indistinguishable from athletes competing in sports without significant academic-calendar overlap, once the department accounted for each athlete's use of the university's structured study-hall program, a mandatory academic support resource that overlapping-schedule athletes were required to use at a higher weekly minimum, according to academic performance data reviewed across several recent seasons.",
+            "passage": "From a landlord's move-out inspection report: 'Overall condition: good, consistent with normal wear and tear expected over a two-year tenancy. Minor scuff marks on living room walls, within normal range. Carpet in bedroom shows staining beyond normal wear, estimated cleaning cost $120, to be deducted from security deposit. Kitchen and bathroom fixtures in working order, no deductions warranted.'",
             "options": [
-                "Athletes with schedule overlap had significantly lower GPAs regardless of study-hall use.",
-                "The structured study-hall program appears to have offset the academic disadvantage that scheduling overlap with exams might otherwise have caused.",
-                "The study-hall program had no relationship to GPA outcomes for any athletes.",
-                "Athletes without schedule overlap were required to use the study-hall program more."
+                "The tenant will likely receive back less than the full security deposit.",
+                "The tenant will receive the entire security deposit back with no deductions, as the passage presents the situation.",
+                "The landlord found no issues anywhere in the apartment.",
+                "The living room wall scuffs will result in a deduction from the deposit."
             ],
-            "correctAnswer": "The structured study-hall program appears to have offset the academic disadvantage that scheduling overlap with exams might otherwise have caused.",
-            "hint": "Notice what factor made the GPA difference disappear once it was accounted for.",
-            "explanation": "GPAs were similar between the two groups only once study-hall use was accounted for, and overlapping-schedule athletes used it more, suggesting the extra academic support helped offset what might otherwise have been a disadvantage from their more demanding competition schedule.",
+            "correctAnswer": "The tenant will likely receive back less than the full security deposit.",
+            "hint": "Distinguish between the issues the report labels as 'normal wear' and the one issue specifically marked for a deduction.",
+            "explanation": "While most of the apartment is described as normal wear with no deductions, the report specifically calls out the bedroom carpet staining as beyond normal wear and assigns a $120 deduction, meaning the tenant won't get the full deposit back.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Wall scuffs: normal wear, no deduction -> fixtures: fine, no deduction -> carpet staining: beyond normal wear, $120 deduction -> tenant will likely receive less than the full deposit"
             ]
         },
         {
@@ -236,18 +236,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A manufacturing company that redesigned its assembly line to reduce the number of times a single part needed to be physically handled by different workers before completion found that overall defect rates dropped substantially, but production line supervisors also reported that the redesign, by consolidating more steps under individual workers, made it noticeably harder to identify which specific worker or process stage was responsible when a defect did occur, since fewer distinct handoff points meant fewer natural checkpoints where problems had previously been caught and attributed before the part moved further down the line.",
+            "passage": "From a company's quarterly earnings call transcript: 'Our subscription revenue grew 14 percent year over year, driven primarily by strong retention among enterprise customers. However, our consumer segment saw a 6 percent decline in new sign-ups compared to the same quarter last year, which we attribute to increased competition in that space. We're actively reworking our consumer pricing strategy and expect to share updates next quarter.'",
             "options": [
-                "The redesign reduced defects with no effect on identifying their source.",
-                "The redesign made it easier to identify the source of any given defect.",
-                "The redesign appears to have reduced defects overall while making it harder to trace the specific source of any defect that still occurred.",
-                "Defect rates increased after the assembly line was redesigned."
+                "Both the enterprise and consumer segments grew at the same rate.",
+                "The company has already finalized its new consumer pricing strategy.",
+                "The company's two main customer segments performed differently this quarter.",
+                "Overall subscription revenue declined this quarter."
             ],
-            "correctAnswer": "The redesign appears to have reduced defects overall while making it harder to trace the specific source of any defect that still occurred.",
-            "hint": "Notice the passage mentions both an overall improvement and a new difficulty created by the same change.",
-            "explanation": "Defects dropped overall, but supervisors found it harder to trace individual defects to a specific worker or stage, since consolidating steps removed some of the natural checkpoints where problems used to be caught and attributed, showing the redesign traded easy traceability for fewer defects.",
+            "correctAnswer": "The company's two main customer segments performed differently this quarter.",
+            "hint": "Compare the specific numbers given for the enterprise segment versus the consumer segment.",
+            "explanation": "Enterprise revenue grew 14 percent while consumer sign-ups declined 6 percent, clearly showing the two segments moved in opposite directions this quarter rather than performing similarly.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Enterprise segment: revenue +14% -> consumer segment: sign-ups -6% -> segments performed very differently this quarter"
             ]
         },
         {
@@ -255,18 +255,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A team of marine biologists studying coral bleaching events found that coral colonies located near underwater currents that brought periodic pulses of slightly cooler water, even for just a few hours during the hottest part of each day, showed substantially higher survival rates during a prolonged regional heat event than genetically similar coral colonies in nearby areas without access to such cooling currents, a finding that has prompted some researchers to explore whether artificially engineered cooling systems might offer a viable, if logistically challenging, intervention for protecting particularly vulnerable reef sections during future heat events.",
+            "passage": "From a doctor's office after-visit summary: 'Blood pressure reading today: 142/91, elevated compared to your last three visits, which averaged around 128/82. Recommend monitoring at home twice daily for the next two weeks and keeping a log. If readings remain consistently elevated, we may discuss medication options at your follow-up appointment. In the meantime, reducing sodium intake and increasing physical activity may help.'",
             "options": [
-                "Cooling currents had no measurable relationship to coral survival during the heat event.",
-                "Coral colonies without access to cooling currents showed higher survival rates.",
-                "Researchers have ruled out artificial cooling as a possible intervention entirely.",
-                "Access to periodic cooling currents appears linked to higher coral survival during heat events, prompting interest in artificial cooling as a possible intervention."
+                "The doctor has already prescribed medication for high blood pressure. The passage's account gives no reason to think this differed at any stage.",
+                "Today's reading is a change from the patient's recent pattern, prompting closer monitoring rather than an immediate treatment decision.",
+                "Today's reading is consistent with the patient's readings from previous visits. This pattern would hold steady across the entire situation the passage lays out.",
+                "The doctor recommended no further monitoring or follow-up of any kind. Such a pattern would remain constant throughout the scenario being described."
             ],
-            "correctAnswer": "Access to periodic cooling currents appears linked to higher coral survival during heat events, prompting interest in artificial cooling as a possible intervention.",
-            "hint": "Compare survival rates between coral colonies with and without access to cooling currents.",
-            "explanation": "Coral near periodic cooling currents survived the heat event better than genetically similar coral without such access, suggesting even brief temperature relief mattered, which is why researchers are now exploring whether artificial cooling could replicate this protective effect elsewhere.",
+            "correctAnswer": "Today's reading is a change from the patient's recent pattern, prompting closer monitoring rather than an immediate treatment decision.",
+            "hint": "Compare today's reading to the stated average from previous visits, and note what the doctor recommends next.",
+            "explanation": "Today's elevated reading stands out against a clearly different average from the past three visits, and the doctor's response is to recommend monitoring first, with medication only a possible future discussion, not an immediate step.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Past average: 128/82 -> today: 142/91, elevated -> doctor recommends home monitoring for two weeks -> medication only discussed if readings stay elevated -> monitoring first, not immediate treatment change"
             ]
         },
         {
@@ -274,18 +274,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A food industry consultant analyzing consumer response to plant-based dairy alternatives found that products marketed with a direct taste comparison to traditional dairy, phrases like 'tastes just like milk,' generated more initial trial purchases but also generated more negative reviews citing taste disappointment than similar products marketed on their own merits without any direct comparison, a pattern the consultant attributed to comparative marketing setting an expectation that plant-based products, given current technology, still struggle to fully satisfy in a side-by-side comparison with the traditional product they are being directly measured against.",
+            "passage": "From a city's public transit rider alert: 'Effective this Saturday, the Blue Line will operate on a modified schedule due to track maintenance between Central Station and Riverside. Trains will run every 20 minutes instead of the usual 10, and riders traveling between these two stations should expect an additional bus shuttle to cover the affected segment. All other stations on the Blue Line will continue operating on the normal schedule.'",
             "options": [
-                "Direct taste comparisons in marketing appear to boost initial trial but also increase the risk of disappointed reviews.",
-                "Direct taste comparisons increased trial purchases with no effect on reviews.",
-                "Products marketed without comparison received more negative reviews.",
-                "Marketing approach had no bearing on either trial purchases or review sentiment."
+                "The entire Blue Line will be shut down for the maintenance period.",
+                "Trains will run more frequently than usual during the maintenance.",
+                "The modified schedule will remain in effect permanently.",
+                "Only riders traveling through a specific segment of the Blue Line will be significantly affected by the maintenance."
             ],
-            "correctAnswer": "Direct taste comparisons in marketing appear to boost initial trial but also increase the risk of disappointed reviews.",
-            "hint": "Notice the passage mentions both a benefit and a risk of using direct comparison in marketing.",
-            "explanation": "Comparative marketing increased initial purchases but also increased negative reviews about taste, suggesting that setting a direct comparison to dairy created expectations the plant-based product sometimes failed to meet, a trade-off between attracting first-time buyers and satisfying them once they tried it.",
+            "correctAnswer": "Only riders traveling through a specific segment of the Blue Line will be significantly affected by the maintenance.",
+            "hint": "Notice the distinction the alert makes between the affected segment and the rest of the line.",
+            "explanation": "The alert specifies that only the segment between Central Station and Riverside gets the reduced frequency and shuttle bus, while it explicitly states all other stations continue on the normal schedule, showing the impact is localized rather than line-wide.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Maintenance affects only Central Station to Riverside segment -> trains every 20 min, shuttle bus added there -> all other stations: normal schedule continues -> impact is localized, not line-wide"
             ]
         },
         {
@@ -293,18 +293,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A team studying the accuracy of wearable sleep-tracking devices compared their measurements against the gold-standard laboratory method of monitoring brain activity directly, finding that consumer devices were reasonably accurate at estimating total sleep duration but considerably less accurate at distinguishing between specific sleep stages, such as deep sleep versus light sleep, frequently misclassifying stages in ways the laboratory method did not, a limitation the researchers said users should keep firmly in mind before making significant changes to their sleep habits based solely on a consumer device's detailed stage-by-stage breakdown.",
+            "passage": "From a nonprofit's annual impact report: 'This year, our after-school tutoring program served 340 students across six schools, an increase from 210 students last year. Average reading level improvement was 1.2 grade levels among students who attended at least 20 sessions, compared to 0.4 grade levels among students who attended fewer than 10 sessions. We are grateful to our 85 volunteer tutors who made this growth possible.'",
             "options": [
-                "Consumer devices were equally accurate at measuring total sleep and identifying sleep stages.",
-                "Consumer devices were more accurate than laboratory methods at identifying sleep stages.",
-                "Sleep stage identification showed no measurable difference between consumer devices and laboratory methods.",
-                "Consumer sleep trackers appear reasonably reliable for total sleep time but considerably less reliable for identifying specific sleep stages."
+                "Students who attended the program more consistently tended to show greater reading improvement.",
+                "Students who attended fewer sessions showed greater reading improvement, given the way the passage frames things.",
+                "The number of students served decreased compared to last year.",
+                "Volunteer tutors were responsible for a decline in program quality, according to the specific details given."
             ],
-            "correctAnswer": "Consumer sleep trackers appear reasonably reliable for total sleep time but considerably less reliable for identifying specific sleep stages.",
-            "hint": "Notice the passage distinguishes between accuracy for total sleep duration and accuracy for specific sleep stages.",
-            "explanation": "Devices were reasonably accurate on total sleep time but frequently misclassified specific sleep stages compared to the lab method, suggesting users should trust the overall duration numbers more than detailed stage breakdowns when interpreting their own data.",
+            "correctAnswer": "Students who attended the program more consistently tended to show greater reading improvement.",
+            "hint": "Compare the improvement figures for students with more sessions versus fewer sessions.",
+            "explanation": "Students attending 20 or more sessions showed a much larger average improvement (1.2 grade levels) than those attending fewer than 10 sessions (0.4 grade levels), directly supporting a link between attendance consistency and reading gains.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "20+ sessions attended: 1.2 grade level improvement -> fewer than 10 sessions: 0.4 grade level improvement -> more consistent attendance appears linked to greater improvement"
             ]
         },
         {
@@ -312,18 +312,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A public health team evaluating a school-based mental health screening program found that while the program successfully identified a substantial number of students who went on to receive a formal diagnosis and appropriate treatment, it also generated a considerable number of false positives, students flagged as at-risk who, upon further clinical evaluation, did not meet diagnostic criteria, and the team noted this trade-off is common to most broad screening programs, which typically must accept some rate of false positives in exchange for catching cases that would otherwise go unnoticed and untreated.",
+            "passage": "From a small business owner's message to loyal customers: 'After eight wonderful years on Maple Street, I've made the difficult decision to close our storefront at the end of this month. Rising rent costs in the neighborhood have made it unsustainable to continue in this location. The good news is that our online shop will remain open, and we're exploring a smaller shared retail space downtown for next year. Thank you for eight incredible years of support.'",
             "options": [
-                "The program identified every at-risk student with no false positives at all.",
-                "The program failed to identify any students who later received a diagnosis.",
-                "The screening program appears to involve a genuine trade-off between identifying real cases and generating false positives, a common feature of broad screening efforts.",
-                "False positives were entirely eliminated once the program was refined."
+                "The business is closing permanently with no future plans. The passage offers no detail suggesting this changed over the period discussed.",
+                "The business is ending its current physical location but is not necessarily disappearing entirely.",
+                "Rent costs at the current location have decreased significantly. Such a pattern would remain constant throughout the scenario being described.",
+                "The online shop will also close at the end of the month. This reading would hold true across the full sequence of events described."
             ],
-            "correctAnswer": "The screening program appears to involve a genuine trade-off between identifying real cases and generating false positives, a common feature of broad screening efforts.",
-            "hint": "Notice the trade-off the team explicitly describes as common to screening programs in general.",
-            "explanation": "The program caught real cases but also flagged students who didn't ultimately meet diagnostic criteria, and the team frames this as an expected trade-off of broad screening, meaning the honest conclusion acknowledges both the program's value and its inherent imperfection rather than claiming either extreme.",
+            "correctAnswer": "The business is ending its current physical location but is not necessarily disappearing entirely.",
+            "hint": "Distinguish between what is definitely ending, the storefront, and what the owner says will continue or might happen next.",
+            "explanation": "While the physical Maple Street store is closing due to rent costs, the owner explicitly states the online shop will remain open and mentions exploring a new shared space, showing the business continues in a different form rather than disappearing.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Storefront closing due to rising rent -> online shop will remain open -> smaller shared space being explored for next year -> business continues in a different form, not disappearing entirely"
             ]
         },
         {
@@ -331,18 +331,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "An arts researcher studying the long-term economic impact of publicly funded artist residencies found that towns hosting a residency program for at least five consecutive years saw measurable increases in the number of independently operating art galleries and studios within the town over the following decade, even after accounting for broader regional economic trends and overall population growth, though the researcher cautioned that the residency program's specific role in this growth, as opposed to simply reflecting an already-emerging local interest in the arts that made a town attractive for hosting a residency in the first place, remains difficult to fully disentangle.",
+            "passage": "From a city's building inspection notice: 'During our routine inspection, we identified a code violation regarding the exterior fire escape on the north side of the building, which requires reinforcement to meet current safety standards. Property owner has 45 days to complete repairs or file for an extension with documented proof of a scheduled contractor. Failure to address this within the given timeframe may result in daily fines.'",
             "options": [
-                "It remains difficult to fully separate the residency program's specific effect from a pre-existing local interest in the arts that may have shaped both outcomes.",
-                "The researcher confirmed the residency program was the sole cause of gallery growth.",
-                "Towns without residency programs saw greater gallery growth than towns with them.",
-                "Population growth and regional trends fully explained the gallery growth, ruling out any residency effect."
+                "The property owner must complete repairs within 24 hours or face immediate fines, according to the specific details given.",
+                "Extensions are not available under any circumstances. No part of the passage's account suggests otherwise.",
+                "The violation applies to the entire building, not a specific area, as the passage lays out the sequence of events.",
+                "The property owner has options for how to respond to the violation within the deadline."
             ],
-            "correctAnswer": "It remains difficult to fully separate the residency program's specific effect from a pre-existing local interest in the arts that may have shaped both outcomes.",
-            "hint": "Notice the researcher's own caution near the end about disentangling cause from a pre-existing local interest.",
-            "explanation": "Gallery growth was linked to hosting a residency even after accounting for regional trends, but the researcher notes it's hard to know whether the residency caused the growth or whether towns already interested in the arts were simply more likely to host one, leaving genuine uncertainty about the direction of cause.",
+            "correctAnswer": "The property owner has options for how to respond to the violation within the deadline.",
+            "hint": "Notice that the notice describes more than one path the owner could take.",
+            "explanation": "The notice specifies the owner can either complete repairs within 45 days or file for an extension with proof of a scheduled contractor, showing there is more than one acceptable way to respond before fines would apply.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Violation found: north-side fire escape -> owner has 45 days to repair -> extension option available with proof of scheduled contractor -> owner has more than one way to respond before fines apply"
             ]
         },
         {
@@ -350,18 +350,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A district comparing two approaches to teaching computer programming to middle schoolers, one beginning with several weeks of unplugged, paper-based logic exercises before introducing any actual coding, and another beginning with coding on a computer from the very first day, found that students in the unplugged-first group showed stronger performance on assessments of abstract logical reasoning several months later, but reported lower initial engagement and enthusiasm for the class during the unplugged weeks themselves, according to engagement surveys administered at multiple points throughout the semester-long unit.",
+            "passage": "From an employee's internal message to HR: 'I wanted to formally request to transition from full-time to a 4-day, 32-hour schedule starting next quarter, if possible. I've discussed this informally with my manager, who is supportive of the idea in principle, but she mentioned the final decision would need to go through HR's flexible work policy review process, which typically takes about three weeks. I wanted to get this request in early given that timeline.'",
             "options": [
-                "The unplugged-first approach improved both reasoning skills and initial engagement.",
-                "Students in the coding-first group showed stronger long-term reasoning performance.",
-                "The teaching approach had no bearing on either reasoning skills or engagement.",
-                "The unplugged-first approach appears to build stronger long-term reasoning skills at some cost to initial student engagement."
+                "The employee's schedule change has already been fully approved.",
+                "The employee's manager supports the idea, but the change still requires a separate formal approval process.",
+                "The employee's manager rejected the request outright.",
+                "HR's review process typically takes less than a day to complete. The passage's account gives no reason to think this differed at any stage."
             ],
-            "correctAnswer": "The unplugged-first approach appears to build stronger long-term reasoning skills at some cost to initial student engagement.",
-            "hint": "Notice the passage mentions a long-term benefit alongside a short-term drawback of the unplugged approach.",
-            "explanation": "The unplugged-first group developed stronger reasoning skills months later but reported lower engagement during the unplugged weeks themselves, suggesting the approach involved a real trade-off between immediate enjoyment and the deeper skill-building that became apparent only over a longer timeframe.",
+            "correctAnswer": "The employee's manager supports the idea, but the change still requires a separate formal approval process.",
+            "hint": "Separate the manager's informal support from what still needs to happen through HR.",
+            "explanation": "The message shows the manager is supportive 'in principle,' but explicitly states the final decision still requires HR's review process, which takes about three weeks, meaning support alone doesn't guarantee the change is finalized yet.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Manager supportive in principle -> final decision requires HR's flexible work review -> review process takes ~3 weeks -> manager's support alone doesn't finalize the change"
             ]
         },
         {
@@ -369,18 +369,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A financial regulator studying the effects of a rule requiring investment apps to display a prominent risk warning before executing any trade in a highly volatile asset found that the warning reduced impulsive same-day trading among users flagged by the app's own algorithm as high-frequency traders, but had essentially no measurable effect on trading behavior among users who traded only occasionally, suggesting the warning's usefulness may depend heavily on a user's existing trading habits rather than serving as a uniformly effective intervention across the app's entire and quite varied user base, according to trading pattern data reviewed over six months.",
+            "passage": "From a parent's email to a school counselor: 'I wanted to reach out because my daughter mentioned she's been having some trouble keeping up with the new online homework portal since the switch last month. She's not complaining about the workload itself, just the technical side of submitting assignments. I'm wondering if there's a quick tutorial or support session available for students who are still getting used to the new system.'",
             "options": [
-                "The warning was equally effective for both frequent and occasional traders.",
-                "The warning was most effective specifically among occasional traders.",
-                "Trading habits had no bearing on how effective the warning turned out to be.",
-                "The risk warning appears effective mainly for frequent traders, with little measurable effect on occasional traders."
+                "The daughter is struggling because the homework assignments are too difficult, as the situation is described here.",
+                "The parent believes the difficulty is related to using the technology rather than the schoolwork itself.",
+                "The school has not made any changes to its homework system recently.",
+                "The parent is requesting a reduction in her daughter's overall workload."
             ],
-            "correctAnswer": "The risk warning appears effective mainly for frequent traders, with little measurable effect on occasional traders.",
-            "hint": "Notice which specific group of users showed a measurable change in behavior after the warning was introduced.",
-            "explanation": "The warning reduced impulsive trading among frequent traders but showed little effect on occasional traders, suggesting the intervention's usefulness depends on a user's existing habits rather than working as a uniformly effective safeguard for everyone on the platform.",
+            "correctAnswer": "The parent believes the difficulty is related to using the technology rather than the schoolwork itself.",
+            "hint": "Notice the specific distinction the parent draws between the workload and the technical process.",
+            "explanation": "The parent explicitly separates the two issues, stating her daughter isn't complaining about the workload, only the technical side of submitting assignments through the new portal, pointing to a technology adjustment issue rather than academic difficulty.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "New online portal introduced last month -> daughter struggles with submission process -> parent clarifies workload itself isn't the issue -> difficulty appears tied to the technology, not the schoolwork"
             ]
         },
         {
@@ -388,18 +388,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A team of hydrologists studying groundwater depletion in an agricultural region found that farms which adopted soil moisture sensors to guide precise, data-driven irrigation timing reduced their total water usage by nearly a quarter without any corresponding decrease in crop yield, but the hydrologists noted that widespread adoption of this technology across the entire region has been slower than the technology's proven benefits would seem to justify, largely due to the significant upfront equipment cost, which many smaller farms operating on thin profit margins have found difficult to justify despite the clear long-term water and cost savings involved.",
+            "passage": "From a moving company's confirmation email: 'Your move is confirmed for Saturday, June 8th, with a 3-hour arrival window between 9 AM and 12 PM. Please note that our final quote assumes standard access, meaning ground-floor loading or elevator access at both locations. If either location requires carrying items up or down more than one flight of stairs, additional stair fees will apply and will be calculated on-site by the moving crew.'",
             "options": [
-                "Despite proven water savings, adoption of the sensor technology has been slowed mainly by the upfront cost facing smaller farms.",
-                "The technology failed to reduce water usage or maintain crop yield.",
-                "Adoption has been widespread and rapid across the entire agricultural region.",
-                "Upfront cost had no bearing on which farms adopted the new technology."
+                "The final cost of the move could change depending on conditions the company won't confirm until moving day.",
+                "The quoted price is guaranteed regardless of any stairs involved. Such a pattern would remain constant throughout the scenario being described.",
+                "The move has been rescheduled to a different date.",
+                "The company will not move any items that require stairs."
             ],
-            "correctAnswer": "Despite proven water savings, adoption of the sensor technology has been slowed mainly by the upfront cost facing smaller farms.",
-            "hint": "Notice what the hydrologists identify as the main barrier to wider adoption, despite the technology's proven benefits.",
-            "explanation": "The sensors clearly reduced water use without hurting yield, yet adoption remains slow, and the passage attributes this gap specifically to upfront costs that smaller, thinner-margin farms struggle to absorb, even when the long-term savings would eventually outweigh that initial expense.",
+            "correctAnswer": "The final cost of the move could change depending on conditions the company won't confirm until moving day.",
+            "hint": "Focus on what the email says about when stair fees would actually be determined.",
+            "explanation": "The email explains that additional stair fees apply if standard access isn't available and states these fees are calculated on-site by the crew, meaning the final price isn't fully locked in until the move actually happens.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Quote assumes standard ground-floor or elevator access -> stairs beyond one flight trigger additional fees -> fees calculated on-site, not in advance -> final cost could change depending on moving-day conditions"
             ]
         },
         {
@@ -407,18 +407,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A national park service comparing visitor behavior across several parks found that parks which required visitors to watch a short mandatory safety video before receiving a wilderness permit, rather than simply providing optional printed safety information at the ranger station, reported significantly fewer search-and-rescue incidents involving visitors who had ventured beyond marked and maintained trails, even though the total number of permits issued, and therefore the total number of visitors venturing into the backcountry, remained roughly comparable between the parks with and without the mandatory video requirement.",
+            "passage": "From a museum's membership renewal letter: 'Your annual membership is set to expire on the 30th of this month. As a thank-you for being a member for over five consecutive years, you're eligible for our loyalty renewal rate, which is 15% below the standard renewal price. This discounted rate is only available if you renew before your current membership expires; after that date, renewals will be processed at the standard rate.'",
             "options": [
-                "The mandatory safety video appears linked to fewer rescue incidents, independent of how many visitors actually ventured into the backcountry.",
-                "Parks with the mandatory video reported more search-and-rescue incidents.",
-                "The number of permits issued explained the difference in rescue incidents.",
-                "Whether the safety video was mandatory had no bearing on rescue incidents."
+                "Waiting until after the expiration date to renew would mean paying more than renewing before it.",
+                "The discounted rate applies no matter when the member chooses to renew, as the passage lays out the sequence of events.",
+                "Members who have belonged for fewer than five years pay more than five-year members regardless of timing, given the way the passage frames things.",
+                "The membership has already expired and cannot be renewed at all. This would be expected to hold across the entire situation as described."
             ],
-            "correctAnswer": "The mandatory safety video appears linked to fewer rescue incidents, independent of how many visitors actually ventured into the backcountry.",
-            "hint": "Notice that visitor numbers were similar between the two types of parks; only the video requirement differed.",
-            "explanation": "Parks requiring the safety video had fewer rescue incidents despite similar visitor numbers, suggesting the mandatory format itself, ensuring every visitor actually engaged with the safety information rather than just having it optionally available, made a meaningful difference in visitor preparedness.",
+            "correctAnswer": "Waiting until after the expiration date to renew would mean paying more than renewing before it.",
+            "hint": "Focus specifically on the condition attached to the discounted loyalty rate.",
+            "explanation": "The letter states the 15% discount is 'only available if you renew before your current membership expires,' directly implying that renewing after that date results in paying the higher standard rate instead.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Membership expires end of month -> loyalty discount available only if renewed before expiration -> after expiration, standard rate applies -> waiting past the deadline means paying more"
             ]
         },
         {
@@ -426,18 +426,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A researcher studying blended families found that stepsiblings who were given input into decisions about shared living spaces, such as how a shared bedroom would be divided or decorated, when a new stepfamily first moved in together, reported significantly better relationships with each other five years later than stepsiblings whose parents made all such decisions unilaterally without consulting the children involved, suggesting that early involvement in seemingly minor household decisions may carry outsized importance for how children experience the broader transition into a newly blended family structure during what is often already an emotionally difficult period.",
+            "passage": "From a tenant's maintenance request follow-up: 'I submitted a request last Tuesday about the kitchen faucet leaking, and someone came by Thursday to look at it. They said they needed to order a replacement cartridge, which should arrive early this week. In the meantime, they showed me how to keep the shutoff valve partially closed to slow the drip until the part arrives, which has helped a lot.'",
             "options": [
-                "Involving stepsiblings in early decisions about shared spaces appears linked to better long-term relationships between them.",
-                "Stepsiblings whose parents made all decisions unilaterally reported better relationships.",
-                "Involvement in household decisions had no bearing on long-term stepsibling relationships.",
-                "Both approaches produced identical relationship outcomes five years later."
+                "The faucet has already been completely repaired.",
+                "No one has responded to the maintenance request yet, as the situation is described here.",
+                "The leak has gotten significantly worse since the request was submitted, according to how the passage describes the situation.",
+                "The tenant has a temporary workaround while waiting for a permanent repair."
             ],
-            "correctAnswer": "Involving stepsiblings in early decisions about shared spaces appears linked to better long-term relationships between them.",
-            "hint": "Compare stepsibling relationships based on whether children had input into early household decisions.",
-            "explanation": "Stepsiblings given input into shared-space decisions reported better relationships five years later than those excluded from such decisions, suggesting that even seemingly minor early involvement may help children feel a sense of ownership and respect during a difficult family transition.",
+            "correctAnswer": "The tenant has a temporary workaround while waiting for a permanent repair.",
+            "hint": "Distinguish between what has already been fixed and what is still pending, based on the tenant's description.",
+            "explanation": "The tenant describes a visit that diagnosed the issue and provided a temporary fix, the partially closed shutoff valve, while the actual replacement part is still on order, showing a workaround is in place but the permanent repair hasn't happened yet.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Leak reported Tuesday -> technician visits Thursday, orders replacement cartridge -> temporary fix (partial shutoff) provided, helping in the meantime -> permanent repair still pending part arrival"
             ]
         },
         {
@@ -445,18 +445,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A national swimming federation comparing training approaches for competitive youth swimmers found that swimmers who incorporated at least one full rest day per week into their training schedule showed greater improvement in race times over a full season than swimmers who trained every single day without any scheduled rest, even though the rest-day swimmers logged measurably fewer total hours of pool training over the same season, suggesting that recovery time may contribute more to performance improvement than sheer accumulated training volume alone once a certain baseline level of training is already being met.",
+            "passage": "From a city recreation department's summer camp waitlist notice: 'Thank you for your interest in our Adventure Camp program. All sessions are currently full, and you have been placed on the waitlist at position 12 for your preferred session. Waitlist movement typically occurs as families finalize other summer plans; historically, about 30% of waitlisted families receive a spot by early June.'",
             "options": [
-                "Swimmers who trained every day without rest showed greater improvement.",
-                "Total training hours were the only factor linked to performance improvement.",
-                "Rest days had no measurable relationship to performance improvement over the season.",
-                "Recovery time appears to contribute more to performance improvement than total training volume, once a baseline level of training is met."
+                "Being on the waitlist does not guarantee a spot, though there is a reasonable chance of getting in based on past patterns.",
+                "Waitlisted families are guaranteed a spot before the camp begins.",
+                "The camp has never had any spots open up from the waitlist before.",
+                "Position 12 on the waitlist means the family is certain not to get in. This pattern would hold steady across the entire situation the passage lays out."
             ],
-            "correctAnswer": "Recovery time appears to contribute more to performance improvement than total training volume, once a baseline level of training is met.",
-            "hint": "Compare the two groups' improvement despite the rest-day group logging fewer total training hours.",
-            "explanation": "Swimmers with a weekly rest day improved more than swimmers training daily without rest, despite fewer total hours, suggesting that recovery itself contributes meaningfully to performance gains, beyond simply accumulating as much training volume as possible.",
+            "correctAnswer": "Being on the waitlist does not guarantee a spot, though there is a reasonable chance of getting in based on past patterns.",
+            "hint": "Weigh the historical percentage mentioned against the fact that a spot is not guaranteed.",
+            "explanation": "The notice explains that about 30 percent of waitlisted families historically get a spot, showing there's a real but uncertain chance, neither guaranteed nor impossible, based on how things have gone in past years.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Family placed at waitlist position 12 -> historically ~30% of waitlisted families get a spot by early June -> spot not guaranteed, but a reasonable chance exists based on past patterns"
             ]
         },
         {
@@ -464,18 +464,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A city studying long-term outcomes of a guaranteed basic income pilot program, which provided a fixed monthly cash payment with no restrictions on how it could be spent to a randomly selected group of low-income residents, found that recipients were significantly more likely than a similar control group to have secured stable full-time employment within two years, a finding that surprised some initial critics of the program who had predicted the unconditional payments would reduce recipients' motivation to seek work, though program administrators noted the employment gains were concentrated specifically among recipients who used at least part of the payment to cover job-search-related costs, such as reliable transportation or professional clothing.",
+            "passage": "From a freelancer's project proposal email to a client: 'Based on our call, I've outlined two possible approaches. Option A is a simpler design delivered within two weeks at $1,200, using our existing template library. Option B is a fully custom design delivered within five weeks at $2,800, built from scratch to match your brand more precisely. Let me know which direction feels right, or if you'd like to discuss a hybrid approach.'",
             "options": [
-                "Every recipient of the payment showed identical employment gains regardless of how funds were used.",
-                "The employment gains appear concentrated among recipients who used the payments specifically for job-search-related expenses, not among recipients broadly.",
-                "The unconditional payments reduced recipients' motivation to seek employment, as critics had predicted.",
-                "Employment gains were concentrated among recipients who did not use the payment for any job-related expenses."
+                "The client's decision will likely involve weighing cost and timeline against how customized they want the final design to be.",
+                "Option A is guaranteed to take longer than Option B.",
+                "The freelancer has already chosen Option B on the client's behalf. This reading would hold true across the full sequence of events described.",
+                "A hybrid approach is not something the client could request. This pattern would hold steady across the entire situation the passage lays out."
             ],
-            "correctAnswer": "The employment gains appear concentrated among recipients who used the payments specifically for job-search-related expenses, not among recipients broadly.",
-            "hint": "Notice which specific subgroup of recipients the administrators highlight at the end of the passage.",
-            "explanation": "Employment gains were strongest among recipients who used the payment for job-search costs like transportation or clothing, suggesting the program's benefit worked through a specific practical mechanism rather than simply through unconditional cash defying critics' predictions in a uniform way across all recipients.",
+            "correctAnswer": "The client's decision will likely involve weighing cost and timeline against how customized they want the final design to be.",
+            "hint": "Compare the trade-offs described between the two named options.",
+            "explanation": "The email lays out a clear trade-off, Option A is faster and cheaper but more generic, while Option B costs more and takes longer but offers more customization, meaning the client's choice depends on balancing those factors.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Option A: 2 weeks, $1,200, template-based -> Option B: 5 weeks, $2,800, fully custom -> client's decision likely depends on weighing cost/timeline against customization needs"
             ]
         },
         {
@@ -483,18 +483,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A team of ornithologists studying migratory bird navigation found that birds exposed to artificial magnetic field disruptions during a critical developmental period in early life showed impaired navigational ability as adults even when later migrations took place under entirely normal magnetic conditions, suggesting that the disruption's effect was not merely a temporary interference with in-the-moment navigation but had caused some form of lasting change to how the birds' navigational systems developed in the first place, a distinction with significant implications for understanding the long-term risks that human-generated electromagnetic interference might pose to wildlife during vulnerable developmental windows.",
+            "passage": "From a city's building permit office notice: 'Applications submitted through our online portal are typically reviewed within 10 business days. Applications submitted by mail take an average of 3-4 weeks due to additional processing steps, including manual data entry and physical document scanning. We strongly encourage applicants to use the online portal whenever possible to reduce wait times.'",
             "options": [
-                "The birds' navigational impairment disappeared once normal magnetic conditions returned.",
-                "The magnetic disruption appears to have caused a lasting developmental change, not just a temporary interference limited to the moment of exposure.",
-                "The magnetic disruption had no measurable effect on the birds' navigational ability as adults.",
-                "Navigational impairment occurred only during the original disruption and not afterward."
+                "Mail submissions are always processed faster than online submissions, given how the events unfolded.",
+                "The office no longer accepts applications submitted by mail.",
+                "Choosing how to submit an application could meaningfully affect how quickly it gets reviewed.",
+                "Both submission methods take exactly the same amount of time. The passage offers no detail suggesting this changed over the period discussed."
             ],
-            "correctAnswer": "The magnetic disruption appears to have caused a lasting developmental change, not just a temporary interference limited to the moment of exposure.",
-            "hint": "Notice that the impairment persisted even after magnetic conditions returned to normal for later migrations.",
-            "explanation": "Impaired navigation persisted into adulthood even under normal magnetic conditions, suggesting the early disruption caused a lasting developmental change rather than simply interfering with navigation only while the disruption was actively occurring, a distinction the passage says matters for understanding long-term risks.",
+            "correctAnswer": "Choosing how to submit an application could meaningfully affect how quickly it gets reviewed.",
+            "hint": "Compare the stated processing times for the two submission methods.",
+            "explanation": "Online applications take about 10 business days while mailed applications take 3-4 weeks due to extra manual steps, showing the submission method itself has a real, significant effect on how quickly an application gets reviewed.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Online submission: ~10 business days -> mail submission: 3-4 weeks, extra manual steps -> submission method meaningfully affects review speed"
             ]
         },
         {
@@ -502,18 +502,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A workplace culture consultant studying employee resignation letters across several client companies found that resignations citing 'better opportunity elsewhere' as the stated reason were, upon closer examination through confidential exit interviews, frequently accompanied by unstated but recurring underlying grievances about a direct manager's communication style, suggesting that the officially stated reason for leaving a job and the actual underlying motivation may often diverge considerably, with employees tending to offer a more diplomatically neutral explanation in formal, written resignation communications than they are willing to share in a more candid, confidential setting.",
+            "passage": "From a nonprofit's grant application update: 'We're pleased to inform you that your application has advanced to the second review round out of three total rounds. This round involves a more detailed budget review and typically eliminates about half of the remaining applicants. Finalists from this round will be invited to a brief interview before final funding decisions are announced next month.'",
             "options": [
-                "Resignation letters always accurately reflect an employee's true reason for leaving.",
-                "The officially stated reason for resigning may often differ from the actual underlying motivation, which employees share more candidly in private.",
-                "Exit interviews revealed employees had no concerns about their managers at all.",
-                "Formal resignation letters and confidential exit interviews always matched exactly."
+                "Advancing to this round improves the applicant's chances but does not guarantee they will ultimately receive funding.",
+                "Reaching the second round guarantees the applicant will receive funding.",
+                "This is the final round before funding decisions are made.",
+                "No further review or interview steps remain in the process."
             ],
-            "correctAnswer": "The officially stated reason for resigning may often differ from the actual underlying motivation, which employees share more candidly in private.",
-            "hint": "Compare what employees stated formally in their resignation letters with what came out in confidential exit interviews.",
-            "explanation": "Employees often cited a neutral reason like 'better opportunity' formally, while exit interviews revealed unstated frustrations with management, suggesting a real gap between the diplomatic explanation given in writing and the more candid concerns shared confidentially, a distinction worth understanding rather than taking resignation letters at face value.",
+            "correctAnswer": "Advancing to this round improves the applicant's chances but does not guarantee they will ultimately receive funding.",
+            "hint": "Consider how many rounds remain and what typically happens during this particular round.",
+            "explanation": "The passage describes a multi-step process where this round eliminates about half of applicants, and successful applicants still face an interview before final decisions, showing advancement is a positive sign but not a guarantee of funding.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Advanced to round 2 of 3 -> round 2 typically eliminates ~half of remaining applicants -> finalists face an interview before final decisions -> advancement improves chances, but funding is not guaranteed"
             ]
         },
         {
@@ -521,18 +521,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A team studying the long-term effects of algorithmic content recommendation systems on political news consumption found that users who occasionally clicked on content outside their usual political leaning were shown, over time, an increasingly narrow range of future recommendations converging back toward their dominant established preferences, a pattern the researchers described as the algorithm effectively treating occasional cross-cutting exploration as noise to be corrected rather than as a genuine signal of the user's broader interests, ultimately narrowing rather than broadening the range of political content most users were shown over an extended period of continued platform use.",
+            "passage": "From a physical therapist's discharge summary: 'Patient has met 4 of 5 initial treatment goals, including full range of motion in the shoulder and return to normal daily activities without pain. The remaining goal, full strength restoration for overhead lifting, is progressing but not yet complete. Recommend a home exercise program to continue building strength over the next 6-8 weeks, with a follow-up visit only if strength plateaus or pain returns.'",
             "options": [
-                "The algorithm consistently broadened the range of political content shown to users over time.",
-                "Occasional cross-cutting clicks had no measurable effect on future recommendations.",
-                "The recommendation algorithm appears to treat occasional exploration outside a user's usual views as an anomaly to correct, narrowing content over time rather than broadening it.",
-                "The algorithm treated cross-cutting clicks as an accurate signal of genuinely broader interests."
+                "The patient has met all treatment goals and needs no further exercise, as the passage lays out the sequence of events.",
+                "The patient has made no meaningful progress in physical therapy, according to the account given.",
+                "A follow-up visit has already been scheduled regardless of outcome, given the way the passage frames things.",
+                "The patient has made significant progress but has not yet fully recovered in every area."
             ],
-            "correctAnswer": "The recommendation algorithm appears to treat occasional exploration outside a user's usual views as an anomaly to correct, narrowing content over time rather than broadening it.",
-            "hint": "Notice how the researchers describe the algorithm's interpretation of a user's occasional exploration outside their usual preferences.",
-            "explanation": "The algorithm treated occasional clicks outside a user's usual leaning as noise rather than genuine interest, narrowing future recommendations back toward established preferences over time, suggesting the system actively worked against broadening the range of content most users ultimately encountered.",
+            "correctAnswer": "The patient has made significant progress but has not yet fully recovered in every area.",
+            "hint": "Distinguish between the goals described as met and the one goal described as still in progress.",
+            "explanation": "The summary shows four of five goals fully met, with the fifth, overhead lifting strength, specifically noted as still progressing, capturing both the substantial progress made and the area still incomplete.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "4 of 5 goals met, including range of motion and daily activities -> 1 goal (overhead lifting strength) still progressing -> home program recommended for continued strength building -> significant progress made, not yet fully complete"
             ]
         },
         {
@@ -540,18 +540,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A museum curator studying visitor pathways through a large special exhibition found that visitors who were given a printed map showing suggested optional routes, while still being free to wander however they liked, spent more total time in the exhibition and reported higher satisfaction than visitors given no map at all, but curiously, visitors who were required to follow a single mandatory path with no choice in the matter reported the lowest satisfaction of all three groups, despite this group spending an amount of time in the exhibition roughly comparable to the optional-map group.",
+            "passage": "From a city's water quality annual report summary: 'All required water quality tests met federal safety standards this year, with lead levels well below the action threshold at 98% of tested homes. However, 2% of tested homes, primarily older properties with original lead service lines, showed levels above the threshold, and the city has begun a targeted line replacement program for those specific properties.'",
             "options": [
-                "The mandatory single-path group reported the highest satisfaction of all three groups.",
-                "Having some sense of choice in navigating the exhibition, even with a suggested map, appears more satisfying than either no guidance or a mandatory fixed path.",
-                "Visitors given no map at all reported the highest satisfaction.",
-                "Satisfaction was identical across all three groups regardless of navigation freedom."
+                "Most homes tested show safe water quality, though a small number of specific properties need further action.",
+                "Every single tested home showed lead levels above the safety threshold.",
+                "The city has decided not to take any action regarding elevated lead levels. This would be expected to hold across the entire situation as described.",
+                "All homes with elevated lead levels have already had their pipes replaced. Nothing described in the passage points to any exception to this pattern."
             ],
-            "correctAnswer": "Having some sense of choice in navigating the exhibition, even with a suggested map, appears more satisfying than either no guidance or a mandatory fixed path.",
-            "hint": "Compare all three groups, paying attention to which one reported the lowest satisfaction despite spending similar time in the exhibition.",
-            "explanation": "The optional-map group reported the highest satisfaction, while the mandatory single-path group reported the lowest despite similar time spent, suggesting that having a sense of choice, even when guided by suggestions, matters more to visitor satisfaction than either total freedom or complete restriction.",
+            "correctAnswer": "Most homes tested show safe water quality, though a small number of specific properties need further action.",
+            "hint": "Separate the overall citywide result from the specific detail about the small percentage of affected homes.",
+            "explanation": "The report shows the vast majority (98%) of tested homes meet safety standards, while a small, specific group of older properties (2%) exceeded the threshold and are now part of a targeted replacement program, showing overall safety with a specific, ongoing exception.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "98% of tested homes: lead levels well below threshold -> 2% of homes, mostly older with original lead lines: above threshold -> targeted replacement program begun for those properties -> mostly safe overall, with a specific ongoing exception"
             ]
         },
         {
@@ -559,18 +559,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "Since the Delacroix family switched from a single shared family calendar app that sent notifications to everyone for every entry to a system where each family member could choose which categories of events, school, sports, appointments, social, they wanted to receive notifications for, they say overall calendar engagement increased noticeably, with family members reporting they actually read notifications now instead of reflexively dismissing them, a habit that had developed during the year they used the all-notifications system, when the sheer volume of alerts had made most of them feel more like background noise than useful information.",
+            "passage": "From a small manufacturing company's supplier notice: 'Due to a regional shortage of a key raw material, we anticipate a temporary increase in lead times for orders placed in the next 60 days, from our standard 2 weeks to approximately 4-5 weeks. We are actively working with alternate suppliers to shorten this gap and will notify customers immediately if timelines improve. Orders already in production are not affected by this delay.'",
             "options": [
-                "Customizing notifications reduced how much family members engaged with the calendar overall.",
-                "Letting family members customize which notifications they receive appears to have made the remaining notifications feel more useful rather than like background noise.",
-                "The volume of notifications had no bearing on whether family members paid attention to them.",
-                "Family members read notifications equally often under both the old and new systems."
+                "All orders, including those already in production, will now take 4-5 weeks. Nothing in the passage suggests this changed at any point during the period described.",
+                "The company has permanently changed its standard lead time to 4-5 weeks.",
+                "Customers placing new orders soon should expect a longer wait than usual, but existing orders in production will proceed on the normal timeline.",
+                "The raw material shortage has already been fully resolved."
             ],
-            "correctAnswer": "Letting family members customize which notifications they receive appears to have made the remaining notifications feel more useful rather than like background noise.",
-            "hint": "Compare how the family engaged with notifications under the all-notifications system versus the customizable one.",
-            "explanation": "Engagement increased once notifications became customizable, with family members actually reading them instead of dismissing them out of habit, suggesting that reducing the sheer volume of alerts to only relevant categories restored their perceived usefulness after the constant notifications had previously become tuned-out background noise.",
+            "correctAnswer": "Customers placing new orders soon should expect a longer wait than usual, but existing orders in production will proceed on the normal timeline.",
+            "hint": "Separate what the notice says about new orders from what it specifically says about orders already in production.",
+            "explanation": "The notice specifies the extended lead time applies to orders placed in the next 60 days, while explicitly stating orders already in production are not affected, showing the delay is temporary and limited to new orders rather than everything company-wide.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Raw material shortage -> new orders (next 60 days): lead time extends from 2 to 4-5 weeks -> orders already in production: explicitly not affected -> delay is temporary and limited to new orders"
             ]
         }
     ]

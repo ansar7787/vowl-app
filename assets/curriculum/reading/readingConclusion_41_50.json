@@ -8,18 +8,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "When the accounting firm switched from hourly billing to fixed monthly fees for its regular clients, several senior accountants worried that revenue would fall. Instead, client retention improved noticeably, and two long-time clients who had been considering other firms renewed multi-year contracts within the first quarter of the new pricing model.",
+            "passage": "During the budget meeting, Director Voss kept glancing at her phone and tapped her pen against the table while the finance report was being read aloud.",
             "options": [
-                "Client retention worsened after the pricing model changed.",
-                "The new pricing model appears to have strengthened client loyalty.",
-                "Every client left the firm after the change.",
-                "Fixed pricing always causes clients to leave immediately."
+                "Director Voss appeared distracted or impatient during the report.",
+                "Director Voss was fully focused on the finance report.",
+                "Director Voss had already read the entire report beforehand, given how the events unfolded.",
+                "Director Voss left the meeting before it began."
             ],
-            "correctAnswer": "The new pricing model appears to have strengthened client loyalty.",
-            "hint": "Notice what happened to client retention, not just revenue, after the change.",
-            "explanation": "Retention improved and clients renewed long-term contracts after the switch to fixed pricing, suggesting the new model made clients more likely to stay.",
+            "correctAnswer": "Director Voss appeared distracted or impatient during the report.",
+            "hint": "Think about what glancing at a phone and tapping a pen usually signal during a meeting.",
+            "explanation": "Checking her phone repeatedly and tapping her pen while someone else spoke are behaviors that typically indicate restlessness or a lack of engagement with what was being said.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Phone checked repeatedly -> pen tapped during report -> behavior suggests distraction or impatience"
             ]
         },
         {
@@ -27,18 +27,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A city museum that once displayed only paintings from its home country began rotating in works borrowed from museums abroad. Visitor numbers from outside the immediate region grew steadily over the following two years, and gift shop sales of exhibition catalogs nearly doubled.",
+            "passage": "When her coworkers suggested trying the new sushi restaurant for lunch, Farah quietly mentioned she'd already eaten and stayed at her desk with a granola bar instead.",
             "options": [
-                "Visitor numbers fell once the museum added international works.",
-                "The museum stopped displaying any paintings from its home country.",
-                "The international rotations seem to have broadened the museum's audience.",
-                "Every visitor to the museum comes from outside the region."
+                "Farah was excited to try the new sushi restaurant. Nothing described in the passage points to any exception to this pattern.",
+                "Farah had no food available to eat that day.",
+                "Farah may not have wanted to go to the restaurant for reasons she didn't fully explain.",
+                "Farah's coworkers refused to let her join them."
             ],
-            "correctAnswer": "The international rotations seem to have broadened the museum's audience.",
-            "hint": "Think about who might be newly drawn to the museum by works from abroad.",
-            "explanation": "Visitors from outside the region increased after international works were added, suggesting the broader collection attracted people who might not have visited otherwise.",
+            "correctAnswer": "Farah may not have wanted to go to the restaurant for reasons she didn't fully explain.",
+            "hint": "Consider what her quiet excuse and choice to eat something small might suggest.",
+            "explanation": "Claiming to have already eaten while quietly eating a granola bar at her desk suggests a mild, unstated reluctance to join the group rather than genuine fullness.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Vague excuse given -> stays behind eating a small snack -> suggests reluctance to join without stating it directly"
             ]
         },
         {
@@ -46,18 +46,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A regional hospital network required all new hires in its emergency department to complete an extra week of simulation-based training before working unsupervised. Two years later, the network reported a measurable decline in reported medication errors during night shifts specifically, though day-shift error rates stayed roughly the same.",
+            "passage": "After reading the job offer letter twice, Marcus set it on the counter, made himself tea, and sat by the window for a long while before picking up his phone to call his sister.",
             "options": [
-                "Medication errors increased across every shift after the training began.",
-                "The extra training may have had its clearest effect on night-shift performance.",
-                "Day-shift error rates dropped more than night-shift rates.",
-                "The extra training had no measurable effect on any shift."
+                "Marcus rejected the job offer immediately without thinking, according to the account given.",
+                "Marcus had not yet received the job offer letter.",
+                "Marcus was likely thinking carefully before deciding how to respond.",
+                "Marcus was completely uninterested in the offer."
             ],
-            "correctAnswer": "The extra training may have had its clearest effect on night-shift performance.",
-            "hint": "Notice which specific shift showed a change in error rates.",
-            "explanation": "Night-shift medication errors declined after the extra training was introduced, while day-shift rates barely changed, suggesting the training's benefit showed up most clearly at night.",
+            "correctAnswer": "Marcus was likely thinking carefully before deciding how to respond.",
+            "hint": "Think about what reading something twice and pausing before acting usually suggests.",
+            "explanation": "Reading the letter twice, sitting quietly, and then reaching out to a family member before responding all suggest Marcus was carefully weighing his decision.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Letter read twice -> quiet pause -> calls sister before responding -> suggests careful consideration"
             ]
         },
         {
@@ -65,18 +65,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A navigation app updated its algorithm to avoid routing drivers through residential neighborhoods whenever a comparable route using major roads was available. Several city councils that had previously received complaints about cut-through traffic reported a drop in resident complaints within months of the update.",
+            "passage": "The new employee arrived fifteen minutes early on her first day, brought a notebook full of questions, and asked to shadow three different departments before her scheduled orientation even began.",
             "options": [
-                "Resident complaints increased after the app's update.",
-                "The app began routing drivers through neighborhoods more often.",
-                "City councils never received complaints about traffic before the update.",
-                "The app's routing change appears to have reduced cut-through traffic complaints."
+                "The new employee seemed eager to learn about the company.",
+                "The new employee seemed uninterested in the job, based on what the passage actually says.",
+                "The new employee was told to arrive early by her manager, according to how the passage describes the situation.",
+                "The new employee refused to attend her orientation, as the passage presents the situation."
             ],
-            "correctAnswer": "The app's routing change appears to have reduced cut-through traffic complaints.",
-            "hint": "Compare complaint levels before and after the app changed its routing.",
-            "explanation": "Complaints about cut-through traffic dropped after the navigation app began avoiding residential routes, suggesting the update addressed a problem residents had raised.",
+            "correctAnswer": "The new employee seemed eager to learn about the company.",
+            "hint": "Think about what arriving early, preparing questions, and requesting to shadow departments suggest about her attitude.",
+            "explanation": "Arriving early, preparing questions in advance, and requesting extra shadowing time all point to genuine enthusiasm about learning her new role.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Arrives early -> brings prepared questions -> requests extra shadowing -> suggests strong eagerness to learn"
             ]
         },
         {
@@ -84,18 +84,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "Although his job requires him to travel almost every week, Deepak insists on video-calling his children every single night at their bedtime, no matter which time zone he happens to be in.",
+            "passage": "At the family dinner, Grandpa quietly moved his plate a few inches away and didn't touch the spicy stew, though he complimented the bread and ate two extra slices.",
             "options": [
-                "Deepak rarely contacts his children while traveling.",
-                "Deepak's job does not require any travel.",
-                "Deepak makes a consistent effort to stay connected with his children despite his travel.",
-                "Deepak's children refuse to speak with him during his trips."
+                "Grandpa loved the spicy stew more than anything else served.",
+                "Grandpa was not hungry at all during dinner.",
+                "Grandpa had already eaten dinner before arriving.",
+                "Grandpa likely did not enjoy the spicy stew."
             ],
-            "correctAnswer": "Deepak makes a consistent effort to stay connected with his children despite his travel.",
-            "hint": "Think about what calling every night, regardless of time zone, shows about Deepak's priorities.",
-            "explanation": "Calling his children every night despite frequent travel and changing time zones shows that Deepak works hard to stay connected with them.",
+            "correctAnswer": "Grandpa likely did not enjoy the spicy stew.",
+            "hint": "Notice what he avoided eating compared to what he praised and ate more of.",
+            "explanation": "Pushing the stew away and avoiding it, while praising and eating extra bread instead, suggests he did not enjoy the spicy dish even though he didn't say so directly.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Stew pushed away, untouched -> bread praised, extra eaten -> suggests dislike of the stew without saying so"
             ]
         },
         {
@@ -103,18 +103,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A furniture retailer noticed that customers who used its augmented-reality app to preview a couch in their own living room before buying returned the item at less than half the rate of customers who ordered based on photos alone.",
+            "passage": "Every time the topic of the merger came up in the meeting, the CFO changed the subject or redirected the conversation to the quarterly budget instead.",
             "options": [
-                "Previewing furniture with augmented reality seems to reduce returns.",
-                "The augmented-reality app increased the rate of returns.",
-                "Return rates were identical regardless of how customers shopped.",
-                "Customers who used the app always kept every item they bought."
+                "The CFO was eager to discuss the merger in detail, based on the details the passage provides.",
+                "The CFO had no knowledge of the merger at all, as the passage presents the situation.",
+                "The CFO seemed reluctant to discuss the merger.",
+                "The CFO supported the merger completely, given how the events unfolded."
             ],
-            "correctAnswer": "Previewing furniture with augmented reality seems to reduce returns.",
-            "hint": "Compare the return rates between the two groups of customers.",
-            "explanation": "Customers who previewed furniture using the app returned items far less often than those who relied on photos, suggesting the preview helped set more accurate expectations.",
+            "correctAnswer": "The CFO seemed reluctant to discuss the merger.",
+            "hint": "Think about what repeatedly avoiding a topic usually suggests.",
+            "explanation": "Consistently redirecting away from the merger topic suggests the CFO was avoiding the discussion, which points to reluctance rather than eagerness.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Merger topic raised repeatedly -> CFO redirects each time -> pattern suggests reluctance to discuss it"
             ]
         },
         {
@@ -122,18 +122,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "Researchers monitoring a coastal wetland found that the area restored with native grasses supported nearly three times as many bird species as a nearby section restored with a single fast-growing non-native grass, even though both areas received identical amounts of rainfall and sunlight.",
+            "passage": "Before the interview, Devon straightened his tie three times in the reflection of the elevator doors and rehearsed his opening line under his breath.",
             "options": [
-                "The non-native grass section supported more bird species overall.",
-                "Rainfall and sunlight were the main factors affecting bird diversity.",
-                "Both restored sections attracted the exact same number of bird species.",
-                "Using native grasses appears more effective at supporting bird diversity than non-native grasses."
+                "Devon was completely relaxed about the interview, as the passage lays out the sequence of events.",
+                "Devon had decided not to attend the interview.",
+                "Devon was likely nervous about the interview.",
+                "Devon had already been offered the job before arriving, based on the details the passage provides."
             ],
-            "correctAnswer": "Using native grasses appears more effective at supporting bird diversity than non-native grasses.",
-            "hint": "Compare the bird diversity in each section, and note what factors were held equal.",
-            "explanation": "The native-grass section supported far more bird species despite identical rainfall and sunlight, suggesting the type of vegetation, not the weather, made the difference.",
+            "correctAnswer": "Devon was likely nervous about the interview.",
+            "hint": "Think about what fixing his appearance repeatedly and rehearsing might suggest about his emotional state.",
+            "explanation": "Adjusting his tie multiple times and quietly rehearsing his opening line are common signs of nervous anticipation before an important event.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Tie adjusted repeatedly -> opening line rehearsed under breath -> behavior suggests nervousness"
             ]
         },
         {
@@ -141,18 +141,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A district that switched from grading homework for accuracy to grading it only for completion saw students report less anxiety about schoolwork in a year-end survey. However, teachers noted that scores on unit tests, which still required real understanding, did not improve or decline significantly.",
+            "passage": "Whenever her mother mentioned the family reunion, Yara suddenly remembered other things she needed to do and left the room to 'check on something.'",
             "options": [
-                "Test scores improved significantly after the grading change.",
-                "Student anxiety increased after homework was graded for completion.",
-                "The grading change appeared to ease student anxiety without affecting test performance.",
-                "The grading change caused test scores to decline sharply."
+                "Yara was excited to plan every detail of the reunion, given the specific information included in the passage.",
+                "Yara appeared to want to avoid talking about the reunion.",
+                "Yara had never heard about the family reunion before.",
+                "Yara's mother refused to mention the reunion at all."
             ],
-            "correctAnswer": "The grading change appeared to ease student anxiety without affecting test performance.",
-            "hint": "Notice that the passage separates the effect on anxiety from the effect on test scores.",
-            "explanation": "Anxiety dropped after the grading change, but test scores stayed roughly the same, showing the change affected how students felt without changing how much they actually learned.",
+            "correctAnswer": "Yara appeared to want to avoid talking about the reunion.",
+            "hint": "Think about the pattern of leaving the room every time this specific topic comes up.",
+            "explanation": "Consistently leaving the room only when the reunion is mentioned suggests Yara was avoiding the topic rather than being coincidentally busy.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Reunion mentioned -> Yara suddenly leaves each time -> pattern suggests avoidance of the topic"
             ]
         },
         {
@@ -160,18 +160,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A national rail service introduced a discounted off-peak fare aimed at retirees and students. Within a year, ridership during previously quiet midday hours had grown substantially, while ridership during the already-crowded morning rush hour remained essentially unchanged.",
+            "passage": "Instead of answering the question about the missing funds directly, the treasurer shuffled through his papers and said he would 'need to look into it further and get back to everyone.'",
             "options": [
-                "Rush-hour ridership grew the most after the discount was introduced.",
-                "The discount appears to have drawn new riders specifically to off-peak hours.",
-                "Ridership fell during midday hours after the discount began.",
-                "The discount had an identical effect on every time of day."
+                "The treasurer gave a full and confident explanation right away.",
+                "The treasurer had already resolved the issue before the meeting.",
+                "The treasurer did not appear ready to give a clear answer.",
+                "The treasurer was not asked any questions about the funds."
             ],
-            "correctAnswer": "The discount appears to have drawn new riders specifically to off-peak hours.",
-            "hint": "Compare what happened to midday ridership versus rush-hour ridership.",
-            "explanation": "Midday ridership grew substantially while rush-hour numbers barely changed, suggesting the off-peak discount successfully targeted the time period it was designed for.",
+            "correctAnswer": "The treasurer did not appear ready to give a clear answer.",
+            "hint": "Notice how he responded compared to what a direct, confident answer would look like.",
+            "explanation": "Shuffling papers and deferring the answer to a later time, rather than responding directly, suggests he was not prepared to give a clear explanation at that moment.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Direct question asked about missing funds -> treasurer shuffles papers, delays answer -> suggests he lacked a ready explanation"
             ]
         },
         {
@@ -179,18 +179,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A high school athletic director required all coaches to complete a course on recognizing concussion symptoms before the season began. That season, the number of athletes removed from games due to suspected head injuries rose sharply, while the number of athletes who returned to play the same day after a hard hit fell to nearly zero.",
+            "passage": "The chef tasted the sauce, added a pinch of salt, tasted it again, then set the spoon down and nodded once before calling for the dish to be plated.",
             "options": [
-                "Coaches became less cautious about head injuries after the training.",
-                "The training appears to have made coaches more cautious about head injuries.",
-                "The number of suspected head injuries dropped after the training.",
-                "Athletes returned to play immediately after hard hits more often than before."
+                "The chef was unhappy with the sauce and threw it away, given the specific information included in the passage.",
+                "The chef had not tasted the sauce at all.",
+                "The chef decided to remove the sauce from the dish.",
+                "The chef was satisfied with how the sauce tasted."
             ],
-            "correctAnswer": "The training appears to have made coaches more cautious about head injuries.",
-            "hint": "Think about what an increase in athletes being removed from games, alongside a drop in same-day returns, suggests about coaches' behavior.",
-            "explanation": "More athletes were removed for suspected injuries and far fewer returned the same day, suggesting coaches became more careful about identifying and responding to possible concussions after the training.",
+            "correctAnswer": "The chef was satisfied with how the sauce tasted.",
+            "hint": "Think about what the nod and decision to plate the dish suggest about his opinion of the taste.",
+            "explanation": "Adjusting the seasoning, tasting again, and then nodding before approving the dish for plating together suggest the chef was satisfied with the final result.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Sauce tasted and adjusted -> tasted again -> nod given -> dish approved for plating -> suggests satisfaction with the taste"
             ]
         },
         {
@@ -198,18 +198,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A chain of grocery stores began labeling shelf prices with a cost-per-ounce figure in addition to the total price. Store managers reported that sales of store-brand products, which were often cheaper per ounce but had higher total prices due to smaller package sizes, increased in the months that followed.",
+            "passage": "Throughout the tour of the apartment, Priya kept measuring the closet with her phone and asking whether the landlord would allow her to paint the walls.",
             "options": [
-                "The added price information seems to have helped shoppers notice better value.",
-                "Sales of store-brand products fell after the new labels appeared.",
-                "The cost-per-ounce labels confused customers so much that sales dropped overall.",
-                "Package size had no relationship to how the products were priced."
+                "Priya had no interest in renting the apartment.",
+                "Priya was only touring the building for a friend.",
+                "Priya was seriously considering renting the apartment.",
+                "Priya had already signed a lease for a different apartment, based on the details the passage provides."
             ],
-            "correctAnswer": "The added price information seems to have helped shoppers notice better value.",
-            "hint": "Think about what the cost-per-ounce label reveals that the total price alone does not.",
-            "explanation": "Store-brand sales rose once shoppers could see the true cost per ounce, suggesting the added information helped them recognize a better value that wasn't obvious from the total price alone.",
+            "correctAnswer": "Priya was seriously considering renting the apartment.",
+            "hint": "Think about what measuring the space and asking about future changes suggest about her intentions.",
+            "explanation": "Measuring the closet and asking about painting the walls are actions someone takes when picturing themselves actually living there, suggesting genuine interest in renting.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Closet measured -> questions asked about painting walls -> actions suggest she was picturing living there -> serious interest in renting"
             ]
         },
         {
@@ -217,18 +217,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A neighborhood watch program that once relied on printed newsletters mailed quarterly switched to a group chat where residents could post updates instantly. Police records show that the average time between a resident noticing suspicious activity and reporting it to authorities dropped from several hours to under fifteen minutes.",
+            "passage": "After the coach announced the starting lineup, Théo sat at the far end of the bench, kept his headphones on during warm-ups, and didn't join the team huddle before kickoff.",
             "options": [
-                "Reporting times grew longer after the switch to a group chat.",
-                "Residents stopped reporting suspicious activity after the change.",
-                "The switch to instant messaging appears to have sped up how quickly residents reported concerns.",
-                "How residents communicated had no effect on reporting speed."
+                "Théo was thrilled about being placed in the starting lineup, according to the account given.",
+                "Théo was injured and unable to play at all.",
+                "Théo had asked the coach to be left out of the lineup.",
+                "Théo was likely unhappy about not being chosen to start."
             ],
-            "correctAnswer": "The switch to instant messaging appears to have sped up how quickly residents reported concerns.",
-            "hint": "Compare how long it took residents to report suspicious activity before and after the change.",
-            "explanation": "The average reporting time dropped drastically once residents could post instantly instead of waiting for a mailed newsletter, suggesting the faster communication method sped up reporting.",
+            "correctAnswer": "Théo was likely unhappy about not being chosen to start.",
+            "hint": "Think about what sitting apart, keeping headphones on, and skipping the huddle usually suggest about someone's mood.",
+            "explanation": "Sitting apart from teammates, staying withdrawn with headphones on, and skipping the pre-game huddle together suggest Théo was reacting negatively to being left out of the starting lineup.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Lineup announced, Théo not starting -> sits apart, headphones on -> skips team huddle -> suggests he was upset about the decision"
             ]
         },
         {
@@ -236,18 +236,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A behavioral economist studied two groups of new employees at the same company: one group's retirement contributions increased automatically by one percent every year unless they opted out, while the other group's contributions stayed fixed unless they manually increased them. Five years later, the automatic-increase group had saved substantially more on average.",
+            "passage": "During the safety inspection, the building manager kept steering the inspector away from the basement and repeatedly emphasized how well-maintained the lobby and upper floors were.",
             "options": [
-                "The group with fixed contributions saved more over five years.",
-                "Automatic yearly increases appear to result in greater retirement savings than requiring manual changes.",
-                "Both groups ended up with identical savings after five years.",
-                "Whether contributions increase automatically makes no difference to long-term savings."
+                "The building manager wanted the inspector to focus only on the basement, as the passage presents the situation.",
+                "The inspector was not allowed inside the building at all, based on what the passage actually says.",
+                "The basement had already passed inspection earlier that day, based on the passage's account of what happened.",
+                "The building manager may have been trying to avoid attention on the basement."
             ],
-            "correctAnswer": "Automatic yearly increases appear to result in greater retirement savings than requiring manual changes.",
-            "hint": "Compare the savings outcomes of the two groups after five years.",
-            "explanation": "The group with automatic yearly increases saved considerably more than the group that had to manually increase contributions, suggesting the automatic default made a meaningful difference over time.",
+            "correctAnswer": "The building manager may have been trying to avoid attention on the basement.",
+            "hint": "Think about what steering attention away from one area and emphasizing another might suggest.",
+            "explanation": "Repeatedly redirecting the inspector away from the basement while highlighting other areas suggests the manager may have wanted to avoid scrutiny of that particular space.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Inspector steered away from basement -> lobby and upper floors emphasized -> pattern suggests avoidance of basement scrutiny"
             ]
         },
         {
@@ -255,18 +255,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "Engineers at an electric vehicle company noticed that cars equipped with a new battery-cooling system maintained their advertised driving range even after two years of daily use, while cars with the older cooling system showed a noticeable drop in range over the same period.",
+            "passage": "When asked how the negotiations were going, the union representative simply said, 'We're still talking,' and declined to share any further details with reporters.",
             "options": [
-                "Cars with the new cooling system lost range faster than older models.",
-                "Battery range is unaffected by the type of cooling system used.",
-                "The new cooling system appears to help batteries maintain their range over time.",
-                "Both cooling systems produced identical results after two years."
+                "The negotiations may not have been going smoothly.",
+                "The negotiations had already been completed successfully.",
+                "The union representative confirmed a final agreement had been reached.",
+                "The negotiations had not started yet."
             ],
-            "correctAnswer": "The new cooling system appears to help batteries maintain their range over time.",
-            "hint": "Compare how driving range changed over two years for each type of cooling system.",
-            "explanation": "Cars with the new cooling system kept their range steady over two years, while older systems showed a decline, suggesting the new technology helps batteries age better.",
+            "correctAnswer": "The negotiations may not have been going smoothly.",
+            "hint": "Think about what a vague, guarded answer might suggest compared to sharing good news.",
+            "explanation": "A brief, guarded response with no further details often suggests things are not going smoothly, since positive progress is usually easier to share openly.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Vague answer given -> no details shared with reporters -> guarded response suggests talks may not be going smoothly"
             ]
         },
         {
@@ -274,18 +274,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "Since switching from a paper planner to a shared digital calendar with her husband, Priya says she has stopped double-booking herself and no longer needs to ask him what their evening plans are, since she can simply check the calendar herself.",
+            "passage": "The store manager rearranged the display of the new product three times in one week and asked every employee for their honest opinion about where customers seemed to be looking.",
             "options": [
-                "The shared digital calendar seems to have reduced scheduling confusion for Priya.",
-                "Priya double-books herself more often since switching to a digital calendar.",
-                "Priya stopped using any calendar at all.",
-                "Priya's husband refuses to use the shared calendar."
+                "The store manager was completely confident in the product's placement from the start, based on the details the passage provides.",
+                "The store manager decided to remove the product from the shelves.",
+                "The employees refused to give any feedback about the display.",
+                "The store manager appeared uncertain about how to best present the new product."
             ],
-            "correctAnswer": "The shared digital calendar seems to have reduced scheduling confusion for Priya.",
-            "hint": "Compare Priya's scheduling problems before and after switching to a shared calendar.",
-            "explanation": "Priya no longer double-books herself or needs to ask about plans, showing that the shared digital calendar has reduced confusion around scheduling.",
+            "correctAnswer": "The store manager appeared uncertain about how to best present the new product.",
+            "hint": "Think about what rearranging something repeatedly and asking for feedback might suggest about confidence in the current setup.",
+            "explanation": "Rearranging the display multiple times and actively seeking employee input suggest the manager was unsure of the best approach and was still testing options.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Display rearranged three times -> feedback requested repeatedly -> suggests uncertainty about the best presentation"
             ]
         },
         {
@@ -293,18 +293,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A consulting firm that once required all client presentations to be delivered in person began allowing consultants to choose between in-person and video presentations. Client satisfaction scores stayed roughly the same regardless of format, but consultants reported significantly less job-related travel fatigue after the policy changed.",
+            "passage": "Whenever the subject of retirement came up at work, Mr. Bello would smile, mention his garden plans, and start listing all the places he wanted to travel.",
             "options": [
-                "The flexible presentation policy mainly benefited consultants rather than changing client satisfaction.",
-                "Client satisfaction scores rose sharply once video presentations were allowed.",
-                "Consultants reported more travel fatigue after the policy changed.",
-                "The format of a presentation had no effect on anything measured."
+                "Mr. Bello was anxious about retiring and avoided the topic entirely.",
+                "Mr. Bello had already decided never to retire, as the situation is described here.",
+                "Mr. Bello seemed to be looking forward to retirement.",
+                "Mr. Bello was forced into retirement against his wishes, as the passage lays out the sequence of events."
             ],
-            "correctAnswer": "The flexible presentation policy mainly benefited consultants rather than changing client satisfaction.",
-            "hint": "Notice which outcome changed after the policy shift, and which one stayed the same.",
-            "explanation": "Client satisfaction remained steady, but consultant fatigue dropped, suggesting the main benefit of the new policy was for the consultants rather than a change in how clients felt.",
+            "correctAnswer": "Mr. Bello seemed to be looking forward to retirement.",
+            "hint": "Think about what smiling and eagerly discussing future plans usually suggest about someone's feelings toward an upcoming change.",
+            "explanation": "Smiling and readily discussing garden plans and travel whenever retirement comes up suggest Mr. Bello viewed the upcoming change with enthusiasm rather than dread.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Retirement mentioned -> smiles, discusses garden and travel plans -> suggests he is looking forward to it"
             ]
         },
         {
@@ -312,18 +312,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A study comparing two groups of office workers found that those given adjustable-height desks used them to stand for an average of only twenty minutes a day, far less than the two hours researchers had expected, even though most participants said in surveys that they intended to stand more.",
+            "passage": "After the coach criticized her form during practice, Aaliyah stayed on the court an extra hour, repeating the same drill over and over until it was nearly dark.",
             "options": [
-                "Workers stood for far more time than researchers expected.",
-                "Workers never used their adjustable desks in the standing position.",
-                "Having access to a standing desk did not translate into as much standing as workers expected.",
-                "Workers' intentions matched exactly how much they actually stood."
+                "Aaliyah quit the team after being criticized.",
+                "Aaliyah ignored the coach's feedback completely.",
+                "Aaliyah was likely determined to improve after the criticism.",
+                "Aaliyah left practice early that day."
             ],
-            "correctAnswer": "Having access to a standing desk did not translate into as much standing as workers expected.",
-            "hint": "Compare what workers said they intended to do with what they actually did.",
-            "explanation": "Workers stood for far less time than they expected or intended, showing a gap between people's stated intentions and their actual behavior with the new desks.",
+            "correctAnswer": "Aaliyah was likely determined to improve after the criticism.",
+            "hint": "Think about what staying late to repeat a drill after criticism usually suggests about someone's mindset.",
+            "explanation": "Staying late to repeatedly practice the exact skill that was criticized suggests Aaliyah was motivated to correct the issue rather than discouraged by the feedback.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Coach criticizes her form -> Aaliyah stays extra hour repeating the drill -> suggests determination to improve"
             ]
         },
         {
@@ -331,18 +331,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A video game studio released a major update that added a difficulty option specifically designed for players who wanted a relaxed, story-focused experience without combat challenges. Player reviews mentioning the story improved noticeably after the update, even among players who never selected the new difficulty option.",
+            "passage": "During the client call, Mr. Alvi kept his camera off, gave short one-word answers, and ended the call five minutes earlier than scheduled without asking any follow-up questions.",
             "options": [
-                "The new option may have changed how all players perceived the game, not just those who used it.",
-                "Only players who used the new difficulty mode left improved reviews.",
-                "Reviews mentioning the story became more negative after the update.",
-                "The update had no effect on how players reviewed the story."
+                "Mr. Alvi was highly engaged and asked many questions, given how the events unfolded.",
+                "Mr. Alvi's internet connection failed during the call, based on the passage's account of what happened.",
+                "Mr. Alvi requested that the call be extended.",
+                "Mr. Alvi did not seem very engaged during the call."
             ],
-            "correctAnswer": "The new option may have changed how all players perceived the game, not just those who used it.",
-            "hint": "Notice that story reviews improved even among players who didn't use the new feature.",
-            "explanation": "Story-related reviews improved broadly, even among players who never chose the new relaxed mode, suggesting the update's presence may have shifted overall perception of the game.",
+            "correctAnswer": "Mr. Alvi did not seem very engaged during the call.",
+            "hint": "Think about what a dark camera, short answers, and an early ending together suggest about his level of interest.",
+            "explanation": "Keeping the camera off, giving minimal responses, and cutting the call short without further questions together suggest a lack of engagement with the conversation.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Camera off -> short one-word answers -> call ends early, no questions asked -> suggests low engagement"
             ]
         },
         {
@@ -350,18 +350,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "Despite living three hours apart, the Okafor siblings have maintained a tradition of cooking the same recipe together over video call every Sunday since their mother passed away two years ago, each preparing their portion in their own kitchen while talking through the process together.",
+            "passage": "As the plane hit turbulence, the flight attendant calmly continued the drink service, chatting easily with passengers as if nothing unusual were happening.",
             "options": [
-                "The video-call cooking tradition seems to help the siblings feel connected despite the distance.",
-                "The siblings stopped speaking after their mother passed away.",
-                "The siblings live in the same house.",
-                "The siblings have abandoned the tradition since it began."
+                "The turbulence was extremely dangerous and required an emergency landing.",
+                "The flight attendant was unaware that turbulence was occurring, based on what the passage actually says.",
+                "The turbulence was likely not a serious safety concern.",
+                "The plane's engines had failed during the turbulence, as the passage presents the situation."
             ],
-            "correctAnswer": "The video-call cooking tradition seems to help the siblings feel connected despite the distance.",
-            "hint": "Think about what maintaining this weekly tradition, despite the distance, suggests about the siblings' relationship.",
-            "explanation": "Continuing the Sunday cooking tradition over video call for two years, despite living far apart, suggests it helps the siblings stay connected to each other and to their mother's memory.",
+            "correctAnswer": "The turbulence was likely not a serious safety concern.",
+            "hint": "Think about what the flight attendant's calm, routine behavior suggests about the situation's severity.",
+            "explanation": "A flight attendant's calm continuation of normal service during turbulence is a strong indirect sign that the situation, while uncomfortable, was not considered a serious safety issue.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Turbulence occurs -> flight attendant remains calm, continues service normally -> behavior suggests no serious safety concern"
             ]
         },
         {
@@ -369,18 +369,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A city that switched its public bus fleet from diesel to electric engines saw measurable improvements in air quality readings near major bus routes within eighteen months, while air quality readings in neighborhoods without bus routes showed no significant change over the same period.",
+            "passage": "When the landlord walked through the apartment before move-out, he took photos of the kitchen floor, circled a spot on the carpet, and said he would 'need to discuss the deposit' with Elena.",
             "options": [
-                "Air quality improved equally across the entire city.",
-                "The switch to electric buses appears linked to air quality improvements specifically along bus routes.",
-                "Air quality worsened near bus routes after the switch.",
-                "The type of bus engine has no connection to air quality."
+                "The landlord planned to return the full deposit immediately, based on what the passage actually says.",
+                "The landlord found no issues with the apartment at all, as the passage lays out the sequence of events.",
+                "The landlord may plan to deduct money from Elena's deposit for damage.",
+                "The landlord decided to extend Elena's lease instead."
             ],
-            "correctAnswer": "The switch to electric buses appears linked to air quality improvements specifically along bus routes.",
-            "hint": "Compare the air quality changes in neighborhoods with bus routes to those without.",
-            "explanation": "Air quality improved near bus routes but not in areas without them, suggesting the switch to electric buses was specifically responsible for the change.",
+            "correctAnswer": "The landlord may plan to deduct money from Elena's deposit for damage.",
+            "hint": "Think about what taking photos of damage and mentioning the deposit together suggest.",
+            "explanation": "Photographing specific spots and then bringing up the deposit suggests the landlord was documenting damage that could affect how much of the deposit gets returned.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Photos taken of floor and carpet spot -> deposit discussion mentioned -> suggests possible deduction for damage"
             ]
         },
         {
@@ -388,18 +388,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "An online retailer that once displayed only a product's average star rating began also showing the total number of reviews next to it. Analysts found that products with a 4.2-star rating based on thousands of reviews began outselling products with a 4.8-star rating based on only a handful of reviews, a pattern that had not existed before the change.",
+            "passage": "During the wine tasting, the sommelier swirled the glass, inhaled deeply, took a small sip, and then quietly set it aside without writing anything on his tasting notes.",
             "options": [
-                "Shoppers always preferred the highest star rating regardless of review count.",
-                "The number of reviews shown had no effect on purchasing decisions.",
-                "Products with fewer reviews always outsold products with more reviews.",
-                "Shoppers appear to trust ratings backed by more reviews, even if the rating itself is slightly lower."
+                "The sommelier considered that wine the best of the tasting.",
+                "The sommelier refused to taste the wine at all.",
+                "The sommelier had already finished writing extensive notes on the wine.",
+                "The sommelier likely did not think highly of that particular wine."
             ],
-            "correctAnswer": "Shoppers appear to trust ratings backed by more reviews, even if the rating itself is slightly lower.",
-            "hint": "Compare how sales patterns changed once the number of reviews became visible.",
-            "explanation": "Products with more reviews began outselling those with higher ratings but fewer reviews, suggesting that once review counts were visible, shoppers placed real trust in that number.",
+            "correctAnswer": "The sommelier likely did not think highly of that particular wine.",
+            "hint": "Compare his usual note-taking process with what happened after this particular wine.",
+            "explanation": "Going through the full tasting process but then setting the glass aside without any notes, unlike a wine worth recording, suggests this one did not impress him.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Wine tasted through full process -> glass set aside without notes -> absence of notes suggests unimpressive result"
             ]
         },
         {
@@ -407,18 +407,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A university replaced its traditional three-hour final exams with a series of shorter assessments spread across the semester. Students reported lower stress levels in surveys, and the percentage of students withdrawing from courses before completion dropped for the first time in five years.",
+            "passage": "Before announcing the layoffs, the company's CEO scheduled back-to-back private meetings with department heads and asked IT to prepare a company-wide email template in advance.",
             "options": [
-                "Spreading assessments throughout the semester appears connected to lower stress and fewer withdrawals.",
-                "Course withdrawals increased after the assessment format changed.",
-                "Student stress levels rose after the change.",
-                "The format of assessments has no bearing on student stress or withdrawal rates."
+                "The company had already cancelled all planned changes.",
+                "The CEO was preparing to retire from the company.",
+                "The private meetings were unrelated to any company decisions.",
+                "The company was likely preparing for a significant announcement."
             ],
-            "correctAnswer": "Spreading assessments throughout the semester appears connected to lower stress and fewer withdrawals.",
-            "hint": "Notice the two outcomes mentioned together, and consider what they have in common.",
-            "explanation": "Both stress and course withdrawals decreased after the university spread out its assessments, suggesting the new format reduced the pressure that had been pushing some students to drop courses.",
+            "correctAnswer": "The company was likely preparing for a significant announcement.",
+            "hint": "Think about what private meetings with department heads and a prepared company-wide email might suggest.",
+            "explanation": "Scheduling private meetings with leadership and preparing a company-wide email in advance are steps typically taken before delivering major news to the whole organization.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Private meetings scheduled with department heads -> company-wide email prepared in advance -> suggests a major announcement is coming"
             ]
         },
         {
@@ -426,18 +426,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A city's annual folk festival, which had struggled with declining attendance for years, began offering free admission to anyone under eighteen while keeping adult ticket prices the same. The following year, overall attendance grew, and organizers noted that many attending families included both a paying adult and multiple children who would not have attended otherwise.",
+            "passage": "Ms. Castillo read the students' essays silently, occasionally underlining a sentence, and by the end of grading, three essays had sticky notes reading 'Please see me after class.'",
             "options": [
-                "Waiving admission for children appears to have drawn in more family attendance overall.",
-                "Overall attendance dropped after admission became free for children.",
-                "Adult ticket prices were lowered along with children's admission.",
-                "Family attendance was unaffected by the change in admission policy."
+                "Ms. Castillo gave every student the same feedback.",
+                "Ms. Castillo did not read any of the essays.",
+                "Ms. Castillo likely wanted to discuss specific issues with three students individually.",
+                "Ms. Castillo cancelled class for the rest of the week."
             ],
-            "correctAnswer": "Waiving admission for children appears to have drawn in more family attendance overall.",
-            "hint": "Think about how removing the cost barrier for children might change a family's decision to attend.",
-            "explanation": "Attendance grew after admission became free for children, and organizers observed more families attending together, suggesting the price change removed a barrier that had been keeping some families away.",
+            "correctAnswer": "Ms. Castillo likely wanted to discuss specific issues with three students individually.",
+            "hint": "Think about what leaving a personal note on only three specific essays suggests.",
+            "explanation": "Selecting only three essays for a 'please see me' note, rather than giving general feedback to everyone, suggests she wanted to address something specific with those particular students.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Essays read individually -> only three marked with 'see me after class' -> suggests specific, individual concerns for those students"
             ]
         },
         {
@@ -445,18 +445,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A budget hotel chain that once left thermostats on a fixed setting installed smart thermostats controllable from guests' phones. Guest satisfaction scores related to room comfort rose only slightly, but the chain's energy costs across all properties dropped by nearly twenty percent within the first year.",
+            "passage": "At the family gathering, Uncle Ravi kept steering conversations toward his new business idea and pulled out a folded printout of numbers whenever someone mentioned money.",
             "options": [
-                "Guest satisfaction scores rose dramatically after the thermostats were installed.",
-                "Energy costs increased after the smart thermostats were installed.",
-                "The thermostats had no measurable effect on either comfort or costs.",
-                "The smart thermostats seem to have benefited the hotel's costs more than guest comfort ratings."
+                "Uncle Ravi had no interest in discussing his business at all, given the specific information included in the passage.",
+                "Uncle Ravi may have been hoping to interest relatives in investing.",
+                "Uncle Ravi had already secured all the funding he needed.",
+                "Uncle Ravi was trying to avoid any conversation about money, according to the account given."
             ],
-            "correctAnswer": "The smart thermostats seem to have benefited the hotel's costs more than guest comfort ratings.",
-            "hint": "Compare the size of the change in guest satisfaction to the size of the change in energy costs.",
-            "explanation": "Guest comfort scores rose only slightly, while energy costs dropped substantially, suggesting the smart thermostats delivered a much bigger benefit for the hotel's costs than for how comfortable guests felt.",
+            "correctAnswer": "Uncle Ravi may have been hoping to interest relatives in investing.",
+            "hint": "Think about what repeatedly steering the topic toward his business and pulling out numbers might suggest.",
+            "explanation": "Consistently redirecting conversation toward his business idea and having numbers ready whenever money comes up suggest Uncle Ravi was hoping to generate interest, possibly for investment.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Conversation steered toward business idea repeatedly -> printout of numbers ready when money mentioned -> suggests he was hoping to attract investment interest"
             ]
         },
         {
@@ -464,18 +464,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A public library that had been open only during standard business hours began opening two evenings a week specifically for people who work daytime jobs. Card sign-ups from adults aged twenty-five to forty-five, a group that had been underrepresented among library users, rose noticeably in the months that followed.",
+            "passage": "Before the final round of interviews, the hiring panel asked to see the candidate's references a second time and requested an additional writing sample by the next morning.",
             "options": [
-                "Sign-ups from working-age adults dropped after the evening hours began.",
-                "The library removed its evening hours due to low interest.",
-                "The evening hours appear to have reached working adults who couldn't visit before.",
-                "Library hours have no relationship to who signs up for a card."
+                "The hiring panel had already decided not to hire the candidate, given the way the passage frames things.",
+                "The hiring panel likely wanted more information before making a final decision.",
+                "The hiring panel had already offered the candidate the job.",
+                "The additional requests were unrelated to the hiring decision, as the situation is described here."
             ],
-            "correctAnswer": "The evening hours appear to have reached working adults who couldn't visit before.",
-            "hint": "Think about which group of people would benefit most from evening hours.",
-            "explanation": "Sign-ups from working-age adults rose after evening hours were added, suggesting the new schedule reached people who couldn't visit during standard business hours.",
+            "correctAnswer": "The hiring panel likely wanted more information before making a final decision.",
+            "hint": "Think about what requesting more references and an extra writing sample suggests about where the panel stands.",
+            "explanation": "Asking for references again and requesting an additional writing sample right before a final decision suggests the panel wanted more evidence to evaluate before committing.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "References requested a second time -> additional writing sample requested -> suggests panel still gathering evidence before deciding"
             ]
         },
         {
@@ -483,18 +483,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A smart home company found that customers who set up their devices with the help of an in-app guided walkthrough contacted customer support 70 percent less often in their first month than customers who set up devices without using the walkthrough.",
+            "passage": "After tasting the new espresso blend, the cafe owner frowned slightly, added it to a small 'testing' shelf behind the counter, and told the barista not to serve it to customers yet.",
             "options": [
-                "Customers who used the walkthrough contacted support more often.",
-                "The walkthrough had no measurable effect on support contact rates.",
-                "Every customer contacted support the same number of times.",
-                "The guided walkthrough appears to reduce the need for customer support."
+                "The cafe owner loved the new blend and began selling it immediately.",
+                "The cafe owner had never tasted the blend at all.",
+                "The barista refused to make the new blend.",
+                "The cafe owner was not yet satisfied with the new blend."
             ],
-            "correctAnswer": "The guided walkthrough appears to reduce the need for customer support.",
-            "hint": "Compare support contact rates between customers who used the walkthrough and those who didn't.",
-            "explanation": "Customers who used the guided walkthrough contacted support far less often, suggesting the walkthrough helped them resolve setup issues on their own.",
+            "correctAnswer": "The cafe owner was not yet satisfied with the new blend.",
+            "hint": "Think about what the frown, the separate shelf, and the instruction not to serve it suggest.",
+            "explanation": "A slight frown, setting the blend aside for testing, and holding off on serving it to customers together suggest the owner had reservations about the blend's quality.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Blend tasted, owner frowns -> placed on testing shelf -> not yet served to customers -> suggests dissatisfaction with current version"
             ]
         },
         {
@@ -502,18 +502,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A regional running club that had always scheduled its weekly group runs for early Saturday morning added a second option on Wednesday evenings after several members mentioned scheduling conflicts. Membership renewals for the following year reached their highest level in the club's history.",
+            "passage": "During the school board meeting, several parents stood near the exits with signs rolled up under their arms, checking the agenda repeatedly before the budget item was called.",
             "options": [
-                "Membership renewals dropped to their lowest level after the change.",
-                "Adding a second run time may have addressed scheduling conflicts that were affecting renewals.",
-                "The club removed the Saturday morning run entirely.",
-                "When runs are scheduled has no bearing on membership renewals."
+                "The parents appeared to be prepared to speak about the budget item.",
+                "The parents had no interest in the budget discussion.",
+                "The parents were leaving the meeting before it started, based on the passage's account of what happened.",
+                "The signs were unrelated to the school board meeting."
             ],
-            "correctAnswer": "Adding a second run time may have addressed scheduling conflicts that were affecting renewals.",
-            "hint": "Think about what problem members had mentioned before the schedule change.",
-            "explanation": "Renewals reached a record high after a second run time was added to address scheduling conflicts members had raised, suggesting the change resolved a real barrier to staying in the club.",
+            "correctAnswer": "The parents appeared to be prepared to speak about the budget item.",
+            "hint": "Think about what carrying signs and closely checking the agenda before a specific item suggest about their intentions.",
+            "explanation": "Standing ready with signs and repeatedly checking when the budget item would come up suggest the parents were prepared to voice their opinions once that topic began.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Parents wait with rolled signs -> agenda checked repeatedly before budget item -> suggests readiness to speak on that topic"
             ]
         },
         {
@@ -521,18 +521,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A restaurant chain tested removing calorie counts from its menu in half of its locations while keeping them visible in the other half, as a temporary experiment. Average order size and total spending per customer were nearly identical between the two groups of locations.",
+            "passage": "The veterinarian examined the dog's leg carefully, pressed gently in a few spots while watching its reaction, then wrote several notes before scheduling an X-ray for later that afternoon.",
             "options": [
-                "Customers ordered significantly more food when calorie counts were hidden.",
-                "Customers ordered significantly less food when calorie counts were visible.",
-                "Calorie counts caused customers to stop ordering at those locations entirely.",
-                "Displaying calorie counts did not appear to significantly change customer ordering behavior."
+                "The veterinarian was certain the dog had no injury at all, according to how the passage describes the situation.",
+                "The veterinarian suspected there might be an injury requiring further examination.",
+                "The veterinarian refused to examine the dog further. No part of the passage's account suggests otherwise.",
+                "The X-ray was scheduled for an unrelated reason. The passage offers no detail suggesting this changed over the period discussed."
             ],
-            "correctAnswer": "Displaying calorie counts did not appear to significantly change customer ordering behavior.",
-            "hint": "Compare ordering behavior between the two groups of locations.",
-            "explanation": "Order size and spending were nearly the same whether or not calorie counts were shown, suggesting that displaying them had little real effect on how customers ordered.",
+            "correctAnswer": "The veterinarian suspected there might be an injury requiring further examination.",
+            "hint": "Think about what careful pressing, watching reactions, and scheduling an X-ray together suggest.",
+            "explanation": "Gently testing the leg while observing the dog's reaction, followed by scheduling an X-ray, suggests the vet suspected a possible injury that needed a closer look.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Leg pressed gently, reaction observed -> notes written -> X-ray scheduled -> suggests suspicion of an injury needing further examination"
             ]
         },
         {
@@ -540,18 +540,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A city's public transit authority raised fares by fifteen percent to cover rising costs, expecting a small drop in ridership. Instead, ridership fell by nearly twenty-five percent in the following six months, and overall fare revenue ended up lower than before the increase.",
+            "passage": "Whenever the topic of the upcoming inspection came up, the restaurant's owner suddenly found tasks for every employee in the back kitchen, away from where the inspector would be walking.",
             "options": [
-                "Ridership grew after the fare increase.",
-                "The fare increase appears to have backfired by driving away more riders than expected.",
-                "Total fare revenue increased as planned after the fare hike.",
-                "The fare increase had exactly the effect the transit authority expected."
+                "The owner may have wanted to keep certain employees away from the inspector.",
+                "The owner wanted the inspector to speak with as many employees as possible, as the passage lays out the sequence of events.",
+                "The restaurant had already passed its inspection earlier that week, as the passage presents the situation.",
+                "The employees had requested to be moved to the kitchen themselves, according to the account given."
             ],
-            "correctAnswer": "The fare increase appears to have backfired by driving away more riders than expected.",
-            "hint": "Compare what the transit authority expected with what actually happened to ridership and revenue.",
-            "explanation": "Ridership dropped far more than expected and revenue actually fell, suggesting the fare increase discouraged more riders than the transit authority had anticipated.",
+            "correctAnswer": "The owner may have wanted to keep certain employees away from the inspector.",
+            "hint": "Think about the pattern of sending employees away specifically when the inspection is mentioned.",
+            "explanation": "Consistently reassigning employees to the back kitchen right when the inspection comes up suggests the owner wanted to limit their interaction with the inspector.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Inspection mentioned -> employees reassigned to back kitchen each time -> pattern suggests owner wanted to limit contact with inspector"
             ]
         },
         {
@@ -559,18 +559,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "Since he began leaving his phone in another room while working on his research paper, Diego says he finishes his daily writing goal in about ninety minutes, compared to the nearly three hours it used to take him when his phone stayed on the desk beside him.",
+            "passage": "After reading the contract twice, the small business owner asked her lawyer three separate follow-up questions about the cancellation clause before agreeing to sign anything.",
             "options": [
-                "Diego takes longer to write since moving his phone to another room.",
-                "Diego stopped setting any writing goals for himself.",
-                "Where Diego keeps his phone has no effect on his writing speed.",
-                "Keeping his phone away from his desk seems to have made Diego's writing more efficient."
+                "The business owner wanted to fully understand the cancellation terms before committing.",
+                "The business owner signed the contract without reading it.",
+                "The business owner refused to consider the contract at all, as the passage lays out the sequence of events.",
+                "The cancellation clause was not mentioned in the contract."
             ],
-            "correctAnswer": "Keeping his phone away from his desk seems to have made Diego's writing more efficient.",
-            "hint": "Compare how long Diego's writing sessions took before and after he started leaving his phone elsewhere.",
-            "explanation": "Diego's writing time dropped from nearly three hours to about ninety minutes once he moved his phone out of reach, suggesting the change helped him focus and work more efficiently.",
+            "correctAnswer": "The business owner wanted to fully understand the cancellation terms before committing.",
+            "hint": "Think about what reading a section twice and asking multiple follow-up questions suggest about her priorities.",
+            "explanation": "Reading the contract carefully and asking several specific questions about the cancellation clause before signing suggest she wanted to be sure she understood that part fully before committing.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Contract read twice -> three follow-up questions on cancellation clause -> signs only after clarification -> suggests careful attention to that term before committing"
             ]
         }
     ]

@@ -1,577 +1,577 @@
 {
-    "gameType": "readAndAnswer",
-    "batchIndex": 13,
-    "levels": "121-130",
-    "quests": [
-        {
-            "id": "RDG_READANDANSWER_L121_Q1",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[Network Effects in Technology Markets] A product exhibits network effects when its value to any individual user increases as more people adopt it, a dynamic that helps explain why a handful of dominant platforms tend to emerge in categories such as social media or ride-sharing, even when competitors offer comparable or occasionally superior features. This dynamic creates a significant structural advantage for early market leaders, since a new entrant must not only build a better product but somehow convince a critical mass of users to abandon a network where their existing friends, colleagues, or business contacts are already established, a coordination problem that has proven remarkably difficult to overcome even for well-funded challengers with genuinely innovative offerings.",
-            "question": "What structural advantage do network effects give to early market leaders?",
-            "options": [
-                "Early leaders are legally protected from any competition",
-                "New entrants always offer inferior products by default",
-                "Network effects only apply to physical, not digital, products",
-                "New entrants must overcome a difficult coordination problem to compete"
-            ],
-            "correctAnswer": "New entrants must overcome a difficult coordination problem to compete",
-            "correctAnswerIndex": 3,
-            "hint": "The advantage is explained in the second half of the passage.",
-            "explanation": "The passage explains that network effects create a coordination problem for new entrants, since users are already established on a leader's platform.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L121_Q2",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[Epigenetics] While an organism's DNA sequence remains largely fixed throughout its lifetime, epigenetics examines how environmental factors, such as diet, stress, or exposure to certain chemicals, can alter which genes are actively expressed without changing the underlying genetic code itself, functioning somewhat like a dimmer switch that turns certain genes up or down rather than rewriting the instructions entirely. Some of these epigenetic changes have been shown to persist across multiple generations in certain organisms, a finding that has complicated the traditional assumption that only DNA sequence itself, and not the pattern of gene expression, can be meaningfully inherited by offspring.",
-            "question": "How does the passage describe the way epigenetic changes affect genes?",
-            "options": [
-                "By completely rewriting the DNA sequence",
-                "Like a dimmer switch turning genes up or down",
-                "By deleting certain genes permanently",
-                "By having no measurable effect on genes"
-            ],
-            "correctAnswer": "Like a dimmer switch turning genes up or down",
-            "correctAnswerIndex": 1,
-            "hint": "The comparison is made in the middle of the passage.",
-            "explanation": "The passage compares epigenetic changes to a dimmer switch that adjusts gene expression rather than rewriting DNA.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L121_Q3",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[Invasive Species Management] Efforts to control invasive species, organisms introduced to an ecosystem where they have no natural predators, often reveal the limits of straightforward intervention: removing an invasive plant, for instance, can sometimes worsen an ecosystem's condition in the short term if the plant had inadvertently begun providing habitat or erosion control that native species had not yet reclaimed. Ecologists increasingly advocate for phased removal strategies paired with active native species restoration, arguing that eliminating an invasive species without simultaneously supporting its native replacement can leave an ecological gap that a different, sometimes equally problematic, invasive organism quickly fills instead.",
-            "question": "Why do ecologists advocate for phased removal paired with native restoration?",
-            "options": [
-                "Native species restoration is always cheaper than removal",
-                "Removing an invasive species without a replacement can create a gap another invader fills",
-                "Invasive species removal has no ecological effects",
-                "Phased removal eliminates the need for any monitoring"
-            ],
-            "correctAnswer": "Removing an invasive species without a replacement can create a gap another invader fills",
-            "correctAnswerIndex": 1,
-            "hint": "The reasoning is explained in the last sentence.",
-            "explanation": "The passage explains that removing an invasive species without supporting native replacements can leave a gap that another invasive species fills.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L122_Q1",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[Edge Computing] As internet-connected devices multiply, from factory sensors to smart home appliances, the traditional model of sending all data to a distant, centralized cloud server for processing has begun to strain under sheer volume and the delay inherent in that round trip, particularly for applications like autonomous vehicles that require split-second decisions. Edge computing addresses this by processing data closer to where it is actually generated, on or near the device itself, reducing the delay a request would otherwise face traveling to a distant server and back, though this approach requires distributing computing power across many smaller locations rather than concentrating it in a few large data centers.",
-            "question": "Why does edge computing particularly benefit applications like autonomous vehicles?",
-            "options": [
-                "It reduces the delay from sending data to a distant server",
-                "It eliminates the need for any sensors",
-                "It requires no computing power at all",
-                "It only works for smart home appliances"
-            ],
-            "correctAnswer": "It reduces the delay from sending data to a distant server",
-            "correctAnswerIndex": 0,
-            "hint": "The specific benefit is explained in the middle of the passage.",
-            "explanation": "The passage explains that edge computing reduces delay by processing data near its source, which benefits time-sensitive applications like autonomous vehicles.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L122_Q2",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[Cognitive Dissonance] Cognitive dissonance describes the psychological discomfort that arises when a person holds two contradictory beliefs simultaneously, or when their actions conflict with their stated values, a tension the mind is strongly motivated to resolve, often by adjusting a belief rather than the more difficult task of changing behavior. A smoker aware of serious health risks, for example, might resolve this discomfort not by quitting but by downplaying the statistical risk or emphasizing a distant relative who smoked for decades without apparent harm, illustrating how the resolution of dissonance does not necessarily favor the most rational or evidence-based outcome.",
-            "question": "What does the smoker example illustrate about resolving cognitive dissonance?",
-            "options": [
-                "People always change their behavior to resolve it",
-                "Cognitive dissonance only affects smokers specifically",
-                "Statistical risk always outweighs personal anecdotes",
-                "The resolution does not necessarily favor the most rational outcome"
-            ],
-            "correctAnswer": "The resolution does not necessarily favor the most rational outcome",
-            "correctAnswerIndex": 3,
-            "hint": "The lesson from the example is stated in the last sentence.",
-            "explanation": "The passage says the smoker example illustrates that resolving dissonance doesn't necessarily lead to the most rational outcome.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L122_Q3",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[Spaced Repetition] Cognitive research on memory consistently shows that information reviewed multiple times at gradually increasing intervals, a technique known as spaced repetition, produces significantly stronger long-term retention than reviewing the same material repeatedly within a single concentrated study session, a common but comparatively ineffective strategy often called cramming. The apparent inefficiency of spacing out review, since it can feel like information is being partially forgotten between sessions, is in fact central to why the technique works: the mild effort required to retrieve a partially faded memory appears to strengthen that memory more than reviewing it while still fresh and easily accessible.",
-            "question": "Why does the mild effort of retrieving a partially faded memory help retention?",
-            "options": [
-                "It guarantees the information will never be forgotten",
-                "It works only for very short pieces of information",
-                "It is identical in effect to cramming",
-                "It appears to strengthen the memory more than reviewing it while still fresh"
-            ],
-            "correctAnswer": "It appears to strengthen the memory more than reviewing it while still fresh",
-            "correctAnswerIndex": 3,
-            "hint": "The explanation is given in the last sentence.",
-            "explanation": "The passage explains that retrieving a partially faded memory strengthens it more than reviewing information while it is still fresh.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L123_Q1",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[Untranslatable Words and Cultural Concepts] Linguists caution against the popular but often oversimplified claim that certain words are entirely 'untranslatable,' since most concepts can eventually be explained in another language given enough words and context, even if no single equivalent term exists. What such words more accurately reveal is which concepts a culture has found useful enough to compress into a single, efficient term, reflecting cultural priorities and everyday concerns rather than describing an idea genuinely inexpressible to speakers of other languages.",
-            "question": "What do so-called 'untranslatable' words more accurately reveal, according to linguists?",
-            "options": [
-                "Ideas that no other language could ever express",
-                "Words that have no meaning at all",
-                "Which concepts a culture found useful enough to compress into one word",
-                "Concepts unique to a single historical period"
-            ],
-            "correctAnswer": "Which concepts a culture found useful enough to compress into one word",
-            "correctAnswerIndex": 2,
-            "hint": "The linguists' actual explanation is given in the last sentence.",
-            "explanation": "The passage says linguists view such words as reflecting which concepts a culture found useful to compress into a single term, not genuine untranslatability.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L123_Q2",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[Gut Microbiome Research] The human gut hosts trillions of microorganisms collectively known as the gut microbiome, and emerging research suggests this microbial community may influence far more than digestion alone, with some studies pointing to a connection between microbiome composition and mood regulation, immune function, and even response to certain medications. Researchers caution, however, that much of this research remains correlational rather than clearly causal, meaning that while a particular microbiome pattern is often observed alongside a particular health outcome, scientists have not always established which factor is actually driving the other, or whether some third, unmeasured factor might explain both.",
-            "question": "What caution do researchers give about gut microbiome research, according to the passage?",
-            "options": [
-                "Much of it is correlational rather than clearly causal",
-                "It has been completely disproven by new studies",
-                "It applies only to digestion, nothing else",
-                "It has identified exact causes for every condition"
-            ],
-            "correctAnswer": "Much of it is correlational rather than clearly causal",
-            "correctAnswerIndex": 0,
-            "hint": "The caution is explained in the second half of the passage.",
-            "explanation": "The passage says researchers caution that much gut microbiome research is correlational, not clearly established as causal.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L123_Q3",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[Transit-Oriented Development] Transit-oriented development refers to an urban planning approach that concentrates housing, retail, and office space within comfortable walking distance of a public transit station, aiming to reduce car dependency by making it genuinely convenient for residents to live without one. Critics of past implementations note that simply building dense housing near a train station does not automatically produce the intended reduction in car ownership if the transit service itself remains infrequent or unreliable, suggesting that successful transit-oriented development depends as much on transit quality as on the density of nearby development itself.",
-            "question": "What do critics say is necessary, beyond density, for transit-oriented development to succeed?",
-            "options": [
-                "Extremely low housing costs nearby",
-                "A complete ban on car ownership",
-                "Reliable, frequent transit service",
-                "Large parking garages at each station"
-            ],
-            "correctAnswer": "Reliable, frequent transit service",
-            "correctAnswerIndex": 2,
-            "hint": "The additional requirement is explained in the last sentence.",
-            "explanation": "The passage says critics believe successful transit-oriented development also depends on transit quality, not density alone.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L124_Q1",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[Organizational Silos] Within large organizations, 'silos' describe a pattern in which departments operate with limited communication or collaboration across boundaries, each optimizing for its own goals in ways that can inadvertently work against the organization's broader objectives, such as a sales team promising a delivery timeline that the operations team was never consulted about and cannot actually meet. Management consultants often attribute the persistence of silos not to any individual's poor judgment but to organizational incentive structures that reward departments for their own narrow performance metrics rather than for outcomes that require cross-departmental cooperation to achieve.",
-            "question": "What do management consultants often attribute the persistence of silos to?",
-            "options": [
-                "A lack of talented employees within departments",
-                "Buildings being physically too far apart",
-                "Incentive structures rewarding narrow departmental performance",
-                "Employees deliberately sabotaging other departments"
-            ],
-            "correctAnswer": "Incentive structures rewarding narrow departmental performance",
-            "correctAnswerIndex": 2,
-            "hint": "The consultants' explanation is given in the last sentence.",
-            "explanation": "The passage says consultants attribute silos to incentive structures that reward narrow metrics rather than cross-departmental cooperation.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L124_Q2",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[The Bystander Effect] Social psychologists have documented a counterintuitive phenomenon known as the bystander effect, in which an individual is actually less likely to offer help in an emergency situation as the number of other witnesses present increases, rather than more likely, as common intuition might suggest. Researchers attribute this largely to a diffusion of responsibility, in which each individual bystander assumes that someone else in the group will act, or already has, a psychological process that can occur even among people who genuinely intend to help if they believed themselves to be the only witness present.",
-            "question": "How does the bystander effect contradict common intuition, according to the passage?",
-            "options": [
-                "More witnesses always guarantee someone will help",
-                "Fewer witnesses always reduce the chance of help",
-                "Witnesses never intend to help in an emergency",
-                "More witnesses make individual helping less, not more, likely"
-            ],
-            "correctAnswer": "More witnesses make individual helping less, not more, likely",
-            "correctAnswerIndex": 3,
-            "hint": "The contradiction is described in the first sentence.",
-            "explanation": "The passage explains that the bystander effect contradicts intuition because more witnesses make an individual less, not more, likely to help.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L124_Q3",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[Passive Solar Building Design] Passive solar design orients a building and selects its materials specifically to capture, store, and distribute the sun's heat during colder months while minimizing unwanted heat gain during warmer ones, all without relying on any mechanical or electrical heating and cooling systems. A south-facing wall of thermal mass material, such as dense stone or concrete, might absorb heat throughout a winter day and gradually release it overnight, while carefully calculated roof overhangs block the higher summer sun from directly entering the same windows that welcome the lower winter sun.",
-            "question": "What role does the roof overhang play in passive solar design, according to the passage?",
-            "options": [
-                "Storing heat throughout the winter day",
-                "Preventing any sunlight from entering year-round",
-                "Blocking the higher summer sun while allowing lower winter sun",
-                "Powering the building's electrical systems"
-            ],
-            "correctAnswer": "Blocking the higher summer sun while allowing lower winter sun",
-            "correctAnswerIndex": 2,
-            "hint": "The overhang's function is explained in the last sentence.",
-            "explanation": "The passage says the overhang blocks the higher summer sun while still allowing the lower winter sun to enter.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L125_Q1",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[The Paradox of Choice in Consumer Behavior] Behavioral economists studying consumer decision-making have identified what is sometimes called the paradox of choice: while a certain degree of variety is generally perceived as desirable and even necessary for a sense of autonomy, choice sets beyond a certain threshold tend to produce diminishing, and eventually negative, returns on consumer satisfaction, as the cognitive burden of comparing numerous similar options begins to outweigh the benefit of finding a more precisely suited match. This finding has practical implications for retailers, some of whom have found that deliberately curating a smaller, well-chosen selection can increase both sales and reported customer satisfaction compared to offering the widest possible range.",
-            "question": "What practical implication has this research had for some retailers, according to the passage?",
-            "options": [
-                "Offering unlimited choices always increases sales",
-                "Curating a smaller selection can increase sales and satisfaction",
-                "Customers prefer having no choices available",
-                "Retailers should eliminate all product variety"
-            ],
-            "correctAnswer": "Curating a smaller selection can increase sales and satisfaction",
-            "correctAnswerIndex": 1,
-            "hint": "The implication is stated in the last sentence.",
-            "explanation": "The passage says some retailers found that a smaller, curated selection can increase both sales and satisfaction.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L125_Q2",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[Permafrost Thaw and Methane Release] Vast areas of permanently frozen ground in Arctic regions, known as permafrost, contain organic material that has remained frozen, and therefore largely undecomposed, for thousands of years, effectively locking away carbon that would otherwise have been released into the atmosphere long ago. As rising temperatures cause permafrost to thaw more extensively, microorganisms begin breaking down this newly accessible organic material, releasing greenhouse gases, including methane, in a process that concerns climate scientists precisely because it represents a feedback loop: warming causes thawing, thawing releases greenhouse gases, and those gases contribute to further warming.",
-            "question": "Why does permafrost thaw concern climate scientists specifically, according to the passage?",
-            "options": [
-                "It has no connection to greenhouse gas levels",
-                "It only affects regions far from human populations",
-                "It causes temperatures to decrease over time",
-                "It represents a feedback loop that accelerates further warming"
-            ],
-            "correctAnswer": "It represents a feedback loop that accelerates further warming",
-            "correctAnswerIndex": 3,
-            "hint": "The specific concern is explained in the last sentence.",
-            "explanation": "The passage says scientists are concerned because permafrost thaw creates a feedback loop that contributes to further warming.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L125_Q3",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[The Halo Effect in Perception] The halo effect describes a cognitive bias in which an initial positive impression of a person or product in one specific area unconsciously influences perceptions of entirely unrelated qualities, such as when a physically attractive job candidate is also rated by interviewers, without clear justification, as more competent or trustworthy than an equally qualified but less conventionally attractive candidate. Marketers have long exploited this bias deliberately, understanding that a product perceived favorably in one dimension, such as sleek packaging design, will often be assumed by consumers to be superior in unrelated dimensions, such as ingredient quality, that a customer has not actually evaluated directly.",
-            "question": "How do marketers exploit the halo effect, according to the passage?",
-            "options": [
-                "By using one favorable quality to imply unrelated superior qualities",
-                "By avoiding any positive product qualities entirely",
-                "By only marketing to physically attractive customers",
-                "By eliminating packaging design from consideration"
-            ],
-            "correctAnswer": "By using one favorable quality to imply unrelated superior qualities",
-            "correctAnswerIndex": 0,
-            "hint": "The marketers' strategy is explained in the last sentence.",
-            "explanation": "The passage says marketers exploit the effect by letting one favorable quality imply superiority in unrelated, unevaluated qualities.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L126_Q1",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[Survivorship Bias] Survivorship bias occurs when conclusions are drawn from a group that has already been filtered by some selection process, without accounting for the larger, often unseen, population that did not survive that same process, a pattern famously illustrated by military analysts who initially proposed reinforcing the areas of returning aircraft that showed the most bullet damage, before a statistician pointed out that the planes being analyzed had, by definition, survived being hit in those exact locations, meaning the truly vulnerable areas were more likely those with no damage recorded at all, since planes hit there had failed to return.",
-            "question": "What did the statistician point out about the returning aircraft, according to the passage?",
-            "options": [
-                "The planes had never actually been in combat",
-                "The damage shown was completely random and meaningless",
-                "The planes had survived being hit in the damaged areas",
-                "The military should reinforce every part equally"
-            ],
-            "correctAnswer": "The planes had survived being hit in the damaged areas",
-            "correctAnswerIndex": 2,
-            "hint": "The statistician's insight is explained in the last part of the passage.",
-            "explanation": "The passage explains that the statistician pointed out the returning planes had survived damage in those areas, so the truly vulnerable spots were the undamaged ones on planes that never returned.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L126_Q2",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[Biomimicry in Engineering] Biomimicry involves studying structures and processes that have evolved in nature over millions of years and adapting those solutions to solve human engineering challenges, based on the premise that evolutionary pressure has already extensively tested and refined many highly efficient designs. The rigid yet lightweight structure of a bird's bones, for example, has directly informed the design of certain aircraft components, while the specific texture of shark skin, which reduces drag by subtly disrupting the flow of water across its surface, has inspired swimsuit and even ship hull coatings intended to reduce friction.",
-            "question": "What premise underlies the practice of biomimicry, according to the passage?",
-            "options": [
-                "Human engineers always outperform natural designs",
-                "Nature has no relevance to modern technology",
-                "Evolutionary pressure has already tested and refined efficient designs",
-                "Animal structures cannot inform human engineering"
-            ],
-            "correctAnswer": "Evolutionary pressure has already tested and refined efficient designs",
-            "correctAnswerIndex": 2,
-            "hint": "The underlying premise is stated in the first sentence.",
-            "explanation": "The passage says biomimicry is based on the premise that evolution has already tested and refined many efficient natural designs.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L126_Q3",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[Cultural Differences in Negotiation Styles] Cross-cultural business researchers have documented significant variation in negotiation norms across different cultural contexts, noting that what one culture interprets as a sign of respectful patience and relationship-building, such as extended small talk before discussing business terms, another culture might interpret as evasiveness or a lack of seriousness about reaching a deal efficiently. Consultants who advise international businesses argue that misreading these differences as personal character traits, rather than recognizing them as culturally learned communication patterns, is a common and often costly source of failed international business negotiations.",
-            "question": "What do consultants identify as a common source of failed negotiations, according to the passage?",
-            "options": [
-                "A complete absence of small talk in all cultures",
-                "Businesses refusing to negotiate internationally at all",
-                "Cultural patterns being identical across all countries",
-                "Misreading cultural communication patterns as personal character traits"
-            ],
-            "correctAnswer": "Misreading cultural communication patterns as personal character traits",
-            "correctAnswerIndex": 3,
-            "hint": "The consultants' point is explained in the last sentence.",
-            "explanation": "The passage says consultants identify misreading culturally learned patterns as personal traits as a common source of failed negotiations.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L127_Q1",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[The Framing Effect in Decision-Making] The framing effect demonstrates that the same objective information can lead to substantially different decisions depending purely on how that information is presented, independent of any actual change in the underlying facts, such as patients responding more favorably to a medical procedure described as having a 'ninety percent survival rate' than to the mathematically identical description of a 'ten percent mortality rate,' despite both statements conveying exactly the same statistical reality. This finding has significant implications for fields ranging from public health messaging to financial disclosures, where the specific framing chosen, even when technically accurate, can meaningfully shape how information is ultimately received and acted upon.",
-            "question": "What does the medical procedure example illustrate about the framing effect?",
-            "options": [
-                "Survival rates and mortality rates measure different things",
-                "Patients always prefer negative framing over positive framing",
-                "Identical statistics can produce different reactions based on wording alone",
-                "The framing effect only applies to financial disclosures"
-            ],
-            "correctAnswer": "Identical statistics can produce different reactions based on wording alone",
-            "correctAnswerIndex": 2,
-            "hint": "The lesson from the example is explained in the first sentence.",
-            "explanation": "The passage uses the survival-versus-mortality-rate example to show that identical statistics can be received differently depending on framing.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L127_Q2",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[Keystone Species in Ecosystems] A keystone species is an organism whose influence on its ecosystem is disproportionately large relative to its actual population size, meaning its removal can trigger a cascade of changes throughout the food web that would not occur with the loss of a more ecologically redundant species. Sea otters serve as a frequently cited example: by preying on sea urchins, otters indirectly protect kelp forests from being overgrazed, since without otters to control urchin populations, urchins can multiply unchecked and consume kelp forests down to bare rock, eliminating a habitat that supports a vast range of other marine life.",
-            "question": "Why are sea otters considered a keystone species, according to the passage?",
-            "options": [
-                "They have the largest population of any marine species",
-                "They consume kelp directly in large quantities",
-                "Their predation on urchins indirectly protects entire kelp forests",
-                "They have no measurable effect on their ecosystem"
-            ],
-            "correctAnswer": "Their predation on urchins indirectly protects entire kelp forests",
-            "correctAnswerIndex": 2,
-            "hint": "The explanation is given in the last part of the passage.",
-            "explanation": "The passage explains that otters are a keystone species because controlling urchins indirectly protects kelp forests supporting other marine life.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L127_Q3",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[Anchoring Bias in Pricing] Anchoring bias describes the tendency for an initial piece of information, even one known to be arbitrary or irrelevant, to disproportionately influence subsequent judgments and decisions, a pattern retailers frequently exploit by displaying a high 'original' price crossed out next to a lower 'sale' price, since the crossed-out figure, regardless of whether it reflects a price the item was ever genuinely sold at, subtly anchors a shopper's perception of what constitutes a fair price for that particular item. Researchers have found this effect persists even among shoppers who consciously recognize the tactic and believe themselves immune to its influence.",
-            "question": "What have researchers found about shoppers who recognize the anchoring tactic?",
-            "options": [
-                "They are always completely unaffected by it",
-                "They never notice crossed-out prices at all",
-                "They stop shopping at stores that use it",
-                "The effect persists even when they believe themselves immune"
-            ],
-            "correctAnswer": "The effect persists even when they believe themselves immune",
-            "correctAnswerIndex": 3,
-            "hint": "The finding about aware shoppers is in the last sentence.",
-            "explanation": "The passage says researchers found the anchoring effect persists even among shoppers who consciously recognize the tactic.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L128_Q1",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[The Tragedy of the Commons] The tragedy of the commons describes a situation in which individuals acting independently in their own rational self-interest deplete a shared, limited resource, even when doing so is clearly against the long-term collective interest of the entire group, since each individual bears only a fraction of the cost of their own overuse while capturing the full benefit for themselves, whereas the cost of restraint would be borne entirely by that individual while the benefit would be shared collectively. Economists note that the tragedy is not inevitable, however, pointing to numerous historical examples of communities successfully managing shared resources through locally developed rules and social enforcement, without requiring either full privatization or centralized government control.",
-            "question": "What do economists note about the tragedy of the commons, according to the passage?",
-            "options": [
-                "It is not inevitable, as some communities manage shared resources successfully",
-                "It always requires full privatization to prevent",
-                "It has never been avoided in human history",
-                "It only applies to government-owned resources"
-            ],
-            "correctAnswer": "It is not inevitable, as some communities manage shared resources successfully",
-            "correctAnswerIndex": 0,
-            "hint": "The economists' point is explained in the last sentence.",
-            "explanation": "The passage says economists note the tragedy is not inevitable, citing communities that have successfully managed shared resources.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L128_Q2",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[Confirmation Bias in Research] Confirmation bias refers to the tendency to search for, interpret, and recall information in ways that support a belief one already holds, while giving disproportionately less weight to evidence that would challenge that same belief, a pattern that can subtly affect even trained researchers if they are not deliberately guarding against it. Scientific methodology attempts to counteract this tendency through practices such as pre-registering a study's hypothesis before data collection begins and actively seeking out disconfirming evidence, procedural safeguards designed specifically to prevent a researcher's existing expectations from unconsciously shaping which results are emphasized or reported.",
-            "question": "Why do researchers pre-register a hypothesis before collecting data, according to the passage?",
-            "options": [
-                "To prevent existing expectations from shaping which results get emphasized",
-                "To guarantee their hypothesis will be proven correct",
-                "To avoid collecting any data at all",
-                "To reduce the total cost of the study"
-            ],
-            "correctAnswer": "To prevent existing expectations from shaping which results get emphasized",
-            "correctAnswerIndex": 0,
-            "hint": "The purpose is explained in the last sentence.",
-            "explanation": "The passage says pre-registration is a safeguard meant to prevent a researcher's expectations from shaping reported results.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L128_Q3",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[Urban Microclimates and Building Design] Densely built urban environments create microclimates that can differ measurably from surrounding suburban or rural areas, with narrow streets flanked by tall buildings sometimes creating wind tunnel effects that intensify gusts at street level, while other configurations of the same buildings can instead block airflow entirely, trapping heat and pollutants close to the ground. Urban planners increasingly use computer modeling during the design phase specifically to predict these airflow patterns before construction begins, since retrofitting a poorly ventilated urban canyon after buildings are already in place is far more difficult and costly than adjusting a design on paper.",
-            "question": "Why do planners use computer modeling before construction begins, according to the passage?",
-            "options": [
-                "It eliminates the need for any future construction",
-                "Retrofitting poor airflow after construction is far more difficult",
-                "It guarantees no wind will ever occur",
-                "It is required by international building law"
-            ],
-            "correctAnswer": "Retrofitting poor airflow after construction is far more difficult",
-            "correctAnswerIndex": 1,
-            "hint": "The reason is explained in the last sentence.",
-            "explanation": "The passage says planners model airflow beforehand because retrofitting poor ventilation after construction is far more difficult and costly.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L129_Q1",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[The Availability Heuristic] The availability heuristic describes a mental shortcut in which people estimate the likelihood or frequency of an event based on how easily relevant examples come to mind, rather than on actual statistical data, a pattern that helps explain why vivid, heavily reported events, such as plane crashes, are frequently judged to be far more common than they statistically are, while less dramatic but considerably more frequent risks, such as routine car accidents, tend to be systematically underestimated precisely because they rarely generate the same intensity of media coverage or emotional impact.",
-            "question": "Why are plane crashes often judged to be more common than they statistically are?",
-            "options": [
-                "Plane crashes are actually more frequent than car accidents",
-                "Statistical data on plane crashes does not exist",
-                "People deliberately choose to overestimate rare risks",
-                "Vivid, heavily reported events are easier to recall, skewing perception"
-            ],
-            "correctAnswer": "Vivid, heavily reported events are easier to recall, skewing perception",
-            "correctAnswerIndex": 3,
-            "hint": "The explanation is given throughout the passage, especially the first half.",
-            "explanation": "The passage explains that vivid, well-reported events like plane crashes come to mind more easily, skewing perceived likelihood upward.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L129_Q2",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[Thermal Mass and Passive Cooling] Traditional architecture in many hot, arid regions has long relied on thick walls made of dense materials like adobe or stone, which absorb heat slowly throughout the day and release it gradually overnight, a property known as thermal mass that helps moderate indoor temperature swings without any mechanical cooling system. Modern builders in similar climates increasingly borrow this centuries-old principle, sometimes combining high-thermal-mass materials with contemporary insulation techniques to reduce a building's reliance on energy-intensive air conditioning, particularly in regions where electricity costs or grid reliability make constant mechanical cooling impractical.",
-            "question": "What does thermal mass help traditional buildings achieve, according to the passage?",
-            "options": [
-                "Moderating indoor temperature swings without mechanical cooling",
-                "Eliminating the need for any walls at all",
-                "Increasing indoor temperature swings significantly",
-                "Requiring constant air conditioning to function"
-            ],
-            "correctAnswer": "Moderating indoor temperature swings without mechanical cooling",
-            "correctAnswerIndex": 0,
-            "hint": "The function of thermal mass is explained in the first sentence.",
-            "explanation": "The passage explains that thermal mass helps moderate indoor temperature swings without requiring mechanical cooling.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L129_Q3",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[The Bandwagon Effect in Public Opinion] The bandwagon effect describes the tendency for individuals to adopt a particular belief or behavior primarily because they perceive that many other people already hold it, a dynamic that can create self-reinforcing momentum independent of the belief's actual merit, since the visible popularity of a position can itself become perceived as evidence supporting that position. Researchers studying public opinion polling have noted particular concern about this dynamic in the context of published poll results, since voters exposed to polling data showing one candidate meaningfully ahead may become more likely to support that same candidate, a feedback loop that can potentially distort the very outcome the polling was originally intended merely to measure.",
-            "question": "What concern have researchers noted about published poll results, according to the passage?",
-            "options": [
-                "They are always completely inaccurate",
-                "They may create a feedback loop that distorts the outcome being measured",
-                "They have no effect on voter behavior",
-                "They are illegal to publish in most places"
-            ],
-            "correctAnswer": "They may create a feedback loop that distorts the outcome being measured",
-            "correctAnswerIndex": 1,
-            "hint": "The concern is explained in the last sentence.",
-            "explanation": "The passage says researchers are concerned that polls may create a feedback loop, distorting the outcome they were meant to measure.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L130_Q1",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[The Precautionary Principle in Policy] The precautionary principle holds that when an action carries a plausible risk of significant or irreversible harm, the burden of proof should fall on demonstrating that the action is safe, rather than requiring critics to first prove definitive harm before any restriction is considered, a standard frequently invoked in debates over new chemicals, genetically modified organisms, or emerging technologies where long-term consequences remain genuinely uncertain. Critics of the principle argue that applied too broadly, it could indefinitely stall beneficial innovations simply because absolute certainty about safety is, in practice, rarely achievable for any new technology, however promising.",
-            "question": "What concern do critics raise about the precautionary principle, according to the passage?",
-            "options": [
-                "It guarantees that all new technologies are safe",
-                "It could indefinitely stall beneficial innovations due to lack of absolute certainty",
-                "It requires no evidence of harm whatsoever",
-                "It has never been applied to any policy debate"
-            ],
-            "correctAnswer": "It could indefinitely stall beneficial innovations due to lack of absolute certainty",
-            "correctAnswerIndex": 1,
-            "hint": "The critics' concern is explained in the last sentence.",
-            "explanation": "The passage says critics worry the principle could stall beneficial innovations, since absolute safety certainty is rarely achievable.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L130_Q2",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[Selection Bias in Online Reviews] Online review platforms are susceptible to a form of selection bias in which customers with either extremely positive or extremely negative experiences are disproportionately more likely to leave a review compared to the larger, often silent, majority who had a moderately satisfactory experience, meaning the visible distribution of ratings may not accurately reflect the typical customer experience at all. This dynamic helps explain why a product or service can maintain a strong overall reputation and consistent repeat business despite an online review section that appears, at a glance, unusually polarized between glowing praise and harsh criticism.",
-            "question": "What does the passage say the visible distribution of online ratings may not accurately reflect?",
-            "options": [
-                "The typical customer experience",
-                "The exact price of the product or service",
-                "The total number of customers served",
-                "The location of the business itself"
-            ],
-            "correctAnswer": "The typical customer experience",
-            "correctAnswerIndex": 0,
-            "hint": "This is stated directly in the middle of the passage.",
-            "explanation": "The passage says the visible rating distribution may not accurately reflect the typical customer experience, due to selection bias in who leaves reviews.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L130_Q3",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[Redundancy in Engineering Safety Systems] Critical infrastructure systems, from aircraft to nuclear power plants, are typically designed with deliberate redundancy, meaning multiple independent systems capable of performing the same essential function, so that the failure of any single component does not result in catastrophic failure of the entire system. Engineers specifically aim for these backup systems to fail independently of one another wherever possible, recognizing that redundancy provides little genuine protection if a single shared cause, such as a design flaw common to all versions of a component, could simultaneously disable every redundant system at once.",
-            "question": "Why do engineers aim for backup systems to fail independently of each other?",
-            "options": [
-                "Independent failure guarantees systems never actually fail",
-                "A shared flaw could disable every redundant system at once otherwise",
-                "It reduces the total number of systems needed",
-                "It eliminates the need for any testing"
-            ],
-            "correctAnswer": "A shared flaw could disable every redundant system at once otherwise",
-            "correctAnswerIndex": 1,
-            "hint": "The reasoning is explained in the last sentence.",
-            "explanation": "The passage explains that engineers want independent failure because a shared cause could otherwise disable all redundant systems simultaneously.",
-            "passageWordCount": 100
-        }
-    ]
+  "gameType": "readAndAnswer",
+  "batchIndex": 13,
+  "levels": "121-130",
+  "quests": [
+    {
+      "id": "RDG_READANDANSWER_L121_Q1",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[Reassessing Open-Plan Classrooms] In the 1970s, many schools removed walls between classrooms, believing open spaces would encourage collaboration and flexible teaching. Decades later, most of those same schools quietly rebuilt the walls, as teachers reported that noise from neighboring classes made sustained instruction nearly impossible. The idea still appears in modern school design debates, though usually with acoustic barriers and much smaller shared spaces than the original model.",
+      "question": "What is the writer's main point in this passage?",
+      "options": [
+        "Open classrooms were always a total failure",
+        "Schools permanently banned shared spaces entirely",
+        "Noise was actually never really a problem there at all",
+        "A popular idea failed but was revised with lessons learned"
+      ],
+      "correctAnswer": "A popular idea failed but was revised with lessons learned",
+      "correctAnswerIndex": 3,
+      "hint": "Trace the idea from its original popularity, through its failure, to how it survives today in modified form.",
+      "explanation": "The passage shows the idea failing, being reversed, and then reappearing in a revised, more limited form.",
+      "passageWordCount": 68
+    },
+    {
+      "id": "RDG_READANDANSWER_L121_Q2",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[Reassessing Open-Plan Classrooms] In the 1970s, many schools removed walls between classrooms, believing open spaces would encourage collaboration and flexible teaching. Decades later, most of those same schools quietly rebuilt the walls, as teachers reported that noise from neighboring classes made sustained instruction nearly impossible. The idea still appears in modern school design debates, though usually with acoustic barriers and much smaller shared spaces than the original model.",
+      "question": "Why did schools originally remove the walls?",
+      "options": [
+        "To encourage collaboration and flexible teaching",
+        "To save real money on new construction",
+        "To reduce the total number of teachers needed",
+        "To comply with a strict new building code"
+      ],
+      "correctAnswer": "To encourage collaboration and flexible teaching",
+      "correctAnswerIndex": 0,
+      "hint": "The original reasoning is given in the first sentence.",
+      "explanation": "The passage says schools believed open spaces would encourage collaboration and flexible teaching.",
+      "passageWordCount": 68
+    },
+    {
+      "id": "RDG_READANDANSWER_L121_Q3",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[Reassessing Open-Plan Classrooms] In the 1970s, many schools removed walls between classrooms, believing open spaces would encourage collaboration and flexible teaching. Decades later, most of those same schools quietly rebuilt the walls, as teachers reported that noise from neighboring classes made sustained instruction nearly impossible. The idea still appears in modern school design debates, though usually with acoustic barriers and much smaller shared spaces than the original model.",
+      "question": "How does the modern version of this idea differ from the original?",
+      "options": [
+        "It eliminated all shared spaces completely",
+        "It adds acoustic barriers and smaller shared spaces",
+        "It uses even larger open areas than before",
+        "It is completely identical to the original design"
+      ],
+      "correctAnswer": "It adds acoustic barriers and smaller shared spaces",
+      "correctAnswerIndex": 1,
+      "hint": "The difference is described in the final sentence.",
+      "explanation": "The passage says the modern version uses acoustic barriers and smaller shared spaces.",
+      "passageWordCount": 68
+    },
+    {
+      "id": "RDG_READANDANSWER_L122_Q1",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[A Cautious Welcome for New Technology] The city's decision to pilot delivery robots on downtown sidewalks deserves credit for addressing a real problem: the growing number of delivery vehicles clogging narrow streets. Still, before expanding the program citywide, officials would do well to study how pedestrians with visual impairments navigate around these slow-moving machines, a concern raised by several disability advocacy groups that has so far received only a brief mention in official reports.",
+      "question": "What is the writer's overall attitude toward the delivery robot pilot?",
+      "options": [
+        "Entirely and quite firmly opposed to all robots",
+        "Completely unconcerned about any drawbacks",
+        "Supportive, but concerned about one overlooked issue",
+        "Indifferent to whether the program continues"
+      ],
+      "correctAnswer": "Supportive, but concerned about one overlooked issue",
+      "correctAnswerIndex": 2,
+      "hint": "Notice how the writer praises the program's purpose while raising a specific, unresolved concern.",
+      "explanation": "The writer credits the program's goal but presses for more attention to accessibility concerns, showing qualified support.",
+      "passageWordCount": 74
+    },
+    {
+      "id": "RDG_READANDANSWER_L122_Q2",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[A Cautious Welcome for New Technology] The city's decision to pilot delivery robots on downtown sidewalks deserves credit for addressing a real problem: the growing number of delivery vehicles clogging narrow streets. Still, before expanding the program citywide, officials would do well to study how pedestrians with visual impairments navigate around these slow-moving machines, a concern raised by several disability advocacy groups that has so far received only a brief mention in official reports.",
+      "question": "What problem is the delivery robot pilot meant to address?",
+      "options": [
+        "A shortage of delivery workers",
+        "Delivery vehicles clogging narrow streets",
+        "High delivery costs for small businesses",
+        "Slow internet service downtown"
+      ],
+      "correctAnswer": "Delivery vehicles clogging narrow streets",
+      "correctAnswerIndex": 1,
+      "hint": "The problem being addressed is named early in the passage.",
+      "explanation": "The passage says the pilot addresses delivery vehicles clogging narrow streets.",
+      "passageWordCount": 74
+    },
+    {
+      "id": "RDG_READANDANSWER_L122_Q3",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[A Cautious Welcome for New Technology] The city's decision to pilot delivery robots on downtown sidewalks deserves credit for addressing a real problem: the growing number of delivery vehicles clogging narrow streets. Still, before expanding the program citywide, officials would do well to study how pedestrians with visual impairments navigate around these slow-moving machines, a concern raised by several disability advocacy groups that has so far received only a brief mention in official reports.",
+      "question": "Who raised the concern about pedestrians with visual impairments?",
+      "options": [
+        "City council members",
+        "Delivery robot manufacturers",
+        "Local business owners",
+        "Disability advocacy groups"
+      ],
+      "correctAnswer": "Disability advocacy groups",
+      "correctAnswerIndex": 3,
+      "hint": "The source of the concern is named near the end of the passage.",
+      "explanation": "The passage says the concern was raised by disability advocacy groups.",
+      "passageWordCount": 74
+    },
+    {
+      "id": "RDG_READANDANSWER_L123_Q1",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[The Real Cost of Fast Fashion Returns] Online clothing retailers have long treated free returns as a simple cost of doing business, but a recent industry report suggests the environmental impact deserves closer attention. Many returned items, especially those that have been worn or slightly damaged, are never resold and end up in landfills instead. The report also notes that return shipping alone accounts for a measurable share of the industry's total carbon emissions, though it stops short of recommending that retailers eliminate free returns altogether.",
+      "question": "What is the central concern raised in this passage?",
+      "options": [
+        "The environmental cost of free return policies",
+        "The rising cost of clothing manufacturing",
+        "A decline in online shopping overall",
+        "New labor laws affecting retailers"
+      ],
+      "correctAnswer": "The environmental cost of free return policies",
+      "correctAnswerIndex": 0,
+      "hint": "Focus on the overall issue the report addresses, not one supporting detail about shipping.",
+      "explanation": "The passage centers on the environmental cost of returns, with shipping emissions as one supporting detail.",
+      "passageWordCount": 86
+    },
+    {
+      "id": "RDG_READANDANSWER_L123_Q2",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[The Real Cost of Fast Fashion Returns] Online clothing retailers have long treated free returns as a simple cost of doing business, but a recent industry report suggests the environmental impact deserves closer attention. Many returned items, especially those that have been worn or slightly damaged, are never resold and end up in landfills instead. The report also notes that return shipping alone accounts for a measurable share of the industry's total carbon emissions, though it stops short of recommending that retailers eliminate free returns altogether.",
+      "question": "What happens to many returned items, according to the report?",
+      "options": [
+        "They are always donated to charity",
+        "They are automatically recycled into new clothing",
+        "They end up in landfills instead of being resold",
+        "They are sold at a discount online"
+      ],
+      "correctAnswer": "They end up in landfills instead of being resold",
+      "correctAnswerIndex": 2,
+      "hint": "This detail is given in the middle of the passage.",
+      "explanation": "The passage says many returned items end up in landfills instead of being resold.",
+      "passageWordCount": 86
+    },
+    {
+      "id": "RDG_READANDANSWER_L123_Q3",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[The Real Cost of Fast Fashion Returns] Online clothing retailers have long treated free returns as a simple cost of doing business, but a recent industry report suggests the environmental impact deserves closer attention. Many returned items, especially those that have been worn or slightly damaged, are never resold and end up in landfills instead. The report also notes that return shipping alone accounts for a measurable share of the industry's total carbon emissions, though it stops short of recommending that retailers eliminate free returns altogether.",
+      "question": "Does the report recommend eliminating free returns?",
+      "options": [
+        "Yes, it strongly recommends eliminating them",
+        "No, it stops short of that recommendation",
+        "The report does not mention free returns at all",
+        "It recommends charging for all returns immediately"
+      ],
+      "correctAnswer": "No, it stops short of that recommendation",
+      "correctAnswerIndex": 1,
+      "hint": "The report's stance on this specific recommendation is stated at the very end.",
+      "explanation": "The passage says the report stops short of recommending that retailers eliminate free returns.",
+      "passageWordCount": 86
+    },
+    {
+      "id": "RDG_READANDANSWER_L124_Q1",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[A Reluctant Compromise] After months of negotiation, the union and the company reached a compromise that satisfied almost no one fully: wages increased modestly, but scheduled reductions in weekend overtime pay remained in the contract. Union leaders called it a pragmatic outcome rather than a victory, acknowledging that a longer strike might have cost members more than the deal itself.",
+      "question": "What does \"pragmatic\" most likely mean in this context?",
+      "options": [
+        "Practical, based on realistic considerations",
+        "Extremely generous to every single party",
+        "Completely unfair and rather one-sided",
+        "Emotional and somewhat impulsive overall"
+      ],
+      "correctAnswer": "Practical, based on realistic considerations",
+      "correctAnswerIndex": 0,
+      "hint": "Consider why leaders would call the compromise 'pragmatic' rather than a 'victory.'",
+      "explanation": "Calling it practical rather than a victory, while weighing the cost of a longer strike, points to a realistic, practical meaning.",
+      "passageWordCount": 60
+    },
+    {
+      "id": "RDG_READANDANSWER_L124_Q2",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[A Reluctant Compromise] After months of negotiation, the union and the company reached a compromise that satisfied almost no one fully: wages increased modestly, but scheduled reductions in weekend overtime pay remained in the contract. Union leaders called it a pragmatic outcome rather than a victory, acknowledging that a longer strike might have cost members more than the deal itself.",
+      "question": "What happened to weekend overtime pay in the final agreement?",
+      "options": [
+        "It increased rather significantly",
+        "It was eliminated entirely and completely",
+        "It stayed exactly the same as before",
+        "Scheduled reductions remained in place"
+      ],
+      "correctAnswer": "Scheduled reductions remained in place",
+      "correctAnswerIndex": 3,
+      "hint": "This detail is given in the first sentence.",
+      "explanation": "The passage says scheduled reductions in weekend overtime pay remained in the contract.",
+      "passageWordCount": 60
+    },
+    {
+      "id": "RDG_READANDANSWER_L124_Q3",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[A Reluctant Compromise] After months of negotiation, the union and the company reached a compromise that satisfied almost no one fully: wages increased modestly, but scheduled reductions in weekend overtime pay remained in the contract. Union leaders called it a pragmatic outcome rather than a victory, acknowledging that a longer strike might have cost members more than the deal itself.",
+      "question": "Why did union leaders avoid calling the deal a victory?",
+      "options": [
+        "They were legally barred from that word",
+        "The company forced that description",
+        "A longer strike could have cost members more",
+        "They believed the deal was unfair"
+      ],
+      "correctAnswer": "A longer strike could have cost members more",
+      "correctAnswerIndex": 2,
+      "hint": "Their reasoning is given at the end of the passage.",
+      "explanation": "The passage says leaders acknowledged a longer strike might have cost members more than the deal.",
+      "passageWordCount": 60
+    },
+    {
+      "id": "RDG_READANDANSWER_L125_Q1",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[Tracing a Product Recall] Complaints about a kitchen blender overheating began trickling in during its second month on the market, but the manufacturer initially attributed the issue to user error. Only after an independent safety lab published test results showing a wiring flaw did the company issue a recall, nearly five months after the first complaints were filed.",
+      "question": "What can be inferred about the company's initial response to the complaints?",
+      "options": [
+        "The company issued a recall immediately after the first complaint",
+        "The company never investigated the complaints at all",
+        "The company was slow to recognize the actual cause of the problem",
+        "The complaints were proven false from the beginning"
+      ],
+      "correctAnswer": "The company was slow to recognize the actual cause of the problem",
+      "correctAnswerIndex": 2,
+      "hint": "Trace the sequence: complaints, the company's initial explanation, and what eventually forced a recall.",
+      "explanation": "The company blamed user error at first and only recalled the product after outside lab results, showing a slow response.",
+      "passageWordCount": 58
+    },
+    {
+      "id": "RDG_READANDANSWER_L125_Q2",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[Tracing a Product Recall] Complaints about a kitchen blender overheating began trickling in during its second month on the market, but the manufacturer initially attributed the issue to user error. Only after an independent safety lab published test results showing a wiring flaw did the company issue a recall, nearly five months after the first complaints were filed.",
+      "question": "What did the independent safety lab find?",
+      "options": [
+        "A wiring flaw",
+        "A battery defect",
+        "A missing warning label",
+        "A packaging error"
+      ],
+      "correctAnswer": "A wiring flaw",
+      "correctAnswerIndex": 0,
+      "hint": "The lab's specific finding is stated in the middle of the passage.",
+      "explanation": "The passage says the lab found a wiring flaw.",
+      "passageWordCount": 58
+    },
+    {
+      "id": "RDG_READANDANSWER_L125_Q3",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[Tracing a Product Recall] Complaints about a kitchen blender overheating began trickling in during its second month on the market, but the manufacturer initially attributed the issue to user error. Only after an independent safety lab published test results showing a wiring flaw did the company issue a recall, nearly five months after the first complaints were filed.",
+      "question": "About how long after the first complaints did the recall happen?",
+      "options": [
+        "Almost immediately afterward",
+        "About one full month later",
+        "Nearly a full calendar year",
+        "Nearly five whole months later"
+      ],
+      "correctAnswer": "Nearly five whole months later",
+      "correctAnswerIndex": 3,
+      "hint": "The time gap is stated at the end of the passage.",
+      "explanation": "The passage says the recall came nearly five months after the first complaints were filed.",
+      "passageWordCount": 58
+    },
+    {
+      "id": "RDG_READANDANSWER_L126_Q1",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[Do Reading Apps Really Help?] A company selling a children's reading app claims its users show a thirty percent improvement in reading scores, based on a study the company itself conducted with a group of forty children over one month. Independent education researchers note that without a comparison group of children who did not use the app, it is difficult to know whether the improvement came from the app itself or simply from any extra daily reading practice.",
+      "question": "What weakness in the company's study do independent researchers point out?",
+      "options": [
+        "The study included too many children",
+        "The study lacked a comparison group",
+        "The study simply lasted too long",
+        "The company tested too few age groups"
+      ],
+      "correctAnswer": "The study lacked a comparison group",
+      "correctAnswerIndex": 1,
+      "hint": "The researchers' specific criticism is explained in the final sentence.",
+      "explanation": "The passage says researchers note the lack of a comparison group as the key weakness.",
+      "passageWordCount": 78
+    },
+    {
+      "id": "RDG_READANDANSWER_L126_Q2",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[Do Reading Apps Really Help?] A company selling a children's reading app claims its users show a thirty percent improvement in reading scores, based on a study the company itself conducted with a group of forty children over one month. Independent education researchers note that without a comparison group of children who did not use the app, it is difficult to know whether the improvement came from the app itself or simply from any extra daily reading practice.",
+      "question": "How many children were included in the company's study?",
+      "options": [
+        "Thirty",
+        "Forty",
+        "One hundred",
+        "Fourteen"
+      ],
+      "correctAnswer": "Forty",
+      "correctAnswerIndex": 1,
+      "hint": "The number of children is given in the first sentence.",
+      "explanation": "The passage says the study included forty children.",
+      "passageWordCount": 78
+    },
+    {
+      "id": "RDG_READANDANSWER_L126_Q3",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[Do Reading Apps Really Help?] A company selling a children's reading app claims its users show a thirty percent improvement in reading scores, based on a study the company itself conducted with a group of forty children over one month. Independent education researchers note that without a comparison group of children who did not use the app, it is difficult to know whether the improvement came from the app itself or simply from any extra daily reading practice.",
+      "question": "How long did the company's study last?",
+      "options": [
+        "One week",
+        "One year",
+        "One month",
+        "Six months"
+      ],
+      "correctAnswer": "One month",
+      "correctAnswerIndex": 2,
+      "hint": "The duration of the study is stated in the first sentence.",
+      "explanation": "The passage says the study lasted one month.",
+      "passageWordCount": 78
+    },
+    {
+      "id": "RDG_READANDANSWER_L127_Q1",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[A Disputed Inheritance] When their father passed away, both siblings assumed the family cabin would be divided equally between them, as an old family letter seemed to suggest. It was only when a lawyer located the actual will, drafted years later, that they discovered it left the property solely to the younger sibling, contradicting what they had always believed.",
+      "question": "What does \"it\" refer to in the final sentence of the passage?",
+      "options": [
+        "The old family cabin house itself",
+        "The old family letter itself",
+        "The family's own personal lawyer",
+        "The actual will, drafted years later"
+      ],
+      "correctAnswer": "The actual will, drafted years later",
+      "correctAnswerIndex": 3,
+      "hint": "Trace the word 'it' back to the document just described before that clause.",
+      "explanation": "The word 'it' refers to the actual will, which is what contradicted their earlier belief.",
+      "passageWordCount": 59
+    },
+    {
+      "id": "RDG_READANDANSWER_L127_Q2",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[A Disputed Inheritance] When their father passed away, both siblings assumed the family cabin would be divided equally between them, as an old family letter seemed to suggest. It was only when a lawyer located the actual will, drafted years later, that they discovered it left the property solely to the younger sibling, contradicting what they had always believed.",
+      "question": "What did the siblings originally assume about the cabin?",
+      "options": [
+        "That it would be divided equally between them",
+        "That it would be sold immediately",
+        "That it belonged to the older sibling only",
+        "That it would be donated to charity"
+      ],
+      "correctAnswer": "That it would be divided equally between them",
+      "correctAnswerIndex": 0,
+      "hint": "Their original assumption is stated at the beginning of the passage.",
+      "explanation": "The passage says they assumed the cabin would be divided equally between them.",
+      "passageWordCount": 59
+    },
+    {
+      "id": "RDG_READANDANSWER_L127_Q3",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[A Disputed Inheritance] When their father passed away, both siblings assumed the family cabin would be divided equally between them, as an old family letter seemed to suggest. It was only when a lawyer located the actual will, drafted years later, that they discovered it left the property solely to the younger sibling, contradicting what they had always believed.",
+      "question": "According to the will, who actually received the property?",
+      "options": [
+        "The older sibling",
+        "Both siblings equally",
+        "The younger sibling",
+        "Neither sibling"
+      ],
+      "correctAnswer": "The younger sibling",
+      "correctAnswerIndex": 2,
+      "hint": "The will's actual terms are stated near the end of the passage.",
+      "explanation": "The passage says the will left the property solely to the younger sibling.",
+      "passageWordCount": 59
+    },
+    {
+      "id": "RDG_READANDANSWER_L128_Q1",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[Rethinking a Marketing Failure] When the campaign failed to boost sales, the marketing director initially blamed a weak economy. A closer review, however, revealed that competing brands running similar campaigns during the same period actually saw sales increase, suggesting the campaign's messaging, not outside economic conditions, was more likely the real problem.",
+      "question": "What does the closer review suggest about the true cause of the failed campaign?",
+      "options": [
+        "The weak economy was definitely the cause",
+        "Competing brands also failed this same period",
+        "No clear cause could ever be identified",
+        "The campaign's own messaging was the real problem"
+      ],
+      "correctAnswer": "The campaign's own messaging was the real problem",
+      "correctAnswerIndex": 3,
+      "hint": "Compare the director's original explanation with what the review of competitors revealed.",
+      "explanation": "Since competitors succeeded under the same economic conditions, the review points to the campaign's messaging as the likely cause.",
+      "passageWordCount": 52
+    },
+    {
+      "id": "RDG_READANDANSWER_L128_Q2",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[Rethinking a Marketing Failure] When the campaign failed to boost sales, the marketing director initially blamed a weak economy. A closer review, however, revealed that competing brands running similar campaigns during the same period actually saw sales increase, suggesting the campaign's messaging, not outside economic conditions, was more likely the real problem.",
+      "question": "What did the marketing director originally blame for the failure?",
+      "options": [
+        "Poor product quality",
+        "A weak economy",
+        "A competitor's lawsuit",
+        "A staffing shortage"
+      ],
+      "correctAnswer": "A weak economy",
+      "correctAnswerIndex": 1,
+      "hint": "The director's original explanation is given in the first sentence.",
+      "explanation": "The passage says the director initially blamed a weak economy.",
+      "passageWordCount": 52
+    },
+    {
+      "id": "RDG_READANDANSWER_L128_Q3",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[Rethinking a Marketing Failure] When the campaign failed to boost sales, the marketing director initially blamed a weak economy. A closer review, however, revealed that competing brands running similar campaigns during the same period actually saw sales increase, suggesting the campaign's messaging, not outside economic conditions, was more likely the real problem.",
+      "question": "What happened to competing brands during the same period?",
+      "options": [
+        "Their sales increased",
+        "Their sales also decreased",
+        "They stopped advertising",
+        "They went out of business"
+      ],
+      "correctAnswer": "Their sales increased",
+      "correctAnswerIndex": 0,
+      "hint": "This detail is described in the middle of the passage.",
+      "explanation": "The passage says competing brands' sales actually increased during the same period.",
+      "passageWordCount": 52
+    },
+    {
+      "id": "RDG_READANDANSWER_L129_Q1",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[An Editor's Quiet Frustration] The editor returned the manuscript with only a handful of comments in the margins, far fewer than her usual detailed notes. When the author asked whether the draft needed more revision, she simply said, \"It's ready when you are,\" and moved on to her next meeting without further explanation.",
+      "question": "What do the editor's actions most likely suggest?",
+      "options": [
+        "She thought it was already flawless",
+        "She may have lost enthusiasm without saying so",
+        "She was extremely excited about the project",
+        "She had simply not read it at all"
+      ],
+      "correctAnswer": "She may have lost enthusiasm without saying so",
+      "correctAnswerIndex": 1,
+      "hint": "Consider the contrast between her usual detailed notes and her brief, vague response this time.",
+      "explanation": "The unusually few comments and vague, dismissive response suggest a lack of enthusiasm she does not state outright.",
+      "passageWordCount": 53
+    },
+    {
+      "id": "RDG_READANDANSWER_L129_Q2",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[An Editor's Quiet Frustration] The editor returned the manuscript with only a handful of comments in the margins, far fewer than her usual detailed notes. When the author asked whether the draft needed more revision, she simply said, \"It's ready when you are,\" and moved on to her next meeting without further explanation.",
+      "question": "How did the number of comments compare to the editor's usual notes?",
+      "options": [
+        "There were far more comments than usual",
+        "The number was exactly the same as usual",
+        "There were no comments at all",
+        "There were far fewer comments than usual"
+      ],
+      "correctAnswer": "There were far fewer comments than usual",
+      "correctAnswerIndex": 3,
+      "hint": "This comparison is made in the first sentence.",
+      "explanation": "The passage says there were far fewer comments than her usual detailed notes.",
+      "passageWordCount": 53
+    },
+    {
+      "id": "RDG_READANDANSWER_L129_Q3",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[An Editor's Quiet Frustration] The editor returned the manuscript with only a handful of comments in the margins, far fewer than her usual detailed notes. When the author asked whether the draft needed more revision, she simply said, \"It's ready when you are,\" and moved on to her next meeting without further explanation.",
+      "question": "What exact words did the editor use when asked about further revision?",
+      "options": [
+        "\"This needs a lot more work\"",
+        "\"I have no opinion on this\"",
+        "\"It's ready when you are\"",
+        "\"Let's discuss this tomorrow\""
+      ],
+      "correctAnswer": "\"It's ready when you are\"",
+      "correctAnswerIndex": 2,
+      "hint": "The exact quote appears in the passage.",
+      "explanation": "The passage quotes the editor saying, \"It's ready when you are.\"",
+      "passageWordCount": 53
+    },
+    {
+      "id": "RDG_READANDANSWER_L130_Q1",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[Weighing a Zoning Proposal] Supporters of the proposed zoning change argue it would allow much-needed apartment construction near the train station, easing the housing shortage that has pushed rents higher each year. Opponents counter that the change would permit buildings taller than anything currently in the neighborhood, altering its character in ways that cannot be undone. The planning commission has scheduled two more public hearings before voting, in part because both sides have submitted new data since the last meeting.",
+      "question": "What does the passage suggest about the planning commission's current position?",
+      "options": [
+        "It has not reached a final decision yet",
+        "It has already approved the change",
+        "It has already rejected the change",
+        "It refuses to consider new evidence"
+      ],
+      "correctAnswer": "It has not reached a final decision yet",
+      "correctAnswerIndex": 0,
+      "hint": "Look at what the commission is doing before voting, mentioned at the end of the passage.",
+      "explanation": "The passage says two more hearings are scheduled before a vote, showing no decision has been made yet.",
+      "passageWordCount": 80
+    },
+    {
+      "id": "RDG_READANDANSWER_L130_Q2",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[Weighing a Zoning Proposal] Supporters of the proposed zoning change argue it would allow much-needed apartment construction near the train station, easing the housing shortage that has pushed rents higher each year. Opponents counter that the change would permit buildings taller than anything currently in the neighborhood, altering its character in ways that cannot be undone. The planning commission has scheduled two more public hearings before voting, in part because both sides have submitted new data since the last meeting.",
+      "question": "What is the main argument made by supporters of the change?",
+      "options": [
+        "It would lower property taxes broadly",
+        "It would ease the shortage with more apartments",
+        "It would create a brand new public park",
+        "It would reduce traffic near the station"
+      ],
+      "correctAnswer": "It would ease the shortage with more apartments",
+      "correctAnswerIndex": 1,
+      "hint": "The supporters' argument is described in the first sentence.",
+      "explanation": "The passage says supporters believe the change would ease the housing shortage.",
+      "passageWordCount": 80
+    },
+    {
+      "id": "RDG_READANDANSWER_L130_Q3",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[Weighing a Zoning Proposal] Supporters of the proposed zoning change argue it would allow much-needed apartment construction near the train station, easing the housing shortage that has pushed rents higher each year. Opponents counter that the change would permit buildings taller than anything currently in the neighborhood, altering its character in ways that cannot be undone. The planning commission has scheduled two more public hearings before voting, in part because both sides have submitted new data since the last meeting.",
+      "question": "What is the main concern raised by opponents of the change?",
+      "options": [
+        "Taller buildings would alter the neighborhood's character",
+        "The new apartments would be entirely too pricey",
+        "The train station would need full relocating",
+        "The change would actually reduce the housing supply"
+      ],
+      "correctAnswer": "Taller buildings would alter the neighborhood's character",
+      "correctAnswerIndex": 0,
+      "hint": "The opponents' concern is described in the second sentence.",
+      "explanation": "The passage says opponents worry taller buildings would alter the neighborhood's character permanently.",
+      "passageWordCount": 80
+    }
+  ]
 }

@@ -8,20 +8,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[A Customer Satisfaction Score Measured Selectively] The airline reports a customer satisfaction score based on surveys sent only to passengers whose flights arrived on time, a methodology that excludes the experiences of passengers who faced delays or cancellations, the very situations most likely to generate dissatisfaction, from the overall calculation entirely.",
-            "question": "What can be inferred about how representative this satisfaction score is of the airline's full customer experience?",
+            "passage": "[Before the Speeches] Ms. Kwan left the conference dinner at eight, before the speeches. Her colleague said she was \"exhausted.\" But her bag was already packed, a taxi was waiting outside, and the day before she had asked the hotel for an early breakfast.",
+            "question": "Which explanation is best supported?",
             "options": [
-                "It likely presents a more favorable picture than surveying all passengers would produce.",
-                "Delays and cancellations have no bearing on customer satisfaction.",
-                "It would likely be higher if delayed passengers were included.",
-                "It accurately reflects the experience of every passenger who flew that year."
+                "She became ill during the dinner and had to leave.",
+                "She had planned in advance to leave early.",
+                "She was avoiding a conversation with one of the speakers.",
+                "She decided at the last minute to catch an earlier train."
             ],
-            "correctAnswer": "It likely presents a more favorable picture than surveying all passengers would produce.",
-            "hint": "Think about which passengers are excluded from this survey and what their experiences would likely add to the overall score if included.",
-            "explanation": "Excluding passengers who experienced delays or cancellations, the situations most likely to lower satisfaction, suggests the reported score presents a more favorable picture than including all passengers would produce.",
+            "correctAnswer": "She had planned in advance to leave early.",
+            "hint": "Which details show what she did before the dinner?",
+            "explanation": "Being exhausted could explain leaving, but a packed bag, a waiting taxi, and an early breakfast arranged the day before show it was planned.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "bag was already packed",
+                "early breakfast"
             ]
         },
         {
@@ -29,20 +29,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[A Study Funded by an Interested Party] The industry-funded study concluding that a particular chemical poses 'no significant health risk at typical exposure levels' uses exposure thresholds that several independent toxicologists argue are set considerably higher than the levels most consumers actually encounter in everyday use, a methodological choice that would tend to understate potential risk.",
-            "question": "What can be inferred about the study's chosen exposure thresholds?",
+            "passage": "[We'll Match It] The sign says: \"Found it cheaper? We'll match it.\" Amira showed the assistant a lower price on a rival's website. The assistant checked and said, \"That's an online-only price. Our promise covers shops.\" The small print on the sign says the same.",
+            "question": "How wide is the store's promise?",
             "options": [
-                "The thresholds have no bearing on the study's conclusions.",
-                "They were set lower than typical consumer exposure levels.",
-                "They may have been set in a way that makes finding a significant risk less likely.",
-                "Independent toxicologists fully endorsed these thresholds."
+                "The assistant made a mistake, and the sign says the store matches every price.",
+                "The store honours every lower price, including online-only ones.",
+                "The promise is narrower than the headline suggests.",
+                "The rival's website was showing an out-of-date price."
             ],
-            "correctAnswer": "They may have been set in a way that makes finding a significant risk less likely.",
-            "hint": "Think about what setting exposure thresholds higher than real-world levels would do to the likelihood of detecting a risk that actually exists at those real-world levels.",
-            "explanation": "Toxicologists noting the thresholds exceed typical real-world exposure suggests this methodological choice would make the study less likely to detect risks that exist at the levels consumers actually encounter.",
+            "correctAnswer": "The promise is narrower than the headline suggests.",
+            "hint": "Compare the headline of the sign with its small print.",
+            "explanation": "The bold promise seems general, but the small print limits it to shop prices, so it does not cover Amira's example.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "We'll match it",
+                "online-only price"
             ]
         },
         {
@@ -50,20 +50,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[A Feature Delayed for 'Quality' Reasons] The software company postpones the release of a promised privacy feature for the third time, each time citing 'ongoing quality assurance,' even as the same release notes announce several unrelated new features shipping on schedule during the same period, a pattern some users interpret as reflecting shifting priorities rather than genuine technical delays.",
-            "question": "What can be inferred about the company's stated reason for delaying the privacy feature?",
+            "passage": "[Private Hire] The director emailed: \"Tomorrow's rehearsal is cancelled due to a scheduling issue.\" The theatre's public calendar still lists an event in the main hall tomorrow night: \"Private hire.\"",
+            "question": "What probably caused the rehearsal to be cancelled?",
             "options": [
-                "It clearly explains why every feature has been delayed equally.",
-                "It is confirmed as the complete and only reason by the company.",
-                "It may not fully explain why this particular feature keeps being delayed while others ship on time.",
-                "No other features shipped during the same period."
+                "The hall is probably being repaired, and the calendar has not been updated.",
+                "The director wants to move the rehearsal to a smaller room.",
+                "The hall has been hired out, which is probably the scheduling issue.",
+                "The rehearsal was cancelled because the actors were not ready."
             ],
-            "correctAnswer": "It may not fully explain why this particular feature keeps being delayed while others ship on time.",
-            "hint": "Think about what other features shipping on schedule, while only this one is repeatedly delayed, suggests about the stated 'quality assurance' explanation.",
-            "explanation": "Other features shipping on schedule while only the privacy feature faces repeated delays suggests the stated 'quality assurance' reason may not fully account for why this specific feature keeps being pushed back.",
+            "correctAnswer": "The hall has been hired out, which is probably the scheduling issue.",
+            "hint": "What does the public calendar say about tomorrow night?",
+            "explanation": "The vague \"scheduling issue\" matches a conflicting booking, and the calendar shows one.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "scheduling issue",
+                "Private hire"
             ]
         },
         {
@@ -71,20 +71,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[A Species Count That Depends on Definition] Conservationists report that the reserve now hosts '15 percent more species' than a decade ago, a figure that, on closer examination, results partly from a broadened definition of the reserve's boundaries adopted five years ago, which incorporated a neighboring wetland previously counted separately and already known to host a distinct set of species.",
-            "question": "What can be inferred about how much of this increase reflects genuine new species arriving within the original area?",
+            "passage": "[Four in the Morning] Mr. Tanner offered to drive his neighbour Elif to the airport at 4 a.m. \"No trouble at all,\" he said. He then mentioned that his own flight to Hamburg was next month and asked if she would mind collecting his post.",
+            "question": "What is suggested by the way he brings up his own trip?",
             "options": [
-                "The entire increase reflects genuinely new species arriving in the original area.",
-                "A meaningful portion of the reported increase likely reflects the boundary change rather than new arrivals.",
-                "The wetland was previously known to host no species at all.",
-                "The boundary change had no effect on the reported species count."
+                "He hopes to receive a favour in return.",
+                "He is warning her that his post will arrive while she is away.",
+                "He wants to travel to Hamburg with her.",
+                "He regrets offering the lift and hopes she will find another way."
             ],
-            "correctAnswer": "A meaningful portion of the reported increase likely reflects the boundary change rather than new arrivals.",
-            "hint": "Think about what incorporating an already-populated neighboring area into the count would do to the reported number, separate from any actual ecological change.",
-            "explanation": "Since the boundary expansion incorporated an already-populated wetland previously counted separately, a meaningful part of the reported increase likely reflects this redefinition rather than new species genuinely arriving in the original reserve.",
+            "correctAnswer": "He hopes to receive a favour in return.",
+            "hint": "Notice what he asks straight after his offer.",
+            "explanation": "The timing links the two requests. He offers first and then asks for help in return.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "No trouble at all",
+                "collecting his post"
             ]
         },
         {
@@ -92,20 +92,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[A Craft Described as Dying, Then Revived] A decade-old newspaper article describes a traditional weaving technique as a 'dying art with only a handful of remaining practitioners,' a description now displayed alongside the technique's current thriving cooperative of forty artisans in the region's cultural center, without any update to the original framing that continues to greet visitors.",
-            "question": "What can be inferred about the accuracy of the displayed description for today's visitors?",
+            "passage": "[Coffee and Emails] Until Ms. Osei was promoted to head of department, Julian rarely spoke to her. Since then he brings her coffee, asks about her weekend, and copies her on all his emails.",
+            "question": "Why has Julian changed his behaviour?",
             "options": [
-                "The cooperative has fewer practitioners now than a decade ago.",
-                "The original article was written after the cooperative was formed.",
-                "It likely no longer reflects the technique's current, more active status.",
-                "It accurately describes the technique's status today."
+                "He has always admired her work and is finally saying so.",
+                "He wants to move to her department in the company.",
+                "He is trying to hide a mistake that he made in an earlier email.",
+                "His friendliness is linked to her new position."
             ],
-            "correctAnswer": "It likely no longer reflects the technique's current, more active status.",
-            "hint": "Compare the decade-old 'dying art' framing with the currently thriving forty-artisan cooperative described alongside it.",
-            "explanation": "A thriving forty-artisan cooperative existing alongside an unchanged decade-old 'dying art' description suggests the displayed framing has not kept pace with the technique's current, healthier status.",
+            "correctAnswer": "His friendliness is linked to her new position.",
+            "hint": "What changed, and when?",
+            "explanation": "The change in his behaviour began with her promotion, which suggests the promotion is the reason.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "promoted to head of department",
+                "copies her on all his emails"
             ]
         },
         {
@@ -113,20 +113,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[A Workplace Wellness Metric That Backfires] After introducing a step-count competition to promote employee wellness, the company's health insurer notes a rise in minor injury claims related to overexertion during the competition period, a pattern that occupational health researchers say sometimes occurs when workplace wellness incentives inadvertently encourage employees to push beyond their usual physical limits.",
-            "question": "What can be inferred about the relationship between the step-count competition and the rise in injury claims?",
+            "passage": "[Free Workshops] Every weekend, Dr. Hale runs free workshops at the library. Each one ends with a \"gentle reminder\" that his private clinic has a few spaces left.",
+            "question": "What else do the workshops do for Dr. Hale?",
             "options": [
-                "Occupational health researchers found this pattern never occurs in wellness programs.",
-                "The competition may have unintentionally contributed to employees overexerting themselves.",
-                "The competition reduced the number of overexertion injuries.",
-                "The competition had no connection to the rise in injuries."
+                "The clinic is full, and the workshops are its way of thanking patients.",
+                "The workshops also help him attract clients.",
+                "The workshops are paid for by the library.",
+                "The clinic offers a discount to people who attend the workshops."
             ],
-            "correctAnswer": "The competition may have unintentionally contributed to employees overexerting themselves.",
-            "hint": "Think about what researchers' general observation about wellness incentives, applied to this specific case, suggests about the cause of the rise in claims.",
-            "explanation": "Researchers noting that wellness incentives can sometimes encourage overexertion, combined with the rise in claims during the competition period, suggests the competition likely contributed to this unintended outcome.",
+            "correctAnswer": "The workshops also help him attract clients.",
+            "hint": "What does he mention at the end of each workshop?",
+            "explanation": "A repeated reminder about clinic spaces shows the workshops promote his business as well as serving the public.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "free workshops",
+                "clinic has a few spaces left"
             ]
         },
         {
@@ -134,20 +134,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[A Screening Program's Numbers Reconsidered] Public health officials tout a screening program's success by pointing to a rise in early-stage diagnoses since its launch, a trend some epidemiologists caution may partly reflect the program simply detecting cases that would have eventually been found anyway through routine care, rather than solely representing new cases identified only because of the screening itself.",
-            "question": "What can be inferred about the epidemiologists' view of the program's reported success?",
+            "passage": "[Twelve Thousand] The mayor called the cycle scheme \"a resounding success,\" citing 12,000 journeys in the first month. That is fewer than 400 journeys a day in a city of 600,000. Hire was free during that month.",
+            "question": "What is the writer's attitude?",
             "options": [
-                "They believe the program has caused new cases of the disease to occur.",
-                "They fully endorse attributing the entire rise to the new program.",
-                "They believe the reported rise may partly reflect earlier detection of existing cases rather than purely additional cases found.",
-                "They believe the program has had no detectable effect on diagnosis rates."
+                "Impressed, since 12,000 journeys is a large number for a first month.",
+                "Angry that the mayor has spent money on the scheme.",
+                "Sceptical that the figure is as impressive as the mayor suggests.",
+                "Neutral, because the scheme is too new to judge."
             ],
-            "correctAnswer": "They believe the reported rise may partly reflect earlier detection of existing cases rather than purely additional cases found.",
-            "hint": "Think about the distinction epidemiologists draw between detecting cases earlier and detecting cases that otherwise would never have been found.",
-            "explanation": "Epidemiologists cautioning that the rise may reflect earlier detection of cases eventually found anyway, rather than solely new discoveries, suggests they see the reported success as potentially overstated.",
+            "correctAnswer": "Sceptical that the figure is as impressive as the mayor suggests.",
+            "hint": "Turn the monthly figure into a daily one and compare it with the population.",
+            "explanation": "Dividing 12,000 by thirty gives about 400 a day, small for such a city. The writer adds that hire was free, further weakening the claim.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "resounding success",
+                "fewer than 400 journeys a day"
             ]
         },
         {
@@ -155,20 +155,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[A Loan Approval Rate Compared Without Context] The bank publicly reports identical loan approval rates across different neighborhoods in the city, a statistic presented as evidence of equitable lending practices, though consumer advocates note the report does not account for differences in average loan amounts requested or in the specific loan products offered to applicants from each neighborhood.",
-            "question": "What can be inferred about whether this statistic fully addresses advocates' concerns about equitable lending?",
+            "passage": "[The Sky Is Too High] \"Some people say the museum is too expensive,\" the interviewer said. \"And some say the sky is too high,\" the director replied, smiling. He did not mention the ticket price.",
+            "question": "How does the director treat the criticism?",
             "options": [
-                "Loan amounts and product types are irrelevant to evaluating equity.",
-                "It fully resolves any possible concern about equitable lending.",
-                "It proves that identical loan products are offered everywhere.",
-                "It may not capture other meaningful differences in how lending actually occurs across neighborhoods."
+                "He is dismissing the criticism without answering it.",
+                "He is answering the question honestly with a joke about the prices.",
+                "He agrees that the museum is expensive but says it is worth the price.",
+                "He wants the interviewer to ask about the museum's collection instead."
             ],
-            "correctAnswer": "It may not capture other meaningful differences in how lending actually occurs across neighborhoods.",
-            "hint": "Think about what factors beyond the approval rate itself, factors the report does not address, might still differ meaningfully between neighborhoods.",
-            "explanation": "Advocates noting that the report ignores differences in loan amounts and products offered suggests that identical approval rates alone may not fully capture whether lending practices are truly equitable across neighborhoods.",
+            "correctAnswer": "He is dismissing the criticism without answering it.",
+            "hint": "What does his joke do to the question?",
+            "explanation": "The joke treats the complaint as silly, and he never gives a price. He avoids the question.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "too high",
+                "did not mention the ticket price"
             ]
         },
         {
@@ -176,20 +176,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[A Feature Marketed as Free] The app prominently advertises a key feature as 'completely free to use,' language that remains technically accurate even though accessing the feature requires first subscribing to a separate paid tier that unlocks the app's basic functionality, a detail mentioned only within the settings menu rather than alongside the advertised claim.",
-            "question": "What can be inferred about the practical accuracy of describing this feature as 'free'?",
+            "passage": "[Ambitious Target] The report welcomes the government's \"ambitious\" target, praises its \"clarity of purpose,\" and, in the final paragraph, notes that no funding has yet been identified.",
+            "question": "What is the writer's doubt about the target?",
             "options": [
-                "It is entirely accurate with no additional cost of any kind involved.",
-                "It is technically true but may create a misleading impression for someone reading the claim alone.",
-                "It is completely false in every respect.",
-                "The paid tier is prominently mentioned alongside the free claim."
+                "He is praising the report, since a clear target is enough.",
+                "He thinks the target is too easy and that the government could aim higher.",
+                "He thinks the government has already found the funding.",
+                "He doubts that the target will be achieved."
             ],
-            "correctAnswer": "It is technically true but may create a misleading impression for someone reading the claim alone.",
-            "hint": "Think about what requiring a separate paid subscription first, a detail tucked away in settings, does to the practical meaning of calling something 'free.'",
-            "explanation": "While technically true on its own, describing the feature as 'free' without mentioning the required paid subscription, disclosed only deep in settings, suggests the claim could mislead someone about the actual cost involved.",
+            "correctAnswer": "He doubts that the target will be achieved.",
+            "hint": "Where does the writer put the most important criticism?",
+            "explanation": "Positive words come first, but a target without funding is difficult to reach. The last sentence carries the writer's real concern.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "ambitious",
+                "no funding"
             ]
         },
         {
@@ -197,20 +197,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[A Language Described as Extinct, Prematurely] A widely cited linguistics textbook from twenty years ago lists a regional dialect as 'functionally extinct,' a classification still repeated in more recent academic papers that cite the original textbook directly, even though a documentary team visiting the region five years ago recorded several elderly speakers still using the dialect fluently in daily conversation.",
-            "question": "What can be inferred about the accuracy of continuing to cite the textbook's original classification?",
+            "passage": "[Social Circle] Mrs. Dhillon's note said: \"Tomás is very polite and never causes any trouble.\" She added that he \"spends breaktimes in the library.\" Last year's report had said he \"has a wide circle of friends.\"",
+            "question": "What is Mrs. Dhillon gently raising?",
             "options": [
-                "It may perpetuate an outdated conclusion that more recent evidence contradicts.",
-                "The documentary team found no speakers of the dialect remaining.",
-                "The textbook's classification was updated to reflect the documentary's findings.",
-                "It remains fully accurate based on the documentary team's findings."
+                "A concern about Tomás's social life at school.",
+                "A concern about his behaviour, since he never causes trouble.",
+                "A concern about his grades, which have fallen since last year.",
+                "A concern about Tomás's reading, since he spends so long among the books."
             ],
-            "correctAnswer": "It may perpetuate an outdated conclusion that more recent evidence contradicts.",
-            "hint": "Think about what citing a decades-old classification, without accounting for the documentary team's more recent findings, does to the accuracy of newer academic papers.",
-            "explanation": "Academic papers continuing to cite the original 'extinct' classification, despite a documentary team finding fluent speakers just five years ago, suggests this repeated citation perpetuates an outdated conclusion rather than reflecting the dialect's actual current status.",
+            "correctAnswer": "A concern about Tomás's social life at school.",
+            "hint": "Compare this year's description with last year's.",
+            "explanation": "The praise is about politeness, but the mention of breaktimes in the library and the loss of \"friends\" from the report point to isolation.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "spends breaktimes in the library",
+                "wide circle of friends"
             ]
         },
         {
@@ -218,20 +218,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[A Conservation Success Measured in One Dimension] Wildlife officials celebrate a rebounding population of a once-endangered predator as an unqualified conservation success, a framing that overlooks a parallel decline reported by the same agency in two prey species whose populations have fallen sharply since the predator's recovery began, a trade-off the celebratory announcement does not address.",
-            "question": "What can be inferred about the completeness of describing this situation as an unqualified success?",
+            "passage": "[New Targets] Since the new targets were introduced, the sales team's average monthly figures have risen. So have absences. The HR report lists \"stress-related leave\" among the reasons.",
+            "question": "What may the rise in absences be connected to?",
             "options": [
-                "It fully accounts for every ecological change described in the passage.",
-                "The agency was unaware of any decline in the prey species.",
-                "The prey species populations have also increased alongside the predator's.",
-                "It leaves out an ecological trade-off that complicates a simple success narrative."
+                "The sales figures have risen because more staff are working from home.",
+                "The new targets have made staff happier, which explains the rise in sales.",
+                "The higher targets may have come at a cost to staff wellbeing.",
+                "The absences are caused by a flu outbreak in the sales team."
             ],
-            "correctAnswer": "It leaves out an ecological trade-off that complicates a simple success narrative.",
-            "hint": "Think about what the same agency's own reported decline in prey species suggests about calling the predator's recovery an 'unqualified' success.",
-            "explanation": "The same agency reporting a sharp decline in prey species since the predator's recovery suggests the celebratory framing omits a meaningful ecological trade-off, making 'unqualified success' an incomplete description.",
+            "correctAnswer": "The higher targets may have come at a cost to staff wellbeing.",
+            "hint": "What two figures rose after the new targets?",
+            "explanation": "Sales and absences both rose. The report links absence to stress, which points to a possible cost.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "absences",
+                "stress-related leave"
             ]
         },
         {
@@ -239,20 +239,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[A Productivity Study With an Unmentioned Variable] A widely shared study concludes that employees working from a specific open-office layout demonstrate higher measured productivity than those in traditional private offices, a comparison that becomes less clear-cut upon noting the study's open-office group consisted entirely of newly hired employees eager to make a strong impression, while the private-office group included staff with a decade or more of tenure.",
-            "question": "What can be inferred about the study's conclusion regarding office layout and productivity?",
+            "passage": "[Natural Light] The agent showed the flat quickly, standing by the window and keeping the lights off. \"Great natural light,\" she said. She did not open the wardrobe doors or the cupboard under the sink.",
+            "question": "What might the agent be avoiding?",
             "options": [
-                "Employee tenure has no possible connection to measured productivity.",
-                "The study conclusively proves open-office layouts cause higher productivity.",
-                "The difference in productivity may be explained by employee tenure rather than the office layout itself.",
-                "The two groups were matched equally in terms of tenure and experience."
+                "There may be problems in the parts she avoided showing.",
+                "The flat is very small, and the agent wanted to save time.",
+                "The agent is unfamiliar with the flat and did not know where to look.",
+                "The agent has shown the flat before and wants to show the best rooms first."
             ],
-            "correctAnswer": "The difference in productivity may be explained by employee tenure rather than the office layout itself.",
-            "hint": "Think about what a systematic difference in tenure between the two groups, separate from the office layout itself, might explain about the productivity gap.",
-            "explanation": "A newly hired group naturally motivated to impress, compared against a more tenured group, suggests the productivity difference may stem from this tenure gap rather than the office layout the study set out to test.",
+            "correctAnswer": "There may be problems in the parts she avoided showing.",
+            "hint": "What does she emphasise, and what does she skip?",
+            "explanation": "She highlights the light and avoids storage and plumbing areas. Avoidance suggests something may be wrong there.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "keeping the lights off",
+                "did not open"
             ]
         },
         {
@@ -260,20 +260,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[A Clinical Guideline Updated Slowly] Despite newer research published four years ago suggesting a revised dosage recommendation for a common medication, the professional association's official clinical guideline, still referenced by most prescribing physicians, has not yet been updated, a delay the association attributes to its multi-year formal review process rather than any disagreement with the newer findings.",
-            "question": "What can be inferred about the guideline currently being followed by most physicians?",
+            "passage": "[In Due Course] The client's email read: \"Thank you for the ambitious proposal. It will certainly be remembered. We will let you know in due course.\"",
+            "question": "What is the client likely to decide?",
             "options": [
-                "It may not reflect the most recent research on the appropriate dosage.",
-                "The association disputes the validity of the newer research findings.",
-                "It has already been fully updated to match the newest research.",
-                "It reflects research more recent than what is described in the passage."
+                "The client is enthusiastic and will reply within days.",
+                "The client is waiting for a better price from another company.",
+                "The client is unlikely to accept the proposal.",
+                "The client will probably accept it after a few changes."
             ],
-            "correctAnswer": "It may not reflect the most recent research on the appropriate dosage.",
-            "hint": "Think about what a multi-year, still-unfinished review process suggests about whether the current guideline incorporates research from four years ago.",
-            "explanation": "A guideline still under a multi-year review process, four years after newer dosage research was published, suggests the version most physicians currently reference may not yet reflect the latest findings.",
+            "correctAnswer": "The client is unlikely to accept the proposal.",
+            "hint": "Which words praise the effort and which promise a decision?",
+            "explanation": "\"Ambitious,\" \"remembered,\" and \"in due course\" are polite ways to avoid giving good news.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "ambitious proposal",
+                "in due course"
             ]
         },
         {
@@ -281,20 +281,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[A Franchise Fee Disclosed in Stages] The franchise opportunity's initial marketing materials list a starting investment of $150,000, a figure that prospective buyers later learn, only after signing a preliminary agreement and gaining access to the full disclosure document, does not include a required initial inventory purchase, ongoing royalty fees, or a mandatory marketing fund contribution that together can add tens of thousands of dollars to the true first-year cost.",
-            "question": "What can be inferred about the initial $150,000 figure presented in the marketing materials?",
+            "passage": "[The Turkey] \"I'm sure the turkey is fine,\" said Aunt Mei, cutting a piece and placing it at the edge of her plate. \"And the stuffing! Well, you were brave to try something new.\"",
+            "question": "How does Aunt Mei feel about the food?",
             "options": [
-                "It likely understates the true total cost a franchisee should expect to pay initially.",
-                "It fully accounts for every cost a franchisee will face in the first year.",
-                "It overstates the actual total cost compared to the full disclosure document.",
-                "The additional fees are disclosed alongside the initial marketing figure."
+                "She does not enjoy the food but is being polite.",
+                "She is enthusiastic about the new recipe and wants a second helping.",
+                "She is teasing the cook because she has eaten better turkey.",
+                "She dislikes the turkey but likes the stuffing."
             ],
-            "correctAnswer": "It likely understates the true total cost a franchisee should expect to pay initially.",
-            "hint": "Think about what several additional required costs, revealed only after signing a preliminary agreement, suggest about the completeness of the original figure.",
-            "explanation": "Additional required costs disclosed only after a preliminary agreement is signed suggest the initial $150,000 figure understates the true total investment a franchisee should actually expect.",
+            "correctAnswer": "She does not enjoy the food but is being polite.",
+            "hint": "What does she do with the food, and what does \"brave\" suggest?",
+            "explanation": "\"I'm sure\" and \"brave\" avoid praise, and the meat is set aside. Her manners hide her disappointment.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "I'm sure the turkey is fine",
+                "brave"
             ]
         },
         {
@@ -302,20 +302,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[A Restaurant Rating System Reconsidered] The city's health inspection scores show a particular restaurant maintaining a consistent 'A' rating for three years, a record its owners frequently cite in advertising, though a closer look at inspection records reveals the restaurant switched to a different, less frequently visited inspection district roughly around the same time its scores began improving.",
-            "question": "What can be inferred about the improvement in this restaurant's inspection scores?",
+            "passage": "[Exploring Options] Dear all, after eight years I have decided to explore other opportunities. I want to thank my direct team, who made even difficult months bearable. I wish the company every success.",
+            "question": "How does the writer feel about the team and the company?",
             "options": [
-                "It may be connected to the change in inspection district rather than solely improved practices.",
-                "The change in district has no possible bearing on inspection outcomes.",
-                "It can only be explained by genuine improvements in food safety practices.",
-                "It occurred before the restaurant changed inspection districts."
+                "He plans to keep in touch with the company after leaving.",
+                "He is leaving because of a disagreement with his manager.",
+                "He feels warmly toward the company but is bitter about the team.",
+                "He feels warmly toward his team but more formal or reserved toward the company."
             ],
-            "correctAnswer": "It may be connected to the change in inspection district rather than solely improved practices.",
-            "hint": "Think about what the timing between the district switch and the score improvement suggests about a possible alternative explanation.",
-            "explanation": "Scores improving around the same time the restaurant switched to a less frequently visited inspection district suggests the improvement may be connected to that change, not only to genuinely improved practices.",
+            "correctAnswer": "He feels warmly toward his team but more formal or reserved toward the company.",
+            "hint": "Compare how he describes the team with how he describes the company.",
+            "explanation": "He offers personal thanks to the team and mentions \"difficult months,\" while his wish for the company is formal.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "difficult months bearable",
+                "every success"
             ]
         },
         {
@@ -323,20 +323,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[An Efficiency Rating Tested Under Ideal Conditions] The appliance's energy efficiency rating, prominently displayed on its packaging, is calculated under standardized laboratory conditions that assume a fixed usage pattern many consumer advocacy groups argue rarely matches how most households actually operate the device, typically resulting in real-world energy consumption noticeably higher than the labeled figure suggests.",
-            "question": "What can be inferred about the energy consumption most consumers should expect in practice?",
+            "passage": "[Acceptable for Its Age] The surveyor's report said the roof was \"in acceptable condition for its age.\" The ten-year cost estimate listed \"possible re-tiling\" as the largest item.",
+            "question": "What is the realistic condition of the roof?",
             "options": [
-                "It is likely higher than the labeled rating implies for a typical household.",
-                "It will match the labeled rating precisely for nearly every household.",
-                "Usage patterns have no bearing on actual energy consumption.",
-                "It will be lower than the labeled rating for most consumers."
+                "The roof has already been re-tiled and is not a concern.",
+                "The roof is nearing the end of its life.",
+                "The roof is unsafe and must be replaced before anyone moves in.",
+                "The roof is in excellent condition and will need no attention for ten years."
             ],
-            "correctAnswer": "It is likely higher than the labeled rating implies for a typical household.",
-            "hint": "Think about what advocacy groups' observation, that lab conditions rarely match real households, suggests about how the labeled figure compares to actual use.",
-            "explanation": "Advocacy groups noting that lab conditions rarely reflect typical household usage suggest that real-world energy consumption for most consumers likely exceeds the figure shown on the label.",
+            "correctAnswer": "The roof is nearing the end of its life.",
+            "hint": "What does \"for its age\" qualify, and what is the biggest future cost?",
+            "explanation": "\"For its age\" means old, and re-tiling as the biggest expected cost shows it will probably need replacing.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "for its age",
+                "possible re-tiling"
             ]
         },
         {
@@ -344,20 +344,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[A Recycling Rate That Excludes Contamination] The municipality reports a 65 percent recycling rate, a figure calculated from the total tonnage collected in recycling bins, though waste management officials acknowledge that roughly a third of that collected material is later rejected at sorting facilities due to contamination and ultimately sent to landfill rather than actually recycled.",
-            "question": "What can be inferred about the actual proportion of collected material that is genuinely recycled?",
+            "passage": "[Sorry We Missed You] The driver rang the bell once, waited ten seconds, and left a card saying \"sorry we missed you.\" A neighbour who was in her garden said she had heard nothing.",
+            "question": "How hard did the driver try?",
             "options": [
-                "It is likely meaningfully lower than the reported 65 percent collection figure suggests.",
-                "It matches the reported 65 percent figure exactly.",
-                "It exceeds the reported 65 percent figure once contamination is considered.",
-                "Contamination has no effect on how much material is actually recycled."
+                "The driver waited a long time but got no answer.",
+                "The neighbour saw the driver leave the parcel with someone.",
+                "The driver made a very brief attempt.",
+                "The driver left the parcel in a safe place and then rang the bell."
             ],
-            "correctAnswer": "It is likely meaningfully lower than the reported 65 percent collection figure suggests.",
-            "hint": "Think about the difference between material collected in recycling bins and material that is actually processed into new products, given the contamination rate mentioned.",
-            "explanation": "Since roughly a third of collected material is later rejected due to contamination and landfilled instead, the true proportion of material genuinely recycled is likely meaningfully lower than the reported collection-based rate.",
+            "correctAnswer": "The driver made a very brief attempt.",
+            "hint": "How long did the driver wait?",
+            "explanation": "One ring and ten seconds, followed by a card, suggests little effort, and the neighbour's report agrees.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "rang the bell once",
+                "heard nothing"
             ]
         },
         {
@@ -365,20 +365,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[A Partnership Announced With Selective Emphasis] The joint press release announcing a partnership between the two companies emphasizes shared goals around 'innovation' and 'customer value,' language that offers no specific detail about which company will control key technical decisions, a point that becomes more notable considering the smaller company's technology forms the core of the partnership's product but the larger company retains majority ownership of the resulting venture.",
-            "question": "What can be inferred about the press release's coverage of control over technical decisions?",
+            "passage": "[Review in January] The supplier will \"review\" its prices in January. Last year's review raised prices by 12 percent, and the year before by 9 percent. This year's letter reminds customers that the contract \"renews automatically.\"",
+            "question": "What should customers expect in January?",
             "options": [
-                "It fully clarifies which company controls key technical decisions.",
-                "It confirms the smaller company retains majority ownership.",
-                "It leaves out a detail that could matter significantly to understanding how the partnership will actually function.",
-                "Ownership structure has no relevance to how the partnership will operate."
+                "Prices will fall in January because the supplier has to review them.",
+                "Customers should expect another rise and may be tied in by the renewal.",
+                "Prices will probably stay the same, since the contract renews automatically.",
+                "Customers will be able to cancel the contract before the review."
             ],
-            "correctAnswer": "It leaves out a detail that could matter significantly to understanding how the partnership will actually function.",
-            "hint": "Think about why omitting details about decision-making control might matter, given the ownership and technology details described.",
-            "explanation": "Vague language about shared goals, without addressing who controls key technical decisions despite an ownership imbalance, suggests the release omits a detail that could be important to understanding how this partnership will truly operate.",
+            "correctAnswer": "Customers should expect another rise and may be tied in by the renewal.",
+            "hint": "What did earlier reviews do, and what does the letter remind customers about?",
+            "explanation": "Two reviews produced rises, and the reminder about automatic renewal suggests customers are being locked in before the new price.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "raised prices by 12 percent",
+                "renews automatically"
             ]
         },
         {
@@ -386,20 +386,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[A Historical Marker With a Single Perspective] The roadside historical marker describes the battle at this site as a 'decisive victory' without noting whose perspective that description reflects, an omission local historians point out becomes significant once records show the outcome is remembered very differently, as a devastating loss, by descendants of the opposing side who still live in the surrounding region.",
-            "question": "What can be inferred about the marker's account of the battle?",
+            "passage": "[The Founder] The town museum displays the founder's portrait and writing desk. A small label mentions that the mill he built employed children as young as nine. Visitors' comments in the guest book almost all praise the portrait.",
+            "question": "How does the museum treat the founder's history?",
             "options": [
-                "It was written jointly by descendants of both sides of the battle.",
-                "It presents one community's perspective as though it were the only or complete account.",
-                "It represents a perspective shared equally by all descendants in the region.",
-                "Local historians agree completely with the marker's framing."
+                "The museum's visitors are probably more interested in the mill than in the portrait.",
+                "The museum criticises the founder for the way he treated children.",
+                "The museum has no information about the founder's mill.",
+                "The museum highlights the founder's achievements and gives little attention to the darker side."
             ],
-            "correctAnswer": "It presents one community's perspective as though it were the only or complete account.",
-            "hint": "Think about what remembering the same event as either a 'victory' or a 'devastating loss,' depending on which descendants you ask, suggests about the marker's single framing.",
-            "explanation": "Descendants of the opposing side remembering the outcome as a devastating loss suggests the marker's unqualified 'decisive victory' framing reflects only one community's perspective, presented as if it were complete.",
+            "correctAnswer": "The museum highlights the founder's achievements and gives little attention to the darker side.",
+            "hint": "Compare what is displayed with what is on a small label.",
+            "explanation": "The portrait and desk are on display, while child labour is in a small note. The guest book shows what visitors notice.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "portrait and writing desk",
+                "small label"
             ]
         },
         {
@@ -407,20 +407,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[A Wellness Retreat's Testimonials] The wellness retreat's website features glowing testimonials from past attendees describing transformative results, testimonials the retreat's marketing team selects from a much larger pool of post-stay surveys, a pool that, according to a former employee, also included a substantial number of neutral or critical responses never published anywhere on the site.",
-            "question": "What can be inferred about the testimonials displayed on the retreat's website?",
+            "passage": "[Learning Experience] The coach called the loss \"a learning experience\" and said the players \"gave everything.\" He did not comment on the referee's decisions, though his assistant was seen shaking his head as they left the pitch.",
+            "question": "Why does the coach avoid mentioning the referee?",
             "options": [
-                "No critical or neutral responses were ever submitted by attendees.",
-                "They likely represent a favorable selection rather than the full range of attendee experiences.",
-                "They include a balanced mix of critical and positive feedback.",
-                "They represent every survey response the retreat has ever received."
+                "The coach agrees with the referee's decisions.",
+                "The coach is choosing not to criticise the referee in public.",
+                "The assistant coach is planning to complain to the league.",
+                "The coach was probably too upset to comment on anything."
             ],
-            "correctAnswer": "They likely represent a favorable selection rather than the full range of attendee experiences.",
-            "hint": "Think about what selecting testimonials from a larger pool that included unpublished critical responses suggests about how representative the published ones are.",
-            "explanation": "A former employee's account of unpublished neutral and critical responses suggests the testimonials shown on the website represent a selectively favorable sample rather than the full range of attendee experiences.",
+            "correctAnswer": "The coach is choosing not to criticise the referee in public.",
+            "hint": "Which person speaks, and which person reacts silently?",
+            "explanation": "The coach avoids the subject, but the assistant's gesture suggests a shared view. The public silence looks deliberate.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "did not comment on the referee's decisions",
+                "shaking his head"
             ]
         },
         {
@@ -428,20 +428,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[A Diversity Report With a Narrow Lens] The company's diversity report highlights significant gains in representation at the entry level over the past three years, a statistic that overshadows a separate figure buried later in the same document showing representation at senior leadership levels has remained essentially unchanged during that same period.",
-            "question": "What can be inferred about the overall picture the report's emphasis creates?",
+            "passage": "[Free Trial] Sign up for a free 30-day trial. No credit card is needed, just your email. After 30 days you will be asked to choose a plan in order to keep your saved work.",
+            "question": "What happens to saved work after the trial?",
             "options": [
-                "It shows that senior leadership representation improved even more than entry-level figures.",
-                "It shows entry-level representation has also remained unchanged.",
-                "It may create an impression of broader progress than has actually occurred throughout the organization.",
-                "It accurately reflects equal progress at every level of the organization."
+                "Users will lose their email address if they do not choose a plan.",
+                "Saved work will move to a different account that is free.",
+                "Work saved during the trial may be lost unless a plan is chosen.",
+                "Work will be saved for another 30 days after the trial ends."
             ],
-            "correctAnswer": "It may create an impression of broader progress than has actually occurred throughout the organization.",
-            "hint": "Think about what highlighting entry-level gains, while senior-level figures stay flat, does to the overall impression the report creates if a reader only notices the headline statistic.",
-            "explanation": "Emphasizing entry-level gains while senior leadership figures remain unchanged, a detail placed later in the document, suggests the report's framing may create a more optimistic overall impression than the full data supports.",
+            "correctAnswer": "Work saved during the trial may be lost unless a plan is chosen.",
+            "hint": "What is the purpose of \"in order to keep your saved work\"?",
+            "explanation": "The last sentence shows a plan is needed to keep work. So without a plan, work may be lost.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "choose a plan",
+                "keep your saved work"
             ]
         },
         {
@@ -449,20 +449,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[A Cost Comparison That Omits a Category] The manufacturer's comparison chart shows its product priced lower than three named competitors across every listed category, a chart that omits maintenance costs entirely, a category independent reviewers note tends to run significantly higher for this manufacturer's product over a typical five-year ownership period.",
-            "question": "What can be inferred about the completeness of this cost comparison for a buyer planning long-term ownership?",
+            "passage": "[Higher Boundaries] The exam board raised the grade boundaries this year after average marks rose for the third year in a row. Schools report that students who would have earned a B last year have received a C.",
+            "question": "Who is affected by the raised boundaries?",
             "options": [
-                "It likely presents an incomplete picture of the true total cost over time.",
-                "Independent reviewers found no difference in maintenance costs among these products.",
-                "It fully accounts for every relevant cost a long-term owner would face.",
-                "Maintenance costs are lower for this product than for the competitors."
+                "Students' work has become worse over the last three years.",
+                "Teachers are marking more harshly than in previous years.",
+                "Some students will receive higher grades because boundaries are lower.",
+                "Some students are penalised because others have done better overall."
             ],
-            "correctAnswer": "It likely presents an incomplete picture of the true total cost over time.",
-            "hint": "Think about what leaving out a cost category where this product performs worse, according to independent reviewers, does to the fairness of the overall comparison.",
-            "explanation": "Omitting maintenance costs, a category where independent reviewers say this product costs more, suggests the manufacturer's chart presents an incomplete picture for buyers considering total ownership cost over time.",
+            "correctAnswer": "Some students are penalised because others have done better overall.",
+            "hint": "What rose, and what did the board do in response?",
+            "explanation": "Rising marks led to higher boundaries. Students with the same marks as before therefore got lower grades.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "raised the grade boundaries",
+                "a B last year"
             ]
         },
         {
@@ -470,20 +470,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[A Reforestation Timeline Left Vague] The mining company's environmental restoration plan promises to 'return the land to a natural state following the conclusion of operations,' language that specifies no timeline, no measurable benchmarks, and no independent verification process, details environmental regulators in a neighboring jurisdiction require as standard components of comparable restoration agreements.",
-            "question": "What can be inferred about the enforceability of this particular restoration promise?",
+            "passage": "[Clinic Waiting List] The clinic says its waiting list is \"under review.\" New patients are told to expect \"several months.\" Existing patients say that appointments are now made six weeks ahead rather than two.",
+            "question": "What do the longer delays suggest?",
             "options": [
-                "Independent verification is already built into this specific promise.",
-                "It is just as enforceable as agreements that include specific timelines and benchmarks.",
-                "It includes stronger accountability measures than agreements in the neighboring jurisdiction.",
-                "It may be difficult to hold the company accountable to, given what it lacks compared to standard agreements elsewhere."
+                "The clinic is short of patients and needs more of them.",
+                "Demand is greater than the clinic's capacity.",
+                "The waiting list has been shortened, and appointments are quicker.",
+                "The clinic has reduced the number of doctors on purpose."
             ],
-            "correctAnswer": "It may be difficult to hold the company accountable to, given what it lacks compared to standard agreements elsewhere.",
-            "hint": "Think about what missing a timeline, benchmarks, and independent verification, elements standard elsewhere, suggests about how enforceable this particular promise is.",
-            "explanation": "Lacking the timeline, benchmarks, and verification process considered standard in a neighboring jurisdiction suggests this restoration promise may be considerably harder to hold the company accountable to.",
+            "correctAnswer": "Demand is greater than the clinic's capacity.",
+            "hint": "Compare the old and new delays.",
+            "explanation": "Longer delays for both new and existing patients show growing demand relative to capacity.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "several months",
+                "six weeks ahead"
             ]
         },
         {
@@ -491,20 +491,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[A Feature Comparison That Favors the Reviewer's Sponsor] The technology review site ranks one smartphone model as its top pick for battery life, a ranking that becomes more notable once readers discover, in a disclosure buried at the article's end, that the phone's manufacturer sponsors the site's annual awards event, a relationship not mentioned anywhere near the ranking itself.",
-            "question": "What can be inferred about the independence of this particular ranking?",
+            "passage": "[Fourteen Days] Refunds are processed \"within 14 days of receipt.\" Customers must post the item at their own cost. The company does not confirm receipt unless asked.",
+            "question": "What is unclear about the refund period?",
             "options": [
-                "The manufacturer has no financial relationship with the review site.",
-                "It may be worth viewing with some caution given the undisclosed-until-the-end sponsorship relationship.",
-                "The sponsorship relationship was prominently disclosed alongside the ranking.",
-                "It is entirely independent with no possible conflict of interest."
+                "Customers might wait longer than fourteen days without knowing when the clock started.",
+                "Refunds are paid immediately once the customer posts the item.",
+                "Receipt is confirmed automatically, so customers always know the date.",
+                "The company will refund the cost of postage within 14 days."
             ],
-            "correctAnswer": "It may be worth viewing with some caution given the undisclosed-until-the-end sponsorship relationship.",
-            "hint": "Think about what a sponsorship relationship, disclosed only at the very end rather than near the ranking, suggests about the ranking's apparent independence.",
-            "explanation": "A sponsorship relationship disclosed only at the article's end, rather than near the ranking itself, suggests readers encountering just the ranking might reasonably question how independent this particular recommendation truly is.",
+            "correctAnswer": "Customers might wait longer than fourteen days without knowing when the clock started.",
+            "hint": "When does the fourteen-day period start?",
+            "explanation": "It starts at receipt, but customers are not told when that occurs unless they ask. The timing is unclear.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "within 14 days of receipt",
+                "unless asked"
             ]
         },
         {
@@ -512,20 +512,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[A Clinical Trial Population That Doesn't Match Patients] The medication's approval was based on a clinical trial population with a median age significantly younger than the population that actually receives the prescription in everyday practice, a mismatch geriatric specialists note makes it difficult to be fully confident the trial's safety findings apply equally to the older patients most commonly prescribed the drug today.",
-            "question": "What can be inferred about how confidently the trial's safety findings apply to typical patients receiving this medication?",
+            "passage": "[Two Surveys] The company's annual report says staff satisfaction is \"high.\" An independent survey by a university found 41 percent \"satisfied.\" The company's figure comes from a survey sent only to staff who had been there more than five years.",
+            "question": "Why might the company's figure be higher?",
             "options": [
-                "Age has no bearing on how medications are metabolized or tolerated.",
-                "The findings are fully confirmed to apply equally to all patients regardless of age.",
-                "There is meaningful uncertainty about whether the findings fully apply to this older, more common patient group.",
-                "The trial population matched the typical patient population closely."
+                "The university's survey was smaller, so its figure is less reliable.",
+                "The company surveyed all staff, so its figure is more accurate than the university's.",
+                "Staff who have been there longer are less satisfied than newer staff.",
+                "The company's sample probably made satisfaction look higher."
             ],
-            "correctAnswer": "There is meaningful uncertainty about whether the findings fully apply to this older, more common patient group.",
-            "hint": "Think about what a mismatch between the trial's younger participants and the older patients actually receiving the drug suggests about the certainty of the safety findings for that older group.",
-            "explanation": "Geriatric specialists noting this age mismatch suggests genuine uncertainty about whether the trial's safety findings, established in a younger population, fully apply to the older patients who most commonly receive this medication in practice.",
+            "correctAnswer": "The company's sample probably made satisfaction look higher.",
+            "hint": "Who was asked in each survey?",
+            "explanation": "Long-serving staff may be more satisfied, since unhappy staff may already have left. The independent survey covers a wider group.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "more than five years",
+                "41 percent"
             ]
         },
         {
@@ -533,20 +533,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[A Craft Fair Called 'Authentic' Selectively] The annual craft fair advertises itself as showcasing 'authentic, handmade regional goods,' a claim organizers apply to every vendor's booth uniformly, even though a fair employee acknowledges that roughly a quarter of vendors this year primarily resell imported items sourced from wholesale suppliers rather than making the goods themselves.",
-            "question": "What can be inferred about the accuracy of describing every booth at this fair as 'authentic, handmade'?",
+            "passage": "[Please Let Me Know] The email from the head of department was polite and short: \"I have noticed you missed the last two team meetings. Please let me know if there is anything I should be aware of.\" It was copied to HR.",
+            "question": "What kind of message is the email?",
             "options": [
-                "Every vendor at the fair makes their own goods by hand.",
-                "It accurately describes every single vendor at the fair.",
-                "It likely does not accurately describe a meaningful portion of the vendors present.",
-                "The organizers were unaware that any vendors resell imported items."
+                "It is a formal warning expressed politely.",
+                "It is a message from HR asking the employee to explain.",
+                "It is a friendly request from a head who wants to help.",
+                "It is an invitation to a meeting about the missed team sessions."
             ],
-            "correctAnswer": "It likely does not accurately describe a meaningful portion of the vendors present.",
-            "hint": "Think about what an employee's acknowledgment, that a quarter of vendors resell imported goods, suggests about applying the 'authentic, handmade' label uniformly to everyone.",
-            "explanation": "An employee's acknowledgment that roughly a quarter of vendors resell imported goods suggests the fair's uniform 'authentic, handmade' claim does not accurately describe every booth present.",
+            "correctAnswer": "It is a formal warning expressed politely.",
+            "hint": "Who else received it?",
+            "explanation": "The polite tone hides an official record, shown by the copy to HR.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "missed the last two team meetings",
+                "copied to HR"
             ]
         },
         {
@@ -554,20 +554,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[A Retention Bonus Announced Ambiguously] The company announces a new retention bonus program 'for employees critical to our continued success,' a phrase left undefined in the initial memo, prompting widespread uncertainty among staff about whether the criteria refer to specific roles, performance rankings, or tenure, a question the company's HR department declines to clarify further when directly asked by several employees.",
-            "question": "What can be inferred about the company's communication regarding this bonus program?",
+            "passage": "[Refurbishment] The café closed for \"refurbishment\" in January. In March its owner was at the market selling the same cakes. The café windows are covered with paper, and a letter from the council lies on the mat behind the padlocked door.",
+            "question": "What might the real reason for closing be?",
             "options": [
-                "It clearly and specifically defines exactly who qualifies for the bonus.",
-                "It was clarified in detail after HR was asked directly.",
-                "It leaves employees without clear information about who actually qualifies.",
-                "Every employee at the company automatically qualifies for the bonus."
+                "The owner is probably on holiday and plans to reopen next week.",
+                "The owner is planning to open a new café at the market.",
+                "The café is being rebuilt, and the council is providing money.",
+                "The closure may be due to a problem other than refurbishment."
             ],
-            "correctAnswer": "It leaves employees without clear information about who actually qualifies.",
-            "hint": "Think about what leaving the qualifying phrase undefined, and declining to clarify when asked, suggests about how clearly this program has been communicated.",
-            "explanation": "An undefined qualifying phrase, combined with HR declining to clarify when directly asked, suggests employees have been left without clear information about who actually qualifies for this bonus.",
+            "correctAnswer": "The closure may be due to a problem other than refurbishment.",
+            "hint": "What evidence contradicts the word \"refurbishment\"?",
+            "explanation": "No work is mentioned, the owner sells at a market, the door is padlocked, and there is a council letter. These suggest another cause.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "padlocked door",
+                "letter from the council"
             ]
         },
         {
@@ -575,20 +575,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[A Safety Record Measured Since a Reset Date] The factory proudly displays a sign reading '450 days since our last recordable incident,' a count that, according to a former safety officer, restarted after a change in how the company classifies incidents was quietly adopted, reclassifying several types of injuries previously counted as 'recordable' into a new, unreported category.",
-            "question": "What can be inferred about the meaning of this 450-day count?",
+            "passage": "[Speak Up] In the survey, 87 percent of staff agreed with the statement \"I feel able to speak up.\" The survey was not anonymous, and results were shared with line managers.",
+            "question": "How far can the 87 percent be trusted?",
             "options": [
-                "It may reflect a change in classification as much as an actual improvement in workplace safety.",
-                "It certainly reflects only genuine improvement in workplace safety.",
-                "The reclassification made more incidents count as recordable, not fewer.",
-                "It has remained under the exact same classification system throughout."
+                "The figure is probably too high because managers filled in the surveys.",
+                "The figure may not reflect what staff really feel.",
+                "The figure is accurate, since anonymous surveys do not exist.",
+                "The result is reliable, since most staff answered the question."
             ],
-            "correctAnswer": "It may reflect a change in classification as much as an actual improvement in workplace safety.",
-            "hint": "Think about what reclassifying certain injuries into an unreported category would do to a count that only tracks 'recordable' incidents.",
-            "explanation": "A classification change that moved certain injuries into an unreported category suggests the impressive day count may partly reflect this redefinition rather than solely a genuine improvement in actual safety outcomes.",
+            "correctAnswer": "The figure may not reflect what staff really feel.",
+            "hint": "Who could see each person's answers?",
+            "explanation": "If answers can be seen by managers, people may hesitate to say they cannot speak up. That may inflate the result.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "not anonymous",
+                "line managers"
             ]
         },
         {
@@ -596,20 +596,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[A Data Center Powered by 'Renewable Energy'] The technology company claims its data centers run on '100 percent renewable energy,' a claim based on purchasing renewable energy credits equivalent to its total consumption, even though the actual electricity powering its servers, according to regional grid operators, is drawn from the same mixed-source grid, including fossil fuels, that supplies every other business in the area.",
-            "question": "What can be inferred about the actual electricity physically powering these data centers?",
+            "passage": "[Carbon-Neutral] The airline offers \"carbon-neutral flights.\" Passengers pay an extra £4 to plant trees. The website says the trees will \"reach maturity within thirty years.\"",
+            "question": "When will the trees' benefit arrive?",
             "options": [
-                "It is entirely generated from renewable sources with no fossil fuel involvement.",
-                "The renewable energy credits guarantee the physical electricity source.",
-                "It is physically separate from the grid supplying other regional businesses.",
-                "It likely includes energy from non-renewable sources, despite the company's stated claim."
+                "The benefit of the trees will come long after the flight's emissions.",
+                "The trees will absorb the emissions before the flight lands.",
+                "The £4 pays for planting only, and the trees are not looked after.",
+                "The trees are planted at the airport and reach maturity quickly."
             ],
-            "correctAnswer": "It likely includes energy from non-renewable sources, despite the company's stated claim.",
-            "hint": "Think about the difference between purchasing credits equivalent to your usage and the actual physical source of the electricity reaching your building.",
-            "explanation": "Since the physical electricity comes from the same mixed-source regional grid as every other business, the actual power reaching these data centers likely includes non-renewable sources, even though purchased credits support the '100 percent renewable' claim.",
+            "correctAnswer": "The benefit of the trees will come long after the flight's emissions.",
+            "hint": "When do the trees reach maturity?",
+            "explanation": "The emissions occur now, but the trees take decades. \"Neutral\" describes a delayed balance.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "carbon-neutral",
+                "thirty years"
             ]
         },
         {
@@ -617,20 +617,20 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "choice",
-            "passage": "[A Best-Seller List Shaped by Bulk Orders] The book's appearance on a prominent best-seller list draws attention to its author, though publishing industry analysts note that a substantial portion of its reported sales came from bulk purchases made by organizations linked to the author's own speaking business, a detail the list's methodology does not distinguish from individual reader purchases.",
-            "question": "What can be inferred about what this best-seller ranking reflects?",
+            "passage": "[The Dishes] \"Leave the dishes,\" Grandma said. Nobody moved. She picked up a plate herself, and within a minute all four grandchildren were at the sink.",
+            "question": "What did Grandma really mean?",
             "options": [
-                "It may reflect organized bulk purchasing as much as broad individual reader interest.",
-                "The list's methodology clearly distinguishes bulk orders from individual sales.",
-                "It reflects only broad interest from individual readers with no bulk purchases involved.",
-                "It excludes any purchases connected to the author's own organizations."
+                "She was joking, and the grandchildren understood the joke.",
+                "She was upset with the grandchildren and wanted them to leave.",
+                "Her words were not meant literally: she expected help.",
+                "She meant that the dishes could wait until the morning."
             ],
-            "correctAnswer": "It may reflect organized bulk purchasing as much as broad individual reader interest.",
-            "hint": "Think about what a list methodology that doesn't distinguish bulk purchases from individual ones does to the meaning of a 'best-seller' ranking in this specific case.",
-            "explanation": "Since the list doesn't distinguish bulk purchases from individual ones, and a substantial portion came from organizations linked to the author, the ranking may reflect coordinated buying as much as genuine widespread individual reader interest.",
+            "correctAnswer": "Her words were not meant literally: she expected help.",
+            "hint": "What happened once she picked up a plate?",
+            "explanation": "When she began the work herself, the children moved. They understood that she expected them to join.",
             "clueWords": [
-                "clue1",
-                "clue2"
+                "Leave the dishes",
+                "picked up a plate"
             ]
         }
     ]

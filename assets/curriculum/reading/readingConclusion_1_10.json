@@ -8,18 +8,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "Ben forgot his umbrella at home this morning. By the time he reached the bus stop, his jacket and shoes were completely wet.",
+            "passage": "Maya left her bicycle outside overnight. In the morning, the seat and handlebars were covered in tiny drops of water, even though no one had touched the bike.",
             "options": [
-                "Ben's jacket was clean and dry all day.",
-                "Ben went swimming on his way to work.",
-                "It was raining outside.",
-                "The bus arrived exactly on time."
+                "It rained during the night.",
+                "Maya washed her bicycle before going to bed.",
+                "The bicycle was stored inside a garage.",
+                "Someone poured water on the bicycle on purpose."
             ],
-            "correctAnswer": "It was raining outside.",
-            "hint": "Think about what could make a person's clothes wet on the way to a bus stop.",
-            "explanation": "Ben's jacket and shoes got wet on his way outside, and he had left his umbrella at home. Rain is the only detail that explains this, so that is the conclusion the passage supports.",
+            "correctAnswer": "It rained during the night.",
+            "hint": "Think about what could leave water on a bike that sat outside all night.",
+            "explanation": "The bike was left outside, and water appeared on it overnight without anyone touching it. Rain is the simplest explanation for water covering an untouched outdoor object.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Bike left outside overnight -> water found on bike -> no one touched it -> rain fell overnight"
             ]
         },
         {
@@ -27,18 +27,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "Grandma put a fresh apple pie on the kitchen window to cool. Ten minutes later, the pie was gone, and the dog's face was covered in crumbs.",
+            "passage": "Mrs. Ortiz baked a tray of cookies and left them on the counter to cool. When she came back, half the cookies were gone, and her young son had chocolate smudges around his mouth.",
             "options": [
-                "Grandma ate the pie herself.",
-                "The dog ate the pie.",
-                "The pie disappeared by magic.",
-                "The window was left open all winter."
+                "Mrs. Ortiz ate the cookies herself, based on the details the passage provides.",
+                "The cookies were never baked at all, as the passage presents the situation.",
+                "The neighbors came inside and ate the cookies.",
+                "Her son ate some of the cookies."
             ],
-            "correctAnswer": "The dog ate the pie.",
-            "hint": "Look closely at what was found on the dog's face.",
-            "explanation": "The pie vanished, and the dog's face had crumbs on it. This detail points to the dog as the one who ate it.",
+            "correctAnswer": "Her son ate some of the cookies.",
+            "hint": "Look at what was found on the boy's face.",
+            "explanation": "Cookies went missing, and the boy's mouth had chocolate smudges on it. This detail connects him directly to the missing cookies.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Cookies disappear -> son has chocolate on his mouth -> son ate the cookies"
             ]
         },
         {
@@ -46,18 +46,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "Every Sunday, Mr. Lopez calls his daughter in another city. Today he dialed her number three times, but nobody answered.",
+            "passage": "Every evening, Mr. Nakamura's porch light comes on automatically at sunset. Tonight, a neighbor knocked on his door and found a note taped to it that read, 'Back by 8 p.m.'",
             "options": [
-                "Mr. Lopez forgot his daughter's phone number.",
-                "Mr. Lopez's daughter was not available today.",
-                "Mr. Lopez's daughter no longer has a phone.",
-                "Mr. Lopez decided to stop calling his daughter."
+                "Mr. Nakamura was not home when the neighbor knocked.",
+                "Mr. Nakamura answered the door right away, according to the specific details given.",
+                "The porch light had stopped working.",
+                "The neighbor lived in the same house as Mr. Nakamura, given the way the passage frames things."
             ],
-            "correctAnswer": "Mr. Lopez's daughter was not available today.",
-            "hint": "Think about why calling three times might not get an answer.",
-            "explanation": "Mr. Lopez tried calling three times and no one picked up. This shows his daughter simply wasn't available, not that anything else was wrong.",
+            "correctAnswer": "Mr. Nakamura was not home when the neighbor knocked.",
+            "hint": "Think about why someone would leave a note like this on their own door.",
+            "explanation": "A note saying 'Back by 8 p.m.' is left by someone who has stepped out, which explains why no one answered when the neighbor knocked.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Note on door says 'back by 8' -> neighbor knocks -> no answer -> Mr. Nakamura is currently out"
             ]
         },
         {
@@ -65,18 +65,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "Every student in Ms. Chen's class scored above 90 on the science test. Ms. Chen smiled and told the class she was proud of their hard work.",
+            "passage": "Every player on the youth soccer team ran an extra lap without complaining at practice. Afterward, the coach handed out water bottles and told the team he was impressed.",
             "options": [
-                "Ms. Chen was disappointed with the results.",
-                "Only one student passed the test.",
-                "The class did very well on the test.",
-                "The test was cancelled at the last minute."
+                "The team practiced with strong effort that day.",
+                "The coach was disappointed in the team, as the passage lays out the sequence of events.",
+                "Only one player showed up to practice, according to the specific details given.",
+                "Practice was cancelled before it began, given how the events unfolded."
             ],
-            "correctAnswer": "The class did very well on the test.",
-            "hint": "Notice the scores everyone received and how the teacher reacted.",
-            "explanation": "Every student scored above 90, and the teacher was proud. Both details show that the class performed very well.",
+            "correctAnswer": "The team practiced with strong effort that day.",
+            "hint": "Notice how the players behaved and how the coach reacted afterward.",
+            "explanation": "Every player ran the extra lap willingly, and the coach said he was impressed. Both details point to a strong, effortful practice session.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "All players run extra lap without complaint -> coach expresses being impressed -> team showed strong effort"
             ]
         },
         {
@@ -84,18 +84,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "The shoes Amir wanted were $80 last week. When he checked the store today, the price tag read $50.",
+            "passage": "The jacket Farah wanted cost $95 in September. When she checked the same store's website in December, the price had changed to $60.",
             "options": [
-                "The shoes are more expensive than last week.",
-                "The store stopped selling shoes.",
-                "The shoes are now cheaper than before.",
-                "Amir already bought the shoes last week."
+                "The jacket is more expensive than in September.",
+                "The store stopped selling jackets entirely.",
+                "Farah already purchased the jacket in September.",
+                "The jacket now costs less than it did before."
             ],
-            "correctAnswer": "The shoes are now cheaper than before.",
-            "hint": "Compare the two prices Amir saw.",
-            "explanation": "The price dropped from $80 to $50, so the shoes now cost less than they did last week.",
+            "correctAnswer": "The jacket now costs less than it did before.",
+            "hint": "Compare the two prices Farah saw.",
+            "explanation": "The price dropped from $95 to $60, so the jacket is now cheaper than it was in September.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "September price $95 -> December price $60 -> $60 is less than $95 -> jacket is now cheaper"
             ]
         },
         {
@@ -103,18 +103,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "Sara's phone battery usually lasts all day. Yesterday, after she used a new game app for two hours, her phone died by lunchtime.",
+            "passage": "Tomas usually finishes charging his tablet overnight without any trouble. Last night, after he left three apps running in the background, the battery was only at 15 percent by breakfast.",
             "options": [
-                "Sara's phone is broken and needs to be replaced.",
-                "Sara forgot to charge her phone the night before.",
-                "The new app made Sara's phone charge faster.",
-                "The new game app used a lot of battery power."
+                "The tablet charged completely as usual, given how the events unfolded.",
+                "The apps running overnight likely drained the battery.",
+                "Tomas forgot to plug in his tablet at all, based on the details the passage provides.",
+                "The tablet's charger stopped working permanently, given the way the passage frames things."
             ],
-            "correctAnswer": "The new game app used a lot of battery power.",
-            "hint": "Think about what changed in Sara's routine right before her phone died early.",
-            "explanation": "Sara's phone normally lasts all day, but it died early only after she played the new game for two hours. This points to the app using extra battery power.",
+            "correctAnswer": "The apps running overnight likely drained the battery.",
+            "hint": "Think about what was different about last night compared to Tomas's usual routine.",
+            "explanation": "Charging usually goes smoothly, but this time apps were running in the background and the battery ended up low, suggesting those apps used extra power overnight.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Normal charging works fine -> apps left running overnight -> battery unusually low -> apps likely drained it"
             ]
         },
         {
@@ -122,18 +122,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "The Kim family arrived at the airport two hours early for their flight. When they reached the check-in desk, they found out the flight had been delayed by three hours.",
+            "passage": "The Alvarez family planned to leave for their beach trip at 7 a.m. When they checked the traffic app, it showed the highway was closed for repairs until noon.",
             "options": [
-                "The Kim family will have to wait longer than expected.",
-                "The Kim family missed their flight completely.",
-                "The airport closed early that day.",
-                "The flight left earlier than planned."
+                "The family will arrive at the beach earlier than planned.",
+                "The highway was open the entire morning.",
+                "The family will need to wait or find another route.",
+                "The beach trip has already finished."
             ],
-            "correctAnswer": "The Kim family will have to wait longer than expected.",
-            "hint": "Think about what a three-hour delay means for people who already arrived early.",
-            "explanation": "The family arrived early, but the flight was delayed three hours, so now they must wait even longer at the airport.",
+            "correctAnswer": "The family will need to wait or find another route.",
+            "hint": "Think about what a closed highway means for a family that planned to leave early.",
+            "explanation": "With the highway closed until noon, the family cannot use their planned route, so they must either wait or take a different path.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Planned early departure -> highway closed until noon -> original route unavailable -> family must adjust"
             ]
         },
         {
@@ -141,18 +141,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "Diego stayed up until 2 a.m. playing video games three nights in a row. By Thursday, he could barely keep his eyes open at work.",
+            "passage": "Jun practiced the piano for only ten minutes before her recital, while her sister Mei practiced for an hour every day that week. During the recital, Mei played without a single mistake.",
             "options": [
-                "Diego was very tired because he didn't get enough sleep.",
-                "Diego felt full of energy on Thursday.",
-                "Diego's workplace turned off the lights.",
-                "Video games always make people sleepy."
+                "Mei's extra practice likely helped her perform well.",
+                "Jun practiced more than Mei did that week, as the situation is described here.",
+                "Mei did not take part in the recital.",
+                "Practice time makes no difference to a performance, based on the details the passage provides."
             ],
-            "correctAnswer": "Diego was very tired because he didn't get enough sleep.",
-            "hint": "Think about how staying up late for three nights would affect someone the next day.",
-            "explanation": "Diego lost sleep for three nights, and by Thursday he was exhausted at work. Lack of sleep is the clear reason for his tiredness.",
+            "correctAnswer": "Mei's extra practice likely helped her perform well.",
+            "hint": "Think about the connection between how much Mei practiced and how she performed.",
+            "explanation": "Mei practiced far more than Jun and played flawlessly, suggesting her extra practice contributed to her strong performance.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Mei practices an hour daily -> Jun practices ten minutes -> Mei performs without mistakes -> extra practice likely helped"
             ]
         },
         {
@@ -160,18 +160,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "Tickets for the new movie sold out within one hour of going on sale. The theater added three extra showtimes to meet the demand.",
+            "passage": "Advance tickets for the city's fireworks festival usually go on sale for a full week. This year, every ticket was gone within two days, and organizers announced an extra viewing area to handle the crowd.",
             "options": [
-                "The movie was very popular with audiences.",
-                "Nobody wanted to watch the movie.",
-                "The theater decided to cancel the movie.",
-                "The movie tickets were free for everyone."
+                "Interest in the festival was higher than in previous years.",
+                "Almost no one wanted tickets this year.",
+                "The festival was cancelled due to low interest, as the situation is described here.",
+                "Tickets were given away for free this year, given the specific information included in the passage."
             ],
-            "correctAnswer": "The movie was very popular with audiences.",
-            "hint": "Notice how quickly the tickets disappeared and what the theater did next.",
-            "explanation": "Tickets sold out in an hour, and the theater had to add more showtimes. Both facts show that many people wanted to see the movie.",
+            "correctAnswer": "Interest in the festival was higher than in previous years.",
+            "hint": "Notice how quickly tickets sold and what the organizers had to do afterward.",
+            "explanation": "Tickets that normally take a week to sell out disappeared in two days, and organizers added extra space for visitors, both signs of unusually high interest.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Tickets usually last a week -> sold out in two days -> extra viewing area added -> demand was higher than usual"
             ]
         },
         {
@@ -179,18 +179,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "Every night, Mrs. Osei sets three alarms on her phone. This morning, she still woke up twenty minutes after she needed to leave for work.",
+            "passage": "Every night, Mr. Douglas locks the front door and checks it twice before bed. Last night he checked the lock as usual, yet he still woke up to find the door unlocked and slightly open.",
             "options": [
-                "Mrs. Osei arrived at work early today.",
-                "Mrs. Osei's phone has no alarm feature.",
-                "Even with three alarms, Mrs. Osei overslept.",
-                "Mrs. Osei decided to skip work today."
+                "Mr. Douglas forgot to check the door at all.",
+                "The door stayed locked all night as expected.",
+                "Something happened to the door after Mr. Douglas checked it.",
+                "Mr. Douglas decided to leave the door open on purpose, according to the account given."
             ],
-            "correctAnswer": "Even with three alarms, Mrs. Osei overslept.",
-            "hint": "Compare the time she needed to leave with the time she actually woke up.",
-            "explanation": "She set three alarms, yet she still woke up twenty minutes late. This shows that despite her efforts, she overslept.",
+            "correctAnswer": "Something happened to the door after Mr. Douglas checked it.",
+            "hint": "Compare what Mr. Douglas did before bed with what he found in the morning.",
+            "explanation": "He checked the lock twice, yet the door was found unlocked in the morning, showing that despite his routine, something changed the door's state during the night.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Door checked and locked before bed -> door found unlocked in morning -> lock did not stay as it was checked"
             ]
         },
         {
@@ -198,18 +198,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "Two new employees joined the sales team in March. By June, the team's monthly sales numbers had doubled.",
+            "passage": "Two experienced cooks joined a small restaurant's kitchen staff in April. By July, the number of daily customer orders had nearly doubled.",
             "options": [
-                "The new employees likely helped increase sales.",
-                "The sales team lost most of its customers.",
-                "The company closed the sales department.",
-                "Sales numbers stayed exactly the same."
+                "The new cooks may have contributed to the rise in orders.",
+                "The restaurant lost most of its regular customers.",
+                "The restaurant closed its kitchen in July.",
+                "The number of orders stayed exactly the same."
             ],
-            "correctAnswer": "The new employees likely helped increase sales.",
-            "hint": "Think about what changed on the team right before the sales numbers grew.",
-            "explanation": "Sales doubled soon after two new employees joined the team, suggesting their work contributed to the improvement.",
+            "correctAnswer": "The new cooks may have contributed to the rise in orders.",
+            "hint": "Think about what changed in the kitchen right before orders increased.",
+            "explanation": "Orders nearly doubled soon after two experienced cooks joined, suggesting their skills may have played a role in the restaurant's growth.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "New cooks join in April -> orders nearly double by July -> timing suggests the cooks contributed"
             ]
         },
         {
@@ -217,18 +217,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "The restaurant switched to a new vegetable supplier last month. Since then, customers have been leaving more five-star reviews than ever before.",
+            "passage": "The clinic switched to an online appointment system last month. Since then, the front desk staff say they receive far fewer phone calls asking to reschedule.",
             "options": [
-                "Customers stopped visiting the restaurant.",
-                "The new vegetables may have improved customers' experience.",
-                "The restaurant removed vegetables from its menu.",
-                "Reviews have nothing to do with the food."
+                "Phone calls to the clinic increased sharply, given the specific information included in the passage.",
+                "The online system may have reduced the need for phone calls.",
+                "The clinic stopped taking appointments altogether, according to the account given.",
+                "The online system has nothing to do with phone calls, based on what the passage actually says."
             ],
-            "correctAnswer": "The new vegetables may have improved customers' experience.",
-            "hint": "Notice what changed right before the reviews got better.",
-            "explanation": "Right after switching vegetable suppliers, the restaurant started getting more five-star reviews. This suggests the change made a positive difference for customers.",
+            "correctAnswer": "The online system may have reduced the need for phone calls.",
+            "hint": "Notice what changed at the clinic right before the phone calls decreased.",
+            "explanation": "Fewer rescheduling calls started coming in right after the clinic introduced online booking, suggesting the new system is handling what used to require a phone call.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Online system introduced -> phone calls for rescheduling drop -> system likely replaced some phone calls"
             ]
         },
         {
@@ -236,18 +236,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "The Rivera brothers argue about which video game to play almost every weekend. Last Saturday, they spent the whole afternoon playing board games together and laughing.",
+            "passage": "The Petrov sisters usually disagree about which movie to watch every Friday night. Last Friday, they sat together for three hours choosing snacks and picking a film they both wanted to see.",
             "options": [
-                "The brothers fought more than usual last Saturday.",
-                "The brothers got along better than usual last Saturday.",
-                "The brothers stopped speaking to each other.",
-                "The brothers sold all of their video games."
+                "The sisters argued more than they normally do.",
+                "The sisters cooperated more smoothly than usual that Friday.",
+                "The sisters refused to watch any movie together.",
+                "The sisters stopped speaking to each other completely."
             ],
-            "correctAnswer": "The brothers got along better than usual last Saturday.",
-            "hint": "Compare their usual weekend behavior with what happened last Saturday.",
-            "explanation": "Unlike their usual arguing, the brothers spent Saturday playing together happily, showing they got along unusually well that day.",
+            "correctAnswer": "The sisters cooperated more smoothly than usual that Friday.",
+            "hint": "Compare their usual Friday behavior with what happened last Friday.",
+            "explanation": "Instead of their usual disagreements, the sisters spent Friday choosing snacks and a movie together peacefully, showing smoother cooperation than usual.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Usual pattern: disagreement over movies -> last Friday: calm shared decision -> cooperation was unusually smooth"
             ]
         },
         {
@@ -255,18 +255,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "Leila studied only thirty minutes for her math test, while her classmate Noor studied every night for a week. On test day, Noor answered every question with confidence.",
+            "passage": "The downtown bakery typically sells out of croissants by 9 a.m. On the morning of the city's transit strike, there were still croissants left on the shelf at noon.",
             "options": [
-                "Noor's extra preparation likely helped her feel confident.",
-                "Leila studied more than Noor did.",
-                "Noor did not take the test.",
-                "Studying has no effect on test performance."
+                "Fewer customers than usual visited the bakery that morning.",
+                "More customers than usual visited the bakery that morning.",
+                "The bakery baked far more croissants than normal.",
+                "The transit strike had no effect on the bakery's customers, given how the events unfolded."
             ],
-            "correctAnswer": "Noor's extra preparation likely helped her feel confident.",
-            "hint": "Think about the connection between how much Noor studied and how she felt on test day.",
-            "explanation": "Noor studied far more than Leila and felt confident during the test, showing that her extra preparation likely paid off.",
+            "correctAnswer": "Fewer customers than usual visited the bakery that morning.",
+            "hint": "Think about how a transit strike might affect how many people can reach the bakery.",
+            "explanation": "Croissants that normally sell out early were still available at noon, and the strike likely made it harder for people to travel, resulting in fewer customers.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Croissants usually gone by 9 a.m. -> transit strike occurs -> croissants remain at noon -> fewer customers reached the bakery"
             ]
         },
         {
@@ -274,18 +274,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "The bakery normally sells out of bread by 10 a.m. On the day it rained heavily, there was still bread left on the shelves at closing time.",
+            "passage": "Before the renovation, the community pool closed for repairs almost every other month. Since the new filtration system was installed a year ago, the pool has not closed for repairs even once.",
             "options": [
-                "More customers visited the bakery than usual.",
-                "The bakery baked less bread than normal.",
-                "The bakery closed early because of the rain.",
-                "Fewer customers visited the bakery on the rainy day."
+                "The pool now closes for repairs more often than before.",
+                "The pool has been closed continuously for the past year.",
+                "The filtration system has no connection to the pool's reliability, based on what the passage actually says.",
+                "The new filtration system has made the pool more reliable."
             ],
-            "correctAnswer": "Fewer customers visited the bakery on the rainy day.",
-            "hint": "Think about how weather might affect how many people go out shopping.",
-            "explanation": "Bread that usually sells out by morning was still there at closing, suggesting the rain kept many customers away that day.",
+            "correctAnswer": "The new filtration system has made the pool more reliable.",
+            "hint": "Compare how often the pool closed before and after the new system was installed.",
+            "explanation": "Frequent closures stopped happening after the new filtration system was installed, suggesting the upgrade improved the pool's reliability.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Before: frequent closures -> after new system: zero closures in a year -> system appears to have improved reliability"
             ]
         },
         {
@@ -293,18 +293,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "After the app added a night mode feature, the number of people using it late at night increased sharply.",
+            "passage": "After the parking app added a feature showing real-time open spaces, drivers began finding parking in city garages nearly twice as fast as before.",
             "options": [
-                "The night mode feature made people stop using the app.",
-                "The app removed all its features that month.",
-                "The night mode feature likely encouraged more nighttime use.",
-                "Nighttime use of the app decreased after the update."
+                "The new feature likely helped drivers find parking more quickly.",
+                "The new feature made it harder for drivers to find parking, as the passage lays out the sequence of events.",
+                "The app removed the parking feature shortly after adding it, given how the events unfolded.",
+                "Parking times stayed exactly the same after the update."
             ],
-            "correctAnswer": "The night mode feature likely encouraged more nighttime use.",
-            "hint": "Notice what changed in the app right before nighttime use went up.",
-            "explanation": "Use at night increased right after the night mode feature was added, suggesting the new feature attracted more nighttime users.",
+            "correctAnswer": "The new feature likely helped drivers find parking more quickly.",
+            "hint": "Notice what changed in the app right before parking times improved.",
+            "explanation": "Parking times dropped sharply right after the real-time space feature was added, suggesting the update helped drivers locate spots faster.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Feature added -> parking search time drops -> feature likely caused the improvement"
             ]
         },
         {
@@ -312,18 +312,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "The mountain road was closed for repairs all week. Drivers heading to the village had to take a route that added two extra hours to their trip.",
+            "passage": "The bridge connecting the two towns was shut down for structural repairs all month. Commuters who once crossed in fifteen minutes now had to drive forty minutes around the lake.",
             "options": [
-                "The trip to the village became shorter.",
-                "The mountain road was open as usual.",
-                "Drivers stopped traveling to the village completely.",
-                "Getting to the village took longer than usual that week."
+                "Commuting between the towns became quicker that month, according to the specific details given.",
+                "The bridge remained fully open the entire month, given the specific information included in the passage.",
+                "Commuters stopped traveling between the towns altogether, based on the details the passage provides.",
+                "Commuting between the towns took longer than usual that month."
             ],
-            "correctAnswer": "Getting to the village took longer than usual that week.",
-            "hint": "Think about what a two-hour detour means for travel time.",
-            "explanation": "With the main road closed, drivers had to use a longer route, adding two hours to their trip to the village.",
+            "correctAnswer": "Commuting between the towns took longer than usual that month.",
+            "hint": "Compare the usual crossing time with the new route's travel time.",
+            "explanation": "With the bridge closed, commuters had to take a much longer route around the lake, meaning their trips took far more time than usual.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Bridge closed for repairs -> commuters take longer route around lake -> travel time increased"
             ]
         },
         {
@@ -331,18 +331,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "Since Marco started walking to work instead of driving, his doctor has noted his blood pressure has slowly returned to a normal range.",
+            "passage": "Since Hassan began taking a short walk after dinner instead of watching television, his doctor has noted that his resting heart rate has slowly dropped into a healthier range.",
             "options": [
-                "Marco's blood pressure got worse after he started walking.",
-                "Marco stopped seeing his doctor.",
-                "Driving to work always lowers blood pressure.",
-                "Walking to work may have helped improve Marco's health."
+                "The after-dinner walks may have improved Hassan's heart health.",
+                "Hassan's heart rate worsened after he began walking.",
+                "Hassan stopped visiting his doctor entirely.",
+                "Watching television always lowers a person's heart rate, given how the events unfolded."
             ],
-            "correctAnswer": "Walking to work may have helped improve Marco's health.",
-            "hint": "Look at what changed in Marco's routine and what his doctor observed afterward.",
-            "explanation": "After Marco switched from driving to walking, his blood pressure improved, suggesting the change in habit helped his health.",
+            "correctAnswer": "The after-dinner walks may have improved Hassan's heart health.",
+            "hint": "Look at what changed in Hassan's evening routine and what his doctor observed afterward.",
+            "explanation": "After Hassan replaced television time with a walk, his heart rate improved, suggesting the new habit contributed to his better health.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Evening walk replaces TV time -> resting heart rate improves over time -> walking habit may explain the change"
             ]
         },
         {
@@ -350,18 +350,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "The band's first album received mixed reviews and sold poorly. Their second album, released two years later, topped the charts in its first week.",
+            "passage": "The photography club's first exhibition drew only a handful of visitors and no press coverage. Their second exhibition, held two years later, filled the gallery and was featured in the local newspaper.",
             "options": [
-                "The band never released a second album.",
-                "Both albums sold the same number of copies.",
-                "The band's popularity grew between their first and second albums.",
-                "The band broke up after their first album."
+                "The club's popularity grew between the two exhibitions.",
+                "The club never held a second exhibition, based on what the passage actually says.",
+                "Both exhibitions attracted the exact same number of visitors, according to the account given.",
+                "The club disbanded after its first exhibition, according to the specific details given."
             ],
-            "correctAnswer": "The band's popularity grew between their first and second albums.",
-            "hint": "Compare how each album performed.",
-            "explanation": "The first album sold poorly, but the second one topped the charts, showing the band's popularity increased over time.",
+            "correctAnswer": "The club's popularity grew between the two exhibitions.",
+            "hint": "Compare how each exhibition was received.",
+            "explanation": "The first exhibition drew little attention, while the second filled the gallery and made the news, showing the club's popularity increased over time.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "First exhibition: few visitors, no coverage -> second exhibition: full gallery, newspaper feature -> popularity increased"
             ]
         },
         {
@@ -369,18 +369,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "Every evening, Hana takes her dog to the same park. This week, she noticed the dog no longer pulls on the leash and walks calmly beside her.",
+            "passage": "Every morning, Aroha takes her horse out for training. For months, the horse would refuse to jump over even the lowest bar. This week, it cleared every jump in the course on the first try.",
             "options": [
-                "The dog refuses to go on walks now.",
-                "The dog's behavior on walks has improved.",
-                "Hana stopped taking her dog for walks.",
-                "The park closed down this week."
+                "The horse still refuses to jump at all.",
+                "Aroha stopped training the horse months ago, based on the details the passage provides.",
+                "The horse's jumping ability has improved.",
+                "The training course was removed this week, as the passage lays out the sequence of events."
             ],
-            "correctAnswer": "The dog's behavior on walks has improved.",
-            "hint": "Think about how the dog's walking behavior changed.",
-            "explanation": "The dog used to pull on the leash but now walks calmly, showing an improvement in its behavior during walks.",
+            "correctAnswer": "The horse's jumping ability has improved.",
+            "hint": "Think about how the horse's jumping changed compared to before.",
+            "explanation": "The horse used to refuse even low jumps but now clears every jump on the first attempt, showing a clear improvement in its ability.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Horse previously refused low jumps -> this week clears every jump easily -> jumping ability has improved"
             ]
         },
         {
@@ -388,18 +388,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "Jamal used to arrive at meetings five minutes late. After his manager spoke with him privately, he has arrived early to every meeting for the past month.",
+            "passage": "Deshawn used to submit his weekly reports two days late almost every time. After his supervisor sat down with him to review his workload, he has turned in every report early for the past six weeks.",
             "options": [
-                "The conversation with his manager likely changed Jamal's habit.",
-                "Jamal still arrives late to every meeting.",
-                "Jamal's manager stopped attending meetings.",
-                "Being on time made no difference to Jamal."
+                "Deshawn still submits every report late.",
+                "Deshawn's supervisor no longer reviews his work.",
+                "Turning in reports early made no difference to Deshawn.",
+                "The conversation with his supervisor likely changed Deshawn's habit."
             ],
-            "correctAnswer": "The conversation with his manager likely changed Jamal's habit.",
-            "hint": "Notice what happened right before Jamal's habit changed.",
-            "explanation": "Jamal's lateness stopped right after his manager talked to him, suggesting that conversation was the reason for his new habit.",
+            "correctAnswer": "The conversation with his supervisor likely changed Deshawn's habit.",
+            "hint": "Notice what happened right before Deshawn's habit changed.",
+            "explanation": "Deshawn's lateness stopped right after his supervisor reviewed his workload with him, suggesting that conversation contributed to his improved habit.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Deshawn often late -> supervisor reviews workload with him -> reports now early for six weeks -> conversation likely caused the change"
             ]
         },
         {
@@ -407,18 +407,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "The coffee shop used to close at 6 p.m. every day. After adding evening study hours for students, the shop now stays open until 10 p.m. and is often full at 9.",
+            "passage": "The bookstore used to close at 5 p.m. every day. After adding a quiet reading corner and staying open until 9 p.m., the owner noticed the shop was often crowded during the evening hours.",
             "options": [
-                "Extending the hours attracted more evening customers.",
-                "The coffee shop closed down completely.",
-                "Students stopped visiting the coffee shop.",
-                "The coffee shop went back to closing at 6 p.m."
+                "The bookstore closed down completely after the change, given the way the passage frames things.",
+                "Extending the hours likely attracted more evening customers.",
+                "Customers stopped visiting the bookstore in the evening, according to how the passage describes the situation.",
+                "The bookstore went back to closing at 5 p.m. immediately, given the specific information included in the passage."
             ],
-            "correctAnswer": "Extending the hours attracted more evening customers.",
-            "hint": "Think about who the coffee shop attracted after changing its hours.",
-            "explanation": "After staying open later for students, the shop became busy in the evenings, showing the longer hours brought in more customers.",
+            "correctAnswer": "Extending the hours likely attracted more evening customers.",
+            "hint": "Think about who the bookstore attracted after changing its hours.",
+            "explanation": "After staying open later with a new reading corner, the shop became crowded in the evenings, suggesting the longer hours brought in more customers.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Hours extended and reading corner added -> shop crowded in evenings -> change likely attracted more customers"
             ]
         },
         {
@@ -426,18 +426,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "Grandpa Tom used to forget his grandchildren's birthdays every year. This year, he wrote each date on a calendar and sent every card exactly on time.",
+            "passage": "Uncle Femi used to mix up his nieces' and nephews' birthdays every single year. This year, he added reminders to his phone for each birthday and sent every gift exactly on time.",
             "options": [
-                "Grandpa Tom forgot every birthday again this year.",
-                "Grandpa Tom stopped sending birthday cards.",
-                "Calendars do not help people remember dates.",
-                "Writing down the dates helped Grandpa Tom remember the birthdays."
+                "Uncle Femi forgot every birthday again this year.",
+                "Using phone reminders helped Uncle Femi remember the birthdays.",
+                "Uncle Femi stopped sending birthday gifts altogether.",
+                "Phone reminders do not help people remember important dates."
             ],
-            "correctAnswer": "Writing down the dates helped Grandpa Tom remember the birthdays.",
-            "hint": "Look at what Grandpa Tom did differently this year.",
-            "explanation": "By writing the dates on a calendar, Grandpa Tom managed to send every card on time, unlike in previous years.",
+            "correctAnswer": "Using phone reminders helped Uncle Femi remember the birthdays.",
+            "hint": "Look at what Uncle Femi did differently this year.",
+            "explanation": "By setting reminders on his phone, Uncle Femi managed to send every gift on time, unlike his usual pattern of mixing up dates.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Past pattern: mixed-up birthdays -> this year: phone reminders added -> every gift sent on time -> reminders likely helped"
             ]
         },
         {
@@ -445,18 +445,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "The library was almost silent during exam week. Nearly every seat was taken, and students were focused on their notes and laptops.",
+            "passage": "The university's study hall was nearly silent the week before final exams. Almost every table was occupied, and students sat with textbooks, laptops, and color-coded notes spread out in front of them.",
             "options": [
-                "The library was completely empty that week.",
-                "Many students were using the library to prepare for exams.",
-                "Students ignored their exams that week.",
-                "The library closed during exam week."
+                "The study hall was completely empty that week, given the specific information included in the passage.",
+                "Students ignored their exams that week, given how the events unfolded.",
+                "Many students were using the study hall to prepare for exams.",
+                "The study hall closed during exam week."
             ],
-            "correctAnswer": "Many students were using the library to prepare for exams.",
-            "hint": "Think about why the library would be full and quiet during exam week.",
-            "explanation": "A full, quiet library with focused students during exam week shows that many students were there to study.",
+            "correctAnswer": "Many students were using the study hall to prepare for exams.",
+            "hint": "Think about why the study hall would be full and quiet right before exams.",
+            "explanation": "A full, silent study hall with students surrounded by notes and textbooks during exam week shows that many students gathered there specifically to prepare for their exams.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Exam week approaching -> study hall full and silent -> students surrounded by study materials -> hall used for exam prep"
             ]
         },
         {
@@ -464,18 +464,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "The store's loyalty card offers a discount after ten purchases. Since introducing the card, cashiers have noticed the same customers returning several times a week.",
+            "passage": "The hardware store began offering a discount for customers who make five purchases in a month. Since then, cashiers have noticed the same faces returning to the store several times a week.",
             "options": [
-                "The loyalty card made customers shop less often.",
-                "The store removed the loyalty card program.",
-                "Customers never returned to the store after signing up.",
-                "The loyalty card may be encouraging customers to shop more often."
+                "The discount program made customers shop less often.",
+                "The discount program may be encouraging customers to shop more often.",
+                "The store removed the discount program shortly after starting it.",
+                "Customers never returned to the store after the program began."
             ],
-            "correctAnswer": "The loyalty card may be encouraging customers to shop more often.",
+            "correctAnswer": "The discount program may be encouraging customers to shop more often.",
             "hint": "Think about how the discount might affect how often people shop.",
-            "explanation": "Customers began returning more often after the loyalty card was introduced, suggesting the discount is encouraging repeat visits.",
+            "explanation": "Customers began visiting more frequently after the discount program started, suggesting the offer is encouraging repeat visits.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Discount for five purchases introduced -> same customers return several times a week -> program may be driving repeat visits"
             ]
         },
         {
@@ -483,18 +483,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "After the software update, several users reported that their laptops now start up in under ten seconds, compared to nearly a minute before.",
+            "passage": "After installing new software, several office workers reported that their computers now open large spreadsheet files in about three seconds, compared to nearly a minute before the update.",
             "options": [
-                "The update made the laptops start up more slowly.",
-                "The laptops stopped turning on completely.",
-                "Startup speed was not affected by the update.",
-                "The update made the laptops start up faster."
+                "The new software made the computers open files more slowly, according to the account given.",
+                "The computers stopped opening files completely.",
+                "File-opening speed was not affected by the software update.",
+                "The new software made the computers open files faster."
             ],
-            "correctAnswer": "The update made the laptops start up faster.",
-            "hint": "Compare the startup times before and after the update.",
-            "explanation": "Startup time dropped from nearly a minute to under ten seconds after the update, showing a clear improvement in speed.",
+            "correctAnswer": "The new software made the computers open files faster.",
+            "hint": "Compare the file-opening times before and after the update.",
+            "explanation": "Opening time dropped from nearly a minute to about three seconds after the update, showing a clear improvement in speed.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Before: files take nearly a minute -> after software update: files open in three seconds -> update caused the speed increase"
             ]
         },
         {
@@ -502,18 +502,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "The small coastal town used to see few visitors outside of summer. After a well-known chef opened a restaurant there, tour buses began arriving even in the winter months.",
+            "passage": "The small mountain village rarely saw visitors outside of ski season. After a well-known hiking trail was added to a popular travel app, guided tour groups began arriving even during the summer months.",
             "options": [
-                "The restaurant closed shortly after opening.",
-                "The town stopped allowing visitors in winter.",
-                "The new restaurant likely brought more visitors to the town.",
-                "Tour buses avoided the town completely."
+                "The hiking trail was closed shortly after being listed, based on the details the passage provides.",
+                "The new listing likely brought more visitors to the village.",
+                "The village stopped allowing visitors during summer, as the situation is described here.",
+                "Tour groups avoided the village completely after the listing, based on the passage's account of what happened."
             ],
-            "correctAnswer": "The new restaurant likely brought more visitors to the town.",
-            "hint": "Notice what changed in the town right after the restaurant opened.",
-            "explanation": "Winter visitors began arriving only after the well-known restaurant opened, suggesting it played a role in attracting them.",
+            "correctAnswer": "The new listing likely brought more visitors to the village.",
+            "hint": "Notice what changed right before summer visitors began arriving.",
+            "explanation": "Summer visitors started arriving only after the trail was added to the travel app, suggesting the listing played a role in attracting them.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Trail added to travel app -> summer tour groups begin arriving -> listing likely caused the increase in visitors"
             ]
         },
         {
@@ -521,18 +521,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "Priya used to skip breakfast most mornings and often felt dizzy by 11 a.m. Since she started eating eggs and toast every morning, the dizziness has not returned.",
+            "passage": "Owen used to skip lunch most workdays and often felt shaky and unfocused by mid-afternoon. Since he started packing a proper lunch each morning, the afternoon shakiness has not returned.",
             "options": [
-                "Eating breakfast made Priya feel dizzier.",
-                "Eating breakfast likely helped stop Priya's dizziness.",
-                "Priya stopped eating breakfast completely.",
-                "Priya's dizziness had no connection to her eating habits."
+                "Eating lunch made Owen feel shakier than before, based on what the passage actually says.",
+                "Owen stopped eating lunch completely this month, based on the details the passage provides.",
+                "Owen's shakiness had no connection to his eating habits, according to how the passage describes the situation.",
+                "Eating lunch regularly likely helped stop Owen's shakiness."
             ],
-            "correctAnswer": "Eating breakfast likely helped stop Priya's dizziness.",
-            "hint": "Compare what happened before and after Priya changed her morning routine.",
-            "explanation": "Priya's dizziness stopped once she began eating breakfast regularly, suggesting the meal was helping her body throughout the morning.",
+            "correctAnswer": "Eating lunch regularly likely helped stop Owen's shakiness.",
+            "hint": "Compare what happened before and after Owen changed his lunch routine.",
+            "explanation": "Owen's afternoon shakiness stopped once he began eating lunch consistently, suggesting the meal was helping his energy levels through the afternoon.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Before: skips lunch, feels shaky -> after: eats lunch daily -> shakiness stops -> lunch likely explains the change"
             ]
         },
         {
@@ -540,18 +540,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "The community theater's last three plays were performed to half-empty rooms. Their newest play, a comedy, has already sold out for the next two weekends.",
+            "passage": "The neighborhood theater's last two dramas played to rows of empty seats. Their newest production, a mystery, has already sold out for its opening three nights.",
             "options": [
-                "The new comedy is attracting more interest than the theater's recent plays.",
-                "The new comedy sold fewer tickets than earlier plays.",
-                "The theater cancelled the upcoming performances.",
-                "The theater has stopped performing plays."
+                "The new mystery is selling fewer tickets than earlier plays.",
+                "The theater cancelled the mystery's opening nights.",
+                "The new mystery is attracting more interest than the theater's recent plays.",
+                "The theater has stopped producing plays altogether."
             ],
-            "correctAnswer": "The new comedy is attracting more interest than the theater's recent plays.",
+            "correctAnswer": "The new mystery is attracting more interest than the theater's recent plays.",
             "hint": "Compare ticket sales for the new play with the previous ones.",
-            "explanation": "While earlier plays only half-filled the theater, the new comedy has already sold out two weekends, showing much stronger interest.",
+            "explanation": "While earlier dramas left many seats empty, the new mystery has already sold out three nights, showing much stronger audience interest.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Previous plays: many empty seats -> new mystery: sold out three nights -> interest is clearly stronger now"
             ]
         },
         {
@@ -559,18 +559,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "Every year, the Chen family plants tomatoes in their backyard garden. This year, after adding a new type of fertilizer, their tomato plants grew nearly twice as tall as last year's.",
+            "passage": "Each spring, the Nakagawa family plants peppers in their garden. This year, after switching to a different watering schedule, their pepper plants produced almost double the usual harvest.",
             "options": [
-                "The new fertilizer stunted the tomato plants' growth.",
-                "The new fertilizer likely helped the tomato plants grow taller.",
-                "The Chen family stopped growing tomatoes this year.",
-                "Fertilizer has no effect on plant growth."
+                "The new watering schedule reduced the size of the harvest, as the passage lays out the sequence of events.",
+                "The Nakagawa family did not plant peppers this year, according to the specific details given.",
+                "Watering schedules have no effect on how plants grow, as the situation is described here.",
+                "The new watering schedule likely helped increase the harvest."
             ],
-            "correctAnswer": "The new fertilizer likely helped the tomato plants grow taller.",
-            "hint": "Think about what changed in the garden this year compared to last year.",
-            "explanation": "The tomato plants grew much taller only after the family used a new fertilizer, suggesting the fertilizer helped their growth.",
+            "correctAnswer": "The new watering schedule likely helped increase the harvest.",
+            "hint": "Think about what changed in the garden this year compared to previous years.",
+            "explanation": "The pepper harvest nearly doubled only after the family changed their watering schedule, suggesting the new routine helped the plants grow better.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Watering schedule changed -> harvest nearly doubles compared to usual years -> new schedule likely improved the yield"
             ]
         }
     ]

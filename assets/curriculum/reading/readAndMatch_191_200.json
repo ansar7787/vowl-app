@@ -1,937 +1,937 @@
 {
-    "gameType": "readAndMatch",
-    "batchIndex": 20,
-    "levels": "191-200",
-    "quests": [
+  "gameType": "readAndMatch",
+  "batchIndex": 20,
+  "levels": "191-200",
+  "quests": [
+    {
+      "id": "RDG_READANDMATCH_L191_Q1",
+      "instruction": "Match each word with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "match",
+      "pairs": [
         {
-            "id": "RDG_READANDMATCH_L191_Q1",
-            "instruction": "Match each word with its meaning.",
-            "subtype": "readAndMatch",
-            "interactionType": "match",
-            "pairs": [
-                {
-                    "key": "[L191-Q1-0] Lexicon",
-                    "value": "The total stock of words in a particular language or known by a person."
-                },
-                {
-                    "key": "[L191-Q1-1] Idiomatic",
-                    "value": "Using expressions natural to a native speaker, not literally translated."
-                },
-                {
-                    "key": "[L191-Q1-2] Vernacular",
-                    "value": "The everyday language spoken by ordinary people in a region, as opposed to formal language."
-                },
-                {
-                    "key": "[L191-Q1-3] Semantics",
-                    "value": "The branch of study concerned with the meaning of words and phrases."
-                },
-                {
-                    "key": "[L191-Q1-4] Syntax",
-                    "value": "The arrangement of words to form correct and meaningful sentences."
-                }
-            ],
-            "hint": "Each word relates to mastering the deeper mechanics of a language.",
-            "explanation": "A lexicon is the full vocabulary a person or language holds, and syntax is the set of rules for arranging it into sentences. Semantics studies what that vocabulary actually means, and idiomatic and vernacular both describe language as it's naturally used, one through set expressions, the other through everyday regional speech.",
-            "paragraphTopic": "Main topic of paragraph."
+          "key": "[L191-Q1-0] Shall",
+          "value": "Used in formal or legal writing to indicate a firm obligation or requirement."
         },
         {
-            "id": "RDG_READANDMATCH_L191_Q2",
-            "instruction": "Match each phrase with its meaning.",
-            "subtype": "readAndMatch",
-            "interactionType": "match",
-            "pairs": [
-                {
-                    "key": "[L191-Q2-0] Social Contract Theory",
-                    "value": "The idea that society is based on an agreement between citizens and government."
-                },
-                {
-                    "key": "[L191-Q2-1] Rule of Law",
-                    "value": "The principle that all people and institutions are subject to and accountable under the law."
-                },
-                {
-                    "key": "[L191-Q2-2] Human Rights",
-                    "value": "Basic rights and freedoms that belong to every person."
-                },
-                {
-                    "key": "[L191-Q2-3] Justice System",
-                    "value": "The network of courts and legal institutions that administer justice."
-                },
-                {
-                    "key": "[L191-Q2-4] Legal Obligation",
-                    "value": "A duty required by law that must be fulfilled."
-                }
-            ],
-            "hint": "These phrases all tie back to the foundation of a fair and lawful society.",
-            "explanation": "Social contract theory explains why citizens accept government authority in the first place, and rule of law is the resulting principle that no one stands above it. Human rights set the baseline that law is meant to protect, and legal obligation is what any citizen owes in return. Justice system is different from the rest — it's the actual institution that enforces all of this, not a principle or a duty.",
-            "paragraphTopic": "Main topic of paragraph."
+          "key": "[L191-Q1-1] Should",
+          "value": "Used to indicate a recommendation or expectation, without an absolute requirement."
         },
         {
-            "id": "RDG_READANDMATCH_L191_Q3",
-            "instruction": "Match each expression with its meaning.",
-            "subtype": "readAndMatch",
-            "interactionType": "match",
-            "pairs": [
-                {
-                    "key": "[L191-Q3-0] Algorithmic Fairness",
-                    "value": "The property of an AI system producing outcomes that are equitable across groups."
-                },
-                {
-                    "key": "[L191-Q3-1] Human-Centered AI",
-                    "value": "AI design that prioritizes human wellbeing and values throughout development."
-                },
-                {
-                    "key": "[L191-Q3-2] AI Regulation",
-                    "value": "Government rules designed to govern the development and use of artificial intelligence."
-                },
-                {
-                    "key": "[L191-Q3-3] Existential Risk",
-                    "value": "A threat severe enough to permanently curtail humanity's potential."
-                },
-                {
-                    "key": "[L191-Q3-4] AI Alignment",
-                    "value": "The challenge of ensuring AI systems act according to human values and intentions."
-                }
-            ],
-            "hint": "Each of these phrases points to a real, ongoing debate about how artificial intelligence should be built and controlled.",
-            "explanation": "Human-centered AI and AI alignment both aim to keep artificial intelligence working in humanity's interest, one through design, the other through ongoing correction. Algorithmic fairness is one specific, measurable goal within that effort, and AI regulation is how governments try to enforce it. Existential risk is different from the rest — the worst-case danger all of this careful effort is meant to prevent.",
-            "paragraphTopic": "Main topic of paragraph."
+          "key": "[L191-Q1-2] May",
+          "value": "Used to indicate permission or possibility, without an obligation either way."
         },
         {
-            "id": "RDG_READANDMATCH_L192_Q1",
-            "instruction": "Match each term with its correct meaning.",
-            "subtype": "readAndMatch",
-            "interactionType": "match",
-            "pairs": [
-                {
-                    "key": "[L192-Q1-0] Worker Exploitation",
-                    "value": "Taking unfair advantage of employees, especially through excessive work or unfair pay."
-                },
-                {
-                    "key": "[L192-Q1-1] Wage Theft",
-                    "value": "When employers illegally withhold earned wages from workers."
-                },
-                {
-                    "key": "[L192-Q1-2] Fair Wage",
-                    "value": "Pay that reasonably reflects the value and effort of the work performed."
-                },
-                {
-                    "key": "[L192-Q1-3] Universal Job Guarantee",
-                    "value": "A policy offering government-funded employment to all willing workers."
-                },
-                {
-                    "key": "[L192-Q1-4] Workplace Rights",
-                    "value": "Legal protections and entitlements afforded to employees."
-                }
-            ],
-            "hint": "Each phrase relates to fairness, or the lack of it, in how workers are treated and paid.",
-            "explanation": "Worker exploitation and wage theft both describe unfair treatment on the job, one broad, the other a specific illegal act. Workplace rights exist to protect against exactly this kind of harm, and fair wage is the outcome those rights are meant to guarantee. Universal job guarantee is different from the rest — a broader policy proposal about employment itself, not a protection against mistreatment.",
-            "paragraphTopic": "Main topic of paragraph."
+          "key": "[L191-Q1-3] Must",
+          "value": "Used to indicate an absolute, non-negotiable requirement."
         },
         {
-            "id": "RDG_READANDMATCH_L192_Q2",
-            "instruction": "Match each word with its meaning.",
-            "subtype": "readAndMatch",
-            "interactionType": "match",
-            "pairs": [
-                {
-                    "key": "[L192-Q2-0] Nonconformist",
-                    "value": "A person who does not follow generally accepted ideas or behavior."
-                },
-                {
-                    "key": "[L192-Q2-1] Paradigm",
-                    "value": "A typical example or pattern of something; a model."
-                },
-                {
-                    "key": "[L192-Q2-2] Convention",
-                    "value": "A widely accepted way of behaving or doing something."
-                },
-                {
-                    "key": "[L192-Q2-3] Unorthodox",
-                    "value": "Not conventional or traditional; contrary to accepted rules or ideas."
-                },
-                {
-                    "key": "[L192-Q2-4] Multiplicity",
-                    "value": "A large number or variety of something."
-                }
-            ],
-            "hint": "Each word relates to following, breaking, or multiplying accepted patterns of thought.",
-            "explanation": "A paradigm sets the accepted pattern, and convention is how that pattern shows up in everyday behavior. Nonconformist and unorthodox both describe stepping outside of it, one describing a person, the other describing an idea or approach. Multiplicity is different from the rest — it's about sheer variety, not about following or resisting any single pattern.",
-            "paragraphTopic": "Main topic of paragraph."
-        },
-        {
-            "id": "RDG_READANDMATCH_L192_Q3",
-            "instruction": "Match each phrase with its meaning.",
-            "subtype": "readAndMatch",
-            "interactionType": "match",
-            "pairs": [
-                {
-                    "key": "[L192-Q3-0] Carbon-Neutral Aviation",
-                    "value": "Air travel that offsets its emissions to achieve a net zero carbon impact."
-                },
-                {
-                    "key": "[L192-Q3-1] Sustainable Aviation Fuel",
-                    "value": "Fuel for aircraft made from renewable or waste-based sources."
-                },
-                {
-                    "key": "[L192-Q3-2] Noise Pollution Regulation",
-                    "value": "Laws limiting the sound levels produced by transport and industry."
-                },
-                {
-                    "key": "[L192-Q3-3] Modal Shift",
-                    "value": "Moving freight or passengers from one form of transport to another."
-                },
-                {
-                    "key": "[L192-Q3-4] Transport Poverty",
-                    "value": "The inability to access adequate transportation due to cost or availability."
-                }
-            ],
-            "hint": "Each phrase ties back to making transportation cleaner, quieter, or fairer.",
-            "explanation": "Carbon-neutral aviation and sustainable aviation fuel both aim to clean up air travel specifically, one through offsetting, the other through the fuel itself. Modal shift addresses a different kind of impact, moving trips onto cleaner transport altogether, and noise pollution regulation targets yet another consequence, sound. Transport poverty is different from the rest — an issue of access and fairness, not environmental impact.",
-            "paragraphTopic": "Main topic of paragraph."
-        },
-        {
-            "id": "RDG_READANDMATCH_L193_Q1",
-            "instruction": "Match each expression with its meaning.",
-            "subtype": "readAndMatch",
-            "interactionType": "match",
-            "pairs": [
-                {
-                    "key": "[L193-Q1-0] Metacognitive Monitoring",
-                    "value": "The ongoing process of assessing one's own understanding while learning."
-                },
-                {
-                    "key": "[L193-Q1-1] Distributed Practice",
-                    "value": "Spreading learning sessions over time to improve long-term retention."
-                },
-                {
-                    "key": "[L193-Q1-2] Interleaving",
-                    "value": "Mixing different subjects or problem types during practice to improve learning."
-                },
-                {
-                    "key": "[L193-Q1-3] Desirable Difficulty",
-                    "value": "A learning challenge that, despite being harder, leads to better long-term retention."
-                },
-                {
-                    "key": "[L193-Q1-4] Generation Effect",
-                    "value": "The finding that information is better remembered when actively produced by the learner."
-                }
-            ],
-            "hint": "Each phrase names a research-backed strategy for learning something more effectively, including a language.",
-            "explanation": "Metacognitive monitoring keeps track of what's actually sinking in, and distributed practice and interleaving are two proven ways to make more of it stick, spacing sessions out or mixing topics together. Desirable difficulty explains why both feel harder yet work better, and generation effect is different from the rest — it's about actively producing an answer yourself, not about how practice is scheduled or mixed.",
-            "paragraphTopic": "Main topic of paragraph."
-        },
-        {
-            "id": "RDG_READANDMATCH_L193_Q2",
-            "instruction": "Match each word with its meaning.",
-            "subtype": "readAndMatch",
-            "interactionType": "match",
-            "pairs": [
-                {
-                    "key": "[L193-Q2-0] Information Age",
-                    "value": "The current era characterized by rapid access to information via digital technology."
-                },
-                {
-                    "key": "[L193-Q2-1] Fast-Paced",
-                    "value": "Moving or changing quickly, especially describing modern life."
-                },
-                {
-                    "key": "[L193-Q2-2] Hyperconnected",
-                    "value": "Characterized by the extensive use of multiple devices and platforms to stay constantly connected."
-                },
-                {
-                    "key": "[L193-Q2-3] Uncertainty",
-                    "value": "A state of not knowing what will happen; lack of certainty."
-                },
-                {
-                    "key": "[L193-Q2-4] Ever-Evolving",
-                    "value": "Continuously developing or changing over time."
-                }
-            ],
-            "hint": "Each word or phrase describes a defining feature of life in the modern world.",
-            "explanation": "The information age has made life more hyperconnected than ever, everyone reachable through countless devices at once. That pace of change makes the world feel fast-paced and ever-evolving, rarely settling into anything fixed. Uncertainty is different from the rest — it's the unsettled feeling that can result from all this constant change, not a description of the change itself.",
-            "paragraphTopic": "Main topic of paragraph."
-        },
-        {
-            "id": "RDG_READANDMATCH_L193_Q3",
-            "instruction": "Match each word with its meaning.",
-            "subtype": "readAndMatch",
-            "interactionType": "match",
-            "pairs": [
-                {
-                    "key": "[L193-Q3-0] Scientific Method",
-                    "value": "A systematic process of observation, hypothesis, and experimentation used to gain knowledge."
-                },
-                {
-                    "key": "[L193-Q3-1] Laboratory",
-                    "value": "A room or building equipped for scientific experiments or research."
-                },
-                {
-                    "key": "[L193-Q3-2] Discovery",
-                    "value": "The act of finding or learning something for the first time."
-                },
-                {
-                    "key": "[L193-Q3-3] Empirical Evidence",
-                    "value": "Information acquired by observation or experimentation, not theory alone."
-                },
-                {
-                    "key": "[L193-Q3-4] Research Findings",
-                    "value": "The results and conclusions produced by a scientific study."
-                }
-            ],
-            "hint": "Each word relates to how scientific knowledge is built, step by step.",
-            "explanation": "The scientific method guides research from start to finish, often carried out in a laboratory. Empirical evidence is what that method is designed to gather, and research findings are what get reported once it's analyzed. Discovery is different from the rest — the exciting outcome when any of this reveals something genuinely new.",
-            "paragraphTopic": "Main topic of paragraph."
-        },
-        {
-            "id": "RDG_READANDMATCH_L194_Q1",
-            "instruction": "Match each term with its correct meaning.",
-            "subtype": "readAndMatch",
-            "interactionType": "match",
-            "pairs": [
-                {
-                    "key": "[L194-Q1-0] Economic Interdependence",
-                    "value": "The mutual reliance of countries on each other's trade and resources."
-                },
-                {
-                    "key": "[L194-Q1-1] Global Inequality",
-                    "value": "The unequal distribution of wealth and resources between countries."
-                },
-                {
-                    "key": "[L194-Q1-2] Global Value Chain",
-                    "value": "The full range of activities producing a product, distributed globally."
-                },
-                {
-                    "key": "[L194-Q1-3] Offshore Financial Center",
-                    "value": "A location offering low taxes and loose regulation to attract international business."
-                },
-                {
-                    "key": "[L194-Q1-4] Race to the Bottom",
-                    "value": "The process where countries compete for investment by lowering standards."
-                }
-            ],
-            "hint": "Every one of these phrases connects to how nations depend on, and sometimes exploit, each other economically.",
-            "explanation": "Economic interdependence connects countries through a shared global value chain, each contributing a piece of the final product. That same connection can create global inequality, and an offshore financial center is one way wealth can escape fair taxation within it. Race to the bottom is different from the rest — a harmful pattern of competition, not a structure or an imbalance itself.",
-            "paragraphTopic": "Main topic of paragraph."
-        },
-        {
-            "id": "RDG_READANDMATCH_L194_Q2",
-            "instruction": "Match each word with its meaning.",
-            "subtype": "readAndMatch",
-            "interactionType": "match",
-            "pairs": [
-                {
-                    "key": "[L194-Q2-0] Idealism",
-                    "value": "The practice of forming or pursuing ideals, often without regard to practical considerations."
-                },
-                {
-                    "key": "[L194-Q2-1] Realism",
-                    "value": "The practice of accepting a situation as it is and being prepared to deal with it accordingly."
-                },
-                {
-                    "key": "[L194-Q2-2] Determinism",
-                    "value": "The philosophical view that all events are determined by previously existing causes."
-                },
-                {
-                    "key": "[L194-Q2-3] Free Will",
-                    "value": "The ability to make choices that are not determined by prior causes or fate."
-                },
-                {
-                    "key": "[L194-Q2-4] Rationalism",
-                    "value": "The belief that reason, rather than experience, is the foundation of knowledge."
-                }
-            ],
-            "hint": "Each word names a different outlook on how life, choice, and knowledge actually work.",
-            "explanation": "Idealism and realism describe opposite attitudes toward the world, one chasing what should be, the other accepting what is. Determinism and free will are also opposites, disagreeing about whether choice is even real. Rationalism is different from the rest — it's specifically about the source of knowledge, reason over experience, not about outlook or choice.",
-            "paragraphTopic": "Main topic of paragraph."
-        },
-        {
-            "id": "RDG_READANDMATCH_L194_Q3",
-            "instruction": "Match each phrase with its meaning.",
-            "subtype": "readAndMatch",
-            "interactionType": "match",
-            "pairs": [
-                {
-                    "key": "[L194-Q3-0] Thermal Comfort",
-                    "value": "The condition where a person is satisfied with the temperature of their environment."
-                },
-                {
-                    "key": "[L194-Q3-1] Net Zero Building",
-                    "value": "A building producing as much energy as it consumes over a year."
-                },
-                {
-                    "key": "[L194-Q3-2] Passive Solar Design",
-                    "value": "Architectural design that harnesses solar energy for heating or cooling."
-                },
-                {
-                    "key": "[L194-Q3-3] Daylighting",
-                    "value": "Using natural light to illuminate building interiors."
-                },
-                {
-                    "key": "[L194-Q3-4] Thermal Mass",
-                    "value": "The capacity of a material to absorb and store heat energy."
-                }
-            ],
-            "hint": "Notice how each phrase connects to designing a building that works with nature instead of against it.",
-            "explanation": "Passive solar design and daylighting both harness natural energy for a building's benefit, one for warmth, the other for light. Thermal mass is a material property that supports that same passive design, storing heat naturally. Thermal comfort is different from the rest — it's the human experience all of this design is ultimately aiming for, and net zero building is the broader energy goal that ties everything together.",
-            "paragraphTopic": "Main topic of paragraph."
-        },
-        {
-            "id": "RDG_READANDMATCH_L195_Q1",
-            "instruction": "Match each word with its meaning.",
-            "subtype": "readAndMatch",
-            "interactionType": "match",
-            "pairs": [
-                {
-                    "key": "[L195-Q1-0] Scientific Progress",
-                    "value": "Advancement and improvement in scientific knowledge and technology over time."
-                },
-                {
-                    "key": "[L195-Q1-1] Technological Advancement",
-                    "value": "An improvement or development in technology."
-                },
-                {
-                    "key": "[L195-Q1-2] Interdisciplinary",
-                    "value": "Combining or involving two or more academic disciplines or fields of study."
-                },
-                {
-                    "key": "[L195-Q1-3] Practical Application",
-                    "value": "The way a theory or piece of knowledge is used in real, everyday situations."
-                },
-                {
-                    "key": "[L195-Q1-4] Modernization",
-                    "value": "The process of adapting something to modern needs or habits."
-                }
-            ],
-            "hint": "Each word or phrase relates to how knowledge moves from an idea into something the world actually uses.",
-            "explanation": "Scientific progress and technological advancement move hand in hand, discovery feeding directly into new tools. Interdisciplinary work often speeds that progress along, combining fields to solve problems neither could alone. Practical application and modernization are different from the rest — both describe putting that progress to use in everyday life, rather than the progress itself.",
-            "paragraphTopic": "Main topic of paragraph."
-        },
-        {
-            "id": "RDG_READANDMATCH_L195_Q2",
-            "instruction": "Match each expression with its meaning.",
-            "subtype": "readAndMatch",
-            "interactionType": "match",
-            "pairs": [
-                {
-                    "key": "[L195-Q2-0] Theory of Mind",
-                    "value": "The ability to attribute mental states to oneself and others."
-                },
-                {
-                    "key": "[L195-Q2-1] Narrative Identity",
-                    "value": "The idea that identity is formed through the stories people tell about themselves."
-                },
-                {
-                    "key": "[L195-Q2-2] Self-Concept",
-                    "value": "A person's understanding and perception of their own identity and abilities."
-                },
-                {
-                    "key": "[L195-Q2-3] Social Cognition",
-                    "value": "The mental processes involved in understanding and interacting with other people."
-                },
-                {
-                    "key": "[L195-Q2-4] Emotional Insight",
-                    "value": "A clear, deep understanding of one's own or another's emotional state."
-                }
-            ],
-            "hint": "These phrases all tie back to how people understand themselves and the minds of others.",
-            "explanation": "Theory of mind and social cognition both describe understanding other people, one specifically about their mental states, the other more broadly about social interaction. Narrative identity and self-concept both turn that same understanding inward, shaping who you believe yourself to be. Emotional insight is different from the rest — a specific depth of understanding, feelings in particular, rather than identity or social awareness generally.",
-            "paragraphTopic": "Main topic of paragraph."
-        },
-        {
-            "id": "RDG_READANDMATCH_L195_Q3",
-            "instruction": "Match each term with its correct meaning.",
-            "subtype": "readAndMatch",
-            "interactionType": "match",
-            "pairs": [
-                {
-                    "key": "[L195-Q3-0] Adaptive Management",
-                    "value": "A systematic approach to improving conservation policy through learning."
-                },
-                {
-                    "key": "[L195-Q3-1] Ecocide",
-                    "value": "Severe damage or destruction of ecosystems, increasingly considered an international crime."
-                },
-                {
-                    "key": "[L195-Q3-2] Trophic Level",
-                    "value": "A position in a food chain defined by how organisms obtain energy."
-                },
-                {
-                    "key": "[L195-Q3-3] Ecosystem Services",
-                    "value": "Benefits that natural environments provide to human society."
-                },
-                {
-                    "key": "[L195-Q3-4] Rewilding",
-                    "value": "Restoring areas to their natural state by reintroducing native species."
-                }
-            ],
-            "hint": "Each of these phrases points to understanding, protecting, or restoring the natural world.",
-            "explanation": "Trophic level and ecosystem services both describe how nature functions and benefits us, one about energy, the other about value to society. Rewilding and adaptive management are both active efforts to protect that function, one through restoration, the other through ongoing, careful learning. Ecocide is different from the rest — the serious harm all of this conservation work exists to prevent.",
-            "paragraphTopic": "Main topic of paragraph."
-        },
-        {
-            "id": "RDG_READANDMATCH_L196_Q1",
-            "instruction": "Match each word with its meaning.",
-            "subtype": "readAndMatch",
-            "interactionType": "match",
-            "pairs": [
-                {
-                    "key": "[L196-Q1-0] Authority",
-                    "value": "The power or right to give orders and enforce obedience."
-                },
-                {
-                    "key": "[L196-Q1-1] Surveillance",
-                    "value": "Close observation, especially of a suspected person."
-                },
-                {
-                    "key": "[L196-Q1-2] Social Control",
-                    "value": "Methods used by a society to encourage conformity and discourage deviant behavior."
-                },
-                {
-                    "key": "[L196-Q1-3] Institution",
-                    "value": "An established organization or structure within society, such as a school or government body."
-                },
-                {
-                    "key": "[L196-Q1-4] Norm",
-                    "value": "A standard or pattern of behavior considered typical or expected within a society."
-                }
-            ],
-            "hint": "Each word relates to how power and expectation shape behavior in a society.",
-            "explanation": "Authority is backed by institutions, the established organizations that hold and exercise it. Social control keeps behavior in line with a society's norms, and surveillance is one specific tool that can enforce it, through observation. Norm is different from the rest — it's the expected standard itself, not a tool or structure used to maintain it.",
-            "paragraphTopic": "Main topic of paragraph."
-        },
-        {
-            "id": "RDG_READANDMATCH_L196_Q2",
-            "instruction": "Match each phrase with its meaning.",
-            "subtype": "readAndMatch",
-            "interactionType": "match",
-            "pairs": [
-                {
-                    "key": "[L196-Q2-0] Tipping Cascade",
-                    "value": "A chain reaction where one climate tipping point triggers others."
-                },
-                {
-                    "key": "[L196-Q2-1] Planetary Boundaries",
-                    "value": "Nine limits within which humanity can safely operate on Earth."
-                },
-                {
-                    "key": "[L196-Q2-2] Drawdown",
-                    "value": "The reduction of atmospheric greenhouse gases to reverse climate change."
-                },
-                {
-                    "key": "[L196-Q2-3] Geoengineering",
-                    "value": "Deliberately intervening in Earth systems to counteract climate change."
-                },
-                {
-                    "key": "[L196-Q2-4] Loss and Damage",
-                    "value": "The harm caused by climate change that cannot be adapted to or mitigated."
-                }
-            ],
-            "hint": "Each phrase relates to the scale of the climate crisis, and humanity's attempts to respond to it.",
-            "explanation": "Planetary boundaries define the safe limits, and a tipping cascade shows what happens once those limits are crossed, one failure triggering the next. Drawdown and geoengineering are two very different proposed responses, one reducing the cause directly, the other intervening in the whole system. Loss and damage is different from the rest — it's the harm already done, beyond what any response can prevent or reverse.",
-            "paragraphTopic": "Main topic of paragraph."
-        },
-        {
-            "id": "RDG_READANDMATCH_L196_Q3",
-            "instruction": "Match each expression with its meaning.",
-            "subtype": "readAndMatch",
-            "interactionType": "match",
-            "pairs": [
-                {
-                    "key": "[L196-Q3-0] Moral Imagination",
-                    "value": "The capacity to envision ethically better possibilities in any given situation."
-                },
-                {
-                    "key": "[L196-Q3-1] Moral Proximity",
-                    "value": "The idea that we have greater responsibility toward those who are closer to us."
-                },
-                {
-                    "key": "[L196-Q3-2] Moral Responsibility",
-                    "value": "The duty to act correctly and be answerable for one's actions."
-                },
-                {
-                    "key": "[L196-Q3-3] Cosmopolitanism",
-                    "value": "The view that all humans are members of one universal moral community."
-                },
-                {
-                    "key": "[L196-Q3-4] Care Ethics",
-                    "value": "A moral framework emphasizing relationships and context over universal rules."
-                }
-            ],
-            "hint": "Each phrase ties back to how far our sense of moral duty actually extends.",
-            "explanation": "Moral proximity and cosmopolitanism take opposite positions on that question, one favoring those close to us, the other insisting duty extends to everyone equally. Care ethics offers a different lens entirely, judging by relationship and context rather than by distance or universal rule. Moral imagination and moral responsibility are different from the rest — one is the creative capacity to see a better path, and the other is the duty to walk it, not a position on how far duty reaches.",
-            "paragraphTopic": "Main topic of paragraph."
-        },
-        {
-            "id": "RDG_READANDMATCH_L197_Q1",
-            "instruction": "Match each term with its correct meaning.",
-            "subtype": "readAndMatch",
-            "interactionType": "match",
-            "pairs": [
-                {
-                    "key": "[L197-Q1-0] Supply Chain Resilience",
-                    "value": "The ability of a supply chain to withstand and recover from disruptions."
-                },
-                {
-                    "key": "[L197-Q1-1] Tariff Engineering",
-                    "value": "Modifying a product to qualify for a lower tariff classification."
-                },
-                {
-                    "key": "[L197-Q1-2] Anti-Dumping Duty",
-                    "value": "A tax imposed on imports sold below their production cost."
-                },
-                {
-                    "key": "[L197-Q1-3] Non-Tariff Barrier",
-                    "value": "A trade restriction using means other than tariffs, such as quotas or standards."
-                },
-                {
-                    "key": "[L197-Q1-4] Rules of Origin",
-                    "value": "Criteria determining the national source of a product for customs purposes."
-                }
-            ],
-            "hint": "Every one of these phrases connects to the fine print governing how goods legally cross borders.",
-            "explanation": "Rules of origin determine where a product officially comes from, which affects both tariff engineering and any anti-dumping duty that might apply. Non-tariff barrier restricts trade through entirely different means, without using a tax at all. Supply chain resilience is different from the rest — it's about withstanding disruption in general, not a specific customs rule.",
-            "paragraphTopic": "Main topic of paragraph."
-        },
-        {
-            "id": "RDG_READANDMATCH_L197_Q2",
-            "instruction": "Match each word with its meaning.",
-            "subtype": "readAndMatch",
-            "interactionType": "match",
-            "pairs": [
-                {
-                    "key": "[L197-Q2-0] Ideal",
-                    "value": "A standard of perfection or excellence that people aim for."
-                },
-                {
-                    "key": "[L197-Q2-1] Prescriptive",
-                    "value": "Stating what should happen or how something should be done, rather than describing what actually is."
-                },
-                {
-                    "key": "[L197-Q2-2] Descriptive",
-                    "value": "Describing or giving an account of something, rather than judging or prescribing it."
-                },
-                {
-                    "key": "[L197-Q2-3] Value Judgment",
-                    "value": "An assessment of something as good or bad, based on personal or cultural standards."
-                },
-                {
-                    "key": "[L197-Q2-4] Guiding Principle",
-                    "value": "A fundamental belief that directs behavior or decision-making."
-                }
-            ],
-            "hint": "Each word or phrase relates to the difference between describing the world and judging it.",
-            "explanation": "Prescriptive and descriptive are direct opposites, one saying what should happen, the other simply reporting what does. A value judgment is a small example of prescriptive thinking in action, and guiding principle scales that same idea up into a lasting belief. Ideal is different from the rest — it's the standard being aimed for, not a way of describing or judging.",
-            "paragraphTopic": "Main topic of paragraph."
-        },
-        {
-            "id": "RDG_READANDMATCH_L197_Q3",
-            "instruction": "Match each phrase with its meaning.",
-            "subtype": "readAndMatch",
-            "interactionType": "match",
-            "pairs": [
-                {
-                    "key": "[L197-Q3-0] Unpaid Work",
-                    "value": "Labor performed without direct financial payment, such as housework or caregiving."
-                },
-                {
-                    "key": "[L197-Q3-1] Informal Work",
-                    "value": "Labor that takes place outside official, regulated employment structures."
-                },
-                {
-                    "key": "[L197-Q3-2] Undervalued Work",
-                    "value": "Labor that is not given the recognition or compensation it deserves."
-                },
-                {
-                    "key": "[L197-Q3-3] Domestic Labor",
-                    "value": "Work done to maintain a household, such as cleaning and childcare."
-                },
-                {
-                    "key": "[L197-Q3-4] Caregiving",
-                    "value": "The act of providing care for someone who needs help, such as a child or elderly person."
-                }
-            ],
-            "hint": "Notice how each phrase connects to forms of work that often go unpaid or unrecognized.",
-            "explanation": "Domestic labor and caregiving are two concrete examples of unpaid work, both essential yet rarely compensated. Informal work extends that same lack of recognition beyond the home, into work outside any regulated system. Undervalued work is different from the rest — the broader pattern connecting all of them, work that deserves more credit than it gets.",
-            "paragraphTopic": "Main topic of paragraph."
-        },
-        {
-            "id": "RDG_READANDMATCH_L198_Q1",
-            "instruction": "Match each expression with its meaning.",
-            "subtype": "readAndMatch",
-            "interactionType": "match",
-            "pairs": [
-                {
-                    "key": "[L198-Q1-0] Nonverbal Cues",
-                    "value": "Signals communicated without words, such as facial expressions or gestures."
-                },
-                {
-                    "key": "[L198-Q1-1] Contextual Meaning",
-                    "value": "The meaning of a word or phrase that depends on its surrounding circumstances."
-                },
-                {
-                    "key": "[L198-Q1-2] Linguistic Nuance",
-                    "value": "A subtle difference in meaning or tone within language use."
-                },
-                {
-                    "key": "[L198-Q1-3] Multimodal Communication",
-                    "value": "Communication using multiple channels such as language, image, and gesture."
-                },
-                {
-                    "key": "[L198-Q1-4] Communicative Intent",
-                    "value": "The underlying purpose or goal a speaker has in saying something."
-                }
-            ],
-            "hint": "These phrases all tie back to how meaning is actually built during real communication.",
-            "explanation": "Nonverbal cues and multimodal communication both go beyond spoken words, one through gesture, the other combining several channels at once. Contextual meaning and linguistic nuance both shape what those words mean once spoken, depending on subtlety and situation. Communicative intent is different from the rest — it's the underlying goal behind the message, not the form the message actually takes.",
-            "paragraphTopic": "Main topic of paragraph."
-        },
-        {
-            "id": "RDG_READANDMATCH_L198_Q2",
-            "instruction": "Match each term with its correct meaning.",
-            "subtype": "readAndMatch",
-            "interactionType": "match",
-            "pairs": [
-                {
-                    "key": "[L198-Q2-0] Patient Rights",
-                    "value": "The entitlements a patient has regarding their own medical care and decisions."
-                },
-                {
-                    "key": "[L198-Q2-1] Medical Malpractice",
-                    "value": "Improper or negligent treatment by a medical professional that causes harm."
-                },
-                {
-                    "key": "[L198-Q2-2] Standard of Care",
-                    "value": "The level of care a reasonably competent healthcare professional is expected to provide."
-                },
-                {
-                    "key": "[L198-Q2-3] Medical Paternalism",
-                    "value": "When medical professionals make decisions for patients without their input."
-                },
-                {
-                    "key": "[L198-Q2-4] Rationing in Healthcare",
-                    "value": "Deciding who receives limited medical resources when demand exceeds supply."
-                }
-            ],
-            "hint": "Each of these phrases points to fairness, quality, and control within healthcare.",
-            "explanation": "Patient rights protect a person's role in their own care, and medical paternalism describes exactly what happens when that role gets ignored. Standard of care sets the bar all treatment should meet, and medical malpractice is what happens when it isn't. Rationing in healthcare is different from the rest — a difficult resource decision, not a question of rights, standards, or negligence.",
-            "paragraphTopic": "Main topic of paragraph."
-        },
-        {
-            "id": "RDG_READANDMATCH_L198_Q3",
-            "instruction": "Match each word with its meaning.",
-            "subtype": "readAndMatch",
-            "interactionType": "match",
-            "pairs": [
-                {
-                    "key": "[L198-Q3-0] Consciousness",
-                    "value": "The state of being awake and aware of one's own thoughts and surroundings."
-                },
-                {
-                    "key": "[L198-Q3-1] Subjective Experience",
-                    "value": "A personal, individual perception of reality that can differ between people."
-                },
-                {
-                    "key": "[L198-Q3-2] Sentience",
-                    "value": "The capacity to feel, perceive, or experience things subjectively."
-                },
-                {
-                    "key": "[L198-Q3-3] Perceptual Awareness",
-                    "value": "Conscious recognition and interpretation of sensory information."
-                },
-                {
-                    "key": "[L198-Q3-4] Inner Life",
-                    "value": "A person's private thoughts, feelings, and experiences, not visible to others."
-                }
-            ],
-            "hint": "Each word or phrase relates to the deep, personal experience of simply being aware.",
-            "explanation": "Consciousness and sentience are closely related, both describing the basic capacity for awareness and feeling. Subjective experience and inner life both describe what fills that awareness, personal and hidden from anyone else. Perceptual awareness is different from the rest — it's specifically about processing sensory information, not the broader private experience behind it.",
-            "paragraphTopic": "Main topic of paragraph."
-        },
-        {
-            "id": "RDG_READANDMATCH_L199_Q1",
-            "instruction": "Match each phrase with its meaning.",
-            "subtype": "readAndMatch",
-            "interactionType": "match",
-            "pairs": [
-                {
-                    "key": "[L199-Q1-0] Economic Theory",
-                    "value": "A set of ideas that explain how economic systems and behavior work."
-                },
-                {
-                    "key": "[L199-Q1-1] Free Enterprise",
-                    "value": "An economic system where private businesses operate with minimal government control."
-                },
-                {
-                    "key": "[L199-Q1-2] Economic Growth",
-                    "value": "An increase in the production and consumption of goods and services in an economy."
-                },
-                {
-                    "key": "[L199-Q1-3] Economic Policy",
-                    "value": "Government decisions and actions that influence the economy."
-                },
-                {
-                    "key": "[L199-Q1-4] Wealth Creation",
-                    "value": "The process of generating new economic value and prosperity."
-                }
-            ],
-            "hint": "Each phrase relates to the big ideas and forces that shape a nation's prosperity.",
-            "explanation": "Economic theory explains how a system like free enterprise is supposed to function, and economic policy is how governments try to guide it in practice. Economic growth is one common goal of that guidance, and wealth creation is the broader process behind it. Free enterprise is different from the rest — it's a specific type of system, not a theory, policy, or outcome.",
-            "paragraphTopic": "Main topic of paragraph."
-        },
-        {
-            "id": "RDG_READANDMATCH_L199_Q2",
-            "instruction": "Match each expression with its meaning.",
-            "subtype": "readAndMatch",
-            "interactionType": "match",
-            "pairs": [
-                {
-                    "key": "[L199-Q2-0] Epistemological Humility",
-                    "value": "Recognizing the limits of one's own knowledge and the possibility of error."
-                },
-                {
-                    "key": "[L199-Q2-1] Paradigm Shift",
-                    "value": "A fundamental change in the assumptions and thinking within a field."
-                },
-                {
-                    "key": "[L199-Q2-2] Intellectual Curiosity",
-                    "value": "A genuine eagerness to learn and understand new ideas."
-                },
-                {
-                    "key": "[L199-Q2-3] Critical Inquiry",
-                    "value": "The careful, questioning examination of an idea or claim before accepting it."
-                },
-                {
-                    "key": "[L199-Q2-4] Provisional Truth",
-                    "value": "An idea accepted as true for now, but open to revision with new evidence."
-                }
-            ],
-            "hint": "Each phrase ties back to the mindset behind genuine, honest learning.",
-            "explanation": "Intellectual curiosity drives critical inquiry, a genuine eagerness to question and examine ideas carefully. Epistemological humility keeps that inquiry honest, admitting the limits of what's actually known, and provisional truth is the natural result, holding conclusions loosely. Paradigm shift is different from the rest — the dramatic outcome when enough of this honest questioning finally overturns old assumptions.",
-            "paragraphTopic": "Main topic of paragraph."
-        },
-        {
-            "id": "RDG_READANDMATCH_L199_Q3",
-            "instruction": "Match each word with its meaning.",
-            "subtype": "readAndMatch",
-            "interactionType": "match",
-            "pairs": [
-                {
-                    "key": "[L199-Q3-0] Self-Expression",
-                    "value": "The expression of one's feelings, thoughts, or identity, especially through creative activity."
-                },
-                {
-                    "key": "[L199-Q3-1] Social Identity",
-                    "value": "The part of a person's identity derived from belonging to social groups."
-                },
-                {
-                    "key": "[L199-Q3-2] Personal Agency",
-                    "value": "The capacity of an individual to act independently and make their own free choices."
-                },
-                {
-                    "key": "[L199-Q3-3] Cultural Narrative",
-                    "value": "A widely shared story or belief that shapes how a group understands itself."
-                },
-                {
-                    "key": "[L199-Q3-4] Collective Memory",
-                    "value": "Shared memories and knowledge held by a group of people about their shared past."
-                }
-            ],
-            "hint": "Each word or phrase relates to how identity is shaped by both the individual and the group.",
-            "explanation": "Personal agency and self-expression both center on the individual, acting and creating on your own terms. Social identity connects that same individual to a wider group, and cultural narrative and collective memory are what hold that group together over time, through shared stories and shared history.",
-            "paragraphTopic": "Main topic of paragraph."
-        },
-        {
-            "id": "RDG_READANDMATCH_L200_Q1",
-            "instruction": "Match each term with its correct meaning.",
-            "subtype": "readAndMatch",
-            "interactionType": "match",
-            "pairs": [
-                {
-                    "key": "[L200-Q1-0] Corporate Concentration",
-                    "value": "The increasing control of an industry by a small number of large companies."
-                },
-                {
-                    "key": "[L200-Q1-1] Rentier Capitalism",
-                    "value": "An economic system where wealth comes predominantly from asset ownership and rent."
-                },
-                {
-                    "key": "[L200-Q1-2] Speculative Finance",
-                    "value": "Financial activity focused on short-term asset price movements rather than productive investment."
-                },
-                {
-                    "key": "[L200-Q1-3] Financialization",
-                    "value": "The increasing dominance of financial actors and motives in economic life."
-                },
-                {
-                    "key": "[L200-Q1-4] Deindustrialization",
-                    "value": "The decline of manufacturing industry in a region or country over time."
-                }
-            ],
-            "hint": "Every one of these phrases connects to how modern economies have shifted away from making things toward managing money.",
-            "explanation": "Financialization describes that whole shift, finance coming to dominate economic life, and speculative finance and rentier capitalism are two forms it can take, one chasing quick price changes, the other collecting income from simply owning assets. Deindustrialization often happens alongside this shift, as manufacturing declines. Corporate concentration is different from the rest — it's about fewer companies controlling more, not about finance replacing production.",
-            "paragraphTopic": "Main topic of paragraph."
-        },
-        {
-            "id": "RDG_READANDMATCH_L200_Q2",
-            "instruction": "Match each word with its meaning.",
-            "subtype": "readAndMatch",
-            "interactionType": "match",
-            "pairs": [
-                {
-                    "key": "[L200-Q2-0] Emotional Awareness",
-                    "value": "The ability to recognize and understand one's own feelings and those of others."
-                },
-                {
-                    "key": "[L200-Q2-1] Emotional Depth",
-                    "value": "The capacity to experience and express feelings in a rich, meaningful way."
-                },
-                {
-                    "key": "[L200-Q2-2] Contentment",
-                    "value": "A state of peaceful happiness and satisfaction."
-                },
-                {
-                    "key": "[L200-Q2-3] Melancholy",
-                    "value": "A thoughtful, reflective sadness, often without a clear specific cause."
-                },
-                {
-                    "key": "[L200-Q2-4] Euphoria",
-                    "value": "A feeling of intense excitement and happiness."
-                }
-            ],
-            "hint": "Each word describes a different part of the rich, full range of human emotion.",
-            "explanation": "Emotional awareness and emotional depth both describe a healthy relationship with feeling, one about recognizing it, the other about experiencing it fully. Contentment and euphoria sit at different points on the happier end of that range, one calm, the other intense. Melancholy is different from the rest — a gentle, reflective sadness, the only word here that isn't a positive or a skill.",
-            "paragraphTopic": "Main topic of paragraph."
-        },
-        {
-            "id": "RDG_READANDMATCH_L200_Q3",
-            "instruction": "Match each word with its meaning.",
-            "subtype": "readAndMatch",
-            "interactionType": "match",
-            "pairs": [
-                {
-                    "key": "[L200-Q3-0] Wisdom",
-                    "value": "The quality of having experience, knowledge, and good judgment."
-                },
-                {
-                    "key": "[L200-Q3-1] Discernment",
-                    "value": "The ability to judge well, especially in matters that are not obvious."
-                },
-                {
-                    "key": "[L200-Q3-2] Erudite",
-                    "value": "Having or showing great knowledge, learned through wide study."
-                },
-                {
-                    "key": "[L200-Q3-3] Mastery",
-                    "value": "Complete and confident skill or knowledge in a particular subject."
-                },
-                {
-                    "key": "[L200-Q3-4] Enlightenment",
-                    "value": "The state of having a deep, clear understanding of something, often gained gradually."
-                }
-            ],
-            "hint": "Each word describes a form of understanding worth striving for.",
-            "explanation": "Erudite describes someone who has learned a great deal through study, and wisdom is what that learning can eventually become when paired with real judgment. Discernment is wisdom applied to a specific, unclear decision, and mastery is that same depth applied to a specific skill. Enlightenment is different from the rest — the gradual, personal arrival at deep understanding itself, the destination all of this learning points toward.",
-            "paragraphTopic": "Main topic of paragraph."
+          "key": "[L191-Q1-4] Will",
+          "value": "Used to indicate something that is expected or promised to happen, without stating it as a rule."
         }
-    ]
+      ],
+      "hint": "These five words are often confused in formal writing, but they signal very different levels of obligation.",
+      "explanation": "Shall and must both signal firm, binding obligations, though shall is more common in formal legal writing. Should and may are weaker, one a recommendation, one simple permission. Will is different from the rest — it's a statement of expectation or promise, not a rule at all.",
+      "paragraphTopic": "Vocabulary for legal obligation in treaties"
+    },
+    {
+      "id": "RDG_READANDMATCH_L191_Q2",
+      "instruction": "Match each sentence with what it means.",
+      "subtype": "readAndMatch",
+      "interactionType": "match",
+      "pairs": [
+        {
+          "key": "[L191-Q2-0] Each party shall submit an annual report to the commission.",
+          "value": "Every party is formally required to submit a yearly report to the commission."
+        },
+        {
+          "key": "[L191-Q2-1] Parties should consider the recommendations of the advisory panel.",
+          "value": "Parties are expected to take the advisory panel's recommendations into account, though it isn't a strict rule."
+        },
+        {
+          "key": "[L191-Q2-2] A party may request a review of the terms after five years.",
+          "value": "Any party is permitted, if it chooses, to ask for the terms to be reviewed after five years."
+        },
+        {
+          "key": "[L191-Q2-3] No party must exceed the agreed emissions threshold without prior notice.",
+          "value": "No party is permitted, under any circumstance, to go over the agreed emissions limit without giving notice first."
+        },
+        {
+          "key": "[L191-Q2-4] The commission will publish its findings within ninety days of review.",
+          "value": "The commission is expected to make its findings public within ninety days after reviewing them."
+        }
+      ],
+      "hint": "Each sentence in this treaty excerpt uses a different level of obligation.",
+      "explanation": "The first sentence uses a firm requirement, and the second uses a softer recommendation. The third grants permission, while the fourth states an absolute prohibition, and the fifth states an expectation rather than a rule.",
+      "paragraphTopic": "Reading the obligations in a treaty clause"
+    },
+    {
+      "id": "RDG_READANDMATCH_L191_Q3",
+      "instruction": "Match each version with its precise meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "match",
+      "pairs": [
+        {
+          "key": "[L191-Q3-0] Each party shall report annually.",
+          "value": "This states a firm, formal requirement."
+        },
+        {
+          "key": "[L191-Q3-1] Each party should report annually.",
+          "value": "This states a recommendation, not an absolute requirement."
+        },
+        {
+          "key": "[L191-Q3-2] Each party may report annually.",
+          "value": "This states an allowed option, with no obligation either way."
+        },
+        {
+          "key": "[L191-Q3-3] Each party must report annually.",
+          "value": "This states an absolute, non-negotiable requirement."
+        },
+        {
+          "key": "[L191-Q3-4] Each party will report annually.",
+          "value": "This states an expectation or promise, without framing it as a formal rule."
+        }
+      ],
+      "hint": "These five clauses look almost identical but commit each party to a genuinely different level of obligation.",
+      "explanation": "The first is a formal, firm requirement. The second is a recommendation, not absolute. The third is simply an allowed option. The fourth is the strongest possible requirement, while the fifth is an expectation, framed as a promise rather than a rule.",
+      "paragraphTopic": "Precise paraphrasing of legal obligation strength"
+    },
+    {
+      "id": "RDG_READANDMATCH_L192_Q1",
+      "instruction": "Match each word with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "match",
+      "pairs": [
+        {
+          "key": "[L192-Q1-0] Preponderance",
+          "value": "The greater part or weight of the evidence, favoring one conclusion overall."
+        },
+        {
+          "key": "[L192-Q1-1] Mixed Evidence",
+          "value": "Evidence that points in different directions, with some support and some contradiction."
+        },
+        {
+          "key": "[L192-Q1-2] Converging",
+          "value": "Coming together from different, independent directions toward the same conclusion."
+        },
+        {
+          "key": "[L192-Q1-3] Inconsistent",
+          "value": "Not matching or agreeing across different studies or results."
+        },
+        {
+          "key": "[L192-Q1-4] Substantial",
+          "value": "Large or significant enough to be taken seriously as evidence."
+        }
+      ],
+      "hint": "Four of these describe patterns in how evidence points across many studies. One describes how much evidence exists overall.",
+      "explanation": "Preponderance and converging both describe evidence pointing in a shared direction, one about overall weight, one about independent agreement. Mixed evidence and inconsistent both describe evidence that doesn't line up cleanly. Substantial is different from the rest — it's about the sheer amount of evidence, not the pattern it forms.",
+      "paragraphTopic": "Vocabulary for the strength of scientific evidence"
+    },
+    {
+      "id": "RDG_READANDMATCH_L192_Q2",
+      "instruction": "Match each sentence with what it means.",
+      "subtype": "readAndMatch",
+      "interactionType": "match",
+      "pairs": [
+        {
+          "key": "[L192-Q2-0] Across the reviewed studies, the preponderance of evidence supports the treatment's effectiveness.",
+          "value": "Looking at all the studies reviewed, most of the evidence points toward the treatment actually working."
+        },
+        {
+          "key": "[L192-Q2-1] A handful of studies present mixed evidence, showing benefit in some populations but not others.",
+          "value": "A few studies show a mixed picture, with the treatment helping some groups but not others."
+        },
+        {
+          "key": "[L192-Q2-2] Findings from independent research teams are largely converging on a similar conclusion.",
+          "value": "Results from separate research teams are increasingly pointing toward the same overall conclusion."
+        },
+        {
+          "key": "[L192-Q2-3] Only two studies reported results inconsistent with the broader pattern.",
+          "value": "Just two studies produced results that didn't match the pattern seen in the rest."
+        },
+        {
+          "key": "[L192-Q2-4] Overall, the body of evidence is considered substantial enough to inform clinical guidelines.",
+          "value": "Taken as a whole, the evidence is seen as strong enough to shape official medical recommendations."
+        }
+      ],
+      "hint": "Each sentence in this meta-analysis describes a different pattern across the studies reviewed.",
+      "explanation": "The first sentence describes an overall favorable pattern, and the second notes some studies that don't fully fit it. The third describes independent agreement growing stronger, while the fourth notes a small number of exceptions, and the fifth judges the overall body of evidence as strong enough to matter.",
+      "paragraphTopic": "A meta-analysis summarizing many studies"
+    },
+    {
+      "id": "RDG_READANDMATCH_L192_Q3",
+      "instruction": "Match each line with what it implies.",
+      "subtype": "readAndMatch",
+      "interactionType": "match",
+      "pairs": [
+        {
+          "key": "[L192-Q3-0] The preponderance of evidence supports this conclusion.",
+          "value": "This implies strong, but not unanimous, support across the research reviewed."
+        },
+        {
+          "key": "[L192-Q3-1] Evidence on this question remains mixed.",
+          "value": "This implies the question is not yet settled, despite meaningful research already existing."
+        },
+        {
+          "key": "[L192-Q3-2] Findings across independent studies are converging.",
+          "value": "This implies growing confidence, since agreement from separate sources is harder to dismiss as coincidence."
+        },
+        {
+          "key": "[L192-Q3-3] A small number of studies show inconsistent results.",
+          "value": "This implies the overall pattern is fairly solid, since these exceptions remain a minority."
+        },
+        {
+          "key": "[L192-Q3-4] The evidence is not yet considered substantial.",
+          "value": "This implies more research is likely needed before the conclusion can be treated as reliable."
+        }
+      ],
+      "hint": "How confident should a reader be, given each of these descriptions of the evidence?",
+      "explanation": "The first implies strong, though not unanimous, support. The second implies a genuinely unsettled question. The third implies growing confidence from independent agreement, while the fourth implies the overall pattern still holds despite a few exceptions, and the fifth implies more research is still needed.",
+      "paragraphTopic": "What evidence-strength language implies about scientific confidence"
+    },
+    {
+      "id": "RDG_READANDMATCH_L193_Q1",
+      "instruction": "Match each word with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "match",
+      "pairs": [
+        {
+          "key": "[L193-Q1-0] Endorse",
+          "value": "To publicly and officially express support for a candidate, policy, or idea."
+        },
+        {
+          "key": "[L193-Q1-1] Decline To Endorse",
+          "value": "To choose not to give official support, without necessarily opposing something."
+        },
+        {
+          "key": "[L193-Q1-2] Withhold Support",
+          "value": "To deliberately not give support, often as a form of pressure or protest."
+        },
+        {
+          "key": "[L193-Q1-3] Conditional Support",
+          "value": "Support that depends on certain requirements being met."
+        },
+        {
+          "key": "[L193-Q1-4] Unqualified Support",
+          "value": "Complete support, given without conditions or reservations."
+        }
+      ],
+      "hint": "Four of these describe different levels of official support. One describes a decision not to support anyone at all.",
+      "explanation": "Endorse and unqualified support both describe giving support, one the act, one the fullest possible version of it. Withhold support and conditional support both describe holding something back, one entirely, one with a specific condition attached. Decline to endorse is different from the rest — it's a neutral non-decision, not a form of withheld or conditional support.",
+      "paragraphTopic": "Vocabulary for the strength of an endorsement"
+    },
+    {
+      "id": "RDG_READANDMATCH_L193_Q2",
+      "instruction": "Match each sentence with what it means.",
+      "subtype": "readAndMatch",
+      "interactionType": "match",
+      "pairs": [
+        {
+          "key": "[L193-Q2-0] The editorial board voted to endorse the incumbent for a second term.",
+          "value": "The newspaper's editorial board officially decided to support the current officeholder for another term."
+        },
+        {
+          "key": "[L193-Q2-1] In a rare move, it declined to endorse in the neighboring district's race.",
+          "value": "Unusually, it chose not to officially back anyone in the nearby district's election."
+        },
+        {
+          "key": "[L193-Q2-2] Some board members wanted to withhold support entirely until certain reforms were promised.",
+          "value": "Some board members wanted to hold back any support at all until specific changes were promised."
+        },
+        {
+          "key": "[L193-Q2-3] The board ultimately offered conditional support, tied to a promise on infrastructure spending.",
+          "value": "In the end, the board gave its support, but only on the condition of a commitment to infrastructure spending."
+        },
+        {
+          "key": "[L193-Q2-4] This fell short of the unqualified support the campaign had hoped for.",
+          "value": "This wasn't quite the full, unconditional support the campaign had been hoping to receive."
+        }
+      ],
+      "hint": "Each sentence describes a different decision the same editorial board made about endorsements.",
+      "explanation": "The first sentence describes a clear endorsement, and the second describes a neutral non-endorsement elsewhere. The third describes an internal disagreement about withholding support, while the fourth describes the board's actual conditional decision, and the fifth compares that decision to what the campaign had hoped for.",
+      "paragraphTopic": "An editorial board's decision on who to endorse"
+    },
+    {
+      "id": "RDG_READANDMATCH_L193_Q3",
+      "instruction": "Match each version with its precise meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "match",
+      "pairs": [
+        {
+          "key": "[L193-Q3-0] The board endorsed the candidate.",
+          "value": "This states a clear, official decision to support the candidate."
+        },
+        {
+          "key": "[L193-Q3-1] The board endorsed the candidate, conditional on a specific promise.",
+          "value": "This states support given, but only if a specific condition is met."
+        },
+        {
+          "key": "[L193-Q3-2] The board declined to endorse either candidate.",
+          "value": "This states a decision not to officially back anyone, without necessarily opposing them."
+        },
+        {
+          "key": "[L193-Q3-3] The board withheld its endorsement as a form of protest.",
+          "value": "This states a deliberate refusal to support, used to apply pressure."
+        },
+        {
+          "key": "[L193-Q3-4] The board gave its unqualified endorsement.",
+          "value": "This states the strongest, most complete form of support, with no conditions attached."
+        }
+      ],
+      "hint": "These five statements about an endorsement look similar but each describes a genuinely different level of support.",
+      "explanation": "The first is a clear, unconditional endorsement. The second is support given, but only under a condition. The third is a neutral decision not to back anyone. The fourth is a deliberate refusal to support, used as pressure, while the fifth is the strongest, most complete form of endorsement possible.",
+      "paragraphTopic": "Precise paraphrasing of the degree of an endorsement"
+    },
+    {
+      "id": "RDG_READANDMATCH_L194_Q1",
+      "instruction": "Match each word with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "match",
+      "pairs": [
+        {
+          "key": "[L194-Q1-0] Literal Interpretation",
+          "value": "Reading a text according to its exact, plain wording."
+        },
+        {
+          "key": "[L194-Q1-1] Originalist",
+          "value": "Describing an approach that interprets a text based on its meaning at the time it was written."
+        },
+        {
+          "key": "[L194-Q1-2] Living Document",
+          "value": "Describing the view that a text's meaning can evolve to fit changing circumstances over time."
+        },
+        {
+          "key": "[L194-Q1-3] Strict Construction",
+          "value": "An approach that interprets a text narrowly, limiting its meaning to what is explicitly stated."
+        },
+        {
+          "key": "[L194-Q1-4] Judicial Restraint",
+          "value": "A cautious approach in which judges avoid overturning laws unless clearly necessary."
+        }
+      ],
+      "hint": "Four of these describe different approaches to interpreting a legal text. One describes a general judicial attitude, not a method of reading.",
+      "explanation": "Literal interpretation and strict construction both focus closely on a text's exact wording. Originalist and living document are opposite views on whether meaning should stay fixed or evolve over time. Judicial restraint is different from the rest — it's an attitude about when to act, not a method for reading the text itself.",
+      "paragraphTopic": "Vocabulary for constitutional interpretation"
+    },
+    {
+      "id": "RDG_READANDMATCH_L194_Q2",
+      "instruction": "Match each sentence with what it means.",
+      "subtype": "readAndMatch",
+      "interactionType": "match",
+      "pairs": [
+        {
+          "key": "[L194-Q2-0] One justice favored a literal interpretation, focused strictly on the text's exact words.",
+          "value": "One judge preferred to base the ruling closely on the precise wording of the text itself."
+        },
+        {
+          "key": "[L194-Q2-1] This aligned with her broader originalist approach to constitutional questions.",
+          "value": "This fit with her overall approach of interpreting the constitution based on what it meant when it was written."
+        },
+        {
+          "key": "[L194-Q2-2] Others on the court treat the constitution as a living document, adaptable to modern circumstances.",
+          "value": "Other judges on the court believe the constitution's meaning can shift to fit today's circumstances."
+        },
+        {
+          "key": "[L194-Q2-3] A separate justice applied strict construction, reluctant to read anything beyond the explicit text.",
+          "value": "A different judge interpreted the text narrowly, unwilling to read in anything not directly stated."
+        },
+        {
+          "key": "[L194-Q2-4] Most justices, regardless of approach, expressed a general preference for judicial restraint.",
+          "value": "Most judges, whichever approach they favored, generally preferred to avoid overturning laws unless truly necessary."
+        }
+      ],
+      "hint": "Each sentence describes a different justice's approach to interpreting the same constitutional question.",
+      "explanation": "The first sentence describes a literal, text-focused approach, and the second connects it to a broader originalist philosophy. The third describes the opposing living-document view, while the fourth describes a narrow, strict approach, and the fifth notes a value most justices shared regardless of approach.",
+      "paragraphTopic": "A court divided over how to interpret the constitution"
+    },
+    {
+      "id": "RDG_READANDMATCH_L194_Q3",
+      "instruction": "Match each line with what it implies.",
+      "subtype": "readAndMatch",
+      "interactionType": "match",
+      "pairs": [
+        {
+          "key": "[L194-Q3-0] The text should be read according to its meaning at the time it was written.",
+          "value": "This implies that later social change, by itself, isn't a sufficient reason to reinterpret the text."
+        },
+        {
+          "key": "[L194-Q3-1] The constitution's meaning can evolve as society changes.",
+          "value": "This implies room for reinterpretation that an originalist approach would specifically resist."
+        },
+        {
+          "key": "[L194-Q3-2] The court should be cautious about overturning laws passed by elected legislators.",
+          "value": "This implies a preference for deferring to lawmakers, even when a judge might personally disagree with a law."
+        },
+        {
+          "key": "[L194-Q3-3] The text says nothing about this specific situation, so no right can be assumed here.",
+          "value": "This implies a narrow reading that limits protections to only what's explicitly written."
+        },
+        {
+          "key": "[L194-Q3-4] Two justices reached the same conclusion through very different interpretive approaches.",
+          "value": "This implies that different methods of interpretation don't always lead to different outcomes."
+        }
+      ],
+      "hint": "Each interpretive approach commits a judge to something specific, whether or not it's stated outright.",
+      "explanation": "The first implies resistance to reinterpretation based on social change alone. The second implies openness to exactly that kind of reinterpretation. The third implies deference to lawmakers over personal judgment, while the fourth implies a narrow reading limiting protections, and the fifth implies that method and outcome don't always align predictably.",
+      "paragraphTopic": "What an interpretive approach actually commits a judge to"
+    },
+    {
+      "id": "RDG_READANDMATCH_L195_Q1",
+      "instruction": "Match each word with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "match",
+      "pairs": [
+        {
+          "key": "[L195-Q1-0] Culpable",
+          "value": "Deserving blame for causing harm or wrongdoing."
+        },
+        {
+          "key": "[L195-Q1-1] Answerable",
+          "value": "Required to explain or justify one's actions to someone with authority."
+        },
+        {
+          "key": "[L195-Q1-2] Complicit",
+          "value": "Involved in wrongdoing along with others, even if not the main cause of it."
+        },
+        {
+          "key": "[L195-Q1-3] Absolved",
+          "value": "Formally cleared of blame or responsibility."
+        },
+        {
+          "key": "[L195-Q1-4] Blameless",
+          "value": "Free from fault; not responsible for something wrong."
+        }
+      ],
+      "hint": "Four of these describe different degrees of blame or responsibility. One describes being formally cleared of it.",
+      "explanation": "Culpable and complicit both describe bearing some blame, one directly, one through involvement with others. Answerable and blameless are different, one about owing an explanation, one about being entirely free of fault. Absolved is different from the rest — it's the formal act of clearing someone from blame, not a description of blame itself.",
+      "paragraphTopic": "Vocabulary for responsibility and blame"
+    },
+    {
+      "id": "RDG_READANDMATCH_L195_Q2",
+      "instruction": "Match each sentence with what it means.",
+      "subtype": "readAndMatch",
+      "interactionType": "match",
+      "pairs": [
+        {
+          "key": "[L195-Q2-0] Some argue the developers are culpable when an algorithm causes real harm.",
+          "value": "Some people believe the people who built the system deserve blame when it causes real harm."
+        },
+        {
+          "key": "[L195-Q2-1] Others believe companies should remain answerable to regulators for how their systems behave.",
+          "value": "Others believe companies should have to explain and justify their systems' behavior to regulators."
+        },
+        {
+          "key": "[L195-Q2-2] A few critics see users who ignore known flaws as complicit in resulting harm.",
+          "value": "Some critics believe users who knowingly overlook known problems share some responsibility for the harm that follows."
+        },
+        {
+          "key": "[L195-Q2-3] Developers argue they should be absolved once a system meets all required safety standards.",
+          "value": "Developers argue they shouldn't be blamed once their system has met every required safety standard."
+        },
+        {
+          "key": "[L195-Q2-4] Almost no one considers the algorithm itself blameless in a meaningful sense, since it lacks intent.",
+          "value": "Almost nobody treats the algorithm itself as truly at fault in any real sense, since it has no intentions of its own."
+        }
+      ],
+      "hint": "Each sentence introduces a different view on who bears responsibility for AI-related harm.",
+      "explanation": "The first sentence blames developers directly, and the second focuses on ongoing accountability to regulators. The third assigns some responsibility to users, while the fourth describes developers' own defense, and the fifth notes near-universal agreement that the algorithm itself bears no real blame.",
+      "paragraphTopic": "A debate over who is responsible for AI-related harm"
+    },
+    {
+      "id": "RDG_READANDMATCH_L195_Q3",
+      "instruction": "Match each detail with what it implies.",
+      "subtype": "readAndMatch",
+      "interactionType": "match",
+      "pairs": [
+        {
+          "key": "[L195-Q3-0] The developers followed every required safety standard.",
+          "value": "This implies an argument for reduced blame, though it doesn't automatically mean no harm occurred."
+        },
+        {
+          "key": "[L195-Q3-1] The company knew about the flaw and released the product anyway.",
+          "value": "This implies a much stronger case for blame than simple negligence would, since the risk was known in advance."
+        },
+        {
+          "key": "[L195-Q3-2] Regulators are still reviewing whether existing standards were adequate in the first place.",
+          "value": "This implies the standards themselves, not just whether they were followed, may be part of the real question."
+        },
+        {
+          "key": "[L195-Q3-3] The system operated exactly as it was designed to.",
+          "value": "This implies that any harm caused may trace back to a decision made during design, not a malfunction."
+        },
+        {
+          "key": "[L195-Q3-4] No single individual can be shown to have caused the outcome directly.",
+          "value": "This implies a case where responsibility may be spread across a system rather than resting on one clear, blamable choice."
+        }
+      ],
+      "hint": "Each of these details changes how responsibility should be judged, even without saying so directly.",
+      "explanation": "The first implies reduced blame, though not necessarily no harm. The second implies a much stronger case for blame, since the risk was known. The third implies the standards themselves may be the real issue, while the fourth implies the problem traces back to design, not malfunction, and the fifth implies responsibility spread across a system rather than one person.",
+      "paragraphTopic": "What an accountability argument actually establishes"
+    },
+    {
+      "id": "RDG_READANDMATCH_L196_Q1",
+      "instruction": "Match each word with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "match",
+      "pairs": [
+        {
+          "key": "[L196-Q1-0] Raw",
+          "value": "Showing emotion openly and without polish, close to the surface."
+        },
+        {
+          "key": "[L196-Q1-1] Composed",
+          "value": "Calm and controlled, even when feeling something deeply."
+        },
+        {
+          "key": "[L196-Q1-2] Wistful",
+          "value": "Feeling a gentle, quiet sadness, especially for something in the past."
+        },
+        {
+          "key": "[L196-Q1-3] Bittersweet",
+          "value": "Combining both sadness and happiness at the same time."
+        },
+        {
+          "key": "[L196-Q1-4] Numb",
+          "value": "Feeling little or nothing, often as a response to something overwhelming."
+        }
+      ],
+      "hint": "Four of these describe different emotional tones a piece of writing can take. One describes a specific absence of feeling.",
+      "explanation": "Raw and composed are opposite emotional tones, one unpolished, one controlled. Wistful and bittersweet both blend gentler, mixed feelings, one quietly sad, one both sad and happy at once. Numb is different from the rest — it's not really an emotional tone, it's a lack of feeling, often as a response to something overwhelming.",
+      "paragraphTopic": "Vocabulary for emotional tone in writing"
+    },
+    {
+      "id": "RDG_READANDMATCH_L196_Q2",
+      "instruction": "Match each sentence with what it means.",
+      "subtype": "readAndMatch",
+      "interactionType": "match",
+      "pairs": [
+        {
+          "key": "[L196-Q2-0] In the essay's opening, the writer's grief feels raw, barely held together.",
+          "value": "At the start of the essay, the writer's sadness comes through openly, with very little control over it."
+        },
+        {
+          "key": "[L196-Q2-1] By the middle section, she describes feeling strangely numb rather than sad.",
+          "value": "By the middle of the essay, she describes feeling almost nothing, rather than clear sadness."
+        },
+        {
+          "key": "[L196-Q2-2] A wistful passage recalls small, ordinary memories of her father.",
+          "value": "One gently sad section remembers small, everyday moments with her father."
+        },
+        {
+          "key": "[L196-Q2-3] The tone shifts to something more composed as she describes the funeral itself.",
+          "value": "The tone becomes more controlled and calm as she describes the funeral itself."
+        },
+        {
+          "key": "[L196-Q2-4] The essay ends on a bittersweet note, grateful for the time they had.",
+          "value": "The essay closes with a mix of sadness and happiness, thankful for the time they shared."
+        }
+      ],
+      "hint": "Each sentence describes a different emotional tone found in a different part of the same essay.",
+      "explanation": "The first sentence describes an unpolished, open tone, and the second describes an unexpected shift to numbness. The third describes a gently sad memory, while the fourth describes a more controlled tone, and the fifth describes a mixed, bittersweet close.",
+      "paragraphTopic": "The shifting tone of a personal essay about grief"
+    },
+    {
+      "id": "RDG_READANDMATCH_L196_Q3",
+      "instruction": "Match each choice with what it implies.",
+      "subtype": "readAndMatch",
+      "interactionType": "match",
+      "pairs": [
+        {
+          "key": "[L196-Q3-0] The writing here feels almost clinical, as if describing someone else's loss.",
+          "value": "This implies emotional numbness, a way of coping by creating distance from the pain."
+        },
+        {
+          "key": "[L196-Q3-1] The sentences grow shorter and more fragmented in this section.",
+          "value": "This implies rising emotional intensity, mirrored in how the writing itself breaks down."
+        },
+        {
+          "key": "[L196-Q3-2] She lingers on a single, small detail for an entire paragraph.",
+          "value": "This implies that detail carries far more emotional weight than its size alone would suggest."
+        },
+        {
+          "key": "[L196-Q3-3] The tone here is warm, even as the subject remains sad.",
+          "value": "This implies she has found a way to hold both gratitude and grief at once, rather than choosing between them."
+        },
+        {
+          "key": "[L196-Q3-4] This section reads almost like a formal report, careful and controlled.",
+          "value": "This implies a deliberate emotional distance, perhaps as a way of getting through a difficult moment in the writing."
+        }
+      ],
+      "hint": "Small choices in how something is written can reveal a great deal about the writer's emotional state.",
+      "explanation": "The first implies emotional numbness used as distance from pain. The second implies rising intensity mirrored in the writing's structure. The third implies unusual emotional weight placed on a small detail, while the fourth implies gratitude and grief held together at once, and the fifth implies deliberate emotional distance as a coping method.",
+      "paragraphTopic": "What shifts in tone imply about a writer's emotional state"
+    },
+    {
+      "id": "RDG_READANDMATCH_L197_Q1",
+      "instruction": "Match each word with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "match",
+      "pairs": [
+        {
+          "key": "[L197-Q1-0] Mainstream View",
+          "value": "The position held by most experts in a field, generally accepted as most likely correct."
+        },
+        {
+          "key": "[L197-Q1-1] Minority View",
+          "value": "A position held by a smaller number of experts, still taken seriously within the field."
+        },
+        {
+          "key": "[L197-Q1-2] Outlier",
+          "value": "A result or view that falls noticeably outside the usual pattern seen elsewhere."
+        },
+        {
+          "key": "[L197-Q1-3] Fringe",
+          "value": "A view held by very few, generally outside the range taken seriously by most experts in the field."
+        },
+        {
+          "key": "[L197-Q1-4] Emerging",
+          "value": "Newly developing or gaining attention, not yet widely accepted or rejected."
+        }
+      ],
+      "hint": "Four of these describe how widely accepted a scientific view is. One describes a result that stands out from the pattern of similar studies.",
+      "explanation": "Mainstream view and minority view both describe how widely a genuinely credible position is held. Fringe and emerging both describe positions outside the current mainstream, one dismissed, one simply new. Outlier is different from the rest — it describes a specific result that doesn't fit a pattern, not a general position within the field.",
+      "paragraphTopic": "Vocabulary for scientific agreement and disagreement"
+    },
+    {
+      "id": "RDG_READANDMATCH_L197_Q2",
+      "instruction": "Match each sentence with what it means.",
+      "subtype": "readAndMatch",
+      "interactionType": "match",
+      "pairs": [
+        {
+          "key": "[L197-Q2-0] The mainstream view among climate scientists is that human activity is the primary driver of recent warming.",
+          "value": "Most climate scientists hold the position that human activity is the main cause of recent warming."
+        },
+        {
+          "key": "[L197-Q2-1] A minority view holds that natural cycles play a larger role than currently estimated.",
+          "value": "A smaller group of scientists believes natural cycles are responsible for more of the warming than usually thought."
+        },
+        {
+          "key": "[L197-Q2-2] One widely cited study is often treated as something of an outlier compared to the broader body of research.",
+          "value": "One often-mentioned study stands out as unusual compared to most other research on the topic."
+        },
+        {
+          "key": "[L197-Q2-3] Fringe claims denying any human contribution are not taken seriously within the scientific community.",
+          "value": "Claims that deny any human role at all are not considered credible by scientists working in the field."
+        },
+        {
+          "key": "[L197-Q2-4] An emerging area of research is exploring how warming interacts with ocean currents in new ways.",
+          "value": "A newer area of study is looking into how warming affects ocean currents in ways not yet fully understood."
+        }
+      ],
+      "hint": "Each sentence describes a different level of scientific agreement about the same broad topic.",
+      "explanation": "The first sentence describes the mainstream position, and the second describes a minority alternative still taken seriously. The third describes one unusual result, while the fourth describes a rejected, fringe claim, and the fifth describes a genuinely new, still-developing area of study.",
+      "paragraphTopic": "Mainstream and minority views in climate science"
+    },
+    {
+      "id": "RDG_READANDMATCH_L197_Q3",
+      "instruction": "Match each position with what it implies.",
+      "subtype": "readAndMatch",
+      "interactionType": "match",
+      "pairs": [
+        {
+          "key": "[L197-Q3-0] This is the mainstream view among experts in the field.",
+          "value": "This implies the strongest current basis for belief, though not certainty or unanimity."
+        },
+        {
+          "key": "[L197-Q3-1] This remains a minority view, but one taken seriously by credible researchers.",
+          "value": "This implies a genuine, ongoing scientific disagreement, not a settled question."
+        },
+        {
+          "key": "[L197-Q3-2] This result is something of an outlier compared to similar studies.",
+          "value": "This implies caution is warranted before treating this one result as the norm."
+        },
+        {
+          "key": "[L197-Q3-3] This claim is considered fringe within the scientific community.",
+          "value": "This implies the claim falls outside what most experts in the field would take seriously."
+        },
+        {
+          "key": "[L197-Q3-4] This is an emerging area still being explored.",
+          "value": "This implies genuine uncertainty, not because the idea has been rejected, but because it hasn't been fully tested yet."
+        }
+      ],
+      "hint": "How much should a reader trust each of these positions?",
+      "explanation": "The first implies the strongest current basis for belief. The second implies genuine, ongoing disagreement among credible experts. The third implies caution before generalizing from one unusual result, while the fourth implies a claim outside serious consideration, and the fifth implies real uncertainty simply because the question hasn't been fully explored yet.",
+      "paragraphTopic": "How to weigh different levels of scientific agreement"
+    },
+    {
+      "id": "RDG_READANDMATCH_L198_Q1",
+      "instruction": "Match each word with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "match",
+      "pairs": [
+        {
+          "key": "[L198-Q1-0] Base Salary",
+          "value": "The fixed portion of pay that does not depend on performance or results."
+        },
+        {
+          "key": "[L198-Q1-1] Performance-Based",
+          "value": "Depending on specific results or targets being achieved."
+        },
+        {
+          "key": "[L198-Q1-2] Deferred",
+          "value": "Delayed until a later time, rather than paid immediately."
+        },
+        {
+          "key": "[L198-Q1-3] Vested",
+          "value": "Fully and permanently earned, no longer at risk of being taken back."
+        },
+        {
+          "key": "[L198-Q1-4] Forfeitable",
+          "value": "Able to be lost or taken back under certain conditions, such as leaving early."
+        }
+      ],
+      "hint": "Four of these describe different structures of executive pay. One describes pay that can still be lost under certain conditions.",
+      "explanation": "Base salary and performance-based pay both describe how compensation is earned, one fixed, one tied to results. Deferred and vested both describe timing and security of payment, one delayed, one permanently secured. Forfeitable is different from the rest — it describes pay that hasn't been secured yet and could still be lost.",
+      "paragraphTopic": "Vocabulary for executive compensation structure"
+    },
+    {
+      "id": "RDG_READANDMATCH_L198_Q2",
+      "instruction": "Match each sentence with what it means.",
+      "subtype": "readAndMatch",
+      "interactionType": "match",
+      "pairs": [
+        {
+          "key": "[L198-Q2-0] The CEO's base salary remained unchanged from the previous year.",
+          "value": "The fixed part of the CEO's pay stayed the same as it was the year before."
+        },
+        {
+          "key": "[L198-Q2-1] A significant portion of total compensation is performance-based, tied to stock price targets.",
+          "value": "A large share of the CEO's overall pay depends on hitting specific stock price goals."
+        },
+        {
+          "key": "[L198-Q2-2] Much of this compensation is deferred, payable only after a three-year period.",
+          "value": "A lot of this pay is delayed, and won't actually be paid out until three years have passed."
+        },
+        {
+          "key": "[L198-Q2-3] Shares become fully vested only if the executive remains with the company for five years.",
+          "value": "The executive only fully and permanently owns the shares if they stay with the company for five years."
+        },
+        {
+          "key": "[L198-Q2-4] Unvested shares remain forfeitable if the executive departs early.",
+          "value": "Shares not yet fully earned can be taken back if the executive leaves before that point."
+        }
+      ],
+      "hint": "Each sentence describes a different part of the same executive's compensation structure.",
+      "explanation": "The first sentence describes the fixed portion of pay, and the second describes the performance-based portion. The third describes delayed payment, while the fourth explains when shares become permanently secured, and the fifth explains what happens if the executive leaves before that point.",
+      "paragraphTopic": "Reading an executive pay disclosure"
+    },
+    {
+      "id": "RDG_READANDMATCH_L198_Q3",
+      "instruction": "Match each version with its precise meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "match",
+      "pairs": [
+        {
+          "key": "[L198-Q3-0] The executive has received this compensation.",
+          "value": "This states the payment has already been made."
+        },
+        {
+          "key": "[L198-Q3-1] The executive is entitled to this compensation, once certain performance targets are met.",
+          "value": "This states the payment depends on specific results being achieved first."
+        },
+        {
+          "key": "[L198-Q3-2] The executive's compensation is fully vested.",
+          "value": "This states the payment is permanently secured and can no longer be taken back."
+        },
+        {
+          "key": "[L198-Q3-3] The executive's compensation remains forfeitable until 2027.",
+          "value": "This states the payment could still be lost under certain conditions before that date."
+        },
+        {
+          "key": "[L198-Q3-4] The executive's compensation has been deferred until a later date.",
+          "value": "This states the payment is delayed, though not necessarily uncertain or conditional."
+        }
+      ],
+      "hint": "These five statements about compensation look similar but each describes whether the pay is actually secured yet.",
+      "explanation": "The first states payment already received. The second states payment dependent on future performance. The third states payment permanently secured. The fourth states payment still at risk of being lost, while the fifth states payment simply delayed, without necessarily being uncertain.",
+      "paragraphTopic": "Precisely paraphrasing when compensation is actually secured"
+    },
+    {
+      "id": "RDG_READANDMATCH_L199_Q1",
+      "instruction": "Match each word with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "match",
+      "pairs": [
+        {
+          "key": "[L199-Q1-0] Register",
+          "value": "The level of formality and style used in language, adjusted for the situation."
+        },
+        {
+          "key": "[L199-Q1-1] Formal Register",
+          "value": "Language style appropriate for official, professional, or serious situations."
+        },
+        {
+          "key": "[L199-Q1-2] Informal Register",
+          "value": "Language style appropriate for casual, relaxed, or personal situations."
+        },
+        {
+          "key": "[L199-Q1-3] Code-Switching",
+          "value": "Shifting between different registers or languages depending on the situation or audience."
+        },
+        {
+          "key": "[L199-Q1-4] Audience Awareness",
+          "value": "A writer's understanding of who will read something, shaping how it's written."
+        }
+      ],
+      "hint": "Four of these describe how language shifts with formality and audience. One describes a writer's general awareness of who they're writing for.",
+      "explanation": "Formal register and informal register are opposite styles suited to different situations. Register itself and code-switching both describe the general concept and the act of shifting between styles. Audience awareness is different from the rest — it's the underlying skill that makes appropriate register choices possible, not a style itself.",
+      "paragraphTopic": "Vocabulary for register and audience"
+    },
+    {
+      "id": "RDG_READANDMATCH_L199_Q2",
+      "instruction": "Match each sentence with what it means.",
+      "subtype": "readAndMatch",
+      "interactionType": "match",
+      "pairs": [
+        {
+          "key": "[L199-Q2-0] A skilled writer adjusts register depending on the intended audience.",
+          "value": "A skilled writer changes their level of formality based on who they're writing for."
+        },
+        {
+          "key": "[L199-Q2-1] An email to a close colleague might use an informal register.",
+          "value": "A message to a coworker you know well might use a relaxed, casual style."
+        },
+        {
+          "key": "[L199-Q2-2] The same message to a client would likely shift to a formal register.",
+          "value": "The same information sent to a client would probably switch to a more formal, professional style."
+        },
+        {
+          "key": "[L199-Q2-3] This kind of code-switching happens naturally for experienced professional communicators.",
+          "value": "This kind of shifting between styles comes naturally to people experienced in professional communication."
+        },
+        {
+          "key": "[L199-Q2-4] At its core, this reflects strong audience awareness, not inconsistency.",
+          "value": "At its heart, this reflects a clear understanding of the reader, not a lack of consistency."
+        }
+      ],
+      "hint": "Each sentence describes a different aspect of how skilled writers adjust their language.",
+      "explanation": "The first sentence introduces the general skill, and the second and third give contrasting examples of it in action. The fourth names this shifting behavior directly, while the fifth explains what it really reflects about the writer.",
+      "paragraphTopic": "How a professional writer adjusts to different audiences"
+    },
+    {
+      "id": "RDG_READANDMATCH_L199_Q3",
+      "instruction": "Match each choice with what it implies.",
+      "subtype": "readAndMatch",
+      "interactionType": "match",
+      "pairs": [
+        {
+          "key": "[L199-Q3-0] The email opens with 'Hi there!' and closes with 'Cheers.'",
+          "value": "This implies a deliberately informal, friendly register, likely aimed at someone familiar."
+        },
+        {
+          "key": "[L199-Q3-1] The letter begins 'Dear Sir or Madam' and uses no contractions throughout.",
+          "value": "This implies a formal register, likely used because the reader's identity or relationship isn't personally known."
+        },
+        {
+          "key": "[L199-Q3-2] The same writer uses very different styles in two messages sent the same day.",
+          "value": "This implies a conscious adjustment to different audiences, not inconsistency in the writer's ability."
+        },
+        {
+          "key": "[L199-Q3-3] A message written for a general public audience avoids technical jargon entirely.",
+          "value": "This implies a deliberate choice to prioritize being understood over sounding expert."
+        },
+        {
+          "key": "[L199-Q3-4] A message to a specialized audience uses technical terms without defining them.",
+          "value": "This implies an assumption that the reader already shares the necessary background knowledge."
+        }
+      ],
+      "hint": "Each of these writing choices reveals something about how the writer sees their reader.",
+      "explanation": "The first implies a deliberately informal, friendly register for someone familiar. The second implies formality likely used for an unfamiliar or unknown reader. The third implies conscious adaptation, not inconsistency, while the fourth implies a choice to prioritize clarity over expertise, and the fifth implies an assumption of shared background knowledge.",
+      "paragraphTopic": "What register choices reveal about a writer's awareness of their audience"
+    },
+    {
+      "id": "RDG_READANDMATCH_L200_Q1",
+      "instruction": "Match each word with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "match",
+      "pairs": [
+        {
+          "key": "[L200-Q1-0] Comprehend",
+          "value": "To fully understand the meaning of something."
+        },
+        {
+          "key": "[L200-Q1-1] Interpret",
+          "value": "To explain or understand the meaning of something, especially when it isn't perfectly clear."
+        },
+        {
+          "key": "[L200-Q1-2] Deduce",
+          "value": "To reach a conclusion through logical reasoning based on available information."
+        },
+        {
+          "key": "[L200-Q1-3] Discern",
+          "value": "To notice or recognize something, especially something subtle or not immediately obvious."
+        },
+        {
+          "key": "[L200-Q1-4] Unify",
+          "value": "To bring separate parts together into a single, connected whole."
+        }
+      ],
+      "hint": "These five words each name a different skill a strong reader uses — and together, they describe everything this curriculum has been building toward.",
+      "explanation": "Comprehend is the foundation, simply understanding what's said. Interpret and deduce both go further, working out unclear language and reasoning to unstated conclusions. Discern adds attentiveness to subtle detail, like tone. Unify is the final step — pulling all of these separate skills together into one complete understanding.",
+      "paragraphTopic": "Vocabulary for reading with precision"
+    },
+    {
+      "id": "RDG_READANDMATCH_L200_Q2",
+      "instruction": "Match each sentence with what it means.",
+      "subtype": "readAndMatch",
+      "interactionType": "match",
+      "pairs": [
+        {
+          "key": "[L200-Q2-0] To truly comprehend a complex report, a reader must go beyond its opening summary.",
+          "value": "Fully understanding a complicated report means reading past just the introduction."
+        },
+        {
+          "key": "[L200-Q2-1] Skilled readers learn to interpret vague language, recognizing when a writer is choosing words carefully.",
+          "value": "Experienced readers learn to figure out unclear language, noticing when a writer is being deliberately careful with wording."
+        },
+        {
+          "key": "[L200-Q2-2] They also learn to deduce conclusions the text never states directly.",
+          "value": "They also learn to work out conclusions through reasoning, even when the text never states them directly."
+        },
+        {
+          "key": "[L200-Q2-3] A discerning reader notices small shifts in tone that reveal a writer's true position.",
+          "value": "A careful, attentive reader picks up on small changes in tone that reveal what a writer actually thinks."
+        },
+        {
+          "key": "[L200-Q2-4] Ultimately, strong reading means unifying all of this into one coherent understanding.",
+          "value": "In the end, strong reading means bringing all of these skills together into one clear, complete understanding."
+        }
+      ],
+      "hint": "This final passage describes, in plain terms, the very skills this curriculum has spent 200 levels building.",
+      "explanation": "The first sentence stresses reading past the surface, and the second and third describe interpreting unclear language and reasoning to unstated conclusions. The fourth adds noticing subtle tone, while the fifth ties every one of these skills together into what strong reading actually means.",
+      "paragraphTopic": "How strong readers approach a complex passage"
+    },
+    {
+      "id": "RDG_READANDMATCH_L200_Q3",
+      "instruction": "Match each statement with how it relates to the passage above.",
+      "subtype": "readAndMatch",
+      "interactionType": "match",
+      "pairs": [
+        {
+          "key": "[L200-Q3-0] After months of public debate, the city council voted to delay the proposed transit line by one year.",
+          "value": "This is directly stated in the passage."
+        },
+        {
+          "key": "[L200-Q3-1] Council members described the delay as 'a pause to get the details right,' while critics called it 'a quiet way to kill the project.'",
+          "value": "This is directly stated in the passage, and shows two sharply different framings of the same event."
+        },
+        {
+          "key": "[L200-Q3-2] The project's original budget has already been fully spent.",
+          "value": "This cannot be confirmed from the passage; nothing here states how much of the budget was spent."
+        },
+        {
+          "key": "[L200-Q3-3] At least some council members appear uncertain whether the project will ultimately move forward at all.",
+          "value": "This is a reasonable conclusion, drawn from the contrast between the official framing and the critics' more skeptical one."
+        },
+        {
+          "key": "[L200-Q3-4] Every member of the council supported the decision to delay the project.",
+          "value": "This is not supported by the passage, since critics of the decision are described separately from the council's official statement."
+        }
+      ],
+      "hint": "This is the final test: decide whether each statement is stated directly, a fair conclusion, or unsupported by the passage, reading carefully all the way to the end.",
+      "explanation": "The first two statements are stated directly, including the contrast in how different people framed the same decision. The third cannot be confirmed, since the passage never mentions the budget. The fourth is a fair conclusion drawn from that contrast in framing, while the fifth is unsupported, since critics are described as separate from the council's official position.",
+      "paragraphTopic": "The final test: stated facts, fair conclusions, and unsupported claims, together"
+    }
+  ]
 }

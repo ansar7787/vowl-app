@@ -8,18 +8,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A team of virologists studying the evolutionary dynamics of a rapidly mutating respiratory virus found that strains exhibiting increased transmissibility, spreading more easily between hosts, showed a consistent tendency toward reduced severity of illness in infected individuals across multiple independent evolutionary lineages tracked over several years, a pattern consistent with a long-standing theoretical prediction in evolutionary biology that pathogens relying on a living, mobile host for transmission face selective pressure to avoid incapacitating that host too severely or too quickly; however, the researchers cautioned this general evolutionary tendency should not be mistaken for a guaranteed or inevitable outcome for any specific future variant, since severity and transmissibility are influenced by numerous interacting genetic factors that do not always trend in the same predictable direction, and a highly transmissible but also unusually severe variant remains entirely possible under the right combination of mutations.",
+            "passage": "A pharmaceutical company's trial for a new sleep aid showed that 68 percent of participants reported falling asleep faster, compared to 31 percent in the placebo group. However, the trial only included adults aged 25-40 without any diagnosed sleep disorders, and participants were aware of which group they were assigned to, since the trial was not blinded.",
             "options": [
-                "The researchers concluded severe and highly transmissible variants are now biologically impossible.",
-                "While there's a general evolutionary tendency for more transmissible strains to become less severe, researchers caution this is not a guaranteed outcome for any specific future variant.",
-                "Every tracked lineage showed increased severity alongside increased transmissibility.",
-                "The researchers found no relationship whatsoever between transmissibility and severity across lineages."
+                "The medication has been proven effective for all adults regardless of age or sleep condition. Reading through everything the passage lays out, there is no specific detail that would push against treating this as the straightforward explanation.",
+                "The trial's design provides the strongest possible evidence available for approving the medication. Every relevant detail included in the passage is consistent with treating this as a complete and accurate account, without further qualification being necessary.",
+                "The results suggest the medication may help this specific age group fall asleep faster, though the lack of blinding and narrow participant pool limit how confidently this can be generalized.",
+                "The results show the placebo group fell asleep faster than the medication group."
             ],
-            "correctAnswer": "While there's a general evolutionary tendency for more transmissible strains to become less severe, researchers caution this is not a guaranteed outcome for any specific future variant.",
-            "hint": "Notice the researchers' explicit caution about applying this general tendency to any single future case.",
-            "explanation": "Multiple lineages showed the classic evolutionary pattern of more transmissible strains becoming milder, but the researchers explicitly caution this is a general tendency, not a guarantee, since a severe and highly transmissible variant remains genuinely possible depending on which specific mutations combine in any future strain.",
+            "correctAnswer": "The results suggest the medication may help this specific age group fall asleep faster, though the lack of blinding and narrow participant pool limit how confidently this can be generalized.",
+            "hint": "Weigh the promising percentage difference against the two specific limitations mentioned about the trial's design.",
+            "explanation": "While the percentage difference is notable, the trial's lack of blinding and narrow age range without sleep disorders are real limitations that should temper how broadly the results can be applied, making the qualified conclusion the best-supported one.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "68% vs 31% report faster sleep -> trial unblinded, narrow age range, no sleep disorders included -> results suggestive for this group, but limitations restrict broader generalization"
             ]
         },
         {
@@ -27,18 +27,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A labor economist studying the long-term wage effects of occupational licensing requirements, mandatory government-issued credentials required to legally practice certain professions, found that licensed practitioners in fields with genuinely rigorous, standardized licensing exams earned meaningfully higher average wages than practitioners in structurally similar but unlicensed occupations, even after controlling for education level and years of experience, a wage premium the economist attributed partly to licensing's function as a credible signal of minimum competence to consumers and partly to licensing's simultaneous effect of restricting the overall supply of practitioners able to legally enter the field; however, the economist noted these two explanations carry sharply different policy implications, since a signal-of-competence effect would suggest licensing genuinely benefits consumers through improved service quality, while a supply-restriction effect would suggest at least part of the wage premium comes at consumers' direct expense through reduced competition and higher prices, and disentangling how much of the observed wage premium reflects each distinct mechanism proved difficult with the available data.",
+            "passage": "A city's economic development office reported that a $2 million investment in a downtown revitalization grant program 'was associated with' 340 new jobs created in the target area over three years. The report did not specify how many of these jobs might have been created anyway due to regional economic growth during the same period, nor did it include a comparison area that did not receive the grant.",
             "options": [
-                "The economist definitively proved the entire wage premium came from restricting supply alone.",
-                "The economist definitively proved the entire wage premium came from signaling competence alone.",
-                "The wage premium likely reflects some mix of a genuine competence signal and supply restriction, but the data made it difficult to determine how much each mechanism actually contributed.",
-                "Licensed and unlicensed practitioners earned identical wages once experience was accounted for."
+                "The grant program is definitely responsible for all 340 jobs created. Nothing about how the passage frames the surrounding circumstances would suggest this conclusion needs any further qualification or limitation.",
+                "The report proves the grant program had no effect on job creation. Reading through everything the passage lays out, there is no specific detail that would push against treating this as the straightforward explanation.",
+                "Without a comparison area or an estimate of jobs that might have occurred regardless, it is difficult to know how many of the 340 jobs are actually attributable to the grant program itself.",
+                "Regional economic growth was definitely unrelated to any of the new jobs. As far as the passage's description goes, nothing about the surrounding details would suggest this needs to be treated as an incomplete picture."
             ],
-            "correctAnswer": "The wage premium likely reflects some mix of a genuine competence signal and supply restriction, but the data made it difficult to determine how much each mechanism actually contributed.",
-            "hint": "Notice the economist's explicit acknowledgment of difficulty distinguishing between the two possible explanations.",
-            "explanation": "The wage premium could reflect licensing signaling genuine competence, restricting competitive supply, or some mix of both, and the economist explicitly notes these explanations carry very different implications for consumers, while conceding that disentangling how much each mechanism actually contributed proved difficult given the available data.",
+            "correctAnswer": "Without a comparison area or an estimate of jobs that might have occurred regardless, it is difficult to know how many of the 340 jobs are actually attributable to the grant program itself.",
+            "hint": "Consider what the report is missing that would be needed to confidently attribute the jobs specifically to the grant.",
+            "explanation": "Without a comparison area or an accounting for broader regional growth, the report's association between the grant and the jobs doesn't rule out that some or many of those jobs would have appeared regardless, making a cautious conclusion the best-supported one.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Grant program 'associated with' 340 jobs -> no comparison area included -> no accounting for regional economic growth -> difficult to confidently attribute the jobs specifically to the grant program"
             ]
         },
         {
@@ -46,18 +46,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A financial researcher studying the long-term performance of actively managed mutual funds relative to low-cost passive index funds found that in any given single year, a meaningful minority of active fund managers did outperform their relevant benchmark index, sometimes substantially; however, when the researcher tracked which specific managers achieved this outperformance across multiple consecutive years rather than looking at any single year in isolation, the set of consistently outperforming managers shrank dramatically toward what would be statistically expected by chance alone if fund performance were essentially random from year to year, a finding that the researcher argued undermines the common practice of selecting active funds primarily based on strong recent performance, since a manager's strong single-year showing appears to carry little genuine predictive power for whether that same manager will continue outperforming in subsequent years.",
+            "passage": "A university study found that students who took a for-credit 'financial literacy' course reported higher confidence in managing personal budgets one year after graduation than students who didn't take the course. However, the course was an elective that required an additional tuition fee, meaning enrolled students may have already had more financial resources or interest in the subject than non-enrolled students.",
             "options": [
-                "The same set of managers reliably outperformed the benchmark across every year studied.",
-                "Strong single-year performance among active fund managers appears to carry little genuine predictive power for future outperformance, since consistent multi-year outperformance shrinks toward what chance alone would predict.",
-                "No active fund managers ever outperformed the benchmark in any single year.",
-                "Multi-year performance data showed outperformance far exceeding what chance alone would predict."
+                "The course is definitely and solely responsible for the entire confidence difference. There is nothing in how the passage presents the sequence of events that would call for treating this conclusion as only partly supported.",
+                "Students who did not take the course reported higher confidence than those who did. Taken together, the details the passage provides give no specific reason to treat this as anything other than a complete account of what occurred.",
+                "The extra tuition fee had no possible connection to which students enrolled. The way the events are described throughout the passage offers no clear signal that this particular reading should be treated with any extra caution.",
+                "Because enrollment required extra cost and was voluntary, students' pre-existing financial interest or resources may account for some of the confidence difference, not the course content alone."
             ],
-            "correctAnswer": "Strong single-year performance among active fund managers appears to carry little genuine predictive power for future outperformance, since consistent multi-year outperformance shrinks toward what chance alone would predict.",
-            "hint": "Compare how many managers outperformed in a single year versus how many did so consistently across multiple years.",
-            "explanation": "Meaningful outperformance occurred in individual years, but consistent multi-year outperformance shrank close to chance-level expectations, leading the researcher to conclude that picking active funds based on recent strong performance has little genuine predictive value, since past success doesn't reliably indicate a manager's skill will continue producing outperformance going forward.",
+            "correctAnswer": "Because enrollment required extra cost and was voluntary, students' pre-existing financial interest or resources may account for some of the confidence difference, not the course content alone.",
+            "hint": "Consider what requiring an additional fee for an elective course suggests about who was likely to enroll in the first place.",
+            "explanation": "Since the course required extra payment and voluntary enrollment, students choosing to take it may have already had more financial interest or resources, a self-selection factor that limits how confidently the confidence gap can be attributed to the course content itself.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Elective course, extra tuition fee -> enrolled students may already have more financial interest/resources -> course-takers report higher confidence -> self-selection limits how confidently the course alone explains the gap"
             ]
         },
         {
@@ -65,18 +65,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A digital ethics researcher studying algorithmic content moderation on large social platforms found that automated systems trained to detect and remove hate speech achieved high accuracy rates when evaluated against the specific dialects, slang, and cultural references most heavily represented in the systems' original training data, typically drawn disproportionately from mainstream, widely documented forms of the platform's dominant language; however, accuracy dropped substantially, and false-positive removal rates for entirely benign content rose correspondingly, when the same systems were applied to minority dialects, reclaimed slurs used within specific community contexts, or culturally specific forms of humor and irony that the training data had captured only sparsely, resulting in a moderation system that, however well-intentioned, ended up disproportionately silencing the very communities whose distinctive linguistic patterns fell outside the mainstream data the system had originally been trained on.",
+            "passage": "A city's police department reported that a new predictive policing software, which analyzes historical crime data to suggest patrol locations, was followed by a 15 percent reduction in reported burglaries in the neighborhoods where it was deployed. Critics noted that the software was deployed specifically in neighborhoods that had already seen burglary rates declining slightly for two years prior to the software's introduction, for reasons unrelated to policing.",
             "options": [
-                "The system performed equally well across all dialects, slang, and cultural contexts tested.",
-                "The moderation system appears to disproportionately silence minority communities whose distinctive language patterns were underrepresented in its training data, despite good intentions.",
-                "False-positive removal rates decreased when applied to minority dialects and community-specific language.",
-                "The training data equally represented all forms of the platform's dominant language."
+                "The software is definitely and solely responsible for the entire 15 percent reduction.",
+                "Burglary rates in these neighborhoods had been rising for two years before the software was introduced. Reading through everything the passage lays out, there is no specific detail that would push against treating this as the straightforward explanation.",
+                "Since burglaries were already declining in these neighborhoods before the software was introduced, it is difficult to confidently credit the software alone for the continued reduction.",
+                "The software was deployed randomly across all neighborhoods in the city."
             ],
-            "correctAnswer": "The moderation system appears to disproportionately silence minority communities whose distinctive language patterns were underrepresented in its training data, despite good intentions.",
-            "hint": "Notice which specific communities the system's uneven accuracy ended up disproportionately affecting.",
-            "explanation": "The system worked well on mainstream language patterns but performed poorly and over-removed content from minority dialects and community-specific speech underrepresented in training data, resulting in a system that, despite good intentions, disproportionately silenced exactly the communities whose language fell outside what the system had been trained to recognize.",
+            "correctAnswer": "Since burglaries were already declining in these neighborhoods before the software was introduced, it is difficult to confidently credit the software alone for the continued reduction.",
+            "hint": "Consider the pre-existing trend in these specific neighborhoods before the software was introduced.",
+            "explanation": "Because these neighborhoods already had a declining burglary trend before the software arrived, the reported reduction may partly reflect the continuation of that existing trend rather than something entirely attributable to the software itself.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Software deployed in neighborhoods with already-declining burglary rates for 2 prior years -> burglaries drop 15% further -> pre-existing trend makes it difficult to confidently credit the software alone"
             ]
         },
         {
@@ -84,18 +84,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A clinical researcher studying racial disparities in pain management found that patients from certain minority racial backgrounds were prescribed opioid pain medication at significantly lower rates than white patients presenting with clinically comparable levels of documented pain following similar surgical procedures, even after the analysis statistically controlled for insurance type, hospital system, and the specific procedure performed; however, the researcher was careful to note that this finding, while consistent with prior research on racial bias in pain assessment and treatment, does not by itself establish the specific mechanism driving the disparity, since it remains unclear from the available data whether the gap primarily reflects differences in how clinicians perceived or believed patients' reported pain levels, differing clinician assumptions about patients' risk of opioid misuse, or some combination of these and other unmeasured factors operating simultaneously within the clinical encounter.",
+            "passage": "A workplace wellness program reported that employees who participated in its optional weekly mindfulness sessions took an average of 2.1 fewer sick days per year than non-participants. The program was offered during the lunch hour, and participation required employees to have enough flexibility in their workload to step away for 45 minutes without falling behind.",
             "options": [
-                "The disparity in opioid prescribing is well-documented, but the specific underlying mechanism driving it remains unclear from the available data.",
-                "The researcher definitively identified differing risk assumptions as the sole cause of the disparity.",
-                "No disparity in opioid prescribing rates was found once insurance and hospital system were controlled for.",
-                "The researcher confirmed clinicians' pain perception was entirely unrelated to the observed disparity."
+                "The mindfulness sessions are definitely and solely responsible for the entire difference in sick days. Nothing in the way the passage lays out these events gives any real reason to treat this as an incomplete or qualified reading of what took place.",
+                "Since participation required having flexible enough workloads to step away, employees with lighter or more manageable workloads, a factor independently linked to less work-related stress, may explain part of the difference in sick days.",
+                "Employees with the heaviest workloads were the most likely to participate. The full account given in the passage offers no particular basis for reading this any differently than as a plain, straightforward description of events.",
+                "Sick day usage showed no relationship to any workplace factor."
             ],
-            "correctAnswer": "The disparity in opioid prescribing is well-documented, but the specific underlying mechanism driving it remains unclear from the available data.",
-            "hint": "Notice the researcher's explicit caution about what the finding does, and does not, establish.",
-            "explanation": "A real disparity in prescribing rates was found even after controlling for several factors, but the researcher explicitly notes this doesn't establish the specific underlying mechanism, since several distinct explanations remain equally plausible given the available data, meaning the honest conclusion documents the gap without overclaiming its precise cause.",
+            "correctAnswer": "Since participation required having flexible enough workloads to step away, employees with lighter or more manageable workloads, a factor independently linked to less work-related stress, may explain part of the difference in sick days.",
+            "hint": "Consider what being able to step away for 45 minutes during lunch suggests about a participant's typical workload.",
+            "explanation": "Since only employees with flexible enough workloads could realistically participate, and workload flexibility could independently relate to stress and sick day usage, this self-selection factor limits how confidently the sick day difference can be attributed to the sessions alone.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Participation requires 45 min of workload flexibility -> participants likely have more manageable workloads already -> participants: fewer sick days -> workload flexibility may explain part of the difference, not sessions alone"
             ]
         },
         {
@@ -103,18 +103,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A linguist studying the long-term trajectory of language endangerment found that indigenous languages with even a small number of fluent child speakers, meaning at least some children were still acquiring the language as a first language at home rather than learning it later as a secondary or classroom language, showed dramatically better long-term survival prospects over subsequent decades than languages with only elderly fluent speakers remaining, even when the second group had a considerably larger total number of fluent speakers at the time of the initial assessment, a finding that led the linguist to argue that raw speaker count, the metric most commonly cited in discussions of language endangerment, may be a considerably less reliable predictor of a language's actual survival than the presence or absence of intergenerational transmission occurring within families.",
+            "passage": "A national survey found that adults who reported reading physical books regularly scored higher on a general knowledge quiz than adults who reported not reading regularly. The survey also found that regular readers had, on average, three more years of formal education than non-readers, and education level was independently correlated with quiz performance in the same survey.",
             "options": [
-                "The presence of intergenerational transmission within families appears to be a more reliable predictor of a language's survival than raw speaker count.",
-                "Raw speaker count proved to be the single most reliable predictor of language survival.",
-                "Languages with only elderly speakers showed better long-term survival than languages with child speakers.",
-                "Total speaker count and intergenerational transmission were found to be equally unreliable predictors."
+                "Reading physical books alone is definitely and solely responsible for the score difference.",
+                "Since regular readers also had more years of formal education, a factor independently linked to quiz performance, it is difficult to credit reading habits alone for the score difference.",
+                "Non-readers had more years of formal education than regular readers.",
+                "Education level showed no independent relationship to quiz performance in this survey."
             ],
-            "correctAnswer": "The presence of intergenerational transmission within families appears to be a more reliable predictor of a language's survival than raw speaker count.",
-            "hint": "Compare the two languages' survival prospects, noting which one had more total speakers versus which had child speakers.",
-            "explanation": "Languages with even a few child speakers survived better long-term than languages with more total speakers but only elderly ones, leading the linguist to argue that whether a language is being passed to children within families matters more for survival than the raw number of fluent speakers alone.",
+            "correctAnswer": "Since regular readers also had more years of formal education, a factor independently linked to quiz performance, it is difficult to credit reading habits alone for the score difference.",
+            "hint": "Consider the additional detail about education level and its independently noted relationship to quiz scores.",
+            "explanation": "Since the survey itself found education level independently correlated with quiz performance, and regular readers also had more education on average, this overlapping factor makes it difficult to confidently attribute the score difference to reading habits alone.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Regular readers: higher quiz scores -> regular readers also have more years of education -> education independently correlated with quiz scores in this survey -> education overlap makes it difficult to credit reading habits alone"
             ]
         },
         {
@@ -122,18 +122,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A researcher evaluating a university's shift from letter grades to a simplified pass/fail system for introductory science courses, intended to reduce competitive pressure and encourage collaborative learning among first-year students, found that reported student stress levels did decrease as intended, and peer collaboration on coursework increased measurably based on both survey data and observed study-group participation; however, performance on a standardized subject-matter exam administered independently of the course grading system itself showed a modest but statistically significant decline compared to prior cohorts graded under the traditional letter system, leading the researcher to suggest that whatever role competitive grading pressure had previously played in stress and reduced collaboration, it may have also been providing some genuine, if uncomfortable, motivational function for mastering course material that the pass/fail system did not adequately replace.",
+            "passage": "A city's transportation department found that intersections where 'no right turn on red' signs were installed had a 40 percent reduction in pedestrian collisions the following year, compared to a citywide average reduction of 8 percent for the same period, attributed by officials to a broader public safety campaign running that year.",
             "options": [
-                "The pass/fail system improved both student wellbeing and standardized exam performance.",
-                "Standardized exam scores improved significantly under the new pass/fail system.",
-                "Student stress levels increased after the university switched to the pass/fail system.",
-                "The pass/fail system reduced stress and increased collaboration as intended, but may have also removed some motivational pressure that had been genuinely helping students master course material."
+                "The 40 percent reduction is entirely due to the citywide safety campaign, with the signs having no additional effect. Reading through everything the passage lays out, there is no specific detail that would push against treating this as the straightforward explanation.",
+                "Pedestrian collisions increased at intersections with the new signs.",
+                "The citywide safety campaign had no measurable effect on collision rates anywhere. The full account given in the passage offers no particular basis for reading this any differently than as a plain, straightforward description of events.",
+                "Since the campaign's effect (8 percent citywide) is much smaller than the improvement at sign intersections (40 percent), the signs appear to have an effect beyond what the general campaign alone would explain."
             ],
-            "correctAnswer": "The pass/fail system reduced stress and increased collaboration as intended, but may have also removed some motivational pressure that had been genuinely helping students master course material.",
-            "hint": "Notice the passage mentions both intended benefits and an unintended academic cost of the pass/fail system.",
-            "explanation": "Stress dropped and collaboration rose as intended, but independent exam scores fell modestly, leading the researcher to suggest the competitive pressure the new system removed may have been serving a genuine, if uncomfortable, motivational purpose that pass/fail grading didn't adequately replace.",
+            "correctAnswer": "Since the campaign's effect (8 percent citywide) is much smaller than the improvement at sign intersections (40 percent), the signs appear to have an effect beyond what the general campaign alone would explain.",
+            "hint": "Compare the size of the reduction at sign intersections to the citywide baseline attributed to the general campaign.",
+            "explanation": "Since the citywide campaign alone is associated with an 8 percent reduction, but sign intersections saw a much larger 40 percent reduction, the gap between these two figures suggests the signs contributed an effect beyond what the general campaign explains on its own.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Citywide reduction (general campaign): 8% -> sign intersections: 40% reduction -> gap between the two suggests signs have an effect beyond the general campaign alone"
             ]
         },
         {
@@ -141,18 +141,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "An environmental economist studying the effects of a plastic bag fee implemented at grocery stores found that the fee produced a substantial and immediate reduction in single-use plastic bag consumption at checkout; however, a follow-up analysis of household waste composition found that sales of small plastic garbage bags, previously often replaced in that role by repurposed shopping bags at no additional cost, increased by an amount that offset a meaningful portion of the fee's apparent plastic reduction, since many households had been reusing free shopping bags as bin liners and simply substituted a different, separately purchased plastic product once the free shopping bags became less available at checkout, according to a household waste audit conducted across several participating grocery chains.",
+            "passage": "A hospital's surgical department reported that patients who received a new pre-surgery breathing exercise protocol had a post-surgery pneumonia rate of 3 percent, compared to a historical rate of 11 percent for similar surgeries at the same hospital in prior years. No other significant changes to surgical procedures, staff, or patient population were reported during this period.",
             "options": [
-                "The fee produced a genuine net reduction in total household plastic consumption with no offsetting substitution.",
-                "The plastic bag fee's true net effect on total household plastic consumption appears smaller than the checkout reduction alone suggests, since households substituted other purchased plastic bags.",
-                "Sales of small plastic garbage bags decreased alongside the reduction in shopping bag use.",
-                "Households showed no change in how they sourced bin liners after the fee began."
+                "The breathing protocol had no possible connection to the reduced pneumonia rate.",
+                "Given that no other significant changes were reported during this period, the breathing protocol appears to be a strong candidate for explaining the reduced pneumonia rate.",
+                "The reduction is definitely explained by unreported changes to the surgical staff. Every relevant detail included in the passage is consistent with treating this as a complete and accurate account, without further qualification being necessary.",
+                "Post-surgery pneumonia rates increased after the protocol was introduced."
             ],
-            "correctAnswer": "The plastic bag fee's true net effect on total household plastic consumption appears smaller than the checkout reduction alone suggests, since households substituted other purchased plastic bags.",
-            "hint": "Notice what happened to garbage bag sales after shopping bags became less freely available.",
-            "explanation": "Checkout bag use dropped, but garbage bag purchases rose to offset the loss of free reusable shopping bags, suggesting the fee's true net effect on total household plastic consumption is smaller than the checkout numbers alone would suggest, complicating a simple before-and-after assessment.",
+            "correctAnswer": "Given that no other significant changes were reported during this period, the breathing protocol appears to be a strong candidate for explaining the reduced pneumonia rate.",
+            "hint": "Consider what the passage explicitly states about other potential changes during this same period.",
+            "explanation": "Since the passage explicitly states no other significant changes occurred, this substantially strengthens the case that the breathing protocol itself is responsible for the notable drop in pneumonia rates, compared to the more common situation where multiple explanations are equally plausible.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Historical pneumonia rate: 11% -> breathing protocol introduced -> new rate: 3%, no other significant changes reported -> absence of other changes strengthens the case for the protocol as the explanation"
             ]
         },
         {
@@ -160,18 +160,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A transportation researcher studying high-speed rail's effect on regional air travel found that on routes where a high-speed rail journey took under three hours, rail captured a majority market share from air travel within a few years of the rail line opening, a substitution effect strong enough that airlines on several such routes eventually discontinued short-haul flights entirely; however, on routes where the equivalent rail journey exceeded four hours, even with comparable overall door-to-door travel time once airport transit and security were factored in, air travel retained the majority of the market, suggesting travelers' preference for rail over air may depend on a specific, fairly narrow threshold of in-vehicle travel time rather than on total door-to-door travel time being roughly comparable between the two options.",
+            "passage": "A city's public library reported that its 'one book, one city' community reading program, where all branches promoted the same book for a month, coincided with a 25 percent rise in overall library card sign-ups that month, compared to the same month in each of the previous three years, which showed consistent sign-up numbers with little variation.",
             "options": [
-                "Rail captured majority market share on every route regardless of journey length.",
-                "Air travel retained majority market share on routes under three hours as well.",
-                "Travelers' preference for rail over air appears to depend on a specific threshold of in-vehicle travel time, rather than simply on comparable total door-to-door travel time.",
-                "Total door-to-door travel time was the only factor that predicted travelers' mode preference."
+                "Library card sign-ups had always fluctuated significantly during this month in past years.",
+                "The reading program definitely had no connection to the sign-up increase.",
+                "Since sign-ups had been consistent in this same month for three prior years, the reading program is a plausible explanation for this particular month's unusual increase.",
+                "Sign-ups decreased during the month of the reading program."
             ],
-            "correctAnswer": "Travelers' preference for rail over air appears to depend on a specific threshold of in-vehicle travel time, rather than simply on comparable total door-to-door travel time.",
-            "hint": "Compare the outcomes on routes under three hours with the outcomes on routes over four hours, despite similar total door-to-door times.",
-            "explanation": "Rail dominated on sub-three-hour routes but lost to air on routes over four hours, even when total door-to-door time was similar, suggesting travelers respond to a specific threshold of actual in-vehicle time rather than simply weighing total travel time between the two options.",
+            "correctAnswer": "Since sign-ups had been consistent in this same month for three prior years, the reading program is a plausible explanation for this particular month's unusual increase.",
+            "hint": "Consider what the consistent pattern in previous years suggests about how unusual this particular month's increase was.",
+            "explanation": "Because this same month showed consistent, stable sign-up numbers in the three years before the program, the sudden 25 percent jump during the program month stands out as unusual, making the reading program a plausible explanation for that specific deviation.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Same month, prior 3 years: consistent sign-up numbers -> reading program launches -> that month: sign-ups rise 25% -> consistency in prior years makes the program a plausible explanation for this unusual increase"
             ]
         },
         {
@@ -179,18 +179,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A family researcher studying adult children who provide significant unpaid caregiving for aging parents while also raising their own children, a group sometimes described as the 'sandwich generation,' found that caregivers who maintained at least one entirely personal activity unrelated to either caregiving role, a hobby, friendship, or interest belonging solely to themselves, reported significantly lower burnout scores than caregivers whose time was allocated exclusively between parental caregiving and childrearing responsibilities with no protected personal time whatsoever; however, the researcher found this protective effect disappeared entirely among caregivers reporting fewer than three hours per week for this personal activity, suggesting a minimum meaningful threshold of protected time may be necessary before any benefit against burnout reliably emerges.",
+            "passage": "A regional bank's internal audit found that branches using a new customer greeting script had higher customer satisfaction scores than branches using the old script. However, the new script was piloted exclusively at branches that had recently undergone full renovations with updated interiors, while branches using the old script were generally older locations awaiting renovation.",
             "options": [
-                "Any amount of personal time, however small, reliably protected against caregiver burnout.",
-                "Caregivers with no personal time reported lower burnout than those with protected personal time.",
-                "The amount of time spent on a personal activity had no bearing on burnout scores.",
-                "A personal activity appears to protect against caregiver burnout only once it reaches a minimum threshold of at least a few hours per week, not simply from having any personal time at all."
+                "Because the new script was tied specifically to recently renovated branches, it is difficult to separate the script's effect from the effect of the renovated environment itself.",
+                "The new script alone is definitely and solely responsible for the higher satisfaction scores. Taken together, the details the passage provides give no specific reason to treat this as anything other than a complete account of what occurred.",
+                "The renovated branches all used the old greeting script.",
+                "Satisfaction scores showed no relationship to any branch characteristic."
             ],
-            "correctAnswer": "A personal activity appears to protect against caregiver burnout only once it reaches a minimum threshold of at least a few hours per week, not simply from having any personal time at all.",
-            "hint": "Notice the specific threshold the researcher found necessary before the protective effect against burnout appeared.",
-            "explanation": "Having a personal activity was protective against burnout, but only above roughly three hours per week, below which the protective effect disappeared entirely, suggesting a meaningful minimum amount of dedicated personal time is necessary rather than any small amount being sufficient on its own.",
+            "correctAnswer": "Because the new script was tied specifically to recently renovated branches, it is difficult to separate the script's effect from the effect of the renovated environment itself.",
+            "hint": "Consider how tightly the script and the renovation status overlap in this specific rollout.",
+            "explanation": "Since the new script was piloted only at renovated branches, with no renovated branches using the old script for comparison, it's impossible to isolate whether the script itself or the renovated environment explains the satisfaction difference.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "New script piloted only at renovated branches -> old script only at older, unrenovated branches -> satisfaction higher at new-script branches -> script and renovation are fully overlapping, making it impossible to isolate one factor"
             ]
         },
         {
@@ -198,18 +198,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A public health researcher evaluating community garden programs in low-income urban neighborhoods found that neighborhoods with an active community garden reported measurable increases in self-reported vegetable consumption and neighborly social interaction compared to demographically similar neighborhoods without one; however, when the researcher examined which specific residents were actually participating in garden activities, participation skewed heavily toward already relatively socially connected residents who had pre-existing ties to garden organizers, while more socially isolated residents, arguably the population with the most to potentially gain from increased social interaction, remained largely unengaged with the garden despite its physical proximity, suggesting the garden's measured neighborhood-level benefits may be concentrated among a subset of residents rather than being broadly distributed across the neighborhood as a whole.",
+            "passage": "A software company found that customers who completed its optional onboarding tutorial had a 30-day product retention rate of 78 percent, compared to 45 percent for customers who skipped the tutorial. A/B testing data showed that customers were randomly assigned to see or not see a prompt encouraging tutorial completion, and among those shown the prompt, those who chose to complete the tutorial still had substantially higher retention than those who saw the prompt but declined.",
             "options": [
-                "Socially isolated residents were the primary participants in the garden's activities.",
-                "The garden's benefits were distributed evenly and broadly across all types of residents.",
-                "Participation in the garden had no relationship to residents' existing social connections.",
-                "The community garden's benefits appear concentrated among already socially connected residents, with more isolated residents, who might benefit most, remaining largely unengaged."
+                "The random assignment of the prompt fully explains the entire retention difference. There is nothing in how the passage presents the sequence of events that would call for treating this conclusion as only partly supported.",
+                "Customers who declined the tutorial had higher retention than those who completed it. As far as the passage's description goes, nothing about the surrounding details would suggest this needs to be treated as an incomplete picture.",
+                "Retention rates showed no relationship to tutorial completion in this data. Reading through everything the passage lays out, there is no specific detail that would push against treating this as the straightforward explanation.",
+                "Since the prompt itself was randomly assigned but retention differences still appeared based on the choice to complete or decline the tutorial, factors other than random assignment likely explain part of the retention gap."
             ],
-            "correctAnswer": "The community garden's benefits appear concentrated among already socially connected residents, with more isolated residents, who might benefit most, remaining largely unengaged.",
-            "hint": "Notice which specific group of residents the researcher found was actually participating in the garden.",
-            "explanation": "Overall neighborhood measures improved, but actual participation was concentrated among already-connected residents, while more isolated residents, who might benefit most, stayed unengaged despite physical proximity, suggesting the garden's true benefits may not be as broadly distributed across the neighborhood as the aggregate statistics alone would suggest.",
+            "correctAnswer": "Since the prompt itself was randomly assigned but retention differences still appeared based on the choice to complete or decline the tutorial, factors other than random assignment likely explain part of the retention gap.",
+            "hint": "Notice that even among customers who all saw the same random prompt, an outcome difference still existed based on their choice.",
+            "explanation": "Since the prompt itself was randomly shown, but a retention gap still existed between those who chose to complete versus decline the tutorial after seeing it, this suggests something about the customers' choice itself, not just random prompt exposure, relates to the retention difference.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Prompt randomly shown to some customers -> among those shown it, completers have higher retention than decliners -> since prompt exposure was random but choice still predicts retention, the choice itself likely reflects some other explanatory factor"
             ]
         },
         {
@@ -217,18 +217,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A sports scientist studying talent identification in youth athletics found that coaches evaluating young athletes for elite development programs consistently rated athletes born earlier in the selection year's cutoff period more favorably than athletes born later in the same year, even when formal physical testing showed no meaningful difference in underlying athletic ability between the two groups, a well-documented phenomenon attributed to the older children's temporary physical maturity advantage during early adolescence being mistaken by evaluators for genuine long-term talent; however, longitudinal tracking found that by early adulthood, athletes originally selected partly due to this early maturity advantage showed no better ultimate career outcomes than a comparison group of similarly talented athletes who had been passed over at the youth level specifically because of their later birth date within the selection cutoff.",
+            "passage": "A city's parks department found that a newly installed public art sculpture in a downtown plaza coincided with a reported 12 percent increase in plaza visitors over the following six months. During roughly the same period, a popular new restaurant also opened directly adjacent to the plaza, and a nearby office building completed a major renovation that added several hundred new workers to the area.",
             "options": [
-                "Athletes selected due to early maturity showed clearly superior career outcomes by adulthood.",
-                "Formal physical testing showed a clear underlying ability difference between the two groups.",
-                "Early physical maturity, mistaken by coaches for genuine talent, does not appear to predict better ultimate career outcomes by adulthood compared to equally talented athletes overlooked due to birth date alone.",
-                "Birth date within the selection year had no bearing on how coaches rated young athletes."
+                "The sculpture is definitely and solely responsible for the entire visitor increase.",
+                "The restaurant opening and office renovation had no possible connection to plaza visitors.",
+                "With multiple changes happening in the same area around the same time, it is difficult to confidently attribute the visitor increase specifically to the sculpture.",
+                "Plaza visitor numbers actually decreased over this six-month period."
             ],
-            "correctAnswer": "Early physical maturity, mistaken by coaches for genuine talent, does not appear to predict better ultimate career outcomes by adulthood compared to equally talented athletes overlooked due to birth date alone.",
-            "hint": "Compare the ultimate career outcomes of athletes selected due to early maturity with those passed over due to later birth date.",
-            "explanation": "Coaches favored athletes with a temporary maturity advantage, mistaking it for genuine talent, but by adulthood those athletes showed no better career outcomes than equally talented peers overlooked for their later birth date, suggesting the early selection bias didn't actually identify superior long-term talent.",
+            "correctAnswer": "With multiple changes happening in the same area around the same time, it is difficult to confidently attribute the visitor increase specifically to the sculpture.",
+            "hint": "Count how many separate changes the passage mentions happening in this same area during this same period.",
+            "explanation": "With three separate changes, the sculpture, a new restaurant, and an office renovation adding workers, all occurring around the same time in the same area, the passage does not provide enough information to isolate which change, or combination, explains the visitor increase.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Sculpture installed -> restaurant also opens nearby -> office renovation adds workers to area -> plaza visitors rise 12% -> three simultaneous changes make it difficult to attribute the increase specifically to the sculpture"
             ]
         },
         {
@@ -236,18 +236,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A workforce researcher studying the effects of transparent internal salary bands, where a company publicly discloses the minimum and maximum pay for every role without necessarily revealing individual employees' exact salaries, found that the practice reduced pay disparities between demographic groups performing comparable work within the same band; however, the researcher also found that the visible bands appeared to compress overall pay growth for the company's highest individual performers, since managers reported feeling more constrained about awarding pay increases that would push an individual salary noticeably above the publicly stated band maximum, even in cases the manager genuinely believed were merited by that employee's exceptional performance, suggesting transparency's equity benefits may come paired with a real, if less discussed, cost to individual performance-based pay flexibility.",
+            "passage": "A national fitness chain found that members who used its app to log workouts had a gym attendance rate 35 percent higher than members who didn't use the app. The company's data science team also found that this pattern held consistently even when comparing only members who joined in the same month, paid for the same membership tier, and lived within the same distance range from their home gym.",
             "options": [
-                "Transparent salary bands reduced pay disparities with no effect on top performers' pay growth.",
-                "Pay growth for top performers increased once salary bands became transparent.",
-                "Transparent salary bands appear to reduce demographic pay disparities while also compressing pay growth for top performers, suggesting a real trade-off between equity and individual pay flexibility.",
-                "Salary band transparency had no measurable effect on demographic pay disparities."
+                "The attendance difference is entirely explained by differences in membership tier.",
+                "The attendance difference is entirely explained by how far members live from the gym. There is nothing in how the passage presents the sequence of events that would call for treating this conclusion as only partly supported.",
+                "Since the pattern held even after accounting for join date, membership tier, and distance, the app usage itself appears to be a meaningful factor in the attendance difference, independent of these other variables.",
+                "The pattern disappeared once join date, tier, and distance were accounted for."
             ],
-            "correctAnswer": "Transparent salary bands appear to reduce demographic pay disparities while also compressing pay growth for top performers, suggesting a real trade-off between equity and individual pay flexibility.",
-            "hint": "Notice the passage mentions both an equity benefit and a cost affecting a specific group, top performers.",
-            "explanation": "Transparent bands reduced pay disparities between groups, but they also compressed growth for top performers, since managers felt constrained about exceeding the publicly stated maximum, suggesting the equity benefit came paired with a genuine, if less obvious, cost to rewarding exceptional individual performance.",
+            "correctAnswer": "Since the pattern held even after accounting for join date, membership tier, and distance, the app usage itself appears to be a meaningful factor in the attendance difference, independent of these other variables.",
+            "hint": "Consider what it means that the pattern remained consistent even after controlling for several other specific variables.",
+            "explanation": "Because the data science team specifically controlled for join date, membership tier, and distance, and the attendance gap persisted anyway, this strengthens the case that app usage itself relates meaningfully to attendance, beyond what these other factors alone would explain.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "App users: 35% higher attendance -> pattern holds even after controlling for join date, tier, distance -> app usage appears meaningfully linked to attendance independent of these other factors"
             ]
         },
         {
@@ -255,18 +255,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A team of neuroscientists studying the long-term effects of bilingualism on cognitive aging found that lifelong bilingual individuals showed a later average age of onset for clinically diagnosed dementia symptoms compared to monolingual individuals with otherwise similar underlying levels of brain pathology observed post-mortem, suggesting bilingualism may build a form of cognitive reserve that allows the brain to compensate for underlying disease processes for longer before symptoms become clinically apparent; however, the researchers emphasized that this apparent protective effect describes a delay in symptom onset rather than a difference in the underlying disease process itself, meaning bilingualism appeared to help mask existing pathology for longer rather than actually preventing or slowing the biological progression of the disease within the brain.",
+            "passage": "A city's school district found that students who attended a summer reading program had, on average, less 'summer learning loss' (measured by comparing spring and fall test scores) than students who didn't attend. Enrollment in the program was based on a lottery among all students who applied, with far more applicants than available spots, and the lottery numbers had no connection to any student's prior academic performance.",
             "options": [
-                "Bilingualism was found to slow the underlying biological progression of the disease itself.",
-                "Bilingual and monolingual individuals showed identical underlying brain pathology and symptom onset ages.",
-                "Bilingualism appears to delay when dementia symptoms become apparent, rather than actually slowing the underlying biological disease process itself.",
-                "The researchers found no relationship between bilingualism and symptom onset timing."
+                "Only students with the highest prior test scores were selected for the program. Nothing in the way the passage lays out these events gives any real reason to treat this as an incomplete or qualified reading of what took place.",
+                "The lottery system was specifically designed to select struggling students only. Every relevant detail included in the passage is consistent with treating this as a complete and accurate account, without further qualification being necessary.",
+                "Summer learning loss showed no relationship to program attendance. The way the events are described throughout the passage offers no clear signal that this particular reading should be treated with any extra caution.",
+                "Since enrollment was determined by a lottery unrelated to prior performance, the program itself is a more plausible explanation than self-selection by already high-performing students."
             ],
-            "correctAnswer": "Bilingualism appears to delay when dementia symptoms become apparent, rather than actually slowing the underlying biological disease process itself.",
-            "hint": "Notice the specific distinction the researchers draw between delaying symptoms and slowing the underlying disease process.",
-            "explanation": "Bilingual individuals showed later symptom onset despite similar underlying pathology, but the researchers explicitly distinguish this from actually slowing the disease itself, meaning bilingualism appears to help the brain compensate for and mask existing damage longer, rather than preventing or slowing the biological progression of the disease.",
+            "correctAnswer": "Since enrollment was determined by a lottery unrelated to prior performance, the program itself is a more plausible explanation than self-selection by already high-performing students.",
+            "hint": "Consider what the lottery detail specifically rules out as a competing explanation.",
+            "explanation": "Because the passage explicitly states the lottery was unrelated to prior academic performance, this detail rules out the common concern that only already high-performing or motivated students enrolled, strengthening the case that the program itself, not self-selection, explains the difference.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Program enrollment via lottery, unrelated to prior performance -> program attendees show less summer learning loss -> lottery detail rules out self-selection by high performers, strengthening the program as the explanation"
             ]
         },
         {
@@ -274,18 +274,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A food industry analyst studying consumer response to 'ugly produce' subscription boxes, which deliver misshapen or blemished fruits and vegetables that would otherwise be rejected by traditional retailers for purely cosmetic reasons, at a discounted price, found that first-time subscribers reported high initial satisfaction driven substantially by the appealing environmental and anti-waste narrative associated with the service; however, subscriber retention data revealed that satisfaction, and subsequent renewal rates, correlated far more strongly with the actual practical usability of the produce received, whether items arrived in genuinely edible condition and could be used before spoiling, than with subscribers' stated environmental values, suggesting that while ethical narratives may be highly effective at initially attracting subscribers, practical product quality ultimately determines whether a subscription service can retain them over time.",
+            "passage": "A regional airline reported that flights it operated using a new fuel-efficient aircraft model had 18 percent lower fuel costs per flight than flights using its older aircraft model on the same routes, with similar passenger loads, similar weather conditions logged for both groups, and pilots rotating between both aircraft types rather than being assigned exclusively to one model.",
             "options": [
-                "While the environmental narrative attracts initial subscribers, practical product usability appears to be the stronger determinant of whether subscribers actually stay.",
-                "Environmental values were found to be the strongest predictor of subscriber retention.",
-                "Practical product usability had no measurable relationship to subscriber retention.",
-                "Initial satisfaction and long-term retention were driven by identical factors."
+                "Passenger load differences are definitely responsible for the fuel cost difference. Nothing in the way the passage lays out these events gives any real reason to treat this as an incomplete or qualified reading of what took place.",
+                "Given that routes, passenger loads, weather, and pilot assignment were all similar between the two aircraft types, the aircraft model itself appears to be the most plausible explanation for the fuel cost difference.",
+                "Pilots were assigned exclusively to one aircraft type or the other. There is nothing in how the passage presents the sequence of events that would call for treating this conclusion as only partly supported.",
+                "Fuel costs showed no relationship to which aircraft model was used."
             ],
-            "correctAnswer": "While the environmental narrative attracts initial subscribers, practical product usability appears to be the stronger determinant of whether subscribers actually stay.",
-            "hint": "Compare what drove initial satisfaction with what the retention data showed actually predicted renewal.",
-            "explanation": "The environmental narrative drove strong initial satisfaction, but retention correlated more strongly with practical usability of the produce itself, suggesting the appealing story is effective for attracting new subscribers, while actual product quality is what ultimately determines whether a service can keep them subscribed over time.",
+            "correctAnswer": "Given that routes, passenger loads, weather, and pilot assignment were all similar between the two aircraft types, the aircraft model itself appears to be the most plausible explanation for the fuel cost difference.",
+            "hint": "Consider how many potential competing explanations the passage explicitly rules out as similar between the two groups.",
+            "explanation": "Since the passage explicitly states routes, passenger loads, weather, and pilot rotation were all similar between the two aircraft groups, these common competing explanations are ruled out, leaving the aircraft model itself as the most plausible remaining explanation for the fuel cost difference.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Similar routes, loads, weather, pilot rotation between old and new aircraft -> new aircraft: 18% lower fuel costs -> common competing factors ruled out, leaving aircraft model as the most plausible explanation"
             ]
         },
         {
@@ -293,18 +293,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A team of researchers studying the effectiveness of app-based mental health interventions, self-guided programs offering cognitive behavioral therapy techniques without direct human therapist involvement, found that users who completed a full structured program showed meaningful symptom improvement comparable to some forms of traditional in-person therapy for mild to moderate cases; however, completion rates for these self-guided programs were strikingly low, with the overwhelming majority of users abandoning the program well before completion, meaning the genuinely promising results found among completers may substantially overstate the intervention's likely real-world population-level impact, since most people who download such an app in practice never actually receive the full dose of treatment the encouraging completer-only results are based on.",
+            "passage": "A hospital network's study found that patients who received a specific post-surgical medication had a complication rate of 4 percent, compared to 9 percent for patients who received a standard alternative medication. The study was double-blinded, meaning neither patients nor treating physicians knew which medication a patient received, and patients were randomly assigned to each group at the start of the study.",
             "options": [
-                "The promising results found among program completers likely overstate the intervention's real-world impact, since most users abandon the program before receiving the full treatment those results are based on.",
-                "Completion rates for the self-guided programs were consistently high across most users.",
-                "Users who abandoned the program showed better outcomes than those who completed it.",
-                "The completer-only results accurately reflect the typical real-world experience of most app users."
+                "The difference in complication rates is definitely explained by physician bias in treatment. This would remain the case regardless of any other detail in the passage.",
+                "Patients who knew which medication they received had fewer complications.",
+                "Given the random assignment and double-blinding, the medication itself is a well-supported explanation for the difference in complication rates.",
+                "The complication rate was identical between the two medication groups."
             ],
-            "correctAnswer": "The promising results found among program completers likely overstate the intervention's real-world impact, since most users abandon the program before receiving the full treatment those results are based on.",
-            "hint": "Notice the gap the passage describes between results among completers and what happens to most people who actually download the app.",
-            "explanation": "Completers showed real improvement, but most users abandon these programs before finishing, meaning the encouraging completer-based results likely overstate what most people who actually download the app will experience in practice, since they typically don't receive the full treatment those promising results depend on.",
+            "correctAnswer": "Given the random assignment and double-blinding, the medication itself is a well-supported explanation for the difference in complication rates.",
+            "hint": "Consider what randomization and double-blinding specifically rule out as competing explanations.",
+            "explanation": "Random assignment rules out that healthier patients were more likely to receive one medication, and double-blinding rules out bias from patients or physicians knowing the assignment, together making the medication itself a well-supported explanation for the observed difference.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Patients randomly assigned, study double-blinded -> medication group: 4% complications, alternative group: 9% -> randomization and blinding rule out selection bias and observer bias -> medication itself well-supported as the explanation"
             ]
         },
         {
@@ -312,18 +312,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A literary scholar studying reader response to novels featuring an unreliable narrator, a narrative technique where the story's teller is revealed to be deceptive, mistaken, or otherwise not fully trustworthy, found that readers who correctly identified the narrator's unreliability partway through the novel, before an explicit revelation, reported higher overall satisfaction with the reading experience than readers who either never identified it or only recognized it at the moment of explicit textual revelation; however, this satisfaction gap disappeared entirely for a specific subset of readers who described actively disliking puzzle-solving or ambiguity in fiction generally, for whom early recognition of the narrator's unreliability instead correlated with mild frustration rather than the satisfaction other readers reported experiencing throughout the rest of the novel.",
+            "passage": "A city's utility company found that households enrolled in a peer-comparison program, which included a monthly note showing how a household's energy use compared to similar-sized neighboring homes, reduced energy consumption by an average of 8 percent. Enrollment was automatic for all households in a randomly selected set of zip codes, with no opt-in or opt-out choice offered to residents, and neighboring zip codes not selected served as a comparison group showing no significant change in energy use over the same period.",
             "options": [
-                "Early recognition of the narrator's unreliability increased satisfaction for every type of reader without exception.",
-                "Readers who disliked ambiguity in fiction reported the highest satisfaction from early recognition.",
-                "The timing of recognizing narrator unreliability had no bearing on reader satisfaction for any group.",
-                "Early recognition of an unreliable narrator appears to boost satisfaction generally, except for readers who dislike ambiguity or puzzle-solving in fiction, for whom it instead correlates with frustration."
+                "Households chose to enroll in the program based on their existing environmental interest. The passage's own account of what happened offers no particular reason to think this reading needs to be limited or qualified in any specific way.",
+                "Given the random zip code selection and the lack of any comparison group change, the peer-comparison program itself appears well-supported as the explanation for the energy reduction.",
+                "The comparison zip codes also showed an 8 percent reduction in energy use.",
+                "Energy use increased in the zip codes that received the peer-comparison notes. Nothing about how the passage frames the surrounding circumstances would suggest this conclusion needs any further qualification or limitation."
             ],
-            "correctAnswer": "Early recognition of an unreliable narrator appears to boost satisfaction generally, except for readers who dislike ambiguity or puzzle-solving in fiction, for whom it instead correlates with frustration.",
-            "hint": "Notice the specific subset of readers for whom the general pattern reversed.",
-            "explanation": "Early recognition generally boosted satisfaction, but this pattern reversed for readers who disliked ambiguity or puzzle-solving in fiction, for whom the same early recognition instead brought frustration, showing the technique's effect depends on a reader's general disposition toward this kind of narrative uncertainty.",
+            "correctAnswer": "Given the random zip code selection and the lack of any comparison group change, the peer-comparison program itself appears well-supported as the explanation for the energy reduction.",
+            "hint": "Consider what the random, non-optional enrollment and the unchanged comparison group together rule out.",
+            "explanation": "Since enrollment was random and automatic, ruling out self-selection by already environmentally motivated households, and the comparison zip codes showed no change, ruling out broader regional trends, these details together make the program itself the well-supported explanation.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Random, automatic enrollment (no self-selection) -> comparison zip codes: no significant change -> program zip codes: 8% reduction -> self-selection and regional trends ruled out, leaving the program well-supported as the explanation"
             ]
         },
         {
@@ -331,18 +331,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A public health researcher evaluating a workplace wellness initiative offering free on-site flu vaccinations found that overall vaccination rates among employees increased substantially compared to years when employees had to separately schedule an appointment at an outside pharmacy or clinic; however, a demographic breakdown revealed that the increase was concentrated almost entirely among salaried employees with predictable schedules who could easily step away during a work break, while hourly employees with less schedule flexibility, who had shown the lowest vaccination rates in previous years and represented the population the initiative was arguably most intended to help, saw only a marginal increase despite the vaccine now being physically available on-site.",
+            "passage": "A manufacturing company reported that a new employee safety training program was followed by a 60 percent drop in workplace injuries over the following year. However, the company also replaced several pieces of aging equipment with newer, safer models during the same year, and hired a new safety compliance officer whose sole job was monitoring and correcting unsafe practices in real time.",
             "options": [
-                "Hourly employees showed the largest increase in vaccination rates under the new initiative.",
-                "Vaccination rates increased equally across salaried and hourly employees.",
-                "Schedule flexibility had no bearing on which employees got vaccinated under the new initiative.",
-                "The on-site vaccination initiative appears to have mainly benefited salaried employees with flexible schedules, with limited reach into the hourly workforce it was arguably most intended to help."
+                "With multiple safety-related changes occurring simultaneously, it is difficult to confidently attribute the injury reduction specifically to the training program alone.",
+                "The training program is definitely and solely responsible for the entire injury reduction. Taken together, the details the passage provides give no specific reason to treat this as anything other than a complete account of what occurred.",
+                "The equipment replacement and new safety officer had no possible connection to injury rates. Every relevant detail included in the passage is consistent with treating this as a complete and accurate account, without further qualification being necessary.",
+                "Workplace injuries actually increased over the course of the year. The full account given in the passage offers no particular basis for reading this any differently than as a plain, straightforward description of events."
             ],
-            "correctAnswer": "The on-site vaccination initiative appears to have mainly benefited salaried employees with flexible schedules, with limited reach into the hourly workforce it was arguably most intended to help.",
-            "hint": "Notice which specific group of employees the increase was concentrated among, and which group saw only marginal change.",
-            "explanation": "Vaccination rates rose mainly among salaried employees with flexible schedules, while hourly employees with less flexibility, the group with historically lower rates, saw only marginal gains despite on-site availability, suggesting physical access alone wasn't enough to overcome the scheduling barrier facing hourly workers specifically.",
+            "correctAnswer": "With multiple safety-related changes occurring simultaneously, it is difficult to confidently attribute the injury reduction specifically to the training program alone.",
+            "hint": "Count the separate safety-related changes the passage mentions happening in the same year.",
+            "explanation": "With three separate safety-related changes, the training program, equipment replacement, and a new safety officer, all occurring in the same year, the passage does not provide enough information to isolate the training program's specific contribution from the other two changes.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Training program introduced -> equipment also replaced -> safety officer also hired -> injuries drop 60% -> three simultaneous safety changes make it difficult to isolate the training program's specific contribution"
             ]
         },
         {
@@ -350,18 +350,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A consumer researcher studying financial literacy education programs found that programs teaching general budgeting principles in the abstract produced minimal measurable change in participants' actual subsequent financial behavior, while programs incorporating hands-on practice with participants' own real, current financial documents, actual bank statements, pay stubs, and bills, produced substantially larger and more durable behavioral changes over a one-year follow-up period, even though both program formats covered essentially identical conceptual content regarding budgeting principles; however, the researcher noted the hands-on format required considerably more individualized facilitator time per participant, raising practical questions about whether this more effective approach could be delivered cost-effectively at the larger scale needed to reach a meaningful share of the population that could benefit from financial literacy education.",
+            "passage": "A regional grocery chain's marketing team found that a new loyalty app, which sent personalized weekly coupons based on past purchases, was followed by a 22 percent increase in average customer spending among app users. The company's finance team, running a separate analysis, found that the increase in spending closely tracked seasonal grocery price inflation that year and was similar in size to the spending increase seen among non-app-using customers over the same period.",
             "options": [
-                "Abstract budgeting instruction produced larger behavioral changes than hands-on practice.",
-                "Hands-on practice with real financial documents appears more effective than abstract instruction, but this format's higher facilitator time requirement raises questions about delivering it cost-effectively at scale.",
-                "Both formats required identical amounts of facilitator time per participant.",
-                "Neither program format produced any measurable change in financial behavior."
+                "Since non-app users showed a similarly sized spending increase, likely due to price inflation, it is difficult to credit the loyalty app specifically for the spending rise among app users.",
+                "The loyalty app is definitely and solely responsible for the entire spending increase. Reading through everything the passage lays out, there is no specific detail that would push against treating this as the straightforward explanation.",
+                "Non-app-using customers showed a much smaller spending increase than app users. Nothing in the way the passage lays out these events gives any real reason to treat this as an incomplete or qualified reading of what took place.",
+                "Seasonal price inflation had no possible connection to customer spending."
             ],
-            "correctAnswer": "Hands-on practice with real financial documents appears more effective than abstract instruction, but this format's higher facilitator time requirement raises questions about delivering it cost-effectively at scale.",
-            "hint": "Notice the passage mentions both a clear effectiveness advantage and a practical scaling concern about the more effective format.",
-            "explanation": "Hands-on practice with real documents produced more durable behavior change than abstract instruction with identical content, but it also required more facilitator time per person, raising a genuine question about whether the more effective approach can realistically be scaled to reach a large population cost-effectively.",
+            "correctAnswer": "Since non-app users showed a similarly sized spending increase, likely due to price inflation, it is difficult to credit the loyalty app specifically for the spending rise among app users.",
+            "hint": "Weigh the marketing team's finding against the separate finance team's comparison to non-app users and price trends.",
+            "explanation": "Because non-app users showed a similarly sized spending increase over the same period, likely explained by general price inflation, this comparison significantly weakens the case that the loyalty app specifically drove the spending increase among its users.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "App users: spending up 22% -> non-app users: similar spending increase over same period -> increase tracks seasonal price inflation -> similar increase in both groups weakens the case for the app as a specific driver"
             ]
         },
         {
@@ -369,18 +369,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A researcher studying the effects of eliminating homework for elementary school students in favor of unstructured after-school free time found that students in participating schools showed no significant difference in standardized test scores compared to students at similar schools that retained traditional homework policies; however, parent-reported family stress levels and children's self-reported enjoyment of school both improved measurably at the homework-free schools, leading the researcher to argue that even absent a demonstrated positive or negative effect on standardized academic measures, the policy's clear benefits for family wellbeing and student attitude toward school may represent a meaningful improvement in its own right, independent of any change, or lack thereof, in standardized test performance specifically.",
+            "passage": "A city's transit agency found that a new express bus route between a suburban area and downtown had an average ridership of 1,200 passengers per day within its first month, well above the agency's initial projection of 400 daily riders. The route launched the same week that a major highway serving the same suburb closed indefinitely for a bridge replacement project expected to last at least a year.",
             "options": [
-                "Eliminating homework didn't measurably change test scores, but the researcher argues the resulting improvements in family stress and student enjoyment may be meaningful benefits in their own right.",
-                "Standardized test scores improved significantly at the homework-free schools.",
-                "Family stress levels increased at schools that eliminated homework.",
-                "The researcher concluded the policy provided no meaningful benefit of any kind."
+                "The express route's popularity is definitely permanent and unrelated to the highway closure.",
+                "Given the timing of the highway closure, it is difficult to know how much of the route's ridership reflects lasting interest in the bus service versus a temporary response to having no highway alternative.",
+                "The highway closure had no possible connection to the route's ridership numbers.",
+                "Ridership on the new route was actually below the agency's projections."
             ],
-            "correctAnswer": "Eliminating homework didn't measurably change test scores, but the researcher argues the resulting improvements in family stress and student enjoyment may be meaningful benefits in their own right.",
-            "hint": "Notice the researcher's argument about what matters beyond just standardized test performance.",
-            "explanation": "Test scores stayed the same, but family stress dropped and student enjoyment rose, leading the researcher to argue these wellbeing improvements matter in their own right, independent of whether standardized academic measures changed, since a policy's value isn't necessarily limited to test score outcomes alone.",
+            "correctAnswer": "Given the timing of the highway closure, it is difficult to know how much of the route's ridership reflects lasting interest in the bus service versus a temporary response to having no highway alternative.",
+            "hint": "Consider what happens to the comparison once the highway reopens, and what that means for interpreting the current ridership numbers.",
+            "explanation": "Since the route launched the same week a major highway alternative closed, the unusually high ridership could partly or largely reflect a temporary response to reduced alternatives rather than durable interest that would continue once the highway reopens.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Express route launches -> highway serving same suburb closes same week for at least a year -> ridership far exceeds projections -> timing makes it unclear how much reflects lasting interest versus a temporary lack of alternatives"
             ]
         },
         {
@@ -388,18 +388,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "An environmental researcher studying the adoption of residential solar panels found that neighborhoods where several early-adopting households installed visible rooftop solar panels saw subsequent adoption rates among nearby neighbors significantly higher than in comparable neighborhoods without any early, visible adopters, a social contagion effect that held even after controlling for household income and each neighborhood's average sun exposure; however, the researcher found this neighbor-driven contagion effect was considerably weaker in renter-heavy neighborhoods, since renters, unlike homeowners, typically lack the authority to install permanent rooftop modifications regardless of how motivated they might become after observing a neighbor's installation, meaning the social influence clearly existed but was structurally prevented from translating into actual adoption for a substantial share of residents in those neighborhoods.",
+            "passage": "A university found that first-generation college students who participated in a peer mentorship program had a four-year graduation rate of 71 percent, compared to 52 percent for first-generation students who did not participate. The program had unlimited available spots and was promoted to all first-generation students through mandatory freshman orientation, with participation entirely voluntary and based only on whether a student chose to sign up during orientation.",
             "options": [
-                "Social influence from visible neighboring installations appears to genuinely motivate adoption, but this effect is structurally blocked in renter-heavy neighborhoods where residents lack authority to install panels.",
-                "The social contagion effect was equally strong in renter-heavy and homeowner-heavy neighborhoods.",
-                "Household income and sun exposure fully explained the neighborhood adoption patterns.",
-                "Renters showed no interest in solar panels regardless of neighboring installations."
+                "Since participation was voluntary, students who chose to enroll in mentorship may have already been more engaged or motivated in ways that also relate to graduation, making it difficult to fully credit the program alone.",
+                "The mentorship program is definitely and solely responsible for the entire graduation rate difference. Nothing about how the passage frames the surrounding circumstances would suggest this conclusion needs any further qualification or limitation.",
+                "Participation was determined by random assignment rather than student choice.",
+                "Graduation rates showed no relationship to program participation in this data."
             ],
-            "correctAnswer": "Social influence from visible neighboring installations appears to genuinely motivate adoption, but this effect is structurally blocked in renter-heavy neighborhoods where residents lack authority to install panels.",
-            "hint": "Notice why the researcher says the contagion effect existed but couldn't translate into adoption for many renters specifically.",
-            "explanation": "A real social contagion effect drove adoption near visible installations, but this effect was weaker in renter-heavy neighborhoods, not because renters were less influenced, but because they structurally lack the authority to install panels, showing the effect existed but was blocked from translating into actual adoption for many residents.",
+            "correctAnswer": "Since participation was voluntary, students who chose to enroll in mentorship may have already been more engaged or motivated in ways that also relate to graduation, making it difficult to fully credit the program alone.",
+            "hint": "Consider what voluntary sign-up, rather than random assignment, means for interpreting the graduation rate difference.",
+            "explanation": "Because participation depended entirely on a student's own choice to sign up rather than random assignment, students who opted in may have already been more engaged or motivated in ways that independently relate to graduation, complicating a confident, full credit to the program alone.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Program open to all, voluntary sign-up at orientation -> participants: 71% graduation, non-participants: 52% -> voluntary nature means participants may already differ in motivation/engagement -> difficult to fully credit the program alone"
             ]
         },
         {
@@ -407,18 +407,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A hospitality researcher studying guest reviews of hotels found that hotels which proactively responded to negative online reviews with a specific, detailed acknowledgment of the guest's particular complaint, rather than a generic apology template, saw measurably improved booking rates in the months following the response, even among prospective guests who had not personally experienced any service issue themselves; however, this booking improvement effect was significantly weaker for hotels with an already-low overall review rating below a certain threshold, suggesting that thoughtful complaint responses can meaningfully improve prospective guests' perception of a generally well-regarded hotel, but cannot fully compensate for an underlying pattern of consistently poor guest experiences reflected in an already low overall rating.",
+            "passage": "A national retailer's data science team found that stores which received a new employee scheduling algorithm, designed to better match staffing levels to predicted customer traffic, saw a 14 percent increase in same-store sales compared to the prior year. The algorithm was rolled out to stores in a randomized order determined by a computer-generated schedule, with store managers unable to request early or delayed implementation, and the retailer's overall regional sales trends were flat during the same period across stores that had not yet received the algorithm.",
             "options": [
-                "Thoughtful complaint responses improved bookings equally regardless of a hotel's overall rating.",
-                "Thoughtful complaint responses appear to improve bookings for generally well-regarded hotels, but cannot fully offset an already-low overall rating reflecting a consistent pattern of poor experiences.",
-                "Generic apology templates produced stronger booking improvements than detailed responses.",
-                "Complaint response quality had no measurable effect on prospective guests' booking decisions."
+                "Given the randomized rollout order and the flat sales trend at stores without the algorithm yet, the algorithm itself appears to be a well-supported explanation for the sales increase.",
+                "Store managers were able to choose exactly when their store received the algorithm.",
+                "Stores without the algorithm also saw a 14 percent sales increase during this period.",
+                "Same-store sales decreased at stores that received the new algorithm."
             ],
-            "correctAnswer": "Thoughtful complaint responses appear to improve bookings for generally well-regarded hotels, but cannot fully offset an already-low overall rating reflecting a consistent pattern of poor experiences.",
-            "hint": "Notice how the effectiveness of a thoughtful response changed depending on the hotel's overall existing rating.",
-            "explanation": "Detailed responses improved bookings, but this effect weakened significantly for hotels with an already-low overall rating, suggesting thoughtful responses can improve perception of an otherwise decent hotel but can't fully compensate for a broader pattern of poor guest experiences reflected in a consistently low rating.",
+            "correctAnswer": "Given the randomized rollout order and the flat sales trend at stores without the algorithm yet, the algorithm itself appears to be a well-supported explanation for the sales increase.",
+            "hint": "Consider what the randomized, manager-independent rollout order and the flat comparison group together rule out.",
+            "explanation": "Since the rollout order was randomized and outside manager control, ruling out that better-performing stores got the algorithm first, and stores without it yet showed flat sales, ruling out a broader company-wide trend, these details together make the algorithm well-supported as the explanation.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Algorithm rollout randomized, managers cannot choose timing -> stores without algorithm yet: flat sales -> stores with algorithm: sales up 14% -> randomization and flat comparison group rule out alternative explanations, supporting the algorithm as the cause"
             ]
         },
         {
@@ -426,18 +426,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A family researcher studying households where one parent works a non-traditional overnight shift schedule found that children in these households showed no measurable difference in academic performance or emotional wellbeing compared to children in households with two conventionally-scheduled working parents, provided the family maintained a consistent, predictable routine around the overnight-shift parent's sleep and available family time; however, in households where the overnight-shift parent's schedule itself was inconsistent or unpredictable week to week, requiring the whole family to constantly readjust routines around shifting available time with that parent, children showed measurably worse outcomes on both measures, suggesting schedule predictability, rather than the overnight nature of the shift itself, may be the more critical factor for child wellbeing in these families.",
+            "passage": "A hospital's infection control team found that a new hand hygiene monitoring system, which used sensors to track and anonymously report staff handwashing compliance rates on a public dashboard, was followed by hospital-acquired infection rates dropping from 3.8 to 1.9 per 1,000 patient days. The dashboard was installed hospital-wide on a single date, with no other infection control policies, staffing changes, or patient population changes reported during the study period.",
             "options": [
-                "Schedule predictability, rather than the overnight nature of a parent's shift itself, appears to be the more critical factor for children's wellbeing in these households.",
-                "The overnight nature of the shift itself, regardless of predictability, was the primary factor in child outcomes.",
-                "Children in households with an inconsistent overnight schedule showed better outcomes than those with a consistent one.",
-                "Schedule predictability had no measurable bearing on children's academic or emotional outcomes."
+                "The infection rate drop is definitely explained by an unrelated change in patient population. Reading through everything the passage lays out, there is no specific detail that would push against treating this as the straightforward explanation.",
+                "Hospital-acquired infection rates increased after the dashboard was installed. Nothing about how the passage frames the surrounding circumstances would suggest this conclusion needs any further qualification or limitation.",
+                "The dashboard had no possible connection to staff handwashing behavior.",
+                "Given that no other relevant changes were reported during this period, the hand hygiene monitoring system is a well-supported explanation for the drop in infection rates."
             ],
-            "correctAnswer": "Schedule predictability, rather than the overnight nature of a parent's shift itself, appears to be the more critical factor for children's wellbeing in these households.",
-            "hint": "Compare outcomes between households with a consistent overnight schedule and households with an inconsistent one.",
-            "explanation": "Children fared just as well as peers with conventionally-scheduled parents when the overnight shift was consistent, but fared worse when the schedule was unpredictable, suggesting that predictability itself, not simply working overnight, is the more critical factor shaping children's outcomes in these families.",
+            "correctAnswer": "Given that no other relevant changes were reported during this period, the hand hygiene monitoring system is a well-supported explanation for the drop in infection rates.",
+            "hint": "Consider what the passage explicitly states about other potential explanations during this same period.",
+            "explanation": "Since the passage explicitly states no other infection control policies, staffing, or patient population changes occurred during this period, this absence of alternative explanations substantially strengthens the case that the monitoring system itself explains the infection rate drop.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Infection rate: 3.8 per 1,000 patient days -> dashboard installed hospital-wide, no other changes reported -> infection rate: 1.9 per 1,000 -> absence of other changes strengthens the dashboard as the explanation"
             ]
         },
         {
@@ -445,18 +445,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A sports scientist studying recovery patterns in ultra-endurance athletes found that athletes who incorporated short, ten-minute meditation sessions into their post-race recovery routine reported subjectively feeling more mentally recovered within the first week following a race than athletes who did not meditate; however, when the scientist measured objective physiological recovery markers, including resting heart rate variability and cortisol levels, meditating and non-meditating athletes showed statistically indistinguishable recovery trajectories over the same period, suggesting that while meditation may offer genuine value for athletes' subjective psychological experience of recovery, it does not appear to meaningfully accelerate the underlying physiological recovery processes that these particular biological markers were designed to capture.",
+            "passage": "A city's parks department found that a new online reservation system for picnic shelters, replacing a first-come-first-served policy, coincided with a 45 percent increase in shelter usage revenue. The change was implemented at the same time the department also raised shelter rental fees by 20 percent to fund park maintenance, a fee increase applied uniformly regardless of whether reservations were made online or by phone.",
             "options": [
-                "Meditation measurably accelerated physiological recovery markers compared to non-meditating athletes.",
-                "Meditation appears to improve athletes' subjective sense of recovery without measurably accelerating the underlying physiological recovery process itself.",
-                "Meditating athletes reported feeling less mentally recovered than non-meditating athletes.",
-                "Subjective and objective recovery measures showed identical patterns between the two groups."
+                "Since the fee increase applied to all reservation methods, it likely accounts for at least part of the revenue increase, making it difficult to credit the reservation system alone.",
+                "The reservation system alone is definitely and solely responsible for the entire revenue increase. There is nothing in how the passage presents the sequence of events that would call for treating this conclusion as only partly supported.",
+                "The fee increase applied only to online reservations, not phone reservations. Taken together, the details the passage provides give no specific reason to treat this as anything other than a complete account of what occurred.",
+                "Shelter usage revenue decreased after the reservation system was introduced. Reading through everything the passage lays out, there is no specific detail that would push against treating this as the straightforward explanation."
             ],
-            "correctAnswer": "Meditation appears to improve athletes' subjective sense of recovery without measurably accelerating the underlying physiological recovery process itself.",
-            "hint": "Notice the passage separates athletes' subjective feelings of recovery from the objective physiological markers measured.",
-            "explanation": "Meditating athletes felt more recovered subjectively, but objective markers like heart rate variability and cortisol showed no real difference from non-meditators, suggesting meditation's value may lie in the psychological experience of recovery rather than in measurably speeding up the body's actual physiological recovery process.",
+            "correctAnswer": "Since the fee increase applied to all reservation methods, it likely accounts for at least part of the revenue increase, making it difficult to credit the reservation system alone.",
+            "hint": "Consider how a fee increase that applies to every reservation, regardless of method, would affect total revenue on its own.",
+            "explanation": "Since the fee increase applied uniformly to all reservations regardless of method, a portion of the revenue increase would occur even without the new system simply due to higher prices, making it difficult to credit the reservation system alone for the full 45 percent increase.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Reservation system introduced -> fee also raised 20% uniformly, regardless of reservation method -> revenue rises 45% -> uniform fee increase likely explains part of the rise, complicating full credit to the reservation system alone"
             ]
         },
         {
@@ -464,18 +464,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A public administration researcher studying municipal 311 non-emergency service request systems found that cities which published real-time public dashboards showing the status and resolution time of every submitted request saw a measurable increase in overall request volume, more residents reporting issues like potholes or broken streetlights, but also saw improved resident satisfaction with how the city handled each individual request, even in cases where the underlying resolution time itself did not actually improve, suggesting that transparency about a process, even one whose fundamental speed remains unchanged, may itself meaningfully shape how residents perceive and experience that same underlying municipal process over time.",
+            "passage": "A national coffee chain's research team found that stores that switched to compostable cups saw a 3 percent increase in customer visits over the following year. The switch was implemented company-wide on the same date at every store, and the company's overall same-store sales trend for the year, driven primarily by a new loyalty rewards program launched the same month as the cup switch, showed a 9 percent increase across the entire chain.",
             "options": [
-                "Satisfaction only improved in cases where resolution time itself also improved.",
-                "Publishing the dashboard reduced how many residents submitted requests.",
-                "Transparency about the process had no measurable effect on resident satisfaction.",
-                "Transparency about the request process appears to improve resident satisfaction independent of whether actual resolution times changed at all."
+                "The compostable cups are definitely and solely responsible for the entire visit increase. Nothing about how the passage frames the surrounding circumstances would suggest this conclusion needs any further qualification or limitation.",
+                "The loyalty rewards program had no possible connection to customer visits.",
+                "Customer visits decreased after the switch to compostable cups.",
+                "Since the loyalty program launched at the same time and drove a larger chain-wide increase, it is difficult to isolate what portion, if any, of the visit increase is specifically due to the compostable cups."
             ],
-            "correctAnswer": "Transparency about the request process appears to improve resident satisfaction independent of whether actual resolution times changed at all.",
-            "hint": "Notice that satisfaction improved even in cases where the underlying resolution time did not change.",
-            "explanation": "Satisfaction rose even when actual resolution speed stayed the same, suggesting that visibility into the process itself, separate from any real change in how fast issues were resolved, meaningfully shaped how residents experienced and perceived the same underlying municipal service.",
+            "correctAnswer": "Since the loyalty program launched at the same time and drove a larger chain-wide increase, it is difficult to isolate what portion, if any, of the visit increase is specifically due to the compostable cups.",
+            "hint": "Compare the size of the cup-switch-associated increase to the larger chain-wide increase attributed to the loyalty program.",
+            "explanation": "Since the cup switch happened company-wide with no separate comparison group, and a larger chain-wide increase is attributed to the simultaneously launched loyalty program, it becomes very difficult to isolate any specific effect of the cups from the loyalty program's broader impact.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Cups switched company-wide, same date -> loyalty program also launched same month, drives 9% chain-wide increase -> visits up 3% -> no way to isolate the cup switch's effect from the loyalty program's broader, larger impact"
             ]
         },
         {
@@ -483,18 +483,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A team of researchers evaluating an AI-powered resume screening tool designed to reduce human bias in hiring found that the tool did reduce certain forms of bias present in fully manual screening, such as bias correlated with an applicant's name suggesting a particular ethnicity; however, a detailed audit of the tool's underlying training data revealed it had learned to systematically favor resumes containing specific phrases and formatting conventions more common among graduates of a small number of elite universities, effectively replacing one form of bias tied to identity markers with a different, less immediately visible form of bias tied to educational pedigree, one arguably just as capable of unfairly disadvantaging qualified candidates who lacked access to those particular institutions.",
+            "passage": "A regional hospital system found that patients treated by physicians who completed an advanced communication skills workshop had higher patient satisfaction scores than patients treated by physicians who had not completed the workshop. The hospital system specifically selected physicians for the voluntary workshop based on department leadership's assessment of 'physicians most likely to benefit and engage fully' with the training.",
             "options": [
-                "The tool eliminated bias entirely with no new forms of bias introduced.",
-                "The audit found the tool favored candidates from a wide range of educational backgrounds equally.",
-                "The tool showed no measurable reduction in identity-correlated bias compared to manual screening.",
-                "The tool appears to have reduced identity-based bias while introducing a different bias favoring graduates of elite universities, a less visible but still unfair form of discrimination."
+                "The workshop content alone is definitely and solely responsible for the entire satisfaction difference. Nothing in the way the passage lays out these events gives any real reason to treat this as an incomplete or qualified reading of what took place.",
+                "Since physicians were specifically selected based on leadership's assessment of likely engagement, this selection process may account for some of the satisfaction difference, not the workshop content alone.",
+                "Physicians were randomly assigned to attend the workshop or not. The passage's own account of what happened offers no particular reason to think this reading needs to be limited or qualified in any specific way.",
+                "Patient satisfaction scores showed no relationship to any physician characteristic. Nothing about how the passage frames the surrounding circumstances would suggest this conclusion needs any further qualification or limitation."
             ],
-            "correctAnswer": "The tool appears to have reduced identity-based bias while introducing a different bias favoring graduates of elite universities, a less visible but still unfair form of discrimination.",
-            "hint": "Notice the passage describes the tool trading one type of bias for a different, less visible type.",
-            "explanation": "The tool reduced bias tied to identity markers like names, but the audit found it had learned to favor graduates of elite universities instead, suggesting it replaced one visible form of bias with a different, less obvious one that could still unfairly disadvantage qualified candidates from other educational backgrounds.",
+            "correctAnswer": "Since physicians were specifically selected based on leadership's assessment of likely engagement, this selection process may account for some of the satisfaction difference, not the workshop content alone.",
+            "hint": "Consider what it means that leadership specifically selected physicians thought most likely to engage well with this training.",
+            "explanation": "Since physicians were deliberately chosen based on an assessment of who would likely engage well with the training, rather than randomly selected, this selection process itself may explain part of the satisfaction difference, separate from the workshop's actual content.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Physicians selected by leadership based on predicted engagement, not randomly -> selected physicians complete workshop -> their patients report higher satisfaction -> selection process itself may explain part of the difference, not workshop content alone"
             ]
         },
         {
@@ -502,18 +502,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A team of ecologists studying coral reef recovery after a major bleaching event found that reef sections designated as strict no-fishing marine protected areas recovered live coral cover significantly faster than unprotected sections experiencing comparable bleaching severity and similar water temperature exposure; however, when the ecologists examined which specific coral species drove this faster recovery, they found the protected areas' advantage was concentrated almost entirely in fast-growing branching coral species, while slower-growing but more structurally important massive coral species, which provide the reef's longer-term structural foundation, showed comparable recovery rates in both protected and unprotected areas regardless of fishing restrictions, complicating any simple narrative that protection alone straightforwardly accelerates full ecosystem recovery across every dimension of reef health.",
+            "passage": "A city's building department found that construction projects using a new digital permit tracking system were completed an average of 18 days faster than projects using the previous paper-based tracking system. The digital system was made available to all contractors on the same date, with contractors free to choose either the digital or paper system for each project, and department records show contractors who chose digital tracking had, on average, completed more total projects with the department historically than contractors who continued using paper tracking.",
             "options": [
-                "Protected areas showed faster recovery across every single coral species without exception.",
-                "Slower-growing structural corals recovered faster in protected areas than fast-growing corals did.",
-                "Protection appears to accelerate recovery mainly for fast-growing branching corals, with little advantage for the slower-growing, structurally important corals, complicating a simple 'protection accelerates recovery' narrative.",
-                "Fishing restrictions had no measurable effect on recovery for any coral species studied."
+                "The digital tracking system alone is definitely and solely responsible for the entire time difference.",
+                "Since contractors choosing digital tracking were also more experienced overall, this experience difference may account for some of the faster completion times, not the tracking system alone.",
+                "Contractors were required to use the digital system for all projects.",
+                "Project completion times showed no relationship to any contractor characteristic."
             ],
-            "correctAnswer": "Protection appears to accelerate recovery mainly for fast-growing branching corals, with little advantage for the slower-growing, structurally important corals, complicating a simple 'protection accelerates recovery' narrative.",
-            "hint": "Notice which specific type of coral drove the protected areas' recovery advantage, and which type showed no such advantage.",
-            "explanation": "Protected areas recovered faster overall, but this advantage was concentrated in fast-growing branching corals, while slower-growing structural corals recovered similarly regardless of protection, complicating the simple assumption that marine protection uniformly accelerates recovery across every important dimension of reef health.",
+            "correctAnswer": "Since contractors choosing digital tracking were also more experienced overall, this experience difference may account for some of the faster completion times, not the tracking system alone.",
+            "hint": "Consider what the detail about contractors' historical project experience suggests about who chose digital tracking.",
+            "explanation": "Since contractors who chose the digital system were also more experienced with the department overall, a factor that could independently relate to faster project completion, this pre-existing experience difference may account for part of the time savings, not the system alone.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Contractors choose digital or paper freely -> digital-choosing contractors also more experienced historically -> digital projects complete 18 days faster -> experience difference may explain part of the time savings, not the system alone"
             ]
         },
         {
@@ -521,18 +521,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A workplace researcher studying the long-term effects of mandatory diversity training programs found that a single, standalone training session produced measurable short-term shifts in participants' self-reported attitudes on a survey administered immediately afterward; however, when the researcher tracked actual workplace behavior, such as who employees chose to mentor or include in project teams, over the following year, these behavioral patterns showed no meaningful change from before the training, suggesting the training successfully shifted what participants were willing to say on a survey without producing any corresponding change in their actual day-to-day workplace decisions and behavior, a gap the researcher argued should temper enthusiasm for standalone training as a genuinely effective standalone intervention.",
+            "passage": "A large employer's HR department found that employees who used the company's new anonymous internal feedback tool reported higher job satisfaction in the annual engagement survey than employees who did not use the tool. Tool usage data was collected anonymously, meaning HR could not identify which specific employees used it, so the satisfaction comparison relied on employees self-reporting their own tool usage within the same anonymous survey.",
             "options": [
-                "Actual workplace behavior changed substantially following the training, matching the shift in self-reported attitudes.",
-                "The training appears to have shifted self-reported attitudes without producing any corresponding change in actual workplace behavior, tempering enthusiasm for standalone training as an effective intervention.",
-                "Self-reported attitudes showed no change immediately following the training session.",
-                "The researcher concluded standalone training is a highly effective, sufficient intervention on its own."
+                "The feedback tool is definitely and solely responsible for the entire satisfaction difference.",
+                "HR was able to directly verify exactly which employees used the tool.",
+                "Since both tool usage and satisfaction were self-reported within the same anonymous survey, employees with generally more positive views of the company may have been more likely to both use the tool and report higher satisfaction.",
+                "Job satisfaction showed no relationship to tool usage in this survey."
             ],
-            "correctAnswer": "The training appears to have shifted self-reported attitudes without producing any corresponding change in actual workplace behavior, tempering enthusiasm for standalone training as an effective intervention.",
-            "hint": "Notice the gap the passage describes between what the survey showed and what actual tracked behavior showed.",
-            "explanation": "Self-reported attitudes shifted right after training, but actual mentoring and team-inclusion behavior showed no real change over the following year, suggesting the training changed what people said on a survey without changing what they actually did, a gap that led the researcher to temper enthusiasm for standalone training alone.",
+            "correctAnswer": "Since both tool usage and satisfaction were self-reported within the same anonymous survey, employees with generally more positive views of the company may have been more likely to both use the tool and report higher satisfaction.",
+            "hint": "Consider what it means that both pieces of information came from the same self-report, with no independent way to verify either.",
+            "explanation": "Since both tool usage and satisfaction levels were self-reported within the same survey with no independent verification, employees who generally feel more positively about their workplace may simply be more likely to report using company tools and to report higher satisfaction, complicating a clean causal read.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Tool usage and satisfaction both self-reported in same anonymous survey, no independent verification -> tool users: report higher satisfaction -> generally positive employees may be more likely to report both using tools and being satisfied, complicating the comparison"
             ]
         },
         {
@@ -540,18 +540,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A cultural critic reviewing the long-term reception of works initially dismissed as 'genre fiction' unworthy of serious literary consideration found that a disproportionate number of such works eventually entered university literature curricula and serious critical discussion decades after their initial dismissal, compared to the proportion of contemporaneously well-regarded 'literary fiction' from the same original period that achieved similar lasting critical attention; however, the critic cautioned this pattern likely reflects a form of survivorship bias rather than evidence that genre fiction was systematically underrated relative to literary fiction overall, since only the strongest examples of a large volume of genre fiction produced in any given period tend to be remembered and revisited at all, while weaker genre works are simply forgotten, a comparison quite different from evaluating literary fiction's typical quality against genre fiction's rare standout survivors specifically.",
+            "passage": "A national parcel company found that delivery drivers who completed a defensive driving refresher course had 28 percent fewer reported vehicle incidents over the following year than drivers who had not yet completed the course. The course was mandatory for all drivers and was scheduled in waves based on each driver's employee ID number, an assignment method with no relationship to prior driving record, route type, or years of experience.",
             "options": [
-                "The critic concluded genre fiction was clearly and systematically underrated compared to literary fiction.",
-                "Equal proportions of genre and literary fiction from the same period achieved lasting critical attention.",
-                "The pattern likely reflects survivorship bias, comparing genre fiction's rare standout survivors against literary fiction generally, rather than proving genre fiction was systematically underrated overall.",
-                "The critic found no plausible alternative explanation for the pattern observed."
+                "Drivers with the worst prior driving records were scheduled for the course first.",
+                "Drivers who had not yet completed the course showed the same 28 percent reduction.",
+                "Vehicle incident rates showed no relationship to course completion in this data.",
+                "Since course scheduling was based on employee ID number, unrelated to prior driving record or experience, the course itself is a well-supported explanation for the reduced incident rate."
             ],
-            "correctAnswer": "The pattern likely reflects survivorship bias, comparing genre fiction's rare standout survivors against literary fiction generally, rather than proving genre fiction was systematically underrated overall.",
-            "hint": "Notice the critic's own caution about what this pattern likely reflects, described explicitly near the end of the passage.",
-            "explanation": "More genre fiction entered serious canon later, but the critic cautions this likely reflects survivorship bias, since only the strongest examples from a large volume get remembered, meaning the comparison unfairly measures genre fiction's rare best survivors against literary fiction as a whole, rather than proving genre fiction was systematically underrated.",
+            "correctAnswer": "Since course scheduling was based on employee ID number, unrelated to prior driving record or experience, the course itself is a well-supported explanation for the reduced incident rate.",
+            "hint": "Consider what scheduling based on employee ID number, rather than driving history, specifically rules out.",
+            "explanation": "Since assignment to the course waves was based on an arbitrary employee ID number with no connection to prior driving record, route type, or experience, this detail rules out the concern that safer drivers were simply scheduled first, strengthening the case for the course itself as the explanation.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Course mandatory, scheduled by employee ID number, unrelated to driving record or experience -> completers: 28% fewer incidents -> arbitrary scheduling rules out that safer drivers went first, strengthening the course as the explanation"
             ]
         },
         {
@@ -559,18 +559,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "Since the Bellamy family began holding what they call a 'no-agenda' Saturday morning where no errands, sports practices, or scheduled activities are permitted before noon, they say the unstructured time initially felt uncomfortable and directionless for all four family members, who had grown accustomed to a fully scheduled week; however, after roughly two months of consistent practice, the family reports the mornings have become a genuinely anticipated fixture, with even their most activity-driven teenager admitting in a family discussion that having truly unstructured time had become harder to imagine giving up than any of the individually scheduled activities the family had previously debated cutting to make room for more open time.",
+            "passage": "A city's water utility found that neighborhoods that received a mailed brochure explaining proper disposal of cooking grease had a 22 percent reduction in grease-related sewer blockages over the following year, compared to neighborhoods that did not receive the brochure. Neighborhoods were selected to receive the brochure based on an alphabetical rotation of street names, a method the utility's engineering team confirmed had no relationship to a neighborhood's housing age, income level, or prior blockage history.",
             "options": [
-                "The unstructured mornings appear to have grown from an uncomfortable adjustment into something the family, including its most activity-driven member, now values more than the scheduled activities they once considered protecting instead.",
-                "The teenager continued to find the unstructured mornings uncomfortable and directionless after two months.",
-                "The family abandoned the no-agenda mornings shortly after starting them.",
-                "The unstructured time had no noticeable effect on how the family felt about their Saturdays."
+                "Neighborhoods with the worst prior blockage history were specifically chosen to receive the brochure. Nothing about how the passage frames the surrounding circumstances would suggest this conclusion needs any further qualification or limitation.",
+                "Neighborhoods that did not receive the brochure also saw a 22 percent reduction. The way the events are described throughout the passage offers no clear signal that this particular reading should be treated with any extra caution.",
+                "Blockage rates showed no relationship to which neighborhoods received the brochure. The full account given in the passage offers no particular basis for reading this any differently than as a plain, straightforward description of events.",
+                "Since neighborhoods were selected by an alphabetical rotation unrelated to housing age, income, or prior blockage history, the brochure itself is a well-supported explanation for the reduction in blockages."
             ],
-            "correctAnswer": "The unstructured mornings appear to have grown from an uncomfortable adjustment into something the family, including its most activity-driven member, now values more than the scheduled activities they once considered protecting instead.",
-            "hint": "Notice how the family's, and specifically the teenager's, feelings about the unstructured time changed over roughly two months.",
-            "explanation": "The unstructured mornings started out uncomfortable but became a valued fixture after about two months, with even the most activity-driven teenager coming to value the open time more than the scheduled activities the family had once debated protecting instead, showing a genuine shift in perspective over time.",
+            "correctAnswer": "Since neighborhoods were selected by an alphabetical rotation unrelated to housing age, income, or prior blockage history, the brochure itself is a well-supported explanation for the reduction in blockages.",
+            "hint": "Consider what the confirmed lack of relationship between the selection method and neighborhood characteristics specifically rules out.",
+            "explanation": "Since the utility's own engineering team confirmed the alphabetical selection method had no relationship to housing age, income, or prior blockage history, this rules out common competing explanations, strengthening the case that the brochure itself explains the reduced blockage rate.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Neighborhoods selected by alphabetical rotation, confirmed unrelated to housing age/income/prior blockages -> brochure neighborhoods: 22% fewer blockages -> confirmed unrelated selection method rules out competing explanations, supporting the brochure as the cause"
             ]
         }
     ]

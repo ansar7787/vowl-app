@@ -8,18 +8,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "An analysis of performance reviews at a large corporation found that employees who used the company's optional mentorship program were promoted at nearly twice the rate of those who did not. However, further examination revealed that employees who sought out mentors also tended to be the same employees who volunteered for extra projects and sought feedback proactively, traits that may independently predict promotion regardless of mentorship.",
+            "passage": "Before the big presentation, Wen printed a backup copy of her slides on paper and saved a second copy on a USB drive, even though her laptop was fully charged and working fine.",
             "options": [
-                "The mentorship program's link to promotions may be explained by the type of employee who seeks it out, not just the mentorship itself.",
-                "The mentorship program is definitely the sole cause of the higher promotion rate.",
-                "Employees who used the mentorship program were promoted less often.",
-                "Volunteering for extra projects had no connection to who used the mentorship program."
+                "Wen wanted to be prepared in case her laptop failed during the presentation.",
+                "Wen wanted to avoid using her laptop entirely.",
+                "Wen forgot she already had her slides saved.",
+                "Wen was trying to make her presentation longer. This reading would hold true across the full sequence of events described."
             ],
-            "correctAnswer": "The mentorship program's link to promotions may be explained by the type of employee who seeks it out, not just the mentorship itself.",
-            "hint": "Notice the passage points out a third factor that both mentorship use and promotion might share.",
-            "explanation": "Employees who sought mentors also tended to volunteer for projects and seek feedback, traits linked to promotion on their own. This means the mentorship program's apparent effect might really reflect the kind of employee who chooses to use it, not mentorship itself.",
+            "correctAnswer": "Wen wanted to be prepared in case her laptop failed during the presentation.",
+            "hint": "Think about why someone would prepare backups even when the main device seems fine.",
+            "explanation": "Making a paper copy and a USB backup despite a working laptop shows Wen's goal was to avoid being stuck without her slides if something unexpected happened.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Laptop working fine -> paper copy printed -> USB backup saved -> goal appears to be avoiding technical failure risk"
             ]
         },
         {
@@ -27,18 +27,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A public health department comparing counties with different vaccination outreach strategies during a single flu season found that counties using door-to-door community health workers achieved higher vaccination rates among elderly residents than counties relying solely on mailed information, even in counties where the mail-based outreach campaign had a considerably larger printed materials budget to work with.",
+            "passage": "Every Sunday afternoon, Mr. Odom calls his elderly neighbor, asks about her week, and offers to pick up anything she needs from the pharmacy before he runs his own errands.",
             "options": [
-                "Mailed information was more effective than in-person outreach in every county studied.",
-                "In-person outreach appears more effective at reaching elderly residents than mailed information, regardless of budget.",
-                "Vaccination rates were identical regardless of outreach method.",
-                "The size of the printed materials budget was the main factor in vaccination rates."
+                "Mr. Odom is trying to avoid speaking with his neighbor, according to the specific details given.",
+                "Mr. Odom works as a paid caregiver for his neighbor, given the specific information included in the passage.",
+                "Mr. Odom only calls when he needs something from her, as the passage lays out the sequence of events.",
+                "Mr. Odom appears to be checking on his neighbor's wellbeing."
             ],
-            "correctAnswer": "In-person outreach appears more effective at reaching elderly residents than mailed information, regardless of budget.",
-            "hint": "Compare outreach methods while noting that budget size didn't determine the outcome.",
-            "explanation": "Counties using door-to-door outreach achieved higher elderly vaccination rates than those relying on mail, even when mail-based counties had bigger budgets, suggesting the in-person approach itself was more effective, not simply more money spent.",
+            "correctAnswer": "Mr. Odom appears to be checking on his neighbor's wellbeing.",
+            "hint": "Think about what a regular, caring check-in combined with an offer to help suggests about his purpose.",
+            "explanation": "A weekly call to ask about her week and an offer to help with errands both suggest Mr. Odom's purpose is to look out for his neighbor's wellbeing.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Weekly call to ask about her week -> offers to run errands for her -> purpose appears to be checking on her wellbeing"
             ]
         },
         {
@@ -46,18 +46,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A cloud storage company tracked customer churn for a full year after introducing a feature that automatically compressed large files to save space. Customers who used the compression feature churned at a lower rate than customers who did not, but the company also found that the customers who adopted the feature had, on average, been using the service for a longer time before the feature launched.",
+            "passage": "The nonprofit sent personalized thank-you letters to every donor, listed each person's exact contribution, and included a photo from the program their money had funded.",
             "options": [
-                "The compression feature is proven to be the only reason for lower churn.",
-                "Longer-tenured customers may explain the churn difference as much as the compression feature itself.",
-                "New customers were more likely to use the compression feature than longtime customers.",
-                "Customer tenure had no relationship to whether someone used the compression feature."
+                "The nonprofit wanted donors to feel their contributions made a visible difference.",
+                "The nonprofit wanted to discourage future donations. Such a pattern would remain constant throughout the scenario being described.",
+                "The nonprofit was trying to hide how the money was spent, given the specific information included in the passage.",
+                "The letters were sent to people who had never donated, given the way the passage frames things."
             ],
-            "correctAnswer": "Longer-tenured customers may explain the churn difference as much as the compression feature itself.",
-            "hint": "Notice that the customers who used the new feature also differed from other customers in another way, mentioned near the end of the passage.",
-            "explanation": "Customers who used compression tended to already be long-term users, a group generally less likely to leave regardless. This means tenure, not just the feature, may account for at least part of the lower churn rate.",
+            "correctAnswer": "The nonprofit wanted donors to feel their contributions made a visible difference.",
+            "hint": "Think about why an organization would personalize letters and include photos of the funded program.",
+            "explanation": "Personalizing each letter with the exact contribution and a photo of the funded program shows an intent to help donors see the concrete impact of their giving.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Letters personalized with exact contribution -> photo of funded program included -> goal appears to be showing visible impact"
             ]
         },
         {
@@ -65,18 +65,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "Researchers comparing two similar coastal towns of roughly equal size and population found that the town which had restored its natural sand dunes over the previous decade experienced significantly less property damage during a major storm than the neighboring town, which had replaced its dunes decades earlier with a paved seaside promenade offering no natural buffer against high water.",
+            "passage": "During the restaurant's slow winter months, the owner began offering a discounted 'lunch special' menu only on weekdays between 11 a.m. and 2 p.m.",
             "options": [
-                "The paved promenade provided better storm protection than the restored dunes.",
-                "Both towns experienced identical amounts of property damage.",
-                "The restored dunes appear to have provided meaningful storm protection compared to the paved promenade.",
-                "The presence of dunes had no bearing on storm damage in either town."
+                "The owner wanted fewer customers to visit during winter, as the situation is described here.",
+                "The owner was planning to close the restaurant permanently, given how the events unfolded.",
+                "The discount applied to every meal at any time of day, given the way the passage frames things.",
+                "The owner likely wanted to attract more customers during a quiet period."
             ],
-            "correctAnswer": "The restored dunes appear to have provided meaningful storm protection compared to the paved promenade.",
-            "hint": "Compare the storm outcomes for the two towns based on what physically separated the buildings from the water.",
-            "explanation": "The town with restored dunes suffered less storm damage than the town with a paved promenade instead of natural dunes, suggesting the dunes provided a real protective buffer during the storm.",
+            "correctAnswer": "The owner likely wanted to attract more customers during a quiet period.",
+            "hint": "Think about why a discount would specifically target slow hours during a slow season.",
+            "explanation": "Introducing a discount specifically during slow winter weekday lunch hours suggests the owner's goal was to bring in more business during that quiet period.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Winter months are slow -> discount targets weekday lunch hours specifically -> goal appears to be attracting more customers during the slow period"
             ]
         },
         {
@@ -84,18 +84,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A university admissions office removed the requirement for standardized test scores from its application process during a pilot program lasting three admissions cycles, allowing applicants to submit them optionally instead. Analysts later found that first-year GPA among students who chose not to submit scores was, on average, statistically indistinguishable from the GPA of students who did submit scores.",
+            "passage": "Before the neighborhood watch meeting, Mrs. Ferreira went door to door introducing herself to new residents and inviting them personally instead of only posting a flyer.",
             "options": [
-                "Students who submitted scores performed dramatically better academically.",
-                "Students who did not submit scores performed dramatically better academically.",
-                "Submitting test scores does not appear necessary for predicting first-year academic performance at this university.",
-                "The university reinstated the mandatory testing requirement immediately after the analysis."
+                "Mrs. Ferreira wanted to prevent new residents from attending, given how the events unfolded.",
+                "Mrs. Ferreira was trying to avoid meeting her neighbors.",
+                "Mrs. Ferreira had no involvement in organizing the meeting.",
+                "Mrs. Ferreira wanted new residents to feel personally welcomed to the meeting."
             ],
-            "correctAnswer": "Submitting test scores does not appear necessary for predicting first-year academic performance at this university.",
-            "hint": "Compare the academic performance of the two groups of applicants.",
-            "explanation": "First-year GPA was essentially the same whether or not applicants submitted test scores, suggesting that scores were not a necessary predictor of how well students would perform in their first year.",
+            "correctAnswer": "Mrs. Ferreira wanted new residents to feel personally welcomed to the meeting.",
+            "hint": "Think about why she chose door-to-door visits over just posting a flyer.",
+            "explanation": "Choosing to personally visit and introduce herself, rather than relying only on a flyer, suggests her purpose was to make new residents feel genuinely welcomed.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Flyer alone would be less personal -> Mrs. Ferreira visits door to door -> personal introductions suggest a goal of making residents feel welcomed"
             ]
         },
         {
@@ -103,18 +103,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A tourism board that had marketed a mountain destination primarily toward serious hikers for more than a decade noticed, after reviewing several years of visitor surveys and hotel booking data, that a growing share of visitors were arriving specifically for the region's food scene, a trend the original marketing materials, aimed squarely at outdoor enthusiasts, barely mentioned at all.",
+            "passage": "The airline began sending a short survey immediately after each flight, asking passengers to rate boarding, comfort, and staff friendliness on a simple five-point scale.",
             "options": [
-                "Visitor interests exactly matched what the marketing materials had always emphasized.",
-                "Interest in the food scene has been declining for several years.",
-                "The destination's actual appeal appears to be broader than what the original marketing emphasized.",
-                "The marketing materials focused primarily on the region's food scene from the start."
+                "The airline wanted to discourage passengers from giving feedback, given how the events unfolded.",
+                "The airline likely wanted quick, direct feedback on the passenger experience.",
+                "The survey was unrelated to passenger experience.",
+                "The airline stopped caring about passenger opinions."
             ],
-            "correctAnswer": "The destination's actual appeal appears to be broader than what the original marketing emphasized.",
-            "hint": "Compare what the marketing emphasized with what the survey data actually revealed about visitors.",
-            "explanation": "Surveys showed rising interest in food, something the marketing had barely mentioned, suggesting the destination's real appeal extends beyond what the original hiking-focused campaign captured.",
+            "correctAnswer": "The airline likely wanted quick, direct feedback on the passenger experience.",
+            "hint": "Think about why a short, simple survey sent right after the flight would be useful to the airline.",
+            "explanation": "A brief, specific survey sent immediately after flying, covering key parts of the experience, suggests the airline's goal was to gather quick and direct feedback while it was still fresh.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Survey sent right after flight -> covers boarding, comfort, staff -> simple five-point scale -> goal appears to be quick, direct feedback"
             ]
         },
         {
@@ -122,18 +122,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A long-term study of adult siblings who grew up sharing household chores equally, without gendered task assignments, found that these siblings reported more balanced divisions of household labor in their own adult households decades later, compared to siblings raised in homes where chores such as cooking and lawn care were assigned strictly along traditional gender lines throughout childhood.",
+            "passage": "Instead of announcing the surprise party details in the group chat, Delphine called each guest individually and asked them to keep the date a secret from the guest of honor.",
             "options": [
-                "Gendered chore assignments in childhood led to more balanced adult households.",
-                "How chores were assigned in childhood had no bearing on adult household patterns.",
-                "Every sibling in the study reported identical household arrangements regardless of upbringing.",
-                "Growing up with equally shared chores may be associated with more balanced household labor in adulthood."
+                "Delphine wanted to prevent the guest of honor from finding out about the party in advance.",
+                "Delphine wanted everyone to know about the party except the guests, given how the events unfolded.",
+                "Delphine was trying to cancel the party altogether.",
+                "Delphine had no interest in keeping the party a secret. Such a pattern would remain constant throughout the scenario being described."
             ],
-            "correctAnswer": "Growing up with equally shared chores may be associated with more balanced household labor in adulthood.",
-            "hint": "Compare adult outcomes between the two groups based on how chores were assigned when they were children.",
-            "explanation": "Siblings raised with equally shared chores reported more balanced labor in their own adult households decades later, suggesting early experiences with chore division may carry into adult patterns.",
+            "correctAnswer": "Delphine wanted to prevent the guest of honor from finding out about the party in advance.",
+            "hint": "Think about why she'd avoid the group chat and specifically ask for secrecy.",
+            "explanation": "Calling guests individually instead of using a group chat, and explicitly asking for secrecy, both point to Delphine's goal of keeping the party a surprise.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Group chat avoided -> individual calls made -> secrecy explicitly requested -> goal is keeping the party a surprise"
             ]
         },
         {
@@ -141,18 +141,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "An analysis of household budgets conducted by a consumer research group found that families who tracked every expense in a written or digital log for at least three consecutive months reduced discretionary spending by an average of fifteen percent during that period, even without setting any specific spending limits or savings goals beforehand.",
+            "passage": "Before publishing the article, the editor sent it to two outside experts for review and asked them to flag any factual errors before the print deadline.",
             "options": [
-                "Tracking expenses had no effect on spending unless combined with strict limits.",
-                "Discretionary spending increased among families who tracked their expenses.",
-                "Families needed to set specific goals before any reduction in spending occurred.",
-                "The act of tracking expenses itself, even without formal limits, appears to reduce discretionary spending."
+                "The editor wanted to delay the article indefinitely.",
+                "The editor had already decided the article was inaccurate.",
+                "The outside experts were reviewing an unrelated document.",
+                "The editor wanted to verify the article's accuracy before it was published."
             ],
-            "correctAnswer": "The act of tracking expenses itself, even without formal limits, appears to reduce discretionary spending.",
-            "hint": "Notice that the passage specifically mentions the absence of spending limits or goals.",
-            "explanation": "Spending dropped simply from tracking expenses, even without any specific limits or goals being set, suggesting that the act of monitoring spending on its own can influence behavior.",
+            "correctAnswer": "The editor wanted to verify the article's accuracy before it was published.",
+            "hint": "Think about why an editor would seek outside review specifically for factual errors before publishing.",
+            "explanation": "Sending the article to outside experts specifically to check for factual errors before the deadline shows the editor's goal was to confirm accuracy before publication.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Article sent to outside experts -> review requested for factual errors -> goal appears to be verifying accuracy before publishing"
             ]
         },
         {
@@ -160,18 +160,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A neighborhood association reviewing two years of local crime statistics compared streets with working streetlights installed at every corner to nearby streets with several broken or missing lights that had gone unrepaired for months. Streets with full lighting reported fewer nighttime property crimes, but daytime crime rates were statistically similar across both types of streets.",
+            "passage": "The city planted rows of trees along the newly widened highway median and installed a watering system timed for early morning hours before the summer heat set in.",
             "options": [
-                "Streetlighting was linked to lower crime rates at all times of day.",
-                "Adequate streetlighting appears linked specifically to lower nighttime crime, not daytime crime.",
-                "Streets with broken lights had lower nighttime crime rates.",
-                "Lighting conditions had no bearing on crime rates at any time."
+                "The city wanted the trees to die during the summer, as the passage lays out the sequence of events.",
+                "The city wanted to help the new trees survive through the hot months.",
+                "The watering system had no connection to the trees, according to the specific details given.",
+                "The trees were planted after summer had already ended, given the way the passage frames things."
             ],
-            "correctAnswer": "Adequate streetlighting appears linked specifically to lower nighttime crime, not daytime crime.",
-            "hint": "Notice that the passage separates nighttime results from daytime results.",
-            "explanation": "Full lighting was linked to fewer nighttime property crimes but not to any difference in daytime crime, suggesting the lighting's effect was specific to nighttime conditions, which makes sense given when lighting would matter most.",
+            "correctAnswer": "The city wanted to help the new trees survive through the hot months.",
+            "hint": "Think about why watering would be timed specifically for early morning before summer heat.",
+            "explanation": "Timing the watering system for early morning hours right before summer heat suggests the city's goal was to give the newly planted trees the best chance of surviving the hot season.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Trees planted along median -> watering timed for early morning -> scheduled before summer heat -> goal appears to be helping trees survive the heat"
             ]
         },
         {
@@ -179,18 +179,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A sports scientist studying recovery methods among competitive distance runners found that athletes who used a combination of light stretching and short walks the day after an intense competition reported less muscle soreness than athletes who rested completely, though both groups showed similar recovery in terms of measurable strength two days later.",
+            "passage": "Rather than emailing the entire staff about the policy change, the HR director scheduled small group sessions so employees could ask questions in person.",
             "options": [
-                "Complete rest reduced soreness more effectively than light activity.",
-                "Strength recovery was significantly faster among athletes who rested completely.",
-                "Light activity after competition appears to ease perceived soreness without necessarily speeding measurable strength recovery.",
-                "Light activity had no effect on how sore athletes felt afterward."
+                "The HR director wanted to avoid answering any employee questions, based on the passage's account of what happened.",
+                "The HR director wanted employees to have a chance to ask questions directly.",
+                "The HR director decided not to explain the policy change at all, as the situation is described here.",
+                "The small group sessions were unrelated to the policy change."
             ],
-            "correctAnswer": "Light activity after competition appears to ease perceived soreness without necessarily speeding measurable strength recovery.",
-            "hint": "Notice the passage separates how sore athletes felt from how quickly their strength actually recovered.",
-            "explanation": "Athletes doing light activity reported less soreness, but strength recovery was similar between both groups, suggesting light activity helped athletes feel better without necessarily changing how fast their measurable strength returned.",
+            "correctAnswer": "The HR director wanted employees to have a chance to ask questions directly.",
+            "hint": "Think about why in-person sessions would be chosen over a simple email.",
+            "explanation": "Choosing small in-person sessions over a mass email specifically allows for direct questions, suggesting the HR director's goal was to give employees that opportunity.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Email would be one-way communication -> small group sessions chosen instead -> questions can be asked directly -> goal is enabling employee questions"
             ]
         },
         {
@@ -198,18 +198,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A restaurant group running a blind side-by-side test at two of its locations tested whether describing dishes with specific, sensory language, such as naming the farm a vegetable came from or the exact cooking method used, affected how customers rated the same dishes compared to simple, generic menu descriptions. Dishes with detailed descriptions received notably higher taste ratings, even though the food served was identical in both cases.",
+            "passage": "Before the marathon, the race organizers placed water stations every two miles along the route and stocked each one with extra cups, ice, and electrolyte drinks.",
             "options": [
-                "Menu descriptions had no effect on how customers rated the food.",
-                "Generic descriptions led to higher taste ratings than detailed ones.",
-                "The food served was different between the two groups of customers.",
-                "How a dish is described on the menu appears to influence how customers perceive its taste."
+                "The organizers wanted runners to avoid drinking water during the race, given the way the passage frames things.",
+                "The water stations were placed for spectators, not runners.",
+                "The race had no plan for supporting runners along the route, according to the account given.",
+                "The organizers wanted to help keep runners hydrated throughout the race."
             ],
-            "correctAnswer": "How a dish is described on the menu appears to influence how customers perceive its taste.",
-            "hint": "Notice that the food itself was the same in both cases; only the description changed.",
-            "explanation": "Identical food received higher taste ratings when described in detailed, sensory language, suggesting that menu wording itself can shape how customers perceive the taste of what they're eating.",
+            "correctAnswer": "The organizers wanted to help keep runners hydrated throughout the race.",
+            "hint": "Think about why water stations would be spaced regularly and stocked with hydration supplies.",
+            "explanation": "Placing water stations at regular intervals and stocking them with hydration supplies shows the organizers' clear goal of supporting runners' hydration during the race.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Water stations every two miles -> stocked with water, ice, electrolytes -> goal appears to be supporting runner hydration"
             ]
         },
         {
@@ -217,18 +217,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A city's historical society digitized thousands of old photographs from its archive and posted them online with a simple tagging system that let visitors add names or locations they recognized. Within a year, volunteers had identified people or places in over sixty percent of photos that had previously been listed as unknown for decades, far exceeding the staff's own expectations for the project.",
+            "passage": "The museum added large-print labels and audio descriptions to every exhibit and widened the pathways between displays to accommodate wheelchairs.",
             "options": [
-                "The tagging system failed to identify any additional information.",
-                "Fewer than one percent of the previously unknown photos were identified.",
-                "The historical society removed the tagging system due to low participation.",
-                "Crowdsourced tagging appears to have been effective at identifying previously unknown photo details."
+                "The museum wanted to reduce the number of visitors it received, as the situation is described here.",
+                "The changes had nothing to do with visitor experience.",
+                "The museum wanted to make its exhibits more accessible to a wider range of visitors.",
+                "The museum removed all its exhibits during this process, according to how the passage describes the situation."
             ],
-            "correctAnswer": "Crowdsourced tagging appears to have been effective at identifying previously unknown photo details.",
-            "hint": "Think about what letting many visitors contribute information achieved that the historical society alone had not.",
-            "explanation": "Over sixty percent of previously unidentified photos gained new information within a year of adding the tagging system, suggesting that opening identification to many visitors was far more effective than relying on the historical society's own records.",
+            "correctAnswer": "The museum wanted to make its exhibits more accessible to a wider range of visitors.",
+            "hint": "Think about what large-print labels, audio descriptions, and wider pathways all have in common.",
+            "explanation": "Large-print labels, audio descriptions, and wider pathways are all accessibility features, suggesting the museum's goal was to accommodate visitors with different needs.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Large-print labels added -> audio descriptions added -> pathways widened for wheelchairs -> goal appears to be improving accessibility"
             ]
         },
         {
@@ -236,18 +236,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A hospital IT department rolled out a new electronic records system that required extra clicks to complete routine tasks compared to the old system it replaced. In the months following the rollout, nurses reported spending more time on documentation, and a survey found that overtime hours related specifically to charting had increased noticeably across nearly every unit in the hospital.",
+            "passage": "Instead of scheduling the team meeting during regular work hours, the manager set it for right after lunch, when the office is usually less busy with client calls.",
             "options": [
-                "The new records system reduced the time nurses spent on documentation.",
-                "The new records system appears to have added to nurses' documentation workload.",
-                "Overtime hours related to charting decreased after the rollout.",
-                "The number of clicks required had no bearing on documentation time."
+                "The manager wanted to make the meeting as inconvenient as possible.",
+                "The manager scheduled the meeting to conflict with client calls.",
+                "The manager likely chose that time to minimize interruptions during the meeting.",
+                "The timing had nothing to do with client call schedules."
             ],
-            "correctAnswer": "The new records system appears to have added to nurses' documentation workload.",
-            "hint": "Compare documentation time and overtime hours before and after the new system was introduced.",
-            "explanation": "Documentation time and charting-related overtime both increased after the system requiring extra clicks was introduced, suggesting the added steps meaningfully increased nurses' workload.",
+            "correctAnswer": "The manager likely chose that time to minimize interruptions during the meeting.",
+            "hint": "Think about why choosing a quieter time slot would matter for a meeting.",
+            "explanation": "Deliberately scheduling the meeting during a period usually free of client calls suggests the manager wanted to reduce the chance of interruptions.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Regular hours often busy with client calls -> meeting scheduled right after lunch instead -> goal appears to be minimizing interruptions"
             ]
         },
         {
@@ -255,18 +255,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A physical therapist tracked two groups of patients recovering from the same type of knee surgery over a six-month period: one group began gentle movement exercises within twenty-four hours of surgery, while the other waited the traditional seventy-two hours before starting. The early-movement group regained a comparable range of motion in about two-thirds the time.",
+            "passage": "After noticing several students struggling with a math concept, Ms. Patel created a short video explaining the topic step by step and posted it to the class portal for anyone to rewatch at home.",
             "options": [
-                "Waiting seventy-two hours led to faster recovery of range of motion.",
-                "The timing of movement after surgery had no bearing on recovery speed.",
-                "Starting movement earlier after surgery appears to speed up the recovery of range of motion.",
-                "Both groups took an identical amount of time to recover range of motion."
+                "Ms. Patel wanted to make the concept more confusing. No part of the passage's account suggests otherwise.",
+                "Ms. Patel wanted students to have extra support they could review at their own pace.",
+                "Ms. Patel decided to stop teaching the concept in class, based on what the passage actually says.",
+                "The video was unrelated to the students' struggles."
             ],
-            "correctAnswer": "Starting movement earlier after surgery appears to speed up the recovery of range of motion.",
-            "hint": "Compare how quickly each group regained a similar range of motion.",
-            "explanation": "The group that began gentle movement sooner regained similar range of motion in significantly less time, suggesting earlier movement after surgery may speed up this aspect of recovery.",
+            "correctAnswer": "Ms. Patel wanted students to have extra support they could review at their own pace.",
+            "hint": "Think about why a video that can be rewatched would help students who are struggling.",
+            "explanation": "Creating a step-by-step video specifically after noticing student struggles, and making it available to rewatch, shows the goal was giving students extra, flexible support.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Students struggle with concept -> step-by-step video created -> posted for repeat viewing -> goal is extra, self-paced support"
             ]
         },
         {
@@ -274,18 +274,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "An electronics retailer running a controlled pricing and display experiment across several store locations noticed that products displayed with a visible 'only 3 left in stock' label sold out faster than identical products without any stock indicator, even in stores where the actual inventory levels behind the scenes were comparable between the two types of product displays.",
+            "passage": "The landlord installed motion-sensor lights in the parking garage and added a second security camera near the stairwell after several tenants mentioned feeling unsafe at night.",
             "options": [
-                "Displaying low-stock warnings appears to accelerate how quickly products sell.",
-                "Stock indicators had no effect on how quickly products sold.",
-                "Products without stock indicators sold out faster.",
-                "The actual inventory levels were different between the two types of displays."
+                "The landlord wanted to make tenants feel less safe, as the passage presents the situation.",
+                "The safety upgrades were completely unrelated to tenant feedback, as the passage lays out the sequence of events.",
+                "No tenants had ever raised concerns about safety, given how the events unfolded.",
+                "The landlord wanted to address tenants' safety concerns."
             ],
-            "correctAnswer": "Displaying low-stock warnings appears to accelerate how quickly products sell.",
-            "hint": "Notice that inventory levels were similar; only the visible label differed.",
-            "explanation": "Products with a visible low-stock label sold out faster than identical products without one, even with similar actual inventory, suggesting the warning itself influenced how quickly customers decided to buy.",
+            "correctAnswer": "The landlord wanted to address tenants' safety concerns.",
+            "hint": "Think about why these specific safety upgrades would follow tenant complaints about feeling unsafe.",
+            "explanation": "Adding motion-sensor lights and an extra camera right after tenants raised safety concerns shows the landlord's goal was to respond directly to those worries.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Tenants mention feeling unsafe at night -> motion-sensor lights installed -> extra camera added -> goal appears to be addressing safety concerns"
             ]
         },
         {
@@ -293,18 +293,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A mid-sized law firm that switched from billing clients by the hour to billing a single flat project fee for routine cases found that the average number of hours attorneys spent on similar cases dropped by nearly twenty percent over the following year, without any measurable change in case outcomes or client satisfaction scores.",
+            "passage": "The nonprofit's newsletter began including a 'behind the scenes' section showing photos of staff packing donation boxes and volunteers sorting supplies at the warehouse.",
             "options": [
-                "Case outcomes for clients worsened significantly after the billing change.",
-                "Flat-fee billing appears to have reduced hours spent without harming case outcomes.",
-                "Attorneys spent more hours on cases after the switch to flat fees.",
-                "The type of billing had no bearing on how many hours attorneys spent."
+                "The nonprofit wanted to hide its daily operations from supporters.",
+                "The photos were unrelated to the nonprofit's work.",
+                "The newsletter stopped mentioning any of the nonprofit's activities, given the way the passage frames things.",
+                "The nonprofit wanted supporters to see how their donations were being handled."
             ],
-            "correctAnswer": "Flat-fee billing appears to have reduced hours spent without harming case outcomes.",
-            "hint": "Compare what changed (hours spent) with what stayed the same (case outcomes).",
-            "explanation": "Hours spent per case dropped after the switch to flat fees, while outcomes for clients stayed the same, suggesting the previous hourly system may have encouraged spending more time than cases actually required.",
+            "correctAnswer": "The nonprofit wanted supporters to see how their donations were being handled.",
+            "hint": "Think about why an organization would specifically show behind-the-scenes photos of its operations.",
+            "explanation": "Adding a section that visually shows staff and volunteers handling donations suggests the nonprofit's goal was transparency about how contributions are processed.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Behind-the-scenes section added -> photos show packing and sorting -> goal appears to be transparency about donation handling"
             ]
         },
         {
@@ -312,18 +312,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A utility company that began sending residential customers a monthly comparison of their electricity use against similar-sized homes in their neighborhood found, over the program's first full year, that the households receiving the highest-usage comparisons reduced their consumption more than households that were already near or below the neighborhood average to begin with.",
+            "passage": "Before opening a second location, the cafe owner spent a month training two employees from the original shop to become managers, having them shadow every role in the kitchen and front counter.",
             "options": [
-                "Households already using less electricity reduced their usage the most.",
-                "The neighborhood comparison had no effect on any household's electricity use.",
-                "The comparison appears to have motivated the highest-usage households most strongly.",
-                "Every household reduced its electricity use by an identical amount."
+                "The owner wanted to prevent any employees from being promoted.",
+                "The owner wanted experienced staff ready to lead the new location.",
+                "The training had nothing to do with the new location.",
+                "The owner planned to close the original shop instead."
             ],
-            "correctAnswer": "The comparison appears to have motivated the highest-usage households most strongly.",
-            "hint": "Notice which specific group of households reduced their usage the most.",
-            "explanation": "Households with the highest usage compared to their neighbors cut back the most, suggesting the comparison was especially motivating for households that saw the biggest gap between themselves and their neighbors.",
+            "correctAnswer": "The owner wanted experienced staff ready to lead the new location.",
+            "hint": "Think about why training staff across every role would matter before opening a second location.",
+            "explanation": "Training employees across every role in preparation for a second location shows the owner's goal of having capable, well-rounded managers ready to lead it.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Second location planned -> two employees trained across every role -> goal appears to be preparing capable managers"
             ]
         },
         {
@@ -331,18 +331,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A district piloted a program giving struggling readers in second grade daily one-on-one sessions with a certified reading specialist for twelve consecutive weeks during the school year. When retested, participating students had closed roughly half the gap between their initial reading level and their grade's expected level, though few reached full grade-level reading by the end of the pilot.",
+            "passage": "After several customers complained about long hold times, the phone company added a callback option so customers could keep their place in line without staying on the phone.",
             "options": [
-                "The program completely closed the reading gap for every participating student.",
-                "The program had no measurable effect on students' reading levels.",
-                "Students' reading levels declined further behind grade level during the pilot.",
-                "The program appears to have produced meaningful but incomplete progress toward grade-level reading."
+                "The company wanted to reduce the frustration customers felt about long hold times.",
+                "The company wanted customers to wait even longer on hold, as the passage lays out the sequence of events.",
+                "The callback option was unrelated to customer complaints, based on the passage's account of what happened.",
+                "The company stopped taking customer calls entirely."
             ],
-            "correctAnswer": "The program appears to have produced meaningful but incomplete progress toward grade-level reading.",
-            "hint": "Notice the passage describes real progress, but also mentions that full grade-level reading was rarely reached.",
-            "explanation": "Students closed about half the gap to grade-level reading but few reached it fully, suggesting the program helped meaningfully without fully resolving the reading gap in just twelve weeks.",
+            "correctAnswer": "The company wanted to reduce the frustration customers felt about long hold times.",
+            "hint": "Think about how a callback option addresses the specific complaint about long hold times.",
+            "explanation": "Introducing a callback option specifically after complaints about hold times shows the company's goal was to ease that particular frustration for customers.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Customers complain about long hold times -> callback option introduced -> goal appears to be reducing wait-related frustration"
             ]
         },
         {
@@ -350,18 +350,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A researcher interviewing dozens of adult children who had cared for aging parents over the previous five years found that those who had openly discussed care preferences and financial plans with their parents years in advance reported significantly less family conflict during the actual caregiving period than those who had never discussed these topics beforehand.",
+            "passage": "The city library began hosting a monthly 'silent book club' where members read individually in the same room, followed by twenty minutes of casual conversation about what they'd read.",
             "options": [
-                "Families who discussed plans in advance reported more conflict during caregiving.",
-                "Advance planning had no bearing on family conflict during caregiving.",
-                "Every family in the study reported the same level of conflict.",
-                "Discussing care preferences in advance appears linked to less family conflict during caregiving."
+                "The library wanted to create a relaxed way for readers to connect with each other.",
+                "The library wanted to discourage people from talking to each other, as the passage lays out the sequence of events.",
+                "The event had no social component at all.",
+                "The library wanted members to stop reading books. This would apply consistently across every detail the passage provides."
             ],
-            "correctAnswer": "Discussing care preferences in advance appears linked to less family conflict during caregiving.",
-            "hint": "Compare conflict levels between families who planned ahead and those who didn't.",
-            "explanation": "Families who discussed care and financial plans in advance reported less conflict during actual caregiving than families who hadn't, suggesting early conversations may help prevent disagreements later.",
+            "correctAnswer": "The library wanted to create a relaxed way for readers to connect with each other.",
+            "hint": "Think about why combining silent reading with a conversation period would appeal to readers.",
+            "explanation": "Structuring the event around shared quiet reading followed by casual conversation suggests the library's goal was to offer a low-pressure way for readers to socialize.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Members read silently together -> conversation period follows -> goal appears to be a relaxed way to connect over reading"
             ]
         },
         {
@@ -369,18 +369,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A travel insurance company reviewing three years of claims data found that customers who purchased a policy within twenty-four hours of booking their trip filed claims at a noticeably lower rate than customers who purchased a policy closer to their departure date, even though the coverage terms and premium prices were identical for both groups of travelers.",
+            "passage": "Instead of raising prices across the board, the grocery store began offering a loyalty discount specifically on staple items like bread, milk, and eggs.",
             "options": [
-                "When a policy is purchased may be associated with how often a claim is later filed.",
-                "Coverage terms differed significantly between the two groups of customers.",
-                "Customers who purchased policies later filed fewer claims.",
-                "The timing of a policy purchase had no bearing on claim rates."
+                "The store wanted to make essential items more expensive. The passage offers no detail suggesting this changed over the period discussed.",
+                "The discount applied to luxury items instead of staples. Nothing in the passage suggests this changed at any point during the period described.",
+                "The loyalty program was unrelated to pricing decisions. The passage's account gives no reason to think this differed at any stage.",
+                "The store likely wanted to keep essential items more affordable for regular shoppers."
             ],
-            "correctAnswer": "When a policy is purchased may be associated with how often a claim is later filed.",
-            "hint": "Compare claim rates between the two groups, noting that their coverage was identical.",
-            "explanation": "Customers who bought insurance soon after booking filed fewer claims than those who bought closer to departure, even with identical coverage, suggesting purchase timing itself is associated with claim likelihood.",
+            "correctAnswer": "The store likely wanted to keep essential items more affordable for regular shoppers.",
+            "hint": "Think about why a store would target discounts specifically at staple items rather than raising prices broadly.",
+            "explanation": "Choosing to discount essential staple items rather than raising prices generally suggests the store's goal was to keep everyday necessities affordable for loyal shoppers.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Prices could have risen broadly -> discount targeted at staples instead -> goal appears to be keeping essentials affordable"
             ]
         },
         {
@@ -388,18 +388,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A well-established film festival that had always scheduled its most anticipated premieres in the evening experimented with moving several premieres to mid-morning slots one year as a way to ease scheduling conflicts between competing screenings. Contrary to organizers' expectations of poor attendance, the morning screenings sold out just as quickly as evening ones, and post-screening discussions ran noticeably longer.",
+            "passage": "The technology company released detailed documentation, sample code, and a community forum alongside its new software tool, rather than keeping the tool's inner workings private.",
             "options": [
-                "Morning screenings sold far fewer tickets than organizers expected.",
-                "Morning screenings performed better than festival organizers had anticipated.",
-                "The festival cancelled all morning screenings after the experiment.",
-                "Evening screenings consistently outsold morning screenings that year."
+                "The company wanted to make the tool as difficult to use as possible, as the passage lays out the sequence of events.",
+                "The company wanted developers to be able to understand and use the tool easily.",
+                "The documentation was unrelated to helping developers.",
+                "The company planned to discontinue the tool immediately, given how the events unfolded."
             ],
-            "correctAnswer": "Morning screenings performed better than festival organizers had anticipated.",
-            "hint": "Compare what organizers expected with what actually happened at the morning screenings.",
-            "explanation": "Morning screenings sold out just as fast as evening ones, defying organizers' low expectations, suggesting that scheduling premieres in the morning was more viable than the festival had assumed.",
+            "correctAnswer": "The company wanted developers to be able to understand and use the tool easily.",
+            "hint": "Think about why providing documentation, sample code, and a forum would help developers.",
+            "explanation": "Releasing documentation, sample code, and a support forum alongside the tool shows the company's goal was to make it accessible and understandable for developers.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Documentation released -> sample code provided -> community forum created -> goal appears to be easing developer adoption"
             ]
         },
         {
@@ -407,18 +407,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A city comparing two low-income neighborhoods with similar demographics found that the one which received a new community health clinic reported a decline in emergency room visits for non-urgent conditions over the following two years, while the neighborhood without a new clinic saw its emergency room visits for the same conditions remain essentially steady over that same period.",
+            "passage": "Rather than posting the exam results on the classroom door, Professor Liang emailed each student their individual score privately and offered office hours to discuss any concerns.",
             "options": [
-                "The new clinic appears to have reduced non-urgent emergency room visits in its neighborhood.",
-                "Emergency room visits increased in the neighborhood with the new clinic.",
-                "Both neighborhoods saw identical changes in emergency room visits.",
-                "The neighborhood without a clinic saw the larger decline in visits."
+                "Professor Liang wanted every student's score displayed publicly, given the way the passage frames things.",
+                "Professor Liang refused to share any exam results, according to the account given.",
+                "Professor Liang wanted to keep each student's results private.",
+                "The office hours were unrelated to the exam results, according to how the passage describes the situation."
             ],
-            "correctAnswer": "The new clinic appears to have reduced non-urgent emergency room visits in its neighborhood.",
-            "hint": "Compare the two neighborhoods, noting which one received the new clinic.",
-            "explanation": "Non-urgent emergency room visits declined only in the neighborhood that got a new clinic, while the other neighborhood's visits stayed steady, suggesting the clinic gave residents an alternative to the emergency room.",
+            "correctAnswer": "Professor Liang wanted to keep each student's results private.",
+            "hint": "Think about why emailing scores privately, instead of posting them publicly, would matter.",
+            "explanation": "Sending scores individually by email rather than posting them publicly, along with offering private office hours, shows the professor's goal of protecting each student's privacy.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Public posting avoided -> scores emailed individually -> office hours offered privately -> goal appears to be protecting student privacy"
             ]
         },
         {
@@ -426,18 +426,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "An analysis of first-time homebuyers across several states found that those who completed a mandatory financial counseling session before closing on their loan were less likely to fall behind on mortgage payments during the first two years of homeownership than buyers in a comparable income bracket who were not required to attend any counseling at all.",
+            "passage": "Before launching the new app feature to all users, the company released it to just 5 percent of accounts first and closely monitored crash reports and user feedback for two weeks.",
             "options": [
-                "Financial counseling had no bearing on mortgage payment behavior.",
-                "Financial counseling before closing appears linked to fewer missed mortgage payments.",
-                "Buyers who attended counseling missed more payments than those who didn't.",
-                "Income bracket was the only factor that predicted missed payments."
+                "The company wanted to release the feature to everyone immediately, given the specific information included in the passage.",
+                "The company wanted to catch problems before rolling the feature out widely.",
+                "The company had no interest in user feedback. Nothing in the passage suggests this changed at any point during the period described.",
+                "The small release group was unrelated to testing the feature, as the situation is described here."
             ],
-            "correctAnswer": "Financial counseling before closing appears linked to fewer missed mortgage payments.",
-            "hint": "Compare missed-payment rates between buyers who received counseling and comparable buyers who didn't.",
-            "explanation": "Buyers who completed financial counseling missed fewer mortgage payments than similar-income buyers who didn't attend counseling, suggesting the counseling itself contributed to better payment outcomes.",
+            "correctAnswer": "The company wanted to catch problems before rolling the feature out widely.",
+            "hint": "Think about why a company would test with a small group before a full release.",
+            "explanation": "Releasing the feature to a small percentage first and closely watching for crashes and feedback suggests the company's goal was to identify and fix issues before a wider rollout.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Feature released to 5% of accounts first -> crash reports and feedback monitored for two weeks -> goal appears to be catching problems before wide release"
             ]
         },
         {
@@ -445,18 +445,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A youth baseball league that introduced a rule limiting how many pitches a young pitcher could throw in a single game, based on the player's age, saw a substantial decline in elbow and shoulder injury reports among pitchers over the following three seasons, compared to the three seasons immediately before the rule was formally adopted by the league.",
+            "passage": "Coach Belanger scheduled an extra practice focused only on free throws after the team missed several critical shots in their last game, and had players track their own shooting percentage during drills.",
             "options": [
-                "The pitch-count rule appears connected to a decline in pitcher injuries.",
-                "Pitcher injuries increased after the pitch-count rule was introduced.",
-                "The rule was removed after causing more injuries.",
-                "Pitch limits had no bearing on injury rates among young pitchers."
+                "Coach Belanger wanted the team to stop practicing free throws, according to the specific details given.",
+                "The extra practice focused on an unrelated skill.",
+                "Coach Belanger wanted the team to improve its free-throw shooting specifically.",
+                "Coach Belanger had no reaction to the missed shots."
             ],
-            "correctAnswer": "The pitch-count rule appears connected to a decline in pitcher injuries.",
-            "hint": "Compare injury rates in the three seasons before the rule to the three seasons after.",
-            "explanation": "Elbow and shoulder injuries among pitchers declined substantially after the pitch-count rule was introduced, suggesting the limit helped protect young pitchers from overuse injuries.",
+            "correctAnswer": "Coach Belanger wanted the team to improve its free-throw shooting specifically.",
+            "hint": "Think about why an extra practice would focus specifically on free throws after that particular game.",
+            "explanation": "Scheduling a practice focused only on free throws right after missed critical shots, and tracking shooting percentages, shows the coach's clear goal of targeting that specific weakness.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Team misses critical free throws -> extra practice scheduled focused on free throws -> shooting percentages tracked -> goal is improving that specific skill"
             ]
         },
         {
@@ -464,18 +464,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A regional supermarket chain that began placing small, handwritten recipe cards near several less-popular vegetables, showing simple and quick ways to prepare them, found that sales of those specific vegetables rose noticeably while sales of more popular vegetables displayed without any recipe cards stayed essentially flat over the same three-month period.",
+            "passage": "Before the merger was finalized, both companies' HR departments held joint town halls, published a shared FAQ document, and set up an anonymous question box for employees.",
             "options": [
-                "Sales of popular vegetables rose the most after the recipe cards appeared.",
-                "The recipe cards had no measurable effect on vegetable sales.",
-                "The recipe cards appear to have specifically boosted sales of the less-popular vegetables.",
-                "Sales of the less-popular vegetables declined after the recipe cards were added."
+                "The HR departments wanted to keep employees uninformed about the merger, given how the events unfolded.",
+                "The town halls were unrelated to the merger process. Nothing in the passage suggests this changed at any point during the period described.",
+                "Employees were prevented from asking any questions. The passage offers no detail suggesting this changed over the period discussed.",
+                "The HR departments wanted to keep employees informed and address their concerns during the merger."
             ],
-            "correctAnswer": "The recipe cards appear to have specifically boosted sales of the less-popular vegetables.",
-            "hint": "Notice which vegetables got recipe cards and which didn't, then compare their sales trends.",
-            "explanation": "Sales rose specifically for the vegetables with recipe cards, while vegetables without cards saw no change, suggesting the cards helped shoppers see new ways to use vegetables they might otherwise skip.",
+            "correctAnswer": "The HR departments wanted to keep employees informed and address their concerns during the merger.",
+            "hint": "Think about why joint town halls, an FAQ, and an anonymous question box would be useful during a merger.",
+            "explanation": "Holding joint town halls, publishing an FAQ, and offering an anonymous question box together suggest a clear goal of keeping employees informed and giving them a way to voice concerns during an uncertain time.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Town halls held jointly -> FAQ document published -> anonymous question box set up -> goal appears to be keeping employees informed"
             ]
         },
         {
@@ -483,18 +483,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A team of app developers analyzing several months of onboarding data found that users who completed account setup using a single sign-on option, linking an existing email or social media account, were retained at a noticeably higher rate after ninety days than users who created a brand-new username and password specifically for the app.",
+            "passage": "Rather than requiring a full application for the small business grant, the city created a two-page simplified form and offered free workshops to help owners fill it out correctly.",
             "options": [
-                "Creating a new username and password led to better retention.",
-                "Single sign-on setup appears linked to better long-term user retention.",
-                "The method of account setup had no bearing on retention rates.",
-                "Retention rates were identical regardless of setup method."
+                "The city wanted to discourage small business owners from applying.",
+                "The simplified form made the application process longer.",
+                "The city wanted to make it easier for small business owners to apply for the grant.",
+                "The workshops were unrelated to the grant application."
             ],
-            "correctAnswer": "Single sign-on setup appears linked to better long-term user retention.",
-            "hint": "Compare ninety-day retention rates between the two setup methods.",
-            "explanation": "Users who set up accounts through single sign-on were retained at a higher rate after ninety days than users who created new credentials, suggesting the simpler setup process was linked to users sticking with the app longer.",
+            "correctAnswer": "The city wanted to make it easier for small business owners to apply for the grant.",
+            "hint": "Think about why simplifying the form and offering help would matter to applicants.",
+            "explanation": "Reducing the application to two pages and offering free workshops to assist owners both point to the city's goal of making the grant more accessible.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Application simplified to two pages -> free workshops offered -> goal appears to be easing the application process for owners"
             ]
         },
         {
@@ -502,18 +502,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A small independent publishing house that had rejected a debut manuscript twice over the course of a year found that after the same manuscript won a small regional writing award under a different title, sales of the eventually published novel exceeded the publisher's most optimistic internal projections by a wide margin within its first month on shelves.",
+            "passage": "Instead of relying only on written instructions, the appliance manufacturer included a QR code on the box linking to a short setup video, along with a printed diagram of each part.",
             "options": [
-                "The novel's eventual success suggests the publisher's original assessment of the manuscript may have been mistaken.",
-                "The novel performed exactly as the publisher had originally projected.",
-                "The manuscript's quality changed significantly between rejections and publication.",
-                "The regional writing award had no bearing on the novel's later sales."
+                "The manufacturer wanted setup to be as confusing as possible. The passage gives no indication that this varied across the circumstances described.",
+                "The QR code was unrelated to the appliance's setup. This would be expected to hold across the entire situation as described.",
+                "The manufacturer wanted to make setup easier for customers with different learning preferences.",
+                "The company removed all instructions from the box. The passage offers no detail suggesting this changed over the period discussed."
             ],
-            "correctAnswer": "The novel's eventual success suggests the publisher's original assessment of the manuscript may have been mistaken.",
-            "hint": "Think about what the gap between the publisher's rejections and the novel's eventual success suggests about the original judgment.",
-            "explanation": "A manuscript rejected twice went on to far exceed sales projections after winning an award, suggesting the publisher's earlier assessment of the work's commercial potential may not have been accurate.",
+            "correctAnswer": "The manufacturer wanted to make setup easier for customers with different learning preferences.",
+            "hint": "Think about why offering both a video and a diagram, instead of just text, would help different customers.",
+            "explanation": "Providing a video, a diagram, and written instructions together suggests the manufacturer's goal was to accommodate customers who learn best in different ways during setup.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "QR code links to setup video -> printed diagram also included -> goal appears to be accommodating different learning preferences"
             ]
         },
         {
@@ -521,18 +521,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A workplace study comparing employees who ate lunch away from their desks, in a separate break room or outdoors, to employees who routinely ate at their desks while continuing to work, found that the away-from-desk group reported higher afternoon productivity scores despite spending the same total number of hours working each day.",
+            "passage": "Before the community garden opened to the public, organizers built raised beds at wheelchair height along one row and left the ground-level beds elsewhere for other gardeners.",
             "options": [
-                "Taking lunch away from the desk appears linked to higher afternoon productivity.",
-                "Eating at the desk led to higher afternoon productivity.",
-                "Where employees ate lunch had no bearing on their productivity.",
-                "The away-from-desk group worked fewer total hours than the other group."
+                "The organizers wanted the garden to be usable by people with mobility needs.",
+                "The organizers wanted to exclude people with mobility needs, given the specific information included in the passage.",
+                "The raised beds were built for decoration only.",
+                "The garden was never intended to open to the public, given how the events unfolded."
             ],
-            "correctAnswer": "Taking lunch away from the desk appears linked to higher afternoon productivity.",
-            "hint": "Compare productivity scores between the two groups, noting that total work hours were the same for both.",
-            "explanation": "Employees who ate away from their desks reported higher afternoon productivity than those who ate while working, even with identical total work hours, suggesting the break itself contributed to their productivity rather than simply having more time.",
+            "correctAnswer": "The organizers wanted the garden to be usable by people with mobility needs.",
+            "hint": "Think about why raised beds would be built specifically at wheelchair height.",
+            "explanation": "Building raised beds at wheelchair height alongside standard ground-level beds shows the organizers' goal of making the garden accessible to gardeners with different mobility needs.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Raised beds built at wheelchair height -> ground-level beds also included -> goal appears to be accessibility for varied mobility needs"
             ]
         },
         {
@@ -540,18 +540,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A regional staffing agency tracked job candidates over an eighteen-month period and found that those who were given specific, detailed feedback after an unsuccessful interview were more likely to reapply to the same company for a future position within the following year than candidates who received only a short, generic rejection notice.",
+            "passage": "Rather than announcing the store closure with a single sign, the owner personally called longtime customers, thanked them for their support, and let them know about the final week of sales.",
             "options": [
-                "Detailed rejection feedback appears to encourage candidates to reapply in the future.",
-                "Generic rejection notices encouraged more candidates to reapply.",
-                "The type of rejection feedback had no bearing on whether candidates reapplied.",
-                "Candidates who received detailed feedback were less likely to reapply."
+                "The owner wanted to avoid contacting any customers.",
+                "The phone calls were unrelated to the store's closure, as the passage lays out the sequence of events.",
+                "The owner planned to keep the store open indefinitely.",
+                "The owner wanted to personally acknowledge loyal customers before closing."
             ],
-            "correctAnswer": "Detailed rejection feedback appears to encourage candidates to reapply in the future.",
-            "hint": "Compare reapplication rates between candidates who received detailed feedback and those who received a generic notice.",
-            "explanation": "Candidates given detailed feedback reapplied more often than those given only a generic rejection, suggesting the specific feedback left a more positive impression that encouraged them to try again.",
+            "correctAnswer": "The owner wanted to personally acknowledge loyal customers before closing.",
+            "hint": "Think about why the owner chose personal calls over a simple sign for loyal customers.",
+            "explanation": "Personally calling longtime customers to thank them, rather than relying only on a sign, shows the owner's goal was to acknowledge their loyalty directly before closing.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Sign alone would be impersonal -> longtime customers called individually -> thanks given directly -> goal is personal acknowledgment before closing"
             ]
         },
         {
@@ -559,18 +559,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "Since installing a water filter pitcher and switching from bottled water, the Kowalski family calculated that they now spend roughly eleven dollars a month on replacement filters, compared to the sixty dollars a month they previously spent on bottled water, while also noticing a significant drop in the number of plastic bottles in their weekly recycling bin.",
+            "passage": "Before the wildlife sanctuary opened its new viewing platform, staff installed one-way glass and kept visitor noise levels monitored, aiming to observe the animals without disturbing their natural behavior.",
             "options": [
-                "The family's water-related costs increased after switching to a filter pitcher.",
-                "The number of plastic bottles in their recycling bin increased after the switch.",
-                "The switch affected the family's costs but had no effect on their plastic waste.",
-                "Switching to a filter pitcher appears to have reduced both the family's costs and their plastic waste."
+                "The sanctuary wanted the animals to interact directly with visitors.",
+                "The one-way glass was installed for an unrelated reason.",
+                "The sanctuary wanted to stop all visitor observation entirely.",
+                "The sanctuary wanted visitors to observe the animals without affecting their behavior."
             ],
-            "correctAnswer": "Switching to a filter pitcher appears to have reduced both the family's costs and their plastic waste.",
-            "hint": "Notice the passage mentions two separate outcomes of the switch, not just one.",
-            "explanation": "The family's monthly costs dropped sharply and their plastic bottle recycling decreased, showing that switching to a filter pitcher benefited them both financially and in terms of the plastic waste they produced.",
+            "correctAnswer": "The sanctuary wanted visitors to observe the animals without affecting their behavior.",
+            "hint": "Think about why one-way glass and noise monitoring would matter for observing wildlife.",
+            "explanation": "Installing one-way glass and monitoring noise levels are both measures aimed at keeping the animals undisturbed while still allowing visitors to watch them.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "One-way glass installed -> visitor noise monitored -> goal appears to be observing animals without disturbing natural behavior"
             ]
         }
     ]

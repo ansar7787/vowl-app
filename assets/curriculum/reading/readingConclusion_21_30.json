@@ -8,18 +8,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "Although the new principal cut the school's art budget in half, she doubled funding for the debate team, which had placed in the regional finals for three years running. Several art teachers have since left for other schools.",
+            "passage": "The warehouse temporarily switched to a new packing method last quarter. Since then, the number of damaged items reported by customers has dropped by nearly half.",
             "options": [
-                "The funding choices coincided with a loss of art teachers.",
-                "The principal increased funding for the art program.",
-                "Every teacher at the school resigned this year.",
-                "The debate team lost its funding this year."
+                "The new packing method increased the number of damaged items, given the way the passage frames things.",
+                "Customer reports about damaged items stopped completely.",
+                "The new packing method appears to have reduced damage to shipments.",
+                "The warehouse abandoned the new packing method immediately."
             ],
-            "correctAnswer": "The funding choices coincided with a loss of art teachers.",
-            "hint": "Notice which program lost money and what happened to its staff afterward.",
-            "explanation": "After the art budget was cut, several art teachers left the school. The timing suggests the funding cut is connected to their departure.",
+            "correctAnswer": "The new packing method appears to have reduced damage to shipments.",
+            "hint": "Compare the number of damage reports before and after the packing method changed.",
+            "explanation": "Damage reports fell by nearly half only after the packing method changed, which supports the idea that the new method is responsible for the improvement.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Packing method changed -> damage reports drop by half -> change appears linked to fewer damaged shipments"
             ]
         },
         {
@@ -27,18 +27,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A popular messaging app recently limited free users to twenty messages a day, while keeping unlimited messaging for paying subscribers. Within a month, the number of people upgrading to a paid account had grown by nearly forty percent.",
+            "passage": "A city intersection had three accidents in six months. After traffic engineers installed a new left-turn signal, the intersection went eight months without a single accident.",
             "options": [
-                "Paid subscriptions dropped after the change.",
-                "The message limit persuaded more free users to start paying.",
-                "The app removed its paid subscription option entirely.",
-                "The message limit had no effect on how many people paid."
+                "The new signal made the intersection more dangerous.",
+                "The intersection was closed after the signal was installed, based on the details the passage provides.",
+                "Accidents at the intersection increased after the signal was added.",
+                "The new signal likely made the intersection safer."
             ],
-            "correctAnswer": "The message limit persuaded more free users to start paying.",
-            "hint": "Think about what a daily message limit might push free users to do.",
-            "explanation": "Paid upgrades rose sharply right after the free message limit was introduced, suggesting the limit encouraged users to subscribe.",
+            "correctAnswer": "The new signal likely made the intersection safer.",
+            "hint": "Compare accident frequency before and after the signal was installed.",
+            "explanation": "Frequent accidents stopped happening after the new signal was installed, which supports the conclusion that the signal improved safety at the intersection.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Three accidents in six months -> left-turn signal installed -> zero accidents in following eight months -> signal likely improved safety"
             ]
         },
         {
@@ -46,18 +46,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "The neighborhood used to have almost no public events, and residents rarely spoke to one another outside their own homes. Since the community center began hosting a monthly potluck dinner, several neighbors have started organizing their own weekend gatherings as well.",
+            "passage": "The call center reduced average wait times after redesigning its phone menu to route callers directly to the right department. Customer satisfaction scores rose the following month.",
             "options": [
-                "Neighbors have become less friendly since the potlucks began.",
-                "The community center stopped hosting any events.",
-                "Weekend gatherings have always been common in the neighborhood.",
-                "Fewer public events used to mean less contact between neighbors."
+                "The redesigned phone menu caused satisfaction scores to fall.",
+                "Wait times increased after the redesign.",
+                "The redesigned phone menu may have contributed to higher satisfaction scores.",
+                "Customer satisfaction scores were unrelated to wait times."
             ],
-            "correctAnswer": "Fewer public events used to mean less contact between neighbors.",
-            "hint": "Compare how neighbors interacted before and after the potluck dinners started.",
-            "explanation": "Neighbors began organizing their own gatherings only after the potluck dinners started, suggesting the events helped bring the community closer together.",
+            "correctAnswer": "The redesigned phone menu may have contributed to higher satisfaction scores.",
+            "hint": "Look at what changed in the call routing and what happened to satisfaction scores afterward.",
+            "explanation": "Shorter wait times followed the menu redesign, and satisfaction scores rose the next month, suggesting the redesign played a role in the improvement.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Phone menu redesigned -> wait times drop -> satisfaction scores rise next month -> redesign may have contributed"
             ]
         },
         {
@@ -65,18 +65,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "Since the company allowed employees to choose their own start times between 7 and 10 a.m. each morning, the human resources department has noticed a noticeable drop in the number of sick days employees are requesting.",
+            "passage": "A local river's fish population had been declining for years. After a factory upstream closed and stopped releasing wastewater, biologists recorded a steady increase in fish counts over the next two years.",
             "options": [
-                "Employees seem to be taking fewer sick days under the flexible schedule.",
-                "Sick days increased after flexible start times began.",
-                "The company removed flexible scheduling this year.",
-                "Start times have no connection to how often employees are sick."
+                "The factory's closure caused the fish population to decline further, as the passage lays out the sequence of events.",
+                "The fish population had nothing to do with the factory.",
+                "The factory's closure may have contributed to the recovery of the fish population.",
+                "Fish counts stayed exactly the same after the factory closed, as the situation is described here."
             ],
-            "correctAnswer": "Employees seem to be taking fewer sick days under the flexible schedule.",
-            "hint": "Think about how having flexible hours might affect how employees feel.",
-            "explanation": "Sick day requests dropped after employees gained control over their start times, suggesting the flexibility may have improved how they feel at work.",
+            "correctAnswer": "The factory's closure may have contributed to the recovery of the fish population.",
+            "hint": "Notice what changed upstream right before the fish counts began rising.",
+            "explanation": "Fish counts began climbing only after the polluting factory closed, which supports the idea that removing the wastewater source helped the population recover.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Factory releases wastewater -> fish decline -> factory closes -> fish counts rise over two years -> closure likely helped recovery"
             ]
         },
         {
@@ -84,18 +84,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "The seafood market used to throw away large amounts of unsold fish at closing time. After starting a discount hour in the final sixty minutes, the amount thrown away each week has fallen by nearly seventy percent.",
+            "passage": "A school introduced a ten-minute recess break in the middle of long afternoon classes. Teachers later reported that students seemed more attentive during the last class period than before the break was added.",
             "options": [
-                "Far less fish is being wasted since the discount hour began.",
-                "Food waste at the market has increased since the discount hour began.",
-                "The market stopped selling fish completely.",
-                "Discount pricing never affects how much food is wasted."
+                "The added recess break may have improved students' attentiveness.",
+                "The recess break made students less attentive overall, according to how the passage describes the situation.",
+                "Teachers reported no change in student attentiveness.",
+                "The school removed the recess break after one week."
             ],
-            "correctAnswer": "Far less fish is being wasted since the discount hour began.",
-            "hint": "Compare the amount of wasted fish before and after the discount hour started.",
-            "explanation": "Wasted fish dropped by nearly seventy percent after the discount hour began, showing the strategy is helping the market sell fish that would otherwise go unsold.",
+            "correctAnswer": "The added recess break may have improved students' attentiveness.",
+            "hint": "Compare student attentiveness before and after the recess break was introduced.",
+            "explanation": "Attentiveness in the last class period improved after the recess break was added, suggesting the short break helped students refocus for the rest of the day.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Recess break added mid-afternoon -> attentiveness improves in last class period -> break may explain the improvement"
             ]
         },
         {
@@ -103,18 +103,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "City workers replaced the streetlights downtown with a new energy-efficient type last year. Although the lights cost more to install, the city's electricity bill for street lighting has been cut nearly in half.",
+            "passage": "After a grocery chain rearranged its produce section to place fruit near the entrance instead of at the back, weekly fruit sales rose across all its stores.",
             "options": [
-                "The new streetlights have increased the city's electricity costs.",
-                "The city removed the new streetlights due to their cost.",
-                "Streetlight type has no effect on electricity bills.",
-                "The new streetlights are saving money despite their higher installation cost."
+                "Placing fruit near the entrance decreased fruit sales, based on the details the passage provides.",
+                "Fruit sales stayed the same regardless of placement.",
+                "Placing fruit near the entrance likely increased fruit sales.",
+                "The grocery chain stopped selling fruit after the change, according to the specific details given."
             ],
-            "correctAnswer": "The new streetlights are saving money despite their higher installation cost.",
-            "hint": "Compare the installation cost with what happened to the electricity bill afterward.",
-            "explanation": "Even though installation was more expensive, the electricity bill dropped by almost half, showing the new lights are saving money over time.",
+            "correctAnswer": "Placing fruit near the entrance likely increased fruit sales.",
+            "hint": "Compare fruit sales before and after the produce section was rearranged.",
+            "explanation": "Fruit sales rose across all stores right after fruit was moved to a more visible location, supporting the idea that the placement change boosted sales.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Fruit moved near entrance -> weekly sales rise across stores -> placement change likely boosted sales"
             ]
         },
         {
@@ -122,18 +122,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "Since her parents started a weekly family game night with no phones allowed at the table, sixteen-year-old Zoe has told her friends that dinner conversations at home now feel far more relaxed than they used to be.",
+            "passage": "Traffic near the stadium was unusually heavy on Saturday. A concert had just ended at the arena next door, and both venues share the same parking garage and exit road.",
             "options": [
-                "Family conversations became more tense since the game nights began.",
-                "Zoe's family stopped eating dinner together.",
-                "Removing phones during family time always ruins the mood.",
-                "The phone-free game nights seem to have improved family conversation."
+                "The traffic had nothing to do with the concert, according to the account given.",
+                "The stadium and the arena share no roads at all, based on what the passage actually says.",
+                "Traffic near the stadium was lighter than usual that day, given the way the passage frames things.",
+                "The concert's ending likely contributed to the heavy traffic."
             ],
-            "correctAnswer": "The phone-free game nights seem to have improved family conversation.",
-            "hint": "Think about what removing phones during family time might change.",
-            "explanation": "Zoe noticed dinner conversations improved after her family started phone-free game nights, suggesting the change helped everyone communicate more easily.",
+            "correctAnswer": "The concert's ending likely contributed to the heavy traffic.",
+            "hint": "Consider what the shared parking garage and exit road suggest about the traffic's cause.",
+            "explanation": "Heavy traffic appeared right as a concert ended nearby, and both venues share exits, which supports the concert as a likely contributor to the congestion.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Concert ends nearby -> shared parking and exit road -> heavy traffic near stadium -> concert likely contributed"
             ]
         },
         {
@@ -141,18 +141,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "The furniture store used to offer only in-store pickup, and many customers complained about needing a truck to bring items home. Since adding a home delivery option last month, online orders have increased by almost sixty percent.",
+            "passage": "A bakery's sourdough bread sales dropped sharply the same week a new bakery opened two blocks away offering a similar loaf at a lower price.",
             "options": [
-                "Online orders dropped after delivery was added.",
-                "The furniture store removed its delivery option due to low interest.",
-                "Delivery options never affect how people choose to shop.",
-                "Customers are placing far more online orders than before delivery was added."
+                "The new bakery had no effect on sourdough sales, given the way the passage frames things.",
+                "Sourdough bread sales increased that week, based on what the passage actually says.",
+                "The new bakery's opening may have drawn some customers away.",
+                "The original bakery stopped making sourdough bread, based on the passage's account of what happened."
             ],
-            "correctAnswer": "Customers are placing far more online orders than before delivery was added.",
-            "hint": "Think about what problem customers had before, and what changed.",
-            "explanation": "Online orders rose sharply once home delivery became available, suggesting the new option solved the inconvenience customers had complained about.",
+            "correctAnswer": "The new bakery's opening may have drawn some customers away.",
+            "hint": "Consider what changed nearby right before the sales drop.",
+            "explanation": "Sales fell in the same week a competing bakery opened with a similar, cheaper product, suggesting some customers may have shifted their purchases there.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "New bakery opens with cheaper similar bread -> sourdough sales drop that week -> new competitor likely drew customers away"
             ]
         },
         {
@@ -160,18 +160,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "Employees at the accounting firm used to eat lunch at their desks almost every day. Since the company began offering a free thirty-minute walking group at noon, several employees say they feel noticeably less stressed by the end of the workday.",
+            "passage": "A greenhouse switched its grow lights from standard bulbs to LED lights to save on electricity. The following season, several plant varieties grew noticeably taller than in previous years.",
             "options": [
-                "Employees feel more stressed since the walking group started.",
-                "The company cancelled the walking group after low interest.",
-                "Taking a midday walk never affects a person's stress levels.",
-                "Joining the walking group seems to be easing employees' stress."
+                "The new LED lights may have contributed to the taller plant growth.",
+                "The LED lights stunted the plants' growth.",
+                "Plant height stayed exactly the same after the switch, based on the passage's account of what happened.",
+                "The greenhouse removed all its grow lights that season, according to the account given."
             ],
-            "correctAnswer": "Joining the walking group seems to be easing employees' stress.",
-            "hint": "Compare how employees felt before and after the walking group started.",
-            "explanation": "Employees report feeling less stressed since the walking group began, suggesting the daily activity is helping them manage work-related stress.",
+            "correctAnswer": "The new LED lights may have contributed to the taller plant growth.",
+            "hint": "Notice what changed in the greenhouse right before the plants grew taller.",
+            "explanation": "Taller growth appeared in the season right after the lights were switched, which supports the LED lights as a possible reason for the change, though other factors could also play a role.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Grow lights switched to LED -> plants grow taller next season -> lighting change may have contributed"
             ]
         },
         {
@@ -179,18 +179,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "The budget airline used to charge a separate fee for every checked bag, which frustrated many travelers. After switching to one flat fee that includes a bag, customer satisfaction ratings for the airline have risen for three straight quarters.",
+            "passage": "A city's downtown had struggled with empty storefronts for years. After the city reduced parking fees near the shopping district, several previously vacant shops reopened within six months.",
             "options": [
-                "Customer satisfaction fell after the pricing change.",
-                "The airline removed baggage fees completely.",
-                "Customers have responded well to the airline's simpler pricing.",
-                "Pricing structure never affects how satisfied customers feel."
+                "Lower parking fees caused more shops to close.",
+                "The number of vacant storefronts increased after the fee change.",
+                "Lower parking fees may have encouraged more shoppers and new businesses.",
+                "Parking fees had no connection to the shopping district's activity."
             ],
-            "correctAnswer": "Customers have responded well to the airline's simpler pricing.",
-            "hint": "Compare customer satisfaction before and after the airline changed its baggage pricing.",
-            "explanation": "Satisfaction ratings rose for three quarters in a row after the airline simplified its baggage fees, suggesting travelers responded well to the change.",
+            "correctAnswer": "Lower parking fees may have encouraged more shoppers and new businesses.",
+            "hint": "Notice what changed about parking right before the vacant shops began reopening.",
+            "explanation": "Vacant shops began reopening only after parking fees were lowered, suggesting easier, cheaper parking may have brought in more shoppers and encouraged new businesses.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Parking fees reduced -> more foot traffic likely -> vacant shops reopen within six months -> fee change may have helped"
             ]
         },
         {
@@ -198,18 +198,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "The city's outdoor concert series used to take place only in July, drawing modest crowds. After organizers expanded it to run from May through September, total attendance for the season more than tripled.",
+            "passage": "A hospital introduced a mandatory hand-washing checkpoint at every ward entrance. Over the following year, the rate of hospital-acquired infections fell noticeably compared to the year before.",
             "options": [
-                "A longer concert season brought in far more visitors overall.",
-                "Attendance for the concert series decreased after it was extended.",
-                "The concert series was shortened to just one month.",
-                "The length of a concert series never affects attendance."
+                "The hand-washing checkpoints increased infection rates.",
+                "Infection rates stayed exactly the same as the year before.",
+                "The hospital removed all hand-washing stations that year.",
+                "The hand-washing checkpoints likely helped reduce infection rates."
             ],
-            "correctAnswer": "A longer concert season brought in far more visitors overall.",
-            "hint": "Compare total attendance before and after the series was extended.",
-            "explanation": "Attendance more than tripled once the concert series ran for five months instead of one, showing the longer schedule brought in far more visitors overall.",
+            "correctAnswer": "The hand-washing checkpoints likely helped reduce infection rates.",
+            "hint": "Compare infection rates before and after the checkpoints were introduced.",
+            "explanation": "A noticeable drop in infections followed the introduction of mandatory hand-washing checkpoints, supporting the idea that the new policy helped lower infection rates.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Checkpoints introduced at ward entrances -> infection rates drop over the year -> checkpoints likely contributed to the decline"
             ]
         },
         {
@@ -217,18 +217,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "Before the apartment building installed a package room with individual lockers, deliveries were often left in the lobby and occasionally went missing. Residents say almost no packages have gone missing since the lockers were installed six months ago.",
+            "passage": "A software company started requiring code reviews before any update could be released. In the months since, the number of bugs reported by users after each update has dropped significantly.",
             "options": [
-                "More packages have gone missing since the lockers were installed.",
-                "The lockers appear to have made deliveries more secure for residents.",
-                "The building removed the package lockers after complaints.",
-                "Where packages are left never affects their safety."
+                "The code review requirement may have reduced the number of bugs released.",
+                "The code review requirement increased the number of bugs, as the situation is described here.",
+                "Bug reports stayed the same after the new requirement.",
+                "The company stopped releasing updates after the change, given the specific information included in the passage."
             ],
-            "correctAnswer": "The lockers appear to have made deliveries more secure for residents.",
-            "hint": "Compare how often packages went missing before and after the lockers were added.",
-            "explanation": "Missing packages became rare after individual lockers replaced the open lobby drop-off, suggesting the lockers made deliveries safer for residents.",
+            "correctAnswer": "The code review requirement may have reduced the number of bugs released.",
+            "hint": "Compare bug reports before and after code reviews became mandatory.",
+            "explanation": "Bug reports dropped significantly after code reviews became required, which supports the reviews as a likely reason updates now contain fewer errors.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Code reviews required before release -> bug reports drop significantly -> reviews may have caught issues before release"
             ]
         },
         {
@@ -236,18 +236,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A ride-sharing app recently added a feature that shows drivers their customer rating before accepting a trip. Since the feature launched, passengers have reported noticeably shorter wait times for pickups in most cities.",
+            "passage": "A youth center added a free tutoring program on weekday afternoons. Local school records later showed that the neighborhood's average homework completion rate rose that semester.",
             "options": [
-                "Wait times have increased since the feature launched.",
-                "The app removed the driver rating system entirely.",
-                "Seeing ratings in advance seems to be speeding up pickups.",
-                "Showing ratings to drivers never affects pickup times."
+                "The tutoring program caused homework completion to fall.",
+                "Homework completion rates were unaffected by the program.",
+                "The youth center cancelled the tutoring program after one week.",
+                "The tutoring program may have contributed to more homework being completed."
             ],
-            "correctAnswer": "Seeing ratings in advance seems to be speeding up pickups.",
-            "hint": "Think about how seeing a passenger's rating in advance might change a driver's decision to accept a trip.",
-            "explanation": "Wait times dropped after drivers could see passenger ratings before accepting trips, suggesting the feature is influencing how quickly drivers respond.",
+            "correctAnswer": "The tutoring program may have contributed to more homework being completed.",
+            "hint": "Notice what changed in the neighborhood right before homework rates improved.",
+            "explanation": "Homework completion rose during the same semester the tutoring program began, which supports the program as a possible contributor, though it is not the only explanation.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Tutoring program introduced -> homework completion rate rises that semester -> program may have contributed"
             ]
         },
         {
@@ -255,18 +255,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "Although the district shortened the school day by thirty minutes this year to save on transportation costs, standardized test scores across every grade level rose slightly compared to the previous year's results.",
+            "passage": "An airline changed its boarding process to load passengers by window, middle, and aisle seat groups instead of by row number. Average boarding times across its flights dropped by several minutes.",
             "options": [
-                "Test scores dropped sharply after the school day was shortened.",
-                "The district extended the school day instead of shortening it.",
-                "A shorter school day did not appear to harm student performance.",
-                "The length of the school day always determines test scores."
+                "The new boarding process likely made boarding faster.",
+                "The new boarding process made boarding slower.",
+                "Boarding times stayed exactly the same after the change.",
+                "The airline stopped using organized boarding groups."
             ],
-            "correctAnswer": "A shorter school day did not appear to harm student performance.",
-            "hint": "Compare what happened to test scores after the school day changed.",
-            "explanation": "Even though the school day became shorter, test scores actually rose slightly, showing the change did not hurt student performance.",
+            "correctAnswer": "The new boarding process likely made boarding faster.",
+            "hint": "Compare boarding times before and after the new seating groups were introduced.",
+            "explanation": "Boarding times dropped after the airline switched to grouping passengers by seat type, supporting the idea that the new method reduced congestion in the aisle.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Boarding changed to seat-type groups -> average boarding time drops -> new method likely reduced aisle congestion"
             ]
         },
         {
@@ -274,18 +274,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "Maria used to pay her credit card bill whenever she remembered, sometimes missing the due date. Since she set up an automatic payment each month, she has not been charged a late fee in over a year.",
+            "passage": "A farm switched from flood irrigation to drip irrigation for its orchard. Over the next two growing seasons, the farm used less water overall while the trees produced a similar amount of fruit.",
             "options": [
-                "Maria has been charged more late fees since setting up automatic payment.",
-                "Automatic payments have kept Maria from missing due dates.",
-                "Maria cancelled her credit card after the change.",
-                "Automatic payments never affect whether a bill is paid on time."
+                "Drip irrigation caused the farm to use more water than before. The passage offers no detail suggesting this changed over the period discussed.",
+                "Fruit production dropped sharply after the irrigation change. This would remain the case regardless of any other detail in the passage.",
+                "The farm abandoned drip irrigation after one season.",
+                "Drip irrigation likely allowed the farm to use less water without reducing fruit production."
             ],
-            "correctAnswer": "Automatic payments have kept Maria from missing due dates.",
-            "hint": "Compare how often Maria was late before and after setting up automatic payment.",
-            "explanation": "Maria hasn't paid a late fee in over a year since switching to automatic payments, showing the change solved her problem with missed due dates.",
+            "correctAnswer": "Drip irrigation likely allowed the farm to use less water without reducing fruit production.",
+            "hint": "Compare water use and fruit production before and after the irrigation method changed.",
+            "explanation": "Water use dropped while fruit production stayed similar after switching irrigation methods, supporting drip irrigation as an efficient alternative for this farm.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Irrigation switched to drip -> water use decreases -> fruit production stays similar -> drip irrigation appears more efficient"
             ]
         },
         {
@@ -293,18 +293,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "The grocery store used to place candy and snacks near the checkout lines. After moving those items to a separate aisle and placing fruit near the registers instead, weekly fruit sales rose by almost thirty percent.",
+            "passage": "A city bus route added a dedicated bus lane during rush hour. In the months that followed, on-time performance for that route improved, while nearby routes without a bus lane showed no change.",
             "options": [
-                "Fruit sales dropped after the store rearranged its checkout area.",
-                "The store removed fruit from its shelves entirely.",
-                "What customers see at checkout seems to influence what they buy.",
-                "Where products are placed in a store never affects sales."
+                "The dedicated bus lane made the route less reliable, according to the specific details given.",
+                "On-time performance improved equally on every route in the city, given the way the passage frames things.",
+                "The dedicated bus lane likely improved the route's on-time performance.",
+                "The bus lane was removed shortly after being added."
             ],
-            "correctAnswer": "What customers see at checkout seems to influence what they buy.",
-            "hint": "Think about what customers see while waiting in the checkout line.",
-            "explanation": "Fruit sales rose after fruit replaced candy near the checkout, suggesting where an item is placed can influence what customers buy.",
+            "correctAnswer": "The dedicated bus lane likely improved the route's on-time performance.",
+            "hint": "Compare the route with the bus lane to the nearby routes without one.",
+            "explanation": "Only the route with the new bus lane showed improved on-time performance, while similar routes without the lane stayed the same, which strengthens the case that the lane was responsible.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Bus lane added to one route -> that route's performance improves -> other routes without lane show no change -> lane likely caused improvement"
             ]
         },
         {
@@ -312,18 +312,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "The customer service team used to handle all calls without any script, and calls often lasted over ten minutes. After introducing a short call guide for common issues, average call length dropped to under five minutes.",
+            "passage": "Two neighboring farms grow the same crop under similar weather conditions. The farm that rotates its crops each season has reported healthier soil for the past five years, while the farm that plants the same crop every year has seen declining soil quality.",
             "options": [
-                "Calls became longer after the guide was introduced.",
-                "Calls are being resolved much faster since the guide was introduced.",
-                "The company stopped taking customer service calls.",
-                "Having a call guide never affects how long calls last."
+                "Crop rotation appears to be linked to worse soil quality, based on the details the passage provides.",
+                "Crop rotation appears to be linked to healthier soil in this comparison.",
+                "Both farms have reported identical soil quality, given the specific information included in the passage.",
+                "Soil quality has nothing to do with farming practices, as the situation is described here."
             ],
-            "correctAnswer": "Calls are being resolved much faster since the guide was introduced.",
-            "hint": "Compare average call length before and after the guide was introduced.",
-            "explanation": "Average call length dropped by more than half after the call guide was introduced, suggesting it helped staff resolve issues more quickly.",
+            "correctAnswer": "Crop rotation appears to be linked to healthier soil in this comparison.",
+            "hint": "Compare the practices and outcomes at the two farms.",
+            "explanation": "Under similar conditions, the rotating farm maintained healthier soil while the non-rotating farm's soil declined, supporting a link between rotation and soil health.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Similar conditions at both farms -> rotating farm: healthier soil -> non-rotating farm: declining soil -> rotation appears linked to healthier soil"
             ]
         },
         {
@@ -331,18 +331,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "The office building used to leave hallway lights on twenty-four hours a day. Since installing motion-sensor lighting that turns off automatically when no one is present, the building's monthly electricity costs have dropped by nearly a quarter.",
+            "passage": "A retail chain tested a self-checkout kiosk in half of its stores while leaving the other half unchanged. After six months, the stores with kiosks reported shorter average checkout times than the stores without them.",
             "options": [
-                "The motion-sensor lighting has reduced the building's electricity costs.",
-                "Electricity costs increased after the motion sensors were installed.",
-                "The building removed the hallway lighting altogether.",
-                "The type of lighting system never affects electricity costs."
+                "The self-checkout kiosks increased checkout times in those stores, based on the passage's account of what happened.",
+                "Checkout times were identical across all stores.",
+                "The retail chain removed the kiosks after the test. The passage gives no indication that this varied across the circumstances described.",
+                "The self-checkout kiosks likely reduced checkout times in the stores that had them."
             ],
-            "correctAnswer": "The motion-sensor lighting has reduced the building's electricity costs.",
-            "hint": "Compare the building's electricity costs before and after installing motion sensors.",
-            "explanation": "Monthly electricity costs fell by almost a quarter after motion-sensor lighting replaced lights that ran constantly, showing the new system is saving energy.",
+            "correctAnswer": "The self-checkout kiosks likely reduced checkout times in the stores that had them.",
+            "hint": "Compare checkout times between stores with and without the kiosks.",
+            "explanation": "Only the stores that added kiosks saw shorter checkout times, while the unchanged stores did not, which supports the kiosks as the likely reason for the improvement.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Kiosks added to half the stores -> those stores show shorter checkout times -> unchanged stores show no difference -> kiosks likely responsible"
             ]
         },
         {
@@ -350,18 +350,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "Before switching to a standing desk at work, Wen often complained of lower back pain by the end of nearly every workday. Three months after making the switch, she says the pain has almost completely disappeared.",
+            "passage": "A small town's library extended its Saturday hours by three hours. Attendance data for Saturdays rose that season, while attendance on other days of the week stayed about the same as before.",
             "options": [
-                "Wen's back pain has eased considerably since she began using a standing desk.",
-                "Wen's back pain got worse after switching desks.",
-                "Wen returned to her old desk after one week.",
-                "The type of desk a person uses never affects back pain."
+                "The extended hours reduced Saturday attendance.",
+                "Attendance rose equally on every day of the week.",
+                "The extended Saturday hours likely contributed to higher Saturday attendance.",
+                "The library reverted to its original hours immediately."
             ],
-            "correctAnswer": "Wen's back pain has eased considerably since she began using a standing desk.",
-            "hint": "Compare Wen's back pain before and after she started using the standing desk.",
-            "explanation": "Wen's back pain nearly disappeared in the months after she switched to a standing desk, suggesting the new desk helped with her discomfort.",
+            "correctAnswer": "The extended Saturday hours likely contributed to higher Saturday attendance.",
+            "hint": "Compare Saturday attendance changes to attendance on other days.",
+            "explanation": "Only Saturday attendance increased after the hours were extended, while other days remained steady, supporting the extended hours as the likely cause of the Saturday increase.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Saturday hours extended -> Saturday attendance rises -> other days unchanged -> extension likely caused the rise"
             ]
         },
         {
@@ -369,18 +369,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "The Alaoui family used to eat dinner in front of the television most nights. Since they started a rule of leaving all screens in another room during meals, their teenage son has begun telling them more about his day.",
+            "passage": "A manufacturer began inspecting each product twice instead of once before shipping. Customer complaints about defective items dropped in the following quarter, while shipping times stayed roughly the same.",
             "options": [
-                "Their son has stopped talking during dinner altogether.",
-                "The family gave up the screen-free rule after a week.",
-                "Removing screens at dinner seems to have opened up conversation with their son.",
-                "Removing screens during meals never affects conversation."
+                "The additional inspection step increased defective shipments.",
+                "The additional inspection step likely reduced the number of defective shipments.",
+                "Customer complaints rose sharply after the change.",
+                "Shipping times increased dramatically after the change."
             ],
-            "correctAnswer": "Removing screens at dinner seems to have opened up conversation with their son.",
-            "hint": "Think about what changed about mealtime and what the son started doing differently.",
-            "explanation": "Their son began sharing more once screens were removed from dinner, suggesting the new rule created space for more conversation.",
+            "correctAnswer": "The additional inspection step likely reduced the number of defective shipments.",
+            "hint": "Compare defect complaints before and after the second inspection was added.",
+            "explanation": "Complaints about defects fell after a second inspection was introduced, while other factors like shipping time stayed constant, supporting the inspection as the likely reason for fewer defects.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Second inspection added -> defect complaints drop next quarter -> shipping times unchanged -> inspection likely reduced defects"
             ]
         },
         {
@@ -388,18 +388,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "The bookstore used to organize novels only by author's last name, which made it hard for customers to browse by genre. After adding genre-based sections with handwritten staff recommendations, sales of novels by first-time authors have doubled.",
+            "passage": "A gym replaced its old ventilation system with a stronger one. Members began leaving longer reviews specifically praising the air quality, something that had rarely appeared in reviews before.",
             "options": [
-                "Sales of novels by new authors fell after the change.",
-                "The bookstore removed all fiction sections.",
-                "How books are organized never affects which ones customers buy.",
-                "New writers' books are getting noticed more since the reorganization."
+                "The new ventilation system made the air quality worse.",
+                "Members stopped writing reviews after the change.",
+                "The ventilation system had no connection to member reviews, given the way the passage frames things.",
+                "The new ventilation system likely improved members' experience at the gym."
             ],
-            "correctAnswer": "New writers' books are getting noticed more since the reorganization.",
-            "hint": "Think about how browsing by genre, instead of only by author, might help lesser-known writers.",
-            "explanation": "Sales of first-time authors' novels doubled after the store added genre sections and recommendations, suggesting the new layout helped readers discover new writers.",
+            "correctAnswer": "The new ventilation system likely improved members' experience at the gym.",
+            "hint": "Notice what changed in the reviews right after the ventilation system was replaced.",
+            "explanation": "Reviews specifically praising air quality became common only after the new ventilation system was installed, supporting the system as the likely reason for the positive feedback.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Ventilation system upgraded -> reviews begin praising air quality -> praise appears only after upgrade -> system likely improved experience"
             ]
         },
         {
@@ -407,18 +407,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "Every year, Mr. Yamada's neighborhood association collects donated coats for winter. This year, after posting flyers in three additional languages, the number of coats donated was the highest the association has ever recorded.",
+            "passage": "A city park removed several trash cans near its walking paths to cut maintenance costs. Park rangers later reported an increase in litter found along those same paths.",
             "options": [
-                "Coat donations were lower this year than in previous years.",
-                "The multilingual flyers likely reached donors the old flyers had missed.",
-                "The association stopped collecting coats this year.",
-                "The language of a flyer never affects how many people respond."
+                "Removing the trash cans reduced litter along the paths.",
+                "Litter levels stayed exactly the same after the cans were removed, given how the events unfolded.",
+                "The park added more trash cans instead of removing them, according to the account given.",
+                "Removing the trash cans likely contributed to more litter along the paths."
             ],
-            "correctAnswer": "The multilingual flyers likely reached donors the old flyers had missed.",
-            "hint": "Think about who might not have understood the flyers in previous years.",
-            "explanation": "Donations reached a record high after flyers were translated into more languages, suggesting the change helped the message reach more people in the community.",
+            "correctAnswer": "Removing the trash cans likely contributed to more litter along the paths.",
+            "hint": "Compare litter levels before and after the trash cans were removed.",
+            "explanation": "Litter increased along the same paths where trash cans were removed, supporting the idea that fewer disposal options led to more litter.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Trash cans removed from paths -> litter increases along those paths -> removal likely contributed to more litter"
             ]
         },
         {
@@ -426,18 +426,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "Visitors to the national park used to receive only a paper map, and rangers often repeated the same directions many times a day. Since the park launched a free trail app with GPS directions, far fewer visitors now ask rangers for directions.",
+            "passage": "A hospital's pediatric ward introduced a rule requiring visitors to use hand sanitizer before entering. Over the next flu season, the ward reported fewer patient illness transfers than in previous years.",
             "options": [
-                "Visitors ask rangers for directions more often since the app launched.",
-                "The trail app has reduced how often rangers must give directions.",
-                "The park removed paper maps but did not replace them.",
-                "How visitors receive directions never affects how often they ask rangers."
+                "The hand sanitizer rule increased the spread of illness.",
+                "Illness transfers stayed exactly the same as previous years.",
+                "The hand sanitizer rule may have helped reduce the spread of illness in the ward.",
+                "The hospital removed the hand sanitizer rule after one month, given the way the passage frames things."
             ],
-            "correctAnswer": "The trail app has reduced how often rangers must give directions.",
-            "hint": "Compare how often rangers gave directions before and after the app launched.",
-            "explanation": "Requests for directions dropped sharply once the GPS trail app became available, suggesting many visitors now rely on the app instead of asking rangers.",
+            "correctAnswer": "The hand sanitizer rule may have helped reduce the spread of illness in the ward.",
+            "hint": "Compare illness transfer rates before and after the sanitizer rule began.",
+            "explanation": "Fewer illness transfers occurred during the first flu season after the sanitizer rule started, supporting the rule as a possible factor in reducing the spread of illness.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Sanitizer rule introduced -> fewer illness transfers that flu season -> rule may have reduced spread"
             ]
         },
         {
@@ -445,18 +445,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "The independent film had almost no advertising budget and was expected to earn very little in its first weekend. After several popular reviewers praised it online, ticket sales tripled in its second weekend compared to its first.",
+            "passage": "A furniture company switched to recyclable packaging materials. Within a year, the company received a noticeable rise in customer emails specifically mentioning the packaging in a positive way.",
             "options": [
-                "Ticket sales dropped in the film's second weekend.",
-                "The film was pulled from theaters after its first weekend.",
-                "Reviews never affect how many tickets a film sells.",
-                "Positive online reviews appear to have driven the jump in ticket sales."
+                "The switch to recyclable packaging likely improved how some customers viewed the company.",
+                "The switch to recyclable packaging upset most customers.",
+                "Customer emails about packaging stopped completely.",
+                "The company reversed its decision after switching materials. This reading would hold true across the full sequence of events described."
             ],
-            "correctAnswer": "Positive online reviews appear to have driven the jump in ticket sales.",
-            "hint": "Think about what happened right before ticket sales increased.",
-            "explanation": "Ticket sales tripled only after reviewers began praising the film online, suggesting the positive attention helped attract more viewers in its second weekend.",
+            "correctAnswer": "The switch to recyclable packaging likely improved how some customers viewed the company.",
+            "hint": "Notice what changed in customer emails right after the packaging switch.",
+            "explanation": "Positive mentions of packaging in customer emails rose after the switch to recyclable materials, supporting the change as a likely factor in improved customer perception.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Packaging switched to recyclable materials -> positive emails about packaging increase -> switch likely improved perception"
             ]
         },
         {
@@ -464,18 +464,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "The town used to hold its farmers market only on Saturday mornings, when many working residents were unable to attend. Since adding a Wednesday evening market as well, vendors report selling noticeably more produce each week overall.",
+            "passage": "A software team began holding a fifteen-minute stand-up meeting each morning instead of a weekly one-hour meeting. Team members reported catching scheduling conflicts earlier, and fewer tasks were delayed that quarter.",
             "options": [
-                "Vendors are selling less produce since the second market was added.",
-                "A wider range of market hours has made shopping easier for more residents.",
-                "The town removed the Saturday market entirely.",
-                "The timing of a market never affects how much vendors sell."
+                "The switch to daily short meetings likely helped the team catch problems sooner.",
+                "The switch to daily meetings caused more delays. The passage gives no indication that this varied across the circumstances described.",
+                "The team stopped holding meetings altogether. This would apply consistently across every detail the passage provides.",
+                "Scheduling conflicts increased after the meeting change, as the situation is described here."
             ],
-            "correctAnswer": "A wider range of market hours has made shopping easier for more residents.",
-            "hint": "Think about who might not have been able to attend a Saturday-only market.",
-            "explanation": "Vendors began selling more produce after a Wednesday evening market was added, suggesting the new time slot reached shoppers who couldn't attend on Saturdays.",
+            "correctAnswer": "The switch to daily short meetings likely helped the team catch problems sooner.",
+            "hint": "Compare how quickly problems were caught before and after the meeting schedule changed.",
+            "explanation": "Problems began surfacing earlier and delays decreased after the team switched to shorter, more frequent meetings, supporting the new format as a likely reason for the improvement.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Weekly meeting replaced by daily short meetings -> conflicts caught earlier -> fewer delayed tasks -> format change likely helped"
             ]
         },
         {
@@ -483,18 +483,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "Before adding an in-app tutorial, new users of the budgeting app often abandoned it within the first few minutes. Since the tutorial was introduced, the number of new users still actively using the app after one month has increased significantly.",
+            "passage": "A city replaced its street lamps with brighter LED lights along a stretch of road known for pedestrian accidents. Over the following year, that stretch recorded fewer nighttime accidents than in previous years, while a similar unlit stretch nearby saw no change.",
             "options": [
-                "Fewer new users are staying active in the app since the tutorial was added.",
-                "The app removed the tutorial due to poor results.",
-                "More new users are sticking with the app since the tutorial was added.",
-                "Whether an app has a tutorial never affects user retention."
+                "The brighter street lamps increased nighttime accidents.",
+                "Nighttime accidents rose equally on every stretch of road in the city, according to the specific details given.",
+                "The city removed the LED lights shortly after installing them.",
+                "The brighter street lamps likely reduced nighttime accidents on that stretch."
             ],
-            "correctAnswer": "More new users are sticking with the app since the tutorial was added.",
-            "hint": "Compare how many new users stayed active before and after the tutorial was introduced.",
-            "explanation": "More new users kept using the app after one month once the tutorial was added, suggesting it helped them understand the app early on.",
+            "correctAnswer": "The brighter street lamps likely reduced nighttime accidents on that stretch.",
+            "hint": "Compare the road with new lighting to the similar road without changes.",
+            "explanation": "Only the stretch with new LED lighting saw fewer accidents, while a similar unlit stretch remained unchanged, supporting the lighting as the likely reason for the improvement.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "LED lights installed on one stretch -> accidents drop on that stretch -> similar unlit stretch unchanged -> lighting likely reduced accidents"
             ]
         },
         {
@@ -502,18 +502,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "Teachers at Lincoln Middle School used to assign textbook homework every night, and many students said they rarely finished it. After switching to shorter, more focused practice assignments, the percentage of students completing homework on time has risen substantially.",
+            "passage": "A dental clinic began sending text reminders the day before each appointment. The rate of missed appointments dropped noticeably in the months after the reminders started, compared to the months before.",
             "options": [
-                "Homework completion has improved since assignments became shorter and more focused.",
-                "Homework completion rates fell after the assignments were shortened.",
-                "The school stopped assigning homework altogether.",
-                "The length of an assignment never affects whether students complete it."
+                "The text reminders likely reduced the number of missed appointments.",
+                "The text reminders increased the number of missed appointments.",
+                "Missed appointments stayed the same after reminders began.",
+                "The clinic stopped scheduling appointments in advance."
             ],
-            "correctAnswer": "Homework completion has improved since assignments became shorter and more focused.",
-            "hint": "Compare how many students completed homework before and after the assignments changed.",
-            "explanation": "More students began completing homework on time after assignments became shorter and more focused, suggesting the new format was easier for students to manage.",
+            "correctAnswer": "The text reminders likely reduced the number of missed appointments.",
+            "hint": "Compare missed appointment rates before and after the reminders began.",
+            "explanation": "Missed appointments dropped in the months right after reminders were introduced, supporting the reminders as a likely reason patients were less likely to forget.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Text reminders introduced -> missed appointments drop in following months -> reminders likely reduced no-shows"
             ]
         },
         {
@@ -521,18 +521,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "The nonprofit used to send donation requests by mail, which was expensive and slow to produce responses. After switching most communication to email and text messages, the organization's overall donation revenue grew for the first time in three years.",
+            "passage": "A publishing company shortened its average book cover design process from three weeks to one week by hiring a second designer. That same year, the company released twice as many titles as the year before.",
             "options": [
-                "Donation revenue fell after the organization switched to digital communication.",
-                "Digital communication appears to have reached donors more effectively than mail.",
-                "The nonprofit stopped accepting donations by mail.",
-                "How an organization contacts donors never affects how much it raises."
+                "The faster design process may have allowed the company to release more titles.",
+                "The faster design process caused the company to release fewer titles.",
+                "The number of titles released stayed exactly the same.",
+                "The company stopped designing covers altogether."
             ],
-            "correctAnswer": "Digital communication appears to have reached donors more effectively than mail.",
-            "hint": "Compare the nonprofit's donation revenue before and after it changed how it contacts donors.",
-            "explanation": "Donation revenue grew for the first time in three years right after the switch to digital communication, suggesting the new approach was more effective at reaching donors.",
+            "correctAnswer": "The faster design process may have allowed the company to release more titles.",
+            "hint": "Consider how a shorter design process might affect how many books can be released.",
+            "explanation": "The number of released titles doubled the same year the design process became faster, supporting a link between the shorter process and increased output, alongside other possible factors.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Design process shortened from three weeks to one -> titles released double that year -> faster process may have enabled more releases"
             ]
         },
         {
@@ -540,18 +540,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "The cooking school used to teach only French techniques, and enrollment had been slowly declining for several years. After adding courses on several other global cuisines, total enrollment increased for two consecutive semesters.",
+            "passage": "A city swimming pool introduced a lifeguard rotation schedule that gave each lifeguard a ten-minute break every hour. Over the following summer, the pool reported fewer safety incidents than in previous summers with the old schedule.",
             "options": [
-                "Enrollment continued declining after the new courses were added.",
-                "The cooking school removed French cooking from its curriculum.",
-                "A broader range of courses has drawn in more students.",
-                "The variety of courses offered never affects enrollment."
+                "The new rotation schedule caused more safety incidents.",
+                "Safety incidents stayed exactly the same as previous summers.",
+                "The new rotation schedule may have helped lifeguards stay more alert.",
+                "The pool removed all lifeguards after adopting the new schedule, given how the events unfolded."
             ],
-            "correctAnswer": "A broader range of courses has drawn in more students.",
-            "hint": "Compare enrollment trends before and after the school added new types of courses.",
-            "explanation": "Enrollment grew for two semesters in a row after the school expanded beyond French cuisine, suggesting the wider variety attracted more students.",
+            "correctAnswer": "The new rotation schedule may have helped lifeguards stay more alert.",
+            "hint": "Compare safety incident rates before and after the new break schedule began.",
+            "explanation": "Safety incidents dropped during the first summer with the new break schedule, supporting the idea that regular breaks may have helped lifeguards stay more attentive.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Break schedule introduced -> fewer safety incidents that summer -> schedule may have improved alertness"
             ]
         },
         {
@@ -559,18 +559,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "The hospital's emergency room used to have an average wait time of nearly two hours during evening shifts. After adding a separate fast-track area for minor injuries, average wait times for all patients dropped to under forty-five minutes.",
+            "passage": "An online store began offering free returns on all orders. In the following quarter, the store's overall sales rose, even though the number of returned items also increased slightly.",
             "options": [
-                "The fast-track area has reduced overall emergency room wait times.",
-                "Wait times increased after the fast-track area was added.",
-                "The hospital closed its emergency room during evenings.",
-                "How an emergency room is organized never affects wait times."
+                "Offering free returns caused sales to fall sharply.",
+                "The number of returned items decreased after the policy began.",
+                "The store removed the free returns policy immediately.",
+                "Offering free returns may have encouraged more customers to make purchases."
             ],
-            "correctAnswer": "The fast-track area has reduced overall emergency room wait times.",
-            "hint": "Compare emergency room wait times before and after the fast-track area was created.",
-            "explanation": "Average wait times dropped significantly once minor injuries were handled in a separate fast-track area, suggesting the new system helped the emergency room run more efficiently.",
+            "correctAnswer": "Offering free returns may have encouraged more customers to make purchases.",
+            "hint": "Consider how removing the risk of paying for returns might affect customer buying decisions.",
+            "explanation": "Sales rose after free returns were introduced, even with a slight increase in returns, suggesting the policy may have made customers more comfortable buying in the first place.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Free returns policy introduced -> sales rise next quarter -> some increase in returns too -> policy may have encouraged more purchases"
             ]
         }
     ]

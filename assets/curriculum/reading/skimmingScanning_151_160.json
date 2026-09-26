@@ -5,573 +5,573 @@
     "quests": [
         {
             "id": "RDG_SKIMMINGSCANNING_L151_Q1",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Skim past the headwinds and strategy discussion and find the actual growth figure.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Since the restaurant began sourcing its seafood locally each morning rather than from a regional distributor, the menu now changes daily depending entirely on what the fishing boats happen to bring in.",
-            "targetItem": "distributor",
+            "passage": "Annual Report Letter: This year presented significant macroeconomic headwinds across our industry. Our leadership team met quarterly to reassess strategy in response. Despite these pressures, our core product line performed well throughout the year. Total company revenue ultimately grew by 6.2 percent, exceeding our internal projections.",
+            "targetItem": "6.2 percent",
             "options": [
-                "seafood",
-                "distributor",
-                "locally",
-                "supplier"
+                "macroeconomic headwinds",
+                "6.2 percent",
+                "quarterly",
+                "internal projections"
             ],
-            "correctAnswer": "distributor",
-            "hint": "Find what the restaurant used to source seafood from.",
-            "explanation": "The passage says a regional distributor, so that is correct.",
-            "timeLimit": 15,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "6.2 percent",
+            "hint": "Skip the industry and strategy talk and find the actual growth number at the end.",
+            "explanation": "Revenue grew 6.2 percent; the earlier sentences only describe challenges and strategy meetings.",
+            "timeLimit": 16,
+            "targetInfo": "Actual revenue growth"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L151_Q2",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Skim past the study's background and methodology and find the actual recommendation.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Importantly, since the ride-hailing app's surge pricing algorithm was found to correlate with a rider's device battery level, a detail the company attributes to an unintended flaw, regulators in several regions have requested a formal explanation.",
-            "targetItem": "surge",
+            "passage": "Transportation Study Summary: The city commissioned this study to evaluate congestion on major corridors. Data was collected over six months using traffic sensors. Several intersections showed improvement after recent signal timing changes. The study's central recommendation is to extend the downtown bike lane network by 1.8 miles.",
+            "targetItem": "1.8 miles",
             "options": [
-                "surge",
-                "flaw",
-                "dynamic",
-                "battery"
+                "six months",
+                "traffic sensors",
+                "signal timing",
+                "1.8 miles"
             ],
-            "correctAnswer": "surge",
-            "hint": "Find what type of pricing algorithm was investigated.",
-            "explanation": "The passage says surge pricing, so that is correct.",
-            "timeLimit": 15,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "1.8 miles",
+            "hint": "Skip the background and methodology and find the final recommendation.",
+            "explanation": "The recommendation is a 1.8-mile bike lane extension; the earlier sentences describe how the study was conducted.",
+            "timeLimit": 16,
+            "targetInfo": "Length of bike lane extension recommended"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L151_Q3",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Skim past the application trends and committee process and find the actual decision made.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Since early identification of postpartum mood disorders significantly improves treatment outcomes, several hospital systems have begun screening new mothers at multiple points during the first year rather than relying on a single assessment before discharge.",
-            "targetItem": "postpartum",
+            "passage": "Admissions Update: Applications rose significantly again this year across most programs. The review committee met throughout February to evaluate candidates. International applicants saw the largest percentage increase. The university has decided to add 150 additional spots to next year's incoming class to accommodate demand.",
+            "targetItem": "150 additional spots",
             "options": [
-                "discharge",
-                "postpartum",
-                "prenatal",
-                "assessment"
+                "February",
+                "150 additional spots",
+                "International applicants",
+                "largest percentage"
             ],
-            "correctAnswer": "postpartum",
-            "hint": "Find what type of mood disorders benefit from early identification.",
-            "explanation": "The passage says postpartum mood disorders, so that is correct.",
-            "timeLimit": 15,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "150 additional spots",
+            "hint": "Skip the application trends and committee timeline and find the actual decision.",
+            "explanation": "The university is adding 150 spots; the earlier sentences describe application trends, not the decision itself.",
+            "timeLimit": 16,
+            "targetInfo": "New spots added to the incoming class"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L152_Q1",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Skim past the product and team updates and find the actual funding amount.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Since the theater's pay-what-you-can pricing model was introduced for a limited number of performances each run, early data suggests it has meaningfully broadened the age range of ticket buyers without significantly reducing overall revenue.",
-            "targetItem": "pay-what-you-can",
+            "passage": "Startup Funding Announcement: Our team has spent the past year refining the core product based on customer feedback. We also expanded our engineering team significantly. Investor interest grew steadily throughout this period. We're excited to announce we closed a $12 million Series A round led by Meridian Ventures.",
+            "targetItem": "$12 million",
             "options": [
-                "pay-what-you-can",
-                "discounted",
-                "revenue",
-                "limited"
+                "core product",
+                "engineering team",
+                "$12 million",
+                "Meridian Ventures"
             ],
-            "correctAnswer": "pay-what-you-can",
-            "hint": "Find what pricing model the theater introduced.",
-            "explanation": "The passage says the pay-what-you-can model, so that is correct.",
-            "timeLimit": 15,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "$12 million",
+            "hint": "Skip the product and team updates and find the dollar figure at the end.",
+            "explanation": "The Series A round was $12 million; the earlier sentences describe product and team progress, not the amount.",
+            "timeLimit": 16,
+            "targetInfo": "Series A funding amount"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L152_Q2",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Skim past the feedback and musician updates and find the actual season highlight.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Incidentally, since permafrost in parts of the Arctic has begun thawing at an accelerated rate, scientists have discovered ancient plant and animal remains preserved for thousands of years suddenly becoming exposed and vulnerable to decomposition.",
-            "targetItem": "permafrost",
+            "passage": "Symphony Season Notice: Subscriber feedback from last season was overwhelmingly positive about the new venue. The orchestra also welcomed several new musicians this year. Ticket demand has grown steadily since the pandemic. This season will feature eight world premieres, more than any season in the orchestra's history.",
+            "targetItem": "eight world premieres",
             "options": [
-                "thawing",
-                "permafrost",
-                "exposed",
-                "glacier"
+                "new venue",
+                "new musicians",
+                "eight world premieres",
+                "pandemic"
             ],
-            "correctAnswer": "permafrost",
-            "hint": "Find what has begun thawing at an accelerated rate.",
-            "explanation": "The passage says the permafrost, so that is correct.",
-            "timeLimit": 15,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "eight world premieres",
+            "hint": "Skip the feedback and musician updates and find the season's actual highlight.",
+            "explanation": "This season features eight world premieres; the earlier sentences describe feedback and staffing, not the premieres.",
+            "timeLimit": 16,
+            "targetInfo": "Number of world premieres this season"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L152_Q3",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Skim past the rainfall and soil details and find the actual yield figure.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Since local volunteers began offering free tax preparation assistance for low-income residents each spring, hundreds of families who previously paid for the service or missed filing deadlines entirely have been able to file accurately and on time.",
-            "targetItem": "preparation",
+            "passage": "Farmers Cooperative Newsletter: This growing season brought unusually heavy rainfall across the region. Several members adjusted planting schedules as a result. Soil testing showed improved nutrient levels overall. The cooperative's total yield this year reached 4,200 tons, a record for the group.",
+            "targetItem": "4,200 tons",
             "options": [
-                "accurately",
-                "deadlines",
-                "preparation",
-                "assistance"
+                "heavy rainfall",
+                "4,200 tons",
+                "planting schedules",
+                "nutrient levels"
             ],
-            "correctAnswer": "preparation",
-            "hint": "Find what type of tax help volunteers now offer.",
-            "explanation": "The passage says tax preparation assistance, so that is correct.",
-            "timeLimit": 15,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "4,200 tons",
+            "hint": "Skip the rainfall and soil details and find the yield number at the end.",
+            "explanation": "The total yield reached 4,200 tons; the earlier sentences describe weather and soil conditions, not the harvest total.",
+            "timeLimit": 16,
+            "targetInfo": "Total yield this year"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L153_Q1",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Skim past the equipment and forecast details and find the actual current base depth.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Having tried and abandoned nearly a dozen different productivity apps over the years, Owen finally settled on a simple paper planner instead, admitting that the physical act of crossing off a finished task felt far more satisfying than any digital checkmark.",
-            "targetItem": "planner",
+            "passage": "Ski Resort Update: The resort invested heavily in snowmaking equipment ahead of this season. Early forecasts predicted a below-average snowpack for the region. Despite the slow start, natural snowfall picked up significantly in December. The resort now reports a base depth of 68 inches, well above last year's total.",
+            "targetItem": "68 inches",
             "options": [
-                "checkmark",
-                "calendar",
-                "planner",
-                "apps"
+                "snowmaking equipment",
+                "68 inches",
+                "below-average",
+                "December"
             ],
-            "correctAnswer": "planner",
-            "hint": "Find what Owen finally settled on instead of apps.",
-            "explanation": "The passage says a simple paper planner, so that is correct.",
-            "timeLimit": 15,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "68 inches",
+            "hint": "Skip the equipment and forecast details and find the current depth figure.",
+            "explanation": "The current base depth is 68 inches; the earlier sentences describe equipment and early forecasts, not the current total.",
+            "timeLimit": 16,
+            "targetInfo": "Current base depth"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L153_Q2",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Skim past the activities, menu, and counselor notes and find the actual date change.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Admittedly, although most instructors initially resisted replacing traditional final exams with cumulative portfolios, several now argue the change has produced a far more accurate picture of what students actually retained over the semester.",
-            "targetItem": "portfolios",
+            "passage": "Summer Camp Parent Letter: Campers have been enjoying a wide range of outdoor activities this session. The kitchen staff introduced a new rotating menu this summer. Several counselors have been recognized for outstanding performance. Please note that visiting day has been moved from the 15th to the 22nd due to a facility scheduling conflict.",
+            "targetItem": "the 22nd",
             "options": [
-                "portfolios",
-                "assignments",
-                "exams",
-                "retained"
+                "the 22nd",
+                "outdoor activities",
+                "rotating menu",
+                "the 15th"
             ],
-            "correctAnswer": "portfolios",
-            "hint": "Find what replaced traditional final exams.",
-            "explanation": "The passage says cumulative portfolios, so that is correct.",
-            "timeLimit": 15,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "the 22nd",
+            "hint": "Skip the activities, menu, and counselor notes and find the new date at the end.",
+            "explanation": "Visiting day is now the 22nd; the 15th was the original date before the change.",
+            "timeLimit": 16,
+            "targetInfo": "New visiting day date"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L153_Q3",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Skim past the office history and staff updates and find the actual new offering.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Although the firm's leadership had assured staff that the merger would barely affect daily operations, employees quickly found themselves navigating an unexpected patchwork of overlapping systems and duplicated approval processes.",
-            "targetItem": "patchwork",
+            "passage": "Dental Office Newsletter: Our office has been proud to serve the community for over twenty years. We recently welcomed a new hygienist to the team. Patient feedback on our updated scheduling system has been positive. Starting next month, our office will begin offering Saturday appointments for the first time.",
+            "targetItem": "Saturday appointments",
             "options": [
-                "systems",
-                "duplicated",
-                "overlap",
-                "patchwork"
+                "twenty years",
+                "Saturday appointments",
+                "new hygienist",
+                "scheduling system"
             ],
-            "correctAnswer": "patchwork",
-            "hint": "Find what employees found themselves navigating.",
-            "explanation": "The passage says an unexpected patchwork, so that is correct.",
-            "timeLimit": 15,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "Saturday appointments",
+            "hint": "Skip the office history and staffing updates and find the new offering at the end.",
+            "explanation": "The office is now offering Saturday appointments; the earlier sentences describe history and staffing, not the new hours.",
+            "timeLimit": 16,
+            "targetInfo": "New scheduling option being offered"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L154_Q1",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Skim past the firm's history and office move and find the actual staffing update.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Although the guidebook explicitly warned that the coastal trail becomes impassable after heavy rain due to flooding at the lower crossing, a group of hikers attempted it anyway and had to turn back when the crossing proved submerged.",
-            "targetItem": "submerged",
+            "passage": "Law Firm Client Update: Our firm has expanded its practice areas significantly over the past two years. We also relocated to a larger downtown office. Client satisfaction surveys have shown consistent improvement. We're pleased to announce that our estate planning team has grown to include two additional attorneys.",
+            "targetItem": "two additional attorneys",
             "options": [
-                "crossing",
-                "flooded",
-                "impassable",
-                "submerged"
+                "practice areas",
+                "larger downtown office",
+                "two additional attorneys",
+                "satisfaction surveys"
             ],
-            "correctAnswer": "submerged",
-            "hint": "Find the word describing the crossing when the hikers turned back.",
-            "explanation": "The passage says the crossing was submerged, so that is correct.",
-            "timeLimit": 15,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "two additional attorneys",
+            "hint": "Skip the firm's history and office move and find the staffing update at the end.",
+            "explanation": "The estate planning team added two attorneys; the earlier sentences describe unrelated firm history.",
+            "timeLimit": 16,
+            "targetInfo": "New attorneys added to estate planning"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L154_Q2",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Skim past the inventory and interest rate commentary and find the actual price figure.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Revealingly, although Petra and her husband had assumed that fully combining their finances after marriage would simplify budgeting considerably, they discovered within the first year that a hybrid system reduced friction far more effectively than complete consolidation had.",
-            "targetItem": "hybrid",
+            "passage": "Real Estate Market Report: Inventory remained tight across most neighborhoods this quarter. Buyer interest stayed strong despite rising interest rates. Several new developments broke ground during this period. The median home price in the region reached $412,000, up from $389,000 last quarter.",
+            "targetItem": "$412,000",
             "options": [
-                "friction",
-                "shared",
-                "hybrid",
-                "consolidation"
+                "tight",
+                "rising interest rates",
+                "new developments",
+                "$412,000"
             ],
-            "correctAnswer": "hybrid",
-            "hint": "Find what type of system reduced friction more effectively.",
-            "explanation": "The passage says a hybrid system, so that is correct.",
-            "timeLimit": 15,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "$412,000",
+            "hint": "Skip the inventory and rate commentary and find the price figure at the end.",
+            "explanation": "The median price is now $412,000; the earlier sentences describe inventory and rate conditions, not the price itself.",
+            "timeLimit": 16,
+            "targetInfo": "This quarter's median home price"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L154_Q3",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Skim past the staff and renovation updates and find the actual newsworthy event.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Although the store's return policy technically allows exchanges within thirty days, employees are given some discretion to make exceptions for gifts that predictably arrive without the original receipt.",
-            "targetItem": "discretion",
+            "passage": "Zoo Newsletter: The zoo welcomed several new staff veterinarians this year to expand animal care. Renovations to the reptile house were completed ahead of schedule. Visitor attendance has grown steadily since last spring. We're thrilled to share that a giraffe calf was born at the zoo last Tuesday, the first in over a decade.",
+            "targetItem": "giraffe calf",
             "options": [
-                "flexibility",
-                "discretion",
-                "exceptions",
-                "receipt"
+                "veterinarians",
+                "giraffe calf",
+                "reptile house",
+                "last spring"
             ],
-            "correctAnswer": "discretion",
-            "hint": "Find what employees are given regarding exceptions.",
-            "explanation": "The passage says some discretion, so that is correct.",
-            "timeLimit": 15,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "giraffe calf",
+            "hint": "Skip the staff and renovation updates and find the actual news at the end.",
+            "explanation": "A giraffe calf was born; the earlier sentences describe staffing and renovations, not this event.",
+            "timeLimit": 16,
+            "targetInfo": "What was born at the zoo"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L155_Q1",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Skim past the enrollment and renovation updates and find the actual new program.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Although plant-based meat alternatives are often assumed to be automatically healthier simply by virtue of being plant-based, a nutritional comparison found many alternatives contained comparable or even higher sodium levels once seasoning was accounted for.",
-            "targetItem": "sodium",
+            "passage": "Culinary School Update: Enrollment has grown steadily across all program tracks this year. The school also renovated its main teaching kitchen over the summer. Faculty have been developing new curriculum materials. Starting this fall, the school will offer a new twelve-week pastry certification program.",
+            "targetItem": "pastry certification",
             "options": [
-                "alternatives",
-                "sodium",
-                "protein",
-                "seasoning"
+                "Enrollment",
+                "pastry certification",
+                "teaching kitchen",
+                "curriculum materials"
             ],
-            "correctAnswer": "sodium",
-            "hint": "Find what nutrient the comparison focused on.",
-            "explanation": "The passage says sodium levels, so that is correct.",
-            "timeLimit": 15,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "pastry certification",
+            "hint": "Skip the enrollment and renovation updates and find the new program at the end.",
+            "explanation": "The new offering is a pastry certification program; the earlier sentences describe enrollment and facilities, not the program itself.",
+            "timeLimit": 16,
+            "targetInfo": "New program being offered"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L155_Q2",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Skim past the attendance and grant updates and find the actual schedule change.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Unsurprisingly, although cloud-based photo storage is often assumed to guarantee permanent preservation of uploaded images, an investigation into several providers' terms of service found that inactive accounts could have their content deleted after a defined period.",
-            "targetItem": "inactive",
+            "passage": "Senior Center Newsletter: Attendance at weekly activities has increased noticeably this year. The center also received a grant to improve accessibility. Volunteers have been essential in running new programs. Transportation services will now be available on weekends, expanding beyond the current weekday-only schedule.",
+            "targetItem": "weekends",
             "options": [
-                "dormant",
-                "deleted",
-                "permanent",
-                "inactive"
+                "weekends",
+                "weekly activities",
+                "grant",
+                "Volunteers"
             ],
-            "correctAnswer": "inactive",
-            "hint": "Find what type of accounts could have content deleted.",
-            "explanation": "The passage says inactive accounts, so that is correct.",
-            "timeLimit": 15,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "weekends",
+            "hint": "Skip the attendance and grant updates and find the actual schedule change.",
+            "explanation": "Transportation will now be available on weekends; the earlier sentences describe attendance and funding, not the schedule.",
+            "timeLimit": 16,
+            "targetInfo": "New days transportation is available"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L155_Q3",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Skim past the registration and field updates and find the actual schedule change.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Although chronic pain is often assumed to be strictly proportional to measurable tissue damage, a growing body of research in pain science has demonstrated that psychological factors can significantly amplify or dampen its subjective intensity.",
-            "targetItem": "proportional",
+            "passage": "Youth Soccer League Update: Registration numbers have grown across every age division this season. The league also added two new fields to handle demand. Coaches attended additional training sessions this spring. Starting next season, games will move from Saturday mornings to Sunday afternoons to reduce scheduling conflicts.",
+            "targetItem": "Sunday afternoons",
             "options": [
-                "subjective",
-                "measurable",
-                "equivalent",
-                "proportional"
+                "Registration numbers",
+                "two new fields",
+                "training sessions",
+                "Sunday afternoons"
             ],
-            "correctAnswer": "proportional",
-            "hint": "Find the word describing the assumed relationship to tissue damage.",
-            "explanation": "The passage says strictly proportional, so that is correct.",
-            "timeLimit": 15,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "Sunday afternoons",
+            "hint": "Skip the registration and field updates and find the schedule change at the end.",
+            "explanation": "Games are moving to Sunday afternoons; the earlier sentences describe registration and facilities, not the schedule.",
+            "timeLimit": 16,
+            "targetInfo": "New game time for next season"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L156_Q1",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Skim past the curation and reception details and find the actual closing date.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Although the beloved author had announced her retirement from writing nearly five years ago, fan speculation intensified after a small publishing house recently confirmed an entirely new manuscript would be released next year.",
-            "targetItem": "manuscript",
+            "passage": "Art Gallery Opening Notice: The gallery has spent months curating this collection from regional artists. Several pieces were sourced directly from private collectors. The opening reception will include light refreshments. The exhibit itself will run through the 30th, giving visitors nearly six weeks to attend.",
+            "targetItem": "the 30th",
             "options": [
-                "manuscript",
-                "publishing",
-                "retirement",
-                "memoir"
+                "regional artists",
+                "the 30th",
+                "private collectors",
+                "refreshments"
             ],
-            "correctAnswer": "manuscript",
-            "hint": "Find what was recently confirmed for release next year.",
-            "explanation": "The passage says a new manuscript, so that is correct.",
-            "timeLimit": 15,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "the 30th",
+            "hint": "Skip the curation and reception details and find the closing date at the end.",
+            "explanation": "The exhibit runs through the 30th; the earlier sentences describe curation and the opening event, not the closing date.",
+            "timeLimit": 16,
+            "targetInfo": "When the exhibit ends"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L156_Q2",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Skim past the membership growth and amenities and find the actual price change.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Notably, although wolves are often portrayed in popular stories as solitary hunters, they are in fact highly social animals that typically live and hunt in coordinated family groups called packs, with lone wolves occurring only temporarily.",
-            "targetItem": "packs",
+            "passage": "Co-working Space Newsletter: Membership has grown significantly since the space expanded last year. Several new amenities were added to the common area. Feedback on the quiet room has been especially positive. Starting next month, all monthly memberships will increase by $25 to cover rising operating costs.",
+            "targetItem": "$25",
             "options": [
-                "packs",
-                "prides",
-                "solitary",
-                "coordinated"
+                "$25",
+                "Membership",
+                "common area",
+                "quiet room"
             ],
-            "correctAnswer": "packs",
-            "hint": "Find what the coordinated family groups are called.",
-            "explanation": "The passage says they are called packs, so that is correct.",
-            "timeLimit": 15,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "$25",
+            "hint": "Skip the membership growth and amenities and find the price change at the end.",
+            "explanation": "Memberships are increasing by $25; the earlier sentences describe growth and amenities, not the price change.",
+            "timeLimit": 16,
+            "targetInfo": "Monthly membership price increase"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L156_Q3",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Skim past the permitting and delivery delays and find the actual completion estimate.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Although the town council's public commitment to transparency suggested otherwise, several residents who requested detailed budget documents through official channels reported waiting months for any response at all.",
-            "targetItem": "transparency",
+            "passage": "Home Renovation Contractor Update: Permitting took longer than expected due to city backlogs. Material delivery was also delayed by several weeks. The crew has been working extended hours to make up time. Based on current progress, the kitchen renovation is now expected to be completed by the 12th.",
+            "targetItem": "the 12th",
             "options": [
-                "accountability",
-                "official",
-                "commitment",
-                "transparency"
+                "Permitting",
+                "Material delivery",
+                "extended hours",
+                "the 12th"
             ],
-            "correctAnswer": "transparency",
-            "hint": "Find what the council publicly committed to.",
-            "explanation": "The passage says transparency, so that is correct.",
-            "timeLimit": 15,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "the 12th",
+            "hint": "Skip the permitting and delivery delays and find the completion date at the end.",
+            "explanation": "Completion is now expected by the 12th; the earlier sentences describe delays, not the current estimate.",
+            "timeLimit": 16,
+            "targetInfo": "New expected completion date"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L157_Q1",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Skim past the theme and planning details and find the actual ticket price.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Because her downstairs neighbors work opposite overnight shifts, Priya has learned to time her loudest household chores, like vacuuming, for the narrow midday window when both of them happen to be awake at the same time.",
-            "targetItem": "vacuuming",
+            "passage": "Nonprofit Gala Announcement: This year's gala theme celebrates twenty years of community partnerships. Planning committee members have been meeting weekly since spring. Several local businesses have donated items for the auction. Tickets go on sale next Monday at $85 per person, with proceeds supporting the youth mentorship program.",
+            "targetItem": "$85",
             "options": [
-                "overnight",
-                "laundry",
-                "vacuuming",
-                "midday"
+                "twenty years",
+                "weekly",
+                "local businesses",
+                "$85"
             ],
-            "correctAnswer": "vacuuming",
-            "hint": "Find what loud chore Priya times carefully.",
-            "explanation": "The passage says vacuuming, so that is correct.",
+            "correctAnswer": "$85",
+            "hint": "Skip the theme and planning details and find the ticket price at the end.",
+            "explanation": "Tickets cost $85 per person; the earlier sentences describe the theme and planning process, not the price.",
             "timeLimit": 15,
-            "targetInfo": "Specific data to find."
+            "targetInfo": "Ticket price for the gala"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L157_Q2",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Skim past the submission and review process and find who is actually speaking.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Interestingly, before the scholarship committee reviews any application, a preliminary screening removes submissions missing even a single required document, a strict policy that has frustrated some otherwise strong applicants who overlooked a minor formatting requirement.",
-            "targetItem": "screening",
+            "passage": "Tech Conference Speaker Update: This year's conference received a record number of speaker submissions. The review panel spent weeks narrowing down proposals. Several past speakers have returned as mentors this year. The closing keynote will be delivered by renowned researcher Dr. Amara Osei, confirmed just last week.",
+            "targetItem": "Dr. Amara Osei",
             "options": [
-                "formatting",
-                "screening",
-                "policy",
-                "review"
+                "record number",
+                "review panel",
+                "past speakers",
+                "Dr. Amara Osei"
             ],
-            "correctAnswer": "screening",
-            "hint": "Find what removes incomplete submissions before review.",
-            "explanation": "The passage says a preliminary screening, so that is correct.",
+            "correctAnswer": "Dr. Amara Osei",
+            "hint": "Skip the submission and review process and find the actual speaker's name.",
+            "explanation": "Dr. Amara Osei delivers the closing keynote; the earlier sentences describe the selection process, not who was chosen.",
             "timeLimit": 15,
-            "targetInfo": "Specific data to find."
+            "targetInfo": "Closing keynote speaker"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L157_Q3",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Skim past the harvest and tasting details and find the actual release date.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Before the annual budget review begins, each department must submit a detailed justification for any line item that increased by more than a modest, predetermined percentage from the previous year.",
-            "targetItem": "justification",
+            "passage": "Winery Newsletter: This year's harvest was delayed slightly due to a cooler spring. Vineyard staff worked extended hours during the peak picking window. Early tastings from the new batch have been promising. The winery's new reserve blend will officially release on the 9th, available first to club members.",
+            "targetItem": "the 9th",
             "options": [
-                "review",
-                "explanation",
-                "percentage",
-                "justification"
+                "cooler spring",
+                "extended hours",
+                "the 9th",
+                "club members"
             ],
-            "correctAnswer": "justification",
-            "hint": "Find what each department must submit for large increases.",
-            "explanation": "The passage says a detailed justification, so that is correct.",
+            "correctAnswer": "the 9th",
+            "hint": "Skip the harvest and tasting details and find the release date at the end.",
+            "explanation": "The reserve blend releases on the 9th; the earlier sentences describe the harvest and tasting process, not the release date.",
             "timeLimit": 15,
-            "targetInfo": "Specific data to find."
+            "targetInfo": "Release date for the reserve blend"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L158_Q1",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Skim past the outcomes and equipment updates and find the actual new hours.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Before finalizing any non-refundable booking near the volcanic region, travelers are advised to check current ash advisories, since even minor eruptions can disrupt flight schedules for days at a time.",
-            "targetItem": "advisories",
+            "passage": "Physical Therapy Clinic Update: Our clinic has seen strong patient outcomes this year across most treatment programs. We recently added new equipment to the main therapy room. Patient wait times have also improved significantly. Starting next month, the clinic will begin offering evening appointments until 7 p.m. on Tuesdays and Thursdays.",
+            "targetItem": "7 p.m.",
             "options": [
-                "disrupt",
-                "advisories",
-                "warnings",
-                "eruptions"
+                "treatment programs",
+                "7 p.m.",
+                "new equipment",
+                "wait times"
             ],
-            "correctAnswer": "advisories",
-            "hint": "Find what travelers are advised to check.",
-            "explanation": "The passage says ash advisories, so that is correct.",
+            "correctAnswer": "7 p.m.",
+            "hint": "Skip the outcomes and equipment updates and find the closing time at the end.",
+            "explanation": "Evening appointments run until 7 p.m.; the earlier sentences describe outcomes and equipment, not the new hours.",
             "timeLimit": 15,
-            "targetInfo": "Specific data to find."
+            "targetInfo": "New evening appointment closing time"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L158_Q2",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Skim past the audience and renovation updates and find the actual new price.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Tellingly, before Farid's grandparents agreed to move into a smaller home closer to his family, months of gentle persuasion were needed to overcome their reluctance to leave the house they had lived in for four decades.",
-            "targetItem": "persuasion",
+            "passage": "Community Theater Update: This season's productions have drawn larger audiences than in previous years. The theater also completed minor renovations to the lobby. Volunteer ushers have been essential to smooth performances. Season passes for next year will go on sale for $120, a $15 increase from this year.",
+            "targetItem": "$120",
             "options": [
-                "convincing",
-                "persuasion",
-                "reluctance",
-                "decades"
+                "$120",
+                "larger audiences",
+                "lobby",
+                "Volunteer ushers"
             ],
-            "correctAnswer": "persuasion",
-            "hint": "Find what was needed to overcome their reluctance.",
-            "explanation": "The passage says months of persuasion, so that is correct.",
+            "correctAnswer": "$120",
+            "hint": "Skip the audience and renovation updates and find the actual new price.",
+            "explanation": "Next year's season pass costs $120; the earlier sentences describe audience size and renovations, not the price.",
             "timeLimit": 15,
-            "targetInfo": "Specific data to find."
+            "targetInfo": "Price of next year's season pass"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L158_Q3",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Skim past the e-bike and training updates and find the actual discounted price.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Before the seasonal clearance event begins, most of the deeply discounted merchandise is quietly moved to a separate section, leaving regular shoppers to wonder why so little inventory remains once the sale officially starts.",
-            "targetItem": "merchandise",
+            "passage": "Bike Shop Newsletter: We've expanded our selection of electric bikes significantly this year. Staff completed additional certification training on e-bike repair. Customer interest in maintenance classes has grown steadily. Starting this weekend, all bike tune-ups will be discounted to $35 through the end of the month.",
+            "targetItem": "$35",
             "options": [
-                "inventory",
-                "merchandise",
-                "clearance",
-                "discounted"
+                "electric bikes",
+                "certification training",
+                "$35",
+                "maintenance classes"
             ],
-            "correctAnswer": "merchandise",
-            "hint": "Find what is quietly moved to a separate section.",
-            "explanation": "The passage says the discounted merchandise, so that is correct.",
+            "correctAnswer": "$35",
+            "hint": "Skip the e-bike and training updates and find the discounted price at the end.",
+            "explanation": "Tune-ups are discounted to $35; the earlier sentences describe e-bikes and training, not the tune-up price.",
             "timeLimit": 15,
-            "targetInfo": "Specific data to find."
+            "targetInfo": "Discounted tune-up price"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L159_Q1",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Skim past the enrollment and faculty updates and find the actual expansion plan.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Before the bakery's slow fermentation process, which takes nearly two full days, was widely known, most customers assumed the higher price simply reflected fancier packaging rather than a genuinely different method.",
-            "targetItem": "fermentation",
+            "passage": "Orchestra Youth Program Update: Enrollment in the youth strings program has doubled over the past two years. Several new instructors joined the faculty this fall. Practice room availability has become more limited as a result. Starting in January, the program will add a second location to accommodate growing demand.",
+            "targetItem": "second location",
             "options": [
-                "baking",
-                "packaging",
-                "method",
-                "fermentation"
+                "doubled",
+                "new instructors",
+                "second location",
+                "Practice room"
             ],
-            "correctAnswer": "fermentation",
-            "hint": "Find what process the bakery uses that takes two days.",
-            "explanation": "The passage says the fermentation process, so that is correct.",
+            "correctAnswer": "second location",
+            "hint": "Skip the enrollment and faculty updates and find the actual expansion plan.",
+            "explanation": "The program is adding a second location; the earlier sentences describe enrollment growth and staffing, not the expansion.",
             "timeLimit": 15,
-            "targetInfo": "Specific data to find."
+            "targetInfo": "What's being added in January"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L159_Q2",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Skim past the vendor and attendance updates and find the actual schedule addition.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Strikingly, before the budget tablet's processor struggles with multitasking became widely known through reviews, the manufacturer's marketing had implied the device was equally suitable for both casual entertainment and serious productivity work.",
-            "targetItem": "multitasking",
+            "passage": "Farmers Market Newsletter: This season welcomed several new vendors specializing in baked goods. Attendance has grown steadily on cooler mornings. Parking near the market has become more limited as a result. Starting next month, the market will extend its hours by adding a Wednesday evening session.",
+            "targetItem": "Wednesday evening",
             "options": [
-                "entertainment",
-                "productivity",
-                "multitasking",
-                "processing"
+                "Wednesday evening",
+                "baked goods",
+                "cooler mornings",
+                "Parking"
             ],
-            "correctAnswer": "multitasking",
-            "hint": "Find what the processor struggled with, according to reviews.",
-            "explanation": "The passage says multitasking, so that is correct.",
+            "correctAnswer": "Wednesday evening",
+            "hint": "Skip the vendor and attendance updates and find the actual schedule addition.",
+            "explanation": "A Wednesday evening session is being added; the earlier sentences describe vendors and attendance, not the new session.",
             "timeLimit": 15,
-            "targetInfo": "Specific data to find."
+            "targetInfo": "New session being added"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L159_Q3",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Skim past the enrollment and staffing updates and find the actual campus expansion plan.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Before the clinic began offering evening appointments specifically for patients who work during the day, those time slots simply did not exist, forcing many working adults to either miss appointments or take unpaid time off.",
-            "targetItem": "unpaid",
+            "passage": "Community College Update: This semester saw record enrollment across most departments. Several new faculty members joined the science division. Campus parking has become increasingly limited as a result. Beginning next fall, the college will open a new satellite campus twelve miles east to ease overcrowding.",
+            "targetItem": "satellite campus",
             "options": [
-                "forcing",
-                "unpaid",
-                "evening",
-                "scheduled"
+                "record enrollment",
+                "science division",
+                "Campus parking",
+                "satellite campus"
             ],
-            "correctAnswer": "unpaid",
-            "hint": "Find what type of time off working adults had to take.",
-            "explanation": "The passage says unpaid time off, so that is correct.",
+            "correctAnswer": "satellite campus",
+            "hint": "Skip the enrollment and staffing details and find the actual campus expansion plan.",
+            "explanation": "The college is opening a satellite campus; the earlier sentences describe enrollment and staffing, not the expansion.",
             "timeLimit": 15,
-            "targetInfo": "Specific data to find."
+            "targetInfo": "What's opening next fall"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L160_Q1",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Skim past the traffic and renovation updates and find the actual approved project.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Before the museum's blockbuster exhibit opened to record crowds, curators had privately worried that a smaller, less accessible companion exhibit down the hall would be almost entirely overlooked by comparison.",
-            "targetItem": "curators",
+            "passage": "Regional Airport Update: Passenger traffic has grown steadily over the past three years. The airport also completed renovations to the main terminal last spring. Security wait times have improved as a result of new staffing. The airport board has approved construction of a second runway, expected to begin in two years.",
+            "targetItem": "second runway",
             "options": [
-                "accessible",
-                "organizers",
-                "companion",
-                "curators"
+                "Passenger traffic",
+                "main terminal",
+                "Security wait times",
+                "second runway"
             ],
-            "correctAnswer": "curators",
-            "hint": "Find who had privately worried about the companion exhibit.",
-            "explanation": "The passage says the curators worried, so that is correct.",
+            "correctAnswer": "second runway",
+            "hint": "Skip the traffic and renovation updates and find the actual approved project.",
+            "explanation": "The board approved a second runway; the earlier sentences describe traffic and terminal updates, not the approved project.",
             "timeLimit": 15,
-            "targetInfo": "Specific data to find."
+            "targetInfo": "What the board approved"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L160_Q2",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Skim past the donations and equipment updates and find the actual new program's topic.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Curiously, before coral bleaching events became noticeably more frequent and severe in recent decades, marine biologists rarely needed to selectively breed heat-resistant coral fragments as a deliberate conservation strategy.",
-            "targetItem": "bleaching",
+            "passage": "Public Radio Station Update: Listener donations reached a new high during this year's fund drive. The station also upgraded its broadcasting equipment. Several longtime hosts celebrated program anniversaries this year. Starting in the fall, the station will add a new daily program focused on local history.",
+            "targetItem": "local history",
             "options": [
-                "breeding",
-                "conservation",
-                "bleaching",
-                "frequent"
+                "local history",
+                "Listener donations",
+                "broadcasting equipment",
+                "program anniversaries"
             ],
-            "correctAnswer": "bleaching",
-            "hint": "Find what events became more frequent and severe.",
-            "explanation": "The passage says coral bleaching events, so that is correct.",
+            "correctAnswer": "local history",
+            "hint": "Skip the donations and equipment updates and find the new program's topic.",
+            "explanation": "The new program focuses on local history; the earlier sentences describe donations and equipment, not the program's topic.",
             "timeLimit": 15,
-            "targetInfo": "Specific data to find."
+            "targetInfo": "Topic of the new daily program"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L160_Q3",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Skim past the volunteer and irrigation updates and find the actual new closing time.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Before the participatory budgeting pilot launched, city officials had seen only mixed results from similar programs elsewhere, yet they allocated a modest portion of the discretionary budget anyway to evaluate its effectiveness locally.",
-            "targetItem": "discretionary",
+            "passage": "Botanical Garden Update: Volunteer hours reached a new record this year across all garden sections. The garden also completed a major irrigation upgrade. Membership renewals have grown steadily since spring. Beginning in June, the garden will extend its hours until 8 p.m. on weekends to allow for evening visits.",
+            "targetItem": "8 p.m.",
             "options": [
-                "allocated",
-                "discretionary",
-                "effectiveness",
-                "participatory"
+                "Volunteer hours",
+                "irrigation upgrade",
+                "Membership renewals",
+                "8 p.m."
             ],
-            "correctAnswer": "discretionary",
-            "hint": "Find what type of budget portion officials allocated.",
-            "explanation": "The passage says the discretionary budget, so that is correct.",
+            "correctAnswer": "8 p.m.",
+            "hint": "Skip the volunteer and irrigation updates and find the new closing time at the end.",
+            "explanation": "Weekend hours now extend until 8 p.m.; the earlier sentences describe volunteers and irrigation, not the new hours.",
             "timeLimit": 15,
-            "targetInfo": "Specific data to find."
+            "targetInfo": "New weekend closing time"
         }
     ]
 }

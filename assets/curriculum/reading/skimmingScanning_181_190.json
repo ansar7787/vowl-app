@@ -5,573 +5,573 @@
     "quests": [
         {
             "id": "RDG_SKIMMINGSCANNING_L181_Q1",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Skim past the cost pressures and segment performance, then scan for the actual profit figure.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "It is tempting to read Naila's much-publicized digital detox, during which she claims to have abstained entirely from social media for a full year, as a straightforward story of disciplined abstinence, yet a more precise account reveals a considerably more qualified reality involving several exceptions she quietly made for coordinating with family and for a single professional networking platform tied to her freelance income.",
-            "targetItem": "abstinence",
+            "passage": "Shareholder Letter Excerpt: This past year tested our resilience as input costs rose sharply across the industry. We responded by renegotiating several supplier contracts and trimming discretionary spending. Our core segment held steady despite these pressures, while our newer ventures division underperformed expectations. Overall, the board is pleased to report a net profit of $4.7 million, our strongest result in three years.",
+            "targetItem": "$4.7 million",
             "options": [
-                "discipline",
-                "exceptions",
-                "qualified",
-                "abstinence"
+                "input costs",
+                "core segment",
+                "three years",
+                "$4.7 million"
             ],
-            "correctAnswer": "abstinence",
-            "hint": "Find the word describing the straightforward story people assumed.",
-            "explanation": "The passage says disciplined abstinence, so that is correct.",
-            "timeLimit": 14,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "$4.7 million",
+            "hint": "Skip the cost pressures and segment commentary and find the dollar figure at the end.",
+            "explanation": "Net profit was $4.7 million; the earlier sentences describe cost pressures and segment performance, not the final result.",
+            "timeLimit": 15,
+            "targetInfo": "Net profit reported"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L181_Q2",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Skim past the activity restrictions and infection warning, then scan for the follow-up appointment deadline.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Revealingly, the certification board's public statement attributing this year's notably higher pass rate entirely to a revised, more effective study guide omits a detail that internal minutes from the board's own quality committee make explicit: a quiet recalibration of the passing threshold occurred during the same cycle, after psychometricians had privately flagged the previous standard as miscalibrated for two consecutive years.",
-            "targetItem": "recalibration",
+            "passage": "Discharge Instructions: You were admitted for observation following your procedure and are now cleared to go home. Continue taking your prescribed medication as directed, and avoid strenuous activity for the next two weeks. Watch for signs of infection such as redness or swelling at the incision site. Schedule a follow-up appointment with Dr. Patel within ten days of discharge.",
+            "targetItem": "ten days",
             "options": [
-                "threshold",
-                "adjustment",
-                "recalibration",
-                "committee"
+                "two weeks",
+                "redness or swelling",
+                "observation",
+                "ten days"
             ],
-            "correctAnswer": "recalibration",
-            "hint": "Find what quietly occurred to the passing threshold.",
-            "explanation": "The passage says a recalibration occurred, so that is correct.",
-            "timeLimit": 14,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "ten days",
+            "hint": "Skip the activity and infection warnings and find the appointment deadline at the end.",
+            "explanation": "The follow-up appointment must happen within ten days; two weeks refers to the activity restriction instead.",
+            "timeLimit": 15,
+            "targetInfo": "Follow-up appointment window"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L181_Q3",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Skim past the inspection details, then scan for how long the delay will actually last.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "The company's official account of its remarkably smooth transition to a four-day work week, frequently cited by executives as proof of the model's viability, tends to omit a detail documented in internal planning memos: the pilot was deliberately limited to departments whose work was least dependent on real-time coordination with external clients across differing time zones.",
-            "targetItem": "viability",
+            "passage": "Customs Summary: Your shipment cleared initial inspection without issue. However, one item in the shipment was flagged for additional review due to its declared value. As a result, final release is expected to be delayed by three to five business days beyond the original estimate.",
+            "targetItem": "three to five business days",
             "options": [
-                "viability",
-                "coordination",
-                "deliberately",
-                "feasibility"
+                "declared value",
+                "initial inspection",
+                "three to five business days",
+                "original estimate"
             ],
-            "correctAnswer": "viability",
-            "hint": "Find what executives say the smooth transition proves.",
-            "explanation": "The passage says it proves viability, so that is correct.",
-            "timeLimit": 14,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "three to five business days",
+            "hint": "Skip the inspection and flagging details and find the actual delay length at the end.",
+            "explanation": "The delay is three to five business days; the declared value issue is only the reason for the delay.",
+            "timeLimit": 15,
+            "targetInfo": "Length of the customs delay"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L182_Q1",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Skim past the due diligence and transition details, then scan for the actual closing date.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "The regional airline's public statement crediting its recently overhauled boarding procedure with a measurable reduction in average flight delays elides a detail documented in the same internal operations report the airline's own press release selectively quotes: the reduction coincided almost precisely with a separate decision to reduce connecting itineraries through its most delay-prone regional hub.",
-            "targetItem": "elides",
+            "passage": "Merger Announcement: Both companies have spent the past six months conducting due diligence and regulatory review. Employees at both organizations will be briefed on transition plans in the coming weeks. Leadership from both sides will remain in place through the transition period. The merger is expected to officially close on the 14th, pending final shareholder approval.",
+            "targetItem": "the 14th",
             "options": [
-                "omits",
-                "overhauled",
-                "elides",
-                "selectively"
+                "the 14th",
+                "six months",
+                "transition plans",
+                "shareholder approval"
             ],
-            "correctAnswer": "elides",
-            "hint": "Find the word meaning the statement leaves out a key detail.",
-            "explanation": "The passage says the statement elides it, so that is correct.",
-            "timeLimit": 14,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "the 14th",
+            "hint": "Skip the due diligence and transition details and find the closing date at the end.",
+            "explanation": "The merger closes on the 14th; six months describes how long due diligence took, not the closing date.",
+            "timeLimit": 15,
+            "targetInfo": "Expected merger close date"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L182_Q2",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Skim past the review materials considered, then scan for the actual vote count.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Unsurprisingly, the widely shared account of how Naila's grandparents met, a story recounted at nearly every family gathering as a serendipitous chance encounter at a train station, was substantially revised after a cousin doing genealogical research uncovered a bundle of letters revealing a formal introduction through a mutual family friend nearly a year before that supposedly chance meeting.",
-            "targetItem": "serendipitous",
+            "passage": "Tenure Committee Decision: The committee reviewed extensive documentation including teaching evaluations, research output, and service contributions. Several letters of recommendation were also considered from external reviewers. After thorough deliberation, the committee voted 7 to 1 in favor of granting tenure, effective the start of the next academic year.",
+            "targetItem": "7 to 1",
             "options": [
-                "genealogical",
-                "substantially",
-                "formal",
-                "serendipitous"
+                "teaching evaluations",
+                "external reviewers",
+                "next academic year",
+                "7 to 1"
             ],
-            "correctAnswer": "serendipitous",
-            "hint": "Find the word describing the chance encounter in the family story.",
-            "explanation": "The passage says a serendipitous encounter, so that is correct.",
-            "timeLimit": 14,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "7 to 1",
+            "hint": "Skip the review materials and find the actual vote result at the end.",
+            "explanation": "The vote was 7 to 1; teaching evaluations and letters of recommendation were only materials the committee reviewed.",
+            "timeLimit": 15,
+            "targetInfo": "Committee vote result"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L182_Q3",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Skim past the bond's purpose and the public hearings, then scan for the actual tax impact.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "The furniture retailer's advertising campaign touting its bestselling sofa model as having an average customer satisfaction rating substantially higher than industry norms is based on a survey methodology that, according to a disclosure required after a competitor's complaint, only surveys customers within thirty days of purchase, a window that predates when most structural complaints about the frame typically arise.",
-            "targetItem": "methodology",
+            "passage": "Infrastructure Bond Notice: The proposed bond would fund road repairs, bridge maintenance, and stormwater system upgrades across the city. Public hearings were held over the past two months to gather resident input. Support was strongest among residents in older neighborhoods with aging infrastructure. If approved, the bond would raise property taxes by $42 annually for the average homeowner.",
+            "targetItem": "$42",
             "options": [
-                "norms",
-                "methodology",
-                "campaign",
-                "substantially"
+                "$42",
+                "road repairs",
+                "two months",
+                "older neighborhoods"
             ],
-            "correctAnswer": "methodology",
-            "hint": "Find what type of survey approach the rating is based on.",
-            "explanation": "The passage says a survey methodology, so that is correct.",
-            "timeLimit": 14,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "$42",
+            "hint": "Skip the bond's purpose and hearing details and find the tax figure at the end.",
+            "explanation": "The bond would raise taxes by $42 annually; road repairs and hearings describe the bond's purpose, not its cost.",
+            "timeLimit": 15,
+            "targetInfo": "Annual property tax increase"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L183_Q1",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Skim past the affected device range and update instructions, then scan for how long the update actually takes.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "The celebrated chef's frequently repeated origin story, in which she credits a single transformative meal at a now-closed restaurant during her twenties as the sole catalyst for her decision to pursue cooking professionally, was complicated when an early mentor, interviewed separately for a culinary history project, revealed she had already been informally apprenticing in her kitchen for nearly a year beforehand.",
-            "targetItem": "catalyst",
+            "passage": "Product Security Notice: We recently identified a vulnerability affecting a specific range of devices manufactured between March and June of last year. Devices outside this range are not affected and require no action. Affected customers should update their firmware immediately using the instructions provided. The update process typically takes less than ten minutes to complete.",
+            "targetItem": "ten minutes",
             "options": [
-                "apprenticing",
-                "catalyst",
-                "mentor",
-                "transformative"
+                "March and June",
+                "not affected",
+                "ten minutes",
+                "update their firmware"
             ],
-            "correctAnswer": "catalyst",
-            "hint": "Find what the single meal was described as being for her decision.",
-            "explanation": "The passage says the sole catalyst, so that is correct.",
-            "timeLimit": 14,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "ten minutes",
+            "hint": "Skip the device range and instructions and find the time estimate at the end.",
+            "explanation": "The update takes about ten minutes; March and June only describe which devices are affected.",
+            "timeLimit": 15,
+            "targetInfo": "Time the firmware update takes"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L183_Q2",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Skim past the earning structure changes and elite threshold adjustments, then scan for what happens to existing miles.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Notably, the technology company's public statement attributing this year's significant reduction in customer-reported data breaches entirely to its newly implemented encryption protocol omits a detail documented in a separate internal audit conducted by the company's own security team: the same period also saw the quiet discontinuation of a legacy authentication method responsible for a disproportionate share of prior breaches.",
-            "targetItem": "encryption",
+            "passage": "Frequent Flyer Program Overhaul: Starting next year, miles will be earned based on ticket price rather than distance flown, a significant change from the current system. Elite status thresholds will also be adjusted to reflect the new earning structure. Members are encouraged to review their current mile balance before the changeover. Existing miles will retain their value and carry over automatically, with no action required from members.",
+            "targetItem": "no action required",
             "options": [
-                "documented",
-                "implemented",
-                "encryption",
-                "conducted"
+                "no action required",
+                "ticket price",
+                "distance flown",
+                "mile balance"
             ],
-            "correctAnswer": "encryption",
-            "hint": "Find what type of protocol the company newly implemented.",
-            "explanation": "The passage says an encryption protocol, so that is correct.",
-            "timeLimit": 14,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "no action required",
+            "hint": "Skip the earning structure changes and find what happens to existing miles at the end.",
+            "explanation": "Existing miles carry over automatically with no action required; the earning structure change applies only to future miles.",
+            "timeLimit": 15,
+            "targetInfo": "What members need to do about their existing miles"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L183_Q3",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Skim past the general trail conditions, then scan for the Ridge Trail's specific status.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Although the wellness company's marketing for its popular sleep supplement cites a specific clinical study as evidence of effectiveness, a closer examination of that same publicly available study reveals the tested dosage was substantially higher than what is actually contained in the commercially sold product, and that the study population excluded anyone taking other common medications.",
-            "targetItem": "dosage",
+            "passage": "National Park Visitor Advisory: Trail conditions have been affected by recent heavy rainfall throughout the park. Several lower-elevation trails remain open with minor flooding in low-lying areas. The popular Ridge Trail, however, has been closed entirely due to a washout near mile marker 3. Rangers expect the trail to reopen once repair crews complete their assessment, likely within two weeks.",
+            "targetItem": "closed entirely",
             "options": [
-                "formulation",
-                "substantially",
-                "dosage",
-                "clinical"
+                "closed entirely",
+                "minor flooding",
+                "mile marker 3",
+                "two weeks"
             ],
-            "correctAnswer": "dosage",
-            "hint": "Find what was found to be substantially higher in the study.",
-            "explanation": "The passage says the tested dosage, so that is correct.",
-            "timeLimit": 14,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "closed entirely",
+            "hint": "Skip the general trail conditions and find the Ridge Trail's specific status.",
+            "explanation": "The Ridge Trail is closed entirely; minor flooding describes other, still-open trails instead.",
+            "timeLimit": 15,
+            "targetInfo": "Status of the Ridge Trail"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L184_Q1",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Skim past the bonus and benefits details, then scan for the actual base salary figure.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "The film studio's public narrative crediting the blockbuster's unexpected box office success entirely to an innovative, purely digital marketing campaign that has since been studied across the industry omits a detail confirmed in the studio's own financial disclosures to shareholders: a substantial, largely undisclosed portion of the budget was allocated to traditional television advertising during the campaign's final two weeks.",
-            "targetItem": "disclosures",
+            "passage": "Employment Offer Letter Excerpt: This offer includes a base salary of $78,000 annually, paid on a biweekly schedule. You will also be eligible for an annual performance bonus of up to 10 percent, subject to company and individual performance targets. Standard benefits including health insurance and a 401k match begin on your first day. This offer is contingent upon successful completion of a background check.",
+            "targetItem": "$78,000",
             "options": [
-                "confirmed",
-                "narratives",
-                "disclosures",
-                "innovative"
+                "10 percent",
+                "401k match",
+                "background check",
+                "$78,000"
             ],
-            "correctAnswer": "disclosures",
-            "hint": "Find what type of shareholder documents confirmed the omitted detail.",
-            "explanation": "The passage says financial disclosures, so that is correct.",
-            "timeLimit": 14,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "$78,000",
+            "hint": "Skip the bonus and benefits details and find the base salary at the start.",
+            "explanation": "The base salary is $78,000; 10 percent describes the separate performance bonus, not the base pay.",
+            "timeLimit": 15,
+            "targetInfo": "Base annual salary offered"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L184_Q2",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Skim past the original denial and reopened review, then scan for the actual revised payout.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Although a particular species of tree frog is frequently cited in popular science writing as being able to survive being completely frozen solid during winter and simply thaw out unharmed in spring, researchers studying the species more closely have found that a small percentage of cells, particularly in certain organ tissues, do not survive the freezing process at all.",
-            "targetItem": "unharmed",
+            "passage": "Insurance Appeal Notice: Your original claim was denied due to insufficient documentation regarding the reported incident. We have since received the additional records requested and reopened your case for review. After reassessment, your claim has been approved for a revised payout of $3,880, reflecting the updated damage estimate.",
+            "targetItem": "$3,880",
             "options": [
-                "unharmed",
-                "percentage",
-                "completely",
-                "frequently"
+                "insufficient documentation",
+                "additional records",
+                "$3,880",
+                "damage estimate"
             ],
-            "correctAnswer": "unharmed",
-            "hint": "Find how the frog is popularly described as thawing out.",
-            "explanation": "The passage says it thaws out unharmed, so that is correct.",
-            "timeLimit": 14,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "$3,880",
+            "hint": "Skip the denial and review process and find the actual payout figure at the end.",
+            "explanation": "The revised payout is $3,880; the insufficient documentation was only the reason for the original denial.",
+            "timeLimit": 15,
+            "targetInfo": "Revised payout amount"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L184_Q3",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Skim past the passed inspection and labeling issue, then scan for the actual repair deadline.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "The city's public statement attributing the notable decline in downtown vacancy rates entirely to its recently introduced small-business tax incentive program omits a detail present in the city's own economic development office data: the decline coincided closely with a large employer's decision, made for unrelated internal real estate reasons, to relocate hundreds of employees downtown.",
-            "targetItem": "vacancy",
+            "passage": "Health Inspection Summary: The kitchen area passed inspection with no critical violations noted. Minor issues were identified regarding food storage labeling, which have since been corrected. The walk-in cooler was found to be operating three degrees above the required temperature at the time of inspection. The restaurant has thirty days to submit proof of the cooler's repair or recalibration.",
+            "targetItem": "thirty days",
             "options": [
-                "unrelated",
-                "incentive",
-                "relocate",
-                "vacancy"
+                "thirty days",
+                "three degrees",
+                "food storage labeling",
+                "no critical violations"
             ],
-            "correctAnswer": "vacancy",
-            "hint": "Find what type of rates notably declined downtown.",
-            "explanation": "The passage says vacancy rates, so that is correct.",
-            "timeLimit": 14,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "thirty days",
+            "hint": "Skip the passed inspection and labeling notes and find the deadline at the end.",
+            "explanation": "The restaurant has thirty days to submit proof of repair; three degrees only describes the cooler issue itself.",
+            "timeLimit": 15,
+            "targetInfo": "Deadline to submit proof of cooler repair"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L185_Q1",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Skim past the general show details, then scan for which hall is reserved for tech vendors.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Farid's decade-long habit of tracking every expenditure down to the cent, a practice he has described in interviews as the single most transformative financial habit he adopted in his twenties, is often cited by admirers as evidence that meticulous tracking alone produces meaningful savings, though he himself now admits the habit coincided almost exactly with a substantial raise at his job.",
-            "targetItem": "meticulous",
+            "passage": "Trade Show Floor Notice: This year's show features over 200 exhibitors across four halls. Registration and badge pickup are located near the main entrance. Hall C has been reserved specifically for technology and software vendors, separate from the general exhibitor floor. The keynote stage is located in Hall A, opening with remarks at 9 a.m.",
+            "targetItem": "Hall C",
             "options": [
-                "admirers",
-                "transformative",
-                "meticulous",
-                "consistent"
+                "Hall C",
+                "Hall A",
+                "200 exhibitors",
+                "main entrance"
             ],
-            "correctAnswer": "meticulous",
-            "hint": "Find the word describing the type of tracking admirers credit.",
-            "explanation": "The passage says meticulous tracking, so that is correct.",
-            "timeLimit": 14,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "Hall C",
+            "hint": "Skip the general show and registration details and find the hall tied to tech vendors.",
+            "explanation": "Hall C is reserved for technology and software vendors; Hall A is where the keynote stage is located instead.",
+            "timeLimit": 15,
+            "targetInfo": "Hall reserved for technology and software vendors"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L185_Q2",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Skim past the rollover options, then scan for the actual deadline to avoid penalties.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Interestingly, although the university's press release describing its new writing-intensive general education requirement emphasizes the substantial increase in overall student writing output as evidence of success, a more granular analysis conducted by the assessment office found the quality improvement was concentrated almost entirely among students also enrolled in a small, oversubscribed peer-tutoring program running concurrently.",
-            "targetItem": "granular",
+            "passage": "Retirement Account Rollover Notice: Your previous employer's plan will be closing to new contributions at the end of this month. You have the option to roll your balance into your new employer's plan or into a personal IRA. Rollovers completed within sixty days of the account closing avoid any tax penalty. Balances not rolled over within this window may be subject to early withdrawal taxes.",
+            "targetItem": "sixty days",
             "options": [
-                "concentrated",
-                "granular",
-                "substantial",
-                "detailed"
+                "end of this month",
+                "personal IRA",
+                "early withdrawal",
+                "sixty days"
             ],
-            "correctAnswer": "granular",
-            "hint": "Find the word describing the more detailed analysis conducted.",
-            "explanation": "The passage says a more granular analysis, so that is correct.",
-            "timeLimit": 14,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "sixty days",
+            "hint": "Skip the rollover destination options and find the actual penalty deadline.",
+            "explanation": "Rollovers within sixty days avoid a penalty; the personal IRA option is just one destination choice.",
+            "timeLimit": 15,
+            "targetInfo": "Window to avoid a tax penalty"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L185_Q3",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Skim past phase one's completion and the weather delays, then scan for phase two's new completion date.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Although the manufacturing plant's leadership has publicly credited its recently implemented peer-mentorship program with the substantial year-over-year decline in workplace injuries, a closer look at the incident data reveals the decline began several months before the program's actual rollout date, coinciding instead with the replacement of a specific piece of aging machinery.",
-            "targetItem": "rollout",
+            "passage": "Construction Project Update: Phase one, which included site preparation and foundation work, was completed ahead of schedule last month. Phase two, covering the building's structural framework, is currently underway. Weather delays pushed the original phase two timeline back slightly. The project team now expects phase two to be completed by the 20th, with phase three beginning shortly after.",
+            "targetItem": "the 20th",
             "options": [
-                "mentorship",
-                "coinciding",
-                "rollout",
-                "launch"
+                "ahead of schedule",
+                "structural framework",
+                "phase three",
+                "the 20th"
             ],
-            "correctAnswer": "rollout",
-            "hint": "Find what the decline began before, according to the data.",
-            "explanation": "The passage says the program's rollout date, so that is correct.",
-            "timeLimit": 14,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "the 20th",
+            "hint": "Skip phase one's completion and the weather delay note and find phase two's new date.",
+            "explanation": "Phase two is now expected to finish by the 20th; ahead of schedule describes phase one's completion instead.",
+            "timeLimit": 15,
+            "targetInfo": "Expected completion date for phase two"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L186_Q1",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Skim past the water and packaging improvements, then scan for the actual emissions figure.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Although the historic railway's marketing describes its restored vintage locomotive as running on the exact original nineteenth-century engineering specifications, a technical disclosure filed with the regional heritage rail authority for safety certification purposes reveals that the boiler and braking systems were substantially modernized during restoration, with only the locomotive's exterior remaining faithful to the original design.",
-            "targetItem": "specifications",
+            "passage": "Corporate Sustainability Report: Our manufacturing facilities reduced water usage by 12 percent this year through updated equipment. Packaging waste was also reduced through a redesign completed in the spring. Our largest environmental achievement this year was cutting carbon emissions by 28 percent, exceeding our original target of 20 percent.",
+            "targetItem": "28 percent",
             "options": [
-                "disclosure",
-                "certification",
-                "modernized",
-                "specifications"
+                "12 percent",
+                "spring",
+                "28 percent",
+                "20 percent"
             ],
-            "correctAnswer": "specifications",
-            "hint": "Find what the marketing claims the locomotive runs on.",
-            "explanation": "The passage says the original specifications, so that is correct.",
-            "timeLimit": 14,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "28 percent",
+            "hint": "Skip the water and packaging figures and find the actual emissions result.",
+            "explanation": "Carbon emissions dropped 28 percent; 12 percent and 20 percent describe water savings and the original target.",
+            "timeLimit": 15,
+            "targetInfo": "Actual carbon emissions reduction achieved"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L186_Q2",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Skim past the proposal and review process, then scan for the actual approved amount.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "The frequently repeated family narrative crediting Marcus's grandfather's business success entirely to his individual ingenuity and hard work, a story Marcus has recounted proudly in his own professional networking, was complicated considerably when Marcus discovered documentation of a substantial loan from a wealthy in-law used to establish the business initially.",
-            "targetItem": "ingenuity",
+            "passage": "University Research Grant Notice: The research team submitted their proposal in the fall following months of preliminary data collection. Several revisions were requested during the review process. After final review, the grant committee approved funding of $340,000 over three years, slightly less than the original request.",
+            "targetItem": "$340,000",
             "options": [
-                "complicated",
-                "substantial",
-                "ingenuity",
-                "documentation"
+                "fall",
+                "preliminary data",
+                "three years",
+                "$340,000"
             ],
-            "correctAnswer": "ingenuity",
-            "hint": "Find what the grandfather's success was originally credited to.",
-            "explanation": "The passage says individual ingenuity, so that is correct.",
-            "timeLimit": 14,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "$340,000",
+            "hint": "Skip the proposal and review process and find the actual funding amount.",
+            "explanation": "The approved funding is $340,000; fall and preliminary data describe the proposal process, not the amount.",
+            "timeLimit": 15,
+            "targetInfo": "Approved grant funding amount"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L186_Q3",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Skim past the modernization background, then scan for the actual retirement date.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Although the online marketplace's public statements have consistently framed its recently introduced seller verification badge as a straightforward quality signal reflecting product reliability, an investigation by a consumer protection organization found the badge's underlying criteria were based almost entirely on shipping speed and message response time, with no requirement relating to defect rates.",
-            "targetItem": "verification",
+            "passage": "Airline Fleet Update: The airline has been gradually retiring its older aircraft over the past two years as part of a modernization plan. Several routes have already transitioned to the newer, more fuel-efficient models. The final older aircraft is scheduled for retirement on the 8th, completing the fleet transition three months ahead of the original timeline.",
+            "targetItem": "the 8th",
             "options": [
-                "underlying",
-                "verification",
-                "reliability",
-                "criteria"
+                "two years",
+                "fuel-efficient",
+                "the 8th",
+                "three months"
             ],
-            "correctAnswer": "verification",
-            "hint": "Find what type of badge the marketplace introduced for sellers.",
-            "explanation": "The passage says a verification badge, so that is correct.",
-            "timeLimit": 14,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "the 8th",
+            "hint": "Skip the modernization background and find the actual retirement date.",
+            "explanation": "The final aircraft retires on the 8th; two years describes how long the overall transition has taken.",
+            "timeLimit": 15,
+            "targetInfo": "Retirement date of the final older aircraft"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L187_Q1",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Skim past public safety and parks funding, then scan for the actual transit funding increase.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "The beverage company's marketing claim that its popular sports drink formula has remained essentially unchanged since its original nineteen-sixties formulation, a detail heavily featured in nostalgic advertising, is contradicted by the company's own regulatory filings across several decades, which document at least six documented reformulations, including substantial changes to sugar content.",
-            "targetItem": "reformulations",
+            "passage": "City Budget Summary: Public safety spending remained largely flat compared to last year's budget. Parks and recreation funding saw a modest increase of 4 percent. The largest single change in this year's budget is a 22 percent increase in funding for public transit, reflecting new ridership goals.",
+            "targetItem": "22 percent",
             "options": [
-                "regulatory",
-                "reformulations",
-                "substantial",
-                "formulations"
+                "22 percent",
+                "4 percent",
+                "Public safety",
+                "ridership goals"
             ],
-            "correctAnswer": "reformulations",
-            "hint": "Find what the regulatory filings document at least six of.",
-            "explanation": "The passage says six documented reformulations, so that is correct.",
+            "correctAnswer": "22 percent",
+            "hint": "Skip the public safety and parks figures and find the actual transit increase.",
+            "explanation": "Transit funding rose 22 percent; 4 percent describes the smaller parks and recreation increase.",
             "timeLimit": 14,
-            "targetInfo": "Specific data to find."
+            "targetInfo": "Increase in public transit funding"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L187_Q2",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Skim past the enrollment and monitoring details, then scan for the actual preliminary result.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Although the smartphone manufacturer's marketing has consistently described its facial recognition unlock feature as functionally equivalent in security to a physical fingerprint sensor, an independent security research team's published findings demonstrated the facial system could be circumvented under specific and admittedly narrow conditions involving a sufficiently detailed photograph, conditions the fingerprint sensor tested alongside it could not.",
-            "targetItem": "circumvented",
+            "passage": "Clinical Trial Update: Enrollment for the trial began earlier this year and reached full capacity ahead of schedule. Participants have been monitored closely throughout the study period. Preliminary results show a 34 percent reduction in symptom severity among the treatment group compared to placebo. Full results are expected to be published early next year.",
+            "targetItem": "34 percent",
             "options": [
-                "demonstrated",
-                "equivalent",
-                "circumvented",
-                "bypassed"
+                "full capacity",
+                "monitored closely",
+                "34 percent",
+                "next year"
             ],
-            "correctAnswer": "circumvented",
-            "hint": "Find what the independent research showed could happen to the system.",
-            "explanation": "The passage says it could be circumvented, so that is correct.",
+            "correctAnswer": "34 percent",
+            "hint": "Skip the enrollment and monitoring details and find the actual result figure.",
+            "explanation": "Symptom severity dropped 34 percent; full capacity and monitoring describe the trial's process, not its result.",
             "timeLimit": 14,
-            "targetInfo": "Specific data to find."
+            "targetInfo": "Reduction in symptom severity"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L187_Q3",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Skim past the maintenance shutdown details, then scan for the actual output increase.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "The hospital network's public statement crediting its recently introduced patient-navigator program with the substantial improvement in appointment adherence among chronic disease patients does not mention that the same period saw a separate, unrelated rollout of automated text-message reminders an internal analysis found accounted for a comparable share of the improvement.",
-            "targetItem": "adherence",
+            "passage": "Manufacturing Plant Update: The plant completed a scheduled maintenance shutdown last month, slightly ahead of the planned timeline. Several production lines were upgraded during this period to improve efficiency. Since resuming operations, output has increased by 18 percent compared to pre-shutdown levels.",
+            "targetItem": "18 percent",
             "options": [
-                "adherence",
-                "compliance",
-                "navigator",
-                "rollout"
+                "ahead of the planned timeline",
+                "production lines",
+                "18 percent",
+                "pre-shutdown levels"
             ],
-            "correctAnswer": "adherence",
-            "hint": "Find what type of improvement the program is credited with.",
-            "explanation": "The passage says appointment adherence, so that is correct.",
+            "correctAnswer": "18 percent",
+            "hint": "Skip the shutdown details and find the actual output increase figure.",
+            "explanation": "Output increased 18 percent since resuming operations; ahead of schedule describes the shutdown itself.",
             "timeLimit": 14,
-            "targetInfo": "Specific data to find."
+            "targetInfo": "Increase in output since resuming operations"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L188_Q1",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Skim past the expansion and training details, then scan for the actual updated total.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Although the streaming platform's press releases describing the record-breaking viewership of its flagship original series rely on a specific metric the platform itself defines, one that counts any viewer who streamed at least two minutes as having watched the title, a leaked internal document revealed the average viewer watched considerably less than half the season by a more conventional completion measure.",
-            "targetItem": "conventional",
+            "passage": "Nonprofit Impact Report: This year, our organization expanded services to two additional counties following increased funding. Staff training was also expanded to improve service quality. Most notably, the number of families served grew from 1,200 to 2,050, our largest single-year increase to date.",
+            "targetItem": "2,050",
             "options": [
-                "conventional",
-                "specific",
-                "internal",
-                "flagship"
+                "two additional counties",
+                "1,200",
+                "2,050",
+                "Staff training"
             ],
-            "correctAnswer": "conventional",
-            "hint": "Find the word describing the more standard way of measuring completion.",
-            "explanation": "The passage says a more conventional measure, so that is correct.",
+            "correctAnswer": "2,050",
+            "hint": "Skip the expansion and training notes and find the new total at the end.",
+            "explanation": "Families served grew to 2,050 from 1,200; the county expansion and staff training are separate updates.",
             "timeLimit": 14,
-            "targetInfo": "Specific data to find."
+            "targetInfo": "New number of families served"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L188_Q2",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Skim past the weekday and school group figures, then scan for the actual weekend attendance change.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "The frequently repeated claim that a specific species of ancient tree is the single oldest living organism on Earth, a title applied loosely across popular science media, is complicated by a taxonomic dispute among biologists regarding whether certain clonal colonial organisms sharing a single root system spanning thousands of stems should be considered a single organism at all.",
-            "targetItem": "taxonomic",
+            "passage": "Museum Attendance Report: Weekday attendance has remained relatively stable throughout the year. School group visits increased notably during the spring semester. The most significant change was in weekend attendance, which grew by 45 percent following the launch of the new interactive exhibit.",
+            "targetItem": "45 percent",
             "options": [
-                "clonal",
-                "biological",
-                "taxonomic",
-                "colonial"
+                "Weekday attendance",
+                "45 percent",
+                "spring semester",
+                "interactive exhibit"
             ],
-            "correctAnswer": "taxonomic",
-            "hint": "Find what type of dispute complicates the claim among biologists.",
-            "explanation": "The passage says a taxonomic dispute, so that is correct.",
+            "correctAnswer": "45 percent",
+            "hint": "Skip the weekday and school group figures and find the actual weekend change.",
+            "explanation": "Weekend attendance grew 45 percent; weekday attendance stayed stable, a separate detail.",
             "timeLimit": 14,
-            "targetInfo": "Specific data to find."
+            "targetInfo": "Increase in weekend attendance"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L188_Q3",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Skim past the digital checkout and visit figures, then scan for the actual program attendance change.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Although the transit authority's public messaging surrounding its new express bus route has emphasized substantial ridership growth as clear evidence of success, a framing used to justify requests for additional funding, a more detailed internal analysis found many riders had previously used a now-discontinued local route entirely.",
-            "targetItem": "ridership",
+            "passage": "Public Library System Update: Digital checkouts have grown steadily across most branches this year. In-person visits remained roughly flat compared to last year. The most notable shift was in program attendance, which increased by 60 percent following the introduction of new evening workshops.",
+            "targetItem": "60 percent",
             "options": [
-                "ridership",
-                "considerable",
-                "messaging",
-                "discontinued"
+                "Digital checkouts",
+                "60 percent",
+                "roughly flat",
+                "evening workshops"
             ],
-            "correctAnswer": "ridership",
-            "hint": "Find what type of growth the transit authority emphasized.",
-            "explanation": "The passage says ridership growth, so that is correct.",
+            "correctAnswer": "60 percent",
+            "hint": "Skip the digital and in-person visit figures and find the actual program attendance change.",
+            "explanation": "Program attendance rose 60 percent; digital checkouts and in-person visits are separate, earlier figures.",
             "timeLimit": 14,
-            "targetInfo": "Specific data to find."
+            "targetInfo": "Increase in program attendance"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L189_Q1",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Skim past the supply chain and expansion discussion, then scan for the actual dividend announcement.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Although Camille's morning journaling practice is frequently described, including by Camille herself in earlier interviews, as a twenty-minute ritual completed first thing upon waking, a closer look at the timestamps in her own journaling app reveals that on most days, the entry is actually completed sometime between her first and second cup of coffee.",
-            "targetItem": "timestamps",
+            "passage": "Quarterly Investor Call Summary: Management addressed several analyst questions about supply chain challenges during the call. International expansion plans were also discussed at length. The most significant announcement was that the board approved a $2 per share dividend, the company's first in five years.",
+            "targetItem": "$2 per share",
             "options": [
-                "journaling",
-                "interviews",
-                "patterns",
-                "timestamps"
+                "supply chain",
+                "$2 per share",
+                "International expansion",
+                "five years"
             ],
-            "correctAnswer": "timestamps",
-            "hint": "Find what revealed the messier pattern in her journaling app.",
-            "explanation": "The passage says the timestamps revealed it, so that is correct.",
+            "correctAnswer": "$2 per share",
+            "hint": "Skip the supply chain and expansion discussion and find the actual dividend figure.",
+            "explanation": "The dividend is $2 per share; supply chain and expansion were separate topics discussed on the call.",
             "timeLimit": 14,
-            "targetInfo": "Specific data to find."
+            "targetInfo": "Dividend amount approved"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L189_Q2",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Skim past the shelter and relocation advice, then scan for the actual order issued for Zone A.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Contrary to how the vocational school's recruitment materials characterize its accelerated welding certificate as equivalent in rigor to the standard eighteen-month program merely compressed into eight months, an independent review comparing graduates of both tracks found accelerated-track graduates scored measurably lower on tasks requiring troubleshooting judgment rather than straightforward technique execution.",
-            "targetItem": "troubleshooting",
+            "passage": "Emergency Management Briefing: Shelters have been opened across the county in preparation for the incoming storm. Residents in low-lying areas are strongly encouraged to relocate before conditions worsen. The most critical update is that mandatory evacuation has been ordered for Zone A, effective immediately.",
+            "targetItem": "mandatory evacuation",
             "options": [
-                "technical",
-                "troubleshooting",
-                "compressed",
-                "equivalent"
+                "Shelters",
+                "low-lying areas",
+                "mandatory evacuation",
+                "effective immediately"
             ],
-            "correctAnswer": "troubleshooting",
-            "hint": "Find what type of tasks accelerated graduates scored lower on.",
-            "explanation": "The passage says troubleshooting judgment, so that is correct.",
+            "correctAnswer": "mandatory evacuation",
+            "hint": "Skip the shelter and relocation advice and find the actual order for Zone A.",
+            "explanation": "Zone A is under mandatory evacuation; shelters and relocation advice apply more broadly to other residents.",
             "timeLimit": 14,
-            "targetInfo": "Specific data to find."
+            "targetInfo": "Order issued for Zone A"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L189_Q3",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Skim past the administrative and strategy details, then scan for the actual return figure.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "The consulting firm's marketing materials describing its proprietary framework as having driven a specific percentage improvement in client efficiency across engagements rest on a calculation methodology that, according to a footnote in the firm's own case study documentation, averages results only across clients who completed the full engagement and consented to inclusion.",
-            "targetItem": "proprietary",
+            "passage": "Pension Fund Update: The fund's administrative costs decreased slightly this year due to a vendor consolidation. Investment strategy remained largely unchanged from the previous year. Most significantly, the fund's overall return reached 9.4 percent, its strongest performance in a decade.",
+            "targetItem": "9.4 percent",
             "options": [
-                "proprietary",
-                "methodology",
-                "standardized",
-                "engagement"
+                "administrative costs",
+                "9.4 percent",
+                "vendor consolidation",
+                "Investment strategy"
             ],
-            "correctAnswer": "proprietary",
-            "hint": "Find the word describing the firm's framework in its marketing.",
-            "explanation": "The passage says its proprietary framework, so that is correct.",
+            "correctAnswer": "9.4 percent",
+            "hint": "Skip the administrative and strategy details and find the actual return figure.",
+            "explanation": "The fund's overall return was 9.4 percent; administrative costs and strategy are separate, earlier details.",
             "timeLimit": 14,
-            "targetInfo": "Specific data to find."
+            "targetInfo": "Fund's overall return this year"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L190_Q1",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Skim past the minor injury trend and training rollout, then scan for the actual serious-incident figure.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "The popular claim, repeated across numerous travel blogs and even some tour operator materials, that the ancient bridge in question has remained structurally unchanged since its original construction over a thousand years ago is directly contradicted by conservation records held by the site's own heritage authority, which document at least four substantial reconstructions following flood damage.",
-            "targetItem": "reconstructions",
+            "passage": "Annual Safety Report: Reported minor injuries declined slightly compared to last year, continuing a multi-year trend. New safety training modules were rolled out across all departments this year. The most significant finding is that serious incidents requiring hospitalization dropped by 52 percent, the largest single-year improvement on record.",
+            "targetItem": "52 percent",
             "options": [
-                "renovations",
-                "conservation",
-                "reconstructions",
-                "contradicted"
+                "last year",
+                "52 percent",
+                "training modules",
+                "record"
             ],
-            "correctAnswer": "reconstructions",
-            "hint": "Find what the conservation records document at least four of.",
-            "explanation": "The passage says four substantial reconstructions, so that is correct.",
+            "correctAnswer": "52 percent",
+            "hint": "Skip the minor injury trend and training rollout and find the serious-incident figure.",
+            "explanation": "Serious incidents dropped 52 percent; minor injuries and training rollout are separate, earlier details.",
             "timeLimit": 14,
-            "targetInfo": "Specific data to find."
+            "targetInfo": "Decline in serious incidents requiring hospitalization"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L190_Q2",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Skim past the permits and vacancy details, then scan for the actual decline figure.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Although Priya's parents have long described their decision to immigrate as driven purely by a desire to provide better educational opportunities for their children, a recent conversation prompted by a family history project revealed that the decision actually predated the birth of any of their children entirely.",
-            "targetItem": "predated",
+            "passage": "City Housing Report: New construction permits increased modestly this year across most districts. Rental vacancy rates remained roughly steady compared to last year. The most notable shift was a 15 percent decline in homes available under $300,000, reflecting rising construction costs.",
+            "targetItem": "15 percent",
             "options": [
-                "predated",
-                "preceded",
-                "revealed",
-                "prompted"
+                "New construction",
+                "vacancy rates",
+                "15 percent",
+                "construction costs"
             ],
-            "correctAnswer": "predated",
-            "hint": "Find what the decision did relative to the children's births.",
-            "explanation": "The passage says the decision predated their births, so that is correct.",
+            "correctAnswer": "15 percent",
+            "hint": "Skip the permits and vacancy figures and find the actual decline in affordable homes.",
+            "explanation": "Homes under $300,000 declined 15 percent; permits and vacancy rates are separate, earlier figures.",
             "timeLimit": 14,
-            "targetInfo": "Specific data to find."
+            "targetInfo": "Decline in homes available under $300,000"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L190_Q3",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Skim past the air and water quality findings, then scan for the actual soil improvement figure.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "The grocery chain's repeated public assurances that its recently introduced dynamic shelf pricing technology would never result in higher prices for the same item within a single shopping visit were directly contradicted by an independent price-tracking investigation documenting multiple instances of exactly that discrepancy occurring during a single customer visit.",
-            "targetItem": "assurances",
+            "passage": "Environmental Monitoring Report: Air quality readings remained within normal ranges throughout most of the year. Water testing near the reservoir showed no significant changes from previous years. The most notable finding was a measurable improvement in soil quality near the restoration site, with contaminant levels dropping by 63 percent since the project began.",
+            "targetItem": "63 percent",
             "options": [
-                "investigation",
-                "assurances",
-                "dynamic",
-                "contradicted"
+                "63 percent",
+                "Air quality",
+                "Water testing",
+                "restoration site"
             ],
-            "correctAnswer": "assurances",
-            "hint": "Find what the grocery chain repeatedly made about its pricing.",
-            "explanation": "The passage says repeated public assurances, so that is correct.",
+            "correctAnswer": "63 percent",
+            "hint": "Skip the air and water quality findings and find the actual soil improvement figure.",
+            "explanation": "Soil contaminant levels dropped 63 percent; air and water quality findings are separate, unrelated results.",
             "timeLimit": 14,
-            "targetInfo": "Specific data to find."
+            "targetInfo": "Decline in contaminant levels near the restoration site"
         }
     ]
 }

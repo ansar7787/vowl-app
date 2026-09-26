@@ -1,577 +1,577 @@
 {
-    "gameType": "readAndAnswer",
-    "batchIndex": 2,
-    "levels": "11-20",
-    "quests": [
-        {
-            "id": "RDG_READANDANSWER_L11_Q1",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[Packing a School Bag] Before school, Ryan packs his bag with books, a pencil case, and his lunch box. He never forgets his water bottle.",
-            "question": "What does Ryan never forget to pack?",
-            "options": [
-                "His water bottle",
-                "His pencil case",
-                "His lunch box",
-                "His notebook"
-            ],
-            "correctAnswer": "His water bottle",
-            "correctAnswerIndex": 0,
-            "hint": "Look at the last sentence for the one item he never forgets.",
-            "explanation": "The passage says Ryan never forgets his water bottle.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L11_Q2",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[A Cold Winter Day] Today is very cold, so Mia is wearing a thick coat, a scarf, and warm gloves. She still feels cold outside.",
-            "question": "What is Mia wearing today?",
-            "options": [
-                "A coat and a hat",
-                "A coat, a scarf, and gloves",
-                "A scarf and boots",
-                "A jacket and gloves"
-            ],
-            "correctAnswer": "A coat, a scarf, and gloves",
-            "correctAnswerIndex": 1,
-            "hint": "Count the three items listed in the first sentence.",
-            "explanation": "The passage lists a coat, a scarf, and gloves as what Mia is wearing.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L11_Q3",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[Feeding the Cat] Every evening, Chloe feeds her cat before dinner. The cat always waits by its bowl in the kitchen.",
-            "question": "Where does the cat wait for its food?",
-            "options": [
-                "By the front door",
-                "Under the table",
-                "By its bowl in the kitchen",
-                "Near the window"
-            ],
-            "correctAnswer": "By its bowl in the kitchen",
-            "correctAnswerIndex": 2,
-            "hint": "The location is named in the second sentence.",
-            "explanation": "The passage says the cat waits by its bowl in the kitchen.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L12_Q1",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[Bus Schedule Notice] Notice: the number 5 bus will not run this Saturday because of road repairs. Please use the number 7 bus instead.",
-            "question": "Why will the number 5 bus not run on Saturday?",
-            "options": [
-                "Because of bad weather",
-                "Because of a holiday",
-                "Because it broke down",
-                "Because of road repairs"
-            ],
-            "correctAnswer": "Because of road repairs",
-            "correctAnswerIndex": 3,
-            "hint": "The reason is given right after the bus number.",
-            "explanation": "The notice explains that road repairs are the reason the bus will not run.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L12_Q2",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[Shopping for a Party] For the party, Ana needs balloons, paper cups, and a large box of cookies. She plans to buy everything tomorrow morning.",
-            "question": "When does Ana plan to buy the party items?",
-            "options": [
-                "This afternoon",
-                "Tomorrow morning",
-                "Tonight",
-                "Next weekend"
-            ],
-            "correctAnswer": "Tomorrow morning",
-            "correctAnswerIndex": 1,
-            "hint": "The time is mentioned at the end of the passage.",
-            "explanation": "The passage says Ana plans to buy everything tomorrow morning.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L12_Q3",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[Washing Clothes] On Sundays, Marco washes his clothes and hangs them outside to dry. He usually finishes before lunchtime.",
-            "question": "When does Marco usually finish washing his clothes?",
-            "options": [
-                "Before lunchtime",
-                "Before breakfast",
-                "After dinner",
-                "Late at night"
-            ],
-            "correctAnswer": "Before lunchtime",
-            "correctAnswerIndex": 0,
-            "hint": "Look at the last sentence for when he finishes.",
-            "explanation": "The passage says Marco usually finishes before lunchtime.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L13_Q1",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[A Walk in the Park] Every evening, Mr. Patel walks around the park near his house. The walk takes him about twenty minutes to finish.",
-            "question": "How long does Mr. Patel's walk take?",
-            "options": [
-                "About twenty minutes",
-                "About ten minutes",
-                "About thirty minutes",
-                "About an hour"
-            ],
-            "correctAnswer": "About twenty minutes",
-            "correctAnswerIndex": 0,
-            "hint": "The exact time is stated in the last sentence.",
-            "explanation": "The passage says the walk takes about twenty minutes to finish.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L13_Q2",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[Ordering Pizza] Tonight, the Wilson family is ordering pizza for dinner. The children want a cheese pizza, but their father wants mushrooms on his.",
-            "question": "What kind of pizza do the children want?",
-            "options": [
-                "Mushroom pizza",
-                "Pepperoni pizza",
-                "Cheese pizza",
-                "Vegetable pizza"
-            ],
-            "correctAnswer": "Cheese pizza",
-            "correctAnswerIndex": 2,
-            "hint": "Compare what the children want with what their father wants.",
-            "explanation": "The passage says the children want a cheese pizza.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L13_Q3",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[A Homework Reminder] Remember: your science homework is due on Thursday. Please write at least two paragraphs about your favorite animal.",
-            "question": "When is the science homework due?",
-            "options": [
-                "On Monday",
-                "On Wednesday",
-                "On Thursday",
-                "On Friday"
-            ],
-            "correctAnswer": "On Thursday",
-            "correctAnswerIndex": 2,
-            "hint": "The day is named early in the reminder.",
-            "explanation": "The reminder states that the homework is due on Thursday.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L14_Q1",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[Visiting Grandma] Every other Sunday, Jake visits his grandmother's house. They usually bake cookies together and watch her favorite show.",
-            "question": "What do Jake and his grandmother usually do together?",
-            "options": [
-                "Play card games",
-                "Work in the garden",
-                "Go for a walk",
-                "Bake cookies and watch a show"
-            ],
-            "correctAnswer": "Bake cookies and watch a show",
-            "correctAnswerIndex": 3,
-            "hint": "Look at the activities listed in the second sentence.",
-            "explanation": "The passage says they usually bake cookies together and watch her favorite show.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L14_Q2",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[Riding a Bike] Lucas got a new bicycle for his birthday. He rides it to the park every afternoon after finishing his homework.",
-            "question": "When does Lucas ride his new bicycle?",
-            "options": [
-                "Every morning before school",
-                "Only on weekends",
-                "Every afternoon after homework",
-                "Every evening after dinner"
-            ],
-            "correctAnswer": "Every afternoon after homework",
-            "correctAnswerIndex": 2,
-            "hint": "Look at what comes right after 'every afternoon'.",
-            "explanation": "The passage says Lucas rides his bicycle every afternoon after finishing his homework.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L14_Q3",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[A Rainy Weekend] It rained all weekend, so the Nguyen family stayed inside. They played board games and watched two movies together.",
-            "question": "What did the Nguyen family do because of the rain?",
-            "options": [
-                "Cleaned the whole house",
-                "Played games and watched movies",
-                "Visited their neighbors",
-                "Went to the mall"
-            ],
-            "correctAnswer": "Played games and watched movies",
-            "correctAnswerIndex": 1,
-            "hint": "Check the activities named in the second sentence.",
-            "explanation": "The passage says the family played board games and watched two movies.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L15_Q1",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[A New Neighbor] A new family moved in next door last week. Their daughter is the same age as Ella, and they quickly became friends.",
-            "question": "How did Ella and the new neighbor's daughter become friends?",
-            "options": [
-                "They go to different schools",
-                "They share a pet",
-                "They are the same age",
-                "They live far apart"
-            ],
-            "correctAnswer": "They are the same age",
-            "correctAnswerIndex": 2,
-            "hint": "Look for the detail about their ages.",
-            "explanation": "The passage says the girls became friends because they are the same age.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L15_Q2",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[A Visit to the Dentist] Noah has a dentist appointment this afternoon. He is a little nervous, but his mother says it will be quick and easy.",
-            "question": "How does Noah feel about his dentist appointment?",
-            "options": [
-                "A little nervous",
-                "Very excited",
-                "Completely calm",
-                "Very angry"
-            ],
-            "correctAnswer": "A little nervous",
-            "correctAnswerIndex": 0,
-            "hint": "The feeling is described in the second sentence.",
-            "explanation": "The passage says Noah feels a little nervous about the appointment.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L15_Q3",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[Making Tea] Grandpa makes a cup of tea every afternoon at exactly three o'clock. He always adds a small spoon of honey.",
-            "question": "What does Grandpa always add to his tea?",
-            "options": [
-                "A slice of lemon",
-                "Two sugar cubes",
-                "A little milk",
-                "A small spoon of honey"
-            ],
-            "correctAnswer": "A small spoon of honey",
-            "correctAnswerIndex": 3,
-            "hint": "Look at the last sentence for the extra ingredient.",
-            "explanation": "The passage says Grandpa always adds a small spoon of honey to his tea.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L16_Q1",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[A Museum Trip] Next Tuesday, the third-grade class is visiting the science museum. Students need to bring a notebook and wear comfortable shoes.",
-            "question": "What should students bring to the museum?",
-            "options": [
-                "A notebook",
-                "A camera",
-                "Extra money",
-                "A packed lunch"
-            ],
-            "correctAnswer": "A notebook",
-            "correctAnswerIndex": 0,
-            "hint": "Check the item mentioned right after 'need to bring'.",
-            "explanation": "The passage says students need to bring a notebook for the trip.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L16_Q2",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[A Lost Umbrella] Zara left her red umbrella on the bus this morning. She hopes someone will find it and return it to the bus station.",
-            "question": "What color is Zara's lost umbrella?",
-            "options": [
-                "Blue",
-                "Red",
-                "Black",
-                "Yellow"
-            ],
-            "correctAnswer": "Red",
-            "correctAnswerIndex": 1,
-            "hint": "The color is given in the first sentence.",
-            "explanation": "The passage describes the umbrella as red.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L16_Q3",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[Planting Flowers] In spring, Mrs. Owusu plants colorful flowers in her front garden. This year, she chose yellow tulips and purple daisies.",
-            "question": "Which flowers did Mrs. Owusu choose this year?",
-            "options": [
-                "Red roses and white lilies",
-                "Pink tulips and blue daisies",
-                "Orange marigolds and daisies",
-                "Yellow tulips and purple daisies"
-            ],
-            "correctAnswer": "Yellow tulips and purple daisies",
-            "correctAnswerIndex": 3,
-            "hint": "The exact flowers are named in the last sentence.",
-            "explanation": "The passage says she chose yellow tulips and purple daisies this year.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L17_Q1",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[A Text About Dinner] Hey, are we still having dinner at seven? I can bring dessert if you want. Let me know soon!",
-            "question": "What does the writer offer to bring?",
-            "options": [
-                "Drinks",
-                "Dessert",
-                "Bread",
-                "A salad"
-            ],
-            "correctAnswer": "Dessert",
-            "correctAnswerIndex": 1,
-            "hint": "Look at what the writer offers to bring in the message.",
-            "explanation": "The message says the writer can bring dessert.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L17_Q2",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[A Soccer Match] The school soccer team won their match yesterday by two goals. Their next game is scheduled for this coming Friday.",
-            "question": "When is the team's next game?",
-            "options": [
-                "This coming Friday",
-                "Tomorrow",
-                "Next Monday",
-                "Next weekend"
-            ],
-            "correctAnswer": "This coming Friday",
-            "correctAnswerIndex": 0,
-            "hint": "The day is stated in the last sentence.",
-            "explanation": "The passage says the next game is scheduled for this coming Friday.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L17_Q3",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[Cleaning the House] Every Saturday morning, the whole family cleans the house together. Dad vacuums the floors while the children dust the shelves.",
-            "question": "What does Dad do while cleaning?",
-            "options": [
-                "Vacuums the floors",
-                "Washes the windows",
-                "Dusts the shelves",
-                "Cleans the kitchen"
-            ],
-            "correctAnswer": "Vacuums the floors",
-            "correctAnswerIndex": 0,
-            "hint": "Compare what Dad does with what the children do.",
-            "explanation": "The passage says Dad vacuums the floors while the children dust the shelves.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L18_Q1",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[A Birthday Card] Happy Birthday, Uncle Joe! We hope you have a wonderful day. We will see you at the family dinner on Saturday.",
-            "question": "When will the writer see Uncle Joe?",
-            "options": [
-                "At his birthday party today",
-                "At a restaurant on Sunday",
-                "Next weekend at his house",
-                "At the family dinner on Saturday"
-            ],
-            "correctAnswer": "At the family dinner on Saturday",
-            "correctAnswerIndex": 3,
-            "hint": "The event and day are named in the last sentence.",
-            "explanation": "The card says they will see Uncle Joe at the family dinner on Saturday.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L18_Q2",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[A Trip to the Supermarket] Before the big storm, everyone rushed to the supermarket. The shelves of bread and bottled water were almost empty by evening.",
-            "question": "Why did people rush to the supermarket?",
-            "options": [
-                "Because of the big storm",
-                "Because of a big sale",
-                "Because it was closing early",
-                "Because of a holiday"
-            ],
-            "correctAnswer": "Because of the big storm",
-            "correctAnswerIndex": 0,
-            "hint": "The reason is given in the first sentence.",
-            "explanation": "The passage explains that people rushed to the store because of the coming storm.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L18_Q3",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[Morning Coffee] Every day, Mr. Diaz drinks one cup of coffee before he leaves for work. He says it helps him wake up fully.",
-            "question": "How many cups of coffee does Mr. Diaz drink each morning?",
-            "options": [
-                "Two cups",
-                "One cup",
-                "Three cups",
-                "Half a cup"
-            ],
-            "correctAnswer": "One cup",
-            "correctAnswerIndex": 1,
-            "hint": "The number is mentioned in the first sentence.",
-            "explanation": "The passage says Mr. Diaz drinks one cup of coffee each morning.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L19_Q1",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[A School Holiday Notice] Notice: school will be closed next Monday for a national holiday. Classes will start again as usual on Tuesday.",
-            "question": "When will classes start again after the holiday?",
-            "options": [
-                "On Monday",
-                "On Tuesday",
-                "On Wednesday",
-                "The following week"
-            ],
-            "correctAnswer": "On Tuesday",
-            "correctAnswerIndex": 1,
-            "hint": "Look at the day mentioned at the end of the notice.",
-            "explanation": "The notice says classes will start again on Tuesday.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L19_Q2",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[A Visit to the Farm] Last spring, the class visited a farm and saw cows, chickens, and baby goats. The children enjoyed feeding the goats the most.",
-            "question": "What did the children enjoy the most at the farm?",
-            "options": [
-                "Watching the cows",
-                "Collecting eggs",
-                "Riding a horse",
-                "Feeding the goats"
-            ],
-            "correctAnswer": "Feeding the goats",
-            "correctAnswerIndex": 3,
-            "hint": "The favorite activity is named in the last sentence.",
-            "explanation": "The passage says the children enjoyed feeding the goats the most.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L19_Q3",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[A New Backpack] For the new school year, Yuki chose a green backpack with two large pockets. It also has a small pocket just for pens.",
-            "question": "How many large pockets does Yuki's new backpack have?",
-            "options": [
-                "One",
-                "Two",
-                "Three",
-                "Four"
-            ],
-            "correctAnswer": "Two",
-            "correctAnswerIndex": 1,
-            "hint": "The number is mentioned right after the color.",
-            "explanation": "The passage says the backpack has two large pockets.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L20_Q1",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[A Weekend Hike] Last weekend, the Torres family hiked up a small mountain near their town. The trip took about three hours, and they saw many wildflowers along the trail.",
-            "question": "How long did the Torres family's hike take?",
-            "options": [
-                "About one hour",
-                "About five hours",
-                "About three hours",
-                "All day"
-            ],
-            "correctAnswer": "About three hours",
-            "correctAnswerIndex": 2,
-            "hint": "The total time is stated in the middle of the passage.",
-            "explanation": "The passage says the hike took about three hours to complete.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L20_Q2",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[A Recipe for Soup] To make this soup, first chop the carrots and onions. Then cook them in a large pot with water and salt for twenty minutes.",
-            "question": "What should you do first when making the soup?",
-            "options": [
-                "Add water and salt",
-                "Cook for twenty minutes",
-                "Boil a pot of water",
-                "Chop the carrots and onions"
-            ],
-            "correctAnswer": "Chop the carrots and onions",
-            "correctAnswerIndex": 3,
-            "hint": "The first step is named right at the start.",
-            "explanation": "The passage explains that chopping the carrots and onions is the first step.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L20_Q3",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[A Note on the Fridge] Gone to pick up your sister from soccer practice. Your dinner is in the oven, and it should be ready by six o'clock.",
-            "question": "Where is the writer going?",
-            "options": [
-                "To buy dinner at a restaurant",
-                "To the supermarket for groceries",
-                "To pick up the sister from soccer practice",
-                "To watch a soccer game"
-            ],
-            "correctAnswer": "To pick up the sister from soccer practice",
-            "correctAnswerIndex": 2,
-            "hint": "The reason for leaving is stated at the beginning of the note.",
-            "explanation": "The note explains that the writer has gone to pick up the sister from soccer practice.",
-            "passageWordCount": 100
-        }
-    ]
+  "gameType": "readAndAnswer",
+  "batchIndex": 2,
+  "levels": "11-20",
+  "quests": [
+    {
+      "id": "RDG_READANDANSWER_L11_Q1",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[Text Message] Hey Farid, I'm running about ten minutes late because of traffic on Main Street. Can you order our coffee and grab a table near the window?",
+      "question": "Why is the sender running late?",
+      "options": [
+        "Because of rain",
+        "Because of a meeting",
+        "Because of traffic",
+        "Because of a phone call"
+      ],
+      "correctAnswer": "Because of traffic",
+      "correctAnswerIndex": 2,
+      "hint": "The reason for being late is given early in the message.",
+      "explanation": "The message explains the delay is caused by traffic on Main Street.",
+      "passageWordCount": 28
+    },
+    {
+      "id": "RDG_READANDANSWER_L11_Q2",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[Text Message] Hey Farid, I'm running about ten minutes late because of traffic on Main Street. Can you order our coffee and grab a table near the window?",
+      "question": "What does the sender ask Farid to do?",
+      "options": [
+        "Cancel the scheduled meeting",
+        "Order coffee and find a table",
+        "Drive to Main Street quickly",
+        "Call a taxi immediately"
+      ],
+      "correctAnswer": "Order coffee and find a table",
+      "correctAnswerIndex": 1,
+      "hint": "Look at the two requests near the end of the message.",
+      "explanation": "The sender asks Farid to order coffee and grab a table near the window.",
+      "passageWordCount": 28
+    },
+    {
+      "id": "RDG_READANDANSWER_L11_Q3",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[Text Message] Hey Farid, I'm running about ten minutes late because of traffic on Main Street. Can you order our coffee and grab a table near the window?",
+      "question": "About how late will the sender be?",
+      "options": [
+        "About ten minutes",
+        "About five minutes",
+        "About thirty minutes",
+        "About an hour"
+      ],
+      "correctAnswer": "About ten minutes",
+      "correctAnswerIndex": 0,
+      "hint": "The exact amount of time is stated near the start.",
+      "explanation": "The message says the sender is about ten minutes late.",
+      "passageWordCount": 28
+    },
+    {
+      "id": "RDG_READANDANSWER_L12_Q1",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[Store Hours] Greenway Market is open from eight in the morning until nine at night, Monday through Saturday. The store is closed on Sundays so the staff can rest.",
+      "question": "Which day is the store closed?",
+      "options": [
+        "Saturday",
+        "Sunday",
+        "Monday",
+        "Friday"
+      ],
+      "correctAnswer": "Sunday",
+      "correctAnswerIndex": 1,
+      "hint": "The closed day is explained at the end of the sign.",
+      "explanation": "The sign says the store is closed on Sundays.",
+      "passageWordCount": 29
+    },
+    {
+      "id": "RDG_READANDANSWER_L12_Q2",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[Store Hours] Greenway Market is open from eight in the morning until nine at night, Monday through Saturday. The store is closed on Sundays so the staff can rest.",
+      "question": "Why is the store closed on that day?",
+      "options": [
+        "Because of cleaning",
+        "Because of low sales",
+        "So the staff can rest",
+        "Because of a holiday"
+      ],
+      "correctAnswer": "So the staff can rest",
+      "correctAnswerIndex": 2,
+      "hint": "The reason follows the word 'so' near the end.",
+      "explanation": "The sign explains the store closes on Sundays so the staff can rest.",
+      "passageWordCount": 29
+    },
+    {
+      "id": "RDG_READANDANSWER_L12_Q3",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[Store Hours] Greenway Market is open from eight in the morning until nine at night, Monday through Saturday. The store is closed on Sundays so the staff can rest.",
+      "question": "What time does the store close on a Tuesday?",
+      "options": [
+        "Eight at night",
+        "Ten at night",
+        "Eight in the morning",
+        "Nine at night"
+      ],
+      "correctAnswer": "Nine at night",
+      "correctAnswerIndex": 3,
+      "hint": "Tuesday falls within the days listed as open; check the closing time.",
+      "explanation": "The sign gives the closing time as nine at night for the open days, which include Tuesday.",
+      "passageWordCount": 29
+    },
+    {
+      "id": "RDG_READANDANSWER_L13_Q1",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[At the Café] \"Can I get a small coffee, please?\" asked Josefina. \"Sure,\" the barista replied. \"Would you like milk or sugar with that?\" \"Just milk, thank you.\"",
+      "question": "What does Josefina order?",
+      "options": [
+        "A large coffee",
+        "A small coffee",
+        "A cup of tea",
+        "A small juice"
+      ],
+      "correctAnswer": "A small coffee",
+      "correctAnswerIndex": 1,
+      "hint": "Her order is stated in her first line.",
+      "explanation": "Josefina asks for a small coffee at the start of the dialogue.",
+      "passageWordCount": 28
+    },
+    {
+      "id": "RDG_READANDANSWER_L13_Q2",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[At the Café] \"Can I get a small coffee, please?\" asked Josefina. \"Sure,\" the barista replied. \"Would you like milk or sugar with that?\" \"Just milk, thank you.\"",
+      "question": "What does Josefina want in her coffee?",
+      "options": [
+        "Milk only",
+        "Sugar only",
+        "Milk and sugar",
+        "Neither milk nor sugar"
+      ],
+      "correctAnswer": "Milk only",
+      "correctAnswerIndex": 0,
+      "hint": "Her final answer tells you exactly what she wants added.",
+      "explanation": "Josefina replies that she wants just milk, not sugar.",
+      "passageWordCount": 28
+    },
+    {
+      "id": "RDG_READANDANSWER_L13_Q3",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[At the Café] \"Can I get a small coffee, please?\" asked Josefina. \"Sure,\" the barista replied. \"Would you like milk or sugar with that?\" \"Just milk, thank you.\"",
+      "question": "Who asks about milk or sugar?",
+      "options": [
+        "Josefina",
+        "A customer",
+        "A manager",
+        "The barista"
+      ],
+      "correctAnswer": "The barista",
+      "correctAnswerIndex": 3,
+      "hint": "Notice who speaks right after Josefina places her order.",
+      "explanation": "The barista is the one who asks whether Josefina wants milk or sugar.",
+      "passageWordCount": 28
+    },
+    {
+      "id": "RDG_READANDANSWER_L14_Q1",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[Dentist Reminder] This is a reminder that Ken has a dental checkup on Thursday at two thirty. Please arrive fifteen minutes early to complete some paperwork.",
+      "question": "What kind of appointment is this reminder for?",
+      "options": [
+        "A routine doctor visit",
+        "A job interview",
+        "A dental checkup",
+        "A quick haircut"
+      ],
+      "correctAnswer": "A dental checkup",
+      "correctAnswerIndex": 2,
+      "hint": "The type of appointment is named early in the message.",
+      "explanation": "The reminder says Ken has a dental checkup.",
+      "passageWordCount": 26
+    },
+    {
+      "id": "RDG_READANDANSWER_L14_Q2",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[Dentist Reminder] This is a reminder that Ken has a dental checkup on Thursday at two thirty. Please arrive fifteen minutes early to complete some paperwork.",
+      "question": "Why should Ken arrive early?",
+      "options": [
+        "To pay in advance",
+        "To meet the dentist first",
+        "To park the car",
+        "To complete paperwork"
+      ],
+      "correctAnswer": "To complete paperwork",
+      "correctAnswerIndex": 3,
+      "hint": "The reason for arriving early is given at the end.",
+      "explanation": "The reminder explains that arriving early allows time for paperwork.",
+      "passageWordCount": 26
+    },
+    {
+      "id": "RDG_READANDANSWER_L14_Q3",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[Dentist Reminder] This is a reminder that Ken has a dental checkup on Thursday at two thirty. Please arrive fifteen minutes early to complete some paperwork.",
+      "question": "How many minutes early should Ken arrive?",
+      "options": [
+        "Five minutes",
+        "Thirty minutes",
+        "Fifteen minutes",
+        "Ten minutes"
+      ],
+      "correctAnswer": "Fifteen minutes",
+      "correctAnswerIndex": 2,
+      "hint": "The exact number of minutes is stated in the second sentence.",
+      "explanation": "The reminder asks Ken to arrive fifteen minutes early.",
+      "passageWordCount": 26
+    },
+    {
+      "id": "RDG_READANDANSWER_L15_Q1",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[Flight Update] Flight 220 to Denver will now leave from gate fifteen instead of gate nine. Passengers should head to the new gate right away because boarding starts soon.",
+      "question": "Which gate will the flight leave from now?",
+      "options": [
+        "Gate nine",
+        "Gate fifteen",
+        "Gate five",
+        "Gate twenty"
+      ],
+      "correctAnswer": "Gate fifteen",
+      "correctAnswerIndex": 1,
+      "hint": "The new gate number is given at the start.",
+      "explanation": "The announcement says the flight will now leave from gate fifteen.",
+      "passageWordCount": 29
+    },
+    {
+      "id": "RDG_READANDANSWER_L15_Q2",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[Flight Update] Flight 220 to Denver will now leave from gate fifteen instead of gate nine. Passengers should head to the new gate right away because boarding starts soon.",
+      "question": "Why should passengers go to the new gate right away?",
+      "options": [
+        "Because boarding starts soon",
+        "Because the flight is cancelled",
+        "Because gate nine is closed",
+        "Because of a weather delay"
+      ],
+      "correctAnswer": "Because boarding starts soon",
+      "correctAnswerIndex": 0,
+      "hint": "The reason is explained at the end of the announcement.",
+      "explanation": "The passage says passengers should hurry because boarding starts soon.",
+      "passageWordCount": 29
+    },
+    {
+      "id": "RDG_READANDANSWER_L15_Q3",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[Flight Update] Flight 220 to Denver will now leave from gate fifteen instead of gate nine. Passengers should head to the new gate right away because boarding starts soon.",
+      "question": "Where was the flight originally supposed to leave from?",
+      "options": [
+        "Gate fifteen",
+        "Gate nine",
+        "Gate twelve",
+        "Gate three"
+      ],
+      "correctAnswer": "Gate nine",
+      "correctAnswerIndex": 1,
+      "hint": "Look for the gate mentioned as the old one, after the word 'instead'.",
+      "explanation": "The passage says the flight will leave from gate fifteen instead of gate nine, so gate nine was the original gate.",
+      "passageWordCount": 29
+    },
+    {
+      "id": "RDG_READANDANSWER_L16_Q1",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[Water Bottle Description] This steel water bottle holds five hundred milliliters and keeps drinks cold for up to twelve hours. It comes in three colors: blue, black, and green.",
+      "question": "How long does the bottle keep drinks cold?",
+      "options": [
+        "Up to five hours",
+        "Up to twenty hours",
+        "Up to twelve hours",
+        "Up to two hours"
+      ],
+      "correctAnswer": "Up to twelve hours",
+      "correctAnswerIndex": 2,
+      "hint": "The cooling time is mentioned in the first sentence.",
+      "explanation": "The description says the bottle keeps drinks cold for up to twelve hours.",
+      "passageWordCount": 29
+    },
+    {
+      "id": "RDG_READANDANSWER_L16_Q2",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[Water Bottle Description] This steel water bottle holds five hundred milliliters and keeps drinks cold for up to twelve hours. It comes in three colors: blue, black, and green.",
+      "question": "How many colors does the bottle come in?",
+      "options": [
+        "Two colors",
+        "Four colors",
+        "Five colors",
+        "Three"
+      ],
+      "correctAnswer": "Three",
+      "correctAnswerIndex": 3,
+      "hint": "Count the colors listed at the end of the passage.",
+      "explanation": "The passage lists blue, black, and green, which is three colors.",
+      "passageWordCount": 29
+    },
+    {
+      "id": "RDG_READANDANSWER_L16_Q3",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[Water Bottle Description] This steel water bottle holds five hundred milliliters and keeps drinks cold for up to twelve hours. It comes in three colors: blue, black, and green.",
+      "question": "What is the bottle made of?",
+      "options": [
+        "Steel",
+        "Plastic",
+        "Glass",
+        "Wood"
+      ],
+      "correctAnswer": "Steel",
+      "correctAnswerIndex": 0,
+      "hint": "The material is named at the very start of the passage.",
+      "explanation": "The passage describes the bottle as a steel water bottle.",
+      "passageWordCount": 29
+    },
+    {
+      "id": "RDG_READANDANSWER_L17_Q1",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[Neighborhood Cleanup] The neighborhood cleanup event will happen this Saturday morning starting at nine. Volunteers should bring gloves, and the city will provide trash bags.",
+      "question": "What should volunteers bring themselves?",
+      "options": [
+        "Trash bags",
+        "Water bottles",
+        "Tools",
+        "Gloves"
+      ],
+      "correctAnswer": "Gloves",
+      "correctAnswerIndex": 3,
+      "hint": "Check what volunteers are asked to bring, separate from what the city provides.",
+      "explanation": "The announcement says volunteers should bring gloves.",
+      "passageWordCount": 25
+    },
+    {
+      "id": "RDG_READANDANSWER_L17_Q2",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[Neighborhood Cleanup] The neighborhood cleanup event will happen this Saturday morning starting at nine. Volunteers should bring gloves, and the city will provide trash bags.",
+      "question": "Who will provide the trash bags?",
+      "options": [
+        "The volunteers",
+        "The city",
+        "A local store",
+        "The park staff"
+      ],
+      "correctAnswer": "The city",
+      "correctAnswerIndex": 1,
+      "hint": "The provider of trash bags is named at the end of the sentence.",
+      "explanation": "The passage states that the city will provide trash bags.",
+      "passageWordCount": 25
+    },
+    {
+      "id": "RDG_READANDANSWER_L17_Q3",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[Neighborhood Cleanup] The neighborhood cleanup event will happen this Saturday morning starting at nine. Volunteers should bring gloves, and the city will provide trash bags.",
+      "question": "When does the event start?",
+      "options": [
+        "Sunday morning at nine",
+        "Saturday afternoon at nine",
+        "Saturday morning at nine",
+        "Friday morning at nine"
+      ],
+      "correctAnswer": "Saturday morning at nine",
+      "correctAnswerIndex": 2,
+      "hint": "The day and time are both given in the first sentence.",
+      "explanation": "The announcement says the event starts this Saturday morning at nine.",
+      "passageWordCount": 25
+    },
+    {
+      "id": "RDG_READANDANSWER_L18_Q1",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[A Lost Umbrella] Aiyana left her umbrella on the train this morning. She did not notice until it started raining outside her office, so she had to buy a new one.",
+      "question": "Where did Aiyana leave her umbrella?",
+      "options": [
+        "On the train",
+        "At her office",
+        "At home",
+        "In a taxi"
+      ],
+      "correctAnswer": "On the train",
+      "correctAnswerIndex": 0,
+      "hint": "The location is given in the first sentence.",
+      "explanation": "The passage says Aiyana left her umbrella on the train.",
+      "passageWordCount": 31
+    },
+    {
+      "id": "RDG_READANDANSWER_L18_Q2",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[A Lost Umbrella] Aiyana left her umbrella on the train this morning. She did not notice until it started raining outside her office, so she had to buy a new one.",
+      "question": "Why did Aiyana buy a new umbrella?",
+      "options": [
+        "She lost her old one and it was raining",
+        "Because her old one broke suddenly",
+        "Because she wanted a new color",
+        "Because a friend asked her to buy one"
+      ],
+      "correctAnswer": "She lost her old one and it was raining",
+      "correctAnswerIndex": 0,
+      "hint": "Combine what happened on the train with what happened at her office.",
+      "explanation": "She had no umbrella when the rain started, so she bought a new one.",
+      "passageWordCount": 31
+    },
+    {
+      "id": "RDG_READANDANSWER_L18_Q3",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[A Lost Umbrella] Aiyana left her umbrella on the train this morning. She did not notice until it started raining outside her office, so she had to buy a new one.",
+      "question": "When did Aiyana realize her umbrella was missing?",
+      "options": [
+        "Before she left home that morning",
+        "While she was riding the train",
+        "When it started raining at her office",
+        "The next morning after her trip"
+      ],
+      "correctAnswer": "When it started raining at her office",
+      "correctAnswerIndex": 2,
+      "hint": "Find the moment she noticed, described in the middle of the passage.",
+      "explanation": "The passage says she did not notice until it started raining outside her office.",
+      "passageWordCount": 31
+    },
+    {
+      "id": "RDG_READANDANSWER_L19_Q1",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[Setting Up the Printer] Turn on the printer and connect it to your computer with the blue cable. Then open the settings menu and select the printer's name from the list.",
+      "question": "What color is the cable mentioned in the instructions?",
+      "options": [
+        "Black",
+        "Red",
+        "White",
+        "Blue"
+      ],
+      "correctAnswer": "Blue",
+      "correctAnswerIndex": 3,
+      "hint": "The cable color is stated in the first sentence.",
+      "explanation": "The instructions specify using the blue cable to connect the printer.",
+      "passageWordCount": 31
+    },
+    {
+      "id": "RDG_READANDANSWER_L19_Q2",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[Setting Up the Printer] Turn on the printer and connect it to your computer with the blue cable. Then open the settings menu and select the printer's name from the list.",
+      "question": "What should you do after connecting the printer?",
+      "options": [
+        "Turn off the computer",
+        "Open the settings menu",
+        "Print a test page",
+        "Unplug the cable"
+      ],
+      "correctAnswer": "Open the settings menu",
+      "correctAnswerIndex": 1,
+      "hint": "Look for the word 'then' to find the next step.",
+      "explanation": "The passage says to open the settings menu after connecting the printer.",
+      "passageWordCount": 31
+    },
+    {
+      "id": "RDG_READANDANSWER_L19_Q3",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[Setting Up the Printer] Turn on the printer and connect it to your computer with the blue cable. Then open the settings menu and select the printer's name from the list.",
+      "question": "What is the very first step in these instructions?",
+      "options": [
+        "Turn on the printer",
+        "Connect the cable",
+        "Open the settings menu",
+        "Select the printer's name"
+      ],
+      "correctAnswer": "Turn on the printer",
+      "correctAnswerIndex": 0,
+      "hint": "The first action appears at the beginning of the passage.",
+      "explanation": "The instructions begin by telling you to turn on the printer.",
+      "passageWordCount": 31
+    },
+    {
+      "id": "RDG_READANDANSWER_L20_Q1",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[Favorite Season] Noor likes autumn best because the weather is cool but not cold. She also enjoys watching the leaves change from green to orange and red.",
+      "question": "Which season does Noor like best?",
+      "options": [
+        "Winter",
+        "Autumn",
+        "Spring",
+        "Summer"
+      ],
+      "correctAnswer": "Autumn",
+      "correctAnswerIndex": 1,
+      "hint": "Her favorite season is named at the very start.",
+      "explanation": "The passage says Noor likes autumn best.",
+      "passageWordCount": 27
+    },
+    {
+      "id": "RDG_READANDANSWER_L20_Q2",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[Favorite Season] Noor likes autumn best because the weather is cool but not cold. She also enjoys watching the leaves change from green to orange and red.",
+      "question": "Why does Noor like this season?",
+      "options": [
+        "The weather is warm and sunny",
+        "The weather is snowy and cold",
+        "The weather is cool but not cold",
+        "The weather is windy all day"
+      ],
+      "correctAnswer": "The weather is cool but not cold",
+      "correctAnswerIndex": 2,
+      "hint": "The reason follows the word 'because' in the first sentence.",
+      "explanation": "The passage explains that Noor likes the weather being cool but not cold.",
+      "passageWordCount": 27
+    },
+    {
+      "id": "RDG_READANDANSWER_L20_Q3",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[Favorite Season] Noor likes autumn best because the weather is cool but not cold. She also enjoys watching the leaves change from green to orange and red.",
+      "question": "What colors do the leaves change to?",
+      "options": [
+        "Yellow and blue",
+        "Brown and purple",
+        "Pink and white",
+        "Orange and red"
+      ],
+      "correctAnswer": "Orange and red",
+      "correctAnswerIndex": 3,
+      "hint": "The final colors are listed at the end of the passage.",
+      "explanation": "The passage says the leaves change from green to orange and red.",
+      "passageWordCount": 27
+    }
+  ]
 }

@@ -1,577 +1,577 @@
 {
-    "gameType": "readAndAnswer",
-    "batchIndex": 10,
-    "levels": "91-100",
-    "quests": [
-        {
-            "id": "RDG_READANDANSWER_L91_Q1",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[Deepfake Detection] As AI-generated videos become increasingly convincing, researchers are racing to develop reliable methods for detecting deepfakes before they spread widely on social media. Current detection tools often examine subtle inconsistencies invisible to the human eye, such as irregular blinking patterns or unnatural lighting on a person's face, though experts warn that detection methods and the technology used to create deepfakes exist in a constant cycle of escalation, with each advance in detection eventually prompting a corresponding improvement in the deception techniques themselves.",
-            "question": "What do experts warn about the relationship between detection tools and deepfake technology?",
-            "options": [
-                "They exist in a constant cycle of escalation",
-                "Detection tools have made deepfake technology obsolete",
-                "Deepfake creators have stopped improving their methods",
-                "Detection methods no longer need to be updated"
-            ],
-            "correctAnswer": "They exist in a constant cycle of escalation",
-            "correctAnswerIndex": 0,
-            "hint": "The relationship is described in the last sentence.",
-            "explanation": "The passage says experts warn that detection and deepfake creation exist in a constant cycle, each prompting improvements in the other.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L91_Q2",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[Personalized Medicine] Advances in genetic testing now allow doctors to tailor certain treatments to a patient's individual genetic profile, moving away from the traditional one-size-fits-all approach to prescribing medication. For some cancer treatments, this means identifying the specific genetic mutations driving a patient's tumor before selecting a drug most likely to be effective against that particular variation, rather than starting with a standard treatment and adjusting only if it fails. Proponents say this approach can reduce both unnecessary side effects and the time lost trying ineffective treatments first.",
-            "question": "What benefit do proponents of personalized medicine describe?",
-            "options": [
-                "Completely eliminating the need for any medication",
-                "Guaranteed recovery for every patient",
-                "Reduced side effects and less time on ineffective treatments",
-                "Lower costs for all genetic testing"
-            ],
-            "correctAnswer": "Reduced side effects and less time on ineffective treatments",
-            "correctAnswerIndex": 2,
-            "hint": "The benefit is stated in the last sentence.",
-            "explanation": "The passage says proponents believe personalized medicine reduces unnecessary side effects and time lost on ineffective treatments.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L91_Q3",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[Asynchronous Communication Norms] As teams increasingly span multiple time zones, many companies have adopted asynchronous communication norms, meaning employees are not expected to respond to messages immediately outside their own working hours. This shift requires a cultural adjustment, since employees accustomed to instant replies must learn to write more detailed initial messages that anticipate follow-up questions, reducing the number of back-and-forth exchanges needed to resolve a single issue across time zones.",
-            "question": "Why must employees learn to write more detailed initial messages?",
-            "options": [
-                "To reduce back-and-forth exchanges across time zones",
-                "To comply with a new company policy on grammar",
-                "To avoid using instant messaging entirely",
-                "To shorten their overall working hours"
-            ],
-            "correctAnswer": "To reduce back-and-forth exchanges across time zones",
-            "correctAnswerIndex": 0,
-            "hint": "The reason connects to the challenge of communicating across time zones.",
-            "explanation": "The passage explains that detailed initial messages reduce the back-and-forth needed to resolve issues across time zones.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L92_Q1",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[Digital Nomad Visas] In response to a rise in remote workers seeking to live abroad temporarily, dozens of countries have introduced 'digital nomad visas,' which allow foreign remote employees to legally reside in the country for an extended period without seeking local employment. Unlike a tourist visa, which typically limits stays to a few months and forbids any work, these visas explicitly permit income earned from a foreign employer, provided the applicant meets a minimum income requirement.",
-            "question": "How do digital nomad visas differ from tourist visas, according to the passage?",
-            "options": [
-                "They explicitly permit income earned from a foreign employer",
-                "They require the applicant to find local employment",
-                "They only last for a few weeks",
-                "They forbid any form of remote work"
-            ],
-            "correctAnswer": "They explicitly permit income earned from a foreign employer",
-            "correctAnswerIndex": 0,
-            "hint": "The key difference is described in the last sentence.",
-            "explanation": "The passage says digital nomad visas, unlike tourist visas, explicitly allow income from a foreign employer.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L92_Q2",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[Urban Rewilding] Some cities have begun reintroducing native plants and allowing small patches of parkland to grow wild rather than maintaining the closely mowed lawns typical of traditional landscaping, a practice known as urban rewilding. Proponents argue that even modest wild patches can meaningfully support local pollinators and birds, though the approach has occasionally faced pushback from residents who associate untended greenery with neglect rather than intentional ecological design.",
-            "question": "What pushback have some urban rewilding projects faced?",
-            "options": [
-                "A complete ban from city governments",
-                "A lack of any native plants available",
-                "Opposition from local wildlife groups",
-                "Residents associating untended greenery with neglect"
-            ],
-            "correctAnswer": "Residents associating untended greenery with neglect",
-            "correctAnswerIndex": 3,
-            "hint": "The pushback is described in the last sentence.",
-            "explanation": "The passage says some rewilding projects have faced pushback from residents who see untended greenery as neglect.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L92_Q3",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[Adaptive Learning Software] Adaptive learning software adjusts the difficulty of practice problems in real time based on a student's previous answers, aiming to keep each learner working within a level of challenge that is neither too easy nor overwhelmingly difficult. Early classroom trials suggest the approach can be particularly effective for struggling students, who often disengage from traditional, one-pace instruction when material moves faster than they can absorb it.",
-            "question": "Why might adaptive learning software be particularly effective for struggling students?",
-            "options": [
-                "It requires no teacher involvement at all",
-                "It keeps the challenge level appropriate rather than too fast",
-                "It focuses exclusively on advanced material",
-                "It eliminates the need for practice problems"
-            ],
-            "correctAnswer": "It keeps the challenge level appropriate rather than too fast",
-            "correctAnswerIndex": 1,
-            "hint": "The reason connects to the software's core function, described in the first sentence.",
-            "explanation": "The passage explains that the software adjusts difficulty in real time, which helps students who struggle when material moves too fast.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L93_Q1",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[Fan-Made Content and Parasocial Relationships] As creators build large followings on social media, researchers have studied the one-sided sense of intimacy some fans develop toward public figures they have never actually met, a dynamic known as a parasocial relationship. While these connections were once viewed mainly through the lens of traditional celebrity culture, psychologists note that the constant, direct-feeling access provided by livestreams and comment sections has intensified these feelings in ways earlier generations of fans rarely experienced with distant film stars.",
-            "question": "Why have parasocial feelings intensified compared to earlier generations, according to the passage?",
-            "options": [
-                "Modern celebrities are more talented than before",
-                "Fans today have less free time overall",
-                "Traditional celebrity culture no longer exists",
-                "Livestreams and comment sections provide constant, direct-feeling access"
-            ],
-            "correctAnswer": "Livestreams and comment sections provide constant, direct-feeling access",
-            "correctAnswerIndex": 3,
-            "hint": "The reason is explained in the last sentence.",
-            "explanation": "The passage says the constant, direct-feeling access of livestreams and comments has intensified these feelings.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L93_Q2",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[Mutual Aid Networks] Distinct from traditional charity, which typically flows in one direction from donor to recipient, mutual aid networks are built on the principle that anyone in the group might need support at different points, and everyone is expected to contribute what they can when they are able. Organizers argue this structure removes some of the stigma associated with receiving help, since today's recipient may well be tomorrow's donor within the same community.",
-            "question": "How does a mutual aid network differ from traditional charity, according to the passage?",
-            "options": [
-                "It only accepts donations of money",
-                "Support flows in multiple directions rather than one way",
-                "It requires formal membership applications",
-                "It operates exclusively through large organizations"
-            ],
-            "correctAnswer": "Support flows in multiple directions rather than one way",
-            "correctAnswerIndex": 1,
-            "hint": "The core difference is explained in the first sentence.",
-            "explanation": "The passage explains that unlike one-directional charity, mutual aid assumes anyone might give or receive help at different times.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L93_Q3",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[Adult Children Returning Home] Rising housing costs and student loan debt have contributed to a noticeable increase in adult children moving back in with their parents after college, a trend sometimes labeled the 'boomerang generation.' While once viewed as a sign of failure to launch, many financial advisors now frame the arrangement as a pragmatic strategy, allowing young adults to save aggressively for a down payment or pay off debt without the burden of independent rent.",
-            "question": "How do many financial advisors now frame the boomerang generation trend?",
-            "options": [
-                "As a clear sign of personal failure",
-                "As a temporary legal requirement",
-                "As a pragmatic strategy for saving money",
-                "As harmful to long-term career growth"
-            ],
-            "correctAnswer": "As a pragmatic strategy for saving money",
-            "correctAnswerIndex": 2,
-            "hint": "The advisors' current view is explained in the last sentence.",
-            "explanation": "The passage says advisors now frame the arrangement as a pragmatic savings strategy rather than a failure.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L94_Q1",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[Plant-Based Meat Alternatives] Food scientists developing plant-based meat alternatives face a persistent challenge: replicating not just the taste of meat, but its exact texture and the way it changes when heated, a quality food chemists call 'the sizzle.' Early plant-based products often fell short on this front, but newer formulations using pea protein and specific fats have narrowed the gap considerably, leading even some dedicated meat-eaters to report difficulty distinguishing the newest products in a blind taste test.",
-            "question": "What challenge have food scientists faced beyond replicating taste?",
-            "options": [
-                "Making the products completely free of protein",
-                "Replicating meat's exact texture and how it changes when heated",
-                "Reducing the cost below all animal meat",
-                "Eliminating the need for any cooking"
-            ],
-            "correctAnswer": "Replicating meat's exact texture and how it changes when heated",
-            "correctAnswerIndex": 1,
-            "hint": "The specific challenge is named in the first sentence.",
-            "explanation": "The passage says the challenge involves replicating texture and how the product behaves when heated, not just taste.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L94_Q2",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[Biodiversity in Cities] Contrary to the assumption that cities are ecological wastelands, recent surveys have found that some urban areas support a surprising diversity of plant and insect species, occasionally exceeding the biodiversity of nearby industrial farmland. Researchers attribute this partly to the patchwork of gardens, vacant lots, and green rooftops found throughout a city, which together create a wider variety of small habitats than the uniform rows of a single crop typically found on a farm.",
-            "question": "What do researchers attribute urban biodiversity to, according to the passage?",
-            "options": [
-                "The complete absence of farmland nearby",
-                "Strict laws banning pesticide use everywhere",
-                "A decline in the human population",
-                "A patchwork of varied small habitats throughout the city"
-            ],
-            "correctAnswer": "A patchwork of varied small habitats throughout the city",
-            "correctAnswerIndex": 3,
-            "hint": "The explanation is given in the last sentence.",
-            "explanation": "The passage says researchers attribute urban biodiversity to the patchwork of varied habitats found throughout a city.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L94_Q3",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[Heritage Language Schools] Weekend heritage language schools, often run by community volunteers, aim to help children of immigrant families maintain fluency in a language spoken at home but rarely reinforced at their regular school. Beyond language skills alone, many parents say the classes give their children a stronger connection to extended family members who speak little of the country's dominant language, making family gatherings and phone calls with distant relatives noticeably easier.",
-            "question": "What additional benefit do many parents describe, beyond language skills?",
-            "options": [
-                "Lower tuition costs at their regular school",
-                "Better grades in unrelated school subjects",
-                "A stronger connection to extended family members",
-                "Reduced need to visit family abroad"
-            ],
-            "correctAnswer": "A stronger connection to extended family members",
-            "correctAnswerIndex": 2,
-            "hint": "The additional benefit is described in the last sentence.",
-            "explanation": "The passage says parents describe a stronger connection to extended family as a benefit beyond language skills.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L95_Q1",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[A Look at Algorithmic Pricing] Some retailers now use algorithmic pricing systems that adjust prices in real time based on factors like demand, competitor pricing, and even local weather conditions, a practice long common in the airline industry but increasingly applied to everyday goods. Consumer advocates have raised concerns that such systems could enable a more subtle form of price discrimination, potentially charging different customers different amounts for an identical product based on data about their individual willingness to pay.",
-            "question": "What concern have consumer advocates raised about algorithmic pricing?",
-            "options": [
-                "It always results in lower prices for everyone",
-                "It has made pricing completely transparent",
-                "It is limited exclusively to the airline industry",
-                "It could enable price discrimination based on individual data"
-            ],
-            "correctAnswer": "It could enable price discrimination based on individual data",
-            "correctAnswerIndex": 3,
-            "hint": "The advocates' concern is described in the last sentence.",
-            "explanation": "The passage says advocates worry algorithmic pricing could enable price discrimination based on individual willingness to pay.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L95_Q2",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[A Debate Over Genetic Privacy] As consumer DNA testing kits have grown in popularity, genetic privacy experts have raised concerns that a person's decision to test their own DNA can inadvertently reveal genetic information about relatives who never consented to any testing at all. This concern gained particular attention when law enforcement agencies began using public genetic databases to identify suspects through distant relatives who had simply been curious about their own ancestry.",
-            "question": "Why does testing one's own DNA raise privacy concerns for relatives?",
-            "options": [
-                "It requires relatives to submit their own samples",
-                "It can inadvertently reveal genetic information about them too",
-                "It only affects people with no living relatives",
-                "It is illegal in most countries currently"
-            ],
-            "correctAnswer": "It can inadvertently reveal genetic information about them too",
-            "correctAnswerIndex": 1,
-            "hint": "The concern is explained in the first sentence.",
-            "explanation": "The passage says testing one's own DNA can inadvertently reveal genetic information about relatives who never consented.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L95_Q3",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[A Look at Corporate Language Simplification] Several government agencies and large companies have begun rewriting official documents in 'plain language,' replacing dense legal or technical jargon with clearer, more direct wording that the average reader can understand without specialized training. Studies measuring comprehension before and after these rewrites have found that plain language versions not only save readers time but also significantly reduce the number of costly follow-up questions submitted to customer service.",
-            "question": "What effect have plain language rewrites had on customer service, according to studies?",
-            "options": [
-                "They have increased the number of complaints",
-                "They have eliminated the need for customer service",
-                "They have made documents longer overall",
-                "They significantly reduce costly follow-up questions"
-            ],
-            "correctAnswer": "They significantly reduce costly follow-up questions",
-            "correctAnswerIndex": 3,
-            "hint": "The effect on customer service is described in the last sentence.",
-            "explanation": "The passage says studies found plain language rewrites significantly reduce costly follow-up questions to customer service.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L96_Q1",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[A Look at Noise-Sensitive Product Design] Appliance manufacturers have begun marketing 'quiet mode' settings as a key selling point, particularly for products like dishwashers and vacuum cleaners used in open-plan homes where noise easily travels between rooms. Engineers achieve this largely by redesigning internal motors and adding sound-dampening materials, changes that often add modestly to production costs but which market research shows many consumers are willing to pay extra for.",
-            "question": "What are engineers doing to achieve quieter appliances, according to the passage?",
-            "options": [
-                "Reducing the overall power of the appliance",
-                "Removing certain features entirely",
-                "Requiring appliances to run only at night",
-                "Redesigning motors and adding sound-dampening materials"
-            ],
-            "correctAnswer": "Redesigning motors and adding sound-dampening materials",
-            "correctAnswerIndex": 3,
-            "hint": "The specific changes are listed in the second sentence.",
-            "explanation": "The passage says engineers achieve quieter appliances by redesigning motors and adding sound-dampening materials.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L96_Q2",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[A Debate Over AI in Creative Writing Classes] When a university writing program debated whether to permit AI tools during in-class exercises, instructors ultimately settled on a middle-ground policy: AI could be used for brainstorming and generating alternative phrasings, but final drafts had to be substantially the student's own original wording. Supporters of the policy argue it mirrors how professional writers already use editing tools, while skeptics worry the line between assistance and authorship will grow harder to enforce over time.",
-            "question": "What do skeptics worry about regarding the new policy?",
-            "options": [
-                "Students will no longer be allowed to write at all",
-                "AI tools will be banned completely next year",
-                "The line between assistance and authorship will be hard to enforce",
-                "Professional writers do not use editing tools"
-            ],
-            "correctAnswer": "The line between assistance and authorship will be hard to enforce",
-            "correctAnswerIndex": 2,
-            "hint": "The skeptics' concern is in the last sentence.",
-            "explanation": "The passage says skeptics worry it will become harder to enforce the line between assistance and authorship.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L96_Q3",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[A Look at Seed Banks] Global seed banks store samples of crop seeds from around the world, preserving genetic diversity that could prove essential if a widely grown crop variety is ever wiped out by disease or changing climate conditions. The most well-known facility, built into a mountainside in a region chosen partly for its naturally cold, stable temperature, is designed to protect its contents even during a prolonged power failure.",
-            "question": "Why was the most well-known seed bank facility's location chosen?",
-            "options": [
-                "Its proximity to major farming regions",
-                "Its low cost of construction",
-                "Its naturally cold, stable temperature",
-                "Its easy access for daily visitors"
-            ],
-            "correctAnswer": "Its naturally cold, stable temperature",
-            "correctAnswerIndex": 2,
-            "hint": "The reason for the location is explained in the last sentence.",
-            "explanation": "The passage says the location was chosen partly for its naturally cold, stable temperature.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L97_Q1",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[A Look at Corporate Transparency Reports] An increasing number of companies now publish annual transparency reports detailing government requests for user data, disclosing how many requests were received and how many were fulfilled. Privacy advocates generally welcome the practice but note an important limitation: companies are typically prohibited by law from disclosing certain types of requests at all, meaning even a detailed report may not capture the full picture of government access to user information.",
-            "question": "What limitation do privacy advocates note about transparency reports?",
-            "options": [
-                "Companies cannot legally disclose certain types of requests",
-                "Companies refuse to publish any reports at all",
-                "Reports are published only once per decade",
-                "Reports are never reviewed by outside experts"
-            ],
-            "correctAnswer": "Companies cannot legally disclose certain types of requests",
-            "correctAnswerIndex": 0,
-            "hint": "The limitation is explained in the last sentence.",
-            "explanation": "The passage says advocates note that companies are legally barred from disclosing certain requests, limiting the reports' completeness.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L97_Q2",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[A Look at Circular Economy Manufacturing] Some manufacturers are redesigning products with eventual disassembly in mind, using fewer glued joints and more removable screws so that individual components can be repaired or recycled separately at the end of a product's life. This approach, part of a broader shift toward what is called a circular economy, stands in contrast to older manufacturing philosophies that prioritized the cheapest possible assembly with little regard for what happens to a product once it breaks.",
-            "question": "How does circular economy design differ from older manufacturing approaches?",
-            "options": [
-                "It considers what happens to a product once it breaks",
-                "It focuses only on making products cheaper to assemble",
-                "It eliminates the use of any screws",
-                "It requires products to last only a few months"
-            ],
-            "correctAnswer": "It considers what happens to a product once it breaks",
-            "correctAnswerIndex": 0,
-            "hint": "The contrast is explained in the last sentence.",
-            "explanation": "The passage says circular economy design considers a product's end of life, unlike older approaches focused only on cheap assembly.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L97_Q3",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[A Look at Workplace Onboarding Buddies] Recognizing that a new employee's first few weeks strongly shape whether they stay with a company long-term, many organizations now pair new hires with an experienced 'onboarding buddy' distinct from their direct manager, someone they can ask informal questions without feeling judged. Data from companies using this approach shows new hires reach full productivity measurably faster than those without an assigned buddy.",
-            "question": "What benefit does the data show for new hires with an onboarding buddy?",
-            "options": [
-                "They receive a higher starting salary",
-                "They reach full productivity measurably faster",
-                "They are promoted within their first month",
-                "They require less initial training overall"
-            ],
-            "correctAnswer": "They reach full productivity measurably faster",
-            "correctAnswerIndex": 1,
-            "hint": "The measured benefit is described in the last sentence.",
-            "explanation": "The passage says data shows new hires with a buddy reach full productivity measurably faster.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L98_Q1",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[A Look at Sensory-Friendly Public Events] To make public events more accessible for people with sensory sensitivities, some venues now offer 'sensory-friendly' screening times or performances, featuring lower volume, dimmed rather than flashing lights, and permission for attendees to move or make noise without judgment from other guests. Organizers report that many families who had previously avoided public events entirely now attend regularly, describing the accommodations as removing a barrier that had never truly been necessary in the first place.",
-            "question": "What do organizers report about families who previously avoided public events?",
-            "options": [
-                "They still refuse to attend any events",
-                "Many now attend regularly because of the accommodations",
-                "They only attend events for young children",
-                "They now organize the events themselves"
-            ],
-            "correctAnswer": "Many now attend regularly because of the accommodations",
-            "correctAnswerIndex": 1,
-            "hint": "The organizers' observation is in the last sentence.",
-            "explanation": "The passage says organizers report that many previously avoidant families now attend regularly thanks to the accommodations.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L98_Q2",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[A Look at Delayed Gratification Research Revisited] A famous decades-old study suggested that children who could delay eating a marshmallow for a larger reward later tended to have better life outcomes, a finding often cited as evidence of the importance of self-control. More recent research, however, found that a child's family financial stability predicted much of this effect, since children from less stable households may have learned, quite reasonably, that a promised future reward is not always guaranteed to arrive.",
-            "question": "What did more recent research find about the original marshmallow study?",
-            "options": [
-                "Family financial stability predicted much of the original effect",
-                "The original study's results were completely fabricated",
-                "Self-control has no effect on life outcomes at all",
-                "Children today show far more self-control than before"
-            ],
-            "correctAnswer": "Family financial stability predicted much of the original effect",
-            "correctAnswerIndex": 0,
-            "hint": "The newer finding is explained in the last sentence.",
-            "explanation": "The passage says more recent research found that family financial stability accounted for much of the original effect.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L98_Q3",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[A Look at Corporate Internal Mobility Programs] Rather than only recruiting externally to fill open positions, some companies have introduced internal mobility programs that make it easier for existing employees to apply for roles in entirely different departments, sometimes with structured mentorship to support the transition. Retention data suggests employees who move internally rather than leaving for a competitor tend to stay with the company significantly longer than average, prompting more organizations to treat internal mobility as a retention strategy rather than simply an internal hiring convenience.",
-            "question": "What does retention data suggest about employees who move internally?",
-            "options": [
-                "They tend to stay with the company significantly longer",
-                "They are more likely to leave within a year",
-                "They require the same training as new hires",
-                "They earn less than external hires"
-            ],
-            "correctAnswer": "They tend to stay with the company significantly longer",
-            "correctAnswerIndex": 0,
-            "hint": "The retention data finding is described in the middle of the passage.",
-            "explanation": "The passage says data suggests employees who move internally stay with the company significantly longer than average.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L99_Q1",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[A Look at Adaptive Sports Equipment] Advances in lightweight materials and 3D printing have significantly lowered the cost of custom adaptive sports equipment, such as running blades and specialized wheelchairs, making participation more accessible to athletes who previously faced equipment costs well beyond what standard insurance would cover. Coaches working with adaptive athletes note that properly fitted equipment, once a luxury available only to elite competitors, is increasingly recognized as a baseline requirement for safe participation at any level.",
-            "question": "What have advances in materials and 3D printing done for adaptive sports equipment?",
-            "options": [
-                "Made the equipment heavier but more durable",
-                "Significantly lowered the cost, making it more accessible",
-                "Restricted its use to elite competitors only",
-                "Eliminated the need for insurance coverage entirely"
-            ],
-            "correctAnswer": "Significantly lowered the cost, making it more accessible",
-            "correctAnswerIndex": 1,
-            "hint": "The effect is described in the first sentence.",
-            "explanation": "The passage says these advances have lowered costs and made adaptive equipment more accessible to more athletes.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L99_Q2",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[A Look at Consumer Repair Subscription Services] A newer type of subscription service now covers unlimited repairs for household electronics for a flat monthly fee, an alternative some consumers find more appealing than either paying for individual repairs as they arise or purchasing a traditional one-time extended warranty. Industry analysts note the model only remains profitable for providers if enough subscribers rarely need repairs at all, meaning the service functions similarly to insurance rather than a guaranteed repair discount.",
-            "question": "How does the repair subscription model actually function, according to analysts?",
-            "options": [
-                "As a direct replacement for buying new electronics",
-                "As a service used only by repair professionals",
-                "Similarly to insurance rather than a guaranteed discount",
-                "As a program funded entirely by manufacturers"
-            ],
-            "correctAnswer": "Similarly to insurance rather than a guaranteed discount",
-            "correctAnswerIndex": 2,
-            "hint": "The comparison is made in the last sentence.",
-            "explanation": "The passage says analysts note the model functions similarly to insurance rather than as a guaranteed repair discount.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L99_Q3",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[A Look at Corporate Sustainability Reporting Standards] As more investors factor environmental impact into their decisions, regulators in several regions have begun requiring companies to disclose sustainability data using standardized metrics rather than each company choosing its own reporting format. Supporters argue standardization allows for meaningful comparison between companies in the same industry, whereas previously, companies could selectively highlight favorable figures while omitting less flattering ones from their voluntary reports.",
-            "question": "What problem did standardized reporting aim to fix, according to the passage?",
-            "options": [
-                "A complete lack of any sustainability data",
-                "Investors ignoring environmental impact entirely",
-                "Companies spending too much on reporting",
-                "Companies selectively highlighting favorable figures in voluntary reports"
-            ],
-            "correctAnswer": "Companies selectively highlighting favorable figures in voluntary reports",
-            "correctAnswerIndex": 3,
-            "hint": "The previous problem is described in the last sentence.",
-            "explanation": "The passage says standardization addresses companies previously selecting only favorable figures to report voluntarily.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L100_Q1",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[A Look at the Shift Toward Skills Passports] Some countries are piloting digital 'skills passports' that record verified competencies, such as completed training courses or demonstrated proficiencies, independent of which employer or institution originally provided the training. Proponents argue this could be especially valuable for workers whose skills were gained informally, such as through years of hands-on experience, since a skills passport can document genuine capability in a way a traditional résumé, built around job titles and employers, often fails to capture.",
-            "question": "Why might a skills passport be especially valuable for some workers, according to the passage?",
-            "options": [
-                "It documents capability regardless of how skills were gained",
-                "It replaces the need for any job interviews",
-                "It is only useful for university graduates",
-                "It guarantees a higher salary automatically"
-            ],
-            "correctAnswer": "It documents capability regardless of how skills were gained",
-            "correctAnswerIndex": 0,
-            "hint": "The value is explained in the last sentence, contrasted with a traditional résumé.",
-            "explanation": "The passage says a skills passport can document genuine capability even when skills were gained informally, unlike a traditional résumé.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L100_Q2",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[A Look at Public Libraries as Community Hubs] Public libraries in many cities have expanded well beyond lending books, now offering services such as free tax preparation help, job application assistance, and even social workers available on-site for patrons facing housing insecurity. Library administrators say this expansion reflects a practical response to real community needs rather than a departure from the library's original mission, since it continues the core idea of providing free, equal access to essential resources.",
-            "question": "How do library administrators describe the expansion of library services?",
-            "options": [
-                "A temporary experiment likely to be reversed soon",
-                "An entirely new mission unrelated to libraries' history",
-                "A practical response to real community needs, not a departure from its mission",
-                "A response to declining interest in books"
-            ],
-            "correctAnswer": "A practical response to real community needs, not a departure from its mission",
-            "correctAnswerIndex": 2,
-            "hint": "The administrators' framing is explained in the last sentence.",
-            "explanation": "The passage says administrators view the expansion as consistent with the library's original mission of equal access to resources.",
-            "passageWordCount": 100
-        },
-        {
-            "id": "RDG_READANDANSWER_L100_Q3",
-            "instruction": "Read the passage and select the correct answer.",
-            "subtype": "readAndAnswer",
-            "interactionType": "choice",
-            "passage": "[A Look at Cross-Training Within Teams] To reduce the disruption caused when a single team member with specialized knowledge is unexpectedly absent, some organizations have adopted formal cross-training programs, ensuring at least two people can competently perform every critical task. While the upfront time investment can seem inefficient in the short term, managers who have implemented the practice report far fewer project delays caused by a single point of failure within the team.",
-            "question": "What benefit do managers report after implementing cross-training?",
-            "options": [
-                "A significant reduction in overall staff numbers",
-                "Elimination of the need for team meetings",
-                "Higher salaries for cross-trained employees",
-                "Far fewer project delays caused by a single point of failure"
-            ],
-            "correctAnswer": "Far fewer project delays caused by a single point of failure",
-            "correctAnswerIndex": 3,
-            "hint": "The reported benefit is in the last sentence.",
-            "explanation": "The passage says managers report far fewer delays caused by a single point of failure after cross-training.",
-            "passageWordCount": 100
-        }
-    ]
+  "gameType": "readAndAnswer",
+  "batchIndex": 10,
+  "levels": "91-100",
+  "quests": [
+    {
+      "id": "RDG_READANDANSWER_L91_Q1",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[A Hospital's New Visiting Policy] After surveying patients and families, Riverside Hospital extended its visiting hours from six to ten hours a day, citing research linking family presence to faster recovery times. Nursing staff initially raised concerns about noise on the wards, but after three months, incident reports related to disruption remained roughly the same as before the change.",
+      "question": "What can be inferred from the fact that incident reports stayed roughly the same?",
+      "options": [
+        "Extended hours caused a major rise in disruptions",
+        "The hospital reversed the policy after three months",
+        "Staff concerns about noise were not strongly confirmed",
+        "No patients visited after the change"
+      ],
+      "correctAnswer": "Staff concerns about noise were not strongly confirmed",
+      "correctAnswerIndex": 2,
+      "hint": "Compare the staff's original worry with what the data actually showed afterward.",
+      "explanation": "Since incident reports did not rise, the passage suggests the staff's concern about noise was not strongly supported.",
+      "passageWordCount": 59
+    },
+    {
+      "id": "RDG_READANDANSWER_L91_Q2",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[A Hospital's New Visiting Policy] After surveying patients and families, Riverside Hospital extended its visiting hours from six to ten hours a day, citing research linking family presence to faster recovery times. Nursing staff initially raised concerns about noise on the wards, but after three months, incident reports related to disruption remained roughly the same as before the change.",
+      "question": "Why did the hospital extend its visiting hours?",
+      "options": [
+        "Nursing staff requested the change",
+        "Patients complained about short hours",
+        "A brand new law required the change",
+        "Research linked family presence to recovery"
+      ],
+      "correctAnswer": "Research linked family presence to recovery",
+      "correctAnswerIndex": 3,
+      "hint": "The reason for the extension is given in the first sentence.",
+      "explanation": "The passage says the change was based on research linking family presence to recovery times.",
+      "passageWordCount": 59
+    },
+    {
+      "id": "RDG_READANDANSWER_L91_Q3",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[A Hospital's New Visiting Policy] After surveying patients and families, Riverside Hospital extended its visiting hours from six to ten hours a day, citing research linking family presence to faster recovery times. Nursing staff initially raised concerns about noise on the wards, but after three months, incident reports related to disruption remained roughly the same as before the change.",
+      "question": "By how many hours did visiting hours increase?",
+      "options": [
+        "Two hours",
+        "Four hours",
+        "Six hours",
+        "Ten hours"
+      ],
+      "correctAnswer": "Four hours",
+      "correctAnswerIndex": 1,
+      "hint": "Subtract the original hours from the new total stated in the passage.",
+      "explanation": "Visiting hours went from six to ten, an increase of four hours.",
+      "passageWordCount": 59
+    },
+    {
+      "id": "RDG_READANDANSWER_L92_Q1",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[An Unusual Silence] Every Friday for the past year, Mr. Okafor stopped by the bakery around noon to buy the same loaf of sourdough bread. This past Friday, the owner noticed he did not come in, and by the following Monday, she still had not seen him at all.",
+      "question": "What does the passage imply about the owner's feelings by Monday?",
+      "options": [
+        "She was relieved he stopped coming",
+        "She was angry he did not pay his bill",
+        "She had forgotten his usual visits",
+        "She was likely growing concerned about him"
+      ],
+      "correctAnswer": "She was likely growing concerned about him",
+      "correctAnswerIndex": 3,
+      "hint": "Consider what noticing a break from someone's year-long routine might suggest about the observer's reaction.",
+      "explanation": "The detail that she 'still had not seen him' after noticing his absence suggests growing concern.",
+      "passageWordCount": 49
+    },
+    {
+      "id": "RDG_READANDANSWER_L92_Q2",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[An Unusual Silence] Every Friday for the past year, Mr. Okafor stopped by the bakery around noon to buy the same loaf of sourdough bread. This past Friday, the owner noticed he did not come in, and by the following Monday, she still had not seen him at all.",
+      "question": "What did Mr. Okafor usually buy each Friday?",
+      "options": [
+        "A loaf of sourdough bread",
+        "A dozen fresh pastries",
+        "A single cup of coffee",
+        "A small birthday cake"
+      ],
+      "correctAnswer": "A loaf of sourdough bread",
+      "correctAnswerIndex": 0,
+      "hint": "His usual purchase is named in the first sentence.",
+      "explanation": "The passage says he bought the same loaf of sourdough bread each Friday.",
+      "passageWordCount": 49
+    },
+    {
+      "id": "RDG_READANDANSWER_L92_Q3",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[An Unusual Silence] Every Friday for the past year, Mr. Okafor stopped by the bakery around noon to buy the same loaf of sourdough bread. This past Friday, the owner noticed he did not come in, and by the following Monday, she still had not seen him at all.",
+      "question": "How long had Mr. Okafor kept up this weekly routine before it stopped?",
+      "options": [
+        "About a month",
+        "About a week",
+        "About a year",
+        "About two years"
+      ],
+      "correctAnswer": "About a year",
+      "correctAnswerIndex": 2,
+      "hint": "The duration of the routine is given at the start of the passage.",
+      "explanation": "The passage says the routine had continued every Friday for the past year.",
+      "passageWordCount": 49
+    },
+    {
+      "id": "RDG_READANDANSWER_L93_Q1",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[Sleep and Memory] Researchers have found that people who sleep at least seven hours after learning new information tend to recall it more accurately the next day than those who sleep less. The effect appears strongest for information learned right before bedtime, suggesting that the brain may process and organize recent memories during sleep.",
+      "question": "How does the passage connect sleep duration to memory recall?",
+      "options": [
+        "Sleep duration has no effect on memory",
+        "Shorter sleep always improves recall",
+        "Recall depends only on timing, not sleep",
+        "Longer sleep is linked to more accurate recall"
+      ],
+      "correctAnswer": "Longer sleep is linked to more accurate recall",
+      "correctAnswerIndex": 3,
+      "hint": "Look at how the first sentence directly links hours of sleep to recall accuracy.",
+      "explanation": "The passage states that at least seven hours of sleep is linked to more accurate recall than less sleep.",
+      "passageWordCount": 54
+    },
+    {
+      "id": "RDG_READANDANSWER_L93_Q2",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[Sleep and Memory] Researchers have found that people who sleep at least seven hours after learning new information tend to recall it more accurately the next day than those who sleep less. The effect appears strongest for information learned right before bedtime, suggesting that the brain may process and organize recent memories during sleep.",
+      "question": "When does the effect on memory appear strongest?",
+      "options": [
+        "For information learned early in the morning",
+        "For information learned during exercise",
+        "For information learned right before bedtime",
+        "For information learned over several days"
+      ],
+      "correctAnswer": "For information learned right before bedtime",
+      "correctAnswerIndex": 2,
+      "hint": "The timing detail is given in the second sentence.",
+      "explanation": "The passage says the effect is strongest for information learned right before bedtime.",
+      "passageWordCount": 54
+    },
+    {
+      "id": "RDG_READANDANSWER_L93_Q3",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[Sleep and Memory] Researchers have found that people who sleep at least seven hours after learning new information tend to recall it more accurately the next day than those who sleep less. The effect appears strongest for information learned right before bedtime, suggesting that the brain may process and organize recent memories during sleep.",
+      "question": "What do researchers suggest the brain may do during sleep?",
+      "options": [
+        "Process and organize recent memories",
+        "Completely erase recent memories",
+        "Store only physical sensations",
+        "Stop forming new memories entirely"
+      ],
+      "correctAnswer": "Process and organize recent memories",
+      "correctAnswerIndex": 0,
+      "hint": "The researchers' suggestion is stated at the end of the passage.",
+      "explanation": "The passage says researchers suggest the brain processes and organizes recent memories during sleep.",
+      "passageWordCount": 54
+    },
+    {
+      "id": "RDG_READANDANSWER_L94_Q1",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[A Manufacturing Shift] Facing rising material costs, the furniture company shifted from solid oak to a more affordable engineered wood for most of its product line, while continuing to offer oak as a premium option for customers willing to pay more.",
+      "question": "Which statement best paraphrases the company's decision?",
+      "options": [
+        "The company stopped selling oak entirely",
+        "A cheaper wood became standard, oak cost more",
+        "The company raised every price equally",
+        "The company only sells oak furniture now"
+      ],
+      "correctAnswer": "A cheaper wood became standard, oak cost more",
+      "correctAnswerIndex": 1,
+      "hint": "Focus on what changed for most products versus what stayed available as an option.",
+      "explanation": "The passage says engineered wood became the standard while oak remained available as a premium choice.",
+      "passageWordCount": 41
+    },
+    {
+      "id": "RDG_READANDANSWER_L94_Q2",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[A Manufacturing Shift] Facing rising material costs, the furniture company shifted from solid oak to a more affordable engineered wood for most of its product line, while continuing to offer oak as a premium option for customers willing to pay more.",
+      "question": "Why did the company make this change?",
+      "options": [
+        "Rising material costs",
+        "A decline in customer demand",
+        "New environmental regulations",
+        "A shortage of skilled workers"
+      ],
+      "correctAnswer": "Rising material costs",
+      "correctAnswerIndex": 0,
+      "hint": "The reason for the shift is given in the first few words of the passage.",
+      "explanation": "The passage says the change was made because of rising material costs.",
+      "passageWordCount": 41
+    },
+    {
+      "id": "RDG_READANDANSWER_L94_Q3",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[A Manufacturing Shift] Facing rising material costs, the furniture company shifted from solid oak to a more affordable engineered wood for most of its product line, while continuing to offer oak as a premium option for customers willing to pay more.",
+      "question": "Who can still buy oak furniture from the company?",
+      "options": [
+        "No one; oak was discontinued",
+        "Only wholesale buyers",
+        "Customers willing to pay more",
+        "Only customers from the original product line"
+      ],
+      "correctAnswer": "Customers willing to pay more",
+      "correctAnswerIndex": 2,
+      "hint": "The availability of oak is described at the end of the passage.",
+      "explanation": "The passage says oak remains available as a premium option for customers willing to pay more.",
+      "passageWordCount": 41
+    },
+    {
+      "id": "RDG_READANDANSWER_L95_Q1",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[A Delayed Product Launch] The company announced that its new phone would launch in September, but internal emails obtained by a technology website suggest the release could slip into November due to a shortage of camera components. The company has not confirmed or denied the reports.",
+      "question": "Which statement is presented as a confirmed fact, rather than a possibility?",
+      "options": [
+        "The launch will definitely happen in November",
+        "A camera component shortage has already delayed the launch",
+        "The company has confirmed the delay",
+        "The company originally announced a September launch"
+      ],
+      "correctAnswer": "The company originally announced a September launch",
+      "correctAnswerIndex": 3,
+      "hint": "Separate the official announcement from what unnamed emails merely 'suggest.'",
+      "explanation": "The September announcement is stated directly, while the November delay is only described as a possibility.",
+      "passageWordCount": 46
+    },
+    {
+      "id": "RDG_READANDANSWER_L95_Q2",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[A Delayed Product Launch] The company announced that its new phone would launch in September, but internal emails obtained by a technology website suggest the release could slip into November due to a shortage of camera components. The company has not confirmed or denied the reports.",
+      "question": "What shortage is mentioned as a possible cause of delay?",
+      "options": [
+        "Battery components",
+        "Camera components",
+        "Screen glass",
+        "Memory chips"
+      ],
+      "correctAnswer": "Camera components",
+      "correctAnswerIndex": 1,
+      "hint": "The specific shortage is named in the middle of the passage.",
+      "explanation": "The passage says the possible delay is due to a shortage of camera components.",
+      "passageWordCount": 46
+    },
+    {
+      "id": "RDG_READANDANSWER_L95_Q3",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[A Delayed Product Launch] The company announced that its new phone would launch in September, but internal emails obtained by a technology website suggest the release could slip into November due to a shortage of camera components. The company has not confirmed or denied the reports.",
+      "question": "How has the company responded to the reports of a delay?",
+      "options": [
+        "It confirmed the delay is true",
+        "It denied any delay is happening",
+        "It has neither confirmed nor denied them",
+        "It has not been asked about the reports"
+      ],
+      "correctAnswer": "It has neither confirmed nor denied them",
+      "correctAnswerIndex": 2,
+      "hint": "The company's response is stated in the final sentence.",
+      "explanation": "The passage says the company has not confirmed or denied the reports.",
+      "passageWordCount": 46
+    },
+    {
+      "id": "RDG_READANDANSWER_L96_Q1",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[A Cautiously Optimistic Update] Sales figures for the quarter were slightly better than expected, though still below last year's levels. The team made real progress in the new markets we entered, and while there is still work ahead, I'm encouraged by the direction we're heading.",
+      "question": "What tone does the writer use to describe the quarter's results?",
+      "options": [
+        "Cautiously optimistic overall",
+        "Completely and fully confident",
+        "Deeply disappointed throughout",
+        "Fairly indifferent to results"
+      ],
+      "correctAnswer": "Cautiously optimistic overall",
+      "correctAnswerIndex": 0,
+      "hint": "Notice how the writer balances the positive note with an acknowledgment that work remains.",
+      "explanation": "Phrases like 'still below last year's levels' alongside 'encouraged' show a cautiously optimistic tone.",
+      "passageWordCount": 45
+    },
+    {
+      "id": "RDG_READANDANSWER_L96_Q2",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[A Cautiously Optimistic Update] Sales figures for the quarter were slightly better than expected, though still below last year's levels. The team made real progress in the new markets we entered, and while there is still work ahead, I'm encouraged by the direction we're heading.",
+      "question": "How did this quarter's sales compare to last year's?",
+      "options": [
+        "They matched last year's levels exactly",
+        "They were far above last year's levels",
+        "The passage does not compare them",
+        "They were still below last year's levels"
+      ],
+      "correctAnswer": "They were still below last year's levels",
+      "correctAnswerIndex": 3,
+      "hint": "The comparison to last year is made in the first sentence.",
+      "explanation": "The passage says results were still below last year's levels.",
+      "passageWordCount": 45
+    },
+    {
+      "id": "RDG_READANDANSWER_L96_Q3",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[A Cautiously Optimistic Update] Sales figures for the quarter were slightly better than expected, though still below last year's levels. The team made real progress in the new markets we entered, and while there is still work ahead, I'm encouraged by the direction we're heading.",
+      "question": "Where did the team make real progress, according to the writer?",
+      "options": [
+        "In their existing markets only",
+        "In the new markets they entered",
+        "In reducing overall costs",
+        "In hiring new staff members"
+      ],
+      "correctAnswer": "In the new markets they entered",
+      "correctAnswerIndex": 1,
+      "hint": "The area of progress is named in the second sentence.",
+      "explanation": "The passage says the team made real progress in the new markets they entered.",
+      "passageWordCount": 45
+    },
+    {
+      "id": "RDG_READANDANSWER_L97_Q1",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[A School's Attendance Pattern] A middle school noticed that absences spiked every year during the first week after winter break. After interviewing families, administrators found that many trips booked during the cheaper holiday travel season extended a few days into the new term, prompting the school to add a flexible make-up week for missed work each January.",
+      "question": "Why did the school create a flexible make-up week in January?",
+      "options": [
+        "To shorten the whole school year",
+        "To respond to a teacher shortage",
+        "To address absences from holiday travel",
+        "To comply with a new state law"
+      ],
+      "correctAnswer": "To address absences from holiday travel",
+      "correctAnswerIndex": 2,
+      "hint": "Trace the chain: the absence pattern, its cause, and the school's response.",
+      "explanation": "The passage connects the travel-related absences directly to the school's decision to add a make-up week.",
+      "passageWordCount": 57
+    },
+    {
+      "id": "RDG_READANDANSWER_L97_Q2",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[A School's Attendance Pattern] A middle school noticed that absences spiked every year during the first week after winter break. After interviewing families, administrators found that many trips booked during the cheaper holiday travel season extended a few days into the new term, prompting the school to add a flexible make-up week for missed work each January.",
+      "question": "When did the school notice absences tended to spike?",
+      "options": [
+        "The first week after winter break",
+        "The last week before winter break",
+        "The first week of the school year",
+        "During spring break"
+      ],
+      "correctAnswer": "The first week after winter break",
+      "correctAnswerIndex": 0,
+      "hint": "The timing of the spike is stated in the first sentence.",
+      "explanation": "The passage says absences spiked during the first week after winter break.",
+      "passageWordCount": 57
+    },
+    {
+      "id": "RDG_READANDANSWER_L97_Q3",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[A School's Attendance Pattern] A middle school noticed that absences spiked every year during the first week after winter break. After interviewing families, administrators found that many trips booked during the cheaper holiday travel season extended a few days into the new term, prompting the school to add a flexible make-up week for missed work each January.",
+      "question": "Why did families extend their trips into the new term?",
+      "options": [
+        "They disliked the whole school schedule",
+        "They booked trips during cheaper travel season",
+        "They were unaware school had resumed",
+        "They wanted to avoid the make-up week"
+      ],
+      "correctAnswer": "They booked trips during cheaper travel season",
+      "correctAnswerIndex": 1,
+      "hint": "The reason families extended their trips is given in the middle of the passage.",
+      "explanation": "The passage says trips were booked during the cheaper holiday travel season, causing the overlap.",
+      "passageWordCount": 57
+    },
+    {
+      "id": "RDG_READANDANSWER_L98_Q1",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[Two Approaches to Feedback] Some managers prefer to give feedback immediately after a mistake, believing it helps employees correct course quickly. Others wait until a scheduled review, arguing that immediate feedback can feel like criticism rather than coaching. Neither approach has been shown to work better in every situation; the right choice often depends on the employee's personality.",
+      "question": "What does \"Neither approach\" refer to in the passage?",
+      "options": [
+        "Coaching versus harsh criticism",
+        "Employee personality and manager style",
+        "Mistakes and their later corrections",
+        "Immediate feedback and scheduled reviews"
+      ],
+      "correctAnswer": "Immediate feedback and scheduled reviews",
+      "correctAnswerIndex": 3,
+      "hint": "Trace the phrase back to the two methods described earlier in the passage.",
+      "explanation": "The phrase refers to the two feedback methods: immediate feedback and scheduled reviews.",
+      "passageWordCount": 58
+    },
+    {
+      "id": "RDG_READANDANSWER_L98_Q2",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[Two Approaches to Feedback] Some managers prefer to give feedback immediately after a mistake, believing it helps employees correct course quickly. Others wait until a scheduled review, arguing that immediate feedback can feel like criticism rather than coaching. Neither approach has been shown to work better in every situation; the right choice often depends on the employee's personality.",
+      "question": "What concern do managers who prefer scheduled reviews raise about immediate feedback?",
+      "options": [
+        "It takes far too much time to give",
+        "It can feel like criticism, not coaching",
+        "It requires way too much paperwork",
+        "It is strictly against company policy"
+      ],
+      "correctAnswer": "It can feel like criticism, not coaching",
+      "correctAnswerIndex": 1,
+      "hint": "Their concern is stated right after their preference is introduced.",
+      "explanation": "The passage says these managers worry immediate feedback can feel like criticism rather than coaching.",
+      "passageWordCount": 58
+    },
+    {
+      "id": "RDG_READANDANSWER_L98_Q3",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[Two Approaches to Feedback] Some managers prefer to give feedback immediately after a mistake, believing it helps employees correct course quickly. Others wait until a scheduled review, arguing that immediate feedback can feel like criticism rather than coaching. Neither approach has been shown to work better in every situation; the right choice often depends on the employee's personality.",
+      "question": "According to the passage, what determines the best feedback approach?",
+      "options": [
+        "The size of the company",
+        "The manager's years of experience",
+        "The employee's personality",
+        "The type of mistake made"
+      ],
+      "correctAnswer": "The employee's personality",
+      "correctAnswerIndex": 2,
+      "hint": "The deciding factor is named in the final sentence.",
+      "explanation": "The passage says the right choice often depends on the employee's personality.",
+      "passageWordCount": 58
+    },
+    {
+      "id": "RDG_READANDANSWER_L99_Q1",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[A Guide for New Renters] Before signing a lease, ask the landlord about the building's policy on repairs and how quickly maintenance requests are typically handled. It is also wise to walk through the unit and photograph any existing damage, since this record can protect you from unfair charges when you eventually move out.",
+      "question": "Who is the intended audience for this passage?",
+      "options": [
+        "Landlords wanting to raise rent",
+        "People who already own a home",
+        "Real estate agents selling houses",
+        "People about to rent an apartment"
+      ],
+      "correctAnswer": "People about to rent an apartment",
+      "correctAnswerIndex": 3,
+      "hint": "Consider who would benefit from advice about signing a lease and photographing damage.",
+      "explanation": "The advice about leases and move-out protection is clearly aimed at prospective renters.",
+      "passageWordCount": 54
+    },
+    {
+      "id": "RDG_READANDANSWER_L99_Q2",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[A Guide for New Renters] Before signing a lease, ask the landlord about the building's policy on repairs and how quickly maintenance requests are typically handled. It is also wise to walk through the unit and photograph any existing damage, since this record can protect you from unfair charges when you eventually move out.",
+      "question": "Why does the passage recommend photographing existing damage?",
+      "options": [
+        "To protect against unfair move-out charges",
+        "To share the photos with close friends",
+        "To request an immediate repair visit",
+        "To negotiate a somewhat lower rent"
+      ],
+      "correctAnswer": "To protect against unfair move-out charges",
+      "correctAnswerIndex": 0,
+      "hint": "The reason for photographing damage is given at the end of the passage.",
+      "explanation": "The passage says the photos can protect renters from unfair charges later.",
+      "passageWordCount": 54
+    },
+    {
+      "id": "RDG_READANDANSWER_L99_Q3",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[A Guide for New Renters] Before signing a lease, ask the landlord about the building's policy on repairs and how quickly maintenance requests are typically handled. It is also wise to walk through the unit and photograph any existing damage, since this record can protect you from unfair charges when you eventually move out.",
+      "question": "What should renters ask the landlord about before signing?",
+      "options": [
+        "Repair policy and maintenance response time",
+        "The landlord's own personal phone number",
+        "The full history of previous tenants",
+        "The building's original construction date"
+      ],
+      "correctAnswer": "Repair policy and maintenance response time",
+      "correctAnswerIndex": 0,
+      "hint": "This question is suggested in the first sentence of the passage.",
+      "explanation": "The passage recommends asking about repair policy and maintenance response time.",
+      "passageWordCount": 54
+    },
+    {
+      "id": "RDG_READANDANSWER_L100_Q1",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[A Library's Quiet Transformation] Ten years ago, the downtown library was known mainly for its silence and rows of books. Today, the same building houses a recording studio, a 3D printing lab, and weekly coding classes for teenagers, alongside its traditional collection. Circulation of physical books has dropped slightly, but overall visits have more than doubled.",
+      "question": "What does the passage suggest about the library's overall popularity?",
+      "options": [
+        "It became less popular over ten years",
+        "It closed its whole book collection",
+        "It grew more popular despite fewer book loans",
+        "Its popularity stayed exactly the same"
+      ],
+      "correctAnswer": "It grew more popular despite fewer book loans",
+      "correctAnswerIndex": 2,
+      "hint": "Combine the detail about dropping book circulation with the detail about total visits.",
+      "explanation": "Although book circulation dropped slightly, the passage says overall visits more than doubled, showing greater popularity.",
+      "passageWordCount": 56
+    },
+    {
+      "id": "RDG_READANDANSWER_L100_Q2",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[A Library's Quiet Transformation] Ten years ago, the downtown library was known mainly for its silence and rows of books. Today, the same building houses a recording studio, a 3D printing lab, and weekly coding classes for teenagers, alongside its traditional collection. Circulation of physical books has dropped slightly, but overall visits have more than doubled.",
+      "question": "What new features does the library now offer?",
+      "options": [
+        "A café and a small used bookstore",
+        "A movie theater and a full gym",
+        "A daycare and a parking garage",
+        "A studio, a 3D lab, and coding classes"
+      ],
+      "correctAnswer": "A studio, a 3D lab, and coding classes",
+      "correctAnswerIndex": 3,
+      "hint": "The new features are listed together in the second sentence.",
+      "explanation": "The passage lists a recording studio, 3D printing lab, and coding classes as new additions.",
+      "passageWordCount": 56
+    },
+    {
+      "id": "RDG_READANDANSWER_L100_Q3",
+      "instruction": "Read the passage and select the correct answer.",
+      "subtype": "readAndAnswer",
+      "interactionType": "choice",
+      "passage": "[A Library's Quiet Transformation] Ten years ago, the downtown library was known mainly for its silence and rows of books. Today, the same building houses a recording studio, a 3D printing lab, and weekly coding classes for teenagers, alongside its traditional collection. Circulation of physical books has dropped slightly, but overall visits have more than doubled.",
+      "question": "What happened to physical book circulation?",
+      "options": [
+        "It doubled",
+        "It dropped slightly",
+        "It stayed exactly the same",
+        "It stopped completely"
+      ],
+      "correctAnswer": "It dropped slightly",
+      "correctAnswerIndex": 1,
+      "hint": "This detail is stated near the end of the passage, just before the contrast with total visits.",
+      "explanation": "The passage says circulation of physical books has dropped slightly.",
+      "passageWordCount": 56
+    }
+  ]
 }

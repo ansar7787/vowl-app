@@ -8,18 +8,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "When a national retail chain analyzed two years of exit survey data from departing employees across nearly a thousand store locations, it found that employees at stores with department managers who held brief one-on-one conversations at least once a month cited 'feeling undervalued' as a reason for leaving far less often than employees at stores where managers rarely held individual conversations, even though pay scales and job duties were standardized identically company-wide.",
+            "passage": "The Petrossian bakery has been in the same family for three generations. Last spring, the current owner, Ana, added a small seating area and began hosting weekend coffee tastings. She also kept the original bread recipes unchanged, telling a local reporter that customers 'come back for what they already know and love.' This year, weekend sales have grown noticeably, while weekday sales have stayed flat.",
             "options": [
-                "Regular one-on-one check-ins from managers seem to reduce employees' sense of being undervalued, apart from pay or duties.",
-                "Pay and job duties were the main factors in employees feeling undervalued.",
-                "Employees at stores with frequent check-ins cited feeling undervalued more often.",
-                "The frequency of manager conversations had no bearing on why employees left."
+                "Ana changed the bakery's original bread recipes this year, based on the passage's account of what happened.",
+                "Weekday sales grew at the same rate as weekend sales. This would be expected to hold across the entire situation as described.",
+                "Ana's new weekend additions appear to have boosted business specifically on weekends.",
+                "The bakery has been open for less than a year. Nothing in the passage suggests this changed at any point during the period described."
             ],
-            "correctAnswer": "Regular one-on-one check-ins from managers seem to reduce employees' sense of being undervalued, apart from pay or duties.",
-            "hint": "Notice what stayed the same between the two groups of stores, and what differed.",
-            "explanation": "Feeling undervalued was cited less often at stores where managers held regular one-on-one conversations, even though pay and duties were identical everywhere, suggesting the personal check-ins themselves addressed something standardized policies alone could not.",
+            "correctAnswer": "Ana's new weekend additions appear to have boosted business specifically on weekends.",
+            "hint": "Separate what changed (seating, tastings) from what stayed the same (recipes), and match each detail to the sales pattern described.",
+            "explanation": "The new seating area and weekend tastings line up with growth specifically in weekend sales, while the unchanged recipes and flat weekday sales show the growth is tied to the new weekend features rather than a general change.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Seating area and weekend tastings added -> recipes kept unchanged -> weekend sales grow, weekday sales flat -> new weekend features appear to have driven the specific growth"
             ]
         },
         {
@@ -27,18 +27,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "Ecologists comparing two adjacent sections of a grassland reserve found that the section where controlled, low-intensity burns were conducted every three years supported a wider variety of native wildflower species than the section left entirely unburned, though both sections received identical rainfall and were grazed by the same number of animals throughout the entirety of the fifteen-year study, according to the research team's final published report.",
+            "passage": "Two years ago, Riverside Elementary switched to a block schedule with longer, fewer class periods each day. Teachers reported spending less time on daily transitions between subjects. The school also hired two new counselors that same year to support student wellbeing. This year, standardized test scores rose in math and reading, while attendance rates stayed about the same as before.",
             "options": [
-                "Unburned grassland supported a greater variety of wildflower species.",
-                "Rainfall differences explain the difference in wildflower diversity between the sections.",
-                "Periodic controlled burns are associated with greater wildflower diversity than leaving grassland unburned.",
-                "Both sections supported an identical variety of wildflower species."
+                "The new counselors were hired to teach math and reading directly. Such a pattern would remain constant throughout the scenario being described.",
+                "Attendance rates also rose significantly this year.",
+                "The block schedule caused test scores to fall.",
+                "The schedule change and counselor additions may both have contributed to the rise in test scores, though attendance was unaffected."
             ],
-            "correctAnswer": "Periodic controlled burns are associated with greater wildflower diversity than leaving grassland unburned.",
-            "hint": "Compare wildflower diversity between the two sections, noting which factors were held equal.",
-            "explanation": "The regularly burned section supported more wildflower species than the unburned one, even with identical rainfall and grazing, suggesting the burning itself, not other environmental factors, was linked to the greater diversity.",
+            "correctAnswer": "The schedule change and counselor additions may both have contributed to the rise in test scores, though attendance was unaffected.",
+            "hint": "Track each change separately and match it to the specific outcomes mentioned, noting which outcome didn't change.",
+            "explanation": "Both the schedule change and new counselors happened before test scores rose, making them plausible contributors, but the passage specifically notes attendance stayed flat, so that particular outcome cannot be credited to either change.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Block schedule adopted -> counselors hired same year -> test scores rise in math and reading -> attendance stays flat -> both changes are plausible contributors to score gains, but not to attendance"
             ]
         },
         {
@@ -46,18 +46,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A study following blended families for five years after remarriage found that stepparents who waited for the biological parent to establish most household rules and discipline during the first year, gradually taking on more of that role only as the stepchildren grew more comfortable, reported stronger relationships with their stepchildren by year five than stepparents who took an equal disciplinary role from the very beginning of the new household, according to the study's final interviews.",
+            "passage": "Marisol's small pottery studio struggled for its first two years, barely covering rent some months. She began posting short videos of her throwing process online, which slowly gained a following. She did not change her prices or her studio hours during this time. Within a year of starting the videos, her waitlist for classes grew from empty to three months long.",
             "options": [
-                "A gradual approach to discipline appears linked to stronger long-term stepparent-stepchild relationships.",
-                "Taking an equal disciplinary role immediately led to stronger relationships.",
-                "The timing of a stepparent's disciplinary role had no bearing on relationship quality.",
-                "Every family in the study reported identical relationship outcomes by year five."
+                "Marisol raised her prices around the same time the videos started, according to the specific details given.",
+                "The videos appear to be linked to the growth in her class waitlist.",
+                "Marisol's studio hours changed shortly before the waitlist grew.",
+                "The waitlist was already three months long before she began posting videos, based on what the passage actually says."
             ],
-            "correctAnswer": "A gradual approach to discipline appears linked to stronger long-term stepparent-stepchild relationships.",
-            "hint": "Compare relationship outcomes between stepparents who eased into discipline gradually and those who didn't.",
-            "explanation": "Stepparents who gradually took on a disciplinary role reported stronger relationships by year five than those who took an equal role immediately, suggesting a slower approach may help stepchildren adjust more comfortably.",
+            "correctAnswer": "The videos appear to be linked to the growth in her class waitlist.",
+            "hint": "Notice what changed (the videos) versus what explicitly stayed the same (prices, hours), and connect that to the timing of the waitlist growth.",
+            "explanation": "The videos began before the waitlist grew, and the passage specifically states prices and hours stayed the same, ruling those out and pointing to the videos as the more likely explanation for the growth.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Studio struggles for two years -> videos posted, prices/hours unchanged -> waitlist grows to three months within a year -> videos appear linked to the waitlist growth"
             ]
         },
         {
@@ -65,18 +65,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A team studying how people use fitness tracking wearables found that users who could see their heart rate data in real time during exercise adjusted their pace far more frequently mid-workout than users wearing a tracker that only displayed a summary after the workout ended, though total calories burned per session ended up nearly identical between both groups, based on data the team collected from several thousand recorded sessions.",
+            "passage": "A mid-sized hospital began requiring all surgical teams to complete a shared pre-operation checklist in 2021. That same year, the hospital also upgraded its operating room lighting systems. Post-surgery infection rates dropped by 40 percent over the following two years, while equipment malfunction reports, unrelated to lighting or checklists, stayed roughly the same.",
             "options": [
-                "Users with real-time data burned significantly more calories overall.",
-                "Access to real-time data had no bearing on how users adjusted their pace.",
-                "Users without real-time data adjusted their pace more frequently.",
-                "Real-time heart rate data changes how people adjust their effort, even without changing the overall workout result."
+                "The lighting upgrade caused a rise in equipment malfunctions.",
+                "Infection rates dropped because of unrelated equipment changes.",
+                "The checklist requirement, and possibly the lighting upgrade, may have contributed to the drop in infection rates.",
+                "The checklist requirement was introduced before 2021."
             ],
-            "correctAnswer": "Real-time heart rate data changes how people adjust their effort, even without changing the overall workout result.",
-            "hint": "Notice the passage separates what changed (pace adjustments) from what stayed the same (calories burned).",
-            "explanation": "Users with real-time heart rate data adjusted their pace more often mid-workout, yet total calories burned ended up similar either way, suggesting the data changed how people exercised in the moment without changing the ultimate outcome.",
+            "correctAnswer": "The checklist requirement, and possibly the lighting upgrade, may have contributed to the drop in infection rates.",
+            "hint": "Consider both changes that happened in 2021 and separate them from the equipment malfunction detail, which the passage says is unrelated.",
+            "explanation": "Both the checklist and lighting upgrade began in 2021, right before infection rates fell, making them plausible contributors, while the unrelated equipment malfunction rate staying flat helps rule out that factor as an explanation.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Checklist required 2021 -> lighting upgraded 2021 -> infection rates drop 40% over two years -> unrelated equipment malfunctions stay flat -> checklist and lighting appear as plausible contributors to the infection drop"
             ]
         },
         {
@@ -84,18 +84,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A regional airline that had always assigned seats randomly during check-in switched to a system letting passengers pay a small fee to select a specific seat in advance. Complaints about seating fell overall, but complaints specifically about being seated next to a stranger while traveling with a companion rose slightly among passengers who declined to pay the fee, since randomly assigned seats now clustered available pairs less predictably than before.",
+            "passage": "A regional bus company redesigned two of its ten routes to avoid a chronically congested downtown street, while leaving the other eight routes unchanged. On-time performance for the two redesigned routes rose from 61 percent to 88 percent within six months. Performance on the eight unchanged routes stayed close to 60 percent over the same period.",
             "options": [
-                "Every type of seating complaint decreased after the new system began.",
-                "Complaints about seating increased overall after the new system began.",
-                "The paid seat-selection system reduced complaints overall but created a new issue for passengers who didn't pay.",
-                "The new system had no effect on complaints from any passenger group."
+                "On-time performance improved equally across all ten routes.",
+                "The congested downtown street was removed from the city entirely.",
+                "The eight unchanged routes also avoided the congested street.",
+                "The route redesign appears specifically linked to improved on-time performance on those two routes."
             ],
-            "correctAnswer": "The paid seat-selection system reduced complaints overall but created a new issue for passengers who didn't pay.",
-            "hint": "Notice the passage describes an overall improvement alongside one specific group that experienced a new problem.",
-            "explanation": "Overall seating complaints dropped, but complaints about being separated from a companion rose among passengers who skipped the fee, suggesting the new system solved one problem while creating a smaller new one for a specific group.",
+            "correctAnswer": "The route redesign appears specifically linked to improved on-time performance on those two routes.",
+            "hint": "Compare the redesigned routes' improvement to the unchanged routes' lack of improvement.",
+            "explanation": "Only the two redesigned routes, which specifically avoided the congested street, showed major improvement, while the eight unchanged routes stayed flat, supporting a specific link between the redesign and the improved performance.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Two routes redesigned to avoid congestion -> those routes: 61% to 88% on-time -> eight unchanged routes: stay near 60% -> redesign appears specifically linked to the improvement"
             ]
         },
         {
@@ -103,18 +103,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A university writing center that tracked which students returned for a second tutoring appointment found that students paired with the same tutor for both sessions returned for a third appointment at higher rates than students who saw a different tutor each time, even though satisfaction ratings for individual sessions were rated similarly high by students regardless of whether the tutor changed between visits, according to the center's own tracking records.",
+            "passage": "A mid-size accounting firm noticed that employees who worked from home two days a week reported higher job satisfaction scores than those who came in five days a week. However, the firm also gave a company-wide raise the same quarter the hybrid policy began, making it hard to separate the effects of the two changes on satisfaction scores.",
             "options": [
-                "Seeing a different tutor each time led to higher return rates.",
-                "Individual session satisfaction was rated much lower when the tutor changed.",
-                "Continuity with the same tutor seems to encourage students to keep returning, even though it doesn't change satisfaction with any single session.",
-                "Tutor continuity had no bearing on whether students returned for more sessions."
+                "The hybrid policy definitely caused the rise in satisfaction scores. No part of the passage's account suggests otherwise.",
+                "The raise definitely caused the rise in satisfaction scores.",
+                "It is difficult to determine from this passage alone whether the hybrid policy or the raise caused the higher satisfaction scores.",
+                "Neither the raise nor the hybrid policy had any effect on satisfaction. The passage offers no detail suggesting this changed over the period discussed."
             ],
-            "correctAnswer": "Continuity with the same tutor seems to encourage students to keep returning, even though it doesn't change satisfaction with any single session.",
-            "hint": "Notice the passage separates what changed (return rates) from what stayed the same (session satisfaction).",
-            "explanation": "Students paired with the same tutor returned for more sessions, even though single-session satisfaction was similar either way, suggesting continuity built something beyond a single good session, such as trust or familiarity, that encouraged students to keep coming back.",
+            "correctAnswer": "It is difficult to determine from this passage alone whether the hybrid policy or the raise caused the higher satisfaction scores.",
+            "hint": "Notice that the passage explicitly states both changes happened at the same time, making a single cause hard to isolate.",
+            "explanation": "Because both the hybrid policy and the raise began in the same quarter, the passage itself acknowledges it's difficult to separate their individual effects, so neither can be confidently credited alone.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Hybrid policy begins -> raise given same quarter -> satisfaction scores rise -> two simultaneous changes make it hard to isolate a single cause"
             ]
         },
         {
@@ -122,18 +122,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A team studying chronic pain management compared patients who kept a daily written log of their pain levels, activities, and mood to patients who received the same treatment plan without keeping any log. Patients who journaled reported feeling more in control of their condition in follow-up interviews conducted six months later, though their actual reported pain intensity scores on a standard medical scale were statistically similar to the non-journaling group's scores.",
+            "passage": "A coastal town's seafood restaurant, Delmar's, has operated at the same waterfront location for fifteen years. Two years ago, a new competitor opened two blocks away serving similar dishes at lower prices. Delmar's owner responded by adding a loyalty rewards program and expanding the outdoor seating area, but kept menu prices unchanged. This year, Delmar's reported its highest annual revenue on record.",
             "options": [
-                "Journaling significantly reduced patients' actual pain intensity scores.",
-                "Journaling appears to improve patients' sense of control over their pain without necessarily reducing the pain itself.",
-                "Patients who journaled reported feeling less in control of their condition.",
-                "Keeping a pain log had no measurable effect on any aspect of patients' experience."
+                "Delmar's lowered its menu prices to compete with the new restaurant. The passage offers no detail suggesting this changed over the period discussed.",
+                "Delmar's loyalty program and expanded seating may have helped it compete successfully despite the new lower-priced competitor.",
+                "The new competitor closed down shortly after opening.",
+                "Delmar's revenue has been declining steadily for fifteen years."
             ],
-            "correctAnswer": "Journaling appears to improve patients' sense of control over their pain without necessarily reducing the pain itself.",
-            "hint": "Notice the passage separates how patients felt about their condition from their actual measured pain scores.",
-            "explanation": "Patients who journaled felt more in control of their condition, even though their measured pain intensity was similar to patients who didn't journal, suggesting the practice changed patients' psychological relationship to their pain rather than the pain itself.",
+            "correctAnswer": "Delmar's loyalty program and expanded seating may have helped it compete successfully despite the new lower-priced competitor.",
+            "hint": "Track what Delmar's changed in response to competition and what it deliberately kept the same, then connect this to the revenue outcome.",
+            "explanation": "Despite facing lower-priced competition, Delmar's added a loyalty program and more seating rather than cutting prices, and went on to post record revenue, suggesting those specific changes may have helped it hold its ground.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Competitor opens with lower prices -> Delmar's adds loyalty program, expands seating, keeps prices unchanged -> Delmar's posts record revenue -> changes appear to have helped it compete successfully"
             ]
         },
         {
@@ -141,18 +141,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "An analysis of long-term investors found that those who checked their retirement account balance only once per quarter reported lower investment-related anxiety and were less likely to make changes to their investment allocation during market downturns than investors who checked their balance daily, even though both groups held portfolios with similar overall risk levels, based on a survey of several thousand account holders conducted by an independent research firm.",
+            "passage": "A regional hospital network tracked patient readmission rates across three of its facilities. Facility A introduced a follow-up phone call within 48 hours of discharge. Facility B introduced the same phone call program six months later. Facility C made no changes. Readmissions dropped at Facility A first, then later at Facility B after its program started, while Facility C's rate stayed constant throughout.",
             "options": [
-                "Checking investments less frequently seems linked to lower anxiety and fewer impulsive changes during downturns.",
-                "Checking balances daily was linked to lower investment-related anxiety.",
-                "The frequency of checking balances had no bearing on investor behavior.",
-                "Portfolio risk levels differed significantly between the two groups of investors."
+                "Readmission rates dropped at all three facilities at the same time. The passage's account gives no reason to think this differed at any stage.",
+                "The follow-up phone call program appears linked to lower readmission rates at the facilities that adopted it.",
+                "Facility C also introduced the follow-up phone call program. The passage offers no detail suggesting this changed over the period discussed.",
+                "The phone call program had no effect on readmission rates. This reading would hold true across the full sequence of events described."
             ],
-            "correctAnswer": "Checking investments less frequently seems linked to lower anxiety and fewer impulsive changes during downturns.",
-            "hint": "Compare the two groups' anxiety levels and behavior during downturns, noting that their portfolios were similar.",
-            "explanation": "Investors who checked their balances less often reported less anxiety and made fewer impulsive changes during downturns than daily checkers, even with similar portfolios, suggesting the frequency of checking itself, not the underlying risk, influenced investor behavior.",
+            "correctAnswer": "The follow-up phone call program appears linked to lower readmission rates at the facilities that adopted it.",
+            "hint": "Track the timing of each facility's readmission drop against when each one adopted the program.",
+            "explanation": "Readmissions fell at Facility A right after it began the calls, then fell again at Facility B once it adopted the same program later, while Facility C, which never changed, stayed constant, together supporting the program as linked to the drops.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Facility A adopts calls -> its readmissions drop -> Facility B adopts calls later -> its readmissions drop later too -> Facility C: no change, no drop -> program appears linked to reduced readmissions"
             ]
         },
         {
@@ -160,18 +160,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A city that had always held its annual budget hearings on weekday afternoons, when few working residents could attend, moved the hearings to a single weekday evening session and added a live-streamed option for residents unable to attend in person. Attendance and public comments both increased substantially, with roughly a third of the comments that year coming from residents who watched the live stream rather than attending physically.",
+            "passage": "A small software startup released two major updates in the same year: one improving the app's loading speed, and one adding a new social sharing feature. User reviews mentioning 'fast' or 'speed' increased sharply after the first update, while mentions of 'sharing' or 'social' increased sharply only after the second update was released a few months later.",
             "options": [
-                "Adding an evening time slot and streaming option appears to have broadened public participation in the hearings.",
-                "Public participation declined after the hearing schedule and format changed.",
-                "The live-streamed option was used by almost no residents.",
-                "Only the timing of the hearing affected attendance, with the streaming option making no difference."
+                "Both updates were released on the exact same day. This would be expected to hold across the entire situation as described.",
+                "Reviews mentioning speed only increased after the sharing feature was added, based on the details the passage provides.",
+                "Neither update had any effect on what users mentioned in reviews, given how the events unfolded.",
+                "Each update appears linked to a rise in reviews mentioning that update's specific feature."
             ],
-            "correctAnswer": "Adding an evening time slot and streaming option appears to have broadened public participation in the hearings.",
-            "hint": "Notice the passage separates the effect of the new schedule from the effect of the streaming option.",
-            "explanation": "Attendance and comments both rose after the hearing moved to evenings and added streaming, with a meaningful share of comments coming through the stream specifically, suggesting both changes worked together to broaden participation.",
+            "correctAnswer": "Each update appears linked to a rise in reviews mentioning that update's specific feature.",
+            "hint": "Match each update to the specific type of review mention that increased right after it.",
+            "explanation": "Speed-related mentions rose right after the speed update, and sharing-related mentions rose separately after the later sharing update, showing each specific update aligns with its own matching increase in reviews.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Speed update released -> speed-related reviews rise -> sharing update released months later -> sharing-related reviews rise separately -> each update matches its own specific increase in mentions"
             ]
         },
         {
@@ -179,18 +179,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A regional supermarket chain that redesigned its produce section to place misshapen or unusually sized fruits and vegetables in a clearly labeled 'ugly produce' bin at a discounted price found that overall produce waste at participating stores dropped by nearly a fifth, while sales of standard, uniformly shaped produce at full price remained essentially unchanged, based on inventory records the chain reviewed across dozens of participating locations over six months.",
+            "passage": "A city library system compared circulation numbers across its twelve branches. The four branches that added self-checkout kiosks saw circulation rise by an average of 15 percent. The five branches that extended their weekend hours saw circulation rise by an average of 9 percent. The three branches that made no changes saw circulation stay flat.",
             "options": [
-                "Sales of full-price produce dropped sharply after the bin was introduced.",
-                "Produce waste increased after the discounted bin was introduced.",
-                "The discounted bin had no measurable effect on overall produce waste.",
-                "The discounted bin appears to have reduced waste without pulling sales away from full-price produce."
+                "Extending weekend hours had a larger effect than adding kiosks.",
+                "Both the kiosks and the extended hours appear linked to increased circulation, with kiosks showing a larger average effect.",
+                "All twelve branches made the same changes and saw the same results.",
+                "Circulation dropped at every branch that made changes."
             ],
-            "correctAnswer": "The discounted bin appears to have reduced waste without pulling sales away from full-price produce.",
-            "hint": "Notice the passage separates what changed (waste) from what stayed the same (full-price sales).",
-            "explanation": "Produce waste dropped after the discount bin was introduced, while full-price sales stayed steady, suggesting the bin found a use for produce that would have otherwise been thrown away, without simply shifting existing full-price customers toward the discount.",
+            "correctAnswer": "Both the kiosks and the extended hours appear linked to increased circulation, with kiosks showing a larger average effect.",
+            "hint": "Compare all three groups' outcomes and notice which change is associated with the bigger average increase.",
+            "explanation": "Both changes correspond to increases in circulation compared to the unchanged branches, but the kiosk branches show the larger average rise, making the kiosks appear linked to a stronger effect specifically.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Kiosk branches: +15% circulation -> extended-hours branches: +9% -> unchanged branches: flat -> both changes appear linked to increases, kiosks showing the larger effect"
             ]
         },
         {
@@ -198,18 +198,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "Researchers comparing residential lawns found that lawns converted from traditional turf grass to a mix of native, drought-tolerant plants required significantly less supplemental watering during a regional dry spell than neighboring turf lawns, and homeowners with converted lawns also reported spending markedly less time on weekly maintenance throughout the growing season, despite initial concerns voiced by several homeowners that native plantings would require more specialized, time-consuming care.",
+            "passage": "A city's parks department tested three approaches to reduce littering in different parks: adding more trash bins, posting signs about fines, and organizing monthly volunteer cleanups. Litter decreased most in the park with more bins, decreased slightly in the park with fine signs, and stayed the same in the park with only cleanups, since litter reappeared between each monthly event.",
             "options": [
-                "Native plant lawns appear to require less water and less maintenance than traditional turf, contrary to some homeowners' expectations.",
-                "Native plant lawns required more water than traditional turf lawns.",
-                "Homeowners with native plantings spent more time on weekly maintenance.",
-                "Water and maintenance needs were identical between the two types of lawns."
+                "The volunteer cleanups had the largest effect on reducing litter.",
+                "Adding more trash bins appears to have had the largest effect on reducing litter among the three approaches tested.",
+                "All three approaches reduced litter by the same amount.",
+                "None of the three approaches had any effect on litter levels."
             ],
-            "correctAnswer": "Native plant lawns appear to require less water and less maintenance than traditional turf, contrary to some homeowners' expectations.",
-            "hint": "Notice what homeowners expected before converting their lawns, and compare it with what the passage says actually happened.",
-            "explanation": "Converted lawns needed less water and less maintenance time than traditional turf, despite some homeowners initially expecting the opposite, suggesting native plantings were more practical than commonly assumed, at least under dry conditions.",
+            "correctAnswer": "Adding more trash bins appears to have had the largest effect on reducing litter among the three approaches tested.",
+            "hint": "Compare the outcomes of the three separate parks and their separate approaches.",
+            "explanation": "Among the three approaches, only the bin-focused park saw the most significant decrease, while fine signs helped slightly and cleanups alone weren't frequent enough to sustain a change, pointing to bins as having the largest effect.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Park 1: more bins -> litter decreases most -> Park 2: fine signs -> litter decreases slightly -> Park 3: only monthly cleanups -> litter unchanged between events -> bins appear to have the strongest effect"
             ]
         },
         {
@@ -217,18 +217,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A youth soccer club that introduced a policy requiring coaches to rotate which players started each game, rather than always starting the same top performers, tracked player retention over three seasons and found that while retention among the club's most skilled players dropped slightly, overall club-wide retention rose because far fewer players of moderate ability quit partway through the season, according to registration records compiled at the end of each season studied.",
+            "passage": "A national coffee chain tracked customer loyalty app usage across its stores. Stores that offered a free drink after ten purchases saw app usage rise by 60 percent. Stores that instead offered a small discount on every purchase saw app usage rise by 25 percent. A control group of stores with no loyalty incentive saw app usage stay flat.",
             "options": [
-                "Retention improved among every category of player after the policy began.",
-                "The rotation policy appears to have benefited overall retention even though it slightly reduced retention of top players.",
-                "Retention declined overall after the rotation policy was introduced.",
-                "The rotation policy had no measurable effect on player retention of any kind."
+                "The small discount incentive drove greater engagement than the free drink. The passage's account gives no reason to think this differed at any stage.",
+                "App usage rose equally across all three groups of stores.",
+                "The free-drink incentive appears to have driven greater app engagement than the small discount incentive.",
+                "The control group stores also offered a loyalty incentive. Such a pattern would remain constant throughout the scenario being described."
             ],
-            "correctAnswer": "The rotation policy appears to have benefited overall retention even though it slightly reduced retention of top players.",
-            "hint": "Notice the passage describes two different trends among two different groups of players.",
-            "explanation": "Top players' retention dropped slightly, but overall retention rose because fewer moderate-ability players quit, suggesting the rotation policy traded a small loss among elite players for a larger gain in keeping the broader player base engaged.",
+            "correctAnswer": "The free-drink incentive appears to have driven greater app engagement than the small discount incentive.",
+            "hint": "Compare the percentage increases across all three groups of stores.",
+            "explanation": "The free-drink stores saw more than double the increase in app usage compared to the discount stores, and both outperformed the no-incentive control group, showing the free-drink incentive drove the strongest engagement.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Free-drink stores: +60% app usage -> discount stores: +25% -> control stores: flat -> free-drink incentive appears to have driven the strongest engagement"
             ]
         },
         {
@@ -236,18 +236,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A regional theater festival that had always required playwrights to submit full scripts for consideration switched to accepting ten-minute staged readings of unfinished work in progress. Festival organizers reported that the plays ultimately selected for full production under the new system received stronger reviews on average than plays selected under the old full-script system, though organizers also noted the new process required significantly more staff time to administer each season.",
+            "passage": "A mid-size law firm noticed that associates who billed the most hours were not necessarily the ones promoted fastest. Internal reviews showed that associates promoted within four years typically had strong mentor relationships and had led at least one major case, regardless of their total billed hours. Two associates with the highest billed hours in the firm had not been promoted after five years.",
             "options": [
-                "The new process improved selection quality with no added administrative cost.",
-                "Plays selected under the new system received weaker reviews on average.",
-                "The staged-reading process appears to have improved selection quality at the cost of greater administrative effort.",
-                "The submission format had no bearing on the quality of selected plays."
+                "Factors beyond billed hours, such as mentorship and case leadership, appear more closely linked to faster promotion at this firm.",
+                "Billed hours were the single biggest factor in promotion speed. This reading would hold true across the full sequence of events described.",
+                "Every associate at the firm was promoted within four years.",
+                "The two associates with the highest billed hours were promoted fastest. The passage gives no indication that this varied across the circumstances described."
             ],
-            "correctAnswer": "The staged-reading process appears to have improved selection quality at the cost of greater administrative effort.",
-            "hint": "Notice the passage mentions both a benefit and a cost of the new selection process.",
-            "explanation": "Plays selected through staged readings received stronger reviews than those selected the old way, though the new process took more staff time, suggesting the improved quality came with a real trade-off in administrative effort.",
+            "correctAnswer": "Factors beyond billed hours, such as mentorship and case leadership, appear more closely linked to faster promotion at this firm.",
+            "hint": "Compare what promoted associates had in common versus what the passage says about the two associates with the most billed hours.",
+            "explanation": "Promotion was linked to mentorship and case leadership rather than billed hours, and the two associates with the most hours were specifically noted as not yet promoted, together pointing away from hours as the key factor.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Promoted associates: strong mentors, led major cases -> two highest-hour associates: not promoted after five years -> factors other than hours appear more closely linked to promotion"
             ]
         },
         {
@@ -255,18 +255,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A team analyzing support tickets for a project management tool found that customers whose first support interaction was resolved by the same representative from start to finish, without being transferred between departments, gave dramatically higher satisfaction ratings than customers who were transferred at least once, even when the total time to resolution was measured to be similar between both groups, according to a review of several thousand tickets closed that quarter.",
+            "passage": "A city compared crime statistics in two similar neighborhoods after one installed additional streetlights and the other started a volunteer neighborhood watch program. Over the following year, the streetlight neighborhood saw a 22 percent drop in nighttime property crime, while the watch-program neighborhood saw an 18 percent drop in the same category. Daytime crime in both neighborhoods stayed about the same.",
             "options": [
-                "Avoiding transfers between representatives seems to matter more to customer satisfaction than how quickly an issue gets resolved.",
-                "Being transferred between departments led to higher satisfaction ratings.",
-                "Resolution time was the only factor that affected customer satisfaction.",
-                "Satisfaction ratings were identical regardless of whether customers were transferred."
+                "Both interventions appear linked to reduced nighttime property crime, with a similar though slightly different effect size.",
+                "Only the streetlights had any effect on crime rates.",
+                "Daytime crime dropped significantly in both neighborhoods. Such a pattern would remain constant throughout the scenario being described.",
+                "The watch program increased nighttime property crime."
             ],
-            "correctAnswer": "Avoiding transfers between representatives seems to matter more to customer satisfaction than how quickly an issue gets resolved.",
-            "hint": "Notice the passage separates satisfaction ratings from resolution time, which stayed similar between groups.",
-            "explanation": "Customers who dealt with a single representative rated their experience much higher than transferred customers, even with similar resolution times, suggesting the continuity of dealing with one person mattered more to satisfaction than speed alone.",
+            "correctAnswer": "Both interventions appear linked to reduced nighttime property crime, with a similar though slightly different effect size.",
+            "hint": "Compare the two neighborhoods' nighttime crime changes to each other and to the daytime crime detail.",
+            "explanation": "Both neighborhoods saw meaningful drops in nighttime property crime specifically, with streetlights showing a slightly larger effect, while daytime crime staying flat in both shows the interventions' impact was concentrated on nighttime crime.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Streetlight neighborhood: -22% nighttime crime -> watch program neighborhood: -18% nighttime crime -> daytime crime unchanged in both -> both interventions appear linked to reduced nighttime crime"
             ]
         },
         {
@@ -274,18 +274,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A professional services firm that had always required partners to personally approve every client invoice before it was sent, regardless of amount, raised that threshold so that only invoices above a certain amount needed partner approval, with smaller invoices approved automatically by the billing system. Average time between completing work and sending an invoice dropped substantially, and no measurable increase in billing errors was reported over the following year.",
+            "passage": "A university dining hall tracked food waste after introducing two separate changes in different semesters: smaller plate sizes in the fall, and a 'take only what you'll eat' sign campaign in the spring. Food waste dropped by 31 percent after the plate-size change and by an additional 12 percent after the sign campaign began, based on weekly waste measurements.",
             "options": [
-                "Billing errors increased noticeably after the approval threshold was raised.",
-                "The time between completing work and sending invoices increased under the new policy.",
-                "The change in approval process had no measurable effect on billing speed.",
-                "Automating approval for smaller invoices appears to have sped up billing without increasing errors."
+                "Only the sign campaign had any effect on food waste.",
+                "Food waste increased after both changes were introduced. This would apply consistently across every detail the passage provides.",
+                "Both the smaller plates and the sign campaign appear to have contributed to reducing food waste, at different points in the year.",
+                "The two changes were introduced in the same semester."
             ],
-            "correctAnswer": "Automating approval for smaller invoices appears to have sped up billing without increasing errors.",
-            "hint": "Notice the passage mentions two separate outcomes: billing speed and error rates.",
-            "explanation": "Invoices went out faster after smaller ones no longer required partner approval, and billing errors didn't measurably increase, suggesting the automation streamlined the process without introducing new mistakes.",
+            "correctAnswer": "Both the smaller plates and the sign campaign appear to have contributed to reducing food waste, at different points in the year.",
+            "hint": "Track the two changes by the semester in which each occurred and match each to its own waste reduction.",
+            "explanation": "Waste dropped significantly after the plate-size change in the fall and dropped further after the sign campaign began in the spring, showing each change contributed at its own point in time rather than one being solely responsible.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Fall: plate sizes reduced -> waste drops 31% -> spring: sign campaign begins -> waste drops an additional 12% -> both changes appear to have contributed at different points"
             ]
         },
         {
@@ -293,18 +293,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A pediatric sleep specialist who counsels parents of toddlers found that families who maintained an identical bedtime routine, in the same order every single night, reported that their toddlers fell asleep faster on average than families whose bedtime routines varied somewhat from night to night, even though both groups reported starting the bedtime process at roughly the same time each evening, based on sleep diaries families kept for the specialist's ongoing research.",
+            "passage": "A regional airline studied flight delays across its fleet. Delays caused by weather stayed constant year over year, since weather patterns hadn't changed. Delays caused by mechanical issues dropped by 35 percent after the airline hired more maintenance staff. Delays caused by late-arriving crew dropped by 20 percent after the airline adjusted crew scheduling software.",
             "options": [
-                "Starting bedtime at the same time each night was the only factor that mattered.",
-                "Families with varied routines reported faster sleep onset.",
-                "The order of a bedtime routine had no bearing on how quickly toddlers fell asleep.",
-                "Consistency in the order of a bedtime routine seems to matter more than simply starting at the same time each night."
+                "Weather-related delays also decreased significantly that year. The full account given in the passage offers no particular basis for reading this any differently than as a plain, straightforward description of events.",
+                "The airline's staffing and scheduling changes appear linked to fewer delays from mechanical and crew-related causes specifically, not weather.",
+                "The new maintenance staff had no effect on mechanical delays. There is nothing in how the passage presents the sequence of events that would call for treating this conclusion as only partly supported.",
+                "Crew scheduling changes increased delays from late crew arrivals. Reading through everything the passage lays out, there is no specific detail that would push against treating this as the straightforward explanation."
             ],
-            "correctAnswer": "Consistency in the order of a bedtime routine seems to matter more than simply starting at the same time each night.",
-            "hint": "Notice what stayed the same between the two groups (start time) and what differed (routine consistency).",
-            "explanation": "Toddlers fell asleep faster in families with an identical nightly routine order, even though both groups started at similar times, suggesting the predictability of the routine's sequence mattered more than the clock time alone.",
+            "correctAnswer": "The airline's staffing and scheduling changes appear linked to fewer delays from mechanical and crew-related causes specifically, not weather.",
+            "hint": "Separate the three delay categories and match each one to whether a change occurred and what happened to that specific category.",
+            "explanation": "Mechanical and crew-related delays dropped specifically after their matching changes were made, while weather-related delays, which had no corresponding change, stayed the same, showing the improvements were tied to specific causes rather than delays overall.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Weather delays: no change made, stay constant -> maintenance staff added -> mechanical delays drop 35% -> scheduling software adjusted -> crew delays drop 20% -> improvements tied to specific matching changes"
             ]
         },
         {
@@ -312,18 +312,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A workplace wellness program that offered employees a financial incentive tied specifically to attending a certain number of gym sessions found that participation dropped sharply within a few months of the incentive being removed, falling to levels similar to employees who had never received any incentive at all during the entire two-year study, suggesting the original increase in gym attendance may not have reflected a lasting change in exercise habits.",
+            "passage": "A city's public health department compared vaccination rates across neighborhoods using three different outreach strategies. Neighborhoods with door-to-door outreach saw vaccination rates rise from 52 to 74 percent. Neighborhoods with only mailed flyers saw rates rise from 52 to 58 percent. Neighborhoods with no outreach saw rates stay at 52 percent.",
             "options": [
-                "Gym attendance remained high even after the incentive was removed.",
-                "Employees who never received an incentive attended the gym most consistently.",
-                "The incentive-driven attendance increase does not appear to have created a lasting exercise habit.",
-                "The incentive had a permanent effect on employees' exercise habits."
+                "Door-to-door outreach appears to have been substantially more effective than mailed flyers at increasing vaccination rates.",
+                "Mailed flyers were more effective than door-to-door outreach. This would remain the case regardless of any other detail in the passage.",
+                "Vaccination rates rose equally in all three groups of neighborhoods. Such a pattern would remain constant throughout the scenario being described.",
+                "Neighborhoods with no outreach saw the largest increase."
             ],
-            "correctAnswer": "The incentive-driven attendance increase does not appear to have created a lasting exercise habit.",
-            "hint": "Notice what happened to attendance after the financial incentive was taken away.",
-            "explanation": "Attendance dropped back to baseline levels once the incentive was removed, suggesting the original increase was tied to the reward itself rather than reflecting a genuine, lasting change in employees' exercise habits.",
+            "correctAnswer": "Door-to-door outreach appears to have been substantially more effective than mailed flyers at increasing vaccination rates.",
+            "hint": "Compare the percentage-point increases across all three groups of neighborhoods.",
+            "explanation": "Door-to-door outreach produced a 22-point increase compared to just 6 points from flyers and no change with no outreach, clearly showing door-to-door was the more effective strategy.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Door-to-door: 52% to 74% (+22 points) -> flyers only: 52% to 58% (+6 points) -> no outreach: stays at 52% -> door-to-door appears substantially more effective"
             ]
         },
         {
@@ -331,18 +331,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "An online furniture retailer that added a feature allowing customers to see how a piece of furniture would look in a room using their phone's camera found that customers who used the feature before purchasing returned items at a lower rate than customers who did not use it, but also found that customers using the feature took, on average, several days longer to complete their purchase after first viewing a product online.",
+            "passage": "A manufacturing company tracked defect rates after making two separate changes: switching to a new supplier for raw materials, and retraining quality-control staff on updated inspection standards. Defect rates in products using the new materials dropped noticeably, while defect rates in products still using the old materials but inspected by the retrained staff dropped only slightly.",
             "options": [
-                "The visualization feature appears to reduce returns while also slowing down the purchase decision.",
-                "The feature reduced both returns and the time to complete a purchase.",
-                "Customers who used the feature returned items more often.",
-                "The feature had no measurable effect on returns or purchase timing."
+                "The staff retraining had a larger effect than the new materials. This would be expected to hold across the entire situation as described.",
+                "The new materials appear to have had a larger effect on reducing defects than the staff retraining alone.",
+                "Neither change had any measurable effect on defect rates.",
+                "Both changes were applied to the exact same batch of products."
             ],
-            "correctAnswer": "The visualization feature appears to reduce returns while also slowing down the purchase decision.",
-            "hint": "Notice the passage describes two separate effects of the feature moving in different directions.",
-            "explanation": "Customers using the visualization feature returned fewer items but took longer to decide, suggesting the feature helped them make more confident choices even though it extended the time before they committed to buying.",
+            "correctAnswer": "The new materials appear to have had a larger effect on reducing defects than the staff retraining alone.",
+            "hint": "Compare the defect rate change for products with new materials to the defect rate change for products with only retrained inspection.",
+            "explanation": "Products with the new materials saw a noticeable defect drop, while products relying only on retrained staff saw just a slight drop, showing the material change had the stronger effect between the two.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "New materials used -> defect rate drops noticeably -> old materials, retrained staff only -> defect rate drops slightly -> new materials appear to have the larger effect"
             ]
         },
         {
@@ -350,18 +350,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A district that piloted a program allowing high school students to retake a failed unit test after completing a short review packet, rather than simply receiving a permanent failing grade, found that students who retook tests under this system passed the overall course at higher rates, but teachers also reported spending considerably more time each week grading the additional retest attempts, according to a survey the district conducted of participating teachers at the end of the pilot year.",
+            "passage": "A city compared bike lane usage on two parallel streets. Elm Street received a protected bike lane separated from car traffic by a physical barrier. Oak Street received only painted lane markings with no barrier. Over the following year, bike traffic on Elm Street tripled, while bike traffic on Oak Street rose by about 15 percent.",
             "options": [
-                "The retest policy improved pass rates without any added workload for teachers.",
-                "The retest policy appears to have improved pass rates at the cost of additional teacher workload.",
-                "Pass rates declined among students who used the retest policy.",
-                "Teacher workload was unaffected by the new retest policy."
+                "The physical barrier on Elm Street appears linked to a much larger increase in bike traffic than painted markings alone.",
+                "Oak Street's bike traffic grew more than Elm Street's.",
+                "Neither street saw any change in bike traffic.",
+                "Both streets received the same type of bike lane."
             ],
-            "correctAnswer": "The retest policy appears to have improved pass rates at the cost of additional teacher workload.",
-            "hint": "Notice the passage mentions both a benefit for students and a cost for teachers.",
-            "explanation": "Pass rates rose under the retest policy, but teachers reported a real increase in grading workload, suggesting the improvement for students came with a genuine added cost for staff.",
+            "correctAnswer": "The physical barrier on Elm Street appears linked to a much larger increase in bike traffic than painted markings alone.",
+            "hint": "Compare the two streets' bike traffic increases and their different lane designs.",
+            "explanation": "Elm Street's tripled bike traffic, following the addition of a protected barrier, far exceeds Oak Street's smaller increase with only painted markings, suggesting the physical separation made a substantially bigger difference.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Elm Street: protected barrier added -> bike traffic triples -> Oak Street: painted markings only -> bike traffic up ~15% -> barrier appears linked to a much larger increase"
             ]
         },
         {
@@ -369,18 +369,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A ski resort that had always included lift ticket costs bundled into all-inclusive vacation packages began offering an unbundled option where guests could purchase lodging separately from lift access. Bookings from experienced skiers, who often already owned season passes elsewhere, increased under the unbundled option, while bookings from beginner-focused travel groups, who valued the simplicity of one combined price, decreased slightly during that first full season, according to the resort's own booking data.",
+            "passage": "A children's clothing company tested two return policies in different regions. Region A offered free returns with no time limit. Region B offered free returns only within 30 days. Sales in Region A grew by 18 percent, while return rates also rose by 12 percent. Sales in Region B grew by 9 percent, with return rates rising by only 3 percent.",
             "options": [
-                "Unbundling prices appealed equally to both experienced and beginner skiers.",
-                "Bookings from beginner groups increased after the unbundled option was introduced.",
-                "Unbundling prices appears to have appealed to experienced skiers while making the resort slightly less attractive to beginners.",
-                "The pricing structure had no bearing on which types of travelers booked."
+                "The 30-day policy led to stronger sales growth than the no-time-limit policy.",
+                "The no-time-limit policy appears linked to both stronger sales growth and a bigger rise in returns compared to the 30-day policy.",
+                "Return rates dropped in both regions after the policies began.",
+                "Sales stayed flat in both regions regardless of the policy."
             ],
-            "correctAnswer": "Unbundling prices appears to have appealed to experienced skiers while making the resort slightly less attractive to beginners.",
-            "hint": "Notice the passage describes opposite trends for two different types of travelers.",
-            "explanation": "Experienced skiers booked more under the unbundled option while beginner groups booked slightly less, suggesting the change appealed to travelers who wanted flexibility but was less convenient for those who valued a simple combined price.",
+            "correctAnswer": "The no-time-limit policy appears linked to both stronger sales growth and a bigger rise in returns compared to the 30-day policy.",
+            "hint": "Compare both the sales growth and the return rate changes between the two regions.",
+            "explanation": "Region A's more generous policy corresponded with both higher sales growth and a larger rise in returns compared to Region B, showing the more flexible policy came with both a bigger benefit and a bigger trade-off.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Region A: no time limit -> sales +18%, returns +12% -> Region B: 30-day limit -> sales +9%, returns +3% -> no-time-limit policy linked to bigger effects in both directions"
             ]
         },
         {
@@ -388,18 +388,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "Researchers studying two colonies of the same bee species, one located near a large area of wildflower meadow and one located near a monoculture crop field with only a single blooming plant species, found that the colony near the diverse meadow produced significantly more honey and showed lower rates of colony collapse over a three-year period, despite both colonies receiving identical care and disease treatment from their respective beekeepers throughout the study.",
+            "passage": "A hospital network compared nurse-to-patient ratios across its units. Units with a ratio of one nurse to four patients reported patient satisfaction scores averaging 4.5 out of 5. Units with a ratio of one nurse to six patients averaged 3.8 out of 5. Units with a ratio of one nurse to eight patients averaged 3.1 out of 5, and these same units also reported the highest nurse turnover.",
             "options": [
-                "The monoculture field colony produced more honey and showed better health.",
-                "Beekeeper care was the main factor explaining the difference between colonies.",
-                "Both colonies showed identical rates of honey production and colony collapse.",
-                "Access to diverse flowering plants appears linked to better bee colony health and honey production."
+                "Higher nurse-to-patient ratios are associated with higher patient satisfaction, according to how the passage describes the situation.",
+                "Lower nurse-to-patient ratios appear associated with higher patient satisfaction and lower nurse turnover.",
+                "Nurse turnover was lowest in the units with the most patients per nurse. The passage gives no indication that this varied across the circumstances described.",
+                "Patient satisfaction stayed the same across all three ratios. This would remain the case regardless of any other detail in the passage."
             ],
-            "correctAnswer": "Access to diverse flowering plants appears linked to better bee colony health and honey production.",
-            "hint": "Compare the two colonies' outcomes, noting that beekeeper care was the same for both.",
-            "explanation": "The colony near diverse wildflowers produced more honey and collapsed less often than the colony near a single crop species, even with identical care, suggesting access to varied flowering plants itself supported better colony health.",
+            "correctAnswer": "Lower nurse-to-patient ratios appear associated with higher patient satisfaction and lower nurse turnover.",
+            "hint": "Track how satisfaction scores and turnover both change as the number of patients per nurse increases.",
+            "explanation": "As the number of patients assigned to each nurse increased, satisfaction scores dropped and turnover rose, together supporting an association between lower patient loads and both better satisfaction and better nurse retention.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "1:4 ratio: satisfaction 4.5, -> 1:6 ratio: satisfaction 3.8 -> 1:8 ratio: satisfaction 3.1, highest turnover -> lower ratios appear associated with higher satisfaction and lower turnover"
             ]
         },
         {
@@ -407,18 +407,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A city that had always required residents to call a general municipal phone line to report potholes, often waiting on hold or being transferred between departments, launched a mobile app allowing residents to photograph and pin the exact location of a pothole. Average repair time from report to fix dropped substantially, and the public works department noted that photographed reports required far less follow-up communication to confirm the exact problem and its precise location.",
+            "passage": "A city's transit authority tested fare-free days on the first Tuesday of each month for a year. Ridership on fare-free Tuesdays was 40 percent higher than on regular Tuesdays. However, ridership on the Mondays and Wednesdays surrounding each fare-free Tuesday was slightly lower than usual, suggesting some riders may have shifted their travel day rather than traveling more overall.",
             "options": [
-                "Repair times increased after the app was introduced.",
-                "The app appears to have sped up repairs by giving public works clearer information upfront.",
-                "The app required more follow-up communication than phone reports did.",
-                "The method of reporting potholes had no bearing on repair times."
+                "The fare-free days caused a pure, unexplained increase in total travel. Nothing in the passage suggests this changed at any point during the period described.",
+                "Ridership on surrounding days also rose significantly.",
+                "Some of the ridership increase on fare-free Tuesdays may reflect riders shifting from nearby days rather than new trips overall.",
+                "The transit authority ended the fare-free program after one month."
             ],
-            "correctAnswer": "The app appears to have sped up repairs by giving public works clearer information upfront.",
-            "hint": "Think about what information a photo and pinned location provide that a phone call might not.",
-            "explanation": "Repair times dropped and follow-up communication decreased after residents began using the app, suggesting that photos and precise locations gave public works clearer information than phone reports had, reducing time spent clarifying the problem.",
+            "correctAnswer": "Some of the ridership increase on fare-free Tuesdays may reflect riders shifting from nearby days rather than new trips overall.",
+            "hint": "Notice both the Tuesday increase and the passage's specific note about surrounding days.",
+            "explanation": "While Tuesday ridership jumped, the passage specifically notes that nearby days dipped slightly, which suggests at least part of the apparent increase reflects riders rescheduling trips rather than a straightforward rise in total travel.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Fare-free Tuesdays: ridership +40% -> surrounding Mon/Wed: ridership slightly lower -> increase may partly reflect shifted trips, not purely new travel"
             ]
         },
         {
@@ -426,18 +426,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A regional theater chain that tested reserved seating at several previously first-come, first-served locations found that reserved-seating theaters saw a slight decline in same-day ticket purchases but a substantial increase in tickets purchased more than three days in advance, resulting in overall attendance that was roughly the same as before the change, though total revenue increased slightly due to a small booking fee charged only on advance tickets.",
+            "passage": "A retailer tested a new checkout layout in 20 stores while leaving 20 similar stores unchanged as a comparison group. Average checkout time in the redesigned stores dropped from 4.2 to 2.8 minutes. In the unchanged comparison stores, checkout time stayed at 4.1 minutes over the same period, ruling out season or staffing as the main explanation.",
             "options": [
-                "Reserved seating significantly increased overall attendance.",
-                "Reserved seating appears to have shifted when tickets were purchased without changing overall attendance much.",
-                "Reserved seating significantly decreased overall attendance.",
-                "Reserved seating had no effect on when tickets were purchased."
+                "Checkout times improved equally in both groups of stores. As far as the passage's description goes, nothing about the surrounding details would suggest this needs to be treated as an incomplete picture.",
+                "The new checkout layout appears responsible for the drop in checkout time, since similar stores without the change saw no improvement.",
+                "Seasonal changes explain the drop in checkout time.",
+                "The comparison stores also received the new checkout layout. There is nothing in how the passage presents the sequence of events that would call for treating this conclusion as only partly supported."
             ],
-            "correctAnswer": "Reserved seating appears to have shifted when tickets were purchased without changing overall attendance much.",
-            "hint": "Notice the passage describes a shift in timing of purchases rather than a change in the total number sold.",
-            "explanation": "Same-day purchases dropped while advance purchases rose, leaving overall attendance about the same, suggesting reserved seating changed the timing of when people bought tickets more than it changed how many people ultimately attended.",
+            "correctAnswer": "The new checkout layout appears responsible for the drop in checkout time, since similar stores without the change saw no improvement.",
+            "hint": "Compare the redesigned stores to the unchanged comparison stores, and note what the passage explicitly rules out.",
+            "explanation": "Only the redesigned stores saw a meaningful drop in checkout time, while similar unchanged stores stayed steady, and the passage explicitly rules out season or staffing, strengthening the case that the layout itself caused the improvement.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Redesigned stores: checkout time 4.2 to 2.8 min -> comparison stores unchanged: stays at 4.1 min -> season/staffing ruled out -> layout change appears responsible for the improvement"
             ]
         },
         {
@@ -445,18 +445,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A credit counseling nonprofit that offers free one-on-one budgeting sessions found that clients who brought a family member or partner to their sessions were more likely to still be following their budget plan one year later than clients who attended sessions alone, even though the actual budgeting advice given during the sessions did not differ in content based on whether a client attended alone or with someone else, according to the nonprofit's own follow-up surveys.",
+            "passage": "A city's fire department analyzed response times after opening a new station in a growing suburb. Response times to that suburb dropped from an average of 9.5 minutes to 5.2 minutes. Meanwhile, response times to the rest of the city, served by existing stations, rose slightly, from 6.1 to 6.6 minutes, possibly because some resources were reallocated to staff the new station.",
             "options": [
-                "Clients who attended alone were more likely to follow their budget a year later.",
-                "Attending budgeting sessions with a family member or partner seems linked to sticking with the plan longer.",
-                "The advice given differed significantly depending on who attended the session.",
-                "Whether a client attended alone or with someone else had no bearing on long-term follow-through."
+                "Response times improved everywhere in the city by the same amount.",
+                "The new station had no effect on response times anywhere.",
+                "The new station improved response times in the suburb, but may have come with a small trade-off elsewhere in the city.",
+                "Response times in the rest of the city dropped along with the suburb's. Such a pattern would remain constant throughout the scenario being described."
             ],
-            "correctAnswer": "Attending budgeting sessions with a family member or partner seems linked to sticking with the plan longer.",
-            "hint": "Notice that the advice itself was the same either way; only the presence of a companion differed.",
-            "explanation": "Clients who brought someone to their budgeting session stuck with their plan longer, even though the advice given was identical either way, suggesting having a companion involved may provide ongoing support that helps the plan stick.",
+            "correctAnswer": "The new station improved response times in the suburb, but may have come with a small trade-off elsewhere in the city.",
+            "hint": "Compare the suburb's improvement to the slight change in the rest of the city, and consider the passage's explanation for that change.",
+            "explanation": "The suburb saw a large improvement in response time, but the rest of the city saw a slight increase, which the passage attributes to possible resource reallocation, together showing the benefit came with a modest trade-off elsewhere.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "New station opens in suburb -> suburb response time: 9.5 to 5.2 min -> rest of city: 6.1 to 6.6 min -> possible resource reallocation -> suburb improved, but with a small trade-off elsewhere"
             ]
         },
         {
@@ -464,18 +464,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A collegiate track program that switched from a single annual time trial to determine race lineups to a rolling average of a runner's best three times over the season found that overall team times improved, and coaches reported that runners seemed less prone to disappointment after a single off day, since one poor performance no longer determined their standing for the rest of the season, according to coaches interviewed at the season's end.",
+            "passage": "A national grocery chain tested reducing plastic bag availability in half its stores by charging ten cents per bag, while the other half continued offering free bags. In the charging stores, reusable bag use rose from 8 to 41 percent of transactions. In the free-bag stores, reusable bag use rose only slightly, from 8 to 11 percent, over the same period, likely reflecting a broader trend toward reusable bags.",
             "options": [
-                "The rolling average system worsened both team performance and runner morale.",
-                "A single time trial remained the most accurate predictor of runner ability.",
-                "The scoring method had no bearing on team performance or runner morale.",
-                "Using a rolling average appears to have improved both team performance and runners' resilience to a single bad day."
+                "Reusable bag use increased at the same rate in both groups of stores. The passage gives no indication that this varied across the circumstances described.",
+                "The free-bag stores saw a larger increase than the charging stores. The passage offers no detail suggesting this changed over the period discussed.",
+                "Charging for bags appears to have driven most of the increase in reusable bag use beyond the broader trend.",
+                "Charging for bags decreased reusable bag use."
             ],
-            "correctAnswer": "Using a rolling average appears to have improved both team performance and runners' resilience to a single bad day.",
-            "hint": "Notice the passage mentions two separate positive outcomes of the new scoring system.",
-            "explanation": "Team times improved and runners seemed less discouraged by single off days under the rolling-average system, suggesting the new method benefited both performance and how runners emotionally handled an occasional bad race.",
+            "correctAnswer": "Charging for bags appears to have driven most of the increase in reusable bag use beyond the broader trend.",
+            "hint": "Compare the two groups' increases, keeping in mind the passage's note about a broader trend affecting both.",
+            "explanation": "The charging stores saw a far larger jump than the free-bag stores, and since even the free-bag stores saw a small rise from a general trend, the much bigger increase in charging stores suggests the fee itself drove most of the additional change.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Charging stores: reusable use 8% to 41% -> free-bag stores: 8% to 11%, reflecting broader trend -> charging appears to have driven the additional increase beyond the general trend"
             ]
         },
         {
@@ -483,18 +483,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A meal-delivery company that tested sending recipe instructions as a short video instead of a printed card found that customers following the video completed meals in less time on average, but customer surveys revealed no significant difference in how customers rated the taste or presentation of the finished dish compared to customers who used the traditional printed instructions, based on a survey sent to several thousand customers after delivery.",
+            "passage": "A university compared final exam scores between two sections of the same course, taught by the same professor using identical materials. One section met in the morning, and the other met in the evening. Average scores were nearly identical between the two sections, though the evening section had a slightly higher rate of students missing at least one class session.",
             "options": [
-                "Video instructions led to noticeably better-tasting finished dishes.",
-                "Customers using video instructions took longer to complete their meals.",
-                "The format of the instructions had no bearing on preparation time.",
-                "Video instructions appear to save preparation time without changing how the finished dish turns out."
+                "The morning section scored significantly higher than the evening section. This pattern would hold steady across the entire situation the passage lays out.",
+                "Class timing does not appear to have made a meaningful difference in exam performance in this comparison.",
+                "The evening section scored significantly higher than the morning section. This would be expected to hold across the entire situation as described.",
+                "The two sections used completely different course materials."
             ],
-            "correctAnswer": "Video instructions appear to save preparation time without changing how the finished dish turns out.",
-            "hint": "Notice the passage separates preparation time from how the finished dish was rated.",
-            "explanation": "Customers using video instructions cooked faster, but the finished dish was rated similarly regardless of instruction format, suggesting the video helped with efficiency without actually changing the quality of the final result.",
+            "correctAnswer": "Class timing does not appear to have made a meaningful difference in exam performance in this comparison.",
+            "hint": "Focus on what the passage says about exam scores specifically, separate from the detail about missed classes.",
+            "explanation": "Since the exam scores were nearly identical despite the timing difference, the passage does not support a meaningful link between class time and performance, even though attendance patterns differed slightly.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Same professor, same materials -> morning vs evening section -> exam scores nearly identical -> evening section: slightly more missed classes -> timing does not appear to meaningfully affect scores"
             ]
         },
         {
@@ -502,18 +502,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A team studying smart doorbell camera usage found that households that placed the camera at a lower height, roughly at eye level for an average adult, correctly identified more delivery packages and visitors in recorded footage than households with cameras mounted higher up near the roofline for a broader view of the property, even though the higher-mounted cameras technically covered a wider overall field of view, according to the team's video analysis.",
+            "passage": "A city compared energy use in homes that received a free smart thermostat to homes that did not. Homes with the thermostat reduced energy use by an average of 12 percent over the year. However, homes that opted into the free thermostat program also tended to be homes where residents had already expressed strong interest in saving energy, based on a pre-program survey.",
             "options": [
-                "Higher-mounted cameras identified more visitors and packages correctly.",
-                "Camera placement at eye level appears more useful for identification than a wider field of view from a higher mount.",
-                "Camera height had no bearing on how accurately footage identified visitors.",
-                "Field of view was the only factor that affected identification accuracy."
+                "The thermostat alone caused the entire 12 percent reduction with certainty. Such a pattern would remain constant throughout the scenario being described.",
+                "Homes without the thermostat reduced energy use by more than those with it. This would be expected to hold across the entire situation as described.",
+                "Every home in the city received the free smart thermostat. The passage offers no detail suggesting this changed over the period discussed.",
+                "Some of the reduction in energy use may reflect the residents' existing interest in saving energy rather than the thermostat alone."
             ],
-            "correctAnswer": "Camera placement at eye level appears more useful for identification than a wider field of view from a higher mount.",
-            "hint": "Notice that a wider field of view did not translate into better identification results.",
-            "explanation": "Eye-level cameras identified visitors and packages more accurately than higher-mounted ones, even though the higher cameras covered more area, suggesting a closer, more direct view mattered more for identification than overall coverage.",
+            "correctAnswer": "Some of the reduction in energy use may reflect the residents' existing interest in saving energy rather than the thermostat alone.",
+            "hint": "Notice the detail about who opted into the program and what that group already had in common before the study.",
+            "explanation": "Because homes with strong pre-existing interest in saving energy were more likely to adopt the thermostat, the passage suggests that motivation itself, not just the device, may account for part of the reduction.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Thermostat homes: energy use -12% -> those homes already showed strong interest in saving energy beforehand -> some of the reduction may reflect prior motivation, not the thermostat alone"
             ]
         },
         {
@@ -521,18 +521,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A city comparing two methods of encouraging residential composting, a bin drop-off subsidy versus free curbside pickup added to existing trash collection, found that curbside pickup resulted in dramatically higher participation, but a follow-up survey found that compost quality, meaning how well residents sorted out non-compostable contamination, was noticeably better among the smaller group of participants using the subsidized bin drop-off system, according to samples the city tested that year.",
+            "passage": "A regional hospital network studied surgical outcomes after adopting a new anesthesia protocol at two of its five hospitals. The two hospitals using the new protocol saw post-surgery complication rates drop from 6.8 to 3.9 percent. The three hospitals that kept the old protocol saw complication rates stay near 6.5 percent, though one of those three hospitals also reported a shortage of experienced anesthesiologists during the same period.",
             "options": [
-                "Curbside pickup resulted in both higher participation and better-sorted compost.",
-                "Curbside pickup drew more participants, while drop-off bins appeared to produce cleaner, better-sorted compost.",
-                "The bin drop-off subsidy resulted in lower participation and worse-sorted compost.",
-                "The method of composting had no bearing on either participation or compost quality."
+                "The staffing shortage caused the drop in complications at the protocol hospitals. Such a pattern would remain constant throughout the scenario being described.",
+                "The new protocol appears linked to fewer complications, though staffing issues at one comparison hospital add some uncertainty to a clean comparison.",
+                "All five hospitals adopted the new anesthesia protocol.",
+                "Complication rates rose at the hospitals using the new protocol."
             ],
-            "correctAnswer": "Curbside pickup drew more participants, while drop-off bins appeared to produce cleaner, better-sorted compost.",
-            "hint": "Notice the passage describes two different methods each doing better on a different measure.",
-            "explanation": "Curbside pickup increased participation, but drop-off bins produced better-sorted compost, suggesting each method had a different strength rather than one method being simply superior to the other in every way.",
+            "correctAnswer": "The new protocol appears linked to fewer complications, though staffing issues at one comparison hospital add some uncertainty to a clean comparison.",
+            "hint": "Compare the two groups' outcomes, but also weigh the detail about staffing at one of the comparison hospitals.",
+            "explanation": "The protocol hospitals showed a clear drop compared to the mostly unchanged comparison group, supporting a link to the protocol, though the staffing shortage at one comparison hospital is a detail that complicates a perfectly clean comparison.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Protocol hospitals: complications 6.8% to 3.9% -> old-protocol hospitals: stay near 6.5% -> one old-protocol hospital also short-staffed -> protocol appears linked to fewer complications, with some added uncertainty"
             ]
         },
         {
@@ -540,18 +540,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A manufacturing company that introduced a suggestion program, where any employee could submit ideas for improving factory processes and receive a small bonus for ideas that were implemented, found that the majority of implemented suggestions came from employees on the factory floor rather than from engineers or managers, a pattern that surprised leadership, who had expected most useful ideas to come from technical staff rather than from workers directly operating the machinery each day.",
+            "passage": "A company compared employee engagement scores after introducing flexible start times at half its offices, chosen because those offices had reported the lowest engagement the year before. A year later, the flexible offices' scores rose from 58 to 71, nearly matching the unchanged offices, which stayed steady at 74.",
             "options": [
-                "Employees directly operating the machinery appear to have generated more practical improvement ideas than leadership expected.",
-                "Most implemented suggestions came from engineers and managers, as leadership had expected.",
-                "The suggestion program produced no useful ideas from any group of employees.",
-                "Leadership correctly predicted which employees would contribute the most useful ideas."
+                "The flexible offices ended up with higher engagement than the unchanged offices. This would apply consistently across every detail the passage provides.",
+                "The flexible offices improved substantially and nearly caught up to the offices that were already performing better.",
+                "Engagement scores dropped in the offices that adopted flexible start times.",
+                "The unchanged offices had lower starting engagement than the flexible offices. The passage offers no detail suggesting this changed over the period discussed."
             ],
-            "correctAnswer": "Employees directly operating the machinery appear to have generated more practical improvement ideas than leadership expected.",
-            "hint": "Compare what leadership expected with what the passage says actually happened.",
-            "explanation": "Most implemented suggestions came from factory floor workers rather than technical staff, contrary to leadership's expectations, suggesting that employees closest to the daily work may notice practical improvements that those higher up the chain overlook.",
+            "correctAnswer": "The flexible offices improved substantially and nearly caught up to the offices that were already performing better.",
+            "hint": "Track the flexible offices' starting and ending scores, and compare their ending score to the unchanged offices.",
+            "explanation": "The flexible offices started lower, at 58, rose to 71, and came close to but did not exceed the unchanged offices' steady 74, showing substantial improvement that nearly closed the original gap.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Flexible offices start lower (58) due to prior low engagement -> after a year: 71 -> unchanged offices: steady at 74 -> flexible offices improved substantially, nearly matching but not exceeding the others"
             ]
         },
         {
@@ -559,18 +559,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "Since switching to a reusable produce bag set instead of using the thin plastic bags provided in the grocery store's produce section, the Nakamura family estimated they have used roughly six hundred fewer plastic bags over the past year, though they also noted that a couple of their more delicate reusable bags have already torn and needed replacing sooner than they originally expected when they first purchased the set.",
+            "passage": "A city compared recycling contamination rates, meaning non-recyclable items mistakenly placed in recycling bins, between neighborhoods that received an illustrated sorting guide mailed to every household and neighborhoods that did not. Contamination dropped from 28 to 14 percent in neighborhoods with the guide. In neighborhoods without the guide, contamination dropped slightly too, from 28 to 24 percent, possibly due to a citywide recycling awareness campaign running at the same time.",
             "options": [
-                "The switch to reusable bags increased the family's overall plastic use.",
-                "The reusable bags have shown no signs of wear over the year.",
-                "Switching to reusable bags appears to have reduced plastic use, though not without some added cost from replacing worn bags.",
-                "The switch to reusable bags had no effect on the family's plastic consumption."
+                "The citywide campaign had no measurable effect on any neighborhood. The passage gives no indication that this varied across the circumstances described.",
+                "Contamination rates were identical in both groups of neighborhoods. Nothing in the passage suggests this changed at any point during the period described.",
+                "Neighborhoods without the guide improved more than those with it.",
+                "The mailed guide appears to have driven most of the improvement beyond what the citywide campaign alone achieved."
             ],
-            "correctAnswer": "Switching to reusable bags appears to have reduced plastic use, though not without some added cost from replacing worn bags.",
-            "hint": "Notice the passage mentions both a clear benefit and a minor drawback of the switch.",
-            "explanation": "The family avoided roughly six hundred plastic bags but also had to replace a few worn reusable bags sooner than expected, suggesting the switch was beneficial overall even though it came with a small, ongoing cost.",
+            "correctAnswer": "The mailed guide appears to have driven most of the improvement beyond what the citywide campaign alone achieved.",
+            "hint": "Compare the two groups' improvements, keeping in mind the passage's note about the citywide campaign affecting both.",
+            "explanation": "Both groups improved somewhat, likely due to the citywide campaign, but the guide neighborhoods improved far more, suggesting the guide provided an additional, specific benefit beyond the general campaign.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Guide neighborhoods: contamination 28% to 14% -> no-guide neighborhoods: 28% to 24%, likely from citywide campaign -> guide appears to have driven most of the additional improvement"
             ]
         }
     ]

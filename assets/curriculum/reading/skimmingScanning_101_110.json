@@ -5,573 +5,573 @@
     "quests": [
         {
             "id": "RDG_SKIMMINGSCANNING_L101_Q1",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Scan the agenda for when the closing panel takes place.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "After relocating to a quieter part of town last spring, Farid noticed his stress levels dropped considerably within just a few weeks. He now credits the change of scenery for helping him sleep through the night.",
-            "targetItem": "scenery",
+            "passage": "Conference Agenda: The event opens with registration at 8, followed by a keynote at 9, a networking break at 10:30, breakout sessions from 11 to 1, lunch at 1, and a closing panel at 3:30. Attendees are asked to select their breakout track during registration.",
+            "targetItem": "3:30",
             "options": [
-                "stress",
-                "sleep",
-                "neighborhood",
-                "scenery"
+                "9",
+                "3:30",
+                "10:30",
+                "1"
             ],
-            "correctAnswer": "scenery",
-            "hint": "Find what Farid credits for helping him sleep.",
-            "explanation": "The passage says he credits the change of scenery, so that is correct.",
-            "timeLimit": 16,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "3:30",
+            "hint": "Search past the earlier agenda items and find the very last time listed.",
+            "explanation": "The closing panel is at 3:30; the other times belong to earlier parts of the agenda.",
+            "timeLimit": 17,
+            "targetInfo": "Closing panel time"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L101_Q2",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Scan the summary for the retirement match percentage.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Remarkably, because enrollment in the evening program had grown steadily for three consecutive years, the community college finally hired two additional instructors to keep class sizes manageable.",
-            "targetItem": "instructors",
+            "passage": "Employee Benefits Summary: Full-time staff receive fifteen paid vacation days, ten sick days, and five personal days annually, plus a 4 percent 401k match after one year of employment. Part-time staff receive a prorated version of vacation and sick time only.",
+            "targetItem": "4 percent",
             "options": [
-                "instructors",
-                "manageable",
-                "enrollment",
-                "tutors"
+                "fifteen",
+                "4 percent",
+                "ten",
+                "five"
             ],
-            "correctAnswer": "instructors",
-            "hint": "Find what the college hired two more of.",
-            "explanation": "The passage says two additional instructors, so that is correct.",
-            "timeLimit": 16,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "4 percent",
+            "hint": "Search for the number tied to the 401k, not the day counts.",
+            "explanation": "The 401k match is 4 percent; fifteen, ten, and five all refer to different types of days off.",
+            "timeLimit": 17,
+            "targetInfo": "401k match percentage"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L101_Q3",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Scan the notice for the store's Sunday hours.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Because client complaints about slow response times had increased sharply, the support team restructured its shift schedule to guarantee coverage around the clock.",
-            "targetItem": "restructured",
+            "passage": "Store Hours Notice: The store is open Monday through Friday from 9 to 8, Saturday from 10 to 6, and Sunday from 11 to 5, with extended hours until 9 during the holiday season.",
+            "targetItem": "11 to 5",
             "options": [
-                "restructured",
-                "coverage",
-                "reorganized",
-                "complaints"
+                "9 to 8",
+                "10 to 6",
+                "11 to 5",
+                "until 9"
             ],
-            "correctAnswer": "restructured",
-            "hint": "Find what the support team did to its shift schedule.",
-            "explanation": "The passage says they restructured it, so that is correct.",
-            "timeLimit": 16,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "11 to 5",
+            "hint": "Search specifically for the hours listed next to Sunday.",
+            "explanation": "Sunday hours are 11 to 5; the other hours belong to weekdays, Saturday, and the holiday season.",
+            "timeLimit": 17,
+            "targetInfo": "Sunday hours"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L102_Q1",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Scan the itinerary for when the flight lands in Denver.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Because the coastal road remains closed for repairs after last winter's landslide, visitors must now take a longer inland route to reach the fishing village.",
-            "targetItem": "landslide",
+            "passage": "Travel Itinerary: The trip begins with a flight to Chicago at 7 a.m., a three-hour layover, a connecting flight to Denver landing at 1:15 p.m., a shuttle to the hotel arriving around 2, and a welcome dinner at 7 p.m.",
+            "targetItem": "1:15 p.m.",
             "options": [
-                "coastal",
-                "inland",
-                "landslide",
-                "flood"
+                "1:15 p.m.",
+                "7 a.m.",
+                "2",
+                "7 p.m."
             ],
-            "correctAnswer": "landslide",
-            "hint": "Find what caused the coastal road to close.",
-            "explanation": "The passage says it was caused by a landslide, so that is correct.",
-            "timeLimit": 16,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "1:15 p.m.",
+            "hint": "Search for the time specifically tied to the Denver landing.",
+            "explanation": "The Denver flight lands at 1:15 p.m.; the other times belong to the Chicago flight, shuttle, and dinner.",
+            "timeLimit": 17,
+            "targetInfo": "Denver landing time"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L102_Q2",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Scan the syllabus for how much the final project is worth.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Crucially, because both grandparents now live within walking distance, the children spend nearly every afternoon after school at their house instead of daycare.",
-            "targetItem": "grandparents",
+            "passage": "Course Syllabus: The class meets twice weekly, includes three exams worth 20 percent each, a final project worth 25 percent, and participation worth 15 percent, with the lowest exam score dropped automatically.",
+            "targetItem": "25 percent",
             "options": [
-                "grandparents",
-                "daycare",
-                "neighbors",
-                "afternoon"
+                "20 percent",
+                "15 percent",
+                "twice weekly",
+                "25 percent"
             ],
-            "correctAnswer": "grandparents",
-            "hint": "Find who now lives within walking distance.",
-            "explanation": "The passage says both grandparents live nearby, so that is correct.",
-            "timeLimit": 16,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "25 percent",
+            "hint": "Search for the percentage tied specifically to the final project.",
+            "explanation": "The final project is worth 25 percent; 20 and 15 percent belong to exams and participation.",
+            "timeLimit": 17,
+            "targetInfo": "Final project weight"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L102_Q3",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Scan the price list for the starting price of move-out cleaning.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Because counterfeit products have become increasingly common online, the retailer now includes a verification code with every purchase of designer accessories.",
-            "targetItem": "verification",
+            "passage": "Price List: Basic cleaning starts at $80, deep cleaning starts at $140, move-out cleaning starts at $180, and add-on services like window washing cost an additional $25 per visit.",
+            "targetItem": "$180",
             "options": [
-                "verification",
-                "authentication",
-                "counterfeit",
-                "designer"
+                "$180",
+                "$80",
+                "$140",
+                "$25"
             ],
-            "correctAnswer": "verification",
-            "hint": "Find what the retailer now includes with every purchase.",
-            "explanation": "The passage says a verification code, so that is correct.",
-            "timeLimit": 16,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "$180",
+            "hint": "Search for the figure tied specifically to move-out cleaning.",
+            "explanation": "Move-out cleaning starts at $180; the other prices belong to basic cleaning, deep cleaning, and add-ons.",
+            "timeLimit": 17,
+            "targetInfo": "Move-out cleaning starting price"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L103_Q1",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Scan the instructions for how long the full course should last.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Because the harvest was smaller than usual this year, local honey has become noticeably more expensive at the farmers market.",
-            "targetItem": "honey",
+            "passage": "Medical Instructions: Take one tablet every eight hours with food, avoid alcohol during treatment, complete the full ten-day course even if symptoms improve, and contact the office if a rash develops.",
+            "targetItem": "ten-day",
             "options": [
-                "produce",
-                "harvest",
-                "honey",
-                "expensive"
+                "eight hours",
+                "one tablet",
+                "ten-day",
+                "rash"
             ],
-            "correctAnswer": "honey",
-            "hint": "Find what has become more expensive.",
-            "explanation": "The passage says local honey is more expensive, so that is correct.",
-            "timeLimit": 16,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "ten-day",
+            "hint": "Search for the number tied to the word course.",
+            "explanation": "The full course lasts ten days; eight hours describes dosing frequency, a separate detail.",
+            "timeLimit": 17,
+            "targetInfo": "Length of the full course"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L103_Q2",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Scan the terms for the length of the loan.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Importantly, because so many customers reported overheating issues, the manufacturer issued a voluntary recall for the affected batch of chargers.",
-            "targetItem": "recall",
+            "passage": "Loan Terms: The loan carries a 6.2 percent interest rate over a five-year term, with a $250 origination fee and no penalty for early repayment after the first twelve months.",
+            "targetItem": "five-year",
             "options": [
-                "refund",
-                "recall",
-                "overheating",
-                "batch"
+                "6.2 percent",
+                "five-year",
+                "$250",
+                "twelve months"
             ],
-            "correctAnswer": "recall",
-            "hint": "Find what the manufacturer issued.",
-            "explanation": "The passage says a voluntary recall, so that is correct.",
-            "timeLimit": 16,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "five-year",
+            "hint": "Search for the number tied to the word term, not the interest rate.",
+            "explanation": "The loan term is five years; 6.2 percent is the interest rate, a separate figure.",
+            "timeLimit": 17,
+            "targetInfo": "Loan term length"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L103_Q3",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Scan the list for the fitness center's hours.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Because untreated hearing loss has been linked to increased isolation among older adults, the clinic now offers free hearing screenings each spring.",
-            "targetItem": "isolation",
+            "passage": "Amenities List: The complex includes a pool open from 8 to 10, a fitness center open 24 hours, a rooftop lounge open until midnight on weekends, and a dog park with no set hours.",
+            "targetItem": "24 hours",
             "options": [
-                "confusion",
-                "untreated",
-                "screenings",
-                "isolation"
+                "8 to 10",
+                "24 hours",
+                "midnight",
+                "no set hours"
             ],
-            "correctAnswer": "isolation",
-            "hint": "Find what untreated hearing loss has been linked to.",
-            "explanation": "The passage says increased isolation, so that is correct.",
-            "timeLimit": 16,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "24 hours",
+            "hint": "Search for the hours listed specifically for the fitness center.",
+            "explanation": "The fitness center is open 24 hours; the other hours belong to the pool and rooftop lounge.",
+            "timeLimit": 17,
+            "targetInfo": "Fitness center hours"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L104_Q1",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Scan the description for the required years of experience.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Because streaming numbers for the pilot episode far exceeded projections, the network committed to a full season almost immediately.",
-            "targetItem": "pilot",
+            "passage": "Job Description Excerpt: The role requires three years of experience in customer service, a valid driver's license, availability for weekend shifts, and comfort using basic spreadsheet software.",
+            "targetItem": "three years",
             "options": [
-                "premiere",
-                "projections",
-                "pilot",
-                "season"
+                "driver's license",
+                "weekend shifts",
+                "spreadsheet software",
+                "three years"
             ],
-            "correctAnswer": "pilot",
-            "hint": "Find which episode had strong streaming numbers.",
-            "explanation": "The passage says the pilot episode exceeded projections, so that is correct.",
-            "timeLimit": 16,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "three years",
+            "hint": "Search for the number tied to the word experience.",
+            "explanation": "Three years of experience is required; the license, shifts, and software are separate requirements.",
+            "timeLimit": 17,
+            "targetInfo": "Required experience"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L104_Q2",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Scan the notes for the oven temperature.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Incidentally, because warmer ocean temperatures have shifted their usual migration timing, researchers say several whale species now arrive along the coast weeks earlier than before.",
-            "targetItem": "migration",
+            "passage": "Recipe Notes: The dough needs to rest for ninety minutes, the oven should be preheated to 425 degrees, bake for twenty-two minutes, and let the bread cool for at least thirty minutes before slicing.",
+            "targetItem": "425 degrees",
             "options": [
-                "breeding",
-                "migration",
-                "temperatures",
-                "researchers"
+                "ninety minutes",
+                "twenty-two minutes",
+                "thirty minutes",
+                "425 degrees"
             ],
-            "correctAnswer": "migration",
-            "hint": "Find what has shifted in timing for the whales.",
-            "explanation": "The passage says their migration timing shifted, so that is correct.",
-            "timeLimit": 16,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "425 degrees",
+            "hint": "Search for the number tied to degrees, not the timing steps.",
+            "explanation": "The oven should be preheated to 425 degrees; the other numbers describe resting, baking, and cooling times.",
+            "timeLimit": 17,
+            "targetInfo": "Oven temperature"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L104_Q3",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Scan the itinerary for the ceremony's start time.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Because emergency response times had grown longer in outlying neighborhoods, the city approved funding for a second fire station on the east side.",
-            "targetItem": "fire",
+            "passage": "Wedding Day Itinerary: Hair and makeup begins at 9, the first look photos are at noon, the ceremony starts at 4, cocktail hour runs from five to six, and dinner begins at seven.",
+            "targetItem": "4",
             "options": [
-                "emergency",
-                "fire",
-                "police",
-                "outlying"
+                "9",
+                "4",
+                "noon",
+                "seven"
             ],
-            "correctAnswer": "fire",
-            "hint": "Find what type of station the city approved funding for.",
-            "explanation": "The passage says a fire station, so that is correct.",
-            "timeLimit": 16,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "4",
+            "hint": "Search for the number tied specifically to the word ceremony.",
+            "explanation": "The ceremony starts at 4; the other times belong to hair and makeup, photos, and dinner.",
+            "timeLimit": 17,
+            "targetInfo": "Ceremony start time"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L105_Q1",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Scan the list for which room hosts the data privacy session.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Because her new apartment building lacked a laundry room, Priya initially dreaded the weekly trip to the laundromat down the street. Over time, she began looking forward to the quiet hour spent reading there.",
-            "targetItem": "laundromat",
+            "passage": "Conference Session List: Room 1 hosts a session on cloud security at 10, Room 2 hosts one on UX design at 10, Room 3 hosts one on data privacy at 11, and Room 4 hosts a panel on hiring at 2.",
+            "targetItem": "Room 3",
             "options": [
-                "reading",
-                "apartment",
-                "laundromat",
-                "laundry"
+                "Room 1",
+                "Room 2",
+                "Room 3",
+                "Room 4"
             ],
-            "correctAnswer": "laundromat",
-            "hint": "Find where Priya makes a weekly trip.",
-            "explanation": "The passage says she goes to the laundromat, so that is correct.",
-            "timeLimit": 16,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "Room 3",
+            "hint": "Search for the room name paired with the words data privacy.",
+            "explanation": "Data privacy is in Room 3; the other rooms host cloud security, UX design, and hiring.",
+            "timeLimit": 17,
+            "targetInfo": "Room hosting the data privacy session"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L105_Q2",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Scan the notice for the one place alcohol is allowed.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Admittedly, after switching from handwritten notes to a structured digital system, Renee found she retained far more information before each exam than she previously had.",
-            "targetItem": "digital",
+            "passage": "Park Rules Notice: Dogs must be leashed at all times, fires are allowed only in designated pits, quiet hours run from 10 p.m. to 7 a.m., and alcohol is prohibited except in the reserved pavilion area.",
+            "targetItem": "reserved pavilion area",
             "options": [
-                "digital",
-                "handwritten",
-                "typed",
-                "retained"
+                "designated pits",
+                "leashed",
+                "10 p.m. to 7 a.m.",
+                "reserved pavilion area"
             ],
-            "correctAnswer": "digital",
-            "hint": "Find what type of system Renee switched to.",
-            "explanation": "The passage says a structured digital system, so that is correct.",
-            "timeLimit": 16,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "reserved pavilion area",
+            "hint": "Search for the exception mentioned right after the word alcohol.",
+            "explanation": "Alcohol is allowed only in the reserved pavilion area; the other rules cover dogs, fires, and quiet hours.",
+            "timeLimit": 17,
+            "targetInfo": "Where alcohol is allowed"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L105_Q3",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Scan the terms for how soon a claim must be filed.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "After a competitor released a similar product at a lower price, the company was forced to reconsider its entire pricing strategy within just a few weeks.",
-            "targetItem": "pricing",
+            "passage": "Warranty Terms: Parts are covered for three years, labor is covered for one year, accidental damage is not covered, and claims must be filed within thirty days of the issue.",
+            "targetItem": "thirty days",
             "options": [
-                "pricing",
-                "strategy",
-                "marketing",
-                "competitor"
+                "thirty days",
+                "three years",
+                "one year",
+                "accidental damage"
             ],
-            "correctAnswer": "pricing",
-            "hint": "Find what strategy the company had to reconsider.",
-            "explanation": "The passage says its pricing strategy, so that is correct.",
-            "timeLimit": 16,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "thirty days",
+            "hint": "Search for the number tied specifically to filing a claim.",
+            "explanation": "Claims must be filed within thirty days; three years and one year describe coverage lengths instead.",
+            "timeLimit": 17,
+            "targetInfo": "Claim filing deadline"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L106_Q1",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Scan the notice for the pool pass renewal deadline.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "After discovering that renting bicycles was far cheaper than taxis, the couple spent the rest of their trip pedaling between the city's scattered historic sites.",
-            "targetItem": "bicycles",
+            "passage": "Condo Association Notice: Trash pickup is Tuesday, recycling is every other Thursday, guest parking is limited to 48 hours, and pool passes must be renewed annually by March 1st.",
+            "targetItem": "March 1st",
             "options": [
-                "bicycles",
-                "historic",
-                "taxis",
-                "scooters"
+                "Tuesday",
+                "Thursday",
+                "March 1st",
+                "48 hours"
             ],
-            "correctAnswer": "bicycles",
-            "hint": "Find what the couple discovered was far cheaper.",
-            "explanation": "The passage says renting bicycles, so that is correct.",
-            "timeLimit": 16,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "March 1st",
+            "hint": "Search for the date tied specifically to pool passes.",
+            "explanation": "Pool passes renew by March 1st; Tuesday and Thursday relate to trash and recycling instead.",
+            "timeLimit": 17,
+            "targetInfo": "Pool pass renewal deadline"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L106_Q2",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Scan the terms for how long international shipping takes.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Revealingly, after a difficult year following the divorce, the two brothers have slowly rebuilt a relationship built mostly on shared weekend hikes.",
-            "targetItem": "hikes",
+            "passage": "Shipping Terms: Domestic orders ship within two business days, international orders take seven to fourteen days, customs fees are the buyer's responsibility, and tracking is provided for all orders over $50.",
+            "targetItem": "seven to fourteen",
             "options": [
-                "dinners",
-                "hikes",
-                "weekend",
-                "divorce"
+                "two business days",
+                "seven to fourteen",
+                "$50",
+                "customs fees"
             ],
-            "correctAnswer": "hikes",
-            "hint": "Find what the brothers' relationship is now built mostly on.",
-            "explanation": "The passage says shared weekend hikes, so that is correct.",
-            "timeLimit": 16,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "seven to fourteen",
+            "hint": "Search for the number range tied specifically to international orders.",
+            "explanation": "International shipping takes seven to fourteen days; two business days applies only to domestic orders.",
+            "timeLimit": 17,
+            "targetInfo": "International shipping time"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L106_Q3",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Scan the schedule for the volunteer check-in window.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "After noticing a pattern of overspending during weekend outings, Tariq began setting a strict cash-only budget for anything beyond groceries.",
-            "targetItem": "cash-only",
+            "passage": "Volunteer Event Schedule: Setup begins at 7, volunteer check-in runs from 8 to 8:30, the event itself runs from 9 to 1, and cleanup wraps up by 2:30.",
+            "targetItem": "8 to 8:30",
             "options": [
-                "groceries",
-                "cash-only",
-                "monthly",
-                "overspending"
+                "7",
+                "9 to 1",
+                "2:30",
+                "8 to 8:30"
             ],
-            "correctAnswer": "cash-only",
-            "hint": "Find the type of budget Tariq began setting.",
-            "explanation": "The passage says a cash-only budget, so that is correct.",
-            "timeLimit": 16,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "8 to 8:30",
+            "hint": "Search for the time range tied specifically to check-in.",
+            "explanation": "Check-in runs from 8 to 8:30; the other times belong to setup, the event, and cleanup.",
+            "timeLimit": 17,
+            "targetInfo": "Volunteer check-in window"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L107_Q1",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Scan the tiers for the price of the Gold membership.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "After experimenting with several fermentation times, the brewery finally settled on a process that gave the beer its distinctive tangy flavor.",
-            "targetItem": "fermentation",
+            "passage": "Membership Tiers: The Bronze tier costs $10 monthly with no perks, Silver costs $20 with priority support, Gold costs $35 with priority support and free shipping, and Platinum costs $60 with all Gold perks plus early access to sales.",
+            "targetItem": "$35",
             "options": [
-                "distinctive",
-                "tangy",
-                "brewing",
-                "fermentation"
+                "$10",
+                "$35",
+                "$20",
+                "$60"
             ],
-            "correctAnswer": "fermentation",
-            "hint": "Find what the brewery experimented with several times of.",
-            "explanation": "The passage says fermentation times, so that is correct.",
+            "correctAnswer": "$35",
+            "hint": "Search for the price tied specifically to the Gold tier.",
+            "explanation": "Gold costs $35; the other prices belong to Bronze, Silver, and Platinum.",
             "timeLimit": 16,
-            "targetInfo": "Specific data to find."
+            "targetInfo": "Gold tier price"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L107_Q2",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Scan the rules for how many free bags Premium Economy passengers get.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Unsurprisingly, after months of testing, developers finally traced the recurring crash to a conflict between two frequently used plugins.",
-            "targetItem": "plugins",
+            "passage": "Flight Baggage Rules: Economy passengers may check one bag free, a second bag costs $45, Premium Economy passengers get two free bags, and Business class passengers get three free bags plus priority handling.",
+            "targetItem": "two",
             "options": [
-                "conflict",
-                "extensions",
-                "developers",
-                "plugins"
+                "two",
+                "one",
+                "$45",
+                "three"
             ],
-            "correctAnswer": "plugins",
-            "hint": "Find what the conflict was between.",
-            "explanation": "The passage says two frequently used plugins, so that is correct.",
+            "correctAnswer": "two",
+            "hint": "Search for the number tied specifically to Premium Economy.",
+            "explanation": "Premium Economy passengers get two free bags; one and three belong to Economy and Business class.",
             "timeLimit": 16,
-            "targetInfo": "Specific data to find."
+            "targetInfo": "Free bags for Premium Economy"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L107_Q3",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Scan the menu for what's served on Friday.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "After months of unexplained fatigue, Renata finally learned through routine bloodwork that her thyroid was quietly underactive.",
-            "targetItem": "thyroid",
+            "passage": "School Lunch Menu: Monday features pasta, Tuesday features tacos, Wednesday features pizza, Thursday features a build-your-own salad bar, and Friday features fish and chips.",
+            "targetItem": "fish and chips",
             "options": [
-                "bloodwork",
-                "thyroid",
-                "fatigue",
-                "pancreas"
+                "fish and chips",
+                "pasta",
+                "tacos",
+                "pizza"
             ],
-            "correctAnswer": "thyroid",
-            "hint": "Find which organ was found to be underactive.",
-            "explanation": "The passage says her thyroid, so that is correct.",
+            "correctAnswer": "fish and chips",
+            "hint": "Search for the item listed specifically next to Friday.",
+            "explanation": "Friday's menu is fish and chips; the other items belong to earlier days of the week.",
             "timeLimit": 16,
-            "targetInfo": "Specific data to find."
+            "targetInfo": "Friday's menu item"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L108_Q1",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Scan the policy for the return window for furniture.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "After years writing under a pseudonym, the author finally revealed her real identity during a small press conference downtown.",
-            "targetItem": "pseudonym",
+            "passage": "Detailed Return Policy: Electronics may be returned within fifteen days unopened, clothing may be returned within thirty days with tags attached, furniture may be returned within seven days with a restocking fee, and final-sale items cannot be returned at all.",
+            "targetItem": "seven days",
             "options": [
-                "pseudonym",
-                "author",
-                "identity",
-                "conference"
+                "seven days",
+                "fifteen days",
+                "thirty days",
+                "restocking fee"
             ],
-            "correctAnswer": "pseudonym",
-            "hint": "Find what the author wrote under for years.",
-            "explanation": "The passage says a pseudonym, so that is correct.",
+            "correctAnswer": "seven days",
+            "hint": "Search for the number tied specifically to furniture.",
+            "explanation": "Furniture can be returned within seven days; fifteen and thirty days apply to electronics and clothing.",
             "timeLimit": 16,
-            "targetInfo": "Specific data to find."
+            "targetInfo": "Furniture return window"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L108_Q2",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Scan the route for the time of the warehouse stop.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Notably, after a controlled burn cleared away dense underbrush, native wildflowers returned to the forest floor within a single growing season.",
-            "targetItem": "underbrush",
+            "passage": "Multi-Stop Delivery Route: The driver's first stop is the downtown office at 9, the second stop is the warehouse at 10:30, the third stop is the retail store at noon, and the final stop is the residential drop-off at 2.",
+            "targetItem": "10:30",
             "options": [
-                "wildflowers",
-                "controlled",
-                "canopy",
-                "underbrush"
+                "9",
+                "noon",
+                "2",
+                "10:30"
             ],
-            "correctAnswer": "underbrush",
-            "hint": "Find what the controlled burn cleared away.",
-            "explanation": "The passage says dense underbrush, so that is correct.",
+            "correctAnswer": "10:30",
+            "hint": "Search for the time tied specifically to the warehouse stop.",
+            "explanation": "The warehouse stop is at 10:30; the other times belong to the office, store, and residential stops.",
             "timeLimit": 16,
-            "targetInfo": "Specific data to find."
+            "targetInfo": "Warehouse stop time"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L108_Q3",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Scan the agreement for the pet fee amount.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "After a series of public meetings, the district finally agreed on a design for the long-delayed pedestrian bridge downtown.",
-            "targetItem": "pedestrian",
+            "passage": "Detailed Rental Agreement: Rent is $1,450 monthly, a $500 security deposit is required, pets are allowed with a $300 non-refundable pet fee, and the lease term is twelve months with a possible six-month renewal.",
+            "targetItem": "$300",
             "options": [
-                "pedestrian",
-                "district",
-                "vehicle",
-                "delayed"
+                "$1,450",
+                "$300",
+                "$500",
+                "twelve months"
             ],
-            "correctAnswer": "pedestrian",
-            "hint": "Find what type of bridge the district agreed on.",
-            "explanation": "The passage says a pedestrian bridge, so that is correct.",
+            "correctAnswer": "$300",
+            "hint": "Search for the figure tied specifically to the word pet.",
+            "explanation": "The pet fee is $300; the other figures cover rent, the deposit, and the lease term.",
             "timeLimit": 16,
-            "targetInfo": "Specific data to find."
+            "targetInfo": "Pet fee amount"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L109_Q1",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Scan the timetable for the time HIIT class meets.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Since adopting a strict no-screens-after-nine rule for her household, Elena has noticed her children fall asleep faster and wake up in noticeably better moods each morning.",
-            "targetItem": "screens",
+            "passage": "Gym Class Timetable: Spin meets Monday and Wednesday at 6, yoga meets Tuesday and Thursday at 7, HIIT meets Monday and Friday at 5:30, and Pilates meets Wednesday only at 8.",
+            "targetItem": "5:30",
             "options": [
-                "devices",
-                "moods",
-                "screens",
-                "household"
+                "6",
+                "7",
+                "5:30",
+                "8"
             ],
-            "correctAnswer": "screens",
-            "hint": "Find what the new household rule is about.",
-            "explanation": "The passage says no screens after nine, so that is correct.",
+            "correctAnswer": "5:30",
+            "hint": "Search for the time tied specifically to HIIT.",
+            "explanation": "HIIT meets at 5:30; the other times belong to Spin, yoga, and Pilates.",
             "timeLimit": 16,
-            "targetInfo": "Specific data to find."
+            "targetInfo": "HIIT class time"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L109_Q2",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Scan the coverage details for the comprehensive deductible.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Interestingly, since the writing center began offering evening appointments specifically for working students, demand has consistently outpaced the number of available time slots.",
-            "targetItem": "demand",
+            "passage": "Detailed Insurance Coverage: Liability coverage is capped at $100,000, collision coverage has a $500 deductible, comprehensive coverage has a $250 deductible, and roadside assistance is included at no extra cost.",
+            "targetItem": "$250",
             "options": [
-                "slots",
-                "evening",
-                "demand",
-                "interest"
+                "$100,000",
+                "$500",
+                "no extra cost",
+                "$250"
             ],
-            "correctAnswer": "demand",
-            "hint": "Find what has consistently outpaced available slots.",
-            "explanation": "The passage says demand has outpaced slots, so that is correct.",
+            "correctAnswer": "$250",
+            "hint": "Search for the deductible tied specifically to comprehensive coverage.",
+            "explanation": "The comprehensive deductible is $250; $100,000 and $500 belong to liability and collision coverage.",
             "timeLimit": 16,
-            "targetInfo": "Specific data to find."
+            "targetInfo": "Comprehensive coverage deductible"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L109_Q3",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Scan the ticketing details for the backstage pass price.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Since the department began tracking overtime hours more closely, managers have noticed a small but steady decline in employee burnout.",
-            "targetItem": "overtime",
+            "passage": "Detailed Event Ticketing: General admission costs $25, VIP costs $75 and includes early entry, backstage passes cost $150 and include a meet-and-greet, and children under six enter free.",
+            "targetItem": "$150",
             "options": [
-                "burnout",
-                "absences",
-                "overtime",
-                "tracking"
+                "$25",
+                "$75",
+                "free",
+                "$150"
             ],
-            "correctAnswer": "overtime",
-            "hint": "Find what the department began tracking more closely.",
-            "explanation": "The passage says overtime hours, so that is correct.",
+            "correctAnswer": "$150",
+            "hint": "Search for the price tied specifically to backstage passes.",
+            "explanation": "Backstage passes cost $150; the other prices apply to general admission, VIP, and children.",
             "timeLimit": 16,
-            "targetInfo": "Specific data to find."
+            "targetInfo": "Backstage pass price"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L110_Q1",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Scan the specifications for the storage capacity.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Since the airport introduced automated passport gates for returning citizens, the average wait time at immigration has dropped by nearly half.",
-            "targetItem": "automated",
+            "passage": "Detailed Product Specifications: The laptop weighs 3.2 pounds, has a 14-inch display, includes 16GB of memory, offers 512GB of storage, and comes with a one-year manufacturer warranty.",
+            "targetItem": "512GB",
             "options": [
-                "automated",
-                "citizens",
-                "manual",
-                "immigration"
+                "3.2 pounds",
+                "512GB",
+                "14-inch",
+                "16GB"
             ],
-            "correctAnswer": "automated",
-            "hint": "Find the word describing the new passport gates.",
-            "explanation": "The passage describes them as automated, so that is correct.",
+            "correctAnswer": "512GB",
+            "hint": "Search for the figure tied specifically to storage, not memory.",
+            "explanation": "Storage capacity is 512GB; 16GB refers to memory, a different specification.",
             "timeLimit": 16,
-            "targetInfo": "Specific data to find."
+            "targetInfo": "Storage capacity"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L110_Q2",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Scan the schedule for how many cashiers work the afternoon shift.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Tellingly, since her youngest child started kindergarten, Bianca has finally found time to return to painting, a hobby she had abandoned for nearly a decade.",
-            "targetItem": "painting",
+            "passage": "Detailed Staffing Schedule: The morning shift needs three cashiers and one manager, the afternoon shift needs four cashiers and one manager, and the evening shift needs two cashiers and one manager.",
+            "targetItem": "four",
             "options": [
-                "hobby",
-                "painting",
-                "writing",
-                "kindergarten"
+                "four",
+                "three",
+                "two",
+                "one"
             ],
-            "correctAnswer": "painting",
-            "hint": "Find what hobby Bianca returned to.",
-            "explanation": "The passage says painting, so that is correct.",
+            "correctAnswer": "four",
+            "hint": "Search for the cashier count tied specifically to the afternoon shift.",
+            "explanation": "The afternoon shift needs four cashiers; three and two belong to the morning and evening shifts.",
             "timeLimit": 16,
-            "targetInfo": "Specific data to find."
+            "targetInfo": "Afternoon shift cashier count"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L110_Q3",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Scan the policy for the window that qualifies for a full refund.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Since the store introduced self-checkout kiosks, average wait times during peak hours have dropped considerably, according to recent customer surveys.",
-            "targetItem": "kiosks",
+            "passage": "Detailed Membership Cancellation Policy: Members may cancel anytime online, cancellations take effect at the end of the current cycle, refunds are not issued for partial months, and members who cancel within the first seven days receive a full refund.",
+            "targetItem": "seven days",
             "options": [
-                "peak",
-                "counters",
-                "surveys",
-                "kiosks"
+                "anytime",
+                "current cycle",
+                "seven days",
+                "partial months"
             ],
-            "correctAnswer": "kiosks",
-            "hint": "Find what the store introduced for self-checkout.",
-            "explanation": "The passage says self-checkout kiosks, so that is correct.",
+            "correctAnswer": "seven days",
+            "hint": "Search for the number tied specifically to a full refund.",
+            "explanation": "Canceling within seven days earns a full refund; the other phrases describe general cancellation rules.",
             "timeLimit": 16,
-            "targetInfo": "Specific data to find."
+            "targetInfo": "Full refund window"
         }
     ]
 }

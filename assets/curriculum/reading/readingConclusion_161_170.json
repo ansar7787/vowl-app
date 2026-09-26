@@ -8,18 +8,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A team of climate researchers modeling the potential effects of large-scale ocean fertilization, deliberately adding iron to nutrient-poor ocean regions to stimulate phytoplankton growth and, in theory, increase the ocean's absorption of atmospheric carbon dioxide, found that small-scale field trials did produce measurable short-term increases in phytoplankton biomass and modest carbon drawdown; however, the researchers cautioned that scaling the technique to a level capable of meaningfully affecting global atmospheric carbon levels would require fertilizing ocean areas so vast that the resulting ecological disruption to marine food webs, an effect barely detectable at small-trial scale, could plausibly outweigh the climate benefit the technique is intended to provide, a concern that has so far kept the approach confined to small experimental trials rather than any form of deployment at meaningful scale.",
+            "passage": "When the Ferreira family opened their small hardware store in 1998, the neighborhood was mostly industrial, with few residential buildings nearby. For years, their main customers were contractors buying supplies in bulk for commercial jobs.\n\nOver the past decade, the area has changed considerably. Several old warehouses were converted into apartment buildings, and new residents began moving in. The Ferreiras noticed more individual customers coming in for small home-repair items rather than bulk contractor orders.\n\nLast year, the store reorganized its floor plan, adding a section specifically for household tools and small-batch paint mixing, while reducing shelf space previously dedicated to bulk contractor materials.",
             "options": [
-                "The researchers concluded the technique poses no ecological risk at any scale.",
-                "Although small trials show a real carbon benefit, scaling ocean fertilization up to a climate-relevant level could plausibly cause ecological harm that outweighs that benefit.",
-                "Small-scale trials showed no measurable increase in phytoplankton growth or carbon drawdown.",
-                "The technique has already been deployed at a scale large enough to meaningfully affect global carbon levels."
+                "The neighborhood has remained entirely industrial with no residential growth, according to the account given.",
+                "The store's changes reflect an effort to adapt to a shifting customer base in the neighborhood.",
+                "The store has stopped selling any household tools or paint.",
+                "Contractor customers now make up a larger share of the store's business than before, according to the specific details given."
             ],
-            "correctAnswer": "Although small trials show a real carbon benefit, scaling ocean fertilization up to a climate-relevant level could plausibly cause ecological harm that outweighs that benefit.",
-            "hint": "Notice the contrast the passage draws between what small trials showed and what researchers worry could happen at a much larger scale.",
-            "explanation": "Small trials showed a real, if modest, carbon benefit, but researchers explicitly caution that scaling up enough to matter globally could disrupt marine ecosystems in ways that might outweigh that benefit, which is why the passage says the concern has kept the technique confined to small trials rather than actual deployment.",
+            "correctAnswer": "The store's changes reflect an effort to adapt to a shifting customer base in the neighborhood.",
+            "hint": "Trace the neighborhood's transformation from industrial to residential, and connect it to the store's floor plan changes.",
+            "explanation": "The passage traces a clear arc: an industrial neighborhood shifting to residential, customers shifting from bulk contractors to individual homeowners, and the store's floor plan changing to match, all pointing to a deliberate adaptation to the changing customer base.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "1998: industrial neighborhood, mostly contractor customers -> decade of residential conversion -> individual customers increase -> store reorganizes for household items, reduces bulk space -> changes reflect adapting to the shifting customer base"
             ]
         },
         {
@@ -27,18 +27,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "An organizational researcher studying the long-term effects of open-plan office layouts on collaboration, a design originally promoted on the premise that removing physical walls would naturally increase spontaneous face-to-face interaction between employees, found that after companies transitioned from private offices to open layouts, face-to-face interaction actually declined measurably, while electronic communication, instant messages and emails, increased correspondingly, a counterintuitive result the researcher attributed to employees instinctively seeking a substitute for the personal privacy the walls had previously provided; however, the researcher noted this withdrawal into digital communication appeared most pronounced among employees in roles involving sensitive or confidential conversations, with employees in less privacy-sensitive roles showing a comparatively smaller shift toward electronic communication after the same layout change.",
+            "passage": "A regional airline began the year with an on-time departure rate of 71 percent, below the industry average of 80 percent. Executives attributed part of the problem to an aging fleet requiring frequent unscheduled maintenance.\n\nIn the spring, the airline retired its oldest five aircraft and introduced three new planes, while also renegotiating its gate-sharing agreement at its busiest hub airport to reduce gate conflicts with other airlines.\n\nBy the end of the year, the airline's on-time departure rate had risen to 84 percent, now above the industry average, and maintenance-related delays had dropped by more than half compared to the start of the year.",
             "options": [
-                "Open-plan layouts appear to have reduced face-to-face interaction overall, but this shift toward digital communication was strongest specifically among employees whose work involved sensitive conversations.",
-                "Face-to-face interaction increased after companies adopted open-plan layouts, as originally intended.",
-                "The shift toward electronic communication was equally strong across every type of role studied.",
-                "Employees in privacy-sensitive roles showed the smallest shift toward electronic communication."
+                "The airline's on-time rate fell further behind the industry average by year's end.",
+                "The gate-sharing agreement was the airline's only change made during the year.",
+                "Maintenance-related delays increased significantly over the course of the year.",
+                "Both the fleet changes and the gate agreement likely contributed to the airline's improved on-time performance."
             ],
-            "correctAnswer": "Open-plan layouts appear to have reduced face-to-face interaction overall, but this shift toward digital communication was strongest specifically among employees whose work involved sensitive conversations.",
-            "hint": "Notice which specific group of employees showed the most pronounced shift toward digital communication, according to the passage.",
-            "explanation": "Open layouts reduced face-to-face interaction and increased digital communication overall, contrary to their original premise, but this shift was strongest among employees needing privacy for sensitive conversations, suggesting the loss of physical privacy, not simply the open layout itself, drove much of the change for that specific group.",
+            "correctAnswer": "Both the fleet changes and the gate agreement likely contributed to the airline's improved on-time performance.",
+            "hint": "Trace both changes made during the spring and connect them to the specific improvements described by year's end.",
+            "explanation": "The passage describes two separate changes, retiring old aircraft and renegotiating gate access, both plausibly linked to the described improvements: fewer maintenance delays tied to the newer fleet, and better overall performance possibly aided by reduced gate conflicts.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Start of year: 71% on-time, aging fleet cited as a factor -> spring: old planes retired, new planes added, gate agreement renegotiated -> year end: 84% on-time, maintenance delays down over half -> both changes appear to have contributed to the improvement"
             ]
         },
         {
@@ -46,18 +46,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A museum studies researcher analyzing visitor engagement with restituted artifacts, cultural objects returned to their country or community of origin after having been displayed elsewhere for decades, found that museums which retained a smaller number of restituted pieces on loan, displayed alongside detailed contextual information about the restitution process itself, actually saw increased overall visitor engagement with that gallery section compared to before the restitution occurred; however, the researcher was careful to note this finding should not be read as an argument against restitution generally, since the increased engagement appeared driven specifically by visitors' interest in the restitution process and its underlying ethical questions, an interest that would presumably not persist as a permanent draw once restitution becomes a more routine, less novel practice across the museum field.",
+            "passage": "A small nonprofit theater had struggled for several seasons with declining ticket sales, dropping from an average of 65 percent capacity five years ago to just 38 percent capacity last season. The theater's board debated closing entirely.\n\nInstead, the board decided to shift programming toward more contemporary, locally written plays instead of classic revivals, and lowered ticket prices for the first preview performance of each production to build word-of-mouth interest.\n\nThis season, average capacity rose to 58 percent, with the strongest attendance for the two contemporary plays featuring local playwrights, while a classic revival included in the season's lineup drew only 41 percent capacity.",
             "options": [
-                "The researcher argued this finding is clear evidence against pursuing restitution generally.",
-                "The engagement increase appears tied to visitor interest in the novelty of the restitution process itself, not evidence that restitution generally boosts engagement, since that interest likely wouldn't persist once restitution becomes routine.",
-                "Visitor engagement decreased in galleries displaying context about the restitution process.",
-                "The researcher predicted this level of engagement would persist indefinitely as restitution becomes commonplace."
+                "The shift toward contemporary, locally written plays appears more closely linked to the attendance recovery than the classic revival.",
+                "The classic revival drew the highest attendance of the season.",
+                "Ticket sales continued declining even after the board made changes.",
+                "The theater closed permanently due to the ongoing decline in sales."
             ],
-            "correctAnswer": "The engagement increase appears tied to visitor interest in the novelty of the restitution process itself, not evidence that restitution generally boosts engagement, since that interest likely wouldn't persist once restitution becomes routine.",
-            "hint": "Notice the researcher's own caution about how this specific finding should, and should not, be interpreted.",
-            "explanation": "Engagement rose where restitution context was displayed, but the researcher explicitly cautions this reflects current interest in the novelty of restitution itself, not a general argument for restitution's engagement benefits, since that curiosity would likely fade as the practice becomes more routine and less novel across museums.",
+            "correctAnswer": "The shift toward contemporary, locally written plays appears more closely linked to the attendance recovery than the classic revival.",
+            "hint": "Compare the attendance for the contemporary plays specifically against the classic revival within this season's results.",
+            "explanation": "Within this season's overall recovery, the contemporary local plays drew notably higher attendance (implied above the 58 percent season average) than the classic revival's 41 percent, suggesting the programming shift specifically toward contemporary work is more closely tied to the improvement.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "5 years ago: 65% capacity -> last season: 38% capacity -> board shifts toward contemporary local plays, lowers preview prices -> this season: 58% average capacity, contemporary plays draw strongest, classic revival only 41% -> contemporary shift appears more closely linked to the recovery"
             ]
         },
         {
@@ -65,18 +65,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A digital accessibility researcher evaluating automatic captioning systems for live video content found that accuracy rates for standard American English speech had reached a level considered acceptable for most everyday use, exceeding ninety-five percent word accuracy in controlled testing; however, accuracy dropped substantially, often below seventy percent, for speech in regional dialects, non-native speaker accents, or speech containing significant background noise or crosstalk between multiple speakers, conditions common in exactly the kind of unscripted, real-world settings, town halls, classrooms, and community meetings, where reliable captioning arguably matters most for ensuring equal access for deaf and hard-of-hearing participants, meaning the systems' impressive controlled-testing accuracy may substantially overstate their practical reliability in many of the real situations where they are actually deployed.",
+            "passage": "A mid-size hospital's nursing staff turnover rate had climbed steadily for three years, reaching 28 percent annually, well above the national average of 17 percent. Exit interviews consistently cited scheduling unpredictability and limited input into shift assignments as top concerns.\n\nIn response, hospital administration introduced a self-scheduling system that let nurses select preferred shifts within certain constraints, and created a nurse advisory council that met monthly with leadership to discuss workplace concerns.\n\nOne year later, turnover had dropped to 19 percent, and a follow-up survey found that 74 percent of nursing staff reported feeling their input was now valued, compared to 31 percent in the survey conducted before the changes.",
             "options": [
-                "Accuracy remained consistently high across dialects, accents, and noisy real-world conditions.",
-                "Controlled-testing accuracy rates understated how well the systems perform in real-world settings.",
-                "Background noise and multiple speakers had no measurable effect on captioning accuracy.",
-                "The captioning systems' high controlled-testing accuracy may overstate their real-world reliability, since accuracy drops sharply in exactly the unscripted, noisy conditions where captioning matters most."
+                "Turnover continued rising even after the changes were introduced. This reading would hold true across the full sequence of events described.",
+                "The scheduling and advisory council changes appear closely linked to both lower turnover and improved feelings of being valued.",
+                "The survey found no change in how valued nursing staff felt.",
+                "Scheduling unpredictability was never identified as a concern by staff. The passage offers no detail suggesting this changed over the period discussed."
             ],
-            "correctAnswer": "The captioning systems' high controlled-testing accuracy may overstate their real-world reliability, since accuracy drops sharply in exactly the unscripted, noisy conditions where captioning matters most.",
-            "hint": "Compare the accuracy rates in controlled testing with the accuracy rates in the real-world conditions the passage describes.",
-            "explanation": "Accuracy was strong in controlled tests but dropped sharply in real-world conditions like dialects, accents, and background noise, precisely the settings where reliable captioning matters most, suggesting the impressive lab numbers may not reflect how reliable these systems actually are where they're most needed.",
+            "correctAnswer": "The scheduling and advisory council changes appear closely linked to both lower turnover and improved feelings of being valued.",
+            "hint": "Connect the specific concerns raised in exit interviews to the specific changes made, and then to the specific improvements measured afterward.",
+            "explanation": "The changes directly targeted the concerns raised in exit interviews (scheduling input), and both turnover and the specific survey measure about feeling valued improved substantially afterward, supporting a close link between the changes and the improvements.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Turnover at 28%, exit interviews cite scheduling and lack of input -> self-scheduling system and advisory council introduced -> one year later: turnover 19%, feeling valued rises from 31% to 74% -> changes appear closely linked to both improvements"
             ]
         },
         {
@@ -84,18 +84,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A health policy researcher evaluating a hospital price transparency regulation requiring hospitals to publicly post standard prices for common procedures found that compliance with the letter of the regulation was widespread, with the overwhelming majority of hospitals posting the required price lists; however, a closer review found that the posted prices were frequently presented in formats, dense spreadsheet files with thousands of undifferentiated line items and minimal plain-language explanation, that made the information functionally inaccessible to the ordinary patients the regulation was ostensibly designed to help, leading the researcher to distinguish sharply between formal regulatory compliance and the regulation's actual, practical effectiveness at achieving its stated goal of empowering patients to comparison-shop for care.",
+            "passage": "A city's downtown business district had seen foot traffic decline for several years as more residents shopped online. Local business owners reported that weekday afternoons were especially quiet, with many storefronts nearly empty between 2 and 5 p.m.\n\nThe district's business association organized a series of free weekday afternoon events, including live music, food trucks, and a rotating pop-up market featuring local artisans, funded through a small assessment on member businesses.\n\nSix months into the initiative, weekday afternoon foot traffic counters showed a 40 percent increase compared to the same period the previous year, though weekend foot traffic, which had remained relatively strong throughout, showed no significant change.",
             "options": [
-                "Widespread formal compliance with the price transparency rule does not appear to translate into the regulation's stated goal of practically empowering ordinary patients to compare prices.",
-                "The posted prices were consistently presented in a clear, accessible format for ordinary patients.",
-                "Most hospitals failed to comply with the letter of the price transparency regulation.",
-                "The researcher found no meaningful difference between formal compliance and practical effectiveness."
+                "Weekend foot traffic increased more than weekday foot traffic after the events began.",
+                "Foot traffic declined across the entire week after the events were introduced.",
+                "The events were funded entirely by the city government rather than local businesses.",
+                "The afternoon events appear specifically linked to increased foot traffic during the previously quiet weekday hours."
             ],
-            "correctAnswer": "Widespread formal compliance with the price transparency rule does not appear to translate into the regulation's stated goal of practically empowering ordinary patients to compare prices.",
-            "hint": "Notice the distinction the researcher draws between formal compliance and the regulation's actual practical effectiveness.",
-            "explanation": "Hospitals widely complied by posting prices, but the dense, technical format made the information practically useless to ordinary patients, leading the researcher to distinguish formal compliance from genuine effectiveness, since the regulation's real goal of helping patients comparison-shop wasn't actually being achieved despite technical compliance.",
+            "correctAnswer": "The afternoon events appear specifically linked to increased foot traffic during the previously quiet weekday hours.",
+            "hint": "Compare the specific timing of the events to the specific time period where foot traffic increased, and note what happened to weekend traffic.",
+            "explanation": "The events were specifically scheduled during the previously quiet weekday afternoons, and foot traffic increased specifically during that period, while weekend traffic, unaffected by the new events, stayed the same, supporting a targeted link between the events and the afternoon increase.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Weekday afternoons (2-5pm) identified as quiet -> free weekday afternoon events introduced -> six months later: weekday afternoon traffic up 40% -> weekend traffic (already strong) unchanged -> events appear specifically linked to the weekday afternoon increase"
             ]
         },
         {
@@ -103,18 +103,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A behavioral economist studying employee response to employer-matched retirement contributions found that raising the employer match rate from fifty cents to one dollar per employee dollar contributed produced only a modest increase in employee contribution rates, far smaller than a simple cost-benefit calculation would predict given how much more generous the higher match was; however, employees' contribution rates responded far more dramatically to changes in the plan's default contribution percentage, the rate employees were automatically enrolled at unless they actively chose otherwise, suggesting that inertia and the power of a well-chosen default may influence retirement savings behavior considerably more than the actual financial generosity of an employer's matching incentive.",
+            "passage": "A university's introductory statistics course had a historical failure rate of 24 percent, the highest of any required course in the math department. Faculty noted that the course was traditionally taught through large lectures with a single midterm and final exam determining most of the grade.\n\nA new instructor redesigned the course to include weekly low-stakes quizzes, optional review sessions, and a mix of smaller assignments contributing to the final grade alongside the exams. The redesign was piloted in two of the six course sections, while the other four sections continued with the traditional format taught by other instructors.\n\nAt the end of the semester, the failure rate in the redesigned sections was 9 percent, compared to 23 percent in the sections still using the traditional format.",
             "options": [
-                "Default contribution rates appear to influence employee savings behavior far more powerfully than the financial generosity of the employer match itself.",
-                "The higher employer match produced a dramatic increase in contribution rates, as a cost-benefit calculation would predict.",
-                "Default contribution percentages had little measurable effect on employee behavior.",
-                "Match rate and default percentage produced identical effects on contribution rates."
+                "The course redesign appears specifically linked to a lower failure rate, since sections without the redesign performed similarly to the historical average.",
+                "All six sections of the course used the identical redesigned format. The full account given in the passage offers no particular basis for reading this any differently than as a plain, straightforward description of events.",
+                "The traditional sections had a lower failure rate than the redesigned sections. The passage's own account of what happened offers no particular reason to think this reading needs to be limited or qualified in any specific way.",
+                "The historical failure rate was lower than the failure rate in either type of section this semester. Nothing in the passage suggests this changed at any point during the period described."
             ],
-            "correctAnswer": "Default contribution rates appear to influence employee savings behavior far more powerfully than the financial generosity of the employer match itself.",
-            "hint": "Compare how employees responded to a more generous match versus how they responded to a change in the default contribution rate.",
-            "explanation": "A much more generous match produced only a modest response, while changing the default contribution rate produced a far bigger one, suggesting that inertia around a preset default matters more to retirement savings behavior than the actual financial value of the employer's matching incentive.",
+            "correctAnswer": "The course redesign appears specifically linked to a lower failure rate, since sections without the redesign performed similarly to the historical average.",
+            "hint": "Compare the redesigned sections' failure rate to both the historical average and the traditional sections taught this same semester.",
+            "explanation": "The redesigned sections' 9 percent failure rate stands far below both the historical 24 percent average and the 23 percent rate in this semester's traditional sections, which closely matches history, supporting the redesign itself, not some other semester-wide factor, as the likely explanation.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Historical failure rate: 24% -> two sections redesigned, four remain traditional -> redesigned sections: 9% failure -> traditional sections this semester: 23%, close to historical average -> redesign appears specifically linked to the improvement"
             ]
         },
         {
@@ -122,18 +122,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A researcher evaluating the effectiveness of same-day academic feedback, where students receive detailed comments on an assignment within twenty-four hours rather than the more typical week or more, found substantial improvement in subsequent assignment quality among students receiving the faster feedback, a result that held consistently across multiple subjects and grade levels tested; however, the researcher noted this benefit came at a significant, often underappreciated cost in teacher labor, since providing genuinely detailed, individualized feedback within twenty-four hours for an entire class load proved sustainable in the study's controlled setting only because participating teachers had substantially reduced class sizes and additional grading support not typically available under standard staffing and workload conditions in most schools.",
+            "passage": "A regional grocery chain had struggled for years with high rates of food waste, particularly in its produce sections, where an estimated 18 percent of stocked produce was discarded weekly due to spoilage before sale.\n\nThe chain piloted a dynamic pricing program in ten stores, using digital price tags that automatically reduced prices on produce nearing its estimated spoilage date, based on an algorithm factoring in purchase history and typical shelf life for each item.\n\nAfter four months, the pilot stores reported produce waste had dropped to 7 percent weekly, while a comparison group of ten similar stores without the program continued to report waste rates close to 17 percent. Customer surveys in pilot stores also showed increased satisfaction with produce pricing and freshness.",
             "options": [
-                "The researcher found same-day feedback was easily sustainable under standard school staffing conditions.",
-                "Same-day feedback showed no measurable benefit for subsequent assignment quality.",
-                "The benefit of same-day feedback was limited to only a single subject or grade level.",
-                "Same-day feedback appears genuinely effective, but the researcher cautions its feasibility in the study relied on reduced class sizes and extra support not typically available in most schools."
+                "Produce waste increased in the pilot stores after the program began.",
+                "The comparison stores also used the dynamic pricing program.",
+                "Customer satisfaction decreased in the pilot stores during the trial.",
+                "The dynamic pricing program appears closely linked to reduced produce waste, based on the comparison with similar stores that lacked the program."
             ],
-            "correctAnswer": "Same-day feedback appears genuinely effective, but the researcher cautions its feasibility in the study relied on reduced class sizes and extra support not typically available in most schools.",
-            "hint": "Notice the researcher's caution about what made the fast feedback sustainable within the study itself.",
-            "explanation": "Fast feedback clearly improved subsequent work across subjects and grades, but the researcher cautions this was achievable in the study only because teachers had reduced class sizes and extra support, conditions not typical in most schools, meaning the finding's real-world feasibility remains an open, separate question.",
+            "correctAnswer": "The dynamic pricing program appears closely linked to reduced produce waste, based on the comparison with similar stores that lacked the program.",
+            "hint": "Compare the pilot stores' waste reduction to the comparison stores that continued without the program.",
+            "explanation": "Pilot stores saw waste drop from an estimated 18 percent to 7 percent, while similar comparison stores without the program stayed near 17 percent, closely matching the original baseline, strongly supporting the pricing program as the reason for the improvement.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Baseline: 18% weekly produce waste -> dynamic pricing piloted in 10 stores -> after 4 months: pilot stores at 7% waste, comparison stores at ~17% -> program appears closely linked to the reduced waste"
             ]
         },
         {
@@ -141,18 +141,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "An environmental researcher studying corporate carbon offset purchases found that a substantial share of offsets purchased by major companies came from forest conservation projects claiming to prevent deforestation that would have otherwise occurred; however, a detailed audit comparing satellite imagery of offset project areas against similar, unprotected control areas found that a significant portion of these projects were located in regions facing minimal actual deforestation risk to begin with, meaning the offsets were, in effect, being sold for forest protection that would likely have happened anyway even without the offset payment, raising serious doubts about how much genuine additional carbon benefit these particular offset purchases actually provided beyond what companies were being credited for.",
+            "passage": "A city's public school district had long struggled with chronic absenteeism, particularly among high school students, with district-wide rates around 19 percent. A task force identified transportation gaps as a leading factor, noting that students in certain neighborhoods faced bus routes with long wait times or unreliable schedules.\n\nThe district redesigned bus routes serving the three most affected high schools, adding more direct routes and reducing average wait times from 35 minutes to 12 minutes. Meanwhile, the district's other five high schools, whose bus routes were not part of the redesign, continued operating on their existing schedules.\n\nAfter one school year, chronic absenteeism at the three redesigned-route schools dropped to 11 percent, while the rate at the five unchanged schools remained close to 18 percent.",
             "options": [
-                "The audit confirmed nearly all offset projects prevented deforestation that would have otherwise occurred.",
-                "Satellite imagery showed the offset project areas faced high deforestation risk without protection.",
-                "A significant share of these forest-conservation offsets may have provided little genuine additional carbon benefit, since the protected areas often faced minimal deforestation risk to begin with.",
-                "The audit found no way to compare offset areas against unprotected control areas."
+                "Absenteeism increased at the schools with redesigned bus routes. This pattern would hold steady across the entire situation the passage lays out.",
+                "All eight high schools received the same redesigned bus routes.",
+                "Wait times increased after the routes were redesigned.",
+                "The bus route redesign appears specifically linked to reduced absenteeism at the schools where it was implemented."
             ],
-            "correctAnswer": "A significant share of these forest-conservation offsets may have provided little genuine additional carbon benefit, since the protected areas often faced minimal deforestation risk to begin with.",
-            "hint": "Notice what the satellite comparison revealed about the actual deforestation risk in many offset project areas.",
-            "explanation": "Many offset projects were located in areas with minimal actual deforestation risk, meaning the forest protection being credited would likely have happened regardless of the offset payment, raising doubts about how much genuine additional carbon benefit, beyond what was already going to occur, these particular offsets truly provided.",
+            "correctAnswer": "The bus route redesign appears specifically linked to reduced absenteeism at the schools where it was implemented.",
+            "hint": "Compare the outcome at the three redesigned-route schools to the five schools that kept their existing routes.",
+            "explanation": "Only the three schools with redesigned routes saw absenteeism drop significantly, from a district-wide baseline near 19 percent down to 11 percent, while the five unchanged schools stayed close to the original rate, supporting a specific link to the route redesign.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "District-wide absenteeism: 19%, transportation gaps identified as a factor -> 3 schools get redesigned routes, wait times drop 35 to 12 min -> after one year: those 3 schools at 11% absenteeism -> 5 unchanged schools: still ~18% -> redesign appears specifically linked to the improvement"
             ]
         },
         {
@@ -160,18 +160,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A tourism researcher studying overtourism in historic city centers found that cities implementing a cap on daily visitor numbers to the most congested historic districts saw meaningful improvements in resident quality-of-life indicators and reduced physical wear on historic sites; however, the same cities also saw total visitor spending decline by a proportion greater than the reduction in visitor numbers alone would predict, since the visitors turned away by the cap tended disproportionately to be day-trippers on tight schedules rather than the higher-spending overnight visitors the cap was not primarily designed to exclude, suggesting the caps may have inadvertently filtered out a visitor segment that, while contributing to congestion, was also contributing meaningfully to local tourism revenue.",
+            "passage": "A manufacturing company had experienced a rising rate of repetitive strain injuries among assembly line workers over several years, reaching 42 reported cases per year across its main facility. An ergonomics consultant identified workstation height and repetitive reaching motions as primary contributing factors.\n\nThe company redesigned workstations on two of its four assembly lines to include adjustable-height platforms and rotating task assignments that reduced repetitive single-motion work. The other two lines continued with the original fixed-height stations and single-task assignments.\n\nOver the following year, reported injuries on the redesigned lines dropped to 6 cases combined, while the two unchanged lines reported 19 cases combined, roughly consistent with their historical injury rate.",
             "options": [
-                "Total visitor spending increased by more than the reduction in visitor numbers would predict.",
-                "The caps excluded mainly higher-spending overnight visitors rather than day-trippers.",
-                "The visitor caps appear to have inadvertently reduced spending more than expected by disproportionately excluding day-trippers who contributed meaningfully to revenue despite also contributing to congestion.",
-                "Visitor caps had no measurable effect on resident quality-of-life indicators."
+                "Injuries increased on the redesigned lines compared to the unchanged lines. The passage's account gives no reason to think this differed at any stage.",
+                "The workstation redesign appears closely linked to fewer injuries, based on the comparison with the unchanged assembly lines.",
+                "All four assembly lines received the ergonomic redesign.",
+                "The unchanged lines showed a significant drop in injuries as well. Nothing in the passage suggests this changed at any point during the period described."
             ],
-            "correctAnswer": "The visitor caps appear to have inadvertently reduced spending more than expected by disproportionately excluding day-trippers who contributed meaningfully to revenue despite also contributing to congestion.",
-            "hint": "Notice which type of visitor the caps disproportionately excluded, and what that visitor type contributed to the local economy.",
-            "explanation": "Spending fell more than the raw reduction in visitor numbers would suggest, because the caps disproportionately excluded day-trippers, who despite contributing to congestion also contributed meaningfully to revenue, suggesting the caps had a more complex economic effect than reducing numbers alone would imply.",
+            "correctAnswer": "The workstation redesign appears closely linked to fewer injuries, based on the comparison with the unchanged assembly lines.",
+            "hint": "Compare the injury counts on the redesigned lines to the unchanged lines, keeping historical rates in mind.",
+            "explanation": "The redesigned lines saw injuries drop sharply to 6 combined cases, while the unchanged lines stayed close to their historical pattern at 19 cases, strongly supporting the redesign as the reason for the improvement on the lines where it was applied.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "42 injuries/year across facility, workstation height and repetitive motion identified as factors -> 2 lines redesigned, 2 remain unchanged -> after one year: redesigned lines at 6 combined injuries, unchanged lines at 19, near historical rate -> redesign appears closely linked to the improvement"
             ]
         },
         {
@@ -179,18 +179,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A family therapist studying blended families found that adult stepchildren who had maintained regular contact with their noncustodial biological parent throughout childhood generally reported better relationships with their stepparent in adulthood than adult stepchildren whose contact with the noncustodial parent had been minimal or nonexistent; however, the therapist cautioned against a simple interpretation that more contact with a biological parent straightforwardly causes better stepparent relationships, since families in the high-contact group also tended to report, on average, lower overall family conflict during childhood generally, a broader pattern of family functioning that plausibly shaped both the amount of biological parent contact maintained and the quality of the eventual stepparent relationship independently.",
+            "passage": "A city's public library system noticed that its teen programming, including book clubs and study groups, had seen declining attendance for several years, dropping from an average of 45 teens per week system-wide to just 18 per week.\n\nLibrary staff surveyed local teens and found that many worked part-time jobs or had extracurricular commitments that conflicted with the library's traditional after-school program times. In response, the system piloted evening programming, from 6 to 8 p.m., at three of its twelve branches, while the other nine branches kept their existing after-school schedule.\n\nAfter three months, the three pilot branches reported average weekly teen attendance of 31, compared to 14 at the nine branches that kept the original schedule.",
             "options": [
-                "The therapist confirmed that more biological parent contact directly and solely causes better stepparent relationships.",
-                "Families with minimal biological parent contact reported the lowest overall family conflict.",
-                "The link between biological parent contact and stepparent relationship quality may reflect a broader pattern of lower family conflict, rather than contact itself straightforwardly causing better relationships.",
-                "Overall family conflict showed no relationship to either biological parent contact or stepparent relationship quality."
+                "Teen attendance dropped further at the branches that switched to evening programming.",
+                "All twelve branches switched to the new evening programming schedule.",
+                "The evening programming schedule appears more closely aligned with teens' availability than the traditional after-school schedule.",
+                "The survey found no scheduling conflicts affecting teen attendance."
             ],
-            "correctAnswer": "The link between biological parent contact and stepparent relationship quality may reflect a broader pattern of lower family conflict, rather than contact itself straightforwardly causing better relationships.",
-            "hint": "Notice the therapist's caution about a simple cause-and-effect interpretation, and what broader factor they point to instead.",
-            "explanation": "High-contact families also tended to have lower overall childhood conflict, a broader pattern that could independently shape both parent contact and stepparent relationships, which is why the therapist cautions against concluding that contact itself is straightforwardly the cause of better stepparent relationships.",
+            "correctAnswer": "The evening programming schedule appears more closely aligned with teens' availability than the traditional after-school schedule.",
+            "hint": "Compare the attendance at pilot branches with the new schedule to the branches that kept the old schedule.",
+            "explanation": "Branches offering evening programming, timed around the scheduling conflicts teens reported in the survey, saw notably higher attendance than branches keeping the original after-school time slot, supporting the new schedule as better aligned with teens' actual availability.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Teen attendance drops from 45 to 18/week system-wide -> survey finds scheduling conflicts with jobs/activities -> 3 branches pilot evening hours (6-8pm), 9 keep after-school schedule -> pilot branches: 31/week -> unchanged branches: 14/week -> evening schedule appears better aligned with teen availability"
             ]
         },
         {
@@ -198,18 +198,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A public safety researcher studying the effects of a community policing initiative, in which officers were assigned to walk consistent, dedicated foot patrol routes within the same neighborhood over multiple years rather than rotating between different patrol assignments, found that reported crime rates in participating neighborhoods declined significantly relative to comparison neighborhoods with standard rotating patrols; however, the researcher noted that resident-reported trust in police, measured through annual surveys, improved more gradually and modestly than the crime statistics alone might suggest, with residents in several focus groups indicating that rebuilding trust after years of more impersonal policing required sustained, consistent officer presence over a considerably longer timeframe than the crime reduction itself had taken to materialize.",
+            "passage": "A regional trucking company had experienced a steady rise in fuel costs as a share of overall operating expenses, growing from 22 percent five years ago to 34 percent this year. An internal audit found that many drivers were taking longer, less efficient routes due to outdated GPS software that didn't account for current traffic patterns or road construction.\n\nThe company upgraded its fleet's navigation systems to a route-optimization platform that updates in real time and also introduced a driver bonus program rewarding fuel-efficient driving habits like reduced idling and smoother acceleration.\n\nSix months after the changes, average fuel cost per mile driven had dropped by 15 percent, and driver surveys indicated that most drivers found the new navigation software 'noticeably more accurate' than the previous system.",
             "options": [
-                "Resident trust improved more quickly and dramatically than the crime statistics did.",
-                "Crime declined relatively quickly under the community policing initiative, but rebuilding resident trust appears to have required a considerably longer, more gradual timeframe.",
-                "Crime rates showed no measurable change under the community policing initiative.",
-                "Trust and crime reduction improved at exactly the same pace according to the research."
+                "Both the navigation upgrade and the driver bonus program appear to be plausible contributors to the reduction in fuel costs.",
+                "Fuel costs continued rising at the same rate after both changes were introduced. The passage's account gives no reason to think this differed at any stage.",
+                "The navigation upgrade was the company's only change during this period.",
+                "Drivers reported the new navigation software was less accurate than before. Nothing in the passage suggests this changed at any point during the period described."
             ],
-            "correctAnswer": "Crime declined relatively quickly under the community policing initiative, but rebuilding resident trust appears to have required a considerably longer, more gradual timeframe.",
-            "hint": "Compare how quickly crime rates changed with how quickly resident trust changed, according to the passage.",
-            "explanation": "Crime dropped relatively quickly under the initiative, but trust improved more slowly and modestly, with residents indicating that rebuilding trust after years of impersonal policing simply took longer than reducing crime did, showing the two outcomes didn't move at the same pace.",
+            "correctAnswer": "Both the navigation upgrade and the driver bonus program appear to be plausible contributors to the reduction in fuel costs.",
+            "hint": "Notice that two separate changes were introduced together, and consider what that means for identifying which one drove the improvement.",
+            "explanation": "Since both the navigation upgrade and the bonus program were introduced around the same time, and both plausibly relate to fuel efficiency, the passage supports both as contributors to the reduction rather than confidently isolating just one.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Fuel costs rise from 22% to 34% of expenses -> outdated GPS causes inefficient routes -> navigation upgraded AND bonus program introduced together -> fuel cost per mile drops 15% -> both changes appear as plausible contributors to the improvement"
             ]
         },
         {
@@ -217,18 +217,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A sports scientist studying recovery protocols for professional soccer players found that players who used cold water immersion, submerging in cold water immediately after intense matches, reported feeling less muscle soreness the following day than players who did not use the treatment; however, when the scientist measured actual muscle inflammation markers through blood tests rather than relying on players' subjective soreness reports, cold water immersion showed no significant difference from no treatment at all, and in some measures modestly impaired long-term muscle adaptation to training compared to players who allowed natural inflammation processes to proceed unimpeded, complicating the treatment's widespread popularity among professional teams despite this more nuanced and less flattering physiological evidence.",
+            "passage": "A children's hospital had observed rising rates of missed follow-up appointments among patients discharged after surgery, with a no-show rate of 27 percent for scheduled follow-ups. A review of patient records found that families living more than 30 miles from the hospital had a notably higher no-show rate than families living closer.\n\nThe hospital introduced a telehealth option for routine post-surgical follow-ups, allowing families to complete the appointment via video call instead of an in-person visit, while continuing to offer traditional in-person appointments for families who preferred them.\n\nOne year later, the overall no-show rate had dropped to 13 percent. Among families living more than 30 miles away, the no-show rate had dropped from 41 percent to 15 percent, nearly matching the rate for families living closer to the hospital.",
             "options": [
-                "Cold water immersion appears to reduce perceived soreness without measurably reducing actual inflammation, and may even modestly impair long-term training adaptation, complicating its popularity.",
-                "Cold water immersion measurably reduced actual muscle inflammation according to blood test markers.",
-                "Cold water immersion showed no effect on players' subjective soreness reports at all.",
-                "Cold water immersion clearly improved long-term muscle adaptation to training."
+                "The telehealth option appears to have specifically helped close the gap in follow-up attendance for families living farther from the hospital.",
+                "The no-show rate for distant families increased after telehealth was introduced. The passage gives no indication that this varied across the circumstances described.",
+                "Families living closer to the hospital were the only ones offered telehealth.",
+                "The overall no-show rate stayed the same after telehealth was introduced."
             ],
-            "correctAnswer": "Cold water immersion appears to reduce perceived soreness without measurably reducing actual inflammation, and may even modestly impair long-term training adaptation, complicating its popularity.",
-            "hint": "Notice the passage separates players' subjective soreness reports from the actual measured inflammation markers.",
-            "explanation": "Players felt less sore after cold water immersion, but blood tests showed no real reduction in inflammation and even hinted at impaired long-term adaptation, suggesting the treatment's popularity may rest more on perceived relief than on the more nuanced physiological evidence.",
+            "correctAnswer": "The telehealth option appears to have specifically helped close the gap in follow-up attendance for families living farther from the hospital.",
+            "hint": "Track the no-show rate specifically for distant families before and after telehealth, and compare it to families living closer.",
+            "explanation": "Distant families, who previously had a much higher no-show rate, saw the sharpest improvement after telehealth was introduced, nearly closing the gap with closer families, supporting the idea that telehealth specifically addressed the distance-related barrier.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Overall no-show rate: 27%, distant families notably higher -> telehealth follow-up option introduced -> after one year: overall rate 13%, distant families drop from 41% to 15%, nearly matching closer families -> telehealth appears to have specifically closed the distance-related gap"
             ]
         },
         {
@@ -236,18 +236,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A workplace researcher studying the adoption of AI-assisted writing tools for internal business communication found that employees using the tools produced emails and reports rated as more polished and grammatically precise by external readers; however, when the same readers were asked to rate how personally authentic or genuinely reflective of the sender's voice the communications felt, AI-assisted messages scored measurably lower than messages written entirely without AI assistance, even when readers could not correctly identify which messages had actually used the tool, suggesting the tools may be trading a subtle but real loss of perceived authenticity for measurable gains in technical polish, a trade-off largely invisible to writers themselves in the moment of composing a message.",
+            "passage": "A city's transit agency had faced years of declining ridership on its late-night bus routes, which operated between midnight and 5 a.m. with buses running only once per hour. Rider surveys indicated that the biggest complaint was unpredictability, since buses were frequently five to fifteen minutes off schedule, making the hourly service feel unreliable for time-sensitive trips like getting to overnight shifts.\n\nThe agency installed GPS-based real-time tracking displayed through a mobile app, allowing riders to see exactly when the next bus would arrive rather than relying on the printed schedule alone. No changes were made to the actual frequency or timing of the buses themselves.\n\nSix months later, late-night ridership had increased by 22 percent, even though the buses were arriving at the same average frequency and with the same degree of schedule variation as before the app was introduced.",
             "options": [
-                "AI-assisted writing appears to improve technical polish while reducing perceived authenticity, a trade-off readers detected even without knowing which messages used AI.",
-                "AI-assisted writing improved both technical polish and perceived authenticity.",
-                "Readers could easily and correctly identify which messages had used AI assistance.",
-                "AI-assisted writing showed no measurable difference in polish or perceived authenticity."
+                "The agency increased how frequently late-night buses ran.",
+                "Ridership decreased after the real-time tracking app was introduced. The passage's own account of what happened offers no particular reason to think this reading needs to be limited or qualified in any specific way.",
+                "Being able to see real-time arrival information, rather than any change in actual service frequency, appears linked to the ridership increase.",
+                "The buses became perfectly on-time after the app was introduced. The full account given in the passage offers no particular basis for reading this any differently than as a plain, straightforward description of events."
             ],
-            "correctAnswer": "AI-assisted writing appears to improve technical polish while reducing perceived authenticity, a trade-off readers detected even without knowing which messages used AI.",
-            "hint": "Notice the passage separates ratings of technical polish from ratings of perceived personal authenticity.",
-            "explanation": "AI-assisted messages were rated more polished but less authentic, even by readers who couldn't identify which messages used AI, suggesting a genuine, if subtle, trade-off between technical quality and perceived personal voice that exists independent of readers' conscious awareness of the tool's use.",
+            "correctAnswer": "Being able to see real-time arrival information, rather than any change in actual service frequency, appears linked to the ridership increase.",
+            "hint": "Notice that the passage explicitly states no change was made to the actual bus schedule or frequency.",
+            "explanation": "Since the buses' actual frequency and reliability stayed exactly the same, but ridership still rose after the tracking app was added, the passage points to the information itself, not any real change to the service, as the likely explanation for the increase.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Late-night ridership declining, complaints about unpredictability -> real-time tracking app added, no change to actual bus frequency or reliability -> ridership rises 22% despite unchanged service itself -> visibility into arrival times appears linked to the increase, not a service change"
             ]
         },
         {
@@ -255,18 +255,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A team of astrophysicists analyzing gravitational wave data from colliding neutron stars found unexpected evidence suggesting the merger produced heavier elements, including gold and platinum, in quantities substantially exceeding what current theoretical models predicted such an event should generate; however, the team was careful to note that this single observation, while striking, remains statistically consistent with normal variation across a still-small overall sample of observed neutron star mergers, meaning it would be premature to conclude the theoretical models themselves require fundamental revision until a larger number of similar events have been observed and analyzed to determine whether this particular merger was a genuine outlier or representative of a broader, previously unrecognized pattern.",
+            "passage": "A national retailer had struggled with high employee turnover in its warehouse operations, averaging 58 percent annually, well above the industry average of 40 percent. Exit surveys consistently pointed to physically demanding tasks and limited opportunities for advancement as top reasons for leaving.\n\nThe company introduced two changes simultaneously: robotic assistance for the most physically demanding lifting tasks, and a structured internal promotion pathway with clear skill benchmarks employees could work toward. Neither change was piloted separately; both rolled out company-wide at the same time.\n\nOne year later, turnover had dropped to 34 percent, below the industry average, and an internal survey found that 61 percent of employees cited 'clearer growth opportunities' as a reason for staying, while 48 percent specifically mentioned reduced physical strain.",
             "options": [
-                "The team concluded this single observation definitively proves the theoretical models are wrong.",
-                "The observation matched theoretical predictions exactly with no unexpected results.",
-                "The team has already observed enough mergers to rule out normal statistical variation entirely.",
-                "It would be premature to conclude the theoretical models need revision based on this single observation, since it remains consistent with normal variation given the small sample size so far."
+                "Both the robotic assistance and the new promotion pathway appear to be plausible contributors to the lower turnover rate.",
+                "Turnover increased after the two changes were introduced.",
+                "The robotic assistance was piloted for six months before the promotion pathway was added.",
+                "Employees did not mention physical strain as a reason for staying."
             ],
-            "correctAnswer": "It would be premature to conclude the theoretical models need revision based on this single observation, since it remains consistent with normal variation given the small sample size so far.",
-            "hint": "Notice the team's own caution about what conclusion would be premature given the current sample size.",
-            "explanation": "The observation was striking and exceeded predictions, but the team explicitly cautions that with still few observed mergers, this could be normal variation rather than evidence the models are wrong, so the appropriately careful conclusion withholds judgment until more events have been observed.",
+            "correctAnswer": "Both the robotic assistance and the new promotion pathway appear to be plausible contributors to the lower turnover rate.",
+            "hint": "Notice that both changes rolled out together, and consider what the survey responses suggest about each one's contribution.",
+            "explanation": "Since both changes launched simultaneously and the follow-up survey shows meaningful percentages of employees citing each specific factor, growth opportunities and reduced strain, as reasons for staying, both appear to be plausible contributors to the turnover improvement.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Turnover at 58%, exit surveys cite physical demands and lack of advancement -> robotic assistance AND promotion pathway launched together, company-wide -> turnover drops to 34% -> survey: 61% cite growth opportunities, 48% cite reduced strain -> both changes appear as plausible contributors"
             ]
         },
         {
@@ -274,18 +274,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A food supply chain researcher studying vertical farming, growing crops in stacked indoor layers under artificial light rather than in traditional soil-based outdoor fields, found that vertical farms achieved dramatically higher yields per square foot of land and used significantly less water than conventional agriculture; however, a full lifecycle energy analysis found that the electricity required to power artificial lighting and climate control systems made vertical farming's total carbon footprint per unit of food produced considerably higher than conventional farming in regions where the electrical grid still relied heavily on fossil fuels, meaning the technology's genuine environmental advantage depends substantially on the specific energy source powering a given facility rather than being an inherent, universal benefit of the growing method itself.",
+            "passage": "A city's parking authority had received growing complaints about downtown parking availability, with a survey showing 68 percent of downtown workers reporting difficulty finding parking within a reasonable walk of their workplace. An internal study found that many parking garages were operating well under capacity during the day because permit pricing didn't distinguish between peak and off-peak demand.\n\nThe authority introduced dynamic permit pricing, charging more for guaranteed spots during peak morning hours and less for spots with more flexible arrival windows. It also added a real-time app showing which garages had available spots, updated every five minutes.\n\nSix months later, the same survey found complaints about parking difficulty had dropped to 31 percent, and garage utilization during peak hours had become significantly more even across previously underused and overused garages.",
             "options": [
-                "Vertical farming showed a lower carbon footprint than conventional farming regardless of the electricity source.",
-                "Vertical farming used significantly more water than conventional agriculture.",
-                "The electricity source powering a facility had no bearing on its overall carbon footprint.",
-                "Vertical farming's environmental advantage appears to depend heavily on the electricity source powering it, rather than being an inherent benefit of the method itself."
+                "Complaints about parking difficulty increased after the changes were introduced. This would be expected to hold across the entire situation as described.",
+                "Garage utilization became more uneven after the pricing changes.",
+                "The combination of dynamic pricing and the real-time availability app appears linked to a more balanced use of parking garages downtown.",
+                "The city removed all parking fees as part of this initiative."
             ],
-            "correctAnswer": "Vertical farming's environmental advantage appears to depend heavily on the electricity source powering it, rather than being an inherent benefit of the method itself.",
-            "hint": "Notice what the lifecycle analysis found about the role of the electrical grid's fuel source in determining vertical farming's true carbon footprint.",
-            "explanation": "Vertical farming used less water and land, but its carbon footprint depended heavily on whether the electricity powering it came from fossil fuels or cleaner sources, meaning its environmental benefit isn't automatic or universal but depends substantially on the specific energy context of each facility.",
+            "correctAnswer": "The combination of dynamic pricing and the real-time availability app appears linked to a more balanced use of parking garages downtown.",
+            "hint": "Trace the problem, described utilization imbalance, through the two changes made, to the final outcome about garage balance.",
+            "explanation": "The original problem was framed as garages being underused despite complaints of scarcity, a pricing and information mismatch, and after introducing dynamic pricing and a real-time app, both the complaint rate improved and garage usage became more evenly distributed, supporting the changes as linked to solving that underlying imbalance.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "68% report parking difficulty -> study finds garages underused due to flat pricing -> dynamic pricing and real-time app introduced -> complaints drop to 31%, garage usage becomes more evenly distributed -> changes appear linked to resolving the underlying imbalance"
             ]
         },
         {
@@ -293,18 +293,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A digital literacy researcher studying the spread of misinformation on social media found that fact-checking labels attached to false claims measurably reduced how often users shared the flagged content; however, follow-up analysis found that users exposed to fact-checked false claims about one topic became somewhat more skeptical of entirely unrelated, factually accurate claims presented shortly afterward, a spillover effect the researcher attributed to the labels inadvertently priming a general sense of informational distrust that did not stay neatly confined to the specific claim being corrected, complicating simple assumptions that fact-checking interventions carry no cost beyond their intended, narrowly targeted corrective effect.",
+            "passage": "A community college had seen its evening course completion rate lag behind daytime courses for years, with evening students completing courses at a rate of 61 percent compared to 82 percent for daytime students. Advisors noted that many evening students worked full-time and often described feeling disconnected from campus resources like tutoring and advising, which mostly operated during standard daytime business hours.\n\nThe college extended tutoring center and advising office hours to include evenings until 9 p.m. twice a week, and created a dedicated evening-student liaison position to help coordinate support specifically for this group.\n\nThe following year, evening course completion rose to 74 percent, though it still remained somewhat below the daytime rate of 83 percent, which had stayed roughly stable.",
             "options": [
-                "Fact-checking labels had no measurable effect on how often false claims were shared.",
-                "Exposure to fact-checked claims increased users' trust in unrelated accurate information afterward.",
-                "The spillover effect was confined entirely to the specific claim being corrected.",
-                "Fact-checking labels appear to reduce sharing of false claims but may also spill over into unwarranted skepticism toward unrelated accurate information, complicating assumptions that the intervention is cost-free."
+                "The support changes appear to have narrowed, though not eliminated, the completion gap between evening and daytime students.",
+                "The completion gap between evening and daytime students disappeared entirely. This would apply consistently across every detail the passage provides.",
+                "Evening student completion rates decreased after the changes were made.",
+                "Daytime student completion rates also rose significantly during this period."
             ],
-            "correctAnswer": "Fact-checking labels appear to reduce sharing of false claims but may also spill over into unwarranted skepticism toward unrelated accurate information, complicating assumptions that the intervention is cost-free.",
-            "hint": "Notice the unintended spillover effect the researcher describes beyond the labels' intended, narrow purpose.",
-            "explanation": "Labels reduced sharing of the flagged false claims, but they also made users somewhat more skeptical of unrelated true claims afterward, an unintended spillover the researcher says complicates the assumption that fact-checking carries no cost beyond its narrow, intended corrective purpose.",
+            "correctAnswer": "The support changes appear to have narrowed, though not eliminated, the completion gap between evening and daytime students.",
+            "hint": "Track both groups' completion rates before and after the changes, and note whether the gap closed completely or only partially.",
+            "explanation": "Evening completion rose substantially, from 61 to 74 percent, narrowing the previous 21-point gap with daytime students to about 9 points, while daytime rates stayed roughly stable, showing meaningful but incomplete progress toward closing the gap.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Evening completion: 61% -> daytime: 82%, gap of 21 points -> evening support extended (tutoring, advising, liaison) -> next year: evening rises to 74%, daytime stable at 83%, gap narrows to ~9 points -> changes narrowed but did not eliminate the gap"
             ]
         },
         {
@@ -312,18 +312,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A film scholar studying international box office data found that films dubbed into a local language, rather than subtitled in their original language, generally performed better commercially in markets with historically lower rates of foreign-language film consumption; however, this dubbing advantage disappeared, and in some cases modestly reversed, in markets with an already well-established subtitled foreign-film viewing culture, where audiences accustomed to hearing original performances tended to actively prefer subtitles, suggesting that the optimal localization strategy for a given market depends heavily on that market's existing viewing habits and expectations rather than dubbing or subtitling being a universally superior approach across all markets.",
+            "passage": "A regional bank had noticed a decline in small business loan approvals over several years, dropping from 58 percent of applications approved five years ago to just 34 percent last year, even as the overall number of applications remained fairly stable. An internal review found that loan officers had become increasingly cautious following a period of higher-than-expected defaults several years earlier, often requiring documentation beyond what official policy technically required.\n\nThe bank introduced standardized underwriting guidelines with clear, specific documentation requirements, along with additional training for loan officers on the bank's actual risk tolerance policies.\n\nThe following year, approval rates rose to 49 percent, and the bank's default rate on newly approved loans remained within the same acceptable range as loans approved during the higher-approval period five years earlier.",
             "options": [
-                "Dubbing consistently outperformed subtitling across every market studied, regardless of viewing habits.",
-                "Subtitling consistently outperformed dubbing across every market studied, regardless of viewing habits.",
-                "Whether dubbing or subtitling performs better commercially appears to depend on a market's existing viewing habits, rather than either approach being universally superior.",
-                "Market viewing habits had no bearing on which localization approach performed better."
+                "The standardized guidelines appear to have addressed officer over-caution without increasing the actual default risk on approved loans.",
+                "The default rate on new loans rose significantly above the acceptable range. The passage offers no detail suggesting this changed over the period discussed.",
+                "Approval rates returned to their exact level from five years ago.",
+                "The number of loan applications submitted dropped sharply after the changes."
             ],
-            "correctAnswer": "Whether dubbing or subtitling performs better commercially appears to depend on a market's existing viewing habits, rather than either approach being universally superior.",
-            "hint": "Compare how dubbing performed in markets with different existing viewing cultures.",
-            "explanation": "Dubbing performed better in markets less accustomed to foreign films, but this advantage disappeared or reversed in markets with an established subtitle-viewing culture, suggesting the better localization strategy depends on each market's existing habits rather than one approach being universally better.",
+            "correctAnswer": "The standardized guidelines appear to have addressed officer over-caution without increasing the actual default risk on approved loans.",
+            "hint": "Track both the approval rate and the default rate to see whether the improvement came with an increase in actual risk.",
+            "explanation": "Approval rates recovered substantially after the standardized guidelines were introduced, while the default rate on these newly approved loans stayed within the same acceptable range as before, showing the improvement addressed unnecessary caution without introducing added risk.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Approvals drop from 58% to 34% over years, officers overly cautious after past defaults -> standardized guidelines and officer training introduced -> approvals rise to 49%, default rate stays within acceptable range -> guidelines appear to have reduced over-caution without increasing actual risk"
             ]
         },
         {
@@ -331,18 +331,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A health researcher studying patient decision-making around elective surgery found that patients shown a decision aid presenting both the benefits and specific risks of a procedure in numerical, statistical terms made choices that more closely aligned with their own previously stated personal values and priorities than patients who received only a verbal risk explanation from their surgeon; however, patients in the numerical-decision-aid group also reported somewhat higher decision-related anxiety in the days immediately following their choice, even when that choice ultimately proved to be one they remained satisfied with months later, suggesting a genuine short-term emotional cost to the kind of detailed statistical clarity that appears to improve decision quality over the longer term.",
+            "passage": "A city's animal control department had struggled for years with a high euthanasia rate at its shelter, around 45 percent of intake animals, well above the rates reported by similar-sized cities. A review found that limited kennel space forced difficult decisions when intake exceeded capacity, and that the shelter's adoption hours, only weekday mornings, made it hard for working residents to visit.\n\nThe department partnered with several local veterinary clinics to host off-site adoption events on weekends, and began a foster program allowing community members to temporarily house animals when the shelter neared capacity, effectively expanding available space without new construction.\n\nTwo years later, the euthanasia rate had dropped to 12 percent, and shelter staff reported the foster program alone was housing an average of 40 animals per month that would previously have strained kennel capacity.",
             "options": [
-                "The numerical decision aid appears to improve alignment with patients' values at the cost of somewhat higher short-term anxiety, even when patients remained satisfied with their choice later.",
-                "The numerical decision aid reduced both anxiety and alignment with patients' stated values.",
-                "Patients receiving only verbal explanations reported the highest decision-related anxiety.",
-                "Decision quality and anxiety were entirely unrelated to which type of information patients received."
+                "The euthanasia rate increased after these programs were introduced.",
+                "The shelter built new kennel facilities to increase physical capacity. Reading through everything the passage lays out, there is no specific detail that would push against treating this as the straightforward explanation.",
+                "The foster program and weekend adoption events together appear to have significantly reduced the euthanasia rate by addressing both capacity and accessibility issues.",
+                "Weekend adoption events had no measurable effect on shelter operations. Nothing in the way the passage lays out these events gives any real reason to treat this as an incomplete or qualified reading of what took place."
             ],
-            "correctAnswer": "The numerical decision aid appears to improve alignment with patients' values at the cost of somewhat higher short-term anxiety, even when patients remained satisfied with their choice later.",
-            "hint": "Notice the passage mentions both a benefit and a short-term emotional cost of the numerical decision aid.",
-            "explanation": "The numerical decision aid led to choices better aligned with patients' own values, but also came with higher short-term anxiety, even among patients later satisfied with their choice, suggesting a real trade-off between detailed statistical clarity and immediate emotional comfort during the decision process.",
+            "correctAnswer": "The foster program and weekend adoption events together appear to have significantly reduced the euthanasia rate by addressing both capacity and accessibility issues.",
+            "hint": "Connect each specific problem identified, limited space and limited hours, to the specific solution that addressed it.",
+            "explanation": "The foster program directly addressed the capacity problem by effectively expanding space, while weekend adoption events addressed the accessibility problem for working residents, and both changes preceded a dramatic drop in euthanasia, supporting both as significant contributors.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Euthanasia rate 45%, limited kennel space and weekday-only hours identified as factors -> foster program (expands effective space) and weekend adoption events (improves accessibility) introduced -> two years later: euthanasia rate 12%, foster program housing ~40 animals/month -> both changes appear to have significantly contributed to the improvement"
             ]
         },
         {
@@ -350,18 +350,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A consumer protection researcher studying mandatory 'cooling-off period' regulations, which require a waiting period before certain high-pressure sales, such as timeshares, can be finalized, found that the regulations measurably reduced the rate of buyer's remorse and subsequent cancellation requests; however, sales representatives in industries subject to the regulation reported adapting their pitch strategies specifically around the mandatory waiting period, front-loading emotionally compelling appeals designed to create a sense of commitment strong enough to survive the cooling-off period intact, suggesting the regulation's protective effect, while real, may be gradually eroding as sales practices adapt specifically to work around the very safeguard designed to protect consumers from exactly this kind of high-pressure influence.",
+            "passage": "A national coffee chain had noticed that its mobile app's in-app ordering feature, while popular, was leading to longer in-store pickup wait times during morning rush hours, since baristas were preparing mobile orders alongside walk-in orders without any prioritization system. Customer complaints about pickup delays had risen 35 percent year over year.\n\nThe company introduced a dedicated mobile pickup counter separate from the walk-in ordering line in 200 of its busiest stores, along with a feature letting customers schedule their mobile order for a specific pickup time rather than 'as soon as possible.'\n\nThree months later, the 200 updated stores reported a 60 percent drop in pickup-related complaints, while the remaining stores nationwide, which did not receive the changes, saw complaints continue rising at roughly the same rate as before.",
             "options": [
-                "Sales representatives showed no ability to adapt their tactics around the cooling-off period.",
-                "The cooling-off regulation had no measurable effect on buyer's remorse rates.",
-                "The regulation's protective effect has grown stronger over time as sales practices remained unchanged.",
-                "The cooling-off period's protective effect appears real but may be eroding as sales tactics specifically adapt to work around the safeguard."
+                "The dedicated pickup counter and scheduling feature appear specifically linked to fewer complaints at the stores that received them.",
+                "Complaints decreased equally at every store nationwide, including those without the changes. This pattern would hold steady across the entire situation the passage lays out.",
+                "The remaining stores nationwide also received the dedicated pickup counter.",
+                "Pickup-related complaints increased at the 200 updated stores."
             ],
-            "correctAnswer": "The cooling-off period's protective effect appears real but may be eroding as sales tactics specifically adapt to work around the safeguard.",
-            "hint": "Notice what sales representatives reportedly did specifically in response to the mandatory waiting period.",
-            "explanation": "The regulation reduced buyer's remorse, but sales representatives adapted their pitches to create commitment strong enough to survive the waiting period, suggesting the protection, while genuinely effective initially, may be gradually eroding as sales practices evolve specifically to counteract the safeguard.",
+            "correctAnswer": "The dedicated pickup counter and scheduling feature appear specifically linked to fewer complaints at the stores that received them.",
+            "hint": "Compare the outcome at the 200 updated stores to the stores that did not receive the changes.",
+            "explanation": "Only the 200 stores with the new pickup counter and scheduling feature saw a sharp drop in complaints, while unchanged stores continued their prior complaint trend, strongly supporting a specific link between the changes and the improvement.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Complaints about pickup delays rising 35% year over year -> 200 busiest stores get dedicated pickup counter and scheduling feature -> after 3 months: those 200 stores see 60% drop in complaints -> unchanged stores: complaints continue rising at prior rate -> changes appear specifically linked to the improvement"
             ]
         },
         {
@@ -369,18 +369,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A researcher studying the long-term effects of participation in competitive academic debate during high school found that former debaters demonstrated stronger argumentative writing skills and greater comfort with public speaking well into adulthood compared to former classmates with similar academic records who had not participated in debate; however, the researcher also found that former debaters self-reported somewhat greater difficulty than non-debaters in adulthood with sincerely changing their mind during a disagreement, a tendency several former debaters themselves attributed, in follow-up interviews, to years of competitive training specifically in constructing and defending a position regardless of the debater's own personal conviction about that position's actual merit.",
+            "passage": "A state's department of motor vehicles had faced growing criticism over long wait times at its branch offices, with average visit times reaching 95 minutes and customer satisfaction scores falling to their lowest recorded level. An internal analysis found that a significant portion of visits, about 40 percent, were for simple transactions like address updates or registration renewals that didn't require in-person processing at all.\n\nThe department launched an online portal allowing residents to complete these simple transactions remotely, and reorganized in-branch staffing to reduce the number of window clerks handling general inquiries while adding more clerks trained specifically for complex transactions like license exams and title transfers.\n\nSix months later, average in-branch wait times had dropped to 38 minutes, and customer satisfaction scores had risen to their highest recorded level, even though total foot traffic at branches had decreased by roughly the same percentage of transactions that had been simple, routine ones.",
             "options": [
-                "Former debaters reported an easier time sincerely changing their minds than non-debaters.",
-                "Debate experience appears linked to stronger argumentative skills but also to greater later difficulty sincerely changing one's mind, possibly due to years of training in defending assigned positions.",
-                "Debate participation showed no measurable relationship to adult argumentative or public speaking skills.",
-                "Former debaters and non-debaters reported identical experiences with changing their minds in disagreements."
+                "Wait times increased after the online portal was introduced.",
+                "Moving routine transactions online appears closely linked to both the reduced wait times and the improved satisfaction scores.",
+                "Foot traffic at branches increased significantly after the changes.",
+                "The online portal was designed specifically for complex transactions like license exams."
             ],
-            "correctAnswer": "Debate experience appears linked to stronger argumentative skills but also to greater later difficulty sincerely changing one's mind, possibly due to years of training in defending assigned positions.",
-            "hint": "Notice the passage mentions both a clear skill benefit and a self-reported difficulty linked to debate experience.",
-            "explanation": "Former debaters showed stronger argumentative and speaking skills, but also reported more difficulty sincerely changing their minds, which some attributed to years of training in defending positions regardless of personal conviction, suggesting debate training may shape thinking habits beyond just rhetorical skill.",
+            "correctAnswer": "Moving routine transactions online appears closely linked to both the reduced wait times and the improved satisfaction scores.",
+            "hint": "Connect the type of transactions moved online to the resulting drop in foot traffic, wait times, and improved satisfaction.",
+            "explanation": "Since the transactions moved online matched roughly the same percentage as the foot traffic decrease, and both wait times and satisfaction improved substantially afterward, the passage supports a close link between routing simple transactions away from in-person visits and the overall improvement.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "95-minute average wait, 40% of visits are simple transactions not requiring in-person visits -> online portal launched for simple transactions, staffing reorganized -> wait times drop to 38 min, satisfaction reaches highest level, foot traffic drops roughly matching the simple-transaction percentage -> online portal appears closely linked to both improvements"
             ]
         },
         {
@@ -388,18 +388,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "An environmental researcher studying voluntary corporate sustainability pledges found that companies making public, specific, time-bound emissions reduction commitments, rather than vague general sustainability statements, were significantly more likely to actually achieve measurable emissions reductions within the pledged timeframe; however, the researcher also found that companies making the most ambitious specific pledges were disproportionately likely to quietly revise their targets to be less stringent partway through the timeframe when initial progress lagged behind schedule, a pattern that, while not appearing in headline compliance statistics celebrating the pledges' apparent success, nonetheless meaningfully undermines the pledges' true original ambition and the trustworthiness of specific, time-bound climate commitments as usually reported.",
+            "passage": "A regional health insurer had experienced a rising rate of customer calls to its support line specifically about claim denials, with 22 percent of all support calls related to denied claims, and internal data showing that 60 percent of appealed denials were ultimately approved, suggesting many initial denials may have resulted from avoidable documentation errors rather than genuine coverage issues.\n\nThe insurer introduced an automated pre-submission review tool that flagged common documentation errors before a claim was formally submitted, along with a simplified claim form with clearer instructions for the fields most often filled out incorrectly.\n\nOne year later, the overall claim denial rate had dropped by 45 percent, and denial-related support calls had fallen to 9 percent of all calls, while the percentage of appealed denials that were ultimately approved had also dropped, from 60 percent to 22 percent.",
             "options": [
-                "Companies with the most ambitious pledges never revised their targets under any circumstances.",
-                "Specific pledges appear more likely to achieve their stated targets, but the most ambitious ones are disproportionately likely to be quietly weakened, undermining their true original ambition despite appearing successful in headline statistics.",
-                "Vague general sustainability statements were more likely to produce measurable emissions reductions.",
-                "Headline compliance statistics fully captured the pattern of quietly weakened targets."
+                "The pre-submission review tool appears to have reduced denials caused by documentation errors, leaving mostly harder-to-resolve denials among those still appealed.",
+                "The overall claim denial rate increased after the tool was introduced. The way the events are described throughout the passage offers no clear signal that this particular reading should be treated with any extra caution.",
+                "The percentage of successful appeals rose after the tool was introduced. Nothing about how the passage frames the surrounding circumstances would suggest this conclusion needs any further qualification or limitation.",
+                "Denial-related support calls increased as a share of all calls. Nothing in the way the passage lays out these events gives any real reason to treat this as an incomplete or qualified reading of what took place."
             ],
-            "correctAnswer": "Specific pledges appear more likely to achieve their stated targets, but the most ambitious ones are disproportionately likely to be quietly weakened, undermining their true original ambition despite appearing successful in headline statistics.",
-            "hint": "Notice the gap the passage describes between headline compliance statistics and what actually happened to the most ambitious pledges.",
-            "explanation": "Specific pledges achieved more real reductions, but the most ambitious ones were often quietly weakened when progress lagged, a pattern invisible in headline statistics, meaning the passage suggests genuine caution about taking pledge 'success' at face value without checking whether original targets were later revised downward.",
+            "correctAnswer": "The pre-submission review tool appears to have reduced denials caused by documentation errors, leaving mostly harder-to-resolve denials among those still appealed.",
+            "hint": "Consider what the drop in the appeal success rate suggests about the nature of the denials that remained after the tool was introduced.",
+            "explanation": "Since overall denials and denial-related calls both dropped sharply, but the appeal success rate also fell, this pattern suggests the tool successfully filtered out easily fixable, documentation-based denials, leaving a smaller pool of remaining denials that are harder to overturn because they reflect genuine coverage issues rather than paperwork errors.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "22% of calls about denials, 60% of appeals succeed, suggesting documentation errors cause many denials -> pre-submission review tool and simplified form introduced -> denial rate drops 45%, denial calls fall to 9%, but appeal success rate also drops to 22% -> tool appears to have filtered out easily-fixed denials, leaving harder, genuine-issue denials among what remains"
             ]
         },
         {
@@ -407,18 +407,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A hospitality researcher studying guest response to algorithmically personalized hotel room assignments, where returning guests are automatically assigned rooms based on inferred preferences from past stays rather than requesting specific features themselves, found that guest satisfaction with room assignment increased measurably on average; however, a meaningful minority of guests, those whose preferences had genuinely changed since their last visit, reported feeling unsettled or surveilled by rooms that reflected outdated inferred preferences with unsettling specificity, a reaction the researcher noted the algorithm's designers had not anticipated, since the system had been evaluated primarily on aggregate satisfaction metrics that obscured this smaller but genuinely uncomfortable subgroup experience entirely.",
+            "passage": "A metropolitan school district had struggled for years with uneven access to advanced placement courses, with students at wealthier schools in the district taking an average of 3.2 AP courses by graduation compared to 0.8 at the district's lower-income schools, even though standardized test scores suggested comparable academic readiness among many students at both types of schools.\n\nThe district launched an online AP course platform allowing students at any school to enroll in courses not offered locally, provided transportation to and from a testing site for the AP exams, and created a dedicated counselor position at each lower-income school specifically focused on identifying and encouraging eligible students to enroll.\n\nThree years later, AP course-taking at the previously underserved schools had risen to an average of 2.1 courses per graduating student, while AP course-taking at wealthier schools had remained essentially unchanged at 3.3 courses per student.",
             "options": [
-                "Every guest reported feeling more comfortable with the personalized room assignments.",
-                "While aggregate satisfaction rose, the algorithm appears to have created a genuinely uncomfortable experience for a minority whose preferences had changed, an effect the aggregate metrics obscured.",
-                "Aggregate satisfaction metrics fully captured the discomfort felt by guests with outdated inferred preferences.",
-                "The algorithm's designers had specifically anticipated and planned for this subgroup's discomfort."
+                "AP course-taking at wealthier schools increased at the same rate as at lower-income schools. This would apply consistently across every detail the passage provides.",
+                "The gap between the two types of schools has been completely eliminated. Such a pattern would remain constant throughout the scenario being described.",
+                "The gap in AP course access between the two types of schools has narrowed considerably, though it has not been fully closed.",
+                "AP course-taking decreased at the previously underserved schools."
             ],
-            "correctAnswer": "While aggregate satisfaction rose, the algorithm appears to have created a genuinely uncomfortable experience for a minority whose preferences had changed, an effect the aggregate metrics obscured.",
-            "hint": "Notice the gap between what the aggregate satisfaction metrics showed and what a smaller subgroup of guests actually experienced.",
-            "explanation": "Overall satisfaction rose, but guests whose preferences had genuinely changed felt unsettled by outdated but specific inferred preferences, a reaction the aggregate metrics obscured and the designers hadn't anticipated, showing that average satisfaction numbers can mask a real, uncomfortable experience for a smaller subgroup.",
+            "correctAnswer": "The gap in AP course access between the two types of schools has narrowed considerably, though it has not been fully closed.",
+            "hint": "Calculate the size of the original gap and compare it to the size of the gap after three years.",
+            "explanation": "The original 2.4-course gap (3.2 minus 0.8) narrowed to about 1.2 courses (3.3 minus 2.1) after the district's changes, showing considerable progress in closing the gap even though a real difference remained.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Original gap: wealthier schools 3.2 AP courses, lower-income schools 0.8 (gap of 2.4) -> online platform, exam transportation, dedicated counselors introduced -> 3 years later: lower-income schools 2.1, wealthier schools 3.3 (gap of 1.2) -> gap narrowed considerably, though not fully closed"
             ]
         },
         {
@@ -426,18 +426,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A family communication researcher studying households navigating a parent's serious illness found that families who used a shared online platform to coordinate updates and caregiving logistics among extended family members reported feeling less isolated during the crisis than families relying solely on individual phone calls and texts; however, several family members in the platform-using households also reported feeling pressure to present an overly composed, optimistic version of the situation in shared, semi-public posts, a performative quality some described as making it harder to privately express the full weight of their genuine fear or exhaustion to any single, individual family member without appearing to contradict the more upbeat collective narrative established on the platform.",
+            "passage": "A city's fire department had documented an increasing number of structure fires in older residential neighborhoods traced back to outdated electrical wiring, accounting for 31 percent of all residential fires in the city despite those neighborhoods containing only about 18 percent of the city's housing stock. A task force found that many homeowners in these neighborhoods were unaware of available low-cost inspection and rewiring assistance programs, or found the application process too complex to navigate.\n\nThe city partnered with community organizations to conduct door-to-door outreach in the affected neighborhoods, simplified the assistance application to a single page, and waived inspection fees for homes built before a certain year.\n\nTwo years after these changes, wiring-related fires in these neighborhoods had dropped by 52 percent, and program enrollment in the affected neighborhoods had increased more than fivefold compared to the two years before the outreach began.",
             "options": [
-                "The shared platform reduced isolation with no reported downside for any family member.",
-                "Families using individual phone calls reported feeling less isolated than platform-using families.",
-                "The shared platform appears to have reduced isolation while also creating pressure toward a composed public narrative that made expressing genuine private difficulty harder for some family members.",
-                "The shared platform had no measurable effect on how family members felt during the crisis."
+                "Wiring-related fires increased in these neighborhoods after the outreach began.",
+                "Improved awareness and a simplified application process appear closely linked to increased program enrollment and, in turn, fewer wiring-related fires.",
+                "Program enrollment decreased after the application was simplified.",
+                "The affected neighborhoods contained the majority of the city's total housing stock."
             ],
-            "correctAnswer": "The shared platform appears to have reduced isolation while also creating pressure toward a composed public narrative that made expressing genuine private difficulty harder for some family members.",
-            "hint": "Notice the passage mentions both a clear benefit and a genuine emotional cost of using the shared platform.",
-            "explanation": "The platform reduced isolation, but it also created pressure to maintain an upbeat shared narrative, making it harder for some family members to privately express genuine fear or exhaustion, suggesting the platform's benefit came with a real, if less visible, emotional trade-off.",
+            "correctAnswer": "Improved awareness and a simplified application process appear closely linked to increased program enrollment and, in turn, fewer wiring-related fires.",
+            "hint": "Connect the barriers identified by the task force, awareness and application complexity, to the specific changes made and the resulting outcomes.",
+            "explanation": "The task force specifically identified awareness and application complexity as barriers, the city's changes directly addressed both, and the resulting sharp rise in enrollment alongside the drop in fires supports a close link between the outreach and simplification efforts and the improved outcomes.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "31% of residential fires from wiring issues, task force finds low awareness and complex applications as barriers -> door-to-door outreach, simplified application, waived fees introduced -> 2 years later: wiring fires down 52%, enrollment up fivefold -> awareness and simplification appear closely linked to the improved outcomes"
             ]
         },
         {
@@ -445,18 +445,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A youth sports researcher studying parental involvement in children's athletics found that children whose parents attended games but refrained from providing any real-time coaching commentary from the sidelines reported higher enjoyment of the sport than children whose parents actively coached from the sidelines during games, even when the sideline-coaching parents' comments were, by an independent observer's assessment, generally accurate, encouraging, and technically constructive rather than critical; however, this enjoyment gap narrowed considerably for teenage athletes competing at a genuinely elite competitive level, where several athletes reported actively valuing real-time parental feedback as one meaningful part of a broader, more serious competitive support system they had specifically requested.",
+            "passage": "A national parcel delivery company had seen a rising number of 'delivery attempted, recipient not available' notices, accounting for 14 percent of all delivery attempts and requiring costly redelivery trips. An internal review found that most failed deliveries occurred between 10 a.m. and 2 p.m. on weekdays, when many residential customers were away at work, and that the company's routing software did not account for this pattern when scheduling delivery windows.\n\nThe company updated its routing software to prioritize residential deliveries for early morning, evening, or weekend windows when historical data showed higher likelihood of someone being home, while shifting business-address deliveries, largely unaffected by this pattern, to the previous mid-day scheduling.\n\nSix months later, failed residential delivery attempts had dropped to 5 percent, while the rate for business-address deliveries remained essentially unchanged, since those deliveries had not required rescheduling in the first place.",
             "options": [
-                "Silent parental support appears to increase enjoyment for most young athletes, but this preference narrows considerably among elite teenage athletes who may specifically want real-time feedback.",
-                "Sideline coaching increased enjoyment for children at every competitive level studied.",
-                "The quality of parental sideline comments had no bearing on the study's findings.",
-                "Elite teenage athletes reported the same strong preference against sideline coaching as younger children."
+                "Business-address delivery failure rates dropped significantly after the changes. Nothing in the way the passage lays out these events gives any real reason to treat this as an incomplete or qualified reading of what took place.",
+                "The company stopped delivering to residential addresses entirely. Nothing about how the passage frames the surrounding circumstances would suggest this conclusion needs any further qualification or limitation.",
+                "Failed residential deliveries increased after the routing software was updated. The passage's own account of what happened offers no particular reason to think this reading needs to be limited or qualified in any specific way.",
+                "The routing changes appear to have specifically addressed the timing mismatch for residential deliveries without needing to change business delivery scheduling."
             ],
-            "correctAnswer": "Silent parental support appears to increase enjoyment for most young athletes, but this preference narrows considerably among elite teenage athletes who may specifically want real-time feedback.",
-            "hint": "Notice how the pattern changed specifically for teenage athletes competing at an elite level.",
-            "explanation": "Silent support generally led to more enjoyment, even when sideline coaching was constructive, but this gap narrowed among elite teenage athletes, some of whom specifically wanted real-time feedback, suggesting the ideal level of parental involvement may shift as an athlete's own competitive goals and preferences develop.",
+            "correctAnswer": "The routing changes appear to have specifically addressed the timing mismatch for residential deliveries without needing to change business delivery scheduling.",
+            "hint": "Notice the passage explicitly distinguishes between residential and business deliveries and explains why business deliveries did not need to change.",
+            "explanation": "Since the underlying problem, mid-day deliveries missing residents at work, specifically affected residential addresses, and business deliveries were explicitly unaffected by this pattern, the targeted routing change appropriately improved residential outcomes without needing to alter business delivery scheduling.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "14% of deliveries fail, mostly mid-day residential attempts when people are at work -> routing software updated to shift residential deliveries to mornings/evenings/weekends, business deliveries kept mid-day -> residential failures drop to 5%, business rate unchanged -> targeted change addressed the specific residential timing mismatch"
             ]
         },
         {
@@ -464,18 +464,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A civic researcher studying neighborhood mutual aid networks that emerged during a regional emergency found that networks organized around a specific, narrowly defined task, such as grocery delivery for elderly residents, sustained higher levels of volunteer participation over the following year than networks organized around a broader, more open-ended mission of general neighborhood support; however, the broader-mission networks, despite lower sustained participation, proved considerably more adaptable when new, unanticipated needs arose later in the year, since their looser structure had not been built around any single specific task that could become less relevant as circumstances changed, complicating any simple conclusion about which organizational approach is genuinely more effective for community resilience over time.",
+            "passage": "A large urban hospital system had observed that patients discharged on weekends were readmitted within 30 days at a rate of 23 percent, compared to 14 percent for patients discharged on weekdays. An investigation found that weekend discharges often occurred without a scheduled follow-up appointment already in place, since the scheduling office was closed on weekends, whereas weekday discharges typically included a confirmed follow-up appointment before the patient left the hospital.\n\nThe hospital extended its scheduling office hours to include weekend coverage and required that no patient be discharged without a confirmed follow-up appointment, regardless of the day of the week.\n\nOne year later, the weekend readmission rate had dropped to 15 percent, nearly matching the weekday rate, which had remained stable at 13 percent over the same period.",
             "options": [
-                "Narrowly focused networks sustained more participation, but broader networks proved more adaptable to new needs, complicating any simple judgment about which approach is genuinely more effective.",
-                "Narrowly focused networks proved more adaptable to new, unanticipated needs than broader networks.",
-                "Broader-mission networks sustained higher participation than narrowly focused networks.",
-                "Organizational structure had no bearing on either participation or adaptability."
+                "The weekday readmission rate rose to match the weekend rate.",
+                "Weekend readmission rates increased after the scheduling changes. Reading through everything the passage lays out, there is no specific detail that would push against treating this as the straightforward explanation.",
+                "The hospital eliminated weekend discharges entirely as part of this change. This would remain the case regardless of any other detail in the passage.",
+                "Ensuring confirmed follow-up appointments before discharge appears closely linked to closing the gap between weekend and weekday readmission rates."
             ],
-            "correctAnswer": "Narrowly focused networks sustained more participation, but broader networks proved more adaptable to new needs, complicating any simple judgment about which approach is genuinely more effective.",
-            "hint": "Notice the trade-off the passage describes between the two types of networks on two different measures.",
-            "explanation": "Narrow-task networks sustained more participation, while broader networks adapted better to new needs, showing each structure had a distinct strength, which is why the passage explicitly says this complicates any simple conclusion about which approach is genuinely more effective overall.",
+            "correctAnswer": "Ensuring confirmed follow-up appointments before discharge appears closely linked to closing the gap between weekend and weekday readmission rates.",
+            "hint": "Compare the size of the gap between weekend and weekday readmissions before and after the scheduling change.",
+            "explanation": "The original 9-point gap (23 versus 14 percent) between weekend and weekday readmissions narrowed to about 2 points (15 versus 13 percent) after ensuring all patients had confirmed follow-ups regardless of discharge day, closely linking the specific change to the near-closing of the gap.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Weekend readmissions: 23% -> weekday: 14%, gap of 9 points, weekend discharges often lack confirmed follow-ups -> scheduling office extended to weekends, follow-up required before any discharge -> one year later: weekend 15%, weekday 13%, gap narrows to ~2 points -> change appears closely linked to closing the gap"
             ]
         },
         {
@@ -483,18 +483,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A team of computer scientists evaluating an AI system designed to assist radiologists by pre-highlighting suspicious regions on medical scans found that overall diagnostic accuracy improved when radiologists used the tool; however, a detailed error analysis revealed that in the small number of cases where the AI system failed to highlight an actual abnormality, radiologists using the tool caught the missed abnormality less often through their own independent review than radiologists working entirely without any AI assistance, suggesting the tool's highlighting may have subtly reduced radiologists' own independent visual scrutiny of regions the AI had not flagged, even as it improved performance overall by successfully catching genuinely obvious cases more reliably.",
+            "passage": "A regional utility company had documented a rising number of customer complaints about unexpectedly high monthly bills, with complaint volume increasing 60 percent over two years even though the company's actual rate structure had not changed during that period. An investigation found that the increase coincided with a shift toward estimated billing, where meters were read remotely only every third month, with the two intervening months' bills calculated based on estimated usage.\n\nThe company invested in upgraded smart meters providing accurate, real-time monthly readings for all customers, eliminating the need for estimated billing entirely.\n\nOne year after full smart meter deployment, billing complaints had dropped by 71 percent, even though average monthly bill amounts across the customer base had not changed significantly compared to before the meter upgrade.",
             "options": [
-                "Radiologists using the tool caught missed abnormalities more often than those without it.",
-                "While the tool improved overall accuracy, it appears to have subtly reduced radiologists' independent scrutiny of regions it failed to flag, making them less likely to catch abnormalities the AI missed.",
-                "The AI tool showed no measurable effect on overall diagnostic accuracy.",
-                "The AI system never failed to highlight an actual abnormality in any case studied."
+                "Customers were paying significantly more after the smart meters were installed.",
+                "The company's rate structure changed at the same time as the meter upgrade.",
+                "Complaints appear more closely linked to the accuracy and predictability of billing than to the actual dollar amount customers were paying.",
+                "Billing complaints increased after the smart meters were installed."
             ],
-            "correctAnswer": "While the tool improved overall accuracy, it appears to have subtly reduced radiologists' independent scrutiny of regions it failed to flag, making them less likely to catch abnormalities the AI missed.",
-            "hint": "Notice what happened specifically in the cases where the AI system failed to flag an actual abnormality.",
-            "explanation": "Overall accuracy improved with the tool, but in cases the AI missed, radiologists using it caught fewer of those missed abnormalities than radiologists working without any AI at all, suggesting the tool's presence may have subtly reduced independent scrutiny of unflagged areas, a real cost alongside its overall benefit.",
+            "correctAnswer": "Complaints appear more closely linked to the accuracy and predictability of billing than to the actual dollar amount customers were paying.",
+            "hint": "Notice that the passage specifically states the actual bill amounts did not change significantly, even though complaints dropped sharply.",
+            "explanation": "Since average bill amounts stayed essentially the same before and after the meter upgrade, but complaints dropped sharply once billing became accurate and predictable rather than estimated, the passage supports billing accuracy and predictability, not the actual cost, as the more likely driver of customer complaints.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Complaints rise 60% over two years, rate structure unchanged, estimated billing introduced during this period -> smart meters installed, providing accurate monthly readings -> complaints drop 71%, average bill amounts stay essentially the same -> complaints appear more closely tied to billing accuracy/predictability than to actual cost"
             ]
         },
         {
@@ -502,18 +502,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A team of ecologists studying the reintroduction of a top predator species into a region where it had been locally extinct for decades found that within five years, populations of the predator's primary prey species had declined and stabilized at a new, lower equilibrium, while vegetation the prey species had previously overgrazed showed measurable recovery; however, the ecologists cautioned that this apparent ecological success story remains genuinely incomplete, since the predator's reintroduction also coincided with several other regional environmental changes, including a multi-year drought affecting prey species reproduction independently, making it difficult to cleanly attribute the full extent of the observed vegetation recovery to predator reintroduction alone as opposed to these other simultaneous factors.",
+            "passage": "A large retail chain had noticed that its customer loyalty program, while popular with 2.3 million enrolled members, was generating relatively little additional spending, with enrolled members spending only 4 percent more on average than similar non-enrolled customers. An analysis of program usage found that most members primarily used the program to check point balances but rarely redeemed points for the available rewards, many of which required accumulating points over many months before reaching a usable threshold.\n\nThe company restructured the rewards tiers to include smaller, more frequent rewards achievable within a few weeks of typical shopping, alongside the existing larger rewards for long-term accumulation, and sent personalized notifications when members were close to reaching a reward threshold.\n\nSix months later, average spending among enrolled members had risen to 19 percent above similar non-members, and the percentage of members redeeming at least one reward per quarter rose from 12 percent to 58 percent.",
             "options": [
-                "The ecologists confirmed predator reintroduction was the sole cause of the vegetation recovery.",
-                "Prey species populations increased following the predator's reintroduction.",
-                "The vegetation recovery cannot be cleanly attributed to predator reintroduction alone, since other simultaneous factors like drought may have independently contributed to the prey decline as well.",
-                "No other environmental changes occurred during the same period as the reintroduction."
+                "Member spending decreased after the rewards tiers were restructured. The passage's account gives no reason to think this differed at any stage.",
+                "Redemption rates stayed the same after the changes were made.",
+                "Making rewards more frequently attainable appears closely linked to increased member spending and redemption rates.",
+                "The company removed all long-term reward options from the program. The passage gives no indication that this varied across the circumstances described."
             ],
-            "correctAnswer": "The vegetation recovery cannot be cleanly attributed to predator reintroduction alone, since other simultaneous factors like drought may have independently contributed to the prey decline as well.",
-            "hint": "Notice the ecologists' own caution about other factors that coincided with the predator's reintroduction.",
-            "explanation": "Vegetation recovered and prey populations declined after reintroduction, but the ecologists caution that a simultaneous drought could have independently affected prey numbers too, meaning the full recovery can't be cleanly attributed to the predator alone without ruling out these other overlapping factors.",
+            "correctAnswer": "Making rewards more frequently attainable appears closely linked to increased member spending and redemption rates.",
+            "hint": "Connect the original problem, rewards that took too long to reach, to the specific restructuring and the resulting changes in behavior.",
+            "explanation": "The original issue was that rewards required too long a wait to become usable, and after introducing more frequent, quickly attainable rewards alongside the existing options, both spending and redemption rates rose substantially, supporting a close link between attainability and increased engagement.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "2.3M members, only 4% extra spending, most rarely redeem due to slow-to-reach thresholds -> smaller, more frequent rewards added, personalized notifications introduced -> 6 months later: spending rises to 19% above non-members, redemption rises from 12% to 58% -> more attainable rewards appear closely linked to the increased engagement"
             ]
         },
         {
@@ -521,18 +521,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A workplace researcher studying the long-term career outcomes of employees who took an extended parental leave, six months or longer, found that these employees experienced a measurable short-term dip in promotion rates in the two years immediately following their return compared to employees who had not taken extended leave; however, tracking the same employees over a longer ten-year window found no significant difference in ultimate seniority level or lifetime earnings between the two groups, suggesting that while extended leave may create a temporary, visible setback in the years immediately following a return to work, this initial gap tends to close over a longer career timeframe rather than compounding into a permanent, lasting disadvantage.",
+            "passage": "A state's unemployment insurance office had faced growing backlogs in processing claims, with average processing time reaching 21 days, well beyond the federally recommended 14-day standard, during a period when claim volume had also risen 35 percent due to broader economic conditions. An internal review found that claims requiring manual verification, roughly 40 percent of all claims, took disproportionately longer, while claims that could be automatically verified through existing wage records typically processed within 3 days.\n\nThe office expanded the categories of claims eligible for automatic verification by integrating additional data sources, including state tax records and unemployment records from neighboring states for claimants who had recently relocated, reducing the share of claims requiring manual review to about 15 percent.\n\nSix months later, despite claim volume remaining elevated at roughly the same level as before the changes, average processing time had dropped to 9 days, below the federal standard.",
             "options": [
-                "The promotion gap continued to widen over the full ten-year period studied.",
-                "Extended parental leave appears to cause a temporary setback in promotion rates that closes over a longer career timeframe, rather than becoming a permanent disadvantage.",
-                "Employees taking extended leave showed no short-term dip in promotion rates at all.",
-                "The ten-year analysis found a significant permanent earnings disadvantage for employees who took extended leave."
+                "Claim volume decreased significantly after the changes were made.",
+                "The percentage of claims requiring manual review increased after the changes.",
+                "Processing times remained above the federal standard after the changes.",
+                "Expanding automatic verification appears closely linked to the improved processing time, despite claim volume staying elevated throughout."
             ],
-            "correctAnswer": "Extended parental leave appears to cause a temporary setback in promotion rates that closes over a longer career timeframe, rather than becoming a permanent disadvantage.",
-            "hint": "Compare the short-term findings (two years) with the longer-term findings (ten years).",
-            "explanation": "A real short-term promotion gap appeared within two years of returning from extended leave, but it disappeared over a ten-year window, suggesting the setback is temporary and closes over a longer career timeframe rather than compounding into a lasting disadvantage.",
+            "correctAnswer": "Expanding automatic verification appears closely linked to the improved processing time, despite claim volume staying elevated throughout.",
+            "hint": "Notice that claim volume stayed elevated throughout, which strengthens rather than weakens the case for the verification changes.",
+            "explanation": "Since claim volume remained just as high after the changes as before, ruling out reduced demand as an explanation, the sharp drop in processing time despite that steady volume strongly supports the expanded automatic verification system as the reason for the improvement.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Processing time: 21 days, above 14-day standard, claim volume up 35% -> 40% of claims require manual review, slower than automated ones -> automatic verification expanded, manual review share drops to 15% -> 6 months later: processing time 9 days, despite volume staying elevated -> verification expansion appears closely linked to the improvement, volume increase ruled out as the explanation"
             ]
         },
         {
@@ -540,18 +540,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "A cultural sociologist studying generational differences in how people mark significant life milestones found that younger adults were significantly more likely than older generations to publicly announce major life events, engagements, new jobs, home purchases, on social media before privately informing certain close family members, a sequencing some older relatives interpreted, in interviews, as a sign of younger generations valuing broad public validation over close personal connection; however, many younger interviewees offered a different explanation for the same behavior, describing the public post as simply the fastest, most efficient way to inform a wide circle of people simultaneously, with the sequencing reflecting practical logistics rather than any deliberate prioritization of public reaction over private relationships.",
+            "passage": "A city's public housing authority had documented persistently long wait times for maintenance requests, averaging 12 days for non-emergency repairs across its properties, with tenant satisfaction surveys showing maintenance response as the lowest-rated category for three consecutive years. An analysis found that maintenance requests were assigned to technicians based on which property they were originally hired to service, regardless of whether a nearer technician from a different property might be available and less busy.\n\nThe authority switched to a centralized dispatch system that assigned each new request to whichever qualified technician was geographically closest and had current availability, regardless of which property they were formally assigned to.\n\nOne year later, average non-emergency repair time had dropped to 4 days, and maintenance response had risen from the lowest-rated category to the second-highest-rated category in the annual tenant satisfaction survey.",
             "options": [
-                "Younger interviewees confirmed they deliberately prioritize public validation over private relationships.",
-                "Older relatives and younger interviewees offered identical explanations for the same behavior.",
-                "Younger adults were found to be less likely than older generations to announce milestones publicly.",
-                "The sequencing of public announcements before private ones may reflect practical efficiency rather than the prioritization of public validation over private relationships that some older relatives assumed."
+                "Maintenance response remained the lowest-rated category after the change.",
+                "Repair times increased after the centralized dispatch system was introduced. Nothing described in the passage points to any exception to this pattern.",
+                "Technicians continued being assigned only to their original properties.",
+                "The centralized dispatch system appears closely linked to both faster repair times and improved tenant satisfaction with maintenance."
             ],
-            "correctAnswer": "The sequencing of public announcements before private ones may reflect practical efficiency rather than the prioritization of public validation over private relationships that some older relatives assumed.",
-            "hint": "Notice the two different explanations the passage offers for the same observed behavior, from two different generational perspectives.",
-            "explanation": "Older relatives interpreted the sequencing as valuing public validation, but younger interviewees explained it as simple logistical efficiency, offering a genuinely different explanation for the same behavior, so the fairest conclusion reflects this alternative account rather than assuming the older generation's interpretation is correct.",
+            "correctAnswer": "The centralized dispatch system appears closely linked to both faster repair times and improved tenant satisfaction with maintenance.",
+            "hint": "Connect the original inefficiency, technicians tied to specific properties regardless of proximity, to the dispatch change and the resulting improvements.",
+            "explanation": "The original system's inefficiency, assigning technicians by property rather than availability or proximity, was directly addressed by the centralized dispatch change, and both the repair time and the satisfaction ranking improved substantially afterward, supporting a close link between the change and the improvements.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Maintenance wait time: 12 days, lowest-rated satisfaction category for 3 years -> technicians assigned by original property regardless of proximity or availability -> centralized dispatch introduced, assigns by proximity and availability -> one year later: repair time 4 days, satisfaction rises to second-highest category -> dispatch change appears closely linked to both improvements"
             ]
         },
         {
@@ -559,18 +559,18 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "choice",
-            "passage": "Since the Marchetti family began holding what they call a monthly 'complaint amnesty' dinner, where any household member can raise a minor ongoing grievance without it being treated as an accusation requiring immediate resolution, they say several small irritations that used to build silently into larger arguments, such as who typically empties the dishwasher, have instead been addressed calmly before escalating; however, the parents noted the ritual required an adjustment period during which their two children initially used the sessions primarily to complain about each other rather than raising the kind of low-stakes household logistics the ritual had originally been intended to surface and resolve.",
+            "passage": "A national pharmacy chain had observed that its automated prescription refill reminder system, sending text messages when a prescription was due for refill, had a relatively low response rate of 22 percent, meaning most reminders did not result in the customer actually picking up their refill within a week. A review of the messages found they were sent at a single fixed time, 9 a.m., regardless of when individual customers had historically picked up previous refills, and that the message text was identical for all medication types, including both routine maintenance medications and more urgent, short-course prescriptions.\n\nThe company updated the system to send reminders based on each customer's individual historical pickup time patterns rather than a fixed time, and adjusted message wording to reflect urgency, with more time-sensitive language used for medications where delayed refills posed greater health risks.\n\nThree months later, the overall response rate rose to 41 percent, with the largest improvement seen among customers receiving reminders for higher-urgency medications, where response rates rose from 19 percent to 52 percent.",
             "options": [
-                "The children immediately used the sessions exactly as the ritual had been intended from the very first dinner.",
-                "The ritual caused small irritations to escalate into larger arguments more often than before.",
-                "The complaint amnesty dinners appear to have helped address small irritations before they escalated, though the family needed an adjustment period before the sessions were used as originally intended.",
-                "The complaint amnesty dinners had no measurable effect on how the family addressed grievances."
+                "Response rates for higher-urgency medications decreased after the changes. Such a pattern would remain constant throughout the scenario being described.",
+                "Personalizing timing and urgency in the reminder messages appears especially linked to improved response for higher-urgency medications.",
+                "All reminder messages remained identical regardless of medication type.",
+                "The overall response rate decreased after the changes were introduced."
             ],
-            "correctAnswer": "The complaint amnesty dinners appear to have helped address small irritations before they escalated, though the family needed an adjustment period before the sessions were used as originally intended.",
-            "hint": "Notice the passage describes both a positive overall outcome and an early adjustment period before that outcome was reached.",
-            "explanation": "Small irritations began getting addressed before escalating, but the parents note this took an adjustment period, since the children initially used the sessions to complain about each other rather than raise household logistics, showing the ritual's ultimate benefit came only after working through this rocky start.",
+            "correctAnswer": "Personalizing timing and urgency in the reminder messages appears especially linked to improved response for higher-urgency medications.",
+            "hint": "Compare the overall response rate improvement to the specific improvement seen among higher-urgency medication reminders.",
+            "explanation": "While the overall response rate improved from 22 to 41 percent, the higher-urgency medication group saw an especially large jump, from 19 to 52 percent, showing the urgency-tailored wording had a particularly strong effect for that specific group of messages.",
             "logicChain": [
-                "Premise -> Conclusion"
+                "Overall reminder response rate: 22%, fixed timing and generic wording for all medication types -> timing personalized, wording adjusted for urgency -> overall response rises to 41%, higher-urgency medications rise from 19% to 52% -> personalization appears especially linked to the improvement for higher-urgency reminders"
             ]
         }
     ]

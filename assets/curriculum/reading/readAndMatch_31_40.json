@@ -1,697 +1,697 @@
 {
-    "gameType": "readAndMatch",
-    "batchIndex": 4,
-    "levels": "31-40",
-    "quests": [
+  "gameType": "readAndMatch",
+  "batchIndex": 4,
+  "levels": "31-40",
+  "quests": [
+    {
+      "id": "RDG_READANDMATCH_L31_Q1",
+      "instruction": "Match each word with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "match",
+      "pairs": [
         {
-            "id": "RDG_READANDMATCH_L31_Q1",
-            "instruction": "Match each word with its meaning.",
-            "subtype": "readAndMatch",
-            "interactionType": "match",
-            "pairs": [
-                {
-                    "key": "[L31-Q1-0] Routine",
-                    "value": "A set of actions a person regularly follows."
-                },
-                {
-                    "key": "[L31-Q1-1] Habit",
-                    "value": "Something a person does often, almost without thinking."
-                },
-                {
-                    "key": "[L31-Q1-2] Chore",
-                    "value": "A small task done regularly, often around the house."
-                }
-            ],
-            "hint": "Picture the things you do every single day without needing to think much.",
-            "explanation": "A routine is the full set of regular actions you follow, and a habit is one single behavior repeated so often it becomes automatic. A chore stands apart from both — it's a task, often unwanted, done around the house.",
-            "paragraphTopic": "Main topic of paragraph."
+          "key": "[L31-Q1-0] Postpone",
+          "value": "To move an event to a later time."
         },
         {
-            "id": "RDG_READANDMATCH_L31_Q2",
-            "instruction": "Match each word with its correct meaning.",
-            "subtype": "readAndMatch",
-            "interactionType": "match",
-            "pairs": [
-                {
-                    "key": "[L31-Q2-0] Lecture",
-                    "value": "A talk given to teach students about a subject."
-                },
-                {
-                    "key": "[L31-Q2-1] Exam",
-                    "value": "A formal test of a student's knowledge or skill."
-                },
-                {
-                    "key": "[L31-Q2-2] Tutor",
-                    "value": "A private teacher who helps a student with a subject."
-                }
-            ],
-            "hint": "Each word plays a different role in how a student learns and is tested.",
-            "explanation": "A lecture is where teaching happens, and an exam is how that learning gets tested afterward. A tutor works outside both — someone who helps a student one-on-one, separate from regular classes.",
-            "paragraphTopic": "Main topic of paragraph."
+          "key": "[L31-Q1-1] Cancel",
+          "value": "To completely stop an event from happening."
         },
         {
-            "id": "RDG_READANDMATCH_L31_Q3",
-            "instruction": "Match each word with its meaning.",
-            "subtype": "readAndMatch",
-            "interactionType": "match",
-            "pairs": [
-                {
-                    "key": "[L31-Q3-0] Promotion",
-                    "value": "A move to a higher position or rank at work."
-                },
-                {
-                    "key": "[L31-Q3-1] Resign",
-                    "value": "To formally leave a job."
-                },
-                {
-                    "key": "[L31-Q3-2] Salary",
-                    "value": "The fixed amount of money a person earns regularly for their job."
-                }
-            ],
-            "hint": "One word is money, and the other two describe changes in a job.",
-            "explanation": "A promotion moves you up within a job, while to resign means leaving it altogether. Salary is different from both — it's simply the steady income a job provides, whether you're staying, advancing, or about to leave.",
-            "paragraphTopic": "Main topic of paragraph."
-        },
-        {
-            "id": "RDG_READANDMATCH_L32_Q1",
-            "instruction": "Match each word with its definition.",
-            "subtype": "readAndMatch",
-            "interactionType": "match",
-            "pairs": [
-                {
-                    "key": "[L32-Q1-0] Currency",
-                    "value": "The type of money used in a particular country."
-                },
-                {
-                    "key": "[L32-Q1-1] Exchange Rate",
-                    "value": "The value of one currency compared to another."
-                },
-                {
-                    "key": "[L32-Q1-2] Customs",
-                    "value": "The place at a border where officials check travelers and goods."
-                }
-            ],
-            "hint": "Picture crossing into a new country — what would you deal with along the way?",
-            "explanation": "Currency is the actual money used in a country, and the exchange rate tells you how that money compares to another currency. Customs is unrelated to money directly — it's the checkpoint where officials inspect what travelers bring across the border.",
-            "paragraphTopic": "Main topic of paragraph."
-        },
-        {
-            "id": "RDG_READANDMATCH_L32_Q2",
-            "instruction": "Match each word with its meaning.",
-            "subtype": "readAndMatch",
-            "interactionType": "match",
-            "pairs": [
-                {
-                    "key": "[L32-Q2-0] Craving",
-                    "value": "A strong desire for a particular food or thing."
-                },
-                {
-                    "key": "[L32-Q2-1] Appetite",
-                    "value": "A natural desire to eat food."
-                },
-                {
-                    "key": "[L32-Q2-2] Leftover",
-                    "value": "Food remaining after a meal has been eaten."
-                }
-            ],
-            "hint": "Two of these are about wanting food, and one is about food that remains.",
-            "explanation": "Appetite is your general desire to eat, while a craving is much more specific — a strong pull toward one particular food. Leftover breaks that pattern completely; it's not a desire at all, just food that's left after a meal.",
-            "paragraphTopic": "Main topic of paragraph."
-        },
-        {
-            "id": "RDG_READANDMATCH_L32_Q3",
-            "instruction": "Match each word with its correct meaning.",
-            "subtype": "readAndMatch",
-            "interactionType": "match",
-            "pairs": [
-                {
-                    "key": "[L32-Q3-0] Inherit",
-                    "value": "To receive money or property from someone after they die."
-                },
-                {
-                    "key": "[L32-Q3-1] Ancestor",
-                    "value": "A family member who lived a long time before you."
-                },
-                {
-                    "key": "[L32-Q3-2] Generation",
-                    "value": "All the people born and living at about the same time."
-                }
-            ],
-            "hint": "These words connect the people who came before you to what they left behind.",
-            "explanation": "An ancestor is a family member from long ago, and a generation is the wider group of people born around the same time as each other. Inherit is the only action word here — it's what happens when money or property passes down from an ancestor to someone living today.",
-            "paragraphTopic": "Main topic of paragraph."
-        },
-        {
-            "id": "RDG_READANDMATCH_L33_Q1",
-            "instruction": "Match each word with its meaning.",
-            "subtype": "readAndMatch",
-            "interactionType": "match",
-            "pairs": [
-                {
-                    "key": "[L33-Q1-0] Discomfort",
-                    "value": "A feeling of mild pain or being physically unwell."
-                },
-                {
-                    "key": "[L33-Q1-1] Recover",
-                    "value": "To return to good health after being ill."
-                },
-                {
-                    "key": "[L33-Q1-2] Exhausted",
-                    "value": "Extremely tired, with no energy left."
-                }
-            ],
-            "hint": "Picture getting sick, feeling awful, and slowly getting better.",
-            "explanation": "Discomfort and exhausted both describe how the body feels when something's wrong, though discomfort is milder than being completely exhausted. Recover is the only word describing a change — it's the process of moving from feeling unwell back to feeling fine.",
-            "paragraphTopic": "Main topic of paragraph."
-        },
-        {
-            "id": "RDG_READANDMATCH_L33_Q2",
-            "instruction": "Match each word with its definition.",
-            "subtype": "readAndMatch",
-            "interactionType": "match",
-            "pairs": [
-                {
-                    "key": "[L33-Q2-0] Trailer",
-                    "value": "A short video that shows scenes from an upcoming movie."
-                },
-                {
-                    "key": "[L33-Q2-1] Plot",
-                    "value": "The main story or sequence of events in a book or movie."
-                },
-                {
-                    "key": "[L33-Q2-2] Sequel",
-                    "value": "A movie or book that continues the story of an earlier one."
-                }
-            ],
-            "hint": "Each word relates to a movie, but at a different stage — before, during, or after.",
-            "explanation": "A trailer is shown before a movie is released, to build interest. The plot is the actual story once you're watching it, and a sequel comes after — a new movie that continues that same story.",
-            "paragraphTopic": "Main topic of paragraph."
-        },
-        {
-            "id": "RDG_READANDMATCH_L33_Q3",
-            "instruction": "Match each word with its meaning.",
-            "subtype": "readAndMatch",
-            "interactionType": "match",
-            "pairs": [
-                {
-                    "key": "[L33-Q3-0] Install",
-                    "value": "To set up software or equipment so it is ready to use."
-                },
-                {
-                    "key": "[L33-Q3-1] Restart",
-                    "value": "To turn a device off and on again, often to fix a problem."
-                },
-                {
-                    "key": "[L33-Q3-2] Crash",
-                    "value": "When a computer or program suddenly stops working."
-                }
-            ],
-            "hint": "Picture setting up new software, then something going wrong with it.",
-            "explanation": "You install software before you can use it at all. Restart and crash both come later, once it's running — crash is when it suddenly stops working, and restart is often the fix that follows.",
-            "paragraphTopic": "Main topic of paragraph."
-        },
-        {
-            "id": "RDG_READANDMATCH_L34_Q1",
-            "instruction": "Match each expression with its meaning.",
-            "subtype": "readAndMatch",
-            "interactionType": "match",
-            "pairs": [
-                {
-                    "key": "[L34-Q1-0] Counter Offer",
-                    "value": "A new offer made in response to a price or deal you do not accept."
-                },
-                {
-                    "key": "[L34-Q1-1] Wholesale",
-                    "value": "Selling goods in large quantities, usually at a lower price."
-                },
-                {
-                    "key": "[L34-Q1-2] Retail",
-                    "value": "Selling goods directly to customers, usually in smaller amounts."
-                }
-            ],
-            "hint": "Two of these describe how goods are sold, and one describes a response during a negotiation.",
-            "explanation": "Wholesale and retail both describe ways of selling goods, but wholesale means large quantities at lower prices, while retail means smaller amounts sold directly to customers. A counter offer is unrelated to either — it's simply a new offer made when the first one isn't accepted.",
-            "paragraphTopic": "Main topic of paragraph."
-        },
-        {
-            "id": "RDG_READANDMATCH_L34_Q2",
-            "instruction": "Match each word with its meaning.",
-            "subtype": "readAndMatch",
-            "interactionType": "match",
-            "pairs": [
-                {
-                    "key": "[L34-Q2-0] Drought",
-                    "value": "A long period with little or no rain."
-                },
-                {
-                    "key": "[L34-Q2-1] Flood",
-                    "value": "An overflow of water that covers normally dry land."
-                },
-                {
-                    "key": "[L34-Q2-2] Storm",
-                    "value": "Severe weather with strong wind, rain, or snow."
-                }
-            ],
-            "hint": "One of these means too little water, and one means far too much.",
-            "explanation": "Drought and flood sit at opposite extremes of weather — one is a long period without rain, the other is far too much water at once. Storm is a broader word than either; it covers severe weather in general, from wind to rain to snow.",
-            "paragraphTopic": "Main topic of paragraph."
-        },
-        {
-            "id": "RDG_READANDMATCH_L34_Q3",
-            "instruction": "Match each word with its correct meaning.",
-            "subtype": "readAndMatch",
-            "interactionType": "match",
-            "pairs": [
-                {
-                    "key": "[L34-Q3-0] Confide",
-                    "value": "To tell someone a secret, trusting them not to share it."
-                },
-                {
-                    "key": "[L34-Q3-1] Gossip",
-                    "value": "Casual talk about other people's private lives, often untrue."
-                },
-                {
-                    "key": "[L34-Q3-2] Reassure",
-                    "value": "To say something to remove someone's worry or doubt."
-                }
-            ],
-            "hint": "Each word describes a different way people talk about private matters.",
-            "explanation": "To confide means trusting someone with your own secret, while gossip is the opposite kind of talk — sharing other people's private business, often carelessly. Reassure takes the conversation somewhere else entirely; it's about calming someone's worry, not sharing information.",
-            "paragraphTopic": "Main topic of paragraph."
-        },
-        {
-            "id": "RDG_READANDMATCH_L35_Q1",
-            "instruction": "Match each word with its meaning.",
-            "subtype": "readAndMatch",
-            "interactionType": "match",
-            "pairs": [
-                {
-                    "key": "[L35-Q1-0] Enroll",
-                    "value": "To officially register for a course or school."
-                },
-                {
-                    "key": "[L35-Q1-1] Tuition",
-                    "value": "The money paid for being taught, especially at a school or college."
-                },
-                {
-                    "key": "[L35-Q1-2] Scholarship",
-                    "value": "Money given to a student to help pay for their education."
-                }
-            ],
-            "hint": "Picture starting a college course — signing up for it, then paying for it.",
-            "explanation": "You enroll first, officially joining a course or school. Tuition is the cost of that education, and a scholarship is money that helps cover tuition, often based on merit or need.",
-            "paragraphTopic": "Main topic of paragraph."
-        },
-        {
-            "id": "RDG_READANDMATCH_L35_Q2",
-            "instruction": "Match each term with its correct meaning.",
-            "subtype": "readAndMatch",
-            "interactionType": "match",
-            "pairs": [
-                {
-                    "key": "[L35-Q2-0] Layover",
-                    "value": "A stop between two parts of a journey, especially by plane."
-                },
-                {
-                    "key": "[L35-Q2-1] Jet Lag",
-                    "value": "Tiredness and confusion caused by traveling quickly across time zones."
-                },
-                {
-                    "key": "[L35-Q2-2] Customs Declaration",
-                    "value": "A form listing goods a traveler is bringing into a country."
-                }
-            ],
-            "hint": "These words all relate to a long flight, but at different points in the trip.",
-            "explanation": "A layover is a stop between two flights, and jet lag is the tiredness that can follow once you've crossed several time zones. A customs declaration is a separate matter altogether — a form listing what you're bringing into a country.",
-            "paragraphTopic": "Main topic of paragraph."
-        },
-        {
-            "id": "RDG_READANDMATCH_L35_Q3",
-            "instruction": "Match each word with its correct meaning.",
-            "subtype": "readAndMatch",
-            "interactionType": "match",
-            "pairs": [
-                {
-                    "key": "[L35-Q3-0] Loyal",
-                    "value": "Always supporting and being faithful to someone."
-                },
-                {
-                    "key": "[L35-Q3-1] Jealous",
-                    "value": "Feeling unhappy because someone else has something you want."
-                },
-                {
-                    "key": "[L35-Q3-2] Supportive",
-                    "value": "Giving help and encouragement to someone."
-                }
-            ],
-            "hint": "Two of these describe positive qualities in a friend, and one is less flattering.",
-            "explanation": "Loyal and supportive are both positive qualities — one means staying faithful, the other means offering help and encouragement. Jealous stands apart from both; it describes an uncomfortable feeling, not a kindness you offer someone else.",
-            "paragraphTopic": "Main topic of paragraph."
-        },
-        {
-            "id": "RDG_READANDMATCH_L36_Q1",
-            "instruction": "Match each phrase with its meaning.",
-            "subtype": "readAndMatch",
-            "interactionType": "match",
-            "pairs": [
-                {
-                    "key": "[L36-Q1-0] Overtime Pay",
-                    "value": "Extra money earned for working more hours than usual."
-                },
-                {
-                    "key": "[L36-Q1-1] Benefits",
-                    "value": "Extra advantages from a job besides salary, such as health insurance."
-                },
-                {
-                    "key": "[L36-Q1-2] Probation",
-                    "value": "A trial period at the start of a new job."
-                }
-            ],
-            "hint": "Each word relates to money or conditions at a job, beyond the basic salary.",
-            "explanation": "Overtime pay rewards extra hours worked, and benefits are additional perks like health insurance. Probation is different from both — it's not about money at all, but a trial period at the very start of a new job.",
-            "paragraphTopic": "Main topic of paragraph."
-        },
-        {
-            "id": "RDG_READANDMATCH_L36_Q2",
-            "instruction": "Match each word with its meaning.",
-            "subtype": "readAndMatch",
-            "interactionType": "match",
-            "pairs": [
-                {
-                    "key": "[L36-Q2-0] Garnish",
-                    "value": "A small amount of food added to a dish for decoration or flavor."
-                },
-                {
-                    "key": "[L36-Q2-1] Marinate",
-                    "value": "To soak food in a flavorful liquid before cooking."
-                },
-                {
-                    "key": "[L36-Q2-2] Simmer",
-                    "value": "To cook food gently in liquid just below boiling point."
-                }
-            ],
-            "hint": "Picture preparing a dish — before cooking, during cooking, and at the very end.",
-            "explanation": "You marinate food before cooking it, letting it soak in flavor, and you simmer it gently while it cooks. Garnish comes last of all — a small touch added to a finished dish for looks or extra flavor.",
-            "paragraphTopic": "Main topic of paragraph."
-        },
-        {
-            "id": "RDG_READANDMATCH_L36_Q3",
-            "instruction": "Match each word with its correct meaning.",
-            "subtype": "readAndMatch",
-            "interactionType": "match",
-            "pairs": [
-                {
-                    "key": "[L36-Q3-0] Loading",
-                    "value": "The process of a webpage or file becoming ready to use."
-                },
-                {
-                    "key": "[L36-Q3-1] Buffering",
-                    "value": "A delay while a video or audio file loads before playing."
-                },
-                {
-                    "key": "[L36-Q3-2] Streaming",
-                    "value": "Watching or listening to content directly from the internet, without downloading."
-                }
-            ],
-            "hint": "Each word describes something that happens while you watch a video online.",
-            "explanation": "Streaming is the general activity of watching content directly from the internet. Loading and buffering both describe the technical process behind it — loading is a page or file becoming ready, while buffering is the specific pause while a video catches up.",
-            "paragraphTopic": "Main topic of paragraph."
-        },
-        {
-            "id": "RDG_READANDMATCH_L37_Q1",
-            "instruction": "Match each word with its meaning.",
-            "subtype": "readAndMatch",
-            "interactionType": "match",
-            "pairs": [
-                {
-                    "key": "[L37-Q1-0] Itchy",
-                    "value": "Having an uncomfortable feeling on the skin that makes you want to scratch."
-                },
-                {
-                    "key": "[L37-Q1-1] Swollen",
-                    "value": "Larger than normal because of fluid or injury."
-                },
-                {
-                    "key": "[L37-Q1-2] Bruise",
-                    "value": "A dark mark on the skin caused by an injury."
-                }
-            ],
-            "hint": "Each word describes something you might notice on your skin after an injury.",
-            "explanation": "Itchy describes an uncomfortable feeling that makes you want to scratch, while swollen describes something larger than usual because of fluid or injury. A bruise is different from both — it's a visible dark mark, not a feeling or a change in size.",
-            "paragraphTopic": "Main topic of paragraph."
-        },
-        {
-            "id": "RDG_READANDMATCH_L37_Q2",
-            "instruction": "Match each word with its definition.",
-            "subtype": "readAndMatch",
-            "interactionType": "match",
-            "pairs": [
-                {
-                    "key": "[L37-Q2-0] Highlight",
-                    "value": "The most interesting or exciting part of something."
-                },
-                {
-                    "key": "[L37-Q2-1] Review",
-                    "value": "A written or spoken opinion about the quality of something."
-                },
-                {
-                    "key": "[L37-Q2-2] Rating",
-                    "value": "A score given to show how good something is."
-                }
-            ],
-            "hint": "Picture looking up a movie online before deciding whether to watch it.",
-            "explanation": "A review is someone's written opinion about something, and a rating turns that opinion into a simple score. Highlight is unrelated to judging quality at all — it simply means the most exciting or memorable part of something.",
-            "paragraphTopic": "Main topic of paragraph."
-        },
-        {
-            "id": "RDG_READANDMATCH_L37_Q3",
-            "instruction": "Match each word with its meaning.",
-            "subtype": "readAndMatch",
-            "interactionType": "match",
-            "pairs": [
-                {
-                    "key": "[L37-Q3-0] Punctuation",
-                    "value": "Marks used in writing, such as commas and periods, to make meaning clear."
-                },
-                {
-                    "key": "[L37-Q3-1] Vocabulary",
-                    "value": "The set of words a person knows and uses."
-                },
-                {
-                    "key": "[L37-Q3-2] Pronunciation",
-                    "value": "The way a word is spoken."
-                }
-            ],
-            "hint": "These words describe three separate skills you build while learning a language.",
-            "explanation": "Vocabulary is about which words you know, and pronunciation is about how you say them aloud. Punctuation belongs to writing instead of speaking — it's the marks, like commas and periods, that make written meaning clear.",
-            "paragraphTopic": "Main topic of paragraph."
-        },
-        {
-            "id": "RDG_READANDMATCH_L38_Q1",
-            "instruction": "Match each expression with its meaning.",
-            "subtype": "readAndMatch",
-            "interactionType": "match",
-            "pairs": [
-                {
-                    "key": "[L38-Q1-0] Deposit",
-                    "value": "An amount of money paid as the first part of a larger payment."
-                },
-                {
-                    "key": "[L38-Q1-1] Installment",
-                    "value": "One of several smaller payments made over time."
-                },
-                {
-                    "key": "[L38-Q1-2] Interest Rate",
-                    "value": "The percentage charged or earned on borrowed or saved money."
-                }
-            ],
-            "hint": "Picture paying for something expensive over several months.",
-            "explanation": "A deposit is the first payment made toward something larger, and an installment is each smaller payment that follows over time. Interest rate is different from both — it's the extra percentage charged on money that's borrowed or earned on money that's saved.",
-            "paragraphTopic": "Main topic of paragraph."
-        },
-        {
-            "id": "RDG_READANDMATCH_L38_Q2",
-            "instruction": "Match each word with its meaning.",
-            "subtype": "readAndMatch",
-            "interactionType": "match",
-            "pairs": [
-                {
-                    "key": "[L38-Q2-0] Detour",
-                    "value": "A different, longer route taken to avoid a problem on the usual road."
-                },
-                {
-                    "key": "[L38-Q2-1] Shortcut",
-                    "value": "A quicker route between two places than the usual way."
-                },
-                {
-                    "key": "[L38-Q2-2] Traffic Jam",
-                    "value": "A long line of vehicles unable to move or moving very slowly."
-                }
-            ],
-            "hint": "Two of these are alternate routes, and one is a reason you might need one.",
-            "explanation": "A detour is a longer route taken to avoid a problem, while a shortcut is the opposite — a quicker way between two places. A traffic jam is often the very reason a detour becomes necessary in the first place.",
-            "paragraphTopic": "Main topic of paragraph."
-        },
-        {
-            "id": "RDG_READANDMATCH_L38_Q3",
-            "instruction": "Match each word with its correct meaning.",
-            "subtype": "readAndMatch",
-            "interactionType": "match",
-            "pairs": [
-                {
-                    "key": "[L38-Q3-0] Apologetic",
-                    "value": "Showing that you are sorry for something you did."
-                },
-                {
-                    "key": "[L38-Q3-1] Defensive",
-                    "value": "Acting to protect yourself, especially when criticized."
-                },
-                {
-                    "key": "[L38-Q3-2] Sincere",
-                    "value": "Honest and true, without pretending."
-                }
-            ],
-            "hint": "Picture three different ways someone might react to being criticized.",
-            "explanation": "Apologetic shows you're sorry, while defensive shows the opposite reaction — protecting yourself instead of admitting fault. Sincere doesn't describe a reaction to criticism at all; it simply means honest, in any situation.",
-            "paragraphTopic": "Main topic of paragraph."
-        },
-        {
-            "id": "RDG_READANDMATCH_L39_Q1",
-            "instruction": "Match each term with its correct meaning.",
-            "subtype": "readAndMatch",
-            "interactionType": "match",
-            "pairs": [
-                {
-                    "key": "[L39-Q1-0] Multiple Choice",
-                    "value": "A type of test question with several answer options to pick from."
-                },
-                {
-                    "key": "[L39-Q1-1] Essay",
-                    "value": "A piece of writing that discusses a topic in detail."
-                },
-                {
-                    "key": "[L39-Q1-2] Plagiarism",
-                    "value": "Using someone else's work or ideas without giving them credit."
-                }
-            ],
-            "hint": "Two of these describe types of test questions, and one describes cheating.",
-            "explanation": "Multiple choice and essay are two different styles of test question — one offers set answers to pick from, the other asks for your own writing. Plagiarism is a separate issue entirely; it means using someone else's work without giving them credit, in either type of question.",
-            "paragraphTopic": "Main topic of paragraph."
-        },
-        {
-            "id": "RDG_READANDMATCH_L39_Q2",
-            "instruction": "Match each word with its meaning.",
-            "subtype": "readAndMatch",
-            "interactionType": "match",
-            "pairs": [
-                {
-                    "key": "[L39-Q2-0] Markdown",
-                    "value": "A reduction in the original price of a product to encourage sales."
-                },
-                {
-                    "key": "[L39-Q2-1] Inventory",
-                    "value": "The total amount of goods a store currently has available."
-                },
-                {
-                    "key": "[L39-Q2-2] Checkout",
-                    "value": "The place in a store where customers pay for their items."
-                }
-            ],
-            "hint": "Picture working behind the counter at a busy store.",
-            "explanation": "Inventory is the stock a store currently has, and a markdown lowers the price to help sell some of it faster. Checkout is where the process ends — the place customers finally pay for what they've chosen.",
-            "paragraphTopic": "Main topic of paragraph."
-        },
-        {
-            "id": "RDG_READANDMATCH_L39_Q3",
-            "instruction": "Match each word with its correct meaning.",
-            "subtype": "readAndMatch",
-            "interactionType": "match",
-            "pairs": [
-                {
-                    "key": "[L39-Q3-0] Compliment",
-                    "value": "A polite remark that expresses praise or admiration."
-                },
-                {
-                    "key": "[L39-Q3-1] Criticism",
-                    "value": "A comment that points out faults or problems."
-                },
-                {
-                    "key": "[L39-Q3-2] Feedback",
-                    "value": "Information given about how well something was done, to help it improve."
-                }
-            ],
-            "hint": "Two of these lean toward one side, positive or negative — one stays neutral.",
-            "explanation": "A compliment is purely positive, while criticism leans the opposite way, pointing out faults. Feedback sits above both of them — it's a broader word for any information about performance, whether it happens to be praise, criticism, or both.",
-            "paragraphTopic": "Main topic of paragraph."
-        },
-        {
-            "id": "RDG_READANDMATCH_L40_Q1",
-            "instruction": "Match each phrase with its meaning.",
-            "subtype": "readAndMatch",
-            "interactionType": "match",
-            "pairs": [
-                {
-                    "key": "[L40-Q1-0] Allergic Reaction",
-                    "value": "The body's harmful response to a substance it cannot tolerate."
-                },
-                {
-                    "key": "[L40-Q1-1] Immune System",
-                    "value": "The body's natural defense against illness and infection."
-                },
-                {
-                    "key": "[L40-Q1-2] Vaccine",
-                    "value": "A substance given to help the body build protection against a disease."
-                }
-            ],
-            "hint": "Each word relates to how your body defends itself, or sometimes overreacts.",
-            "explanation": "The immune system is your body's natural defense against illness, and a vaccine helps strengthen that defense in advance. An allergic reaction is different from both — it's the immune system overreacting to something that isn't actually dangerous.",
-            "paragraphTopic": "Main topic of paragraph."
-        },
-        {
-            "id": "RDG_READANDMATCH_L40_Q2",
-            "instruction": "Match each word with its meaning.",
-            "subtype": "readAndMatch",
-            "interactionType": "match",
-            "pairs": [
-                {
-                    "key": "[L40-Q2-0] Cancellation",
-                    "value": "The act of stopping a planned event or booking from happening."
-                },
-                {
-                    "key": "[L40-Q2-1] Confirmation",
-                    "value": "A message that proves a booking or order has been accepted."
-                },
-                {
-                    "key": "[L40-Q2-2] Refund Policy",
-                    "value": "The rules a company follows about giving money back."
-                }
-            ],
-            "hint": "Picture booking a hotel room, then having your plans suddenly change.",
-            "explanation": "A confirmation proves that a booking went through, while a cancellation is the opposite — stopping that booking altogether. A refund policy is different from either action; it's simply the set of rules about what happens to your money if you cancel.",
-            "paragraphTopic": "Main topic of paragraph."
-        },
-        {
-            "id": "RDG_READANDMATCH_L40_Q3",
-            "instruction": "Match each word with its correct meaning.",
-            "subtype": "readAndMatch",
-            "interactionType": "match",
-            "pairs": [
-                {
-                    "key": "[L40-Q3-0] Persuade",
-                    "value": "To get someone to do something by giving reasons or encouragement."
-                },
-                {
-                    "key": "[L40-Q3-1] Convince",
-                    "value": "To make someone believe that something is true."
-                },
-                {
-                    "key": "[L40-Q3-2] Argue",
-                    "value": "To give reasons for or against something, often while disagreeing with someone."
-                }
-            ],
-            "hint": "One word changes what someone does, another changes what they believe.",
-            "explanation": "Persuade is about getting someone to actually do something, often through encouragement or reasons. Convince is a little different — it's about changing what someone believes, rather than what they do. Argue takes a more direct approach than both, often involving open disagreement.",
-            "paragraphTopic": "Main topic of paragraph."
+          "key": "[L31-Q1-2] Confirm",
+          "value": "To make sure an arrangement will happen as planned."
         }
-    ]
+      ],
+      "hint": "One of these delays an event, one removes it completely, and one locks it in.",
+      "explanation": "Postpone and cancel both change plans, but postponing keeps the event alive by moving it, while canceling ends it completely. Confirm is different from both — it doesn't change anything, it simply makes sure the event stays exactly as planned.",
+      "paragraphTopic": "Managing plans and events"
+    },
+    {
+      "id": "RDG_READANDMATCH_L31_Q2",
+      "instruction": "Match each word to its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "match",
+      "pairs": [
+        {
+          "key": "[L31-Q2-0] Optional",
+          "value": "Not required; something you may choose or skip."
+        },
+        {
+          "key": "[L31-Q2-1] Mandatory",
+          "value": "Required by rule; something you must do."
+        },
+        {
+          "key": "[L31-Q2-2] Recommended",
+          "value": "Suggested as a good idea, though not strictly required."
+        }
+      ],
+      "hint": "Two of these tell you whether something is required. One sits in between, as a suggestion.",
+      "explanation": "Optional and mandatory are opposites, one free to skip and one required. Recommended sits between them — not required like mandatory, but stronger than simply optional, since it comes with advice to do it.",
+      "paragraphTopic": "Describing requirements"
+    },
+    {
+      "id": "RDG_READANDMATCH_L31_Q3",
+      "instruction": "Match each sentence with what it means.",
+      "subtype": "readAndMatch",
+      "interactionType": "match",
+      "pairs": [
+        {
+          "key": "[L31-Q3-0] Could we get the check, please?",
+          "value": "We are asking for the bill so we can pay."
+        },
+        {
+          "key": "[L31-Q3-1] Is this table taken?",
+          "value": "The speaker is asking whether someone is already sitting there."
+        },
+        {
+          "key": "[L31-Q3-2] We're still deciding.",
+          "value": "We haven't chosen what to order yet."
+        }
+      ],
+      "hint": "One is a request for the bill, one asks about seating, and one is about not being ready to order.",
+      "explanation": "Get the check and still deciding both relate to the ordering process, one at the very end, one before it's even started. Is this table taken is different — it's not about ordering at all, it's about finding somewhere to sit.",
+      "paragraphTopic": "Ordering at a restaurant"
+    },
+    {
+      "id": "RDG_READANDMATCH_L32_Q1",
+      "instruction": "Match each word with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "match",
+      "pairs": [
+        {
+          "key": "[L32-Q1-0] Reserve",
+          "value": "To arrange to have something, such as a table or seat, held for later use."
+        },
+        {
+          "key": "[L32-Q1-1] Arrange",
+          "value": "To plan or organize the details of something in advance."
+        },
+        {
+          "key": "[L32-Q1-2] Organize",
+          "value": "To put the parts of something into a clear, working order."
+        }
+      ],
+      "hint": "One means holding a place for later use. Two involve putting things together, at different scales.",
+      "explanation": "Reserve means holding something, often a table or seat, for future use. Arrange and organize both involve putting things in order, though organize usually covers a bigger, more complete plan than a single arrangement.",
+      "paragraphTopic": "Making arrangements"
+    },
+    {
+      "id": "RDG_READANDMATCH_L32_Q2",
+      "instruction": "Match each word to its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "match",
+      "pairs": [
+        {
+          "key": "[L32-Q2-0] Generous",
+          "value": "Willing to give freely, especially money, time, or help."
+        },
+        {
+          "key": "[L32-Q2-1] Stingy",
+          "value": "Unwilling to spend or give, even when it's affordable."
+        },
+        {
+          "key": "[L32-Q2-2] Thoughtful",
+          "value": "Showing care about what other people need or feel."
+        }
+      ],
+      "hint": "Two of these describe how someone treats money or gifts. One describes care for other people's feelings.",
+      "explanation": "Generous and stingy are opposites describing how freely someone gives, one openly and one reluctantly. Thoughtful is different from both — it's about noticing what others need, not about money.",
+      "paragraphTopic": "Describing generosity and kindness"
+    },
+    {
+      "id": "RDG_READANDMATCH_L32_Q3",
+      "instruction": "Match each sentence with what it means.",
+      "subtype": "readAndMatch",
+      "interactionType": "match",
+      "pairs": [
+        {
+          "key": "[L32-Q3-0] Check-in starts at 3pm.",
+          "value": "Guests cannot access their room before 3pm."
+        },
+        {
+          "key": "[L32-Q3-1] We're fully booked tonight.",
+          "value": "There are no rooms available tonight."
+        },
+        {
+          "key": "[L32-Q3-2] Would you like a wake-up call?",
+          "value": "The staff is offering to call the guest to wake them at a set time."
+        }
+      ],
+      "hint": "One is about room access, one is about availability, and one is an offer.",
+      "explanation": "Check-in starts at 3pm and fully booked both relate to room availability, one about timing, one about there being none left at all. Wake-up call is different — it's an extra service being offered, not a rule about the room itself.",
+      "paragraphTopic": "Checking into a hotel"
+    },
+    {
+      "id": "RDG_READANDMATCH_L33_Q1",
+      "instruction": "Match each word with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "match",
+      "pairs": [
+        {
+          "key": "[L33-Q1-0] Borrow",
+          "value": "To take something temporarily, planning to give it back."
+        },
+        {
+          "key": "[L33-Q1-1] Lend",
+          "value": "To give something temporarily, expecting it back."
+        },
+        {
+          "key": "[L33-Q1-2] Owe",
+          "value": "To still need to pay back money or a favor."
+        }
+      ],
+      "hint": "Two of these describe opposite sides of the same exchange. One describes what happens afterward.",
+      "explanation": "Borrow and lend describe the same exchange from two sides, one receiving, one giving. Owe is different from both — it describes what's left afterward, the debt still to be repaid.",
+      "paragraphTopic": "Borrowing and lending money"
+    },
+    {
+      "id": "RDG_READANDMATCH_L33_Q2",
+      "instruction": "Match each word to its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "match",
+      "pairs": [
+        {
+          "key": "[L33-Q2-0] Cautious",
+          "value": "Careful to avoid risk or danger."
+        },
+        {
+          "key": "[L33-Q2-1] Reckless",
+          "value": "Acting without thinking about danger or consequences."
+        },
+        {
+          "key": "[L33-Q2-2] Hesitant",
+          "value": "Slow to act because of uncertainty or doubt."
+        }
+      ],
+      "hint": "Two of these are opposites in how much risk someone takes. One is about being unsure, not about risk itself.",
+      "explanation": "Cautious and reckless are opposites describing how carefully someone acts around risk. Hesitant is different — it's about being unsure or slow to act, which isn't quite the same as being careful or careless.",
+      "paragraphTopic": "Describing attitudes toward risk"
+    },
+    {
+      "id": "RDG_READANDMATCH_L33_Q3",
+      "instruction": "Match each sentence with what it means.",
+      "subtype": "readAndMatch",
+      "interactionType": "match",
+      "pairs": [
+        {
+          "key": "[L33-Q3-0] Sorry for the late reply.",
+          "value": "The speaker apologizes for not responding sooner."
+        },
+        {
+          "key": "[L33-Q3-1] I sent that a while ago.",
+          "value": "The message was sent some time in the past, not recently."
+        },
+        {
+          "key": "[L33-Q3-2] Let me know if that works.",
+          "value": "The speaker wants the other person to confirm whether the plan is acceptable."
+        }
+      ],
+      "hint": "One is an apology, one clarifies timing, and one asks for confirmation.",
+      "explanation": "Sorry for the late reply and I sent that a while ago both deal with timing, one apologizing for a delay, the other pointing out that something already happened. Let me know if that works is different — it's not about timing at all, it's a request for a response.",
+      "paragraphTopic": "Everyday digital messages"
+    },
+    {
+      "id": "RDG_READANDMATCH_L34_Q1",
+      "instruction": "Match each word with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "match",
+      "pairs": [
+        {
+          "key": "[L34-Q1-0] Approve",
+          "value": "To officially agree to or accept something."
+        },
+        {
+          "key": "[L34-Q1-1] Reject",
+          "value": "To refuse to accept something."
+        },
+        {
+          "key": "[L34-Q1-2] Review",
+          "value": "To examine something carefully before making a decision."
+        }
+      ],
+      "hint": "Two of these are opposite decisions. One comes before either decision is made.",
+      "explanation": "Approve and reject are opposite outcomes of a decision, one accepting, one refusing. Review is different from both — it's the step of examining something, which happens before either decision is reached.",
+      "paragraphTopic": "Making a decision about something"
+    },
+    {
+      "id": "RDG_READANDMATCH_L34_Q2",
+      "instruction": "Match each word to its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "match",
+      "pairs": [
+        {
+          "key": "[L34-Q2-0] Beside",
+          "value": "Next to, at the side of."
+        },
+        {
+          "key": "[L34-Q2-1] Besides",
+          "value": "In addition to; apart from."
+        },
+        {
+          "key": "[L34-Q2-2] Except",
+          "value": "Not including; leaving something out."
+        }
+      ],
+      "hint": "One is about location. Two are about adding or leaving something out of a list, in opposite ways.",
+      "explanation": "Besides adds something extra to a list, while except removes something from it — opposite directions for the same kind of list. Beside is different from both; it's simply about physical position, next to something.",
+      "paragraphTopic": "Precise use of similar words"
+    },
+    {
+      "id": "RDG_READANDMATCH_L34_Q3",
+      "instruction": "Match each sentence with what it means.",
+      "subtype": "readAndMatch",
+      "interactionType": "match",
+      "pairs": [
+        {
+          "key": "[L34-Q3-0] This isn't quite what I expected.",
+          "value": "The item doesn't match what the customer thought they were getting."
+        },
+        {
+          "key": "[L34-Q3-1] Do you have this in a different size?",
+          "value": "The customer wants to know if another size is available."
+        },
+        {
+          "key": "[L34-Q3-2] I'd like to return this.",
+          "value": "The customer wants to bring the item back and get a refund or exchange."
+        }
+      ],
+      "hint": "One is a mild complaint, one is a question about stock, and one is a clear request.",
+      "explanation": "This isn't quite what I expected hints at disappointment without stating it outright, while I'd like to return this states the customer's wish directly. A different size sits in between — it's neither a complaint nor a return, just a question about what's available.",
+      "paragraphTopic": "Returning an item at a shop"
+    },
+    {
+      "id": "RDG_READANDMATCH_L35_Q1",
+      "instruction": "Match each word with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "match",
+      "pairs": [
+        {
+          "key": "[L35-Q1-0] Rent",
+          "value": "To pay to use something that belongs to someone else, usually for a set time."
+        },
+        {
+          "key": "[L35-Q1-1] Own",
+          "value": "To possess something as yours."
+        },
+        {
+          "key": "[L35-Q1-2] Share",
+          "value": "To use or have something together with others."
+        }
+      ],
+      "hint": "One means paying to use something temporarily, one means possessing it fully, and one means dividing its use with others.",
+      "explanation": "Rent and own describe two different relationships to property, one temporary and paid for, one permanent and fully possessed. Share is different from both — it's not about ownership at all, just about using something together with others.",
+      "paragraphTopic": "Different ways of using property"
+    },
+    {
+      "id": "RDG_READANDMATCH_L35_Q2",
+      "instruction": "Match each word to its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "match",
+      "pairs": [
+        {
+          "key": "[L35-Q2-0] Look Into",
+          "value": "To investigate or examine something more closely."
+        },
+        {
+          "key": "[L35-Q2-1] Figure Out",
+          "value": "To understand or solve something after thinking about it."
+        },
+        {
+          "key": "[L35-Q2-2] Work Out",
+          "value": "To resolve a problem, often through effort or practice."
+        }
+      ],
+      "hint": "One means investigating a problem, one means solving it mentally, and one means resolving it through effort.",
+      "explanation": "Look into and figure out both involve understanding a problem, one through investigation, one through thought. Work out is different — it often means resolving something through effort, not just understanding it.",
+      "paragraphTopic": "Solving a problem"
+    },
+    {
+      "id": "RDG_READANDMATCH_L35_Q3",
+      "instruction": "Match each sentence with what it means.",
+      "subtype": "readAndMatch",
+      "interactionType": "match",
+      "pairs": [
+        {
+          "key": "[L35-Q3-0] Let's table this for now.",
+          "value": "Let's set this topic aside and return to it another time."
+        },
+        {
+          "key": "[L35-Q3-1] I'll loop back once I hear more.",
+          "value": "I will get in touch again after I have more information."
+        },
+        {
+          "key": "[L35-Q3-2] I want to flag something.",
+          "value": "I want to point out or draw attention to an issue."
+        }
+      ],
+      "hint": "One is about postponing a topic, one is about following up later, and one is about pointing something out now.",
+      "explanation": "Table this postpones a topic and loop back promises to return to something later, so both involve time passing before action. Flag something is different — it's about drawing attention to an issue right now, not postponing or returning to it.",
+      "paragraphTopic": "Workplace meeting language"
+    },
+    {
+      "id": "RDG_READANDMATCH_L36_Q1",
+      "instruction": "Match each word with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "match",
+      "pairs": [
+        {
+          "key": "[L36-Q1-0] Result",
+          "value": "What happens because of an action or event."
+        },
+        {
+          "key": "[L36-Q1-1] Outcome",
+          "value": "The final result of a process, especially one that was uncertain."
+        },
+        {
+          "key": "[L36-Q1-2] Effect",
+          "value": "A change that is produced by a cause."
+        }
+      ],
+      "hint": "All three describe something that follows a cause, but notice which one focuses on uncertainty and which on change.",
+      "explanation": "Result is the general word for what follows an action. Outcome adds a sense of uncertainty beforehand, since the process could have gone several ways. Effect is different again, focusing on the specific change a cause produces.",
+      "paragraphTopic": "Talking about causes and results"
+    },
+    {
+      "id": "RDG_READANDMATCH_L36_Q2",
+      "instruction": "Match each notice with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "match",
+      "pairs": [
+        {
+          "key": "[L36-Q2-0] Authorized Personnel Only",
+          "value": "A sign showing that only approved people may enter."
+        },
+        {
+          "key": "[L36-Q2-1] Caution: Wet Floor",
+          "value": "A sign warning that the floor may be slippery."
+        },
+        {
+          "key": "[L36-Q2-2] In Case of Fire",
+          "value": "A sign giving instructions to follow during a fire emergency."
+        }
+      ],
+      "hint": "One warns of danger underfoot, one limits who can enter, and one gives emergency instructions.",
+      "explanation": "Authorized personnel only limits who may enter, much like caution: wet floor warns about a specific hazard in one spot. In case of fire is different from both — it isn't a standing rule, it's an instruction for a specific emergency.",
+      "paragraphTopic": "Common safety and access signs"
+    },
+    {
+      "id": "RDG_READANDMATCH_L36_Q3",
+      "instruction": "Match each sentence with what it means.",
+      "subtype": "readAndMatch",
+      "interactionType": "match",
+      "pairs": [
+        {
+          "key": "[L36-Q3-0] Take this twice a day with food.",
+          "value": "Take the medicine two times daily, along with a meal."
+        },
+        {
+          "key": "[L36-Q3-1] Let it dissolve under your tongue.",
+          "value": "Let the tablet melt in your mouth rather than swallowing it whole."
+        },
+        {
+          "key": "[L36-Q3-2] Avoid taking this on an empty stomach.",
+          "value": "Do not take the medicine without eating something first."
+        }
+      ],
+      "hint": "Each instruction changes how or when the medicine should be taken.",
+      "explanation": "Twice a day with food and avoid on an empty stomach both relate to eating alongside medicine, one a positive instruction, one a warning. Dissolve under your tongue is different — it's about how the medicine is taken, not about food.",
+      "paragraphTopic": "Reading medicine instructions"
+    },
+    {
+      "id": "RDG_READANDMATCH_L37_Q1",
+      "instruction": "Match each expression with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "match",
+      "pairs": [
+        {
+          "key": "[L37-Q1-0] Reach an Agreement",
+          "value": "To come to a shared decision that everyone accepts."
+        },
+        {
+          "key": "[L37-Q1-1] Break a Habit",
+          "value": "To stop doing something you usually do without thinking."
+        },
+        {
+          "key": "[L37-Q1-2] Meet a Deadline",
+          "value": "To finish something by the time it is due."
+        }
+      ],
+      "hint": "One is about two sides coming together, one is about stopping a pattern, and one is about finishing on time.",
+      "explanation": "Reach an agreement is something two or more people do together, while break a habit and meet a deadline are usually personal goals. Meet a deadline is specifically about timing, while break a habit is about ending a repeated behavior.",
+      "paragraphTopic": "Common goal-related expressions"
+    },
+    {
+      "id": "RDG_READANDMATCH_L37_Q2",
+      "instruction": "Match each word with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "match",
+      "pairs": [
+        {
+          "key": "[L37-Q2-0] Flexible",
+          "value": "Able to change or adjust easily."
+        },
+        {
+          "key": "[L37-Q2-1] Rigid",
+          "value": "Not willing or able to change; strict."
+        },
+        {
+          "key": "[L37-Q2-2] Consistent",
+          "value": "Behaving or happening in the same way over time."
+        }
+      ],
+      "hint": "Two of these are opposites in how open to change someone is. One is about staying the same over time.",
+      "explanation": "Flexible and rigid are opposites, one open to change, one resistant to it. Consistent is different from both — it's not about how open to change something is, but about whether it stays steady and predictable.",
+      "paragraphTopic": "Describing openness to change"
+    },
+    {
+      "id": "RDG_READANDMATCH_L37_Q3",
+      "instruction": "Match each sentence with what it means.",
+      "subtype": "readAndMatch",
+      "interactionType": "match",
+      "pairs": [
+        {
+          "key": "[L37-Q3-0] Utilities are included in the rent.",
+          "value": "The monthly cost already covers services like water and electricity."
+        },
+        {
+          "key": "[L37-Q3-1] The lease runs for twelve months.",
+          "value": "The rental agreement lasts for a full year."
+        },
+        {
+          "key": "[L37-Q3-2] We'll need a deposit up front.",
+          "value": "Payment of a security amount is required before move-in."
+        }
+      ],
+      "hint": "One is about what the rent covers, one is about how long the agreement lasts, and one is about money paid before moving in.",
+      "explanation": "Utilities are included and we'll need a deposit both involve money tied to renting, one about what's covered, one about what's required upfront. The lease runs for twelve months is different — it's about the length of the agreement, not about money.",
+      "paragraphTopic": "Renting a home"
+    },
+    {
+      "id": "RDG_READANDMATCH_L38_Q1",
+      "instruction": "Match each word with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "match",
+      "pairs": [
+        {
+          "key": "[L38-Q1-0] Charge",
+          "value": "An amount of money asked for a service."
+        },
+        {
+          "key": "[L38-Q1-1] Fee",
+          "value": "Money paid for a particular service or privilege."
+        },
+        {
+          "key": "[L38-Q1-2] Fine",
+          "value": "Money paid as a punishment for breaking a rule."
+        }
+      ],
+      "hint": "All three involve paying money, but only one is a punishment.",
+      "explanation": "A charge and a fee are both regular costs for a service, though fee often sounds more official or fixed. A fine is different from both — it isn't a normal cost at all, it's a penalty for breaking a rule.",
+      "paragraphTopic": "Words for money owed or paid"
+    },
+    {
+      "id": "RDG_READANDMATCH_L38_Q2",
+      "instruction": "Match each phrase with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "match",
+      "pairs": [
+        {
+          "key": "[L38-Q2-0] Cut Back On",
+          "value": "To reduce how much of something you use or do, especially a habit."
+        },
+        {
+          "key": "[L38-Q2-1] Cut Off",
+          "value": "To stop supplying or disconnect something suddenly."
+        },
+        {
+          "key": "[L38-Q2-2] Cut Down",
+          "value": "To reduce the amount or number of something."
+        }
+      ],
+      "hint": "One stops something suddenly and completely. Two describe reducing something, at different speeds.",
+      "explanation": "Cut down and cut back on both mean reducing something, though cut back on usually applies to a habit or amount used regularly, while cut down works more generally. Cut off is different — it means stopping something suddenly and completely, not gradually reducing it.",
+      "paragraphTopic": "Phrasal verbs with 'cut'"
+    },
+    {
+      "id": "RDG_READANDMATCH_L38_Q3",
+      "instruction": "Match each sentence with what it means.",
+      "subtype": "readAndMatch",
+      "interactionType": "match",
+      "pairs": [
+        {
+          "key": "[L38-Q3-0] Traffic is backed up for miles.",
+          "value": "Vehicles are stopped or moving very slowly over a long distance."
+        },
+        {
+          "key": "[L38-Q3-1] The train was standing room only.",
+          "value": "The train was so crowded that all the seats were taken."
+        },
+        {
+          "key": "[L38-Q3-2] I missed my connection.",
+          "value": "The speaker arrived too late to catch the next scheduled transport."
+        }
+      ],
+      "hint": "Each sentence describes a different transportation problem.",
+      "explanation": "Traffic backed up for miles and standing room only both describe crowded, slow travel, one on the road and one on a train. Missed my connection is different — it's not about crowding or slowness, it's about timing that didn't line up.",
+      "paragraphTopic": "Describing transportation problems"
+    },
+    {
+      "id": "RDG_READANDMATCH_L39_Q1",
+      "instruction": "Match each word with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "match",
+      "pairs": [
+        {
+          "key": "[L39-Q1-0] Definitely",
+          "value": "Without any doubt; for certain."
+        },
+        {
+          "key": "[L39-Q1-1] Probably",
+          "value": "Likely to be true, though not certain."
+        },
+        {
+          "key": "[L39-Q1-2] Possibly",
+          "value": "Perhaps; there's a chance, though it isn't likely for certain."
+        }
+      ],
+      "hint": "Order these from most certain to least certain.",
+      "explanation": "Definitely expresses full certainty, while probably suggests something is likely but not guaranteed. Possibly is the weakest of the three — it only says something could happen, without suggesting it's likely.",
+      "paragraphTopic": "Degrees of certainty"
+    },
+    {
+      "id": "RDG_READANDMATCH_L39_Q2",
+      "instruction": "Match each expression with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "match",
+      "pairs": [
+        {
+          "key": "[L39-Q2-0] Take Responsibility",
+          "value": "To accept that something is your duty or fault."
+        },
+        {
+          "key": "[L39-Q2-1] Take Advantage",
+          "value": "To make good use of an opportunity, sometimes unfairly."
+        },
+        {
+          "key": "[L39-Q2-2] Take Notice",
+          "value": "To pay attention to something."
+        }
+      ],
+      "hint": "Each uses the word 'take,' but the three don't mean anything close to the same thing.",
+      "explanation": "Take responsibility means accepting ownership of something, while take advantage means using an opportunity for benefit. Take notice is different from both — it simply means paying attention, without accepting or using anything.",
+      "paragraphTopic": "Different uses of 'take'"
+    },
+    {
+      "id": "RDG_READANDMATCH_L39_Q3",
+      "instruction": "Match each sentence with what it means.",
+      "subtype": "readAndMatch",
+      "interactionType": "match",
+      "pairs": [
+        {
+          "key": "[L39-Q3-0] The deadline was extended by a week.",
+          "value": "Students were given one more week to complete the assignment."
+        },
+        {
+          "key": "[L39-Q3-1] Please cite your sources.",
+          "value": "Students are asked to reference where their information came from."
+        },
+        {
+          "key": "[L39-Q3-2] This will count toward your final grade.",
+          "value": "The score from this task will be included in the overall grade."
+        }
+      ],
+      "hint": "One is about extra time, one is about giving credit for information, and one is about how a score is used.",
+      "explanation": "Extended by a week and count toward your final grade both affect how a task fits into the course overall, one about timing, one about grading. Cite your sources is different — it's an instruction about honesty in the work itself, not about time or grades.",
+      "paragraphTopic": "Academic instructions and deadlines"
+    },
+    {
+      "id": "RDG_READANDMATCH_L40_Q1",
+      "instruction": "Match each phrase with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "match",
+      "pairs": [
+        {
+          "key": "[L40-Q1-0] Would You Mind...",
+          "value": "A polite, indirect way to ask someone to do something."
+        },
+        {
+          "key": "[L40-Q1-1] Could You...",
+          "value": "A common, polite way to ask someone to do something."
+        },
+        {
+          "key": "[L40-Q1-2] Can You...",
+          "value": "A direct, everyday way to ask someone to do something."
+        }
+      ],
+      "hint": "All three ask someone to do something, but they don't sound equally polite.",
+      "explanation": "Can you is the most direct, everyday way to ask, while could you softens the request slightly, making it more polite. Would you mind is the most indirect of the three, asking about the other person's willingness rather than making a direct request.",
+      "paragraphTopic": "Levels of politeness in requests"
+    },
+    {
+      "id": "RDG_READANDMATCH_L40_Q2",
+      "instruction": "Match each expression with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "match",
+      "pairs": [
+        {
+          "key": "[L40-Q2-0] Draw a Conclusion",
+          "value": "To reach a decision or opinion after considering the facts."
+        },
+        {
+          "key": "[L40-Q2-1] Raise a Concern",
+          "value": "To mention a worry so others are aware of it."
+        },
+        {
+          "key": "[L40-Q2-2] Voice an Opinion",
+          "value": "To express what you think about something."
+        }
+      ],
+      "hint": "One is about reasoning to an answer, one is about expressing worry, and one is about sharing a viewpoint.",
+      "explanation": "Raise a concern and voice an opinion are both about speaking up, one about worry, one about a viewpoint. Draw a conclusion is different from both — it isn't about speaking at all, it's the mental step of reasoning your way to an answer.",
+      "paragraphTopic": "Formal ways of communicating"
+    },
+    {
+      "id": "RDG_READANDMATCH_L40_Q3",
+      "instruction": "Match each sentence with what it really means.",
+      "subtype": "readAndMatch",
+      "interactionType": "match",
+      "pairs": [
+        {
+          "key": "[L40-Q3-0] I guess it could've gone better.",
+          "value": "The speaker is admitting, in an understated way, that things did not go well."
+        },
+        {
+          "key": "[L40-Q3-1] No offense, but...",
+          "value": "The speaker is about to say something that might sound critical, and is softening it in advance."
+        },
+        {
+          "key": "[L40-Q3-2] If you say so.",
+          "value": "The speaker doesn't fully agree, but isn't going to argue about it."
+        }
+      ],
+      "hint": "None of these say exactly what they mean. Notice what's being softened or left unsaid.",
+      "explanation": "Could've gone better is an understated way of admitting something went badly, and no offense, but is used to soften a criticism before saying it. If you say so is different from both — it signals quiet disagreement rather than admitting a problem or preparing to state one.",
+      "paragraphTopic": "Reading between the lines in conversation"
+    }
+  ]
 }

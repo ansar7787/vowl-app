@@ -5,573 +5,573 @@
     "quests": [
         {
             "id": "RDG_SKIMMINGSCANNING_L11_Q1",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Scan the sentence for the exact appointment time.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "The chef added fresh basil to the sauce.",
-            "targetItem": "basil",
+            "passage": "The dentist appointment is scheduled for three fifteen on Wednesday afternoon.",
+            "targetItem": "three fifteen",
             "options": [
-                "basil",
-                "chef",
-                "mint",
-                "sauce"
+                "three",
+                "Wednesday",
+                "afternoon",
+                "three fifteen"
             ],
-            "correctAnswer": "basil",
-            "hint": "Find the herb added to the sauce.",
-            "explanation": "The passage says the chef added basil, so that is the target word.",
-            "timeLimit": 20,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "three fifteen",
+            "hint": "Look for the more precise time, not just the hour.",
+            "explanation": "The appointment is at three fifteen; 'three' alone is not the exact time given.",
+            "timeLimit": 18,
+            "targetInfo": "Appointment time"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L11_Q2",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Search the sentence for the third color listed.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "He downloaded an app to track his sleep.",
-            "targetItem": "app",
+            "passage": "The new phone comes in black, silver, and rose gold colors.",
+            "targetItem": "rose gold",
             "options": [
-                "app",
-                "track",
-                "sleep",
-                "game"
+                "rose gold",
+                "black",
+                "silver",
+                "phone"
             ],
-            "correctAnswer": "app",
-            "hint": "Find what he downloaded to track his sleep.",
-            "explanation": "The passage says he downloaded an app, so 'app' is correct.",
-            "timeLimit": 20,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "rose gold",
+            "hint": "Count the colors in order and find the last one named.",
+            "explanation": "The colors are listed in order, and rose gold is the third one mentioned.",
+            "timeLimit": 18,
+            "targetInfo": "Third color option"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L11_Q3",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Scan the sentence for the room number.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "The clinic opens early on Mondays.",
-            "targetItem": "clinic",
+            "passage": "Room 214 is reserved for the finance team's weekly meeting.",
+            "targetItem": "214",
             "options": [
-                "early",
-                "hospital",
-                "clinic",
-                "Mondays"
+                "finance",
+                "weekly",
+                "214",
+                "meeting"
             ],
-            "correctAnswer": "clinic",
-            "hint": "Find the place that opens early on Mondays.",
-            "explanation": "The passage says the clinic opens early on Mondays, so that is correct.",
-            "timeLimit": 20,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "214",
+            "hint": "Search for the number that names the room.",
+            "explanation": "The reserved room is 214; the other words describe the meeting, not the room.",
+            "timeLimit": 18,
+            "targetInfo": "Reserved room number"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L12_Q1",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Scan the sentence for the first-hour parking rate.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "The concert tickets sold out in an hour.",
-            "targetItem": "concert",
+            "passage": "The parking garage charges four dollars for the first hour and two dollars for each additional hour.",
+            "targetItem": "four",
             "options": [
-                "tickets",
+                "two",
                 "hour",
-                "festival",
-                "concert"
+                "garage",
+                "four"
             ],
-            "correctAnswer": "concert",
-            "hint": "Find the event whose tickets sold out.",
-            "explanation": "The passage says the concert tickets sold out, so 'concert' is correct.",
-            "timeLimit": 20,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "four",
+            "hint": "Find the price connected to the first hour, not later hours.",
+            "explanation": "The first hour costs four dollars; two dollars applies only to extra hours.",
+            "timeLimit": 18,
+            "targetInfo": "First-hour parking rate"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L12_Q2",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Search the sentence for where practice moved to.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Owls hunt mostly during the night.",
-            "targetItem": "Owls",
+            "passage": "Coach Liu moved practice from the gym to the outdoor field because of a scheduling conflict.",
+            "targetItem": "outdoor field",
             "options": [
-                "night",
-                "hunt",
-                "Bats",
-                "Owls"
+                "gym",
+                "Coach Liu",
+                "outdoor field",
+                "scheduling conflict"
             ],
-            "correctAnswer": "Owls",
-            "hint": "Find which animal hunts mostly at night.",
-            "explanation": "The passage says owls hunt at night, so 'Owls' is the target word.",
-            "timeLimit": 20,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "outdoor field",
+            "hint": "Look for the new location, not the old one.",
+            "explanation": "Practice moved to the outdoor field; the gym was only the previous location.",
+            "timeLimit": 18,
+            "targetInfo": "New practice location"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L12_Q3",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Scan the sentence for the invoice number.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "The library added a quiet reading room.",
-            "targetItem": "quiet",
+            "passage": "The invoice number 7734 must be included on every payment.",
+            "targetItem": "7734",
             "options": [
-                "loud",
-                "quiet",
-                "reading",
-                "library"
+                "payment",
+                "7734",
+                "every",
+                "included"
             ],
-            "correctAnswer": "quiet",
-            "hint": "Find the word describing the new reading room.",
-            "explanation": "The passage describes the room as quiet, so that is correct.",
-            "timeLimit": 20,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "7734",
+            "hint": "Search for the number that identifies the invoice.",
+            "explanation": "The invoice number is 7734; the rest of the sentence explains what to do with it.",
+            "timeLimit": 17,
+            "targetInfo": "Invoice number"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L13_Q1",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Scan both sentences to find when bread was no longer available.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Priya waters her plants twice a week.",
-            "targetItem": "twice",
+            "passage": "The bakery sold out of croissants by nine. Bread was still available until noon.",
+            "targetItem": "noon",
             "options": [
-                "once",
-                "week",
-                "twice",
-                "plants"
+                "noon",
+                "nine",
+                "croissants",
+                "bakery"
             ],
-            "correctAnswer": "twice",
-            "hint": "Find how many times a week Priya waters her plants.",
-            "explanation": "The passage says she waters her plants twice a week, so that is correct.",
-            "timeLimit": 20,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "noon",
+            "hint": "Look in the second sentence for the time bread ran out.",
+            "explanation": "Croissants sold out by nine, but bread lasted until noon.",
+            "timeLimit": 17,
+            "targetInfo": "Time bread sold out"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L13_Q2",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Search the sentence for how long the delay lasted.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "New students take a placement test first.",
-            "targetItem": "placement",
+            "passage": "Flight 220 was delayed by forty minutes because of weather.",
+            "targetItem": "forty",
             "options": [
-                "final",
-                "test",
-                "placement",
-                "first"
+                "220",
+                "weather",
+                "Flight",
+                "forty"
             ],
-            "correctAnswer": "placement",
-            "hint": "Find the type of test new students take first.",
-            "explanation": "The passage says new students take a placement test, so that is the target word.",
-            "timeLimit": 20,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "forty",
+            "hint": "Find the number of minutes, not the flight number.",
+            "explanation": "The delay lasted forty minutes; 220 only identifies the flight.",
+            "timeLimit": 17,
+            "targetInfo": "Length of delay"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L13_Q3",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Scan the sentence to find the correct aisle number.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "The office moved to a bigger building.",
-            "targetItem": "bigger",
+            "passage": "The hardware store keeps extra nails in aisle six, not aisle three.",
+            "targetItem": "six",
             "options": [
-                "smaller",
-                "office",
-                "bigger",
-                "building"
+                "three",
+                "six",
+                "nails",
+                "hardware"
             ],
-            "correctAnswer": "bigger",
-            "hint": "Find the word describing the new building.",
-            "explanation": "The passage says the office moved to a bigger building, so 'bigger' is correct.",
-            "timeLimit": 20,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "six",
+            "hint": "Watch for two aisle numbers and pick the one that is correct.",
+            "explanation": "Extra nails are in aisle six; aisle three is mentioned only to rule it out.",
+            "timeLimit": 17,
+            "targetInfo": "Aisle with extra nails"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L14_Q1",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Search the sentence for when Pilates starts.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Passengers must show their passport at the gate.",
-            "targetItem": "passport",
+            "passage": "Yoga class meets at seven in the morning, while Pilates meets at four in the evening.",
+            "targetItem": "four",
             "options": [
-                "gate",
-                "passport",
-                "passengers",
-                "ticket"
+                "seven",
+                "morning",
+                "four",
+                "Yoga"
             ],
-            "correctAnswer": "passport",
-            "hint": "Find what passengers must show at the gate.",
-            "explanation": "The passage says passengers must show their passport, so that is correct.",
-            "timeLimit": 20,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "four",
+            "hint": "Look for the time linked to Pilates, not Yoga.",
+            "explanation": "Yoga meets at seven; Pilates, the second class named, meets at four.",
+            "timeLimit": 17,
+            "targetInfo": "Pilates start time"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L14_Q2",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Scan the sentence for the clinic's closing time.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Their youngest son just started walking.",
-            "targetItem": "youngest",
-            "options": [
-                "oldest",
-                "walking",
-                "youngest",
-                "son"
-            ],
-            "correctAnswer": "youngest",
-            "hint": "Find the word describing which son started walking.",
-            "explanation": "The passage says their youngest son started walking, so that is the target word.",
-            "timeLimit": 20,
-            "targetInfo": "Specific data to find."
-        },
-        {
-            "id": "RDG_SKIMMINGSCANNING_L14_Q3",
-            "instruction": "Scan the text to find and select the target word.",
-            "subtype": "skimmingScanning",
-            "interactionType": "search",
-            "passage": "He returned the shirt because it was torn.",
-            "targetItem": "torn",
-            "options": [
-                "small",
-                "shirt",
-                "torn",
-                "returned"
-            ],
-            "correctAnswer": "torn",
-            "hint": "Find the reason he returned the shirt.",
-            "explanation": "The passage says the shirt was torn, so 'torn' is correct.",
-            "timeLimit": 20,
-            "targetInfo": "Specific data to find."
-        },
-        {
-            "id": "RDG_SKIMMINGSCANNING_L15_Q1",
-            "instruction": "Scan the text to find and select the target word.",
-            "subtype": "skimmingScanning",
-            "interactionType": "search",
-            "passage": "Lunch is served at noon in the cafeteria.",
-            "targetItem": "noon",
-            "options": [
-                "lunch",
-                "dawn",
-                "noon",
-                "cafeteria"
-            ],
-            "correctAnswer": "noon",
-            "hint": "Find the time lunch is served.",
-            "explanation": "The passage says lunch is served at noon, so that is correct.",
-            "timeLimit": 20,
-            "targetInfo": "Specific data to find."
-        },
-        {
-            "id": "RDG_SKIMMINGSCANNING_L15_Q2",
-            "instruction": "Scan the text to find and select the target word.",
-            "subtype": "skimmingScanning",
-            "interactionType": "search",
-            "passage": "The printer ran out of ink again.",
-            "targetItem": "ink",
-            "options": [
-                "again",
-                "ink",
-                "paper",
-                "printer"
-            ],
-            "correctAnswer": "ink",
-            "hint": "Find what the printer ran out of.",
-            "explanation": "The passage says the printer ran out of ink, so 'ink' is the target word.",
-            "timeLimit": 20,
-            "targetInfo": "Specific data to find."
-        },
-        {
-            "id": "RDG_SKIMMINGSCANNING_L15_Q3",
-            "instruction": "Scan the text to find and select the target word.",
-            "subtype": "skimmingScanning",
-            "interactionType": "search",
-            "passage": "She drinks eight glasses of water daily.",
+            "passage": "The clinic's pharmacy closes at five, though the main clinic stays open until eight.",
             "targetItem": "eight",
             "options": [
                 "eight",
-                "daily",
-                "six",
-                "water"
+                "five",
+                "pharmacy",
+                "main"
             ],
             "correctAnswer": "eight",
-            "hint": "Find how many glasses of water she drinks.",
-            "explanation": "The passage says she drinks eight glasses of water, so that is correct.",
-            "timeLimit": 20,
-            "targetInfo": "Specific data to find."
+            "hint": "Find the time for the main clinic, not the pharmacy.",
+            "explanation": "The pharmacy closes at five, but the main clinic stays open until eight.",
+            "timeLimit": 16,
+            "targetInfo": "Main clinic closing time"
+        },
+        {
+            "id": "RDG_SKIMMINGSCANNING_L14_Q3",
+            "instruction": "Search for the ticket price charged at the door.",
+            "subtype": "skimmingScanning",
+            "interactionType": "search",
+            "passage": "Ticket prices are twelve dollars online and fifteen dollars at the door.",
+            "targetItem": "fifteen",
+            "options": [
+                "twelve",
+                "online",
+                "fifteen",
+                "door"
+            ],
+            "correctAnswer": "fifteen",
+            "hint": "Look for the price connected to buying at the door, not online.",
+            "explanation": "Online tickets cost twelve dollars; fifteen dollars is the door price.",
+            "timeLimit": 16,
+            "targetInfo": "Door ticket price"
+        },
+        {
+            "id": "RDG_SKIMMINGSCANNING_L15_Q1",
+            "instruction": "Scan the sentence for the book's due date.",
+            "subtype": "skimmingScanning",
+            "interactionType": "search",
+            "passage": "The library book is due back on the ninth, but can be renewed once for free.",
+            "targetItem": "ninth",
+            "options": [
+                "ninth",
+                "once",
+                "free",
+                "library"
+            ],
+            "correctAnswer": "ninth",
+            "hint": "Search for the number that tells the due date.",
+            "explanation": "The due date is the ninth; renewing once is a separate detail.",
+            "timeLimit": 16,
+            "targetInfo": "Book due date"
+        },
+        {
+            "id": "RDG_SKIMMINGSCANNING_L15_Q2",
+            "instruction": "Find the second day of Ms. Patel's office hours.",
+            "subtype": "skimmingScanning",
+            "interactionType": "search",
+            "passage": "Ms. Patel's office hours are Tuesdays and Thursdays from two to four.",
+            "targetItem": "Thursdays",
+            "options": [
+                "Tuesdays",
+                "two",
+                "four",
+                "Thursdays"
+            ],
+            "correctAnswer": "Thursdays",
+            "hint": "Look for the day named after Tuesdays.",
+            "explanation": "Office hours run on both days, but Thursdays is the second day listed.",
+            "timeLimit": 16,
+            "targetInfo": "Second office-hour day"
+        },
+        {
+            "id": "RDG_SKIMMINGSCANNING_L15_Q3",
+            "instruction": "Scan the recipe for the amount of cinnamon.",
+            "subtype": "skimmingScanning",
+            "interactionType": "search",
+            "passage": "The recipe calls for half a teaspoon of cinnamon and a full teaspoon of nutmeg.",
+            "targetItem": "half",
+            "options": [
+                "full",
+                "half",
+                "cinnamon",
+                "nutmeg"
+            ],
+            "correctAnswer": "half",
+            "hint": "Search for the amount placed right before cinnamon.",
+            "explanation": "Cinnamon needs half a teaspoon; a full teaspoon is for the nutmeg.",
+            "timeLimit": 16,
+            "targetInfo": "Amount of cinnamon"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L16_Q1",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Scan the sentence for the more experienced candidate's name.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "He collects old vinyl records from the seventies.",
-            "targetItem": "vinyl",
+            "passage": "Two candidates applied for the position: Daniela Cruz and Marcus Webb. Daniela has more years of experience.",
+            "targetItem": "Daniela Cruz",
             "options": [
-                "vinyl",
-                "seventies",
-                "records",
-                "cassette"
+                "Marcus Webb",
+                "position",
+                "years",
+                "Daniela Cruz"
             ],
-            "correctAnswer": "vinyl",
-            "hint": "Find the type of records he collects.",
-            "explanation": "The passage says he collects vinyl records, so 'vinyl' is correct.",
-            "timeLimit": 20,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "Daniela Cruz",
+            "hint": "Search the second sentence for whose experience is greater.",
+            "explanation": "Both candidates are named, but the second sentence confirms Daniela Cruz has more experience.",
+            "timeLimit": 16,
+            "targetInfo": "More experienced candidate"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L16_Q2",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Search the sentence for the cost of Saturday swim lessons.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Autumn leaves turn bright shades of orange.",
-            "targetItem": "orange",
-            "options": [
-                "leaves",
-                "yellow",
-                "orange",
-                "autumn"
-            ],
-            "correctAnswer": "orange",
-            "hint": "Find the color the leaves turn in autumn.",
-            "explanation": "The passage says the leaves turn orange, so that is the target word.",
-            "timeLimit": 20,
-            "targetInfo": "Specific data to find."
-        },
-        {
-            "id": "RDG_SKIMMINGSCANNING_L16_Q3",
-            "instruction": "Scan the text to find and select the target word.",
-            "subtype": "skimmingScanning",
-            "interactionType": "search",
-            "passage": "The town hosts a market every Saturday.",
-            "targetItem": "market",
-            "options": [
-                "Saturday",
-                "town",
-                "market",
-                "fair"
-            ],
-            "correctAnswer": "market",
-            "hint": "Find what the town hosts every Saturday.",
-            "explanation": "The passage says the town hosts a market, so 'market' is correct.",
-            "timeLimit": 20,
-            "targetInfo": "Specific data to find."
-        },
-        {
-            "id": "RDG_SKIMMINGSCANNING_L17_Q1",
-            "instruction": "Scan the text to find and select the target word.",
-            "subtype": "skimmingScanning",
-            "interactionType": "search",
-            "passage": "Tom cooks dinner for his family on Sundays.",
-            "targetItem": "Sundays",
-            "options": [
-                "dinner",
-                "Sundays",
-                "Saturdays",
-                "family"
-            ],
-            "correctAnswer": "Sundays",
-            "hint": "Find the day Tom cooks dinner for his family.",
-            "explanation": "The passage says Tom cooks on Sundays, so that is correct.",
-            "timeLimit": 20,
-            "targetInfo": "Specific data to find."
-        },
-        {
-            "id": "RDG_SKIMMINGSCANNING_L17_Q2",
-            "instruction": "Scan the text to find and select the target word.",
-            "subtype": "skimmingScanning",
-            "interactionType": "search",
-            "passage": "The teacher gave the class extra homework.",
-            "targetItem": "homework",
-            "options": [
-                "homework",
-                "class",
-                "project",
-                "extra"
-            ],
-            "correctAnswer": "homework",
-            "hint": "Find what the teacher gave the class.",
-            "explanation": "The passage says the teacher gave extra homework, so 'homework' is the target word.",
-            "timeLimit": 20,
-            "targetInfo": "Specific data to find."
-        },
-        {
-            "id": "RDG_SKIMMINGSCANNING_L17_Q3",
-            "instruction": "Scan the text to find and select the target word.",
-            "subtype": "skimmingScanning",
-            "interactionType": "search",
-            "passage": "Waiters at the restaurant work mostly weekends.",
-            "targetItem": "weekends",
-            "options": [
-                "waiters",
-                "restaurant",
-                "weekdays",
-                "weekends"
-            ],
-            "correctAnswer": "weekends",
-            "hint": "Find when waiters at the restaurant mostly work.",
-            "explanation": "The passage says waiters work mostly weekends, so that is correct.",
-            "timeLimit": 20,
-            "targetInfo": "Specific data to find."
-        },
-        {
-            "id": "RDG_SKIMMINGSCANNING_L18_Q1",
-            "instruction": "Scan the text to find and select the target word.",
-            "subtype": "skimmingScanning",
-            "interactionType": "search",
-            "passage": "The hotel offers free breakfast every morning.",
+            "passage": "The community center offers free swim lessons on Saturdays and paid yoga classes on Sundays.",
             "targetItem": "free",
             "options": [
                 "paid",
-                "breakfast",
+                "Sundays",
                 "free",
-                "hotel"
+                "yoga"
             ],
             "correctAnswer": "free",
-            "hint": "Find the word describing the hotel's breakfast.",
-            "explanation": "The passage says the hotel offers free breakfast, so 'free' is correct.",
-            "timeLimit": 20,
-            "targetInfo": "Specific data to find."
+            "hint": "Look for the word describing the Saturday activity's cost.",
+            "explanation": "Swim lessons on Saturdays are free; the paid classes are yoga on Sundays.",
+            "timeLimit": 15,
+            "targetInfo": "Cost of Saturday swim lessons"
+        },
+        {
+            "id": "RDG_SKIMMINGSCANNING_L16_Q3",
+            "instruction": "Scan the sentence for the elevator's expected finish day.",
+            "subtype": "skimmingScanning",
+            "interactionType": "search",
+            "passage": "Repairs to the elevator will begin Monday and are expected to finish by Friday.",
+            "targetItem": "Friday",
+            "options": [
+                "Friday",
+                "Monday",
+                "elevator",
+                "Repairs"
+            ],
+            "correctAnswer": "Friday",
+            "hint": "Find the day the repairs are expected to end, not begin.",
+            "explanation": "Repairs start Monday, but they are expected to finish by Friday.",
+            "timeLimit": 15,
+            "targetInfo": "Expected finish day"
+        },
+        {
+            "id": "RDG_SKIMMINGSCANNING_L17_Q1",
+            "instruction": "Scan the weather update for the expected temperature.",
+            "subtype": "skimmingScanning",
+            "interactionType": "search",
+            "passage": "Weather Update: Rain is expected this morning, clearing by early afternoon. Temperatures will reach seventy degrees.",
+            "targetItem": "seventy",
+            "options": [
+                "morning",
+                "seventy",
+                "afternoon",
+                "Rain"
+            ],
+            "correctAnswer": "seventy",
+            "hint": "Search for the number tied to the word degrees.",
+            "explanation": "The update gives times for the rain, but seventy is the temperature figure.",
+            "timeLimit": 15,
+            "targetInfo": "Expected temperature"
+        },
+        {
+            "id": "RDG_SKIMMINGSCANNING_L17_Q2",
+            "instruction": "Search the memo for when the holiday party starts.",
+            "subtype": "skimmingScanning",
+            "interactionType": "search",
+            "passage": "Staff Memo: The office will close early on Friday for a holiday party starting at three.",
+            "targetItem": "three",
+            "options": [
+                "Friday",
+                "office",
+                "three",
+                "holiday"
+            ],
+            "correctAnswer": "three",
+            "hint": "Look for the time near the word starting.",
+            "explanation": "The office closes early on Friday, and the party itself starts at three.",
+            "timeLimit": 15,
+            "targetInfo": "Party start time"
+        },
+        {
+            "id": "RDG_SKIMMINGSCANNING_L17_Q3",
+            "instruction": "Scan the delivery notice for the estimated arrival window.",
+            "subtype": "skimmingScanning",
+            "interactionType": "search",
+            "passage": "Delivery Notice: Your package left the warehouse and should arrive within two business days.",
+            "targetItem": "two",
+            "options": [
+                "warehouse",
+                "package",
+                "days",
+                "two"
+            ],
+            "correctAnswer": "two",
+            "hint": "Search for the number that tells how many days to expect.",
+            "explanation": "The notice estimates arrival within two business days after leaving the warehouse.",
+            "timeLimit": 15,
+            "targetInfo": "Estimated delivery window"
+        },
+        {
+            "id": "RDG_SKIMMINGSCANNING_L18_Q1",
+            "instruction": "Find the new number of treadmills at the gym.",
+            "subtype": "skimmingScanning",
+            "interactionType": "search",
+            "passage": "The gym added new equipment last week. Members can now use five treadmills instead of the previous two.",
+            "targetItem": "five",
+            "options": [
+                "two",
+                "five",
+                "gym",
+                "week"
+            ],
+            "correctAnswer": "five",
+            "hint": "Look for the number describing the current total, not the old one.",
+            "explanation": "The gym previously had two treadmills; it now has five.",
+            "timeLimit": 15,
+            "targetInfo": "New number of treadmills"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L18_Q2",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Scan both parts of the sentence for the trip's new month.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Notably, the family adopted a small kitten.",
-            "targetItem": "kitten",
+            "passage": "The school trip was originally planned for April but was moved to May because of the holiday.",
+            "targetItem": "May",
             "options": [
-                "family",
-                "kitten",
-                "small",
-                "puppy"
+                "May",
+                "April",
+                "holiday",
+                "school"
             ],
-            "correctAnswer": "kitten",
-            "hint": "Find what the family adopted.",
-            "explanation": "The passage says the family adopted a kitten, so that is the target word.",
-            "timeLimit": 20,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "May",
+            "hint": "Search for the month the trip was changed to, not the original one.",
+            "explanation": "The trip was first planned for April, then moved to May.",
+            "timeLimit": 14,
+            "targetInfo": "New trip month"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L18_Q3",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Search the sentence for today's sign-up bonus.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "The mall stays open until nine tonight.",
-            "targetItem": "nine",
+            "passage": "Customers who join today receive a free tote bag; those who join next month will not.",
+            "targetItem": "free tote bag",
             "options": [
-                "mall",
-                "tonight",
-                "nine",
-                "eight"
+                "next month",
+                "free tote bag",
+                "Customers",
+                "join"
             ],
-            "correctAnswer": "nine",
-            "hint": "Find the time the mall stays open until.",
-            "explanation": "The passage says the mall stays open until nine, so that is correct.",
-            "timeLimit": 20,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "free tote bag",
+            "hint": "Look for the reward connected to joining today.",
+            "explanation": "Joining today comes with a free tote bag; joining next month does not.",
+            "timeLimit": 14,
+            "targetInfo": "Today's sign-up bonus"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L19_Q1",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Scan the sentence for the current support number.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "The recipe calls for three ripe bananas.",
-            "targetItem": "three",
+            "passage": "For support, call 555-0148, not the old number 555-0114.",
+            "targetItem": "555-0148",
             "options": [
-                "two",
-                "bananas",
-                "recipe",
-                "three"
+                "555-0114",
+                "support",
+                "555-0148",
+                "old"
             ],
-            "correctAnswer": "three",
-            "hint": "Find how many bananas the recipe calls for.",
-            "explanation": "The passage says the recipe calls for three bananas, so that is correct.",
-            "timeLimit": 20,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "555-0148",
+            "hint": "Watch for two similar numbers and pick the current one.",
+            "explanation": "555-0148 is the current number; 555-0114 is named only as the old one.",
+            "timeLimit": 14,
+            "targetInfo": "Current support number"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L19_Q2",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Search the sentence for the length of the grace period.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Wi-Fi in the café is completely free.",
-            "targetItem": "free",
+            "passage": "The rent is due on the first of the month, with a five-day grace period after that.",
+            "targetItem": "five-day",
             "options": [
-                "slow",
-                "café",
-                "completely",
-                "free"
+                "first",
+                "five-day",
+                "month",
+                "rent"
             ],
-            "correctAnswer": "free",
-            "hint": "Find the word describing the café's Wi-Fi cost.",
-            "explanation": "The passage says the Wi-Fi is completely free, so 'free' is the target word.",
-            "timeLimit": 20,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "five-day",
+            "hint": "Look for the number of days allowed after the due date.",
+            "explanation": "Rent is due on the first, and tenants get a five-day grace period afterward.",
+            "timeLimit": 14,
+            "targetInfo": "Length of grace period"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L19_Q3",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Scan the sentence for the online order deadline.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "The dentist recommended a softer toothbrush.",
-            "targetItem": "dentist",
+            "passage": "The bookstore's clearance sale ends Sunday, though online orders are accepted through Tuesday.",
+            "targetItem": "Tuesday",
             "options": [
-                "softer",
-                "doctor",
-                "toothbrush",
-                "dentist"
+                "Sunday",
+                "bookstore",
+                "Tuesday",
+                "online"
             ],
-            "correctAnswer": "dentist",
-            "hint": "Find who recommended the softer toothbrush.",
-            "explanation": "The passage says the dentist recommended it, so 'dentist' is correct.",
-            "timeLimit": 20,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "Tuesday",
+            "hint": "Find the day tied specifically to online orders.",
+            "explanation": "The in-store sale ends Sunday, but online orders are accepted through Tuesday.",
+            "timeLimit": 14,
+            "targetInfo": "Online order deadline"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L20_Q1",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Scan the sentence for the Finance session's start time.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "The museum exhibit closes next Sunday.",
-            "targetItem": "exhibit",
+            "passage": "The conference has three sessions: Marketing at nine, Finance at eleven, and Design at two.",
+            "targetItem": "eleven",
             "options": [
-                "exhibit",
-                "museum",
-                "gallery",
-                "Sunday"
+                "nine",
+                "two",
+                "eleven",
+                "three"
             ],
-            "correctAnswer": "exhibit",
-            "hint": "Find what closes next Sunday at the museum.",
-            "explanation": "The passage says the exhibit closes next Sunday, so 'exhibit' is correct.",
-            "timeLimit": 20,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "eleven",
+            "hint": "Search for the time listed right after the word Finance.",
+            "explanation": "Finance starts at eleven; nine and two belong to Marketing and Design.",
+            "timeLimit": 14,
+            "targetInfo": "Finance session time"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L20_Q2",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Search the sentence for the pet-friendly unit.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Interestingly, the desert gets very cold at night.",
-            "targetItem": "desert",
+            "passage": "Of the four apartments for rent, only unit 3B allows pets.",
+            "targetItem": "3B",
             "options": [
-                "night",
-                "forest",
-                "cold",
-                "desert"
+                "3B",
+                "four",
+                "apartments",
+                "rent"
             ],
-            "correctAnswer": "desert",
-            "hint": "Find the place that gets very cold at night.",
-            "explanation": "The passage says the desert gets cold at night, so that is the target word.",
-            "timeLimit": 20,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "3B",
+            "hint": "Look for the unit number connected to allowing pets.",
+            "explanation": "Unit 3B is the one that allows pets, out of the four available.",
+            "timeLimit": 13,
+            "targetInfo": "Pet-friendly unit"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L20_Q3",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Scan the sentence for the mile marker at City Hall.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Firefighters visited the school this week.",
-            "targetItem": "Firefighters",
+            "passage": "The marathon route passes Elm Park at mile two, City Hall at mile five, and finishes at mile thirteen near the stadium.",
+            "targetItem": "five",
             "options": [
-                "visited",
-                "school",
-                "Firefighters",
-                "Police"
+                "two",
+                "thirteen",
+                "stadium",
+                "five"
             ],
-            "correctAnswer": "Firefighters",
-            "hint": "Find who visited the school this week.",
-            "explanation": "The passage says firefighters visited the school, so that is correct.",
-            "timeLimit": 20,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "five",
+            "hint": "Search for the mile number placed next to City Hall.",
+            "explanation": "City Hall is at mile five; the other numbers mark Elm Park and the finish.",
+            "timeLimit": 13,
+            "targetInfo": "Mile marker at City Hall"
         }
     ]
 }

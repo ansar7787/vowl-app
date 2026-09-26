@@ -5,573 +5,573 @@
     "quests": [
         {
             "id": "RDG_SKIMMINGSCANNING_L191_Q1",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Skim past spending and investment trends, then scan for the current, most recent inflation figure.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Although the artisanal cheese producer's marketing materials emphasize an unbroken multi-generational family tradition dating back over a century as the foundation of its authenticity, a business history compiled for an industry trade publication, drawing on records the family itself provided, revealed production was suspended entirely for nearly two decades during wartime disruption.",
-            "targetItem": "unbroken",
+            "passage": "Economic Report Summary: Consumer spending grew modestly in the first half of the year before slowing in the third quarter. Business investment showed similar softening during the same period. Despite these headwinds, the labor market remained resilient, with unemployment holding steady at 3.8 percent. Economists note that inflation, which peaked at 6.1 percent last year, has since cooled to 2.9 percent.",
+            "targetItem": "2.9 percent",
             "options": [
-                "continuous",
-                "unbroken",
-                "artisanal",
-                "suspended"
+                "3.8 percent",
+                "6.1 percent",
+                "2.9 percent",
+                "third quarter"
             ],
-            "correctAnswer": "unbroken",
-            "hint": "Find the word describing the family tradition in the marketing.",
-            "explanation": "The passage says an unbroken tradition, so that is correct.",
-            "timeLimit": 14,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "2.9 percent",
+            "hint": "Skip the spending, investment, and unemployment figures and find inflation's current level at the end.",
+            "explanation": "Inflation has cooled to 2.9 percent; 6.1 percent was last year's peak, and 3.8 percent describes unemployment instead.",
+            "timeLimit": 15,
+            "targetInfo": "Current inflation rate"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L191_Q2",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Skim past satisfaction and wait time improvements, then scan for the current readmission figure.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "The software company's frequently cited statistic that its customer support chatbot successfully resolves a specific, prominently advertised percentage of inquiries without human escalation is calculated using a definition of successful resolution that counts any conversation without an explicit human request as successful, regardless of whether the issue was actually addressed.",
-            "targetItem": "escalation",
+            "passage": "Hospital Quality Report: Patient satisfaction scores improved across most departments this year. The emergency department saw a notable reduction in average wait times. Readmission rates, a key quality metric, fell from 14.2 percent to 11.6 percent, exceeding the hospital's improvement target.",
+            "targetItem": "11.6 percent",
             "options": [
-                "escalation",
-                "definition",
-                "resolution",
-                "explicit"
+                "14.2 percent",
+                "11.6 percent",
+                "improvement target",
+                "wait times"
             ],
-            "correctAnswer": "escalation",
-            "hint": "Find what the chatbot resolves inquiries without.",
-            "explanation": "The passage says without human escalation, so that is correct.",
-            "timeLimit": 14,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "11.6 percent",
+            "hint": "Skip the satisfaction and wait time notes and find the current readmission rate.",
+            "explanation": "Readmissions fell to 11.6 percent from 14.2 percent; the earlier figure is the starting point, not the current rate.",
+            "timeLimit": 15,
+            "targetInfo": "Current readmission rate"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L191_Q3",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Skim past the volatility and underperformance details, then scan for the actual year-end total.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Although the pharmaceutical company's promotional materials for its new medication emphasize a specific, favorable rate of symptom improvement observed in clinical trials, the same trial data shows a comparably high rate of improvement in the placebo group as well, a detail present in the full regulatory filing but far less prominent in consumer marketing.",
-            "targetItem": "placebo",
+            "passage": "University Endowment Report: The endowment experienced volatility early in the fiscal year due to broader market conditions. Real estate holdings underperformed relative to public equities. By year's end, the fund's total value reached $2.4 billion, a gain of 7.3 percent despite the rocky start.",
+            "targetItem": "$2.4 billion",
             "options": [
-                "placebo",
-                "comparably",
-                "clinical",
-                "favorable"
+                "$2.4 billion",
+                "7.3 percent",
+                "market conditions",
+                "Real estate"
             ],
-            "correctAnswer": "placebo",
-            "hint": "Find what group also showed a comparably high improvement rate.",
-            "explanation": "The passage says the placebo group, so that is correct.",
-            "timeLimit": 14,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "$2.4 billion",
+            "hint": "Skip the volatility and underperformance notes and find the total value at year's end.",
+            "explanation": "The endowment reached $2.4 billion; 7.3 percent describes the gain rate, a separate figure from the total.",
+            "timeLimit": 15,
+            "targetInfo": "Endowment's total value at year's end"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L192_Q1",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Skim past the methodology and urban comparison, then scan for the actual temperature increase.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "The music festival's frequently repeated claim of having sold out within minutes for six consecutive years, a statistic prominently featured in its marketing to justify continually rising ticket prices, was complicated by resale market data showing that in at least two of those years, tickets remained available through official channels well beyond the initial minutes.",
-            "targetItem": "resale",
+            "passage": "Climate Research Summary: Researchers collected data from over 200 monitoring stations across the region over a five-year period. Temperature increases were most pronounced in urban areas compared to rural ones. The study's central finding is that average summer temperatures have risen by 1.8 degrees since monitoring began, with the sharpest increase occurring in the final two years.",
+            "targetItem": "1.8 degrees",
             "options": [
-                "consecutive",
-                "official",
-                "complicated",
-                "resale"
+                "200 monitoring stations",
+                "1.8 degrees",
+                "five-year period",
+                "final two years"
             ],
-            "correctAnswer": "resale",
-            "hint": "Find what type of market data complicated the claim.",
-            "explanation": "The passage says resale market data, so that is correct.",
-            "timeLimit": 14,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "1.8 degrees",
+            "hint": "Skip the methodology and urban comparison and find the actual temperature figure.",
+            "explanation": "Summer temperatures rose 1.8 degrees; the monitoring stations and study period describe methodology, not the result.",
+            "timeLimit": 15,
+            "targetInfo": "Rise in average summer temperatures"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L192_Q2",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Skim past the hardware division's decline, then scan for the cloud division's actual growth rate.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Although migratory eel populations were long assumed by fisheries scientists to complete their entire life cycle within a single, well-defined river system, satellite and genetic tracking conducted over the past two decades has revealed that individuals from ostensibly distinct river populations converge to spawn in a shared oceanic region before dispersing widely.",
-            "targetItem": "converge",
+            "passage": "Earnings Call Highlights: Revenue from the company's legacy hardware division declined slightly this quarter, continuing a multi-year trend. The cloud services division, by contrast, grew 31 percent year-over-year, now accounting for nearly half of total revenue. Management reiterated full-year guidance despite mixed segment performance.",
+            "targetItem": "31 percent",
             "options": [
-                "gather",
-                "converge",
-                "genetic",
-                "complex"
+                "legacy hardware",
+                "31 percent",
+                "full-year guidance",
+                "nearly half"
             ],
-            "correctAnswer": "converge",
-            "hint": "Find what eels from different rivers do to spawn together.",
-            "explanation": "The passage says they converge to spawn, so that is correct.",
-            "timeLimit": 14,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "31 percent",
+            "hint": "Skip the hardware division's decline and find the cloud division's growth figure.",
+            "explanation": "Cloud services grew 31 percent; legacy hardware is the separate, declining division.",
+            "timeLimit": 15,
+            "targetInfo": "Cloud services division's year-over-year growth"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L192_Q3",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Skim past the bus ridership trend, then scan for rail ridership's actual recovery figure.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "The neighborhood association's frequently repeated claim that its community policing initiative alone produced the substantial, multi-year decline in reported property crime in the district, a claim featured prominently in grant applications, is complicated by city-wide crime statistics showing a comparably sized decline across several other districts entirely without any equivalent initiative.",
-            "targetItem": "comparably",
+            "passage": "Transit Ridership Report: Bus ridership has recovered steadily since the pandemic low, though it remains below prior levels. Rail ridership recovered more slowly at first but has since surged. This year, rail ridership reached 94 percent of pre-pandemic levels, outpacing the bus system's 78 percent recovery.",
+            "targetItem": "94 percent",
             "options": [
-                "initiative",
-                "equivalent",
-                "comparably",
-                "statistics"
+                "78 percent",
+                "94 percent",
+                "pandemic low",
+                "surged"
             ],
-            "correctAnswer": "comparably",
-            "hint": "Find the word describing how the decline compared across other districts.",
-            "explanation": "The passage says a comparably sized decline, so that is correct.",
-            "timeLimit": 14,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "94 percent",
+            "hint": "Skip the bus ridership trend and find rail ridership's actual figure.",
+            "explanation": "Rail ridership reached 94 percent of pre-pandemic levels; 78 percent belongs to the separate bus system.",
+            "timeLimit": 15,
+            "targetInfo": "Rail ridership's recovery percentage"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L193_Q1",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Skim past the entry-level and mid-level trends, then scan for the senior-level figure.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "The oft-repeated claim that Tomas overhauled his entire diet overnight after a single alarming doctor's visit makes for a tidier narrative than what his own records actually show, which is a considerably more gradual process spanning nearly eight months, during which he eliminated one category of food every few weeks.",
-            "targetItem": "gradual",
+            "passage": "Tech Salary Survey: Entry-level compensation rose modestly across most regions this year. Compensation for mid-level engineers grew somewhat faster, reflecting increased demand. The steepest increase was among senior engineering roles, where median total compensation reached $185,000, up 12 percent from last year.",
+            "targetItem": "$185,000",
             "options": [
-                "incremental",
-                "tidier",
-                "overnight",
-                "gradual"
+                "$185,000",
+                "12 percent",
+                "Entry-level",
+                "mid-level"
             ],
-            "correctAnswer": "gradual",
-            "hint": "Find the word describing the type of process Tomas actually went through.",
-            "explanation": "The passage describes it as a gradual process, so that is correct.",
-            "timeLimit": 14,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "$185,000",
+            "hint": "Skip the entry-level and mid-level trends and find the senior-level compensation figure.",
+            "explanation": "Senior engineers reached $185,000 median compensation; 12 percent describes the rate of increase, not the total.",
+            "timeLimit": 15,
+            "targetInfo": "Median compensation for senior engineering roles"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L193_Q2",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Skim past the grain and dairy figures, then scan for the specialty produce growth rate.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Although it is frequently assumed, including by several of the district's own veteran teachers, that the marked improvement in standardized reading scores following the curriculum change must be attributable to the new curriculum itself, a careful comparison controlling for a simultaneous reduction in average class size found that factor equally significant.",
-            "targetItem": "attributable",
+            "passage": "Agricultural Export Report: Grain exports remained roughly flat compared to last year due to weaker international demand. Dairy exports grew moderately following new trade agreements. The standout category was specialty produce, which saw exports climb 41 percent, driven largely by demand in Asian markets.",
+            "targetItem": "41 percent",
             "options": [
-                "comparable",
-                "significant",
-                "attributable",
-                "simultaneous"
+                "Grain exports",
+                "Dairy exports",
+                "41 percent",
+                "Asian markets"
             ],
-            "correctAnswer": "attributable",
-            "hint": "Find what teachers assumed the score improvement was due to.",
-            "explanation": "The passage says attributable to the curriculum, so that is correct.",
-            "timeLimit": 14,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "41 percent",
+            "hint": "Skip the grain and dairy figures and find the specialty produce growth rate.",
+            "explanation": "Specialty produce exports climbed 41 percent; grain and dairy are separate, less notable categories.",
+            "timeLimit": 15,
+            "targetInfo": "Growth in specialty produce exports"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L193_Q3",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Skim past the age-group breakdown, then scan for the actual overall rate reached.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "The widely circulated account of the startup's rapid early growth, in which its founders describe achieving product-market fit within their first three months based almost entirely on organic word of mouth, omits a detail confirmed in the company's own later funding documents about a substantial early paid marketing budget.",
-            "targetItem": "organic",
+            "passage": "Vaccination Update: Uptake among adults over 65 remained strong throughout the campaign, consistent with prior years. Uptake among younger adults lagged behind initial projections. Overall, the region reached a vaccination rate of 71 percent, falling short of the 80 percent target set at the start of the campaign.",
+            "targetItem": "71 percent",
             "options": [
-                "substantial",
-                "genuine",
-                "organic",
-                "deployed"
+                "71 percent",
+                "over 65",
+                "80 percent",
+                "younger adults"
             ],
-            "correctAnswer": "organic",
-            "hint": "Find the word describing the word of mouth the founders credited.",
-            "explanation": "The passage says organic word of mouth, so that is correct.",
-            "timeLimit": 14,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "71 percent",
+            "hint": "Skip the age-group breakdown and find the actual overall rate achieved.",
+            "explanation": "The overall rate reached was 71 percent; 80 percent was only the original target, not the actual result.",
+            "timeLimit": 15,
+            "targetInfo": "Region's overall vaccination rate reached"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L194_Q1",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Skim past the demand trends and heat wave note, then scan for the actual renewable share this year.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Although the cruise line's promotional materials describe its onboard water reclamation system as achieving a specific, frequently quoted percentage of freshwater self-sufficiency per voyage, an independent environmental audit commissioned by a maritime regulatory body found this figure was calculated using an idealized operating scenario rarely matched under actual voyage conditions.",
-            "targetItem": "idealized",
+            "passage": "Energy Grid Update: Demand remained relatively stable through the spring months. A brief heat wave in early summer pushed usage to a seasonal high. Renewable sources, including solar and wind, supplied 38 percent of total grid demand this year, up from 29 percent the previous year.",
+            "targetItem": "38 percent",
             "options": [
-                "extended",
-                "reclamation",
-                "idealized",
-                "theoretical"
+                "29 percent",
+                "spring months",
+                "seasonal high",
+                "38 percent"
             ],
-            "correctAnswer": "idealized",
-            "hint": "Find the word describing the operating scenario used in the calculation.",
-            "explanation": "The passage says an idealized scenario, so that is correct.",
-            "timeLimit": 14,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "38 percent",
+            "hint": "Skip the demand trends and heat wave note and find this year's renewable share.",
+            "explanation": "Renewables supplied 38 percent this year, up from 29 percent last year, which is the earlier figure.",
+            "timeLimit": 15,
+            "targetInfo": "Renewable sources' share of grid demand this year"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L194_Q2",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Skim past the smaller institutions' minor issues, then scan for the actual fine amount.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "The family's longstanding account of Aunt Rosa's supposedly instant and effortless adjustment to life in a new country, a story often invoked to encourage other relatives facing similar transitions, was substantially revised after her own diaries from that period surfaced, revealing homesickness she deliberately kept hidden from the wider family.",
-            "targetItem": "deliberately",
+            "passage": "Banking Regulatory Notice: Several smaller institutions were found to have minor compliance gaps during routine reviews this cycle. Most issues were resolved through standard corrective action plans. One larger institution, however, was fined $4.2 million for failing to report suspicious transactions within the required timeframe.",
+            "targetItem": "$4.2 million",
             "options": [
-                "intentionally",
-                "effortless",
-                "substantially",
-                "deliberately"
+                "compliance gaps",
+                "$4.2 million",
+                "corrective action plans",
+                "suspicious transactions"
             ],
-            "correctAnswer": "deliberately",
-            "hint": "Find how Aunt Rosa kept her homesickness hidden.",
-            "explanation": "The passage says deliberately kept hidden, so that is correct.",
-            "timeLimit": 14,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "$4.2 million",
+            "hint": "Skip the smaller institutions' minor issues and find the actual fine figure.",
+            "explanation": "The fine was $4.2 million; the compliance gaps and corrective action plans describe unrelated smaller institutions.",
+            "timeLimit": 15,
+            "targetInfo": "Fine issued to the larger institution"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L194_Q3",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Skim past the attendance and merchandise figures, then scan for the streaming growth rate.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Although the appliance manufacturer's warranty terms are marketed as providing comprehensive coverage for manufacturing defects over a five-year period, a class-action lawsuit's discovery process revealed internal engineering documents acknowledging a known failure pattern the company had nonetheless classified as normal wear specifically to exclude it from warranty coverage.",
-            "targetItem": "classified",
+            "passage": "League Update: Attendance across most teams remained steady compared to last season. Merchandise sales grew modestly league-wide. The standout trend this season was streaming viewership, which grew 55 percent, now surpassing traditional broadcast viewership for the first time.",
+            "targetItem": "55 percent",
             "options": [
-                "comprehensive",
-                "categorized",
-                "classified",
-                "acknowledging"
+                "Attendance",
+                "Merchandise sales",
+                "broadcast viewership",
+                "55 percent"
             ],
-            "correctAnswer": "classified",
-            "hint": "Find what the company did to the failure pattern to avoid coverage.",
-            "explanation": "The passage says the company classified it, so that is correct.",
-            "timeLimit": 14,
-            "targetInfo": "Specific data to find."
+            "correctAnswer": "55 percent",
+            "hint": "Skip the attendance and merchandise figures and find the streaming growth rate.",
+            "explanation": "Streaming viewership grew 55 percent; attendance and merchandise sales are separate, steadier trends.",
+            "timeLimit": 15,
+            "targetInfo": "Growth in streaming viewership"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L195_Q1",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Skim past the congestion and fuel cost commentary, then scan for the actual current transit time.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "The popular restaurant chain's frequently cited claim that its signature dish has remained identical to the original recipe served at its first location decades ago, a detail proudly featured on menus and in franchise materials, is complicated by discovery documents from an unrelated trademark dispute revealing several cost-driven reformulations as the chain scaled nationally.",
-            "targetItem": "identical",
+            "passage": "Shipping Index Report: Port congestion eased significantly compared to the previous year across most major hubs. Fuel costs remained a persistent challenge for carriers throughout the year. The index's key figure, average transit time for transpacific routes, fell to 18 days, down from 27 days at the previous year's peak.",
+            "targetItem": "18 days",
             "options": [
-                "unchanged",
-                "identical",
-                "documented",
-                "undertaken"
+                "27 days",
+                "18 days",
+                "Fuel costs",
+                "Port congestion"
             ],
-            "correctAnswer": "identical",
-            "hint": "Find the word describing how the dish is claimed to compare to the original.",
-            "explanation": "The passage says remained identical, so that is correct.",
+            "correctAnswer": "18 days",
+            "hint": "Skip the congestion and fuel cost commentary and find the current transit time.",
+            "explanation": "Transit time fell to 18 days from 27 days, which was the previous year's peak figure.",
             "timeLimit": 14,
-            "targetInfo": "Specific data to find."
+            "targetInfo": "Current average transpacific transit time"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L195_Q2",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Skim past the traditional-age and part-time figures, then scan for the actual increase among older students.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Tellingly, the cybersecurity firm's widely publicized claim that a particular strain of malware had been fully neutralized following its emergency patch release, a claim that generated considerable positive press at the time, was later revised in a far less publicized follow-up bulletin acknowledging a secondary infection method remained viable.",
-            "targetItem": "neutralized",
+            "passage": "Enrollment Demographics Report: Enrollment among traditional-age students remained roughly flat this year. Part-time enrollment saw a modest decline, continuing a longer-term trend. The most significant shift was a 22 percent increase in enrollment among students over 25, reflecting growing interest in career-change programs.",
+            "targetItem": "22 percent",
             "options": [
-                "eliminated",
-                "publicized",
-                "neutralized",
-                "viable"
+                "Part-time enrollment",
+                "traditional-age",
+                "career-change",
+                "22 percent"
             ],
-            "correctAnswer": "neutralized",
-            "hint": "Find what the firm originally claimed had happened to the malware.",
-            "explanation": "The passage says fully neutralized, so that is correct.",
+            "correctAnswer": "22 percent",
+            "hint": "Skip the traditional-age and part-time figures and find the actual increase among older students.",
+            "explanation": "Enrollment among students over 25 rose 22 percent; traditional-age enrollment stayed flat, a separate figure.",
             "timeLimit": 14,
-            "targetInfo": "Specific data to find."
+            "targetInfo": "Increase in enrollment among students over 25"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L195_Q3",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Skim past the delays and disruptions, then scan for the actual generation capacity achieved.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "The fitness chain's marketing claim that its signature high-intensity class program produces a specific average measurable improvement in cardiovascular fitness within a set number of weeks is based on an internal study whose methodology, disclosed only upon request, excluded participants who did not complete the entire program.",
-            "targetItem": "methodology",
+            "passage": "Renewable Project Report: Initial construction faced delays due to permitting issues early in the project. Supply chain disruptions added further setbacks during the second phase. Despite these challenges, the completed solar farm now generates 340 megawatts, enough to power roughly 60,000 homes.",
+            "targetItem": "340 megawatts",
             "options": [
-                "methodology",
-                "measurable",
-                "cardiovascular",
-                "excluded"
+                "permitting issues",
+                "Supply chain",
+                "60,000 homes",
+                "340 megawatts"
             ],
-            "correctAnswer": "methodology",
-            "hint": "Find what part of the internal study excluded certain participants.",
-            "explanation": "The passage says the study's methodology, so that is correct.",
+            "correctAnswer": "340 megawatts",
+            "hint": "Skip the delays and disruptions and find the actual capacity figure.",
+            "explanation": "The solar farm generates 340 megawatts; 60,000 homes describes what that capacity can power, a related but separate figure.",
             "timeLimit": 14,
-            "targetInfo": "Specific data to find."
+            "targetInfo": "Solar farm's generation capacity"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L196_Q1",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Skim past the rental affordability trend, then scan for the actual current affordability figure.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Although the video streaming service's investor presentations have consistently emphasized subscriber growth as the primary indicator of the platform's overall health, a metric that has driven considerable positive market sentiment, a separate internal metric tracking engagement over time revealed a meaningful share of new subscribers had already canceled within ninety days.",
-            "targetItem": "engagement",
+            "passage": "Housing Affordability Index: Rental affordability improved slightly in several mid-sized cities this year. Homeownership affordability, by contrast, continued to decline nationally. The index's headline figure shows that a median-income household can now afford only 61 percent of homes on the market, down from 68 percent last year.",
+            "targetItem": "61 percent",
             "options": [
-                "retention",
-                "canceled",
-                "engagement",
-                "indicator"
+                "68 percent",
+                "61 percent",
+                "mid-sized cities",
+                "Homeownership"
             ],
-            "correctAnswer": "engagement",
-            "hint": "Find what the separate internal metric tracked over time.",
-            "explanation": "The passage says tracking engagement, so that is correct.",
+            "correctAnswer": "61 percent",
+            "hint": "Skip the rental affordability trend and find the current homeownership affordability figure.",
+            "explanation": "Households can now afford 61 percent of homes, down from 68 percent last year, which is the earlier figure.",
             "timeLimit": 14,
-            "targetInfo": "Specific data to find."
+            "targetInfo": "Percentage of homes affordable to a median-income household this year"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L196_Q2",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Skim past the detection method and intrusion timeline, then scan for the actual number of records affected.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "The popular claim that a particular species of jellyfish is entirely immune to aging and cannot die of natural causes under any circumstances, a characterization that has circulated widely in popular media, somewhat overstates findings that are, in the actual scientific literature, considerably more narrow regarding its unusual regenerative capabilities under stress.",
-            "targetItem": "regenerative",
+            "passage": "Cybersecurity Incident Report: The initial breach was detected through routine monitoring rather than an external alert. Investigators determined that the intrusion had gone undetected for approximately eleven days before discovery. No financial data was accessed, though the incident affected roughly 40,000 customer records containing contact information.",
+            "targetItem": "40,000 customer records",
             "options": [
-                "regenerative",
-                "immune",
-                "narrow",
-                "circumstances"
+                "eleven days",
+                "routine monitoring",
+                "financial data",
+                "40,000 customer records"
             ],
-            "correctAnswer": "regenerative",
-            "hint": "Find what type of capabilities the scientific literature actually describes.",
-            "explanation": "The passage says regenerative capabilities, so that is correct.",
+            "correctAnswer": "40,000 customer records",
+            "hint": "Skip the detection method and timeline and find the actual number affected.",
+            "explanation": "Roughly 40,000 customer records were affected; eleven days describes how long the intrusion went undetected.",
             "timeLimit": 14,
-            "targetInfo": "Specific data to find."
+            "targetInfo": "Number of customer records affected"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L196_Q3",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Skim past the weather and mechanical delay commentary, then scan for the actual on-time rate.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Although the town's tourism board has consistently credited its rebranding campaign, launched three years ago at considerable expense, with the subsequent increase in annual visitor spending, an economic impact study found a significant currency-driven affordability shift likely accounted for a substantial share of that increase instead.",
-            "targetItem": "affordability",
+            "passage": "Airline On-Time Performance Report: Weather-related delays accounted for a smaller share of disruptions than in previous years. Mechanical delays remained roughly consistent with historical averages. The airline's overall on-time arrival rate reached 82 percent this quarter, its best performance in three years.",
+            "targetItem": "82 percent",
             "options": [
-                "affordability",
-                "currency-driven",
-                "rebranding",
-                "substantial"
+                "82 percent",
+                "Weather-related",
+                "Mechanical delays",
+                "three years"
             ],
-            "correctAnswer": "affordability",
-            "hint": "Find what type of shift the economic study identified.",
-            "explanation": "The passage says an affordability shift, so that is correct.",
+            "correctAnswer": "82 percent",
+            "hint": "Skip the weather and mechanical delay commentary and find the actual on-time rate.",
+            "explanation": "The on-time arrival rate reached 82 percent; weather and mechanical delays are separate contributing factors.",
             "timeLimit": 14,
-            "targetInfo": "Specific data to find."
+            "targetInfo": "Airline's on-time arrival rate this quarter"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L197_Q1",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Skim past the in-store decline and online growth trends, then scan for the actual total sales figure.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "While it would be convenient to attribute the noticeable improvement in Elena's sleep quality entirely to the white noise machine she began using eight months ago, a device she has since recommended enthusiastically to nearly everyone she knows, her own account reveals the machine's introduction coincided with a separate and arguably more significant change in her living situation.",
-            "targetItem": "coincided",
+            "passage": "Holiday Sales Report: In-store traffic declined slightly compared to last year, continuing a longer shift toward online shopping. Online sales, meanwhile, grew substantially during the same period. Total holiday sales across both channels reached $8.9 billion, a 6 percent increase over last year despite the in-store decline.",
+            "targetItem": "$8.9 billion",
             "options": [
-                "significant",
-                "coincided",
-                "overlapped",
-                "attribute"
+                "$8.9 billion",
+                "6 percent",
+                "In-store traffic",
+                "Online sales"
             ],
-            "correctAnswer": "coincided",
-            "hint": "Find what the machine's introduction did with another life change.",
-            "explanation": "The passage says it coincided with the change, so that is correct.",
+            "correctAnswer": "$8.9 billion",
+            "hint": "Skip the in-store and online trends and find the actual combined total.",
+            "explanation": "Total holiday sales reached $8.9 billion; 6 percent describes the rate of increase, not the total itself.",
             "timeLimit": 14,
-            "targetInfo": "Specific data to find."
+            "targetInfo": "Total holiday sales across both channels"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L197_Q2",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Skim past the spring conditions and summer demand, then scan for the actual fall capacity figure.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "The graduate program's frequently cited statistic that ninety percent of its alumni are employed in the field within six months of graduation, a figure prominently featured in recruitment materials, is calculated using a denominator that excludes any graduate who did not respond to the program's voluntary post-graduation survey.",
-            "targetItem": "denominator",
+            "passage": "Regional Water Authority Report: Reservoir levels remained near historical averages through the spring. A dry summer led to increased demand across the service area. By fall, reservoir capacity had fallen to 58 percent, prompting the authority to implement voluntary conservation measures.",
+            "targetItem": "58 percent",
             "options": [
-                "methodology",
-                "voluntary",
-                "denominator",
-                "statistic"
+                "historical averages",
+                "58 percent",
+                "dry summer",
+                "voluntary conservation"
             ],
-            "correctAnswer": "denominator",
-            "hint": "Find what part of the calculation excludes non-respondents.",
-            "explanation": "The passage says the denominator excludes them, so that is correct.",
+            "correctAnswer": "58 percent",
+            "hint": "Skip the spring and summer conditions and find the actual fall capacity figure.",
+            "explanation": "Reservoir capacity fell to 58 percent by fall; the spring and summer notes describe earlier conditions.",
             "timeLimit": 14,
-            "targetInfo": "Specific data to find."
+            "targetInfo": "Reservoir capacity by fall"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L197_Q3",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Skim past the overall employment trend, then scan for the skilled technicians' specific wage growth.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Although the retail chain's corporate communications have consistently attributed this year's improved employee retention figures to a newly introduced flexible scheduling policy rolled out company-wide, an internal analysis segmenting retention data by store location found regions with an independent minimum wage increase showed considerably larger improvements.",
-            "targetItem": "segmenting",
+            "passage": "Manufacturing Employment Report: Overall employment in the sector grew modestly this year, reversing a two-year decline. Automation continued to reshape certain job categories within the sector. The report's key figure shows that wages for skilled technicians rose 5.4 percent, outpacing the sector's overall wage growth of 2.1 percent.",
+            "targetItem": "5.4 percent",
             "options": [
-                "independent",
-                "attributed",
-                "segmenting",
-                "dividing"
+                "2.1 percent",
+                "two-year decline",
+                "Automation",
+                "5.4 percent"
             ],
-            "correctAnswer": "segmenting",
-            "hint": "Find what the internal analysis did to the retention data.",
-            "explanation": "The passage says segmenting data by location, so that is correct.",
+            "correctAnswer": "5.4 percent",
+            "hint": "Skip the overall employment trend and find the skilled technicians' specific figure.",
+            "explanation": "Skilled technicians' wages rose 5.4 percent, outpacing the sector's overall 2.1 percent wage growth.",
             "timeLimit": 14,
-            "targetInfo": "Specific data to find."
+            "targetInfo": "Wage growth for skilled technicians"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L198_Q1",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Skim past the equity and fixed-income performance details, then scan for the actual current funded ratio.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "The mountain resort's frequently repeated claim that its ski season has remained consistently reliable for over four decades, a talking point featured prominently in its marketing to reassure prospective visitors, is complicated by the resort's own internal snowfall records, which show a measurable, statistically significant decline in natural snowfall over the past fifteen years specifically.",
-            "targetItem": "statistically",
+            "passage": "Public Pension Report: Investment returns exceeded expectations in the fund's equity holdings this year. Fixed-income holdings underperformed relative to projections. Despite this, the fund's overall funded ratio improved to 84 percent, up from 79 percent the previous year, narrowing the funding gap.",
+            "targetItem": "84 percent",
             "options": [
-                "internal",
-                "measurable",
-                "consistently",
-                "statistically"
+                "79 percent",
+                "equity holdings",
+                "84 percent",
+                "Fixed-income"
             ],
-            "correctAnswer": "statistically",
-            "hint": "Find the word describing how significant the decline in snowfall was.",
-            "explanation": "The passage says statistically significant, so that is correct.",
+            "correctAnswer": "84 percent",
+            "hint": "Skip the equity and fixed-income details and find the current funded ratio.",
+            "explanation": "The funded ratio improved to 84 percent from 79 percent, which is the earlier, lower figure.",
             "timeLimit": 14,
-            "targetInfo": "Specific data to find."
+            "targetInfo": "Fund's current funded ratio"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L198_Q2",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Skim past the urban and suburban access figures, then scan for the actual rural access rate.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Although Hassan's family has long attributed the eventual reconciliation between his parents after a lengthy separation to a single dramatic conversation that has since become something of a family legend, his mother's own account, shared candidly only in recent years, describes a much slower process involving an undisclosed therapist.",
-            "targetItem": "reconciliation",
+            "passage": "Broadband Access Report: Urban broadband access remained near-universal throughout the reporting period. Suburban access also improved modestly. The report's central finding is that rural broadband access rose to 76 percent this year, up from 64 percent, following completion of several infrastructure grants.",
+            "targetItem": "76 percent",
             "options": [
-                "legend",
-                "disclosed",
-                "reconciliation",
-                "separation"
+                "64 percent",
+                "Urban broadband",
+                "Suburban access",
+                "76 percent"
             ],
-            "correctAnswer": "reconciliation",
-            "hint": "Find what the family attributed to a single dramatic conversation.",
-            "explanation": "The passage says the reconciliation, so that is correct.",
+            "correctAnswer": "76 percent",
+            "hint": "Skip the urban and suburban figures and find the actual rural access rate.",
+            "explanation": "Rural broadband access rose to 76 percent from 64 percent, the earlier, lower figure.",
             "timeLimit": 14,
-            "targetInfo": "Specific data to find."
+            "targetInfo": "Current rural broadband access rate"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L198_Q3",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Skim past the criminal and civil case trends, then scan for the actual family court figure.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "The cosmetics brand's marketing claim that its best-selling serum was clinically proven to reduce the appearance of fine lines within a specific, frequently cited number of weeks was found by a regulatory review to be based on a single small-scale study funded directly by the brand itself, with no independent replication.",
-            "targetItem": "replication",
+            "passage": "State Court Backlog Report: Criminal case backlogs decreased slightly this year following additional judicial appointments. Civil case backlogs, however, continued to grow. The report's most notable figure shows that family court cases now take an average of 14.2 months to resolve, up from 10.8 months two years ago.",
+            "targetItem": "14.2 months",
             "options": [
-                "clinically",
-                "regulatory",
-                "replication",
-                "validation"
+                "10.8 months",
+                "14.2 months",
+                "Criminal case",
+                "Civil case"
             ],
-            "correctAnswer": "replication",
-            "hint": "Find what the regulatory review found was missing from the study.",
-            "explanation": "The passage says no independent replication, so that is correct.",
+            "correctAnswer": "14.2 months",
+            "hint": "Skip the criminal and civil case trends and find the current family court figure.",
+            "explanation": "Family court cases now take 14.2 months, up from 10.8 months two years ago, the earlier figure.",
             "timeLimit": 14,
-            "targetInfo": "Specific data to find."
+            "targetInfo": "Current average resolution time for family court cases"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L199_Q1",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Skim past the minor and major outage details, then scan for the actual current reliability figure.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Although the specialty coffee company's marketing has long emphasized that its beans are sourced directly from a small number of named family farms, a claim central to its premium pricing, a supply chain audit found the company had, on several documented occasions, supplemented its supply through a regional broker without disclosing this substitution to consumers.",
-            "targetItem": "supplemented",
+            "passage": "National Grid Reliability Report: Minor outages affecting fewer than 1,000 customers occurred regularly throughout the year, consistent with historical patterns. One major outage during a summer storm affected a significant portion of the region. Overall system reliability, measured by average customer outage minutes, improved to 62 minutes annually, down from 89 minutes the previous year.",
+            "targetItem": "62 minutes",
             "options": [
-                "documented",
-                "disclosing",
-                "substituted",
-                "supplemented"
+                "89 minutes",
+                "1,000 customers",
+                "summer storm",
+                "62 minutes"
             ],
-            "correctAnswer": "supplemented",
-            "hint": "Find what the company did to its supply during shortfalls.",
-            "explanation": "The passage says it supplemented its supply, so that is correct.",
+            "correctAnswer": "62 minutes",
+            "hint": "Skip the minor and major outage details and find the current reliability figure.",
+            "explanation": "Average outage minutes improved to 62 from 89 the previous year, which is the earlier, higher figure.",
             "timeLimit": 14,
-            "targetInfo": "Specific data to find."
+            "targetInfo": "Current average customer outage minutes annually"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L199_Q2",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Skim past the fourth and eighth grade figures, then scan for the current senior proficiency rate.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Strikingly, although the wearable device manufacturer markets its sleep-tracking feature as clinically validated for accuracy, a comparison study conducted by university researchers using polysomnography, the clinical gold standard for sleep measurement, as a reference point found the device's accuracy was considerably weaker specifically for distinguishing between different sleep stages.",
-            "targetItem": "polysomnography",
+            "passage": "National Reading Assessment Summary: Scores among fourth graders remained relatively stable compared to the previous assessment cycle. Scores among eighth graders declined slightly nationwide. The most notable shift was among high school seniors, whose proficiency rate rose to 37 percent, up from 31 percent, reversing a decade-long decline.",
+            "targetItem": "37 percent",
             "options": [
-                "validated",
-                "clinically",
-                "polysomnography",
-                "reference"
+                "31 percent",
+                "fourth graders",
+                "37 percent",
+                "eighth graders"
             ],
-            "correctAnswer": "polysomnography",
-            "hint": "Find what clinical measurement method the comparison study used.",
-            "explanation": "The passage says polysomnography, so that is correct.",
+            "correctAnswer": "37 percent",
+            "hint": "Skip the fourth and eighth grade figures and find the current senior proficiency rate.",
+            "explanation": "Senior proficiency rose to 37 percent from 31 percent, the earlier figure before the reversal.",
             "timeLimit": 14,
-            "targetInfo": "Specific data to find."
+            "targetInfo": "Current proficiency rate among high school seniors"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L199_Q3",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Skim past the entry-level and mid-management figures, then scan for the actual senior leadership figure.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Although the mental health app's marketing describes its mood-tracking algorithm as capable of detecting early warning signs of depressive episodes with a specific, frequently cited accuracy rate, an independent evaluation found this accuracy held only for a minority of users who logged entries consistently on a near-daily basis.",
-            "targetItem": "minority",
+            "passage": "Corporate Diversity Report: Representation at the entry level has remained roughly consistent with previous years. Representation at the mid-management level improved modestly. The most significant change occurred at the senior leadership level, where representation grew to 34 percent, up from 22 percent over the past three years.",
+            "targetItem": "34 percent",
             "options": [
-                "consistently",
-                "minority",
-                "independent",
-                "fraction"
+                "22 percent",
+                "34 percent",
+                "entry level",
+                "mid-management"
             ],
-            "correctAnswer": "minority",
-            "hint": "Find what share of users the high accuracy rate actually applied to.",
-            "explanation": "The passage says only a minority, so that is correct.",
+            "correctAnswer": "34 percent",
+            "hint": "Skip the entry-level and mid-management figures and find the current senior leadership figure.",
+            "explanation": "Senior leadership representation grew to 34 percent from 22 percent, the earlier, lower figure.",
             "timeLimit": 14,
-            "targetInfo": "Specific data to find."
+            "targetInfo": "Current representation at the senior leadership level"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L200_Q1",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Skim past the manufacturing and services sector commentary, then scan for the exact confidence figure, ignoring the economists' caution that follows it.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "The record label's widely circulated account of discovering its most commercially successful artist through a chance encounter at an open-mic night, a story that has become central to the label's own promotional identity, was revised considerably after industry trade documents surfaced showing the artist had been under formal consideration for months prior to that supposedly chance encounter.",
-            "targetItem": "consideration",
+            "passage": "National Economic Outlook Summary: Manufacturing output contracted slightly during the first quarter amid softer global demand. Services sector growth remained resilient throughout the same period, offsetting some of the manufacturing weakness. Consumer confidence, closely watched by policymakers, climbed to 108.4 this quarter, its highest reading in nearly three years, though economists caution that confidence often outpaces actual spending in the months that follow.",
+            "targetItem": "108.4",
             "options": [
-                "submission",
-                "consideration",
-                "surfaced",
-                "commercially"
+                "first quarter",
+                "three years",
+                "108.4",
+                "Manufacturing output"
             ],
-            "correctAnswer": "consideration",
-            "hint": "Find what the trade documents showed the artist had been under.",
-            "explanation": "The passage says formal consideration, so that is correct.",
+            "correctAnswer": "108.4",
+            "hint": "Skip the manufacturing and services commentary and find the exact confidence reading, distinct from the caution that follows.",
+            "explanation": "Consumer confidence climbed to 108.4; the manufacturing contraction and three-year comparison are separate details.",
             "timeLimit": 14,
-            "targetInfo": "Specific data to find."
+            "targetInfo": "This quarter's consumer confidence reading"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L200_Q2",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Skim past the case count trend and localized cluster, then scan for the final overall positivity rate, distinguishing it from the trigger threshold.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "Although a particular species of migratory bat was long believed by wildlife researchers to travel in family groups that remain stable across an individual's lifetime, a belief supported mainly by observational data limited to breeding season, more recent tracking studies have found that group composition during the non-breeding period is considerably more fluid.",
-            "targetItem": "fluid",
+            "passage": "Global Health Surveillance Report: Case counts in the region declined steadily through most of the reporting period, consistent with seasonal expectations. A localized cluster emerged late in the period, prompting increased testing in the affected district. Despite this cluster, the region's overall positivity rate settled at 2.3 percent by the report's close, well below the 5 percent threshold that would trigger expanded public health measures.",
+            "targetItem": "2.3 percent",
             "options": [
-                "stable",
-                "fluid",
-                "migratory",
-                "tagged"
+                "5 percent",
+                "localized cluster",
+                "2.3 percent",
+                "seasonal expectations"
             ],
-            "correctAnswer": "fluid",
-            "hint": "Find the word describing group composition according to recent tracking.",
-            "explanation": "The passage says considerably more fluid, so that is correct.",
+            "correctAnswer": "2.3 percent",
+            "hint": "Skip the case count trend and cluster details, and separate the actual rate from the threshold mentioned alongside it.",
+            "explanation": "The overall positivity rate settled at 2.3 percent, well below the separate 5 percent trigger threshold.",
             "timeLimit": 14,
-            "targetInfo": "Specific data to find."
+            "targetInfo": "Region's overall positivity rate at the report's close"
         },
         {
             "id": "RDG_SKIMMINGSCANNING_L200_Q3",
-            "instruction": "Scan the text to find and select the target word.",
+            "instruction": "Skim past the exports and imports commentary, then scan for the overall deficit figure, distinguishing it from the separately mentioned goods-only deficit.",
             "subtype": "skimmingScanning",
             "interactionType": "search",
-            "passage": "The public library system's widely cited statistic that program attendance increased dramatically following its recent renovation, a figure referenced in its most recent funding request, is calculated by comparing an unusually eventful reopening month against a typical prior month, a comparison the system's own footnote acknowledges is not representative.",
-            "targetItem": "representative",
+            "passage": "International Trade Balance Summary: Exports of finished goods grew steadily throughout the year, supported by favorable exchange rates. Imports of raw materials also increased, reflecting expanded domestic manufacturing capacity. When combined with a modest surplus in services trade, the country's overall trade deficit narrowed to $42.6 billion for the year, its smallest gap in nearly a decade, even as the goods deficit alone remained above $60 billion.",
+            "targetItem": "$42.6 billion",
             "options": [
-                "representative",
-                "eventful",
-                "acknowledges",
-                "typical"
+                "$60 billion",
+                "$42.6 billion",
+                "finished goods",
+                "raw materials"
             ],
-            "correctAnswer": "representative",
-            "hint": "Find what the footnote says the comparison is not.",
-            "explanation": "The passage says not representative, so that is correct.",
+            "correctAnswer": "$42.6 billion",
+            "hint": "Skip the exports and imports commentary, and separate the overall deficit from the goods-only deficit mentioned alongside it.",
+            "explanation": "The overall trade deficit narrowed to $42.6 billion; $60 billion refers only to the separate goods deficit.",
             "timeLimit": 14,
-            "targetInfo": "Specific data to find."
+            "targetInfo": "Country's overall trade deficit for the year"
         }
     ]
 }
