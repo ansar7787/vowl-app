@@ -2,7 +2,6 @@ const { onSchedule } = require('firebase-functions/v2/scheduler');
 const { onCall, HttpsError } = require('firebase-functions/v2/https');
 const admin = require('firebase-admin');
 const crypto = require('crypto');
-const { google } = require('googleapis');
 admin.initializeApp();
 
 // ─── SECURITY: Rate Limiting Helper ──────────────────────────────────
@@ -742,6 +741,7 @@ exports.validateIAPReceipt = onCall(async (request) => {
   }
 
   try {
+    const { google } = require('googleapis');
     // Use service account credentials for Google Play Developer API
     const auth = new google.auth.GoogleAuth({
       scopes: ['https://www.googleapis.com/auth/androidpublisher'],
