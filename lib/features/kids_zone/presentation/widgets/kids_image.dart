@@ -40,6 +40,7 @@ class KidsImage extends StatelessWidget {
       return Image.asset(
         imageUrl!,
         fit: BoxFit.contain,
+        semanticLabel: 'Illustration',
         errorBuilder: (context, error, stackTrace) => _buildFallback(),
       );
     }

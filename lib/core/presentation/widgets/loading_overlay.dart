@@ -160,6 +160,7 @@ class _LoadingOverlayState extends State<LoadingOverlay> {
                                           child: Image.asset(
                                             'assets/images/vowl_logo.webp',
                                             fit: BoxFit.contain,
+                                            semanticLabel: 'Vowl Logo',
                                           ),
                                         )
                                         .animate(

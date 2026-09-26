@@ -1,9 +1,35 @@
 import 'package:flutter/widgets.dart';
 
-/// Mixin for game screens that need to pause/resume on app lifecycle changes.
-///
-/// Mix into any State that has timers, audio, or animations that should
-/// pause when the app is backgrounded.
+/// Helper to handle application lifecycle events (pausing/resuming timers, audio, etc.).
+class AppLifecycleHandler {
+  AppLifecycleHandler._();
+
+  static AppLifecycleListener createListener({
+    VoidCallback? onPause,
+    VoidCallback? onResume,
+    VoidCallback? onDetach,
+  }) {
+    return AppLifecycleListener(
+      onStateChange: (state) {
+        switch (state) {
+          case AppLifecycleState.inactive:
+          case AppLifecycleState.paused:
+          case AppLifecycleState.hidden:
+            onPause?.call();
+            break;
+          case AppLifecycleState.resumed:
+            onResume?.call();
+            break;
+          case AppLifecycleState.detached:
+            onDetach?.call();
+            break;
+        }
+      },
+    );
+  }
+}
+
+/// Mixin for game screens or stateful widgets that need to pause/resume on app lifecycle changes.
 mixin AppLifecycleGameMixin<T extends StatefulWidget> on State<T> {
   AppLifecycleListener? _lifecycleListener;
 
@@ -16,22 +42,10 @@ mixin AppLifecycleGameMixin<T extends StatefulWidget> on State<T> {
   @override
   void initState() {
     super.initState();
-    _lifecycleListener = AppLifecycleListener(
-      onStateChange: _handleStateChange,
+    _lifecycleListener = AppLifecycleHandler.createListener(
+      onPause: onGamePaused,
+      onResume: onGameResumed,
     );
-  }
-
-  void _handleStateChange(AppLifecycleState state) {
-    switch (state) {
-      case AppLifecycleState.inactive:
-      case AppLifecycleState.paused:
-      case AppLifecycleState.hidden:
-        onGamePaused();
-      case AppLifecycleState.resumed:
-        onGameResumed();
-      case AppLifecycleState.detached:
-        break;
-    }
   }
 
   @override

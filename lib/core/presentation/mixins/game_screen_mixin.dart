@@ -7,6 +7,7 @@ import 'package:vowl/core/services/error_journal_collector.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
+import 'package:vowl/core/utils/app_lifecycle_handler.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 
 mixin GameScreenMixin<T extends StatefulWidget> on State<T> {
@@ -25,8 +26,27 @@ mixin GameScreenMixin<T extends StatefulWidget> on State<T> {
   int lastProcessedIndex = -1;
   int? lastLives;
   GlobalKey<SpeedChallengeTimerState>? timerKey;
+  AppLifecycleListener? _gameLifecycleListener;
+
+  void initGameLifecycle() {
+    _gameLifecycleListener = AppLifecycleHandler.createListener(
+      onPause: onGamePaused,
+      onResume: onGameResumed,
+    );
+  }
+
+  void onGamePaused() {
+    timerKey?.currentState?.pause();
+  }
+
+  void onGameResumed() {
+    if (!isAnsweredNotifier.value) {
+      timerKey?.currentState?.resume();
+    }
+  }
 
   void disposeGame() {
+    _gameLifecycleListener?.dispose();
     isAnsweredNotifier.dispose();
     isCorrectNotifier.dispose();
     showConfettiNotifier.dispose();

@@ -2,6 +2,7 @@ import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:vowl/core/theme/app_color_tokens.dart';
+import 'package:vowl/core/theme/app_dimensions.dart';
 
 /// The central production-grade theme declaration for Vowl, coordinating
 /// light, dark, and midnight configurations with seamless system-level overlays.
@@ -112,7 +113,9 @@ class AppTheme {
         backgroundColor: primaryIndigo,
         foregroundColor: Colors.white,
         minimumSize: const Size(double.infinity, 56),
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(AppDimensions.radiusLg),
+        ),
         elevation: 0,
         textStyle: const TextStyle(
           fontFamily: 'Outfit',

@@ -137,6 +137,7 @@ class VowlMascot extends StatelessWidget {
                 width: botSize,
                 height: botSize,
                 fit: BoxFit.contain,
+                semanticLabel: 'Vowly mascot',
                 color: state == VowlMascotState.sleeping
                     ? Colors.black.withValues(alpha: 0.3)
                     : null,
