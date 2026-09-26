@@ -19,7 +19,6 @@ class KidsSunburstBackground extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
     return RepaintBoundary(
       child: Center(
         child:
@@ -65,7 +64,6 @@ class Kids3DButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
     final shadowColor = isGolden
         ? AppColors.amber600
         : color.withValues(alpha: 0.7);

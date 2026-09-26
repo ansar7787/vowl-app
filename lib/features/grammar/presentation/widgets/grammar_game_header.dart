@@ -57,7 +57,6 @@ class GrammarGameHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
     final isLoaded = state is GrammarLoaded;
     final hintShouldGlow = lives < 3 && !isAnswered;
     final showActions = quest != null && !isAnswered;
@@ -134,7 +133,6 @@ class _InfoButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
     return Semantics(
       label: 'Show level instructions',
       button: true,
@@ -181,7 +179,6 @@ class _HintButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
     // Safe: caller guarantees state is GrammarLoaded when quest != null.
     final hintUsed = isFinalFailure
         ? false

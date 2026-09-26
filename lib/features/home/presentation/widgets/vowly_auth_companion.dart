@@ -115,7 +115,6 @@ class _VowlyAuthCompanionState extends State<VowlyAuthCompanion> {
 
   @override
   Widget build(BuildContext context) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
     final listenables = [
       if (widget.nameFocus != null) widget.nameFocus!,
       if (widget.emailFocus != null) widget.emailFocus!,

@@ -46,7 +46,6 @@ class _CategoryShelfState extends State<CategoryShelf> {
 
   @override
   Widget build(BuildContext context) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
     return SizedBox(
       height: 215.h,
       // This shelf uses a fixed card height by design (horizontal carousel).

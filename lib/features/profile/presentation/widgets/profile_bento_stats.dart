@@ -302,7 +302,6 @@ class _StatPod extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
     return ScaleButton(
       onTap: () {
         di.sl<HapticService>().selection();

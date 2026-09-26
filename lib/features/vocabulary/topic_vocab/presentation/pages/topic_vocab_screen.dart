@@ -465,7 +465,6 @@ class _TopicInstructionBanner extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
     final screenWidth = MediaQuery.of(context).size.width;
 
     return ConstrainedBox(
@@ -523,7 +522,6 @@ class _CompactFit extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
     if (!isCompact) return child;
     return SizedBox(
       width: width,

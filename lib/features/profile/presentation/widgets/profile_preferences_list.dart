@@ -16,7 +16,6 @@ class ProfilePreferencesList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
     return GlassTile(
       borderRadius: BorderRadius.circular(28.r),
       padding: EdgeInsets.symmetric(horizontal: 4.w),

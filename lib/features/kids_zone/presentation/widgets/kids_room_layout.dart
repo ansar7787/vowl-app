@@ -48,7 +48,6 @@ class KidsRoomLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
     return Stack(
       children: [
         // 1. Wall Layer (Background)
